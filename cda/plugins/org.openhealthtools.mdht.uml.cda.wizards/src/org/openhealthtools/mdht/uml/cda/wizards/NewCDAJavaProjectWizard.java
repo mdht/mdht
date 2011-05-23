@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Copyright (c) 2011 Sean Muir
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Sean Muir (JKM Software) - initial API and implementation
+ *     
+ * $Id$
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.wizards;
 
 import java.io.ByteArrayInputStream;
@@ -18,9 +30,9 @@ import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.pde.internal.ui.wizards.plugin.NewProjectCreationOperation;
 import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 
-@SuppressWarnings("restriction")
 public class NewCDAJavaProjectWizard extends CDAWizard {
 
+	@Override
 	public IWizardPage getNextPage(IWizardPage page) {
 		return super.getNextPage(page);
 	}
@@ -29,6 +41,7 @@ public class NewCDAJavaProjectWizard extends CDAWizard {
 
 	NewCDAJavaPage newCDATemplatePage;
 
+	@Override
 	public void addPages() {
 
 		loadCDAModels();
@@ -50,6 +63,7 @@ public class NewCDAJavaProjectWizard extends CDAWizard {
 		addPage(newProjectPage);
 	}
 
+	@Override
 	public boolean performFinish() {
 
 		name = newProjectPage.getProjectName();
@@ -73,7 +87,8 @@ public class NewCDAJavaProjectWizard extends CDAWizard {
 		try {
 
 			// Use pde internal functionality to create plugin
-			getContainer().run(false, true, new NewProjectCreationOperation(fPluginData, fProjectProvider, contentWizard));
+			getContainer().run(
+				false, true, new NewProjectCreationOperation(fPluginData, fProjectProvider, contentWizard));
 
 			createManifest(project);
 
@@ -101,9 +116,13 @@ public class NewCDAJavaProjectWizard extends CDAWizard {
 
 		String[] s = newCDATemplatePage.getCDADocument().split("::");
 
-		String packageName = "org.openhealthtools.mdht.cda" + (s[0].equals("cda") ? "." : "." + s[0] + ".") + "examples.hellocdaworld";
+		String packageName = "org.openhealthtools.mdht.cda" + (s[0].equals("cda")
+				? "."
+				: "." + s[0] + ".") + "examples.hellocdaworld";
 
-		String packageFolder = "src/org/openhealthtools/mdht/cda" + (s[0].equals("cda") ? "/" : "/" + s[0] + "/") + "examples/hellocdaworld";
+		String packageFolder = "src/org/openhealthtools/mdht/cda" + (s[0].equals("cda")
+				? "/"
+				: "/" + s[0] + "/") + "examples/hellocdaworld";
 
 		String[] s1 = packageFolder.split("/");
 		String currentFolder = "";
@@ -130,17 +149,18 @@ public class NewCDAJavaProjectWizard extends CDAWizard {
 		for (String cdaPackage : references.keySet()) {
 			writer.println("import " + cdaPackage + ".*;");
 		}
-		
-		
+
 		writer.println("");
 		writer.println("public class HelloCDAWorld {");
 		writer.println("	public static void main(String[] args) throws Exception {");
 		writer.println("");
 
 		if (s[0].equals("cda")) {
-			writer.println("		ClinicalDocument clinicalDocument = " + s[0].toUpperCase() + "Factory.eINSTANCE.create" + s[1] + "();");
+			writer.println("		ClinicalDocument clinicalDocument = " + s[0].toUpperCase() + "Factory.eINSTANCE.create" +
+					s[1] + "();");
 		} else {
-			writer.println("		" + s[1] + " clinicalDocument = " + s[0].toUpperCase() + "Factory.eINSTANCE.create" + s[1] + "().init();");
+			writer.println("		" + s[1] + " clinicalDocument = " + s[0].toUpperCase() + "Factory.eINSTANCE.create" +
+					s[1] + "().init();");
 		}
 
 		writer.println("");
@@ -190,7 +210,9 @@ public class NewCDAJavaProjectWizard extends CDAWizard {
 
 			String[] s = newCDATemplatePage.getCDADocument().split("::");
 
-			String symbolicName = "org.openhealthtools.mdht.cda." + (s[0].equals("cda") ? "" : s[0]) + ".examples.cda."+name;
+			String symbolicName = "org.openhealthtools.mdht.cda." + (s[0].equals("cda")
+					? ""
+					: s[0]) + ".examples.cda." + name;
 
 			IFile manifest = getManifest(project);
 

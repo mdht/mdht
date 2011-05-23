@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Copyright (c) 2011 Sean Muir
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Sean Muir (JKM Software) - initial API and implementation
+ *     
+ * $Id$
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.wizards;
 
 import java.io.InputStream;
@@ -56,18 +68,15 @@ import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleException;
 import org.osgi.framework.Constants;
 
-@SuppressWarnings("restriction")
 public abstract class CDAWizard extends Wizard {
 
 	protected HashMap<String, Package> cdaPackages = new HashMap<String, Package>();
 
-	
 	protected HashMap<String, Type> cdaDocuments = new HashMap<String, Type>();
-	
+
 	protected HashMap<String, IFile> cdaDocumentsManfiest = new HashMap<String, IFile>();
-	
+
 	protected HashMap<String, IFile> cdaDocumentsGenModels = new HashMap<String, IFile>();
-		
 
 	protected HashMap<String, PluginReference> references = new HashMap<String, PluginReference>();
 
@@ -220,6 +229,7 @@ public abstract class CDAWizard extends Wizard {
 	};
 
 	protected IProjectProvider fProjectProvider;
+
 	protected PluginFieldData fPluginData;
 
 	IProject project;
@@ -258,7 +268,7 @@ public abstract class CDAWizard extends Wizard {
 			}
 
 		};
-	
+
 	}
 
 	IFolder createFolder(IProject project, String name) {
@@ -293,65 +303,62 @@ public abstract class CDAWizard extends Wizard {
 		return null;
 	}
 
-	
-	void loadCDAModels()
-	{
+	void loadCDAModels() {
 		loadCDAModelsfromWorkspace();
 	}
-	
+
 	void loadCDAModelsfromWorkspace() {
 		ResourceSet resourceSet = new ResourceSetImpl();
-		
+
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 
 		IWorkspaceRoot root = workspace.getRoot();
-		
+
 		Path model = new Path("model");
-		
-		for (IProject project : root.getProjects())	{			
+
+		for (IProject project : root.getProjects()) {
 			if (project.exists(model)) {
 				IFolder folder = project.getFolder(model);
 				try {
-					for (IResource resource : folder.members())	{						
-						if (resource.getName().endsWith(".uml") && !resource.getName().contains("_Ecore"))	{
-							URI modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());							
-							PackageableElement pe = (PackageableElement) EcoreUtil.getObjectByType(resourceSet.getResource(modelFile, true).getContents(),UMLPackage.eINSTANCE.getPackageableElement());							
+					for (IResource resource : folder.members()) {
+						if (resource.getName().endsWith(".uml") && !resource.getName().contains("_Ecore")) {
+							URI modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
+							PackageableElement pe = (PackageableElement) EcoreUtil.getObjectByType(
+								resourceSet.getResource(modelFile, true).getContents(),
+								UMLPackage.eINSTANCE.getPackageableElement());
 							if (pe != null) {
 								if (pe instanceof Package) {
 									Package p = (Package) pe;
-									if (p.getAppliedProfile("CDA") != null || p.getName().equals("cda")) {												
-											cdaPackages.put(p.getQualifiedName(), p);
-											cdaDocumentsManfiest.put(p.getQualifiedName(),getManifest(project) );
-											
-											for (IResource genmodel : folder.members())
-											{
-												if (genmodel.getName().endsWith(".genmodel")) {
-													cdaDocumentsGenModels.put(p.getQualifiedName(),getGenModel(project,genmodel.getProjectRelativePath()) );		
-												}
+									if (p.getAppliedProfile("CDA") != null || p.getName().equals("cda")) {
+										cdaPackages.put(p.getQualifiedName(), p);
+										cdaDocumentsManfiest.put(p.getQualifiedName(), getManifest(project));
+
+										for (IResource genmodel : folder.members()) {
+											if (genmodel.getName().endsWith(".genmodel")) {
+												cdaDocumentsGenModels.put(
+													p.getQualifiedName(),
+													getGenModel(project, genmodel.getProjectRelativePath()));
 											}
-											
-//											
+										}
+
+										//
 									}
 
 								}
-								
+
 							}
-							
+
 						}
-						
+
 					}
 				} catch (CoreException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			
+
 			}
-			
-			
-			
+
 		}
-
-
 
 		Package cdaPackage = cdaPackages.get("cda");
 
@@ -363,8 +370,10 @@ public abstract class CDAWizard extends Wizard {
 				for (Type type : ps.getOwnedTypes()) {
 					if (type.conformsTo(clinicalDocument)) {
 						cdaDocuments.put(type.getQualifiedName(), type);
-						cdaDocumentsManfiest.put(type.getQualifiedName(),cdaDocumentsManfiest.get(ps.getQualifiedName()));
-						cdaDocumentsGenModels.put(type.getQualifiedName(),cdaDocumentsGenModels.get(ps.getQualifiedName()));
+						cdaDocumentsManfiest.put(
+							type.getQualifiedName(), cdaDocumentsManfiest.get(ps.getQualifiedName()));
+						cdaDocumentsGenModels.put(
+							type.getQualifiedName(), cdaDocumentsGenModels.get(ps.getQualifiedName()));
 					}
 				}
 
@@ -374,7 +383,6 @@ public abstract class CDAWizard extends Wizard {
 
 	}
 
-	
 	@SuppressWarnings("unchecked")
 	void loadCDAModelsfromPlugins() {
 		ResourceSet resourceSet = new ResourceSetImpl();
@@ -399,15 +407,17 @@ public abstract class CDAWizard extends Wizard {
 
 						while (umlFiles.hasMoreElements()) {
 
-							java.net.URL umlFileURL = (java.net.URL) umlFiles.nextElement();
+							java.net.URL umlFileURL = umlFiles.nextElement();
 
 							// filter out cda uml_ecore models
 							if (!umlFileURL.getFile().contains("_Ecore")) {
 
-								URI foo = URI.createPlatformPluginURI(extension.getContributor().getName() + umlFileURL.getPath(), false);
+								URI foo = URI.createPlatformPluginURI(
+									extension.getContributor().getName() + umlFileURL.getPath(), false);
 
-								PackageableElement foo2 = (PackageableElement) EcoreUtil.getObjectByType(resourceSet.getResource(foo, true).getContents(),
-										UMLPackage.eINSTANCE.getPackageableElement());
+								PackageableElement foo2 = (PackageableElement) EcoreUtil.getObjectByType(
+									resourceSet.getResource(foo, true).getContents(),
+									UMLPackage.eINSTANCE.getPackageableElement());
 
 								if (foo2 instanceof Package) {
 
@@ -420,16 +430,21 @@ public abstract class CDAWizard extends Wizard {
 										cdaPackages.put(p.getQualifiedName(), p);
 
 										// Add model plugin to required bundles
-										references.put(bundle.getSymbolicName(), new PluginReference(bundle.getSymbolicName(), null, 0));
+										references.put(
+											bundle.getSymbolicName(), new PluginReference(
+												bundle.getSymbolicName(), null, 0));
 
-										references.put("org.openhealthtools.mdht.builder.cda", new PluginReference("org.openhealthtools.mdht.builder.cda", null, 0));
+										references.put("org.openhealthtools.mdht.builder.cda", new PluginReference(
+											"org.openhealthtools.mdht.builder.cda", null, 0));
 
 										// Add model plugin required bundles to
 										// the plugin
 										Object header = bundle.getHeaders().get(Constants.REQUIRE_BUNDLE);
 										try {
-											for (ManifestElement manifestElement : ManifestElement.parseHeader(Constants.REQUIRE_BUNDLE, (String) header)) {
-												references.put(manifestElement.getValue(), new PluginReference(manifestElement.getValue(), null, 0));
+											for (ManifestElement manifestElement : ManifestElement.parseHeader(
+												Constants.REQUIRE_BUNDLE, (String) header)) {
+												references.put(manifestElement.getValue(), new PluginReference(
+													manifestElement.getValue(), null, 0));
 											}
 										} catch (BundleException e1) {
 
@@ -513,8 +528,7 @@ public abstract class CDAWizard extends Wizard {
 	}
 
 	/**
-	 * Returns the resource in the specified project corresponding to its
-	 * <code>MANIFEST.MF</code> file.
+	 * Returns the resource in the specified project corresponding to its <code>MANIFEST.MF</code> file.
 	 * 
 	 * @param project
 	 *            project
@@ -524,19 +538,18 @@ public abstract class CDAWizard extends Wizard {
 		return getBundleRelativeFile(project, ICoreConstants.MANIFEST_PATH);
 	}
 
-	public static IFile getGenModel(IProject project,IPath genmodelPath) {
-		
+	public static IFile getGenModel(IProject project, IPath genmodelPath) {
+
 		return getBundleRelativeFile(project, genmodelPath);
 	}
-	
-	public static IFile getECoreModel(IProject project,IPath genmodelPath) {
-		
+
+	public static IFile getECoreModel(IProject project, IPath genmodelPath) {
+
 		return getBundleRelativeFile(project, genmodelPath);
 	}
 
 	/**
-	 * Returns the resource in the specified project corresponding to its
-	 * <code>plugin.xml</code>file.
+	 * Returns the resource in the specified project corresponding to its <code>plugin.xml</code>file.
 	 * 
 	 * @param project
 	 *            project

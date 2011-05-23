@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Copyright (c) 2011 Sean Muir
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Sean Muir (JKM Software) - initial API and implementation
+ *     
+ * $Id$
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.wizards;
 
 import java.util.ArrayList;
@@ -17,8 +29,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.uml2.uml.Type;
-
-
 
 public class NewCDAModelPage extends WizardPage {
 
@@ -48,7 +58,7 @@ public class NewCDAModelPage extends WizardPage {
 
 		return templateID.getText();
 	}
-	
+
 	public String getTemplateAssigningAuthority() {
 
 		return assigningAuthority.getText();
@@ -58,53 +68,52 @@ public class NewCDAModelPage extends WizardPage {
 		return combo.getText();
 	}
 
-	
+	@Override
 	public boolean canFlipToNextPage() {
 		return modelName.getText().length() > 0;
 	}
 
-	protected NewCDAModelPage(String pageName, String title, ImageDescriptor titleImage, HashMap<String, Type> cdaDocuments) {
+	protected NewCDAModelPage(String pageName, String title, ImageDescriptor titleImage,
+			HashMap<String, Type> cdaDocuments) {
 		super(pageName, title, titleImage);
 
 		this.cdaDocuments = cdaDocuments;
 
 	}
-	
-	
-	
+
 	Text basePackage;
 
 	Text nsPrefix;
-	
+
 	Text nsURI;
-	
+
 	Text packageName;
-	
+
 	Text prefix;
-	
+
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets.Composite)
 	 */
 
-	
 	public void createControl(Composite parent) {
 
 		Composite composite = new Composite(parent, SWT.NONE);
-		
+
 		GridLayout layout = new GridLayout();
-		
+
 		layout.numColumns = 2;
-		
+
 		composite.setLayout(layout);
-		
+
 		setControl(composite);
-		
+
 		new Label(composite, SWT.NONE).setText("Implementation Guide Namespace ");
-		
+
 		modelName = new Text(composite, SWT.NONE);
 		modelName.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
-		
+
 		new Label(composite, SWT.NONE).setText("Document ");
 
 		cdaDocumentName = new Text(composite, SWT.NONE);
@@ -118,18 +127,11 @@ public class NewCDAModelPage extends WizardPage {
 
 		templateID = new Text(composite, SWT.NONE);
 		templateID.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
-		
+
 		new Label(composite, SWT.NONE).setText("Assigning Authority (Optional) ");
 
 		assigningAuthority = new Text(composite, SWT.NONE);
-		assigningAuthority .setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
-		
-		
-		
-		
-		
-		
-		
+		assigningAuthority.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
 
 		int current = 0;
 
@@ -149,67 +151,58 @@ public class NewCDAModelPage extends WizardPage {
 
 		ModifyListener listener = new ModifyListener() {
 
-			
 			public void modifyText(ModifyEvent e) {
-				
+
 				basePackage.setText("org.openhealthtools.mdht.cda");
 
 				packageName.setText(cdaDocumentName.getText().toLowerCase());
 
 				nsPrefix.setText(modelName.getText().toLowerCase());
-				
+
 				prefix.setText(modelName.getText().toUpperCase());
-				
-				nsURI.setText("http://www.openhealthtools.org/mdht/uml/cda/"+modelName.getText().toLowerCase());
+
+				nsURI.setText("http://www.openhealthtools.org/mdht/uml/cda/" + modelName.getText().toLowerCase());
 
 				setPageComplete(modelName.getText().length() > 0);
 			}
 
 		};
 		modelName.addModifyListener(listener);
-		
+
 		cdaDocumentName.addModifyListener(listener);
-				
+
 		new Label(composite, SWT.NONE).setText("Document Base Package");
 
-		basePackage = new Text(composite, SWT.READ_ONLY|SWT.COLOR_GRAY);
-		
+		basePackage = new Text(composite, SWT.READ_ONLY | SWT.COLOR_GRAY);
+
 		basePackage.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
-		
-		//"http://www.openhealthtools.org/mdht/uml/cda/"
+
+		// "http://www.openhealthtools.org/mdht/uml/cda/"
 
 		new Label(composite, SWT.NONE).setText("Namespace URI");
-		nsURI= new Text(composite, SWT.READ_ONLY|SWT.COLOR_GRAY);
-		
-		//GridData.HORIZONTAL_ALIGN_FILL
+		nsURI = new Text(composite, SWT.READ_ONLY | SWT.COLOR_GRAY);
+
+		// GridData.HORIZONTAL_ALIGN_FILL
 		GridData gd = new GridData();
-		gd.widthHint=400;
-		
+		gd.widthHint = 400;
+
 		nsURI.setLayoutData(gd);
 
-		
-		
 		new Label(composite, SWT.NONE).setText("Document Namespace Prefix ");
 
-		nsPrefix = new Text(composite, SWT.READ_ONLY|SWT.COLOR_GRAY);
-		nsPrefix .setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
+		nsPrefix = new Text(composite, SWT.READ_ONLY | SWT.COLOR_GRAY);
+		nsPrefix.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
 
 		new Label(composite, SWT.NONE).setText("Package Name ");
 
-		packageName = new Text(composite, SWT.READ_ONLY|SWT.COLOR_GRAY);
-	
-		packageName .setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
+		packageName = new Text(composite, SWT.READ_ONLY | SWT.COLOR_GRAY);
+
+		packageName.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
 
 		new Label(composite, SWT.NONE).setText("Prefix ");
 
-		prefix = new Text(composite, SWT.READ_ONLY|SWT.COLOR_GRAY);
-		prefix .setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
-		
-		
-		
-		
-		
-		
+		prefix = new Text(composite, SWT.READ_ONLY | SWT.COLOR_GRAY);
+		prefix.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
 
 	}
 
