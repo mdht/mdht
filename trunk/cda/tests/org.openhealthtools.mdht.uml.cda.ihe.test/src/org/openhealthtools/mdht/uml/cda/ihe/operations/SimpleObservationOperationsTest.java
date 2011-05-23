@@ -19,13 +19,16 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.operations.ClinicalStatementOperations;
 import org.openhealthtools.mdht.uml.cda.operations.ObservationOperationsTest;
 
 /**
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public abstract class SimpleObservationOperationsTest extends ObservationOperationsTest {
+public  class SimpleObservationOperationsTest extends ObservationOperationsTest {
+	
+	
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 

@@ -21,9 +21,11 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDValidationTest;
 import org.openhealthtools.mdht.uml.cda.ihe.AssessmentAndPlanSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.operations.SectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
 
 /**
@@ -45,6 +47,12 @@ public class AssessmentAndPlanSectionOperationsTest extends SectionOperationsTes
 	@Test
 	public final void testConstructor() {
 		AssessmentAndPlanSectionOperations obj = new AssessmentAndPlanSectionOperations();
+		
+		
+		SectionOperations.hasActTemplate( (Section)  getObjectToTest(), "1.2.3.4");
+		
+		SectionOperations.hasActTemplate( (Section)  getObjectToTest(), "1.2.3.4");
+		
 		assertTrue(true);
 	} // testConstructor
 
