@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Copyright (c) 2011 Sean Muir
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Sean Muir (JKM Software) - initial API and implementation
+ *     
+ * $Id$
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.wizards;
 
 import java.io.ByteArrayInputStream;
@@ -17,7 +29,6 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.pde.internal.ui.wizards.plugin.NewProjectCreationOperation;
 import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 
-@SuppressWarnings("restriction")
 public class NewC32ProjectWizard extends CDAWizard {
 
 	WizardNewProjectCreationPage newProjectPage;
@@ -26,6 +37,7 @@ public class NewC32ProjectWizard extends CDAWizard {
 
 	NewC32PageTwo c32Page2;
 
+	@Override
 	public void addPages() {
 
 		loadCDAModels();
@@ -45,13 +57,14 @@ public class NewC32ProjectWizard extends CDAWizard {
 		c32Page2 = new NewC32PageTwo("MDHT CDA Model", "Open Health Tools ", null, cdaDocuments);
 
 		addPage(c32Page1);
-		
+
 		addPage(c32Page2);
-		
+
 		addPage(newProjectPage);
 
 	}
 
+	@Override
 	public boolean performFinish() {
 
 		name = newProjectPage.getProjectName();
@@ -75,12 +88,13 @@ public class NewC32ProjectWizard extends CDAWizard {
 		try {
 
 			// Use pde internal functionality to create plugin
-			getContainer().run(false, true, new NewProjectCreationOperation(fPluginData, fProjectProvider, contentWizard));
+			getContainer().run(
+				false, true, new NewProjectCreationOperation(fPluginData, fProjectProvider, contentWizard));
 
 			createManifest(project);
 
 			createCDABuilder(project);
-	
+
 		} catch (InvocationTargetException e) {
 
 			e.printStackTrace();
@@ -103,8 +117,12 @@ public class NewC32ProjectWizard extends CDAWizard {
 
 		String[] s = "hitsp::PatientSummary".split("::");
 
-		String packageName = "org.openhealthtools.mdht.cda" + (s[0].equals("cda") ? "." : "." + s[0] + ".") + "examples.builder";
-		String packageFolder = "org/openhealthtools/mdht/cda" + (s[0].equals("cda") ? "/" : "/" + s[0] + "/") + "examples/builder";
+		String packageName = "org.openhealthtools.mdht.cda" + (s[0].equals("cda")
+				? "."
+				: "." + s[0] + ".") + "examples.builder";
+		String packageFolder = "org/openhealthtools/mdht/cda" + (s[0].equals("cda")
+				? "/"
+				: "/" + s[0] + "/") + "examples/builder";
 		String packageSrcFolder = "src/" + packageFolder;
 
 		String[] s1 = packageFolder.split("/");
@@ -207,7 +225,6 @@ public class NewC32ProjectWizard extends CDAWizard {
 
 	}
 
-
 	void createReadME(IProject project) {
 
 	}
@@ -218,7 +235,9 @@ public class NewC32ProjectWizard extends CDAWizard {
 
 			String[] s = "hitsp::PatientSummary".split("::");
 
-			String symbolicName = "org.openhealthtools.mdht.cda." + (s[0].equals("cda") ? "" : s[0]) + ".examples.c32."+name;
+			String symbolicName = "org.openhealthtools.mdht.cda." + (s[0].equals("cda")
+					? ""
+					: s[0]) + ".examples.c32." + name;
 
 			IFile manifest = getManifest(project);
 
