@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -38,9 +36,8 @@ public class ReferenceOperationsTest extends CDAValidationTest {
 	 * reference is always set, and the others are set individually in sequence
 	 * (and then unSet) to test that they invalidate the test.
 	 */
-	public static final Set<String> MUTUALLY_EXCLUSIVE_EREFERENCE_NAMES = new HashSet<String>(
-			Arrays.asList(/* "externalAct", */"externalDocument",
-					"externalObservation", "externalProcedure"));
+	public static final Set<String> MUTUALLY_EXCLUSIVE_EREFERENCE_NAMES = new HashSet<String>(Arrays.asList(
+		/* "externalAct", */"externalDocument", "externalObservation", "externalProcedure"));
 
 	/**
 	 * Not a real test, needed for EMMA to report 100% method coverage.
@@ -51,25 +48,21 @@ public class ReferenceOperationsTest extends CDAValidationTest {
 		ReferenceOperations obj = new ReferenceOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// MutualExclusionValidationTestCase
 	// -------------------------------------------------------------
-	new MutualExclusionValidationTestCase("Entry",
-			MUTUALLY_EXCLUSIVE_EREFERENCE_NAMES) {
+	new MutualExclusionValidationTestCase("Entry", MUTUALLY_EXCLUSIVE_EREFERENCE_NAMES) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
-			return ReferenceOperations.validateExternalActChoice(
-					(Reference) objectToTest, diagnostician, map);
+			return ReferenceOperations.validateExternalActChoice((Reference) objectToTest, diagnostician, map);
 		}
 
 		@Override
 		protected void initializeobjectToTest(final EObject objectToTest) {
-			((Reference) objectToTest).setExternalAct(CDAFactory.eINSTANCE
-					.createExternalAct());
+			((Reference) objectToTest).setExternalAct(CDAFactory.eINSTANCE.createExternalAct());
 		}
 	} };
 
@@ -82,7 +75,7 @@ public class ReferenceOperationsTest extends CDAValidationTest {
 		return retValue;
 	}
 
-	//	
+	//
 
 	/**
 	 * @return the EObject instance to be validated

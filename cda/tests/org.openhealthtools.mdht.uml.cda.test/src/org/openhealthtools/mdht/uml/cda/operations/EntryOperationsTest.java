@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -36,11 +34,9 @@ public class EntryOperationsTest extends CDAValidationTest {
 	new CDAMutualExclusionValidationTestCase("Entry") {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
-			return EntryOperations.validateClinicalStatement(
-					(Entry) objectToTest, diagnostician, map);
+			return EntryOperations.validateClinicalStatement((Entry) objectToTest, diagnostician, map);
 		}
 
 		@Override
@@ -67,7 +63,7 @@ public class EntryOperationsTest extends CDAValidationTest {
 		EntryOperations obj = new EntryOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	/**
 	 * @return the EObject instance to be validated
 	 */

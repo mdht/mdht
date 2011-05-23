@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.hl7.rim.operations;
 
 import static org.junit.Assert.fail;
@@ -25,8 +23,7 @@ import org.openhealthtools.mdht.uml.hl7.rim.Participation;
  * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("unused")
-public abstract class ActOperationsTest extends
-		InfrastructureRootOperationsTest {
+public abstract class ActOperationsTest extends InfrastructureRootOperationsTest {
 
 	/**
 	 * Test method for
@@ -35,8 +32,8 @@ public abstract class ActOperationsTest extends
 	 */
 	@Test
 	public void testGetClassCode() {
-		Act act = (Act)getObjectToTest();
-		Enumerator obj =  act.getClassCode();
+		Act act = (Act) getObjectToTest();
+		Enumerator obj = act.getClassCode();
 		fail("Not yet implemented"); //$NON-NLS-1$
 	}
 
@@ -47,8 +44,8 @@ public abstract class ActOperationsTest extends
 	 */
 	@Test
 	public void testGetMoodCode() {
-		Act act = (Act)getObjectToTest();
-		Enumerator obj =  act.getMoodCode();
+		Act act = (Act) getObjectToTest();
+		Enumerator obj = act.getMoodCode();
 		fail("Not yet implemented"); //$NON-NLS-1$
 	}
 
@@ -59,8 +56,8 @@ public abstract class ActOperationsTest extends
 	 */
 	@Test
 	public void testGetNegationInd() {
-		Act act = (Act)getObjectToTest();
-		Boolean obj =  act.getNegationInd();
+		Act act = (Act) getObjectToTest();
+		Boolean obj = act.getNegationInd();
 		fail("Not yet implemented"); //$NON-NLS-1$
 	}
 
@@ -71,8 +68,8 @@ public abstract class ActOperationsTest extends
 	 */
 	@Test
 	public void testGetParticipations() {
-		Act act = (Act)getObjectToTest();
-		EList<Participation> obj =  act.getParticipations();
+		Act act = (Act) getObjectToTest();
+		EList<Participation> obj = act.getParticipations();
 		fail("Not yet implemented"); //$NON-NLS-1$
 	}
 
@@ -83,8 +80,8 @@ public abstract class ActOperationsTest extends
 	 */
 	@Test
 	public void testGetOutboundRelationships() {
-		Act act = (Act)getObjectToTest();
-		EList<ActRelationship> obj =  act.getOutboundRelationships();
+		Act act = (Act) getObjectToTest();
+		EList<ActRelationship> obj = act.getOutboundRelationships();
 		fail("Not yet implemented"); //$NON-NLS-1$
 	}
 
@@ -95,8 +92,8 @@ public abstract class ActOperationsTest extends
 	 */
 	@Test
 	public void testGetInboundRelationships() {
-		Act act = (Act)getObjectToTest();
-		EList<ActRelationship> obj =  act.getInboundRelationships();
+		Act act = (Act) getObjectToTest();
+		EList<ActRelationship> obj = act.getInboundRelationships();
 		fail("Not yet implemented"); //$NON-NLS-1$
 	}
 

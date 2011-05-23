@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.hitsp.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -32,46 +30,46 @@ import org.openhealthtools.mdht.uml.cda.ihe.operations.ProblemEntryOperationsTes
 @SuppressWarnings("nls")
 public class ConditionEntryOperationsTest extends ProblemEntryOperationsTest {
 
-	@SuppressWarnings("hiding")
 	protected static final String CODE = "whatever";
-	@SuppressWarnings("hiding")
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.3.88.12.3221.7.2";
-	//private static final String VALUE_CODE_SYSTEM = "2.16.840.1.113883.3.88.12.3221.7.4";
+
+	// private static final String VALUE_CODE_SYSTEM = "2.16.840.1.113883.3.88.12.3221.7.4";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 
-//		// EffectiveTime
-//		// -------------------------------------------------------------
-//		new EffectiveTimeCCDValidationTest() {
-//			@Override
-//			protected boolean validate(final EObject objectToTest,
-//					final BasicDiagnostic diagnostician,
-//					final Map<Object, Object> map) {
-//				return ConditionEntryOperations
-//				.validateConditionEntryEffectiveTime(
-//						(ConditionEntry) objectToTest,
-//						diagnostician, map);
-//			}
-//		},
-//
-//		// Condition Entry Text
-//		//-------------------------------------------------------------
-//		new CCDValidationTestCase("text") {
-//			@Override
-//			protected boolean validate(final EObject objectToTest,
-//					final BasicDiagnostic diagnostician,
-//					final Map<Object, Object> map) {
-//				return ConditionEntryOperations.
-//				validateConditionEntryText(
-//						(ConditionEntry) objectToTest,
-//						diagnostician, map);
-//			}
-//
-//			@Override
-//			protected Object getValueToSet() {
-//				return DatatypesFactory.eINSTANCE.createED("some text");
-//			}
-//		}
+	// // EffectiveTime
+	// // -------------------------------------------------------------
+	// new EffectiveTimeCCDValidationTest() {
+	// @Override
+	// protected boolean validate(final EObject objectToTest,
+	// final BasicDiagnostic diagnostician,
+	// final Map<Object, Object> map) {
+	// return ConditionEntryOperations
+	// .validateConditionEntryEffectiveTime(
+	// (ConditionEntry) objectToTest,
+	// diagnostician, map);
+	// }
+	// },
+	//
+	// // Condition Entry Text
+	// //-------------------------------------------------------------
+	// new CCDValidationTestCase("text") {
+	// @Override
+	// protected boolean validate(final EObject objectToTest,
+	// final BasicDiagnostic diagnostician,
+	// final Map<Object, Object> map) {
+	// return ConditionEntryOperations.
+	// validateConditionEntryText(
+	// (ConditionEntry) objectToTest,
+	// diagnostician, map);
+	// }
+	//
+	// @Override
+	// protected Object getValueToSet() {
+	// return DatatypesFactory.eINSTANCE.createED("some text");
+	// }
+	// }
 
 	}; // TEST_CASE_ARRAY
 
@@ -92,7 +90,7 @@ public class ConditionEntryOperationsTest extends ProblemEntryOperationsTest {
 		final ConditionEntry conditionEntry = HITSPFactory.eINSTANCE.createConditionEntry();
 		section.addObservation(conditionEntry);
 		return conditionEntry;
-		//		return HITSPFactory.eINSTANCE.createConditionEntry();
+		// return HITSPFactory.eINSTANCE.createConditionEntry();
 	}
 
 	@Override

@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -43,7 +41,7 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 
 	@SuppressWarnings("nls")
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Act
+			// Act
 			// -------------------------------------------------------------
 			new CDAAddTestCase("Act") {
 
@@ -53,10 +51,8 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addAct((Organizer) objectToTest,
-							(Act) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addAct((Organizer) objectToTest, (Act) eObjectToAdd);
 				}
 
 				@Override
@@ -75,10 +71,8 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addEncounter((Organizer) objectToTest,
-							(Encounter) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addEncounter((Organizer) objectToTest, (Encounter) eObjectToAdd);
 				}
 
 				@Override
@@ -97,11 +91,8 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addObservation(
-							(Organizer) objectToTest,
-							(Observation) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addObservation((Organizer) objectToTest, (Observation) eObjectToAdd);
 
 				}
 
@@ -121,18 +112,14 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addObservationMedia(
-							(Organizer) objectToTest,
-							(ObservationMedia) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addObservationMedia((Organizer) objectToTest, (ObservationMedia) eObjectToAdd);
 
 				}
 
 				@Override
 				protected EStructuralFeature getFeature() {
-					return CDAPackage.eINSTANCE
-							.getComponent4_ObservationMedia();
+					return CDAPackage.eINSTANCE.getComponent4_ObservationMedia();
 				}
 			},
 
@@ -146,10 +133,8 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addOrganizer((Organizer) objectToTest,
-							(Organizer) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addOrganizer((Organizer) objectToTest, (Organizer) eObjectToAdd);
 				}
 
 				@Override
@@ -168,10 +153,8 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addProcedure((Organizer) objectToTest,
-							(Procedure) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addProcedure((Organizer) objectToTest, (Procedure) eObjectToAdd);
 				}
 
 				@Override
@@ -190,17 +173,13 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addRegionOfInterest(
-							(Organizer) objectToTest,
-							(RegionOfInterest) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addRegionOfInterest((Organizer) objectToTest, (RegionOfInterest) eObjectToAdd);
 				}
 
 				@Override
 				protected EStructuralFeature getFeature() {
-					return CDAPackage.eINSTANCE
-							.getComponent4_RegionOfInterest();
+					return CDAPackage.eINSTANCE.getComponent4_RegionOfInterest();
 				}
 			},
 
@@ -214,17 +193,14 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
 					OrganizerOperations.addSubstanceAdministration(
-							(Organizer) objectToTest,
-							(SubstanceAdministration) eObjectToAdd);
+						(Organizer) objectToTest, (SubstanceAdministration) eObjectToAdd);
 				}
 
 				@Override
 				protected EStructuralFeature getFeature() {
-					return CDAPackage.eINSTANCE
-							.getComponent4_SubstanceAdministration();
+					return CDAPackage.eINSTANCE.getComponent4_SubstanceAdministration();
 				}
 			},
 
@@ -238,10 +214,8 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addSupply((Organizer) objectToTest,
-							(Supply) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addSupply((Organizer) objectToTest, (Supply) eObjectToAdd);
 				}
 
 				@Override
@@ -260,16 +234,13 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addAct((Organizer) objectToTest,
-							(Act) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addAct((Organizer) objectToTest, (Act) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return OrganizerOperations
-							.getActs((Organizer) objectToTest);
+					return OrganizerOperations.getActs((Organizer) objectToTest);
 				}
 			},
 
@@ -283,16 +254,13 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addEncounter((Organizer) objectToTest,
-							(Encounter) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addEncounter((Organizer) objectToTest, (Encounter) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return OrganizerOperations
-							.getEncounters((Organizer) objectToTest);
+					return OrganizerOperations.getEncounters((Organizer) objectToTest);
 				}
 
 			},
@@ -307,17 +275,13 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addObservation(
-							(Organizer) objectToTest,
-							(Observation) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addObservation((Organizer) objectToTest, (Observation) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return OrganizerOperations
-							.getObservations((Organizer) objectToTest);
+					return OrganizerOperations.getObservations((Organizer) objectToTest);
 				}
 			},
 
@@ -331,17 +295,13 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addObservationMedia(
-							(Organizer) objectToTest,
-							(ObservationMedia) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addObservationMedia((Organizer) objectToTest, (ObservationMedia) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return OrganizerOperations
-							.getObservationMedia((Organizer) objectToTest);
+					return OrganizerOperations.getObservationMedia((Organizer) objectToTest);
 				}
 			},
 
@@ -355,16 +315,13 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addOrganizer((Organizer) objectToTest,
-							(Organizer) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addOrganizer((Organizer) objectToTest, (Organizer) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return OrganizerOperations
-							.getOrganizers((Organizer) objectToTest);
+					return OrganizerOperations.getOrganizers((Organizer) objectToTest);
 				}
 			},
 
@@ -378,16 +335,13 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addProcedure((Organizer) objectToTest,
-							(Procedure) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addProcedure((Organizer) objectToTest, (Procedure) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return OrganizerOperations
-							.getProcedures((Organizer) objectToTest);
+					return OrganizerOperations.getProcedures((Organizer) objectToTest);
 				}
 			},
 
@@ -401,17 +355,13 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addRegionOfInterest(
-							(Organizer) objectToTest,
-							(RegionOfInterest) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addRegionOfInterest((Organizer) objectToTest, (RegionOfInterest) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return OrganizerOperations
-							.getRegionsOfInterest((Organizer) objectToTest);
+					return OrganizerOperations.getRegionsOfInterest((Organizer) objectToTest);
 				}
 			},
 
@@ -425,17 +375,14 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
 					OrganizerOperations.addSubstanceAdministration(
-							(Organizer) objectToTest,
-							(SubstanceAdministration) eObjectToAdd);
+						(Organizer) objectToTest, (SubstanceAdministration) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return OrganizerOperations
-							.getSubstanceAdministrations((Organizer) objectToTest);
+					return OrganizerOperations.getSubstanceAdministrations((Organizer) objectToTest);
 				}
 			},
 
@@ -449,16 +396,13 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addSupply((Organizer) objectToTest,
-							(Supply) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addSupply((Organizer) objectToTest, (Supply) eObjectToAdd);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return OrganizerOperations
-							.getSupplies((Organizer) objectToTest);
+					return OrganizerOperations.getSupplies((Organizer) objectToTest);
 				}
 			},
 
@@ -472,25 +416,21 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
 					// The Add is reversed, the objectToTest is added to the
 					// clinical document
-					final Section section = CDAFactory.eINSTANCE
-							.createSection();
+					final Section section = CDAFactory.eINSTANCE.createSection();
 					section.addOrganizer((Organizer) objectToTest);
 					((ClinicalDocument) eObjectToAdd).addSection(section);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return OrganizerOperations
-							.getClinicalDocument((Organizer) objectToTest);
+					return ClinicalStatementOperations.getClinicalDocument((Organizer) objectToTest);
 				}
 
 				@Override
-				protected boolean isGetGood(final EObject eObjectToAdd,
-						final Object value) {
+				protected boolean isGetGood(final EObject eObjectToAdd, final Object value) {
 					return eObjectToAdd.equals(value);
 				}
 			},
@@ -505,23 +445,19 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
 					// The Add is reversed, the objectToTest is added to the
 					// clinical document
-					((Section) eObjectToAdd)
-							.addOrganizer((Organizer) objectToTest);
+					((Section) eObjectToAdd).addOrganizer((Organizer) objectToTest);
 				}
 
 				@Override
 				protected Object doGet(final EObject objectToTest) {
-					return OrganizerOperations
-							.getSection((Organizer) objectToTest);
+					return ClinicalStatementOperations.getSection((Organizer) objectToTest);
 				}
 
 				@Override
-				protected boolean isGetGood(final EObject eObjectToAdd,
-						final Object value) {
+				protected boolean isGetGood(final EObject eObjectToAdd, final Object value) {
 					return eObjectToAdd.equals(value);
 				}
 			},
@@ -536,22 +472,17 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addAct((Organizer) objectToTest,
-							(Act) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addAct((Organizer) objectToTest, (Act) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject objectToTest,
-						final String templateId) {
-					return OrganizerOperations.hasActTemplate(
-							(Organizer) objectToTest, templateId);
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasActTemplate((Organizer) objectToTest, templateId);
 				}
 
 				@Override
-				protected void doAddTemplateId(final EObject eObjectToAdd,
-						final II theIi) {
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
 					((Act) eObjectToAdd).getTemplateIds().add(theIi);
 				}
 			},
@@ -566,22 +497,17 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addEncounter((Organizer) objectToTest,
-							(Encounter) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addEncounter((Organizer) objectToTest, (Encounter) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject objectToTest,
-						final String templateId) {
-					return OrganizerOperations.hasEncounterTemplate(
-							(Organizer) objectToTest, templateId);
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasEncounterTemplate((Organizer) objectToTest, templateId);
 				}
 
 				@Override
-				protected void doAddTemplateId(final EObject eObjectToAdd,
-						final II theIi) {
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
 					((Encounter) eObjectToAdd).getTemplateIds().add(theIi);
 				}
 			},
@@ -591,15 +517,12 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 			new CDAHasTestCase("Code") {
 
 				@Override
-				protected void doTest(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					((Organizer) objectToTest).setCode(THE_CODE);
 					final boolean hasIsGood = doHas(objectToTest, TEMPLATE_ID);
-					assertTrue("Has \"" + getTestTargetDescription()
-							+ "\" failed for \""
-							+ objectToTest.eClass().getName() + "\"",
-							hasIsGood);
+					assertTrue("Has \"" + getTestTargetDescription() + "\" failed for \"" +
+							objectToTest.eClass().getName() + "\"", hasIsGood);
 				}
 
 				@Override
@@ -608,23 +531,18 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addEncounter((Organizer) objectToTest,
-							(Encounter) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addEncounter((Organizer) objectToTest, (Encounter) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject objectToTest,
-						final String templateId) {
-					return OrganizerOperations.hasCode(
-							(Organizer) objectToTest, CODE, CODE_SYSTEM,
-							CODE_SYSTEM_NAME);
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasCode(
+						(Organizer) objectToTest, CODE, CODE_SYSTEM, CODE_SYSTEM_NAME);
 				}
 
 				@Override
-				protected void doAddTemplateId(final EObject eObjectToAdd,
-						final II theIi) {
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
 					((Encounter) eObjectToAdd).getTemplateIds().add(theIi);
 				}
 			},
@@ -639,23 +557,17 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addObservation(
-							(Organizer) objectToTest,
-							(Observation) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addObservation((Organizer) objectToTest, (Observation) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject objectToTest,
-						final String templateId) {
-					return OrganizerOperations.hasObservationTemplate(
-							(Organizer) objectToTest, templateId);
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasObservationTemplate((Organizer) objectToTest, templateId);
 				}
 
 				@Override
-				protected void doAddTemplateId(final EObject eObjectToAdd,
-						final II theIi) {
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
 					((Observation) eObjectToAdd).getTemplateIds().add(theIi);
 				}
 			},
@@ -670,26 +582,19 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addObservationMedia(
-							(Organizer) objectToTest,
-							(ObservationMedia) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addObservationMedia((Organizer) objectToTest, (ObservationMedia) eObjectToAdd);
 
 				}
 
 				@Override
-				protected boolean doHas(final EObject objectToTest,
-						final String templateId) {
-					return OrganizerOperations.hasObservationMediaTemplate(
-							(Organizer) objectToTest, templateId);
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasObservationMediaTemplate((Organizer) objectToTest, templateId);
 				}
 
 				@Override
-				protected void doAddTemplateId(final EObject eObjectToAdd,
-						final II theIi) {
-					((ObservationMedia) eObjectToAdd).getTemplateIds().add(
-							theIi);
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
+					((ObservationMedia) eObjectToAdd).getTemplateIds().add(theIi);
 				}
 			},
 
@@ -703,22 +608,17 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addOrganizer((Organizer) objectToTest,
-							(Organizer) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addOrganizer((Organizer) objectToTest, (Organizer) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject objectToTest,
-						final String templateId) {
-					return OrganizerOperations.hasOrganizerTemplate(
-							(Organizer) objectToTest, templateId);
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasOrganizerTemplate((Organizer) objectToTest, templateId);
 				}
 
 				@Override
-				protected void doAddTemplateId(final EObject eObjectToAdd,
-						final II theIi) {
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
 					((Organizer) eObjectToAdd).getTemplateIds().add(theIi);
 				}
 			},
@@ -733,22 +633,17 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addProcedure((Organizer) objectToTest,
-							(Procedure) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addProcedure((Organizer) objectToTest, (Procedure) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject objectToTest,
-						final String templateId) {
-					return OrganizerOperations.hasProcedureTemplate(
-							(Organizer) objectToTest, templateId);
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasProcedureTemplate((Organizer) objectToTest, templateId);
 				}
 
 				@Override
-				protected void doAddTemplateId(final EObject eObjectToAdd,
-						final II theIi) {
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
 					((Procedure) eObjectToAdd).getTemplateIds().add(theIi);
 				}
 			},
@@ -763,25 +658,18 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addRegionOfInterest(
-							(Organizer) objectToTest,
-							(RegionOfInterest) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addRegionOfInterest((Organizer) objectToTest, (RegionOfInterest) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject objectToTest,
-						final String templateId) {
-					return OrganizerOperations.hasRegionOfInterestTemplate(
-							(Organizer) objectToTest, templateId);
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasRegionOfInterestTemplate((Organizer) objectToTest, templateId);
 				}
 
 				@Override
-				protected void doAddTemplateId(final EObject eObjectToAdd,
-						final II theIi) {
-					((RegionOfInterest) eObjectToAdd).getTemplateIds().add(
-							theIi);
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
+					((RegionOfInterest) eObjectToAdd).getTemplateIds().add(theIi);
 				}
 
 			},
@@ -796,26 +684,20 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
 					OrganizerOperations.addSubstanceAdministration(
-							(Organizer) objectToTest,
-							(SubstanceAdministration) eObjectToAdd);
+						(Organizer) objectToTest, (SubstanceAdministration) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject objectToTest,
-						final String templateId) {
-					return OrganizerOperations
-							.hasSubstanceAdministrationTemplate(
-									(Organizer) objectToTest, templateId);
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasSubstanceAdministrationTemplate(
+						(Organizer) objectToTest, templateId);
 				}
 
 				@Override
-				protected void doAddTemplateId(final EObject eObjectToAdd,
-						final II theIi) {
-					((SubstanceAdministration) eObjectToAdd).getTemplateIds()
-							.add(theIi);
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
+					((SubstanceAdministration) eObjectToAdd).getTemplateIds().add(theIi);
 				}
 			},
 
@@ -829,22 +711,17 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
-					OrganizerOperations.addSupply((Organizer) objectToTest,
-							(Supply) eObjectToAdd);
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					OrganizerOperations.addSupply((Organizer) objectToTest, (Supply) eObjectToAdd);
 				}
 
 				@Override
-				protected boolean doHas(final EObject objectToTest,
-						final String templateId) {
-					return OrganizerOperations.hasSupplyTemplate(
-							(Organizer) objectToTest, templateId);
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasSupplyTemplate((Organizer) objectToTest, templateId);
 				}
 
 				@Override
-				protected void doAddTemplateId(final EObject eObjectToAdd,
-						final II theIi) {
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
 					((Supply) eObjectToAdd).getTemplateIds().add(theIi);
 				}
 			},
@@ -854,15 +731,12 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 			new CDAHasTestCase("TemplateID") {
 
 				@Override
-				protected void doTest(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					((Organizer) objectToTest).getTemplateIds().add(THE_II);
 					final boolean hasIsGood = doHas(objectToTest, TEMPLATE_ID);
-					assertTrue("Has \"" + getTestTargetDescription()
-							+ "\" failed for \""
-							+ objectToTest.eClass().getName() + "\"",
-							hasIsGood);
+					assertTrue("Has \"" + getTestTargetDescription() + "\" failed for \"" +
+							objectToTest.eClass().getName() + "\"", hasIsGood);
 				}
 
 				@Override
@@ -871,21 +745,17 @@ public class OrganizerOperationsTest extends ClinicalStatementOperationsTest {
 				}
 
 				@Override
-				protected void doAdd(final EObject objectToTest,
-						final EObject eObjectToAdd) {
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
 					// Nothing
 				}
 
 				@Override
-				protected boolean doHas(final EObject objectToTest,
-						final String templateId) {
-					return OrganizerOperations.hasTemplateId(
-							(Organizer) objectToTest, templateId);
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasTemplateId((Organizer) objectToTest, templateId);
 				}
 
 				@Override
-				protected void doAddTemplateId(final EObject eObjectToAdd,
-						final II theIi) {
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
 					// Nothing
 				}
 			} };
