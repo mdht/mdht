@@ -68,7 +68,7 @@ public class InvalidOCLConstraint extends AbstractModelConstraint implements CDA
 
 						OCL.Helper helper = EOCL_ENV.createOCLHelper();
 
-						// TODO fix ugly loop 
+						// TODO fix ugly loop
 						for (org.eclipse.uml2.uml.Package p : constraint.allOwningPackages()) {
 
 							if (p.getAppliedStereotype("CDA::CodegenSupport") != null) {

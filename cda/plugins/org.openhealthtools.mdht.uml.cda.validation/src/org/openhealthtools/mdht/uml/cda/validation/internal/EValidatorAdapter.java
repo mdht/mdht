@@ -29,125 +29,119 @@ import org.eclipse.emf.validation.model.IConstraintStatus;
 import org.eclipse.emf.validation.service.IBatchValidator;
 import org.eclipse.emf.validation.service.ModelValidationService;
 
-
 /**
- * An adapter that plugs the EMF Model Validation Service API into the
- * {@link org.eclipse.emf.ecore.EValidator} API.
+ * An adapter that plugs the EMF Model Validation Service API into the {@link org.eclipse.emf.ecore.EValidator} API.
  */
-public class EValidatorAdapter
-	extends EObjectValidator {
+public class EValidatorAdapter extends EObjectValidator {
 
 	/**
 	 * Model Validation Service interface for batch validation of EMF elements.
 	 */
 	private final IBatchValidator batchValidator;
-	
+
 	/**
 	 * Initializes me.
 	 */
 	public EValidatorAdapter() {
 		super();
-		
-		batchValidator =
-			(IBatchValidator) ModelValidationService.getInstance().newValidator(
-				EvaluationMode.BATCH);
+
+		batchValidator = (IBatchValidator) ModelValidationService.getInstance().newValidator(EvaluationMode.BATCH);
 		batchValidator.setIncludeLiveConstraints(true);
 		batchValidator.setReportSuccesses(false);
 	}
 
-	
-	/* (non-Javadoc)
-	 * @see org.eclipse.emf.ecore.util.EObjectValidator#validate(org.eclipse.emf.ecore.EObject, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	/*
+	 * (non-Javadoc)
 	 * 
-	 * Map context is defined in EObjectValidator; suppress type safety 
+	 * @see org.eclipse.emf.ecore.util.EObjectValidator#validate(org.eclipse.emf.ecore.EObject, org.eclipse.emf.common.util.DiagnosticChain,
+	 * java.util.Map)
+	 * 
+	 * Map context is defined in EObjectValidator; suppress type safety
 	 */
-	@SuppressWarnings("unchecked")
-	public boolean validate(EObject eObject, DiagnosticChain diagnostics,
-			Map context) {
+	@Override
+	public boolean validate(EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate(eObject.eClass(), eObject, diagnostics, context);
 	}
 
 	/**
 	 * Implements validation by delegation to the EMF validation framework.
 	 * 
-	 * Map context is defined in EObjectValidator; suppress type safety 
+	 * Map context is defined in EObjectValidator; suppress type safety
 	 */
-	@SuppressWarnings("unchecked")
-	public boolean validate(EClass eClass, EObject eObject,
-			DiagnosticChain diagnostics, Map context) {
+	@Override
+	public boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// first, do whatever the basic EcoreValidator does
 		super.validate(eClass, eObject, diagnostics, context);
-		
+
 		IStatus status = Status.OK_STATUS;
-		
+
 		// no point in validating if we can't report results
 		if (diagnostics != null) {
 			// if EMF Mode Validation Service already covered the sub-tree,
-			//    which it does for efficient computation and error reporting,
-			//    then don't repeat (the Diagnostician does the recursion
-			//    externally).  If there is no context map, then we can't
-			//    help it
+			// which it does for efficient computation and error reporting,
+			// then don't repeat (the Diagnostician does the recursion
+			// externally). If there is no context map, then we can't
+			// help it
 			if (!hasProcessed(eObject, context)) {
-				status = batchValidator.validate(
-					eObject,
-					new NullProgressMonitor());
-				
+				status = batchValidator.validate(eObject, new NullProgressMonitor());
+
 				processed(eObject, context, status);
-				
+
 				appendDiagnostics(status, diagnostics);
 			}
 		}
-		
+
 		return status.isOK();
 	}
 
 	/**
 	 * Direct validation of {@link EDataType}s is not supported by the EMF
-	 * validation framework; they are validated indirectly via the
-	 * {@link EObject}s that hold their values.
+	 * validation framework; they are validated indirectly via the {@link EObject}s that hold their values.
 	 * 
-	 * Map context is defined in EObjectValidator; suppress type safety 
+	 * Map context is defined in EObjectValidator; suppress type safety
 	 */
-	@SuppressWarnings("unchecked")
-	public boolean validate(EDataType eDataType, Object value,
-			DiagnosticChain diagnostics, Map context) {
+	@Override
+	public boolean validate(EDataType eDataType, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return super.validate(eDataType, value, diagnostics, context);
 	}
-	
+
 	/**
 	 * If we have a context map, record this object's <code>status</code> in it
 	 * so that we will know later that we have processed it and its sub-tree.
 	 * 
-	 * @param eObject an element that we have validated
-	 * @param context the context (may be <code>null</code>)
-	 * @param status the element's validation status
+	 * @param eObject
+	 *            an element that we have validated
+	 * @param context
+	 *            the context (may be <code>null</code>)
+	 * @param status
+	 *            the element's validation status
 	 * 
-	 * Map context is defined in EObjectValidator; suppress type safety 
+	 *            Map context is defined in EObjectValidator; suppress type safety
 	 */
-	@SuppressWarnings("unchecked")
-	private void processed(EObject eObject, Map context, IStatus status) {
+	private void processed(EObject eObject, Map<Object, Object> context, IStatus status) {
 		if (context != null) {
 			context.put(eObject, status);
 		}
 	}
-	
+
 	/**
 	 * Determines whether we have processed this <code>eObject</code> before,
-	 * by automatic recursion of the EMF Model Validation Service.  This is
+	 * by automatic recursion of the EMF Model Validation Service. This is
 	 * only possible if we do, indeed, have a context.
 	 * 
-	 * @param eObject an element to be validated (we hope not)
-	 * @param context the context (may be <code>null</code>)
+	 * @param eObject
+	 *            an element to be validated (we hope not)
+	 * @param context
+	 *            the context (may be <code>null</code>)
 	 * @return <code>true</code> if the context is not <code>null</code> and
-	 *     the <code>eObject</code> or one of its containers has already been
-	 *     validated;  <code>false</code>, otherwise
-	 *     
-	 * Map context is defined in EObjectValidator; suppress type safety 
+	 *         the <code>eObject</code> or one of its containers has already been
+	 *         validated; <code>false</code>, otherwise
+	 * 
+	 *         Map context is defined in EObjectValidator; suppress type safety
 	 */
-	@SuppressWarnings("unchecked")
-	private boolean hasProcessed(EObject eObject, Map context) {
+	private boolean hasProcessed(EObject eObject, Map<Object, Object> context) {
 		boolean result = false;
-		
+
 		if (context != null) {
 			// this is O(NlogN) but there's no helping it
 			while (eObject != null) {
@@ -159,29 +153,28 @@ public class EValidatorAdapter
 				}
 			}
 		}
-		
+
 		return result;
 	}
-	
+
 	/**
 	 * Converts a status result from the EMF validation service to diagnostics.
 	 * 
-	 * @param status the EMF validation service's status result
-	 * @param diagnostics a diagnostic chain to accumulate results on
+	 * @param status
+	 *            the EMF validation service's status result
+	 * @param diagnostics
+	 *            a diagnostic chain to accumulate results on
 	 */
 	private void appendDiagnostics(IStatus status, DiagnosticChain diagnostics) {
 		if (status.isMultiStatus()) {
 			IStatus[] children = status.getChildren();
-			
+
 			for (int i = 0; i < children.length; i++) {
 				appendDiagnostics(children[i], diagnostics);
 			}
 		} else if (status instanceof IConstraintStatus) {
 			diagnostics.add(new BasicDiagnostic(
-				status.getSeverity(),
-				status.getPlugin(),
-				status.getCode(),
-				status.getMessage(),
+				status.getSeverity(), status.getPlugin(), status.getCode(), status.getMessage(),
 				((IConstraintStatus) status).getResultLocus().toArray()));
 		}
 	}

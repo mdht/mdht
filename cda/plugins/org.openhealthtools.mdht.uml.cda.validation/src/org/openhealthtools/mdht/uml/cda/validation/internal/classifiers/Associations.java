@@ -51,7 +51,8 @@ public class Associations extends AbstractModelConstraint {
 			result = constraints.get(context.getCurrentConstraintId()).validate(context);
 		} else {
 			Object[] data = new Object[1];
-			data[0] = "<<<< The Following Warning Constraint Not Registered Properly Register >>" + context.getCurrentConstraintId();
+			data[0] = "<<<< The Following Warning Constraint Not Registered Properly Register >>" +
+					context.getCurrentConstraintId();
 			result = context.createFailureStatus(data);
 		}
 
