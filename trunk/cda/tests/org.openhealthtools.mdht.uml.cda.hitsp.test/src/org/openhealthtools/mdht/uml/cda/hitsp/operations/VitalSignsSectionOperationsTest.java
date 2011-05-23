@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.hitsp.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -36,63 +34,53 @@ import org.openhealthtools.mdht.uml.cda.ihe.operations.CodedVitalSignsSectionOpe
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class VitalSignsSectionOperationsTest extends
-CodedVitalSignsSectionOperationsTest {
+public class VitalSignsSectionOperationsTest extends CodedVitalSignsSectionOperationsTest {
 
-	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.3.88.11.83.119";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return VitalSignsSectionOperations
-				.validateHITSPVitalSignsSectionTemplateId(
-						(VitalSignsSection) objectToTest,
-						diagnostician, map);
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return VitalSignsSectionOperations.validateHITSPVitalSignsSectionTemplateId(
+						(VitalSignsSection) objectToTest, diagnostician, map);
+				}
+
+			},
+
+			// Entry
+			// -------------------------------------------------------------
+			new EntryCCDValidationTest() {
+
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return VitalSignsSectionOperations.validateHITSPVitalSignsSectionVitalSignEntry(
+						(VitalSignsSection) objectToTest, diagnostician, map);
+				}
+
+				@Override
+				protected Object getValueToSet() {
+					final EList<Entry> retValue = new BasicEList<Entry>();
+					final Entry entry = CDAFactory.eINSTANCE.createEntry();
+
+					final VitalSignsOrganizer vso = IHEFactory.eINSTANCE.createVitalSignsOrganizer();
+
+					entry.setOrganizer(vso);
+
+					final Component4 c4 = CDAFactory.eINSTANCE.createComponent4();
+					c4.setObservation(HITSPFactory.eINSTANCE.createVitalSign());
+
+					vso.getComponents().add(c4);
+
+					retValue.add(entry);
+					return retValue;
+				}
 			}
-
-		},
-
-		// Entry
-		// -------------------------------------------------------------
-		new EntryCCDValidationTest() {
-
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return VitalSignsSectionOperations
-				.validateHITSPVitalSignsSectionVitalSignEntry(
-						(VitalSignsSection) objectToTest,
-						diagnostician, map);
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<Entry> retValue = new BasicEList<Entry>();
-				final Entry entry = CDAFactory.eINSTANCE.createEntry();
-
-				final VitalSignsOrganizer vso = IHEFactory.eINSTANCE
-				.createVitalSignsOrganizer();
-
-				entry.setOrganizer(vso);
-
-				final Component4 c4 = CDAFactory.eINSTANCE
-				.createComponent4();
-				c4.setObservation(HITSPFactory.eINSTANCE.createVitalSign());
-
-				vso.getComponents().add(c4);
-
-				retValue.add(entry);
-				return retValue;
-			}
-		}
 
 	}; // TEST_CASE_ARRAY
 
@@ -125,7 +113,7 @@ CodedVitalSignsSectionOperationsTest {
 		VitalSignsSectionOperations obj = new VitalSignsSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	// /**
 	// * Test method for
 	// * {@link

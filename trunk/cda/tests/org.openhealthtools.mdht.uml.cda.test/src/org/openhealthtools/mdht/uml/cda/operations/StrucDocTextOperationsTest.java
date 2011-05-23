@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -33,12 +31,10 @@ public class StrucDocTextOperationsTest {
 	 */
 	@Test
 	public final void testAddText() {
-		final StrucDocText strcDocText = CDAFactory.eINSTANCE
-		.createStrucDocText();
+		final StrucDocText strcDocText = CDAFactory.eINSTANCE.createStrucDocText();
 		assertTrue(StrucDocTextOperations.getText(strcDocText).equals(""));
 		StrucDocTextOperations.addText(strcDocText, TEST_TEXT);
-		assertTrue(StrucDocTextOperations.getText(strcDocText)
-				.equals(TEST_TEXT));
+		assertTrue(StrucDocTextOperations.getText(strcDocText).equals(TEST_TEXT));
 	}
 
 	/**
@@ -46,10 +42,9 @@ public class StrucDocTextOperationsTest {
 	 * {@link org.openhealthtools.mdht.uml.cda.operations.StrucDocTextOperations#addText(org.openhealthtools.mdht.uml.cda.StrucDocText, java.lang.String)}
 	 * .
 	 */
-	@Test(expected=IllegalArgumentException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public final void testAddTextNull() {
-		final StrucDocText strcDocText = CDAFactory.eINSTANCE
-		.createStrucDocText();
+		final StrucDocText strcDocText = CDAFactory.eINSTANCE.createStrucDocText();
 		assertTrue(StrucDocTextOperations.getText(strcDocText).equals(""));
 		StrucDocTextOperations.addText(strcDocText, null);
 	}
@@ -71,8 +66,7 @@ public class StrucDocTextOperationsTest {
 	 */
 	@Test
 	public final void testGetText_StructDocText() {
-		final StrucDocText strcDocText = CDAFactory.eINSTANCE
-		.createStrucDocText();
-		assertTrue(StrucDocTextOperations.getText(strcDocText, "foo")==null);
+		final StrucDocText strcDocText = CDAFactory.eINSTANCE.createStrucDocText();
+		assertTrue(StrucDocTextOperations.getText(strcDocText, "foo") == null);
 	}
 } // StrucDocTextOperationsTest

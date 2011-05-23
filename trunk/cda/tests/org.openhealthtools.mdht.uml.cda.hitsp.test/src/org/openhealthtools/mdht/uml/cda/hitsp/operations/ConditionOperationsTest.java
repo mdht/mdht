@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.hitsp.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -37,49 +35,43 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
 @SuppressWarnings("nls")
 public class ConditionOperationsTest extends ProblemConcernEntryOperationsTest {
 
-	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.3.88.11.83.7";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ConditionOperations.validateConditionTemplateId(
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ConditionOperations.validateConditionTemplateId((Condition) objectToTest, diagnostician, map);
+				}
+
+			},
+
+			// Entry
+			// -------------------------------------------------------------
+			new EntryRelationshipCCDValidationTest() {
+
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ConditionOperations.validateConditionConditionEntry(
 						(Condition) objectToTest, diagnostician, map);
-			}
+				}
 
-		},
-
-		// Entry
-		// -------------------------------------------------------------
-		new EntryRelationshipCCDValidationTest() {
-
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ConditionOperations.validateConditionConditionEntry(
-						(Condition) objectToTest, diagnostician, map);
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<EntryRelationship> retValue = new BasicEList<EntryRelationship>();
-				final EntryRelationship er = CDAFactory.eINSTANCE
-				.createEntryRelationship();
-				er.setTypeCode(x_ActRelationshipEntryRelationship.SAS);
-				er.setObservation(HITSPFactory.eINSTANCE
-						.createConditionEntry());
-				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
-				retValue.add(er);
-				return retValue;
-			}
-		} }; // TEST_CASE_ARRAY
+				@Override
+				protected Object getValueToSet() {
+					final EList<EntryRelationship> retValue = new BasicEList<EntryRelationship>();
+					final EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+					er.setTypeCode(x_ActRelationshipEntryRelationship.SAS);
+					er.setObservation(HITSPFactory.eINSTANCE.createConditionEntry());
+					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+					retValue.add(er);
+					return retValue;
+				}
+			} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -100,17 +92,17 @@ public class ConditionOperationsTest extends ProblemConcernEntryOperationsTest {
 		return HITSPFactory.eINSTANCE.createCondition().init();
 	}
 
-//	/**
-//	 * Not a real test, needed for EMMA to report 100% method coverage.
-//	 */
-//	@Override
-//	@SuppressWarnings("unused")
-//	@Test
-//	public final void testConstructor() {
-//		ConditionOperations obj = new ConditionOperations();
-//		assertTrue(true);
-//	} // testConstructor
-//	
+	// /**
+	// * Not a real test, needed for EMMA to report 100% method coverage.
+	// */
+	// @Override
+	// @SuppressWarnings("unused")
+	// @Test
+	// public final void testConstructor() {
+	// ConditionOperations obj = new ConditionOperations();
+	// assertTrue(true);
+	// } // testConstructor
+	//
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.hitsp.operations.ConditionOperations#createConditionEntry(org.openhealthtools.mdht.uml.cda.hitsp.Condition)}

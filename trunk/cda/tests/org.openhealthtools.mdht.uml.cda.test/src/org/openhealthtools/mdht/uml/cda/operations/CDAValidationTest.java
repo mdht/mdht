@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
 
 import static org.junit.Assert.assertNotNull;
@@ -58,6 +56,7 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 	 * The template id to use for the has* tests.
 	 */
 	protected static final String BAD_TEMPLATE_ID = "1.2.3.4";
+
 	protected static final II THE_BAD_II = DatatypesFactory.eINSTANCE.createII();
 
 	static {
@@ -104,12 +103,11 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		 */
 		protected CDATestCase(final String testTargetDescription) {
 			this.testTargetDescription = testTargetDescription;
-			
-		
-			
+
 		}
 
-		abstract protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map);
+		abstract protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map);
 
 		protected String getTestTargetDescription() {
 			return testTargetDescription;
@@ -141,17 +139,21 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		}
 
 		@Override
-		protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+		protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
 			final EObject eObjectToAdd = getEObjectToAdd();
 			doAdd(objectToTest, eObjectToAdd);
 			final boolean isFound = isFound(objectToTest, eObjectToAdd, getFeature());
-			assertTrue("Add \"" + getTestTargetDescription() + "\" failed for \"" + objectToTest.eClass().getName() + "\"", isFound);
+			assertTrue("Add \"" + getTestTargetDescription() + "\" failed for \"" + objectToTest.eClass().getName() +
+					"\"", isFound);
 		} // doTest
 
 		abstract protected EStructuralFeature getFeature();
 
-		protected boolean isFound(final EObject objectToTest, final EObject eObjectToFind, final EStructuralFeature feature) {
-			return eObjectToFind.eContainingFeature().equals(feature) && eObjectToFind.eContainer().eContainer().equals(objectToTest);
+		protected boolean isFound(final EObject objectToTest, final EObject eObjectToFind,
+				final EStructuralFeature feature) {
+			return eObjectToFind.eContainingFeature().equals(feature) &&
+					eObjectToFind.eContainer().eContainer().equals(objectToTest);
 		} // isFound
 	} // CDAAddTestCase
 
@@ -162,13 +164,15 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		}
 
 		@Override
-		protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+		protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
 			final EObject eObjectToAdd = getEObjectToAdd();
 			doAdd(objectToTest, eObjectToAdd);
 			final Object value = doGet(objectToTest);
 
 			final boolean getIsGood = isGetGood(eObjectToAdd, value);
-			assertTrue("Get \"" + getTestTargetDescription() + "\" failed for \"" + objectToTest.eClass().getName() + "\"", getIsGood);
+			assertTrue("Get \"" + getTestTargetDescription() + "\" failed for \"" + objectToTest.eClass().getName() +
+					"\"", getIsGood);
 		} // doTest
 
 		protected boolean isGetGood(final EObject eObjectToAdd, final Object value) {
@@ -183,14 +187,22 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 	static abstract protected class CDAHasTestCase extends CDAOperationsTestCase {
 
 		protected static final String TEMPLATE_ID = "1.2.3.4";
+
 		protected static final II THE_II = DatatypesFactory.eINSTANCE.createII();
 
 		protected static final String CODE = "code";
+
 		protected static final String CODE_SYSTEM = "codeSystem";
+
 		protected static final String CODE_SYSTEM_NAME = "codeSystemName";
+
 		protected static final String CODE_DISPLAY_NAME = "codeDisplayName";
-		protected static final CD THE_CODE = DatatypesFactory.eINSTANCE.createCD(CODE, CODE_SYSTEM, CODE_SYSTEM_NAME, CODE_DISPLAY_NAME);
-		protected static final CE THE_CE_CODE = DatatypesFactory.eINSTANCE.createCE(CODE, CODE_SYSTEM, CODE_SYSTEM_NAME, CODE_DISPLAY_NAME);
+
+		protected static final CD THE_CODE = DatatypesFactory.eINSTANCE.createCD(
+			CODE, CODE_SYSTEM, CODE_SYSTEM_NAME, CODE_DISPLAY_NAME);
+
+		protected static final CE THE_CE_CODE = DatatypesFactory.eINSTANCE.createCE(
+			CODE, CODE_SYSTEM, CODE_SYSTEM_NAME, CODE_DISPLAY_NAME);
 
 		protected static final CS THE_CS_CODE = DatatypesFactory.eINSTANCE.createCS(CODE);
 
@@ -200,14 +212,16 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		}
 
 		@Override
-		protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+		protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
 			final EObject eObjectToAdd = getEObjectToAdd();
 			doAddTemplateId(eObjectToAdd, THE_II);
 
 			doAdd(objectToTest, eObjectToAdd);
 
 			final boolean hasIsGood = doHas(objectToTest, TEMPLATE_ID);
-			assertTrue("Has \"" + getTestTargetDescription() + "\" failed for \"" + objectToTest.eClass().getName() + "\"", hasIsGood);
+			assertTrue("Has \"" + getTestTargetDescription() + "\" failed for \"" + objectToTest.eClass().getName() +
+					"\"", hasIsGood);
 		} // doTest
 
 		protected abstract void doAddTemplateId(EObject objectToTest, II theIi);
@@ -224,11 +238,12 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 
 		abstract protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map);
 
-		protected void validateExpectSkip(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+		protected void validateExpectSkip(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
 			final boolean isValid = validate(objectToTest, diagnostician, map);
 
-			ByteArrayOutputStream out = new ByteArrayOutputStream();
-
+			// new ByteArrayOutputStream();
+			//
 			// String xml = "";
 			//
 			// try {
@@ -237,11 +252,15 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 			// } catch (Exception e) {
 			// }
 
-			assertTrue("ERROR EXPECT IGNORE " + CDAValidationTest.createAssertionFailureMessage(diagnostician, getTestTargetDescription()), isValid);
+			assertTrue(
+				"ERROR EXPECT IGNORE " +
+						CDAValidationTest.createAssertionFailureMessage(diagnostician, getTestTargetDescription()),
+				isValid);
 
 		}
 
-		protected void validateExpectPass(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+		protected void validateExpectPass(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
 			final boolean isValid = validate(objectToTest, diagnostician, map);
 
 			// ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -254,11 +273,15 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 			// } catch (Exception e) {
 			// }
 			//
-			assertTrue("ERROR EXPECT PASS " + CDAValidationTest.createAssertionFailureMessage(diagnostician, getTestTargetDescription()), isValid);
+			assertTrue(
+				"ERROR EXPECT PASS " +
+						CDAValidationTest.createAssertionFailureMessage(diagnostician, getTestTargetDescription()),
+				isValid);
 
 		}
 
-		protected void validateExpectFail(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+		protected void validateExpectFail(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
 			final boolean isValid = validate(objectToTest, diagnostician, map);
 
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -271,7 +294,8 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 			} catch (Exception e) {
 			}
 
-			assertTrue("ERROR EXPECT FAIL " + getTestTargetDescription() + "\" passed when it was expected to fail." + xml, !isValid);
+			assertTrue("ERROR EXPECT FAIL " + getTestTargetDescription() + "\" passed when it was expected to fail." +
+					xml, !isValid);
 		}
 
 	} // CDAValidationTestCase
@@ -291,7 +315,8 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		}
 
 		@Override
-		public void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+		public void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
 			try {
 				validateExpectFail(objectToTest, diagnostician, map);
 				getTemplateIds(objectToTest).add(THE_BAD_II);
@@ -342,7 +367,8 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		}
 
 		@Override
-		protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+		protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
 			// Validation should pass here as none of the references are set
 			validateExpectPass(objectToTest, diagnostician, map);
 
@@ -378,12 +404,14 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 
 	static abstract protected class UndefinedXORValidationTestCase extends UndefinedValidationTestCase {
 
-		public UndefinedXORValidationTestCase(final String validationTargetDescription, final Set<String> eReferenceNames) {
+		public UndefinedXORValidationTestCase(final String validationTargetDescription,
+				final Set<String> eReferenceNames) {
 			super(validationTargetDescription, eReferenceNames);
 		}
 
 		@Override
-		protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+		protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
 			// Validation should fail here as none of the references are set
 			validateExpectFail(objectToTest, diagnostician, map);
 
@@ -414,12 +442,14 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 
 	static abstract protected class MutualExclusionValidationTestCase extends UndefinedValidationTestCase {
 
-		public MutualExclusionValidationTestCase(final String validationTargetDescription, final Set<String> eReferenceNames) {
+		public MutualExclusionValidationTestCase(final String validationTargetDescription,
+				final Set<String> eReferenceNames) {
 			super(validationTargetDescription, eReferenceNames);
 		}
 
 		@Override
-		protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+		protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
 			// Validation should fail here as none of the references are set
 			validateExpectFail(objectToTest, diagnostician, map);
 
@@ -456,11 +486,12 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		 * is always set, and the others are set individually in sequence (and
 		 * then unSet) to test that they invalidate the test.
 		 */
-		private static final Set<String> MUTUALLY_EXCLUSIVE_EREFERENCE_NAMES = new HashSet<String>(Arrays.asList(/*
-																												 * "act"
-																												 * ,
-																												 */"encounter", "observation", "observationMedia", "organizer",
-				"procedure", "regionOfInterest", "substanceAdministration", "supply"));
+		private static final Set<String> MUTUALLY_EXCLUSIVE_EREFERENCE_NAMES = new HashSet<String>(Arrays.asList(
+			/*
+			 * "act"
+			 * ,
+			 */"encounter", "observation", "observationMedia", "organizer", "procedure", "regionOfInterest",
+			"substanceAdministration", "supply"));
 
 		protected CDAMutualExclusionValidationTestCase(final String validationTargetDescription) {
 			super(validationTargetDescription, MUTUALLY_EXCLUSIVE_EREFERENCE_NAMES);
@@ -468,8 +499,10 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 
 	} // CDAMutualExclusionValidationTestCase
 
-	static protected String createUnsupportedOperationFailureMessage(final String testTargetDescription, final UnsupportedOperationException uoe) {
-		return "The test \"" + testTargetDescription + "\" failed because of \"" + uoe.getMessage() + "\".  This is likely due to errors in the OCL.";
+	static protected String createUnsupportedOperationFailureMessage(final String testTargetDescription,
+			final UnsupportedOperationException uoe) {
+		return "The test \"" + testTargetDescription + "\" failed because of \"" + uoe.getMessage() +
+				"\".  This is likely due to errors in the OCL.";
 	}
 
 	static protected String createAssertionFailureMessage(final BasicDiagnostic diagnostician) {
@@ -486,17 +519,17 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 
 		return sb.toString();
 	}
-	
+
 	public interface TestObjectFactory<TestObject> {
 		public TestObject create();
 	}
-	
-
 
 	protected static abstract class OperationsTestCase<ValidationTarget> extends CDAValidationTestCase {
-		
+
 		private static final String[] ENDTAGS = { "<failsnippet>", "</failsnippet>", "<passsnippet>", "</passsnippet>" };
+
 		private static final int FAILSNIPPET = 0;
+
 		private static final int PASSSNIPPET = 2;
 
 		private static String escapeXML(int snippetType, InfrastructureRoot objectToTest) {
@@ -516,29 +549,30 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 
 			return xml;
 		}
-		
+
 		TestObjectFactory<?> testObjectFactory;
-		
-		public OperationsTestCase(String testTargetDescription,String ocl, TestObjectFactory<?> testObjectFactory) {
+
+		public OperationsTestCase(String testTargetDescription, String ocl, TestObjectFactory<?> testObjectFactory) {
 			super(testTargetDescription);
-			this.ocl=StringEscapeUtils.escapeHtml(ocl);
+			this.ocl = StringEscapeUtils.escapeHtml(ocl);
 			this.testObjectFactory = testObjectFactory;
 
 		}
 
 		String ocl = null;
 
+		@SuppressWarnings("unchecked")
 		@Override
 		public void doTest(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 			StringBuffer xmlSnippetsBuffer = new StringBuffer();
 
 			try {
-					xmlSnippetsBuffer.append("<ocl>");
+				xmlSnippetsBuffer.append("<ocl>");
 
-					xmlSnippetsBuffer.append(ocl);
+				xmlSnippetsBuffer.append(ocl);
 
-					xmlSnippetsBuffer.append("</ocl>");
+				xmlSnippetsBuffer.append("</ocl>");
 
 				updateToFail((ValidationTarget) objectToTest);
 
@@ -568,15 +602,19 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 
 				String testLogDir = System.getProperty("testlogdir");
 				try {
-					if (testLogDir != null)
-					{
-					String testName = String.format("test%s",getTestTargetDescription().substring(0, 1).toUpperCase() + getTestTargetDescription().substring(1) );
-					String logFileName = String.format("%s/test%s", testLogDir,getTestTargetDescription().substring(0, 1).toUpperCase() + getTestTargetDescription().substring(1) + ".xml");
-					FileWriter fstream = new FileWriter(logFileName); 
-					BufferedWriter out = new BufferedWriter(fstream);
-					out.flush();
-					out.write("<testresult name=\""+ testName  +"\">" + xmlSnippetsBuffer.toString() + "</testresult>");				
-					out.close();
+					if (testLogDir != null) {
+						String testName = String.format(
+							"test%s", getTestTargetDescription().substring(0, 1).toUpperCase() +
+									getTestTargetDescription().substring(1));
+						String logFileName = String.format(
+							"%s/test%s", testLogDir, getTestTargetDescription().substring(0, 1).toUpperCase() +
+									getTestTargetDescription().substring(1) + ".xml");
+						FileWriter fstream = new FileWriter(logFileName);
+						BufferedWriter out = new BufferedWriter(fstream);
+						out.flush();
+						out.write("<testresult name=\"" + testName + "\">" + xmlSnippetsBuffer.toString() +
+								"</testresult>");
+						out.close();
 					}
 				} catch (Exception e) {
 					System.err.println("Error: " + e.getMessage());
@@ -584,22 +622,17 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 			}
 
 		}
-		
-		
-		
-		public void doValidationTest()
-		{
-			EObject objectToTest = (EObject) testObjectFactory.create();			
+
+		public void doValidationTest() {
+			EObject objectToTest = (EObject) testObjectFactory.create();
 			BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest);
 			doTest(objectToTest, diagnostician, map);
 		}
 
-		protected  abstract void updateToFail(ValidationTarget target);
+		protected abstract void updateToFail(ValidationTarget target);
 
 		protected abstract void updateToPass(ValidationTarget target);
 
 	}
-	
-	
 
 } // CDAValidationTest

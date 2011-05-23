@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.hitsp.operations;
 
 import java.util.Arrays;
@@ -25,29 +23,24 @@ import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPastIllnessSection;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
-public class HistoryOfPastIllnessSectionOperationsTest
-extends
-org.openhealthtools.mdht.uml.cda.ihe.operations.HistoryOfPastIllnessSectionOperationsTest {
+public class HistoryOfPastIllnessSectionOperationsTest extends
+		org.openhealthtools.mdht.uml.cda.ihe.operations.HistoryOfPastIllnessSectionOperationsTest {
 
-	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.3.88.11.83.104";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return HistoryOfPastIllnessSectionOperations
-				.validateHITSPHistoryOfPastIllnessSectionTemplateId(
-						(HistoryOfPastIllnessSection) objectToTest,
-						diagnostician, map);
-			}
-
+		@Override
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return HistoryOfPastIllnessSectionOperations.validateHITSPHistoryOfPastIllnessSectionTemplateId(
+				(HistoryOfPastIllnessSection) objectToTest, diagnostician, map);
 		}
+
+	}
 
 	}; // TEST_CASE_ARRAY
 
@@ -67,8 +60,7 @@ org.openhealthtools.mdht.uml.cda.ihe.operations.HistoryOfPastIllnessSectionOpera
 
 	@Override
 	protected EObject getObjectInitToTest() {
-		return HITSPFactory.eINSTANCE.createHistoryOfPastIllnessSection()
-		.init();
+		return HITSPFactory.eINSTANCE.createHistoryOfPastIllnessSection().init();
 	}
 
 } // HistoryOfPastIllnessSectionOperationsTest

@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
 
 import org.junit.runner.RunWith;
@@ -20,19 +18,15 @@ import org.junit.runners.Suite;
  * processing.
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ ActOperationsTest.class,
-		AssignedAuthorOperationsTest.class,
-		ClinicalDocumentOperationsTest.class, Component2OperationsTest.class,
-		Component4OperationsTest.class, EncounterOperationsTest.class,
-		EntryOperationsTest.class, EntryRelationshipOperationsTest.class,
-		GuardianOperationsTest.class, Informant12OperationsTest.class,
-		ManufacturedProductOperationsTest.class,
-		ObservationMediaOperationsTest.class, ObservationOperationsTest.class,
-		OrganizerOperationsTest.class, ParticipantRoleOperationsTest.class,
-		ProcedureOperationsTest.class, ReferenceOperationsTest.class,
-		RegionOfInterestOperationsTest.class, SectionOperationsTest.class,
-		StrucDocTextOperationsTest.class,
-		SubstanceAdministrationOperationsTest.class, SupplyOperationsTest.class })
+@Suite.SuiteClasses({
+		ActOperationsTest.class, AssignedAuthorOperationsTest.class, ClinicalDocumentOperationsTest.class,
+		Component2OperationsTest.class, Component4OperationsTest.class, EncounterOperationsTest.class,
+		EntryOperationsTest.class, EntryRelationshipOperationsTest.class, GuardianOperationsTest.class,
+		Informant12OperationsTest.class, ManufacturedProductOperationsTest.class, ObservationMediaOperationsTest.class,
+		ObservationOperationsTest.class, OrganizerOperationsTest.class, ParticipantRoleOperationsTest.class,
+		ProcedureOperationsTest.class, ReferenceOperationsTest.class, RegionOfInterestOperationsTest.class,
+		SectionOperationsTest.class, StrucDocTextOperationsTest.class, SubstanceAdministrationOperationsTest.class,
+		SupplyOperationsTest.class })
 public class AllCDAOperationsTests {
 	// Nothing
 } // AllCDATests

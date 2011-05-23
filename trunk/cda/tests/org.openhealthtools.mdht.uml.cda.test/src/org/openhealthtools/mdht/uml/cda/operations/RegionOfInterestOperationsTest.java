@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -43,876 +41,735 @@ public class RegionOfInterestOperationsTest extends ClinicalStatementOperationsT
 
 	@SuppressWarnings("nls")
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Act
-		// -------------------------------------------------------------
-		new CDAAddTestCase("Act") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createAct();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addAct(
-						(RegionOfInterest) objectToTest,
-						(Act) eObjectToAdd);
-			}
-
-			@Override
-			protected EStructuralFeature getFeature() {
-				return CDAPackage.eINSTANCE.getEntryRelationship_Act();
-			}
-		},
-
-		// Encounter
-		// -------------------------------------------------------------
-		new CDAAddTestCase("Encounter") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createEncounter();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addEncounter(
-						(RegionOfInterest) objectToTest,
-						(Encounter) eObjectToAdd);
-			}
-
-			@Override
-			protected EStructuralFeature getFeature() {
-				return CDAPackage.eINSTANCE
-				.getEntryRelationship_Encounter();
-			}
-		},
-
-		// Observation
-		// -------------------------------------------------------------
-		new CDAAddTestCase("Observation") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createObservation();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addObservation(
-						(RegionOfInterest) objectToTest,
-						(Observation) eObjectToAdd);
-
-			}
-
-			@Override
-			protected EStructuralFeature getFeature() {
-				return CDAPackage.eINSTANCE
-				.getEntryRelationship_Observation();
-			}
-		},
-
-		// ObservationMedia
-		// -------------------------------------------------------------
-		new CDAAddTestCase("ObservationMedia") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createObservationMedia();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addObservationMedia(
-						(RegionOfInterest) objectToTest,
-						(ObservationMedia) eObjectToAdd);
-
-			}
-
-			@Override
-			protected EStructuralFeature getFeature() {
-				return CDAPackage.eINSTANCE
-				.getEntryRelationship_ObservationMedia();
-			}
-		},
-
-		// Organizer
-		// -------------------------------------------------------------
-		new CDAAddTestCase("Organizer") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createOrganizer();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addOrganizer(
-						(RegionOfInterest) objectToTest,
-						(Organizer) eObjectToAdd);
-			}
-
-			@Override
-			protected EStructuralFeature getFeature() {
-				return CDAPackage.eINSTANCE
-				.getEntryRelationship_Organizer();
-			}
-		},
-
-		// Procedure
-		// -------------------------------------------------------------
-		new CDAAddTestCase("Procedure") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createProcedure();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addProcedure(
-						(RegionOfInterest) objectToTest,
-						(Procedure) eObjectToAdd);
-			}
-
-			@Override
-			protected EStructuralFeature getFeature() {
-				return CDAPackage.eINSTANCE
-				.getEntryRelationship_Procedure();
-			}
-		},
-
-		// RegionOfInterest
-		// -------------------------------------------------------------
-		new CDAAddTestCase("RegionOfInterest") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createRegionOfInterest();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addRegionOfInterest(
-						(RegionOfInterest) objectToTest,
-						(RegionOfInterest) eObjectToAdd);
-			}
-
-			@Override
-			protected EStructuralFeature getFeature() {
-				return CDAPackage.eINSTANCE
-				.getEntryRelationship_RegionOfInterest();
-			}
-		},
-
-		// SubstanceAdministration
-		// -------------------------------------------------------------
-		new CDAAddTestCase("SubstanceAdministration") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createSubstanceAdministration();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addSubstanceAdministration(
-						(RegionOfInterest) objectToTest,
-						(SubstanceAdministration) eObjectToAdd);
-			}
-
-			@Override
-			protected EStructuralFeature getFeature() {
-				return CDAPackage.eINSTANCE
-				.getEntryRelationship_SubstanceAdministration();
-			}
-		},
-
-		// Supply
-		// -------------------------------------------------------------
-		new CDAAddTestCase("Supply") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createSupply();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addSupply(
-						(RegionOfInterest) objectToTest,
-						(Supply) eObjectToAdd);
-			}
-
-			@Override
-			protected EStructuralFeature getFeature() {
-				return CDAPackage.eINSTANCE.getEntryRelationship_Supply();
-			}
-		},
-		// *************************************************************************
-		// Act
-		// -------------------------------------------------------------
-		new CDAGetTestCase("Act") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createAct();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addAct(
-						(RegionOfInterest) objectToTest,
-						(Act) eObjectToAdd);
-			}
-
-			@Override
-			protected Object doGet(final EObject objectToTest) {
-				return RegionOfInterestOperations
-				.getActs((RegionOfInterest) objectToTest);
-			}
-		},
-
-		// Encounter
-		// -------------------------------------------------------------
-		new CDAGetTestCase("Encounter") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createEncounter();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addEncounter(
-						(RegionOfInterest) objectToTest,
-						(Encounter) eObjectToAdd);
-			}
-
-			@Override
-			protected Object doGet(final EObject objectToTest) {
-				return RegionOfInterestOperations
-				.getEncounters((RegionOfInterest) objectToTest);
-			}
-
-		},
-
-		// Observation
-		// -------------------------------------------------------------
-		new CDAGetTestCase("Observation") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createObservation();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addObservation(
-						(RegionOfInterest) objectToTest,
-						(Observation) eObjectToAdd);
-			}
-
-			@Override
-			protected Object doGet(final EObject objectToTest) {
-				return RegionOfInterestOperations
-				.getObservations((RegionOfInterest) objectToTest);
-			}
-		},
-
-		// ObservationMedia
-		// -------------------------------------------------------------
-		new CDAGetTestCase("ObservationMedia") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createObservationMedia();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addObservationMedia(
-						(RegionOfInterest) objectToTest,
-						(ObservationMedia) eObjectToAdd);
-			}
-
-			@Override
-			protected Object doGet(final EObject objectToTest) {
-				return RegionOfInterestOperations
-				.getObservationMedia((RegionOfInterest) objectToTest);
-			}
-		},
-
-		// Organizer
-		// -------------------------------------------------------------
-		new CDAGetTestCase("Organizer") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createOrganizer();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addOrganizer(
-						(RegionOfInterest) objectToTest,
-						(Organizer) eObjectToAdd);
-			}
-
-			@Override
-			protected Object doGet(final EObject objectToTest) {
-				return RegionOfInterestOperations
-				.getOrganizers((RegionOfInterest) objectToTest);
-			}
-		},
-
-		// Procedure
-		// -------------------------------------------------------------
-		new CDAGetTestCase("Procedure") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createProcedure();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addProcedure(
-						(RegionOfInterest) objectToTest,
-						(Procedure) eObjectToAdd);
-			}
-
-			@Override
-			protected Object doGet(final EObject objectToTest) {
-				return RegionOfInterestOperations
-				.getProcedures((RegionOfInterest) objectToTest);
-			}
-		},
-
-		// RegionOfInterest
-		// -------------------------------------------------------------
-		new CDAGetTestCase("RegionOfInterest") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createRegionOfInterest();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addRegionOfInterest(
-						(RegionOfInterest) objectToTest,
-						(RegionOfInterest) eObjectToAdd);
-			}
-
-			@Override
-			protected Object doGet(final EObject objectToTest) {
-				return RegionOfInterestOperations
-				.getRegionsOfInterest((RegionOfInterest) objectToTest);
-			}
-		},
-
-		// SubstanceAdministration
-		// -------------------------------------------------------------
-		new CDAGetTestCase("SubstanceAdministration") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createSubstanceAdministration();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addSubstanceAdministration(
-						(RegionOfInterest) objectToTest,
-						(SubstanceAdministration) eObjectToAdd);
-			}
-
-			@Override
-			protected Object doGet(final EObject objectToTest) {
-				return RegionOfInterestOperations
-				.getSubstanceAdministrations((RegionOfInterest) objectToTest);
-			}
-		},
-
-		// Supply
-		// -------------------------------------------------------------
-		new CDAGetTestCase("Supply") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createSupply();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addSupply(
-						(RegionOfInterest) objectToTest,
-						(Supply) eObjectToAdd);
-			}
-
-			@Override
-			protected Object doGet(final EObject objectToTest) {
-				return RegionOfInterestOperations
-				.getSupplies((RegionOfInterest) objectToTest);
-			}
-		},
-
-		// ClinicalDocument
-		// -------------------------------------------------------------
-		new CDAGetTestCase("ClinicalDocument") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createClinicalDocument();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				// The Add is reversed, the objectToTest is added to the
-				// clinical document
-				final Section section = CDAFactory.eINSTANCE
-				.createSection();
-				section
-				.addRegionOfInterest((RegionOfInterest) objectToTest);
-				((ClinicalDocument) eObjectToAdd).addSection(section);
-			}
-
-			@Override
-			protected Object doGet(final EObject objectToTest) {
-				return RegionOfInterestOperations
-				.getClinicalDocument((RegionOfInterest) objectToTest);
-			}
-
-			@Override
-			protected boolean isGetGood(final EObject eObjectToAdd,
-					final Object value) {
-				return eObjectToAdd.equals(value);
-			}
-		},
-
-		// Section
-		// -------------------------------------------------------------
-		new CDAGetTestCase("Section") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createSection();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				// The Add is reversed, the objectToTest is added to the
-				// clinical document
-				((Section) eObjectToAdd)
-				.addRegionOfInterest((RegionOfInterest) objectToTest);
-			}
-
-			@Override
-			protected Object doGet(final EObject objectToTest) {
-				return RegionOfInterestOperations
-				.getSection((RegionOfInterest) objectToTest);
-			}
-
-			@Override
-			protected boolean isGetGood(final EObject eObjectToAdd,
-					final Object value) {
-				return eObjectToAdd.equals(value);
-			}
-		},
-		// *************************************************************************
-		// Act
-		// -------------------------------------------------------------
-		new CDAHasTestCase("Act") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createAct();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addAct(
-						(RegionOfInterest) objectToTest,
-						(Act) eObjectToAdd);
-			}
-
-			@Override
-			protected boolean doHas(final EObject objectToTest,
-					final String templateId) {
-				return RegionOfInterestOperations.hasActTemplate(
+			// Act
+			// -------------------------------------------------------------
+			new CDAAddTestCase("Act") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createAct();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addAct((RegionOfInterest) objectToTest, (Act) eObjectToAdd);
+				}
+
+				@Override
+				protected EStructuralFeature getFeature() {
+					return CDAPackage.eINSTANCE.getEntryRelationship_Act();
+				}
+			},
+
+			// Encounter
+			// -------------------------------------------------------------
+			new CDAAddTestCase("Encounter") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createEncounter();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addEncounter((RegionOfInterest) objectToTest, (Encounter) eObjectToAdd);
+				}
+
+				@Override
+				protected EStructuralFeature getFeature() {
+					return CDAPackage.eINSTANCE.getEntryRelationship_Encounter();
+				}
+			},
+
+			// Observation
+			// -------------------------------------------------------------
+			new CDAAddTestCase("Observation") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createObservation();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addObservation(
+						(RegionOfInterest) objectToTest, (Observation) eObjectToAdd);
+
+				}
+
+				@Override
+				protected EStructuralFeature getFeature() {
+					return CDAPackage.eINSTANCE.getEntryRelationship_Observation();
+				}
+			},
+
+			// ObservationMedia
+			// -------------------------------------------------------------
+			new CDAAddTestCase("ObservationMedia") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createObservationMedia();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addObservationMedia(
+						(RegionOfInterest) objectToTest, (ObservationMedia) eObjectToAdd);
+
+				}
+
+				@Override
+				protected EStructuralFeature getFeature() {
+					return CDAPackage.eINSTANCE.getEntryRelationship_ObservationMedia();
+				}
+			},
+
+			// Organizer
+			// -------------------------------------------------------------
+			new CDAAddTestCase("Organizer") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createOrganizer();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addOrganizer((RegionOfInterest) objectToTest, (Organizer) eObjectToAdd);
+				}
+
+				@Override
+				protected EStructuralFeature getFeature() {
+					return CDAPackage.eINSTANCE.getEntryRelationship_Organizer();
+				}
+			},
+
+			// Procedure
+			// -------------------------------------------------------------
+			new CDAAddTestCase("Procedure") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createProcedure();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addProcedure((RegionOfInterest) objectToTest, (Procedure) eObjectToAdd);
+				}
+
+				@Override
+				protected EStructuralFeature getFeature() {
+					return CDAPackage.eINSTANCE.getEntryRelationship_Procedure();
+				}
+			},
+
+			// RegionOfInterest
+			// -------------------------------------------------------------
+			new CDAAddTestCase("RegionOfInterest") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createRegionOfInterest();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addRegionOfInterest(
+						(RegionOfInterest) objectToTest, (RegionOfInterest) eObjectToAdd);
+				}
+
+				@Override
+				protected EStructuralFeature getFeature() {
+					return CDAPackage.eINSTANCE.getEntryRelationship_RegionOfInterest();
+				}
+			},
+
+			// SubstanceAdministration
+			// -------------------------------------------------------------
+			new CDAAddTestCase("SubstanceAdministration") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createSubstanceAdministration();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addSubstanceAdministration(
+						(RegionOfInterest) objectToTest, (SubstanceAdministration) eObjectToAdd);
+				}
+
+				@Override
+				protected EStructuralFeature getFeature() {
+					return CDAPackage.eINSTANCE.getEntryRelationship_SubstanceAdministration();
+				}
+			},
+
+			// Supply
+			// -------------------------------------------------------------
+			new CDAAddTestCase("Supply") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createSupply();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addSupply((RegionOfInterest) objectToTest, (Supply) eObjectToAdd);
+				}
+
+				@Override
+				protected EStructuralFeature getFeature() {
+					return CDAPackage.eINSTANCE.getEntryRelationship_Supply();
+				}
+			},
+			// *************************************************************************
+			// Act
+			// -------------------------------------------------------------
+			new CDAGetTestCase("Act") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createAct();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addAct((RegionOfInterest) objectToTest, (Act) eObjectToAdd);
+				}
+
+				@Override
+				protected Object doGet(final EObject objectToTest) {
+					return ClinicalStatementOperations.getActs((RegionOfInterest) objectToTest);
+				}
+			},
+
+			// Encounter
+			// -------------------------------------------------------------
+			new CDAGetTestCase("Encounter") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createEncounter();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addEncounter((RegionOfInterest) objectToTest, (Encounter) eObjectToAdd);
+				}
+
+				@Override
+				protected Object doGet(final EObject objectToTest) {
+					return ClinicalStatementOperations.getEncounters((RegionOfInterest) objectToTest);
+				}
+
+			},
+
+			// Observation
+			// -------------------------------------------------------------
+			new CDAGetTestCase("Observation") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createObservation();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addObservation(
+						(RegionOfInterest) objectToTest, (Observation) eObjectToAdd);
+				}
+
+				@Override
+				protected Object doGet(final EObject objectToTest) {
+					return ClinicalStatementOperations.getObservations((RegionOfInterest) objectToTest);
+				}
+			},
+
+			// ObservationMedia
+			// -------------------------------------------------------------
+			new CDAGetTestCase("ObservationMedia") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createObservationMedia();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addObservationMedia(
+						(RegionOfInterest) objectToTest, (ObservationMedia) eObjectToAdd);
+				}
+
+				@Override
+				protected Object doGet(final EObject objectToTest) {
+					return ClinicalStatementOperations.getObservationMedia((RegionOfInterest) objectToTest);
+				}
+			},
+
+			// Organizer
+			// -------------------------------------------------------------
+			new CDAGetTestCase("Organizer") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createOrganizer();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addOrganizer((RegionOfInterest) objectToTest, (Organizer) eObjectToAdd);
+				}
+
+				@Override
+				protected Object doGet(final EObject objectToTest) {
+					return ClinicalStatementOperations.getOrganizers((RegionOfInterest) objectToTest);
+				}
+			},
+
+			// Procedure
+			// -------------------------------------------------------------
+			new CDAGetTestCase("Procedure") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createProcedure();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addProcedure((RegionOfInterest) objectToTest, (Procedure) eObjectToAdd);
+				}
+
+				@Override
+				protected Object doGet(final EObject objectToTest) {
+					return ClinicalStatementOperations.getProcedures((RegionOfInterest) objectToTest);
+				}
+			},
+
+			// RegionOfInterest
+			// -------------------------------------------------------------
+			new CDAGetTestCase("RegionOfInterest") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createRegionOfInterest();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addRegionOfInterest(
+						(RegionOfInterest) objectToTest, (RegionOfInterest) eObjectToAdd);
+				}
+
+				@Override
+				protected Object doGet(final EObject objectToTest) {
+					return ClinicalStatementOperations.getRegionsOfInterest((RegionOfInterest) objectToTest);
+				}
+			},
+
+			// SubstanceAdministration
+			// -------------------------------------------------------------
+			new CDAGetTestCase("SubstanceAdministration") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createSubstanceAdministration();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addSubstanceAdministration(
+						(RegionOfInterest) objectToTest, (SubstanceAdministration) eObjectToAdd);
+				}
+
+				@Override
+				protected Object doGet(final EObject objectToTest) {
+					return ClinicalStatementOperations.getSubstanceAdministrations((RegionOfInterest) objectToTest);
+				}
+			},
+
+			// Supply
+			// -------------------------------------------------------------
+			new CDAGetTestCase("Supply") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createSupply();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addSupply((RegionOfInterest) objectToTest, (Supply) eObjectToAdd);
+				}
+
+				@Override
+				protected Object doGet(final EObject objectToTest) {
+					return ClinicalStatementOperations.getSupplies((RegionOfInterest) objectToTest);
+				}
+			},
+
+			// ClinicalDocument
+			// -------------------------------------------------------------
+			new CDAGetTestCase("ClinicalDocument") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createClinicalDocument();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					// The Add is reversed, the objectToTest is added to the
+					// clinical document
+					final Section section = CDAFactory.eINSTANCE.createSection();
+					section.addRegionOfInterest((RegionOfInterest) objectToTest);
+					((ClinicalDocument) eObjectToAdd).addSection(section);
+				}
+
+				@Override
+				protected Object doGet(final EObject objectToTest) {
+					return ClinicalStatementOperations.getClinicalDocument((RegionOfInterest) objectToTest);
+				}
+
+				@Override
+				protected boolean isGetGood(final EObject eObjectToAdd, final Object value) {
+					return eObjectToAdd.equals(value);
+				}
+			},
+
+			// Section
+			// -------------------------------------------------------------
+			new CDAGetTestCase("Section") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createSection();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					// The Add is reversed, the objectToTest is added to the
+					// clinical document
+					((Section) eObjectToAdd).addRegionOfInterest((RegionOfInterest) objectToTest);
+				}
+
+				@Override
+				protected Object doGet(final EObject objectToTest) {
+					return ClinicalStatementOperations.getSection((RegionOfInterest) objectToTest);
+				}
+
+				@Override
+				protected boolean isGetGood(final EObject eObjectToAdd, final Object value) {
+					return eObjectToAdd.equals(value);
+				}
+			},
+			// *************************************************************************
+			// Act
+			// -------------------------------------------------------------
+			new CDAHasTestCase("Act") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createAct();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addAct((RegionOfInterest) objectToTest, (Act) eObjectToAdd);
+				}
+
+				@Override
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasActTemplate((RegionOfInterest) objectToTest, templateId);
+				}
+
+				@Override
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
+					((Act) eObjectToAdd).getTemplateIds().add(theIi);
+				}
+			},
+
+			// Code
+			// -------------------------------------------------------------
+			new CDAHasTestCase("Code") {
+
+				@Override
+				protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					((RegionOfInterest) objectToTest).setCode(THE_CS_CODE);
+					final boolean hasIsGood = doHas(objectToTest, TEMPLATE_ID);
+					assertTrue("Has \"" + getTestTargetDescription() + "\" failed for \"" +
+							objectToTest.eClass().getName() + "\"", hasIsGood);
+				}
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return null;
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					// nothing
+				}
+
+				@Override
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasCode((RegionOfInterest) objectToTest, CODE, null, null);
+				}
+
+				@Override
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
+					// nothing
+				}
+			},
+
+			// Encounter
+			// -------------------------------------------------------------
+			new CDAHasTestCase("Encounter") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createEncounter();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addEncounter((RegionOfInterest) objectToTest, (Encounter) eObjectToAdd);
+				}
+
+				@Override
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasEncounterTemplate((RegionOfInterest) objectToTest, templateId);
+				}
+
+				@Override
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
+					((Encounter) eObjectToAdd).getTemplateIds().add(theIi);
+				}
+			},
+
+			// Observation
+			// -------------------------------------------------------------
+			new CDAHasTestCase("Observation") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createObservation();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addObservation(
+						(RegionOfInterest) objectToTest, (Observation) eObjectToAdd);
+				}
+
+				@Override
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasObservationTemplate(
 						(RegionOfInterest) objectToTest, templateId);
-			}
+				}
 
-			@Override
-			protected void doAddTemplateId(final EObject eObjectToAdd,
-					final II theIi) {
-				((Act) eObjectToAdd).getTemplateIds().add(theIi);
-			}
-		},
+				@Override
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
+					((Observation) eObjectToAdd).getTemplateIds().add(theIi);
+				}
+			},
 
-		// Code
-		// -------------------------------------------------------------
-		new CDAHasTestCase("Code") {
+			// ObservationMedia
+			// -------------------------------------------------------------
+			new CDAHasTestCase("ObservationMedia") {
 
-			@Override
-			protected void doTest(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				((RegionOfInterest) objectToTest).setCode(THE_CS_CODE);
-				final boolean hasIsGood = doHas(objectToTest, TEMPLATE_ID);
-				assertTrue("Has \"" + getTestTargetDescription()
-						+ "\" failed for \""
-						+ objectToTest.eClass().getName() + "\"",
-						hasIsGood);
-			}
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createObservationMedia();
+				}
 
-			@Override
-			protected EObject getEObjectToAdd() {
-				return null;
-			}
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addObservationMedia(
+						(RegionOfInterest) objectToTest, (ObservationMedia) eObjectToAdd);
 
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				// nothing
-			}
+				}
 
-			@Override
-			protected boolean doHas(final EObject objectToTest,
-					final String templateId) {
-				return ClinicalStatementOperations.hasCode((RegionOfInterest) objectToTest,
-						CODE, null, null);
-			}
-
-			@Override
-			protected void doAddTemplateId(final EObject eObjectToAdd,
-					final II theIi) {
-				// nothing
-			}
-		},
-
-		// Encounter
-		// -------------------------------------------------------------
-		new CDAHasTestCase("Encounter") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createEncounter();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addEncounter(
-						(RegionOfInterest) objectToTest,
-						(Encounter) eObjectToAdd);
-			}
-
-			@Override
-			protected boolean doHas(final EObject objectToTest,
-					final String templateId) {
-				return RegionOfInterestOperations.hasEncounterTemplate(
+				@Override
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasObservationMediaTemplate(
 						(RegionOfInterest) objectToTest, templateId);
-			}
+				}
 
-			@Override
-			protected void doAddTemplateId(final EObject eObjectToAdd,
-					final II theIi) {
-				((Encounter) eObjectToAdd).getTemplateIds().add(theIi);
-			}
-		},
+				@Override
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
+					((ObservationMedia) eObjectToAdd).getTemplateIds().add(theIi);
+				}
+			},
 
-		// Observation
-		// -------------------------------------------------------------
-		new CDAHasTestCase("Observation") {
+			// Organizer
+			// -------------------------------------------------------------
+			new CDAHasTestCase("Organizer") {
 
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createObservation();
-			}
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createOrganizer();
+				}
 
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addObservation(
-						(RegionOfInterest) objectToTest,
-						(Observation) eObjectToAdd);
-			}
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addOrganizer((RegionOfInterest) objectToTest, (Organizer) eObjectToAdd);
+				}
 
-			@Override
-			protected boolean doHas(final EObject objectToTest,
-					final String templateId) {
-				return RegionOfInterestOperations.hasObservationTemplate(
+				@Override
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasOrganizerTemplate((RegionOfInterest) objectToTest, templateId);
+				}
+
+				@Override
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
+					((Organizer) eObjectToAdd).getTemplateIds().add(theIi);
+				}
+			},
+
+			// Procedure
+			// -------------------------------------------------------------
+			new CDAHasTestCase("Procedure") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createProcedure();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addProcedure((RegionOfInterest) objectToTest, (Procedure) eObjectToAdd);
+				}
+
+				@Override
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasProcedureTemplate((RegionOfInterest) objectToTest, templateId);
+				}
+
+				@Override
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
+					((Procedure) eObjectToAdd).getTemplateIds().add(theIi);
+				}
+			},
+
+			// RegionOfInterest
+			// -------------------------------------------------------------
+			new CDAHasTestCase("RegionOfInterest") {
+
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createRegionOfInterest();
+				}
+
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addRegionOfInterest(
+						(RegionOfInterest) objectToTest, (RegionOfInterest) eObjectToAdd);
+				}
+
+				@Override
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasRegionOfInterestTemplate(
 						(RegionOfInterest) objectToTest, templateId);
-			}
+				}
 
-			@Override
-			protected void doAddTemplateId(final EObject eObjectToAdd,
-					final II theIi) {
-				((Observation) eObjectToAdd).getTemplateIds().add(theIi);
-			}
-		},
+				@Override
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
+					((RegionOfInterest) eObjectToAdd).getTemplateIds().add(theIi);
+				}
 
-		// ObservationMedia
-		// -------------------------------------------------------------
-		new CDAHasTestCase("ObservationMedia") {
+			},
 
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createObservationMedia();
-			}
+			// SubstanceAdministration
+			// -------------------------------------------------------------
+			new CDAHasTestCase("SubstanceAdministration") {
 
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addObservationMedia(
-						(RegionOfInterest) objectToTest,
-						(ObservationMedia) eObjectToAdd);
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createSubstanceAdministration();
+				}
 
-			}
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addSubstanceAdministration(
+						(RegionOfInterest) objectToTest, (SubstanceAdministration) eObjectToAdd);
+				}
 
-			@Override
-			protected boolean doHas(final EObject objectToTest,
-					final String templateId) {
-				return RegionOfInterestOperations
-				.hasObservationMediaTemplate(
-						(RegionOfInterest) objectToTest,
-						templateId);
-			}
-
-			@Override
-			protected void doAddTemplateId(final EObject eObjectToAdd,
-					final II theIi) {
-				((ObservationMedia) eObjectToAdd).getTemplateIds().add(
-						theIi);
-			}
-		},
-
-		// Organizer
-		// -------------------------------------------------------------
-		new CDAHasTestCase("Organizer") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createOrganizer();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addOrganizer(
-						(RegionOfInterest) objectToTest,
-						(Organizer) eObjectToAdd);
-			}
-
-			@Override
-			protected boolean doHas(final EObject objectToTest,
-					final String templateId) {
-				return RegionOfInterestOperations.hasOrganizerTemplate(
+				@Override
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasSubstanceAdministrationTemplate(
 						(RegionOfInterest) objectToTest, templateId);
-			}
+				}
 
-			@Override
-			protected void doAddTemplateId(final EObject eObjectToAdd,
-					final II theIi) {
-				((Organizer) eObjectToAdd).getTemplateIds().add(theIi);
-			}
-		},
+				@Override
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
+					((SubstanceAdministration) eObjectToAdd).getTemplateIds().add(theIi);
+				}
+			},
 
-		// Procedure
-		// -------------------------------------------------------------
-		new CDAHasTestCase("Procedure") {
+			// Supply
+			// -------------------------------------------------------------
+			new CDAHasTestCase("Supply") {
 
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createProcedure();
-			}
+				@Override
+				protected EObject getEObjectToAdd() {
+					return CDAFactory.eINSTANCE.createSupply();
+				}
 
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addProcedure(
-						(RegionOfInterest) objectToTest,
-						(Procedure) eObjectToAdd);
-			}
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					ClinicalStatementOperations.addSupply((RegionOfInterest) objectToTest, (Supply) eObjectToAdd);
+				}
 
-			@Override
-			protected boolean doHas(final EObject objectToTest,
-					final String templateId) {
-				return RegionOfInterestOperations.hasProcedureTemplate(
-						(RegionOfInterest) objectToTest, templateId);
-			}
+				@Override
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasSupplyTemplate((RegionOfInterest) objectToTest, templateId);
+				}
 
-			@Override
-			protected void doAddTemplateId(final EObject eObjectToAdd,
-					final II theIi) {
-				((Procedure) eObjectToAdd).getTemplateIds().add(theIi);
-			}
-		},
+				@Override
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
+					((Supply) eObjectToAdd).getTemplateIds().add(theIi);
+				}
+			},
 
-		// RegionOfInterest
-		// -------------------------------------------------------------
-		new CDAHasTestCase("RegionOfInterest") {
+			// TemplateID
+			// -------------------------------------------------------------
+			new CDAHasTestCase("TemplateID") {
 
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createRegionOfInterest();
-			}
+				@Override
+				protected void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					((RegionOfInterest) objectToTest).getTemplateIds().add(THE_II);
+					final boolean hasIsGood = doHas(objectToTest, TEMPLATE_ID);
+					assertTrue("Has \"" + getTestTargetDescription() + "\" failed for \"" +
+							objectToTest.eClass().getName() + "\"", hasIsGood);
+				}
 
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addRegionOfInterest(
-						(RegionOfInterest) objectToTest,
-						(RegionOfInterest) eObjectToAdd);
-			}
+				@Override
+				protected EObject getEObjectToAdd() {
+					return null;
+				}
 
-			@Override
-			protected boolean doHas(final EObject objectToTest,
-					final String templateId) {
-				return RegionOfInterestOperations
-				.hasRegionOfInterestTemplate(
-						(RegionOfInterest) objectToTest,
-						templateId);
-			}
+				@Override
+				protected void doAdd(final EObject objectToTest, final EObject eObjectToAdd) {
+					// Nothing
+				}
 
-			@Override
-			protected void doAddTemplateId(final EObject eObjectToAdd,
-					final II theIi) {
-				((RegionOfInterest) eObjectToAdd).getTemplateIds().add(
-						theIi);
-			}
+				@Override
+				protected boolean doHas(final EObject objectToTest, final String templateId) {
+					return ClinicalStatementOperations.hasTemplateId((RegionOfInterest) objectToTest, templateId);
+				}
 
-		},
-
-		// SubstanceAdministration
-		// -------------------------------------------------------------
-		new CDAHasTestCase("SubstanceAdministration") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createSubstanceAdministration();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addSubstanceAdministration(
-						(RegionOfInterest) objectToTest,
-						(SubstanceAdministration) eObjectToAdd);
-			}
-
-			@Override
-			protected boolean doHas(final EObject objectToTest,
-					final String templateId) {
-				return RegionOfInterestOperations
-				.hasSubstanceAdministrationTemplate(
-						(RegionOfInterest) objectToTest,
-						templateId);
-			}
-
-			@Override
-			protected void doAddTemplateId(final EObject eObjectToAdd,
-					final II theIi) {
-				((SubstanceAdministration) eObjectToAdd).getTemplateIds()
-				.add(theIi);
-			}
-		},
-
-		// Supply
-		// -------------------------------------------------------------
-		new CDAHasTestCase("Supply") {
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return CDAFactory.eINSTANCE.createSupply();
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				RegionOfInterestOperations.addSupply(
-						(RegionOfInterest) objectToTest,
-						(Supply) eObjectToAdd);
-			}
-
-			@Override
-			protected boolean doHas(final EObject objectToTest,
-					final String templateId) {
-				return RegionOfInterestOperations.hasSupplyTemplate(
-						(RegionOfInterest) objectToTest, templateId);
-			}
-
-			@Override
-			protected void doAddTemplateId(final EObject eObjectToAdd,
-					final II theIi) {
-				((Supply) eObjectToAdd).getTemplateIds().add(theIi);
-			}
-		},
-
-		// TemplateID
-		// -------------------------------------------------------------
-		new CDAHasTestCase("TemplateID") {
-
-			@Override
-			protected void doTest(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				((RegionOfInterest) objectToTest).getTemplateIds().add(
-						THE_II);
-				final boolean hasIsGood = doHas(objectToTest, TEMPLATE_ID);
-				assertTrue("Has \"" + getTestTargetDescription()
-						+ "\" failed for \""
-						+ objectToTest.eClass().getName() + "\"",
-						hasIsGood);
-			}
-
-			@Override
-			protected EObject getEObjectToAdd() {
-				return null;
-			}
-
-			@Override
-			protected void doAdd(final EObject objectToTest,
-					final EObject eObjectToAdd) {
-				// Nothing
-			}
-
-			@Override
-			protected boolean doHas(final EObject objectToTest,
-					final String templateId) {
-				return RegionOfInterestOperations.hasTemplateId(
-						(RegionOfInterest) objectToTest, templateId);
-			}
-
-			@Override
-			protected void doAddTemplateId(final EObject eObjectToAdd,
-					final II theIi) {
-				// Nothing
-			}
-		} };
+				@Override
+				protected void doAddTemplateId(final EObject eObjectToAdd, final II theIi) {
+					// Nothing
+				}
+			} };
 
 	@Override
 	protected List<CDATestCase> getTestCases() {

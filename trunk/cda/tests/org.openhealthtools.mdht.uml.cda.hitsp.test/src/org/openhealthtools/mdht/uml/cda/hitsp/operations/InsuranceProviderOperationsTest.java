@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.hitsp.operations;
 
 import java.util.Arrays;
@@ -26,9 +24,8 @@ import org.openhealthtools.mdht.uml.cda.ihe.operations.CoverageEntryOperationsTe
  * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
-public class InsuranceProviderOperationsTest extends CoverageEntryOperationsTest{
+public class InsuranceProviderOperationsTest extends CoverageEntryOperationsTest {
 
-	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.3.88.11.83.5";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
@@ -37,11 +34,10 @@ public class InsuranceProviderOperationsTest extends CoverageEntryOperationsTest
 	new TemplateIDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return InsuranceProviderOperations.validateInsuranceProviderTemplateId(
-					(InsuranceProvider) objectToTest, diagnostician, map);
+				(InsuranceProvider) objectToTest, diagnostician, map);
 		}
 	} }; // TEST_CASE_ARRAY
 
@@ -63,5 +59,5 @@ public class InsuranceProviderOperationsTest extends CoverageEntryOperationsTest
 	protected EObject getObjectInitToTest() {
 		return HITSPFactory.eINSTANCE.createInsuranceProvider().init();
 	}
-	
+
 } // InsuranceProviderOperationsTest

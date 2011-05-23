@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -36,17 +34,14 @@ public class Component4OperationsTest extends CDAValidationTest {
 	new CDAMutualExclusionValidationTestCase("Component4") {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
-			return Component4Operations.validateClinicalStatement(
-					(Component4) objectToTest, diagnostician, map);
+			return Component4Operations.validateClinicalStatement((Component4) objectToTest, diagnostician, map);
 		}
 
 		@Override
 		protected void initializeobjectToTest(final EObject objectToTest) {
-			((Component4) objectToTest).setAct(CDAFactory.eINSTANCE
-					.createAct());
+			((Component4) objectToTest).setAct(CDAFactory.eINSTANCE.createAct());
 		}
 	} };
 
@@ -68,7 +63,7 @@ public class Component4OperationsTest extends CDAValidationTest {
 		Component4Operations obj = new Component4Operations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	/**
 	 * @return the EObject instance to be validated
 	 */

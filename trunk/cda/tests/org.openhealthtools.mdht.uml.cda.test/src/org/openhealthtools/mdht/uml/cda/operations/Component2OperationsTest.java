@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -36,7 +34,7 @@ public class Component2OperationsTest extends CDAValidationTest {
 	 * The names of the references to include in the test.
 	 */
 	public static final Set<String> EREFERENCE_NAMES = new HashSet<String>(
-			Arrays.asList("structuredBody", "nonXMLBody"));
+		Arrays.asList("structuredBody", "nonXMLBody"));
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// UndefinedXOR
@@ -44,11 +42,9 @@ public class Component2OperationsTest extends CDAValidationTest {
 	new UndefinedXORValidationTestCase("Component2Operations", EREFERENCE_NAMES) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
-			return Component2Operations.validateBodyChoice(
-					(Component2) objectToTest, diagnostician, map);
+			return Component2Operations.validateBodyChoice((Component2) objectToTest, diagnostician, map);
 		}
 	} };
 
@@ -70,7 +66,7 @@ public class Component2OperationsTest extends CDAValidationTest {
 		Component2Operations obj = new Component2Operations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	@Override
 	protected EObject getObjectToTest() {
 		return CDAFactory.eINSTANCE.createComponent2();

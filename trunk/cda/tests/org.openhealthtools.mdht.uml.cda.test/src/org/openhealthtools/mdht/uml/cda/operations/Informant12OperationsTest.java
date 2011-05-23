@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -35,8 +33,8 @@ public class Informant12OperationsTest extends CDAValidationTest {
 	/**
 	 * The names of the references to include in the test.
 	 */
-	public static final Set<String> EREFERENCE_NAMES = new HashSet<String>(
-			Arrays.asList("assignedEntity", "relatedEntity"));
+	public static final Set<String> EREFERENCE_NAMES = new HashSet<String>(Arrays.asList(
+		"assignedEntity", "relatedEntity"));
 
 	/**
 	 * Not a real test, needed for EMMA to report 100% method coverage.
@@ -47,18 +45,16 @@ public class Informant12OperationsTest extends CDAValidationTest {
 		Informant12Operations obj = new Informant12Operations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// UndefinedXOR
 	// -------------------------------------------------------------
 	new UndefinedXORValidationTestCase("Informant12", EREFERENCE_NAMES) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
-			return Informant12Operations.validateInformantChoice(
-					(Informant12) objectToTest, diagnostician, map);
+			return Informant12Operations.validateInformantChoice((Informant12) objectToTest, diagnostician, map);
 		}
 	} };
 
