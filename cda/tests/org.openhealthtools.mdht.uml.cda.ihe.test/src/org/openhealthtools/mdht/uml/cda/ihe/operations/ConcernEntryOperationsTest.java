@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import java.util.Map;
@@ -56,8 +54,10 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 
 	@Test
 	public void testValidateConcernEntryEffectiveTimeLowHigh() {
-		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>("ValidateConcernEntryEffectiveTimeLowHigh",
-				operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME_LOW_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>(
+			"ValidateConcernEntryEffectiveTimeLowHigh",
+			operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME_LOW_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConcernEntry target) {
@@ -75,7 +75,8 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ConcernEntryOperations.validateConcernEntryEffectiveTimeLowHigh((ConcernEntry) objectToTest, diagnostician, map);
+				return ConcernEntryOperations.validateConcernEntryEffectiveTimeLowHigh(
+					(ConcernEntry) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -86,8 +87,10 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 
 	@Test
 	public void testValidateConcernEntryEffectiveTimeLowNoHigh() {
-		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>("ValidateConcernEntryEffectiveTimeLowNoHigh",
-				operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME_LOW_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>(
+			"ValidateConcernEntryEffectiveTimeLowNoHigh",
+			operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME_LOW_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConcernEntry target) {
@@ -107,7 +110,8 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ConcernEntryOperations.validateConcernEntryEffectiveTimeLowHigh((ConcernEntry) objectToTest, diagnostician, map);
+				return ConcernEntryOperations.validateConcernEntryEffectiveTimeLowHigh(
+					(ConcernEntry) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -118,8 +122,10 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 
 	@Test
 	public void testValidateConcernEntryTemplateId() {
-		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>("validateConcernEntryTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>(
+			"validateConcernEntryTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConcernEntry target) {
@@ -134,7 +140,8 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ConcernEntryOperations.validateConcernEntryTemplateId((ConcernEntry) objectToTest, diagnostician, map);
+				return ConcernEntryOperations.validateConcernEntryTemplateId(
+					(ConcernEntry) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -144,8 +151,10 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 
 	@Test
 	public void testValidateConcernEntryEffectiveTime() {
-		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>("ValidateConcernEntryEffectiveTime",
-				operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>(
+			"ValidateConcernEntryEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConcernEntry target) {
@@ -162,7 +171,8 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ConcernEntryOperations.validateConcernEntryEffectiveTime((ConcernEntry) objectToTest, diagnostician, map);
+				return ConcernEntryOperations.validateConcernEntryEffectiveTime(
+					(ConcernEntry) objectToTest, diagnostician, map);
 			}
 
 		};

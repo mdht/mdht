@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import java.math.BigDecimal;
@@ -74,8 +72,10 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 	@Test
 	public final void testValidateMedicationHasDosing() {
-		OperationsTestCase<Medication> validateMedicationHasDosingTestCase = new OperationsTestCase<Medication>("validateMedicationHasDosing",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_HAS_DOSING__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Medication> validateMedicationHasDosingTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationHasDosing",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_HAS_DOSING__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 			@Override
 			protected void updateToPass(Medication medication) {
 				medication.init();
@@ -104,8 +104,10 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 			}
 		}
 
-		OperationsTestCase<Medication> validateMedicationDosingRelationshipTestCase = new OperationsTestCase<Medication>("validateMedicationDosingRelationship",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DOSING_RELATIONSHIP__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), new CombinationMedicationObjectFactory()) {
+		OperationsTestCase<Medication> validateMedicationDosingRelationshipTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationDosingRelationship",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DOSING_RELATIONSHIP__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			new CombinationMedicationObjectFactory()) {
 			@Override
 			protected void updateToPass(Medication medication) {
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
@@ -115,7 +117,8 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicationOperations.validateMedicationDosingRelationship((Medication) objectToTest, diagnostician, map);
+				return MedicationOperations.validateMedicationDosingRelationship(
+					(Medication) objectToTest, diagnostician, map);
 			}
 
 			@Override
@@ -131,8 +134,10 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 	@Test
 	public final void testValidateMedicationHasDescriptionNoMedNotKnown() {
-		OperationsTestCase<Medication> validateMedicationHasDescriptionNoMedNotKnownTestCase = new OperationsTestCase<Medication>("validateMedicationHasDescriptionNoMedNotKnown",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_HAS_DESCRIPTION_NO_MED_NOT_KNOWN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Medication> validateMedicationHasDescriptionNoMedNotKnownTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationHasDescriptionNoMedNotKnown",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_HAS_DESCRIPTION_NO_MED_NOT_KNOWN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 			@Override
 			protected void updateToPass(Medication medication) {
 				medication.init();
@@ -140,7 +145,8 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicationOperations.validateMedicationHasDescriptionNoMedNotKnown((Medication) objectToTest, diagnostician, map);
+				return MedicationOperations.validateMedicationHasDescriptionNoMedNotKnown(
+					(Medication) objectToTest, diagnostician, map);
 			}
 
 			@Override
@@ -155,8 +161,10 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 	@Test
 	public final void testValidateMedicationHasProductEntry() {
-		OperationsTestCase<Medication> validateMedicationHasProductEntryTestCase = new OperationsTestCase<Medication>("validateMedicationHasProductEntry",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_HAS_PRODUCT_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Medication> validateMedicationHasProductEntryTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationHasProductEntry",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_HAS_PRODUCT_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 			@Override
 			protected void updateToPass(Medication medication) {
 				ProductEntry pe = IHEFactory.eINSTANCE.createProductEntry().init();
@@ -165,7 +173,8 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicationOperations.validateMedicationHasProductEntry((Medication) objectToTest, diagnostician, map);
+				return MedicationOperations.validateMedicationHasProductEntry(
+					(Medication) objectToTest, diagnostician, map);
 			}
 
 			@Override
@@ -184,8 +193,10 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 	@Test
 	public final void testValidateMedicationHasIntructionsInversion() {
-		OperationsTestCase<Medication> validateMedicationHasIntructionsInversionTestCase = new OperationsTestCase<Medication>("validateMedicationHasIntructionsInversion",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_HAS_INTRUCTIONS_INVERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Medication> validateMedicationHasIntructionsInversionTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationHasIntructionsInversion",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_HAS_INTRUCTIONS_INVERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 			@Override
 			protected void updateToPass(Medication medication) {
 
@@ -197,7 +208,8 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicationOperations.validateMedicationHasIntructionsInversion((Medication) objectToTest, diagnostician, map);
+				return MedicationOperations.validateMedicationHasIntructionsInversion(
+					(Medication) objectToTest, diagnostician, map);
 			}
 
 			@Override
@@ -217,18 +229,21 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 	@Test
 	public final void testValidateMedicationProductStrength() {
-		OperationsTestCase<Medication> validateMedicationProductStrengthTestCase = new OperationsTestCase<Medication>("validateMedicationProductStrength",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_PRODUCT_STRENGTH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Medication> validateMedicationProductStrengthTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationProductStrength",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_PRODUCT_STRENGTH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 			@Override
 			protected void updateToPass(Medication medication) {
 
-				medication.getConsumable().getManufacturedProduct().getManufacturedMaterial().getCode()
-						.setOriginalText(DatatypesFactory.eINSTANCE.createED("Name of Material Here"));
+				medication.getConsumable().getManufacturedProduct().getManufacturedMaterial().getCode().setOriginalText(
+					DatatypesFactory.eINSTANCE.createED("Name of Material Here"));
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicationOperations.validateMedicationProductStrength((Medication) objectToTest, diagnostician, map);
+				return MedicationOperations.validateMedicationProductStrength(
+					(Medication) objectToTest, diagnostician, map);
 			}
 
 			@Override
@@ -258,11 +273,14 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 	@Test
 	public final void testValidateMedicationProductName() {
-		OperationsTestCase<Medication> validateMedicationProductNameTestCase = new OperationsTestCase<Medication>("validateMedicationProductName",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_PRODUCT_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Medication> validateMedicationProductNameTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationProductName",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_PRODUCT_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 			@Override
 			protected void updateToPass(Medication medication) {
-				medication.getConsumable().getManufacturedProduct().getManufacturedMaterial().setName(DatatypesFactory.eINSTANCE.createEN());
+				medication.getConsumable().getManufacturedProduct().getManufacturedMaterial().setName(
+					DatatypesFactory.eINSTANCE.createEN());
 			}
 
 			@Override
@@ -292,8 +310,10 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 	@Test
 	public final void testValidateMedicationPreconditionReference() {
-		OperationsTestCase<Medication> validateMedicationPreconditionReferenceTestCase = new OperationsTestCase<Medication>("validateMedicationPreconditionReference",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_PRECONDITION_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Medication> validateMedicationPreconditionReferenceTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationPreconditionReference",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_PRECONDITION_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 			@Override
 			protected void updateToPass(Medication medication) {
 				for (Precondition pr : medication.getPreconditions()) {
@@ -306,7 +326,8 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicationOperations.validateMedicationPreconditionReference((Medication) objectToTest, diagnostician, map);
+				return MedicationOperations.validateMedicationPreconditionReference(
+					(Medication) objectToTest, diagnostician, map);
 			}
 
 			@Override
@@ -330,8 +351,10 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 	@Test
 	public final void testValidateMedicationHasSupplyEntryInversion() {
-		OperationsTestCase<Medication> validateMedicationHasSupplyEntryInversionTestCase = new OperationsTestCase<Medication>("validateMedicationHasSupplyEntryInversion",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_HAS_SUPPLY_ENTRY_INVERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Medication> validateMedicationHasSupplyEntryInversionTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationHasSupplyEntryInversion",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_HAS_SUPPLY_ENTRY_INVERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 			@Override
 			protected void updateToPass(Medication medication) {
 				for (EntryRelationship er : medication.getEntryRelationships()) {
@@ -341,7 +364,8 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicationOperations.validateMedicationHasSupplyEntryInversion((Medication) objectToTest, diagnostician, map);
+				return MedicationOperations.validateMedicationHasSupplyEntryInversion(
+					(Medication) objectToTest, diagnostician, map);
 			}
 
 			@Override
@@ -360,8 +384,10 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 	@Test
 	public final void testValidateMedicationHasFillNumber() {
-		OperationsTestCase<Medication> validateMedicationHasFillNumberTestCase = new OperationsTestCase<Medication>("validateMedicationHasFillNumber",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_HAS_FILL_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Medication> validateMedicationHasFillNumberTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationHasFillNumber",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_HAS_FILL_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 			@Override
 			protected void updateToPass(Medication medication) {
 				for (EntryRelationship er : medication.getEntryRelationships()) {
@@ -373,7 +399,8 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicationOperations.validateMedicationHasFillNumber((Medication) objectToTest, diagnostician, map);
+				return MedicationOperations.validateMedicationHasFillNumber(
+					(Medication) objectToTest, diagnostician, map);
 			}
 
 			@Override
@@ -390,8 +417,10 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 	@Test
 	public final void testValidateMedicationTemplateId() {
-		OperationsTestCase<Medication> validateMedicationTemplateIdTestCase = new OperationsTestCase<Medication>("validateMedicationTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Medication> validateMedicationTemplateIdTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 			@Override
 			protected void updateToPass(Medication medication) {
 				medication.init();
@@ -414,8 +443,10 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 	@Test
 	public final void testValidateMedicationApproachSiteCode() {
-		OperationsTestCase<Medication> validateMedicationApproachSiteCodeTestCase = new OperationsTestCase<Medication>("validateMedicationApproachSiteCode",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_APPROACH_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Medication> validateMedicationApproachSiteCodeTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationApproachSiteCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_APPROACH_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 			@Override
 			protected void updateToPass(Medication medication) {
 				medication.init();
@@ -425,7 +456,8 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicationOperations.validateMedicationApproachSiteCode((Medication) objectToTest, diagnostician, map);
+				return MedicationOperations.validateMedicationApproachSiteCode(
+					(Medication) objectToTest, diagnostician, map);
 			}
 
 			@Override
@@ -439,8 +471,10 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 	@Test
 	public final void testValidateMedicationDoseQuantity() {
-		OperationsTestCase<Medication> validateMedicationDoseQuantityTestCase = new OperationsTestCase<Medication>("validateMedicationDoseQuantity",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DOSE_QUANTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Medication> validateMedicationDoseQuantityTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationDoseQuantity",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DOSE_QUANTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 			@Override
 			protected void updateToPass(Medication medication) {
 				IVL_PQ value = DatatypesFactory.eINSTANCE.createIVL_PQ();
@@ -451,7 +485,8 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicationOperations.validateMedicationDoseQuantity((Medication) objectToTest, diagnostician, map);
+				return MedicationOperations.validateMedicationDoseQuantity(
+					(Medication) objectToTest, diagnostician, map);
 			}
 
 			@Override
@@ -465,8 +500,10 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 	@Test
 	public final void testValidateMedicationRateQuantity() {
-		OperationsTestCase<Medication> validateMedicationRateQuantityTestCase = new OperationsTestCase<Medication>("validateMedicationRateQuantity",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_RATE_QUANTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Medication> validateMedicationRateQuantityTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationRateQuantity",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_RATE_QUANTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 			@Override
 			protected void updateToPass(Medication medication) {
 				medication.init();
@@ -476,7 +513,8 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicationOperations.validateMedicationRateQuantity((Medication) objectToTest, diagnostician, map);
+				return MedicationOperations.validateMedicationRateQuantity(
+					(Medication) objectToTest, diagnostician, map);
 			}
 
 			@Override
@@ -490,8 +528,9 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 	@Test
 	public final void testValidateMedicationCode() {
-		OperationsTestCase<Medication> validateMedicationCodeTestCase = new OperationsTestCase<Medication>("validateMedicationCode",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Medication> validateMedicationCodeTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 			@Override
 			protected void updateToPass(Medication medication) {
 				medication.init();
@@ -514,8 +553,10 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 	@Test
 	public final void testValidateMedicationStatusCode() {
-		OperationsTestCase<Medication> validateMedicationStatusCodeTestCase = new OperationsTestCase<Medication>("validateMedicationStatusCode",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Medication> validateMedicationStatusCodeTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 			@Override
 			protected void updateToPass(Medication medication) {
 				medication.init();
@@ -539,8 +580,10 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 	@Test
 	public final void testValidateMedicationEffectiveTime() {
-		OperationsTestCase<Medication> validateMedicationEffectiveTimeTestCase = new OperationsTestCase<Medication>("validateMedicationEffectiveTime",
-				operationsForOCL.getOCLValue("VALIDATE_MEDICATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Medication> validateMedicationEffectiveTimeTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 			@Override
 			protected void updateToPass(Medication medication) {
 				medication.init();
@@ -552,7 +595,8 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicationOperations.validateMedicationEffectiveTime((Medication) objectToTest, diagnostician, map);
+				return MedicationOperations.validateMedicationEffectiveTime(
+					(Medication) objectToTest, diagnostician, map);
 			}
 
 			@Override

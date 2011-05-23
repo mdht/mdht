@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import java.util.Map;
@@ -54,8 +52,10 @@ public class SplitDoseOperationsTest extends MedicationOperationsTest {
 
 	@Test
 	public void testValidateSplitDoseSplitDosingSubstanceAdministration() {
-		OperationsTestCase<SplitDose> testCase = new OperationsTestCase<SplitDose>("ValidateSplitDoseSplitDosingSubstanceAdministration",
-				operationsForOCL.getOCLValue("VALIDATE_SPLIT_DOSE_SPLIT_DOSING_SUBSTANCE_ADMINISTRATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<SplitDose> testCase = new OperationsTestCase<SplitDose>(
+			"ValidateSplitDoseSplitDosingSubstanceAdministration",
+			operationsForOCL.getOCLValue("VALIDATE_SPLIT_DOSE_SPLIT_DOSING_SUBSTANCE_ADMINISTRATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SplitDose target) {
@@ -71,7 +71,8 @@ public class SplitDoseOperationsTest extends MedicationOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return SplitDoseOperations.validateSplitDoseSplitDosingSubstanceAdministration((SplitDose) objectToTest, diagnostician, map);
+				return SplitDoseOperations.validateSplitDoseSplitDosingSubstanceAdministration(
+					(SplitDose) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -82,8 +83,10 @@ public class SplitDoseOperationsTest extends MedicationOperationsTest {
 
 	@Test
 	public void testValidateSplitDoseTemplateId() {
-		OperationsTestCase<SplitDose> testCase = new OperationsTestCase<SplitDose>("ValidateSplitDoseTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_SPLIT_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<SplitDose> testCase = new OperationsTestCase<SplitDose>(
+			"ValidateSplitDoseTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_SPLIT_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SplitDose target) {

@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import java.util.Map;
@@ -107,8 +105,10 @@ public class ConditionalDoseOperationsTest extends MedicationOperationsTest {
 	@Test
 	public void testValidateConditionalDoseConditionalDosingSubstanceAdministration() {
 
-		OperationsTestCase<ConditionalDose> testCase = new OperationsTestCase<ConditionalDose>("ValidateConditionalDoseConditionalDosingSubstanceAdministration",
-				operationsForOCL.getOCLValue("VALIDATE_CONDITIONAL_DOSE_CONDITIONAL_DOSING_SUBSTANCE_ADMINISTRATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ConditionalDose> testCase = new OperationsTestCase<ConditionalDose>(
+			"ValidateConditionalDoseConditionalDosingSubstanceAdministration",
+			operationsForOCL.getOCLValue("VALIDATE_CONDITIONAL_DOSE_CONDITIONAL_DOSING_SUBSTANCE_ADMINISTRATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConditionalDose target) {
@@ -124,7 +124,8 @@ public class ConditionalDoseOperationsTest extends MedicationOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ConditionalDoseOperations.validateConditionalDoseConditionalDosingSubstanceAdministration((ConditionalDose) objectToTest, diagnostician, map);
+				return ConditionalDoseOperations.validateConditionalDoseConditionalDosingSubstanceAdministration(
+					(ConditionalDose) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -135,8 +136,10 @@ public class ConditionalDoseOperationsTest extends MedicationOperationsTest {
 	@Test
 	public void testValidateConditionalDoseTemplateId() {
 
-		OperationsTestCase<ConditionalDose> testCase = new OperationsTestCase<ConditionalDose>("ValidateConditionalDoseTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_CONDITIONAL_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<ConditionalDose> testCase = new OperationsTestCase<ConditionalDose>(
+			"ValidateConditionalDoseTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_CONDITIONAL_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConditionalDose target) {
@@ -151,7 +154,8 @@ public class ConditionalDoseOperationsTest extends MedicationOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ConditionalDoseOperations.validateConditionalDoseTemplateId((ConditionalDose) objectToTest, diagnostician, map);
+				return ConditionalDoseOperations.validateConditionalDoseTemplateId(
+					(ConditionalDose) objectToTest, diagnostician, map);
 			}
 
 		};

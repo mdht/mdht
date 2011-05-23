@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -47,6 +45,7 @@ public class VitalSignObservationOperationsTest extends ResultObservationOperati
 	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.4.13.2";
 
 	protected static final String CODE = "11535-2"; // Not in OCL
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final String TARGET_SITE_CODE = "whatever";
@@ -59,8 +58,10 @@ public class VitalSignObservationOperationsTest extends ResultObservationOperati
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-					return VitalSignObservationOperations.validateVitalSignObservationTemplateId((VitalSignObservation) objectToTest, diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return VitalSignObservationOperations.validateVitalSignObservationTemplateId(
+						(VitalSignObservation) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -69,8 +70,10 @@ public class VitalSignObservationOperationsTest extends ResultObservationOperati
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-					return VitalSignObservationOperations.validateResultObservationCode((VitalSignObservation) objectToTest, diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return VitalSignObservationOperations.validateResultObservationCode(
+						(VitalSignObservation) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -80,7 +83,8 @@ public class VitalSignObservationOperationsTest extends ResultObservationOperati
 
 				@SuppressWarnings("synthetic-access")
 				@Override
-				public void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
+				public void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
 					try {
 						validateExpectPass(objectToTest, diagnostician, map);
 						doSet(objectToTest);
@@ -91,8 +95,10 @@ public class VitalSignObservationOperationsTest extends ResultObservationOperati
 				}
 
 				@Override
-				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-					return VitalSignObservationOperations.validateVitalSignObservationValue((VitalSignObservation) objectToTest, diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return VitalSignObservationOperations.validateVitalSignObservationValue(
+						(VitalSignObservation) objectToTest, diagnostician, map);
 				}
 
 				@Override
@@ -107,8 +113,10 @@ public class VitalSignObservationOperationsTest extends ResultObservationOperati
 			// -------------------------------------------------------------
 			new InformationSourceCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-					return ResultObservationOperations.validateResultObservationInformationSource((ResultObservation) objectToTest, diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ResultObservationOperations.validateResultObservationInformationSource(
+						(ResultObservation) objectToTest, diagnostician, map);
 				}
 			}
 
@@ -142,10 +150,12 @@ public class VitalSignObservationOperationsTest extends ResultObservationOperati
 		final VitalSignObservation vso = (VitalSignObservation) getObjectToTest();
 		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(vso);
 		try {
-			boolean isValid = VitalSignObservationOperations.validateVitalSignObservationTargetSiteCode(vso, diagnostician, map);
+			boolean isValid = VitalSignObservationOperations.validateVitalSignObservationTargetSiteCode(
+				vso, diagnostician, map);
 			assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 
-			final CD targetSiteCode = DatatypesFactory.eINSTANCE.createCE(TARGET_SITE_CODE, TARGET_SITE_CODE_CODE_SYSTEM);
+			final CD targetSiteCode = DatatypesFactory.eINSTANCE.createCE(
+				TARGET_SITE_CODE, TARGET_SITE_CODE_CODE_SYSTEM);
 			vso.getTargetSiteCodes().add(targetSiteCode);
 
 			isValid = VitalSignObservationOperations.validateVitalSignObservationTargetSiteCode(vso, diagnostician, map);

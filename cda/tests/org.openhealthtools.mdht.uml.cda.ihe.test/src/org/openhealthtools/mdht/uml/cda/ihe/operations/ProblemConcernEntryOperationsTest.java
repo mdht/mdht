@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import java.util.Arrays;
@@ -31,7 +29,6 @@ import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
 @SuppressWarnings("nls")
 public class ProblemConcernEntryOperationsTest extends ConcernEntryOperationsTest {
 
-	@SuppressWarnings("hiding")
 	protected static final String CONCERN_ENTRY_TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.4.5.2";
 
 	// /**
@@ -51,8 +48,10 @@ public class ProblemConcernEntryOperationsTest extends ConcernEntryOperationsTes
 			new TemplateIDValidationTest(CONCERN_ENTRY_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-					return ProblemConcernEntryOperations.validateProblemConcernEntryTemplateId((ProblemConcernEntry) objectToTest, diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ProblemConcernEntryOperations.validateProblemConcernEntryTemplateId(
+						(ProblemConcernEntry) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -61,8 +60,10 @@ public class ProblemConcernEntryOperationsTest extends ConcernEntryOperationsTes
 			// -------------------------------------------------------------
 			new EntryRelationshipCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-					return ProblemConcernEntryOperations.validateProblemConcernEntryProblemEntry((ProblemConcernEntry) objectToTest, diagnostician, map);
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ProblemConcernEntryOperations.validateProblemConcernEntryProblemEntry(
+						(ProblemConcernEntry) objectToTest, diagnostician, map);
 				}
 
 				@Override

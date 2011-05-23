@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import java.util.Map;
@@ -197,8 +195,9 @@ public class CommentOperationsTest extends ActOperationsTest {
 	@Test
 	public void testValidateCommentTemplateId() {
 
-		OperationsTestCase<Comment> testCase = new OperationsTestCase<Comment>("validateCommentTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_COMMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Comment> testCase = new OperationsTestCase<Comment>(
+			"validateCommentTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_COMMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(Comment target) {
@@ -225,8 +224,10 @@ public class CommentOperationsTest extends ActOperationsTest {
 	@Test
 	public void testValidateIHECommentHasTextReference() {
 
-		OperationsTestCase<Comment> testCase = new OperationsTestCase<Comment>("validateIHECommentHasTextReference",
-				operationsForOCL.getOCLValue("VALIDATE_IHE_COMMENT_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Comment> testCase = new OperationsTestCase<Comment>(
+			"validateIHECommentHasTextReference",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_COMMENT_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Comment target) {
@@ -256,8 +257,10 @@ public class CommentOperationsTest extends ActOperationsTest {
 	@Test
 	public void testValidateIHECommentEffectiveTimeWhenAuthorPresent() {
 
-		OperationsTestCase<Comment> testCase = new OperationsTestCase<Comment>("validateIHECommentEffectiveTimeWhenAuthorPresent",
-				operationsForOCL.getOCLValue("VALIDATE_IHE_COMMENT_EFFECTIVE_TIME_WHEN_AUTHOR_PRESENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Comment> testCase = new OperationsTestCase<Comment>(
+			"validateIHECommentEffectiveTimeWhenAuthorPresent",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_COMMENT_EFFECTIVE_TIME_WHEN_AUTHOR_PRESENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Comment target) {
@@ -274,7 +277,8 @@ public class CommentOperationsTest extends ActOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return CommentOperations.validateIHECommentEffectiveTimeWhenAuthorPresent((Comment) objectToTest, diagnostician, map);
+				return CommentOperations.validateIHECommentEffectiveTimeWhenAuthorPresent(
+					(Comment) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -286,8 +290,10 @@ public class CommentOperationsTest extends ActOperationsTest {
 	@Test
 	public void testValidateIHECommentHasAuthorId() {
 
-		OperationsTestCase<Comment> testCase = new OperationsTestCase<Comment>("validateIHECommentHasAuthorId",
-				operationsForOCL.getOCLValue("VALIDATE_IHE_COMMENT_HAS_AUTHOR_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Comment> testCase = new OperationsTestCase<Comment>(
+			"validateIHECommentHasAuthorId",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_COMMENT_HAS_AUTHOR_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Comment target) {
@@ -325,8 +331,10 @@ public class CommentOperationsTest extends ActOperationsTest {
 	@Test
 	public void testValidateIHECommentHasAuthorOrganization() {
 
-		OperationsTestCase<Comment> testCase = new OperationsTestCase<Comment>("validateIHECommentHasAuthorOrganization",
-				operationsForOCL.getOCLValue("VALIDATE_IHE_COMMENT_HAS_AUTHOR_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Comment> testCase = new OperationsTestCase<Comment>(
+			"validateIHECommentHasAuthorOrganization",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_COMMENT_HAS_AUTHOR_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Comment target) {
@@ -351,7 +359,8 @@ public class CommentOperationsTest extends ActOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return CommentOperations.validateIHECommentHasAuthorOrganization((Comment) objectToTest, diagnostician, map);
+				return CommentOperations.validateIHECommentHasAuthorOrganization(
+					(Comment) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -362,8 +371,10 @@ public class CommentOperationsTest extends ActOperationsTest {
 	@Test
 	public void testValidateIHECommentHasAuthorPerson() {
 
-		OperationsTestCase<Comment> testCase = new OperationsTestCase<Comment>("validateIHECommentHasAuthorPerson",
-				operationsForOCL.getOCLValue("VALIDATE_IHE_COMMENT_HAS_AUTHOR_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Comment> testCase = new OperationsTestCase<Comment>(
+			"validateIHECommentHasAuthorPerson",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_COMMENT_HAS_AUTHOR_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Comment target) {
@@ -387,7 +398,8 @@ public class CommentOperationsTest extends ActOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return CommentOperations.validateIHECommentHasAuthorOrganization((Comment) objectToTest, diagnostician, map);
+				return CommentOperations.validateIHECommentHasAuthorOrganization(
+					(Comment) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -398,8 +410,10 @@ public class CommentOperationsTest extends ActOperationsTest {
 	@Test
 	public void testValidateIHECommentStatusCode() {
 
-		OperationsTestCase<Comment> testCase = new OperationsTestCase<Comment>("validateIHECommentStatusCode",
-				operationsForOCL.getOCLValue("VALIDATE_IHE_COMMENT_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Comment> testCase = new OperationsTestCase<Comment>(
+			"validateIHECommentStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_COMMENT_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Comment target) {
@@ -426,8 +440,9 @@ public class CommentOperationsTest extends ActOperationsTest {
 	@Test
 	public void testValidateIHECommentText() {
 
-		OperationsTestCase<Comment> testCase = new OperationsTestCase<Comment>("validateIHECommentText",
-				operationsForOCL.getOCLValue("VALIDATE_IHE_COMMENT_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Comment> testCase = new OperationsTestCase<Comment>(
+			"validateIHECommentText",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_COMMENT_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(Comment target) {

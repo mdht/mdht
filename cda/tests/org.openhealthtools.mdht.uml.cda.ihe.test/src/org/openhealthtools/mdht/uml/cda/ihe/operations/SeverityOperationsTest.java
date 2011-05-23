@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import java.util.Map;
@@ -41,8 +51,10 @@ public class SeverityOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateSeverityTemplateId() {
-		OperationsTestCase<Severity> testCase = new OperationsTestCase<Severity>("ValidateSeverityTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_SEVERITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Severity> testCase = new OperationsTestCase<Severity>(
+			"ValidateSeverityTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Severity target) {
@@ -66,8 +78,10 @@ public class SeverityOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateSeverityHasTextReference() {
-		OperationsTestCase<Severity> testCase = new OperationsTestCase<Severity>("validateSeverityHasTextReference",
-				operationsForOCL.getOCLValue("VALIDATE_SEVERITY_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Severity> testCase = new OperationsTestCase<Severity>(
+			"validateSeverityHasTextReference",
+			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Severity target) {
@@ -95,8 +109,9 @@ public class SeverityOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateSeverityHasText() {
-		OperationsTestCase<Severity> testCase = new OperationsTestCase<Severity>("ValidateSeverityHasText",
-				operationsForOCL.getOCLValue("VALIDATE_SEVERITY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Severity> testCase = new OperationsTestCase<Severity>(
+			"ValidateSeverityHasText",
+			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(Severity target) {
@@ -122,8 +137,10 @@ public class SeverityOperationsTest extends CDAValidationTest {
 
 	@Test
 	public void testValidateSeverityObservationValue() {
-		OperationsTestCase<Severity> testCase = new OperationsTestCase<Severity>("ValidateSeverityObservationValue",
-				operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<Severity> testCase = new OperationsTestCase<Severity>(
+			"ValidateSeverityObservationValue",
+			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Severity target) {

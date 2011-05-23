@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import java.util.Map;
@@ -41,8 +51,10 @@ public class HealthStatusObservationTest extends ObservationOperationsTest {
 
 	@Test
 	public void testValidateHealthStatusObservationHasTextReference() {
-		OperationsTestCase<HealthStatusObservation> testCase = new OperationsTestCase<HealthStatusObservation>("ValidateHealthStatusObservationHasTextReference",
-				operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<HealthStatusObservation> testCase = new OperationsTestCase<HealthStatusObservation>(
+			"ValidateHealthStatusObservationHasTextReference",
+			operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HealthStatusObservation target) {
@@ -60,7 +72,8 @@ public class HealthStatusObservationTest extends ObservationOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return HealthStatusObservationOperations.validateHealthStatusObservationHasTextReference((HealthStatusObservation) objectToTest, diagnostician, map);
+				return HealthStatusObservationOperations.validateHealthStatusObservationHasTextReference(
+					(HealthStatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -70,8 +83,10 @@ public class HealthStatusObservationTest extends ObservationOperationsTest {
 
 	@Test
 	public void testValidateHealthStatusObservationTemplateId() {
-		OperationsTestCase<HealthStatusObservation> testCase = new OperationsTestCase<HealthStatusObservation>("ValidateHealthStatusObservationTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<HealthStatusObservation> testCase = new OperationsTestCase<HealthStatusObservation>(
+			"ValidateHealthStatusObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HealthStatusObservation target) {
@@ -86,7 +101,8 @@ public class HealthStatusObservationTest extends ObservationOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return HealthStatusObservationOperations.validateHealthStatusObservationTemplateId((HealthStatusObservation) objectToTest, diagnostician, map);
+				return HealthStatusObservationOperations.validateHealthStatusObservationTemplateId(
+					(HealthStatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -96,8 +112,10 @@ public class HealthStatusObservationTest extends ObservationOperationsTest {
 
 	@Test
 	public void testValidateHealthStatusObservationText() {
-		OperationsTestCase<HealthStatusObservation> testCase = new OperationsTestCase<HealthStatusObservation>("ValidateHealthStatusObservationText",
-				operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<HealthStatusObservation> testCase = new OperationsTestCase<HealthStatusObservation>(
+			"ValidateHealthStatusObservationText",
+			operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HealthStatusObservation target) {
@@ -113,7 +131,8 @@ public class HealthStatusObservationTest extends ObservationOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return HealthStatusObservationOperations.validateHealthStatusObservationText((HealthStatusObservation) objectToTest, diagnostician, map);
+				return HealthStatusObservationOperations.validateHealthStatusObservationText(
+					(HealthStatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -123,8 +142,10 @@ public class HealthStatusObservationTest extends ObservationOperationsTest {
 
 	@Test
 	public void testValidateStatusObservationValue() {
-		OperationsTestCase<HealthStatusObservation> testCase = new OperationsTestCase<HealthStatusObservation>("ValidateStatusObservationValue",
-				operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<HealthStatusObservation> testCase = new OperationsTestCase<HealthStatusObservation>(
+			"ValidateStatusObservationValue",
+			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HealthStatusObservation target) {
@@ -141,7 +162,8 @@ public class HealthStatusObservationTest extends ObservationOperationsTest {
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return HealthStatusObservationOperations.validateStatusObservationValue((HealthStatusObservation) objectToTest, diagnostician, map);
+				return HealthStatusObservationOperations.validateStatusObservationValue(
+					(HealthStatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};

@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -73,8 +71,9 @@ public class AdmissionMedicationHistorySectionOperationsTest extends CCDValidati
 	@Test
 	public void testValidateAdmissionMedicationHistorySectionTemplateId() {
 		OperationsTestCase<AdmissionMedicationHistorySection> testCase = new OperationsTestCase<AdmissionMedicationHistorySection>(
-				"validateAdmissionMedicationHistorySectionTemplateId",
-				operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+			"validateAdmissionMedicationHistorySectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AdmissionMedicationHistorySection target) {
@@ -89,8 +88,8 @@ public class AdmissionMedicationHistorySectionOperationsTest extends CCDValidati
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return AdmissionMedicationHistorySectionOperations.validateAdmissionMedicationHistorySectionTemplateId((AdmissionMedicationHistorySection) objectToTest,
-						diagnostician, map);
+				return AdmissionMedicationHistorySectionOperations.validateAdmissionMedicationHistorySectionTemplateId(
+					(AdmissionMedicationHistorySection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -111,8 +110,10 @@ public class AdmissionMedicationHistorySectionOperationsTest extends CCDValidati
 		 * myAnnotation.value()); }
 		 */
 
-		OperationsTestCase<AdmissionMedicationHistorySection> testCase = new OperationsTestCase<AdmissionMedicationHistorySection>("validateAdmissionMedicationHistorySectionCode",
-				operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+		OperationsTestCase<AdmissionMedicationHistorySection> testCase = new OperationsTestCase<AdmissionMedicationHistorySection>(
+			"validateAdmissionMedicationHistorySectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AdmissionMedicationHistorySection target) {
@@ -127,8 +128,8 @@ public class AdmissionMedicationHistorySectionOperationsTest extends CCDValidati
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return AdmissionMedicationHistorySectionOperations.validateAdmissionMedicationHistorySectionCode((AdmissionMedicationHistorySection) objectToTest, diagnostician,
-						map);
+				return AdmissionMedicationHistorySectionOperations.validateAdmissionMedicationHistorySectionCode(
+					(AdmissionMedicationHistorySection) objectToTest, diagnostician, map);
 			}
 
 		};
