@@ -49,16 +49,16 @@ package <%=UML2GenModelUtil.getOperationsPackageName(genPackage)%>;
  */
 public class <%=UML2GenModelUtil.getOperationsClassName(genClass)%><%=UML2GenModelUtil.getOperationsClassExtends(genClass)%>
 {
-<%if (genModel.getCopyrightText() != null) {%>
+<%if (genModel.hasCopyrightField()) {%>
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final <%=genModel.getImportedName("java.lang.String")%> copyright = "<%=genModel.getCopyrightText()%>";<%=genModel.getNonNLS()%>
+	public static final <%=genModel.getImportedName("java.lang.String")%> copyright = "<%=genModel.getCopyrightFieldLiteral()%>";<%=genModel.getNonNLS()%>
 
 <%}%>
-<%if (UML2GenModelUtil.hasOCLOperationBodies(genClass) && (!UML2GenModelUtil.hasOCLOperationBodies(genClass.getClassExtendsGenClass()) || (UML2GenModelUtil.hasOCLOperationBodies(genClass.getClassExtendsGenClass()) && !UML2GenModelUtil.isOperationsClasses(genClass.getClassExtendsGenClass().getGenPackage())))) {%>
+<%if (UML2GenModelUtil.hasOCLOperationBodies(genClass) && (!UML2GenModelUtil.hasOCLOperationBodies(genClass.getClassExtendsGenClass()) || !UML2GenModelUtil.isOperationsClasses(genClass.getClassExtendsGenClass().getGenPackage()))) {%>
 	/**
 	 * The cached environment for evaluating OCL expressions.
 	 * <!-- begin-user-doc -->
