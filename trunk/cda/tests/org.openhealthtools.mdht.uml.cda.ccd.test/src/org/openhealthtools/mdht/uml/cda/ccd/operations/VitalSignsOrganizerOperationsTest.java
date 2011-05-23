@@ -44,20 +44,17 @@ public class VitalSignsOrganizerOperationsTest extends CCDValidationTest {
 		VitalSignsOrganizerOperations obj = new VitalSignsOrganizerOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(VITAL_SIGNS_ORGANIZER_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return VitalSignsOrganizerOperations
-							.validateResultOrganizerTemplateId(
-									(VitalSignsOrganizer) objectToTest,
-									diagnostician, map);
+					return VitalSignsOrganizerOperations.validateResultOrganizerTemplateId(
+						(VitalSignsOrganizer) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -66,13 +63,10 @@ public class VitalSignsOrganizerOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new InformationSourceCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return VitalSignsOrganizerOperations
-							.validateVitalSignsOrganizerInformationSource(
-									(VitalSignsOrganizer) objectToTest,
-									diagnostician, map);
+					return VitalSignsOrganizerOperations.validateVitalSignsOrganizerInformationSource(
+						(VitalSignsOrganizer) objectToTest, diagnostician, map);
 				}
 			}
 
@@ -95,7 +89,7 @@ public class VitalSignsOrganizerOperationsTest extends CCDValidationTest {
 		VitalSignsOrganizer vitalSignsOrganizer = CCDFactory.eINSTANCE.createVitalSignsOrganizer();
 		section.addOrganizer(vitalSignsOrganizer);
 		return vitalSignsOrganizer;
-//		return CCDFactory.eINSTANCE.createVitalSignsOrganizer();
+		// return CCDFactory.eINSTANCE.createVitalSignsOrganizer();
 	}
 
 	@Override

@@ -41,20 +41,17 @@ public class CauseOfDeathObservationOperationsTest extends CCDValidationTest {
 		CauseOfDeathObservationOperations obj = new CauseOfDeathObservationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 	// Template ID
 	// -------------------------------------------------------------
 	new TemplateIDValidationTest(CAUSE_OF_DEATH_OBSERVATION_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
-			return CauseOfDeathObservationOperations
-					.validateFamilyHistoryObservationTemplateId(
-							(CauseOfDeathObservation) objectToTest,
-							diagnostician, map);
+			return CauseOfDeathObservationOperations.validateFamilyHistoryObservationTemplateId(
+				(CauseOfDeathObservation) objectToTest, diagnostician, map);
 		}
 
 	}
@@ -69,7 +66,7 @@ public class CauseOfDeathObservationOperationsTest extends CCDValidationTest {
 		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
 		return retValue;
 	}
-	
+
 	@Override
 	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createCauseOfDeathObservation();

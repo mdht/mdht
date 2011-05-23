@@ -36,9 +36,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 /**
  * This class is a JUnit4 test case.
  */
-@SuppressWarnings( { "nls", "serial" })
-public class ResultOrganizerOperationsTest extends
-StructuralAttributeValidationTest {
+@SuppressWarnings({ "nls", "serial" })
+public class ResultOrganizerOperationsTest extends StructuralAttributeValidationTest {
 
 	protected static final String RESULT_ORGANIZER_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.32";
 
@@ -65,80 +64,64 @@ StructuralAttributeValidationTest {
 		ResultOrganizerOperations obj = new ResultOrganizerOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(RESULT_ORGANIZER_TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(RESULT_ORGANIZER_TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ResultOrganizerOperations
-				.validateResultOrganizerTemplateId(
-						(ResultOrganizer) objectToTest,
-						diagnostician, map);
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ResultOrganizerOperations.validateResultOrganizerTemplateId(
+						(ResultOrganizer) objectToTest, diagnostician, map);
+				}
+
+			},
+
+			// ID
+			// -------------------------------------------------------------
+			new IDCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ResultOrganizerOperations.validateResultOrganizerId(
+						(ResultOrganizer) objectToTest, diagnostician, map);
+				}
+			},
+
+			// StatusCode
+			// -------------------------------------------------------------
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ResultOrganizerOperations.validateResultOrganizerStatusCode(
+						(ResultOrganizer) objectToTest, diagnostician, map);
+				}
+			},
+
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ResultOrganizerOperations.validateResultOrganizerCode(
+						(ResultOrganizer) objectToTest, diagnostician, map);
+				}
+			},
+
+			// Information Source
+			// -------------------------------------------------------------
+			new InformationSourceCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ResultOrganizerOperations.validateResultOrganizerInformationSource(
+						(ResultOrganizer) objectToTest, diagnostician, map);
+				}
 			}
-
-		},
-
-		// ID
-		// -------------------------------------------------------------
-		new IDCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ResultOrganizerOperations
-				.validateResultOrganizerId(
-						(ResultOrganizer) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// StatusCode
-		// -------------------------------------------------------------
-		new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ResultOrganizerOperations
-				.validateResultOrganizerStatusCode(
-						(ResultOrganizer) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// Code
-		// -------------------------------------------------------------
-		new CodeCCDValidationTest(CODE, CODE_CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ResultOrganizerOperations
-				.validateResultOrganizerCode(
-						(ResultOrganizer) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-
-		// Information Source
-		// -------------------------------------------------------------
-		new InformationSourceCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ResultOrganizerOperations
-				.validateResultOrganizerInformationSource(
-						(ResultOrganizer) objectToTest,
-						diagnostician, map);
-			}
-		}
 
 	}; // TEST_CASE_ARRAY
 
@@ -159,7 +142,7 @@ StructuralAttributeValidationTest {
 		ResultOrganizer resultOrganizer = CCDFactory.eINSTANCE.createResultOrganizer();
 		section.addOrganizer(resultOrganizer);
 		return resultOrganizer;
-//		return CCDFactory.eINSTANCE.createResultOrganizer();
+		// return CCDFactory.eINSTANCE.createResultOrganizer();
 	}
 
 	@Override
@@ -168,18 +151,15 @@ StructuralAttributeValidationTest {
 	}
 
 	@Override
-	protected Enumerator doGetValidStructuralAttributeValue(
-			final String structuralAttributeName) {
-		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP
-		.get(structuralAttributeName);
+	protected Enumerator doGetValidStructuralAttributeValue(final String structuralAttributeName) {
+		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP.get(structuralAttributeName);
 	}
 
 	@Override
-	protected boolean doValidateStructuralAttributeValues(
-			final EObject eObjectToValidate,
+	protected boolean doValidateStructuralAttributeValues(final EObject eObjectToValidate,
 			final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 		return ResultOrganizerOperations.validateResultOrganizerMoodCode(
-				(ResultOrganizer) eObjectToValidate, diagnostician, map);
+			(ResultOrganizer) eObjectToValidate, diagnostician, map);
 	}
 
 	/**
@@ -190,21 +170,15 @@ StructuralAttributeValidationTest {
 	@Test
 	public final void testValidateResultOrganizerResultObservation() {
 		final ResultOrganizer ro = (ResultOrganizer) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-		.createDefaultDiagnostic(ro);
-		boolean isValid = ResultOrganizerOperations
-		.validateResultOrganizerResultObservation(ro, diagnostician,
-				map);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ro);
+		boolean isValid = ResultOrganizerOperations.validateResultOrganizerResultObservation(ro, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 
 		final Component4 component = CDAFactory.eINSTANCE.createComponent4();
-		component
-		.setObservation(CCDFactory.eINSTANCE.createResultObservation());
+		component.setObservation(CCDFactory.eINSTANCE.createResultObservation());
 		ro.getComponents().add(component);
 
-		isValid = ResultOrganizerOperations
-		.validateResultOrganizerResultObservation(ro, diagnostician,
-				map);
+		isValid = ResultOrganizerOperations.validateResultOrganizerResultObservation(ro, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), isValid);
 	}
 
@@ -214,21 +188,16 @@ StructuralAttributeValidationTest {
 	@Test
 	public void testResultsOrganizerComponentElement() {
 		final ResultOrganizer ro = (ResultOrganizer) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-		.createDefaultDiagnostic(ro);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ro);
 
-		boolean isValid = ResultOrganizerOperations
-		.validateResultOrganizerComponentElement(ro, diagnostician,
-				map);
+		boolean isValid = ResultOrganizerOperations.validateResultOrganizerComponentElement(ro, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 
 		ResultObservation resultObservation = CCDFactory.eINSTANCE.createResultObservation().init();
 		ro.addObservation(resultObservation);
-//		ro.getComponents().add(CDAFactory.eINSTANCE.createComponent4());
+		// ro.getComponents().add(CDAFactory.eINSTANCE.createComponent4());
 
-		isValid = ResultOrganizerOperations
-		.validateResultOrganizerComponentElement(ro, diagnostician,
-				map);
+		isValid = ResultOrganizerOperations.validateResultOrganizerComponentElement(ro, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), isValid);
 	}
 

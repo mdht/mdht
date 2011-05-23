@@ -51,73 +51,61 @@ public class PlanOfCareActivityActOperationsTest extends CCDValidationTest {
 	// protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.96";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return PlanOfCareActivityActOperations
-				.validatePlanOfCareActivityActTemplateId(
-						(PlanOfCareActivityAct) objectToTest,
-						diagnostician, map);
-			}
-		},
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PlanOfCareActivityActOperations.validatePlanOfCareActivityActTemplateId(
+						(PlanOfCareActivityAct) objectToTest, diagnostician, map);
+				}
+			},
 
-		// ID
-		// -------------------------------------------------------------
-		new IDCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return PlanOfCareActivityActOperations
-				.validatePlanOfCareActivityActId(
-						(PlanOfCareActivityAct) objectToTest,
-						diagnostician, map);
-			}
-		},
+			// ID
+			// -------------------------------------------------------------
+			new IDCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PlanOfCareActivityActOperations.validatePlanOfCareActivityActId(
+						(PlanOfCareActivityAct) objectToTest, diagnostician, map);
+				}
+			},
 
-		// Mood Code
-		// -------------------------------------------------------------
-		new MoodCodeCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return PlanOfCareActivityActOperations
-				.validatePlanOfCareActivityActMoodCode(
-						(PlanOfCareActivityAct) objectToTest,
-						diagnostician, map);
-			}
-		},
+			// Mood Code
+			// -------------------------------------------------------------
+			new MoodCodeCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PlanOfCareActivityActOperations.validatePlanOfCareActivityActMoodCode(
+						(PlanOfCareActivityAct) objectToTest, diagnostician, map);
+				}
+			},
 
-		// Mood Code Value
-		// -------------------------------------------------------------
-		new MoodCodeValueCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return PlanOfCareActivityActOperations
-				.validatePlanOfCareActivityActMoodCodeValue(
-						(PlanOfCareActivityAct) objectToTest,
-						diagnostician, map);
-			}
+			// Mood Code Value
+			// -------------------------------------------------------------
+			new MoodCodeValueCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return PlanOfCareActivityActOperations.validatePlanOfCareActivityActMoodCodeValue(
+						(PlanOfCareActivityAct) objectToTest, diagnostician, map);
+				}
 
-			@Override
-			List<Object> getModeCodeValues() {
-				final List<Object> retValue = new ArrayList<Object>();
-				retValue.add(x_DocumentActMood.INT);
-				retValue.add(x_DocumentActMood.ARQ);
-				retValue.add(x_DocumentActMood.PRMS);
-				retValue.add(x_DocumentActMood.PRP);
-				retValue.add(x_DocumentActMood.RQO);
-				return retValue;
+				@Override
+				List<Object> getModeCodeValues() {
+					final List<Object> retValue = new ArrayList<Object>();
+					retValue.add(x_DocumentActMood.INT);
+					retValue.add(x_DocumentActMood.ARQ);
+					retValue.add(x_DocumentActMood.PRMS);
+					retValue.add(x_DocumentActMood.PRP);
+					retValue.add(x_DocumentActMood.RQO);
+					return retValue;
+				}
 			}
-		}
 
 	}; // TEST_CASE_ARRAY
 

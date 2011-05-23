@@ -40,21 +40,18 @@ public class PatientAwarenessOperationsTest extends CCDValidationTest {
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.1.48";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return PatientAwarenessOperations
-				.validatePatientAwarenessTemplateId(
-						(PatientAwareness) objectToTest, diagnostician,
-						map);
-			}
-
+		@Override
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return PatientAwarenessOperations.validatePatientAwarenessTemplateId(
+				(PatientAwareness) objectToTest, diagnostician, map);
 		}
+
+	}
 
 	}; // TEST_CASE_ARRAY
 
@@ -90,7 +87,7 @@ public class PatientAwarenessOperationsTest extends CCDValidationTest {
 		PatientAwarenessOperations obj = new PatientAwarenessOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.ccd.operations.PatientAwarenessOperations#validatePatientAwarenessTypeCode(org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
@@ -99,18 +96,14 @@ public class PatientAwarenessOperationsTest extends CCDValidationTest {
 	@Test
 	public final void testValidatePatientAwarenessTypeCode() {
 		final PatientAwareness pa = (PatientAwareness) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-		.createDefaultDiagnostic(pa);
-		assertTrue(!PatientAwarenessOperations
-				.validatePatientAwarenessTypeCode(pa, diagnostician, map));
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(pa);
+		assertTrue(!PatientAwarenessOperations.validatePatientAwarenessTypeCode(pa, diagnostician, map));
 
 		pa.setTypeCode(ParticipationType.ADM);
-		assertTrue(!PatientAwarenessOperations
-				.validatePatientAwarenessTypeCode(pa, diagnostician, map));
+		assertTrue(!PatientAwarenessOperations.validatePatientAwarenessTypeCode(pa, diagnostician, map));
 
 		pa.setTypeCode(ParticipationType.SBJ);
-		assertTrue(PatientAwarenessOperations.validatePatientAwarenessTypeCode(
-				pa, diagnostician, map));
+		assertTrue(PatientAwarenessOperations.validatePatientAwarenessTypeCode(pa, diagnostician, map));
 	}
 
 	/**
@@ -121,16 +114,12 @@ public class PatientAwarenessOperationsTest extends CCDValidationTest {
 	@Test
 	public final void testValidatePatientAwarenessAwarenessCode() {
 		final PatientAwareness pa = (PatientAwareness) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-		.createDefaultDiagnostic(pa);
-		assertTrue(!PatientAwarenessOperations
-				.validatePatientAwarenessAwarenessCode(pa, diagnostician, map));
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(pa);
+		assertTrue(!PatientAwarenessOperations.validatePatientAwarenessAwarenessCode(pa, diagnostician, map));
 
-		final CE awarenessCode = DatatypesFactory.eINSTANCE.createCE(
-				AWARENESS_CODE, AWARENESS_CODE_CODE_SYSTEM);
+		final CE awarenessCode = DatatypesFactory.eINSTANCE.createCE(AWARENESS_CODE, AWARENESS_CODE_CODE_SYSTEM);
 		pa.setAwarenessCode(awarenessCode);
-		assertTrue(PatientAwarenessOperations
-				.validatePatientAwarenessAwarenessCode(pa, diagnostician, map));
+		assertTrue(PatientAwarenessOperations.validatePatientAwarenessAwarenessCode(pa, diagnostician, map));
 	}
 
 	/**
@@ -141,22 +130,15 @@ public class PatientAwarenessOperationsTest extends CCDValidationTest {
 	@Test
 	public void testValidatePatientAwarenessParticipantRoleId() {
 		final PatientAwareness pa = (PatientAwareness) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-		.createDefaultDiagnostic(pa);
-		assertTrue(!PatientAwarenessOperations
-				.validatePatientAwarenessParticipantRoleId(pa, diagnostician,
-						map));
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(pa);
+		assertTrue(!PatientAwarenessOperations.validatePatientAwarenessParticipantRoleId(pa, diagnostician, map));
 
-		final ParticipantRole participantRole = CDAFactory.eINSTANCE
-		.createParticipantRole();
+		final ParticipantRole participantRole = CDAFactory.eINSTANCE.createParticipantRole();
 
-		final II roleId = DatatypesFactory.eINSTANCE.createII("root",
-		"extension");
+		final II roleId = DatatypesFactory.eINSTANCE.createII("root", "extension");
 
 		participantRole.getIds().add(roleId);
 		pa.setParticipantRole(participantRole);
-		assertTrue(PatientAwarenessOperations
-				.validatePatientAwarenessParticipantRoleId(pa, diagnostician,
-						map));
+		assertTrue(PatientAwarenessOperations.validatePatientAwarenessParticipantRoleId(pa, diagnostician, map));
 	}
 } // PatientAwarenessOperationsTest

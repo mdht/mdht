@@ -30,21 +30,18 @@ public class ProcedureActivityProcedureOperationsTest extends CCDValidationTest 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.1.29";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+	// Template ID
+	// -------------------------------------------------------------
+	new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ProcedureActivityProcedureOperations
-				.validateProcedureActivityProcedureTemplateId(
-						(ProcedureActivityProcedure) objectToTest,
-						diagnostician, map);
-			}
+		@Override
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+				final Map<Object, Object> map) {
+			return ProcedureActivityProcedureOperations.validateProcedureActivityProcedureTemplateId(
+				(ProcedureActivityProcedure) objectToTest, diagnostician, map);
+		}
 
-		} }; // TEST_CASE_ARRAY
+	} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {

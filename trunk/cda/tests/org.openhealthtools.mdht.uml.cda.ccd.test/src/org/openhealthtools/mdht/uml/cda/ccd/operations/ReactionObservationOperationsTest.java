@@ -45,65 +45,54 @@ public class ReactionObservationOperationsTest extends StructuralAttributeValida
 	};
 
 	protected static final String STATUS_CODE = "completed";
+
 	protected static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(REACTION_OBSERVATION_TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(REACTION_OBSERVATION_TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ReactionObservationOperations
-				.validateReactionObservationTemplateId(
-						(ReactionObservation) objectToTest,
-						diagnostician, map);
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ReactionObservationOperations.validateReactionObservationTemplateId(
+						(ReactionObservation) objectToTest, diagnostician, map);
+				}
+
+			},
+
+			// Status Code
+			// -------------------------------------------------------------
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ReactionObservationOperations.validateReactionObservationStatusCode(
+						(ReactionObservation) objectToTest, diagnostician, map);
+				}
+			},
+
+			// Entry Relationship
+			// -------------------------------------------------------------
+			new EntryRelationshipCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ReactionObservationOperations.validateReactionObservationSeverityObservation(
+						(ReactionObservation) objectToTest, diagnostician, map);
+				}
+
+				@Override
+				protected Object getValueToSet() {
+					final EList<EntryRelationship> retValue = new BasicEList<EntryRelationship>();
+					final EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+					// er.setTypeCode(x_ActRelationshipEntryRelationship.SAS);
+					er.setObservation(CCDFactory.eINSTANCE.createSeverityObservation());
+					retValue.add(er);
+					return retValue;
+				}
 			}
-
-		},
-
-		// Status Code
-		// -------------------------------------------------------------
-		new StatusCodeCCDValidationTest(STATUS_CODE,
-				STATUS_CODE_CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ReactionObservationOperations
-				.validateReactionObservationStatusCode(
-						(ReactionObservation) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// Entry Relationship
-		// -------------------------------------------------------------
-		new EntryRelationshipCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ReactionObservationOperations
-				.validateReactionObservationSeverityObservation(
-						(ReactionObservation) objectToTest,
-						diagnostician, map);
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<EntryRelationship> retValue = new BasicEList<EntryRelationship>();
-				final EntryRelationship er = CDAFactory.eINSTANCE
-				.createEntryRelationship();
-				//er.setTypeCode(x_ActRelationshipEntryRelationship.SAS);
-				er.setObservation(CCDFactory.eINSTANCE
-						.createSeverityObservation());
-				retValue.add(er);
-				return retValue;
-			}
-		}
 
 	}; // TEST_CASE_ARRAY
 
@@ -127,24 +116,17 @@ public class ReactionObservationOperationsTest extends StructuralAttributeValida
 	}
 
 	@Override
-	protected Enumerator doGetValidStructuralAttributeValue(
-			final String structuralAttributeName) {
-		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP
-		.get(structuralAttributeName);
+	protected Enumerator doGetValidStructuralAttributeValue(final String structuralAttributeName) {
+		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP.get(structuralAttributeName);
 	}
 
 	@Override
-	protected boolean doValidateStructuralAttributeValues(
-			final EObject eObjectToValidate,
+	protected boolean doValidateStructuralAttributeValues(final EObject eObjectToValidate,
 			final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-		return ReactionObservationOperations
-		.validateReactionObservationClassCode(
-				(ReactionObservation) eObjectToValidate,
-				diagnostician, map)
-				&& ReactionObservationOperations
-				.validateReactionObservationMoodCode(
-						(ReactionObservation) eObjectToValidate,
-						diagnostician, map);
+		return ReactionObservationOperations.validateReactionObservationClassCode(
+			(ReactionObservation) eObjectToValidate, diagnostician, map) &&
+				ReactionObservationOperations.validateReactionObservationMoodCode(
+					(ReactionObservation) eObjectToValidate, diagnostician, map);
 	}
 
 } // ReactionObservationOperationsTest

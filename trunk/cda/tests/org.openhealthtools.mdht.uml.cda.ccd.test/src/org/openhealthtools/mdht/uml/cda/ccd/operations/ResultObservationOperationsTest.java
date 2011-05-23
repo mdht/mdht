@@ -41,8 +41,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActMoodDocumentObservation;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings({ "nls", "serial" })
-public class ResultObservationOperationsTest extends
-StructuralAttributeValidationTest {
+public class ResultObservationOperationsTest extends StructuralAttributeValidationTest {
 
 	protected static final String RESULT_OBSERVATION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.31";
 
@@ -64,105 +63,83 @@ StructuralAttributeValidationTest {
 	private static final String STATUS_CODE_CODE_SYSTEM = "whatever";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(RESULT_OBSERVATION_TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(RESULT_OBSERVATION_TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ResultObservationOperations
-				.validateResultObservationTemplateId(
-						(ResultObservation) objectToTest,
-						diagnostician, map);
-			}
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ResultObservationOperations.validateResultObservationTemplateId(
+						(ResultObservation) objectToTest, diagnostician, map);
+				}
 
-		},
+			},
 
-		// ID
-		// -------------------------------------------------------------
-		new IDCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ResultObservationOperations
-				.validateResultObservationId(
-						(ResultObservation) objectToTest,
-						diagnostician, map);
-			}
-		},
+			// ID
+			// -------------------------------------------------------------
+			new IDCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ResultObservationOperations.validateResultObservationId(
+						(ResultObservation) objectToTest, diagnostician, map);
+				}
+			},
 
-		// Status Code
-		// -------------------------------------------------------------
-		new StatusCodeCCDValidationTest(STATUS_CODE,
-				STATUS_CODE_CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ResultObservationOperations
-				.validateResultObservationStatusCode(
-						(ResultObservation) objectToTest,
-						diagnostician, map);
-			}
-		},
+			// Status Code
+			// -------------------------------------------------------------
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ResultObservationOperations.validateResultObservationStatusCode(
+						(ResultObservation) objectToTest, diagnostician, map);
+				}
+			},
 
-		// Code
-		// -------------------------------------------------------------
-		new CodeCCDValidationTest(CODE, CODE_CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ResultObservationOperations
-				.validateResultObservationCode(
-						(ResultObservation) objectToTest,
-						diagnostician, map);
-			}
-		},
-		// EffectiveTime
-		// -------------------------------------------------------------
-		new EffectiveTimeCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ResultObservationOperations
-				.validateResultObservationEffectiveTime(
-						(ResultObservation) objectToTest,
-						diagnostician, map);
-			}
-		},
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ResultObservationOperations.validateResultObservationCode(
+						(ResultObservation) objectToTest, diagnostician, map);
+				}
+			},
+			// EffectiveTime
+			// -------------------------------------------------------------
+			new EffectiveTimeCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ResultObservationOperations.validateResultObservationEffectiveTime(
+						(ResultObservation) objectToTest, diagnostician, map);
+				}
+			},
 
-		// ObservationValue
-		// -------------------------------------------------------------
-		new ObservationValueCCDValidationTest(OBSERVATION_VALUE_CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ResultObservationOperations
-				.validateResultObservationValue(
-						(ResultObservation) objectToTest,
-						diagnostician, map);
-			}
-		},
+			// ObservationValue
+			// -------------------------------------------------------------
+			new ObservationValueCCDValidationTest(OBSERVATION_VALUE_CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ResultObservationOperations.validateResultObservationValue(
+						(ResultObservation) objectToTest, diagnostician, map);
+				}
+			},
 
-		// Information Source
-		// -------------------------------------------------------------
-		new InformationSourceCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ResultObservationOperations
-				.validateResultObservationInformationSource(
-						(ResultObservation) objectToTest,
-						diagnostician, map);
+			// Information Source
+			// -------------------------------------------------------------
+			new InformationSourceCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ResultObservationOperations.validateResultObservationInformationSource(
+						(ResultObservation) objectToTest, diagnostician, map);
+				}
 			}
-		}
 
 	}; // TEST_CASE_ARRAY
 
@@ -190,8 +167,8 @@ StructuralAttributeValidationTest {
 		clinicalDocument.addSection(section);
 		ResultObservation resultObservation = CCDFactory.eINSTANCE.createResultObservation();
 		section.addObservation(resultObservation);
-		return resultObservation;	
-//		return CCDFactory.eINSTANCE.createResultObservation();
+		return resultObservation;
+		// return CCDFactory.eINSTANCE.createResultObservation();
 	}
 
 	@Override
@@ -200,18 +177,15 @@ StructuralAttributeValidationTest {
 	}
 
 	@Override
-	protected Enumerator doGetValidStructuralAttributeValue(
-			final String structuralAttributeName) {
-		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP
-		.get(structuralAttributeName);
+	protected Enumerator doGetValidStructuralAttributeValue(final String structuralAttributeName) {
+		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP.get(structuralAttributeName);
 	}
 
 	@Override
-	protected boolean doValidateStructuralAttributeValues(
-			final EObject eObjectToValidate,
+	protected boolean doValidateStructuralAttributeValues(final EObject eObjectToValidate,
 			final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 		return ResultObservationOperations.validateResultObservationMoodCode(
-				(ResultObservation) eObjectToValidate, diagnostician, map);
+			(ResultObservation) eObjectToValidate, diagnostician, map);
 	}
 
 	/**
@@ -220,18 +194,14 @@ StructuralAttributeValidationTest {
 	@Test
 	public void testResultsObservationNoObservationRangeCode() {
 		final ResultObservation ro = (ResultObservation) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-		.createDefaultDiagnostic(ro);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ro);
 		try {
-			boolean isValid = doValidateNoObservationRangeCode(ro,
-					diagnostician);
+			boolean isValid = doValidateNoObservationRangeCode(ro, diagnostician);
 			assertTrue(createAssertionFailureMessage(diagnostician), isValid);
 
-			final ReferenceRange range = CDAFactory.eINSTANCE
-			.createReferenceRange();
+			final ReferenceRange range = CDAFactory.eINSTANCE.createReferenceRange();
 
-			final ObservationRange or = CDAFactory.eINSTANCE
-			.createObservationRange();
+			final ObservationRange or = CDAFactory.eINSTANCE.createObservationRange();
 			range.setObservationRange(or);
 			ro.getReferenceRanges().add(range);
 
@@ -244,21 +214,17 @@ StructuralAttributeValidationTest {
 			or.setCode(cd);
 
 			isValid = doValidateNoObservationRangeCode(ro, diagnostician);
-			assertTrue("Validation passed when it was expected to fail",
-					!isValid);
+			assertTrue("Validation passed when it was expected to fail", !isValid);
 
 		} catch (final UnsupportedOperationException uoe) {
-			fail(createUnsupportedOperationFailureMessage(
-					"NoObservationRangecode", uoe));
+			fail(createUnsupportedOperationFailureMessage("NoObservationRangecode", uoe));
 		}
 	}
 
-	private boolean doValidateNoObservationRangeCode(
-			final EObject eObjectToValidate, final BasicDiagnostic diagnostician) {
-		return ResultObservationOperations
-		.validateResultObservationNoObservationRangeCode(
-				(ResultObservation) eObjectToValidate, diagnostician,
-				map);
+	private boolean doValidateNoObservationRangeCode(final EObject eObjectToValidate,
+			final BasicDiagnostic diagnostician) {
+		return ResultObservationOperations.validateResultObservationNoObservationRangeCode(
+			(ResultObservation) eObjectToValidate, diagnostician, map);
 	}
 
 	/**
@@ -267,17 +233,13 @@ StructuralAttributeValidationTest {
 	@Test
 	public void testResultsObservationReferenceRangeRequired() {
 		final ResultObservation ro = (ResultObservation) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-		.createDefaultDiagnostic(ro);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ro);
 		try {
-			boolean isValid = doValidateReferenceRangeRequired(ro,
-					diagnostician);
+			boolean isValid = doValidateReferenceRangeRequired(ro, diagnostician);
 			assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 
-			final ReferenceRange rr = CDAFactory.eINSTANCE
-			.createReferenceRange();
-			final ObservationRange or = CDAFactory.eINSTANCE
-			.createObservationRange();
+			final ReferenceRange rr = CDAFactory.eINSTANCE.createReferenceRange();
+			final ObservationRange or = CDAFactory.eINSTANCE.createObservationRange();
 			rr.setObservationRange(or);
 			ro.getReferenceRanges().add(rr);
 
@@ -285,18 +247,15 @@ StructuralAttributeValidationTest {
 			assertTrue(createAssertionFailureMessage(diagnostician), isValid);
 
 		} catch (final UnsupportedOperationException uoe) {
-			fail(createUnsupportedOperationFailureMessage(
-					"ReferenceRangeRequired", uoe));
+			fail(createUnsupportedOperationFailureMessage("ReferenceRangeRequired", uoe));
 		}
 
 	}
 
-	protected boolean doValidateReferenceRangeRequired(
-			final EObject eObjectToValidate, final BasicDiagnostic diagnostician) {
-		return ResultObservationOperations
-		.validateResultObservationReferenceRangeRequired(
-				(ResultObservation) eObjectToValidate, diagnostician,
-				map);
+	protected boolean doValidateReferenceRangeRequired(final EObject eObjectToValidate,
+			final BasicDiagnostic diagnostician) {
+		return ResultObservationOperations.validateResultObservationReferenceRangeRequired(
+			(ResultObservation) eObjectToValidate, diagnostician, map);
 	}
 
 	/**
@@ -305,26 +264,21 @@ StructuralAttributeValidationTest {
 	@Test
 	public void testResultsObservationInterpretationCode() {
 		final ResultObservation ro = (ResultObservation) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-		.createDefaultDiagnostic(ro);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ro);
 		try {
-			boolean isValid = ResultObservationOperations
-			.validateResultObservationInterpretationCode(ro,
-					diagnostician, map);
+			boolean isValid = ResultObservationOperations.validateResultObservationInterpretationCode(
+				ro, diagnostician, map);
 			assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 
 			final CE interpretationCode = DatatypesFactory.eINSTANCE.createCE(
-					INTERPRETATION_CODE, INTERPRETATION_CODE_CODE_SYSTEM);
+				INTERPRETATION_CODE, INTERPRETATION_CODE_CODE_SYSTEM);
 			ro.getInterpretationCodes().add(interpretationCode);
 
-			isValid = ResultObservationOperations
-			.validateResultObservationInterpretationCode(ro,
-					diagnostician, map);
+			isValid = ResultObservationOperations.validateResultObservationInterpretationCode(ro, diagnostician, map);
 			assertTrue(createAssertionFailureMessage(diagnostician), isValid);
 
 		} catch (final UnsupportedOperationException uoe) {
-			fail(createUnsupportedOperationFailureMessage(
-					"InterpretationCode", uoe));
+			fail(createUnsupportedOperationFailureMessage("InterpretationCode", uoe));
 		}
 	}
 
@@ -334,26 +288,19 @@ StructuralAttributeValidationTest {
 	@Test
 	public void testResultsObservationMethodCode() {
 		final ResultObservation ro = (ResultObservation) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-		.createDefaultDiagnostic(ro);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ro);
 		try {
-			boolean isValid = ResultObservationOperations
-			.validateResultObservationMethodCode(ro,
-					diagnostician, map);
+			boolean isValid = ResultObservationOperations.validateResultObservationMethodCode(ro, diagnostician, map);
 			assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 
-			final CE methodCode = DatatypesFactory.eINSTANCE.createCE(
-					METHOD_CODE, METHOD_CODE_CODE_SYSTEM);
+			final CE methodCode = DatatypesFactory.eINSTANCE.createCE(METHOD_CODE, METHOD_CODE_CODE_SYSTEM);
 			ro.getMethodCodes().add(methodCode);
 
-			isValid = ResultObservationOperations
-			.validateResultObservationMethodCode(ro,
-					diagnostician, map);
+			isValid = ResultObservationOperations.validateResultObservationMethodCode(ro, diagnostician, map);
 			assertTrue(createAssertionFailureMessage(diagnostician), isValid);
 
 		} catch (final UnsupportedOperationException uoe) {
-			fail(createUnsupportedOperationFailureMessage(
-					"MethodCode", uoe));
+			fail(createUnsupportedOperationFailureMessage("MethodCode", uoe));
 		}
 	}
 } // ResultObservationOperationsTest

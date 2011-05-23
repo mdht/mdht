@@ -35,9 +35,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentActMood;
 /**
  * This class is a JUnit4 test case.
  */
-@SuppressWarnings( { "nls", "serial" })
-public class PurposeActivityOperationsTest extends
-		StructuralAttributeValidationTest {
+@SuppressWarnings({ "nls", "serial" })
+public class PurposeActivityOperationsTest extends StructuralAttributeValidationTest {
 
 	protected static final String PURPOSE_ACTIVITY_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.30";
 
@@ -49,40 +48,35 @@ public class PurposeActivityOperationsTest extends
 	};
 
 	protected static final String STATUS_CODE = "completed";
+
 	protected static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
 	protected static final String CODE = "23745001";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.96";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(PURPOSE_ACTIVITY_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return PurposeActivityOperations
-							.validatePurposeActivityTemplateId(
-									(PurposeActivity) objectToTest,
-									diagnostician, map);
+					return PurposeActivityOperations.validatePurposeActivityTemplateId(
+						(PurposeActivity) objectToTest, diagnostician, map);
 				}
 
 			},
 
 			// Status Code
 			// -------------------------------------------------------------
-			new StatusCodeCCDValidationTest(STATUS_CODE,
-					STATUS_CODE_CODE_SYSTEM) {
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return PurposeActivityOperations
-							.validatePurposeActivityStatusCode(
-									(PurposeActivity) objectToTest,
-									diagnostician, map);
+					return PurposeActivityOperations.validatePurposeActivityStatusCode(
+						(PurposeActivity) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -90,13 +84,10 @@ public class PurposeActivityOperationsTest extends
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return PurposeActivityOperations
-							.validatePurposeActivityCode(
-									(PurposeActivity) objectToTest,
-									diagnostician, map);
+					return PurposeActivityOperations.validatePurposeActivityCode(
+						(PurposeActivity) objectToTest, diagnostician, map);
 				}
 			}
 
@@ -129,20 +120,16 @@ public class PurposeActivityOperationsTest extends
 	@Test
 	public final void testValidatePurposeActivityHasReason() {
 		final PurposeActivity pa = (PurposeActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(pa);
-		boolean isValid = PurposeActivityOperations
-				.validatePurposeActivityReasonType(pa, diagnostician, map);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(pa);
+		boolean isValid = PurposeActivityOperations.validatePurposeActivityReasonType(pa, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), isValid);
 
-		final EntryRelationship rel = CDAFactory.eINSTANCE
-				.createEntryRelationship();
+		final EntryRelationship rel = CDAFactory.eINSTANCE.createEntryRelationship();
 		rel.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
 
 		pa.getEntryRelationships().add(rel);
 
-		isValid = PurposeActivityOperations.validatePurposeActivityReasonType(
-				pa, diagnostician, map);
+		isValid = PurposeActivityOperations.validatePurposeActivityReasonType(pa, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), !isValid);
 	}
 
@@ -154,81 +141,65 @@ public class PurposeActivityOperationsTest extends
 	@Test
 	public final void testValidatePurposeActivityReasonType() {
 		final PurposeActivity pa = (PurposeActivity) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(pa);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(pa);
 
-		boolean isValid = PurposeActivityOperations
-				.validatePurposeActivityReasonType(pa, diagnostician, map);
+		boolean isValid = PurposeActivityOperations.validatePurposeActivityReasonType(pa, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), isValid);
 
-		final EntryRelationship rel = CDAFactory.eINSTANCE
-				.createEntryRelationship();
+		final EntryRelationship rel = CDAFactory.eINSTANCE.createEntryRelationship();
 		rel.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
 
 		rel.setAct(CCDFactory.eINSTANCE.createProblemAct());
 		rel.setEncounter(CDAFactory.eINSTANCE.createEncounter());
 		rel.setObservation(CCDFactory.eINSTANCE.createProblemObservation());
 		rel.setProcedure(CDAFactory.eINSTANCE.createProcedure());
-		rel.setSubstanceAdministration(CDAFactory.eINSTANCE
-				.createSubstanceAdministration());
+		rel.setSubstanceAdministration(CDAFactory.eINSTANCE.createSubstanceAdministration());
 		rel.setSupply(CCDFactory.eINSTANCE.createSupplyActivity());
 		rel.setObservation(CCDFactory.eINSTANCE.createProblemObservation());
 		pa.getEntryRelationships().add(rel);
 
-		isValid = PurposeActivityOperations.validatePurposeActivityReasonType(
-				pa, diagnostician, map);
+		isValid = PurposeActivityOperations.validatePurposeActivityReasonType(pa, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), isValid);
 
 		rel.setAct(null);
-		isValid = PurposeActivityOperations.validatePurposeActivityReasonType(
-				pa, diagnostician, map);
+		isValid = PurposeActivityOperations.validatePurposeActivityReasonType(pa, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), isValid);
 
 		rel.setEncounter(null);
-		isValid = PurposeActivityOperations.validatePurposeActivityReasonType(
-				pa, diagnostician, map);
+		isValid = PurposeActivityOperations.validatePurposeActivityReasonType(pa, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), isValid);
 
 		rel.setObservation(null);
-		isValid = PurposeActivityOperations.validatePurposeActivityReasonType(
-				pa, diagnostician, map);
+		isValid = PurposeActivityOperations.validatePurposeActivityReasonType(pa, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), isValid);
 
 		rel.setProcedure(null);
-		isValid = PurposeActivityOperations.validatePurposeActivityReasonType(
-				pa, diagnostician, map);
+		isValid = PurposeActivityOperations.validatePurposeActivityReasonType(pa, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), isValid);
 
 		rel.setSubstanceAdministration(null);
-		isValid = PurposeActivityOperations.validatePurposeActivityReasonType(
-				pa, diagnostician, map);
+		isValid = PurposeActivityOperations.validatePurposeActivityReasonType(pa, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), isValid);
 
 		// This undefines the last one, which should make validation fail
 		rel.setSupply(null);
-		isValid = PurposeActivityOperations.validatePurposeActivityReasonType(
-				pa, diagnostician, map);
+		isValid = PurposeActivityOperations.validatePurposeActivityReasonType(pa, diagnostician, map);
 		assertTrue(diagnostician.getMessage(), !isValid);
 
 	}
 
 	@Override
-	protected Enumerator doGetValidStructuralAttributeValue(
-			final String structuralAttributeName) {
-		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP
-				.get(structuralAttributeName);
+	protected Enumerator doGetValidStructuralAttributeValue(final String structuralAttributeName) {
+		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP.get(structuralAttributeName);
 	}
 
 	@Override
-	protected boolean doValidateStructuralAttributeValues(
-			final EObject eObjectToValidate,
+	protected boolean doValidateStructuralAttributeValues(final EObject eObjectToValidate,
 			final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 		return PurposeActivityOperations.validatePurposeActivityClassCode(
-				(PurposeActivity) eObjectToValidate, diagnostician, map)
-				&& PurposeActivityOperations
-						.validatePurposeActivityMoodCode(
-								(PurposeActivity) eObjectToValidate,
-								diagnostician, map);
+			(PurposeActivity) eObjectToValidate, diagnostician, map) &&
+				PurposeActivityOperations.validatePurposeActivityMoodCode(
+					(PurposeActivity) eObjectToValidate, diagnostician, map);
 	}
 
 } // PurposeActivityOperationsTest

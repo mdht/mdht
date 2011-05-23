@@ -19,12 +19,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
-import org.openhealthtools.mdht.uml.cda.CDAFactory;
-import org.openhealthtools.mdht.uml.cda.Entry;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection;
 
@@ -37,21 +33,19 @@ public class ImmunizationsSectionOperationsTest extends CCDValidationTest {
 	protected static final String IMMUNIZATIONS_SECTION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.6";
 
 	protected static final String CODE = "11369-6";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(IMMUNIZATIONS_SECTION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ImmunizationsSectionOperations
-							.validateImmunizationsSectionTemplateId(
-									(ImmunizationsSection) objectToTest,
-									diagnostician, map);
+					return ImmunizationsSectionOperations.validateMedicationsSectionTemplateId(
+						(ImmunizationsSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -61,13 +55,10 @@ public class ImmunizationsSectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ImmunizationsSectionOperations
-							.validateImmunizationsSectionTitle(
-									(ImmunizationsSection) objectToTest,
-									diagnostician, map);
+					return ImmunizationsSectionOperations.validateImmunizationsSectionTitle(
+						(ImmunizationsSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -77,13 +68,10 @@ public class ImmunizationsSectionOperationsTest extends CCDValidationTest {
 			new TextCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ImmunizationsSectionOperations
-							.validateImmunizationsSectionText(
-									(ImmunizationsSection) objectToTest,
-									diagnostician, map);
+					return ImmunizationsSectionOperations.validateImmunizationsSectionText(
+						(ImmunizationsSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -92,41 +80,10 @@ public class ImmunizationsSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ImmunizationsSectionOperations
-							.validateImmunizationsSectionCode(
-									(ImmunizationsSection) objectToTest,
-									diagnostician, map);
-				}
-			},
-
-			// Entry
-			// -------------------------------------------------------------
-			new EntryCCDValidationTest() {
-				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return ImmunizationsSectionOperations
-							.validateImmunizationsSectionClinicalStatements(
-									(ImmunizationsSection) objectToTest,
-									diagnostician, map);
-				}
-
-				@Override
-				protected Object getValueToSet() {
-					final EList<Entry> retValue = new BasicEList<Entry>();
-					final Entry entry = CDAFactory.eINSTANCE.createEntry();
-					entry.setSubstanceAdministration(CCDFactory.eINSTANCE
-							.createMedicationActivity());
-
-					entry
-							.setSupply(CCDFactory.eINSTANCE
-									.createSupplyActivity());
-					retValue.add(entry);
-					return retValue;
+					return ImmunizationsSectionOperations.validateMedicationsSectionCode(
+						(ImmunizationsSection) objectToTest, diagnostician, map);
 				}
 			}
 
@@ -140,7 +97,7 @@ public class ImmunizationsSectionOperationsTest extends CCDValidationTest {
 		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
 		return retValue;
 	}
-	
+
 	@Override
 	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createImmunizationsSection();
@@ -160,5 +117,5 @@ public class ImmunizationsSectionOperationsTest extends CCDValidationTest {
 		ImmunizationsSectionOperations obj = new ImmunizationsSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 } // ImmunizationsSectionOperationsTest

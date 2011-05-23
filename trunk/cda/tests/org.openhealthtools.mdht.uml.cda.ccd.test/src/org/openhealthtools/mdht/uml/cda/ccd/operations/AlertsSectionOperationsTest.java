@@ -34,89 +34,79 @@ public class AlertsSectionOperationsTest extends CCDValidationTest {
 	protected static final String ALERTS_SECTION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.2";
 
 	protected static final String CODE = "48765-2";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(ALERTS_SECTION_TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(ALERTS_SECTION_TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AlertsSectionOperations
-				.validateAlertsSectionTemplateId(
-						(AlertsSection) objectToTest,
-						diagnostician, map);
-			}
-
-		},
-
-		// Title
-		// -------------------------------------------------------------
-		new TitleCCDValidationTest() {
-
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AlertsSectionOperations.validateAlertsSectionTitle(
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AlertsSectionOperations.validateAlertsSectionTemplateId(
 						(AlertsSection) objectToTest, diagnostician, map);
-			}
+				}
 
-		},
+			},
 
-		// Code
-		// -------------------------------------------------------------
-		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AlertsSectionOperations.validateAlertsSectionCode(
+			// Title
+			// -------------------------------------------------------------
+			new TitleCCDValidationTest() {
+
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AlertsSectionOperations.validateAlertsSectionTitle(
 						(AlertsSection) objectToTest, diagnostician, map);
+				}
+
+			},
+
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AlertsSectionOperations.validateAlertsSectionCode(
+						(AlertsSection) objectToTest, diagnostician, map);
+				}
+			},
+
+			// Text
+			// -------------------------------------------------------------
+			new TextCCDValidationTest() {
+
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AlertsSectionOperations.validateAlertsSectionText(
+						(AlertsSection) objectToTest, diagnostician, map);
+				}
+
+			},
+
+			// Entry
+			// -------------------------------------------------------------
+			new EntryCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AlertsSectionOperations.validateAlertsSectionProblemAct(
+						(AlertsSection) objectToTest, diagnostician, map);
+				}
+
+				@Override
+				protected Object getValueToSet() {
+					final EList<Entry> retValue = new BasicEList<Entry>();
+					final Entry entry = CDAFactory.eINSTANCE.createEntry();
+					entry.setAct(CCDFactory.eINSTANCE.createProblemAct());
+					retValue.add(entry);
+					return retValue;
+				}
 			}
-		},
-
-		// Text
-		// -------------------------------------------------------------
-		new TextCCDValidationTest() {
-
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AlertsSectionOperations
-				.validateAlertsSectionText(
-						(AlertsSection) objectToTest,
-						diagnostician, map);
-			}
-
-		},
-
-		// Entry
-		// -------------------------------------------------------------
-		new EntryCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AlertsSectionOperations
-				.validateAlertsSectionProblemAct(
-						(AlertsSection) objectToTest,
-						diagnostician, map);
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<Entry> retValue = new BasicEList<Entry>();
-				final Entry entry = CDAFactory.eINSTANCE.createEntry();
-				entry.setAct(CCDFactory.eINSTANCE.createProblemAct());
-				retValue.add(entry);
-				return retValue;
-			}
-		}
 
 	}; // TEST_CASE_ARRAY
 
@@ -128,7 +118,7 @@ public class AlertsSectionOperationsTest extends CCDValidationTest {
 		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
 		return retValue;
 	}
-	
+
 	@Override
 	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createAlertsSection();

@@ -36,8 +36,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActMoodDocumentObservation;
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings({ "nls", "serial" })
-public class StatusObservationOperationsTest extends
-StructuralAttributeValidationTest {
+public class StatusObservationOperationsTest extends StructuralAttributeValidationTest {
 
 	protected static final String STATUS_OBSERVATION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.57";
 
@@ -49,9 +48,11 @@ StructuralAttributeValidationTest {
 	};
 
 	protected static final String STATUS_CODE = "completed";
+
 	protected static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
 	protected static final String CODE = "33999-4";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	// Likely incorrect, not specified in OCL.
@@ -66,90 +67,74 @@ StructuralAttributeValidationTest {
 		StatusObservationOperations obj = new StatusObservationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(STATUS_OBSERVATION_TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(STATUS_OBSERVATION_TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return StatusObservationOperations
-				.validateStatusObservationTemplateId(
-						(StatusObservation) objectToTest,
-						diagnostician, map);
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return StatusObservationOperations.validateStatusObservationTemplateId(
+						(StatusObservation) objectToTest, diagnostician, map);
+				}
+
+			},
+
+			// Status Code
+			// -------------------------------------------------------------
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return StatusObservationOperations.validateStatusObservationStatusCode(
+						(StatusObservation) objectToTest, diagnostician, map);
+				}
+			},
+
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return StatusObservationOperations.validateStatusObservationCode(
+						(StatusObservation) objectToTest, diagnostician, map);
+				}
+			},
+
+			// ObservationValue
+			// -------------------------------------------------------------
+			new ObservationValueCCDValidationTest(OBSERVATION_VALUE_CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return StatusObservationOperations.validateStatusObservationValue(
+						(StatusObservation) objectToTest, diagnostician, map);
+				}
+			},
+
+			// Participant
+			// -------------------------------------------------------------
+			new CCDValidationTestCase("participant") {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					// We negate the validation because the test in
+					// CCDValidationTestCase checks to see that the feature is
+					// not set.
+					return !StatusObservationOperations.validateStatusObservationNoAdditionalParticipants(
+						(StatusObservation) objectToTest, diagnostician, map);
+				}
+
+				@Override
+				protected Object getValueToSet() {
+					final EList<Participant2> retValue = new BasicEList<Participant2>();
+					retValue.add(CDAFactory.eINSTANCE.createParticipant2());
+					return retValue;
+				}
 			}
-
-		},
-
-		// Status Code
-		// -------------------------------------------------------------
-		new StatusCodeCCDValidationTest(STATUS_CODE,
-				STATUS_CODE_CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return StatusObservationOperations
-				.validateStatusObservationStatusCode(
-						(StatusObservation) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// Code
-		// -------------------------------------------------------------
-		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return StatusObservationOperations
-				.validateStatusObservationCode(
-						(StatusObservation) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// ObservationValue
-		// -------------------------------------------------------------
-		new ObservationValueCCDValidationTest(OBSERVATION_VALUE_CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return StatusObservationOperations
-				.validateStatusObservationValue(
-						(StatusObservation) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// Participant
-		// -------------------------------------------------------------
-		new CCDValidationTestCase("participant") {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				// We negate the validation because the test in
-				// CCDValidationTestCase checks to see that the feature is
-				// not set.
-				return !StatusObservationOperations
-				.validateStatusObservationNoAdditionalParticipants(
-						(StatusObservation) objectToTest,
-						diagnostician, map);
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<Participant2> retValue = new BasicEList<Participant2>();
-				retValue.add(CDAFactory.eINSTANCE.createParticipant2());
-				return retValue;
-			}
-		}
 
 	}; // TEST_CASE_ARRAY
 
@@ -173,22 +158,17 @@ StructuralAttributeValidationTest {
 	}
 
 	@Override
-	protected Enumerator doGetValidStructuralAttributeValue(
-			final String structuralAttributeName) {
-		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP
-		.get(structuralAttributeName);
+	protected Enumerator doGetValidStructuralAttributeValue(final String structuralAttributeName) {
+		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP.get(structuralAttributeName);
 	}
 
 	@Override
-	protected boolean doValidateStructuralAttributeValues(
-			final EObject eObjectToValidate,
+	protected boolean doValidateStructuralAttributeValues(final EObject eObjectToValidate,
 			final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 		return StatusObservationOperations.validateStatusObservationClassCode(
-				(StatusObservation) eObjectToValidate, diagnostician, map)
-				&& StatusObservationOperations
-				.validateStatusObservationMoodCode(
-						(StatusObservation) eObjectToValidate,
-						diagnostician, map);
+			(StatusObservation) eObjectToValidate, diagnostician, map) &&
+				StatusObservationOperations.validateStatusObservationMoodCode(
+					(StatusObservation) eObjectToValidate, diagnostician, map);
 	}
 
 } // StatusObservationOperationsTest

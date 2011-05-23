@@ -37,8 +37,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActMoodDocumentObservation;
  * This class
  */
 @SuppressWarnings({ "nls", "serial" })
-public class AgeObservationOperationsTest extends
-StructuralAttributeValidationTest {
+public class AgeObservationOperationsTest extends StructuralAttributeValidationTest {
 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.1.38";
 
@@ -51,92 +50,82 @@ StructuralAttributeValidationTest {
 
 	// Status code
 	private static final String STATUS_CODE = "completed";
+
 	private static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
 	protected static final String CODE = "397659008";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.96";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AgeObservationOperations
-				.validateAgeObservationTemplateId(
-						(AgeObservation) objectToTest,
-						diagnostician, map);
-			}
-
-		},
-
-		// Code
-		// -------------------------------------------------------------
-		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AgeObservationOperations.validateAgeObservationCode(
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AgeObservationOperations.validateAgeObservationTemplateId(
 						(AgeObservation) objectToTest, diagnostician, map);
-			}
-		},
+				}
 
-		// Status Code
-		// -------------------------------------------------------------
-		new StatusCodeCCDValidationTest(STATUS_CODE,
-				STATUS_CODE_CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AgeObservationOperations
-				.validateAgeObservationStatusCode(
-						(AgeObservation) objectToTest,
-						diagnostician, map);
-			}
-		},
+			},
 
-		// Value
-		// -------------------------------------------------------------
-		new CCDValidationTestCase("value") {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AgeObservationOperations
-				.validateAgeObservationValue(
-						(AgeObservation) objectToTest,
-						diagnostician, map);
-			}
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AgeObservationOperations.validateAgeObservationCode(
+						(AgeObservation) objectToTest, diagnostician, map);
+				}
+			},
 
-			@SuppressWarnings("unchecked")
-			@Override
-			protected void doSet(final EObject objectToTest,
-					final String featureName) {
-				//				final EObjectContainmentEList<ANY> theList = (EObjectContainmentEList<ANY>) objectToTest.eGet(objectToTest.eClass().getEStructuralFeature(
-				//						featureName));
+			// Status Code
+			// -------------------------------------------------------------
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AgeObservationOperations.validateAgeObservationStatusCode(
+						(AgeObservation) objectToTest, diagnostician, map);
+				}
+			},
 
-				final EList<ANY> theList = (EList<ANY>) objectToTest.eGet(objectToTest.eClass().getEStructuralFeature(
+			// Value
+			// -------------------------------------------------------------
+			new CCDValidationTestCase("value") {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AgeObservationOperations.validateAgeObservationValue(
+						(AgeObservation) objectToTest, diagnostician, map);
+				}
+
+				@SuppressWarnings("unchecked")
+				@Override
+				protected void doSet(final EObject objectToTest, final String featureName) {
+					// final EObjectContainmentEList<ANY> theList = (EObjectContainmentEList<ANY>)
+					// objectToTest.eGet(objectToTest.eClass().getEStructuralFeature(
+					// featureName));
+
+					final EList<ANY> theList = (EList<ANY>) objectToTest.eGet(objectToTest.eClass().getEStructuralFeature(
 						featureName));
 
-				theList.add(DatatypesFactory.eINSTANCE.createCE());
-			}
+					theList.add(DatatypesFactory.eINSTANCE.createCE());
+				}
 
-			@Override
-			protected Object getValueToSet() {
-				final EList<Observation> retValue = new BasicEList<Observation>();
-				// For some reason, an ArrayStoreException is thrown.
-				//fail("Implementation problem.  See comments in source code.");
-				final Observation observation = CCDFactory.eINSTANCE
-				.createAgeObservation();
-				retValue.add(observation);
-				return retValue;
+				@Override
+				protected Object getValueToSet() {
+					final EList<Observation> retValue = new BasicEList<Observation>();
+					// For some reason, an ArrayStoreException is thrown.
+					// fail("Implementation problem.  See comments in source code.");
+					final Observation observation = CCDFactory.eINSTANCE.createAgeObservation();
+					retValue.add(observation);
+					return retValue;
+				}
 			}
-		}
 
 	}; // TEST_CASE_ARRAY
 
@@ -160,20 +149,17 @@ StructuralAttributeValidationTest {
 	}
 
 	@Override
-	protected Enumerator doGetValidStructuralAttributeValue(
-			final String structuralAttributeName) {
-		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP
-		.get(structuralAttributeName);
+	protected Enumerator doGetValidStructuralAttributeValue(final String structuralAttributeName) {
+		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP.get(structuralAttributeName);
 	}
 
 	@Override
-	protected boolean doValidateStructuralAttributeValues(
-			final EObject eObjectToValidate,
+	protected boolean doValidateStructuralAttributeValues(final EObject eObjectToValidate,
 			final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 		return AgeObservationOperations.validateAgeObservationClassCode(
-				(AgeObservation) eObjectToValidate, diagnostician, map)
-				&& AgeObservationOperations.validateAgeObservationMoodCode(
-						(AgeObservation) eObjectToValidate, diagnostician, map);
+			(AgeObservation) eObjectToValidate, diagnostician, map) &&
+				AgeObservationOperations.validateAgeObservationMoodCode(
+					(AgeObservation) eObjectToValidate, diagnostician, map);
 	}
 
 	/**
@@ -185,5 +171,5 @@ StructuralAttributeValidationTest {
 		AgeObservationOperations obj = new AgeObservationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 } // AgeObservationOperationsTest

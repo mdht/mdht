@@ -30,22 +30,19 @@ public class MedicalEquipmentSectionOperationsTest extends CCDValidationTest {
 	protected static final String MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.7";
 
 	protected static final String CODE = "46264-8";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
-			new TemplateIDValidationTest(
-					MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID) {
+			new TemplateIDValidationTest(MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return MedicalEquipmentSectionOperations
-							.validateMedicalEquipmentSectionTemplateId(
-									(MedicalEquipmentSection) objectToTest,
-									diagnostician, map);
+					return MedicalEquipmentSectionOperations.validateMedicalEquipmentSectionTemplateId(
+						(MedicalEquipmentSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -55,13 +52,10 @@ public class MedicalEquipmentSectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return MedicalEquipmentSectionOperations
-							.validateMedicalEquipmentSectionTitle(
-									(MedicalEquipmentSection) objectToTest,
-									diagnostician, map);
+					return MedicalEquipmentSectionOperations.validateMedicalEquipmentSectionTitle(
+						(MedicalEquipmentSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -70,13 +64,10 @@ public class MedicalEquipmentSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return MedicalEquipmentSectionOperations
-							.validateMedicalEquipmentSectionCode(
-									(MedicalEquipmentSection) objectToTest,
-									diagnostician, map);
+					return MedicalEquipmentSectionOperations.validateMedicalEquipmentSectionCode(
+						(MedicalEquipmentSection) objectToTest, diagnostician, map);
 				}
 			}
 

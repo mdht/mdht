@@ -26,8 +26,7 @@ import org.openhealthtools.mdht.uml.cda.operations.ParticipantRoleOperationsTest
  * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
-public class PolicySubscriberOperationsTest extends
-		ParticipantRoleOperationsTest {
+public class PolicySubscriberOperationsTest extends ParticipantRoleOperationsTest {
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {};
 

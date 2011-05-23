@@ -28,9 +28,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActMoodDocumentObservation;
 /**
  * This class is a JUnit4 test case.
  */
-@SuppressWarnings( { "nls", "serial" })
-public class AdvanceDirectiveObservationOperationsTest extends
-StructuralAttributeValidationTest {
+@SuppressWarnings({ "nls", "serial" })
+public class AdvanceDirectiveObservationOperationsTest extends StructuralAttributeValidationTest {
 
 	protected static final String ADVANCE_DIRECTIVE_OBSERVATION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.17";
 
@@ -43,72 +42,60 @@ StructuralAttributeValidationTest {
 
 	// Status code
 	private static final String STATUS_CODE = "completed";
+
 	private static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
 	// This Code may be incorrect, it is not specified in the OCL
 	protected static final String CODE = "ASSERTION";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.5.4";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(
-				ADVANCE_DIRECTIVE_OBSERVATION_TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(ADVANCE_DIRECTIVE_OBSERVATION_TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AdvanceDirectiveObservationOperations
-				.validateAdvanceDirectiveObservationTemplateId(
-						(AdvanceDirectiveObservation) objectToTest,
-						diagnostician, map);
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationTemplateId(
+						(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
+				}
+
+			},
+
+			// ID
+			// -------------------------------------------------------------
+			new IDCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationId(
+						(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
+				}
+			},
+
+			// Status Code
+			// -------------------------------------------------------------
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationStatusCode(
+						(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
+				}
+			},
+
+			// EffectiveTime
+			// -------------------------------------------------------------
+			new EffectiveTimeCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationEffectiveTime(
+						(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
+				}
 			}
-
-		},
-
-		// ID
-		// -------------------------------------------------------------
-		new IDCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AdvanceDirectiveObservationOperations
-				.validateAdvanceDirectiveObservationId(
-						(AdvanceDirectiveObservation) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// Status Code
-		// -------------------------------------------------------------
-		new StatusCodeCCDValidationTest(STATUS_CODE,
-				STATUS_CODE_CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AdvanceDirectiveObservationOperations
-				.validateAdvanceDirectiveObservationStatusCode(
-						(AdvanceDirectiveObservation) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// EffectiveTime
-		// -------------------------------------------------------------
-		new EffectiveTimeCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AdvanceDirectiveObservationOperations
-				.validateAdvanceDirectiveObservationEffectiveTime(
-						(AdvanceDirectiveObservation) objectToTest,
-						diagnostician, map);
-			}
-		}
 
 	}; // TEST_CASE_ARRAY
 
@@ -132,24 +119,17 @@ StructuralAttributeValidationTest {
 	}
 
 	@Override
-	protected Enumerator doGetValidStructuralAttributeValue(
-			final String structuralAttributeName) {
-		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP
-		.get(structuralAttributeName);
+	protected Enumerator doGetValidStructuralAttributeValue(final String structuralAttributeName) {
+		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP.get(structuralAttributeName);
 	}
 
 	@Override
-	protected boolean doValidateStructuralAttributeValues(
-			final EObject eObjectToValidate,
+	protected boolean doValidateStructuralAttributeValues(final EObject eObjectToValidate,
 			final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-		return AdvanceDirectiveObservationOperations
-		.validateAdvanceDirectiveObservationClassCode(
-				(AdvanceDirectiveObservation) eObjectToValidate,
-				diagnostician, map)
-				&& AdvanceDirectiveObservationOperations
-				.validateAdvanceDirectiveObservationMoodCode(
-						(AdvanceDirectiveObservation) eObjectToValidate,
-						diagnostician, map);
+		return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationClassCode(
+			(AdvanceDirectiveObservation) eObjectToValidate, diagnostician, map) &&
+				AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationMoodCode(
+					(AdvanceDirectiveObservation) eObjectToValidate, diagnostician, map);
 	}
 
 } // AdvanceDirectiveObservationOperationsTest

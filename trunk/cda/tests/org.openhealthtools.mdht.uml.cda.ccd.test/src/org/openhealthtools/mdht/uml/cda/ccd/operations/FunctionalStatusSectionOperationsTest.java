@@ -37,84 +37,71 @@ public class FunctionalStatusSectionOperationsTest extends CCDValidationTest {
 	protected static final String FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.5";
 
 	protected static final String CODE = "47420-5";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(
-				FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return FunctionalStatusSectionOperations
-				.validateFunctionalStatusSectionTemplateId(
-						(FunctionalStatusSection) objectToTest,
-						diagnostician, map);
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return FunctionalStatusSectionOperations.validateFunctionalStatusSectionTemplateId(
+						(FunctionalStatusSection) objectToTest, diagnostician, map);
+				}
+
+			},
+
+			// Title
+			// -------------------------------------------------------------
+			new TitleCCDValidationTest() {
+
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return FunctionalStatusSectionOperations.validateFunctionalStatusSectionTitle(
+						(FunctionalStatusSection) objectToTest, diagnostician, map);
+				}
+
+			},
+
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return FunctionalStatusSectionOperations.validateFunctionalStatusSectionCode(
+						(FunctionalStatusSection) objectToTest, diagnostician, map);
+				}
+			},
+
+			// Entry
+			// -------------------------------------------------------------
+			new EntryCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return FunctionalStatusSectionOperations.validateFunctionalStatusSectionClinicalStatements(
+						(FunctionalStatusSection) objectToTest, diagnostician, map);
+				}
+
+				@Override
+				protected Object getValueToSet() {
+					final EList<Entry> retValue = new BasicEList<Entry>();
+					final Entry entry = CDAFactory.eINSTANCE.createEntry();
+					entry.setOrganizer(CCDFactory.eINSTANCE.createResultOrganizer());
+					retValue.add(entry);
+
+					final Entry entry2 = CDAFactory.eINSTANCE.createEntry();
+					entry2.setAct(CCDFactory.eINSTANCE.createProblemAct());
+					retValue.add(entry2);
+
+					return retValue;
+				}
 			}
-
-		},
-
-		// Title
-		// -------------------------------------------------------------
-		new TitleCCDValidationTest() {
-
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return FunctionalStatusSectionOperations
-				.validateFunctionalStatusSectionTitle(
-						(FunctionalStatusSection) objectToTest,
-						diagnostician, map);
-			}
-
-		},
-
-		// Code
-		// -------------------------------------------------------------
-		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return FunctionalStatusSectionOperations
-				.validateFunctionalStatusSectionCode(
-						(FunctionalStatusSection) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// Entry
-		// -------------------------------------------------------------
-		new EntryCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return FunctionalStatusSectionOperations
-				.validateFunctionalStatusSectionClinicalStatements(
-						(FunctionalStatusSection) objectToTest,
-						diagnostician, map);
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<Entry> retValue = new BasicEList<Entry>();
-				final Entry entry = CDAFactory.eINSTANCE.createEntry();
-				entry.setOrganizer(CCDFactory.eINSTANCE
-						.createResultOrganizer());
-				retValue.add(entry);
-
-				final Entry entry2 = CDAFactory.eINSTANCE.createEntry();
-				entry2.setAct(CCDFactory.eINSTANCE.createProblemAct());
-				retValue.add(entry2);
-
-				return retValue;
-			}
-		}
 
 	}; // TEST_CASE_ARRAY
 
@@ -146,5 +133,5 @@ public class FunctionalStatusSectionOperationsTest extends CCDValidationTest {
 		FunctionalStatusSectionOperations obj = new FunctionalStatusSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 } // FunctionalStatusSectionOperationsTest

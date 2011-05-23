@@ -33,6 +33,7 @@ public class FamilyHistoryOrganizerOperationsTest extends CCDValidationTest {
 	protected static final String FAMILY_HISTORY_ORGANIZER_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.23";
 
 	protected static final String STATUS_CODE = "completed";
+
 	protected static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
 	/**
@@ -44,37 +45,29 @@ public class FamilyHistoryOrganizerOperationsTest extends CCDValidationTest {
 		FamilyHistoryOrganizerOperations obj = new FamilyHistoryOrganizerOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
-			new TemplateIDValidationTest(
-					FAMILY_HISTORY_ORGANIZER_TEMPLATE_ID) {
+			new TemplateIDValidationTest(FAMILY_HISTORY_ORGANIZER_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return FamilyHistoryOrganizerOperations
-							.validateFamilyHistoryOrganizerTemplateId(
-									(FamilyHistoryOrganizer) objectToTest,
-									diagnostician, map);
+					return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerTemplateId(
+						(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
 				}
 
 			},
 
 			// Status Code
 			// -------------------------------------------------------------
-			new StatusCodeCCDValidationTest(STATUS_CODE,
-					STATUS_CODE_CODE_SYSTEM) {
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return FamilyHistoryOrganizerOperations
-							.validateFamilyHistoryOrganizerStatusCode(
-									(FamilyHistoryOrganizer) objectToTest,
-									diagnostician, map);
+					return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerStatusCode(
+						(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
 				}
 			}
 

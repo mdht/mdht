@@ -34,21 +34,19 @@ public class PayersSectionOperationsTest extends CCDValidationTest {
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.1.9";
 
 	protected static final String CODE = "48768-6";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return PayersSectionOperations
-							.validatePayersSectionTemplateId(
-									(PayersSection) objectToTest,
-									diagnostician, map);
+					return PayersSectionOperations.validatePayersSectionTemplateId(
+						(PayersSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -58,11 +56,10 @@ public class PayersSectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return PayersSectionOperations.validatePayersSectionTitle(
-							(PayersSection) objectToTest, diagnostician, map);
+						(PayersSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -71,11 +68,10 @@ public class PayersSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
 					return PayersSectionOperations.validatePayersSectionCode(
-							(PayersSection) objectToTest, diagnostician, map);
+						(PayersSection) objectToTest, diagnostician, map);
 				}
 			}
 
@@ -97,14 +93,12 @@ public class PayersSectionOperationsTest extends CCDValidationTest {
 	public void testValidatePayersSectionText() {
 		// This is not fully implemented.
 		final PayersSection ps = (PayersSection) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ps);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ps);
 
-		boolean isValid = PayersSectionOperations
-				.validatePayersSectionText(ps, diagnostician, map);
+		boolean isValid = PayersSectionOperations.validatePayersSectionText(ps, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
-	
+
 	/**
 	 * 
 	 */
@@ -112,14 +106,12 @@ public class PayersSectionOperationsTest extends CCDValidationTest {
 	public void testValidatePayersSectionCoverageActivity() {
 		// This is not fully implemented.
 		final PayersSection ps = (PayersSection) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-				.createDefaultDiagnostic(ps);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(ps);
 
-		boolean isValid = PayersSectionOperations
-				.validatePayersSectionCoverageActivity(ps, diagnostician, map);
+		boolean isValid = PayersSectionOperations.validatePayersSectionCoverageActivity(ps, diagnostician, map);
 		assertTrue(createAssertionFailureMessage(diagnostician), !isValid);
 	}
-	
+
 	@Override
 	protected EObject getObjectToTest() {
 		return CCDFactory.eINSTANCE.createPayersSection();

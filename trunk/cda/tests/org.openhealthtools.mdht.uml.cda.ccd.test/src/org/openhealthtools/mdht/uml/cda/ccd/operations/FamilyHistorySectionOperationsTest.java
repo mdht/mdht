@@ -30,21 +30,19 @@ public class FamilyHistorySectionOperationsTest extends CCDValidationTest {
 	protected static final String FAMILY_HISTORY_SECTION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.4";
 
 	protected static final String CODE = "10157-6";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(FAMILY_HISTORY_SECTION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return FamilyHistorySectionOperations
-							.validateFamilyHistorySectionTemplateId(
-									(FamilyHistorySection) objectToTest,
-									diagnostician, map);
+					return FamilyHistorySectionOperations.validateFamilyHistorySectionTemplateId(
+						(FamilyHistorySection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -54,13 +52,10 @@ public class FamilyHistorySectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return FamilyHistorySectionOperations
-							.validateFamilyHistorySectionTitle(
-									(FamilyHistorySection) objectToTest,
-									diagnostician, map);
+					return FamilyHistorySectionOperations.validateFamilyHistorySectionTitle(
+						(FamilyHistorySection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -69,13 +64,10 @@ public class FamilyHistorySectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return FamilyHistorySectionOperations
-							.validateFamilyHistorySectionCode(
-									(FamilyHistorySection) objectToTest,
-									diagnostician, map);
+					return FamilyHistorySectionOperations.validateFamilyHistorySectionCode(
+						(FamilyHistorySection) objectToTest, diagnostician, map);
 				}
 			}
 

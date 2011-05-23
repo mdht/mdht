@@ -27,9 +27,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
 /**
  * This class is a JUnit4 test case.
  */
-@SuppressWarnings( { "nls", "serial" })
-public class ProductInstanceOperationsTest extends
-		StructuralAttributeValidationTest {
+@SuppressWarnings({ "nls", "serial" })
+public class ProductInstanceOperationsTest extends StructuralAttributeValidationTest {
 
 	protected static final String PRODUCT_INSTANCE_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.52";
 
@@ -45,11 +44,10 @@ public class ProductInstanceOperationsTest extends
 	new TemplateIDValidationTest(PRODUCT_INSTANCE_TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			return ProductInstanceOperations.validateProductInstanceTemplateId(
-					(ProductInstance) objectToTest, diagnostician, map);
+				(ProductInstance) objectToTest, diagnostician, map);
 		}
 
 	}
@@ -76,18 +74,15 @@ public class ProductInstanceOperationsTest extends
 	}
 
 	@Override
-	protected Enumerator doGetValidStructuralAttributeValue(
-			final String structuralAttributeName) {
-		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP
-				.get(structuralAttributeName);
+	protected Enumerator doGetValidStructuralAttributeValue(final String structuralAttributeName) {
+		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP.get(structuralAttributeName);
 	}
 
 	@Override
-	protected boolean doValidateStructuralAttributeValues(
-			final EObject eObjectToValidate,
+	protected boolean doValidateStructuralAttributeValues(final EObject eObjectToValidate,
 			final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 		return ProductInstanceOperations.validateProductInstanceClassCode(
-				(ProductInstance) eObjectToValidate, diagnostician, map);
+			(ProductInstance) eObjectToValidate, diagnostician, map);
 	}
 
 } // ProductInstanceOperationsTest

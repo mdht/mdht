@@ -30,53 +30,45 @@ public class ProceduresSectionOperationsTest extends CCDValidationTest {
 	protected static final String PROCEDURES_SECTION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.12";
 
 	protected static final String CODE = "47519-4";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(PROCEDURES_SECTION_TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(PROCEDURES_SECTION_TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ProceduresSectionOperations
-				.validateProceduresSectionTemplateId(
-						(ProceduresSection) objectToTest,
-						diagnostician, map);
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ProceduresSectionOperations.validateProceduresSectionTemplateId(
+						(ProceduresSection) objectToTest, diagnostician, map);
+				}
+
+			},
+
+			// Title
+			// -------------------------------------------------------------
+			new TitleCCDValidationTest() {
+
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ProceduresSectionOperations.validateProceduresSectionTitle(
+						(ProceduresSection) objectToTest, diagnostician, map);
+				}
+			},
+
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return ProceduresSectionOperations.validateProceduresSectionCode(
+						(ProceduresSection) objectToTest, diagnostician, map);
+				}
 			}
-
-		},
-
-		// Title
-		// -------------------------------------------------------------
-		new TitleCCDValidationTest() {
-
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ProceduresSectionOperations
-				.validateProceduresSectionTitle(
-						(ProceduresSection) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// Code
-		// -------------------------------------------------------------
-		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return ProceduresSectionOperations
-				.validateProceduresSectionCode(
-						(ProceduresSection) objectToTest,
-						diagnostician, map);
-			}
-		}
 
 	}; // TEST_CASE_ARRAY
 

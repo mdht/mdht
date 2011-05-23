@@ -33,21 +33,19 @@ public class EncountersSectionOperationsTest extends CCDValidationTest {
 	protected static final String ENCOUNTERS_SECTION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.3";
 
 	protected static final String CODE = "46240-8";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
+			// Template ID
 			// -------------------------------------------------------------
 			new TemplateIDValidationTest(ENCOUNTERS_SECTION_TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return EncountersSectionOperations
-							.validateEncountersSectionTemplateId(
-									(EncountersSection) objectToTest,
-									diagnostician, map);
+					return EncountersSectionOperations.validateEncountersSectionTemplateId(
+						(EncountersSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -57,13 +55,10 @@ public class EncountersSectionOperationsTest extends CCDValidationTest {
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return EncountersSectionOperations
-							.validateEncountersSectionTitle(
-									(EncountersSection) objectToTest,
-									diagnostician, map);
+					return EncountersSectionOperations.validateEncountersSectionTitle(
+						(EncountersSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -72,13 +67,10 @@ public class EncountersSectionOperationsTest extends CCDValidationTest {
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return EncountersSectionOperations
-							.validateEncountersSectionCode(
-									(EncountersSection) objectToTest,
-									diagnostician, map);
+					return EncountersSectionOperations.validateEncountersSectionCode(
+						(EncountersSection) objectToTest, diagnostician, map);
 				}
 			}
 
@@ -112,5 +104,5 @@ public class EncountersSectionOperationsTest extends CCDValidationTest {
 		EncountersSectionOperations obj = new EncountersSectionOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 } // EncountersSectionOperationsTest

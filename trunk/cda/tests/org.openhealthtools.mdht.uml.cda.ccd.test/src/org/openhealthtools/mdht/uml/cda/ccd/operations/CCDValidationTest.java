@@ -67,10 +67,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipExternalReference
 @SuppressWarnings("nls")
 public abstract class CCDValidationTest extends CDAValidationTest {
 
-
 	// this is a comment to be deleted
-	abstract protected static class CCDValidationTestCase extends
-	CDAValidationTestCase {
+	abstract protected static class CCDValidationTestCase extends CDAValidationTestCase {
 		protected final String featureName;
 
 		public CCDValidationTestCase(final String featureName) {
@@ -80,17 +78,14 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 
 		@Override
 		@SuppressWarnings("synthetic-access")
-		public void doTest(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		public void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			try {
 				validateExpectFail(objectToTest, diagnostician, map);
 				doSet(objectToTest);
 				validateExpectPass(objectToTest, diagnostician, map);
 			} catch (final UnsupportedOperationException uoe) {
-				fail(CDAValidationTest
-						.createUnsupportedOperationFailureMessage(featureName,
-								uoe));
+				fail(CDAValidationTest.createUnsupportedOperationFailureMessage(featureName, uoe));
 			}
 		}
 
@@ -98,34 +93,26 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 			doSet(objectToTest, featureName);
 		}
 
-		protected void doSet(final EObject objectToTest,
-				final String featureName) {
+		protected void doSet(final EObject objectToTest, final String featureName) {
 			doSet(objectToTest, featureName, getValueToSet());
 		}
 
-		protected void doSet(final EObject objectToTest,
-				final String featureName, final Object value) {
-			objectToTest.eSet(objectToTest.eClass().getEStructuralFeature(
-					featureName), value);
+		protected void doSet(final EObject objectToTest, final String featureName, final Object value) {
+			objectToTest.eSet(objectToTest.eClass().getEStructuralFeature(featureName), value);
 		}
 
-		protected void doSet(final EObject objectToTest,
-				final Object value) {
-			objectToTest.eSet(objectToTest.eClass().getEStructuralFeature(
-					featureName), value);
+		protected void doSet(final EObject objectToTest, final Object value) {
+			objectToTest.eSet(objectToTest.eClass().getEStructuralFeature(featureName), value);
 		}
 
 		abstract protected Object getValueToSet();
 
 	} // CCDValidationTestCase
 
-	
-
 	/**
 	 * This class tests title validation
 	 */
-	abstract public static class TitleCCDValidationTest extends
-	CCDValidationTestCase {
+	abstract public static class TitleCCDValidationTest extends CCDValidationTestCase {
 
 		/**
 		 * nothing
@@ -141,8 +128,7 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 	} // TitleCCDValidationTest
 
 	// MoodCode Test Case
-	abstract protected static class MoodCodeCCDValidationTest extends
-	CCDValidationTestCase {
+	abstract protected static class MoodCodeCCDValidationTest extends CCDValidationTestCase {
 
 		public MoodCodeCCDValidationTest() {
 			super("moodCode");
@@ -153,17 +139,14 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 		 */
 		@SuppressWarnings("synthetic-access")
 		@Override
-		public void doTest(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		public void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			try {
 				// The mood code is initialized to a default value so it should
 				// always be defined.
 				validateExpectPass(objectToTest, diagnostician, map);
 			} catch (final UnsupportedOperationException uoe) {
-				fail(CDAValidationTest
-						.createUnsupportedOperationFailureMessage("moodCode",
-								uoe));
+				fail(CDAValidationTest.createUnsupportedOperationFailureMessage("moodCode", uoe));
 			}
 		}
 
@@ -174,10 +157,8 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 		}
 	} // MoodCode Validation Test
 
-
 	// MoodCode Value Test Case
-	abstract protected static class MoodCodeValueCCDValidationTest extends
-	CCDValidationTestCase {
+	abstract protected static class MoodCodeValueCCDValidationTest extends CCDValidationTestCase {
 
 		public MoodCodeValueCCDValidationTest() {
 			super("moodCode");
@@ -188,24 +169,21 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 		 */
 		@SuppressWarnings("synthetic-access")
 		@Override
-		public void doTest(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		public void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			try {
 				for (final Object moodCodeValue : getModeCodeValues()) {
 					// set the value here
-					doSet(objectToTest,moodCodeValue);
+					doSet(objectToTest, moodCodeValue);
 					validateExpectPass(objectToTest, diagnostician, map);
 				}
 
 			} catch (final UnsupportedOperationException uoe) {
-				fail(CDAValidationTest
-						.createUnsupportedOperationFailureMessage("moodCode",
-								uoe));
+				fail(CDAValidationTest.createUnsupportedOperationFailureMessage("moodCode", uoe));
 			}
 		}
 
-		abstract List<Object> getModeCodeValues() ;
+		abstract List<Object> getModeCodeValues();
 
 		@Override
 		protected Object getValueToSet() {
@@ -217,8 +195,7 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 	/**
 	 * Validate Text Test Case
 	 */
-	abstract public static class TextCCDValidationTest extends
-	CCDValidationTestCase {
+	abstract public static class TextCCDValidationTest extends CCDValidationTestCase {
 
 		/**
 		 * nothing
@@ -236,8 +213,7 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 	/**
 	 * Validate Id Test Case
 	 */
-	abstract public static class IDCCDValidationTest extends
-	CCDValidationTestCase {
+	abstract public static class IDCCDValidationTest extends CCDValidationTestCase {
 
 		/**
 		 * Nothing
@@ -255,14 +231,13 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 	} // IDCCDValidationTest
 
 	// Validate Status Code Test Case
-	abstract protected static class StatusCodeCCDValidationTest extends
-	CCDValidationTestCase {
+	abstract protected static class StatusCodeCCDValidationTest extends CCDValidationTestCase {
 
 		protected final String statusCode;
+
 		protected final String statusCodeCodeSystem;
 
-		public StatusCodeCCDValidationTest(final String statusCode,
-				final String statusCodeCodeSystem) {
+		public StatusCodeCCDValidationTest(final String statusCode, final String statusCodeCodeSystem) {
 			super("statusCode");
 			this.statusCode = statusCode;
 			this.statusCodeCodeSystem = statusCodeCodeSystem;
@@ -281,10 +256,10 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 	/**
 	 * This class is a JUnit4 test case.
 	 */
-	public abstract static class CodeCCDValidationTest extends
-	CCDValidationTestCase {
+	public abstract static class CodeCCDValidationTest extends CCDValidationTestCase {
 
 		private final String code;
+
 		private final String codeSystem;
 
 		/**
@@ -309,8 +284,7 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 	/**
 	 * Validate Effective Time Test Case
 	 */
-	abstract public static class EffectiveTimeCCDValidationTest extends
-	CCDValidationTestCase {
+	abstract public static class EffectiveTimeCCDValidationTest extends CCDValidationTestCase {
 
 		/**
 		 * nothing
@@ -326,13 +300,11 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 	} // EffectiveTimeCCDValidationTest
 
 	// Validate Observation Value Test Case
-	abstract protected static class ObservationValueCCDValidationTest extends
-	CCDValidationTestCase {
+	abstract protected static class ObservationValueCCDValidationTest extends CCDValidationTestCase {
 
 		protected String observationValueCodeSystem;
 
-		public ObservationValueCCDValidationTest(
-				final String observationValueCodeSystem) {
+		public ObservationValueCCDValidationTest(final String observationValueCodeSystem) {
 			super("value");
 			this.observationValueCodeSystem = observationValueCodeSystem;
 		}
@@ -348,40 +320,37 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 	} // ObservationValueCCDValidationTest
 
 	// Validate Entry Test Case
-	abstract protected static class EntryCCDValidationTest extends
-	CCDValidationTestCase {
+	abstract protected static class EntryCCDValidationTest extends CCDValidationTestCase {
 		public EntryCCDValidationTest() {
 			super("entry");
 		}
 	} // EntryCCDValidationTest
 
 	// Validate Entry Relationship Test Case
-	abstract protected static class EntryRelationshipCCDValidationTest extends
-	CCDValidationTestCase {
+	abstract protected static class EntryRelationshipCCDValidationTest extends CCDValidationTestCase {
 		public EntryRelationshipCCDValidationTest() {
 			super("entryRelationship");
 		}
 	} // EntryRelationshipCCDValidationTest
 
 	// Validate Information Source Test Case
-	abstract protected static class InformationSourceCCDValidationTest extends
-	CCDValidationTestCase {
+	abstract protected static class InformationSourceCCDValidationTest extends CCDValidationTestCase {
 		private static final String INFORMANT_FEATURE_NAME = "informant";
+
 		private static final String REFERENCE_FEATURE_NAME = "reference";
 
 		public InformationSourceCCDValidationTest() {
 			super(INFORMANT_FEATURE_NAME);
 		}
 
-		@SuppressWarnings( { "unchecked", "synthetic-access" })
+		@SuppressWarnings({ "unchecked", "synthetic-access" })
 		@Override
-		public void doTest(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		public void doTest(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
 			try {
 
-				final EStructuralFeature referenceFeature = objectToTest
-				.eClass().getEStructuralFeature(REFERENCE_FEATURE_NAME);
+				final EStructuralFeature referenceFeature = objectToTest.eClass().getEStructuralFeature(
+					REFERENCE_FEATURE_NAME);
 
 				validateExpectFail(objectToTest, diagnostician, map);
 
@@ -393,21 +362,17 @@ public abstract class CCDValidationTest extends CDAValidationTest {
 				validateExpectPass(objectToTest, diagnostician, map);
 
 				// Or, if empty
-				objectToTest.eUnset(objectToTest.eClass()
-						.getEStructuralFeature(INFORMANT_FEATURE_NAME));
+				objectToTest.eUnset(objectToTest.eClass().getEStructuralFeature(INFORMANT_FEATURE_NAME));
 
 				final Reference ref = CDAFactory.eINSTANCE.createReference();
 				ref.setTypeCode(x_ActRelationshipExternalReference.XCRPT);
 
-				((EList<Reference>) objectToTest.eGet(referenceFeature))
-				.add(ref);
+				((EList<Reference>) objectToTest.eGet(referenceFeature)).add(ref);
 
 				validateExpectPass(objectToTest, diagnostician, map);
 
 			} catch (final UnsupportedOperationException uoe) {
-				fail(CDAValidationTest
-						.createUnsupportedOperationFailureMessage(
-								INFORMANT_FEATURE_NAME, uoe));
+				fail(CDAValidationTest.createUnsupportedOperationFailureMessage(INFORMANT_FEATURE_NAME, uoe));
 			}
 		}
 

@@ -53,191 +53,157 @@ public class AlertObservationOperationsTest extends StructuralAttributeValidatio
 	};
 
 	protected static final String STATUS_CODE = "completed";
+
 	protected static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(
-				ALERT_OBSERVATION_VERIFICATION_TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(ALERT_OBSERVATION_VERIFICATION_TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AlertObservationOperations
-				.validateAlertObservationTemplateId(
-						(AlertObservation) objectToTest,
-						diagnostician, map);
-			}
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AlertObservationOperations.validateAlertObservationTemplateId(
+						(AlertObservation) objectToTest, diagnostician, map);
+				}
 
-		},
+			},
 
-		// Status Code
-		// -------------------------------------------------------------
-		new StatusCodeCCDValidationTest(STATUS_CODE,
-				STATUS_CODE_CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AlertObservationOperations
-				.validateAlertObservationStatusCode(
-						(AlertObservation) objectToTest,
-						diagnostician, map);
-			}
-		},
+			// Status Code
+			// -------------------------------------------------------------
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AlertObservationOperations.validateAlertObservationStatusCode(
+						(AlertObservation) objectToTest, diagnostician, map);
+				}
+			},
 
-		// Information Source
-		// -------------------------------------------------------------
-		new InformationSourceCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AlertObservationOperations
-				.validateAlertObservationInformationSource(
-						(AlertObservation) objectToTest,
-						diagnostician, map);
-			}
-		},
+			// Information Source
+			// -------------------------------------------------------------
+			new InformationSourceCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AlertObservationOperations.validateAlertObservationInformationSource(
+						(AlertObservation) objectToTest, diagnostician, map);
+				}
+			},
 
-		// Agent Representation
-		// -------------------------------------------------------------
-		new CCDValidationTestCase("participant") {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AlertObservationOperations
-				.validateAlertObservationAgentRepresentation(
-						(AlertObservation) objectToTest,
-						diagnostician, map);
-			}
+			// Agent Representation
+			// -------------------------------------------------------------
+			new CCDValidationTestCase("participant") {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AlertObservationOperations.validateAlertObservationAgentRepresentation(
+						(AlertObservation) objectToTest, diagnostician, map);
+				}
 
-			@Override
-			protected Object getValueToSet() {
-				final EList<Participant2> retValue = new BasicEList<Participant2>();
+				@Override
+				protected Object getValueToSet() {
+					final EList<Participant2> retValue = new BasicEList<Participant2>();
 
-				// Agent Representation
-				final Participant2 participant = CDAFactory.eINSTANCE
-				.createParticipant2();
-				participant.setTypeCode(ParticipationType.CSM);
-				retValue.add(participant);
+					// Agent Representation
+					final Participant2 participant = CDAFactory.eINSTANCE.createParticipant2();
+					participant.setTypeCode(ParticipationType.CSM);
+					retValue.add(participant);
 
-				return retValue;
-			}
-		},
+					return retValue;
+				}
+			},
 
-		// Playing Entity Required
-		// -------------------------------------------------------------
-		new CCDValidationTestCase("participant") {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AlertObservationOperations
-				.validateAlertObservationPlayingEntityRequired(
-						(AlertObservation) objectToTest,
-						diagnostician, map);
-			}
+			// Playing Entity Required
+			// -------------------------------------------------------------
+			new CCDValidationTestCase("participant") {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AlertObservationOperations.validateAlertObservationPlayingEntityRequired(
+						(AlertObservation) objectToTest, diagnostician, map);
+				}
 
-			@Override
-			protected Object getValueToSet() {
-				final EList<Participant2> retValue = new BasicEList<Participant2>();
+				@Override
+				protected Object getValueToSet() {
+					final EList<Participant2> retValue = new BasicEList<Participant2>();
 
-				// Playing Entity Required
-				final Participant2 participant = CDAFactory.eINSTANCE
-				.createParticipant2();
-				participant.setTypeCode(ParticipationType.CSM);
+					// Playing Entity Required
+					final Participant2 participant = CDAFactory.eINSTANCE.createParticipant2();
+					participant.setTypeCode(ParticipationType.CSM);
 
-				final ParticipantRole participantRole = CDAFactory.eINSTANCE
-				.createParticipantRole();
+					final ParticipantRole participantRole = CDAFactory.eINSTANCE.createParticipantRole();
 
-				final PlayingEntity entity = CDAFactory.eINSTANCE
-				.createPlayingEntity();
-				entity.setClassCode(EntityClassRoot.MMAT);
-				entity.setCode(DatatypesFactory.eINSTANCE.createCE());
+					final PlayingEntity entity = CDAFactory.eINSTANCE.createPlayingEntity();
+					entity.setClassCode(EntityClassRoot.MMAT);
+					entity.setCode(DatatypesFactory.eINSTANCE.createCE());
 
-				participantRole.setPlayingEntity(entity);
-				participant.setParticipantRole(participantRole);
-				retValue.add(participant);
+					participantRole.setPlayingEntity(entity);
+					participant.setParticipantRole(participantRole);
+					retValue.add(participant);
 
-				return retValue;
-			}
-		},
+					return retValue;
+				}
+			},
 
-		// Entry Relationship
-		// Alert Status Observation
-		// -------------------------------------------------------------
-		new EntryRelationshipCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AlertObservationOperations
-				.validateAlertObservationAlertStatusObservation(
-						(AlertObservation) objectToTest,
-						diagnostician, map);
-			}
+			// Entry Relationship
+			// Alert Status Observation
+			// -------------------------------------------------------------
+			new EntryRelationshipCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AlertObservationOperations.validateAlertObservationAlertStatusObservation(
+						(AlertObservation) objectToTest, diagnostician, map);
+				}
 
-			@Override
-			protected Object getValueToSet() {
-				final EList<EntryRelationship> retValue = new BasicEList<EntryRelationship>();
+				@Override
+				protected Object getValueToSet() {
+					final EList<EntryRelationship> retValue = new BasicEList<EntryRelationship>();
 
-				final EntryRelationship er = CDAFactory.eINSTANCE
-				.createEntryRelationship();
-				er.setObservation(CCDFactory.eINSTANCE
-						.createAlertStatusObservation());
-				retValue.add(er);
+					final EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+					er.setObservation(CCDFactory.eINSTANCE.createAlertStatusObservation());
+					retValue.add(er);
 
-				return retValue;
-			}
-		},
+					return retValue;
+				}
+			},
 
-		// Entry Relationship
-		// Observation Reaction Observation
-		// -------------------------------------------------------------
-		new EntryRelationshipCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AlertObservationOperations
-				.validateAlertObservationReactionObservation(
-						(AlertObservation) objectToTest,
-						diagnostician, map);
-			}
+			// Entry Relationship
+			// Observation Reaction Observation
+			// -------------------------------------------------------------
+			new EntryRelationshipCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AlertObservationOperations.validateAlertObservationReactionObservation(
+						(AlertObservation) objectToTest, diagnostician, map);
+				}
 
-			@Override
-			protected Object getValueToSet() {
-				final EList<EntryRelationship> retValue = new BasicEList<EntryRelationship>();
+				@Override
+				protected Object getValueToSet() {
+					final EList<EntryRelationship> retValue = new BasicEList<EntryRelationship>();
 
-				final EntryRelationship er = CDAFactory.eINSTANCE
-				.createEntryRelationship();
-				er.setTypeCode(x_ActRelationshipEntryRelationship.MFST);
-				er.setObservation(CCDFactory.eINSTANCE
-						.createReactionObservation());
-				retValue.add(er);
+					final EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+					er.setTypeCode(x_ActRelationshipEntryRelationship.MFST);
+					er.setObservation(CCDFactory.eINSTANCE.createReactionObservation());
+					retValue.add(er);
 
-				return retValue;
-			}
-		},
+					return retValue;
+				}
+			},
 
-		// EffectiveTime
-		// -------------------------------------------------------------
-		new EffectiveTimeCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return AlertObservationOperations
-				.validateAlertObservationEffectiveTime(
-						(AlertObservation) objectToTest,
-						diagnostician, map);
-			}
-		}
-	}; // TEST_CASE_ARRAY
+			// EffectiveTime
+			// -------------------------------------------------------------
+			new EffectiveTimeCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return AlertObservationOperations.validateAlertObservationEffectiveTime(
+						(AlertObservation) objectToTest, diagnostician, map);
+				}
+			} }; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {
@@ -256,7 +222,7 @@ public class AlertObservationOperationsTest extends StructuralAttributeValidatio
 		AlertObservation alertObservation = CCDFactory.eINSTANCE.createAlertObservation();
 		section.addObservation(alertObservation);
 		return alertObservation;
-//		return CCDFactory.eINSTANCE.createAlertObservation();
+		// return CCDFactory.eINSTANCE.createAlertObservation();
 	}
 
 	@Override
@@ -265,18 +231,15 @@ public class AlertObservationOperationsTest extends StructuralAttributeValidatio
 	}
 
 	@Override
-	protected Enumerator doGetValidStructuralAttributeValue(
-			final String structuralAttributeName) {
-		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP
-		.get(structuralAttributeName);
+	protected Enumerator doGetValidStructuralAttributeValue(final String structuralAttributeName) {
+		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP.get(structuralAttributeName);
 	}
 
 	@Override
-	protected boolean doValidateStructuralAttributeValues(
-			final EObject eObjectToValidate,
+	protected boolean doValidateStructuralAttributeValues(final EObject eObjectToValidate,
 			final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
 		return AlertObservationOperations.validateAlertObservationMoodCode(
-				(AlertObservation) eObjectToValidate, diagnostician, map);
+			(AlertObservation) eObjectToValidate, diagnostician, map);
 	}
 
 } // AlertObservationOperationsTest

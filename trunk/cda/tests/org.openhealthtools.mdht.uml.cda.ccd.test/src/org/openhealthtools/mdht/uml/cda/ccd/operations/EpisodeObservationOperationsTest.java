@@ -42,8 +42,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings({ "nls", "serial" })
-public class EpisodeObservationOperationsTest extends
-StructuralAttributeValidationTest {
+public class EpisodeObservationOperationsTest extends StructuralAttributeValidationTest {
 
 	protected static final String EPISODE_OBSERVATION_TEMPLATE_ID = "2.16.840.1.113883.10.20.1.41";
 
@@ -55,9 +54,11 @@ StructuralAttributeValidationTest {
 	};
 
 	protected static final String STATUS_CODE = "completed";
+
 	protected static final String STATUS_CODE_CODE_SYSTEM = "2.16.840.1.113883.5.14";
 
 	protected static final String CODE = "ASSERTION";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.5.4";
 
 	/**
@@ -69,114 +70,94 @@ StructuralAttributeValidationTest {
 		EpisodeObservationOperations obj = new EpisodeObservationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
-		// Template ID
-		// -------------------------------------------------------------
-		new TemplateIDValidationTest(EPISODE_OBSERVATION_TEMPLATE_ID) {
+			// Template ID
+			// -------------------------------------------------------------
+			new TemplateIDValidationTest(EPISODE_OBSERVATION_TEMPLATE_ID) {
 
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return EpisodeObservationOperations
-				.validateEpisodeObservationTemplateId(
-						(EpisodeObservation) objectToTest,
-						diagnostician, map);
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return EpisodeObservationOperations.validateEpisodeObservationTemplateId(
+						(EpisodeObservation) objectToTest, diagnostician, map);
+				}
+
+			},
+
+			// Status Code
+			// -------------------------------------------------------------
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return EpisodeObservationOperations.validateEpisodeObservationStatusCode(
+						(EpisodeObservation) objectToTest, diagnostician, map);
+				}
+			},
+
+			// Code
+			// -------------------------------------------------------------
+			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return EpisodeObservationOperations.validateEpisodeObservationCode(
+						(EpisodeObservation) objectToTest, diagnostician, map);
+				}
+			},
+
+			// Entry Relationship
+			// SAS
+			// -------------------------------------------------------------
+			new EntryRelationshipCCDValidationTest() {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return EpisodeObservationOperations.validateEpisodeObservationExistsEntryRelationshipSAS(
+						(EpisodeObservation) objectToTest, diagnostician, map);
+				}
+
+				@Override
+				protected Object getValueToSet() {
+					final EList<EntryRelationship> retValue = new BasicEList<EntryRelationship>();
+
+					// Problem Act
+					final EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+					er.setTypeCode(x_ActRelationshipEntryRelationship.SAS);
+					er.setAct(CCDFactory.eINSTANCE.createProblemAct());
+					retValue.add(er);
+
+					// Social History
+					final EntryRelationship entity = CDAFactory.eINSTANCE.createEntryRelationship();
+					entity.setTypeCode(x_ActRelationshipEntryRelationship.SAS);
+					entity.setObservation(CCDFactory.eINSTANCE.createSocialHistoryObservation());
+					retValue.add(entity);
+					return retValue;
+				}
+			},
+
+			// Value
+			// -------------------------------------------------------------
+			new CCDValidationTestCase("value") {
+				@Override
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+						final Map<Object, Object> map) {
+					return EpisodeObservationOperations.validateEpisodeObservationValue(
+						(EpisodeObservation) objectToTest, diagnostician, map);
+				}
+
+				@Override
+				protected Object getValueToSet() {
+					final EList<CD> retValue = new BasicEList<CD>();
+
+					final CD element = DatatypesFactory.eINSTANCE.createCD(
+						"404684003", "2.16.840.1.113883.6.96", "whatever", "whatever2");
+
+					retValue.add(element);
+					return retValue;
+				}
 			}
-
-		},
-
-		// Status Code
-		// -------------------------------------------------------------
-		new StatusCodeCCDValidationTest(STATUS_CODE,
-				STATUS_CODE_CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return EpisodeObservationOperations
-				.validateEpisodeObservationStatusCode(
-						(EpisodeObservation) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// Code
-		// -------------------------------------------------------------
-		new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return EpisodeObservationOperations
-				.validateEpisodeObservationCode(
-						(EpisodeObservation) objectToTest,
-						diagnostician, map);
-			}
-		},
-
-		// Entry Relationship
-		// SAS
-		// -------------------------------------------------------------
-		new EntryRelationshipCCDValidationTest() {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return EpisodeObservationOperations
-				.validateEpisodeObservationExistsEntryRelationshipSAS(
-						(EpisodeObservation) objectToTest,
-						diagnostician, map);
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<EntryRelationship> retValue = new BasicEList<EntryRelationship>();
-
-				// Problem Act
-				final EntryRelationship er = CDAFactory.eINSTANCE
-				.createEntryRelationship();
-				er.setTypeCode(x_ActRelationshipEntryRelationship.SAS);
-				er.setAct(CCDFactory.eINSTANCE.createProblemAct());
-				retValue.add(er);
-
-				// Social History
-				final EntryRelationship entity = CDAFactory.eINSTANCE
-				.createEntryRelationship();
-				entity.setTypeCode(x_ActRelationshipEntryRelationship.SAS);
-				entity.setObservation(CCDFactory.eINSTANCE
-						.createSocialHistoryObservation());
-				retValue.add(entity);
-				return retValue;
-			}
-		},
-
-		// Value
-		// -------------------------------------------------------------
-		new CCDValidationTestCase("value") {
-			@Override
-			protected boolean validate(final EObject objectToTest,
-					final BasicDiagnostic diagnostician,
-					final Map<Object, Object> map) {
-				return EpisodeObservationOperations
-				.validateEpisodeObservationValue(
-						(EpisodeObservation) objectToTest,
-						diagnostician, map);
-			}
-
-			@Override
-			protected Object getValueToSet() {
-				final EList<CD> retValue = new BasicEList<CD>();
-
-				final CD element = DatatypesFactory.eINSTANCE.createCD(
-						"404684003", "2.16.840.1.113883.6.96", "whatever",
-				"whatever2");
-
-				retValue.add(element);
-				return retValue;
-			}
-		}
 
 	}; // TEST_CASE_ARRAY
 
@@ -200,24 +181,17 @@ StructuralAttributeValidationTest {
 	}
 
 	@Override
-	protected Enumerator doGetValidStructuralAttributeValue(
-			final String structuralAttributeName) {
-		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP
-		.get(structuralAttributeName);
+	protected Enumerator doGetValidStructuralAttributeValue(final String structuralAttributeName) {
+		return VALID_STRUCTURAL_ATTRIBUTE_NAME_VALUE_MAP.get(structuralAttributeName);
 	}
 
 	@Override
-	protected boolean doValidateStructuralAttributeValues(
-			final EObject eObjectToValidate,
+	protected boolean doValidateStructuralAttributeValues(final EObject eObjectToValidate,
 			final BasicDiagnostic diagnostician, final Map<Object, Object> map) {
-		return EpisodeObservationOperations
-		.validateEpisodeObservationClassCode(
-				(EpisodeObservation) eObjectToValidate, diagnostician,
-				map)
-				&& EpisodeObservationOperations
-				.validateEpisodeObservationMoodCode(
-						(EpisodeObservation) eObjectToValidate,
-						diagnostician, map);
+		return EpisodeObservationOperations.validateEpisodeObservationClassCode(
+			(EpisodeObservation) eObjectToValidate, diagnostician, map) &&
+				EpisodeObservationOperations.validateEpisodeObservationMoodCode(
+					(EpisodeObservation) eObjectToValidate, diagnostician, map);
 	}
 
 	/**
@@ -226,17 +200,14 @@ StructuralAttributeValidationTest {
 	@Test
 	public void testvalidateEpisodeObservationOneEntryRelationshipSUBJ() {
 		final EpisodeObservation eo = (EpisodeObservation) getObjectToTest();
-		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE
-		.createDefaultDiagnostic(eo);
-		boolean isValid = EpisodeObservationOperations
-		.validateEpisodeObservationOneEntryRelationshipSUBJ(eo,
-				diagnostician, map);
+		final BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(eo);
+		boolean isValid = EpisodeObservationOperations.validateEpisodeObservationOneEntryRelationshipSUBJ(
+			eo, diagnostician, map);
 		assertTrue("Validation passed when it was expected to fail", !isValid);
 
 		// Create the entry relationship with the correct typeCode, but don't
 		// set the "act" or the "observation"
-		final EntryRelationship entry = CDAFactory.eINSTANCE
-		.createEntryRelationship();
+		final EntryRelationship entry = CDAFactory.eINSTANCE.createEntryRelationship();
 		entry.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
 		eo.getEntryRelationships().add(entry);
 
@@ -245,37 +216,30 @@ StructuralAttributeValidationTest {
 
 		// With both NOT set, it should NOT validate
 		entry.setObservation(null);
-		isValid = EpisodeObservationOperations
-		.validateEpisodeObservationOneEntryRelationshipSUBJ(eo,
-				diagnostician, map);
+		isValid = EpisodeObservationOperations.validateEpisodeObservationOneEntryRelationshipSUBJ(
+			eo, diagnostician, map);
 		assertTrue(
-				"Validation passed when it was expected to fail.  Both act and observation were null, but still validated.",
-				!isValid);
+			"Validation passed when it was expected to fail.  Both act and observation were null, but still validated.",
+			!isValid);
 
 		// Set them both
 		entry.setAct(CCDFactory.eINSTANCE.createProblemAct());
-		entry.setObservation(CCDFactory.eINSTANCE
-				.createSocialHistoryObservation());
+		entry.setObservation(CCDFactory.eINSTANCE.createSocialHistoryObservation());
 
-		isValid = EpisodeObservationOperations
-		.validateEpisodeObservationOneEntryRelationshipSUBJ(eo,
-				diagnostician, map);
-		assertTrue(CDAValidationTest
-				.createAssertionFailureMessage(diagnostician), isValid);
+		isValid = EpisodeObservationOperations.validateEpisodeObservationOneEntryRelationshipSUBJ(
+			eo, diagnostician, map);
+		assertTrue(CDAValidationTest.createAssertionFailureMessage(diagnostician), isValid);
 
 		// If act is not set, but the other is, then it should validate.
 		entry.setAct(null);
-		isValid = EpisodeObservationOperations
-		.validateEpisodeObservationOneEntryRelationshipSUBJ(eo,
-				diagnostician, map);
-		assertTrue(CDAValidationTest
-				.createAssertionFailureMessage(diagnostician), isValid);
+		isValid = EpisodeObservationOperations.validateEpisodeObservationOneEntryRelationshipSUBJ(
+			eo, diagnostician, map);
+		assertTrue(CDAValidationTest.createAssertionFailureMessage(diagnostician), isValid);
 
 		// With both NOT set, it should NOT validate
 		entry.setObservation(null);
-		isValid = EpisodeObservationOperations
-		.validateEpisodeObservationOneEntryRelationshipSUBJ(eo,
-				diagnostician, map);
+		isValid = EpisodeObservationOperations.validateEpisodeObservationOneEntryRelationshipSUBJ(
+			eo, diagnostician, map);
 		assertTrue("Validation passed when it was expected to fail", !isValid);
 
 	}
