@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.cdt.operations;
 
 import static org.junit.Assert.fail;
@@ -33,15 +31,12 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * This class
  */
 @SuppressWarnings("nls")
-public class GeneralHeaderConstraintsOperationsTest extends
-		ClinicalDocumentOperationsTest {
+public class GeneralHeaderConstraintsOperationsTest extends ClinicalDocumentOperationsTest {
 
-	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.3";
 
-	@SuppressWarnings("hiding")
 	protected static final String CODE = "unspecified";
-	@SuppressWarnings("hiding")
+
 	protected static final String CODE_SYSTEM = "unspecified";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
@@ -50,13 +45,10 @@ public class GeneralHeaderConstraintsOperationsTest extends
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return GeneralHeaderConstraintsOperations
-							.validateGeneralHeaderConstraintsTemplateId(
-									(GeneralHeaderConstraints) objectToTest,
-									diagnostician, map);
+					return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsTemplateId(
+						(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -65,13 +57,10 @@ public class GeneralHeaderConstraintsOperationsTest extends
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return GeneralHeaderConstraintsOperations
-							.validateGeneralHeaderConstraintsCode(
-									(GeneralHeaderConstraints) objectToTest,
-									diagnostician, map);
+					return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsCode(
+						(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -79,13 +68,10 @@ public class GeneralHeaderConstraintsOperationsTest extends
 			// -------------------------------------------------------------
 			new EffectiveTimeCCDValidationTest() {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return GeneralHeaderConstraintsOperations
-							.validateGeneralHeaderConstraintsEffectiveTime(
-									(GeneralHeaderConstraints) objectToTest,
-									diagnostician, map);
+					return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsEffectiveTime(
+						(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -94,13 +80,10 @@ public class GeneralHeaderConstraintsOperationsTest extends
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return GeneralHeaderConstraintsOperations
-							.validateGeneralHeaderConstraintsTitle(
-									(GeneralHeaderConstraints) objectToTest,
-									diagnostician, map);
+					return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsTitle(
+						(GeneralHeaderConstraints) objectToTest, diagnostician, map);
 				}
 
 				/**
@@ -113,22 +96,22 @@ public class GeneralHeaderConstraintsOperationsTest extends
 					return title;
 				}
 			}
-//			,
-//
-//			// ID
-//			// -------------------------------------------------------------
-//			new IDCCDValidationTest() {
-//				@Override
-//				protected boolean validate(final EObject objectToTest,
-//						final BasicDiagnostic diagnostician,
-//						final Map<Object, Object> map) {
-//					return GeneralHeaderConstraintsOperations
-//							.validateGeneralHeaderConstraintsId(
-//									(GeneralHeaderConstraints) objectToTest,
-//									diagnostician, map);
-//				}
-//			} 
-			}; // TEST_CASE_ARRAY
+	// ,
+	//
+	// // ID
+	// // -------------------------------------------------------------
+	// new IDCCDValidationTest() {
+	// @Override
+	// protected boolean validate(final EObject objectToTest,
+	// final BasicDiagnostic diagnostician,
+	// final Map<Object, Object> map) {
+	// return GeneralHeaderConstraintsOperations
+	// .validateGeneralHeaderConstraintsId(
+	// (GeneralHeaderConstraints) objectToTest,
+	// diagnostician, map);
+	// }
+	// }
+	}; // TEST_CASE_ARRAY
 
 	@Override
 	protected List<CDATestCase> getTestCases() {

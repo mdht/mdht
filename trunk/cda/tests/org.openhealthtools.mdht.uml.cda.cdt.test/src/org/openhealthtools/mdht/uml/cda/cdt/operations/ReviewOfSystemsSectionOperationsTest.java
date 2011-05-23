@@ -1,15 +1,13 @@
-/**
- * Copyright (c) 2010 IBM Corporation
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 IBM Corporation
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.cdt.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -35,6 +33,7 @@ public class ReviewOfSystemsSectionOperationsTest extends SectionOperationsTest 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.4.10";
 
 	protected static final String CODE = "10187-3";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
@@ -43,13 +42,10 @@ public class ReviewOfSystemsSectionOperationsTest extends SectionOperationsTest 
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ReviewOfSystemsSectionOperations
-							.validateReviewOfSystemsSectionTemplateId(
-									(ReviewOfSystemsSection) objectToTest,
-									diagnostician, map);
+					return ReviewOfSystemsSectionOperations.validateReviewOfSystemsSectionTemplateId(
+						(ReviewOfSystemsSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -58,13 +54,10 @@ public class ReviewOfSystemsSectionOperationsTest extends SectionOperationsTest 
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ReviewOfSystemsSectionOperations
-							.validateReviewOfSystemsSectionCode(
-									(ReviewOfSystemsSection) objectToTest,
-									diagnostician, map);
+					return ReviewOfSystemsSectionOperations.validateReviewOfSystemsSectionCode(
+						(ReviewOfSystemsSection) objectToTest, diagnostician, map);
 				}
 			} }; // TEST_CASE_ARRAY
 
