@@ -13,11 +13,9 @@
 
 package org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers;
 
-
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.validation.IValidationContext;
 import org.openhealthtools.mdht.uml.hl7.validation.internal.HL7AbstractConstraint;
-
 
 /**
  * 
@@ -25,10 +23,12 @@ import org.openhealthtools.mdht.uml.hl7.validation.internal.HL7AbstractConstrain
  */
 public class DataTypes extends HL7AbstractConstraint {
 
-	/* TODO:
-	 *  - warning: missing base type, default to string (includes Enumeration)
+	/*
+	 * TODO:
+	 * - warning: missing base type, default to string (includes Enumeration)
 	 */
-	
+
+	@Override
 	public IStatus validate(IValidationContext context) {
 
 		return context.createSuccessStatus();

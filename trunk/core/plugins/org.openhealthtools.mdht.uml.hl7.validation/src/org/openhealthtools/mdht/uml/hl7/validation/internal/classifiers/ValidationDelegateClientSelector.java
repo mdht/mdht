@@ -15,20 +15,19 @@ package org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers;
 
 import org.eclipse.emf.validation.model.IClientSelector;
 
-
 /**
  * An EMF validation client selector class with the simple property that
- *  the MSL example plugin client context occurs when the {@link #running}
- *  flag is set to true. 
+ * the MSL example plugin client context occurs when the {@link #running} flag is set to true.
  * 
  * @author cmcgee
  */
-public class ValidationDelegateClientSelector
-	implements IClientSelector {
+public class ValidationDelegateClientSelector implements IClientSelector {
 
 	public static boolean running = true;
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.emf.validation.model.IClientSelector#selects(java.lang.Object)
 	 */
 	public boolean selects(Object object) {

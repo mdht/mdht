@@ -43,41 +43,39 @@ import org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers.Associat
  * 
  */
 public class ActAssociationsConstraint extends HL7AbstractConstraint {
-	
-	private static final String ID_ACTASSOCIATIONS = ASSOCIATIONS_GROUP + "ActAssociations";
-	
-	public static void register(){
-		Associations.registerConstraints(ID_ACTASSOCIATIONS , new ActAssociationsConstraint());
-	}
-	
 
-	/* (non-Javadoc)
+	private static final String ID_ACTASSOCIATIONS = ASSOCIATIONS_GROUP + "ActAssociations";
+
+	public static void register() {
+		Associations.registerConstraints(ID_ACTASSOCIATIONS, new ActAssociationsConstraint());
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.openhealthtools.mdht.uml.hl7.validation.internal.HL7AbstractConstraint#validate(org.eclipse.emf.validation.IValidationContext)
 	 */
 	@Override
 	public IStatus validate(IValidationContext context) {
-		Association association  = (Association ) context.getTarget();
-		
+		Association association = (Association) context.getTarget();
+
 		IStatus result = context.createSuccessStatus();
-	
-		for (Property property : association.getMemberEnds())
-		{			
-			if (property.isNavigable())
-			{
-	
+
+		for (Property property : association.getMemberEnds()) {
+			if (property.isNavigable()) {
+
 				Stereotype rimAssociationSource = RIMProfileUtil.getRIMStereotype(property.getOtherEnd().getType());
-				
+
 				Stereotype rimAssociationTarget = RIMProfileUtil.getRIMStereotype(property.getType());
-				
-				if (rimAssociationSource != null
-						&& rimAssociationTarget != null) {
+
+				if (rimAssociationSource != null && rimAssociationTarget != null) {
 
 					if (RIMConstraintsUtil.isAct(rimAssociationSource)) {
-						if (!RIMConstraintsUtil.isParticipation(rimAssociationTarget) && !RIMConstraintsUtil.isActRelationship(rimAssociationTarget)) {
+						if (!RIMConstraintsUtil.isParticipation(rimAssociationTarget) &&
+								!RIMConstraintsUtil.isActRelationship(rimAssociationTarget)) {
 							Object[] data = new Object[3];
 							data[0] = property.getName();
-							data[1] = property.getOtherEnd().getType()
-									.getName();
+							data[1] = property.getOtherEnd().getType().getName();
 							result = context.createFailureStatus(data);
 						}
 					}
@@ -86,8 +84,7 @@ public class ActAssociationsConstraint extends HL7AbstractConstraint {
 						if (!RIMConstraintsUtil.isRole(rimAssociationTarget)) {
 							Object[] data = new Object[3];
 							data[0] = property.getName();
-							data[1] = property.getOtherEnd().getType()
-									.getName();
+							data[1] = property.getOtherEnd().getType().getName();
 							result = context.createFailureStatus(data);
 						}
 					}
@@ -96,20 +93,16 @@ public class ActAssociationsConstraint extends HL7AbstractConstraint {
 						if (!RIMConstraintsUtil.isEntity(rimAssociationTarget)) {
 							Object[] data = new Object[3];
 							data[0] = property.getName();
-							data[1] = property.getOtherEnd().getType()
-									.getName();
+							data[1] = property.getOtherEnd().getType().getName();
 							result = context.createFailureStatus(data);
 						}
 					}
 				}
-				
+
 			}
 		}
 
-
 		return result;
 	}
-	
-	
 
 }

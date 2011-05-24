@@ -30,54 +30,49 @@ import org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers.Classes;
  * 
  */
 public class RIMAttributeRedifinitionConstraint extends HL7AbstractConstraint {
-	
+
 	private static final String ID_RIMATTRIBUTEREDIFINITION = CLASSES_GROUP + "RIMAttributeRedifinition";
-	
-	public static void register(){
+
+	public static void register() {
 		Classes.registerConstraints(ID_RIMATTRIBUTEREDIFINITION, new RIMAttributeRedifinitionConstraint());
 	}
-	
+
 	@Override
 	public IStatus validate(IValidationContext context) {
-	final Class rimClass = (Class) context.getTarget();
-		
+		final Class rimClass = (Class) context.getTarget();
+
 		IStatus result = context.createSuccessStatus();
-		
-		
+
 		// No need to flag invalid stereotype properties when the stereotype is invalid
 		// and choice groups are not bound by this constraint
-		if (Classes.getRIMCount(rimClass) == 1  && HL7ResourceUtil.getAppliedHDFStereotype(rimClass,IHDFProfileConstants.CHOICE_GROUP) == null  ) {
+		if (Classes.getRIMCount(rimClass) == 1 &&
+				HL7ResourceUtil.getAppliedHDFStereotype(rimClass, IHDFProfileConstants.CHOICE_GROUP) == null) {
 
 			Stereotype rimStereotype = null;
 
 			for (Stereotype stereotype : rimClass.getAppliedStereotypes()) {
-				if (IRIMProfileConstants.RIM_PROFILE_NAME.equals(stereotype
-						.getProfile().getName())) {
+				if (IRIMProfileConstants.RIM_PROFILE_NAME.equals(stereotype.getProfile().getName())) {
 					rimStereotype = stereotype;
 					break;
 				}
 			}
 
 			if (rimStereotype != null) {
-				
-				// Get the RIM derivation based on the value				
-				Class rimDerivedClass = RIMUtil.getClassByName(rimClass.getNearestPackage(), rimStereotype.getName());				
-				
+
+				// Get the RIM derivation based on the value
+				Class rimDerivedClass = RIMUtil.getClassByName(rimClass.getNearestPackage(), rimStereotype.getName());
+
 				// All HL7 classes are derived from the rim indirectly through
 				// the use of rim stereotypes. All uml derived classes must
 				// contain at least all of the rim required attributes.
-				if (rimDerivedClass != null)
-				{
-					
-					for (Property rimProperty  : rimClass.getAllAttributes())
-					{
-						if (rimProperty.getAssociation() == null)
-						{
-							Property baseProperty = rimDerivedClass.getAttribute(rimProperty.getName() , null);
+				if (rimDerivedClass != null) {
+
+					for (Property rimProperty : rimClass.getAllAttributes()) {
+						if (rimProperty.getAssociation() == null) {
+							Property baseProperty = rimDerivedClass.getAttribute(rimProperty.getName(), null);
 							// if baseProperty is null - it only means that this class did not potentially redifine it.
 							// There are other validations to make sure that all required attributes are implemented.
-							if (baseProperty != null && !rimProperty.isConsistentWith(baseProperty))
-							{
+							if (baseProperty != null && !rimProperty.isConsistentWith(baseProperty)) {
 								Object[] data = new Object[3];
 								data[0] = baseProperty.getName();
 								data[1] = rimProperty.getName();
@@ -85,18 +80,15 @@ public class RIMAttributeRedifinitionConstraint extends HL7AbstractConstraint {
 								result = context.createFailureStatus(data);
 							}
 
-							
 						}
 
 					}
-					
+
 				}
-				
+
 			}
 		}
 		return result;
 	}
-	
-	
 
 }

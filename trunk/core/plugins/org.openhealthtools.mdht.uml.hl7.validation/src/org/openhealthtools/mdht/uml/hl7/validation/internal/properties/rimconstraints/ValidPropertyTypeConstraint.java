@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2008 David A Carlson.
+ * Copyright (c) 2008, 2009 David A Carlson.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,29 +26,30 @@ import org.openhealthtools.mdht.uml.hl7.validation.internal.properties.Propertie
 public class ValidPropertyTypeConstraint extends HL7AbstractConstraint {
 
 	private static final String ID_VALIDPROPERTYTYPE = PROPERTIES_GROUP + "validPropertyType";
-	
-	public static void register(){
-		Properties.registerConstraints(ID_VALIDPROPERTYTYPE  , new ValidPropertyTypeConstraint());
+
+	public static void register() {
+		Properties.registerConstraints(ID_VALIDPROPERTYTYPE, new ValidPropertyTypeConstraint());
 	}
 
 	@Override
 	public IStatus validate(IValidationContext context) {
-		
+
 		Property property = null;
 		if (context.getTarget() instanceof Property) {
 			property = (Property) context.getTarget();
 		}
-		
+
 		Property rimSupplier = RIMConstraintsUtil.getRIMSupplier(property);
 
 		if (property != null && rimSupplier != null) {
 			Classifier propertyType = (Classifier) property.getType();
 			Classifier rimType = (Classifier) rimSupplier.getType();
-			
+
 			if (propertyType != null && rimType != null) {
 				if (!hasCompatibleTypes(property, rimSupplier)) {
-					
-					Object[] arguments = { property.getName() + " : " + propertyType.getName(), 
+
+					Object[] arguments = {
+							property.getName() + " : " + propertyType.getName(),
 							rimSupplier.getName() + " : " + rimType.getName() };
 					return context.createFailureStatus(arguments);
 				}
@@ -58,7 +59,6 @@ public class ValidPropertyTypeConstraint extends HL7AbstractConstraint {
 		return context.createSuccessStatus();
 	}
 
-	
 	/**
 	 * The source type is compatible with the supplier type.
 	 */
@@ -69,22 +69,21 @@ public class ValidPropertyTypeConstraint extends HL7AbstractConstraint {
 			String rimClassName = null;
 			if ("RIM".equals(supplierType.getModel().getName())) {
 				rimClassName = supplierType.getName();
-			}
-			else {
+			} else {
 				Stereotype supplierStereotype = RIMProfileUtil.getRIMStereotype(supplierType);
-				if (supplierStereotype != null)
+				if (supplierStereotype != null) {
 					rimClassName = supplierStereotype.getName();
+				}
 			}
-			
-			if (sourceType.equals(supplierType)
-					|| sourceType.getGenerals().contains(supplierType)
-					|| RIMProfileUtil.isRIMType(sourceType, rimClassName)) {
+
+			if (sourceType.equals(supplierType) || sourceType.getGenerals().contains(supplierType) ||
+					RIMProfileUtil.isRIMType(sourceType, rimClassName)) {
 
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
-	
+
 }

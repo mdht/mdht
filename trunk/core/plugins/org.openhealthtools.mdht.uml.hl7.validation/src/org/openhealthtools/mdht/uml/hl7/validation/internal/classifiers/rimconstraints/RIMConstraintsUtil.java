@@ -43,19 +43,16 @@ public class RIMConstraintsUtil {
 	@SuppressWarnings("unchecked")
 	public static Class getRIMSupplier(Class umlClass) {
 
-		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-				umlClass, IHDFProfileConstants.HDF_CLASS);
+		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(umlClass, IHDFProfileConstants.HDF_CLASS);
 
 		Class result = null;
 
 		if (stereotype != null) {
-			Object value = umlClass.getValue(stereotype,
-					IHDFProfileConstants.DERIVATION_SUPPLIER);
+			Object value = umlClass.getValue(stereotype, IHDFProfileConstants.DERIVATION_SUPPLIER);
 			if (value instanceof List) {
 				List<Class> derivations = (List<Class>) value;
-				for (Iterator<Class> iter = derivations.iterator(); iter
-						.hasNext();) {
-					Class supplier = (Class) iter.next();
+				for (Iterator<Class> iter = derivations.iterator(); iter.hasNext();) {
+					Class supplier = iter.next();
 					if ("RIM".equals(supplier.getModel().getName())) {
 						result = supplier;
 						break;
@@ -82,10 +79,12 @@ public class RIMConstraintsUtil {
 		if (property != null) {
 
 			// use abstract HDFProperty
-			Stereotype propertyStereotype = HL7ResourceUtil.getAppliedHDFStereotype(property, IHDFProfileConstants.HDF_ATTRIBUTE);
+			Stereotype propertyStereotype = HL7ResourceUtil.getAppliedHDFStereotype(
+				property, IHDFProfileConstants.HDF_ATTRIBUTE);
 
 			if (propertyStereotype == null) {
-				propertyStereotype = HL7ResourceUtil.getAppliedHDFStereotype(property, IHDFProfileConstants.HDF_ASSOCIATION_END);
+				propertyStereotype = HL7ResourceUtil.getAppliedHDFStereotype(
+					property, IHDFProfileConstants.HDF_ASSOCIATION_END);
 			}
 
 			if (propertyStereotype != null) {
@@ -94,13 +93,13 @@ public class RIMConstraintsUtil {
 					List<Property> derivations = (List<Property>) value;
 					for (Iterator<Property> iter = derivations.iterator(); iter.hasNext();) {
 						Property supplier = iter.next();
-						
+
 						if (supplier.getModel() != null) {
 							if ("RIM".equals(supplier.getModel().getName())) {
 								result = supplier;
 							}
 						}
-						
+
 					}
 				}
 			} else {
@@ -109,7 +108,8 @@ public class RIMConstraintsUtil {
 				if (property.getClass_() != null) {
 					Class rimClass = RIMConstraintsUtil.getRIMSupplier(property.getClass_());
 					if (rimClass != null) {
-						result = (Property) rimClass.getInheritedMember(property.getName(), false, UMLPackage.eINSTANCE.getProperty());
+						result = (Property) rimClass.getInheritedMember(
+							property.getName(), false, UMLPackage.eINSTANCE.getProperty());
 					}
 				}
 			}
@@ -122,36 +122,32 @@ public class RIMConstraintsUtil {
 	 * @param rimClass
 	 * @return
 	 */
-	public static boolean  isAct(Class rimClass)
-	{
-		return isRim(IRIMProfileConstants.ACT,rimClass);
+	public static boolean isAct(Class rimClass) {
+		return isRim(IRIMProfileConstants.ACT, rimClass);
 	}
 
 	/**
 	 * @param rimClass
 	 * @return
 	 */
-	public static boolean isActRelationship(Class rimClass)
-	{
-		return isRim(IRIMProfileConstants.ACT_RELATIONSHIP,rimClass);
+	public static boolean isActRelationship(Class rimClass) {
+		return isRim(IRIMProfileConstants.ACT_RELATIONSHIP, rimClass);
 	}
 
 	/**
 	 * @param rimClass
 	 * @return
 	 */
-	public static boolean isEntity(Class rimClass)
-	{
-		return isRim(IRIMProfileConstants.ENTITY,rimClass);
+	public static boolean isEntity(Class rimClass) {
+		return isRim(IRIMProfileConstants.ENTITY, rimClass);
 	}
 
 	/**
 	 * @param rimClass
 	 * @return
 	 */
-	public static boolean isParticipation(Class rimClass)
-	{
-		return isRim(IRIMProfileConstants.PARTICIPATION,rimClass);
+	public static boolean isParticipation(Class rimClass) {
+		return isRim(IRIMProfileConstants.PARTICIPATION, rimClass);
 	}
 
 	/**
@@ -162,20 +158,17 @@ public class RIMConstraintsUtil {
 	 * @param rimClass
 	 * @return
 	 */
-	public static boolean isRim(String rim,Class rimClass)
-	{
+	public static boolean isRim(String rim, Class rimClass) {
 		boolean isRim = false;
-		
+
 		List<String> allParentNames = UMLUtil.getAllParentNames(rimClass);
-		
-		if (allParentNames != null)
-		{
-			if (allParentNames.contains(rim))
-			{
+
+		if (allParentNames != null) {
+			if (allParentNames.contains(rim)) {
 				isRim = true;
-			}		
+			}
 		}
-		
+
 		return isRim;
 	}
 
@@ -183,9 +176,8 @@ public class RIMConstraintsUtil {
 	 * @param rimClass
 	 * @return
 	 */
-	public static boolean isRole(Class rimClass)
-	{
-		return isRim(IRIMProfileConstants.ROLE,rimClass);
+	public static boolean isRole(Class rimClass) {
+		return isRim(IRIMProfileConstants.ROLE, rimClass);
 	}
 
 }
