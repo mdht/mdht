@@ -23,21 +23,20 @@ public class XSDTransformerOptions {
 	public static final String INCLUDE_VOCABULARY_CONSTRAINTS = "includeVocabularyConstraints";
 
 	public static final String INCLUDE_EMPTY_ASSOCIATION_CLASSES = "includeEmptyAssociationClasses";
-	
+
 	private boolean includeVocabularyConstraints;
+
 	private boolean includeEmptyAssociationClasses;
-	
+
 	public XSDTransformerOptions() {
 		initializePreferences();
 	}
-	
+
 	private void initializePreferences() {
 		Preferences store = Activator.getDefault().getPluginPreferences();
 
-		includeVocabularyConstraints = 
-			store.getBoolean(INCLUDE_VOCABULARY_CONSTRAINTS);
-		includeEmptyAssociationClasses = 
-			store.getBoolean(INCLUDE_EMPTY_ASSOCIATION_CLASSES);
+		includeVocabularyConstraints = store.getBoolean(INCLUDE_VOCABULARY_CONSTRAINTS);
+		includeEmptyAssociationClasses = store.getBoolean(INCLUDE_EMPTY_ASSOCIATION_CLASSES);
 	}
 
 	public boolean isIncludeVocabularyConstraints() {
@@ -52,8 +51,7 @@ public class XSDTransformerOptions {
 		return includeEmptyAssociationClasses;
 	}
 
-	public void setIncludeEmptyAssociationClasses(
-			boolean includeEmptyAssociationClasses) {
+	public void setIncludeEmptyAssociationClasses(boolean includeEmptyAssociationClasses) {
 		this.includeEmptyAssociationClasses = includeEmptyAssociationClasses;
 	}
 

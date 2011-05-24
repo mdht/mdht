@@ -14,8 +14,6 @@ package org.openhealthtools.mdht.uml.hdf2xsd.transform;
 
 import java.util.List;
 
-import net.sourceforge.xmlmodeling.uml.xsd.profile.IXSDProfileConstants;
-
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Enumeration;
@@ -29,7 +27,6 @@ import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
 import org.openhealthtools.mdht.uml.hdf.util.XSDDatatypeUtil;
 
-
 public class AddVocabularyConstraints extends UMLSwitch {
 
 	private XSDTransformerOptions transformerOptions;
@@ -37,71 +34,64 @@ public class AddVocabularyConstraints extends UMLSwitch {
 	public AddVocabularyConstraints(XSDTransformerOptions options) {
 		transformerOptions = options;
 	}
-	
-	public Object caseProperty(Property property) {
-		if (!transformerOptions.isIncludeVocabularyConstraints())
-			return property;
 
-		Stereotype conceptDomain = property.getAppliedStereotype(
-				IHDFProfileConstants.HDF_PROFILE_NAME
-				+ NamedElement.SEPARATOR + IHDFProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
-		Stereotype codeSystem = property.getAppliedStereotype(
-				IHDFProfileConstants.HDF_PROFILE_NAME
-				+ NamedElement.SEPARATOR + IHDFProfileConstants.CODE_SYSTEM_CONSTRAINT);
-		Stereotype valueSet = property.getAppliedStereotype(
-				IHDFProfileConstants.HDF_PROFILE_NAME
-				+ NamedElement.SEPARATOR + IHDFProfileConstants.VALUE_SET_CONSTRAINT);
-		Stereotype enumConstraint = property.getAppliedStereotype(
-				IHDFProfileConstants.HDF_PROFILE_NAME
-				+ NamedElement.SEPARATOR + IHDFProfileConstants.ENUMERATION_CONSTRAINT);
+	@Override
+	public Object caseProperty(Property property) {
+		if (!transformerOptions.isIncludeVocabularyConstraints()) {
+			return property;
+		}
+
+		Stereotype conceptDomain = property.getAppliedStereotype(IHDFProfileConstants.HDF_PROFILE_NAME +
+				NamedElement.SEPARATOR + IHDFProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+		Stereotype codeSystem = property.getAppliedStereotype(IHDFProfileConstants.HDF_PROFILE_NAME +
+				NamedElement.SEPARATOR + IHDFProfileConstants.CODE_SYSTEM_CONSTRAINT);
+		Stereotype valueSet = property.getAppliedStereotype(IHDFProfileConstants.HDF_PROFILE_NAME +
+				NamedElement.SEPARATOR + IHDFProfileConstants.VALUE_SET_CONSTRAINT);
+		Stereotype enumConstraint = property.getAppliedStereotype(IHDFProfileConstants.HDF_PROFILE_NAME +
+				NamedElement.SEPARATOR + IHDFProfileConstants.ENUMERATION_CONSTRAINT);
 
 		if (enumConstraint != null) {
 			setEnumerationValues(property, enumConstraint);
-		}
-		else if (valueSet != null) {
+		} else if (valueSet != null) {
 			setValueSetValues(property, valueSet);
-		}
-		else if (codeSystem != null) {
+		} else if (codeSystem != null) {
 			setCodeSystemValues(property, codeSystem);
+		} else if (conceptDomain != null) {
+			// TODO
 		}
-		else if (conceptDomain != null) {
-			//TODO
-		}
-		
+
 		return property;
 	}
-	
-	private void setCodeSystemValues(Property property, Classifier codeType,
-			String codeSystemOID, String codeSystemName,
-			String codeSystemVersion, String code, String codePrintName) {
+
+	private void setCodeSystemValues(Property property, Classifier codeType, String codeSystemOID,
+			String codeSystemName, String codeSystemVersion, String code, String codePrintName) {
 
 		// Anonymous type is allowed only for XML elements, not attributes
 		boolean isXSDAttribute = XSDTransformUtil.isXSDAttribute(property);
 		if (isXSDAttribute) {
 			if (codeType != null) {
 				property.setType(codeType);
-			}
-			else if (codeSystemName != null) {
+			} else if (codeSystemName != null) {
 				// If defined in HL7 XSD vocabulary data types, then set as 'code' type.
 				Enumeration enumeration = XSDDatatypeUtil.getVocabularyByName(
-						property.getNearestPackage(), codeSystemName);
+					property.getNearestPackage(), codeSystemName);
 				if (enumeration != null) {
 					property.setType(enumeration);
-				}
-				else {
-					//TODO replace with a logger that will display as warning in Console view
-					System.err.println("Code System or Value Set not found: '" + codeSystemName
-							+ "' for " + UMLUtil.getPackageQualifiedName(property));
+				} else {
+					// TODO replace with a logger that will display as warning in Console view
+					System.err.println("Code System or Value Set not found: '" + codeSystemName + "' for " +
+							UMLUtil.getPackageQualifiedName(property));
 				}
 			}
-			
+
 			if (code != null) {
 				property.setDefault(code);
 				// XSD does not allow default values on required attributes, make it fixed.
-				if (property.getLower() >= 1)
+				if (property.getLower() >= 1) {
 					property.setIsReadOnly(true);
+				}
 			}
-			
+
 			return;
 		}
 
@@ -111,12 +101,11 @@ public class AddVocabularyConstraints extends UMLSwitch {
 		if (!(property.getType() instanceof Class)) {
 			return;
 		}
-		List<String> allParentNames = UMLUtil.getAllParentNames((Class)property.getType());
-		if (!(allParentNames.contains("CD")
-				|| allParentNames.contains("SC"))) {
+		List<String> allParentNames = UMLUtil.getAllParentNames((Class) property.getType());
+		if (!(allParentNames.contains("CD") || allParentNames.contains("SC"))) {
 			return;
 		}
-		
+
 		Class anonType = createAnonymousType(property);
 		if (codeSystemOID != null) {
 			Property attr = anonType.getOwnedAttribute("codeSystem", null);
@@ -150,105 +139,99 @@ public class AddVocabularyConstraints extends UMLSwitch {
 			}
 			if (codeType != null) {
 				attr.setType(codeType);
-			}
-			else if (codeSystemName != null) {
+			} else if (codeSystemName != null) {
 				// If defined in HL7 XSD vocabulary data types, then set as 'code' type.
 				Enumeration enumeration = XSDDatatypeUtil.getVocabularyByName(
-						property.getNearestPackage(), codeSystemName);
+					property.getNearestPackage(), codeSystemName);
 				if (enumeration != null) {
 					attr.setType(enumeration);
-				}
-				else {
-					//TODO replace with a logger that will display as warning in Console view
-					System.err.println("Code System or Value Set not found: '" + codeSystemName
-							+ "' for " + UMLUtil.getPackageQualifiedName(property));
+				} else {
+					// TODO replace with a logger that will display as warning in Console view
+					System.err.println("Code System or Value Set not found: '" + codeSystemName + "' for " +
+							UMLUtil.getPackageQualifiedName(property));
 				}
 			}
 		}
 	}
 
 	private void setCodeSystemValues(Property property, Stereotype codeSystem) {
-		assert(codeSystem != null 
-				&& IHDFProfileConstants.CODE_SYSTEM_CONSTRAINT.equals(codeSystem.getName()));
-		
+		assert (codeSystem != null && IHDFProfileConstants.CODE_SYSTEM_CONSTRAINT.equals(codeSystem.getName()));
+
 		String codeSystemOID = (String) property.getValue(codeSystem, IHDFProfileConstants.CODE_SYSTEM_OID);
 		String codeSystemName = (String) property.getValue(codeSystem, IHDFProfileConstants.CODE_SYSTEM_NAME);
 		String codeSystemVersion = (String) property.getValue(codeSystem, IHDFProfileConstants.CODE_SYSTEM_VERSION);
 		String code = (String) property.getValue(codeSystem, IHDFProfileConstants.CODE);
 		String codePrintName = (String) property.getValue(codeSystem, IHDFProfileConstants.CODE_PRINT_NAME);
-		
-		if (codeSystemOID == null && codeSystemName == null && codeSystemVersion == null
-				&& code == null && codePrintName == null) {
+
+		if (codeSystemOID == null && codeSystemName == null && codeSystemVersion == null && code == null &&
+				codePrintName == null) {
 			// don't create an anonymous type if there are no property values to set
 			return;
 		}
-		
+
 		setCodeSystemValues(property, null, codeSystemOID, codeSystemName, codeSystemVersion, code, codePrintName);
 	}
 
 	private void setValueSetValues(Property property, Stereotype valueSet) {
-		assert(valueSet != null 
-				&& IHDFProfileConstants.VALUE_SET_CONSTRAINT.equals(valueSet.getName()));
+		assert (valueSet != null && IHDFProfileConstants.VALUE_SET_CONSTRAINT.equals(valueSet.getName()));
 
 		String valueSetOID = (String) property.getValue(valueSet, IHDFProfileConstants.VALUE_SET_OID);
 		String valueSetName = (String) property.getValue(valueSet, IHDFProfileConstants.VALUE_SET_NAME);
 		String valueSetVersion = (String) property.getValue(valueSet, IHDFProfileConstants.VALUE_SET_VERSION_DATE);
 		String rootCode = (String) property.getValue(valueSet, IHDFProfileConstants.VALUE_SET_ROOT_CODE);
-		
-		//TODO what use, if any, does this have in XSD?
+
+		// TODO what use, if any, does this have in XSD?
 		Object codingStrength = property.getValue(valueSet, IHDFProfileConstants.VALUE_SET_CODING_STRENGTH);
-		
-		if (valueSetOID == null && valueSetName == null && valueSetVersion == null
-				&& codingStrength == null && rootCode == null) {
+
+		if (valueSetOID == null && valueSetName == null && valueSetVersion == null && codingStrength == null &&
+				rootCode == null) {
 			// don't create an anonymous type if there are no property values to set
 			return;
 		}
-		
+
 		setCodeSystemValues(property, null, valueSetOID, valueSetName, valueSetVersion, rootCode, null);
 	}
 
 	private void setEnumerationValues(Property property, Stereotype enumConstraint) {
-		assert(enumConstraint != null 
-				&& IHDFProfileConstants.ENUMERATION_CONSTRAINT.equals(enumConstraint.getName()));
+		assert (enumConstraint != null && IHDFProfileConstants.ENUMERATION_CONSTRAINT.equals(enumConstraint.getName()));
 
-		Enumeration enumeration = (Enumeration) property.getValue(enumConstraint, IHDFProfileConstants.ENUMERATION_VALUE);
+		Enumeration enumeration = (Enumeration) property.getValue(
+			enumConstraint, IHDFProfileConstants.ENUMERATION_VALUE);
 		if (enumeration != null) {
 			// enumeration type must extend 'cs'
-			Classifier type_cs = XSDDatatypeUtil.getDatatypeByName(
-					enumeration.getNearestPackage(), "cs");
+			Classifier type_cs = XSDDatatypeUtil.getDatatypeByName(enumeration.getNearestPackage(), "cs");
 			if (!enumeration.allParents().contains(type_cs)) {
 				enumeration.createGeneralization(type_cs);
 			}
-			
-			//TODO check for stereotype applied to Enumeration
+
+			// TODO check for stereotype applied to Enumeration
 			setCodeSystemValues(property, enumeration, null, enumeration.getName(), null, null, null);
 		}
 	}
-	
+
 	private Class createAnonymousType(Property property) {
-		assert(property.getType() instanceof Class);
-		
+		assert (property.getType() instanceof Class);
+
 		Class propertyType = (Class) property.getType();
 		String name = "_" + property.getName() + "Type";
 		Class nestedClass = (Class) property.getClass_().createNestedClassifier(name, UMLPackage.eINSTANCE.getClass_());
 		property.setType(nestedClass);
 		UMLUtil.cloneStereotypes(propertyType, nestedClass);
-		
+
 		Generalization generalization = nestedClass.createGeneralization(propertyType);
 		Stereotype restriction = XSDTransformUtil.getXSDStereotype(generalization, IXSDProfileConstants.RESTRICTION);
 		generalization.applyStereotype(restriction);
-		
+
 		// copy all properties into the restricted type
 		for (Property typeProperty : propertyType.getOwnedAttributes()) {
 			Property clonedProperty = nestedClass.createOwnedAttribute(
-					typeProperty.getName(), typeProperty.getType(), 
-					typeProperty.getLower(), typeProperty.getUpper());
+				typeProperty.getName(), typeProperty.getType(), typeProperty.getLower(), typeProperty.getUpper());
 			clonedProperty.setDefaultValue(typeProperty.getDefaultValue());
 			clonedProperty.setAggregation(typeProperty.getAggregation());
 			nestedClass.getOwnedAttributes().add(clonedProperty);
 			UMLUtil.cloneStereotypes(typeProperty, clonedProperty);
 		}
-		
+
 		return nestedClass;
 	}
 

@@ -39,37 +39,37 @@ public class RemoveTemplateBindings {
 	public void transformAllContents(Element element) {
 		try {
 			// first, find all template bindings
-			TreeIterator iterator = EcoreUtil.getAllContents(
-					Collections.singletonList(element));
+			TreeIterator iterator = EcoreUtil.getAllContents(Collections.singletonList(element));
 			while (iterator != null && iterator.hasNext()) {
 				EObject child = (EObject) iterator.next();
-				
+
 				UMLSwitch choiceSwitch = new UMLSwitch() {
+					@Override
 					public Object caseClass(Class umlClass) {
 						if (UMLUtil.isTemplateBinding(umlClass)) {
 							bindings.add(umlClass);
 						}
-						
+
 						for (Classifier nested : umlClass.getNestedClassifiers()) {
 							doSwitch(nested);
 						}
 						return umlClass;
 					}
 				};
-				
+
 				choiceSwitch.doSwitch(child);
 			}
-			
+
 			// second, remove the bindings
 			Classifier[] bindingsArray = new Classifier[bindings.size()];
 			bindingsArray = bindings.toArray(bindingsArray);
 			for (int i = 0; i < bindingsArray.length; i++) {
-				if (bindingsArray[i] != null)
+				if (bindingsArray[i] != null) {
 					bindingsArray[i].destroy();
+				}
 			}
-			
-		}
-		catch (IndexOutOfBoundsException e) {
+
+		} catch (IndexOutOfBoundsException e) {
 			Logger.logException(e);
 		}
 	}

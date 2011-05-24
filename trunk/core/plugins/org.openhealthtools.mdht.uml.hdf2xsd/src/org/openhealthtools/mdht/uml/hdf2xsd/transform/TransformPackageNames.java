@@ -22,11 +22,12 @@ public class TransformPackageNames extends UMLSwitch {
 	public TransformPackageNames(XSDTransformerOptions options) {
 		transformerOptions = options;
 	}
-	
+
+	@Override
 	public Object casePackage(Package umlPackage) {
 		// transform package names to XSD friendly, for use as complexType prefix
 		umlPackage.setName(XSDTransformUtil.getValidXMLName(umlPackage.getName()));
-		
+
 		return umlPackage;
 	}
 
