@@ -576,7 +576,9 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 
 				updateToFail((ValidationTarget) objectToTest);
 
-				xmlSnippetsBuffer.append(escapeXML(FAILSNIPPET, (InfrastructureRoot) objectToTest));
+				if (objectToTest instanceof InfrastructureRoot) {
+					xmlSnippetsBuffer.append(escapeXML(FAILSNIPPET, (InfrastructureRoot) objectToTest));
+				}
 
 				validateExpectFail(objectToTest, diagnostician, map);
 
@@ -595,7 +597,10 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 				}
 
 				updateToPass((ValidationTarget) objectToTest);
-				xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) objectToTest));
+
+				if (objectToTest instanceof InfrastructureRoot) {
+					xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) objectToTest));
+				}
 
 				validateExpectPass(objectToTest, diagnostician, map);
 			} finally {
