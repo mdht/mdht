@@ -15,14 +15,13 @@ package org.openhealthtools.mdht.uml.hl7.core.util;
 import org.eclipse.uml2.uml.resource.UMLResource;
 
 /**
- *
+ * 
  * @version $Id: $
  */
 public interface RIMConstants {
 
 	public static final String HL7_RIM_PATHMAP = "pathmap://HL7_RIM_UV/"; //$NON-NLS-1$
 
-	public static final String HL7_RIM_LIBRARY_URI = HL7_RIM_PATHMAP
-		+ "RIM." + UMLResource.FILE_EXTENSION; //$NON-NLS-1$
+	public static final String HL7_RIM_LIBRARY_URI = HL7_RIM_PATHMAP + "RIM." + UMLResource.FILE_EXTENSION; //$NON-NLS-1$
 
 }

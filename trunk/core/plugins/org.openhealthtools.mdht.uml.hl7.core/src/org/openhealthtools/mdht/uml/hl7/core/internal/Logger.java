@@ -19,7 +19,6 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.osgi.framework.Bundle;
 
-
 /**
  * Small convenience class to log messages to plugin's log file and also, if
  * desired, the console. This class should only be used by classes in this
@@ -27,12 +26,15 @@ import org.osgi.framework.Bundle;
  */
 public class Logger {
 	private static final String PLUGIN_ID = (Activator.getDefault() != null)
-		? Activator.getDefault().getBundle().getSymbolicName()
-		: "NotLoaded";
-	
+			? Activator.getDefault().getBundle().getSymbolicName()
+			: "NotLoaded";
+
 	public static final int ERROR = IStatus.ERROR; // 4
+
 	public static final int ERROR_DEBUG = 200 + ERROR;
+
 	public static final int INFO = IStatus.INFO; // 1
+
 	public static final int INFO_DEBUG = 200 + INFO;
 
 	public static final int OK = IStatus.OK; // 0
@@ -40,7 +42,9 @@ public class Logger {
 	public static final int OK_DEBUG = 200 + OK;
 
 	private static final String TRACEFILTER_LOCATION = "/debug/tracefilter"; //$NON-NLS-1$
+
 	public static final int WARNING = IStatus.WARNING; // 2
+
 	public static final int WARNING_DEBUG = 200 + WARNING;
 
 	/**
@@ -56,29 +60,33 @@ public class Logger {
 	 */
 	protected static void _log(int level, String message, Throwable exception) {
 		if (level == OK_DEBUG || level == INFO_DEBUG || level == WARNING_DEBUG || level == ERROR_DEBUG) {
-			if (!isDebugging())
+			if (!isDebugging()) {
 				return;
+			}
 		}
 
 		int severity = IStatus.OK;
 		switch (level) {
-			case INFO_DEBUG :
-			case INFO :
+			case INFO_DEBUG:
+			case INFO:
 				severity = IStatus.INFO;
 				break;
-			case WARNING_DEBUG :
-			case WARNING :
+			case WARNING_DEBUG:
+			case WARNING:
 				severity = IStatus.WARNING;
 				break;
-			case ERROR_DEBUG :
-			case ERROR :
+			case ERROR_DEBUG:
+			case ERROR:
 				severity = IStatus.ERROR;
 		}
-		message = (message != null) ? message : "null"; //$NON-NLS-1$
+		message = (message != null)
+				? message
+				: "null"; //$NON-NLS-1$
 		Status statusObj = new Status(severity, PLUGIN_ID, severity, message, exception);
 		Bundle bundle = Platform.getBundle(PLUGIN_ID);
-		if (bundle != null) 
+		if (bundle != null) {
 			Platform.getLog(bundle).log(statusObj);
+		}
 	}
 
 	/**
@@ -92,11 +100,14 @@ public class Logger {
 	 */
 	protected static void _trace(String category, String message, Throwable exception) {
 		if (isTracing(category)) {
-			message = (message != null) ? message : "null"; //$NON-NLS-1$
+			message = (message != null)
+					? message
+					: "null"; //$NON-NLS-1$
 			Status statusObj = new Status(IStatus.OK, PLUGIN_ID, IStatus.OK, message, exception);
 			Bundle bundle = Platform.getBundle(PLUGIN_ID);
-			if (bundle != null) 
+			if (bundle != null) {
 				Platform.getLog(bundle).log(statusObj);
+			}
 		}
 	}
 
@@ -114,8 +125,9 @@ public class Logger {
 	 * @return true if tracing category, false otherwise
 	 */
 	public static boolean isTracing(String category) {
-		if (!isDebugging())
+		if (!isDebugging()) {
 			return false;
+		}
 
 		String traceFilter = Platform.getDebugOption(PLUGIN_ID + TRACEFILTER_LOCATION);
 		if (traceFilter != null) {

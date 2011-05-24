@@ -19,9 +19,9 @@ import org.eclipse.uml2.uml.Package;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 /**
-*
-* @version $Id: $
-*/
+ * 
+ * @version $Id: $
+ */
 public class DatatypeUtil {
 
 	/**
@@ -30,12 +30,13 @@ public class DatatypeUtil {
 	 */
 	public static boolean isAbstractDatatype(Element element) {
 		// the resource is null for error conditions where proxy is not resolved
-		if (element == null || element.eResource() == null)
+		if (element == null || element.eResource() == null) {
 			return false;
-		
+		}
+
 		URI uri = element.eResource().getURI();
-		return DatatypeConstants.HL7_DATATYPES_1_0_LIBRARY_URI.equals(uri.toString())
-			|| DatatypeConstants.HL7_DATATYPES_2_0_LIBRARY_URI.equals(uri.toString());
+		return DatatypeConstants.HL7_DATATYPES_1_0_LIBRARY_URI.equals(uri.toString()) ||
+				DatatypeConstants.HL7_DATATYPES_2_0_LIBRARY_URI.equals(uri.toString());
 	}
 
 	/**
@@ -43,15 +44,15 @@ public class DatatypeUtil {
 	 * This search does not consider qualified names, but only looks for a matching
 	 * local classifer name.
 	 * 
-	 * @param basePackage	base package for the model in which library is imported
+	 * @param basePackage
+	 *            base package for the model in which library is imported
 	 * @param localName
 	 * @return a Classifier, or null if not found
 	 */
 	public static Classifier getDatatypeByName(Package basePackage, final String localName) {
 		// import the library
-		Package library = UMLUtil.importLibrary(basePackage, 
-				DatatypeConstants.HL7_DATATYPES_1_0_LIBRARY_URI);
-		
+		Package library = UMLUtil.importLibrary(basePackage, DatatypeConstants.HL7_DATATYPES_1_0_LIBRARY_URI);
+
 		return UMLUtil.getClassifierByName(library, localName);
 	}
 
