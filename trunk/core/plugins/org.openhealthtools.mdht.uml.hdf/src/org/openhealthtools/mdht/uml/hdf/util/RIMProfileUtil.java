@@ -30,7 +30,7 @@ public class RIMProfileUtil {
 		if (rimProfile == null) {
 			return null;
 		}
-		
+
 		Stereotype stereotype = null;
 		for (Iterator iter = element.getAppliedStereotypes().iterator(); iter.hasNext();) {
 			Stereotype s = (Stereotype) iter.next();
@@ -41,20 +41,22 @@ public class RIMProfileUtil {
 		}
 		return stereotype;
 	}
-	
+
 	/**
 	 * Returns true if the given RIM type is applied as a stereotype to this element.
 	 * 
-	 * @param rimType	RIM type, e.g. Act, Entity, Role.
+	 * @param rimType
+	 *            RIM type, e.g. Act, Entity, Role.
 	 */
-	public static boolean isRIMType(Element element, String rimType)  {
+	public static boolean isRIMType(Element element, String rimType) {
 		Stereotype stereotype = getRIMStereotype(element);
-		if (stereotype != null)
+		if (stereotype != null) {
 			return getAllParentNames(stereotype).contains(rimType);
-		
+		}
+
 		return false;
 	}
-	
+
 	public static List<String> getAllParentNames(Stereotype stereotype) {
 		List<String> parentNames = new ArrayList();
 		parentNames.add(stereotype.getName());
@@ -64,5 +66,5 @@ public class RIMProfileUtil {
 		}
 		return parentNames;
 	}
-	
+
 }
