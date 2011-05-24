@@ -55,18 +55,19 @@ public class VitalSignsOrganizerOperationsTest extends CCDValidationTest {
 						(VitalSignsOrganizer) objectToTest, diagnostician, map);
 				}
 
-			},
-
-			// Information Source
-			// -------------------------------------------------------------
-			new InformationSourceCCDValidationTest() {
-				@Override
-				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return VitalSignsOrganizerOperations.validateVitalSignsOrganizerInformationSource(
-						(VitalSignsOrganizer) objectToTest, diagnostician, map);
-				}
 			}
+//			,
+//
+//			// Information Source
+//			// -------------------------------------------------------------
+//			new InformationSourceCCDValidationTest() {
+//				@Override
+//				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
+//						final Map<Object, Object> map) {
+//					return VitalSignsOrganizerOperations.validateVitalSignsOrganizerInformationSource(
+//						(VitalSignsOrganizer) objectToTest, diagnostician, map);
+//				}
+//			}
 
 	}; // TEST_CASE_ARRAY
 
