@@ -12,9 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.hl7.mif2uml.internal.importer;
 
-
-
-
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -136,32 +133,37 @@ import org.openhealthtools.mdht.uml.hl7.mif2uml.util.MIFUtil;
 
 /**
  * @author eclipse
- *
+ * 
  */
 public class MIFProcessor extends Mif2Switch {
 
 	public static final String RSM_DEFAULT_PROFILE_URI = "pathmap://UML2_MSL_PROFILES/Default.epx";
+
 	public static final String RSM_DOCUMENTATION_STEREOTYPE_QNAME = "Default::Documentation";
-	
+
 	/** Errors and warnings created by this transformation. */
 	private DiagnosticsHelper diagnostics = new DiagnosticsHelper();
-	
+
 	/** Comma-delimited error log, suitable for import to spreadsheets. */
 	private StringBuffer vocabularyErrors = new StringBuffer();
-	
+
 	private List<String> unresolvedClassNames = new ArrayList<String>();
-	
+
 	private Model umlModel;
+
 	private Stack umlPackageStack = new Stack();
+
 	private Stack umlClassStack = new Stack();
 
 	private Map<Association, AssociationEnd> associationClassTargets = new HashMap<Association, AssociationEnd>();
 
 	private Profile hdfProfile;
+
 	private Profile rimProfile;
+
 	private Enumeration staticModelUseKind = null;
-	
-	private Map<MIFIdentifier,Element> mifToUMLMap = new HashMap<MIFIdentifier,Element>();
+
+	private Map<MIFIdentifier, Element> mifToUMLMap = new HashMap<MIFIdentifier, Element>();
 
 	private CommonModelElements cmeUtil;
 
@@ -170,7 +172,7 @@ public class MIFProcessor extends Mif2Switch {
 	public MIFProcessor() {
 		transformerOptions = new MIFImporterOptions();
 	}
-	
+
 	public void setCreateAssociationClasses(boolean create) {
 		transformerOptions.setCreateAssociationClasses(create);
 	}
@@ -178,7 +180,7 @@ public class MIFProcessor extends Mif2Switch {
 	public void setUsePackageTitle(boolean usePackageTitle) {
 		transformerOptions.setUsePackageTitle(usePackageTitle);
 	}
-	
+
 	public void setUseXHTML(boolean useXHTML) {
 		transformerOptions.setUseXHTML(useXHTML);
 	}
@@ -202,19 +204,19 @@ public class MIFProcessor extends Mif2Switch {
 	public DiagnosticChain getDiagnosticChain() {
 		return diagnostics.getDiagnosticChain();
 	}
-	
+
 	public void setDiagnostics(DiagnosticChain diagnosticChain) {
 		diagnostics.setDiagnostics(diagnosticChain);
 	}
-	
+
 	public String getVocabularyErrors() {
 		return vocabularyErrors.toString();
 	}
-	
+
 	protected void addVocabularyError(NamedElement modelElement, String domainName, String mnemonic, String errorMessage) {
 		vocabularyErrors.append(errorMessage);
 		vocabularyErrors.append(", ");
-		
+
 		vocabularyErrors.append(UMLUtil.getPackageQualifiedName(modelElement));
 		vocabularyErrors.append(", ");
 		vocabularyErrors.append(domainName);
@@ -224,7 +226,7 @@ public class MIFProcessor extends Mif2Switch {
 		}
 		vocabularyErrors.append(System.getProperty("line.separator"));
 	}
-	
+
 	/**
 	 * @return the UML Model
 	 */
@@ -238,65 +240,62 @@ public class MIFProcessor extends Mif2Switch {
 	}
 
 	/**
-	 * @param umlModel the UML Model where MIF will be imported
+	 * @param umlModel
+	 *            the UML Model where MIF will be imported
 	 */
 	public void setUMLModel(Model umlModel) {
 		this.umlModel = umlModel;
-		
-		//only succeeds when running inside of RSM/RSA
+
+		// only succeeds when running inside of RSM/RSA
 		applyRSMDefaultProfile(umlModel);
-		
+
 		rimProfile = HL7ResourceUtil.applyRIMProfile(umlModel);
 		hdfProfile = HL7ResourceUtil.applyHDFProfile(umlModel);
 
-//		UMLUtil.importLibrary(umlModel, 
-//				DatatypeConstants.HL7_DATATYPES_1_0_LIBRARY_URI);
-//		UMLUtil.importLibrary(umlModel, 
-//				RIMConstants.HL7_RIM_LIBRARY_URI);
-		
+		// UMLUtil.importLibrary(umlModel,
+		// DatatypeConstants.HL7_DATATYPES_1_0_LIBRARY_URI);
+		// UMLUtil.importLibrary(umlModel,
+		// RIMConstants.HL7_RIM_LIBRARY_URI);
+
 		if (rimProfile != null) {
-			staticModelUseKind = (Enumeration)
-				hdfProfile.getOwnedType(IHDFProfileConstants.STATIC_MODEL_USE_KIND);
+			staticModelUseKind = (Enumeration) hdfProfile.getOwnedType(IHDFProfileConstants.STATIC_MODEL_USE_KIND);
 		}
 
 		mifToUMLMap.clear();
 		loadExistingMappings();
 	}
-	
+
 	public void loadExistingMappings() {
 		Assert.isNotNull(umlModel);
-		
+
 		TreeIterator allElements = umlModel.eResource().getResourceSet().getAllContents();
 		while (allElements.hasNext()) {
 			Object obj = allElements.next();
 			if (obj instanceof Profile) {
 				allElements.prune();
-			}
-			else if (obj instanceof Package) {
+			} else if (obj instanceof Package) {
 				if (obj instanceof Model) {
-					Profile hdfProfile = ((Model)obj).getAppliedProfile(IHDFProfileConstants.HDF_PROFILE_NAME);
+					Profile hdfProfile = ((Model) obj).getAppliedProfile(IHDFProfileConstants.HDF_PROFILE_NAME);
 					if (hdfProfile == null) {
 						allElements.prune();
 						continue;
 					}
 				}
-				
+
 				Package element = (Package) obj;
 				MIFIdentifier mifId = new MIFIdentifier(element);
 				mifToUMLMap.put(mifId, element);
 
-			}
-			else if (obj instanceof Classifier) {
+			} else if (obj instanceof Classifier) {
 				Classifier element = (Classifier) obj;
 				MIFIdentifier xsdId = new MIFIdentifier(element);
 				mifToUMLMap.put(xsdId, element);
 
 				allElements.prune();
-			}
-			else if (!(obj instanceof Resource || obj instanceof Package)) {
+			} else if (!(obj instanceof Resource || obj instanceof Package)) {
 				allElements.prune();
 			}
-			
+
 		}
 	}
 
@@ -309,7 +308,7 @@ public class MIFProcessor extends Mif2Switch {
 		MIFIdentifier mifId = new MIFIdentifier(mifElement);
 		return mifToUMLMap.get(mifId);
 	}
-	
+
 	protected void addMappingEntry(ModelElement mifElement, Element umlElement) {
 		MIFIdentifier mifId = new MIFIdentifier(mifElement);
 		mifToUMLMap.put(mifId, umlElement);
@@ -323,16 +322,14 @@ public class MIFProcessor extends Mif2Switch {
 	private Profile applyRSMDefaultProfile(Model model) {
 		Resource defaultProfileResource = null;
 		Profile defaultProfile = null;
-		
+
 		try {
 			ResourceSet resourceSet = model.eResource().getResourceSet();
-			defaultProfileResource = resourceSet.getResource(URI
-					.createURI(RSM_DEFAULT_PROFILE_URI), true);
-			
+			defaultProfileResource = resourceSet.getResource(URI.createURI(RSM_DEFAULT_PROFILE_URI), true);
+
 			if (defaultProfileResource != null) {
 				defaultProfile = (Profile) EcoreUtil.getObjectByType(
-						defaultProfileResource.getContents(), 
-						UMLPackage.eINSTANCE.getProfile());
+					defaultProfileResource.getContents(), UMLPackage.eINSTANCE.getProfile());
 
 				if (defaultProfile != null && !model.isProfileApplied(defaultProfile)) {
 					model.applyProfile(defaultProfile);
@@ -340,9 +337,9 @@ public class MIFProcessor extends Mif2Switch {
 			}
 
 		} catch (WrappedException we) {
-			//Logger.logException(we);
+			// Logger.logException(we);
 		}
-		
+
 		return defaultProfile;
 	}
 
@@ -354,6 +351,7 @@ public class MIFProcessor extends Mif2Switch {
 	/**
 	 * Process all eContents().
 	 */
+	@Override
 	public Object defaultCase(EObject eObject) {
 		if (eObject == null) {
 			return null;
@@ -365,14 +363,15 @@ public class MIFProcessor extends Mif2Switch {
 		return super.defaultCase(eObject);
 	}
 
+	@Override
 	public Object caseStaticModel(StaticModel mifModel) {
 		Package mappedPackage = (Package) getMappingEntry(mifModel);
-		if (mappedPackage != null)
+		if (mappedPackage != null) {
 			return mappedPackage;
-		
+		}
+
 		if (StaticModelRepresentationKind.FLAT != mifModel.getRepresentationKind()) {
-			diagnostics.error("MIF model is not 'flat', cannot be imported: " + 
-					MIFUtil.getModelName(mifModel), null);
+			diagnostics.error("MIF model is not 'flat', cannot be imported: " + MIFUtil.getModelName(mifModel), null);
 			return null;
 		}
 
@@ -383,24 +382,23 @@ public class MIFProcessor extends Mif2Switch {
 		if (modelName == null) {
 			modelName = MIFUtil.getModelName(mifModel);
 		}
-		
+
 		Package umlPackage = null;
 		if (transformerOptions.isCreateFilePerPackage()) {
 			umlPackage = UMLFactory.eINSTANCE.createPackage();
 			umlPackage.setName(modelName);
-			
+
 			URI uri = getUMLModel().eResource().getURI();
 			String fileExtension = uri.fileExtension();
 			uri = uri.trimSegments(1).appendSegment(modelName).appendFileExtension(fileExtension);
 			Resource resource = getUMLModel().eResource().getResourceSet().createResource(uri);
 			resource.getContents().add(umlPackage);
-			
+
 			getUMLModel().createElementImport(umlPackage);
+		} else {
+			umlPackage = getUMLModel().createNestedPackage(modelName);
 		}
-		else {
-			 umlPackage = getUMLModel().createNestedPackage(modelName);
-		}
-		
+
 		UMLUtil.setEObjectID(umlPackage);
 		umlPackageStack.push(umlPackage);
 
@@ -414,10 +412,12 @@ public class MIFProcessor extends Mif2Switch {
 		}
 
 		for (ClassElement classElement : mifModel.getContainedClass()) {
-			if (classElement.getClass_() != null)
+			if (classElement.getClass_() != null) {
 				doSwitch(classElement.getClass_());
-			if (classElement.getCommonModelElementRef() != null)
+			}
+			if (classElement.getCommonModelElementRef() != null) {
 				doSwitch(classElement.getCommonModelElementRef());
+			}
 		}
 		for (org.openhealthtools.mdht.emf.hl7.mif2.Association mifAssoc : mifModel.getAssociation()) {
 			doSwitch(mifAssoc);
@@ -427,14 +427,14 @@ public class MIFProcessor extends Mif2Switch {
 		}
 
 		// process pending relationships
-//		resolvingPendingReferences = true;
-//		for (Iterator iter = pendingReferences.keySet().iterator(); iter.hasNext();) {
-//			EObject element = (EObject) iter.next();
-//			doSwitch(element);
-//		}
-//		pendingReferences.clear();
-//		resolvingPendingReferences = false;
-		
+		// resolvingPendingReferences = true;
+		// for (Iterator iter = pendingReferences.keySet().iterator(); iter.hasNext();) {
+		// EObject element = (EObject) iter.next();
+		// doSwitch(element);
+		// }
+		// pendingReferences.clear();
+		// resolvingPendingReferences = false;
+
 		for (SubjectAreaPackage nestedPkg : mifModel.getSubjectAreaPackage()) {
 			defaultCase(nestedPkg);
 		}
@@ -445,10 +445,12 @@ public class MIFProcessor extends Mif2Switch {
 		return umlPackage;
 	}
 
+	@Override
 	public Object caseSubjectAreaPackage(SubjectAreaPackage subjectPkg) {
 		Package mappedPackage = (Package) getMappingEntry(subjectPkg);
-		if (mappedPackage != null)
+		if (mappedPackage != null) {
 			return mappedPackage;
+		}
 
 		if (umlPackageStack.isEmpty()) {
 			diagnostics.error("Missing UML owner for MIF SubjectAreaPackage: " + subjectPkg.getName(), null);
@@ -460,12 +462,11 @@ public class MIFProcessor extends Mif2Switch {
 		umlPackageStack.push(umlPackage);
 
 		for (LocalClassRef classRef : subjectPkg.getContainedClass()) {
-			//TODO this does not work for subject packages nested more than one level
+			// TODO this does not work for subject packages nested more than one level
 			Type umlType = ownerPackage.getOwnedType(classRef.getName());
 			if (umlType != null) {
 				umlPackage.createElementImport(umlType);
-			}
-			else {
+			} else {
 				diagnostics.error("Missing SubjectAreaPackage class reference: " + classRef.getName(), null);
 			}
 		}
@@ -474,34 +475,35 @@ public class MIFProcessor extends Mif2Switch {
 		}
 
 		importComments(subjectPkg.getAnnotations(), umlPackage);
-		
+
 		umlPackageStack.pop();
 		return umlPackage;
 	}
 
+	@Override
 	public Object caseDatatypeModelLibrary(DatatypeModelLibrary library) {
 		Package mappedPackage = (Package) getMappingEntry(library);
-		if (mappedPackage != null)
+		if (mappedPackage != null) {
 			return mappedPackage;
+		}
 		String modelName = library.getPackageLocation().getCombinedId();
 
 		Package umlPackage = null;
 		if (transformerOptions.isCreateFilePerPackage()) {
 			umlPackage = UMLFactory.eINSTANCE.createPackage();
 			umlPackage.setName(modelName);
-			
+
 			URI uri = getUMLModel().eResource().getURI();
 			String fileExtension = uri.fileExtension();
 			uri = uri.trimSegments(1).appendSegment(modelName).appendFileExtension(fileExtension);
 			Resource resource = getUMLModel().eResource().getResourceSet().createResource(uri);
 			resource.getContents().add(umlPackage);
-			
+
 			getUMLModel().createElementImport(umlPackage);
-		}
-		else {
+		} else {
 			umlPackage = getUMLModel().createNestedPackage(modelName);
 		}
-		
+
 		UMLUtil.setEObjectID(umlPackage);
 		umlPackageStack.push(umlPackage);
 
@@ -512,15 +514,17 @@ public class MIFProcessor extends Mif2Switch {
 		for (Datatype datatype : library.getDatatype()) {
 			doSwitch(datatype);
 		}
-		
+
 		umlPackageStack.pop();
 		return umlPackage;
 	}
 
+	@Override
 	public Object caseVocabularyModel(VocabularyModel mifModel) {
 		Package mappedPackage = (Package) getMappingEntry(mifModel);
-		if (mappedPackage != null)
+		if (mappedPackage != null) {
 			return mappedPackage;
+		}
 		String modelName = mifModel.getPackageLocation().getCombinedId();
 		Package umlPackage = getUMLModel().createNestedPackage(modelName);
 		UMLUtil.setEObjectID(umlPackage);
@@ -531,87 +535,87 @@ public class MIFProcessor extends Mif2Switch {
 			UMLUtil.addAliasName(umlPackage, mifModel.getTitle());
 		}
 		for (ConceptDomain conceptDomain : mifModel.getConceptDomain()) {
-			
+
 		}
 		for (CodeSystem codeSystem : mifModel.getCodeSystem()) {
-			
+
 		}
 		for (ValueSet valueSet : mifModel.getValueSet()) {
-			
+
 		}
-		
+
 		umlPackageStack.pop();
 		return umlPackage;
 	}
 
+	@Override
 	public Object caseDatatype(Datatype datatype) {
 		if (umlPackageStack.isEmpty()) {
 			diagnostics.error("Missing package for MIF datatype: " + datatype.getName(), null);
 			return null;
 		}
 		Package umlPackage = (Package) umlPackageStack.peek();
-		
+
 		Classifier mappedDataType = (Classifier) getMappingEntry(datatype);
-		if (mappedDataType != null)
+		if (mappedDataType != null) {
 			return mappedDataType;
-		
+		}
+
 		Classifier umlClassifier = UMLFactory.eINSTANCE.createInterface();
-		
+
 		// special case for MIF datatypes, e.g. IVL_PQ, change to IVL<PQ>
 		String name = MIFUtil.getDatatypeName(datatype);
-		
+
 		umlClassifier.setName(name);
 		umlClassifier.setIsAbstract(datatype.isIsAbstract());
 		umlPackage.getOwnedTypes().add(umlClassifier);
 		UMLUtil.setEObjectID(umlClassifier);
 
 		if (!datatype.getBusinessName().isEmpty()) {
-			Stereotype hl7Stereotype = 
-				HL7ResourceUtil.applyHDFStereotype(umlClassifier, IHDFProfileConstants.HDF_CLASS);
+			Stereotype hl7Stereotype = HL7ResourceUtil.applyHDFStereotype(umlClassifier, IHDFProfileConstants.HDF_CLASS);
 			setBusinessNames(umlClassifier, hl7Stereotype, datatype.getBusinessName());
 		}
-		
+
 		if (getMappingEntry(datatype) == null) {
 			addMappingEntry(datatype, umlClassifier);
 		}
-		
+
 		if (datatype.getTitle() != null) {
 			UMLUtil.addAliasName(umlClassifier, datatype.getTitle());
 		}
 
 		switch (datatype.getVisibility().getValue()) {
-		case org.openhealthtools.mdht.emf.hl7.mif2.VisibilityKind.PRIVATE_VALUE:
-			umlClassifier.setVisibility(VisibilityKind.PRIVATE_LITERAL);
-			break;
-		case org.openhealthtools.mdht.emf.hl7.mif2.VisibilityKind.PROTECTED_VALUE:
-			umlClassifier.setVisibility(VisibilityKind.PROTECTED_LITERAL);
-			break;
-		default:
-			umlClassifier.setVisibility(VisibilityKind.PUBLIC_LITERAL);
+			case org.openhealthtools.mdht.emf.hl7.mif2.VisibilityKind.PRIVATE_VALUE:
+				umlClassifier.setVisibility(VisibilityKind.PRIVATE_LITERAL);
+				break;
+			case org.openhealthtools.mdht.emf.hl7.mif2.VisibilityKind.PROTECTED_VALUE:
+				umlClassifier.setVisibility(VisibilityKind.PROTECTED_LITERAL);
+				break;
+			default:
+				umlClassifier.setVisibility(VisibilityKind.PUBLIC_LITERAL);
 		}
 
 		if (!datatype.getParameter().isEmpty()) {
 			TemplateSignature signature = umlClassifier.createOwnedTemplateSignature();
-			
+
 			for (DatatypeParameter mifParam : datatype.getParameter()) {
-				ClassifierTemplateParameter parameter = (ClassifierTemplateParameter) signature.createOwnedParameter(
-						UMLPackage.eINSTANCE.getClassifierTemplateParameter());
-				
+				ClassifierTemplateParameter parameter = (ClassifierTemplateParameter) signature.createOwnedParameter(UMLPackage.eINSTANCE.getClassifierTemplateParameter());
+
 				Interface element = (Interface) parameter.createOwnedParameteredElement(UMLPackage.eINSTANCE.getInterface());
 				element.setName(mifParam.getName());
-				
+
 				Classifier constraining = resolveDatatypeReference(mifParam.getType());
-				if (constraining != null)
-				{
+				if (constraining != null) {
 					UMLUtil.setConstrainingClassifier(parameter, constraining);
 				}
-				
+
 				Classifier defaultType = resolveDatatypeReference(mifParam.getDefaultValue());
-				if (defaultType != null)
+				if (defaultType != null) {
 					parameter.setDefault(defaultType);
+				}
 			}
 		}
-		
+
 		if (datatype.getBinding() != null) {
 			DatatypeBinding mifBinding = datatype.getBinding();
 			Classifier target = resolveDatatypeReference(mifBinding.getTargetDatatype());
@@ -619,26 +623,24 @@ public class MIFProcessor extends Mif2Switch {
 				target.getOwnedTemplateSignature();
 				TemplateSignature signature = target.getOwnedTemplateSignature();
 				TemplateBinding binding = umlClassifier.createTemplateBinding(signature);
-				
+
 				int paramIndex = 0;
 				for (DatatypeRef mifArg : mifBinding.getArgumentDatatype()) {
 					Classifier umlArg = resolveDatatypeReference(mifArg);
 					if (umlArg != null) {
 						TemplateParameterSubstitution substitution = binding.createParameterSubstitution();
 						substitution.setFormal(signature.getOwnedParameters().get(paramIndex++));
-						
-						UMLUtil.setParameterableElement(substitution,umlArg);
 
-					}
-					else {
-						diagnostics.error("Cannot find datatype binding argument '" 
-								+ mifArg.getName() + "' for", umlClassifier);
+						UMLUtil.setParameterableElement(substitution, umlArg);
+
+					} else {
+						diagnostics.error(
+							"Cannot find datatype binding argument '" + mifArg.getName() + "' for", umlClassifier);
 					}
 				}
-			}
-			else {
-				diagnostics.error("Cannot find datatype binding target '" 
-						+ mifBinding.getTargetDatatype().getName() + "' for", umlClassifier);
+			} else {
+				diagnostics.error("Cannot find datatype binding target '" + mifBinding.getTargetDatatype().getName() +
+						"' for", umlClassifier);
 			}
 		}
 
@@ -650,13 +652,12 @@ public class MIFProcessor extends Mif2Switch {
 				if (DerivationRelationshipKind.RESTRICTION == derivation.getRelationship()) {
 					HL7ResourceUtil.applyHDFStereotype(generalization, IHDFProfileConstants.RESTRICTION);
 				}
-			}
-			else {
-				diagnostics.error("Cannot find datatype derivation '" 
-						+ derivation.getTargetDatatype().getName() + "' for", umlClassifier);
+			} else {
+				diagnostics.error("Cannot find datatype derivation '" + derivation.getTargetDatatype().getName() +
+						"' for", umlClassifier);
 			}
 		}
-		
+
 		umlClassStack.push(umlClassifier);
 		defaultCase(datatype);
 		umlClassStack.pop();
@@ -665,24 +666,25 @@ public class MIFProcessor extends Mif2Switch {
 		return umlClassifier;
 	}
 
+	@Override
 	public Object caseDatatypeOperation(DatatypeOperation mifProperty) {
 		Classifier umlClassifier = (Classifier) umlClassStack.peek();
 		String mifName = mifProperty.getName();
 		Feature umlFeature = null;
-		
-		if (umlClassifier instanceof DataType || umlClassifier instanceof Class
-				 || umlClassifier instanceof Interface) {
+
+		if (umlClassifier instanceof DataType || umlClassifier instanceof Class || umlClassifier instanceof Interface) {
 			DatatypeRef datatypeRef = mifProperty.getType();
 			Classifier umlType = resolveDatatypeReference(datatypeRef);
-			
+
 			Operation operation = null;
-			if (umlClassifier instanceof DataType)
-				operation = ((DataType)umlClassifier).createOwnedOperation(mifName, null, null, umlType);
-			else if (umlClassifier instanceof Class)
-				operation = ((Class)umlClassifier).createOwnedOperation(mifName, null, null, umlType);
-			else if (umlClassifier instanceof Interface)
-				operation = ((Interface)umlClassifier).createOwnedOperation(mifName, null, null, umlType);
-			
+			if (umlClassifier instanceof DataType) {
+				operation = ((DataType) umlClassifier).createOwnedOperation(mifName, null, null, umlType);
+			} else if (umlClassifier instanceof Class) {
+				operation = ((Class) umlClassifier).createOwnedOperation(mifName, null, null, umlType);
+			} else if (umlClassifier instanceof Interface) {
+				operation = ((Interface) umlClassifier).createOwnedOperation(mifName, null, null, umlType);
+			}
+
 			umlFeature = operation;
 			UMLUtil.setEObjectID(operation);
 
@@ -690,60 +692,59 @@ public class MIFProcessor extends Mif2Switch {
 			// returnParm will be null if the operation return type is null (not found)
 			if (returnParm != null) {
 				setMultiplicity(mifProperty, returnParm);
-//				setPropertyData(mifProperty, returnParm);
+				// setPropertyData(mifProperty, returnParm);
 
 				String mifValue = null;
 				if (mifProperty.getFixedValue() != null) {
 					mifValue = mifProperty.getFixedValue();
-					//TODO can we mark a UML operation return parameter as fixed value?
-				}
-				else if (mifProperty.getDefaultValue() != null) {
+					// TODO can we mark a UML operation return parameter as fixed value?
+				} else if (mifProperty.getDefaultValue() != null) {
 					mifValue = mifProperty.getDefaultValue();
 				}
 
 				if (mifValue != null) {
-					OpaqueExpression expression = (OpaqueExpression) returnParm
-							.createDefaultValue(null, umlType, 
-									UMLPackage.Literals.OPAQUE_EXPRESSION);
+					OpaqueExpression expression = (OpaqueExpression) returnParm.createDefaultValue(
+						null, umlType, UMLPackage.Literals.OPAQUE_EXPRESSION);
 					expression.getBodies().add(mifValue);
 				}
 			}
-			
+
 			for (OperationParameter mifParameter : mifProperty.getParameter()) {
 				Classifier paramType = resolveDatatypeReference(mifParameter.getType());
 				operation.createOwnedParameter(mifParameter.getName(), paramType);
-				//ignore MIF sortKey
+				// ignore MIF sortKey
 			}
 
 			if (OwnerScopeKind.CLASSIFIER == mifProperty.getOwnerScope()) {
 				umlFeature.setIsStatic(true);
 			}
-			
+
 			switch (mifProperty.getVisibility().getValue()) {
-			case org.openhealthtools.mdht.emf.hl7.mif2.VisibilityKind.PRIVATE_VALUE:
-				umlFeature.setVisibility(VisibilityKind.PRIVATE_LITERAL);
-				break;
-			case org.openhealthtools.mdht.emf.hl7.mif2.VisibilityKind.PROTECTED_VALUE:
-				umlFeature.setVisibility(VisibilityKind.PROTECTED_LITERAL);
-				break;
-			default:
-				umlFeature.setVisibility(VisibilityKind.PUBLIC_LITERAL);
+				case org.openhealthtools.mdht.emf.hl7.mif2.VisibilityKind.PRIVATE_VALUE:
+					umlFeature.setVisibility(VisibilityKind.PRIVATE_LITERAL);
+					break;
+				case org.openhealthtools.mdht.emf.hl7.mif2.VisibilityKind.PROTECTED_VALUE:
+					umlFeature.setVisibility(VisibilityKind.PROTECTED_LITERAL);
+					break;
+				default:
+					umlFeature.setVisibility(VisibilityKind.PUBLIC_LITERAL);
 			}
 
-			//TODO no stereotype for operation w/ business name property
-//			setBusinessNames(umlFeature, stereotype, mifProperty.getBusinessName());
+			// TODO no stereotype for operation w/ business name property
+			// setBusinessNames(umlFeature, stereotype, mifProperty.getBusinessName());
 			for (BusinessName businessName : mifProperty.getBusinessName()) {
 				UMLUtil.addAliasName(umlFeature, businessName.getName());
 				break;
 			}
-			
+
 			importComments(mifProperty.getAnnotations(), umlFeature);
-			
+
 			if (datatypeRef != null && umlType == null) {
-				diagnostics.error("Cannot map datatype property type '" + datatypeRef.getName() + "' in property", umlFeature);
+				diagnostics.error(
+					"Cannot map datatype property type '" + datatypeRef.getName() + "' in property", umlFeature);
 			}
 		}
-		
+
 		return umlFeature;
 	}
 
@@ -752,7 +753,7 @@ public class MIFProcessor extends Mif2Switch {
 		if (umlEntryPoint != null) {
 			return umlEntryPoint;
 		}
-		
+
 		// for serialized format, this processes all model contents
 		// do this first so that we have the class for realization dependency
 		defaultCase(mifEntryPoint);
@@ -760,18 +761,16 @@ public class MIFProcessor extends Mif2Switch {
 		Package umlPackage = (Package) umlPackageStack.peek();
 		umlEntryPoint = umlPackage.createOwnedInterface(mifEntryPoint.getName());
 		UMLUtil.setEObjectID(umlEntryPoint);
-//		umlEntryPoint.setIsAbstract(mifEntryPoint.isIsAbstract());
+		// umlEntryPoint.setIsAbstract(mifEntryPoint.isIsAbstract());
 		importComments(mifEntryPoint.getAnnotations(), umlEntryPoint);
-		
-		Stereotype hdfStereotype = HL7ResourceUtil.applyHDFStereotype(umlEntryPoint, 
-					IHDFProfileConstants.ENTRY_POINT);
+
+		Stereotype hdfStereotype = HL7ResourceUtil.applyHDFStereotype(umlEntryPoint, IHDFProfileConstants.ENTRY_POINT);
 		if (mifEntryPoint.getUseKind() != null) {
 			String value = mifEntryPoint.getUseKind().getLiteral();
 			EnumerationLiteral literal = (EnumerationLiteral) staticModelUseKind.getOwnedLiteral(value);
 			if (literal != null) {
 				umlEntryPoint.setValue(hdfStereotype, IHDFProfileConstants.USE_KIND, literal);
-			}
-			else {
+			} else {
 				diagnostics.error("Invalid EntryPoint useKind '" + value + "' in", umlEntryPoint);
 			}
 		}
@@ -780,12 +779,11 @@ public class MIFProcessor extends Mif2Switch {
 		ClassBase mifClass = null;
 		org.openhealthtools.mdht.emf.hl7.mif2.Package mifPackage = MIFUtil.getPackage(mifEntryPoint);
 		if (mifEntryPoint instanceof SerializedEntryPoint) {
-			mifClass = ((SerializedEntryPoint)mifEntryPoint).getEntryClass().getClass_();
+			mifClass = ((SerializedEntryPoint) mifEntryPoint).getEntryClass().getClass_();
+		} else if (mifEntryPoint instanceof EntryPoint && mifPackage instanceof StaticModel) {
+			mifClass = MIFUtil.getClassByName((StaticModel) mifPackage, ((EntryPoint) mifEntryPoint).getClassName());
 		}
-		else if (mifEntryPoint instanceof EntryPoint && mifPackage instanceof StaticModel) {
-			mifClass = MIFUtil.getClassByName((StaticModel)mifPackage, ((EntryPoint)mifEntryPoint).getClassName());
-		}
-		
+
 		if (mifClass != null) {
 			if (mifEntryPoint.getName() == null) {
 				umlEntryPoint.setName(mifClass.getName() + "EntryPoint");
@@ -796,7 +794,7 @@ public class MIFProcessor extends Mif2Switch {
 				umlClass.createInterfaceRealization(null, umlEntryPoint);
 			}
 		}
-		
+
 		addMappingEntry(mifEntryPoint, umlEntryPoint);
 
 		return umlEntryPoint;
@@ -811,22 +809,21 @@ public class MIFProcessor extends Mif2Switch {
 			return null;
 		}
 		Package umlPackage = (Package) umlPackageStack.peek();
-		
+
 		Class mappedClass = (Class) getMappingEntry(mifClass);
-		if (mappedClass != null)
+		if (mappedClass != null) {
 			return mappedClass;
+		}
 
 		StaticModelBase mifModel = MIFUtil.getStaticModel(mifClass);
 		Classifier umlClassifier = null;
 		if (isAssociationClass(mifClass)) {
 			if (hasOwnedAttributes(mifClass)) {
 				umlClassifier = UMLFactory.eINSTANCE.createAssociationClass();
-			}
-			else {
+			} else {
 				umlClassifier = UMLFactory.eINSTANCE.createAssociation();
 			}
-		}
-		else {
+		} else {
 			umlClassifier = UMLFactory.eINSTANCE.createClass();
 		}
 		umlClassifier.setName(mifClass.getName());
@@ -835,33 +832,31 @@ public class MIFProcessor extends Mif2Switch {
 		UMLUtil.setEObjectID(umlClassifier);
 
 		if (!mifClass.getBusinessName().isEmpty()) {
-			Stereotype hl7Stereotype = 
-				HL7ResourceUtil.applyHDFStereotype(umlClassifier, IHDFProfileConstants.HDF_CLASS);
+			Stereotype hl7Stereotype = HL7ResourceUtil.applyHDFStereotype(umlClassifier, IHDFProfileConstants.HDF_CLASS);
 			setBusinessNames(umlClassifier, hl7Stereotype, mifClass.getBusinessName());
 		}
 
 		if (mifClass.isSetIsComplete()) {
-			Stereotype hl7Stereotype = 
-				HL7ResourceUtil.applyHDFStereotype(umlClassifier, IHDFProfileConstants.HDF_CLASS);
+			Stereotype hl7Stereotype = HL7ResourceUtil.applyHDFStereotype(umlClassifier, IHDFProfileConstants.HDF_CLASS);
 			umlClassifier.setValue(hl7Stereotype, IHDFProfileConstants.IS_COMPLETE, mifClass.isIsComplete());
 		}
-		
+
 		if (getMappingEntry(mifClass) == null) {
 			addMappingEntry(mifClass, umlClassifier);
 		}
-		
+
 		if (mifClass instanceof FlatClass) {
 			/*
 			 * It would be better to process in caseClassGeneralization(), but at that point
 			 * we don't know if it occurred in a childClass or parentClass element.
 			 */
 			// childClass is always used in the RIM model
-			for (ClassGeneralization mifGeneralization : ((FlatClass)mifClass).getChildClass()) {
+			for (ClassGeneralization mifGeneralization : ((FlatClass) mifClass).getChildClass()) {
 				ClassBase mifChild = MIFUtil.getClassByName(mifModel, mifGeneralization.getName());
 				if (mifChild == null) {
 					// look for a CMET reference
 					PackageRef cmetPackage = mifModel.getImportedCommonModelElementPackage();
-					
+
 					mifChild = getCommonModelClass(mifModel, mifGeneralization.getName());
 				}
 				if (mifChild != null) {
@@ -869,29 +864,29 @@ public class MIFProcessor extends Mif2Switch {
 					if (child != null) {
 						Generalization generalization = child.createGeneralization(umlClassifier);
 						UMLUtil.setEObjectID(generalization);
-						
-						/* All generalizations in static models are choice groups,
-						 * unless it's the RIM model.  There is no other way to distinguish
+
+						/*
+						 * All generalizations in static models are choice groups,
+						 * unless it's the RIM model. There is no other way to distinguish
 						 * when a child class is a choice member in MIF!
 						 */
 						Package rimPackage = umlClassifier.getNearestPackage();
-						Stereotype hdfPackage = HL7ResourceUtil.getAppliedHDFStereotype(rimPackage, 
-								IHDFProfileConstants.HDF_PACKAGE);
-						if (hdfPackage != null && 
+						Stereotype hdfPackage = HL7ResourceUtil.getAppliedHDFStereotype(
+							rimPackage, IHDFProfileConstants.HDF_PACKAGE);
+						if (hdfPackage != null &&
 								!"RIM".equals(rimPackage.getValue(hdfPackage, IHDFProfileConstants.PACKAGE_ARTIFACT))) {
 							HL7ResourceUtil.applyHDFStereotype(umlClassifier, IHDFProfileConstants.CHOICE_GROUP);
 						}
 					}
-				}
-				else {
-					diagnostics.error("Cannot resolve MIF child class '" + mifGeneralization.getName()
-							+ "' for " + UMLUtil.getPackageQualifiedName(umlClassifier), null);
+				} else {
+					diagnostics.error("Cannot resolve MIF child class '" + mifGeneralization.getName() + "' for " +
+							UMLUtil.getPackageQualifiedName(umlClassifier), null);
 				}
 			}
 
 			// assume that BOTH child and parent are never defined for same relationship
 			// have never seen parentClass used in a MIF model
-			for (ClassGeneralization mifGeneralization : ((FlatClass)mifClass).getParentClass()) {
+			for (ClassGeneralization mifGeneralization : ((FlatClass) mifClass).getParentClass()) {
 				ClassBase mifGeneral = MIFUtil.getClassByName(mifModel, mifGeneralization.getName());
 				if (mifGeneral == null) {
 					// look for a CMET reference
@@ -902,58 +897,57 @@ public class MIFProcessor extends Mif2Switch {
 					if (general != null) {
 						Generalization generalization = umlClassifier.createGeneralization(general);
 						UMLUtil.setEObjectID(generalization);
-						
+
 						// All generalizations in static models are choice groups
 						HL7ResourceUtil.applyHDFStereotype(general, IHDFProfileConstants.CHOICE_GROUP);
 					}
-				}
-				else {
-					diagnostics.error("Cannot resolve MIF parent class '" + mifGeneralization.getName()
-							+ "' for " + UMLUtil.getPackageQualifiedName(umlClassifier), null);
+				} else {
+					diagnostics.error("Cannot resolve MIF parent class '" + mifGeneralization.getName() + "' for " +
+							UMLUtil.getPackageQualifiedName(umlClassifier), null);
 				}
 			}
 		}
 
 		for (Iterator iter = mifClass.getDerivedFrom().iterator(); iter.hasNext();) {
 			ClassDerivation derivation = (ClassDerivation) iter.next();
-			Stereotype stereotype = HL7ResourceUtil.applyRIMStereotype(
-					umlClassifier, derivation.getClassName());
+			Stereotype stereotype = HL7ResourceUtil.applyRIMStereotype(umlClassifier, derivation.getClassName());
 			if (stereotype != null) {
 				break;
 			}
 		}
-		
+
 		/* *****
 		 * Uncomment this if we want to include <<subsets>> generalization to RIM.
 		 * 
-		for (Iterator iter = mifClass.getDerivedFrom().iterator(); iter.hasNext();) {
-			ClassDerivation derivation = (ClassDerivation) iter.next();
-			if (isRIMDerivation(derivation, mifModel)) {
-				Class rimClass = RIMUtil.getClassByName(umlPackage, derivation.getClassName());
-				if (rimClass != null) {
-					if (umlClassifier instanceof Association) {
-						// use this for saving supplier reference in stereotype property
-						Stereotype hl7Stereotype = 
-							HL7ResourceUtil.applyHDFStereotype(umlClassifier, IHDFProfileConstants.HDF_CLASS);
-						List rimDerivations = Collections.singletonList(rimClass);
-						umlClassifier.setValue(hl7Stereotype, 
-								IHDFProfileConstants.DERIVATION_SUPPLIER, rimDerivations);
-					}
-					else {
-						if (umlClassifier.maySpecializeType(rimClass)) {
-							Generalization subsets = umlClassifier.createGeneralization(rimClass);
-							UMLUtil.setEObjectID(subsets);
-							HL7ResourceUtil.applyHDFStereotype(subsets, IHDFProfileConstants.SUBSETS_GENERALIZATION);
-						}
-						else {
-							diagnostics.error("Incompatible RIM generalization", umlClassifier);
-						}
-					}
-				}
-			}
-			break;
-		}
-		******/
+		 * for (Iterator iter = mifClass.getDerivedFrom().iterator(); iter.hasNext();) {
+		 * ClassDerivation derivation = (ClassDerivation) iter.next();
+		 * if (isRIMDerivation(derivation, mifModel)) {
+		 * Class rimClass = RIMUtil.getClassByName(umlPackage, derivation.getClassName());
+		 * if (rimClass != null) {
+		 * if (umlClassifier instanceof Association) {
+		 * // use this for saving supplier reference in stereotype property
+		 * Stereotype hl7Stereotype =
+		 * HL7ResourceUtil.applyHDFStereotype(umlClassifier, IHDFProfileConstants.HDF_CLASS);
+		 * List rimDerivations = Collections.singletonList(rimClass);
+		 * umlClassifier.setValue(hl7Stereotype,
+		 * IHDFProfileConstants.DERIVATION_SUPPLIER, rimDerivations);
+		 * }
+		 * else {
+		 * if (umlClassifier.maySpecializeType(rimClass)) {
+		 * Generalization subsets = umlClassifier.createGeneralization(rimClass);
+		 * UMLUtil.setEObjectID(subsets);
+		 * HL7ResourceUtil.applyHDFStereotype(subsets, IHDFProfileConstants.SUBSETS_GENERALIZATION);
+		 * }
+		 * else {
+		 * diagnostics.error("Incompatible RIM generalization", umlClassifier);
+		 * }
+		 * }
+		 * }
+		 * }
+		 * break;
+		 * }
+		 * ****
+		 */
 
 		umlClassStack.push(umlClassifier);
 		defaultCase(mifClass);
@@ -962,23 +956,24 @@ public class MIFProcessor extends Mif2Switch {
 		importComments(mifClass.getAnnotations(), umlClassifier);
 		return umlClassifier;
 	}
-	
+
 	public Object caseAttribute(Attribute mifAttribute) {
 		Classifier umlClassifier = (Classifier) umlClassStack.peek();
 		String mifName = mifAttribute.getName();
 
 		Stereotype rimStereotype = RIMProfileUtil.getRIMStereotype(umlClassifier);
 		if (isStereotypeProperty(mifAttribute) && rimStereotype != null) {
-			//set RIM stereotype properties on owner class
+			// set RIM stereotype properties on owner class
 			VocabularySpecification vocabulary = mifAttribute.getVocabulary();
 			if (vocabulary != null) {
 				if (vocabulary.getCode() != null) {
 					try {
 						umlClassifier.setValue(rimStereotype, mifName, vocabulary.getCode().getCode());
-						umlClassifier.setValue(rimStereotype, mifName + "System", vocabulary.getCode().getCodeSystemName());
+						umlClassifier.setValue(
+							rimStereotype, mifName + "System", vocabulary.getCode().getCodeSystemName());
 					} catch (IllegalArgumentException ex) {
-						diagnostics.error("Illegal structural attribute '" + mifName + "' code: '" 
-								+ vocabulary.getCode().getCode() + "' in classifier", umlClassifier);
+						diagnostics.error("Illegal structural attribute '" + mifName + "' code: '" +
+								vocabulary.getCode().getCode() + "' in classifier", umlClassifier);
 					}
 				}
 				if (vocabulary.getConceptDomain() != null) {
@@ -986,58 +981,56 @@ public class MIFProcessor extends Mif2Switch {
 						String propertyName = mifName.substring(0, mifName.indexOf("Code")) + "ConceptDomain";
 						umlClassifier.setValue(rimStereotype, propertyName, vocabulary.getConceptDomain().getName());
 					} catch (IllegalArgumentException ex) {
-						diagnostics.error("Illegal structural attribute '" + mifName + "' concept domain: '" 
-								+ vocabulary.getConceptDomain().getName() + "' in classifier", umlClassifier);
+						diagnostics.error("Illegal structural attribute '" + mifName + "' concept domain: '" +
+								vocabulary.getConceptDomain().getName() + "' in classifier", umlClassifier);
 					}
 				}
 			}
 		}
 
 		Property umlProperty = null;
-		
+
 		// If MIF class was mapped to UML Association, then there are no non-structural attributes.
 		// Don't create UML attributes for structural attributes that have a profile property.
 		// rimStereotype == null when importing RIM model, so import all structural attributes in RIM.
-		if (umlClassifier instanceof Class && 
-				(rimStereotype == null || !isStereotypeProperty(mifAttribute))) {
+		if (umlClassifier instanceof Class && (rimStereotype == null || !isStereotypeProperty(mifAttribute))) {
 			DatatypeRef datatypeRef = mifAttribute.getType();
 			Classifier umlType = resolveDatatypeReference(datatypeRef);
-			
+
 			// Leave this out pending further investigation. Should enum be type of 'code' attribute in CD restriction?
-//			if (mifAttribute.getEnumerationValue().size() > 1) {
-//				//TODO If only one enum value, shouldn't this be simply a 'fixed' value?
-//				//TODO this local enumeration should be a specialization of the Type???
-//				String localEnumName = UMLUtil.getUniqueNestedClassifierName((Class)umlClassifier, "LocalEnum");
-//				Enumeration localEnum = (Enumeration) ((Class)umlClassifier).createNestedClassifier(
-//						localEnumName, UMLPackage.Literals.ENUMERATION);
-//				for (String enumValue : mifAttribute.getEnumerationValue()) {
-//					 localEnum.createOwnedLiteral(enumValue);
-//				}
-//				umlType = localEnum;
-//			}
-			
-			umlProperty = ((Class)umlClassifier).createOwnedAttribute(mifName, umlType);
+			// if (mifAttribute.getEnumerationValue().size() > 1) {
+			// //TODO If only one enum value, shouldn't this be simply a 'fixed' value?
+			// //TODO this local enumeration should be a specialization of the Type???
+			// String localEnumName = UMLUtil.getUniqueNestedClassifierName((Class)umlClassifier, "LocalEnum");
+			// Enumeration localEnum = (Enumeration) ((Class)umlClassifier).createNestedClassifier(
+			// localEnumName, UMLPackage.Literals.ENUMERATION);
+			// for (String enumValue : mifAttribute.getEnumerationValue()) {
+			// localEnum.createOwnedLiteral(enumValue);
+			// }
+			// umlType = localEnum;
+			// }
+
+			umlProperty = ((Class) umlClassifier).createOwnedAttribute(mifName, umlType);
 			UMLUtil.setEObjectID(umlProperty);
 			setPropertyData(mifAttribute, umlProperty);
 			setPropertyRedefinition(mifAttribute, umlProperty);
 			importComments(mifAttribute.getAnnotations(), umlProperty);
-			
+
 			if (datatypeRef != null && umlType == null) {
 				diagnostics.error("Cannot map property type '" + datatypeRef.getName() + "' in property", umlProperty);
 			}
 		}
-		
+
 		return umlProperty;
 	}
 
 	/**
-	 * Process a MIF association.  Most of the complexity in this method is to handle
+	 * Process a MIF association. Most of the complexity in this method is to handle
 	 * the option for collapsing two MIF associations into one UML AssociationClass.
 	 */
 	public Object caseAssociation(org.openhealthtools.mdht.emf.hl7.mif2.Association mifAssociation) {
-		
-		if ((mifAssociation.getTraversableConnection().size()
-				+ mifAssociation.getNonTraversableConnection().size()) != 2) {
+
+		if ((mifAssociation.getTraversableConnection().size() + mifAssociation.getNonTraversableConnection().size()) != 2) {
 			diagnostics.error("MIF association does not have 2 ends", mifAssociation);
 			return null;
 		}
@@ -1059,58 +1052,56 @@ public class MIFProcessor extends Mif2Switch {
 			// does end refer to a MIF type that is mapped to UML Association?
 			if (endType instanceof Association) {
 				umlAssociation = (Association) endType;
-			}
-			else {
+			} else {
 				Property property = UMLFactory.eINSTANCE.createProperty();
 				property.setType(endType);
-	
+
 				mifRelationships.add(end);
 				umlProperties.add(property);
 			}
 		}
-		
+
 		for (AssociationEnd end : mifAssociation.getTraversableConnection()) {
-			// Did the non-traversable end refer to an Association?  If so, save the metadata and omit property.
+			// Did the non-traversable end refer to an Association? If so, save the metadata and omit property.
 			if (umlAssociation != null) {
 				associationClassTargets.put(umlAssociation, end);
-			}
-			else {
+			} else {
 				String className = end.getParticipantClassName();
 				Classifier endType = resolveMIFClassReference(mifModel, className);
-				
+
 				// does traversable end refer to a MIF type that is mapped to UML Association?
 				if (endType instanceof Association) {
 					umlAssociation = (Association) endType;
 				}
-	
+
 				Property property = UMLFactory.eINSTANCE.createProperty();
 				property.setName(end.getName());
 				property.setType(endType);
-				//cannot set this until after property is added to an association
-//				property.setIsNavigable(true);
+				// cannot set this until after property is added to an association
+				// property.setIsNavigable(true);
 
 				mifRelationships.add(end);
 				umlProperties.add(property);
 			}
 		}
-		
+
 		if (umlAssociation == null) {
 			umlAssociation = UMLFactory.eINSTANCE.createAssociation();
 			umlPackage.getOwnedTypes().add(umlAssociation);
-			
-//			UMLUtil.setEObjectID(umlAssociation);
+
+			// UMLUtil.setEObjectID(umlAssociation);
 			addMappingEntry(mifAssociation, umlAssociation);
 		}
 
 		importComments(mifAssociation.getAnnotations(), umlAssociation);
-		
+
 		for (Property property : umlProperties) {
 			umlAssociation.getOwnedEnds().add(property);
 			property.setAssociation(umlAssociation);
 		}
-		
+
 		// use an index variable to enable matching umlProperties and mifRelationships
-		for (int i=0; i<umlProperties.size(); i++) {
+		for (int i = 0; i < umlProperties.size(); i++) {
 			Property property = umlProperties.get(i);
 			Relationship mifRelationship = mifRelationships.get(i);
 
@@ -1127,16 +1118,16 @@ public class MIFProcessor extends Mif2Switch {
 					umlAssociation.getOwnedEnds().remove(property);
 					UMLUtil.setEObjectID(property);
 				}
-								
+
 				if (property.getNearestPackage() != null) {
-				// can't apply stereotypes until after Property is added to a Resource
-				setPropertyData((AssociationEnd)mifRelationship, property);
-				setPropertyRedefinition((AssociationEnd)mifRelationship, property);
+					// can't apply stereotypes until after Property is added to a Resource
+					setPropertyData((AssociationEnd) mifRelationship, property);
+					setPropertyRedefinition((AssociationEnd) mifRelationship, property);
 				}
 			}
-//			else if (mifRelationship instanceof NonTraversableAssociationEnd) {
-//				setPropertyRedefinition((NonTraversableAssociationEnd)mifRelationship, property);
-//			}
+			// else if (mifRelationship instanceof NonTraversableAssociationEnd) {
+			// setPropertyRedefinition((NonTraversableAssociationEnd)mifRelationship, property);
+			// }
 		}
 
 		// Must use getMemberEnds() and not getOwnedEnds(), because this may be processed
@@ -1145,21 +1136,19 @@ public class MIFProcessor extends Mif2Switch {
 			List<Property> members = new ArrayList<Property>(umlAssociation.getMemberEnds());
 			for (Property property : members) {
 				// reassign to saved metadata from ignored MIF association end
-				if (property.getType() instanceof Association
-						&& associationClassTargets.get(umlAssociation) != null) {
+				if (property.getType() instanceof Association && associationClassTargets.get(umlAssociation) != null) {
 					AssociationEnd end = associationClassTargets.get(umlAssociation);
 					String className = end.getParticipantClassName();
 					Classifier endType = resolveMIFClassReference(mifModel, className);
-					
+
 					property.setType(endType);
 					setPropertyRedefinition(end, property);
-					
+
 					Stereotype rimStereotype = RIMProfileUtil.getRIMStereotype(umlAssociation);
 					try {
 						// this should never throw exception in a well-formed model
 						umlAssociation.setValue(rimStereotype, IRIMProfileConstants.TARGET_ROLE_NAME, end.getName());
-					}
-					catch (IllegalArgumentException ex) {
+					} catch (IllegalArgumentException ex) {
 						diagnostics.error("Cannot assign 'targetRoleName' to", umlAssociation);
 					}
 				}
@@ -1175,13 +1164,13 @@ public class MIFProcessor extends Mif2Switch {
 			srcClass = resolveMIFClassReference(mifModel, className);
 			break;
 		}
-		
+
 		for (AssociationEnd end : mifAssociation.getTraversableConnection()) {
 			// Is this an association to a choice group?
 			if (!end.getChoiceItem().isEmpty()) {
 				String endClassName = end.getParticipantClassName();
 				Classifier endType = resolveMIFClassReference(mifModel, endClassName);
-				
+
 				if (endType instanceof Class) {
 					HL7ResourceUtil.applyHDFStereotype(endType, IHDFProfileConstants.CHOICE_GROUP);
 
@@ -1198,33 +1187,32 @@ public class MIFProcessor extends Mif2Switch {
 					if ("scoper".equals(derivation.getAssociationEndName())) {
 						HL7ResourceUtil.applyRIMStereotype(umlAssociation, IRIMProfileConstants.SCOPE);
 					}
-//					else if ("player".equals(derivation.getAssociationEndName())) {
-//						HL7ResourceUtil.applyRIMStereotype(umlAssociation, IRIMProfileConstants.PLAYER);
-//					}
-					
+					// else if ("player".equals(derivation.getAssociationEndName())) {
+					// HL7ResourceUtil.applyRIMStereotype(umlAssociation, IRIMProfileConstants.PLAYER);
+					// }
+
 					break;
-				}
-				else if (RIMProfileUtil.isRIMType(srcClass, IRIMProfileConstants.ENTITY)) {
+				} else if (RIMProfileUtil.isRIMType(srcClass, IRIMProfileConstants.ENTITY)) {
 					if ("scopedRole".equals(derivation.getAssociationEndName())) {
 						HL7ResourceUtil.applyRIMStereotype(umlAssociation, IRIMProfileConstants.SCOPE);
 					}
-//					else if ("playedRole".equals(derivation.getAssociationEndName())) {
-//						HL7ResourceUtil.applyRIMStereotype(umlAssociation, IRIMProfileConstants.PLAYER);
-//					}
-					
+					// else if ("playedRole".equals(derivation.getAssociationEndName())) {
+					// HL7ResourceUtil.applyRIMStereotype(umlAssociation, IRIMProfileConstants.PLAYER);
+					// }
+
 					break;
 				}
 			}
 		}
-		
+
 		return umlAssociation;
 	}
-	
-	private int addChoiceItems(StaticModel mifModel, Association umlAssociation, 
+
+	private int addChoiceItems(StaticModel mifModel, Association umlAssociation,
 			List<AssociationEndSpecialization> choiceItems, int index) {
-		Stereotype choiceContent = 
-			HL7ResourceUtil.applyHDFStereotype(umlAssociation, IHDFProfileConstants.CHOICE_CONTENT);
-		
+		Stereotype choiceContent = HL7ResourceUtil.applyHDFStereotype(
+			umlAssociation, IHDFProfileConstants.CHOICE_CONTENT);
+
 		for (AssociationEndSpecialization choiceItem : choiceItems) {
 			Classifier choiceClass = resolveMIFClassReference(mifModel, choiceItem.getClassName());
 
@@ -1246,11 +1234,11 @@ public class MIFProcessor extends Mif2Switch {
 		return index;
 	}
 
-	private int addChoiceItems(Classifier parentClass, Association umlAssociation, 
+	private int addChoiceItems(Classifier parentClass, Association umlAssociation,
 			List<AssociationEndSpecialization> choiceItems, int index) {
-		Stereotype choiceContent = 
-			HL7ResourceUtil.applyHDFStereotype(umlAssociation, IHDFProfileConstants.CHOICE_CONTENT);
-		
+		Stereotype choiceContent = HL7ResourceUtil.applyHDFStereotype(
+			umlAssociation, IHDFProfileConstants.CHOICE_CONTENT);
+
 		List specializations = parentClass.getTargetDirectedRelationships(UMLPackage.Literals.GENERALIZATION);
 		List<Class> specificTypes = new ArrayList<Class>();
 		for (Iterator iter = specializations.iterator(); iter.hasNext();) {
@@ -1258,7 +1246,7 @@ public class MIFProcessor extends Mif2Switch {
 			Class choiceMember = (Class) generalization.getSpecific();
 			specificTypes.add(choiceMember);
 		}
-		
+
 		for (int i = 0; i < choiceItems.size(); i++) {
 
 			AssociationEndSpecialization choiceItem = choiceItems.get(i);
@@ -1268,15 +1256,16 @@ public class MIFProcessor extends Mif2Switch {
 			if (i < specificTypes.size()) {
 
 				choiceClass = specificTypes.get(i);
-		
+
 				if (!choiceClass.getName().equals(choiceItem.getClassName())) {
 					choiceClass = null;
 				}
 			}
 			if (choiceClass == null) {
 
-				diagnostics.error("Cannot resolve choice item reference '" + choiceItem.getTraversalName() + " of type " + choiceItem.getClassName() + "' in package '" + umlAssociation.getNearestPackage().getName() + "' from choice group",
-						parentClass);
+				diagnostics.error("Cannot resolve choice item reference '" + choiceItem.getTraversalName() +
+						" of type " + choiceItem.getClassName() + "' in package '" +
+						umlAssociation.getNearestPackage().getName() + "' from choice group", parentClass);
 			}
 			String member = IHDFProfileConstants.CHOICE_MEMBERS + "[" + index++ + "]";
 			String choiceTarget = member + NamedElement.SEPARATOR + IHDFProfileConstants.CHOICE_TARGET;
@@ -1295,24 +1284,24 @@ public class MIFProcessor extends Mif2Switch {
 	}
 
 	private boolean isMIFAssociationClass(Association umlAssociation) {
-		return RIMProfileUtil.isRIMType(umlAssociation, IRIMProfileConstants.PARTICIPATION)
-				|| RIMProfileUtil.isRIMType(umlAssociation, IRIMProfileConstants.ACT_RELATIONSHIP)
-				|| RIMProfileUtil.isRIMType(umlAssociation, IRIMProfileConstants.ROLE_LINK);
+		return RIMProfileUtil.isRIMType(umlAssociation, IRIMProfileConstants.PARTICIPATION) ||
+				RIMProfileUtil.isRIMType(umlAssociation, IRIMProfileConstants.ACT_RELATIONSHIP) ||
+				RIMProfileUtil.isRIMType(umlAssociation, IRIMProfileConstants.ROLE_LINK);
 	}
-	
+
 	private boolean isAssociationClass(ClassBase mifClass) {
-		return transformerOptions.isCreateAssociationClasses()
-			&& (isAssociationClass(mifClass, IRIMProfileConstants.PARTICIPATION)
-				|| isAssociationClass(mifClass, IRIMProfileConstants.ACT_RELATIONSHIP)
-				|| isAssociationClass(mifClass, IRIMProfileConstants.ROLE_LINK));
+		return transformerOptions.isCreateAssociationClasses() &&
+				(isAssociationClass(mifClass, IRIMProfileConstants.PARTICIPATION) ||
+						isAssociationClass(mifClass, IRIMProfileConstants.ACT_RELATIONSHIP) || isAssociationClass(
+					mifClass, IRIMProfileConstants.ROLE_LINK));
 	}
-	
+
 	private boolean isAssociationClass(ClassBase mifClass, String rimClassName) {
 		// special case for importing RIM coremif
-//		if (rimClassName.equals(mifClass.getName())) {
-//			return true;
-//		}
-		
+		// if (rimClassName.equals(mifClass.getName())) {
+		// return true;
+		// }
+
 		// test derivationSupplier
 		for (Iterator iter = mifClass.getDerivedFrom().iterator(); iter.hasNext();) {
 			ClassDerivation derivation = (ClassDerivation) iter.next();
@@ -1320,10 +1309,10 @@ public class MIFProcessor extends Mif2Switch {
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
-	
+
 	private boolean hasOwnedAttributes(ClassBase mifClass) {
 		// has non-structural attributes
 		for (Iterator iter = mifClass.getAttribute().iterator(); iter.hasNext();) {
@@ -1332,102 +1321,90 @@ public class MIFProcessor extends Mif2Switch {
 				return true;
 			}
 		}
-		
-		//TODO has associations from this AssociationClass
-		
+
+		// TODO has associations from this AssociationClass
+
 		return false;
 	}
-	
+
 	private boolean isStereotypeProperty(Attribute mifAttribute) {
-		return !transformerOptions.isCreateStructuralAttributes()
-				&& RIMUtil.isStructuralAttribute(mifAttribute.getName());
+		return !transformerOptions.isCreateStructuralAttributes() &&
+				RIMUtil.isStructuralAttribute(mifAttribute.getName());
 	}
 
 	protected void setModelMetadata(StaticModel mifModel, Package umlPackage) {
-		Stereotype hdfPackage = 
-			HL7ResourceUtil.applyHDFStereotype(umlPackage, IHDFProfileConstants.HDF_PACKAGE);
-		
+		Stereotype hdfPackage = HL7ResourceUtil.applyHDFStereotype(umlPackage, IHDFProfileConstants.HDF_PACKAGE);
+
 		if (mifModel.isSetConformanceLevel()) {
-			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_CONFORMANCE_LEVEL, 
-					mifModel.getConformanceLevel().getLiteral());
+			umlPackage.setValue(
+				hdfPackage, IHDFProfileConstants.PACKAGE_CONFORMANCE_LEVEL, mifModel.getConformanceLevel().getLiteral());
 		}
 		if (mifModel.isSetPackageKind()) {
-			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_KIND, 
-					mifModel.getPackageKind().getLiteral());
+			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_KIND, mifModel.getPackageKind().getLiteral());
 		}
 		if (mifModel.getTitle() != null) {
-			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_TITLE, 
-					mifModel.getTitle());
+			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_TITLE, mifModel.getTitle());
 		}
-		
+
 		setPackageMetadata(mifModel, umlPackage);
 	}
 
 	protected void setPackageMetadata(org.openhealthtools.mdht.emf.hl7.mif2.Package mifPackage, Package umlPackage) {
-		Stereotype hdfPackage = 
-			HL7ResourceUtil.applyHDFStereotype(umlPackage, IHDFProfileConstants.HDF_PACKAGE);
+		Stereotype hdfPackage = HL7ResourceUtil.applyHDFStereotype(umlPackage, IHDFProfileConstants.HDF_PACKAGE);
 		PackageRef pkgLocation = mifPackage.getPackageLocation();
 
 		setBusinessNames(umlPackage, hdfPackage, mifPackage.getBusinessName());
-		
+
 		if (pkgLocation.getRealmNamespace() != null) {
-			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_REALM_NAMESPACE, 
-					pkgLocation.getRealmNamespace());
+			umlPackage.setValue(
+				hdfPackage, IHDFProfileConstants.PACKAGE_REALM_NAMESPACE, pkgLocation.getRealmNamespace());
 		}
 		if (pkgLocation.isSetRoot()) {
-			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_ROOT, 
-					pkgLocation.getRoot().getLiteral());
+			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_ROOT, pkgLocation.getRoot().getLiteral());
 		}
 		if (pkgLocation.isSetArtifact()) {
-			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_ARTIFACT, 
-					pkgLocation.getArtifact().getLiteral());
+			umlPackage.setValue(
+				hdfPackage, IHDFProfileConstants.PACKAGE_ARTIFACT, pkgLocation.getArtifact().getLiteral());
 		}
 		if (pkgLocation.isSetSubArtifact()) {
-			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_SUB_ARTIFACT, 
-					pkgLocation.getSubArtifact().getLiteral());
+			umlPackage.setValue(
+				hdfPackage, IHDFProfileConstants.PACKAGE_SUB_ARTIFACT, pkgLocation.getSubArtifact().getLiteral());
 		}
 		if (pkgLocation.isSetDomain()) {
-			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_DOMAIN, 
-					pkgLocation.getDomain().getLiteral());
+			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_DOMAIN, pkgLocation.getDomain().getLiteral());
 		}
 		if (pkgLocation.getSection() != null) {
-			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_SECTION, 
-					pkgLocation.getSection());
+			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_SECTION, pkgLocation.getSection());
 		}
 		if (pkgLocation.getSubSection() != null) {
-			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_SUB_SECTION, 
-					pkgLocation.getSubSection());
+			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_SUB_SECTION, pkgLocation.getSubSection());
 		}
 		if (pkgLocation.getId() != null) {
-			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_ID, 
-					new Long(pkgLocation.getId().longValue()));
+			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_ID, new Long(pkgLocation.getId().longValue()));
 		}
 		if (pkgLocation.getCombinedId() != null) {
-			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_COMBINED_ID, 
-					pkgLocation.getCombinedId());
+			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_COMBINED_ID, pkgLocation.getCombinedId());
 		}
 		if (pkgLocation.getVersion() != null) {
-			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_VERSION, 
-					pkgLocation.getVersion());
+			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_VERSION, pkgLocation.getVersion());
 		}
 		if (pkgLocation.getReleaseDate() != null) {
-			umlPackage.setValue(hdfPackage, IHDFProfileConstants.PACKAGE_RELEASE_DATE, 
-					pkgLocation.getReleaseDate().toString());
+			umlPackage.setValue(
+				hdfPackage, IHDFProfileConstants.PACKAGE_RELEASE_DATE, pkgLocation.getReleaseDate().toString());
 		}
-		
+
 	}
-	
+
 	protected void setMultiplicity(DatatypeOperation operation, MultiplicityElement element) {
 		BigInteger lower = operation.getMinimumMultiplicity();
 		Object upper = operation.getMaximumMultiplicity();
 		if (lower != null) {
 			element.setLower(lower.intValue());
 		}
-		
+
 		if (upper instanceof BigInteger) {
-			element.setUpper(((BigInteger)upper).intValue());
-		}
-		else if (upper instanceof UnlimitedMultiplicity) {
+			element.setUpper(((BigInteger) upper).intValue());
+		} else if (upper instanceof UnlimitedMultiplicity) {
 			element.setUpper(LiteralUnlimitedNatural.UNLIMITED);
 		}
 
@@ -1436,34 +1413,33 @@ public class MIFProcessor extends Mif2Switch {
 			if ("SET".equals(datatypeRef.getName())) {
 				element.setIsUnique(true);
 				element.setIsOrdered(false);
-			}
-			else if ("BAG".equals(datatypeRef.getName())) {
+			} else if ("BAG".equals(datatypeRef.getName())) {
 				element.setIsUnique(false);
 				element.setIsOrdered(false);
-			}
-			else if ("LIST".equals(datatypeRef.getName())) {
+			} else if ("LIST".equals(datatypeRef.getName())) {
 				element.setIsUnique(false);
 				element.setIsOrdered(true);
 			}
 		}
 	}
-	
+
 	protected void setPropertyData(DatatypeOperation operation, Property umlProperty) {
 		setMultiplicity(operation, umlProperty);
-		
-		Stereotype hl7Stereotype = 
-			HL7ResourceUtil.applyHDFStereotype(umlProperty, IHDFProfileConstants.HDF_ATTRIBUTE);
+
+		Stereotype hl7Stereotype = HL7ResourceUtil.applyHDFStereotype(umlProperty, IHDFProfileConstants.HDF_ATTRIBUTE);
 
 		setBusinessNames(umlProperty, hl7Stereotype, operation.getBusinessName());
-			
+
 		if (operation.getMinimumLength() != null) {
-			umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.MINIMUM_LENGTH, 
-					((BigInteger)operation.getMinimumLength()).intValue());
+			umlProperty.setValue(
+				hl7Stereotype, IHDFProfileConstants.MINIMUM_LENGTH,
+				((BigInteger) operation.getMinimumLength()).intValue());
 		}
 
 		if (operation.getMaximumLength() != null) {
-			umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.MAXIMUM_LENGTH, 
-					((BigInteger)operation.getMaximumLength()).intValue());
+			umlProperty.setValue(
+				hl7Stereotype, IHDFProfileConstants.MAXIMUM_LENGTH,
+				((BigInteger) operation.getMaximumLength()).intValue());
 		}
 
 		if (operation.isIsMandatory()) {
@@ -1471,34 +1447,29 @@ public class MIFProcessor extends Mif2Switch {
 		}
 
 		if (operation.getSortKey() != null && operation.getSortKey().length() > 0) {
-			umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.SORT_KEY, 
-					operation.getSortKey());
+			umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.SORT_KEY, operation.getSortKey());
 		}
 
 		if (operation.getConformance() != null) {
 			ConformanceKind conformance = operation.getConformance();
 			Enumeration hl7Enum = (Enumeration) hl7Stereotype.getProfile().getOwnedMember(
-					IHDFProfileConstants.CONFORMANCE_KIND, false, UMLPackage.Literals.ENUMERATION);
+				IHDFProfileConstants.CONFORMANCE_KIND, false, UMLPackage.Literals.ENUMERATION);
 			if (hl7Enum != null) {
 				EnumerationLiteral literal = hl7Enum.getOwnedLiteral(conformance.getName());
 				if (literal != null) {
-					umlProperty.setValue(hl7Stereotype, 
-							IHDFProfileConstants.CONFORMANCE, 
-							literal);
+					umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.CONFORMANCE, literal);
 				}
 			}
 		}
-		
+
 		if (operation.getDefaultFrom() != null) {
 			DefaultDeterminerKind defaultFrom = operation.getDefaultFrom();
 			Enumeration hl7Enum = (Enumeration) hl7Stereotype.getProfile().getOwnedMember(
-					IHDFProfileConstants.DEFAULT_DETERMINER_KIND, false, UMLPackage.Literals.ENUMERATION);
+				IHDFProfileConstants.DEFAULT_DETERMINER_KIND, false, UMLPackage.Literals.ENUMERATION);
 			if (hl7Enum != null) {
 				EnumerationLiteral literal = hl7Enum.getOwnedLiteral(defaultFrom.getName());
 				if (literal != null) {
-					umlProperty.setValue(hl7Stereotype, 
-							IHDFProfileConstants.DEFAULT_FROM, 
-							literal);
+					umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.DEFAULT_FROM, literal);
 				}
 			}
 		}
@@ -1514,74 +1485,72 @@ public class MIFProcessor extends Mif2Switch {
 		if (operation.getFixedValue() != null) {
 			mifValue = operation.getFixedValue();
 			umlProperty.setIsReadOnly(true);
-		}
-		else if (operation.getDefaultValue() != null) {
+		} else if (operation.getDefaultValue() != null) {
 			mifValue = operation.getDefaultValue();
 		}
-		
+
 		if (mifValue != null) {
-			OpaqueExpression expression = (OpaqueExpression) umlProperty
-					.createDefaultValue(null, umlProperty.getType(), 
-							UMLPackage.Literals.OPAQUE_EXPRESSION);
+			OpaqueExpression expression = (OpaqueExpression) umlProperty.createDefaultValue(
+				null, umlProperty.getType(), UMLPackage.Literals.OPAQUE_EXPRESSION);
 			expression.getBodies().add(mifValue);
 		}
 	}
-	
+
 	protected void setPropertyData(Attribute mifAttribute, Property umlProperty) {
-//		StaticModelBase mifModel = MIFUtil.getPackage(mifAttribute);
-		Stereotype hl7Stereotype = 
-			HL7ResourceUtil.applyHDFStereotype(umlProperty, IHDFProfileConstants.HDF_ATTRIBUTE);
-		
+		// StaticModelBase mifModel = MIFUtil.getPackage(mifAttribute);
+		Stereotype hl7Stereotype = HL7ResourceUtil.applyHDFStereotype(umlProperty, IHDFProfileConstants.HDF_ATTRIBUTE);
+
 		BigInteger lower = mifAttribute.getMinimumMultiplicity();
 		Object upper = mifAttribute.getMaximumMultiplicity();
 		if (lower != null) {
 			umlProperty.setLower(lower.intValue());
 		}
-		
+
 		if (upper instanceof BigInteger) {
-			umlProperty.setUpper(((BigInteger)upper).intValue());
-		}
-		else if (upper instanceof UnlimitedMultiplicity) {
+			umlProperty.setUpper(((BigInteger) upper).intValue());
+		} else if (upper instanceof UnlimitedMultiplicity) {
 			umlProperty.setUpper(LiteralUnlimitedNatural.UNLIMITED);
 		}
 
-//		for (Iterator iter = mifAttribute.getDerivationSupplier().iterator(); iter.hasNext();) {
-//			AttributeDerivation derivation = (AttributeDerivation) iter.next();
-//			if (isRIMDerivation(derivation, mifModel)) {
-//				Property rimProperty = findRIMProperty(derivation.getClassName(), derivation.getAttributeName());
-//				if (rimProperty.getOwner() != null) {
-//					// use when supplier is stored in stereotype property
-////					List rimDerivations = Collections.singletonList(rimProperty);
-////					umlProperty.setValue(hl7Stereotype, 
-////							IHDFProfileConstants.DERIVATION_SUPPLIER, rimDerivations);
-//
-//					umlProperty.getRedefinedProperties().add(rimProperty);
-//					if (!rimProperty.isConsistentWith(umlProperty)) {
-//						diagnostics.warning("Invalid property redefinition from '" + umlProperty 
-//								+ "' to", rimProperty.getQualifiedName());
-//					}
-//				}
-//			}
-//			break;
-//		}
+		// for (Iterator iter = mifAttribute.getDerivationSupplier().iterator(); iter.hasNext();) {
+		// AttributeDerivation derivation = (AttributeDerivation) iter.next();
+		// if (isRIMDerivation(derivation, mifModel)) {
+		// Property rimProperty = findRIMProperty(derivation.getClassName(), derivation.getAttributeName());
+		// if (rimProperty.getOwner() != null) {
+		// // use when supplier is stored in stereotype property
+		// // List rimDerivations = Collections.singletonList(rimProperty);
+		// // umlProperty.setValue(hl7Stereotype,
+		// // IHDFProfileConstants.DERIVATION_SUPPLIER, rimDerivations);
+		//
+		// umlProperty.getRedefinedProperties().add(rimProperty);
+		// if (!rimProperty.isConsistentWith(umlProperty)) {
+		// diagnostics.warning("Invalid property redefinition from '" + umlProperty
+		// + "' to", rimProperty.getQualifiedName());
+		// }
+		// }
+		// }
+		// break;
+		// }
 
 		setBusinessNames(umlProperty, hl7Stereotype, mifAttribute.getBusinessName());
-			
+
 		if (mifAttribute.isIsImmutable()) {
 			umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.IS_IMMUTABLE, Boolean.TRUE);
-			
+
 			// all structural attributes are optional in HL7 schemas even if not modeled that way
-//			umlProperty.setLower(0);
+			// umlProperty.setLower(0);
 		}
 
 		if (mifAttribute.getMinimumLength() != null) {
-			umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.MINIMUM_LENGTH, 
-					((BigInteger)mifAttribute.getMinimumLength()).intValue());
+			umlProperty.setValue(
+				hl7Stereotype, IHDFProfileConstants.MINIMUM_LENGTH,
+				((BigInteger) mifAttribute.getMinimumLength()).intValue());
 		}
 
 		if (mifAttribute.getMaximumLength() != null) {
-			umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.MAXIMUM_LENGTH, 
-					((BigInteger)mifAttribute.getMaximumLength()).intValue());
+			umlProperty.setValue(
+				hl7Stereotype, IHDFProfileConstants.MAXIMUM_LENGTH,
+				((BigInteger) mifAttribute.getMaximumLength()).intValue());
 		}
 
 		if (mifAttribute.isIsMandatory()) {
@@ -1589,62 +1558,53 @@ public class MIFProcessor extends Mif2Switch {
 		}
 
 		if (mifAttribute.getSortKey() != null && mifAttribute.getSortKey().length() > 0) {
-			umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.SORT_KEY, 
-					mifAttribute.getSortKey());
+			umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.SORT_KEY, mifAttribute.getSortKey());
 		}
 
 		if (mifAttribute.isSetConformance() && mifAttribute.getConformance() != null) {
 			ConformanceKind conformance = mifAttribute.getConformance();
 			Enumeration hl7Enum = (Enumeration) hl7Stereotype.getProfile().getOwnedMember(
-					IHDFProfileConstants.CONFORMANCE_KIND, false, UMLPackage.Literals.ENUMERATION);
+				IHDFProfileConstants.CONFORMANCE_KIND, false, UMLPackage.Literals.ENUMERATION);
 			if (hl7Enum != null) {
 				EnumerationLiteral literal = hl7Enum.getOwnedLiteral(conformance.getName());
 				if (literal != null) {
-					umlProperty.setValue(hl7Stereotype, 
-							IHDFProfileConstants.CONFORMANCE, 
-							literal);
+					umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.CONFORMANCE, literal);
 				}
 			}
 		}
-		
+
 		if (mifAttribute.isSetDefaultFrom() && mifAttribute.getDefaultFrom() != null) {
 			DefaultDeterminerKind defaultFrom = mifAttribute.getDefaultFrom();
 			Enumeration hl7Enum = (Enumeration) hl7Stereotype.getProfile().getOwnedMember(
-					IHDFProfileConstants.DEFAULT_DETERMINER_KIND, false, UMLPackage.Literals.ENUMERATION);
+				IHDFProfileConstants.DEFAULT_DETERMINER_KIND, false, UMLPackage.Literals.ENUMERATION);
 			if (hl7Enum != null) {
 				EnumerationLiteral literal = hl7Enum.getOwnedLiteral(defaultFrom.getName());
 				if (literal != null) {
-					umlProperty.setValue(hl7Stereotype, 
-							IHDFProfileConstants.DEFAULT_FROM, 
-							literal);
+					umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.DEFAULT_FROM, literal);
 				}
 			}
 		}
 
-//TODO remove from profile???
-//		if (mifAttribute.isReferenceHistory()) {
-//			umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.REFERENCE_HISTORY, Boolean.TRUE);
-//		}
+		// TODO remove from profile???
+		// if (mifAttribute.isReferenceHistory()) {
+		// umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.REFERENCE_HISTORY, Boolean.TRUE);
+		// }
 
-		if (mifAttribute.isSetUpdateModeDefault()
-				&& mifAttribute.getUpdateModeDefault() != null) {
+		if (mifAttribute.isSetUpdateModeDefault() && mifAttribute.getUpdateModeDefault() != null) {
 			UpdateModeKind updateMode = mifAttribute.getUpdateModeDefault();
 			Enumeration hl7Enum = (Enumeration) hl7Stereotype.getProfile().getOwnedMember(
-					IHDFProfileConstants.UPDATE_MODE_KIND, false, UMLPackage.Literals.ENUMERATION);
+				IHDFProfileConstants.UPDATE_MODE_KIND, false, UMLPackage.Literals.ENUMERATION);
 			if (hl7Enum != null) {
 				EnumerationLiteral literal = hl7Enum.getOwnedLiteral(updateMode.getName());
 				if (literal != null) {
-					umlProperty.setValue(hl7Stereotype, 
-							IHDFProfileConstants.UPDATE_MODE_DEFAULT, 
-							literal);
+					umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.UPDATE_MODE_DEFAULT, literal);
 				}
 			}
 		}
 
-		if (mifAttribute.getUpdateModesAllowed() != null
-				&& !mifAttribute.getUpdateModesAllowed().isEmpty()) {
+		if (mifAttribute.getUpdateModesAllowed() != null && !mifAttribute.getUpdateModesAllowed().isEmpty()) {
 			Enumeration hl7Enum = (Enumeration) hl7Stereotype.getProfile().getOwnedMember(
-					IHDFProfileConstants.UPDATE_MODE_KIND, false, UMLPackage.Literals.ENUMERATION);
+				IHDFProfileConstants.UPDATE_MODE_KIND, false, UMLPackage.Literals.ENUMERATION);
 			if (hl7Enum != null) {
 				List updateModes = new ArrayList();
 				for (Iterator iter = mifAttribute.getUpdateModesAllowed().iterator(); iter.hasNext();) {
@@ -1655,9 +1615,7 @@ public class MIFProcessor extends Mif2Switch {
 					}
 				}
 				if (!updateModes.isEmpty()) {
-					umlProperty.setValue(hl7Stereotype, 
-							IHDFProfileConstants.UPDATE_MODES_ALLOWED, 
-							updateModes);
+					umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.UPDATE_MODES_ALLOWED, updateModes);
 				}
 			}
 		}
@@ -1666,9 +1624,9 @@ public class MIFProcessor extends Mif2Switch {
 		if (mifAttribute.getVocabulary() != null) {
 			// set vocabulary domain constraint
 			VocabularySpecification vocabulary = mifAttribute.getVocabulary();
-			
+
 			// to set vocabulary constraint as UML default value, uncomment this line
-//			mifValue = setVocabularySpecification(vocabulary, umlProperty);
+			// mifValue = setVocabularySpecification(vocabulary, umlProperty);
 			setVocabularySpecification(vocabulary, umlProperty);
 		}
 
@@ -1676,29 +1634,25 @@ public class MIFProcessor extends Mif2Switch {
 		if (mifAttribute.getFixedValue() != null) {
 			mifValue = mifAttribute.getFixedValue();
 			umlProperty.setIsReadOnly(true);
-		}
-		else if (mifAttribute.getDefaultValue() != null) {
+		} else if (mifAttribute.getDefaultValue() != null) {
 			mifValue = mifAttribute.getDefaultValue();
 		}
-		
+
 		if (mifValue != null) {
-			OpaqueExpression expression = (OpaqueExpression) umlProperty
-					.createDefaultValue(null, umlProperty.getType(), 
-							UMLPackage.Literals.OPAQUE_EXPRESSION);
+			OpaqueExpression expression = (OpaqueExpression) umlProperty.createDefaultValue(
+				null, umlProperty.getType(), UMLPackage.Literals.OPAQUE_EXPRESSION);
 			expression.getBodies().add(mifValue);
 		}
-		
+
 		DatatypeRef datatypeRef = mifAttribute.getType();
 		if (datatypeRef != null) {
 			if ("SET".equals(datatypeRef.getName())) {
 				umlProperty.setIsUnique(true);
 				umlProperty.setIsOrdered(false);
-			}
-			else if ("BAG".equals(datatypeRef.getName())) {
+			} else if ("BAG".equals(datatypeRef.getName())) {
 				umlProperty.setIsUnique(false);
 				umlProperty.setIsOrdered(false);
-			}
-			else if ("LIST".equals(datatypeRef.getName())) {
+			} else if ("LIST".equals(datatypeRef.getName())) {
 				umlProperty.setIsUnique(false);
 				umlProperty.setIsOrdered(true);
 			}
@@ -1707,131 +1661,124 @@ public class MIFProcessor extends Mif2Switch {
 
 	protected String setVocabularySpecification(VocabularySpecification vocabulary, Property umlProperty) {
 		String stringValue = null;
-		
+
 		if (vocabulary.getConceptDomain() != null) {
 			stringValue = vocabulary.getConceptDomain().getName();
-			
-			Stereotype constraint = 
-				HL7ResourceUtil.applyHDFStereotype(umlProperty, IHDFProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+
+			Stereotype constraint = HL7ResourceUtil.applyHDFStereotype(
+				umlProperty, IHDFProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
 			if (constraint != null) {
-				umlProperty.setValue(constraint, IHDFProfileConstants.CONCEPT_DOMAIN_NAME, 
-						vocabulary.getConceptDomain().getName());
+				umlProperty.setValue(
+					constraint, IHDFProfileConstants.CONCEPT_DOMAIN_NAME, vocabulary.getConceptDomain().getName());
 			}
 		}
 
 		if (vocabulary.getCode() != null) {
 			stringValue = vocabulary.getCode().getCode();
-			
-			Stereotype constraint = 
-				HL7ResourceUtil.applyHDFStereotype(umlProperty, IHDFProfileConstants.CODE_SYSTEM_CONSTRAINT);
+
+			Stereotype constraint = HL7ResourceUtil.applyHDFStereotype(
+				umlProperty, IHDFProfileConstants.CODE_SYSTEM_CONSTRAINT);
 			if (constraint != null) {
-				umlProperty.setValue(constraint, IHDFProfileConstants.CODE_SYSTEM_OID, 
-						vocabulary.getCode().getCodeSystem());
-				umlProperty.setValue(constraint, IHDFProfileConstants.CODE_SYSTEM_NAME, 
-						vocabulary.getCode().getCodeSystemName());
+				umlProperty.setValue(
+					constraint, IHDFProfileConstants.CODE_SYSTEM_OID, vocabulary.getCode().getCodeSystem());
+				umlProperty.setValue(
+					constraint, IHDFProfileConstants.CODE_SYSTEM_NAME, vocabulary.getCode().getCodeSystemName());
 				if (vocabulary.getCode().getCodeSystemVersion() != null) {
-					umlProperty.setValue(constraint, IHDFProfileConstants.CODE_SYSTEM_VERSION, 
-							vocabulary.getCode().getCodeSystemVersion().toString());
+					umlProperty.setValue(
+						constraint, IHDFProfileConstants.CODE_SYSTEM_VERSION,
+						vocabulary.getCode().getCodeSystemVersion().toString());
 				}
-				umlProperty.setValue(constraint, IHDFProfileConstants.CODE, 
-						vocabulary.getCode().getCode());
-				umlProperty.setValue(constraint, IHDFProfileConstants.CODE_PRINT_NAME, 
-						vocabulary.getCode().getCodePrintName());
+				umlProperty.setValue(constraint, IHDFProfileConstants.CODE, vocabulary.getCode().getCode());
+				umlProperty.setValue(
+					constraint, IHDFProfileConstants.CODE_PRINT_NAME, vocabulary.getCode().getCodePrintName());
 			}
 		}
 
 		if (vocabulary.getValueSet() != null) {
 			stringValue = vocabulary.getValueSet().getName();
-			
-			Stereotype constraint = 
-				HL7ResourceUtil.applyHDFStereotype(umlProperty, IHDFProfileConstants.VALUE_SET_CONSTRAINT);
+
+			Stereotype constraint = HL7ResourceUtil.applyHDFStereotype(
+				umlProperty, IHDFProfileConstants.VALUE_SET_CONSTRAINT);
 			if (constraint != null) {
-				umlProperty.setValue(constraint, IHDFProfileConstants.VALUE_SET_OID, 
-						vocabulary.getValueSet().getId());
-				umlProperty.setValue(constraint, IHDFProfileConstants.VALUE_SET_NAME, 
-						vocabulary.getValueSet().getName());
-				umlProperty.setValue(constraint, IHDFProfileConstants.VALUE_SET_MINIMUM_OID, 
-						vocabulary.getValueSet().getMinimumValueSet());
-				umlProperty.setValue(constraint, IHDFProfileConstants.VALUE_SET_IGNORED_OID, 
-						vocabulary.getValueSet().getIgnoredValueSet());
-				umlProperty.setValue(constraint, IHDFProfileConstants.VALUE_SET_ROOT_CODE, 
-						vocabulary.getValueSet().getRootCode());
+				umlProperty.setValue(constraint, IHDFProfileConstants.VALUE_SET_OID, vocabulary.getValueSet().getId());
+				umlProperty.setValue(
+					constraint, IHDFProfileConstants.VALUE_SET_NAME, vocabulary.getValueSet().getName());
+				umlProperty.setValue(
+					constraint, IHDFProfileConstants.VALUE_SET_MINIMUM_OID,
+					vocabulary.getValueSet().getMinimumValueSet());
+				umlProperty.setValue(
+					constraint, IHDFProfileConstants.VALUE_SET_IGNORED_OID,
+					vocabulary.getValueSet().getIgnoredValueSet());
+				umlProperty.setValue(
+					constraint, IHDFProfileConstants.VALUE_SET_ROOT_CODE, vocabulary.getValueSet().getRootCode());
 
 				if (vocabulary.getValueSet().getVersionDate() != null) {
-					umlProperty.setValue(constraint,
-							IHDFProfileConstants.VALUE_SET_VERSION_DATE,
-							vocabulary.getValueSet().getVersionDate().toString());
+					umlProperty.setValue(
+						constraint, IHDFProfileConstants.VALUE_SET_VERSION_DATE,
+						vocabulary.getValueSet().getVersionDate().toString());
 				}
-				if (vocabulary.getValueSet().isSetCodingStrength()
-						&& vocabulary.getValueSet().getCodingStrength() != null) {
+				if (vocabulary.getValueSet().isSetCodingStrength() &&
+						vocabulary.getValueSet().getCodingStrength() != null) {
 					Enumeration hl7Enum = (Enumeration) constraint.getProfile().getOwnedMember(
-							IHDFProfileConstants.CODING_STRENGTH_KIND, false, UMLPackage.Literals.ENUMERATION);
+						IHDFProfileConstants.CODING_STRENGTH_KIND, false, UMLPackage.Literals.ENUMERATION);
 					if (hl7Enum != null) {
 						EnumerationLiteral literal = hl7Enum.getOwnedLiteral(vocabulary.getValueSet().getCodingStrength().getName());
 						if (literal != null) {
-							umlProperty.setValue(constraint, 
-									IHDFProfileConstants.VALUE_SET_CODING_STRENGTH, 
-									literal);
+							umlProperty.setValue(constraint, IHDFProfileConstants.VALUE_SET_CODING_STRENGTH, literal);
 						}
 					}
 				}
-				if (vocabulary.getValueSet().isSetRevisionFrequency()
-						&& vocabulary.getValueSet().getRevisionFrequency() != null) {
+				if (vocabulary.getValueSet().isSetRevisionFrequency() &&
+						vocabulary.getValueSet().getRevisionFrequency() != null) {
 					Enumeration hl7Enum = (Enumeration) constraint.getProfile().getOwnedMember(
-							IHDFProfileConstants.REVISION_FREQUENCY_KIND, false, UMLPackage.Literals.ENUMERATION);
+						IHDFProfileConstants.REVISION_FREQUENCY_KIND, false, UMLPackage.Literals.ENUMERATION);
 					if (hl7Enum != null) {
 						EnumerationLiteral literal = hl7Enum.getOwnedLiteral(vocabulary.getValueSet().getRevisionFrequency().getName());
 						if (literal != null) {
-							umlProperty.setValue(constraint, 
-									IHDFProfileConstants.VALUE_SET_REVISION_FREQUENCY, 
-									literal);
+							umlProperty.setValue(constraint, IHDFProfileConstants.VALUE_SET_REVISION_FREQUENCY, literal);
 						}
 					}
 				}
 			}
 		}
-		
+
 		return stringValue;
 	}
-	
+
 	protected void setPropertyData(AssociationEndBase assocEnd, Property umlProperty) {
-		Stereotype hl7Stereotype = 
-			HL7ResourceUtil.applyHDFStereotype(umlProperty, IHDFProfileConstants.HDF_ASSOCIATION_END);
-		
+		Stereotype hl7Stereotype = HL7ResourceUtil.applyHDFStereotype(
+			umlProperty, IHDFProfileConstants.HDF_ASSOCIATION_END);
+
 		BigInteger lower = assocEnd.getMinimumMultiplicity();
 		Object upper = assocEnd.getMaximumMultiplicity();
 		if (lower != null) {
 			umlProperty.setLower(lower.intValue());
 		}
-		
+
 		if (upper instanceof BigInteger) {
-			umlProperty.setUpper(((BigInteger)upper).intValue());
-		}
-		else if (upper instanceof UnlimitedMultiplicity) {
+			umlProperty.setUpper(((BigInteger) upper).intValue());
+		} else if (upper instanceof UnlimitedMultiplicity) {
 			umlProperty.setUpper(LiteralUnlimitedNatural.UNLIMITED);
 		}
 
 		setBusinessNames(umlProperty, hl7Stereotype, assocEnd.getBusinessName());
-			
+
 		if (assocEnd.isIsMandatory()) {
 			umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.IS_MANDATORY, Boolean.TRUE);
 		}
 
 		if (assocEnd.getSortKey() != null && assocEnd.getSortKey().length() > 0) {
-			umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.SORT_KEY, 
-					assocEnd.getSortKey());
+			umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.SORT_KEY, assocEnd.getSortKey());
 		}
 
 		if (assocEnd.isSetConformance() && assocEnd.getConformance() != null) {
 			ConformanceKind conformance = assocEnd.getConformance();
 			Enumeration hl7Enum = (Enumeration) hl7Stereotype.getProfile().getOwnedMember(
-					IHDFProfileConstants.CONFORMANCE_KIND, false, UMLPackage.Literals.ENUMERATION);
+				IHDFProfileConstants.CONFORMANCE_KIND, false, UMLPackage.Literals.ENUMERATION);
 			if (hl7Enum != null) {
 				EnumerationLiteral literal = hl7Enum.getOwnedLiteral(conformance.getName());
 				if (literal != null) {
-					umlProperty.setValue(hl7Stereotype, 
-							IHDFProfileConstants.CONFORMANCE, 
-							literal);
+					umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.CONFORMANCE, literal);
 				}
 			}
 		}
@@ -1840,25 +1787,21 @@ public class MIFProcessor extends Mif2Switch {
 			umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.REFERENCE_HISTORY, Boolean.TRUE);
 		}
 
-		if (assocEnd.isSetUpdateModeDefault()
-				&& assocEnd.getUpdateModeDefault() != null) {
+		if (assocEnd.isSetUpdateModeDefault() && assocEnd.getUpdateModeDefault() != null) {
 			UpdateModeKind updateMode = assocEnd.getUpdateModeDefault();
 			Enumeration hl7Enum = (Enumeration) hl7Stereotype.getProfile().getOwnedMember(
-					IHDFProfileConstants.UPDATE_MODE_KIND, false, UMLPackage.Literals.ENUMERATION);
+				IHDFProfileConstants.UPDATE_MODE_KIND, false, UMLPackage.Literals.ENUMERATION);
 			if (hl7Enum != null) {
 				EnumerationLiteral literal = hl7Enum.getOwnedLiteral(updateMode.getName());
 				if (literal != null) {
-					umlProperty.setValue(hl7Stereotype, 
-							IHDFProfileConstants.UPDATE_MODE_DEFAULT, 
-							literal);
+					umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.UPDATE_MODE_DEFAULT, literal);
 				}
 			}
 		}
 
-		if (assocEnd.getUpdateModesAllowed() != null
-				&& !assocEnd.getUpdateModesAllowed().isEmpty()) {
+		if (assocEnd.getUpdateModesAllowed() != null && !assocEnd.getUpdateModesAllowed().isEmpty()) {
 			Enumeration hl7Enum = (Enumeration) hl7Stereotype.getProfile().getOwnedMember(
-					IHDFProfileConstants.UPDATE_MODE_KIND, false, UMLPackage.Literals.ENUMERATION);
+				IHDFProfileConstants.UPDATE_MODE_KIND, false, UMLPackage.Literals.ENUMERATION);
 			if (hl7Enum != null) {
 				List updateModes = new ArrayList();
 				for (Iterator iter = assocEnd.getUpdateModesAllowed().iterator(); iter.hasNext();) {
@@ -1869,15 +1812,13 @@ public class MIFProcessor extends Mif2Switch {
 					}
 				}
 				if (!updateModes.isEmpty()) {
-					umlProperty.setValue(hl7Stereotype, 
-							IHDFProfileConstants.UPDATE_MODES_ALLOWED, 
-							updateModes);
+					umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.UPDATE_MODES_ALLOWED, updateModes);
 				}
 			}
 		}
 
 	}
-	
+
 	protected void setPropertyRedefinition(Attribute mifAttribute, Property umlProperty) {
 		/*
 		 * UML redefinition is not necessary for attributes because then name is not changed in redefinition,
@@ -1895,68 +1836,65 @@ public class MIFProcessor extends Mif2Switch {
 		setPropertyRedefinition(mifModel, assocEnd.getDerivedFrom(), umlProperty);
 	}
 
-	private void setPropertyRedefinition(StaticModelBase mifModel, List<AssociationEndDerivation> derivations, Property umlProperty) {
+	private void setPropertyRedefinition(StaticModelBase mifModel, List<AssociationEndDerivation> derivations,
+			Property umlProperty) {
 		for (AssociationEndDerivation derivation : derivations) {
 			if (isRIMDerivation(derivation, mifModel)) {
 				String rimClassName = derivation.getClassName();
 				String rimPropertyName = derivation.getAssociationEndName();
 
-				Property rimProperty = RIMUtil.getRIMProperty(umlProperty.getNearestPackage(), 
-						rimClassName, rimPropertyName);
+				Property rimProperty = RIMUtil.getRIMProperty(
+					umlProperty.getNearestPackage(), rimClassName, rimPropertyName);
 				if (rimProperty != null) {
-					if (isMIFAssociationClass(umlProperty.getAssociation())
-							|| umlProperty.getOwner() instanceof Association
-							|| !rimProperty.isConsistentWith(umlProperty)) {
+					if (isMIFAssociationClass(umlProperty.getAssociation()) ||
+							umlProperty.getOwner() instanceof Association || !rimProperty.isConsistentWith(umlProperty)) {
 						// supplier derivation must be stored in stereotype property
-						Stereotype hl7Stereotype = 
-							HL7ResourceUtil.applyHDFStereotype(umlProperty, IHDFProfileConstants.HDF_ASSOCIATION_END);
+						Stereotype hl7Stereotype = HL7ResourceUtil.applyHDFStereotype(
+							umlProperty, IHDFProfileConstants.HDF_ASSOCIATION_END);
 						List rimDerivations = Collections.singletonList(rimProperty);
-						umlProperty.setValue(hl7Stereotype, 
-								IHDFProfileConstants.DERIVATION_SUPPLIER, rimDerivations);
-					}
-					else {
+						umlProperty.setValue(hl7Stereotype, IHDFProfileConstants.DERIVATION_SUPPLIER, rimDerivations);
+					} else {
 						umlProperty.getRedefinedProperties().add(rimProperty);
 						if (!rimProperty.isConsistentWith(umlProperty)) {
-							diagnostics.warning("Invalid property redefinition from '" 
-									+ umlProperty.getQualifiedName() + " : " 
-										+ ((umlProperty.getType()==null)?"null":umlProperty.getType().getName())
-									+ "' to '" 
-									+ rimProperty.getQualifiedName() + " : " 
-										+ ((rimProperty.getType()==null)?"null":rimProperty.getType().getName())
-									+ "'", null);
+							diagnostics.warning(
+								"Invalid property redefinition from '" + umlProperty.getQualifiedName() + " : " +
+										((umlProperty.getType() == null)
+												? "null"
+												: umlProperty.getType().getName()) + "' to '" +
+										rimProperty.getQualifiedName() + " : " + ((rimProperty.getType() == null)
+												? "null"
+												: rimProperty.getType().getName()) + "'", null);
 						}
 					}
 				}
 			}
 
 			// add "source" or "target" keyword for diagram display
-			if ((IRIMProfileConstants.ACT_RELATIONSHIP.equals(derivation.getClassName())
-						|| IRIMProfileConstants.ROLE_LINK.equals(derivation.getClassName()))) {
+			if ((IRIMProfileConstants.ACT_RELATIONSHIP.equals(derivation.getClassName()) || IRIMProfileConstants.ROLE_LINK.equals(derivation.getClassName()))) {
 				umlProperty.addKeyword(derivation.getAssociationEndName());
 			}
-			
+
 			break;
 		}
 	}
-	
+
 	protected boolean isRIMDerivation(ClassDerivation derivation, StaticModelBase mifModel) {
-		if (mifModel == null)
+		if (mifModel == null) {
 			return false;
-		
+		}
+
 		String derivationId = derivation.getStaticModelDerivationId();
 		for (Iterator iter = mifModel.getDerivedFrom().iterator(); iter.hasNext();) {
 			StaticModelDerivation modelDerivation = (StaticModelDerivation) iter.next();
-			if (modelDerivation.getStaticModelDerivationId().equals(derivationId)
-					&& "RIM".equals(modelDerivation.getTargetStaticModel().getArtifact().getName())) {
+			if (modelDerivation.getStaticModelDerivationId().equals(derivationId) &&
+					"RIM".equals(modelDerivation.getTargetStaticModel().getArtifact().getName())) {
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
-	
-	
-	
+
 	/**
 	 * pushIFCAnnotation is preliminary solution for cmet support for importing
 	 * and exporting models.
@@ -1972,35 +1910,28 @@ public class MIFProcessor extends Mif2Switch {
 	 * @param cmetName
 	 * @param mifClass
 	 */
-	private void pushIFCAnnotation(String cmetName,ClassBase mifClass )
-	{
+	private void pushIFCAnnotation(String cmetName, ClassBase mifClass) {
 		// local hidden constant until cmet support finalized
-		final String IFC_ANNOTATION_SOURCE = "org.openhealthtools.mdht.uml.hl7.mif2uml.ifc";	
-		EAnnotation ifcAnnotation =  umlModel.getEAnnotation(IFC_ANNOTATION_SOURCE);
-		
-		if (ifcAnnotation == null)
-		{
+		final String IFC_ANNOTATION_SOURCE = "org.openhealthtools.mdht.uml.hl7.mif2uml.ifc";
+		EAnnotation ifcAnnotation = umlModel.getEAnnotation(IFC_ANNOTATION_SOURCE);
+
+		if (ifcAnnotation == null) {
 			ifcAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
 			ifcAnnotation.setSource(IFC_ANNOTATION_SOURCE);
 			umlModel.getEAnnotations().add(ifcAnnotation);
-			
-		}
-		
-		
-		Classifier classifier = (Classifier) getMappingEntry(mifClass);
-		
-		if (classifier != null)
-		{
-			if (!ifcAnnotation.getDetails().contains(classifier.getQualifiedName())){
-			ifcAnnotation.getDetails().put(classifier.getQualifiedName(), cmetName);
-			}
-		}	
-		
 
-		
+		}
+
+		Classifier classifier = (Classifier) getMappingEntry(mifClass);
+
+		if (classifier != null) {
+			if (!ifcAnnotation.getDetails().contains(classifier.getQualifiedName())) {
+				ifcAnnotation.getDetails().put(classifier.getQualifiedName(), cmetName);
+			}
+		}
+
 	}
-	
-	
+
 	/**
 	 * tagIFC adds the cmet value from mif to the class so during export the
 	 * resulting mif model file will contain the encoded cmet name versus the
@@ -2009,11 +1940,10 @@ public class MIFProcessor extends Mif2Switch {
 	 * @param classifier
 	 * @param cmetName
 	 */
-	private void tagIFC(Classifier classifier, String cmetName)
-	{
+	private void tagIFC(Classifier classifier, String cmetName) {
 		// local hidden constant until cmet support finalized
-		final String IFC_ANNOTATION_SOURCE = "org.openhealthtools.mdht.uml.hl7.mif2uml.ifc";	
-		
+		final String IFC_ANNOTATION_SOURCE = "org.openhealthtools.mdht.uml.hl7.mif2uml.ifc";
+
 		if (classifier != null) {
 			EAnnotation ifcAnnotation = classifier.getEAnnotation(IFC_ANNOTATION_SOURCE);
 
@@ -2024,14 +1954,12 @@ public class MIFProcessor extends Mif2Switch {
 			}
 
 			ifcAnnotation.getDetails().put(cmetName, null);
-		} else
-		{
-			diagnostics.warning("Unable to properly add CMET annotation "+cmetName +"  claissifier is null", null);			
+		} else {
+			diagnostics.warning("Unable to properly add CMET annotation " + cmetName + "  claissifier is null", null);
 		}
-		
-		
+
 	}
-	
+
 	private ClassBase getCommonModelClass(StaticModelBase mifModel, String name) {
 		ClassBase mifClass = null;
 		try {
@@ -2041,25 +1969,25 @@ public class MIFProcessor extends Mif2Switch {
 			CommonModelElementDefinition cme = cmeUtil.resolveCommonModelElement(name);
 			if (cme != null) {
 				StaticModel cmeModel = cmeUtil.resolveCommonModel(cme);
-				
+
 				if (cmeModel != null) {
 					// import the referenced model into a UML package
 					doSwitch(cmeModel);
-					
+
 					mifClass = cmeUtil.resolveCommonModelClass(cme, cmeModel);
-									
-					pushIFCAnnotation(name,mifClass);
-					
+
+					pushIFCAnnotation(name, mifClass);
+
 				}
 			}
-		}
-		catch (Exception e) {
-			diagnostics.error("Error resolving CMET: " + e.getLocalizedMessage() + e.getClass().getCanonicalName(),  null);
-			
+		} catch (Exception e) {
+			diagnostics.error(
+				"Error resolving CMET: " + e.getLocalizedMessage() + e.getClass().getCanonicalName(), null);
+
 			e.printStackTrace();
-			
+
 		}
-		
+
 		return mifClass;
 	}
 
@@ -2072,13 +2000,13 @@ public class MIFProcessor extends Mif2Switch {
 				mifParticipant = getCommonModelClass(mifModel, className);
 			}
 		}
-		
+
 		return mifParticipant;
 	}
 
 	protected Classifier resolveMIFClassReference(StaticModel mifModel, String className) {
 		Classifier classifier = null;
-		
+
 		boolean isCMET = false;
 		if (mifModel != null) {
 			ClassBase mifParticipant = MIFUtil.getClassByName(mifModel, className);
@@ -2089,60 +2017,59 @@ public class MIFProcessor extends Mif2Switch {
 			}
 			if (mifParticipant != null) {
 				classifier = (Classifier) getMappingEntry(mifParticipant);
-				
-				if (isCMET)
-				{
+
+				if (isCMET) {
 					// tag the resulting class as a cmet ref
-					tagIFC( classifier, className);
+					tagIFC(classifier, className);
 				}
 			}
 		}
 
-//		if (classifier == null && !unresolvedClassNames.contains(className)) {
+		// if (classifier == null && !unresolvedClassNames.contains(className)) {
 		if (classifier == null) {
 			unresolvedClassNames.add(className);
-			diagnostics.error("Cannot resolve MIF association end type '" + className 
-					+ "' in model '" + MIFUtil.getModelName(mifModel) + "'",  null);
+			diagnostics.error(
+				"Cannot resolve MIF association end type '" + className + "' in model '" +
+						MIFUtil.getModelName(mifModel) + "'", null);
 		}
-		
+
 		return classifier;
 	}
 
 	protected Classifier resolveDatatypeReference(DatatypeRef datatypeRef) {
-		if (datatypeRef == null)
+		if (datatypeRef == null) {
 			return null;
+		}
 
 		Classifier umlClassifier = (Classifier) getMappingEntry(datatypeRef);
-		if (umlClassifier != null)
+		if (umlClassifier != null) {
 			return umlClassifier;
-		
-		if (transformerOptions.isSuppressDatatypeCollections()
-				&& ("BAG".equals(datatypeRef.getName())
-					|| "SET".equals(datatypeRef.getName())
-					|| "LIST".equals(datatypeRef.getName()))
-				&& (datatypeRef.getArgumentDatatype().size() == 1)) {
+		}
+
+		if (transformerOptions.isSuppressDatatypeCollections() &&
+				("BAG".equals(datatypeRef.getName()) || "SET".equals(datatypeRef.getName()) || "LIST".equals(datatypeRef.getName())) &&
+				(datatypeRef.getArgumentDatatype().size() == 1)) {
 			return resolveDatatypeReference(datatypeRef.getArgumentDatatype().get(0));
 		}
 
 		// Is this reference to a template parameter?
-		if (DatatypeQualifierKind.PARAMETER == datatypeRef.getQualifier()
-				|| DatatypeQualifierKind.PARAMETER_DIFF == datatypeRef.getQualifier()) {
+		if (DatatypeQualifierKind.PARAMETER == datatypeRef.getQualifier() ||
+				DatatypeQualifierKind.PARAMETER_DIFF == datatypeRef.getQualifier()) {
 			// This must reference a parameter on the containing Datatype definition, or parents
 			Datatype mifDatatype = MIFUtil.getContainingDatatype(datatypeRef);
 			Classifier umlDatatype = (Classifier) caseDatatype(mifDatatype);
 			Classifier parameteredElement = getParameteredElement(umlDatatype, datatypeRef.getName());
 			if (parameteredElement != null) {
 				return parameteredElement;
-			}
-			else {
-				diagnostics.error("Cannot find template parameter reference '" 
-						+ datatypeRef.getName() + "' in", umlDatatype);
+			} else {
+				diagnostics.error(
+					"Cannot find template parameter reference '" + datatypeRef.getName() + "' in", umlDatatype);
 				return null;
 			}
 		}
 
 		String name = MIFUtil.getDatatypeName(datatypeRef);
-		
+
 		// Is this datatypeRef used within a DatatypeModelLibrary?
 		DatatypeModelLibrary library = MIFUtil.getDatatypeLibrary(datatypeRef);
 		if (library != null) {
@@ -2190,21 +2117,22 @@ public class MIFProcessor extends Mif2Switch {
 				if (signature != null) {
 					for (TemplateParameter param : signature.getParameters()) {
 						// find matching parameter, allows for multiple parameters
-						if (param.getParameteredElement() instanceof Classifier
-								&& name.equals(((Classifier)param.getParameteredElement()).getName())) {
+						if (param.getParameteredElement() instanceof Classifier &&
+								name.equals(((Classifier) param.getParameteredElement()).getName())) {
 							return (Classifier) param.getParameteredElement();
 						}
 					}
 				}
 			}
 		}
-		
+
 		return null;
 	}
 
 	protected Classifier createTemplateBinding(DatatypeRef datatypeRef) {
-		if (datatypeRef == null)
+		if (datatypeRef == null) {
 			return null;
+		}
 
 		Package umlPackage = (Package) umlPackageStack.peek();
 		String boundName = MIFUtil.getDatatypeName(datatypeRef);
@@ -2216,51 +2144,50 @@ public class MIFProcessor extends Mif2Switch {
 			Object umlContainer = doSwitch(mifContainer);
 			if (umlContainer instanceof Interface) {
 				// check if existing nested classifier for this template binding
-//				umlClassifier = ((Interface)umlContainer).getNestedClassifier(boundName);
+				// umlClassifier = ((Interface)umlContainer).getNestedClassifier(boundName);
 				umlClassifier = (Classifier) umlPackage.getOwnedType(boundName);
-				
-				if (umlClassifier != null)
+
+				if (umlClassifier != null) {
 					return umlClassifier;
-				else {
-//					umlClassifier = ((Interface)umlContainer).createNestedClassifier(
-//							boundName, UMLPackage.eINSTANCE.getInterface());
+				} else {
+					// umlClassifier = ((Interface)umlContainer).createNestedClassifier(
+					// boundName, UMLPackage.eINSTANCE.getInterface());
 					umlClassifier = umlPackage.createOwnedInterface(boundName);
 				}
-			}
-			else if (umlContainer instanceof Class) {
-//				umlClassifier = ((Class)umlContainer).getNestedClassifier(boundName);
+			} else if (umlContainer instanceof Class) {
+				// umlClassifier = ((Class)umlContainer).getNestedClassifier(boundName);
 				umlClassifier = (Classifier) umlPackage.getOwnedType(boundName);
-				
-				if (umlClassifier != null)
+
+				if (umlClassifier != null) {
 					return umlClassifier;
-				else {
-//					umlClassifier = ((Class)umlContainer).createNestedClassifier(
-//							boundName, UMLPackage.eINSTANCE.getClass_());
+				} else {
+					// umlClassifier = ((Class)umlContainer).createNestedClassifier(
+					// boundName, UMLPackage.eINSTANCE.getClass_());
 					umlClassifier = umlPackage.createOwnedClass(boundName, false);
 				}
 			}
 		}
-		
-//		// Is this binding to a template parameter?
-//		DatatypeRef firstArg = datatypeRef.getArgumentDatatype().get(0);
-//		if (DatatypeQualifierKind.PARAMETER == firstArg.getQualifier()
-//				|| DatatypeQualifierKind.PARAMETER_DIFF == firstArg.getQualifier()) {
-//			Datatype containingDT = MIFUtil.getContainingDatatype(datatypeRef);
-//			Classifier umlDatatype = (Classifier) caseDatatype(containingDT);
-//			if (umlDatatype != null && umlDatatype instanceof Interface) {
-//				umlClassifier = ((Interface)umlDatatype).createNestedClassifier(
-//						boundName, UMLPackage.eINSTANCE.getInterface());
-//			}
-//		}
+
+		// // Is this binding to a template parameter?
+		// DatatypeRef firstArg = datatypeRef.getArgumentDatatype().get(0);
+		// if (DatatypeQualifierKind.PARAMETER == firstArg.getQualifier()
+		// || DatatypeQualifierKind.PARAMETER_DIFF == firstArg.getQualifier()) {
+		// Datatype containingDT = MIFUtil.getContainingDatatype(datatypeRef);
+		// Classifier umlDatatype = (Classifier) caseDatatype(containingDT);
+		// if (umlDatatype != null && umlDatatype instanceof Interface) {
+		// umlClassifier = ((Interface)umlDatatype).createNestedClassifier(
+		// boundName, UMLPackage.eINSTANCE.getInterface());
+		// }
+		// }
 		if (umlClassifier == null) {
 			umlClassifier = umlPackage.createOwnedInterface(boundName);
 		}
-		
+
 		// Don't add a global mapping entry for bindings, look only in nearest package
-//		addMappingEntry(datatypeRef, umlClassifier);
-		
+		// addMappingEntry(datatypeRef, umlClassifier);
+
 		UMLUtil.setEObjectID(umlClassifier);
-//		System.out.println("Creating binding: " + umlClassifier.getQualifiedName());
+		// System.out.println("Creating binding: " + umlClassifier.getQualifiedName());
 
 		Classifier target = null;
 		// Is this datatypeRef used within a DatatypeModelLibrary?
@@ -2284,41 +2211,40 @@ public class MIFProcessor extends Mif2Switch {
 				if (signature != null && !signature.getOwnedParameters().isEmpty()) {
 					TemplateBinding binding = umlClassifier.createTemplateBinding(signature);
 					UMLUtil.setEObjectID(binding);
-					
+
 					int paramIndex = 0;
 					for (DatatypeRef mifArg : datatypeRef.getArgumentDatatype()) {
 						TemplateParameterSubstitution substitution = binding.createParameterSubstitution();
 						substitution.setFormal(signature.getOwnedParameters().get(paramIndex++));
-						
+
 						Classifier umlArg = resolveDatatypeReference(mifArg);
 						if (umlArg != null) {
-							UMLUtil.setParameterableElement(substitution,umlArg);
-//							substitution.getActuals().add(umlArg);
-						}
-						else {
-							diagnostics.error("Cannot find datatype binding argument '" 
-									+ mifArg.getName() + "' for", umlClassifier);
+							UMLUtil.setParameterableElement(substitution, umlArg);
+							// substitution.getActuals().add(umlArg);
+						} else {
+							diagnostics.error(
+								"Cannot find datatype binding argument '" + mifArg.getName() + "' for", umlClassifier);
 						}
 					}
-					
+
 					break;
 				}
 			}
+		} else {
+			if (target == null) {
+				diagnostics.error(
+					"Cannot find datatype reference binding target '" + datatypeRef.getName() + "' for", umlClassifier);
+			} else {
+				diagnostics.error(
+					"Datatype binding target is not a template '" + datatypeRef.getName() + "' for", umlClassifier);
+			}
 		}
-		else {
-			if (target == null)
-				diagnostics.error("Cannot find datatype reference binding target '" 
-					+ datatypeRef.getName() + "' for", umlClassifier);
-			else
-				diagnostics.error("Datatype binding target is not a template '" 
-						+ datatypeRef.getName() + "' for", umlClassifier);
-		}
-		
+
 		return umlClassifier;
 	}
 
 	protected void setBusinessNames(Element umlElement, Stereotype hdfStereotype, List<BusinessName> businessNames) {
-		for (int index=0; index<businessNames.size(); index++) {
+		for (int index = 0; index < businessNames.size(); index++) {
 			String member = IHDFProfileConstants.BUSINESS_NAMES + "[" + index + "]";
 			String nameProperty = member + NamedElement.SEPARATOR + IHDFProfileConstants.BUSINESS_NAME_NAME;
 			String langProperty = member + NamedElement.SEPARATOR + IHDFProfileConstants.BUSINESS_NAME_LANG;
@@ -2326,14 +2252,14 @@ public class MIFProcessor extends Mif2Switch {
 			BusinessName businessName = businessNames.get(index);
 			umlElement.setValue(hdfStereotype, nameProperty, businessName.getName());
 			umlElement.setValue(hdfStereotype, langProperty, businessName.getLang());
-			
+
 			if (index == 0) {
 				// assign the first business name to UML alias name, to appear on class diagrams
 				UMLUtil.addAliasName(umlElement, businessName.getName());
 			}
 		}
 	}
-	
+
 	protected void importComments(Annotations annotations, Element element) {
 
 		if (annotations != null) {
@@ -2341,24 +2267,20 @@ public class MIFProcessor extends Mif2Switch {
 			if (annotations.getDocumentation() != null) {
 				// Create Definition Comment
 				if (annotations.getDocumentation().getDefinition() != null) {
-					importComment(annotations.getDocumentation()
-							.getDefinition(), element,
-							IHDFProfileConstants.DEFINITION);
+					importComment(
+						annotations.getDocumentation().getDefinition(), element, IHDFProfileConstants.DEFINITION);
 				}
 
 				// Create Description Comment
 				if (annotations.getDocumentation().getDescription() != null) {
-					importComment(annotations.getDocumentation()
-							.getDescription(), element,
-							IHDFProfileConstants.DESCRIPTION);
+					importComment(
+						annotations.getDocumentation().getDescription(), element, IHDFProfileConstants.DESCRIPTION);
 				}
 
 				// Create Design Comment
 				if (annotations.getDocumentation().getDesignComments() != null) {
-					for (DesignComment designComment : annotations
-							.getDocumentation().getDesignComments()) {
-						importComment(designComment, element,
-								IHDFProfileConstants.DESIGN_COMMENTS);
+					for (DesignComment designComment : annotations.getDocumentation().getDesignComments()) {
+						importComment(designComment, element, IHDFProfileConstants.DESIGN_COMMENTS);
 
 					}
 
@@ -2366,23 +2288,18 @@ public class MIFProcessor extends Mif2Switch {
 
 				// Create Other Annotation Comment
 				if (annotations.getDocumentation().getOtherAnnotation() != null) {
-					for (OtherAnnotation annotation : annotations
-							.getDocumentation().getOtherAnnotation()) {
+					for (OtherAnnotation annotation : annotations.getDocumentation().getOtherAnnotation()) {
 
-						for (FreeFormMarkupWithLanguage freeFormMarkupWithLanguage : annotation
-								.getData()) {
+						for (FreeFormMarkupWithLanguage freeFormMarkupWithLanguage : annotation.getData()) {
 
 							StringBuffer commentBuffer = new StringBuffer();
 
-							for (FeatureMap.Entry entry : freeFormMarkupWithLanguage
-									.getMixed()) {
+							for (FeatureMap.Entry entry : freeFormMarkupWithLanguage.getMixed()) {
 								if (entry.getValue() instanceof String) {
 									commentBuffer.append(entry.getValue());
 								}
 							}
-							createComment(element,
-									IHDFProfileConstants.OTHER_ANNOTATION,
-									commentBuffer.toString());
+							createComment(element, IHDFProfileConstants.OTHER_ANNOTATION, commentBuffer.toString());
 						}
 
 					}
@@ -2395,22 +2312,17 @@ public class MIFProcessor extends Mif2Switch {
 				 * Need to confirm this. SWM
 				 */
 				if (annotations.getDocumentation().getAppendix() != null) {
-					for (Appendix appendix : annotations.getDocumentation()
-							.getAppendix()) {
-						for (ComplexMarkupWithLanguage complexMarkupWithLanguage : appendix
-								.getCombinedText()) {
+					for (Appendix appendix : annotations.getDocumentation().getAppendix()) {
+						for (ComplexMarkupWithLanguage complexMarkupWithLanguage : appendix.getCombinedText()) {
 
 							StringBuffer commentBuffer = new StringBuffer();
 
-							for (FeatureMap.Entry entry : complexMarkupWithLanguage
-									.getMixed()) {
+							for (FeatureMap.Entry entry : complexMarkupWithLanguage.getMixed()) {
 								if (entry.getValue() instanceof String) {
 									commentBuffer.append(entry.getValue());
 								}
 							}
-							createComment(element,
-									IHDFProfileConstants.APPENDIX,
-									commentBuffer.toString());
+							createComment(element, IHDFProfileConstants.APPENDIX, commentBuffer.toString());
 						}
 
 					}
@@ -2419,15 +2331,13 @@ public class MIFProcessor extends Mif2Switch {
 				// Create Rationale Comment
 				if (annotations.getDocumentation().getRationale() != null) {
 					importComment(
-							annotations.getDocumentation().getRationale(),
-							element, IHDFProfileConstants.RATIONALE);
+						annotations.getDocumentation().getRationale(), element, IHDFProfileConstants.RATIONALE);
 				}
 
 				// Create Requirements Comment
 				if (annotations.getDocumentation().getRequirements() != null) {
-					importComment(annotations.getDocumentation()
-							.getRequirements(), element,
-							IHDFProfileConstants.REQUIREMENTS);
+					importComment(
+						annotations.getDocumentation().getRequirements(), element, IHDFProfileConstants.REQUIREMENTS);
 
 				}
 
@@ -2438,18 +2348,15 @@ public class MIFProcessor extends Mif2Switch {
 
 				// Create Usage Notes Comment
 				if (annotations.getDocumentation().getUsageNotes() != null) {
-					for (ContextAnnotation annotation : annotations
-							.getDocumentation().getUsageNotes()) {
-						importComment(annotation, element,
-								IHDFProfileConstants.USAGE_NOTES);
+					for (ContextAnnotation annotation : annotations.getDocumentation().getUsageNotes()) {
+						importComment(annotation, element, IHDFProfileConstants.USAGE_NOTES);
 					}
 				}
 
 				// Create Walkthrough Comment
 				if (annotations.getDocumentation().getWalkthrough() != null) {
-					importComment(annotations.getDocumentation()
-							.getWalkthrough(), element,
-							IHDFProfileConstants.WALKTHROUGH);
+					importComment(
+						annotations.getDocumentation().getWalkthrough(), element, IHDFProfileConstants.WALKTHROUGH);
 				}
 
 			}
@@ -2459,8 +2366,7 @@ public class MIFProcessor extends Mif2Switch {
 			if (annotations.getAppInfo() != null) {
 
 				if (annotations.getAppInfo().getFormalConstraint() != null) {
-					for (FormalConstraint mifConstraint : annotations
-							.getAppInfo().getFormalConstraint()) {
+					for (FormalConstraint mifConstraint : annotations.getAppInfo().getFormalConstraint()) {
 						importConstraint(mifConstraint, element, null);
 					}
 				}
@@ -2468,8 +2374,7 @@ public class MIFProcessor extends Mif2Switch {
 		}
 	}
 
-	protected void importComment(CascadableAnnotation annotation,
-			Element element, String stereotypeName) {
+	protected void importComment(CascadableAnnotation annotation, Element element, String stereotypeName) {
 
 		String commentText = renderCommentFromMIF2(annotation);
 
@@ -2479,17 +2384,15 @@ public class MIFProcessor extends Mif2Switch {
 
 	String temp = new String();;
 
-	protected void createComment(Element element, String stereotypeName,
-			String commentText) {
-	
+	protected void createComment(Element element, String stereotypeName, String commentText) {
+
 		if (commentText.length() > 0) {
 			Comment comment = element.createOwnedComment();
 			comment.setBody(commentText);
 
 			if (stereotypeName != null) {
-				Stereotype stereotype = comment
-						.getApplicableStereotype(IHDFProfileConstants.HDF_PROFILE_NAME
-								+ "::" + stereotypeName);
+				Stereotype stereotype = comment.getApplicableStereotype(IHDFProfileConstants.HDF_PROFILE_NAME + "::" +
+						stereotypeName);
 				if (stereotype != null) {
 					comment.applyStereotype(stereotype);
 
@@ -2500,51 +2403,43 @@ public class MIFProcessor extends Mif2Switch {
 				// if running within RSM, add its stereotype
 				if (element.getOwnedComments().size() == 1) {
 
-					Stereotype rsaDocStereotype = comment
-							.getApplicableStereotype(RSM_DOCUMENTATION_STEREOTYPE_QNAME);
-					if (rsaDocStereotype != null
-							&& !comment.isStereotypeApplied(rsaDocStereotype)) {
+					Stereotype rsaDocStereotype = comment.getApplicableStereotype(RSM_DOCUMENTATION_STEREOTYPE_QNAME);
+					if (rsaDocStereotype != null && !comment.isStereotypeApplied(rsaDocStereotype)) {
 
 						comment.applyStereotype(rsaDocStereotype);
 					}
 				}
 			} catch (IllegalArgumentException e) {
 				// usually due to a UML element not contained by the model
-				diagnostics.error(
-						"error applying Documentation stereotype to: "
-								+ comment.getOwner() + " comment: "
-								+ commentText, null);
+				diagnostics.error("error applying Documentation stereotype to: " + comment.getOwner() + " comment: " +
+						commentText, null);
 			}
 		}
 
 	}
 
-	protected void importConstraint(FormalConstraint mifConstraint,
-			Element element, String stereotypeName) {
+	protected void importConstraint(FormalConstraint mifConstraint, Element element, String stereotypeName) {
 		String body = renderCommentFromMIF2(mifConstraint);
 		if (body.length() > 0) {
 			Constraint constraint = UMLFactory.eINSTANCE.createConstraint();
-			UMLUtil.getNearestNamespace(element).getOwnedRules()
-					.add(constraint);
+			UMLUtil.getNearestNamespace(element).getOwnedRules().add(constraint);
 			constraint.setName(mifConstraint.getName());
 			constraint.getConstrainedElements().add(element);
 
-			OpaqueExpression expression = (OpaqueExpression) constraint
-					.createSpecification(null, null,
-							UMLPackage.Literals.OPAQUE_EXPRESSION);
+			OpaqueExpression expression = (OpaqueExpression) constraint.createSpecification(
+				null, null, UMLPackage.Literals.OPAQUE_EXPRESSION);
 			expression.getBodies().add(body);
 
 			if (stereotypeName != null) {
-				Stereotype stereotype = constraint
-						.getApplicableStereotype(IHDFProfileConstants.HDF_PROFILE_NAME
-								+ "::" + stereotypeName);
+				Stereotype stereotype = constraint.getApplicableStereotype(IHDFProfileConstants.HDF_PROFILE_NAME +
+						"::" + stereotypeName);
 				if (stereotype != null) {
 					constraint.applyStereotype(stereotype);
 				}
 			}
 		}
 	}
-	
+
 	protected String renderCommentFromMIF2(CascadableAnnotation annotation) {
 
 		CommentSwitch commentSwitch = new CommentSwitch(transformerOptions);
@@ -2569,7 +2464,5 @@ public class MIFProcessor extends Mif2Switch {
 		}
 		return commentSwitch.getComment();
 	}
-	
-	
 
 }

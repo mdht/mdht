@@ -82,11 +82,11 @@ import org.openhealthtools.mdht.uml.hl7.core.util.DatatypeConstants;
 import org.openhealthtools.mdht.uml.hl7.mif2uml.internal.importer.DiagnosticsHelper;
 
 /**
- * UMLProcessor implements the UML to MIF logic to support the MIF export.   
- *
+ * UMLProcessor implements the UML to MIF logic to support the MIF export.
+ * 
  */
 public class UMLProcessor extends UMLSwitch<Object> {
-		
+
 	/**
 	 * GeneralizationProcessor creates the child class tags from uml
 	 * generalizations. MIF is the opposite of UML with regard to inheritance
@@ -101,9 +101,9 @@ public class UMLProcessor extends UMLSwitch<Object> {
 	 * @author eclipse
 	 * 
 	 */
-	public class GeneralizationProcessor extends UMLSwitch<Object>
-	{
+	public class GeneralizationProcessor extends UMLSwitch<Object> {
 
+		@Override
 		public Object caseGeneralization(Generalization generalization) {
 
 			Classifier general = generalization.getGeneral();
@@ -112,7 +112,7 @@ public class UMLProcessor extends UMLSwitch<Object> {
 
 			boolean found = false;
 
-			// If the mif general model where the parent class is defined has been loaded 
+			// If the mif general model where the parent class is defined has been loaded
 			if (mifModels.containsKey(general.getNearestPackage().getName())) {
 
 				// loop over mif definitions to find parent class
@@ -129,7 +129,9 @@ public class UMLProcessor extends UMLSwitch<Object> {
 							classGeneralization.setName(specific.getName());
 						} else {
 							String cmet = popIFCAnnotation(specific);
-							classGeneralization.setName((cmet != null) ? cmet : specific.getName());
+							classGeneralization.setName((cmet != null)
+									? cmet
+									: specific.getName());
 
 						}
 
@@ -140,23 +142,22 @@ public class UMLProcessor extends UMLSwitch<Object> {
 					}
 				}
 			}
-			
-			if (!found)
-			{
-				diagnostics.error("Cannot resolve Generalization " , generalization);
+
+			if (!found) {
+				diagnostics.error("Cannot resolve Generalization ", generalization);
 			}
 
 			return generalization;
 		}
 	}
-	
+
 	/** Errors and warnings created by this transformation. */
 	private DiagnosticsHelper diagnostics = new DiagnosticsHelper();
 
 	private final static String MIF_SCHEMA_VERSION = "2.1.2";
 
 	private final static String STATIC_MODEL_DERIVATION_ID = "1";
-	
+
 	DocumentRoot root = null;
 
 	private StaticModel mifModel;
@@ -165,39 +166,39 @@ public class UMLProcessor extends UMLSwitch<Object> {
 
 	GeneralizationProcessor generalizationProcessor = new GeneralizationProcessor();
 
-	private HashMap<String,StaticModel > mifModels = new HashMap<String,StaticModel>();
-	
-	private HashMap<String,Resource > mifResources = new HashMap<String,Resource>();
-	
+	private HashMap<String, StaticModel> mifModels = new HashMap<String, StaticModel>();
+
+	private HashMap<String, Resource> mifResources = new HashMap<String, Resource>();
+
 	/**
 	 * Default ctor
 	 */
 	public UMLProcessor() {
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseAssociation(org.eclipse.uml2.uml.Association)
 	 */
 	@Override
 	public Object caseAssociation(Association association) {
-		
-
-		int sortOrder = 1;
 
 		org.openhealthtools.mdht.emf.hl7.mif2.Association mif2Association = Mif2Factory.eINSTANCE.createAssociation();
-		
+
 		org.openhealthtools.mdht.emf.hl7.mif2.AssociationEnd mif2TraversableAssociationEnd = Mif2Factory.eINSTANCE.createAssociationEnd();
-		
+
 		org.openhealthtools.mdht.emf.hl7.mif2.NonTraversableAssociationEnd mif2NonTraversableAssociationEnd = Mif2Factory.eINSTANCE.createNonTraversableAssociationEnd();
-		
+
 		AssociationEndDerivation associationEndDerivation = Mif2Factory.eINSTANCE.createAssociationEndDerivation();
-		
+
 		associationEndDerivation.setStaticModelDerivationId(STATIC_MODEL_DERIVATION_ID);
-		
+
 		// Check to see if the association has choice items
-		
-		Stereotype choiceContent = HL7ResourceUtil.getAppliedHDFStereotype(association, IHDFProfileConstants.CHOICE_CONTENT);
-		
+
+		Stereotype choiceContent = HL7ResourceUtil.getAppliedHDFStereotype(
+			association, IHDFProfileConstants.CHOICE_CONTENT);
+
 		if (choiceContent != null) {
 
 			List choiceList = (List) association.getValue(choiceContent, IHDFProfileConstants.CHOICE_MEMBERS);
@@ -207,19 +208,19 @@ public class UMLProcessor extends UMLSwitch<Object> {
 			AssociationEndSpecialization associationEndSpecialization;
 
 			for (int choiceCtr = 0; choiceCtr < choiceList.size(); choiceCtr++) {
-				
+
 				String member = IHDFProfileConstants.CHOICE_MEMBERS + "[" + choiceCtr + "]";
 				String choiceTarget = member + NamedElement.SEPARATOR + IHDFProfileConstants.CHOICE_TARGET;
 				String traversalName = member + NamedElement.SEPARATOR + IHDFProfileConstants.TRAVERSAL_NAME;
 
 				Class target = (Class) association.getValue(choiceContent, choiceTarget);
-				
+
 				if (target != null) {
 
 					String name = (String) association.getValue(choiceContent, traversalName);
 
 					associationEndSpecialization = Mif2Factory.eINSTANCE.createAssociationEndSpecialization();
-				
+
 					String cmet = popIFCAnnotation(target);
 
 					if (cmet != null) {
@@ -232,7 +233,8 @@ public class UMLProcessor extends UMLSwitch<Object> {
 
 					associationEndSpecialization.setTraversalName(name);
 
-					Stereotype choiceGroup = HL7ResourceUtil.getAppliedHDFStereotype(target, IHDFProfileConstants.CHOICE_GROUP);
+					Stereotype choiceGroup = HL7ResourceUtil.getAppliedHDFStereotype(
+						target, IHDFProfileConstants.CHOICE_GROUP);
 
 					currentChoiceList.add(associationEndSpecialization);
 
@@ -246,20 +248,19 @@ public class UMLProcessor extends UMLSwitch<Object> {
 			}
 
 		}
-				
-		for (Property property : association.getMemberEnds())
-		{			
+
+		for (Property property : association.getMemberEnds()) {
 			if (property.isNavigable()) {
 
 				if (property.getType() != null) {
-					String ownerName = property.getType().getName(); 
+					String ownerName = property.getType().getName();
 
 					String cmet = popIFCAnnotation(property.getType());
 
 					if (cmet != null) {
 						mif2TraversableAssociationEnd.setParticipantClassName(cmet);
 					} else {
-					mif2TraversableAssociationEnd.setParticipantClassName(ownerName);
+						mif2TraversableAssociationEnd.setParticipantClassName(ownerName);
 					}
 					associationEndDerivation.setClassName(ownerName);
 
@@ -282,10 +283,10 @@ public class UMLProcessor extends UMLSwitch<Object> {
 				if (property.getUpper() == LiteralUnlimitedNatural.UNLIMITED) {
 					mif2TraversableAssociationEnd.setMaximumMultiplicity(UnlimitedMultiplicity.get("*"));
 				} else {
-					mif2TraversableAssociationEnd.setMaximumMultiplicity(new BigInteger(String.valueOf(property.getUpper())));
+					mif2TraversableAssociationEnd.setMaximumMultiplicity(new BigInteger(
+						String.valueOf(property.getUpper())));
 				}
 
-	
 				String cmet = popIFCAnnotation(property.getType());
 
 				if (cmet != null) {
@@ -293,8 +294,7 @@ public class UMLProcessor extends UMLSwitch<Object> {
 				} else {
 					mif2NonTraversableAssociationEnd.setParticipantClassName(property.getOtherEnd().getType().getName());
 				}
-				
-								
+
 				mif2Association.getTraversableConnection().add(mif2TraversableAssociationEnd);
 
 				mif2NonTraversableAssociationEnd.getDerivedFrom().add(associationEndDerivation);
@@ -302,21 +302,21 @@ public class UMLProcessor extends UMLSwitch<Object> {
 				mif2Association.getNonTraversableConnection().add(mif2NonTraversableAssociationEnd);
 
 			}
-		}	
-		
-	
+		}
 
 		mifModel.getAssociation().add(mif2Association);
 
 		return association;
 	}
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseClass(org.eclipse.uml2.uml.Class)
 	 */
+	@Override
 	public Object caseClass(Class umlClass) {
-		
-		
-		
+
 		Stereotype appliedStereotype = RIMProfileUtil.getRIMStereotype(umlClass);
 
 		if (appliedStereotype != null) {
@@ -331,96 +331,97 @@ public class UMLProcessor extends UMLSwitch<Object> {
 
 			flatClass.getDerivedFrom().add(createRimClassDerivation(umlClass));
 
-
-			
 			// Ugh - nasty loop to set the annotations
-			for (org.eclipse.uml2.uml.Comment comment : umlClass.getOwnedComments())
-			{
-				
-				ComplexMarkupWithLanguage complexMarkupWithLanguage = Mif2Factory.eINSTANCE.createComplexMarkupWithLanguage();
-				
-				FeatureMapUtil.addText(complexMarkupWithLanguage.getMixed(), comment.getBody() );		
-				
-				flatClass.setAnnotations(Mif2Factory.eINSTANCE.createClassAnnotations() );
-				
-				flatClass.getAnnotations().setDocumentation(Mif2Factory.eINSTANCE.createDocumentation());
-				
-				
-				  
-				
-				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.DEFINITION)!=null )
-				{
-					
-					flatClass.getAnnotations().getDocumentation().setDefinition(Mif2Factory.eINSTANCE.createCascadableAnnotation() );
-					
-					flatClass.getAnnotations().getDocumentation().getDefinition().getText().add(complexMarkupWithLanguage);		
-					
-					
-				}
-				
-				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.DESCRIPTION)!=null )
-				{
-					flatClass.getAnnotations().getDocumentation().setDescription(Mif2Factory.eINSTANCE.createCascadableAnnotation());
-					
-					flatClass.getAnnotations().getDocumentation().getDescription().getText().add(complexMarkupWithLanguage);		
-				}			
-			
-				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.DESIGN_COMMENTS)!=null )
-				{					
-					DesignComment designComment = Mif2Factory.eINSTANCE.createDesignComment();
-					
-					designComment.getText().add(complexMarkupWithLanguage);
-					
-					flatClass.getAnnotations().getDocumentation().getDesignComments().add(designComment);		
-				} 
-				
-//				if (comment.getAppliedStereotype(HDFOPEN_ISSUES) != null) {
-//					flatClass.getAnnotations().getDocumentation().getDescription().getText().add(complexMarkupWithLanguage);
-//				}
+			for (org.eclipse.uml2.uml.Comment comment : umlClass.getOwnedComments()) {
 
-				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.OTHER_ANNOTATION)  != null) {
+				ComplexMarkupWithLanguage complexMarkupWithLanguage = Mif2Factory.eINSTANCE.createComplexMarkupWithLanguage();
+
+				FeatureMapUtil.addText(complexMarkupWithLanguage.getMixed(), comment.getBody());
+
+				flatClass.setAnnotations(Mif2Factory.eINSTANCE.createClassAnnotations());
+
+				flatClass.getAnnotations().setDocumentation(Mif2Factory.eINSTANCE.createDocumentation());
+
+				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.DEFINITION) != null) {
+
+					flatClass.getAnnotations().getDocumentation().setDefinition(
+						Mif2Factory.eINSTANCE.createCascadableAnnotation());
+
+					flatClass.getAnnotations().getDocumentation().getDefinition().getText().add(
+						complexMarkupWithLanguage);
+
+				}
+
+				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.DESCRIPTION) != null) {
+					flatClass.getAnnotations().getDocumentation().setDescription(
+						Mif2Factory.eINSTANCE.createCascadableAnnotation());
+
+					flatClass.getAnnotations().getDocumentation().getDescription().getText().add(
+						complexMarkupWithLanguage);
+				}
+
+				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.DESIGN_COMMENTS) != null) {
+					DesignComment designComment = Mif2Factory.eINSTANCE.createDesignComment();
+
+					designComment.getText().add(complexMarkupWithLanguage);
+
+					flatClass.getAnnotations().getDocumentation().getDesignComments().add(designComment);
+				}
+
+				// if (comment.getAppliedStereotype(HDFOPEN_ISSUES) != null) {
+				// flatClass.getAnnotations().getDocumentation().getDescription().getText().add(complexMarkupWithLanguage);
+				// }
+
+				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.OTHER_ANNOTATION) != null) {
 					OtherAnnotation otherAnnotation = Mif2Factory.eINSTANCE.createOtherAnnotation();
-					
+
 					otherAnnotation.getText().add(complexMarkupWithLanguage);
-					
+
 					flatClass.getAnnotations().getDocumentation().getOtherAnnotation().add(otherAnnotation);
 				}
 
-				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.RATIONALE)  != null) {
-					
-					flatClass.getAnnotations().getDocumentation().setDescription(Mif2Factory.eINSTANCE.createCascadableAnnotation());
-					
-					flatClass.getAnnotations().getDocumentation().getDescription().getText().add(complexMarkupWithLanguage);
+				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.RATIONALE) != null) {
+
+					flatClass.getAnnotations().getDocumentation().setDescription(
+						Mif2Factory.eINSTANCE.createCascadableAnnotation());
+
+					flatClass.getAnnotations().getDocumentation().getDescription().getText().add(
+						complexMarkupWithLanguage);
 				}
 
-				if ( HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.REFERENCES)  != null) {
-					flatClass.getAnnotations().getDocumentation().getDescription().getText().add(complexMarkupWithLanguage);
+				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.REFERENCES) != null) {
+					flatClass.getAnnotations().getDocumentation().getDescription().getText().add(
+						complexMarkupWithLanguage);
 				}
 
-				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.REQUIREMENTS)  != null) {
-					
-					flatClass.getAnnotations().getDocumentation().setRequirements(Mif2Factory.eINSTANCE.createContextAnnotation());
-					
-					flatClass.getAnnotations().getDocumentation().getRequirements().getText().add(complexMarkupWithLanguage);
+				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.REQUIREMENTS) != null) {
+
+					flatClass.getAnnotations().getDocumentation().setRequirements(
+						Mif2Factory.eINSTANCE.createContextAnnotation());
+
+					flatClass.getAnnotations().getDocumentation().getRequirements().getText().add(
+						complexMarkupWithLanguage);
 				}
 
-				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.USAGE_NOTES)  != null) {
-					
-					ContextAnnotation contextAnnotation =  Mif2Factory.eINSTANCE.createContextAnnotation();
-					
+				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.USAGE_NOTES) != null) {
+
+					ContextAnnotation contextAnnotation = Mif2Factory.eINSTANCE.createContextAnnotation();
+
 					contextAnnotation.getText().add(complexMarkupWithLanguage);
-					
+
 					flatClass.getAnnotations().getDocumentation().getUsageNotes().add(contextAnnotation);
 				}
 
-				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.WALKTHROUGH)  != null) {
-					
-					flatClass.getAnnotations().getDocumentation().setWalkthrough(Mif2Factory.eINSTANCE.createContextAnnotation());
-					
-					flatClass.getAnnotations().getDocumentation().getWalkthrough().getText().add(complexMarkupWithLanguage);
+				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.WALKTHROUGH) != null) {
+
+					flatClass.getAnnotations().getDocumentation().setWalkthrough(
+						Mif2Factory.eINSTANCE.createContextAnnotation());
+
+					flatClass.getAnnotations().getDocumentation().getWalkthrough().getText().add(
+						complexMarkupWithLanguage);
 				}
-				
-			}		
+
+			}
 
 			currentMifClass.setClass(flatClass);
 
@@ -433,9 +434,10 @@ public class UMLProcessor extends UMLSwitch<Object> {
 
 					Interface contract = interfaceRealization.getContract();
 
-					Stereotype hdfStereotype =HL7ResourceUtil.getAppliedHDFStereotype(contract, IHDFProfileConstants.ENTRY_POINT); 
-					if (hdfStereotype  != null) {
-						//create an empty mif2 entry point
+					Stereotype hdfStereotype = HL7ResourceUtil.getAppliedHDFStereotype(
+						contract, IHDFProfileConstants.ENTRY_POINT);
+					if (hdfStereotype != null) {
+						// create an empty mif2 entry point
 						EntryPoint entryPoint = Mif2Factory.eINSTANCE.createEntryPoint();
 
 						entryPoint.setId(contract.getNearestPackage().getName());
@@ -451,21 +453,17 @@ public class UMLProcessor extends UMLSwitch<Object> {
 						epa.getDocumentation().setDescription(Mif2Factory.eINSTANCE.createCascadableAnnotation());
 
 						ComplexMarkupWithLanguage complexMarkupWithLanguage = Mif2Factory.eINSTANCE.createComplexMarkupWithLanguage();
-						
-						EnumerationLiteral useKind = (EnumerationLiteral)contract.getValue(hdfStereotype , "useKind");
-												
-						if (useKind != null)
-						{
-							entryPoint.setUseKind(StaticModelUseKind.get(useKind.getLabel()));	
+
+						EnumerationLiteral useKind = (EnumerationLiteral) contract.getValue(hdfStereotype, "useKind");
+
+						if (useKind != null) {
+							entryPoint.setUseKind(StaticModelUseKind.get(useKind.getLabel()));
 						}
-			
-					
-					
-						for (org.eclipse.uml2.uml.Comment comment : contract.getOwnedComments())
-						{
-							FeatureMapUtil.addText(complexMarkupWithLanguage.getMixed(), comment.getBody() );	
+
+						for (org.eclipse.uml2.uml.Comment comment : contract.getOwnedComments()) {
+							FeatureMapUtil.addText(complexMarkupWithLanguage.getMixed(), comment.getBody());
 						}
-											
+
 						epa.getDocumentation().getDescription().getText().add(complexMarkupWithLanguage);
 
 						entryPoint.setAnnotations(epa);
@@ -474,14 +472,17 @@ public class UMLProcessor extends UMLSwitch<Object> {
 					}
 				}
 			}
-		}			
+		}
 
 		return umlClass;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.util.UMLSwitch#casePackage(org.eclipse.uml2.uml.Package)
 	 */
+	@Override
 	public Object casePackage(Package umlPackage) {
 
 		mapMifModelAttributes(umlPackage);
@@ -489,201 +490,206 @@ public class UMLProcessor extends UMLSwitch<Object> {
 		return mifModel;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.uml2.uml.util.UMLSwitch#caseProperty(org.eclipse.uml2.uml.Property)
 	 */
+	@Override
 	public Object caseProperty(Property umlProperty) {
-		
-		
+
 		Stereotype appliedStereotype = RIMProfileUtil.getRIMStereotype(umlProperty.getOwner());
 
 		if (appliedStereotype != null) {
 
-		Stereotype hdfStereoptype = HL7ResourceUtil.getAppliedHDFStereotype(umlProperty, IHDFProfileConstants.HDF_ATTRIBUTE); 
-		
-		Attribute attribute = null;
-		if (hdfStereoptype != null) {
-			attribute = Mif2Factory.eINSTANCE.createAttribute();
-			//map attribute name
-			attribute.setName(umlProperty.getName());
+			Stereotype hdfStereoptype = HL7ResourceUtil.getAppliedHDFStereotype(
+				umlProperty, IHDFProfileConstants.HDF_ATTRIBUTE);
 
-			//map Mif attribute multiplicity from UML Property's 
-			mapMultiplicity(umlProperty, attribute);
+			Attribute attribute = null;
+			if (hdfStereoptype != null) {
+				attribute = Mif2Factory.eINSTANCE.createAttribute();
+				// map attribute name
+				attribute.setName(umlProperty.getName());
 
-			//get the umlProperty sortKey attribute and set it to Mif attribute sortKey
-			String sortKey = (String) umlProperty.getValue(hdfStereoptype, IHDFProfileConstants.SORT_KEY);
-			attribute.setSortKey(sortKey);
+				// map Mif attribute multiplicity from UML Property's
+				mapMultiplicity(umlProperty, attribute);
 
-			Boolean isImmutable = (Boolean) umlProperty.getValue(hdfStereoptype, IHDFProfileConstants.IS_IMMUTABLE);
-			if (isImmutable != null) {
-				attribute.setIsImmutable(isImmutable);
-			}
+				// get the umlProperty sortKey attribute and set it to Mif attribute sortKey
+				String sortKey = (String) umlProperty.getValue(hdfStereoptype, IHDFProfileConstants.SORT_KEY);
+				attribute.setSortKey(sortKey);
 
-			Boolean isMandatory = (Boolean) umlProperty.getValue(hdfStereoptype, IHDFProfileConstants.IS_MANDATORY);
-			if (isMandatory != null) {
-				attribute.setIsMandatory(isMandatory);
-			}
-
-			//map attribute data type
-			mapDatatype(umlProperty, attribute);
-			
-			AttributeDerivation attributeDerivation = Mif2Factory.eINSTANCE.createAttributeDerivation();
-			
-			attributeDerivation.setStaticModelDerivationId(STATIC_MODEL_DERIVATION_ID);
-			
-			attributeDerivation.setClassName(appliedStereotype.getName());
-			
-			attributeDerivation.setAttributeName(umlProperty.getName());
-			
-			attribute.getDerivedFrom().add(attributeDerivation );
-			
-			// Ugh - nasty loop to set the annotations
-			for (org.eclipse.uml2.uml.Comment comment : umlProperty.getOwnedComments())
-			{
-				
-				ComplexMarkupWithLanguage complexMarkupWithLanguage = Mif2Factory.eINSTANCE.createComplexMarkupWithLanguage();
-				
-				FeatureMapUtil.addText(complexMarkupWithLanguage.getMixed(), comment.getBody() );		
-				
-				attribute.setAnnotations(Mif2Factory.eINSTANCE.createAttributeAnnotations() );
-				
-				attribute.getAnnotations().setDocumentation(Mif2Factory.eINSTANCE.createDocumentation());
-				
-				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.DEFINITION) !=null )
-				{
-					
-					attribute.getAnnotations().getDocumentation().setDefinition(Mif2Factory.eINSTANCE.createCascadableAnnotation() );
-					
-					attribute.getAnnotations().getDocumentation().getDefinition().getText().add(complexMarkupWithLanguage);		
-					
-					
-				}
-				
-				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.DESCRIPTION) !=null )
-				{
-					attribute.getAnnotations().getDocumentation().setDescription(Mif2Factory.eINSTANCE.createCascadableAnnotation());
-					
-					attribute.getAnnotations().getDocumentation().getDescription().getText().add(complexMarkupWithLanguage);		
-				}			
-			
-				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.DESIGN_COMMENTS) !=null )
-				{					
-					DesignComment designComment = Mif2Factory.eINSTANCE.createDesignComment();
-					
-					designComment.getText().add(complexMarkupWithLanguage);
-					
-					attribute.getAnnotations().getDocumentation().getDesignComments().add(designComment);		
-				} 
-				
-
-				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.OTHER_ANNOTATION)  != null) {
-					OtherAnnotation otherAnnotation = Mif2Factory.eINSTANCE.createOtherAnnotation();
-					
-					otherAnnotation.getText().add(complexMarkupWithLanguage);
-					
-					attribute.getAnnotations().getDocumentation().getOtherAnnotation().add(otherAnnotation);
+				Boolean isImmutable = (Boolean) umlProperty.getValue(hdfStereoptype, IHDFProfileConstants.IS_IMMUTABLE);
+				if (isImmutable != null) {
+					attribute.setIsImmutable(isImmutable);
 				}
 
-				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.RATIONALE) != null) {
-					attribute.getAnnotations().getDocumentation().setDescription(Mif2Factory.eINSTANCE.createCascadableAnnotation());
-					
-					attribute.getAnnotations().getDocumentation().getDescription().getText().add(complexMarkupWithLanguage);
+				Boolean isMandatory = (Boolean) umlProperty.getValue(hdfStereoptype, IHDFProfileConstants.IS_MANDATORY);
+				if (isMandatory != null) {
+					attribute.setIsMandatory(isMandatory);
 				}
 
-				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.REFERENCES)  != null) {
-					attribute.getAnnotations().getDocumentation().getDescription().getText().add(complexMarkupWithLanguage);
+				// map attribute data type
+				mapDatatype(umlProperty, attribute);
+
+				AttributeDerivation attributeDerivation = Mif2Factory.eINSTANCE.createAttributeDerivation();
+
+				attributeDerivation.setStaticModelDerivationId(STATIC_MODEL_DERIVATION_ID);
+
+				attributeDerivation.setClassName(appliedStereotype.getName());
+
+				attributeDerivation.setAttributeName(umlProperty.getName());
+
+				attribute.getDerivedFrom().add(attributeDerivation);
+
+				// Ugh - nasty loop to set the annotations
+				for (org.eclipse.uml2.uml.Comment comment : umlProperty.getOwnedComments()) {
+
+					ComplexMarkupWithLanguage complexMarkupWithLanguage = Mif2Factory.eINSTANCE.createComplexMarkupWithLanguage();
+
+					FeatureMapUtil.addText(complexMarkupWithLanguage.getMixed(), comment.getBody());
+
+					attribute.setAnnotations(Mif2Factory.eINSTANCE.createAttributeAnnotations());
+
+					attribute.getAnnotations().setDocumentation(Mif2Factory.eINSTANCE.createDocumentation());
+
+					if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.DEFINITION) != null) {
+
+						attribute.getAnnotations().getDocumentation().setDefinition(
+							Mif2Factory.eINSTANCE.createCascadableAnnotation());
+
+						attribute.getAnnotations().getDocumentation().getDefinition().getText().add(
+							complexMarkupWithLanguage);
+
+					}
+
+					if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.DESCRIPTION) != null) {
+						attribute.getAnnotations().getDocumentation().setDescription(
+							Mif2Factory.eINSTANCE.createCascadableAnnotation());
+
+						attribute.getAnnotations().getDocumentation().getDescription().getText().add(
+							complexMarkupWithLanguage);
+					}
+
+					if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.DESIGN_COMMENTS) != null) {
+						DesignComment designComment = Mif2Factory.eINSTANCE.createDesignComment();
+
+						designComment.getText().add(complexMarkupWithLanguage);
+
+						attribute.getAnnotations().getDocumentation().getDesignComments().add(designComment);
+					}
+
+					if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.OTHER_ANNOTATION) != null) {
+						OtherAnnotation otherAnnotation = Mif2Factory.eINSTANCE.createOtherAnnotation();
+
+						otherAnnotation.getText().add(complexMarkupWithLanguage);
+
+						attribute.getAnnotations().getDocumentation().getOtherAnnotation().add(otherAnnotation);
+					}
+
+					if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.RATIONALE) != null) {
+						attribute.getAnnotations().getDocumentation().setDescription(
+							Mif2Factory.eINSTANCE.createCascadableAnnotation());
+
+						attribute.getAnnotations().getDocumentation().getDescription().getText().add(
+							complexMarkupWithLanguage);
+					}
+
+					if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.REFERENCES) != null) {
+						attribute.getAnnotations().getDocumentation().getDescription().getText().add(
+							complexMarkupWithLanguage);
+					}
+
+					if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.REQUIREMENTS) != null) {
+
+						attribute.getAnnotations().getDocumentation().setRequirements(
+							Mif2Factory.eINSTANCE.createContextAnnotation());
+
+						attribute.getAnnotations().getDocumentation().getRequirements().getText().add(
+							complexMarkupWithLanguage);
+					}
+
+					if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.USAGE_NOTES) != null) {
+
+						ContextAnnotation contextAnnotation = Mif2Factory.eINSTANCE.createContextAnnotation();
+
+						contextAnnotation.getText().add(complexMarkupWithLanguage);
+
+						attribute.getAnnotations().getDocumentation().getUsageNotes().add(contextAnnotation);
+					}
+
+					if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.WALKTHROUGH) != null) {
+
+						attribute.getAnnotations().getDocumentation().setWalkthrough(
+							Mif2Factory.eINSTANCE.createContextAnnotation());
+
+						attribute.getAnnotations().getDocumentation().getWalkthrough().getText().add(
+							complexMarkupWithLanguage);
+					}
+
 				}
 
-				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.REQUIREMENTS) != null) {
-					
-					attribute.getAnnotations().getDocumentation().setRequirements(Mif2Factory.eINSTANCE.createContextAnnotation());
-					
-					attribute.getAnnotations().getDocumentation().getRequirements().getText().add(complexMarkupWithLanguage);
-				}
-
-				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.USAGE_NOTES)  != null) {
-					
-					ContextAnnotation contextAnnotation =  Mif2Factory.eINSTANCE.createContextAnnotation();
-					
-					contextAnnotation.getText().add(complexMarkupWithLanguage);
-					
-					attribute.getAnnotations().getDocumentation().getUsageNotes().add(contextAnnotation);
-				}
-
-				if (HL7ResourceUtil.getAppliedHDFStereotype(comment, IHDFProfileConstants.WALKTHROUGH) != null) {
-					
-					attribute.getAnnotations().getDocumentation().setWalkthrough(Mif2Factory.eINSTANCE.createContextAnnotation());
-					
-					attribute.getAnnotations().getDocumentation().getWalkthrough().getText().add(complexMarkupWithLanguage);
-				}
-				
-			}		
-			
-
-			if (currentMifClass != null)
-			{
-				if (currentMifClass.getClass_() != null)
-				{
-					if (currentMifClass.getClass_().getAttribute() != null)
-					{
-						currentMifClass.getClass_().getAttribute().add(attribute);			
+				if (currentMifClass != null) {
+					if (currentMifClass.getClass_() != null) {
+						if (currentMifClass.getClass_().getAttribute() != null) {
+							currentMifClass.getClass_().getAttribute().add(attribute);
+						}
 					}
 				}
 			}
-		}
-		
-//		Vocabulary Version Issue currently on SMD import - Requiring codingStrength on vocabularyspecification on attributes which is not a attribute on the current MIF2 emf
 
-		if (umlProperty.getAppliedStereotype("HDF::CodeSystemConstraint") != null) {
+			// Vocabulary Version Issue currently on SMD import - Requiring codingStrength on vocabularyspecification on attributes which is not a
+			// attribute on the current MIF2 emf
 
-			Stereotype codeSystemConstraint = umlProperty.getAppliedStereotype("HDF::CodeSystemConstraint");
+			if (umlProperty.getAppliedStereotype("HDF::CodeSystemConstraint") != null) {
 
-			VocabularySpecification vocabularySpecification = Mif2Factory.eINSTANCE.createVocabularySpecification();
+				Stereotype codeSystemConstraint = umlProperty.getAppliedStereotype("HDF::CodeSystemConstraint");
 
-			VocabularyCodeRef vocabularyCodeRef = Mif2Factory.eINSTANCE.createVocabularyCodeRef();
+				VocabularySpecification vocabularySpecification = Mif2Factory.eINSTANCE.createVocabularySpecification();
 
-			vocabularyCodeRef.setCode((String) umlProperty.getValue(codeSystemConstraint, "code"));
+				VocabularyCodeRef vocabularyCodeRef = Mif2Factory.eINSTANCE.createVocabularyCodeRef();
 
-			vocabularyCodeRef.setCodeSystemName((String) umlProperty.getValue(codeSystemConstraint, "name"));
+				vocabularyCodeRef.setCode((String) umlProperty.getValue(codeSystemConstraint, "code"));
 
-			vocabularySpecification.setCode(vocabularyCodeRef);
-						
-			attribute.setVocabulary(vocabularySpecification);
+				vocabularyCodeRef.setCodeSystemName((String) umlProperty.getValue(codeSystemConstraint, "name"));
 
-		}
+				vocabularySpecification.setCode(vocabularyCodeRef);
 
-		if (umlProperty.getAppliedStereotype("HDF::ConceptDomainConstraint") != null) {
+				attribute.setVocabulary(vocabularySpecification);
 
-			Stereotype conceptDomainConstraint = umlProperty.getAppliedStereotype("HDF::ConceptDomainConstraint");
+			}
 
-			VocabularySpecification vocabularySpecification = Mif2Factory.eINSTANCE.createVocabularySpecification();
+			if (umlProperty.getAppliedStereotype("HDF::ConceptDomainConstraint") != null) {
 
-			ConceptDomainRef conceptDomainRef = Mif2Factory.eINSTANCE.createConceptDomainRef();
+				Stereotype conceptDomainConstraint = umlProperty.getAppliedStereotype("HDF::ConceptDomainConstraint");
 
-			conceptDomainRef.setName((String) umlProperty.getValue(conceptDomainConstraint, "name"));
+				VocabularySpecification vocabularySpecification = Mif2Factory.eINSTANCE.createVocabularySpecification();
 
-			vocabularySpecification.setConceptDomain(conceptDomainRef);
+				ConceptDomainRef conceptDomainRef = Mif2Factory.eINSTANCE.createConceptDomainRef();
 
-			attribute.setVocabulary(vocabularySpecification);
+				conceptDomainRef.setName((String) umlProperty.getValue(conceptDomainConstraint, "name"));
 
-		}
+				vocabularySpecification.setConceptDomain(conceptDomainRef);
+
+				attribute.setVocabulary(vocabularySpecification);
+
+			}
 
 		}
 		return umlProperty;
 	}
-	
+
 	/**
 	 * 
 	 * TODO very ugly bit of logic need to refactor
 	 * 
 	 * walk the steroetype hierachy to get association end name
+	 * 
 	 * @param property
 	 * @return
 	 */
-	private String createAssociationEndName(Property property)
-	{
+	private String createAssociationEndName(Property property) {
 		String result = "*****************************unknown";
-		
+
 		Stereotype appliedStereotype = RIMProfileUtil.getRIMStereotype(property.getType());
 
 		if (appliedStereotype != null) {
@@ -703,7 +709,7 @@ public class UMLProcessor extends UMLSwitch<Object> {
 							} else {
 								if ("ActRelationship".equals(parent)) {
 									result = "source";
-								} 
+								}
 							}
 						}
 					}
@@ -711,12 +717,12 @@ public class UMLProcessor extends UMLSwitch<Object> {
 				}
 			}
 
-		} 		
+		}
 		return result;
 	}
 
 	private Header createHeader() {
-		
+
 		Header header = Mif2Factory.eINSTANCE.createHeader();
 
 		RenderingInformation renderingInformation = Mif2Factory.eINSTANCE.createRenderingInformation();
@@ -742,7 +748,6 @@ public class UMLProcessor extends UMLSwitch<Object> {
 
 	public StaticModel createMIFModel(Element umlElement) {
 
-		
 		// Get UML resource and create corresponding MIF resource
 		Resource umlResource = umlElement.eResource();
 
@@ -763,7 +768,7 @@ public class UMLProcessor extends UMLSwitch<Object> {
 		staticModel.setName("MIF_export");
 		root.setStaticModel(staticModel);
 
-		mifModel = root.getStaticModel(); //Mif2Factory.eINSTANCE.createStaticModel();
+		mifModel = root.getStaticModel(); // Mif2Factory.eINSTANCE.createStaticModel();
 
 		((GlobalStaticModel) mifModel).setSchemaVersion(MIF_SCHEMA_VERSION);
 
@@ -775,31 +780,35 @@ public class UMLProcessor extends UMLSwitch<Object> {
 
 		return mifModel;
 	}
-	
+
 	/**
 	 * createPackageRef creates and populates the MIF Package Reference Structure with hard codedind
+	 * 
 	 * @return PackageRef
 	 */
 	private PackageRef createPackageRef(Package umlPackage) {
-		
-		Stereotype hdfPackage = HL7ResourceUtil.getAppliedHDFStereotype(umlPackage, IHDFProfileConstants.HDF_PACKAGE);  
-		
+
+		Stereotype hdfPackage = HL7ResourceUtil.getAppliedHDFStereotype(umlPackage, IHDFProfileConstants.HDF_PACKAGE);
+
 		PackageRef packageRef = Mif2Factory.eINSTANCE.createPackageRef();
 
-		packageRef.setRealmNamespace(umlPackage.getValue(hdfPackage,IHDFProfileConstants.PACKAGE_REALM_NAMESPACE)); 		
-		
-		packageRef.setArtifact(ArtifactKind.get((String)umlPackage.getValue(hdfPackage,IHDFProfileConstants.PACKAGE_ARTIFACT)));
+		packageRef.setRealmNamespace(umlPackage.getValue(hdfPackage, IHDFProfileConstants.PACKAGE_REALM_NAMESPACE));
 
-		packageRef.setRoot(PackageRootKind.get((String)umlPackage.getValue(hdfPackage,IHDFProfileConstants.PACKAGE_ROOT)));
+		packageRef.setArtifact(ArtifactKind.get((String) umlPackage.getValue(
+			hdfPackage, IHDFProfileConstants.PACKAGE_ARTIFACT)));
 
-		packageRef.setSection((String)umlPackage.getValue(hdfPackage,IHDFProfileConstants.PACKAGE_SECTION));
+		packageRef.setRoot(PackageRootKind.get((String) umlPackage.getValue(
+			hdfPackage, IHDFProfileConstants.PACKAGE_ROOT)));
 
-		packageRef.setSubSection((String)umlPackage.getValue(hdfPackage, IHDFProfileConstants.PACKAGE_SUB_SECTION));
+		packageRef.setSection((String) umlPackage.getValue(hdfPackage, IHDFProfileConstants.PACKAGE_SECTION));
 
-		packageRef.setDomain(DomainKind.get((String)umlPackage.getValue(hdfPackage,IHDFProfileConstants.PACKAGE_DOMAIN)));
+		packageRef.setSubSection((String) umlPackage.getValue(hdfPackage, IHDFProfileConstants.PACKAGE_SUB_SECTION));
 
-		packageRef.setVersion((String)umlPackage.getValue(hdfPackage, IHDFProfileConstants.PACKAGE_VERSION));
-						
+		packageRef.setDomain(DomainKind.get((String) umlPackage.getValue(
+			hdfPackage, IHDFProfileConstants.PACKAGE_DOMAIN)));
+
+		packageRef.setVersion((String) umlPackage.getValue(hdfPackage, IHDFProfileConstants.PACKAGE_VERSION));
+
 		Object id = umlPackage.getValue(hdfPackage, IHDFProfileConstants.PACKAGE_ID);
 
 		if (id != null) {
@@ -847,108 +856,103 @@ public class UMLProcessor extends UMLSwitch<Object> {
 		return packageRef;
 
 	}
-	
-	private ClassDerivation createRimClassDerivation(Class umlClass)
-	{
+
+	private ClassDerivation createRimClassDerivation(Class umlClass) {
 		ClassDerivation rimDerivation = Mif2Factory.eINSTANCE.createClassDerivation();
-		
+
 		rimDerivation.setStaticModelDerivationId(STATIC_MODEL_DERIVATION_ID);
 
 		rimDerivation.setClassName(rimDerivation(umlClass));
-		
+
 		return rimDerivation;
 	}
-	
+
 	private StaticModelDerivation createRimStaticModelDerivation() {
-				
+
 		StaticModelDerivation staticModelDerivation = Mif2Factory.eINSTANCE.createStaticModelDerivation();
-		
+
 		staticModelDerivation.setStaticModelDerivationId(STATIC_MODEL_DERIVATION_ID);
-		
+
 		PackageRef packRef = Mif2Factory.eINSTANCE.createPackageRef();
-		
+
 		packRef.setArtifact(ArtifactKind.RIM);
-		
+
 		packRef.setRoot(PackageRootKind.DEFN);
-		
+
 		packRef.setVersion("0221");
-		
+
 		staticModelDerivation.setTargetStaticModel(packRef);
-				
+
 		return staticModelDerivation;
 	}
-
 
 	// "Role" - "participation"
 	// "Act" "inboundRelationship"
 	// "Entity" "scopedRole"
 	// "Participation" "role"
 	// ActRelationship source
-	
+
 	/**
 	 * Process all eContents().
 	 */
+	@Override
 	public Object defaultCase(EObject eObject) {
 		if (eObject == null) {
 			return null;
 		}
-		
-		
+
 		return super.defaultCase(eObject);
 	}
-	
 
 	/**
 	 * @return the UML Model
 	 */
 	public DocumentRoot getMIFDocumentRoot() {
 		if (root == null) {
-//			createMIFModel(null);
+			// createMIFModel(null);
 		}
 		return root;
 	}
 
-	
-	
-	public StaticModel getMIFModel()
-	{
+	public StaticModel getMIFModel() {
 		return mifModel;
 	}
+
 	/**
 	 * @param umlProperty
 	 * @param attribute
 	 */
 	private void mapDatatype(Property umlProperty, Attribute attribute) {
 		DatatypeRef argDatatype = null;
-		
-		if (umlProperty != null &&  umlProperty.getType() != null) {
+
+		if (umlProperty != null && umlProperty.getType() != null) {
 			String type = umlProperty.getType().getName();
 			DatatypeRef datatype = Mif2Factory.eINSTANCE.createDatatypeRef();
 			String[] typeArray = type.split("<");
 			if (typeArray != null && typeArray.length > 1) {
-				String name = typeArray[0]; //first token is the name
+				String name = typeArray[0]; // first token is the name
 				datatype.setName(name);
-				//second token is the arguments separated by "," excluding the last char ">"
+				// second token is the arguments separated by "," excluding the last char ">"
 				String argString = typeArray[1].substring(0, typeArray[1].length() - 1);
 				String[] argArray = argString.split(",");
 				if (argArray != null && argArray.length > 1) {
-					//the data type has more than one arguments
+					// the data type has more than one arguments
 					for (int i = 0; i < argArray.length; i++) {
 						argDatatype = Mif2Factory.eINSTANCE.createDatatypeRef();
 						argDatatype.setName(argArray[0]);
 						datatype.getArgumentDatatype().add(argDatatype);
 					}
 				} else {
-					//the data type has only 1 argument
+					// the data type has only 1 argument
 					argDatatype = Mif2Factory.eINSTANCE.createDatatypeRef();
 					argDatatype.setName(argString);
 					datatype.getArgumentDatatype().add(argDatatype);
 				}
 			} else {
-				//the datatype has no argument
+				// the datatype has no argument
 				datatype.setName(type);
 			}
-			//set the mif attribute datatype
+			// set the mif attribute datatype
 			attribute.setType(datatype);
 		}
 	}
@@ -958,50 +962,48 @@ public class UMLProcessor extends UMLSwitch<Object> {
 	 */
 	private void mapMifModelAttributes(Package umlPackage) {
 
-	
-		Stereotype hdfPackage = HL7ResourceUtil.getAppliedHDFStereotype(umlPackage, IHDFProfileConstants.HDF_PACKAGE);  
-		
-		//map the staticModel attributes
-		mifModel.setConformanceLevel(ModelConformanceKind.get((String)umlPackage.getValue(hdfPackage,IHDFProfileConstants.PACKAGE_CONFORMANCE_LEVEL)));
-		
-		mifModel.setPackageKind(PackageKind.get((String)umlPackage.getValue(hdfPackage, IHDFProfileConstants.PACKAGE_KIND)));
-		
-		
+		Stereotype hdfPackage = HL7ResourceUtil.getAppliedHDFStereotype(umlPackage, IHDFProfileConstants.HDF_PACKAGE);
+
+		// map the staticModel attributes
+		mifModel.setConformanceLevel(ModelConformanceKind.get((String) umlPackage.getValue(
+			hdfPackage, IHDFProfileConstants.PACKAGE_CONFORMANCE_LEVEL)));
+
+		mifModel.setPackageKind(PackageKind.get((String) umlPackage.getValue(
+			hdfPackage, IHDFProfileConstants.PACKAGE_KIND)));
+
 		// TODO - Where do we get these items from the model? SWM
 		mifModel.setRepresentationKind(StaticModelRepresentationKind.FLAT);
-		
+
 		mifModel.setIsAbstract(false);
-		
+
 		mifModel.setIsSerializable(true);
-		
-		//map the title set in the umlPackage annotation source "uml2.alias"
+
+		// map the title set in the umlPackage annotation source "uml2.alias"
 		EAnnotation annotation = umlPackage.getEAnnotation("uml2.alias");
-		
-		//assumption: the first item of the annotation details is uml2.alias, 
-		//see Mif2Import for how this field was created
-		if (annotation != null && annotation.getDetails().size() > 0){
+
+		// assumption: the first item of the annotation details is uml2.alias,
+		// see Mif2Import for how this field was created
+		if (annotation != null && annotation.getDetails().size() > 0) {
 			String title = annotation.getDetails().get(0).getKey();
 			mifModel.setTitle(title);
 		}
-		
+
 		mifModel.setPackageLocation(createPackageRef(umlPackage));
-		
+
 		mifModel.setHeader(createHeader());
-		
-		//map derivedFrom
+
+		// map derivedFrom
 		mifModel.getDerivedFrom().add(createRimStaticModelDerivation());
-		
-		// TODO These handles need to be obtained from the model or environment not hard coded. SWM 
+
+		// TODO These handles need to be obtained from the model or environment not hard coded. SWM
 		mifModel.setImportedDatatypeModelPackage(createPackageRefFromHandle(DatatypeConstants.HL7_DATATYPES_1_0));
 
 		mifModel.setImportedVocabularyModelPackage(createPackageRefFromHandle("DEFN=UV=VO=586-20081030"));
 
 		mifModel.setImportedCommonModelElementPackage(createPackageRefFromHandle("DEFN=UV=IFC=1.8.3"));
 
-
-
-		//set schema version
-//				((GlobalStaticModel)mifModel).setSchemaVersion(MIF_SCHEMA_VERSION);	
+		// set schema version
+		// ((GlobalStaticModel)mifModel).setSchemaVersion(MIF_SCHEMA_VERSION);
 	}
 
 	/**
@@ -1009,105 +1011,88 @@ public class UMLProcessor extends UMLSwitch<Object> {
 	 * @param attribute
 	 */
 	private void mapMultiplicity(Property umlProperty, Attribute attribute) {
-		//map attribute min multiplicity
+		// map attribute min multiplicity
 		attribute.setMinimumMultiplicity(new BigInteger(String.valueOf(umlProperty.getLower())));
-		//map attribute max multiplicity
-		//if the uml upper value is unlimited, then mif max multi is set to the UnlimitedMultiplicity enum of "*"
+		// map attribute max multiplicity
+		// if the uml upper value is unlimited, then mif max multi is set to the UnlimitedMultiplicity enum of "*"
 		if (umlProperty.getUpper() == LiteralUnlimitedNatural.UNLIMITED) {
 			attribute.setMaximumMultiplicity(UnlimitedMultiplicity.get("*"));
 		} else {
-			//upper value is an int
+			// upper value is an int
 			attribute.setMaximumMultiplicity(new BigInteger(String.valueOf(umlProperty.getUpper())));
 		}
 	}
 
-	String popIFCAnnotation(Type type)
-	{
+	String popIFCAnnotation(Type type) {
 
-		
-		if (type == null)
-		{
+		if (type == null) {
 			return null;
 		}
-		
 
 		String result = null;
-		
-		final String IFC_ANNOTATION_SOURCE = "org.openhealthtools.mdht.uml.hl7.mif2uml.ifc";	
-		EAnnotation ifcAnnotation =  type.getEAnnotation(IFC_ANNOTATION_SOURCE);
-		
-		
-		if (ifcAnnotation != null)
-		{
-		
-			if (ifcAnnotation.getDetails().size() == 1)
-			{
+
+		final String IFC_ANNOTATION_SOURCE = "org.openhealthtools.mdht.uml.hl7.mif2uml.ifc";
+		EAnnotation ifcAnnotation = type.getEAnnotation(IFC_ANNOTATION_SOURCE);
+
+		if (ifcAnnotation != null) {
+
+			if (ifcAnnotation.getDetails().size() == 1) {
 				result = ifcAnnotation.getDetails().get(0).getKey();
-			} 
+			}
 
 		} else {
-			//  Some classes are not getting properly tagged during the import - use the model annotation instead
+			// Some classes are not getting properly tagged during the import - use the model annotation instead
 			// TODO Debug issue and remove code
 			ifcAnnotation = type.getModel().getEAnnotation(IFC_ANNOTATION_SOURCE);
-			if (ifcAnnotation != null && ifcAnnotation.getDetails().containsKey(type.getQualifiedName()))
-			{				
+			if (ifcAnnotation != null && ifcAnnotation.getDetails().containsKey(type.getQualifiedName())) {
 				result = ifcAnnotation.getDetails().get(type.getQualifiedName());
-						
-			}	
-		}
-	
-		
 
-		
+			}
+		}
+
 		return result;
-		
+
 	}
 
-
-
-	private String rimDerivation(Element element)
-	{
+	private String rimDerivation(Element element) {
 		String derivation = "";
-		
+
 		Stereotype appliedStereotype = RIMProfileUtil.getRIMStereotype(element);
 
 		if (appliedStereotype != null) {
 			derivation = appliedStereotype.getName();
-		} 
-		
+		}
+
 		return derivation;
 	}
-	
-	public void saveMIFModel()
-	{
+
+	public void saveMIFModel() {
 		// Save off the MIF file
-	
 
 		try {
-			
-			for (Resource mifResource : mifResources.values()){
-				
+
+			for (Resource mifResource : mifResources.values()) {
+
 				HashMap<Object, Object> saveOptions = new HashMap<Object, Object>();
-				
-				mifResource.save(saveOptions);	
+
+				mifResource.save(saveOptions);
 			}
-			
-			for (StaticModel mifModel : mifModels.values()){
-				
+
+			for (StaticModel mifModel : mifModels.values()) {
+
 				mifModel.eResource().unload();
-		
+
 			}
-			
+
 		} catch (IOException e) {
-			
-			diagnostics.error("IOException! Unable to save mif models  "+e.getMessage() , null);
+
+			diagnostics.error("IOException! Unable to save mif models  " + e.getMessage(), null);
 
 			return;
 		}
 
-		
 	}
-	
+
 	/**
 	 * @param mifModelName
 	 */
@@ -1117,22 +1102,16 @@ public class UMLProcessor extends UMLSwitch<Object> {
 
 	public void transformElement(EObject umlElement) {
 
-		try{
-		doSwitch(umlElement);
-		}
-		catch(RuntimeException re)
-		{
-		
+		try {
+			doSwitch(umlElement);
+		} catch (RuntimeException re) {
+
 			re.printStackTrace();
 		}
 	}
-	
-	public void transformGeneralizations(EObject umlElement)
-	{
+
+	public void transformGeneralizations(EObject umlElement) {
 		generalizationProcessor.doSwitch(umlElement);
 	}
 
-
-	
-	
 }

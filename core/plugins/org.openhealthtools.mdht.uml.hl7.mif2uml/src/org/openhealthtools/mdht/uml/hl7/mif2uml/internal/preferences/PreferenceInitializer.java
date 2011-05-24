@@ -17,7 +17,6 @@ import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.openhealthtools.mdht.uml.hl7.mif2uml.internal.Activator;
 import org.openhealthtools.mdht.uml.hl7.mif2uml.mapping.MIFImporterOptions;
 
-
 /**
  * Class used to initialize default preference values.
  */
@@ -28,10 +27,10 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	 * 
 	 * @see org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer#initializeDefaultPreferences()
 	 */
+	@Override
 	public void initializeDefaultPreferences() {
-		Preferences store = Activator.getDefault()
-				.getPluginPreferences();
-		
+		Preferences store = Activator.getDefault().getPluginPreferences();
+
 		store.setDefault(MIFImporterOptions.CREATE_ASSOCIATION_CLASSES, false);
 		store.setDefault(MIFImporterOptions.CREATE_STRUCTURAL_ATTRIBUTES, true);
 		store.setDefault(MIFImporterOptions.CREATE_FILE_PER_PACKAGE, false);
@@ -39,5 +38,5 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		store.setDefault(MIFImporterOptions.USE_XHTML, true);
 		store.setDefault(MIFImporterOptions.SUPPRESS_DATATYPE_COLLECTIONS, false);
 	}
-	
+
 }

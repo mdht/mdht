@@ -21,38 +21,42 @@ import org.openhealthtools.mdht.uml.hl7.mif2uml.internal.Activator;
 public class MIFImporterOptions {
 
 	public static final String CREATE_ASSOCIATION_CLASSES = "createAssociationClasses";
+
 	public static final String USE_PACKAGE_TITLE = "usePackageTitle";
+
 	public static final String CREATE_STRUCTURAL_ATTRIBUTES = "createStructuralAttributes";
+
 	public static final String USE_XHTML = "useXHTML";
+
 	public static final String CREATE_FILE_PER_PACKAGE = "createFilePerPackage";
+
 	public static final String SUPPRESS_DATATYPE_COLLECTIONS = "suppressDatatypeCollections";
-	
+
 	private boolean createAssociationClasses;
+
 	private boolean usePackageTitle;
+
 	private boolean createStructuralAttributes;
+
 	private boolean useXHTML = false;
+
 	private boolean createFilePerPackage;
+
 	private boolean suppressDatatypeCollections;
-	
+
 	public MIFImporterOptions() {
 		initializePreferences();
 	}
-	
+
 	private void initializePreferences() {
 		Preferences store = Activator.getDefault().getPluginPreferences();
 
-		createAssociationClasses = 
-			store.getBoolean(CREATE_ASSOCIATION_CLASSES);
-		createStructuralAttributes = 
-			store.getBoolean(CREATE_STRUCTURAL_ATTRIBUTES);
-		createFilePerPackage = 
-			store.getBoolean(CREATE_FILE_PER_PACKAGE);
-		usePackageTitle = 
-			store.getBoolean(USE_PACKAGE_TITLE);
-		useXHTML = 
-			store.getBoolean(USE_XHTML);
-		suppressDatatypeCollections = 
-			store.getBoolean(SUPPRESS_DATATYPE_COLLECTIONS);
+		createAssociationClasses = store.getBoolean(CREATE_ASSOCIATION_CLASSES);
+		createStructuralAttributes = store.getBoolean(CREATE_STRUCTURAL_ATTRIBUTES);
+		createFilePerPackage = store.getBoolean(CREATE_FILE_PER_PACKAGE);
+		usePackageTitle = store.getBoolean(USE_PACKAGE_TITLE);
+		useXHTML = store.getBoolean(USE_XHTML);
+		suppressDatatypeCollections = store.getBoolean(SUPPRESS_DATATYPE_COLLECTIONS);
 	}
 
 	public boolean isCreateAssociationClasses() {
