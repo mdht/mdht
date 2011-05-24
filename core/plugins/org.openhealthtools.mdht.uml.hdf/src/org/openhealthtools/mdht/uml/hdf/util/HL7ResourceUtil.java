@@ -27,39 +27,35 @@ import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.hdf.internal.Activator;
 import org.openhealthtools.mdht.uml.hdf.internal.Logger;
 
-
 /**
- *
+ * 
  * @version $Id: $
  */
 public class HL7ResourceUtil {
 
 	public static boolean getBooleanPreference(String stereotypeName, String propertyName) {
-		Preferences store = Activator.getDefault()
-				.getPluginPreferences();
-		
+		Preferences store = Activator.getDefault().getPluginPreferences();
+
 		// use preference key: StereotypeName.propertyName
 		return store.getBoolean(stereotypeName + "." + propertyName);
 	}
 
 	public static String getStringPreference(String stereotypeName, String propertyName) {
-		Preferences store = Activator.getDefault()
-				.getPluginPreferences();
-		
+		Preferences store = Activator.getDefault().getPluginPreferences();
+
 		return store.getString(stereotypeName + "." + propertyName);
 	}
 
 	public static long getLongPreference(String stereotypeName, String propertyName) {
-		Preferences store = Activator.getDefault()
-				.getPluginPreferences();
-		
+		Preferences store = Activator.getDefault().getPluginPreferences();
+
 		return store.getLong(stereotypeName + "." + propertyName);
 	}
 
 	/**
 	 * Returns null if stereotype is not applied to element.
 	 */
-	public static Stereotype getAppliedHDFStereotype(Element element, String stereotypeName) {		
+	public static Stereotype getAppliedHDFStereotype(Element element, String stereotypeName) {
 		String qname = IHDFProfileConstants.HDF_PROFILE_NAME + "::" + stereotypeName;
 		return element.getAppliedStereotype(qname);
 	}
@@ -87,28 +83,24 @@ public class HL7ResourceUtil {
 	/**
 	 * Check all containing packages for applied profile.
 	 */
-	
+
 	/**
 	 * Check all containing packages for applied profile.
 	 */
 	public static Profile getAppliedHDFProfile(Element element) {
 		return UMLUtil.getAppliedProfile(HL7Resource.HDF_PROFILE_URI, element);
 	}
-	
-	
-	
+
 	public static Profile applyHDFProfile(Package pkg) {
 		Profile hdfProfile = null;
-		
+
 		try {
 			ResourceSet resourceSet = pkg.eResource().getResourceSet();
-			Resource hdfProfileResource = resourceSet.getResource(URI
-					.createURI(HL7Resource.HDF_PROFILE_URI), true);
-			
+			Resource hdfProfileResource = resourceSet.getResource(URI.createURI(HL7Resource.HDF_PROFILE_URI), true);
+
 			if (hdfProfileResource != null) {
 				hdfProfile = (Profile) EcoreUtil.getObjectByType(
-						hdfProfileResource.getContents(), 
-						UMLPackage.eINSTANCE.getProfile());
+					hdfProfileResource.getContents(), UMLPackage.eINSTANCE.getProfile());
 
 				if (hdfProfile != null && !pkg.isProfileApplied(hdfProfile)) {
 					pkg.applyProfile(hdfProfile);
@@ -116,19 +108,19 @@ public class HL7ResourceUtil {
 			}
 
 			// import the HL7 standard datatype library
-			//importHL7DatatypesLibrary(model);
+			// importHL7DatatypesLibrary(model);
 
 		} catch (WrappedException we) {
 			Logger.logException(we);
 		}
-		
+
 		return hdfProfile;
 	}
 
 	/**
 	 * Returns null if stereotype is not applied to element.
 	 */
-	public static Stereotype getAppliedRIMStereotype(Element element, String stereotypeName) {		
+	public static Stereotype getAppliedRIMStereotype(Element element, String stereotypeName) {
 		String qname = IRIMProfileConstants.RIM_PROFILE_NAME + "::" + stereotypeName;
 		return element.getAppliedStereotype(qname);
 	}
@@ -145,28 +137,23 @@ public class HL7ResourceUtil {
 		return stereotype;
 	}
 
-
-	
 	/**
 	 * Check all containing packages for applied profile.
 	 */
 	public static Profile getAppliedRIMProfile(Element element) {
 		return UMLUtil.getAppliedProfile(HL7Resource.RIM_PROFILE_URI, element);
 	}
-	
-	
+
 	public static Profile applyRIMProfile(Package pkg) {
 		Profile rimProfile = null;
-		
+
 		try {
 			ResourceSet resourceSet = pkg.eResource().getResourceSet();
-			Resource rimProfileResource = resourceSet.getResource(URI
-					.createURI(HL7Resource.RIM_PROFILE_URI), true);
-			
+			Resource rimProfileResource = resourceSet.getResource(URI.createURI(HL7Resource.RIM_PROFILE_URI), true);
+
 			if (rimProfileResource != null) {
 				rimProfile = (Profile) EcoreUtil.getObjectByType(
-						rimProfileResource.getContents(), 
-						UMLPackage.eINSTANCE.getProfile());
+					rimProfileResource.getContents(), UMLPackage.eINSTANCE.getProfile());
 
 				if (rimProfile != null && !pkg.isProfileApplied(rimProfile)) {
 					pkg.applyProfile(rimProfile);
@@ -176,7 +163,7 @@ public class HL7ResourceUtil {
 		} catch (WrappedException we) {
 			Logger.logException(we);
 		}
-		
+
 		return rimProfile;
 	}
 
