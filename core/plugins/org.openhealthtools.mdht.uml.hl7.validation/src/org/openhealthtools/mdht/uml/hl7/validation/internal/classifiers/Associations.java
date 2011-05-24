@@ -13,7 +13,6 @@
 
 package org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers;
 
-
 import java.util.HashMap;
 
 import org.eclipse.core.runtime.IStatus;
@@ -23,13 +22,12 @@ import org.openhealthtools.mdht.uml.hl7.validation.internal.HL7AbstractConstrain
 import org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers.rimconstraints.ActAssociationsConstraint;
 import org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers.rimconstraints.BidirectionalAssociationConstraint;
 
-
 /**
  * 
  * $Id: $
  */
 public class Associations extends HL7AbstractConstraint {
-	
+
 	/*
 	 * In order to keep Associations from getting to cumbersome - Each constraint is
 	 * its own extension of HL7AbstractConstraint. In order to not have a
@@ -49,20 +47,22 @@ public class Associations extends HL7AbstractConstraint {
 	private static HashMap<String, AbstractModelConstraint> constraints = new HashMap<String, AbstractModelConstraint>();
 
 	public static void registerConstraints(String id, AbstractModelConstraint constraint) {
-		
+
 		if (id != null && constraint != null) {
 			constraints.put(id, constraint);
 		}
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.openhealthtools.mdht.uml.hl7.validation.internal.HL7AbstractConstraint#validate(org.eclipse.emf.validation.IValidationContext)
 	 */
+	@Override
 	public IStatus validate(IValidationContext context) {
-		
+
 		IStatus result = context.createSuccessStatus();
 
-		
 		if (constraints.size() == 0) {
 			initialize();
 		}
@@ -76,15 +76,13 @@ public class Associations extends HL7AbstractConstraint {
 			 * a value in the message
 			 */
 			Object[] data = new Object[1];
-			data[0] = "<<<< The Following Warning Constraint Not Registered Properly Register >>" + context.getCurrentConstraintId();
+			data[0] = "<<<< The Following Warning Constraint Not Registered Properly Register >>" +
+					context.getCurrentConstraintId();
 			result = context.createFailureStatus(data);
 		}
 
 		return result;
-	
 
 	}
-	
 
-	
 }

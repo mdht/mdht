@@ -26,14 +26,13 @@ import org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers.Classes;
  * @see org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers.rimconstraints.SingleRIMStereotypeConstraint
  * 
  * @author Sean Muir
- *
+ * 
  */
 public class MultipleRIMStereotypeConstraint extends HL7AbstractConstraint {
-	
+
 	private static final String ID_MULTIPLERIMSTEREOTYPES = CLASSES_GROUP + "multipleRIMStereotypes";
 
-	
-	public static void register(){
+	public static void register() {
 		Classes.registerConstraints(ID_MULTIPLERIMSTEREOTYPES, new MultipleRIMStereotypeConstraint());
 	}
 
@@ -41,14 +40,13 @@ public class MultipleRIMStereotypeConstraint extends HL7AbstractConstraint {
 	public IStatus validate(IValidationContext context) {
 
 		final Class rimClass = (Class) context.getTarget();
-		
+
 		IStatus result = context.createSuccessStatus();
-		
-		if (Classes.getRIMCount(rimClass)>1)
-		{
+
+		if (Classes.getRIMCount(rimClass) > 1) {
 			Object[] data = new Object[1];
 			data[0] = rimClass.getName();
-			result = context.createFailureStatus(data);	
+			result = context.createFailureStatus(data);
 		}
 
 		return result;

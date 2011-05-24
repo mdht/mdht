@@ -20,25 +20,24 @@ import org.openhealthtools.mdht.uml.hl7.validation.internal.HL7AbstractConstrain
 import org.openhealthtools.mdht.uml.hl7.validation.internal.properties.Properties;
 
 public class MissingTypeConstraint extends HL7AbstractConstraint {
-	
+
 	private static final String ID_MISSINGTYPE = PROPERTIES_GROUP + "missingType";
 
-	public static void register(){
-		Properties.registerConstraints(ID_MISSINGTYPE , new MissingTypeConstraint());
+	public static void register() {
+		Properties.registerConstraints(ID_MISSINGTYPE, new MissingTypeConstraint());
 	}
 
 	@Override
 	public IStatus validate(IValidationContext context) {
-		
-	Property property = (Property) context.getTarget();
 
-	IStatus result = null;	
-	
+		Property property = (Property) context.getTarget();
+
+		IStatus result = null;
+
 		if (property.getType() == null) {
 			Object[] data = { property.getName() };
 			result = context.createFailureStatus(data);
-		} else
-		{
+		} else {
 			result = context.createSuccessStatus();
 		}
 

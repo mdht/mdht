@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2008 David A Carlson.
+ * Copyright (c) 2008, 2009 David A Carlson.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,14 +21,14 @@ import org.openhealthtools.mdht.uml.hl7.validation.internal.properties.Propertie
 public class PropertyVocabularyConstraint extends HL7AbstractConstraint {
 
 	private static final String ID_PROPERTYVOCABULARY = PROPERTIES_GROUP + "propertyVocabulary";
-	
-	public static void register(){
-		Properties.registerConstraints(ID_PROPERTYVOCABULARY , new PropertyVocabularyConstraint ());
+
+	public static void register() {
+		Properties.registerConstraints(ID_PROPERTYVOCABULARY, new PropertyVocabularyConstraint());
 	}
 
 	@Override
 	public IStatus validate(IValidationContext context) {
-		/// TODO Implement Vocabulary Test
+		// / TODO Implement Vocabulary Test
 		return context.createSuccessStatus();
 	}
 

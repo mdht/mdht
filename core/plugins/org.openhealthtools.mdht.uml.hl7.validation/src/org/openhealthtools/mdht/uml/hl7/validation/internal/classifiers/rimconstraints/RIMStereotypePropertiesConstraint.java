@@ -30,40 +30,35 @@ import org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers.Classes;
  */
 @Deprecated
 public class RIMStereotypePropertiesConstraint extends HL7AbstractConstraint {
-	
+
 	private static final String ID_RIMSTEREOTYPEPROPERTY = CLASSES_GROUP + "RIMStereotypesProperties";
-	
-	public static void register(){
+
+	public static void register() {
 		Classes.registerConstraints(ID_RIMSTEREOTYPEPROPERTY, new RIMStereotypePropertiesConstraint());
 	}
-	
+
 	@Override
 	public IStatus validate(IValidationContext context) {
-	final Class rimClass = (Class) context.getTarget();
-		
+		final Class rimClass = (Class) context.getTarget();
+
 		IStatus result = context.createSuccessStatus();
-		
-		
+
 		// No need to flag invalid stereotype properties when the stereotype is invalid
 		if (Classes.getRIMCount(rimClass) == 1) {
 
 			Stereotype rimStereotype = null;
 
 			for (Stereotype stereotype : rimClass.getAppliedStereotypes()) {
-				if (IRIMProfileConstants.RIM_PROFILE_NAME.equals(stereotype
-						.getProfile().getName())) {
+				if (IRIMProfileConstants.RIM_PROFILE_NAME.equals(stereotype.getProfile().getName())) {
 					rimStereotype = stereotype;
 					break;
 				}
 			}
 
 			if (rimStereotype != null) {
-				if (IRIMProfileConstants.PARTICIPATION.equals(rimStereotype
-						.getName())
-						|| IRIMProfileConstants.MANAGED_PARTICIPATION
-								.equals(rimStereotype.getName())) {
-					if (rimClass.getValue(rimStereotype,
-							IRIMProfileConstants.TYPE_CODE) == null) {
+				if (IRIMProfileConstants.PARTICIPATION.equals(rimStereotype.getName()) ||
+						IRIMProfileConstants.MANAGED_PARTICIPATION.equals(rimStereotype.getName())) {
+					if (rimClass.getValue(rimStereotype, IRIMProfileConstants.TYPE_CODE) == null) {
 						Object[] data = new Object[3];
 						data[0] = IRIMProfileConstants.TYPE_CODE;
 						data[1] = rimStereotype.getName();
@@ -73,8 +68,7 @@ public class RIMStereotypePropertiesConstraint extends HL7AbstractConstraint {
 					}
 
 				} else {
-					if (rimClass.getValue(rimStereotype,
-							IRIMProfileConstants.CLASS_CODE) == null) {
+					if (rimClass.getValue(rimStereotype, IRIMProfileConstants.CLASS_CODE) == null) {
 						Object[] data = new Object[3];
 						data[0] = IRIMProfileConstants.CLASS_CODE;
 						data[1] = rimStereotype.getName();
@@ -88,7 +82,5 @@ public class RIMStereotypePropertiesConstraint extends HL7AbstractConstraint {
 		}
 		return result;
 	}
-	
-	
 
 }

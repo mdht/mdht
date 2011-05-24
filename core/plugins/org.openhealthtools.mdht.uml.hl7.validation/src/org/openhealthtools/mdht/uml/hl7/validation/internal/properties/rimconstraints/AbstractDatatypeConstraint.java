@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2008 David A Carlson.
+ * Copyright (c) 2008, 2009 David A Carlson.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,23 +24,22 @@ import org.openhealthtools.mdht.uml.hl7.validation.internal.HL7AbstractConstrain
 import org.openhealthtools.mdht.uml.hl7.validation.internal.properties.Properties;
 
 public class AbstractDatatypeConstraint extends HL7AbstractConstraint {
-	
+
 	private static final String ID_ABSTRACTDATATYPE = PROPERTIES_GROUP + "abstractDataType";
 
-	public static void register(){
-		Properties.registerConstraints(ID_ABSTRACTDATATYPE , new AbstractDatatypeConstraint());
+	public static void register() {
+		Properties.registerConstraints(ID_ABSTRACTDATATYPE, new AbstractDatatypeConstraint());
 	}
-	
+
 	@Override
 	public IStatus validate(IValidationContext context) {
-		
+
 		IStatus result = context.createSuccessStatus();
 		Property property = (Property) context.getTarget();
-		
-		
-		// Null property is a failure but validated elsewhere 
+
+		// Null property is a failure but validated elsewhere
 		if (property.getType() != null) {
-			
+
 			Element owner = property.getType().getOwner();
 
 			// Check to make sure we have an attribute of the class versus a association
@@ -57,13 +56,17 @@ public class AbstractDatatypeConstraint extends HL7AbstractConstraint {
 						// and the template is not abstract - then we have invalid property
 						if (!DatatypeUtil.isAbstractDatatype(classifier)) {
 
-							Object[] data = { property.getName(), property.getType().getQualifiedName(), owner.eResource().getURI().toString() };
+							Object[] data = {
+									property.getName(), property.getType().getQualifiedName(),
+									owner.eResource().getURI().toString() };
 							result = context.createFailureStatus(data);
 
 						} else {
 							// we iterate over the template parameters to see if they are all valid
 							if (!checkTemplateParameters(clazz)) {
-								Object[] data = { property.getName(), property.getType().getQualifiedName(), owner.eResource().getURI().toString() };
+								Object[] data = {
+										property.getName(), property.getType().getQualifiedName(),
+										owner.eResource().getURI().toString() };
 								result = context.createFailureStatus(data);
 							}
 
@@ -79,36 +82,33 @@ public class AbstractDatatypeConstraint extends HL7AbstractConstraint {
 		return result;
 	}
 
-	
 	/**
-	 * checkTemplateParameters is recursive method to check that the template parameters are valid 
+	 * checkTemplateParameters is recursive method to check that the template parameters are valid
 	 * for instance SET < RTO > where RTO is defined as SET <PQ,PQ> is valid
 	 * 
-	 * The templates must all be from hl7 abstract data types 
+	 * The templates must all be from hl7 abstract data types
+	 * 
 	 * @param classifier
 	 * @return
 	 */
-	private static final boolean checkTemplateParameters(Classifier classifier)
-	{
+	private static final boolean checkTemplateParameters(Classifier classifier) {
 		// Iterate over the parameters to the template
-		for (Classifier parameter : UMLUtil.getTemplateBindingParameters(classifier))
-		{
+		for (Classifier parameter : UMLUtil.getTemplateBindingParameters(classifier)) {
 
 			// If the parameter is not abstract
 			if (!DatatypeUtil.isAbstractDatatype(parameter)) {
-				
+
 				// Check to see if it is in fact a template
-				Classifier parameterTemplate = UMLUtil.getTemplate(parameter);			
-				
+				Classifier parameterTemplate = UMLUtil.getTemplate(parameter);
+
 				// If it is not an abstract template - return false
 				if (!DatatypeUtil.isAbstractDatatype(parameterTemplate)) {
-					return false;		
-				} else
-				{
+					return false;
+				} else {
 					// If we are an abstract template - check the parameters
-					return checkTemplateParameters(parameterTemplate );				
+					return checkTemplateParameters(parameterTemplate);
 				}
-			}			
+			}
 		}
 		// If we make it here - we are good to go
 		return true;

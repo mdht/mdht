@@ -19,11 +19,10 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * Installs an EMF <code>EValidator</code> on the UML package when we
- * start up.  This validator adapts EMF's <code>EValidator</code> API to the
+ * start up. This validator adapts EMF's <code>EValidator</code> API to the
  * EMF Model Validation Service API.
  */
-public class Startup
-	implements IStartup {
+public class Startup implements IStartup {
 
 	/**
 	 * Initializes me.
@@ -36,8 +35,6 @@ public class Startup
 	 * Install the validator.
 	 */
 	public void earlyStartup() {
-		EValidator.Registry.INSTANCE.put(
-			UMLPackage.eINSTANCE,
-			new EValidatorAdapter());
+		EValidator.Registry.INSTANCE.put(UMLPackage.eINSTANCE, new EValidatorAdapter());
 	}
 }

@@ -13,7 +13,6 @@
 
 package org.openhealthtools.mdht.uml.hl7.validation.internal.properties;
 
-
 import java.util.HashMap;
 
 import org.eclipse.core.runtime.IStatus;
@@ -25,14 +24,13 @@ import org.openhealthtools.mdht.uml.hl7.validation.internal.properties.rimconstr
 import org.openhealthtools.mdht.uml.hl7.validation.internal.properties.rimconstraints.PropertyMultiplicityConstraint;
 import org.openhealthtools.mdht.uml.hl7.validation.internal.properties.rimconstraints.ValidPropertyTypeConstraint;
 import org.openhealthtools.mdht.uml.hl7.validation.internal.properties.vocabularyconstraints.PropertyVocabularyConstraint;
+
 /**
  * 
  * $Id: $
  */
 public class Properties extends HL7AbstractConstraint {
-	
-	
-	
+
 	private static void initialize() {
 		AbstractDatatypeConstraint.register();
 		MissingTypeConstraint.register();
@@ -49,8 +47,9 @@ public class Properties extends HL7AbstractConstraint {
 		}
 	}
 
+	@Override
 	public IStatus validate(IValidationContext context) {
-		
+
 		IStatus result = null; // context.createSuccessStatus();
 
 		if (constraints.size() == 0) {
@@ -59,11 +58,11 @@ public class Properties extends HL7AbstractConstraint {
 
 		if (constraints.containsKey(context.getCurrentConstraintId())) {
 			try {
-			result = constraints.get(context.getCurrentConstraintId()).validate(context);
-			} catch(RuntimeException re)
-			{
+				result = constraints.get(context.getCurrentConstraintId()).validate(context);
+			} catch (RuntimeException re) {
 				Object[] data = new Object[1];
-				data[0] = "<<<< Runtime Exception Encountered >> "+ re.getMessage() + " for constraint "+ context.getCurrentConstraintId();
+				data[0] = "<<<< Runtime Exception Encountered >> " + re.getMessage() + " for constraint " +
+						context.getCurrentConstraintId();
 				result = context.createFailureStatus(data);
 				re.printStackTrace();
 			}
@@ -74,11 +73,12 @@ public class Properties extends HL7AbstractConstraint {
 			 * a value in the message
 			 */
 			Object[] data = new Object[1];
-			data[0] = "<<<< The Following Warning Constraint Not Registered Properly Register >>" + context.getCurrentConstraintId();
+			data[0] = "<<<< The Following Warning Constraint Not Registered Properly Register >>" +
+					context.getCurrentConstraintId();
 			result = context.createFailureStatus(data);
 		}
 
 		return result;
 
-}
+	}
 }
