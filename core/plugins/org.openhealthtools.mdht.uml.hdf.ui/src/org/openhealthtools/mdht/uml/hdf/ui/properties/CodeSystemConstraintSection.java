@@ -12,7 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.hdf.ui.properties;
 
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
@@ -62,17 +61,26 @@ import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
 public class CodeSystemConstraintSection extends AbstractConstraintSection {
 
 	private Text idText;
+
 	private boolean idModified = false;
+
 	private Text nameText;
+
 	private boolean nameModified = false;
+
 	private Text versionDateText;
+
 	private boolean versionDateModified = false;
+
 	private Text codeText;
+
 	private boolean codeModified = false;
+
 	private Text codePrintNameText;
+
 	private boolean codePrintNameModified = false;
 
-    private ModifyListener modifyListener = new ModifyListener() {
+	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
 			if (idText == event.getSource()) {
 				idModified = true;
@@ -98,11 +106,12 @@ public class CodeSystemConstraintSection extends AbstractConstraintSection {
 		}
 
 		public void keyReleased(KeyEvent e) {
-			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character)
+			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character) {
 				modifyFields();
+			}
 		}
 	};
-	
+
 	private FocusListener focusListener = new FocusListener() {
 		public void focusGained(FocusEvent e) {
 			// do nothing
@@ -112,124 +121,117 @@ public class CodeSystemConstraintSection extends AbstractConstraintSection {
 			modifyFields();
 		}
 	};
-	
+
 	private void modifyFields() {
-		if (!(idModified || nameModified || versionDateModified
-				|| codeModified || codePrintNameModified)) {
+		if (!(idModified || nameModified || versionDateModified || codeModified || codePrintNameModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-							property, IHDFProfileConstants.CODE_SYSTEM_CONSTRAINT);
-					
+						property, IHDFProfileConstants.CODE_SYSTEM_CONSTRAINT);
+
 					if (stereotype == null) {
 						return Status.CANCEL_STATUS;
-					}
-					else if (idModified) {
+					} else if (idModified) {
 						idModified = false;
 						this.setLabel("Set Code System ID");
 
 						if (stereotype != null) {
 							String value = idText.getText().trim();
-							property.setValue(stereotype, 
-									IHDFProfileConstants.CODE_SYSTEM_OID,
-									value.length()>0 ? value : null);
+							property.setValue(stereotype, IHDFProfileConstants.CODE_SYSTEM_OID, value.length() > 0
+									? value
+									: null);
 						}
-					}
-					else if (nameModified) {
+					} else if (nameModified) {
 						nameModified = false;
 						this.setLabel("Set Code System Name");
 
 						if (stereotype != null) {
 							String value = nameText.getText().trim();
-							property.setValue(stereotype, 
-									IHDFProfileConstants.CODE_SYSTEM_NAME,
-									value.length()>0 ? value : null);
+							property.setValue(stereotype, IHDFProfileConstants.CODE_SYSTEM_NAME, value.length() > 0
+									? value
+									: null);
 						}
-					}
-					else if (versionDateModified) {
+					} else if (versionDateModified) {
 						versionDateModified = false;
 						this.setLabel("Set Code System Version");
 
 						if (stereotype != null) {
 							String value = versionDateText.getText().trim();
-							property.setValue(stereotype, 
-									IHDFProfileConstants.CODE_SYSTEM_VERSION,
-									value.length()>0 ? value : null);
+							property.setValue(stereotype, IHDFProfileConstants.CODE_SYSTEM_VERSION, value.length() > 0
+									? value
+									: null);
 						}
-					}
-					else if (codeModified) {
+					} else if (codeModified) {
 						codeModified = false;
 						this.setLabel("Set Code");
 
 						if (stereotype != null) {
 							String value = codeText.getText().trim();
-							property.setValue(stereotype, 
-									IHDFProfileConstants.CODE,
-									value.length()>0 ? value : null);
+							property.setValue(stereotype, IHDFProfileConstants.CODE, value.length() > 0
+									? value
+									: null);
 						}
-					}
-					else if (codePrintNameModified) {
+					} else if (codePrintNameModified) {
 						codePrintNameModified = false;
 						this.setLabel("Set Code Print Name");
 
 						if (stereotype != null) {
 							String value = codePrintNameText.getText().trim();
-							property.setValue(stereotype, 
-									IHDFProfileConstants.CODE_PRINT_NAME,
-									value.length()>0 ? value : null);
+							property.setValue(stereotype, IHDFProfileConstants.CODE_PRINT_NAME, value.length() > 0
+									? value
+									: null);
 						}
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
 
 					// fire notification for any stereotype property changes to update views
 					updateViews();
 
-					
-			        return Status.OK_STATUS;
-			    }};
+					return Status.OK_STATUS;
+				}
+			};
 
-		    try {
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
-		
-		Composite composite = getWidgetFactory()
-				.createGroup(parent, "Code System");
-        FormLayout layout = new FormLayout();
-        layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
-        layout.marginHeight = ITabbedPropertyConstants.VSPACE;
-        layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
-        composite.setLayout(layout);
 
-        int numberOfRows = hasVocabularyExtension() ? 3 : 2;
+		Composite composite = getWidgetFactory().createGroup(parent, "Code System");
+		FormLayout layout = new FormLayout();
+		layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+		layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+		layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+		composite.setLayout(layout);
+
+		int numberOfRows = hasVocabularyExtension()
+				? 3
+				: 2;
 		FormData data = null;
 
 		/* ------ ID field ------ */
 		idText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel idLabel = getWidgetFactory()
-				.createCLabel(composite, "ID:"); //$NON-NLS-1$
+		CLabel idLabel = getWidgetFactory().createCLabel(composite, "ID:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(idText, 0, SWT.CENTER);
@@ -238,13 +240,12 @@ public class CodeSystemConstraintSection extends AbstractConstraintSection {
 		data = new FormData();
 		data.left = new FormAttachment(idLabel, 0);
 		data.right = new FormAttachment(30, 0);
-		data.top = new FormAttachment(0,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(0, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		idText.setLayoutData(data);
 
 		/* ------ Name field ------ */
 		nameText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel nameLabel = getWidgetFactory()
-				.createCLabel(composite, "Name:"); //$NON-NLS-1$
+		CLabel nameLabel = getWidgetFactory().createCLabel(composite, "Name:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(idText, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(nameText, 0, SWT.CENTER);
@@ -253,13 +254,12 @@ public class CodeSystemConstraintSection extends AbstractConstraintSection {
 		data = new FormData();
 		data.left = new FormAttachment(nameLabel, 0);
 		data.right = new FormAttachment(60, 0);
-		data.top = new FormAttachment(0,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(0, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		nameText.setLayoutData(data);
 
 		/* ------ Version Date field ------ */
 		versionDateText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel versionLabel = getWidgetFactory()
-				.createCLabel(composite, "Version Date:"); //$NON-NLS-1$
+		CLabel versionLabel = getWidgetFactory().createCLabel(composite, "Version Date:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(nameText, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(versionDateText, 0, SWT.CENTER);
@@ -268,13 +268,12 @@ public class CodeSystemConstraintSection extends AbstractConstraintSection {
 		data = new FormData();
 		data.left = new FormAttachment(versionLabel, 0);
 		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(0,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(0, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		versionDateText.setLayoutData(data);
 
 		/* ------ Code field ------ */
 		codeText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel codeLabel = getWidgetFactory()
-				.createCLabel(composite, "Code:"); //$NON-NLS-1$
+		CLabel codeLabel = getWidgetFactory().createCLabel(composite, "Code:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(codeText, 0, SWT.CENTER);
@@ -283,13 +282,12 @@ public class CodeSystemConstraintSection extends AbstractConstraintSection {
 		data = new FormData();
 		data.left = new FormAttachment(codeLabel, 0);
 		data.right = new FormAttachment(30, 0);
-		data.top = new FormAttachment(1,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(1, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		codeText.setLayoutData(data);
 
 		/* ------ Code Print Name field ------ */
 		codePrintNameText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel codeNameLabel = getWidgetFactory()
-				.createCLabel(composite, "Code Print Name:"); //$NON-NLS-1$
+		CLabel codeNameLabel = getWidgetFactory().createCLabel(composite, "Code Print Name:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(codeText, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(codePrintNameText, 0, SWT.CENTER);
@@ -298,49 +296,44 @@ public class CodeSystemConstraintSection extends AbstractConstraintSection {
 		data = new FormData();
 		data.left = new FormAttachment(codeNameLabel, 0);
 		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(1,numberOfRows, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(1, numberOfRows, ITabbedPropertyConstants.VSPACE);
 		codePrintNameText.setLayoutData(data);
-		
+
 		if (hasVocabularyExtension()) {
 			vocabularyBrowseButton = getWidgetFactory().createButton(composite, "Browse...", SWT.PUSH); //$NON-NLS-1$
-			
+
 			vocabularyBrowseButton.addSelectionListener(new SelectionAdapter() {
-				
+
+				@Override
 				public void widgetSelected(SelectionEvent event) {
 					IVocabularySelectionDelegate.ICodeSystemConstraint codeSystemConstraint = (IVocabularySelectionDelegate.ICodeSystemConstraint) browseVocabulary(IVocabularySelectionDelegate.Constraint.CODESYSTEMS);
 
 					if (codeSystemConstraint != null) {
-						HDFUIUtil.setStereoPropertyValue(property, 
-													IHDFProfileConstants.CODE_SYSTEM_CONSTRAINT, 
-													new String[] {
-														IHDFProfileConstants.CODE_SYSTEM_OID, 
-														IHDFProfileConstants.CODE_SYSTEM_NAME,
-														IHDFProfileConstants.CODE_SYSTEM_VERSION, 
-														IHDFProfileConstants.CODE, 
-														IHDFProfileConstants.CODE_PRINT_NAME}, 												
-													new Object[] { 
-														codeSystemConstraint.getSystemOid(),
-														codeSystemConstraint.getSystemName(),
-														codeSystemConstraint.getSystemVersion(),
-														codeSystemConstraint.getCode(),
-														codeSystemConstraint.getCodePrintName()},
-													getPart());
+						HDFUIUtil.setStereoPropertyValue(
+							property, IHDFProfileConstants.CODE_SYSTEM_CONSTRAINT, new String[] {
+									IHDFProfileConstants.CODE_SYSTEM_OID, IHDFProfileConstants.CODE_SYSTEM_NAME,
+									IHDFProfileConstants.CODE_SYSTEM_VERSION, IHDFProfileConstants.CODE,
+									IHDFProfileConstants.CODE_PRINT_NAME },
+							new Object[] {
+									codeSystemConstraint.getSystemOid(), codeSystemConstraint.getSystemName(),
+									codeSystemConstraint.getSystemVersion(), codeSystemConstraint.getCode(),
+									codeSystemConstraint.getCodePrintName() }, getPart());
 					}
 				}
 			});
 
 			data = new FormData();
-			data.top = new FormAttachment(2,numberOfRows, ITabbedPropertyConstants.VSPACE);
+			data.top = new FormAttachment(2, numberOfRows, ITabbedPropertyConstants.VSPACE);
 			data.left = new FormAttachment(0, 0);
 			data.height = getButtonHeight();
 			vocabularyBrowseButton.setLayoutData(data);
-		} 
+		}
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (property != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
 			if (editingDomain != null && editingDomain.isReadOnly(property.eResource())) {
 				return true;
 			}
@@ -353,8 +346,10 @@ public class CodeSystemConstraintSection extends AbstractConstraintSection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -364,6 +359,7 @@ public class CodeSystemConstraintSection extends AbstractConstraintSection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
@@ -371,23 +367,26 @@ public class CodeSystemConstraintSection extends AbstractConstraintSection {
 		this.property = (Property) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 
 	}
 
+	@Override
 	public void refresh() {
 		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-				property, IHDFProfileConstants.CODE_SYSTEM_CONSTRAINT);
+			property, IHDFProfileConstants.CODE_SYSTEM_CONSTRAINT);
 
 		idText.removeModifyListener(modifyListener);
 		idText.removeKeyListener(keyListener);
 		idText.removeFocusListener(focusListener);
 		if (stereotype != null) {
 			String name = (String) property.getValue(stereotype, IHDFProfileConstants.CODE_SYSTEM_OID);
-			idText.setText(name!=null ? name : "");
-		}
-		else {
+			idText.setText(name != null
+					? name
+					: "");
+		} else {
 			idText.setText("");
 		}
 		idText.addModifyListener(modifyListener);
@@ -399,9 +398,10 @@ public class CodeSystemConstraintSection extends AbstractConstraintSection {
 		nameText.removeFocusListener(focusListener);
 		if (stereotype != null) {
 			String name = (String) property.getValue(stereotype, IHDFProfileConstants.CODE_SYSTEM_NAME);
-			nameText.setText(name!=null ? name : "");
-		}
-		else {
+			nameText.setText(name != null
+					? name
+					: "");
+		} else {
 			nameText.setText("");
 		}
 		nameText.addModifyListener(modifyListener);
@@ -413,9 +413,10 @@ public class CodeSystemConstraintSection extends AbstractConstraintSection {
 		versionDateText.removeFocusListener(focusListener);
 		if (stereotype != null) {
 			String name = (String) property.getValue(stereotype, IHDFProfileConstants.CODE_SYSTEM_VERSION);
-			versionDateText.setText(name!=null ? name : "");
-		}
-		else {
+			versionDateText.setText(name != null
+					? name
+					: "");
+		} else {
 			versionDateText.setText("");
 		}
 		versionDateText.addModifyListener(modifyListener);
@@ -427,9 +428,10 @@ public class CodeSystemConstraintSection extends AbstractConstraintSection {
 		codeText.removeFocusListener(focusListener);
 		if (stereotype != null) {
 			String name = (String) property.getValue(stereotype, IHDFProfileConstants.CODE);
-			codeText.setText(name!=null ? name : "");
-		}
-		else {
+			codeText.setText(name != null
+					? name
+					: "");
+		} else {
 			codeText.setText("");
 		}
 		codeText.addModifyListener(modifyListener);
@@ -441,9 +443,10 @@ public class CodeSystemConstraintSection extends AbstractConstraintSection {
 		codePrintNameText.removeFocusListener(focusListener);
 		if (stereotype != null) {
 			String name = (String) property.getValue(stereotype, IHDFProfileConstants.CODE_PRINT_NAME);
-			codePrintNameText.setText(name!=null ? name : "");
-		}
-		else {
+			codePrintNameText.setText(name != null
+					? name
+					: "");
+		} else {
 			codePrintNameText.setText("");
 		}
 		codePrintNameText.addModifyListener(modifyListener);
@@ -456,8 +459,7 @@ public class CodeSystemConstraintSection extends AbstractConstraintSection {
 			versionDateText.setEnabled(false);
 			codeText.setEnabled(false);
 			codePrintNameText.setEnabled(false);
-		}
-		else {
+		} else {
 			idText.setEnabled(true);
 			nameText.setEnabled(true);
 			versionDateText.setEnabled(true);
@@ -472,19 +474,23 @@ public class CodeSystemConstraintSection extends AbstractConstraintSection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && property.eResource() != null)
+					if (!isDisposed() && property.eResource() != null) {
 						refresh();
+					}
 				}
 			});
 		}

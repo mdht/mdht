@@ -26,9 +26,8 @@ public class RIMActFilter implements IFilter {
 
 	public boolean select(Object object) {
 		Element element = HDFFilterUtil.getElement(object);
-		
-		return element instanceof Class
-				&& RIMProfileUtil.isRIMType(element, IRIMProfileConstants.ACT);
+
+		return element instanceof Class && RIMProfileUtil.isRIMType(element, IRIMProfileConstants.ACT);
 	}
 
 }

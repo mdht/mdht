@@ -30,11 +30,11 @@ import org.openhealthtools.mdht.uml.hdf.util.HL7ResourceUtil;
  * This class provides custom edit parsers for HL7 class diagrams.
  * It applies only to models with the HDF profile applied.
  * 
- * CustomUMLParserProvider general functionality is duplicated within mirrored CustomUMLParserProvider in org.openhealthtools.mdht.uml.cda.ui.providers
+ * CustomUMLParserProvider general functionality is duplicated within mirrored CustomUMLParserProvider in
+ * org.openhealthtools.mdht.uml.cda.ui.providers
  * 
  */
-public abstract class CustomUMLParserProvider extends AbstractProvider 
-implements IParserProvider {
+public abstract class CustomUMLParserProvider extends AbstractProvider implements IParserProvider {
 
 	public CustomUMLParserProvider() {
 		super();
@@ -60,10 +60,10 @@ implements IParserProvider {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
 			if (hint instanceof ParserHintAdapter) {
 				// only allow Property elements in models with HDF profile applied
-				//TODO check user preference setting
-				EObject eObject = (EObject)hint.getAdapter(EObject.class);
+				// TODO check user preference setting
+				EObject eObject = (EObject) hint.getAdapter(EObject.class);
 				if (eObject instanceof Property) {
-					Profile profile = HL7ResourceUtil.getAppliedHDFProfile((Property)eObject);
+					Profile profile = HL7ResourceUtil.getAppliedHDFProfile((Property) eObject);
 					if (profile != null) {
 						return getParser(hint) != null;
 					}

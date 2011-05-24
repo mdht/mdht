@@ -25,9 +25,9 @@ import org.openhealthtools.mdht.uml.hdf.ui.clone.CloneHandler;
 import org.openhealthtools.mdht.uml.hdf.util.RIMProfileUtil;
 
 public class OpenCloneEditorAction implements IObjectActionDelegate {
-	
+
 	EObject eObject;
-	
+
 	public OpenCloneEditorAction() {
 		super();
 	}
@@ -38,37 +38,39 @@ public class OpenCloneEditorAction implements IObjectActionDelegate {
 	public void run(IAction action) {
 		try {
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(eObject);
-		
+
 			String appliedStereotypeName = "";
 			Stereotype stereotype = null;
-			if(eObject instanceof Class){
-				stereotype = RIMProfileUtil.getRIMStereotype((Class)eObject);
+			if (eObject instanceof Class) {
+				stereotype = RIMProfileUtil.getRIMStereotype((Class) eObject);
 				if (stereotype != null) {
 					appliedStereotypeName = stereotype.getQualifiedName();
 				}
 			}
-			final CloneHandler cloneHandler = new CloneHandler(stereotype,eObject,appliedStereotypeName);
-			
-			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Open Clone Editor") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					cloneHandler.modify();
-			        return Status.OK_STATUS;
-			    }};
+			final CloneHandler cloneHandler = new CloneHandler(stereotype, eObject, appliedStereotypeName);
 
-		    try {
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Open Clone Editor") {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					cloneHandler.modify();
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
 
-		    } catch (ExecutionException ee) {
-			        //Logger.logException(ee);
-		    }
+			} catch (ExecutionException ee) {
+				// Logger.logException(ee);
+			}
 
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
-	
+
 	/**
 	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
 	 */
@@ -80,25 +82,25 @@ public class OpenCloneEditorAction implements IObjectActionDelegate {
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
 		eObject = null;
-		
-		if (((IStructuredSelection)selection).size() == 1) {
-			Object selected = ((IStructuredSelection)selection).getFirstElement();
+
+		if (((IStructuredSelection) selection).size() == 1) {
+			Object selected = ((IStructuredSelection) selection).getFirstElement();
 			if (selected instanceof IAdaptable) {
-				selected = (EObject) ((IAdaptable) selected).getAdapter(EObject.class);
+				selected = ((IAdaptable) selected).getAdapter(EObject.class);
 			}
 			if (selected instanceof View) {
-				selected = ((View)selected).getElement();
+				selected = ((View) selected).getElement();
 			}
-			
+
 			if (selected instanceof Class) {
 				eObject = (EObject) selected;
 			}
 		}
-		
+
 		if (eObject != null && eObject instanceof Class) {
 			Class element = (Class) eObject;
 			Stereotype rimStereotype = RIMProfileUtil.getRIMStereotype(element);
-			//if the eObject has a RIM stereotype applied then enable the action
+			// if the eObject has a RIM stereotype applied then enable the action
 			if (rimStereotype != null) {
 				action.setEnabled(true);
 				return;

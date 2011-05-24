@@ -12,7 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.hdf.ui.properties;
 
-
 import java.util.List;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -67,8 +66,11 @@ public class HL7DefinitionSection extends AbstractModelerPropertySection {
 	private NamedElement namedElement;
 
 	private Text businessNameText;
+
 	private boolean businessNameModified = false;
+
 	private Text sortKeyText;
+
 	private boolean sortKeyModified = false;
 
 	/**
@@ -77,21 +79,19 @@ public class HL7DefinitionSection extends AbstractModelerPropertySection {
 	private Stereotype getHL7Stereotype(Element element) {
 		Stereotype stereotype = null;
 
-		if (element instanceof Package)
-			stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-				namedElement, IHDFProfileConstants.HDF_PACKAGE);
-		else if (element instanceof Class)
-			stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-				namedElement, IHDFProfileConstants.HDF_CLASS);
-		else if (element instanceof Property) {
-			stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-					namedElement, IHDFProfileConstants.HDF_ATTRIBUTE);
+		if (element instanceof Package) {
+			stereotype = HL7ResourceUtil.getAppliedHDFStereotype(namedElement, IHDFProfileConstants.HDF_PACKAGE);
+		} else if (element instanceof Class) {
+			stereotype = HL7ResourceUtil.getAppliedHDFStereotype(namedElement, IHDFProfileConstants.HDF_CLASS);
+		} else if (element instanceof Property) {
+			stereotype = HL7ResourceUtil.getAppliedHDFStereotype(namedElement, IHDFProfileConstants.HDF_ATTRIBUTE);
 
-			if (stereotype == null)
+			if (stereotype == null) {
 				stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-						namedElement, IHDFProfileConstants.HDF_ASSOCIATION_END);
+					namedElement, IHDFProfileConstants.HDF_ASSOCIATION_END);
+			}
 		}
-		
+
 		return stereotype;
 	}
 
@@ -101,28 +101,24 @@ public class HL7DefinitionSection extends AbstractModelerPropertySection {
 	private Stereotype applyHL7Stereotype(Element element) {
 		Stereotype stereotype = null;
 
-		if (element instanceof Package)
-			stereotype = HL7ResourceUtil.applyHDFStereotype(
-				namedElement, IHDFProfileConstants.HDF_PACKAGE);
-		else if (element instanceof Class)
-			stereotype = HL7ResourceUtil.applyHDFStereotype(
-				namedElement, IHDFProfileConstants.HDF_CLASS);
-		else if (element instanceof Property && ((Property)element).getAssociation() != null)
-			stereotype = HL7ResourceUtil.applyHDFStereotype(
-					namedElement, IHDFProfileConstants.HDF_ASSOCIATION_END);
-		else if (element instanceof Property)
-			stereotype = HL7ResourceUtil.applyHDFStereotype(
-					namedElement, IHDFProfileConstants.HDF_ATTRIBUTE);
-		
+		if (element instanceof Package) {
+			stereotype = HL7ResourceUtil.applyHDFStereotype(namedElement, IHDFProfileConstants.HDF_PACKAGE);
+		} else if (element instanceof Class) {
+			stereotype = HL7ResourceUtil.applyHDFStereotype(namedElement, IHDFProfileConstants.HDF_CLASS);
+		} else if (element instanceof Property && ((Property) element).getAssociation() != null) {
+			stereotype = HL7ResourceUtil.applyHDFStereotype(namedElement, IHDFProfileConstants.HDF_ASSOCIATION_END);
+		} else if (element instanceof Property) {
+			stereotype = HL7ResourceUtil.applyHDFStereotype(namedElement, IHDFProfileConstants.HDF_ATTRIBUTE);
+		}
+
 		return stereotype;
 	}
-	
-    private ModifyListener modifyListener = new ModifyListener() {
+
+	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
 			if (businessNameText == event.getSource()) {
 				businessNameModified = true;
-			}
-			else if (sortKeyText == event.getSource()) {
+			} else if (sortKeyText == event.getSource()) {
 				sortKeyModified = true;
 			}
 		}
@@ -134,11 +130,12 @@ public class HL7DefinitionSection extends AbstractModelerPropertySection {
 		}
 
 		public void keyReleased(KeyEvent e) {
-			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character)
+			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character) {
 				modifyFields();
+			}
 		}
 	};
-	
+
 	private FocusListener focusListener = new FocusListener() {
 		public void focusGained(FocusEvent e) {
 			// do nothing
@@ -148,53 +145,53 @@ public class HL7DefinitionSection extends AbstractModelerPropertySection {
 			modifyFields();
 		}
 	};
-	
+
 	private void modifyFields() {
 		if (!(businessNameModified || sortKeyModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(namedElement);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Stereotype stereotype = applyHL7Stereotype(namedElement);
-					
+
 					if (businessNameModified) {
 						businessNameModified = false;
 						this.setLabel("Set Business Name");
 
-						//TODO remove fixed lang value, add Language field to form
-						if (stereotype != null)
-							setFirstBusinessName(namedElement, stereotype, 
-									businessNameText.getText().trim(), "en");
-					}
-					else if (sortKeyModified) {
+						// TODO remove fixed lang value, add Language field to form
+						if (stereotype != null) {
+							setFirstBusinessName(namedElement, stereotype, businessNameText.getText().trim(), "en");
+						}
+					} else if (sortKeyModified) {
 						sortKeyModified = false;
 						this.setLabel("Set SortKey");
 
-						if (stereotype != null)
-							namedElement.setValue(stereotype, IHDFProfileConstants.SORT_KEY, 
-									sortKeyText.getText().trim());
-					}
-					else {
+						if (stereotype != null) {
+							namedElement.setValue(
+								stereotype, IHDFProfileConstants.SORT_KEY, sortKeyText.getText().trim());
+						}
+					} else {
 						return Status.CANCEL_STATUS;
 					}
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
@@ -206,18 +203,18 @@ public class HL7DefinitionSection extends AbstractModelerPropertySection {
 			return null;
 		}
 		Object value = umlElement.getValue(hdfStereotype, IHDFProfileConstants.BUSINESS_NAMES);
-		if (value instanceof List && ((List)value).size() > 0) {
+		if (value instanceof List && ((List) value).size() > 0) {
 			String member = IHDFProfileConstants.BUSINESS_NAMES + "[0]";
 			String nameProperty = member + NamedElement.SEPARATOR + IHDFProfileConstants.BUSINESS_NAME_NAME;
-//			String langProperty = member + NamedElement.SEPARATOR + IHDFProfileConstants.BUSINESS_NAME_LANG;
-	
+			// String langProperty = member + NamedElement.SEPARATOR + IHDFProfileConstants.BUSINESS_NAME_LANG;
+
 			name = (String) umlElement.getValue(hdfStereotype, nameProperty);
-//			String lang = (String) umlElement.getValue(hdfStereotype, langProperty);
+			// String lang = (String) umlElement.getValue(hdfStereotype, langProperty);
 		}
-		
+
 		return name;
 	}
-	
+
 	private void setFirstBusinessName(Element umlElement, Stereotype hdfStereotype, String name, String lang) {
 		String member = IHDFProfileConstants.BUSINESS_NAMES + "[0]";
 		String nameProperty = member + NamedElement.SEPARATOR + IHDFProfileConstants.BUSINESS_NAME_NAME;
@@ -225,22 +222,20 @@ public class HL7DefinitionSection extends AbstractModelerPropertySection {
 
 		umlElement.setValue(hdfStereotype, nameProperty, name);
 		umlElement.setValue(hdfStereotype, langProperty, lang);
-		
+
 		// assign the first business name to UML alias name, to appear on class diagrams
 		UMLUtil.addAliasName(umlElement, name);
 	}
-	
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
-		Composite composite = getWidgetFactory()
-				.createFlatFormComposite(parent);
+		Composite composite = getWidgetFactory().createFlatFormComposite(parent);
 		FormData data = null;
 
 		/* ------ sort key ------- */
 		sortKeyText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel sortKeyLabel = getWidgetFactory()
-				.createCLabel(composite, "Sort Key:"); //$NON-NLS-1$
+		CLabel sortKeyLabel = getWidgetFactory().createCLabel(composite, "Sort Key:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(sortKeyText, 0, SWT.CENTER);
@@ -249,13 +244,12 @@ public class HL7DefinitionSection extends AbstractModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(sortKeyLabel, 0);
 		data.width = 60;
-		data.top = new FormAttachment(0,2, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(0, 2, ITabbedPropertyConstants.VSPACE);
 		sortKeyText.setLayoutData(data);
 
 		/* ------ business name ------- */
 		businessNameText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel businessNameLabel = getWidgetFactory()
-				.createCLabel(composite, "Business Name:"); //$NON-NLS-1$
+		CLabel businessNameLabel = getWidgetFactory().createCLabel(composite, "Business Name:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(sortKeyText, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(businessNameText, 0, SWT.CENTER);
@@ -264,15 +258,15 @@ public class HL7DefinitionSection extends AbstractModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(businessNameLabel, 0);
 		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(0,2, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(0, 2, ITabbedPropertyConstants.VSPACE);
 		businessNameText.setLayoutData(data);
 
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (namedElement != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(namedElement);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
 			if (editingDomain != null && editingDomain.isReadOnly(namedElement.eResource())) {
 				return true;
 			}
@@ -285,8 +279,10 @@ public class HL7DefinitionSection extends AbstractModelerPropertySection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -296,6 +292,7 @@ public class HL7DefinitionSection extends AbstractModelerPropertySection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
@@ -303,11 +300,13 @@ public class HL7DefinitionSection extends AbstractModelerPropertySection {
 		this.namedElement = (NamedElement) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 
 	}
 
+	@Override
 	public void refresh() {
 		Stereotype stereotype = getHL7Stereotype(namedElement);
 
@@ -316,9 +315,10 @@ public class HL7DefinitionSection extends AbstractModelerPropertySection {
 		businessNameText.removeFocusListener(focusListener);
 		if (stereotype != null) {
 			String name = getFirstBusinessName(namedElement, stereotype);
-			businessNameText.setText(name!=null ? name : "");
-		}
-		else {
+			businessNameText.setText(name != null
+					? name
+					: "");
+		} else {
 			businessNameText.setText("");
 		}
 		businessNameText.addModifyListener(modifyListener);
@@ -330,9 +330,10 @@ public class HL7DefinitionSection extends AbstractModelerPropertySection {
 		sortKeyText.removeFocusListener(focusListener);
 		if (stereotype != null) {
 			String sortKey = (String) namedElement.getValue(stereotype, IHDFProfileConstants.SORT_KEY);
-			sortKeyText.setText(sortKey!=null ? sortKey : "");
-		}
-		else {
+			sortKeyText.setText(sortKey != null
+					? sortKey
+					: "");
+		} else {
 			sortKeyText.setText("");
 		}
 		sortKeyText.addModifyListener(modifyListener);
@@ -342,8 +343,7 @@ public class HL7DefinitionSection extends AbstractModelerPropertySection {
 		if (isReadOnly()) {
 			businessNameText.setEnabled(false);
 			sortKeyText.setEnabled(false);
-		}
-		else {
+		} else {
 			businessNameText.setEnabled(true);
 			sortKeyText.setEnabled(true);
 		}
@@ -355,19 +355,23 @@ public class HL7DefinitionSection extends AbstractModelerPropertySection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && namedElement.eResource() != null)
+					if (!isDisposed() && namedElement.eResource() != null) {
 						refresh();
+					}
 				}
 			});
 		}

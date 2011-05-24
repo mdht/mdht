@@ -12,7 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.hdf.ui.actions;
 
-
 import java.util.Iterator;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -46,9 +45,9 @@ import org.openhealthtools.mdht.uml.hdf.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.hdf.ui.util.RIMColorUtil;
 
 public class AssignRIMColors implements IObjectActionDelegate {
-	
+
 	private EObject eObject;
-	
+
 	public AssignRIMColors() {
 		super();
 	}
@@ -59,76 +58,76 @@ public class AssignRIMColors implements IObjectActionDelegate {
 	public void run(IAction action) {
 		try {
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(eObject);
-			IUndoableOperation operation = new AbstractEMFOperation(
-					editingDomain, "Assign RIM Colors") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	if (eObject instanceof Diagram) {
-			    		for (Iterator iterator = ((Diagram)eObject).getPersistedChildren().iterator(); iterator.hasNext();) {
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Assign RIM Colors") {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					if (eObject instanceof Diagram) {
+						for (Iterator iterator = ((Diagram) eObject).getPersistedChildren().iterator(); iterator.hasNext();) {
 							Node node = (Node) iterator.next();
 							assignNodeColor(node);
 						}
-			    		for (Iterator iterator = ((Diagram)eObject).getPersistedEdges().iterator(); iterator.hasNext();) {
+						for (Iterator iterator = ((Diagram) eObject).getPersistedEdges().iterator(); iterator.hasNext();) {
 							Edge edge = (Edge) iterator.next();
 							assignNodeColor(edge);
 						}
-			    	}
-			    	else if (eObject instanceof View) {
-			    		assignNodeColor((View)eObject);
-			    	}
-			    	
-			        return Status.OK_STATUS;
-			    }};
+					} else if (eObject instanceof View) {
+						assignNodeColor((View) eObject);
+					}
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
 
-		    } catch (ExecutionException ee) {
-			        Logger.logException(ee);
-		    }
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
 
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
-	
-	private boolean assignNodeColor(View view) {
-		if (!(view.getElement() instanceof Element))
-			return false;
 
-		Element element = (Element)view.getElement();
+	private boolean assignNodeColor(View view) {
+		if (!(view.getElement() instanceof Element)) {
+			return false;
+		}
+
+		Element element = (Element) view.getElement();
 		boolean assigned = false;
-		
+
 		// special case for RIM metamodel
 		Package topPackage = UMLUtil.getTopPackage(element.getNearestPackage());
-		if (element instanceof Classifier
-				&& "RIM".equals(topPackage.getName())) {
-			assigned = RIMColorUtil.assignRIMColor(view, (Classifier)element);
-			
+		if (element instanceof Classifier && "RIM".equals(topPackage.getName())) {
+			assigned = RIMColorUtil.assignRIMColor(view, (Classifier) element);
+
 			if (!assigned) {
 				RIMColorUtil.assignNonCoreColor(view);
 				assigned = true;
 			}
-		}
-		else {
+		} else {
 			for (Iterator iter = element.getAppliedStereotypes().iterator(); iter.hasNext();) {
 				Stereotype stereotype = (Stereotype) iter.next();
 				assigned = RIMColorUtil.assignRIMColor(view, stereotype);
-				
-				if (assigned)
+
+				if (assigned) {
 					break;
+				}
 			}
 		}
-		
+
 		if (!assigned) {
 			// when testing keywords, cannot use RIM generalization to determine type
 			assigned = RIMColorUtil.assignRIMColorFromKeywords(view, element);
 		}
-		
+
 		return assigned;
 	}
-	
+
 	/**
 	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
 	 */
@@ -140,29 +139,28 @@ public class AssignRIMColors implements IObjectActionDelegate {
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
 		eObject = null;
-		
-		if (((IStructuredSelection)selection).size() == 1) {
-			Object selected = ((IStructuredSelection)selection).getFirstElement();
+
+		if (((IStructuredSelection) selection).size() == 1) {
+			Object selected = ((IStructuredSelection) selection).getFirstElement();
 			if (selected instanceof IAdaptable) {
-				selected = (EObject) ((IAdaptable) selected).getAdapter(EObject.class);
+				selected = ((IAdaptable) selected).getAdapter(EObject.class);
 			}
 			if (selected instanceof Element || selected instanceof View) {
 				eObject = (EObject) selected;
 			}
 		}
-		
+
 		if (eObject != null) {
 			Element element = null;
-			if (eObject instanceof Element)
+			if (eObject instanceof Element) {
 				element = (Element) eObject;
-			else if (eObject instanceof View)
+			} else if (eObject instanceof View) {
 				element = getSemanticElement(eObject);
+			}
 
 			// special case for RIM model
 			Package topPackage = UMLUtil.getTopPackage(element.getNearestPackage());
-			if (element != null && 
-					("RIM".equals(topPackage.getName())
-					 || "RIM Diagrams".equals(topPackage.getName()))) {
+			if (element != null && ("RIM".equals(topPackage.getName()) || "RIM Diagrams".equals(topPackage.getName()))) {
 				action.setEnabled(true);
 				return;
 			}
@@ -176,16 +174,17 @@ public class AssignRIMColors implements IObjectActionDelegate {
 	}
 
 	private Element getSemanticElement(EObject eObject) {
-		if (eObject instanceof View
-				&& ((View)eObject).getElement() instanceof Element)
-			return (Element) ((View)eObject).getElement();
-		
+		if (eObject instanceof View && ((View) eObject).getElement() instanceof Element) {
+			return (Element) ((View) eObject).getElement();
+		}
+
 		// if semantic element is not assigned, look for container
 		Element owner = null;
 		while (owner == null && eObject.eContainer() != null) {
 			eObject = eObject.eContainer();
-			if (eObject instanceof Element)
+			if (eObject instanceof Element) {
 				owner = (Element) eObject;
+			}
 		}
 		return owner;
 	}

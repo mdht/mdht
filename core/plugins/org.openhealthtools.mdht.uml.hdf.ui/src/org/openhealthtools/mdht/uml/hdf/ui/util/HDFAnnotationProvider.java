@@ -15,19 +15,19 @@ public class HDFAnnotationProvider implements INotationProvider, IExecutableExte
 		String printString = null;
 
 		if (element instanceof Property) {
-			printString = HDFPropertyNotation.getCustomLabel((Property)element, IHL7Appearance.DEFAULT_HL7_PROPERTY);
+			printString = HDFPropertyNotation.getCustomLabel((Property) element, IHL7Appearance.DEFAULT_HL7_PROPERTY);
 		}
-		
+
 		return printString;
 	}
 
 	public String getAnnotation(Element element) {
 		String annotation = null;
-		
+
 		if (element instanceof Property) {
-			annotation = HDFPropertyNotation.getCustomLabel((Property)element, HL7_PROPERTY_ANNOTATION);
+			annotation = HDFPropertyNotation.getCustomLabel((Property) element, HL7_PROPERTY_ANNOTATION);
 		}
-		
+
 		return annotation;
 	}
 

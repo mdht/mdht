@@ -13,6 +13,7 @@
 package org.openhealthtools.mdht.uml.hdf.ui.parsers;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
@@ -20,6 +21,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.uml2.uml.Property;
+import org.openhealthtools.mdht.uml.common.notation.IUMLNotation;
 import org.openhealthtools.mdht.uml.hdf.ui.internal.Activator;
 import org.openhealthtools.mdht.uml.hdf.ui.util.IHL7Appearance;
 import org.openhealthtools.mdht.uml.hdf.ui.util.HDFPropertyNotation;
@@ -35,25 +37,20 @@ public class PropertyParser implements IParser {
 
 	public String getEditString(final IAdaptable element, int flags) {
 		if (element instanceof EObjectAdapter) {
-			final Property property = ((Property) ((EObjectAdapter) element)
-					.getRealObject());
-			return HDFPropertyNotation.getCustomLabel(property,
-					IHL7Appearance.DEFAULT_UML_PROPERTY);
+			final Property property = ((Property) ((EObjectAdapter) element).getRealObject());
+			return HDFPropertyNotation.getCustomLabel(property, IUMLNotation.DEFAULT_UML_PROPERTY);
 		}
 		return "";
 	}
 
-	public ICommand getParseCommand(IAdaptable element, String newString,
-			int flags) {
+	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		return null;
 	}
 
 	public String getPrintString(IAdaptable element, int flags) {
 		if (element instanceof EObjectAdapter) {
-			Property property = ((Property) ((EObjectAdapter) element)
-					.getRealObject());
-			return HDFPropertyNotation.getCustomLabel(property,
-					IHL7Appearance.DEFAULT_HL7_PROPERTY);
+			Property property = ((Property) ((EObjectAdapter) element).getRealObject());
+			return HDFPropertyNotation.getCustomLabel(property, IHL7Appearance.DEFAULT_HL7_PROPERTY);
 		}
 		return null;
 	}
@@ -62,10 +59,8 @@ public class PropertyParser implements IParser {
 		return true;
 	}
 
-	public IParserEditStatus isValidEditString(IAdaptable element,
-			String editString) {
+	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 
-		return new ParserEditStatus(Activator.PLUGIN_ID,
-				IParserEditStatus.ERROR, "Not Supported");
+		return new ParserEditStatus(Activator.PLUGIN_ID, IStatus.ERROR, "Not Supported");
 	}
 }

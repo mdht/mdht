@@ -27,28 +27,26 @@ import org.openhealthtools.mdht.uml.hdf.ui.properties.IVocabularySelectionDelega
 
 public class AbstractConstraintSection extends AbstractModelerPropertySection {
 
-	
-	 Property property;
-	 
-	 Button vocabularyBrowseButton;
+	Property property;
+
+	Button vocabularyBrowseButton;
 
 	static IConfigurationElement[] config = null;
-	
-	 boolean hasVocabularyExtension()
-	 {
-		 boolean hasVocabularyExtension = false;
-		 
-		 if (config == null) {
-			 config = Platform.getExtensionRegistry().getConfigurationElementsFor(IVocabularySelectionDelegate.EXTENSION_POINT);
-		 }
-		 
-		 if (config.length > 0)
-		 {
-			 hasVocabularyExtension = true;
-		 }
-		 return hasVocabularyExtension;
-	 }
-	 
+
+	boolean hasVocabularyExtension() {
+		boolean hasVocabularyExtension = false;
+
+		if (config == null) {
+			config = Platform.getExtensionRegistry().getConfigurationElementsFor(
+				IVocabularySelectionDelegate.EXTENSION_POINT);
+		}
+
+		if (config.length > 0) {
+			hasVocabularyExtension = true;
+		}
+		return hasVocabularyExtension;
+	}
+
 	public IVocabularyConstraint browseVocabulary(IVocabularySelectionDelegate.Constraint constraint) {
 
 		try {
@@ -58,11 +56,10 @@ public class AbstractConstraintSection extends AbstractModelerPropertySection {
 				Object vocabularyDelegateTarget = configrationElement.createExecutableExtension(IVocabularySelectionDelegate.SELECTION_DELEGATE);
 
 				IVocabularySelectionDelegate vocabularySelectionDelegate = (IVocabularySelectionDelegate) vocabularyDelegateTarget;
-				
-				if (vocabularySelectionDelegate.isConfigured())
-				{
-					return (IVocabularySelectionDelegate.IVocabularyConstraint) vocabularySelectionDelegate.chooseVocabularyConstraint(getPart().getSite().getShell(), property,
-							constraint);
+
+				if (vocabularySelectionDelegate.isConfigured()) {
+					return vocabularySelectionDelegate.chooseVocabularyConstraint(
+						getPart().getSite().getShell(), property, constraint);
 				}
 			}
 
@@ -72,29 +69,27 @@ public class AbstractConstraintSection extends AbstractModelerPropertySection {
 		}
 		return null;
 	}
-	
-	
-	public int getButtonHeight()
-	{
-	      Shell shell = new Shell();
-	        GC gc = new GC(shell);
-	        gc.setFont(shell.getFont());
-	        Point point = gc.textExtent("");//$NON-NLS-1$
-	        int buttonHeight = point.y + 10;
-	        gc.dispose();
-	        shell.dispose();
-	        return buttonHeight;
+
+	public int getButtonHeight() {
+		Shell shell = new Shell();
+		GC gc = new GC(shell);
+		gc.setFont(shell.getFont());
+		Point point = gc.textExtent("");//$NON-NLS-1$
+		int buttonHeight = point.y + 10;
+		gc.dispose();
+		shell.dispose();
+		return buttonHeight;
 	}
-	
-	
-	
+
 	protected void updateViews() {
-		
+
 		Notification notification = new NotificationImpl(Notification.SET, null, property.getName()) {
+			@Override
 			public Object getNotifier() {
 				return property;
 			}
 
+			@Override
 			public int getFeatureID(Class expectedClass) {
 				return UMLPackage.PROPERTY__NAME;
 			}

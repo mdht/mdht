@@ -13,7 +13,6 @@
 
 package org.openhealthtools.mdht.uml.hdf.ui.properties;
 
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -32,11 +31,10 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.hdf.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.hdf.util.HL7ResourceUtil;
 
-
 public class HDFUIUtil {
 
 	private static class StereoPropertyValueOperation extends AbstractEMFOperation {
-		
+
 		public Element element;
 
 		public String stereotype;
@@ -46,15 +44,15 @@ public class HDFUIUtil {
 		public Object[] values;
 
 		public StereoPropertyValueOperation(TransactionalEditingDomain domain, String label) {
-			super(domain, label);			
+			super(domain, label);
 		}
 
+		@Override
 		protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 
 			IStatus result = Status.OK_STATUS;
-			
+
 			Stereotype apppliedStereotype = HL7ResourceUtil.getAppliedHDFStereotype(element, stereotype);
-			
 
 			if (apppliedStereotype != null) {
 
@@ -69,10 +67,12 @@ public class HDFUIUtil {
 					// update views
 					if (values.length > 0) {
 						Notification notification = new NotificationImpl(Notification.SET, null, values[0]) {
+							@Override
 							public Object getNotifier() {
 								return element;
 							}
 
+							@Override
 							public int getFeatureID(Class expectedClass) {
 								return UMLPackage.PROPERTY__NAME;
 							}
@@ -99,7 +99,8 @@ public class HDFUIUtil {
 	 * @param value
 	 * @param adaptable
 	 */
-	static void setStereoPropertyValue(Element element, String stereotype, String[] property, Object[] value, IAdaptable adaptable) {
+	static void setStereoPropertyValue(Element element, String stereotype, String[] property, Object[] value,
+			IAdaptable adaptable) {
 
 		// Start the editing domain transaction
 		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(element);
@@ -107,21 +108,20 @@ public class HDFUIUtil {
 		StereoPropertyValueOperation operation = new StereoPropertyValueOperation(editingDomain, "setStereoProperties");
 
 		operation.element = element;
-		
+
 		operation.stereotype = stereotype;
-		
+
 		operation.properties = property;
-		
+
 		operation.values = value;
-	
+
 		try {
 
 			IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 
 			operation.addContext(commandStack.getDefaultUndoContext());
 
-			if (commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), adaptable) == Status.CANCEL_STATUS)
-			{
+			if (commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), adaptable) == Status.CANCEL_STATUS) {
 				// Do Something Here
 			}
 

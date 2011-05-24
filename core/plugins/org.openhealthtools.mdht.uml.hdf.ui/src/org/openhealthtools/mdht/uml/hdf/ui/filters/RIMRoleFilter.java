@@ -26,9 +26,8 @@ public class RIMRoleFilter implements IFilter {
 
 	public boolean select(Object object) {
 		Element element = HDFFilterUtil.getElement(object);
-		
-		return element instanceof Class
-				&& RIMProfileUtil.isRIMType(element, IRIMProfileConstants.ROLE);
+
+		return element instanceof Class && RIMProfileUtil.isRIMType(element, IRIMProfileConstants.ROLE);
 	}
 
 }

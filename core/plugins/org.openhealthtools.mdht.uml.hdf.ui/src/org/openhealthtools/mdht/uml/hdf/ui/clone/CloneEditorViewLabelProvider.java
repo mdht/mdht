@@ -15,22 +15,23 @@ import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.uml.Property;
 
-public class CloneEditorViewLabelProvider extends AdapterFactoryLabelProvider implements ILabelProvider
-{
+public class CloneEditorViewLabelProvider extends AdapterFactoryLabelProvider implements ILabelProvider {
 
 	public CloneEditorViewLabelProvider() {
 		super(CloneEditorComposedAdapterFactory.getAdapterFactory());
 	}
 
+	@Override
 	public Image getImage(Object element) {
 		return super.getImage(element);
 	}
 
+	@Override
 	public String getText(Object element) {
 		String text = "";
-		if(element instanceof Property){
-			text = ((Property)element).getName();
-		}else{
+		if (element instanceof Property) {
+			text = ((Property) element).getName();
+		} else {
 			text = super.getText(element);
 		}
 		return text;

@@ -24,27 +24,25 @@ import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
 import org.openhealthtools.mdht.uml.hdf.util.RIMProfileUtil;
 
 /**
- * Selects an object if it is a UML Class or Package with 
+ * Selects an object if it is a UML Class or Package with
  * HL7Template stereotype applied.
  */
 public class HL7TemplateFilter implements IFilter {
 
 	public boolean select(Object object) {
 		Element element = HDFFilterUtil.getElement(object);
-		
+
 		if (element instanceof Class || element instanceof Package) {
-			Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-					element, IHDFProfileConstants.HL7_TEMPLATE);
+			Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(element, IHDFProfileConstants.HL7_TEMPLATE);
 			if (stereotype != null) {
 				return true;
-			}
-			else if (element instanceof Class) {
+			} else if (element instanceof Class) {
 				// Enable for any class whose parent has RIM stereotype,
 				// implying that this is a RIM restriction and may be a template.
-				for (Classifier parent : ((Class)element).parents()) {
+				for (Classifier parent : ((Class) element).parents()) {
 					if (RIMProfileUtil.getRIMStereotype(parent) != null) {
 						Stereotype group = HL7ResourceUtil.getAppliedHDFStereotype(
-								parent, IHDFProfileConstants.CHOICE_GROUP);
+							parent, IHDFProfileConstants.CHOICE_GROUP);
 						// cannot have ChoiceGroup applied
 						return group == null;
 					}

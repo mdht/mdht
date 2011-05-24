@@ -16,55 +16,60 @@ package org.openhealthtools.mdht.uml.hdf.ui.properties;
 import org.eclipse.uml2.uml.Enumeration;
 
 public interface IVocabularySelectionDelegate {
-	
+
 	static public enum Constraint {
-	    CONCEPTS,CODESYSTEMS,VALUESSETS,ENUMERATIONS   	
+		CONCEPTS, CODESYSTEMS, VALUESSETS, ENUMERATIONS
 	}
-	
-	static public final String EXTENSION_POINT="org.openhealthtools.mdht.uml.hdf.vocabularyprovider";
-	
+
+	static public final String EXTENSION_POINT = "org.openhealthtools.mdht.uml.hdf.vocabularyprovider";
+
 	static public final String CONFIGURATION_ELEMENT = "vocabularyprovider";
-	
-	static public final String SELECTION_DELEGATE="selectiondelegate";
-	
+
+	static public final String SELECTION_DELEGATE = "selectiondelegate";
+
 	public boolean isConfigured();
-	
-	public IVocabularyConstraint chooseVocabularyConstraint(org.eclipse.swt.widgets.Shell shell, org.eclipse.uml2.uml.Property property,Constraint constraint );
-	
-	public interface IVocabularyConstraint
-	{
-		
+
+	public IVocabularyConstraint chooseVocabularyConstraint(org.eclipse.swt.widgets.Shell shell,
+			org.eclipse.uml2.uml.Property property, Constraint constraint);
+
+	public interface IVocabularyConstraint {
+
 	}
-	
+
 	public interface IConceptConstraint extends IVocabularyConstraint {
 		String getConcept();
 	}
-	
+
 	public interface ICodeSystemConstraint extends IVocabularyConstraint {
 		String getSystemOid();
+
 		String getCode();
+
 		String getCodePrintName();
+
 		String getSystemName();
+
 		String getSystemVersion();
-		
+
 	}
-	
-	public interface IValueSetConstraint extends IVocabularyConstraint 
-	{
+
+	public interface IValueSetConstraint extends IVocabularyConstraint {
 		String getID();
+
 		String getName();
+
 		String getVersionDate();
+
 		String getRootCode();
+
 		String getCodingStrength();
+
 		String getRevisionFrequency();
-		
+
 	}
-	
-	public interface IEnumerationsConstraint extends IVocabularyConstraint 
-	{
+
+	public interface IEnumerationsConstraint extends IVocabularyConstraint {
 		Enumeration getEnumeration();
 	}
-	
-	
 
 }

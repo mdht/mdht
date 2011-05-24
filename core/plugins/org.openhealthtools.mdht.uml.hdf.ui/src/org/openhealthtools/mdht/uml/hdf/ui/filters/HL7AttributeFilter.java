@@ -27,12 +27,11 @@ public class HL7AttributeFilter implements IFilter {
 
 	public boolean select(Object object) {
 		Element element = HDFFilterUtil.getElement(object);
-		
+
 		if (element instanceof Property) {
 			Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-					element, IHDFProfileConstants.HDF_ASSOCIATION_END);
-			return stereotype == null
-				&& ((Property)element).getAssociation() == null;
+				element, IHDFProfileConstants.HDF_ASSOCIATION_END);
+			return stereotype == null && ((Property) element).getAssociation() == null;
 		}
 		return false;
 	}

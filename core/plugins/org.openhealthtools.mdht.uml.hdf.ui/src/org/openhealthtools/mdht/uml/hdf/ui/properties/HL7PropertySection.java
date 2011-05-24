@@ -12,7 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.hdf.ui.properties;
 
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
@@ -66,43 +65,44 @@ public class HL7PropertySection extends AbstractModelerPropertySection {
 	private Property property;
 
 	private Button isMandatory;
+
 	private boolean isMandatoryModified = false;
+
 	private CCombo conformanceCombo;
+
 	private boolean conformanceModified = false;
 
 	private void modifyFields() {
 		if (!(isMandatoryModified || conformanceModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-							property, IHDFProfileConstants.HDF_ATTRIBUTE);
+						property, IHDFProfileConstants.HDF_ATTRIBUTE);
 					if (stereotype == null) {
 						stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
 							property, IHDFProfileConstants.HDF_ASSOCIATION_END);
 					}
-					
+
 					if (stereotype == null) {
 						if (property.getAssociation() != null) {
 							stereotype = HL7ResourceUtil.applyHDFStereotype(
-									property, IHDFProfileConstants.HDF_ASSOCIATION_END);
-						}
-						else {
+								property, IHDFProfileConstants.HDF_ASSOCIATION_END);
+						} else {
 							stereotype = HL7ResourceUtil.applyHDFStereotype(
-									property, IHDFProfileConstants.HDF_ATTRIBUTE);
+								property, IHDFProfileConstants.HDF_ATTRIBUTE);
 						}
 					}
 
 					Profile hdfProfile = HL7ResourceUtil.applyHDFProfile(UMLUtil.getTopPackage(property));
-					Enumeration conformanceKind = (Enumeration)
-						hdfProfile.getOwnedType(IHDFProfileConstants.CONFORMANCE_KIND);
-					
+					Enumeration conformanceKind = (Enumeration) hdfProfile.getOwnedType(IHDFProfileConstants.CONFORMANCE_KIND);
+
 					if (conformanceModified) {
 						conformanceModified = false;
 						this.setLabel("Set Conformance");
@@ -110,93 +110,90 @@ public class HL7PropertySection extends AbstractModelerPropertySection {
 							if (conformanceCombo.getSelectionIndex() == 0) {
 								// remove stereotype property
 								property.setValue(stereotype, IHDFProfileConstants.CONFORMANCE, null);
-							}
-							else {
-								EnumerationLiteral literal = (EnumerationLiteral) conformanceKind.getOwnedLiterals()
-									.get(conformanceCombo.getSelectionIndex());
+							} else {
+								EnumerationLiteral literal = conformanceKind.getOwnedLiterals().get(
+									conformanceCombo.getSelectionIndex());
 								property.setValue(stereotype, IHDFProfileConstants.CONFORMANCE, literal);
 							}
 						}
-					}
-					else if (isMandatoryModified) {
+					} else if (isMandatoryModified) {
 						isMandatoryModified = false;
 						this.setLabel("Set Mandatory");
-						if (stereotype != null)
-							property.setValue(stereotype, 
-									IHDFProfileConstants.IS_MANDATORY, 
+						if (stereotype != null) {
+							property.setValue(
+								stereotype, IHDFProfileConstants.IS_MANDATORY,
 								Boolean.valueOf(isMandatory.getSelection()));
-					}
-					else {
+						}
+					} else {
 						return Status.CANCEL_STATUS;
 					}
 
 					// fire notification for any stereotype property changes to update views
 					// this is a bogus notification of change to property name, but can't find a better option
-					Notification notification = new NotificationImpl(
-							Notification.SET, null, property.getName()) {
+					Notification notification = new NotificationImpl(Notification.SET, null, property.getName()) {
+						@Override
 						public Object getNotifier() {
 							return property;
 						}
+
+						@Override
 						public int getFeatureID(Class expectedClass) {
 							return UMLPackage.PROPERTY__NAME;
 						}
 					};
 					property.eNotify(notification);
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
-		Composite composite = getWidgetFactory()
-				.createFlatFormComposite(parent);
+		Composite composite = getWidgetFactory().createFlatFormComposite(parent);
 		FormData data = null;
 
-        int numberOfLines = 1;
-        
-        /* ========== Line 1 =========== */
+		int numberOfLines = 1;
+
+		/* ========== Line 1 =========== */
 		/* ---- Mandatory checkbox ---- */
-		isMandatory = getWidgetFactory().createButton(composite, 
-				"Mandatory", SWT.CHECK);
+		isMandatory = getWidgetFactory().createButton(composite, "Mandatory", SWT.CHECK);
 		isMandatory.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				isMandatoryModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				isMandatoryModified = true;
 				modifyFields();
 			}
 		});
-		
+
 		/* ---- conformance combo ---- */
 		conformanceCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY);
 		conformanceCombo.setItems(new String[] {
-				"",
-				Messages.Conformance_I_label,
-				Messages.Conformance_NP_label,
-				Messages.Conformance_R_label
-		});
+				"", Messages.Conformance_I_label, Messages.Conformance_NP_label, Messages.Conformance_R_label });
 		conformanceCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				conformanceModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				conformanceModified = true;
 				modifyFields();
@@ -204,28 +201,27 @@ public class HL7PropertySection extends AbstractModelerPropertySection {
 		});
 
 		data = new FormData();
-		data.left = new FormAttachment(0,5);
+		data.left = new FormAttachment(0, 5);
 		data.top = new FormAttachment(conformanceCombo, 0, SWT.CENTER);
 		isMandatory.setLayoutData(data);
-		
-		CLabel conformanceLabel = getWidgetFactory()
-				.createCLabel(composite, "Conformance:"); //$NON-NLS-1$
+
+		CLabel conformanceLabel = getWidgetFactory().createCLabel(composite, "Conformance:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(isMandatory, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(conformanceCombo, 0, SWT.CENTER);
 		conformanceLabel.setLayoutData(data);
 
 		data = new FormData();
-        data.left = new FormAttachment(conformanceLabel, 0);
-		data.top = new FormAttachment(0,numberOfLines, ITabbedPropertyConstants.VSPACE);
+		data.left = new FormAttachment(conformanceLabel, 0);
+		data.top = new FormAttachment(0, numberOfLines, ITabbedPropertyConstants.VSPACE);
 		conformanceCombo.setLayoutData(data);
 
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (property != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
 			if (editingDomain != null && editingDomain.isReadOnly(property.eResource())) {
 				return true;
 			}
@@ -238,8 +234,10 @@ public class HL7PropertySection extends AbstractModelerPropertySection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -249,39 +247,39 @@ public class HL7PropertySection extends AbstractModelerPropertySection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
 		if (element instanceof View) {
-			element = ((View)element).getElement();
+			element = ((View) element).getElement();
 		}
 		Assert.isTrue(element instanceof Property);
 		this.property = (Property) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 		property = null;
 	}
 
+	@Override
 	public void refresh() {
 		Enumeration conformanceKind = null;
 		Profile hdfProfile = HL7ResourceUtil.getAppliedHDFProfile(property.getModel());
-		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-				property, IHDFProfileConstants.HDF_ATTRIBUTE);
+		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(property, IHDFProfileConstants.HDF_ATTRIBUTE);
 		if (stereotype == null) {
-			stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-				property, IHDFProfileConstants.HDF_ASSOCIATION_END);
+			stereotype = HL7ResourceUtil.getAppliedHDFStereotype(property, IHDFProfileConstants.HDF_ASSOCIATION_END);
 		}
 		if (hdfProfile != null) {
-			conformanceKind = (Enumeration)
-				hdfProfile.getOwnedType(IHDFProfileConstants.CONFORMANCE_KIND);
+			conformanceKind = (Enumeration) hdfProfile.getOwnedType(IHDFProfileConstants.CONFORMANCE_KIND);
 		}
-		
+
 		conformanceCombo.select(0);
 		if (stereotype != null) {
 			EnumerationLiteral literal = (EnumerationLiteral) property.getValue(
-					stereotype, IHDFProfileConstants.CONFORMANCE);
+				stereotype, IHDFProfileConstants.CONFORMANCE);
 			if (conformanceKind != null && literal != null) {
 				int index = conformanceKind.getOwnedLiterals().indexOf(literal);
 				conformanceCombo.select(index);
@@ -289,20 +287,16 @@ public class HL7PropertySection extends AbstractModelerPropertySection {
 		}
 
 		if (stereotype != null) {
-			boolean isChecked = Boolean.TRUE.equals(
-				(Boolean) property.getValue(stereotype, 
-						IHDFProfileConstants.IS_MANDATORY));
+			boolean isChecked = Boolean.TRUE.equals(property.getValue(stereotype, IHDFProfileConstants.IS_MANDATORY));
 			isMandatory.setSelection(isChecked);
-		}
-		else {
+		} else {
 			isMandatory.setSelection(false);
 		}
 
 		if (isReadOnly()) {
 			isMandatory.setEnabled(false);
 			conformanceCombo.setEnabled(false);
-		}
-		else {
+		} else {
 			isMandatory.setEnabled(true);
 			conformanceCombo.setEnabled(true);
 		}
@@ -313,19 +307,23 @@ public class HL7PropertySection extends AbstractModelerPropertySection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && property.eResource() != null)
+					if (!isDisposed() && property.eResource() != null) {
 						refresh();
+					}
 				}
 			});
 		}
