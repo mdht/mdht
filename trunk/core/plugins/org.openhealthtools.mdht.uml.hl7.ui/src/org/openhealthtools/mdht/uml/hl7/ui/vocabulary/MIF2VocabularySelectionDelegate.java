@@ -78,11 +78,10 @@ import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
 import org.openhealthtools.mdht.uml.hl7.ui.util.TreeSelectionDialog;
 
 public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDelegate {
-	
-	
+
 	/**
-	 * DocumentationSwitch 
-	 *
+	 * DocumentationSwitch
+	 * 
 	 */
 	public static class DocumentationSwitch extends XhtmlSwitch<Object> {
 
@@ -92,12 +91,12 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 
 		/**
 		 * MIF2CommentSwitch is a cut and past reuse of comment switch used in the import of mif2.
-		 * TODO If documentation functionality on the tree viewer is generally accepted, need to refactor and reuse the comment switch in import package.
-		 *
+		 * TODO If documentation functionality on the tree viewer is generally accepted, need to refactor and reuse the comment switch in import
+		 * package.
+		 * 
 		 */
 		private class MIF2CommentSwitch extends Mif2Switch<Object> {
 
-			
 			public Object caseFormalConstraint(FormalConstraint formalConstraint) {
 
 				for (ComplexMarkupWithLanguage complexMarkupWithLanguage : formalConstraint.getCombinedText()) {
@@ -111,7 +110,6 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 				return formalConstraint;
 			}
 
-			
 			public Object caseComplexMarkupWithLanguage(ComplexMarkupWithLanguage object) {
 
 				processFeatureMap("", "", object.getMixed());
@@ -119,17 +117,14 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 				return object;
 			}
 
-			
 			public Object caseDesignComment(DesignComment designComment) {
 				return designComment;
 			}
 
-			
 			public Object caseCascadableAnnotation(CascadableAnnotation object) {
 				return object;
 			}
 
-			
 			public Object caseFormalExpression(FormalExpression formal) {
 
 				processFeatureMap("<" + prefix + "pre>", "</" + prefix + "pre>", formal.getMixed());
@@ -137,7 +132,6 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 				return formal;
 			}
 
-			
 			public Object defaultCase(EObject object) {
 				// Go Boom - We have something in the MIF2 that was not
 				// expected!
@@ -164,38 +158,33 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 			commentBuffer.append(comment);
 		}
 
-		
 		public Object caseObject(org.openhealthtools.mdht.emf.w3c.xhtml.Object objectTag) {
 
-			processFeatureMap("<" + prefix + "object name=\"" + objectTag.getName().toString() + "\">", "</" + prefix + "object>", objectTag.getMixed());
+			processFeatureMap("<" + prefix + "object name=\"" + objectTag.getName().toString() + "\">", "</" + prefix +
+					"object>", objectTag.getMixed());
 			return objectTag;
 		}
 
-		
 		public Object caseB(B b) {
 			processFeatureMap("<" + prefix + "code>", "</" + prefix + "code>", b.getMixed());
 
 			return b;
 		}
 
-		
 		public Object caseThead(Thead object) {
 			return object;
 		}
 
-		
 		public Object caseCol(Col object) {
 
 			return object;
 		}
 
-		
 		public Object caseCaption(Caption caption) {
 			processFeatureMap("<" + prefix + "code>", "</" + prefix + "code>", caption.getMixed());
 			return caption;
 		}
 
-		
 		public Object caseTable(Table table) {
 
 			String attributes = new String();
@@ -273,104 +262,86 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 			return table;
 		}
 
-
-		
 		public Object caseParam(Param object) {
-			commentBuffer.append("<" + prefix + "param name=\"" + object.getName().toString() + "\" value=\"" + object.getValue().toString() + "\"/></" + prefix + "param>");
+			commentBuffer.append("<" + prefix + "param name=\"" + object.getName().toString() + "\" value=\"" +
+					object.getValue().toString() + "\"/></" + prefix + "param>");
 			return object;
 		}
 
-		
 		public Object caseSub(Sub sub) {
 			processFeatureMap("<" + prefix + "sub>", "</" + prefix + "sub>", sub.getMixed());
 			return sub;
 		}
 
-		
 		public Object caseSup(Sup sup) {
 			processFeatureMap("<" + prefix + "sup>", "</" + prefix + "sup>", sup.getMixed());
 			return sup;
 		}
 
-		
 		public Object caseVar(Var object) {
 			return object;
 		}
 
-		
 		public Object caseImg(Img img) {
 			return img;
 		}
 
-		
 		public Object caseI(I i) {
 			processFeatureMap("<" + prefix + "i>", "</" + prefix + "i>", i.getMixed());
 			return i;
 		}
 
-		
 		public Object caseLi(Li li) {
 			processFeatureMap("<" + prefix + "li>", "</" + prefix + "li>", li.getMixed());
 			return li;
 		}
 
-		
 		public Object caseOl(Ol object) {
 			processFeatureMap("<" + prefix + "ol>", "</" + prefix + "ol>", object.getLi());
 			return object;
 		}
 
-		
 		public Object caseTbody(Tbody object) {
 			return object;
 		}
 
-		
 		public Object caseTd(Td object) {
 			return object;
 		}
 
-		
 		public Object caseTh(Th object) {
 			return object;
 		}
 
-		
 		public Object caseTr(Tr object) {
 			return object;
 		}
 
-		
 		public Object casePre(Pre pre) {
 			processFeatureMap("<" + prefix + "pre>", "</" + prefix + "pre>", pre.getMixed());
 			return pre;
 		}
 
-		
 		public Object caseSpan(Span span) {
 			processFeatureMap("<" + prefix + "span>", "</" + prefix + "span>", span.getMixed());
 			return span;
 		}
 
-		
 		public Object caseBlockquote(Blockquote blockquote) {
 			processFeatureMap("<" + prefix + "blockquote>", "</" + prefix + "blockquote>", blockquote.getMixed());
 			return blockquote;
 		}
 
-		
 		public Object caseA(A anchor) {
 			processFeatureMap("<" + prefix + "a>", "</" + prefix + "a>", anchor.getMixed());
 			return anchor;
 		}
 
-		
 		public Object caseStrong(Strong strong) {
 			processFeatureMap("<" + prefix + "strong>", "</" + prefix + "strong>", strong.getMixed());
 			return strong;
 		}
 
-		
 		public Object caseBr(Br br) {
 
 			commentBuffer.append("</" + prefix + "br>");
@@ -378,7 +349,6 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 			return br;
 		}
 
-		
 		public Object caseUl(Ul ul) {
 			processFeatureMap("<" + prefix + "ul>", "</" + prefix + "ul>", ul.getLi());
 			return ul;
@@ -394,7 +364,6 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 			}
 		}
 
-		
 		public Object caseP(P paragraph) {
 
 			processFeatureMap("<" + prefix + "p>", "</" + prefix + "p>", paragraph.getMixed());
@@ -402,22 +371,20 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 			return paragraph;
 		}
 
-		
 		public Object caseDiv(Div div) {
-			processFeatureMap("<" + prefix + "div title=\" " + div.getTitle() + " \" >", "</" + prefix + "div>", div.getMixed());
+			processFeatureMap(
+				"<" + prefix + "div title=\" " + div.getTitle() + " \" >", "</" + prefix + "div>", div.getMixed());
 
 			return div;
 		}
 
-		
 		public Object defaultCase(EObject object) {
 			mif2CommentSwitch.doSwitch(object);
 			return object;
 		}
 
 	}
-	
-	
+
 	/**
 	 * VocabularyHelp uses the help event to display the current documentation
 	 * on the node selected. This is not typical used of the help feature and
@@ -425,33 +392,30 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 	 * 
 	 */
 	static public class VocabularyHelp implements HelpListener {
-		
+
 		Shell shell;
-		
+
 		TreeSelectionDialog treeSelectionDialog;
-		
+
 		/**
 		 * HelpSwitch fires correct documentation switch
+		 * 
 		 * @author eclipse
-		 *
+		 * 
 		 */
-		public class HelpSwitch extends Mif2Switch<Object>
-		{
+		public class HelpSwitch extends Mif2Switch<Object> {
 
-			public String getHelp()
-			{
-				return documentationSwitch.getComment();				
+			public String getHelp() {
+				return documentationSwitch.getComment();
 			}
-			 DocumentationSwitch documentationSwitch = new DocumentationSwitch();
-			 
-			
+
+			DocumentationSwitch documentationSwitch = new DocumentationSwitch();
+
 			public Object caseCodeSystem(CodeSystem codeSystem) {
 
-			
-				if ((codeSystem.getAnnotations() != null) &&
-					(codeSystem.getAnnotations().getDocumentation() != null) &&
-					(codeSystem.getAnnotations().getDocumentation().getDescription() != null) && 
-					(codeSystem.getAnnotations().getDocumentation().getDescription().getText().size() > 0)) {
+				if ((codeSystem.getAnnotations() != null) && (codeSystem.getAnnotations().getDocumentation() != null) &&
+						(codeSystem.getAnnotations().getDocumentation().getDescription() != null) &&
+						(codeSystem.getAnnotations().getDocumentation().getDescription().getText().size() > 0)) {
 					for (TreeIterator<Object> iterator = EcoreUtil.getAllContents(Collections
 
 					.singletonList(codeSystem.getAnnotations().getDocumentation().getDescription())); iterator.hasNext();) {
@@ -467,21 +431,18 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 					}
 
 				} else {
-					documentationSwitch.appendComment("No definition for "+codeSystem.getName());					
+					documentationSwitch.appendComment("No definition for " + codeSystem.getName());
 				}
-				
-				
-				
+
 				return codeSystem;
 			}
 
-			
 			public Object caseConceptDomain(ConceptDomain conceptDomain) {
 
-				if ( (conceptDomain.getAnnotations() != null) && 
-					 (conceptDomain.getAnnotations().getDocumentation() != null) && 
-					 (conceptDomain.getAnnotations().getDocumentation().getDefinition() != null) && 
-					 (conceptDomain.getAnnotations().getDocumentation().getDefinition().getText().size() > 0) ) {
+				if ((conceptDomain.getAnnotations() != null) &&
+						(conceptDomain.getAnnotations().getDocumentation() != null) &&
+						(conceptDomain.getAnnotations().getDocumentation().getDefinition() != null) &&
+						(conceptDomain.getAnnotations().getDocumentation().getDefinition().getText().size() > 0)) {
 					for (TreeIterator<Object> iterator = EcoreUtil.getAllContents(Collections
 
 					.singletonList(conceptDomain.getAnnotations().getDocumentation().getDefinition())); iterator.hasNext();) {
@@ -496,21 +457,18 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 						}
 					}
 
-				}else {
-					documentationSwitch.appendComment("No definition for "+conceptDomain.getName());					
+				} else {
+					documentationSwitch.appendComment("No definition for " + conceptDomain.getName());
 				}
 
 				return conceptDomain;
 			}
 
-			
 			public Object caseValueSet(ValueSet valueSet) {
-				
 
-				if ( (valueSet.getAnnotations() != null) &&
-					 (valueSet.getAnnotations().getDocumentation() != null) &&
-					 (valueSet.getAnnotations().getDocumentation().getDescription() != null) && 
-					 (valueSet.getAnnotations().getDocumentation().getDescription().getText().size() > 0) ) {
+				if ((valueSet.getAnnotations() != null) && (valueSet.getAnnotations().getDocumentation() != null) &&
+						(valueSet.getAnnotations().getDocumentation().getDescription() != null) &&
+						(valueSet.getAnnotations().getDocumentation().getDescription().getText().size() > 0)) {
 					for (TreeIterator<Object> iterator = EcoreUtil.getAllContents(Collections
 
 					.singletonList(valueSet.getAnnotations().getDocumentation().getDescription())); iterator.hasNext();) {
@@ -526,45 +484,39 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 					}
 
 				} else {
-					documentationSwitch.appendComment("No definition for "+valueSet.getName());					
+					documentationSwitch.appendComment("No definition for " + valueSet.getName());
 				}
-				
+
 				return valueSet;
 			}
 
-
 			public Object caseConcept(Concept concept) {
-				
-				if ( (concept.getAnnotations() != null) &&
-						 (concept.getAnnotations().getDocumentation() != null) &&
-						 (concept.getAnnotations().getDocumentation().getDefinition() != null) && 
-						 (concept.getAnnotations().getDocumentation().getDefinition().getText().size() > 0) ) {
-						for (TreeIterator<Object> iterator = EcoreUtil.getAllContents(Collections
 
-						.singletonList(concept.getAnnotations().getDocumentation().getDefinition())); iterator.hasNext();) {
+				if ((concept.getAnnotations() != null) && (concept.getAnnotations().getDocumentation() != null) &&
+						(concept.getAnnotations().getDocumentation().getDefinition() != null) &&
+						(concept.getAnnotations().getDocumentation().getDefinition().getText().size() > 0)) {
+					for (TreeIterator<Object> iterator = EcoreUtil.getAllContents(Collections
 
-							EObject child = (EObject) iterator.next();
+					.singletonList(concept.getAnnotations().getDocumentation().getDefinition())); iterator.hasNext();) {
 
-							if (child instanceof ComplexMarkupWithLanguage) {
-								documentationSwitch.doSwitch(child);
-							}
-							if (child instanceof FormalConstraint) {
-								documentationSwitch.doSwitch(child);
-							}
+						EObject child = (EObject) iterator.next();
+
+						if (child instanceof ComplexMarkupWithLanguage) {
+							documentationSwitch.doSwitch(child);
 						}
-
-					} else {
-						documentationSwitch.appendComment("No Documentation Found for Code");					
+						if (child instanceof FormalConstraint) {
+							documentationSwitch.doSwitch(child);
+						}
 					}
-				
+
+				} else {
+					documentationSwitch.appendComment("No Documentation Found for Code");
+				}
+
 				return super.caseConcept(concept);
 			}
-			
-			
-			
+
 		}
-		
-		
 
 		public VocabularyHelp(Shell shell, TreeSelectionDialog treeSelectionDialog) {
 			super();
@@ -572,14 +524,8 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 			this.treeSelectionDialog = treeSelectionDialog;
 		}
 
-
-
-
-
-
-		
 		public void helpRequested(HelpEvent e) {
-			
+
 			ITreeSelection selection = (ITreeSelection) treeSelectionDialog.getViewer().getSelection();
 
 			if (!selection.isEmpty()) {
@@ -596,24 +542,17 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 				MessageDialog.openInformation(shell, "HL7 Vocabulary Definition", helpSwitch.getHelp());
 
 			} else {
-				MessageDialog.openInformation(shell, "HL7 Vocabulary Definition", "GENERAL HELP FOR HL7 Vocabulary Browser");
+				MessageDialog.openInformation(
+					shell, "HL7 Vocabulary Definition", "GENERAL HELP FOR HL7 Vocabulary Browser");
 			}
 
-			
-			
-		
-			  
-			  
-			  
-			
 		}
-		
-	}
 
+	}
 
 	/**
 	 * Implementations of Vocabulary Constraint Interfaces used by Vocabulary Extension Delegate
-	 *
+	 * 
 	 */
 	static public class ConceptConstraint implements IConceptConstraint {
 
@@ -634,56 +573,57 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 	static public class CodeSystemConstraint implements ICodeSystemConstraint {
 
 		String code;
+
 		String codePrintName;
+
 		String systemName;
+
 		String systemOid;
+
 		String systemVersion;
 
-		
 		public CodeSystemConstraint(CodeSystemSupplement codeSystem, ConceptSupplement concept) {
-			
+
 			this.systemName = codeSystem.getName();
 
 			this.systemOid = codeSystem.getCodeSystemId();
 
 			// If there is a released version and there is a date associated with it
-			// Get the xml format of the date which appears to be  yyyy-mm-dd
-			if (!codeSystem.getCodeSystemVersionSupplement().isEmpty() && 
-				 codeSystem.getCodeSystemVersionSupplement().get(0).getReleaseDate() != null) {
+			// Get the xml format of the date which appears to be yyyy-mm-dd
+			if (!codeSystem.getCodeSystemVersionSupplement().isEmpty() &&
+					codeSystem.getCodeSystemVersionSupplement().get(0).getReleaseDate() != null) {
 				this.systemVersion = codeSystem.getCodeSystemVersionSupplement().get(0).getReleaseDate().toXMLFormat();
 
 			}
-			
+
 			if (concept != null) {
 				this.code = concept.getCode();
 				if (!concept.getPrintName().isEmpty()) {
-					this.codePrintName = concept.getPrintName().get(0).getText();					
+					this.codePrintName = concept.getPrintName().get(0).getText();
 				}
 
 			}
 
 		}
 
-		
-		
 		public CodeSystemConstraint(CodeSystem codeSystem, Concept concept) {
-			
+
 			this.systemName = codeSystem.getName();
 
 			this.systemOid = codeSystem.getCodeSystemId();
 
 			// If there is a released version and there is a date associated with it
-			// Get the xml format of the date which appears to be  yyyy-mm-dd
-			if (!codeSystem.getReleasedVersion().isEmpty() && 
-				 codeSystem.getReleasedVersion().get(0).getReleaseDate() != null) {
+			// Get the xml format of the date which appears to be yyyy-mm-dd
+			if (!codeSystem.getReleasedVersion().isEmpty() &&
+					codeSystem.getReleasedVersion().get(0).getReleaseDate() != null) {
 				this.systemVersion = codeSystem.getReleasedVersion().get(0).getReleaseDate().toXMLFormat();
 
 			}
-			
+
 			if (concept != null) {
 				this.code = concept.getCode().get(0).getCode();
 				if (!concept.getPrintName().isEmpty()) {
-					this.codePrintName = concept.getPrintName().get(0).getText();					
+					this.codePrintName = concept.getPrintName().get(0).getText();
 				}
 
 			}
@@ -729,10 +669,15 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 		}
 
 		String id;
+
 		String name;
+
 		String versionDate;
+
 		String codingStrength;
+
 		String rootCode;
+
 		String revisionFrequency;
 
 		public String getID() {
@@ -750,19 +695,16 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 			return versionDate;
 		}
 
-		
 		public String getCodingStrength() {
 
 			return codingStrength;
 		}
 
-		
 		public String getRevisionFrequency() {
 
 			return revisionFrequency;
 		}
 
-		
 		public String getRootCode() {
 
 			return rootCode;
@@ -770,36 +712,42 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 
 	}
 
-	/* (non-Javadoc)
-	 * @see org.openhealthtools.mdht.uml.hdf.ui.properties.IVocabularySelectionDelegate#chooseVocabularyConstraint(org.eclipse.swt.widgets.Shell, org.eclipse.uml2.uml.Property, org.openhealthtools.mdht.uml.hdf.ui.properties.IVocabularySelectionDelegate.Constraint)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.openhealthtools.mdht.uml.hdf.ui.properties.IVocabularySelectionDelegate#chooseVocabularyConstraint(org.eclipse.swt.widgets.Shell,
+	 * org.eclipse.uml2.uml.Property, org.openhealthtools.mdht.uml.hdf.ui.properties.IVocabularySelectionDelegate.Constraint)
 	 */
 	public IVocabularyConstraint chooseVocabularyConstraint(Shell shell, Property property, Constraint constraint) {
 
 		IVocabularyConstraint constraintResult = null;
 
-		Mif2VocabularyContentProvider mif2VocabularyContentProvider = new Mif2VocabularyContentProvider(property, constraint);
-		
+		Mif2VocabularyContentProvider mif2VocabularyContentProvider = new Mif2VocabularyContentProvider(
+			property, constraint);
+
 		Cursor originalCursor = shell.getCursor();
-		
+
 		shell.setCursor(shell.getDisplay().getSystemCursor(SWT.CURSOR_WAIT));
-	
+
 		mif2VocabularyContentProvider.loadMIF2Vocabulary();
-		
+
 		shell.setCursor(originalCursor);
-		
+
 		if (mif2VocabularyContentProvider.getMIFModel() != null) {
-			TreeSelectionDialog treeSelectionDialog = new TreeSelectionDialog(shell, mif2VocabularyContentProvider.getMIFModel(), mif2VocabularyContentProvider, new Mif2VocabularyLabelProvider(
-					shell.getDisplay()), "Select Constraint");
+			TreeSelectionDialog treeSelectionDialog = new TreeSelectionDialog(
+				shell, mif2VocabularyContentProvider.getMIFModel(), mif2VocabularyContentProvider,
+				new Mif2VocabularyLabelProvider(shell.getDisplay()), "Select Constraint");
 
 			String realm = null;
-			Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(property.getNearestPackage(), IHDFProfileConstants.HDF_PACKAGE);
+			Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
+				property.getNearestPackage(), IHDFProfileConstants.HDF_PACKAGE);
 			if (stereotype != null) {
-				realm = (String) property.getNearestPackage().getValue(stereotype, IHDFProfileConstants.PACKAGE_REALM_NAMESPACE);
+				realm = (String) property.getNearestPackage().getValue(
+					stereotype, IHDFProfileConstants.PACKAGE_REALM_NAMESPACE);
 			}
 
 			treeSelectionDialog.setTitle("MIF2 Vocabulary Constraint (Realm=\"" + realm + "\")");
 
-			
 			// Set the initial selection - if any
 			if (constraint.equals(Constraint.CONCEPTS)) {
 				treeSelectionDialog.setInitialSelections(mif2VocabularyContentProvider.getConceptDomainSelection());
@@ -809,14 +757,13 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 			if (constraint.equals(Constraint.VALUESSETS)) {
 				treeSelectionDialog.setInitialSelections(mif2VocabularyContentProvider.getValueSetSelection());
 			}
-		
-			
+
 			// Set the help listener
-			VocabularyHelp vocabularyHelp = new VocabularyHelp(shell,treeSelectionDialog);
-			
+			VocabularyHelp vocabularyHelp = new VocabularyHelp(shell, treeSelectionDialog);
+
 			treeSelectionDialog.setHelpListener(vocabularyHelp);
 
-			// Open dialog and if ok result and something selected - create the vocabulary constraints 
+			// Open dialog and if ok result and something selected - create the vocabulary constraints
 			if (treeSelectionDialog.open() == Window.OK && treeSelectionDialog.getResult() != null) {
 				// and something selected
 				if (treeSelectionDialog.getResult().length > 0) {
@@ -829,8 +776,7 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 							constraintResult = new ConceptConstraint((ConceptDomain) results[0]);
 						}
 					} else if (constraint.equals(Constraint.CODESYSTEMS)) {
-						
-						
+
 						// TODO - ugly refactor SWM
 						if (results[0] instanceof CodeSystem) {
 							constraintResult = new CodeSystemConstraint((CodeSystem) results[0], null);
@@ -839,10 +785,10 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 						} else if (results[0] instanceof CodeSystemSupplement) {
 							constraintResult = new CodeSystemConstraint((CodeSystemSupplement) results[0], null);
 						} else if (results[0] instanceof ConceptSupplement) {
-							constraintResult = new CodeSystemConstraint((CodeSystemSupplement) results[1], (ConceptSupplement) results[0]);
-						} 
-						
-						
+							constraintResult = new CodeSystemConstraint(
+								(CodeSystemSupplement) results[1], (ConceptSupplement) results[0]);
+						}
+
 					} else if (constraint.equals(Constraint.VALUESSETS)) {
 						if (results[0] instanceof ValueSet) {
 							ValueSet valueSet = (ValueSet) results[0];
@@ -857,13 +803,16 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 
 		} else {
 
-			IPath mif2VocabularyPath = ResourcesPlugin.getWorkspace().getPathVariableManager().getValue(Mif2VocabularyContentProvider.HL7_MIF2_VOCABULARY_PATH);
+			IPath mif2VocabularyPath = ResourcesPlugin.getWorkspace().getPathVariableManager().getValue(
+				Mif2VocabularyContentProvider.HL7_MIF2_VOCABULARY_PATH);
 
 			if (mif2VocabularyPath != null) {
-				MessageDialog.openInformation(shell, "MIF2 Vocabulary", "Unable to open MIF2 vocabulary source " + mif2VocabularyPath.toString());
+				MessageDialog.openInformation(shell, "MIF2 Vocabulary", "Unable to open MIF2 vocabulary source " +
+						mif2VocabularyPath.toString());
 			} else {
-				MessageDialog.openInformation(shell, "MIF2 Vocabulary", "You must set path to MIF Vocaubulary using " + Mif2VocabularyContentProvider.HL7_MIF2_VOCABULARY_PATH
-						+ " in General Preferences, Workspace, Linked Resources  ");
+				MessageDialog.openInformation(shell, "MIF2 Vocabulary", "You must set path to MIF Vocaubulary using " +
+						Mif2VocabularyContentProvider.HL7_MIF2_VOCABULARY_PATH +
+						" in General Preferences, Workspace, Linked Resources  ");
 			}
 
 		}
@@ -872,8 +821,9 @@ public class MIF2VocabularySelectionDelegate implements IVocabularySelectionDele
 
 	public boolean isConfigured() {
 		boolean configured = false;
-		
-		IPath mif2VocabularyPath = ResourcesPlugin.getWorkspace().getPathVariableManager().getValue(Mif2VocabularyContentProvider.HL7_MIF2_VOCABULARY_PATH);
+
+		IPath mif2VocabularyPath = ResourcesPlugin.getWorkspace().getPathVariableManager().getValue(
+			Mif2VocabularyContentProvider.HL7_MIF2_VOCABULARY_PATH);
 
 		if (mif2VocabularyPath != null) {
 			configured = true;

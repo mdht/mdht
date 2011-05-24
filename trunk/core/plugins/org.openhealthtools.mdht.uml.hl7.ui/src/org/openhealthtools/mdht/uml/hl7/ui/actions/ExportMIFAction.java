@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
@@ -45,26 +46,30 @@ import org.openhealthtools.mdht.uml.hl7.mif2uml.mapping.MIFExporter;
 import org.openhealthtools.mdht.uml.hl7.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.hl7.ui.util.ConsoleUtil;
 
-
 /**
  * 
  * $Id: $
  */
-public class ExportMIFAction
-		implements IObjectActionDelegate, IViewActionDelegate, IEditorActionDelegate {
+public class ExportMIFAction implements IObjectActionDelegate, IViewActionDelegate, IEditorActionDelegate {
 
 	protected IWorkbenchPart activePart;
+
 	protected IStructuredSelection currentSelection;
+
 	private ResourceSet resourceSet;
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.IViewActionDelegate#init(org.eclipse.ui.IViewPart)
 	 */
 	public void init(IViewPart view) {
 		activePart = view;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.IEditorActionDelegate#setActiveEditor(org.eclipse.jface.action.IAction, org.eclipse.ui.IEditorPart)
 	 */
 	public void setActiveEditor(IAction action, IEditorPart targetEditor) {
@@ -82,38 +87,33 @@ public class ExportMIFAction
 	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
-		if (selection instanceof IStructuredSelection)
+		if (selection instanceof IStructuredSelection) {
 			currentSelection = (IStructuredSelection) selection;
-		else
+		} else {
 			currentSelection = null;
-		
+		}
+
 		action.setEnabled(currentSelection != null && !currentSelection.isEmpty());
 	}
-	
-	
-	
-	
-	
+
 	/**
 	 * @return
 	 */
 	protected List<Element> getModelElements() {
 		List<Element> modelElements = new ArrayList<Element>();
-		
-		for (Object element :currentSelection.toList())
-		{
+
+		for (Object element : currentSelection.toList()) {
 			if (element instanceof IFile) {
-				element = loadUMLFile((IFile)element);
-			}				
-			if (element instanceof Element){
-				  modelElements.add((Element)element);
+				element = loadUMLFile((IFile) element);
+			}
+			if (element instanceof Element) {
+				modelElements.add((Element) element);
 			}
 		}
-		
-		
+
 		return modelElements;
 	}
-	
+
 	/**
 	 * @return
 	 */
@@ -127,10 +127,10 @@ public class ExportMIFAction
 				}
 			}
 		}
-		
+
 		return modelElements;
 	}
-	
+
 	/**
 	 * @param file
 	 * @return
@@ -138,7 +138,7 @@ public class ExportMIFAction
 	protected Element loadUMLFile(IFile file) {
 		if (resourceSet == null) {
 			resourceSet = new ResourceSetImpl();
-			resourceSet.getLoadOptions().put(XMIResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+			resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
 		}
 		Resource resource = null;
 		Element umlModel = null;
@@ -147,13 +147,12 @@ public class ExportMIFAction
 		// don't abandon processing if parse error in MIF file
 		try {
 			resource = resourceSet.getResource(modelURI, true);
-			for (org.eclipse.emf.ecore.resource.Resource.Diagnostic diagnostic : resource.getErrors()){
+			for (org.eclipse.emf.ecore.resource.Resource.Diagnostic diagnostic : resource.getErrors()) {
 				ConsoleUtil.printError(ConsoleUtil.DEFAULT_CONSOLE_NAME, diagnostic.toString());
 			}
-		}
-		catch (Exception emfException) {
+		} catch (Exception emfException) {
 			resource = resourceSet.getResource(modelURI, false);
-			
+
 			ConsoleUtil.showConsole(ConsoleUtil.DEFAULT_CONSOLE_NAME);
 			ConsoleUtil.printError(ConsoleUtil.DEFAULT_CONSOLE_NAME, emfException.toString());
 
@@ -169,20 +168,18 @@ public class ExportMIFAction
 				}
 			}
 		}
-		
+
 		return umlModel;
 	}
-	
+
 	/**
 	 * @see IActionDelegate#run(IAction)
 	 */
-	public void run(IAction action) {	
-		        
-		ProgressMonitorDialog progressDialog = new ProgressMonitorDialog(
-				activePart.getSite().getShell());
-		
-		
-        IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
+	public void run(IAction action) {
+
+		ProgressMonitorDialog progressDialog = new ProgressMonitorDialog(activePart.getSite().getShell());
+
+		IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
 
 			public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
 
@@ -246,20 +243,21 @@ public class ExportMIFAction
 			}
 
 		};
-		
+
 		try {
 			progressDialog.run(false, true, runnableWithProgress);
-			 MessageDialog.openInformation(activePart.getSite().getShell(), "MIF2 Export", "Completed MIF2 Export");
-		} catch (InvocationTargetException invocationTargetException) {	
-			 MessageDialog.openError(activePart.getSite().getShell(), "MIF2 Export", "Error Procssing Export "+invocationTargetException.getMessage());			 
-			 Logger.logException("MIF2 Export Error",invocationTargetException);
+			MessageDialog.openInformation(activePart.getSite().getShell(), "MIF2 Export", "Completed MIF2 Export");
+		} catch (InvocationTargetException invocationTargetException) {
+			MessageDialog.openError(activePart.getSite().getShell(), "MIF2 Export", "Error Procssing Export " +
+					invocationTargetException.getMessage());
+			Logger.logException("MIF2 Export Error", invocationTargetException);
 		} catch (InterruptedException interruptedException) {
-			 MessageDialog.openError(activePart.getSite().getShell(), "MIF2 Export", "Error Procssing Export "+interruptedException.getMessage());
-			 Logger.logException("MIF2 Export Error",interruptedException);
-		}	
-		finally {
+			MessageDialog.openError(activePart.getSite().getShell(), "MIF2 Export", "Error Procssing Export " +
+					interruptedException.getMessage());
+			Logger.logException("MIF2 Export Error", interruptedException);
+		} finally {
 			progressDialog.close();
-			
+
 		}
 	}
 }
