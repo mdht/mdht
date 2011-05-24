@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -94,11 +98,16 @@ public class ClassGraphicInformationImpl extends NodeGraphicInformationImpl impl
 	 */
 	public void setPresentation(ClassPresentationKind newPresentation) {
 		ClassPresentationKind oldPresentation = presentation;
-		presentation = newPresentation == null ? PRESENTATION_EDEFAULT : newPresentation;
+		presentation = newPresentation == null
+				? PRESENTATION_EDEFAULT
+				: newPresentation;
 		boolean oldPresentationESet = presentationESet;
 		presentationESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_GRAPHIC_INFORMATION__PRESENTATION, oldPresentation, presentation, !oldPresentationESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_GRAPHIC_INFORMATION__PRESENTATION, oldPresentation,
+				presentation, !oldPresentationESet));
+		}
 	}
 
 	/**
@@ -111,8 +120,11 @@ public class ClassGraphicInformationImpl extends NodeGraphicInformationImpl impl
 		boolean oldPresentationESet = presentationESet;
 		presentation = PRESENTATION_EDEFAULT;
 		presentationESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CLASS_GRAPHIC_INFORMATION__PRESENTATION, oldPresentation, PRESENTATION_EDEFAULT, oldPresentationESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CLASS_GRAPHIC_INFORMATION__PRESENTATION, oldPresentation,
+				PRESENTATION_EDEFAULT, oldPresentationESet));
+		}
 	}
 
 	/**
@@ -147,7 +159,7 @@ public class ClassGraphicInformationImpl extends NodeGraphicInformationImpl impl
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CLASS_GRAPHIC_INFORMATION__PRESENTATION:
-				setPresentation((ClassPresentationKind)newValue);
+				setPresentation((ClassPresentationKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,13 +201,19 @@ public class ClassGraphicInformationImpl extends NodeGraphicInformationImpl impl
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (presentation: ");
-		if (presentationESet) result.append(presentation); else result.append("<unset>");
+		if (presentationESet) {
+			result.append(presentation);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //ClassGraphicInformationImpl
+} // ClassGraphicInformationImpl

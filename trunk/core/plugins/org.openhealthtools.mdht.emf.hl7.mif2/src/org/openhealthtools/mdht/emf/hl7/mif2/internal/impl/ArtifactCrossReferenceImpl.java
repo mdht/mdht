@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -107,7 +111,8 @@ public class ArtifactCrossReferenceImpl extends PackageArtifactImpl implements A
 	 */
 	public EList<ElementDerivation> getDerivedFrom() {
 		if (derivedFrom == null) {
-			derivedFrom = new EObjectContainmentEList<ElementDerivation>(ElementDerivation.class, this, Mif2Package.ARTIFACT_CROSS_REFERENCE__DERIVED_FROM);
+			derivedFrom = new EObjectContainmentEList<ElementDerivation>(
+				ElementDerivation.class, this, Mif2Package.ARTIFACT_CROSS_REFERENCE__DERIVED_FROM);
 		}
 		return derivedFrom;
 	}
@@ -119,7 +124,8 @@ public class ArtifactCrossReferenceImpl extends PackageArtifactImpl implements A
 	 */
 	public EList<PackageRef> getImportedPackage() {
 		if (importedPackage == null) {
-			importedPackage = new EObjectContainmentEList<PackageRef>(PackageRef.class, this, Mif2Package.ARTIFACT_CROSS_REFERENCE__IMPORTED_PACKAGE);
+			importedPackage = new EObjectContainmentEList<PackageRef>(
+				PackageRef.class, this, Mif2Package.ARTIFACT_CROSS_REFERENCE__IMPORTED_PACKAGE);
 		}
 		return importedPackage;
 	}
@@ -131,7 +137,8 @@ public class ArtifactCrossReferenceImpl extends PackageArtifactImpl implements A
 	 */
 	public EList<PackageOrArtifactRef> getDependentOnElement() {
 		if (dependentOnElement == null) {
-			dependentOnElement = new EObjectContainmentEList<PackageOrArtifactRef>(PackageOrArtifactRef.class, this, Mif2Package.ARTIFACT_CROSS_REFERENCE__DEPENDENT_ON_ELEMENT);
+			dependentOnElement = new EObjectContainmentEList<PackageOrArtifactRef>(
+				PackageOrArtifactRef.class, this, Mif2Package.ARTIFACT_CROSS_REFERENCE__DEPENDENT_ON_ELEMENT);
 		}
 		return dependentOnElement;
 	}
@@ -143,7 +150,8 @@ public class ArtifactCrossReferenceImpl extends PackageArtifactImpl implements A
 	 */
 	public EList<ArtifactCrossReference> getContainedElements() {
 		if (containedElements == null) {
-			containedElements = new EObjectContainmentEList<ArtifactCrossReference>(ArtifactCrossReference.class, this, Mif2Package.ARTIFACT_CROSS_REFERENCE__CONTAINED_ELEMENTS);
+			containedElements = new EObjectContainmentEList<ArtifactCrossReference>(
+				ArtifactCrossReference.class, this, Mif2Package.ARTIFACT_CROSS_REFERENCE__CONTAINED_ELEMENTS);
 		}
 		return containedElements;
 	}
@@ -157,13 +165,13 @@ public class ArtifactCrossReferenceImpl extends PackageArtifactImpl implements A
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.ARTIFACT_CROSS_REFERENCE__DERIVED_FROM:
-				return ((InternalEList<?>)getDerivedFrom()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDerivedFrom()).basicRemove(otherEnd, msgs);
 			case Mif2Package.ARTIFACT_CROSS_REFERENCE__IMPORTED_PACKAGE:
-				return ((InternalEList<?>)getImportedPackage()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getImportedPackage()).basicRemove(otherEnd, msgs);
 			case Mif2Package.ARTIFACT_CROSS_REFERENCE__DEPENDENT_ON_ELEMENT:
-				return ((InternalEList<?>)getDependentOnElement()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDependentOnElement()).basicRemove(otherEnd, msgs);
 			case Mif2Package.ARTIFACT_CROSS_REFERENCE__CONTAINED_ELEMENTS:
-				return ((InternalEList<?>)getContainedElements()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getContainedElements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -199,19 +207,19 @@ public class ArtifactCrossReferenceImpl extends PackageArtifactImpl implements A
 		switch (featureID) {
 			case Mif2Package.ARTIFACT_CROSS_REFERENCE__DERIVED_FROM:
 				getDerivedFrom().clear();
-				getDerivedFrom().addAll((Collection<? extends ElementDerivation>)newValue);
+				getDerivedFrom().addAll((Collection<? extends ElementDerivation>) newValue);
 				return;
 			case Mif2Package.ARTIFACT_CROSS_REFERENCE__IMPORTED_PACKAGE:
 				getImportedPackage().clear();
-				getImportedPackage().addAll((Collection<? extends PackageRef>)newValue);
+				getImportedPackage().addAll((Collection<? extends PackageRef>) newValue);
 				return;
 			case Mif2Package.ARTIFACT_CROSS_REFERENCE__DEPENDENT_ON_ELEMENT:
 				getDependentOnElement().clear();
-				getDependentOnElement().addAll((Collection<? extends PackageOrArtifactRef>)newValue);
+				getDependentOnElement().addAll((Collection<? extends PackageOrArtifactRef>) newValue);
 				return;
 			case Mif2Package.ARTIFACT_CROSS_REFERENCE__CONTAINED_ELEMENTS:
 				getContainedElements().clear();
-				getContainedElements().addAll((Collection<? extends ArtifactCrossReference>)newValue);
+				getContainedElements().addAll((Collection<? extends ArtifactCrossReference>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -261,4 +269,4 @@ public class ArtifactCrossReferenceImpl extends PackageArtifactImpl implements A
 		return super.eIsSet(featureID);
 	}
 
-} //ArtifactCrossReferenceImpl
+} // ArtifactCrossReferenceImpl

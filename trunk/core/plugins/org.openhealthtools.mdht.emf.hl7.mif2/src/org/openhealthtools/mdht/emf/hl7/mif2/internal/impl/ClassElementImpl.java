@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -104,8 +108,13 @@ public class ClassElementImpl extends EObjectImpl implements ClassElement {
 		FlatClass oldClass = class_;
 		class_ = newClass;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_ELEMENT__CLASS, oldClass, newClass);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_ELEMENT__CLASS, oldClass, newClass);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -118,15 +127,21 @@ public class ClassElementImpl extends EObjectImpl implements ClassElement {
 	public void setClass(FlatClass newClass) {
 		if (newClass != class_) {
 			NotificationChain msgs = null;
-			if (class_ != null)
-				msgs = ((InternalEObject)class_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CLASS_ELEMENT__CLASS, null, msgs);
-			if (newClass != null)
-				msgs = ((InternalEObject)newClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CLASS_ELEMENT__CLASS, null, msgs);
+			if (class_ != null) {
+				msgs = ((InternalEObject) class_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CLASS_ELEMENT__CLASS, null, msgs);
+			}
+			if (newClass != null) {
+				msgs = ((InternalEObject) newClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CLASS_ELEMENT__CLASS, null, msgs);
+			}
 			msgs = basicSetClass(newClass, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_ELEMENT__CLASS, newClass, newClass));
+		}
 	}
 
 	/**
@@ -143,12 +158,19 @@ public class ClassElementImpl extends EObjectImpl implements ClassElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCommonModelElementRef(CommonModelElementRef newCommonModelElementRef, NotificationChain msgs) {
+	public NotificationChain basicSetCommonModelElementRef(CommonModelElementRef newCommonModelElementRef,
+			NotificationChain msgs) {
 		CommonModelElementRef oldCommonModelElementRef = commonModelElementRef;
 		commonModelElementRef = newCommonModelElementRef;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_ELEMENT__COMMON_MODEL_ELEMENT_REF, oldCommonModelElementRef, newCommonModelElementRef);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_ELEMENT__COMMON_MODEL_ELEMENT_REF, oldCommonModelElementRef,
+				newCommonModelElementRef);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -161,15 +183,23 @@ public class ClassElementImpl extends EObjectImpl implements ClassElement {
 	public void setCommonModelElementRef(CommonModelElementRef newCommonModelElementRef) {
 		if (newCommonModelElementRef != commonModelElementRef) {
 			NotificationChain msgs = null;
-			if (commonModelElementRef != null)
-				msgs = ((InternalEObject)commonModelElementRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CLASS_ELEMENT__COMMON_MODEL_ELEMENT_REF, null, msgs);
-			if (newCommonModelElementRef != null)
-				msgs = ((InternalEObject)newCommonModelElementRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CLASS_ELEMENT__COMMON_MODEL_ELEMENT_REF, null, msgs);
+			if (commonModelElementRef != null) {
+				msgs = ((InternalEObject) commonModelElementRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CLASS_ELEMENT__COMMON_MODEL_ELEMENT_REF, null, msgs);
+			}
+			if (newCommonModelElementRef != null) {
+				msgs = ((InternalEObject) newCommonModelElementRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CLASS_ELEMENT__COMMON_MODEL_ELEMENT_REF, null, msgs);
+			}
 			msgs = basicSetCommonModelElementRef(newCommonModelElementRef, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_ELEMENT__COMMON_MODEL_ELEMENT_REF, newCommonModelElementRef,
+				newCommonModelElementRef));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_ELEMENT__COMMON_MODEL_ELEMENT_REF, newCommonModelElementRef, newCommonModelElementRef));
 	}
 
 	/**
@@ -186,12 +216,19 @@ public class ClassElementImpl extends EObjectImpl implements ClassElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTemplateParameter(StaticModelClassTemplateParameter newTemplateParameter, NotificationChain msgs) {
+	public NotificationChain basicSetTemplateParameter(StaticModelClassTemplateParameter newTemplateParameter,
+			NotificationChain msgs) {
 		StaticModelClassTemplateParameter oldTemplateParameter = templateParameter;
 		templateParameter = newTemplateParameter;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_ELEMENT__TEMPLATE_PARAMETER, oldTemplateParameter, newTemplateParameter);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_ELEMENT__TEMPLATE_PARAMETER, oldTemplateParameter,
+				newTemplateParameter);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -204,15 +241,23 @@ public class ClassElementImpl extends EObjectImpl implements ClassElement {
 	public void setTemplateParameter(StaticModelClassTemplateParameter newTemplateParameter) {
 		if (newTemplateParameter != templateParameter) {
 			NotificationChain msgs = null;
-			if (templateParameter != null)
-				msgs = ((InternalEObject)templateParameter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CLASS_ELEMENT__TEMPLATE_PARAMETER, null, msgs);
-			if (newTemplateParameter != null)
-				msgs = ((InternalEObject)newTemplateParameter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CLASS_ELEMENT__TEMPLATE_PARAMETER, null, msgs);
+			if (templateParameter != null) {
+				msgs = ((InternalEObject) templateParameter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CLASS_ELEMENT__TEMPLATE_PARAMETER, null, msgs);
+			}
+			if (newTemplateParameter != null) {
+				msgs = ((InternalEObject) newTemplateParameter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CLASS_ELEMENT__TEMPLATE_PARAMETER, null, msgs);
+			}
 			msgs = basicSetTemplateParameter(newTemplateParameter, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_ELEMENT__TEMPLATE_PARAMETER, newTemplateParameter,
+				newTemplateParameter));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_ELEMENT__TEMPLATE_PARAMETER, newTemplateParameter, newTemplateParameter));
 	}
 
 	/**
@@ -260,13 +305,13 @@ public class ClassElementImpl extends EObjectImpl implements ClassElement {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CLASS_ELEMENT__CLASS:
-				setClass((FlatClass)newValue);
+				setClass((FlatClass) newValue);
 				return;
 			case Mif2Package.CLASS_ELEMENT__COMMON_MODEL_ELEMENT_REF:
-				setCommonModelElementRef((CommonModelElementRef)newValue);
+				setCommonModelElementRef((CommonModelElementRef) newValue);
 				return;
 			case Mif2Package.CLASS_ELEMENT__TEMPLATE_PARAMETER:
-				setTemplateParameter((StaticModelClassTemplateParameter)newValue);
+				setTemplateParameter((StaticModelClassTemplateParameter) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -281,13 +326,13 @@ public class ClassElementImpl extends EObjectImpl implements ClassElement {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CLASS_ELEMENT__CLASS:
-				setClass((FlatClass)null);
+				setClass((FlatClass) null);
 				return;
 			case Mif2Package.CLASS_ELEMENT__COMMON_MODEL_ELEMENT_REF:
-				setCommonModelElementRef((CommonModelElementRef)null);
+				setCommonModelElementRef((CommonModelElementRef) null);
 				return;
 			case Mif2Package.CLASS_ELEMENT__TEMPLATE_PARAMETER:
-				setTemplateParameter((StaticModelClassTemplateParameter)null);
+				setTemplateParameter((StaticModelClassTemplateParameter) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -311,4 +356,4 @@ public class ClassElementImpl extends EObjectImpl implements ClassElement {
 		return super.eIsSet(featureID);
 	}
 
-} //ClassElementImpl
+} // ClassElementImpl

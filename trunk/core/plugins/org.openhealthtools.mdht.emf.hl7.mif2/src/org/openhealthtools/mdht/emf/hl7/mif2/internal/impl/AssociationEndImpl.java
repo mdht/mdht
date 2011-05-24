@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -85,8 +89,11 @@ public class AssociationEndImpl extends AssociationEndBaseImpl implements Associ
 	public void setParticipantClassName(String newParticipantClassName) {
 		String oldParticipantClassName = participantClassName;
 		participantClassName = newParticipantClassName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ASSOCIATION_END__PARTICIPANT_CLASS_NAME, oldParticipantClassName, participantClassName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ASSOCIATION_END__PARTICIPANT_CLASS_NAME, oldParticipantClassName,
+				participantClassName));
+		}
 	}
 
 	/**
@@ -112,7 +119,7 @@ public class AssociationEndImpl extends AssociationEndBaseImpl implements Associ
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.ASSOCIATION_END__PARTICIPANT_CLASS_NAME:
-				setParticipantClassName((String)newValue);
+				setParticipantClassName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -142,7 +149,9 @@ public class AssociationEndImpl extends AssociationEndBaseImpl implements Associ
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.ASSOCIATION_END__PARTICIPANT_CLASS_NAME:
-				return PARTICIPANT_CLASS_NAME_EDEFAULT == null ? participantClassName != null : !PARTICIPANT_CLASS_NAME_EDEFAULT.equals(participantClassName);
+				return PARTICIPANT_CLASS_NAME_EDEFAULT == null
+						? participantClassName != null
+						: !PARTICIPANT_CLASS_NAME_EDEFAULT.equals(participantClassName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,7 +163,9 @@ public class AssociationEndImpl extends AssociationEndBaseImpl implements Associ
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (participantClassName: ");
@@ -163,4 +174,4 @@ public class AssociationEndImpl extends AssociationEndBaseImpl implements Associ
 		return result.toString();
 	}
 
-} //AssociationEndImpl
+} // AssociationEndImpl

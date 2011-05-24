@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -99,7 +103,8 @@ public abstract class ConceptBaseImpl extends EObjectImpl implements ConceptBase
 	 */
 	public EList<HistoryItem> getHistoryItem() {
 		if (historyItem == null) {
-			historyItem = new EObjectContainmentEList<HistoryItem>(HistoryItem.class, this, Mif2Package.CONCEPT_BASE__HISTORY_ITEM);
+			historyItem = new EObjectContainmentEList<HistoryItem>(
+				HistoryItem.class, this, Mif2Package.CONCEPT_BASE__HISTORY_ITEM);
 		}
 		return historyItem;
 	}
@@ -121,8 +126,10 @@ public abstract class ConceptBaseImpl extends EObjectImpl implements ConceptBase
 	public void setEffectiveDate(XMLGregorianCalendar newEffectiveDate) {
 		XMLGregorianCalendar oldEffectiveDate = effectiveDate;
 		effectiveDate = newEffectiveDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT_BASE__EFFECTIVE_DATE, oldEffectiveDate, effectiveDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONCEPT_BASE__EFFECTIVE_DATE, oldEffectiveDate, effectiveDate));
+		}
 	}
 
 	/**
@@ -134,7 +141,7 @@ public abstract class ConceptBaseImpl extends EObjectImpl implements ConceptBase
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.CONCEPT_BASE__HISTORY_ITEM:
-				return ((InternalEList<?>)getHistoryItem()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getHistoryItem()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -166,10 +173,10 @@ public abstract class ConceptBaseImpl extends EObjectImpl implements ConceptBase
 		switch (featureID) {
 			case Mif2Package.CONCEPT_BASE__HISTORY_ITEM:
 				getHistoryItem().clear();
-				getHistoryItem().addAll((Collection<? extends HistoryItem>)newValue);
+				getHistoryItem().addAll((Collection<? extends HistoryItem>) newValue);
 				return;
 			case Mif2Package.CONCEPT_BASE__EFFECTIVE_DATE:
-				setEffectiveDate((XMLGregorianCalendar)newValue);
+				setEffectiveDate((XMLGregorianCalendar) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -204,7 +211,9 @@ public abstract class ConceptBaseImpl extends EObjectImpl implements ConceptBase
 			case Mif2Package.CONCEPT_BASE__HISTORY_ITEM:
 				return historyItem != null && !historyItem.isEmpty();
 			case Mif2Package.CONCEPT_BASE__EFFECTIVE_DATE:
-				return EFFECTIVE_DATE_EDEFAULT == null ? effectiveDate != null : !EFFECTIVE_DATE_EDEFAULT.equals(effectiveDate);
+				return EFFECTIVE_DATE_EDEFAULT == null
+						? effectiveDate != null
+						: !EFFECTIVE_DATE_EDEFAULT.equals(effectiveDate);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -216,7 +225,9 @@ public abstract class ConceptBaseImpl extends EObjectImpl implements ConceptBase
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (effectiveDate: ");
@@ -225,4 +236,4 @@ public abstract class ConceptBaseImpl extends EObjectImpl implements ConceptBase
 		return result.toString();
 	}
 
-} //ConceptBaseImpl
+} // ConceptBaseImpl

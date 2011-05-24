@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigInteger;
@@ -337,8 +341,13 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 		Header oldHeader = header;
 		header = newHeader;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__HEADER, oldHeader, newHeader);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__HEADER, oldHeader, newHeader);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -351,15 +360,22 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 	public void setHeader(Header newHeader) {
 		if (newHeader != header) {
 			NotificationChain msgs = null;
-			if (header != null)
-				msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_SYSTEM_BASE__HEADER, null, msgs);
-			if (newHeader != null)
-				msgs = ((InternalEObject)newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_SYSTEM_BASE__HEADER, null, msgs);
+			if (header != null) {
+				msgs = ((InternalEObject) header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_SYSTEM_BASE__HEADER, null, msgs);
+			}
+			if (newHeader != null) {
+				msgs = ((InternalEObject) newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_SYSTEM_BASE__HEADER, null, msgs);
+			}
 			msgs = basicSetHeader(newHeader, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__HEADER, newHeader, newHeader));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__HEADER, newHeader, newHeader));
 	}
 
 	/**
@@ -380,8 +396,13 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 		CodeSystemAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -394,15 +415,22 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 	public void setAnnotations(CodeSystemAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_SYSTEM_BASE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_SYSTEM_BASE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_SYSTEM_BASE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_SYSTEM_BASE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -412,7 +440,8 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 	 */
 	public EList<PropertyGroup> getPropertyGroup() {
 		if (propertyGroup == null) {
-			propertyGroup = new EObjectContainmentEList<PropertyGroup>(PropertyGroup.class, this, Mif2Package.CODE_SYSTEM_BASE__PROPERTY_GROUP);
+			propertyGroup = new EObjectContainmentEList<PropertyGroup>(
+				PropertyGroup.class, this, Mif2Package.CODE_SYSTEM_BASE__PROPERTY_GROUP);
 		}
 		return propertyGroup;
 	}
@@ -434,8 +463,11 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 	public void setApproxCodeCount(BigInteger newApproxCodeCount) {
 		BigInteger oldApproxCodeCount = approxCodeCount;
 		approxCodeCount = newApproxCodeCount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__APPROX_CODE_COUNT, oldApproxCodeCount, approxCodeCount));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__APPROX_CODE_COUNT, oldApproxCodeCount,
+				approxCodeCount));
+		}
 	}
 
 	/**
@@ -455,8 +487,10 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 	public void setCodeSystemId(String newCodeSystemId) {
 		String oldCodeSystemId = codeSystemId;
 		codeSystemId = newCodeSystemId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__CODE_SYSTEM_ID, oldCodeSystemId, codeSystemId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__CODE_SYSTEM_ID, oldCodeSystemId, codeSystemId));
+		}
 	}
 
 	/**
@@ -478,8 +512,11 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 		hasHomonymy = newHasHomonymy;
 		boolean oldHasHomonymyESet = hasHomonymyESet;
 		hasHomonymyESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__HAS_HOMONYMY, oldHasHomonymy, hasHomonymy, !oldHasHomonymyESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__HAS_HOMONYMY, oldHasHomonymy, hasHomonymy,
+				!oldHasHomonymyESet));
+		}
 	}
 
 	/**
@@ -492,8 +529,11 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 		boolean oldHasHomonymyESet = hasHomonymyESet;
 		hasHomonymy = HAS_HOMONYMY_EDEFAULT;
 		hasHomonymyESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CODE_SYSTEM_BASE__HAS_HOMONYMY, oldHasHomonymy, HAS_HOMONYMY_EDEFAULT, oldHasHomonymyESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CODE_SYSTEM_BASE__HAS_HOMONYMY, oldHasHomonymy,
+				HAS_HOMONYMY_EDEFAULT, oldHasHomonymyESet));
+		}
 	}
 
 	/**
@@ -524,8 +564,11 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 		hasSynonymy = newHasSynonymy;
 		boolean oldHasSynonymyESet = hasSynonymyESet;
 		hasSynonymyESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__HAS_SYNONYMY, oldHasSynonymy, hasSynonymy, !oldHasSynonymyESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__HAS_SYNONYMY, oldHasSynonymy, hasSynonymy,
+				!oldHasSynonymyESet));
+		}
 	}
 
 	/**
@@ -538,8 +581,11 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 		boolean oldHasSynonymyESet = hasSynonymyESet;
 		hasSynonymy = HAS_SYNONYMY_EDEFAULT;
 		hasSynonymyESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CODE_SYSTEM_BASE__HAS_SYNONYMY, oldHasSynonymy, HAS_SYNONYMY_EDEFAULT, oldHasSynonymyESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CODE_SYSTEM_BASE__HAS_SYNONYMY, oldHasSynonymy,
+				HAS_SYNONYMY_EDEFAULT, oldHasSynonymyESet));
+		}
 	}
 
 	/**
@@ -570,8 +616,11 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 		isCaseSensitive = newIsCaseSensitive;
 		boolean oldIsCaseSensitiveESet = isCaseSensitiveESet;
 		isCaseSensitiveESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__IS_CASE_SENSITIVE, oldIsCaseSensitive, isCaseSensitive, !oldIsCaseSensitiveESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__IS_CASE_SENSITIVE, oldIsCaseSensitive,
+				isCaseSensitive, !oldIsCaseSensitiveESet));
+		}
 	}
 
 	/**
@@ -584,8 +633,11 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 		boolean oldIsCaseSensitiveESet = isCaseSensitiveESet;
 		isCaseSensitive = IS_CASE_SENSITIVE_EDEFAULT;
 		isCaseSensitiveESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CODE_SYSTEM_BASE__IS_CASE_SENSITIVE, oldIsCaseSensitive, IS_CASE_SENSITIVE_EDEFAULT, oldIsCaseSensitiveESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CODE_SYSTEM_BASE__IS_CASE_SENSITIVE, oldIsCaseSensitive,
+				IS_CASE_SENSITIVE_EDEFAULT, oldIsCaseSensitiveESet));
+		}
 	}
 
 	/**
@@ -616,8 +668,11 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 		isWhitespaceSensitive = newIsWhitespaceSensitive;
 		boolean oldIsWhitespaceSensitiveESet = isWhitespaceSensitiveESet;
 		isWhitespaceSensitiveESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__IS_WHITESPACE_SENSITIVE, oldIsWhitespaceSensitive, isWhitespaceSensitive, !oldIsWhitespaceSensitiveESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__IS_WHITESPACE_SENSITIVE,
+				oldIsWhitespaceSensitive, isWhitespaceSensitive, !oldIsWhitespaceSensitiveESet));
+		}
 	}
 
 	/**
@@ -630,8 +685,11 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 		boolean oldIsWhitespaceSensitiveESet = isWhitespaceSensitiveESet;
 		isWhitespaceSensitive = IS_WHITESPACE_SENSITIVE_EDEFAULT;
 		isWhitespaceSensitiveESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CODE_SYSTEM_BASE__IS_WHITESPACE_SENSITIVE, oldIsWhitespaceSensitive, IS_WHITESPACE_SENSITIVE_EDEFAULT, oldIsWhitespaceSensitiveESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CODE_SYSTEM_BASE__IS_WHITESPACE_SENSITIVE,
+				oldIsWhitespaceSensitive, IS_WHITESPACE_SENSITIVE_EDEFAULT, oldIsWhitespaceSensitiveESet));
+		}
 	}
 
 	/**
@@ -660,8 +718,11 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 	public void setPrimaryLanguage(String newPrimaryLanguage) {
 		String oldPrimaryLanguage = primaryLanguage;
 		primaryLanguage = newPrimaryLanguage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__PRIMARY_LANGUAGE, oldPrimaryLanguage, primaryLanguage));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__PRIMARY_LANGUAGE, oldPrimaryLanguage,
+				primaryLanguage));
+		}
 	}
 
 	/**
@@ -681,8 +742,10 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 	public void setPrimaryRealm(Object newPrimaryRealm) {
 		Object oldPrimaryRealm = primaryRealm;
 		primaryRealm = newPrimaryRealm;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__PRIMARY_REALM, oldPrimaryRealm, primaryRealm));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__PRIMARY_REALM, oldPrimaryRealm, primaryRealm));
+		}
 	}
 
 	/**
@@ -702,8 +765,9 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 	public void setTitle(String newTitle) {
 		String oldTitle = title;
 		title = newTitle;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_BASE__TITLE, oldTitle, title));
+		}
 	}
 
 	/**
@@ -719,7 +783,7 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 			case Mif2Package.CODE_SYSTEM_BASE__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 			case Mif2Package.CODE_SYSTEM_BASE__PROPERTY_GROUP:
-				return ((InternalEList<?>)getPropertyGroup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPropertyGroup()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -743,13 +807,21 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 			case Mif2Package.CODE_SYSTEM_BASE__CODE_SYSTEM_ID:
 				return getCodeSystemId();
 			case Mif2Package.CODE_SYSTEM_BASE__HAS_HOMONYMY:
-				return isHasHomonymy() ? Boolean.TRUE : Boolean.FALSE;
+				return isHasHomonymy()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.CODE_SYSTEM_BASE__HAS_SYNONYMY:
-				return isHasSynonymy() ? Boolean.TRUE : Boolean.FALSE;
+				return isHasSynonymy()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.CODE_SYSTEM_BASE__IS_CASE_SENSITIVE:
-				return isIsCaseSensitive() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsCaseSensitive()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.CODE_SYSTEM_BASE__IS_WHITESPACE_SENSITIVE:
-				return isIsWhitespaceSensitive() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsWhitespaceSensitive()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.CODE_SYSTEM_BASE__PRIMARY_LANGUAGE:
 				return getPrimaryLanguage();
 			case Mif2Package.CODE_SYSTEM_BASE__PRIMARY_REALM:
@@ -770,41 +842,41 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CODE_SYSTEM_BASE__HEADER:
-				setHeader((Header)newValue);
+				setHeader((Header) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_BASE__ANNOTATIONS:
-				setAnnotations((CodeSystemAnnotations)newValue);
+				setAnnotations((CodeSystemAnnotations) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_BASE__PROPERTY_GROUP:
 				getPropertyGroup().clear();
-				getPropertyGroup().addAll((Collection<? extends PropertyGroup>)newValue);
+				getPropertyGroup().addAll((Collection<? extends PropertyGroup>) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_BASE__APPROX_CODE_COUNT:
-				setApproxCodeCount((BigInteger)newValue);
+				setApproxCodeCount((BigInteger) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_BASE__CODE_SYSTEM_ID:
-				setCodeSystemId((String)newValue);
+				setCodeSystemId((String) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_BASE__HAS_HOMONYMY:
-				setHasHomonymy(((Boolean)newValue).booleanValue());
+				setHasHomonymy(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.CODE_SYSTEM_BASE__HAS_SYNONYMY:
-				setHasSynonymy(((Boolean)newValue).booleanValue());
+				setHasSynonymy(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.CODE_SYSTEM_BASE__IS_CASE_SENSITIVE:
-				setIsCaseSensitive(((Boolean)newValue).booleanValue());
+				setIsCaseSensitive(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.CODE_SYSTEM_BASE__IS_WHITESPACE_SENSITIVE:
-				setIsWhitespaceSensitive(((Boolean)newValue).booleanValue());
+				setIsWhitespaceSensitive(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.CODE_SYSTEM_BASE__PRIMARY_LANGUAGE:
-				setPrimaryLanguage((String)newValue);
+				setPrimaryLanguage((String) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_BASE__PRIMARY_REALM:
 				setPrimaryRealm(newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_BASE__TITLE:
-				setTitle((String)newValue);
+				setTitle((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -819,10 +891,10 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CODE_SYSTEM_BASE__HEADER:
-				setHeader((Header)null);
+				setHeader((Header) null);
 				return;
 			case Mif2Package.CODE_SYSTEM_BASE__ANNOTATIONS:
-				setAnnotations((CodeSystemAnnotations)null);
+				setAnnotations((CodeSystemAnnotations) null);
 				return;
 			case Mif2Package.CODE_SYSTEM_BASE__PROPERTY_GROUP:
 				getPropertyGroup().clear();
@@ -873,9 +945,13 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 			case Mif2Package.CODE_SYSTEM_BASE__PROPERTY_GROUP:
 				return propertyGroup != null && !propertyGroup.isEmpty();
 			case Mif2Package.CODE_SYSTEM_BASE__APPROX_CODE_COUNT:
-				return APPROX_CODE_COUNT_EDEFAULT == null ? approxCodeCount != null : !APPROX_CODE_COUNT_EDEFAULT.equals(approxCodeCount);
+				return APPROX_CODE_COUNT_EDEFAULT == null
+						? approxCodeCount != null
+						: !APPROX_CODE_COUNT_EDEFAULT.equals(approxCodeCount);
 			case Mif2Package.CODE_SYSTEM_BASE__CODE_SYSTEM_ID:
-				return CODE_SYSTEM_ID_EDEFAULT == null ? codeSystemId != null : !CODE_SYSTEM_ID_EDEFAULT.equals(codeSystemId);
+				return CODE_SYSTEM_ID_EDEFAULT == null
+						? codeSystemId != null
+						: !CODE_SYSTEM_ID_EDEFAULT.equals(codeSystemId);
 			case Mif2Package.CODE_SYSTEM_BASE__HAS_HOMONYMY:
 				return isSetHasHomonymy();
 			case Mif2Package.CODE_SYSTEM_BASE__HAS_SYNONYMY:
@@ -885,11 +961,17 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 			case Mif2Package.CODE_SYSTEM_BASE__IS_WHITESPACE_SENSITIVE:
 				return isSetIsWhitespaceSensitive();
 			case Mif2Package.CODE_SYSTEM_BASE__PRIMARY_LANGUAGE:
-				return PRIMARY_LANGUAGE_EDEFAULT == null ? primaryLanguage != null : !PRIMARY_LANGUAGE_EDEFAULT.equals(primaryLanguage);
+				return PRIMARY_LANGUAGE_EDEFAULT == null
+						? primaryLanguage != null
+						: !PRIMARY_LANGUAGE_EDEFAULT.equals(primaryLanguage);
 			case Mif2Package.CODE_SYSTEM_BASE__PRIMARY_REALM:
-				return PRIMARY_REALM_EDEFAULT == null ? primaryRealm != null : !PRIMARY_REALM_EDEFAULT.equals(primaryRealm);
+				return PRIMARY_REALM_EDEFAULT == null
+						? primaryRealm != null
+						: !PRIMARY_REALM_EDEFAULT.equals(primaryRealm);
 			case Mif2Package.CODE_SYSTEM_BASE__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+				return TITLE_EDEFAULT == null
+						? title != null
+						: !TITLE_EDEFAULT.equals(title);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -901,7 +983,9 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (approxCodeCount: ");
@@ -909,13 +993,29 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 		result.append(", codeSystemId: ");
 		result.append(codeSystemId);
 		result.append(", hasHomonymy: ");
-		if (hasHomonymyESet) result.append(hasHomonymy); else result.append("<unset>");
+		if (hasHomonymyESet) {
+			result.append(hasHomonymy);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", hasSynonymy: ");
-		if (hasSynonymyESet) result.append(hasSynonymy); else result.append("<unset>");
+		if (hasSynonymyESet) {
+			result.append(hasSynonymy);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", isCaseSensitive: ");
-		if (isCaseSensitiveESet) result.append(isCaseSensitive); else result.append("<unset>");
+		if (isCaseSensitiveESet) {
+			result.append(isCaseSensitive);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", isWhitespaceSensitive: ");
-		if (isWhitespaceSensitiveESet) result.append(isWhitespaceSensitive); else result.append("<unset>");
+		if (isWhitespaceSensitiveESet) {
+			result.append(isWhitespaceSensitive);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", primaryLanguage: ");
 		result.append(primaryLanguage);
 		result.append(", primaryRealm: ");
@@ -926,4 +1026,4 @@ public abstract class CodeSystemBaseImpl extends PackageBaseImpl implements Code
 		return result.toString();
 	}
 
-} //CodeSystemBaseImpl
+} // CodeSystemBaseImpl

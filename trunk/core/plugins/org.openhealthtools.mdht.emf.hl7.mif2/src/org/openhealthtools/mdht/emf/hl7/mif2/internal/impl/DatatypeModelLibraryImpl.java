@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -117,12 +121,19 @@ public class DatatypeModelLibraryImpl extends PackageImpl implements DatatypeMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetImportedVocabularyModelPackage(PackageRef newImportedVocabularyModelPackage, NotificationChain msgs) {
+	public NotificationChain basicSetImportedVocabularyModelPackage(PackageRef newImportedVocabularyModelPackage,
+			NotificationChain msgs) {
 		PackageRef oldImportedVocabularyModelPackage = importedVocabularyModelPackage;
 		importedVocabularyModelPackage = newImportedVocabularyModelPackage;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORTED_VOCABULARY_MODEL_PACKAGE, oldImportedVocabularyModelPackage, newImportedVocabularyModelPackage);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORTED_VOCABULARY_MODEL_PACKAGE,
+				oldImportedVocabularyModelPackage, newImportedVocabularyModelPackage);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -135,15 +146,23 @@ public class DatatypeModelLibraryImpl extends PackageImpl implements DatatypeMod
 	public void setImportedVocabularyModelPackage(PackageRef newImportedVocabularyModelPackage) {
 		if (newImportedVocabularyModelPackage != importedVocabularyModelPackage) {
 			NotificationChain msgs = null;
-			if (importedVocabularyModelPackage != null)
-				msgs = ((InternalEObject)importedVocabularyModelPackage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORTED_VOCABULARY_MODEL_PACKAGE, null, msgs);
-			if (newImportedVocabularyModelPackage != null)
-				msgs = ((InternalEObject)newImportedVocabularyModelPackage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORTED_VOCABULARY_MODEL_PACKAGE, null, msgs);
+			if (importedVocabularyModelPackage != null) {
+				msgs = ((InternalEObject) importedVocabularyModelPackage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORTED_VOCABULARY_MODEL_PACKAGE, null, msgs);
+			}
+			if (newImportedVocabularyModelPackage != null) {
+				msgs = ((InternalEObject) newImportedVocabularyModelPackage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORTED_VOCABULARY_MODEL_PACKAGE, null, msgs);
+			}
 			msgs = basicSetImportedVocabularyModelPackage(newImportedVocabularyModelPackage, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORTED_VOCABULARY_MODEL_PACKAGE,
+				newImportedVocabularyModelPackage, newImportedVocabularyModelPackage));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORTED_VOCABULARY_MODEL_PACKAGE, newImportedVocabularyModelPackage, newImportedVocabularyModelPackage));
 	}
 
 	/**
@@ -160,12 +179,19 @@ public class DatatypeModelLibraryImpl extends PackageImpl implements DatatypeMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetImportDatatypeModelLibrary(ImportDatatypeModelLibrary newImportDatatypeModelLibrary, NotificationChain msgs) {
+	public NotificationChain basicSetImportDatatypeModelLibrary(
+			ImportDatatypeModelLibrary newImportDatatypeModelLibrary, NotificationChain msgs) {
 		ImportDatatypeModelLibrary oldImportDatatypeModelLibrary = importDatatypeModelLibrary;
 		importDatatypeModelLibrary = newImportDatatypeModelLibrary;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_DATATYPE_MODEL_LIBRARY, oldImportDatatypeModelLibrary, newImportDatatypeModelLibrary);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_DATATYPE_MODEL_LIBRARY,
+				oldImportDatatypeModelLibrary, newImportDatatypeModelLibrary);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -178,15 +204,23 @@ public class DatatypeModelLibraryImpl extends PackageImpl implements DatatypeMod
 	public void setImportDatatypeModelLibrary(ImportDatatypeModelLibrary newImportDatatypeModelLibrary) {
 		if (newImportDatatypeModelLibrary != importDatatypeModelLibrary) {
 			NotificationChain msgs = null;
-			if (importDatatypeModelLibrary != null)
-				msgs = ((InternalEObject)importDatatypeModelLibrary).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_DATATYPE_MODEL_LIBRARY, null, msgs);
-			if (newImportDatatypeModelLibrary != null)
-				msgs = ((InternalEObject)newImportDatatypeModelLibrary).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_DATATYPE_MODEL_LIBRARY, null, msgs);
+			if (importDatatypeModelLibrary != null) {
+				msgs = ((InternalEObject) importDatatypeModelLibrary).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_DATATYPE_MODEL_LIBRARY, null, msgs);
+			}
+			if (newImportDatatypeModelLibrary != null) {
+				msgs = ((InternalEObject) newImportDatatypeModelLibrary).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_DATATYPE_MODEL_LIBRARY, null, msgs);
+			}
 			msgs = basicSetImportDatatypeModelLibrary(newImportDatatypeModelLibrary, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_DATATYPE_MODEL_LIBRARY,
+				newImportDatatypeModelLibrary, newImportDatatypeModelLibrary));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_DATATYPE_MODEL_LIBRARY, newImportDatatypeModelLibrary, newImportDatatypeModelLibrary));
 	}
 
 	/**
@@ -203,12 +237,19 @@ public class DatatypeModelLibraryImpl extends PackageImpl implements DatatypeMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetImportAnnotationLibrary(PackageRef newImportAnnotationLibrary, NotificationChain msgs) {
+	public NotificationChain basicSetImportAnnotationLibrary(PackageRef newImportAnnotationLibrary,
+			NotificationChain msgs) {
 		PackageRef oldImportAnnotationLibrary = importAnnotationLibrary;
 		importAnnotationLibrary = newImportAnnotationLibrary;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_ANNOTATION_LIBRARY, oldImportAnnotationLibrary, newImportAnnotationLibrary);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_ANNOTATION_LIBRARY,
+				oldImportAnnotationLibrary, newImportAnnotationLibrary);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -221,15 +262,23 @@ public class DatatypeModelLibraryImpl extends PackageImpl implements DatatypeMod
 	public void setImportAnnotationLibrary(PackageRef newImportAnnotationLibrary) {
 		if (newImportAnnotationLibrary != importAnnotationLibrary) {
 			NotificationChain msgs = null;
-			if (importAnnotationLibrary != null)
-				msgs = ((InternalEObject)importAnnotationLibrary).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_ANNOTATION_LIBRARY, null, msgs);
-			if (newImportAnnotationLibrary != null)
-				msgs = ((InternalEObject)newImportAnnotationLibrary).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_ANNOTATION_LIBRARY, null, msgs);
+			if (importAnnotationLibrary != null) {
+				msgs = ((InternalEObject) importAnnotationLibrary).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_ANNOTATION_LIBRARY, null, msgs);
+			}
+			if (newImportAnnotationLibrary != null) {
+				msgs = ((InternalEObject) newImportAnnotationLibrary).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_ANNOTATION_LIBRARY, null, msgs);
+			}
 			msgs = basicSetImportAnnotationLibrary(newImportAnnotationLibrary, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_ANNOTATION_LIBRARY,
+				newImportAnnotationLibrary, newImportAnnotationLibrary));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_ANNOTATION_LIBRARY, newImportAnnotationLibrary, newImportAnnotationLibrary));
 	}
 
 	/**
@@ -239,7 +288,8 @@ public class DatatypeModelLibraryImpl extends PackageImpl implements DatatypeMod
 	 */
 	public EList<Datatype> getDatatype() {
 		if (datatype == null) {
-			datatype = new EObjectContainmentEList<Datatype>(Datatype.class, this, Mif2Package.DATATYPE_MODEL_LIBRARY__DATATYPE);
+			datatype = new EObjectContainmentEList<Datatype>(
+				Datatype.class, this, Mif2Package.DATATYPE_MODEL_LIBRARY__DATATYPE);
 		}
 		return datatype;
 	}
@@ -259,7 +309,7 @@ public class DatatypeModelLibraryImpl extends PackageImpl implements DatatypeMod
 			case Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_ANNOTATION_LIBRARY:
 				return basicSetImportAnnotationLibrary(null, msgs);
 			case Mif2Package.DATATYPE_MODEL_LIBRARY__DATATYPE:
-				return ((InternalEList<?>)getDatatype()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDatatype()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -294,17 +344,17 @@ public class DatatypeModelLibraryImpl extends PackageImpl implements DatatypeMod
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORTED_VOCABULARY_MODEL_PACKAGE:
-				setImportedVocabularyModelPackage((PackageRef)newValue);
+				setImportedVocabularyModelPackage((PackageRef) newValue);
 				return;
 			case Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_DATATYPE_MODEL_LIBRARY:
-				setImportDatatypeModelLibrary((ImportDatatypeModelLibrary)newValue);
+				setImportDatatypeModelLibrary((ImportDatatypeModelLibrary) newValue);
 				return;
 			case Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_ANNOTATION_LIBRARY:
-				setImportAnnotationLibrary((PackageRef)newValue);
+				setImportAnnotationLibrary((PackageRef) newValue);
 				return;
 			case Mif2Package.DATATYPE_MODEL_LIBRARY__DATATYPE:
 				getDatatype().clear();
-				getDatatype().addAll((Collection<? extends Datatype>)newValue);
+				getDatatype().addAll((Collection<? extends Datatype>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -319,13 +369,13 @@ public class DatatypeModelLibraryImpl extends PackageImpl implements DatatypeMod
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORTED_VOCABULARY_MODEL_PACKAGE:
-				setImportedVocabularyModelPackage((PackageRef)null);
+				setImportedVocabularyModelPackage((PackageRef) null);
 				return;
 			case Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_DATATYPE_MODEL_LIBRARY:
-				setImportDatatypeModelLibrary((ImportDatatypeModelLibrary)null);
+				setImportDatatypeModelLibrary((ImportDatatypeModelLibrary) null);
 				return;
 			case Mif2Package.DATATYPE_MODEL_LIBRARY__IMPORT_ANNOTATION_LIBRARY:
-				setImportAnnotationLibrary((PackageRef)null);
+				setImportAnnotationLibrary((PackageRef) null);
 				return;
 			case Mif2Package.DATATYPE_MODEL_LIBRARY__DATATYPE:
 				getDatatype().clear();
@@ -354,4 +404,4 @@ public class DatatypeModelLibraryImpl extends PackageImpl implements DatatypeMod
 		return super.eIsSet(featureID);
 	}
 
-} //DatatypeModelLibraryImpl
+} // DatatypeModelLibraryImpl

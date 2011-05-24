@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -106,12 +110,19 @@ public class ArtifactSupplementImpl extends EObjectImpl implements ArtifactSuppl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSupplementedObject(org.openhealthtools.mdht.emf.w3c.xhtml.Object newSupplementedObject, NotificationChain msgs) {
+	public NotificationChain basicSetSupplementedObject(
+			org.openhealthtools.mdht.emf.w3c.xhtml.Object newSupplementedObject, NotificationChain msgs) {
 		org.openhealthtools.mdht.emf.w3c.xhtml.Object oldSupplementedObject = supplementedObject;
 		supplementedObject = newSupplementedObject;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.ARTIFACT_SUPPLEMENT__SUPPLEMENTED_OBJECT, oldSupplementedObject, newSupplementedObject);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ARTIFACT_SUPPLEMENT__SUPPLEMENTED_OBJECT, oldSupplementedObject,
+				newSupplementedObject);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -124,15 +135,23 @@ public class ArtifactSupplementImpl extends EObjectImpl implements ArtifactSuppl
 	public void setSupplementedObject(org.openhealthtools.mdht.emf.w3c.xhtml.Object newSupplementedObject) {
 		if (newSupplementedObject != supplementedObject) {
 			NotificationChain msgs = null;
-			if (supplementedObject != null)
-				msgs = ((InternalEObject)supplementedObject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ARTIFACT_SUPPLEMENT__SUPPLEMENTED_OBJECT, null, msgs);
-			if (newSupplementedObject != null)
-				msgs = ((InternalEObject)newSupplementedObject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ARTIFACT_SUPPLEMENT__SUPPLEMENTED_OBJECT, null, msgs);
+			if (supplementedObject != null) {
+				msgs = ((InternalEObject) supplementedObject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ARTIFACT_SUPPLEMENT__SUPPLEMENTED_OBJECT, null, msgs);
+			}
+			if (newSupplementedObject != null) {
+				msgs = ((InternalEObject) newSupplementedObject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ARTIFACT_SUPPLEMENT__SUPPLEMENTED_OBJECT, null, msgs);
+			}
 			msgs = basicSetSupplementedObject(newSupplementedObject, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ARTIFACT_SUPPLEMENT__SUPPLEMENTED_OBJECT, newSupplementedObject,
+				newSupplementedObject));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ARTIFACT_SUPPLEMENT__SUPPLEMENTED_OBJECT, newSupplementedObject, newSupplementedObject));
 	}
 
 	/**
@@ -142,7 +161,8 @@ public class ArtifactSupplementImpl extends EObjectImpl implements ArtifactSuppl
 	 */
 	public EList<BusinessName> getBusinessName() {
 		if (businessName == null) {
-			businessName = new EObjectContainmentEList<BusinessName>(BusinessName.class, this, Mif2Package.ARTIFACT_SUPPLEMENT__BUSINESS_NAME);
+			businessName = new EObjectContainmentEList<BusinessName>(
+				BusinessName.class, this, Mif2Package.ARTIFACT_SUPPLEMENT__BUSINESS_NAME);
 		}
 		return businessName;
 	}
@@ -165,8 +185,13 @@ public class ArtifactSupplementImpl extends EObjectImpl implements ArtifactSuppl
 		ArtifactSupplementAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.ARTIFACT_SUPPLEMENT__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ARTIFACT_SUPPLEMENT__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -179,15 +204,22 @@ public class ArtifactSupplementImpl extends EObjectImpl implements ArtifactSuppl
 	public void setAnnotations(ArtifactSupplementAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ARTIFACT_SUPPLEMENT__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ARTIFACT_SUPPLEMENT__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ARTIFACT_SUPPLEMENT__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ARTIFACT_SUPPLEMENT__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ARTIFACT_SUPPLEMENT__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ARTIFACT_SUPPLEMENT__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -201,7 +233,7 @@ public class ArtifactSupplementImpl extends EObjectImpl implements ArtifactSuppl
 			case Mif2Package.ARTIFACT_SUPPLEMENT__SUPPLEMENTED_OBJECT:
 				return basicSetSupplementedObject(null, msgs);
 			case Mif2Package.ARTIFACT_SUPPLEMENT__BUSINESS_NAME:
-				return ((InternalEList<?>)getBusinessName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBusinessName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.ARTIFACT_SUPPLEMENT__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 		}
@@ -236,14 +268,14 @@ public class ArtifactSupplementImpl extends EObjectImpl implements ArtifactSuppl
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.ARTIFACT_SUPPLEMENT__SUPPLEMENTED_OBJECT:
-				setSupplementedObject((org.openhealthtools.mdht.emf.w3c.xhtml.Object)newValue);
+				setSupplementedObject((org.openhealthtools.mdht.emf.w3c.xhtml.Object) newValue);
 				return;
 			case Mif2Package.ARTIFACT_SUPPLEMENT__BUSINESS_NAME:
 				getBusinessName().clear();
-				getBusinessName().addAll((Collection<? extends BusinessName>)newValue);
+				getBusinessName().addAll((Collection<? extends BusinessName>) newValue);
 				return;
 			case Mif2Package.ARTIFACT_SUPPLEMENT__ANNOTATIONS:
-				setAnnotations((ArtifactSupplementAnnotations)newValue);
+				setAnnotations((ArtifactSupplementAnnotations) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -258,13 +290,13 @@ public class ArtifactSupplementImpl extends EObjectImpl implements ArtifactSuppl
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.ARTIFACT_SUPPLEMENT__SUPPLEMENTED_OBJECT:
-				setSupplementedObject((org.openhealthtools.mdht.emf.w3c.xhtml.Object)null);
+				setSupplementedObject((org.openhealthtools.mdht.emf.w3c.xhtml.Object) null);
 				return;
 			case Mif2Package.ARTIFACT_SUPPLEMENT__BUSINESS_NAME:
 				getBusinessName().clear();
 				return;
 			case Mif2Package.ARTIFACT_SUPPLEMENT__ANNOTATIONS:
-				setAnnotations((ArtifactSupplementAnnotations)null);
+				setAnnotations((ArtifactSupplementAnnotations) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -288,4 +320,4 @@ public class ArtifactSupplementImpl extends EObjectImpl implements ArtifactSuppl
 		return super.eIsSet(featureID);
 	}
 
-} //ArtifactSupplementImpl
+} // ArtifactSupplementImpl

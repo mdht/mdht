@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -100,8 +104,14 @@ public class StaticModelDerivationImpl extends DerivationImpl implements StaticM
 		PackageRef oldTargetStaticModel = targetStaticModel;
 		targetStaticModel = newTargetStaticModel;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_DERIVATION__TARGET_STATIC_MODEL, oldTargetStaticModel, newTargetStaticModel);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_DERIVATION__TARGET_STATIC_MODEL, oldTargetStaticModel,
+				newTargetStaticModel);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -114,15 +124,23 @@ public class StaticModelDerivationImpl extends DerivationImpl implements StaticM
 	public void setTargetStaticModel(PackageRef newTargetStaticModel) {
 		if (newTargetStaticModel != targetStaticModel) {
 			NotificationChain msgs = null;
-			if (targetStaticModel != null)
-				msgs = ((InternalEObject)targetStaticModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_DERIVATION__TARGET_STATIC_MODEL, null, msgs);
-			if (newTargetStaticModel != null)
-				msgs = ((InternalEObject)newTargetStaticModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_DERIVATION__TARGET_STATIC_MODEL, null, msgs);
+			if (targetStaticModel != null) {
+				msgs = ((InternalEObject) targetStaticModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_DERIVATION__TARGET_STATIC_MODEL, null, msgs);
+			}
+			if (newTargetStaticModel != null) {
+				msgs = ((InternalEObject) newTargetStaticModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_DERIVATION__TARGET_STATIC_MODEL, null, msgs);
+			}
 			msgs = basicSetTargetStaticModel(newTargetStaticModel, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_DERIVATION__TARGET_STATIC_MODEL, newTargetStaticModel,
+				newTargetStaticModel));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_DERIVATION__TARGET_STATIC_MODEL, newTargetStaticModel, newTargetStaticModel));
 	}
 
 	/**
@@ -142,8 +160,11 @@ public class StaticModelDerivationImpl extends DerivationImpl implements StaticM
 	public void setStaticModelDerivationId(String newStaticModelDerivationId) {
 		String oldStaticModelDerivationId = staticModelDerivationId;
 		staticModelDerivationId = newStaticModelDerivationId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_DERIVATION__STATIC_MODEL_DERIVATION_ID, oldStaticModelDerivationId, staticModelDerivationId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_DERIVATION__STATIC_MODEL_DERIVATION_ID,
+				oldStaticModelDerivationId, staticModelDerivationId));
+		}
 	}
 
 	/**
@@ -185,10 +206,10 @@ public class StaticModelDerivationImpl extends DerivationImpl implements StaticM
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.STATIC_MODEL_DERIVATION__TARGET_STATIC_MODEL:
-				setTargetStaticModel((PackageRef)newValue);
+				setTargetStaticModel((PackageRef) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_DERIVATION__STATIC_MODEL_DERIVATION_ID:
-				setStaticModelDerivationId((String)newValue);
+				setStaticModelDerivationId((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -203,7 +224,7 @@ public class StaticModelDerivationImpl extends DerivationImpl implements StaticM
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.STATIC_MODEL_DERIVATION__TARGET_STATIC_MODEL:
-				setTargetStaticModel((PackageRef)null);
+				setTargetStaticModel((PackageRef) null);
 				return;
 			case Mif2Package.STATIC_MODEL_DERIVATION__STATIC_MODEL_DERIVATION_ID:
 				setStaticModelDerivationId(STATIC_MODEL_DERIVATION_ID_EDEFAULT);
@@ -223,7 +244,9 @@ public class StaticModelDerivationImpl extends DerivationImpl implements StaticM
 			case Mif2Package.STATIC_MODEL_DERIVATION__TARGET_STATIC_MODEL:
 				return targetStaticModel != null;
 			case Mif2Package.STATIC_MODEL_DERIVATION__STATIC_MODEL_DERIVATION_ID:
-				return STATIC_MODEL_DERIVATION_ID_EDEFAULT == null ? staticModelDerivationId != null : !STATIC_MODEL_DERIVATION_ID_EDEFAULT.equals(staticModelDerivationId);
+				return STATIC_MODEL_DERIVATION_ID_EDEFAULT == null
+						? staticModelDerivationId != null
+						: !STATIC_MODEL_DERIVATION_ID_EDEFAULT.equals(staticModelDerivationId);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -235,7 +258,9 @@ public class StaticModelDerivationImpl extends DerivationImpl implements StaticM
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (staticModelDerivationId: ");
@@ -244,4 +269,4 @@ public class StaticModelDerivationImpl extends DerivationImpl implements StaticM
 		return result.toString();
 	}
 
-} //StaticModelDerivationImpl
+} // StaticModelDerivationImpl

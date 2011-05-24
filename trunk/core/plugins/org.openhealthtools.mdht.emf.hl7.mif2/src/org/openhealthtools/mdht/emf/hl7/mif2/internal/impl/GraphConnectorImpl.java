@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -100,8 +104,13 @@ public class GraphConnectorImpl extends DiagramElementImpl implements GraphConne
 		Point oldPosition = position;
 		position = newPosition;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.GRAPH_CONNECTOR__POSITION, oldPosition, newPosition);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GRAPH_CONNECTOR__POSITION, oldPosition, newPosition);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -114,15 +123,22 @@ public class GraphConnectorImpl extends DiagramElementImpl implements GraphConne
 	public void setPosition(Point newPosition) {
 		if (newPosition != position) {
 			NotificationChain msgs = null;
-			if (position != null)
-				msgs = ((InternalEObject)position).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.GRAPH_CONNECTOR__POSITION, null, msgs);
-			if (newPosition != null)
-				msgs = ((InternalEObject)newPosition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.GRAPH_CONNECTOR__POSITION, null, msgs);
+			if (position != null) {
+				msgs = ((InternalEObject) position).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.GRAPH_CONNECTOR__POSITION, null, msgs);
+			}
+			if (newPosition != null) {
+				msgs = ((InternalEObject) newPosition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.GRAPH_CONNECTOR__POSITION, null, msgs);
+			}
 			msgs = basicSetPosition(newPosition, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GRAPH_CONNECTOR__POSITION, newPosition, newPosition));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GRAPH_CONNECTOR__POSITION, newPosition, newPosition));
 	}
 
 	/**
@@ -142,8 +158,11 @@ public class GraphConnectorImpl extends DiagramElementImpl implements GraphConne
 	public void setConnectToShapeId(String newConnectToShapeId) {
 		String oldConnectToShapeId = connectToShapeId;
 		connectToShapeId = newConnectToShapeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GRAPH_CONNECTOR__CONNECT_TO_SHAPE_ID, oldConnectToShapeId, connectToShapeId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GRAPH_CONNECTOR__CONNECT_TO_SHAPE_ID, oldConnectToShapeId,
+				connectToShapeId));
+		}
 	}
 
 	/**
@@ -185,10 +204,10 @@ public class GraphConnectorImpl extends DiagramElementImpl implements GraphConne
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.GRAPH_CONNECTOR__POSITION:
-				setPosition((Point)newValue);
+				setPosition((Point) newValue);
 				return;
 			case Mif2Package.GRAPH_CONNECTOR__CONNECT_TO_SHAPE_ID:
-				setConnectToShapeId((String)newValue);
+				setConnectToShapeId((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -203,7 +222,7 @@ public class GraphConnectorImpl extends DiagramElementImpl implements GraphConne
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.GRAPH_CONNECTOR__POSITION:
-				setPosition((Point)null);
+				setPosition((Point) null);
 				return;
 			case Mif2Package.GRAPH_CONNECTOR__CONNECT_TO_SHAPE_ID:
 				setConnectToShapeId(CONNECT_TO_SHAPE_ID_EDEFAULT);
@@ -223,7 +242,9 @@ public class GraphConnectorImpl extends DiagramElementImpl implements GraphConne
 			case Mif2Package.GRAPH_CONNECTOR__POSITION:
 				return position != null;
 			case Mif2Package.GRAPH_CONNECTOR__CONNECT_TO_SHAPE_ID:
-				return CONNECT_TO_SHAPE_ID_EDEFAULT == null ? connectToShapeId != null : !CONNECT_TO_SHAPE_ID_EDEFAULT.equals(connectToShapeId);
+				return CONNECT_TO_SHAPE_ID_EDEFAULT == null
+						? connectToShapeId != null
+						: !CONNECT_TO_SHAPE_ID_EDEFAULT.equals(connectToShapeId);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -235,7 +256,9 @@ public class GraphConnectorImpl extends DiagramElementImpl implements GraphConne
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (connectToShapeId: ");
@@ -244,4 +267,4 @@ public class GraphConnectorImpl extends DiagramElementImpl implements GraphConne
 		return result.toString();
 	}
 
-} //GraphConnectorImpl
+} // GraphConnectorImpl

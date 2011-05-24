@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -104,12 +108,8 @@ public enum RelationshipTraversalKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final RelationshipTraversalKind[] VALUES_ARRAY =
-		new RelationshipTraversalKind[] {
-			DIRECT_RELATIONS_ONLY,
-			TRANSITIVE_CLOSURE,
-			TRANSITIVE_CLOSURE_LEAVES,
-		};
+	private static final RelationshipTraversalKind[] VALUES_ARRAY = new RelationshipTraversalKind[] {
+			DIRECT_RELATIONS_ONLY, TRANSITIVE_CLOSURE, TRANSITIVE_CLOSURE_LEAVES, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Relationship Traversal Kind</b></em>' enumerators.
@@ -159,9 +159,12 @@ public enum RelationshipTraversalKind implements Enumerator {
 	 */
 	public static RelationshipTraversalKind get(int value) {
 		switch (value) {
-			case DIRECT_RELATIONS_ONLY_VALUE: return DIRECT_RELATIONS_ONLY;
-			case TRANSITIVE_CLOSURE_VALUE: return TRANSITIVE_CLOSURE;
-			case TRANSITIVE_CLOSURE_LEAVES_VALUE: return TRANSITIVE_CLOSURE_LEAVES;
+			case DIRECT_RELATIONS_ONLY_VALUE:
+				return DIRECT_RELATIONS_ONLY;
+			case TRANSITIVE_CLOSURE_VALUE:
+				return TRANSITIVE_CLOSURE;
+			case TRANSITIVE_CLOSURE_LEAVES_VALUE:
+				return TRANSITIVE_CLOSURE_LEAVES;
 		}
 		return null;
 	}
@@ -205,7 +208,7 @@ public enum RelationshipTraversalKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -214,7 +217,7 @@ public enum RelationshipTraversalKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -223,7 +226,7 @@ public enum RelationshipTraversalKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -236,5 +239,5 @@ public enum RelationshipTraversalKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //RelationshipTraversalKind
+
+} // RelationshipTraversalKind

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -116,8 +120,10 @@ public class ItemFilterImpl extends PackageOrArtifactRefImpl implements ItemFilt
 	public void setExpression(String newExpression) {
 		String oldExpression = expression;
 		expression = newExpression;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ITEM_FILTER__EXPRESSION, oldExpression, expression));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ITEM_FILTER__EXPRESSION, oldExpression, expression));
+		}
 	}
 
 	/**
@@ -136,11 +142,16 @@ public class ItemFilterImpl extends PackageOrArtifactRefImpl implements ItemFilt
 	 */
 	public void setFilterType(FilterKind newFilterType) {
 		FilterKind oldFilterType = filterType;
-		filterType = newFilterType == null ? FILTER_TYPE_EDEFAULT : newFilterType;
+		filterType = newFilterType == null
+				? FILTER_TYPE_EDEFAULT
+				: newFilterType;
 		boolean oldFilterTypeESet = filterTypeESet;
 		filterTypeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ITEM_FILTER__FILTER_TYPE, oldFilterType, filterType, !oldFilterTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ITEM_FILTER__FILTER_TYPE, oldFilterType, filterType,
+				!oldFilterTypeESet));
+		}
 	}
 
 	/**
@@ -153,8 +164,11 @@ public class ItemFilterImpl extends PackageOrArtifactRefImpl implements ItemFilt
 		boolean oldFilterTypeESet = filterTypeESet;
 		filterType = FILTER_TYPE_EDEFAULT;
 		filterTypeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.ITEM_FILTER__FILTER_TYPE, oldFilterType, FILTER_TYPE_EDEFAULT, oldFilterTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.ITEM_FILTER__FILTER_TYPE, oldFilterType, FILTER_TYPE_EDEFAULT,
+				oldFilterTypeESet));
+		}
 	}
 
 	/**
@@ -191,10 +205,10 @@ public class ItemFilterImpl extends PackageOrArtifactRefImpl implements ItemFilt
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.ITEM_FILTER__EXPRESSION:
-				setExpression((String)newValue);
+				setExpression((String) newValue);
 				return;
 			case Mif2Package.ITEM_FILTER__FILTER_TYPE:
-				setFilterType((FilterKind)newValue);
+				setFilterType((FilterKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -227,7 +241,9 @@ public class ItemFilterImpl extends PackageOrArtifactRefImpl implements ItemFilt
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.ITEM_FILTER__EXPRESSION:
-				return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
+				return EXPRESSION_EDEFAULT == null
+						? expression != null
+						: !EXPRESSION_EDEFAULT.equals(expression);
 			case Mif2Package.ITEM_FILTER__FILTER_TYPE:
 				return isSetFilterType();
 		}
@@ -241,15 +257,21 @@ public class ItemFilterImpl extends PackageOrArtifactRefImpl implements ItemFilt
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (expression: ");
 		result.append(expression);
 		result.append(", filterType: ");
-		if (filterTypeESet) result.append(filterType); else result.append("<unset>");
+		if (filterTypeESet) {
+			result.append(filterType);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //ItemFilterImpl
+} // ItemFilterImpl

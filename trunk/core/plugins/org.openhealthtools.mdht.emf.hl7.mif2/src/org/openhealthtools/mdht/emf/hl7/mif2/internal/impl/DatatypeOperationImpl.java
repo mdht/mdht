@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigInteger;
@@ -314,7 +318,8 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 	 */
 	public EList<BusinessName> getBusinessName() {
 		if (businessName == null) {
-			businessName = new EObjectContainmentEList<BusinessName>(BusinessName.class, this, Mif2Package.DATATYPE_OPERATION__BUSINESS_NAME);
+			businessName = new EObjectContainmentEList<BusinessName>(
+				BusinessName.class, this, Mif2Package.DATATYPE_OPERATION__BUSINESS_NAME);
 		}
 		return businessName;
 	}
@@ -337,8 +342,13 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 		OperationAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_OPERATION__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_OPERATION__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -351,15 +361,22 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 	public void setAnnotations(OperationAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_OPERATION__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_OPERATION__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_OPERATION__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_OPERATION__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_OPERATION__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_OPERATION__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -380,8 +397,13 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 		OperationDerivation oldDerivedFrom = derivedFrom;
 		derivedFrom = newDerivedFrom;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_OPERATION__DERIVED_FROM, oldDerivedFrom, newDerivedFrom);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_OPERATION__DERIVED_FROM, oldDerivedFrom, newDerivedFrom);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -394,15 +416,22 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 	public void setDerivedFrom(OperationDerivation newDerivedFrom) {
 		if (newDerivedFrom != derivedFrom) {
 			NotificationChain msgs = null;
-			if (derivedFrom != null)
-				msgs = ((InternalEObject)derivedFrom).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_OPERATION__DERIVED_FROM, null, msgs);
-			if (newDerivedFrom != null)
-				msgs = ((InternalEObject)newDerivedFrom).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_OPERATION__DERIVED_FROM, null, msgs);
+			if (derivedFrom != null) {
+				msgs = ((InternalEObject) derivedFrom).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_OPERATION__DERIVED_FROM, null, msgs);
+			}
+			if (newDerivedFrom != null) {
+				msgs = ((InternalEObject) newDerivedFrom).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_OPERATION__DERIVED_FROM, null, msgs);
+			}
 			msgs = basicSetDerivedFrom(newDerivedFrom, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_OPERATION__DERIVED_FROM, newDerivedFrom, newDerivedFrom));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_OPERATION__DERIVED_FROM, newDerivedFrom, newDerivedFrom));
 	}
 
 	/**
@@ -412,7 +441,8 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 	 */
 	public EList<OperationParameter> getParameter() {
 		if (parameter == null) {
-			parameter = new EObjectContainmentEList<OperationParameter>(OperationParameter.class, this, Mif2Package.DATATYPE_OPERATION__PARAMETER);
+			parameter = new EObjectContainmentEList<OperationParameter>(
+				OperationParameter.class, this, Mif2Package.DATATYPE_OPERATION__PARAMETER);
 		}
 		return parameter;
 	}
@@ -435,8 +465,13 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 		DatatypeRef oldType = type;
 		type = newType;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_OPERATION__TYPE, oldType, newType);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_OPERATION__TYPE, oldType, newType);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -449,15 +484,22 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 	public void setType(DatatypeRef newType) {
 		if (newType != type) {
 			NotificationChain msgs = null;
-			if (type != null)
-				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_OPERATION__TYPE, null, msgs);
-			if (newType != null)
-				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_OPERATION__TYPE, null, msgs);
+			if (type != null) {
+				msgs = ((InternalEObject) type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_OPERATION__TYPE, null, msgs);
+			}
+			if (newType != null) {
+				msgs = ((InternalEObject) newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_OPERATION__TYPE, null, msgs);
+			}
 			msgs = basicSetType(newType, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_OPERATION__TYPE, newType, newType));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_OPERATION__TYPE, newType, newType));
 	}
 
 	/**
@@ -474,12 +516,19 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetVocabularySpecification(VocabularySpecification newVocabularySpecification, NotificationChain msgs) {
+	public NotificationChain basicSetVocabularySpecification(VocabularySpecification newVocabularySpecification,
+			NotificationChain msgs) {
 		VocabularySpecification oldVocabularySpecification = vocabularySpecification;
 		vocabularySpecification = newVocabularySpecification;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_OPERATION__VOCABULARY_SPECIFICATION, oldVocabularySpecification, newVocabularySpecification);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_OPERATION__VOCABULARY_SPECIFICATION,
+				oldVocabularySpecification, newVocabularySpecification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -492,15 +541,23 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 	public void setVocabularySpecification(VocabularySpecification newVocabularySpecification) {
 		if (newVocabularySpecification != vocabularySpecification) {
 			NotificationChain msgs = null;
-			if (vocabularySpecification != null)
-				msgs = ((InternalEObject)vocabularySpecification).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_OPERATION__VOCABULARY_SPECIFICATION, null, msgs);
-			if (newVocabularySpecification != null)
-				msgs = ((InternalEObject)newVocabularySpecification).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_OPERATION__VOCABULARY_SPECIFICATION, null, msgs);
+			if (vocabularySpecification != null) {
+				msgs = ((InternalEObject) vocabularySpecification).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_OPERATION__VOCABULARY_SPECIFICATION, null, msgs);
+			}
+			if (newVocabularySpecification != null) {
+				msgs = ((InternalEObject) newVocabularySpecification).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_OPERATION__VOCABULARY_SPECIFICATION, null, msgs);
+			}
 			msgs = basicSetVocabularySpecification(newVocabularySpecification, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_OPERATION__VOCABULARY_SPECIFICATION,
+				newVocabularySpecification, newVocabularySpecification));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_OPERATION__VOCABULARY_SPECIFICATION, newVocabularySpecification, newVocabularySpecification));
 	}
 
 	/**
@@ -520,8 +577,11 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 	public void setMaximumMultiplicity(Object newMaximumMultiplicity) {
 		Object oldMaximumMultiplicity = maximumMultiplicity;
 		maximumMultiplicity = newMaximumMultiplicity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_OPERATION__MAXIMUM_MULTIPLICITY, oldMaximumMultiplicity, maximumMultiplicity));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_OPERATION__MAXIMUM_MULTIPLICITY, oldMaximumMultiplicity,
+				maximumMultiplicity));
+		}
 	}
 
 	/**
@@ -541,8 +601,11 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 	public void setMinimumMultiplicity(BigInteger newMinimumMultiplicity) {
 		BigInteger oldMinimumMultiplicity = minimumMultiplicity;
 		minimumMultiplicity = newMinimumMultiplicity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_OPERATION__MINIMUM_MULTIPLICITY, oldMinimumMultiplicity, minimumMultiplicity));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_OPERATION__MINIMUM_MULTIPLICITY, oldMinimumMultiplicity,
+				minimumMultiplicity));
+		}
 	}
 
 	/**
@@ -562,8 +625,9 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_OPERATION__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -582,11 +646,16 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 	 */
 	public void setOwnerScope(OwnerScopeKind newOwnerScope) {
 		OwnerScopeKind oldOwnerScope = ownerScope;
-		ownerScope = newOwnerScope == null ? OWNER_SCOPE_EDEFAULT : newOwnerScope;
+		ownerScope = newOwnerScope == null
+				? OWNER_SCOPE_EDEFAULT
+				: newOwnerScope;
 		boolean oldOwnerScopeESet = ownerScopeESet;
 		ownerScopeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_OPERATION__OWNER_SCOPE, oldOwnerScope, ownerScope, !oldOwnerScopeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_OPERATION__OWNER_SCOPE, oldOwnerScope, ownerScope,
+				!oldOwnerScopeESet));
+		}
 	}
 
 	/**
@@ -599,8 +668,11 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 		boolean oldOwnerScopeESet = ownerScopeESet;
 		ownerScope = OWNER_SCOPE_EDEFAULT;
 		ownerScopeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.DATATYPE_OPERATION__OWNER_SCOPE, oldOwnerScope, OWNER_SCOPE_EDEFAULT, oldOwnerScopeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.DATATYPE_OPERATION__OWNER_SCOPE, oldOwnerScope,
+				OWNER_SCOPE_EDEFAULT, oldOwnerScopeESet));
+		}
 	}
 
 	/**
@@ -628,11 +700,16 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 	 */
 	public void setPropertyKind(DatatypeOperationKind newPropertyKind) {
 		DatatypeOperationKind oldPropertyKind = propertyKind;
-		propertyKind = newPropertyKind == null ? PROPERTY_KIND_EDEFAULT : newPropertyKind;
+		propertyKind = newPropertyKind == null
+				? PROPERTY_KIND_EDEFAULT
+				: newPropertyKind;
 		boolean oldPropertyKindESet = propertyKindESet;
 		propertyKindESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_OPERATION__PROPERTY_KIND, oldPropertyKind, propertyKind, !oldPropertyKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_OPERATION__PROPERTY_KIND, oldPropertyKind, propertyKind,
+				!oldPropertyKindESet));
+		}
 	}
 
 	/**
@@ -645,8 +722,11 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 		boolean oldPropertyKindESet = propertyKindESet;
 		propertyKind = PROPERTY_KIND_EDEFAULT;
 		propertyKindESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.DATATYPE_OPERATION__PROPERTY_KIND, oldPropertyKind, PROPERTY_KIND_EDEFAULT, oldPropertyKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.DATATYPE_OPERATION__PROPERTY_KIND, oldPropertyKind,
+				PROPERTY_KIND_EDEFAULT, oldPropertyKindESet));
+		}
 	}
 
 	/**
@@ -675,8 +755,10 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_OPERATION__SORT_KEY, oldSortKey, sortKey));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_OPERATION__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -695,11 +777,16 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 	 */
 	public void setVisibility(VisibilityKind newVisibility) {
 		VisibilityKind oldVisibility = visibility;
-		visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+		visibility = newVisibility == null
+				? VISIBILITY_EDEFAULT
+				: newVisibility;
 		boolean oldVisibilityESet = visibilityESet;
 		visibilityESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_OPERATION__VISIBILITY, oldVisibility, visibility, !oldVisibilityESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_OPERATION__VISIBILITY, oldVisibility, visibility,
+				!oldVisibilityESet));
+		}
 	}
 
 	/**
@@ -712,8 +799,11 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 		boolean oldVisibilityESet = visibilityESet;
 		visibility = VISIBILITY_EDEFAULT;
 		visibilityESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.DATATYPE_OPERATION__VISIBILITY, oldVisibility, VISIBILITY_EDEFAULT, oldVisibilityESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.DATATYPE_OPERATION__VISIBILITY, oldVisibility,
+				VISIBILITY_EDEFAULT, oldVisibilityESet));
+		}
 	}
 
 	/**
@@ -734,13 +824,13 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.DATATYPE_OPERATION__BUSINESS_NAME:
-				return ((InternalEList<?>)getBusinessName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBusinessName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DATATYPE_OPERATION__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 			case Mif2Package.DATATYPE_OPERATION__DERIVED_FROM:
 				return basicSetDerivedFrom(null, msgs);
 			case Mif2Package.DATATYPE_OPERATION__PARAMETER:
-				return ((InternalEList<?>)getParameter()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getParameter()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DATATYPE_OPERATION__TYPE:
 				return basicSetType(null, msgs);
 			case Mif2Package.DATATYPE_OPERATION__VOCABULARY_SPECIFICATION:
@@ -798,44 +888,44 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 		switch (featureID) {
 			case Mif2Package.DATATYPE_OPERATION__BUSINESS_NAME:
 				getBusinessName().clear();
-				getBusinessName().addAll((Collection<? extends BusinessName>)newValue);
+				getBusinessName().addAll((Collection<? extends BusinessName>) newValue);
 				return;
 			case Mif2Package.DATATYPE_OPERATION__ANNOTATIONS:
-				setAnnotations((OperationAnnotations)newValue);
+				setAnnotations((OperationAnnotations) newValue);
 				return;
 			case Mif2Package.DATATYPE_OPERATION__DERIVED_FROM:
-				setDerivedFrom((OperationDerivation)newValue);
+				setDerivedFrom((OperationDerivation) newValue);
 				return;
 			case Mif2Package.DATATYPE_OPERATION__PARAMETER:
 				getParameter().clear();
-				getParameter().addAll((Collection<? extends OperationParameter>)newValue);
+				getParameter().addAll((Collection<? extends OperationParameter>) newValue);
 				return;
 			case Mif2Package.DATATYPE_OPERATION__TYPE:
-				setType((DatatypeRef)newValue);
+				setType((DatatypeRef) newValue);
 				return;
 			case Mif2Package.DATATYPE_OPERATION__VOCABULARY_SPECIFICATION:
-				setVocabularySpecification((VocabularySpecification)newValue);
+				setVocabularySpecification((VocabularySpecification) newValue);
 				return;
 			case Mif2Package.DATATYPE_OPERATION__MAXIMUM_MULTIPLICITY:
 				setMaximumMultiplicity(newValue);
 				return;
 			case Mif2Package.DATATYPE_OPERATION__MINIMUM_MULTIPLICITY:
-				setMinimumMultiplicity((BigInteger)newValue);
+				setMinimumMultiplicity((BigInteger) newValue);
 				return;
 			case Mif2Package.DATATYPE_OPERATION__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.DATATYPE_OPERATION__OWNER_SCOPE:
-				setOwnerScope((OwnerScopeKind)newValue);
+				setOwnerScope((OwnerScopeKind) newValue);
 				return;
 			case Mif2Package.DATATYPE_OPERATION__PROPERTY_KIND:
-				setPropertyKind((DatatypeOperationKind)newValue);
+				setPropertyKind((DatatypeOperationKind) newValue);
 				return;
 			case Mif2Package.DATATYPE_OPERATION__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 			case Mif2Package.DATATYPE_OPERATION__VISIBILITY:
-				setVisibility((VisibilityKind)newValue);
+				setVisibility((VisibilityKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -853,19 +943,19 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 				getBusinessName().clear();
 				return;
 			case Mif2Package.DATATYPE_OPERATION__ANNOTATIONS:
-				setAnnotations((OperationAnnotations)null);
+				setAnnotations((OperationAnnotations) null);
 				return;
 			case Mif2Package.DATATYPE_OPERATION__DERIVED_FROM:
-				setDerivedFrom((OperationDerivation)null);
+				setDerivedFrom((OperationDerivation) null);
 				return;
 			case Mif2Package.DATATYPE_OPERATION__PARAMETER:
 				getParameter().clear();
 				return;
 			case Mif2Package.DATATYPE_OPERATION__TYPE:
-				setType((DatatypeRef)null);
+				setType((DatatypeRef) null);
 				return;
 			case Mif2Package.DATATYPE_OPERATION__VOCABULARY_SPECIFICATION:
-				setVocabularySpecification((VocabularySpecification)null);
+				setVocabularySpecification((VocabularySpecification) null);
 				return;
 			case Mif2Package.DATATYPE_OPERATION__MAXIMUM_MULTIPLICITY:
 				setMaximumMultiplicity(MAXIMUM_MULTIPLICITY_EDEFAULT);
@@ -913,17 +1003,25 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 			case Mif2Package.DATATYPE_OPERATION__VOCABULARY_SPECIFICATION:
 				return vocabularySpecification != null;
 			case Mif2Package.DATATYPE_OPERATION__MAXIMUM_MULTIPLICITY:
-				return MAXIMUM_MULTIPLICITY_EDEFAULT == null ? maximumMultiplicity != null : !MAXIMUM_MULTIPLICITY_EDEFAULT.equals(maximumMultiplicity);
+				return MAXIMUM_MULTIPLICITY_EDEFAULT == null
+						? maximumMultiplicity != null
+						: !MAXIMUM_MULTIPLICITY_EDEFAULT.equals(maximumMultiplicity);
 			case Mif2Package.DATATYPE_OPERATION__MINIMUM_MULTIPLICITY:
-				return MINIMUM_MULTIPLICITY_EDEFAULT == null ? minimumMultiplicity != null : !MINIMUM_MULTIPLICITY_EDEFAULT.equals(minimumMultiplicity);
+				return MINIMUM_MULTIPLICITY_EDEFAULT == null
+						? minimumMultiplicity != null
+						: !MINIMUM_MULTIPLICITY_EDEFAULT.equals(minimumMultiplicity);
 			case Mif2Package.DATATYPE_OPERATION__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.DATATYPE_OPERATION__OWNER_SCOPE:
 				return isSetOwnerScope();
 			case Mif2Package.DATATYPE_OPERATION__PROPERTY_KIND:
 				return isSetPropertyKind();
 			case Mif2Package.DATATYPE_OPERATION__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 			case Mif2Package.DATATYPE_OPERATION__VISIBILITY:
 				return isSetVisibility();
 		}
@@ -937,7 +1035,9 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (maximumMultiplicity: ");
@@ -947,15 +1047,27 @@ public class DatatypeOperationImpl extends FeatureImpl implements DatatypeOperat
 		result.append(", name: ");
 		result.append(name);
 		result.append(", ownerScope: ");
-		if (ownerScopeESet) result.append(ownerScope); else result.append("<unset>");
+		if (ownerScopeESet) {
+			result.append(ownerScope);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", propertyKind: ");
-		if (propertyKindESet) result.append(propertyKind); else result.append("<unset>");
+		if (propertyKindESet) {
+			result.append(propertyKind);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", sortKey: ");
 		result.append(sortKey);
 		result.append(", visibility: ");
-		if (visibilityESet) result.append(visibility); else result.append("<unset>");
+		if (visibilityESet) {
+			result.append(visibility);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //DatatypeOperationImpl
+} // DatatypeOperationImpl

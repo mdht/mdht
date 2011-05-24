@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -29,7 +33,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.StoryboardArtifactReferences;
 import org.openhealthtools.mdht.emf.hl7.mif2.StoryboardNarrative;
 import org.openhealthtools.mdht.emf.hl7.mif2.XMIContent;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Img;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -147,8 +150,13 @@ public class StoryboardImpl extends PackageArtifactImpl implements Storyboard {
 		StoryboardAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -161,15 +169,22 @@ public class StoryboardImpl extends PackageArtifactImpl implements Storyboard {
 	public void setAnnotations(StoryboardAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -186,12 +201,19 @@ public class StoryboardImpl extends PackageArtifactImpl implements Storyboard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCorrespondingArtifacts(StoryboardArtifactReferences newCorrespondingArtifacts, NotificationChain msgs) {
+	public NotificationChain basicSetCorrespondingArtifacts(StoryboardArtifactReferences newCorrespondingArtifacts,
+			NotificationChain msgs) {
 		StoryboardArtifactReferences oldCorrespondingArtifacts = correspondingArtifacts;
 		correspondingArtifacts = newCorrespondingArtifacts;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD__CORRESPONDING_ARTIFACTS, oldCorrespondingArtifacts, newCorrespondingArtifacts);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD__CORRESPONDING_ARTIFACTS, oldCorrespondingArtifacts,
+				newCorrespondingArtifacts);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -204,15 +226,23 @@ public class StoryboardImpl extends PackageArtifactImpl implements Storyboard {
 	public void setCorrespondingArtifacts(StoryboardArtifactReferences newCorrespondingArtifacts) {
 		if (newCorrespondingArtifacts != correspondingArtifacts) {
 			NotificationChain msgs = null;
-			if (correspondingArtifacts != null)
-				msgs = ((InternalEObject)correspondingArtifacts).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD__CORRESPONDING_ARTIFACTS, null, msgs);
-			if (newCorrespondingArtifacts != null)
-				msgs = ((InternalEObject)newCorrespondingArtifacts).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD__CORRESPONDING_ARTIFACTS, null, msgs);
+			if (correspondingArtifacts != null) {
+				msgs = ((InternalEObject) correspondingArtifacts).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD__CORRESPONDING_ARTIFACTS, null, msgs);
+			}
+			if (newCorrespondingArtifacts != null) {
+				msgs = ((InternalEObject) newCorrespondingArtifacts).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD__CORRESPONDING_ARTIFACTS, null, msgs);
+			}
 			msgs = basicSetCorrespondingArtifacts(newCorrespondingArtifacts, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD__CORRESPONDING_ARTIFACTS, newCorrespondingArtifacts,
+				newCorrespondingArtifacts));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD__CORRESPONDING_ARTIFACTS, newCorrespondingArtifacts, newCorrespondingArtifacts));
 	}
 
 	/**
@@ -233,8 +263,14 @@ public class StoryboardImpl extends PackageArtifactImpl implements Storyboard {
 		Img oldActivityDiagramFigure = activityDiagramFigure;
 		activityDiagramFigure = newActivityDiagramFigure;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM_FIGURE, oldActivityDiagramFigure, newActivityDiagramFigure);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM_FIGURE, oldActivityDiagramFigure,
+				newActivityDiagramFigure);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -247,15 +283,23 @@ public class StoryboardImpl extends PackageArtifactImpl implements Storyboard {
 	public void setActivityDiagramFigure(Img newActivityDiagramFigure) {
 		if (newActivityDiagramFigure != activityDiagramFigure) {
 			NotificationChain msgs = null;
-			if (activityDiagramFigure != null)
-				msgs = ((InternalEObject)activityDiagramFigure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM_FIGURE, null, msgs);
-			if (newActivityDiagramFigure != null)
-				msgs = ((InternalEObject)newActivityDiagramFigure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM_FIGURE, null, msgs);
+			if (activityDiagramFigure != null) {
+				msgs = ((InternalEObject) activityDiagramFigure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM_FIGURE, null, msgs);
+			}
+			if (newActivityDiagramFigure != null) {
+				msgs = ((InternalEObject) newActivityDiagramFigure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM_FIGURE, null, msgs);
+			}
 			msgs = basicSetActivityDiagramFigure(newActivityDiagramFigure, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM_FIGURE, newActivityDiagramFigure,
+				newActivityDiagramFigure));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM_FIGURE, newActivityDiagramFigure, newActivityDiagramFigure));
 	}
 
 	/**
@@ -276,8 +320,14 @@ public class StoryboardImpl extends PackageArtifactImpl implements Storyboard {
 		PackageRef oldParentStoryboard = parentStoryboard;
 		parentStoryboard = newParentStoryboard;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD__PARENT_STORYBOARD, oldParentStoryboard, newParentStoryboard);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD__PARENT_STORYBOARD, oldParentStoryboard,
+				newParentStoryboard);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -290,15 +340,23 @@ public class StoryboardImpl extends PackageArtifactImpl implements Storyboard {
 	public void setParentStoryboard(PackageRef newParentStoryboard) {
 		if (newParentStoryboard != parentStoryboard) {
 			NotificationChain msgs = null;
-			if (parentStoryboard != null)
-				msgs = ((InternalEObject)parentStoryboard).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD__PARENT_STORYBOARD, null, msgs);
-			if (newParentStoryboard != null)
-				msgs = ((InternalEObject)newParentStoryboard).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD__PARENT_STORYBOARD, null, msgs);
+			if (parentStoryboard != null) {
+				msgs = ((InternalEObject) parentStoryboard).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD__PARENT_STORYBOARD, null, msgs);
+			}
+			if (newParentStoryboard != null) {
+				msgs = ((InternalEObject) newParentStoryboard).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD__PARENT_STORYBOARD, null, msgs);
+			}
 			msgs = basicSetParentStoryboard(newParentStoryboard, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD__PARENT_STORYBOARD, newParentStoryboard,
+				newParentStoryboard));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD__PARENT_STORYBOARD, newParentStoryboard, newParentStoryboard));
 	}
 
 	/**
@@ -308,7 +366,8 @@ public class StoryboardImpl extends PackageArtifactImpl implements Storyboard {
 	 */
 	public EList<StoryboardNarrative> getNarrative() {
 		if (narrative == null) {
-			narrative = new EObjectContainmentEList<StoryboardNarrative>(StoryboardNarrative.class, this, Mif2Package.STORYBOARD__NARRATIVE);
+			narrative = new EObjectContainmentEList<StoryboardNarrative>(
+				StoryboardNarrative.class, this, Mif2Package.STORYBOARD__NARRATIVE);
 		}
 		return narrative;
 	}
@@ -331,8 +390,14 @@ public class StoryboardImpl extends PackageArtifactImpl implements Storyboard {
 		XMIContent oldActivityDiagram = activityDiagram;
 		activityDiagram = newActivityDiagram;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM, oldActivityDiagram, newActivityDiagram);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM, oldActivityDiagram,
+				newActivityDiagram);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -345,15 +410,23 @@ public class StoryboardImpl extends PackageArtifactImpl implements Storyboard {
 	public void setActivityDiagram(XMIContent newActivityDiagram) {
 		if (newActivityDiagram != activityDiagram) {
 			NotificationChain msgs = null;
-			if (activityDiagram != null)
-				msgs = ((InternalEObject)activityDiagram).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM, null, msgs);
-			if (newActivityDiagram != null)
-				msgs = ((InternalEObject)newActivityDiagram).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM, null, msgs);
+			if (activityDiagram != null) {
+				msgs = ((InternalEObject) activityDiagram).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM, null, msgs);
+			}
+			if (newActivityDiagram != null) {
+				msgs = ((InternalEObject) newActivityDiagram).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM, null, msgs);
+			}
 			msgs = basicSetActivityDiagram(newActivityDiagram, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM, newActivityDiagram,
+				newActivityDiagram));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM, newActivityDiagram, newActivityDiagram));
 	}
 
 	/**
@@ -373,7 +446,7 @@ public class StoryboardImpl extends PackageArtifactImpl implements Storyboard {
 			case Mif2Package.STORYBOARD__PARENT_STORYBOARD:
 				return basicSetParentStoryboard(null, msgs);
 			case Mif2Package.STORYBOARD__NARRATIVE:
-				return ((InternalEList<?>)getNarrative()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getNarrative()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM:
 				return basicSetActivityDiagram(null, msgs);
 		}
@@ -414,23 +487,23 @@ public class StoryboardImpl extends PackageArtifactImpl implements Storyboard {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.STORYBOARD__ANNOTATIONS:
-				setAnnotations((StoryboardAnnotations)newValue);
+				setAnnotations((StoryboardAnnotations) newValue);
 				return;
 			case Mif2Package.STORYBOARD__CORRESPONDING_ARTIFACTS:
-				setCorrespondingArtifacts((StoryboardArtifactReferences)newValue);
+				setCorrespondingArtifacts((StoryboardArtifactReferences) newValue);
 				return;
 			case Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM_FIGURE:
-				setActivityDiagramFigure((Img)newValue);
+				setActivityDiagramFigure((Img) newValue);
 				return;
 			case Mif2Package.STORYBOARD__PARENT_STORYBOARD:
-				setParentStoryboard((PackageRef)newValue);
+				setParentStoryboard((PackageRef) newValue);
 				return;
 			case Mif2Package.STORYBOARD__NARRATIVE:
 				getNarrative().clear();
-				getNarrative().addAll((Collection<? extends StoryboardNarrative>)newValue);
+				getNarrative().addAll((Collection<? extends StoryboardNarrative>) newValue);
 				return;
 			case Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM:
-				setActivityDiagram((XMIContent)newValue);
+				setActivityDiagram((XMIContent) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -445,22 +518,22 @@ public class StoryboardImpl extends PackageArtifactImpl implements Storyboard {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.STORYBOARD__ANNOTATIONS:
-				setAnnotations((StoryboardAnnotations)null);
+				setAnnotations((StoryboardAnnotations) null);
 				return;
 			case Mif2Package.STORYBOARD__CORRESPONDING_ARTIFACTS:
-				setCorrespondingArtifacts((StoryboardArtifactReferences)null);
+				setCorrespondingArtifacts((StoryboardArtifactReferences) null);
 				return;
 			case Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM_FIGURE:
-				setActivityDiagramFigure((Img)null);
+				setActivityDiagramFigure((Img) null);
 				return;
 			case Mif2Package.STORYBOARD__PARENT_STORYBOARD:
-				setParentStoryboard((PackageRef)null);
+				setParentStoryboard((PackageRef) null);
 				return;
 			case Mif2Package.STORYBOARD__NARRATIVE:
 				getNarrative().clear();
 				return;
 			case Mif2Package.STORYBOARD__ACTIVITY_DIAGRAM:
-				setActivityDiagram((XMIContent)null);
+				setActivityDiagram((XMIContent) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -490,4 +563,4 @@ public class StoryboardImpl extends PackageArtifactImpl implements Storyboard {
 		return super.eIsSet(featureID);
 	}
 
-} //StoryboardImpl
+} // StoryboardImpl

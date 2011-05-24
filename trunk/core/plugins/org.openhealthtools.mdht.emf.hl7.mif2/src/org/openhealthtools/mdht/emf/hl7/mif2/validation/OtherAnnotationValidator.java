@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import org.eclipse.emf.common.util.EList;
@@ -26,14 +30,24 @@ public interface OtherAnnotationValidator {
 	boolean validate();
 
 	boolean validateOtherAnnotationContent(FeatureMap value);
+
 	boolean validateText(EList<ComplexMarkupWithLanguage> value);
+
 	boolean validateData(EList<FreeFormMarkupWithLanguage> value);
+
 	boolean validateBusinessName(EList<BusinessName> value);
+
 	boolean validateDerivationSupplier(EList<AnnotationDerivation> value);
+
 	boolean validateContext(FeatureMap value);
+
 	boolean validateRealmNamespace(EList<RealmElement> value);
+
 	boolean validateId(String value);
+
 	boolean validateName(String value);
+
 	boolean validateSortKey(String value);
+
 	boolean validateType(String value);
 }

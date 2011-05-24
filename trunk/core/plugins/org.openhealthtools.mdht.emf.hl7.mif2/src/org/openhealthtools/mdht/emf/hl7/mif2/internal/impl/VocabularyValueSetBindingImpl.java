@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -188,11 +192,16 @@ public class VocabularyValueSetBindingImpl extends VocabularyValueSetRefImpl imp
 	 */
 	public void setCodingStrength(CodingStrengthKind newCodingStrength) {
 		CodingStrengthKind oldCodingStrength = codingStrength;
-		codingStrength = newCodingStrength == null ? CODING_STRENGTH_EDEFAULT : newCodingStrength;
+		codingStrength = newCodingStrength == null
+				? CODING_STRENGTH_EDEFAULT
+				: newCodingStrength;
 		boolean oldCodingStrengthESet = codingStrengthESet;
 		codingStrengthESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_VALUE_SET_BINDING__CODING_STRENGTH, oldCodingStrength, codingStrength, !oldCodingStrengthESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_VALUE_SET_BINDING__CODING_STRENGTH, oldCodingStrength,
+				codingStrength, !oldCodingStrengthESet));
+		}
 	}
 
 	/**
@@ -205,8 +214,11 @@ public class VocabularyValueSetBindingImpl extends VocabularyValueSetRefImpl imp
 		boolean oldCodingStrengthESet = codingStrengthESet;
 		codingStrength = CODING_STRENGTH_EDEFAULT;
 		codingStrengthESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.VOCABULARY_VALUE_SET_BINDING__CODING_STRENGTH, oldCodingStrength, CODING_STRENGTH_EDEFAULT, oldCodingStrengthESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.VOCABULARY_VALUE_SET_BINDING__CODING_STRENGTH, oldCodingStrength,
+				CODING_STRENGTH_EDEFAULT, oldCodingStrengthESet));
+		}
 	}
 
 	/**
@@ -235,8 +247,11 @@ public class VocabularyValueSetBindingImpl extends VocabularyValueSetRefImpl imp
 	public void setIgnoredValueSet(String newIgnoredValueSet) {
 		String oldIgnoredValueSet = ignoredValueSet;
 		ignoredValueSet = newIgnoredValueSet;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_VALUE_SET_BINDING__IGNORED_VALUE_SET, oldIgnoredValueSet, ignoredValueSet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_VALUE_SET_BINDING__IGNORED_VALUE_SET,
+				oldIgnoredValueSet, ignoredValueSet));
+		}
 	}
 
 	/**
@@ -256,8 +271,11 @@ public class VocabularyValueSetBindingImpl extends VocabularyValueSetRefImpl imp
 	public void setMinimumValueSet(String newMinimumValueSet) {
 		String oldMinimumValueSet = minimumValueSet;
 		minimumValueSet = newMinimumValueSet;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_VALUE_SET_BINDING__MINIMUM_VALUE_SET, oldMinimumValueSet, minimumValueSet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_VALUE_SET_BINDING__MINIMUM_VALUE_SET,
+				oldMinimumValueSet, minimumValueSet));
+		}
 	}
 
 	/**
@@ -276,11 +294,16 @@ public class VocabularyValueSetBindingImpl extends VocabularyValueSetRefImpl imp
 	 */
 	public void setRevisionFrequency(RevisionFrequencyKind newRevisionFrequency) {
 		RevisionFrequencyKind oldRevisionFrequency = revisionFrequency;
-		revisionFrequency = newRevisionFrequency == null ? REVISION_FREQUENCY_EDEFAULT : newRevisionFrequency;
+		revisionFrequency = newRevisionFrequency == null
+				? REVISION_FREQUENCY_EDEFAULT
+				: newRevisionFrequency;
 		boolean oldRevisionFrequencyESet = revisionFrequencyESet;
 		revisionFrequencyESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_VALUE_SET_BINDING__REVISION_FREQUENCY, oldRevisionFrequency, revisionFrequency, !oldRevisionFrequencyESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_VALUE_SET_BINDING__REVISION_FREQUENCY,
+				oldRevisionFrequency, revisionFrequency, !oldRevisionFrequencyESet));
+		}
 	}
 
 	/**
@@ -293,8 +316,11 @@ public class VocabularyValueSetBindingImpl extends VocabularyValueSetRefImpl imp
 		boolean oldRevisionFrequencyESet = revisionFrequencyESet;
 		revisionFrequency = REVISION_FREQUENCY_EDEFAULT;
 		revisionFrequencyESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.VOCABULARY_VALUE_SET_BINDING__REVISION_FREQUENCY, oldRevisionFrequency, REVISION_FREQUENCY_EDEFAULT, oldRevisionFrequencyESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.VOCABULARY_VALUE_SET_BINDING__REVISION_FREQUENCY,
+				oldRevisionFrequency, REVISION_FREQUENCY_EDEFAULT, oldRevisionFrequencyESet));
+		}
 	}
 
 	/**
@@ -323,8 +349,10 @@ public class VocabularyValueSetBindingImpl extends VocabularyValueSetRefImpl imp
 	public void setRootCode(String newRootCode) {
 		String oldRootCode = rootCode;
 		rootCode = newRootCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_VALUE_SET_BINDING__ROOT_CODE, oldRootCode, rootCode));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_VALUE_SET_BINDING__ROOT_CODE, oldRootCode, rootCode));
+		}
 	}
 
 	/**
@@ -358,19 +386,19 @@ public class VocabularyValueSetBindingImpl extends VocabularyValueSetRefImpl imp
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.VOCABULARY_VALUE_SET_BINDING__CODING_STRENGTH:
-				setCodingStrength((CodingStrengthKind)newValue);
+				setCodingStrength((CodingStrengthKind) newValue);
 				return;
 			case Mif2Package.VOCABULARY_VALUE_SET_BINDING__IGNORED_VALUE_SET:
-				setIgnoredValueSet((String)newValue);
+				setIgnoredValueSet((String) newValue);
 				return;
 			case Mif2Package.VOCABULARY_VALUE_SET_BINDING__MINIMUM_VALUE_SET:
-				setMinimumValueSet((String)newValue);
+				setMinimumValueSet((String) newValue);
 				return;
 			case Mif2Package.VOCABULARY_VALUE_SET_BINDING__REVISION_FREQUENCY:
-				setRevisionFrequency((RevisionFrequencyKind)newValue);
+				setRevisionFrequency((RevisionFrequencyKind) newValue);
 				return;
 			case Mif2Package.VOCABULARY_VALUE_SET_BINDING__ROOT_CODE:
-				setRootCode((String)newValue);
+				setRootCode((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -414,13 +442,19 @@ public class VocabularyValueSetBindingImpl extends VocabularyValueSetRefImpl imp
 			case Mif2Package.VOCABULARY_VALUE_SET_BINDING__CODING_STRENGTH:
 				return isSetCodingStrength();
 			case Mif2Package.VOCABULARY_VALUE_SET_BINDING__IGNORED_VALUE_SET:
-				return IGNORED_VALUE_SET_EDEFAULT == null ? ignoredValueSet != null : !IGNORED_VALUE_SET_EDEFAULT.equals(ignoredValueSet);
+				return IGNORED_VALUE_SET_EDEFAULT == null
+						? ignoredValueSet != null
+						: !IGNORED_VALUE_SET_EDEFAULT.equals(ignoredValueSet);
 			case Mif2Package.VOCABULARY_VALUE_SET_BINDING__MINIMUM_VALUE_SET:
-				return MINIMUM_VALUE_SET_EDEFAULT == null ? minimumValueSet != null : !MINIMUM_VALUE_SET_EDEFAULT.equals(minimumValueSet);
+				return MINIMUM_VALUE_SET_EDEFAULT == null
+						? minimumValueSet != null
+						: !MINIMUM_VALUE_SET_EDEFAULT.equals(minimumValueSet);
 			case Mif2Package.VOCABULARY_VALUE_SET_BINDING__REVISION_FREQUENCY:
 				return isSetRevisionFrequency();
 			case Mif2Package.VOCABULARY_VALUE_SET_BINDING__ROOT_CODE:
-				return ROOT_CODE_EDEFAULT == null ? rootCode != null : !ROOT_CODE_EDEFAULT.equals(rootCode);
+				return ROOT_CODE_EDEFAULT == null
+						? rootCode != null
+						: !ROOT_CODE_EDEFAULT.equals(rootCode);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -432,21 +466,31 @@ public class VocabularyValueSetBindingImpl extends VocabularyValueSetRefImpl imp
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (codingStrength: ");
-		if (codingStrengthESet) result.append(codingStrength); else result.append("<unset>");
+		if (codingStrengthESet) {
+			result.append(codingStrength);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", ignoredValueSet: ");
 		result.append(ignoredValueSet);
 		result.append(", minimumValueSet: ");
 		result.append(minimumValueSet);
 		result.append(", revisionFrequency: ");
-		if (revisionFrequencyESet) result.append(revisionFrequency); else result.append("<unset>");
+		if (revisionFrequencyESet) {
+			result.append(revisionFrequency);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", rootCode: ");
 		result.append(rootCode);
 		result.append(')');
 		return result.toString();
 	}
 
-} //VocabularyValueSetBindingImpl
+} // VocabularyValueSetBindingImpl

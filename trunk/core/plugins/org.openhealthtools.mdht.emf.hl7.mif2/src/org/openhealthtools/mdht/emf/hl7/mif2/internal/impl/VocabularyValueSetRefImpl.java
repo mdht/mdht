@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -151,8 +155,9 @@ public class VocabularyValueSetRefImpl extends EObjectImpl implements Vocabulary
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_VALUE_SET_REF__ID, oldId, id));
+		}
 	}
 
 	/**
@@ -172,8 +177,10 @@ public class VocabularyValueSetRefImpl extends EObjectImpl implements Vocabulary
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_VALUE_SET_REF__NAME, oldName, name));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_VALUE_SET_REF__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -193,8 +200,10 @@ public class VocabularyValueSetRefImpl extends EObjectImpl implements Vocabulary
 	public void setVersionDate(XMLGregorianCalendar newVersionDate) {
 		XMLGregorianCalendar oldVersionDate = versionDate;
 		versionDate = newVersionDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_VALUE_SET_REF__VERSION_DATE, oldVersionDate, versionDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_VALUE_SET_REF__VERSION_DATE, oldVersionDate, versionDate));
+		}
 	}
 
 	/**
@@ -214,8 +223,10 @@ public class VocabularyValueSetRefImpl extends EObjectImpl implements Vocabulary
 	public void setVersionTime(XMLGregorianCalendar newVersionTime) {
 		XMLGregorianCalendar oldVersionTime = versionTime;
 		versionTime = newVersionTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_VALUE_SET_REF__VERSION_TIME, oldVersionTime, versionTime));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_VALUE_SET_REF__VERSION_TIME, oldVersionTime, versionTime));
+		}
 	}
 
 	/**
@@ -247,16 +258,16 @@ public class VocabularyValueSetRefImpl extends EObjectImpl implements Vocabulary
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.VOCABULARY_VALUE_SET_REF__ID:
-				setId((String)newValue);
+				setId((String) newValue);
 				return;
 			case Mif2Package.VOCABULARY_VALUE_SET_REF__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.VOCABULARY_VALUE_SET_REF__VERSION_DATE:
-				setVersionDate((XMLGregorianCalendar)newValue);
+				setVersionDate((XMLGregorianCalendar) newValue);
 				return;
 			case Mif2Package.VOCABULARY_VALUE_SET_REF__VERSION_TIME:
-				setVersionTime((XMLGregorianCalendar)newValue);
+				setVersionTime((XMLGregorianCalendar) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -295,13 +306,21 @@ public class VocabularyValueSetRefImpl extends EObjectImpl implements Vocabulary
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.VOCABULARY_VALUE_SET_REF__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+				return ID_EDEFAULT == null
+						? id != null
+						: !ID_EDEFAULT.equals(id);
 			case Mif2Package.VOCABULARY_VALUE_SET_REF__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.VOCABULARY_VALUE_SET_REF__VERSION_DATE:
-				return VERSION_DATE_EDEFAULT == null ? versionDate != null : !VERSION_DATE_EDEFAULT.equals(versionDate);
+				return VERSION_DATE_EDEFAULT == null
+						? versionDate != null
+						: !VERSION_DATE_EDEFAULT.equals(versionDate);
 			case Mif2Package.VOCABULARY_VALUE_SET_REF__VERSION_TIME:
-				return VERSION_TIME_EDEFAULT == null ? versionTime != null : !VERSION_TIME_EDEFAULT.equals(versionTime);
+				return VERSION_TIME_EDEFAULT == null
+						? versionTime != null
+						: !VERSION_TIME_EDEFAULT.equals(versionTime);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -313,7 +332,9 @@ public class VocabularyValueSetRefImpl extends EObjectImpl implements Vocabulary
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");
@@ -328,4 +349,4 @@ public class VocabularyValueSetRefImpl extends EObjectImpl implements Vocabulary
 		return result.toString();
 	}
 
-} //VocabularyValueSetRefImpl
+} // VocabularyValueSetRefImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.util;
 
 import java.util.List;
@@ -119,13 +123,11 @@ public class XhtmlSwitch<T> {
 	protected T doSwitch(EClass theEClass, EObject theEObject) {
 		if (theEClass.eContainer() == modelPackage) {
 			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
+		} else {
 			List<EClass> eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch(eSuperTypes.get(0), theEObject);
+			return eSuperTypes.isEmpty()
+					? defaultCase(theEObject)
+					: doSwitch(eSuperTypes.get(0), theEObject);
 		}
 	}
 
@@ -139,350 +141,519 @@ public class XhtmlSwitch<T> {
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case XhtmlPackage.A: {
-				A a = (A)theEObject;
+				A a = (A) theEObject;
 				T result = caseA(a);
-				if (result == null) result = caseAContent(a);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAContent(a);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.ABBR: {
-				Abbr abbr = (Abbr)theEObject;
+				Abbr abbr = (Abbr) theEObject;
 				T result = caseAbbr(abbr);
-				if (result == null) result = caseInline(abbr);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(abbr);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.ACONTENT: {
-				AContent aContent = (AContent)theEObject;
+				AContent aContent = (AContent) theEObject;
 				T result = caseAContent(aContent);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.ACRONYM: {
-				Acronym acronym = (Acronym)theEObject;
+				Acronym acronym = (Acronym) theEObject;
 				T result = caseAcronym(acronym);
-				if (result == null) result = caseInline(acronym);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(acronym);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.B: {
-				B b = (B)theEObject;
+				B b = (B) theEObject;
 				T result = caseB(b);
-				if (result == null) result = caseInline(b);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(b);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.BIG: {
-				Big big = (Big)theEObject;
+				Big big = (Big) theEObject;
 				T result = caseBig(big);
-				if (result == null) result = caseInline(big);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(big);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.BLOCK: {
-				Block block = (Block)theEObject;
+				Block block = (Block) theEObject;
 				T result = caseBlock(block);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.BLOCKQUOTE: {
-				Blockquote blockquote = (Blockquote)theEObject;
+				Blockquote blockquote = (Blockquote) theEObject;
 				T result = caseBlockquote(blockquote);
-				if (result == null) result = caseBlock(blockquote);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseBlock(blockquote);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.BR: {
-				Br br = (Br)theEObject;
+				Br br = (Br) theEObject;
 				T result = caseBr(br);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.CAPTION: {
-				Caption caption = (Caption)theEObject;
+				Caption caption = (Caption) theEObject;
 				T result = caseCaption(caption);
-				if (result == null) result = caseInline(caption);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(caption);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.CITE: {
-				Cite cite = (Cite)theEObject;
+				Cite cite = (Cite) theEObject;
 				T result = caseCite(cite);
-				if (result == null) result = caseInline(cite);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(cite);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.CODE: {
-				Code code = (Code)theEObject;
+				Code code = (Code) theEObject;
 				T result = caseCode(code);
-				if (result == null) result = caseInline(code);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(code);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.COL: {
-				Col col = (Col)theEObject;
+				Col col = (Col) theEObject;
 				T result = caseCol(col);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.COLGROUP: {
-				Colgroup colgroup = (Colgroup)theEObject;
+				Colgroup colgroup = (Colgroup) theEObject;
 				T result = caseColgroup(colgroup);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.DD: {
-				Dd dd = (Dd)theEObject;
+				Dd dd = (Dd) theEObject;
 				T result = caseDd(dd);
-				if (result == null) result = caseFlow(dd);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseFlow(dd);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.DEL: {
-				Del del = (Del)theEObject;
+				Del del = (Del) theEObject;
 				T result = caseDel(del);
-				if (result == null) result = caseFlow(del);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseFlow(del);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.DFN: {
-				Dfn dfn = (Dfn)theEObject;
+				Dfn dfn = (Dfn) theEObject;
 				T result = caseDfn(dfn);
-				if (result == null) result = caseInline(dfn);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(dfn);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.DIV: {
-				Div div = (Div)theEObject;
+				Div div = (Div) theEObject;
 				T result = caseDiv(div);
-				if (result == null) result = caseFlow(div);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseFlow(div);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.DL: {
-				Dl dl = (Dl)theEObject;
+				Dl dl = (Dl) theEObject;
 				T result = caseDl(dl);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.DT: {
-				Dt dt = (Dt)theEObject;
+				Dt dt = (Dt) theEObject;
 				T result = caseDt(dt);
-				if (result == null) result = caseInline(dt);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(dt);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.EM: {
-				Em em = (Em)theEObject;
+				Em em = (Em) theEObject;
 				T result = caseEm(em);
-				if (result == null) result = caseInline(em);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(em);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.FLOW: {
-				Flow flow = (Flow)theEObject;
+				Flow flow = (Flow) theEObject;
 				T result = caseFlow(flow);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.HR: {
-				Hr hr = (Hr)theEObject;
+				Hr hr = (Hr) theEObject;
 				T result = caseHr(hr);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.I: {
-				I i = (I)theEObject;
+				I i = (I) theEObject;
 				T result = caseI(i);
-				if (result == null) result = caseInline(i);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(i);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.IMG: {
-				Img img = (Img)theEObject;
+				Img img = (Img) theEObject;
 				T result = caseImg(img);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.INLINE: {
-				Inline inline = (Inline)theEObject;
+				Inline inline = (Inline) theEObject;
 				T result = caseInline(inline);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.INS: {
-				Ins ins = (Ins)theEObject;
+				Ins ins = (Ins) theEObject;
 				T result = caseIns(ins);
-				if (result == null) result = caseFlow(ins);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseFlow(ins);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.KBD: {
-				Kbd kbd = (Kbd)theEObject;
+				Kbd kbd = (Kbd) theEObject;
 				T result = caseKbd(kbd);
-				if (result == null) result = caseInline(kbd);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(kbd);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.LI: {
-				Li li = (Li)theEObject;
+				Li li = (Li) theEObject;
 				T result = caseLi(li);
-				if (result == null) result = caseFlow(li);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseFlow(li);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.OBJECT: {
-				org.openhealthtools.mdht.emf.w3c.xhtml.Object object = (org.openhealthtools.mdht.emf.w3c.xhtml.Object)theEObject;
+				org.openhealthtools.mdht.emf.w3c.xhtml.Object object = (org.openhealthtools.mdht.emf.w3c.xhtml.Object) theEObject;
 				T result = caseObject(object);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.OL: {
-				Ol ol = (Ol)theEObject;
+				Ol ol = (Ol) theEObject;
 				T result = caseOl(ol);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.P: {
-				P p = (P)theEObject;
+				P p = (P) theEObject;
 				T result = caseP(p);
-				if (result == null) result = caseInline(p);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(p);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.PARAM: {
-				Param param = (Param)theEObject;
+				Param param = (Param) theEObject;
 				T result = caseParam(param);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.PRE: {
-				Pre pre = (Pre)theEObject;
+				Pre pre = (Pre) theEObject;
 				T result = casePre(pre);
-				if (result == null) result = casePreContent(pre);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePreContent(pre);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.PRE_CONTENT: {
-				PreContent preContent = (PreContent)theEObject;
+				PreContent preContent = (PreContent) theEObject;
 				T result = casePreContent(preContent);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.Q: {
-				Q q = (Q)theEObject;
+				Q q = (Q) theEObject;
 				T result = caseQ(q);
-				if (result == null) result = caseInline(q);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(q);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.SAMP: {
-				Samp samp = (Samp)theEObject;
+				Samp samp = (Samp) theEObject;
 				T result = caseSamp(samp);
-				if (result == null) result = caseInline(samp);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(samp);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.SMALL: {
-				Small small = (Small)theEObject;
+				Small small = (Small) theEObject;
 				T result = caseSmall(small);
-				if (result == null) result = caseInline(small);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(small);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.SPAN: {
-				Span span = (Span)theEObject;
+				Span span = (Span) theEObject;
 				T result = caseSpan(span);
-				if (result == null) result = caseInline(span);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(span);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.STRONG: {
-				Strong strong = (Strong)theEObject;
+				Strong strong = (Strong) theEObject;
 				T result = caseStrong(strong);
-				if (result == null) result = caseInline(strong);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(strong);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.SUB: {
-				Sub sub = (Sub)theEObject;
+				Sub sub = (Sub) theEObject;
 				T result = caseSub(sub);
-				if (result == null) result = caseInline(sub);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(sub);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.SUP: {
-				Sup sup = (Sup)theEObject;
+				Sup sup = (Sup) theEObject;
 				T result = caseSup(sup);
-				if (result == null) result = caseInline(sup);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(sup);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.TABLE: {
-				Table table = (Table)theEObject;
+				Table table = (Table) theEObject;
 				T result = caseTable(table);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.TBODY: {
-				Tbody tbody = (Tbody)theEObject;
+				Tbody tbody = (Tbody) theEObject;
 				T result = caseTbody(tbody);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.TD: {
-				Td td = (Td)theEObject;
+				Td td = (Td) theEObject;
 				T result = caseTd(td);
-				if (result == null) result = caseFlow(td);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseFlow(td);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.TFOOT: {
-				Tfoot tfoot = (Tfoot)theEObject;
+				Tfoot tfoot = (Tfoot) theEObject;
 				T result = caseTfoot(tfoot);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.TH: {
-				Th th = (Th)theEObject;
+				Th th = (Th) theEObject;
 				T result = caseTh(th);
-				if (result == null) result = caseFlow(th);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseFlow(th);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.THEAD: {
-				Thead thead = (Thead)theEObject;
+				Thead thead = (Thead) theEObject;
 				T result = caseThead(thead);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.TR: {
-				Tr tr = (Tr)theEObject;
+				Tr tr = (Tr) theEObject;
 				T result = caseTr(tr);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.TT: {
-				Tt tt = (Tt)theEObject;
+				Tt tt = (Tt) theEObject;
 				T result = caseTt(tt);
-				if (result == null) result = caseInline(tt);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(tt);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.UL: {
-				Ul ul = (Ul)theEObject;
+				Ul ul = (Ul) theEObject;
 				T result = caseUl(ul);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case XhtmlPackage.VAR: {
-				Var var = (Var)theEObject;
+				Var var = (Var) theEObject;
 				T result = caseVar(var);
-				if (result == null) result = caseInline(var);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInline(var);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
-			default: return defaultCase(theEObject);
+			default:
+				return defaultCase(theEObject);
 		}
 	}
 
@@ -1281,4 +1452,4 @@ public class XhtmlSwitch<T> {
 		return null;
 	}
 
-} //XhtmlSwitch
+} // XhtmlSwitch

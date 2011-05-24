@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import java.math.BigInteger;
@@ -25,15 +29,26 @@ public interface PackageRefValidator {
 	boolean validate();
 
 	boolean validateArtifact(ArtifactKind value);
+
 	boolean validateCombinedId(String value);
+
 	boolean validateDomain(DomainKind value);
+
 	boolean validateId(BigInteger value);
+
 	boolean validateName(String value);
+
 	boolean validateRealmNamespace(Object value);
+
 	boolean validateReleaseDate(XMLGregorianCalendar value);
+
 	boolean validateRoot(PackageRootKind value);
+
 	boolean validateSection(String value);
+
 	boolean validateSubArtifact(SubArtifactKind value);
+
 	boolean validateSubSection(String value);
+
 	boolean validateVersion(String value);
 }

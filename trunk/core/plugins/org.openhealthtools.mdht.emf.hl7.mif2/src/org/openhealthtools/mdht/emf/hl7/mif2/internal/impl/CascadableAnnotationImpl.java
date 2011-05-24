@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -79,8 +83,13 @@ public class CascadableAnnotationImpl extends BasicAnnotationImpl implements Cas
 		AnnotationCascadeInfo oldCascadeInfo = cascadeInfo;
 		cascadeInfo = newCascadeInfo;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CASCADABLE_ANNOTATION__CASCADE_INFO, oldCascadeInfo, newCascadeInfo);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CASCADABLE_ANNOTATION__CASCADE_INFO, oldCascadeInfo, newCascadeInfo);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -93,15 +102,22 @@ public class CascadableAnnotationImpl extends BasicAnnotationImpl implements Cas
 	public void setCascadeInfo(AnnotationCascadeInfo newCascadeInfo) {
 		if (newCascadeInfo != cascadeInfo) {
 			NotificationChain msgs = null;
-			if (cascadeInfo != null)
-				msgs = ((InternalEObject)cascadeInfo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CASCADABLE_ANNOTATION__CASCADE_INFO, null, msgs);
-			if (newCascadeInfo != null)
-				msgs = ((InternalEObject)newCascadeInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CASCADABLE_ANNOTATION__CASCADE_INFO, null, msgs);
+			if (cascadeInfo != null) {
+				msgs = ((InternalEObject) cascadeInfo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CASCADABLE_ANNOTATION__CASCADE_INFO, null, msgs);
+			}
+			if (newCascadeInfo != null) {
+				msgs = ((InternalEObject) newCascadeInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CASCADABLE_ANNOTATION__CASCADE_INFO, null, msgs);
+			}
 			msgs = basicSetCascadeInfo(newCascadeInfo, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CASCADABLE_ANNOTATION__CASCADE_INFO, newCascadeInfo, newCascadeInfo));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CASCADABLE_ANNOTATION__CASCADE_INFO, newCascadeInfo, newCascadeInfo));
 	}
 
 	/**
@@ -141,7 +157,7 @@ public class CascadableAnnotationImpl extends BasicAnnotationImpl implements Cas
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CASCADABLE_ANNOTATION__CASCADE_INFO:
-				setCascadeInfo((AnnotationCascadeInfo)newValue);
+				setCascadeInfo((AnnotationCascadeInfo) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -156,7 +172,7 @@ public class CascadableAnnotationImpl extends BasicAnnotationImpl implements Cas
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CASCADABLE_ANNOTATION__CASCADE_INFO:
-				setCascadeInfo((AnnotationCascadeInfo)null);
+				setCascadeInfo((AnnotationCascadeInfo) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -176,4 +192,4 @@ public class CascadableAnnotationImpl extends BasicAnnotationImpl implements Cas
 		return super.eIsSet(featureID);
 	}
 
-} //CascadableAnnotationImpl
+} // CascadableAnnotationImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -117,8 +121,11 @@ public class IncludeRelatedCodesImpl extends EObjectImpl implements IncludeRelat
 	public void setRelationshipName(String newRelationshipName) {
 		String oldRelationshipName = relationshipName;
 		relationshipName = newRelationshipName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.INCLUDE_RELATED_CODES__RELATIONSHIP_NAME, oldRelationshipName, relationshipName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INCLUDE_RELATED_CODES__RELATIONSHIP_NAME, oldRelationshipName,
+				relationshipName));
+		}
 	}
 
 	/**
@@ -137,11 +144,16 @@ public class IncludeRelatedCodesImpl extends EObjectImpl implements IncludeRelat
 	 */
 	public void setRelationshipTraversal(RelationshipTraversalKind newRelationshipTraversal) {
 		RelationshipTraversalKind oldRelationshipTraversal = relationshipTraversal;
-		relationshipTraversal = newRelationshipTraversal == null ? RELATIONSHIP_TRAVERSAL_EDEFAULT : newRelationshipTraversal;
+		relationshipTraversal = newRelationshipTraversal == null
+				? RELATIONSHIP_TRAVERSAL_EDEFAULT
+				: newRelationshipTraversal;
 		boolean oldRelationshipTraversalESet = relationshipTraversalESet;
 		relationshipTraversalESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.INCLUDE_RELATED_CODES__RELATIONSHIP_TRAVERSAL, oldRelationshipTraversal, relationshipTraversal, !oldRelationshipTraversalESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INCLUDE_RELATED_CODES__RELATIONSHIP_TRAVERSAL,
+				oldRelationshipTraversal, relationshipTraversal, !oldRelationshipTraversalESet));
+		}
 	}
 
 	/**
@@ -154,8 +166,11 @@ public class IncludeRelatedCodesImpl extends EObjectImpl implements IncludeRelat
 		boolean oldRelationshipTraversalESet = relationshipTraversalESet;
 		relationshipTraversal = RELATIONSHIP_TRAVERSAL_EDEFAULT;
 		relationshipTraversalESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.INCLUDE_RELATED_CODES__RELATIONSHIP_TRAVERSAL, oldRelationshipTraversal, RELATIONSHIP_TRAVERSAL_EDEFAULT, oldRelationshipTraversalESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.INCLUDE_RELATED_CODES__RELATIONSHIP_TRAVERSAL,
+				oldRelationshipTraversal, RELATIONSHIP_TRAVERSAL_EDEFAULT, oldRelationshipTraversalESet));
+		}
 	}
 
 	/**
@@ -192,10 +207,10 @@ public class IncludeRelatedCodesImpl extends EObjectImpl implements IncludeRelat
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.INCLUDE_RELATED_CODES__RELATIONSHIP_NAME:
-				setRelationshipName((String)newValue);
+				setRelationshipName((String) newValue);
 				return;
 			case Mif2Package.INCLUDE_RELATED_CODES__RELATIONSHIP_TRAVERSAL:
-				setRelationshipTraversal((RelationshipTraversalKind)newValue);
+				setRelationshipTraversal((RelationshipTraversalKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -228,7 +243,9 @@ public class IncludeRelatedCodesImpl extends EObjectImpl implements IncludeRelat
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.INCLUDE_RELATED_CODES__RELATIONSHIP_NAME:
-				return RELATIONSHIP_NAME_EDEFAULT == null ? relationshipName != null : !RELATIONSHIP_NAME_EDEFAULT.equals(relationshipName);
+				return RELATIONSHIP_NAME_EDEFAULT == null
+						? relationshipName != null
+						: !RELATIONSHIP_NAME_EDEFAULT.equals(relationshipName);
 			case Mif2Package.INCLUDE_RELATED_CODES__RELATIONSHIP_TRAVERSAL:
 				return isSetRelationshipTraversal();
 		}
@@ -242,15 +259,21 @@ public class IncludeRelatedCodesImpl extends EObjectImpl implements IncludeRelat
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (relationshipName: ");
 		result.append(relationshipName);
 		result.append(", relationshipTraversal: ");
-		if (relationshipTraversalESet) result.append(relationshipTraversal); else result.append("<unset>");
+		if (relationshipTraversalESet) {
+			result.append(relationshipTraversal);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //IncludeRelatedCodesImpl
+} // IncludeRelatedCodesImpl

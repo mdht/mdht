@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -272,19 +276,8 @@ public enum PackageKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final PackageKind[] VALUES_ARRAY =
-		new PackageKind[] {
-			ROOT,
-			SECTION,
-			SUB_SECTION,
-			DOMAIN,
-			REALM_NAMESPACE,
-			VERSION,
-			ARTIFACT,
-			SUB_ARTIFACT,
-			NAME,
-			ID,
-		};
+	private static final PackageKind[] VALUES_ARRAY = new PackageKind[] {
+			ROOT, SECTION, SUB_SECTION, DOMAIN, REALM_NAMESPACE, VERSION, ARTIFACT, SUB_ARTIFACT, NAME, ID, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Package Kind</b></em>' enumerators.
@@ -334,16 +327,26 @@ public enum PackageKind implements Enumerator {
 	 */
 	public static PackageKind get(int value) {
 		switch (value) {
-			case ROOT_VALUE: return ROOT;
-			case SECTION_VALUE: return SECTION;
-			case SUB_SECTION_VALUE: return SUB_SECTION;
-			case DOMAIN_VALUE: return DOMAIN;
-			case REALM_NAMESPACE_VALUE: return REALM_NAMESPACE;
-			case VERSION_VALUE: return VERSION;
-			case ARTIFACT_VALUE: return ARTIFACT;
-			case SUB_ARTIFACT_VALUE: return SUB_ARTIFACT;
-			case NAME_VALUE: return NAME;
-			case ID_VALUE: return ID;
+			case ROOT_VALUE:
+				return ROOT;
+			case SECTION_VALUE:
+				return SECTION;
+			case SUB_SECTION_VALUE:
+				return SUB_SECTION;
+			case DOMAIN_VALUE:
+				return DOMAIN;
+			case REALM_NAMESPACE_VALUE:
+				return REALM_NAMESPACE;
+			case VERSION_VALUE:
+				return VERSION;
+			case ARTIFACT_VALUE:
+				return ARTIFACT;
+			case SUB_ARTIFACT_VALUE:
+				return SUB_ARTIFACT;
+			case NAME_VALUE:
+				return NAME;
+			case ID_VALUE:
+				return ID;
 		}
 		return null;
 	}
@@ -387,7 +390,7 @@ public enum PackageKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -396,7 +399,7 @@ public enum PackageKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -405,7 +408,7 @@ public enum PackageKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -418,5 +421,5 @@ public enum PackageKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //PackageKind
+
+} // PackageKind

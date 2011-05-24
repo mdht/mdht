@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -185,8 +189,13 @@ public class CodeTranslationImpl extends ModelElementImpl implements CodeTransla
 		CodeTranslationAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_TRANSLATION__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_TRANSLATION__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -199,15 +208,22 @@ public class CodeTranslationImpl extends ModelElementImpl implements CodeTransla
 	public void setAnnotations(CodeTranslationAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_TRANSLATION__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_TRANSLATION__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_TRANSLATION__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_TRANSLATION__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_TRANSLATION__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_TRANSLATION__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -228,8 +244,14 @@ public class CodeTranslationImpl extends ModelElementImpl implements CodeTransla
 		ConceptRef oldSourceConcept = sourceConcept;
 		sourceConcept = newSourceConcept;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_TRANSLATION__SOURCE_CONCEPT, oldSourceConcept, newSourceConcept);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_TRANSLATION__SOURCE_CONCEPT, oldSourceConcept,
+				newSourceConcept);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -242,15 +264,23 @@ public class CodeTranslationImpl extends ModelElementImpl implements CodeTransla
 	public void setSourceConcept(ConceptRef newSourceConcept) {
 		if (newSourceConcept != sourceConcept) {
 			NotificationChain msgs = null;
-			if (sourceConcept != null)
-				msgs = ((InternalEObject)sourceConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_TRANSLATION__SOURCE_CONCEPT, null, msgs);
-			if (newSourceConcept != null)
-				msgs = ((InternalEObject)newSourceConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_TRANSLATION__SOURCE_CONCEPT, null, msgs);
+			if (sourceConcept != null) {
+				msgs = ((InternalEObject) sourceConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_TRANSLATION__SOURCE_CONCEPT, null, msgs);
+			}
+			if (newSourceConcept != null) {
+				msgs = ((InternalEObject) newSourceConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_TRANSLATION__SOURCE_CONCEPT, null, msgs);
+			}
 			msgs = basicSetSourceConcept(newSourceConcept, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_TRANSLATION__SOURCE_CONCEPT, newSourceConcept,
+				newSourceConcept));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_TRANSLATION__SOURCE_CONCEPT, newSourceConcept, newSourceConcept));
 	}
 
 	/**
@@ -271,8 +301,14 @@ public class CodeTranslationImpl extends ModelElementImpl implements CodeTransla
 		ConceptRef oldTargetConcept = targetConcept;
 		targetConcept = newTargetConcept;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_TRANSLATION__TARGET_CONCEPT, oldTargetConcept, newTargetConcept);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_TRANSLATION__TARGET_CONCEPT, oldTargetConcept,
+				newTargetConcept);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -285,15 +321,23 @@ public class CodeTranslationImpl extends ModelElementImpl implements CodeTransla
 	public void setTargetConcept(ConceptRef newTargetConcept) {
 		if (newTargetConcept != targetConcept) {
 			NotificationChain msgs = null;
-			if (targetConcept != null)
-				msgs = ((InternalEObject)targetConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_TRANSLATION__TARGET_CONCEPT, null, msgs);
-			if (newTargetConcept != null)
-				msgs = ((InternalEObject)newTargetConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_TRANSLATION__TARGET_CONCEPT, null, msgs);
+			if (targetConcept != null) {
+				msgs = ((InternalEObject) targetConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_TRANSLATION__TARGET_CONCEPT, null, msgs);
+			}
+			if (newTargetConcept != null) {
+				msgs = ((InternalEObject) newTargetConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_TRANSLATION__TARGET_CONCEPT, null, msgs);
+			}
 			msgs = basicSetTargetConcept(newTargetConcept, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_TRANSLATION__TARGET_CONCEPT, newTargetConcept,
+				newTargetConcept));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_TRANSLATION__TARGET_CONCEPT, newTargetConcept, newTargetConcept));
 	}
 
 	/**
@@ -312,11 +356,15 @@ public class CodeTranslationImpl extends ModelElementImpl implements CodeTransla
 	 */
 	public void setQuality(MapRelationshipKind newQuality) {
 		MapRelationshipKind oldQuality = quality;
-		quality = newQuality == null ? QUALITY_EDEFAULT : newQuality;
+		quality = newQuality == null
+				? QUALITY_EDEFAULT
+				: newQuality;
 		boolean oldQualityESet = qualityESet;
 		qualityESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_TRANSLATION__QUALITY, oldQuality, quality, !oldQualityESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_TRANSLATION__QUALITY, oldQuality, quality, !oldQualityESet));
+		}
 	}
 
 	/**
@@ -329,8 +377,11 @@ public class CodeTranslationImpl extends ModelElementImpl implements CodeTransla
 		boolean oldQualityESet = qualityESet;
 		quality = QUALITY_EDEFAULT;
 		qualityESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CODE_TRANSLATION__QUALITY, oldQuality, QUALITY_EDEFAULT, oldQualityESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CODE_TRANSLATION__QUALITY, oldQuality, QUALITY_EDEFAULT,
+				oldQualityESet));
+		}
 	}
 
 	/**
@@ -359,8 +410,10 @@ public class CodeTranslationImpl extends ModelElementImpl implements CodeTransla
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_TRANSLATION__SORT_KEY, oldSortKey, sortKey));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_TRANSLATION__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -379,11 +432,16 @@ public class CodeTranslationImpl extends ModelElementImpl implements CodeTransla
 	 */
 	public void setTranslatableDirection(TranslatableDirectionKind newTranslatableDirection) {
 		TranslatableDirectionKind oldTranslatableDirection = translatableDirection;
-		translatableDirection = newTranslatableDirection == null ? TRANSLATABLE_DIRECTION_EDEFAULT : newTranslatableDirection;
+		translatableDirection = newTranslatableDirection == null
+				? TRANSLATABLE_DIRECTION_EDEFAULT
+				: newTranslatableDirection;
 		boolean oldTranslatableDirectionESet = translatableDirectionESet;
 		translatableDirectionESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_TRANSLATION__TRANSLATABLE_DIRECTION, oldTranslatableDirection, translatableDirection, !oldTranslatableDirectionESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_TRANSLATION__TRANSLATABLE_DIRECTION, oldTranslatableDirection,
+				translatableDirection, !oldTranslatableDirectionESet));
+		}
 	}
 
 	/**
@@ -396,8 +454,11 @@ public class CodeTranslationImpl extends ModelElementImpl implements CodeTransla
 		boolean oldTranslatableDirectionESet = translatableDirectionESet;
 		translatableDirection = TRANSLATABLE_DIRECTION_EDEFAULT;
 		translatableDirectionESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CODE_TRANSLATION__TRANSLATABLE_DIRECTION, oldTranslatableDirection, TRANSLATABLE_DIRECTION_EDEFAULT, oldTranslatableDirectionESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CODE_TRANSLATION__TRANSLATABLE_DIRECTION,
+				oldTranslatableDirection, TRANSLATABLE_DIRECTION_EDEFAULT, oldTranslatableDirectionESet));
+		}
 	}
 
 	/**
@@ -460,22 +521,22 @@ public class CodeTranslationImpl extends ModelElementImpl implements CodeTransla
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CODE_TRANSLATION__ANNOTATIONS:
-				setAnnotations((CodeTranslationAnnotations)newValue);
+				setAnnotations((CodeTranslationAnnotations) newValue);
 				return;
 			case Mif2Package.CODE_TRANSLATION__SOURCE_CONCEPT:
-				setSourceConcept((ConceptRef)newValue);
+				setSourceConcept((ConceptRef) newValue);
 				return;
 			case Mif2Package.CODE_TRANSLATION__TARGET_CONCEPT:
-				setTargetConcept((ConceptRef)newValue);
+				setTargetConcept((ConceptRef) newValue);
 				return;
 			case Mif2Package.CODE_TRANSLATION__QUALITY:
-				setQuality((MapRelationshipKind)newValue);
+				setQuality((MapRelationshipKind) newValue);
 				return;
 			case Mif2Package.CODE_TRANSLATION__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 			case Mif2Package.CODE_TRANSLATION__TRANSLATABLE_DIRECTION:
-				setTranslatableDirection((TranslatableDirectionKind)newValue);
+				setTranslatableDirection((TranslatableDirectionKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -490,13 +551,13 @@ public class CodeTranslationImpl extends ModelElementImpl implements CodeTransla
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CODE_TRANSLATION__ANNOTATIONS:
-				setAnnotations((CodeTranslationAnnotations)null);
+				setAnnotations((CodeTranslationAnnotations) null);
 				return;
 			case Mif2Package.CODE_TRANSLATION__SOURCE_CONCEPT:
-				setSourceConcept((ConceptRef)null);
+				setSourceConcept((ConceptRef) null);
 				return;
 			case Mif2Package.CODE_TRANSLATION__TARGET_CONCEPT:
-				setTargetConcept((ConceptRef)null);
+				setTargetConcept((ConceptRef) null);
 				return;
 			case Mif2Package.CODE_TRANSLATION__QUALITY:
 				unsetQuality();
@@ -528,7 +589,9 @@ public class CodeTranslationImpl extends ModelElementImpl implements CodeTransla
 			case Mif2Package.CODE_TRANSLATION__QUALITY:
 				return isSetQuality();
 			case Mif2Package.CODE_TRANSLATION__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 			case Mif2Package.CODE_TRANSLATION__TRANSLATABLE_DIRECTION:
 				return isSetTranslatableDirection();
 		}
@@ -542,17 +605,27 @@ public class CodeTranslationImpl extends ModelElementImpl implements CodeTransla
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (quality: ");
-		if (qualityESet) result.append(quality); else result.append("<unset>");
+		if (qualityESet) {
+			result.append(quality);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", sortKey: ");
 		result.append(sortKey);
 		result.append(", translatableDirection: ");
-		if (translatableDirectionESet) result.append(translatableDirection); else result.append("<unset>");
+		if (translatableDirectionESet) {
+			result.append(translatableDirection);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //CodeTranslationImpl
+} // CodeTranslationImpl

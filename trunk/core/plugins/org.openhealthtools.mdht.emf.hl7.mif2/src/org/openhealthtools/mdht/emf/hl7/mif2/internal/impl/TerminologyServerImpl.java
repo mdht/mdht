@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -116,11 +120,15 @@ public class TerminologyServerImpl extends EObjectImpl implements TerminologySer
 	 */
 	public void setType(TerminologyServerKind newType) {
 		TerminologyServerKind oldType = type;
-		type = newType == null ? TYPE_EDEFAULT : newType;
+		type = newType == null
+				? TYPE_EDEFAULT
+				: newType;
 		boolean oldTypeESet = typeESet;
 		typeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TERMINOLOGY_SERVER__TYPE, oldType, type, !oldTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TERMINOLOGY_SERVER__TYPE, oldType, type, !oldTypeESet));
+		}
 	}
 
 	/**
@@ -133,8 +141,10 @@ public class TerminologyServerImpl extends EObjectImpl implements TerminologySer
 		boolean oldTypeESet = typeESet;
 		type = TYPE_EDEFAULT;
 		typeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.TERMINOLOGY_SERVER__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.TERMINOLOGY_SERVER__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+		}
 	}
 
 	/**
@@ -163,8 +173,9 @@ public class TerminologyServerImpl extends EObjectImpl implements TerminologySer
 	public void setUrl(String newUrl) {
 		String oldUrl = url;
 		url = newUrl;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TERMINOLOGY_SERVER__URL, oldUrl, url));
+		}
 	}
 
 	/**
@@ -192,10 +203,10 @@ public class TerminologyServerImpl extends EObjectImpl implements TerminologySer
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.TERMINOLOGY_SERVER__TYPE:
-				setType((TerminologyServerKind)newValue);
+				setType((TerminologyServerKind) newValue);
 				return;
 			case Mif2Package.TERMINOLOGY_SERVER__URL:
-				setUrl((String)newValue);
+				setUrl((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -230,7 +241,9 @@ public class TerminologyServerImpl extends EObjectImpl implements TerminologySer
 			case Mif2Package.TERMINOLOGY_SERVER__TYPE:
 				return isSetType();
 			case Mif2Package.TERMINOLOGY_SERVER__URL:
-				return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
+				return URL_EDEFAULT == null
+						? url != null
+						: !URL_EDEFAULT.equals(url);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -242,15 +255,21 @@ public class TerminologyServerImpl extends EObjectImpl implements TerminologySer
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (type: ");
-		if (typeESet) result.append(type); else result.append("<unset>");
+		if (typeESet) {
+			result.append(type);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", url: ");
 		result.append(url);
 		result.append(')');
 		return result.toString();
 	}
 
-} //TerminologyServerImpl
+} // TerminologyServerImpl

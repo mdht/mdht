@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -91,8 +95,14 @@ public class DerivedStaticModelImpl extends StaticModelBaseImpl implements Deriv
 		PackageRef oldOriginalArtifact = originalArtifact;
 		originalArtifact = newOriginalArtifact;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DERIVED_STATIC_MODEL__ORIGINAL_ARTIFACT, oldOriginalArtifact, newOriginalArtifact);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DERIVED_STATIC_MODEL__ORIGINAL_ARTIFACT, oldOriginalArtifact,
+				newOriginalArtifact);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -105,15 +115,23 @@ public class DerivedStaticModelImpl extends StaticModelBaseImpl implements Deriv
 	public void setOriginalArtifact(PackageRef newOriginalArtifact) {
 		if (newOriginalArtifact != originalArtifact) {
 			NotificationChain msgs = null;
-			if (originalArtifact != null)
-				msgs = ((InternalEObject)originalArtifact).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DERIVED_STATIC_MODEL__ORIGINAL_ARTIFACT, null, msgs);
-			if (newOriginalArtifact != null)
-				msgs = ((InternalEObject)newOriginalArtifact).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DERIVED_STATIC_MODEL__ORIGINAL_ARTIFACT, null, msgs);
+			if (originalArtifact != null) {
+				msgs = ((InternalEObject) originalArtifact).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DERIVED_STATIC_MODEL__ORIGINAL_ARTIFACT, null, msgs);
+			}
+			if (newOriginalArtifact != null) {
+				msgs = ((InternalEObject) newOriginalArtifact).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DERIVED_STATIC_MODEL__ORIGINAL_ARTIFACT, null, msgs);
+			}
 			msgs = basicSetOriginalArtifact(newOriginalArtifact, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DERIVED_STATIC_MODEL__ORIGINAL_ARTIFACT, newOriginalArtifact,
+				newOriginalArtifact));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DERIVED_STATIC_MODEL__ORIGINAL_ARTIFACT, newOriginalArtifact, newOriginalArtifact));
 	}
 
 	/**
@@ -134,8 +152,13 @@ public class DerivedStaticModelImpl extends StaticModelBaseImpl implements Deriv
 		ElementChange oldChange = change;
 		change = newChange;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DERIVED_STATIC_MODEL__CHANGE, oldChange, newChange);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DERIVED_STATIC_MODEL__CHANGE, oldChange, newChange);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -148,15 +171,22 @@ public class DerivedStaticModelImpl extends StaticModelBaseImpl implements Deriv
 	public void setChange(ElementChange newChange) {
 		if (newChange != change) {
 			NotificationChain msgs = null;
-			if (change != null)
-				msgs = ((InternalEObject)change).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DERIVED_STATIC_MODEL__CHANGE, null, msgs);
-			if (newChange != null)
-				msgs = ((InternalEObject)newChange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DERIVED_STATIC_MODEL__CHANGE, null, msgs);
+			if (change != null) {
+				msgs = ((InternalEObject) change).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DERIVED_STATIC_MODEL__CHANGE, null, msgs);
+			}
+			if (newChange != null) {
+				msgs = ((InternalEObject) newChange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DERIVED_STATIC_MODEL__CHANGE, null, msgs);
+			}
 			msgs = basicSetChange(newChange, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DERIVED_STATIC_MODEL__CHANGE, newChange, newChange));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DERIVED_STATIC_MODEL__CHANGE, newChange, newChange));
 	}
 
 	/**
@@ -200,10 +230,10 @@ public class DerivedStaticModelImpl extends StaticModelBaseImpl implements Deriv
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DERIVED_STATIC_MODEL__ORIGINAL_ARTIFACT:
-				setOriginalArtifact((PackageRef)newValue);
+				setOriginalArtifact((PackageRef) newValue);
 				return;
 			case Mif2Package.DERIVED_STATIC_MODEL__CHANGE:
-				setChange((ElementChange)newValue);
+				setChange((ElementChange) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -218,10 +248,10 @@ public class DerivedStaticModelImpl extends StaticModelBaseImpl implements Deriv
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.DERIVED_STATIC_MODEL__ORIGINAL_ARTIFACT:
-				setOriginalArtifact((PackageRef)null);
+				setOriginalArtifact((PackageRef) null);
 				return;
 			case Mif2Package.DERIVED_STATIC_MODEL__CHANGE:
-				setChange((ElementChange)null);
+				setChange((ElementChange) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -243,4 +273,4 @@ public class DerivedStaticModelImpl extends StaticModelBaseImpl implements Deriv
 		return super.eIsSet(featureID);
 	}
 
-} //DerivedStaticModelImpl
+} // DerivedStaticModelImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -121,7 +125,8 @@ public class TermDefinitionImpl extends EObjectImpl implements TermDefinition {
 	 */
 	public EList<BusinessName> getTermTranslation() {
 		if (termTranslation == null) {
-			termTranslation = new EObjectContainmentEList<BusinessName>(BusinessName.class, this, Mif2Package.TERM_DEFINITION__TERM_TRANSLATION);
+			termTranslation = new EObjectContainmentEList<BusinessName>(
+				BusinessName.class, this, Mif2Package.TERM_DEFINITION__TERM_TRANSLATION);
 		}
 		return termTranslation;
 	}
@@ -133,7 +138,8 @@ public class TermDefinitionImpl extends EObjectImpl implements TermDefinition {
 	 */
 	public EList<ComplexMarkupWithLanguage> getDefinition() {
 		if (definition == null) {
-			definition = new EObjectContainmentEList<ComplexMarkupWithLanguage>(ComplexMarkupWithLanguage.class, this, Mif2Package.TERM_DEFINITION__DEFINITION);
+			definition = new EObjectContainmentEList<ComplexMarkupWithLanguage>(
+				ComplexMarkupWithLanguage.class, this, Mif2Package.TERM_DEFINITION__DEFINITION);
 		}
 		return definition;
 	}
@@ -167,8 +173,9 @@ public class TermDefinitionImpl extends EObjectImpl implements TermDefinition {
 	public void setTerm(String newTerm) {
 		String oldTerm = term;
 		term = newTerm;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TERM_DEFINITION__TERM, oldTerm, term));
+		}
 	}
 
 	/**
@@ -180,9 +187,9 @@ public class TermDefinitionImpl extends EObjectImpl implements TermDefinition {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.TERM_DEFINITION__TERM_TRANSLATION:
-				return ((InternalEList<?>)getTermTranslation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTermTranslation()).basicRemove(otherEnd, msgs);
 			case Mif2Package.TERM_DEFINITION__DEFINITION:
-				return ((InternalEList<?>)getDefinition()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDefinition()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -218,18 +225,18 @@ public class TermDefinitionImpl extends EObjectImpl implements TermDefinition {
 		switch (featureID) {
 			case Mif2Package.TERM_DEFINITION__TERM_TRANSLATION:
 				getTermTranslation().clear();
-				getTermTranslation().addAll((Collection<? extends BusinessName>)newValue);
+				getTermTranslation().addAll((Collection<? extends BusinessName>) newValue);
 				return;
 			case Mif2Package.TERM_DEFINITION__DEFINITION:
 				getDefinition().clear();
-				getDefinition().addAll((Collection<? extends ComplexMarkupWithLanguage>)newValue);
+				getDefinition().addAll((Collection<? extends ComplexMarkupWithLanguage>) newValue);
 				return;
 			case Mif2Package.TERM_DEFINITION__SEE_ALSO:
 				getSeeAlso().clear();
-				getSeeAlso().addAll((Collection<? extends String>)newValue);
+				getSeeAlso().addAll((Collection<? extends String>) newValue);
 				return;
 			case Mif2Package.TERM_DEFINITION__TERM:
-				setTerm((String)newValue);
+				setTerm((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -274,7 +281,9 @@ public class TermDefinitionImpl extends EObjectImpl implements TermDefinition {
 			case Mif2Package.TERM_DEFINITION__SEE_ALSO:
 				return seeAlso != null && !seeAlso.isEmpty();
 			case Mif2Package.TERM_DEFINITION__TERM:
-				return TERM_EDEFAULT == null ? term != null : !TERM_EDEFAULT.equals(term);
+				return TERM_EDEFAULT == null
+						? term != null
+						: !TERM_EDEFAULT.equals(term);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -286,7 +295,9 @@ public class TermDefinitionImpl extends EObjectImpl implements TermDefinition {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (seeAlso: ");
@@ -297,4 +308,4 @@ public class TermDefinitionImpl extends EObjectImpl implements TermDefinition {
 		return result.toString();
 	}
 
-} //TermDefinitionImpl
+} // TermDefinitionImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml;
 
 import java.util.Arrays;
@@ -917,46 +921,14 @@ public enum ObjectName implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ObjectName[] VALUES_ARRAY =
-		new ObjectName[] {
-			CONSTRUCTED_ELEMENT,
-			FOOTNOTE,
-			REQUIREMENT_REF,
-			EXTERNAL_SPEC_REF,
-			FIGURE_REF,
-			TABLE_REF,
-			ITEM_NAME,
-			ANNOTATION_REF,
-			ARTIFACT_GROUP_REF,
-			PACKAGE_REF,
-			DOMAIN_ANALYSIS_MODEL_REF,
-			DOMAIN_INSTANCE_EXAMPLE_REF,
-			GLOSSARY_REF,
-			GLOSSARY_TERM_REF,
-			STORYBOARD_REF,
-			FREEHAND_DOCUMENT_REF,
-			PUBLICATION_REF,
-			DATATYPE_MODEL_REF,
-			DATATYPE_REF,
-			PROPERTY_REF,
-			STATIC_MODEL_REF,
-			SUBJECT_AREA_REF,
-			CLASS_REF,
-			STATE_REF,
-			TRANSITION_REF,
-			ATTRIBUTE_REF,
-			ASSOCIATION_END_REF,
-			TRIGGER_EVENT_REF,
-			APPLICATION_ROLE_REF,
-			INTERACTION_REF,
-			VOCABULARY_MODEL_REF,
-			CONCEPT_DOMAIN_REF,
-			VOCABULARY_CODE_SYSTEM_REF,
-			VOCABULARY_CODE_REF,
-			VOCABULARY_VALUE_SET_REF,
-			TEST_SCENARIO_REF,
-			TEST_CASE_REF,
-		};
+	private static final ObjectName[] VALUES_ARRAY = new ObjectName[] {
+			CONSTRUCTED_ELEMENT, FOOTNOTE, REQUIREMENT_REF, EXTERNAL_SPEC_REF, FIGURE_REF, TABLE_REF, ITEM_NAME,
+			ANNOTATION_REF, ARTIFACT_GROUP_REF, PACKAGE_REF, DOMAIN_ANALYSIS_MODEL_REF, DOMAIN_INSTANCE_EXAMPLE_REF,
+			GLOSSARY_REF, GLOSSARY_TERM_REF, STORYBOARD_REF, FREEHAND_DOCUMENT_REF, PUBLICATION_REF,
+			DATATYPE_MODEL_REF, DATATYPE_REF, PROPERTY_REF, STATIC_MODEL_REF, SUBJECT_AREA_REF, CLASS_REF, STATE_REF,
+			TRANSITION_REF, ATTRIBUTE_REF, ASSOCIATION_END_REF, TRIGGER_EVENT_REF, APPLICATION_ROLE_REF,
+			INTERACTION_REF, VOCABULARY_MODEL_REF, CONCEPT_DOMAIN_REF, VOCABULARY_CODE_SYSTEM_REF, VOCABULARY_CODE_REF,
+			VOCABULARY_VALUE_SET_REF, TEST_SCENARIO_REF, TEST_CASE_REF, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Object Name</b></em>' enumerators.
@@ -1006,43 +978,80 @@ public enum ObjectName implements Enumerator {
 	 */
 	public static ObjectName get(int value) {
 		switch (value) {
-			case CONSTRUCTED_ELEMENT_VALUE: return CONSTRUCTED_ELEMENT;
-			case FOOTNOTE_VALUE: return FOOTNOTE;
-			case REQUIREMENT_REF_VALUE: return REQUIREMENT_REF;
-			case EXTERNAL_SPEC_REF_VALUE: return EXTERNAL_SPEC_REF;
-			case FIGURE_REF_VALUE: return FIGURE_REF;
-			case TABLE_REF_VALUE: return TABLE_REF;
-			case ITEM_NAME_VALUE: return ITEM_NAME;
-			case ANNOTATION_REF_VALUE: return ANNOTATION_REF;
-			case ARTIFACT_GROUP_REF_VALUE: return ARTIFACT_GROUP_REF;
-			case PACKAGE_REF_VALUE: return PACKAGE_REF;
-			case DOMAIN_ANALYSIS_MODEL_REF_VALUE: return DOMAIN_ANALYSIS_MODEL_REF;
-			case DOMAIN_INSTANCE_EXAMPLE_REF_VALUE: return DOMAIN_INSTANCE_EXAMPLE_REF;
-			case GLOSSARY_REF_VALUE: return GLOSSARY_REF;
-			case GLOSSARY_TERM_REF_VALUE: return GLOSSARY_TERM_REF;
-			case STORYBOARD_REF_VALUE: return STORYBOARD_REF;
-			case FREEHAND_DOCUMENT_REF_VALUE: return FREEHAND_DOCUMENT_REF;
-			case PUBLICATION_REF_VALUE: return PUBLICATION_REF;
-			case DATATYPE_MODEL_REF_VALUE: return DATATYPE_MODEL_REF;
-			case DATATYPE_REF_VALUE: return DATATYPE_REF;
-			case PROPERTY_REF_VALUE: return PROPERTY_REF;
-			case STATIC_MODEL_REF_VALUE: return STATIC_MODEL_REF;
-			case SUBJECT_AREA_REF_VALUE: return SUBJECT_AREA_REF;
-			case CLASS_REF_VALUE: return CLASS_REF;
-			case STATE_REF_VALUE: return STATE_REF;
-			case TRANSITION_REF_VALUE: return TRANSITION_REF;
-			case ATTRIBUTE_REF_VALUE: return ATTRIBUTE_REF;
-			case ASSOCIATION_END_REF_VALUE: return ASSOCIATION_END_REF;
-			case TRIGGER_EVENT_REF_VALUE: return TRIGGER_EVENT_REF;
-			case APPLICATION_ROLE_REF_VALUE: return APPLICATION_ROLE_REF;
-			case INTERACTION_REF_VALUE: return INTERACTION_REF;
-			case VOCABULARY_MODEL_REF_VALUE: return VOCABULARY_MODEL_REF;
-			case CONCEPT_DOMAIN_REF_VALUE: return CONCEPT_DOMAIN_REF;
-			case VOCABULARY_CODE_SYSTEM_REF_VALUE: return VOCABULARY_CODE_SYSTEM_REF;
-			case VOCABULARY_CODE_REF_VALUE: return VOCABULARY_CODE_REF;
-			case VOCABULARY_VALUE_SET_REF_VALUE: return VOCABULARY_VALUE_SET_REF;
-			case TEST_SCENARIO_REF_VALUE: return TEST_SCENARIO_REF;
-			case TEST_CASE_REF_VALUE: return TEST_CASE_REF;
+			case CONSTRUCTED_ELEMENT_VALUE:
+				return CONSTRUCTED_ELEMENT;
+			case FOOTNOTE_VALUE:
+				return FOOTNOTE;
+			case REQUIREMENT_REF_VALUE:
+				return REQUIREMENT_REF;
+			case EXTERNAL_SPEC_REF_VALUE:
+				return EXTERNAL_SPEC_REF;
+			case FIGURE_REF_VALUE:
+				return FIGURE_REF;
+			case TABLE_REF_VALUE:
+				return TABLE_REF;
+			case ITEM_NAME_VALUE:
+				return ITEM_NAME;
+			case ANNOTATION_REF_VALUE:
+				return ANNOTATION_REF;
+			case ARTIFACT_GROUP_REF_VALUE:
+				return ARTIFACT_GROUP_REF;
+			case PACKAGE_REF_VALUE:
+				return PACKAGE_REF;
+			case DOMAIN_ANALYSIS_MODEL_REF_VALUE:
+				return DOMAIN_ANALYSIS_MODEL_REF;
+			case DOMAIN_INSTANCE_EXAMPLE_REF_VALUE:
+				return DOMAIN_INSTANCE_EXAMPLE_REF;
+			case GLOSSARY_REF_VALUE:
+				return GLOSSARY_REF;
+			case GLOSSARY_TERM_REF_VALUE:
+				return GLOSSARY_TERM_REF;
+			case STORYBOARD_REF_VALUE:
+				return STORYBOARD_REF;
+			case FREEHAND_DOCUMENT_REF_VALUE:
+				return FREEHAND_DOCUMENT_REF;
+			case PUBLICATION_REF_VALUE:
+				return PUBLICATION_REF;
+			case DATATYPE_MODEL_REF_VALUE:
+				return DATATYPE_MODEL_REF;
+			case DATATYPE_REF_VALUE:
+				return DATATYPE_REF;
+			case PROPERTY_REF_VALUE:
+				return PROPERTY_REF;
+			case STATIC_MODEL_REF_VALUE:
+				return STATIC_MODEL_REF;
+			case SUBJECT_AREA_REF_VALUE:
+				return SUBJECT_AREA_REF;
+			case CLASS_REF_VALUE:
+				return CLASS_REF;
+			case STATE_REF_VALUE:
+				return STATE_REF;
+			case TRANSITION_REF_VALUE:
+				return TRANSITION_REF;
+			case ATTRIBUTE_REF_VALUE:
+				return ATTRIBUTE_REF;
+			case ASSOCIATION_END_REF_VALUE:
+				return ASSOCIATION_END_REF;
+			case TRIGGER_EVENT_REF_VALUE:
+				return TRIGGER_EVENT_REF;
+			case APPLICATION_ROLE_REF_VALUE:
+				return APPLICATION_ROLE_REF;
+			case INTERACTION_REF_VALUE:
+				return INTERACTION_REF;
+			case VOCABULARY_MODEL_REF_VALUE:
+				return VOCABULARY_MODEL_REF;
+			case CONCEPT_DOMAIN_REF_VALUE:
+				return CONCEPT_DOMAIN_REF;
+			case VOCABULARY_CODE_SYSTEM_REF_VALUE:
+				return VOCABULARY_CODE_SYSTEM_REF;
+			case VOCABULARY_CODE_REF_VALUE:
+				return VOCABULARY_CODE_REF;
+			case VOCABULARY_VALUE_SET_REF_VALUE:
+				return VOCABULARY_VALUE_SET_REF;
+			case TEST_SCENARIO_REF_VALUE:
+				return TEST_SCENARIO_REF;
+			case TEST_CASE_REF_VALUE:
+				return TEST_CASE_REF;
 		}
 		return null;
 	}
@@ -1086,7 +1095,7 @@ public enum ObjectName implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -1095,7 +1104,7 @@ public enum ObjectName implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -1104,7 +1113,7 @@ public enum ObjectName implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -1117,5 +1126,5 @@ public enum ObjectName implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //ObjectName
+
+} // ObjectName

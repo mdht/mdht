@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -28,7 +32,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.StaticPackageDiagramGraphicInformat
 import org.openhealthtools.mdht.emf.hl7.mif2.SubjectAreaAnnotations;
 import org.openhealthtools.mdht.emf.hl7.mif2.SubjectAreaPackage;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Img;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -146,8 +149,14 @@ public class SubjectAreaPackageImpl extends PackageBaseImpl implements SubjectAr
 		ApprovalInfo oldApprovalInfo = approvalInfo;
 		approvalInfo = newApprovalInfo;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.SUBJECT_AREA_PACKAGE__APPROVAL_INFO, oldApprovalInfo, newApprovalInfo);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUBJECT_AREA_PACKAGE__APPROVAL_INFO, oldApprovalInfo,
+				newApprovalInfo);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -160,15 +169,23 @@ public class SubjectAreaPackageImpl extends PackageBaseImpl implements SubjectAr
 	public void setApprovalInfo(ApprovalInfo newApprovalInfo) {
 		if (newApprovalInfo != approvalInfo) {
 			NotificationChain msgs = null;
-			if (approvalInfo != null)
-				msgs = ((InternalEObject)approvalInfo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUBJECT_AREA_PACKAGE__APPROVAL_INFO, null, msgs);
-			if (newApprovalInfo != null)
-				msgs = ((InternalEObject)newApprovalInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUBJECT_AREA_PACKAGE__APPROVAL_INFO, null, msgs);
+			if (approvalInfo != null) {
+				msgs = ((InternalEObject) approvalInfo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUBJECT_AREA_PACKAGE__APPROVAL_INFO, null, msgs);
+			}
+			if (newApprovalInfo != null) {
+				msgs = ((InternalEObject) newApprovalInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUBJECT_AREA_PACKAGE__APPROVAL_INFO, null, msgs);
+			}
 			msgs = basicSetApprovalInfo(newApprovalInfo, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUBJECT_AREA_PACKAGE__APPROVAL_INFO, newApprovalInfo,
+				newApprovalInfo));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUBJECT_AREA_PACKAGE__APPROVAL_INFO, newApprovalInfo, newApprovalInfo));
 	}
 
 	/**
@@ -178,7 +195,9 @@ public class SubjectAreaPackageImpl extends PackageBaseImpl implements SubjectAr
 	 */
 	public EList<StaticPackageDiagramGraphicInformation> getGraphicRepresentation() {
 		if (graphicRepresentation == null) {
-			graphicRepresentation = new EObjectContainmentEList<StaticPackageDiagramGraphicInformation>(StaticPackageDiagramGraphicInformation.class, this, Mif2Package.SUBJECT_AREA_PACKAGE__GRAPHIC_REPRESENTATION);
+			graphicRepresentation = new EObjectContainmentEList<StaticPackageDiagramGraphicInformation>(
+				StaticPackageDiagramGraphicInformation.class, this,
+				Mif2Package.SUBJECT_AREA_PACKAGE__GRAPHIC_REPRESENTATION);
 		}
 		return graphicRepresentation;
 	}
@@ -201,8 +220,13 @@ public class SubjectAreaPackageImpl extends PackageBaseImpl implements SubjectAr
 		Img oldFigure = figure;
 		figure = newFigure;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.SUBJECT_AREA_PACKAGE__FIGURE, oldFigure, newFigure);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUBJECT_AREA_PACKAGE__FIGURE, oldFigure, newFigure);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -215,15 +239,22 @@ public class SubjectAreaPackageImpl extends PackageBaseImpl implements SubjectAr
 	public void setFigure(Img newFigure) {
 		if (newFigure != figure) {
 			NotificationChain msgs = null;
-			if (figure != null)
-				msgs = ((InternalEObject)figure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUBJECT_AREA_PACKAGE__FIGURE, null, msgs);
-			if (newFigure != null)
-				msgs = ((InternalEObject)newFigure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUBJECT_AREA_PACKAGE__FIGURE, null, msgs);
+			if (figure != null) {
+				msgs = ((InternalEObject) figure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUBJECT_AREA_PACKAGE__FIGURE, null, msgs);
+			}
+			if (newFigure != null) {
+				msgs = ((InternalEObject) newFigure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUBJECT_AREA_PACKAGE__FIGURE, null, msgs);
+			}
 			msgs = basicSetFigure(newFigure, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUBJECT_AREA_PACKAGE__FIGURE, newFigure, newFigure));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUBJECT_AREA_PACKAGE__FIGURE, newFigure, newFigure));
 	}
 
 	/**
@@ -244,8 +275,13 @@ public class SubjectAreaPackageImpl extends PackageBaseImpl implements SubjectAr
 		SubjectAreaAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.SUBJECT_AREA_PACKAGE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUBJECT_AREA_PACKAGE__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -258,15 +294,22 @@ public class SubjectAreaPackageImpl extends PackageBaseImpl implements SubjectAr
 	public void setAnnotations(SubjectAreaAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUBJECT_AREA_PACKAGE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUBJECT_AREA_PACKAGE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUBJECT_AREA_PACKAGE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUBJECT_AREA_PACKAGE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUBJECT_AREA_PACKAGE__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUBJECT_AREA_PACKAGE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -276,7 +319,8 @@ public class SubjectAreaPackageImpl extends PackageBaseImpl implements SubjectAr
 	 */
 	public EList<SubjectAreaPackage> getSubjectAreaPackage() {
 		if (subjectAreaPackage == null) {
-			subjectAreaPackage = new EObjectContainmentEList<SubjectAreaPackage>(SubjectAreaPackage.class, this, Mif2Package.SUBJECT_AREA_PACKAGE__SUBJECT_AREA_PACKAGE);
+			subjectAreaPackage = new EObjectContainmentEList<SubjectAreaPackage>(
+				SubjectAreaPackage.class, this, Mif2Package.SUBJECT_AREA_PACKAGE__SUBJECT_AREA_PACKAGE);
 		}
 		return subjectAreaPackage;
 	}
@@ -288,7 +332,8 @@ public class SubjectAreaPackageImpl extends PackageBaseImpl implements SubjectAr
 	 */
 	public EList<LocalClassRef> getContainedClass() {
 		if (containedClass == null) {
-			containedClass = new EObjectContainmentEList<LocalClassRef>(LocalClassRef.class, this, Mif2Package.SUBJECT_AREA_PACKAGE__CONTAINED_CLASS);
+			containedClass = new EObjectContainmentEList<LocalClassRef>(
+				LocalClassRef.class, this, Mif2Package.SUBJECT_AREA_PACKAGE__CONTAINED_CLASS);
 		}
 		return containedClass;
 	}
@@ -304,15 +349,15 @@ public class SubjectAreaPackageImpl extends PackageBaseImpl implements SubjectAr
 			case Mif2Package.SUBJECT_AREA_PACKAGE__APPROVAL_INFO:
 				return basicSetApprovalInfo(null, msgs);
 			case Mif2Package.SUBJECT_AREA_PACKAGE__GRAPHIC_REPRESENTATION:
-				return ((InternalEList<?>)getGraphicRepresentation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getGraphicRepresentation()).basicRemove(otherEnd, msgs);
 			case Mif2Package.SUBJECT_AREA_PACKAGE__FIGURE:
 				return basicSetFigure(null, msgs);
 			case Mif2Package.SUBJECT_AREA_PACKAGE__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 			case Mif2Package.SUBJECT_AREA_PACKAGE__SUBJECT_AREA_PACKAGE:
-				return ((InternalEList<?>)getSubjectAreaPackage()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSubjectAreaPackage()).basicRemove(otherEnd, msgs);
 			case Mif2Package.SUBJECT_AREA_PACKAGE__CONTAINED_CLASS:
-				return ((InternalEList<?>)getContainedClass()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getContainedClass()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -351,25 +396,26 @@ public class SubjectAreaPackageImpl extends PackageBaseImpl implements SubjectAr
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.SUBJECT_AREA_PACKAGE__APPROVAL_INFO:
-				setApprovalInfo((ApprovalInfo)newValue);
+				setApprovalInfo((ApprovalInfo) newValue);
 				return;
 			case Mif2Package.SUBJECT_AREA_PACKAGE__GRAPHIC_REPRESENTATION:
 				getGraphicRepresentation().clear();
-				getGraphicRepresentation().addAll((Collection<? extends StaticPackageDiagramGraphicInformation>)newValue);
+				getGraphicRepresentation().addAll(
+					(Collection<? extends StaticPackageDiagramGraphicInformation>) newValue);
 				return;
 			case Mif2Package.SUBJECT_AREA_PACKAGE__FIGURE:
-				setFigure((Img)newValue);
+				setFigure((Img) newValue);
 				return;
 			case Mif2Package.SUBJECT_AREA_PACKAGE__ANNOTATIONS:
-				setAnnotations((SubjectAreaAnnotations)newValue);
+				setAnnotations((SubjectAreaAnnotations) newValue);
 				return;
 			case Mif2Package.SUBJECT_AREA_PACKAGE__SUBJECT_AREA_PACKAGE:
 				getSubjectAreaPackage().clear();
-				getSubjectAreaPackage().addAll((Collection<? extends SubjectAreaPackage>)newValue);
+				getSubjectAreaPackage().addAll((Collection<? extends SubjectAreaPackage>) newValue);
 				return;
 			case Mif2Package.SUBJECT_AREA_PACKAGE__CONTAINED_CLASS:
 				getContainedClass().clear();
-				getContainedClass().addAll((Collection<? extends LocalClassRef>)newValue);
+				getContainedClass().addAll((Collection<? extends LocalClassRef>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -384,16 +430,16 @@ public class SubjectAreaPackageImpl extends PackageBaseImpl implements SubjectAr
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.SUBJECT_AREA_PACKAGE__APPROVAL_INFO:
-				setApprovalInfo((ApprovalInfo)null);
+				setApprovalInfo((ApprovalInfo) null);
 				return;
 			case Mif2Package.SUBJECT_AREA_PACKAGE__GRAPHIC_REPRESENTATION:
 				getGraphicRepresentation().clear();
 				return;
 			case Mif2Package.SUBJECT_AREA_PACKAGE__FIGURE:
-				setFigure((Img)null);
+				setFigure((Img) null);
 				return;
 			case Mif2Package.SUBJECT_AREA_PACKAGE__ANNOTATIONS:
-				setAnnotations((SubjectAreaAnnotations)null);
+				setAnnotations((SubjectAreaAnnotations) null);
 				return;
 			case Mif2Package.SUBJECT_AREA_PACKAGE__SUBJECT_AREA_PACKAGE:
 				getSubjectAreaPackage().clear();
@@ -429,4 +475,4 @@ public class SubjectAreaPackageImpl extends PackageBaseImpl implements SubjectAr
 		return super.eIsSet(featureID);
 	}
 
-} //SubjectAreaPackageImpl
+} // SubjectAreaPackageImpl

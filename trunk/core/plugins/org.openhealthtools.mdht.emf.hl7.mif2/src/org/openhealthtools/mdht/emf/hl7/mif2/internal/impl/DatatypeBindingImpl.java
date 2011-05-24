@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -98,8 +102,14 @@ public class DatatypeBindingImpl extends EObjectImpl implements DatatypeBinding 
 		DatatypeRef oldTargetDatatype = targetDatatype;
 		targetDatatype = newTargetDatatype;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_BINDING__TARGET_DATATYPE, oldTargetDatatype, newTargetDatatype);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_BINDING__TARGET_DATATYPE, oldTargetDatatype,
+				newTargetDatatype);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -112,15 +122,23 @@ public class DatatypeBindingImpl extends EObjectImpl implements DatatypeBinding 
 	public void setTargetDatatype(DatatypeRef newTargetDatatype) {
 		if (newTargetDatatype != targetDatatype) {
 			NotificationChain msgs = null;
-			if (targetDatatype != null)
-				msgs = ((InternalEObject)targetDatatype).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_BINDING__TARGET_DATATYPE, null, msgs);
-			if (newTargetDatatype != null)
-				msgs = ((InternalEObject)newTargetDatatype).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_BINDING__TARGET_DATATYPE, null, msgs);
+			if (targetDatatype != null) {
+				msgs = ((InternalEObject) targetDatatype).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_BINDING__TARGET_DATATYPE, null, msgs);
+			}
+			if (newTargetDatatype != null) {
+				msgs = ((InternalEObject) newTargetDatatype).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_BINDING__TARGET_DATATYPE, null, msgs);
+			}
 			msgs = basicSetTargetDatatype(newTargetDatatype, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_BINDING__TARGET_DATATYPE, newTargetDatatype,
+				newTargetDatatype));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_BINDING__TARGET_DATATYPE, newTargetDatatype, newTargetDatatype));
 	}
 
 	/**
@@ -130,7 +148,8 @@ public class DatatypeBindingImpl extends EObjectImpl implements DatatypeBinding 
 	 */
 	public EList<DatatypeRef> getArgumentDatatype() {
 		if (argumentDatatype == null) {
-			argumentDatatype = new EObjectContainmentEList<DatatypeRef>(DatatypeRef.class, this, Mif2Package.DATATYPE_BINDING__ARGUMENT_DATATYPE);
+			argumentDatatype = new EObjectContainmentEList<DatatypeRef>(
+				DatatypeRef.class, this, Mif2Package.DATATYPE_BINDING__ARGUMENT_DATATYPE);
 		}
 		return argumentDatatype;
 	}
@@ -146,7 +165,7 @@ public class DatatypeBindingImpl extends EObjectImpl implements DatatypeBinding 
 			case Mif2Package.DATATYPE_BINDING__TARGET_DATATYPE:
 				return basicSetTargetDatatype(null, msgs);
 			case Mif2Package.DATATYPE_BINDING__ARGUMENT_DATATYPE:
-				return ((InternalEList<?>)getArgumentDatatype()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getArgumentDatatype()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -177,11 +196,11 @@ public class DatatypeBindingImpl extends EObjectImpl implements DatatypeBinding 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DATATYPE_BINDING__TARGET_DATATYPE:
-				setTargetDatatype((DatatypeRef)newValue);
+				setTargetDatatype((DatatypeRef) newValue);
 				return;
 			case Mif2Package.DATATYPE_BINDING__ARGUMENT_DATATYPE:
 				getArgumentDatatype().clear();
-				getArgumentDatatype().addAll((Collection<? extends DatatypeRef>)newValue);
+				getArgumentDatatype().addAll((Collection<? extends DatatypeRef>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -196,7 +215,7 @@ public class DatatypeBindingImpl extends EObjectImpl implements DatatypeBinding 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.DATATYPE_BINDING__TARGET_DATATYPE:
-				setTargetDatatype((DatatypeRef)null);
+				setTargetDatatype((DatatypeRef) null);
 				return;
 			case Mif2Package.DATATYPE_BINDING__ARGUMENT_DATATYPE:
 				getArgumentDatatype().clear();
@@ -221,4 +240,4 @@ public class DatatypeBindingImpl extends EObjectImpl implements DatatypeBinding 
 		return super.eIsSet(featureID);
 	}
 
-} //DatatypeBindingImpl
+} // DatatypeBindingImpl

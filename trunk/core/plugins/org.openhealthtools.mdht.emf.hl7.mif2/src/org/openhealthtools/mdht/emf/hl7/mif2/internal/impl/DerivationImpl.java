@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -18,7 +22,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.Derivation;
 import org.openhealthtools.mdht.emf.hl7.mif2.DerivationRelationshipKind;
 import org.openhealthtools.mdht.emf.hl7.mif2.Mif2Package;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Flow;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -162,8 +165,13 @@ public abstract class DerivationImpl extends DependencyImpl implements Derivatio
 		Flow oldReason = reason;
 		reason = newReason;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DERIVATION__REASON, oldReason, newReason);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DERIVATION__REASON, oldReason, newReason);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -176,15 +184,21 @@ public abstract class DerivationImpl extends DependencyImpl implements Derivatio
 	public void setReason(Flow newReason) {
 		if (newReason != reason) {
 			NotificationChain msgs = null;
-			if (reason != null)
-				msgs = ((InternalEObject)reason).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DERIVATION__REASON, null, msgs);
-			if (newReason != null)
-				msgs = ((InternalEObject)newReason).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DERIVATION__REASON, null, msgs);
+			if (reason != null) {
+				msgs = ((InternalEObject) reason).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DERIVATION__REASON, null, msgs);
+			}
+			if (newReason != null) {
+				msgs = ((InternalEObject) newReason).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DERIVATION__REASON, null, msgs);
+			}
 			msgs = basicSetReason(newReason, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DERIVATION__REASON, newReason, newReason));
+		}
 	}
 
 	/**
@@ -204,8 +218,11 @@ public abstract class DerivationImpl extends DependencyImpl implements Derivatio
 	public void setAnnotationsReviewedBy(String newAnnotationsReviewedBy) {
 		String oldAnnotationsReviewedBy = annotationsReviewedBy;
 		annotationsReviewedBy = newAnnotationsReviewedBy;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DERIVATION__ANNOTATIONS_REVIEWED_BY, oldAnnotationsReviewedBy, annotationsReviewedBy));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DERIVATION__ANNOTATIONS_REVIEWED_BY, oldAnnotationsReviewedBy,
+				annotationsReviewedBy));
+		}
 	}
 
 	/**
@@ -227,8 +244,11 @@ public abstract class DerivationImpl extends DependencyImpl implements Derivatio
 		areAnnotationsReviewed = newAreAnnotationsReviewed;
 		boolean oldAreAnnotationsReviewedESet = areAnnotationsReviewedESet;
 		areAnnotationsReviewedESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DERIVATION__ARE_ANNOTATIONS_REVIEWED, oldAreAnnotationsReviewed, areAnnotationsReviewed, !oldAreAnnotationsReviewedESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DERIVATION__ARE_ANNOTATIONS_REVIEWED, oldAreAnnotationsReviewed,
+				areAnnotationsReviewed, !oldAreAnnotationsReviewedESet));
+		}
 	}
 
 	/**
@@ -241,8 +261,11 @@ public abstract class DerivationImpl extends DependencyImpl implements Derivatio
 		boolean oldAreAnnotationsReviewedESet = areAnnotationsReviewedESet;
 		areAnnotationsReviewed = ARE_ANNOTATIONS_REVIEWED_EDEFAULT;
 		areAnnotationsReviewedESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.DERIVATION__ARE_ANNOTATIONS_REVIEWED, oldAreAnnotationsReviewed, ARE_ANNOTATIONS_REVIEWED_EDEFAULT, oldAreAnnotationsReviewedESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.DERIVATION__ARE_ANNOTATIONS_REVIEWED, oldAreAnnotationsReviewed,
+				ARE_ANNOTATIONS_REVIEWED_EDEFAULT, oldAreAnnotationsReviewedESet));
+		}
 	}
 
 	/**
@@ -270,11 +293,16 @@ public abstract class DerivationImpl extends DependencyImpl implements Derivatio
 	 */
 	public void setRelationship(DerivationRelationshipKind newRelationship) {
 		DerivationRelationshipKind oldRelationship = relationship;
-		relationship = newRelationship == null ? RELATIONSHIP_EDEFAULT : newRelationship;
+		relationship = newRelationship == null
+				? RELATIONSHIP_EDEFAULT
+				: newRelationship;
 		boolean oldRelationshipESet = relationshipESet;
 		relationshipESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DERIVATION__RELATIONSHIP, oldRelationship, relationship, !oldRelationshipESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DERIVATION__RELATIONSHIP, oldRelationship, relationship,
+				!oldRelationshipESet));
+		}
 	}
 
 	/**
@@ -287,8 +315,11 @@ public abstract class DerivationImpl extends DependencyImpl implements Derivatio
 		boolean oldRelationshipESet = relationshipESet;
 		relationship = RELATIONSHIP_EDEFAULT;
 		relationshipESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.DERIVATION__RELATIONSHIP, oldRelationship, RELATIONSHIP_EDEFAULT, oldRelationshipESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.DERIVATION__RELATIONSHIP, oldRelationship, RELATIONSHIP_EDEFAULT,
+				oldRelationshipESet));
+		}
 	}
 
 	/**
@@ -327,7 +358,9 @@ public abstract class DerivationImpl extends DependencyImpl implements Derivatio
 			case Mif2Package.DERIVATION__ANNOTATIONS_REVIEWED_BY:
 				return getAnnotationsReviewedBy();
 			case Mif2Package.DERIVATION__ARE_ANNOTATIONS_REVIEWED:
-				return isAreAnnotationsReviewed() ? Boolean.TRUE : Boolean.FALSE;
+				return isAreAnnotationsReviewed()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.DERIVATION__RELATIONSHIP:
 				return getRelationship();
 		}
@@ -343,16 +376,16 @@ public abstract class DerivationImpl extends DependencyImpl implements Derivatio
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DERIVATION__REASON:
-				setReason((Flow)newValue);
+				setReason((Flow) newValue);
 				return;
 			case Mif2Package.DERIVATION__ANNOTATIONS_REVIEWED_BY:
-				setAnnotationsReviewedBy((String)newValue);
+				setAnnotationsReviewedBy((String) newValue);
 				return;
 			case Mif2Package.DERIVATION__ARE_ANNOTATIONS_REVIEWED:
-				setAreAnnotationsReviewed(((Boolean)newValue).booleanValue());
+				setAreAnnotationsReviewed(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.DERIVATION__RELATIONSHIP:
-				setRelationship((DerivationRelationshipKind)newValue);
+				setRelationship((DerivationRelationshipKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -367,7 +400,7 @@ public abstract class DerivationImpl extends DependencyImpl implements Derivatio
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.DERIVATION__REASON:
-				setReason((Flow)null);
+				setReason((Flow) null);
 				return;
 			case Mif2Package.DERIVATION__ANNOTATIONS_REVIEWED_BY:
 				setAnnotationsReviewedBy(ANNOTATIONS_REVIEWED_BY_EDEFAULT);
@@ -393,7 +426,9 @@ public abstract class DerivationImpl extends DependencyImpl implements Derivatio
 			case Mif2Package.DERIVATION__REASON:
 				return reason != null;
 			case Mif2Package.DERIVATION__ANNOTATIONS_REVIEWED_BY:
-				return ANNOTATIONS_REVIEWED_BY_EDEFAULT == null ? annotationsReviewedBy != null : !ANNOTATIONS_REVIEWED_BY_EDEFAULT.equals(annotationsReviewedBy);
+				return ANNOTATIONS_REVIEWED_BY_EDEFAULT == null
+						? annotationsReviewedBy != null
+						: !ANNOTATIONS_REVIEWED_BY_EDEFAULT.equals(annotationsReviewedBy);
 			case Mif2Package.DERIVATION__ARE_ANNOTATIONS_REVIEWED:
 				return isSetAreAnnotationsReviewed();
 			case Mif2Package.DERIVATION__RELATIONSHIP:
@@ -409,17 +444,27 @@ public abstract class DerivationImpl extends DependencyImpl implements Derivatio
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (annotationsReviewedBy: ");
 		result.append(annotationsReviewedBy);
 		result.append(", areAnnotationsReviewed: ");
-		if (areAnnotationsReviewedESet) result.append(areAnnotationsReviewed); else result.append("<unset>");
+		if (areAnnotationsReviewedESet) {
+			result.append(areAnnotationsReviewed);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", relationship: ");
-		if (relationshipESet) result.append(relationship); else result.append("<unset>");
+		if (relationshipESet) {
+			result.append(relationship);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //DerivationImpl
+} // DerivationImpl

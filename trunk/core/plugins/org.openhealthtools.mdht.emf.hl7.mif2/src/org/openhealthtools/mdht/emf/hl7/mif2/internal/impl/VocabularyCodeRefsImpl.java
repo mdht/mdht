@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -74,7 +78,8 @@ public class VocabularyCodeRefsImpl extends EObjectImpl implements VocabularyCod
 	 */
 	public EList<VocabularyCodeRef> getCode() {
 		if (code == null) {
-			code = new EObjectContainmentEList<VocabularyCodeRef>(VocabularyCodeRef.class, this, Mif2Package.VOCABULARY_CODE_REFS__CODE);
+			code = new EObjectContainmentEList<VocabularyCodeRef>(
+				VocabularyCodeRef.class, this, Mif2Package.VOCABULARY_CODE_REFS__CODE);
 		}
 		return code;
 	}
@@ -88,7 +93,7 @@ public class VocabularyCodeRefsImpl extends EObjectImpl implements VocabularyCod
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.VOCABULARY_CODE_REFS__CODE:
-				return ((InternalEList<?>)getCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCode()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -118,7 +123,7 @@ public class VocabularyCodeRefsImpl extends EObjectImpl implements VocabularyCod
 		switch (featureID) {
 			case Mif2Package.VOCABULARY_CODE_REFS__CODE:
 				getCode().clear();
-				getCode().addAll((Collection<? extends VocabularyCodeRef>)newValue);
+				getCode().addAll((Collection<? extends VocabularyCodeRef>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -153,4 +158,4 @@ public class VocabularyCodeRefsImpl extends EObjectImpl implements VocabularyCod
 		return super.eIsSet(featureID);
 	}
 
-} //VocabularyCodeRefsImpl
+} // VocabularyCodeRefsImpl

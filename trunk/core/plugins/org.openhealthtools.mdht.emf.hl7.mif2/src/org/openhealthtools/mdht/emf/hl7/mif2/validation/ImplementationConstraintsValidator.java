@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import org.eclipse.emf.common.util.EList;
@@ -28,11 +32,18 @@ public interface ImplementationConstraintsValidator {
 	boolean validate();
 
 	boolean validateSupportedReleases(EList<ReleaseList> value);
+
 	boolean validateContext(FeatureMap value);
+
 	boolean validateRealmNamespace(EList<RealmElement> value);
+
 	boolean validateSupportedITS(EList<PackageRef> value);
+
 	boolean validateAdditionalDatatypeModel(EList<DatatypeModelLibrary> value);
+
 	boolean validateDatatypeLimitation(EList<DatatypeLimitation> value);
+
 	boolean validateAdditionalVocabularyModel(EList<VocabularyModel> value);
+
 	boolean validateVocabularyLimitation(EList<VocabularyLimitation> value);
 }

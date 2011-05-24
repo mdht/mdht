@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import java.math.BigInteger;
@@ -29,19 +33,34 @@ public interface AssociationEndBaseValidator {
 	boolean validate();
 
 	boolean validateBusinessName(EList<BusinessName> value);
+
 	boolean validateAnnotations(AssociationEndAnnotations value);
+
 	boolean validateDerivedFrom(EList<AssociationEndDerivation> value);
+
 	boolean validateChoiceItem(EList<AssociationEndSpecialization> value);
+
 	boolean validateConformance(ConformanceKind value);
+
 	boolean validateExtensionOID(String value);
+
 	boolean validateIsMandatory(boolean value);
+
 	boolean validateMaximumMultiplicity(Object value);
+
 	boolean validateMaximumRecursionDepth(BigInteger value);
+
 	boolean validateMinimumMultiplicity(BigInteger value);
+
 	boolean validateName(String value);
+
 	boolean validateNameLocked(boolean value);
+
 	boolean validateReferenceHistory(boolean value);
+
 	boolean validateSortKey(String value);
+
 	boolean validateUpdateModeDefault(UpdateModeKind value);
+
 	boolean validateUpdateModesAllowed(List<UpdateModeKind> value);
 }

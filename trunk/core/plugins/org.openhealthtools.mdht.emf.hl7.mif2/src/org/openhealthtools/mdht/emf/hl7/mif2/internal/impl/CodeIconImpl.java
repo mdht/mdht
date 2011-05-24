@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -111,8 +115,13 @@ public class CodeIconImpl extends EObjectImpl implements CodeIcon {
 		EObject oldContent = content;
 		content = newContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_ICON__CONTENT, oldContent, newContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_ICON__CONTENT, oldContent, newContent);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -125,15 +134,22 @@ public class CodeIconImpl extends EObjectImpl implements CodeIcon {
 	public void setContent(EObject newContent) {
 		if (newContent != content) {
 			NotificationChain msgs = null;
-			if (content != null)
-				msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_ICON__CONTENT, null, msgs);
-			if (newContent != null)
-				msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_ICON__CONTENT, null, msgs);
+			if (content != null) {
+				msgs = ((InternalEObject) content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_ICON__CONTENT, null, msgs);
+			}
+			if (newContent != null) {
+				msgs = ((InternalEObject) newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_ICON__CONTENT, null, msgs);
+			}
 			msgs = basicSetContent(newContent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_ICON__CONTENT, newContent, newContent));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_ICON__CONTENT, newContent, newContent));
 	}
 
 	/**
@@ -152,11 +168,15 @@ public class CodeIconImpl extends EObjectImpl implements CodeIcon {
 	 */
 	public void setType(IconFormatKind newType) {
 		IconFormatKind oldType = type;
-		type = newType == null ? TYPE_EDEFAULT : newType;
+		type = newType == null
+				? TYPE_EDEFAULT
+				: newType;
 		boolean oldTypeESet = typeESet;
 		typeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_ICON__TYPE, oldType, type, !oldTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_ICON__TYPE, oldType, type, !oldTypeESet));
+		}
 	}
 
 	/**
@@ -169,8 +189,10 @@ public class CodeIconImpl extends EObjectImpl implements CodeIcon {
 		boolean oldTypeESet = typeESet;
 		type = TYPE_EDEFAULT;
 		typeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CODE_ICON__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CODE_ICON__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+		}
 	}
 
 	/**
@@ -221,10 +243,10 @@ public class CodeIconImpl extends EObjectImpl implements CodeIcon {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CODE_ICON__CONTENT:
-				setContent((EObject)newValue);
+				setContent((EObject) newValue);
 				return;
 			case Mif2Package.CODE_ICON__TYPE:
-				setType((IconFormatKind)newValue);
+				setType((IconFormatKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,7 +261,7 @@ public class CodeIconImpl extends EObjectImpl implements CodeIcon {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CODE_ICON__CONTENT:
-				setContent((EObject)null);
+				setContent((EObject) null);
 				return;
 			case Mif2Package.CODE_ICON__TYPE:
 				unsetType();
@@ -271,13 +293,19 @@ public class CodeIconImpl extends EObjectImpl implements CodeIcon {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (type: ");
-		if (typeESet) result.append(type); else result.append("<unset>");
+		if (typeESet) {
+			result.append(type);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //CodeIconImpl
+} // CodeIconImpl

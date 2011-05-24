@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigInteger;
@@ -172,8 +176,9 @@ public class GroupVoteImpl extends EObjectImpl implements GroupVote {
 	public void setAbstain(BigInteger newAbstain) {
 		BigInteger oldAbstain = abstain;
 		abstain = newAbstain;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GROUP_VOTE__ABSTAIN, oldAbstain, abstain));
+		}
 	}
 
 	/**
@@ -193,8 +198,10 @@ public class GroupVoteImpl extends EObjectImpl implements GroupVote {
 	public void setInFavour(BigInteger newInFavour) {
 		BigInteger oldInFavour = inFavour;
 		inFavour = newInFavour;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GROUP_VOTE__IN_FAVOUR, oldInFavour, inFavour));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GROUP_VOTE__IN_FAVOUR, oldInFavour, inFavour));
+		}
 	}
 
 	/**
@@ -214,8 +221,10 @@ public class GroupVoteImpl extends EObjectImpl implements GroupVote {
 	public void setMotionBy(String newMotionBy) {
 		String oldMotionBy = motionBy;
 		motionBy = newMotionBy;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GROUP_VOTE__MOTION_BY, oldMotionBy, motionBy));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GROUP_VOTE__MOTION_BY, oldMotionBy, motionBy));
+		}
 	}
 
 	/**
@@ -235,8 +244,9 @@ public class GroupVoteImpl extends EObjectImpl implements GroupVote {
 	public void setOpposed(BigInteger newOpposed) {
 		BigInteger oldOpposed = opposed;
 		opposed = newOpposed;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GROUP_VOTE__OPPOSED, oldOpposed, opposed));
+		}
 	}
 
 	/**
@@ -256,8 +266,10 @@ public class GroupVoteImpl extends EObjectImpl implements GroupVote {
 	public void setSecondedBy(String newSecondedBy) {
 		String oldSecondedBy = secondedBy;
 		secondedBy = newSecondedBy;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GROUP_VOTE__SECONDED_BY, oldSecondedBy, secondedBy));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GROUP_VOTE__SECONDED_BY, oldSecondedBy, secondedBy));
+		}
 	}
 
 	/**
@@ -291,19 +303,19 @@ public class GroupVoteImpl extends EObjectImpl implements GroupVote {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.GROUP_VOTE__ABSTAIN:
-				setAbstain((BigInteger)newValue);
+				setAbstain((BigInteger) newValue);
 				return;
 			case Mif2Package.GROUP_VOTE__IN_FAVOUR:
-				setInFavour((BigInteger)newValue);
+				setInFavour((BigInteger) newValue);
 				return;
 			case Mif2Package.GROUP_VOTE__MOTION_BY:
-				setMotionBy((String)newValue);
+				setMotionBy((String) newValue);
 				return;
 			case Mif2Package.GROUP_VOTE__OPPOSED:
-				setOpposed((BigInteger)newValue);
+				setOpposed((BigInteger) newValue);
 				return;
 			case Mif2Package.GROUP_VOTE__SECONDED_BY:
-				setSecondedBy((String)newValue);
+				setSecondedBy((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -345,15 +357,25 @@ public class GroupVoteImpl extends EObjectImpl implements GroupVote {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.GROUP_VOTE__ABSTAIN:
-				return ABSTAIN_EDEFAULT == null ? abstain != null : !ABSTAIN_EDEFAULT.equals(abstain);
+				return ABSTAIN_EDEFAULT == null
+						? abstain != null
+						: !ABSTAIN_EDEFAULT.equals(abstain);
 			case Mif2Package.GROUP_VOTE__IN_FAVOUR:
-				return IN_FAVOUR_EDEFAULT == null ? inFavour != null : !IN_FAVOUR_EDEFAULT.equals(inFavour);
+				return IN_FAVOUR_EDEFAULT == null
+						? inFavour != null
+						: !IN_FAVOUR_EDEFAULT.equals(inFavour);
 			case Mif2Package.GROUP_VOTE__MOTION_BY:
-				return MOTION_BY_EDEFAULT == null ? motionBy != null : !MOTION_BY_EDEFAULT.equals(motionBy);
+				return MOTION_BY_EDEFAULT == null
+						? motionBy != null
+						: !MOTION_BY_EDEFAULT.equals(motionBy);
 			case Mif2Package.GROUP_VOTE__OPPOSED:
-				return OPPOSED_EDEFAULT == null ? opposed != null : !OPPOSED_EDEFAULT.equals(opposed);
+				return OPPOSED_EDEFAULT == null
+						? opposed != null
+						: !OPPOSED_EDEFAULT.equals(opposed);
 			case Mif2Package.GROUP_VOTE__SECONDED_BY:
-				return SECONDED_BY_EDEFAULT == null ? secondedBy != null : !SECONDED_BY_EDEFAULT.equals(secondedBy);
+				return SECONDED_BY_EDEFAULT == null
+						? secondedBy != null
+						: !SECONDED_BY_EDEFAULT.equals(secondedBy);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -365,7 +387,9 @@ public class GroupVoteImpl extends EObjectImpl implements GroupVote {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (abstain: ");
@@ -382,4 +406,4 @@ public class GroupVoteImpl extends EObjectImpl implements GroupVote {
 		return result.toString();
 	}
 
-} //GroupVoteImpl
+} // GroupVoteImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -225,7 +229,8 @@ public class ChangeRequestImpl extends BasicAnnotationImpl implements ChangeRequ
 	 */
 	public EList<BallotCommentResolution> getResolution() {
 		if (resolution == null) {
-			resolution = new EObjectContainmentEList<BallotCommentResolution>(BallotCommentResolution.class, this, Mif2Package.CHANGE_REQUEST__RESOLUTION);
+			resolution = new EObjectContainmentEList<BallotCommentResolution>(
+				BallotCommentResolution.class, this, Mif2Package.CHANGE_REQUEST__RESOLUTION);
 		}
 		return resolution;
 	}
@@ -237,7 +242,8 @@ public class ChangeRequestImpl extends BasicAnnotationImpl implements ChangeRequ
 	 */
 	public EList<ChangeRequestEstimate> getEstimate() {
 		if (estimate == null) {
-			estimate = new EObjectContainmentEList<ChangeRequestEstimate>(ChangeRequestEstimate.class, this, Mif2Package.CHANGE_REQUEST__ESTIMATE);
+			estimate = new EObjectContainmentEList<ChangeRequestEstimate>(
+				ChangeRequestEstimate.class, this, Mif2Package.CHANGE_REQUEST__ESTIMATE);
 		}
 		return estimate;
 	}
@@ -259,8 +265,11 @@ public class ChangeRequestImpl extends BasicAnnotationImpl implements ChangeRequ
 	public void setChangeRequestId(String newChangeRequestId) {
 		String oldChangeRequestId = changeRequestId;
 		changeRequestId = newChangeRequestId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CHANGE_REQUEST__CHANGE_REQUEST_ID, oldChangeRequestId, changeRequestId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CHANGE_REQUEST__CHANGE_REQUEST_ID, oldChangeRequestId,
+				changeRequestId));
+		}
 	}
 
 	/**
@@ -280,8 +289,11 @@ public class ChangeRequestImpl extends BasicAnnotationImpl implements ChangeRequ
 	public void setImplementedDate(XMLGregorianCalendar newImplementedDate) {
 		XMLGregorianCalendar oldImplementedDate = implementedDate;
 		implementedDate = newImplementedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CHANGE_REQUEST__IMPLEMENTED_DATE, oldImplementedDate, implementedDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CHANGE_REQUEST__IMPLEMENTED_DATE, oldImplementedDate,
+				implementedDate));
+		}
 	}
 
 	/**
@@ -301,8 +313,11 @@ public class ChangeRequestImpl extends BasicAnnotationImpl implements ChangeRequ
 	public void setImplementingPersonName(String newImplementingPersonName) {
 		String oldImplementingPersonName = implementingPersonName;
 		implementingPersonName = newImplementingPersonName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CHANGE_REQUEST__IMPLEMENTING_PERSON_NAME, oldImplementingPersonName, implementingPersonName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CHANGE_REQUEST__IMPLEMENTING_PERSON_NAME,
+				oldImplementingPersonName, implementingPersonName));
+		}
 	}
 
 	/**
@@ -322,8 +337,10 @@ public class ChangeRequestImpl extends BasicAnnotationImpl implements ChangeRequ
 	public void setLocation(String newLocation) {
 		String oldLocation = location;
 		location = newLocation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CHANGE_REQUEST__LOCATION, oldLocation, location));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CHANGE_REQUEST__LOCATION, oldLocation, location));
+		}
 	}
 
 	/**
@@ -342,11 +359,15 @@ public class ChangeRequestImpl extends BasicAnnotationImpl implements ChangeRequ
 	 */
 	public void setStatus(ChangeRequestStatus newStatus) {
 		ChangeRequestStatus oldStatus = status;
-		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
+		status = newStatus == null
+				? STATUS_EDEFAULT
+				: newStatus;
 		boolean oldStatusESet = statusESet;
 		statusESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CHANGE_REQUEST__STATUS, oldStatus, status, !oldStatusESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CHANGE_REQUEST__STATUS, oldStatus, status, !oldStatusESet));
+		}
 	}
 
 	/**
@@ -359,8 +380,10 @@ public class ChangeRequestImpl extends BasicAnnotationImpl implements ChangeRequ
 		boolean oldStatusESet = statusESet;
 		status = STATUS_EDEFAULT;
 		statusESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CHANGE_REQUEST__STATUS, oldStatus, STATUS_EDEFAULT, oldStatusESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CHANGE_REQUEST__STATUS, oldStatus, STATUS_EDEFAULT, oldStatusESet));
+		}
 	}
 
 	/**
@@ -389,8 +412,10 @@ public class ChangeRequestImpl extends BasicAnnotationImpl implements ChangeRequ
 	public void setTargetDate(XMLGregorianCalendar newTargetDate) {
 		XMLGregorianCalendar oldTargetDate = targetDate;
 		targetDate = newTargetDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CHANGE_REQUEST__TARGET_DATE, oldTargetDate, targetDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CHANGE_REQUEST__TARGET_DATE, oldTargetDate, targetDate));
+		}
 	}
 
 	/**
@@ -402,9 +427,9 @@ public class ChangeRequestImpl extends BasicAnnotationImpl implements ChangeRequ
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.CHANGE_REQUEST__RESOLUTION:
-				return ((InternalEList<?>)getResolution()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getResolution()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CHANGE_REQUEST__ESTIMATE:
-				return ((InternalEList<?>)getEstimate()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getEstimate()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -448,29 +473,29 @@ public class ChangeRequestImpl extends BasicAnnotationImpl implements ChangeRequ
 		switch (featureID) {
 			case Mif2Package.CHANGE_REQUEST__RESOLUTION:
 				getResolution().clear();
-				getResolution().addAll((Collection<? extends BallotCommentResolution>)newValue);
+				getResolution().addAll((Collection<? extends BallotCommentResolution>) newValue);
 				return;
 			case Mif2Package.CHANGE_REQUEST__ESTIMATE:
 				getEstimate().clear();
-				getEstimate().addAll((Collection<? extends ChangeRequestEstimate>)newValue);
+				getEstimate().addAll((Collection<? extends ChangeRequestEstimate>) newValue);
 				return;
 			case Mif2Package.CHANGE_REQUEST__CHANGE_REQUEST_ID:
-				setChangeRequestId((String)newValue);
+				setChangeRequestId((String) newValue);
 				return;
 			case Mif2Package.CHANGE_REQUEST__IMPLEMENTED_DATE:
-				setImplementedDate((XMLGregorianCalendar)newValue);
+				setImplementedDate((XMLGregorianCalendar) newValue);
 				return;
 			case Mif2Package.CHANGE_REQUEST__IMPLEMENTING_PERSON_NAME:
-				setImplementingPersonName((String)newValue);
+				setImplementingPersonName((String) newValue);
 				return;
 			case Mif2Package.CHANGE_REQUEST__LOCATION:
-				setLocation((String)newValue);
+				setLocation((String) newValue);
 				return;
 			case Mif2Package.CHANGE_REQUEST__STATUS:
-				setStatus((ChangeRequestStatus)newValue);
+				setStatus((ChangeRequestStatus) newValue);
 				return;
 			case Mif2Package.CHANGE_REQUEST__TARGET_DATE:
-				setTargetDate((XMLGregorianCalendar)newValue);
+				setTargetDate((XMLGregorianCalendar) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -525,17 +550,27 @@ public class ChangeRequestImpl extends BasicAnnotationImpl implements ChangeRequ
 			case Mif2Package.CHANGE_REQUEST__ESTIMATE:
 				return estimate != null && !estimate.isEmpty();
 			case Mif2Package.CHANGE_REQUEST__CHANGE_REQUEST_ID:
-				return CHANGE_REQUEST_ID_EDEFAULT == null ? changeRequestId != null : !CHANGE_REQUEST_ID_EDEFAULT.equals(changeRequestId);
+				return CHANGE_REQUEST_ID_EDEFAULT == null
+						? changeRequestId != null
+						: !CHANGE_REQUEST_ID_EDEFAULT.equals(changeRequestId);
 			case Mif2Package.CHANGE_REQUEST__IMPLEMENTED_DATE:
-				return IMPLEMENTED_DATE_EDEFAULT == null ? implementedDate != null : !IMPLEMENTED_DATE_EDEFAULT.equals(implementedDate);
+				return IMPLEMENTED_DATE_EDEFAULT == null
+						? implementedDate != null
+						: !IMPLEMENTED_DATE_EDEFAULT.equals(implementedDate);
 			case Mif2Package.CHANGE_REQUEST__IMPLEMENTING_PERSON_NAME:
-				return IMPLEMENTING_PERSON_NAME_EDEFAULT == null ? implementingPersonName != null : !IMPLEMENTING_PERSON_NAME_EDEFAULT.equals(implementingPersonName);
+				return IMPLEMENTING_PERSON_NAME_EDEFAULT == null
+						? implementingPersonName != null
+						: !IMPLEMENTING_PERSON_NAME_EDEFAULT.equals(implementingPersonName);
 			case Mif2Package.CHANGE_REQUEST__LOCATION:
-				return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
+				return LOCATION_EDEFAULT == null
+						? location != null
+						: !LOCATION_EDEFAULT.equals(location);
 			case Mif2Package.CHANGE_REQUEST__STATUS:
 				return isSetStatus();
 			case Mif2Package.CHANGE_REQUEST__TARGET_DATE:
-				return TARGET_DATE_EDEFAULT == null ? targetDate != null : !TARGET_DATE_EDEFAULT.equals(targetDate);
+				return TARGET_DATE_EDEFAULT == null
+						? targetDate != null
+						: !TARGET_DATE_EDEFAULT.equals(targetDate);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -547,7 +582,9 @@ public class ChangeRequestImpl extends BasicAnnotationImpl implements ChangeRequ
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (changeRequestId: ");
@@ -559,11 +596,15 @@ public class ChangeRequestImpl extends BasicAnnotationImpl implements ChangeRequ
 		result.append(", location: ");
 		result.append(location);
 		result.append(", status: ");
-		if (statusESet) result.append(status); else result.append("<unset>");
+		if (statusESet) {
+			result.append(status);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", targetDate: ");
 		result.append(targetDate);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ChangeRequestImpl
+} // ChangeRequestImpl

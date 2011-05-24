@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.validation;
 
 import org.eclipse.emf.common.util.EList;
@@ -42,27 +46,50 @@ public interface AContentValidator {
 	boolean validate();
 
 	boolean validateMixed(FeatureMap value);
+
 	boolean validateGroup(FeatureMap value);
+
 	boolean validateBr(EList<Br> value);
+
 	boolean validateSpan(EList<Span> value);
+
 	boolean validateObject(EList<org.openhealthtools.mdht.emf.w3c.xhtml.Object> value);
+
 	boolean validateImg(EList<Img> value);
+
 	boolean validateTt(EList<Tt> value);
+
 	boolean validateI(EList<I> value);
+
 	boolean validateB(EList<B> value);
+
 	boolean validateBig(EList<Big> value);
+
 	boolean validateSmall(EList<Small> value);
+
 	boolean validateEm(EList<Em> value);
+
 	boolean validateStrong(EList<Strong> value);
+
 	boolean validateDfn(EList<Dfn> value);
+
 	boolean validateCode(EList<Code> value);
+
 	boolean validateQ(EList<Q> value);
+
 	boolean validateSamp(EList<Samp> value);
+
 	boolean validateKbd(EList<Kbd> value);
+
 	boolean validateVar(EList<Var> value);
+
 	boolean validateCite(EList<Cite> value);
+
 	boolean validateAbbr(EList<Abbr> value);
+
 	boolean validateAcronym(EList<Acronym> value);
+
 	boolean validateSub(EList<Sub> value);
+
 	boolean validateSup(EList<Sup> value);
 }

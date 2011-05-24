@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import org.eclipse.emf.common.util.EList;
@@ -23,7 +27,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.VocabularyLimitation;
 import org.openhealthtools.mdht.emf.hl7.mif2.VocabularyModel;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Img;
 
-
 /**
  * A sample validator interface for {@link org.openhealthtools.mdht.emf.hl7.mif2.StaticModelBase}.
  * This doesn't really do anything, and it's not a real EMF artifact.
@@ -34,23 +37,42 @@ public interface StaticModelBaseValidator {
 	boolean validate();
 
 	boolean validateAnnotations(StaticModelAnnotations value);
+
 	boolean validateGraphicRepresentation(EList<StaticPackageDiagramGraphicInformation> value);
+
 	boolean validateFigure(Img value);
+
 	boolean validateDerivedFrom(EList<StaticModelDerivation> value);
+
 	boolean validateHasDerivations(StaticModelDerivationSource value);
+
 	boolean validateImportedDatatypeModelPackage(PackageRef value);
+
 	boolean validateImportedVocabularyModelPackage(PackageRef value);
+
 	boolean validateImportedCommonModelElementPackage(PackageRef value);
+
 	boolean validateImportedStubPackage(PackageRef value);
+
 	boolean validateImportAnnotationLibrary(PackageRef value);
+
 	boolean validateAdditionalDatatypeModel(EList<DatatypeModelLibrary> value);
+
 	boolean validateDatatypeLimitation(EList<DatatypeLimitation> value);
+
 	boolean validateAdditionalVocabularyModel(EList<VocabularyModel> value);
+
 	boolean validateVocabularyLimitation(EList<VocabularyLimitation> value);
+
 	boolean validateSubjectAreaPackage(EList<SubjectAreaPackage> value);
+
 	boolean validateDefinitionalCode(EList<VocabularyCodeRef> value);
+
 	boolean validateConformanceLevel(ModelConformanceKind value);
+
 	boolean validateIsAbstract(boolean value);
+
 	boolean validateIsSerializable(boolean value);
+
 	boolean validateRepresentationKind(StaticModelRepresentationKind value);
 }

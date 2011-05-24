@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -109,7 +113,8 @@ public class CodeSupplementImpl extends EObjectImpl implements CodeSupplement {
 	 */
 	public EList<PrintName> getPrintName() {
 		if (printName == null) {
-			printName = new EObjectContainmentEList<PrintName>(PrintName.class, this, Mif2Package.CODE_SUPPLEMENT__PRINT_NAME);
+			printName = new EObjectContainmentEList<PrintName>(
+				PrintName.class, this, Mif2Package.CODE_SUPPLEMENT__PRINT_NAME);
 		}
 		return printName;
 	}
@@ -121,7 +126,8 @@ public class CodeSupplementImpl extends EObjectImpl implements CodeSupplement {
 	 */
 	public EList<ConceptProperty> getSupplementalCodeProperty() {
 		if (supplementalCodeProperty == null) {
-			supplementalCodeProperty = new EObjectContainmentEList<ConceptProperty>(ConceptProperty.class, this, Mif2Package.CODE_SUPPLEMENT__SUPPLEMENTAL_CODE_PROPERTY);
+			supplementalCodeProperty = new EObjectContainmentEList<ConceptProperty>(
+				ConceptProperty.class, this, Mif2Package.CODE_SUPPLEMENT__SUPPLEMENTAL_CODE_PROPERTY);
 		}
 		return supplementalCodeProperty;
 	}
@@ -143,8 +149,9 @@ public class CodeSupplementImpl extends EObjectImpl implements CodeSupplement {
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SUPPLEMENT__CODE, oldCode, code));
+		}
 	}
 
 	/**
@@ -156,9 +163,9 @@ public class CodeSupplementImpl extends EObjectImpl implements CodeSupplement {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.CODE_SUPPLEMENT__PRINT_NAME:
-				return ((InternalEList<?>)getPrintName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPrintName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CODE_SUPPLEMENT__SUPPLEMENTAL_CODE_PROPERTY:
-				return ((InternalEList<?>)getSupplementalCodeProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSupplementalCodeProperty()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -192,14 +199,14 @@ public class CodeSupplementImpl extends EObjectImpl implements CodeSupplement {
 		switch (featureID) {
 			case Mif2Package.CODE_SUPPLEMENT__PRINT_NAME:
 				getPrintName().clear();
-				getPrintName().addAll((Collection<? extends PrintName>)newValue);
+				getPrintName().addAll((Collection<? extends PrintName>) newValue);
 				return;
 			case Mif2Package.CODE_SUPPLEMENT__SUPPLEMENTAL_CODE_PROPERTY:
 				getSupplementalCodeProperty().clear();
-				getSupplementalCodeProperty().addAll((Collection<? extends ConceptProperty>)newValue);
+				getSupplementalCodeProperty().addAll((Collection<? extends ConceptProperty>) newValue);
 				return;
 			case Mif2Package.CODE_SUPPLEMENT__CODE:
-				setCode((String)newValue);
+				setCode((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,7 +246,9 @@ public class CodeSupplementImpl extends EObjectImpl implements CodeSupplement {
 			case Mif2Package.CODE_SUPPLEMENT__SUPPLEMENTAL_CODE_PROPERTY:
 				return supplementalCodeProperty != null && !supplementalCodeProperty.isEmpty();
 			case Mif2Package.CODE_SUPPLEMENT__CODE:
-				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+				return CODE_EDEFAULT == null
+						? code != null
+						: !CODE_EDEFAULT.equals(code);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -251,7 +260,9 @@ public class CodeSupplementImpl extends EObjectImpl implements CodeSupplement {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (code: ");
@@ -260,4 +271,4 @@ public class CodeSupplementImpl extends EObjectImpl implements CodeSupplement {
 		return result.toString();
 	}
 
-} //CodeSupplementImpl
+} // CodeSupplementImpl

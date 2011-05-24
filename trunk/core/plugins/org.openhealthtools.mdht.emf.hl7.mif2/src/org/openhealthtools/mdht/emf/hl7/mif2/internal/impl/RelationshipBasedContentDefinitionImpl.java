@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -101,8 +105,14 @@ public class RelationshipBasedContentDefinitionImpl extends EObjectImpl implemen
 		ContentDefinition oldTargetConcepts = targetConcepts;
 		targetConcepts = newTargetConcepts;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION__TARGET_CONCEPTS, oldTargetConcepts, newTargetConcepts);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION__TARGET_CONCEPTS,
+				oldTargetConcepts, newTargetConcepts);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -115,15 +125,23 @@ public class RelationshipBasedContentDefinitionImpl extends EObjectImpl implemen
 	public void setTargetConcepts(ContentDefinition newTargetConcepts) {
 		if (newTargetConcepts != targetConcepts) {
 			NotificationChain msgs = null;
-			if (targetConcepts != null)
-				msgs = ((InternalEObject)targetConcepts).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION__TARGET_CONCEPTS, null, msgs);
-			if (newTargetConcepts != null)
-				msgs = ((InternalEObject)newTargetConcepts).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION__TARGET_CONCEPTS, null, msgs);
+			if (targetConcepts != null) {
+				msgs = ((InternalEObject) targetConcepts).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION__TARGET_CONCEPTS, null, msgs);
+			}
+			if (newTargetConcepts != null) {
+				msgs = ((InternalEObject) newTargetConcepts).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION__TARGET_CONCEPTS, null, msgs);
+			}
 			msgs = basicSetTargetConcepts(newTargetConcepts, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION__TARGET_CONCEPTS,
+				newTargetConcepts, newTargetConcepts));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION__TARGET_CONCEPTS, newTargetConcepts, newTargetConcepts));
 	}
 
 	/**
@@ -143,8 +161,11 @@ public class RelationshipBasedContentDefinitionImpl extends EObjectImpl implemen
 	public void setRelationshipName(String newRelationshipName) {
 		String oldRelationshipName = relationshipName;
 		relationshipName = newRelationshipName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION__RELATIONSHIP_NAME, oldRelationshipName, relationshipName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION__RELATIONSHIP_NAME,
+				oldRelationshipName, relationshipName));
+		}
 	}
 
 	/**
@@ -186,10 +207,10 @@ public class RelationshipBasedContentDefinitionImpl extends EObjectImpl implemen
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION__TARGET_CONCEPTS:
-				setTargetConcepts((ContentDefinition)newValue);
+				setTargetConcepts((ContentDefinition) newValue);
 				return;
 			case Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION__RELATIONSHIP_NAME:
-				setRelationshipName((String)newValue);
+				setRelationshipName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -204,7 +225,7 @@ public class RelationshipBasedContentDefinitionImpl extends EObjectImpl implemen
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION__TARGET_CONCEPTS:
-				setTargetConcepts((ContentDefinition)null);
+				setTargetConcepts((ContentDefinition) null);
 				return;
 			case Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION__RELATIONSHIP_NAME:
 				setRelationshipName(RELATIONSHIP_NAME_EDEFAULT);
@@ -224,7 +245,9 @@ public class RelationshipBasedContentDefinitionImpl extends EObjectImpl implemen
 			case Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION__TARGET_CONCEPTS:
 				return targetConcepts != null;
 			case Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION__RELATIONSHIP_NAME:
-				return RELATIONSHIP_NAME_EDEFAULT == null ? relationshipName != null : !RELATIONSHIP_NAME_EDEFAULT.equals(relationshipName);
+				return RELATIONSHIP_NAME_EDEFAULT == null
+						? relationshipName != null
+						: !RELATIONSHIP_NAME_EDEFAULT.equals(relationshipName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -236,7 +259,9 @@ public class RelationshipBasedContentDefinitionImpl extends EObjectImpl implemen
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (relationshipName: ");
@@ -245,4 +270,4 @@ public class RelationshipBasedContentDefinitionImpl extends EObjectImpl implemen
 		return result.toString();
 	}
 
-} //RelationshipBasedContentDefinitionImpl
+} // RelationshipBasedContentDefinitionImpl

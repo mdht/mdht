@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -121,8 +125,13 @@ public class OperationParameterImpl extends ModelElementImpl implements Operatio
 		DatatypeRef oldType = type;
 		type = newType;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.OPERATION_PARAMETER__TYPE, oldType, newType);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.OPERATION_PARAMETER__TYPE, oldType, newType);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -135,15 +144,22 @@ public class OperationParameterImpl extends ModelElementImpl implements Operatio
 	public void setType(DatatypeRef newType) {
 		if (newType != type) {
 			NotificationChain msgs = null;
-			if (type != null)
-				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.OPERATION_PARAMETER__TYPE, null, msgs);
-			if (newType != null)
-				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.OPERATION_PARAMETER__TYPE, null, msgs);
+			if (type != null) {
+				msgs = ((InternalEObject) type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.OPERATION_PARAMETER__TYPE, null, msgs);
+			}
+			if (newType != null) {
+				msgs = ((InternalEObject) newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.OPERATION_PARAMETER__TYPE, null, msgs);
+			}
 			msgs = basicSetType(newType, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.OPERATION_PARAMETER__TYPE, newType, newType));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.OPERATION_PARAMETER__TYPE, newType, newType));
 	}
 
 	/**
@@ -163,8 +179,9 @@ public class OperationParameterImpl extends ModelElementImpl implements Operatio
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.OPERATION_PARAMETER__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -184,8 +201,10 @@ public class OperationParameterImpl extends ModelElementImpl implements Operatio
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.OPERATION_PARAMETER__SORT_KEY, oldSortKey, sortKey));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.OPERATION_PARAMETER__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -229,13 +248,13 @@ public class OperationParameterImpl extends ModelElementImpl implements Operatio
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.OPERATION_PARAMETER__TYPE:
-				setType((DatatypeRef)newValue);
+				setType((DatatypeRef) newValue);
 				return;
 			case Mif2Package.OPERATION_PARAMETER__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.OPERATION_PARAMETER__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -250,7 +269,7 @@ public class OperationParameterImpl extends ModelElementImpl implements Operatio
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.OPERATION_PARAMETER__TYPE:
-				setType((DatatypeRef)null);
+				setType((DatatypeRef) null);
 				return;
 			case Mif2Package.OPERATION_PARAMETER__NAME:
 				setName(NAME_EDEFAULT);
@@ -273,9 +292,13 @@ public class OperationParameterImpl extends ModelElementImpl implements Operatio
 			case Mif2Package.OPERATION_PARAMETER__TYPE:
 				return type != null;
 			case Mif2Package.OPERATION_PARAMETER__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.OPERATION_PARAMETER__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -287,7 +310,9 @@ public class OperationParameterImpl extends ModelElementImpl implements Operatio
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -298,4 +323,4 @@ public class OperationParameterImpl extends ModelElementImpl implements Operatio
 		return result.toString();
 	}
 
-} //OperationParameterImpl
+} // OperationParameterImpl

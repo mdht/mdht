@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -117,7 +121,8 @@ public class ParameterModelImpl extends BoundStaticModelImpl implements Paramete
 	 */
 	public EList<AssociationEndSpecialization> getSpecialization() {
 		if (specialization == null) {
-			specialization = new EObjectContainmentEList<AssociationEndSpecialization>(AssociationEndSpecialization.class, this, Mif2Package.PARAMETER_MODEL__SPECIALIZATION);
+			specialization = new EObjectContainmentEList<AssociationEndSpecialization>(
+				AssociationEndSpecialization.class, this, Mif2Package.PARAMETER_MODEL__SPECIALIZATION);
 		}
 		return specialization;
 	}
@@ -139,8 +144,10 @@ public class ParameterModelImpl extends BoundStaticModelImpl implements Paramete
 	public void setParameterName(String newParameterName) {
 		String oldParameterName = parameterName;
 		parameterName = newParameterName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PARAMETER_MODEL__PARAMETER_NAME, oldParameterName, parameterName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PARAMETER_MODEL__PARAMETER_NAME, oldParameterName, parameterName));
+		}
 	}
 
 	/**
@@ -160,8 +167,10 @@ public class ParameterModelImpl extends BoundStaticModelImpl implements Paramete
 	public void setTraversalName(String newTraversalName) {
 		String oldTraversalName = traversalName;
 		traversalName = newTraversalName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PARAMETER_MODEL__TRAVERSAL_NAME, oldTraversalName, traversalName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PARAMETER_MODEL__TRAVERSAL_NAME, oldTraversalName, traversalName));
+		}
 	}
 
 	/**
@@ -173,7 +182,7 @@ public class ParameterModelImpl extends BoundStaticModelImpl implements Paramete
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.PARAMETER_MODEL__SPECIALIZATION:
-				return ((InternalEList<?>)getSpecialization()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSpecialization()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -207,13 +216,13 @@ public class ParameterModelImpl extends BoundStaticModelImpl implements Paramete
 		switch (featureID) {
 			case Mif2Package.PARAMETER_MODEL__SPECIALIZATION:
 				getSpecialization().clear();
-				getSpecialization().addAll((Collection<? extends AssociationEndSpecialization>)newValue);
+				getSpecialization().addAll((Collection<? extends AssociationEndSpecialization>) newValue);
 				return;
 			case Mif2Package.PARAMETER_MODEL__PARAMETER_NAME:
-				setParameterName((String)newValue);
+				setParameterName((String) newValue);
 				return;
 			case Mif2Package.PARAMETER_MODEL__TRAVERSAL_NAME:
-				setTraversalName((String)newValue);
+				setTraversalName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -251,9 +260,13 @@ public class ParameterModelImpl extends BoundStaticModelImpl implements Paramete
 			case Mif2Package.PARAMETER_MODEL__SPECIALIZATION:
 				return specialization != null && !specialization.isEmpty();
 			case Mif2Package.PARAMETER_MODEL__PARAMETER_NAME:
-				return PARAMETER_NAME_EDEFAULT == null ? parameterName != null : !PARAMETER_NAME_EDEFAULT.equals(parameterName);
+				return PARAMETER_NAME_EDEFAULT == null
+						? parameterName != null
+						: !PARAMETER_NAME_EDEFAULT.equals(parameterName);
 			case Mif2Package.PARAMETER_MODEL__TRAVERSAL_NAME:
-				return TRAVERSAL_NAME_EDEFAULT == null ? traversalName != null : !TRAVERSAL_NAME_EDEFAULT.equals(traversalName);
+				return TRAVERSAL_NAME_EDEFAULT == null
+						? traversalName != null
+						: !TRAVERSAL_NAME_EDEFAULT.equals(traversalName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -265,7 +278,9 @@ public class ParameterModelImpl extends BoundStaticModelImpl implements Paramete
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (parameterName: ");
@@ -276,4 +291,4 @@ public class ParameterModelImpl extends BoundStaticModelImpl implements Paramete
 		return result.toString();
 	}
 
-} //ParameterModelImpl
+} // ParameterModelImpl

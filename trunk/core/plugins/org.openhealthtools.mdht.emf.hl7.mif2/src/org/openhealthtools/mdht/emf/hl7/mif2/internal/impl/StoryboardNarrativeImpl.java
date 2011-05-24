@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -150,12 +154,19 @@ public class StoryboardNarrativeImpl extends PackageBaseImpl implements Storyboa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDeprecatedPackageLocation(PackageRef newDeprecatedPackageLocation, NotificationChain msgs) {
+	public NotificationChain basicSetDeprecatedPackageLocation(PackageRef newDeprecatedPackageLocation,
+			NotificationChain msgs) {
 		PackageRef oldDeprecatedPackageLocation = deprecatedPackageLocation;
 		deprecatedPackageLocation = newDeprecatedPackageLocation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD_NARRATIVE__DEPRECATED_PACKAGE_LOCATION, oldDeprecatedPackageLocation, newDeprecatedPackageLocation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD_NARRATIVE__DEPRECATED_PACKAGE_LOCATION,
+				oldDeprecatedPackageLocation, newDeprecatedPackageLocation);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -168,15 +179,23 @@ public class StoryboardNarrativeImpl extends PackageBaseImpl implements Storyboa
 	public void setDeprecatedPackageLocation(PackageRef newDeprecatedPackageLocation) {
 		if (newDeprecatedPackageLocation != deprecatedPackageLocation) {
 			NotificationChain msgs = null;
-			if (deprecatedPackageLocation != null)
-				msgs = ((InternalEObject)deprecatedPackageLocation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD_NARRATIVE__DEPRECATED_PACKAGE_LOCATION, null, msgs);
-			if (newDeprecatedPackageLocation != null)
-				msgs = ((InternalEObject)newDeprecatedPackageLocation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD_NARRATIVE__DEPRECATED_PACKAGE_LOCATION, null, msgs);
+			if (deprecatedPackageLocation != null) {
+				msgs = ((InternalEObject) deprecatedPackageLocation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD_NARRATIVE__DEPRECATED_PACKAGE_LOCATION, null, msgs);
+			}
+			if (newDeprecatedPackageLocation != null) {
+				msgs = ((InternalEObject) newDeprecatedPackageLocation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD_NARRATIVE__DEPRECATED_PACKAGE_LOCATION, null, msgs);
+			}
 			msgs = basicSetDeprecatedPackageLocation(newDeprecatedPackageLocation, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD_NARRATIVE__DEPRECATED_PACKAGE_LOCATION,
+				newDeprecatedPackageLocation, newDeprecatedPackageLocation));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD_NARRATIVE__DEPRECATED_PACKAGE_LOCATION, newDeprecatedPackageLocation, newDeprecatedPackageLocation));
 	}
 
 	/**
@@ -197,8 +216,13 @@ public class StoryboardNarrativeImpl extends PackageBaseImpl implements Storyboa
 		ComplexMarkupWithLanguage oldText = text;
 		text = newText;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD_NARRATIVE__TEXT, oldText, newText);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD_NARRATIVE__TEXT, oldText, newText);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -211,15 +235,22 @@ public class StoryboardNarrativeImpl extends PackageBaseImpl implements Storyboa
 	public void setText(ComplexMarkupWithLanguage newText) {
 		if (newText != text) {
 			NotificationChain msgs = null;
-			if (text != null)
-				msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD_NARRATIVE__TEXT, null, msgs);
-			if (newText != null)
-				msgs = ((InternalEObject)newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD_NARRATIVE__TEXT, null, msgs);
+			if (text != null) {
+				msgs = ((InternalEObject) text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD_NARRATIVE__TEXT, null, msgs);
+			}
+			if (newText != null) {
+				msgs = ((InternalEObject) newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD_NARRATIVE__TEXT, null, msgs);
+			}
 			msgs = basicSetText(newText, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD_NARRATIVE__TEXT, newText, newText));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD_NARRATIVE__TEXT, newText, newText));
 	}
 
 	/**
@@ -239,8 +270,10 @@ public class StoryboardNarrativeImpl extends PackageBaseImpl implements Storyboa
 	public void setTitle(String newTitle) {
 		String oldTitle = title;
 		title = newTitle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD_NARRATIVE__TITLE, oldTitle, title));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD_NARRATIVE__TITLE, oldTitle, title));
+		}
 	}
 
 	/**
@@ -252,9 +285,9 @@ public class StoryboardNarrativeImpl extends PackageBaseImpl implements Storyboa
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.STORYBOARD_NARRATIVE__CONTEXT:
-				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getContext()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STORYBOARD_NARRATIVE__REALM_NAMESPACE:
-				return ((InternalEList<?>)getRealmNamespace()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmNamespace()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STORYBOARD_NARRATIVE__DEPRECATED_PACKAGE_LOCATION:
 				return basicSetDeprecatedPackageLocation(null, msgs);
 			case Mif2Package.STORYBOARD_NARRATIVE__TEXT:
@@ -272,8 +305,10 @@ public class StoryboardNarrativeImpl extends PackageBaseImpl implements Storyboa
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mif2Package.STORYBOARD_NARRATIVE__CONTEXT:
-				if (coreType) return getContext();
-				return ((FeatureMap.Internal)getContext()).getWrapper();
+				if (coreType) {
+					return getContext();
+				}
+				return ((FeatureMap.Internal) getContext()).getWrapper();
 			case Mif2Package.STORYBOARD_NARRATIVE__REALM_NAMESPACE:
 				return getRealmNamespace();
 			case Mif2Package.STORYBOARD_NARRATIVE__DEPRECATED_PACKAGE_LOCATION:
@@ -296,20 +331,20 @@ public class StoryboardNarrativeImpl extends PackageBaseImpl implements Storyboa
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.STORYBOARD_NARRATIVE__CONTEXT:
-				((FeatureMap.Internal)getContext()).set(newValue);
+				((FeatureMap.Internal) getContext()).set(newValue);
 				return;
 			case Mif2Package.STORYBOARD_NARRATIVE__REALM_NAMESPACE:
 				getRealmNamespace().clear();
-				getRealmNamespace().addAll((Collection<? extends RealmElement>)newValue);
+				getRealmNamespace().addAll((Collection<? extends RealmElement>) newValue);
 				return;
 			case Mif2Package.STORYBOARD_NARRATIVE__DEPRECATED_PACKAGE_LOCATION:
-				setDeprecatedPackageLocation((PackageRef)newValue);
+				setDeprecatedPackageLocation((PackageRef) newValue);
 				return;
 			case Mif2Package.STORYBOARD_NARRATIVE__TEXT:
-				setText((ComplexMarkupWithLanguage)newValue);
+				setText((ComplexMarkupWithLanguage) newValue);
 				return;
 			case Mif2Package.STORYBOARD_NARRATIVE__TITLE:
-				setTitle((String)newValue);
+				setTitle((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -330,10 +365,10 @@ public class StoryboardNarrativeImpl extends PackageBaseImpl implements Storyboa
 				getRealmNamespace().clear();
 				return;
 			case Mif2Package.STORYBOARD_NARRATIVE__DEPRECATED_PACKAGE_LOCATION:
-				setDeprecatedPackageLocation((PackageRef)null);
+				setDeprecatedPackageLocation((PackageRef) null);
 				return;
 			case Mif2Package.STORYBOARD_NARRATIVE__TEXT:
-				setText((ComplexMarkupWithLanguage)null);
+				setText((ComplexMarkupWithLanguage) null);
 				return;
 			case Mif2Package.STORYBOARD_NARRATIVE__TITLE:
 				setTitle(TITLE_EDEFAULT);
@@ -359,7 +394,9 @@ public class StoryboardNarrativeImpl extends PackageBaseImpl implements Storyboa
 			case Mif2Package.STORYBOARD_NARRATIVE__TEXT:
 				return text != null;
 			case Mif2Package.STORYBOARD_NARRATIVE__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+				return TITLE_EDEFAULT == null
+						? title != null
+						: !TITLE_EDEFAULT.equals(title);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -371,7 +408,9 @@ public class StoryboardNarrativeImpl extends PackageBaseImpl implements Storyboa
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (context: ");
@@ -382,4 +421,4 @@ public class StoryboardNarrativeImpl extends PackageBaseImpl implements Storyboa
 		return result.toString();
 	}
 
-} //StoryboardNarrativeImpl
+} // StoryboardNarrativeImpl

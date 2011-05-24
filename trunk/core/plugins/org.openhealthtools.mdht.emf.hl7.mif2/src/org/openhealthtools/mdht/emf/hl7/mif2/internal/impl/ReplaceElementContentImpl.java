@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -79,8 +83,14 @@ public class ReplaceElementContentImpl extends ElementRefImpl implements Replace
 		MifContent oldReplacementContent = replacementContent;
 		replacementContent = newReplacementContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.REPLACE_ELEMENT_CONTENT__REPLACEMENT_CONTENT, oldReplacementContent, newReplacementContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.REPLACE_ELEMENT_CONTENT__REPLACEMENT_CONTENT,
+				oldReplacementContent, newReplacementContent);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -93,15 +103,23 @@ public class ReplaceElementContentImpl extends ElementRefImpl implements Replace
 	public void setReplacementContent(MifContent newReplacementContent) {
 		if (newReplacementContent != replacementContent) {
 			NotificationChain msgs = null;
-			if (replacementContent != null)
-				msgs = ((InternalEObject)replacementContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.REPLACE_ELEMENT_CONTENT__REPLACEMENT_CONTENT, null, msgs);
-			if (newReplacementContent != null)
-				msgs = ((InternalEObject)newReplacementContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.REPLACE_ELEMENT_CONTENT__REPLACEMENT_CONTENT, null, msgs);
+			if (replacementContent != null) {
+				msgs = ((InternalEObject) replacementContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.REPLACE_ELEMENT_CONTENT__REPLACEMENT_CONTENT, null, msgs);
+			}
+			if (newReplacementContent != null) {
+				msgs = ((InternalEObject) newReplacementContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.REPLACE_ELEMENT_CONTENT__REPLACEMENT_CONTENT, null, msgs);
+			}
 			msgs = basicSetReplacementContent(newReplacementContent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.REPLACE_ELEMENT_CONTENT__REPLACEMENT_CONTENT,
+				newReplacementContent, newReplacementContent));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.REPLACE_ELEMENT_CONTENT__REPLACEMENT_CONTENT, newReplacementContent, newReplacementContent));
 	}
 
 	/**
@@ -141,7 +159,7 @@ public class ReplaceElementContentImpl extends ElementRefImpl implements Replace
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.REPLACE_ELEMENT_CONTENT__REPLACEMENT_CONTENT:
-				setReplacementContent((MifContent)newValue);
+				setReplacementContent((MifContent) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -156,7 +174,7 @@ public class ReplaceElementContentImpl extends ElementRefImpl implements Replace
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.REPLACE_ELEMENT_CONTENT__REPLACEMENT_CONTENT:
-				setReplacementContent((MifContent)null);
+				setReplacementContent((MifContent) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -176,4 +194,4 @@ public class ReplaceElementContentImpl extends ElementRefImpl implements Replace
 		return super.eIsSet(featureID);
 	}
 
-} //ReplaceElementContentImpl
+} // ReplaceElementContentImpl

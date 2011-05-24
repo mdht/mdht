@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -168,8 +172,14 @@ public class DomainInstanceExampleDocumentationImpl extends EObjectImpl implemen
 		CascadableAnnotation oldDefinition = definition;
 		definition = newDefinition;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__DEFINITION, oldDefinition, newDefinition);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__DEFINITION, oldDefinition,
+				newDefinition);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -182,15 +192,23 @@ public class DomainInstanceExampleDocumentationImpl extends EObjectImpl implemen
 	public void setDefinition(CascadableAnnotation newDefinition) {
 		if (newDefinition != definition) {
 			NotificationChain msgs = null;
-			if (definition != null)
-				msgs = ((InternalEObject)definition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__DEFINITION, null, msgs);
-			if (newDefinition != null)
-				msgs = ((InternalEObject)newDefinition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__DEFINITION, null, msgs);
+			if (definition != null) {
+				msgs = ((InternalEObject) definition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__DEFINITION, null, msgs);
+			}
+			if (newDefinition != null) {
+				msgs = ((InternalEObject) newDefinition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__DEFINITION, null, msgs);
+			}
 			msgs = basicSetDefinition(newDefinition, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__DEFINITION, newDefinition,
+				newDefinition));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__DEFINITION, newDefinition, newDefinition));
 	}
 
 	/**
@@ -211,8 +229,14 @@ public class DomainInstanceExampleDocumentationImpl extends EObjectImpl implemen
 		CascadableAnnotation oldRationale = rationale;
 		rationale = newRationale;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__RATIONALE, oldRationale, newRationale);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__RATIONALE, oldRationale,
+				newRationale);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -225,15 +249,23 @@ public class DomainInstanceExampleDocumentationImpl extends EObjectImpl implemen
 	public void setRationale(CascadableAnnotation newRationale) {
 		if (newRationale != rationale) {
 			NotificationChain msgs = null;
-			if (rationale != null)
-				msgs = ((InternalEObject)rationale).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__RATIONALE, null, msgs);
-			if (newRationale != null)
-				msgs = ((InternalEObject)newRationale).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__RATIONALE, null, msgs);
+			if (rationale != null) {
+				msgs = ((InternalEObject) rationale).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__RATIONALE, null, msgs);
+			}
+			if (newRationale != null) {
+				msgs = ((InternalEObject) newRationale).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__RATIONALE, null, msgs);
+			}
 			msgs = basicSetRationale(newRationale, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__RATIONALE, newRationale,
+				newRationale));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__RATIONALE, newRationale, newRationale));
 	}
 
 	/**
@@ -254,8 +286,14 @@ public class DomainInstanceExampleDocumentationImpl extends EObjectImpl implemen
 		ContextAnnotation oldRequirements = requirements;
 		requirements = newRequirements;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__REQUIREMENTS, oldRequirements, newRequirements);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__REQUIREMENTS,
+				oldRequirements, newRequirements);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -268,15 +306,23 @@ public class DomainInstanceExampleDocumentationImpl extends EObjectImpl implemen
 	public void setRequirements(ContextAnnotation newRequirements) {
 		if (newRequirements != requirements) {
 			NotificationChain msgs = null;
-			if (requirements != null)
-				msgs = ((InternalEObject)requirements).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__REQUIREMENTS, null, msgs);
-			if (newRequirements != null)
-				msgs = ((InternalEObject)newRequirements).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__REQUIREMENTS, null, msgs);
+			if (requirements != null) {
+				msgs = ((InternalEObject) requirements).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__REQUIREMENTS, null, msgs);
+			}
+			if (newRequirements != null) {
+				msgs = ((InternalEObject) newRequirements).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__REQUIREMENTS, null, msgs);
+			}
 			msgs = basicSetRequirements(newRequirements, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__REQUIREMENTS,
+				newRequirements, newRequirements));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__REQUIREMENTS, newRequirements, newRequirements));
 	}
 
 	/**
@@ -286,7 +332,8 @@ public class DomainInstanceExampleDocumentationImpl extends EObjectImpl implemen
 	 */
 	public EList<DesignComment> getDesignComments() {
 		if (designComments == null) {
-			designComments = new EObjectContainmentEList<DesignComment>(DesignComment.class, this, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__DESIGN_COMMENTS);
+			designComments = new EObjectContainmentEList<DesignComment>(
+				DesignComment.class, this, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__DESIGN_COMMENTS);
 		}
 		return designComments;
 	}
@@ -298,7 +345,8 @@ public class DomainInstanceExampleDocumentationImpl extends EObjectImpl implemen
 	 */
 	public EList<ContextAnnotation> getStabilityRemarks() {
 		if (stabilityRemarks == null) {
-			stabilityRemarks = new EObjectContainmentEList<ContextAnnotation>(ContextAnnotation.class, this, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__STABILITY_REMARKS);
+			stabilityRemarks = new EObjectContainmentEList<ContextAnnotation>(
+				ContextAnnotation.class, this, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__STABILITY_REMARKS);
 		}
 		return stabilityRemarks;
 	}
@@ -321,8 +369,14 @@ public class DomainInstanceExampleDocumentationImpl extends EObjectImpl implemen
 		ContextAnnotation oldWalkthrough = walkthrough;
 		walkthrough = newWalkthrough;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__WALKTHROUGH, oldWalkthrough, newWalkthrough);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__WALKTHROUGH, oldWalkthrough,
+				newWalkthrough);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -335,15 +389,23 @@ public class DomainInstanceExampleDocumentationImpl extends EObjectImpl implemen
 	public void setWalkthrough(ContextAnnotation newWalkthrough) {
 		if (newWalkthrough != walkthrough) {
 			NotificationChain msgs = null;
-			if (walkthrough != null)
-				msgs = ((InternalEObject)walkthrough).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__WALKTHROUGH, null, msgs);
-			if (newWalkthrough != null)
-				msgs = ((InternalEObject)newWalkthrough).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__WALKTHROUGH, null, msgs);
+			if (walkthrough != null) {
+				msgs = ((InternalEObject) walkthrough).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__WALKTHROUGH, null, msgs);
+			}
+			if (newWalkthrough != null) {
+				msgs = ((InternalEObject) newWalkthrough).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__WALKTHROUGH, null, msgs);
+			}
 			msgs = basicSetWalkthrough(newWalkthrough, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__WALKTHROUGH, newWalkthrough,
+				newWalkthrough));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__WALKTHROUGH, newWalkthrough, newWalkthrough));
 	}
 
 	/**
@@ -353,7 +415,8 @@ public class DomainInstanceExampleDocumentationImpl extends EObjectImpl implemen
 	 */
 	public EList<OpenIssue> getOpenIssue() {
 		if (openIssue == null) {
-			openIssue = new EObjectContainmentEList<OpenIssue>(OpenIssue.class, this, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__OPEN_ISSUE);
+			openIssue = new EObjectContainmentEList<OpenIssue>(
+				OpenIssue.class, this, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__OPEN_ISSUE);
 		}
 		return openIssue;
 	}
@@ -365,7 +428,8 @@ public class DomainInstanceExampleDocumentationImpl extends EObjectImpl implemen
 	 */
 	public EList<OtherAnnotation> getOtherAnnotation() {
 		if (otherAnnotation == null) {
-			otherAnnotation = new EObjectContainmentEList<OtherAnnotation>(OtherAnnotation.class, this, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__OTHER_ANNOTATION);
+			otherAnnotation = new EObjectContainmentEList<OtherAnnotation>(
+				OtherAnnotation.class, this, Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__OTHER_ANNOTATION);
 		}
 		return otherAnnotation;
 	}
@@ -385,15 +449,15 @@ public class DomainInstanceExampleDocumentationImpl extends EObjectImpl implemen
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__REQUIREMENTS:
 				return basicSetRequirements(null, msgs);
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__DESIGN_COMMENTS:
-				return ((InternalEList<?>)getDesignComments()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDesignComments()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__STABILITY_REMARKS:
-				return ((InternalEList<?>)getStabilityRemarks()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getStabilityRemarks()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__WALKTHROUGH:
 				return basicSetWalkthrough(null, msgs);
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__OPEN_ISSUE:
-				return ((InternalEList<?>)getOpenIssue()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getOpenIssue()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__OTHER_ANNOTATION:
-				return ((InternalEList<?>)getOtherAnnotation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getOtherAnnotation()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -436,32 +500,32 @@ public class DomainInstanceExampleDocumentationImpl extends EObjectImpl implemen
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__DEFINITION:
-				setDefinition((CascadableAnnotation)newValue);
+				setDefinition((CascadableAnnotation) newValue);
 				return;
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__RATIONALE:
-				setRationale((CascadableAnnotation)newValue);
+				setRationale((CascadableAnnotation) newValue);
 				return;
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__REQUIREMENTS:
-				setRequirements((ContextAnnotation)newValue);
+				setRequirements((ContextAnnotation) newValue);
 				return;
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__DESIGN_COMMENTS:
 				getDesignComments().clear();
-				getDesignComments().addAll((Collection<? extends DesignComment>)newValue);
+				getDesignComments().addAll((Collection<? extends DesignComment>) newValue);
 				return;
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__STABILITY_REMARKS:
 				getStabilityRemarks().clear();
-				getStabilityRemarks().addAll((Collection<? extends ContextAnnotation>)newValue);
+				getStabilityRemarks().addAll((Collection<? extends ContextAnnotation>) newValue);
 				return;
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__WALKTHROUGH:
-				setWalkthrough((ContextAnnotation)newValue);
+				setWalkthrough((ContextAnnotation) newValue);
 				return;
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__OPEN_ISSUE:
 				getOpenIssue().clear();
-				getOpenIssue().addAll((Collection<? extends OpenIssue>)newValue);
+				getOpenIssue().addAll((Collection<? extends OpenIssue>) newValue);
 				return;
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__OTHER_ANNOTATION:
 				getOtherAnnotation().clear();
-				getOtherAnnotation().addAll((Collection<? extends OtherAnnotation>)newValue);
+				getOtherAnnotation().addAll((Collection<? extends OtherAnnotation>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -476,13 +540,13 @@ public class DomainInstanceExampleDocumentationImpl extends EObjectImpl implemen
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__DEFINITION:
-				setDefinition((CascadableAnnotation)null);
+				setDefinition((CascadableAnnotation) null);
 				return;
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__RATIONALE:
-				setRationale((CascadableAnnotation)null);
+				setRationale((CascadableAnnotation) null);
 				return;
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__REQUIREMENTS:
-				setRequirements((ContextAnnotation)null);
+				setRequirements((ContextAnnotation) null);
 				return;
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__DESIGN_COMMENTS:
 				getDesignComments().clear();
@@ -491,7 +555,7 @@ public class DomainInstanceExampleDocumentationImpl extends EObjectImpl implemen
 				getStabilityRemarks().clear();
 				return;
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__WALKTHROUGH:
-				setWalkthrough((ContextAnnotation)null);
+				setWalkthrough((ContextAnnotation) null);
 				return;
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION__OPEN_ISSUE:
 				getOpenIssue().clear();
@@ -531,4 +595,4 @@ public class DomainInstanceExampleDocumentationImpl extends EObjectImpl implemen
 		return super.eIsSet(featureID);
 	}
 
-} //DomainInstanceExampleDocumentationImpl
+} // DomainInstanceExampleDocumentationImpl

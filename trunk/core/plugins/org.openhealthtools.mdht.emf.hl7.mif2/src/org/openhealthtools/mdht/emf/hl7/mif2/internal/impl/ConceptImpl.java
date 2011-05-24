@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -197,8 +201,13 @@ public class ConceptImpl extends ConceptBaseImpl implements Concept {
 		ConceptAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONCEPT__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -211,15 +220,22 @@ public class ConceptImpl extends ConceptBaseImpl implements Concept {
 	public void setAnnotations(ConceptAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONCEPT__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONCEPT__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONCEPT__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONCEPT__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONCEPT__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -229,7 +245,8 @@ public class ConceptImpl extends ConceptBaseImpl implements Concept {
 	 */
 	public EList<ConceptUse> getIntendedUse() {
 		if (intendedUse == null) {
-			intendedUse = new EObjectContainmentEList<ConceptUse>(ConceptUse.class, this, Mif2Package.CONCEPT__INTENDED_USE);
+			intendedUse = new EObjectContainmentEList<ConceptUse>(
+				ConceptUse.class, this, Mif2Package.CONCEPT__INTENDED_USE);
 		}
 		return intendedUse;
 	}
@@ -241,7 +258,8 @@ public class ConceptImpl extends ConceptBaseImpl implements Concept {
 	 */
 	public EList<ConceptRelationship> getConceptRelationship() {
 		if (conceptRelationship == null) {
-			conceptRelationship = new EObjectContainmentEList<ConceptRelationship>(ConceptRelationship.class, this, Mif2Package.CONCEPT__CONCEPT_RELATIONSHIP);
+			conceptRelationship = new EObjectContainmentEList<ConceptRelationship>(
+				ConceptRelationship.class, this, Mif2Package.CONCEPT__CONCEPT_RELATIONSHIP);
 		}
 		return conceptRelationship;
 	}
@@ -253,7 +271,8 @@ public class ConceptImpl extends ConceptBaseImpl implements Concept {
 	 */
 	public EList<ConceptProperty> getConceptProperty() {
 		if (conceptProperty == null) {
-			conceptProperty = new EObjectContainmentEList<ConceptProperty>(ConceptProperty.class, this, Mif2Package.CONCEPT__CONCEPT_PROPERTY);
+			conceptProperty = new EObjectContainmentEList<ConceptProperty>(
+				ConceptProperty.class, this, Mif2Package.CONCEPT__CONCEPT_PROPERTY);
 		}
 		return conceptProperty;
 	}
@@ -301,8 +320,11 @@ public class ConceptImpl extends ConceptBaseImpl implements Concept {
 		isSelectable = newIsSelectable;
 		boolean oldIsSelectableESet = isSelectableESet;
 		isSelectableESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT__IS_SELECTABLE, oldIsSelectable, isSelectable, !oldIsSelectableESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONCEPT__IS_SELECTABLE, oldIsSelectable, isSelectable,
+				!oldIsSelectableESet));
+		}
 	}
 
 	/**
@@ -315,8 +337,11 @@ public class ConceptImpl extends ConceptBaseImpl implements Concept {
 		boolean oldIsSelectableESet = isSelectableESet;
 		isSelectable = IS_SELECTABLE_EDEFAULT;
 		isSelectableESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CONCEPT__IS_SELECTABLE, oldIsSelectable, IS_SELECTABLE_EDEFAULT, oldIsSelectableESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CONCEPT__IS_SELECTABLE, oldIsSelectable, IS_SELECTABLE_EDEFAULT,
+				oldIsSelectableESet));
+		}
 	}
 
 	/**
@@ -345,8 +370,10 @@ public class ConceptImpl extends ConceptBaseImpl implements Concept {
 	public void setPropertyGroup(String newPropertyGroup) {
 		String oldPropertyGroup = propertyGroup;
 		propertyGroup = newPropertyGroup;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT__PROPERTY_GROUP, oldPropertyGroup, propertyGroup));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONCEPT__PROPERTY_GROUP, oldPropertyGroup, propertyGroup));
+		}
 	}
 
 	/**
@@ -360,15 +387,15 @@ public class ConceptImpl extends ConceptBaseImpl implements Concept {
 			case Mif2Package.CONCEPT__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 			case Mif2Package.CONCEPT__INTENDED_USE:
-				return ((InternalEList<?>)getIntendedUse()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getIntendedUse()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CONCEPT__CONCEPT_RELATIONSHIP:
-				return ((InternalEList<?>)getConceptRelationship()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getConceptRelationship()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CONCEPT__CONCEPT_PROPERTY:
-				return ((InternalEList<?>)getConceptProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getConceptProperty()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CONCEPT__PRINT_NAME:
-				return ((InternalEList<?>)getPrintName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPrintName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CONCEPT__CODE:
-				return ((InternalEList<?>)getCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCode()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -394,7 +421,9 @@ public class ConceptImpl extends ConceptBaseImpl implements Concept {
 			case Mif2Package.CONCEPT__CODE:
 				return getCode();
 			case Mif2Package.CONCEPT__IS_SELECTABLE:
-				return isIsSelectable() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsSelectable()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.CONCEPT__PROPERTY_GROUP:
 				return getPropertyGroup();
 		}
@@ -411,33 +440,33 @@ public class ConceptImpl extends ConceptBaseImpl implements Concept {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CONCEPT__ANNOTATIONS:
-				setAnnotations((ConceptAnnotations)newValue);
+				setAnnotations((ConceptAnnotations) newValue);
 				return;
 			case Mif2Package.CONCEPT__INTENDED_USE:
 				getIntendedUse().clear();
-				getIntendedUse().addAll((Collection<? extends ConceptUse>)newValue);
+				getIntendedUse().addAll((Collection<? extends ConceptUse>) newValue);
 				return;
 			case Mif2Package.CONCEPT__CONCEPT_RELATIONSHIP:
 				getConceptRelationship().clear();
-				getConceptRelationship().addAll((Collection<? extends ConceptRelationship>)newValue);
+				getConceptRelationship().addAll((Collection<? extends ConceptRelationship>) newValue);
 				return;
 			case Mif2Package.CONCEPT__CONCEPT_PROPERTY:
 				getConceptProperty().clear();
-				getConceptProperty().addAll((Collection<? extends ConceptProperty>)newValue);
+				getConceptProperty().addAll((Collection<? extends ConceptProperty>) newValue);
 				return;
 			case Mif2Package.CONCEPT__PRINT_NAME:
 				getPrintName().clear();
-				getPrintName().addAll((Collection<? extends PrintName>)newValue);
+				getPrintName().addAll((Collection<? extends PrintName>) newValue);
 				return;
 			case Mif2Package.CONCEPT__CODE:
 				getCode().clear();
-				getCode().addAll((Collection<? extends Code>)newValue);
+				getCode().addAll((Collection<? extends Code>) newValue);
 				return;
 			case Mif2Package.CONCEPT__IS_SELECTABLE:
-				setIsSelectable(((Boolean)newValue).booleanValue());
+				setIsSelectable(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.CONCEPT__PROPERTY_GROUP:
-				setPropertyGroup((String)newValue);
+				setPropertyGroup((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -452,7 +481,7 @@ public class ConceptImpl extends ConceptBaseImpl implements Concept {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CONCEPT__ANNOTATIONS:
-				setAnnotations((ConceptAnnotations)null);
+				setAnnotations((ConceptAnnotations) null);
 				return;
 			case Mif2Package.CONCEPT__INTENDED_USE:
 				getIntendedUse().clear();
@@ -502,7 +531,9 @@ public class ConceptImpl extends ConceptBaseImpl implements Concept {
 			case Mif2Package.CONCEPT__IS_SELECTABLE:
 				return isSetIsSelectable();
 			case Mif2Package.CONCEPT__PROPERTY_GROUP:
-				return PROPERTY_GROUP_EDEFAULT == null ? propertyGroup != null : !PROPERTY_GROUP_EDEFAULT.equals(propertyGroup);
+				return PROPERTY_GROUP_EDEFAULT == null
+						? propertyGroup != null
+						: !PROPERTY_GROUP_EDEFAULT.equals(propertyGroup);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -514,15 +545,21 @@ public class ConceptImpl extends ConceptBaseImpl implements Concept {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isSelectable: ");
-		if (isSelectableESet) result.append(isSelectable); else result.append("<unset>");
+		if (isSelectableESet) {
+			result.append(isSelectable);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", propertyGroup: ");
 		result.append(propertyGroup);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ConceptImpl
+} // ConceptImpl

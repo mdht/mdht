@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigInteger;
@@ -135,8 +139,13 @@ public abstract class TestBaseImpl extends EObjectImpl implements TestBase {
 		ComplexMarkupWithLanguage oldObjective = objective;
 		objective = newObjective;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.TEST_BASE__OBJECTIVE, oldObjective, newObjective);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TEST_BASE__OBJECTIVE, oldObjective, newObjective);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -149,15 +158,22 @@ public abstract class TestBaseImpl extends EObjectImpl implements TestBase {
 	public void setObjective(ComplexMarkupWithLanguage newObjective) {
 		if (newObjective != objective) {
 			NotificationChain msgs = null;
-			if (objective != null)
-				msgs = ((InternalEObject)objective).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TEST_BASE__OBJECTIVE, null, msgs);
-			if (newObjective != null)
-				msgs = ((InternalEObject)newObjective).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TEST_BASE__OBJECTIVE, null, msgs);
+			if (objective != null) {
+				msgs = ((InternalEObject) objective).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TEST_BASE__OBJECTIVE, null, msgs);
+			}
+			if (newObjective != null) {
+				msgs = ((InternalEObject) newObjective).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TEST_BASE__OBJECTIVE, null, msgs);
+			}
 			msgs = basicSetObjective(newObjective, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TEST_BASE__OBJECTIVE, newObjective, newObjective));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TEST_BASE__OBJECTIVE, newObjective, newObjective));
 	}
 
 	/**
@@ -178,8 +194,13 @@ public abstract class TestBaseImpl extends EObjectImpl implements TestBase {
 		ComplexMarkupWithLanguage oldDataVariation = dataVariation;
 		dataVariation = newDataVariation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.TEST_BASE__DATA_VARIATION, oldDataVariation, newDataVariation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TEST_BASE__DATA_VARIATION, oldDataVariation, newDataVariation);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -192,15 +213,22 @@ public abstract class TestBaseImpl extends EObjectImpl implements TestBase {
 	public void setDataVariation(ComplexMarkupWithLanguage newDataVariation) {
 		if (newDataVariation != dataVariation) {
 			NotificationChain msgs = null;
-			if (dataVariation != null)
-				msgs = ((InternalEObject)dataVariation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TEST_BASE__DATA_VARIATION, null, msgs);
-			if (newDataVariation != null)
-				msgs = ((InternalEObject)newDataVariation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TEST_BASE__DATA_VARIATION, null, msgs);
+			if (dataVariation != null) {
+				msgs = ((InternalEObject) dataVariation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TEST_BASE__DATA_VARIATION, null, msgs);
+			}
+			if (newDataVariation != null) {
+				msgs = ((InternalEObject) newDataVariation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TEST_BASE__DATA_VARIATION, null, msgs);
+			}
 			msgs = basicSetDataVariation(newDataVariation, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TEST_BASE__DATA_VARIATION, newDataVariation, newDataVariation));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TEST_BASE__DATA_VARIATION, newDataVariation, newDataVariation));
 	}
 
 	/**
@@ -220,8 +248,9 @@ public abstract class TestBaseImpl extends EObjectImpl implements TestBase {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TEST_BASE__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -241,8 +270,10 @@ public abstract class TestBaseImpl extends EObjectImpl implements TestBase {
 	public void setSequence(BigInteger newSequence) {
 		BigInteger oldSequence = sequence;
 		sequence = newSequence;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TEST_BASE__SEQUENCE, oldSequence, sequence));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TEST_BASE__SEQUENCE, oldSequence, sequence));
+		}
 	}
 
 	/**
@@ -290,16 +321,16 @@ public abstract class TestBaseImpl extends EObjectImpl implements TestBase {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.TEST_BASE__OBJECTIVE:
-				setObjective((ComplexMarkupWithLanguage)newValue);
+				setObjective((ComplexMarkupWithLanguage) newValue);
 				return;
 			case Mif2Package.TEST_BASE__DATA_VARIATION:
-				setDataVariation((ComplexMarkupWithLanguage)newValue);
+				setDataVariation((ComplexMarkupWithLanguage) newValue);
 				return;
 			case Mif2Package.TEST_BASE__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.TEST_BASE__SEQUENCE:
-				setSequence((BigInteger)newValue);
+				setSequence((BigInteger) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -314,10 +345,10 @@ public abstract class TestBaseImpl extends EObjectImpl implements TestBase {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.TEST_BASE__OBJECTIVE:
-				setObjective((ComplexMarkupWithLanguage)null);
+				setObjective((ComplexMarkupWithLanguage) null);
 				return;
 			case Mif2Package.TEST_BASE__DATA_VARIATION:
-				setDataVariation((ComplexMarkupWithLanguage)null);
+				setDataVariation((ComplexMarkupWithLanguage) null);
 				return;
 			case Mif2Package.TEST_BASE__NAME:
 				setName(NAME_EDEFAULT);
@@ -342,9 +373,13 @@ public abstract class TestBaseImpl extends EObjectImpl implements TestBase {
 			case Mif2Package.TEST_BASE__DATA_VARIATION:
 				return dataVariation != null;
 			case Mif2Package.TEST_BASE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.TEST_BASE__SEQUENCE:
-				return SEQUENCE_EDEFAULT == null ? sequence != null : !SEQUENCE_EDEFAULT.equals(sequence);
+				return SEQUENCE_EDEFAULT == null
+						? sequence != null
+						: !SEQUENCE_EDEFAULT.equals(sequence);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -356,7 +391,9 @@ public abstract class TestBaseImpl extends EObjectImpl implements TestBase {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -367,4 +404,4 @@ public abstract class TestBaseImpl extends EObjectImpl implements TestBase {
 		return result.toString();
 	}
 
-} //TestBaseImpl
+} // TestBaseImpl

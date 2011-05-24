@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -202,8 +206,14 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 		CascadableAnnotation oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__DESCRIPTION, oldDescription, newDescription);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__DESCRIPTION, oldDescription,
+				newDescription);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -216,15 +226,23 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 	public void setDescription(CascadableAnnotation newDescription) {
 		if (newDescription != description) {
 			NotificationChain msgs = null;
-			if (description != null)
-				msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__DESCRIPTION, null, msgs);
-			if (newDescription != null)
-				msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__DESCRIPTION, null, msgs);
+			if (description != null) {
+				msgs = ((InternalEObject) description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__DESCRIPTION, null, msgs);
+			}
+			if (newDescription != null) {
+				msgs = ((InternalEObject) newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__DESCRIPTION, null, msgs);
+			}
 			msgs = basicSetDescription(newDescription, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__DESCRIPTION, newDescription,
+				newDescription));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__DESCRIPTION, newDescription, newDescription));
 	}
 
 	/**
@@ -234,7 +252,8 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 	 */
 	public EList<ContextAnnotation> getUsageConstraint() {
 		if (usageConstraint == null) {
-			usageConstraint = new EObjectContainmentEList<ContextAnnotation>(ContextAnnotation.class, this, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__USAGE_CONSTRAINT);
+			usageConstraint = new EObjectContainmentEList<ContextAnnotation>(
+				ContextAnnotation.class, this, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__USAGE_CONSTRAINT);
 		}
 		return usageConstraint;
 	}
@@ -246,7 +265,8 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 	 */
 	public EList<ContextAnnotation> getUsageNotes() {
 		if (usageNotes == null) {
-			usageNotes = new EObjectContainmentEList<ContextAnnotation>(ContextAnnotation.class, this, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__USAGE_NOTES);
+			usageNotes = new EObjectContainmentEList<ContextAnnotation>(
+				ContextAnnotation.class, this, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__USAGE_NOTES);
 		}
 		return usageNotes;
 	}
@@ -269,8 +289,14 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 		CascadableAnnotation oldRationale = rationale;
 		rationale = newRationale;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__RATIONALE, oldRationale, newRationale);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__RATIONALE, oldRationale,
+				newRationale);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -283,15 +309,23 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 	public void setRationale(CascadableAnnotation newRationale) {
 		if (newRationale != rationale) {
 			NotificationChain msgs = null;
-			if (rationale != null)
-				msgs = ((InternalEObject)rationale).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__RATIONALE, null, msgs);
-			if (newRationale != null)
-				msgs = ((InternalEObject)newRationale).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__RATIONALE, null, msgs);
+			if (rationale != null) {
+				msgs = ((InternalEObject) rationale).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__RATIONALE, null, msgs);
+			}
+			if (newRationale != null) {
+				msgs = ((InternalEObject) newRationale).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__RATIONALE, null, msgs);
+			}
 			msgs = basicSetRationale(newRationale, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__RATIONALE, newRationale,
+				newRationale));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__RATIONALE, newRationale, newRationale));
 	}
 
 	/**
@@ -312,8 +346,14 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 		ContextAnnotation oldRequirements = requirements;
 		requirements = newRequirements;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__REQUIREMENTS, oldRequirements, newRequirements);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__REQUIREMENTS, oldRequirements,
+				newRequirements);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -326,15 +366,23 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 	public void setRequirements(ContextAnnotation newRequirements) {
 		if (newRequirements != requirements) {
 			NotificationChain msgs = null;
-			if (requirements != null)
-				msgs = ((InternalEObject)requirements).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__REQUIREMENTS, null, msgs);
-			if (newRequirements != null)
-				msgs = ((InternalEObject)newRequirements).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__REQUIREMENTS, null, msgs);
+			if (requirements != null) {
+				msgs = ((InternalEObject) requirements).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__REQUIREMENTS, null, msgs);
+			}
+			if (newRequirements != null) {
+				msgs = ((InternalEObject) newRequirements).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__REQUIREMENTS, null, msgs);
+			}
 			msgs = basicSetRequirements(newRequirements, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__REQUIREMENTS, newRequirements,
+				newRequirements));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__REQUIREMENTS, newRequirements, newRequirements));
 	}
 
 	/**
@@ -344,7 +392,8 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 	 */
 	public EList<DesignComment> getDesignComments() {
 		if (designComments == null) {
-			designComments = new EObjectContainmentEList<DesignComment>(DesignComment.class, this, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__DESIGN_COMMENTS);
+			designComments = new EObjectContainmentEList<DesignComment>(
+				DesignComment.class, this, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__DESIGN_COMMENTS);
 		}
 		return designComments;
 	}
@@ -356,7 +405,8 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 	 */
 	public EList<ContextAnnotation> getStabilityRemarks() {
 		if (stabilityRemarks == null) {
-			stabilityRemarks = new EObjectContainmentEList<ContextAnnotation>(ContextAnnotation.class, this, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__STABILITY_REMARKS);
+			stabilityRemarks = new EObjectContainmentEList<ContextAnnotation>(
+				ContextAnnotation.class, this, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__STABILITY_REMARKS);
 		}
 		return stabilityRemarks;
 	}
@@ -379,8 +429,14 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 		ContextAnnotation oldWalkthrough = walkthrough;
 		walkthrough = newWalkthrough;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__WALKTHROUGH, oldWalkthrough, newWalkthrough);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__WALKTHROUGH, oldWalkthrough,
+				newWalkthrough);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -393,15 +449,23 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 	public void setWalkthrough(ContextAnnotation newWalkthrough) {
 		if (newWalkthrough != walkthrough) {
 			NotificationChain msgs = null;
-			if (walkthrough != null)
-				msgs = ((InternalEObject)walkthrough).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__WALKTHROUGH, null, msgs);
-			if (newWalkthrough != null)
-				msgs = ((InternalEObject)newWalkthrough).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__WALKTHROUGH, null, msgs);
+			if (walkthrough != null) {
+				msgs = ((InternalEObject) walkthrough).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__WALKTHROUGH, null, msgs);
+			}
+			if (newWalkthrough != null) {
+				msgs = ((InternalEObject) newWalkthrough).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__WALKTHROUGH, null, msgs);
+			}
 			msgs = basicSetWalkthrough(newWalkthrough, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__WALKTHROUGH, newWalkthrough,
+				newWalkthrough));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__WALKTHROUGH, newWalkthrough, newWalkthrough));
 	}
 
 	/**
@@ -411,7 +475,8 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 	 */
 	public EList<OpenIssue> getOpenIssue() {
 		if (openIssue == null) {
-			openIssue = new EObjectContainmentEList<OpenIssue>(OpenIssue.class, this, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__OPEN_ISSUE);
+			openIssue = new EObjectContainmentEList<OpenIssue>(
+				OpenIssue.class, this, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__OPEN_ISSUE);
 		}
 		return openIssue;
 	}
@@ -423,7 +488,8 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 	 */
 	public EList<OtherAnnotation> getOtherAnnotation() {
 		if (otherAnnotation == null) {
-			otherAnnotation = new EObjectContainmentEList<OtherAnnotation>(OtherAnnotation.class, this, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__OTHER_ANNOTATION);
+			otherAnnotation = new EObjectContainmentEList<OtherAnnotation>(
+				OtherAnnotation.class, this, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__OTHER_ANNOTATION);
 		}
 		return otherAnnotation;
 	}
@@ -435,7 +501,8 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 	 */
 	public EList<Appendix> getAppendix() {
 		if (appendix == null) {
-			appendix = new EObjectContainmentEList<Appendix>(Appendix.class, this, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__APPENDIX);
+			appendix = new EObjectContainmentEList<Appendix>(
+				Appendix.class, this, Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__APPENDIX);
 		}
 		return appendix;
 	}
@@ -451,25 +518,25 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__DESCRIPTION:
 				return basicSetDescription(null, msgs);
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__USAGE_CONSTRAINT:
-				return ((InternalEList<?>)getUsageConstraint()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getUsageConstraint()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__USAGE_NOTES:
-				return ((InternalEList<?>)getUsageNotes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getUsageNotes()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__RATIONALE:
 				return basicSetRationale(null, msgs);
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__REQUIREMENTS:
 				return basicSetRequirements(null, msgs);
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__DESIGN_COMMENTS:
-				return ((InternalEList<?>)getDesignComments()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDesignComments()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__STABILITY_REMARKS:
-				return ((InternalEList<?>)getStabilityRemarks()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getStabilityRemarks()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__WALKTHROUGH:
 				return basicSetWalkthrough(null, msgs);
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__OPEN_ISSUE:
-				return ((InternalEList<?>)getOpenIssue()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getOpenIssue()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__OTHER_ANNOTATION:
-				return ((InternalEList<?>)getOtherAnnotation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getOtherAnnotation()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__APPENDIX:
-				return ((InternalEList<?>)getAppendix()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAppendix()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -518,44 +585,44 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__DESCRIPTION:
-				setDescription((CascadableAnnotation)newValue);
+				setDescription((CascadableAnnotation) newValue);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__USAGE_CONSTRAINT:
 				getUsageConstraint().clear();
-				getUsageConstraint().addAll((Collection<? extends ContextAnnotation>)newValue);
+				getUsageConstraint().addAll((Collection<? extends ContextAnnotation>) newValue);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__USAGE_NOTES:
 				getUsageNotes().clear();
-				getUsageNotes().addAll((Collection<? extends ContextAnnotation>)newValue);
+				getUsageNotes().addAll((Collection<? extends ContextAnnotation>) newValue);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__RATIONALE:
-				setRationale((CascadableAnnotation)newValue);
+				setRationale((CascadableAnnotation) newValue);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__REQUIREMENTS:
-				setRequirements((ContextAnnotation)newValue);
+				setRequirements((ContextAnnotation) newValue);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__DESIGN_COMMENTS:
 				getDesignComments().clear();
-				getDesignComments().addAll((Collection<? extends DesignComment>)newValue);
+				getDesignComments().addAll((Collection<? extends DesignComment>) newValue);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__STABILITY_REMARKS:
 				getStabilityRemarks().clear();
-				getStabilityRemarks().addAll((Collection<? extends ContextAnnotation>)newValue);
+				getStabilityRemarks().addAll((Collection<? extends ContextAnnotation>) newValue);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__WALKTHROUGH:
-				setWalkthrough((ContextAnnotation)newValue);
+				setWalkthrough((ContextAnnotation) newValue);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__OPEN_ISSUE:
 				getOpenIssue().clear();
-				getOpenIssue().addAll((Collection<? extends OpenIssue>)newValue);
+				getOpenIssue().addAll((Collection<? extends OpenIssue>) newValue);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__OTHER_ANNOTATION:
 				getOtherAnnotation().clear();
-				getOtherAnnotation().addAll((Collection<? extends OtherAnnotation>)newValue);
+				getOtherAnnotation().addAll((Collection<? extends OtherAnnotation>) newValue);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__APPENDIX:
 				getAppendix().clear();
-				getAppendix().addAll((Collection<? extends Appendix>)newValue);
+				getAppendix().addAll((Collection<? extends Appendix>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -570,7 +637,7 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__DESCRIPTION:
-				setDescription((CascadableAnnotation)null);
+				setDescription((CascadableAnnotation) null);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__USAGE_CONSTRAINT:
 				getUsageConstraint().clear();
@@ -579,10 +646,10 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 				getUsageNotes().clear();
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__RATIONALE:
-				setRationale((CascadableAnnotation)null);
+				setRationale((CascadableAnnotation) null);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__REQUIREMENTS:
-				setRequirements((ContextAnnotation)null);
+				setRequirements((ContextAnnotation) null);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__DESIGN_COMMENTS:
 				getDesignComments().clear();
@@ -591,7 +658,7 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 				getStabilityRemarks().clear();
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__WALKTHROUGH:
-				setWalkthrough((ContextAnnotation)null);
+				setWalkthrough((ContextAnnotation) null);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION__OPEN_ISSUE:
 				getOpenIssue().clear();
@@ -640,4 +707,4 @@ public class DocumentProfileDocumentationImpl extends EObjectImpl implements Doc
 		return super.eIsSet(featureID);
 	}
 
-} //DocumentProfileDocumentationImpl
+} // DocumentProfileDocumentationImpl

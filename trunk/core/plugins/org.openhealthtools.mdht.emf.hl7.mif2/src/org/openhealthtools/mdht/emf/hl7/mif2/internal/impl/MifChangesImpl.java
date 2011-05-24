@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -110,12 +114,19 @@ public class MifChangesImpl extends PackageBaseImpl implements MifChanges {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRenderingInformation(RenderingInformation newRenderingInformation, NotificationChain msgs) {
+	public NotificationChain basicSetRenderingInformation(RenderingInformation newRenderingInformation,
+			NotificationChain msgs) {
 		RenderingInformation oldRenderingInformation = renderingInformation;
 		renderingInformation = newRenderingInformation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.MIF_CHANGES__RENDERING_INFORMATION, oldRenderingInformation, newRenderingInformation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.MIF_CHANGES__RENDERING_INFORMATION, oldRenderingInformation,
+				newRenderingInformation);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -128,15 +139,23 @@ public class MifChangesImpl extends PackageBaseImpl implements MifChanges {
 	public void setRenderingInformation(RenderingInformation newRenderingInformation) {
 		if (newRenderingInformation != renderingInformation) {
 			NotificationChain msgs = null;
-			if (renderingInformation != null)
-				msgs = ((InternalEObject)renderingInformation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.MIF_CHANGES__RENDERING_INFORMATION, null, msgs);
-			if (newRenderingInformation != null)
-				msgs = ((InternalEObject)newRenderingInformation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.MIF_CHANGES__RENDERING_INFORMATION, null, msgs);
+			if (renderingInformation != null) {
+				msgs = ((InternalEObject) renderingInformation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.MIF_CHANGES__RENDERING_INFORMATION, null, msgs);
+			}
+			if (newRenderingInformation != null) {
+				msgs = ((InternalEObject) newRenderingInformation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.MIF_CHANGES__RENDERING_INFORMATION, null, msgs);
+			}
 			msgs = basicSetRenderingInformation(newRenderingInformation, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.MIF_CHANGES__RENDERING_INFORMATION, newRenderingInformation,
+				newRenderingInformation));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.MIF_CHANGES__RENDERING_INFORMATION, newRenderingInformation, newRenderingInformation));
 	}
 
 	/**
@@ -157,8 +176,14 @@ public class MifChangesImpl extends PackageBaseImpl implements MifChanges {
 		PackageOrArtifactRef oldOriginalArtifact = originalArtifact;
 		originalArtifact = newOriginalArtifact;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.MIF_CHANGES__ORIGINAL_ARTIFACT, oldOriginalArtifact, newOriginalArtifact);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.MIF_CHANGES__ORIGINAL_ARTIFACT, oldOriginalArtifact,
+				newOriginalArtifact);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -171,15 +196,23 @@ public class MifChangesImpl extends PackageBaseImpl implements MifChanges {
 	public void setOriginalArtifact(PackageOrArtifactRef newOriginalArtifact) {
 		if (newOriginalArtifact != originalArtifact) {
 			NotificationChain msgs = null;
-			if (originalArtifact != null)
-				msgs = ((InternalEObject)originalArtifact).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.MIF_CHANGES__ORIGINAL_ARTIFACT, null, msgs);
-			if (newOriginalArtifact != null)
-				msgs = ((InternalEObject)newOriginalArtifact).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.MIF_CHANGES__ORIGINAL_ARTIFACT, null, msgs);
+			if (originalArtifact != null) {
+				msgs = ((InternalEObject) originalArtifact).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.MIF_CHANGES__ORIGINAL_ARTIFACT, null, msgs);
+			}
+			if (newOriginalArtifact != null) {
+				msgs = ((InternalEObject) newOriginalArtifact).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.MIF_CHANGES__ORIGINAL_ARTIFACT, null, msgs);
+			}
 			msgs = basicSetOriginalArtifact(newOriginalArtifact, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.MIF_CHANGES__ORIGINAL_ARTIFACT, newOriginalArtifact,
+				newOriginalArtifact));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.MIF_CHANGES__ORIGINAL_ARTIFACT, newOriginalArtifact, newOriginalArtifact));
 	}
 
 	/**
@@ -200,8 +233,14 @@ public class MifChangesImpl extends PackageBaseImpl implements MifChanges {
 		PackageOrArtifactRef oldRevisedArtifact = revisedArtifact;
 		revisedArtifact = newRevisedArtifact;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.MIF_CHANGES__REVISED_ARTIFACT, oldRevisedArtifact, newRevisedArtifact);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.MIF_CHANGES__REVISED_ARTIFACT, oldRevisedArtifact,
+				newRevisedArtifact);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -214,15 +253,23 @@ public class MifChangesImpl extends PackageBaseImpl implements MifChanges {
 	public void setRevisedArtifact(PackageOrArtifactRef newRevisedArtifact) {
 		if (newRevisedArtifact != revisedArtifact) {
 			NotificationChain msgs = null;
-			if (revisedArtifact != null)
-				msgs = ((InternalEObject)revisedArtifact).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.MIF_CHANGES__REVISED_ARTIFACT, null, msgs);
-			if (newRevisedArtifact != null)
-				msgs = ((InternalEObject)newRevisedArtifact).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.MIF_CHANGES__REVISED_ARTIFACT, null, msgs);
+			if (revisedArtifact != null) {
+				msgs = ((InternalEObject) revisedArtifact).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.MIF_CHANGES__REVISED_ARTIFACT, null, msgs);
+			}
+			if (newRevisedArtifact != null) {
+				msgs = ((InternalEObject) newRevisedArtifact).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.MIF_CHANGES__REVISED_ARTIFACT, null, msgs);
+			}
 			msgs = basicSetRevisedArtifact(newRevisedArtifact, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.MIF_CHANGES__REVISED_ARTIFACT, newRevisedArtifact,
+				newRevisedArtifact));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.MIF_CHANGES__REVISED_ARTIFACT, newRevisedArtifact, newRevisedArtifact));
 	}
 
 	/**
@@ -243,8 +290,13 @@ public class MifChangesImpl extends PackageBaseImpl implements MifChanges {
 		ElementChange oldChange = change;
 		change = newChange;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.MIF_CHANGES__CHANGE, oldChange, newChange);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.MIF_CHANGES__CHANGE, oldChange, newChange);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -257,15 +309,21 @@ public class MifChangesImpl extends PackageBaseImpl implements MifChanges {
 	public void setChange(ElementChange newChange) {
 		if (newChange != change) {
 			NotificationChain msgs = null;
-			if (change != null)
-				msgs = ((InternalEObject)change).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.MIF_CHANGES__CHANGE, null, msgs);
-			if (newChange != null)
-				msgs = ((InternalEObject)newChange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.MIF_CHANGES__CHANGE, null, msgs);
+			if (change != null) {
+				msgs = ((InternalEObject) change).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.MIF_CHANGES__CHANGE, null, msgs);
+			}
+			if (newChange != null) {
+				msgs = ((InternalEObject) newChange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.MIF_CHANGES__CHANGE, null, msgs);
+			}
 			msgs = basicSetChange(newChange, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.MIF_CHANGES__CHANGE, newChange, newChange));
+		}
 	}
 
 	/**
@@ -317,16 +375,16 @@ public class MifChangesImpl extends PackageBaseImpl implements MifChanges {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.MIF_CHANGES__RENDERING_INFORMATION:
-				setRenderingInformation((RenderingInformation)newValue);
+				setRenderingInformation((RenderingInformation) newValue);
 				return;
 			case Mif2Package.MIF_CHANGES__ORIGINAL_ARTIFACT:
-				setOriginalArtifact((PackageOrArtifactRef)newValue);
+				setOriginalArtifact((PackageOrArtifactRef) newValue);
 				return;
 			case Mif2Package.MIF_CHANGES__REVISED_ARTIFACT:
-				setRevisedArtifact((PackageOrArtifactRef)newValue);
+				setRevisedArtifact((PackageOrArtifactRef) newValue);
 				return;
 			case Mif2Package.MIF_CHANGES__CHANGE:
-				setChange((ElementChange)newValue);
+				setChange((ElementChange) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -341,16 +399,16 @@ public class MifChangesImpl extends PackageBaseImpl implements MifChanges {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.MIF_CHANGES__RENDERING_INFORMATION:
-				setRenderingInformation((RenderingInformation)null);
+				setRenderingInformation((RenderingInformation) null);
 				return;
 			case Mif2Package.MIF_CHANGES__ORIGINAL_ARTIFACT:
-				setOriginalArtifact((PackageOrArtifactRef)null);
+				setOriginalArtifact((PackageOrArtifactRef) null);
 				return;
 			case Mif2Package.MIF_CHANGES__REVISED_ARTIFACT:
-				setRevisedArtifact((PackageOrArtifactRef)null);
+				setRevisedArtifact((PackageOrArtifactRef) null);
 				return;
 			case Mif2Package.MIF_CHANGES__CHANGE:
-				setChange((ElementChange)null);
+				setChange((ElementChange) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -376,4 +434,4 @@ public class MifChangesImpl extends PackageBaseImpl implements MifChanges {
 		return super.eIsSet(featureID);
 	}
 
-} //MifChangesImpl
+} // MifChangesImpl

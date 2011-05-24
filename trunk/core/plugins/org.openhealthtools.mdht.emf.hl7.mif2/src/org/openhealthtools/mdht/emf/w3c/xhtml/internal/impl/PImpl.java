@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -146,11 +150,15 @@ public class PImpl extends InlineImpl implements P {
 	 */
 	public void setClass(MifClassType newClass) {
 		MifClassType oldClass = class_;
-		class_ = newClass == null ? CLASS_EDEFAULT : newClass;
+		class_ = newClass == null
+				? CLASS_EDEFAULT
+				: newClass;
 		boolean oldClassESet = classESet;
 		classESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.P__CLASS, oldClass, class_, !oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.P__CLASS, oldClass, class_, !oldClassESet));
+		}
 	}
 
 	/**
@@ -163,8 +171,10 @@ public class PImpl extends InlineImpl implements P {
 		boolean oldClassESet = classESet;
 		class_ = CLASS_EDEFAULT;
 		classESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.P__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.P__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		}
 	}
 
 	/**
@@ -193,8 +203,9 @@ public class PImpl extends InlineImpl implements P {
 	public void setLang(String newLang) {
 		String oldLang = lang;
 		lang = newLang;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.P__LANG, oldLang, lang));
+		}
 	}
 
 	/**
@@ -213,11 +224,14 @@ public class PImpl extends InlineImpl implements P {
 	 */
 	public void setStyle(StyleSheet newStyle) {
 		StyleSheet oldStyle = style;
-		style = newStyle == null ? STYLE_EDEFAULT : newStyle;
+		style = newStyle == null
+				? STYLE_EDEFAULT
+				: newStyle;
 		boolean oldStyleESet = styleESet;
 		styleESet = true;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.P__STYLE, oldStyle, style, !oldStyleESet));
+		}
 	}
 
 	/**
@@ -230,8 +244,10 @@ public class PImpl extends InlineImpl implements P {
 		boolean oldStyleESet = styleESet;
 		style = STYLE_EDEFAULT;
 		styleESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.P__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.P__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		}
 	}
 
 	/**
@@ -270,13 +286,13 @@ public class PImpl extends InlineImpl implements P {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case XhtmlPackage.P__CLASS:
-				setClass((MifClassType)newValue);
+				setClass((MifClassType) newValue);
 				return;
 			case XhtmlPackage.P__LANG:
-				setLang((String)newValue);
+				setLang((String) newValue);
 				return;
 			case XhtmlPackage.P__STYLE:
-				setStyle((StyleSheet)newValue);
+				setStyle((StyleSheet) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -314,7 +330,9 @@ public class PImpl extends InlineImpl implements P {
 			case XhtmlPackage.P__CLASS:
 				return isSetClass();
 			case XhtmlPackage.P__LANG:
-				return LANG_EDEFAULT == null ? lang != null : !LANG_EDEFAULT.equals(lang);
+				return LANG_EDEFAULT == null
+						? lang != null
+						: !LANG_EDEFAULT.equals(lang);
 			case XhtmlPackage.P__STYLE:
 				return isSetStyle();
 		}
@@ -328,17 +346,27 @@ public class PImpl extends InlineImpl implements P {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (class: ");
-		if (classESet) result.append(class_); else result.append("<unset>");
+		if (classESet) {
+			result.append(class_);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", lang: ");
 		result.append(lang);
 		result.append(", style: ");
-		if (styleESet) result.append(style); else result.append("<unset>");
+		if (styleESet) {
+			result.append(style);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //PImpl
+} // PImpl

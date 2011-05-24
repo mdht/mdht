@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -84,7 +88,8 @@ public class GlossaryImpl extends PackageImpl implements Glossary {
 	 */
 	public EList<PackageRef> getImportedGlossary() {
 		if (importedGlossary == null) {
-			importedGlossary = new EObjectContainmentEList<PackageRef>(PackageRef.class, this, Mif2Package.GLOSSARY__IMPORTED_GLOSSARY);
+			importedGlossary = new EObjectContainmentEList<PackageRef>(
+				PackageRef.class, this, Mif2Package.GLOSSARY__IMPORTED_GLOSSARY);
 		}
 		return importedGlossary;
 	}
@@ -96,7 +101,8 @@ public class GlossaryImpl extends PackageImpl implements Glossary {
 	 */
 	public EList<TermDefinition> getTermDefinition() {
 		if (termDefinition == null) {
-			termDefinition = new EObjectContainmentEList<TermDefinition>(TermDefinition.class, this, Mif2Package.GLOSSARY__TERM_DEFINITION);
+			termDefinition = new EObjectContainmentEList<TermDefinition>(
+				TermDefinition.class, this, Mif2Package.GLOSSARY__TERM_DEFINITION);
 		}
 		return termDefinition;
 	}
@@ -110,9 +116,9 @@ public class GlossaryImpl extends PackageImpl implements Glossary {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.GLOSSARY__IMPORTED_GLOSSARY:
-				return ((InternalEList<?>)getImportedGlossary()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getImportedGlossary()).basicRemove(otherEnd, msgs);
 			case Mif2Package.GLOSSARY__TERM_DEFINITION:
-				return ((InternalEList<?>)getTermDefinition()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTermDefinition()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -144,11 +150,11 @@ public class GlossaryImpl extends PackageImpl implements Glossary {
 		switch (featureID) {
 			case Mif2Package.GLOSSARY__IMPORTED_GLOSSARY:
 				getImportedGlossary().clear();
-				getImportedGlossary().addAll((Collection<? extends PackageRef>)newValue);
+				getImportedGlossary().addAll((Collection<? extends PackageRef>) newValue);
 				return;
 			case Mif2Package.GLOSSARY__TERM_DEFINITION:
 				getTermDefinition().clear();
-				getTermDefinition().addAll((Collection<? extends TermDefinition>)newValue);
+				getTermDefinition().addAll((Collection<? extends TermDefinition>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -188,4 +194,4 @@ public class GlossaryImpl extends PackageImpl implements Glossary {
 		return super.eIsSet(featureID);
 	}
 
-} //GlossaryImpl
+} // GlossaryImpl

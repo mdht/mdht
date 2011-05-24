@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -80,8 +84,14 @@ public class DiagramGraphicInformationImpl extends EObjectImpl implements Diagra
 		Diagram oldGraphElement = graphElement;
 		graphElement = newGraphElement;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DIAGRAM_GRAPHIC_INFORMATION__GRAPH_ELEMENT, oldGraphElement, newGraphElement);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DIAGRAM_GRAPHIC_INFORMATION__GRAPH_ELEMENT, oldGraphElement,
+				newGraphElement);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -94,15 +104,23 @@ public class DiagramGraphicInformationImpl extends EObjectImpl implements Diagra
 	public void setGraphElement(Diagram newGraphElement) {
 		if (newGraphElement != graphElement) {
 			NotificationChain msgs = null;
-			if (graphElement != null)
-				msgs = ((InternalEObject)graphElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DIAGRAM_GRAPHIC_INFORMATION__GRAPH_ELEMENT, null, msgs);
-			if (newGraphElement != null)
-				msgs = ((InternalEObject)newGraphElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DIAGRAM_GRAPHIC_INFORMATION__GRAPH_ELEMENT, null, msgs);
+			if (graphElement != null) {
+				msgs = ((InternalEObject) graphElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DIAGRAM_GRAPHIC_INFORMATION__GRAPH_ELEMENT, null, msgs);
+			}
+			if (newGraphElement != null) {
+				msgs = ((InternalEObject) newGraphElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DIAGRAM_GRAPHIC_INFORMATION__GRAPH_ELEMENT, null, msgs);
+			}
 			msgs = basicSetGraphElement(newGraphElement, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DIAGRAM_GRAPHIC_INFORMATION__GRAPH_ELEMENT, newGraphElement,
+				newGraphElement));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DIAGRAM_GRAPHIC_INFORMATION__GRAPH_ELEMENT, newGraphElement, newGraphElement));
 	}
 
 	/**
@@ -142,7 +160,7 @@ public class DiagramGraphicInformationImpl extends EObjectImpl implements Diagra
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DIAGRAM_GRAPHIC_INFORMATION__GRAPH_ELEMENT:
-				setGraphElement((Diagram)newValue);
+				setGraphElement((Diagram) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -157,7 +175,7 @@ public class DiagramGraphicInformationImpl extends EObjectImpl implements Diagra
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.DIAGRAM_GRAPHIC_INFORMATION__GRAPH_ELEMENT:
-				setGraphElement((Diagram)null);
+				setGraphElement((Diagram) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -177,4 +195,4 @@ public class DiagramGraphicInformationImpl extends EObjectImpl implements Diagra
 		return super.eIsSet(featureID);
 	}
 
-} //DiagramGraphicInformationImpl
+} // DiagramGraphicInformationImpl

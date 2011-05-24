@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -154,8 +158,13 @@ public class InteractionTestImpl extends TestBaseImpl implements InteractionTest
 		PackageOrArtifactRef oldInteraction = interaction;
 		interaction = newInteraction;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_TEST__INTERACTION, oldInteraction, newInteraction);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_TEST__INTERACTION, oldInteraction, newInteraction);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -168,15 +177,22 @@ public class InteractionTestImpl extends TestBaseImpl implements InteractionTest
 	public void setInteraction(PackageOrArtifactRef newInteraction) {
 		if (newInteraction != interaction) {
 			NotificationChain msgs = null;
-			if (interaction != null)
-				msgs = ((InternalEObject)interaction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION_TEST__INTERACTION, null, msgs);
-			if (newInteraction != null)
-				msgs = ((InternalEObject)newInteraction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION_TEST__INTERACTION, null, msgs);
+			if (interaction != null) {
+				msgs = ((InternalEObject) interaction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION_TEST__INTERACTION, null, msgs);
+			}
+			if (newInteraction != null) {
+				msgs = ((InternalEObject) newInteraction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION_TEST__INTERACTION, null, msgs);
+			}
 			msgs = basicSetInteraction(newInteraction, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_TEST__INTERACTION, newInteraction, newInteraction));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_TEST__INTERACTION, newInteraction, newInteraction));
 	}
 
 	/**
@@ -197,8 +213,14 @@ public class InteractionTestImpl extends TestBaseImpl implements InteractionTest
 		ExampleType oldExampleContent = exampleContent;
 		exampleContent = newExampleContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_TEST__EXAMPLE_CONTENT, oldExampleContent, newExampleContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_TEST__EXAMPLE_CONTENT, oldExampleContent,
+				newExampleContent);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -211,15 +233,23 @@ public class InteractionTestImpl extends TestBaseImpl implements InteractionTest
 	public void setExampleContent(ExampleType newExampleContent) {
 		if (newExampleContent != exampleContent) {
 			NotificationChain msgs = null;
-			if (exampleContent != null)
-				msgs = ((InternalEObject)exampleContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION_TEST__EXAMPLE_CONTENT, null, msgs);
-			if (newExampleContent != null)
-				msgs = ((InternalEObject)newExampleContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION_TEST__EXAMPLE_CONTENT, null, msgs);
+			if (exampleContent != null) {
+				msgs = ((InternalEObject) exampleContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION_TEST__EXAMPLE_CONTENT, null, msgs);
+			}
+			if (newExampleContent != null) {
+				msgs = ((InternalEObject) newExampleContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION_TEST__EXAMPLE_CONTENT, null, msgs);
+			}
 			msgs = basicSetExampleContent(newExampleContent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_TEST__EXAMPLE_CONTENT, newExampleContent,
+				newExampleContent));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_TEST__EXAMPLE_CONTENT, newExampleContent, newExampleContent));
 	}
 
 	/**
@@ -239,8 +269,10 @@ public class InteractionTestImpl extends TestBaseImpl implements InteractionTest
 	public void setExampleFile(String newExampleFile) {
 		String oldExampleFile = exampleFile;
 		exampleFile = newExampleFile;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_TEST__EXAMPLE_FILE, oldExampleFile, exampleFile));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_TEST__EXAMPLE_FILE, oldExampleFile, exampleFile));
+		}
 	}
 
 	/**
@@ -260,8 +292,11 @@ public class InteractionTestImpl extends TestBaseImpl implements InteractionTest
 	public void setReceivingSystem(String newReceivingSystem) {
 		String oldReceivingSystem = receivingSystem;
 		receivingSystem = newReceivingSystem;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_TEST__RECEIVING_SYSTEM, oldReceivingSystem, receivingSystem));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_TEST__RECEIVING_SYSTEM, oldReceivingSystem,
+				receivingSystem));
+		}
 	}
 
 	/**
@@ -281,8 +316,10 @@ public class InteractionTestImpl extends TestBaseImpl implements InteractionTest
 	public void setSendingSystem(String newSendingSystem) {
 		String oldSendingSystem = sendingSystem;
 		sendingSystem = newSendingSystem;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_TEST__SENDING_SYSTEM, oldSendingSystem, sendingSystem));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_TEST__SENDING_SYSTEM, oldSendingSystem, sendingSystem));
+		}
 	}
 
 	/**
@@ -332,19 +369,19 @@ public class InteractionTestImpl extends TestBaseImpl implements InteractionTest
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.INTERACTION_TEST__INTERACTION:
-				setInteraction((PackageOrArtifactRef)newValue);
+				setInteraction((PackageOrArtifactRef) newValue);
 				return;
 			case Mif2Package.INTERACTION_TEST__EXAMPLE_CONTENT:
-				setExampleContent((ExampleType)newValue);
+				setExampleContent((ExampleType) newValue);
 				return;
 			case Mif2Package.INTERACTION_TEST__EXAMPLE_FILE:
-				setExampleFile((String)newValue);
+				setExampleFile((String) newValue);
 				return;
 			case Mif2Package.INTERACTION_TEST__RECEIVING_SYSTEM:
-				setReceivingSystem((String)newValue);
+				setReceivingSystem((String) newValue);
 				return;
 			case Mif2Package.INTERACTION_TEST__SENDING_SYSTEM:
-				setSendingSystem((String)newValue);
+				setSendingSystem((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -359,10 +396,10 @@ public class InteractionTestImpl extends TestBaseImpl implements InteractionTest
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.INTERACTION_TEST__INTERACTION:
-				setInteraction((PackageOrArtifactRef)null);
+				setInteraction((PackageOrArtifactRef) null);
 				return;
 			case Mif2Package.INTERACTION_TEST__EXAMPLE_CONTENT:
-				setExampleContent((ExampleType)null);
+				setExampleContent((ExampleType) null);
 				return;
 			case Mif2Package.INTERACTION_TEST__EXAMPLE_FILE:
 				setExampleFile(EXAMPLE_FILE_EDEFAULT);
@@ -390,11 +427,17 @@ public class InteractionTestImpl extends TestBaseImpl implements InteractionTest
 			case Mif2Package.INTERACTION_TEST__EXAMPLE_CONTENT:
 				return exampleContent != null;
 			case Mif2Package.INTERACTION_TEST__EXAMPLE_FILE:
-				return EXAMPLE_FILE_EDEFAULT == null ? exampleFile != null : !EXAMPLE_FILE_EDEFAULT.equals(exampleFile);
+				return EXAMPLE_FILE_EDEFAULT == null
+						? exampleFile != null
+						: !EXAMPLE_FILE_EDEFAULT.equals(exampleFile);
 			case Mif2Package.INTERACTION_TEST__RECEIVING_SYSTEM:
-				return RECEIVING_SYSTEM_EDEFAULT == null ? receivingSystem != null : !RECEIVING_SYSTEM_EDEFAULT.equals(receivingSystem);
+				return RECEIVING_SYSTEM_EDEFAULT == null
+						? receivingSystem != null
+						: !RECEIVING_SYSTEM_EDEFAULT.equals(receivingSystem);
 			case Mif2Package.INTERACTION_TEST__SENDING_SYSTEM:
-				return SENDING_SYSTEM_EDEFAULT == null ? sendingSystem != null : !SENDING_SYSTEM_EDEFAULT.equals(sendingSystem);
+				return SENDING_SYSTEM_EDEFAULT == null
+						? sendingSystem != null
+						: !SENDING_SYSTEM_EDEFAULT.equals(sendingSystem);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -406,7 +449,9 @@ public class InteractionTestImpl extends TestBaseImpl implements InteractionTest
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (exampleFile: ");
@@ -419,4 +464,4 @@ public class InteractionTestImpl extends TestBaseImpl implements InteractionTest
 		return result.toString();
 	}
 
-} //InteractionTestImpl
+} // InteractionTestImpl

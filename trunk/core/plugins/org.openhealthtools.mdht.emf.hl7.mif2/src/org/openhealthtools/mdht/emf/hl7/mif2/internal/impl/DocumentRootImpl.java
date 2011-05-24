@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -172,7 +176,9 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 */
 	public EMap<String, String> getXMLNSPrefixMap() {
 		if (xMLNSPrefixMap == null) {
-			xMLNSPrefixMap = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, Mif2Package.DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
+			xMLNSPrefixMap = new EcoreEMap<String, String>(
+				EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this,
+				Mif2Package.DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
 		}
 		return xMLNSPrefixMap;
 	}
@@ -184,7 +190,9 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 */
 	public EMap<String, String> getXSISchemaLocation() {
 		if (xSISchemaLocation == null) {
-			xSISchemaLocation = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, Mif2Package.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
+			xSISchemaLocation = new EcoreEMap<String, String>(
+				EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this,
+				Mif2Package.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
 		}
 		return xSISchemaLocation;
 	}
@@ -195,7 +203,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalApplicationRole getApplicationRole() {
-		return (GlobalApplicationRole)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__APPLICATION_ROLE, true);
+		return (GlobalApplicationRole) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__APPLICATION_ROLE, true);
 	}
 
 	/**
@@ -204,7 +212,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetApplicationRole(GlobalApplicationRole newApplicationRole, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__APPLICATION_ROLE, newApplicationRole, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__APPLICATION_ROLE, newApplicationRole, msgs);
 	}
 
 	/**
@@ -213,7 +222,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setApplicationRole(GlobalApplicationRole newApplicationRole) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__APPLICATION_ROLE, newApplicationRole);
+		((FeatureMap.Internal) getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__APPLICATION_ROLE, newApplicationRole);
 	}
 
 	/**
@@ -222,7 +231,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalArtifactXRefSummary getArtifactXrefSummary() {
-		return (GlobalArtifactXRefSummary)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__ARTIFACT_XREF_SUMMARY, true);
+		return (GlobalArtifactXRefSummary) getMixed().get(
+			Mif2Package.Literals.DOCUMENT_ROOT__ARTIFACT_XREF_SUMMARY, true);
 	}
 
 	/**
@@ -230,8 +240,10 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetArtifactXrefSummary(GlobalArtifactXRefSummary newArtifactXrefSummary, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__ARTIFACT_XREF_SUMMARY, newArtifactXrefSummary, msgs);
+	public NotificationChain basicSetArtifactXrefSummary(GlobalArtifactXRefSummary newArtifactXrefSummary,
+			NotificationChain msgs) {
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__ARTIFACT_XREF_SUMMARY, newArtifactXrefSummary, msgs);
 	}
 
 	/**
@@ -240,7 +252,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setArtifactXrefSummary(GlobalArtifactXRefSummary newArtifactXrefSummary) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__ARTIFACT_XREF_SUMMARY, newArtifactXrefSummary);
+		((FeatureMap.Internal) getMixed()).set(
+			Mif2Package.Literals.DOCUMENT_ROOT__ARTIFACT_XREF_SUMMARY, newArtifactXrefSummary);
 	}
 
 	/**
@@ -249,7 +262,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalCodeSystem getCodeSystem() {
-		return (GlobalCodeSystem)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__CODE_SYSTEM, true);
+		return (GlobalCodeSystem) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__CODE_SYSTEM, true);
 	}
 
 	/**
@@ -258,7 +271,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetCodeSystem(GlobalCodeSystem newCodeSystem, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__CODE_SYSTEM, newCodeSystem, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__CODE_SYSTEM, newCodeSystem, msgs);
 	}
 
 	/**
@@ -267,7 +281,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setCodeSystem(GlobalCodeSystem newCodeSystem) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__CODE_SYSTEM, newCodeSystem);
+		((FeatureMap.Internal) getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__CODE_SYSTEM, newCodeSystem);
 	}
 
 	/**
@@ -276,7 +290,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalCodeSystemSupplement getCodeSystemSupplement() {
-		return (GlobalCodeSystemSupplement)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__CODE_SYSTEM_SUPPLEMENT, true);
+		return (GlobalCodeSystemSupplement) getMixed().get(
+			Mif2Package.Literals.DOCUMENT_ROOT__CODE_SYSTEM_SUPPLEMENT, true);
 	}
 
 	/**
@@ -284,8 +299,10 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCodeSystemSupplement(GlobalCodeSystemSupplement newCodeSystemSupplement, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__CODE_SYSTEM_SUPPLEMENT, newCodeSystemSupplement, msgs);
+	public NotificationChain basicSetCodeSystemSupplement(GlobalCodeSystemSupplement newCodeSystemSupplement,
+			NotificationChain msgs) {
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__CODE_SYSTEM_SUPPLEMENT, newCodeSystemSupplement, msgs);
 	}
 
 	/**
@@ -294,7 +311,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setCodeSystemSupplement(GlobalCodeSystemSupplement newCodeSystemSupplement) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__CODE_SYSTEM_SUPPLEMENT, newCodeSystemSupplement);
+		((FeatureMap.Internal) getMixed()).set(
+			Mif2Package.Literals.DOCUMENT_ROOT__CODE_SYSTEM_SUPPLEMENT, newCodeSystemSupplement);
 	}
 
 	/**
@@ -303,7 +321,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalConformanceProfile getConformanceProfile() {
-		return (GlobalConformanceProfile)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__CONFORMANCE_PROFILE, true);
+		return (GlobalConformanceProfile) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__CONFORMANCE_PROFILE, true);
 	}
 
 	/**
@@ -311,8 +329,10 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetConformanceProfile(GlobalConformanceProfile newConformanceProfile, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__CONFORMANCE_PROFILE, newConformanceProfile, msgs);
+	public NotificationChain basicSetConformanceProfile(GlobalConformanceProfile newConformanceProfile,
+			NotificationChain msgs) {
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__CONFORMANCE_PROFILE, newConformanceProfile, msgs);
 	}
 
 	/**
@@ -321,7 +341,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setConformanceProfile(GlobalConformanceProfile newConformanceProfile) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__CONFORMANCE_PROFILE, newConformanceProfile);
+		((FeatureMap.Internal) getMixed()).set(
+			Mif2Package.Literals.DOCUMENT_ROOT__CONFORMANCE_PROFILE, newConformanceProfile);
 	}
 
 	/**
@@ -330,7 +351,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalDatatypeModelLibrary getDatatypeModelLibrary() {
-		return (GlobalDatatypeModelLibrary)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__DATATYPE_MODEL_LIBRARY, true);
+		return (GlobalDatatypeModelLibrary) getMixed().get(
+			Mif2Package.Literals.DOCUMENT_ROOT__DATATYPE_MODEL_LIBRARY, true);
 	}
 
 	/**
@@ -338,8 +360,10 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDatatypeModelLibrary(GlobalDatatypeModelLibrary newDatatypeModelLibrary, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__DATATYPE_MODEL_LIBRARY, newDatatypeModelLibrary, msgs);
+	public NotificationChain basicSetDatatypeModelLibrary(GlobalDatatypeModelLibrary newDatatypeModelLibrary,
+			NotificationChain msgs) {
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__DATATYPE_MODEL_LIBRARY, newDatatypeModelLibrary, msgs);
 	}
 
 	/**
@@ -348,7 +372,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setDatatypeModelLibrary(GlobalDatatypeModelLibrary newDatatypeModelLibrary) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__DATATYPE_MODEL_LIBRARY, newDatatypeModelLibrary);
+		((FeatureMap.Internal) getMixed()).set(
+			Mif2Package.Literals.DOCUMENT_ROOT__DATATYPE_MODEL_LIBRARY, newDatatypeModelLibrary);
 	}
 
 	/**
@@ -357,7 +382,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalDerivedStaticModel getDerivedStaticModel() {
-		return (GlobalDerivedStaticModel)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__DERIVED_STATIC_MODEL, true);
+		return (GlobalDerivedStaticModel) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__DERIVED_STATIC_MODEL, true);
 	}
 
 	/**
@@ -365,8 +390,10 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDerivedStaticModel(GlobalDerivedStaticModel newDerivedStaticModel, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__DERIVED_STATIC_MODEL, newDerivedStaticModel, msgs);
+	public NotificationChain basicSetDerivedStaticModel(GlobalDerivedStaticModel newDerivedStaticModel,
+			NotificationChain msgs) {
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__DERIVED_STATIC_MODEL, newDerivedStaticModel, msgs);
 	}
 
 	/**
@@ -375,7 +402,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setDerivedStaticModel(GlobalDerivedStaticModel newDerivedStaticModel) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__DERIVED_STATIC_MODEL, newDerivedStaticModel);
+		((FeatureMap.Internal) getMixed()).set(
+			Mif2Package.Literals.DOCUMENT_ROOT__DERIVED_STATIC_MODEL, newDerivedStaticModel);
 	}
 
 	/**
@@ -384,7 +412,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public DerivedStaticModelsType getDerivedStaticModels() {
-		return (DerivedStaticModelsType)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__DERIVED_STATIC_MODELS, true);
+		return (DerivedStaticModelsType) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__DERIVED_STATIC_MODELS, true);
 	}
 
 	/**
@@ -392,8 +420,10 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDerivedStaticModels(DerivedStaticModelsType newDerivedStaticModels, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__DERIVED_STATIC_MODELS, newDerivedStaticModels, msgs);
+	public NotificationChain basicSetDerivedStaticModels(DerivedStaticModelsType newDerivedStaticModels,
+			NotificationChain msgs) {
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__DERIVED_STATIC_MODELS, newDerivedStaticModels, msgs);
 	}
 
 	/**
@@ -402,7 +432,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setDerivedStaticModels(DerivedStaticModelsType newDerivedStaticModels) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__DERIVED_STATIC_MODELS, newDerivedStaticModels);
+		((FeatureMap.Internal) getMixed()).set(
+			Mif2Package.Literals.DOCUMENT_ROOT__DERIVED_STATIC_MODELS, newDerivedStaticModels);
 	}
 
 	/**
@@ -411,7 +442,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalDomainAnalysisModel getDomainAnalysisModel() {
-		return (GlobalDomainAnalysisModel)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__DOMAIN_ANALYSIS_MODEL, true);
+		return (GlobalDomainAnalysisModel) getMixed().get(
+			Mif2Package.Literals.DOCUMENT_ROOT__DOMAIN_ANALYSIS_MODEL, true);
 	}
 
 	/**
@@ -419,8 +451,10 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDomainAnalysisModel(GlobalDomainAnalysisModel newDomainAnalysisModel, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__DOMAIN_ANALYSIS_MODEL, newDomainAnalysisModel, msgs);
+	public NotificationChain basicSetDomainAnalysisModel(GlobalDomainAnalysisModel newDomainAnalysisModel,
+			NotificationChain msgs) {
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__DOMAIN_ANALYSIS_MODEL, newDomainAnalysisModel, msgs);
 	}
 
 	/**
@@ -429,7 +463,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setDomainAnalysisModel(GlobalDomainAnalysisModel newDomainAnalysisModel) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__DOMAIN_ANALYSIS_MODEL, newDomainAnalysisModel);
+		((FeatureMap.Internal) getMixed()).set(
+			Mif2Package.Literals.DOCUMENT_ROOT__DOMAIN_ANALYSIS_MODEL, newDomainAnalysisModel);
 	}
 
 	/**
@@ -438,7 +473,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalDomainInstanceExample getDomainInstanceExample() {
-		return (GlobalDomainInstanceExample)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__DOMAIN_INSTANCE_EXAMPLE, true);
+		return (GlobalDomainInstanceExample) getMixed().get(
+			Mif2Package.Literals.DOCUMENT_ROOT__DOMAIN_INSTANCE_EXAMPLE, true);
 	}
 
 	/**
@@ -446,8 +482,10 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDomainInstanceExample(GlobalDomainInstanceExample newDomainInstanceExample, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__DOMAIN_INSTANCE_EXAMPLE, newDomainInstanceExample, msgs);
+	public NotificationChain basicSetDomainInstanceExample(GlobalDomainInstanceExample newDomainInstanceExample,
+			NotificationChain msgs) {
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__DOMAIN_INSTANCE_EXAMPLE, newDomainInstanceExample, msgs);
 	}
 
 	/**
@@ -456,7 +494,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setDomainInstanceExample(GlobalDomainInstanceExample newDomainInstanceExample) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__DOMAIN_INSTANCE_EXAMPLE, newDomainInstanceExample);
+		((FeatureMap.Internal) getMixed()).set(
+			Mif2Package.Literals.DOCUMENT_ROOT__DOMAIN_INSTANCE_EXAMPLE, newDomainInstanceExample);
 	}
 
 	/**
@@ -465,7 +504,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalFreehandDocument getFreehandDocument() {
-		return (GlobalFreehandDocument)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__FREEHAND_DOCUMENT, true);
+		return (GlobalFreehandDocument) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__FREEHAND_DOCUMENT, true);
 	}
 
 	/**
@@ -474,7 +513,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetFreehandDocument(GlobalFreehandDocument newFreehandDocument, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__FREEHAND_DOCUMENT, newFreehandDocument, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__FREEHAND_DOCUMENT, newFreehandDocument, msgs);
 	}
 
 	/**
@@ -483,7 +523,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setFreehandDocument(GlobalFreehandDocument newFreehandDocument) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__FREEHAND_DOCUMENT, newFreehandDocument);
+		((FeatureMap.Internal) getMixed()).set(
+			Mif2Package.Literals.DOCUMENT_ROOT__FREEHAND_DOCUMENT, newFreehandDocument);
 	}
 
 	/**
@@ -492,7 +533,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalGlossary getGlossary() {
-		return (GlobalGlossary)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__GLOSSARY, true);
+		return (GlobalGlossary) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__GLOSSARY, true);
 	}
 
 	/**
@@ -501,7 +542,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetGlossary(GlobalGlossary newGlossary, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__GLOSSARY, newGlossary, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__GLOSSARY, newGlossary, msgs);
 	}
 
 	/**
@@ -510,7 +552,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setGlossary(GlobalGlossary newGlossary) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__GLOSSARY, newGlossary);
+		((FeatureMap.Internal) getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__GLOSSARY, newGlossary);
 	}
 
 	/**
@@ -519,7 +561,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalInteraction getInteraction() {
-		return (GlobalInteraction)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__INTERACTION, true);
+		return (GlobalInteraction) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__INTERACTION, true);
 	}
 
 	/**
@@ -528,7 +570,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetInteraction(GlobalInteraction newInteraction, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__INTERACTION, newInteraction, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__INTERACTION, newInteraction, msgs);
 	}
 
 	/**
@@ -537,7 +580,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setInteraction(GlobalInteraction newInteraction) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__INTERACTION, newInteraction);
+		((FeatureMap.Internal) getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__INTERACTION, newInteraction);
 	}
 
 	/**
@@ -546,7 +589,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalInteractionProfile getInteractionProfile() {
-		return (GlobalInteractionProfile)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__INTERACTION_PROFILE, true);
+		return (GlobalInteractionProfile) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__INTERACTION_PROFILE, true);
 	}
 
 	/**
@@ -554,8 +597,10 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetInteractionProfile(GlobalInteractionProfile newInteractionProfile, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__INTERACTION_PROFILE, newInteractionProfile, msgs);
+	public NotificationChain basicSetInteractionProfile(GlobalInteractionProfile newInteractionProfile,
+			NotificationChain msgs) {
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__INTERACTION_PROFILE, newInteractionProfile, msgs);
 	}
 
 	/**
@@ -564,7 +609,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setInteractionProfile(GlobalInteractionProfile newInteractionProfile) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__INTERACTION_PROFILE, newInteractionProfile);
+		((FeatureMap.Internal) getMixed()).set(
+			Mif2Package.Literals.DOCUMENT_ROOT__INTERACTION_PROFILE, newInteractionProfile);
 	}
 
 	/**
@@ -573,7 +619,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalMifChanges getMifChanges() {
-		return (GlobalMifChanges)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__MIF_CHANGES, true);
+		return (GlobalMifChanges) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__MIF_CHANGES, true);
 	}
 
 	/**
@@ -582,7 +628,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetMifChanges(GlobalMifChanges newMifChanges, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__MIF_CHANGES, newMifChanges, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__MIF_CHANGES, newMifChanges, msgs);
 	}
 
 	/**
@@ -591,7 +638,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setMifChanges(GlobalMifChanges newMifChanges) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__MIF_CHANGES, newMifChanges);
+		((FeatureMap.Internal) getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__MIF_CHANGES, newMifChanges);
 	}
 
 	/**
@@ -600,7 +647,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalGenericPackage getPackage() {
-		return (GlobalGenericPackage)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__PACKAGE, true);
+		return (GlobalGenericPackage) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__PACKAGE, true);
 	}
 
 	/**
@@ -609,7 +656,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetPackage(GlobalGenericPackage newPackage, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__PACKAGE, newPackage, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__PACKAGE, newPackage, msgs);
 	}
 
 	/**
@@ -618,7 +666,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setPackage(GlobalGenericPackage newPackage) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__PACKAGE, newPackage);
+		((FeatureMap.Internal) getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__PACKAGE, newPackage);
 	}
 
 	/**
@@ -627,7 +675,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalPublicationPackage getPublication() {
-		return (GlobalPublicationPackage)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__PUBLICATION, true);
+		return (GlobalPublicationPackage) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__PUBLICATION, true);
 	}
 
 	/**
@@ -636,7 +684,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetPublication(GlobalPublicationPackage newPublication, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__PUBLICATION, newPublication, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__PUBLICATION, newPublication, msgs);
 	}
 
 	/**
@@ -645,7 +694,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setPublication(GlobalPublicationPackage newPublication) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__PUBLICATION, newPublication);
+		((FeatureMap.Internal) getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__PUBLICATION, newPublication);
 	}
 
 	/**
@@ -654,7 +703,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalSerializedStaticModel getSerializedStaticModel() {
-		return (GlobalSerializedStaticModel)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__SERIALIZED_STATIC_MODEL, true);
+		return (GlobalSerializedStaticModel) getMixed().get(
+			Mif2Package.Literals.DOCUMENT_ROOT__SERIALIZED_STATIC_MODEL, true);
 	}
 
 	/**
@@ -662,8 +712,10 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSerializedStaticModel(GlobalSerializedStaticModel newSerializedStaticModel, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__SERIALIZED_STATIC_MODEL, newSerializedStaticModel, msgs);
+	public NotificationChain basicSetSerializedStaticModel(GlobalSerializedStaticModel newSerializedStaticModel,
+			NotificationChain msgs) {
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__SERIALIZED_STATIC_MODEL, newSerializedStaticModel, msgs);
 	}
 
 	/**
@@ -672,7 +724,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setSerializedStaticModel(GlobalSerializedStaticModel newSerializedStaticModel) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__SERIALIZED_STATIC_MODEL, newSerializedStaticModel);
+		((FeatureMap.Internal) getMixed()).set(
+			Mif2Package.Literals.DOCUMENT_ROOT__SERIALIZED_STATIC_MODEL, newSerializedStaticModel);
 	}
 
 	/**
@@ -681,7 +734,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public SerializedStaticModelsType getSerializedStaticModels() {
-		return (SerializedStaticModelsType)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__SERIALIZED_STATIC_MODELS, true);
+		return (SerializedStaticModelsType) getMixed().get(
+			Mif2Package.Literals.DOCUMENT_ROOT__SERIALIZED_STATIC_MODELS, true);
 	}
 
 	/**
@@ -689,8 +743,10 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSerializedStaticModels(SerializedStaticModelsType newSerializedStaticModels, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__SERIALIZED_STATIC_MODELS, newSerializedStaticModels, msgs);
+	public NotificationChain basicSetSerializedStaticModels(SerializedStaticModelsType newSerializedStaticModels,
+			NotificationChain msgs) {
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__SERIALIZED_STATIC_MODELS, newSerializedStaticModels, msgs);
 	}
 
 	/**
@@ -699,7 +755,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setSerializedStaticModels(SerializedStaticModelsType newSerializedStaticModels) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__SERIALIZED_STATIC_MODELS, newSerializedStaticModels);
+		((FeatureMap.Internal) getMixed()).set(
+			Mif2Package.Literals.DOCUMENT_ROOT__SERIALIZED_STATIC_MODELS, newSerializedStaticModels);
 	}
 
 	/**
@@ -708,7 +765,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalStaticModel getStaticModel() {
-		return (GlobalStaticModel)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODEL, true);
+		return (GlobalStaticModel) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODEL, true);
 	}
 
 	/**
@@ -717,7 +774,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetStaticModel(GlobalStaticModel newStaticModel, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODEL, newStaticModel, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODEL, newStaticModel, msgs);
 	}
 
 	/**
@@ -726,7 +784,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setStaticModel(GlobalStaticModel newStaticModel) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODEL, newStaticModel);
+		((FeatureMap.Internal) getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODEL, newStaticModel);
 	}
 
 	/**
@@ -735,7 +793,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalStaticModelInterfacePackage getStaticModelInterfacePackage() {
-		return (GlobalStaticModelInterfacePackage)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODEL_INTERFACE_PACKAGE, true);
+		return (GlobalStaticModelInterfacePackage) getMixed().get(
+			Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODEL_INTERFACE_PACKAGE, true);
 	}
 
 	/**
@@ -743,8 +802,10 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStaticModelInterfacePackage(GlobalStaticModelInterfacePackage newStaticModelInterfacePackage, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODEL_INTERFACE_PACKAGE, newStaticModelInterfacePackage, msgs);
+	public NotificationChain basicSetStaticModelInterfacePackage(
+			GlobalStaticModelInterfacePackage newStaticModelInterfacePackage, NotificationChain msgs) {
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODEL_INTERFACE_PACKAGE, newStaticModelInterfacePackage, msgs);
 	}
 
 	/**
@@ -753,7 +814,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setStaticModelInterfacePackage(GlobalStaticModelInterfacePackage newStaticModelInterfacePackage) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODEL_INTERFACE_PACKAGE, newStaticModelInterfacePackage);
+		((FeatureMap.Internal) getMixed()).set(
+			Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODEL_INTERFACE_PACKAGE, newStaticModelInterfacePackage);
 	}
 
 	/**
@@ -762,7 +824,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public StaticModelsType getStaticModels() {
-		return (StaticModelsType)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODELS, true);
+		return (StaticModelsType) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODELS, true);
 	}
 
 	/**
@@ -771,7 +833,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetStaticModels(StaticModelsType newStaticModels, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODELS, newStaticModels, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODELS, newStaticModels, msgs);
 	}
 
 	/**
@@ -780,7 +843,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setStaticModels(StaticModelsType newStaticModels) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODELS, newStaticModels);
+		((FeatureMap.Internal) getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__STATIC_MODELS, newStaticModels);
 	}
 
 	/**
@@ -789,7 +852,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalStoryboard getStoryboard() {
-		return (GlobalStoryboard)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__STORYBOARD, true);
+		return (GlobalStoryboard) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__STORYBOARD, true);
 	}
 
 	/**
@@ -798,7 +861,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetStoryboard(GlobalStoryboard newStoryboard, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__STORYBOARD, newStoryboard, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__STORYBOARD, newStoryboard, msgs);
 	}
 
 	/**
@@ -807,7 +871,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setStoryboard(GlobalStoryboard newStoryboard) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__STORYBOARD, newStoryboard);
+		((FeatureMap.Internal) getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__STORYBOARD, newStoryboard);
 	}
 
 	/**
@@ -816,7 +880,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalStructuredDocument getStructuredDocument() {
-		return (GlobalStructuredDocument)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__STRUCTURED_DOCUMENT, true);
+		return (GlobalStructuredDocument) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__STRUCTURED_DOCUMENT, true);
 	}
 
 	/**
@@ -824,8 +888,10 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStructuredDocument(GlobalStructuredDocument newStructuredDocument, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__STRUCTURED_DOCUMENT, newStructuredDocument, msgs);
+	public NotificationChain basicSetStructuredDocument(GlobalStructuredDocument newStructuredDocument,
+			NotificationChain msgs) {
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__STRUCTURED_DOCUMENT, newStructuredDocument, msgs);
 	}
 
 	/**
@@ -834,7 +900,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setStructuredDocument(GlobalStructuredDocument newStructuredDocument) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__STRUCTURED_DOCUMENT, newStructuredDocument);
+		((FeatureMap.Internal) getMixed()).set(
+			Mif2Package.Literals.DOCUMENT_ROOT__STRUCTURED_DOCUMENT, newStructuredDocument);
 	}
 
 	/**
@@ -843,7 +910,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalTestScenario getTestScenario() {
-		return (GlobalTestScenario)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__TEST_SCENARIO, true);
+		return (GlobalTestScenario) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__TEST_SCENARIO, true);
 	}
 
 	/**
@@ -852,7 +919,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetTestScenario(GlobalTestScenario newTestScenario, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__TEST_SCENARIO, newTestScenario, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__TEST_SCENARIO, newTestScenario, msgs);
 	}
 
 	/**
@@ -861,7 +929,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setTestScenario(GlobalTestScenario newTestScenario) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__TEST_SCENARIO, newTestScenario);
+		((FeatureMap.Internal) getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__TEST_SCENARIO, newTestScenario);
 	}
 
 	/**
@@ -870,7 +938,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalTriggerEvent getTriggerEvent() {
-		return (GlobalTriggerEvent)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__TRIGGER_EVENT, true);
+		return (GlobalTriggerEvent) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__TRIGGER_EVENT, true);
 	}
 
 	/**
@@ -879,7 +947,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetTriggerEvent(GlobalTriggerEvent newTriggerEvent, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__TRIGGER_EVENT, newTriggerEvent, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__TRIGGER_EVENT, newTriggerEvent, msgs);
 	}
 
 	/**
@@ -888,7 +957,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setTriggerEvent(GlobalTriggerEvent newTriggerEvent) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__TRIGGER_EVENT, newTriggerEvent);
+		((FeatureMap.Internal) getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__TRIGGER_EVENT, newTriggerEvent);
 	}
 
 	/**
@@ -897,7 +966,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public Flow getTxtComplex() {
-		return (Flow)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__TXT_COMPLEX, true);
+		return (Flow) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__TXT_COMPLEX, true);
 	}
 
 	/**
@@ -906,7 +975,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetTxtComplex(Flow newTxtComplex, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__TXT_COMPLEX, newTxtComplex, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__TXT_COMPLEX, newTxtComplex, msgs);
 	}
 
 	/**
@@ -915,7 +985,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setTxtComplex(Flow newTxtComplex) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__TXT_COMPLEX, newTxtComplex);
+		((FeatureMap.Internal) getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__TXT_COMPLEX, newTxtComplex);
 	}
 
 	/**
@@ -924,7 +994,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public ComplexMarkupWithLanguage getTxtComplexWithLanguage() {
-		return (ComplexMarkupWithLanguage)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__TXT_COMPLEX_WITH_LANGUAGE, true);
+		return (ComplexMarkupWithLanguage) getMixed().get(
+			Mif2Package.Literals.DOCUMENT_ROOT__TXT_COMPLEX_WITH_LANGUAGE, true);
 	}
 
 	/**
@@ -932,8 +1003,10 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTxtComplexWithLanguage(ComplexMarkupWithLanguage newTxtComplexWithLanguage, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__TXT_COMPLEX_WITH_LANGUAGE, newTxtComplexWithLanguage, msgs);
+	public NotificationChain basicSetTxtComplexWithLanguage(ComplexMarkupWithLanguage newTxtComplexWithLanguage,
+			NotificationChain msgs) {
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__TXT_COMPLEX_WITH_LANGUAGE, newTxtComplexWithLanguage, msgs);
 	}
 
 	/**
@@ -942,7 +1015,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setTxtComplexWithLanguage(ComplexMarkupWithLanguage newTxtComplexWithLanguage) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__TXT_COMPLEX_WITH_LANGUAGE, newTxtComplexWithLanguage);
+		((FeatureMap.Internal) getMixed()).set(
+			Mif2Package.Literals.DOCUMENT_ROOT__TXT_COMPLEX_WITH_LANGUAGE, newTxtComplexWithLanguage);
 	}
 
 	/**
@@ -951,7 +1025,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public Inline getTxtInlineOnly() {
-		return (Inline)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__TXT_INLINE_ONLY, true);
+		return (Inline) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__TXT_INLINE_ONLY, true);
 	}
 
 	/**
@@ -960,7 +1034,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetTxtInlineOnly(Inline newTxtInlineOnly, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__TXT_INLINE_ONLY, newTxtInlineOnly, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__TXT_INLINE_ONLY, newTxtInlineOnly, msgs);
 	}
 
 	/**
@@ -969,7 +1044,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setTxtInlineOnly(Inline newTxtInlineOnly) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__TXT_INLINE_ONLY, newTxtInlineOnly);
+		((FeatureMap.Internal) getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__TXT_INLINE_ONLY, newTxtInlineOnly);
 	}
 
 	/**
@@ -978,7 +1053,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalValueSet getValueSet() {
-		return (GlobalValueSet)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__VALUE_SET, true);
+		return (GlobalValueSet) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__VALUE_SET, true);
 	}
 
 	/**
@@ -987,7 +1062,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetValueSet(GlobalValueSet newValueSet, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__VALUE_SET, newValueSet, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__VALUE_SET, newValueSet, msgs);
 	}
 
 	/**
@@ -996,7 +1072,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setValueSet(GlobalValueSet newValueSet) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__VALUE_SET, newValueSet);
+		((FeatureMap.Internal) getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__VALUE_SET, newValueSet);
 	}
 
 	/**
@@ -1005,7 +1081,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public GlobalVocabularyModel getVocabularyModel() {
-		return (GlobalVocabularyModel)getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__VOCABULARY_MODEL, true);
+		return (GlobalVocabularyModel) getMixed().get(Mif2Package.Literals.DOCUMENT_ROOT__VOCABULARY_MODEL, true);
 	}
 
 	/**
@@ -1014,7 +1090,8 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public NotificationChain basicSetVocabularyModel(GlobalVocabularyModel newVocabularyModel, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(Mif2Package.Literals.DOCUMENT_ROOT__VOCABULARY_MODEL, newVocabularyModel, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(
+			Mif2Package.Literals.DOCUMENT_ROOT__VOCABULARY_MODEL, newVocabularyModel, msgs);
 	}
 
 	/**
@@ -1023,7 +1100,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * @generated
 	 */
 	public void setVocabularyModel(GlobalVocabularyModel newVocabularyModel) {
-		((FeatureMap.Internal)getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__VOCABULARY_MODEL, newVocabularyModel);
+		((FeatureMap.Internal) getMixed()).set(Mif2Package.Literals.DOCUMENT_ROOT__VOCABULARY_MODEL, newVocabularyModel);
 	}
 
 	/**
@@ -1035,11 +1112,11 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.DOCUMENT_ROOT__MIXED:
-				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getMixed()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				return ((InternalEList<?>)getXMLNSPrefixMap()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getXMLNSPrefixMap()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				return ((InternalEList<?>)getXSISchemaLocation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getXSISchemaLocation()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DOCUMENT_ROOT__APPLICATION_ROLE:
 				return basicSetApplicationRole(null, msgs);
 			case Mif2Package.DOCUMENT_ROOT__ARTIFACT_XREF_SUMMARY:
@@ -1115,14 +1192,22 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mif2Package.DOCUMENT_ROOT__MIXED:
-				if (coreType) return getMixed();
-				return ((FeatureMap.Internal)getMixed()).getWrapper();
+				if (coreType) {
+					return getMixed();
+				}
+				return ((FeatureMap.Internal) getMixed()).getWrapper();
 			case Mif2Package.DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				if (coreType) return getXMLNSPrefixMap();
-				else return getXMLNSPrefixMap().map();
+				if (coreType) {
+					return getXMLNSPrefixMap();
+				} else {
+					return getXMLNSPrefixMap().map();
+				}
 			case Mif2Package.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				if (coreType) return getXSISchemaLocation();
-				else return getXSISchemaLocation().map();
+				if (coreType) {
+					return getXSISchemaLocation();
+				} else {
+					return getXSISchemaLocation().map();
+				}
 			case Mif2Package.DOCUMENT_ROOT__APPLICATION_ROLE:
 				return getApplicationRole();
 			case Mif2Package.DOCUMENT_ROOT__ARTIFACT_XREF_SUMMARY:
@@ -1198,106 +1283,106 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DOCUMENT_ROOT__MIXED:
-				((FeatureMap.Internal)getMixed()).set(newValue);
+				((FeatureMap.Internal) getMixed()).set(newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				((EStructuralFeature.Setting)getXMLNSPrefixMap()).set(newValue);
+				((EStructuralFeature.Setting) getXMLNSPrefixMap()).set(newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				((EStructuralFeature.Setting)getXSISchemaLocation()).set(newValue);
+				((EStructuralFeature.Setting) getXSISchemaLocation()).set(newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__APPLICATION_ROLE:
-				setApplicationRole((GlobalApplicationRole)newValue);
+				setApplicationRole((GlobalApplicationRole) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__ARTIFACT_XREF_SUMMARY:
-				setArtifactXrefSummary((GlobalArtifactXRefSummary)newValue);
+				setArtifactXrefSummary((GlobalArtifactXRefSummary) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__CODE_SYSTEM:
-				setCodeSystem((GlobalCodeSystem)newValue);
+				setCodeSystem((GlobalCodeSystem) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__CODE_SYSTEM_SUPPLEMENT:
-				setCodeSystemSupplement((GlobalCodeSystemSupplement)newValue);
+				setCodeSystemSupplement((GlobalCodeSystemSupplement) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__CONFORMANCE_PROFILE:
-				setConformanceProfile((GlobalConformanceProfile)newValue);
+				setConformanceProfile((GlobalConformanceProfile) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__DATATYPE_MODEL_LIBRARY:
-				setDatatypeModelLibrary((GlobalDatatypeModelLibrary)newValue);
+				setDatatypeModelLibrary((GlobalDatatypeModelLibrary) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__DERIVED_STATIC_MODEL:
-				setDerivedStaticModel((GlobalDerivedStaticModel)newValue);
+				setDerivedStaticModel((GlobalDerivedStaticModel) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__DERIVED_STATIC_MODELS:
-				setDerivedStaticModels((DerivedStaticModelsType)newValue);
+				setDerivedStaticModels((DerivedStaticModelsType) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__DOMAIN_ANALYSIS_MODEL:
-				setDomainAnalysisModel((GlobalDomainAnalysisModel)newValue);
+				setDomainAnalysisModel((GlobalDomainAnalysisModel) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__DOMAIN_INSTANCE_EXAMPLE:
-				setDomainInstanceExample((GlobalDomainInstanceExample)newValue);
+				setDomainInstanceExample((GlobalDomainInstanceExample) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__FREEHAND_DOCUMENT:
-				setFreehandDocument((GlobalFreehandDocument)newValue);
+				setFreehandDocument((GlobalFreehandDocument) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__GLOSSARY:
-				setGlossary((GlobalGlossary)newValue);
+				setGlossary((GlobalGlossary) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__INTERACTION:
-				setInteraction((GlobalInteraction)newValue);
+				setInteraction((GlobalInteraction) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__INTERACTION_PROFILE:
-				setInteractionProfile((GlobalInteractionProfile)newValue);
+				setInteractionProfile((GlobalInteractionProfile) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__MIF_CHANGES:
-				setMifChanges((GlobalMifChanges)newValue);
+				setMifChanges((GlobalMifChanges) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__PACKAGE:
-				setPackage((GlobalGenericPackage)newValue);
+				setPackage((GlobalGenericPackage) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__PUBLICATION:
-				setPublication((GlobalPublicationPackage)newValue);
+				setPublication((GlobalPublicationPackage) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__SERIALIZED_STATIC_MODEL:
-				setSerializedStaticModel((GlobalSerializedStaticModel)newValue);
+				setSerializedStaticModel((GlobalSerializedStaticModel) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__SERIALIZED_STATIC_MODELS:
-				setSerializedStaticModels((SerializedStaticModelsType)newValue);
+				setSerializedStaticModels((SerializedStaticModelsType) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__STATIC_MODEL:
-				setStaticModel((GlobalStaticModel)newValue);
+				setStaticModel((GlobalStaticModel) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__STATIC_MODEL_INTERFACE_PACKAGE:
-				setStaticModelInterfacePackage((GlobalStaticModelInterfacePackage)newValue);
+				setStaticModelInterfacePackage((GlobalStaticModelInterfacePackage) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__STATIC_MODELS:
-				setStaticModels((StaticModelsType)newValue);
+				setStaticModels((StaticModelsType) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__STORYBOARD:
-				setStoryboard((GlobalStoryboard)newValue);
+				setStoryboard((GlobalStoryboard) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__STRUCTURED_DOCUMENT:
-				setStructuredDocument((GlobalStructuredDocument)newValue);
+				setStructuredDocument((GlobalStructuredDocument) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__TEST_SCENARIO:
-				setTestScenario((GlobalTestScenario)newValue);
+				setTestScenario((GlobalTestScenario) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__TRIGGER_EVENT:
-				setTriggerEvent((GlobalTriggerEvent)newValue);
+				setTriggerEvent((GlobalTriggerEvent) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__TXT_COMPLEX:
-				setTxtComplex((Flow)newValue);
+				setTxtComplex((Flow) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__TXT_COMPLEX_WITH_LANGUAGE:
-				setTxtComplexWithLanguage((ComplexMarkupWithLanguage)newValue);
+				setTxtComplexWithLanguage((ComplexMarkupWithLanguage) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__TXT_INLINE_ONLY:
-				setTxtInlineOnly((Inline)newValue);
+				setTxtInlineOnly((Inline) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__VALUE_SET:
-				setValueSet((GlobalValueSet)newValue);
+				setValueSet((GlobalValueSet) newValue);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__VOCABULARY_MODEL:
-				setVocabularyModel((GlobalVocabularyModel)newValue);
+				setVocabularyModel((GlobalVocabularyModel) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1321,97 +1406,97 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 				getXSISchemaLocation().clear();
 				return;
 			case Mif2Package.DOCUMENT_ROOT__APPLICATION_ROLE:
-				setApplicationRole((GlobalApplicationRole)null);
+				setApplicationRole((GlobalApplicationRole) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__ARTIFACT_XREF_SUMMARY:
-				setArtifactXrefSummary((GlobalArtifactXRefSummary)null);
+				setArtifactXrefSummary((GlobalArtifactXRefSummary) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__CODE_SYSTEM:
-				setCodeSystem((GlobalCodeSystem)null);
+				setCodeSystem((GlobalCodeSystem) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__CODE_SYSTEM_SUPPLEMENT:
-				setCodeSystemSupplement((GlobalCodeSystemSupplement)null);
+				setCodeSystemSupplement((GlobalCodeSystemSupplement) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__CONFORMANCE_PROFILE:
-				setConformanceProfile((GlobalConformanceProfile)null);
+				setConformanceProfile((GlobalConformanceProfile) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__DATATYPE_MODEL_LIBRARY:
-				setDatatypeModelLibrary((GlobalDatatypeModelLibrary)null);
+				setDatatypeModelLibrary((GlobalDatatypeModelLibrary) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__DERIVED_STATIC_MODEL:
-				setDerivedStaticModel((GlobalDerivedStaticModel)null);
+				setDerivedStaticModel((GlobalDerivedStaticModel) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__DERIVED_STATIC_MODELS:
-				setDerivedStaticModels((DerivedStaticModelsType)null);
+				setDerivedStaticModels((DerivedStaticModelsType) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__DOMAIN_ANALYSIS_MODEL:
-				setDomainAnalysisModel((GlobalDomainAnalysisModel)null);
+				setDomainAnalysisModel((GlobalDomainAnalysisModel) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__DOMAIN_INSTANCE_EXAMPLE:
-				setDomainInstanceExample((GlobalDomainInstanceExample)null);
+				setDomainInstanceExample((GlobalDomainInstanceExample) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__FREEHAND_DOCUMENT:
-				setFreehandDocument((GlobalFreehandDocument)null);
+				setFreehandDocument((GlobalFreehandDocument) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__GLOSSARY:
-				setGlossary((GlobalGlossary)null);
+				setGlossary((GlobalGlossary) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__INTERACTION:
-				setInteraction((GlobalInteraction)null);
+				setInteraction((GlobalInteraction) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__INTERACTION_PROFILE:
-				setInteractionProfile((GlobalInteractionProfile)null);
+				setInteractionProfile((GlobalInteractionProfile) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__MIF_CHANGES:
-				setMifChanges((GlobalMifChanges)null);
+				setMifChanges((GlobalMifChanges) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__PACKAGE:
-				setPackage((GlobalGenericPackage)null);
+				setPackage((GlobalGenericPackage) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__PUBLICATION:
-				setPublication((GlobalPublicationPackage)null);
+				setPublication((GlobalPublicationPackage) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__SERIALIZED_STATIC_MODEL:
-				setSerializedStaticModel((GlobalSerializedStaticModel)null);
+				setSerializedStaticModel((GlobalSerializedStaticModel) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__SERIALIZED_STATIC_MODELS:
-				setSerializedStaticModels((SerializedStaticModelsType)null);
+				setSerializedStaticModels((SerializedStaticModelsType) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__STATIC_MODEL:
-				setStaticModel((GlobalStaticModel)null);
+				setStaticModel((GlobalStaticModel) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__STATIC_MODEL_INTERFACE_PACKAGE:
-				setStaticModelInterfacePackage((GlobalStaticModelInterfacePackage)null);
+				setStaticModelInterfacePackage((GlobalStaticModelInterfacePackage) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__STATIC_MODELS:
-				setStaticModels((StaticModelsType)null);
+				setStaticModels((StaticModelsType) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__STORYBOARD:
-				setStoryboard((GlobalStoryboard)null);
+				setStoryboard((GlobalStoryboard) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__STRUCTURED_DOCUMENT:
-				setStructuredDocument((GlobalStructuredDocument)null);
+				setStructuredDocument((GlobalStructuredDocument) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__TEST_SCENARIO:
-				setTestScenario((GlobalTestScenario)null);
+				setTestScenario((GlobalTestScenario) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__TRIGGER_EVENT:
-				setTriggerEvent((GlobalTriggerEvent)null);
+				setTriggerEvent((GlobalTriggerEvent) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__TXT_COMPLEX:
-				setTxtComplex((Flow)null);
+				setTxtComplex((Flow) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__TXT_COMPLEX_WITH_LANGUAGE:
-				setTxtComplexWithLanguage((ComplexMarkupWithLanguage)null);
+				setTxtComplexWithLanguage((ComplexMarkupWithLanguage) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__TXT_INLINE_ONLY:
-				setTxtInlineOnly((Inline)null);
+				setTxtInlineOnly((Inline) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__VALUE_SET:
-				setValueSet((GlobalValueSet)null);
+				setValueSet((GlobalValueSet) null);
 				return;
 			case Mif2Package.DOCUMENT_ROOT__VOCABULARY_MODEL:
-				setVocabularyModel((GlobalVocabularyModel)null);
+				setVocabularyModel((GlobalVocabularyModel) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1504,7 +1589,9 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mixed: ");
@@ -1513,4 +1600,4 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 		return result.toString();
 	}
 
-} //DocumentRootImpl
+} // DocumentRootImpl

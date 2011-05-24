@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -92,8 +96,13 @@ public class TestImpl extends EObjectImpl implements Test {
 		InteractionTest oldInteractionTest = interactionTest;
 		interactionTest = newInteractionTest;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.TEST__INTERACTION_TEST, oldInteractionTest, newInteractionTest);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TEST__INTERACTION_TEST, oldInteractionTest, newInteractionTest);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -106,15 +115,22 @@ public class TestImpl extends EObjectImpl implements Test {
 	public void setInteractionTest(InteractionTest newInteractionTest) {
 		if (newInteractionTest != interactionTest) {
 			NotificationChain msgs = null;
-			if (interactionTest != null)
-				msgs = ((InternalEObject)interactionTest).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TEST__INTERACTION_TEST, null, msgs);
-			if (newInteractionTest != null)
-				msgs = ((InternalEObject)newInteractionTest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TEST__INTERACTION_TEST, null, msgs);
+			if (interactionTest != null) {
+				msgs = ((InternalEObject) interactionTest).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TEST__INTERACTION_TEST, null, msgs);
+			}
+			if (newInteractionTest != null) {
+				msgs = ((InternalEObject) newInteractionTest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TEST__INTERACTION_TEST, null, msgs);
+			}
 			msgs = basicSetInteractionTest(newInteractionTest, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TEST__INTERACTION_TEST, newInteractionTest, newInteractionTest));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TEST__INTERACTION_TEST, newInteractionTest, newInteractionTest));
 	}
 
 	/**
@@ -135,8 +151,13 @@ public class TestImpl extends EObjectImpl implements Test {
 		DocumentTest oldDocumentTest = documentTest;
 		documentTest = newDocumentTest;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.TEST__DOCUMENT_TEST, oldDocumentTest, newDocumentTest);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TEST__DOCUMENT_TEST, oldDocumentTest, newDocumentTest);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -149,15 +170,22 @@ public class TestImpl extends EObjectImpl implements Test {
 	public void setDocumentTest(DocumentTest newDocumentTest) {
 		if (newDocumentTest != documentTest) {
 			NotificationChain msgs = null;
-			if (documentTest != null)
-				msgs = ((InternalEObject)documentTest).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TEST__DOCUMENT_TEST, null, msgs);
-			if (newDocumentTest != null)
-				msgs = ((InternalEObject)newDocumentTest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TEST__DOCUMENT_TEST, null, msgs);
+			if (documentTest != null) {
+				msgs = ((InternalEObject) documentTest).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TEST__DOCUMENT_TEST, null, msgs);
+			}
+			if (newDocumentTest != null) {
+				msgs = ((InternalEObject) newDocumentTest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TEST__DOCUMENT_TEST, null, msgs);
+			}
 			msgs = basicSetDocumentTest(newDocumentTest, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TEST__DOCUMENT_TEST, newDocumentTest, newDocumentTest));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TEST__DOCUMENT_TEST, newDocumentTest, newDocumentTest));
 	}
 
 	/**
@@ -201,10 +229,10 @@ public class TestImpl extends EObjectImpl implements Test {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.TEST__INTERACTION_TEST:
-				setInteractionTest((InteractionTest)newValue);
+				setInteractionTest((InteractionTest) newValue);
 				return;
 			case Mif2Package.TEST__DOCUMENT_TEST:
-				setDocumentTest((DocumentTest)newValue);
+				setDocumentTest((DocumentTest) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -219,10 +247,10 @@ public class TestImpl extends EObjectImpl implements Test {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.TEST__INTERACTION_TEST:
-				setInteractionTest((InteractionTest)null);
+				setInteractionTest((InteractionTest) null);
 				return;
 			case Mif2Package.TEST__DOCUMENT_TEST:
-				setDocumentTest((DocumentTest)null);
+				setDocumentTest((DocumentTest) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -244,4 +272,4 @@ public class TestImpl extends EObjectImpl implements Test {
 		return super.eIsSet(featureID);
 	}
 
-} //TestImpl
+} // TestImpl

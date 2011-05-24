@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigInteger;
@@ -33,7 +37,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.Mif2Package;
 import org.openhealthtools.mdht.emf.hl7.mif2.RealmElement;
 import org.openhealthtools.mdht.emf.hl7.mif2.VoteKind;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Flow;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -286,8 +289,14 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 		Flow oldExistingContent = existingContent;
 		existingContent = newExistingContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_COMMENT__EXISTING_CONTENT, oldExistingContent, newExistingContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_COMMENT__EXISTING_CONTENT, oldExistingContent,
+				newExistingContent);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -300,15 +309,23 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 	public void setExistingContent(Flow newExistingContent) {
 		if (newExistingContent != existingContent) {
 			NotificationChain msgs = null;
-			if (existingContent != null)
-				msgs = ((InternalEObject)existingContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.BALLOT_COMMENT__EXISTING_CONTENT, null, msgs);
-			if (newExistingContent != null)
-				msgs = ((InternalEObject)newExistingContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.BALLOT_COMMENT__EXISTING_CONTENT, null, msgs);
+			if (existingContent != null) {
+				msgs = ((InternalEObject) existingContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.BALLOT_COMMENT__EXISTING_CONTENT, null, msgs);
+			}
+			if (newExistingContent != null) {
+				msgs = ((InternalEObject) newExistingContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.BALLOT_COMMENT__EXISTING_CONTENT, null, msgs);
+			}
 			msgs = basicSetExistingContent(newExistingContent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_COMMENT__EXISTING_CONTENT, newExistingContent,
+				newExistingContent));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_COMMENT__EXISTING_CONTENT, newExistingContent, newExistingContent));
 	}
 
 	/**
@@ -329,8 +346,14 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 		Flow oldSuggestedReplacement = suggestedReplacement;
 		suggestedReplacement = newSuggestedReplacement;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_COMMENT__SUGGESTED_REPLACEMENT, oldSuggestedReplacement, newSuggestedReplacement);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_COMMENT__SUGGESTED_REPLACEMENT, oldSuggestedReplacement,
+				newSuggestedReplacement);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -343,15 +366,23 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 	public void setSuggestedReplacement(Flow newSuggestedReplacement) {
 		if (newSuggestedReplacement != suggestedReplacement) {
 			NotificationChain msgs = null;
-			if (suggestedReplacement != null)
-				msgs = ((InternalEObject)suggestedReplacement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.BALLOT_COMMENT__SUGGESTED_REPLACEMENT, null, msgs);
-			if (newSuggestedReplacement != null)
-				msgs = ((InternalEObject)newSuggestedReplacement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.BALLOT_COMMENT__SUGGESTED_REPLACEMENT, null, msgs);
+			if (suggestedReplacement != null) {
+				msgs = ((InternalEObject) suggestedReplacement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.BALLOT_COMMENT__SUGGESTED_REPLACEMENT, null, msgs);
+			}
+			if (newSuggestedReplacement != null) {
+				msgs = ((InternalEObject) newSuggestedReplacement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.BALLOT_COMMENT__SUGGESTED_REPLACEMENT, null, msgs);
+			}
 			msgs = basicSetSuggestedReplacement(newSuggestedReplacement, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_COMMENT__SUGGESTED_REPLACEMENT, newSuggestedReplacement,
+				newSuggestedReplacement));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_COMMENT__SUGGESTED_REPLACEMENT, newSuggestedReplacement, newSuggestedReplacement));
 	}
 
 	/**
@@ -361,7 +392,8 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 	 */
 	public EList<BallotCommentResolution> getResolution() {
 		if (resolution == null) {
-			resolution = new EObjectContainmentEList<BallotCommentResolution>(BallotCommentResolution.class, this, Mif2Package.BALLOT_COMMENT__RESOLUTION);
+			resolution = new EObjectContainmentEList<BallotCommentResolution>(
+				BallotCommentResolution.class, this, Mif2Package.BALLOT_COMMENT__RESOLUTION);
 		}
 		return resolution;
 	}
@@ -382,11 +414,16 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 	 */
 	public void setCommentType(VoteKind newCommentType) {
 		VoteKind oldCommentType = commentType;
-		commentType = newCommentType == null ? COMMENT_TYPE_EDEFAULT : newCommentType;
+		commentType = newCommentType == null
+				? COMMENT_TYPE_EDEFAULT
+				: newCommentType;
 		boolean oldCommentTypeESet = commentTypeESet;
 		commentTypeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_COMMENT__COMMENT_TYPE, oldCommentType, commentType, !oldCommentTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_COMMENT__COMMENT_TYPE, oldCommentType, commentType,
+				!oldCommentTypeESet));
+		}
 	}
 
 	/**
@@ -399,8 +436,11 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 		boolean oldCommentTypeESet = commentTypeESet;
 		commentType = COMMENT_TYPE_EDEFAULT;
 		commentTypeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.BALLOT_COMMENT__COMMENT_TYPE, oldCommentType, COMMENT_TYPE_EDEFAULT, oldCommentTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.BALLOT_COMMENT__COMMENT_TYPE, oldCommentType,
+				COMMENT_TYPE_EDEFAULT, oldCommentTypeESet));
+		}
 	}
 
 	/**
@@ -429,8 +469,11 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 	public void setImplementedDate(XMLGregorianCalendar newImplementedDate) {
 		XMLGregorianCalendar oldImplementedDate = implementedDate;
 		implementedDate = newImplementedDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_COMMENT__IMPLEMENTED_DATE, oldImplementedDate, implementedDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_COMMENT__IMPLEMENTED_DATE, oldImplementedDate,
+				implementedDate));
+		}
 	}
 
 	/**
@@ -450,8 +493,11 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 	public void setImplementingPersonName(String newImplementingPersonName) {
 		String oldImplementingPersonName = implementingPersonName;
 		implementingPersonName = newImplementingPersonName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_COMMENT__IMPLEMENTING_PERSON_NAME, oldImplementingPersonName, implementingPersonName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_COMMENT__IMPLEMENTING_PERSON_NAME,
+				oldImplementingPersonName, implementingPersonName));
+		}
 	}
 
 	/**
@@ -471,8 +517,10 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 	public void setLocation(String newLocation) {
 		String oldLocation = location;
 		location = newLocation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_COMMENT__LOCATION, oldLocation, location));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_COMMENT__LOCATION, oldLocation, location));
+		}
 	}
 
 	/**
@@ -492,8 +540,9 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 	public void setName(BigInteger newName) {
 		BigInteger oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_COMMENT__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -513,8 +562,10 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 	public void setSubmissionId(String newSubmissionId) {
 		String oldSubmissionId = submissionId;
 		submissionId = newSubmissionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_COMMENT__SUBMISSION_ID, oldSubmissionId, submissionId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_COMMENT__SUBMISSION_ID, oldSubmissionId, submissionId));
+		}
 	}
 
 	/**
@@ -526,15 +577,15 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.BALLOT_COMMENT__CONTEXT:
-				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getContext()).basicRemove(otherEnd, msgs);
 			case Mif2Package.BALLOT_COMMENT__REALM_NAMESPACE:
-				return ((InternalEList<?>)getRealmNamespace()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmNamespace()).basicRemove(otherEnd, msgs);
 			case Mif2Package.BALLOT_COMMENT__EXISTING_CONTENT:
 				return basicSetExistingContent(null, msgs);
 			case Mif2Package.BALLOT_COMMENT__SUGGESTED_REPLACEMENT:
 				return basicSetSuggestedReplacement(null, msgs);
 			case Mif2Package.BALLOT_COMMENT__RESOLUTION:
-				return ((InternalEList<?>)getResolution()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getResolution()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -548,8 +599,10 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mif2Package.BALLOT_COMMENT__CONTEXT:
-				if (coreType) return getContext();
-				return ((FeatureMap.Internal)getContext()).getWrapper();
+				if (coreType) {
+					return getContext();
+				}
+				return ((FeatureMap.Internal) getContext()).getWrapper();
 			case Mif2Package.BALLOT_COMMENT__REALM_NAMESPACE:
 				return getRealmNamespace();
 			case Mif2Package.BALLOT_COMMENT__EXISTING_CONTENT:
@@ -584,39 +637,39 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.BALLOT_COMMENT__CONTEXT:
-				((FeatureMap.Internal)getContext()).set(newValue);
+				((FeatureMap.Internal) getContext()).set(newValue);
 				return;
 			case Mif2Package.BALLOT_COMMENT__REALM_NAMESPACE:
 				getRealmNamespace().clear();
-				getRealmNamespace().addAll((Collection<? extends RealmElement>)newValue);
+				getRealmNamespace().addAll((Collection<? extends RealmElement>) newValue);
 				return;
 			case Mif2Package.BALLOT_COMMENT__EXISTING_CONTENT:
-				setExistingContent((Flow)newValue);
+				setExistingContent((Flow) newValue);
 				return;
 			case Mif2Package.BALLOT_COMMENT__SUGGESTED_REPLACEMENT:
-				setSuggestedReplacement((Flow)newValue);
+				setSuggestedReplacement((Flow) newValue);
 				return;
 			case Mif2Package.BALLOT_COMMENT__RESOLUTION:
 				getResolution().clear();
-				getResolution().addAll((Collection<? extends BallotCommentResolution>)newValue);
+				getResolution().addAll((Collection<? extends BallotCommentResolution>) newValue);
 				return;
 			case Mif2Package.BALLOT_COMMENT__COMMENT_TYPE:
-				setCommentType((VoteKind)newValue);
+				setCommentType((VoteKind) newValue);
 				return;
 			case Mif2Package.BALLOT_COMMENT__IMPLEMENTED_DATE:
-				setImplementedDate((XMLGregorianCalendar)newValue);
+				setImplementedDate((XMLGregorianCalendar) newValue);
 				return;
 			case Mif2Package.BALLOT_COMMENT__IMPLEMENTING_PERSON_NAME:
-				setImplementingPersonName((String)newValue);
+				setImplementingPersonName((String) newValue);
 				return;
 			case Mif2Package.BALLOT_COMMENT__LOCATION:
-				setLocation((String)newValue);
+				setLocation((String) newValue);
 				return;
 			case Mif2Package.BALLOT_COMMENT__NAME:
-				setName((BigInteger)newValue);
+				setName((BigInteger) newValue);
 				return;
 			case Mif2Package.BALLOT_COMMENT__SUBMISSION_ID:
-				setSubmissionId((String)newValue);
+				setSubmissionId((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -637,10 +690,10 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 				getRealmNamespace().clear();
 				return;
 			case Mif2Package.BALLOT_COMMENT__EXISTING_CONTENT:
-				setExistingContent((Flow)null);
+				setExistingContent((Flow) null);
 				return;
 			case Mif2Package.BALLOT_COMMENT__SUGGESTED_REPLACEMENT:
-				setSuggestedReplacement((Flow)null);
+				setSuggestedReplacement((Flow) null);
 				return;
 			case Mif2Package.BALLOT_COMMENT__RESOLUTION:
 				getResolution().clear();
@@ -688,15 +741,25 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 			case Mif2Package.BALLOT_COMMENT__COMMENT_TYPE:
 				return isSetCommentType();
 			case Mif2Package.BALLOT_COMMENT__IMPLEMENTED_DATE:
-				return IMPLEMENTED_DATE_EDEFAULT == null ? implementedDate != null : !IMPLEMENTED_DATE_EDEFAULT.equals(implementedDate);
+				return IMPLEMENTED_DATE_EDEFAULT == null
+						? implementedDate != null
+						: !IMPLEMENTED_DATE_EDEFAULT.equals(implementedDate);
 			case Mif2Package.BALLOT_COMMENT__IMPLEMENTING_PERSON_NAME:
-				return IMPLEMENTING_PERSON_NAME_EDEFAULT == null ? implementingPersonName != null : !IMPLEMENTING_PERSON_NAME_EDEFAULT.equals(implementingPersonName);
+				return IMPLEMENTING_PERSON_NAME_EDEFAULT == null
+						? implementingPersonName != null
+						: !IMPLEMENTING_PERSON_NAME_EDEFAULT.equals(implementingPersonName);
 			case Mif2Package.BALLOT_COMMENT__LOCATION:
-				return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
+				return LOCATION_EDEFAULT == null
+						? location != null
+						: !LOCATION_EDEFAULT.equals(location);
 			case Mif2Package.BALLOT_COMMENT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.BALLOT_COMMENT__SUBMISSION_ID:
-				return SUBMISSION_ID_EDEFAULT == null ? submissionId != null : !SUBMISSION_ID_EDEFAULT.equals(submissionId);
+				return SUBMISSION_ID_EDEFAULT == null
+						? submissionId != null
+						: !SUBMISSION_ID_EDEFAULT.equals(submissionId);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -708,13 +771,19 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (context: ");
 		result.append(context);
 		result.append(", commentType: ");
-		if (commentTypeESet) result.append(commentType); else result.append("<unset>");
+		if (commentTypeESet) {
+			result.append(commentType);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", implementedDate: ");
 		result.append(implementedDate);
 		result.append(", implementingPersonName: ");
@@ -729,4 +798,4 @@ public class BallotCommentImpl extends BasicAnnotationImpl implements BallotComm
 		return result.toString();
 	}
 
-} //BallotCommentImpl
+} // BallotCommentImpl

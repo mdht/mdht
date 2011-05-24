@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -154,8 +158,13 @@ public class DocumentTestImpl extends TestBaseImpl implements DocumentTest {
 		PackageOrArtifactRef oldDocument = document;
 		document = newDocument;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_TEST__DOCUMENT, oldDocument, newDocument);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_TEST__DOCUMENT, oldDocument, newDocument);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -168,15 +177,22 @@ public class DocumentTestImpl extends TestBaseImpl implements DocumentTest {
 	public void setDocument(PackageOrArtifactRef newDocument) {
 		if (newDocument != document) {
 			NotificationChain msgs = null;
-			if (document != null)
-				msgs = ((InternalEObject)document).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_TEST__DOCUMENT, null, msgs);
-			if (newDocument != null)
-				msgs = ((InternalEObject)newDocument).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_TEST__DOCUMENT, null, msgs);
+			if (document != null) {
+				msgs = ((InternalEObject) document).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_TEST__DOCUMENT, null, msgs);
+			}
+			if (newDocument != null) {
+				msgs = ((InternalEObject) newDocument).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_TEST__DOCUMENT, null, msgs);
+			}
 			msgs = basicSetDocument(newDocument, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_TEST__DOCUMENT, newDocument, newDocument));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_TEST__DOCUMENT, newDocument, newDocument));
 	}
 
 	/**
@@ -197,8 +213,14 @@ public class DocumentTestImpl extends TestBaseImpl implements DocumentTest {
 		ExampleType oldExampleContent = exampleContent;
 		exampleContent = newExampleContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_TEST__EXAMPLE_CONTENT, oldExampleContent, newExampleContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_TEST__EXAMPLE_CONTENT, oldExampleContent,
+				newExampleContent);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -211,15 +233,23 @@ public class DocumentTestImpl extends TestBaseImpl implements DocumentTest {
 	public void setExampleContent(ExampleType newExampleContent) {
 		if (newExampleContent != exampleContent) {
 			NotificationChain msgs = null;
-			if (exampleContent != null)
-				msgs = ((InternalEObject)exampleContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_TEST__EXAMPLE_CONTENT, null, msgs);
-			if (newExampleContent != null)
-				msgs = ((InternalEObject)newExampleContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_TEST__EXAMPLE_CONTENT, null, msgs);
+			if (exampleContent != null) {
+				msgs = ((InternalEObject) exampleContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_TEST__EXAMPLE_CONTENT, null, msgs);
+			}
+			if (newExampleContent != null) {
+				msgs = ((InternalEObject) newExampleContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_TEST__EXAMPLE_CONTENT, null, msgs);
+			}
 			msgs = basicSetExampleContent(newExampleContent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_TEST__EXAMPLE_CONTENT, newExampleContent,
+				newExampleContent));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_TEST__EXAMPLE_CONTENT, newExampleContent, newExampleContent));
 	}
 
 	/**
@@ -239,8 +269,11 @@ public class DocumentTestImpl extends TestBaseImpl implements DocumentTest {
 	public void setConsumingSystem(String newConsumingSystem) {
 		String oldConsumingSystem = consumingSystem;
 		consumingSystem = newConsumingSystem;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_TEST__CONSUMING_SYSTEM, oldConsumingSystem, consumingSystem));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_TEST__CONSUMING_SYSTEM, oldConsumingSystem,
+				consumingSystem));
+		}
 	}
 
 	/**
@@ -260,8 +293,10 @@ public class DocumentTestImpl extends TestBaseImpl implements DocumentTest {
 	public void setCreatingSystem(String newCreatingSystem) {
 		String oldCreatingSystem = creatingSystem;
 		creatingSystem = newCreatingSystem;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_TEST__CREATING_SYSTEM, oldCreatingSystem, creatingSystem));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_TEST__CREATING_SYSTEM, oldCreatingSystem, creatingSystem));
+		}
 	}
 
 	/**
@@ -281,8 +316,10 @@ public class DocumentTestImpl extends TestBaseImpl implements DocumentTest {
 	public void setExampleFile(String newExampleFile) {
 		String oldExampleFile = exampleFile;
 		exampleFile = newExampleFile;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_TEST__EXAMPLE_FILE, oldExampleFile, exampleFile));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_TEST__EXAMPLE_FILE, oldExampleFile, exampleFile));
+		}
 	}
 
 	/**
@@ -332,19 +369,19 @@ public class DocumentTestImpl extends TestBaseImpl implements DocumentTest {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DOCUMENT_TEST__DOCUMENT:
-				setDocument((PackageOrArtifactRef)newValue);
+				setDocument((PackageOrArtifactRef) newValue);
 				return;
 			case Mif2Package.DOCUMENT_TEST__EXAMPLE_CONTENT:
-				setExampleContent((ExampleType)newValue);
+				setExampleContent((ExampleType) newValue);
 				return;
 			case Mif2Package.DOCUMENT_TEST__CONSUMING_SYSTEM:
-				setConsumingSystem((String)newValue);
+				setConsumingSystem((String) newValue);
 				return;
 			case Mif2Package.DOCUMENT_TEST__CREATING_SYSTEM:
-				setCreatingSystem((String)newValue);
+				setCreatingSystem((String) newValue);
 				return;
 			case Mif2Package.DOCUMENT_TEST__EXAMPLE_FILE:
-				setExampleFile((String)newValue);
+				setExampleFile((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -359,10 +396,10 @@ public class DocumentTestImpl extends TestBaseImpl implements DocumentTest {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.DOCUMENT_TEST__DOCUMENT:
-				setDocument((PackageOrArtifactRef)null);
+				setDocument((PackageOrArtifactRef) null);
 				return;
 			case Mif2Package.DOCUMENT_TEST__EXAMPLE_CONTENT:
-				setExampleContent((ExampleType)null);
+				setExampleContent((ExampleType) null);
 				return;
 			case Mif2Package.DOCUMENT_TEST__CONSUMING_SYSTEM:
 				setConsumingSystem(CONSUMING_SYSTEM_EDEFAULT);
@@ -390,11 +427,17 @@ public class DocumentTestImpl extends TestBaseImpl implements DocumentTest {
 			case Mif2Package.DOCUMENT_TEST__EXAMPLE_CONTENT:
 				return exampleContent != null;
 			case Mif2Package.DOCUMENT_TEST__CONSUMING_SYSTEM:
-				return CONSUMING_SYSTEM_EDEFAULT == null ? consumingSystem != null : !CONSUMING_SYSTEM_EDEFAULT.equals(consumingSystem);
+				return CONSUMING_SYSTEM_EDEFAULT == null
+						? consumingSystem != null
+						: !CONSUMING_SYSTEM_EDEFAULT.equals(consumingSystem);
 			case Mif2Package.DOCUMENT_TEST__CREATING_SYSTEM:
-				return CREATING_SYSTEM_EDEFAULT == null ? creatingSystem != null : !CREATING_SYSTEM_EDEFAULT.equals(creatingSystem);
+				return CREATING_SYSTEM_EDEFAULT == null
+						? creatingSystem != null
+						: !CREATING_SYSTEM_EDEFAULT.equals(creatingSystem);
 			case Mif2Package.DOCUMENT_TEST__EXAMPLE_FILE:
-				return EXAMPLE_FILE_EDEFAULT == null ? exampleFile != null : !EXAMPLE_FILE_EDEFAULT.equals(exampleFile);
+				return EXAMPLE_FILE_EDEFAULT == null
+						? exampleFile != null
+						: !EXAMPLE_FILE_EDEFAULT.equals(exampleFile);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -406,7 +449,9 @@ public class DocumentTestImpl extends TestBaseImpl implements DocumentTest {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (consumingSystem: ");
@@ -419,4 +464,4 @@ public class DocumentTestImpl extends TestBaseImpl implements DocumentTest {
 		return result.toString();
 	}
 
-} //DocumentTestImpl
+} // DocumentTestImpl

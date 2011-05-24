@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -94,11 +98,16 @@ public class RelatedAppRoleImpl extends PackageRefImpl implements RelatedAppRole
 	 */
 	public void setRelationshipType(ApplicationRoleRelationshipKind newRelationshipType) {
 		ApplicationRoleRelationshipKind oldRelationshipType = relationshipType;
-		relationshipType = newRelationshipType == null ? RELATIONSHIP_TYPE_EDEFAULT : newRelationshipType;
+		relationshipType = newRelationshipType == null
+				? RELATIONSHIP_TYPE_EDEFAULT
+				: newRelationshipType;
 		boolean oldRelationshipTypeESet = relationshipTypeESet;
 		relationshipTypeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.RELATED_APP_ROLE__RELATIONSHIP_TYPE, oldRelationshipType, relationshipType, !oldRelationshipTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RELATED_APP_ROLE__RELATIONSHIP_TYPE, oldRelationshipType,
+				relationshipType, !oldRelationshipTypeESet));
+		}
 	}
 
 	/**
@@ -111,8 +120,11 @@ public class RelatedAppRoleImpl extends PackageRefImpl implements RelatedAppRole
 		boolean oldRelationshipTypeESet = relationshipTypeESet;
 		relationshipType = RELATIONSHIP_TYPE_EDEFAULT;
 		relationshipTypeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.RELATED_APP_ROLE__RELATIONSHIP_TYPE, oldRelationshipType, RELATIONSHIP_TYPE_EDEFAULT, oldRelationshipTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.RELATED_APP_ROLE__RELATIONSHIP_TYPE, oldRelationshipType,
+				RELATIONSHIP_TYPE_EDEFAULT, oldRelationshipTypeESet));
+		}
 	}
 
 	/**
@@ -147,7 +159,7 @@ public class RelatedAppRoleImpl extends PackageRefImpl implements RelatedAppRole
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.RELATED_APP_ROLE__RELATIONSHIP_TYPE:
-				setRelationshipType((ApplicationRoleRelationshipKind)newValue);
+				setRelationshipType((ApplicationRoleRelationshipKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,13 +201,19 @@ public class RelatedAppRoleImpl extends PackageRefImpl implements RelatedAppRole
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (relationshipType: ");
-		if (relationshipTypeESet) result.append(relationshipType); else result.append("<unset>");
+		if (relationshipTypeESet) {
+			result.append(relationshipType);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //RelatedAppRoleImpl
+} // RelatedAppRoleImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -118,12 +122,19 @@ public class VocabularyLimitationImpl extends EObjectImpl implements VocabularyL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDefinedVocabularyElement(PackageRef newDefinedVocabularyElement, NotificationChain msgs) {
+	public NotificationChain basicSetDefinedVocabularyElement(PackageRef newDefinedVocabularyElement,
+			NotificationChain msgs) {
 		PackageRef oldDefinedVocabularyElement = definedVocabularyElement;
 		definedVocabularyElement = newDefinedVocabularyElement;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_LIMITATION__DEFINED_VOCABULARY_ELEMENT, oldDefinedVocabularyElement, newDefinedVocabularyElement);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_LIMITATION__DEFINED_VOCABULARY_ELEMENT,
+				oldDefinedVocabularyElement, newDefinedVocabularyElement);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -136,15 +147,23 @@ public class VocabularyLimitationImpl extends EObjectImpl implements VocabularyL
 	public void setDefinedVocabularyElement(PackageRef newDefinedVocabularyElement) {
 		if (newDefinedVocabularyElement != definedVocabularyElement) {
 			NotificationChain msgs = null;
-			if (definedVocabularyElement != null)
-				msgs = ((InternalEObject)definedVocabularyElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VOCABULARY_LIMITATION__DEFINED_VOCABULARY_ELEMENT, null, msgs);
-			if (newDefinedVocabularyElement != null)
-				msgs = ((InternalEObject)newDefinedVocabularyElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VOCABULARY_LIMITATION__DEFINED_VOCABULARY_ELEMENT, null, msgs);
+			if (definedVocabularyElement != null) {
+				msgs = ((InternalEObject) definedVocabularyElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VOCABULARY_LIMITATION__DEFINED_VOCABULARY_ELEMENT, null, msgs);
+			}
+			if (newDefinedVocabularyElement != null) {
+				msgs = ((InternalEObject) newDefinedVocabularyElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VOCABULARY_LIMITATION__DEFINED_VOCABULARY_ELEMENT, null, msgs);
+			}
 			msgs = basicSetDefinedVocabularyElement(newDefinedVocabularyElement, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_LIMITATION__DEFINED_VOCABULARY_ELEMENT,
+				newDefinedVocabularyElement, newDefinedVocabularyElement));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_LIMITATION__DEFINED_VOCABULARY_ELEMENT, newDefinedVocabularyElement, newDefinedVocabularyElement));
 	}
 
 	/**
@@ -161,12 +180,19 @@ public class VocabularyLimitationImpl extends EObjectImpl implements VocabularyL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSubstituteVocabularyElement(PackageRef newSubstituteVocabularyElement, NotificationChain msgs) {
+	public NotificationChain basicSetSubstituteVocabularyElement(PackageRef newSubstituteVocabularyElement,
+			NotificationChain msgs) {
 		PackageRef oldSubstituteVocabularyElement = substituteVocabularyElement;
 		substituteVocabularyElement = newSubstituteVocabularyElement;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_LIMITATION__SUBSTITUTE_VOCABULARY_ELEMENT, oldSubstituteVocabularyElement, newSubstituteVocabularyElement);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_LIMITATION__SUBSTITUTE_VOCABULARY_ELEMENT,
+				oldSubstituteVocabularyElement, newSubstituteVocabularyElement);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -179,15 +205,23 @@ public class VocabularyLimitationImpl extends EObjectImpl implements VocabularyL
 	public void setSubstituteVocabularyElement(PackageRef newSubstituteVocabularyElement) {
 		if (newSubstituteVocabularyElement != substituteVocabularyElement) {
 			NotificationChain msgs = null;
-			if (substituteVocabularyElement != null)
-				msgs = ((InternalEObject)substituteVocabularyElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VOCABULARY_LIMITATION__SUBSTITUTE_VOCABULARY_ELEMENT, null, msgs);
-			if (newSubstituteVocabularyElement != null)
-				msgs = ((InternalEObject)newSubstituteVocabularyElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VOCABULARY_LIMITATION__SUBSTITUTE_VOCABULARY_ELEMENT, null, msgs);
+			if (substituteVocabularyElement != null) {
+				msgs = ((InternalEObject) substituteVocabularyElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VOCABULARY_LIMITATION__SUBSTITUTE_VOCABULARY_ELEMENT, null, msgs);
+			}
+			if (newSubstituteVocabularyElement != null) {
+				msgs = ((InternalEObject) newSubstituteVocabularyElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VOCABULARY_LIMITATION__SUBSTITUTE_VOCABULARY_ELEMENT, null, msgs);
+			}
 			msgs = basicSetSubstituteVocabularyElement(newSubstituteVocabularyElement, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_LIMITATION__SUBSTITUTE_VOCABULARY_ELEMENT,
+				newSubstituteVocabularyElement, newSubstituteVocabularyElement));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_LIMITATION__SUBSTITUTE_VOCABULARY_ELEMENT, newSubstituteVocabularyElement, newSubstituteVocabularyElement));
 	}
 
 	/**
@@ -206,11 +240,16 @@ public class VocabularyLimitationImpl extends EObjectImpl implements VocabularyL
 	 */
 	public void setMinimumUpdateTime(DurationUnitsKind newMinimumUpdateTime) {
 		DurationUnitsKind oldMinimumUpdateTime = minimumUpdateTime;
-		minimumUpdateTime = newMinimumUpdateTime == null ? MINIMUM_UPDATE_TIME_EDEFAULT : newMinimumUpdateTime;
+		minimumUpdateTime = newMinimumUpdateTime == null
+				? MINIMUM_UPDATE_TIME_EDEFAULT
+				: newMinimumUpdateTime;
 		boolean oldMinimumUpdateTimeESet = minimumUpdateTimeESet;
 		minimumUpdateTimeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_LIMITATION__MINIMUM_UPDATE_TIME, oldMinimumUpdateTime, minimumUpdateTime, !oldMinimumUpdateTimeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_LIMITATION__MINIMUM_UPDATE_TIME, oldMinimumUpdateTime,
+				minimumUpdateTime, !oldMinimumUpdateTimeESet));
+		}
 	}
 
 	/**
@@ -223,8 +262,11 @@ public class VocabularyLimitationImpl extends EObjectImpl implements VocabularyL
 		boolean oldMinimumUpdateTimeESet = minimumUpdateTimeESet;
 		minimumUpdateTime = MINIMUM_UPDATE_TIME_EDEFAULT;
 		minimumUpdateTimeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.VOCABULARY_LIMITATION__MINIMUM_UPDATE_TIME, oldMinimumUpdateTime, MINIMUM_UPDATE_TIME_EDEFAULT, oldMinimumUpdateTimeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.VOCABULARY_LIMITATION__MINIMUM_UPDATE_TIME, oldMinimumUpdateTime,
+				MINIMUM_UPDATE_TIME_EDEFAULT, oldMinimumUpdateTimeESet));
+		}
 	}
 
 	/**
@@ -279,13 +321,13 @@ public class VocabularyLimitationImpl extends EObjectImpl implements VocabularyL
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.VOCABULARY_LIMITATION__DEFINED_VOCABULARY_ELEMENT:
-				setDefinedVocabularyElement((PackageRef)newValue);
+				setDefinedVocabularyElement((PackageRef) newValue);
 				return;
 			case Mif2Package.VOCABULARY_LIMITATION__SUBSTITUTE_VOCABULARY_ELEMENT:
-				setSubstituteVocabularyElement((PackageRef)newValue);
+				setSubstituteVocabularyElement((PackageRef) newValue);
 				return;
 			case Mif2Package.VOCABULARY_LIMITATION__MINIMUM_UPDATE_TIME:
-				setMinimumUpdateTime((DurationUnitsKind)newValue);
+				setMinimumUpdateTime((DurationUnitsKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -300,10 +342,10 @@ public class VocabularyLimitationImpl extends EObjectImpl implements VocabularyL
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.VOCABULARY_LIMITATION__DEFINED_VOCABULARY_ELEMENT:
-				setDefinedVocabularyElement((PackageRef)null);
+				setDefinedVocabularyElement((PackageRef) null);
 				return;
 			case Mif2Package.VOCABULARY_LIMITATION__SUBSTITUTE_VOCABULARY_ELEMENT:
-				setSubstituteVocabularyElement((PackageRef)null);
+				setSubstituteVocabularyElement((PackageRef) null);
 				return;
 			case Mif2Package.VOCABULARY_LIMITATION__MINIMUM_UPDATE_TIME:
 				unsetMinimumUpdateTime();
@@ -337,13 +379,19 @@ public class VocabularyLimitationImpl extends EObjectImpl implements VocabularyL
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (minimumUpdateTime: ");
-		if (minimumUpdateTimeESet) result.append(minimumUpdateTime); else result.append("<unset>");
+		if (minimumUpdateTimeESet) {
+			result.append(minimumUpdateTime);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //VocabularyLimitationImpl
+} // VocabularyLimitationImpl

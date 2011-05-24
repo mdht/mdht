@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -91,8 +95,14 @@ public class DatatypeLimitationImpl extends EObjectImpl implements DatatypeLimit
 		DatatypeRef oldDefinedDatatype = definedDatatype;
 		definedDatatype = newDefinedDatatype;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_LIMITATION__DEFINED_DATATYPE, oldDefinedDatatype, newDefinedDatatype);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_LIMITATION__DEFINED_DATATYPE, oldDefinedDatatype,
+				newDefinedDatatype);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -105,15 +115,23 @@ public class DatatypeLimitationImpl extends EObjectImpl implements DatatypeLimit
 	public void setDefinedDatatype(DatatypeRef newDefinedDatatype) {
 		if (newDefinedDatatype != definedDatatype) {
 			NotificationChain msgs = null;
-			if (definedDatatype != null)
-				msgs = ((InternalEObject)definedDatatype).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_LIMITATION__DEFINED_DATATYPE, null, msgs);
-			if (newDefinedDatatype != null)
-				msgs = ((InternalEObject)newDefinedDatatype).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_LIMITATION__DEFINED_DATATYPE, null, msgs);
+			if (definedDatatype != null) {
+				msgs = ((InternalEObject) definedDatatype).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_LIMITATION__DEFINED_DATATYPE, null, msgs);
+			}
+			if (newDefinedDatatype != null) {
+				msgs = ((InternalEObject) newDefinedDatatype).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_LIMITATION__DEFINED_DATATYPE, null, msgs);
+			}
 			msgs = basicSetDefinedDatatype(newDefinedDatatype, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_LIMITATION__DEFINED_DATATYPE, newDefinedDatatype,
+				newDefinedDatatype));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_LIMITATION__DEFINED_DATATYPE, newDefinedDatatype, newDefinedDatatype));
 	}
 
 	/**
@@ -134,8 +152,14 @@ public class DatatypeLimitationImpl extends EObjectImpl implements DatatypeLimit
 		DatatypeRef oldSubstituteDatatype = substituteDatatype;
 		substituteDatatype = newSubstituteDatatype;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_LIMITATION__SUBSTITUTE_DATATYPE, oldSubstituteDatatype, newSubstituteDatatype);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_LIMITATION__SUBSTITUTE_DATATYPE, oldSubstituteDatatype,
+				newSubstituteDatatype);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -148,15 +172,23 @@ public class DatatypeLimitationImpl extends EObjectImpl implements DatatypeLimit
 	public void setSubstituteDatatype(DatatypeRef newSubstituteDatatype) {
 		if (newSubstituteDatatype != substituteDatatype) {
 			NotificationChain msgs = null;
-			if (substituteDatatype != null)
-				msgs = ((InternalEObject)substituteDatatype).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_LIMITATION__SUBSTITUTE_DATATYPE, null, msgs);
-			if (newSubstituteDatatype != null)
-				msgs = ((InternalEObject)newSubstituteDatatype).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_LIMITATION__SUBSTITUTE_DATATYPE, null, msgs);
+			if (substituteDatatype != null) {
+				msgs = ((InternalEObject) substituteDatatype).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_LIMITATION__SUBSTITUTE_DATATYPE, null, msgs);
+			}
+			if (newSubstituteDatatype != null) {
+				msgs = ((InternalEObject) newSubstituteDatatype).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_LIMITATION__SUBSTITUTE_DATATYPE, null, msgs);
+			}
 			msgs = basicSetSubstituteDatatype(newSubstituteDatatype, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_LIMITATION__SUBSTITUTE_DATATYPE, newSubstituteDatatype,
+				newSubstituteDatatype));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_LIMITATION__SUBSTITUTE_DATATYPE, newSubstituteDatatype, newSubstituteDatatype));
 	}
 
 	/**
@@ -200,10 +232,10 @@ public class DatatypeLimitationImpl extends EObjectImpl implements DatatypeLimit
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DATATYPE_LIMITATION__DEFINED_DATATYPE:
-				setDefinedDatatype((DatatypeRef)newValue);
+				setDefinedDatatype((DatatypeRef) newValue);
 				return;
 			case Mif2Package.DATATYPE_LIMITATION__SUBSTITUTE_DATATYPE:
-				setSubstituteDatatype((DatatypeRef)newValue);
+				setSubstituteDatatype((DatatypeRef) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -218,10 +250,10 @@ public class DatatypeLimitationImpl extends EObjectImpl implements DatatypeLimit
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.DATATYPE_LIMITATION__DEFINED_DATATYPE:
-				setDefinedDatatype((DatatypeRef)null);
+				setDefinedDatatype((DatatypeRef) null);
 				return;
 			case Mif2Package.DATATYPE_LIMITATION__SUBSTITUTE_DATATYPE:
-				setSubstituteDatatype((DatatypeRef)null);
+				setSubstituteDatatype((DatatypeRef) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -243,4 +275,4 @@ public class DatatypeLimitationImpl extends EObjectImpl implements DatatypeLimit
 		return super.eIsSet(featureID);
 	}
 
-} //DatatypeLimitationImpl
+} // DatatypeLimitationImpl

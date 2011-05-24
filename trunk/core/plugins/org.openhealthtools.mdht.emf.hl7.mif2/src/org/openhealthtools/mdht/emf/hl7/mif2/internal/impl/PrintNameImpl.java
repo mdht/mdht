@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -152,8 +156,13 @@ public class PrintNameImpl extends EObjectImpl implements PrintName {
 		CodeIcon oldIcon = icon;
 		icon = newIcon;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.PRINT_NAME__ICON, oldIcon, newIcon);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PRINT_NAME__ICON, oldIcon, newIcon);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -166,15 +175,21 @@ public class PrintNameImpl extends EObjectImpl implements PrintName {
 	public void setIcon(CodeIcon newIcon) {
 		if (newIcon != icon) {
 			NotificationChain msgs = null;
-			if (icon != null)
-				msgs = ((InternalEObject)icon).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.PRINT_NAME__ICON, null, msgs);
-			if (newIcon != null)
-				msgs = ((InternalEObject)newIcon).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.PRINT_NAME__ICON, null, msgs);
+			if (icon != null) {
+				msgs = ((InternalEObject) icon).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.PRINT_NAME__ICON, null, msgs);
+			}
+			if (newIcon != null) {
+				msgs = ((InternalEObject) newIcon).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.PRINT_NAME__ICON, null, msgs);
+			}
 			msgs = basicSetIcon(newIcon, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PRINT_NAME__ICON, newIcon, newIcon));
+		}
 	}
 
 	/**
@@ -194,8 +209,10 @@ public class PrintNameImpl extends EObjectImpl implements PrintName {
 	public void setLanguage(String newLanguage) {
 		String oldLanguage = language;
 		language = newLanguage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PRINT_NAME__LANGUAGE, oldLanguage, language));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PRINT_NAME__LANGUAGE, oldLanguage, language));
+		}
 	}
 
 	/**
@@ -217,8 +234,11 @@ public class PrintNameImpl extends EObjectImpl implements PrintName {
 		preferredForLanguage = newPreferredForLanguage;
 		boolean oldPreferredForLanguageESet = preferredForLanguageESet;
 		preferredForLanguageESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PRINT_NAME__PREFERRED_FOR_LANGUAGE, oldPreferredForLanguage, preferredForLanguage, !oldPreferredForLanguageESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PRINT_NAME__PREFERRED_FOR_LANGUAGE, oldPreferredForLanguage,
+				preferredForLanguage, !oldPreferredForLanguageESet));
+		}
 	}
 
 	/**
@@ -231,8 +251,11 @@ public class PrintNameImpl extends EObjectImpl implements PrintName {
 		boolean oldPreferredForLanguageESet = preferredForLanguageESet;
 		preferredForLanguage = PREFERRED_FOR_LANGUAGE_EDEFAULT;
 		preferredForLanguageESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.PRINT_NAME__PREFERRED_FOR_LANGUAGE, oldPreferredForLanguage, PREFERRED_FOR_LANGUAGE_EDEFAULT, oldPreferredForLanguageESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.PRINT_NAME__PREFERRED_FOR_LANGUAGE, oldPreferredForLanguage,
+				PREFERRED_FOR_LANGUAGE_EDEFAULT, oldPreferredForLanguageESet));
+		}
 	}
 
 	/**
@@ -261,8 +284,9 @@ public class PrintNameImpl extends EObjectImpl implements PrintName {
 	public void setText(String newText) {
 		String oldText = text;
 		text = newText;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PRINT_NAME__TEXT, oldText, text));
+		}
 	}
 
 	/**
@@ -292,7 +316,9 @@ public class PrintNameImpl extends EObjectImpl implements PrintName {
 			case Mif2Package.PRINT_NAME__LANGUAGE:
 				return getLanguage();
 			case Mif2Package.PRINT_NAME__PREFERRED_FOR_LANGUAGE:
-				return isPreferredForLanguage() ? Boolean.TRUE : Boolean.FALSE;
+				return isPreferredForLanguage()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.PRINT_NAME__TEXT:
 				return getText();
 		}
@@ -308,16 +334,16 @@ public class PrintNameImpl extends EObjectImpl implements PrintName {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.PRINT_NAME__ICON:
-				setIcon((CodeIcon)newValue);
+				setIcon((CodeIcon) newValue);
 				return;
 			case Mif2Package.PRINT_NAME__LANGUAGE:
-				setLanguage((String)newValue);
+				setLanguage((String) newValue);
 				return;
 			case Mif2Package.PRINT_NAME__PREFERRED_FOR_LANGUAGE:
-				setPreferredForLanguage(((Boolean)newValue).booleanValue());
+				setPreferredForLanguage(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.PRINT_NAME__TEXT:
-				setText((String)newValue);
+				setText((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -332,7 +358,7 @@ public class PrintNameImpl extends EObjectImpl implements PrintName {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.PRINT_NAME__ICON:
-				setIcon((CodeIcon)null);
+				setIcon((CodeIcon) null);
 				return;
 			case Mif2Package.PRINT_NAME__LANGUAGE:
 				setLanguage(LANGUAGE_EDEFAULT);
@@ -358,11 +384,15 @@ public class PrintNameImpl extends EObjectImpl implements PrintName {
 			case Mif2Package.PRINT_NAME__ICON:
 				return icon != null;
 			case Mif2Package.PRINT_NAME__LANGUAGE:
-				return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
+				return LANGUAGE_EDEFAULT == null
+						? language != null
+						: !LANGUAGE_EDEFAULT.equals(language);
 			case Mif2Package.PRINT_NAME__PREFERRED_FOR_LANGUAGE:
 				return isSetPreferredForLanguage();
 			case Mif2Package.PRINT_NAME__TEXT:
-				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
+				return TEXT_EDEFAULT == null
+						? text != null
+						: !TEXT_EDEFAULT.equals(text);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -374,17 +404,23 @@ public class PrintNameImpl extends EObjectImpl implements PrintName {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (language: ");
 		result.append(language);
 		result.append(", preferredForLanguage: ");
-		if (preferredForLanguageESet) result.append(preferredForLanguage); else result.append("<unset>");
+		if (preferredForLanguageESet) {
+			result.append(preferredForLanguage);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", text: ");
 		result.append(text);
 		result.append(')');
 		return result.toString();
 	}
 
-} //PrintNameImpl
+} // PrintNameImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -224,17 +228,9 @@ public enum NegativeVoteResolutionKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final NegativeVoteResolutionKind[] VALUES_ARRAY =
-		new NegativeVoteResolutionKind[] {
-			UNRESOLVED,
-			NON_SUBSTANTIVE_PROPOSED,
-			NON_SUBSTANTIVE_VOTED,
-			NOT_RELATED_PROPOSED,
-			NOT_RELATED_VOTED,
-			PREVIOUSLY_CONSIDERED,
-			RETRACTED,
-			WITHDRAWN,
-		};
+	private static final NegativeVoteResolutionKind[] VALUES_ARRAY = new NegativeVoteResolutionKind[] {
+			UNRESOLVED, NON_SUBSTANTIVE_PROPOSED, NON_SUBSTANTIVE_VOTED, NOT_RELATED_PROPOSED, NOT_RELATED_VOTED,
+			PREVIOUSLY_CONSIDERED, RETRACTED, WITHDRAWN, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Negative Vote Resolution Kind</b></em>' enumerators.
@@ -284,14 +280,22 @@ public enum NegativeVoteResolutionKind implements Enumerator {
 	 */
 	public static NegativeVoteResolutionKind get(int value) {
 		switch (value) {
-			case UNRESOLVED_VALUE: return UNRESOLVED;
-			case NON_SUBSTANTIVE_PROPOSED_VALUE: return NON_SUBSTANTIVE_PROPOSED;
-			case NON_SUBSTANTIVE_VOTED_VALUE: return NON_SUBSTANTIVE_VOTED;
-			case NOT_RELATED_PROPOSED_VALUE: return NOT_RELATED_PROPOSED;
-			case NOT_RELATED_VOTED_VALUE: return NOT_RELATED_VOTED;
-			case PREVIOUSLY_CONSIDERED_VALUE: return PREVIOUSLY_CONSIDERED;
-			case RETRACTED_VALUE: return RETRACTED;
-			case WITHDRAWN_VALUE: return WITHDRAWN;
+			case UNRESOLVED_VALUE:
+				return UNRESOLVED;
+			case NON_SUBSTANTIVE_PROPOSED_VALUE:
+				return NON_SUBSTANTIVE_PROPOSED;
+			case NON_SUBSTANTIVE_VOTED_VALUE:
+				return NON_SUBSTANTIVE_VOTED;
+			case NOT_RELATED_PROPOSED_VALUE:
+				return NOT_RELATED_PROPOSED;
+			case NOT_RELATED_VOTED_VALUE:
+				return NOT_RELATED_VOTED;
+			case PREVIOUSLY_CONSIDERED_VALUE:
+				return PREVIOUSLY_CONSIDERED;
+			case RETRACTED_VALUE:
+				return RETRACTED;
+			case WITHDRAWN_VALUE:
+				return WITHDRAWN;
 		}
 		return null;
 	}
@@ -335,7 +339,7 @@ public enum NegativeVoteResolutionKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -344,7 +348,7 @@ public enum NegativeVoteResolutionKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -353,7 +357,7 @@ public enum NegativeVoteResolutionKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -366,5 +370,5 @@ public enum NegativeVoteResolutionKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //NegativeVoteResolutionKind
+
+} // NegativeVoteResolutionKind

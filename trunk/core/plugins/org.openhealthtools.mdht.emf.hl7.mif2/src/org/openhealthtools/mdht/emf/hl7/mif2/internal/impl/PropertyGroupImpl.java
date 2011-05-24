@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -97,7 +101,8 @@ public class PropertyGroupImpl extends EObjectImpl implements PropertyGroup {
 	 */
 	public EList<ConceptProperty> getProperty() {
 		if (property == null) {
-			property = new EObjectContainmentEList<ConceptProperty>(ConceptProperty.class, this, Mif2Package.PROPERTY_GROUP__PROPERTY);
+			property = new EObjectContainmentEList<ConceptProperty>(
+				ConceptProperty.class, this, Mif2Package.PROPERTY_GROUP__PROPERTY);
 		}
 		return property;
 	}
@@ -119,8 +124,9 @@ public class PropertyGroupImpl extends EObjectImpl implements PropertyGroup {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PROPERTY_GROUP__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -132,7 +138,7 @@ public class PropertyGroupImpl extends EObjectImpl implements PropertyGroup {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.PROPERTY_GROUP__PROPERTY:
-				return ((InternalEList<?>)getProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getProperty()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -164,10 +170,10 @@ public class PropertyGroupImpl extends EObjectImpl implements PropertyGroup {
 		switch (featureID) {
 			case Mif2Package.PROPERTY_GROUP__PROPERTY:
 				getProperty().clear();
-				getProperty().addAll((Collection<? extends ConceptProperty>)newValue);
+				getProperty().addAll((Collection<? extends ConceptProperty>) newValue);
 				return;
 			case Mif2Package.PROPERTY_GROUP__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -202,7 +208,9 @@ public class PropertyGroupImpl extends EObjectImpl implements PropertyGroup {
 			case Mif2Package.PROPERTY_GROUP__PROPERTY:
 				return property != null && !property.isEmpty();
 			case Mif2Package.PROPERTY_GROUP__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -214,7 +222,9 @@ public class PropertyGroupImpl extends EObjectImpl implements PropertyGroup {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -223,4 +233,4 @@ public class PropertyGroupImpl extends EObjectImpl implements PropertyGroup {
 		return result.toString();
 	}
 
-} //PropertyGroupImpl
+} // PropertyGroupImpl

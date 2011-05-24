@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml;
 
 import java.util.Arrays;
@@ -103,12 +107,7 @@ public enum MifClassType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final MifClassType[] VALUES_ARRAY =
-		new MifClassType[] {
-			INSERTED,
-			DELETED,
-			CHANGED,
-		};
+	private static final MifClassType[] VALUES_ARRAY = new MifClassType[] { INSERTED, DELETED, CHANGED, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Mif Class Type</b></em>' enumerators.
@@ -158,9 +157,12 @@ public enum MifClassType implements Enumerator {
 	 */
 	public static MifClassType get(int value) {
 		switch (value) {
-			case INSERTED_VALUE: return INSERTED;
-			case DELETED_VALUE: return DELETED;
-			case CHANGED_VALUE: return CHANGED;
+			case INSERTED_VALUE:
+				return INSERTED;
+			case DELETED_VALUE:
+				return DELETED;
+			case CHANGED_VALUE:
+				return CHANGED;
 		}
 		return null;
 	}
@@ -204,7 +206,7 @@ public enum MifClassType implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -213,7 +215,7 @@ public enum MifClassType implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -222,7 +224,7 @@ public enum MifClassType implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -235,5 +237,5 @@ public enum MifClassType implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //MifClassType
+
+} // MifClassType

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -183,7 +187,8 @@ public class TransitionImpl extends ModelElementImpl implements Transition {
 	 */
 	public EList<BusinessName> getBusinessName() {
 		if (businessName == null) {
-			businessName = new EObjectContainmentEList<BusinessName>(BusinessName.class, this, Mif2Package.TRANSITION__BUSINESS_NAME);
+			businessName = new EObjectContainmentEList<BusinessName>(
+				BusinessName.class, this, Mif2Package.TRANSITION__BUSINESS_NAME);
 		}
 		return businessName;
 	}
@@ -206,8 +211,13 @@ public class TransitionImpl extends ModelElementImpl implements Transition {
 		TransitionAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.TRANSITION__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TRANSITION__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -220,15 +230,22 @@ public class TransitionImpl extends ModelElementImpl implements Transition {
 	public void setAnnotations(TransitionAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TRANSITION__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TRANSITION__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TRANSITION__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TRANSITION__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TRANSITION__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TRANSITION__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -238,7 +255,8 @@ public class TransitionImpl extends ModelElementImpl implements Transition {
 	 */
 	public EList<TransitionDerivation> getDerivedFrom() {
 		if (derivedFrom == null) {
-			derivedFrom = new EObjectContainmentEList<TransitionDerivation>(TransitionDerivation.class, this, Mif2Package.TRANSITION__DERIVED_FROM);
+			derivedFrom = new EObjectContainmentEList<TransitionDerivation>(
+				TransitionDerivation.class, this, Mif2Package.TRANSITION__DERIVED_FROM);
 		}
 		return derivedFrom;
 	}
@@ -260,8 +278,10 @@ public class TransitionImpl extends ModelElementImpl implements Transition {
 	public void setEndStateName(String newEndStateName) {
 		String oldEndStateName = endStateName;
 		endStateName = newEndStateName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TRANSITION__END_STATE_NAME, oldEndStateName, endStateName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TRANSITION__END_STATE_NAME, oldEndStateName, endStateName));
+		}
 	}
 
 	/**
@@ -281,8 +301,9 @@ public class TransitionImpl extends ModelElementImpl implements Transition {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TRANSITION__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -302,8 +323,9 @@ public class TransitionImpl extends ModelElementImpl implements Transition {
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TRANSITION__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -323,8 +345,10 @@ public class TransitionImpl extends ModelElementImpl implements Transition {
 	public void setStartStateName(String newStartStateName) {
 		String oldStartStateName = startStateName;
 		startStateName = newStartStateName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TRANSITION__START_STATE_NAME, oldStartStateName, startStateName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TRANSITION__START_STATE_NAME, oldStartStateName, startStateName));
+		}
 	}
 
 	/**
@@ -336,11 +360,11 @@ public class TransitionImpl extends ModelElementImpl implements Transition {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.TRANSITION__BUSINESS_NAME:
-				return ((InternalEList<?>)getBusinessName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBusinessName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.TRANSITION__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 			case Mif2Package.TRANSITION__DERIVED_FROM:
-				return ((InternalEList<?>)getDerivedFrom()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDerivedFrom()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -382,26 +406,26 @@ public class TransitionImpl extends ModelElementImpl implements Transition {
 		switch (featureID) {
 			case Mif2Package.TRANSITION__BUSINESS_NAME:
 				getBusinessName().clear();
-				getBusinessName().addAll((Collection<? extends BusinessName>)newValue);
+				getBusinessName().addAll((Collection<? extends BusinessName>) newValue);
 				return;
 			case Mif2Package.TRANSITION__ANNOTATIONS:
-				setAnnotations((TransitionAnnotations)newValue);
+				setAnnotations((TransitionAnnotations) newValue);
 				return;
 			case Mif2Package.TRANSITION__DERIVED_FROM:
 				getDerivedFrom().clear();
-				getDerivedFrom().addAll((Collection<? extends TransitionDerivation>)newValue);
+				getDerivedFrom().addAll((Collection<? extends TransitionDerivation>) newValue);
 				return;
 			case Mif2Package.TRANSITION__END_STATE_NAME:
-				setEndStateName((String)newValue);
+				setEndStateName((String) newValue);
 				return;
 			case Mif2Package.TRANSITION__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.TRANSITION__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 			case Mif2Package.TRANSITION__START_STATE_NAME:
-				setStartStateName((String)newValue);
+				setStartStateName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -419,7 +443,7 @@ public class TransitionImpl extends ModelElementImpl implements Transition {
 				getBusinessName().clear();
 				return;
 			case Mif2Package.TRANSITION__ANNOTATIONS:
-				setAnnotations((TransitionAnnotations)null);
+				setAnnotations((TransitionAnnotations) null);
 				return;
 			case Mif2Package.TRANSITION__DERIVED_FROM:
 				getDerivedFrom().clear();
@@ -455,13 +479,21 @@ public class TransitionImpl extends ModelElementImpl implements Transition {
 			case Mif2Package.TRANSITION__DERIVED_FROM:
 				return derivedFrom != null && !derivedFrom.isEmpty();
 			case Mif2Package.TRANSITION__END_STATE_NAME:
-				return END_STATE_NAME_EDEFAULT == null ? endStateName != null : !END_STATE_NAME_EDEFAULT.equals(endStateName);
+				return END_STATE_NAME_EDEFAULT == null
+						? endStateName != null
+						: !END_STATE_NAME_EDEFAULT.equals(endStateName);
 			case Mif2Package.TRANSITION__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.TRANSITION__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 			case Mif2Package.TRANSITION__START_STATE_NAME:
-				return START_STATE_NAME_EDEFAULT == null ? startStateName != null : !START_STATE_NAME_EDEFAULT.equals(startStateName);
+				return START_STATE_NAME_EDEFAULT == null
+						? startStateName != null
+						: !START_STATE_NAME_EDEFAULT.equals(startStateName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -473,7 +505,9 @@ public class TransitionImpl extends ModelElementImpl implements Transition {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (endStateName: ");
@@ -488,4 +522,4 @@ public class TransitionImpl extends ModelElementImpl implements Transition {
 		return result.toString();
 	}
 
-} //TransitionImpl
+} // TransitionImpl

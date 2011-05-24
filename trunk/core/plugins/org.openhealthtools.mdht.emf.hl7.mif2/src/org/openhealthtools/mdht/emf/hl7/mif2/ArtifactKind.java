@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -516,29 +520,8 @@ public enum ArtifactKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ArtifactKind[] VALUES_ARRAY =
-		new ArtifactKind[] {
-			IFC,
-			RIM,
-			DIM,
-			CIM,
-			LIM,
-			DAM,
-			TP,
-			DT,
-			ITS,
-			DC,
-			GL,
-			SB,
-			VO,
-			AR,
-			TE,
-			IN,
-			DMIM,
-			RM,
-			HD,
-			MT,
-		};
+	private static final ArtifactKind[] VALUES_ARRAY = new ArtifactKind[] {
+			IFC, RIM, DIM, CIM, LIM, DAM, TP, DT, ITS, DC, GL, SB, VO, AR, TE, IN, DMIM, RM, HD, MT, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Artifact Kind</b></em>' enumerators.
@@ -588,26 +571,46 @@ public enum ArtifactKind implements Enumerator {
 	 */
 	public static ArtifactKind get(int value) {
 		switch (value) {
-			case IFC_VALUE: return IFC;
-			case RIM_VALUE: return RIM;
-			case DIM_VALUE: return DIM;
-			case CIM_VALUE: return CIM;
-			case LIM_VALUE: return LIM;
-			case DAM_VALUE: return DAM;
-			case TP_VALUE: return TP;
-			case DT_VALUE: return DT;
-			case ITS_VALUE: return ITS;
-			case DC_VALUE: return DC;
-			case GL_VALUE: return GL;
-			case SB_VALUE: return SB;
-			case VO_VALUE: return VO;
-			case AR_VALUE: return AR;
-			case TE_VALUE: return TE;
-			case IN_VALUE: return IN;
-			case DMIM_VALUE: return DMIM;
-			case RM_VALUE: return RM;
-			case HD_VALUE: return HD;
-			case MT_VALUE: return MT;
+			case IFC_VALUE:
+				return IFC;
+			case RIM_VALUE:
+				return RIM;
+			case DIM_VALUE:
+				return DIM;
+			case CIM_VALUE:
+				return CIM;
+			case LIM_VALUE:
+				return LIM;
+			case DAM_VALUE:
+				return DAM;
+			case TP_VALUE:
+				return TP;
+			case DT_VALUE:
+				return DT;
+			case ITS_VALUE:
+				return ITS;
+			case DC_VALUE:
+				return DC;
+			case GL_VALUE:
+				return GL;
+			case SB_VALUE:
+				return SB;
+			case VO_VALUE:
+				return VO;
+			case AR_VALUE:
+				return AR;
+			case TE_VALUE:
+				return TE;
+			case IN_VALUE:
+				return IN;
+			case DMIM_VALUE:
+				return DMIM;
+			case RM_VALUE:
+				return RM;
+			case HD_VALUE:
+				return HD;
+			case MT_VALUE:
+				return MT;
 		}
 		return null;
 	}
@@ -651,7 +654,7 @@ public enum ArtifactKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -660,7 +663,7 @@ public enum ArtifactKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -669,7 +672,7 @@ public enum ArtifactKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -682,5 +685,5 @@ public enum ArtifactKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //ArtifactKind
+
+} // ArtifactKind

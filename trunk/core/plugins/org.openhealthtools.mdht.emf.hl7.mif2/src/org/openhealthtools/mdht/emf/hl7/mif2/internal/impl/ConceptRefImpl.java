@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -118,7 +122,8 @@ public class ConceptRefImpl extends EObjectImpl implements ConceptRef {
 	 */
 	public EList<ConceptProperty> getCodeProperty() {
 		if (codeProperty == null) {
-			codeProperty = new EObjectContainmentEList<ConceptProperty>(ConceptProperty.class, this, Mif2Package.CONCEPT_REF__CODE_PROPERTY);
+			codeProperty = new EObjectContainmentEList<ConceptProperty>(
+				ConceptProperty.class, this, Mif2Package.CONCEPT_REF__CODE_PROPERTY);
 		}
 		return codeProperty;
 	}
@@ -140,8 +145,9 @@ public class ConceptRefImpl extends EObjectImpl implements ConceptRef {
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT_REF__CODE, oldCode, code));
+		}
 	}
 
 	/**
@@ -161,8 +167,10 @@ public class ConceptRefImpl extends EObjectImpl implements ConceptRef {
 	public void setCodeSystem(String newCodeSystem) {
 		String oldCodeSystem = codeSystem;
 		codeSystem = newCodeSystem;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT_REF__CODE_SYSTEM, oldCodeSystem, codeSystem));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONCEPT_REF__CODE_SYSTEM, oldCodeSystem, codeSystem));
+		}
 	}
 
 	/**
@@ -174,7 +182,7 @@ public class ConceptRefImpl extends EObjectImpl implements ConceptRef {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.CONCEPT_REF__CODE_PROPERTY:
-				return ((InternalEList<?>)getCodeProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCodeProperty()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -208,13 +216,13 @@ public class ConceptRefImpl extends EObjectImpl implements ConceptRef {
 		switch (featureID) {
 			case Mif2Package.CONCEPT_REF__CODE_PROPERTY:
 				getCodeProperty().clear();
-				getCodeProperty().addAll((Collection<? extends ConceptProperty>)newValue);
+				getCodeProperty().addAll((Collection<? extends ConceptProperty>) newValue);
 				return;
 			case Mif2Package.CONCEPT_REF__CODE:
-				setCode((String)newValue);
+				setCode((String) newValue);
 				return;
 			case Mif2Package.CONCEPT_REF__CODE_SYSTEM:
-				setCodeSystem((String)newValue);
+				setCodeSystem((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -252,9 +260,13 @@ public class ConceptRefImpl extends EObjectImpl implements ConceptRef {
 			case Mif2Package.CONCEPT_REF__CODE_PROPERTY:
 				return codeProperty != null && !codeProperty.isEmpty();
 			case Mif2Package.CONCEPT_REF__CODE:
-				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+				return CODE_EDEFAULT == null
+						? code != null
+						: !CODE_EDEFAULT.equals(code);
 			case Mif2Package.CONCEPT_REF__CODE_SYSTEM:
-				return CODE_SYSTEM_EDEFAULT == null ? codeSystem != null : !CODE_SYSTEM_EDEFAULT.equals(codeSystem);
+				return CODE_SYSTEM_EDEFAULT == null
+						? codeSystem != null
+						: !CODE_SYSTEM_EDEFAULT.equals(codeSystem);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -266,7 +278,9 @@ public class ConceptRefImpl extends EObjectImpl implements ConceptRef {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (code: ");
@@ -277,4 +291,4 @@ public class ConceptRefImpl extends EObjectImpl implements ConceptRef {
 		return result.toString();
 	}
 
-} //ConceptRefImpl
+} // ConceptRefImpl

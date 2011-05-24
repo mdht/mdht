@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -191,7 +195,8 @@ public class BasicAnnotationImpl extends AnnotationBaseImpl implements BasicAnno
 	 */
 	public EList<ComplexMarkupWithLanguage> getText() {
 		if (text == null) {
-			text = new EObjectContainmentEList<ComplexMarkupWithLanguage>(ComplexMarkupWithLanguage.class, this, Mif2Package.BASIC_ANNOTATION__TEXT);
+			text = new EObjectContainmentEList<ComplexMarkupWithLanguage>(
+				ComplexMarkupWithLanguage.class, this, Mif2Package.BASIC_ANNOTATION__TEXT);
 		}
 		return text;
 	}
@@ -203,7 +208,8 @@ public class BasicAnnotationImpl extends AnnotationBaseImpl implements BasicAnno
 	 */
 	public EList<ComplexMarkupWithLanguage> getCombinedText() {
 		if (combinedText == null) {
-			combinedText = new EObjectContainmentEList<ComplexMarkupWithLanguage>(ComplexMarkupWithLanguage.class, this, Mif2Package.BASIC_ANNOTATION__COMBINED_TEXT);
+			combinedText = new EObjectContainmentEList<ComplexMarkupWithLanguage>(
+				ComplexMarkupWithLanguage.class, this, Mif2Package.BASIC_ANNOTATION__COMBINED_TEXT);
 		}
 		return combinedText;
 	}
@@ -225,8 +231,11 @@ public class BasicAnnotationImpl extends AnnotationBaseImpl implements BasicAnno
 	public void setAppendAnnotationId(String newAppendAnnotationId) {
 		String oldAppendAnnotationId = appendAnnotationId;
 		appendAnnotationId = newAppendAnnotationId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BASIC_ANNOTATION__APPEND_ANNOTATION_ID, oldAppendAnnotationId, appendAnnotationId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BASIC_ANNOTATION__APPEND_ANNOTATION_ID, oldAppendAnnotationId,
+				appendAnnotationId));
+		}
 	}
 
 	/**
@@ -246,8 +255,10 @@ public class BasicAnnotationImpl extends AnnotationBaseImpl implements BasicAnno
 	public void setGraphicLinkId(String newGraphicLinkId) {
 		String oldGraphicLinkId = graphicLinkId;
 		graphicLinkId = newGraphicLinkId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BASIC_ANNOTATION__GRAPHIC_LINK_ID, oldGraphicLinkId, graphicLinkId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BASIC_ANNOTATION__GRAPHIC_LINK_ID, oldGraphicLinkId, graphicLinkId));
+		}
 	}
 
 	/**
@@ -267,8 +278,9 @@ public class BasicAnnotationImpl extends AnnotationBaseImpl implements BasicAnno
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BASIC_ANNOTATION__ID, oldId, id));
+		}
 	}
 
 	/**
@@ -288,8 +300,11 @@ public class BasicAnnotationImpl extends AnnotationBaseImpl implements BasicAnno
 	public void setPrependAnnotationId(String newPrependAnnotationId) {
 		String oldPrependAnnotationId = prependAnnotationId;
 		prependAnnotationId = newPrependAnnotationId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BASIC_ANNOTATION__PREPEND_ANNOTATION_ID, oldPrependAnnotationId, prependAnnotationId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BASIC_ANNOTATION__PREPEND_ANNOTATION_ID, oldPrependAnnotationId,
+				prependAnnotationId));
+		}
 	}
 
 	/**
@@ -309,8 +324,10 @@ public class BasicAnnotationImpl extends AnnotationBaseImpl implements BasicAnno
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BASIC_ANNOTATION__SORT_KEY, oldSortKey, sortKey));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BASIC_ANNOTATION__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -322,9 +339,9 @@ public class BasicAnnotationImpl extends AnnotationBaseImpl implements BasicAnno
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.BASIC_ANNOTATION__TEXT:
-				return ((InternalEList<?>)getText()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getText()).basicRemove(otherEnd, msgs);
 			case Mif2Package.BASIC_ANNOTATION__COMBINED_TEXT:
-				return ((InternalEList<?>)getCombinedText()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCombinedText()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -366,26 +383,26 @@ public class BasicAnnotationImpl extends AnnotationBaseImpl implements BasicAnno
 		switch (featureID) {
 			case Mif2Package.BASIC_ANNOTATION__TEXT:
 				getText().clear();
-				getText().addAll((Collection<? extends ComplexMarkupWithLanguage>)newValue);
+				getText().addAll((Collection<? extends ComplexMarkupWithLanguage>) newValue);
 				return;
 			case Mif2Package.BASIC_ANNOTATION__COMBINED_TEXT:
 				getCombinedText().clear();
-				getCombinedText().addAll((Collection<? extends ComplexMarkupWithLanguage>)newValue);
+				getCombinedText().addAll((Collection<? extends ComplexMarkupWithLanguage>) newValue);
 				return;
 			case Mif2Package.BASIC_ANNOTATION__APPEND_ANNOTATION_ID:
-				setAppendAnnotationId((String)newValue);
+				setAppendAnnotationId((String) newValue);
 				return;
 			case Mif2Package.BASIC_ANNOTATION__GRAPHIC_LINK_ID:
-				setGraphicLinkId((String)newValue);
+				setGraphicLinkId((String) newValue);
 				return;
 			case Mif2Package.BASIC_ANNOTATION__ID:
-				setId((String)newValue);
+				setId((String) newValue);
 				return;
 			case Mif2Package.BASIC_ANNOTATION__PREPEND_ANNOTATION_ID:
-				setPrependAnnotationId((String)newValue);
+				setPrependAnnotationId((String) newValue);
 				return;
 			case Mif2Package.BASIC_ANNOTATION__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -437,15 +454,25 @@ public class BasicAnnotationImpl extends AnnotationBaseImpl implements BasicAnno
 			case Mif2Package.BASIC_ANNOTATION__COMBINED_TEXT:
 				return combinedText != null && !combinedText.isEmpty();
 			case Mif2Package.BASIC_ANNOTATION__APPEND_ANNOTATION_ID:
-				return APPEND_ANNOTATION_ID_EDEFAULT == null ? appendAnnotationId != null : !APPEND_ANNOTATION_ID_EDEFAULT.equals(appendAnnotationId);
+				return APPEND_ANNOTATION_ID_EDEFAULT == null
+						? appendAnnotationId != null
+						: !APPEND_ANNOTATION_ID_EDEFAULT.equals(appendAnnotationId);
 			case Mif2Package.BASIC_ANNOTATION__GRAPHIC_LINK_ID:
-				return GRAPHIC_LINK_ID_EDEFAULT == null ? graphicLinkId != null : !GRAPHIC_LINK_ID_EDEFAULT.equals(graphicLinkId);
+				return GRAPHIC_LINK_ID_EDEFAULT == null
+						? graphicLinkId != null
+						: !GRAPHIC_LINK_ID_EDEFAULT.equals(graphicLinkId);
 			case Mif2Package.BASIC_ANNOTATION__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+				return ID_EDEFAULT == null
+						? id != null
+						: !ID_EDEFAULT.equals(id);
 			case Mif2Package.BASIC_ANNOTATION__PREPEND_ANNOTATION_ID:
-				return PREPEND_ANNOTATION_ID_EDEFAULT == null ? prependAnnotationId != null : !PREPEND_ANNOTATION_ID_EDEFAULT.equals(prependAnnotationId);
+				return PREPEND_ANNOTATION_ID_EDEFAULT == null
+						? prependAnnotationId != null
+						: !PREPEND_ANNOTATION_ID_EDEFAULT.equals(prependAnnotationId);
 			case Mif2Package.BASIC_ANNOTATION__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -457,7 +484,9 @@ public class BasicAnnotationImpl extends AnnotationBaseImpl implements BasicAnno
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (appendAnnotationId: ");
@@ -474,4 +503,4 @@ public class BasicAnnotationImpl extends AnnotationBaseImpl implements BasicAnno
 		return result.toString();
 	}
 
-} //BasicAnnotationImpl
+} // BasicAnnotationImpl

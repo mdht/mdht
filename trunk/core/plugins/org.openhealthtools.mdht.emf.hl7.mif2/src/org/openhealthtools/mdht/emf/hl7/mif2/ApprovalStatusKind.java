@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -174,7 +178,8 @@ public enum ApprovalStatusKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	APPROVED_AFFILIATE_NORMATIVE_STANDARD(14, "ApprovedAffiliateNormativeStandard", "Approved Affiliate Normative Standard"),
+	APPROVED_AFFILIATE_NORMATIVE_STANDARD(14, "ApprovedAffiliateNormativeStandard",
+			"Approved Affiliate Normative Standard"),
 
 	/**
 	 * The '<em><b>Approved Affiliate Informative Standard</b></em>' literal object.
@@ -184,7 +189,8 @@ public enum ApprovalStatusKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	APPROVED_AFFILIATE_INFORMATIVE_STANDARD(15, "ApprovedAffiliateInformativeStandard", "Approved Affiliate Informative Standard"),
+	APPROVED_AFFILIATE_INFORMATIVE_STANDARD(15, "ApprovedAffiliateInformativeStandard",
+			"Approved Affiliate Informative Standard"),
 
 	/**
 	 * The '<em><b>Approved Affiliate DSTU</b></em>' literal object.
@@ -488,28 +494,12 @@ public enum ApprovalStatusKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ApprovalStatusKind[] VALUES_ARRAY =
-		new ApprovalStatusKind[] {
-			DRAFT,
-			NON_STANDARD_AVAILABLE_FOR_USE,
-			PROPOSAL,
-			COMMITTEE_BALLOT_NORMATIVE,
-			COMMITTEE_BALLOT_INFORMATIVE,
-			MEMBERSHIP_BALLOT_NORMATIVE,
-			MEMBERSHIP_BALLOT_INFORMATIVE,
-			MEMBERSHIP_BALLOT_DSTU,
-			APPROVED_NORMATIVE_STANDARD,
-			APPROVED_INFORMATIVE_STANDARD,
-			APPROVED_DSTU,
-			AFFILIATE_BALLOT_NORMATIVE,
-			AFFILIATE_BALLOT_INFORMATIVE,
-			REFERENCE,
-			APPROVED_AFFILIATE_NORMATIVE_STANDARD,
-			APPROVED_AFFILIATE_INFORMATIVE_STANDARD,
-			APPROVED_AFFILIATE_DSTU,
-			LOCALIZED_ADAPTATION,
-			WITHDRAWN,
-		};
+	private static final ApprovalStatusKind[] VALUES_ARRAY = new ApprovalStatusKind[] {
+			DRAFT, NON_STANDARD_AVAILABLE_FOR_USE, PROPOSAL, COMMITTEE_BALLOT_NORMATIVE, COMMITTEE_BALLOT_INFORMATIVE,
+			MEMBERSHIP_BALLOT_NORMATIVE, MEMBERSHIP_BALLOT_INFORMATIVE, MEMBERSHIP_BALLOT_DSTU,
+			APPROVED_NORMATIVE_STANDARD, APPROVED_INFORMATIVE_STANDARD, APPROVED_DSTU, AFFILIATE_BALLOT_NORMATIVE,
+			AFFILIATE_BALLOT_INFORMATIVE, REFERENCE, APPROVED_AFFILIATE_NORMATIVE_STANDARD,
+			APPROVED_AFFILIATE_INFORMATIVE_STANDARD, APPROVED_AFFILIATE_DSTU, LOCALIZED_ADAPTATION, WITHDRAWN, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Approval Status Kind</b></em>' enumerators.
@@ -559,25 +549,44 @@ public enum ApprovalStatusKind implements Enumerator {
 	 */
 	public static ApprovalStatusKind get(int value) {
 		switch (value) {
-			case DRAFT_VALUE: return DRAFT;
-			case NON_STANDARD_AVAILABLE_FOR_USE_VALUE: return NON_STANDARD_AVAILABLE_FOR_USE;
-			case PROPOSAL_VALUE: return PROPOSAL;
-			case COMMITTEE_BALLOT_NORMATIVE_VALUE: return COMMITTEE_BALLOT_NORMATIVE;
-			case COMMITTEE_BALLOT_INFORMATIVE_VALUE: return COMMITTEE_BALLOT_INFORMATIVE;
-			case MEMBERSHIP_BALLOT_NORMATIVE_VALUE: return MEMBERSHIP_BALLOT_NORMATIVE;
-			case MEMBERSHIP_BALLOT_INFORMATIVE_VALUE: return MEMBERSHIP_BALLOT_INFORMATIVE;
-			case MEMBERSHIP_BALLOT_DSTU_VALUE: return MEMBERSHIP_BALLOT_DSTU;
-			case APPROVED_NORMATIVE_STANDARD_VALUE: return APPROVED_NORMATIVE_STANDARD;
-			case APPROVED_INFORMATIVE_STANDARD_VALUE: return APPROVED_INFORMATIVE_STANDARD;
-			case APPROVED_DSTU_VALUE: return APPROVED_DSTU;
-			case AFFILIATE_BALLOT_NORMATIVE_VALUE: return AFFILIATE_BALLOT_NORMATIVE;
-			case AFFILIATE_BALLOT_INFORMATIVE_VALUE: return AFFILIATE_BALLOT_INFORMATIVE;
-			case REFERENCE_VALUE: return REFERENCE;
-			case APPROVED_AFFILIATE_NORMATIVE_STANDARD_VALUE: return APPROVED_AFFILIATE_NORMATIVE_STANDARD;
-			case APPROVED_AFFILIATE_INFORMATIVE_STANDARD_VALUE: return APPROVED_AFFILIATE_INFORMATIVE_STANDARD;
-			case APPROVED_AFFILIATE_DSTU_VALUE: return APPROVED_AFFILIATE_DSTU;
-			case LOCALIZED_ADAPTATION_VALUE: return LOCALIZED_ADAPTATION;
-			case WITHDRAWN_VALUE: return WITHDRAWN;
+			case DRAFT_VALUE:
+				return DRAFT;
+			case NON_STANDARD_AVAILABLE_FOR_USE_VALUE:
+				return NON_STANDARD_AVAILABLE_FOR_USE;
+			case PROPOSAL_VALUE:
+				return PROPOSAL;
+			case COMMITTEE_BALLOT_NORMATIVE_VALUE:
+				return COMMITTEE_BALLOT_NORMATIVE;
+			case COMMITTEE_BALLOT_INFORMATIVE_VALUE:
+				return COMMITTEE_BALLOT_INFORMATIVE;
+			case MEMBERSHIP_BALLOT_NORMATIVE_VALUE:
+				return MEMBERSHIP_BALLOT_NORMATIVE;
+			case MEMBERSHIP_BALLOT_INFORMATIVE_VALUE:
+				return MEMBERSHIP_BALLOT_INFORMATIVE;
+			case MEMBERSHIP_BALLOT_DSTU_VALUE:
+				return MEMBERSHIP_BALLOT_DSTU;
+			case APPROVED_NORMATIVE_STANDARD_VALUE:
+				return APPROVED_NORMATIVE_STANDARD;
+			case APPROVED_INFORMATIVE_STANDARD_VALUE:
+				return APPROVED_INFORMATIVE_STANDARD;
+			case APPROVED_DSTU_VALUE:
+				return APPROVED_DSTU;
+			case AFFILIATE_BALLOT_NORMATIVE_VALUE:
+				return AFFILIATE_BALLOT_NORMATIVE;
+			case AFFILIATE_BALLOT_INFORMATIVE_VALUE:
+				return AFFILIATE_BALLOT_INFORMATIVE;
+			case REFERENCE_VALUE:
+				return REFERENCE;
+			case APPROVED_AFFILIATE_NORMATIVE_STANDARD_VALUE:
+				return APPROVED_AFFILIATE_NORMATIVE_STANDARD;
+			case APPROVED_AFFILIATE_INFORMATIVE_STANDARD_VALUE:
+				return APPROVED_AFFILIATE_INFORMATIVE_STANDARD;
+			case APPROVED_AFFILIATE_DSTU_VALUE:
+				return APPROVED_AFFILIATE_DSTU;
+			case LOCALIZED_ADAPTATION_VALUE:
+				return LOCALIZED_ADAPTATION;
+			case WITHDRAWN_VALUE:
+				return WITHDRAWN;
 		}
 		return null;
 	}
@@ -621,7 +630,7 @@ public enum ApprovalStatusKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -630,7 +639,7 @@ public enum ApprovalStatusKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -639,7 +648,7 @@ public enum ApprovalStatusKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -652,5 +661,5 @@ public enum ApprovalStatusKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //ApprovalStatusKind
+
+} // ApprovalStatusKind

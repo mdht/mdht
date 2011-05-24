@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigInteger;
@@ -175,8 +179,14 @@ public class AddElementContentImpl extends ChangeImpl implements AddElementConte
 		MifContent oldReplacementContent = replacementContent;
 		replacementContent = newReplacementContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.ADD_ELEMENT_CONTENT__REPLACEMENT_CONTENT, oldReplacementContent, newReplacementContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ADD_ELEMENT_CONTENT__REPLACEMENT_CONTENT, oldReplacementContent,
+				newReplacementContent);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -189,15 +199,23 @@ public class AddElementContentImpl extends ChangeImpl implements AddElementConte
 	public void setReplacementContent(MifContent newReplacementContent) {
 		if (newReplacementContent != replacementContent) {
 			NotificationChain msgs = null;
-			if (replacementContent != null)
-				msgs = ((InternalEObject)replacementContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ADD_ELEMENT_CONTENT__REPLACEMENT_CONTENT, null, msgs);
-			if (newReplacementContent != null)
-				msgs = ((InternalEObject)newReplacementContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ADD_ELEMENT_CONTENT__REPLACEMENT_CONTENT, null, msgs);
+			if (replacementContent != null) {
+				msgs = ((InternalEObject) replacementContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ADD_ELEMENT_CONTENT__REPLACEMENT_CONTENT, null, msgs);
+			}
+			if (newReplacementContent != null) {
+				msgs = ((InternalEObject) newReplacementContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ADD_ELEMENT_CONTENT__REPLACEMENT_CONTENT, null, msgs);
+			}
 			msgs = basicSetReplacementContent(newReplacementContent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ADD_ELEMENT_CONTENT__REPLACEMENT_CONTENT, newReplacementContent,
+				newReplacementContent));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ADD_ELEMENT_CONTENT__REPLACEMENT_CONTENT, newReplacementContent, newReplacementContent));
 	}
 
 	/**
@@ -247,8 +265,11 @@ public class AddElementContentImpl extends ChangeImpl implements AddElementConte
 	public void setAfterElementName(String newAfterElementName) {
 		String oldAfterElementName = afterElementName;
 		afterElementName = newAfterElementName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ADD_ELEMENT_CONTENT__AFTER_ELEMENT_NAME, oldAfterElementName, afterElementName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ADD_ELEMENT_CONTENT__AFTER_ELEMENT_NAME, oldAfterElementName,
+				afterElementName));
+		}
 	}
 
 	/**
@@ -270,8 +291,11 @@ public class AddElementContentImpl extends ChangeImpl implements AddElementConte
 		afterRepetition = newAfterRepetition;
 		boolean oldAfterRepetitionESet = afterRepetitionESet;
 		afterRepetitionESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ADD_ELEMENT_CONTENT__AFTER_REPETITION, oldAfterRepetition, afterRepetition, !oldAfterRepetitionESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ADD_ELEMENT_CONTENT__AFTER_REPETITION, oldAfterRepetition,
+				afterRepetition, !oldAfterRepetitionESet));
+		}
 	}
 
 	/**
@@ -284,8 +308,11 @@ public class AddElementContentImpl extends ChangeImpl implements AddElementConte
 		boolean oldAfterRepetitionESet = afterRepetitionESet;
 		afterRepetition = AFTER_REPETITION_EDEFAULT;
 		afterRepetitionESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.ADD_ELEMENT_CONTENT__AFTER_REPETITION, oldAfterRepetition, AFTER_REPETITION_EDEFAULT, oldAfterRepetitionESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.ADD_ELEMENT_CONTENT__AFTER_REPETITION, oldAfterRepetition,
+				AFTER_REPETITION_EDEFAULT, oldAfterRepetitionESet));
+		}
 	}
 
 	/**
@@ -314,8 +341,9 @@ public class AddElementContentImpl extends ChangeImpl implements AddElementConte
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ADD_ELEMENT_CONTENT__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -329,11 +357,11 @@ public class AddElementContentImpl extends ChangeImpl implements AddElementConte
 			case Mif2Package.ADD_ELEMENT_CONTENT__REPLACEMENT_CONTENT:
 				return basicSetReplacementContent(null, msgs);
 			case Mif2Package.ADD_ELEMENT_CONTENT__ADD_ELEMENTS:
-				return ((InternalEList<?>)getAddElements()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAddElements()).basicRemove(otherEnd, msgs);
 			case Mif2Package.ADD_ELEMENT_CONTENT__ADD_ATTRIBUTE:
-				return ((InternalEList<?>)getAddAttribute()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAddAttribute()).basicRemove(otherEnd, msgs);
 			case Mif2Package.ADD_ELEMENT_CONTENT__ADD_ELEMENT:
-				return ((InternalEList<?>)getAddElement()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAddElement()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -349,8 +377,10 @@ public class AddElementContentImpl extends ChangeImpl implements AddElementConte
 			case Mif2Package.ADD_ELEMENT_CONTENT__REPLACEMENT_CONTENT:
 				return getReplacementContent();
 			case Mif2Package.ADD_ELEMENT_CONTENT__ADD_ELEMENTS:
-				if (coreType) return getAddElements();
-				return ((FeatureMap.Internal)getAddElements()).getWrapper();
+				if (coreType) {
+					return getAddElements();
+				}
+				return ((FeatureMap.Internal) getAddElements()).getWrapper();
 			case Mif2Package.ADD_ELEMENT_CONTENT__ADD_ATTRIBUTE:
 				return getAddAttribute();
 			case Mif2Package.ADD_ELEMENT_CONTENT__ADD_ELEMENT:
@@ -375,27 +405,27 @@ public class AddElementContentImpl extends ChangeImpl implements AddElementConte
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.ADD_ELEMENT_CONTENT__REPLACEMENT_CONTENT:
-				setReplacementContent((MifContent)newValue);
+				setReplacementContent((MifContent) newValue);
 				return;
 			case Mif2Package.ADD_ELEMENT_CONTENT__ADD_ELEMENTS:
-				((FeatureMap.Internal)getAddElements()).set(newValue);
+				((FeatureMap.Internal) getAddElements()).set(newValue);
 				return;
 			case Mif2Package.ADD_ELEMENT_CONTENT__ADD_ATTRIBUTE:
 				getAddAttribute().clear();
-				getAddAttribute().addAll((Collection<? extends AttributeContent>)newValue);
+				getAddAttribute().addAll((Collection<? extends AttributeContent>) newValue);
 				return;
 			case Mif2Package.ADD_ELEMENT_CONTENT__ADD_ELEMENT:
 				getAddElement().clear();
-				getAddElement().addAll((Collection<? extends AddElementContent>)newValue);
+				getAddElement().addAll((Collection<? extends AddElementContent>) newValue);
 				return;
 			case Mif2Package.ADD_ELEMENT_CONTENT__AFTER_ELEMENT_NAME:
-				setAfterElementName((String)newValue);
+				setAfterElementName((String) newValue);
 				return;
 			case Mif2Package.ADD_ELEMENT_CONTENT__AFTER_REPETITION:
-				setAfterRepetition((BigInteger)newValue);
+				setAfterRepetition((BigInteger) newValue);
 				return;
 			case Mif2Package.ADD_ELEMENT_CONTENT__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -410,7 +440,7 @@ public class AddElementContentImpl extends ChangeImpl implements AddElementConte
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.ADD_ELEMENT_CONTENT__REPLACEMENT_CONTENT:
-				setReplacementContent((MifContent)null);
+				setReplacementContent((MifContent) null);
 				return;
 			case Mif2Package.ADD_ELEMENT_CONTENT__ADD_ELEMENTS:
 				getAddElements().clear();
@@ -451,11 +481,15 @@ public class AddElementContentImpl extends ChangeImpl implements AddElementConte
 			case Mif2Package.ADD_ELEMENT_CONTENT__ADD_ELEMENT:
 				return !getAddElement().isEmpty();
 			case Mif2Package.ADD_ELEMENT_CONTENT__AFTER_ELEMENT_NAME:
-				return AFTER_ELEMENT_NAME_EDEFAULT == null ? afterElementName != null : !AFTER_ELEMENT_NAME_EDEFAULT.equals(afterElementName);
+				return AFTER_ELEMENT_NAME_EDEFAULT == null
+						? afterElementName != null
+						: !AFTER_ELEMENT_NAME_EDEFAULT.equals(afterElementName);
 			case Mif2Package.ADD_ELEMENT_CONTENT__AFTER_REPETITION:
 				return isSetAfterRepetition();
 			case Mif2Package.ADD_ELEMENT_CONTENT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -467,7 +501,9 @@ public class AddElementContentImpl extends ChangeImpl implements AddElementConte
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (addElements: ");
@@ -475,11 +511,15 @@ public class AddElementContentImpl extends ChangeImpl implements AddElementConte
 		result.append(", afterElementName: ");
 		result.append(afterElementName);
 		result.append(", afterRepetition: ");
-		if (afterRepetitionESet) result.append(afterRepetition); else result.append("<unset>");
+		if (afterRepetitionESet) {
+			result.append(afterRepetition);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", name: ");
 		result.append(name);
 		result.append(')');
 		return result.toString();
 	}
 
-} //AddElementContentImpl
+} // AddElementContentImpl

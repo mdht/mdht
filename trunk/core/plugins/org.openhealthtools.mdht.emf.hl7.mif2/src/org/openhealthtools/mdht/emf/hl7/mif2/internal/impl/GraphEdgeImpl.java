@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -86,7 +90,7 @@ public abstract class GraphEdgeImpl extends DiagramElementImpl implements GraphE
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.GRAPH_EDGE__WAYPOINT:
-				return ((InternalEList<?>)getWaypoint()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getWaypoint()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -116,7 +120,7 @@ public abstract class GraphEdgeImpl extends DiagramElementImpl implements GraphE
 		switch (featureID) {
 			case Mif2Package.GRAPH_EDGE__WAYPOINT:
 				getWaypoint().clear();
-				getWaypoint().addAll((Collection<? extends Point>)newValue);
+				getWaypoint().addAll((Collection<? extends Point>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -151,4 +155,4 @@ public abstract class GraphEdgeImpl extends DiagramElementImpl implements GraphE
 		return super.eIsSet(featureID);
 	}
 
-} //GraphEdgeImpl
+} // GraphEdgeImpl

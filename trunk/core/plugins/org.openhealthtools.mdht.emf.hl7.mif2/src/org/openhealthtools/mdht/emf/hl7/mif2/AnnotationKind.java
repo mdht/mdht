@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -165,13 +169,13 @@ public enum AnnotationKind implements Enumerator {
 	 * @ordered
 	 */
 	STABILITY_REMARKS(13, "StabilityRemarks", "StabilityRemarks"), /**
-	 * The '<em><b>Static Example</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #STATIC_EXAMPLE_VALUE
-	 * @generated
-	 * @ordered
-	 */
+																	* The '<em><b>Static Example</b></em>' literal object.
+																	* <!-- begin-user-doc -->
+																	* <!-- end-user-doc -->
+																	* @see #STATIC_EXAMPLE_VALUE
+																	* @generated
+																	* @ordered
+																	*/
 	STATIC_EXAMPLE(14, "StaticExample", "StaticExample"),
 
 	/**
@@ -462,27 +466,10 @@ public enum AnnotationKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final AnnotationKind[] VALUES_ARRAY =
-		new AnnotationKind[] {
-			DEFINITION,
-			DESCRIPTION,
-			USAGE_NOTES,
-			USAGE_CONSTRAINT,
-			RATIONALE,
-			REQUIREMENTS,
-			WALKTHROUGH,
-			APPENDIX,
-			OTHER_ANNOTATION,
-			MAPPING,
-			FORMAL_CONSTRAINT,
-			OPEN_ISSUE,
-			DESIGN_COMMENT,
-			STABILITY_REMARKS,
-			STATIC_EXAMPLE,
-			BALLOT_COMMENT,
-			CHANGE_REQUEST,
-			DEPRECATION_INFO,
-		};
+	private static final AnnotationKind[] VALUES_ARRAY = new AnnotationKind[] {
+			DEFINITION, DESCRIPTION, USAGE_NOTES, USAGE_CONSTRAINT, RATIONALE, REQUIREMENTS, WALKTHROUGH, APPENDIX,
+			OTHER_ANNOTATION, MAPPING, FORMAL_CONSTRAINT, OPEN_ISSUE, DESIGN_COMMENT, STABILITY_REMARKS,
+			STATIC_EXAMPLE, BALLOT_COMMENT, CHANGE_REQUEST, DEPRECATION_INFO, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Annotation Kind</b></em>' enumerators.
@@ -532,24 +519,42 @@ public enum AnnotationKind implements Enumerator {
 	 */
 	public static AnnotationKind get(int value) {
 		switch (value) {
-			case DEFINITION_VALUE: return DEFINITION;
-			case DESCRIPTION_VALUE: return DESCRIPTION;
-			case USAGE_NOTES_VALUE: return USAGE_NOTES;
-			case USAGE_CONSTRAINT_VALUE: return USAGE_CONSTRAINT;
-			case RATIONALE_VALUE: return RATIONALE;
-			case REQUIREMENTS_VALUE: return REQUIREMENTS;
-			case WALKTHROUGH_VALUE: return WALKTHROUGH;
-			case APPENDIX_VALUE: return APPENDIX;
-			case OTHER_ANNOTATION_VALUE: return OTHER_ANNOTATION;
-			case MAPPING_VALUE: return MAPPING;
-			case FORMAL_CONSTRAINT_VALUE: return FORMAL_CONSTRAINT;
-			case OPEN_ISSUE_VALUE: return OPEN_ISSUE;
-			case DESIGN_COMMENT_VALUE: return DESIGN_COMMENT;
-			case STABILITY_REMARKS_VALUE: return STABILITY_REMARKS;
-			case STATIC_EXAMPLE_VALUE: return STATIC_EXAMPLE;
-			case BALLOT_COMMENT_VALUE: return BALLOT_COMMENT;
-			case CHANGE_REQUEST_VALUE: return CHANGE_REQUEST;
-			case DEPRECATION_INFO_VALUE: return DEPRECATION_INFO;
+			case DEFINITION_VALUE:
+				return DEFINITION;
+			case DESCRIPTION_VALUE:
+				return DESCRIPTION;
+			case USAGE_NOTES_VALUE:
+				return USAGE_NOTES;
+			case USAGE_CONSTRAINT_VALUE:
+				return USAGE_CONSTRAINT;
+			case RATIONALE_VALUE:
+				return RATIONALE;
+			case REQUIREMENTS_VALUE:
+				return REQUIREMENTS;
+			case WALKTHROUGH_VALUE:
+				return WALKTHROUGH;
+			case APPENDIX_VALUE:
+				return APPENDIX;
+			case OTHER_ANNOTATION_VALUE:
+				return OTHER_ANNOTATION;
+			case MAPPING_VALUE:
+				return MAPPING;
+			case FORMAL_CONSTRAINT_VALUE:
+				return FORMAL_CONSTRAINT;
+			case OPEN_ISSUE_VALUE:
+				return OPEN_ISSUE;
+			case DESIGN_COMMENT_VALUE:
+				return DESIGN_COMMENT;
+			case STABILITY_REMARKS_VALUE:
+				return STABILITY_REMARKS;
+			case STATIC_EXAMPLE_VALUE:
+				return STATIC_EXAMPLE;
+			case BALLOT_COMMENT_VALUE:
+				return BALLOT_COMMENT;
+			case CHANGE_REQUEST_VALUE:
+				return CHANGE_REQUEST;
+			case DEPRECATION_INFO_VALUE:
+				return DEPRECATION_INFO;
 		}
 		return null;
 	}
@@ -593,7 +598,7 @@ public enum AnnotationKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -602,7 +607,7 @@ public enum AnnotationKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -611,7 +616,7 @@ public enum AnnotationKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -624,5 +629,5 @@ public enum AnnotationKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //AnnotationKind
+
+} // AnnotationKind

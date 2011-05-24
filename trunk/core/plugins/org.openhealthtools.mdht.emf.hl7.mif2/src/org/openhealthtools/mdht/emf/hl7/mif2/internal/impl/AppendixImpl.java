@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -165,7 +169,8 @@ public class AppendixImpl extends BasicAnnotationImpl implements Appendix {
 	 */
 	public EList<BusinessName> getBusinessName() {
 		if (businessName == null) {
-			businessName = new EObjectContainmentEList<BusinessName>(BusinessName.class, this, Mif2Package.APPENDIX__BUSINESS_NAME);
+			businessName = new EObjectContainmentEList<BusinessName>(
+				BusinessName.class, this, Mif2Package.APPENDIX__BUSINESS_NAME);
 		}
 		return businessName;
 	}
@@ -177,7 +182,8 @@ public class AppendixImpl extends BasicAnnotationImpl implements Appendix {
 	 */
 	public EList<AnnotationDerivation> getDerivationSupplier() {
 		if (derivationSupplier == null) {
-			derivationSupplier = new EObjectContainmentEList<AnnotationDerivation>(AnnotationDerivation.class, this, Mif2Package.APPENDIX__DERIVATION_SUPPLIER);
+			derivationSupplier = new EObjectContainmentEList<AnnotationDerivation>(
+				AnnotationDerivation.class, this, Mif2Package.APPENDIX__DERIVATION_SUPPLIER);
 		}
 		return derivationSupplier;
 	}
@@ -199,8 +205,9 @@ public class AppendixImpl extends BasicAnnotationImpl implements Appendix {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.APPENDIX__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -220,8 +227,9 @@ public class AppendixImpl extends BasicAnnotationImpl implements Appendix {
 	public void setTitle(String newTitle) {
 		String oldTitle = title;
 		title = newTitle;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.APPENDIX__TITLE, oldTitle, title));
+		}
 	}
 
 	/**
@@ -233,13 +241,13 @@ public class AppendixImpl extends BasicAnnotationImpl implements Appendix {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.APPENDIX__CONTEXT:
-				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getContext()).basicRemove(otherEnd, msgs);
 			case Mif2Package.APPENDIX__REALM_NAMESPACE:
-				return ((InternalEList<?>)getRealmNamespace()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmNamespace()).basicRemove(otherEnd, msgs);
 			case Mif2Package.APPENDIX__BUSINESS_NAME:
-				return ((InternalEList<?>)getBusinessName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBusinessName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.APPENDIX__DERIVATION_SUPPLIER:
-				return ((InternalEList<?>)getDerivationSupplier()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDerivationSupplier()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -253,8 +261,10 @@ public class AppendixImpl extends BasicAnnotationImpl implements Appendix {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mif2Package.APPENDIX__CONTEXT:
-				if (coreType) return getContext();
-				return ((FeatureMap.Internal)getContext()).getWrapper();
+				if (coreType) {
+					return getContext();
+				}
+				return ((FeatureMap.Internal) getContext()).getWrapper();
 			case Mif2Package.APPENDIX__REALM_NAMESPACE:
 				return getRealmNamespace();
 			case Mif2Package.APPENDIX__BUSINESS_NAME:
@@ -279,25 +289,25 @@ public class AppendixImpl extends BasicAnnotationImpl implements Appendix {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.APPENDIX__CONTEXT:
-				((FeatureMap.Internal)getContext()).set(newValue);
+				((FeatureMap.Internal) getContext()).set(newValue);
 				return;
 			case Mif2Package.APPENDIX__REALM_NAMESPACE:
 				getRealmNamespace().clear();
-				getRealmNamespace().addAll((Collection<? extends RealmElement>)newValue);
+				getRealmNamespace().addAll((Collection<? extends RealmElement>) newValue);
 				return;
 			case Mif2Package.APPENDIX__BUSINESS_NAME:
 				getBusinessName().clear();
-				getBusinessName().addAll((Collection<? extends BusinessName>)newValue);
+				getBusinessName().addAll((Collection<? extends BusinessName>) newValue);
 				return;
 			case Mif2Package.APPENDIX__DERIVATION_SUPPLIER:
 				getDerivationSupplier().clear();
-				getDerivationSupplier().addAll((Collection<? extends AnnotationDerivation>)newValue);
+				getDerivationSupplier().addAll((Collection<? extends AnnotationDerivation>) newValue);
 				return;
 			case Mif2Package.APPENDIX__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.APPENDIX__TITLE:
-				setTitle((String)newValue);
+				setTitle((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -350,9 +360,13 @@ public class AppendixImpl extends BasicAnnotationImpl implements Appendix {
 			case Mif2Package.APPENDIX__DERIVATION_SUPPLIER:
 				return derivationSupplier != null && !derivationSupplier.isEmpty();
 			case Mif2Package.APPENDIX__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.APPENDIX__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+				return TITLE_EDEFAULT == null
+						? title != null
+						: !TITLE_EDEFAULT.equals(title);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -364,7 +378,9 @@ public class AppendixImpl extends BasicAnnotationImpl implements Appendix {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (context: ");
@@ -377,4 +393,4 @@ public class AppendixImpl extends BasicAnnotationImpl implements Appendix {
 		return result.toString();
 	}
 
-} //AppendixImpl
+} // AppendixImpl

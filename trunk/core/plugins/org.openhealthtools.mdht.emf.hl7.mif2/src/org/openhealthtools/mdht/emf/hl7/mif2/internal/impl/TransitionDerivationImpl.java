@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -106,8 +110,11 @@ public class TransitionDerivationImpl extends ClassDerivationImpl implements Tra
 	public void setStartStateName(String newStartStateName) {
 		String oldStartStateName = startStateName;
 		startStateName = newStartStateName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TRANSITION_DERIVATION__START_STATE_NAME, oldStartStateName, startStateName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TRANSITION_DERIVATION__START_STATE_NAME, oldStartStateName,
+				startStateName));
+		}
 	}
 
 	/**
@@ -127,8 +134,11 @@ public class TransitionDerivationImpl extends ClassDerivationImpl implements Tra
 	public void setStateTransitionName(String newStateTransitionName) {
 		String oldStateTransitionName = stateTransitionName;
 		stateTransitionName = newStateTransitionName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TRANSITION_DERIVATION__STATE_TRANSITION_NAME, oldStateTransitionName, stateTransitionName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TRANSITION_DERIVATION__STATE_TRANSITION_NAME,
+				oldStateTransitionName, stateTransitionName));
+		}
 	}
 
 	/**
@@ -156,10 +166,10 @@ public class TransitionDerivationImpl extends ClassDerivationImpl implements Tra
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.TRANSITION_DERIVATION__START_STATE_NAME:
-				setStartStateName((String)newValue);
+				setStartStateName((String) newValue);
 				return;
 			case Mif2Package.TRANSITION_DERIVATION__STATE_TRANSITION_NAME:
-				setStateTransitionName((String)newValue);
+				setStateTransitionName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,9 +202,13 @@ public class TransitionDerivationImpl extends ClassDerivationImpl implements Tra
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.TRANSITION_DERIVATION__START_STATE_NAME:
-				return START_STATE_NAME_EDEFAULT == null ? startStateName != null : !START_STATE_NAME_EDEFAULT.equals(startStateName);
+				return START_STATE_NAME_EDEFAULT == null
+						? startStateName != null
+						: !START_STATE_NAME_EDEFAULT.equals(startStateName);
 			case Mif2Package.TRANSITION_DERIVATION__STATE_TRANSITION_NAME:
-				return STATE_TRANSITION_NAME_EDEFAULT == null ? stateTransitionName != null : !STATE_TRANSITION_NAME_EDEFAULT.equals(stateTransitionName);
+				return STATE_TRANSITION_NAME_EDEFAULT == null
+						? stateTransitionName != null
+						: !STATE_TRANSITION_NAME_EDEFAULT.equals(stateTransitionName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -206,7 +220,9 @@ public class TransitionDerivationImpl extends ClassDerivationImpl implements Tra
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (startStateName: ");
@@ -217,4 +233,4 @@ public class TransitionDerivationImpl extends ClassDerivationImpl implements Tra
 		return result.toString();
 	}
 
-} //TransitionDerivationImpl
+} // TransitionDerivationImpl

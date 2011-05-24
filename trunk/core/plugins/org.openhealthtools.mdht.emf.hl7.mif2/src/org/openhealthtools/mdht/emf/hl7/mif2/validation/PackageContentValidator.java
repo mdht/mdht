@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import org.eclipse.emf.common.util.EList;
@@ -40,23 +44,42 @@ public interface PackageContentValidator {
 	boolean validate();
 
 	boolean validateGroup(FeatureMap value);
+
 	boolean validateFreehandDocument(EList<GlobalFreehandDocument> value);
+
 	boolean validateDomainAnalysisModel(EList<GlobalDomainAnalysisModel> value);
+
 	boolean validateDomainInstanceExample(EList<GlobalDomainInstanceExample> value);
+
 	boolean validateStoryboard(EList<GlobalStoryboard> value);
+
 	boolean validateDatatypeModelLibrary(EList<GlobalDatatypeModelLibrary> value);
+
 	boolean validateStaticModelInterfacePackage(EList<GlobalStaticModelInterfacePackage> value);
+
 	boolean validateVocabularyModel(EList<GlobalVocabularyModel> value);
+
 	boolean validateStaticModel(EList<GlobalStaticModel> value);
+
 	boolean validateSerializedStaticModel(EList<GlobalSerializedStaticModel> value);
+
 	boolean validateDerivedStaticModel(EList<GlobalDerivedStaticModel> value);
+
 	boolean validateStructuredDocument(EList<GlobalStructuredDocument> value);
+
 	boolean validateTriggerEvent(EList<GlobalTriggerEvent> value);
+
 	boolean validateInteraction(EList<GlobalInteraction> value);
+
 	boolean validateApplicationRole(EList<GlobalApplicationRole> value);
+
 	boolean validateInteractionProfile(EList<GlobalInteractionProfile> value);
+
 	boolean validateConformanceProfile(EList<GlobalConformanceProfile> value);
+
 	boolean validateTestScenario(EList<GlobalTestScenario> value);
+
 	boolean validatePublication(EList<GlobalPublicationPackage> value);
+
 	boolean validatePackage(EList<GlobalGenericPackage> value);
 }

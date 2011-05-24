@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -103,8 +107,14 @@ public class VocabularySpecificationImpl extends DependencyImpl implements Vocab
 		ConceptDomainRef oldConceptDomain = conceptDomain;
 		conceptDomain = newConceptDomain;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_SPECIFICATION__CONCEPT_DOMAIN, oldConceptDomain, newConceptDomain);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_SPECIFICATION__CONCEPT_DOMAIN, oldConceptDomain,
+				newConceptDomain);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -117,15 +127,23 @@ public class VocabularySpecificationImpl extends DependencyImpl implements Vocab
 	public void setConceptDomain(ConceptDomainRef newConceptDomain) {
 		if (newConceptDomain != conceptDomain) {
 			NotificationChain msgs = null;
-			if (conceptDomain != null)
-				msgs = ((InternalEObject)conceptDomain).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VOCABULARY_SPECIFICATION__CONCEPT_DOMAIN, null, msgs);
-			if (newConceptDomain != null)
-				msgs = ((InternalEObject)newConceptDomain).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VOCABULARY_SPECIFICATION__CONCEPT_DOMAIN, null, msgs);
+			if (conceptDomain != null) {
+				msgs = ((InternalEObject) conceptDomain).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VOCABULARY_SPECIFICATION__CONCEPT_DOMAIN, null, msgs);
+			}
+			if (newConceptDomain != null) {
+				msgs = ((InternalEObject) newConceptDomain).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VOCABULARY_SPECIFICATION__CONCEPT_DOMAIN, null, msgs);
+			}
 			msgs = basicSetConceptDomain(newConceptDomain, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_SPECIFICATION__CONCEPT_DOMAIN, newConceptDomain,
+				newConceptDomain));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_SPECIFICATION__CONCEPT_DOMAIN, newConceptDomain, newConceptDomain));
 	}
 
 	/**
@@ -146,8 +164,13 @@ public class VocabularySpecificationImpl extends DependencyImpl implements Vocab
 		VocabularyValueSetBinding oldValueSet = valueSet;
 		valueSet = newValueSet;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_SPECIFICATION__VALUE_SET, oldValueSet, newValueSet);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_SPECIFICATION__VALUE_SET, oldValueSet, newValueSet);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -160,15 +183,22 @@ public class VocabularySpecificationImpl extends DependencyImpl implements Vocab
 	public void setValueSet(VocabularyValueSetBinding newValueSet) {
 		if (newValueSet != valueSet) {
 			NotificationChain msgs = null;
-			if (valueSet != null)
-				msgs = ((InternalEObject)valueSet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VOCABULARY_SPECIFICATION__VALUE_SET, null, msgs);
-			if (newValueSet != null)
-				msgs = ((InternalEObject)newValueSet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VOCABULARY_SPECIFICATION__VALUE_SET, null, msgs);
+			if (valueSet != null) {
+				msgs = ((InternalEObject) valueSet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VOCABULARY_SPECIFICATION__VALUE_SET, null, msgs);
+			}
+			if (newValueSet != null) {
+				msgs = ((InternalEObject) newValueSet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VOCABULARY_SPECIFICATION__VALUE_SET, null, msgs);
+			}
 			msgs = basicSetValueSet(newValueSet, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_SPECIFICATION__VALUE_SET, newValueSet, newValueSet));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_SPECIFICATION__VALUE_SET, newValueSet, newValueSet));
 	}
 
 	/**
@@ -189,8 +219,13 @@ public class VocabularySpecificationImpl extends DependencyImpl implements Vocab
 		VocabularyCodeRef oldCode = code;
 		code = newCode;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_SPECIFICATION__CODE, oldCode, newCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_SPECIFICATION__CODE, oldCode, newCode);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -203,15 +238,22 @@ public class VocabularySpecificationImpl extends DependencyImpl implements Vocab
 	public void setCode(VocabularyCodeRef newCode) {
 		if (newCode != code) {
 			NotificationChain msgs = null;
-			if (code != null)
-				msgs = ((InternalEObject)code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VOCABULARY_SPECIFICATION__CODE, null, msgs);
-			if (newCode != null)
-				msgs = ((InternalEObject)newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VOCABULARY_SPECIFICATION__CODE, null, msgs);
+			if (code != null) {
+				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VOCABULARY_SPECIFICATION__CODE, null, msgs);
+			}
+			if (newCode != null) {
+				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VOCABULARY_SPECIFICATION__CODE, null, msgs);
+			}
 			msgs = basicSetCode(newCode, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_SPECIFICATION__CODE, newCode, newCode));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_SPECIFICATION__CODE, newCode, newCode));
 	}
 
 	/**
@@ -259,13 +301,13 @@ public class VocabularySpecificationImpl extends DependencyImpl implements Vocab
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.VOCABULARY_SPECIFICATION__CONCEPT_DOMAIN:
-				setConceptDomain((ConceptDomainRef)newValue);
+				setConceptDomain((ConceptDomainRef) newValue);
 				return;
 			case Mif2Package.VOCABULARY_SPECIFICATION__VALUE_SET:
-				setValueSet((VocabularyValueSetBinding)newValue);
+				setValueSet((VocabularyValueSetBinding) newValue);
 				return;
 			case Mif2Package.VOCABULARY_SPECIFICATION__CODE:
-				setCode((VocabularyCodeRef)newValue);
+				setCode((VocabularyCodeRef) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -280,13 +322,13 @@ public class VocabularySpecificationImpl extends DependencyImpl implements Vocab
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.VOCABULARY_SPECIFICATION__CONCEPT_DOMAIN:
-				setConceptDomain((ConceptDomainRef)null);
+				setConceptDomain((ConceptDomainRef) null);
 				return;
 			case Mif2Package.VOCABULARY_SPECIFICATION__VALUE_SET:
-				setValueSet((VocabularyValueSetBinding)null);
+				setValueSet((VocabularyValueSetBinding) null);
 				return;
 			case Mif2Package.VOCABULARY_SPECIFICATION__CODE:
-				setCode((VocabularyCodeRef)null);
+				setCode((VocabularyCodeRef) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -310,4 +352,4 @@ public class VocabularySpecificationImpl extends DependencyImpl implements Vocab
 		return super.eIsSet(featureID);
 	}
 
-} //VocabularySpecificationImpl
+} // VocabularySpecificationImpl

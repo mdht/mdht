@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigInteger;
@@ -213,7 +217,8 @@ public class ApprovalInfoImpl extends EObjectImpl implements ApprovalInfo {
 	 */
 	public EList<BallotSubmission> getBallotSubmission() {
 		if (ballotSubmission == null) {
-			ballotSubmission = new EObjectContainmentEList<BallotSubmission>(BallotSubmission.class, this, Mif2Package.APPROVAL_INFO__BALLOT_SUBMISSION);
+			ballotSubmission = new EObjectContainmentEList<BallotSubmission>(
+				BallotSubmission.class, this, Mif2Package.APPROVAL_INFO__BALLOT_SUBMISSION);
 		}
 		return ballotSubmission;
 	}
@@ -235,8 +240,10 @@ public class ApprovalInfoImpl extends EObjectImpl implements ApprovalInfo {
 	public void setApprovalDate(XMLGregorianCalendar newApprovalDate) {
 		XMLGregorianCalendar oldApprovalDate = approvalDate;
 		approvalDate = newApprovalDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.APPROVAL_INFO__APPROVAL_DATE, oldApprovalDate, approvalDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.APPROVAL_INFO__APPROVAL_DATE, oldApprovalDate, approvalDate));
+		}
 	}
 
 	/**
@@ -255,11 +262,16 @@ public class ApprovalInfoImpl extends EObjectImpl implements ApprovalInfo {
 	 */
 	public void setApprovalStatus(ApprovalStatusKind newApprovalStatus) {
 		ApprovalStatusKind oldApprovalStatus = approvalStatus;
-		approvalStatus = newApprovalStatus == null ? APPROVAL_STATUS_EDEFAULT : newApprovalStatus;
+		approvalStatus = newApprovalStatus == null
+				? APPROVAL_STATUS_EDEFAULT
+				: newApprovalStatus;
 		boolean oldApprovalStatusESet = approvalStatusESet;
 		approvalStatusESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.APPROVAL_INFO__APPROVAL_STATUS, oldApprovalStatus, approvalStatus, !oldApprovalStatusESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.APPROVAL_INFO__APPROVAL_STATUS, oldApprovalStatus, approvalStatus,
+				!oldApprovalStatusESet));
+		}
 	}
 
 	/**
@@ -272,8 +284,11 @@ public class ApprovalInfoImpl extends EObjectImpl implements ApprovalInfo {
 		boolean oldApprovalStatusESet = approvalStatusESet;
 		approvalStatus = APPROVAL_STATUS_EDEFAULT;
 		approvalStatusESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.APPROVAL_INFO__APPROVAL_STATUS, oldApprovalStatus, APPROVAL_STATUS_EDEFAULT, oldApprovalStatusESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.APPROVAL_INFO__APPROVAL_STATUS, oldApprovalStatus,
+				APPROVAL_STATUS_EDEFAULT, oldApprovalStatusESet));
+		}
 	}
 
 	/**
@@ -304,8 +319,11 @@ public class ApprovalInfoImpl extends EObjectImpl implements ApprovalInfo {
 		approvingOrganization = newApprovingOrganization;
 		boolean oldApprovingOrganizationESet = approvingOrganizationESet;
 		approvingOrganizationESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.APPROVAL_INFO__APPROVING_ORGANIZATION, oldApprovingOrganization, approvingOrganization, !oldApprovingOrganizationESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.APPROVAL_INFO__APPROVING_ORGANIZATION, oldApprovingOrganization,
+				approvingOrganization, !oldApprovingOrganizationESet));
+		}
 	}
 
 	/**
@@ -318,8 +336,11 @@ public class ApprovalInfoImpl extends EObjectImpl implements ApprovalInfo {
 		boolean oldApprovingOrganizationESet = approvingOrganizationESet;
 		approvingOrganization = APPROVING_ORGANIZATION_EDEFAULT;
 		approvingOrganizationESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.APPROVAL_INFO__APPROVING_ORGANIZATION, oldApprovingOrganization, APPROVING_ORGANIZATION_EDEFAULT, oldApprovingOrganizationESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.APPROVAL_INFO__APPROVING_ORGANIZATION, oldApprovingOrganization,
+				APPROVING_ORGANIZATION_EDEFAULT, oldApprovingOrganizationESet));
+		}
 	}
 
 	/**
@@ -350,8 +371,11 @@ public class ApprovalInfoImpl extends EObjectImpl implements ApprovalInfo {
 		ballotOccurrence = newBallotOccurrence;
 		boolean oldBallotOccurrenceESet = ballotOccurrenceESet;
 		ballotOccurrenceESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.APPROVAL_INFO__BALLOT_OCCURRENCE, oldBallotOccurrence, ballotOccurrence, !oldBallotOccurrenceESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.APPROVAL_INFO__BALLOT_OCCURRENCE, oldBallotOccurrence,
+				ballotOccurrence, !oldBallotOccurrenceESet));
+		}
 	}
 
 	/**
@@ -364,8 +388,11 @@ public class ApprovalInfoImpl extends EObjectImpl implements ApprovalInfo {
 		boolean oldBallotOccurrenceESet = ballotOccurrenceESet;
 		ballotOccurrence = BALLOT_OCCURRENCE_EDEFAULT;
 		ballotOccurrenceESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.APPROVAL_INFO__BALLOT_OCCURRENCE, oldBallotOccurrence, BALLOT_OCCURRENCE_EDEFAULT, oldBallotOccurrenceESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.APPROVAL_INFO__BALLOT_OCCURRENCE, oldBallotOccurrence,
+				BALLOT_OCCURRENCE_EDEFAULT, oldBallotOccurrenceESet));
+		}
 	}
 
 	/**
@@ -394,8 +421,10 @@ public class ApprovalInfoImpl extends EObjectImpl implements ApprovalInfo {
 	public void setWithdrawalDate(XMLGregorianCalendar newWithdrawalDate) {
 		XMLGregorianCalendar oldWithdrawalDate = withdrawalDate;
 		withdrawalDate = newWithdrawalDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.APPROVAL_INFO__WITHDRAWAL_DATE, oldWithdrawalDate, withdrawalDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.APPROVAL_INFO__WITHDRAWAL_DATE, oldWithdrawalDate, withdrawalDate));
+		}
 	}
 
 	/**
@@ -407,7 +436,7 @@ public class ApprovalInfoImpl extends EObjectImpl implements ApprovalInfo {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.APPROVAL_INFO__BALLOT_SUBMISSION:
-				return ((InternalEList<?>)getBallotSubmission()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBallotSubmission()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -447,22 +476,22 @@ public class ApprovalInfoImpl extends EObjectImpl implements ApprovalInfo {
 		switch (featureID) {
 			case Mif2Package.APPROVAL_INFO__BALLOT_SUBMISSION:
 				getBallotSubmission().clear();
-				getBallotSubmission().addAll((Collection<? extends BallotSubmission>)newValue);
+				getBallotSubmission().addAll((Collection<? extends BallotSubmission>) newValue);
 				return;
 			case Mif2Package.APPROVAL_INFO__APPROVAL_DATE:
-				setApprovalDate((XMLGregorianCalendar)newValue);
+				setApprovalDate((XMLGregorianCalendar) newValue);
 				return;
 			case Mif2Package.APPROVAL_INFO__APPROVAL_STATUS:
-				setApprovalStatus((ApprovalStatusKind)newValue);
+				setApprovalStatus((ApprovalStatusKind) newValue);
 				return;
 			case Mif2Package.APPROVAL_INFO__APPROVING_ORGANIZATION:
-				setApprovingOrganization((String)newValue);
+				setApprovingOrganization((String) newValue);
 				return;
 			case Mif2Package.APPROVAL_INFO__BALLOT_OCCURRENCE:
-				setBallotOccurrence((BigInteger)newValue);
+				setBallotOccurrence((BigInteger) newValue);
 				return;
 			case Mif2Package.APPROVAL_INFO__WITHDRAWAL_DATE:
-				setWithdrawalDate((XMLGregorianCalendar)newValue);
+				setWithdrawalDate((XMLGregorianCalendar) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -509,7 +538,9 @@ public class ApprovalInfoImpl extends EObjectImpl implements ApprovalInfo {
 			case Mif2Package.APPROVAL_INFO__BALLOT_SUBMISSION:
 				return ballotSubmission != null && !ballotSubmission.isEmpty();
 			case Mif2Package.APPROVAL_INFO__APPROVAL_DATE:
-				return APPROVAL_DATE_EDEFAULT == null ? approvalDate != null : !APPROVAL_DATE_EDEFAULT.equals(approvalDate);
+				return APPROVAL_DATE_EDEFAULT == null
+						? approvalDate != null
+						: !APPROVAL_DATE_EDEFAULT.equals(approvalDate);
 			case Mif2Package.APPROVAL_INFO__APPROVAL_STATUS:
 				return isSetApprovalStatus();
 			case Mif2Package.APPROVAL_INFO__APPROVING_ORGANIZATION:
@@ -517,7 +548,9 @@ public class ApprovalInfoImpl extends EObjectImpl implements ApprovalInfo {
 			case Mif2Package.APPROVAL_INFO__BALLOT_OCCURRENCE:
 				return isSetBallotOccurrence();
 			case Mif2Package.APPROVAL_INFO__WITHDRAWAL_DATE:
-				return WITHDRAWAL_DATE_EDEFAULT == null ? withdrawalDate != null : !WITHDRAWAL_DATE_EDEFAULT.equals(withdrawalDate);
+				return WITHDRAWAL_DATE_EDEFAULT == null
+						? withdrawalDate != null
+						: !WITHDRAWAL_DATE_EDEFAULT.equals(withdrawalDate);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -529,21 +562,35 @@ public class ApprovalInfoImpl extends EObjectImpl implements ApprovalInfo {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (approvalDate: ");
 		result.append(approvalDate);
 		result.append(", approvalStatus: ");
-		if (approvalStatusESet) result.append(approvalStatus); else result.append("<unset>");
+		if (approvalStatusESet) {
+			result.append(approvalStatus);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", approvingOrganization: ");
-		if (approvingOrganizationESet) result.append(approvingOrganization); else result.append("<unset>");
+		if (approvingOrganizationESet) {
+			result.append(approvingOrganization);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", ballotOccurrence: ");
-		if (ballotOccurrenceESet) result.append(ballotOccurrence); else result.append("<unset>");
+		if (ballotOccurrenceESet) {
+			result.append(ballotOccurrence);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", withdrawalDate: ");
 		result.append(withdrawalDate);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ApprovalInfoImpl
+} // ApprovalInfoImpl

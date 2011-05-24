@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -85,8 +89,11 @@ public class DatatypeTemplateParameterImpl extends DatatypeRefImpl implements Da
 	public void setParameterName(String newParameterName) {
 		String oldParameterName = parameterName;
 		parameterName = newParameterName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_TEMPLATE_PARAMETER__PARAMETER_NAME, oldParameterName, parameterName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_TEMPLATE_PARAMETER__PARAMETER_NAME, oldParameterName,
+				parameterName));
+		}
 	}
 
 	/**
@@ -112,7 +119,7 @@ public class DatatypeTemplateParameterImpl extends DatatypeRefImpl implements Da
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DATATYPE_TEMPLATE_PARAMETER__PARAMETER_NAME:
-				setParameterName((String)newValue);
+				setParameterName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -142,7 +149,9 @@ public class DatatypeTemplateParameterImpl extends DatatypeRefImpl implements Da
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.DATATYPE_TEMPLATE_PARAMETER__PARAMETER_NAME:
-				return PARAMETER_NAME_EDEFAULT == null ? parameterName != null : !PARAMETER_NAME_EDEFAULT.equals(parameterName);
+				return PARAMETER_NAME_EDEFAULT == null
+						? parameterName != null
+						: !PARAMETER_NAME_EDEFAULT.equals(parameterName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,7 +163,9 @@ public class DatatypeTemplateParameterImpl extends DatatypeRefImpl implements Da
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (parameterName: ");
@@ -163,4 +174,4 @@ public class DatatypeTemplateParameterImpl extends DatatypeRefImpl implements Da
 		return result.toString();
 	}
 
-} //DatatypeTemplateParameterImpl
+} // DatatypeTemplateParameterImpl

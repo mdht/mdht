@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -28,7 +32,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.ExampleSystem;
 import org.openhealthtools.mdht.emf.hl7.mif2.Mif2Package;
 import org.openhealthtools.mdht.emf.hl7.mif2.StoryboardArtifactReferences;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Img;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -113,7 +116,8 @@ public class StoryboardArtifactReferencesImpl extends EObjectImpl implements Sto
 	 */
 	public EList<ExampleSystem> getSystem() {
 		if (system == null) {
-			system = new EObjectContainmentEList<ExampleSystem>(ExampleSystem.class, this, Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__SYSTEM);
+			system = new EObjectContainmentEList<ExampleSystem>(
+				ExampleSystem.class, this, Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__SYSTEM);
 		}
 		return system;
 	}
@@ -125,7 +129,8 @@ public class StoryboardArtifactReferencesImpl extends EObjectImpl implements Sto
 	 */
 	public EList<ExampleInteraction> getInteraction() {
 		if (interaction == null) {
-			interaction = new EObjectContainmentEList<ExampleInteraction>(ExampleInteraction.class, this, Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__INTERACTION);
+			interaction = new EObjectContainmentEList<ExampleInteraction>(
+				ExampleInteraction.class, this, Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__INTERACTION);
 		}
 		return interaction;
 	}
@@ -144,12 +149,19 @@ public class StoryboardArtifactReferencesImpl extends EObjectImpl implements Sto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetGraphicRepresentation(DiagramGraphicInformation newGraphicRepresentation, NotificationChain msgs) {
+	public NotificationChain basicSetGraphicRepresentation(DiagramGraphicInformation newGraphicRepresentation,
+			NotificationChain msgs) {
 		DiagramGraphicInformation oldGraphicRepresentation = graphicRepresentation;
 		graphicRepresentation = newGraphicRepresentation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__GRAPHIC_REPRESENTATION, oldGraphicRepresentation, newGraphicRepresentation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__GRAPHIC_REPRESENTATION,
+				oldGraphicRepresentation, newGraphicRepresentation);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -162,15 +174,23 @@ public class StoryboardArtifactReferencesImpl extends EObjectImpl implements Sto
 	public void setGraphicRepresentation(DiagramGraphicInformation newGraphicRepresentation) {
 		if (newGraphicRepresentation != graphicRepresentation) {
 			NotificationChain msgs = null;
-			if (graphicRepresentation != null)
-				msgs = ((InternalEObject)graphicRepresentation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__GRAPHIC_REPRESENTATION, null, msgs);
-			if (newGraphicRepresentation != null)
-				msgs = ((InternalEObject)newGraphicRepresentation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__GRAPHIC_REPRESENTATION, null, msgs);
+			if (graphicRepresentation != null) {
+				msgs = ((InternalEObject) graphicRepresentation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__GRAPHIC_REPRESENTATION, null, msgs);
+			}
+			if (newGraphicRepresentation != null) {
+				msgs = ((InternalEObject) newGraphicRepresentation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__GRAPHIC_REPRESENTATION, null, msgs);
+			}
 			msgs = basicSetGraphicRepresentation(newGraphicRepresentation, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__GRAPHIC_REPRESENTATION,
+				newGraphicRepresentation, newGraphicRepresentation));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__GRAPHIC_REPRESENTATION, newGraphicRepresentation, newGraphicRepresentation));
 	}
 
 	/**
@@ -191,8 +211,13 @@ public class StoryboardArtifactReferencesImpl extends EObjectImpl implements Sto
 		Img oldFigure = figure;
 		figure = newFigure;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__FIGURE, oldFigure, newFigure);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__FIGURE, oldFigure, newFigure);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -205,15 +230,22 @@ public class StoryboardArtifactReferencesImpl extends EObjectImpl implements Sto
 	public void setFigure(Img newFigure) {
 		if (newFigure != figure) {
 			NotificationChain msgs = null;
-			if (figure != null)
-				msgs = ((InternalEObject)figure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__FIGURE, null, msgs);
-			if (newFigure != null)
-				msgs = ((InternalEObject)newFigure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__FIGURE, null, msgs);
+			if (figure != null) {
+				msgs = ((InternalEObject) figure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__FIGURE, null, msgs);
+			}
+			if (newFigure != null) {
+				msgs = ((InternalEObject) newFigure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__FIGURE, null, msgs);
+			}
 			msgs = basicSetFigure(newFigure, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__FIGURE, newFigure, newFigure));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__FIGURE, newFigure, newFigure));
 	}
 
 	/**
@@ -225,9 +257,9 @@ public class StoryboardArtifactReferencesImpl extends EObjectImpl implements Sto
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__SYSTEM:
-				return ((InternalEList<?>)getSystem()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSystem()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__INTERACTION:
-				return ((InternalEList<?>)getInteraction()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getInteraction()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__GRAPHIC_REPRESENTATION:
 				return basicSetGraphicRepresentation(null, msgs);
 			case Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__FIGURE:
@@ -267,17 +299,17 @@ public class StoryboardArtifactReferencesImpl extends EObjectImpl implements Sto
 		switch (featureID) {
 			case Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__SYSTEM:
 				getSystem().clear();
-				getSystem().addAll((Collection<? extends ExampleSystem>)newValue);
+				getSystem().addAll((Collection<? extends ExampleSystem>) newValue);
 				return;
 			case Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__INTERACTION:
 				getInteraction().clear();
-				getInteraction().addAll((Collection<? extends ExampleInteraction>)newValue);
+				getInteraction().addAll((Collection<? extends ExampleInteraction>) newValue);
 				return;
 			case Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__GRAPHIC_REPRESENTATION:
-				setGraphicRepresentation((DiagramGraphicInformation)newValue);
+				setGraphicRepresentation((DiagramGraphicInformation) newValue);
 				return;
 			case Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__FIGURE:
-				setFigure((Img)newValue);
+				setFigure((Img) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -298,10 +330,10 @@ public class StoryboardArtifactReferencesImpl extends EObjectImpl implements Sto
 				getInteraction().clear();
 				return;
 			case Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__GRAPHIC_REPRESENTATION:
-				setGraphicRepresentation((DiagramGraphicInformation)null);
+				setGraphicRepresentation((DiagramGraphicInformation) null);
 				return;
 			case Mif2Package.STORYBOARD_ARTIFACT_REFERENCES__FIGURE:
-				setFigure((Img)null);
+				setFigure((Img) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -327,4 +359,4 @@ public class StoryboardArtifactReferencesImpl extends EObjectImpl implements Sto
 		return super.eIsSet(featureID);
 	}
 
-} //StoryboardArtifactReferencesImpl
+} // StoryboardArtifactReferencesImpl

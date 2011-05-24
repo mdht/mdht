@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -173,8 +177,13 @@ public class BusinessNameImpl extends EObjectImpl implements BusinessName {
 		AnnotationCascadeInfo oldCascadeInfo = cascadeInfo;
 		cascadeInfo = newCascadeInfo;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.BUSINESS_NAME__CASCADE_INFO, oldCascadeInfo, newCascadeInfo);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BUSINESS_NAME__CASCADE_INFO, oldCascadeInfo, newCascadeInfo);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -187,15 +196,22 @@ public class BusinessNameImpl extends EObjectImpl implements BusinessName {
 	public void setCascadeInfo(AnnotationCascadeInfo newCascadeInfo) {
 		if (newCascadeInfo != cascadeInfo) {
 			NotificationChain msgs = null;
-			if (cascadeInfo != null)
-				msgs = ((InternalEObject)cascadeInfo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.BUSINESS_NAME__CASCADE_INFO, null, msgs);
-			if (newCascadeInfo != null)
-				msgs = ((InternalEObject)newCascadeInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.BUSINESS_NAME__CASCADE_INFO, null, msgs);
+			if (cascadeInfo != null) {
+				msgs = ((InternalEObject) cascadeInfo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.BUSINESS_NAME__CASCADE_INFO, null, msgs);
+			}
+			if (newCascadeInfo != null) {
+				msgs = ((InternalEObject) newCascadeInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.BUSINESS_NAME__CASCADE_INFO, null, msgs);
+			}
 			msgs = basicSetCascadeInfo(newCascadeInfo, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BUSINESS_NAME__CASCADE_INFO, newCascadeInfo, newCascadeInfo));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BUSINESS_NAME__CASCADE_INFO, newCascadeInfo, newCascadeInfo));
 	}
 
 	/**
@@ -217,8 +233,10 @@ public class BusinessNameImpl extends EObjectImpl implements BusinessName {
 		lang = newLang;
 		boolean oldLangESet = langESet;
 		langESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BUSINESS_NAME__LANG, oldLang, lang, !oldLangESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BUSINESS_NAME__LANG, oldLang, lang, !oldLangESet));
+		}
 	}
 
 	/**
@@ -231,8 +249,10 @@ public class BusinessNameImpl extends EObjectImpl implements BusinessName {
 		boolean oldLangESet = langESet;
 		lang = LANG_EDEFAULT;
 		langESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.BUSINESS_NAME__LANG, oldLang, LANG_EDEFAULT, oldLangESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.BUSINESS_NAME__LANG, oldLang, LANG_EDEFAULT, oldLangESet));
+		}
 	}
 
 	/**
@@ -261,8 +281,9 @@ public class BusinessNameImpl extends EObjectImpl implements BusinessName {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BUSINESS_NAME__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -274,9 +295,9 @@ public class BusinessNameImpl extends EObjectImpl implements BusinessName {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.BUSINESS_NAME__CONTEXT:
-				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getContext()).basicRemove(otherEnd, msgs);
 			case Mif2Package.BUSINESS_NAME__REALM_NAMESPACE:
-				return ((InternalEList<?>)getRealmNamespace()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmNamespace()).basicRemove(otherEnd, msgs);
 			case Mif2Package.BUSINESS_NAME__CASCADE_INFO:
 				return basicSetCascadeInfo(null, msgs);
 		}
@@ -292,8 +313,10 @@ public class BusinessNameImpl extends EObjectImpl implements BusinessName {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mif2Package.BUSINESS_NAME__CONTEXT:
-				if (coreType) return getContext();
-				return ((FeatureMap.Internal)getContext()).getWrapper();
+				if (coreType) {
+					return getContext();
+				}
+				return ((FeatureMap.Internal) getContext()).getWrapper();
 			case Mif2Package.BUSINESS_NAME__REALM_NAMESPACE:
 				return getRealmNamespace();
 			case Mif2Package.BUSINESS_NAME__CASCADE_INFO:
@@ -316,20 +339,20 @@ public class BusinessNameImpl extends EObjectImpl implements BusinessName {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.BUSINESS_NAME__CONTEXT:
-				((FeatureMap.Internal)getContext()).set(newValue);
+				((FeatureMap.Internal) getContext()).set(newValue);
 				return;
 			case Mif2Package.BUSINESS_NAME__REALM_NAMESPACE:
 				getRealmNamespace().clear();
-				getRealmNamespace().addAll((Collection<? extends RealmElement>)newValue);
+				getRealmNamespace().addAll((Collection<? extends RealmElement>) newValue);
 				return;
 			case Mif2Package.BUSINESS_NAME__CASCADE_INFO:
-				setCascadeInfo((AnnotationCascadeInfo)newValue);
+				setCascadeInfo((AnnotationCascadeInfo) newValue);
 				return;
 			case Mif2Package.BUSINESS_NAME__LANG:
-				setLang((String)newValue);
+				setLang((String) newValue);
 				return;
 			case Mif2Package.BUSINESS_NAME__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -350,7 +373,7 @@ public class BusinessNameImpl extends EObjectImpl implements BusinessName {
 				getRealmNamespace().clear();
 				return;
 			case Mif2Package.BUSINESS_NAME__CASCADE_INFO:
-				setCascadeInfo((AnnotationCascadeInfo)null);
+				setCascadeInfo((AnnotationCascadeInfo) null);
 				return;
 			case Mif2Package.BUSINESS_NAME__LANG:
 				unsetLang();
@@ -379,7 +402,9 @@ public class BusinessNameImpl extends EObjectImpl implements BusinessName {
 			case Mif2Package.BUSINESS_NAME__LANG:
 				return isSetLang();
 			case Mif2Package.BUSINESS_NAME__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -391,17 +416,23 @@ public class BusinessNameImpl extends EObjectImpl implements BusinessName {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (context: ");
 		result.append(context);
 		result.append(", lang: ");
-		if (langESet) result.append(lang); else result.append("<unset>");
+		if (langESet) {
+			result.append(lang);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", name: ");
 		result.append(name);
 		result.append(')');
 		return result.toString();
 	}
 
-} //BusinessNameImpl
+} // BusinessNameImpl

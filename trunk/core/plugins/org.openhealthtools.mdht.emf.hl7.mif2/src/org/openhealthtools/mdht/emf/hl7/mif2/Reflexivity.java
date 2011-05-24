@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -78,11 +82,7 @@ public enum Reflexivity implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final Reflexivity[] VALUES_ARRAY =
-		new Reflexivity[] {
-			REFLEXIVE,
-			IRREFLEXIVE,
-		};
+	private static final Reflexivity[] VALUES_ARRAY = new Reflexivity[] { REFLEXIVE, IRREFLEXIVE, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Reflexivity</b></em>' enumerators.
@@ -132,8 +132,10 @@ public enum Reflexivity implements Enumerator {
 	 */
 	public static Reflexivity get(int value) {
 		switch (value) {
-			case REFLEXIVE_VALUE: return REFLEXIVE;
-			case IRREFLEXIVE_VALUE: return IRREFLEXIVE;
+			case REFLEXIVE_VALUE:
+				return REFLEXIVE;
+			case IRREFLEXIVE_VALUE:
+				return IRREFLEXIVE;
 		}
 		return null;
 	}
@@ -177,7 +179,7 @@ public enum Reflexivity implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -186,7 +188,7 @@ public enum Reflexivity implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -195,7 +197,7 @@ public enum Reflexivity implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -208,5 +210,5 @@ public enum Reflexivity implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //Reflexivity
+
+} // Reflexivity

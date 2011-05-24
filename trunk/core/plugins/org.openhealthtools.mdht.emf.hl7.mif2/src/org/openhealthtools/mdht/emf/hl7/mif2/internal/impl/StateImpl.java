@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -153,7 +157,8 @@ public class StateImpl extends VertexImpl implements State {
 	 */
 	public EList<BusinessName> getBusinessName() {
 		if (businessName == null) {
-			businessName = new EObjectContainmentEList<BusinessName>(BusinessName.class, this, Mif2Package.STATE__BUSINESS_NAME);
+			businessName = new EObjectContainmentEList<BusinessName>(
+				BusinessName.class, this, Mif2Package.STATE__BUSINESS_NAME);
 		}
 		return businessName;
 	}
@@ -176,8 +181,13 @@ public class StateImpl extends VertexImpl implements State {
 		StateAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STATE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATE__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -190,15 +200,22 @@ public class StateImpl extends VertexImpl implements State {
 	public void setAnnotations(StateAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATE__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -208,7 +225,8 @@ public class StateImpl extends VertexImpl implements State {
 	 */
 	public EList<StateDerivation> getDerivedFrom() {
 		if (derivedFrom == null) {
-			derivedFrom = new EObjectContainmentEList<StateDerivation>(StateDerivation.class, this, Mif2Package.STATE__DERIVED_FROM);
+			derivedFrom = new EObjectContainmentEList<StateDerivation>(
+				StateDerivation.class, this, Mif2Package.STATE__DERIVED_FROM);
 		}
 		return derivedFrom;
 	}
@@ -242,8 +260,9 @@ public class StateImpl extends VertexImpl implements State {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATE__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -263,8 +282,10 @@ public class StateImpl extends VertexImpl implements State {
 	public void setParentStateName(String newParentStateName) {
 		String oldParentStateName = parentStateName;
 		parentStateName = newParentStateName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATE__PARENT_STATE_NAME, oldParentStateName, parentStateName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATE__PARENT_STATE_NAME, oldParentStateName, parentStateName));
+		}
 	}
 
 	/**
@@ -276,11 +297,11 @@ public class StateImpl extends VertexImpl implements State {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.STATE__BUSINESS_NAME:
-				return ((InternalEList<?>)getBusinessName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBusinessName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATE__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 			case Mif2Package.STATE__DERIVED_FROM:
-				return ((InternalEList<?>)getDerivedFrom()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDerivedFrom()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -320,24 +341,24 @@ public class StateImpl extends VertexImpl implements State {
 		switch (featureID) {
 			case Mif2Package.STATE__BUSINESS_NAME:
 				getBusinessName().clear();
-				getBusinessName().addAll((Collection<? extends BusinessName>)newValue);
+				getBusinessName().addAll((Collection<? extends BusinessName>) newValue);
 				return;
 			case Mif2Package.STATE__ANNOTATIONS:
-				setAnnotations((StateAnnotations)newValue);
+				setAnnotations((StateAnnotations) newValue);
 				return;
 			case Mif2Package.STATE__DERIVED_FROM:
 				getDerivedFrom().clear();
-				getDerivedFrom().addAll((Collection<? extends StateDerivation>)newValue);
+				getDerivedFrom().addAll((Collection<? extends StateDerivation>) newValue);
 				return;
 			case Mif2Package.STATE__CONTAINED_STATES:
 				getContainedStates().clear();
-				getContainedStates().addAll((Collection<? extends String>)newValue);
+				getContainedStates().addAll((Collection<? extends String>) newValue);
 				return;
 			case Mif2Package.STATE__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.STATE__PARENT_STATE_NAME:
-				setParentStateName((String)newValue);
+				setParentStateName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -355,7 +376,7 @@ public class StateImpl extends VertexImpl implements State {
 				getBusinessName().clear();
 				return;
 			case Mif2Package.STATE__ANNOTATIONS:
-				setAnnotations((StateAnnotations)null);
+				setAnnotations((StateAnnotations) null);
 				return;
 			case Mif2Package.STATE__DERIVED_FROM:
 				getDerivedFrom().clear();
@@ -390,9 +411,13 @@ public class StateImpl extends VertexImpl implements State {
 			case Mif2Package.STATE__CONTAINED_STATES:
 				return containedStates != null && !containedStates.isEmpty();
 			case Mif2Package.STATE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.STATE__PARENT_STATE_NAME:
-				return PARENT_STATE_NAME_EDEFAULT == null ? parentStateName != null : !PARENT_STATE_NAME_EDEFAULT.equals(parentStateName);
+				return PARENT_STATE_NAME_EDEFAULT == null
+						? parentStateName != null
+						: !PARENT_STATE_NAME_EDEFAULT.equals(parentStateName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -404,7 +429,9 @@ public class StateImpl extends VertexImpl implements State {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (containedStates: ");
@@ -417,4 +444,4 @@ public class StateImpl extends VertexImpl implements State {
 		return result.toString();
 	}
 
-} //StateImpl
+} // StateImpl

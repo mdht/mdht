@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -20,7 +24,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.openhealthtools.mdht.emf.hl7.mif2.HistoryItem;
 import org.openhealthtools.mdht.emf.hl7.mif2.Mif2Package;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Flow;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -206,8 +209,13 @@ public class HistoryItemImpl extends EObjectImpl implements HistoryItem {
 		Flow oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.HISTORY_ITEM__DESCRIPTION, oldDescription, newDescription);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.HISTORY_ITEM__DESCRIPTION, oldDescription, newDescription);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -220,15 +228,22 @@ public class HistoryItemImpl extends EObjectImpl implements HistoryItem {
 	public void setDescription(Flow newDescription) {
 		if (newDescription != description) {
 			NotificationChain msgs = null;
-			if (description != null)
-				msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.HISTORY_ITEM__DESCRIPTION, null, msgs);
-			if (newDescription != null)
-				msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.HISTORY_ITEM__DESCRIPTION, null, msgs);
+			if (description != null) {
+				msgs = ((InternalEObject) description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.HISTORY_ITEM__DESCRIPTION, null, msgs);
+			}
+			if (newDescription != null) {
+				msgs = ((InternalEObject) newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.HISTORY_ITEM__DESCRIPTION, null, msgs);
+			}
 			msgs = basicSetDescription(newDescription, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.HISTORY_ITEM__DESCRIPTION, newDescription, newDescription));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.HISTORY_ITEM__DESCRIPTION, newDescription, newDescription));
 	}
 
 	/**
@@ -248,8 +263,10 @@ public class HistoryItemImpl extends EObjectImpl implements HistoryItem {
 	public void setDateTime(XMLGregorianCalendar newDateTime) {
 		XMLGregorianCalendar oldDateTime = dateTime;
 		dateTime = newDateTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.HISTORY_ITEM__DATE_TIME, oldDateTime, dateTime));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.HISTORY_ITEM__DATE_TIME, oldDateTime, dateTime));
+		}
 	}
 
 	/**
@@ -269,8 +286,9 @@ public class HistoryItemImpl extends EObjectImpl implements HistoryItem {
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.HISTORY_ITEM__ID, oldId, id));
+		}
 	}
 
 	/**
@@ -292,8 +310,11 @@ public class HistoryItemImpl extends EObjectImpl implements HistoryItem {
 		isBackwardCompatibleChange = newIsBackwardCompatibleChange;
 		boolean oldIsBackwardCompatibleChangeESet = isBackwardCompatibleChangeESet;
 		isBackwardCompatibleChangeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.HISTORY_ITEM__IS_BACKWARD_COMPATIBLE_CHANGE, oldIsBackwardCompatibleChange, isBackwardCompatibleChange, !oldIsBackwardCompatibleChangeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.HISTORY_ITEM__IS_BACKWARD_COMPATIBLE_CHANGE,
+				oldIsBackwardCompatibleChange, isBackwardCompatibleChange, !oldIsBackwardCompatibleChangeESet));
+		}
 	}
 
 	/**
@@ -306,8 +327,12 @@ public class HistoryItemImpl extends EObjectImpl implements HistoryItem {
 		boolean oldIsBackwardCompatibleChangeESet = isBackwardCompatibleChangeESet;
 		isBackwardCompatibleChange = IS_BACKWARD_COMPATIBLE_CHANGE_EDEFAULT;
 		isBackwardCompatibleChangeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.HISTORY_ITEM__IS_BACKWARD_COMPATIBLE_CHANGE, oldIsBackwardCompatibleChange, IS_BACKWARD_COMPATIBLE_CHANGE_EDEFAULT, oldIsBackwardCompatibleChangeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.HISTORY_ITEM__IS_BACKWARD_COMPATIBLE_CHANGE,
+				oldIsBackwardCompatibleChange, IS_BACKWARD_COMPATIBLE_CHANGE_EDEFAULT,
+				oldIsBackwardCompatibleChangeESet));
+		}
 	}
 
 	/**
@@ -338,8 +363,11 @@ public class HistoryItemImpl extends EObjectImpl implements HistoryItem {
 		isSubstantiveChange = newIsSubstantiveChange;
 		boolean oldIsSubstantiveChangeESet = isSubstantiveChangeESet;
 		isSubstantiveChangeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.HISTORY_ITEM__IS_SUBSTANTIVE_CHANGE, oldIsSubstantiveChange, isSubstantiveChange, !oldIsSubstantiveChangeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.HISTORY_ITEM__IS_SUBSTANTIVE_CHANGE, oldIsSubstantiveChange,
+				isSubstantiveChange, !oldIsSubstantiveChangeESet));
+		}
 	}
 
 	/**
@@ -352,8 +380,11 @@ public class HistoryItemImpl extends EObjectImpl implements HistoryItem {
 		boolean oldIsSubstantiveChangeESet = isSubstantiveChangeESet;
 		isSubstantiveChange = IS_SUBSTANTIVE_CHANGE_EDEFAULT;
 		isSubstantiveChangeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.HISTORY_ITEM__IS_SUBSTANTIVE_CHANGE, oldIsSubstantiveChange, IS_SUBSTANTIVE_CHANGE_EDEFAULT, oldIsSubstantiveChangeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.HISTORY_ITEM__IS_SUBSTANTIVE_CHANGE, oldIsSubstantiveChange,
+				IS_SUBSTANTIVE_CHANGE_EDEFAULT, oldIsSubstantiveChangeESet));
+		}
 	}
 
 	/**
@@ -382,8 +413,11 @@ public class HistoryItemImpl extends EObjectImpl implements HistoryItem {
 	public void setResponsiblePersonName(String newResponsiblePersonName) {
 		String oldResponsiblePersonName = responsiblePersonName;
 		responsiblePersonName = newResponsiblePersonName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.HISTORY_ITEM__RESPONSIBLE_PERSON_NAME, oldResponsiblePersonName, responsiblePersonName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.HISTORY_ITEM__RESPONSIBLE_PERSON_NAME, oldResponsiblePersonName,
+				responsiblePersonName));
+		}
 	}
 
 	/**
@@ -415,9 +449,13 @@ public class HistoryItemImpl extends EObjectImpl implements HistoryItem {
 			case Mif2Package.HISTORY_ITEM__ID:
 				return getId();
 			case Mif2Package.HISTORY_ITEM__IS_BACKWARD_COMPATIBLE_CHANGE:
-				return isIsBackwardCompatibleChange() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsBackwardCompatibleChange()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.HISTORY_ITEM__IS_SUBSTANTIVE_CHANGE:
-				return isIsSubstantiveChange() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsSubstantiveChange()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.HISTORY_ITEM__RESPONSIBLE_PERSON_NAME:
 				return getResponsiblePersonName();
 		}
@@ -433,22 +471,22 @@ public class HistoryItemImpl extends EObjectImpl implements HistoryItem {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.HISTORY_ITEM__DESCRIPTION:
-				setDescription((Flow)newValue);
+				setDescription((Flow) newValue);
 				return;
 			case Mif2Package.HISTORY_ITEM__DATE_TIME:
-				setDateTime((XMLGregorianCalendar)newValue);
+				setDateTime((XMLGregorianCalendar) newValue);
 				return;
 			case Mif2Package.HISTORY_ITEM__ID:
-				setId((String)newValue);
+				setId((String) newValue);
 				return;
 			case Mif2Package.HISTORY_ITEM__IS_BACKWARD_COMPATIBLE_CHANGE:
-				setIsBackwardCompatibleChange(((Boolean)newValue).booleanValue());
+				setIsBackwardCompatibleChange(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.HISTORY_ITEM__IS_SUBSTANTIVE_CHANGE:
-				setIsSubstantiveChange(((Boolean)newValue).booleanValue());
+				setIsSubstantiveChange(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.HISTORY_ITEM__RESPONSIBLE_PERSON_NAME:
-				setResponsiblePersonName((String)newValue);
+				setResponsiblePersonName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -463,7 +501,7 @@ public class HistoryItemImpl extends EObjectImpl implements HistoryItem {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.HISTORY_ITEM__DESCRIPTION:
-				setDescription((Flow)null);
+				setDescription((Flow) null);
 				return;
 			case Mif2Package.HISTORY_ITEM__DATE_TIME:
 				setDateTime(DATE_TIME_EDEFAULT);
@@ -495,15 +533,21 @@ public class HistoryItemImpl extends EObjectImpl implements HistoryItem {
 			case Mif2Package.HISTORY_ITEM__DESCRIPTION:
 				return description != null;
 			case Mif2Package.HISTORY_ITEM__DATE_TIME:
-				return DATE_TIME_EDEFAULT == null ? dateTime != null : !DATE_TIME_EDEFAULT.equals(dateTime);
+				return DATE_TIME_EDEFAULT == null
+						? dateTime != null
+						: !DATE_TIME_EDEFAULT.equals(dateTime);
 			case Mif2Package.HISTORY_ITEM__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+				return ID_EDEFAULT == null
+						? id != null
+						: !ID_EDEFAULT.equals(id);
 			case Mif2Package.HISTORY_ITEM__IS_BACKWARD_COMPATIBLE_CHANGE:
 				return isSetIsBackwardCompatibleChange();
 			case Mif2Package.HISTORY_ITEM__IS_SUBSTANTIVE_CHANGE:
 				return isSetIsSubstantiveChange();
 			case Mif2Package.HISTORY_ITEM__RESPONSIBLE_PERSON_NAME:
-				return RESPONSIBLE_PERSON_NAME_EDEFAULT == null ? responsiblePersonName != null : !RESPONSIBLE_PERSON_NAME_EDEFAULT.equals(responsiblePersonName);
+				return RESPONSIBLE_PERSON_NAME_EDEFAULT == null
+						? responsiblePersonName != null
+						: !RESPONSIBLE_PERSON_NAME_EDEFAULT.equals(responsiblePersonName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -515,7 +559,9 @@ public class HistoryItemImpl extends EObjectImpl implements HistoryItem {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (dateTime: ");
@@ -523,13 +569,21 @@ public class HistoryItemImpl extends EObjectImpl implements HistoryItem {
 		result.append(", id: ");
 		result.append(id);
 		result.append(", isBackwardCompatibleChange: ");
-		if (isBackwardCompatibleChangeESet) result.append(isBackwardCompatibleChange); else result.append("<unset>");
+		if (isBackwardCompatibleChangeESet) {
+			result.append(isBackwardCompatibleChange);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", isSubstantiveChange: ");
-		if (isSubstantiveChangeESet) result.append(isSubstantiveChange); else result.append("<unset>");
+		if (isSubstantiveChangeESet) {
+			result.append(isSubstantiveChange);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", responsiblePersonName: ");
 		result.append(responsiblePersonName);
 		result.append(')');
 		return result.toString();
 	}
 
-} //HistoryItemImpl
+} // HistoryItemImpl

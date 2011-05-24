@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -150,8 +154,14 @@ public class CodeBasedContentDefinitionImpl extends EObjectImpl implements CodeB
 		ContentDefinition oldHeadCodes = headCodes;
 		headCodes = newHeadCodes;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_BASED_CONTENT_DEFINITION__HEAD_CODES, oldHeadCodes, newHeadCodes);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_BASED_CONTENT_DEFINITION__HEAD_CODES, oldHeadCodes,
+				newHeadCodes);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -164,15 +174,23 @@ public class CodeBasedContentDefinitionImpl extends EObjectImpl implements CodeB
 	public void setHeadCodes(ContentDefinition newHeadCodes) {
 		if (newHeadCodes != headCodes) {
 			NotificationChain msgs = null;
-			if (headCodes != null)
-				msgs = ((InternalEObject)headCodes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_BASED_CONTENT_DEFINITION__HEAD_CODES, null, msgs);
-			if (newHeadCodes != null)
-				msgs = ((InternalEObject)newHeadCodes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_BASED_CONTENT_DEFINITION__HEAD_CODES, null, msgs);
+			if (headCodes != null) {
+				msgs = ((InternalEObject) headCodes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_BASED_CONTENT_DEFINITION__HEAD_CODES, null, msgs);
+			}
+			if (newHeadCodes != null) {
+				msgs = ((InternalEObject) newHeadCodes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_BASED_CONTENT_DEFINITION__HEAD_CODES, null, msgs);
+			}
 			msgs = basicSetHeadCodes(newHeadCodes, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_BASED_CONTENT_DEFINITION__HEAD_CODES, newHeadCodes,
+				newHeadCodes));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_BASED_CONTENT_DEFINITION__HEAD_CODES, newHeadCodes, newHeadCodes));
 	}
 
 	/**
@@ -182,7 +200,8 @@ public class CodeBasedContentDefinitionImpl extends EObjectImpl implements CodeB
 	 */
 	public EList<IncludeRelatedCodes> getIncludeRelatedCodes() {
 		if (includeRelatedCodes == null) {
-			includeRelatedCodes = new EObjectContainmentEList<IncludeRelatedCodes>(IncludeRelatedCodes.class, this, Mif2Package.CODE_BASED_CONTENT_DEFINITION__INCLUDE_RELATED_CODES);
+			includeRelatedCodes = new EObjectContainmentEList<IncludeRelatedCodes>(
+				IncludeRelatedCodes.class, this, Mif2Package.CODE_BASED_CONTENT_DEFINITION__INCLUDE_RELATED_CODES);
 		}
 		return includeRelatedCodes;
 	}
@@ -204,8 +223,10 @@ public class CodeBasedContentDefinitionImpl extends EObjectImpl implements CodeB
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_BASED_CONTENT_DEFINITION__CODE, oldCode, code));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_BASED_CONTENT_DEFINITION__CODE, oldCode, code));
+		}
 	}
 
 	/**
@@ -227,8 +248,11 @@ public class CodeBasedContentDefinitionImpl extends EObjectImpl implements CodeB
 		includeHeadCode = newIncludeHeadCode;
 		boolean oldIncludeHeadCodeESet = includeHeadCodeESet;
 		includeHeadCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_BASED_CONTENT_DEFINITION__INCLUDE_HEAD_CODE, oldIncludeHeadCode, includeHeadCode, !oldIncludeHeadCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_BASED_CONTENT_DEFINITION__INCLUDE_HEAD_CODE,
+				oldIncludeHeadCode, includeHeadCode, !oldIncludeHeadCodeESet));
+		}
 	}
 
 	/**
@@ -241,8 +265,11 @@ public class CodeBasedContentDefinitionImpl extends EObjectImpl implements CodeB
 		boolean oldIncludeHeadCodeESet = includeHeadCodeESet;
 		includeHeadCode = INCLUDE_HEAD_CODE_EDEFAULT;
 		includeHeadCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CODE_BASED_CONTENT_DEFINITION__INCLUDE_HEAD_CODE, oldIncludeHeadCode, INCLUDE_HEAD_CODE_EDEFAULT, oldIncludeHeadCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CODE_BASED_CONTENT_DEFINITION__INCLUDE_HEAD_CODE,
+				oldIncludeHeadCode, INCLUDE_HEAD_CODE_EDEFAULT, oldIncludeHeadCodeESet));
+		}
 	}
 
 	/**
@@ -265,7 +292,7 @@ public class CodeBasedContentDefinitionImpl extends EObjectImpl implements CodeB
 			case Mif2Package.CODE_BASED_CONTENT_DEFINITION__HEAD_CODES:
 				return basicSetHeadCodes(null, msgs);
 			case Mif2Package.CODE_BASED_CONTENT_DEFINITION__INCLUDE_RELATED_CODES:
-				return ((InternalEList<?>)getIncludeRelatedCodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getIncludeRelatedCodes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -285,7 +312,9 @@ public class CodeBasedContentDefinitionImpl extends EObjectImpl implements CodeB
 			case Mif2Package.CODE_BASED_CONTENT_DEFINITION__CODE:
 				return getCode();
 			case Mif2Package.CODE_BASED_CONTENT_DEFINITION__INCLUDE_HEAD_CODE:
-				return isIncludeHeadCode() ? Boolean.TRUE : Boolean.FALSE;
+				return isIncludeHeadCode()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -300,17 +329,17 @@ public class CodeBasedContentDefinitionImpl extends EObjectImpl implements CodeB
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CODE_BASED_CONTENT_DEFINITION__HEAD_CODES:
-				setHeadCodes((ContentDefinition)newValue);
+				setHeadCodes((ContentDefinition) newValue);
 				return;
 			case Mif2Package.CODE_BASED_CONTENT_DEFINITION__INCLUDE_RELATED_CODES:
 				getIncludeRelatedCodes().clear();
-				getIncludeRelatedCodes().addAll((Collection<? extends IncludeRelatedCodes>)newValue);
+				getIncludeRelatedCodes().addAll((Collection<? extends IncludeRelatedCodes>) newValue);
 				return;
 			case Mif2Package.CODE_BASED_CONTENT_DEFINITION__CODE:
-				setCode((String)newValue);
+				setCode((String) newValue);
 				return;
 			case Mif2Package.CODE_BASED_CONTENT_DEFINITION__INCLUDE_HEAD_CODE:
-				setIncludeHeadCode(((Boolean)newValue).booleanValue());
+				setIncludeHeadCode(((Boolean) newValue).booleanValue());
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -325,7 +354,7 @@ public class CodeBasedContentDefinitionImpl extends EObjectImpl implements CodeB
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CODE_BASED_CONTENT_DEFINITION__HEAD_CODES:
-				setHeadCodes((ContentDefinition)null);
+				setHeadCodes((ContentDefinition) null);
 				return;
 			case Mif2Package.CODE_BASED_CONTENT_DEFINITION__INCLUDE_RELATED_CODES:
 				getIncludeRelatedCodes().clear();
@@ -353,7 +382,9 @@ public class CodeBasedContentDefinitionImpl extends EObjectImpl implements CodeB
 			case Mif2Package.CODE_BASED_CONTENT_DEFINITION__INCLUDE_RELATED_CODES:
 				return includeRelatedCodes != null && !includeRelatedCodes.isEmpty();
 			case Mif2Package.CODE_BASED_CONTENT_DEFINITION__CODE:
-				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+				return CODE_EDEFAULT == null
+						? code != null
+						: !CODE_EDEFAULT.equals(code);
 			case Mif2Package.CODE_BASED_CONTENT_DEFINITION__INCLUDE_HEAD_CODE:
 				return isSetIncludeHeadCode();
 		}
@@ -367,15 +398,21 @@ public class CodeBasedContentDefinitionImpl extends EObjectImpl implements CodeB
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (code: ");
 		result.append(code);
 		result.append(", includeHeadCode: ");
-		if (includeHeadCodeESet) result.append(includeHeadCode); else result.append("<unset>");
+		if (includeHeadCodeESet) {
+			result.append(includeHeadCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //CodeBasedContentDefinitionImpl
+} // CodeBasedContentDefinitionImpl

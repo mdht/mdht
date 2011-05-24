@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -199,16 +203,9 @@ public enum InteractionKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final InteractionKind[] VALUES_ARRAY =
-		new InteractionKind[] {
-			QUERY,
-			QUERY_RESPONSE,
-			EVENT_NOTIFICATION,
-			REQUEST_FOR_ACTION,
-			REQUEST_RESPONSE_ACCEPT,
-			REQUEST_RESPONSE_REFUSE,
-			UNTRIGGERED_NOTIFICATION,
-		};
+	private static final InteractionKind[] VALUES_ARRAY = new InteractionKind[] {
+			QUERY, QUERY_RESPONSE, EVENT_NOTIFICATION, REQUEST_FOR_ACTION, REQUEST_RESPONSE_ACCEPT,
+			REQUEST_RESPONSE_REFUSE, UNTRIGGERED_NOTIFICATION, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Interaction Kind</b></em>' enumerators.
@@ -258,13 +255,20 @@ public enum InteractionKind implements Enumerator {
 	 */
 	public static InteractionKind get(int value) {
 		switch (value) {
-			case QUERY_VALUE: return QUERY;
-			case QUERY_RESPONSE_VALUE: return QUERY_RESPONSE;
-			case EVENT_NOTIFICATION_VALUE: return EVENT_NOTIFICATION;
-			case REQUEST_FOR_ACTION_VALUE: return REQUEST_FOR_ACTION;
-			case REQUEST_RESPONSE_ACCEPT_VALUE: return REQUEST_RESPONSE_ACCEPT;
-			case REQUEST_RESPONSE_REFUSE_VALUE: return REQUEST_RESPONSE_REFUSE;
-			case UNTRIGGERED_NOTIFICATION_VALUE: return UNTRIGGERED_NOTIFICATION;
+			case QUERY_VALUE:
+				return QUERY;
+			case QUERY_RESPONSE_VALUE:
+				return QUERY_RESPONSE;
+			case EVENT_NOTIFICATION_VALUE:
+				return EVENT_NOTIFICATION;
+			case REQUEST_FOR_ACTION_VALUE:
+				return REQUEST_FOR_ACTION;
+			case REQUEST_RESPONSE_ACCEPT_VALUE:
+				return REQUEST_RESPONSE_ACCEPT;
+			case REQUEST_RESPONSE_REFUSE_VALUE:
+				return REQUEST_RESPONSE_REFUSE;
+			case UNTRIGGERED_NOTIFICATION_VALUE:
+				return UNTRIGGERED_NOTIFICATION;
 		}
 		return null;
 	}
@@ -308,7 +312,7 @@ public enum InteractionKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -317,7 +321,7 @@ public enum InteractionKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -326,7 +330,7 @@ public enum InteractionKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -339,5 +343,5 @@ public enum InteractionKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //InteractionKind
+
+} // InteractionKind

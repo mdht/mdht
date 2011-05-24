@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -179,12 +183,19 @@ public class HeaderImpl extends EObjectImpl implements Header {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRenderingInformation(RenderingInformation newRenderingInformation, NotificationChain msgs) {
+	public NotificationChain basicSetRenderingInformation(RenderingInformation newRenderingInformation,
+			NotificationChain msgs) {
 		RenderingInformation oldRenderingInformation = renderingInformation;
 		renderingInformation = newRenderingInformation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.HEADER__RENDERING_INFORMATION, oldRenderingInformation, newRenderingInformation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.HEADER__RENDERING_INFORMATION, oldRenderingInformation,
+				newRenderingInformation);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -197,15 +208,23 @@ public class HeaderImpl extends EObjectImpl implements Header {
 	public void setRenderingInformation(RenderingInformation newRenderingInformation) {
 		if (newRenderingInformation != renderingInformation) {
 			NotificationChain msgs = null;
-			if (renderingInformation != null)
-				msgs = ((InternalEObject)renderingInformation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.HEADER__RENDERING_INFORMATION, null, msgs);
-			if (newRenderingInformation != null)
-				msgs = ((InternalEObject)newRenderingInformation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.HEADER__RENDERING_INFORMATION, null, msgs);
+			if (renderingInformation != null) {
+				msgs = ((InternalEObject) renderingInformation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.HEADER__RENDERING_INFORMATION, null, msgs);
+			}
+			if (newRenderingInformation != null) {
+				msgs = ((InternalEObject) newRenderingInformation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.HEADER__RENDERING_INFORMATION, null, msgs);
+			}
 			msgs = basicSetRenderingInformation(newRenderingInformation, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.HEADER__RENDERING_INFORMATION, newRenderingInformation,
+				newRenderingInformation));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.HEADER__RENDERING_INFORMATION, newRenderingInformation, newRenderingInformation));
 	}
 
 	/**
@@ -226,8 +245,13 @@ public class HeaderImpl extends EObjectImpl implements Header {
 		Legalese oldLegalese = legalese;
 		legalese = newLegalese;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.HEADER__LEGALESE, oldLegalese, newLegalese);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.HEADER__LEGALESE, oldLegalese, newLegalese);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -240,15 +264,22 @@ public class HeaderImpl extends EObjectImpl implements Header {
 	public void setLegalese(Legalese newLegalese) {
 		if (newLegalese != legalese) {
 			NotificationChain msgs = null;
-			if (legalese != null)
-				msgs = ((InternalEObject)legalese).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.HEADER__LEGALESE, null, msgs);
-			if (newLegalese != null)
-				msgs = ((InternalEObject)newLegalese).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.HEADER__LEGALESE, null, msgs);
+			if (legalese != null) {
+				msgs = ((InternalEObject) legalese).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.HEADER__LEGALESE, null, msgs);
+			}
+			if (newLegalese != null) {
+				msgs = ((InternalEObject) newLegalese).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.HEADER__LEGALESE, null, msgs);
+			}
 			msgs = basicSetLegalese(newLegalese, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.HEADER__LEGALESE, newLegalese, newLegalese));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.HEADER__LEGALESE, newLegalese, newLegalese));
 	}
 
 	/**
@@ -258,7 +289,8 @@ public class HeaderImpl extends EObjectImpl implements Header {
 	 */
 	public EList<ResponsibleGroup> getResponsibleGroup() {
 		if (responsibleGroup == null) {
-			responsibleGroup = new EObjectContainmentEList<ResponsibleGroup>(ResponsibleGroup.class, this, Mif2Package.HEADER__RESPONSIBLE_GROUP);
+			responsibleGroup = new EObjectContainmentEList<ResponsibleGroup>(
+				ResponsibleGroup.class, this, Mif2Package.HEADER__RESPONSIBLE_GROUP);
 		}
 		return responsibleGroup;
 	}
@@ -270,7 +302,8 @@ public class HeaderImpl extends EObjectImpl implements Header {
 	 */
 	public EList<Contributor> getContributor() {
 		if (contributor == null) {
-			contributor = new EObjectContainmentEList<Contributor>(Contributor.class, this, Mif2Package.HEADER__CONTRIBUTOR);
+			contributor = new EObjectContainmentEList<Contributor>(
+				Contributor.class, this, Mif2Package.HEADER__CONTRIBUTOR);
 		}
 		return contributor;
 	}
@@ -305,8 +338,13 @@ public class HeaderImpl extends EObjectImpl implements Header {
 		ApprovalInfo oldApprovalInfo = approvalInfo;
 		approvalInfo = newApprovalInfo;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.HEADER__APPROVAL_INFO, oldApprovalInfo, newApprovalInfo);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.HEADER__APPROVAL_INFO, oldApprovalInfo, newApprovalInfo);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -319,15 +357,22 @@ public class HeaderImpl extends EObjectImpl implements Header {
 	public void setApprovalInfo(ApprovalInfo newApprovalInfo) {
 		if (newApprovalInfo != approvalInfo) {
 			NotificationChain msgs = null;
-			if (approvalInfo != null)
-				msgs = ((InternalEObject)approvalInfo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.HEADER__APPROVAL_INFO, null, msgs);
-			if (newApprovalInfo != null)
-				msgs = ((InternalEObject)newApprovalInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.HEADER__APPROVAL_INFO, null, msgs);
+			if (approvalInfo != null) {
+				msgs = ((InternalEObject) approvalInfo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.HEADER__APPROVAL_INFO, null, msgs);
+			}
+			if (newApprovalInfo != null) {
+				msgs = ((InternalEObject) newApprovalInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.HEADER__APPROVAL_INFO, null, msgs);
+			}
 			msgs = basicSetApprovalInfo(newApprovalInfo, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.HEADER__APPROVAL_INFO, newApprovalInfo, newApprovalInfo));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.HEADER__APPROVAL_INFO, newApprovalInfo, newApprovalInfo));
 	}
 
 	/**
@@ -368,8 +413,10 @@ public class HeaderImpl extends EObjectImpl implements Header {
 	public void setPrimaryRepository(String newPrimaryRepository) {
 		String oldPrimaryRepository = primaryRepository;
 		primaryRepository = newPrimaryRepository;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.HEADER__PRIMARY_REPOSITORY, oldPrimaryRepository, primaryRepository));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.HEADER__PRIMARY_REPOSITORY, oldPrimaryRepository, primaryRepository));
+		}
 	}
 
 	/**
@@ -385,15 +432,15 @@ public class HeaderImpl extends EObjectImpl implements Header {
 			case Mif2Package.HEADER__LEGALESE:
 				return basicSetLegalese(null, msgs);
 			case Mif2Package.HEADER__RESPONSIBLE_GROUP:
-				return ((InternalEList<?>)getResponsibleGroup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getResponsibleGroup()).basicRemove(otherEnd, msgs);
 			case Mif2Package.HEADER__CONTRIBUTOR:
-				return ((InternalEList<?>)getContributor()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getContributor()).basicRemove(otherEnd, msgs);
 			case Mif2Package.HEADER__APPROVAL_INFO:
 				return basicSetApprovalInfo(null, msgs);
 			case Mif2Package.HEADER__CONTEXT:
-				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getContext()).basicRemove(otherEnd, msgs);
 			case Mif2Package.HEADER__REALM_NAMESPACE:
-				return ((InternalEList<?>)getRealmNamespace()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmNamespace()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -419,8 +466,10 @@ public class HeaderImpl extends EObjectImpl implements Header {
 			case Mif2Package.HEADER__APPROVAL_INFO:
 				return getApprovalInfo();
 			case Mif2Package.HEADER__CONTEXT:
-				if (coreType) return getContext();
-				return ((FeatureMap.Internal)getContext()).getWrapper();
+				if (coreType) {
+					return getContext();
+				}
+				return ((FeatureMap.Internal) getContext()).getWrapper();
 			case Mif2Package.HEADER__REALM_NAMESPACE:
 				return getRealmNamespace();
 			case Mif2Package.HEADER__PRIMARY_REPOSITORY:
@@ -439,35 +488,35 @@ public class HeaderImpl extends EObjectImpl implements Header {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.HEADER__RENDERING_INFORMATION:
-				setRenderingInformation((RenderingInformation)newValue);
+				setRenderingInformation((RenderingInformation) newValue);
 				return;
 			case Mif2Package.HEADER__LEGALESE:
-				setLegalese((Legalese)newValue);
+				setLegalese((Legalese) newValue);
 				return;
 			case Mif2Package.HEADER__RESPONSIBLE_GROUP:
 				getResponsibleGroup().clear();
-				getResponsibleGroup().addAll((Collection<? extends ResponsibleGroup>)newValue);
+				getResponsibleGroup().addAll((Collection<? extends ResponsibleGroup>) newValue);
 				return;
 			case Mif2Package.HEADER__CONTRIBUTOR:
 				getContributor().clear();
-				getContributor().addAll((Collection<? extends Contributor>)newValue);
+				getContributor().addAll((Collection<? extends Contributor>) newValue);
 				return;
 			case Mif2Package.HEADER__SUBJECT:
 				getSubject().clear();
-				getSubject().addAll((Collection<? extends String>)newValue);
+				getSubject().addAll((Collection<? extends String>) newValue);
 				return;
 			case Mif2Package.HEADER__APPROVAL_INFO:
-				setApprovalInfo((ApprovalInfo)newValue);
+				setApprovalInfo((ApprovalInfo) newValue);
 				return;
 			case Mif2Package.HEADER__CONTEXT:
-				((FeatureMap.Internal)getContext()).set(newValue);
+				((FeatureMap.Internal) getContext()).set(newValue);
 				return;
 			case Mif2Package.HEADER__REALM_NAMESPACE:
 				getRealmNamespace().clear();
-				getRealmNamespace().addAll((Collection<? extends RealmElement>)newValue);
+				getRealmNamespace().addAll((Collection<? extends RealmElement>) newValue);
 				return;
 			case Mif2Package.HEADER__PRIMARY_REPOSITORY:
-				setPrimaryRepository((String)newValue);
+				setPrimaryRepository((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -482,10 +531,10 @@ public class HeaderImpl extends EObjectImpl implements Header {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.HEADER__RENDERING_INFORMATION:
-				setRenderingInformation((RenderingInformation)null);
+				setRenderingInformation((RenderingInformation) null);
 				return;
 			case Mif2Package.HEADER__LEGALESE:
-				setLegalese((Legalese)null);
+				setLegalese((Legalese) null);
 				return;
 			case Mif2Package.HEADER__RESPONSIBLE_GROUP:
 				getResponsibleGroup().clear();
@@ -497,7 +546,7 @@ public class HeaderImpl extends EObjectImpl implements Header {
 				getSubject().clear();
 				return;
 			case Mif2Package.HEADER__APPROVAL_INFO:
-				setApprovalInfo((ApprovalInfo)null);
+				setApprovalInfo((ApprovalInfo) null);
 				return;
 			case Mif2Package.HEADER__CONTEXT:
 				getContext().clear();
@@ -537,7 +586,9 @@ public class HeaderImpl extends EObjectImpl implements Header {
 			case Mif2Package.HEADER__REALM_NAMESPACE:
 				return !getRealmNamespace().isEmpty();
 			case Mif2Package.HEADER__PRIMARY_REPOSITORY:
-				return PRIMARY_REPOSITORY_EDEFAULT == null ? primaryRepository != null : !PRIMARY_REPOSITORY_EDEFAULT.equals(primaryRepository);
+				return PRIMARY_REPOSITORY_EDEFAULT == null
+						? primaryRepository != null
+						: !PRIMARY_REPOSITORY_EDEFAULT.equals(primaryRepository);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -549,7 +600,9 @@ public class HeaderImpl extends EObjectImpl implements Header {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (subject: ");
@@ -562,4 +615,4 @@ public class HeaderImpl extends EObjectImpl implements Header {
 		return result.toString();
 	}
 
-} //HeaderImpl
+} // HeaderImpl

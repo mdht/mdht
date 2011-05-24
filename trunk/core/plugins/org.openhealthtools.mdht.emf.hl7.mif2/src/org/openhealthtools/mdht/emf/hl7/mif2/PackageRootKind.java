@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -104,12 +108,7 @@ public enum PackageRootKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final PackageRootKind[] VALUES_ARRAY =
-		new PackageRootKind[] {
-			DEFN,
-			BAL,
-			PUB,
-		};
+	private static final PackageRootKind[] VALUES_ARRAY = new PackageRootKind[] { DEFN, BAL, PUB, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Package Root Kind</b></em>' enumerators.
@@ -159,9 +158,12 @@ public enum PackageRootKind implements Enumerator {
 	 */
 	public static PackageRootKind get(int value) {
 		switch (value) {
-			case DEFN_VALUE: return DEFN;
-			case BAL_VALUE: return BAL;
-			case PUB_VALUE: return PUB;
+			case DEFN_VALUE:
+				return DEFN;
+			case BAL_VALUE:
+				return BAL;
+			case PUB_VALUE:
+				return PUB;
 		}
 		return null;
 	}
@@ -205,7 +207,7 @@ public enum PackageRootKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -214,7 +216,7 @@ public enum PackageRootKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -223,7 +225,7 @@ public enum PackageRootKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -236,5 +238,5 @@ public enum PackageRootKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //PackageRootKind
+
+} // PackageRootKind

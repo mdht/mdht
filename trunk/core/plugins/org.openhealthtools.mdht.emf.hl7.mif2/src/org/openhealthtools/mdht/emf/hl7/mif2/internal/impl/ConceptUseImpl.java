@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -95,11 +99,15 @@ public class ConceptUseImpl extends EObjectImpl implements ConceptUse {
 	 */
 	public void setValue(ConceptUseKind newValue) {
 		ConceptUseKind oldValue = value;
-		value = newValue == null ? VALUE_EDEFAULT : newValue;
+		value = newValue == null
+				? VALUE_EDEFAULT
+				: newValue;
 		boolean oldValueESet = valueESet;
 		valueESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT_USE__VALUE, oldValue, value, !oldValueESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONCEPT_USE__VALUE, oldValue, value, !oldValueESet));
+		}
 	}
 
 	/**
@@ -112,8 +120,10 @@ public class ConceptUseImpl extends EObjectImpl implements ConceptUse {
 		boolean oldValueESet = valueESet;
 		value = VALUE_EDEFAULT;
 		valueESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CONCEPT_USE__VALUE, oldValue, VALUE_EDEFAULT, oldValueESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CONCEPT_USE__VALUE, oldValue, VALUE_EDEFAULT, oldValueESet));
+		}
 	}
 
 	/**
@@ -148,7 +158,7 @@ public class ConceptUseImpl extends EObjectImpl implements ConceptUse {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CONCEPT_USE__VALUE:
-				setValue((ConceptUseKind)newValue);
+				setValue((ConceptUseKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -190,13 +200,19 @@ public class ConceptUseImpl extends EObjectImpl implements ConceptUse {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");
-		if (valueESet) result.append(value); else result.append("<unset>");
+		if (valueESet) {
+			result.append(value);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //ConceptUseImpl
+} // ConceptUseImpl

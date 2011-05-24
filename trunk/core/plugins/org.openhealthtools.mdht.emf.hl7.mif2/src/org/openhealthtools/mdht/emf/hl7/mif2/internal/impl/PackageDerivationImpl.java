@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -79,8 +83,14 @@ public class PackageDerivationImpl extends DerivationImpl implements PackageDeri
 		PackageRef oldTargetPackage = targetPackage;
 		targetPackage = newTargetPackage;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_DERIVATION__TARGET_PACKAGE, oldTargetPackage, newTargetPackage);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE_DERIVATION__TARGET_PACKAGE, oldTargetPackage,
+				newTargetPackage);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -93,15 +103,23 @@ public class PackageDerivationImpl extends DerivationImpl implements PackageDeri
 	public void setTargetPackage(PackageRef newTargetPackage) {
 		if (newTargetPackage != targetPackage) {
 			NotificationChain msgs = null;
-			if (targetPackage != null)
-				msgs = ((InternalEObject)targetPackage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.PACKAGE_DERIVATION__TARGET_PACKAGE, null, msgs);
-			if (newTargetPackage != null)
-				msgs = ((InternalEObject)newTargetPackage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.PACKAGE_DERIVATION__TARGET_PACKAGE, null, msgs);
+			if (targetPackage != null) {
+				msgs = ((InternalEObject) targetPackage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.PACKAGE_DERIVATION__TARGET_PACKAGE, null, msgs);
+			}
+			if (newTargetPackage != null) {
+				msgs = ((InternalEObject) newTargetPackage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.PACKAGE_DERIVATION__TARGET_PACKAGE, null, msgs);
+			}
 			msgs = basicSetTargetPackage(newTargetPackage, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE_DERIVATION__TARGET_PACKAGE, newTargetPackage,
+				newTargetPackage));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_DERIVATION__TARGET_PACKAGE, newTargetPackage, newTargetPackage));
 	}
 
 	/**
@@ -141,7 +159,7 @@ public class PackageDerivationImpl extends DerivationImpl implements PackageDeri
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.PACKAGE_DERIVATION__TARGET_PACKAGE:
-				setTargetPackage((PackageRef)newValue);
+				setTargetPackage((PackageRef) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -156,7 +174,7 @@ public class PackageDerivationImpl extends DerivationImpl implements PackageDeri
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.PACKAGE_DERIVATION__TARGET_PACKAGE:
-				setTargetPackage((PackageRef)null);
+				setTargetPackage((PackageRef) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -176,4 +194,4 @@ public class PackageDerivationImpl extends DerivationImpl implements PackageDeri
 		return super.eIsSet(featureID);
 	}
 
-} //PackageDerivationImpl
+} // PackageDerivationImpl

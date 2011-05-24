@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -128,13 +132,8 @@ public enum VocabularyModelDefinitionKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final VocabularyModelDefinitionKind[] VALUES_ARRAY =
-		new VocabularyModelDefinitionKind[] {
-			COMPLETE,
-			PARTIAL_VALIDATION,
-			PARTIAL_PUBLISHING,
-			PARTIAL_IMPLEMENTATION,
-		};
+	private static final VocabularyModelDefinitionKind[] VALUES_ARRAY = new VocabularyModelDefinitionKind[] {
+			COMPLETE, PARTIAL_VALIDATION, PARTIAL_PUBLISHING, PARTIAL_IMPLEMENTATION, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Vocabulary Model Definition Kind</b></em>' enumerators.
@@ -184,10 +183,14 @@ public enum VocabularyModelDefinitionKind implements Enumerator {
 	 */
 	public static VocabularyModelDefinitionKind get(int value) {
 		switch (value) {
-			case COMPLETE_VALUE: return COMPLETE;
-			case PARTIAL_VALIDATION_VALUE: return PARTIAL_VALIDATION;
-			case PARTIAL_PUBLISHING_VALUE: return PARTIAL_PUBLISHING;
-			case PARTIAL_IMPLEMENTATION_VALUE: return PARTIAL_IMPLEMENTATION;
+			case COMPLETE_VALUE:
+				return COMPLETE;
+			case PARTIAL_VALIDATION_VALUE:
+				return PARTIAL_VALIDATION;
+			case PARTIAL_PUBLISHING_VALUE:
+				return PARTIAL_PUBLISHING;
+			case PARTIAL_IMPLEMENTATION_VALUE:
+				return PARTIAL_IMPLEMENTATION;
 		}
 		return null;
 	}
@@ -231,7 +234,7 @@ public enum VocabularyModelDefinitionKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -240,7 +243,7 @@ public enum VocabularyModelDefinitionKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -249,7 +252,7 @@ public enum VocabularyModelDefinitionKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -262,5 +265,5 @@ public enum VocabularyModelDefinitionKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //VocabularyModelDefinitionKind
+
+} // VocabularyModelDefinitionKind

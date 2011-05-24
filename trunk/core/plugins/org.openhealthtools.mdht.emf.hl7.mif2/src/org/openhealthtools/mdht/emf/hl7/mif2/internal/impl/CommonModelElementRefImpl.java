@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -97,9 +101,9 @@ public class CommonModelElementRefImpl extends CommonModelElementRefBaseImpl imp
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF__GROUP:
-				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getGroup()).basicRemove(otherEnd, msgs);
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF__ARGUMENT:
-				return ((InternalEList<?>)getArgument()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getArgument()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -113,8 +117,10 @@ public class CommonModelElementRefImpl extends CommonModelElementRefBaseImpl imp
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF__GROUP:
-				if (coreType) return getGroup();
-				return ((FeatureMap.Internal)getGroup()).getWrapper();
+				if (coreType) {
+					return getGroup();
+				}
+				return ((FeatureMap.Internal) getGroup()).getWrapper();
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF__ARGUMENT:
 				return getArgument();
 		}
@@ -131,11 +137,11 @@ public class CommonModelElementRefImpl extends CommonModelElementRefBaseImpl imp
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF__GROUP:
-				((FeatureMap.Internal)getGroup()).set(newValue);
+				((FeatureMap.Internal) getGroup()).set(newValue);
 				return;
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF__ARGUMENT:
 				getArgument().clear();
-				getArgument().addAll((Collection<? extends ClassBindingArgument>)newValue);
+				getArgument().addAll((Collection<? extends ClassBindingArgument>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -182,7 +188,9 @@ public class CommonModelElementRefImpl extends CommonModelElementRefBaseImpl imp
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (group: ");
@@ -191,4 +199,4 @@ public class CommonModelElementRefImpl extends CommonModelElementRefBaseImpl imp
 		return result.toString();
 	}
 
-} //CommonModelElementRefImpl
+} // CommonModelElementRefImpl

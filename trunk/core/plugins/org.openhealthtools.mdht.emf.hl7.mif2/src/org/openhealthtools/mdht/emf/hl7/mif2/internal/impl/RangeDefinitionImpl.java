@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigDecimal;
@@ -171,8 +175,11 @@ public class RangeDefinitionImpl extends EObjectImpl implements RangeDefinition 
 		highClosed = newHighClosed;
 		boolean oldHighClosedESet = highClosedESet;
 		highClosedESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.RANGE_DEFINITION__HIGH_CLOSED, oldHighClosed, highClosed, !oldHighClosedESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RANGE_DEFINITION__HIGH_CLOSED, oldHighClosed, highClosed,
+				!oldHighClosedESet));
+		}
 	}
 
 	/**
@@ -185,8 +192,11 @@ public class RangeDefinitionImpl extends EObjectImpl implements RangeDefinition 
 		boolean oldHighClosedESet = highClosedESet;
 		highClosed = HIGH_CLOSED_EDEFAULT;
 		highClosedESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.RANGE_DEFINITION__HIGH_CLOSED, oldHighClosed, HIGH_CLOSED_EDEFAULT, oldHighClosedESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.RANGE_DEFINITION__HIGH_CLOSED, oldHighClosed,
+				HIGH_CLOSED_EDEFAULT, oldHighClosedESet));
+		}
 	}
 
 	/**
@@ -215,8 +225,10 @@ public class RangeDefinitionImpl extends EObjectImpl implements RangeDefinition 
 	public void setHighValue(BigDecimal newHighValue) {
 		BigDecimal oldHighValue = highValue;
 		highValue = newHighValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.RANGE_DEFINITION__HIGH_VALUE, oldHighValue, highValue));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RANGE_DEFINITION__HIGH_VALUE, oldHighValue, highValue));
+		}
 	}
 
 	/**
@@ -238,8 +250,11 @@ public class RangeDefinitionImpl extends EObjectImpl implements RangeDefinition 
 		lowClosed = newLowClosed;
 		boolean oldLowClosedESet = lowClosedESet;
 		lowClosedESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.RANGE_DEFINITION__LOW_CLOSED, oldLowClosed, lowClosed, !oldLowClosedESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RANGE_DEFINITION__LOW_CLOSED, oldLowClosed, lowClosed,
+				!oldLowClosedESet));
+		}
 	}
 
 	/**
@@ -252,8 +267,11 @@ public class RangeDefinitionImpl extends EObjectImpl implements RangeDefinition 
 		boolean oldLowClosedESet = lowClosedESet;
 		lowClosed = LOW_CLOSED_EDEFAULT;
 		lowClosedESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.RANGE_DEFINITION__LOW_CLOSED, oldLowClosed, LOW_CLOSED_EDEFAULT, oldLowClosedESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.RANGE_DEFINITION__LOW_CLOSED, oldLowClosed, LOW_CLOSED_EDEFAULT,
+				oldLowClosedESet));
+		}
 	}
 
 	/**
@@ -282,8 +300,10 @@ public class RangeDefinitionImpl extends EObjectImpl implements RangeDefinition 
 	public void setLowValue(BigDecimal newLowValue) {
 		BigDecimal oldLowValue = lowValue;
 		lowValue = newLowValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.RANGE_DEFINITION__LOW_VALUE, oldLowValue, lowValue));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RANGE_DEFINITION__LOW_VALUE, oldLowValue, lowValue));
+		}
 	}
 
 	/**
@@ -295,11 +315,15 @@ public class RangeDefinitionImpl extends EObjectImpl implements RangeDefinition 
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mif2Package.RANGE_DEFINITION__HIGH_CLOSED:
-				return isHighClosed() ? Boolean.TRUE : Boolean.FALSE;
+				return isHighClosed()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.RANGE_DEFINITION__HIGH_VALUE:
 				return getHighValue();
 			case Mif2Package.RANGE_DEFINITION__LOW_CLOSED:
-				return isLowClosed() ? Boolean.TRUE : Boolean.FALSE;
+				return isLowClosed()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.RANGE_DEFINITION__LOW_VALUE:
 				return getLowValue();
 		}
@@ -315,16 +339,16 @@ public class RangeDefinitionImpl extends EObjectImpl implements RangeDefinition 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.RANGE_DEFINITION__HIGH_CLOSED:
-				setHighClosed(((Boolean)newValue).booleanValue());
+				setHighClosed(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.RANGE_DEFINITION__HIGH_VALUE:
-				setHighValue((BigDecimal)newValue);
+				setHighValue((BigDecimal) newValue);
 				return;
 			case Mif2Package.RANGE_DEFINITION__LOW_CLOSED:
-				setLowClosed(((Boolean)newValue).booleanValue());
+				setLowClosed(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.RANGE_DEFINITION__LOW_VALUE:
-				setLowValue((BigDecimal)newValue);
+				setLowValue((BigDecimal) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -365,11 +389,15 @@ public class RangeDefinitionImpl extends EObjectImpl implements RangeDefinition 
 			case Mif2Package.RANGE_DEFINITION__HIGH_CLOSED:
 				return isSetHighClosed();
 			case Mif2Package.RANGE_DEFINITION__HIGH_VALUE:
-				return HIGH_VALUE_EDEFAULT == null ? highValue != null : !HIGH_VALUE_EDEFAULT.equals(highValue);
+				return HIGH_VALUE_EDEFAULT == null
+						? highValue != null
+						: !HIGH_VALUE_EDEFAULT.equals(highValue);
 			case Mif2Package.RANGE_DEFINITION__LOW_CLOSED:
 				return isSetLowClosed();
 			case Mif2Package.RANGE_DEFINITION__LOW_VALUE:
-				return LOW_VALUE_EDEFAULT == null ? lowValue != null : !LOW_VALUE_EDEFAULT.equals(lowValue);
+				return LOW_VALUE_EDEFAULT == null
+						? lowValue != null
+						: !LOW_VALUE_EDEFAULT.equals(lowValue);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -381,19 +409,29 @@ public class RangeDefinitionImpl extends EObjectImpl implements RangeDefinition 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (highClosed: ");
-		if (highClosedESet) result.append(highClosed); else result.append("<unset>");
+		if (highClosedESet) {
+			result.append(highClosed);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", highValue: ");
 		result.append(highValue);
 		result.append(", lowClosed: ");
-		if (lowClosedESet) result.append(lowClosed); else result.append("<unset>");
+		if (lowClosedESet) {
+			result.append(lowClosed);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", lowValue: ");
 		result.append(lowValue);
 		result.append(')');
 		return result.toString();
 	}
 
-} //RangeDefinitionImpl
+} // RangeDefinitionImpl

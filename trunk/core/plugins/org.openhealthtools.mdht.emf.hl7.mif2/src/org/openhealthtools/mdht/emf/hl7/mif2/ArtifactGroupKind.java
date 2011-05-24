@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -263,7 +267,8 @@ public enum ArtifactGroupKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	IMPLEMENTATION_TECHNOLOGY_SPECIFICATIONS(23, "ImplementationTechnologySpecifications", "ImplementationTechnologySpecifications");
+	IMPLEMENTATION_TECHNOLOGY_SPECIFICATIONS(23, "ImplementationTechnologySpecifications",
+			"ImplementationTechnologySpecifications");
 
 	/**
 	 * The '<em><b>Footnotes</b></em>' literal value.
@@ -607,33 +612,11 @@ public enum ArtifactGroupKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ArtifactGroupKind[] VALUES_ARRAY =
-		new ArtifactGroupKind[] {
-			FOOTNOTES,
-			PACKAGES,
-			HEADER,
-			ANNOTATIONS,
-			HISTORY,
-			DERIVATION,
-			PROPERTIES,
-			STATIC_MODELS,
-			SUBJECT_AREAS,
-			CLASSES,
-			STATE_ENGINES,
-			STATES,
-			STATE_TRANSITIONS,
-			ASSOCIATIONS,
-			ATTRIBUTES,
-			TRIGGER_EVENTS,
-			APPLICATION_ROLES,
-			INTERACTIONS,
-			RECEIVER_RESPONSIBILITIES,
-			CONCEPT_DOMAINS,
-			VOCABULARY_CODES,
-			TEMPLATES,
-			COMMUNICATION_PROTOCOLS,
-			IMPLEMENTATION_TECHNOLOGY_SPECIFICATIONS,
-		};
+	private static final ArtifactGroupKind[] VALUES_ARRAY = new ArtifactGroupKind[] {
+			FOOTNOTES, PACKAGES, HEADER, ANNOTATIONS, HISTORY, DERIVATION, PROPERTIES, STATIC_MODELS, SUBJECT_AREAS,
+			CLASSES, STATE_ENGINES, STATES, STATE_TRANSITIONS, ASSOCIATIONS, ATTRIBUTES, TRIGGER_EVENTS,
+			APPLICATION_ROLES, INTERACTIONS, RECEIVER_RESPONSIBILITIES, CONCEPT_DOMAINS, VOCABULARY_CODES, TEMPLATES,
+			COMMUNICATION_PROTOCOLS, IMPLEMENTATION_TECHNOLOGY_SPECIFICATIONS, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Artifact Group Kind</b></em>' enumerators.
@@ -683,30 +666,54 @@ public enum ArtifactGroupKind implements Enumerator {
 	 */
 	public static ArtifactGroupKind get(int value) {
 		switch (value) {
-			case FOOTNOTES_VALUE: return FOOTNOTES;
-			case PACKAGES_VALUE: return PACKAGES;
-			case HEADER_VALUE: return HEADER;
-			case ANNOTATIONS_VALUE: return ANNOTATIONS;
-			case HISTORY_VALUE: return HISTORY;
-			case DERIVATION_VALUE: return DERIVATION;
-			case PROPERTIES_VALUE: return PROPERTIES;
-			case STATIC_MODELS_VALUE: return STATIC_MODELS;
-			case SUBJECT_AREAS_VALUE: return SUBJECT_AREAS;
-			case CLASSES_VALUE: return CLASSES;
-			case STATE_ENGINES_VALUE: return STATE_ENGINES;
-			case STATES_VALUE: return STATES;
-			case STATE_TRANSITIONS_VALUE: return STATE_TRANSITIONS;
-			case ASSOCIATIONS_VALUE: return ASSOCIATIONS;
-			case ATTRIBUTES_VALUE: return ATTRIBUTES;
-			case TRIGGER_EVENTS_VALUE: return TRIGGER_EVENTS;
-			case APPLICATION_ROLES_VALUE: return APPLICATION_ROLES;
-			case INTERACTIONS_VALUE: return INTERACTIONS;
-			case RECEIVER_RESPONSIBILITIES_VALUE: return RECEIVER_RESPONSIBILITIES;
-			case CONCEPT_DOMAINS_VALUE: return CONCEPT_DOMAINS;
-			case VOCABULARY_CODES_VALUE: return VOCABULARY_CODES;
-			case TEMPLATES_VALUE: return TEMPLATES;
-			case COMMUNICATION_PROTOCOLS_VALUE: return COMMUNICATION_PROTOCOLS;
-			case IMPLEMENTATION_TECHNOLOGY_SPECIFICATIONS_VALUE: return IMPLEMENTATION_TECHNOLOGY_SPECIFICATIONS;
+			case FOOTNOTES_VALUE:
+				return FOOTNOTES;
+			case PACKAGES_VALUE:
+				return PACKAGES;
+			case HEADER_VALUE:
+				return HEADER;
+			case ANNOTATIONS_VALUE:
+				return ANNOTATIONS;
+			case HISTORY_VALUE:
+				return HISTORY;
+			case DERIVATION_VALUE:
+				return DERIVATION;
+			case PROPERTIES_VALUE:
+				return PROPERTIES;
+			case STATIC_MODELS_VALUE:
+				return STATIC_MODELS;
+			case SUBJECT_AREAS_VALUE:
+				return SUBJECT_AREAS;
+			case CLASSES_VALUE:
+				return CLASSES;
+			case STATE_ENGINES_VALUE:
+				return STATE_ENGINES;
+			case STATES_VALUE:
+				return STATES;
+			case STATE_TRANSITIONS_VALUE:
+				return STATE_TRANSITIONS;
+			case ASSOCIATIONS_VALUE:
+				return ASSOCIATIONS;
+			case ATTRIBUTES_VALUE:
+				return ATTRIBUTES;
+			case TRIGGER_EVENTS_VALUE:
+				return TRIGGER_EVENTS;
+			case APPLICATION_ROLES_VALUE:
+				return APPLICATION_ROLES;
+			case INTERACTIONS_VALUE:
+				return INTERACTIONS;
+			case RECEIVER_RESPONSIBILITIES_VALUE:
+				return RECEIVER_RESPONSIBILITIES;
+			case CONCEPT_DOMAINS_VALUE:
+				return CONCEPT_DOMAINS;
+			case VOCABULARY_CODES_VALUE:
+				return VOCABULARY_CODES;
+			case TEMPLATES_VALUE:
+				return TEMPLATES;
+			case COMMUNICATION_PROTOCOLS_VALUE:
+				return COMMUNICATION_PROTOCOLS;
+			case IMPLEMENTATION_TECHNOLOGY_SPECIFICATIONS_VALUE:
+				return IMPLEMENTATION_TECHNOLOGY_SPECIFICATIONS;
 		}
 		return null;
 	}
@@ -750,7 +757,7 @@ public enum ArtifactGroupKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -759,7 +766,7 @@ public enum ArtifactGroupKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -768,7 +775,7 @@ public enum ArtifactGroupKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -781,5 +788,5 @@ public enum ArtifactGroupKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //ArtifactGroupKind
+
+} // ArtifactGroupKind

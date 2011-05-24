@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -192,7 +196,8 @@ public class ValueSetImpl extends ModelElementImpl implements ValueSet {
 	 */
 	public EList<BusinessName> getBusinessName() {
 		if (businessName == null) {
-			businessName = new EObjectContainmentEList<BusinessName>(BusinessName.class, this, Mif2Package.VALUE_SET__BUSINESS_NAME);
+			businessName = new EObjectContainmentEList<BusinessName>(
+				BusinessName.class, this, Mif2Package.VALUE_SET__BUSINESS_NAME);
 		}
 		return businessName;
 	}
@@ -215,8 +220,13 @@ public class ValueSetImpl extends ModelElementImpl implements ValueSet {
 		ValueSetAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.VALUE_SET__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VALUE_SET__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -229,15 +239,22 @@ public class ValueSetImpl extends ModelElementImpl implements ValueSet {
 	public void setAnnotations(ValueSetAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VALUE_SET__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VALUE_SET__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VALUE_SET__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VALUE_SET__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VALUE_SET__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VALUE_SET__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -247,7 +264,8 @@ public class ValueSetImpl extends ModelElementImpl implements ValueSet {
 	 */
 	public EList<ValueSetVersion> getVersion() {
 		if (version == null) {
-			version = new EObjectContainmentEList<ValueSetVersion>(ValueSetVersion.class, this, Mif2Package.VALUE_SET__VERSION);
+			version = new EObjectContainmentEList<ValueSetVersion>(
+				ValueSetVersion.class, this, Mif2Package.VALUE_SET__VERSION);
 		}
 		return version;
 	}
@@ -269,8 +287,9 @@ public class ValueSetImpl extends ModelElementImpl implements ValueSet {
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VALUE_SET__ID, oldId, id));
+		}
 	}
 
 	/**
@@ -292,8 +311,11 @@ public class ValueSetImpl extends ModelElementImpl implements ValueSet {
 		isImmutable = newIsImmutable;
 		boolean oldIsImmutableESet = isImmutableESet;
 		isImmutableESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VALUE_SET__IS_IMMUTABLE, oldIsImmutable, isImmutable, !oldIsImmutableESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VALUE_SET__IS_IMMUTABLE, oldIsImmutable, isImmutable,
+				!oldIsImmutableESet));
+		}
 	}
 
 	/**
@@ -306,8 +328,11 @@ public class ValueSetImpl extends ModelElementImpl implements ValueSet {
 		boolean oldIsImmutableESet = isImmutableESet;
 		isImmutable = IS_IMMUTABLE_EDEFAULT;
 		isImmutableESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.VALUE_SET__IS_IMMUTABLE, oldIsImmutable, IS_IMMUTABLE_EDEFAULT, oldIsImmutableESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.VALUE_SET__IS_IMMUTABLE, oldIsImmutable, IS_IMMUTABLE_EDEFAULT,
+				oldIsImmutableESet));
+		}
 	}
 
 	/**
@@ -336,8 +361,9 @@ public class ValueSetImpl extends ModelElementImpl implements ValueSet {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VALUE_SET__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -357,8 +383,9 @@ public class ValueSetImpl extends ModelElementImpl implements ValueSet {
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VALUE_SET__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -370,11 +397,11 @@ public class ValueSetImpl extends ModelElementImpl implements ValueSet {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.VALUE_SET__BUSINESS_NAME:
-				return ((InternalEList<?>)getBusinessName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBusinessName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.VALUE_SET__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 			case Mif2Package.VALUE_SET__VERSION:
-				return ((InternalEList<?>)getVersion()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getVersion()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -396,7 +423,9 @@ public class ValueSetImpl extends ModelElementImpl implements ValueSet {
 			case Mif2Package.VALUE_SET__ID:
 				return getId();
 			case Mif2Package.VALUE_SET__IS_IMMUTABLE:
-				return isIsImmutable() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsImmutable()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.VALUE_SET__NAME:
 				return getName();
 			case Mif2Package.VALUE_SET__SORT_KEY:
@@ -416,26 +445,26 @@ public class ValueSetImpl extends ModelElementImpl implements ValueSet {
 		switch (featureID) {
 			case Mif2Package.VALUE_SET__BUSINESS_NAME:
 				getBusinessName().clear();
-				getBusinessName().addAll((Collection<? extends BusinessName>)newValue);
+				getBusinessName().addAll((Collection<? extends BusinessName>) newValue);
 				return;
 			case Mif2Package.VALUE_SET__ANNOTATIONS:
-				setAnnotations((ValueSetAnnotations)newValue);
+				setAnnotations((ValueSetAnnotations) newValue);
 				return;
 			case Mif2Package.VALUE_SET__VERSION:
 				getVersion().clear();
-				getVersion().addAll((Collection<? extends ValueSetVersion>)newValue);
+				getVersion().addAll((Collection<? extends ValueSetVersion>) newValue);
 				return;
 			case Mif2Package.VALUE_SET__ID:
-				setId((String)newValue);
+				setId((String) newValue);
 				return;
 			case Mif2Package.VALUE_SET__IS_IMMUTABLE:
-				setIsImmutable(((Boolean)newValue).booleanValue());
+				setIsImmutable(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.VALUE_SET__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.VALUE_SET__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -453,7 +482,7 @@ public class ValueSetImpl extends ModelElementImpl implements ValueSet {
 				getBusinessName().clear();
 				return;
 			case Mif2Package.VALUE_SET__ANNOTATIONS:
-				setAnnotations((ValueSetAnnotations)null);
+				setAnnotations((ValueSetAnnotations) null);
 				return;
 			case Mif2Package.VALUE_SET__VERSION:
 				getVersion().clear();
@@ -489,13 +518,19 @@ public class ValueSetImpl extends ModelElementImpl implements ValueSet {
 			case Mif2Package.VALUE_SET__VERSION:
 				return version != null && !version.isEmpty();
 			case Mif2Package.VALUE_SET__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+				return ID_EDEFAULT == null
+						? id != null
+						: !ID_EDEFAULT.equals(id);
 			case Mif2Package.VALUE_SET__IS_IMMUTABLE:
 				return isSetIsImmutable();
 			case Mif2Package.VALUE_SET__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.VALUE_SET__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -507,13 +542,19 @@ public class ValueSetImpl extends ModelElementImpl implements ValueSet {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");
 		result.append(id);
 		result.append(", isImmutable: ");
-		if (isImmutableESet) result.append(isImmutable); else result.append("<unset>");
+		if (isImmutableESet) {
+			result.append(isImmutable);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", name: ");
 		result.append(name);
 		result.append(", sortKey: ");
@@ -522,4 +563,4 @@ public class ValueSetImpl extends ModelElementImpl implements ValueSet {
 		return result.toString();
 	}
 
-} //ValueSetImpl
+} // ValueSetImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -111,12 +115,19 @@ public class ConformanceTriggerEventsImpl extends PackageRefImpl implements Conf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetInternalMapping(ComplexMarkupWithLanguage newInternalMapping, NotificationChain msgs) {
+	public NotificationChain basicSetInternalMapping(ComplexMarkupWithLanguage newInternalMapping,
+			NotificationChain msgs) {
 		ComplexMarkupWithLanguage oldInternalMapping = internalMapping;
 		internalMapping = newInternalMapping;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERNAL_MAPPING, oldInternalMapping, newInternalMapping);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERNAL_MAPPING, oldInternalMapping,
+				newInternalMapping);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -129,15 +140,23 @@ public class ConformanceTriggerEventsImpl extends PackageRefImpl implements Conf
 	public void setInternalMapping(ComplexMarkupWithLanguage newInternalMapping) {
 		if (newInternalMapping != internalMapping) {
 			NotificationChain msgs = null;
-			if (internalMapping != null)
-				msgs = ((InternalEObject)internalMapping).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERNAL_MAPPING, null, msgs);
-			if (newInternalMapping != null)
-				msgs = ((InternalEObject)newInternalMapping).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERNAL_MAPPING, null, msgs);
+			if (internalMapping != null) {
+				msgs = ((InternalEObject) internalMapping).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERNAL_MAPPING, null, msgs);
+			}
+			if (newInternalMapping != null) {
+				msgs = ((InternalEObject) newInternalMapping).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERNAL_MAPPING, null, msgs);
+			}
 			msgs = basicSetInternalMapping(newInternalMapping, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERNAL_MAPPING, newInternalMapping,
+				newInternalMapping));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERNAL_MAPPING, newInternalMapping, newInternalMapping));
 	}
 
 	/**
@@ -158,8 +177,14 @@ public class ConformanceTriggerEventsImpl extends PackageRefImpl implements Conf
 		PackageRef oldInteraction = interaction;
 		interaction = newInteraction;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERACTION, oldInteraction, newInteraction);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERACTION, oldInteraction,
+				newInteraction);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -172,15 +197,23 @@ public class ConformanceTriggerEventsImpl extends PackageRefImpl implements Conf
 	public void setInteraction(PackageRef newInteraction) {
 		if (newInteraction != interaction) {
 			NotificationChain msgs = null;
-			if (interaction != null)
-				msgs = ((InternalEObject)interaction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERACTION, null, msgs);
-			if (newInteraction != null)
-				msgs = ((InternalEObject)newInteraction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERACTION, null, msgs);
+			if (interaction != null) {
+				msgs = ((InternalEObject) interaction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERACTION, null, msgs);
+			}
+			if (newInteraction != null) {
+				msgs = ((InternalEObject) newInteraction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERACTION, null, msgs);
+			}
 			msgs = basicSetInteraction(newInteraction, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERACTION, newInteraction,
+				newInteraction));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERACTION, newInteraction, newInteraction));
 	}
 
 	/**
@@ -201,8 +234,14 @@ public class ConformanceTriggerEventsImpl extends PackageRefImpl implements Conf
 		TransitionRef oldStateTransition = stateTransition;
 		stateTransition = newStateTransition;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CONFORMANCE_TRIGGER_EVENTS__STATE_TRANSITION, oldStateTransition, newStateTransition);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONFORMANCE_TRIGGER_EVENTS__STATE_TRANSITION, oldStateTransition,
+				newStateTransition);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -215,15 +254,23 @@ public class ConformanceTriggerEventsImpl extends PackageRefImpl implements Conf
 	public void setStateTransition(TransitionRef newStateTransition) {
 		if (newStateTransition != stateTransition) {
 			NotificationChain msgs = null;
-			if (stateTransition != null)
-				msgs = ((InternalEObject)stateTransition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONFORMANCE_TRIGGER_EVENTS__STATE_TRANSITION, null, msgs);
-			if (newStateTransition != null)
-				msgs = ((InternalEObject)newStateTransition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONFORMANCE_TRIGGER_EVENTS__STATE_TRANSITION, null, msgs);
+			if (stateTransition != null) {
+				msgs = ((InternalEObject) stateTransition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONFORMANCE_TRIGGER_EVENTS__STATE_TRANSITION, null, msgs);
+			}
+			if (newStateTransition != null) {
+				msgs = ((InternalEObject) newStateTransition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONFORMANCE_TRIGGER_EVENTS__STATE_TRANSITION, null, msgs);
+			}
 			msgs = basicSetStateTransition(newStateTransition, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONFORMANCE_TRIGGER_EVENTS__STATE_TRANSITION, newStateTransition,
+				newStateTransition));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONFORMANCE_TRIGGER_EVENTS__STATE_TRANSITION, newStateTransition, newStateTransition));
 	}
 
 	/**
@@ -240,12 +287,19 @@ public class ConformanceTriggerEventsImpl extends PackageRefImpl implements Conf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEnvironmentalOccurrence(EnvironmentalOccurrence newEnvironmentalOccurrence, NotificationChain msgs) {
+	public NotificationChain basicSetEnvironmentalOccurrence(EnvironmentalOccurrence newEnvironmentalOccurrence,
+			NotificationChain msgs) {
 		EnvironmentalOccurrence oldEnvironmentalOccurrence = environmentalOccurrence;
 		environmentalOccurrence = newEnvironmentalOccurrence;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CONFORMANCE_TRIGGER_EVENTS__ENVIRONMENTAL_OCCURRENCE, oldEnvironmentalOccurrence, newEnvironmentalOccurrence);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONFORMANCE_TRIGGER_EVENTS__ENVIRONMENTAL_OCCURRENCE,
+				oldEnvironmentalOccurrence, newEnvironmentalOccurrence);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -258,15 +312,23 @@ public class ConformanceTriggerEventsImpl extends PackageRefImpl implements Conf
 	public void setEnvironmentalOccurrence(EnvironmentalOccurrence newEnvironmentalOccurrence) {
 		if (newEnvironmentalOccurrence != environmentalOccurrence) {
 			NotificationChain msgs = null;
-			if (environmentalOccurrence != null)
-				msgs = ((InternalEObject)environmentalOccurrence).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONFORMANCE_TRIGGER_EVENTS__ENVIRONMENTAL_OCCURRENCE, null, msgs);
-			if (newEnvironmentalOccurrence != null)
-				msgs = ((InternalEObject)newEnvironmentalOccurrence).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONFORMANCE_TRIGGER_EVENTS__ENVIRONMENTAL_OCCURRENCE, null, msgs);
+			if (environmentalOccurrence != null) {
+				msgs = ((InternalEObject) environmentalOccurrence).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONFORMANCE_TRIGGER_EVENTS__ENVIRONMENTAL_OCCURRENCE, null, msgs);
+			}
+			if (newEnvironmentalOccurrence != null) {
+				msgs = ((InternalEObject) newEnvironmentalOccurrence).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONFORMANCE_TRIGGER_EVENTS__ENVIRONMENTAL_OCCURRENCE, null, msgs);
+			}
 			msgs = basicSetEnvironmentalOccurrence(newEnvironmentalOccurrence, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONFORMANCE_TRIGGER_EVENTS__ENVIRONMENTAL_OCCURRENCE,
+				newEnvironmentalOccurrence, newEnvironmentalOccurrence));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONFORMANCE_TRIGGER_EVENTS__ENVIRONMENTAL_OCCURRENCE, newEnvironmentalOccurrence, newEnvironmentalOccurrence));
 	}
 
 	/**
@@ -318,16 +380,16 @@ public class ConformanceTriggerEventsImpl extends PackageRefImpl implements Conf
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERNAL_MAPPING:
-				setInternalMapping((ComplexMarkupWithLanguage)newValue);
+				setInternalMapping((ComplexMarkupWithLanguage) newValue);
 				return;
 			case Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERACTION:
-				setInteraction((PackageRef)newValue);
+				setInteraction((PackageRef) newValue);
 				return;
 			case Mif2Package.CONFORMANCE_TRIGGER_EVENTS__STATE_TRANSITION:
-				setStateTransition((TransitionRef)newValue);
+				setStateTransition((TransitionRef) newValue);
 				return;
 			case Mif2Package.CONFORMANCE_TRIGGER_EVENTS__ENVIRONMENTAL_OCCURRENCE:
-				setEnvironmentalOccurrence((EnvironmentalOccurrence)newValue);
+				setEnvironmentalOccurrence((EnvironmentalOccurrence) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -342,16 +404,16 @@ public class ConformanceTriggerEventsImpl extends PackageRefImpl implements Conf
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERNAL_MAPPING:
-				setInternalMapping((ComplexMarkupWithLanguage)null);
+				setInternalMapping((ComplexMarkupWithLanguage) null);
 				return;
 			case Mif2Package.CONFORMANCE_TRIGGER_EVENTS__INTERACTION:
-				setInteraction((PackageRef)null);
+				setInteraction((PackageRef) null);
 				return;
 			case Mif2Package.CONFORMANCE_TRIGGER_EVENTS__STATE_TRANSITION:
-				setStateTransition((TransitionRef)null);
+				setStateTransition((TransitionRef) null);
 				return;
 			case Mif2Package.CONFORMANCE_TRIGGER_EVENTS__ENVIRONMENTAL_OCCURRENCE:
-				setEnvironmentalOccurrence((EnvironmentalOccurrence)null);
+				setEnvironmentalOccurrence((EnvironmentalOccurrence) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -377,4 +439,4 @@ public class ConformanceTriggerEventsImpl extends PackageRefImpl implements Conf
 		return super.eIsSet(featureID);
 	}
 
-} //ConformanceTriggerEventsImpl
+} // ConformanceTriggerEventsImpl

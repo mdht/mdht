@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -149,7 +153,8 @@ public class ImplementationConstraintsImpl extends EObjectImpl implements Implem
 	 */
 	public EList<ReleaseList> getSupportedReleases() {
 		if (supportedReleases == null) {
-			supportedReleases = new EObjectContainmentEList<ReleaseList>(ReleaseList.class, this, Mif2Package.IMPLEMENTATION_CONSTRAINTS__SUPPORTED_RELEASES);
+			supportedReleases = new EObjectContainmentEList<ReleaseList>(
+				ReleaseList.class, this, Mif2Package.IMPLEMENTATION_CONSTRAINTS__SUPPORTED_RELEASES);
 		}
 		return supportedReleases;
 	}
@@ -182,7 +187,8 @@ public class ImplementationConstraintsImpl extends EObjectImpl implements Implem
 	 */
 	public EList<PackageRef> getSupportedITS() {
 		if (supportedITS == null) {
-			supportedITS = new EObjectContainmentEList<PackageRef>(PackageRef.class, this, Mif2Package.IMPLEMENTATION_CONSTRAINTS__SUPPORTED_ITS);
+			supportedITS = new EObjectContainmentEList<PackageRef>(
+				PackageRef.class, this, Mif2Package.IMPLEMENTATION_CONSTRAINTS__SUPPORTED_ITS);
 		}
 		return supportedITS;
 	}
@@ -194,7 +200,8 @@ public class ImplementationConstraintsImpl extends EObjectImpl implements Implem
 	 */
 	public EList<DatatypeModelLibrary> getAdditionalDatatypeModel() {
 		if (additionalDatatypeModel == null) {
-			additionalDatatypeModel = new EObjectContainmentEList<DatatypeModelLibrary>(DatatypeModelLibrary.class, this, Mif2Package.IMPLEMENTATION_CONSTRAINTS__ADDITIONAL_DATATYPE_MODEL);
+			additionalDatatypeModel = new EObjectContainmentEList<DatatypeModelLibrary>(
+				DatatypeModelLibrary.class, this, Mif2Package.IMPLEMENTATION_CONSTRAINTS__ADDITIONAL_DATATYPE_MODEL);
 		}
 		return additionalDatatypeModel;
 	}
@@ -206,7 +213,8 @@ public class ImplementationConstraintsImpl extends EObjectImpl implements Implem
 	 */
 	public EList<DatatypeLimitation> getDatatypeLimitation() {
 		if (datatypeLimitation == null) {
-			datatypeLimitation = new EObjectContainmentEList<DatatypeLimitation>(DatatypeLimitation.class, this, Mif2Package.IMPLEMENTATION_CONSTRAINTS__DATATYPE_LIMITATION);
+			datatypeLimitation = new EObjectContainmentEList<DatatypeLimitation>(
+				DatatypeLimitation.class, this, Mif2Package.IMPLEMENTATION_CONSTRAINTS__DATATYPE_LIMITATION);
 		}
 		return datatypeLimitation;
 	}
@@ -218,7 +226,8 @@ public class ImplementationConstraintsImpl extends EObjectImpl implements Implem
 	 */
 	public EList<VocabularyModel> getAdditionalVocabularyModel() {
 		if (additionalVocabularyModel == null) {
-			additionalVocabularyModel = new EObjectContainmentEList<VocabularyModel>(VocabularyModel.class, this, Mif2Package.IMPLEMENTATION_CONSTRAINTS__ADDITIONAL_VOCABULARY_MODEL);
+			additionalVocabularyModel = new EObjectContainmentEList<VocabularyModel>(
+				VocabularyModel.class, this, Mif2Package.IMPLEMENTATION_CONSTRAINTS__ADDITIONAL_VOCABULARY_MODEL);
 		}
 		return additionalVocabularyModel;
 	}
@@ -230,7 +239,8 @@ public class ImplementationConstraintsImpl extends EObjectImpl implements Implem
 	 */
 	public EList<VocabularyLimitation> getVocabularyLimitation() {
 		if (vocabularyLimitation == null) {
-			vocabularyLimitation = new EObjectContainmentEList<VocabularyLimitation>(VocabularyLimitation.class, this, Mif2Package.IMPLEMENTATION_CONSTRAINTS__VOCABULARY_LIMITATION);
+			vocabularyLimitation = new EObjectContainmentEList<VocabularyLimitation>(
+				VocabularyLimitation.class, this, Mif2Package.IMPLEMENTATION_CONSTRAINTS__VOCABULARY_LIMITATION);
 		}
 		return vocabularyLimitation;
 	}
@@ -244,21 +254,21 @@ public class ImplementationConstraintsImpl extends EObjectImpl implements Implem
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__SUPPORTED_RELEASES:
-				return ((InternalEList<?>)getSupportedReleases()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSupportedReleases()).basicRemove(otherEnd, msgs);
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__CONTEXT:
-				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getContext()).basicRemove(otherEnd, msgs);
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__REALM_NAMESPACE:
-				return ((InternalEList<?>)getRealmNamespace()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmNamespace()).basicRemove(otherEnd, msgs);
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__SUPPORTED_ITS:
-				return ((InternalEList<?>)getSupportedITS()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSupportedITS()).basicRemove(otherEnd, msgs);
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__ADDITIONAL_DATATYPE_MODEL:
-				return ((InternalEList<?>)getAdditionalDatatypeModel()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAdditionalDatatypeModel()).basicRemove(otherEnd, msgs);
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__DATATYPE_LIMITATION:
-				return ((InternalEList<?>)getDatatypeLimitation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDatatypeLimitation()).basicRemove(otherEnd, msgs);
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__ADDITIONAL_VOCABULARY_MODEL:
-				return ((InternalEList<?>)getAdditionalVocabularyModel()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAdditionalVocabularyModel()).basicRemove(otherEnd, msgs);
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__VOCABULARY_LIMITATION:
-				return ((InternalEList<?>)getVocabularyLimitation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getVocabularyLimitation()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -274,8 +284,10 @@ public class ImplementationConstraintsImpl extends EObjectImpl implements Implem
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__SUPPORTED_RELEASES:
 				return getSupportedReleases();
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__CONTEXT:
-				if (coreType) return getContext();
-				return ((FeatureMap.Internal)getContext()).getWrapper();
+				if (coreType) {
+					return getContext();
+				}
+				return ((FeatureMap.Internal) getContext()).getWrapper();
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__REALM_NAMESPACE:
 				return getRealmNamespace();
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__SUPPORTED_ITS:
@@ -303,34 +315,34 @@ public class ImplementationConstraintsImpl extends EObjectImpl implements Implem
 		switch (featureID) {
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__SUPPORTED_RELEASES:
 				getSupportedReleases().clear();
-				getSupportedReleases().addAll((Collection<? extends ReleaseList>)newValue);
+				getSupportedReleases().addAll((Collection<? extends ReleaseList>) newValue);
 				return;
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__CONTEXT:
-				((FeatureMap.Internal)getContext()).set(newValue);
+				((FeatureMap.Internal) getContext()).set(newValue);
 				return;
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__REALM_NAMESPACE:
 				getRealmNamespace().clear();
-				getRealmNamespace().addAll((Collection<? extends RealmElement>)newValue);
+				getRealmNamespace().addAll((Collection<? extends RealmElement>) newValue);
 				return;
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__SUPPORTED_ITS:
 				getSupportedITS().clear();
-				getSupportedITS().addAll((Collection<? extends PackageRef>)newValue);
+				getSupportedITS().addAll((Collection<? extends PackageRef>) newValue);
 				return;
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__ADDITIONAL_DATATYPE_MODEL:
 				getAdditionalDatatypeModel().clear();
-				getAdditionalDatatypeModel().addAll((Collection<? extends DatatypeModelLibrary>)newValue);
+				getAdditionalDatatypeModel().addAll((Collection<? extends DatatypeModelLibrary>) newValue);
 				return;
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__DATATYPE_LIMITATION:
 				getDatatypeLimitation().clear();
-				getDatatypeLimitation().addAll((Collection<? extends DatatypeLimitation>)newValue);
+				getDatatypeLimitation().addAll((Collection<? extends DatatypeLimitation>) newValue);
 				return;
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__ADDITIONAL_VOCABULARY_MODEL:
 				getAdditionalVocabularyModel().clear();
-				getAdditionalVocabularyModel().addAll((Collection<? extends VocabularyModel>)newValue);
+				getAdditionalVocabularyModel().addAll((Collection<? extends VocabularyModel>) newValue);
 				return;
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS__VOCABULARY_LIMITATION:
 				getVocabularyLimitation().clear();
-				getVocabularyLimitation().addAll((Collection<? extends VocabularyLimitation>)newValue);
+				getVocabularyLimitation().addAll((Collection<? extends VocabularyLimitation>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -407,7 +419,9 @@ public class ImplementationConstraintsImpl extends EObjectImpl implements Implem
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (context: ");
@@ -416,4 +430,4 @@ public class ImplementationConstraintsImpl extends EObjectImpl implements Implem
 		return result.toString();
 	}
 
-} //ImplementationConstraintsImpl
+} // ImplementationConstraintsImpl

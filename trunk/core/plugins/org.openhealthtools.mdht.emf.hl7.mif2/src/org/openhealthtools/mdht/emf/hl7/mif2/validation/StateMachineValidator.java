@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,7 +16,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.State;
 import org.openhealthtools.mdht.emf.hl7.mif2.StateMachineAnnotations;
 import org.openhealthtools.mdht.emf.hl7.mif2.Transition;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Img;
-
 
 /**
  * A sample validator interface for {@link org.openhealthtools.mdht.emf.hl7.mif2.StateMachine}.
@@ -24,8 +27,12 @@ public interface StateMachineValidator {
 	boolean validate();
 
 	boolean validateAnnotations(StateMachineAnnotations value);
+
 	boolean validateFigure(Img value);
+
 	boolean validateSubState(EList<State> value);
+
 	boolean validateTransition(EList<Transition> value);
+
 	boolean validateStateAttributeName(String value);
 }

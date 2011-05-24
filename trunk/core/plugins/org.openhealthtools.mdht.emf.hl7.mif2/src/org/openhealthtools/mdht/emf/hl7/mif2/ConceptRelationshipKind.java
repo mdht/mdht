@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -343,22 +347,10 @@ public enum ConceptRelationshipKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ConceptRelationshipKind[] VALUES_ARRAY =
-		new ConceptRelationshipKind[] {
-			SPECIALIZES,
-			COMPONENT_OF,
-			GROUPED_BY,
-			LESS_THAN,
-			DEFINITIONALLY_QUALIFIES,
-			NON_DEFINITIONALLY_QUALIFIES,
-			GENERALIZES,
-			COMPONENT,
-			IN_GROUP,
-			GREATER_THAN,
-			DEFINITIONALLY_QUALIFIED_BY,
-			NON_DEFINITIONALLY_QUALIFIED_BY,
-			OTHER,
-		};
+	private static final ConceptRelationshipKind[] VALUES_ARRAY = new ConceptRelationshipKind[] {
+			SPECIALIZES, COMPONENT_OF, GROUPED_BY, LESS_THAN, DEFINITIONALLY_QUALIFIES, NON_DEFINITIONALLY_QUALIFIES,
+			GENERALIZES, COMPONENT, IN_GROUP, GREATER_THAN, DEFINITIONALLY_QUALIFIED_BY,
+			NON_DEFINITIONALLY_QUALIFIED_BY, OTHER, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Concept Relationship Kind</b></em>' enumerators.
@@ -408,19 +400,32 @@ public enum ConceptRelationshipKind implements Enumerator {
 	 */
 	public static ConceptRelationshipKind get(int value) {
 		switch (value) {
-			case SPECIALIZES_VALUE: return SPECIALIZES;
-			case COMPONENT_OF_VALUE: return COMPONENT_OF;
-			case GROUPED_BY_VALUE: return GROUPED_BY;
-			case LESS_THAN_VALUE: return LESS_THAN;
-			case DEFINITIONALLY_QUALIFIES_VALUE: return DEFINITIONALLY_QUALIFIES;
-			case NON_DEFINITIONALLY_QUALIFIES_VALUE: return NON_DEFINITIONALLY_QUALIFIES;
-			case GENERALIZES_VALUE: return GENERALIZES;
-			case COMPONENT_VALUE: return COMPONENT;
-			case IN_GROUP_VALUE: return IN_GROUP;
-			case GREATER_THAN_VALUE: return GREATER_THAN;
-			case DEFINITIONALLY_QUALIFIED_BY_VALUE: return DEFINITIONALLY_QUALIFIED_BY;
-			case NON_DEFINITIONALLY_QUALIFIED_BY_VALUE: return NON_DEFINITIONALLY_QUALIFIED_BY;
-			case OTHER_VALUE: return OTHER;
+			case SPECIALIZES_VALUE:
+				return SPECIALIZES;
+			case COMPONENT_OF_VALUE:
+				return COMPONENT_OF;
+			case GROUPED_BY_VALUE:
+				return GROUPED_BY;
+			case LESS_THAN_VALUE:
+				return LESS_THAN;
+			case DEFINITIONALLY_QUALIFIES_VALUE:
+				return DEFINITIONALLY_QUALIFIES;
+			case NON_DEFINITIONALLY_QUALIFIES_VALUE:
+				return NON_DEFINITIONALLY_QUALIFIES;
+			case GENERALIZES_VALUE:
+				return GENERALIZES;
+			case COMPONENT_VALUE:
+				return COMPONENT;
+			case IN_GROUP_VALUE:
+				return IN_GROUP;
+			case GREATER_THAN_VALUE:
+				return GREATER_THAN;
+			case DEFINITIONALLY_QUALIFIED_BY_VALUE:
+				return DEFINITIONALLY_QUALIFIED_BY;
+			case NON_DEFINITIONALLY_QUALIFIED_BY_VALUE:
+				return NON_DEFINITIONALLY_QUALIFIED_BY;
+			case OTHER_VALUE:
+				return OTHER;
 		}
 		return null;
 	}
@@ -464,7 +469,7 @@ public enum ConceptRelationshipKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -473,7 +478,7 @@ public enum ConceptRelationshipKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -482,7 +487,7 @@ public enum ConceptRelationshipKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -495,5 +500,5 @@ public enum ConceptRelationshipKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //ConceptRelationshipKind
+
+} // ConceptRelationshipKind

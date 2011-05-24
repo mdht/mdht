@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -86,7 +90,8 @@ public class PackageAppInfoImpl extends EObjectImpl implements PackageAppInfo {
 	 */
 	public EList<BallotComment> getBallotComment() {
 		if (ballotComment == null) {
-			ballotComment = new EObjectContainmentEList<BallotComment>(BallotComment.class, this, Mif2Package.PACKAGE_APP_INFO__BALLOT_COMMENT);
+			ballotComment = new EObjectContainmentEList<BallotComment>(
+				BallotComment.class, this, Mif2Package.PACKAGE_APP_INFO__BALLOT_COMMENT);
 		}
 		return ballotComment;
 	}
@@ -98,7 +103,8 @@ public class PackageAppInfoImpl extends EObjectImpl implements PackageAppInfo {
 	 */
 	public EList<ChangeRequest> getChangeRequest() {
 		if (changeRequest == null) {
-			changeRequest = new EObjectContainmentEList<ChangeRequest>(ChangeRequest.class, this, Mif2Package.PACKAGE_APP_INFO__CHANGE_REQUEST);
+			changeRequest = new EObjectContainmentEList<ChangeRequest>(
+				ChangeRequest.class, this, Mif2Package.PACKAGE_APP_INFO__CHANGE_REQUEST);
 		}
 		return changeRequest;
 	}
@@ -112,9 +118,9 @@ public class PackageAppInfoImpl extends EObjectImpl implements PackageAppInfo {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.PACKAGE_APP_INFO__BALLOT_COMMENT:
-				return ((InternalEList<?>)getBallotComment()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBallotComment()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_APP_INFO__CHANGE_REQUEST:
-				return ((InternalEList<?>)getChangeRequest()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getChangeRequest()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -146,11 +152,11 @@ public class PackageAppInfoImpl extends EObjectImpl implements PackageAppInfo {
 		switch (featureID) {
 			case Mif2Package.PACKAGE_APP_INFO__BALLOT_COMMENT:
 				getBallotComment().clear();
-				getBallotComment().addAll((Collection<? extends BallotComment>)newValue);
+				getBallotComment().addAll((Collection<? extends BallotComment>) newValue);
 				return;
 			case Mif2Package.PACKAGE_APP_INFO__CHANGE_REQUEST:
 				getChangeRequest().clear();
-				getChangeRequest().addAll((Collection<? extends ChangeRequest>)newValue);
+				getChangeRequest().addAll((Collection<? extends ChangeRequest>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -190,4 +196,4 @@ public class PackageAppInfoImpl extends EObjectImpl implements PackageAppInfo {
 		return super.eIsSet(featureID);
 	}
 
-} //PackageAppInfoImpl
+} // PackageAppInfoImpl

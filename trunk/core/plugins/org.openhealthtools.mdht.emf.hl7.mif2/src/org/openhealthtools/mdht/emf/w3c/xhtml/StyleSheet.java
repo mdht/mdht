@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml;
 
 import java.util.Arrays;
@@ -223,17 +227,9 @@ public enum StyleSheet implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final StyleSheet[] VALUES_ARRAY =
-		new StyleSheet[] {
-			REQUIREMENT,
-			INDENT,
-			NOTE,
-			NON_NUMBERED,
-			BACKGROUND_AQUA,
-			BACKGROUND_LIME,
-			BACKGROUND_PINK,
-			BACKGROUND_YELLOW,
-		};
+	private static final StyleSheet[] VALUES_ARRAY = new StyleSheet[] {
+			REQUIREMENT, INDENT, NOTE, NON_NUMBERED, BACKGROUND_AQUA, BACKGROUND_LIME, BACKGROUND_PINK,
+			BACKGROUND_YELLOW, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Style Sheet</b></em>' enumerators.
@@ -283,14 +279,22 @@ public enum StyleSheet implements Enumerator {
 	 */
 	public static StyleSheet get(int value) {
 		switch (value) {
-			case REQUIREMENT_VALUE: return REQUIREMENT;
-			case INDENT_VALUE: return INDENT;
-			case NOTE_VALUE: return NOTE;
-			case NON_NUMBERED_VALUE: return NON_NUMBERED;
-			case BACKGROUND_AQUA_VALUE: return BACKGROUND_AQUA;
-			case BACKGROUND_LIME_VALUE: return BACKGROUND_LIME;
-			case BACKGROUND_PINK_VALUE: return BACKGROUND_PINK;
-			case BACKGROUND_YELLOW_VALUE: return BACKGROUND_YELLOW;
+			case REQUIREMENT_VALUE:
+				return REQUIREMENT;
+			case INDENT_VALUE:
+				return INDENT;
+			case NOTE_VALUE:
+				return NOTE;
+			case NON_NUMBERED_VALUE:
+				return NON_NUMBERED;
+			case BACKGROUND_AQUA_VALUE:
+				return BACKGROUND_AQUA;
+			case BACKGROUND_LIME_VALUE:
+				return BACKGROUND_LIME;
+			case BACKGROUND_PINK_VALUE:
+				return BACKGROUND_PINK;
+			case BACKGROUND_YELLOW_VALUE:
+				return BACKGROUND_YELLOW;
 		}
 		return null;
 	}
@@ -334,7 +338,7 @@ public enum StyleSheet implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -343,7 +347,7 @@ public enum StyleSheet implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -352,7 +356,7 @@ public enum StyleSheet implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -365,5 +369,5 @@ public enum StyleSheet implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //StyleSheet
+
+} // StyleSheet

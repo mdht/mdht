@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -97,7 +101,8 @@ public class ExampleSystemImpl extends EObjectImpl implements ExampleSystem {
 	 */
 	public EList<PackageOrArtifactRef> getApplicationRole() {
 		if (applicationRole == null) {
-			applicationRole = new EObjectContainmentEList<PackageOrArtifactRef>(PackageOrArtifactRef.class, this, Mif2Package.EXAMPLE_SYSTEM__APPLICATION_ROLE);
+			applicationRole = new EObjectContainmentEList<PackageOrArtifactRef>(
+				PackageOrArtifactRef.class, this, Mif2Package.EXAMPLE_SYSTEM__APPLICATION_ROLE);
 		}
 		return applicationRole;
 	}
@@ -119,8 +124,9 @@ public class ExampleSystemImpl extends EObjectImpl implements ExampleSystem {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.EXAMPLE_SYSTEM__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -132,7 +138,7 @@ public class ExampleSystemImpl extends EObjectImpl implements ExampleSystem {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.EXAMPLE_SYSTEM__APPLICATION_ROLE:
-				return ((InternalEList<?>)getApplicationRole()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getApplicationRole()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -164,10 +170,10 @@ public class ExampleSystemImpl extends EObjectImpl implements ExampleSystem {
 		switch (featureID) {
 			case Mif2Package.EXAMPLE_SYSTEM__APPLICATION_ROLE:
 				getApplicationRole().clear();
-				getApplicationRole().addAll((Collection<? extends PackageOrArtifactRef>)newValue);
+				getApplicationRole().addAll((Collection<? extends PackageOrArtifactRef>) newValue);
 				return;
 			case Mif2Package.EXAMPLE_SYSTEM__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -202,7 +208,9 @@ public class ExampleSystemImpl extends EObjectImpl implements ExampleSystem {
 			case Mif2Package.EXAMPLE_SYSTEM__APPLICATION_ROLE:
 				return applicationRole != null && !applicationRole.isEmpty();
 			case Mif2Package.EXAMPLE_SYSTEM__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -214,7 +222,9 @@ public class ExampleSystemImpl extends EObjectImpl implements ExampleSystem {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -223,4 +233,4 @@ public class ExampleSystemImpl extends EObjectImpl implements ExampleSystem {
 		return result.toString();
 	}
 
-} //ExampleSystemImpl
+} // ExampleSystemImpl

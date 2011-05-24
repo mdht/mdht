@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -141,8 +145,14 @@ public class PublicationItemImpl extends PublicationBaseImpl implements Publicat
 		PackageOrArtifactRef oldItemReference = itemReference;
 		itemReference = newItemReference;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.PUBLICATION_ITEM__ITEM_REFERENCE, oldItemReference, newItemReference);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PUBLICATION_ITEM__ITEM_REFERENCE, oldItemReference,
+				newItemReference);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -155,15 +165,23 @@ public class PublicationItemImpl extends PublicationBaseImpl implements Publicat
 	public void setItemReference(PackageOrArtifactRef newItemReference) {
 		if (newItemReference != itemReference) {
 			NotificationChain msgs = null;
-			if (itemReference != null)
-				msgs = ((InternalEObject)itemReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.PUBLICATION_ITEM__ITEM_REFERENCE, null, msgs);
-			if (newItemReference != null)
-				msgs = ((InternalEObject)newItemReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.PUBLICATION_ITEM__ITEM_REFERENCE, null, msgs);
+			if (itemReference != null) {
+				msgs = ((InternalEObject) itemReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.PUBLICATION_ITEM__ITEM_REFERENCE, null, msgs);
+			}
+			if (newItemReference != null) {
+				msgs = ((InternalEObject) newItemReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.PUBLICATION_ITEM__ITEM_REFERENCE, null, msgs);
+			}
 			msgs = basicSetItemReference(newItemReference, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PUBLICATION_ITEM__ITEM_REFERENCE, newItemReference,
+				newItemReference));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PUBLICATION_ITEM__ITEM_REFERENCE, newItemReference, newItemReference));
 	}
 
 	/**
@@ -173,7 +191,8 @@ public class PublicationItemImpl extends PublicationBaseImpl implements Publicat
 	 */
 	public EList<ItemFilter> getFilter() {
 		if (filter == null) {
-			filter = new EObjectContainmentEList<ItemFilter>(ItemFilter.class, this, Mif2Package.PUBLICATION_ITEM__FILTER);
+			filter = new EObjectContainmentEList<ItemFilter>(
+				ItemFilter.class, this, Mif2Package.PUBLICATION_ITEM__FILTER);
 		}
 		return filter;
 	}
@@ -185,7 +204,8 @@ public class PublicationItemImpl extends PublicationBaseImpl implements Publicat
 	 */
 	public EList<ComplexMarkupWithLanguage> getFollowingText() {
 		if (followingText == null) {
-			followingText = new EObjectContainmentEList<ComplexMarkupWithLanguage>(ComplexMarkupWithLanguage.class, this, Mif2Package.PUBLICATION_ITEM__FOLLOWING_TEXT);
+			followingText = new EObjectContainmentEList<ComplexMarkupWithLanguage>(
+				ComplexMarkupWithLanguage.class, this, Mif2Package.PUBLICATION_ITEM__FOLLOWING_TEXT);
 		}
 		return followingText;
 	}
@@ -206,11 +226,16 @@ public class PublicationItemImpl extends PublicationBaseImpl implements Publicat
 	 */
 	public void setRenderingStyle(ArtifactRenderingStyleKind newRenderingStyle) {
 		ArtifactRenderingStyleKind oldRenderingStyle = renderingStyle;
-		renderingStyle = newRenderingStyle == null ? RENDERING_STYLE_EDEFAULT : newRenderingStyle;
+		renderingStyle = newRenderingStyle == null
+				? RENDERING_STYLE_EDEFAULT
+				: newRenderingStyle;
 		boolean oldRenderingStyleESet = renderingStyleESet;
 		renderingStyleESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PUBLICATION_ITEM__RENDERING_STYLE, oldRenderingStyle, renderingStyle, !oldRenderingStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PUBLICATION_ITEM__RENDERING_STYLE, oldRenderingStyle,
+				renderingStyle, !oldRenderingStyleESet));
+		}
 	}
 
 	/**
@@ -223,8 +248,11 @@ public class PublicationItemImpl extends PublicationBaseImpl implements Publicat
 		boolean oldRenderingStyleESet = renderingStyleESet;
 		renderingStyle = RENDERING_STYLE_EDEFAULT;
 		renderingStyleESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.PUBLICATION_ITEM__RENDERING_STYLE, oldRenderingStyle, RENDERING_STYLE_EDEFAULT, oldRenderingStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.PUBLICATION_ITEM__RENDERING_STYLE, oldRenderingStyle,
+				RENDERING_STYLE_EDEFAULT, oldRenderingStyleESet));
+		}
 	}
 
 	/**
@@ -247,9 +275,9 @@ public class PublicationItemImpl extends PublicationBaseImpl implements Publicat
 			case Mif2Package.PUBLICATION_ITEM__ITEM_REFERENCE:
 				return basicSetItemReference(null, msgs);
 			case Mif2Package.PUBLICATION_ITEM__FILTER:
-				return ((InternalEList<?>)getFilter()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getFilter()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PUBLICATION_ITEM__FOLLOWING_TEXT:
-				return ((InternalEList<?>)getFollowingText()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getFollowingText()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -284,18 +312,18 @@ public class PublicationItemImpl extends PublicationBaseImpl implements Publicat
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.PUBLICATION_ITEM__ITEM_REFERENCE:
-				setItemReference((PackageOrArtifactRef)newValue);
+				setItemReference((PackageOrArtifactRef) newValue);
 				return;
 			case Mif2Package.PUBLICATION_ITEM__FILTER:
 				getFilter().clear();
-				getFilter().addAll((Collection<? extends ItemFilter>)newValue);
+				getFilter().addAll((Collection<? extends ItemFilter>) newValue);
 				return;
 			case Mif2Package.PUBLICATION_ITEM__FOLLOWING_TEXT:
 				getFollowingText().clear();
-				getFollowingText().addAll((Collection<? extends ComplexMarkupWithLanguage>)newValue);
+				getFollowingText().addAll((Collection<? extends ComplexMarkupWithLanguage>) newValue);
 				return;
 			case Mif2Package.PUBLICATION_ITEM__RENDERING_STYLE:
-				setRenderingStyle((ArtifactRenderingStyleKind)newValue);
+				setRenderingStyle((ArtifactRenderingStyleKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -310,7 +338,7 @@ public class PublicationItemImpl extends PublicationBaseImpl implements Publicat
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.PUBLICATION_ITEM__ITEM_REFERENCE:
-				setItemReference((PackageOrArtifactRef)null);
+				setItemReference((PackageOrArtifactRef) null);
 				return;
 			case Mif2Package.PUBLICATION_ITEM__FILTER:
 				getFilter().clear();
@@ -352,13 +380,19 @@ public class PublicationItemImpl extends PublicationBaseImpl implements Publicat
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (renderingStyle: ");
-		if (renderingStyleESet) result.append(renderingStyle); else result.append("<unset>");
+		if (renderingStyleESet) {
+			result.append(renderingStyle);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //PublicationItemImpl
+} // PublicationItemImpl

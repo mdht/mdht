@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -85,8 +89,10 @@ public class StateDerivationImpl extends ClassDerivationImpl implements StateDer
 	public void setStateName(String newStateName) {
 		String oldStateName = stateName;
 		stateName = newStateName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATE_DERIVATION__STATE_NAME, oldStateName, stateName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATE_DERIVATION__STATE_NAME, oldStateName, stateName));
+		}
 	}
 
 	/**
@@ -112,7 +118,7 @@ public class StateDerivationImpl extends ClassDerivationImpl implements StateDer
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.STATE_DERIVATION__STATE_NAME:
-				setStateName((String)newValue);
+				setStateName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -142,7 +148,9 @@ public class StateDerivationImpl extends ClassDerivationImpl implements StateDer
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.STATE_DERIVATION__STATE_NAME:
-				return STATE_NAME_EDEFAULT == null ? stateName != null : !STATE_NAME_EDEFAULT.equals(stateName);
+				return STATE_NAME_EDEFAULT == null
+						? stateName != null
+						: !STATE_NAME_EDEFAULT.equals(stateName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,7 +162,9 @@ public class StateDerivationImpl extends ClassDerivationImpl implements StateDer
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (stateName: ");
@@ -163,4 +173,4 @@ public class StateDerivationImpl extends ClassDerivationImpl implements StateDer
 		return result.toString();
 	}
 
-} //StateDerivationImpl
+} // StateDerivationImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -127,8 +131,11 @@ public class SupportedConceptPropertyImpl extends SupportedPropertyImpl implemen
 		applyToValueSetsIndicator = newApplyToValueSetsIndicator;
 		boolean oldApplyToValueSetsIndicatorESet = applyToValueSetsIndicatorESet;
 		applyToValueSetsIndicatorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_PROPERTY__APPLY_TO_VALUE_SETS_INDICATOR, oldApplyToValueSetsIndicator, applyToValueSetsIndicator, !oldApplyToValueSetsIndicatorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_PROPERTY__APPLY_TO_VALUE_SETS_INDICATOR,
+				oldApplyToValueSetsIndicator, applyToValueSetsIndicator, !oldApplyToValueSetsIndicatorESet));
+		}
 	}
 
 	/**
@@ -141,8 +148,11 @@ public class SupportedConceptPropertyImpl extends SupportedPropertyImpl implemen
 		boolean oldApplyToValueSetsIndicatorESet = applyToValueSetsIndicatorESet;
 		applyToValueSetsIndicator = APPLY_TO_VALUE_SETS_INDICATOR_EDEFAULT;
 		applyToValueSetsIndicatorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.SUPPORTED_CONCEPT_PROPERTY__APPLY_TO_VALUE_SETS_INDICATOR, oldApplyToValueSetsIndicator, APPLY_TO_VALUE_SETS_INDICATOR_EDEFAULT, oldApplyToValueSetsIndicatorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.SUPPORTED_CONCEPT_PROPERTY__APPLY_TO_VALUE_SETS_INDICATOR,
+				oldApplyToValueSetsIndicator, APPLY_TO_VALUE_SETS_INDICATOR_EDEFAULT, oldApplyToValueSetsIndicatorESet));
+		}
 	}
 
 	/**
@@ -170,11 +180,16 @@ public class SupportedConceptPropertyImpl extends SupportedPropertyImpl implemen
 	 */
 	public void setDefaultHandlingCode(PropertyDefaultHandlingKind newDefaultHandlingCode) {
 		PropertyDefaultHandlingKind oldDefaultHandlingCode = defaultHandlingCode;
-		defaultHandlingCode = newDefaultHandlingCode == null ? DEFAULT_HANDLING_CODE_EDEFAULT : newDefaultHandlingCode;
+		defaultHandlingCode = newDefaultHandlingCode == null
+				? DEFAULT_HANDLING_CODE_EDEFAULT
+				: newDefaultHandlingCode;
 		boolean oldDefaultHandlingCodeESet = defaultHandlingCodeESet;
 		defaultHandlingCodeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_PROPERTY__DEFAULT_HANDLING_CODE, oldDefaultHandlingCode, defaultHandlingCode, !oldDefaultHandlingCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_PROPERTY__DEFAULT_HANDLING_CODE,
+				oldDefaultHandlingCode, defaultHandlingCode, !oldDefaultHandlingCodeESet));
+		}
 	}
 
 	/**
@@ -187,8 +202,11 @@ public class SupportedConceptPropertyImpl extends SupportedPropertyImpl implemen
 		boolean oldDefaultHandlingCodeESet = defaultHandlingCodeESet;
 		defaultHandlingCode = DEFAULT_HANDLING_CODE_EDEFAULT;
 		defaultHandlingCodeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.SUPPORTED_CONCEPT_PROPERTY__DEFAULT_HANDLING_CODE, oldDefaultHandlingCode, DEFAULT_HANDLING_CODE_EDEFAULT, oldDefaultHandlingCodeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.SUPPORTED_CONCEPT_PROPERTY__DEFAULT_HANDLING_CODE,
+				oldDefaultHandlingCode, DEFAULT_HANDLING_CODE_EDEFAULT, oldDefaultHandlingCodeESet));
+		}
 	}
 
 	/**
@@ -209,7 +227,9 @@ public class SupportedConceptPropertyImpl extends SupportedPropertyImpl implemen
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mif2Package.SUPPORTED_CONCEPT_PROPERTY__APPLY_TO_VALUE_SETS_INDICATOR:
-				return isApplyToValueSetsIndicator() ? Boolean.TRUE : Boolean.FALSE;
+				return isApplyToValueSetsIndicator()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.SUPPORTED_CONCEPT_PROPERTY__DEFAULT_HANDLING_CODE:
 				return getDefaultHandlingCode();
 		}
@@ -225,10 +245,10 @@ public class SupportedConceptPropertyImpl extends SupportedPropertyImpl implemen
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.SUPPORTED_CONCEPT_PROPERTY__APPLY_TO_VALUE_SETS_INDICATOR:
-				setApplyToValueSetsIndicator(((Boolean)newValue).booleanValue());
+				setApplyToValueSetsIndicator(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_PROPERTY__DEFAULT_HANDLING_CODE:
-				setDefaultHandlingCode((PropertyDefaultHandlingKind)newValue);
+				setDefaultHandlingCode((PropertyDefaultHandlingKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -275,15 +295,25 @@ public class SupportedConceptPropertyImpl extends SupportedPropertyImpl implemen
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (applyToValueSetsIndicator: ");
-		if (applyToValueSetsIndicatorESet) result.append(applyToValueSetsIndicator); else result.append("<unset>");
+		if (applyToValueSetsIndicatorESet) {
+			result.append(applyToValueSetsIndicator);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", defaultHandlingCode: ");
-		if (defaultHandlingCodeESet) result.append(defaultHandlingCode); else result.append("<unset>");
+		if (defaultHandlingCodeESet) {
+			result.append(defaultHandlingCode);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //SupportedConceptPropertyImpl
+} // SupportedConceptPropertyImpl

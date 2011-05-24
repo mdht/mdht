@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -213,8 +217,13 @@ public abstract class PackageImpl extends PackageBaseImpl implements org.openhea
 		PackageRef oldPackageLocation = packageLocation;
 		packageLocation = newPackageLocation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE__PACKAGE_LOCATION, oldPackageLocation, newPackageLocation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE__PACKAGE_LOCATION, oldPackageLocation, newPackageLocation);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -227,15 +236,22 @@ public abstract class PackageImpl extends PackageBaseImpl implements org.openhea
 	public void setPackageLocation(PackageRef newPackageLocation) {
 		if (newPackageLocation != packageLocation) {
 			NotificationChain msgs = null;
-			if (packageLocation != null)
-				msgs = ((InternalEObject)packageLocation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.PACKAGE__PACKAGE_LOCATION, null, msgs);
-			if (newPackageLocation != null)
-				msgs = ((InternalEObject)newPackageLocation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.PACKAGE__PACKAGE_LOCATION, null, msgs);
+			if (packageLocation != null) {
+				msgs = ((InternalEObject) packageLocation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.PACKAGE__PACKAGE_LOCATION, null, msgs);
+			}
+			if (newPackageLocation != null) {
+				msgs = ((InternalEObject) newPackageLocation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.PACKAGE__PACKAGE_LOCATION, null, msgs);
+			}
 			msgs = basicSetPackageLocation(newPackageLocation, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE__PACKAGE_LOCATION, newPackageLocation, newPackageLocation));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE__PACKAGE_LOCATION, newPackageLocation, newPackageLocation));
 	}
 
 	/**
@@ -256,8 +272,13 @@ public abstract class PackageImpl extends PackageBaseImpl implements org.openhea
 		Header oldHeader = header;
 		header = newHeader;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE__HEADER, oldHeader, newHeader);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE__HEADER, oldHeader, newHeader);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -270,15 +291,21 @@ public abstract class PackageImpl extends PackageBaseImpl implements org.openhea
 	public void setHeader(Header newHeader) {
 		if (newHeader != header) {
 			NotificationChain msgs = null;
-			if (header != null)
-				msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.PACKAGE__HEADER, null, msgs);
-			if (newHeader != null)
-				msgs = ((InternalEObject)newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.PACKAGE__HEADER, null, msgs);
+			if (header != null) {
+				msgs = ((InternalEObject) header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.PACKAGE__HEADER, null, msgs);
+			}
+			if (newHeader != null) {
+				msgs = ((InternalEObject) newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.PACKAGE__HEADER, null, msgs);
+			}
 			msgs = basicSetHeader(newHeader, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE__HEADER, newHeader, newHeader));
+		}
 	}
 
 	/**
@@ -300,7 +327,8 @@ public abstract class PackageImpl extends PackageBaseImpl implements org.openhea
 	 */
 	public EList<PackageRef> getReplacedBy() {
 		if (replacedBy == null) {
-			replacedBy = new EObjectContainmentEList<PackageRef>(PackageRef.class, this, Mif2Package.PACKAGE__REPLACED_BY);
+			replacedBy = new EObjectContainmentEList<PackageRef>(
+				PackageRef.class, this, Mif2Package.PACKAGE__REPLACED_BY);
 		}
 		return replacedBy;
 	}
@@ -322,8 +350,9 @@ public abstract class PackageImpl extends PackageBaseImpl implements org.openhea
 	public void setHashCode(String newHashCode) {
 		String oldHashCode = hashCode;
 		hashCode = newHashCode;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE__HASH_CODE, oldHashCode, hashCode));
+		}
 	}
 
 	/**
@@ -342,11 +371,16 @@ public abstract class PackageImpl extends PackageBaseImpl implements org.openhea
 	 */
 	public void setPackageKind(PackageKind newPackageKind) {
 		PackageKind oldPackageKind = packageKind;
-		packageKind = newPackageKind == null ? PACKAGE_KIND_EDEFAULT : newPackageKind;
+		packageKind = newPackageKind == null
+				? PACKAGE_KIND_EDEFAULT
+				: newPackageKind;
 		boolean oldPackageKindESet = packageKindESet;
 		packageKindESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE__PACKAGE_KIND, oldPackageKind, packageKind, !oldPackageKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE__PACKAGE_KIND, oldPackageKind, packageKind,
+				!oldPackageKindESet));
+		}
 	}
 
 	/**
@@ -359,8 +393,11 @@ public abstract class PackageImpl extends PackageBaseImpl implements org.openhea
 		boolean oldPackageKindESet = packageKindESet;
 		packageKind = PACKAGE_KIND_EDEFAULT;
 		packageKindESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.PACKAGE__PACKAGE_KIND, oldPackageKind, PACKAGE_KIND_EDEFAULT, oldPackageKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.PACKAGE__PACKAGE_KIND, oldPackageKind, PACKAGE_KIND_EDEFAULT,
+				oldPackageKindESet));
+		}
 	}
 
 	/**
@@ -389,8 +426,10 @@ public abstract class PackageImpl extends PackageBaseImpl implements org.openhea
 	public void setSecondaryId(String newSecondaryId) {
 		String oldSecondaryId = secondaryId;
 		secondaryId = newSecondaryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE__SECONDARY_ID, oldSecondaryId, secondaryId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE__SECONDARY_ID, oldSecondaryId, secondaryId));
+		}
 	}
 
 	/**
@@ -410,8 +449,9 @@ public abstract class PackageImpl extends PackageBaseImpl implements org.openhea
 	public void setTitle(String newTitle) {
 		String oldTitle = title;
 		title = newTitle;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE__TITLE, oldTitle, title));
+		}
 	}
 
 	/**
@@ -427,9 +467,9 @@ public abstract class PackageImpl extends PackageBaseImpl implements org.openhea
 			case Mif2Package.PACKAGE__HEADER:
 				return basicSetHeader(null, msgs);
 			case Mif2Package.PACKAGE__REPLACES:
-				return ((InternalEList<?>)getReplaces()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getReplaces()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE__REPLACED_BY:
-				return ((InternalEList<?>)getReplacedBy()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getReplacedBy()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -472,30 +512,30 @@ public abstract class PackageImpl extends PackageBaseImpl implements org.openhea
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.PACKAGE__PACKAGE_LOCATION:
-				setPackageLocation((PackageRef)newValue);
+				setPackageLocation((PackageRef) newValue);
 				return;
 			case Mif2Package.PACKAGE__HEADER:
-				setHeader((Header)newValue);
+				setHeader((Header) newValue);
 				return;
 			case Mif2Package.PACKAGE__REPLACES:
 				getReplaces().clear();
-				getReplaces().addAll((Collection<? extends PackageRef>)newValue);
+				getReplaces().addAll((Collection<? extends PackageRef>) newValue);
 				return;
 			case Mif2Package.PACKAGE__REPLACED_BY:
 				getReplacedBy().clear();
-				getReplacedBy().addAll((Collection<? extends PackageRef>)newValue);
+				getReplacedBy().addAll((Collection<? extends PackageRef>) newValue);
 				return;
 			case Mif2Package.PACKAGE__HASH_CODE:
-				setHashCode((String)newValue);
+				setHashCode((String) newValue);
 				return;
 			case Mif2Package.PACKAGE__PACKAGE_KIND:
-				setPackageKind((PackageKind)newValue);
+				setPackageKind((PackageKind) newValue);
 				return;
 			case Mif2Package.PACKAGE__SECONDARY_ID:
-				setSecondaryId((String)newValue);
+				setSecondaryId((String) newValue);
 				return;
 			case Mif2Package.PACKAGE__TITLE:
-				setTitle((String)newValue);
+				setTitle((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -510,10 +550,10 @@ public abstract class PackageImpl extends PackageBaseImpl implements org.openhea
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.PACKAGE__PACKAGE_LOCATION:
-				setPackageLocation((PackageRef)null);
+				setPackageLocation((PackageRef) null);
 				return;
 			case Mif2Package.PACKAGE__HEADER:
-				setHeader((Header)null);
+				setHeader((Header) null);
 				return;
 			case Mif2Package.PACKAGE__REPLACES:
 				getReplaces().clear();
@@ -554,13 +594,19 @@ public abstract class PackageImpl extends PackageBaseImpl implements org.openhea
 			case Mif2Package.PACKAGE__REPLACED_BY:
 				return replacedBy != null && !replacedBy.isEmpty();
 			case Mif2Package.PACKAGE__HASH_CODE:
-				return HASH_CODE_EDEFAULT == null ? hashCode != null : !HASH_CODE_EDEFAULT.equals(hashCode);
+				return HASH_CODE_EDEFAULT == null
+						? hashCode != null
+						: !HASH_CODE_EDEFAULT.equals(hashCode);
 			case Mif2Package.PACKAGE__PACKAGE_KIND:
 				return isSetPackageKind();
 			case Mif2Package.PACKAGE__SECONDARY_ID:
-				return SECONDARY_ID_EDEFAULT == null ? secondaryId != null : !SECONDARY_ID_EDEFAULT.equals(secondaryId);
+				return SECONDARY_ID_EDEFAULT == null
+						? secondaryId != null
+						: !SECONDARY_ID_EDEFAULT.equals(secondaryId);
 			case Mif2Package.PACKAGE__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+				return TITLE_EDEFAULT == null
+						? title != null
+						: !TITLE_EDEFAULT.equals(title);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -572,13 +618,19 @@ public abstract class PackageImpl extends PackageBaseImpl implements org.openhea
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (hashCode: ");
 		result.append(hashCode);
 		result.append(", packageKind: ");
-		if (packageKindESet) result.append(packageKind); else result.append("<unset>");
+		if (packageKindESet) {
+			result.append(packageKind);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", secondaryId: ");
 		result.append(secondaryId);
 		result.append(", title: ");
@@ -587,4 +639,4 @@ public abstract class PackageImpl extends PackageBaseImpl implements org.openhea
 		return result.toString();
 	}
 
-} //PackageImpl
+} // PackageImpl

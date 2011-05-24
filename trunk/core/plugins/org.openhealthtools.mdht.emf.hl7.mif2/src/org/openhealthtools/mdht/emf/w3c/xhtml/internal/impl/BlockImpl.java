@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.internal.impl;
 
 import java.util.Collection;
@@ -104,7 +108,7 @@ public class BlockImpl extends EObjectImpl implements Block {
 	 * @generated
 	 */
 	public FeatureMap getBlock() {
-		return (FeatureMap)getMixed().<FeatureMap.Entry>list(XhtmlPackage.Literals.BLOCK__BLOCK);
+		return (FeatureMap) getMixed().<FeatureMap.Entry> list(XhtmlPackage.Literals.BLOCK__BLOCK);
 	}
 
 	/**
@@ -197,27 +201,27 @@ public class BlockImpl extends EObjectImpl implements Block {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case XhtmlPackage.BLOCK__MIXED:
-				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getMixed()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.BLOCK__BLOCK:
-				return ((InternalEList<?>)getBlock()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBlock()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.BLOCK__P:
-				return ((InternalEList<?>)getP()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getP()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.BLOCK__DIV:
-				return ((InternalEList<?>)getDiv()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDiv()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.BLOCK__UL:
-				return ((InternalEList<?>)getUl()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getUl()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.BLOCK__OL:
-				return ((InternalEList<?>)getOl()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getOl()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.BLOCK__DL:
-				return ((InternalEList<?>)getDl()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDl()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.BLOCK__PRE:
-				return ((InternalEList<?>)getPre()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPre()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.BLOCK__HR:
-				return ((InternalEList<?>)getHr()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getHr()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.BLOCK__BLOCKQUOTE:
-				return ((InternalEList<?>)getBlockquote()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBlockquote()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.BLOCK__TABLE:
-				return ((InternalEList<?>)getTable()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTable()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -231,11 +235,15 @@ public class BlockImpl extends EObjectImpl implements Block {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case XhtmlPackage.BLOCK__MIXED:
-				if (coreType) return getMixed();
-				return ((FeatureMap.Internal)getMixed()).getWrapper();
+				if (coreType) {
+					return getMixed();
+				}
+				return ((FeatureMap.Internal) getMixed()).getWrapper();
 			case XhtmlPackage.BLOCK__BLOCK:
-				if (coreType) return getBlock();
-				return ((FeatureMap.Internal)getBlock()).getWrapper();
+				if (coreType) {
+					return getBlock();
+				}
+				return ((FeatureMap.Internal) getBlock()).getWrapper();
 			case XhtmlPackage.BLOCK__P:
 				return getP();
 			case XhtmlPackage.BLOCK__DIV:
@@ -268,46 +276,46 @@ public class BlockImpl extends EObjectImpl implements Block {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case XhtmlPackage.BLOCK__MIXED:
-				((FeatureMap.Internal)getMixed()).set(newValue);
+				((FeatureMap.Internal) getMixed()).set(newValue);
 				return;
 			case XhtmlPackage.BLOCK__BLOCK:
-				((FeatureMap.Internal)getBlock()).set(newValue);
+				((FeatureMap.Internal) getBlock()).set(newValue);
 				return;
 			case XhtmlPackage.BLOCK__P:
 				getP().clear();
-				getP().addAll((Collection<? extends P>)newValue);
+				getP().addAll((Collection<? extends P>) newValue);
 				return;
 			case XhtmlPackage.BLOCK__DIV:
 				getDiv().clear();
-				getDiv().addAll((Collection<? extends Div>)newValue);
+				getDiv().addAll((Collection<? extends Div>) newValue);
 				return;
 			case XhtmlPackage.BLOCK__UL:
 				getUl().clear();
-				getUl().addAll((Collection<? extends Ul>)newValue);
+				getUl().addAll((Collection<? extends Ul>) newValue);
 				return;
 			case XhtmlPackage.BLOCK__OL:
 				getOl().clear();
-				getOl().addAll((Collection<? extends Ol>)newValue);
+				getOl().addAll((Collection<? extends Ol>) newValue);
 				return;
 			case XhtmlPackage.BLOCK__DL:
 				getDl().clear();
-				getDl().addAll((Collection<? extends Dl>)newValue);
+				getDl().addAll((Collection<? extends Dl>) newValue);
 				return;
 			case XhtmlPackage.BLOCK__PRE:
 				getPre().clear();
-				getPre().addAll((Collection<? extends Pre>)newValue);
+				getPre().addAll((Collection<? extends Pre>) newValue);
 				return;
 			case XhtmlPackage.BLOCK__HR:
 				getHr().clear();
-				getHr().addAll((Collection<? extends Hr>)newValue);
+				getHr().addAll((Collection<? extends Hr>) newValue);
 				return;
 			case XhtmlPackage.BLOCK__BLOCKQUOTE:
 				getBlockquote().clear();
-				getBlockquote().addAll((Collection<? extends Blockquote>)newValue);
+				getBlockquote().addAll((Collection<? extends Blockquote>) newValue);
 				return;
 			case XhtmlPackage.BLOCK__TABLE:
 				getTable().clear();
-				getTable().addAll((Collection<? extends Table>)newValue);
+				getTable().addAll((Collection<? extends Table>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -399,7 +407,9 @@ public class BlockImpl extends EObjectImpl implements Block {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mixed: ");
@@ -408,4 +418,4 @@ public class BlockImpl extends EObjectImpl implements Block {
 		return result.toString();
 	}
 
-} //BlockImpl
+} // BlockImpl

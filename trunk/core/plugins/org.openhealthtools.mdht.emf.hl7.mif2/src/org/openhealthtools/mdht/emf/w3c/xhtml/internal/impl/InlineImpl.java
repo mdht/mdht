@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.internal.impl;
 
 import java.util.Collection;
@@ -131,7 +135,7 @@ public class InlineImpl extends EObjectImpl implements Inline {
 	 * @generated
 	 */
 	public FeatureMap getInline() {
-		return (FeatureMap)getMixed().<FeatureMap.Entry>list(XhtmlPackage.Literals.INLINE__INLINE);
+		return (FeatureMap) getMixed().<FeatureMap.Entry> list(XhtmlPackage.Literals.INLINE__INLINE);
 	}
 
 	/**
@@ -350,55 +354,55 @@ public class InlineImpl extends EObjectImpl implements Inline {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case XhtmlPackage.INLINE__MIXED:
-				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getMixed()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__INLINE:
-				return ((InternalEList<?>)getInline()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getInline()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__A:
-				return ((InternalEList<?>)getA()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getA()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__BR:
-				return ((InternalEList<?>)getBr()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBr()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__SPAN:
-				return ((InternalEList<?>)getSpan()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSpan()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__OBJECT:
-				return ((InternalEList<?>)getObject()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getObject()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__IMG:
-				return ((InternalEList<?>)getImg()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getImg()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__TT:
-				return ((InternalEList<?>)getTt()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTt()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__I:
-				return ((InternalEList<?>)getI()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getI()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__B:
-				return ((InternalEList<?>)getB()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getB()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__BIG:
-				return ((InternalEList<?>)getBig()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBig()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__SMALL:
-				return ((InternalEList<?>)getSmall()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSmall()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__EM:
-				return ((InternalEList<?>)getEm()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getEm()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__STRONG:
-				return ((InternalEList<?>)getStrong()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getStrong()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__DFN:
-				return ((InternalEList<?>)getDfn()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDfn()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__CODE:
-				return ((InternalEList<?>)getCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCode()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__Q:
-				return ((InternalEList<?>)getQ()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getQ()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__SAMP:
-				return ((InternalEList<?>)getSamp()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSamp()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__KBD:
-				return ((InternalEList<?>)getKbd()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getKbd()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__VAR:
-				return ((InternalEList<?>)getVar()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getVar()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__CITE:
-				return ((InternalEList<?>)getCite()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCite()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__ABBR:
-				return ((InternalEList<?>)getAbbr()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAbbr()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__ACRONYM:
-				return ((InternalEList<?>)getAcronym()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAcronym()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__SUB:
-				return ((InternalEList<?>)getSub()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSub()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.INLINE__SUP:
-				return ((InternalEList<?>)getSup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSup()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -412,11 +416,15 @@ public class InlineImpl extends EObjectImpl implements Inline {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case XhtmlPackage.INLINE__MIXED:
-				if (coreType) return getMixed();
-				return ((FeatureMap.Internal)getMixed()).getWrapper();
+				if (coreType) {
+					return getMixed();
+				}
+				return ((FeatureMap.Internal) getMixed()).getWrapper();
 			case XhtmlPackage.INLINE__INLINE:
-				if (coreType) return getInline();
-				return ((FeatureMap.Internal)getInline()).getWrapper();
+				if (coreType) {
+					return getInline();
+				}
+				return ((FeatureMap.Internal) getInline()).getWrapper();
 			case XhtmlPackage.INLINE__A:
 				return getA();
 			case XhtmlPackage.INLINE__BR:
@@ -477,102 +485,102 @@ public class InlineImpl extends EObjectImpl implements Inline {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case XhtmlPackage.INLINE__MIXED:
-				((FeatureMap.Internal)getMixed()).set(newValue);
+				((FeatureMap.Internal) getMixed()).set(newValue);
 				return;
 			case XhtmlPackage.INLINE__INLINE:
-				((FeatureMap.Internal)getInline()).set(newValue);
+				((FeatureMap.Internal) getInline()).set(newValue);
 				return;
 			case XhtmlPackage.INLINE__A:
 				getA().clear();
-				getA().addAll((Collection<? extends A>)newValue);
+				getA().addAll((Collection<? extends A>) newValue);
 				return;
 			case XhtmlPackage.INLINE__BR:
 				getBr().clear();
-				getBr().addAll((Collection<? extends Br>)newValue);
+				getBr().addAll((Collection<? extends Br>) newValue);
 				return;
 			case XhtmlPackage.INLINE__SPAN:
 				getSpan().clear();
-				getSpan().addAll((Collection<? extends Span>)newValue);
+				getSpan().addAll((Collection<? extends Span>) newValue);
 				return;
 			case XhtmlPackage.INLINE__OBJECT:
 				getObject().clear();
-				getObject().addAll((Collection<? extends org.openhealthtools.mdht.emf.w3c.xhtml.Object>)newValue);
+				getObject().addAll((Collection<? extends org.openhealthtools.mdht.emf.w3c.xhtml.Object>) newValue);
 				return;
 			case XhtmlPackage.INLINE__IMG:
 				getImg().clear();
-				getImg().addAll((Collection<? extends Img>)newValue);
+				getImg().addAll((Collection<? extends Img>) newValue);
 				return;
 			case XhtmlPackage.INLINE__TT:
 				getTt().clear();
-				getTt().addAll((Collection<? extends Tt>)newValue);
+				getTt().addAll((Collection<? extends Tt>) newValue);
 				return;
 			case XhtmlPackage.INLINE__I:
 				getI().clear();
-				getI().addAll((Collection<? extends I>)newValue);
+				getI().addAll((Collection<? extends I>) newValue);
 				return;
 			case XhtmlPackage.INLINE__B:
 				getB().clear();
-				getB().addAll((Collection<? extends B>)newValue);
+				getB().addAll((Collection<? extends B>) newValue);
 				return;
 			case XhtmlPackage.INLINE__BIG:
 				getBig().clear();
-				getBig().addAll((Collection<? extends Big>)newValue);
+				getBig().addAll((Collection<? extends Big>) newValue);
 				return;
 			case XhtmlPackage.INLINE__SMALL:
 				getSmall().clear();
-				getSmall().addAll((Collection<? extends Small>)newValue);
+				getSmall().addAll((Collection<? extends Small>) newValue);
 				return;
 			case XhtmlPackage.INLINE__EM:
 				getEm().clear();
-				getEm().addAll((Collection<? extends Em>)newValue);
+				getEm().addAll((Collection<? extends Em>) newValue);
 				return;
 			case XhtmlPackage.INLINE__STRONG:
 				getStrong().clear();
-				getStrong().addAll((Collection<? extends Strong>)newValue);
+				getStrong().addAll((Collection<? extends Strong>) newValue);
 				return;
 			case XhtmlPackage.INLINE__DFN:
 				getDfn().clear();
-				getDfn().addAll((Collection<? extends Dfn>)newValue);
+				getDfn().addAll((Collection<? extends Dfn>) newValue);
 				return;
 			case XhtmlPackage.INLINE__CODE:
 				getCode().clear();
-				getCode().addAll((Collection<? extends Code>)newValue);
+				getCode().addAll((Collection<? extends Code>) newValue);
 				return;
 			case XhtmlPackage.INLINE__Q:
 				getQ().clear();
-				getQ().addAll((Collection<? extends Q>)newValue);
+				getQ().addAll((Collection<? extends Q>) newValue);
 				return;
 			case XhtmlPackage.INLINE__SAMP:
 				getSamp().clear();
-				getSamp().addAll((Collection<? extends Samp>)newValue);
+				getSamp().addAll((Collection<? extends Samp>) newValue);
 				return;
 			case XhtmlPackage.INLINE__KBD:
 				getKbd().clear();
-				getKbd().addAll((Collection<? extends Kbd>)newValue);
+				getKbd().addAll((Collection<? extends Kbd>) newValue);
 				return;
 			case XhtmlPackage.INLINE__VAR:
 				getVar().clear();
-				getVar().addAll((Collection<? extends Var>)newValue);
+				getVar().addAll((Collection<? extends Var>) newValue);
 				return;
 			case XhtmlPackage.INLINE__CITE:
 				getCite().clear();
-				getCite().addAll((Collection<? extends Cite>)newValue);
+				getCite().addAll((Collection<? extends Cite>) newValue);
 				return;
 			case XhtmlPackage.INLINE__ABBR:
 				getAbbr().clear();
-				getAbbr().addAll((Collection<? extends Abbr>)newValue);
+				getAbbr().addAll((Collection<? extends Abbr>) newValue);
 				return;
 			case XhtmlPackage.INLINE__ACRONYM:
 				getAcronym().clear();
-				getAcronym().addAll((Collection<? extends Acronym>)newValue);
+				getAcronym().addAll((Collection<? extends Acronym>) newValue);
 				return;
 			case XhtmlPackage.INLINE__SUB:
 				getSub().clear();
-				getSub().addAll((Collection<? extends Sub>)newValue);
+				getSub().addAll((Collection<? extends Sub>) newValue);
 				return;
 			case XhtmlPackage.INLINE__SUP:
 				getSup().clear();
-				getSup().addAll((Collection<? extends Sup>)newValue);
+				getSup().addAll((Collection<? extends Sup>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -734,7 +742,9 @@ public class InlineImpl extends EObjectImpl implements Inline {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mixed: ");
@@ -743,4 +753,4 @@ public class InlineImpl extends EObjectImpl implements Inline {
 		return result.toString();
 	}
 
-} //InlineImpl
+} // InlineImpl

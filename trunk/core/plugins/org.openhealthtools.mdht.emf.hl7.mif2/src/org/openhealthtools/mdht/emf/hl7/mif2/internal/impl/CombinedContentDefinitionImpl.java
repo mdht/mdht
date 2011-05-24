@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -96,7 +100,8 @@ public class CombinedContentDefinitionImpl extends EObjectImpl implements Combin
 	 */
 	public EList<ContentDefinition> getUnionWithContent() {
 		if (unionWithContent == null) {
-			unionWithContent = new EObjectContainmentEList<ContentDefinition>(ContentDefinition.class, this, Mif2Package.COMBINED_CONTENT_DEFINITION__UNION_WITH_CONTENT);
+			unionWithContent = new EObjectContainmentEList<ContentDefinition>(
+				ContentDefinition.class, this, Mif2Package.COMBINED_CONTENT_DEFINITION__UNION_WITH_CONTENT);
 		}
 		return unionWithContent;
 	}
@@ -108,7 +113,8 @@ public class CombinedContentDefinitionImpl extends EObjectImpl implements Combin
 	 */
 	public EList<ContentDefinition> getIntersectionWithContent() {
 		if (intersectionWithContent == null) {
-			intersectionWithContent = new EObjectContainmentEList<ContentDefinition>(ContentDefinition.class, this, Mif2Package.COMBINED_CONTENT_DEFINITION__INTERSECTION_WITH_CONTENT);
+			intersectionWithContent = new EObjectContainmentEList<ContentDefinition>(
+				ContentDefinition.class, this, Mif2Package.COMBINED_CONTENT_DEFINITION__INTERSECTION_WITH_CONTENT);
 		}
 		return intersectionWithContent;
 	}
@@ -120,7 +126,8 @@ public class CombinedContentDefinitionImpl extends EObjectImpl implements Combin
 	 */
 	public EList<ContentDefinition> getExcludeContent() {
 		if (excludeContent == null) {
-			excludeContent = new EObjectContainmentEList<ContentDefinition>(ContentDefinition.class, this, Mif2Package.COMBINED_CONTENT_DEFINITION__EXCLUDE_CONTENT);
+			excludeContent = new EObjectContainmentEList<ContentDefinition>(
+				ContentDefinition.class, this, Mif2Package.COMBINED_CONTENT_DEFINITION__EXCLUDE_CONTENT);
 		}
 		return excludeContent;
 	}
@@ -134,11 +141,11 @@ public class CombinedContentDefinitionImpl extends EObjectImpl implements Combin
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.COMBINED_CONTENT_DEFINITION__UNION_WITH_CONTENT:
-				return ((InternalEList<?>)getUnionWithContent()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getUnionWithContent()).basicRemove(otherEnd, msgs);
 			case Mif2Package.COMBINED_CONTENT_DEFINITION__INTERSECTION_WITH_CONTENT:
-				return ((InternalEList<?>)getIntersectionWithContent()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getIntersectionWithContent()).basicRemove(otherEnd, msgs);
 			case Mif2Package.COMBINED_CONTENT_DEFINITION__EXCLUDE_CONTENT:
-				return ((InternalEList<?>)getExcludeContent()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getExcludeContent()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -172,15 +179,15 @@ public class CombinedContentDefinitionImpl extends EObjectImpl implements Combin
 		switch (featureID) {
 			case Mif2Package.COMBINED_CONTENT_DEFINITION__UNION_WITH_CONTENT:
 				getUnionWithContent().clear();
-				getUnionWithContent().addAll((Collection<? extends ContentDefinition>)newValue);
+				getUnionWithContent().addAll((Collection<? extends ContentDefinition>) newValue);
 				return;
 			case Mif2Package.COMBINED_CONTENT_DEFINITION__INTERSECTION_WITH_CONTENT:
 				getIntersectionWithContent().clear();
-				getIntersectionWithContent().addAll((Collection<? extends ContentDefinition>)newValue);
+				getIntersectionWithContent().addAll((Collection<? extends ContentDefinition>) newValue);
 				return;
 			case Mif2Package.COMBINED_CONTENT_DEFINITION__EXCLUDE_CONTENT:
 				getExcludeContent().clear();
-				getExcludeContent().addAll((Collection<? extends ContentDefinition>)newValue);
+				getExcludeContent().addAll((Collection<? extends ContentDefinition>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -225,4 +232,4 @@ public class CombinedContentDefinitionImpl extends EObjectImpl implements Combin
 		return super.eIsSet(featureID);
 	}
 
-} //CombinedContentDefinitionImpl
+} // CombinedContentDefinitionImpl

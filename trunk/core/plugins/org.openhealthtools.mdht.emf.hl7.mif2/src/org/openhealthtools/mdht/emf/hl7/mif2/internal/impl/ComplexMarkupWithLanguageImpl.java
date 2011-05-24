@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -17,7 +21,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.openhealthtools.mdht.emf.hl7.mif2.ComplexMarkupWithLanguage;
 import org.openhealthtools.mdht.emf.hl7.mif2.Mif2Package;
 import org.openhealthtools.mdht.emf.w3c.xhtml.internal.impl.FlowImpl;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -121,8 +124,10 @@ public class ComplexMarkupWithLanguageImpl extends FlowImpl implements ComplexMa
 		lang = newLang;
 		boolean oldLangESet = langESet;
 		langESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.COMPLEX_MARKUP_WITH_LANGUAGE__LANG, oldLang, lang, !oldLangESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.COMPLEX_MARKUP_WITH_LANGUAGE__LANG, oldLang, lang, !oldLangESet));
+		}
 	}
 
 	/**
@@ -135,8 +140,11 @@ public class ComplexMarkupWithLanguageImpl extends FlowImpl implements ComplexMa
 		boolean oldLangESet = langESet;
 		lang = LANG_EDEFAULT;
 		langESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.COMPLEX_MARKUP_WITH_LANGUAGE__LANG, oldLang, LANG_EDEFAULT, oldLangESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.COMPLEX_MARKUP_WITH_LANGUAGE__LANG, oldLang, LANG_EDEFAULT,
+				oldLangESet));
+		}
 	}
 
 	/**
@@ -165,8 +173,11 @@ public class ComplexMarkupWithLanguageImpl extends FlowImpl implements ComplexMa
 	public void setLastTranslated(XMLGregorianCalendar newLastTranslated) {
 		XMLGregorianCalendar oldLastTranslated = lastTranslated;
 		lastTranslated = newLastTranslated;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.COMPLEX_MARKUP_WITH_LANGUAGE__LAST_TRANSLATED, oldLastTranslated, lastTranslated));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.COMPLEX_MARKUP_WITH_LANGUAGE__LAST_TRANSLATED, oldLastTranslated,
+				lastTranslated));
+		}
 	}
 
 	/**
@@ -194,10 +205,10 @@ public class ComplexMarkupWithLanguageImpl extends FlowImpl implements ComplexMa
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.COMPLEX_MARKUP_WITH_LANGUAGE__LANG:
-				setLang((String)newValue);
+				setLang((String) newValue);
 				return;
 			case Mif2Package.COMPLEX_MARKUP_WITH_LANGUAGE__LAST_TRANSLATED:
-				setLastTranslated((XMLGregorianCalendar)newValue);
+				setLastTranslated((XMLGregorianCalendar) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -232,7 +243,9 @@ public class ComplexMarkupWithLanguageImpl extends FlowImpl implements ComplexMa
 			case Mif2Package.COMPLEX_MARKUP_WITH_LANGUAGE__LANG:
 				return isSetLang();
 			case Mif2Package.COMPLEX_MARKUP_WITH_LANGUAGE__LAST_TRANSLATED:
-				return LAST_TRANSLATED_EDEFAULT == null ? lastTranslated != null : !LAST_TRANSLATED_EDEFAULT.equals(lastTranslated);
+				return LAST_TRANSLATED_EDEFAULT == null
+						? lastTranslated != null
+						: !LAST_TRANSLATED_EDEFAULT.equals(lastTranslated);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -244,15 +257,21 @@ public class ComplexMarkupWithLanguageImpl extends FlowImpl implements ComplexMa
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (lang: ");
-		if (langESet) result.append(lang); else result.append("<unset>");
+		if (langESet) {
+			result.append(lang);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", lastTranslated: ");
 		result.append(lastTranslated);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ComplexMarkupWithLanguageImpl
+} // ComplexMarkupWithLanguageImpl

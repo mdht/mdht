@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigInteger;
@@ -413,7 +417,8 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 	 */
 	public EList<BusinessName> getBusinessName() {
 		if (businessName == null) {
-			businessName = new EObjectContainmentEList<BusinessName>(BusinessName.class, this, Mif2Package.ASSOCIATION_END_BASE__BUSINESS_NAME);
+			businessName = new EObjectContainmentEList<BusinessName>(
+				BusinessName.class, this, Mif2Package.ASSOCIATION_END_BASE__BUSINESS_NAME);
 		}
 		return businessName;
 	}
@@ -436,8 +441,13 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 		AssociationEndAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -450,15 +460,22 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 	public void setAnnotations(AssociationEndAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ASSOCIATION_END_BASE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ASSOCIATION_END_BASE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ASSOCIATION_END_BASE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ASSOCIATION_END_BASE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -468,7 +485,8 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 	 */
 	public EList<AssociationEndDerivation> getDerivedFrom() {
 		if (derivedFrom == null) {
-			derivedFrom = new EObjectContainmentEList<AssociationEndDerivation>(AssociationEndDerivation.class, this, Mif2Package.ASSOCIATION_END_BASE__DERIVED_FROM);
+			derivedFrom = new EObjectContainmentEList<AssociationEndDerivation>(
+				AssociationEndDerivation.class, this, Mif2Package.ASSOCIATION_END_BASE__DERIVED_FROM);
 		}
 		return derivedFrom;
 	}
@@ -480,7 +498,8 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 	 */
 	public EList<AssociationEndSpecialization> getChoiceItem() {
 		if (choiceItem == null) {
-			choiceItem = new EObjectContainmentEList<AssociationEndSpecialization>(AssociationEndSpecialization.class, this, Mif2Package.ASSOCIATION_END_BASE__CHOICE_ITEM);
+			choiceItem = new EObjectContainmentEList<AssociationEndSpecialization>(
+				AssociationEndSpecialization.class, this, Mif2Package.ASSOCIATION_END_BASE__CHOICE_ITEM);
 		}
 		return choiceItem;
 	}
@@ -501,11 +520,16 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 	 */
 	public void setConformance(ConformanceKind newConformance) {
 		ConformanceKind oldConformance = conformance;
-		conformance = newConformance == null ? CONFORMANCE_EDEFAULT : newConformance;
+		conformance = newConformance == null
+				? CONFORMANCE_EDEFAULT
+				: newConformance;
 		boolean oldConformanceESet = conformanceESet;
 		conformanceESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__CONFORMANCE, oldConformance, conformance, !oldConformanceESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__CONFORMANCE, oldConformance, conformance,
+				!oldConformanceESet));
+		}
 	}
 
 	/**
@@ -518,8 +542,11 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 		boolean oldConformanceESet = conformanceESet;
 		conformance = CONFORMANCE_EDEFAULT;
 		conformanceESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.ASSOCIATION_END_BASE__CONFORMANCE, oldConformance, CONFORMANCE_EDEFAULT, oldConformanceESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.ASSOCIATION_END_BASE__CONFORMANCE, oldConformance,
+				CONFORMANCE_EDEFAULT, oldConformanceESet));
+		}
 	}
 
 	/**
@@ -548,8 +575,10 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 	public void setExtensionOID(String newExtensionOID) {
 		String oldExtensionOID = extensionOID;
 		extensionOID = newExtensionOID;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__EXTENSION_OID, oldExtensionOID, extensionOID));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__EXTENSION_OID, oldExtensionOID, extensionOID));
+		}
 	}
 
 	/**
@@ -571,8 +600,11 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 		isMandatory = newIsMandatory;
 		boolean oldIsMandatoryESet = isMandatoryESet;
 		isMandatoryESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__IS_MANDATORY, oldIsMandatory, isMandatory, !oldIsMandatoryESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__IS_MANDATORY, oldIsMandatory, isMandatory,
+				!oldIsMandatoryESet));
+		}
 	}
 
 	/**
@@ -585,8 +617,11 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 		boolean oldIsMandatoryESet = isMandatoryESet;
 		isMandatory = IS_MANDATORY_EDEFAULT;
 		isMandatoryESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.ASSOCIATION_END_BASE__IS_MANDATORY, oldIsMandatory, IS_MANDATORY_EDEFAULT, oldIsMandatoryESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.ASSOCIATION_END_BASE__IS_MANDATORY, oldIsMandatory,
+				IS_MANDATORY_EDEFAULT, oldIsMandatoryESet));
+		}
 	}
 
 	/**
@@ -615,8 +650,11 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 	public void setMaximumMultiplicity(Object newMaximumMultiplicity) {
 		Object oldMaximumMultiplicity = maximumMultiplicity;
 		maximumMultiplicity = newMaximumMultiplicity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__MAXIMUM_MULTIPLICITY, oldMaximumMultiplicity, maximumMultiplicity));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__MAXIMUM_MULTIPLICITY, oldMaximumMultiplicity,
+				maximumMultiplicity));
+		}
 	}
 
 	/**
@@ -636,8 +674,11 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 	public void setMaximumRecursionDepth(BigInteger newMaximumRecursionDepth) {
 		BigInteger oldMaximumRecursionDepth = maximumRecursionDepth;
 		maximumRecursionDepth = newMaximumRecursionDepth;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__MAXIMUM_RECURSION_DEPTH, oldMaximumRecursionDepth, maximumRecursionDepth));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__MAXIMUM_RECURSION_DEPTH,
+				oldMaximumRecursionDepth, maximumRecursionDepth));
+		}
 	}
 
 	/**
@@ -657,8 +698,11 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 	public void setMinimumMultiplicity(BigInteger newMinimumMultiplicity) {
 		BigInteger oldMinimumMultiplicity = minimumMultiplicity;
 		minimumMultiplicity = newMinimumMultiplicity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__MINIMUM_MULTIPLICITY, oldMinimumMultiplicity, minimumMultiplicity));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__MINIMUM_MULTIPLICITY, oldMinimumMultiplicity,
+				minimumMultiplicity));
+		}
 	}
 
 	/**
@@ -678,8 +722,9 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -701,8 +746,11 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 		nameLocked = newNameLocked;
 		boolean oldNameLockedESet = nameLockedESet;
 		nameLockedESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__NAME_LOCKED, oldNameLocked, nameLocked, !oldNameLockedESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__NAME_LOCKED, oldNameLocked, nameLocked,
+				!oldNameLockedESet));
+		}
 	}
 
 	/**
@@ -715,8 +763,11 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 		boolean oldNameLockedESet = nameLockedESet;
 		nameLocked = NAME_LOCKED_EDEFAULT;
 		nameLockedESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.ASSOCIATION_END_BASE__NAME_LOCKED, oldNameLocked, NAME_LOCKED_EDEFAULT, oldNameLockedESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.ASSOCIATION_END_BASE__NAME_LOCKED, oldNameLocked,
+				NAME_LOCKED_EDEFAULT, oldNameLockedESet));
+		}
 	}
 
 	/**
@@ -747,8 +798,11 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 		referenceHistory = newReferenceHistory;
 		boolean oldReferenceHistoryESet = referenceHistoryESet;
 		referenceHistoryESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__REFERENCE_HISTORY, oldReferenceHistory, referenceHistory, !oldReferenceHistoryESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__REFERENCE_HISTORY, oldReferenceHistory,
+				referenceHistory, !oldReferenceHistoryESet));
+		}
 	}
 
 	/**
@@ -761,8 +815,11 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 		boolean oldReferenceHistoryESet = referenceHistoryESet;
 		referenceHistory = REFERENCE_HISTORY_EDEFAULT;
 		referenceHistoryESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.ASSOCIATION_END_BASE__REFERENCE_HISTORY, oldReferenceHistory, REFERENCE_HISTORY_EDEFAULT, oldReferenceHistoryESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.ASSOCIATION_END_BASE__REFERENCE_HISTORY, oldReferenceHistory,
+				REFERENCE_HISTORY_EDEFAULT, oldReferenceHistoryESet));
+		}
 	}
 
 	/**
@@ -791,8 +848,10 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__SORT_KEY, oldSortKey, sortKey));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -811,11 +870,16 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 	 */
 	public void setUpdateModeDefault(UpdateModeKind newUpdateModeDefault) {
 		UpdateModeKind oldUpdateModeDefault = updateModeDefault;
-		updateModeDefault = newUpdateModeDefault == null ? UPDATE_MODE_DEFAULT_EDEFAULT : newUpdateModeDefault;
+		updateModeDefault = newUpdateModeDefault == null
+				? UPDATE_MODE_DEFAULT_EDEFAULT
+				: newUpdateModeDefault;
 		boolean oldUpdateModeDefaultESet = updateModeDefaultESet;
 		updateModeDefaultESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__UPDATE_MODE_DEFAULT, oldUpdateModeDefault, updateModeDefault, !oldUpdateModeDefaultESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__UPDATE_MODE_DEFAULT, oldUpdateModeDefault,
+				updateModeDefault, !oldUpdateModeDefaultESet));
+		}
 	}
 
 	/**
@@ -828,8 +892,11 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 		boolean oldUpdateModeDefaultESet = updateModeDefaultESet;
 		updateModeDefault = UPDATE_MODE_DEFAULT_EDEFAULT;
 		updateModeDefaultESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.ASSOCIATION_END_BASE__UPDATE_MODE_DEFAULT, oldUpdateModeDefault, UPDATE_MODE_DEFAULT_EDEFAULT, oldUpdateModeDefaultESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.ASSOCIATION_END_BASE__UPDATE_MODE_DEFAULT, oldUpdateModeDefault,
+				UPDATE_MODE_DEFAULT_EDEFAULT, oldUpdateModeDefaultESet));
+		}
 	}
 
 	/**
@@ -858,8 +925,11 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 	public void setUpdateModesAllowed(List<UpdateModeKind> newUpdateModesAllowed) {
 		List<UpdateModeKind> oldUpdateModesAllowed = updateModesAllowed;
 		updateModesAllowed = newUpdateModesAllowed;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__UPDATE_MODES_ALLOWED, oldUpdateModesAllowed, updateModesAllowed));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ASSOCIATION_END_BASE__UPDATE_MODES_ALLOWED, oldUpdateModesAllowed,
+				updateModesAllowed));
+		}
 	}
 
 	/**
@@ -871,13 +941,13 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.ASSOCIATION_END_BASE__BUSINESS_NAME:
-				return ((InternalEList<?>)getBusinessName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBusinessName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.ASSOCIATION_END_BASE__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 			case Mif2Package.ASSOCIATION_END_BASE__DERIVED_FROM:
-				return ((InternalEList<?>)getDerivedFrom()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDerivedFrom()).basicRemove(otherEnd, msgs);
 			case Mif2Package.ASSOCIATION_END_BASE__CHOICE_ITEM:
-				return ((InternalEList<?>)getChoiceItem()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getChoiceItem()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -903,7 +973,9 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 			case Mif2Package.ASSOCIATION_END_BASE__EXTENSION_OID:
 				return getExtensionOID();
 			case Mif2Package.ASSOCIATION_END_BASE__IS_MANDATORY:
-				return isIsMandatory() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsMandatory()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.ASSOCIATION_END_BASE__MAXIMUM_MULTIPLICITY:
 				return getMaximumMultiplicity();
 			case Mif2Package.ASSOCIATION_END_BASE__MAXIMUM_RECURSION_DEPTH:
@@ -913,9 +985,13 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 			case Mif2Package.ASSOCIATION_END_BASE__NAME:
 				return getName();
 			case Mif2Package.ASSOCIATION_END_BASE__NAME_LOCKED:
-				return isNameLocked() ? Boolean.TRUE : Boolean.FALSE;
+				return isNameLocked()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.ASSOCIATION_END_BASE__REFERENCE_HISTORY:
-				return isReferenceHistory() ? Boolean.TRUE : Boolean.FALSE;
+				return isReferenceHistory()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.ASSOCIATION_END_BASE__SORT_KEY:
 				return getSortKey();
 			case Mif2Package.ASSOCIATION_END_BASE__UPDATE_MODE_DEFAULT:
@@ -937,54 +1013,54 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 		switch (featureID) {
 			case Mif2Package.ASSOCIATION_END_BASE__BUSINESS_NAME:
 				getBusinessName().clear();
-				getBusinessName().addAll((Collection<? extends BusinessName>)newValue);
+				getBusinessName().addAll((Collection<? extends BusinessName>) newValue);
 				return;
 			case Mif2Package.ASSOCIATION_END_BASE__ANNOTATIONS:
-				setAnnotations((AssociationEndAnnotations)newValue);
+				setAnnotations((AssociationEndAnnotations) newValue);
 				return;
 			case Mif2Package.ASSOCIATION_END_BASE__DERIVED_FROM:
 				getDerivedFrom().clear();
-				getDerivedFrom().addAll((Collection<? extends AssociationEndDerivation>)newValue);
+				getDerivedFrom().addAll((Collection<? extends AssociationEndDerivation>) newValue);
 				return;
 			case Mif2Package.ASSOCIATION_END_BASE__CHOICE_ITEM:
 				getChoiceItem().clear();
-				getChoiceItem().addAll((Collection<? extends AssociationEndSpecialization>)newValue);
+				getChoiceItem().addAll((Collection<? extends AssociationEndSpecialization>) newValue);
 				return;
 			case Mif2Package.ASSOCIATION_END_BASE__CONFORMANCE:
-				setConformance((ConformanceKind)newValue);
+				setConformance((ConformanceKind) newValue);
 				return;
 			case Mif2Package.ASSOCIATION_END_BASE__EXTENSION_OID:
-				setExtensionOID((String)newValue);
+				setExtensionOID((String) newValue);
 				return;
 			case Mif2Package.ASSOCIATION_END_BASE__IS_MANDATORY:
-				setIsMandatory(((Boolean)newValue).booleanValue());
+				setIsMandatory(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.ASSOCIATION_END_BASE__MAXIMUM_MULTIPLICITY:
 				setMaximumMultiplicity(newValue);
 				return;
 			case Mif2Package.ASSOCIATION_END_BASE__MAXIMUM_RECURSION_DEPTH:
-				setMaximumRecursionDepth((BigInteger)newValue);
+				setMaximumRecursionDepth((BigInteger) newValue);
 				return;
 			case Mif2Package.ASSOCIATION_END_BASE__MINIMUM_MULTIPLICITY:
-				setMinimumMultiplicity((BigInteger)newValue);
+				setMinimumMultiplicity((BigInteger) newValue);
 				return;
 			case Mif2Package.ASSOCIATION_END_BASE__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.ASSOCIATION_END_BASE__NAME_LOCKED:
-				setNameLocked(((Boolean)newValue).booleanValue());
+				setNameLocked(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.ASSOCIATION_END_BASE__REFERENCE_HISTORY:
-				setReferenceHistory(((Boolean)newValue).booleanValue());
+				setReferenceHistory(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.ASSOCIATION_END_BASE__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 			case Mif2Package.ASSOCIATION_END_BASE__UPDATE_MODE_DEFAULT:
-				setUpdateModeDefault((UpdateModeKind)newValue);
+				setUpdateModeDefault((UpdateModeKind) newValue);
 				return;
 			case Mif2Package.ASSOCIATION_END_BASE__UPDATE_MODES_ALLOWED:
-				setUpdateModesAllowed((List<UpdateModeKind>)newValue);
+				setUpdateModesAllowed((List<UpdateModeKind>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1002,7 +1078,7 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 				getBusinessName().clear();
 				return;
 			case Mif2Package.ASSOCIATION_END_BASE__ANNOTATIONS:
-				setAnnotations((AssociationEndAnnotations)null);
+				setAnnotations((AssociationEndAnnotations) null);
 				return;
 			case Mif2Package.ASSOCIATION_END_BASE__DERIVED_FROM:
 				getDerivedFrom().clear();
@@ -1069,27 +1145,41 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 			case Mif2Package.ASSOCIATION_END_BASE__CONFORMANCE:
 				return isSetConformance();
 			case Mif2Package.ASSOCIATION_END_BASE__EXTENSION_OID:
-				return EXTENSION_OID_EDEFAULT == null ? extensionOID != null : !EXTENSION_OID_EDEFAULT.equals(extensionOID);
+				return EXTENSION_OID_EDEFAULT == null
+						? extensionOID != null
+						: !EXTENSION_OID_EDEFAULT.equals(extensionOID);
 			case Mif2Package.ASSOCIATION_END_BASE__IS_MANDATORY:
 				return isSetIsMandatory();
 			case Mif2Package.ASSOCIATION_END_BASE__MAXIMUM_MULTIPLICITY:
-				return MAXIMUM_MULTIPLICITY_EDEFAULT == null ? maximumMultiplicity != null : !MAXIMUM_MULTIPLICITY_EDEFAULT.equals(maximumMultiplicity);
+				return MAXIMUM_MULTIPLICITY_EDEFAULT == null
+						? maximumMultiplicity != null
+						: !MAXIMUM_MULTIPLICITY_EDEFAULT.equals(maximumMultiplicity);
 			case Mif2Package.ASSOCIATION_END_BASE__MAXIMUM_RECURSION_DEPTH:
-				return MAXIMUM_RECURSION_DEPTH_EDEFAULT == null ? maximumRecursionDepth != null : !MAXIMUM_RECURSION_DEPTH_EDEFAULT.equals(maximumRecursionDepth);
+				return MAXIMUM_RECURSION_DEPTH_EDEFAULT == null
+						? maximumRecursionDepth != null
+						: !MAXIMUM_RECURSION_DEPTH_EDEFAULT.equals(maximumRecursionDepth);
 			case Mif2Package.ASSOCIATION_END_BASE__MINIMUM_MULTIPLICITY:
-				return MINIMUM_MULTIPLICITY_EDEFAULT == null ? minimumMultiplicity != null : !MINIMUM_MULTIPLICITY_EDEFAULT.equals(minimumMultiplicity);
+				return MINIMUM_MULTIPLICITY_EDEFAULT == null
+						? minimumMultiplicity != null
+						: !MINIMUM_MULTIPLICITY_EDEFAULT.equals(minimumMultiplicity);
 			case Mif2Package.ASSOCIATION_END_BASE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.ASSOCIATION_END_BASE__NAME_LOCKED:
 				return isSetNameLocked();
 			case Mif2Package.ASSOCIATION_END_BASE__REFERENCE_HISTORY:
 				return isSetReferenceHistory();
 			case Mif2Package.ASSOCIATION_END_BASE__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 			case Mif2Package.ASSOCIATION_END_BASE__UPDATE_MODE_DEFAULT:
 				return isSetUpdateModeDefault();
 			case Mif2Package.ASSOCIATION_END_BASE__UPDATE_MODES_ALLOWED:
-				return UPDATE_MODES_ALLOWED_EDEFAULT == null ? updateModesAllowed != null : !UPDATE_MODES_ALLOWED_EDEFAULT.equals(updateModesAllowed);
+				return UPDATE_MODES_ALLOWED_EDEFAULT == null
+						? updateModesAllowed != null
+						: !UPDATE_MODES_ALLOWED_EDEFAULT.equals(updateModesAllowed);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1101,15 +1191,25 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (conformance: ");
-		if (conformanceESet) result.append(conformance); else result.append("<unset>");
+		if (conformanceESet) {
+			result.append(conformance);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", extensionOID: ");
 		result.append(extensionOID);
 		result.append(", isMandatory: ");
-		if (isMandatoryESet) result.append(isMandatory); else result.append("<unset>");
+		if (isMandatoryESet) {
+			result.append(isMandatory);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", maximumMultiplicity: ");
 		result.append(maximumMultiplicity);
 		result.append(", maximumRecursionDepth: ");
@@ -1119,17 +1219,29 @@ public class AssociationEndBaseImpl extends RelationshipImpl implements Associat
 		result.append(", name: ");
 		result.append(name);
 		result.append(", nameLocked: ");
-		if (nameLockedESet) result.append(nameLocked); else result.append("<unset>");
+		if (nameLockedESet) {
+			result.append(nameLocked);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", referenceHistory: ");
-		if (referenceHistoryESet) result.append(referenceHistory); else result.append("<unset>");
+		if (referenceHistoryESet) {
+			result.append(referenceHistory);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", sortKey: ");
 		result.append(sortKey);
 		result.append(", updateModeDefault: ");
-		if (updateModeDefaultESet) result.append(updateModeDefault); else result.append("<unset>");
+		if (updateModeDefaultESet) {
+			result.append(updateModeDefault);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", updateModesAllowed: ");
 		result.append(updateModesAllowed);
 		result.append(')');
 		return result.toString();
 	}
 
-} //AssociationEndBaseImpl
+} // AssociationEndBaseImpl

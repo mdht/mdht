@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import org.eclipse.emf.common.util.EList;
@@ -28,12 +32,20 @@ public interface GroupChangeValidator {
 	boolean validate();
 
 	boolean validateChangeItems(FeatureMap value);
+
 	boolean validateAddAttribute(EList<AttributeContent> value);
+
 	boolean validateAddElement(EList<AddElementContent> value);
+
 	boolean validateRemoveAttribute(EList<AttributeRef> value);
+
 	boolean validateReplaceAttribute(EList<AttributeContent> value);
+
 	boolean validateRemoveElement(EList<ElementRef> value);
+
 	boolean validateReplaceElement(EList<ReplaceElementContent> value);
+
 	boolean validateChangeElement(EList<ElementChange> value);
+
 	boolean validateChangeGroup(EList<GroupChange> value);
 }

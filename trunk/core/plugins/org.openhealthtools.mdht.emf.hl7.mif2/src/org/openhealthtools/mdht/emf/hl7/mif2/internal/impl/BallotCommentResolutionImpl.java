@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -23,7 +27,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.BallotCommentResolution;
 import org.openhealthtools.mdht.emf.hl7.mif2.GroupVote;
 import org.openhealthtools.mdht.emf.hl7.mif2.Mif2Package;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Inline;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -139,8 +142,14 @@ public class BallotCommentResolutionImpl extends EObjectImpl implements BallotCo
 		Inline oldResolutionComments = resolutionComments;
 		resolutionComments = newResolutionComments;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION_COMMENTS, oldResolutionComments, newResolutionComments);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION_COMMENTS,
+				oldResolutionComments, newResolutionComments);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -153,15 +162,23 @@ public class BallotCommentResolutionImpl extends EObjectImpl implements BallotCo
 	public void setResolutionComments(Inline newResolutionComments) {
 		if (newResolutionComments != resolutionComments) {
 			NotificationChain msgs = null;
-			if (resolutionComments != null)
-				msgs = ((InternalEObject)resolutionComments).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION_COMMENTS, null, msgs);
-			if (newResolutionComments != null)
-				msgs = ((InternalEObject)newResolutionComments).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION_COMMENTS, null, msgs);
+			if (resolutionComments != null) {
+				msgs = ((InternalEObject) resolutionComments).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION_COMMENTS, null, msgs);
+			}
+			if (newResolutionComments != null) {
+				msgs = ((InternalEObject) newResolutionComments).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION_COMMENTS, null, msgs);
+			}
 			msgs = basicSetResolutionComments(newResolutionComments, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION_COMMENTS,
+				newResolutionComments, newResolutionComments));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION_COMMENTS, newResolutionComments, newResolutionComments));
 	}
 
 	/**
@@ -182,8 +199,13 @@ public class BallotCommentResolutionImpl extends EObjectImpl implements BallotCo
 		GroupVote oldVote = vote;
 		vote = newVote;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_COMMENT_RESOLUTION__VOTE, oldVote, newVote);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_COMMENT_RESOLUTION__VOTE, oldVote, newVote);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -196,15 +218,22 @@ public class BallotCommentResolutionImpl extends EObjectImpl implements BallotCo
 	public void setVote(GroupVote newVote) {
 		if (newVote != vote) {
 			NotificationChain msgs = null;
-			if (vote != null)
-				msgs = ((InternalEObject)vote).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.BALLOT_COMMENT_RESOLUTION__VOTE, null, msgs);
-			if (newVote != null)
-				msgs = ((InternalEObject)newVote).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.BALLOT_COMMENT_RESOLUTION__VOTE, null, msgs);
+			if (vote != null) {
+				msgs = ((InternalEObject) vote).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.BALLOT_COMMENT_RESOLUTION__VOTE, null, msgs);
+			}
+			if (newVote != null) {
+				msgs = ((InternalEObject) newVote).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.BALLOT_COMMENT_RESOLUTION__VOTE, null, msgs);
+			}
 			msgs = basicSetVote(newVote, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_COMMENT_RESOLUTION__VOTE, newVote, newVote));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_COMMENT_RESOLUTION__VOTE, newVote, newVote));
 	}
 
 	/**
@@ -224,8 +253,10 @@ public class BallotCommentResolutionImpl extends EObjectImpl implements BallotCo
 	public void setResolution(Enumerator newResolution) {
 		Enumerator oldResolution = resolution;
 		resolution = newResolution;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION, oldResolution, resolution));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION, oldResolution, resolution));
+		}
 	}
 
 	/**
@@ -245,8 +276,11 @@ public class BallotCommentResolutionImpl extends EObjectImpl implements BallotCo
 	public void setResolutionDate(XMLGregorianCalendar newResolutionDate) {
 		XMLGregorianCalendar oldResolutionDate = resolutionDate;
 		resolutionDate = newResolutionDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION_DATE, oldResolutionDate, resolutionDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION_DATE, oldResolutionDate,
+				resolutionDate));
+		}
 	}
 
 	/**
@@ -294,16 +328,16 @@ public class BallotCommentResolutionImpl extends EObjectImpl implements BallotCo
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION_COMMENTS:
-				setResolutionComments((Inline)newValue);
+				setResolutionComments((Inline) newValue);
 				return;
 			case Mif2Package.BALLOT_COMMENT_RESOLUTION__VOTE:
-				setVote((GroupVote)newValue);
+				setVote((GroupVote) newValue);
 				return;
 			case Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION:
-				setResolution((Enumerator)newValue);
+				setResolution((Enumerator) newValue);
 				return;
 			case Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION_DATE:
-				setResolutionDate((XMLGregorianCalendar)newValue);
+				setResolutionDate((XMLGregorianCalendar) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -318,10 +352,10 @@ public class BallotCommentResolutionImpl extends EObjectImpl implements BallotCo
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION_COMMENTS:
-				setResolutionComments((Inline)null);
+				setResolutionComments((Inline) null);
 				return;
 			case Mif2Package.BALLOT_COMMENT_RESOLUTION__VOTE:
-				setVote((GroupVote)null);
+				setVote((GroupVote) null);
 				return;
 			case Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION:
 				setResolution(RESOLUTION_EDEFAULT);
@@ -346,9 +380,13 @@ public class BallotCommentResolutionImpl extends EObjectImpl implements BallotCo
 			case Mif2Package.BALLOT_COMMENT_RESOLUTION__VOTE:
 				return vote != null;
 			case Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION:
-				return RESOLUTION_EDEFAULT == null ? resolution != null : !RESOLUTION_EDEFAULT.equals(resolution);
+				return RESOLUTION_EDEFAULT == null
+						? resolution != null
+						: !RESOLUTION_EDEFAULT.equals(resolution);
 			case Mif2Package.BALLOT_COMMENT_RESOLUTION__RESOLUTION_DATE:
-				return RESOLUTION_DATE_EDEFAULT == null ? resolutionDate != null : !RESOLUTION_DATE_EDEFAULT.equals(resolutionDate);
+				return RESOLUTION_DATE_EDEFAULT == null
+						? resolutionDate != null
+						: !RESOLUTION_DATE_EDEFAULT.equals(resolutionDate);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -360,7 +398,9 @@ public class BallotCommentResolutionImpl extends EObjectImpl implements BallotCo
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (resolution: ");
@@ -371,4 +411,4 @@ public class BallotCommentResolutionImpl extends EObjectImpl implements BallotCo
 		return result.toString();
 	}
 
-} //BallotCommentResolutionImpl
+} // BallotCommentResolutionImpl

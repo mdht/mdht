@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.internal.impl;
 
 import java.math.BigInteger;
@@ -102,12 +106,11 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 */
 	public static XhtmlFactory init() {
 		try {
-			XhtmlFactory theXhtmlFactory = (XhtmlFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.w3.org/1999/xhtml"); 
+			XhtmlFactory theXhtmlFactory = (XhtmlFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.w3.org/1999/xhtml");
 			if (theXhtmlFactory != null) {
 				return theXhtmlFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new XhtmlFactoryImpl();
@@ -131,58 +134,110 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case XhtmlPackage.A: return createA();
-			case XhtmlPackage.ABBR: return createAbbr();
-			case XhtmlPackage.ACONTENT: return createAContent();
-			case XhtmlPackage.ACRONYM: return createAcronym();
-			case XhtmlPackage.B: return createB();
-			case XhtmlPackage.BIG: return createBig();
-			case XhtmlPackage.BLOCK: return createBlock();
-			case XhtmlPackage.BLOCKQUOTE: return createBlockquote();
-			case XhtmlPackage.BR: return createBr();
-			case XhtmlPackage.CAPTION: return createCaption();
-			case XhtmlPackage.CITE: return createCite();
-			case XhtmlPackage.CODE: return createCode();
-			case XhtmlPackage.COL: return createCol();
-			case XhtmlPackage.COLGROUP: return createColgroup();
-			case XhtmlPackage.DD: return createDd();
-			case XhtmlPackage.DEL: return createDel();
-			case XhtmlPackage.DFN: return createDfn();
-			case XhtmlPackage.DIV: return createDiv();
-			case XhtmlPackage.DL: return createDl();
-			case XhtmlPackage.DT: return createDt();
-			case XhtmlPackage.EM: return createEm();
-			case XhtmlPackage.FLOW: return createFlow();
-			case XhtmlPackage.HR: return createHr();
-			case XhtmlPackage.I: return createI();
-			case XhtmlPackage.IMG: return createImg();
-			case XhtmlPackage.INLINE: return createInline();
-			case XhtmlPackage.INS: return createIns();
-			case XhtmlPackage.KBD: return createKbd();
-			case XhtmlPackage.LI: return createLi();
-			case XhtmlPackage.OBJECT: return createObject();
-			case XhtmlPackage.OL: return createOl();
-			case XhtmlPackage.P: return createP();
-			case XhtmlPackage.PARAM: return createParam();
-			case XhtmlPackage.PRE: return createPre();
-			case XhtmlPackage.PRE_CONTENT: return createPreContent();
-			case XhtmlPackage.Q: return createQ();
-			case XhtmlPackage.SAMP: return createSamp();
-			case XhtmlPackage.SMALL: return createSmall();
-			case XhtmlPackage.SPAN: return createSpan();
-			case XhtmlPackage.STRONG: return createStrong();
-			case XhtmlPackage.SUB: return createSub();
-			case XhtmlPackage.SUP: return createSup();
-			case XhtmlPackage.TABLE: return createTable();
-			case XhtmlPackage.TBODY: return createTbody();
-			case XhtmlPackage.TD: return createTd();
-			case XhtmlPackage.TFOOT: return createTfoot();
-			case XhtmlPackage.TH: return createTh();
-			case XhtmlPackage.THEAD: return createThead();
-			case XhtmlPackage.TR: return createTr();
-			case XhtmlPackage.TT: return createTt();
-			case XhtmlPackage.UL: return createUl();
-			case XhtmlPackage.VAR: return createVar();
+			case XhtmlPackage.A:
+				return createA();
+			case XhtmlPackage.ABBR:
+				return createAbbr();
+			case XhtmlPackage.ACONTENT:
+				return createAContent();
+			case XhtmlPackage.ACRONYM:
+				return createAcronym();
+			case XhtmlPackage.B:
+				return createB();
+			case XhtmlPackage.BIG:
+				return createBig();
+			case XhtmlPackage.BLOCK:
+				return createBlock();
+			case XhtmlPackage.BLOCKQUOTE:
+				return createBlockquote();
+			case XhtmlPackage.BR:
+				return createBr();
+			case XhtmlPackage.CAPTION:
+				return createCaption();
+			case XhtmlPackage.CITE:
+				return createCite();
+			case XhtmlPackage.CODE:
+				return createCode();
+			case XhtmlPackage.COL:
+				return createCol();
+			case XhtmlPackage.COLGROUP:
+				return createColgroup();
+			case XhtmlPackage.DD:
+				return createDd();
+			case XhtmlPackage.DEL:
+				return createDel();
+			case XhtmlPackage.DFN:
+				return createDfn();
+			case XhtmlPackage.DIV:
+				return createDiv();
+			case XhtmlPackage.DL:
+				return createDl();
+			case XhtmlPackage.DT:
+				return createDt();
+			case XhtmlPackage.EM:
+				return createEm();
+			case XhtmlPackage.FLOW:
+				return createFlow();
+			case XhtmlPackage.HR:
+				return createHr();
+			case XhtmlPackage.I:
+				return createI();
+			case XhtmlPackage.IMG:
+				return createImg();
+			case XhtmlPackage.INLINE:
+				return createInline();
+			case XhtmlPackage.INS:
+				return createIns();
+			case XhtmlPackage.KBD:
+				return createKbd();
+			case XhtmlPackage.LI:
+				return createLi();
+			case XhtmlPackage.OBJECT:
+				return createObject();
+			case XhtmlPackage.OL:
+				return createOl();
+			case XhtmlPackage.P:
+				return createP();
+			case XhtmlPackage.PARAM:
+				return createParam();
+			case XhtmlPackage.PRE:
+				return createPre();
+			case XhtmlPackage.PRE_CONTENT:
+				return createPreContent();
+			case XhtmlPackage.Q:
+				return createQ();
+			case XhtmlPackage.SAMP:
+				return createSamp();
+			case XhtmlPackage.SMALL:
+				return createSmall();
+			case XhtmlPackage.SPAN:
+				return createSpan();
+			case XhtmlPackage.STRONG:
+				return createStrong();
+			case XhtmlPackage.SUB:
+				return createSub();
+			case XhtmlPackage.SUP:
+				return createSup();
+			case XhtmlPackage.TABLE:
+				return createTable();
+			case XhtmlPackage.TBODY:
+				return createTbody();
+			case XhtmlPackage.TD:
+				return createTd();
+			case XhtmlPackage.TFOOT:
+				return createTfoot();
+			case XhtmlPackage.TH:
+				return createTh();
+			case XhtmlPackage.THEAD:
+				return createThead();
+			case XhtmlPackage.TR:
+				return createTr();
+			case XhtmlPackage.TT:
+				return createTt();
+			case XhtmlPackage.UL:
+				return createUl();
+			case XhtmlPackage.VAR:
+				return createVar();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -261,7 +316,8 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 			case XhtmlPackage.VALIGN_TYPE_OBJECT:
 				return createValignTypeObjectFromString(eDataType, initialValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
+						"' is not a valid classifier");
 		}
 	}
 
@@ -338,7 +394,8 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 			case XhtmlPackage.VALIGN_TYPE_OBJECT:
 				return convertValignTypeObjectToString(eDataType, instanceValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
+						"' is not a valid classifier");
 		}
 	}
 
@@ -869,7 +926,10 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 */
 	public AlignType createAlignTypeFromString(EDataType eDataType, String initialValue) {
 		AlignType result = AlignType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -879,7 +939,9 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String convertAlignTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -889,7 +951,10 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 */
 	public ImageKind createImageKindFromString(EDataType eDataType, String initialValue) {
 		ImageKind result = ImageKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -899,7 +964,9 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String convertImageKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -909,7 +976,10 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 */
 	public MediaType createMediaTypeFromString(EDataType eDataType, String initialValue) {
 		MediaType result = MediaType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -919,7 +989,9 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String convertMediaTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -929,7 +1001,10 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 */
 	public MifClassType createMifClassTypeFromString(EDataType eDataType, String initialValue) {
 		MifClassType result = MifClassType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -939,7 +1014,9 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String convertMifClassTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -949,7 +1026,10 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 */
 	public ObjectName createObjectNameFromString(EDataType eDataType, String initialValue) {
 		ObjectName result = ObjectName.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -959,7 +1039,9 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String convertObjectNameToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -969,7 +1051,10 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 */
 	public ParamName createParamNameFromString(EDataType eDataType, String initialValue) {
 		ParamName result = ParamName.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -979,7 +1064,9 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String convertParamNameToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -989,7 +1076,10 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 */
 	public Shape createShapeFromString(EDataType eDataType, String initialValue) {
 		Shape result = Shape.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -999,7 +1089,9 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String convertShapeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1009,7 +1101,10 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 */
 	public StyleSheet createStyleSheetFromString(EDataType eDataType, String initialValue) {
 		StyleSheet result = StyleSheet.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1019,7 +1114,9 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String convertStyleSheetToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1029,7 +1126,10 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 */
 	public TFrame createTFrameFromString(EDataType eDataType, String initialValue) {
 		TFrame result = TFrame.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1039,7 +1139,9 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String convertTFrameToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1049,7 +1151,10 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 */
 	public TRules createTRulesFromString(EDataType eDataType, String initialValue) {
 		TRules result = TRules.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1059,7 +1164,9 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String convertTRulesToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1069,7 +1176,10 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 */
 	public ValignType createValignTypeFromString(EDataType eDataType, String initialValue) {
 		ValignType result = ValignType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -1079,7 +1189,9 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String convertValignTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -1106,7 +1218,7 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String createCharacterFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
 	}
 
 	/**
@@ -1124,7 +1236,9 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public Object createContentTypeFromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null) return null;
+		if (initialValue == null) {
+			return null;
+		}
 		Object result = null;
 		RuntimeException exception = null;
 		try {
@@ -1132,8 +1246,7 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
 		try {
@@ -1141,12 +1254,13 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
-		if (result != null || exception == null) return result;
-    
+		if (result != null || exception == null) {
+			return result;
+		}
+
 		throw exception;
 	}
 
@@ -1156,26 +1270,31 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String convertContentTypeToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null) return null;
+		if (instanceValue == null) {
+			return null;
+		}
 		if (XhtmlPackage.Literals.MEDIA_TYPE.isInstance(instanceValue)) {
 			try {
 				String value = convertMediaTypeToString(XhtmlPackage.Literals.MEDIA_TYPE, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
 		if (XMLTypePackage.Literals.STRING.isInstance(instanceValue)) {
 			try {
 				String value = XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.STRING, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
-		throw new IllegalArgumentException("Invalid value: '"+instanceValue+"' for datatype :"+eDataType.getName());
+		throw new IllegalArgumentException("Invalid value: '" + instanceValue + "' for datatype :" +
+				eDataType.getName());
 	}
 
 	/**
@@ -1184,7 +1303,7 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String createCoordsFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
 	}
 
 	/**
@@ -1220,7 +1339,7 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String createLengthFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
 	}
 
 	/**
@@ -1274,7 +1393,7 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String createMultiLengthFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
 	}
 
 	/**
@@ -1292,7 +1411,8 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public BigInteger createNumberFromString(EDataType eDataType, String initialValue) {
-		return (BigInteger)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NON_NEGATIVE_INTEGER, initialValue);
+		return (BigInteger) XMLTypeFactory.eINSTANCE.createFromString(
+			XMLTypePackage.Literals.NON_NEGATIVE_INTEGER, initialValue);
 	}
 
 	/**
@@ -1346,7 +1466,7 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String createParamValueFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
 	}
 
 	/**
@@ -1364,7 +1484,8 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public BigInteger createPixelsFromString(EDataType eDataType, String initialValue) {
-		return (BigInteger)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NON_NEGATIVE_INTEGER, initialValue);
+		return (BigInteger) XMLTypeFactory.eINSTANCE.createFromString(
+			XMLTypePackage.Literals.NON_NEGATIVE_INTEGER, initialValue);
 	}
 
 	/**
@@ -1418,7 +1539,7 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String createTextFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
 	}
 
 	/**
@@ -1472,7 +1593,7 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public String createURIFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.ANY_URI, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.ANY_URI, initialValue);
 	}
 
 	/**
@@ -1508,7 +1629,7 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 	 * @generated
 	 */
 	public XhtmlPackage getXhtmlPackage() {
-		return (XhtmlPackage)getEPackage();
+		return (XhtmlPackage) getEPackage();
 	}
 
 	/**
@@ -1522,4 +1643,4 @@ public class XhtmlFactoryImpl extends EFactoryImpl implements XhtmlFactory {
 		return XhtmlPackage.eINSTANCE;
 	}
 
-} //XhtmlFactoryImpl
+} // XhtmlFactoryImpl

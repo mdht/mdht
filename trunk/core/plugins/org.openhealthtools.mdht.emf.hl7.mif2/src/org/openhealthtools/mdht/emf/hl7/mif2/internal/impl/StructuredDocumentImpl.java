@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -91,8 +95,13 @@ public class StructuredDocumentImpl extends PackageArtifactImpl implements Struc
 		StructuredDocumentAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STRUCTURED_DOCUMENT__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STRUCTURED_DOCUMENT__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -105,15 +114,22 @@ public class StructuredDocumentImpl extends PackageArtifactImpl implements Struc
 	public void setAnnotations(StructuredDocumentAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STRUCTURED_DOCUMENT__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STRUCTURED_DOCUMENT__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STRUCTURED_DOCUMENT__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STRUCTURED_DOCUMENT__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STRUCTURED_DOCUMENT__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STRUCTURED_DOCUMENT__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -134,8 +150,14 @@ public class StructuredDocumentImpl extends PackageArtifactImpl implements Struc
 		BoundStaticModel oldDocumentDefinition = documentDefinition;
 		documentDefinition = newDocumentDefinition;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STRUCTURED_DOCUMENT__DOCUMENT_DEFINITION, oldDocumentDefinition, newDocumentDefinition);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STRUCTURED_DOCUMENT__DOCUMENT_DEFINITION, oldDocumentDefinition,
+				newDocumentDefinition);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -148,15 +170,23 @@ public class StructuredDocumentImpl extends PackageArtifactImpl implements Struc
 	public void setDocumentDefinition(BoundStaticModel newDocumentDefinition) {
 		if (newDocumentDefinition != documentDefinition) {
 			NotificationChain msgs = null;
-			if (documentDefinition != null)
-				msgs = ((InternalEObject)documentDefinition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STRUCTURED_DOCUMENT__DOCUMENT_DEFINITION, null, msgs);
-			if (newDocumentDefinition != null)
-				msgs = ((InternalEObject)newDocumentDefinition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STRUCTURED_DOCUMENT__DOCUMENT_DEFINITION, null, msgs);
+			if (documentDefinition != null) {
+				msgs = ((InternalEObject) documentDefinition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STRUCTURED_DOCUMENT__DOCUMENT_DEFINITION, null, msgs);
+			}
+			if (newDocumentDefinition != null) {
+				msgs = ((InternalEObject) newDocumentDefinition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STRUCTURED_DOCUMENT__DOCUMENT_DEFINITION, null, msgs);
+			}
 			msgs = basicSetDocumentDefinition(newDocumentDefinition, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STRUCTURED_DOCUMENT__DOCUMENT_DEFINITION, newDocumentDefinition,
+				newDocumentDefinition));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STRUCTURED_DOCUMENT__DOCUMENT_DEFINITION, newDocumentDefinition, newDocumentDefinition));
 	}
 
 	/**
@@ -200,10 +230,10 @@ public class StructuredDocumentImpl extends PackageArtifactImpl implements Struc
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.STRUCTURED_DOCUMENT__ANNOTATIONS:
-				setAnnotations((StructuredDocumentAnnotations)newValue);
+				setAnnotations((StructuredDocumentAnnotations) newValue);
 				return;
 			case Mif2Package.STRUCTURED_DOCUMENT__DOCUMENT_DEFINITION:
-				setDocumentDefinition((BoundStaticModel)newValue);
+				setDocumentDefinition((BoundStaticModel) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -218,10 +248,10 @@ public class StructuredDocumentImpl extends PackageArtifactImpl implements Struc
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.STRUCTURED_DOCUMENT__ANNOTATIONS:
-				setAnnotations((StructuredDocumentAnnotations)null);
+				setAnnotations((StructuredDocumentAnnotations) null);
 				return;
 			case Mif2Package.STRUCTURED_DOCUMENT__DOCUMENT_DEFINITION:
-				setDocumentDefinition((BoundStaticModel)null);
+				setDocumentDefinition((BoundStaticModel) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -243,4 +273,4 @@ public class StructuredDocumentImpl extends PackageArtifactImpl implements Struc
 		return super.eIsSet(featureID);
 	}
 
-} //StructuredDocumentImpl
+} // StructuredDocumentImpl

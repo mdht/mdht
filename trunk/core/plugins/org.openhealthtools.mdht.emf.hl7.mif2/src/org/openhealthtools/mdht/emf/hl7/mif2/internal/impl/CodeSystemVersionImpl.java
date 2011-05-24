@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -141,7 +145,9 @@ public class CodeSystemVersionImpl extends CodeSystemVersionBaseImpl implements 
 	 */
 	public EList<SupportedConceptRelationship> getSupportedConceptRelationship() {
 		if (supportedConceptRelationship == null) {
-			supportedConceptRelationship = new EObjectContainmentEList<SupportedConceptRelationship>(SupportedConceptRelationship.class, this, Mif2Package.CODE_SYSTEM_VERSION__SUPPORTED_CONCEPT_RELATIONSHIP);
+			supportedConceptRelationship = new EObjectContainmentEList<SupportedConceptRelationship>(
+				SupportedConceptRelationship.class, this,
+				Mif2Package.CODE_SYSTEM_VERSION__SUPPORTED_CONCEPT_RELATIONSHIP);
 		}
 		return supportedConceptRelationship;
 	}
@@ -153,7 +159,8 @@ public class CodeSystemVersionImpl extends CodeSystemVersionBaseImpl implements 
 	 */
 	public EList<SupportedConceptProperty> getSupportedConceptProperty() {
 		if (supportedConceptProperty == null) {
-			supportedConceptProperty = new EObjectContainmentEList<SupportedConceptProperty>(SupportedConceptProperty.class, this, Mif2Package.CODE_SYSTEM_VERSION__SUPPORTED_CONCEPT_PROPERTY);
+			supportedConceptProperty = new EObjectContainmentEList<SupportedConceptProperty>(
+				SupportedConceptProperty.class, this, Mif2Package.CODE_SYSTEM_VERSION__SUPPORTED_CONCEPT_PROPERTY);
 		}
 		return supportedConceptProperty;
 	}
@@ -165,7 +172,8 @@ public class CodeSystemVersionImpl extends CodeSystemVersionBaseImpl implements 
 	 */
 	public EList<SupportedProperty> getSupportedCodeProperty() {
 		if (supportedCodeProperty == null) {
-			supportedCodeProperty = new EObjectContainmentEList<SupportedProperty>(SupportedProperty.class, this, Mif2Package.CODE_SYSTEM_VERSION__SUPPORTED_CODE_PROPERTY);
+			supportedCodeProperty = new EObjectContainmentEList<SupportedProperty>(
+				SupportedProperty.class, this, Mif2Package.CODE_SYSTEM_VERSION__SUPPORTED_CODE_PROPERTY);
 		}
 		return supportedCodeProperty;
 	}
@@ -177,7 +185,8 @@ public class CodeSystemVersionImpl extends CodeSystemVersionBaseImpl implements 
 	 */
 	public EList<Concept> getConcept() {
 		if (concept == null) {
-			concept = new EObjectContainmentEList<Concept>(Concept.class, this, Mif2Package.CODE_SYSTEM_VERSION__CONCEPT);
+			concept = new EObjectContainmentEList<Concept>(
+				Concept.class, this, Mif2Package.CODE_SYSTEM_VERSION__CONCEPT);
 		}
 		return concept;
 	}
@@ -201,8 +210,11 @@ public class CodeSystemVersionImpl extends CodeSystemVersionBaseImpl implements 
 		completeCodesIndicator = newCompleteCodesIndicator;
 		boolean oldCompleteCodesIndicatorESet = completeCodesIndicatorESet;
 		completeCodesIndicatorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION__COMPLETE_CODES_INDICATOR, oldCompleteCodesIndicator, completeCodesIndicator, !oldCompleteCodesIndicatorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION__COMPLETE_CODES_INDICATOR,
+				oldCompleteCodesIndicator, completeCodesIndicator, !oldCompleteCodesIndicatorESet));
+		}
 	}
 
 	/**
@@ -215,8 +227,11 @@ public class CodeSystemVersionImpl extends CodeSystemVersionBaseImpl implements 
 		boolean oldCompleteCodesIndicatorESet = completeCodesIndicatorESet;
 		completeCodesIndicator = COMPLETE_CODES_INDICATOR_EDEFAULT;
 		completeCodesIndicatorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CODE_SYSTEM_VERSION__COMPLETE_CODES_INDICATOR, oldCompleteCodesIndicator, COMPLETE_CODES_INDICATOR_EDEFAULT, oldCompleteCodesIndicatorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CODE_SYSTEM_VERSION__COMPLETE_CODES_INDICATOR,
+				oldCompleteCodesIndicator, COMPLETE_CODES_INDICATOR_EDEFAULT, oldCompleteCodesIndicatorESet));
+		}
 	}
 
 	/**
@@ -237,13 +252,13 @@ public class CodeSystemVersionImpl extends CodeSystemVersionBaseImpl implements 
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.CODE_SYSTEM_VERSION__SUPPORTED_CONCEPT_RELATIONSHIP:
-				return ((InternalEList<?>)getSupportedConceptRelationship()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSupportedConceptRelationship()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CODE_SYSTEM_VERSION__SUPPORTED_CONCEPT_PROPERTY:
-				return ((InternalEList<?>)getSupportedConceptProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSupportedConceptProperty()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CODE_SYSTEM_VERSION__SUPPORTED_CODE_PROPERTY:
-				return ((InternalEList<?>)getSupportedCodeProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSupportedCodeProperty()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CODE_SYSTEM_VERSION__CONCEPT:
-				return ((InternalEList<?>)getConcept()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getConcept()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -265,7 +280,9 @@ public class CodeSystemVersionImpl extends CodeSystemVersionBaseImpl implements 
 			case Mif2Package.CODE_SYSTEM_VERSION__CONCEPT:
 				return getConcept();
 			case Mif2Package.CODE_SYSTEM_VERSION__COMPLETE_CODES_INDICATOR:
-				return isCompleteCodesIndicator() ? Boolean.TRUE : Boolean.FALSE;
+				return isCompleteCodesIndicator()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -281,22 +298,22 @@ public class CodeSystemVersionImpl extends CodeSystemVersionBaseImpl implements 
 		switch (featureID) {
 			case Mif2Package.CODE_SYSTEM_VERSION__SUPPORTED_CONCEPT_RELATIONSHIP:
 				getSupportedConceptRelationship().clear();
-				getSupportedConceptRelationship().addAll((Collection<? extends SupportedConceptRelationship>)newValue);
+				getSupportedConceptRelationship().addAll((Collection<? extends SupportedConceptRelationship>) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_VERSION__SUPPORTED_CONCEPT_PROPERTY:
 				getSupportedConceptProperty().clear();
-				getSupportedConceptProperty().addAll((Collection<? extends SupportedConceptProperty>)newValue);
+				getSupportedConceptProperty().addAll((Collection<? extends SupportedConceptProperty>) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_VERSION__SUPPORTED_CODE_PROPERTY:
 				getSupportedCodeProperty().clear();
-				getSupportedCodeProperty().addAll((Collection<? extends SupportedProperty>)newValue);
+				getSupportedCodeProperty().addAll((Collection<? extends SupportedProperty>) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_VERSION__CONCEPT:
 				getConcept().clear();
-				getConcept().addAll((Collection<? extends Concept>)newValue);
+				getConcept().addAll((Collection<? extends Concept>) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_VERSION__COMPLETE_CODES_INDICATOR:
-				setCompleteCodesIndicator(((Boolean)newValue).booleanValue());
+				setCompleteCodesIndicator(((Boolean) newValue).booleanValue());
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -358,13 +375,19 @@ public class CodeSystemVersionImpl extends CodeSystemVersionBaseImpl implements 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (completeCodesIndicator: ");
-		if (completeCodesIndicatorESet) result.append(completeCodesIndicator); else result.append("<unset>");
+		if (completeCodesIndicatorESet) {
+			result.append(completeCodesIndicator);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //CodeSystemVersionImpl
+} // CodeSystemVersionImpl

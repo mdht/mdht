@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -115,8 +119,13 @@ public class TriggerEventImpl extends PackageArtifactImpl implements TriggerEven
 		TriggerEventAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.TRIGGER_EVENT__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TRIGGER_EVENT__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -129,15 +138,22 @@ public class TriggerEventImpl extends PackageArtifactImpl implements TriggerEven
 	public void setAnnotations(TriggerEventAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TRIGGER_EVENT__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TRIGGER_EVENT__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TRIGGER_EVENT__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TRIGGER_EVENT__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TRIGGER_EVENT__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TRIGGER_EVENT__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -158,8 +174,13 @@ public class TriggerEventImpl extends PackageArtifactImpl implements TriggerEven
 		PackageRef oldInteraction = interaction;
 		interaction = newInteraction;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.TRIGGER_EVENT__INTERACTION, oldInteraction, newInteraction);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TRIGGER_EVENT__INTERACTION, oldInteraction, newInteraction);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -172,15 +193,22 @@ public class TriggerEventImpl extends PackageArtifactImpl implements TriggerEven
 	public void setInteraction(PackageRef newInteraction) {
 		if (newInteraction != interaction) {
 			NotificationChain msgs = null;
-			if (interaction != null)
-				msgs = ((InternalEObject)interaction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TRIGGER_EVENT__INTERACTION, null, msgs);
-			if (newInteraction != null)
-				msgs = ((InternalEObject)newInteraction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TRIGGER_EVENT__INTERACTION, null, msgs);
+			if (interaction != null) {
+				msgs = ((InternalEObject) interaction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TRIGGER_EVENT__INTERACTION, null, msgs);
+			}
+			if (newInteraction != null) {
+				msgs = ((InternalEObject) newInteraction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TRIGGER_EVENT__INTERACTION, null, msgs);
+			}
 			msgs = basicSetInteraction(newInteraction, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TRIGGER_EVENT__INTERACTION, newInteraction, newInteraction));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TRIGGER_EVENT__INTERACTION, newInteraction, newInteraction));
 	}
 
 	/**
@@ -201,8 +229,14 @@ public class TriggerEventImpl extends PackageArtifactImpl implements TriggerEven
 		TransitionRef oldStateTransition = stateTransition;
 		stateTransition = newStateTransition;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.TRIGGER_EVENT__STATE_TRANSITION, oldStateTransition, newStateTransition);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TRIGGER_EVENT__STATE_TRANSITION, oldStateTransition,
+				newStateTransition);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -215,15 +249,23 @@ public class TriggerEventImpl extends PackageArtifactImpl implements TriggerEven
 	public void setStateTransition(TransitionRef newStateTransition) {
 		if (newStateTransition != stateTransition) {
 			NotificationChain msgs = null;
-			if (stateTransition != null)
-				msgs = ((InternalEObject)stateTransition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TRIGGER_EVENT__STATE_TRANSITION, null, msgs);
-			if (newStateTransition != null)
-				msgs = ((InternalEObject)newStateTransition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TRIGGER_EVENT__STATE_TRANSITION, null, msgs);
+			if (stateTransition != null) {
+				msgs = ((InternalEObject) stateTransition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TRIGGER_EVENT__STATE_TRANSITION, null, msgs);
+			}
+			if (newStateTransition != null) {
+				msgs = ((InternalEObject) newStateTransition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TRIGGER_EVENT__STATE_TRANSITION, null, msgs);
+			}
 			msgs = basicSetStateTransition(newStateTransition, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TRIGGER_EVENT__STATE_TRANSITION, newStateTransition,
+				newStateTransition));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TRIGGER_EVENT__STATE_TRANSITION, newStateTransition, newStateTransition));
 	}
 
 	/**
@@ -240,12 +282,19 @@ public class TriggerEventImpl extends PackageArtifactImpl implements TriggerEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEnvironmentalOccurrence(EnvironmentalOccurrence newEnvironmentalOccurrence, NotificationChain msgs) {
+	public NotificationChain basicSetEnvironmentalOccurrence(EnvironmentalOccurrence newEnvironmentalOccurrence,
+			NotificationChain msgs) {
 		EnvironmentalOccurrence oldEnvironmentalOccurrence = environmentalOccurrence;
 		environmentalOccurrence = newEnvironmentalOccurrence;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.TRIGGER_EVENT__ENVIRONMENTAL_OCCURRENCE, oldEnvironmentalOccurrence, newEnvironmentalOccurrence);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TRIGGER_EVENT__ENVIRONMENTAL_OCCURRENCE,
+				oldEnvironmentalOccurrence, newEnvironmentalOccurrence);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -258,15 +307,23 @@ public class TriggerEventImpl extends PackageArtifactImpl implements TriggerEven
 	public void setEnvironmentalOccurrence(EnvironmentalOccurrence newEnvironmentalOccurrence) {
 		if (newEnvironmentalOccurrence != environmentalOccurrence) {
 			NotificationChain msgs = null;
-			if (environmentalOccurrence != null)
-				msgs = ((InternalEObject)environmentalOccurrence).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TRIGGER_EVENT__ENVIRONMENTAL_OCCURRENCE, null, msgs);
-			if (newEnvironmentalOccurrence != null)
-				msgs = ((InternalEObject)newEnvironmentalOccurrence).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TRIGGER_EVENT__ENVIRONMENTAL_OCCURRENCE, null, msgs);
+			if (environmentalOccurrence != null) {
+				msgs = ((InternalEObject) environmentalOccurrence).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TRIGGER_EVENT__ENVIRONMENTAL_OCCURRENCE, null, msgs);
+			}
+			if (newEnvironmentalOccurrence != null) {
+				msgs = ((InternalEObject) newEnvironmentalOccurrence).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TRIGGER_EVENT__ENVIRONMENTAL_OCCURRENCE, null, msgs);
+			}
 			msgs = basicSetEnvironmentalOccurrence(newEnvironmentalOccurrence, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TRIGGER_EVENT__ENVIRONMENTAL_OCCURRENCE,
+				newEnvironmentalOccurrence, newEnvironmentalOccurrence));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TRIGGER_EVENT__ENVIRONMENTAL_OCCURRENCE, newEnvironmentalOccurrence, newEnvironmentalOccurrence));
 	}
 
 	/**
@@ -318,16 +375,16 @@ public class TriggerEventImpl extends PackageArtifactImpl implements TriggerEven
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.TRIGGER_EVENT__ANNOTATIONS:
-				setAnnotations((TriggerEventAnnotations)newValue);
+				setAnnotations((TriggerEventAnnotations) newValue);
 				return;
 			case Mif2Package.TRIGGER_EVENT__INTERACTION:
-				setInteraction((PackageRef)newValue);
+				setInteraction((PackageRef) newValue);
 				return;
 			case Mif2Package.TRIGGER_EVENT__STATE_TRANSITION:
-				setStateTransition((TransitionRef)newValue);
+				setStateTransition((TransitionRef) newValue);
 				return;
 			case Mif2Package.TRIGGER_EVENT__ENVIRONMENTAL_OCCURRENCE:
-				setEnvironmentalOccurrence((EnvironmentalOccurrence)newValue);
+				setEnvironmentalOccurrence((EnvironmentalOccurrence) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -342,16 +399,16 @@ public class TriggerEventImpl extends PackageArtifactImpl implements TriggerEven
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.TRIGGER_EVENT__ANNOTATIONS:
-				setAnnotations((TriggerEventAnnotations)null);
+				setAnnotations((TriggerEventAnnotations) null);
 				return;
 			case Mif2Package.TRIGGER_EVENT__INTERACTION:
-				setInteraction((PackageRef)null);
+				setInteraction((PackageRef) null);
 				return;
 			case Mif2Package.TRIGGER_EVENT__STATE_TRANSITION:
-				setStateTransition((TransitionRef)null);
+				setStateTransition((TransitionRef) null);
 				return;
 			case Mif2Package.TRIGGER_EVENT__ENVIRONMENTAL_OCCURRENCE:
-				setEnvironmentalOccurrence((EnvironmentalOccurrence)null);
+				setEnvironmentalOccurrence((EnvironmentalOccurrence) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -377,4 +434,4 @@ public class TriggerEventImpl extends PackageArtifactImpl implements TriggerEven
 		return super.eIsSet(featureID);
 	}
 
-} //TriggerEventImpl
+} // TriggerEventImpl

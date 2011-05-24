@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import java.math.BigInteger;
@@ -24,15 +28,26 @@ public interface CodeSystemBaseValidator {
 	boolean validate();
 
 	boolean validateHeader(Header value);
+
 	boolean validateAnnotations(CodeSystemAnnotations value);
+
 	boolean validatePropertyGroup(EList<PropertyGroup> value);
+
 	boolean validateApproxCodeCount(BigInteger value);
+
 	boolean validateCodeSystemId(String value);
+
 	boolean validateHasHomonymy(boolean value);
+
 	boolean validateHasSynonymy(boolean value);
+
 	boolean validateIsCaseSensitive(boolean value);
+
 	boolean validateIsWhitespaceSensitive(boolean value);
+
 	boolean validatePrimaryLanguage(String value);
+
 	boolean validatePrimaryRealm(Object value);
+
 	boolean validateTitle(String value);
 }

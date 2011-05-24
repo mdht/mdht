@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -111,8 +115,14 @@ public class CodeFilterContentDefinitionImpl extends EObjectImpl implements Code
 		EObject oldExpression = expression;
 		expression = newExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_FILTER_CONTENT_DEFINITION__EXPRESSION, oldExpression, newExpression);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_FILTER_CONTENT_DEFINITION__EXPRESSION, oldExpression,
+				newExpression);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -125,15 +135,23 @@ public class CodeFilterContentDefinitionImpl extends EObjectImpl implements Code
 	public void setExpression(EObject newExpression) {
 		if (newExpression != expression) {
 			NotificationChain msgs = null;
-			if (expression != null)
-				msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_FILTER_CONTENT_DEFINITION__EXPRESSION, null, msgs);
-			if (newExpression != null)
-				msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_FILTER_CONTENT_DEFINITION__EXPRESSION, null, msgs);
+			if (expression != null) {
+				msgs = ((InternalEObject) expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_FILTER_CONTENT_DEFINITION__EXPRESSION, null, msgs);
+			}
+			if (newExpression != null) {
+				msgs = ((InternalEObject) newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_FILTER_CONTENT_DEFINITION__EXPRESSION, null, msgs);
+			}
 			msgs = basicSetExpression(newExpression, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_FILTER_CONTENT_DEFINITION__EXPRESSION, newExpression,
+				newExpression));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_FILTER_CONTENT_DEFINITION__EXPRESSION, newExpression, newExpression));
 	}
 
 	/**
@@ -152,11 +170,16 @@ public class CodeFilterContentDefinitionImpl extends EObjectImpl implements Code
 	 */
 	public void setExpressionType(CodeFilterExpressionKind newExpressionType) {
 		CodeFilterExpressionKind oldExpressionType = expressionType;
-		expressionType = newExpressionType == null ? EXPRESSION_TYPE_EDEFAULT : newExpressionType;
+		expressionType = newExpressionType == null
+				? EXPRESSION_TYPE_EDEFAULT
+				: newExpressionType;
 		boolean oldExpressionTypeESet = expressionTypeESet;
 		expressionTypeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_FILTER_CONTENT_DEFINITION__EXPRESSION_TYPE, oldExpressionType, expressionType, !oldExpressionTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_FILTER_CONTENT_DEFINITION__EXPRESSION_TYPE, oldExpressionType,
+				expressionType, !oldExpressionTypeESet));
+		}
 	}
 
 	/**
@@ -169,8 +192,11 @@ public class CodeFilterContentDefinitionImpl extends EObjectImpl implements Code
 		boolean oldExpressionTypeESet = expressionTypeESet;
 		expressionType = EXPRESSION_TYPE_EDEFAULT;
 		expressionTypeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CODE_FILTER_CONTENT_DEFINITION__EXPRESSION_TYPE, oldExpressionType, EXPRESSION_TYPE_EDEFAULT, oldExpressionTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CODE_FILTER_CONTENT_DEFINITION__EXPRESSION_TYPE,
+				oldExpressionType, EXPRESSION_TYPE_EDEFAULT, oldExpressionTypeESet));
+		}
 	}
 
 	/**
@@ -221,10 +247,10 @@ public class CodeFilterContentDefinitionImpl extends EObjectImpl implements Code
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CODE_FILTER_CONTENT_DEFINITION__EXPRESSION:
-				setExpression((EObject)newValue);
+				setExpression((EObject) newValue);
 				return;
 			case Mif2Package.CODE_FILTER_CONTENT_DEFINITION__EXPRESSION_TYPE:
-				setExpressionType((CodeFilterExpressionKind)newValue);
+				setExpressionType((CodeFilterExpressionKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,7 +265,7 @@ public class CodeFilterContentDefinitionImpl extends EObjectImpl implements Code
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CODE_FILTER_CONTENT_DEFINITION__EXPRESSION:
-				setExpression((EObject)null);
+				setExpression((EObject) null);
 				return;
 			case Mif2Package.CODE_FILTER_CONTENT_DEFINITION__EXPRESSION_TYPE:
 				unsetExpressionType();
@@ -271,13 +297,19 @@ public class CodeFilterContentDefinitionImpl extends EObjectImpl implements Code
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (expressionType: ");
-		if (expressionTypeESet) result.append(expressionType); else result.append("<unset>");
+		if (expressionTypeESet) {
+			result.append(expressionType);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //CodeFilterContentDefinitionImpl
+} // CodeFilterContentDefinitionImpl

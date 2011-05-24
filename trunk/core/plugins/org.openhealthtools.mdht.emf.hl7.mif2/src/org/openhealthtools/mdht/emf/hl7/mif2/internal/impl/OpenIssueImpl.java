@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -79,8 +83,13 @@ public class OpenIssueImpl extends CascadableAnnotationImpl implements OpenIssue
 		FreeFormMarkupWithLanguage oldResolution = resolution;
 		resolution = newResolution;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.OPEN_ISSUE__RESOLUTION, oldResolution, newResolution);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.OPEN_ISSUE__RESOLUTION, oldResolution, newResolution);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -93,15 +102,22 @@ public class OpenIssueImpl extends CascadableAnnotationImpl implements OpenIssue
 	public void setResolution(FreeFormMarkupWithLanguage newResolution) {
 		if (newResolution != resolution) {
 			NotificationChain msgs = null;
-			if (resolution != null)
-				msgs = ((InternalEObject)resolution).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.OPEN_ISSUE__RESOLUTION, null, msgs);
-			if (newResolution != null)
-				msgs = ((InternalEObject)newResolution).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.OPEN_ISSUE__RESOLUTION, null, msgs);
+			if (resolution != null) {
+				msgs = ((InternalEObject) resolution).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.OPEN_ISSUE__RESOLUTION, null, msgs);
+			}
+			if (newResolution != null) {
+				msgs = ((InternalEObject) newResolution).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.OPEN_ISSUE__RESOLUTION, null, msgs);
+			}
 			msgs = basicSetResolution(newResolution, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.OPEN_ISSUE__RESOLUTION, newResolution, newResolution));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.OPEN_ISSUE__RESOLUTION, newResolution, newResolution));
 	}
 
 	/**
@@ -141,7 +157,7 @@ public class OpenIssueImpl extends CascadableAnnotationImpl implements OpenIssue
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.OPEN_ISSUE__RESOLUTION:
-				setResolution((FreeFormMarkupWithLanguage)newValue);
+				setResolution((FreeFormMarkupWithLanguage) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -156,7 +172,7 @@ public class OpenIssueImpl extends CascadableAnnotationImpl implements OpenIssue
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.OPEN_ISSUE__RESOLUTION:
-				setResolution((FreeFormMarkupWithLanguage)null);
+				setResolution((FreeFormMarkupWithLanguage) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -176,4 +192,4 @@ public class OpenIssueImpl extends CascadableAnnotationImpl implements OpenIssue
 		return super.eIsSet(featureID);
 	}
 
-} //OpenIssueImpl
+} // OpenIssueImpl

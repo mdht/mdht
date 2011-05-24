@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -254,8 +258,13 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 		DatatypeRef oldDatatype = datatype;
 		datatype = newDatatype;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__DATATYPE, oldDatatype, newDatatype);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__DATATYPE, oldDatatype, newDatatype);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -268,15 +277,22 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 	public void setDatatype(DatatypeRef newDatatype) {
 		if (newDatatype != datatype) {
 			NotificationChain msgs = null;
-			if (datatype != null)
-				msgs = ((InternalEObject)datatype).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ANNOTATION_CASCADE_INFO__DATATYPE, null, msgs);
-			if (newDatatype != null)
-				msgs = ((InternalEObject)newDatatype).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ANNOTATION_CASCADE_INFO__DATATYPE, null, msgs);
+			if (datatype != null) {
+				msgs = ((InternalEObject) datatype).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ANNOTATION_CASCADE_INFO__DATATYPE, null, msgs);
+			}
+			if (newDatatype != null) {
+				msgs = ((InternalEObject) newDatatype).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ANNOTATION_CASCADE_INFO__DATATYPE, null, msgs);
+			}
 			msgs = basicSetDatatype(newDatatype, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__DATATYPE, newDatatype, newDatatype));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__DATATYPE, newDatatype, newDatatype));
 	}
 
 	/**
@@ -296,8 +312,11 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 	public void setClassifierName(String newClassifierName) {
 		String oldClassifierName = classifierName;
 		classifierName = newClassifierName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__CLASSIFIER_NAME, oldClassifierName, classifierName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__CLASSIFIER_NAME, oldClassifierName,
+				classifierName));
+		}
 	}
 
 	/**
@@ -319,8 +338,11 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 		classifierNameExact = newClassifierNameExact;
 		boolean oldClassifierNameExactESet = classifierNameExactESet;
 		classifierNameExactESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__CLASSIFIER_NAME_EXACT, oldClassifierNameExact, classifierNameExact, !oldClassifierNameExactESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__CLASSIFIER_NAME_EXACT,
+				oldClassifierNameExact, classifierNameExact, !oldClassifierNameExactESet));
+		}
 	}
 
 	/**
@@ -333,8 +355,11 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 		boolean oldClassifierNameExactESet = classifierNameExactESet;
 		classifierNameExact = CLASSIFIER_NAME_EXACT_EDEFAULT;
 		classifierNameExactESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.ANNOTATION_CASCADE_INFO__CLASSIFIER_NAME_EXACT, oldClassifierNameExact, CLASSIFIER_NAME_EXACT_EDEFAULT, oldClassifierNameExactESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.ANNOTATION_CASCADE_INFO__CLASSIFIER_NAME_EXACT,
+				oldClassifierNameExact, CLASSIFIER_NAME_EXACT_EDEFAULT, oldClassifierNameExactESet));
+		}
 	}
 
 	/**
@@ -363,8 +388,11 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 	public void setContextClassName(String newContextClassName) {
 		String oldContextClassName = contextClassName;
 		contextClassName = newContextClassName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__CONTEXT_CLASS_NAME, oldContextClassName, contextClassName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__CONTEXT_CLASS_NAME, oldContextClassName,
+				contextClassName));
+		}
 	}
 
 	/**
@@ -383,11 +411,16 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 	 */
 	public void setElementType(CascadingAnnotationElementKind newElementType) {
 		CascadingAnnotationElementKind oldElementType = elementType;
-		elementType = newElementType == null ? ELEMENT_TYPE_EDEFAULT : newElementType;
+		elementType = newElementType == null
+				? ELEMENT_TYPE_EDEFAULT
+				: newElementType;
 		boolean oldElementTypeESet = elementTypeESet;
 		elementTypeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__ELEMENT_TYPE, oldElementType, elementType, !oldElementTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__ELEMENT_TYPE, oldElementType, elementType,
+				!oldElementTypeESet));
+		}
 	}
 
 	/**
@@ -400,8 +433,11 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 		boolean oldElementTypeESet = elementTypeESet;
 		elementType = ELEMENT_TYPE_EDEFAULT;
 		elementTypeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.ANNOTATION_CASCADE_INFO__ELEMENT_TYPE, oldElementType, ELEMENT_TYPE_EDEFAULT, oldElementTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.ANNOTATION_CASCADE_INFO__ELEMENT_TYPE, oldElementType,
+				ELEMENT_TYPE_EDEFAULT, oldElementTypeESet));
+		}
 	}
 
 	/**
@@ -430,8 +466,11 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 	public void setRimFeatureName(String newRimFeatureName) {
 		String oldRimFeatureName = rimFeatureName;
 		rimFeatureName = newRimFeatureName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__RIM_FEATURE_NAME, oldRimFeatureName, rimFeatureName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__RIM_FEATURE_NAME, oldRimFeatureName,
+				rimFeatureName));
+		}
 	}
 
 	/**
@@ -451,8 +490,11 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 	public void setTargetClassName(String newTargetClassName) {
 		String oldTargetClassName = targetClassName;
 		targetClassName = newTargetClassName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__TARGET_CLASS_NAME, oldTargetClassName, targetClassName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__TARGET_CLASS_NAME, oldTargetClassName,
+				targetClassName));
+		}
 	}
 
 	/**
@@ -474,8 +516,11 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 		targetClassNameExact = newTargetClassNameExact;
 		boolean oldTargetClassNameExactESet = targetClassNameExactESet;
 		targetClassNameExactESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__TARGET_CLASS_NAME_EXACT, oldTargetClassNameExact, targetClassNameExact, !oldTargetClassNameExactESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ANNOTATION_CASCADE_INFO__TARGET_CLASS_NAME_EXACT,
+				oldTargetClassNameExact, targetClassNameExact, !oldTargetClassNameExactESet));
+		}
 	}
 
 	/**
@@ -488,8 +533,11 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 		boolean oldTargetClassNameExactESet = targetClassNameExactESet;
 		targetClassNameExact = TARGET_CLASS_NAME_EXACT_EDEFAULT;
 		targetClassNameExactESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.ANNOTATION_CASCADE_INFO__TARGET_CLASS_NAME_EXACT, oldTargetClassNameExact, TARGET_CLASS_NAME_EXACT_EDEFAULT, oldTargetClassNameExactESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.ANNOTATION_CASCADE_INFO__TARGET_CLASS_NAME_EXACT,
+				oldTargetClassNameExact, TARGET_CLASS_NAME_EXACT_EDEFAULT, oldTargetClassNameExactESet));
+		}
 	}
 
 	/**
@@ -528,7 +576,9 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 			case Mif2Package.ANNOTATION_CASCADE_INFO__CLASSIFIER_NAME:
 				return getClassifierName();
 			case Mif2Package.ANNOTATION_CASCADE_INFO__CLASSIFIER_NAME_EXACT:
-				return isClassifierNameExact() ? Boolean.TRUE : Boolean.FALSE;
+				return isClassifierNameExact()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.ANNOTATION_CASCADE_INFO__CONTEXT_CLASS_NAME:
 				return getContextClassName();
 			case Mif2Package.ANNOTATION_CASCADE_INFO__ELEMENT_TYPE:
@@ -538,7 +588,9 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 			case Mif2Package.ANNOTATION_CASCADE_INFO__TARGET_CLASS_NAME:
 				return getTargetClassName();
 			case Mif2Package.ANNOTATION_CASCADE_INFO__TARGET_CLASS_NAME_EXACT:
-				return isTargetClassNameExact() ? Boolean.TRUE : Boolean.FALSE;
+				return isTargetClassNameExact()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -552,28 +604,28 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.ANNOTATION_CASCADE_INFO__DATATYPE:
-				setDatatype((DatatypeRef)newValue);
+				setDatatype((DatatypeRef) newValue);
 				return;
 			case Mif2Package.ANNOTATION_CASCADE_INFO__CLASSIFIER_NAME:
-				setClassifierName((String)newValue);
+				setClassifierName((String) newValue);
 				return;
 			case Mif2Package.ANNOTATION_CASCADE_INFO__CLASSIFIER_NAME_EXACT:
-				setClassifierNameExact(((Boolean)newValue).booleanValue());
+				setClassifierNameExact(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.ANNOTATION_CASCADE_INFO__CONTEXT_CLASS_NAME:
-				setContextClassName((String)newValue);
+				setContextClassName((String) newValue);
 				return;
 			case Mif2Package.ANNOTATION_CASCADE_INFO__ELEMENT_TYPE:
-				setElementType((CascadingAnnotationElementKind)newValue);
+				setElementType((CascadingAnnotationElementKind) newValue);
 				return;
 			case Mif2Package.ANNOTATION_CASCADE_INFO__RIM_FEATURE_NAME:
-				setRimFeatureName((String)newValue);
+				setRimFeatureName((String) newValue);
 				return;
 			case Mif2Package.ANNOTATION_CASCADE_INFO__TARGET_CLASS_NAME:
-				setTargetClassName((String)newValue);
+				setTargetClassName((String) newValue);
 				return;
 			case Mif2Package.ANNOTATION_CASCADE_INFO__TARGET_CLASS_NAME_EXACT:
-				setTargetClassNameExact(((Boolean)newValue).booleanValue());
+				setTargetClassNameExact(((Boolean) newValue).booleanValue());
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -588,7 +640,7 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.ANNOTATION_CASCADE_INFO__DATATYPE:
-				setDatatype((DatatypeRef)null);
+				setDatatype((DatatypeRef) null);
 				return;
 			case Mif2Package.ANNOTATION_CASCADE_INFO__CLASSIFIER_NAME:
 				setClassifierName(CLASSIFIER_NAME_EDEFAULT);
@@ -626,17 +678,25 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 			case Mif2Package.ANNOTATION_CASCADE_INFO__DATATYPE:
 				return datatype != null;
 			case Mif2Package.ANNOTATION_CASCADE_INFO__CLASSIFIER_NAME:
-				return CLASSIFIER_NAME_EDEFAULT == null ? classifierName != null : !CLASSIFIER_NAME_EDEFAULT.equals(classifierName);
+				return CLASSIFIER_NAME_EDEFAULT == null
+						? classifierName != null
+						: !CLASSIFIER_NAME_EDEFAULT.equals(classifierName);
 			case Mif2Package.ANNOTATION_CASCADE_INFO__CLASSIFIER_NAME_EXACT:
 				return isSetClassifierNameExact();
 			case Mif2Package.ANNOTATION_CASCADE_INFO__CONTEXT_CLASS_NAME:
-				return CONTEXT_CLASS_NAME_EDEFAULT == null ? contextClassName != null : !CONTEXT_CLASS_NAME_EDEFAULT.equals(contextClassName);
+				return CONTEXT_CLASS_NAME_EDEFAULT == null
+						? contextClassName != null
+						: !CONTEXT_CLASS_NAME_EDEFAULT.equals(contextClassName);
 			case Mif2Package.ANNOTATION_CASCADE_INFO__ELEMENT_TYPE:
 				return isSetElementType();
 			case Mif2Package.ANNOTATION_CASCADE_INFO__RIM_FEATURE_NAME:
-				return RIM_FEATURE_NAME_EDEFAULT == null ? rimFeatureName != null : !RIM_FEATURE_NAME_EDEFAULT.equals(rimFeatureName);
+				return RIM_FEATURE_NAME_EDEFAULT == null
+						? rimFeatureName != null
+						: !RIM_FEATURE_NAME_EDEFAULT.equals(rimFeatureName);
 			case Mif2Package.ANNOTATION_CASCADE_INFO__TARGET_CLASS_NAME:
-				return TARGET_CLASS_NAME_EDEFAULT == null ? targetClassName != null : !TARGET_CLASS_NAME_EDEFAULT.equals(targetClassName);
+				return TARGET_CLASS_NAME_EDEFAULT == null
+						? targetClassName != null
+						: !TARGET_CLASS_NAME_EDEFAULT.equals(targetClassName);
 			case Mif2Package.ANNOTATION_CASCADE_INFO__TARGET_CLASS_NAME_EXACT:
 				return isSetTargetClassNameExact();
 		}
@@ -650,25 +710,39 @@ public class AnnotationCascadeInfoImpl extends PackageRefImpl implements Annotat
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (classifierName: ");
 		result.append(classifierName);
 		result.append(", classifierNameExact: ");
-		if (classifierNameExactESet) result.append(classifierNameExact); else result.append("<unset>");
+		if (classifierNameExactESet) {
+			result.append(classifierNameExact);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", contextClassName: ");
 		result.append(contextClassName);
 		result.append(", elementType: ");
-		if (elementTypeESet) result.append(elementType); else result.append("<unset>");
+		if (elementTypeESet) {
+			result.append(elementType);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", rimFeatureName: ");
 		result.append(rimFeatureName);
 		result.append(", targetClassName: ");
 		result.append(targetClassName);
 		result.append(", targetClassNameExact: ");
-		if (targetClassNameExactESet) result.append(targetClassNameExact); else result.append("<unset>");
+		if (targetClassNameExactESet) {
+			result.append(targetClassNameExact);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //AnnotationCascadeInfoImpl
+} // AnnotationCascadeInfoImpl

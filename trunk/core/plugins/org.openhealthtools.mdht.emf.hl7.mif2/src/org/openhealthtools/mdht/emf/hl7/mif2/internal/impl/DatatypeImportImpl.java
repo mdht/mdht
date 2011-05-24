@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -116,8 +120,9 @@ public class DatatypeImportImpl extends DatatypeRefImpl implements DatatypeImpor
 	public void setAlias(String newAlias) {
 		String oldAlias = alias;
 		alias = newAlias;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_IMPORT__ALIAS, oldAlias, alias));
+		}
 	}
 
 	/**
@@ -136,11 +141,16 @@ public class DatatypeImportImpl extends DatatypeRefImpl implements DatatypeImpor
 	 */
 	public void setVisibility(VisibilityKind newVisibility) {
 		VisibilityKind oldVisibility = visibility;
-		visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+		visibility = newVisibility == null
+				? VISIBILITY_EDEFAULT
+				: newVisibility;
 		boolean oldVisibilityESet = visibilityESet;
 		visibilityESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_IMPORT__VISIBILITY, oldVisibility, visibility, !oldVisibilityESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_IMPORT__VISIBILITY, oldVisibility, visibility,
+				!oldVisibilityESet));
+		}
 	}
 
 	/**
@@ -153,8 +163,11 @@ public class DatatypeImportImpl extends DatatypeRefImpl implements DatatypeImpor
 		boolean oldVisibilityESet = visibilityESet;
 		visibility = VISIBILITY_EDEFAULT;
 		visibilityESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.DATATYPE_IMPORT__VISIBILITY, oldVisibility, VISIBILITY_EDEFAULT, oldVisibilityESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.DATATYPE_IMPORT__VISIBILITY, oldVisibility, VISIBILITY_EDEFAULT,
+				oldVisibilityESet));
+		}
 	}
 
 	/**
@@ -191,10 +204,10 @@ public class DatatypeImportImpl extends DatatypeRefImpl implements DatatypeImpor
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DATATYPE_IMPORT__ALIAS:
-				setAlias((String)newValue);
+				setAlias((String) newValue);
 				return;
 			case Mif2Package.DATATYPE_IMPORT__VISIBILITY:
-				setVisibility((VisibilityKind)newValue);
+				setVisibility((VisibilityKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -227,7 +240,9 @@ public class DatatypeImportImpl extends DatatypeRefImpl implements DatatypeImpor
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.DATATYPE_IMPORT__ALIAS:
-				return ALIAS_EDEFAULT == null ? alias != null : !ALIAS_EDEFAULT.equals(alias);
+				return ALIAS_EDEFAULT == null
+						? alias != null
+						: !ALIAS_EDEFAULT.equals(alias);
 			case Mif2Package.DATATYPE_IMPORT__VISIBILITY:
 				return isSetVisibility();
 		}
@@ -241,15 +256,21 @@ public class DatatypeImportImpl extends DatatypeRefImpl implements DatatypeImpor
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (alias: ");
 		result.append(alias);
 		result.append(", visibility: ");
-		if (visibilityESet) result.append(visibility); else result.append("<unset>");
+		if (visibilityESet) {
+			result.append(visibility);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //DatatypeImportImpl
+} // DatatypeImportImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -25,7 +29,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.ConceptPropertyTypeKind;
 import org.openhealthtools.mdht.emf.hl7.mif2.Mif2Package;
 import org.openhealthtools.mdht.emf.hl7.mif2.SupportedProperty;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Inline;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -201,8 +204,13 @@ public class SupportedPropertyImpl extends EObjectImpl implements SupportedPrope
 		Inline oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_PROPERTY__DESCRIPTION, oldDescription, newDescription);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_PROPERTY__DESCRIPTION, oldDescription, newDescription);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -215,15 +223,22 @@ public class SupportedPropertyImpl extends EObjectImpl implements SupportedPrope
 	public void setDescription(Inline newDescription) {
 		if (newDescription != description) {
 			NotificationChain msgs = null;
-			if (description != null)
-				msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUPPORTED_PROPERTY__DESCRIPTION, null, msgs);
-			if (newDescription != null)
-				msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUPPORTED_PROPERTY__DESCRIPTION, null, msgs);
+			if (description != null) {
+				msgs = ((InternalEObject) description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUPPORTED_PROPERTY__DESCRIPTION, null, msgs);
+			}
+			if (newDescription != null) {
+				msgs = ((InternalEObject) newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUPPORTED_PROPERTY__DESCRIPTION, null, msgs);
+			}
 			msgs = basicSetDescription(newDescription, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_PROPERTY__DESCRIPTION, newDescription, newDescription));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_PROPERTY__DESCRIPTION, newDescription, newDescription));
 	}
 
 	/**
@@ -233,7 +248,8 @@ public class SupportedPropertyImpl extends EObjectImpl implements SupportedPrope
 	 */
 	public EList<String> getEnumerationValue() {
 		if (enumerationValue == null) {
-			enumerationValue = new EDataTypeEList<String>(String.class, this, Mif2Package.SUPPORTED_PROPERTY__ENUMERATION_VALUE);
+			enumerationValue = new EDataTypeEList<String>(
+				String.class, this, Mif2Package.SUPPORTED_PROPERTY__ENUMERATION_VALUE);
 		}
 		return enumerationValue;
 	}
@@ -255,8 +271,10 @@ public class SupportedPropertyImpl extends EObjectImpl implements SupportedPrope
 	public void setDefaultValue(String newDefaultValue) {
 		String oldDefaultValue = defaultValue;
 		defaultValue = newDefaultValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_PROPERTY__DEFAULT_VALUE, oldDefaultValue, defaultValue));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_PROPERTY__DEFAULT_VALUE, oldDefaultValue, defaultValue));
+		}
 	}
 
 	/**
@@ -278,8 +296,11 @@ public class SupportedPropertyImpl extends EObjectImpl implements SupportedPrope
 		isMandatoryIndicator = newIsMandatoryIndicator;
 		boolean oldIsMandatoryIndicatorESet = isMandatoryIndicatorESet;
 		isMandatoryIndicatorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_PROPERTY__IS_MANDATORY_INDICATOR, oldIsMandatoryIndicator, isMandatoryIndicator, !oldIsMandatoryIndicatorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_PROPERTY__IS_MANDATORY_INDICATOR,
+				oldIsMandatoryIndicator, isMandatoryIndicator, !oldIsMandatoryIndicatorESet));
+		}
 	}
 
 	/**
@@ -292,8 +313,11 @@ public class SupportedPropertyImpl extends EObjectImpl implements SupportedPrope
 		boolean oldIsMandatoryIndicatorESet = isMandatoryIndicatorESet;
 		isMandatoryIndicator = IS_MANDATORY_INDICATOR_EDEFAULT;
 		isMandatoryIndicatorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.SUPPORTED_PROPERTY__IS_MANDATORY_INDICATOR, oldIsMandatoryIndicator, IS_MANDATORY_INDICATOR_EDEFAULT, oldIsMandatoryIndicatorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.SUPPORTED_PROPERTY__IS_MANDATORY_INDICATOR,
+				oldIsMandatoryIndicator, IS_MANDATORY_INDICATOR_EDEFAULT, oldIsMandatoryIndicatorESet));
+		}
 	}
 
 	/**
@@ -322,8 +346,10 @@ public class SupportedPropertyImpl extends EObjectImpl implements SupportedPrope
 	public void setPropertyName(String newPropertyName) {
 		String oldPropertyName = propertyName;
 		propertyName = newPropertyName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_PROPERTY__PROPERTY_NAME, oldPropertyName, propertyName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_PROPERTY__PROPERTY_NAME, oldPropertyName, propertyName));
+		}
 	}
 
 	/**
@@ -342,11 +368,15 @@ public class SupportedPropertyImpl extends EObjectImpl implements SupportedPrope
 	 */
 	public void setType(ConceptPropertyTypeKind newType) {
 		ConceptPropertyTypeKind oldType = type;
-		type = newType == null ? TYPE_EDEFAULT : newType;
+		type = newType == null
+				? TYPE_EDEFAULT
+				: newType;
 		boolean oldTypeESet = typeESet;
 		typeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_PROPERTY__TYPE, oldType, type, !oldTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_PROPERTY__TYPE, oldType, type, !oldTypeESet));
+		}
 	}
 
 	/**
@@ -359,8 +389,10 @@ public class SupportedPropertyImpl extends EObjectImpl implements SupportedPrope
 		boolean oldTypeESet = typeESet;
 		type = TYPE_EDEFAULT;
 		typeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.SUPPORTED_PROPERTY__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.SUPPORTED_PROPERTY__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+		}
 	}
 
 	/**
@@ -401,7 +433,9 @@ public class SupportedPropertyImpl extends EObjectImpl implements SupportedPrope
 			case Mif2Package.SUPPORTED_PROPERTY__DEFAULT_VALUE:
 				return getDefaultValue();
 			case Mif2Package.SUPPORTED_PROPERTY__IS_MANDATORY_INDICATOR:
-				return isIsMandatoryIndicator() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsMandatoryIndicator()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.SUPPORTED_PROPERTY__PROPERTY_NAME:
 				return getPropertyName();
 			case Mif2Package.SUPPORTED_PROPERTY__TYPE:
@@ -420,23 +454,23 @@ public class SupportedPropertyImpl extends EObjectImpl implements SupportedPrope
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.SUPPORTED_PROPERTY__DESCRIPTION:
-				setDescription((Inline)newValue);
+				setDescription((Inline) newValue);
 				return;
 			case Mif2Package.SUPPORTED_PROPERTY__ENUMERATION_VALUE:
 				getEnumerationValue().clear();
-				getEnumerationValue().addAll((Collection<? extends String>)newValue);
+				getEnumerationValue().addAll((Collection<? extends String>) newValue);
 				return;
 			case Mif2Package.SUPPORTED_PROPERTY__DEFAULT_VALUE:
-				setDefaultValue((String)newValue);
+				setDefaultValue((String) newValue);
 				return;
 			case Mif2Package.SUPPORTED_PROPERTY__IS_MANDATORY_INDICATOR:
-				setIsMandatoryIndicator(((Boolean)newValue).booleanValue());
+				setIsMandatoryIndicator(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.SUPPORTED_PROPERTY__PROPERTY_NAME:
-				setPropertyName((String)newValue);
+				setPropertyName((String) newValue);
 				return;
 			case Mif2Package.SUPPORTED_PROPERTY__TYPE:
-				setType((ConceptPropertyTypeKind)newValue);
+				setType((ConceptPropertyTypeKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -451,7 +485,7 @@ public class SupportedPropertyImpl extends EObjectImpl implements SupportedPrope
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.SUPPORTED_PROPERTY__DESCRIPTION:
-				setDescription((Inline)null);
+				setDescription((Inline) null);
 				return;
 			case Mif2Package.SUPPORTED_PROPERTY__ENUMERATION_VALUE:
 				getEnumerationValue().clear();
@@ -485,11 +519,15 @@ public class SupportedPropertyImpl extends EObjectImpl implements SupportedPrope
 			case Mif2Package.SUPPORTED_PROPERTY__ENUMERATION_VALUE:
 				return enumerationValue != null && !enumerationValue.isEmpty();
 			case Mif2Package.SUPPORTED_PROPERTY__DEFAULT_VALUE:
-				return DEFAULT_VALUE_EDEFAULT == null ? defaultValue != null : !DEFAULT_VALUE_EDEFAULT.equals(defaultValue);
+				return DEFAULT_VALUE_EDEFAULT == null
+						? defaultValue != null
+						: !DEFAULT_VALUE_EDEFAULT.equals(defaultValue);
 			case Mif2Package.SUPPORTED_PROPERTY__IS_MANDATORY_INDICATOR:
 				return isSetIsMandatoryIndicator();
 			case Mif2Package.SUPPORTED_PROPERTY__PROPERTY_NAME:
-				return PROPERTY_NAME_EDEFAULT == null ? propertyName != null : !PROPERTY_NAME_EDEFAULT.equals(propertyName);
+				return PROPERTY_NAME_EDEFAULT == null
+						? propertyName != null
+						: !PROPERTY_NAME_EDEFAULT.equals(propertyName);
 			case Mif2Package.SUPPORTED_PROPERTY__TYPE:
 				return isSetType();
 		}
@@ -503,7 +541,9 @@ public class SupportedPropertyImpl extends EObjectImpl implements SupportedPrope
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (enumerationValue: ");
@@ -511,13 +551,21 @@ public class SupportedPropertyImpl extends EObjectImpl implements SupportedPrope
 		result.append(", defaultValue: ");
 		result.append(defaultValue);
 		result.append(", isMandatoryIndicator: ");
-		if (isMandatoryIndicatorESet) result.append(isMandatoryIndicator); else result.append("<unset>");
+		if (isMandatoryIndicatorESet) {
+			result.append(isMandatoryIndicator);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", propertyName: ");
 		result.append(propertyName);
 		result.append(", type: ");
-		if (typeESet) result.append(type); else result.append("<unset>");
+		if (typeESet) {
+			result.append(type);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //SupportedPropertyImpl
+} // SupportedPropertyImpl

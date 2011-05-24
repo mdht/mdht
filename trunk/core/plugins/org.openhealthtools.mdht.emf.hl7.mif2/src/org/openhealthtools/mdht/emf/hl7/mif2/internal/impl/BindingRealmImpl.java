@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -18,7 +22,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.AffiliateKind;
 import org.openhealthtools.mdht.emf.hl7.mif2.BindingRealm;
 import org.openhealthtools.mdht.emf.hl7.mif2.Mif2Package;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Inline;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -153,8 +156,13 @@ public class BindingRealmImpl extends ModelElementImpl implements BindingRealm {
 		Inline oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.BINDING_REALM__DESCRIPTION, oldDescription, newDescription);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BINDING_REALM__DESCRIPTION, oldDescription, newDescription);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -167,15 +175,22 @@ public class BindingRealmImpl extends ModelElementImpl implements BindingRealm {
 	public void setDescription(Inline newDescription) {
 		if (newDescription != description) {
 			NotificationChain msgs = null;
-			if (description != null)
-				msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.BINDING_REALM__DESCRIPTION, null, msgs);
-			if (newDescription != null)
-				msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.BINDING_REALM__DESCRIPTION, null, msgs);
+			if (description != null) {
+				msgs = ((InternalEObject) description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.BINDING_REALM__DESCRIPTION, null, msgs);
+			}
+			if (newDescription != null) {
+				msgs = ((InternalEObject) newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.BINDING_REALM__DESCRIPTION, null, msgs);
+			}
 			msgs = basicSetDescription(newDescription, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BINDING_REALM__DESCRIPTION, newDescription, newDescription));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BINDING_REALM__DESCRIPTION, newDescription, newDescription));
 	}
 
 	/**
@@ -195,8 +210,9 @@ public class BindingRealmImpl extends ModelElementImpl implements BindingRealm {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BINDING_REALM__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -215,11 +231,16 @@ public class BindingRealmImpl extends ModelElementImpl implements BindingRealm {
 	 */
 	public void setOwningAffiliate(AffiliateKind newOwningAffiliate) {
 		AffiliateKind oldOwningAffiliate = owningAffiliate;
-		owningAffiliate = newOwningAffiliate == null ? OWNING_AFFILIATE_EDEFAULT : newOwningAffiliate;
+		owningAffiliate = newOwningAffiliate == null
+				? OWNING_AFFILIATE_EDEFAULT
+				: newOwningAffiliate;
 		boolean oldOwningAffiliateESet = owningAffiliateESet;
 		owningAffiliateESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BINDING_REALM__OWNING_AFFILIATE, oldOwningAffiliate, owningAffiliate, !oldOwningAffiliateESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BINDING_REALM__OWNING_AFFILIATE, oldOwningAffiliate,
+				owningAffiliate, !oldOwningAffiliateESet));
+		}
 	}
 
 	/**
@@ -232,8 +253,11 @@ public class BindingRealmImpl extends ModelElementImpl implements BindingRealm {
 		boolean oldOwningAffiliateESet = owningAffiliateESet;
 		owningAffiliate = OWNING_AFFILIATE_EDEFAULT;
 		owningAffiliateESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.BINDING_REALM__OWNING_AFFILIATE, oldOwningAffiliate, OWNING_AFFILIATE_EDEFAULT, oldOwningAffiliateESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.BINDING_REALM__OWNING_AFFILIATE, oldOwningAffiliate,
+				OWNING_AFFILIATE_EDEFAULT, oldOwningAffiliateESet));
+		}
 	}
 
 	/**
@@ -262,8 +286,10 @@ public class BindingRealmImpl extends ModelElementImpl implements BindingRealm {
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BINDING_REALM__SORT_KEY, oldSortKey, sortKey));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BINDING_REALM__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -309,16 +335,16 @@ public class BindingRealmImpl extends ModelElementImpl implements BindingRealm {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.BINDING_REALM__DESCRIPTION:
-				setDescription((Inline)newValue);
+				setDescription((Inline) newValue);
 				return;
 			case Mif2Package.BINDING_REALM__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.BINDING_REALM__OWNING_AFFILIATE:
-				setOwningAffiliate((AffiliateKind)newValue);
+				setOwningAffiliate((AffiliateKind) newValue);
 				return;
 			case Mif2Package.BINDING_REALM__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -333,7 +359,7 @@ public class BindingRealmImpl extends ModelElementImpl implements BindingRealm {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.BINDING_REALM__DESCRIPTION:
-				setDescription((Inline)null);
+				setDescription((Inline) null);
 				return;
 			case Mif2Package.BINDING_REALM__NAME:
 				setName(NAME_EDEFAULT);
@@ -359,11 +385,15 @@ public class BindingRealmImpl extends ModelElementImpl implements BindingRealm {
 			case Mif2Package.BINDING_REALM__DESCRIPTION:
 				return description != null;
 			case Mif2Package.BINDING_REALM__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.BINDING_REALM__OWNING_AFFILIATE:
 				return isSetOwningAffiliate();
 			case Mif2Package.BINDING_REALM__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -375,17 +405,23 @@ public class BindingRealmImpl extends ModelElementImpl implements BindingRealm {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", owningAffiliate: ");
-		if (owningAffiliateESet) result.append(owningAffiliate); else result.append("<unset>");
+		if (owningAffiliateESet) {
+			result.append(owningAffiliate);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", sortKey: ");
 		result.append(sortKey);
 		result.append(')');
 		return result.toString();
 	}
 
-} //BindingRealmImpl
+} // BindingRealmImpl

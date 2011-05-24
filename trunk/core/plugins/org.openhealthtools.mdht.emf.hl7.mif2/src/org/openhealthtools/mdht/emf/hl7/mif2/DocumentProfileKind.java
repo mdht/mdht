@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -103,12 +107,7 @@ public enum DocumentProfileKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final DocumentProfileKind[] VALUES_ARRAY =
-		new DocumentProfileKind[] {
-			CREATE,
-			READ,
-			BOTH,
-		};
+	private static final DocumentProfileKind[] VALUES_ARRAY = new DocumentProfileKind[] { CREATE, READ, BOTH, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Document Profile Kind</b></em>' enumerators.
@@ -158,9 +157,12 @@ public enum DocumentProfileKind implements Enumerator {
 	 */
 	public static DocumentProfileKind get(int value) {
 		switch (value) {
-			case CREATE_VALUE: return CREATE;
-			case READ_VALUE: return READ;
-			case BOTH_VALUE: return BOTH;
+			case CREATE_VALUE:
+				return CREATE;
+			case READ_VALUE:
+				return READ;
+			case BOTH_VALUE:
+				return BOTH;
 		}
 		return null;
 	}
@@ -204,7 +206,7 @@ public enum DocumentProfileKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -213,7 +215,7 @@ public enum DocumentProfileKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -222,7 +224,7 @@ public enum DocumentProfileKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -235,5 +237,5 @@ public enum DocumentProfileKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //DocumentProfileKind
+
+} // DocumentProfileKind

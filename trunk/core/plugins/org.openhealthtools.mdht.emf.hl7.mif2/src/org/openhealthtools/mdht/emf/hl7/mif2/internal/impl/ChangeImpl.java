@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -18,7 +22,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.openhealthtools.mdht.emf.hl7.mif2.Change;
 import org.openhealthtools.mdht.emf.hl7.mif2.Mif2Package;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Flow;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -92,8 +95,13 @@ public abstract class ChangeImpl extends EObjectImpl implements Change {
 		Flow oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CHANGE__DESCRIPTION, oldDescription, newDescription);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CHANGE__DESCRIPTION, oldDescription, newDescription);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -106,15 +114,22 @@ public abstract class ChangeImpl extends EObjectImpl implements Change {
 	public void setDescription(Flow newDescription) {
 		if (newDescription != description) {
 			NotificationChain msgs = null;
-			if (description != null)
-				msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CHANGE__DESCRIPTION, null, msgs);
-			if (newDescription != null)
-				msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CHANGE__DESCRIPTION, null, msgs);
+			if (description != null) {
+				msgs = ((InternalEObject) description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CHANGE__DESCRIPTION, null, msgs);
+			}
+			if (newDescription != null) {
+				msgs = ((InternalEObject) newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CHANGE__DESCRIPTION, null, msgs);
+			}
 			msgs = basicSetDescription(newDescription, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CHANGE__DESCRIPTION, newDescription, newDescription));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CHANGE__DESCRIPTION, newDescription, newDescription));
 	}
 
 	/**
@@ -135,8 +150,13 @@ public abstract class ChangeImpl extends EObjectImpl implements Change {
 		Flow oldRationale = rationale;
 		rationale = newRationale;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CHANGE__RATIONALE, oldRationale, newRationale);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CHANGE__RATIONALE, oldRationale, newRationale);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -149,15 +169,22 @@ public abstract class ChangeImpl extends EObjectImpl implements Change {
 	public void setRationale(Flow newRationale) {
 		if (newRationale != rationale) {
 			NotificationChain msgs = null;
-			if (rationale != null)
-				msgs = ((InternalEObject)rationale).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CHANGE__RATIONALE, null, msgs);
-			if (newRationale != null)
-				msgs = ((InternalEObject)newRationale).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CHANGE__RATIONALE, null, msgs);
+			if (rationale != null) {
+				msgs = ((InternalEObject) rationale).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CHANGE__RATIONALE, null, msgs);
+			}
+			if (newRationale != null) {
+				msgs = ((InternalEObject) newRationale).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CHANGE__RATIONALE, null, msgs);
+			}
 			msgs = basicSetRationale(newRationale, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CHANGE__RATIONALE, newRationale, newRationale));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CHANGE__RATIONALE, newRationale, newRationale));
 	}
 
 	/**
@@ -201,10 +228,10 @@ public abstract class ChangeImpl extends EObjectImpl implements Change {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CHANGE__DESCRIPTION:
-				setDescription((Flow)newValue);
+				setDescription((Flow) newValue);
 				return;
 			case Mif2Package.CHANGE__RATIONALE:
-				setRationale((Flow)newValue);
+				setRationale((Flow) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -219,10 +246,10 @@ public abstract class ChangeImpl extends EObjectImpl implements Change {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CHANGE__DESCRIPTION:
-				setDescription((Flow)null);
+				setDescription((Flow) null);
 				return;
 			case Mif2Package.CHANGE__RATIONALE:
-				setRationale((Flow)null);
+				setRationale((Flow) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -244,4 +271,4 @@ public abstract class ChangeImpl extends EObjectImpl implements Change {
 		return super.eIsSet(featureID);
 	}
 
-} //ChangeImpl
+} // ChangeImpl

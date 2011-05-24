@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -116,11 +120,15 @@ public class AttributePropertyImpl extends EObjectImpl implements AttributePrope
 	 */
 	public void setName(AttributePropertyKind newName) {
 		AttributePropertyKind oldName = name;
-		name = newName == null ? NAME_EDEFAULT : newName;
+		name = newName == null
+				? NAME_EDEFAULT
+				: newName;
 		boolean oldNameESet = nameESet;
 		nameESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ATTRIBUTE_PROPERTY__NAME, oldName, name, !oldNameESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ATTRIBUTE_PROPERTY__NAME, oldName, name, !oldNameESet));
+		}
 	}
 
 	/**
@@ -133,8 +141,10 @@ public class AttributePropertyImpl extends EObjectImpl implements AttributePrope
 		boolean oldNameESet = nameESet;
 		name = NAME_EDEFAULT;
 		nameESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.ATTRIBUTE_PROPERTY__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.ATTRIBUTE_PROPERTY__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+		}
 	}
 
 	/**
@@ -163,8 +173,10 @@ public class AttributePropertyImpl extends EObjectImpl implements AttributePrope
 	public void setValue(String newValue) {
 		String oldValue = value;
 		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ATTRIBUTE_PROPERTY__VALUE, oldValue, value));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ATTRIBUTE_PROPERTY__VALUE, oldValue, value));
+		}
 	}
 
 	/**
@@ -192,10 +204,10 @@ public class AttributePropertyImpl extends EObjectImpl implements AttributePrope
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.ATTRIBUTE_PROPERTY__NAME:
-				setName((AttributePropertyKind)newValue);
+				setName((AttributePropertyKind) newValue);
 				return;
 			case Mif2Package.ATTRIBUTE_PROPERTY__VALUE:
-				setValue((String)newValue);
+				setValue((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -230,7 +242,9 @@ public class AttributePropertyImpl extends EObjectImpl implements AttributePrope
 			case Mif2Package.ATTRIBUTE_PROPERTY__NAME:
 				return isSetName();
 			case Mif2Package.ATTRIBUTE_PROPERTY__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+				return VALUE_EDEFAULT == null
+						? value != null
+						: !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -242,15 +256,21 @@ public class AttributePropertyImpl extends EObjectImpl implements AttributePrope
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
-		if (nameESet) result.append(name); else result.append("<unset>");
+		if (nameESet) {
+			result.append(name);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", value: ");
 		result.append(value);
 		result.append(')');
 		return result.toString();
 	}
 
-} //AttributePropertyImpl
+} // AttributePropertyImpl

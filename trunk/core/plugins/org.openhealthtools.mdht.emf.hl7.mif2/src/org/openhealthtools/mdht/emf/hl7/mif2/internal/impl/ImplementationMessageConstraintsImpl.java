@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigInteger;
@@ -46,7 +50,8 @@ import org.openhealthtools.mdht.emf.hl7.mif2.PackageRef;
  *
  * @generated
  */
-public class ImplementationMessageConstraintsImpl extends ImplementationConstraintsImpl implements ImplementationMessageConstraints {
+public class ImplementationMessageConstraintsImpl extends ImplementationConstraintsImpl implements
+		ImplementationMessageConstraints {
 	/**
 	 * The cached value of the '{@link #getSupportedTransport() <em>Supported Transport</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -171,7 +176,8 @@ public class ImplementationMessageConstraintsImpl extends ImplementationConstrai
 	 */
 	public EList<PackageRef> getSupportedTransport() {
 		if (supportedTransport == null) {
-			supportedTransport = new EObjectContainmentEList<PackageRef>(PackageRef.class, this, Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__SUPPORTED_TRANSPORT);
+			supportedTransport = new EObjectContainmentEList<PackageRef>(
+				PackageRef.class, this, Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__SUPPORTED_TRANSPORT);
 		}
 		return supportedTransport;
 	}
@@ -190,12 +196,19 @@ public class ImplementationMessageConstraintsImpl extends ImplementationConstrai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTimingBackground(ComplexMarkupWithLanguage newTimingBackground, NotificationChain msgs) {
+	public NotificationChain basicSetTimingBackground(ComplexMarkupWithLanguage newTimingBackground,
+			NotificationChain msgs) {
 		ComplexMarkupWithLanguage oldTimingBackground = timingBackground;
 		timingBackground = newTimingBackground;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__TIMING_BACKGROUND, oldTimingBackground, newTimingBackground);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__TIMING_BACKGROUND,
+				oldTimingBackground, newTimingBackground);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -208,15 +221,23 @@ public class ImplementationMessageConstraintsImpl extends ImplementationConstrai
 	public void setTimingBackground(ComplexMarkupWithLanguage newTimingBackground) {
 		if (newTimingBackground != timingBackground) {
 			NotificationChain msgs = null;
-			if (timingBackground != null)
-				msgs = ((InternalEObject)timingBackground).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__TIMING_BACKGROUND, null, msgs);
-			if (newTimingBackground != null)
-				msgs = ((InternalEObject)newTimingBackground).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__TIMING_BACKGROUND, null, msgs);
+			if (timingBackground != null) {
+				msgs = ((InternalEObject) timingBackground).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__TIMING_BACKGROUND, null, msgs);
+			}
+			if (newTimingBackground != null) {
+				msgs = ((InternalEObject) newTimingBackground).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__TIMING_BACKGROUND, null, msgs);
+			}
 			msgs = basicSetTimingBackground(newTimingBackground, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__TIMING_BACKGROUND,
+				newTimingBackground, newTimingBackground));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__TIMING_BACKGROUND, newTimingBackground, newTimingBackground));
 	}
 
 	/**
@@ -235,11 +256,16 @@ public class ImplementationMessageConstraintsImpl extends ImplementationConstrai
 	 */
 	public void setExpectedResponseTime(DurationUnitsKind newExpectedResponseTime) {
 		DurationUnitsKind oldExpectedResponseTime = expectedResponseTime;
-		expectedResponseTime = newExpectedResponseTime == null ? EXPECTED_RESPONSE_TIME_EDEFAULT : newExpectedResponseTime;
+		expectedResponseTime = newExpectedResponseTime == null
+				? EXPECTED_RESPONSE_TIME_EDEFAULT
+				: newExpectedResponseTime;
 		boolean oldExpectedResponseTimeESet = expectedResponseTimeESet;
 		expectedResponseTimeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__EXPECTED_RESPONSE_TIME, oldExpectedResponseTime, expectedResponseTime, !oldExpectedResponseTimeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__EXPECTED_RESPONSE_TIME,
+				oldExpectedResponseTime, expectedResponseTime, !oldExpectedResponseTimeESet));
+		}
 	}
 
 	/**
@@ -252,8 +278,11 @@ public class ImplementationMessageConstraintsImpl extends ImplementationConstrai
 		boolean oldExpectedResponseTimeESet = expectedResponseTimeESet;
 		expectedResponseTime = EXPECTED_RESPONSE_TIME_EDEFAULT;
 		expectedResponseTimeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__EXPECTED_RESPONSE_TIME, oldExpectedResponseTime, EXPECTED_RESPONSE_TIME_EDEFAULT, oldExpectedResponseTimeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__EXPECTED_RESPONSE_TIME,
+				oldExpectedResponseTime, EXPECTED_RESPONSE_TIME_EDEFAULT, oldExpectedResponseTimeESet));
+		}
 	}
 
 	/**
@@ -281,11 +310,16 @@ public class ImplementationMessageConstraintsImpl extends ImplementationConstrai
 	 */
 	public void setRetryTime(DurationUnitsKind newRetryTime) {
 		DurationUnitsKind oldRetryTime = retryTime;
-		retryTime = newRetryTime == null ? RETRY_TIME_EDEFAULT : newRetryTime;
+		retryTime = newRetryTime == null
+				? RETRY_TIME_EDEFAULT
+				: newRetryTime;
 		boolean oldRetryTimeESet = retryTimeESet;
 		retryTimeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__RETRY_TIME, oldRetryTime, retryTime, !oldRetryTimeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__RETRY_TIME, oldRetryTime,
+				retryTime, !oldRetryTimeESet));
+		}
 	}
 
 	/**
@@ -298,8 +332,11 @@ public class ImplementationMessageConstraintsImpl extends ImplementationConstrai
 		boolean oldRetryTimeESet = retryTimeESet;
 		retryTime = RETRY_TIME_EDEFAULT;
 		retryTimeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__RETRY_TIME, oldRetryTime, RETRY_TIME_EDEFAULT, oldRetryTimeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__RETRY_TIME, oldRetryTime,
+				RETRY_TIME_EDEFAULT, oldRetryTimeESet));
+		}
 	}
 
 	/**
@@ -328,8 +365,11 @@ public class ImplementationMessageConstraintsImpl extends ImplementationConstrai
 	public void setMaximumRetryCount(BigInteger newMaximumRetryCount) {
 		BigInteger oldMaximumRetryCount = maximumRetryCount;
 		maximumRetryCount = newMaximumRetryCount;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__MAXIMUM_RETRY_COUNT, oldMaximumRetryCount, maximumRetryCount));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__MAXIMUM_RETRY_COUNT,
+				oldMaximumRetryCount, maximumRetryCount));
+		}
 	}
 
 	/**
@@ -341,7 +381,7 @@ public class ImplementationMessageConstraintsImpl extends ImplementationConstrai
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__SUPPORTED_TRANSPORT:
-				return ((InternalEList<?>)getSupportedTransport()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSupportedTransport()).basicRemove(otherEnd, msgs);
 			case Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__TIMING_BACKGROUND:
 				return basicSetTimingBackground(null, msgs);
 		}
@@ -381,19 +421,19 @@ public class ImplementationMessageConstraintsImpl extends ImplementationConstrai
 		switch (featureID) {
 			case Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__SUPPORTED_TRANSPORT:
 				getSupportedTransport().clear();
-				getSupportedTransport().addAll((Collection<? extends PackageRef>)newValue);
+				getSupportedTransport().addAll((Collection<? extends PackageRef>) newValue);
 				return;
 			case Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__TIMING_BACKGROUND:
-				setTimingBackground((ComplexMarkupWithLanguage)newValue);
+				setTimingBackground((ComplexMarkupWithLanguage) newValue);
 				return;
 			case Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__EXPECTED_RESPONSE_TIME:
-				setExpectedResponseTime((DurationUnitsKind)newValue);
+				setExpectedResponseTime((DurationUnitsKind) newValue);
 				return;
 			case Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__RETRY_TIME:
-				setRetryTime((DurationUnitsKind)newValue);
+				setRetryTime((DurationUnitsKind) newValue);
 				return;
 			case Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__MAXIMUM_RETRY_COUNT:
-				setMaximumRetryCount((BigInteger)newValue);
+				setMaximumRetryCount((BigInteger) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -411,7 +451,7 @@ public class ImplementationMessageConstraintsImpl extends ImplementationConstrai
 				getSupportedTransport().clear();
 				return;
 			case Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__TIMING_BACKGROUND:
-				setTimingBackground((ComplexMarkupWithLanguage)null);
+				setTimingBackground((ComplexMarkupWithLanguage) null);
 				return;
 			case Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__EXPECTED_RESPONSE_TIME:
 				unsetExpectedResponseTime();
@@ -443,7 +483,9 @@ public class ImplementationMessageConstraintsImpl extends ImplementationConstrai
 			case Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__RETRY_TIME:
 				return isSetRetryTime();
 			case Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS__MAXIMUM_RETRY_COUNT:
-				return MAXIMUM_RETRY_COUNT_EDEFAULT == null ? maximumRetryCount != null : !MAXIMUM_RETRY_COUNT_EDEFAULT.equals(maximumRetryCount);
+				return MAXIMUM_RETRY_COUNT_EDEFAULT == null
+						? maximumRetryCount != null
+						: !MAXIMUM_RETRY_COUNT_EDEFAULT.equals(maximumRetryCount);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -455,17 +497,27 @@ public class ImplementationMessageConstraintsImpl extends ImplementationConstrai
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (expectedResponseTime: ");
-		if (expectedResponseTimeESet) result.append(expectedResponseTime); else result.append("<unset>");
+		if (expectedResponseTimeESet) {
+			result.append(expectedResponseTime);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", retryTime: ");
-		if (retryTimeESet) result.append(retryTime); else result.append("<unset>");
+		if (retryTimeESet) {
+			result.append(retryTime);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", maximumRetryCount: ");
 		result.append(maximumRetryCount);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ImplementationMessageConstraintsImpl
+} // ImplementationMessageConstraintsImpl

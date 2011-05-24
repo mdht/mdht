@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigInteger;
@@ -277,7 +281,8 @@ public class FeatureImpl extends ModelElementImpl implements Feature {
 	 */
 	public EList<RangeDefinition> getAllowedRange() {
 		if (allowedRange == null) {
-			allowedRange = new EObjectContainmentEList<RangeDefinition>(RangeDefinition.class, this, Mif2Package.FEATURE__ALLOWED_RANGE);
+			allowedRange = new EObjectContainmentEList<RangeDefinition>(
+				RangeDefinition.class, this, Mif2Package.FEATURE__ALLOWED_RANGE);
 		}
 		return allowedRange;
 	}
@@ -298,11 +303,16 @@ public class FeatureImpl extends ModelElementImpl implements Feature {
 	 */
 	public void setConformance(ConformanceKind newConformance) {
 		ConformanceKind oldConformance = conformance;
-		conformance = newConformance == null ? CONFORMANCE_EDEFAULT : newConformance;
+		conformance = newConformance == null
+				? CONFORMANCE_EDEFAULT
+				: newConformance;
 		boolean oldConformanceESet = conformanceESet;
 		conformanceESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.FEATURE__CONFORMANCE, oldConformance, conformance, !oldConformanceESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.FEATURE__CONFORMANCE, oldConformance, conformance,
+				!oldConformanceESet));
+		}
 	}
 
 	/**
@@ -315,8 +325,11 @@ public class FeatureImpl extends ModelElementImpl implements Feature {
 		boolean oldConformanceESet = conformanceESet;
 		conformance = CONFORMANCE_EDEFAULT;
 		conformanceESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.FEATURE__CONFORMANCE, oldConformance, CONFORMANCE_EDEFAULT, oldConformanceESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.FEATURE__CONFORMANCE, oldConformance, CONFORMANCE_EDEFAULT,
+				oldConformanceESet));
+		}
 	}
 
 	/**
@@ -344,11 +357,16 @@ public class FeatureImpl extends ModelElementImpl implements Feature {
 	 */
 	public void setDefaultFrom(DefaultDeterminerKind newDefaultFrom) {
 		DefaultDeterminerKind oldDefaultFrom = defaultFrom;
-		defaultFrom = newDefaultFrom == null ? DEFAULT_FROM_EDEFAULT : newDefaultFrom;
+		defaultFrom = newDefaultFrom == null
+				? DEFAULT_FROM_EDEFAULT
+				: newDefaultFrom;
 		boolean oldDefaultFromESet = defaultFromESet;
 		defaultFromESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.FEATURE__DEFAULT_FROM, oldDefaultFrom, defaultFrom, !oldDefaultFromESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.FEATURE__DEFAULT_FROM, oldDefaultFrom, defaultFrom,
+				!oldDefaultFromESet));
+		}
 	}
 
 	/**
@@ -361,8 +379,11 @@ public class FeatureImpl extends ModelElementImpl implements Feature {
 		boolean oldDefaultFromESet = defaultFromESet;
 		defaultFrom = DEFAULT_FROM_EDEFAULT;
 		defaultFromESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.FEATURE__DEFAULT_FROM, oldDefaultFrom, DEFAULT_FROM_EDEFAULT, oldDefaultFromESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.FEATURE__DEFAULT_FROM, oldDefaultFrom, DEFAULT_FROM_EDEFAULT,
+				oldDefaultFromESet));
+		}
 	}
 
 	/**
@@ -391,8 +412,10 @@ public class FeatureImpl extends ModelElementImpl implements Feature {
 	public void setDefaultValue(String newDefaultValue) {
 		String oldDefaultValue = defaultValue;
 		defaultValue = newDefaultValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.FEATURE__DEFAULT_VALUE, oldDefaultValue, defaultValue));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.FEATURE__DEFAULT_VALUE, oldDefaultValue, defaultValue));
+		}
 	}
 
 	/**
@@ -412,8 +435,10 @@ public class FeatureImpl extends ModelElementImpl implements Feature {
 	public void setFixedValue(String newFixedValue) {
 		String oldFixedValue = fixedValue;
 		fixedValue = newFixedValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.FEATURE__FIXED_VALUE, oldFixedValue, fixedValue));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.FEATURE__FIXED_VALUE, oldFixedValue, fixedValue));
+		}
 	}
 
 	/**
@@ -435,8 +460,11 @@ public class FeatureImpl extends ModelElementImpl implements Feature {
 		isMandatory = newIsMandatory;
 		boolean oldIsMandatoryESet = isMandatoryESet;
 		isMandatoryESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.FEATURE__IS_MANDATORY, oldIsMandatory, isMandatory, !oldIsMandatoryESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.FEATURE__IS_MANDATORY, oldIsMandatory, isMandatory,
+				!oldIsMandatoryESet));
+		}
 	}
 
 	/**
@@ -449,8 +477,11 @@ public class FeatureImpl extends ModelElementImpl implements Feature {
 		boolean oldIsMandatoryESet = isMandatoryESet;
 		isMandatory = IS_MANDATORY_EDEFAULT;
 		isMandatoryESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.FEATURE__IS_MANDATORY, oldIsMandatory, IS_MANDATORY_EDEFAULT, oldIsMandatoryESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.FEATURE__IS_MANDATORY, oldIsMandatory, IS_MANDATORY_EDEFAULT,
+				oldIsMandatoryESet));
+		}
 	}
 
 	/**
@@ -479,8 +510,10 @@ public class FeatureImpl extends ModelElementImpl implements Feature {
 	public void setMaximumLength(BigInteger newMaximumLength) {
 		BigInteger oldMaximumLength = maximumLength;
 		maximumLength = newMaximumLength;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.FEATURE__MAXIMUM_LENGTH, oldMaximumLength, maximumLength));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.FEATURE__MAXIMUM_LENGTH, oldMaximumLength, maximumLength));
+		}
 	}
 
 	/**
@@ -500,8 +533,10 @@ public class FeatureImpl extends ModelElementImpl implements Feature {
 	public void setMinimumLength(BigInteger newMinimumLength) {
 		BigInteger oldMinimumLength = minimumLength;
 		minimumLength = newMinimumLength;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.FEATURE__MINIMUM_LENGTH, oldMinimumLength, minimumLength));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.FEATURE__MINIMUM_LENGTH, oldMinimumLength, minimumLength));
+		}
 	}
 
 	/**
@@ -513,7 +548,7 @@ public class FeatureImpl extends ModelElementImpl implements Feature {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.FEATURE__ALLOWED_RANGE:
-				return ((InternalEList<?>)getAllowedRange()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAllowedRange()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -539,7 +574,9 @@ public class FeatureImpl extends ModelElementImpl implements Feature {
 			case Mif2Package.FEATURE__FIXED_VALUE:
 				return getFixedValue();
 			case Mif2Package.FEATURE__IS_MANDATORY:
-				return isIsMandatory() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsMandatory()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.FEATURE__MAXIMUM_LENGTH:
 				return getMaximumLength();
 			case Mif2Package.FEATURE__MINIMUM_LENGTH:
@@ -559,32 +596,32 @@ public class FeatureImpl extends ModelElementImpl implements Feature {
 		switch (featureID) {
 			case Mif2Package.FEATURE__ENUMERATION_VALUE:
 				getEnumerationValue().clear();
-				getEnumerationValue().addAll((Collection<? extends String>)newValue);
+				getEnumerationValue().addAll((Collection<? extends String>) newValue);
 				return;
 			case Mif2Package.FEATURE__ALLOWED_RANGE:
 				getAllowedRange().clear();
-				getAllowedRange().addAll((Collection<? extends RangeDefinition>)newValue);
+				getAllowedRange().addAll((Collection<? extends RangeDefinition>) newValue);
 				return;
 			case Mif2Package.FEATURE__CONFORMANCE:
-				setConformance((ConformanceKind)newValue);
+				setConformance((ConformanceKind) newValue);
 				return;
 			case Mif2Package.FEATURE__DEFAULT_FROM:
-				setDefaultFrom((DefaultDeterminerKind)newValue);
+				setDefaultFrom((DefaultDeterminerKind) newValue);
 				return;
 			case Mif2Package.FEATURE__DEFAULT_VALUE:
-				setDefaultValue((String)newValue);
+				setDefaultValue((String) newValue);
 				return;
 			case Mif2Package.FEATURE__FIXED_VALUE:
-				setFixedValue((String)newValue);
+				setFixedValue((String) newValue);
 				return;
 			case Mif2Package.FEATURE__IS_MANDATORY:
-				setIsMandatory(((Boolean)newValue).booleanValue());
+				setIsMandatory(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.FEATURE__MAXIMUM_LENGTH:
-				setMaximumLength((BigInteger)newValue);
+				setMaximumLength((BigInteger) newValue);
 				return;
 			case Mif2Package.FEATURE__MINIMUM_LENGTH:
-				setMinimumLength((BigInteger)newValue);
+				setMinimumLength((BigInteger) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -646,15 +683,23 @@ public class FeatureImpl extends ModelElementImpl implements Feature {
 			case Mif2Package.FEATURE__DEFAULT_FROM:
 				return isSetDefaultFrom();
 			case Mif2Package.FEATURE__DEFAULT_VALUE:
-				return DEFAULT_VALUE_EDEFAULT == null ? defaultValue != null : !DEFAULT_VALUE_EDEFAULT.equals(defaultValue);
+				return DEFAULT_VALUE_EDEFAULT == null
+						? defaultValue != null
+						: !DEFAULT_VALUE_EDEFAULT.equals(defaultValue);
 			case Mif2Package.FEATURE__FIXED_VALUE:
-				return FIXED_VALUE_EDEFAULT == null ? fixedValue != null : !FIXED_VALUE_EDEFAULT.equals(fixedValue);
+				return FIXED_VALUE_EDEFAULT == null
+						? fixedValue != null
+						: !FIXED_VALUE_EDEFAULT.equals(fixedValue);
 			case Mif2Package.FEATURE__IS_MANDATORY:
 				return isSetIsMandatory();
 			case Mif2Package.FEATURE__MAXIMUM_LENGTH:
-				return MAXIMUM_LENGTH_EDEFAULT == null ? maximumLength != null : !MAXIMUM_LENGTH_EDEFAULT.equals(maximumLength);
+				return MAXIMUM_LENGTH_EDEFAULT == null
+						? maximumLength != null
+						: !MAXIMUM_LENGTH_EDEFAULT.equals(maximumLength);
 			case Mif2Package.FEATURE__MINIMUM_LENGTH:
-				return MINIMUM_LENGTH_EDEFAULT == null ? minimumLength != null : !MINIMUM_LENGTH_EDEFAULT.equals(minimumLength);
+				return MINIMUM_LENGTH_EDEFAULT == null
+						? minimumLength != null
+						: !MINIMUM_LENGTH_EDEFAULT.equals(minimumLength);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -666,21 +711,35 @@ public class FeatureImpl extends ModelElementImpl implements Feature {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (enumerationValue: ");
 		result.append(enumerationValue);
 		result.append(", conformance: ");
-		if (conformanceESet) result.append(conformance); else result.append("<unset>");
+		if (conformanceESet) {
+			result.append(conformance);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", defaultFrom: ");
-		if (defaultFromESet) result.append(defaultFrom); else result.append("<unset>");
+		if (defaultFromESet) {
+			result.append(defaultFrom);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", defaultValue: ");
 		result.append(defaultValue);
 		result.append(", fixedValue: ");
 		result.append(fixedValue);
 		result.append(", isMandatory: ");
-		if (isMandatoryESet) result.append(isMandatory); else result.append("<unset>");
+		if (isMandatoryESet) {
+			result.append(isMandatory);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", maximumLength: ");
 		result.append(maximumLength);
 		result.append(", minimumLength: ");
@@ -689,4 +748,4 @@ public class FeatureImpl extends ModelElementImpl implements Feature {
 		return result.toString();
 	}
 
-} //FeatureImpl
+} // FeatureImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -80,11 +84,7 @@ public enum OwnerScopeKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final OwnerScopeKind[] VALUES_ARRAY =
-		new OwnerScopeKind[] {
-			INSTANCE,
-			CLASSIFIER,
-		};
+	private static final OwnerScopeKind[] VALUES_ARRAY = new OwnerScopeKind[] { INSTANCE, CLASSIFIER, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Owner Scope Kind</b></em>' enumerators.
@@ -134,8 +134,10 @@ public enum OwnerScopeKind implements Enumerator {
 	 */
 	public static OwnerScopeKind get(int value) {
 		switch (value) {
-			case INSTANCE_VALUE: return INSTANCE;
-			case CLASSIFIER_VALUE: return CLASSIFIER;
+			case INSTANCE_VALUE:
+				return INSTANCE;
+			case CLASSIFIER_VALUE:
+				return CLASSIFIER;
 		}
 		return null;
 	}
@@ -179,7 +181,7 @@ public enum OwnerScopeKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -188,7 +190,7 @@ public enum OwnerScopeKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -197,7 +199,7 @@ public enum OwnerScopeKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -210,5 +212,5 @@ public enum OwnerScopeKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //OwnerScopeKind
+
+} // OwnerScopeKind

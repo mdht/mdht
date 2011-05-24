@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -106,7 +110,8 @@ public class BoundStaticModelImpl extends PackageRefImpl implements BoundStaticM
 	 */
 	public EList<ParameterModel> getParameterModel() {
 		if (parameterModel == null) {
-			parameterModel = new EObjectContainmentEList<ParameterModel>(ParameterModel.class, this, Mif2Package.BOUND_STATIC_MODEL__PARAMETER_MODEL);
+			parameterModel = new EObjectContainmentEList<ParameterModel>(
+				ParameterModel.class, this, Mif2Package.BOUND_STATIC_MODEL__PARAMETER_MODEL);
 		}
 		return parameterModel;
 	}
@@ -127,11 +132,16 @@ public class BoundStaticModelImpl extends PackageRefImpl implements BoundStaticM
 	 */
 	public void setEntryPointUseKind(StaticModelUseKind newEntryPointUseKind) {
 		StaticModelUseKind oldEntryPointUseKind = entryPointUseKind;
-		entryPointUseKind = newEntryPointUseKind == null ? ENTRY_POINT_USE_KIND_EDEFAULT : newEntryPointUseKind;
+		entryPointUseKind = newEntryPointUseKind == null
+				? ENTRY_POINT_USE_KIND_EDEFAULT
+				: newEntryPointUseKind;
 		boolean oldEntryPointUseKindESet = entryPointUseKindESet;
 		entryPointUseKindESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BOUND_STATIC_MODEL__ENTRY_POINT_USE_KIND, oldEntryPointUseKind, entryPointUseKind, !oldEntryPointUseKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BOUND_STATIC_MODEL__ENTRY_POINT_USE_KIND, oldEntryPointUseKind,
+				entryPointUseKind, !oldEntryPointUseKindESet));
+		}
 	}
 
 	/**
@@ -144,8 +154,11 @@ public class BoundStaticModelImpl extends PackageRefImpl implements BoundStaticM
 		boolean oldEntryPointUseKindESet = entryPointUseKindESet;
 		entryPointUseKind = ENTRY_POINT_USE_KIND_EDEFAULT;
 		entryPointUseKindESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.BOUND_STATIC_MODEL__ENTRY_POINT_USE_KIND, oldEntryPointUseKind, ENTRY_POINT_USE_KIND_EDEFAULT, oldEntryPointUseKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.BOUND_STATIC_MODEL__ENTRY_POINT_USE_KIND, oldEntryPointUseKind,
+				ENTRY_POINT_USE_KIND_EDEFAULT, oldEntryPointUseKindESet));
+		}
 	}
 
 	/**
@@ -166,7 +179,7 @@ public class BoundStaticModelImpl extends PackageRefImpl implements BoundStaticM
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.BOUND_STATIC_MODEL__PARAMETER_MODEL:
-				return ((InternalEList<?>)getParameterModel()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getParameterModel()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -198,10 +211,10 @@ public class BoundStaticModelImpl extends PackageRefImpl implements BoundStaticM
 		switch (featureID) {
 			case Mif2Package.BOUND_STATIC_MODEL__PARAMETER_MODEL:
 				getParameterModel().clear();
-				getParameterModel().addAll((Collection<? extends ParameterModel>)newValue);
+				getParameterModel().addAll((Collection<? extends ParameterModel>) newValue);
 				return;
 			case Mif2Package.BOUND_STATIC_MODEL__ENTRY_POINT_USE_KIND:
-				setEntryPointUseKind((StaticModelUseKind)newValue);
+				setEntryPointUseKind((StaticModelUseKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -248,13 +261,19 @@ public class BoundStaticModelImpl extends PackageRefImpl implements BoundStaticM
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (entryPointUseKind: ");
-		if (entryPointUseKindESet) result.append(entryPointUseKind); else result.append("<unset>");
+		if (entryPointUseKindESet) {
+			result.append(entryPointUseKind);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //BoundStaticModelImpl
+} // BoundStaticModelImpl

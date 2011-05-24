@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigInteger;
@@ -341,8 +345,11 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 		bindingPriority = newBindingPriority;
 		boolean oldBindingPriorityESet = bindingPriorityESet;
 		bindingPriorityESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTEXT_BINDING__BINDING_PRIORITY, oldBindingPriority, bindingPriority, !oldBindingPriorityESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTEXT_BINDING__BINDING_PRIORITY, oldBindingPriority,
+				bindingPriority, !oldBindingPriorityESet));
+		}
 	}
 
 	/**
@@ -355,8 +362,11 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 		boolean oldBindingPriorityESet = bindingPriorityESet;
 		bindingPriority = BINDING_PRIORITY_EDEFAULT;
 		bindingPriorityESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CONTEXT_BINDING__BINDING_PRIORITY, oldBindingPriority, BINDING_PRIORITY_EDEFAULT, oldBindingPriorityESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CONTEXT_BINDING__BINDING_PRIORITY, oldBindingPriority,
+				BINDING_PRIORITY_EDEFAULT, oldBindingPriorityESet));
+		}
 	}
 
 	/**
@@ -385,8 +395,11 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 	public void setBindingRealmName(String newBindingRealmName) {
 		String oldBindingRealmName = bindingRealmName;
 		bindingRealmName = newBindingRealmName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTEXT_BINDING__BINDING_REALM_NAME, oldBindingRealmName, bindingRealmName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTEXT_BINDING__BINDING_REALM_NAME, oldBindingRealmName,
+				bindingRealmName));
+		}
 	}
 
 	/**
@@ -405,11 +418,16 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 	 */
 	public void setCodingStrength(CodingStrengthKind newCodingStrength) {
 		CodingStrengthKind oldCodingStrength = codingStrength;
-		codingStrength = newCodingStrength == null ? CODING_STRENGTH_EDEFAULT : newCodingStrength;
+		codingStrength = newCodingStrength == null
+				? CODING_STRENGTH_EDEFAULT
+				: newCodingStrength;
 		boolean oldCodingStrengthESet = codingStrengthESet;
 		codingStrengthESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTEXT_BINDING__CODING_STRENGTH, oldCodingStrength, codingStrength, !oldCodingStrengthESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTEXT_BINDING__CODING_STRENGTH, oldCodingStrength,
+				codingStrength, !oldCodingStrengthESet));
+		}
 	}
 
 	/**
@@ -422,8 +440,11 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 		boolean oldCodingStrengthESet = codingStrengthESet;
 		codingStrength = CODING_STRENGTH_EDEFAULT;
 		codingStrengthESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CONTEXT_BINDING__CODING_STRENGTH, oldCodingStrength, CODING_STRENGTH_EDEFAULT, oldCodingStrengthESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CONTEXT_BINDING__CODING_STRENGTH, oldCodingStrength,
+				CODING_STRENGTH_EDEFAULT, oldCodingStrengthESet));
+		}
 	}
 
 	/**
@@ -452,8 +473,10 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 	public void setConceptDomain(String newConceptDomain) {
 		String oldConceptDomain = conceptDomain;
 		conceptDomain = newConceptDomain;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTEXT_BINDING__CONCEPT_DOMAIN, oldConceptDomain, conceptDomain));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTEXT_BINDING__CONCEPT_DOMAIN, oldConceptDomain, conceptDomain));
+		}
 	}
 
 	/**
@@ -473,8 +496,10 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 	public void setEffectiveDate(XMLGregorianCalendar newEffectiveDate) {
 		XMLGregorianCalendar oldEffectiveDate = effectiveDate;
 		effectiveDate = newEffectiveDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTEXT_BINDING__EFFECTIVE_DATE, oldEffectiveDate, effectiveDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTEXT_BINDING__EFFECTIVE_DATE, oldEffectiveDate, effectiveDate));
+		}
 	}
 
 	/**
@@ -494,8 +519,10 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 	public void setExpiryDate(XMLGregorianCalendar newExpiryDate) {
 		XMLGregorianCalendar oldExpiryDate = expiryDate;
 		expiryDate = newExpiryDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTEXT_BINDING__EXPIRY_DATE, oldExpiryDate, expiryDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTEXT_BINDING__EXPIRY_DATE, oldExpiryDate, expiryDate));
+		}
 	}
 
 	/**
@@ -515,8 +542,11 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 	public void setIgnoredValueSet(String newIgnoredValueSet) {
 		String oldIgnoredValueSet = ignoredValueSet;
 		ignoredValueSet = newIgnoredValueSet;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTEXT_BINDING__IGNORED_VALUE_SET, oldIgnoredValueSet, ignoredValueSet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTEXT_BINDING__IGNORED_VALUE_SET, oldIgnoredValueSet,
+				ignoredValueSet));
+		}
 	}
 
 	/**
@@ -536,8 +566,11 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 	public void setMinimumValueSet(String newMinimumValueSet) {
 		String oldMinimumValueSet = minimumValueSet;
 		minimumValueSet = newMinimumValueSet;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTEXT_BINDING__MINIMUM_VALUE_SET, oldMinimumValueSet, minimumValueSet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTEXT_BINDING__MINIMUM_VALUE_SET, oldMinimumValueSet,
+				minimumValueSet));
+		}
 	}
 
 	/**
@@ -557,8 +590,10 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTEXT_BINDING__SORT_KEY, oldSortKey, sortKey));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTEXT_BINDING__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -578,8 +613,10 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 	public void setValueSet(String newValueSet) {
 		String oldValueSet = valueSet;
 		valueSet = newValueSet;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTEXT_BINDING__VALUE_SET, oldValueSet, valueSet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTEXT_BINDING__VALUE_SET, oldValueSet, valueSet));
+		}
 	}
 
 	/**
@@ -599,8 +636,10 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 	public void setVersionDate(XMLGregorianCalendar newVersionDate) {
 		XMLGregorianCalendar oldVersionDate = versionDate;
 		versionDate = newVersionDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTEXT_BINDING__VERSION_DATE, oldVersionDate, versionDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTEXT_BINDING__VERSION_DATE, oldVersionDate, versionDate));
+		}
 	}
 
 	/**
@@ -620,8 +659,10 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 	public void setVersionTime(XMLGregorianCalendar newVersionTime) {
 		XMLGregorianCalendar oldVersionTime = versionTime;
 		versionTime = newVersionTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTEXT_BINDING__VERSION_TIME, oldVersionTime, versionTime));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTEXT_BINDING__VERSION_TIME, oldVersionTime, versionTime));
+		}
 	}
 
 	/**
@@ -669,40 +710,40 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CONTEXT_BINDING__BINDING_PRIORITY:
-				setBindingPriority((BigInteger)newValue);
+				setBindingPriority((BigInteger) newValue);
 				return;
 			case Mif2Package.CONTEXT_BINDING__BINDING_REALM_NAME:
-				setBindingRealmName((String)newValue);
+				setBindingRealmName((String) newValue);
 				return;
 			case Mif2Package.CONTEXT_BINDING__CODING_STRENGTH:
-				setCodingStrength((CodingStrengthKind)newValue);
+				setCodingStrength((CodingStrengthKind) newValue);
 				return;
 			case Mif2Package.CONTEXT_BINDING__CONCEPT_DOMAIN:
-				setConceptDomain((String)newValue);
+				setConceptDomain((String) newValue);
 				return;
 			case Mif2Package.CONTEXT_BINDING__EFFECTIVE_DATE:
-				setEffectiveDate((XMLGregorianCalendar)newValue);
+				setEffectiveDate((XMLGregorianCalendar) newValue);
 				return;
 			case Mif2Package.CONTEXT_BINDING__EXPIRY_DATE:
-				setExpiryDate((XMLGregorianCalendar)newValue);
+				setExpiryDate((XMLGregorianCalendar) newValue);
 				return;
 			case Mif2Package.CONTEXT_BINDING__IGNORED_VALUE_SET:
-				setIgnoredValueSet((String)newValue);
+				setIgnoredValueSet((String) newValue);
 				return;
 			case Mif2Package.CONTEXT_BINDING__MINIMUM_VALUE_SET:
-				setMinimumValueSet((String)newValue);
+				setMinimumValueSet((String) newValue);
 				return;
 			case Mif2Package.CONTEXT_BINDING__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 			case Mif2Package.CONTEXT_BINDING__VALUE_SET:
-				setValueSet((String)newValue);
+				setValueSet((String) newValue);
 				return;
 			case Mif2Package.CONTEXT_BINDING__VERSION_DATE:
-				setVersionDate((XMLGregorianCalendar)newValue);
+				setVersionDate((XMLGregorianCalendar) newValue);
 				return;
 			case Mif2Package.CONTEXT_BINDING__VERSION_TIME:
-				setVersionTime((XMLGregorianCalendar)newValue);
+				setVersionTime((XMLGregorianCalendar) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -767,27 +808,47 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 			case Mif2Package.CONTEXT_BINDING__BINDING_PRIORITY:
 				return isSetBindingPriority();
 			case Mif2Package.CONTEXT_BINDING__BINDING_REALM_NAME:
-				return BINDING_REALM_NAME_EDEFAULT == null ? bindingRealmName != null : !BINDING_REALM_NAME_EDEFAULT.equals(bindingRealmName);
+				return BINDING_REALM_NAME_EDEFAULT == null
+						? bindingRealmName != null
+						: !BINDING_REALM_NAME_EDEFAULT.equals(bindingRealmName);
 			case Mif2Package.CONTEXT_BINDING__CODING_STRENGTH:
 				return isSetCodingStrength();
 			case Mif2Package.CONTEXT_BINDING__CONCEPT_DOMAIN:
-				return CONCEPT_DOMAIN_EDEFAULT == null ? conceptDomain != null : !CONCEPT_DOMAIN_EDEFAULT.equals(conceptDomain);
+				return CONCEPT_DOMAIN_EDEFAULT == null
+						? conceptDomain != null
+						: !CONCEPT_DOMAIN_EDEFAULT.equals(conceptDomain);
 			case Mif2Package.CONTEXT_BINDING__EFFECTIVE_DATE:
-				return EFFECTIVE_DATE_EDEFAULT == null ? effectiveDate != null : !EFFECTIVE_DATE_EDEFAULT.equals(effectiveDate);
+				return EFFECTIVE_DATE_EDEFAULT == null
+						? effectiveDate != null
+						: !EFFECTIVE_DATE_EDEFAULT.equals(effectiveDate);
 			case Mif2Package.CONTEXT_BINDING__EXPIRY_DATE:
-				return EXPIRY_DATE_EDEFAULT == null ? expiryDate != null : !EXPIRY_DATE_EDEFAULT.equals(expiryDate);
+				return EXPIRY_DATE_EDEFAULT == null
+						? expiryDate != null
+						: !EXPIRY_DATE_EDEFAULT.equals(expiryDate);
 			case Mif2Package.CONTEXT_BINDING__IGNORED_VALUE_SET:
-				return IGNORED_VALUE_SET_EDEFAULT == null ? ignoredValueSet != null : !IGNORED_VALUE_SET_EDEFAULT.equals(ignoredValueSet);
+				return IGNORED_VALUE_SET_EDEFAULT == null
+						? ignoredValueSet != null
+						: !IGNORED_VALUE_SET_EDEFAULT.equals(ignoredValueSet);
 			case Mif2Package.CONTEXT_BINDING__MINIMUM_VALUE_SET:
-				return MINIMUM_VALUE_SET_EDEFAULT == null ? minimumValueSet != null : !MINIMUM_VALUE_SET_EDEFAULT.equals(minimumValueSet);
+				return MINIMUM_VALUE_SET_EDEFAULT == null
+						? minimumValueSet != null
+						: !MINIMUM_VALUE_SET_EDEFAULT.equals(minimumValueSet);
 			case Mif2Package.CONTEXT_BINDING__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 			case Mif2Package.CONTEXT_BINDING__VALUE_SET:
-				return VALUE_SET_EDEFAULT == null ? valueSet != null : !VALUE_SET_EDEFAULT.equals(valueSet);
+				return VALUE_SET_EDEFAULT == null
+						? valueSet != null
+						: !VALUE_SET_EDEFAULT.equals(valueSet);
 			case Mif2Package.CONTEXT_BINDING__VERSION_DATE:
-				return VERSION_DATE_EDEFAULT == null ? versionDate != null : !VERSION_DATE_EDEFAULT.equals(versionDate);
+				return VERSION_DATE_EDEFAULT == null
+						? versionDate != null
+						: !VERSION_DATE_EDEFAULT.equals(versionDate);
 			case Mif2Package.CONTEXT_BINDING__VERSION_TIME:
-				return VERSION_TIME_EDEFAULT == null ? versionTime != null : !VERSION_TIME_EDEFAULT.equals(versionTime);
+				return VERSION_TIME_EDEFAULT == null
+						? versionTime != null
+						: !VERSION_TIME_EDEFAULT.equals(versionTime);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -799,15 +860,25 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (bindingPriority: ");
-		if (bindingPriorityESet) result.append(bindingPriority); else result.append("<unset>");
+		if (bindingPriorityESet) {
+			result.append(bindingPriority);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", bindingRealmName: ");
 		result.append(bindingRealmName);
 		result.append(", codingStrength: ");
-		if (codingStrengthESet) result.append(codingStrength); else result.append("<unset>");
+		if (codingStrengthESet) {
+			result.append(codingStrength);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", conceptDomain: ");
 		result.append(conceptDomain);
 		result.append(", effectiveDate: ");
@@ -830,4 +901,4 @@ public class ContextBindingImpl extends ModelElementImpl implements ContextBindi
 		return result.toString();
 	}
 
-} //ContextBindingImpl
+} // ContextBindingImpl

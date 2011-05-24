@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -94,11 +98,16 @@ public class FormalExpressionImpl extends VariousMixedContentImpl implements For
 	 */
 	public void setEncoding(ExpressionLanguageKind newEncoding) {
 		ExpressionLanguageKind oldEncoding = encoding;
-		encoding = newEncoding == null ? ENCODING_EDEFAULT : newEncoding;
+		encoding = newEncoding == null
+				? ENCODING_EDEFAULT
+				: newEncoding;
 		boolean oldEncodingESet = encodingESet;
 		encodingESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.FORMAL_EXPRESSION__ENCODING, oldEncoding, encoding, !oldEncodingESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.FORMAL_EXPRESSION__ENCODING, oldEncoding, encoding,
+				!oldEncodingESet));
+		}
 	}
 
 	/**
@@ -111,8 +120,11 @@ public class FormalExpressionImpl extends VariousMixedContentImpl implements For
 		boolean oldEncodingESet = encodingESet;
 		encoding = ENCODING_EDEFAULT;
 		encodingESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.FORMAL_EXPRESSION__ENCODING, oldEncoding, ENCODING_EDEFAULT, oldEncodingESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.FORMAL_EXPRESSION__ENCODING, oldEncoding, ENCODING_EDEFAULT,
+				oldEncodingESet));
+		}
 	}
 
 	/**
@@ -147,7 +159,7 @@ public class FormalExpressionImpl extends VariousMixedContentImpl implements For
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.FORMAL_EXPRESSION__ENCODING:
-				setEncoding((ExpressionLanguageKind)newValue);
+				setEncoding((ExpressionLanguageKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,13 +201,19 @@ public class FormalExpressionImpl extends VariousMixedContentImpl implements For
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (encoding: ");
-		if (encodingESet) result.append(encoding); else result.append("<unset>");
+		if (encodingESet) {
+			result.append(encoding);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //FormalExpressionImpl
+} // FormalExpressionImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -127,13 +131,7 @@ public enum InteractionProfileKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final InteractionProfileKind[] VALUES_ARRAY =
-		new InteractionProfileKind[] {
-			R,
-			SEND,
-			RECEIVE,
-			BOTH,
-		};
+	private static final InteractionProfileKind[] VALUES_ARRAY = new InteractionProfileKind[] { R, SEND, RECEIVE, BOTH, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Interaction Profile Kind</b></em>' enumerators.
@@ -183,10 +181,14 @@ public enum InteractionProfileKind implements Enumerator {
 	 */
 	public static InteractionProfileKind get(int value) {
 		switch (value) {
-			case R_VALUE: return R;
-			case SEND_VALUE: return SEND;
-			case RECEIVE_VALUE: return RECEIVE;
-			case BOTH_VALUE: return BOTH;
+			case R_VALUE:
+				return R;
+			case SEND_VALUE:
+				return SEND;
+			case RECEIVE_VALUE:
+				return RECEIVE;
+			case BOTH_VALUE:
+				return BOTH;
 		}
 		return null;
 	}
@@ -230,7 +232,7 @@ public enum InteractionProfileKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -239,7 +241,7 @@ public enum InteractionProfileKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -248,7 +250,7 @@ public enum InteractionProfileKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -261,5 +263,5 @@ public enum InteractionProfileKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //InteractionProfileKind
+
+} // InteractionProfileKind

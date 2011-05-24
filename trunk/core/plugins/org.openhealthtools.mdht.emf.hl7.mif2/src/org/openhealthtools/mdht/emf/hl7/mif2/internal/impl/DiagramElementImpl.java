@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -109,8 +113,11 @@ public abstract class DiagramElementImpl extends EObjectImpl implements DiagramE
 	public void setLastAdjustedDateTime(XMLGregorianCalendar newLastAdjustedDateTime) {
 		XMLGregorianCalendar oldLastAdjustedDateTime = lastAdjustedDateTime;
 		lastAdjustedDateTime = newLastAdjustedDateTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DIAGRAM_ELEMENT__LAST_ADJUSTED_DATE_TIME, oldLastAdjustedDateTime, lastAdjustedDateTime));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DIAGRAM_ELEMENT__LAST_ADJUSTED_DATE_TIME, oldLastAdjustedDateTime,
+				lastAdjustedDateTime));
+		}
 	}
 
 	/**
@@ -130,8 +137,10 @@ public abstract class DiagramElementImpl extends EObjectImpl implements DiagramE
 	public void setShapeId(String newShapeId) {
 		String oldShapeId = shapeId;
 		shapeId = newShapeId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DIAGRAM_ELEMENT__SHAPE_ID, oldShapeId, shapeId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DIAGRAM_ELEMENT__SHAPE_ID, oldShapeId, shapeId));
+		}
 	}
 
 	/**
@@ -159,10 +168,10 @@ public abstract class DiagramElementImpl extends EObjectImpl implements DiagramE
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DIAGRAM_ELEMENT__LAST_ADJUSTED_DATE_TIME:
-				setLastAdjustedDateTime((XMLGregorianCalendar)newValue);
+				setLastAdjustedDateTime((XMLGregorianCalendar) newValue);
 				return;
 			case Mif2Package.DIAGRAM_ELEMENT__SHAPE_ID:
-				setShapeId((String)newValue);
+				setShapeId((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -195,9 +204,13 @@ public abstract class DiagramElementImpl extends EObjectImpl implements DiagramE
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.DIAGRAM_ELEMENT__LAST_ADJUSTED_DATE_TIME:
-				return LAST_ADJUSTED_DATE_TIME_EDEFAULT == null ? lastAdjustedDateTime != null : !LAST_ADJUSTED_DATE_TIME_EDEFAULT.equals(lastAdjustedDateTime);
+				return LAST_ADJUSTED_DATE_TIME_EDEFAULT == null
+						? lastAdjustedDateTime != null
+						: !LAST_ADJUSTED_DATE_TIME_EDEFAULT.equals(lastAdjustedDateTime);
 			case Mif2Package.DIAGRAM_ELEMENT__SHAPE_ID:
-				return SHAPE_ID_EDEFAULT == null ? shapeId != null : !SHAPE_ID_EDEFAULT.equals(shapeId);
+				return SHAPE_ID_EDEFAULT == null
+						? shapeId != null
+						: !SHAPE_ID_EDEFAULT.equals(shapeId);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -209,7 +222,9 @@ public abstract class DiagramElementImpl extends EObjectImpl implements DiagramE
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (lastAdjustedDateTime: ");
@@ -220,4 +235,4 @@ public abstract class DiagramElementImpl extends EObjectImpl implements DiagramE
 		return result.toString();
 	}
 
-} //DiagramElementImpl
+} // DiagramElementImpl

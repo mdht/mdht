@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -117,7 +121,8 @@ public abstract class PackageBaseImpl extends ModelElementImpl implements Packag
 	 */
 	public EList<BusinessName> getBusinessName() {
 		if (businessName == null) {
-			businessName = new EObjectContainmentEList<BusinessName>(BusinessName.class, this, Mif2Package.PACKAGE_BASE__BUSINESS_NAME);
+			businessName = new EObjectContainmentEList<BusinessName>(
+				BusinessName.class, this, Mif2Package.PACKAGE_BASE__BUSINESS_NAME);
 		}
 		return businessName;
 	}
@@ -139,8 +144,9 @@ public abstract class PackageBaseImpl extends ModelElementImpl implements Packag
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_BASE__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -160,8 +166,10 @@ public abstract class PackageBaseImpl extends ModelElementImpl implements Packag
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_BASE__SORT_KEY, oldSortKey, sortKey));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE_BASE__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -173,7 +181,7 @@ public abstract class PackageBaseImpl extends ModelElementImpl implements Packag
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.PACKAGE_BASE__BUSINESS_NAME:
-				return ((InternalEList<?>)getBusinessName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBusinessName()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -207,13 +215,13 @@ public abstract class PackageBaseImpl extends ModelElementImpl implements Packag
 		switch (featureID) {
 			case Mif2Package.PACKAGE_BASE__BUSINESS_NAME:
 				getBusinessName().clear();
-				getBusinessName().addAll((Collection<? extends BusinessName>)newValue);
+				getBusinessName().addAll((Collection<? extends BusinessName>) newValue);
 				return;
 			case Mif2Package.PACKAGE_BASE__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.PACKAGE_BASE__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -251,9 +259,13 @@ public abstract class PackageBaseImpl extends ModelElementImpl implements Packag
 			case Mif2Package.PACKAGE_BASE__BUSINESS_NAME:
 				return businessName != null && !businessName.isEmpty();
 			case Mif2Package.PACKAGE_BASE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.PACKAGE_BASE__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -265,7 +277,9 @@ public abstract class PackageBaseImpl extends ModelElementImpl implements Packag
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -276,4 +290,4 @@ public abstract class PackageBaseImpl extends ModelElementImpl implements Packag
 		return result.toString();
 	}
 
-} //PackageBaseImpl
+} // PackageBaseImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -74,7 +78,8 @@ public abstract class ModelElementImpl extends EObjectImpl implements ModelEleme
 	 */
 	public EList<HistoryItem> getHistoryItem() {
 		if (historyItem == null) {
-			historyItem = new EObjectContainmentEList<HistoryItem>(HistoryItem.class, this, Mif2Package.MODEL_ELEMENT__HISTORY_ITEM);
+			historyItem = new EObjectContainmentEList<HistoryItem>(
+				HistoryItem.class, this, Mif2Package.MODEL_ELEMENT__HISTORY_ITEM);
 		}
 		return historyItem;
 	}
@@ -88,7 +93,7 @@ public abstract class ModelElementImpl extends EObjectImpl implements ModelEleme
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.MODEL_ELEMENT__HISTORY_ITEM:
-				return ((InternalEList<?>)getHistoryItem()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getHistoryItem()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -118,7 +123,7 @@ public abstract class ModelElementImpl extends EObjectImpl implements ModelEleme
 		switch (featureID) {
 			case Mif2Package.MODEL_ELEMENT__HISTORY_ITEM:
 				getHistoryItem().clear();
-				getHistoryItem().addAll((Collection<? extends HistoryItem>)newValue);
+				getHistoryItem().addAll((Collection<? extends HistoryItem>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -153,4 +158,4 @@ public abstract class ModelElementImpl extends EObjectImpl implements ModelEleme
 		return super.eIsSet(featureID);
 	}
 
-} //ModelElementImpl
+} // ModelElementImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -31,7 +35,8 @@ import org.openhealthtools.mdht.emf.hl7.mif2.SerializedClassBindingArgument;
  *
  * @generated
  */
-public class SerializedClassBindingArgumentImpl extends ClassBindingArgumentBaseImpl implements SerializedClassBindingArgument {
+public class SerializedClassBindingArgumentImpl extends ClassBindingArgumentBaseImpl implements
+		SerializedClassBindingArgument {
 	/**
 	 * The cached value of the '{@link #getArgumentClass() <em>Argument Class</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -79,8 +84,14 @@ public class SerializedClassBindingArgumentImpl extends ClassBindingArgumentBase
 		ClassOrReference oldArgumentClass = argumentClass;
 		argumentClass = newArgumentClass;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.SERIALIZED_CLASS_BINDING_ARGUMENT__ARGUMENT_CLASS, oldArgumentClass, newArgumentClass);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SERIALIZED_CLASS_BINDING_ARGUMENT__ARGUMENT_CLASS,
+				oldArgumentClass, newArgumentClass);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -93,15 +104,23 @@ public class SerializedClassBindingArgumentImpl extends ClassBindingArgumentBase
 	public void setArgumentClass(ClassOrReference newArgumentClass) {
 		if (newArgumentClass != argumentClass) {
 			NotificationChain msgs = null;
-			if (argumentClass != null)
-				msgs = ((InternalEObject)argumentClass).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SERIALIZED_CLASS_BINDING_ARGUMENT__ARGUMENT_CLASS, null, msgs);
-			if (newArgumentClass != null)
-				msgs = ((InternalEObject)newArgumentClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SERIALIZED_CLASS_BINDING_ARGUMENT__ARGUMENT_CLASS, null, msgs);
+			if (argumentClass != null) {
+				msgs = ((InternalEObject) argumentClass).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SERIALIZED_CLASS_BINDING_ARGUMENT__ARGUMENT_CLASS, null, msgs);
+			}
+			if (newArgumentClass != null) {
+				msgs = ((InternalEObject) newArgumentClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SERIALIZED_CLASS_BINDING_ARGUMENT__ARGUMENT_CLASS, null, msgs);
+			}
 			msgs = basicSetArgumentClass(newArgumentClass, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SERIALIZED_CLASS_BINDING_ARGUMENT__ARGUMENT_CLASS,
+				newArgumentClass, newArgumentClass));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SERIALIZED_CLASS_BINDING_ARGUMENT__ARGUMENT_CLASS, newArgumentClass, newArgumentClass));
 	}
 
 	/**
@@ -141,7 +160,7 @@ public class SerializedClassBindingArgumentImpl extends ClassBindingArgumentBase
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.SERIALIZED_CLASS_BINDING_ARGUMENT__ARGUMENT_CLASS:
-				setArgumentClass((ClassOrReference)newValue);
+				setArgumentClass((ClassOrReference) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -156,7 +175,7 @@ public class SerializedClassBindingArgumentImpl extends ClassBindingArgumentBase
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.SERIALIZED_CLASS_BINDING_ARGUMENT__ARGUMENT_CLASS:
-				setArgumentClass((ClassOrReference)null);
+				setArgumentClass((ClassOrReference) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -176,4 +195,4 @@ public class SerializedClassBindingArgumentImpl extends ClassBindingArgumentBase
 		return super.eIsSet(featureID);
 	}
 
-} //SerializedClassBindingArgumentImpl
+} // SerializedClassBindingArgumentImpl

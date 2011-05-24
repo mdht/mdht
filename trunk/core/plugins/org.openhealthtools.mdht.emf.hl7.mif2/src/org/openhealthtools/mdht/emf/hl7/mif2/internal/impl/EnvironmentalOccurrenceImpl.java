@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -92,8 +96,13 @@ public class EnvironmentalOccurrenceImpl extends EObjectImpl implements Environm
 		ComplexMarkupWithLanguage oldText = text;
 		text = newText;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.ENVIRONMENTAL_OCCURRENCE__TEXT, oldText, newText);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ENVIRONMENTAL_OCCURRENCE__TEXT, oldText, newText);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -106,15 +115,22 @@ public class EnvironmentalOccurrenceImpl extends EObjectImpl implements Environm
 	public void setText(ComplexMarkupWithLanguage newText) {
 		if (newText != text) {
 			NotificationChain msgs = null;
-			if (text != null)
-				msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ENVIRONMENTAL_OCCURRENCE__TEXT, null, msgs);
-			if (newText != null)
-				msgs = ((InternalEObject)newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ENVIRONMENTAL_OCCURRENCE__TEXT, null, msgs);
+			if (text != null) {
+				msgs = ((InternalEObject) text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ENVIRONMENTAL_OCCURRENCE__TEXT, null, msgs);
+			}
+			if (newText != null) {
+				msgs = ((InternalEObject) newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ENVIRONMENTAL_OCCURRENCE__TEXT, null, msgs);
+			}
 			msgs = basicSetText(newText, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ENVIRONMENTAL_OCCURRENCE__TEXT, newText, newText));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ENVIRONMENTAL_OCCURRENCE__TEXT, newText, newText));
 	}
 
 	/**
@@ -131,12 +147,19 @@ public class EnvironmentalOccurrenceImpl extends EObjectImpl implements Environm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRelatedStateTransition(TransitionRef newRelatedStateTransition, NotificationChain msgs) {
+	public NotificationChain basicSetRelatedStateTransition(TransitionRef newRelatedStateTransition,
+			NotificationChain msgs) {
 		TransitionRef oldRelatedStateTransition = relatedStateTransition;
 		relatedStateTransition = newRelatedStateTransition;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.ENVIRONMENTAL_OCCURRENCE__RELATED_STATE_TRANSITION, oldRelatedStateTransition, newRelatedStateTransition);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ENVIRONMENTAL_OCCURRENCE__RELATED_STATE_TRANSITION,
+				oldRelatedStateTransition, newRelatedStateTransition);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -149,15 +172,23 @@ public class EnvironmentalOccurrenceImpl extends EObjectImpl implements Environm
 	public void setRelatedStateTransition(TransitionRef newRelatedStateTransition) {
 		if (newRelatedStateTransition != relatedStateTransition) {
 			NotificationChain msgs = null;
-			if (relatedStateTransition != null)
-				msgs = ((InternalEObject)relatedStateTransition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ENVIRONMENTAL_OCCURRENCE__RELATED_STATE_TRANSITION, null, msgs);
-			if (newRelatedStateTransition != null)
-				msgs = ((InternalEObject)newRelatedStateTransition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ENVIRONMENTAL_OCCURRENCE__RELATED_STATE_TRANSITION, null, msgs);
+			if (relatedStateTransition != null) {
+				msgs = ((InternalEObject) relatedStateTransition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ENVIRONMENTAL_OCCURRENCE__RELATED_STATE_TRANSITION, null, msgs);
+			}
+			if (newRelatedStateTransition != null) {
+				msgs = ((InternalEObject) newRelatedStateTransition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ENVIRONMENTAL_OCCURRENCE__RELATED_STATE_TRANSITION, null, msgs);
+			}
 			msgs = basicSetRelatedStateTransition(newRelatedStateTransition, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ENVIRONMENTAL_OCCURRENCE__RELATED_STATE_TRANSITION,
+				newRelatedStateTransition, newRelatedStateTransition));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ENVIRONMENTAL_OCCURRENCE__RELATED_STATE_TRANSITION, newRelatedStateTransition, newRelatedStateTransition));
 	}
 
 	/**
@@ -201,10 +232,10 @@ public class EnvironmentalOccurrenceImpl extends EObjectImpl implements Environm
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.ENVIRONMENTAL_OCCURRENCE__TEXT:
-				setText((ComplexMarkupWithLanguage)newValue);
+				setText((ComplexMarkupWithLanguage) newValue);
 				return;
 			case Mif2Package.ENVIRONMENTAL_OCCURRENCE__RELATED_STATE_TRANSITION:
-				setRelatedStateTransition((TransitionRef)newValue);
+				setRelatedStateTransition((TransitionRef) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -219,10 +250,10 @@ public class EnvironmentalOccurrenceImpl extends EObjectImpl implements Environm
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.ENVIRONMENTAL_OCCURRENCE__TEXT:
-				setText((ComplexMarkupWithLanguage)null);
+				setText((ComplexMarkupWithLanguage) null);
 				return;
 			case Mif2Package.ENVIRONMENTAL_OCCURRENCE__RELATED_STATE_TRANSITION:
-				setRelatedStateTransition((TransitionRef)null);
+				setRelatedStateTransition((TransitionRef) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -244,4 +275,4 @@ public class EnvironmentalOccurrenceImpl extends EObjectImpl implements Environm
 		return super.eIsSet(featureID);
 	}
 
-} //EnvironmentalOccurrenceImpl
+} // EnvironmentalOccurrenceImpl

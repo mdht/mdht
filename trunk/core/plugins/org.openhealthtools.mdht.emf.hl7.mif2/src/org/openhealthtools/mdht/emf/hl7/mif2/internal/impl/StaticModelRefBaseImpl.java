@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -112,8 +116,13 @@ public class StaticModelRefBaseImpl extends ClassifierBaseImpl implements Static
 		ClassAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_REF_BASE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_REF_BASE__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -126,15 +135,22 @@ public class StaticModelRefBaseImpl extends ClassifierBaseImpl implements Static
 	public void setAnnotations(ClassAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_REF_BASE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_REF_BASE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_REF_BASE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_REF_BASE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_REF_BASE__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_REF_BASE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -155,8 +171,14 @@ public class StaticModelRefBaseImpl extends ClassifierBaseImpl implements Static
 		PackageRef oldModelReference = modelReference;
 		modelReference = newModelReference;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_REF_BASE__MODEL_REFERENCE, oldModelReference, newModelReference);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_REF_BASE__MODEL_REFERENCE, oldModelReference,
+				newModelReference);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -169,15 +191,23 @@ public class StaticModelRefBaseImpl extends ClassifierBaseImpl implements Static
 	public void setModelReference(PackageRef newModelReference) {
 		if (newModelReference != modelReference) {
 			NotificationChain msgs = null;
-			if (modelReference != null)
-				msgs = ((InternalEObject)modelReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_REF_BASE__MODEL_REFERENCE, null, msgs);
-			if (newModelReference != null)
-				msgs = ((InternalEObject)newModelReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_REF_BASE__MODEL_REFERENCE, null, msgs);
+			if (modelReference != null) {
+				msgs = ((InternalEObject) modelReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_REF_BASE__MODEL_REFERENCE, null, msgs);
+			}
+			if (newModelReference != null) {
+				msgs = ((InternalEObject) newModelReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_REF_BASE__MODEL_REFERENCE, null, msgs);
+			}
 			msgs = basicSetModelReference(newModelReference, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_REF_BASE__MODEL_REFERENCE, newModelReference,
+				newModelReference));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_REF_BASE__MODEL_REFERENCE, newModelReference, newModelReference));
 	}
 
 	/**
@@ -197,8 +227,10 @@ public class StaticModelRefBaseImpl extends ClassifierBaseImpl implements Static
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_REF_BASE__NAME, oldName, name));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_REF_BASE__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -244,13 +276,13 @@ public class StaticModelRefBaseImpl extends ClassifierBaseImpl implements Static
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.STATIC_MODEL_REF_BASE__ANNOTATIONS:
-				setAnnotations((ClassAnnotations)newValue);
+				setAnnotations((ClassAnnotations) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_REF_BASE__MODEL_REFERENCE:
-				setModelReference((PackageRef)newValue);
+				setModelReference((PackageRef) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_REF_BASE__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -265,10 +297,10 @@ public class StaticModelRefBaseImpl extends ClassifierBaseImpl implements Static
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.STATIC_MODEL_REF_BASE__ANNOTATIONS:
-				setAnnotations((ClassAnnotations)null);
+				setAnnotations((ClassAnnotations) null);
 				return;
 			case Mif2Package.STATIC_MODEL_REF_BASE__MODEL_REFERENCE:
-				setModelReference((PackageRef)null);
+				setModelReference((PackageRef) null);
 				return;
 			case Mif2Package.STATIC_MODEL_REF_BASE__NAME:
 				setName(NAME_EDEFAULT);
@@ -290,7 +322,9 @@ public class StaticModelRefBaseImpl extends ClassifierBaseImpl implements Static
 			case Mif2Package.STATIC_MODEL_REF_BASE__MODEL_REFERENCE:
 				return modelReference != null;
 			case Mif2Package.STATIC_MODEL_REF_BASE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -302,7 +336,9 @@ public class StaticModelRefBaseImpl extends ClassifierBaseImpl implements Static
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -311,4 +347,4 @@ public class StaticModelRefBaseImpl extends ClassifierBaseImpl implements Static
 		return result.toString();
 	}
 
-} //StaticModelRefBaseImpl
+} // StaticModelRefBaseImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -127,7 +131,8 @@ public class DatatypeRefImpl extends EObjectImpl implements DatatypeRef {
 	 */
 	public EList<DatatypeRef> getArgumentDatatype() {
 		if (argumentDatatype == null) {
-			argumentDatatype = new EObjectContainmentEList<DatatypeRef>(DatatypeRef.class, this, Mif2Package.DATATYPE_REF__ARGUMENT_DATATYPE);
+			argumentDatatype = new EObjectContainmentEList<DatatypeRef>(
+				DatatypeRef.class, this, Mif2Package.DATATYPE_REF__ARGUMENT_DATATYPE);
 		}
 		return argumentDatatype;
 	}
@@ -149,8 +154,9 @@ public class DatatypeRefImpl extends EObjectImpl implements DatatypeRef {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_REF__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -169,11 +175,15 @@ public class DatatypeRefImpl extends EObjectImpl implements DatatypeRef {
 	 */
 	public void setQualifier(DatatypeQualifierKind newQualifier) {
 		DatatypeQualifierKind oldQualifier = qualifier;
-		qualifier = newQualifier == null ? QUALIFIER_EDEFAULT : newQualifier;
+		qualifier = newQualifier == null
+				? QUALIFIER_EDEFAULT
+				: newQualifier;
 		boolean oldQualifierESet = qualifierESet;
 		qualifierESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_REF__QUALIFIER, oldQualifier, qualifier, !oldQualifierESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_REF__QUALIFIER, oldQualifier, qualifier, !oldQualifierESet));
+		}
 	}
 
 	/**
@@ -186,8 +196,11 @@ public class DatatypeRefImpl extends EObjectImpl implements DatatypeRef {
 		boolean oldQualifierESet = qualifierESet;
 		qualifier = QUALIFIER_EDEFAULT;
 		qualifierESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.DATATYPE_REF__QUALIFIER, oldQualifier, QUALIFIER_EDEFAULT, oldQualifierESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.DATATYPE_REF__QUALIFIER, oldQualifier, QUALIFIER_EDEFAULT,
+				oldQualifierESet));
+		}
 	}
 
 	/**
@@ -208,7 +221,7 @@ public class DatatypeRefImpl extends EObjectImpl implements DatatypeRef {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.DATATYPE_REF__ARGUMENT_DATATYPE:
-				return ((InternalEList<?>)getArgumentDatatype()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getArgumentDatatype()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -242,13 +255,13 @@ public class DatatypeRefImpl extends EObjectImpl implements DatatypeRef {
 		switch (featureID) {
 			case Mif2Package.DATATYPE_REF__ARGUMENT_DATATYPE:
 				getArgumentDatatype().clear();
-				getArgumentDatatype().addAll((Collection<? extends DatatypeRef>)newValue);
+				getArgumentDatatype().addAll((Collection<? extends DatatypeRef>) newValue);
 				return;
 			case Mif2Package.DATATYPE_REF__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.DATATYPE_REF__QUALIFIER:
-				setQualifier((DatatypeQualifierKind)newValue);
+				setQualifier((DatatypeQualifierKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -286,7 +299,9 @@ public class DatatypeRefImpl extends EObjectImpl implements DatatypeRef {
 			case Mif2Package.DATATYPE_REF__ARGUMENT_DATATYPE:
 				return argumentDatatype != null && !argumentDatatype.isEmpty();
 			case Mif2Package.DATATYPE_REF__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.DATATYPE_REF__QUALIFIER:
 				return isSetQualifier();
 		}
@@ -300,15 +315,21 @@ public class DatatypeRefImpl extends EObjectImpl implements DatatypeRef {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", qualifier: ");
-		if (qualifierESet) result.append(qualifier); else result.append("<unset>");
+		if (qualifierESet) {
+			result.append(qualifier);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //DatatypeRefImpl
+} // DatatypeRefImpl

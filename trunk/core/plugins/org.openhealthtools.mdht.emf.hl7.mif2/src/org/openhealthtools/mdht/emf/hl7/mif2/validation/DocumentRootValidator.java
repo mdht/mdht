@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import org.eclipse.emf.common.util.EMap;
@@ -42,7 +46,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.StaticModelsType;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Flow;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Inline;
 
-
 /**
  * A sample validator interface for {@link org.openhealthtools.mdht.emf.hl7.mif2.DocumentRoot}.
  * This doesn't really do anything, and it's not a real EMF artifact.
@@ -53,37 +56,70 @@ public interface DocumentRootValidator {
 	boolean validate();
 
 	boolean validateMixed(FeatureMap value);
+
 	boolean validateXMLNSPrefixMap(EMap<String, String> value);
+
 	boolean validateXSISchemaLocation(EMap<String, String> value);
+
 	boolean validateApplicationRole(GlobalApplicationRole value);
+
 	boolean validateArtifactXrefSummary(GlobalArtifactXRefSummary value);
+
 	boolean validateCodeSystem(GlobalCodeSystem value);
+
 	boolean validateCodeSystemSupplement(GlobalCodeSystemSupplement value);
+
 	boolean validateConformanceProfile(GlobalConformanceProfile value);
+
 	boolean validateDatatypeModelLibrary(GlobalDatatypeModelLibrary value);
+
 	boolean validateDerivedStaticModel(GlobalDerivedStaticModel value);
+
 	boolean validateDerivedStaticModels(DerivedStaticModelsType value);
+
 	boolean validateDomainAnalysisModel(GlobalDomainAnalysisModel value);
+
 	boolean validateDomainInstanceExample(GlobalDomainInstanceExample value);
+
 	boolean validateFreehandDocument(GlobalFreehandDocument value);
+
 	boolean validateGlossary(GlobalGlossary value);
+
 	boolean validateInteraction(GlobalInteraction value);
+
 	boolean validateInteractionProfile(GlobalInteractionProfile value);
+
 	boolean validateMifChanges(GlobalMifChanges value);
+
 	boolean validatePackage(GlobalGenericPackage value);
+
 	boolean validatePublication(GlobalPublicationPackage value);
+
 	boolean validateSerializedStaticModel(GlobalSerializedStaticModel value);
+
 	boolean validateSerializedStaticModels(SerializedStaticModelsType value);
+
 	boolean validateStaticModel(GlobalStaticModel value);
+
 	boolean validateStaticModelInterfacePackage(GlobalStaticModelInterfacePackage value);
+
 	boolean validateStaticModels(StaticModelsType value);
+
 	boolean validateStoryboard(GlobalStoryboard value);
+
 	boolean validateStructuredDocument(GlobalStructuredDocument value);
+
 	boolean validateTestScenario(GlobalTestScenario value);
+
 	boolean validateTriggerEvent(GlobalTriggerEvent value);
+
 	boolean validateTxtComplex(Flow value);
+
 	boolean validateTxtComplexWithLanguage(ComplexMarkupWithLanguage value);
+
 	boolean validateTxtInlineOnly(Inline value);
+
 	boolean validateValueSet(GlobalValueSet value);
+
 	boolean validateVocabularyModel(GlobalVocabularyModel value);
 }

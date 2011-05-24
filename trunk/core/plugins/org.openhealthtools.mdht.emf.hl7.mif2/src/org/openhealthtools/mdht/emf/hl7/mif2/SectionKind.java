@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -128,13 +132,7 @@ public enum SectionKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final SectionKind[] VALUES_ARRAY =
-		new SectionKind[] {
-			AM,
-			HM,
-			IM,
-			UU,
-		};
+	private static final SectionKind[] VALUES_ARRAY = new SectionKind[] { AM, HM, IM, UU, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Section Kind</b></em>' enumerators.
@@ -184,10 +182,14 @@ public enum SectionKind implements Enumerator {
 	 */
 	public static SectionKind get(int value) {
 		switch (value) {
-			case AM_VALUE: return AM;
-			case HM_VALUE: return HM;
-			case IM_VALUE: return IM;
-			case UU_VALUE: return UU;
+			case AM_VALUE:
+				return AM;
+			case HM_VALUE:
+				return HM;
+			case IM_VALUE:
+				return IM;
+			case UU_VALUE:
+				return UU;
 		}
 		return null;
 	}
@@ -231,7 +233,7 @@ public enum SectionKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -240,7 +242,7 @@ public enum SectionKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -249,7 +251,7 @@ public enum SectionKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -262,5 +264,5 @@ public enum SectionKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //SectionKind
+
+} // SectionKind

@@ -1,28 +1,27 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigInteger;
-
 import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.openhealthtools.mdht.emf.hl7.mif2.Legalese;
 import org.openhealthtools.mdht.emf.hl7.mif2.Mif2Package;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Flow;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -160,8 +159,13 @@ public class LegaleseImpl extends EObjectImpl implements Legalese {
 		Flow oldNotation = notation;
 		notation = newNotation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.LEGALESE__NOTATION, oldNotation, newNotation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.LEGALESE__NOTATION, oldNotation, newNotation);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -174,15 +178,22 @@ public class LegaleseImpl extends EObjectImpl implements Legalese {
 	public void setNotation(Flow newNotation) {
 		if (newNotation != notation) {
 			NotificationChain msgs = null;
-			if (notation != null)
-				msgs = ((InternalEObject)notation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.LEGALESE__NOTATION, null, msgs);
-			if (newNotation != null)
-				msgs = ((InternalEObject)newNotation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.LEGALESE__NOTATION, null, msgs);
+			if (notation != null) {
+				msgs = ((InternalEObject) notation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.LEGALESE__NOTATION, null, msgs);
+			}
+			if (newNotation != null) {
+				msgs = ((InternalEObject) newNotation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.LEGALESE__NOTATION, null, msgs);
+			}
 			msgs = basicSetNotation(newNotation, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.LEGALESE__NOTATION, newNotation, newNotation));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.LEGALESE__NOTATION, newNotation, newNotation));
 	}
 
 	/**
@@ -203,8 +214,13 @@ public class LegaleseImpl extends EObjectImpl implements Legalese {
 		Flow oldDisclaimer = disclaimer;
 		disclaimer = newDisclaimer;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.LEGALESE__DISCLAIMER, oldDisclaimer, newDisclaimer);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.LEGALESE__DISCLAIMER, oldDisclaimer, newDisclaimer);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -217,15 +233,22 @@ public class LegaleseImpl extends EObjectImpl implements Legalese {
 	public void setDisclaimer(Flow newDisclaimer) {
 		if (newDisclaimer != disclaimer) {
 			NotificationChain msgs = null;
-			if (disclaimer != null)
-				msgs = ((InternalEObject)disclaimer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.LEGALESE__DISCLAIMER, null, msgs);
-			if (newDisclaimer != null)
-				msgs = ((InternalEObject)newDisclaimer).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.LEGALESE__DISCLAIMER, null, msgs);
+			if (disclaimer != null) {
+				msgs = ((InternalEObject) disclaimer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.LEGALESE__DISCLAIMER, null, msgs);
+			}
+			if (newDisclaimer != null) {
+				msgs = ((InternalEObject) newDisclaimer).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.LEGALESE__DISCLAIMER, null, msgs);
+			}
 			msgs = basicSetDisclaimer(newDisclaimer, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.LEGALESE__DISCLAIMER, newDisclaimer, newDisclaimer));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.LEGALESE__DISCLAIMER, newDisclaimer, newDisclaimer));
 	}
 
 	/**
@@ -246,8 +269,13 @@ public class LegaleseImpl extends EObjectImpl implements Legalese {
 		Flow oldLicenseTerms = licenseTerms;
 		licenseTerms = newLicenseTerms;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.LEGALESE__LICENSE_TERMS, oldLicenseTerms, newLicenseTerms);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.LEGALESE__LICENSE_TERMS, oldLicenseTerms, newLicenseTerms);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -260,15 +288,22 @@ public class LegaleseImpl extends EObjectImpl implements Legalese {
 	public void setLicenseTerms(Flow newLicenseTerms) {
 		if (newLicenseTerms != licenseTerms) {
 			NotificationChain msgs = null;
-			if (licenseTerms != null)
-				msgs = ((InternalEObject)licenseTerms).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.LEGALESE__LICENSE_TERMS, null, msgs);
-			if (newLicenseTerms != null)
-				msgs = ((InternalEObject)newLicenseTerms).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.LEGALESE__LICENSE_TERMS, null, msgs);
+			if (licenseTerms != null) {
+				msgs = ((InternalEObject) licenseTerms).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.LEGALESE__LICENSE_TERMS, null, msgs);
+			}
+			if (newLicenseTerms != null) {
+				msgs = ((InternalEObject) newLicenseTerms).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.LEGALESE__LICENSE_TERMS, null, msgs);
+			}
 			msgs = basicSetLicenseTerms(newLicenseTerms, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.LEGALESE__LICENSE_TERMS, newLicenseTerms, newLicenseTerms));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.LEGALESE__LICENSE_TERMS, newLicenseTerms, newLicenseTerms));
 	}
 
 	/**
@@ -289,8 +324,14 @@ public class LegaleseImpl extends EObjectImpl implements Legalese {
 		Flow oldVersioningPolicy = versioningPolicy;
 		versioningPolicy = newVersioningPolicy;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.LEGALESE__VERSIONING_POLICY, oldVersioningPolicy, newVersioningPolicy);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.LEGALESE__VERSIONING_POLICY, oldVersioningPolicy,
+				newVersioningPolicy);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -303,15 +344,23 @@ public class LegaleseImpl extends EObjectImpl implements Legalese {
 	public void setVersioningPolicy(Flow newVersioningPolicy) {
 		if (newVersioningPolicy != versioningPolicy) {
 			NotificationChain msgs = null;
-			if (versioningPolicy != null)
-				msgs = ((InternalEObject)versioningPolicy).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.LEGALESE__VERSIONING_POLICY, null, msgs);
-			if (newVersioningPolicy != null)
-				msgs = ((InternalEObject)newVersioningPolicy).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.LEGALESE__VERSIONING_POLICY, null, msgs);
+			if (versioningPolicy != null) {
+				msgs = ((InternalEObject) versioningPolicy).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.LEGALESE__VERSIONING_POLICY, null, msgs);
+			}
+			if (newVersioningPolicy != null) {
+				msgs = ((InternalEObject) newVersioningPolicy).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.LEGALESE__VERSIONING_POLICY, null, msgs);
+			}
 			msgs = basicSetVersioningPolicy(newVersioningPolicy, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.LEGALESE__VERSIONING_POLICY, newVersioningPolicy,
+				newVersioningPolicy));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.LEGALESE__VERSIONING_POLICY, newVersioningPolicy, newVersioningPolicy));
 	}
 
 	/**
@@ -331,8 +380,10 @@ public class LegaleseImpl extends EObjectImpl implements Legalese {
 	public void setCopyrightOwner(String newCopyrightOwner) {
 		String oldCopyrightOwner = copyrightOwner;
 		copyrightOwner = newCopyrightOwner;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.LEGALESE__COPYRIGHT_OWNER, oldCopyrightOwner, copyrightOwner));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.LEGALESE__COPYRIGHT_OWNER, oldCopyrightOwner, copyrightOwner));
+		}
 	}
 
 	/**
@@ -352,8 +403,10 @@ public class LegaleseImpl extends EObjectImpl implements Legalese {
 	public void setCopyrightYears(List<BigInteger> newCopyrightYears) {
 		List<BigInteger> oldCopyrightYears = copyrightYears;
 		copyrightYears = newCopyrightYears;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.LEGALESE__COPYRIGHT_YEARS, oldCopyrightYears, copyrightYears));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.LEGALESE__COPYRIGHT_YEARS, oldCopyrightYears, copyrightYears));
+		}
 	}
 
 	/**
@@ -410,22 +463,22 @@ public class LegaleseImpl extends EObjectImpl implements Legalese {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.LEGALESE__NOTATION:
-				setNotation((Flow)newValue);
+				setNotation((Flow) newValue);
 				return;
 			case Mif2Package.LEGALESE__DISCLAIMER:
-				setDisclaimer((Flow)newValue);
+				setDisclaimer((Flow) newValue);
 				return;
 			case Mif2Package.LEGALESE__LICENSE_TERMS:
-				setLicenseTerms((Flow)newValue);
+				setLicenseTerms((Flow) newValue);
 				return;
 			case Mif2Package.LEGALESE__VERSIONING_POLICY:
-				setVersioningPolicy((Flow)newValue);
+				setVersioningPolicy((Flow) newValue);
 				return;
 			case Mif2Package.LEGALESE__COPYRIGHT_OWNER:
-				setCopyrightOwner((String)newValue);
+				setCopyrightOwner((String) newValue);
 				return;
 			case Mif2Package.LEGALESE__COPYRIGHT_YEARS:
-				setCopyrightYears((List<BigInteger>)newValue);
+				setCopyrightYears((List<BigInteger>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -440,16 +493,16 @@ public class LegaleseImpl extends EObjectImpl implements Legalese {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.LEGALESE__NOTATION:
-				setNotation((Flow)null);
+				setNotation((Flow) null);
 				return;
 			case Mif2Package.LEGALESE__DISCLAIMER:
-				setDisclaimer((Flow)null);
+				setDisclaimer((Flow) null);
 				return;
 			case Mif2Package.LEGALESE__LICENSE_TERMS:
-				setLicenseTerms((Flow)null);
+				setLicenseTerms((Flow) null);
 				return;
 			case Mif2Package.LEGALESE__VERSIONING_POLICY:
-				setVersioningPolicy((Flow)null);
+				setVersioningPolicy((Flow) null);
 				return;
 			case Mif2Package.LEGALESE__COPYRIGHT_OWNER:
 				setCopyrightOwner(COPYRIGHT_OWNER_EDEFAULT);
@@ -478,9 +531,13 @@ public class LegaleseImpl extends EObjectImpl implements Legalese {
 			case Mif2Package.LEGALESE__VERSIONING_POLICY:
 				return versioningPolicy != null;
 			case Mif2Package.LEGALESE__COPYRIGHT_OWNER:
-				return COPYRIGHT_OWNER_EDEFAULT == null ? copyrightOwner != null : !COPYRIGHT_OWNER_EDEFAULT.equals(copyrightOwner);
+				return COPYRIGHT_OWNER_EDEFAULT == null
+						? copyrightOwner != null
+						: !COPYRIGHT_OWNER_EDEFAULT.equals(copyrightOwner);
 			case Mif2Package.LEGALESE__COPYRIGHT_YEARS:
-				return COPYRIGHT_YEARS_EDEFAULT == null ? copyrightYears != null : !COPYRIGHT_YEARS_EDEFAULT.equals(copyrightYears);
+				return COPYRIGHT_YEARS_EDEFAULT == null
+						? copyrightYears != null
+						: !COPYRIGHT_YEARS_EDEFAULT.equals(copyrightYears);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -492,7 +549,9 @@ public class LegaleseImpl extends EObjectImpl implements Legalese {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (copyrightOwner: ");
@@ -503,4 +562,4 @@ public class LegaleseImpl extends EObjectImpl implements Legalese {
 		return result.toString();
 	}
 
-} //LegaleseImpl
+} // LegaleseImpl

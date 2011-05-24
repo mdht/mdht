@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -298,8 +302,13 @@ public class ImgImpl extends EObjectImpl implements Img {
 		Img oldThumbnail = thumbnail;
 		thumbnail = newThumbnail;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XhtmlPackage.IMG__THUMBNAIL, oldThumbnail, newThumbnail);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.IMG__THUMBNAIL, oldThumbnail, newThumbnail);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -312,15 +321,22 @@ public class ImgImpl extends EObjectImpl implements Img {
 	public void setThumbnail(Img newThumbnail) {
 		if (newThumbnail != thumbnail) {
 			NotificationChain msgs = null;
-			if (thumbnail != null)
-				msgs = ((InternalEObject)thumbnail).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XhtmlPackage.IMG__THUMBNAIL, null, msgs);
-			if (newThumbnail != null)
-				msgs = ((InternalEObject)newThumbnail).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XhtmlPackage.IMG__THUMBNAIL, null, msgs);
+			if (thumbnail != null) {
+				msgs = ((InternalEObject) thumbnail).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						XhtmlPackage.IMG__THUMBNAIL, null, msgs);
+			}
+			if (newThumbnail != null) {
+				msgs = ((InternalEObject) newThumbnail).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						XhtmlPackage.IMG__THUMBNAIL, null, msgs);
+			}
 			msgs = basicSetThumbnail(newThumbnail, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.IMG__THUMBNAIL, newThumbnail, newThumbnail));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.IMG__THUMBNAIL, newThumbnail, newThumbnail));
 	}
 
 	/**
@@ -340,8 +356,9 @@ public class ImgImpl extends EObjectImpl implements Img {
 	public void setAlt(String newAlt) {
 		String oldAlt = alt;
 		alt = newAlt;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.IMG__ALT, oldAlt, alt));
+		}
 	}
 
 	/**
@@ -360,11 +377,15 @@ public class ImgImpl extends EObjectImpl implements Img {
 	 */
 	public void setClass(MifClassType newClass) {
 		MifClassType oldClass = class_;
-		class_ = newClass == null ? CLASS_EDEFAULT : newClass;
+		class_ = newClass == null
+				? CLASS_EDEFAULT
+				: newClass;
 		boolean oldClassESet = classESet;
 		classESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.IMG__CLASS, oldClass, class_, !oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.IMG__CLASS, oldClass, class_, !oldClassESet));
+		}
 	}
 
 	/**
@@ -377,8 +398,10 @@ public class ImgImpl extends EObjectImpl implements Img {
 		boolean oldClassESet = classESet;
 		class_ = CLASS_EDEFAULT;
 		classESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.IMG__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.IMG__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		}
 	}
 
 	/**
@@ -407,8 +430,9 @@ public class ImgImpl extends EObjectImpl implements Img {
 	public void setHeight(String newHeight) {
 		String oldHeight = height;
 		height = newHeight;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.IMG__HEIGHT, oldHeight, height));
+		}
 	}
 
 	/**
@@ -428,8 +452,9 @@ public class ImgImpl extends EObjectImpl implements Img {
 	public void setHl7Id(String newHl7Id) {
 		String oldHl7Id = hl7Id;
 		hl7Id = newHl7Id;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.IMG__HL7_ID, oldHl7Id, hl7Id));
+		}
 	}
 
 	/**
@@ -448,11 +473,15 @@ public class ImgImpl extends EObjectImpl implements Img {
 	 */
 	public void setImageType(ImageKind newImageType) {
 		ImageKind oldImageType = imageType;
-		imageType = newImageType == null ? IMAGE_TYPE_EDEFAULT : newImageType;
+		imageType = newImageType == null
+				? IMAGE_TYPE_EDEFAULT
+				: newImageType;
 		boolean oldImageTypeESet = imageTypeESet;
 		imageTypeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.IMG__IMAGE_TYPE, oldImageType, imageType, !oldImageTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.IMG__IMAGE_TYPE, oldImageType, imageType, !oldImageTypeESet));
+		}
 	}
 
 	/**
@@ -465,8 +494,11 @@ public class ImgImpl extends EObjectImpl implements Img {
 		boolean oldImageTypeESet = imageTypeESet;
 		imageType = IMAGE_TYPE_EDEFAULT;
 		imageTypeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.IMG__IMAGE_TYPE, oldImageType, IMAGE_TYPE_EDEFAULT, oldImageTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.IMG__IMAGE_TYPE, oldImageType, IMAGE_TYPE_EDEFAULT,
+				oldImageTypeESet));
+		}
 	}
 
 	/**
@@ -495,8 +527,9 @@ public class ImgImpl extends EObjectImpl implements Img {
 	public void setLang(String newLang) {
 		String oldLang = lang;
 		lang = newLang;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.IMG__LANG, oldLang, lang));
+		}
 	}
 
 	/**
@@ -516,8 +549,9 @@ public class ImgImpl extends EObjectImpl implements Img {
 	public void setSrc(String newSrc) {
 		String oldSrc = src;
 		src = newSrc;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.IMG__SRC, oldSrc, src));
+		}
 	}
 
 	/**
@@ -536,11 +570,15 @@ public class ImgImpl extends EObjectImpl implements Img {
 	 */
 	public void setStyle(StyleSheet newStyle) {
 		StyleSheet oldStyle = style;
-		style = newStyle == null ? STYLE_EDEFAULT : newStyle;
+		style = newStyle == null
+				? STYLE_EDEFAULT
+				: newStyle;
 		boolean oldStyleESet = styleESet;
 		styleESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.IMG__STYLE, oldStyle, style, !oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.IMG__STYLE, oldStyle, style, !oldStyleESet));
+		}
 	}
 
 	/**
@@ -553,8 +591,10 @@ public class ImgImpl extends EObjectImpl implements Img {
 		boolean oldStyleESet = styleESet;
 		style = STYLE_EDEFAULT;
 		styleESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.IMG__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.IMG__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		}
 	}
 
 	/**
@@ -583,8 +623,9 @@ public class ImgImpl extends EObjectImpl implements Img {
 	public void setWidth(String newWidth) {
 		String oldWidth = width;
 		width = newWidth;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.IMG__WIDTH, oldWidth, width));
+		}
 	}
 
 	/**
@@ -642,34 +683,34 @@ public class ImgImpl extends EObjectImpl implements Img {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case XhtmlPackage.IMG__THUMBNAIL:
-				setThumbnail((Img)newValue);
+				setThumbnail((Img) newValue);
 				return;
 			case XhtmlPackage.IMG__ALT:
-				setAlt((String)newValue);
+				setAlt((String) newValue);
 				return;
 			case XhtmlPackage.IMG__CLASS:
-				setClass((MifClassType)newValue);
+				setClass((MifClassType) newValue);
 				return;
 			case XhtmlPackage.IMG__HEIGHT:
-				setHeight((String)newValue);
+				setHeight((String) newValue);
 				return;
 			case XhtmlPackage.IMG__HL7_ID:
-				setHl7Id((String)newValue);
+				setHl7Id((String) newValue);
 				return;
 			case XhtmlPackage.IMG__IMAGE_TYPE:
-				setImageType((ImageKind)newValue);
+				setImageType((ImageKind) newValue);
 				return;
 			case XhtmlPackage.IMG__LANG:
-				setLang((String)newValue);
+				setLang((String) newValue);
 				return;
 			case XhtmlPackage.IMG__SRC:
-				setSrc((String)newValue);
+				setSrc((String) newValue);
 				return;
 			case XhtmlPackage.IMG__STYLE:
-				setStyle((StyleSheet)newValue);
+				setStyle((StyleSheet) newValue);
 				return;
 			case XhtmlPackage.IMG__WIDTH:
-				setWidth((String)newValue);
+				setWidth((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -684,7 +725,7 @@ public class ImgImpl extends EObjectImpl implements Img {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case XhtmlPackage.IMG__THUMBNAIL:
-				setThumbnail((Img)null);
+				setThumbnail((Img) null);
 				return;
 			case XhtmlPackage.IMG__ALT:
 				setAlt(ALT_EDEFAULT);
@@ -728,23 +769,35 @@ public class ImgImpl extends EObjectImpl implements Img {
 			case XhtmlPackage.IMG__THUMBNAIL:
 				return thumbnail != null;
 			case XhtmlPackage.IMG__ALT:
-				return ALT_EDEFAULT == null ? alt != null : !ALT_EDEFAULT.equals(alt);
+				return ALT_EDEFAULT == null
+						? alt != null
+						: !ALT_EDEFAULT.equals(alt);
 			case XhtmlPackage.IMG__CLASS:
 				return isSetClass();
 			case XhtmlPackage.IMG__HEIGHT:
-				return HEIGHT_EDEFAULT == null ? height != null : !HEIGHT_EDEFAULT.equals(height);
+				return HEIGHT_EDEFAULT == null
+						? height != null
+						: !HEIGHT_EDEFAULT.equals(height);
 			case XhtmlPackage.IMG__HL7_ID:
-				return HL7_ID_EDEFAULT == null ? hl7Id != null : !HL7_ID_EDEFAULT.equals(hl7Id);
+				return HL7_ID_EDEFAULT == null
+						? hl7Id != null
+						: !HL7_ID_EDEFAULT.equals(hl7Id);
 			case XhtmlPackage.IMG__IMAGE_TYPE:
 				return isSetImageType();
 			case XhtmlPackage.IMG__LANG:
-				return LANG_EDEFAULT == null ? lang != null : !LANG_EDEFAULT.equals(lang);
+				return LANG_EDEFAULT == null
+						? lang != null
+						: !LANG_EDEFAULT.equals(lang);
 			case XhtmlPackage.IMG__SRC:
-				return SRC_EDEFAULT == null ? src != null : !SRC_EDEFAULT.equals(src);
+				return SRC_EDEFAULT == null
+						? src != null
+						: !SRC_EDEFAULT.equals(src);
 			case XhtmlPackage.IMG__STYLE:
 				return isSetStyle();
 			case XhtmlPackage.IMG__WIDTH:
-				return WIDTH_EDEFAULT == null ? width != null : !WIDTH_EDEFAULT.equals(width);
+				return WIDTH_EDEFAULT == null
+						? width != null
+						: !WIDTH_EDEFAULT.equals(width);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -756,29 +809,43 @@ public class ImgImpl extends EObjectImpl implements Img {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (alt: ");
 		result.append(alt);
 		result.append(", class: ");
-		if (classESet) result.append(class_); else result.append("<unset>");
+		if (classESet) {
+			result.append(class_);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", height: ");
 		result.append(height);
 		result.append(", hl7Id: ");
 		result.append(hl7Id);
 		result.append(", imageType: ");
-		if (imageTypeESet) result.append(imageType); else result.append("<unset>");
+		if (imageTypeESet) {
+			result.append(imageType);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", lang: ");
 		result.append(lang);
 		result.append(", src: ");
 		result.append(src);
 		result.append(", style: ");
-		if (styleESet) result.append(style); else result.append("<unset>");
+		if (styleESet) {
+			result.append(style);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", width: ");
 		result.append(width);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ImgImpl
+} // ImgImpl

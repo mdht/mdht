@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -96,7 +100,8 @@ public class NonTraversableAssociationEndImpl extends RelationshipImpl implement
 	 */
 	public EList<AssociationEndDerivation> getDerivedFrom() {
 		if (derivedFrom == null) {
-			derivedFrom = new EObjectContainmentEList<AssociationEndDerivation>(AssociationEndDerivation.class, this, Mif2Package.NON_TRAVERSABLE_ASSOCIATION_END__DERIVED_FROM);
+			derivedFrom = new EObjectContainmentEList<AssociationEndDerivation>(
+				AssociationEndDerivation.class, this, Mif2Package.NON_TRAVERSABLE_ASSOCIATION_END__DERIVED_FROM);
 		}
 		return derivedFrom;
 	}
@@ -118,8 +123,11 @@ public class NonTraversableAssociationEndImpl extends RelationshipImpl implement
 	public void setParticipantClassName(String newParticipantClassName) {
 		String oldParticipantClassName = participantClassName;
 		participantClassName = newParticipantClassName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.NON_TRAVERSABLE_ASSOCIATION_END__PARTICIPANT_CLASS_NAME, oldParticipantClassName, participantClassName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.NON_TRAVERSABLE_ASSOCIATION_END__PARTICIPANT_CLASS_NAME,
+				oldParticipantClassName, participantClassName));
+		}
 	}
 
 	/**
@@ -131,7 +139,7 @@ public class NonTraversableAssociationEndImpl extends RelationshipImpl implement
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.NON_TRAVERSABLE_ASSOCIATION_END__DERIVED_FROM:
-				return ((InternalEList<?>)getDerivedFrom()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDerivedFrom()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -163,10 +171,10 @@ public class NonTraversableAssociationEndImpl extends RelationshipImpl implement
 		switch (featureID) {
 			case Mif2Package.NON_TRAVERSABLE_ASSOCIATION_END__DERIVED_FROM:
 				getDerivedFrom().clear();
-				getDerivedFrom().addAll((Collection<? extends AssociationEndDerivation>)newValue);
+				getDerivedFrom().addAll((Collection<? extends AssociationEndDerivation>) newValue);
 				return;
 			case Mif2Package.NON_TRAVERSABLE_ASSOCIATION_END__PARTICIPANT_CLASS_NAME:
-				setParticipantClassName((String)newValue);
+				setParticipantClassName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -201,7 +209,9 @@ public class NonTraversableAssociationEndImpl extends RelationshipImpl implement
 			case Mif2Package.NON_TRAVERSABLE_ASSOCIATION_END__DERIVED_FROM:
 				return derivedFrom != null && !derivedFrom.isEmpty();
 			case Mif2Package.NON_TRAVERSABLE_ASSOCIATION_END__PARTICIPANT_CLASS_NAME:
-				return PARTICIPANT_CLASS_NAME_EDEFAULT == null ? participantClassName != null : !PARTICIPANT_CLASS_NAME_EDEFAULT.equals(participantClassName);
+				return PARTICIPANT_CLASS_NAME_EDEFAULT == null
+						? participantClassName != null
+						: !PARTICIPANT_CLASS_NAME_EDEFAULT.equals(participantClassName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -213,7 +223,9 @@ public class NonTraversableAssociationEndImpl extends RelationshipImpl implement
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (participantClassName: ");
@@ -222,4 +234,4 @@ public class NonTraversableAssociationEndImpl extends RelationshipImpl implement
 		return result.toString();
 	}
 
-} //NonTraversableAssociationEndImpl
+} // NonTraversableAssociationEndImpl

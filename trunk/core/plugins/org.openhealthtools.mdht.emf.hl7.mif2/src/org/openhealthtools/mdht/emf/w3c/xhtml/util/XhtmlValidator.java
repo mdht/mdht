@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.util;
 
 import java.math.BigInteger;
@@ -157,7 +161,7 @@ public class XhtmlValidator extends EObjectValidator {
 	 */
 	@Override
 	protected EPackage getEPackage() {
-	  return XhtmlPackage.eINSTANCE;
+		return XhtmlPackage.eINSTANCE;
 	}
 
 	/**
@@ -170,173 +174,173 @@ public class XhtmlValidator extends EObjectValidator {
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
 			case XhtmlPackage.A:
-				return validateA((A)value, diagnostics, context);
+				return validateA((A) value, diagnostics, context);
 			case XhtmlPackage.ABBR:
-				return validateAbbr((Abbr)value, diagnostics, context);
+				return validateAbbr((Abbr) value, diagnostics, context);
 			case XhtmlPackage.ACONTENT:
-				return validateAContent((AContent)value, diagnostics, context);
+				return validateAContent((AContent) value, diagnostics, context);
 			case XhtmlPackage.ACRONYM:
-				return validateAcronym((Acronym)value, diagnostics, context);
+				return validateAcronym((Acronym) value, diagnostics, context);
 			case XhtmlPackage.B:
-				return validateB((B)value, diagnostics, context);
+				return validateB((B) value, diagnostics, context);
 			case XhtmlPackage.BIG:
-				return validateBig((Big)value, diagnostics, context);
+				return validateBig((Big) value, diagnostics, context);
 			case XhtmlPackage.BLOCK:
-				return validateBlock((Block)value, diagnostics, context);
+				return validateBlock((Block) value, diagnostics, context);
 			case XhtmlPackage.BLOCKQUOTE:
-				return validateBlockquote((Blockquote)value, diagnostics, context);
+				return validateBlockquote((Blockquote) value, diagnostics, context);
 			case XhtmlPackage.BR:
-				return validateBr((Br)value, diagnostics, context);
+				return validateBr((Br) value, diagnostics, context);
 			case XhtmlPackage.CAPTION:
-				return validateCaption((Caption)value, diagnostics, context);
+				return validateCaption((Caption) value, diagnostics, context);
 			case XhtmlPackage.CITE:
-				return validateCite((Cite)value, diagnostics, context);
+				return validateCite((Cite) value, diagnostics, context);
 			case XhtmlPackage.CODE:
-				return validateCode((Code)value, diagnostics, context);
+				return validateCode((Code) value, diagnostics, context);
 			case XhtmlPackage.COL:
-				return validateCol((Col)value, diagnostics, context);
+				return validateCol((Col) value, diagnostics, context);
 			case XhtmlPackage.COLGROUP:
-				return validateColgroup((Colgroup)value, diagnostics, context);
+				return validateColgroup((Colgroup) value, diagnostics, context);
 			case XhtmlPackage.DD:
-				return validateDd((Dd)value, diagnostics, context);
+				return validateDd((Dd) value, diagnostics, context);
 			case XhtmlPackage.DEL:
-				return validateDel((Del)value, diagnostics, context);
+				return validateDel((Del) value, diagnostics, context);
 			case XhtmlPackage.DFN:
-				return validateDfn((Dfn)value, diagnostics, context);
+				return validateDfn((Dfn) value, diagnostics, context);
 			case XhtmlPackage.DIV:
-				return validateDiv((Div)value, diagnostics, context);
+				return validateDiv((Div) value, diagnostics, context);
 			case XhtmlPackage.DL:
-				return validateDl((Dl)value, diagnostics, context);
+				return validateDl((Dl) value, diagnostics, context);
 			case XhtmlPackage.DT:
-				return validateDt((Dt)value, diagnostics, context);
+				return validateDt((Dt) value, diagnostics, context);
 			case XhtmlPackage.EM:
-				return validateEm((Em)value, diagnostics, context);
+				return validateEm((Em) value, diagnostics, context);
 			case XhtmlPackage.FLOW:
-				return validateFlow((Flow)value, diagnostics, context);
+				return validateFlow((Flow) value, diagnostics, context);
 			case XhtmlPackage.HR:
-				return validateHr((Hr)value, diagnostics, context);
+				return validateHr((Hr) value, diagnostics, context);
 			case XhtmlPackage.I:
-				return validateI((I)value, diagnostics, context);
+				return validateI((I) value, diagnostics, context);
 			case XhtmlPackage.IMG:
-				return validateImg((Img)value, diagnostics, context);
+				return validateImg((Img) value, diagnostics, context);
 			case XhtmlPackage.INLINE:
-				return validateInline((Inline)value, diagnostics, context);
+				return validateInline((Inline) value, diagnostics, context);
 			case XhtmlPackage.INS:
-				return validateIns((Ins)value, diagnostics, context);
+				return validateIns((Ins) value, diagnostics, context);
 			case XhtmlPackage.KBD:
-				return validateKbd((Kbd)value, diagnostics, context);
+				return validateKbd((Kbd) value, diagnostics, context);
 			case XhtmlPackage.LI:
-				return validateLi((Li)value, diagnostics, context);
+				return validateLi((Li) value, diagnostics, context);
 			case XhtmlPackage.OBJECT:
-				return validateObject((org.openhealthtools.mdht.emf.w3c.xhtml.Object)value, diagnostics, context);
+				return validateObject((org.openhealthtools.mdht.emf.w3c.xhtml.Object) value, diagnostics, context);
 			case XhtmlPackage.OL:
-				return validateOl((Ol)value, diagnostics, context);
+				return validateOl((Ol) value, diagnostics, context);
 			case XhtmlPackage.P:
-				return validateP((P)value, diagnostics, context);
+				return validateP((P) value, diagnostics, context);
 			case XhtmlPackage.PARAM:
-				return validateParam((Param)value, diagnostics, context);
+				return validateParam((Param) value, diagnostics, context);
 			case XhtmlPackage.PRE:
-				return validatePre((Pre)value, diagnostics, context);
+				return validatePre((Pre) value, diagnostics, context);
 			case XhtmlPackage.PRE_CONTENT:
-				return validatePreContent((PreContent)value, diagnostics, context);
+				return validatePreContent((PreContent) value, diagnostics, context);
 			case XhtmlPackage.Q:
-				return validateQ((Q)value, diagnostics, context);
+				return validateQ((Q) value, diagnostics, context);
 			case XhtmlPackage.SAMP:
-				return validateSamp((Samp)value, diagnostics, context);
+				return validateSamp((Samp) value, diagnostics, context);
 			case XhtmlPackage.SMALL:
-				return validateSmall((Small)value, diagnostics, context);
+				return validateSmall((Small) value, diagnostics, context);
 			case XhtmlPackage.SPAN:
-				return validateSpan((Span)value, diagnostics, context);
+				return validateSpan((Span) value, diagnostics, context);
 			case XhtmlPackage.STRONG:
-				return validateStrong((Strong)value, diagnostics, context);
+				return validateStrong((Strong) value, diagnostics, context);
 			case XhtmlPackage.SUB:
-				return validateSub((Sub)value, diagnostics, context);
+				return validateSub((Sub) value, diagnostics, context);
 			case XhtmlPackage.SUP:
-				return validateSup((Sup)value, diagnostics, context);
+				return validateSup((Sup) value, diagnostics, context);
 			case XhtmlPackage.TABLE:
-				return validateTable((Table)value, diagnostics, context);
+				return validateTable((Table) value, diagnostics, context);
 			case XhtmlPackage.TBODY:
-				return validateTbody((Tbody)value, diagnostics, context);
+				return validateTbody((Tbody) value, diagnostics, context);
 			case XhtmlPackage.TD:
-				return validateTd((Td)value, diagnostics, context);
+				return validateTd((Td) value, diagnostics, context);
 			case XhtmlPackage.TFOOT:
-				return validateTfoot((Tfoot)value, diagnostics, context);
+				return validateTfoot((Tfoot) value, diagnostics, context);
 			case XhtmlPackage.TH:
-				return validateTh((Th)value, diagnostics, context);
+				return validateTh((Th) value, diagnostics, context);
 			case XhtmlPackage.THEAD:
-				return validateThead((Thead)value, diagnostics, context);
+				return validateThead((Thead) value, diagnostics, context);
 			case XhtmlPackage.TR:
-				return validateTr((Tr)value, diagnostics, context);
+				return validateTr((Tr) value, diagnostics, context);
 			case XhtmlPackage.TT:
-				return validateTt((Tt)value, diagnostics, context);
+				return validateTt((Tt) value, diagnostics, context);
 			case XhtmlPackage.UL:
-				return validateUl((Ul)value, diagnostics, context);
+				return validateUl((Ul) value, diagnostics, context);
 			case XhtmlPackage.VAR:
-				return validateVar((Var)value, diagnostics, context);
+				return validateVar((Var) value, diagnostics, context);
 			case XhtmlPackage.ALIGN_TYPE:
-				return validateAlignType((AlignType)value, diagnostics, context);
+				return validateAlignType((AlignType) value, diagnostics, context);
 			case XhtmlPackage.IMAGE_KIND:
-				return validateImageKind((ImageKind)value, diagnostics, context);
+				return validateImageKind((ImageKind) value, diagnostics, context);
 			case XhtmlPackage.MEDIA_TYPE:
-				return validateMediaType((MediaType)value, diagnostics, context);
+				return validateMediaType((MediaType) value, diagnostics, context);
 			case XhtmlPackage.MIF_CLASS_TYPE:
-				return validateMifClassType((MifClassType)value, diagnostics, context);
+				return validateMifClassType((MifClassType) value, diagnostics, context);
 			case XhtmlPackage.OBJECT_NAME:
-				return validateObjectName((ObjectName)value, diagnostics, context);
+				return validateObjectName((ObjectName) value, diagnostics, context);
 			case XhtmlPackage.PARAM_NAME:
-				return validateParamName((ParamName)value, diagnostics, context);
+				return validateParamName((ParamName) value, diagnostics, context);
 			case XhtmlPackage.SHAPE:
-				return validateShape((Shape)value, diagnostics, context);
+				return validateShape((Shape) value, diagnostics, context);
 			case XhtmlPackage.STYLE_SHEET:
-				return validateStyleSheet((StyleSheet)value, diagnostics, context);
+				return validateStyleSheet((StyleSheet) value, diagnostics, context);
 			case XhtmlPackage.TFRAME:
-				return validateTFrame((TFrame)value, diagnostics, context);
+				return validateTFrame((TFrame) value, diagnostics, context);
 			case XhtmlPackage.TRULES:
-				return validateTRules((TRules)value, diagnostics, context);
+				return validateTRules((TRules) value, diagnostics, context);
 			case XhtmlPackage.VALIGN_TYPE:
-				return validateValignType((ValignType)value, diagnostics, context);
+				return validateValignType((ValignType) value, diagnostics, context);
 			case XhtmlPackage.ALIGN_TYPE_OBJECT:
-				return validateAlignTypeObject((AlignType)value, diagnostics, context);
+				return validateAlignTypeObject((AlignType) value, diagnostics, context);
 			case XhtmlPackage.CHARACTER:
-				return validateCharacter((String)value, diagnostics, context);
+				return validateCharacter((String) value, diagnostics, context);
 			case XhtmlPackage.CONTENT_TYPE:
 				return validateContentType(value, diagnostics, context);
 			case XhtmlPackage.COORDS:
-				return validateCoords((String)value, diagnostics, context);
+				return validateCoords((String) value, diagnostics, context);
 			case XhtmlPackage.IMAGE_KIND_OBJECT:
-				return validateImageKindObject((ImageKind)value, diagnostics, context);
+				return validateImageKindObject((ImageKind) value, diagnostics, context);
 			case XhtmlPackage.LENGTH:
-				return validateLength((String)value, diagnostics, context);
+				return validateLength((String) value, diagnostics, context);
 			case XhtmlPackage.MEDIA_TYPE_OBJECT:
-				return validateMediaTypeObject((MediaType)value, diagnostics, context);
+				return validateMediaTypeObject((MediaType) value, diagnostics, context);
 			case XhtmlPackage.MIF_CLASS_TYPE_OBJECT:
-				return validateMifClassTypeObject((MifClassType)value, diagnostics, context);
+				return validateMifClassTypeObject((MifClassType) value, diagnostics, context);
 			case XhtmlPackage.MULTI_LENGTH:
-				return validateMultiLength((String)value, diagnostics, context);
+				return validateMultiLength((String) value, diagnostics, context);
 			case XhtmlPackage.NUMBER:
-				return validateNumber((BigInteger)value, diagnostics, context);
+				return validateNumber((BigInteger) value, diagnostics, context);
 			case XhtmlPackage.OBJECT_NAME_OBJECT:
-				return validateObjectNameObject((ObjectName)value, diagnostics, context);
+				return validateObjectNameObject((ObjectName) value, diagnostics, context);
 			case XhtmlPackage.PARAM_NAME_OBJECT:
-				return validateParamNameObject((ParamName)value, diagnostics, context);
+				return validateParamNameObject((ParamName) value, diagnostics, context);
 			case XhtmlPackage.PARAM_VALUE:
-				return validateParamValue((String)value, diagnostics, context);
+				return validateParamValue((String) value, diagnostics, context);
 			case XhtmlPackage.PIXELS:
-				return validatePixels((BigInteger)value, diagnostics, context);
+				return validatePixels((BigInteger) value, diagnostics, context);
 			case XhtmlPackage.SHAPE_OBJECT:
-				return validateShapeObject((Shape)value, diagnostics, context);
+				return validateShapeObject((Shape) value, diagnostics, context);
 			case XhtmlPackage.STYLE_SHEET_OBJECT:
-				return validateStyleSheetObject((StyleSheet)value, diagnostics, context);
+				return validateStyleSheetObject((StyleSheet) value, diagnostics, context);
 			case XhtmlPackage.TEXT:
-				return validateText((String)value, diagnostics, context);
+				return validateText((String) value, diagnostics, context);
 			case XhtmlPackage.TFRAME_OBJECT:
-				return validateTFrameObject((TFrame)value, diagnostics, context);
+				return validateTFrameObject((TFrame) value, diagnostics, context);
 			case XhtmlPackage.TRULES_OBJECT:
-				return validateTRulesObject((TRules)value, diagnostics, context);
+				return validateTRulesObject((TRules) value, diagnostics, context);
 			case XhtmlPackage.URI:
-				return validateURI((String)value, diagnostics, context);
+				return validateURI((String) value, diagnostics, context);
 			case XhtmlPackage.VALIGN_TYPE_OBJECT:
-				return validateValignTypeObject((ValignType)value, diagnostics, context);
+				return validateValignTypeObject((ValignType) value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -608,7 +612,8 @@ public class XhtmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateObject(org.openhealthtools.mdht.emf.w3c.xhtml.Object object, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateObject(org.openhealthtools.mdht.emf.w3c.xhtml.Object object, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(object, diagnostics, context);
 	}
 
@@ -842,7 +847,8 @@ public class XhtmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMifClassType(MifClassType mifClassType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateMifClassType(MifClassType mifClassType, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return true;
 	}
 
@@ -914,7 +920,8 @@ public class XhtmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAlignTypeObject(AlignType alignTypeObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateAlignTypeObject(AlignType alignTypeObject, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return true;
 	}
 
@@ -925,7 +932,9 @@ public class XhtmlValidator extends EObjectValidator {
 	 */
 	public boolean validateCharacter(String character, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean result = validateCharacter_MinLength(character, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCharacter_MaxLength(character, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validateCharacter_MaxLength(character, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -935,11 +944,13 @@ public class XhtmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCharacter_MinLength(String character, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateCharacter_MinLength(String character, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		int length = character.length();
 		boolean result = length >= 1;
-		if (!result && diagnostics != null)
+		if (!result && diagnostics != null) {
 			reportMinLengthViolation(XhtmlPackage.Literals.CHARACTER, character, length, 1, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -949,11 +960,13 @@ public class XhtmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCharacter_MaxLength(String character, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateCharacter_MaxLength(String character, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		int length = character.length();
 		boolean result = length <= 1;
-		if (!result && diagnostics != null)
+		if (!result && diagnostics != null) {
 			reportMaxLengthViolation(XhtmlPackage.Literals.CHARACTER, character, length, 1, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -973,25 +986,33 @@ public class XhtmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateContentType_MemberTypes(Object contentType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateContentType_MemberTypes(Object contentType, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (diagnostics != null) {
 			BasicDiagnostic tempDiagnostics = new BasicDiagnostic();
 			if (XhtmlPackage.Literals.MEDIA_TYPE.isInstance(contentType)) {
-				if (validateMediaType((MediaType)contentType, tempDiagnostics, context)) return true;
+				if (validateMediaType((MediaType) contentType, tempDiagnostics, context)) {
+					return true;
+				}
 			}
 			if (XMLTypePackage.Literals.STRING.isInstance(contentType)) {
-				if (xmlTypeValidator.validateString((String)contentType, tempDiagnostics, context)) return true;
+				if (xmlTypeValidator.validateString((String) contentType, tempDiagnostics, context)) {
+					return true;
+				}
 			}
 			for (Diagnostic diagnostic : tempDiagnostics.getChildren()) {
 				diagnostics.add(diagnostic);
 			}
-		}
-		else {
+		} else {
 			if (XhtmlPackage.Literals.MEDIA_TYPE.isInstance(contentType)) {
-				if (validateMediaType((MediaType)contentType, null, context)) return true;
+				if (validateMediaType((MediaType) contentType, null, context)) {
+					return true;
+				}
 			}
 			if (XMLTypePackage.Literals.STRING.isInstance(contentType)) {
-				if (xmlTypeValidator.validateString((String)contentType, null, context)) return true;
+				if (xmlTypeValidator.validateString((String) contentType, null, context)) {
+					return true;
+				}
 			}
 		}
 		return false;
@@ -1004,7 +1025,9 @@ public class XhtmlValidator extends EObjectValidator {
 	 */
 	public boolean validateCoords(String coords, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean result = validateCoords_Pattern(coords, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCoords_MaxLength(coords, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validateCoords_MaxLength(coords, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1014,12 +1037,7 @@ public class XhtmlValidator extends EObjectValidator {
 	 * @generated
 	 * @see #validateCoords_Pattern
 	 */
-	public static final  PatternMatcher [][] COORDS__PATTERN__VALUES =
-		new PatternMatcher [][] {
-			new PatternMatcher [] {
-				XMLTypeUtil.createPatternMatcher("[\\-\\+]?(\\d+|\\d+(\\.\\d+)?%)(,\\s*[\\-\\+]?(\\d+|\\d+(\\.\\d+)?%))*")
-			}
-		};
+	public static final PatternMatcher[][] COORDS__PATTERN__VALUES = new PatternMatcher[][] { new PatternMatcher[] { XMLTypeUtil.createPatternMatcher("[\\-\\+]?(\\d+|\\d+(\\.\\d+)?%)(,\\s*[\\-\\+]?(\\d+|\\d+(\\.\\d+)?%))*") } };
 
 	/**
 	 * Validates the Pattern constraint of '<em>Coords</em>'.
@@ -1040,8 +1058,9 @@ public class XhtmlValidator extends EObjectValidator {
 	public boolean validateCoords_MaxLength(String coords, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		int length = coords.length();
 		boolean result = length <= 500;
-		if (!result && diagnostics != null)
+		if (!result && diagnostics != null) {
 			reportMaxLengthViolation(XhtmlPackage.Literals.COORDS, coords, length, 500, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1050,7 +1069,8 @@ public class XhtmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateImageKindObject(ImageKind imageKindObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateImageKindObject(ImageKind imageKindObject, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return true;
 	}
 
@@ -1061,7 +1081,9 @@ public class XhtmlValidator extends EObjectValidator {
 	 */
 	public boolean validateLength(String length, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean result = validateLength_Pattern(length, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLength_MaxLength(length, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validateLength_MaxLength(length, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1071,12 +1093,7 @@ public class XhtmlValidator extends EObjectValidator {
 	 * @generated
 	 * @see #validateLength_Pattern
 	 */
-	public static final  PatternMatcher [][] LENGTH__PATTERN__VALUES =
-		new PatternMatcher [][] {
-			new PatternMatcher [] {
-				XMLTypeUtil.createPatternMatcher("[\\-\\+]?(\\d+|\\d+(\\.\\d+)?%)")
-			}
-		};
+	public static final PatternMatcher[][] LENGTH__PATTERN__VALUES = new PatternMatcher[][] { new PatternMatcher[] { XMLTypeUtil.createPatternMatcher("[\\-\\+]?(\\d+|\\d+(\\.\\d+)?%)") } };
 
 	/**
 	 * Validates the Pattern constraint of '<em>Length</em>'.
@@ -1096,11 +1113,12 @@ public class XhtmlValidator extends EObjectValidator {
 	 */
 	public boolean validateLength_MaxLength(String length, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// refactored generated code to modify duplicate variable name
-		//int length = length.length();  
-		int len = length.length();  
+		// int length = length.length();
+		int len = length.length();
 		boolean result = len <= 10;
-		if (!result && diagnostics != null) 
+		if (!result && diagnostics != null) {
 			reportMaxLengthViolation(XhtmlPackage.Literals.LENGTH, len, len, 10, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1109,7 +1127,8 @@ public class XhtmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMediaTypeObject(MediaType mediaTypeObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateMediaTypeObject(MediaType mediaTypeObject, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return true;
 	}
 
@@ -1118,7 +1137,8 @@ public class XhtmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMifClassTypeObject(MifClassType mifClassTypeObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateMifClassTypeObject(MifClassType mifClassTypeObject, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return true;
 	}
 
@@ -1129,7 +1149,9 @@ public class XhtmlValidator extends EObjectValidator {
 	 */
 	public boolean validateMultiLength(String multiLength, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean result = validateMultiLength_Pattern(multiLength, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMultiLength_MaxLength(multiLength, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validateMultiLength_MaxLength(multiLength, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1139,12 +1161,7 @@ public class XhtmlValidator extends EObjectValidator {
 	 * @generated
 	 * @see #validateMultiLength_Pattern
 	 */
-	public static final  PatternMatcher [][] MULTI_LENGTH__PATTERN__VALUES =
-		new PatternMatcher [][] {
-			new PatternMatcher [] {
-				XMLTypeUtil.createPatternMatcher("[\\-\\+]?(\\d+|\\d+(\\.\\d+)?%)|[1-9]?(\\d+)?\\*")
-			}
-		};
+	public static final PatternMatcher[][] MULTI_LENGTH__PATTERN__VALUES = new PatternMatcher[][] { new PatternMatcher[] { XMLTypeUtil.createPatternMatcher("[\\-\\+]?(\\d+|\\d+(\\.\\d+)?%)|[1-9]?(\\d+)?\\*") } };
 
 	/**
 	 * Validates the Pattern constraint of '<em>Multi Length</em>'.
@@ -1152,8 +1169,10 @@ public class XhtmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMultiLength_Pattern(String multiLength, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validatePattern(XhtmlPackage.Literals.MULTI_LENGTH, multiLength, MULTI_LENGTH__PATTERN__VALUES, diagnostics, context);
+	public boolean validateMultiLength_Pattern(String multiLength, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validatePattern(
+			XhtmlPackage.Literals.MULTI_LENGTH, multiLength, MULTI_LENGTH__PATTERN__VALUES, diagnostics, context);
 	}
 
 	/**
@@ -1162,11 +1181,13 @@ public class XhtmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMultiLength_MaxLength(String multiLength, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateMultiLength_MaxLength(String multiLength, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		int length = multiLength.length();
 		boolean result = length <= 500;
-		if (!result && diagnostics != null)
+		if (!result && diagnostics != null) {
 			reportMaxLengthViolation(XhtmlPackage.Literals.MULTI_LENGTH, multiLength, length, 500, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1177,8 +1198,12 @@ public class XhtmlValidator extends EObjectValidator {
 	 */
 	public boolean validateNumber(BigInteger number, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean result = xmlTypeValidator.validateNonNegativeInteger_Min(number, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNumber_Pattern(number, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNumber_Max(number, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validateNumber_Pattern(number, diagnostics, context);
+		}
+		if (result || diagnostics != null) {
+			result &= validateNumber_Max(number, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1188,12 +1213,7 @@ public class XhtmlValidator extends EObjectValidator {
 	 * @generated
 	 * @see #validateNumber_Pattern
 	 */
-	public static final  PatternMatcher [][] NUMBER__PATTERN__VALUES =
-		new PatternMatcher [][] {
-			new PatternMatcher [] {
-				XMLTypeUtil.createPatternMatcher("[0-9]+")
-			}
-		};
+	public static final PatternMatcher[][] NUMBER__PATTERN__VALUES = new PatternMatcher[][] { new PatternMatcher[] { XMLTypeUtil.createPatternMatcher("[0-9]+") } };
 
 	/**
 	 * Validates the Pattern constraint of '<em>Number</em>'.
@@ -1221,8 +1241,9 @@ public class XhtmlValidator extends EObjectValidator {
 	 */
 	public boolean validateNumber_Max(BigInteger number, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean result = number.compareTo(NUMBER__MAX__VALUE) < 0;
-		if (!result && diagnostics != null)
+		if (!result && diagnostics != null) {
 			reportMaxViolation(XhtmlPackage.Literals.NUMBER, number, NUMBER__MAX__VALUE, false, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1231,7 +1252,8 @@ public class XhtmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateObjectNameObject(ObjectName objectNameObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateObjectNameObject(ObjectName objectNameObject, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return true;
 	}
 
@@ -1240,7 +1262,8 @@ public class XhtmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateParamNameObject(ParamName paramNameObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateParamNameObject(ParamName paramNameObject, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return true;
 	}
 
@@ -1260,7 +1283,9 @@ public class XhtmlValidator extends EObjectValidator {
 	 */
 	public boolean validatePixels(BigInteger pixels, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean result = xmlTypeValidator.validateNonNegativeInteger_Min(pixels, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePixels_Max(pixels, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validatePixels_Max(pixels, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1280,8 +1305,9 @@ public class XhtmlValidator extends EObjectValidator {
 	 */
 	public boolean validatePixels_Max(BigInteger pixels, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean result = pixels.compareTo(PIXELS__MAX__VALUE) < 0;
-		if (!result && diagnostics != null)
+		if (!result && diagnostics != null) {
 			reportMaxViolation(XhtmlPackage.Literals.PIXELS, pixels, PIXELS__MAX__VALUE, false, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1299,7 +1325,8 @@ public class XhtmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateStyleSheetObject(StyleSheet styleSheetObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateStyleSheetObject(StyleSheet styleSheetObject, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return true;
 	}
 
@@ -1310,7 +1337,9 @@ public class XhtmlValidator extends EObjectValidator {
 	 */
 	public boolean validateText(String text, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean result = validateText_MinLength(text, diagnostics, context);
-		if (result || diagnostics != null) result &= validateText_MaxLength(text, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validateText_MaxLength(text, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1323,8 +1352,9 @@ public class XhtmlValidator extends EObjectValidator {
 	public boolean validateText_MinLength(String text, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		int length = text.length();
 		boolean result = length >= 2;
-		if (!result && diagnostics != null)
+		if (!result && diagnostics != null) {
 			reportMinLengthViolation(XhtmlPackage.Literals.TEXT, text, length, 2, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1337,8 +1367,9 @@ public class XhtmlValidator extends EObjectValidator {
 	public boolean validateText_MaxLength(String text, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		int length = text.length();
 		boolean result = length <= 255;
-		if (!result && diagnostics != null)
+		if (!result && diagnostics != null) {
 			reportMaxLengthViolation(XhtmlPackage.Literals.TEXT, text, length, 255, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1367,7 +1398,9 @@ public class XhtmlValidator extends EObjectValidator {
 	 */
 	public boolean validateURI(String uri, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean result = validateURI_MinLength(uri, diagnostics, context);
-		if (result || diagnostics != null) result &= validateURI_MaxLength(uri, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validateURI_MaxLength(uri, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1380,8 +1413,9 @@ public class XhtmlValidator extends EObjectValidator {
 	public boolean validateURI_MinLength(String uri, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		int length = uri.length();
 		boolean result = length >= 5;
-		if (!result && diagnostics != null)
+		if (!result && diagnostics != null) {
 			reportMinLengthViolation(XhtmlPackage.Literals.URI, uri, length, 5, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1394,8 +1428,9 @@ public class XhtmlValidator extends EObjectValidator {
 	public boolean validateURI_MaxLength(String uri, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		int length = uri.length();
 		boolean result = length <= 255;
-		if (!result && diagnostics != null)
+		if (!result && diagnostics != null) {
 			reportMaxLengthViolation(XhtmlPackage.Literals.URI, uri, length, 255, diagnostics, context);
+		}
 		return result;
 	}
 
@@ -1404,7 +1439,8 @@ public class XhtmlValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateValignTypeObject(ValignType valignTypeObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateValignTypeObject(ValignType valignTypeObject, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		return true;
 	}
 
@@ -1422,4 +1458,4 @@ public class XhtmlValidator extends EObjectValidator {
 		return super.getResourceLocator();
 	}
 
-} //XhtmlValidator
+} // XhtmlValidator

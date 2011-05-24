@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -92,8 +96,13 @@ public abstract class AnnotationsImpl extends EObjectImpl implements Annotations
 		Documentation oldDocumentation = documentation;
 		documentation = newDocumentation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.ANNOTATIONS__DOCUMENTATION, oldDocumentation, newDocumentation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ANNOTATIONS__DOCUMENTATION, oldDocumentation, newDocumentation);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -106,15 +115,22 @@ public abstract class AnnotationsImpl extends EObjectImpl implements Annotations
 	public void setDocumentation(Documentation newDocumentation) {
 		if (newDocumentation != documentation) {
 			NotificationChain msgs = null;
-			if (documentation != null)
-				msgs = ((InternalEObject)documentation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ANNOTATIONS__DOCUMENTATION, null, msgs);
-			if (newDocumentation != null)
-				msgs = ((InternalEObject)newDocumentation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ANNOTATIONS__DOCUMENTATION, null, msgs);
+			if (documentation != null) {
+				msgs = ((InternalEObject) documentation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ANNOTATIONS__DOCUMENTATION, null, msgs);
+			}
+			if (newDocumentation != null) {
+				msgs = ((InternalEObject) newDocumentation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ANNOTATIONS__DOCUMENTATION, null, msgs);
+			}
 			msgs = basicSetDocumentation(newDocumentation, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ANNOTATIONS__DOCUMENTATION, newDocumentation, newDocumentation));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ANNOTATIONS__DOCUMENTATION, newDocumentation, newDocumentation));
 	}
 
 	/**
@@ -135,8 +151,13 @@ public abstract class AnnotationsImpl extends EObjectImpl implements Annotations
 		AppInfo oldAppInfo = appInfo;
 		appInfo = newAppInfo;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.ANNOTATIONS__APP_INFO, oldAppInfo, newAppInfo);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ANNOTATIONS__APP_INFO, oldAppInfo, newAppInfo);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -149,15 +170,22 @@ public abstract class AnnotationsImpl extends EObjectImpl implements Annotations
 	public void setAppInfo(AppInfo newAppInfo) {
 		if (newAppInfo != appInfo) {
 			NotificationChain msgs = null;
-			if (appInfo != null)
-				msgs = ((InternalEObject)appInfo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ANNOTATIONS__APP_INFO, null, msgs);
-			if (newAppInfo != null)
-				msgs = ((InternalEObject)newAppInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ANNOTATIONS__APP_INFO, null, msgs);
+			if (appInfo != null) {
+				msgs = ((InternalEObject) appInfo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ANNOTATIONS__APP_INFO, null, msgs);
+			}
+			if (newAppInfo != null) {
+				msgs = ((InternalEObject) newAppInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ANNOTATIONS__APP_INFO, null, msgs);
+			}
 			msgs = basicSetAppInfo(newAppInfo, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ANNOTATIONS__APP_INFO, newAppInfo, newAppInfo));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ANNOTATIONS__APP_INFO, newAppInfo, newAppInfo));
 	}
 
 	/**
@@ -201,10 +229,10 @@ public abstract class AnnotationsImpl extends EObjectImpl implements Annotations
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.ANNOTATIONS__DOCUMENTATION:
-				setDocumentation((Documentation)newValue);
+				setDocumentation((Documentation) newValue);
 				return;
 			case Mif2Package.ANNOTATIONS__APP_INFO:
-				setAppInfo((AppInfo)newValue);
+				setAppInfo((AppInfo) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -219,10 +247,10 @@ public abstract class AnnotationsImpl extends EObjectImpl implements Annotations
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.ANNOTATIONS__DOCUMENTATION:
-				setDocumentation((Documentation)null);
+				setDocumentation((Documentation) null);
 				return;
 			case Mif2Package.ANNOTATIONS__APP_INFO:
-				setAppInfo((AppInfo)null);
+				setAppInfo((AppInfo) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -244,4 +272,4 @@ public abstract class AnnotationsImpl extends EObjectImpl implements Annotations
 		return super.eIsSet(featureID);
 	}
 
-} //AnnotationsImpl
+} // AnnotationsImpl

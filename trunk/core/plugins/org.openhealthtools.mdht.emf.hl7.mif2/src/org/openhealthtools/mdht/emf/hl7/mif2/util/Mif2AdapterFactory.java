@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.util;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -15,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.openhealthtools.mdht.emf.hl7.mif2.*;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Flow;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -60,7 +63,7 @@ public class Mif2AdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -71,1629 +74,2032 @@ public class Mif2AdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Mif2Switch<Adapter> modelSwitch =
-		new Mif2Switch<Adapter>() {
-			@Override
-			public Adapter caseAddElementContent(AddElementContent object) {
-				return createAddElementContentAdapter();
-			}
-			@Override
-			public Adapter caseAnnotationBase(AnnotationBase object) {
-				return createAnnotationBaseAdapter();
-			}
-			@Override
-			public Adapter caseAnnotationCascadeInfo(AnnotationCascadeInfo object) {
-				return createAnnotationCascadeInfoAdapter();
-			}
-			@Override
-			public Adapter caseAnnotationDerivation(AnnotationDerivation object) {
-				return createAnnotationDerivationAdapter();
-			}
-			@Override
-			public Adapter caseAnnotations(Annotations object) {
-				return createAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseAppendix(Appendix object) {
-				return createAppendixAdapter();
-			}
-			@Override
-			public Adapter caseAppInfo(AppInfo object) {
-				return createAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseApplicationRole(ApplicationRole object) {
-				return createApplicationRoleAdapter();
-			}
-			@Override
-			public Adapter caseApplicationRoleAnnotations(ApplicationRoleAnnotations object) {
-				return createApplicationRoleAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseApplicationRoleAppInfo(ApplicationRoleAppInfo object) {
-				return createApplicationRoleAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseApplicationRoleDocumentation(ApplicationRoleDocumentation object) {
-				return createApplicationRoleDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseAppliedTemplateGroup(AppliedTemplateGroup object) {
-				return createAppliedTemplateGroupAdapter();
-			}
-			@Override
-			public Adapter caseApprovalInfo(ApprovalInfo object) {
-				return createApprovalInfoAdapter();
-			}
-			@Override
-			public Adapter caseArtifactCrossReference(ArtifactCrossReference object) {
-				return createArtifactCrossReferenceAdapter();
-			}
-			@Override
-			public Adapter caseArtifactDependency(ArtifactDependency object) {
-				return createArtifactDependencyAdapter();
-			}
-			@Override
-			public Adapter caseArtifactSupplement(ArtifactSupplement object) {
-				return createArtifactSupplementAdapter();
-			}
-			@Override
-			public Adapter caseArtifactSupplementAnnotations(ArtifactSupplementAnnotations object) {
-				return createArtifactSupplementAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseArtifactSupplementAppInfo(ArtifactSupplementAppInfo object) {
-				return createArtifactSupplementAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseArtifactSupplementDocumentation(ArtifactSupplementDocumentation object) {
-				return createArtifactSupplementDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseArtifactXRefSummary(ArtifactXRefSummary object) {
-				return createArtifactXRefSummaryAdapter();
-			}
-			@Override
-			public Adapter caseAssociation(Association object) {
-				return createAssociationAdapter();
-			}
-			@Override
-			public Adapter caseAssociationAnnotations(AssociationAnnotations object) {
-				return createAssociationAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseAssociationAppInfo(AssociationAppInfo object) {
-				return createAssociationAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseAssociationBase(AssociationBase object) {
-				return createAssociationBaseAdapter();
-			}
-			@Override
-			public Adapter caseAssociationDocumentation(AssociationDocumentation object) {
-				return createAssociationDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseAssociationEnd(AssociationEnd object) {
-				return createAssociationEndAdapter();
-			}
-			@Override
-			public Adapter caseAssociationEndAnnotations(AssociationEndAnnotations object) {
-				return createAssociationEndAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseAssociationEndAppInfo(AssociationEndAppInfo object) {
-				return createAssociationEndAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseAssociationEndBase(AssociationEndBase object) {
-				return createAssociationEndBaseAdapter();
-			}
-			@Override
-			public Adapter caseAssociationEndDerivation(AssociationEndDerivation object) {
-				return createAssociationEndDerivationAdapter();
-			}
-			@Override
-			public Adapter caseAssociationEndDocumentation(AssociationEndDocumentation object) {
-				return createAssociationEndDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseAssociationEndSpecialization(AssociationEndSpecialization object) {
-				return createAssociationEndSpecializationAdapter();
-			}
-			@Override
-			public Adapter caseAssociationEndWithClass(AssociationEndWithClass object) {
-				return createAssociationEndWithClassAdapter();
-			}
-			@Override
-			public Adapter caseAssociationEndWithClassRef(AssociationEndWithClassRef object) {
-				return createAssociationEndWithClassRefAdapter();
-			}
-			@Override
-			public Adapter caseAttribute(Attribute object) {
-				return createAttributeAdapter();
-			}
-			@Override
-			public Adapter caseAttributeAnnotations(AttributeAnnotations object) {
-				return createAttributeAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseAttributeAppInfo(AttributeAppInfo object) {
-				return createAttributeAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseAttributeContent(AttributeContent object) {
-				return createAttributeContentAdapter();
-			}
-			@Override
-			public Adapter caseAttributeDerivation(AttributeDerivation object) {
-				return createAttributeDerivationAdapter();
-			}
-			@Override
-			public Adapter caseAttributeDocumentation(AttributeDocumentation object) {
-				return createAttributeDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseAttributeProperty(AttributeProperty object) {
-				return createAttributePropertyAdapter();
-			}
-			@Override
-			public Adapter caseAttributeRef(AttributeRef object) {
-				return createAttributeRefAdapter();
-			}
-			@Override
-			public Adapter caseAttributeValueRef(AttributeValueRef object) {
-				return createAttributeValueRefAdapter();
-			}
-			@Override
-			public Adapter caseBallotComment(BallotComment object) {
-				return createBallotCommentAdapter();
-			}
-			@Override
-			public Adapter caseBallotCommentResolution(BallotCommentResolution object) {
-				return createBallotCommentResolutionAdapter();
-			}
-			@Override
-			public Adapter caseBallotSubmission(BallotSubmission object) {
-				return createBallotSubmissionAdapter();
-			}
-			@Override
-			public Adapter caseBasicAnnotation(BasicAnnotation object) {
-				return createBasicAnnotationAdapter();
-			}
-			@Override
-			public Adapter caseBindingRealm(BindingRealm object) {
-				return createBindingRealmAdapter();
-			}
-			@Override
-			public Adapter caseBoundStaticModel(BoundStaticModel object) {
-				return createBoundStaticModelAdapter();
-			}
-			@Override
-			public Adapter caseBusinessName(BusinessName object) {
-				return createBusinessNameAdapter();
-			}
-			@Override
-			public Adapter caseCascadableAnnotation(CascadableAnnotation object) {
-				return createCascadableAnnotationAdapter();
-			}
-			@Override
-			public Adapter caseChange(Change object) {
-				return createChangeAdapter();
-			}
-			@Override
-			public Adapter caseChangeRequest(ChangeRequest object) {
-				return createChangeRequestAdapter();
-			}
-			@Override
-			public Adapter caseChangeRequestEstimate(ChangeRequestEstimate object) {
-				return createChangeRequestEstimateAdapter();
-			}
-			@Override
-			public Adapter caseClassAnnotations(ClassAnnotations object) {
-				return createClassAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseClassAppInfo(ClassAppInfo object) {
-				return createClassAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseClassBase(ClassBase object) {
-				return createClassBaseAdapter();
-			}
-			@Override
-			public Adapter caseClassBindingArgument(ClassBindingArgument object) {
-				return createClassBindingArgumentAdapter();
-			}
-			@Override
-			public Adapter caseClassBindingArgumentBase(ClassBindingArgumentBase object) {
-				return createClassBindingArgumentBaseAdapter();
-			}
-			@Override
-			public Adapter caseClassDerivation(ClassDerivation object) {
-				return createClassDerivationAdapter();
-			}
-			@Override
-			public Adapter caseClassDocumentation(ClassDocumentation object) {
-				return createClassDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseClassElement(ClassElement object) {
-				return createClassElementAdapter();
-			}
-			@Override
-			public Adapter caseClassGeneralization(ClassGeneralization object) {
-				return createClassGeneralizationAdapter();
-			}
-			@Override
-			public Adapter caseClassGeneralizationBase(ClassGeneralizationBase object) {
-				return createClassGeneralizationBaseAdapter();
-			}
-			@Override
-			public Adapter caseClassGraphicInformation(ClassGraphicInformation object) {
-				return createClassGraphicInformationAdapter();
-			}
-			@Override
-			public Adapter caseClassifier(Classifier object) {
-				return createClassifierAdapter();
-			}
-			@Override
-			public Adapter caseClassifierBase(ClassifierBase object) {
-				return createClassifierBaseAdapter();
-			}
-			@Override
-			public Adapter caseClassOrReference(ClassOrReference object) {
-				return createClassOrReferenceAdapter();
-			}
-			@Override
-			public Adapter caseClassRef(ClassRef object) {
-				return createClassRefAdapter();
-			}
-			@Override
-			public Adapter caseClassStubInterface(ClassStubInterface object) {
-				return createClassStubInterfaceAdapter();
-			}
-			@Override
-			public Adapter caseClassStubInterfaceAnnotations(ClassStubInterfaceAnnotations object) {
-				return createClassStubInterfaceAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseClassStubInterfaceAppInfo(ClassStubInterfaceAppInfo object) {
-				return createClassStubInterfaceAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseClassStubInterfaceDocumentation(ClassStubInterfaceDocumentation object) {
-				return createClassStubInterfaceDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseCode(Code object) {
-				return createCodeAdapter();
-			}
-			@Override
-			public Adapter caseCodeBasedContentDefinition(CodeBasedContentDefinition object) {
-				return createCodeBasedContentDefinitionAdapter();
-			}
-			@Override
-			public Adapter caseCodeFilterContentDefinition(CodeFilterContentDefinition object) {
-				return createCodeFilterContentDefinitionAdapter();
-			}
-			@Override
-			public Adapter caseCodeIcon(CodeIcon object) {
-				return createCodeIconAdapter();
-			}
-			@Override
-			public Adapter caseCodeSupplement(CodeSupplement object) {
-				return createCodeSupplementAdapter();
-			}
-			@Override
-			public Adapter caseCodeSystem(CodeSystem object) {
-				return createCodeSystemAdapter();
-			}
-			@Override
-			public Adapter caseCodeSystemAnnotations(CodeSystemAnnotations object) {
-				return createCodeSystemAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseCodeSystemAppInfo(CodeSystemAppInfo object) {
-				return createCodeSystemAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseCodeSystemBase(CodeSystemBase object) {
-				return createCodeSystemBaseAdapter();
-			}
-			@Override
-			public Adapter caseCodeSystemDocumentation(CodeSystemDocumentation object) {
-				return createCodeSystemDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseCodeSystemRef(CodeSystemRef object) {
-				return createCodeSystemRefAdapter();
-			}
-			@Override
-			public Adapter caseCodeSystemSupplement(CodeSystemSupplement object) {
-				return createCodeSystemSupplementAdapter();
-			}
-			@Override
-			public Adapter caseCodeSystemVersion(CodeSystemVersion object) {
-				return createCodeSystemVersionAdapter();
-			}
-			@Override
-			public Adapter caseCodeSystemVersionAnnotations(CodeSystemVersionAnnotations object) {
-				return createCodeSystemVersionAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseCodeSystemVersionAppInfo(CodeSystemVersionAppInfo object) {
-				return createCodeSystemVersionAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseCodeSystemVersionBase(CodeSystemVersionBase object) {
-				return createCodeSystemVersionBaseAdapter();
-			}
-			@Override
-			public Adapter caseCodeSystemVersionDocumentation(CodeSystemVersionDocumentation object) {
-				return createCodeSystemVersionDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseCodeSystemVersionSupplement(CodeSystemVersionSupplement object) {
-				return createCodeSystemVersionSupplementAdapter();
-			}
-			@Override
-			public Adapter caseCodeTranslation(CodeTranslation object) {
-				return createCodeTranslationAdapter();
-			}
-			@Override
-			public Adapter caseCodeTranslationAnnotations(CodeTranslationAnnotations object) {
-				return createCodeTranslationAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseCodeTranslationAppInfo(CodeTranslationAppInfo object) {
-				return createCodeTranslationAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseCodeTranslationCollection(CodeTranslationCollection object) {
-				return createCodeTranslationCollectionAdapter();
-			}
-			@Override
-			public Adapter caseCodeTranslationCollectionAnnotations(CodeTranslationCollectionAnnotations object) {
-				return createCodeTranslationCollectionAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseCodeTranslationCollectionAppInfo(CodeTranslationCollectionAppInfo object) {
-				return createCodeTranslationCollectionAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseCodeTranslationCollectionDocumentation(CodeTranslationCollectionDocumentation object) {
-				return createCodeTranslationCollectionDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseCodeTranslationDocumentation(CodeTranslationDocumentation object) {
-				return createCodeTranslationDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseCombinedContentDefinition(CombinedContentDefinition object) {
-				return createCombinedContentDefinitionAdapter();
-			}
-			@Override
-			public Adapter caseCommitteeReference(CommitteeReference object) {
-				return createCommitteeReferenceAdapter();
-			}
-			@Override
-			public Adapter caseCommonModelElementDefinition(CommonModelElementDefinition object) {
-				return createCommonModelElementDefinitionAdapter();
-			}
-			@Override
-			public Adapter caseCommonModelElementRef(CommonModelElementRef object) {
-				return createCommonModelElementRefAdapter();
-			}
-			@Override
-			public Adapter caseCommonModelElementRefAnnotations(CommonModelElementRefAnnotations object) {
-				return createCommonModelElementRefAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseCommonModelElementRefAppInfo(CommonModelElementRefAppInfo object) {
-				return createCommonModelElementRefAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseCommonModelElementRefBase(CommonModelElementRefBase object) {
-				return createCommonModelElementRefBaseAdapter();
-			}
-			@Override
-			public Adapter caseCommonModelElementRefDocumentation(CommonModelElementRefDocumentation object) {
-				return createCommonModelElementRefDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseComplexMarkupWithLanguage(ComplexMarkupWithLanguage object) {
-				return createComplexMarkupWithLanguageAdapter();
-			}
-			@Override
-			public Adapter caseConcept(Concept object) {
-				return createConceptAdapter();
-			}
-			@Override
-			public Adapter caseConceptAnnotations(ConceptAnnotations object) {
-				return createConceptAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseConceptAppInfo(ConceptAppInfo object) {
-				return createConceptAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseConceptBase(ConceptBase object) {
-				return createConceptBaseAdapter();
-			}
-			@Override
-			public Adapter caseConceptDocumentation(ConceptDocumentation object) {
-				return createConceptDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseConceptDomain(ConceptDomain object) {
-				return createConceptDomainAdapter();
-			}
-			@Override
-			public Adapter caseConceptDomainAnnotations(ConceptDomainAnnotations object) {
-				return createConceptDomainAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseConceptDomainAppInfo(ConceptDomainAppInfo object) {
-				return createConceptDomainAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseConceptDomainDocumentation(ConceptDomainDocumentation object) {
-				return createConceptDomainDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseConceptDomainProperty(ConceptDomainProperty object) {
-				return createConceptDomainPropertyAdapter();
-			}
-			@Override
-			public Adapter caseConceptDomainRef(ConceptDomainRef object) {
-				return createConceptDomainRefAdapter();
-			}
-			@Override
-			public Adapter caseConceptProperty(ConceptProperty object) {
-				return createConceptPropertyAdapter();
-			}
-			@Override
-			public Adapter caseConceptPropertyRef(ConceptPropertyRef object) {
-				return createConceptPropertyRefAdapter();
-			}
-			@Override
-			public Adapter caseConceptRef(ConceptRef object) {
-				return createConceptRefAdapter();
-			}
-			@Override
-			public Adapter caseConceptRelationship(ConceptRelationship object) {
-				return createConceptRelationshipAdapter();
-			}
-			@Override
-			public Adapter caseConceptSupplement(ConceptSupplement object) {
-				return createConceptSupplementAdapter();
-			}
-			@Override
-			public Adapter caseConceptSupplementAnnotations(ConceptSupplementAnnotations object) {
-				return createConceptSupplementAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseConceptSupplementAppInfo(ConceptSupplementAppInfo object) {
-				return createConceptSupplementAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseConceptSupplementDocumentation(ConceptSupplementDocumentation object) {
-				return createConceptSupplementDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseConceptUse(ConceptUse object) {
-				return createConceptUseAdapter();
-			}
-			@Override
-			public Adapter caseConformanceProfile(ConformanceProfile object) {
-				return createConformanceProfileAdapter();
-			}
-			@Override
-			public Adapter caseConformanceProfileAnnotations(ConformanceProfileAnnotations object) {
-				return createConformanceProfileAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseConformanceProfileAppInfo(ConformanceProfileAppInfo object) {
-				return createConformanceProfileAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseConformanceProfileDocumentation(ConformanceProfileDocumentation object) {
-				return createConformanceProfileDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseConformanceTriggerEvents(ConformanceTriggerEvents object) {
-				return createConformanceTriggerEventsAdapter();
-			}
-			@Override
-			public Adapter caseContainedGraphNode(ContainedGraphNode object) {
-				return createContainedGraphNodeAdapter();
-			}
-			@Override
-			public Adapter caseContentDefinition(ContentDefinition object) {
-				return createContentDefinitionAdapter();
-			}
-			@Override
-			public Adapter caseContentDefinitionAnnotations(ContentDefinitionAnnotations object) {
-				return createContentDefinitionAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseContentDefinitionAppInfo(ContentDefinitionAppInfo object) {
-				return createContentDefinitionAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseContentDefinitionDocumentation(ContentDefinitionDocumentation object) {
-				return createContentDefinitionDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseContextAnnotation(ContextAnnotation object) {
-				return createContextAnnotationAdapter();
-			}
-			@Override
-			public Adapter caseContextBinding(ContextBinding object) {
-				return createContextBindingAdapter();
-			}
-			@Override
-			public Adapter caseContributor(Contributor object) {
-				return createContributorAdapter();
-			}
-			@Override
-			public Adapter caseDatatype(Datatype object) {
-				return createDatatypeAdapter();
-			}
-			@Override
-			public Adapter caseDatatypeAnnotations(DatatypeAnnotations object) {
-				return createDatatypeAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseDatatypeAppInfo(DatatypeAppInfo object) {
-				return createDatatypeAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseDatatypeBinding(DatatypeBinding object) {
-				return createDatatypeBindingAdapter();
-			}
-			@Override
-			public Adapter caseDatatypeDerivation(DatatypeDerivation object) {
-				return createDatatypeDerivationAdapter();
-			}
-			@Override
-			public Adapter caseDatatypeDocumentation(DatatypeDocumentation object) {
-				return createDatatypeDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseDatatypeImport(DatatypeImport object) {
-				return createDatatypeImportAdapter();
-			}
-			@Override
-			public Adapter caseDatatypeLimitation(DatatypeLimitation object) {
-				return createDatatypeLimitationAdapter();
-			}
-			@Override
-			public Adapter caseDatatypeModelLibrary(DatatypeModelLibrary object) {
-				return createDatatypeModelLibraryAdapter();
-			}
-			@Override
-			public Adapter caseDatatypeOperation(DatatypeOperation object) {
-				return createDatatypeOperationAdapter();
-			}
-			@Override
-			public Adapter caseDatatypeParameter(DatatypeParameter object) {
-				return createDatatypeParameterAdapter();
-			}
-			@Override
-			public Adapter caseDatatypeRef(DatatypeRef object) {
-				return createDatatypeRefAdapter();
-			}
-			@Override
-			public Adapter caseDatatypeTemplateParameter(DatatypeTemplateParameter object) {
-				return createDatatypeTemplateParameterAdapter();
-			}
-			@Override
-			public Adapter caseDependency(Dependency object) {
-				return createDependencyAdapter();
-			}
-			@Override
-			public Adapter caseDeprecationInfo(DeprecationInfo object) {
-				return createDeprecationInfoAdapter();
-			}
-			@Override
-			public Adapter caseDerivation(Derivation object) {
-				return createDerivationAdapter();
-			}
-			@Override
-			public Adapter caseDerivedStaticModel(DerivedStaticModel object) {
-				return createDerivedStaticModelAdapter();
-			}
-			@Override
-			public Adapter caseDerivedStaticModelsType(DerivedStaticModelsType object) {
-				return createDerivedStaticModelsTypeAdapter();
-			}
-			@Override
-			public Adapter caseDesignComment(DesignComment object) {
-				return createDesignCommentAdapter();
-			}
-			@Override
-			public Adapter caseDiagram(Diagram object) {
-				return createDiagramAdapter();
-			}
-			@Override
-			public Adapter caseDiagramElement(DiagramElement object) {
-				return createDiagramElementAdapter();
-			}
-			@Override
-			public Adapter caseDiagramGraphicInformation(DiagramGraphicInformation object) {
-				return createDiagramGraphicInformationAdapter();
-			}
-			@Override
-			public Adapter caseDimension(Dimension object) {
-				return createDimensionAdapter();
-			}
-			@Override
-			public Adapter caseDocumentation(Documentation object) {
-				return createDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseDocumentProfile(DocumentProfile object) {
-				return createDocumentProfileAdapter();
-			}
-			@Override
-			public Adapter caseDocumentProfileAnnotations(DocumentProfileAnnotations object) {
-				return createDocumentProfileAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseDocumentProfileAppInfo(DocumentProfileAppInfo object) {
-				return createDocumentProfileAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseDocumentProfileDocumentation(DocumentProfileDocumentation object) {
-				return createDocumentProfileDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseDocumentRoot(DocumentRoot object) {
-				return createDocumentRootAdapter();
-			}
-			@Override
-			public Adapter caseDocumentTest(DocumentTest object) {
-				return createDocumentTestAdapter();
-			}
-			@Override
-			public Adapter caseDomainAnalysisModel(DomainAnalysisModel object) {
-				return createDomainAnalysisModelAdapter();
-			}
-			@Override
-			public Adapter caseDomainAnalysisModelAnnotations(DomainAnalysisModelAnnotations object) {
-				return createDomainAnalysisModelAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseDomainAnalysisModelAppInfo(DomainAnalysisModelAppInfo object) {
-				return createDomainAnalysisModelAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseDomainAnalysisModelDocumentation(DomainAnalysisModelDocumentation object) {
-				return createDomainAnalysisModelDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseDomainInstanceExample(DomainInstanceExample object) {
-				return createDomainInstanceExampleAdapter();
-			}
-			@Override
-			public Adapter caseDomainInstanceExampleAnnotations(DomainInstanceExampleAnnotations object) {
-				return createDomainInstanceExampleAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseDomainInstanceExampleAppInfo(DomainInstanceExampleAppInfo object) {
-				return createDomainInstanceExampleAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseDomainInstanceExampleDocumentation(DomainInstanceExampleDocumentation object) {
-				return createDomainInstanceExampleDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseElementChange(ElementChange object) {
-				return createElementChangeAdapter();
-			}
-			@Override
-			public Adapter caseElementDerivation(ElementDerivation object) {
-				return createElementDerivationAdapter();
-			}
-			@Override
-			public Adapter caseElementRef(ElementRef object) {
-				return createElementRefAdapter();
-			}
-			@Override
-			public Adapter caseElementValueRef(ElementValueRef object) {
-				return createElementValueRefAdapter();
-			}
-			@Override
-			public Adapter caseEntryPoint(EntryPoint object) {
-				return createEntryPointAdapter();
-			}
-			@Override
-			public Adapter caseEntryPointAnnotations(EntryPointAnnotations object) {
-				return createEntryPointAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseEntryPointAppInfo(EntryPointAppInfo object) {
-				return createEntryPointAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseEntryPointBase(EntryPointBase object) {
-				return createEntryPointBaseAdapter();
-			}
-			@Override
-			public Adapter caseEntryPointDocumentation(EntryPointDocumentation object) {
-				return createEntryPointDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseEnvironmentalOccurrence(EnvironmentalOccurrence object) {
-				return createEnvironmentalOccurrenceAdapter();
-			}
-			@Override
-			public Adapter caseExampleInteraction(ExampleInteraction object) {
-				return createExampleInteractionAdapter();
-			}
-			@Override
-			public Adapter caseExampleSystem(ExampleSystem object) {
-				return createExampleSystemAdapter();
-			}
-			@Override
-			public Adapter caseExampleType(ExampleType object) {
-				return createExampleTypeAdapter();
-			}
-			@Override
-			public Adapter caseFeature(Feature object) {
-				return createFeatureAdapter();
-			}
-			@Override
-			public Adapter caseFlatClass(FlatClass object) {
-				return createFlatClassAdapter();
-			}
-			@Override
-			public Adapter caseFormalConstraint(FormalConstraint object) {
-				return createFormalConstraintAdapter();
-			}
-			@Override
-			public Adapter caseFormalExpression(FormalExpression object) {
-				return createFormalExpressionAdapter();
-			}
-			@Override
-			public Adapter caseFreeFormMarkupWithLanguage(FreeFormMarkupWithLanguage object) {
-				return createFreeFormMarkupWithLanguageAdapter();
-			}
-			@Override
-			public Adapter caseFreehandDocument(FreehandDocument object) {
-				return createFreehandDocumentAdapter();
-			}
-			@Override
-			public Adapter caseFreehandDocumentAnnotations(FreehandDocumentAnnotations object) {
-				return createFreehandDocumentAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseFreehandDocumentAppInfo(FreehandDocumentAppInfo object) {
-				return createFreehandDocumentAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseFreehandDocumentDocumentation(FreehandDocumentDocumentation object) {
-				return createFreehandDocumentDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseGeneralizationAnnotations(GeneralizationAnnotations object) {
-				return createGeneralizationAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseGeneralizationAppInfo(GeneralizationAppInfo object) {
-				return createGeneralizationAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseGeneralizationDocumentation(GeneralizationDocumentation object) {
-				return createGeneralizationDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseGenericPackage(GenericPackage object) {
-				return createGenericPackageAdapter();
-			}
-			@Override
-			public Adapter caseGlobalApplicationRole(GlobalApplicationRole object) {
-				return createGlobalApplicationRoleAdapter();
-			}
-			@Override
-			public Adapter caseGlobalArtifactXRefSummary(GlobalArtifactXRefSummary object) {
-				return createGlobalArtifactXRefSummaryAdapter();
-			}
-			@Override
-			public Adapter caseGlobalCodeSystem(GlobalCodeSystem object) {
-				return createGlobalCodeSystemAdapter();
-			}
-			@Override
-			public Adapter caseGlobalCodeSystemSupplement(GlobalCodeSystemSupplement object) {
-				return createGlobalCodeSystemSupplementAdapter();
-			}
-			@Override
-			public Adapter caseGlobalConformanceProfile(GlobalConformanceProfile object) {
-				return createGlobalConformanceProfileAdapter();
-			}
-			@Override
-			public Adapter caseGlobalDatatypeModelLibrary(GlobalDatatypeModelLibrary object) {
-				return createGlobalDatatypeModelLibraryAdapter();
-			}
-			@Override
-			public Adapter caseGlobalDerivedStaticModel(GlobalDerivedStaticModel object) {
-				return createGlobalDerivedStaticModelAdapter();
-			}
-			@Override
-			public Adapter caseGlobalDomainAnalysisModel(GlobalDomainAnalysisModel object) {
-				return createGlobalDomainAnalysisModelAdapter();
-			}
-			@Override
-			public Adapter caseGlobalDomainInstanceExample(GlobalDomainInstanceExample object) {
-				return createGlobalDomainInstanceExampleAdapter();
-			}
-			@Override
-			public Adapter caseGlobalFreehandDocument(GlobalFreehandDocument object) {
-				return createGlobalFreehandDocumentAdapter();
-			}
-			@Override
-			public Adapter caseGlobalGenericPackage(GlobalGenericPackage object) {
-				return createGlobalGenericPackageAdapter();
-			}
-			@Override
-			public Adapter caseGlobalGlossary(GlobalGlossary object) {
-				return createGlobalGlossaryAdapter();
-			}
-			@Override
-			public Adapter caseGlobalInteraction(GlobalInteraction object) {
-				return createGlobalInteractionAdapter();
-			}
-			@Override
-			public Adapter caseGlobalInteractionProfile(GlobalInteractionProfile object) {
-				return createGlobalInteractionProfileAdapter();
-			}
-			@Override
-			public Adapter caseGlobalMifChanges(GlobalMifChanges object) {
-				return createGlobalMifChangesAdapter();
-			}
-			@Override
-			public Adapter caseGlobalPublicationPackage(GlobalPublicationPackage object) {
-				return createGlobalPublicationPackageAdapter();
-			}
-			@Override
-			public Adapter caseGlobalSerializedStaticModel(GlobalSerializedStaticModel object) {
-				return createGlobalSerializedStaticModelAdapter();
-			}
-			@Override
-			public Adapter caseGlobalStaticModel(GlobalStaticModel object) {
-				return createGlobalStaticModelAdapter();
-			}
-			@Override
-			public Adapter caseGlobalStaticModelInterfacePackage(GlobalStaticModelInterfacePackage object) {
-				return createGlobalStaticModelInterfacePackageAdapter();
-			}
-			@Override
-			public Adapter caseGlobalStoryboard(GlobalStoryboard object) {
-				return createGlobalStoryboardAdapter();
-			}
-			@Override
-			public Adapter caseGlobalStructuredDocument(GlobalStructuredDocument object) {
-				return createGlobalStructuredDocumentAdapter();
-			}
-			@Override
-			public Adapter caseGlobalTestScenario(GlobalTestScenario object) {
-				return createGlobalTestScenarioAdapter();
-			}
-			@Override
-			public Adapter caseGlobalTriggerEvent(GlobalTriggerEvent object) {
-				return createGlobalTriggerEventAdapter();
-			}
-			@Override
-			public Adapter caseGlobalValueSet(GlobalValueSet object) {
-				return createGlobalValueSetAdapter();
-			}
-			@Override
-			public Adapter caseGlobalVocabularyModel(GlobalVocabularyModel object) {
-				return createGlobalVocabularyModelAdapter();
-			}
-			@Override
-			public Adapter caseGlossary(Glossary object) {
-				return createGlossaryAdapter();
-			}
-			@Override
-			public Adapter caseGraphConnector(GraphConnector object) {
-				return createGraphConnectorAdapter();
-			}
-			@Override
-			public Adapter caseGraphConnectorWithEdge(GraphConnectorWithEdge object) {
-				return createGraphConnectorWithEdgeAdapter();
-			}
-			@Override
-			public Adapter caseGraphEdge(GraphEdge object) {
-				return createGraphEdgeAdapter();
-			}
-			@Override
-			public Adapter caseGraphEdgeGraphicInformation(GraphEdgeGraphicInformation object) {
-				return createGraphEdgeGraphicInformationAdapter();
-			}
-			@Override
-			public Adapter caseGraphEdgeWithAnchor(GraphEdgeWithAnchor object) {
-				return createGraphEdgeWithAnchorAdapter();
-			}
-			@Override
-			public Adapter caseGraphElement(GraphElement object) {
-				return createGraphElementAdapter();
-			}
-			@Override
-			public Adapter caseGraphicInformation(GraphicInformation object) {
-				return createGraphicInformationAdapter();
-			}
-			@Override
-			public Adapter caseGraphNode(GraphNode object) {
-				return createGraphNodeAdapter();
-			}
-			@Override
-			public Adapter caseGraphNodeWithOptionalConnection(GraphNodeWithOptionalConnection object) {
-				return createGraphNodeWithOptionalConnectionAdapter();
-			}
-			@Override
-			public Adapter caseGroupChange(GroupChange object) {
-				return createGroupChangeAdapter();
-			}
-			@Override
-			public Adapter caseGroupVote(GroupVote object) {
-				return createGroupVoteAdapter();
-			}
-			@Override
-			public Adapter caseHeader(Header object) {
-				return createHeaderAdapter();
-			}
-			@Override
-			public Adapter caseHistoryItem(HistoryItem object) {
-				return createHistoryItemAdapter();
-			}
-			@Override
-			public Adapter caseImplementationConstraints(ImplementationConstraints object) {
-				return createImplementationConstraintsAdapter();
-			}
-			@Override
-			public Adapter caseImplementationMessageConstraints(ImplementationMessageConstraints object) {
-				return createImplementationMessageConstraintsAdapter();
-			}
-			@Override
-			public Adapter caseImportDatatypeModelLibrary(ImportDatatypeModelLibrary object) {
-				return createImportDatatypeModelLibraryAdapter();
-			}
-			@Override
-			public Adapter caseIncludeRelatedCodes(IncludeRelatedCodes object) {
-				return createIncludeRelatedCodesAdapter();
-			}
-			@Override
-			public Adapter caseInteraction(Interaction object) {
-				return createInteractionAdapter();
-			}
-			@Override
-			public Adapter caseInteractionAnnotations(InteractionAnnotations object) {
-				return createInteractionAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseInteractionAppInfo(InteractionAppInfo object) {
-				return createInteractionAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseInteractionDocumentation(InteractionDocumentation object) {
-				return createInteractionDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseInteractionProfile(InteractionProfile object) {
-				return createInteractionProfileAdapter();
-			}
-			@Override
-			public Adapter caseInteractionProfileAnnotations(InteractionProfileAnnotations object) {
-				return createInteractionProfileAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseInteractionProfileAppInfo(InteractionProfileAppInfo object) {
-				return createInteractionProfileAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseInteractionProfileDocumentation(InteractionProfileDocumentation object) {
-				return createInteractionProfileDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseInteractionTest(InteractionTest object) {
-				return createInteractionTestAdapter();
-			}
-			@Override
-			public Adapter caseInterface(Interface object) {
-				return createInterfaceAdapter();
-			}
-			@Override
-			public Adapter caseItemFilter(ItemFilter object) {
-				return createItemFilterAdapter();
-			}
-			@Override
-			public Adapter caseKeyedName(KeyedName object) {
-				return createKeyedNameAdapter();
-			}
-			@Override
-			public Adapter caseLegalese(Legalese object) {
-				return createLegaleseAdapter();
-			}
-			@Override
-			public Adapter caseLocalClassRef(LocalClassRef object) {
-				return createLocalClassRefAdapter();
-			}
-			@Override
-			public Adapter caseLocalClassReference(LocalClassReference object) {
-				return createLocalClassReferenceAdapter();
-			}
-			@Override
-			public Adapter caseMapping(Mapping object) {
-				return createMappingAdapter();
-			}
-			@Override
-			public Adapter caseMifChanges(MifChanges object) {
-				return createMifChangesAdapter();
-			}
-			@Override
-			public Adapter caseMifContent(MifContent object) {
-				return createMifContentAdapter();
-			}
-			@Override
-			public Adapter caseModelElement(ModelElement object) {
-				return createModelElementAdapter();
-			}
-			@Override
-			public Adapter caseNodeGraphicInformation(NodeGraphicInformation object) {
-				return createNodeGraphicInformationAdapter();
-			}
-			@Override
-			public Adapter caseNodeWithConnectionGraphicInformation(NodeWithConnectionGraphicInformation object) {
-				return createNodeWithConnectionGraphicInformationAdapter();
-			}
-			@Override
-			public Adapter caseNonComputableContentDefinition(NonComputableContentDefinition object) {
-				return createNonComputableContentDefinitionAdapter();
-			}
-			@Override
-			public Adapter caseNonTraversableAssociationEnd(NonTraversableAssociationEnd object) {
-				return createNonTraversableAssociationEndAdapter();
-			}
-			@Override
-			public Adapter caseOpenIssue(OpenIssue object) {
-				return createOpenIssueAdapter();
-			}
-			@Override
-			public Adapter caseOperationAnnotations(OperationAnnotations object) {
-				return createOperationAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseOperationAppInfo(OperationAppInfo object) {
-				return createOperationAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseOperationDerivation(OperationDerivation object) {
-				return createOperationDerivationAdapter();
-			}
-			@Override
-			public Adapter caseOperationDocumentation(OperationDocumentation object) {
-				return createOperationDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseOperationParameter(OperationParameter object) {
-				return createOperationParameterAdapter();
-			}
-			@Override
-			public Adapter caseOtherAnnotation(OtherAnnotation object) {
-				return createOtherAnnotationAdapter();
-			}
-			@Override
-			public Adapter casePackage(org.openhealthtools.mdht.emf.hl7.mif2.Package object) {
-				return createPackageAdapter();
-			}
-			@Override
-			public Adapter casePackageAnnotations(PackageAnnotations object) {
-				return createPackageAnnotationsAdapter();
-			}
-			@Override
-			public Adapter casePackageAppInfo(PackageAppInfo object) {
-				return createPackageAppInfoAdapter();
-			}
-			@Override
-			public Adapter casePackageArtifact(PackageArtifact object) {
-				return createPackageArtifactAdapter();
-			}
-			@Override
-			public Adapter casePackageBase(PackageBase object) {
-				return createPackageBaseAdapter();
-			}
-			@Override
-			public Adapter casePackageContent(PackageContent object) {
-				return createPackageContentAdapter();
-			}
-			@Override
-			public Adapter casePackageDefId(PackageDefId object) {
-				return createPackageDefIdAdapter();
-			}
-			@Override
-			public Adapter casePackageDerivation(PackageDerivation object) {
-				return createPackageDerivationAdapter();
-			}
-			@Override
-			public Adapter casePackageDocumentation(PackageDocumentation object) {
-				return createPackageDocumentationAdapter();
-			}
-			@Override
-			public Adapter casePackageOrArtifactRef(PackageOrArtifactRef object) {
-				return createPackageOrArtifactRefAdapter();
-			}
-			@Override
-			public Adapter casePackageRef(PackageRef object) {
-				return createPackageRefAdapter();
-			}
-			@Override
-			public Adapter caseParameterModel(ParameterModel object) {
-				return createParameterModelAdapter();
-			}
-			@Override
-			public Adapter casePoint(Point object) {
-				return createPointAdapter();
-			}
-			@Override
-			public Adapter casePrintName(PrintName object) {
-				return createPrintNameAdapter();
-			}
-			@Override
-			public Adapter casePropertyBasedContentDefinition(PropertyBasedContentDefinition object) {
-				return createPropertyBasedContentDefinitionAdapter();
-			}
-			@Override
-			public Adapter casePropertyGroup(PropertyGroup object) {
-				return createPropertyGroupAdapter();
-			}
-			@Override
-			public Adapter casePublicationAnnotations(PublicationAnnotations object) {
-				return createPublicationAnnotationsAdapter();
-			}
-			@Override
-			public Adapter casePublicationAppInfo(PublicationAppInfo object) {
-				return createPublicationAppInfoAdapter();
-			}
-			@Override
-			public Adapter casePublicationBase(PublicationBase object) {
-				return createPublicationBaseAdapter();
-			}
-			@Override
-			public Adapter casePublicationDocumentation(PublicationDocumentation object) {
-				return createPublicationDocumentationAdapter();
-			}
-			@Override
-			public Adapter casePublicationGroup(PublicationGroup object) {
-				return createPublicationGroupAdapter();
-			}
-			@Override
-			public Adapter casePublicationItem(PublicationItem object) {
-				return createPublicationItemAdapter();
-			}
-			@Override
-			public Adapter casePublicationPackage(PublicationPackage object) {
-				return createPublicationPackageAdapter();
-			}
-			@Override
-			public Adapter caseRangeDefinition(RangeDefinition object) {
-				return createRangeDefinitionAdapter();
-			}
-			@Override
-			public Adapter caseRealmElement(RealmElement object) {
-				return createRealmElementAdapter();
-			}
-			@Override
-			public Adapter caseReceiverResponsibility(ReceiverResponsibility object) {
-				return createReceiverResponsibilityAdapter();
-			}
-			@Override
-			public Adapter caseRelatedAppRole(RelatedAppRole object) {
-				return createRelatedAppRoleAdapter();
-			}
-			@Override
-			public Adapter caseRelationship(Relationship object) {
-				return createRelationshipAdapter();
-			}
-			@Override
-			public Adapter caseRelationshipBasedContentDefinition(RelationshipBasedContentDefinition object) {
-				return createRelationshipBasedContentDefinitionAdapter();
-			}
-			@Override
-			public Adapter caseRelease(Release object) {
-				return createReleaseAdapter();
-			}
-			@Override
-			public Adapter caseReleaseList(ReleaseList object) {
-				return createReleaseListAdapter();
-			}
-			@Override
-			public Adapter caseRenderingInformation(RenderingInformation object) {
-				return createRenderingInformationAdapter();
-			}
-			@Override
-			public Adapter caseReplaceElementContent(ReplaceElementContent object) {
-				return createReplaceElementContentAdapter();
-			}
-			@Override
-			public Adapter caseResponsibleGroup(ResponsibleGroup object) {
-				return createResponsibleGroupAdapter();
-			}
-			@Override
-			public Adapter caseSerializedAssociationEnd(SerializedAssociationEnd object) {
-				return createSerializedAssociationEndAdapter();
-			}
-			@Override
-			public Adapter caseSerializedAssociationEnds(SerializedAssociationEnds object) {
-				return createSerializedAssociationEndsAdapter();
-			}
-			@Override
-			public Adapter caseSerializedClass(SerializedClass object) {
-				return createSerializedClassAdapter();
-			}
-			@Override
-			public Adapter caseSerializedClassBindingArgument(SerializedClassBindingArgument object) {
-				return createSerializedClassBindingArgumentAdapter();
-			}
-			@Override
-			public Adapter caseSerializedClasses(SerializedClasses object) {
-				return createSerializedClassesAdapter();
-			}
-			@Override
-			public Adapter caseSerializedClassGeneralization(SerializedClassGeneralization object) {
-				return createSerializedClassGeneralizationAdapter();
-			}
-			@Override
-			public Adapter caseSerializedCommonModelElementRef(SerializedCommonModelElementRef object) {
-				return createSerializedCommonModelElementRefAdapter();
-			}
-			@Override
-			public Adapter caseSerializedEntryPoint(SerializedEntryPoint object) {
-				return createSerializedEntryPointAdapter();
-			}
-			@Override
-			public Adapter caseSerializedStaticModel(SerializedStaticModel object) {
-				return createSerializedStaticModelAdapter();
-			}
-			@Override
-			public Adapter caseSerializedStaticModelsType(SerializedStaticModelsType object) {
-				return createSerializedStaticModelsTypeAdapter();
-			}
-			@Override
-			public Adapter caseSpecializationClass(SpecializationClass object) {
-				return createSpecializationClassAdapter();
-			}
-			@Override
-			public Adapter caseState(State object) {
-				return createStateAdapter();
-			}
-			@Override
-			public Adapter caseStateAnnotations(StateAnnotations object) {
-				return createStateAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseStateAppInfo(StateAppInfo object) {
-				return createStateAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseStateDerivation(StateDerivation object) {
-				return createStateDerivationAdapter();
-			}
-			@Override
-			public Adapter caseStateDocumentation(StateDocumentation object) {
-				return createStateDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseStateMachine(StateMachine object) {
-				return createStateMachineAdapter();
-			}
-			@Override
-			public Adapter caseStateMachineAnnotations(StateMachineAnnotations object) {
-				return createStateMachineAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseStateMachineAppInfo(StateMachineAppInfo object) {
-				return createStateMachineAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseStateMachineDocumentation(StateMachineDocumentation object) {
-				return createStateMachineDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseStaticExample(StaticExample object) {
-				return createStaticExampleAdapter();
-			}
-			@Override
-			public Adapter caseStaticModel(StaticModel object) {
-				return createStaticModelAdapter();
-			}
-			@Override
-			public Adapter caseStaticModelAnnotations(StaticModelAnnotations object) {
-				return createStaticModelAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseStaticModelAppInfo(StaticModelAppInfo object) {
-				return createStaticModelAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseStaticModelBase(StaticModelBase object) {
-				return createStaticModelBaseAdapter();
-			}
-			@Override
-			public Adapter caseStaticModelClassTemplateParameter(StaticModelClassTemplateParameter object) {
-				return createStaticModelClassTemplateParameterAdapter();
-			}
-			@Override
-			public Adapter caseStaticModelDerivation(StaticModelDerivation object) {
-				return createStaticModelDerivationAdapter();
-			}
-			@Override
-			public Adapter caseStaticModelDerivationSource(StaticModelDerivationSource object) {
-				return createStaticModelDerivationSourceAdapter();
-			}
-			@Override
-			public Adapter caseStaticModelDocumentation(StaticModelDocumentation object) {
-				return createStaticModelDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseStaticModelInterfaceAnnotations(StaticModelInterfaceAnnotations object) {
-				return createStaticModelInterfaceAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseStaticModelInterfaceAppInfo(StaticModelInterfaceAppInfo object) {
-				return createStaticModelInterfaceAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseStaticModelInterfaceDocumentation(StaticModelInterfaceDocumentation object) {
-				return createStaticModelInterfaceDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseStaticModelInterfacePackage(StaticModelInterfacePackage object) {
-				return createStaticModelInterfacePackageAdapter();
-			}
-			@Override
-			public Adapter caseStaticModelRefBase(StaticModelRefBase object) {
-				return createStaticModelRefBaseAdapter();
-			}
-			@Override
-			public Adapter caseStaticModelsType(StaticModelsType object) {
-				return createStaticModelsTypeAdapter();
-			}
-			@Override
-			public Adapter caseStaticPackageDiagramGraphicInformation(StaticPackageDiagramGraphicInformation object) {
-				return createStaticPackageDiagramGraphicInformationAdapter();
-			}
-			@Override
-			public Adapter caseStoryboard(Storyboard object) {
-				return createStoryboardAdapter();
-			}
-			@Override
-			public Adapter caseStoryboardAnnotations(StoryboardAnnotations object) {
-				return createStoryboardAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseStoryboardAppInfo(StoryboardAppInfo object) {
-				return createStoryboardAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseStoryboardArtifactReferences(StoryboardArtifactReferences object) {
-				return createStoryboardArtifactReferencesAdapter();
-			}
-			@Override
-			public Adapter caseStoryboardDocumentation(StoryboardDocumentation object) {
-				return createStoryboardDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseStoryboardNarrative(StoryboardNarrative object) {
-				return createStoryboardNarrativeAdapter();
-			}
-			@Override
-			public Adapter caseStructuralFeature(StructuralFeature object) {
-				return createStructuralFeatureAdapter();
-			}
-			@Override
-			public Adapter caseStructuredDocument(StructuredDocument object) {
-				return createStructuredDocumentAdapter();
-			}
-			@Override
-			public Adapter caseStructuredDocumentAnnotations(StructuredDocumentAnnotations object) {
-				return createStructuredDocumentAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseStructuredDocumentAppInfo(StructuredDocumentAppInfo object) {
-				return createStructuredDocumentAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseStructuredDocumentDocumentation(StructuredDocumentDocumentation object) {
-				return createStructuredDocumentDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseStubDefinition(StubDefinition object) {
-				return createStubDefinitionAdapter();
-			}
-			@Override
-			public Adapter caseSubjectAreaAnnotations(SubjectAreaAnnotations object) {
-				return createSubjectAreaAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseSubjectAreaAppInfo(SubjectAreaAppInfo object) {
-				return createSubjectAreaAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseSubjectAreaDocumentation(SubjectAreaDocumentation object) {
-				return createSubjectAreaDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseSubjectAreaPackage(SubjectAreaPackage object) {
-				return createSubjectAreaPackageAdapter();
-			}
-			@Override
-			public Adapter caseSubSystem(SubSystem object) {
-				return createSubSystemAdapter();
-			}
-			@Override
-			public Adapter caseSupportedConceptProperty(SupportedConceptProperty object) {
-				return createSupportedConceptPropertyAdapter();
-			}
-			@Override
-			public Adapter caseSupportedConceptRelationship(SupportedConceptRelationship object) {
-				return createSupportedConceptRelationshipAdapter();
-			}
-			@Override
-			public Adapter caseSupportedProperty(SupportedProperty object) {
-				return createSupportedPropertyAdapter();
-			}
-			@Override
-			public Adapter caseTermDefinition(TermDefinition object) {
-				return createTermDefinitionAdapter();
-			}
-			@Override
-			public Adapter caseTerminologyServer(TerminologyServer object) {
-				return createTerminologyServerAdapter();
-			}
-			@Override
-			public Adapter caseTest(Test object) {
-				return createTestAdapter();
-			}
-			@Override
-			public Adapter caseTestBase(TestBase object) {
-				return createTestBaseAdapter();
-			}
-			@Override
-			public Adapter caseTestScenario(TestScenario object) {
-				return createTestScenarioAdapter();
-			}
-			@Override
-			public Adapter caseTestSystem(TestSystem object) {
-				return createTestSystemAdapter();
-			}
-			@Override
-			public Adapter caseTransition(Transition object) {
-				return createTransitionAdapter();
-			}
-			@Override
-			public Adapter caseTransitionAnnotations(TransitionAnnotations object) {
-				return createTransitionAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseTransitionAppInfo(TransitionAppInfo object) {
-				return createTransitionAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseTransitionDerivation(TransitionDerivation object) {
-				return createTransitionDerivationAdapter();
-			}
-			@Override
-			public Adapter caseTransitionDocumentation(TransitionDocumentation object) {
-				return createTransitionDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseTransitionRef(TransitionRef object) {
-				return createTransitionRefAdapter();
-			}
-			@Override
-			public Adapter caseTriggerEvent(TriggerEvent object) {
-				return createTriggerEventAdapter();
-			}
-			@Override
-			public Adapter caseTriggerEventAnnotations(TriggerEventAnnotations object) {
-				return createTriggerEventAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseTriggerEventAppInfo(TriggerEventAppInfo object) {
-				return createTriggerEventAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseTriggerEventDocumentation(TriggerEventDocumentation object) {
-				return createTriggerEventDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseValueSet(ValueSet object) {
-				return createValueSetAdapter();
-			}
-			@Override
-			public Adapter caseValueSetAnnotations(ValueSetAnnotations object) {
-				return createValueSetAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseValueSetAppInfo(ValueSetAppInfo object) {
-				return createValueSetAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseValueSetDocumentation(ValueSetDocumentation object) {
-				return createValueSetDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseValueSetSupplement(ValueSetSupplement object) {
-				return createValueSetSupplementAdapter();
-			}
-			@Override
-			public Adapter caseValueSetVersion(ValueSetVersion object) {
-				return createValueSetVersionAdapter();
-			}
-			@Override
-			public Adapter caseVariousMixedContent(VariousMixedContent object) {
-				return createVariousMixedContentAdapter();
-			}
-			@Override
-			public Adapter caseVertex(Vertex object) {
-				return createVertexAdapter();
-			}
-			@Override
-			public Adapter caseVocabularyCodeRef(VocabularyCodeRef object) {
-				return createVocabularyCodeRefAdapter();
-			}
-			@Override
-			public Adapter caseVocabularyCodeRefs(VocabularyCodeRefs object) {
-				return createVocabularyCodeRefsAdapter();
-			}
-			@Override
-			public Adapter caseVocabularyLimitation(VocabularyLimitation object) {
-				return createVocabularyLimitationAdapter();
-			}
-			@Override
-			public Adapter caseVocabularyModel(VocabularyModel object) {
-				return createVocabularyModelAdapter();
-			}
-			@Override
-			public Adapter caseVocabularyModelAnnotations(VocabularyModelAnnotations object) {
-				return createVocabularyModelAnnotationsAdapter();
-			}
-			@Override
-			public Adapter caseVocabularyModelAppInfo(VocabularyModelAppInfo object) {
-				return createVocabularyModelAppInfoAdapter();
-			}
-			@Override
-			public Adapter caseVocabularyModelDocumentation(VocabularyModelDocumentation object) {
-				return createVocabularyModelDocumentationAdapter();
-			}
-			@Override
-			public Adapter caseVocabularySpecification(VocabularySpecification object) {
-				return createVocabularySpecificationAdapter();
-			}
-			@Override
-			public Adapter caseVocabularyValueSetBinding(VocabularyValueSetBinding object) {
-				return createVocabularyValueSetBindingAdapter();
-			}
-			@Override
-			public Adapter caseVocabularyValueSetRef(VocabularyValueSetRef object) {
-				return createVocabularyValueSetRefAdapter();
-			}
-			@Override
-			public Adapter caseXMIContent(XMIContent object) {
-				return createXMIContentAdapter();
-			}
-			@Override
-			public Adapter caseFlow(Flow object) {
-				return createFlowAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected Mif2Switch<Adapter> modelSwitch = new Mif2Switch<Adapter>() {
+		@Override
+		public Adapter caseAddElementContent(AddElementContent object) {
+			return createAddElementContentAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationBase(AnnotationBase object) {
+			return createAnnotationBaseAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationCascadeInfo(AnnotationCascadeInfo object) {
+			return createAnnotationCascadeInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotationDerivation(AnnotationDerivation object) {
+			return createAnnotationDerivationAdapter();
+		}
+
+		@Override
+		public Adapter caseAnnotations(Annotations object) {
+			return createAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseAppendix(Appendix object) {
+			return createAppendixAdapter();
+		}
+
+		@Override
+		public Adapter caseAppInfo(AppInfo object) {
+			return createAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseApplicationRole(ApplicationRole object) {
+			return createApplicationRoleAdapter();
+		}
+
+		@Override
+		public Adapter caseApplicationRoleAnnotations(ApplicationRoleAnnotations object) {
+			return createApplicationRoleAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseApplicationRoleAppInfo(ApplicationRoleAppInfo object) {
+			return createApplicationRoleAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseApplicationRoleDocumentation(ApplicationRoleDocumentation object) {
+			return createApplicationRoleDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseAppliedTemplateGroup(AppliedTemplateGroup object) {
+			return createAppliedTemplateGroupAdapter();
+		}
+
+		@Override
+		public Adapter caseApprovalInfo(ApprovalInfo object) {
+			return createApprovalInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseArtifactCrossReference(ArtifactCrossReference object) {
+			return createArtifactCrossReferenceAdapter();
+		}
+
+		@Override
+		public Adapter caseArtifactDependency(ArtifactDependency object) {
+			return createArtifactDependencyAdapter();
+		}
+
+		@Override
+		public Adapter caseArtifactSupplement(ArtifactSupplement object) {
+			return createArtifactSupplementAdapter();
+		}
+
+		@Override
+		public Adapter caseArtifactSupplementAnnotations(ArtifactSupplementAnnotations object) {
+			return createArtifactSupplementAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseArtifactSupplementAppInfo(ArtifactSupplementAppInfo object) {
+			return createArtifactSupplementAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseArtifactSupplementDocumentation(ArtifactSupplementDocumentation object) {
+			return createArtifactSupplementDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseArtifactXRefSummary(ArtifactXRefSummary object) {
+			return createArtifactXRefSummaryAdapter();
+		}
+
+		@Override
+		public Adapter caseAssociation(Association object) {
+			return createAssociationAdapter();
+		}
+
+		@Override
+		public Adapter caseAssociationAnnotations(AssociationAnnotations object) {
+			return createAssociationAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseAssociationAppInfo(AssociationAppInfo object) {
+			return createAssociationAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseAssociationBase(AssociationBase object) {
+			return createAssociationBaseAdapter();
+		}
+
+		@Override
+		public Adapter caseAssociationDocumentation(AssociationDocumentation object) {
+			return createAssociationDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseAssociationEnd(AssociationEnd object) {
+			return createAssociationEndAdapter();
+		}
+
+		@Override
+		public Adapter caseAssociationEndAnnotations(AssociationEndAnnotations object) {
+			return createAssociationEndAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseAssociationEndAppInfo(AssociationEndAppInfo object) {
+			return createAssociationEndAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseAssociationEndBase(AssociationEndBase object) {
+			return createAssociationEndBaseAdapter();
+		}
+
+		@Override
+		public Adapter caseAssociationEndDerivation(AssociationEndDerivation object) {
+			return createAssociationEndDerivationAdapter();
+		}
+
+		@Override
+		public Adapter caseAssociationEndDocumentation(AssociationEndDocumentation object) {
+			return createAssociationEndDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseAssociationEndSpecialization(AssociationEndSpecialization object) {
+			return createAssociationEndSpecializationAdapter();
+		}
+
+		@Override
+		public Adapter caseAssociationEndWithClass(AssociationEndWithClass object) {
+			return createAssociationEndWithClassAdapter();
+		}
+
+		@Override
+		public Adapter caseAssociationEndWithClassRef(AssociationEndWithClassRef object) {
+			return createAssociationEndWithClassRefAdapter();
+		}
+
+		@Override
+		public Adapter caseAttribute(Attribute object) {
+			return createAttributeAdapter();
+		}
+
+		@Override
+		public Adapter caseAttributeAnnotations(AttributeAnnotations object) {
+			return createAttributeAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseAttributeAppInfo(AttributeAppInfo object) {
+			return createAttributeAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseAttributeContent(AttributeContent object) {
+			return createAttributeContentAdapter();
+		}
+
+		@Override
+		public Adapter caseAttributeDerivation(AttributeDerivation object) {
+			return createAttributeDerivationAdapter();
+		}
+
+		@Override
+		public Adapter caseAttributeDocumentation(AttributeDocumentation object) {
+			return createAttributeDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseAttributeProperty(AttributeProperty object) {
+			return createAttributePropertyAdapter();
+		}
+
+		@Override
+		public Adapter caseAttributeRef(AttributeRef object) {
+			return createAttributeRefAdapter();
+		}
+
+		@Override
+		public Adapter caseAttributeValueRef(AttributeValueRef object) {
+			return createAttributeValueRefAdapter();
+		}
+
+		@Override
+		public Adapter caseBallotComment(BallotComment object) {
+			return createBallotCommentAdapter();
+		}
+
+		@Override
+		public Adapter caseBallotCommentResolution(BallotCommentResolution object) {
+			return createBallotCommentResolutionAdapter();
+		}
+
+		@Override
+		public Adapter caseBallotSubmission(BallotSubmission object) {
+			return createBallotSubmissionAdapter();
+		}
+
+		@Override
+		public Adapter caseBasicAnnotation(BasicAnnotation object) {
+			return createBasicAnnotationAdapter();
+		}
+
+		@Override
+		public Adapter caseBindingRealm(BindingRealm object) {
+			return createBindingRealmAdapter();
+		}
+
+		@Override
+		public Adapter caseBoundStaticModel(BoundStaticModel object) {
+			return createBoundStaticModelAdapter();
+		}
+
+		@Override
+		public Adapter caseBusinessName(BusinessName object) {
+			return createBusinessNameAdapter();
+		}
+
+		@Override
+		public Adapter caseCascadableAnnotation(CascadableAnnotation object) {
+			return createCascadableAnnotationAdapter();
+		}
+
+		@Override
+		public Adapter caseChange(Change object) {
+			return createChangeAdapter();
+		}
+
+		@Override
+		public Adapter caseChangeRequest(ChangeRequest object) {
+			return createChangeRequestAdapter();
+		}
+
+		@Override
+		public Adapter caseChangeRequestEstimate(ChangeRequestEstimate object) {
+			return createChangeRequestEstimateAdapter();
+		}
+
+		@Override
+		public Adapter caseClassAnnotations(ClassAnnotations object) {
+			return createClassAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseClassAppInfo(ClassAppInfo object) {
+			return createClassAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseClassBase(ClassBase object) {
+			return createClassBaseAdapter();
+		}
+
+		@Override
+		public Adapter caseClassBindingArgument(ClassBindingArgument object) {
+			return createClassBindingArgumentAdapter();
+		}
+
+		@Override
+		public Adapter caseClassBindingArgumentBase(ClassBindingArgumentBase object) {
+			return createClassBindingArgumentBaseAdapter();
+		}
+
+		@Override
+		public Adapter caseClassDerivation(ClassDerivation object) {
+			return createClassDerivationAdapter();
+		}
+
+		@Override
+		public Adapter caseClassDocumentation(ClassDocumentation object) {
+			return createClassDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseClassElement(ClassElement object) {
+			return createClassElementAdapter();
+		}
+
+		@Override
+		public Adapter caseClassGeneralization(ClassGeneralization object) {
+			return createClassGeneralizationAdapter();
+		}
+
+		@Override
+		public Adapter caseClassGeneralizationBase(ClassGeneralizationBase object) {
+			return createClassGeneralizationBaseAdapter();
+		}
+
+		@Override
+		public Adapter caseClassGraphicInformation(ClassGraphicInformation object) {
+			return createClassGraphicInformationAdapter();
+		}
+
+		@Override
+		public Adapter caseClassifier(Classifier object) {
+			return createClassifierAdapter();
+		}
+
+		@Override
+		public Adapter caseClassifierBase(ClassifierBase object) {
+			return createClassifierBaseAdapter();
+		}
+
+		@Override
+		public Adapter caseClassOrReference(ClassOrReference object) {
+			return createClassOrReferenceAdapter();
+		}
+
+		@Override
+		public Adapter caseClassRef(ClassRef object) {
+			return createClassRefAdapter();
+		}
+
+		@Override
+		public Adapter caseClassStubInterface(ClassStubInterface object) {
+			return createClassStubInterfaceAdapter();
+		}
+
+		@Override
+		public Adapter caseClassStubInterfaceAnnotations(ClassStubInterfaceAnnotations object) {
+			return createClassStubInterfaceAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseClassStubInterfaceAppInfo(ClassStubInterfaceAppInfo object) {
+			return createClassStubInterfaceAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseClassStubInterfaceDocumentation(ClassStubInterfaceDocumentation object) {
+			return createClassStubInterfaceDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseCode(Code object) {
+			return createCodeAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeBasedContentDefinition(CodeBasedContentDefinition object) {
+			return createCodeBasedContentDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeFilterContentDefinition(CodeFilterContentDefinition object) {
+			return createCodeFilterContentDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeIcon(CodeIcon object) {
+			return createCodeIconAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeSupplement(CodeSupplement object) {
+			return createCodeSupplementAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeSystem(CodeSystem object) {
+			return createCodeSystemAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeSystemAnnotations(CodeSystemAnnotations object) {
+			return createCodeSystemAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeSystemAppInfo(CodeSystemAppInfo object) {
+			return createCodeSystemAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeSystemBase(CodeSystemBase object) {
+			return createCodeSystemBaseAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeSystemDocumentation(CodeSystemDocumentation object) {
+			return createCodeSystemDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeSystemRef(CodeSystemRef object) {
+			return createCodeSystemRefAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeSystemSupplement(CodeSystemSupplement object) {
+			return createCodeSystemSupplementAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeSystemVersion(CodeSystemVersion object) {
+			return createCodeSystemVersionAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeSystemVersionAnnotations(CodeSystemVersionAnnotations object) {
+			return createCodeSystemVersionAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeSystemVersionAppInfo(CodeSystemVersionAppInfo object) {
+			return createCodeSystemVersionAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeSystemVersionBase(CodeSystemVersionBase object) {
+			return createCodeSystemVersionBaseAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeSystemVersionDocumentation(CodeSystemVersionDocumentation object) {
+			return createCodeSystemVersionDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeSystemVersionSupplement(CodeSystemVersionSupplement object) {
+			return createCodeSystemVersionSupplementAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeTranslation(CodeTranslation object) {
+			return createCodeTranslationAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeTranslationAnnotations(CodeTranslationAnnotations object) {
+			return createCodeTranslationAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeTranslationAppInfo(CodeTranslationAppInfo object) {
+			return createCodeTranslationAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeTranslationCollection(CodeTranslationCollection object) {
+			return createCodeTranslationCollectionAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeTranslationCollectionAnnotations(CodeTranslationCollectionAnnotations object) {
+			return createCodeTranslationCollectionAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeTranslationCollectionAppInfo(CodeTranslationCollectionAppInfo object) {
+			return createCodeTranslationCollectionAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeTranslationCollectionDocumentation(CodeTranslationCollectionDocumentation object) {
+			return createCodeTranslationCollectionDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseCodeTranslationDocumentation(CodeTranslationDocumentation object) {
+			return createCodeTranslationDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseCombinedContentDefinition(CombinedContentDefinition object) {
+			return createCombinedContentDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter caseCommitteeReference(CommitteeReference object) {
+			return createCommitteeReferenceAdapter();
+		}
+
+		@Override
+		public Adapter caseCommonModelElementDefinition(CommonModelElementDefinition object) {
+			return createCommonModelElementDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter caseCommonModelElementRef(CommonModelElementRef object) {
+			return createCommonModelElementRefAdapter();
+		}
+
+		@Override
+		public Adapter caseCommonModelElementRefAnnotations(CommonModelElementRefAnnotations object) {
+			return createCommonModelElementRefAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseCommonModelElementRefAppInfo(CommonModelElementRefAppInfo object) {
+			return createCommonModelElementRefAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseCommonModelElementRefBase(CommonModelElementRefBase object) {
+			return createCommonModelElementRefBaseAdapter();
+		}
+
+		@Override
+		public Adapter caseCommonModelElementRefDocumentation(CommonModelElementRefDocumentation object) {
+			return createCommonModelElementRefDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseComplexMarkupWithLanguage(ComplexMarkupWithLanguage object) {
+			return createComplexMarkupWithLanguageAdapter();
+		}
+
+		@Override
+		public Adapter caseConcept(Concept object) {
+			return createConceptAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptAnnotations(ConceptAnnotations object) {
+			return createConceptAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptAppInfo(ConceptAppInfo object) {
+			return createConceptAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptBase(ConceptBase object) {
+			return createConceptBaseAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptDocumentation(ConceptDocumentation object) {
+			return createConceptDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptDomain(ConceptDomain object) {
+			return createConceptDomainAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptDomainAnnotations(ConceptDomainAnnotations object) {
+			return createConceptDomainAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptDomainAppInfo(ConceptDomainAppInfo object) {
+			return createConceptDomainAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptDomainDocumentation(ConceptDomainDocumentation object) {
+			return createConceptDomainDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptDomainProperty(ConceptDomainProperty object) {
+			return createConceptDomainPropertyAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptDomainRef(ConceptDomainRef object) {
+			return createConceptDomainRefAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptProperty(ConceptProperty object) {
+			return createConceptPropertyAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptPropertyRef(ConceptPropertyRef object) {
+			return createConceptPropertyRefAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptRef(ConceptRef object) {
+			return createConceptRefAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptRelationship(ConceptRelationship object) {
+			return createConceptRelationshipAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptSupplement(ConceptSupplement object) {
+			return createConceptSupplementAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptSupplementAnnotations(ConceptSupplementAnnotations object) {
+			return createConceptSupplementAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptSupplementAppInfo(ConceptSupplementAppInfo object) {
+			return createConceptSupplementAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptSupplementDocumentation(ConceptSupplementDocumentation object) {
+			return createConceptSupplementDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseConceptUse(ConceptUse object) {
+			return createConceptUseAdapter();
+		}
+
+		@Override
+		public Adapter caseConformanceProfile(ConformanceProfile object) {
+			return createConformanceProfileAdapter();
+		}
+
+		@Override
+		public Adapter caseConformanceProfileAnnotations(ConformanceProfileAnnotations object) {
+			return createConformanceProfileAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseConformanceProfileAppInfo(ConformanceProfileAppInfo object) {
+			return createConformanceProfileAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseConformanceProfileDocumentation(ConformanceProfileDocumentation object) {
+			return createConformanceProfileDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseConformanceTriggerEvents(ConformanceTriggerEvents object) {
+			return createConformanceTriggerEventsAdapter();
+		}
+
+		@Override
+		public Adapter caseContainedGraphNode(ContainedGraphNode object) {
+			return createContainedGraphNodeAdapter();
+		}
+
+		@Override
+		public Adapter caseContentDefinition(ContentDefinition object) {
+			return createContentDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter caseContentDefinitionAnnotations(ContentDefinitionAnnotations object) {
+			return createContentDefinitionAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseContentDefinitionAppInfo(ContentDefinitionAppInfo object) {
+			return createContentDefinitionAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseContentDefinitionDocumentation(ContentDefinitionDocumentation object) {
+			return createContentDefinitionDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseContextAnnotation(ContextAnnotation object) {
+			return createContextAnnotationAdapter();
+		}
+
+		@Override
+		public Adapter caseContextBinding(ContextBinding object) {
+			return createContextBindingAdapter();
+		}
+
+		@Override
+		public Adapter caseContributor(Contributor object) {
+			return createContributorAdapter();
+		}
+
+		@Override
+		public Adapter caseDatatype(Datatype object) {
+			return createDatatypeAdapter();
+		}
+
+		@Override
+		public Adapter caseDatatypeAnnotations(DatatypeAnnotations object) {
+			return createDatatypeAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseDatatypeAppInfo(DatatypeAppInfo object) {
+			return createDatatypeAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseDatatypeBinding(DatatypeBinding object) {
+			return createDatatypeBindingAdapter();
+		}
+
+		@Override
+		public Adapter caseDatatypeDerivation(DatatypeDerivation object) {
+			return createDatatypeDerivationAdapter();
+		}
+
+		@Override
+		public Adapter caseDatatypeDocumentation(DatatypeDocumentation object) {
+			return createDatatypeDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseDatatypeImport(DatatypeImport object) {
+			return createDatatypeImportAdapter();
+		}
+
+		@Override
+		public Adapter caseDatatypeLimitation(DatatypeLimitation object) {
+			return createDatatypeLimitationAdapter();
+		}
+
+		@Override
+		public Adapter caseDatatypeModelLibrary(DatatypeModelLibrary object) {
+			return createDatatypeModelLibraryAdapter();
+		}
+
+		@Override
+		public Adapter caseDatatypeOperation(DatatypeOperation object) {
+			return createDatatypeOperationAdapter();
+		}
+
+		@Override
+		public Adapter caseDatatypeParameter(DatatypeParameter object) {
+			return createDatatypeParameterAdapter();
+		}
+
+		@Override
+		public Adapter caseDatatypeRef(DatatypeRef object) {
+			return createDatatypeRefAdapter();
+		}
+
+		@Override
+		public Adapter caseDatatypeTemplateParameter(DatatypeTemplateParameter object) {
+			return createDatatypeTemplateParameterAdapter();
+		}
+
+		@Override
+		public Adapter caseDependency(Dependency object) {
+			return createDependencyAdapter();
+		}
+
+		@Override
+		public Adapter caseDeprecationInfo(DeprecationInfo object) {
+			return createDeprecationInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseDerivation(Derivation object) {
+			return createDerivationAdapter();
+		}
+
+		@Override
+		public Adapter caseDerivedStaticModel(DerivedStaticModel object) {
+			return createDerivedStaticModelAdapter();
+		}
+
+		@Override
+		public Adapter caseDerivedStaticModelsType(DerivedStaticModelsType object) {
+			return createDerivedStaticModelsTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseDesignComment(DesignComment object) {
+			return createDesignCommentAdapter();
+		}
+
+		@Override
+		public Adapter caseDiagram(Diagram object) {
+			return createDiagramAdapter();
+		}
+
+		@Override
+		public Adapter caseDiagramElement(DiagramElement object) {
+			return createDiagramElementAdapter();
+		}
+
+		@Override
+		public Adapter caseDiagramGraphicInformation(DiagramGraphicInformation object) {
+			return createDiagramGraphicInformationAdapter();
+		}
+
+		@Override
+		public Adapter caseDimension(Dimension object) {
+			return createDimensionAdapter();
+		}
+
+		@Override
+		public Adapter caseDocumentation(Documentation object) {
+			return createDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseDocumentProfile(DocumentProfile object) {
+			return createDocumentProfileAdapter();
+		}
+
+		@Override
+		public Adapter caseDocumentProfileAnnotations(DocumentProfileAnnotations object) {
+			return createDocumentProfileAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseDocumentProfileAppInfo(DocumentProfileAppInfo object) {
+			return createDocumentProfileAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseDocumentProfileDocumentation(DocumentProfileDocumentation object) {
+			return createDocumentProfileDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseDocumentRoot(DocumentRoot object) {
+			return createDocumentRootAdapter();
+		}
+
+		@Override
+		public Adapter caseDocumentTest(DocumentTest object) {
+			return createDocumentTestAdapter();
+		}
+
+		@Override
+		public Adapter caseDomainAnalysisModel(DomainAnalysisModel object) {
+			return createDomainAnalysisModelAdapter();
+		}
+
+		@Override
+		public Adapter caseDomainAnalysisModelAnnotations(DomainAnalysisModelAnnotations object) {
+			return createDomainAnalysisModelAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseDomainAnalysisModelAppInfo(DomainAnalysisModelAppInfo object) {
+			return createDomainAnalysisModelAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseDomainAnalysisModelDocumentation(DomainAnalysisModelDocumentation object) {
+			return createDomainAnalysisModelDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseDomainInstanceExample(DomainInstanceExample object) {
+			return createDomainInstanceExampleAdapter();
+		}
+
+		@Override
+		public Adapter caseDomainInstanceExampleAnnotations(DomainInstanceExampleAnnotations object) {
+			return createDomainInstanceExampleAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseDomainInstanceExampleAppInfo(DomainInstanceExampleAppInfo object) {
+			return createDomainInstanceExampleAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseDomainInstanceExampleDocumentation(DomainInstanceExampleDocumentation object) {
+			return createDomainInstanceExampleDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseElementChange(ElementChange object) {
+			return createElementChangeAdapter();
+		}
+
+		@Override
+		public Adapter caseElementDerivation(ElementDerivation object) {
+			return createElementDerivationAdapter();
+		}
+
+		@Override
+		public Adapter caseElementRef(ElementRef object) {
+			return createElementRefAdapter();
+		}
+
+		@Override
+		public Adapter caseElementValueRef(ElementValueRef object) {
+			return createElementValueRefAdapter();
+		}
+
+		@Override
+		public Adapter caseEntryPoint(EntryPoint object) {
+			return createEntryPointAdapter();
+		}
+
+		@Override
+		public Adapter caseEntryPointAnnotations(EntryPointAnnotations object) {
+			return createEntryPointAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseEntryPointAppInfo(EntryPointAppInfo object) {
+			return createEntryPointAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseEntryPointBase(EntryPointBase object) {
+			return createEntryPointBaseAdapter();
+		}
+
+		@Override
+		public Adapter caseEntryPointDocumentation(EntryPointDocumentation object) {
+			return createEntryPointDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseEnvironmentalOccurrence(EnvironmentalOccurrence object) {
+			return createEnvironmentalOccurrenceAdapter();
+		}
+
+		@Override
+		public Adapter caseExampleInteraction(ExampleInteraction object) {
+			return createExampleInteractionAdapter();
+		}
+
+		@Override
+		public Adapter caseExampleSystem(ExampleSystem object) {
+			return createExampleSystemAdapter();
+		}
+
+		@Override
+		public Adapter caseExampleType(ExampleType object) {
+			return createExampleTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseFeature(Feature object) {
+			return createFeatureAdapter();
+		}
+
+		@Override
+		public Adapter caseFlatClass(FlatClass object) {
+			return createFlatClassAdapter();
+		}
+
+		@Override
+		public Adapter caseFormalConstraint(FormalConstraint object) {
+			return createFormalConstraintAdapter();
+		}
+
+		@Override
+		public Adapter caseFormalExpression(FormalExpression object) {
+			return createFormalExpressionAdapter();
+		}
+
+		@Override
+		public Adapter caseFreeFormMarkupWithLanguage(FreeFormMarkupWithLanguage object) {
+			return createFreeFormMarkupWithLanguageAdapter();
+		}
+
+		@Override
+		public Adapter caseFreehandDocument(FreehandDocument object) {
+			return createFreehandDocumentAdapter();
+		}
+
+		@Override
+		public Adapter caseFreehandDocumentAnnotations(FreehandDocumentAnnotations object) {
+			return createFreehandDocumentAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseFreehandDocumentAppInfo(FreehandDocumentAppInfo object) {
+			return createFreehandDocumentAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseFreehandDocumentDocumentation(FreehandDocumentDocumentation object) {
+			return createFreehandDocumentDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseGeneralizationAnnotations(GeneralizationAnnotations object) {
+			return createGeneralizationAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseGeneralizationAppInfo(GeneralizationAppInfo object) {
+			return createGeneralizationAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseGeneralizationDocumentation(GeneralizationDocumentation object) {
+			return createGeneralizationDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseGenericPackage(GenericPackage object) {
+			return createGenericPackageAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalApplicationRole(GlobalApplicationRole object) {
+			return createGlobalApplicationRoleAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalArtifactXRefSummary(GlobalArtifactXRefSummary object) {
+			return createGlobalArtifactXRefSummaryAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalCodeSystem(GlobalCodeSystem object) {
+			return createGlobalCodeSystemAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalCodeSystemSupplement(GlobalCodeSystemSupplement object) {
+			return createGlobalCodeSystemSupplementAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalConformanceProfile(GlobalConformanceProfile object) {
+			return createGlobalConformanceProfileAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalDatatypeModelLibrary(GlobalDatatypeModelLibrary object) {
+			return createGlobalDatatypeModelLibraryAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalDerivedStaticModel(GlobalDerivedStaticModel object) {
+			return createGlobalDerivedStaticModelAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalDomainAnalysisModel(GlobalDomainAnalysisModel object) {
+			return createGlobalDomainAnalysisModelAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalDomainInstanceExample(GlobalDomainInstanceExample object) {
+			return createGlobalDomainInstanceExampleAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalFreehandDocument(GlobalFreehandDocument object) {
+			return createGlobalFreehandDocumentAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalGenericPackage(GlobalGenericPackage object) {
+			return createGlobalGenericPackageAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalGlossary(GlobalGlossary object) {
+			return createGlobalGlossaryAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalInteraction(GlobalInteraction object) {
+			return createGlobalInteractionAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalInteractionProfile(GlobalInteractionProfile object) {
+			return createGlobalInteractionProfileAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalMifChanges(GlobalMifChanges object) {
+			return createGlobalMifChangesAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalPublicationPackage(GlobalPublicationPackage object) {
+			return createGlobalPublicationPackageAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalSerializedStaticModel(GlobalSerializedStaticModel object) {
+			return createGlobalSerializedStaticModelAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalStaticModel(GlobalStaticModel object) {
+			return createGlobalStaticModelAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalStaticModelInterfacePackage(GlobalStaticModelInterfacePackage object) {
+			return createGlobalStaticModelInterfacePackageAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalStoryboard(GlobalStoryboard object) {
+			return createGlobalStoryboardAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalStructuredDocument(GlobalStructuredDocument object) {
+			return createGlobalStructuredDocumentAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalTestScenario(GlobalTestScenario object) {
+			return createGlobalTestScenarioAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalTriggerEvent(GlobalTriggerEvent object) {
+			return createGlobalTriggerEventAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalValueSet(GlobalValueSet object) {
+			return createGlobalValueSetAdapter();
+		}
+
+		@Override
+		public Adapter caseGlobalVocabularyModel(GlobalVocabularyModel object) {
+			return createGlobalVocabularyModelAdapter();
+		}
+
+		@Override
+		public Adapter caseGlossary(Glossary object) {
+			return createGlossaryAdapter();
+		}
+
+		@Override
+		public Adapter caseGraphConnector(GraphConnector object) {
+			return createGraphConnectorAdapter();
+		}
+
+		@Override
+		public Adapter caseGraphConnectorWithEdge(GraphConnectorWithEdge object) {
+			return createGraphConnectorWithEdgeAdapter();
+		}
+
+		@Override
+		public Adapter caseGraphEdge(GraphEdge object) {
+			return createGraphEdgeAdapter();
+		}
+
+		@Override
+		public Adapter caseGraphEdgeGraphicInformation(GraphEdgeGraphicInformation object) {
+			return createGraphEdgeGraphicInformationAdapter();
+		}
+
+		@Override
+		public Adapter caseGraphEdgeWithAnchor(GraphEdgeWithAnchor object) {
+			return createGraphEdgeWithAnchorAdapter();
+		}
+
+		@Override
+		public Adapter caseGraphElement(GraphElement object) {
+			return createGraphElementAdapter();
+		}
+
+		@Override
+		public Adapter caseGraphicInformation(GraphicInformation object) {
+			return createGraphicInformationAdapter();
+		}
+
+		@Override
+		public Adapter caseGraphNode(GraphNode object) {
+			return createGraphNodeAdapter();
+		}
+
+		@Override
+		public Adapter caseGraphNodeWithOptionalConnection(GraphNodeWithOptionalConnection object) {
+			return createGraphNodeWithOptionalConnectionAdapter();
+		}
+
+		@Override
+		public Adapter caseGroupChange(GroupChange object) {
+			return createGroupChangeAdapter();
+		}
+
+		@Override
+		public Adapter caseGroupVote(GroupVote object) {
+			return createGroupVoteAdapter();
+		}
+
+		@Override
+		public Adapter caseHeader(Header object) {
+			return createHeaderAdapter();
+		}
+
+		@Override
+		public Adapter caseHistoryItem(HistoryItem object) {
+			return createHistoryItemAdapter();
+		}
+
+		@Override
+		public Adapter caseImplementationConstraints(ImplementationConstraints object) {
+			return createImplementationConstraintsAdapter();
+		}
+
+		@Override
+		public Adapter caseImplementationMessageConstraints(ImplementationMessageConstraints object) {
+			return createImplementationMessageConstraintsAdapter();
+		}
+
+		@Override
+		public Adapter caseImportDatatypeModelLibrary(ImportDatatypeModelLibrary object) {
+			return createImportDatatypeModelLibraryAdapter();
+		}
+
+		@Override
+		public Adapter caseIncludeRelatedCodes(IncludeRelatedCodes object) {
+			return createIncludeRelatedCodesAdapter();
+		}
+
+		@Override
+		public Adapter caseInteraction(Interaction object) {
+			return createInteractionAdapter();
+		}
+
+		@Override
+		public Adapter caseInteractionAnnotations(InteractionAnnotations object) {
+			return createInteractionAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseInteractionAppInfo(InteractionAppInfo object) {
+			return createInteractionAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseInteractionDocumentation(InteractionDocumentation object) {
+			return createInteractionDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseInteractionProfile(InteractionProfile object) {
+			return createInteractionProfileAdapter();
+		}
+
+		@Override
+		public Adapter caseInteractionProfileAnnotations(InteractionProfileAnnotations object) {
+			return createInteractionProfileAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseInteractionProfileAppInfo(InteractionProfileAppInfo object) {
+			return createInteractionProfileAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseInteractionProfileDocumentation(InteractionProfileDocumentation object) {
+			return createInteractionProfileDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseInteractionTest(InteractionTest object) {
+			return createInteractionTestAdapter();
+		}
+
+		@Override
+		public Adapter caseInterface(Interface object) {
+			return createInterfaceAdapter();
+		}
+
+		@Override
+		public Adapter caseItemFilter(ItemFilter object) {
+			return createItemFilterAdapter();
+		}
+
+		@Override
+		public Adapter caseKeyedName(KeyedName object) {
+			return createKeyedNameAdapter();
+		}
+
+		@Override
+		public Adapter caseLegalese(Legalese object) {
+			return createLegaleseAdapter();
+		}
+
+		@Override
+		public Adapter caseLocalClassRef(LocalClassRef object) {
+			return createLocalClassRefAdapter();
+		}
+
+		@Override
+		public Adapter caseLocalClassReference(LocalClassReference object) {
+			return createLocalClassReferenceAdapter();
+		}
+
+		@Override
+		public Adapter caseMapping(Mapping object) {
+			return createMappingAdapter();
+		}
+
+		@Override
+		public Adapter caseMifChanges(MifChanges object) {
+			return createMifChangesAdapter();
+		}
+
+		@Override
+		public Adapter caseMifContent(MifContent object) {
+			return createMifContentAdapter();
+		}
+
+		@Override
+		public Adapter caseModelElement(ModelElement object) {
+			return createModelElementAdapter();
+		}
+
+		@Override
+		public Adapter caseNodeGraphicInformation(NodeGraphicInformation object) {
+			return createNodeGraphicInformationAdapter();
+		}
+
+		@Override
+		public Adapter caseNodeWithConnectionGraphicInformation(NodeWithConnectionGraphicInformation object) {
+			return createNodeWithConnectionGraphicInformationAdapter();
+		}
+
+		@Override
+		public Adapter caseNonComputableContentDefinition(NonComputableContentDefinition object) {
+			return createNonComputableContentDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter caseNonTraversableAssociationEnd(NonTraversableAssociationEnd object) {
+			return createNonTraversableAssociationEndAdapter();
+		}
+
+		@Override
+		public Adapter caseOpenIssue(OpenIssue object) {
+			return createOpenIssueAdapter();
+		}
+
+		@Override
+		public Adapter caseOperationAnnotations(OperationAnnotations object) {
+			return createOperationAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseOperationAppInfo(OperationAppInfo object) {
+			return createOperationAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseOperationDerivation(OperationDerivation object) {
+			return createOperationDerivationAdapter();
+		}
+
+		@Override
+		public Adapter caseOperationDocumentation(OperationDocumentation object) {
+			return createOperationDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseOperationParameter(OperationParameter object) {
+			return createOperationParameterAdapter();
+		}
+
+		@Override
+		public Adapter caseOtherAnnotation(OtherAnnotation object) {
+			return createOtherAnnotationAdapter();
+		}
+
+		@Override
+		public Adapter casePackage(org.openhealthtools.mdht.emf.hl7.mif2.Package object) {
+			return createPackageAdapter();
+		}
+
+		@Override
+		public Adapter casePackageAnnotations(PackageAnnotations object) {
+			return createPackageAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter casePackageAppInfo(PackageAppInfo object) {
+			return createPackageAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter casePackageArtifact(PackageArtifact object) {
+			return createPackageArtifactAdapter();
+		}
+
+		@Override
+		public Adapter casePackageBase(PackageBase object) {
+			return createPackageBaseAdapter();
+		}
+
+		@Override
+		public Adapter casePackageContent(PackageContent object) {
+			return createPackageContentAdapter();
+		}
+
+		@Override
+		public Adapter casePackageDefId(PackageDefId object) {
+			return createPackageDefIdAdapter();
+		}
+
+		@Override
+		public Adapter casePackageDerivation(PackageDerivation object) {
+			return createPackageDerivationAdapter();
+		}
+
+		@Override
+		public Adapter casePackageDocumentation(PackageDocumentation object) {
+			return createPackageDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter casePackageOrArtifactRef(PackageOrArtifactRef object) {
+			return createPackageOrArtifactRefAdapter();
+		}
+
+		@Override
+		public Adapter casePackageRef(PackageRef object) {
+			return createPackageRefAdapter();
+		}
+
+		@Override
+		public Adapter caseParameterModel(ParameterModel object) {
+			return createParameterModelAdapter();
+		}
+
+		@Override
+		public Adapter casePoint(Point object) {
+			return createPointAdapter();
+		}
+
+		@Override
+		public Adapter casePrintName(PrintName object) {
+			return createPrintNameAdapter();
+		}
+
+		@Override
+		public Adapter casePropertyBasedContentDefinition(PropertyBasedContentDefinition object) {
+			return createPropertyBasedContentDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter casePropertyGroup(PropertyGroup object) {
+			return createPropertyGroupAdapter();
+		}
+
+		@Override
+		public Adapter casePublicationAnnotations(PublicationAnnotations object) {
+			return createPublicationAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter casePublicationAppInfo(PublicationAppInfo object) {
+			return createPublicationAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter casePublicationBase(PublicationBase object) {
+			return createPublicationBaseAdapter();
+		}
+
+		@Override
+		public Adapter casePublicationDocumentation(PublicationDocumentation object) {
+			return createPublicationDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter casePublicationGroup(PublicationGroup object) {
+			return createPublicationGroupAdapter();
+		}
+
+		@Override
+		public Adapter casePublicationItem(PublicationItem object) {
+			return createPublicationItemAdapter();
+		}
+
+		@Override
+		public Adapter casePublicationPackage(PublicationPackage object) {
+			return createPublicationPackageAdapter();
+		}
+
+		@Override
+		public Adapter caseRangeDefinition(RangeDefinition object) {
+			return createRangeDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter caseRealmElement(RealmElement object) {
+			return createRealmElementAdapter();
+		}
+
+		@Override
+		public Adapter caseReceiverResponsibility(ReceiverResponsibility object) {
+			return createReceiverResponsibilityAdapter();
+		}
+
+		@Override
+		public Adapter caseRelatedAppRole(RelatedAppRole object) {
+			return createRelatedAppRoleAdapter();
+		}
+
+		@Override
+		public Adapter caseRelationship(Relationship object) {
+			return createRelationshipAdapter();
+		}
+
+		@Override
+		public Adapter caseRelationshipBasedContentDefinition(RelationshipBasedContentDefinition object) {
+			return createRelationshipBasedContentDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter caseRelease(Release object) {
+			return createReleaseAdapter();
+		}
+
+		@Override
+		public Adapter caseReleaseList(ReleaseList object) {
+			return createReleaseListAdapter();
+		}
+
+		@Override
+		public Adapter caseRenderingInformation(RenderingInformation object) {
+			return createRenderingInformationAdapter();
+		}
+
+		@Override
+		public Adapter caseReplaceElementContent(ReplaceElementContent object) {
+			return createReplaceElementContentAdapter();
+		}
+
+		@Override
+		public Adapter caseResponsibleGroup(ResponsibleGroup object) {
+			return createResponsibleGroupAdapter();
+		}
+
+		@Override
+		public Adapter caseSerializedAssociationEnd(SerializedAssociationEnd object) {
+			return createSerializedAssociationEndAdapter();
+		}
+
+		@Override
+		public Adapter caseSerializedAssociationEnds(SerializedAssociationEnds object) {
+			return createSerializedAssociationEndsAdapter();
+		}
+
+		@Override
+		public Adapter caseSerializedClass(SerializedClass object) {
+			return createSerializedClassAdapter();
+		}
+
+		@Override
+		public Adapter caseSerializedClassBindingArgument(SerializedClassBindingArgument object) {
+			return createSerializedClassBindingArgumentAdapter();
+		}
+
+		@Override
+		public Adapter caseSerializedClasses(SerializedClasses object) {
+			return createSerializedClassesAdapter();
+		}
+
+		@Override
+		public Adapter caseSerializedClassGeneralization(SerializedClassGeneralization object) {
+			return createSerializedClassGeneralizationAdapter();
+		}
+
+		@Override
+		public Adapter caseSerializedCommonModelElementRef(SerializedCommonModelElementRef object) {
+			return createSerializedCommonModelElementRefAdapter();
+		}
+
+		@Override
+		public Adapter caseSerializedEntryPoint(SerializedEntryPoint object) {
+			return createSerializedEntryPointAdapter();
+		}
+
+		@Override
+		public Adapter caseSerializedStaticModel(SerializedStaticModel object) {
+			return createSerializedStaticModelAdapter();
+		}
+
+		@Override
+		public Adapter caseSerializedStaticModelsType(SerializedStaticModelsType object) {
+			return createSerializedStaticModelsTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseSpecializationClass(SpecializationClass object) {
+			return createSpecializationClassAdapter();
+		}
+
+		@Override
+		public Adapter caseState(State object) {
+			return createStateAdapter();
+		}
+
+		@Override
+		public Adapter caseStateAnnotations(StateAnnotations object) {
+			return createStateAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseStateAppInfo(StateAppInfo object) {
+			return createStateAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseStateDerivation(StateDerivation object) {
+			return createStateDerivationAdapter();
+		}
+
+		@Override
+		public Adapter caseStateDocumentation(StateDocumentation object) {
+			return createStateDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseStateMachine(StateMachine object) {
+			return createStateMachineAdapter();
+		}
+
+		@Override
+		public Adapter caseStateMachineAnnotations(StateMachineAnnotations object) {
+			return createStateMachineAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseStateMachineAppInfo(StateMachineAppInfo object) {
+			return createStateMachineAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseStateMachineDocumentation(StateMachineDocumentation object) {
+			return createStateMachineDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseStaticExample(StaticExample object) {
+			return createStaticExampleAdapter();
+		}
+
+		@Override
+		public Adapter caseStaticModel(StaticModel object) {
+			return createStaticModelAdapter();
+		}
+
+		@Override
+		public Adapter caseStaticModelAnnotations(StaticModelAnnotations object) {
+			return createStaticModelAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseStaticModelAppInfo(StaticModelAppInfo object) {
+			return createStaticModelAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseStaticModelBase(StaticModelBase object) {
+			return createStaticModelBaseAdapter();
+		}
+
+		@Override
+		public Adapter caseStaticModelClassTemplateParameter(StaticModelClassTemplateParameter object) {
+			return createStaticModelClassTemplateParameterAdapter();
+		}
+
+		@Override
+		public Adapter caseStaticModelDerivation(StaticModelDerivation object) {
+			return createStaticModelDerivationAdapter();
+		}
+
+		@Override
+		public Adapter caseStaticModelDerivationSource(StaticModelDerivationSource object) {
+			return createStaticModelDerivationSourceAdapter();
+		}
+
+		@Override
+		public Adapter caseStaticModelDocumentation(StaticModelDocumentation object) {
+			return createStaticModelDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseStaticModelInterfaceAnnotations(StaticModelInterfaceAnnotations object) {
+			return createStaticModelInterfaceAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseStaticModelInterfaceAppInfo(StaticModelInterfaceAppInfo object) {
+			return createStaticModelInterfaceAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseStaticModelInterfaceDocumentation(StaticModelInterfaceDocumentation object) {
+			return createStaticModelInterfaceDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseStaticModelInterfacePackage(StaticModelInterfacePackage object) {
+			return createStaticModelInterfacePackageAdapter();
+		}
+
+		@Override
+		public Adapter caseStaticModelRefBase(StaticModelRefBase object) {
+			return createStaticModelRefBaseAdapter();
+		}
+
+		@Override
+		public Adapter caseStaticModelsType(StaticModelsType object) {
+			return createStaticModelsTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseStaticPackageDiagramGraphicInformation(StaticPackageDiagramGraphicInformation object) {
+			return createStaticPackageDiagramGraphicInformationAdapter();
+		}
+
+		@Override
+		public Adapter caseStoryboard(Storyboard object) {
+			return createStoryboardAdapter();
+		}
+
+		@Override
+		public Adapter caseStoryboardAnnotations(StoryboardAnnotations object) {
+			return createStoryboardAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseStoryboardAppInfo(StoryboardAppInfo object) {
+			return createStoryboardAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseStoryboardArtifactReferences(StoryboardArtifactReferences object) {
+			return createStoryboardArtifactReferencesAdapter();
+		}
+
+		@Override
+		public Adapter caseStoryboardDocumentation(StoryboardDocumentation object) {
+			return createStoryboardDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseStoryboardNarrative(StoryboardNarrative object) {
+			return createStoryboardNarrativeAdapter();
+		}
+
+		@Override
+		public Adapter caseStructuralFeature(StructuralFeature object) {
+			return createStructuralFeatureAdapter();
+		}
+
+		@Override
+		public Adapter caseStructuredDocument(StructuredDocument object) {
+			return createStructuredDocumentAdapter();
+		}
+
+		@Override
+		public Adapter caseStructuredDocumentAnnotations(StructuredDocumentAnnotations object) {
+			return createStructuredDocumentAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseStructuredDocumentAppInfo(StructuredDocumentAppInfo object) {
+			return createStructuredDocumentAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseStructuredDocumentDocumentation(StructuredDocumentDocumentation object) {
+			return createStructuredDocumentDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseStubDefinition(StubDefinition object) {
+			return createStubDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter caseSubjectAreaAnnotations(SubjectAreaAnnotations object) {
+			return createSubjectAreaAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseSubjectAreaAppInfo(SubjectAreaAppInfo object) {
+			return createSubjectAreaAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseSubjectAreaDocumentation(SubjectAreaDocumentation object) {
+			return createSubjectAreaDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseSubjectAreaPackage(SubjectAreaPackage object) {
+			return createSubjectAreaPackageAdapter();
+		}
+
+		@Override
+		public Adapter caseSubSystem(SubSystem object) {
+			return createSubSystemAdapter();
+		}
+
+		@Override
+		public Adapter caseSupportedConceptProperty(SupportedConceptProperty object) {
+			return createSupportedConceptPropertyAdapter();
+		}
+
+		@Override
+		public Adapter caseSupportedConceptRelationship(SupportedConceptRelationship object) {
+			return createSupportedConceptRelationshipAdapter();
+		}
+
+		@Override
+		public Adapter caseSupportedProperty(SupportedProperty object) {
+			return createSupportedPropertyAdapter();
+		}
+
+		@Override
+		public Adapter caseTermDefinition(TermDefinition object) {
+			return createTermDefinitionAdapter();
+		}
+
+		@Override
+		public Adapter caseTerminologyServer(TerminologyServer object) {
+			return createTerminologyServerAdapter();
+		}
+
+		@Override
+		public Adapter caseTest(Test object) {
+			return createTestAdapter();
+		}
+
+		@Override
+		public Adapter caseTestBase(TestBase object) {
+			return createTestBaseAdapter();
+		}
+
+		@Override
+		public Adapter caseTestScenario(TestScenario object) {
+			return createTestScenarioAdapter();
+		}
+
+		@Override
+		public Adapter caseTestSystem(TestSystem object) {
+			return createTestSystemAdapter();
+		}
+
+		@Override
+		public Adapter caseTransition(Transition object) {
+			return createTransitionAdapter();
+		}
+
+		@Override
+		public Adapter caseTransitionAnnotations(TransitionAnnotations object) {
+			return createTransitionAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseTransitionAppInfo(TransitionAppInfo object) {
+			return createTransitionAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseTransitionDerivation(TransitionDerivation object) {
+			return createTransitionDerivationAdapter();
+		}
+
+		@Override
+		public Adapter caseTransitionDocumentation(TransitionDocumentation object) {
+			return createTransitionDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseTransitionRef(TransitionRef object) {
+			return createTransitionRefAdapter();
+		}
+
+		@Override
+		public Adapter caseTriggerEvent(TriggerEvent object) {
+			return createTriggerEventAdapter();
+		}
+
+		@Override
+		public Adapter caseTriggerEventAnnotations(TriggerEventAnnotations object) {
+			return createTriggerEventAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseTriggerEventAppInfo(TriggerEventAppInfo object) {
+			return createTriggerEventAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseTriggerEventDocumentation(TriggerEventDocumentation object) {
+			return createTriggerEventDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseValueSet(ValueSet object) {
+			return createValueSetAdapter();
+		}
+
+		@Override
+		public Adapter caseValueSetAnnotations(ValueSetAnnotations object) {
+			return createValueSetAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseValueSetAppInfo(ValueSetAppInfo object) {
+			return createValueSetAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseValueSetDocumentation(ValueSetDocumentation object) {
+			return createValueSetDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseValueSetSupplement(ValueSetSupplement object) {
+			return createValueSetSupplementAdapter();
+		}
+
+		@Override
+		public Adapter caseValueSetVersion(ValueSetVersion object) {
+			return createValueSetVersionAdapter();
+		}
+
+		@Override
+		public Adapter caseVariousMixedContent(VariousMixedContent object) {
+			return createVariousMixedContentAdapter();
+		}
+
+		@Override
+		public Adapter caseVertex(Vertex object) {
+			return createVertexAdapter();
+		}
+
+		@Override
+		public Adapter caseVocabularyCodeRef(VocabularyCodeRef object) {
+			return createVocabularyCodeRefAdapter();
+		}
+
+		@Override
+		public Adapter caseVocabularyCodeRefs(VocabularyCodeRefs object) {
+			return createVocabularyCodeRefsAdapter();
+		}
+
+		@Override
+		public Adapter caseVocabularyLimitation(VocabularyLimitation object) {
+			return createVocabularyLimitationAdapter();
+		}
+
+		@Override
+		public Adapter caseVocabularyModel(VocabularyModel object) {
+			return createVocabularyModelAdapter();
+		}
+
+		@Override
+		public Adapter caseVocabularyModelAnnotations(VocabularyModelAnnotations object) {
+			return createVocabularyModelAnnotationsAdapter();
+		}
+
+		@Override
+		public Adapter caseVocabularyModelAppInfo(VocabularyModelAppInfo object) {
+			return createVocabularyModelAppInfoAdapter();
+		}
+
+		@Override
+		public Adapter caseVocabularyModelDocumentation(VocabularyModelDocumentation object) {
+			return createVocabularyModelDocumentationAdapter();
+		}
+
+		@Override
+		public Adapter caseVocabularySpecification(VocabularySpecification object) {
+			return createVocabularySpecificationAdapter();
+		}
+
+		@Override
+		public Adapter caseVocabularyValueSetBinding(VocabularyValueSetBinding object) {
+			return createVocabularyValueSetBindingAdapter();
+		}
+
+		@Override
+		public Adapter caseVocabularyValueSetRef(VocabularyValueSetRef object) {
+			return createVocabularyValueSetRefAdapter();
+		}
+
+		@Override
+		public Adapter caseXMIContent(XMIContent object) {
+			return createXMIContentAdapter();
+		}
+
+		@Override
+		public Adapter caseFlow(Flow object) {
+			return createFlowAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -1705,9 +2111,8 @@ public class Mif2AdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.emf.hl7.mif2.AddElementContent <em>Add Element Content</em>}'.
@@ -7377,4 +7782,4 @@ public class Mif2AdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //Mif2AdapterFactory
+} // Mif2AdapterFactory

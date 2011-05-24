@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -160,7 +164,8 @@ public class AppInfoImpl extends EObjectImpl implements AppInfo {
 	 */
 	public EList<FormalConstraint> getFormalConstraint() {
 		if (formalConstraint == null) {
-			formalConstraint = new EObjectContainmentEList<FormalConstraint>(FormalConstraint.class, this, Mif2Package.APP_INFO__FORMAL_CONSTRAINT);
+			formalConstraint = new EObjectContainmentEList<FormalConstraint>(
+				FormalConstraint.class, this, Mif2Package.APP_INFO__FORMAL_CONSTRAINT);
 		}
 		return formalConstraint;
 	}
@@ -184,7 +189,8 @@ public class AppInfoImpl extends EObjectImpl implements AppInfo {
 	 */
 	public EList<StaticExample> getStaticExample() {
 		if (staticExample == null) {
-			staticExample = new EObjectContainmentEList<StaticExample>(StaticExample.class, this, Mif2Package.APP_INFO__STATIC_EXAMPLE);
+			staticExample = new EObjectContainmentEList<StaticExample>(
+				StaticExample.class, this, Mif2Package.APP_INFO__STATIC_EXAMPLE);
 		}
 		return staticExample;
 	}
@@ -196,7 +202,8 @@ public class AppInfoImpl extends EObjectImpl implements AppInfo {
 	 */
 	public EList<BallotComment> getBallotComment() {
 		if (ballotComment == null) {
-			ballotComment = new EObjectContainmentEList<BallotComment>(BallotComment.class, this, Mif2Package.APP_INFO__BALLOT_COMMENT);
+			ballotComment = new EObjectContainmentEList<BallotComment>(
+				BallotComment.class, this, Mif2Package.APP_INFO__BALLOT_COMMENT);
 		}
 		return ballotComment;
 	}
@@ -208,7 +215,8 @@ public class AppInfoImpl extends EObjectImpl implements AppInfo {
 	 */
 	public EList<ChangeRequest> getChangeRequest() {
 		if (changeRequest == null) {
-			changeRequest = new EObjectContainmentEList<ChangeRequest>(ChangeRequest.class, this, Mif2Package.APP_INFO__CHANGE_REQUEST);
+			changeRequest = new EObjectContainmentEList<ChangeRequest>(
+				ChangeRequest.class, this, Mif2Package.APP_INFO__CHANGE_REQUEST);
 		}
 		return changeRequest;
 	}
@@ -231,8 +239,13 @@ public class AppInfoImpl extends EObjectImpl implements AppInfo {
 		DeprecationInfo oldDeprecationInfo = deprecationInfo;
 		deprecationInfo = newDeprecationInfo;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.APP_INFO__DEPRECATION_INFO, oldDeprecationInfo, newDeprecationInfo);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.APP_INFO__DEPRECATION_INFO, oldDeprecationInfo, newDeprecationInfo);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -245,15 +258,22 @@ public class AppInfoImpl extends EObjectImpl implements AppInfo {
 	public void setDeprecationInfo(DeprecationInfo newDeprecationInfo) {
 		if (newDeprecationInfo != deprecationInfo) {
 			NotificationChain msgs = null;
-			if (deprecationInfo != null)
-				msgs = ((InternalEObject)deprecationInfo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.APP_INFO__DEPRECATION_INFO, null, msgs);
-			if (newDeprecationInfo != null)
-				msgs = ((InternalEObject)newDeprecationInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.APP_INFO__DEPRECATION_INFO, null, msgs);
+			if (deprecationInfo != null) {
+				msgs = ((InternalEObject) deprecationInfo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.APP_INFO__DEPRECATION_INFO, null, msgs);
+			}
+			if (newDeprecationInfo != null) {
+				msgs = ((InternalEObject) newDeprecationInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.APP_INFO__DEPRECATION_INFO, null, msgs);
+			}
 			msgs = basicSetDeprecationInfo(newDeprecationInfo, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.APP_INFO__DEPRECATION_INFO, newDeprecationInfo, newDeprecationInfo));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.APP_INFO__DEPRECATION_INFO, newDeprecationInfo, newDeprecationInfo));
 	}
 
 	/**
@@ -265,17 +285,17 @@ public class AppInfoImpl extends EObjectImpl implements AppInfo {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.APP_INFO__MAPPING:
-				return ((InternalEList<?>)getMapping()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getMapping()).basicRemove(otherEnd, msgs);
 			case Mif2Package.APP_INFO__FORMAL_CONSTRAINT:
-				return ((InternalEList<?>)getFormalConstraint()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getFormalConstraint()).basicRemove(otherEnd, msgs);
 			case Mif2Package.APP_INFO__OPEN_ISSUE:
-				return ((InternalEList<?>)getOpenIssue()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getOpenIssue()).basicRemove(otherEnd, msgs);
 			case Mif2Package.APP_INFO__STATIC_EXAMPLE:
-				return ((InternalEList<?>)getStaticExample()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getStaticExample()).basicRemove(otherEnd, msgs);
 			case Mif2Package.APP_INFO__BALLOT_COMMENT:
-				return ((InternalEList<?>)getBallotComment()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBallotComment()).basicRemove(otherEnd, msgs);
 			case Mif2Package.APP_INFO__CHANGE_REQUEST:
-				return ((InternalEList<?>)getChangeRequest()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getChangeRequest()).basicRemove(otherEnd, msgs);
 			case Mif2Package.APP_INFO__DEPRECATION_INFO:
 				return basicSetDeprecationInfo(null, msgs);
 		}
@@ -319,30 +339,30 @@ public class AppInfoImpl extends EObjectImpl implements AppInfo {
 		switch (featureID) {
 			case Mif2Package.APP_INFO__MAPPING:
 				getMapping().clear();
-				getMapping().addAll((Collection<? extends Mapping>)newValue);
+				getMapping().addAll((Collection<? extends Mapping>) newValue);
 				return;
 			case Mif2Package.APP_INFO__FORMAL_CONSTRAINT:
 				getFormalConstraint().clear();
-				getFormalConstraint().addAll((Collection<? extends FormalConstraint>)newValue);
+				getFormalConstraint().addAll((Collection<? extends FormalConstraint>) newValue);
 				return;
 			case Mif2Package.APP_INFO__OPEN_ISSUE:
 				getOpenIssue().clear();
-				getOpenIssue().addAll((Collection<? extends OpenIssue>)newValue);
+				getOpenIssue().addAll((Collection<? extends OpenIssue>) newValue);
 				return;
 			case Mif2Package.APP_INFO__STATIC_EXAMPLE:
 				getStaticExample().clear();
-				getStaticExample().addAll((Collection<? extends StaticExample>)newValue);
+				getStaticExample().addAll((Collection<? extends StaticExample>) newValue);
 				return;
 			case Mif2Package.APP_INFO__BALLOT_COMMENT:
 				getBallotComment().clear();
-				getBallotComment().addAll((Collection<? extends BallotComment>)newValue);
+				getBallotComment().addAll((Collection<? extends BallotComment>) newValue);
 				return;
 			case Mif2Package.APP_INFO__CHANGE_REQUEST:
 				getChangeRequest().clear();
-				getChangeRequest().addAll((Collection<? extends ChangeRequest>)newValue);
+				getChangeRequest().addAll((Collection<? extends ChangeRequest>) newValue);
 				return;
 			case Mif2Package.APP_INFO__DEPRECATION_INFO:
-				setDeprecationInfo((DeprecationInfo)newValue);
+				setDeprecationInfo((DeprecationInfo) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -375,7 +395,7 @@ public class AppInfoImpl extends EObjectImpl implements AppInfo {
 				getChangeRequest().clear();
 				return;
 			case Mif2Package.APP_INFO__DEPRECATION_INFO:
-				setDeprecationInfo((DeprecationInfo)null);
+				setDeprecationInfo((DeprecationInfo) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -407,4 +427,4 @@ public class AppInfoImpl extends EObjectImpl implements AppInfo {
 		return super.eIsSet(featureID);
 	}
 
-} //AppInfoImpl
+} // AppInfoImpl

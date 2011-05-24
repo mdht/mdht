@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -163,8 +167,9 @@ public class ContributorImpl extends EObjectImpl implements Contributor {
 	public void setRole(Object newRole) {
 		Object oldRole = role;
 		role = newRole;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTRIBUTOR__ROLE, oldRole, role));
+		}
 	}
 
 	/**
@@ -185,8 +190,13 @@ public class ContributorImpl extends EObjectImpl implements Contributor {
 		KeyedName oldName = name;
 		name = newName;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CONTRIBUTOR__NAME, oldName, newName);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTRIBUTOR__NAME, oldName, newName);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -199,15 +209,21 @@ public class ContributorImpl extends EObjectImpl implements Contributor {
 	public void setName(KeyedName newName) {
 		if (newName != name) {
 			NotificationChain msgs = null;
-			if (name != null)
-				msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONTRIBUTOR__NAME, null, msgs);
-			if (newName != null)
-				msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONTRIBUTOR__NAME, null, msgs);
+			if (name != null) {
+				msgs = ((InternalEObject) name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONTRIBUTOR__NAME, null, msgs);
+			}
+			if (newName != null) {
+				msgs = ((InternalEObject) newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONTRIBUTOR__NAME, null, msgs);
+			}
 			msgs = basicSetName(newName, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTRIBUTOR__NAME, newName, newName));
+		}
 	}
 
 	/**
@@ -227,8 +243,10 @@ public class ContributorImpl extends EObjectImpl implements Contributor {
 	public void setAffiliation(String newAffiliation) {
 		String oldAffiliation = affiliation;
 		affiliation = newAffiliation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTRIBUTOR__AFFILIATION, oldAffiliation, affiliation));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTRIBUTOR__AFFILIATION, oldAffiliation, affiliation));
+		}
 	}
 
 	/**
@@ -248,8 +266,9 @@ public class ContributorImpl extends EObjectImpl implements Contributor {
 	public void setEmail(String newEmail) {
 		String oldEmail = email;
 		email = newEmail;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTRIBUTOR__EMAIL, oldEmail, email));
+		}
 	}
 
 	/**
@@ -269,8 +288,9 @@ public class ContributorImpl extends EObjectImpl implements Contributor {
 	public void setNotes(String newNotes) {
 		String oldNotes = notes;
 		notes = newNotes;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTRIBUTOR__NOTES, oldNotes, notes));
+		}
 	}
 
 	/**
@@ -321,16 +341,16 @@ public class ContributorImpl extends EObjectImpl implements Contributor {
 				setRole(newValue);
 				return;
 			case Mif2Package.CONTRIBUTOR__NAME:
-				setName((KeyedName)newValue);
+				setName((KeyedName) newValue);
 				return;
 			case Mif2Package.CONTRIBUTOR__AFFILIATION:
-				setAffiliation((String)newValue);
+				setAffiliation((String) newValue);
 				return;
 			case Mif2Package.CONTRIBUTOR__EMAIL:
-				setEmail((String)newValue);
+				setEmail((String) newValue);
 				return;
 			case Mif2Package.CONTRIBUTOR__NOTES:
-				setNotes((String)newValue);
+				setNotes((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -348,7 +368,7 @@ public class ContributorImpl extends EObjectImpl implements Contributor {
 				setRole(ROLE_EDEFAULT);
 				return;
 			case Mif2Package.CONTRIBUTOR__NAME:
-				setName((KeyedName)null);
+				setName((KeyedName) null);
 				return;
 			case Mif2Package.CONTRIBUTOR__AFFILIATION:
 				setAffiliation(AFFILIATION_EDEFAULT);
@@ -372,15 +392,23 @@ public class ContributorImpl extends EObjectImpl implements Contributor {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CONTRIBUTOR__ROLE:
-				return ROLE_EDEFAULT == null ? role != null : !ROLE_EDEFAULT.equals(role);
+				return ROLE_EDEFAULT == null
+						? role != null
+						: !ROLE_EDEFAULT.equals(role);
 			case Mif2Package.CONTRIBUTOR__NAME:
 				return name != null;
 			case Mif2Package.CONTRIBUTOR__AFFILIATION:
-				return AFFILIATION_EDEFAULT == null ? affiliation != null : !AFFILIATION_EDEFAULT.equals(affiliation);
+				return AFFILIATION_EDEFAULT == null
+						? affiliation != null
+						: !AFFILIATION_EDEFAULT.equals(affiliation);
 			case Mif2Package.CONTRIBUTOR__EMAIL:
-				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
+				return EMAIL_EDEFAULT == null
+						? email != null
+						: !EMAIL_EDEFAULT.equals(email);
 			case Mif2Package.CONTRIBUTOR__NOTES:
-				return NOTES_EDEFAULT == null ? notes != null : !NOTES_EDEFAULT.equals(notes);
+				return NOTES_EDEFAULT == null
+						? notes != null
+						: !NOTES_EDEFAULT.equals(notes);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -392,7 +420,9 @@ public class ContributorImpl extends EObjectImpl implements Contributor {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (role: ");
@@ -407,4 +437,4 @@ public class ContributorImpl extends EObjectImpl implements Contributor {
 		return result.toString();
 	}
 
-} //ContributorImpl
+} // ContributorImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -28,7 +32,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.StateMachine;
 import org.openhealthtools.mdht.emf.hl7.mif2.StateMachineAnnotations;
 import org.openhealthtools.mdht.emf.hl7.mif2.Transition;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Img;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -145,8 +148,13 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 		StateMachineAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STATE_MACHINE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATE_MACHINE__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -159,15 +167,22 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	public void setAnnotations(StateMachineAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATE_MACHINE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATE_MACHINE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATE_MACHINE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATE_MACHINE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATE_MACHINE__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATE_MACHINE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -188,8 +203,13 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 		Img oldFigure = figure;
 		figure = newFigure;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STATE_MACHINE__FIGURE, oldFigure, newFigure);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATE_MACHINE__FIGURE, oldFigure, newFigure);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -202,15 +222,22 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	public void setFigure(Img newFigure) {
 		if (newFigure != figure) {
 			NotificationChain msgs = null;
-			if (figure != null)
-				msgs = ((InternalEObject)figure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATE_MACHINE__FIGURE, null, msgs);
-			if (newFigure != null)
-				msgs = ((InternalEObject)newFigure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATE_MACHINE__FIGURE, null, msgs);
+			if (figure != null) {
+				msgs = ((InternalEObject) figure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATE_MACHINE__FIGURE, null, msgs);
+			}
+			if (newFigure != null) {
+				msgs = ((InternalEObject) newFigure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATE_MACHINE__FIGURE, null, msgs);
+			}
 			msgs = basicSetFigure(newFigure, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATE_MACHINE__FIGURE, newFigure, newFigure));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATE_MACHINE__FIGURE, newFigure, newFigure));
 	}
 
 	/**
@@ -232,7 +259,8 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 */
 	public EList<Transition> getTransition() {
 		if (transition == null) {
-			transition = new EObjectContainmentEList<Transition>(Transition.class, this, Mif2Package.STATE_MACHINE__TRANSITION);
+			transition = new EObjectContainmentEList<Transition>(
+				Transition.class, this, Mif2Package.STATE_MACHINE__TRANSITION);
 		}
 		return transition;
 	}
@@ -254,8 +282,11 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	public void setStateAttributeName(String newStateAttributeName) {
 		String oldStateAttributeName = stateAttributeName;
 		stateAttributeName = newStateAttributeName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATE_MACHINE__STATE_ATTRIBUTE_NAME, oldStateAttributeName, stateAttributeName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATE_MACHINE__STATE_ATTRIBUTE_NAME, oldStateAttributeName,
+				stateAttributeName));
+		}
 	}
 
 	/**
@@ -271,9 +302,9 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 			case Mif2Package.STATE_MACHINE__FIGURE:
 				return basicSetFigure(null, msgs);
 			case Mif2Package.STATE_MACHINE__SUB_STATE:
-				return ((InternalEList<?>)getSubState()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSubState()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATE_MACHINE__TRANSITION:
-				return ((InternalEList<?>)getTransition()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTransition()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -310,21 +341,21 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.STATE_MACHINE__ANNOTATIONS:
-				setAnnotations((StateMachineAnnotations)newValue);
+				setAnnotations((StateMachineAnnotations) newValue);
 				return;
 			case Mif2Package.STATE_MACHINE__FIGURE:
-				setFigure((Img)newValue);
+				setFigure((Img) newValue);
 				return;
 			case Mif2Package.STATE_MACHINE__SUB_STATE:
 				getSubState().clear();
-				getSubState().addAll((Collection<? extends State>)newValue);
+				getSubState().addAll((Collection<? extends State>) newValue);
 				return;
 			case Mif2Package.STATE_MACHINE__TRANSITION:
 				getTransition().clear();
-				getTransition().addAll((Collection<? extends Transition>)newValue);
+				getTransition().addAll((Collection<? extends Transition>) newValue);
 				return;
 			case Mif2Package.STATE_MACHINE__STATE_ATTRIBUTE_NAME:
-				setStateAttributeName((String)newValue);
+				setStateAttributeName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -339,10 +370,10 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.STATE_MACHINE__ANNOTATIONS:
-				setAnnotations((StateMachineAnnotations)null);
+				setAnnotations((StateMachineAnnotations) null);
 				return;
 			case Mif2Package.STATE_MACHINE__FIGURE:
-				setFigure((Img)null);
+				setFigure((Img) null);
 				return;
 			case Mif2Package.STATE_MACHINE__SUB_STATE:
 				getSubState().clear();
@@ -374,7 +405,9 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 			case Mif2Package.STATE_MACHINE__TRANSITION:
 				return transition != null && !transition.isEmpty();
 			case Mif2Package.STATE_MACHINE__STATE_ATTRIBUTE_NAME:
-				return STATE_ATTRIBUTE_NAME_EDEFAULT == null ? stateAttributeName != null : !STATE_ATTRIBUTE_NAME_EDEFAULT.equals(stateAttributeName);
+				return STATE_ATTRIBUTE_NAME_EDEFAULT == null
+						? stateAttributeName != null
+						: !STATE_ATTRIBUTE_NAME_EDEFAULT.equals(stateAttributeName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -386,7 +419,9 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (stateAttributeName: ");
@@ -395,4 +430,4 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 		return result.toString();
 	}
 
-} //StateMachineImpl
+} // StateMachineImpl

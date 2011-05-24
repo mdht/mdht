@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -177,8 +181,13 @@ public class InteractionProfileImpl extends PackageImpl implements InteractionPr
 		InteractionProfileAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_PROFILE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_PROFILE__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -191,15 +200,22 @@ public class InteractionProfileImpl extends PackageImpl implements InteractionPr
 	public void setAnnotations(InteractionProfileAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION_PROFILE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION_PROFILE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION_PROFILE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION_PROFILE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_PROFILE__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_PROFILE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -216,12 +232,19 @@ public class InteractionProfileImpl extends PackageImpl implements InteractionPr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetImplementationConstraints(ImplementationMessageConstraints newImplementationConstraints, NotificationChain msgs) {
+	public NotificationChain basicSetImplementationConstraints(
+			ImplementationMessageConstraints newImplementationConstraints, NotificationChain msgs) {
 		ImplementationMessageConstraints oldImplementationConstraints = implementationConstraints;
 		implementationConstraints = newImplementationConstraints;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_PROFILE__IMPLEMENTATION_CONSTRAINTS, oldImplementationConstraints, newImplementationConstraints);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_PROFILE__IMPLEMENTATION_CONSTRAINTS,
+				oldImplementationConstraints, newImplementationConstraints);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -234,15 +257,23 @@ public class InteractionProfileImpl extends PackageImpl implements InteractionPr
 	public void setImplementationConstraints(ImplementationMessageConstraints newImplementationConstraints) {
 		if (newImplementationConstraints != implementationConstraints) {
 			NotificationChain msgs = null;
-			if (implementationConstraints != null)
-				msgs = ((InternalEObject)implementationConstraints).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION_PROFILE__IMPLEMENTATION_CONSTRAINTS, null, msgs);
-			if (newImplementationConstraints != null)
-				msgs = ((InternalEObject)newImplementationConstraints).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION_PROFILE__IMPLEMENTATION_CONSTRAINTS, null, msgs);
+			if (implementationConstraints != null) {
+				msgs = ((InternalEObject) implementationConstraints).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION_PROFILE__IMPLEMENTATION_CONSTRAINTS, null, msgs);
+			}
+			if (newImplementationConstraints != null) {
+				msgs = ((InternalEObject) newImplementationConstraints).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION_PROFILE__IMPLEMENTATION_CONSTRAINTS, null, msgs);
+			}
 			msgs = basicSetImplementationConstraints(newImplementationConstraints, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_PROFILE__IMPLEMENTATION_CONSTRAINTS,
+				newImplementationConstraints, newImplementationConstraints));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_PROFILE__IMPLEMENTATION_CONSTRAINTS, newImplementationConstraints, newImplementationConstraints));
 	}
 
 	/**
@@ -263,8 +294,14 @@ public class InteractionProfileImpl extends PackageImpl implements InteractionPr
 		BoundStaticModel oldArgumentMessage = argumentMessage;
 		argumentMessage = newArgumentMessage;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_PROFILE__ARGUMENT_MESSAGE, oldArgumentMessage, newArgumentMessage);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_PROFILE__ARGUMENT_MESSAGE, oldArgumentMessage,
+				newArgumentMessage);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -277,15 +314,23 @@ public class InteractionProfileImpl extends PackageImpl implements InteractionPr
 	public void setArgumentMessage(BoundStaticModel newArgumentMessage) {
 		if (newArgumentMessage != argumentMessage) {
 			NotificationChain msgs = null;
-			if (argumentMessage != null)
-				msgs = ((InternalEObject)argumentMessage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION_PROFILE__ARGUMENT_MESSAGE, null, msgs);
-			if (newArgumentMessage != null)
-				msgs = ((InternalEObject)newArgumentMessage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION_PROFILE__ARGUMENT_MESSAGE, null, msgs);
+			if (argumentMessage != null) {
+				msgs = ((InternalEObject) argumentMessage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION_PROFILE__ARGUMENT_MESSAGE, null, msgs);
+			}
+			if (newArgumentMessage != null) {
+				msgs = ((InternalEObject) newArgumentMessage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION_PROFILE__ARGUMENT_MESSAGE, null, msgs);
+			}
 			msgs = basicSetArgumentMessage(newArgumentMessage, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_PROFILE__ARGUMENT_MESSAGE, newArgumentMessage,
+				newArgumentMessage));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_PROFILE__ARGUMENT_MESSAGE, newArgumentMessage, newArgumentMessage));
 	}
 
 	/**
@@ -302,12 +347,19 @@ public class InteractionProfileImpl extends PackageImpl implements InteractionPr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEffectiveStaticModel(SerializedStaticModel newEffectiveStaticModel, NotificationChain msgs) {
+	public NotificationChain basicSetEffectiveStaticModel(SerializedStaticModel newEffectiveStaticModel,
+			NotificationChain msgs) {
 		SerializedStaticModel oldEffectiveStaticModel = effectiveStaticModel;
 		effectiveStaticModel = newEffectiveStaticModel;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_PROFILE__EFFECTIVE_STATIC_MODEL, oldEffectiveStaticModel, newEffectiveStaticModel);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_PROFILE__EFFECTIVE_STATIC_MODEL,
+				oldEffectiveStaticModel, newEffectiveStaticModel);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -320,15 +372,23 @@ public class InteractionProfileImpl extends PackageImpl implements InteractionPr
 	public void setEffectiveStaticModel(SerializedStaticModel newEffectiveStaticModel) {
 		if (newEffectiveStaticModel != effectiveStaticModel) {
 			NotificationChain msgs = null;
-			if (effectiveStaticModel != null)
-				msgs = ((InternalEObject)effectiveStaticModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION_PROFILE__EFFECTIVE_STATIC_MODEL, null, msgs);
-			if (newEffectiveStaticModel != null)
-				msgs = ((InternalEObject)newEffectiveStaticModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION_PROFILE__EFFECTIVE_STATIC_MODEL, null, msgs);
+			if (effectiveStaticModel != null) {
+				msgs = ((InternalEObject) effectiveStaticModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION_PROFILE__EFFECTIVE_STATIC_MODEL, null, msgs);
+			}
+			if (newEffectiveStaticModel != null) {
+				msgs = ((InternalEObject) newEffectiveStaticModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION_PROFILE__EFFECTIVE_STATIC_MODEL, null, msgs);
+			}
 			msgs = basicSetEffectiveStaticModel(newEffectiveStaticModel, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_PROFILE__EFFECTIVE_STATIC_MODEL,
+				newEffectiveStaticModel, newEffectiveStaticModel));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_PROFILE__EFFECTIVE_STATIC_MODEL, newEffectiveStaticModel, newEffectiveStaticModel));
 	}
 
 	/**
@@ -338,7 +398,8 @@ public class InteractionProfileImpl extends PackageImpl implements InteractionPr
 	 */
 	public EList<ReceiverResponsibility> getReceiverResponsibilities() {
 		if (receiverResponsibilities == null) {
-			receiverResponsibilities = new EObjectContainmentEList<ReceiverResponsibility>(ReceiverResponsibility.class, this, Mif2Package.INTERACTION_PROFILE__RECEIVER_RESPONSIBILITIES);
+			receiverResponsibilities = new EObjectContainmentEList<ReceiverResponsibility>(
+				ReceiverResponsibility.class, this, Mif2Package.INTERACTION_PROFILE__RECEIVER_RESPONSIBILITIES);
 		}
 		return receiverResponsibilities;
 	}
@@ -357,12 +418,19 @@ public class InteractionProfileImpl extends PackageImpl implements InteractionPr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetInternalMapping(ComplexMarkupWithLanguage newInternalMapping, NotificationChain msgs) {
+	public NotificationChain basicSetInternalMapping(ComplexMarkupWithLanguage newInternalMapping,
+			NotificationChain msgs) {
 		ComplexMarkupWithLanguage oldInternalMapping = internalMapping;
 		internalMapping = newInternalMapping;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_PROFILE__INTERNAL_MAPPING, oldInternalMapping, newInternalMapping);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_PROFILE__INTERNAL_MAPPING, oldInternalMapping,
+				newInternalMapping);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -375,15 +443,23 @@ public class InteractionProfileImpl extends PackageImpl implements InteractionPr
 	public void setInternalMapping(ComplexMarkupWithLanguage newInternalMapping) {
 		if (newInternalMapping != internalMapping) {
 			NotificationChain msgs = null;
-			if (internalMapping != null)
-				msgs = ((InternalEObject)internalMapping).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION_PROFILE__INTERNAL_MAPPING, null, msgs);
-			if (newInternalMapping != null)
-				msgs = ((InternalEObject)newInternalMapping).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION_PROFILE__INTERNAL_MAPPING, null, msgs);
+			if (internalMapping != null) {
+				msgs = ((InternalEObject) internalMapping).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION_PROFILE__INTERNAL_MAPPING, null, msgs);
+			}
+			if (newInternalMapping != null) {
+				msgs = ((InternalEObject) newInternalMapping).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION_PROFILE__INTERNAL_MAPPING, null, msgs);
+			}
 			msgs = basicSetInternalMapping(newInternalMapping, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_PROFILE__INTERNAL_MAPPING, newInternalMapping,
+				newInternalMapping));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_PROFILE__INTERNAL_MAPPING, newInternalMapping, newInternalMapping));
 	}
 
 	/**
@@ -402,11 +478,16 @@ public class InteractionProfileImpl extends PackageImpl implements InteractionPr
 	 */
 	public void setProfileType(InteractionProfileKind newProfileType) {
 		InteractionProfileKind oldProfileType = profileType;
-		profileType = newProfileType == null ? PROFILE_TYPE_EDEFAULT : newProfileType;
+		profileType = newProfileType == null
+				? PROFILE_TYPE_EDEFAULT
+				: newProfileType;
 		boolean oldProfileTypeESet = profileTypeESet;
 		profileTypeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION_PROFILE__PROFILE_TYPE, oldProfileType, profileType, !oldProfileTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION_PROFILE__PROFILE_TYPE, oldProfileType, profileType,
+				!oldProfileTypeESet));
+		}
 	}
 
 	/**
@@ -419,8 +500,11 @@ public class InteractionProfileImpl extends PackageImpl implements InteractionPr
 		boolean oldProfileTypeESet = profileTypeESet;
 		profileType = PROFILE_TYPE_EDEFAULT;
 		profileTypeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.INTERACTION_PROFILE__PROFILE_TYPE, oldProfileType, PROFILE_TYPE_EDEFAULT, oldProfileTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.INTERACTION_PROFILE__PROFILE_TYPE, oldProfileType,
+				PROFILE_TYPE_EDEFAULT, oldProfileTypeESet));
+		}
 	}
 
 	/**
@@ -449,7 +533,7 @@ public class InteractionProfileImpl extends PackageImpl implements InteractionPr
 			case Mif2Package.INTERACTION_PROFILE__EFFECTIVE_STATIC_MODEL:
 				return basicSetEffectiveStaticModel(null, msgs);
 			case Mif2Package.INTERACTION_PROFILE__RECEIVER_RESPONSIBILITIES:
-				return ((InternalEList<?>)getReceiverResponsibilities()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getReceiverResponsibilities()).basicRemove(otherEnd, msgs);
 			case Mif2Package.INTERACTION_PROFILE__INTERNAL_MAPPING:
 				return basicSetInternalMapping(null, msgs);
 		}
@@ -492,26 +576,26 @@ public class InteractionProfileImpl extends PackageImpl implements InteractionPr
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.INTERACTION_PROFILE__ANNOTATIONS:
-				setAnnotations((InteractionProfileAnnotations)newValue);
+				setAnnotations((InteractionProfileAnnotations) newValue);
 				return;
 			case Mif2Package.INTERACTION_PROFILE__IMPLEMENTATION_CONSTRAINTS:
-				setImplementationConstraints((ImplementationMessageConstraints)newValue);
+				setImplementationConstraints((ImplementationMessageConstraints) newValue);
 				return;
 			case Mif2Package.INTERACTION_PROFILE__ARGUMENT_MESSAGE:
-				setArgumentMessage((BoundStaticModel)newValue);
+				setArgumentMessage((BoundStaticModel) newValue);
 				return;
 			case Mif2Package.INTERACTION_PROFILE__EFFECTIVE_STATIC_MODEL:
-				setEffectiveStaticModel((SerializedStaticModel)newValue);
+				setEffectiveStaticModel((SerializedStaticModel) newValue);
 				return;
 			case Mif2Package.INTERACTION_PROFILE__RECEIVER_RESPONSIBILITIES:
 				getReceiverResponsibilities().clear();
-				getReceiverResponsibilities().addAll((Collection<? extends ReceiverResponsibility>)newValue);
+				getReceiverResponsibilities().addAll((Collection<? extends ReceiverResponsibility>) newValue);
 				return;
 			case Mif2Package.INTERACTION_PROFILE__INTERNAL_MAPPING:
-				setInternalMapping((ComplexMarkupWithLanguage)newValue);
+				setInternalMapping((ComplexMarkupWithLanguage) newValue);
 				return;
 			case Mif2Package.INTERACTION_PROFILE__PROFILE_TYPE:
-				setProfileType((InteractionProfileKind)newValue);
+				setProfileType((InteractionProfileKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -526,22 +610,22 @@ public class InteractionProfileImpl extends PackageImpl implements InteractionPr
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.INTERACTION_PROFILE__ANNOTATIONS:
-				setAnnotations((InteractionProfileAnnotations)null);
+				setAnnotations((InteractionProfileAnnotations) null);
 				return;
 			case Mif2Package.INTERACTION_PROFILE__IMPLEMENTATION_CONSTRAINTS:
-				setImplementationConstraints((ImplementationMessageConstraints)null);
+				setImplementationConstraints((ImplementationMessageConstraints) null);
 				return;
 			case Mif2Package.INTERACTION_PROFILE__ARGUMENT_MESSAGE:
-				setArgumentMessage((BoundStaticModel)null);
+				setArgumentMessage((BoundStaticModel) null);
 				return;
 			case Mif2Package.INTERACTION_PROFILE__EFFECTIVE_STATIC_MODEL:
-				setEffectiveStaticModel((SerializedStaticModel)null);
+				setEffectiveStaticModel((SerializedStaticModel) null);
 				return;
 			case Mif2Package.INTERACTION_PROFILE__RECEIVER_RESPONSIBILITIES:
 				getReceiverResponsibilities().clear();
 				return;
 			case Mif2Package.INTERACTION_PROFILE__INTERNAL_MAPPING:
-				setInternalMapping((ComplexMarkupWithLanguage)null);
+				setInternalMapping((ComplexMarkupWithLanguage) null);
 				return;
 			case Mif2Package.INTERACTION_PROFILE__PROFILE_TYPE:
 				unsetProfileType();
@@ -583,13 +667,19 @@ public class InteractionProfileImpl extends PackageImpl implements InteractionPr
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (profileType: ");
-		if (profileTypeESet) result.append(profileType); else result.append("<unset>");
+		if (profileTypeESet) {
+			result.append(profileType);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //InteractionProfileImpl
+} // InteractionProfileImpl

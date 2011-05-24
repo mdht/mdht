@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -164,7 +168,8 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 	 * @generated
 	 * @ordered
 	 */
-	protected static final XMLGregorianCalendar VERSION_TIME_EDEFAULT = (XMLGregorianCalendar)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.eINSTANCE.getTime(), "00:00:00");
+	protected static final XMLGregorianCalendar VERSION_TIME_EDEFAULT = (XMLGregorianCalendar) XMLTypeFactory.eINSTANCE.createFromString(
+		XMLTypePackage.eINSTANCE.getTime(), "00:00:00");
 
 	/**
 	 * The cached value of the '{@link #getVersionTime() <em>Version Time</em>}' attribute.
@@ -211,7 +216,8 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 	 */
 	public EList<String> getUsesCodeSystemSupplement() {
 		if (usesCodeSystemSupplement == null) {
-			usesCodeSystemSupplement = new EDataTypeEList<String>(String.class, this, Mif2Package.VALUE_SET_VERSION__USES_CODE_SYSTEM_SUPPLEMENT);
+			usesCodeSystemSupplement = new EDataTypeEList<String>(
+				String.class, this, Mif2Package.VALUE_SET_VERSION__USES_CODE_SYSTEM_SUPPLEMENT);
 		}
 		return usesCodeSystemSupplement;
 	}
@@ -223,7 +229,8 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 	 */
 	public EList<String> getSupportedCodeSystem() {
 		if (supportedCodeSystem == null) {
-			supportedCodeSystem = new EDataTypeEList<String>(String.class, this, Mif2Package.VALUE_SET_VERSION__SUPPORTED_CODE_SYSTEM);
+			supportedCodeSystem = new EDataTypeEList<String>(
+				String.class, this, Mif2Package.VALUE_SET_VERSION__SUPPORTED_CODE_SYSTEM);
 		}
 		return supportedCodeSystem;
 	}
@@ -235,7 +242,8 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 	 */
 	public EList<String> getSupportedLanguage() {
 		if (supportedLanguage == null) {
-			supportedLanguage = new EDataTypeEList<String>(String.class, this, Mif2Package.VALUE_SET_VERSION__SUPPORTED_LANGUAGE);
+			supportedLanguage = new EDataTypeEList<String>(
+				String.class, this, Mif2Package.VALUE_SET_VERSION__SUPPORTED_LANGUAGE);
 		}
 		return supportedLanguage;
 	}
@@ -247,7 +255,8 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 	 */
 	public EList<ConceptProperty> getAssociatedConceptProperty() {
 		if (associatedConceptProperty == null) {
-			associatedConceptProperty = new EObjectContainmentEList<ConceptProperty>(ConceptProperty.class, this, Mif2Package.VALUE_SET_VERSION__ASSOCIATED_CONCEPT_PROPERTY);
+			associatedConceptProperty = new EObjectContainmentEList<ConceptProperty>(
+				ConceptProperty.class, this, Mif2Package.VALUE_SET_VERSION__ASSOCIATED_CONCEPT_PROPERTY);
 		}
 		return associatedConceptProperty;
 	}
@@ -270,8 +279,13 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 		ContentDefinition oldContent = content;
 		content = newContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.VALUE_SET_VERSION__CONTENT, oldContent, newContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VALUE_SET_VERSION__CONTENT, oldContent, newContent);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -284,15 +298,22 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 	public void setContent(ContentDefinition newContent) {
 		if (newContent != content) {
 			NotificationChain msgs = null;
-			if (content != null)
-				msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VALUE_SET_VERSION__CONTENT, null, msgs);
-			if (newContent != null)
-				msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VALUE_SET_VERSION__CONTENT, null, msgs);
+			if (content != null) {
+				msgs = ((InternalEObject) content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VALUE_SET_VERSION__CONTENT, null, msgs);
+			}
+			if (newContent != null) {
+				msgs = ((InternalEObject) newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VALUE_SET_VERSION__CONTENT, null, msgs);
+			}
 			msgs = basicSetContent(newContent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VALUE_SET_VERSION__CONTENT, newContent, newContent));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VALUE_SET_VERSION__CONTENT, newContent, newContent));
 	}
 
 	/**
@@ -309,12 +330,19 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetNonSelectableContent(ContentDefinition newNonSelectableContent, NotificationChain msgs) {
+	public NotificationChain basicSetNonSelectableContent(ContentDefinition newNonSelectableContent,
+			NotificationChain msgs) {
 		ContentDefinition oldNonSelectableContent = nonSelectableContent;
 		nonSelectableContent = newNonSelectableContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.VALUE_SET_VERSION__NON_SELECTABLE_CONTENT, oldNonSelectableContent, newNonSelectableContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VALUE_SET_VERSION__NON_SELECTABLE_CONTENT, oldNonSelectableContent,
+				newNonSelectableContent);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -327,15 +355,23 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 	public void setNonSelectableContent(ContentDefinition newNonSelectableContent) {
 		if (newNonSelectableContent != nonSelectableContent) {
 			NotificationChain msgs = null;
-			if (nonSelectableContent != null)
-				msgs = ((InternalEObject)nonSelectableContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VALUE_SET_VERSION__NON_SELECTABLE_CONTENT, null, msgs);
-			if (newNonSelectableContent != null)
-				msgs = ((InternalEObject)newNonSelectableContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VALUE_SET_VERSION__NON_SELECTABLE_CONTENT, null, msgs);
+			if (nonSelectableContent != null) {
+				msgs = ((InternalEObject) nonSelectableContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VALUE_SET_VERSION__NON_SELECTABLE_CONTENT, null, msgs);
+			}
+			if (newNonSelectableContent != null) {
+				msgs = ((InternalEObject) newNonSelectableContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VALUE_SET_VERSION__NON_SELECTABLE_CONTENT, null, msgs);
+			}
 			msgs = basicSetNonSelectableContent(newNonSelectableContent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VALUE_SET_VERSION__NON_SELECTABLE_CONTENT, newNonSelectableContent,
+				newNonSelectableContent));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VALUE_SET_VERSION__NON_SELECTABLE_CONTENT, newNonSelectableContent, newNonSelectableContent));
 	}
 
 	/**
@@ -356,8 +392,14 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 		VocabularyCodeRefs oldEnumeratedContent = enumeratedContent;
 		enumeratedContent = newEnumeratedContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.VALUE_SET_VERSION__ENUMERATED_CONTENT, oldEnumeratedContent, newEnumeratedContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VALUE_SET_VERSION__ENUMERATED_CONTENT, oldEnumeratedContent,
+				newEnumeratedContent);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -370,15 +412,23 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 	public void setEnumeratedContent(VocabularyCodeRefs newEnumeratedContent) {
 		if (newEnumeratedContent != enumeratedContent) {
 			NotificationChain msgs = null;
-			if (enumeratedContent != null)
-				msgs = ((InternalEObject)enumeratedContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VALUE_SET_VERSION__ENUMERATED_CONTENT, null, msgs);
-			if (newEnumeratedContent != null)
-				msgs = ((InternalEObject)newEnumeratedContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VALUE_SET_VERSION__ENUMERATED_CONTENT, null, msgs);
+			if (enumeratedContent != null) {
+				msgs = ((InternalEObject) enumeratedContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VALUE_SET_VERSION__ENUMERATED_CONTENT, null, msgs);
+			}
+			if (newEnumeratedContent != null) {
+				msgs = ((InternalEObject) newEnumeratedContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VALUE_SET_VERSION__ENUMERATED_CONTENT, null, msgs);
+			}
 			msgs = basicSetEnumeratedContent(newEnumeratedContent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VALUE_SET_VERSION__ENUMERATED_CONTENT, newEnumeratedContent,
+				newEnumeratedContent));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VALUE_SET_VERSION__ENUMERATED_CONTENT, newEnumeratedContent, newEnumeratedContent));
 	}
 
 	/**
@@ -399,8 +449,14 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 		VocabularyCodeRefs oldExampleContent = exampleContent;
 		exampleContent = newExampleContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.VALUE_SET_VERSION__EXAMPLE_CONTENT, oldExampleContent, newExampleContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VALUE_SET_VERSION__EXAMPLE_CONTENT, oldExampleContent,
+				newExampleContent);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -413,15 +469,23 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 	public void setExampleContent(VocabularyCodeRefs newExampleContent) {
 		if (newExampleContent != exampleContent) {
 			NotificationChain msgs = null;
-			if (exampleContent != null)
-				msgs = ((InternalEObject)exampleContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VALUE_SET_VERSION__EXAMPLE_CONTENT, null, msgs);
-			if (newExampleContent != null)
-				msgs = ((InternalEObject)newExampleContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VALUE_SET_VERSION__EXAMPLE_CONTENT, null, msgs);
+			if (exampleContent != null) {
+				msgs = ((InternalEObject) exampleContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VALUE_SET_VERSION__EXAMPLE_CONTENT, null, msgs);
+			}
+			if (newExampleContent != null) {
+				msgs = ((InternalEObject) newExampleContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VALUE_SET_VERSION__EXAMPLE_CONTENT, null, msgs);
+			}
 			msgs = basicSetExampleContent(newExampleContent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VALUE_SET_VERSION__EXAMPLE_CONTENT, newExampleContent,
+				newExampleContent));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VALUE_SET_VERSION__EXAMPLE_CONTENT, newExampleContent, newExampleContent));
 	}
 
 	/**
@@ -441,8 +505,10 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 	public void setVersionDate(XMLGregorianCalendar newVersionDate) {
 		XMLGregorianCalendar oldVersionDate = versionDate;
 		versionDate = newVersionDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VALUE_SET_VERSION__VERSION_DATE, oldVersionDate, versionDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VALUE_SET_VERSION__VERSION_DATE, oldVersionDate, versionDate));
+		}
 	}
 
 	/**
@@ -464,8 +530,11 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 		versionTime = newVersionTime;
 		boolean oldVersionTimeESet = versionTimeESet;
 		versionTimeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VALUE_SET_VERSION__VERSION_TIME, oldVersionTime, versionTime, !oldVersionTimeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VALUE_SET_VERSION__VERSION_TIME, oldVersionTime, versionTime,
+				!oldVersionTimeESet));
+		}
 	}
 
 	/**
@@ -478,8 +547,11 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 		boolean oldVersionTimeESet = versionTimeESet;
 		versionTime = VERSION_TIME_EDEFAULT;
 		versionTimeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.VALUE_SET_VERSION__VERSION_TIME, oldVersionTime, VERSION_TIME_EDEFAULT, oldVersionTimeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.VALUE_SET_VERSION__VERSION_TIME, oldVersionTime,
+				VERSION_TIME_EDEFAULT, oldVersionTimeESet));
+		}
 	}
 
 	/**
@@ -500,7 +572,7 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.VALUE_SET_VERSION__ASSOCIATED_CONCEPT_PROPERTY:
-				return ((InternalEList<?>)getAssociatedConceptProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAssociatedConceptProperty()).basicRemove(otherEnd, msgs);
 			case Mif2Package.VALUE_SET_VERSION__CONTENT:
 				return basicSetContent(null, msgs);
 			case Mif2Package.VALUE_SET_VERSION__NON_SELECTABLE_CONTENT:
@@ -556,37 +628,37 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 		switch (featureID) {
 			case Mif2Package.VALUE_SET_VERSION__USES_CODE_SYSTEM_SUPPLEMENT:
 				getUsesCodeSystemSupplement().clear();
-				getUsesCodeSystemSupplement().addAll((Collection<? extends String>)newValue);
+				getUsesCodeSystemSupplement().addAll((Collection<? extends String>) newValue);
 				return;
 			case Mif2Package.VALUE_SET_VERSION__SUPPORTED_CODE_SYSTEM:
 				getSupportedCodeSystem().clear();
-				getSupportedCodeSystem().addAll((Collection<? extends String>)newValue);
+				getSupportedCodeSystem().addAll((Collection<? extends String>) newValue);
 				return;
 			case Mif2Package.VALUE_SET_VERSION__SUPPORTED_LANGUAGE:
 				getSupportedLanguage().clear();
-				getSupportedLanguage().addAll((Collection<? extends String>)newValue);
+				getSupportedLanguage().addAll((Collection<? extends String>) newValue);
 				return;
 			case Mif2Package.VALUE_SET_VERSION__ASSOCIATED_CONCEPT_PROPERTY:
 				getAssociatedConceptProperty().clear();
-				getAssociatedConceptProperty().addAll((Collection<? extends ConceptProperty>)newValue);
+				getAssociatedConceptProperty().addAll((Collection<? extends ConceptProperty>) newValue);
 				return;
 			case Mif2Package.VALUE_SET_VERSION__CONTENT:
-				setContent((ContentDefinition)newValue);
+				setContent((ContentDefinition) newValue);
 				return;
 			case Mif2Package.VALUE_SET_VERSION__NON_SELECTABLE_CONTENT:
-				setNonSelectableContent((ContentDefinition)newValue);
+				setNonSelectableContent((ContentDefinition) newValue);
 				return;
 			case Mif2Package.VALUE_SET_VERSION__ENUMERATED_CONTENT:
-				setEnumeratedContent((VocabularyCodeRefs)newValue);
+				setEnumeratedContent((VocabularyCodeRefs) newValue);
 				return;
 			case Mif2Package.VALUE_SET_VERSION__EXAMPLE_CONTENT:
-				setExampleContent((VocabularyCodeRefs)newValue);
+				setExampleContent((VocabularyCodeRefs) newValue);
 				return;
 			case Mif2Package.VALUE_SET_VERSION__VERSION_DATE:
-				setVersionDate((XMLGregorianCalendar)newValue);
+				setVersionDate((XMLGregorianCalendar) newValue);
 				return;
 			case Mif2Package.VALUE_SET_VERSION__VERSION_TIME:
-				setVersionTime((XMLGregorianCalendar)newValue);
+				setVersionTime((XMLGregorianCalendar) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -613,16 +685,16 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 				getAssociatedConceptProperty().clear();
 				return;
 			case Mif2Package.VALUE_SET_VERSION__CONTENT:
-				setContent((ContentDefinition)null);
+				setContent((ContentDefinition) null);
 				return;
 			case Mif2Package.VALUE_SET_VERSION__NON_SELECTABLE_CONTENT:
-				setNonSelectableContent((ContentDefinition)null);
+				setNonSelectableContent((ContentDefinition) null);
 				return;
 			case Mif2Package.VALUE_SET_VERSION__ENUMERATED_CONTENT:
-				setEnumeratedContent((VocabularyCodeRefs)null);
+				setEnumeratedContent((VocabularyCodeRefs) null);
 				return;
 			case Mif2Package.VALUE_SET_VERSION__EXAMPLE_CONTENT:
-				setExampleContent((VocabularyCodeRefs)null);
+				setExampleContent((VocabularyCodeRefs) null);
 				return;
 			case Mif2Package.VALUE_SET_VERSION__VERSION_DATE:
 				setVersionDate(VERSION_DATE_EDEFAULT);
@@ -659,7 +731,9 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 			case Mif2Package.VALUE_SET_VERSION__EXAMPLE_CONTENT:
 				return exampleContent != null;
 			case Mif2Package.VALUE_SET_VERSION__VERSION_DATE:
-				return VERSION_DATE_EDEFAULT == null ? versionDate != null : !VERSION_DATE_EDEFAULT.equals(versionDate);
+				return VERSION_DATE_EDEFAULT == null
+						? versionDate != null
+						: !VERSION_DATE_EDEFAULT.equals(versionDate);
 			case Mif2Package.VALUE_SET_VERSION__VERSION_TIME:
 				return isSetVersionTime();
 		}
@@ -673,7 +747,9 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (usesCodeSystemSupplement: ");
@@ -685,9 +761,13 @@ public class ValueSetVersionImpl extends ModelElementImpl implements ValueSetVer
 		result.append(", versionDate: ");
 		result.append(versionDate);
 		result.append(", versionTime: ");
-		if (versionTimeESet) result.append(versionTime); else result.append("<unset>");
+		if (versionTimeESet) {
+			result.append(versionTime);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //ValueSetVersionImpl
+} // ValueSetVersionImpl

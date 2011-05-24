@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -128,13 +132,8 @@ public enum DefinedRoleKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final DefinedRoleKind[] VALUES_ARRAY =
-		new DefinedRoleKind[] {
-			COMMITTEE_CO_CHAIR,
-			CONTACT,
-			EDITOR,
-			PRIMARY_CONTRIBUTOR,
-		};
+	private static final DefinedRoleKind[] VALUES_ARRAY = new DefinedRoleKind[] {
+			COMMITTEE_CO_CHAIR, CONTACT, EDITOR, PRIMARY_CONTRIBUTOR, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Defined Role Kind</b></em>' enumerators.
@@ -184,10 +183,14 @@ public enum DefinedRoleKind implements Enumerator {
 	 */
 	public static DefinedRoleKind get(int value) {
 		switch (value) {
-			case COMMITTEE_CO_CHAIR_VALUE: return COMMITTEE_CO_CHAIR;
-			case CONTACT_VALUE: return CONTACT;
-			case EDITOR_VALUE: return EDITOR;
-			case PRIMARY_CONTRIBUTOR_VALUE: return PRIMARY_CONTRIBUTOR;
+			case COMMITTEE_CO_CHAIR_VALUE:
+				return COMMITTEE_CO_CHAIR;
+			case CONTACT_VALUE:
+				return CONTACT;
+			case EDITOR_VALUE:
+				return EDITOR;
+			case PRIMARY_CONTRIBUTOR_VALUE:
+				return PRIMARY_CONTRIBUTOR;
 		}
 		return null;
 	}
@@ -231,7 +234,7 @@ public enum DefinedRoleKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -240,7 +243,7 @@ public enum DefinedRoleKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -249,7 +252,7 @@ public enum DefinedRoleKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -262,5 +265,5 @@ public enum DefinedRoleKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //DefinedRoleKind
+
+} // DefinedRoleKind

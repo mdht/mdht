@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.validation;
 
 import java.math.BigInteger;
@@ -23,12 +27,20 @@ public interface ThValidator {
 	boolean validate();
 
 	boolean validateAlign(AlignType value);
+
 	boolean validateChar(String value);
+
 	boolean validateCharoff(String value);
+
 	boolean validateClass(MifClassType value);
+
 	boolean validateColspan(BigInteger value);
+
 	boolean validateLang(String value);
+
 	boolean validateRowspan(BigInteger value);
+
 	boolean validateStyle(StyleSheet value);
+
 	boolean validateValign(ValignType value);
 }

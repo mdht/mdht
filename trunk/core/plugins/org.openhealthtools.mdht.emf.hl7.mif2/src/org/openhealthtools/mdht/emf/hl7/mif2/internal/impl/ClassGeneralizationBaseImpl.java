@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -152,8 +156,14 @@ public abstract class ClassGeneralizationBaseImpl extends RelationshipImpl imple
 		GeneralizationAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_GENERALIZATION_BASE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_GENERALIZATION_BASE__ANNOTATIONS, oldAnnotations,
+				newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -166,15 +176,23 @@ public abstract class ClassGeneralizationBaseImpl extends RelationshipImpl imple
 	public void setAnnotations(GeneralizationAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CLASS_GENERALIZATION_BASE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CLASS_GENERALIZATION_BASE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CLASS_GENERALIZATION_BASE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CLASS_GENERALIZATION_BASE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_GENERALIZATION_BASE__ANNOTATIONS, newAnnotations,
+				newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_GENERALIZATION_BASE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -193,11 +211,16 @@ public abstract class ClassGeneralizationBaseImpl extends RelationshipImpl imple
 	 */
 	public void setConformance(ConformanceKind newConformance) {
 		ConformanceKind oldConformance = conformance;
-		conformance = newConformance == null ? CONFORMANCE_EDEFAULT : newConformance;
+		conformance = newConformance == null
+				? CONFORMANCE_EDEFAULT
+				: newConformance;
 		boolean oldConformanceESet = conformanceESet;
 		conformanceESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_GENERALIZATION_BASE__CONFORMANCE, oldConformance, conformance, !oldConformanceESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_GENERALIZATION_BASE__CONFORMANCE, oldConformance,
+				conformance, !oldConformanceESet));
+		}
 	}
 
 	/**
@@ -210,8 +233,11 @@ public abstract class ClassGeneralizationBaseImpl extends RelationshipImpl imple
 		boolean oldConformanceESet = conformanceESet;
 		conformance = CONFORMANCE_EDEFAULT;
 		conformanceESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CLASS_GENERALIZATION_BASE__CONFORMANCE, oldConformance, CONFORMANCE_EDEFAULT, oldConformanceESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CLASS_GENERALIZATION_BASE__CONFORMANCE, oldConformance,
+				CONFORMANCE_EDEFAULT, oldConformanceESet));
+		}
 	}
 
 	/**
@@ -240,8 +266,11 @@ public abstract class ClassGeneralizationBaseImpl extends RelationshipImpl imple
 	public void setGraphicLinkId(String newGraphicLinkId) {
 		String oldGraphicLinkId = graphicLinkId;
 		graphicLinkId = newGraphicLinkId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_GENERALIZATION_BASE__GRAPHIC_LINK_ID, oldGraphicLinkId, graphicLinkId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_GENERALIZATION_BASE__GRAPHIC_LINK_ID, oldGraphicLinkId,
+				graphicLinkId));
+		}
 	}
 
 	/**
@@ -261,8 +290,10 @@ public abstract class ClassGeneralizationBaseImpl extends RelationshipImpl imple
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_GENERALIZATION_BASE__SORT_KEY, oldSortKey, sortKey));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_GENERALIZATION_BASE__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -308,16 +339,16 @@ public abstract class ClassGeneralizationBaseImpl extends RelationshipImpl imple
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CLASS_GENERALIZATION_BASE__ANNOTATIONS:
-				setAnnotations((GeneralizationAnnotations)newValue);
+				setAnnotations((GeneralizationAnnotations) newValue);
 				return;
 			case Mif2Package.CLASS_GENERALIZATION_BASE__CONFORMANCE:
-				setConformance((ConformanceKind)newValue);
+				setConformance((ConformanceKind) newValue);
 				return;
 			case Mif2Package.CLASS_GENERALIZATION_BASE__GRAPHIC_LINK_ID:
-				setGraphicLinkId((String)newValue);
+				setGraphicLinkId((String) newValue);
 				return;
 			case Mif2Package.CLASS_GENERALIZATION_BASE__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -332,7 +363,7 @@ public abstract class ClassGeneralizationBaseImpl extends RelationshipImpl imple
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CLASS_GENERALIZATION_BASE__ANNOTATIONS:
-				setAnnotations((GeneralizationAnnotations)null);
+				setAnnotations((GeneralizationAnnotations) null);
 				return;
 			case Mif2Package.CLASS_GENERALIZATION_BASE__CONFORMANCE:
 				unsetConformance();
@@ -360,9 +391,13 @@ public abstract class ClassGeneralizationBaseImpl extends RelationshipImpl imple
 			case Mif2Package.CLASS_GENERALIZATION_BASE__CONFORMANCE:
 				return isSetConformance();
 			case Mif2Package.CLASS_GENERALIZATION_BASE__GRAPHIC_LINK_ID:
-				return GRAPHIC_LINK_ID_EDEFAULT == null ? graphicLinkId != null : !GRAPHIC_LINK_ID_EDEFAULT.equals(graphicLinkId);
+				return GRAPHIC_LINK_ID_EDEFAULT == null
+						? graphicLinkId != null
+						: !GRAPHIC_LINK_ID_EDEFAULT.equals(graphicLinkId);
 			case Mif2Package.CLASS_GENERALIZATION_BASE__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -374,11 +409,17 @@ public abstract class ClassGeneralizationBaseImpl extends RelationshipImpl imple
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (conformance: ");
-		if (conformanceESet) result.append(conformance); else result.append("<unset>");
+		if (conformanceESet) {
+			result.append(conformance);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", graphicLinkId: ");
 		result.append(graphicLinkId);
 		result.append(", sortKey: ");
@@ -387,4 +428,4 @@ public abstract class ClassGeneralizationBaseImpl extends RelationshipImpl imple
 		return result.toString();
 	}
 
-} //ClassGeneralizationBaseImpl
+} // ClassGeneralizationBaseImpl

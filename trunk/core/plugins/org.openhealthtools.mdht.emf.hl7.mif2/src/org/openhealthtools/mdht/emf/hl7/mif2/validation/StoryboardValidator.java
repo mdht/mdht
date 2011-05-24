@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import org.eclipse.emf.common.util.EList;
@@ -15,7 +19,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.StoryboardNarrative;
 import org.openhealthtools.mdht.emf.hl7.mif2.XMIContent;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Img;
 
-
 /**
  * A sample validator interface for {@link org.openhealthtools.mdht.emf.hl7.mif2.Storyboard}.
  * This doesn't really do anything, and it's not a real EMF artifact.
@@ -26,9 +29,14 @@ public interface StoryboardValidator {
 	boolean validate();
 
 	boolean validateAnnotations(StoryboardAnnotations value);
+
 	boolean validateCorrespondingArtifacts(StoryboardArtifactReferences value);
+
 	boolean validateActivityDiagramFigure(Img value);
+
 	boolean validateParentStoryboard(PackageRef value);
+
 	boolean validateNarrative(EList<StoryboardNarrative> value);
+
 	boolean validateActivityDiagram(XMIContent value);
 }

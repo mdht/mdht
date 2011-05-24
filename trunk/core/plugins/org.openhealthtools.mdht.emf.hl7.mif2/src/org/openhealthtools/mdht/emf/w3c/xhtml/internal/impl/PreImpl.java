@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -178,11 +182,15 @@ public class PreImpl extends PreContentImpl implements Pre {
 	 */
 	public void setClass(MifClassType newClass) {
 		MifClassType oldClass = class_;
-		class_ = newClass == null ? CLASS_EDEFAULT : newClass;
+		class_ = newClass == null
+				? CLASS_EDEFAULT
+				: newClass;
 		boolean oldClassESet = classESet;
 		classESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.PRE__CLASS, oldClass, class_, !oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.PRE__CLASS, oldClass, class_, !oldClassESet));
+		}
 	}
 
 	/**
@@ -195,8 +203,10 @@ public class PreImpl extends PreContentImpl implements Pre {
 		boolean oldClassESet = classESet;
 		class_ = CLASS_EDEFAULT;
 		classESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.PRE__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.PRE__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		}
 	}
 
 	/**
@@ -225,8 +235,9 @@ public class PreImpl extends PreContentImpl implements Pre {
 	public void setLang(String newLang) {
 		String oldLang = lang;
 		lang = newLang;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.PRE__LANG, oldLang, lang));
+		}
 	}
 
 	/**
@@ -245,11 +256,15 @@ public class PreImpl extends PreContentImpl implements Pre {
 	 */
 	public void setSpace(SpaceType newSpace) {
 		SpaceType oldSpace = space;
-		space = newSpace == null ? SPACE_EDEFAULT : newSpace;
+		space = newSpace == null
+				? SPACE_EDEFAULT
+				: newSpace;
 		boolean oldSpaceESet = spaceESet;
 		spaceESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.PRE__SPACE, oldSpace, space, !oldSpaceESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.PRE__SPACE, oldSpace, space, !oldSpaceESet));
+		}
 	}
 
 	/**
@@ -262,8 +277,10 @@ public class PreImpl extends PreContentImpl implements Pre {
 		boolean oldSpaceESet = spaceESet;
 		space = SPACE_EDEFAULT;
 		spaceESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.PRE__SPACE, oldSpace, SPACE_EDEFAULT, oldSpaceESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.PRE__SPACE, oldSpace, SPACE_EDEFAULT, oldSpaceESet));
+		}
 	}
 
 	/**
@@ -291,11 +308,15 @@ public class PreImpl extends PreContentImpl implements Pre {
 	 */
 	public void setStyle(StyleSheet newStyle) {
 		StyleSheet oldStyle = style;
-		style = newStyle == null ? STYLE_EDEFAULT : newStyle;
+		style = newStyle == null
+				? STYLE_EDEFAULT
+				: newStyle;
 		boolean oldStyleESet = styleESet;
 		styleESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.PRE__STYLE, oldStyle, style, !oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.PRE__STYLE, oldStyle, style, !oldStyleESet));
+		}
 	}
 
 	/**
@@ -308,8 +329,10 @@ public class PreImpl extends PreContentImpl implements Pre {
 		boolean oldStyleESet = styleESet;
 		style = STYLE_EDEFAULT;
 		styleESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.PRE__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.PRE__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		}
 	}
 
 	/**
@@ -350,16 +373,16 @@ public class PreImpl extends PreContentImpl implements Pre {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case XhtmlPackage.PRE__CLASS:
-				setClass((MifClassType)newValue);
+				setClass((MifClassType) newValue);
 				return;
 			case XhtmlPackage.PRE__LANG:
-				setLang((String)newValue);
+				setLang((String) newValue);
 				return;
 			case XhtmlPackage.PRE__SPACE:
-				setSpace((SpaceType)newValue);
+				setSpace((SpaceType) newValue);
 				return;
 			case XhtmlPackage.PRE__STYLE:
-				setStyle((StyleSheet)newValue);
+				setStyle((StyleSheet) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -400,7 +423,9 @@ public class PreImpl extends PreContentImpl implements Pre {
 			case XhtmlPackage.PRE__CLASS:
 				return isSetClass();
 			case XhtmlPackage.PRE__LANG:
-				return LANG_EDEFAULT == null ? lang != null : !LANG_EDEFAULT.equals(lang);
+				return LANG_EDEFAULT == null
+						? lang != null
+						: !LANG_EDEFAULT.equals(lang);
 			case XhtmlPackage.PRE__SPACE:
 				return isSetSpace();
 			case XhtmlPackage.PRE__STYLE:
@@ -416,19 +441,33 @@ public class PreImpl extends PreContentImpl implements Pre {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (class: ");
-		if (classESet) result.append(class_); else result.append("<unset>");
+		if (classESet) {
+			result.append(class_);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", lang: ");
 		result.append(lang);
 		result.append(", space: ");
-		if (spaceESet) result.append(space); else result.append("<unset>");
+		if (spaceESet) {
+			result.append(space);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", style: ");
-		if (styleESet) result.append(style); else result.append("<unset>");
+		if (styleESet) {
+			result.append(style);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //PreImpl
+} // PreImpl

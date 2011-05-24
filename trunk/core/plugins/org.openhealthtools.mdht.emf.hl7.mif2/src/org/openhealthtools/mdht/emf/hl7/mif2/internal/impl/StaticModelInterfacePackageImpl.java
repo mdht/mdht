@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -118,12 +122,19 @@ public class StaticModelInterfacePackageImpl extends PackageImpl implements Stat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetImportedVocabularyModelPackage(PackageRef newImportedVocabularyModelPackage, NotificationChain msgs) {
+	public NotificationChain basicSetImportedVocabularyModelPackage(PackageRef newImportedVocabularyModelPackage,
+			NotificationChain msgs) {
 		PackageRef oldImportedVocabularyModelPackage = importedVocabularyModelPackage;
 		importedVocabularyModelPackage = newImportedVocabularyModelPackage;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__IMPORTED_VOCABULARY_MODEL_PACKAGE, oldImportedVocabularyModelPackage, newImportedVocabularyModelPackage);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__IMPORTED_VOCABULARY_MODEL_PACKAGE,
+				oldImportedVocabularyModelPackage, newImportedVocabularyModelPackage);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -136,15 +147,23 @@ public class StaticModelInterfacePackageImpl extends PackageImpl implements Stat
 	public void setImportedVocabularyModelPackage(PackageRef newImportedVocabularyModelPackage) {
 		if (newImportedVocabularyModelPackage != importedVocabularyModelPackage) {
 			NotificationChain msgs = null;
-			if (importedVocabularyModelPackage != null)
-				msgs = ((InternalEObject)importedVocabularyModelPackage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__IMPORTED_VOCABULARY_MODEL_PACKAGE, null, msgs);
-			if (newImportedVocabularyModelPackage != null)
-				msgs = ((InternalEObject)newImportedVocabularyModelPackage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__IMPORTED_VOCABULARY_MODEL_PACKAGE, null, msgs);
+			if (importedVocabularyModelPackage != null) {
+				msgs = ((InternalEObject) importedVocabularyModelPackage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__IMPORTED_VOCABULARY_MODEL_PACKAGE, null, msgs);
+			}
+			if (newImportedVocabularyModelPackage != null) {
+				msgs = ((InternalEObject) newImportedVocabularyModelPackage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__IMPORTED_VOCABULARY_MODEL_PACKAGE, null, msgs);
+			}
 			msgs = basicSetImportedVocabularyModelPackage(newImportedVocabularyModelPackage, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__IMPORTED_VOCABULARY_MODEL_PACKAGE,
+				newImportedVocabularyModelPackage, newImportedVocabularyModelPackage));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__IMPORTED_VOCABULARY_MODEL_PACKAGE, newImportedVocabularyModelPackage, newImportedVocabularyModelPackage));
 	}
 
 	/**
@@ -154,7 +173,9 @@ public class StaticModelInterfacePackageImpl extends PackageImpl implements Stat
 	 */
 	public EList<ArtifactDependency> getImportStaticModelInterfacePackage() {
 		if (importStaticModelInterfacePackage == null) {
-			importStaticModelInterfacePackage = new EObjectContainmentEList<ArtifactDependency>(ArtifactDependency.class, this, Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__IMPORT_STATIC_MODEL_INTERFACE_PACKAGE);
+			importStaticModelInterfacePackage = new EObjectContainmentEList<ArtifactDependency>(
+				ArtifactDependency.class, this,
+				Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__IMPORT_STATIC_MODEL_INTERFACE_PACKAGE);
 		}
 		return importStaticModelInterfacePackage;
 	}
@@ -166,7 +187,9 @@ public class StaticModelInterfacePackageImpl extends PackageImpl implements Stat
 	 */
 	public EList<CommonModelElementDefinition> getCommonModelElementDefinition() {
 		if (commonModelElementDefinition == null) {
-			commonModelElementDefinition = new EObjectContainmentEList<CommonModelElementDefinition>(CommonModelElementDefinition.class, this, Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__COMMON_MODEL_ELEMENT_DEFINITION);
+			commonModelElementDefinition = new EObjectContainmentEList<CommonModelElementDefinition>(
+				CommonModelElementDefinition.class, this,
+				Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__COMMON_MODEL_ELEMENT_DEFINITION);
 		}
 		return commonModelElementDefinition;
 	}
@@ -178,7 +201,8 @@ public class StaticModelInterfacePackageImpl extends PackageImpl implements Stat
 	 */
 	public EList<StubDefinition> getStubDefinition() {
 		if (stubDefinition == null) {
-			stubDefinition = new EObjectContainmentEList<StubDefinition>(StubDefinition.class, this, Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__STUB_DEFINITION);
+			stubDefinition = new EObjectContainmentEList<StubDefinition>(
+				StubDefinition.class, this, Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__STUB_DEFINITION);
 		}
 		return stubDefinition;
 	}
@@ -194,11 +218,11 @@ public class StaticModelInterfacePackageImpl extends PackageImpl implements Stat
 			case Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__IMPORTED_VOCABULARY_MODEL_PACKAGE:
 				return basicSetImportedVocabularyModelPackage(null, msgs);
 			case Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__IMPORT_STATIC_MODEL_INTERFACE_PACKAGE:
-				return ((InternalEList<?>)getImportStaticModelInterfacePackage()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getImportStaticModelInterfacePackage()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__COMMON_MODEL_ELEMENT_DEFINITION:
-				return ((InternalEList<?>)getCommonModelElementDefinition()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCommonModelElementDefinition()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__STUB_DEFINITION:
-				return ((InternalEList<?>)getStubDefinition()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getStubDefinition()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -233,19 +257,19 @@ public class StaticModelInterfacePackageImpl extends PackageImpl implements Stat
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__IMPORTED_VOCABULARY_MODEL_PACKAGE:
-				setImportedVocabularyModelPackage((PackageRef)newValue);
+				setImportedVocabularyModelPackage((PackageRef) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__IMPORT_STATIC_MODEL_INTERFACE_PACKAGE:
 				getImportStaticModelInterfacePackage().clear();
-				getImportStaticModelInterfacePackage().addAll((Collection<? extends ArtifactDependency>)newValue);
+				getImportStaticModelInterfacePackage().addAll((Collection<? extends ArtifactDependency>) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__COMMON_MODEL_ELEMENT_DEFINITION:
 				getCommonModelElementDefinition().clear();
-				getCommonModelElementDefinition().addAll((Collection<? extends CommonModelElementDefinition>)newValue);
+				getCommonModelElementDefinition().addAll((Collection<? extends CommonModelElementDefinition>) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__STUB_DEFINITION:
 				getStubDefinition().clear();
-				getStubDefinition().addAll((Collection<? extends StubDefinition>)newValue);
+				getStubDefinition().addAll((Collection<? extends StubDefinition>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -260,7 +284,7 @@ public class StaticModelInterfacePackageImpl extends PackageImpl implements Stat
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__IMPORTED_VOCABULARY_MODEL_PACKAGE:
-				setImportedVocabularyModelPackage((PackageRef)null);
+				setImportedVocabularyModelPackage((PackageRef) null);
 				return;
 			case Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE__IMPORT_STATIC_MODEL_INTERFACE_PACKAGE:
 				getImportStaticModelInterfacePackage().clear();
@@ -295,4 +319,4 @@ public class StaticModelInterfacePackageImpl extends PackageImpl implements Stat
 		return super.eIsSet(featureID);
 	}
 
-} //StaticModelInterfacePackageImpl
+} // StaticModelInterfacePackageImpl
