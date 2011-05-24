@@ -53,7 +53,7 @@ public class FixCommentAction implements IObjectActionDelegate {
 	public static final String RSM_DOCUMENTATION_STEREOTYPE_QNAME = "Default::Documentation";
 
 	private NamedElement element;
-	
+
 	public FixCommentAction() {
 		super();
 	}
@@ -64,23 +64,22 @@ public class FixCommentAction implements IObjectActionDelegate {
 	public void run(IAction action) {
 		try {
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(element);
-			IUndoableOperation operation = new AbstractEMFOperation(
-					editingDomain, "Fix comments") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Fix comments") {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+
 					// if necessary, apply Default profile
-			    	applyRSMDefaultProfile(UMLUtil.getTopPackage(element));
-					
+					applyRSMDefaultProfile(UMLUtil.getTopPackage(element));
+
 					// apply documentation stereotype to selection and its children
-			    	// if multiple comments, only apply stereotype to first one
-					TreeIterator iterator = EcoreUtil.getAllContents(
-							Collections.singletonList(element));
-					
+					// if multiple comments, only apply stereotype to first one
+					TreeIterator iterator = EcoreUtil.getAllContents(Collections.singletonList(element));
+
 					while (iterator != null && iterator.hasNext()) {
 						Object child = iterator.next();
 						if (Element.class.isInstance(child)) {
-							if (((Element)child).getOwnedComments().size() >= 1) {
-								Comment comment = (Comment) ((Element)child).getOwnedComments().get(0);
+							if (((Element) child).getOwnedComments().size() >= 1) {
+								Comment comment = ((Element) child).getOwnedComments().get(0);
 								Stereotype rsaDocStereotype = comment.getApplicableStereotype(RSM_DOCUMENTATION_STEREOTYPE_QNAME);
 								if (rsaDocStereotype != null && !comment.isStereotypeApplied(rsaDocStereotype)) {
 									comment.applyStereotype(rsaDocStereotype);
@@ -89,17 +88,18 @@ public class FixCommentAction implements IObjectActionDelegate {
 						}
 					}
 
-			        return Status.OK_STATUS;
-			    }};
+					return Status.OK_STATUS;
+				}
+			};
 
-		    try {
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
 
-		    } catch (ExecutionException ee) {
-//			        Logger.logException(ee);
-		    }
+			} catch (ExecutionException ee) {
+				// Logger.logException(ee);
+			}
 
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
@@ -117,33 +117,31 @@ public class FixCommentAction implements IObjectActionDelegate {
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
 		element = null;
-		
-		if (((IStructuredSelection)selection).size() == 1) {
-			Object selected = ((IStructuredSelection)selection).getFirstElement();
+
+		if (((IStructuredSelection) selection).size() == 1) {
+			Object selected = ((IStructuredSelection) selection).getFirstElement();
 			if (selected instanceof IAdaptable) {
-				selected = (EObject) ((IAdaptable) selected).getAdapter(EObject.class);
+				selected = ((IAdaptable) selected).getAdapter(EObject.class);
 			}
 			if (selected instanceof NamedElement) {
 				element = (NamedElement) selected;
 			}
 		}
-		
+
 		action.setEnabled(element != null);
 	}
 
 	private Profile applyRSMDefaultProfile(Package model) {
 		Resource defaultProfileResource = null;
 		Profile defaultProfile = null;
-		
+
 		try {
 			ResourceSet resourceSet = model.eResource().getResourceSet();
-			defaultProfileResource = resourceSet.getResource(URI
-					.createURI(RSM_DEFAULT_PROFILE_URI), true);
-			
+			defaultProfileResource = resourceSet.getResource(URI.createURI(RSM_DEFAULT_PROFILE_URI), true);
+
 			if (defaultProfileResource != null) {
 				defaultProfile = (Profile) EcoreUtil.getObjectByType(
-						defaultProfileResource.getContents(), 
-						UMLPackage.eINSTANCE.getProfile());
+					defaultProfileResource.getContents(), UMLPackage.eINSTANCE.getProfile());
 
 				if (defaultProfile != null && !model.isProfileApplied(defaultProfile)) {
 					model.applyProfile(defaultProfile);
@@ -151,9 +149,9 @@ public class FixCommentAction implements IObjectActionDelegate {
 			}
 
 		} catch (WrappedException we) {
-			//Logger.logException(we);
+			// Logger.logException(we);
 		}
-		
+
 		return defaultProfile;
 	}
 

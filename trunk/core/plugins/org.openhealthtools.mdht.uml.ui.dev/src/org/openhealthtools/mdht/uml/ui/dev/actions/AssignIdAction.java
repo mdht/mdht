@@ -44,7 +44,7 @@ import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class AssignIdAction implements IObjectActionDelegate {
 	private NamedElement element;
-	
+
 	public AssignIdAction() {
 		super();
 	}
@@ -55,53 +55,48 @@ public class AssignIdAction implements IObjectActionDelegate {
 	public void run(IAction action) {
 		try {
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(element);
-			IUndoableOperation operation = new AbstractEMFOperation(
-					editingDomain, "Assign XMI IDs") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Assign XMI IDs") {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 
 					// Restore all generated UUIDs (else, reapplying this action does not work)
-					TreeIterator iterator = EcoreUtil.getAllContents(
-							Collections.singletonList(element));
-					
+					TreeIterator iterator = EcoreUtil.getAllContents(Collections.singletonList(element));
+
 					while (iterator != null && iterator.hasNext()) {
 						Object child = iterator.next();
 						if (child instanceof NamedElement) {
-							UMLUtil.setEObjectID((NamedElement)child, EcoreUtil.generateUUID());
+							UMLUtil.setEObjectID((NamedElement) child, EcoreUtil.generateUUID());
 						}
 					}
 
 					// Assign XMI IDs to selection and its children
-					iterator = EcoreUtil.getAllContents(
-							Collections.singletonList(element));
-					
+					iterator = EcoreUtil.getAllContents(Collections.singletonList(element));
+
 					while (iterator != null && iterator.hasNext()) {
 						Object child = iterator.next();
 						if (child instanceof Package) {
-							UMLUtil.setEObjectID((NamedElement)child);
-						}
-						else if (child instanceof Class || child instanceof DataType) {
-							UMLUtil.setEObjectID((NamedElement)child);
-						}
-						else if (child instanceof Property
-								&& ((Property)child).getClass_() != null) {
-							UMLUtil.setEObjectID((NamedElement)child);
-						}
-						else if (child instanceof EnumerationLiteral) {
-							UMLUtil.setEObjectID((NamedElement)child);
+							UMLUtil.setEObjectID((NamedElement) child);
+						} else if (child instanceof Class || child instanceof DataType) {
+							UMLUtil.setEObjectID((NamedElement) child);
+						} else if (child instanceof Property && ((Property) child).getClass_() != null) {
+							UMLUtil.setEObjectID((NamedElement) child);
+						} else if (child instanceof EnumerationLiteral) {
+							UMLUtil.setEObjectID((NamedElement) child);
 						}
 					}
 
-			        return Status.OK_STATUS;
-			    }};
+					return Status.OK_STATUS;
+				}
+			};
 
-		    try {
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
 
-		    } catch (ExecutionException ee) {
-//			        Logger.logException(ee);
-		    }
+			} catch (ExecutionException ee) {
+				// Logger.logException(ee);
+			}
 
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
@@ -119,17 +114,17 @@ public class AssignIdAction implements IObjectActionDelegate {
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
 		element = null;
-		
-		if (((IStructuredSelection)selection).size() == 1) {
-			Object selected = ((IStructuredSelection)selection).getFirstElement();
+
+		if (((IStructuredSelection) selection).size() == 1) {
+			Object selected = ((IStructuredSelection) selection).getFirstElement();
 			if (selected instanceof IAdaptable) {
-				selected = (EObject) ((IAdaptable) selected).getAdapter(EObject.class);
+				selected = ((IAdaptable) selected).getAdapter(EObject.class);
 			}
 			if (selected instanceof NamedElement) {
 				element = (NamedElement) selected;
 			}
 		}
-		
+
 		action.setEnabled(element != null);
 	}
 
