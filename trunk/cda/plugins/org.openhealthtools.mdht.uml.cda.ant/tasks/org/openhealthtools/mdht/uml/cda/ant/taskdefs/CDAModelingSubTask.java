@@ -90,10 +90,10 @@ public abstract class CDAModelingSubTask extends Task {
 	}
 
 	protected void logDiagnostics(Diagnostic diagnostics) {
-		for (Iterator children = diagnostics.getChildren().iterator(); children.hasNext();) {
-			Diagnostic diagnostic = (Diagnostic) children.next();
+		for (Iterator<Diagnostic> children = diagnostics.getChildren().iterator(); children.hasNext();) {
+			Diagnostic diagnostic = children.next();
 			StringBuffer message = new StringBuffer(diagnostic.getMessage());
-			for (Iterator diagData = diagnostic.getData().iterator(); diagData.hasNext();) {
+			for (Iterator<?> diagData = diagnostic.getData().iterator(); diagData.hasNext();) {
 				Object data = diagData.next();
 				if (NamedElement.class.isInstance(data)) {
 					String qname = getPackageQualifiedName((NamedElement) data);
