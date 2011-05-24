@@ -10,10 +10,13 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ihe.EncounterActivity;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 
 /**
  * This class
@@ -21,25 +24,65 @@ import org.junit.Test;
 @SuppressWarnings("nls")
 public class EncounterActivityOperationsTest extends EncounterEntryOperationsTest {
 
-	/**
-	 * Not a real test, needed for EMMA to report 100% method coverage.
-	 */
-	@Override
-	@SuppressWarnings("unused")
-	@Test
-	public void testConstructor() {
-		EncounterActivityOperations obj = new EncounterActivityOperations();
-		assertTrue(true);
-	} // testConstructor
+	public static class OperationsForOCL extends EncounterActivityOperations {
+		public String getOCLValue(String fieldName) {
 
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.EncounterActivityOperations#validateEncountersActivityTemplateId(org.openhealthtools.mdht.uml.cda.ihe.EncounterActivity, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateEncountersActivityTemplateId() {
-		fail("Not yet implemented");
+			String oclValue = null;
+
+			try {
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+			} catch (Exception e) {
+				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
+			}
+			return oclValue;
+		}
 	}
 
+	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
+
+	public class ObjectFactory implements TestObjectFactory<EncounterActivity> {
+		public EncounterActivity create() {
+			return IHEFactory.eINSTANCE.createEncounterActivity();
+		}
+	}
+
+	ObjectFactory objectFactory = new ObjectFactory();
+
+	@Test
+	public void testValidateEncounterActivityTemplateId() {
+		OperationsTestCase<EncounterActivity> testCase = new OperationsTestCase<EncounterActivity>(
+			"Validate  EncounterActivityTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_INTAKE_OUTPUT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(EncounterActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(EncounterActivity target) {
+				target.init();
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return EncounterActivityOperations.validateEncountersActivityTemplateId(
+					(EncounterActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.operations.RIMOperationTest#getObjectToTest()
+	 */
+	@Override
+	protected EObject getObjectToTest() {
+		return objectFactory.create();
+	}
 } // EncounterActivityOperationsTest

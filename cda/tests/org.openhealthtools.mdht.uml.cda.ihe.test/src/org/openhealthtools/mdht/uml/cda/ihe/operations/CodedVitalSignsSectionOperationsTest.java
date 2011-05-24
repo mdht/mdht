@@ -25,6 +25,9 @@ import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.Entry;
 import org.openhealthtools.mdht.uml.cda.ihe.CodedVitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * This class is a JUnit4 test case.
@@ -98,6 +101,25 @@ public class CodedVitalSignsSectionOperationsTest extends VitalSignsSectionOpera
 	@Override
 	protected EObject getObjectInitToTest() {
 		return IHEFactory.eINSTANCE.createCodedVitalSignsSection().init();
+	}
+
+	@Test
+	public void testGetIHEVitalSignsOrganizers() {
+		CodedVitalSignsSection cvss = IHEFactory.eINSTANCE.createCodedVitalSignsSection().init();
+
+		final long TESTCOUNT = 100;
+		for (int vsoctr = 0; vsoctr < TESTCOUNT; vsoctr++) {
+			VitalSignsOrganizer vitalSignsOrganizer = IHEFactory.eINSTANCE.createVitalSignsOrganizer();
+			String vso = String.valueOf(vsoctr);
+			CD cd = DatatypesFactory.eINSTANCE.createCD(vso, vso, vso, vso);
+			vitalSignsOrganizer.setCode(cd);
+			cvss.addOrganizer(vitalSignsOrganizer);
+		}
+
+		EList<VitalSignsOrganizer> result = CodedVitalSignsSectionOperations.getIHEVitalSignsOrganizers(cvss);
+
+		org.junit.Assert.assertEquals(result.size(), TESTCOUNT);
+
 	}
 
 } // CodedVitalSignsSectionOperationsTest

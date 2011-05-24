@@ -10,10 +10,13 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.IntakeOutputSection;
 import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
 
 /**
@@ -22,24 +25,65 @@ import org.openhealthtools.mdht.uml.cda.operations.SectionOperationsTest;
 @SuppressWarnings("nls")
 public class IntakeOutputSectionOperationsTest extends SectionOperationsTest {
 
-	/**
-	 * Not a real test, needed for EMMA to report 100% method coverage.
-	 */
-	@SuppressWarnings("unused")
-	@Test
-	public final void testConstructor() {
-		IntakeOutputSectionOperations obj = new IntakeOutputSectionOperations();
-		assertTrue(true);
-	} // testConstructor
+	public static class OperationsForOCL extends IntakeOutputSectionOperations {
+		public String getOCLValue(String fieldName) {
 
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.IntakeOutputSectionOperations#validateIntakeOutputSectionTemplateId(org.openhealthtools.mdht.uml.cda.ihe.IntakeOutputSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
-	@Test
-	public void testValidateIntakeOutputSectionTemplateId() {
-		fail("Not yet implemented");
+			String oclValue = null;
+
+			try {
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+			} catch (Exception e) {
+				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
+			}
+			return oclValue;
+		}
 	}
 
+	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
+
+	public class ObjectFactory implements TestObjectFactory<IntakeOutputSection> {
+		public IntakeOutputSection create() {
+			return IHEFactory.eINSTANCE.createIntakeOutputSection();
+		}
+	}
+
+	ObjectFactory objectFactory = new ObjectFactory();
+
+	@Test
+	public void testValidateIntakeOutputSectionTemplateId() {
+		OperationsTestCase<IntakeOutputSection> testCase = new OperationsTestCase<IntakeOutputSection>(
+			"Validate IntakeOutputSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_INTAKE_OUTPUT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(IntakeOutputSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(IntakeOutputSection target) {
+				target.init();
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return IntakeOutputSectionOperations.validateIntakeOutputSectionTemplateId(
+					(IntakeOutputSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.operations.RIMOperationTest#getObjectToTest()
+	 */
+	@Override
+	protected EObject getObjectToTest() {
+		return objectFactory.create();
+	}
 } // IntakeOutputSectionOperationsTest

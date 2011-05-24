@@ -10,10 +10,13 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.PHRExtract;
 
 /**
  * This class
@@ -21,25 +24,65 @@ import org.junit.Test;
 @SuppressWarnings("nls")
 public class PHRExtractOperationsTest extends MedicalSummaryOperationsTest {
 
-	/**
-	 * Not a real test, needed for EMMA to report 100% method coverage.
-	 */
-	@Override
-	@SuppressWarnings("unused")
-	@Test
-	public final void testConstructor() {
-		PHRExtractOperations obj = new PHRExtractOperations();
-		assertTrue(true);
-	} // testConstructor
+	public static class OperationsForOCL extends PHRExtractOperations {
+		public String getOCLValue(String fieldName) {
 
-	/**
-	 * Test method for
-	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.PHRExtractOperations#validatePHRExtractTemplateId(org.openhealthtools.mdht.uml.cda.ihe.PHRExtract, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
-	 * .
-	 */
+			String oclValue = null;
+
+			try {
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+			} catch (Exception e) {
+				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
+			}
+			return oclValue;
+		}
+	}
+
+	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
+
+	public class ObjectFactory implements TestObjectFactory<PHRExtract> {
+		public PHRExtract create() {
+			return IHEFactory.eINSTANCE.createPHRExtract();
+		}
+	}
+
+	ObjectFactory objectFactory = new ObjectFactory();
+
 	@Test
 	public void testValidatePHRExtractTemplateId() {
-		fail("Not yet implemented");
+		OperationsTestCase<PHRExtract> testCase = new OperationsTestCase<PHRExtract>(
+			"Validate PHRExtractTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PHR_EXTRACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PHRExtract target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PHRExtract target) {
+				target.init();
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return PHRExtractOperations.validatePHRExtractTemplateId((PHRExtract) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.openhealthtools.mdht.uml.hl7.rim.operations.RIMOperationTest#getObjectToTest()
+	 */
+	@Override
+	protected EObject getObjectToTest() {
+		return objectFactory.create();
 	}
 
 } // PHRExtractOperationsTest
