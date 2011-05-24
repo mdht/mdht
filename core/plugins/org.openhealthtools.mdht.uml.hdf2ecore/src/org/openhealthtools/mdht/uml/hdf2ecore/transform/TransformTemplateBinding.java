@@ -26,13 +26,13 @@ public class TransformTemplateBinding extends UMLSwitch {
 	public TransformTemplateBinding(EcoreTransformerOptions options) {
 		transformerOptions = options;
 	}
-	
+
+	@Override
 	public Object caseTemplateBinding(TemplateBinding binding) {
 		TemplateableElement element = binding.getBoundElement();
-		
+
 		if (element instanceof Classifier) {
-			Stereotype eGeneric = EcoreTransformUtil.getEcoreStereotype(
-					element, UMLUtil.STEREOTYPE__E_GENERIC_TYPE);
+			Stereotype eGeneric = EcoreTransformUtil.getEcoreStereotype(element, UMLUtil.STEREOTYPE__E_GENERIC_TYPE);
 			if (eGeneric != null) {
 				UMLUtil.safeApplyStereotype(element, eGeneric);
 			}

@@ -36,50 +36,48 @@ public class TransformChoiceGroups {
 	public TransformChoiceGroups(EcoreTransformerOptions options) {
 		transformerOptions = options;
 	}
-	
+
 	public void transformAllContents(Element element) {
 		try {
 			// first, find all choice groups
-			TreeIterator iterator = EcoreUtil.getAllContents(
-					Collections.singletonList(element));
+			TreeIterator iterator = EcoreUtil.getAllContents(Collections.singletonList(element));
 			while (iterator != null && iterator.hasNext()) {
 				EObject child = (EObject) iterator.next();
-				
+
 				UMLSwitch choiceSwitch = new UMLSwitch() {
+					@Override
 					public Object caseClass(Class umlClass) {
 						// a choice group must have <<choiceGroup>> stereotype
-						Stereotype choiceGroup = umlClass.getAppliedStereotype(
-								IHDFProfileConstants.HDF_PROFILE_NAME
-										+ NamedElement.SEPARATOR + IHDFProfileConstants.CHOICE_GROUP);
+						Stereotype choiceGroup = umlClass.getAppliedStereotype(IHDFProfileConstants.HDF_PROFILE_NAME +
+								NamedElement.SEPARATOR + IHDFProfileConstants.CHOICE_GROUP);
 						if (choiceGroup != null) {
 							choiceGroups.add(umlClass);
 							return umlClass;
-						}
-						else {
+						} else {
 							return null;
 						}
 					}
 				};
-				
+
 				choiceSwitch.doSwitch(child);
 			}
-			
+
 			// second, transform the choice groups
 			Class[] choiceGroupsArray = new Class[choiceGroups.size()];
 			choiceGroupsArray = choiceGroups.toArray(choiceGroupsArray);
 			for (int i = 0; i < choiceGroupsArray.length; i++) {
-				if (choiceGroupsArray[i] != null)
+				if (choiceGroupsArray[i] != null) {
 					transformChoiceGroup(choiceGroupsArray[i]);
+				}
 			}
-			
-		}
-		catch (IndexOutOfBoundsException e) {
+
+		} catch (IndexOutOfBoundsException e) {
 			Logger.logException(e);
 		}
 	}
-	
+
 	private void transformChoiceGroup(Class choiceClass) {
-		//TODO
+		// TODO
 	}
-	
+
 }

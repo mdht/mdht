@@ -21,18 +21,17 @@ import org.openhealthtools.mdht.uml.hdf2ecore.internal.Activator;
 public class EcoreTransformerOptions {
 
 	public static final String INCLUDE_VOCABULARY_CONSTRAINTS = "includeVocabularyConstraints";
-	
+
 	private boolean includeVocabularyConstraints;
-	
+
 	public EcoreTransformerOptions() {
 		initializePreferences();
 	}
-	
+
 	private void initializePreferences() {
 		Preferences store = Activator.getDefault().getPluginPreferences();
 
-		includeVocabularyConstraints = 
-			store.getBoolean(INCLUDE_VOCABULARY_CONSTRAINTS);
+		includeVocabularyConstraints = store.getBoolean(INCLUDE_VOCABULARY_CONSTRAINTS);
 	}
 
 	public boolean isIncludeVocabularyConstraints() {
