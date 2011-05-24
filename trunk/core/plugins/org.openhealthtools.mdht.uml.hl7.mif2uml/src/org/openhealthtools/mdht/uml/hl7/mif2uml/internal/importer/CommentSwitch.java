@@ -134,9 +134,9 @@ public class CommentSwitch extends XhtmlSwitch {
 
 	public CommentSwitch(MIFImporterOptions transformerOptions) {
 		super();
-//		if (transformerOptions.isUseXHTML()) {
-//			prefix = "html:";
-//		}
+		// if (transformerOptions.isUseXHTML()) {
+		// prefix = "html:";
+		// }
 		commentBuffer.append(" ");
 	}
 
@@ -149,7 +149,8 @@ public class CommentSwitch extends XhtmlSwitch {
 	@Override
 	public Object caseObject(org.openhealthtools.mdht.emf.w3c.xhtml.Object objectTag) {
 
-		processFeatureMap("<" + prefix + "object name=\"" + objectTag.getName().toString() + "\">", "</" + prefix + "object>", objectTag.getMixed());
+		processFeatureMap("<" + prefix + "object name=\"" + objectTag.getName().toString() + "\">", "</" + prefix +
+				"object>", objectTag.getMixed());
 		return objectTag;
 	}
 
@@ -263,7 +264,8 @@ public class CommentSwitch extends XhtmlSwitch {
 
 	@Override
 	public Object caseParam(Param object) {
-		commentBuffer.append("<" + prefix + "param name=\"" + object.getName().toString() + "\" value=\"" + object.getValue().toString() + "\"/></" + prefix + "param>");
+		commentBuffer.append("<" + prefix + "param name=\"" + object.getName().toString() + "\" value=\"" +
+				object.getValue().toString() + "\"/></" + prefix + "param>");
 		return object;
 	}
 
@@ -288,8 +290,6 @@ public class CommentSwitch extends XhtmlSwitch {
 	public Object caseImg(Img img) {
 		return img;
 	}
-	
-	
 
 	@Override
 	public Object caseI(I i) {
@@ -395,7 +395,8 @@ public class CommentSwitch extends XhtmlSwitch {
 
 	@Override
 	public Object caseDiv(Div div) {
-		processFeatureMap("<" + prefix + "div title=\" " + div.getTitle() + " \" >", "</" + prefix + "div>", div.getMixed());
+		processFeatureMap(
+			"<" + prefix + "div title=\" " + div.getTitle() + " \" >", "</" + prefix + "div>", div.getMixed());
 
 		return div;
 	}

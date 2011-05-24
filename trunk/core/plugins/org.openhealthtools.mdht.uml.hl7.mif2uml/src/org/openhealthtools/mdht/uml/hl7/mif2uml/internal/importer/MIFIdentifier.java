@@ -28,15 +28,16 @@ import org.openhealthtools.mdht.emf.hl7.mif2.Relationship;
 import org.openhealthtools.mdht.emf.hl7.mif2.StaticModelBase;
 import org.openhealthtools.mdht.uml.hl7.mif2uml.util.MIFUtil;
 
-
 /**
- *
+ * 
  * @version $Id: $
  */
 public class MIFIdentifier {
 
 	private EClass metaclass;
+
 	private String namespace;
+
 	private String name;
 
 	/**
@@ -69,7 +70,7 @@ public class MIFIdentifier {
 			metaclass = Mif2Package.eINSTANCE.getDatatype();
 		}
 	}
-	
+
 	/**
 	 * Create an identifier with a name derived from the MIF model element.
 	 */
@@ -81,48 +82,38 @@ public class MIFIdentifier {
 
 			if (mifElement instanceof StaticModelBase) {
 				namespace = null;
-				name = MIFUtil.getModelName((StaticModelBase)mifElement);
+				name = MIFUtil.getModelName((StaticModelBase) mifElement);
 				metaclass = Mif2Package.eINSTANCE.getStaticModelBase();
-			}
-			else if (mifElement instanceof DatatypeModelLibrary) {
+			} else if (mifElement instanceof DatatypeModelLibrary) {
 				namespace = null;
-				name = MIFUtil.getModelName((DatatypeModelLibrary)mifElement);
+				name = MIFUtil.getModelName((DatatypeModelLibrary) mifElement);
 				metaclass = Mif2Package.eINSTANCE.getDatatypeModelLibrary();
-			}
-			else if (mifElement instanceof Package) {
+			} else if (mifElement instanceof Package) {
 				namespace = null;
-				name = MIFUtil.getModelName((Package)mifElement);
+				name = MIFUtil.getModelName((Package) mifElement);
 				metaclass = Mif2Package.eINSTANCE.getPackage();
-			}
-			else if (mifElement instanceof Datatype) {
-				name = MIFUtil.getDatatypeName((Datatype)mifElement);
+			} else if (mifElement instanceof Datatype) {
+				name = MIFUtil.getDatatypeName((Datatype) mifElement);
 				metaclass = Mif2Package.eINSTANCE.getDatatype();
-			}
-			else if (mifElement instanceof DatatypeOperation) {
-				name = ((DatatypeOperation)mifElement).getName();
+			} else if (mifElement instanceof DatatypeOperation) {
+				name = ((DatatypeOperation) mifElement).getName();
 				metaclass = Mif2Package.eINSTANCE.getDatatypeOperation();
-			}
-			else if (mifElement instanceof ClassBase) {
-				name = ((ClassBase)mifElement).getName();
+			} else if (mifElement instanceof ClassBase) {
+				name = ((ClassBase) mifElement).getName();
 				metaclass = Mif2Package.eINSTANCE.getClassBase();
-			}
-			else if (mifElement instanceof EntryPointBase) {
-				name = ((EntryPointBase)mifElement).getName();
+			} else if (mifElement instanceof EntryPointBase) {
+				name = ((EntryPointBase) mifElement).getName();
 				metaclass = Mif2Package.eINSTANCE.getEntryPointBase();
-			}
-			else if (mifElement instanceof Attribute) {
-				name = ((Attribute)mifElement).getName();
+			} else if (mifElement instanceof Attribute) {
+				name = ((Attribute) mifElement).getName();
 				metaclass = Mif2Package.eINSTANCE.getAttribute();
-			}
-			else if (mifElement instanceof org.openhealthtools.mdht.emf.hl7.mif2.Association) {
+			} else if (mifElement instanceof org.openhealthtools.mdht.emf.hl7.mif2.Association) {
 				metaclass = Mif2Package.eINSTANCE.getAssociation();
 				name = Integer.toString(mifElement.hashCode());
-			}
-			else if (mifElement instanceof Relationship) {
+			} else if (mifElement instanceof Relationship) {
 				metaclass = Mif2Package.eINSTANCE.getRelationship();
 				name = Integer.toString(mifElement.hashCode());
-			}
-			else {
+			} else {
 				metaclass = mifElement.eClass();
 				name = Integer.toString(mifElement.hashCode());
 			}
@@ -136,33 +127,29 @@ public class MIFIdentifier {
 		if (element != null) {
 			namespace = element.getNearestPackage().getName();
 			name = element.getName();
-			
+
 			if (element instanceof org.eclipse.uml2.uml.Package) {
 				namespace = null;
 				metaclass = Mif2Package.eINSTANCE.getStaticModelBase();
-			}
-			else if (element instanceof org.eclipse.uml2.uml.Class) {
+			} else if (element instanceof org.eclipse.uml2.uml.Class) {
 				metaclass = Mif2Package.eINSTANCE.getClassBase();
-			}
-			else if (element instanceof org.eclipse.uml2.uml.DataType) {
+			} else if (element instanceof org.eclipse.uml2.uml.DataType) {
 				metaclass = Mif2Package.eINSTANCE.getDatatype();
 			}
-//			else if (element instanceof org.eclipse.uml2.uml.Interface) {
-//				metaclass = Mif2Package.eINSTANCE.getEntryPointBase();
-//			}
+			// else if (element instanceof org.eclipse.uml2.uml.Interface) {
+			// metaclass = Mif2Package.eINSTANCE.getEntryPointBase();
+			// }
 			else if (element instanceof org.eclipse.uml2.uml.Interface) {
 				metaclass = Mif2Package.eINSTANCE.getDatatype();
-			}
-			else if (element instanceof org.eclipse.uml2.uml.Property) {
-				if (((org.eclipse.uml2.uml.Property)element).getAssociation() != null)
+			} else if (element instanceof org.eclipse.uml2.uml.Property) {
+				if (((org.eclipse.uml2.uml.Property) element).getAssociation() != null) {
 					metaclass = Mif2Package.eINSTANCE.getAssociationEndBase();
-				else
+				} else {
 					metaclass = Mif2Package.eINSTANCE.getAttribute();
-			}
-			else if (element instanceof org.eclipse.uml2.uml.Association) {
+				}
+			} else if (element instanceof org.eclipse.uml2.uml.Association) {
 				metaclass = Mif2Package.eINSTANCE.getRelationship();
-			}
-			else if (element instanceof org.eclipse.uml2.uml.Generalization) {
+			} else if (element instanceof org.eclipse.uml2.uml.Generalization) {
 				metaclass = Mif2Package.eINSTANCE.getRelationship();
 			}
 		}
@@ -180,6 +167,7 @@ public class MIFIdentifier {
 		return namespace;
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -189,24 +177,34 @@ public class MIFIdentifier {
 		}
 
 		MIFIdentifier test = (MIFIdentifier) obj;
-		return metaclass == test.metaclass
-			&& ( namespace == test.namespace || (namespace != null && namespace.equals(test.namespace)))
-			&& ( name == test.name || (name != null && name.equals(test.name)));
+		return metaclass == test.metaclass &&
+				(namespace == test.namespace || (namespace != null && namespace.equals(test.namespace))) &&
+				(name == test.name || (name != null && name.equals(test.name)));
 	}
 
+	@Override
 	public int hashCode() {
 		int hash = 7;
-		hash = 31 * hash + (null == metaclass ? 0 : metaclass.hashCode());
-		hash = 31 * hash + (null == namespace ? 0 : namespace.hashCode());
-		hash = 31 * hash + (null == name ? 0 : name.hashCode());
-		
+		hash = 31 * hash + (null == metaclass
+				? 0
+				: metaclass.hashCode());
+		hash = 31 * hash + (null == namespace
+				? 0
+				: namespace.hashCode());
+		hash = 31 * hash + (null == name
+				? 0
+				: name.hashCode());
+
 		return hash;
 	}
 
+	@Override
 	public String toString() {
 		StringBuffer buf = new StringBuffer();
 		buf.append("[");
-		buf.append(metaclass != null ? metaclass.getName() : "null");
+		buf.append(metaclass != null
+				? metaclass.getName()
+				: "null");
 		buf.append(", ");
 		buf.append(namespace);
 		buf.append(", ");
@@ -214,5 +212,5 @@ public class MIFIdentifier {
 		buf.append("]");
 		return buf.toString();
 	}
-	
+
 }

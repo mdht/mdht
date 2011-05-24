@@ -31,36 +31,37 @@ import org.openhealthtools.mdht.emf.hl7.mif2.StaticModelBase;
 import org.openhealthtools.mdht.emf.hl7.mif2.StaticModelInterfacePackage;
 import org.openhealthtools.mdht.uml.hl7.mif2uml.util.MIFUtil;
 
-
 public class CommonModelElements {
-	
+
 	private StaticModelInterfacePackage cmePackage;
-	
+
 	private DiagnosticsHelper diagnostics;
-	
+
 	private List<URI> unresolvedResources = new ArrayList<URI>();
-	
+
 	public CommonModelElements(StaticModelBase mifModel, DiagnosticsHelper diagnostics) {
 		this.diagnostics = diagnostics;
-		
+
 		Resource referencingResource = mifModel.eResource();
-		
-		referencingResource.getResourceSet().getLoadOptions()
-			.put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE,  Boolean.TRUE);
-		
+
+		referencingResource.getResourceSet().getLoadOptions().put(
+			XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+
 		Resource coremifResource = null;
 		URI baseURI = referencingResource.getURI().trimSegments(1);
-		
+
 		PackageRef cmetPackageReference = mifModel.getImportedCommonModelElementPackage();
-		
+
 		if (cmetPackageReference != null) {
 
 			// Create core mif uri from the cmet package reference in the mif
 			// model
 
-			String coremifURISting = String.format("%s=%s=%s=%s.coremif", ((cmetPackageReference.getRoot() != null) ? cmetPackageReference.getRoot()
-					.getLiteral() : ""), cmetPackageReference.getRealmNamespace(), ((cmetPackageReference.getArtifact() != null) ? cmetPackageReference
-					.getArtifact().getLiteral() : ""), cmetPackageReference.getVersion());
+			String coremifURISting = String.format("%s=%s=%s=%s.coremif", ((cmetPackageReference.getRoot() != null)
+					? cmetPackageReference.getRoot().getLiteral()
+					: ""), cmetPackageReference.getRealmNamespace(), ((cmetPackageReference.getArtifact() != null)
+					? cmetPackageReference.getArtifact().getLiteral()
+					: ""), cmetPackageReference.getVersion());
 
 			URI coremifURI = baseURI.appendSegment(coremifURISting);
 
@@ -81,15 +82,18 @@ public class CommonModelElements {
 				}
 			}
 		} else {
-			diagnostics.error("Invalid MIF Instance, Common Model Reference with out proper common model import, Mif File : " + mifModel.getName(), null);
+			diagnostics.error(
+				"Invalid MIF Instance, Common Model Reference with out proper common model import, Mif File : " +
+						mifModel.getName(), null);
 		}
-		
+
 	}
-	
+
 	public CommonModelElementDefinition resolveCommonModelElement(String cmeRef) {
-		if (cmePackage == null)
+		if (cmePackage == null) {
 			return null;
-		
+		}
+
 		for (CommonModelElementDefinition definition : cmePackage.getCommonModelElementDefinition()) {
 			if (definition.getName().equals(cmeRef)) {
 				return definition;
@@ -99,15 +103,16 @@ public class CommonModelElements {
 	}
 
 	public StaticModel resolveCommonModel(CommonModelElementDefinition cme) {
-		if (cmePackage == null)
+		if (cmePackage == null) {
 			return null;
-		
+		}
+
 		StaticModel model = null;
 		URI fileURI = getFileURI(cme);
 		if (unresolvedResources.contains(fileURI)) {
 			return null;
 		}
-		
+
 		Resource mifResource = null;
 		try {
 			mifResource = cmePackage.eResource().getResourceSet().getResource(fileURI, true);
@@ -116,7 +121,7 @@ public class CommonModelElements {
 			diagnostics.error("Cannot load resource: " + fileURI, null);
 			return null;
 		}
-		
+
 		for (Iterator iter = mifResource.getAllContents(); iter.hasNext();) {
 			Object element = iter.next();
 			if (element instanceof StaticModel) {
@@ -126,42 +131,42 @@ public class CommonModelElements {
 		}
 		return model;
 	}
-	
+
 	public ClassBase resolveCommonModelClass(CommonModelElementDefinition cme, StaticModel mifModel) {
 		ClassBase mifClass = null;
 		SpecializationClass specialization = cme.getEntryClass();
 		// this error has been seen in HL7 IFC files
-		if (specialization == null)
+		if (specialization == null) {
 			return null;
-		
+		}
+
 		String className = specialization.getName();
-		
+
 		// find the referenced class
 		for (ClassElement classElement : mifModel.getContainedClass()) {
-			if (classElement.getClass_() != null
-					&& ((ClassBase)classElement.getClass_()).getName().equals(className)) {
-				mifClass = (ClassBase) classElement.getClass_();
+			if (classElement.getClass_() != null && ((ClassBase) classElement.getClass_()).getName().equals(className)) {
+				mifClass = classElement.getClass_();
 				break;
 			}
 			if (classElement.getCommonModelElementRef() != null) {
-				//TODO
+				// TODO
 			}
 		}
-		
+
 		return mifClass;
 	}
-	
+
 	private URI getFileURI(CommonModelElementDefinition cme) {
 		URI fileURI = null;
 		PackageRef pkgRef = cme.getBoundStaticModel();
 		String pkgId = pkgRef.getId().toString();
 		String mifFileName = MIFUtil.getPackageName(pkgRef, pkgId);
 		mifFileName += ".mif";
-		
+
 		fileURI = cme.eResource().getURI().trimSegments(1);
 		fileURI = fileURI.appendSegment(mifFileName.toString());
-		
+
 		return fileURI;
 	}
-	
+
 }

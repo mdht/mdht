@@ -17,7 +17,6 @@ import org.eclipse.uml2.uml.Model;
 import org.openhealthtools.mdht.emf.hl7.mif2.ModelElement;
 import org.openhealthtools.mdht.uml.hl7.mif2uml.internal.importer.MIFProcessor;
 
-
 public class MIFImporter {
 
 	private MIFProcessor mifProcessor;
@@ -25,7 +24,7 @@ public class MIFImporter {
 	public MIFImporter() {
 		mifProcessor = new MIFProcessor();
 	}
-	
+
 	public Model getUMLModel() {
 		return mifProcessor.getUMLModel();
 	}
@@ -37,7 +36,7 @@ public class MIFImporter {
 	public void processMIF(ModelElement modelElement) {
 		mifProcessor.transformElement(modelElement);
 	}
-	
+
 	public Diagnostic getDiagnostics() {
 		return mifProcessor.getDiagnostics();
 	}
@@ -73,8 +72,8 @@ public class MIFImporter {
 	/**
 	 * Import contents of a MIF model into an existing UML package.
 	 */
-//	public void processMIFContent(PackageBase mifModel, Package umlPackage) {
-//		mifProcessor.importPackageContent(mifModel, umlPackage);
-//	}
-	
+	// public void processMIFContent(PackageBase mifModel, Package umlPackage) {
+	// mifProcessor.importPackageContent(mifModel, umlPackage);
+	// }
+
 }

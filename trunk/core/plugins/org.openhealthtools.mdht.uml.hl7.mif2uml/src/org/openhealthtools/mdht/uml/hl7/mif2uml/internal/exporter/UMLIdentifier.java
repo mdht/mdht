@@ -17,14 +17,15 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 
-
 /**
  *
  */
 public class UMLIdentifier {
 
 	private EClass metaclass;
+
 	private String namespace;
+
 	private String name;
 
 	/**
@@ -45,7 +46,7 @@ public class UMLIdentifier {
 		this.namespace = namespace;
 		this.name = name;
 	}
-	
+
 	/**
 	 * Create an identifier with a name derived from the UML model element.
 	 */
@@ -59,21 +60,17 @@ public class UMLIdentifier {
 				namespace = null;
 				name = umlElement.getModel().getName();
 				metaclass = umlElement.eClass();
-			}
-			else if (umlElement instanceof Package) {
+			} else if (umlElement instanceof Package) {
 				namespace = null;
 				name = umlPackage.getName();
 				metaclass = umlPackage.eClass();
-			}
-			else if (umlElement instanceof Classifier) {
-				name = ((Classifier)umlElement).getName();
+			} else if (umlElement instanceof Classifier) {
+				name = ((Classifier) umlElement).getName();
 				metaclass = umlElement.eClass();
-			}
-			else if (umlElement instanceof Property) {
-				name = ((Property)umlElement).getName();
+			} else if (umlElement instanceof Property) {
+				name = ((Property) umlElement).getName();
 				metaclass = umlElement.eClass();
-			}
-			else {
+			} else {
 				metaclass = umlElement.eClass();
 				name = Integer.toString(umlElement.hashCode());
 			}
@@ -92,6 +89,7 @@ public class UMLIdentifier {
 		return namespace;
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -101,24 +99,34 @@ public class UMLIdentifier {
 		}
 
 		UMLIdentifier test = (UMLIdentifier) obj;
-		return metaclass == test.metaclass
-			&& ( namespace == test.namespace || (namespace != null && namespace.equals(test.namespace)))
-			&& ( name == test.name || (name != null && name.equals(test.name)));
+		return metaclass == test.metaclass &&
+				(namespace == test.namespace || (namespace != null && namespace.equals(test.namespace))) &&
+				(name == test.name || (name != null && name.equals(test.name)));
 	}
 
+	@Override
 	public int hashCode() {
 		int hash = 7;
-		hash = 31 * hash + (null == metaclass ? 0 : metaclass.hashCode());
-		hash = 31 * hash + (null == namespace ? 0 : namespace.hashCode());
-		hash = 31 * hash + (null == name ? 0 : name.hashCode());
-		
+		hash = 31 * hash + (null == metaclass
+				? 0
+				: metaclass.hashCode());
+		hash = 31 * hash + (null == namespace
+				? 0
+				: namespace.hashCode());
+		hash = 31 * hash + (null == name
+				? 0
+				: name.hashCode());
+
 		return hash;
 	}
 
+	@Override
 	public String toString() {
 		StringBuffer buf = new StringBuffer();
 		buf.append("[");
-		buf.append(metaclass != null ? metaclass.getName() : "null");
+		buf.append(metaclass != null
+				? metaclass.getName()
+				: "null");
 		buf.append(", ");
 		buf.append(namespace);
 		buf.append(", ");
@@ -126,5 +134,5 @@ public class UMLIdentifier {
 		buf.append("]");
 		return buf.toString();
 	}
-	
+
 }

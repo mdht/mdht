@@ -7,7 +7,7 @@
  *
  * Contributors:
  *     IBM Corporation - initial API and implementation
-  *     Sean Muir (JKM Software) - Added support for MIF associations
+ *     Sean Muir (JKM Software) - Added support for MIF associations
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.hl7.mif2uml.mapping;
 
@@ -24,12 +24,11 @@ public class MIFExporter {
 	public MIFExporter() {
 		umlProcessor = new UMLProcessor();
 	}
-	
-	public StaticModel createMIFModel(Element umlElement)
-	{
+
+	public StaticModel createMIFModel(Element umlElement) {
 		return umlProcessor.createMIFModel(umlElement);
 	}
-	
+
 	public DocumentRoot getMIFDocumentRoot() {
 		return umlProcessor.getMIFDocumentRoot();
 	}
@@ -41,15 +40,15 @@ public class MIFExporter {
 	public void processUML(EObject modelElement) {
 		umlProcessor.transformElement(modelElement);
 	}
-	
+
 	public void processGeneralizations(EObject modelElement) {
 		umlProcessor.transformGeneralizations(modelElement);
 	}
-	
+
 	public void setPackageName(String packageName) {
 		umlProcessor.setMIFModelName(packageName);
 	}
-	
+
 	public void saveMIFModel() {
 		umlProcessor.saveMIFModel();
 	}
