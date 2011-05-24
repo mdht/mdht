@@ -14,23 +14,19 @@ package org.openhealthtools.mdht.uml.hl7.ant;
 
 import org.eclipse.core.runtime.Plugin;
 
+public class HL7AntPlugin extends Plugin {
+	// The shared instance.
+	private static HL7AntPlugin plugin;
 
-public class HL7AntPlugin extends Plugin
-{
-  //The shared instance.
-  private static HL7AntPlugin plugin;
+	public HL7AntPlugin() {
+		super();
+		plugin = this;
+	}
 
-  public HL7AntPlugin()
-  {
-    super();
-    plugin = this;
-  }
-
-  /**
-   * Returns the shared instance.
-   */
-  public static HL7AntPlugin getDefault()
-  {
-    return plugin;
-  }
+	/**
+	 * Returns the shared instance.
+	 */
+	public static HL7AntPlugin getDefault() {
+		return plugin;
+	}
 }
