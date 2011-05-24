@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.util;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -109,7 +113,7 @@ public class XhtmlAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -120,221 +124,272 @@ public class XhtmlAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected XhtmlSwitch<Adapter> modelSwitch =
-		new XhtmlSwitch<Adapter>() {
-			@Override
-			public Adapter caseA(A object) {
-				return createAAdapter();
-			}
-			@Override
-			public Adapter caseAbbr(Abbr object) {
-				return createAbbrAdapter();
-			}
-			@Override
-			public Adapter caseAContent(AContent object) {
-				return createAContentAdapter();
-			}
-			@Override
-			public Adapter caseAcronym(Acronym object) {
-				return createAcronymAdapter();
-			}
-			@Override
-			public Adapter caseB(B object) {
-				return createBAdapter();
-			}
-			@Override
-			public Adapter caseBig(Big object) {
-				return createBigAdapter();
-			}
-			@Override
-			public Adapter caseBlock(Block object) {
-				return createBlockAdapter();
-			}
-			@Override
-			public Adapter caseBlockquote(Blockquote object) {
-				return createBlockquoteAdapter();
-			}
-			@Override
-			public Adapter caseBr(Br object) {
-				return createBrAdapter();
-			}
-			@Override
-			public Adapter caseCaption(Caption object) {
-				return createCaptionAdapter();
-			}
-			@Override
-			public Adapter caseCite(Cite object) {
-				return createCiteAdapter();
-			}
-			@Override
-			public Adapter caseCode(Code object) {
-				return createCodeAdapter();
-			}
-			@Override
-			public Adapter caseCol(Col object) {
-				return createColAdapter();
-			}
-			@Override
-			public Adapter caseColgroup(Colgroup object) {
-				return createColgroupAdapter();
-			}
-			@Override
-			public Adapter caseDd(Dd object) {
-				return createDdAdapter();
-			}
-			@Override
-			public Adapter caseDel(Del object) {
-				return createDelAdapter();
-			}
-			@Override
-			public Adapter caseDfn(Dfn object) {
-				return createDfnAdapter();
-			}
-			@Override
-			public Adapter caseDiv(Div object) {
-				return createDivAdapter();
-			}
-			@Override
-			public Adapter caseDl(Dl object) {
-				return createDlAdapter();
-			}
-			@Override
-			public Adapter caseDt(Dt object) {
-				return createDtAdapter();
-			}
-			@Override
-			public Adapter caseEm(Em object) {
-				return createEmAdapter();
-			}
-			@Override
-			public Adapter caseFlow(Flow object) {
-				return createFlowAdapter();
-			}
-			@Override
-			public Adapter caseHr(Hr object) {
-				return createHrAdapter();
-			}
-			@Override
-			public Adapter caseI(I object) {
-				return createIAdapter();
-			}
-			@Override
-			public Adapter caseImg(Img object) {
-				return createImgAdapter();
-			}
-			@Override
-			public Adapter caseInline(Inline object) {
-				return createInlineAdapter();
-			}
-			@Override
-			public Adapter caseIns(Ins object) {
-				return createInsAdapter();
-			}
-			@Override
-			public Adapter caseKbd(Kbd object) {
-				return createKbdAdapter();
-			}
-			@Override
-			public Adapter caseLi(Li object) {
-				return createLiAdapter();
-			}
-			@Override
-			public Adapter caseObject(org.openhealthtools.mdht.emf.w3c.xhtml.Object object) {
-				return createObjectAdapter();
-			}
-			@Override
-			public Adapter caseOl(Ol object) {
-				return createOlAdapter();
-			}
-			@Override
-			public Adapter caseP(P object) {
-				return createPAdapter();
-			}
-			@Override
-			public Adapter caseParam(Param object) {
-				return createParamAdapter();
-			}
-			@Override
-			public Adapter casePre(Pre object) {
-				return createPreAdapter();
-			}
-			@Override
-			public Adapter casePreContent(PreContent object) {
-				return createPreContentAdapter();
-			}
-			@Override
-			public Adapter caseQ(Q object) {
-				return createQAdapter();
-			}
-			@Override
-			public Adapter caseSamp(Samp object) {
-				return createSampAdapter();
-			}
-			@Override
-			public Adapter caseSmall(Small object) {
-				return createSmallAdapter();
-			}
-			@Override
-			public Adapter caseSpan(Span object) {
-				return createSpanAdapter();
-			}
-			@Override
-			public Adapter caseStrong(Strong object) {
-				return createStrongAdapter();
-			}
-			@Override
-			public Adapter caseSub(Sub object) {
-				return createSubAdapter();
-			}
-			@Override
-			public Adapter caseSup(Sup object) {
-				return createSupAdapter();
-			}
-			@Override
-			public Adapter caseTable(Table object) {
-				return createTableAdapter();
-			}
-			@Override
-			public Adapter caseTbody(Tbody object) {
-				return createTbodyAdapter();
-			}
-			@Override
-			public Adapter caseTd(Td object) {
-				return createTdAdapter();
-			}
-			@Override
-			public Adapter caseTfoot(Tfoot object) {
-				return createTfootAdapter();
-			}
-			@Override
-			public Adapter caseTh(Th object) {
-				return createThAdapter();
-			}
-			@Override
-			public Adapter caseThead(Thead object) {
-				return createTheadAdapter();
-			}
-			@Override
-			public Adapter caseTr(Tr object) {
-				return createTrAdapter();
-			}
-			@Override
-			public Adapter caseTt(Tt object) {
-				return createTtAdapter();
-			}
-			@Override
-			public Adapter caseUl(Ul object) {
-				return createUlAdapter();
-			}
-			@Override
-			public Adapter caseVar(Var object) {
-				return createVarAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected XhtmlSwitch<Adapter> modelSwitch = new XhtmlSwitch<Adapter>() {
+		@Override
+		public Adapter caseA(A object) {
+			return createAAdapter();
+		}
+
+		@Override
+		public Adapter caseAbbr(Abbr object) {
+			return createAbbrAdapter();
+		}
+
+		@Override
+		public Adapter caseAContent(AContent object) {
+			return createAContentAdapter();
+		}
+
+		@Override
+		public Adapter caseAcronym(Acronym object) {
+			return createAcronymAdapter();
+		}
+
+		@Override
+		public Adapter caseB(B object) {
+			return createBAdapter();
+		}
+
+		@Override
+		public Adapter caseBig(Big object) {
+			return createBigAdapter();
+		}
+
+		@Override
+		public Adapter caseBlock(Block object) {
+			return createBlockAdapter();
+		}
+
+		@Override
+		public Adapter caseBlockquote(Blockquote object) {
+			return createBlockquoteAdapter();
+		}
+
+		@Override
+		public Adapter caseBr(Br object) {
+			return createBrAdapter();
+		}
+
+		@Override
+		public Adapter caseCaption(Caption object) {
+			return createCaptionAdapter();
+		}
+
+		@Override
+		public Adapter caseCite(Cite object) {
+			return createCiteAdapter();
+		}
+
+		@Override
+		public Adapter caseCode(Code object) {
+			return createCodeAdapter();
+		}
+
+		@Override
+		public Adapter caseCol(Col object) {
+			return createColAdapter();
+		}
+
+		@Override
+		public Adapter caseColgroup(Colgroup object) {
+			return createColgroupAdapter();
+		}
+
+		@Override
+		public Adapter caseDd(Dd object) {
+			return createDdAdapter();
+		}
+
+		@Override
+		public Adapter caseDel(Del object) {
+			return createDelAdapter();
+		}
+
+		@Override
+		public Adapter caseDfn(Dfn object) {
+			return createDfnAdapter();
+		}
+
+		@Override
+		public Adapter caseDiv(Div object) {
+			return createDivAdapter();
+		}
+
+		@Override
+		public Adapter caseDl(Dl object) {
+			return createDlAdapter();
+		}
+
+		@Override
+		public Adapter caseDt(Dt object) {
+			return createDtAdapter();
+		}
+
+		@Override
+		public Adapter caseEm(Em object) {
+			return createEmAdapter();
+		}
+
+		@Override
+		public Adapter caseFlow(Flow object) {
+			return createFlowAdapter();
+		}
+
+		@Override
+		public Adapter caseHr(Hr object) {
+			return createHrAdapter();
+		}
+
+		@Override
+		public Adapter caseI(I object) {
+			return createIAdapter();
+		}
+
+		@Override
+		public Adapter caseImg(Img object) {
+			return createImgAdapter();
+		}
+
+		@Override
+		public Adapter caseInline(Inline object) {
+			return createInlineAdapter();
+		}
+
+		@Override
+		public Adapter caseIns(Ins object) {
+			return createInsAdapter();
+		}
+
+		@Override
+		public Adapter caseKbd(Kbd object) {
+			return createKbdAdapter();
+		}
+
+		@Override
+		public Adapter caseLi(Li object) {
+			return createLiAdapter();
+		}
+
+		@Override
+		public Adapter caseObject(org.openhealthtools.mdht.emf.w3c.xhtml.Object object) {
+			return createObjectAdapter();
+		}
+
+		@Override
+		public Adapter caseOl(Ol object) {
+			return createOlAdapter();
+		}
+
+		@Override
+		public Adapter caseP(P object) {
+			return createPAdapter();
+		}
+
+		@Override
+		public Adapter caseParam(Param object) {
+			return createParamAdapter();
+		}
+
+		@Override
+		public Adapter casePre(Pre object) {
+			return createPreAdapter();
+		}
+
+		@Override
+		public Adapter casePreContent(PreContent object) {
+			return createPreContentAdapter();
+		}
+
+		@Override
+		public Adapter caseQ(Q object) {
+			return createQAdapter();
+		}
+
+		@Override
+		public Adapter caseSamp(Samp object) {
+			return createSampAdapter();
+		}
+
+		@Override
+		public Adapter caseSmall(Small object) {
+			return createSmallAdapter();
+		}
+
+		@Override
+		public Adapter caseSpan(Span object) {
+			return createSpanAdapter();
+		}
+
+		@Override
+		public Adapter caseStrong(Strong object) {
+			return createStrongAdapter();
+		}
+
+		@Override
+		public Adapter caseSub(Sub object) {
+			return createSubAdapter();
+		}
+
+		@Override
+		public Adapter caseSup(Sup object) {
+			return createSupAdapter();
+		}
+
+		@Override
+		public Adapter caseTable(Table object) {
+			return createTableAdapter();
+		}
+
+		@Override
+		public Adapter caseTbody(Tbody object) {
+			return createTbodyAdapter();
+		}
+
+		@Override
+		public Adapter caseTd(Td object) {
+			return createTdAdapter();
+		}
+
+		@Override
+		public Adapter caseTfoot(Tfoot object) {
+			return createTfootAdapter();
+		}
+
+		@Override
+		public Adapter caseTh(Th object) {
+			return createThAdapter();
+		}
+
+		@Override
+		public Adapter caseThead(Thead object) {
+			return createTheadAdapter();
+		}
+
+		@Override
+		public Adapter caseTr(Tr object) {
+			return createTrAdapter();
+		}
+
+		@Override
+		public Adapter caseTt(Tt object) {
+			return createTtAdapter();
+		}
+
+		@Override
+		public Adapter caseUl(Ul object) {
+			return createUlAdapter();
+		}
+
+		@Override
+		public Adapter caseVar(Var object) {
+			return createVarAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -346,9 +401,8 @@ public class XhtmlAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.emf.w3c.xhtml.A <em>A</em>}'.
@@ -1090,4 +1144,4 @@ public class XhtmlAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //XhtmlAdapterFactory
+} // XhtmlAdapterFactory

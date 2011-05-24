@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigInteger;
@@ -325,7 +329,8 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 	 */
 	public EList<BusinessName> getBusinessName() {
 		if (businessName == null) {
-			businessName = new EObjectContainmentEList<BusinessName>(BusinessName.class, this, Mif2Package.ATTRIBUTE__BUSINESS_NAME);
+			businessName = new EObjectContainmentEList<BusinessName>(
+				BusinessName.class, this, Mif2Package.ATTRIBUTE__BUSINESS_NAME);
 		}
 		return businessName;
 	}
@@ -348,8 +353,13 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 		AttributeAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.ATTRIBUTE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ATTRIBUTE__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -362,15 +372,22 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 	public void setAnnotations(AttributeAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ATTRIBUTE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ATTRIBUTE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ATTRIBUTE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ATTRIBUTE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ATTRIBUTE__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ATTRIBUTE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -380,7 +397,8 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 	 */
 	public EList<AttributeDerivation> getDerivedFrom() {
 		if (derivedFrom == null) {
-			derivedFrom = new EObjectContainmentEList<AttributeDerivation>(AttributeDerivation.class, this, Mif2Package.ATTRIBUTE__DERIVED_FROM);
+			derivedFrom = new EObjectContainmentEList<AttributeDerivation>(
+				AttributeDerivation.class, this, Mif2Package.ATTRIBUTE__DERIVED_FROM);
 		}
 		return derivedFrom;
 	}
@@ -403,8 +421,13 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 		DatatypeRef oldType = type;
 		type = newType;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.ATTRIBUTE__TYPE, oldType, newType);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ATTRIBUTE__TYPE, oldType, newType);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -417,15 +440,21 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 	public void setType(DatatypeRef newType) {
 		if (newType != type) {
 			NotificationChain msgs = null;
-			if (type != null)
-				msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ATTRIBUTE__TYPE, null, msgs);
-			if (newType != null)
-				msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ATTRIBUTE__TYPE, null, msgs);
+			if (type != null) {
+				msgs = ((InternalEObject) type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ATTRIBUTE__TYPE, null, msgs);
+			}
+			if (newType != null) {
+				msgs = ((InternalEObject) newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ATTRIBUTE__TYPE, null, msgs);
+			}
 			msgs = basicSetType(newType, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ATTRIBUTE__TYPE, newType, newType));
+		}
 	}
 
 	/**
@@ -446,8 +475,13 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 		VocabularySpecification oldVocabulary = vocabulary;
 		vocabulary = newVocabulary;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.ATTRIBUTE__VOCABULARY, oldVocabulary, newVocabulary);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ATTRIBUTE__VOCABULARY, oldVocabulary, newVocabulary);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -460,15 +494,22 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 	public void setVocabulary(VocabularySpecification newVocabulary) {
 		if (newVocabulary != vocabulary) {
 			NotificationChain msgs = null;
-			if (vocabulary != null)
-				msgs = ((InternalEObject)vocabulary).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ATTRIBUTE__VOCABULARY, null, msgs);
-			if (newVocabulary != null)
-				msgs = ((InternalEObject)newVocabulary).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ATTRIBUTE__VOCABULARY, null, msgs);
+			if (vocabulary != null) {
+				msgs = ((InternalEObject) vocabulary).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ATTRIBUTE__VOCABULARY, null, msgs);
+			}
+			if (newVocabulary != null) {
+				msgs = ((InternalEObject) newVocabulary).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ATTRIBUTE__VOCABULARY, null, msgs);
+			}
 			msgs = basicSetVocabulary(newVocabulary, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ATTRIBUTE__VOCABULARY, newVocabulary, newVocabulary));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ATTRIBUTE__VOCABULARY, newVocabulary, newVocabulary));
 	}
 
 	/**
@@ -478,7 +519,8 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 	 */
 	public EList<AttributeProperty> getProperty() {
 		if (property == null) {
-			property = new EObjectContainmentEList<AttributeProperty>(AttributeProperty.class, this, Mif2Package.ATTRIBUTE__PROPERTY);
+			property = new EObjectContainmentEList<AttributeProperty>(
+				AttributeProperty.class, this, Mif2Package.ATTRIBUTE__PROPERTY);
 		}
 		return property;
 	}
@@ -500,8 +542,10 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 	public void setExtensionOID(String newExtensionOID) {
 		String oldExtensionOID = extensionOID;
 		extensionOID = newExtensionOID;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ATTRIBUTE__EXTENSION_OID, oldExtensionOID, extensionOID));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ATTRIBUTE__EXTENSION_OID, oldExtensionOID, extensionOID));
+		}
 	}
 
 	/**
@@ -523,8 +567,11 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 		isImmutable = newIsImmutable;
 		boolean oldIsImmutableESet = isImmutableESet;
 		isImmutableESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ATTRIBUTE__IS_IMMUTABLE, oldIsImmutable, isImmutable, !oldIsImmutableESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ATTRIBUTE__IS_IMMUTABLE, oldIsImmutable, isImmutable,
+				!oldIsImmutableESet));
+		}
 	}
 
 	/**
@@ -537,8 +584,11 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 		boolean oldIsImmutableESet = isImmutableESet;
 		isImmutable = IS_IMMUTABLE_EDEFAULT;
 		isImmutableESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.ATTRIBUTE__IS_IMMUTABLE, oldIsImmutable, IS_IMMUTABLE_EDEFAULT, oldIsImmutableESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.ATTRIBUTE__IS_IMMUTABLE, oldIsImmutable, IS_IMMUTABLE_EDEFAULT,
+				oldIsImmutableESet));
+		}
 	}
 
 	/**
@@ -567,8 +617,11 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 	public void setMaximumMultiplicity(Object newMaximumMultiplicity) {
 		Object oldMaximumMultiplicity = maximumMultiplicity;
 		maximumMultiplicity = newMaximumMultiplicity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ATTRIBUTE__MAXIMUM_MULTIPLICITY, oldMaximumMultiplicity, maximumMultiplicity));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ATTRIBUTE__MAXIMUM_MULTIPLICITY, oldMaximumMultiplicity,
+				maximumMultiplicity));
+		}
 	}
 
 	/**
@@ -588,8 +641,11 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 	public void setMinimumMultiplicity(BigInteger newMinimumMultiplicity) {
 		BigInteger oldMinimumMultiplicity = minimumMultiplicity;
 		minimumMultiplicity = newMinimumMultiplicity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ATTRIBUTE__MINIMUM_MULTIPLICITY, oldMinimumMultiplicity, minimumMultiplicity));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ATTRIBUTE__MINIMUM_MULTIPLICITY, oldMinimumMultiplicity,
+				minimumMultiplicity));
+		}
 	}
 
 	/**
@@ -609,8 +665,9 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ATTRIBUTE__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -630,8 +687,9 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ATTRIBUTE__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -650,11 +708,16 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 	 */
 	public void setUpdateModeDefault(UpdateModeKind newUpdateModeDefault) {
 		UpdateModeKind oldUpdateModeDefault = updateModeDefault;
-		updateModeDefault = newUpdateModeDefault == null ? UPDATE_MODE_DEFAULT_EDEFAULT : newUpdateModeDefault;
+		updateModeDefault = newUpdateModeDefault == null
+				? UPDATE_MODE_DEFAULT_EDEFAULT
+				: newUpdateModeDefault;
 		boolean oldUpdateModeDefaultESet = updateModeDefaultESet;
 		updateModeDefaultESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ATTRIBUTE__UPDATE_MODE_DEFAULT, oldUpdateModeDefault, updateModeDefault, !oldUpdateModeDefaultESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ATTRIBUTE__UPDATE_MODE_DEFAULT, oldUpdateModeDefault,
+				updateModeDefault, !oldUpdateModeDefaultESet));
+		}
 	}
 
 	/**
@@ -667,8 +730,11 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 		boolean oldUpdateModeDefaultESet = updateModeDefaultESet;
 		updateModeDefault = UPDATE_MODE_DEFAULT_EDEFAULT;
 		updateModeDefaultESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.ATTRIBUTE__UPDATE_MODE_DEFAULT, oldUpdateModeDefault, UPDATE_MODE_DEFAULT_EDEFAULT, oldUpdateModeDefaultESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.ATTRIBUTE__UPDATE_MODE_DEFAULT, oldUpdateModeDefault,
+				UPDATE_MODE_DEFAULT_EDEFAULT, oldUpdateModeDefaultESet));
+		}
 	}
 
 	/**
@@ -697,8 +763,11 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 	public void setUpdateModesAllowed(List<UpdateModeKind> newUpdateModesAllowed) {
 		List<UpdateModeKind> oldUpdateModesAllowed = updateModesAllowed;
 		updateModesAllowed = newUpdateModesAllowed;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ATTRIBUTE__UPDATE_MODES_ALLOWED, oldUpdateModesAllowed, updateModesAllowed));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ATTRIBUTE__UPDATE_MODES_ALLOWED, oldUpdateModesAllowed,
+				updateModesAllowed));
+		}
 	}
 
 	/**
@@ -710,17 +779,17 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.ATTRIBUTE__BUSINESS_NAME:
-				return ((InternalEList<?>)getBusinessName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBusinessName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.ATTRIBUTE__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 			case Mif2Package.ATTRIBUTE__DERIVED_FROM:
-				return ((InternalEList<?>)getDerivedFrom()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDerivedFrom()).basicRemove(otherEnd, msgs);
 			case Mif2Package.ATTRIBUTE__TYPE:
 				return basicSetType(null, msgs);
 			case Mif2Package.ATTRIBUTE__VOCABULARY:
 				return basicSetVocabulary(null, msgs);
 			case Mif2Package.ATTRIBUTE__PROPERTY:
-				return ((InternalEList<?>)getProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getProperty()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -748,7 +817,9 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 			case Mif2Package.ATTRIBUTE__EXTENSION_OID:
 				return getExtensionOID();
 			case Mif2Package.ATTRIBUTE__IS_IMMUTABLE:
-				return isIsImmutable() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsImmutable()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.ATTRIBUTE__MAXIMUM_MULTIPLICITY:
 				return getMaximumMultiplicity();
 			case Mif2Package.ATTRIBUTE__MINIMUM_MULTIPLICITY:
@@ -776,48 +847,48 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 		switch (featureID) {
 			case Mif2Package.ATTRIBUTE__BUSINESS_NAME:
 				getBusinessName().clear();
-				getBusinessName().addAll((Collection<? extends BusinessName>)newValue);
+				getBusinessName().addAll((Collection<? extends BusinessName>) newValue);
 				return;
 			case Mif2Package.ATTRIBUTE__ANNOTATIONS:
-				setAnnotations((AttributeAnnotations)newValue);
+				setAnnotations((AttributeAnnotations) newValue);
 				return;
 			case Mif2Package.ATTRIBUTE__DERIVED_FROM:
 				getDerivedFrom().clear();
-				getDerivedFrom().addAll((Collection<? extends AttributeDerivation>)newValue);
+				getDerivedFrom().addAll((Collection<? extends AttributeDerivation>) newValue);
 				return;
 			case Mif2Package.ATTRIBUTE__TYPE:
-				setType((DatatypeRef)newValue);
+				setType((DatatypeRef) newValue);
 				return;
 			case Mif2Package.ATTRIBUTE__VOCABULARY:
-				setVocabulary((VocabularySpecification)newValue);
+				setVocabulary((VocabularySpecification) newValue);
 				return;
 			case Mif2Package.ATTRIBUTE__PROPERTY:
 				getProperty().clear();
-				getProperty().addAll((Collection<? extends AttributeProperty>)newValue);
+				getProperty().addAll((Collection<? extends AttributeProperty>) newValue);
 				return;
 			case Mif2Package.ATTRIBUTE__EXTENSION_OID:
-				setExtensionOID((String)newValue);
+				setExtensionOID((String) newValue);
 				return;
 			case Mif2Package.ATTRIBUTE__IS_IMMUTABLE:
-				setIsImmutable(((Boolean)newValue).booleanValue());
+				setIsImmutable(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.ATTRIBUTE__MAXIMUM_MULTIPLICITY:
 				setMaximumMultiplicity(newValue);
 				return;
 			case Mif2Package.ATTRIBUTE__MINIMUM_MULTIPLICITY:
-				setMinimumMultiplicity((BigInteger)newValue);
+				setMinimumMultiplicity((BigInteger) newValue);
 				return;
 			case Mif2Package.ATTRIBUTE__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.ATTRIBUTE__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 			case Mif2Package.ATTRIBUTE__UPDATE_MODE_DEFAULT:
-				setUpdateModeDefault((UpdateModeKind)newValue);
+				setUpdateModeDefault((UpdateModeKind) newValue);
 				return;
 			case Mif2Package.ATTRIBUTE__UPDATE_MODES_ALLOWED:
-				setUpdateModesAllowed((List<UpdateModeKind>)newValue);
+				setUpdateModesAllowed((List<UpdateModeKind>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -835,16 +906,16 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 				getBusinessName().clear();
 				return;
 			case Mif2Package.ATTRIBUTE__ANNOTATIONS:
-				setAnnotations((AttributeAnnotations)null);
+				setAnnotations((AttributeAnnotations) null);
 				return;
 			case Mif2Package.ATTRIBUTE__DERIVED_FROM:
 				getDerivedFrom().clear();
 				return;
 			case Mif2Package.ATTRIBUTE__TYPE:
-				setType((DatatypeRef)null);
+				setType((DatatypeRef) null);
 				return;
 			case Mif2Package.ATTRIBUTE__VOCABULARY:
-				setVocabulary((VocabularySpecification)null);
+				setVocabulary((VocabularySpecification) null);
 				return;
 			case Mif2Package.ATTRIBUTE__PROPERTY:
 				getProperty().clear();
@@ -898,21 +969,33 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 			case Mif2Package.ATTRIBUTE__PROPERTY:
 				return property != null && !property.isEmpty();
 			case Mif2Package.ATTRIBUTE__EXTENSION_OID:
-				return EXTENSION_OID_EDEFAULT == null ? extensionOID != null : !EXTENSION_OID_EDEFAULT.equals(extensionOID);
+				return EXTENSION_OID_EDEFAULT == null
+						? extensionOID != null
+						: !EXTENSION_OID_EDEFAULT.equals(extensionOID);
 			case Mif2Package.ATTRIBUTE__IS_IMMUTABLE:
 				return isSetIsImmutable();
 			case Mif2Package.ATTRIBUTE__MAXIMUM_MULTIPLICITY:
-				return MAXIMUM_MULTIPLICITY_EDEFAULT == null ? maximumMultiplicity != null : !MAXIMUM_MULTIPLICITY_EDEFAULT.equals(maximumMultiplicity);
+				return MAXIMUM_MULTIPLICITY_EDEFAULT == null
+						? maximumMultiplicity != null
+						: !MAXIMUM_MULTIPLICITY_EDEFAULT.equals(maximumMultiplicity);
 			case Mif2Package.ATTRIBUTE__MINIMUM_MULTIPLICITY:
-				return MINIMUM_MULTIPLICITY_EDEFAULT == null ? minimumMultiplicity != null : !MINIMUM_MULTIPLICITY_EDEFAULT.equals(minimumMultiplicity);
+				return MINIMUM_MULTIPLICITY_EDEFAULT == null
+						? minimumMultiplicity != null
+						: !MINIMUM_MULTIPLICITY_EDEFAULT.equals(minimumMultiplicity);
 			case Mif2Package.ATTRIBUTE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.ATTRIBUTE__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 			case Mif2Package.ATTRIBUTE__UPDATE_MODE_DEFAULT:
 				return isSetUpdateModeDefault();
 			case Mif2Package.ATTRIBUTE__UPDATE_MODES_ALLOWED:
-				return UPDATE_MODES_ALLOWED_EDEFAULT == null ? updateModesAllowed != null : !UPDATE_MODES_ALLOWED_EDEFAULT.equals(updateModesAllowed);
+				return UPDATE_MODES_ALLOWED_EDEFAULT == null
+						? updateModesAllowed != null
+						: !UPDATE_MODES_ALLOWED_EDEFAULT.equals(updateModesAllowed);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -924,13 +1007,19 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (extensionOID: ");
 		result.append(extensionOID);
 		result.append(", isImmutable: ");
-		if (isImmutableESet) result.append(isImmutable); else result.append("<unset>");
+		if (isImmutableESet) {
+			result.append(isImmutable);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", maximumMultiplicity: ");
 		result.append(maximumMultiplicity);
 		result.append(", minimumMultiplicity: ");
@@ -940,11 +1029,15 @@ public class AttributeImpl extends StructuralFeatureImpl implements Attribute {
 		result.append(", sortKey: ");
 		result.append(sortKey);
 		result.append(", updateModeDefault: ");
-		if (updateModeDefaultESet) result.append(updateModeDefault); else result.append("<unset>");
+		if (updateModeDefaultESet) {
+			result.append(updateModeDefault);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", updateModesAllowed: ");
 		result.append(updateModesAllowed);
 		result.append(')');
 		return result.toString();
 	}
 
-} //AttributeImpl
+} // AttributeImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml;
 
 import java.util.Arrays;
@@ -728,37 +732,11 @@ public enum ParamName implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ParamName[] VALUES_ARRAY =
-		new ParamName[] {
-			CONSTRUCT_TYPE,
-			ID,
-			ITEM,
-			ANNOTATION_KIND,
-			ROOT,
-			DOMAIN,
-			REALM_NAMESPACE,
-			VERSION,
-			ARTIFACT,
-			SUB_ARTIFACT,
-			NAME,
-			ARTIFACT_NAME,
-			GROUP,
-			LINK_TO_END,
-			WITHIN_CLASS_NAME,
-			RELATIONSHIP_NAME,
-			ATTRIBUTE_NAME,
-			CLASS_NAME,
-			SUPPLIER_BINDING_ARGUMENT_DATATYPE,
-			DATATYPE_NAME,
-			CONVERSION_DATATYPE,
-			PROPERTY_NAME,
-			TERM_NAME,
-			STATE_NAME,
-			STATE_TRANSITION_NAME,
-			SUBJECT_AREA_NAME,
-			CODE_SYSTEM_ID,
-			CODE,
-		};
+	private static final ParamName[] VALUES_ARRAY = new ParamName[] {
+			CONSTRUCT_TYPE, ID, ITEM, ANNOTATION_KIND, ROOT, DOMAIN, REALM_NAMESPACE, VERSION, ARTIFACT, SUB_ARTIFACT,
+			NAME, ARTIFACT_NAME, GROUP, LINK_TO_END, WITHIN_CLASS_NAME, RELATIONSHIP_NAME, ATTRIBUTE_NAME, CLASS_NAME,
+			SUPPLIER_BINDING_ARGUMENT_DATATYPE, DATATYPE_NAME, CONVERSION_DATATYPE, PROPERTY_NAME, TERM_NAME,
+			STATE_NAME, STATE_TRANSITION_NAME, SUBJECT_AREA_NAME, CODE_SYSTEM_ID, CODE, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Param Name</b></em>' enumerators.
@@ -808,34 +786,62 @@ public enum ParamName implements Enumerator {
 	 */
 	public static ParamName get(int value) {
 		switch (value) {
-			case CONSTRUCT_TYPE_VALUE: return CONSTRUCT_TYPE;
-			case ID_VALUE: return ID;
-			case ITEM_VALUE: return ITEM;
-			case ANNOTATION_KIND_VALUE: return ANNOTATION_KIND;
-			case ROOT_VALUE: return ROOT;
-			case DOMAIN_VALUE: return DOMAIN;
-			case REALM_NAMESPACE_VALUE: return REALM_NAMESPACE;
-			case VERSION_VALUE: return VERSION;
-			case ARTIFACT_VALUE: return ARTIFACT;
-			case SUB_ARTIFACT_VALUE: return SUB_ARTIFACT;
-			case NAME_VALUE: return NAME;
-			case ARTIFACT_NAME_VALUE: return ARTIFACT_NAME;
-			case GROUP_VALUE: return GROUP;
-			case LINK_TO_END_VALUE: return LINK_TO_END;
-			case WITHIN_CLASS_NAME_VALUE: return WITHIN_CLASS_NAME;
-			case RELATIONSHIP_NAME_VALUE: return RELATIONSHIP_NAME;
-			case ATTRIBUTE_NAME_VALUE: return ATTRIBUTE_NAME;
-			case CLASS_NAME_VALUE: return CLASS_NAME;
-			case SUPPLIER_BINDING_ARGUMENT_DATATYPE_VALUE: return SUPPLIER_BINDING_ARGUMENT_DATATYPE;
-			case DATATYPE_NAME_VALUE: return DATATYPE_NAME;
-			case CONVERSION_DATATYPE_VALUE: return CONVERSION_DATATYPE;
-			case PROPERTY_NAME_VALUE: return PROPERTY_NAME;
-			case TERM_NAME_VALUE: return TERM_NAME;
-			case STATE_NAME_VALUE: return STATE_NAME;
-			case STATE_TRANSITION_NAME_VALUE: return STATE_TRANSITION_NAME;
-			case SUBJECT_AREA_NAME_VALUE: return SUBJECT_AREA_NAME;
-			case CODE_SYSTEM_ID_VALUE: return CODE_SYSTEM_ID;
-			case CODE_VALUE: return CODE;
+			case CONSTRUCT_TYPE_VALUE:
+				return CONSTRUCT_TYPE;
+			case ID_VALUE:
+				return ID;
+			case ITEM_VALUE:
+				return ITEM;
+			case ANNOTATION_KIND_VALUE:
+				return ANNOTATION_KIND;
+			case ROOT_VALUE:
+				return ROOT;
+			case DOMAIN_VALUE:
+				return DOMAIN;
+			case REALM_NAMESPACE_VALUE:
+				return REALM_NAMESPACE;
+			case VERSION_VALUE:
+				return VERSION;
+			case ARTIFACT_VALUE:
+				return ARTIFACT;
+			case SUB_ARTIFACT_VALUE:
+				return SUB_ARTIFACT;
+			case NAME_VALUE:
+				return NAME;
+			case ARTIFACT_NAME_VALUE:
+				return ARTIFACT_NAME;
+			case GROUP_VALUE:
+				return GROUP;
+			case LINK_TO_END_VALUE:
+				return LINK_TO_END;
+			case WITHIN_CLASS_NAME_VALUE:
+				return WITHIN_CLASS_NAME;
+			case RELATIONSHIP_NAME_VALUE:
+				return RELATIONSHIP_NAME;
+			case ATTRIBUTE_NAME_VALUE:
+				return ATTRIBUTE_NAME;
+			case CLASS_NAME_VALUE:
+				return CLASS_NAME;
+			case SUPPLIER_BINDING_ARGUMENT_DATATYPE_VALUE:
+				return SUPPLIER_BINDING_ARGUMENT_DATATYPE;
+			case DATATYPE_NAME_VALUE:
+				return DATATYPE_NAME;
+			case CONVERSION_DATATYPE_VALUE:
+				return CONVERSION_DATATYPE;
+			case PROPERTY_NAME_VALUE:
+				return PROPERTY_NAME;
+			case TERM_NAME_VALUE:
+				return TERM_NAME;
+			case STATE_NAME_VALUE:
+				return STATE_NAME;
+			case STATE_TRANSITION_NAME_VALUE:
+				return STATE_TRANSITION_NAME;
+			case SUBJECT_AREA_NAME_VALUE:
+				return SUBJECT_AREA_NAME;
+			case CODE_SYSTEM_ID_VALUE:
+				return CODE_SYSTEM_ID;
+			case CODE_VALUE:
+				return CODE;
 		}
 		return null;
 	}
@@ -879,7 +885,7 @@ public enum ParamName implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -888,7 +894,7 @@ public enum ParamName implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -897,7 +903,7 @@ public enum ParamName implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -910,5 +916,5 @@ public enum ParamName implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //ParamName
+
+} // ParamName

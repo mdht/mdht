@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -96,7 +100,9 @@ public class CodeSystemSupplementImpl extends CodeSystemBaseImpl implements Code
 	 */
 	public EList<CodeSystemVersionSupplement> getCodeSystemVersionSupplement() {
 		if (codeSystemVersionSupplement == null) {
-			codeSystemVersionSupplement = new EObjectContainmentEList<CodeSystemVersionSupplement>(CodeSystemVersionSupplement.class, this, Mif2Package.CODE_SYSTEM_SUPPLEMENT__CODE_SYSTEM_VERSION_SUPPLEMENT);
+			codeSystemVersionSupplement = new EObjectContainmentEList<CodeSystemVersionSupplement>(
+				CodeSystemVersionSupplement.class, this,
+				Mif2Package.CODE_SYSTEM_SUPPLEMENT__CODE_SYSTEM_VERSION_SUPPLEMENT);
 		}
 		return codeSystemVersionSupplement;
 	}
@@ -118,8 +124,11 @@ public class CodeSystemSupplementImpl extends CodeSystemBaseImpl implements Code
 	public void setSupplementId(String newSupplementId) {
 		String oldSupplementId = supplementId;
 		supplementId = newSupplementId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_SUPPLEMENT__SUPPLEMENT_ID, oldSupplementId, supplementId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_SUPPLEMENT__SUPPLEMENT_ID, oldSupplementId,
+				supplementId));
+		}
 	}
 
 	/**
@@ -131,7 +140,7 @@ public class CodeSystemSupplementImpl extends CodeSystemBaseImpl implements Code
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.CODE_SYSTEM_SUPPLEMENT__CODE_SYSTEM_VERSION_SUPPLEMENT:
-				return ((InternalEList<?>)getCodeSystemVersionSupplement()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCodeSystemVersionSupplement()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -163,10 +172,10 @@ public class CodeSystemSupplementImpl extends CodeSystemBaseImpl implements Code
 		switch (featureID) {
 			case Mif2Package.CODE_SYSTEM_SUPPLEMENT__CODE_SYSTEM_VERSION_SUPPLEMENT:
 				getCodeSystemVersionSupplement().clear();
-				getCodeSystemVersionSupplement().addAll((Collection<? extends CodeSystemVersionSupplement>)newValue);
+				getCodeSystemVersionSupplement().addAll((Collection<? extends CodeSystemVersionSupplement>) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_SUPPLEMENT__SUPPLEMENT_ID:
-				setSupplementId((String)newValue);
+				setSupplementId((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -201,7 +210,9 @@ public class CodeSystemSupplementImpl extends CodeSystemBaseImpl implements Code
 			case Mif2Package.CODE_SYSTEM_SUPPLEMENT__CODE_SYSTEM_VERSION_SUPPLEMENT:
 				return codeSystemVersionSupplement != null && !codeSystemVersionSupplement.isEmpty();
 			case Mif2Package.CODE_SYSTEM_SUPPLEMENT__SUPPLEMENT_ID:
-				return SUPPLEMENT_ID_EDEFAULT == null ? supplementId != null : !SUPPLEMENT_ID_EDEFAULT.equals(supplementId);
+				return SUPPLEMENT_ID_EDEFAULT == null
+						? supplementId != null
+						: !SUPPLEMENT_ID_EDEFAULT.equals(supplementId);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -213,7 +224,9 @@ public class CodeSystemSupplementImpl extends CodeSystemBaseImpl implements Code
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (supplementId: ");
@@ -222,4 +235,4 @@ public class CodeSystemSupplementImpl extends CodeSystemBaseImpl implements Code
 		return result.toString();
 	}
 
-} //CodeSystemSupplementImpl
+} // CodeSystemSupplementImpl

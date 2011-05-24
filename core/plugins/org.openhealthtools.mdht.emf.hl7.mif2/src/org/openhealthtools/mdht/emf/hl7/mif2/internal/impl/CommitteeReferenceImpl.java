@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -107,8 +111,9 @@ public class CommitteeReferenceImpl extends EObjectImpl implements CommitteeRefe
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.COMMITTEE_REFERENCE__ID, oldId, id));
+		}
 	}
 
 	/**
@@ -128,8 +133,9 @@ public class CommitteeReferenceImpl extends EObjectImpl implements CommitteeRefe
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.COMMITTEE_REFERENCE__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -157,10 +163,10 @@ public class CommitteeReferenceImpl extends EObjectImpl implements CommitteeRefe
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.COMMITTEE_REFERENCE__ID:
-				setId((String)newValue);
+				setId((String) newValue);
 				return;
 			case Mif2Package.COMMITTEE_REFERENCE__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -193,9 +199,13 @@ public class CommitteeReferenceImpl extends EObjectImpl implements CommitteeRefe
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.COMMITTEE_REFERENCE__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+				return ID_EDEFAULT == null
+						? id != null
+						: !ID_EDEFAULT.equals(id);
 			case Mif2Package.COMMITTEE_REFERENCE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -207,7 +217,9 @@ public class CommitteeReferenceImpl extends EObjectImpl implements CommitteeRefe
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");
@@ -218,4 +230,4 @@ public class CommitteeReferenceImpl extends EObjectImpl implements CommitteeRefe
 		return result.toString();
 	}
 
-} //CommitteeReferenceImpl
+} // CommitteeReferenceImpl

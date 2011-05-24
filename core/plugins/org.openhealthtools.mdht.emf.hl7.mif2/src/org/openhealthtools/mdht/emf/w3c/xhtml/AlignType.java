@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml;
 
 import java.util.Arrays;
@@ -153,14 +157,7 @@ public enum AlignType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final AlignType[] VALUES_ARRAY =
-		new AlignType[] {
-			LEFT,
-			CENTER,
-			RIGHT,
-			JUSTIFY,
-			CHAR,
-		};
+	private static final AlignType[] VALUES_ARRAY = new AlignType[] { LEFT, CENTER, RIGHT, JUSTIFY, CHAR, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Align Type</b></em>' enumerators.
@@ -210,11 +207,16 @@ public enum AlignType implements Enumerator {
 	 */
 	public static AlignType get(int value) {
 		switch (value) {
-			case LEFT_VALUE: return LEFT;
-			case CENTER_VALUE: return CENTER;
-			case RIGHT_VALUE: return RIGHT;
-			case JUSTIFY_VALUE: return JUSTIFY;
-			case CHAR_VALUE: return CHAR;
+			case LEFT_VALUE:
+				return LEFT;
+			case CENTER_VALUE:
+				return CENTER;
+			case RIGHT_VALUE:
+				return RIGHT;
+			case JUSTIFY_VALUE:
+				return JUSTIFY;
+			case CHAR_VALUE:
+				return CHAR;
 		}
 		return null;
 	}
@@ -258,7 +260,7 @@ public enum AlignType implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -267,7 +269,7 @@ public enum AlignType implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -276,7 +278,7 @@ public enum AlignType implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -289,5 +291,5 @@ public enum AlignType implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //AlignType
+
+} // AlignType

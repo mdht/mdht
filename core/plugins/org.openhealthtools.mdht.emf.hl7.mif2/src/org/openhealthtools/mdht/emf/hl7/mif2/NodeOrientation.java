@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -272,19 +276,8 @@ public enum NodeOrientation implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final NodeOrientation[] VALUES_ARRAY =
-		new NodeOrientation[] {
-			PORTRAIT,
-			LANDSCAPE,
-			LEFT,
-			RIGHT,
-			UP,
-			DOWN,
-			UP_RIGHT,
-			UP_LEFT,
-			DOWN_RIGHT,
-			DOWN_LEFT,
-		};
+	private static final NodeOrientation[] VALUES_ARRAY = new NodeOrientation[] {
+			PORTRAIT, LANDSCAPE, LEFT, RIGHT, UP, DOWN, UP_RIGHT, UP_LEFT, DOWN_RIGHT, DOWN_LEFT, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Node Orientation</b></em>' enumerators.
@@ -334,16 +327,26 @@ public enum NodeOrientation implements Enumerator {
 	 */
 	public static NodeOrientation get(int value) {
 		switch (value) {
-			case PORTRAIT_VALUE: return PORTRAIT;
-			case LANDSCAPE_VALUE: return LANDSCAPE;
-			case LEFT_VALUE: return LEFT;
-			case RIGHT_VALUE: return RIGHT;
-			case UP_VALUE: return UP;
-			case DOWN_VALUE: return DOWN;
-			case UP_RIGHT_VALUE: return UP_RIGHT;
-			case UP_LEFT_VALUE: return UP_LEFT;
-			case DOWN_RIGHT_VALUE: return DOWN_RIGHT;
-			case DOWN_LEFT_VALUE: return DOWN_LEFT;
+			case PORTRAIT_VALUE:
+				return PORTRAIT;
+			case LANDSCAPE_VALUE:
+				return LANDSCAPE;
+			case LEFT_VALUE:
+				return LEFT;
+			case RIGHT_VALUE:
+				return RIGHT;
+			case UP_VALUE:
+				return UP;
+			case DOWN_VALUE:
+				return DOWN;
+			case UP_RIGHT_VALUE:
+				return UP_RIGHT;
+			case UP_LEFT_VALUE:
+				return UP_LEFT;
+			case DOWN_RIGHT_VALUE:
+				return DOWN_RIGHT;
+			case DOWN_LEFT_VALUE:
+				return DOWN_LEFT;
 		}
 		return null;
 	}
@@ -387,7 +390,7 @@ public enum NodeOrientation implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -396,7 +399,7 @@ public enum NodeOrientation implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -405,7 +408,7 @@ public enum NodeOrientation implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -418,5 +421,5 @@ public enum NodeOrientation implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //NodeOrientation
+
+} // NodeOrientation

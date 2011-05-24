@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -85,8 +89,11 @@ public class ContainedGraphNodeImpl extends GraphNodeImpl implements ContainedGr
 	public void setShapeTemplate(String newShapeTemplate) {
 		String oldShapeTemplate = shapeTemplate;
 		shapeTemplate = newShapeTemplate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTAINED_GRAPH_NODE__SHAPE_TEMPLATE, oldShapeTemplate, shapeTemplate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTAINED_GRAPH_NODE__SHAPE_TEMPLATE, oldShapeTemplate,
+				shapeTemplate));
+		}
 	}
 
 	/**
@@ -112,7 +119,7 @@ public class ContainedGraphNodeImpl extends GraphNodeImpl implements ContainedGr
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CONTAINED_GRAPH_NODE__SHAPE_TEMPLATE:
-				setShapeTemplate((String)newValue);
+				setShapeTemplate((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -142,7 +149,9 @@ public class ContainedGraphNodeImpl extends GraphNodeImpl implements ContainedGr
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CONTAINED_GRAPH_NODE__SHAPE_TEMPLATE:
-				return SHAPE_TEMPLATE_EDEFAULT == null ? shapeTemplate != null : !SHAPE_TEMPLATE_EDEFAULT.equals(shapeTemplate);
+				return SHAPE_TEMPLATE_EDEFAULT == null
+						? shapeTemplate != null
+						: !SHAPE_TEMPLATE_EDEFAULT.equals(shapeTemplate);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,7 +163,9 @@ public class ContainedGraphNodeImpl extends GraphNodeImpl implements ContainedGr
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (shapeTemplate: ");
@@ -163,4 +174,4 @@ public class ContainedGraphNodeImpl extends GraphNodeImpl implements ContainedGr
 		return result.toString();
 	}
 
-} //ContainedGraphNodeImpl
+} // ContainedGraphNodeImpl

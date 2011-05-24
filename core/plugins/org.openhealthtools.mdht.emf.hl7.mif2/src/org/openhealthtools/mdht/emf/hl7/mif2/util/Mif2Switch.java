@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.util;
 
 import java.util.List;
@@ -13,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.openhealthtools.mdht.emf.hl7.mif2.*;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Flow;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -70,13 +73,11 @@ public class Mif2Switch<T> {
 	protected T doSwitch(EClass theEClass, EObject theEObject) {
 		if (theEClass.eContainer() == modelPackage) {
 			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
+		} else {
 			List<EClass> eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch(eSuperTypes.get(0), theEObject);
+			return eSuperTypes.isEmpty()
+					? defaultCase(theEObject)
+					: doSwitch(eSuperTypes.get(0), theEObject);
 		}
 	}
 
@@ -90,2983 +91,4908 @@ public class Mif2Switch<T> {
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case Mif2Package.ADD_ELEMENT_CONTENT: {
-				AddElementContent addElementContent = (AddElementContent)theEObject;
+				AddElementContent addElementContent = (AddElementContent) theEObject;
 				T result = caseAddElementContent(addElementContent);
-				if (result == null) result = caseChange(addElementContent);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseChange(addElementContent);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ANNOTATION_BASE: {
-				AnnotationBase annotationBase = (AnnotationBase)theEObject;
+				AnnotationBase annotationBase = (AnnotationBase) theEObject;
 				T result = caseAnnotationBase(annotationBase);
-				if (result == null) result = caseModelElement(annotationBase);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseModelElement(annotationBase);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ANNOTATION_CASCADE_INFO: {
-				AnnotationCascadeInfo annotationCascadeInfo = (AnnotationCascadeInfo)theEObject;
+				AnnotationCascadeInfo annotationCascadeInfo = (AnnotationCascadeInfo) theEObject;
 				T result = caseAnnotationCascadeInfo(annotationCascadeInfo);
-				if (result == null) result = casePackageRef(annotationCascadeInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageRef(annotationCascadeInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ANNOTATION_DERIVATION: {
-				AnnotationDerivation annotationDerivation = (AnnotationDerivation)theEObject;
+				AnnotationDerivation annotationDerivation = (AnnotationDerivation) theEObject;
 				T result = caseAnnotationDerivation(annotationDerivation);
-				if (result == null) result = caseDerivation(annotationDerivation);
-				if (result == null) result = caseDependency(annotationDerivation);
-				if (result == null) result = caseRelationship(annotationDerivation);
-				if (result == null) result = caseModelElement(annotationDerivation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDerivation(annotationDerivation);
+				}
+				if (result == null) {
+					result = caseDependency(annotationDerivation);
+				}
+				if (result == null) {
+					result = caseRelationship(annotationDerivation);
+				}
+				if (result == null) {
+					result = caseModelElement(annotationDerivation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ANNOTATIONS: {
-				Annotations annotations = (Annotations)theEObject;
+				Annotations annotations = (Annotations) theEObject;
 				T result = caseAnnotations(annotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.APPENDIX: {
-				Appendix appendix = (Appendix)theEObject;
+				Appendix appendix = (Appendix) theEObject;
 				T result = caseAppendix(appendix);
-				if (result == null) result = caseBasicAnnotation(appendix);
-				if (result == null) result = caseAnnotationBase(appendix);
-				if (result == null) result = caseModelElement(appendix);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseBasicAnnotation(appendix);
+				}
+				if (result == null) {
+					result = caseAnnotationBase(appendix);
+				}
+				if (result == null) {
+					result = caseModelElement(appendix);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.APP_INFO: {
-				AppInfo appInfo = (AppInfo)theEObject;
+				AppInfo appInfo = (AppInfo) theEObject;
 				T result = caseAppInfo(appInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.APPLICATION_ROLE: {
-				ApplicationRole applicationRole = (ApplicationRole)theEObject;
+				ApplicationRole applicationRole = (ApplicationRole) theEObject;
 				T result = caseApplicationRole(applicationRole);
-				if (result == null) result = casePackageArtifact(applicationRole);
-				if (result == null) result = casePackageBase(applicationRole);
-				if (result == null) result = caseModelElement(applicationRole);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageArtifact(applicationRole);
+				}
+				if (result == null) {
+					result = casePackageBase(applicationRole);
+				}
+				if (result == null) {
+					result = caseModelElement(applicationRole);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.APPLICATION_ROLE_ANNOTATIONS: {
-				ApplicationRoleAnnotations applicationRoleAnnotations = (ApplicationRoleAnnotations)theEObject;
+				ApplicationRoleAnnotations applicationRoleAnnotations = (ApplicationRoleAnnotations) theEObject;
 				T result = caseApplicationRoleAnnotations(applicationRoleAnnotations);
-				if (result == null) result = caseAnnotations(applicationRoleAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(applicationRoleAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.APPLICATION_ROLE_APP_INFO: {
-				ApplicationRoleAppInfo applicationRoleAppInfo = (ApplicationRoleAppInfo)theEObject;
+				ApplicationRoleAppInfo applicationRoleAppInfo = (ApplicationRoleAppInfo) theEObject;
 				T result = caseApplicationRoleAppInfo(applicationRoleAppInfo);
-				if (result == null) result = caseAppInfo(applicationRoleAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(applicationRoleAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.APPLICATION_ROLE_DOCUMENTATION: {
-				ApplicationRoleDocumentation applicationRoleDocumentation = (ApplicationRoleDocumentation)theEObject;
+				ApplicationRoleDocumentation applicationRoleDocumentation = (ApplicationRoleDocumentation) theEObject;
 				T result = caseApplicationRoleDocumentation(applicationRoleDocumentation);
-				if (result == null) result = caseDocumentation(applicationRoleDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(applicationRoleDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.APPLIED_TEMPLATE_GROUP: {
-				AppliedTemplateGroup appliedTemplateGroup = (AppliedTemplateGroup)theEObject;
+				AppliedTemplateGroup appliedTemplateGroup = (AppliedTemplateGroup) theEObject;
 				T result = caseAppliedTemplateGroup(appliedTemplateGroup);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.APPROVAL_INFO: {
-				ApprovalInfo approvalInfo = (ApprovalInfo)theEObject;
+				ApprovalInfo approvalInfo = (ApprovalInfo) theEObject;
 				T result = caseApprovalInfo(approvalInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ARTIFACT_CROSS_REFERENCE: {
-				ArtifactCrossReference artifactCrossReference = (ArtifactCrossReference)theEObject;
+				ArtifactCrossReference artifactCrossReference = (ArtifactCrossReference) theEObject;
 				T result = caseArtifactCrossReference(artifactCrossReference);
-				if (result == null) result = casePackageArtifact(artifactCrossReference);
-				if (result == null) result = casePackageBase(artifactCrossReference);
-				if (result == null) result = caseModelElement(artifactCrossReference);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageArtifact(artifactCrossReference);
+				}
+				if (result == null) {
+					result = casePackageBase(artifactCrossReference);
+				}
+				if (result == null) {
+					result = caseModelElement(artifactCrossReference);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ARTIFACT_DEPENDENCY: {
-				ArtifactDependency artifactDependency = (ArtifactDependency)theEObject;
+				ArtifactDependency artifactDependency = (ArtifactDependency) theEObject;
 				T result = caseArtifactDependency(artifactDependency);
-				if (result == null) result = casePackageRef(artifactDependency);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageRef(artifactDependency);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ARTIFACT_SUPPLEMENT: {
-				ArtifactSupplement artifactSupplement = (ArtifactSupplement)theEObject;
+				ArtifactSupplement artifactSupplement = (ArtifactSupplement) theEObject;
 				T result = caseArtifactSupplement(artifactSupplement);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ARTIFACT_SUPPLEMENT_ANNOTATIONS: {
-				ArtifactSupplementAnnotations artifactSupplementAnnotations = (ArtifactSupplementAnnotations)theEObject;
+				ArtifactSupplementAnnotations artifactSupplementAnnotations = (ArtifactSupplementAnnotations) theEObject;
 				T result = caseArtifactSupplementAnnotations(artifactSupplementAnnotations);
-				if (result == null) result = caseAnnotations(artifactSupplementAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(artifactSupplementAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ARTIFACT_SUPPLEMENT_APP_INFO: {
-				ArtifactSupplementAppInfo artifactSupplementAppInfo = (ArtifactSupplementAppInfo)theEObject;
+				ArtifactSupplementAppInfo artifactSupplementAppInfo = (ArtifactSupplementAppInfo) theEObject;
 				T result = caseArtifactSupplementAppInfo(artifactSupplementAppInfo);
-				if (result == null) result = caseAppInfo(artifactSupplementAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(artifactSupplementAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ARTIFACT_SUPPLEMENT_DOCUMENTATION: {
-				ArtifactSupplementDocumentation artifactSupplementDocumentation = (ArtifactSupplementDocumentation)theEObject;
+				ArtifactSupplementDocumentation artifactSupplementDocumentation = (ArtifactSupplementDocumentation) theEObject;
 				T result = caseArtifactSupplementDocumentation(artifactSupplementDocumentation);
-				if (result == null) result = caseDocumentation(artifactSupplementDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(artifactSupplementDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ARTIFACT_XREF_SUMMARY: {
-				ArtifactXRefSummary artifactXRefSummary = (ArtifactXRefSummary)theEObject;
+				ArtifactXRefSummary artifactXRefSummary = (ArtifactXRefSummary) theEObject;
 				T result = caseArtifactXRefSummary(artifactXRefSummary);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ASSOCIATION: {
-				Association association = (Association)theEObject;
+				Association association = (Association) theEObject;
 				T result = caseAssociation(association);
-				if (result == null) result = caseAssociationBase(association);
-				if (result == null) result = caseRelationship(association);
-				if (result == null) result = caseModelElement(association);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAssociationBase(association);
+				}
+				if (result == null) {
+					result = caseRelationship(association);
+				}
+				if (result == null) {
+					result = caseModelElement(association);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ASSOCIATION_ANNOTATIONS: {
-				AssociationAnnotations associationAnnotations = (AssociationAnnotations)theEObject;
+				AssociationAnnotations associationAnnotations = (AssociationAnnotations) theEObject;
 				T result = caseAssociationAnnotations(associationAnnotations);
-				if (result == null) result = caseAnnotations(associationAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(associationAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ASSOCIATION_APP_INFO: {
-				AssociationAppInfo associationAppInfo = (AssociationAppInfo)theEObject;
+				AssociationAppInfo associationAppInfo = (AssociationAppInfo) theEObject;
 				T result = caseAssociationAppInfo(associationAppInfo);
-				if (result == null) result = caseAppInfo(associationAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(associationAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ASSOCIATION_BASE: {
-				AssociationBase associationBase = (AssociationBase)theEObject;
+				AssociationBase associationBase = (AssociationBase) theEObject;
 				T result = caseAssociationBase(associationBase);
-				if (result == null) result = caseRelationship(associationBase);
-				if (result == null) result = caseModelElement(associationBase);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRelationship(associationBase);
+				}
+				if (result == null) {
+					result = caseModelElement(associationBase);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ASSOCIATION_DOCUMENTATION: {
-				AssociationDocumentation associationDocumentation = (AssociationDocumentation)theEObject;
+				AssociationDocumentation associationDocumentation = (AssociationDocumentation) theEObject;
 				T result = caseAssociationDocumentation(associationDocumentation);
-				if (result == null) result = caseDocumentation(associationDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(associationDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ASSOCIATION_END: {
-				AssociationEnd associationEnd = (AssociationEnd)theEObject;
+				AssociationEnd associationEnd = (AssociationEnd) theEObject;
 				T result = caseAssociationEnd(associationEnd);
-				if (result == null) result = caseAssociationEndBase(associationEnd);
-				if (result == null) result = caseRelationship(associationEnd);
-				if (result == null) result = caseModelElement(associationEnd);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAssociationEndBase(associationEnd);
+				}
+				if (result == null) {
+					result = caseRelationship(associationEnd);
+				}
+				if (result == null) {
+					result = caseModelElement(associationEnd);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ASSOCIATION_END_ANNOTATIONS: {
-				AssociationEndAnnotations associationEndAnnotations = (AssociationEndAnnotations)theEObject;
+				AssociationEndAnnotations associationEndAnnotations = (AssociationEndAnnotations) theEObject;
 				T result = caseAssociationEndAnnotations(associationEndAnnotations);
-				if (result == null) result = caseAnnotations(associationEndAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(associationEndAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ASSOCIATION_END_APP_INFO: {
-				AssociationEndAppInfo associationEndAppInfo = (AssociationEndAppInfo)theEObject;
+				AssociationEndAppInfo associationEndAppInfo = (AssociationEndAppInfo) theEObject;
 				T result = caseAssociationEndAppInfo(associationEndAppInfo);
-				if (result == null) result = caseAppInfo(associationEndAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(associationEndAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ASSOCIATION_END_BASE: {
-				AssociationEndBase associationEndBase = (AssociationEndBase)theEObject;
+				AssociationEndBase associationEndBase = (AssociationEndBase) theEObject;
 				T result = caseAssociationEndBase(associationEndBase);
-				if (result == null) result = caseRelationship(associationEndBase);
-				if (result == null) result = caseModelElement(associationEndBase);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRelationship(associationEndBase);
+				}
+				if (result == null) {
+					result = caseModelElement(associationEndBase);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ASSOCIATION_END_DERIVATION: {
-				AssociationEndDerivation associationEndDerivation = (AssociationEndDerivation)theEObject;
+				AssociationEndDerivation associationEndDerivation = (AssociationEndDerivation) theEObject;
 				T result = caseAssociationEndDerivation(associationEndDerivation);
-				if (result == null) result = caseClassDerivation(associationEndDerivation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassDerivation(associationEndDerivation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ASSOCIATION_END_DOCUMENTATION: {
-				AssociationEndDocumentation associationEndDocumentation = (AssociationEndDocumentation)theEObject;
+				AssociationEndDocumentation associationEndDocumentation = (AssociationEndDocumentation) theEObject;
 				T result = caseAssociationEndDocumentation(associationEndDocumentation);
-				if (result == null) result = caseDocumentation(associationEndDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(associationEndDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ASSOCIATION_END_SPECIALIZATION: {
-				AssociationEndSpecialization associationEndSpecialization = (AssociationEndSpecialization)theEObject;
+				AssociationEndSpecialization associationEndSpecialization = (AssociationEndSpecialization) theEObject;
 				T result = caseAssociationEndSpecialization(associationEndSpecialization);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ASSOCIATION_END_WITH_CLASS: {
-				AssociationEndWithClass associationEndWithClass = (AssociationEndWithClass)theEObject;
+				AssociationEndWithClass associationEndWithClass = (AssociationEndWithClass) theEObject;
 				T result = caseAssociationEndWithClass(associationEndWithClass);
-				if (result == null) result = caseAssociationEndBase(associationEndWithClass);
-				if (result == null) result = caseRelationship(associationEndWithClass);
-				if (result == null) result = caseModelElement(associationEndWithClass);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAssociationEndBase(associationEndWithClass);
+				}
+				if (result == null) {
+					result = caseRelationship(associationEndWithClass);
+				}
+				if (result == null) {
+					result = caseModelElement(associationEndWithClass);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ASSOCIATION_END_WITH_CLASS_REF: {
-				AssociationEndWithClassRef associationEndWithClassRef = (AssociationEndWithClassRef)theEObject;
+				AssociationEndWithClassRef associationEndWithClassRef = (AssociationEndWithClassRef) theEObject;
 				T result = caseAssociationEndWithClassRef(associationEndWithClassRef);
-				if (result == null) result = caseAssociationEndBase(associationEndWithClassRef);
-				if (result == null) result = caseRelationship(associationEndWithClassRef);
-				if (result == null) result = caseModelElement(associationEndWithClassRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAssociationEndBase(associationEndWithClassRef);
+				}
+				if (result == null) {
+					result = caseRelationship(associationEndWithClassRef);
+				}
+				if (result == null) {
+					result = caseModelElement(associationEndWithClassRef);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ATTRIBUTE: {
-				Attribute attribute = (Attribute)theEObject;
+				Attribute attribute = (Attribute) theEObject;
 				T result = caseAttribute(attribute);
-				if (result == null) result = caseStructuralFeature(attribute);
-				if (result == null) result = caseFeature(attribute);
-				if (result == null) result = caseModelElement(attribute);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseStructuralFeature(attribute);
+				}
+				if (result == null) {
+					result = caseFeature(attribute);
+				}
+				if (result == null) {
+					result = caseModelElement(attribute);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ATTRIBUTE_ANNOTATIONS: {
-				AttributeAnnotations attributeAnnotations = (AttributeAnnotations)theEObject;
+				AttributeAnnotations attributeAnnotations = (AttributeAnnotations) theEObject;
 				T result = caseAttributeAnnotations(attributeAnnotations);
-				if (result == null) result = caseAnnotations(attributeAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(attributeAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ATTRIBUTE_APP_INFO: {
-				AttributeAppInfo attributeAppInfo = (AttributeAppInfo)theEObject;
+				AttributeAppInfo attributeAppInfo = (AttributeAppInfo) theEObject;
 				T result = caseAttributeAppInfo(attributeAppInfo);
-				if (result == null) result = caseAppInfo(attributeAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(attributeAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ATTRIBUTE_CONTENT: {
-				AttributeContent attributeContent = (AttributeContent)theEObject;
+				AttributeContent attributeContent = (AttributeContent) theEObject;
 				T result = caseAttributeContent(attributeContent);
-				if (result == null) result = caseAttributeRef(attributeContent);
-				if (result == null) result = caseChange(attributeContent);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAttributeRef(attributeContent);
+				}
+				if (result == null) {
+					result = caseChange(attributeContent);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ATTRIBUTE_DERIVATION: {
-				AttributeDerivation attributeDerivation = (AttributeDerivation)theEObject;
+				AttributeDerivation attributeDerivation = (AttributeDerivation) theEObject;
 				T result = caseAttributeDerivation(attributeDerivation);
-				if (result == null) result = caseClassDerivation(attributeDerivation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassDerivation(attributeDerivation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ATTRIBUTE_DOCUMENTATION: {
-				AttributeDocumentation attributeDocumentation = (AttributeDocumentation)theEObject;
+				AttributeDocumentation attributeDocumentation = (AttributeDocumentation) theEObject;
 				T result = caseAttributeDocumentation(attributeDocumentation);
-				if (result == null) result = caseDocumentation(attributeDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(attributeDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ATTRIBUTE_PROPERTY: {
-				AttributeProperty attributeProperty = (AttributeProperty)theEObject;
+				AttributeProperty attributeProperty = (AttributeProperty) theEObject;
 				T result = caseAttributeProperty(attributeProperty);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ATTRIBUTE_REF: {
-				AttributeRef attributeRef = (AttributeRef)theEObject;
+				AttributeRef attributeRef = (AttributeRef) theEObject;
 				T result = caseAttributeRef(attributeRef);
-				if (result == null) result = caseChange(attributeRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseChange(attributeRef);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ATTRIBUTE_VALUE_REF: {
-				AttributeValueRef attributeValueRef = (AttributeValueRef)theEObject;
+				AttributeValueRef attributeValueRef = (AttributeValueRef) theEObject;
 				T result = caseAttributeValueRef(attributeValueRef);
-				if (result == null) result = caseAttributeRef(attributeValueRef);
-				if (result == null) result = caseChange(attributeValueRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAttributeRef(attributeValueRef);
+				}
+				if (result == null) {
+					result = caseChange(attributeValueRef);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.BALLOT_COMMENT: {
-				BallotComment ballotComment = (BallotComment)theEObject;
+				BallotComment ballotComment = (BallotComment) theEObject;
 				T result = caseBallotComment(ballotComment);
-				if (result == null) result = caseBasicAnnotation(ballotComment);
-				if (result == null) result = caseAnnotationBase(ballotComment);
-				if (result == null) result = caseModelElement(ballotComment);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseBasicAnnotation(ballotComment);
+				}
+				if (result == null) {
+					result = caseAnnotationBase(ballotComment);
+				}
+				if (result == null) {
+					result = caseModelElement(ballotComment);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.BALLOT_COMMENT_RESOLUTION: {
-				BallotCommentResolution ballotCommentResolution = (BallotCommentResolution)theEObject;
+				BallotCommentResolution ballotCommentResolution = (BallotCommentResolution) theEObject;
 				T result = caseBallotCommentResolution(ballotCommentResolution);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.BALLOT_SUBMISSION: {
-				BallotSubmission ballotSubmission = (BallotSubmission)theEObject;
+				BallotSubmission ballotSubmission = (BallotSubmission) theEObject;
 				T result = caseBallotSubmission(ballotSubmission);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.BASIC_ANNOTATION: {
-				BasicAnnotation basicAnnotation = (BasicAnnotation)theEObject;
+				BasicAnnotation basicAnnotation = (BasicAnnotation) theEObject;
 				T result = caseBasicAnnotation(basicAnnotation);
-				if (result == null) result = caseAnnotationBase(basicAnnotation);
-				if (result == null) result = caseModelElement(basicAnnotation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotationBase(basicAnnotation);
+				}
+				if (result == null) {
+					result = caseModelElement(basicAnnotation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.BINDING_REALM: {
-				BindingRealm bindingRealm = (BindingRealm)theEObject;
+				BindingRealm bindingRealm = (BindingRealm) theEObject;
 				T result = caseBindingRealm(bindingRealm);
-				if (result == null) result = caseModelElement(bindingRealm);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseModelElement(bindingRealm);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.BOUND_STATIC_MODEL: {
-				BoundStaticModel boundStaticModel = (BoundStaticModel)theEObject;
+				BoundStaticModel boundStaticModel = (BoundStaticModel) theEObject;
 				T result = caseBoundStaticModel(boundStaticModel);
-				if (result == null) result = casePackageRef(boundStaticModel);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageRef(boundStaticModel);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.BUSINESS_NAME: {
-				BusinessName businessName = (BusinessName)theEObject;
+				BusinessName businessName = (BusinessName) theEObject;
 				T result = caseBusinessName(businessName);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CASCADABLE_ANNOTATION: {
-				CascadableAnnotation cascadableAnnotation = (CascadableAnnotation)theEObject;
+				CascadableAnnotation cascadableAnnotation = (CascadableAnnotation) theEObject;
 				T result = caseCascadableAnnotation(cascadableAnnotation);
-				if (result == null) result = caseBasicAnnotation(cascadableAnnotation);
-				if (result == null) result = caseAnnotationBase(cascadableAnnotation);
-				if (result == null) result = caseModelElement(cascadableAnnotation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseBasicAnnotation(cascadableAnnotation);
+				}
+				if (result == null) {
+					result = caseAnnotationBase(cascadableAnnotation);
+				}
+				if (result == null) {
+					result = caseModelElement(cascadableAnnotation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CHANGE: {
-				Change change = (Change)theEObject;
+				Change change = (Change) theEObject;
 				T result = caseChange(change);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CHANGE_REQUEST: {
-				ChangeRequest changeRequest = (ChangeRequest)theEObject;
+				ChangeRequest changeRequest = (ChangeRequest) theEObject;
 				T result = caseChangeRequest(changeRequest);
-				if (result == null) result = caseBasicAnnotation(changeRequest);
-				if (result == null) result = caseAnnotationBase(changeRequest);
-				if (result == null) result = caseModelElement(changeRequest);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseBasicAnnotation(changeRequest);
+				}
+				if (result == null) {
+					result = caseAnnotationBase(changeRequest);
+				}
+				if (result == null) {
+					result = caseModelElement(changeRequest);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CHANGE_REQUEST_ESTIMATE: {
-				ChangeRequestEstimate changeRequestEstimate = (ChangeRequestEstimate)theEObject;
+				ChangeRequestEstimate changeRequestEstimate = (ChangeRequestEstimate) theEObject;
 				T result = caseChangeRequestEstimate(changeRequestEstimate);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASS_ANNOTATIONS: {
-				ClassAnnotations classAnnotations = (ClassAnnotations)theEObject;
+				ClassAnnotations classAnnotations = (ClassAnnotations) theEObject;
 				T result = caseClassAnnotations(classAnnotations);
-				if (result == null) result = caseAnnotations(classAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(classAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASS_APP_INFO: {
-				ClassAppInfo classAppInfo = (ClassAppInfo)theEObject;
+				ClassAppInfo classAppInfo = (ClassAppInfo) theEObject;
 				T result = caseClassAppInfo(classAppInfo);
-				if (result == null) result = caseAppInfo(classAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(classAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASS_BASE: {
-				ClassBase classBase = (ClassBase)theEObject;
+				ClassBase classBase = (ClassBase) theEObject;
 				T result = caseClassBase(classBase);
-				if (result == null) result = caseClassifierBase(classBase);
-				if (result == null) result = caseClassifier(classBase);
-				if (result == null) result = caseModelElement(classBase);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassifierBase(classBase);
+				}
+				if (result == null) {
+					result = caseClassifier(classBase);
+				}
+				if (result == null) {
+					result = caseModelElement(classBase);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASS_BINDING_ARGUMENT: {
-				ClassBindingArgument classBindingArgument = (ClassBindingArgument)theEObject;
+				ClassBindingArgument classBindingArgument = (ClassBindingArgument) theEObject;
 				T result = caseClassBindingArgument(classBindingArgument);
-				if (result == null) result = caseClassBindingArgumentBase(classBindingArgument);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassBindingArgumentBase(classBindingArgument);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASS_BINDING_ARGUMENT_BASE: {
-				ClassBindingArgumentBase classBindingArgumentBase = (ClassBindingArgumentBase)theEObject;
+				ClassBindingArgumentBase classBindingArgumentBase = (ClassBindingArgumentBase) theEObject;
 				T result = caseClassBindingArgumentBase(classBindingArgumentBase);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASS_DERIVATION: {
-				ClassDerivation classDerivation = (ClassDerivation)theEObject;
+				ClassDerivation classDerivation = (ClassDerivation) theEObject;
 				T result = caseClassDerivation(classDerivation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASS_DOCUMENTATION: {
-				ClassDocumentation classDocumentation = (ClassDocumentation)theEObject;
+				ClassDocumentation classDocumentation = (ClassDocumentation) theEObject;
 				T result = caseClassDocumentation(classDocumentation);
-				if (result == null) result = caseDocumentation(classDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(classDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASS_ELEMENT: {
-				ClassElement classElement = (ClassElement)theEObject;
+				ClassElement classElement = (ClassElement) theEObject;
 				T result = caseClassElement(classElement);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASS_GENERALIZATION: {
-				ClassGeneralization classGeneralization = (ClassGeneralization)theEObject;
+				ClassGeneralization classGeneralization = (ClassGeneralization) theEObject;
 				T result = caseClassGeneralization(classGeneralization);
-				if (result == null) result = caseClassGeneralizationBase(classGeneralization);
-				if (result == null) result = caseRelationship(classGeneralization);
-				if (result == null) result = caseModelElement(classGeneralization);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassGeneralizationBase(classGeneralization);
+				}
+				if (result == null) {
+					result = caseRelationship(classGeneralization);
+				}
+				if (result == null) {
+					result = caseModelElement(classGeneralization);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASS_GENERALIZATION_BASE: {
-				ClassGeneralizationBase classGeneralizationBase = (ClassGeneralizationBase)theEObject;
+				ClassGeneralizationBase classGeneralizationBase = (ClassGeneralizationBase) theEObject;
 				T result = caseClassGeneralizationBase(classGeneralizationBase);
-				if (result == null) result = caseRelationship(classGeneralizationBase);
-				if (result == null) result = caseModelElement(classGeneralizationBase);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRelationship(classGeneralizationBase);
+				}
+				if (result == null) {
+					result = caseModelElement(classGeneralizationBase);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASS_GRAPHIC_INFORMATION: {
-				ClassGraphicInformation classGraphicInformation = (ClassGraphicInformation)theEObject;
+				ClassGraphicInformation classGraphicInformation = (ClassGraphicInformation) theEObject;
 				T result = caseClassGraphicInformation(classGraphicInformation);
-				if (result == null) result = caseNodeGraphicInformation(classGraphicInformation);
-				if (result == null) result = caseGraphicInformation(classGraphicInformation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseNodeGraphicInformation(classGraphicInformation);
+				}
+				if (result == null) {
+					result = caseGraphicInformation(classGraphicInformation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASSIFIER: {
-				Classifier classifier = (Classifier)theEObject;
+				Classifier classifier = (Classifier) theEObject;
 				T result = caseClassifier(classifier);
-				if (result == null) result = caseModelElement(classifier);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseModelElement(classifier);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASSIFIER_BASE: {
-				ClassifierBase classifierBase = (ClassifierBase)theEObject;
+				ClassifierBase classifierBase = (ClassifierBase) theEObject;
 				T result = caseClassifierBase(classifierBase);
-				if (result == null) result = caseClassifier(classifierBase);
-				if (result == null) result = caseModelElement(classifierBase);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassifier(classifierBase);
+				}
+				if (result == null) {
+					result = caseModelElement(classifierBase);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASS_OR_REFERENCE: {
-				ClassOrReference classOrReference = (ClassOrReference)theEObject;
+				ClassOrReference classOrReference = (ClassOrReference) theEObject;
 				T result = caseClassOrReference(classOrReference);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASS_REF: {
-				ClassRef classRef = (ClassRef)theEObject;
+				ClassRef classRef = (ClassRef) theEObject;
 				T result = caseClassRef(classRef);
-				if (result == null) result = casePackageRef(classRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageRef(classRef);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASS_STUB_INTERFACE: {
-				ClassStubInterface classStubInterface = (ClassStubInterface)theEObject;
+				ClassStubInterface classStubInterface = (ClassStubInterface) theEObject;
 				T result = caseClassStubInterface(classStubInterface);
-				if (result == null) result = caseClassifierBase(classStubInterface);
-				if (result == null) result = caseClassifier(classStubInterface);
-				if (result == null) result = caseModelElement(classStubInterface);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassifierBase(classStubInterface);
+				}
+				if (result == null) {
+					result = caseClassifier(classStubInterface);
+				}
+				if (result == null) {
+					result = caseModelElement(classStubInterface);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASS_STUB_INTERFACE_ANNOTATIONS: {
-				ClassStubInterfaceAnnotations classStubInterfaceAnnotations = (ClassStubInterfaceAnnotations)theEObject;
+				ClassStubInterfaceAnnotations classStubInterfaceAnnotations = (ClassStubInterfaceAnnotations) theEObject;
 				T result = caseClassStubInterfaceAnnotations(classStubInterfaceAnnotations);
-				if (result == null) result = caseAnnotations(classStubInterfaceAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(classStubInterfaceAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASS_STUB_INTERFACE_APP_INFO: {
-				ClassStubInterfaceAppInfo classStubInterfaceAppInfo = (ClassStubInterfaceAppInfo)theEObject;
+				ClassStubInterfaceAppInfo classStubInterfaceAppInfo = (ClassStubInterfaceAppInfo) theEObject;
 				T result = caseClassStubInterfaceAppInfo(classStubInterfaceAppInfo);
-				if (result == null) result = caseAppInfo(classStubInterfaceAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(classStubInterfaceAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CLASS_STUB_INTERFACE_DOCUMENTATION: {
-				ClassStubInterfaceDocumentation classStubInterfaceDocumentation = (ClassStubInterfaceDocumentation)theEObject;
+				ClassStubInterfaceDocumentation classStubInterfaceDocumentation = (ClassStubInterfaceDocumentation) theEObject;
 				T result = caseClassStubInterfaceDocumentation(classStubInterfaceDocumentation);
-				if (result == null) result = caseDocumentation(classStubInterfaceDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(classStubInterfaceDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE: {
-				Code code = (Code)theEObject;
+				Code code = (Code) theEObject;
 				T result = caseCode(code);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_BASED_CONTENT_DEFINITION: {
-				CodeBasedContentDefinition codeBasedContentDefinition = (CodeBasedContentDefinition)theEObject;
+				CodeBasedContentDefinition codeBasedContentDefinition = (CodeBasedContentDefinition) theEObject;
 				T result = caseCodeBasedContentDefinition(codeBasedContentDefinition);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_FILTER_CONTENT_DEFINITION: {
-				CodeFilterContentDefinition codeFilterContentDefinition = (CodeFilterContentDefinition)theEObject;
+				CodeFilterContentDefinition codeFilterContentDefinition = (CodeFilterContentDefinition) theEObject;
 				T result = caseCodeFilterContentDefinition(codeFilterContentDefinition);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_ICON: {
-				CodeIcon codeIcon = (CodeIcon)theEObject;
+				CodeIcon codeIcon = (CodeIcon) theEObject;
 				T result = caseCodeIcon(codeIcon);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_SUPPLEMENT: {
-				CodeSupplement codeSupplement = (CodeSupplement)theEObject;
+				CodeSupplement codeSupplement = (CodeSupplement) theEObject;
 				T result = caseCodeSupplement(codeSupplement);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_SYSTEM: {
-				CodeSystem codeSystem = (CodeSystem)theEObject;
+				CodeSystem codeSystem = (CodeSystem) theEObject;
 				T result = caseCodeSystem(codeSystem);
-				if (result == null) result = caseCodeSystemBase(codeSystem);
-				if (result == null) result = casePackageBase(codeSystem);
-				if (result == null) result = caseModelElement(codeSystem);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseCodeSystemBase(codeSystem);
+				}
+				if (result == null) {
+					result = casePackageBase(codeSystem);
+				}
+				if (result == null) {
+					result = caseModelElement(codeSystem);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_SYSTEM_ANNOTATIONS: {
-				CodeSystemAnnotations codeSystemAnnotations = (CodeSystemAnnotations)theEObject;
+				CodeSystemAnnotations codeSystemAnnotations = (CodeSystemAnnotations) theEObject;
 				T result = caseCodeSystemAnnotations(codeSystemAnnotations);
-				if (result == null) result = caseAnnotations(codeSystemAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(codeSystemAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_SYSTEM_APP_INFO: {
-				CodeSystemAppInfo codeSystemAppInfo = (CodeSystemAppInfo)theEObject;
+				CodeSystemAppInfo codeSystemAppInfo = (CodeSystemAppInfo) theEObject;
 				T result = caseCodeSystemAppInfo(codeSystemAppInfo);
-				if (result == null) result = caseAppInfo(codeSystemAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(codeSystemAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_SYSTEM_BASE: {
-				CodeSystemBase codeSystemBase = (CodeSystemBase)theEObject;
+				CodeSystemBase codeSystemBase = (CodeSystemBase) theEObject;
 				T result = caseCodeSystemBase(codeSystemBase);
-				if (result == null) result = casePackageBase(codeSystemBase);
-				if (result == null) result = caseModelElement(codeSystemBase);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageBase(codeSystemBase);
+				}
+				if (result == null) {
+					result = caseModelElement(codeSystemBase);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_SYSTEM_DOCUMENTATION: {
-				CodeSystemDocumentation codeSystemDocumentation = (CodeSystemDocumentation)theEObject;
+				CodeSystemDocumentation codeSystemDocumentation = (CodeSystemDocumentation) theEObject;
 				T result = caseCodeSystemDocumentation(codeSystemDocumentation);
-				if (result == null) result = caseDocumentation(codeSystemDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(codeSystemDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_SYSTEM_REF: {
-				CodeSystemRef codeSystemRef = (CodeSystemRef)theEObject;
+				CodeSystemRef codeSystemRef = (CodeSystemRef) theEObject;
 				T result = caseCodeSystemRef(codeSystemRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_SYSTEM_SUPPLEMENT: {
-				CodeSystemSupplement codeSystemSupplement = (CodeSystemSupplement)theEObject;
+				CodeSystemSupplement codeSystemSupplement = (CodeSystemSupplement) theEObject;
 				T result = caseCodeSystemSupplement(codeSystemSupplement);
-				if (result == null) result = caseCodeSystemBase(codeSystemSupplement);
-				if (result == null) result = casePackageBase(codeSystemSupplement);
-				if (result == null) result = caseModelElement(codeSystemSupplement);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseCodeSystemBase(codeSystemSupplement);
+				}
+				if (result == null) {
+					result = casePackageBase(codeSystemSupplement);
+				}
+				if (result == null) {
+					result = caseModelElement(codeSystemSupplement);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_SYSTEM_VERSION: {
-				CodeSystemVersion codeSystemVersion = (CodeSystemVersion)theEObject;
+				CodeSystemVersion codeSystemVersion = (CodeSystemVersion) theEObject;
 				T result = caseCodeSystemVersion(codeSystemVersion);
-				if (result == null) result = caseCodeSystemVersionBase(codeSystemVersion);
-				if (result == null) result = caseModelElement(codeSystemVersion);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseCodeSystemVersionBase(codeSystemVersion);
+				}
+				if (result == null) {
+					result = caseModelElement(codeSystemVersion);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_SYSTEM_VERSION_ANNOTATIONS: {
-				CodeSystemVersionAnnotations codeSystemVersionAnnotations = (CodeSystemVersionAnnotations)theEObject;
+				CodeSystemVersionAnnotations codeSystemVersionAnnotations = (CodeSystemVersionAnnotations) theEObject;
 				T result = caseCodeSystemVersionAnnotations(codeSystemVersionAnnotations);
-				if (result == null) result = caseAnnotations(codeSystemVersionAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(codeSystemVersionAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_SYSTEM_VERSION_APP_INFO: {
-				CodeSystemVersionAppInfo codeSystemVersionAppInfo = (CodeSystemVersionAppInfo)theEObject;
+				CodeSystemVersionAppInfo codeSystemVersionAppInfo = (CodeSystemVersionAppInfo) theEObject;
 				T result = caseCodeSystemVersionAppInfo(codeSystemVersionAppInfo);
-				if (result == null) result = caseAppInfo(codeSystemVersionAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(codeSystemVersionAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE: {
-				CodeSystemVersionBase codeSystemVersionBase = (CodeSystemVersionBase)theEObject;
+				CodeSystemVersionBase codeSystemVersionBase = (CodeSystemVersionBase) theEObject;
 				T result = caseCodeSystemVersionBase(codeSystemVersionBase);
-				if (result == null) result = caseModelElement(codeSystemVersionBase);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseModelElement(codeSystemVersionBase);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_SYSTEM_VERSION_DOCUMENTATION: {
-				CodeSystemVersionDocumentation codeSystemVersionDocumentation = (CodeSystemVersionDocumentation)theEObject;
+				CodeSystemVersionDocumentation codeSystemVersionDocumentation = (CodeSystemVersionDocumentation) theEObject;
 				T result = caseCodeSystemVersionDocumentation(codeSystemVersionDocumentation);
-				if (result == null) result = caseDocumentation(codeSystemVersionDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(codeSystemVersionDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT: {
-				CodeSystemVersionSupplement codeSystemVersionSupplement = (CodeSystemVersionSupplement)theEObject;
+				CodeSystemVersionSupplement codeSystemVersionSupplement = (CodeSystemVersionSupplement) theEObject;
 				T result = caseCodeSystemVersionSupplement(codeSystemVersionSupplement);
-				if (result == null) result = caseCodeSystemVersionBase(codeSystemVersionSupplement);
-				if (result == null) result = caseModelElement(codeSystemVersionSupplement);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseCodeSystemVersionBase(codeSystemVersionSupplement);
+				}
+				if (result == null) {
+					result = caseModelElement(codeSystemVersionSupplement);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_TRANSLATION: {
-				CodeTranslation codeTranslation = (CodeTranslation)theEObject;
+				CodeTranslation codeTranslation = (CodeTranslation) theEObject;
 				T result = caseCodeTranslation(codeTranslation);
-				if (result == null) result = caseModelElement(codeTranslation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseModelElement(codeTranslation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_TRANSLATION_ANNOTATIONS: {
-				CodeTranslationAnnotations codeTranslationAnnotations = (CodeTranslationAnnotations)theEObject;
+				CodeTranslationAnnotations codeTranslationAnnotations = (CodeTranslationAnnotations) theEObject;
 				T result = caseCodeTranslationAnnotations(codeTranslationAnnotations);
-				if (result == null) result = caseAnnotations(codeTranslationAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(codeTranslationAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_TRANSLATION_APP_INFO: {
-				CodeTranslationAppInfo codeTranslationAppInfo = (CodeTranslationAppInfo)theEObject;
+				CodeTranslationAppInfo codeTranslationAppInfo = (CodeTranslationAppInfo) theEObject;
 				T result = caseCodeTranslationAppInfo(codeTranslationAppInfo);
-				if (result == null) result = caseAppInfo(codeTranslationAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(codeTranslationAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_TRANSLATION_COLLECTION: {
-				CodeTranslationCollection codeTranslationCollection = (CodeTranslationCollection)theEObject;
+				CodeTranslationCollection codeTranslationCollection = (CodeTranslationCollection) theEObject;
 				T result = caseCodeTranslationCollection(codeTranslationCollection);
-				if (result == null) result = casePackageBase(codeTranslationCollection);
-				if (result == null) result = caseModelElement(codeTranslationCollection);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageBase(codeTranslationCollection);
+				}
+				if (result == null) {
+					result = caseModelElement(codeTranslationCollection);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_TRANSLATION_COLLECTION_ANNOTATIONS: {
-				CodeTranslationCollectionAnnotations codeTranslationCollectionAnnotations = (CodeTranslationCollectionAnnotations)theEObject;
+				CodeTranslationCollectionAnnotations codeTranslationCollectionAnnotations = (CodeTranslationCollectionAnnotations) theEObject;
 				T result = caseCodeTranslationCollectionAnnotations(codeTranslationCollectionAnnotations);
-				if (result == null) result = caseAnnotations(codeTranslationCollectionAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(codeTranslationCollectionAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_TRANSLATION_COLLECTION_APP_INFO: {
-				CodeTranslationCollectionAppInfo codeTranslationCollectionAppInfo = (CodeTranslationCollectionAppInfo)theEObject;
+				CodeTranslationCollectionAppInfo codeTranslationCollectionAppInfo = (CodeTranslationCollectionAppInfo) theEObject;
 				T result = caseCodeTranslationCollectionAppInfo(codeTranslationCollectionAppInfo);
-				if (result == null) result = caseAppInfo(codeTranslationCollectionAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(codeTranslationCollectionAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_TRANSLATION_COLLECTION_DOCUMENTATION: {
-				CodeTranslationCollectionDocumentation codeTranslationCollectionDocumentation = (CodeTranslationCollectionDocumentation)theEObject;
+				CodeTranslationCollectionDocumentation codeTranslationCollectionDocumentation = (CodeTranslationCollectionDocumentation) theEObject;
 				T result = caseCodeTranslationCollectionDocumentation(codeTranslationCollectionDocumentation);
-				if (result == null) result = caseDocumentation(codeTranslationCollectionDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(codeTranslationCollectionDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CODE_TRANSLATION_DOCUMENTATION: {
-				CodeTranslationDocumentation codeTranslationDocumentation = (CodeTranslationDocumentation)theEObject;
+				CodeTranslationDocumentation codeTranslationDocumentation = (CodeTranslationDocumentation) theEObject;
 				T result = caseCodeTranslationDocumentation(codeTranslationDocumentation);
-				if (result == null) result = caseDocumentation(codeTranslationDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(codeTranslationDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.COMBINED_CONTENT_DEFINITION: {
-				CombinedContentDefinition combinedContentDefinition = (CombinedContentDefinition)theEObject;
+				CombinedContentDefinition combinedContentDefinition = (CombinedContentDefinition) theEObject;
 				T result = caseCombinedContentDefinition(combinedContentDefinition);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.COMMITTEE_REFERENCE: {
-				CommitteeReference committeeReference = (CommitteeReference)theEObject;
+				CommitteeReference committeeReference = (CommitteeReference) theEObject;
 				T result = caseCommitteeReference(committeeReference);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.COMMON_MODEL_ELEMENT_DEFINITION: {
-				CommonModelElementDefinition commonModelElementDefinition = (CommonModelElementDefinition)theEObject;
+				CommonModelElementDefinition commonModelElementDefinition = (CommonModelElementDefinition) theEObject;
 				T result = caseCommonModelElementDefinition(commonModelElementDefinition);
-				if (result == null) result = caseClassifierBase(commonModelElementDefinition);
-				if (result == null) result = caseClassifier(commonModelElementDefinition);
-				if (result == null) result = caseModelElement(commonModelElementDefinition);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassifierBase(commonModelElementDefinition);
+				}
+				if (result == null) {
+					result = caseClassifier(commonModelElementDefinition);
+				}
+				if (result == null) {
+					result = caseModelElement(commonModelElementDefinition);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF: {
-				CommonModelElementRef commonModelElementRef = (CommonModelElementRef)theEObject;
+				CommonModelElementRef commonModelElementRef = (CommonModelElementRef) theEObject;
 				T result = caseCommonModelElementRef(commonModelElementRef);
-				if (result == null) result = caseCommonModelElementRefBase(commonModelElementRef);
-				if (result == null) result = caseClassifierBase(commonModelElementRef);
-				if (result == null) result = caseClassifier(commonModelElementRef);
-				if (result == null) result = caseModelElement(commonModelElementRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseCommonModelElementRefBase(commonModelElementRef);
+				}
+				if (result == null) {
+					result = caseClassifierBase(commonModelElementRef);
+				}
+				if (result == null) {
+					result = caseClassifier(commonModelElementRef);
+				}
+				if (result == null) {
+					result = caseModelElement(commonModelElementRef);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF_ANNOTATIONS: {
-				CommonModelElementRefAnnotations commonModelElementRefAnnotations = (CommonModelElementRefAnnotations)theEObject;
+				CommonModelElementRefAnnotations commonModelElementRefAnnotations = (CommonModelElementRefAnnotations) theEObject;
 				T result = caseCommonModelElementRefAnnotations(commonModelElementRefAnnotations);
-				if (result == null) result = caseAnnotations(commonModelElementRefAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(commonModelElementRefAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF_APP_INFO: {
-				CommonModelElementRefAppInfo commonModelElementRefAppInfo = (CommonModelElementRefAppInfo)theEObject;
+				CommonModelElementRefAppInfo commonModelElementRefAppInfo = (CommonModelElementRefAppInfo) theEObject;
 				T result = caseCommonModelElementRefAppInfo(commonModelElementRefAppInfo);
-				if (result == null) result = caseAppInfo(commonModelElementRefAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(commonModelElementRefAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE: {
-				CommonModelElementRefBase commonModelElementRefBase = (CommonModelElementRefBase)theEObject;
+				CommonModelElementRefBase commonModelElementRefBase = (CommonModelElementRefBase) theEObject;
 				T result = caseCommonModelElementRefBase(commonModelElementRefBase);
-				if (result == null) result = caseClassifierBase(commonModelElementRefBase);
-				if (result == null) result = caseClassifier(commonModelElementRefBase);
-				if (result == null) result = caseModelElement(commonModelElementRefBase);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassifierBase(commonModelElementRefBase);
+				}
+				if (result == null) {
+					result = caseClassifier(commonModelElementRefBase);
+				}
+				if (result == null) {
+					result = caseModelElement(commonModelElementRefBase);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF_DOCUMENTATION: {
-				CommonModelElementRefDocumentation commonModelElementRefDocumentation = (CommonModelElementRefDocumentation)theEObject;
+				CommonModelElementRefDocumentation commonModelElementRefDocumentation = (CommonModelElementRefDocumentation) theEObject;
 				T result = caseCommonModelElementRefDocumentation(commonModelElementRefDocumentation);
-				if (result == null) result = caseDocumentation(commonModelElementRefDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(commonModelElementRefDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.COMPLEX_MARKUP_WITH_LANGUAGE: {
-				ComplexMarkupWithLanguage complexMarkupWithLanguage = (ComplexMarkupWithLanguage)theEObject;
+				ComplexMarkupWithLanguage complexMarkupWithLanguage = (ComplexMarkupWithLanguage) theEObject;
 				T result = caseComplexMarkupWithLanguage(complexMarkupWithLanguage);
-				if (result == null) result = caseFlow(complexMarkupWithLanguage);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseFlow(complexMarkupWithLanguage);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT: {
-				Concept concept = (Concept)theEObject;
+				Concept concept = (Concept) theEObject;
 				T result = caseConcept(concept);
-				if (result == null) result = caseConceptBase(concept);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseConceptBase(concept);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_ANNOTATIONS: {
-				ConceptAnnotations conceptAnnotations = (ConceptAnnotations)theEObject;
+				ConceptAnnotations conceptAnnotations = (ConceptAnnotations) theEObject;
 				T result = caseConceptAnnotations(conceptAnnotations);
-				if (result == null) result = caseAnnotations(conceptAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(conceptAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_APP_INFO: {
-				ConceptAppInfo conceptAppInfo = (ConceptAppInfo)theEObject;
+				ConceptAppInfo conceptAppInfo = (ConceptAppInfo) theEObject;
 				T result = caseConceptAppInfo(conceptAppInfo);
-				if (result == null) result = caseAppInfo(conceptAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(conceptAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_BASE: {
-				ConceptBase conceptBase = (ConceptBase)theEObject;
+				ConceptBase conceptBase = (ConceptBase) theEObject;
 				T result = caseConceptBase(conceptBase);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_DOCUMENTATION: {
-				ConceptDocumentation conceptDocumentation = (ConceptDocumentation)theEObject;
+				ConceptDocumentation conceptDocumentation = (ConceptDocumentation) theEObject;
 				T result = caseConceptDocumentation(conceptDocumentation);
-				if (result == null) result = caseDocumentation(conceptDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(conceptDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_DOMAIN: {
-				ConceptDomain conceptDomain = (ConceptDomain)theEObject;
+				ConceptDomain conceptDomain = (ConceptDomain) theEObject;
 				T result = caseConceptDomain(conceptDomain);
-				if (result == null) result = caseModelElement(conceptDomain);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseModelElement(conceptDomain);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_DOMAIN_ANNOTATIONS: {
-				ConceptDomainAnnotations conceptDomainAnnotations = (ConceptDomainAnnotations)theEObject;
+				ConceptDomainAnnotations conceptDomainAnnotations = (ConceptDomainAnnotations) theEObject;
 				T result = caseConceptDomainAnnotations(conceptDomainAnnotations);
-				if (result == null) result = caseAnnotations(conceptDomainAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(conceptDomainAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_DOMAIN_APP_INFO: {
-				ConceptDomainAppInfo conceptDomainAppInfo = (ConceptDomainAppInfo)theEObject;
+				ConceptDomainAppInfo conceptDomainAppInfo = (ConceptDomainAppInfo) theEObject;
 				T result = caseConceptDomainAppInfo(conceptDomainAppInfo);
-				if (result == null) result = caseAppInfo(conceptDomainAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(conceptDomainAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_DOMAIN_DOCUMENTATION: {
-				ConceptDomainDocumentation conceptDomainDocumentation = (ConceptDomainDocumentation)theEObject;
+				ConceptDomainDocumentation conceptDomainDocumentation = (ConceptDomainDocumentation) theEObject;
 				T result = caseConceptDomainDocumentation(conceptDomainDocumentation);
-				if (result == null) result = caseDocumentation(conceptDomainDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(conceptDomainDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_DOMAIN_PROPERTY: {
-				ConceptDomainProperty conceptDomainProperty = (ConceptDomainProperty)theEObject;
+				ConceptDomainProperty conceptDomainProperty = (ConceptDomainProperty) theEObject;
 				T result = caseConceptDomainProperty(conceptDomainProperty);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_DOMAIN_REF: {
-				ConceptDomainRef conceptDomainRef = (ConceptDomainRef)theEObject;
+				ConceptDomainRef conceptDomainRef = (ConceptDomainRef) theEObject;
 				T result = caseConceptDomainRef(conceptDomainRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_PROPERTY: {
-				ConceptProperty conceptProperty = (ConceptProperty)theEObject;
+				ConceptProperty conceptProperty = (ConceptProperty) theEObject;
 				T result = caseConceptProperty(conceptProperty);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_PROPERTY_REF: {
-				ConceptPropertyRef conceptPropertyRef = (ConceptPropertyRef)theEObject;
+				ConceptPropertyRef conceptPropertyRef = (ConceptPropertyRef) theEObject;
 				T result = caseConceptPropertyRef(conceptPropertyRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_REF: {
-				ConceptRef conceptRef = (ConceptRef)theEObject;
+				ConceptRef conceptRef = (ConceptRef) theEObject;
 				T result = caseConceptRef(conceptRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_RELATIONSHIP: {
-				ConceptRelationship conceptRelationship = (ConceptRelationship)theEObject;
+				ConceptRelationship conceptRelationship = (ConceptRelationship) theEObject;
 				T result = caseConceptRelationship(conceptRelationship);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_SUPPLEMENT: {
-				ConceptSupplement conceptSupplement = (ConceptSupplement)theEObject;
+				ConceptSupplement conceptSupplement = (ConceptSupplement) theEObject;
 				T result = caseConceptSupplement(conceptSupplement);
-				if (result == null) result = caseConceptBase(conceptSupplement);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseConceptBase(conceptSupplement);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_SUPPLEMENT_ANNOTATIONS: {
-				ConceptSupplementAnnotations conceptSupplementAnnotations = (ConceptSupplementAnnotations)theEObject;
+				ConceptSupplementAnnotations conceptSupplementAnnotations = (ConceptSupplementAnnotations) theEObject;
 				T result = caseConceptSupplementAnnotations(conceptSupplementAnnotations);
-				if (result == null) result = caseAnnotations(conceptSupplementAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(conceptSupplementAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_SUPPLEMENT_APP_INFO: {
-				ConceptSupplementAppInfo conceptSupplementAppInfo = (ConceptSupplementAppInfo)theEObject;
+				ConceptSupplementAppInfo conceptSupplementAppInfo = (ConceptSupplementAppInfo) theEObject;
 				T result = caseConceptSupplementAppInfo(conceptSupplementAppInfo);
-				if (result == null) result = caseAppInfo(conceptSupplementAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(conceptSupplementAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_SUPPLEMENT_DOCUMENTATION: {
-				ConceptSupplementDocumentation conceptSupplementDocumentation = (ConceptSupplementDocumentation)theEObject;
+				ConceptSupplementDocumentation conceptSupplementDocumentation = (ConceptSupplementDocumentation) theEObject;
 				T result = caseConceptSupplementDocumentation(conceptSupplementDocumentation);
-				if (result == null) result = caseDocumentation(conceptSupplementDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(conceptSupplementDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONCEPT_USE: {
-				ConceptUse conceptUse = (ConceptUse)theEObject;
+				ConceptUse conceptUse = (ConceptUse) theEObject;
 				T result = caseConceptUse(conceptUse);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONFORMANCE_PROFILE: {
-				ConformanceProfile conformanceProfile = (ConformanceProfile)theEObject;
+				ConformanceProfile conformanceProfile = (ConformanceProfile) theEObject;
 				T result = caseConformanceProfile(conformanceProfile);
-				if (result == null) result = casePackage(conformanceProfile);
-				if (result == null) result = casePackageBase(conformanceProfile);
-				if (result == null) result = caseModelElement(conformanceProfile);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackage(conformanceProfile);
+				}
+				if (result == null) {
+					result = casePackageBase(conformanceProfile);
+				}
+				if (result == null) {
+					result = caseModelElement(conformanceProfile);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONFORMANCE_PROFILE_ANNOTATIONS: {
-				ConformanceProfileAnnotations conformanceProfileAnnotations = (ConformanceProfileAnnotations)theEObject;
+				ConformanceProfileAnnotations conformanceProfileAnnotations = (ConformanceProfileAnnotations) theEObject;
 				T result = caseConformanceProfileAnnotations(conformanceProfileAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONFORMANCE_PROFILE_APP_INFO: {
-				ConformanceProfileAppInfo conformanceProfileAppInfo = (ConformanceProfileAppInfo)theEObject;
+				ConformanceProfileAppInfo conformanceProfileAppInfo = (ConformanceProfileAppInfo) theEObject;
 				T result = caseConformanceProfileAppInfo(conformanceProfileAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONFORMANCE_PROFILE_DOCUMENTATION: {
-				ConformanceProfileDocumentation conformanceProfileDocumentation = (ConformanceProfileDocumentation)theEObject;
+				ConformanceProfileDocumentation conformanceProfileDocumentation = (ConformanceProfileDocumentation) theEObject;
 				T result = caseConformanceProfileDocumentation(conformanceProfileDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONFORMANCE_TRIGGER_EVENTS: {
-				ConformanceTriggerEvents conformanceTriggerEvents = (ConformanceTriggerEvents)theEObject;
+				ConformanceTriggerEvents conformanceTriggerEvents = (ConformanceTriggerEvents) theEObject;
 				T result = caseConformanceTriggerEvents(conformanceTriggerEvents);
-				if (result == null) result = casePackageRef(conformanceTriggerEvents);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageRef(conformanceTriggerEvents);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONTAINED_GRAPH_NODE: {
-				ContainedGraphNode containedGraphNode = (ContainedGraphNode)theEObject;
+				ContainedGraphNode containedGraphNode = (ContainedGraphNode) theEObject;
 				T result = caseContainedGraphNode(containedGraphNode);
-				if (result == null) result = caseGraphNode(containedGraphNode);
-				if (result == null) result = caseGraphElement(containedGraphNode);
-				if (result == null) result = caseDiagramElement(containedGraphNode);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseGraphNode(containedGraphNode);
+				}
+				if (result == null) {
+					result = caseGraphElement(containedGraphNode);
+				}
+				if (result == null) {
+					result = caseDiagramElement(containedGraphNode);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONTENT_DEFINITION: {
-				ContentDefinition contentDefinition = (ContentDefinition)theEObject;
+				ContentDefinition contentDefinition = (ContentDefinition) theEObject;
 				T result = caseContentDefinition(contentDefinition);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONTENT_DEFINITION_ANNOTATIONS: {
-				ContentDefinitionAnnotations contentDefinitionAnnotations = (ContentDefinitionAnnotations)theEObject;
+				ContentDefinitionAnnotations contentDefinitionAnnotations = (ContentDefinitionAnnotations) theEObject;
 				T result = caseContentDefinitionAnnotations(contentDefinitionAnnotations);
-				if (result == null) result = caseAnnotations(contentDefinitionAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(contentDefinitionAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONTENT_DEFINITION_APP_INFO: {
-				ContentDefinitionAppInfo contentDefinitionAppInfo = (ContentDefinitionAppInfo)theEObject;
+				ContentDefinitionAppInfo contentDefinitionAppInfo = (ContentDefinitionAppInfo) theEObject;
 				T result = caseContentDefinitionAppInfo(contentDefinitionAppInfo);
-				if (result == null) result = caseAppInfo(contentDefinitionAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(contentDefinitionAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONTENT_DEFINITION_DOCUMENTATION: {
-				ContentDefinitionDocumentation contentDefinitionDocumentation = (ContentDefinitionDocumentation)theEObject;
+				ContentDefinitionDocumentation contentDefinitionDocumentation = (ContentDefinitionDocumentation) theEObject;
 				T result = caseContentDefinitionDocumentation(contentDefinitionDocumentation);
-				if (result == null) result = caseDocumentation(contentDefinitionDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(contentDefinitionDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONTEXT_ANNOTATION: {
-				ContextAnnotation contextAnnotation = (ContextAnnotation)theEObject;
+				ContextAnnotation contextAnnotation = (ContextAnnotation) theEObject;
 				T result = caseContextAnnotation(contextAnnotation);
-				if (result == null) result = caseCascadableAnnotation(contextAnnotation);
-				if (result == null) result = caseBasicAnnotation(contextAnnotation);
-				if (result == null) result = caseAnnotationBase(contextAnnotation);
-				if (result == null) result = caseModelElement(contextAnnotation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseCascadableAnnotation(contextAnnotation);
+				}
+				if (result == null) {
+					result = caseBasicAnnotation(contextAnnotation);
+				}
+				if (result == null) {
+					result = caseAnnotationBase(contextAnnotation);
+				}
+				if (result == null) {
+					result = caseModelElement(contextAnnotation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONTEXT_BINDING: {
-				ContextBinding contextBinding = (ContextBinding)theEObject;
+				ContextBinding contextBinding = (ContextBinding) theEObject;
 				T result = caseContextBinding(contextBinding);
-				if (result == null) result = caseModelElement(contextBinding);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseModelElement(contextBinding);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.CONTRIBUTOR: {
-				Contributor contributor = (Contributor)theEObject;
+				Contributor contributor = (Contributor) theEObject;
 				T result = caseContributor(contributor);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DATATYPE: {
-				Datatype datatype = (Datatype)theEObject;
+				Datatype datatype = (Datatype) theEObject;
 				T result = caseDatatype(datatype);
-				if (result == null) result = caseClassifier(datatype);
-				if (result == null) result = caseModelElement(datatype);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassifier(datatype);
+				}
+				if (result == null) {
+					result = caseModelElement(datatype);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DATATYPE_ANNOTATIONS: {
-				DatatypeAnnotations datatypeAnnotations = (DatatypeAnnotations)theEObject;
+				DatatypeAnnotations datatypeAnnotations = (DatatypeAnnotations) theEObject;
 				T result = caseDatatypeAnnotations(datatypeAnnotations);
-				if (result == null) result = caseAnnotations(datatypeAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(datatypeAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DATATYPE_APP_INFO: {
-				DatatypeAppInfo datatypeAppInfo = (DatatypeAppInfo)theEObject;
+				DatatypeAppInfo datatypeAppInfo = (DatatypeAppInfo) theEObject;
 				T result = caseDatatypeAppInfo(datatypeAppInfo);
-				if (result == null) result = caseAppInfo(datatypeAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(datatypeAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DATATYPE_BINDING: {
-				DatatypeBinding datatypeBinding = (DatatypeBinding)theEObject;
+				DatatypeBinding datatypeBinding = (DatatypeBinding) theEObject;
 				T result = caseDatatypeBinding(datatypeBinding);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DATATYPE_DERIVATION: {
-				DatatypeDerivation datatypeDerivation = (DatatypeDerivation)theEObject;
+				DatatypeDerivation datatypeDerivation = (DatatypeDerivation) theEObject;
 				T result = caseDatatypeDerivation(datatypeDerivation);
-				if (result == null) result = caseDerivation(datatypeDerivation);
-				if (result == null) result = caseDependency(datatypeDerivation);
-				if (result == null) result = caseRelationship(datatypeDerivation);
-				if (result == null) result = caseModelElement(datatypeDerivation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDerivation(datatypeDerivation);
+				}
+				if (result == null) {
+					result = caseDependency(datatypeDerivation);
+				}
+				if (result == null) {
+					result = caseRelationship(datatypeDerivation);
+				}
+				if (result == null) {
+					result = caseModelElement(datatypeDerivation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DATATYPE_DOCUMENTATION: {
-				DatatypeDocumentation datatypeDocumentation = (DatatypeDocumentation)theEObject;
+				DatatypeDocumentation datatypeDocumentation = (DatatypeDocumentation) theEObject;
 				T result = caseDatatypeDocumentation(datatypeDocumentation);
-				if (result == null) result = caseDocumentation(datatypeDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(datatypeDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DATATYPE_IMPORT: {
-				DatatypeImport datatypeImport = (DatatypeImport)theEObject;
+				DatatypeImport datatypeImport = (DatatypeImport) theEObject;
 				T result = caseDatatypeImport(datatypeImport);
-				if (result == null) result = caseDatatypeRef(datatypeImport);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDatatypeRef(datatypeImport);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DATATYPE_LIMITATION: {
-				DatatypeLimitation datatypeLimitation = (DatatypeLimitation)theEObject;
+				DatatypeLimitation datatypeLimitation = (DatatypeLimitation) theEObject;
 				T result = caseDatatypeLimitation(datatypeLimitation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DATATYPE_MODEL_LIBRARY: {
-				DatatypeModelLibrary datatypeModelLibrary = (DatatypeModelLibrary)theEObject;
+				DatatypeModelLibrary datatypeModelLibrary = (DatatypeModelLibrary) theEObject;
 				T result = caseDatatypeModelLibrary(datatypeModelLibrary);
-				if (result == null) result = casePackage(datatypeModelLibrary);
-				if (result == null) result = casePackageBase(datatypeModelLibrary);
-				if (result == null) result = caseModelElement(datatypeModelLibrary);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackage(datatypeModelLibrary);
+				}
+				if (result == null) {
+					result = casePackageBase(datatypeModelLibrary);
+				}
+				if (result == null) {
+					result = caseModelElement(datatypeModelLibrary);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DATATYPE_OPERATION: {
-				DatatypeOperation datatypeOperation = (DatatypeOperation)theEObject;
+				DatatypeOperation datatypeOperation = (DatatypeOperation) theEObject;
 				T result = caseDatatypeOperation(datatypeOperation);
-				if (result == null) result = caseFeature(datatypeOperation);
-				if (result == null) result = caseModelElement(datatypeOperation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseFeature(datatypeOperation);
+				}
+				if (result == null) {
+					result = caseModelElement(datatypeOperation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DATATYPE_PARAMETER: {
-				DatatypeParameter datatypeParameter = (DatatypeParameter)theEObject;
+				DatatypeParameter datatypeParameter = (DatatypeParameter) theEObject;
 				T result = caseDatatypeParameter(datatypeParameter);
-				if (result == null) result = caseModelElement(datatypeParameter);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseModelElement(datatypeParameter);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DATATYPE_REF: {
-				DatatypeRef datatypeRef = (DatatypeRef)theEObject;
+				DatatypeRef datatypeRef = (DatatypeRef) theEObject;
 				T result = caseDatatypeRef(datatypeRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DATATYPE_TEMPLATE_PARAMETER: {
-				DatatypeTemplateParameter datatypeTemplateParameter = (DatatypeTemplateParameter)theEObject;
+				DatatypeTemplateParameter datatypeTemplateParameter = (DatatypeTemplateParameter) theEObject;
 				T result = caseDatatypeTemplateParameter(datatypeTemplateParameter);
-				if (result == null) result = caseDatatypeRef(datatypeTemplateParameter);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDatatypeRef(datatypeTemplateParameter);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DEPENDENCY: {
-				Dependency dependency = (Dependency)theEObject;
+				Dependency dependency = (Dependency) theEObject;
 				T result = caseDependency(dependency);
-				if (result == null) result = caseRelationship(dependency);
-				if (result == null) result = caseModelElement(dependency);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRelationship(dependency);
+				}
+				if (result == null) {
+					result = caseModelElement(dependency);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DEPRECATION_INFO: {
-				DeprecationInfo deprecationInfo = (DeprecationInfo)theEObject;
+				DeprecationInfo deprecationInfo = (DeprecationInfo) theEObject;
 				T result = caseDeprecationInfo(deprecationInfo);
-				if (result == null) result = caseContextAnnotation(deprecationInfo);
-				if (result == null) result = caseCascadableAnnotation(deprecationInfo);
-				if (result == null) result = caseBasicAnnotation(deprecationInfo);
-				if (result == null) result = caseAnnotationBase(deprecationInfo);
-				if (result == null) result = caseModelElement(deprecationInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseContextAnnotation(deprecationInfo);
+				}
+				if (result == null) {
+					result = caseCascadableAnnotation(deprecationInfo);
+				}
+				if (result == null) {
+					result = caseBasicAnnotation(deprecationInfo);
+				}
+				if (result == null) {
+					result = caseAnnotationBase(deprecationInfo);
+				}
+				if (result == null) {
+					result = caseModelElement(deprecationInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DERIVATION: {
-				Derivation derivation = (Derivation)theEObject;
+				Derivation derivation = (Derivation) theEObject;
 				T result = caseDerivation(derivation);
-				if (result == null) result = caseDependency(derivation);
-				if (result == null) result = caseRelationship(derivation);
-				if (result == null) result = caseModelElement(derivation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDependency(derivation);
+				}
+				if (result == null) {
+					result = caseRelationship(derivation);
+				}
+				if (result == null) {
+					result = caseModelElement(derivation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DERIVED_STATIC_MODEL: {
-				DerivedStaticModel derivedStaticModel = (DerivedStaticModel)theEObject;
+				DerivedStaticModel derivedStaticModel = (DerivedStaticModel) theEObject;
 				T result = caseDerivedStaticModel(derivedStaticModel);
-				if (result == null) result = caseStaticModelBase(derivedStaticModel);
-				if (result == null) result = caseSubSystem(derivedStaticModel);
-				if (result == null) result = casePackage(derivedStaticModel);
-				if (result == null) result = casePackageBase(derivedStaticModel);
-				if (result == null) result = caseModelElement(derivedStaticModel);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseStaticModelBase(derivedStaticModel);
+				}
+				if (result == null) {
+					result = caseSubSystem(derivedStaticModel);
+				}
+				if (result == null) {
+					result = casePackage(derivedStaticModel);
+				}
+				if (result == null) {
+					result = casePackageBase(derivedStaticModel);
+				}
+				if (result == null) {
+					result = caseModelElement(derivedStaticModel);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DERIVED_STATIC_MODELS_TYPE: {
-				DerivedStaticModelsType derivedStaticModelsType = (DerivedStaticModelsType)theEObject;
+				DerivedStaticModelsType derivedStaticModelsType = (DerivedStaticModelsType) theEObject;
 				T result = caseDerivedStaticModelsType(derivedStaticModelsType);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DESIGN_COMMENT: {
-				DesignComment designComment = (DesignComment)theEObject;
+				DesignComment designComment = (DesignComment) theEObject;
 				T result = caseDesignComment(designComment);
-				if (result == null) result = caseCascadableAnnotation(designComment);
-				if (result == null) result = caseBasicAnnotation(designComment);
-				if (result == null) result = caseAnnotationBase(designComment);
-				if (result == null) result = caseModelElement(designComment);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseCascadableAnnotation(designComment);
+				}
+				if (result == null) {
+					result = caseBasicAnnotation(designComment);
+				}
+				if (result == null) {
+					result = caseAnnotationBase(designComment);
+				}
+				if (result == null) {
+					result = caseModelElement(designComment);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DIAGRAM: {
-				Diagram diagram = (Diagram)theEObject;
+				Diagram diagram = (Diagram) theEObject;
 				T result = caseDiagram(diagram);
-				if (result == null) result = caseGraphNode(diagram);
-				if (result == null) result = caseGraphElement(diagram);
-				if (result == null) result = caseDiagramElement(diagram);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseGraphNode(diagram);
+				}
+				if (result == null) {
+					result = caseGraphElement(diagram);
+				}
+				if (result == null) {
+					result = caseDiagramElement(diagram);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DIAGRAM_ELEMENT: {
-				DiagramElement diagramElement = (DiagramElement)theEObject;
+				DiagramElement diagramElement = (DiagramElement) theEObject;
 				T result = caseDiagramElement(diagramElement);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DIAGRAM_GRAPHIC_INFORMATION: {
-				DiagramGraphicInformation diagramGraphicInformation = (DiagramGraphicInformation)theEObject;
+				DiagramGraphicInformation diagramGraphicInformation = (DiagramGraphicInformation) theEObject;
 				T result = caseDiagramGraphicInformation(diagramGraphicInformation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DIMENSION: {
-				Dimension dimension = (Dimension)theEObject;
+				Dimension dimension = (Dimension) theEObject;
 				T result = caseDimension(dimension);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DOCUMENTATION: {
-				Documentation documentation = (Documentation)theEObject;
+				Documentation documentation = (Documentation) theEObject;
 				T result = caseDocumentation(documentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DOCUMENT_PROFILE: {
-				DocumentProfile documentProfile = (DocumentProfile)theEObject;
+				DocumentProfile documentProfile = (DocumentProfile) theEObject;
 				T result = caseDocumentProfile(documentProfile);
-				if (result == null) result = casePackage(documentProfile);
-				if (result == null) result = casePackageBase(documentProfile);
-				if (result == null) result = caseModelElement(documentProfile);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackage(documentProfile);
+				}
+				if (result == null) {
+					result = casePackageBase(documentProfile);
+				}
+				if (result == null) {
+					result = caseModelElement(documentProfile);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DOCUMENT_PROFILE_ANNOTATIONS: {
-				DocumentProfileAnnotations documentProfileAnnotations = (DocumentProfileAnnotations)theEObject;
+				DocumentProfileAnnotations documentProfileAnnotations = (DocumentProfileAnnotations) theEObject;
 				T result = caseDocumentProfileAnnotations(documentProfileAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DOCUMENT_PROFILE_APP_INFO: {
-				DocumentProfileAppInfo documentProfileAppInfo = (DocumentProfileAppInfo)theEObject;
+				DocumentProfileAppInfo documentProfileAppInfo = (DocumentProfileAppInfo) theEObject;
 				T result = caseDocumentProfileAppInfo(documentProfileAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION: {
-				DocumentProfileDocumentation documentProfileDocumentation = (DocumentProfileDocumentation)theEObject;
+				DocumentProfileDocumentation documentProfileDocumentation = (DocumentProfileDocumentation) theEObject;
 				T result = caseDocumentProfileDocumentation(documentProfileDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DOCUMENT_ROOT: {
-				DocumentRoot documentRoot = (DocumentRoot)theEObject;
+				DocumentRoot documentRoot = (DocumentRoot) theEObject;
 				T result = caseDocumentRoot(documentRoot);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DOCUMENT_TEST: {
-				DocumentTest documentTest = (DocumentTest)theEObject;
+				DocumentTest documentTest = (DocumentTest) theEObject;
 				T result = caseDocumentTest(documentTest);
-				if (result == null) result = caseTestBase(documentTest);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseTestBase(documentTest);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL: {
-				DomainAnalysisModel domainAnalysisModel = (DomainAnalysisModel)theEObject;
+				DomainAnalysisModel domainAnalysisModel = (DomainAnalysisModel) theEObject;
 				T result = caseDomainAnalysisModel(domainAnalysisModel);
-				if (result == null) result = casePackageArtifact(domainAnalysisModel);
-				if (result == null) result = casePackageBase(domainAnalysisModel);
-				if (result == null) result = caseModelElement(domainAnalysisModel);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageArtifact(domainAnalysisModel);
+				}
+				if (result == null) {
+					result = casePackageBase(domainAnalysisModel);
+				}
+				if (result == null) {
+					result = caseModelElement(domainAnalysisModel);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_ANNOTATIONS: {
-				DomainAnalysisModelAnnotations domainAnalysisModelAnnotations = (DomainAnalysisModelAnnotations)theEObject;
+				DomainAnalysisModelAnnotations domainAnalysisModelAnnotations = (DomainAnalysisModelAnnotations) theEObject;
 				T result = caseDomainAnalysisModelAnnotations(domainAnalysisModelAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_APP_INFO: {
-				DomainAnalysisModelAppInfo domainAnalysisModelAppInfo = (DomainAnalysisModelAppInfo)theEObject;
+				DomainAnalysisModelAppInfo domainAnalysisModelAppInfo = (DomainAnalysisModelAppInfo) theEObject;
 				T result = caseDomainAnalysisModelAppInfo(domainAnalysisModelAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION: {
-				DomainAnalysisModelDocumentation domainAnalysisModelDocumentation = (DomainAnalysisModelDocumentation)theEObject;
+				DomainAnalysisModelDocumentation domainAnalysisModelDocumentation = (DomainAnalysisModelDocumentation) theEObject;
 				T result = caseDomainAnalysisModelDocumentation(domainAnalysisModelDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE: {
-				DomainInstanceExample domainInstanceExample = (DomainInstanceExample)theEObject;
+				DomainInstanceExample domainInstanceExample = (DomainInstanceExample) theEObject;
 				T result = caseDomainInstanceExample(domainInstanceExample);
-				if (result == null) result = casePackageArtifact(domainInstanceExample);
-				if (result == null) result = casePackageBase(domainInstanceExample);
-				if (result == null) result = caseModelElement(domainInstanceExample);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageArtifact(domainInstanceExample);
+				}
+				if (result == null) {
+					result = casePackageBase(domainInstanceExample);
+				}
+				if (result == null) {
+					result = caseModelElement(domainInstanceExample);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_ANNOTATIONS: {
-				DomainInstanceExampleAnnotations domainInstanceExampleAnnotations = (DomainInstanceExampleAnnotations)theEObject;
+				DomainInstanceExampleAnnotations domainInstanceExampleAnnotations = (DomainInstanceExampleAnnotations) theEObject;
 				T result = caseDomainInstanceExampleAnnotations(domainInstanceExampleAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_APP_INFO: {
-				DomainInstanceExampleAppInfo domainInstanceExampleAppInfo = (DomainInstanceExampleAppInfo)theEObject;
+				DomainInstanceExampleAppInfo domainInstanceExampleAppInfo = (DomainInstanceExampleAppInfo) theEObject;
 				T result = caseDomainInstanceExampleAppInfo(domainInstanceExampleAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION: {
-				DomainInstanceExampleDocumentation domainInstanceExampleDocumentation = (DomainInstanceExampleDocumentation)theEObject;
+				DomainInstanceExampleDocumentation domainInstanceExampleDocumentation = (DomainInstanceExampleDocumentation) theEObject;
 				T result = caseDomainInstanceExampleDocumentation(domainInstanceExampleDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ELEMENT_CHANGE: {
-				ElementChange elementChange = (ElementChange)theEObject;
+				ElementChange elementChange = (ElementChange) theEObject;
 				T result = caseElementChange(elementChange);
-				if (result == null) result = caseElementRef(elementChange);
-				if (result == null) result = caseChange(elementChange);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseElementRef(elementChange);
+				}
+				if (result == null) {
+					result = caseChange(elementChange);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ELEMENT_DERIVATION: {
-				ElementDerivation elementDerivation = (ElementDerivation)theEObject;
+				ElementDerivation elementDerivation = (ElementDerivation) theEObject;
 				T result = caseElementDerivation(elementDerivation);
-				if (result == null) result = caseDerivation(elementDerivation);
-				if (result == null) result = caseDependency(elementDerivation);
-				if (result == null) result = caseRelationship(elementDerivation);
-				if (result == null) result = caseModelElement(elementDerivation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDerivation(elementDerivation);
+				}
+				if (result == null) {
+					result = caseDependency(elementDerivation);
+				}
+				if (result == null) {
+					result = caseRelationship(elementDerivation);
+				}
+				if (result == null) {
+					result = caseModelElement(elementDerivation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ELEMENT_REF: {
-				ElementRef elementRef = (ElementRef)theEObject;
+				ElementRef elementRef = (ElementRef) theEObject;
 				T result = caseElementRef(elementRef);
-				if (result == null) result = caseChange(elementRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseChange(elementRef);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ELEMENT_VALUE_REF: {
-				ElementValueRef elementValueRef = (ElementValueRef)theEObject;
+				ElementValueRef elementValueRef = (ElementValueRef) theEObject;
 				T result = caseElementValueRef(elementValueRef);
-				if (result == null) result = caseElementRef(elementValueRef);
-				if (result == null) result = caseChange(elementValueRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseElementRef(elementValueRef);
+				}
+				if (result == null) {
+					result = caseChange(elementValueRef);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ENTRY_POINT: {
-				EntryPoint entryPoint = (EntryPoint)theEObject;
+				EntryPoint entryPoint = (EntryPoint) theEObject;
 				T result = caseEntryPoint(entryPoint);
-				if (result == null) result = caseEntryPointBase(entryPoint);
-				if (result == null) result = caseInterface(entryPoint);
-				if (result == null) result = caseClassifier(entryPoint);
-				if (result == null) result = caseModelElement(entryPoint);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseEntryPointBase(entryPoint);
+				}
+				if (result == null) {
+					result = caseInterface(entryPoint);
+				}
+				if (result == null) {
+					result = caseClassifier(entryPoint);
+				}
+				if (result == null) {
+					result = caseModelElement(entryPoint);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ENTRY_POINT_ANNOTATIONS: {
-				EntryPointAnnotations entryPointAnnotations = (EntryPointAnnotations)theEObject;
+				EntryPointAnnotations entryPointAnnotations = (EntryPointAnnotations) theEObject;
 				T result = caseEntryPointAnnotations(entryPointAnnotations);
-				if (result == null) result = caseAnnotations(entryPointAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(entryPointAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ENTRY_POINT_APP_INFO: {
-				EntryPointAppInfo entryPointAppInfo = (EntryPointAppInfo)theEObject;
+				EntryPointAppInfo entryPointAppInfo = (EntryPointAppInfo) theEObject;
 				T result = caseEntryPointAppInfo(entryPointAppInfo);
-				if (result == null) result = caseAppInfo(entryPointAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(entryPointAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ENTRY_POINT_BASE: {
-				EntryPointBase entryPointBase = (EntryPointBase)theEObject;
+				EntryPointBase entryPointBase = (EntryPointBase) theEObject;
 				T result = caseEntryPointBase(entryPointBase);
-				if (result == null) result = caseInterface(entryPointBase);
-				if (result == null) result = caseClassifier(entryPointBase);
-				if (result == null) result = caseModelElement(entryPointBase);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInterface(entryPointBase);
+				}
+				if (result == null) {
+					result = caseClassifier(entryPointBase);
+				}
+				if (result == null) {
+					result = caseModelElement(entryPointBase);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ENTRY_POINT_DOCUMENTATION: {
-				EntryPointDocumentation entryPointDocumentation = (EntryPointDocumentation)theEObject;
+				EntryPointDocumentation entryPointDocumentation = (EntryPointDocumentation) theEObject;
 				T result = caseEntryPointDocumentation(entryPointDocumentation);
-				if (result == null) result = caseDocumentation(entryPointDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(entryPointDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ENVIRONMENTAL_OCCURRENCE: {
-				EnvironmentalOccurrence environmentalOccurrence = (EnvironmentalOccurrence)theEObject;
+				EnvironmentalOccurrence environmentalOccurrence = (EnvironmentalOccurrence) theEObject;
 				T result = caseEnvironmentalOccurrence(environmentalOccurrence);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.EXAMPLE_INTERACTION: {
-				ExampleInteraction exampleInteraction = (ExampleInteraction)theEObject;
+				ExampleInteraction exampleInteraction = (ExampleInteraction) theEObject;
 				T result = caseExampleInteraction(exampleInteraction);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.EXAMPLE_SYSTEM: {
-				ExampleSystem exampleSystem = (ExampleSystem)theEObject;
+				ExampleSystem exampleSystem = (ExampleSystem) theEObject;
 				T result = caseExampleSystem(exampleSystem);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.EXAMPLE_TYPE: {
-				ExampleType exampleType = (ExampleType)theEObject;
+				ExampleType exampleType = (ExampleType) theEObject;
 				T result = caseExampleType(exampleType);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.FEATURE: {
-				Feature feature = (Feature)theEObject;
+				Feature feature = (Feature) theEObject;
 				T result = caseFeature(feature);
-				if (result == null) result = caseModelElement(feature);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseModelElement(feature);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.FLAT_CLASS: {
-				FlatClass flatClass = (FlatClass)theEObject;
+				FlatClass flatClass = (FlatClass) theEObject;
 				T result = caseFlatClass(flatClass);
-				if (result == null) result = caseClassBase(flatClass);
-				if (result == null) result = caseClassifierBase(flatClass);
-				if (result == null) result = caseClassifier(flatClass);
-				if (result == null) result = caseModelElement(flatClass);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassBase(flatClass);
+				}
+				if (result == null) {
+					result = caseClassifierBase(flatClass);
+				}
+				if (result == null) {
+					result = caseClassifier(flatClass);
+				}
+				if (result == null) {
+					result = caseModelElement(flatClass);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.FORMAL_CONSTRAINT: {
-				FormalConstraint formalConstraint = (FormalConstraint)theEObject;
+				FormalConstraint formalConstraint = (FormalConstraint) theEObject;
 				T result = caseFormalConstraint(formalConstraint);
-				if (result == null) result = caseCascadableAnnotation(formalConstraint);
-				if (result == null) result = caseBasicAnnotation(formalConstraint);
-				if (result == null) result = caseAnnotationBase(formalConstraint);
-				if (result == null) result = caseModelElement(formalConstraint);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseCascadableAnnotation(formalConstraint);
+				}
+				if (result == null) {
+					result = caseBasicAnnotation(formalConstraint);
+				}
+				if (result == null) {
+					result = caseAnnotationBase(formalConstraint);
+				}
+				if (result == null) {
+					result = caseModelElement(formalConstraint);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.FORMAL_EXPRESSION: {
-				FormalExpression formalExpression = (FormalExpression)theEObject;
+				FormalExpression formalExpression = (FormalExpression) theEObject;
 				T result = caseFormalExpression(formalExpression);
-				if (result == null) result = caseVariousMixedContent(formalExpression);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseVariousMixedContent(formalExpression);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.FREE_FORM_MARKUP_WITH_LANGUAGE: {
-				FreeFormMarkupWithLanguage freeFormMarkupWithLanguage = (FreeFormMarkupWithLanguage)theEObject;
+				FreeFormMarkupWithLanguage freeFormMarkupWithLanguage = (FreeFormMarkupWithLanguage) theEObject;
 				T result = caseFreeFormMarkupWithLanguage(freeFormMarkupWithLanguage);
-				if (result == null) result = caseVariousMixedContent(freeFormMarkupWithLanguage);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseVariousMixedContent(freeFormMarkupWithLanguage);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.FREEHAND_DOCUMENT: {
-				FreehandDocument freehandDocument = (FreehandDocument)theEObject;
+				FreehandDocument freehandDocument = (FreehandDocument) theEObject;
 				T result = caseFreehandDocument(freehandDocument);
-				if (result == null) result = casePackage(freehandDocument);
-				if (result == null) result = casePackageBase(freehandDocument);
-				if (result == null) result = caseModelElement(freehandDocument);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackage(freehandDocument);
+				}
+				if (result == null) {
+					result = casePackageBase(freehandDocument);
+				}
+				if (result == null) {
+					result = caseModelElement(freehandDocument);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.FREEHAND_DOCUMENT_ANNOTATIONS: {
-				FreehandDocumentAnnotations freehandDocumentAnnotations = (FreehandDocumentAnnotations)theEObject;
+				FreehandDocumentAnnotations freehandDocumentAnnotations = (FreehandDocumentAnnotations) theEObject;
 				T result = caseFreehandDocumentAnnotations(freehandDocumentAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.FREEHAND_DOCUMENT_APP_INFO: {
-				FreehandDocumentAppInfo freehandDocumentAppInfo = (FreehandDocumentAppInfo)theEObject;
+				FreehandDocumentAppInfo freehandDocumentAppInfo = (FreehandDocumentAppInfo) theEObject;
 				T result = caseFreehandDocumentAppInfo(freehandDocumentAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.FREEHAND_DOCUMENT_DOCUMENTATION: {
-				FreehandDocumentDocumentation freehandDocumentDocumentation = (FreehandDocumentDocumentation)theEObject;
+				FreehandDocumentDocumentation freehandDocumentDocumentation = (FreehandDocumentDocumentation) theEObject;
 				T result = caseFreehandDocumentDocumentation(freehandDocumentDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GENERALIZATION_ANNOTATIONS: {
-				GeneralizationAnnotations generalizationAnnotations = (GeneralizationAnnotations)theEObject;
+				GeneralizationAnnotations generalizationAnnotations = (GeneralizationAnnotations) theEObject;
 				T result = caseGeneralizationAnnotations(generalizationAnnotations);
-				if (result == null) result = caseAnnotations(generalizationAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(generalizationAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GENERALIZATION_APP_INFO: {
-				GeneralizationAppInfo generalizationAppInfo = (GeneralizationAppInfo)theEObject;
+				GeneralizationAppInfo generalizationAppInfo = (GeneralizationAppInfo) theEObject;
 				T result = caseGeneralizationAppInfo(generalizationAppInfo);
-				if (result == null) result = caseAppInfo(generalizationAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(generalizationAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GENERALIZATION_DOCUMENTATION: {
-				GeneralizationDocumentation generalizationDocumentation = (GeneralizationDocumentation)theEObject;
+				GeneralizationDocumentation generalizationDocumentation = (GeneralizationDocumentation) theEObject;
 				T result = caseGeneralizationDocumentation(generalizationDocumentation);
-				if (result == null) result = caseDocumentation(generalizationDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(generalizationDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GENERIC_PACKAGE: {
-				GenericPackage genericPackage = (GenericPackage)theEObject;
+				GenericPackage genericPackage = (GenericPackage) theEObject;
 				T result = caseGenericPackage(genericPackage);
-				if (result == null) result = casePackage(genericPackage);
-				if (result == null) result = casePackageBase(genericPackage);
-				if (result == null) result = caseModelElement(genericPackage);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackage(genericPackage);
+				}
+				if (result == null) {
+					result = casePackageBase(genericPackage);
+				}
+				if (result == null) {
+					result = caseModelElement(genericPackage);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_APPLICATION_ROLE: {
-				GlobalApplicationRole globalApplicationRole = (GlobalApplicationRole)theEObject;
+				GlobalApplicationRole globalApplicationRole = (GlobalApplicationRole) theEObject;
 				T result = caseGlobalApplicationRole(globalApplicationRole);
-				if (result == null) result = caseApplicationRole(globalApplicationRole);
-				if (result == null) result = casePackageArtifact(globalApplicationRole);
-				if (result == null) result = casePackageBase(globalApplicationRole);
-				if (result == null) result = caseModelElement(globalApplicationRole);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseApplicationRole(globalApplicationRole);
+				}
+				if (result == null) {
+					result = casePackageArtifact(globalApplicationRole);
+				}
+				if (result == null) {
+					result = casePackageBase(globalApplicationRole);
+				}
+				if (result == null) {
+					result = caseModelElement(globalApplicationRole);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_ARTIFACT_XREF_SUMMARY: {
-				GlobalArtifactXRefSummary globalArtifactXRefSummary = (GlobalArtifactXRefSummary)theEObject;
+				GlobalArtifactXRefSummary globalArtifactXRefSummary = (GlobalArtifactXRefSummary) theEObject;
 				T result = caseGlobalArtifactXRefSummary(globalArtifactXRefSummary);
-				if (result == null) result = caseArtifactXRefSummary(globalArtifactXRefSummary);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseArtifactXRefSummary(globalArtifactXRefSummary);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_CODE_SYSTEM: {
-				GlobalCodeSystem globalCodeSystem = (GlobalCodeSystem)theEObject;
+				GlobalCodeSystem globalCodeSystem = (GlobalCodeSystem) theEObject;
 				T result = caseGlobalCodeSystem(globalCodeSystem);
-				if (result == null) result = caseCodeSystem(globalCodeSystem);
-				if (result == null) result = caseCodeSystemBase(globalCodeSystem);
-				if (result == null) result = casePackageBase(globalCodeSystem);
-				if (result == null) result = caseModelElement(globalCodeSystem);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseCodeSystem(globalCodeSystem);
+				}
+				if (result == null) {
+					result = caseCodeSystemBase(globalCodeSystem);
+				}
+				if (result == null) {
+					result = casePackageBase(globalCodeSystem);
+				}
+				if (result == null) {
+					result = caseModelElement(globalCodeSystem);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_CODE_SYSTEM_SUPPLEMENT: {
-				GlobalCodeSystemSupplement globalCodeSystemSupplement = (GlobalCodeSystemSupplement)theEObject;
+				GlobalCodeSystemSupplement globalCodeSystemSupplement = (GlobalCodeSystemSupplement) theEObject;
 				T result = caseGlobalCodeSystemSupplement(globalCodeSystemSupplement);
-				if (result == null) result = caseCodeSystemSupplement(globalCodeSystemSupplement);
-				if (result == null) result = caseCodeSystemBase(globalCodeSystemSupplement);
-				if (result == null) result = casePackageBase(globalCodeSystemSupplement);
-				if (result == null) result = caseModelElement(globalCodeSystemSupplement);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseCodeSystemSupplement(globalCodeSystemSupplement);
+				}
+				if (result == null) {
+					result = caseCodeSystemBase(globalCodeSystemSupplement);
+				}
+				if (result == null) {
+					result = casePackageBase(globalCodeSystemSupplement);
+				}
+				if (result == null) {
+					result = caseModelElement(globalCodeSystemSupplement);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_CONFORMANCE_PROFILE: {
-				GlobalConformanceProfile globalConformanceProfile = (GlobalConformanceProfile)theEObject;
+				GlobalConformanceProfile globalConformanceProfile = (GlobalConformanceProfile) theEObject;
 				T result = caseGlobalConformanceProfile(globalConformanceProfile);
-				if (result == null) result = caseConformanceProfile(globalConformanceProfile);
-				if (result == null) result = casePackage(globalConformanceProfile);
-				if (result == null) result = casePackageBase(globalConformanceProfile);
-				if (result == null) result = caseModelElement(globalConformanceProfile);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseConformanceProfile(globalConformanceProfile);
+				}
+				if (result == null) {
+					result = casePackage(globalConformanceProfile);
+				}
+				if (result == null) {
+					result = casePackageBase(globalConformanceProfile);
+				}
+				if (result == null) {
+					result = caseModelElement(globalConformanceProfile);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_DATATYPE_MODEL_LIBRARY: {
-				GlobalDatatypeModelLibrary globalDatatypeModelLibrary = (GlobalDatatypeModelLibrary)theEObject;
+				GlobalDatatypeModelLibrary globalDatatypeModelLibrary = (GlobalDatatypeModelLibrary) theEObject;
 				T result = caseGlobalDatatypeModelLibrary(globalDatatypeModelLibrary);
-				if (result == null) result = caseDatatypeModelLibrary(globalDatatypeModelLibrary);
-				if (result == null) result = casePackage(globalDatatypeModelLibrary);
-				if (result == null) result = casePackageBase(globalDatatypeModelLibrary);
-				if (result == null) result = caseModelElement(globalDatatypeModelLibrary);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDatatypeModelLibrary(globalDatatypeModelLibrary);
+				}
+				if (result == null) {
+					result = casePackage(globalDatatypeModelLibrary);
+				}
+				if (result == null) {
+					result = casePackageBase(globalDatatypeModelLibrary);
+				}
+				if (result == null) {
+					result = caseModelElement(globalDatatypeModelLibrary);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_DERIVED_STATIC_MODEL: {
-				GlobalDerivedStaticModel globalDerivedStaticModel = (GlobalDerivedStaticModel)theEObject;
+				GlobalDerivedStaticModel globalDerivedStaticModel = (GlobalDerivedStaticModel) theEObject;
 				T result = caseGlobalDerivedStaticModel(globalDerivedStaticModel);
-				if (result == null) result = caseDerivedStaticModel(globalDerivedStaticModel);
-				if (result == null) result = caseStaticModelBase(globalDerivedStaticModel);
-				if (result == null) result = caseSubSystem(globalDerivedStaticModel);
-				if (result == null) result = casePackage(globalDerivedStaticModel);
-				if (result == null) result = casePackageBase(globalDerivedStaticModel);
-				if (result == null) result = caseModelElement(globalDerivedStaticModel);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDerivedStaticModel(globalDerivedStaticModel);
+				}
+				if (result == null) {
+					result = caseStaticModelBase(globalDerivedStaticModel);
+				}
+				if (result == null) {
+					result = caseSubSystem(globalDerivedStaticModel);
+				}
+				if (result == null) {
+					result = casePackage(globalDerivedStaticModel);
+				}
+				if (result == null) {
+					result = casePackageBase(globalDerivedStaticModel);
+				}
+				if (result == null) {
+					result = caseModelElement(globalDerivedStaticModel);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_DOMAIN_ANALYSIS_MODEL: {
-				GlobalDomainAnalysisModel globalDomainAnalysisModel = (GlobalDomainAnalysisModel)theEObject;
+				GlobalDomainAnalysisModel globalDomainAnalysisModel = (GlobalDomainAnalysisModel) theEObject;
 				T result = caseGlobalDomainAnalysisModel(globalDomainAnalysisModel);
-				if (result == null) result = caseDomainAnalysisModel(globalDomainAnalysisModel);
-				if (result == null) result = casePackageArtifact(globalDomainAnalysisModel);
-				if (result == null) result = casePackageBase(globalDomainAnalysisModel);
-				if (result == null) result = caseModelElement(globalDomainAnalysisModel);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDomainAnalysisModel(globalDomainAnalysisModel);
+				}
+				if (result == null) {
+					result = casePackageArtifact(globalDomainAnalysisModel);
+				}
+				if (result == null) {
+					result = casePackageBase(globalDomainAnalysisModel);
+				}
+				if (result == null) {
+					result = caseModelElement(globalDomainAnalysisModel);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_DOMAIN_INSTANCE_EXAMPLE: {
-				GlobalDomainInstanceExample globalDomainInstanceExample = (GlobalDomainInstanceExample)theEObject;
+				GlobalDomainInstanceExample globalDomainInstanceExample = (GlobalDomainInstanceExample) theEObject;
 				T result = caseGlobalDomainInstanceExample(globalDomainInstanceExample);
-				if (result == null) result = caseDomainInstanceExample(globalDomainInstanceExample);
-				if (result == null) result = casePackageArtifact(globalDomainInstanceExample);
-				if (result == null) result = casePackageBase(globalDomainInstanceExample);
-				if (result == null) result = caseModelElement(globalDomainInstanceExample);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDomainInstanceExample(globalDomainInstanceExample);
+				}
+				if (result == null) {
+					result = casePackageArtifact(globalDomainInstanceExample);
+				}
+				if (result == null) {
+					result = casePackageBase(globalDomainInstanceExample);
+				}
+				if (result == null) {
+					result = caseModelElement(globalDomainInstanceExample);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_FREEHAND_DOCUMENT: {
-				GlobalFreehandDocument globalFreehandDocument = (GlobalFreehandDocument)theEObject;
+				GlobalFreehandDocument globalFreehandDocument = (GlobalFreehandDocument) theEObject;
 				T result = caseGlobalFreehandDocument(globalFreehandDocument);
-				if (result == null) result = caseFreehandDocument(globalFreehandDocument);
-				if (result == null) result = casePackage(globalFreehandDocument);
-				if (result == null) result = casePackageBase(globalFreehandDocument);
-				if (result == null) result = caseModelElement(globalFreehandDocument);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseFreehandDocument(globalFreehandDocument);
+				}
+				if (result == null) {
+					result = casePackage(globalFreehandDocument);
+				}
+				if (result == null) {
+					result = casePackageBase(globalFreehandDocument);
+				}
+				if (result == null) {
+					result = caseModelElement(globalFreehandDocument);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_GENERIC_PACKAGE: {
-				GlobalGenericPackage globalGenericPackage = (GlobalGenericPackage)theEObject;
+				GlobalGenericPackage globalGenericPackage = (GlobalGenericPackage) theEObject;
 				T result = caseGlobalGenericPackage(globalGenericPackage);
-				if (result == null) result = caseGenericPackage(globalGenericPackage);
-				if (result == null) result = casePackage(globalGenericPackage);
-				if (result == null) result = casePackageBase(globalGenericPackage);
-				if (result == null) result = caseModelElement(globalGenericPackage);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseGenericPackage(globalGenericPackage);
+				}
+				if (result == null) {
+					result = casePackage(globalGenericPackage);
+				}
+				if (result == null) {
+					result = casePackageBase(globalGenericPackage);
+				}
+				if (result == null) {
+					result = caseModelElement(globalGenericPackage);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_GLOSSARY: {
-				GlobalGlossary globalGlossary = (GlobalGlossary)theEObject;
+				GlobalGlossary globalGlossary = (GlobalGlossary) theEObject;
 				T result = caseGlobalGlossary(globalGlossary);
-				if (result == null) result = caseGlossary(globalGlossary);
-				if (result == null) result = casePackage(globalGlossary);
-				if (result == null) result = casePackageBase(globalGlossary);
-				if (result == null) result = caseModelElement(globalGlossary);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseGlossary(globalGlossary);
+				}
+				if (result == null) {
+					result = casePackage(globalGlossary);
+				}
+				if (result == null) {
+					result = casePackageBase(globalGlossary);
+				}
+				if (result == null) {
+					result = caseModelElement(globalGlossary);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_INTERACTION: {
-				GlobalInteraction globalInteraction = (GlobalInteraction)theEObject;
+				GlobalInteraction globalInteraction = (GlobalInteraction) theEObject;
 				T result = caseGlobalInteraction(globalInteraction);
-				if (result == null) result = caseInteraction(globalInteraction);
-				if (result == null) result = casePackageArtifact(globalInteraction);
-				if (result == null) result = casePackageBase(globalInteraction);
-				if (result == null) result = caseModelElement(globalInteraction);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInteraction(globalInteraction);
+				}
+				if (result == null) {
+					result = casePackageArtifact(globalInteraction);
+				}
+				if (result == null) {
+					result = casePackageBase(globalInteraction);
+				}
+				if (result == null) {
+					result = caseModelElement(globalInteraction);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_INTERACTION_PROFILE: {
-				GlobalInteractionProfile globalInteractionProfile = (GlobalInteractionProfile)theEObject;
+				GlobalInteractionProfile globalInteractionProfile = (GlobalInteractionProfile) theEObject;
 				T result = caseGlobalInteractionProfile(globalInteractionProfile);
-				if (result == null) result = caseInteractionProfile(globalInteractionProfile);
-				if (result == null) result = casePackage(globalInteractionProfile);
-				if (result == null) result = casePackageBase(globalInteractionProfile);
-				if (result == null) result = caseModelElement(globalInteractionProfile);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseInteractionProfile(globalInteractionProfile);
+				}
+				if (result == null) {
+					result = casePackage(globalInteractionProfile);
+				}
+				if (result == null) {
+					result = casePackageBase(globalInteractionProfile);
+				}
+				if (result == null) {
+					result = caseModelElement(globalInteractionProfile);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_MIF_CHANGES: {
-				GlobalMifChanges globalMifChanges = (GlobalMifChanges)theEObject;
+				GlobalMifChanges globalMifChanges = (GlobalMifChanges) theEObject;
 				T result = caseGlobalMifChanges(globalMifChanges);
-				if (result == null) result = caseMifChanges(globalMifChanges);
-				if (result == null) result = casePackageBase(globalMifChanges);
-				if (result == null) result = caseModelElement(globalMifChanges);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseMifChanges(globalMifChanges);
+				}
+				if (result == null) {
+					result = casePackageBase(globalMifChanges);
+				}
+				if (result == null) {
+					result = caseModelElement(globalMifChanges);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_PUBLICATION_PACKAGE: {
-				GlobalPublicationPackage globalPublicationPackage = (GlobalPublicationPackage)theEObject;
+				GlobalPublicationPackage globalPublicationPackage = (GlobalPublicationPackage) theEObject;
 				T result = caseGlobalPublicationPackage(globalPublicationPackage);
-				if (result == null) result = casePublicationPackage(globalPublicationPackage);
-				if (result == null) result = casePackage(globalPublicationPackage);
-				if (result == null) result = casePackageBase(globalPublicationPackage);
-				if (result == null) result = caseModelElement(globalPublicationPackage);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePublicationPackage(globalPublicationPackage);
+				}
+				if (result == null) {
+					result = casePackage(globalPublicationPackage);
+				}
+				if (result == null) {
+					result = casePackageBase(globalPublicationPackage);
+				}
+				if (result == null) {
+					result = caseModelElement(globalPublicationPackage);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_SERIALIZED_STATIC_MODEL: {
-				GlobalSerializedStaticModel globalSerializedStaticModel = (GlobalSerializedStaticModel)theEObject;
+				GlobalSerializedStaticModel globalSerializedStaticModel = (GlobalSerializedStaticModel) theEObject;
 				T result = caseGlobalSerializedStaticModel(globalSerializedStaticModel);
-				if (result == null) result = caseSerializedStaticModel(globalSerializedStaticModel);
-				if (result == null) result = caseStaticModelBase(globalSerializedStaticModel);
-				if (result == null) result = caseSubSystem(globalSerializedStaticModel);
-				if (result == null) result = casePackage(globalSerializedStaticModel);
-				if (result == null) result = casePackageBase(globalSerializedStaticModel);
-				if (result == null) result = caseModelElement(globalSerializedStaticModel);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseSerializedStaticModel(globalSerializedStaticModel);
+				}
+				if (result == null) {
+					result = caseStaticModelBase(globalSerializedStaticModel);
+				}
+				if (result == null) {
+					result = caseSubSystem(globalSerializedStaticModel);
+				}
+				if (result == null) {
+					result = casePackage(globalSerializedStaticModel);
+				}
+				if (result == null) {
+					result = casePackageBase(globalSerializedStaticModel);
+				}
+				if (result == null) {
+					result = caseModelElement(globalSerializedStaticModel);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_STATIC_MODEL: {
-				GlobalStaticModel globalStaticModel = (GlobalStaticModel)theEObject;
+				GlobalStaticModel globalStaticModel = (GlobalStaticModel) theEObject;
 				T result = caseGlobalStaticModel(globalStaticModel);
-				if (result == null) result = caseStaticModel(globalStaticModel);
-				if (result == null) result = caseStaticModelBase(globalStaticModel);
-				if (result == null) result = caseSubSystem(globalStaticModel);
-				if (result == null) result = casePackage(globalStaticModel);
-				if (result == null) result = casePackageBase(globalStaticModel);
-				if (result == null) result = caseModelElement(globalStaticModel);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseStaticModel(globalStaticModel);
+				}
+				if (result == null) {
+					result = caseStaticModelBase(globalStaticModel);
+				}
+				if (result == null) {
+					result = caseSubSystem(globalStaticModel);
+				}
+				if (result == null) {
+					result = casePackage(globalStaticModel);
+				}
+				if (result == null) {
+					result = casePackageBase(globalStaticModel);
+				}
+				if (result == null) {
+					result = caseModelElement(globalStaticModel);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_STATIC_MODEL_INTERFACE_PACKAGE: {
-				GlobalStaticModelInterfacePackage globalStaticModelInterfacePackage = (GlobalStaticModelInterfacePackage)theEObject;
+				GlobalStaticModelInterfacePackage globalStaticModelInterfacePackage = (GlobalStaticModelInterfacePackage) theEObject;
 				T result = caseGlobalStaticModelInterfacePackage(globalStaticModelInterfacePackage);
-				if (result == null) result = caseStaticModelInterfacePackage(globalStaticModelInterfacePackage);
-				if (result == null) result = casePackage(globalStaticModelInterfacePackage);
-				if (result == null) result = casePackageBase(globalStaticModelInterfacePackage);
-				if (result == null) result = caseModelElement(globalStaticModelInterfacePackage);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseStaticModelInterfacePackage(globalStaticModelInterfacePackage);
+				}
+				if (result == null) {
+					result = casePackage(globalStaticModelInterfacePackage);
+				}
+				if (result == null) {
+					result = casePackageBase(globalStaticModelInterfacePackage);
+				}
+				if (result == null) {
+					result = caseModelElement(globalStaticModelInterfacePackage);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_STORYBOARD: {
-				GlobalStoryboard globalStoryboard = (GlobalStoryboard)theEObject;
+				GlobalStoryboard globalStoryboard = (GlobalStoryboard) theEObject;
 				T result = caseGlobalStoryboard(globalStoryboard);
-				if (result == null) result = caseStoryboard(globalStoryboard);
-				if (result == null) result = casePackageArtifact(globalStoryboard);
-				if (result == null) result = casePackageBase(globalStoryboard);
-				if (result == null) result = caseModelElement(globalStoryboard);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseStoryboard(globalStoryboard);
+				}
+				if (result == null) {
+					result = casePackageArtifact(globalStoryboard);
+				}
+				if (result == null) {
+					result = casePackageBase(globalStoryboard);
+				}
+				if (result == null) {
+					result = caseModelElement(globalStoryboard);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_STRUCTURED_DOCUMENT: {
-				GlobalStructuredDocument globalStructuredDocument = (GlobalStructuredDocument)theEObject;
+				GlobalStructuredDocument globalStructuredDocument = (GlobalStructuredDocument) theEObject;
 				T result = caseGlobalStructuredDocument(globalStructuredDocument);
-				if (result == null) result = caseStructuredDocument(globalStructuredDocument);
-				if (result == null) result = casePackageArtifact(globalStructuredDocument);
-				if (result == null) result = casePackageBase(globalStructuredDocument);
-				if (result == null) result = caseModelElement(globalStructuredDocument);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseStructuredDocument(globalStructuredDocument);
+				}
+				if (result == null) {
+					result = casePackageArtifact(globalStructuredDocument);
+				}
+				if (result == null) {
+					result = casePackageBase(globalStructuredDocument);
+				}
+				if (result == null) {
+					result = caseModelElement(globalStructuredDocument);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_TEST_SCENARIO: {
-				GlobalTestScenario globalTestScenario = (GlobalTestScenario)theEObject;
+				GlobalTestScenario globalTestScenario = (GlobalTestScenario) theEObject;
 				T result = caseGlobalTestScenario(globalTestScenario);
-				if (result == null) result = caseTestScenario(globalTestScenario);
-				if (result == null) result = casePackageArtifact(globalTestScenario);
-				if (result == null) result = casePackageBase(globalTestScenario);
-				if (result == null) result = caseModelElement(globalTestScenario);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseTestScenario(globalTestScenario);
+				}
+				if (result == null) {
+					result = casePackageArtifact(globalTestScenario);
+				}
+				if (result == null) {
+					result = casePackageBase(globalTestScenario);
+				}
+				if (result == null) {
+					result = caseModelElement(globalTestScenario);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_TRIGGER_EVENT: {
-				GlobalTriggerEvent globalTriggerEvent = (GlobalTriggerEvent)theEObject;
+				GlobalTriggerEvent globalTriggerEvent = (GlobalTriggerEvent) theEObject;
 				T result = caseGlobalTriggerEvent(globalTriggerEvent);
-				if (result == null) result = caseTriggerEvent(globalTriggerEvent);
-				if (result == null) result = casePackageArtifact(globalTriggerEvent);
-				if (result == null) result = casePackageBase(globalTriggerEvent);
-				if (result == null) result = caseModelElement(globalTriggerEvent);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseTriggerEvent(globalTriggerEvent);
+				}
+				if (result == null) {
+					result = casePackageArtifact(globalTriggerEvent);
+				}
+				if (result == null) {
+					result = casePackageBase(globalTriggerEvent);
+				}
+				if (result == null) {
+					result = caseModelElement(globalTriggerEvent);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_VALUE_SET: {
-				GlobalValueSet globalValueSet = (GlobalValueSet)theEObject;
+				GlobalValueSet globalValueSet = (GlobalValueSet) theEObject;
 				T result = caseGlobalValueSet(globalValueSet);
-				if (result == null) result = caseValueSet(globalValueSet);
-				if (result == null) result = caseModelElement(globalValueSet);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseValueSet(globalValueSet);
+				}
+				if (result == null) {
+					result = caseModelElement(globalValueSet);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOBAL_VOCABULARY_MODEL: {
-				GlobalVocabularyModel globalVocabularyModel = (GlobalVocabularyModel)theEObject;
+				GlobalVocabularyModel globalVocabularyModel = (GlobalVocabularyModel) theEObject;
 				T result = caseGlobalVocabularyModel(globalVocabularyModel);
-				if (result == null) result = caseVocabularyModel(globalVocabularyModel);
-				if (result == null) result = casePackage(globalVocabularyModel);
-				if (result == null) result = casePackageBase(globalVocabularyModel);
-				if (result == null) result = caseModelElement(globalVocabularyModel);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseVocabularyModel(globalVocabularyModel);
+				}
+				if (result == null) {
+					result = casePackage(globalVocabularyModel);
+				}
+				if (result == null) {
+					result = casePackageBase(globalVocabularyModel);
+				}
+				if (result == null) {
+					result = caseModelElement(globalVocabularyModel);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GLOSSARY: {
-				Glossary glossary = (Glossary)theEObject;
+				Glossary glossary = (Glossary) theEObject;
 				T result = caseGlossary(glossary);
-				if (result == null) result = casePackage(glossary);
-				if (result == null) result = casePackageBase(glossary);
-				if (result == null) result = caseModelElement(glossary);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackage(glossary);
+				}
+				if (result == null) {
+					result = casePackageBase(glossary);
+				}
+				if (result == null) {
+					result = caseModelElement(glossary);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GRAPH_CONNECTOR: {
-				GraphConnector graphConnector = (GraphConnector)theEObject;
+				GraphConnector graphConnector = (GraphConnector) theEObject;
 				T result = caseGraphConnector(graphConnector);
-				if (result == null) result = caseDiagramElement(graphConnector);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDiagramElement(graphConnector);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GRAPH_CONNECTOR_WITH_EDGE: {
-				GraphConnectorWithEdge graphConnectorWithEdge = (GraphConnectorWithEdge)theEObject;
+				GraphConnectorWithEdge graphConnectorWithEdge = (GraphConnectorWithEdge) theEObject;
 				T result = caseGraphConnectorWithEdge(graphConnectorWithEdge);
-				if (result == null) result = caseGraphConnector(graphConnectorWithEdge);
-				if (result == null) result = caseDiagramElement(graphConnectorWithEdge);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseGraphConnector(graphConnectorWithEdge);
+				}
+				if (result == null) {
+					result = caseDiagramElement(graphConnectorWithEdge);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GRAPH_EDGE: {
-				GraphEdge graphEdge = (GraphEdge)theEObject;
+				GraphEdge graphEdge = (GraphEdge) theEObject;
 				T result = caseGraphEdge(graphEdge);
-				if (result == null) result = caseDiagramElement(graphEdge);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDiagramElement(graphEdge);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GRAPH_EDGE_GRAPHIC_INFORMATION: {
-				GraphEdgeGraphicInformation graphEdgeGraphicInformation = (GraphEdgeGraphicInformation)theEObject;
+				GraphEdgeGraphicInformation graphEdgeGraphicInformation = (GraphEdgeGraphicInformation) theEObject;
 				T result = caseGraphEdgeGraphicInformation(graphEdgeGraphicInformation);
-				if (result == null) result = caseGraphicInformation(graphEdgeGraphicInformation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseGraphicInformation(graphEdgeGraphicInformation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GRAPH_EDGE_WITH_ANCHOR: {
-				GraphEdgeWithAnchor graphEdgeWithAnchor = (GraphEdgeWithAnchor)theEObject;
+				GraphEdgeWithAnchor graphEdgeWithAnchor = (GraphEdgeWithAnchor) theEObject;
 				T result = caseGraphEdgeWithAnchor(graphEdgeWithAnchor);
-				if (result == null) result = caseGraphEdge(graphEdgeWithAnchor);
-				if (result == null) result = caseDiagramElement(graphEdgeWithAnchor);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseGraphEdge(graphEdgeWithAnchor);
+				}
+				if (result == null) {
+					result = caseDiagramElement(graphEdgeWithAnchor);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GRAPH_ELEMENT: {
-				GraphElement graphElement = (GraphElement)theEObject;
+				GraphElement graphElement = (GraphElement) theEObject;
 				T result = caseGraphElement(graphElement);
-				if (result == null) result = caseDiagramElement(graphElement);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDiagramElement(graphElement);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GRAPHIC_INFORMATION: {
-				GraphicInformation graphicInformation = (GraphicInformation)theEObject;
+				GraphicInformation graphicInformation = (GraphicInformation) theEObject;
 				T result = caseGraphicInformation(graphicInformation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GRAPH_NODE: {
-				GraphNode graphNode = (GraphNode)theEObject;
+				GraphNode graphNode = (GraphNode) theEObject;
 				T result = caseGraphNode(graphNode);
-				if (result == null) result = caseGraphElement(graphNode);
-				if (result == null) result = caseDiagramElement(graphNode);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseGraphElement(graphNode);
+				}
+				if (result == null) {
+					result = caseDiagramElement(graphNode);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GRAPH_NODE_WITH_OPTIONAL_CONNECTION: {
-				GraphNodeWithOptionalConnection graphNodeWithOptionalConnection = (GraphNodeWithOptionalConnection)theEObject;
+				GraphNodeWithOptionalConnection graphNodeWithOptionalConnection = (GraphNodeWithOptionalConnection) theEObject;
 				T result = caseGraphNodeWithOptionalConnection(graphNodeWithOptionalConnection);
-				if (result == null) result = caseContainedGraphNode(graphNodeWithOptionalConnection);
-				if (result == null) result = caseGraphNode(graphNodeWithOptionalConnection);
-				if (result == null) result = caseGraphElement(graphNodeWithOptionalConnection);
-				if (result == null) result = caseDiagramElement(graphNodeWithOptionalConnection);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseContainedGraphNode(graphNodeWithOptionalConnection);
+				}
+				if (result == null) {
+					result = caseGraphNode(graphNodeWithOptionalConnection);
+				}
+				if (result == null) {
+					result = caseGraphElement(graphNodeWithOptionalConnection);
+				}
+				if (result == null) {
+					result = caseDiagramElement(graphNodeWithOptionalConnection);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GROUP_CHANGE: {
-				GroupChange groupChange = (GroupChange)theEObject;
+				GroupChange groupChange = (GroupChange) theEObject;
 				T result = caseGroupChange(groupChange);
-				if (result == null) result = caseChange(groupChange);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseChange(groupChange);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.GROUP_VOTE: {
-				GroupVote groupVote = (GroupVote)theEObject;
+				GroupVote groupVote = (GroupVote) theEObject;
 				T result = caseGroupVote(groupVote);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.HEADER: {
-				Header header = (Header)theEObject;
+				Header header = (Header) theEObject;
 				T result = caseHeader(header);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.HISTORY_ITEM: {
-				HistoryItem historyItem = (HistoryItem)theEObject;
+				HistoryItem historyItem = (HistoryItem) theEObject;
 				T result = caseHistoryItem(historyItem);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.IMPLEMENTATION_CONSTRAINTS: {
-				ImplementationConstraints implementationConstraints = (ImplementationConstraints)theEObject;
+				ImplementationConstraints implementationConstraints = (ImplementationConstraints) theEObject;
 				T result = caseImplementationConstraints(implementationConstraints);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS: {
-				ImplementationMessageConstraints implementationMessageConstraints = (ImplementationMessageConstraints)theEObject;
+				ImplementationMessageConstraints implementationMessageConstraints = (ImplementationMessageConstraints) theEObject;
 				T result = caseImplementationMessageConstraints(implementationMessageConstraints);
-				if (result == null) result = caseImplementationConstraints(implementationMessageConstraints);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseImplementationConstraints(implementationMessageConstraints);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.IMPORT_DATATYPE_MODEL_LIBRARY: {
-				ImportDatatypeModelLibrary importDatatypeModelLibrary = (ImportDatatypeModelLibrary)theEObject;
+				ImportDatatypeModelLibrary importDatatypeModelLibrary = (ImportDatatypeModelLibrary) theEObject;
 				T result = caseImportDatatypeModelLibrary(importDatatypeModelLibrary);
-				if (result == null) result = caseArtifactDependency(importDatatypeModelLibrary);
-				if (result == null) result = casePackageRef(importDatatypeModelLibrary);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseArtifactDependency(importDatatypeModelLibrary);
+				}
+				if (result == null) {
+					result = casePackageRef(importDatatypeModelLibrary);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.INCLUDE_RELATED_CODES: {
-				IncludeRelatedCodes includeRelatedCodes = (IncludeRelatedCodes)theEObject;
+				IncludeRelatedCodes includeRelatedCodes = (IncludeRelatedCodes) theEObject;
 				T result = caseIncludeRelatedCodes(includeRelatedCodes);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.INTERACTION: {
-				Interaction interaction = (Interaction)theEObject;
+				Interaction interaction = (Interaction) theEObject;
 				T result = caseInteraction(interaction);
-				if (result == null) result = casePackageArtifact(interaction);
-				if (result == null) result = casePackageBase(interaction);
-				if (result == null) result = caseModelElement(interaction);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageArtifact(interaction);
+				}
+				if (result == null) {
+					result = casePackageBase(interaction);
+				}
+				if (result == null) {
+					result = caseModelElement(interaction);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.INTERACTION_ANNOTATIONS: {
-				InteractionAnnotations interactionAnnotations = (InteractionAnnotations)theEObject;
+				InteractionAnnotations interactionAnnotations = (InteractionAnnotations) theEObject;
 				T result = caseInteractionAnnotations(interactionAnnotations);
-				if (result == null) result = caseAnnotations(interactionAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(interactionAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.INTERACTION_APP_INFO: {
-				InteractionAppInfo interactionAppInfo = (InteractionAppInfo)theEObject;
+				InteractionAppInfo interactionAppInfo = (InteractionAppInfo) theEObject;
 				T result = caseInteractionAppInfo(interactionAppInfo);
-				if (result == null) result = caseAppInfo(interactionAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(interactionAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.INTERACTION_DOCUMENTATION: {
-				InteractionDocumentation interactionDocumentation = (InteractionDocumentation)theEObject;
+				InteractionDocumentation interactionDocumentation = (InteractionDocumentation) theEObject;
 				T result = caseInteractionDocumentation(interactionDocumentation);
-				if (result == null) result = caseDocumentation(interactionDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(interactionDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.INTERACTION_PROFILE: {
-				InteractionProfile interactionProfile = (InteractionProfile)theEObject;
+				InteractionProfile interactionProfile = (InteractionProfile) theEObject;
 				T result = caseInteractionProfile(interactionProfile);
-				if (result == null) result = casePackage(interactionProfile);
-				if (result == null) result = casePackageBase(interactionProfile);
-				if (result == null) result = caseModelElement(interactionProfile);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackage(interactionProfile);
+				}
+				if (result == null) {
+					result = casePackageBase(interactionProfile);
+				}
+				if (result == null) {
+					result = caseModelElement(interactionProfile);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.INTERACTION_PROFILE_ANNOTATIONS: {
-				InteractionProfileAnnotations interactionProfileAnnotations = (InteractionProfileAnnotations)theEObject;
+				InteractionProfileAnnotations interactionProfileAnnotations = (InteractionProfileAnnotations) theEObject;
 				T result = caseInteractionProfileAnnotations(interactionProfileAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.INTERACTION_PROFILE_APP_INFO: {
-				InteractionProfileAppInfo interactionProfileAppInfo = (InteractionProfileAppInfo)theEObject;
+				InteractionProfileAppInfo interactionProfileAppInfo = (InteractionProfileAppInfo) theEObject;
 				T result = caseInteractionProfileAppInfo(interactionProfileAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.INTERACTION_PROFILE_DOCUMENTATION: {
-				InteractionProfileDocumentation interactionProfileDocumentation = (InteractionProfileDocumentation)theEObject;
+				InteractionProfileDocumentation interactionProfileDocumentation = (InteractionProfileDocumentation) theEObject;
 				T result = caseInteractionProfileDocumentation(interactionProfileDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.INTERACTION_TEST: {
-				InteractionTest interactionTest = (InteractionTest)theEObject;
+				InteractionTest interactionTest = (InteractionTest) theEObject;
 				T result = caseInteractionTest(interactionTest);
-				if (result == null) result = caseTestBase(interactionTest);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseTestBase(interactionTest);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.INTERFACE: {
-				Interface interface_ = (Interface)theEObject;
+				Interface interface_ = (Interface) theEObject;
 				T result = caseInterface(interface_);
-				if (result == null) result = caseClassifier(interface_);
-				if (result == null) result = caseModelElement(interface_);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassifier(interface_);
+				}
+				if (result == null) {
+					result = caseModelElement(interface_);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.ITEM_FILTER: {
-				ItemFilter itemFilter = (ItemFilter)theEObject;
+				ItemFilter itemFilter = (ItemFilter) theEObject;
 				T result = caseItemFilter(itemFilter);
-				if (result == null) result = casePackageOrArtifactRef(itemFilter);
-				if (result == null) result = casePackageRef(itemFilter);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageOrArtifactRef(itemFilter);
+				}
+				if (result == null) {
+					result = casePackageRef(itemFilter);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.KEYED_NAME: {
-				KeyedName keyedName = (KeyedName)theEObject;
+				KeyedName keyedName = (KeyedName) theEObject;
 				T result = caseKeyedName(keyedName);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.LEGALESE: {
-				Legalese legalese = (Legalese)theEObject;
+				Legalese legalese = (Legalese) theEObject;
 				T result = caseLegalese(legalese);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.LOCAL_CLASS_REF: {
-				LocalClassRef localClassRef = (LocalClassRef)theEObject;
+				LocalClassRef localClassRef = (LocalClassRef) theEObject;
 				T result = caseLocalClassRef(localClassRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.LOCAL_CLASS_REFERENCE: {
-				LocalClassReference localClassReference = (LocalClassReference)theEObject;
+				LocalClassReference localClassReference = (LocalClassReference) theEObject;
 				T result = caseLocalClassReference(localClassReference);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.MAPPING: {
-				Mapping mapping = (Mapping)theEObject;
+				Mapping mapping = (Mapping) theEObject;
 				T result = caseMapping(mapping);
-				if (result == null) result = caseCascadableAnnotation(mapping);
-				if (result == null) result = caseBasicAnnotation(mapping);
-				if (result == null) result = caseAnnotationBase(mapping);
-				if (result == null) result = caseModelElement(mapping);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseCascadableAnnotation(mapping);
+				}
+				if (result == null) {
+					result = caseBasicAnnotation(mapping);
+				}
+				if (result == null) {
+					result = caseAnnotationBase(mapping);
+				}
+				if (result == null) {
+					result = caseModelElement(mapping);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.MIF_CHANGES: {
-				MifChanges mifChanges = (MifChanges)theEObject;
+				MifChanges mifChanges = (MifChanges) theEObject;
 				T result = caseMifChanges(mifChanges);
-				if (result == null) result = casePackageBase(mifChanges);
-				if (result == null) result = caseModelElement(mifChanges);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageBase(mifChanges);
+				}
+				if (result == null) {
+					result = caseModelElement(mifChanges);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.MIF_CONTENT: {
-				MifContent mifContent = (MifContent)theEObject;
+				MifContent mifContent = (MifContent) theEObject;
 				T result = caseMifContent(mifContent);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.MODEL_ELEMENT: {
-				ModelElement modelElement = (ModelElement)theEObject;
+				ModelElement modelElement = (ModelElement) theEObject;
 				T result = caseModelElement(modelElement);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.NODE_GRAPHIC_INFORMATION: {
-				NodeGraphicInformation nodeGraphicInformation = (NodeGraphicInformation)theEObject;
+				NodeGraphicInformation nodeGraphicInformation = (NodeGraphicInformation) theEObject;
 				T result = caseNodeGraphicInformation(nodeGraphicInformation);
-				if (result == null) result = caseGraphicInformation(nodeGraphicInformation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseGraphicInformation(nodeGraphicInformation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.NODE_WITH_CONNECTION_GRAPHIC_INFORMATION: {
-				NodeWithConnectionGraphicInformation nodeWithConnectionGraphicInformation = (NodeWithConnectionGraphicInformation)theEObject;
+				NodeWithConnectionGraphicInformation nodeWithConnectionGraphicInformation = (NodeWithConnectionGraphicInformation) theEObject;
 				T result = caseNodeWithConnectionGraphicInformation(nodeWithConnectionGraphicInformation);
-				if (result == null) result = caseGraphicInformation(nodeWithConnectionGraphicInformation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseGraphicInformation(nodeWithConnectionGraphicInformation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.NON_COMPUTABLE_CONTENT_DEFINITION: {
-				NonComputableContentDefinition nonComputableContentDefinition = (NonComputableContentDefinition)theEObject;
+				NonComputableContentDefinition nonComputableContentDefinition = (NonComputableContentDefinition) theEObject;
 				T result = caseNonComputableContentDefinition(nonComputableContentDefinition);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.NON_TRAVERSABLE_ASSOCIATION_END: {
-				NonTraversableAssociationEnd nonTraversableAssociationEnd = (NonTraversableAssociationEnd)theEObject;
+				NonTraversableAssociationEnd nonTraversableAssociationEnd = (NonTraversableAssociationEnd) theEObject;
 				T result = caseNonTraversableAssociationEnd(nonTraversableAssociationEnd);
-				if (result == null) result = caseRelationship(nonTraversableAssociationEnd);
-				if (result == null) result = caseModelElement(nonTraversableAssociationEnd);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseRelationship(nonTraversableAssociationEnd);
+				}
+				if (result == null) {
+					result = caseModelElement(nonTraversableAssociationEnd);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.OPEN_ISSUE: {
-				OpenIssue openIssue = (OpenIssue)theEObject;
+				OpenIssue openIssue = (OpenIssue) theEObject;
 				T result = caseOpenIssue(openIssue);
-				if (result == null) result = caseCascadableAnnotation(openIssue);
-				if (result == null) result = caseBasicAnnotation(openIssue);
-				if (result == null) result = caseAnnotationBase(openIssue);
-				if (result == null) result = caseModelElement(openIssue);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseCascadableAnnotation(openIssue);
+				}
+				if (result == null) {
+					result = caseBasicAnnotation(openIssue);
+				}
+				if (result == null) {
+					result = caseAnnotationBase(openIssue);
+				}
+				if (result == null) {
+					result = caseModelElement(openIssue);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.OPERATION_ANNOTATIONS: {
-				OperationAnnotations operationAnnotations = (OperationAnnotations)theEObject;
+				OperationAnnotations operationAnnotations = (OperationAnnotations) theEObject;
 				T result = caseOperationAnnotations(operationAnnotations);
-				if (result == null) result = caseAnnotations(operationAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(operationAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.OPERATION_APP_INFO: {
-				OperationAppInfo operationAppInfo = (OperationAppInfo)theEObject;
+				OperationAppInfo operationAppInfo = (OperationAppInfo) theEObject;
 				T result = caseOperationAppInfo(operationAppInfo);
-				if (result == null) result = caseAppInfo(operationAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(operationAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.OPERATION_DERIVATION: {
-				OperationDerivation operationDerivation = (OperationDerivation)theEObject;
+				OperationDerivation operationDerivation = (OperationDerivation) theEObject;
 				T result = caseOperationDerivation(operationDerivation);
-				if (result == null) result = caseDerivation(operationDerivation);
-				if (result == null) result = caseDependency(operationDerivation);
-				if (result == null) result = caseRelationship(operationDerivation);
-				if (result == null) result = caseModelElement(operationDerivation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDerivation(operationDerivation);
+				}
+				if (result == null) {
+					result = caseDependency(operationDerivation);
+				}
+				if (result == null) {
+					result = caseRelationship(operationDerivation);
+				}
+				if (result == null) {
+					result = caseModelElement(operationDerivation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.OPERATION_DOCUMENTATION: {
-				OperationDocumentation operationDocumentation = (OperationDocumentation)theEObject;
+				OperationDocumentation operationDocumentation = (OperationDocumentation) theEObject;
 				T result = caseOperationDocumentation(operationDocumentation);
-				if (result == null) result = caseDocumentation(operationDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(operationDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.OPERATION_PARAMETER: {
-				OperationParameter operationParameter = (OperationParameter)theEObject;
+				OperationParameter operationParameter = (OperationParameter) theEObject;
 				T result = caseOperationParameter(operationParameter);
-				if (result == null) result = caseModelElement(operationParameter);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseModelElement(operationParameter);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.OTHER_ANNOTATION: {
-				OtherAnnotation otherAnnotation = (OtherAnnotation)theEObject;
+				OtherAnnotation otherAnnotation = (OtherAnnotation) theEObject;
 				T result = caseOtherAnnotation(otherAnnotation);
-				if (result == null) result = caseAnnotationBase(otherAnnotation);
-				if (result == null) result = caseModelElement(otherAnnotation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotationBase(otherAnnotation);
+				}
+				if (result == null) {
+					result = caseModelElement(otherAnnotation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PACKAGE: {
-				org.openhealthtools.mdht.emf.hl7.mif2.Package package_ = (org.openhealthtools.mdht.emf.hl7.mif2.Package)theEObject;
+				org.openhealthtools.mdht.emf.hl7.mif2.Package package_ = (org.openhealthtools.mdht.emf.hl7.mif2.Package) theEObject;
 				T result = casePackage(package_);
-				if (result == null) result = casePackageBase(package_);
-				if (result == null) result = caseModelElement(package_);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageBase(package_);
+				}
+				if (result == null) {
+					result = caseModelElement(package_);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PACKAGE_ANNOTATIONS: {
-				PackageAnnotations packageAnnotations = (PackageAnnotations)theEObject;
+				PackageAnnotations packageAnnotations = (PackageAnnotations) theEObject;
 				T result = casePackageAnnotations(packageAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PACKAGE_APP_INFO: {
-				PackageAppInfo packageAppInfo = (PackageAppInfo)theEObject;
+				PackageAppInfo packageAppInfo = (PackageAppInfo) theEObject;
 				T result = casePackageAppInfo(packageAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PACKAGE_ARTIFACT: {
-				PackageArtifact packageArtifact = (PackageArtifact)theEObject;
+				PackageArtifact packageArtifact = (PackageArtifact) theEObject;
 				T result = casePackageArtifact(packageArtifact);
-				if (result == null) result = casePackageBase(packageArtifact);
-				if (result == null) result = caseModelElement(packageArtifact);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageBase(packageArtifact);
+				}
+				if (result == null) {
+					result = caseModelElement(packageArtifact);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PACKAGE_BASE: {
-				PackageBase packageBase = (PackageBase)theEObject;
+				PackageBase packageBase = (PackageBase) theEObject;
 				T result = casePackageBase(packageBase);
-				if (result == null) result = caseModelElement(packageBase);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseModelElement(packageBase);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PACKAGE_CONTENT: {
-				PackageContent packageContent = (PackageContent)theEObject;
+				PackageContent packageContent = (PackageContent) theEObject;
 				T result = casePackageContent(packageContent);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PACKAGE_DEF_ID: {
-				PackageDefId packageDefId = (PackageDefId)theEObject;
+				PackageDefId packageDefId = (PackageDefId) theEObject;
 				T result = casePackageDefId(packageDefId);
-				if (result == null) result = casePackageRef(packageDefId);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageRef(packageDefId);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PACKAGE_DERIVATION: {
-				PackageDerivation packageDerivation = (PackageDerivation)theEObject;
+				PackageDerivation packageDerivation = (PackageDerivation) theEObject;
 				T result = casePackageDerivation(packageDerivation);
-				if (result == null) result = caseDerivation(packageDerivation);
-				if (result == null) result = caseDependency(packageDerivation);
-				if (result == null) result = caseRelationship(packageDerivation);
-				if (result == null) result = caseModelElement(packageDerivation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDerivation(packageDerivation);
+				}
+				if (result == null) {
+					result = caseDependency(packageDerivation);
+				}
+				if (result == null) {
+					result = caseRelationship(packageDerivation);
+				}
+				if (result == null) {
+					result = caseModelElement(packageDerivation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PACKAGE_DOCUMENTATION: {
-				PackageDocumentation packageDocumentation = (PackageDocumentation)theEObject;
+				PackageDocumentation packageDocumentation = (PackageDocumentation) theEObject;
 				T result = casePackageDocumentation(packageDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PACKAGE_OR_ARTIFACT_REF: {
-				PackageOrArtifactRef packageOrArtifactRef = (PackageOrArtifactRef)theEObject;
+				PackageOrArtifactRef packageOrArtifactRef = (PackageOrArtifactRef) theEObject;
 				T result = casePackageOrArtifactRef(packageOrArtifactRef);
-				if (result == null) result = casePackageRef(packageOrArtifactRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageRef(packageOrArtifactRef);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PACKAGE_REF: {
-				PackageRef packageRef = (PackageRef)theEObject;
+				PackageRef packageRef = (PackageRef) theEObject;
 				T result = casePackageRef(packageRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PARAMETER_MODEL: {
-				ParameterModel parameterModel = (ParameterModel)theEObject;
+				ParameterModel parameterModel = (ParameterModel) theEObject;
 				T result = caseParameterModel(parameterModel);
-				if (result == null) result = caseBoundStaticModel(parameterModel);
-				if (result == null) result = casePackageRef(parameterModel);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseBoundStaticModel(parameterModel);
+				}
+				if (result == null) {
+					result = casePackageRef(parameterModel);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.POINT: {
-				Point point = (Point)theEObject;
+				Point point = (Point) theEObject;
 				T result = casePoint(point);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PRINT_NAME: {
-				PrintName printName = (PrintName)theEObject;
+				PrintName printName = (PrintName) theEObject;
 				T result = casePrintName(printName);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION: {
-				PropertyBasedContentDefinition propertyBasedContentDefinition = (PropertyBasedContentDefinition)theEObject;
+				PropertyBasedContentDefinition propertyBasedContentDefinition = (PropertyBasedContentDefinition) theEObject;
 				T result = casePropertyBasedContentDefinition(propertyBasedContentDefinition);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PROPERTY_GROUP: {
-				PropertyGroup propertyGroup = (PropertyGroup)theEObject;
+				PropertyGroup propertyGroup = (PropertyGroup) theEObject;
 				T result = casePropertyGroup(propertyGroup);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PUBLICATION_ANNOTATIONS: {
-				PublicationAnnotations publicationAnnotations = (PublicationAnnotations)theEObject;
+				PublicationAnnotations publicationAnnotations = (PublicationAnnotations) theEObject;
 				T result = casePublicationAnnotations(publicationAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PUBLICATION_APP_INFO: {
-				PublicationAppInfo publicationAppInfo = (PublicationAppInfo)theEObject;
+				PublicationAppInfo publicationAppInfo = (PublicationAppInfo) theEObject;
 				T result = casePublicationAppInfo(publicationAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PUBLICATION_BASE: {
-				PublicationBase publicationBase = (PublicationBase)theEObject;
+				PublicationBase publicationBase = (PublicationBase) theEObject;
 				T result = casePublicationBase(publicationBase);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PUBLICATION_DOCUMENTATION: {
-				PublicationDocumentation publicationDocumentation = (PublicationDocumentation)theEObject;
+				PublicationDocumentation publicationDocumentation = (PublicationDocumentation) theEObject;
 				T result = casePublicationDocumentation(publicationDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PUBLICATION_GROUP: {
-				PublicationGroup publicationGroup = (PublicationGroup)theEObject;
+				PublicationGroup publicationGroup = (PublicationGroup) theEObject;
 				T result = casePublicationGroup(publicationGroup);
-				if (result == null) result = casePublicationBase(publicationGroup);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePublicationBase(publicationGroup);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PUBLICATION_ITEM: {
-				PublicationItem publicationItem = (PublicationItem)theEObject;
+				PublicationItem publicationItem = (PublicationItem) theEObject;
 				T result = casePublicationItem(publicationItem);
-				if (result == null) result = casePublicationBase(publicationItem);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePublicationBase(publicationItem);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.PUBLICATION_PACKAGE: {
-				PublicationPackage publicationPackage = (PublicationPackage)theEObject;
+				PublicationPackage publicationPackage = (PublicationPackage) theEObject;
 				T result = casePublicationPackage(publicationPackage);
-				if (result == null) result = casePackage(publicationPackage);
-				if (result == null) result = casePackageBase(publicationPackage);
-				if (result == null) result = caseModelElement(publicationPackage);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackage(publicationPackage);
+				}
+				if (result == null) {
+					result = casePackageBase(publicationPackage);
+				}
+				if (result == null) {
+					result = caseModelElement(publicationPackage);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.RANGE_DEFINITION: {
-				RangeDefinition rangeDefinition = (RangeDefinition)theEObject;
+				RangeDefinition rangeDefinition = (RangeDefinition) theEObject;
 				T result = caseRangeDefinition(rangeDefinition);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.REALM_ELEMENT: {
-				RealmElement realmElement = (RealmElement)theEObject;
+				RealmElement realmElement = (RealmElement) theEObject;
 				T result = caseRealmElement(realmElement);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.RECEIVER_RESPONSIBILITY: {
-				ReceiverResponsibility receiverResponsibility = (ReceiverResponsibility)theEObject;
+				ReceiverResponsibility receiverResponsibility = (ReceiverResponsibility) theEObject;
 				T result = caseReceiverResponsibility(receiverResponsibility);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.RELATED_APP_ROLE: {
-				RelatedAppRole relatedAppRole = (RelatedAppRole)theEObject;
+				RelatedAppRole relatedAppRole = (RelatedAppRole) theEObject;
 				T result = caseRelatedAppRole(relatedAppRole);
-				if (result == null) result = casePackageRef(relatedAppRole);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageRef(relatedAppRole);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.RELATIONSHIP: {
-				Relationship relationship = (Relationship)theEObject;
+				Relationship relationship = (Relationship) theEObject;
 				T result = caseRelationship(relationship);
-				if (result == null) result = caseModelElement(relationship);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseModelElement(relationship);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION: {
-				RelationshipBasedContentDefinition relationshipBasedContentDefinition = (RelationshipBasedContentDefinition)theEObject;
+				RelationshipBasedContentDefinition relationshipBasedContentDefinition = (RelationshipBasedContentDefinition) theEObject;
 				T result = caseRelationshipBasedContentDefinition(relationshipBasedContentDefinition);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.RELEASE: {
-				Release release = (Release)theEObject;
+				Release release = (Release) theEObject;
 				T result = caseRelease(release);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.RELEASE_LIST: {
-				ReleaseList releaseList = (ReleaseList)theEObject;
+				ReleaseList releaseList = (ReleaseList) theEObject;
 				T result = caseReleaseList(releaseList);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.RENDERING_INFORMATION: {
-				RenderingInformation renderingInformation = (RenderingInformation)theEObject;
+				RenderingInformation renderingInformation = (RenderingInformation) theEObject;
 				T result = caseRenderingInformation(renderingInformation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.REPLACE_ELEMENT_CONTENT: {
-				ReplaceElementContent replaceElementContent = (ReplaceElementContent)theEObject;
+				ReplaceElementContent replaceElementContent = (ReplaceElementContent) theEObject;
 				T result = caseReplaceElementContent(replaceElementContent);
-				if (result == null) result = caseElementRef(replaceElementContent);
-				if (result == null) result = caseChange(replaceElementContent);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseElementRef(replaceElementContent);
+				}
+				if (result == null) {
+					result = caseChange(replaceElementContent);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.RESPONSIBLE_GROUP: {
-				ResponsibleGroup responsibleGroup = (ResponsibleGroup)theEObject;
+				ResponsibleGroup responsibleGroup = (ResponsibleGroup) theEObject;
 				T result = caseResponsibleGroup(responsibleGroup);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SERIALIZED_ASSOCIATION_END: {
-				SerializedAssociationEnd serializedAssociationEnd = (SerializedAssociationEnd)theEObject;
+				SerializedAssociationEnd serializedAssociationEnd = (SerializedAssociationEnd) theEObject;
 				T result = caseSerializedAssociationEnd(serializedAssociationEnd);
-				if (result == null) result = caseAssociationBase(serializedAssociationEnd);
-				if (result == null) result = caseRelationship(serializedAssociationEnd);
-				if (result == null) result = caseModelElement(serializedAssociationEnd);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAssociationBase(serializedAssociationEnd);
+				}
+				if (result == null) {
+					result = caseRelationship(serializedAssociationEnd);
+				}
+				if (result == null) {
+					result = caseModelElement(serializedAssociationEnd);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SERIALIZED_ASSOCIATION_ENDS: {
-				SerializedAssociationEnds serializedAssociationEnds = (SerializedAssociationEnds)theEObject;
+				SerializedAssociationEnds serializedAssociationEnds = (SerializedAssociationEnds) theEObject;
 				T result = caseSerializedAssociationEnds(serializedAssociationEnds);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SERIALIZED_CLASS: {
-				SerializedClass serializedClass = (SerializedClass)theEObject;
+				SerializedClass serializedClass = (SerializedClass) theEObject;
 				T result = caseSerializedClass(serializedClass);
-				if (result == null) result = caseClassBase(serializedClass);
-				if (result == null) result = caseClassifierBase(serializedClass);
-				if (result == null) result = caseClassifier(serializedClass);
-				if (result == null) result = caseModelElement(serializedClass);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassBase(serializedClass);
+				}
+				if (result == null) {
+					result = caseClassifierBase(serializedClass);
+				}
+				if (result == null) {
+					result = caseClassifier(serializedClass);
+				}
+				if (result == null) {
+					result = caseModelElement(serializedClass);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SERIALIZED_CLASS_BINDING_ARGUMENT: {
-				SerializedClassBindingArgument serializedClassBindingArgument = (SerializedClassBindingArgument)theEObject;
+				SerializedClassBindingArgument serializedClassBindingArgument = (SerializedClassBindingArgument) theEObject;
 				T result = caseSerializedClassBindingArgument(serializedClassBindingArgument);
-				if (result == null) result = caseClassBindingArgumentBase(serializedClassBindingArgument);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassBindingArgumentBase(serializedClassBindingArgument);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SERIALIZED_CLASSES: {
-				SerializedClasses serializedClasses = (SerializedClasses)theEObject;
+				SerializedClasses serializedClasses = (SerializedClasses) theEObject;
 				T result = caseSerializedClasses(serializedClasses);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SERIALIZED_CLASS_GENERALIZATION: {
-				SerializedClassGeneralization serializedClassGeneralization = (SerializedClassGeneralization)theEObject;
+				SerializedClassGeneralization serializedClassGeneralization = (SerializedClassGeneralization) theEObject;
 				T result = caseSerializedClassGeneralization(serializedClassGeneralization);
-				if (result == null) result = caseClassGeneralizationBase(serializedClassGeneralization);
-				if (result == null) result = caseRelationship(serializedClassGeneralization);
-				if (result == null) result = caseModelElement(serializedClassGeneralization);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassGeneralizationBase(serializedClassGeneralization);
+				}
+				if (result == null) {
+					result = caseRelationship(serializedClassGeneralization);
+				}
+				if (result == null) {
+					result = caseModelElement(serializedClassGeneralization);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SERIALIZED_COMMON_MODEL_ELEMENT_REF: {
-				SerializedCommonModelElementRef serializedCommonModelElementRef = (SerializedCommonModelElementRef)theEObject;
+				SerializedCommonModelElementRef serializedCommonModelElementRef = (SerializedCommonModelElementRef) theEObject;
 				T result = caseSerializedCommonModelElementRef(serializedCommonModelElementRef);
-				if (result == null) result = caseCommonModelElementRefBase(serializedCommonModelElementRef);
-				if (result == null) result = caseClassifierBase(serializedCommonModelElementRef);
-				if (result == null) result = caseClassifier(serializedCommonModelElementRef);
-				if (result == null) result = caseModelElement(serializedCommonModelElementRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseCommonModelElementRefBase(serializedCommonModelElementRef);
+				}
+				if (result == null) {
+					result = caseClassifierBase(serializedCommonModelElementRef);
+				}
+				if (result == null) {
+					result = caseClassifier(serializedCommonModelElementRef);
+				}
+				if (result == null) {
+					result = caseModelElement(serializedCommonModelElementRef);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SERIALIZED_ENTRY_POINT: {
-				SerializedEntryPoint serializedEntryPoint = (SerializedEntryPoint)theEObject;
+				SerializedEntryPoint serializedEntryPoint = (SerializedEntryPoint) theEObject;
 				T result = caseSerializedEntryPoint(serializedEntryPoint);
-				if (result == null) result = caseEntryPointBase(serializedEntryPoint);
-				if (result == null) result = caseInterface(serializedEntryPoint);
-				if (result == null) result = caseClassifier(serializedEntryPoint);
-				if (result == null) result = caseModelElement(serializedEntryPoint);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseEntryPointBase(serializedEntryPoint);
+				}
+				if (result == null) {
+					result = caseInterface(serializedEntryPoint);
+				}
+				if (result == null) {
+					result = caseClassifier(serializedEntryPoint);
+				}
+				if (result == null) {
+					result = caseModelElement(serializedEntryPoint);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SERIALIZED_STATIC_MODEL: {
-				SerializedStaticModel serializedStaticModel = (SerializedStaticModel)theEObject;
+				SerializedStaticModel serializedStaticModel = (SerializedStaticModel) theEObject;
 				T result = caseSerializedStaticModel(serializedStaticModel);
-				if (result == null) result = caseStaticModelBase(serializedStaticModel);
-				if (result == null) result = caseSubSystem(serializedStaticModel);
-				if (result == null) result = casePackage(serializedStaticModel);
-				if (result == null) result = casePackageBase(serializedStaticModel);
-				if (result == null) result = caseModelElement(serializedStaticModel);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseStaticModelBase(serializedStaticModel);
+				}
+				if (result == null) {
+					result = caseSubSystem(serializedStaticModel);
+				}
+				if (result == null) {
+					result = casePackage(serializedStaticModel);
+				}
+				if (result == null) {
+					result = casePackageBase(serializedStaticModel);
+				}
+				if (result == null) {
+					result = caseModelElement(serializedStaticModel);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SERIALIZED_STATIC_MODELS_TYPE: {
-				SerializedStaticModelsType serializedStaticModelsType = (SerializedStaticModelsType)theEObject;
+				SerializedStaticModelsType serializedStaticModelsType = (SerializedStaticModelsType) theEObject;
 				T result = caseSerializedStaticModelsType(serializedStaticModelsType);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SPECIALIZATION_CLASS: {
-				SpecializationClass specializationClass = (SpecializationClass)theEObject;
+				SpecializationClass specializationClass = (SpecializationClass) theEObject;
 				T result = caseSpecializationClass(specializationClass);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATE: {
-				State state = (State)theEObject;
+				State state = (State) theEObject;
 				T result = caseState(state);
-				if (result == null) result = caseVertex(state);
-				if (result == null) result = caseModelElement(state);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseVertex(state);
+				}
+				if (result == null) {
+					result = caseModelElement(state);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATE_ANNOTATIONS: {
-				StateAnnotations stateAnnotations = (StateAnnotations)theEObject;
+				StateAnnotations stateAnnotations = (StateAnnotations) theEObject;
 				T result = caseStateAnnotations(stateAnnotations);
-				if (result == null) result = caseAnnotations(stateAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(stateAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATE_APP_INFO: {
-				StateAppInfo stateAppInfo = (StateAppInfo)theEObject;
+				StateAppInfo stateAppInfo = (StateAppInfo) theEObject;
 				T result = caseStateAppInfo(stateAppInfo);
-				if (result == null) result = caseAppInfo(stateAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(stateAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATE_DERIVATION: {
-				StateDerivation stateDerivation = (StateDerivation)theEObject;
+				StateDerivation stateDerivation = (StateDerivation) theEObject;
 				T result = caseStateDerivation(stateDerivation);
-				if (result == null) result = caseClassDerivation(stateDerivation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassDerivation(stateDerivation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATE_DOCUMENTATION: {
-				StateDocumentation stateDocumentation = (StateDocumentation)theEObject;
+				StateDocumentation stateDocumentation = (StateDocumentation) theEObject;
 				T result = caseStateDocumentation(stateDocumentation);
-				if (result == null) result = caseDocumentation(stateDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(stateDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATE_MACHINE: {
-				StateMachine stateMachine = (StateMachine)theEObject;
+				StateMachine stateMachine = (StateMachine) theEObject;
 				T result = caseStateMachine(stateMachine);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATE_MACHINE_ANNOTATIONS: {
-				StateMachineAnnotations stateMachineAnnotations = (StateMachineAnnotations)theEObject;
+				StateMachineAnnotations stateMachineAnnotations = (StateMachineAnnotations) theEObject;
 				T result = caseStateMachineAnnotations(stateMachineAnnotations);
-				if (result == null) result = caseAnnotations(stateMachineAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(stateMachineAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATE_MACHINE_APP_INFO: {
-				StateMachineAppInfo stateMachineAppInfo = (StateMachineAppInfo)theEObject;
+				StateMachineAppInfo stateMachineAppInfo = (StateMachineAppInfo) theEObject;
 				T result = caseStateMachineAppInfo(stateMachineAppInfo);
-				if (result == null) result = caseAppInfo(stateMachineAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(stateMachineAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATE_MACHINE_DOCUMENTATION: {
-				StateMachineDocumentation stateMachineDocumentation = (StateMachineDocumentation)theEObject;
+				StateMachineDocumentation stateMachineDocumentation = (StateMachineDocumentation) theEObject;
 				T result = caseStateMachineDocumentation(stateMachineDocumentation);
-				if (result == null) result = caseDocumentation(stateMachineDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(stateMachineDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATIC_EXAMPLE: {
-				StaticExample staticExample = (StaticExample)theEObject;
+				StaticExample staticExample = (StaticExample) theEObject;
 				T result = caseStaticExample(staticExample);
-				if (result == null) result = caseAnnotationBase(staticExample);
-				if (result == null) result = caseModelElement(staticExample);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotationBase(staticExample);
+				}
+				if (result == null) {
+					result = caseModelElement(staticExample);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATIC_MODEL: {
-				StaticModel staticModel = (StaticModel)theEObject;
+				StaticModel staticModel = (StaticModel) theEObject;
 				T result = caseStaticModel(staticModel);
-				if (result == null) result = caseStaticModelBase(staticModel);
-				if (result == null) result = caseSubSystem(staticModel);
-				if (result == null) result = casePackage(staticModel);
-				if (result == null) result = casePackageBase(staticModel);
-				if (result == null) result = caseModelElement(staticModel);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseStaticModelBase(staticModel);
+				}
+				if (result == null) {
+					result = caseSubSystem(staticModel);
+				}
+				if (result == null) {
+					result = casePackage(staticModel);
+				}
+				if (result == null) {
+					result = casePackageBase(staticModel);
+				}
+				if (result == null) {
+					result = caseModelElement(staticModel);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATIC_MODEL_ANNOTATIONS: {
-				StaticModelAnnotations staticModelAnnotations = (StaticModelAnnotations)theEObject;
+				StaticModelAnnotations staticModelAnnotations = (StaticModelAnnotations) theEObject;
 				T result = caseStaticModelAnnotations(staticModelAnnotations);
-				if (result == null) result = caseAnnotations(staticModelAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(staticModelAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATIC_MODEL_APP_INFO: {
-				StaticModelAppInfo staticModelAppInfo = (StaticModelAppInfo)theEObject;
+				StaticModelAppInfo staticModelAppInfo = (StaticModelAppInfo) theEObject;
 				T result = caseStaticModelAppInfo(staticModelAppInfo);
-				if (result == null) result = caseAppInfo(staticModelAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(staticModelAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATIC_MODEL_BASE: {
-				StaticModelBase staticModelBase = (StaticModelBase)theEObject;
+				StaticModelBase staticModelBase = (StaticModelBase) theEObject;
 				T result = caseStaticModelBase(staticModelBase);
-				if (result == null) result = caseSubSystem(staticModelBase);
-				if (result == null) result = casePackage(staticModelBase);
-				if (result == null) result = casePackageBase(staticModelBase);
-				if (result == null) result = caseModelElement(staticModelBase);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseSubSystem(staticModelBase);
+				}
+				if (result == null) {
+					result = casePackage(staticModelBase);
+				}
+				if (result == null) {
+					result = casePackageBase(staticModelBase);
+				}
+				if (result == null) {
+					result = caseModelElement(staticModelBase);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER: {
-				StaticModelClassTemplateParameter staticModelClassTemplateParameter = (StaticModelClassTemplateParameter)theEObject;
+				StaticModelClassTemplateParameter staticModelClassTemplateParameter = (StaticModelClassTemplateParameter) theEObject;
 				T result = caseStaticModelClassTemplateParameter(staticModelClassTemplateParameter);
-				if (result == null) result = caseClassifierBase(staticModelClassTemplateParameter);
-				if (result == null) result = caseClassifier(staticModelClassTemplateParameter);
-				if (result == null) result = caseModelElement(staticModelClassTemplateParameter);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassifierBase(staticModelClassTemplateParameter);
+				}
+				if (result == null) {
+					result = caseClassifier(staticModelClassTemplateParameter);
+				}
+				if (result == null) {
+					result = caseModelElement(staticModelClassTemplateParameter);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATIC_MODEL_DERIVATION: {
-				StaticModelDerivation staticModelDerivation = (StaticModelDerivation)theEObject;
+				StaticModelDerivation staticModelDerivation = (StaticModelDerivation) theEObject;
 				T result = caseStaticModelDerivation(staticModelDerivation);
-				if (result == null) result = caseDerivation(staticModelDerivation);
-				if (result == null) result = caseDependency(staticModelDerivation);
-				if (result == null) result = caseRelationship(staticModelDerivation);
-				if (result == null) result = caseModelElement(staticModelDerivation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDerivation(staticModelDerivation);
+				}
+				if (result == null) {
+					result = caseDependency(staticModelDerivation);
+				}
+				if (result == null) {
+					result = caseRelationship(staticModelDerivation);
+				}
+				if (result == null) {
+					result = caseModelElement(staticModelDerivation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATIC_MODEL_DERIVATION_SOURCE: {
-				StaticModelDerivationSource staticModelDerivationSource = (StaticModelDerivationSource)theEObject;
+				StaticModelDerivationSource staticModelDerivationSource = (StaticModelDerivationSource) theEObject;
 				T result = caseStaticModelDerivationSource(staticModelDerivationSource);
-				if (result == null) result = caseDerivation(staticModelDerivationSource);
-				if (result == null) result = caseDependency(staticModelDerivationSource);
-				if (result == null) result = caseRelationship(staticModelDerivationSource);
-				if (result == null) result = caseModelElement(staticModelDerivationSource);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDerivation(staticModelDerivationSource);
+				}
+				if (result == null) {
+					result = caseDependency(staticModelDerivationSource);
+				}
+				if (result == null) {
+					result = caseRelationship(staticModelDerivationSource);
+				}
+				if (result == null) {
+					result = caseModelElement(staticModelDerivationSource);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATIC_MODEL_DOCUMENTATION: {
-				StaticModelDocumentation staticModelDocumentation = (StaticModelDocumentation)theEObject;
+				StaticModelDocumentation staticModelDocumentation = (StaticModelDocumentation) theEObject;
 				T result = caseStaticModelDocumentation(staticModelDocumentation);
-				if (result == null) result = caseDocumentation(staticModelDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(staticModelDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATIC_MODEL_INTERFACE_ANNOTATIONS: {
-				StaticModelInterfaceAnnotations staticModelInterfaceAnnotations = (StaticModelInterfaceAnnotations)theEObject;
+				StaticModelInterfaceAnnotations staticModelInterfaceAnnotations = (StaticModelInterfaceAnnotations) theEObject;
 				T result = caseStaticModelInterfaceAnnotations(staticModelInterfaceAnnotations);
-				if (result == null) result = caseAnnotations(staticModelInterfaceAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(staticModelInterfaceAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATIC_MODEL_INTERFACE_APP_INFO: {
-				StaticModelInterfaceAppInfo staticModelInterfaceAppInfo = (StaticModelInterfaceAppInfo)theEObject;
+				StaticModelInterfaceAppInfo staticModelInterfaceAppInfo = (StaticModelInterfaceAppInfo) theEObject;
 				T result = caseStaticModelInterfaceAppInfo(staticModelInterfaceAppInfo);
-				if (result == null) result = caseAppInfo(staticModelInterfaceAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(staticModelInterfaceAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATIC_MODEL_INTERFACE_DOCUMENTATION: {
-				StaticModelInterfaceDocumentation staticModelInterfaceDocumentation = (StaticModelInterfaceDocumentation)theEObject;
+				StaticModelInterfaceDocumentation staticModelInterfaceDocumentation = (StaticModelInterfaceDocumentation) theEObject;
 				T result = caseStaticModelInterfaceDocumentation(staticModelInterfaceDocumentation);
-				if (result == null) result = caseDocumentation(staticModelInterfaceDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(staticModelInterfaceDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE: {
-				StaticModelInterfacePackage staticModelInterfacePackage = (StaticModelInterfacePackage)theEObject;
+				StaticModelInterfacePackage staticModelInterfacePackage = (StaticModelInterfacePackage) theEObject;
 				T result = caseStaticModelInterfacePackage(staticModelInterfacePackage);
-				if (result == null) result = casePackage(staticModelInterfacePackage);
-				if (result == null) result = casePackageBase(staticModelInterfacePackage);
-				if (result == null) result = caseModelElement(staticModelInterfacePackage);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackage(staticModelInterfacePackage);
+				}
+				if (result == null) {
+					result = casePackageBase(staticModelInterfacePackage);
+				}
+				if (result == null) {
+					result = caseModelElement(staticModelInterfacePackage);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATIC_MODEL_REF_BASE: {
-				StaticModelRefBase staticModelRefBase = (StaticModelRefBase)theEObject;
+				StaticModelRefBase staticModelRefBase = (StaticModelRefBase) theEObject;
 				T result = caseStaticModelRefBase(staticModelRefBase);
-				if (result == null) result = caseClassifierBase(staticModelRefBase);
-				if (result == null) result = caseClassifier(staticModelRefBase);
-				if (result == null) result = caseModelElement(staticModelRefBase);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassifierBase(staticModelRefBase);
+				}
+				if (result == null) {
+					result = caseClassifier(staticModelRefBase);
+				}
+				if (result == null) {
+					result = caseModelElement(staticModelRefBase);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATIC_MODELS_TYPE: {
-				StaticModelsType staticModelsType = (StaticModelsType)theEObject;
+				StaticModelsType staticModelsType = (StaticModelsType) theEObject;
 				T result = caseStaticModelsType(staticModelsType);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION: {
-				StaticPackageDiagramGraphicInformation staticPackageDiagramGraphicInformation = (StaticPackageDiagramGraphicInformation)theEObject;
+				StaticPackageDiagramGraphicInformation staticPackageDiagramGraphicInformation = (StaticPackageDiagramGraphicInformation) theEObject;
 				T result = caseStaticPackageDiagramGraphicInformation(staticPackageDiagramGraphicInformation);
-				if (result == null) result = caseDiagramGraphicInformation(staticPackageDiagramGraphicInformation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDiagramGraphicInformation(staticPackageDiagramGraphicInformation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STORYBOARD: {
-				Storyboard storyboard = (Storyboard)theEObject;
+				Storyboard storyboard = (Storyboard) theEObject;
 				T result = caseStoryboard(storyboard);
-				if (result == null) result = casePackageArtifact(storyboard);
-				if (result == null) result = casePackageBase(storyboard);
-				if (result == null) result = caseModelElement(storyboard);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageArtifact(storyboard);
+				}
+				if (result == null) {
+					result = casePackageBase(storyboard);
+				}
+				if (result == null) {
+					result = caseModelElement(storyboard);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STORYBOARD_ANNOTATIONS: {
-				StoryboardAnnotations storyboardAnnotations = (StoryboardAnnotations)theEObject;
+				StoryboardAnnotations storyboardAnnotations = (StoryboardAnnotations) theEObject;
 				T result = caseStoryboardAnnotations(storyboardAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STORYBOARD_APP_INFO: {
-				StoryboardAppInfo storyboardAppInfo = (StoryboardAppInfo)theEObject;
+				StoryboardAppInfo storyboardAppInfo = (StoryboardAppInfo) theEObject;
 				T result = caseStoryboardAppInfo(storyboardAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STORYBOARD_ARTIFACT_REFERENCES: {
-				StoryboardArtifactReferences storyboardArtifactReferences = (StoryboardArtifactReferences)theEObject;
+				StoryboardArtifactReferences storyboardArtifactReferences = (StoryboardArtifactReferences) theEObject;
 				T result = caseStoryboardArtifactReferences(storyboardArtifactReferences);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STORYBOARD_DOCUMENTATION: {
-				StoryboardDocumentation storyboardDocumentation = (StoryboardDocumentation)theEObject;
+				StoryboardDocumentation storyboardDocumentation = (StoryboardDocumentation) theEObject;
 				T result = caseStoryboardDocumentation(storyboardDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STORYBOARD_NARRATIVE: {
-				StoryboardNarrative storyboardNarrative = (StoryboardNarrative)theEObject;
+				StoryboardNarrative storyboardNarrative = (StoryboardNarrative) theEObject;
 				T result = caseStoryboardNarrative(storyboardNarrative);
-				if (result == null) result = casePackageBase(storyboardNarrative);
-				if (result == null) result = caseModelElement(storyboardNarrative);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageBase(storyboardNarrative);
+				}
+				if (result == null) {
+					result = caseModelElement(storyboardNarrative);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STRUCTURAL_FEATURE: {
-				StructuralFeature structuralFeature = (StructuralFeature)theEObject;
+				StructuralFeature structuralFeature = (StructuralFeature) theEObject;
 				T result = caseStructuralFeature(structuralFeature);
-				if (result == null) result = caseFeature(structuralFeature);
-				if (result == null) result = caseModelElement(structuralFeature);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseFeature(structuralFeature);
+				}
+				if (result == null) {
+					result = caseModelElement(structuralFeature);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STRUCTURED_DOCUMENT: {
-				StructuredDocument structuredDocument = (StructuredDocument)theEObject;
+				StructuredDocument structuredDocument = (StructuredDocument) theEObject;
 				T result = caseStructuredDocument(structuredDocument);
-				if (result == null) result = casePackageArtifact(structuredDocument);
-				if (result == null) result = casePackageBase(structuredDocument);
-				if (result == null) result = caseModelElement(structuredDocument);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageArtifact(structuredDocument);
+				}
+				if (result == null) {
+					result = casePackageBase(structuredDocument);
+				}
+				if (result == null) {
+					result = caseModelElement(structuredDocument);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STRUCTURED_DOCUMENT_ANNOTATIONS: {
-				StructuredDocumentAnnotations structuredDocumentAnnotations = (StructuredDocumentAnnotations)theEObject;
+				StructuredDocumentAnnotations structuredDocumentAnnotations = (StructuredDocumentAnnotations) theEObject;
 				T result = caseStructuredDocumentAnnotations(structuredDocumentAnnotations);
-				if (result == null) result = caseAnnotations(structuredDocumentAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(structuredDocumentAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STRUCTURED_DOCUMENT_APP_INFO: {
-				StructuredDocumentAppInfo structuredDocumentAppInfo = (StructuredDocumentAppInfo)theEObject;
+				StructuredDocumentAppInfo structuredDocumentAppInfo = (StructuredDocumentAppInfo) theEObject;
 				T result = caseStructuredDocumentAppInfo(structuredDocumentAppInfo);
-				if (result == null) result = caseAppInfo(structuredDocumentAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(structuredDocumentAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STRUCTURED_DOCUMENT_DOCUMENTATION: {
-				StructuredDocumentDocumentation structuredDocumentDocumentation = (StructuredDocumentDocumentation)theEObject;
+				StructuredDocumentDocumentation structuredDocumentDocumentation = (StructuredDocumentDocumentation) theEObject;
 				T result = caseStructuredDocumentDocumentation(structuredDocumentDocumentation);
-				if (result == null) result = caseDocumentation(structuredDocumentDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(structuredDocumentDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.STUB_DEFINITION: {
-				StubDefinition stubDefinition = (StubDefinition)theEObject;
+				StubDefinition stubDefinition = (StubDefinition) theEObject;
 				T result = caseStubDefinition(stubDefinition);
-				if (result == null) result = caseClassifierBase(stubDefinition);
-				if (result == null) result = caseClassifier(stubDefinition);
-				if (result == null) result = caseModelElement(stubDefinition);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassifierBase(stubDefinition);
+				}
+				if (result == null) {
+					result = caseClassifier(stubDefinition);
+				}
+				if (result == null) {
+					result = caseModelElement(stubDefinition);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SUBJECT_AREA_ANNOTATIONS: {
-				SubjectAreaAnnotations subjectAreaAnnotations = (SubjectAreaAnnotations)theEObject;
+				SubjectAreaAnnotations subjectAreaAnnotations = (SubjectAreaAnnotations) theEObject;
 				T result = caseSubjectAreaAnnotations(subjectAreaAnnotations);
-				if (result == null) result = caseAnnotations(subjectAreaAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(subjectAreaAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SUBJECT_AREA_APP_INFO: {
-				SubjectAreaAppInfo subjectAreaAppInfo = (SubjectAreaAppInfo)theEObject;
+				SubjectAreaAppInfo subjectAreaAppInfo = (SubjectAreaAppInfo) theEObject;
 				T result = caseSubjectAreaAppInfo(subjectAreaAppInfo);
-				if (result == null) result = caseAppInfo(subjectAreaAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(subjectAreaAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SUBJECT_AREA_DOCUMENTATION: {
-				SubjectAreaDocumentation subjectAreaDocumentation = (SubjectAreaDocumentation)theEObject;
+				SubjectAreaDocumentation subjectAreaDocumentation = (SubjectAreaDocumentation) theEObject;
 				T result = caseSubjectAreaDocumentation(subjectAreaDocumentation);
-				if (result == null) result = caseDocumentation(subjectAreaDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(subjectAreaDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SUBJECT_AREA_PACKAGE: {
-				SubjectAreaPackage subjectAreaPackage = (SubjectAreaPackage)theEObject;
+				SubjectAreaPackage subjectAreaPackage = (SubjectAreaPackage) theEObject;
 				T result = caseSubjectAreaPackage(subjectAreaPackage);
-				if (result == null) result = casePackageBase(subjectAreaPackage);
-				if (result == null) result = caseModelElement(subjectAreaPackage);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageBase(subjectAreaPackage);
+				}
+				if (result == null) {
+					result = caseModelElement(subjectAreaPackage);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SUB_SYSTEM: {
-				SubSystem subSystem = (SubSystem)theEObject;
+				SubSystem subSystem = (SubSystem) theEObject;
 				T result = caseSubSystem(subSystem);
-				if (result == null) result = casePackage(subSystem);
-				if (result == null) result = casePackageBase(subSystem);
-				if (result == null) result = caseModelElement(subSystem);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackage(subSystem);
+				}
+				if (result == null) {
+					result = casePackageBase(subSystem);
+				}
+				if (result == null) {
+					result = caseModelElement(subSystem);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SUPPORTED_CONCEPT_PROPERTY: {
-				SupportedConceptProperty supportedConceptProperty = (SupportedConceptProperty)theEObject;
+				SupportedConceptProperty supportedConceptProperty = (SupportedConceptProperty) theEObject;
 				T result = caseSupportedConceptProperty(supportedConceptProperty);
-				if (result == null) result = caseSupportedProperty(supportedConceptProperty);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseSupportedProperty(supportedConceptProperty);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP: {
-				SupportedConceptRelationship supportedConceptRelationship = (SupportedConceptRelationship)theEObject;
+				SupportedConceptRelationship supportedConceptRelationship = (SupportedConceptRelationship) theEObject;
 				T result = caseSupportedConceptRelationship(supportedConceptRelationship);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.SUPPORTED_PROPERTY: {
-				SupportedProperty supportedProperty = (SupportedProperty)theEObject;
+				SupportedProperty supportedProperty = (SupportedProperty) theEObject;
 				T result = caseSupportedProperty(supportedProperty);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.TERM_DEFINITION: {
-				TermDefinition termDefinition = (TermDefinition)theEObject;
+				TermDefinition termDefinition = (TermDefinition) theEObject;
 				T result = caseTermDefinition(termDefinition);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.TERMINOLOGY_SERVER: {
-				TerminologyServer terminologyServer = (TerminologyServer)theEObject;
+				TerminologyServer terminologyServer = (TerminologyServer) theEObject;
 				T result = caseTerminologyServer(terminologyServer);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.TEST: {
-				Test test = (Test)theEObject;
+				Test test = (Test) theEObject;
 				T result = caseTest(test);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.TEST_BASE: {
-				TestBase testBase = (TestBase)theEObject;
+				TestBase testBase = (TestBase) theEObject;
 				T result = caseTestBase(testBase);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.TEST_SCENARIO: {
-				TestScenario testScenario = (TestScenario)theEObject;
+				TestScenario testScenario = (TestScenario) theEObject;
 				T result = caseTestScenario(testScenario);
-				if (result == null) result = casePackageArtifact(testScenario);
-				if (result == null) result = casePackageBase(testScenario);
-				if (result == null) result = caseModelElement(testScenario);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageArtifact(testScenario);
+				}
+				if (result == null) {
+					result = casePackageBase(testScenario);
+				}
+				if (result == null) {
+					result = caseModelElement(testScenario);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.TEST_SYSTEM: {
-				TestSystem testSystem = (TestSystem)theEObject;
+				TestSystem testSystem = (TestSystem) theEObject;
 				T result = caseTestSystem(testSystem);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.TRANSITION: {
-				Transition transition = (Transition)theEObject;
+				Transition transition = (Transition) theEObject;
 				T result = caseTransition(transition);
-				if (result == null) result = caseModelElement(transition);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseModelElement(transition);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.TRANSITION_ANNOTATIONS: {
-				TransitionAnnotations transitionAnnotations = (TransitionAnnotations)theEObject;
+				TransitionAnnotations transitionAnnotations = (TransitionAnnotations) theEObject;
 				T result = caseTransitionAnnotations(transitionAnnotations);
-				if (result == null) result = caseAnnotations(transitionAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(transitionAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.TRANSITION_APP_INFO: {
-				TransitionAppInfo transitionAppInfo = (TransitionAppInfo)theEObject;
+				TransitionAppInfo transitionAppInfo = (TransitionAppInfo) theEObject;
 				T result = caseTransitionAppInfo(transitionAppInfo);
-				if (result == null) result = caseAppInfo(transitionAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(transitionAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.TRANSITION_DERIVATION: {
-				TransitionDerivation transitionDerivation = (TransitionDerivation)theEObject;
+				TransitionDerivation transitionDerivation = (TransitionDerivation) theEObject;
 				T result = caseTransitionDerivation(transitionDerivation);
-				if (result == null) result = caseClassDerivation(transitionDerivation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassDerivation(transitionDerivation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.TRANSITION_DOCUMENTATION: {
-				TransitionDocumentation transitionDocumentation = (TransitionDocumentation)theEObject;
+				TransitionDocumentation transitionDocumentation = (TransitionDocumentation) theEObject;
 				T result = caseTransitionDocumentation(transitionDocumentation);
-				if (result == null) result = caseDocumentation(transitionDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(transitionDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.TRANSITION_REF: {
-				TransitionRef transitionRef = (TransitionRef)theEObject;
+				TransitionRef transitionRef = (TransitionRef) theEObject;
 				T result = caseTransitionRef(transitionRef);
-				if (result == null) result = caseClassRef(transitionRef);
-				if (result == null) result = casePackageRef(transitionRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseClassRef(transitionRef);
+				}
+				if (result == null) {
+					result = casePackageRef(transitionRef);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.TRIGGER_EVENT: {
-				TriggerEvent triggerEvent = (TriggerEvent)theEObject;
+				TriggerEvent triggerEvent = (TriggerEvent) theEObject;
 				T result = caseTriggerEvent(triggerEvent);
-				if (result == null) result = casePackageArtifact(triggerEvent);
-				if (result == null) result = casePackageBase(triggerEvent);
-				if (result == null) result = caseModelElement(triggerEvent);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackageArtifact(triggerEvent);
+				}
+				if (result == null) {
+					result = casePackageBase(triggerEvent);
+				}
+				if (result == null) {
+					result = caseModelElement(triggerEvent);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.TRIGGER_EVENT_ANNOTATIONS: {
-				TriggerEventAnnotations triggerEventAnnotations = (TriggerEventAnnotations)theEObject;
+				TriggerEventAnnotations triggerEventAnnotations = (TriggerEventAnnotations) theEObject;
 				T result = caseTriggerEventAnnotations(triggerEventAnnotations);
-				if (result == null) result = caseAnnotations(triggerEventAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(triggerEventAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.TRIGGER_EVENT_APP_INFO: {
-				TriggerEventAppInfo triggerEventAppInfo = (TriggerEventAppInfo)theEObject;
+				TriggerEventAppInfo triggerEventAppInfo = (TriggerEventAppInfo) theEObject;
 				T result = caseTriggerEventAppInfo(triggerEventAppInfo);
-				if (result == null) result = caseAppInfo(triggerEventAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(triggerEventAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.TRIGGER_EVENT_DOCUMENTATION: {
-				TriggerEventDocumentation triggerEventDocumentation = (TriggerEventDocumentation)theEObject;
+				TriggerEventDocumentation triggerEventDocumentation = (TriggerEventDocumentation) theEObject;
 				T result = caseTriggerEventDocumentation(triggerEventDocumentation);
-				if (result == null) result = caseDocumentation(triggerEventDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(triggerEventDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VALUE_SET: {
-				ValueSet valueSet = (ValueSet)theEObject;
+				ValueSet valueSet = (ValueSet) theEObject;
 				T result = caseValueSet(valueSet);
-				if (result == null) result = caseModelElement(valueSet);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseModelElement(valueSet);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VALUE_SET_ANNOTATIONS: {
-				ValueSetAnnotations valueSetAnnotations = (ValueSetAnnotations)theEObject;
+				ValueSetAnnotations valueSetAnnotations = (ValueSetAnnotations) theEObject;
 				T result = caseValueSetAnnotations(valueSetAnnotations);
-				if (result == null) result = caseAnnotations(valueSetAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(valueSetAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VALUE_SET_APP_INFO: {
-				ValueSetAppInfo valueSetAppInfo = (ValueSetAppInfo)theEObject;
+				ValueSetAppInfo valueSetAppInfo = (ValueSetAppInfo) theEObject;
 				T result = caseValueSetAppInfo(valueSetAppInfo);
-				if (result == null) result = caseAppInfo(valueSetAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(valueSetAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VALUE_SET_DOCUMENTATION: {
-				ValueSetDocumentation valueSetDocumentation = (ValueSetDocumentation)theEObject;
+				ValueSetDocumentation valueSetDocumentation = (ValueSetDocumentation) theEObject;
 				T result = caseValueSetDocumentation(valueSetDocumentation);
-				if (result == null) result = caseDocumentation(valueSetDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(valueSetDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VALUE_SET_SUPPLEMENT: {
-				ValueSetSupplement valueSetSupplement = (ValueSetSupplement)theEObject;
+				ValueSetSupplement valueSetSupplement = (ValueSetSupplement) theEObject;
 				T result = caseValueSetSupplement(valueSetSupplement);
-				if (result == null) result = caseVocabularyValueSetRef(valueSetSupplement);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseVocabularyValueSetRef(valueSetSupplement);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VALUE_SET_VERSION: {
-				ValueSetVersion valueSetVersion = (ValueSetVersion)theEObject;
+				ValueSetVersion valueSetVersion = (ValueSetVersion) theEObject;
 				T result = caseValueSetVersion(valueSetVersion);
-				if (result == null) result = caseModelElement(valueSetVersion);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseModelElement(valueSetVersion);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VARIOUS_MIXED_CONTENT: {
-				VariousMixedContent variousMixedContent = (VariousMixedContent)theEObject;
+				VariousMixedContent variousMixedContent = (VariousMixedContent) theEObject;
 				T result = caseVariousMixedContent(variousMixedContent);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VERTEX: {
-				Vertex vertex = (Vertex)theEObject;
+				Vertex vertex = (Vertex) theEObject;
 				T result = caseVertex(vertex);
-				if (result == null) result = caseModelElement(vertex);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseModelElement(vertex);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VOCABULARY_CODE_REF: {
-				VocabularyCodeRef vocabularyCodeRef = (VocabularyCodeRef)theEObject;
+				VocabularyCodeRef vocabularyCodeRef = (VocabularyCodeRef) theEObject;
 				T result = caseVocabularyCodeRef(vocabularyCodeRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VOCABULARY_CODE_REFS: {
-				VocabularyCodeRefs vocabularyCodeRefs = (VocabularyCodeRefs)theEObject;
+				VocabularyCodeRefs vocabularyCodeRefs = (VocabularyCodeRefs) theEObject;
 				T result = caseVocabularyCodeRefs(vocabularyCodeRefs);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VOCABULARY_LIMITATION: {
-				VocabularyLimitation vocabularyLimitation = (VocabularyLimitation)theEObject;
+				VocabularyLimitation vocabularyLimitation = (VocabularyLimitation) theEObject;
 				T result = caseVocabularyLimitation(vocabularyLimitation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VOCABULARY_MODEL: {
-				VocabularyModel vocabularyModel = (VocabularyModel)theEObject;
+				VocabularyModel vocabularyModel = (VocabularyModel) theEObject;
 				T result = caseVocabularyModel(vocabularyModel);
-				if (result == null) result = casePackage(vocabularyModel);
-				if (result == null) result = casePackageBase(vocabularyModel);
-				if (result == null) result = caseModelElement(vocabularyModel);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = casePackage(vocabularyModel);
+				}
+				if (result == null) {
+					result = casePackageBase(vocabularyModel);
+				}
+				if (result == null) {
+					result = caseModelElement(vocabularyModel);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VOCABULARY_MODEL_ANNOTATIONS: {
-				VocabularyModelAnnotations vocabularyModelAnnotations = (VocabularyModelAnnotations)theEObject;
+				VocabularyModelAnnotations vocabularyModelAnnotations = (VocabularyModelAnnotations) theEObject;
 				T result = caseVocabularyModelAnnotations(vocabularyModelAnnotations);
-				if (result == null) result = caseAnnotations(vocabularyModelAnnotations);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAnnotations(vocabularyModelAnnotations);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VOCABULARY_MODEL_APP_INFO: {
-				VocabularyModelAppInfo vocabularyModelAppInfo = (VocabularyModelAppInfo)theEObject;
+				VocabularyModelAppInfo vocabularyModelAppInfo = (VocabularyModelAppInfo) theEObject;
 				T result = caseVocabularyModelAppInfo(vocabularyModelAppInfo);
-				if (result == null) result = caseAppInfo(vocabularyModelAppInfo);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseAppInfo(vocabularyModelAppInfo);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VOCABULARY_MODEL_DOCUMENTATION: {
-				VocabularyModelDocumentation vocabularyModelDocumentation = (VocabularyModelDocumentation)theEObject;
+				VocabularyModelDocumentation vocabularyModelDocumentation = (VocabularyModelDocumentation) theEObject;
 				T result = caseVocabularyModelDocumentation(vocabularyModelDocumentation);
-				if (result == null) result = caseDocumentation(vocabularyModelDocumentation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentation(vocabularyModelDocumentation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VOCABULARY_SPECIFICATION: {
-				VocabularySpecification vocabularySpecification = (VocabularySpecification)theEObject;
+				VocabularySpecification vocabularySpecification = (VocabularySpecification) theEObject;
 				T result = caseVocabularySpecification(vocabularySpecification);
-				if (result == null) result = caseDependency(vocabularySpecification);
-				if (result == null) result = caseRelationship(vocabularySpecification);
-				if (result == null) result = caseModelElement(vocabularySpecification);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDependency(vocabularySpecification);
+				}
+				if (result == null) {
+					result = caseRelationship(vocabularySpecification);
+				}
+				if (result == null) {
+					result = caseModelElement(vocabularySpecification);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VOCABULARY_VALUE_SET_BINDING: {
-				VocabularyValueSetBinding vocabularyValueSetBinding = (VocabularyValueSetBinding)theEObject;
+				VocabularyValueSetBinding vocabularyValueSetBinding = (VocabularyValueSetBinding) theEObject;
 				T result = caseVocabularyValueSetBinding(vocabularyValueSetBinding);
-				if (result == null) result = caseVocabularyValueSetRef(vocabularyValueSetBinding);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseVocabularyValueSetRef(vocabularyValueSetBinding);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.VOCABULARY_VALUE_SET_REF: {
-				VocabularyValueSetRef vocabularyValueSetRef = (VocabularyValueSetRef)theEObject;
+				VocabularyValueSetRef vocabularyValueSetRef = (VocabularyValueSetRef) theEObject;
 				T result = caseVocabularyValueSetRef(vocabularyValueSetRef);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case Mif2Package.XMI_CONTENT: {
-				XMIContent xmiContent = (XMIContent)theEObject;
+				XMIContent xmiContent = (XMIContent) theEObject;
 				T result = caseXMIContent(xmiContent);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
-			default: return defaultCase(theEObject);
+			default:
+				return defaultCase(theEObject);
 		}
 	}
 
@@ -9145,4 +11071,4 @@ public class Mif2Switch<T> {
 		return null;
 	}
 
-} //Mif2Switch
+} // Mif2Switch

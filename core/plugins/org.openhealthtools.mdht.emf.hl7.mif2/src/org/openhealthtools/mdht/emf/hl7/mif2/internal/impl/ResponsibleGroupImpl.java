@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -128,8 +132,10 @@ public class ResponsibleGroupImpl extends EObjectImpl implements ResponsibleGrou
 	public void setGroupId(String newGroupId) {
 		String oldGroupId = groupId;
 		groupId = newGroupId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.RESPONSIBLE_GROUP__GROUP_ID, oldGroupId, groupId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RESPONSIBLE_GROUP__GROUP_ID, oldGroupId, groupId));
+		}
 	}
 
 	/**
@@ -149,8 +155,10 @@ public class ResponsibleGroupImpl extends EObjectImpl implements ResponsibleGrou
 	public void setGroupName(String newGroupName) {
 		String oldGroupName = groupName;
 		groupName = newGroupName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.RESPONSIBLE_GROUP__GROUP_NAME, oldGroupName, groupName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RESPONSIBLE_GROUP__GROUP_NAME, oldGroupName, groupName));
+		}
 	}
 
 	/**
@@ -170,8 +178,11 @@ public class ResponsibleGroupImpl extends EObjectImpl implements ResponsibleGrou
 	public void setOrganizationName(String newOrganizationName) {
 		String oldOrganizationName = organizationName;
 		organizationName = newOrganizationName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.RESPONSIBLE_GROUP__ORGANIZATION_NAME, oldOrganizationName, organizationName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RESPONSIBLE_GROUP__ORGANIZATION_NAME, oldOrganizationName,
+				organizationName));
+		}
 	}
 
 	/**
@@ -201,13 +212,13 @@ public class ResponsibleGroupImpl extends EObjectImpl implements ResponsibleGrou
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.RESPONSIBLE_GROUP__GROUP_ID:
-				setGroupId((String)newValue);
+				setGroupId((String) newValue);
 				return;
 			case Mif2Package.RESPONSIBLE_GROUP__GROUP_NAME:
-				setGroupName((String)newValue);
+				setGroupName((String) newValue);
 				return;
 			case Mif2Package.RESPONSIBLE_GROUP__ORGANIZATION_NAME:
-				setOrganizationName((String)newValue);
+				setOrganizationName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,11 +254,17 @@ public class ResponsibleGroupImpl extends EObjectImpl implements ResponsibleGrou
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.RESPONSIBLE_GROUP__GROUP_ID:
-				return GROUP_ID_EDEFAULT == null ? groupId != null : !GROUP_ID_EDEFAULT.equals(groupId);
+				return GROUP_ID_EDEFAULT == null
+						? groupId != null
+						: !GROUP_ID_EDEFAULT.equals(groupId);
 			case Mif2Package.RESPONSIBLE_GROUP__GROUP_NAME:
-				return GROUP_NAME_EDEFAULT == null ? groupName != null : !GROUP_NAME_EDEFAULT.equals(groupName);
+				return GROUP_NAME_EDEFAULT == null
+						? groupName != null
+						: !GROUP_NAME_EDEFAULT.equals(groupName);
 			case Mif2Package.RESPONSIBLE_GROUP__ORGANIZATION_NAME:
-				return ORGANIZATION_NAME_EDEFAULT == null ? organizationName != null : !ORGANIZATION_NAME_EDEFAULT.equals(organizationName);
+				return ORGANIZATION_NAME_EDEFAULT == null
+						? organizationName != null
+						: !ORGANIZATION_NAME_EDEFAULT.equals(organizationName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -259,7 +276,9 @@ public class ResponsibleGroupImpl extends EObjectImpl implements ResponsibleGrou
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (groupId: ");
@@ -272,4 +291,4 @@ public class ResponsibleGroupImpl extends EObjectImpl implements ResponsibleGrou
 		return result.toString();
 	}
 
-} //ResponsibleGroupImpl
+} // ResponsibleGroupImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -103,12 +107,8 @@ public enum DefaultDeterminerKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final DefaultDeterminerKind[] VALUES_ARRAY =
-		new DefaultDeterminerKind[] {
-			ITS,
-			REFERENCING_ATTRIBUTE,
-			REALM,
-		};
+	private static final DefaultDeterminerKind[] VALUES_ARRAY = new DefaultDeterminerKind[] {
+			ITS, REFERENCING_ATTRIBUTE, REALM, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Default Determiner Kind</b></em>' enumerators.
@@ -158,9 +158,12 @@ public enum DefaultDeterminerKind implements Enumerator {
 	 */
 	public static DefaultDeterminerKind get(int value) {
 		switch (value) {
-			case ITS_VALUE: return ITS;
-			case REFERENCING_ATTRIBUTE_VALUE: return REFERENCING_ATTRIBUTE;
-			case REALM_VALUE: return REALM;
+			case ITS_VALUE:
+				return ITS;
+			case REFERENCING_ATTRIBUTE_VALUE:
+				return REFERENCING_ATTRIBUTE;
+			case REALM_VALUE:
+				return REALM;
 		}
 		return null;
 	}
@@ -204,7 +207,7 @@ public enum DefaultDeterminerKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -213,7 +216,7 @@ public enum DefaultDeterminerKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -222,7 +225,7 @@ public enum DefaultDeterminerKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -235,5 +238,5 @@ public enum DefaultDeterminerKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //DefaultDeterminerKind
+
+} // DefaultDeterminerKind

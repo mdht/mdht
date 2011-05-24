@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import org.openhealthtools.mdht.emf.hl7.mif2.CodeTranslationAnnotations;
@@ -21,9 +25,14 @@ public interface CodeTranslationValidator {
 	boolean validate();
 
 	boolean validateAnnotations(CodeTranslationAnnotations value);
+
 	boolean validateSourceConcept(ConceptRef value);
+
 	boolean validateTargetConcept(ConceptRef value);
+
 	boolean validateQuality(MapRelationshipKind value);
+
 	boolean validateSortKey(String value);
+
 	boolean validateTranslatableDirection(TranslatableDirectionKind value);
 }

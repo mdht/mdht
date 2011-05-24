@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -104,12 +108,7 @@ public enum VisibilityKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final VisibilityKind[] VALUES_ARRAY =
-		new VisibilityKind[] {
-			PRIVATE,
-			PROTECTED,
-			PUBLIC,
-		};
+	private static final VisibilityKind[] VALUES_ARRAY = new VisibilityKind[] { PRIVATE, PROTECTED, PUBLIC, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Visibility Kind</b></em>' enumerators.
@@ -159,9 +158,12 @@ public enum VisibilityKind implements Enumerator {
 	 */
 	public static VisibilityKind get(int value) {
 		switch (value) {
-			case PRIVATE_VALUE: return PRIVATE;
-			case PROTECTED_VALUE: return PROTECTED;
-			case PUBLIC_VALUE: return PUBLIC;
+			case PRIVATE_VALUE:
+				return PRIVATE;
+			case PROTECTED_VALUE:
+				return PROTECTED;
+			case PUBLIC_VALUE:
+				return PUBLIC;
 		}
 		return null;
 	}
@@ -205,7 +207,7 @@ public enum VisibilityKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -214,7 +216,7 @@ public enum VisibilityKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -223,7 +225,7 @@ public enum VisibilityKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -236,5 +238,5 @@ public enum VisibilityKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //VisibilityKind
+
+} // VisibilityKind

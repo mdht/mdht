@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.internal.impl;
 
 import java.util.Collection;
@@ -204,7 +208,7 @@ public class ObjectImpl extends EObjectImpl implements org.openhealthtools.mdht.
 	 * @generated
 	 */
 	public FeatureMap getGroup() {
-		return (FeatureMap)getMixed().<FeatureMap.Entry>list(XhtmlPackage.Literals.OBJECT__GROUP);
+		return (FeatureMap) getMixed().<FeatureMap.Entry> list(XhtmlPackage.Literals.OBJECT__GROUP);
 	}
 
 	/**
@@ -521,8 +525,9 @@ public class ObjectImpl extends EObjectImpl implements org.openhealthtools.mdht.
 	public void setHl7Id(String newHl7Id) {
 		String oldHl7Id = hl7Id;
 		hl7Id = newHl7Id;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.OBJECT__HL7_ID, oldHl7Id, hl7Id));
+		}
 	}
 
 	/**
@@ -541,11 +546,15 @@ public class ObjectImpl extends EObjectImpl implements org.openhealthtools.mdht.
 	 */
 	public void setName(ObjectName newName) {
 		ObjectName oldName = name;
-		name = newName == null ? NAME_EDEFAULT : newName;
+		name = newName == null
+				? NAME_EDEFAULT
+				: newName;
 		boolean oldNameESet = nameESet;
 		nameESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.OBJECT__NAME, oldName, name, !oldNameESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.OBJECT__NAME, oldName, name, !oldNameESet));
+		}
 	}
 
 	/**
@@ -558,8 +567,10 @@ public class ObjectImpl extends EObjectImpl implements org.openhealthtools.mdht.
 		boolean oldNameESet = nameESet;
 		name = NAME_EDEFAULT;
 		nameESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.OBJECT__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.OBJECT__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+		}
 	}
 
 	/**
@@ -580,75 +591,75 @@ public class ObjectImpl extends EObjectImpl implements org.openhealthtools.mdht.
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case XhtmlPackage.OBJECT__MIXED:
-				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getMixed()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__GROUP:
-				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getGroup()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__PARAM:
-				return ((InternalEList<?>)getParam()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getParam()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__P:
-				return ((InternalEList<?>)getP()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getP()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__DIV:
-				return ((InternalEList<?>)getDiv()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDiv()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__UL:
-				return ((InternalEList<?>)getUl()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getUl()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__OL:
-				return ((InternalEList<?>)getOl()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getOl()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__DL:
-				return ((InternalEList<?>)getDl()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDl()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__PRE:
-				return ((InternalEList<?>)getPre()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPre()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__HR:
-				return ((InternalEList<?>)getHr()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getHr()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__BLOCKQUOTE:
-				return ((InternalEList<?>)getBlockquote()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBlockquote()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__TABLE:
-				return ((InternalEList<?>)getTable()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTable()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__A:
-				return ((InternalEList<?>)getA()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getA()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__BR:
-				return ((InternalEList<?>)getBr()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBr()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__SPAN:
-				return ((InternalEList<?>)getSpan()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSpan()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__OBJECT:
-				return ((InternalEList<?>)getObject()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getObject()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__IMG:
-				return ((InternalEList<?>)getImg()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getImg()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__TT:
-				return ((InternalEList<?>)getTt()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTt()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__I:
-				return ((InternalEList<?>)getI()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getI()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__B:
-				return ((InternalEList<?>)getB()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getB()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__BIG:
-				return ((InternalEList<?>)getBig()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBig()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__SMALL:
-				return ((InternalEList<?>)getSmall()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSmall()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__EM:
-				return ((InternalEList<?>)getEm()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getEm()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__STRONG:
-				return ((InternalEList<?>)getStrong()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getStrong()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__DFN:
-				return ((InternalEList<?>)getDfn()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDfn()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__CODE:
-				return ((InternalEList<?>)getCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCode()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__Q:
-				return ((InternalEList<?>)getQ()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getQ()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__SAMP:
-				return ((InternalEList<?>)getSamp()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSamp()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__KBD:
-				return ((InternalEList<?>)getKbd()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getKbd()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__VAR:
-				return ((InternalEList<?>)getVar()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getVar()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__CITE:
-				return ((InternalEList<?>)getCite()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCite()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__ABBR:
-				return ((InternalEList<?>)getAbbr()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAbbr()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__ACRONYM:
-				return ((InternalEList<?>)getAcronym()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAcronym()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__SUB:
-				return ((InternalEList<?>)getSub()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSub()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.OBJECT__SUP:
-				return ((InternalEList<?>)getSup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSup()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -662,11 +673,15 @@ public class ObjectImpl extends EObjectImpl implements org.openhealthtools.mdht.
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case XhtmlPackage.OBJECT__MIXED:
-				if (coreType) return getMixed();
-				return ((FeatureMap.Internal)getMixed()).getWrapper();
+				if (coreType) {
+					return getMixed();
+				}
+				return ((FeatureMap.Internal) getMixed()).getWrapper();
 			case XhtmlPackage.OBJECT__GROUP:
-				if (coreType) return getGroup();
-				return ((FeatureMap.Internal)getGroup()).getWrapper();
+				if (coreType) {
+					return getGroup();
+				}
+				return ((FeatureMap.Internal) getGroup()).getWrapper();
 			case XhtmlPackage.OBJECT__PARAM:
 				return getParam();
 			case XhtmlPackage.OBJECT__P:
@@ -751,148 +766,148 @@ public class ObjectImpl extends EObjectImpl implements org.openhealthtools.mdht.
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case XhtmlPackage.OBJECT__MIXED:
-				((FeatureMap.Internal)getMixed()).set(newValue);
+				((FeatureMap.Internal) getMixed()).set(newValue);
 				return;
 			case XhtmlPackage.OBJECT__GROUP:
-				((FeatureMap.Internal)getGroup()).set(newValue);
+				((FeatureMap.Internal) getGroup()).set(newValue);
 				return;
 			case XhtmlPackage.OBJECT__PARAM:
 				getParam().clear();
-				getParam().addAll((Collection<? extends Param>)newValue);
+				getParam().addAll((Collection<? extends Param>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__P:
 				getP().clear();
-				getP().addAll((Collection<? extends P>)newValue);
+				getP().addAll((Collection<? extends P>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__DIV:
 				getDiv().clear();
-				getDiv().addAll((Collection<? extends Div>)newValue);
+				getDiv().addAll((Collection<? extends Div>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__UL:
 				getUl().clear();
-				getUl().addAll((Collection<? extends Ul>)newValue);
+				getUl().addAll((Collection<? extends Ul>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__OL:
 				getOl().clear();
-				getOl().addAll((Collection<? extends Ol>)newValue);
+				getOl().addAll((Collection<? extends Ol>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__DL:
 				getDl().clear();
-				getDl().addAll((Collection<? extends Dl>)newValue);
+				getDl().addAll((Collection<? extends Dl>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__PRE:
 				getPre().clear();
-				getPre().addAll((Collection<? extends Pre>)newValue);
+				getPre().addAll((Collection<? extends Pre>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__HR:
 				getHr().clear();
-				getHr().addAll((Collection<? extends Hr>)newValue);
+				getHr().addAll((Collection<? extends Hr>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__BLOCKQUOTE:
 				getBlockquote().clear();
-				getBlockquote().addAll((Collection<? extends Blockquote>)newValue);
+				getBlockquote().addAll((Collection<? extends Blockquote>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__TABLE:
 				getTable().clear();
-				getTable().addAll((Collection<? extends Table>)newValue);
+				getTable().addAll((Collection<? extends Table>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__A:
 				getA().clear();
-				getA().addAll((Collection<? extends A>)newValue);
+				getA().addAll((Collection<? extends A>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__BR:
 				getBr().clear();
-				getBr().addAll((Collection<? extends Br>)newValue);
+				getBr().addAll((Collection<? extends Br>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__SPAN:
 				getSpan().clear();
-				getSpan().addAll((Collection<? extends Span>)newValue);
+				getSpan().addAll((Collection<? extends Span>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__OBJECT:
 				getObject().clear();
-				getObject().addAll((Collection<? extends org.openhealthtools.mdht.emf.w3c.xhtml.Object>)newValue);
+				getObject().addAll((Collection<? extends org.openhealthtools.mdht.emf.w3c.xhtml.Object>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__IMG:
 				getImg().clear();
-				getImg().addAll((Collection<? extends Img>)newValue);
+				getImg().addAll((Collection<? extends Img>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__TT:
 				getTt().clear();
-				getTt().addAll((Collection<? extends Tt>)newValue);
+				getTt().addAll((Collection<? extends Tt>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__I:
 				getI().clear();
-				getI().addAll((Collection<? extends I>)newValue);
+				getI().addAll((Collection<? extends I>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__B:
 				getB().clear();
-				getB().addAll((Collection<? extends B>)newValue);
+				getB().addAll((Collection<? extends B>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__BIG:
 				getBig().clear();
-				getBig().addAll((Collection<? extends Big>)newValue);
+				getBig().addAll((Collection<? extends Big>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__SMALL:
 				getSmall().clear();
-				getSmall().addAll((Collection<? extends Small>)newValue);
+				getSmall().addAll((Collection<? extends Small>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__EM:
 				getEm().clear();
-				getEm().addAll((Collection<? extends Em>)newValue);
+				getEm().addAll((Collection<? extends Em>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__STRONG:
 				getStrong().clear();
-				getStrong().addAll((Collection<? extends Strong>)newValue);
+				getStrong().addAll((Collection<? extends Strong>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__DFN:
 				getDfn().clear();
-				getDfn().addAll((Collection<? extends Dfn>)newValue);
+				getDfn().addAll((Collection<? extends Dfn>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__CODE:
 				getCode().clear();
-				getCode().addAll((Collection<? extends Code>)newValue);
+				getCode().addAll((Collection<? extends Code>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__Q:
 				getQ().clear();
-				getQ().addAll((Collection<? extends Q>)newValue);
+				getQ().addAll((Collection<? extends Q>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__SAMP:
 				getSamp().clear();
-				getSamp().addAll((Collection<? extends Samp>)newValue);
+				getSamp().addAll((Collection<? extends Samp>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__KBD:
 				getKbd().clear();
-				getKbd().addAll((Collection<? extends Kbd>)newValue);
+				getKbd().addAll((Collection<? extends Kbd>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__VAR:
 				getVar().clear();
-				getVar().addAll((Collection<? extends Var>)newValue);
+				getVar().addAll((Collection<? extends Var>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__CITE:
 				getCite().clear();
-				getCite().addAll((Collection<? extends Cite>)newValue);
+				getCite().addAll((Collection<? extends Cite>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__ABBR:
 				getAbbr().clear();
-				getAbbr().addAll((Collection<? extends Abbr>)newValue);
+				getAbbr().addAll((Collection<? extends Abbr>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__ACRONYM:
 				getAcronym().clear();
-				getAcronym().addAll((Collection<? extends Acronym>)newValue);
+				getAcronym().addAll((Collection<? extends Acronym>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__SUB:
 				getSub().clear();
-				getSub().addAll((Collection<? extends Sub>)newValue);
+				getSub().addAll((Collection<? extends Sub>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__SUP:
 				getSup().clear();
-				getSup().addAll((Collection<? extends Sup>)newValue);
+				getSup().addAll((Collection<? extends Sup>) newValue);
 				return;
 			case XhtmlPackage.OBJECT__HL7_ID:
-				setHl7Id((String)newValue);
+				setHl7Id((String) newValue);
 				return;
 			case XhtmlPackage.OBJECT__NAME:
-				setName((ObjectName)newValue);
+				setName((ObjectName) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1100,7 +1115,9 @@ public class ObjectImpl extends EObjectImpl implements org.openhealthtools.mdht.
 			case XhtmlPackage.OBJECT__SUP:
 				return !getSup().isEmpty();
 			case XhtmlPackage.OBJECT__HL7_ID:
-				return HL7_ID_EDEFAULT == null ? hl7Id != null : !HL7_ID_EDEFAULT.equals(hl7Id);
+				return HL7_ID_EDEFAULT == null
+						? hl7Id != null
+						: !HL7_ID_EDEFAULT.equals(hl7Id);
 			case XhtmlPackage.OBJECT__NAME:
 				return isSetName();
 		}
@@ -1114,7 +1131,9 @@ public class ObjectImpl extends EObjectImpl implements org.openhealthtools.mdht.
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mixed: ");
@@ -1122,9 +1141,13 @@ public class ObjectImpl extends EObjectImpl implements org.openhealthtools.mdht.
 		result.append(", hl7Id: ");
 		result.append(hl7Id);
 		result.append(", name: ");
-		if (nameESet) result.append(name); else result.append("<unset>");
+		if (nameESet) {
+			result.append(name);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //ObjectImpl
+} // ObjectImpl

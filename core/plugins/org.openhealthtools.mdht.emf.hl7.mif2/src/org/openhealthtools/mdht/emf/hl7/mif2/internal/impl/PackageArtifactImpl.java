@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -100,8 +104,14 @@ public abstract class PackageArtifactImpl extends PackageBaseImpl implements Pac
 		PackageRef oldPackageLocation = packageLocation;
 		packageLocation = newPackageLocation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_ARTIFACT__PACKAGE_LOCATION, oldPackageLocation, newPackageLocation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE_ARTIFACT__PACKAGE_LOCATION, oldPackageLocation,
+				newPackageLocation);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -114,15 +124,23 @@ public abstract class PackageArtifactImpl extends PackageBaseImpl implements Pac
 	public void setPackageLocation(PackageRef newPackageLocation) {
 		if (newPackageLocation != packageLocation) {
 			NotificationChain msgs = null;
-			if (packageLocation != null)
-				msgs = ((InternalEObject)packageLocation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.PACKAGE_ARTIFACT__PACKAGE_LOCATION, null, msgs);
-			if (newPackageLocation != null)
-				msgs = ((InternalEObject)newPackageLocation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.PACKAGE_ARTIFACT__PACKAGE_LOCATION, null, msgs);
+			if (packageLocation != null) {
+				msgs = ((InternalEObject) packageLocation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.PACKAGE_ARTIFACT__PACKAGE_LOCATION, null, msgs);
+			}
+			if (newPackageLocation != null) {
+				msgs = ((InternalEObject) newPackageLocation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.PACKAGE_ARTIFACT__PACKAGE_LOCATION, null, msgs);
+			}
 			msgs = basicSetPackageLocation(newPackageLocation, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE_ARTIFACT__PACKAGE_LOCATION, newPackageLocation,
+				newPackageLocation));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_ARTIFACT__PACKAGE_LOCATION, newPackageLocation, newPackageLocation));
 	}
 
 	/**
@@ -142,8 +160,9 @@ public abstract class PackageArtifactImpl extends PackageBaseImpl implements Pac
 	public void setTitle(String newTitle) {
 		String oldTitle = title;
 		title = newTitle;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_ARTIFACT__TITLE, oldTitle, title));
+		}
 	}
 
 	/**
@@ -185,10 +204,10 @@ public abstract class PackageArtifactImpl extends PackageBaseImpl implements Pac
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.PACKAGE_ARTIFACT__PACKAGE_LOCATION:
-				setPackageLocation((PackageRef)newValue);
+				setPackageLocation((PackageRef) newValue);
 				return;
 			case Mif2Package.PACKAGE_ARTIFACT__TITLE:
-				setTitle((String)newValue);
+				setTitle((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -203,7 +222,7 @@ public abstract class PackageArtifactImpl extends PackageBaseImpl implements Pac
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.PACKAGE_ARTIFACT__PACKAGE_LOCATION:
-				setPackageLocation((PackageRef)null);
+				setPackageLocation((PackageRef) null);
 				return;
 			case Mif2Package.PACKAGE_ARTIFACT__TITLE:
 				setTitle(TITLE_EDEFAULT);
@@ -223,7 +242,9 @@ public abstract class PackageArtifactImpl extends PackageBaseImpl implements Pac
 			case Mif2Package.PACKAGE_ARTIFACT__PACKAGE_LOCATION:
 				return packageLocation != null;
 			case Mif2Package.PACKAGE_ARTIFACT__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+				return TITLE_EDEFAULT == null
+						? title != null
+						: !TITLE_EDEFAULT.equals(title);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -235,7 +256,9 @@ public abstract class PackageArtifactImpl extends PackageBaseImpl implements Pac
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (title: ");
@@ -244,4 +267,4 @@ public abstract class PackageArtifactImpl extends PackageBaseImpl implements Pac
 		return result.toString();
 	}
 
-} //PackageArtifactImpl
+} // PackageArtifactImpl

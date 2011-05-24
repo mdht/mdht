@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -55,10 +59,7 @@ public enum UnlimitedMultiplicity implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final UnlimitedMultiplicity[] VALUES_ARRAY =
-		new UnlimitedMultiplicity[] {
-			_,
-		};
+	private static final UnlimitedMultiplicity[] VALUES_ARRAY = new UnlimitedMultiplicity[] { _, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Unlimited Multiplicity</b></em>' enumerators.
@@ -108,7 +109,8 @@ public enum UnlimitedMultiplicity implements Enumerator {
 	 */
 	public static UnlimitedMultiplicity get(int value) {
 		switch (value) {
-			case __VALUE: return _;
+			case __VALUE:
+				return _;
 		}
 		return null;
 	}
@@ -152,7 +154,7 @@ public enum UnlimitedMultiplicity implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -161,7 +163,7 @@ public enum UnlimitedMultiplicity implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -170,7 +172,7 @@ public enum UnlimitedMultiplicity implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -183,5 +185,5 @@ public enum UnlimitedMultiplicity implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //UnlimitedMultiplicity
+
+} // UnlimitedMultiplicity

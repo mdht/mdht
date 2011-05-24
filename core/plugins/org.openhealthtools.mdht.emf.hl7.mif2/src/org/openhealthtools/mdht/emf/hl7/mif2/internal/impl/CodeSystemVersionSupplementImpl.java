@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -154,7 +158,9 @@ public class CodeSystemVersionSupplementImpl extends CodeSystemVersionBaseImpl i
 	 */
 	public EList<SupportedConceptRelationship> getSupplementalSupportedConceptRelationship() {
 		if (supplementalSupportedConceptRelationship == null) {
-			supplementalSupportedConceptRelationship = new EObjectContainmentEList<SupportedConceptRelationship>(SupportedConceptRelationship.class, this, Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SUPPLEMENTAL_SUPPORTED_CONCEPT_RELATIONSHIP);
+			supplementalSupportedConceptRelationship = new EObjectContainmentEList<SupportedConceptRelationship>(
+				SupportedConceptRelationship.class, this,
+				Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SUPPLEMENTAL_SUPPORTED_CONCEPT_RELATIONSHIP);
 		}
 		return supplementalSupportedConceptRelationship;
 	}
@@ -166,7 +172,9 @@ public class CodeSystemVersionSupplementImpl extends CodeSystemVersionBaseImpl i
 	 */
 	public EList<SupportedProperty> getSupplementalSupportedConceptProperty() {
 		if (supplementalSupportedConceptProperty == null) {
-			supplementalSupportedConceptProperty = new EObjectContainmentEList<SupportedProperty>(SupportedProperty.class, this, Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SUPPLEMENTAL_SUPPORTED_CONCEPT_PROPERTY);
+			supplementalSupportedConceptProperty = new EObjectContainmentEList<SupportedProperty>(
+				SupportedProperty.class, this,
+				Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SUPPLEMENTAL_SUPPORTED_CONCEPT_PROPERTY);
 		}
 		return supplementalSupportedConceptProperty;
 	}
@@ -178,7 +186,9 @@ public class CodeSystemVersionSupplementImpl extends CodeSystemVersionBaseImpl i
 	 */
 	public EList<SupportedProperty> getSupplementalSupportedCodeProperty() {
 		if (supplementalSupportedCodeProperty == null) {
-			supplementalSupportedCodeProperty = new EObjectContainmentEList<SupportedProperty>(SupportedProperty.class, this, Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SUPPLEMENTAL_SUPPORTED_CODE_PROPERTY);
+			supplementalSupportedCodeProperty = new EObjectContainmentEList<SupportedProperty>(
+				SupportedProperty.class, this,
+				Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SUPPLEMENTAL_SUPPORTED_CODE_PROPERTY);
 		}
 		return supplementalSupportedCodeProperty;
 	}
@@ -190,7 +200,8 @@ public class CodeSystemVersionSupplementImpl extends CodeSystemVersionBaseImpl i
 	 */
 	public EList<ConceptSupplement> getConceptSupplement() {
 		if (conceptSupplement == null) {
-			conceptSupplement = new EObjectContainmentEList<ConceptSupplement>(ConceptSupplement.class, this, Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__CONCEPT_SUPPLEMENT);
+			conceptSupplement = new EObjectContainmentEList<ConceptSupplement>(
+				ConceptSupplement.class, this, Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__CONCEPT_SUPPLEMENT);
 		}
 		return conceptSupplement;
 	}
@@ -212,8 +223,11 @@ public class CodeSystemVersionSupplementImpl extends CodeSystemVersionBaseImpl i
 	public void setAppliesToReleaseDate(XMLGregorianCalendar newAppliesToReleaseDate) {
 		XMLGregorianCalendar oldAppliesToReleaseDate = appliesToReleaseDate;
 		appliesToReleaseDate = newAppliesToReleaseDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__APPLIES_TO_RELEASE_DATE, oldAppliesToReleaseDate, appliesToReleaseDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__APPLIES_TO_RELEASE_DATE,
+				oldAppliesToReleaseDate, appliesToReleaseDate));
+		}
 	}
 
 	/**
@@ -233,8 +247,10 @@ public class CodeSystemVersionSupplementImpl extends CodeSystemVersionBaseImpl i
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SORT_KEY, oldSortKey, sortKey));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -246,13 +262,13 @@ public class CodeSystemVersionSupplementImpl extends CodeSystemVersionBaseImpl i
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SUPPLEMENTAL_SUPPORTED_CONCEPT_RELATIONSHIP:
-				return ((InternalEList<?>)getSupplementalSupportedConceptRelationship()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSupplementalSupportedConceptRelationship()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SUPPLEMENTAL_SUPPORTED_CONCEPT_PROPERTY:
-				return ((InternalEList<?>)getSupplementalSupportedConceptProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSupplementalSupportedConceptProperty()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SUPPLEMENTAL_SUPPORTED_CODE_PROPERTY:
-				return ((InternalEList<?>)getSupplementalSupportedCodeProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSupplementalSupportedCodeProperty()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__CONCEPT_SUPPLEMENT:
-				return ((InternalEList<?>)getConceptSupplement()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getConceptSupplement()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -292,25 +308,26 @@ public class CodeSystemVersionSupplementImpl extends CodeSystemVersionBaseImpl i
 		switch (featureID) {
 			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SUPPLEMENTAL_SUPPORTED_CONCEPT_RELATIONSHIP:
 				getSupplementalSupportedConceptRelationship().clear();
-				getSupplementalSupportedConceptRelationship().addAll((Collection<? extends SupportedConceptRelationship>)newValue);
+				getSupplementalSupportedConceptRelationship().addAll(
+					(Collection<? extends SupportedConceptRelationship>) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SUPPLEMENTAL_SUPPORTED_CONCEPT_PROPERTY:
 				getSupplementalSupportedConceptProperty().clear();
-				getSupplementalSupportedConceptProperty().addAll((Collection<? extends SupportedProperty>)newValue);
+				getSupplementalSupportedConceptProperty().addAll((Collection<? extends SupportedProperty>) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SUPPLEMENTAL_SUPPORTED_CODE_PROPERTY:
 				getSupplementalSupportedCodeProperty().clear();
-				getSupplementalSupportedCodeProperty().addAll((Collection<? extends SupportedProperty>)newValue);
+				getSupplementalSupportedCodeProperty().addAll((Collection<? extends SupportedProperty>) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__CONCEPT_SUPPLEMENT:
 				getConceptSupplement().clear();
-				getConceptSupplement().addAll((Collection<? extends ConceptSupplement>)newValue);
+				getConceptSupplement().addAll((Collection<? extends ConceptSupplement>) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__APPLIES_TO_RELEASE_DATE:
-				setAppliesToReleaseDate((XMLGregorianCalendar)newValue);
+				setAppliesToReleaseDate((XMLGregorianCalendar) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -355,7 +372,8 @@ public class CodeSystemVersionSupplementImpl extends CodeSystemVersionBaseImpl i
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SUPPLEMENTAL_SUPPORTED_CONCEPT_RELATIONSHIP:
-				return supplementalSupportedConceptRelationship != null && !supplementalSupportedConceptRelationship.isEmpty();
+				return supplementalSupportedConceptRelationship != null &&
+						!supplementalSupportedConceptRelationship.isEmpty();
 			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SUPPLEMENTAL_SUPPORTED_CONCEPT_PROPERTY:
 				return supplementalSupportedConceptProperty != null && !supplementalSupportedConceptProperty.isEmpty();
 			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SUPPLEMENTAL_SUPPORTED_CODE_PROPERTY:
@@ -363,9 +381,13 @@ public class CodeSystemVersionSupplementImpl extends CodeSystemVersionBaseImpl i
 			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__CONCEPT_SUPPLEMENT:
 				return conceptSupplement != null && !conceptSupplement.isEmpty();
 			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__APPLIES_TO_RELEASE_DATE:
-				return APPLIES_TO_RELEASE_DATE_EDEFAULT == null ? appliesToReleaseDate != null : !APPLIES_TO_RELEASE_DATE_EDEFAULT.equals(appliesToReleaseDate);
+				return APPLIES_TO_RELEASE_DATE_EDEFAULT == null
+						? appliesToReleaseDate != null
+						: !APPLIES_TO_RELEASE_DATE_EDEFAULT.equals(appliesToReleaseDate);
 			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -377,7 +399,9 @@ public class CodeSystemVersionSupplementImpl extends CodeSystemVersionBaseImpl i
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (appliesToReleaseDate: ");
@@ -388,4 +412,4 @@ public class CodeSystemVersionSupplementImpl extends CodeSystemVersionBaseImpl i
 		return result.toString();
 	}
 
-} //CodeSystemVersionSupplementImpl
+} // CodeSystemVersionSupplementImpl

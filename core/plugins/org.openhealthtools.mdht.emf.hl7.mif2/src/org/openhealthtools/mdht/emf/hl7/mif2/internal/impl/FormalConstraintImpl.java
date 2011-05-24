@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -132,7 +136,8 @@ public class FormalConstraintImpl extends CascadableAnnotationImpl implements Fo
 	 */
 	public EList<BusinessName> getBusinessName() {
 		if (businessName == null) {
-			businessName = new EObjectContainmentEList<BusinessName>(BusinessName.class, this, Mif2Package.FORMAL_CONSTRAINT__BUSINESS_NAME);
+			businessName = new EObjectContainmentEList<BusinessName>(
+				BusinessName.class, this, Mif2Package.FORMAL_CONSTRAINT__BUSINESS_NAME);
 		}
 		return businessName;
 	}
@@ -144,7 +149,8 @@ public class FormalConstraintImpl extends CascadableAnnotationImpl implements Fo
 	 */
 	public EList<AnnotationDerivation> getDerivationSupplier() {
 		if (derivationSupplier == null) {
-			derivationSupplier = new EObjectContainmentEList<AnnotationDerivation>(AnnotationDerivation.class, this, Mif2Package.FORMAL_CONSTRAINT__DERIVATION_SUPPLIER);
+			derivationSupplier = new EObjectContainmentEList<AnnotationDerivation>(
+				AnnotationDerivation.class, this, Mif2Package.FORMAL_CONSTRAINT__DERIVATION_SUPPLIER);
 		}
 		return derivationSupplier;
 	}
@@ -167,8 +173,13 @@ public class FormalConstraintImpl extends CascadableAnnotationImpl implements Fo
 		VariousMixedContent oldBody = body;
 		body = newBody;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.FORMAL_CONSTRAINT__BODY, oldBody, newBody);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.FORMAL_CONSTRAINT__BODY, oldBody, newBody);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -181,15 +192,21 @@ public class FormalConstraintImpl extends CascadableAnnotationImpl implements Fo
 	public void setBody(VariousMixedContent newBody) {
 		if (newBody != body) {
 			NotificationChain msgs = null;
-			if (body != null)
-				msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.FORMAL_CONSTRAINT__BODY, null, msgs);
-			if (newBody != null)
-				msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.FORMAL_CONSTRAINT__BODY, null, msgs);
+			if (body != null) {
+				msgs = ((InternalEObject) body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.FORMAL_CONSTRAINT__BODY, null, msgs);
+			}
+			if (newBody != null) {
+				msgs = ((InternalEObject) newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.FORMAL_CONSTRAINT__BODY, null, msgs);
+			}
 			msgs = basicSetBody(newBody, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.FORMAL_CONSTRAINT__BODY, newBody, newBody));
+		}
 	}
 
 	/**
@@ -199,7 +216,8 @@ public class FormalConstraintImpl extends CascadableAnnotationImpl implements Fo
 	 */
 	public EList<FormalExpression> getAlternateFormalExpression() {
 		if (alternateFormalExpression == null) {
-			alternateFormalExpression = new EObjectContainmentEList<FormalExpression>(FormalExpression.class, this, Mif2Package.FORMAL_CONSTRAINT__ALTERNATE_FORMAL_EXPRESSION);
+			alternateFormalExpression = new EObjectContainmentEList<FormalExpression>(
+				FormalExpression.class, this, Mif2Package.FORMAL_CONSTRAINT__ALTERNATE_FORMAL_EXPRESSION);
 		}
 		return alternateFormalExpression;
 	}
@@ -221,8 +239,9 @@ public class FormalConstraintImpl extends CascadableAnnotationImpl implements Fo
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.FORMAL_CONSTRAINT__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -234,13 +253,13 @@ public class FormalConstraintImpl extends CascadableAnnotationImpl implements Fo
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.FORMAL_CONSTRAINT__BUSINESS_NAME:
-				return ((InternalEList<?>)getBusinessName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBusinessName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.FORMAL_CONSTRAINT__DERIVATION_SUPPLIER:
-				return ((InternalEList<?>)getDerivationSupplier()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDerivationSupplier()).basicRemove(otherEnd, msgs);
 			case Mif2Package.FORMAL_CONSTRAINT__BODY:
 				return basicSetBody(null, msgs);
 			case Mif2Package.FORMAL_CONSTRAINT__ALTERNATE_FORMAL_EXPRESSION:
-				return ((InternalEList<?>)getAlternateFormalExpression()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAlternateFormalExpression()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -278,21 +297,21 @@ public class FormalConstraintImpl extends CascadableAnnotationImpl implements Fo
 		switch (featureID) {
 			case Mif2Package.FORMAL_CONSTRAINT__BUSINESS_NAME:
 				getBusinessName().clear();
-				getBusinessName().addAll((Collection<? extends BusinessName>)newValue);
+				getBusinessName().addAll((Collection<? extends BusinessName>) newValue);
 				return;
 			case Mif2Package.FORMAL_CONSTRAINT__DERIVATION_SUPPLIER:
 				getDerivationSupplier().clear();
-				getDerivationSupplier().addAll((Collection<? extends AnnotationDerivation>)newValue);
+				getDerivationSupplier().addAll((Collection<? extends AnnotationDerivation>) newValue);
 				return;
 			case Mif2Package.FORMAL_CONSTRAINT__BODY:
-				setBody((VariousMixedContent)newValue);
+				setBody((VariousMixedContent) newValue);
 				return;
 			case Mif2Package.FORMAL_CONSTRAINT__ALTERNATE_FORMAL_EXPRESSION:
 				getAlternateFormalExpression().clear();
-				getAlternateFormalExpression().addAll((Collection<? extends FormalExpression>)newValue);
+				getAlternateFormalExpression().addAll((Collection<? extends FormalExpression>) newValue);
 				return;
 			case Mif2Package.FORMAL_CONSTRAINT__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -313,7 +332,7 @@ public class FormalConstraintImpl extends CascadableAnnotationImpl implements Fo
 				getDerivationSupplier().clear();
 				return;
 			case Mif2Package.FORMAL_CONSTRAINT__BODY:
-				setBody((VariousMixedContent)null);
+				setBody((VariousMixedContent) null);
 				return;
 			case Mif2Package.FORMAL_CONSTRAINT__ALTERNATE_FORMAL_EXPRESSION:
 				getAlternateFormalExpression().clear();
@@ -342,7 +361,9 @@ public class FormalConstraintImpl extends CascadableAnnotationImpl implements Fo
 			case Mif2Package.FORMAL_CONSTRAINT__ALTERNATE_FORMAL_EXPRESSION:
 				return alternateFormalExpression != null && !alternateFormalExpression.isEmpty();
 			case Mif2Package.FORMAL_CONSTRAINT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -354,7 +375,9 @@ public class FormalConstraintImpl extends CascadableAnnotationImpl implements Fo
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -363,4 +386,4 @@ public class FormalConstraintImpl extends CascadableAnnotationImpl implements Fo
 		return result.toString();
 	}
 
-} //FormalConstraintImpl
+} // FormalConstraintImpl

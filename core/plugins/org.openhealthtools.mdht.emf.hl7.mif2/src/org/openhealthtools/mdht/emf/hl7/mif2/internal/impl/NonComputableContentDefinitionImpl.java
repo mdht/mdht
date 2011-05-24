@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -74,7 +78,8 @@ public class NonComputableContentDefinitionImpl extends EObjectImpl implements N
 	 */
 	public EList<ComplexMarkupWithLanguage> getText() {
 		if (text == null) {
-			text = new EObjectContainmentEList<ComplexMarkupWithLanguage>(ComplexMarkupWithLanguage.class, this, Mif2Package.NON_COMPUTABLE_CONTENT_DEFINITION__TEXT);
+			text = new EObjectContainmentEList<ComplexMarkupWithLanguage>(
+				ComplexMarkupWithLanguage.class, this, Mif2Package.NON_COMPUTABLE_CONTENT_DEFINITION__TEXT);
 		}
 		return text;
 	}
@@ -88,7 +93,7 @@ public class NonComputableContentDefinitionImpl extends EObjectImpl implements N
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.NON_COMPUTABLE_CONTENT_DEFINITION__TEXT:
-				return ((InternalEList<?>)getText()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getText()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -118,7 +123,7 @@ public class NonComputableContentDefinitionImpl extends EObjectImpl implements N
 		switch (featureID) {
 			case Mif2Package.NON_COMPUTABLE_CONTENT_DEFINITION__TEXT:
 				getText().clear();
-				getText().addAll((Collection<? extends ComplexMarkupWithLanguage>)newValue);
+				getText().addAll((Collection<? extends ComplexMarkupWithLanguage>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -153,4 +158,4 @@ public class NonComputableContentDefinitionImpl extends EObjectImpl implements N
 		return super.eIsSet(featureID);
 	}
 
-} //NonComputableContentDefinitionImpl
+} // NonComputableContentDefinitionImpl

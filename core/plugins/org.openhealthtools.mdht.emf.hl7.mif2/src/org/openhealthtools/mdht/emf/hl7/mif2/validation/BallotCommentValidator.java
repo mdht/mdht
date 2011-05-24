@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import java.math.BigInteger;
@@ -19,7 +23,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.RealmElement;
 import org.openhealthtools.mdht.emf.hl7.mif2.VoteKind;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Flow;
 
-
 /**
  * A sample validator interface for {@link org.openhealthtools.mdht.emf.hl7.mif2.BallotComment}.
  * This doesn't really do anything, and it's not a real EMF artifact.
@@ -30,14 +33,24 @@ public interface BallotCommentValidator {
 	boolean validate();
 
 	boolean validateContext(FeatureMap value);
+
 	boolean validateRealmNamespace(EList<RealmElement> value);
+
 	boolean validateExistingContent(Flow value);
+
 	boolean validateSuggestedReplacement(Flow value);
+
 	boolean validateResolution(EList<BallotCommentResolution> value);
+
 	boolean validateCommentType(VoteKind value);
+
 	boolean validateImplementedDate(XMLGregorianCalendar value);
+
 	boolean validateImplementingPersonName(String value);
+
 	boolean validateLocation(String value);
+
 	boolean validateName(BigInteger value);
+
 	boolean validateSubmissionId(String value);
 }

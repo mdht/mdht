@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -106,12 +110,7 @@ public enum IconFormatKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final IconFormatKind[] VALUES_ARRAY =
-		new IconFormatKind[] {
-			JPEG,
-			GIF,
-			SVG,
-		};
+	private static final IconFormatKind[] VALUES_ARRAY = new IconFormatKind[] { JPEG, GIF, SVG, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Icon Format Kind</b></em>' enumerators.
@@ -161,9 +160,12 @@ public enum IconFormatKind implements Enumerator {
 	 */
 	public static IconFormatKind get(int value) {
 		switch (value) {
-			case JPEG_VALUE: return JPEG;
-			case GIF_VALUE: return GIF;
-			case SVG_VALUE: return SVG;
+			case JPEG_VALUE:
+				return JPEG;
+			case GIF_VALUE:
+				return GIF;
+			case SVG_VALUE:
+				return SVG;
 		}
 		return null;
 	}
@@ -207,7 +209,7 @@ public enum IconFormatKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -216,7 +218,7 @@ public enum IconFormatKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -225,7 +227,7 @@ public enum IconFormatKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -238,5 +240,5 @@ public enum IconFormatKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //IconFormatKind
+
+} // IconFormatKind

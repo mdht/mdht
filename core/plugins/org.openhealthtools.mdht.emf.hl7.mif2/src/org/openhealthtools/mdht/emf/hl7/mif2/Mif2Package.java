@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -12,7 +16,6 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.openhealthtools.mdht.emf.w3c.xhtml.XhtmlPackage;
 
 /**
@@ -39056,7 +39059,6 @@ public interface Mif2Package extends EPackage {
 	 */
 	int YEARS = 591;
 
-
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.emf.hl7.mif2.AddElementContent <em>Add Element Content</em>}'.
 	 * <!-- begin-user-doc -->
@@ -72969,4 +72971,4 @@ public interface Mif2Package extends EPackage {
 
 	}
 
-} //Mif2Package
+} // Mif2Package

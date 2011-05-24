@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -108,7 +112,8 @@ public abstract class ClassifierBaseImpl extends ClassifierImpl implements Class
 	 */
 	public EList<ClassDerivation> getDerivedFrom() {
 		if (derivedFrom == null) {
-			derivedFrom = new EObjectContainmentEList<ClassDerivation>(ClassDerivation.class, this, Mif2Package.CLASSIFIER_BASE__DERIVED_FROM);
+			derivedFrom = new EObjectContainmentEList<ClassDerivation>(
+				ClassDerivation.class, this, Mif2Package.CLASSIFIER_BASE__DERIVED_FROM);
 		}
 		return derivedFrom;
 	}
@@ -127,12 +132,19 @@ public abstract class ClassifierBaseImpl extends ClassifierImpl implements Class
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDefiningVocabulary(VocabularySpecification newDefiningVocabulary, NotificationChain msgs) {
+	public NotificationChain basicSetDefiningVocabulary(VocabularySpecification newDefiningVocabulary,
+			NotificationChain msgs) {
 		VocabularySpecification oldDefiningVocabulary = definingVocabulary;
 		definingVocabulary = newDefiningVocabulary;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CLASSIFIER_BASE__DEFINING_VOCABULARY, oldDefiningVocabulary, newDefiningVocabulary);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASSIFIER_BASE__DEFINING_VOCABULARY, oldDefiningVocabulary,
+				newDefiningVocabulary);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -145,15 +157,23 @@ public abstract class ClassifierBaseImpl extends ClassifierImpl implements Class
 	public void setDefiningVocabulary(VocabularySpecification newDefiningVocabulary) {
 		if (newDefiningVocabulary != definingVocabulary) {
 			NotificationChain msgs = null;
-			if (definingVocabulary != null)
-				msgs = ((InternalEObject)definingVocabulary).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CLASSIFIER_BASE__DEFINING_VOCABULARY, null, msgs);
-			if (newDefiningVocabulary != null)
-				msgs = ((InternalEObject)newDefiningVocabulary).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CLASSIFIER_BASE__DEFINING_VOCABULARY, null, msgs);
+			if (definingVocabulary != null) {
+				msgs = ((InternalEObject) definingVocabulary).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CLASSIFIER_BASE__DEFINING_VOCABULARY, null, msgs);
+			}
+			if (newDefiningVocabulary != null) {
+				msgs = ((InternalEObject) newDefiningVocabulary).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CLASSIFIER_BASE__DEFINING_VOCABULARY, null, msgs);
+			}
 			msgs = basicSetDefiningVocabulary(newDefiningVocabulary, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASSIFIER_BASE__DEFINING_VOCABULARY, newDefiningVocabulary,
+				newDefiningVocabulary));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASSIFIER_BASE__DEFINING_VOCABULARY, newDefiningVocabulary, newDefiningVocabulary));
 	}
 
 	/**
@@ -173,8 +193,10 @@ public abstract class ClassifierBaseImpl extends ClassifierImpl implements Class
 	public void setGraphicLinkId(String newGraphicLinkId) {
 		String oldGraphicLinkId = graphicLinkId;
 		graphicLinkId = newGraphicLinkId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASSIFIER_BASE__GRAPHIC_LINK_ID, oldGraphicLinkId, graphicLinkId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASSIFIER_BASE__GRAPHIC_LINK_ID, oldGraphicLinkId, graphicLinkId));
+		}
 	}
 
 	/**
@@ -186,7 +208,7 @@ public abstract class ClassifierBaseImpl extends ClassifierImpl implements Class
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.CLASSIFIER_BASE__DERIVED_FROM:
-				return ((InternalEList<?>)getDerivedFrom()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDerivedFrom()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CLASSIFIER_BASE__DEFINING_VOCABULARY:
 				return basicSetDefiningVocabulary(null, msgs);
 		}
@@ -222,13 +244,13 @@ public abstract class ClassifierBaseImpl extends ClassifierImpl implements Class
 		switch (featureID) {
 			case Mif2Package.CLASSIFIER_BASE__DERIVED_FROM:
 				getDerivedFrom().clear();
-				getDerivedFrom().addAll((Collection<? extends ClassDerivation>)newValue);
+				getDerivedFrom().addAll((Collection<? extends ClassDerivation>) newValue);
 				return;
 			case Mif2Package.CLASSIFIER_BASE__DEFINING_VOCABULARY:
-				setDefiningVocabulary((VocabularySpecification)newValue);
+				setDefiningVocabulary((VocabularySpecification) newValue);
 				return;
 			case Mif2Package.CLASSIFIER_BASE__GRAPHIC_LINK_ID:
-				setGraphicLinkId((String)newValue);
+				setGraphicLinkId((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -246,7 +268,7 @@ public abstract class ClassifierBaseImpl extends ClassifierImpl implements Class
 				getDerivedFrom().clear();
 				return;
 			case Mif2Package.CLASSIFIER_BASE__DEFINING_VOCABULARY:
-				setDefiningVocabulary((VocabularySpecification)null);
+				setDefiningVocabulary((VocabularySpecification) null);
 				return;
 			case Mif2Package.CLASSIFIER_BASE__GRAPHIC_LINK_ID:
 				setGraphicLinkId(GRAPHIC_LINK_ID_EDEFAULT);
@@ -268,7 +290,9 @@ public abstract class ClassifierBaseImpl extends ClassifierImpl implements Class
 			case Mif2Package.CLASSIFIER_BASE__DEFINING_VOCABULARY:
 				return definingVocabulary != null;
 			case Mif2Package.CLASSIFIER_BASE__GRAPHIC_LINK_ID:
-				return GRAPHIC_LINK_ID_EDEFAULT == null ? graphicLinkId != null : !GRAPHIC_LINK_ID_EDEFAULT.equals(graphicLinkId);
+				return GRAPHIC_LINK_ID_EDEFAULT == null
+						? graphicLinkId != null
+						: !GRAPHIC_LINK_ID_EDEFAULT.equals(graphicLinkId);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -280,7 +304,9 @@ public abstract class ClassifierBaseImpl extends ClassifierImpl implements Class
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (graphicLinkId: ");
@@ -289,4 +315,4 @@ public abstract class ClassifierBaseImpl extends ClassifierImpl implements Class
 		return result.toString();
 	}
 
-} //ClassifierBaseImpl
+} // ClassifierBaseImpl

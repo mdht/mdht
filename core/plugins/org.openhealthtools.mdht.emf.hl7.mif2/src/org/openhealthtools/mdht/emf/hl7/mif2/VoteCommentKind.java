@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -152,14 +156,8 @@ public enum VoteCommentKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final VoteCommentKind[] VALUES_ARRAY =
-		new VoteCommentKind[] {
-			AFFIRMATIVE_TYPO,
-			AFFIRMATIVE_SUGGESTION,
-			AFFIRMATIVE_QUESTION,
-			NEGATIVE_MINOR,
-			NEGATIVE_MAJOR,
-		};
+	private static final VoteCommentKind[] VALUES_ARRAY = new VoteCommentKind[] {
+			AFFIRMATIVE_TYPO, AFFIRMATIVE_SUGGESTION, AFFIRMATIVE_QUESTION, NEGATIVE_MINOR, NEGATIVE_MAJOR, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Vote Comment Kind</b></em>' enumerators.
@@ -209,11 +207,16 @@ public enum VoteCommentKind implements Enumerator {
 	 */
 	public static VoteCommentKind get(int value) {
 		switch (value) {
-			case AFFIRMATIVE_TYPO_VALUE: return AFFIRMATIVE_TYPO;
-			case AFFIRMATIVE_SUGGESTION_VALUE: return AFFIRMATIVE_SUGGESTION;
-			case AFFIRMATIVE_QUESTION_VALUE: return AFFIRMATIVE_QUESTION;
-			case NEGATIVE_MINOR_VALUE: return NEGATIVE_MINOR;
-			case NEGATIVE_MAJOR_VALUE: return NEGATIVE_MAJOR;
+			case AFFIRMATIVE_TYPO_VALUE:
+				return AFFIRMATIVE_TYPO;
+			case AFFIRMATIVE_SUGGESTION_VALUE:
+				return AFFIRMATIVE_SUGGESTION;
+			case AFFIRMATIVE_QUESTION_VALUE:
+				return AFFIRMATIVE_QUESTION;
+			case NEGATIVE_MINOR_VALUE:
+				return NEGATIVE_MINOR;
+			case NEGATIVE_MAJOR_VALUE:
+				return NEGATIVE_MAJOR;
 		}
 		return null;
 	}
@@ -257,7 +260,7 @@ public enum VoteCommentKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -266,7 +269,7 @@ public enum VoteCommentKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -275,7 +278,7 @@ public enum VoteCommentKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -288,5 +291,5 @@ public enum VoteCommentKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //VoteCommentKind
+
+} // VoteCommentKind

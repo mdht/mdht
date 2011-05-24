@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -96,7 +100,8 @@ public class ClassifierImpl extends ModelElementImpl implements Classifier {
 	 */
 	public EList<BusinessName> getBusinessName() {
 		if (businessName == null) {
-			businessName = new EObjectContainmentEList<BusinessName>(BusinessName.class, this, Mif2Package.CLASSIFIER__BUSINESS_NAME);
+			businessName = new EObjectContainmentEList<BusinessName>(
+				BusinessName.class, this, Mif2Package.CLASSIFIER__BUSINESS_NAME);
 		}
 		return businessName;
 	}
@@ -118,8 +123,9 @@ public class ClassifierImpl extends ModelElementImpl implements Classifier {
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASSIFIER__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -131,7 +137,7 @@ public class ClassifierImpl extends ModelElementImpl implements Classifier {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.CLASSIFIER__BUSINESS_NAME:
-				return ((InternalEList<?>)getBusinessName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBusinessName()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -163,10 +169,10 @@ public class ClassifierImpl extends ModelElementImpl implements Classifier {
 		switch (featureID) {
 			case Mif2Package.CLASSIFIER__BUSINESS_NAME:
 				getBusinessName().clear();
-				getBusinessName().addAll((Collection<? extends BusinessName>)newValue);
+				getBusinessName().addAll((Collection<? extends BusinessName>) newValue);
 				return;
 			case Mif2Package.CLASSIFIER__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -201,7 +207,9 @@ public class ClassifierImpl extends ModelElementImpl implements Classifier {
 			case Mif2Package.CLASSIFIER__BUSINESS_NAME:
 				return businessName != null && !businessName.isEmpty();
 			case Mif2Package.CLASSIFIER__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -213,7 +221,9 @@ public class ClassifierImpl extends ModelElementImpl implements Classifier {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (sortKey: ");
@@ -222,4 +232,4 @@ public class ClassifierImpl extends ModelElementImpl implements Classifier {
 		return result.toString();
 	}
 
-} //ClassifierImpl
+} // ClassifierImpl

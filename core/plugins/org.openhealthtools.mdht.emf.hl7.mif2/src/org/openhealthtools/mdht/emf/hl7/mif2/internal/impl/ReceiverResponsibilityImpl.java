@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -103,8 +107,13 @@ public class ReceiverResponsibilityImpl extends EObjectImpl implements ReceiverR
 		ComplexMarkupWithLanguage oldReason = reason;
 		reason = newReason;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.RECEIVER_RESPONSIBILITY__REASON, oldReason, newReason);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RECEIVER_RESPONSIBILITY__REASON, oldReason, newReason);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -117,15 +126,22 @@ public class ReceiverResponsibilityImpl extends EObjectImpl implements ReceiverR
 	public void setReason(ComplexMarkupWithLanguage newReason) {
 		if (newReason != reason) {
 			NotificationChain msgs = null;
-			if (reason != null)
-				msgs = ((InternalEObject)reason).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.RECEIVER_RESPONSIBILITY__REASON, null, msgs);
-			if (newReason != null)
-				msgs = ((InternalEObject)newReason).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.RECEIVER_RESPONSIBILITY__REASON, null, msgs);
+			if (reason != null) {
+				msgs = ((InternalEObject) reason).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.RECEIVER_RESPONSIBILITY__REASON, null, msgs);
+			}
+			if (newReason != null) {
+				msgs = ((InternalEObject) newReason).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.RECEIVER_RESPONSIBILITY__REASON, null, msgs);
+			}
 			msgs = basicSetReason(newReason, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RECEIVER_RESPONSIBILITY__REASON, newReason, newReason));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.RECEIVER_RESPONSIBILITY__REASON, newReason, newReason));
 	}
 
 	/**
@@ -146,8 +162,14 @@ public class ReceiverResponsibilityImpl extends EObjectImpl implements ReceiverR
 		PackageRef oldInvokeInteraction = invokeInteraction;
 		invokeInteraction = newInvokeInteraction;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_INTERACTION, oldInvokeInteraction, newInvokeInteraction);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_INTERACTION, oldInvokeInteraction,
+				newInvokeInteraction);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -160,15 +182,23 @@ public class ReceiverResponsibilityImpl extends EObjectImpl implements ReceiverR
 	public void setInvokeInteraction(PackageRef newInvokeInteraction) {
 		if (newInvokeInteraction != invokeInteraction) {
 			NotificationChain msgs = null;
-			if (invokeInteraction != null)
-				msgs = ((InternalEObject)invokeInteraction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_INTERACTION, null, msgs);
-			if (newInvokeInteraction != null)
-				msgs = ((InternalEObject)newInvokeInteraction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_INTERACTION, null, msgs);
+			if (invokeInteraction != null) {
+				msgs = ((InternalEObject) invokeInteraction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_INTERACTION, null, msgs);
+			}
+			if (newInvokeInteraction != null) {
+				msgs = ((InternalEObject) newInvokeInteraction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_INTERACTION, null, msgs);
+			}
 			msgs = basicSetInvokeInteraction(newInvokeInteraction, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_INTERACTION, newInvokeInteraction,
+				newInvokeInteraction));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_INTERACTION, newInvokeInteraction, newInvokeInteraction));
 	}
 
 	/**
@@ -189,8 +219,14 @@ public class ReceiverResponsibilityImpl extends EObjectImpl implements ReceiverR
 		PackageRef oldInvokeTriggerEvent = invokeTriggerEvent;
 		invokeTriggerEvent = newInvokeTriggerEvent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_TRIGGER_EVENT, oldInvokeTriggerEvent, newInvokeTriggerEvent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_TRIGGER_EVENT,
+				oldInvokeTriggerEvent, newInvokeTriggerEvent);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -203,15 +239,23 @@ public class ReceiverResponsibilityImpl extends EObjectImpl implements ReceiverR
 	public void setInvokeTriggerEvent(PackageRef newInvokeTriggerEvent) {
 		if (newInvokeTriggerEvent != invokeTriggerEvent) {
 			NotificationChain msgs = null;
-			if (invokeTriggerEvent != null)
-				msgs = ((InternalEObject)invokeTriggerEvent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_TRIGGER_EVENT, null, msgs);
-			if (newInvokeTriggerEvent != null)
-				msgs = ((InternalEObject)newInvokeTriggerEvent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_TRIGGER_EVENT, null, msgs);
+			if (invokeTriggerEvent != null) {
+				msgs = ((InternalEObject) invokeTriggerEvent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_TRIGGER_EVENT, null, msgs);
+			}
+			if (newInvokeTriggerEvent != null) {
+				msgs = ((InternalEObject) newInvokeTriggerEvent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_TRIGGER_EVENT, null, msgs);
+			}
 			msgs = basicSetInvokeTriggerEvent(newInvokeTriggerEvent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_TRIGGER_EVENT,
+				newInvokeTriggerEvent, newInvokeTriggerEvent));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_TRIGGER_EVENT, newInvokeTriggerEvent, newInvokeTriggerEvent));
 	}
 
 	/**
@@ -259,13 +303,13 @@ public class ReceiverResponsibilityImpl extends EObjectImpl implements ReceiverR
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.RECEIVER_RESPONSIBILITY__REASON:
-				setReason((ComplexMarkupWithLanguage)newValue);
+				setReason((ComplexMarkupWithLanguage) newValue);
 				return;
 			case Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_INTERACTION:
-				setInvokeInteraction((PackageRef)newValue);
+				setInvokeInteraction((PackageRef) newValue);
 				return;
 			case Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_TRIGGER_EVENT:
-				setInvokeTriggerEvent((PackageRef)newValue);
+				setInvokeTriggerEvent((PackageRef) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -280,13 +324,13 @@ public class ReceiverResponsibilityImpl extends EObjectImpl implements ReceiverR
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.RECEIVER_RESPONSIBILITY__REASON:
-				setReason((ComplexMarkupWithLanguage)null);
+				setReason((ComplexMarkupWithLanguage) null);
 				return;
 			case Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_INTERACTION:
-				setInvokeInteraction((PackageRef)null);
+				setInvokeInteraction((PackageRef) null);
 				return;
 			case Mif2Package.RECEIVER_RESPONSIBILITY__INVOKE_TRIGGER_EVENT:
-				setInvokeTriggerEvent((PackageRef)null);
+				setInvokeTriggerEvent((PackageRef) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -310,4 +354,4 @@ public class ReceiverResponsibilityImpl extends EObjectImpl implements ReceiverR
 		return super.eIsSet(featureID);
 	}
 
-} //ReceiverResponsibilityImpl
+} // ReceiverResponsibilityImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -206,7 +210,8 @@ public class ConceptDomainImpl extends ModelElementImpl implements ConceptDomain
 	 */
 	public EList<BusinessName> getBusinessName() {
 		if (businessName == null) {
-			businessName = new EObjectContainmentEList<BusinessName>(BusinessName.class, this, Mif2Package.CONCEPT_DOMAIN__BUSINESS_NAME);
+			businessName = new EObjectContainmentEList<BusinessName>(
+				BusinessName.class, this, Mif2Package.CONCEPT_DOMAIN__BUSINESS_NAME);
 		}
 		return businessName;
 	}
@@ -229,8 +234,13 @@ public class ConceptDomainImpl extends ModelElementImpl implements ConceptDomain
 		ConceptDomainAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT_DOMAIN__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONCEPT_DOMAIN__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -243,15 +253,22 @@ public class ConceptDomainImpl extends ModelElementImpl implements ConceptDomain
 	public void setAnnotations(ConceptDomainAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONCEPT_DOMAIN__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONCEPT_DOMAIN__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONCEPT_DOMAIN__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONCEPT_DOMAIN__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONCEPT_DOMAIN__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT_DOMAIN__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -261,7 +278,8 @@ public class ConceptDomainImpl extends ModelElementImpl implements ConceptDomain
 	 */
 	public EList<ConceptDomainRef> getSpecializesDomain() {
 		if (specializesDomain == null) {
-			specializesDomain = new EObjectContainmentEList<ConceptDomainRef>(ConceptDomainRef.class, this, Mif2Package.CONCEPT_DOMAIN__SPECIALIZES_DOMAIN);
+			specializesDomain = new EObjectContainmentEList<ConceptDomainRef>(
+				ConceptDomainRef.class, this, Mif2Package.CONCEPT_DOMAIN__SPECIALIZES_DOMAIN);
 		}
 		return specializesDomain;
 	}
@@ -285,7 +303,8 @@ public class ConceptDomainImpl extends ModelElementImpl implements ConceptDomain
 	 */
 	public EList<ConceptDomainProperty> getProperty() {
 		if (property == null) {
-			property = new EObjectContainmentEList<ConceptDomainProperty>(ConceptDomainProperty.class, this, Mif2Package.CONCEPT_DOMAIN__PROPERTY);
+			property = new EObjectContainmentEList<ConceptDomainProperty>(
+				ConceptDomainProperty.class, this, Mif2Package.CONCEPT_DOMAIN__PROPERTY);
 		}
 		return property;
 	}
@@ -297,7 +316,8 @@ public class ConceptDomainImpl extends ModelElementImpl implements ConceptDomain
 	 */
 	public EList<ConceptDomainRef> getSpecializedByDomain() {
 		if (specializedByDomain == null) {
-			specializedByDomain = new EObjectContainmentEList<ConceptDomainRef>(ConceptDomainRef.class, this, Mif2Package.CONCEPT_DOMAIN__SPECIALIZED_BY_DOMAIN);
+			specializedByDomain = new EObjectContainmentEList<ConceptDomainRef>(
+				ConceptDomainRef.class, this, Mif2Package.CONCEPT_DOMAIN__SPECIALIZED_BY_DOMAIN);
 		}
 		return specializedByDomain;
 	}
@@ -321,8 +341,11 @@ public class ConceptDomainImpl extends ModelElementImpl implements ConceptDomain
 		isBindable = newIsBindable;
 		boolean oldIsBindableESet = isBindableESet;
 		isBindableESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT_DOMAIN__IS_BINDABLE, oldIsBindable, isBindable, !oldIsBindableESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONCEPT_DOMAIN__IS_BINDABLE, oldIsBindable, isBindable,
+				!oldIsBindableESet));
+		}
 	}
 
 	/**
@@ -335,8 +358,11 @@ public class ConceptDomainImpl extends ModelElementImpl implements ConceptDomain
 		boolean oldIsBindableESet = isBindableESet;
 		isBindable = IS_BINDABLE_EDEFAULT;
 		isBindableESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CONCEPT_DOMAIN__IS_BINDABLE, oldIsBindable, IS_BINDABLE_EDEFAULT, oldIsBindableESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CONCEPT_DOMAIN__IS_BINDABLE, oldIsBindable, IS_BINDABLE_EDEFAULT,
+				oldIsBindableESet));
+		}
 	}
 
 	/**
@@ -365,8 +391,9 @@ public class ConceptDomainImpl extends ModelElementImpl implements ConceptDomain
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT_DOMAIN__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -386,8 +413,10 @@ public class ConceptDomainImpl extends ModelElementImpl implements ConceptDomain
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT_DOMAIN__SORT_KEY, oldSortKey, sortKey));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONCEPT_DOMAIN__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -399,15 +428,15 @@ public class ConceptDomainImpl extends ModelElementImpl implements ConceptDomain
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.CONCEPT_DOMAIN__BUSINESS_NAME:
-				return ((InternalEList<?>)getBusinessName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBusinessName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CONCEPT_DOMAIN__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 			case Mif2Package.CONCEPT_DOMAIN__SPECIALIZES_DOMAIN:
-				return ((InternalEList<?>)getSpecializesDomain()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSpecializesDomain()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CONCEPT_DOMAIN__PROPERTY:
-				return ((InternalEList<?>)getProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getProperty()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CONCEPT_DOMAIN__SPECIALIZED_BY_DOMAIN:
-				return ((InternalEList<?>)getSpecializedByDomain()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSpecializedByDomain()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -433,7 +462,9 @@ public class ConceptDomainImpl extends ModelElementImpl implements ConceptDomain
 			case Mif2Package.CONCEPT_DOMAIN__SPECIALIZED_BY_DOMAIN:
 				return getSpecializedByDomain();
 			case Mif2Package.CONCEPT_DOMAIN__IS_BINDABLE:
-				return isIsBindable() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsBindable()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.CONCEPT_DOMAIN__NAME:
 				return getName();
 			case Mif2Package.CONCEPT_DOMAIN__SORT_KEY:
@@ -453,35 +484,35 @@ public class ConceptDomainImpl extends ModelElementImpl implements ConceptDomain
 		switch (featureID) {
 			case Mif2Package.CONCEPT_DOMAIN__BUSINESS_NAME:
 				getBusinessName().clear();
-				getBusinessName().addAll((Collection<? extends BusinessName>)newValue);
+				getBusinessName().addAll((Collection<? extends BusinessName>) newValue);
 				return;
 			case Mif2Package.CONCEPT_DOMAIN__ANNOTATIONS:
-				setAnnotations((ConceptDomainAnnotations)newValue);
+				setAnnotations((ConceptDomainAnnotations) newValue);
 				return;
 			case Mif2Package.CONCEPT_DOMAIN__SPECIALIZES_DOMAIN:
 				getSpecializesDomain().clear();
-				getSpecializesDomain().addAll((Collection<? extends ConceptDomainRef>)newValue);
+				getSpecializesDomain().addAll((Collection<? extends ConceptDomainRef>) newValue);
 				return;
 			case Mif2Package.CONCEPT_DOMAIN__EXAMPLE_CONCEPT:
 				getExampleConcept().clear();
-				getExampleConcept().addAll((Collection<? extends String>)newValue);
+				getExampleConcept().addAll((Collection<? extends String>) newValue);
 				return;
 			case Mif2Package.CONCEPT_DOMAIN__PROPERTY:
 				getProperty().clear();
-				getProperty().addAll((Collection<? extends ConceptDomainProperty>)newValue);
+				getProperty().addAll((Collection<? extends ConceptDomainProperty>) newValue);
 				return;
 			case Mif2Package.CONCEPT_DOMAIN__SPECIALIZED_BY_DOMAIN:
 				getSpecializedByDomain().clear();
-				getSpecializedByDomain().addAll((Collection<? extends ConceptDomainRef>)newValue);
+				getSpecializedByDomain().addAll((Collection<? extends ConceptDomainRef>) newValue);
 				return;
 			case Mif2Package.CONCEPT_DOMAIN__IS_BINDABLE:
-				setIsBindable(((Boolean)newValue).booleanValue());
+				setIsBindable(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.CONCEPT_DOMAIN__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.CONCEPT_DOMAIN__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -499,7 +530,7 @@ public class ConceptDomainImpl extends ModelElementImpl implements ConceptDomain
 				getBusinessName().clear();
 				return;
 			case Mif2Package.CONCEPT_DOMAIN__ANNOTATIONS:
-				setAnnotations((ConceptDomainAnnotations)null);
+				setAnnotations((ConceptDomainAnnotations) null);
 				return;
 			case Mif2Package.CONCEPT_DOMAIN__SPECIALIZES_DOMAIN:
 				getSpecializesDomain().clear();
@@ -549,9 +580,13 @@ public class ConceptDomainImpl extends ModelElementImpl implements ConceptDomain
 			case Mif2Package.CONCEPT_DOMAIN__IS_BINDABLE:
 				return isSetIsBindable();
 			case Mif2Package.CONCEPT_DOMAIN__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.CONCEPT_DOMAIN__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -563,13 +598,19 @@ public class ConceptDomainImpl extends ModelElementImpl implements ConceptDomain
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (exampleConcept: ");
 		result.append(exampleConcept);
 		result.append(", isBindable: ");
-		if (isBindableESet) result.append(isBindable); else result.append("<unset>");
+		if (isBindableESet) {
+			result.append(isBindable);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", name: ");
 		result.append(name);
 		result.append(", sortKey: ");
@@ -578,4 +619,4 @@ public class ConceptDomainImpl extends ModelElementImpl implements ConceptDomain
 		return result.toString();
 	}
 
-} //ConceptDomainImpl
+} // ConceptDomainImpl

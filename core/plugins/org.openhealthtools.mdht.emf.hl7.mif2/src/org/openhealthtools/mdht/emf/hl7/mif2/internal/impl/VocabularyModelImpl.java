@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -213,8 +217,13 @@ public class VocabularyModelImpl extends PackageImpl implements VocabularyModel 
 		VocabularyModelAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_MODEL__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_MODEL__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -227,15 +236,22 @@ public class VocabularyModelImpl extends PackageImpl implements VocabularyModel 
 	public void setAnnotations(VocabularyModelAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VOCABULARY_MODEL__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.VOCABULARY_MODEL__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VOCABULARY_MODEL__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.VOCABULARY_MODEL__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_MODEL__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_MODEL__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -245,7 +261,8 @@ public class VocabularyModelImpl extends PackageImpl implements VocabularyModel 
 	 */
 	public EList<ArtifactDependency> getDependsOnVocabModel() {
 		if (dependsOnVocabModel == null) {
-			dependsOnVocabModel = new EObjectContainmentEList<ArtifactDependency>(ArtifactDependency.class, this, Mif2Package.VOCABULARY_MODEL__DEPENDS_ON_VOCAB_MODEL);
+			dependsOnVocabModel = new EObjectContainmentEList<ArtifactDependency>(
+				ArtifactDependency.class, this, Mif2Package.VOCABULARY_MODEL__DEPENDS_ON_VOCAB_MODEL);
 		}
 		return dependsOnVocabModel;
 	}
@@ -257,7 +274,8 @@ public class VocabularyModelImpl extends PackageImpl implements VocabularyModel 
 	 */
 	public EList<ConceptDomain> getConceptDomain() {
 		if (conceptDomain == null) {
-			conceptDomain = new EObjectContainmentEList<ConceptDomain>(ConceptDomain.class, this, Mif2Package.VOCABULARY_MODEL__CONCEPT_DOMAIN);
+			conceptDomain = new EObjectContainmentEList<ConceptDomain>(
+				ConceptDomain.class, this, Mif2Package.VOCABULARY_MODEL__CONCEPT_DOMAIN);
 		}
 		return conceptDomain;
 	}
@@ -269,7 +287,8 @@ public class VocabularyModelImpl extends PackageImpl implements VocabularyModel 
 	 */
 	public EList<CodeSystem> getCodeSystem() {
 		if (codeSystem == null) {
-			codeSystem = new EObjectContainmentEList<CodeSystem>(CodeSystem.class, this, Mif2Package.VOCABULARY_MODEL__CODE_SYSTEM);
+			codeSystem = new EObjectContainmentEList<CodeSystem>(
+				CodeSystem.class, this, Mif2Package.VOCABULARY_MODEL__CODE_SYSTEM);
 		}
 		return codeSystem;
 	}
@@ -281,7 +300,8 @@ public class VocabularyModelImpl extends PackageImpl implements VocabularyModel 
 	 */
 	public EList<ValueSet> getValueSet() {
 		if (valueSet == null) {
-			valueSet = new EObjectContainmentEList<ValueSet>(ValueSet.class, this, Mif2Package.VOCABULARY_MODEL__VALUE_SET);
+			valueSet = new EObjectContainmentEList<ValueSet>(
+				ValueSet.class, this, Mif2Package.VOCABULARY_MODEL__VALUE_SET);
 		}
 		return valueSet;
 	}
@@ -293,7 +313,8 @@ public class VocabularyModelImpl extends PackageImpl implements VocabularyModel 
 	 */
 	public EList<BindingRealm> getBindingRealm() {
 		if (bindingRealm == null) {
-			bindingRealm = new EObjectContainmentEList<BindingRealm>(BindingRealm.class, this, Mif2Package.VOCABULARY_MODEL__BINDING_REALM);
+			bindingRealm = new EObjectContainmentEList<BindingRealm>(
+				BindingRealm.class, this, Mif2Package.VOCABULARY_MODEL__BINDING_REALM);
 		}
 		return bindingRealm;
 	}
@@ -305,7 +326,8 @@ public class VocabularyModelImpl extends PackageImpl implements VocabularyModel 
 	 */
 	public EList<ContextBinding> getContextBinding() {
 		if (contextBinding == null) {
-			contextBinding = new EObjectContainmentEList<ContextBinding>(ContextBinding.class, this, Mif2Package.VOCABULARY_MODEL__CONTEXT_BINDING);
+			contextBinding = new EObjectContainmentEList<ContextBinding>(
+				ContextBinding.class, this, Mif2Package.VOCABULARY_MODEL__CONTEXT_BINDING);
 		}
 		return contextBinding;
 	}
@@ -317,7 +339,8 @@ public class VocabularyModelImpl extends PackageImpl implements VocabularyModel 
 	 */
 	public EList<CodeTranslationCollection> getCodeTranslations() {
 		if (codeTranslations == null) {
-			codeTranslations = new EObjectContainmentEList<CodeTranslationCollection>(CodeTranslationCollection.class, this, Mif2Package.VOCABULARY_MODEL__CODE_TRANSLATIONS);
+			codeTranslations = new EObjectContainmentEList<CodeTranslationCollection>(
+				CodeTranslationCollection.class, this, Mif2Package.VOCABULARY_MODEL__CODE_TRANSLATIONS);
 		}
 		return codeTranslations;
 	}
@@ -329,7 +352,8 @@ public class VocabularyModelImpl extends PackageImpl implements VocabularyModel 
 	 */
 	public EList<CodeSystemSupplement> getCodeSystemSupplement() {
 		if (codeSystemSupplement == null) {
-			codeSystemSupplement = new EObjectContainmentEList<CodeSystemSupplement>(CodeSystemSupplement.class, this, Mif2Package.VOCABULARY_MODEL__CODE_SYSTEM_SUPPLEMENT);
+			codeSystemSupplement = new EObjectContainmentEList<CodeSystemSupplement>(
+				CodeSystemSupplement.class, this, Mif2Package.VOCABULARY_MODEL__CODE_SYSTEM_SUPPLEMENT);
 		}
 		return codeSystemSupplement;
 	}
@@ -350,11 +374,16 @@ public class VocabularyModelImpl extends PackageImpl implements VocabularyModel 
 	 */
 	public void setDefinitionKind(VocabularyModelDefinitionKind newDefinitionKind) {
 		VocabularyModelDefinitionKind oldDefinitionKind = definitionKind;
-		definitionKind = newDefinitionKind == null ? DEFINITION_KIND_EDEFAULT : newDefinitionKind;
+		definitionKind = newDefinitionKind == null
+				? DEFINITION_KIND_EDEFAULT
+				: newDefinitionKind;
 		boolean oldDefinitionKindESet = definitionKindESet;
 		definitionKindESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_MODEL__DEFINITION_KIND, oldDefinitionKind, definitionKind, !oldDefinitionKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_MODEL__DEFINITION_KIND, oldDefinitionKind,
+				definitionKind, !oldDefinitionKindESet));
+		}
 	}
 
 	/**
@@ -367,8 +396,11 @@ public class VocabularyModelImpl extends PackageImpl implements VocabularyModel 
 		boolean oldDefinitionKindESet = definitionKindESet;
 		definitionKind = DEFINITION_KIND_EDEFAULT;
 		definitionKindESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.VOCABULARY_MODEL__DEFINITION_KIND, oldDefinitionKind, DEFINITION_KIND_EDEFAULT, oldDefinitionKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.VOCABULARY_MODEL__DEFINITION_KIND, oldDefinitionKind,
+				DEFINITION_KIND_EDEFAULT, oldDefinitionKindESet));
+		}
 	}
 
 	/**
@@ -391,21 +423,21 @@ public class VocabularyModelImpl extends PackageImpl implements VocabularyModel 
 			case Mif2Package.VOCABULARY_MODEL__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 			case Mif2Package.VOCABULARY_MODEL__DEPENDS_ON_VOCAB_MODEL:
-				return ((InternalEList<?>)getDependsOnVocabModel()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDependsOnVocabModel()).basicRemove(otherEnd, msgs);
 			case Mif2Package.VOCABULARY_MODEL__CONCEPT_DOMAIN:
-				return ((InternalEList<?>)getConceptDomain()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getConceptDomain()).basicRemove(otherEnd, msgs);
 			case Mif2Package.VOCABULARY_MODEL__CODE_SYSTEM:
-				return ((InternalEList<?>)getCodeSystem()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCodeSystem()).basicRemove(otherEnd, msgs);
 			case Mif2Package.VOCABULARY_MODEL__VALUE_SET:
-				return ((InternalEList<?>)getValueSet()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getValueSet()).basicRemove(otherEnd, msgs);
 			case Mif2Package.VOCABULARY_MODEL__BINDING_REALM:
-				return ((InternalEList<?>)getBindingRealm()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBindingRealm()).basicRemove(otherEnd, msgs);
 			case Mif2Package.VOCABULARY_MODEL__CONTEXT_BINDING:
-				return ((InternalEList<?>)getContextBinding()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getContextBinding()).basicRemove(otherEnd, msgs);
 			case Mif2Package.VOCABULARY_MODEL__CODE_TRANSLATIONS:
-				return ((InternalEList<?>)getCodeTranslations()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCodeTranslations()).basicRemove(otherEnd, msgs);
 			case Mif2Package.VOCABULARY_MODEL__CODE_SYSTEM_SUPPLEMENT:
-				return ((InternalEList<?>)getCodeSystemSupplement()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCodeSystemSupplement()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -452,42 +484,42 @@ public class VocabularyModelImpl extends PackageImpl implements VocabularyModel 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.VOCABULARY_MODEL__ANNOTATIONS:
-				setAnnotations((VocabularyModelAnnotations)newValue);
+				setAnnotations((VocabularyModelAnnotations) newValue);
 				return;
 			case Mif2Package.VOCABULARY_MODEL__DEPENDS_ON_VOCAB_MODEL:
 				getDependsOnVocabModel().clear();
-				getDependsOnVocabModel().addAll((Collection<? extends ArtifactDependency>)newValue);
+				getDependsOnVocabModel().addAll((Collection<? extends ArtifactDependency>) newValue);
 				return;
 			case Mif2Package.VOCABULARY_MODEL__CONCEPT_DOMAIN:
 				getConceptDomain().clear();
-				getConceptDomain().addAll((Collection<? extends ConceptDomain>)newValue);
+				getConceptDomain().addAll((Collection<? extends ConceptDomain>) newValue);
 				return;
 			case Mif2Package.VOCABULARY_MODEL__CODE_SYSTEM:
 				getCodeSystem().clear();
-				getCodeSystem().addAll((Collection<? extends CodeSystem>)newValue);
+				getCodeSystem().addAll((Collection<? extends CodeSystem>) newValue);
 				return;
 			case Mif2Package.VOCABULARY_MODEL__VALUE_SET:
 				getValueSet().clear();
-				getValueSet().addAll((Collection<? extends ValueSet>)newValue);
+				getValueSet().addAll((Collection<? extends ValueSet>) newValue);
 				return;
 			case Mif2Package.VOCABULARY_MODEL__BINDING_REALM:
 				getBindingRealm().clear();
-				getBindingRealm().addAll((Collection<? extends BindingRealm>)newValue);
+				getBindingRealm().addAll((Collection<? extends BindingRealm>) newValue);
 				return;
 			case Mif2Package.VOCABULARY_MODEL__CONTEXT_BINDING:
 				getContextBinding().clear();
-				getContextBinding().addAll((Collection<? extends ContextBinding>)newValue);
+				getContextBinding().addAll((Collection<? extends ContextBinding>) newValue);
 				return;
 			case Mif2Package.VOCABULARY_MODEL__CODE_TRANSLATIONS:
 				getCodeTranslations().clear();
-				getCodeTranslations().addAll((Collection<? extends CodeTranslationCollection>)newValue);
+				getCodeTranslations().addAll((Collection<? extends CodeTranslationCollection>) newValue);
 				return;
 			case Mif2Package.VOCABULARY_MODEL__CODE_SYSTEM_SUPPLEMENT:
 				getCodeSystemSupplement().clear();
-				getCodeSystemSupplement().addAll((Collection<? extends CodeSystemSupplement>)newValue);
+				getCodeSystemSupplement().addAll((Collection<? extends CodeSystemSupplement>) newValue);
 				return;
 			case Mif2Package.VOCABULARY_MODEL__DEFINITION_KIND:
-				setDefinitionKind((VocabularyModelDefinitionKind)newValue);
+				setDefinitionKind((VocabularyModelDefinitionKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -502,7 +534,7 @@ public class VocabularyModelImpl extends PackageImpl implements VocabularyModel 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.VOCABULARY_MODEL__ANNOTATIONS:
-				setAnnotations((VocabularyModelAnnotations)null);
+				setAnnotations((VocabularyModelAnnotations) null);
 				return;
 			case Mif2Package.VOCABULARY_MODEL__DEPENDS_ON_VOCAB_MODEL:
 				getDependsOnVocabModel().clear();
@@ -574,13 +606,19 @@ public class VocabularyModelImpl extends PackageImpl implements VocabularyModel 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (definitionKind: ");
-		if (definitionKindESet) result.append(definitionKind); else result.append("<unset>");
+		if (definitionKindESet) {
+			result.append(definitionKind);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //VocabularyModelImpl
+} // VocabularyModelImpl

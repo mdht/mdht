@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml;
 
 import java.util.Arrays;
@@ -292,20 +296,9 @@ public enum MediaType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final MediaType[] VALUES_ARRAY =
-		new MediaType[] {
-			TEXT_PLAIN,
-			TEXT_HTML,
-			APPLICATION_PDF,
-			TEXT_XML,
-			TEXT_RTF,
-			APPLICATION_MSWORD,
-			AUDIO_MPEG,
-			IMAGE_PNG,
-			IMAGE_GIF,
-			IMAGE_JPEG,
-			VIDEO_MPEG,
-		};
+	private static final MediaType[] VALUES_ARRAY = new MediaType[] {
+			TEXT_PLAIN, TEXT_HTML, APPLICATION_PDF, TEXT_XML, TEXT_RTF, APPLICATION_MSWORD, AUDIO_MPEG, IMAGE_PNG,
+			IMAGE_GIF, IMAGE_JPEG, VIDEO_MPEG, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Media Type</b></em>' enumerators.
@@ -355,17 +348,28 @@ public enum MediaType implements Enumerator {
 	 */
 	public static MediaType get(int value) {
 		switch (value) {
-			case TEXT_PLAIN_VALUE: return TEXT_PLAIN;
-			case TEXT_HTML_VALUE: return TEXT_HTML;
-			case APPLICATION_PDF_VALUE: return APPLICATION_PDF;
-			case TEXT_XML_VALUE: return TEXT_XML;
-			case TEXT_RTF_VALUE: return TEXT_RTF;
-			case APPLICATION_MSWORD_VALUE: return APPLICATION_MSWORD;
-			case AUDIO_MPEG_VALUE: return AUDIO_MPEG;
-			case IMAGE_PNG_VALUE: return IMAGE_PNG;
-			case IMAGE_GIF_VALUE: return IMAGE_GIF;
-			case IMAGE_JPEG_VALUE: return IMAGE_JPEG;
-			case VIDEO_MPEG_VALUE: return VIDEO_MPEG;
+			case TEXT_PLAIN_VALUE:
+				return TEXT_PLAIN;
+			case TEXT_HTML_VALUE:
+				return TEXT_HTML;
+			case APPLICATION_PDF_VALUE:
+				return APPLICATION_PDF;
+			case TEXT_XML_VALUE:
+				return TEXT_XML;
+			case TEXT_RTF_VALUE:
+				return TEXT_RTF;
+			case APPLICATION_MSWORD_VALUE:
+				return APPLICATION_MSWORD;
+			case AUDIO_MPEG_VALUE:
+				return AUDIO_MPEG;
+			case IMAGE_PNG_VALUE:
+				return IMAGE_PNG;
+			case IMAGE_GIF_VALUE:
+				return IMAGE_GIF;
+			case IMAGE_JPEG_VALUE:
+				return IMAGE_JPEG;
+			case VIDEO_MPEG_VALUE:
+				return VIDEO_MPEG;
 		}
 		return null;
 	}
@@ -409,7 +413,7 @@ public enum MediaType implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -418,7 +422,7 @@ public enum MediaType implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -427,7 +431,7 @@ public enum MediaType implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -440,5 +444,5 @@ public enum MediaType implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //MediaType
+
+} // MediaType

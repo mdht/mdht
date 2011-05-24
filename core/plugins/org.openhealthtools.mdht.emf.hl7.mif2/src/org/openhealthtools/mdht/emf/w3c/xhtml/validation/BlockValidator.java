@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.validation;
 
 import org.eclipse.emf.common.util.EList;
@@ -30,14 +34,24 @@ public interface BlockValidator {
 	boolean validate();
 
 	boolean validateMixed(FeatureMap value);
+
 	boolean validateBlock(FeatureMap value);
+
 	boolean validateP(EList<P> value);
+
 	boolean validateDiv(EList<Div> value);
+
 	boolean validateUl(EList<Ul> value);
+
 	boolean validateOl(EList<Ol> value);
+
 	boolean validateDl(EList<Dl> value);
+
 	boolean validatePre(EList<Pre> value);
+
 	boolean validateHr(EList<Hr> value);
+
 	boolean validateBlockquote(EList<Blockquote> value);
+
 	boolean validateTable(EList<Table> value);
 }

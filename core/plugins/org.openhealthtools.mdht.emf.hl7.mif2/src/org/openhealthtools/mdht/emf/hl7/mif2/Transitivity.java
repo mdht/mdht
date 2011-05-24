@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -78,11 +82,7 @@ public enum Transitivity implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final Transitivity[] VALUES_ARRAY =
-		new Transitivity[] {
-			TRANSITIVE,
-			ANTITRANSITIVE,
-		};
+	private static final Transitivity[] VALUES_ARRAY = new Transitivity[] { TRANSITIVE, ANTITRANSITIVE, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Transitivity</b></em>' enumerators.
@@ -132,8 +132,10 @@ public enum Transitivity implements Enumerator {
 	 */
 	public static Transitivity get(int value) {
 		switch (value) {
-			case TRANSITIVE_VALUE: return TRANSITIVE;
-			case ANTITRANSITIVE_VALUE: return ANTITRANSITIVE;
+			case TRANSITIVE_VALUE:
+				return TRANSITIVE;
+			case ANTITRANSITIVE_VALUE:
+				return ANTITRANSITIVE;
 		}
 		return null;
 	}
@@ -177,7 +179,7 @@ public enum Transitivity implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -186,7 +188,7 @@ public enum Transitivity implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -195,7 +197,7 @@ public enum Transitivity implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -208,5 +210,5 @@ public enum Transitivity implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //Transitivity
+
+} // Transitivity

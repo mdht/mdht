@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -131,8 +135,13 @@ public class CodeTranslationCollectionImpl extends PackageBaseImpl implements Co
 		Header oldHeader = header;
 		header = newHeader;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_TRANSLATION_COLLECTION__HEADER, oldHeader, newHeader);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_TRANSLATION_COLLECTION__HEADER, oldHeader, newHeader);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -145,15 +154,22 @@ public class CodeTranslationCollectionImpl extends PackageBaseImpl implements Co
 	public void setHeader(Header newHeader) {
 		if (newHeader != header) {
 			NotificationChain msgs = null;
-			if (header != null)
-				msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_TRANSLATION_COLLECTION__HEADER, null, msgs);
-			if (newHeader != null)
-				msgs = ((InternalEObject)newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_TRANSLATION_COLLECTION__HEADER, null, msgs);
+			if (header != null) {
+				msgs = ((InternalEObject) header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_TRANSLATION_COLLECTION__HEADER, null, msgs);
+			}
+			if (newHeader != null) {
+				msgs = ((InternalEObject) newHeader).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_TRANSLATION_COLLECTION__HEADER, null, msgs);
+			}
 			msgs = basicSetHeader(newHeader, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_TRANSLATION_COLLECTION__HEADER, newHeader, newHeader));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_TRANSLATION_COLLECTION__HEADER, newHeader, newHeader));
 	}
 
 	/**
@@ -170,12 +186,19 @@ public class CodeTranslationCollectionImpl extends PackageBaseImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAnnotations(CodeTranslationCollectionAnnotations newAnnotations, NotificationChain msgs) {
+	public NotificationChain basicSetAnnotations(CodeTranslationCollectionAnnotations newAnnotations,
+			NotificationChain msgs) {
 		CodeTranslationCollectionAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_TRANSLATION_COLLECTION__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_TRANSLATION_COLLECTION__ANNOTATIONS, oldAnnotations,
+				newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -188,15 +211,23 @@ public class CodeTranslationCollectionImpl extends PackageBaseImpl implements Co
 	public void setAnnotations(CodeTranslationCollectionAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_TRANSLATION_COLLECTION__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_TRANSLATION_COLLECTION__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_TRANSLATION_COLLECTION__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_TRANSLATION_COLLECTION__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_TRANSLATION_COLLECTION__ANNOTATIONS, newAnnotations,
+				newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_TRANSLATION_COLLECTION__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -206,7 +237,8 @@ public class CodeTranslationCollectionImpl extends PackageBaseImpl implements Co
 	 */
 	public EList<CodeTranslation> getTranslation() {
 		if (translation == null) {
-			translation = new EObjectContainmentEList<CodeTranslation>(CodeTranslation.class, this, Mif2Package.CODE_TRANSLATION_COLLECTION__TRANSLATION);
+			translation = new EObjectContainmentEList<CodeTranslation>(
+				CodeTranslation.class, this, Mif2Package.CODE_TRANSLATION_COLLECTION__TRANSLATION);
 		}
 		return translation;
 	}
@@ -228,8 +260,10 @@ public class CodeTranslationCollectionImpl extends PackageBaseImpl implements Co
 	public void setTitle(String newTitle) {
 		String oldTitle = title;
 		title = newTitle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_TRANSLATION_COLLECTION__TITLE, oldTitle, title));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_TRANSLATION_COLLECTION__TITLE, oldTitle, title));
+		}
 	}
 
 	/**
@@ -245,7 +279,7 @@ public class CodeTranslationCollectionImpl extends PackageBaseImpl implements Co
 			case Mif2Package.CODE_TRANSLATION_COLLECTION__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 			case Mif2Package.CODE_TRANSLATION_COLLECTION__TRANSLATION:
-				return ((InternalEList<?>)getTranslation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTranslation()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -280,17 +314,17 @@ public class CodeTranslationCollectionImpl extends PackageBaseImpl implements Co
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CODE_TRANSLATION_COLLECTION__HEADER:
-				setHeader((Header)newValue);
+				setHeader((Header) newValue);
 				return;
 			case Mif2Package.CODE_TRANSLATION_COLLECTION__ANNOTATIONS:
-				setAnnotations((CodeTranslationCollectionAnnotations)newValue);
+				setAnnotations((CodeTranslationCollectionAnnotations) newValue);
 				return;
 			case Mif2Package.CODE_TRANSLATION_COLLECTION__TRANSLATION:
 				getTranslation().clear();
-				getTranslation().addAll((Collection<? extends CodeTranslation>)newValue);
+				getTranslation().addAll((Collection<? extends CodeTranslation>) newValue);
 				return;
 			case Mif2Package.CODE_TRANSLATION_COLLECTION__TITLE:
-				setTitle((String)newValue);
+				setTitle((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -305,10 +339,10 @@ public class CodeTranslationCollectionImpl extends PackageBaseImpl implements Co
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CODE_TRANSLATION_COLLECTION__HEADER:
-				setHeader((Header)null);
+				setHeader((Header) null);
 				return;
 			case Mif2Package.CODE_TRANSLATION_COLLECTION__ANNOTATIONS:
-				setAnnotations((CodeTranslationCollectionAnnotations)null);
+				setAnnotations((CodeTranslationCollectionAnnotations) null);
 				return;
 			case Mif2Package.CODE_TRANSLATION_COLLECTION__TRANSLATION:
 				getTranslation().clear();
@@ -335,7 +369,9 @@ public class CodeTranslationCollectionImpl extends PackageBaseImpl implements Co
 			case Mif2Package.CODE_TRANSLATION_COLLECTION__TRANSLATION:
 				return translation != null && !translation.isEmpty();
 			case Mif2Package.CODE_TRANSLATION_COLLECTION__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+				return TITLE_EDEFAULT == null
+						? title != null
+						: !TITLE_EDEFAULT.equals(title);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -347,7 +383,9 @@ public class CodeTranslationCollectionImpl extends PackageBaseImpl implements Co
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (title: ");
@@ -356,4 +394,4 @@ public class CodeTranslationCollectionImpl extends PackageBaseImpl implements Co
 		return result.toString();
 	}
 
-} //CodeTranslationCollectionImpl
+} // CodeTranslationCollectionImpl

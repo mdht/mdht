@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -303,7 +307,8 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 	 */
 	public EList<DatatypeDerivation> getDerivedFrom() {
 		if (derivedFrom == null) {
-			derivedFrom = new EObjectContainmentEList<DatatypeDerivation>(DatatypeDerivation.class, this, Mif2Package.DATATYPE__DERIVED_FROM);
+			derivedFrom = new EObjectContainmentEList<DatatypeDerivation>(
+				DatatypeDerivation.class, this, Mif2Package.DATATYPE__DERIVED_FROM);
 		}
 		return derivedFrom;
 	}
@@ -315,7 +320,8 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 	 */
 	public EList<DatatypeDerivation> getHasDerivations() {
 		if (hasDerivations == null) {
-			hasDerivations = new EObjectContainmentEList<DatatypeDerivation>(DatatypeDerivation.class, this, Mif2Package.DATATYPE__HAS_DERIVATIONS);
+			hasDerivations = new EObjectContainmentEList<DatatypeDerivation>(
+				DatatypeDerivation.class, this, Mif2Package.DATATYPE__HAS_DERIVATIONS);
 		}
 		return hasDerivations;
 	}
@@ -338,8 +344,13 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 		DatatypeAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -352,15 +363,22 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 	public void setAnnotations(DatatypeAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -382,7 +400,8 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 	 */
 	public EList<DatatypeParameter> getParameter() {
 		if (parameter == null) {
-			parameter = new EObjectContainmentEList<DatatypeParameter>(DatatypeParameter.class, this, Mif2Package.DATATYPE__PARAMETER);
+			parameter = new EObjectContainmentEList<DatatypeParameter>(
+				DatatypeParameter.class, this, Mif2Package.DATATYPE__PARAMETER);
 		}
 		return parameter;
 	}
@@ -405,8 +424,13 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 		DatatypeBinding oldBinding = binding;
 		binding = newBinding;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE__BINDING, oldBinding, newBinding);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE__BINDING, oldBinding, newBinding);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -419,15 +443,21 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 	public void setBinding(DatatypeBinding newBinding) {
 		if (newBinding != binding) {
 			NotificationChain msgs = null;
-			if (binding != null)
-				msgs = ((InternalEObject)binding).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE__BINDING, null, msgs);
-			if (newBinding != null)
-				msgs = ((InternalEObject)newBinding).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE__BINDING, null, msgs);
+			if (binding != null) {
+				msgs = ((InternalEObject) binding).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE__BINDING, null, msgs);
+			}
+			if (newBinding != null) {
+				msgs = ((InternalEObject) newBinding).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE__BINDING, null, msgs);
+			}
 			msgs = basicSetBinding(newBinding, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE__BINDING, newBinding, newBinding));
+		}
 	}
 
 	/**
@@ -437,7 +467,8 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 	 */
 	public EList<DatatypeRef> getChildDatatype() {
 		if (childDatatype == null) {
-			childDatatype = new EObjectContainmentEList<DatatypeRef>(DatatypeRef.class, this, Mif2Package.DATATYPE__CHILD_DATATYPE);
+			childDatatype = new EObjectContainmentEList<DatatypeRef>(
+				DatatypeRef.class, this, Mif2Package.DATATYPE__CHILD_DATATYPE);
 		}
 		return childDatatype;
 	}
@@ -449,7 +480,8 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 	 */
 	public EList<DatatypeRef> getParentDatatype() {
 		if (parentDatatype == null) {
-			parentDatatype = new EObjectContainmentEList<DatatypeRef>(DatatypeRef.class, this, Mif2Package.DATATYPE__PARENT_DATATYPE);
+			parentDatatype = new EObjectContainmentEList<DatatypeRef>(
+				DatatypeRef.class, this, Mif2Package.DATATYPE__PARENT_DATATYPE);
 		}
 		return parentDatatype;
 	}
@@ -461,7 +493,8 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 	 */
 	public EList<DatatypeOperation> getProperty() {
 		if (property == null) {
-			property = new EObjectContainmentEList<DatatypeOperation>(DatatypeOperation.class, this, Mif2Package.DATATYPE__PROPERTY);
+			property = new EObjectContainmentEList<DatatypeOperation>(
+				DatatypeOperation.class, this, Mif2Package.DATATYPE__PROPERTY);
 		}
 		return property;
 	}
@@ -482,11 +515,16 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 	 */
 	public void setDatatypeKind(DatatypeKind newDatatypeKind) {
 		DatatypeKind oldDatatypeKind = datatypeKind;
-		datatypeKind = newDatatypeKind == null ? DATATYPE_KIND_EDEFAULT : newDatatypeKind;
+		datatypeKind = newDatatypeKind == null
+				? DATATYPE_KIND_EDEFAULT
+				: newDatatypeKind;
 		boolean oldDatatypeKindESet = datatypeKindESet;
 		datatypeKindESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE__DATATYPE_KIND, oldDatatypeKind, datatypeKind, !oldDatatypeKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE__DATATYPE_KIND, oldDatatypeKind, datatypeKind,
+				!oldDatatypeKindESet));
+		}
 	}
 
 	/**
@@ -499,8 +537,11 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 		boolean oldDatatypeKindESet = datatypeKindESet;
 		datatypeKind = DATATYPE_KIND_EDEFAULT;
 		datatypeKindESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.DATATYPE__DATATYPE_KIND, oldDatatypeKind, DATATYPE_KIND_EDEFAULT, oldDatatypeKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.DATATYPE__DATATYPE_KIND, oldDatatypeKind, DATATYPE_KIND_EDEFAULT,
+				oldDatatypeKindESet));
+		}
 	}
 
 	/**
@@ -531,8 +572,11 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 		isAbstract = newIsAbstract;
 		boolean oldIsAbstractESet = isAbstractESet;
 		isAbstractESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE__IS_ABSTRACT, oldIsAbstract, isAbstract, !oldIsAbstractESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE__IS_ABSTRACT, oldIsAbstract, isAbstract,
+				!oldIsAbstractESet));
+		}
 	}
 
 	/**
@@ -545,8 +589,11 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 		boolean oldIsAbstractESet = isAbstractESet;
 		isAbstract = IS_ABSTRACT_EDEFAULT;
 		isAbstractESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.DATATYPE__IS_ABSTRACT, oldIsAbstract, IS_ABSTRACT_EDEFAULT, oldIsAbstractESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.DATATYPE__IS_ABSTRACT, oldIsAbstract, IS_ABSTRACT_EDEFAULT,
+				oldIsAbstractESet));
+		}
 	}
 
 	/**
@@ -575,8 +622,9 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -596,8 +644,9 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 	public void setTitle(String newTitle) {
 		String oldTitle = title;
 		title = newTitle;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE__TITLE, oldTitle, title));
+		}
 	}
 
 	/**
@@ -616,11 +665,15 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 	 */
 	public void setVisibility(VisibilityKind newVisibility) {
 		VisibilityKind oldVisibility = visibility;
-		visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+		visibility = newVisibility == null
+				? VISIBILITY_EDEFAULT
+				: newVisibility;
 		boolean oldVisibilityESet = visibilityESet;
 		visibilityESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE__VISIBILITY, oldVisibility, visibility, !oldVisibilityESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE__VISIBILITY, oldVisibility, visibility, !oldVisibilityESet));
+		}
 	}
 
 	/**
@@ -633,8 +686,11 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 		boolean oldVisibilityESet = visibilityESet;
 		visibility = VISIBILITY_EDEFAULT;
 		visibilityESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.DATATYPE__VISIBILITY, oldVisibility, VISIBILITY_EDEFAULT, oldVisibilityESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.DATATYPE__VISIBILITY, oldVisibility, VISIBILITY_EDEFAULT,
+				oldVisibilityESet));
+		}
 	}
 
 	/**
@@ -655,21 +711,21 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.DATATYPE__DERIVED_FROM:
-				return ((InternalEList<?>)getDerivedFrom()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDerivedFrom()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DATATYPE__HAS_DERIVATIONS:
-				return ((InternalEList<?>)getHasDerivations()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getHasDerivations()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DATATYPE__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 			case Mif2Package.DATATYPE__PARAMETER:
-				return ((InternalEList<?>)getParameter()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getParameter()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DATATYPE__BINDING:
 				return basicSetBinding(null, msgs);
 			case Mif2Package.DATATYPE__CHILD_DATATYPE:
-				return ((InternalEList<?>)getChildDatatype()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getChildDatatype()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DATATYPE__PARENT_DATATYPE:
-				return ((InternalEList<?>)getParentDatatype()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getParentDatatype()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DATATYPE__PROPERTY:
-				return ((InternalEList<?>)getProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getProperty()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -703,7 +759,9 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 			case Mif2Package.DATATYPE__DATATYPE_KIND:
 				return getDatatypeKind();
 			case Mif2Package.DATATYPE__IS_ABSTRACT:
-				return isIsAbstract() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsAbstract()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.DATATYPE__NAME:
 				return getName();
 			case Mif2Package.DATATYPE__TITLE:
@@ -725,52 +783,52 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 		switch (featureID) {
 			case Mif2Package.DATATYPE__DERIVED_FROM:
 				getDerivedFrom().clear();
-				getDerivedFrom().addAll((Collection<? extends DatatypeDerivation>)newValue);
+				getDerivedFrom().addAll((Collection<? extends DatatypeDerivation>) newValue);
 				return;
 			case Mif2Package.DATATYPE__HAS_DERIVATIONS:
 				getHasDerivations().clear();
-				getHasDerivations().addAll((Collection<? extends DatatypeDerivation>)newValue);
+				getHasDerivations().addAll((Collection<? extends DatatypeDerivation>) newValue);
 				return;
 			case Mif2Package.DATATYPE__ANNOTATIONS:
-				setAnnotations((DatatypeAnnotations)newValue);
+				setAnnotations((DatatypeAnnotations) newValue);
 				return;
 			case Mif2Package.DATATYPE__ENUMERATION_VALUE:
 				getEnumerationValue().clear();
-				getEnumerationValue().addAll((Collection<? extends String>)newValue);
+				getEnumerationValue().addAll((Collection<? extends String>) newValue);
 				return;
 			case Mif2Package.DATATYPE__PARAMETER:
 				getParameter().clear();
-				getParameter().addAll((Collection<? extends DatatypeParameter>)newValue);
+				getParameter().addAll((Collection<? extends DatatypeParameter>) newValue);
 				return;
 			case Mif2Package.DATATYPE__BINDING:
-				setBinding((DatatypeBinding)newValue);
+				setBinding((DatatypeBinding) newValue);
 				return;
 			case Mif2Package.DATATYPE__CHILD_DATATYPE:
 				getChildDatatype().clear();
-				getChildDatatype().addAll((Collection<? extends DatatypeRef>)newValue);
+				getChildDatatype().addAll((Collection<? extends DatatypeRef>) newValue);
 				return;
 			case Mif2Package.DATATYPE__PARENT_DATATYPE:
 				getParentDatatype().clear();
-				getParentDatatype().addAll((Collection<? extends DatatypeRef>)newValue);
+				getParentDatatype().addAll((Collection<? extends DatatypeRef>) newValue);
 				return;
 			case Mif2Package.DATATYPE__PROPERTY:
 				getProperty().clear();
-				getProperty().addAll((Collection<? extends DatatypeOperation>)newValue);
+				getProperty().addAll((Collection<? extends DatatypeOperation>) newValue);
 				return;
 			case Mif2Package.DATATYPE__DATATYPE_KIND:
-				setDatatypeKind((DatatypeKind)newValue);
+				setDatatypeKind((DatatypeKind) newValue);
 				return;
 			case Mif2Package.DATATYPE__IS_ABSTRACT:
-				setIsAbstract(((Boolean)newValue).booleanValue());
+				setIsAbstract(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.DATATYPE__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.DATATYPE__TITLE:
-				setTitle((String)newValue);
+				setTitle((String) newValue);
 				return;
 			case Mif2Package.DATATYPE__VISIBILITY:
-				setVisibility((VisibilityKind)newValue);
+				setVisibility((VisibilityKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -791,7 +849,7 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 				getHasDerivations().clear();
 				return;
 			case Mif2Package.DATATYPE__ANNOTATIONS:
-				setAnnotations((DatatypeAnnotations)null);
+				setAnnotations((DatatypeAnnotations) null);
 				return;
 			case Mif2Package.DATATYPE__ENUMERATION_VALUE:
 				getEnumerationValue().clear();
@@ -800,7 +858,7 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 				getParameter().clear();
 				return;
 			case Mif2Package.DATATYPE__BINDING:
-				setBinding((DatatypeBinding)null);
+				setBinding((DatatypeBinding) null);
 				return;
 			case Mif2Package.DATATYPE__CHILD_DATATYPE:
 				getChildDatatype().clear();
@@ -861,9 +919,13 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 			case Mif2Package.DATATYPE__IS_ABSTRACT:
 				return isSetIsAbstract();
 			case Mif2Package.DATATYPE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.DATATYPE__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+				return TITLE_EDEFAULT == null
+						? title != null
+						: !TITLE_EDEFAULT.equals(title);
 			case Mif2Package.DATATYPE__VISIBILITY:
 				return isSetVisibility();
 		}
@@ -877,23 +939,37 @@ public class DatatypeImpl extends ClassifierImpl implements Datatype {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (enumerationValue: ");
 		result.append(enumerationValue);
 		result.append(", datatypeKind: ");
-		if (datatypeKindESet) result.append(datatypeKind); else result.append("<unset>");
+		if (datatypeKindESet) {
+			result.append(datatypeKind);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", isAbstract: ");
-		if (isAbstractESet) result.append(isAbstract); else result.append("<unset>");
+		if (isAbstractESet) {
+			result.append(isAbstract);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", name: ");
 		result.append(name);
 		result.append(", title: ");
 		result.append(title);
 		result.append(", visibility: ");
-		if (visibilityESet) result.append(visibility); else result.append("<unset>");
+		if (visibilityESet) {
+			result.append(visibility);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //DatatypeImpl
+} // DatatypeImpl

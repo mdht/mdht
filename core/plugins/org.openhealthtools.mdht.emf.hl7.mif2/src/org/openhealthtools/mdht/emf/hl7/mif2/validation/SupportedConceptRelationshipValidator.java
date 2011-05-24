@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import org.eclipse.emf.common.util.EList;
@@ -17,7 +21,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.Symmetry;
 import org.openhealthtools.mdht.emf.hl7.mif2.Transitivity;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Inline;
 
-
 /**
  * A sample validator interface for {@link org.openhealthtools.mdht.emf.hl7.mif2.SupportedConceptRelationship}.
  * This doesn't really do anything, and it's not a real EMF artifact.
@@ -28,19 +31,34 @@ public interface SupportedConceptRelationshipValidator {
 	boolean validate();
 
 	boolean validateDescription(Inline value);
+
 	boolean validateAllowedForSources(ContentDefinition value);
+
 	boolean validateAllowedForTargets(ContentDefinition value);
+
 	boolean validateRequiredForSources(ContentDefinition value);
+
 	boolean validateRequiredForTargets(ContentDefinition value);
+
 	boolean validateSupportedProperty(EList<SupportedProperty> value);
+
 	boolean validateDefiningConcept(ConceptRef value);
+
 	boolean validateFunctionalism(boolean value);
+
 	boolean validateId(String value);
+
 	boolean validateInverseName(String value);
+
 	boolean validateIsNavigable(boolean value);
+
 	boolean validateName(String value);
+
 	boolean validateReflexivity(Reflexivity value);
+
 	boolean validateRelationshipKind(ConceptRelationshipKind value);
+
 	boolean validateSymmetry(Symmetry value);
+
 	boolean validateTransitivity(Transitivity value);
 }

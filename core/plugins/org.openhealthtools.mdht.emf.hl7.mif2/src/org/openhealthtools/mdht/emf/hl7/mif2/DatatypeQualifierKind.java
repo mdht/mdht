@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -127,13 +131,8 @@ public enum DatatypeQualifierKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final DatatypeQualifierKind[] VALUES_ARRAY =
-		new DatatypeQualifierKind[] {
-			DATATYPE,
-			PARAMETER,
-			BASE_DIFF,
-			PARAMETER_DIFF,
-		};
+	private static final DatatypeQualifierKind[] VALUES_ARRAY = new DatatypeQualifierKind[] {
+			DATATYPE, PARAMETER, BASE_DIFF, PARAMETER_DIFF, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Datatype Qualifier Kind</b></em>' enumerators.
@@ -183,10 +182,14 @@ public enum DatatypeQualifierKind implements Enumerator {
 	 */
 	public static DatatypeQualifierKind get(int value) {
 		switch (value) {
-			case DATATYPE_VALUE: return DATATYPE;
-			case PARAMETER_VALUE: return PARAMETER;
-			case BASE_DIFF_VALUE: return BASE_DIFF;
-			case PARAMETER_DIFF_VALUE: return PARAMETER_DIFF;
+			case DATATYPE_VALUE:
+				return DATATYPE;
+			case PARAMETER_VALUE:
+				return PARAMETER;
+			case BASE_DIFF_VALUE:
+				return BASE_DIFF;
+			case PARAMETER_DIFF_VALUE:
+				return PARAMETER_DIFF;
 		}
 		return null;
 	}
@@ -230,7 +233,7 @@ public enum DatatypeQualifierKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -239,7 +242,7 @@ public enum DatatypeQualifierKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -248,7 +251,7 @@ public enum DatatypeQualifierKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -261,5 +264,5 @@ public enum DatatypeQualifierKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //DatatypeQualifierKind
+
+} // DatatypeQualifierKind

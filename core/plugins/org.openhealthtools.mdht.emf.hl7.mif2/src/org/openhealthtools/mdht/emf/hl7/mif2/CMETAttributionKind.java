@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -199,16 +203,8 @@ public enum CMETAttributionKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final CMETAttributionKind[] VALUES_ARRAY =
-		new CMETAttributionKind[] {
-			UNIVERSAL,
-			MINIMAL,
-			CONTACT,
-			INFORMATIONAL,
-			IDENTIFIED_CONFIRMABLE,
-			IDENTIFIED_INFORMATIONAL,
-			IDENTIFIED,
-		};
+	private static final CMETAttributionKind[] VALUES_ARRAY = new CMETAttributionKind[] {
+			UNIVERSAL, MINIMAL, CONTACT, INFORMATIONAL, IDENTIFIED_CONFIRMABLE, IDENTIFIED_INFORMATIONAL, IDENTIFIED, };
 
 	/**
 	 * A public read-only list of all the '<em><b>CMET Attribution Kind</b></em>' enumerators.
@@ -258,13 +254,20 @@ public enum CMETAttributionKind implements Enumerator {
 	 */
 	public static CMETAttributionKind get(int value) {
 		switch (value) {
-			case UNIVERSAL_VALUE: return UNIVERSAL;
-			case MINIMAL_VALUE: return MINIMAL;
-			case CONTACT_VALUE: return CONTACT;
-			case INFORMATIONAL_VALUE: return INFORMATIONAL;
-			case IDENTIFIED_CONFIRMABLE_VALUE: return IDENTIFIED_CONFIRMABLE;
-			case IDENTIFIED_INFORMATIONAL_VALUE: return IDENTIFIED_INFORMATIONAL;
-			case IDENTIFIED_VALUE: return IDENTIFIED;
+			case UNIVERSAL_VALUE:
+				return UNIVERSAL;
+			case MINIMAL_VALUE:
+				return MINIMAL;
+			case CONTACT_VALUE:
+				return CONTACT;
+			case INFORMATIONAL_VALUE:
+				return INFORMATIONAL;
+			case IDENTIFIED_CONFIRMABLE_VALUE:
+				return IDENTIFIED_CONFIRMABLE;
+			case IDENTIFIED_INFORMATIONAL_VALUE:
+				return IDENTIFIED_INFORMATIONAL;
+			case IDENTIFIED_VALUE:
+				return IDENTIFIED;
 		}
 		return null;
 	}
@@ -308,7 +311,7 @@ public enum CMETAttributionKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -317,7 +320,7 @@ public enum CMETAttributionKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -326,7 +329,7 @@ public enum CMETAttributionKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -339,5 +342,5 @@ public enum CMETAttributionKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //CMETAttributionKind
+
+} // CMETAttributionKind

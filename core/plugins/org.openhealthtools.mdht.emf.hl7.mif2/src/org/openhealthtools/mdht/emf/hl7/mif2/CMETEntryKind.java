@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -199,16 +203,8 @@ public enum CMETEntryKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final CMETEntryKind[] VALUES_ARRAY =
-		new CMETEntryKind[] {
-			ACT,
-			ENTITY,
-			ROLE,
-			ROLE_PLAYED_OR_PERFORMED,
-			ROLE_SCOPED_OR_PERFORMED,
-			ROLE_PERFORMED_ONLY,
-			OTHER,
-		};
+	private static final CMETEntryKind[] VALUES_ARRAY = new CMETEntryKind[] {
+			ACT, ENTITY, ROLE, ROLE_PLAYED_OR_PERFORMED, ROLE_SCOPED_OR_PERFORMED, ROLE_PERFORMED_ONLY, OTHER, };
 
 	/**
 	 * A public read-only list of all the '<em><b>CMET Entry Kind</b></em>' enumerators.
@@ -258,13 +254,20 @@ public enum CMETEntryKind implements Enumerator {
 	 */
 	public static CMETEntryKind get(int value) {
 		switch (value) {
-			case ACT_VALUE: return ACT;
-			case ENTITY_VALUE: return ENTITY;
-			case ROLE_VALUE: return ROLE;
-			case ROLE_PLAYED_OR_PERFORMED_VALUE: return ROLE_PLAYED_OR_PERFORMED;
-			case ROLE_SCOPED_OR_PERFORMED_VALUE: return ROLE_SCOPED_OR_PERFORMED;
-			case ROLE_PERFORMED_ONLY_VALUE: return ROLE_PERFORMED_ONLY;
-			case OTHER_VALUE: return OTHER;
+			case ACT_VALUE:
+				return ACT;
+			case ENTITY_VALUE:
+				return ENTITY;
+			case ROLE_VALUE:
+				return ROLE;
+			case ROLE_PLAYED_OR_PERFORMED_VALUE:
+				return ROLE_PLAYED_OR_PERFORMED;
+			case ROLE_SCOPED_OR_PERFORMED_VALUE:
+				return ROLE_SCOPED_OR_PERFORMED;
+			case ROLE_PERFORMED_ONLY_VALUE:
+				return ROLE_PERFORMED_ONLY;
+			case OTHER_VALUE:
+				return OTHER;
 		}
 		return null;
 	}
@@ -308,7 +311,7 @@ public enum CMETEntryKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -317,7 +320,7 @@ public enum CMETEntryKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -326,7 +329,7 @@ public enum CMETEntryKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -339,5 +342,5 @@ public enum CMETEntryKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //CMETEntryKind
+
+} // CMETEntryKind

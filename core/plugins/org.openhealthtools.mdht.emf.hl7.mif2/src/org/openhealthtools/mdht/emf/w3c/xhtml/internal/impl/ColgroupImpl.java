@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.internal.impl;
 
 import java.math.BigInteger;
@@ -337,11 +341,15 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 	 */
 	public void setAlign(AlignType newAlign) {
 		AlignType oldAlign = align;
-		align = newAlign == null ? ALIGN_EDEFAULT : newAlign;
+		align = newAlign == null
+				? ALIGN_EDEFAULT
+				: newAlign;
 		boolean oldAlignESet = alignESet;
 		alignESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.COLGROUP__ALIGN, oldAlign, align, !oldAlignESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.COLGROUP__ALIGN, oldAlign, align, !oldAlignESet));
+		}
 	}
 
 	/**
@@ -354,8 +362,10 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 		boolean oldAlignESet = alignESet;
 		align = ALIGN_EDEFAULT;
 		alignESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.COLGROUP__ALIGN, oldAlign, ALIGN_EDEFAULT, oldAlignESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.COLGROUP__ALIGN, oldAlign, ALIGN_EDEFAULT, oldAlignESet));
+		}
 	}
 
 	/**
@@ -384,8 +394,9 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 	public void setChar(String newChar) {
 		String oldChar = char_;
 		char_ = newChar;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.COLGROUP__CHAR, oldChar, char_));
+		}
 	}
 
 	/**
@@ -405,8 +416,9 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 	public void setCharoff(String newCharoff) {
 		String oldCharoff = charoff;
 		charoff = newCharoff;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.COLGROUP__CHAROFF, oldCharoff, charoff));
+		}
 	}
 
 	/**
@@ -425,11 +437,15 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 	 */
 	public void setClass(MifClassType newClass) {
 		MifClassType oldClass = class_;
-		class_ = newClass == null ? CLASS_EDEFAULT : newClass;
+		class_ = newClass == null
+				? CLASS_EDEFAULT
+				: newClass;
 		boolean oldClassESet = classESet;
 		classESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.COLGROUP__CLASS, oldClass, class_, !oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.COLGROUP__CLASS, oldClass, class_, !oldClassESet));
+		}
 	}
 
 	/**
@@ -442,8 +458,10 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 		boolean oldClassESet = classESet;
 		class_ = CLASS_EDEFAULT;
 		classESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.COLGROUP__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.COLGROUP__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		}
 	}
 
 	/**
@@ -472,8 +490,9 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 	public void setLang(String newLang) {
 		String oldLang = lang;
 		lang = newLang;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.COLGROUP__LANG, oldLang, lang));
+		}
 	}
 
 	/**
@@ -495,8 +514,10 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 		span = newSpan;
 		boolean oldSpanESet = spanESet;
 		spanESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.COLGROUP__SPAN, oldSpan, span, !oldSpanESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.COLGROUP__SPAN, oldSpan, span, !oldSpanESet));
+		}
 	}
 
 	/**
@@ -509,8 +530,10 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 		boolean oldSpanESet = spanESet;
 		span = SPAN_EDEFAULT;
 		spanESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.COLGROUP__SPAN, oldSpan, SPAN_EDEFAULT, oldSpanESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.COLGROUP__SPAN, oldSpan, SPAN_EDEFAULT, oldSpanESet));
+		}
 	}
 
 	/**
@@ -538,11 +561,15 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 	 */
 	public void setStyle(StyleSheet newStyle) {
 		StyleSheet oldStyle = style;
-		style = newStyle == null ? STYLE_EDEFAULT : newStyle;
+		style = newStyle == null
+				? STYLE_EDEFAULT
+				: newStyle;
 		boolean oldStyleESet = styleESet;
 		styleESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.COLGROUP__STYLE, oldStyle, style, !oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.COLGROUP__STYLE, oldStyle, style, !oldStyleESet));
+		}
 	}
 
 	/**
@@ -555,8 +582,10 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 		boolean oldStyleESet = styleESet;
 		style = STYLE_EDEFAULT;
 		styleESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.COLGROUP__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.COLGROUP__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		}
 	}
 
 	/**
@@ -584,11 +613,15 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 	 */
 	public void setValign(ValignType newValign) {
 		ValignType oldValign = valign;
-		valign = newValign == null ? VALIGN_EDEFAULT : newValign;
+		valign = newValign == null
+				? VALIGN_EDEFAULT
+				: newValign;
 		boolean oldValignESet = valignESet;
 		valignESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.COLGROUP__VALIGN, oldValign, valign, !oldValignESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.COLGROUP__VALIGN, oldValign, valign, !oldValignESet));
+		}
 	}
 
 	/**
@@ -601,8 +634,10 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 		boolean oldValignESet = valignESet;
 		valign = VALIGN_EDEFAULT;
 		valignESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.COLGROUP__VALIGN, oldValign, VALIGN_EDEFAULT, oldValignESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.COLGROUP__VALIGN, oldValign, VALIGN_EDEFAULT, oldValignESet));
+		}
 	}
 
 	/**
@@ -631,8 +666,9 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 	public void setWidth(String newWidth) {
 		String oldWidth = width;
 		width = newWidth;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.COLGROUP__WIDTH, oldWidth, width));
+		}
 	}
 
 	/**
@@ -644,7 +680,7 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case XhtmlPackage.COLGROUP__COL:
-				return ((InternalEList<?>)getCol()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCol()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -692,34 +728,34 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 		switch (featureID) {
 			case XhtmlPackage.COLGROUP__COL:
 				getCol().clear();
-				getCol().addAll((Collection<? extends Col>)newValue);
+				getCol().addAll((Collection<? extends Col>) newValue);
 				return;
 			case XhtmlPackage.COLGROUP__ALIGN:
-				setAlign((AlignType)newValue);
+				setAlign((AlignType) newValue);
 				return;
 			case XhtmlPackage.COLGROUP__CHAR:
-				setChar((String)newValue);
+				setChar((String) newValue);
 				return;
 			case XhtmlPackage.COLGROUP__CHAROFF:
-				setCharoff((String)newValue);
+				setCharoff((String) newValue);
 				return;
 			case XhtmlPackage.COLGROUP__CLASS:
-				setClass((MifClassType)newValue);
+				setClass((MifClassType) newValue);
 				return;
 			case XhtmlPackage.COLGROUP__LANG:
-				setLang((String)newValue);
+				setLang((String) newValue);
 				return;
 			case XhtmlPackage.COLGROUP__SPAN:
-				setSpan((BigInteger)newValue);
+				setSpan((BigInteger) newValue);
 				return;
 			case XhtmlPackage.COLGROUP__STYLE:
-				setStyle((StyleSheet)newValue);
+				setStyle((StyleSheet) newValue);
 				return;
 			case XhtmlPackage.COLGROUP__VALIGN:
-				setValign((ValignType)newValue);
+				setValign((ValignType) newValue);
 				return;
 			case XhtmlPackage.COLGROUP__WIDTH:
-				setWidth((String)newValue);
+				setWidth((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -780,13 +816,19 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 			case XhtmlPackage.COLGROUP__ALIGN:
 				return isSetAlign();
 			case XhtmlPackage.COLGROUP__CHAR:
-				return CHAR_EDEFAULT == null ? char_ != null : !CHAR_EDEFAULT.equals(char_);
+				return CHAR_EDEFAULT == null
+						? char_ != null
+						: !CHAR_EDEFAULT.equals(char_);
 			case XhtmlPackage.COLGROUP__CHAROFF:
-				return CHAROFF_EDEFAULT == null ? charoff != null : !CHAROFF_EDEFAULT.equals(charoff);
+				return CHAROFF_EDEFAULT == null
+						? charoff != null
+						: !CHAROFF_EDEFAULT.equals(charoff);
 			case XhtmlPackage.COLGROUP__CLASS:
 				return isSetClass();
 			case XhtmlPackage.COLGROUP__LANG:
-				return LANG_EDEFAULT == null ? lang != null : !LANG_EDEFAULT.equals(lang);
+				return LANG_EDEFAULT == null
+						? lang != null
+						: !LANG_EDEFAULT.equals(lang);
 			case XhtmlPackage.COLGROUP__SPAN:
 				return isSetSpan();
 			case XhtmlPackage.COLGROUP__STYLE:
@@ -794,7 +836,9 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 			case XhtmlPackage.COLGROUP__VALIGN:
 				return isSetValign();
 			case XhtmlPackage.COLGROUP__WIDTH:
-				return WIDTH_EDEFAULT == null ? width != null : !WIDTH_EDEFAULT.equals(width);
+				return WIDTH_EDEFAULT == null
+						? width != null
+						: !WIDTH_EDEFAULT.equals(width);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -806,29 +850,51 @@ public class ColgroupImpl extends EObjectImpl implements Colgroup {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (align: ");
-		if (alignESet) result.append(align); else result.append("<unset>");
+		if (alignESet) {
+			result.append(align);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", char: ");
 		result.append(char_);
 		result.append(", charoff: ");
 		result.append(charoff);
 		result.append(", class: ");
-		if (classESet) result.append(class_); else result.append("<unset>");
+		if (classESet) {
+			result.append(class_);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", lang: ");
 		result.append(lang);
 		result.append(", span: ");
-		if (spanESet) result.append(span); else result.append("<unset>");
+		if (spanESet) {
+			result.append(span);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", style: ");
-		if (styleESet) result.append(style); else result.append("<unset>");
+		if (styleESet) {
+			result.append(style);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", valign: ");
-		if (valignESet) result.append(valign); else result.append("<unset>");
+		if (valignESet) {
+			result.append(valign);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", width: ");
 		result.append(width);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ColgroupImpl
+} // ColgroupImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.internal.impl;
 
 import java.util.Collection;
@@ -128,7 +132,7 @@ public class PreContentImpl extends EObjectImpl implements PreContent {
 	 * @generated
 	 */
 	public FeatureMap getGroup() {
-		return (FeatureMap)getMixed().<FeatureMap.Entry>list(XhtmlPackage.Literals.PRE_CONTENT__GROUP);
+		return (FeatureMap) getMixed().<FeatureMap.Entry> list(XhtmlPackage.Literals.PRE_CONTENT__GROUP);
 	}
 
 	/**
@@ -329,51 +333,51 @@ public class PreContentImpl extends EObjectImpl implements PreContent {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case XhtmlPackage.PRE_CONTENT__MIXED:
-				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getMixed()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__GROUP:
-				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getGroup()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__A:
-				return ((InternalEList<?>)getA()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getA()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__TT:
-				return ((InternalEList<?>)getTt()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTt()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__I:
-				return ((InternalEList<?>)getI()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getI()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__B:
-				return ((InternalEList<?>)getB()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getB()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__BIG:
-				return ((InternalEList<?>)getBig()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBig()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__SMALL:
-				return ((InternalEList<?>)getSmall()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSmall()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__EM:
-				return ((InternalEList<?>)getEm()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getEm()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__STRONG:
-				return ((InternalEList<?>)getStrong()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getStrong()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__DFN:
-				return ((InternalEList<?>)getDfn()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDfn()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__CODE:
-				return ((InternalEList<?>)getCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCode()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__Q:
-				return ((InternalEList<?>)getQ()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getQ()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__SAMP:
-				return ((InternalEList<?>)getSamp()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSamp()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__KBD:
-				return ((InternalEList<?>)getKbd()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getKbd()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__VAR:
-				return ((InternalEList<?>)getVar()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getVar()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__CITE:
-				return ((InternalEList<?>)getCite()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCite()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__ABBR:
-				return ((InternalEList<?>)getAbbr()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAbbr()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__ACRONYM:
-				return ((InternalEList<?>)getAcronym()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAcronym()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__SUB:
-				return ((InternalEList<?>)getSub()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSub()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__SUP:
-				return ((InternalEList<?>)getSup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSup()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__BR:
-				return ((InternalEList<?>)getBr()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBr()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.PRE_CONTENT__SPAN:
-				return ((InternalEList<?>)getSpan()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSpan()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -387,11 +391,15 @@ public class PreContentImpl extends EObjectImpl implements PreContent {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case XhtmlPackage.PRE_CONTENT__MIXED:
-				if (coreType) return getMixed();
-				return ((FeatureMap.Internal)getMixed()).getWrapper();
+				if (coreType) {
+					return getMixed();
+				}
+				return ((FeatureMap.Internal) getMixed()).getWrapper();
 			case XhtmlPackage.PRE_CONTENT__GROUP:
-				if (coreType) return getGroup();
-				return ((FeatureMap.Internal)getGroup()).getWrapper();
+				if (coreType) {
+					return getGroup();
+				}
+				return ((FeatureMap.Internal) getGroup()).getWrapper();
 			case XhtmlPackage.PRE_CONTENT__A:
 				return getA();
 			case XhtmlPackage.PRE_CONTENT__TT:
@@ -448,94 +456,94 @@ public class PreContentImpl extends EObjectImpl implements PreContent {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case XhtmlPackage.PRE_CONTENT__MIXED:
-				((FeatureMap.Internal)getMixed()).set(newValue);
+				((FeatureMap.Internal) getMixed()).set(newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__GROUP:
-				((FeatureMap.Internal)getGroup()).set(newValue);
+				((FeatureMap.Internal) getGroup()).set(newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__A:
 				getA().clear();
-				getA().addAll((Collection<? extends A>)newValue);
+				getA().addAll((Collection<? extends A>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__TT:
 				getTt().clear();
-				getTt().addAll((Collection<? extends Tt>)newValue);
+				getTt().addAll((Collection<? extends Tt>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__I:
 				getI().clear();
-				getI().addAll((Collection<? extends I>)newValue);
+				getI().addAll((Collection<? extends I>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__B:
 				getB().clear();
-				getB().addAll((Collection<? extends B>)newValue);
+				getB().addAll((Collection<? extends B>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__BIG:
 				getBig().clear();
-				getBig().addAll((Collection<? extends Big>)newValue);
+				getBig().addAll((Collection<? extends Big>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__SMALL:
 				getSmall().clear();
-				getSmall().addAll((Collection<? extends Small>)newValue);
+				getSmall().addAll((Collection<? extends Small>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__EM:
 				getEm().clear();
-				getEm().addAll((Collection<? extends Em>)newValue);
+				getEm().addAll((Collection<? extends Em>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__STRONG:
 				getStrong().clear();
-				getStrong().addAll((Collection<? extends Strong>)newValue);
+				getStrong().addAll((Collection<? extends Strong>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__DFN:
 				getDfn().clear();
-				getDfn().addAll((Collection<? extends Dfn>)newValue);
+				getDfn().addAll((Collection<? extends Dfn>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__CODE:
 				getCode().clear();
-				getCode().addAll((Collection<? extends Code>)newValue);
+				getCode().addAll((Collection<? extends Code>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__Q:
 				getQ().clear();
-				getQ().addAll((Collection<? extends Q>)newValue);
+				getQ().addAll((Collection<? extends Q>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__SAMP:
 				getSamp().clear();
-				getSamp().addAll((Collection<? extends Samp>)newValue);
+				getSamp().addAll((Collection<? extends Samp>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__KBD:
 				getKbd().clear();
-				getKbd().addAll((Collection<? extends Kbd>)newValue);
+				getKbd().addAll((Collection<? extends Kbd>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__VAR:
 				getVar().clear();
-				getVar().addAll((Collection<? extends Var>)newValue);
+				getVar().addAll((Collection<? extends Var>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__CITE:
 				getCite().clear();
-				getCite().addAll((Collection<? extends Cite>)newValue);
+				getCite().addAll((Collection<? extends Cite>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__ABBR:
 				getAbbr().clear();
-				getAbbr().addAll((Collection<? extends Abbr>)newValue);
+				getAbbr().addAll((Collection<? extends Abbr>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__ACRONYM:
 				getAcronym().clear();
-				getAcronym().addAll((Collection<? extends Acronym>)newValue);
+				getAcronym().addAll((Collection<? extends Acronym>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__SUB:
 				getSub().clear();
-				getSub().addAll((Collection<? extends Sub>)newValue);
+				getSub().addAll((Collection<? extends Sub>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__SUP:
 				getSup().clear();
-				getSup().addAll((Collection<? extends Sup>)newValue);
+				getSup().addAll((Collection<? extends Sup>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__BR:
 				getBr().clear();
-				getBr().addAll((Collection<? extends Br>)newValue);
+				getBr().addAll((Collection<? extends Br>) newValue);
 				return;
 			case XhtmlPackage.PRE_CONTENT__SPAN:
 				getSpan().clear();
-				getSpan().addAll((Collection<? extends Span>)newValue);
+				getSpan().addAll((Collection<? extends Span>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -687,7 +695,9 @@ public class PreContentImpl extends EObjectImpl implements PreContent {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mixed: ");
@@ -696,4 +706,4 @@ public class PreContentImpl extends EObjectImpl implements PreContent {
 		return result.toString();
 	}
 
-} //PreContentImpl
+} // PreContentImpl

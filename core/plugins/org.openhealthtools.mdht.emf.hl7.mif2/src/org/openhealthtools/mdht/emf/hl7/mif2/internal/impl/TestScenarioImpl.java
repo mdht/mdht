@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -110,8 +114,13 @@ public class TestScenarioImpl extends PackageArtifactImpl implements TestScenari
 		ComplexMarkupWithLanguage oldObjective = objective;
 		objective = newObjective;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.TEST_SCENARIO__OBJECTIVE, oldObjective, newObjective);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TEST_SCENARIO__OBJECTIVE, oldObjective, newObjective);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -124,15 +133,22 @@ public class TestScenarioImpl extends PackageArtifactImpl implements TestScenari
 	public void setObjective(ComplexMarkupWithLanguage newObjective) {
 		if (newObjective != objective) {
 			NotificationChain msgs = null;
-			if (objective != null)
-				msgs = ((InternalEObject)objective).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TEST_SCENARIO__OBJECTIVE, null, msgs);
-			if (newObjective != null)
-				msgs = ((InternalEObject)newObjective).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TEST_SCENARIO__OBJECTIVE, null, msgs);
+			if (objective != null) {
+				msgs = ((InternalEObject) objective).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TEST_SCENARIO__OBJECTIVE, null, msgs);
+			}
+			if (newObjective != null) {
+				msgs = ((InternalEObject) newObjective).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TEST_SCENARIO__OBJECTIVE, null, msgs);
+			}
 			msgs = basicSetObjective(newObjective, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TEST_SCENARIO__OBJECTIVE, newObjective, newObjective));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TEST_SCENARIO__OBJECTIVE, newObjective, newObjective));
 	}
 
 	/**
@@ -142,7 +158,8 @@ public class TestScenarioImpl extends PackageArtifactImpl implements TestScenari
 	 */
 	public EList<TestSystem> getTestSystem() {
 		if (testSystem == null) {
-			testSystem = new EObjectContainmentEList<TestSystem>(TestSystem.class, this, Mif2Package.TEST_SCENARIO__TEST_SYSTEM);
+			testSystem = new EObjectContainmentEList<TestSystem>(
+				TestSystem.class, this, Mif2Package.TEST_SCENARIO__TEST_SYSTEM);
 		}
 		return testSystem;
 	}
@@ -170,9 +187,9 @@ public class TestScenarioImpl extends PackageArtifactImpl implements TestScenari
 			case Mif2Package.TEST_SCENARIO__OBJECTIVE:
 				return basicSetObjective(null, msgs);
 			case Mif2Package.TEST_SCENARIO__TEST_SYSTEM:
-				return ((InternalEList<?>)getTestSystem()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTestSystem()).basicRemove(otherEnd, msgs);
 			case Mif2Package.TEST_SCENARIO__TEST:
-				return ((InternalEList<?>)getTest()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTest()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -205,15 +222,15 @@ public class TestScenarioImpl extends PackageArtifactImpl implements TestScenari
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.TEST_SCENARIO__OBJECTIVE:
-				setObjective((ComplexMarkupWithLanguage)newValue);
+				setObjective((ComplexMarkupWithLanguage) newValue);
 				return;
 			case Mif2Package.TEST_SCENARIO__TEST_SYSTEM:
 				getTestSystem().clear();
-				getTestSystem().addAll((Collection<? extends TestSystem>)newValue);
+				getTestSystem().addAll((Collection<? extends TestSystem>) newValue);
 				return;
 			case Mif2Package.TEST_SCENARIO__TEST:
 				getTest().clear();
-				getTest().addAll((Collection<? extends Test>)newValue);
+				getTest().addAll((Collection<? extends Test>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -228,7 +245,7 @@ public class TestScenarioImpl extends PackageArtifactImpl implements TestScenari
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.TEST_SCENARIO__OBJECTIVE:
-				setObjective((ComplexMarkupWithLanguage)null);
+				setObjective((ComplexMarkupWithLanguage) null);
 				return;
 			case Mif2Package.TEST_SCENARIO__TEST_SYSTEM:
 				getTestSystem().clear();
@@ -258,4 +275,4 @@ public class TestScenarioImpl extends PackageArtifactImpl implements TestScenari
 		return super.eIsSet(featureID);
 	}
 
-} //TestScenarioImpl
+} // TestScenarioImpl

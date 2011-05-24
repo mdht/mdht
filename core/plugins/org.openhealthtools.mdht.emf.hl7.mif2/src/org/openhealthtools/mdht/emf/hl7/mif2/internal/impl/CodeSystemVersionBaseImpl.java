@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -214,8 +218,14 @@ public abstract class CodeSystemVersionBaseImpl extends ModelElementImpl impleme
 		CodeSystemVersionAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION_BASE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION_BASE__ANNOTATIONS, oldAnnotations,
+				newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -228,15 +238,23 @@ public abstract class CodeSystemVersionBaseImpl extends ModelElementImpl impleme
 	public void setAnnotations(CodeSystemVersionAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_SYSTEM_VERSION_BASE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CODE_SYSTEM_VERSION_BASE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_SYSTEM_VERSION_BASE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CODE_SYSTEM_VERSION_BASE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION_BASE__ANNOTATIONS, newAnnotations,
+				newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION_BASE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -246,7 +264,8 @@ public abstract class CodeSystemVersionBaseImpl extends ModelElementImpl impleme
 	 */
 	public EList<TerminologyServer> getPublicTerminologyServer() {
 		if (publicTerminologyServer == null) {
-			publicTerminologyServer = new EObjectContainmentEList<TerminologyServer>(TerminologyServer.class, this, Mif2Package.CODE_SYSTEM_VERSION_BASE__PUBLIC_TERMINOLOGY_SERVER);
+			publicTerminologyServer = new EObjectContainmentEList<TerminologyServer>(
+				TerminologyServer.class, this, Mif2Package.CODE_SYSTEM_VERSION_BASE__PUBLIC_TERMINOLOGY_SERVER);
 		}
 		return publicTerminologyServer;
 	}
@@ -258,7 +277,8 @@ public abstract class CodeSystemVersionBaseImpl extends ModelElementImpl impleme
 	 */
 	public EList<String> getSupportedLanguage() {
 		if (supportedLanguage == null) {
-			supportedLanguage = new EDataTypeEList<String>(String.class, this, Mif2Package.CODE_SYSTEM_VERSION_BASE__SUPPORTED_LANGUAGE);
+			supportedLanguage = new EDataTypeEList<String>(
+				String.class, this, Mif2Package.CODE_SYSTEM_VERSION_BASE__SUPPORTED_LANGUAGE);
 		}
 		return supportedLanguage;
 	}
@@ -282,8 +302,11 @@ public abstract class CodeSystemVersionBaseImpl extends ModelElementImpl impleme
 		hl7ApprovedIndicator = newHl7ApprovedIndicator;
 		boolean oldHl7ApprovedIndicatorESet = hl7ApprovedIndicatorESet;
 		hl7ApprovedIndicatorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION_BASE__HL7_APPROVED_INDICATOR, oldHl7ApprovedIndicator, hl7ApprovedIndicator, !oldHl7ApprovedIndicatorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION_BASE__HL7_APPROVED_INDICATOR,
+				oldHl7ApprovedIndicator, hl7ApprovedIndicator, !oldHl7ApprovedIndicatorESet));
+		}
 	}
 
 	/**
@@ -296,8 +319,11 @@ public abstract class CodeSystemVersionBaseImpl extends ModelElementImpl impleme
 		boolean oldHl7ApprovedIndicatorESet = hl7ApprovedIndicatorESet;
 		hl7ApprovedIndicator = HL7_APPROVED_INDICATOR_EDEFAULT;
 		hl7ApprovedIndicatorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CODE_SYSTEM_VERSION_BASE__HL7_APPROVED_INDICATOR, oldHl7ApprovedIndicator, HL7_APPROVED_INDICATOR_EDEFAULT, oldHl7ApprovedIndicatorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CODE_SYSTEM_VERSION_BASE__HL7_APPROVED_INDICATOR,
+				oldHl7ApprovedIndicator, HL7_APPROVED_INDICATOR_EDEFAULT, oldHl7ApprovedIndicatorESet));
+		}
 	}
 
 	/**
@@ -328,8 +354,11 @@ public abstract class CodeSystemVersionBaseImpl extends ModelElementImpl impleme
 		hl7MaintainedIndicator = newHl7MaintainedIndicator;
 		boolean oldHl7MaintainedIndicatorESet = hl7MaintainedIndicatorESet;
 		hl7MaintainedIndicatorESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION_BASE__HL7_MAINTAINED_INDICATOR, oldHl7MaintainedIndicator, hl7MaintainedIndicator, !oldHl7MaintainedIndicatorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION_BASE__HL7_MAINTAINED_INDICATOR,
+				oldHl7MaintainedIndicator, hl7MaintainedIndicator, !oldHl7MaintainedIndicatorESet));
+		}
 	}
 
 	/**
@@ -342,8 +371,11 @@ public abstract class CodeSystemVersionBaseImpl extends ModelElementImpl impleme
 		boolean oldHl7MaintainedIndicatorESet = hl7MaintainedIndicatorESet;
 		hl7MaintainedIndicator = HL7_MAINTAINED_INDICATOR_EDEFAULT;
 		hl7MaintainedIndicatorESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CODE_SYSTEM_VERSION_BASE__HL7_MAINTAINED_INDICATOR, oldHl7MaintainedIndicator, HL7_MAINTAINED_INDICATOR_EDEFAULT, oldHl7MaintainedIndicatorESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CODE_SYSTEM_VERSION_BASE__HL7_MAINTAINED_INDICATOR,
+				oldHl7MaintainedIndicator, HL7_MAINTAINED_INDICATOR_EDEFAULT, oldHl7MaintainedIndicatorESet));
+		}
 	}
 
 	/**
@@ -372,8 +404,11 @@ public abstract class CodeSystemVersionBaseImpl extends ModelElementImpl impleme
 	public void setPublisherVersionId(String newPublisherVersionId) {
 		String oldPublisherVersionId = publisherVersionId;
 		publisherVersionId = newPublisherVersionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION_BASE__PUBLISHER_VERSION_ID, oldPublisherVersionId, publisherVersionId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION_BASE__PUBLISHER_VERSION_ID,
+				oldPublisherVersionId, publisherVersionId));
+		}
 	}
 
 	/**
@@ -393,8 +428,10 @@ public abstract class CodeSystemVersionBaseImpl extends ModelElementImpl impleme
 	public void setReleaseDate(XMLGregorianCalendar newReleaseDate) {
 		XMLGregorianCalendar oldReleaseDate = releaseDate;
 		releaseDate = newReleaseDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION_BASE__RELEASE_DATE, oldReleaseDate, releaseDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE_SYSTEM_VERSION_BASE__RELEASE_DATE, oldReleaseDate, releaseDate));
+		}
 	}
 
 	/**
@@ -408,7 +445,7 @@ public abstract class CodeSystemVersionBaseImpl extends ModelElementImpl impleme
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__PUBLIC_TERMINOLOGY_SERVER:
-				return ((InternalEList<?>)getPublicTerminologyServer()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPublicTerminologyServer()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -428,9 +465,13 @@ public abstract class CodeSystemVersionBaseImpl extends ModelElementImpl impleme
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__SUPPORTED_LANGUAGE:
 				return getSupportedLanguage();
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__HL7_APPROVED_INDICATOR:
-				return isHl7ApprovedIndicator() ? Boolean.TRUE : Boolean.FALSE;
+				return isHl7ApprovedIndicator()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__HL7_MAINTAINED_INDICATOR:
-				return isHl7MaintainedIndicator() ? Boolean.TRUE : Boolean.FALSE;
+				return isHl7MaintainedIndicator()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__PUBLISHER_VERSION_ID:
 				return getPublisherVersionId();
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__RELEASE_DATE:
@@ -449,27 +490,27 @@ public abstract class CodeSystemVersionBaseImpl extends ModelElementImpl impleme
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__ANNOTATIONS:
-				setAnnotations((CodeSystemVersionAnnotations)newValue);
+				setAnnotations((CodeSystemVersionAnnotations) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__PUBLIC_TERMINOLOGY_SERVER:
 				getPublicTerminologyServer().clear();
-				getPublicTerminologyServer().addAll((Collection<? extends TerminologyServer>)newValue);
+				getPublicTerminologyServer().addAll((Collection<? extends TerminologyServer>) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__SUPPORTED_LANGUAGE:
 				getSupportedLanguage().clear();
-				getSupportedLanguage().addAll((Collection<? extends String>)newValue);
+				getSupportedLanguage().addAll((Collection<? extends String>) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__HL7_APPROVED_INDICATOR:
-				setHl7ApprovedIndicator(((Boolean)newValue).booleanValue());
+				setHl7ApprovedIndicator(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__HL7_MAINTAINED_INDICATOR:
-				setHl7MaintainedIndicator(((Boolean)newValue).booleanValue());
+				setHl7MaintainedIndicator(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__PUBLISHER_VERSION_ID:
-				setPublisherVersionId((String)newValue);
+				setPublisherVersionId((String) newValue);
 				return;
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__RELEASE_DATE:
-				setReleaseDate((XMLGregorianCalendar)newValue);
+				setReleaseDate((XMLGregorianCalendar) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -484,7 +525,7 @@ public abstract class CodeSystemVersionBaseImpl extends ModelElementImpl impleme
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__ANNOTATIONS:
-				setAnnotations((CodeSystemVersionAnnotations)null);
+				setAnnotations((CodeSystemVersionAnnotations) null);
 				return;
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__PUBLIC_TERMINOLOGY_SERVER:
 				getPublicTerminologyServer().clear();
@@ -527,9 +568,13 @@ public abstract class CodeSystemVersionBaseImpl extends ModelElementImpl impleme
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__HL7_MAINTAINED_INDICATOR:
 				return isSetHl7MaintainedIndicator();
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__PUBLISHER_VERSION_ID:
-				return PUBLISHER_VERSION_ID_EDEFAULT == null ? publisherVersionId != null : !PUBLISHER_VERSION_ID_EDEFAULT.equals(publisherVersionId);
+				return PUBLISHER_VERSION_ID_EDEFAULT == null
+						? publisherVersionId != null
+						: !PUBLISHER_VERSION_ID_EDEFAULT.equals(publisherVersionId);
 			case Mif2Package.CODE_SYSTEM_VERSION_BASE__RELEASE_DATE:
-				return RELEASE_DATE_EDEFAULT == null ? releaseDate != null : !RELEASE_DATE_EDEFAULT.equals(releaseDate);
+				return RELEASE_DATE_EDEFAULT == null
+						? releaseDate != null
+						: !RELEASE_DATE_EDEFAULT.equals(releaseDate);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -541,15 +586,25 @@ public abstract class CodeSystemVersionBaseImpl extends ModelElementImpl impleme
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (supportedLanguage: ");
 		result.append(supportedLanguage);
 		result.append(", hl7ApprovedIndicator: ");
-		if (hl7ApprovedIndicatorESet) result.append(hl7ApprovedIndicator); else result.append("<unset>");
+		if (hl7ApprovedIndicatorESet) {
+			result.append(hl7ApprovedIndicator);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", hl7MaintainedIndicator: ");
-		if (hl7MaintainedIndicatorESet) result.append(hl7MaintainedIndicator); else result.append("<unset>");
+		if (hl7MaintainedIndicatorESet) {
+			result.append(hl7MaintainedIndicator);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", publisherVersionId: ");
 		result.append(publisherVersionId);
 		result.append(", releaseDate: ");
@@ -558,4 +613,4 @@ public abstract class CodeSystemVersionBaseImpl extends ModelElementImpl impleme
 		return result.toString();
 	}
 
-} //CodeSystemVersionBaseImpl
+} // CodeSystemVersionBaseImpl

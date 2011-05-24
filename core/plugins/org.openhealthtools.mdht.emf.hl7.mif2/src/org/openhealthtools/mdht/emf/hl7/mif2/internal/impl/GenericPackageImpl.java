@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -121,8 +125,13 @@ public class GenericPackageImpl extends PackageImpl implements GenericPackage {
 		PackageAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.GENERIC_PACKAGE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GENERIC_PACKAGE__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -135,15 +144,22 @@ public class GenericPackageImpl extends PackageImpl implements GenericPackage {
 	public void setAnnotations(PackageAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.GENERIC_PACKAGE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.GENERIC_PACKAGE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.GENERIC_PACKAGE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.GENERIC_PACKAGE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GENERIC_PACKAGE__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GENERIC_PACKAGE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -164,8 +180,13 @@ public class GenericPackageImpl extends PackageImpl implements GenericPackage {
 		PackageContent oldContent = content;
 		content = newContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.GENERIC_PACKAGE__CONTENT, oldContent, newContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GENERIC_PACKAGE__CONTENT, oldContent, newContent);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -178,15 +199,22 @@ public class GenericPackageImpl extends PackageImpl implements GenericPackage {
 	public void setContent(PackageContent newContent) {
 		if (newContent != content) {
 			NotificationChain msgs = null;
-			if (content != null)
-				msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.GENERIC_PACKAGE__CONTENT, null, msgs);
-			if (newContent != null)
-				msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.GENERIC_PACKAGE__CONTENT, null, msgs);
+			if (content != null) {
+				msgs = ((InternalEObject) content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.GENERIC_PACKAGE__CONTENT, null, msgs);
+			}
+			if (newContent != null) {
+				msgs = ((InternalEObject) newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.GENERIC_PACKAGE__CONTENT, null, msgs);
+			}
 			msgs = basicSetContent(newContent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GENERIC_PACKAGE__CONTENT, newContent, newContent));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GENERIC_PACKAGE__CONTENT, newContent, newContent));
 	}
 
 	/**
@@ -208,8 +236,11 @@ public class GenericPackageImpl extends PackageImpl implements GenericPackage {
 		isComplete = newIsComplete;
 		boolean oldIsCompleteESet = isCompleteESet;
 		isCompleteESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GENERIC_PACKAGE__IS_COMPLETE, oldIsComplete, isComplete, !oldIsCompleteESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GENERIC_PACKAGE__IS_COMPLETE, oldIsComplete, isComplete,
+				!oldIsCompleteESet));
+		}
 	}
 
 	/**
@@ -222,8 +253,11 @@ public class GenericPackageImpl extends PackageImpl implements GenericPackage {
 		boolean oldIsCompleteESet = isCompleteESet;
 		isComplete = IS_COMPLETE_EDEFAULT;
 		isCompleteESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.GENERIC_PACKAGE__IS_COMPLETE, oldIsComplete, IS_COMPLETE_EDEFAULT, oldIsCompleteESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.GENERIC_PACKAGE__IS_COMPLETE, oldIsComplete,
+				IS_COMPLETE_EDEFAULT, oldIsCompleteESet));
+		}
 	}
 
 	/**
@@ -264,7 +298,9 @@ public class GenericPackageImpl extends PackageImpl implements GenericPackage {
 			case Mif2Package.GENERIC_PACKAGE__CONTENT:
 				return getContent();
 			case Mif2Package.GENERIC_PACKAGE__IS_COMPLETE:
-				return isIsComplete() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsComplete()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -278,13 +314,13 @@ public class GenericPackageImpl extends PackageImpl implements GenericPackage {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.GENERIC_PACKAGE__ANNOTATIONS:
-				setAnnotations((PackageAnnotations)newValue);
+				setAnnotations((PackageAnnotations) newValue);
 				return;
 			case Mif2Package.GENERIC_PACKAGE__CONTENT:
-				setContent((PackageContent)newValue);
+				setContent((PackageContent) newValue);
 				return;
 			case Mif2Package.GENERIC_PACKAGE__IS_COMPLETE:
-				setIsComplete(((Boolean)newValue).booleanValue());
+				setIsComplete(((Boolean) newValue).booleanValue());
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -299,10 +335,10 @@ public class GenericPackageImpl extends PackageImpl implements GenericPackage {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.GENERIC_PACKAGE__ANNOTATIONS:
-				setAnnotations((PackageAnnotations)null);
+				setAnnotations((PackageAnnotations) null);
 				return;
 			case Mif2Package.GENERIC_PACKAGE__CONTENT:
-				setContent((PackageContent)null);
+				setContent((PackageContent) null);
 				return;
 			case Mif2Package.GENERIC_PACKAGE__IS_COMPLETE:
 				unsetIsComplete();
@@ -336,13 +372,19 @@ public class GenericPackageImpl extends PackageImpl implements GenericPackage {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isComplete: ");
-		if (isCompleteESet) result.append(isComplete); else result.append("<unset>");
+		if (isCompleteESet) {
+			result.append(isComplete);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //GenericPackageImpl
+} // GenericPackageImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -20,7 +24,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.openhealthtools.mdht.emf.hl7.mif2.Mif2Package;
 import org.openhealthtools.mdht.emf.hl7.mif2.RenderingInformation;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Flow;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -125,8 +128,14 @@ public class RenderingInformationImpl extends EObjectImpl implements RenderingIn
 		Flow oldRenderingNotes = renderingNotes;
 		renderingNotes = newRenderingNotes;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.RENDERING_INFORMATION__RENDERING_NOTES, oldRenderingNotes, newRenderingNotes);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RENDERING_INFORMATION__RENDERING_NOTES, oldRenderingNotes,
+				newRenderingNotes);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -139,15 +148,23 @@ public class RenderingInformationImpl extends EObjectImpl implements RenderingIn
 	public void setRenderingNotes(Flow newRenderingNotes) {
 		if (newRenderingNotes != renderingNotes) {
 			NotificationChain msgs = null;
-			if (renderingNotes != null)
-				msgs = ((InternalEObject)renderingNotes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.RENDERING_INFORMATION__RENDERING_NOTES, null, msgs);
-			if (newRenderingNotes != null)
-				msgs = ((InternalEObject)newRenderingNotes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.RENDERING_INFORMATION__RENDERING_NOTES, null, msgs);
+			if (renderingNotes != null) {
+				msgs = ((InternalEObject) renderingNotes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.RENDERING_INFORMATION__RENDERING_NOTES, null, msgs);
+			}
+			if (newRenderingNotes != null) {
+				msgs = ((InternalEObject) newRenderingNotes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.RENDERING_INFORMATION__RENDERING_NOTES, null, msgs);
+			}
 			msgs = basicSetRenderingNotes(newRenderingNotes, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RENDERING_INFORMATION__RENDERING_NOTES, newRenderingNotes,
+				newRenderingNotes));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.RENDERING_INFORMATION__RENDERING_NOTES, newRenderingNotes, newRenderingNotes));
 	}
 
 	/**
@@ -167,8 +184,10 @@ public class RenderingInformationImpl extends EObjectImpl implements RenderingIn
 	public void setApplication(String newApplication) {
 		String oldApplication = application;
 		application = newApplication;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.RENDERING_INFORMATION__APPLICATION, oldApplication, application));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RENDERING_INFORMATION__APPLICATION, oldApplication, application));
+		}
 	}
 
 	/**
@@ -188,8 +207,11 @@ public class RenderingInformationImpl extends EObjectImpl implements RenderingIn
 	public void setRenderingTime(XMLGregorianCalendar newRenderingTime) {
 		XMLGregorianCalendar oldRenderingTime = renderingTime;
 		renderingTime = newRenderingTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.RENDERING_INFORMATION__RENDERING_TIME, oldRenderingTime, renderingTime));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.RENDERING_INFORMATION__RENDERING_TIME, oldRenderingTime,
+				renderingTime));
+		}
 	}
 
 	/**
@@ -233,13 +255,13 @@ public class RenderingInformationImpl extends EObjectImpl implements RenderingIn
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.RENDERING_INFORMATION__RENDERING_NOTES:
-				setRenderingNotes((Flow)newValue);
+				setRenderingNotes((Flow) newValue);
 				return;
 			case Mif2Package.RENDERING_INFORMATION__APPLICATION:
-				setApplication((String)newValue);
+				setApplication((String) newValue);
 				return;
 			case Mif2Package.RENDERING_INFORMATION__RENDERING_TIME:
-				setRenderingTime((XMLGregorianCalendar)newValue);
+				setRenderingTime((XMLGregorianCalendar) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -254,7 +276,7 @@ public class RenderingInformationImpl extends EObjectImpl implements RenderingIn
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.RENDERING_INFORMATION__RENDERING_NOTES:
-				setRenderingNotes((Flow)null);
+				setRenderingNotes((Flow) null);
 				return;
 			case Mif2Package.RENDERING_INFORMATION__APPLICATION:
 				setApplication(APPLICATION_EDEFAULT);
@@ -277,9 +299,13 @@ public class RenderingInformationImpl extends EObjectImpl implements RenderingIn
 			case Mif2Package.RENDERING_INFORMATION__RENDERING_NOTES:
 				return renderingNotes != null;
 			case Mif2Package.RENDERING_INFORMATION__APPLICATION:
-				return APPLICATION_EDEFAULT == null ? application != null : !APPLICATION_EDEFAULT.equals(application);
+				return APPLICATION_EDEFAULT == null
+						? application != null
+						: !APPLICATION_EDEFAULT.equals(application);
 			case Mif2Package.RENDERING_INFORMATION__RENDERING_TIME:
-				return RENDERING_TIME_EDEFAULT == null ? renderingTime != null : !RENDERING_TIME_EDEFAULT.equals(renderingTime);
+				return RENDERING_TIME_EDEFAULT == null
+						? renderingTime != null
+						: !RENDERING_TIME_EDEFAULT.equals(renderingTime);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -291,7 +317,9 @@ public class RenderingInformationImpl extends EObjectImpl implements RenderingIn
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (application: ");
@@ -302,4 +330,4 @@ public class RenderingInformationImpl extends EObjectImpl implements RenderingIn
 		return result.toString();
 	}
 
-} //RenderingInformationImpl
+} // RenderingInformationImpl

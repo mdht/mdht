@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml;
 
 import java.util.Arrays;
@@ -175,15 +179,8 @@ public enum ImageKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ImageKind[] VALUES_ARRAY =
-		new ImageKind[] {
-			APPLICATION_POSTSCRIPT,
-			APPLICATION_PDF,
-			APPLICATION_PNG,
-			APPLICATION_SVG_XML,
-			APPLICATION_JPEG,
-			IMAGE_GIF,
-		};
+	private static final ImageKind[] VALUES_ARRAY = new ImageKind[] {
+			APPLICATION_POSTSCRIPT, APPLICATION_PDF, APPLICATION_PNG, APPLICATION_SVG_XML, APPLICATION_JPEG, IMAGE_GIF, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Image Kind</b></em>' enumerators.
@@ -233,12 +230,18 @@ public enum ImageKind implements Enumerator {
 	 */
 	public static ImageKind get(int value) {
 		switch (value) {
-			case APPLICATION_POSTSCRIPT_VALUE: return APPLICATION_POSTSCRIPT;
-			case APPLICATION_PDF_VALUE: return APPLICATION_PDF;
-			case APPLICATION_PNG_VALUE: return APPLICATION_PNG;
-			case APPLICATION_SVG_XML_VALUE: return APPLICATION_SVG_XML;
-			case APPLICATION_JPEG_VALUE: return APPLICATION_JPEG;
-			case IMAGE_GIF_VALUE: return IMAGE_GIF;
+			case APPLICATION_POSTSCRIPT_VALUE:
+				return APPLICATION_POSTSCRIPT;
+			case APPLICATION_PDF_VALUE:
+				return APPLICATION_PDF;
+			case APPLICATION_PNG_VALUE:
+				return APPLICATION_PNG;
+			case APPLICATION_SVG_XML_VALUE:
+				return APPLICATION_SVG_XML;
+			case APPLICATION_JPEG_VALUE:
+				return APPLICATION_JPEG;
+			case IMAGE_GIF_VALUE:
+				return IMAGE_GIF;
 		}
 		return null;
 	}
@@ -282,7 +285,7 @@ public enum ImageKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -291,7 +294,7 @@ public enum ImageKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -300,7 +303,7 @@ public enum ImageKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -313,5 +316,5 @@ public enum ImageKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //ImageKind
+
+} // ImageKind

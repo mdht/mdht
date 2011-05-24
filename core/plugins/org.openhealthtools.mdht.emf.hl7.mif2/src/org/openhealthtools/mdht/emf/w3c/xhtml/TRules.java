@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml;
 
 import java.util.Arrays;
@@ -157,14 +161,7 @@ public enum TRules implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final TRules[] VALUES_ARRAY =
-		new TRules[] {
-			NONE,
-			GROUPS,
-			ROWS,
-			COLS,
-			ALL,
-		};
+	private static final TRules[] VALUES_ARRAY = new TRules[] { NONE, GROUPS, ROWS, COLS, ALL, };
 
 	/**
 	 * A public read-only list of all the '<em><b>TRules</b></em>' enumerators.
@@ -214,11 +211,16 @@ public enum TRules implements Enumerator {
 	 */
 	public static TRules get(int value) {
 		switch (value) {
-			case NONE_VALUE: return NONE;
-			case GROUPS_VALUE: return GROUPS;
-			case ROWS_VALUE: return ROWS;
-			case COLS_VALUE: return COLS;
-			case ALL_VALUE: return ALL;
+			case NONE_VALUE:
+				return NONE;
+			case GROUPS_VALUE:
+				return GROUPS;
+			case ROWS_VALUE:
+				return ROWS;
+			case COLS_VALUE:
+				return COLS;
+			case ALL_VALUE:
+				return ALL;
 		}
 		return null;
 	}
@@ -262,7 +264,7 @@ public enum TRules implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -271,7 +273,7 @@ public enum TRules implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -280,7 +282,7 @@ public enum TRules implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -293,5 +295,5 @@ public enum TRules implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //TRules
+
+} // TRules

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -256,8 +260,13 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 		ContentDefinitionAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CONTENT_DEFINITION__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTENT_DEFINITION__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -270,15 +279,22 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	public void setAnnotations(ContentDefinitionAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONTENT_DEFINITION__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONTENT_DEFINITION__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONTENT_DEFINITION__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONTENT_DEFINITION__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTENT_DEFINITION__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTENT_DEFINITION__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -295,12 +311,19 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCombinedContent(CombinedContentDefinition newCombinedContent, NotificationChain msgs) {
+	public NotificationChain basicSetCombinedContent(CombinedContentDefinition newCombinedContent,
+			NotificationChain msgs) {
 		CombinedContentDefinition oldCombinedContent = combinedContent;
 		combinedContent = newCombinedContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CONTENT_DEFINITION__COMBINED_CONTENT, oldCombinedContent, newCombinedContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTENT_DEFINITION__COMBINED_CONTENT, oldCombinedContent,
+				newCombinedContent);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -313,15 +336,23 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	public void setCombinedContent(CombinedContentDefinition newCombinedContent) {
 		if (newCombinedContent != combinedContent) {
 			NotificationChain msgs = null;
-			if (combinedContent != null)
-				msgs = ((InternalEObject)combinedContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONTENT_DEFINITION__COMBINED_CONTENT, null, msgs);
-			if (newCombinedContent != null)
-				msgs = ((InternalEObject)newCombinedContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONTENT_DEFINITION__COMBINED_CONTENT, null, msgs);
+			if (combinedContent != null) {
+				msgs = ((InternalEObject) combinedContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONTENT_DEFINITION__COMBINED_CONTENT, null, msgs);
+			}
+			if (newCombinedContent != null) {
+				msgs = ((InternalEObject) newCombinedContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONTENT_DEFINITION__COMBINED_CONTENT, null, msgs);
+			}
 			msgs = basicSetCombinedContent(newCombinedContent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTENT_DEFINITION__COMBINED_CONTENT, newCombinedContent,
+				newCombinedContent));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTENT_DEFINITION__COMBINED_CONTENT, newCombinedContent, newCombinedContent));
 	}
 
 	/**
@@ -331,7 +362,8 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	 */
 	public EList<CodeBasedContentDefinition> getCodeBasedContent() {
 		if (codeBasedContent == null) {
-			codeBasedContent = new EObjectContainmentEList<CodeBasedContentDefinition>(CodeBasedContentDefinition.class, this, Mif2Package.CONTENT_DEFINITION__CODE_BASED_CONTENT);
+			codeBasedContent = new EObjectContainmentEList<CodeBasedContentDefinition>(
+				CodeBasedContentDefinition.class, this, Mif2Package.CONTENT_DEFINITION__CODE_BASED_CONTENT);
 		}
 		return codeBasedContent;
 	}
@@ -350,12 +382,19 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPropertyBasedContent(PropertyBasedContentDefinition newPropertyBasedContent, NotificationChain msgs) {
+	public NotificationChain basicSetPropertyBasedContent(PropertyBasedContentDefinition newPropertyBasedContent,
+			NotificationChain msgs) {
 		PropertyBasedContentDefinition oldPropertyBasedContent = propertyBasedContent;
 		propertyBasedContent = newPropertyBasedContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CONTENT_DEFINITION__PROPERTY_BASED_CONTENT, oldPropertyBasedContent, newPropertyBasedContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTENT_DEFINITION__PROPERTY_BASED_CONTENT,
+				oldPropertyBasedContent, newPropertyBasedContent);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -368,15 +407,23 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	public void setPropertyBasedContent(PropertyBasedContentDefinition newPropertyBasedContent) {
 		if (newPropertyBasedContent != propertyBasedContent) {
 			NotificationChain msgs = null;
-			if (propertyBasedContent != null)
-				msgs = ((InternalEObject)propertyBasedContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONTENT_DEFINITION__PROPERTY_BASED_CONTENT, null, msgs);
-			if (newPropertyBasedContent != null)
-				msgs = ((InternalEObject)newPropertyBasedContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONTENT_DEFINITION__PROPERTY_BASED_CONTENT, null, msgs);
+			if (propertyBasedContent != null) {
+				msgs = ((InternalEObject) propertyBasedContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONTENT_DEFINITION__PROPERTY_BASED_CONTENT, null, msgs);
+			}
+			if (newPropertyBasedContent != null) {
+				msgs = ((InternalEObject) newPropertyBasedContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONTENT_DEFINITION__PROPERTY_BASED_CONTENT, null, msgs);
+			}
 			msgs = basicSetPropertyBasedContent(newPropertyBasedContent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTENT_DEFINITION__PROPERTY_BASED_CONTENT,
+				newPropertyBasedContent, newPropertyBasedContent));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTENT_DEFINITION__PROPERTY_BASED_CONTENT, newPropertyBasedContent, newPropertyBasedContent));
 	}
 
 	/**
@@ -393,12 +440,19 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCodeFilterContent(CodeFilterContentDefinition newCodeFilterContent, NotificationChain msgs) {
+	public NotificationChain basicSetCodeFilterContent(CodeFilterContentDefinition newCodeFilterContent,
+			NotificationChain msgs) {
 		CodeFilterContentDefinition oldCodeFilterContent = codeFilterContent;
 		codeFilterContent = newCodeFilterContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CONTENT_DEFINITION__CODE_FILTER_CONTENT, oldCodeFilterContent, newCodeFilterContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTENT_DEFINITION__CODE_FILTER_CONTENT, oldCodeFilterContent,
+				newCodeFilterContent);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -411,15 +465,23 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	public void setCodeFilterContent(CodeFilterContentDefinition newCodeFilterContent) {
 		if (newCodeFilterContent != codeFilterContent) {
 			NotificationChain msgs = null;
-			if (codeFilterContent != null)
-				msgs = ((InternalEObject)codeFilterContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONTENT_DEFINITION__CODE_FILTER_CONTENT, null, msgs);
-			if (newCodeFilterContent != null)
-				msgs = ((InternalEObject)newCodeFilterContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONTENT_DEFINITION__CODE_FILTER_CONTENT, null, msgs);
+			if (codeFilterContent != null) {
+				msgs = ((InternalEObject) codeFilterContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONTENT_DEFINITION__CODE_FILTER_CONTENT, null, msgs);
+			}
+			if (newCodeFilterContent != null) {
+				msgs = ((InternalEObject) newCodeFilterContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONTENT_DEFINITION__CODE_FILTER_CONTENT, null, msgs);
+			}
 			msgs = basicSetCodeFilterContent(newCodeFilterContent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTENT_DEFINITION__CODE_FILTER_CONTENT, newCodeFilterContent,
+				newCodeFilterContent));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTENT_DEFINITION__CODE_FILTER_CONTENT, newCodeFilterContent, newCodeFilterContent));
 	}
 
 	/**
@@ -436,12 +498,19 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetNonComputableContent(NonComputableContentDefinition newNonComputableContent, NotificationChain msgs) {
+	public NotificationChain basicSetNonComputableContent(NonComputableContentDefinition newNonComputableContent,
+			NotificationChain msgs) {
 		NonComputableContentDefinition oldNonComputableContent = nonComputableContent;
 		nonComputableContent = newNonComputableContent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CONTENT_DEFINITION__NON_COMPUTABLE_CONTENT, oldNonComputableContent, newNonComputableContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTENT_DEFINITION__NON_COMPUTABLE_CONTENT,
+				oldNonComputableContent, newNonComputableContent);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -454,15 +523,23 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	public void setNonComputableContent(NonComputableContentDefinition newNonComputableContent) {
 		if (newNonComputableContent != nonComputableContent) {
 			NotificationChain msgs = null;
-			if (nonComputableContent != null)
-				msgs = ((InternalEObject)nonComputableContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONTENT_DEFINITION__NON_COMPUTABLE_CONTENT, null, msgs);
-			if (newNonComputableContent != null)
-				msgs = ((InternalEObject)newNonComputableContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONTENT_DEFINITION__NON_COMPUTABLE_CONTENT, null, msgs);
+			if (nonComputableContent != null) {
+				msgs = ((InternalEObject) nonComputableContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONTENT_DEFINITION__NON_COMPUTABLE_CONTENT, null, msgs);
+			}
+			if (newNonComputableContent != null) {
+				msgs = ((InternalEObject) newNonComputableContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONTENT_DEFINITION__NON_COMPUTABLE_CONTENT, null, msgs);
+			}
 			msgs = basicSetNonComputableContent(newNonComputableContent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTENT_DEFINITION__NON_COMPUTABLE_CONTENT,
+				newNonComputableContent, newNonComputableContent));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTENT_DEFINITION__NON_COMPUTABLE_CONTENT, newNonComputableContent, newNonComputableContent));
 	}
 
 	/**
@@ -483,8 +560,13 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 		VocabularyValueSetRef oldValueSetRef = valueSetRef;
 		valueSetRef = newValueSetRef;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CONTENT_DEFINITION__VALUE_SET_REF, oldValueSetRef, newValueSetRef);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTENT_DEFINITION__VALUE_SET_REF, oldValueSetRef, newValueSetRef);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -497,15 +579,22 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	public void setValueSetRef(VocabularyValueSetRef newValueSetRef) {
 		if (newValueSetRef != valueSetRef) {
 			NotificationChain msgs = null;
-			if (valueSetRef != null)
-				msgs = ((InternalEObject)valueSetRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONTENT_DEFINITION__VALUE_SET_REF, null, msgs);
-			if (newValueSetRef != null)
-				msgs = ((InternalEObject)newValueSetRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONTENT_DEFINITION__VALUE_SET_REF, null, msgs);
+			if (valueSetRef != null) {
+				msgs = ((InternalEObject) valueSetRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONTENT_DEFINITION__VALUE_SET_REF, null, msgs);
+			}
+			if (newValueSetRef != null) {
+				msgs = ((InternalEObject) newValueSetRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONTENT_DEFINITION__VALUE_SET_REF, null, msgs);
+			}
 			msgs = basicSetValueSetRef(newValueSetRef, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTENT_DEFINITION__VALUE_SET_REF, newValueSetRef, newValueSetRef));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTENT_DEFINITION__VALUE_SET_REF, newValueSetRef, newValueSetRef));
 	}
 
 	/**
@@ -515,7 +604,8 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	 */
 	public EList<RelationshipBasedContentDefinition> getAllowedQualifiers() {
 		if (allowedQualifiers == null) {
-			allowedQualifiers = new EObjectContainmentEList<RelationshipBasedContentDefinition>(RelationshipBasedContentDefinition.class, this, Mif2Package.CONTENT_DEFINITION__ALLOWED_QUALIFIERS);
+			allowedQualifiers = new EObjectContainmentEList<RelationshipBasedContentDefinition>(
+				RelationshipBasedContentDefinition.class, this, Mif2Package.CONTENT_DEFINITION__ALLOWED_QUALIFIERS);
 		}
 		return allowedQualifiers;
 	}
@@ -527,7 +617,8 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	 */
 	public EList<RelationshipBasedContentDefinition> getProhibitedQualifiers() {
 		if (prohibitedQualifiers == null) {
-			prohibitedQualifiers = new EObjectContainmentEList<RelationshipBasedContentDefinition>(RelationshipBasedContentDefinition.class, this, Mif2Package.CONTENT_DEFINITION__PROHIBITED_QUALIFIERS);
+			prohibitedQualifiers = new EObjectContainmentEList<RelationshipBasedContentDefinition>(
+				RelationshipBasedContentDefinition.class, this, Mif2Package.CONTENT_DEFINITION__PROHIBITED_QUALIFIERS);
 		}
 		return prohibitedQualifiers;
 	}
@@ -551,8 +642,11 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 		areBaseQualifiersUnlimited = newAreBaseQualifiersUnlimited;
 		boolean oldAreBaseQualifiersUnlimitedESet = areBaseQualifiersUnlimitedESet;
 		areBaseQualifiersUnlimitedESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTENT_DEFINITION__ARE_BASE_QUALIFIERS_UNLIMITED, oldAreBaseQualifiersUnlimited, areBaseQualifiersUnlimited, !oldAreBaseQualifiersUnlimitedESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTENT_DEFINITION__ARE_BASE_QUALIFIERS_UNLIMITED,
+				oldAreBaseQualifiersUnlimited, areBaseQualifiersUnlimited, !oldAreBaseQualifiersUnlimitedESet));
+		}
 	}
 
 	/**
@@ -565,8 +659,12 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 		boolean oldAreBaseQualifiersUnlimitedESet = areBaseQualifiersUnlimitedESet;
 		areBaseQualifiersUnlimited = ARE_BASE_QUALIFIERS_UNLIMITED_EDEFAULT;
 		areBaseQualifiersUnlimitedESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CONTENT_DEFINITION__ARE_BASE_QUALIFIERS_UNLIMITED, oldAreBaseQualifiersUnlimited, ARE_BASE_QUALIFIERS_UNLIMITED_EDEFAULT, oldAreBaseQualifiersUnlimitedESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CONTENT_DEFINITION__ARE_BASE_QUALIFIERS_UNLIMITED,
+				oldAreBaseQualifiersUnlimited, ARE_BASE_QUALIFIERS_UNLIMITED_EDEFAULT,
+				oldAreBaseQualifiersUnlimitedESet));
+		}
 	}
 
 	/**
@@ -595,8 +693,10 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	public void setCodeSystem(String newCodeSystem) {
 		String oldCodeSystem = codeSystem;
 		codeSystem = newCodeSystem;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTENT_DEFINITION__CODE_SYSTEM, oldCodeSystem, codeSystem));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTENT_DEFINITION__CODE_SYSTEM, oldCodeSystem, codeSystem));
+		}
 	}
 
 	/**
@@ -616,8 +716,10 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	public void setVersionDate(XMLGregorianCalendar newVersionDate) {
 		XMLGregorianCalendar oldVersionDate = versionDate;
 		versionDate = newVersionDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONTENT_DEFINITION__VERSION_DATE, oldVersionDate, versionDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONTENT_DEFINITION__VERSION_DATE, oldVersionDate, versionDate));
+		}
 	}
 
 	/**
@@ -633,7 +735,7 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 			case Mif2Package.CONTENT_DEFINITION__COMBINED_CONTENT:
 				return basicSetCombinedContent(null, msgs);
 			case Mif2Package.CONTENT_DEFINITION__CODE_BASED_CONTENT:
-				return ((InternalEList<?>)getCodeBasedContent()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCodeBasedContent()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CONTENT_DEFINITION__PROPERTY_BASED_CONTENT:
 				return basicSetPropertyBasedContent(null, msgs);
 			case Mif2Package.CONTENT_DEFINITION__CODE_FILTER_CONTENT:
@@ -643,9 +745,9 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 			case Mif2Package.CONTENT_DEFINITION__VALUE_SET_REF:
 				return basicSetValueSetRef(null, msgs);
 			case Mif2Package.CONTENT_DEFINITION__ALLOWED_QUALIFIERS:
-				return ((InternalEList<?>)getAllowedQualifiers()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAllowedQualifiers()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CONTENT_DEFINITION__PROHIBITED_QUALIFIERS:
-				return ((InternalEList<?>)getProhibitedQualifiers()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getProhibitedQualifiers()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -677,7 +779,9 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 			case Mif2Package.CONTENT_DEFINITION__PROHIBITED_QUALIFIERS:
 				return getProhibitedQualifiers();
 			case Mif2Package.CONTENT_DEFINITION__ARE_BASE_QUALIFIERS_UNLIMITED:
-				return isAreBaseQualifiersUnlimited() ? Boolean.TRUE : Boolean.FALSE;
+				return isAreBaseQualifiersUnlimited()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.CONTENT_DEFINITION__CODE_SYSTEM:
 				return getCodeSystem();
 			case Mif2Package.CONTENT_DEFINITION__VERSION_DATE:
@@ -696,43 +800,43 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CONTENT_DEFINITION__ANNOTATIONS:
-				setAnnotations((ContentDefinitionAnnotations)newValue);
+				setAnnotations((ContentDefinitionAnnotations) newValue);
 				return;
 			case Mif2Package.CONTENT_DEFINITION__COMBINED_CONTENT:
-				setCombinedContent((CombinedContentDefinition)newValue);
+				setCombinedContent((CombinedContentDefinition) newValue);
 				return;
 			case Mif2Package.CONTENT_DEFINITION__CODE_BASED_CONTENT:
 				getCodeBasedContent().clear();
-				getCodeBasedContent().addAll((Collection<? extends CodeBasedContentDefinition>)newValue);
+				getCodeBasedContent().addAll((Collection<? extends CodeBasedContentDefinition>) newValue);
 				return;
 			case Mif2Package.CONTENT_DEFINITION__PROPERTY_BASED_CONTENT:
-				setPropertyBasedContent((PropertyBasedContentDefinition)newValue);
+				setPropertyBasedContent((PropertyBasedContentDefinition) newValue);
 				return;
 			case Mif2Package.CONTENT_DEFINITION__CODE_FILTER_CONTENT:
-				setCodeFilterContent((CodeFilterContentDefinition)newValue);
+				setCodeFilterContent((CodeFilterContentDefinition) newValue);
 				return;
 			case Mif2Package.CONTENT_DEFINITION__NON_COMPUTABLE_CONTENT:
-				setNonComputableContent((NonComputableContentDefinition)newValue);
+				setNonComputableContent((NonComputableContentDefinition) newValue);
 				return;
 			case Mif2Package.CONTENT_DEFINITION__VALUE_SET_REF:
-				setValueSetRef((VocabularyValueSetRef)newValue);
+				setValueSetRef((VocabularyValueSetRef) newValue);
 				return;
 			case Mif2Package.CONTENT_DEFINITION__ALLOWED_QUALIFIERS:
 				getAllowedQualifiers().clear();
-				getAllowedQualifiers().addAll((Collection<? extends RelationshipBasedContentDefinition>)newValue);
+				getAllowedQualifiers().addAll((Collection<? extends RelationshipBasedContentDefinition>) newValue);
 				return;
 			case Mif2Package.CONTENT_DEFINITION__PROHIBITED_QUALIFIERS:
 				getProhibitedQualifiers().clear();
-				getProhibitedQualifiers().addAll((Collection<? extends RelationshipBasedContentDefinition>)newValue);
+				getProhibitedQualifiers().addAll((Collection<? extends RelationshipBasedContentDefinition>) newValue);
 				return;
 			case Mif2Package.CONTENT_DEFINITION__ARE_BASE_QUALIFIERS_UNLIMITED:
-				setAreBaseQualifiersUnlimited(((Boolean)newValue).booleanValue());
+				setAreBaseQualifiersUnlimited(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.CONTENT_DEFINITION__CODE_SYSTEM:
-				setCodeSystem((String)newValue);
+				setCodeSystem((String) newValue);
 				return;
 			case Mif2Package.CONTENT_DEFINITION__VERSION_DATE:
-				setVersionDate((XMLGregorianCalendar)newValue);
+				setVersionDate((XMLGregorianCalendar) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -747,25 +851,25 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CONTENT_DEFINITION__ANNOTATIONS:
-				setAnnotations((ContentDefinitionAnnotations)null);
+				setAnnotations((ContentDefinitionAnnotations) null);
 				return;
 			case Mif2Package.CONTENT_DEFINITION__COMBINED_CONTENT:
-				setCombinedContent((CombinedContentDefinition)null);
+				setCombinedContent((CombinedContentDefinition) null);
 				return;
 			case Mif2Package.CONTENT_DEFINITION__CODE_BASED_CONTENT:
 				getCodeBasedContent().clear();
 				return;
 			case Mif2Package.CONTENT_DEFINITION__PROPERTY_BASED_CONTENT:
-				setPropertyBasedContent((PropertyBasedContentDefinition)null);
+				setPropertyBasedContent((PropertyBasedContentDefinition) null);
 				return;
 			case Mif2Package.CONTENT_DEFINITION__CODE_FILTER_CONTENT:
-				setCodeFilterContent((CodeFilterContentDefinition)null);
+				setCodeFilterContent((CodeFilterContentDefinition) null);
 				return;
 			case Mif2Package.CONTENT_DEFINITION__NON_COMPUTABLE_CONTENT:
-				setNonComputableContent((NonComputableContentDefinition)null);
+				setNonComputableContent((NonComputableContentDefinition) null);
 				return;
 			case Mif2Package.CONTENT_DEFINITION__VALUE_SET_REF:
-				setValueSetRef((VocabularyValueSetRef)null);
+				setValueSetRef((VocabularyValueSetRef) null);
 				return;
 			case Mif2Package.CONTENT_DEFINITION__ALLOWED_QUALIFIERS:
 				getAllowedQualifiers().clear();
@@ -815,9 +919,13 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 			case Mif2Package.CONTENT_DEFINITION__ARE_BASE_QUALIFIERS_UNLIMITED:
 				return isSetAreBaseQualifiersUnlimited();
 			case Mif2Package.CONTENT_DEFINITION__CODE_SYSTEM:
-				return CODE_SYSTEM_EDEFAULT == null ? codeSystem != null : !CODE_SYSTEM_EDEFAULT.equals(codeSystem);
+				return CODE_SYSTEM_EDEFAULT == null
+						? codeSystem != null
+						: !CODE_SYSTEM_EDEFAULT.equals(codeSystem);
 			case Mif2Package.CONTENT_DEFINITION__VERSION_DATE:
-				return VERSION_DATE_EDEFAULT == null ? versionDate != null : !VERSION_DATE_EDEFAULT.equals(versionDate);
+				return VERSION_DATE_EDEFAULT == null
+						? versionDate != null
+						: !VERSION_DATE_EDEFAULT.equals(versionDate);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -829,11 +937,17 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (areBaseQualifiersUnlimited: ");
-		if (areBaseQualifiersUnlimitedESet) result.append(areBaseQualifiersUnlimited); else result.append("<unset>");
+		if (areBaseQualifiersUnlimitedESet) {
+			result.append(areBaseQualifiersUnlimited);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", codeSystem: ");
 		result.append(codeSystem);
 		result.append(", versionDate: ");
@@ -842,4 +956,4 @@ public class ContentDefinitionImpl extends EObjectImpl implements ContentDefinit
 		return result.toString();
 	}
 
-} //ContentDefinitionImpl
+} // ContentDefinitionImpl

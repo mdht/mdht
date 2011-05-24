@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -107,7 +111,9 @@ public class PropertyBasedContentDefinitionImpl extends EObjectImpl implements P
 	 */
 	public EList<ConceptPropertyRef> getIncludeWithConceptProperty() {
 		if (includeWithConceptProperty == null) {
-			includeWithConceptProperty = new EObjectContainmentEList<ConceptPropertyRef>(ConceptPropertyRef.class, this, Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION__INCLUDE_WITH_CONCEPT_PROPERTY);
+			includeWithConceptProperty = new EObjectContainmentEList<ConceptPropertyRef>(
+				ConceptPropertyRef.class, this,
+				Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION__INCLUDE_WITH_CONCEPT_PROPERTY);
 		}
 		return includeWithConceptProperty;
 	}
@@ -119,7 +125,9 @@ public class PropertyBasedContentDefinitionImpl extends EObjectImpl implements P
 	 */
 	public EList<ConceptPropertyRef> getExcludeWithConceptProperty() {
 		if (excludeWithConceptProperty == null) {
-			excludeWithConceptProperty = new EObjectContainmentEList<ConceptPropertyRef>(ConceptPropertyRef.class, this, Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION__EXCLUDE_WITH_CONCEPT_PROPERTY);
+			excludeWithConceptProperty = new EObjectContainmentEList<ConceptPropertyRef>(
+				ConceptPropertyRef.class, this,
+				Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION__EXCLUDE_WITH_CONCEPT_PROPERTY);
 		}
 		return excludeWithConceptProperty;
 	}
@@ -131,7 +139,9 @@ public class PropertyBasedContentDefinitionImpl extends EObjectImpl implements P
 	 */
 	public EList<ConceptPropertyRef> getIncludeWithCodeProperty() {
 		if (includeWithCodeProperty == null) {
-			includeWithCodeProperty = new EObjectContainmentEList<ConceptPropertyRef>(ConceptPropertyRef.class, this, Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION__INCLUDE_WITH_CODE_PROPERTY);
+			includeWithCodeProperty = new EObjectContainmentEList<ConceptPropertyRef>(
+				ConceptPropertyRef.class, this,
+				Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION__INCLUDE_WITH_CODE_PROPERTY);
 		}
 		return includeWithCodeProperty;
 	}
@@ -143,7 +153,9 @@ public class PropertyBasedContentDefinitionImpl extends EObjectImpl implements P
 	 */
 	public EList<ConceptPropertyRef> getExcludeWithCodeProperty() {
 		if (excludeWithCodeProperty == null) {
-			excludeWithCodeProperty = new EObjectContainmentEList<ConceptPropertyRef>(ConceptPropertyRef.class, this, Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION__EXCLUDE_WITH_CODE_PROPERTY);
+			excludeWithCodeProperty = new EObjectContainmentEList<ConceptPropertyRef>(
+				ConceptPropertyRef.class, this,
+				Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION__EXCLUDE_WITH_CODE_PROPERTY);
 		}
 		return excludeWithCodeProperty;
 	}
@@ -157,13 +169,13 @@ public class PropertyBasedContentDefinitionImpl extends EObjectImpl implements P
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION__INCLUDE_WITH_CONCEPT_PROPERTY:
-				return ((InternalEList<?>)getIncludeWithConceptProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getIncludeWithConceptProperty()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION__EXCLUDE_WITH_CONCEPT_PROPERTY:
-				return ((InternalEList<?>)getExcludeWithConceptProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getExcludeWithConceptProperty()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION__INCLUDE_WITH_CODE_PROPERTY:
-				return ((InternalEList<?>)getIncludeWithCodeProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getIncludeWithCodeProperty()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION__EXCLUDE_WITH_CODE_PROPERTY:
-				return ((InternalEList<?>)getExcludeWithCodeProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getExcludeWithCodeProperty()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -199,19 +211,19 @@ public class PropertyBasedContentDefinitionImpl extends EObjectImpl implements P
 		switch (featureID) {
 			case Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION__INCLUDE_WITH_CONCEPT_PROPERTY:
 				getIncludeWithConceptProperty().clear();
-				getIncludeWithConceptProperty().addAll((Collection<? extends ConceptPropertyRef>)newValue);
+				getIncludeWithConceptProperty().addAll((Collection<? extends ConceptPropertyRef>) newValue);
 				return;
 			case Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION__EXCLUDE_WITH_CONCEPT_PROPERTY:
 				getExcludeWithConceptProperty().clear();
-				getExcludeWithConceptProperty().addAll((Collection<? extends ConceptPropertyRef>)newValue);
+				getExcludeWithConceptProperty().addAll((Collection<? extends ConceptPropertyRef>) newValue);
 				return;
 			case Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION__INCLUDE_WITH_CODE_PROPERTY:
 				getIncludeWithCodeProperty().clear();
-				getIncludeWithCodeProperty().addAll((Collection<? extends ConceptPropertyRef>)newValue);
+				getIncludeWithCodeProperty().addAll((Collection<? extends ConceptPropertyRef>) newValue);
 				return;
 			case Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION__EXCLUDE_WITH_CODE_PROPERTY:
 				getExcludeWithCodeProperty().clear();
-				getExcludeWithCodeProperty().addAll((Collection<? extends ConceptPropertyRef>)newValue);
+				getExcludeWithCodeProperty().addAll((Collection<? extends ConceptPropertyRef>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -261,4 +273,4 @@ public class PropertyBasedContentDefinitionImpl extends EObjectImpl implements P
 		return super.eIsSet(featureID);
 	}
 
-} //PropertyBasedContentDefinitionImpl
+} // PropertyBasedContentDefinitionImpl

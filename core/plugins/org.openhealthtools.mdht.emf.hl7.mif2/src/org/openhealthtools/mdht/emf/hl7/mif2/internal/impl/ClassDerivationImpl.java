@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -128,8 +132,10 @@ public class ClassDerivationImpl extends EObjectImpl implements ClassDerivation 
 	public void setClassName(String newClassName) {
 		String oldClassName = className;
 		className = newClassName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_DERIVATION__CLASS_NAME, oldClassName, className));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_DERIVATION__CLASS_NAME, oldClassName, className));
+		}
 	}
 
 	/**
@@ -149,8 +155,11 @@ public class ClassDerivationImpl extends EObjectImpl implements ClassDerivation 
 	public void setStaticModelDerivationId(String newStaticModelDerivationId) {
 		String oldStaticModelDerivationId = staticModelDerivationId;
 		staticModelDerivationId = newStaticModelDerivationId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_DERIVATION__STATIC_MODEL_DERIVATION_ID, oldStaticModelDerivationId, staticModelDerivationId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_DERIVATION__STATIC_MODEL_DERIVATION_ID,
+				oldStaticModelDerivationId, staticModelDerivationId));
+		}
 	}
 
 	/**
@@ -170,8 +179,10 @@ public class ClassDerivationImpl extends EObjectImpl implements ClassDerivation 
 	public void setWithinCMET(String newWithinCMET) {
 		String oldWithinCMET = withinCMET;
 		withinCMET = newWithinCMET;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_DERIVATION__WITHIN_CMET, oldWithinCMET, withinCMET));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_DERIVATION__WITHIN_CMET, oldWithinCMET, withinCMET));
+		}
 	}
 
 	/**
@@ -201,13 +212,13 @@ public class ClassDerivationImpl extends EObjectImpl implements ClassDerivation 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CLASS_DERIVATION__CLASS_NAME:
-				setClassName((String)newValue);
+				setClassName((String) newValue);
 				return;
 			case Mif2Package.CLASS_DERIVATION__STATIC_MODEL_DERIVATION_ID:
-				setStaticModelDerivationId((String)newValue);
+				setStaticModelDerivationId((String) newValue);
 				return;
 			case Mif2Package.CLASS_DERIVATION__WITHIN_CMET:
-				setWithinCMET((String)newValue);
+				setWithinCMET((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,11 +254,17 @@ public class ClassDerivationImpl extends EObjectImpl implements ClassDerivation 
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CLASS_DERIVATION__CLASS_NAME:
-				return CLASS_NAME_EDEFAULT == null ? className != null : !CLASS_NAME_EDEFAULT.equals(className);
+				return CLASS_NAME_EDEFAULT == null
+						? className != null
+						: !CLASS_NAME_EDEFAULT.equals(className);
 			case Mif2Package.CLASS_DERIVATION__STATIC_MODEL_DERIVATION_ID:
-				return STATIC_MODEL_DERIVATION_ID_EDEFAULT == null ? staticModelDerivationId != null : !STATIC_MODEL_DERIVATION_ID_EDEFAULT.equals(staticModelDerivationId);
+				return STATIC_MODEL_DERIVATION_ID_EDEFAULT == null
+						? staticModelDerivationId != null
+						: !STATIC_MODEL_DERIVATION_ID_EDEFAULT.equals(staticModelDerivationId);
 			case Mif2Package.CLASS_DERIVATION__WITHIN_CMET:
-				return WITHIN_CMET_EDEFAULT == null ? withinCMET != null : !WITHIN_CMET_EDEFAULT.equals(withinCMET);
+				return WITHIN_CMET_EDEFAULT == null
+						? withinCMET != null
+						: !WITHIN_CMET_EDEFAULT.equals(withinCMET);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -259,7 +276,9 @@ public class ClassDerivationImpl extends EObjectImpl implements ClassDerivation 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (className: ");
@@ -272,4 +291,4 @@ public class ClassDerivationImpl extends EObjectImpl implements ClassDerivation 
 		return result.toString();
 	}
 
-} //ClassDerivationImpl
+} // ClassDerivationImpl

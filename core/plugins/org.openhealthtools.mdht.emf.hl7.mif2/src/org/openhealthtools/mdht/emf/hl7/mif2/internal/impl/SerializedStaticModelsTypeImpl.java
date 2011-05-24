@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -106,7 +110,9 @@ public class SerializedStaticModelsTypeImpl extends EObjectImpl implements Seria
 	 */
 	public EList<GlobalSerializedStaticModel> getSerializedStaticModel() {
 		if (serializedStaticModel == null) {
-			serializedStaticModel = new EObjectContainmentEList<GlobalSerializedStaticModel>(GlobalSerializedStaticModel.class, this, Mif2Package.SERIALIZED_STATIC_MODELS_TYPE__SERIALIZED_STATIC_MODEL);
+			serializedStaticModel = new EObjectContainmentEList<GlobalSerializedStaticModel>(
+				GlobalSerializedStaticModel.class, this,
+				Mif2Package.SERIALIZED_STATIC_MODELS_TYPE__SERIALIZED_STATIC_MODEL);
 		}
 		return serializedStaticModel;
 	}
@@ -130,8 +136,11 @@ public class SerializedStaticModelsTypeImpl extends EObjectImpl implements Seria
 		schemaVersion = newSchemaVersion;
 		boolean oldSchemaVersionESet = schemaVersionESet;
 		schemaVersionESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SERIALIZED_STATIC_MODELS_TYPE__SCHEMA_VERSION, oldSchemaVersion, schemaVersion, !oldSchemaVersionESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SERIALIZED_STATIC_MODELS_TYPE__SCHEMA_VERSION, oldSchemaVersion,
+				schemaVersion, !oldSchemaVersionESet));
+		}
 	}
 
 	/**
@@ -144,8 +153,11 @@ public class SerializedStaticModelsTypeImpl extends EObjectImpl implements Seria
 		boolean oldSchemaVersionESet = schemaVersionESet;
 		schemaVersion = SCHEMA_VERSION_EDEFAULT;
 		schemaVersionESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.SERIALIZED_STATIC_MODELS_TYPE__SCHEMA_VERSION, oldSchemaVersion, SCHEMA_VERSION_EDEFAULT, oldSchemaVersionESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.SERIALIZED_STATIC_MODELS_TYPE__SCHEMA_VERSION, oldSchemaVersion,
+				SCHEMA_VERSION_EDEFAULT, oldSchemaVersionESet));
+		}
 	}
 
 	/**
@@ -166,7 +178,7 @@ public class SerializedStaticModelsTypeImpl extends EObjectImpl implements Seria
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.SERIALIZED_STATIC_MODELS_TYPE__SERIALIZED_STATIC_MODEL:
-				return ((InternalEList<?>)getSerializedStaticModel()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSerializedStaticModel()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -198,10 +210,10 @@ public class SerializedStaticModelsTypeImpl extends EObjectImpl implements Seria
 		switch (featureID) {
 			case Mif2Package.SERIALIZED_STATIC_MODELS_TYPE__SERIALIZED_STATIC_MODEL:
 				getSerializedStaticModel().clear();
-				getSerializedStaticModel().addAll((Collection<? extends GlobalSerializedStaticModel>)newValue);
+				getSerializedStaticModel().addAll((Collection<? extends GlobalSerializedStaticModel>) newValue);
 				return;
 			case Mif2Package.SERIALIZED_STATIC_MODELS_TYPE__SCHEMA_VERSION:
-				setSchemaVersion((String)newValue);
+				setSchemaVersion((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -248,13 +260,19 @@ public class SerializedStaticModelsTypeImpl extends EObjectImpl implements Seria
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (schemaVersion: ");
-		if (schemaVersionESet) result.append(schemaVersion); else result.append("<unset>");
+		if (schemaVersionESet) {
+			result.append(schemaVersion);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //SerializedStaticModelsTypeImpl
+} // SerializedStaticModelsTypeImpl

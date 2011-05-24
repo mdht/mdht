@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigDecimal;
@@ -109,8 +113,9 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	public void setHeight(BigDecimal newHeight) {
 		BigDecimal oldHeight = height;
 		height = newHeight;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DIMENSION__HEIGHT, oldHeight, height));
+		}
 	}
 
 	/**
@@ -130,8 +135,9 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	public void setWidth(BigDecimal newWidth) {
 		BigDecimal oldWidth = width;
 		width = newWidth;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DIMENSION__WIDTH, oldWidth, width));
+		}
 	}
 
 	/**
@@ -159,10 +165,10 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DIMENSION__HEIGHT:
-				setHeight((BigDecimal)newValue);
+				setHeight((BigDecimal) newValue);
 				return;
 			case Mif2Package.DIMENSION__WIDTH:
-				setWidth((BigDecimal)newValue);
+				setWidth((BigDecimal) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -195,9 +201,13 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.DIMENSION__HEIGHT:
-				return HEIGHT_EDEFAULT == null ? height != null : !HEIGHT_EDEFAULT.equals(height);
+				return HEIGHT_EDEFAULT == null
+						? height != null
+						: !HEIGHT_EDEFAULT.equals(height);
 			case Mif2Package.DIMENSION__WIDTH:
-				return WIDTH_EDEFAULT == null ? width != null : !WIDTH_EDEFAULT.equals(width);
+				return WIDTH_EDEFAULT == null
+						? width != null
+						: !WIDTH_EDEFAULT.equals(width);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -209,7 +219,9 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (height: ");
@@ -220,4 +232,4 @@ public class DimensionImpl extends EObjectImpl implements Dimension {
 		return result.toString();
 	}
 
-} //DimensionImpl
+} // DimensionImpl

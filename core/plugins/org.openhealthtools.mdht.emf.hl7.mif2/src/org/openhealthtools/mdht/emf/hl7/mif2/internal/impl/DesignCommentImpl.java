@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -94,11 +98,15 @@ public class DesignCommentImpl extends CascadableAnnotationImpl implements Desig
 	 */
 	public void setTag(DesignCommentTagKind newTag) {
 		DesignCommentTagKind oldTag = tag;
-		tag = newTag == null ? TAG_EDEFAULT : newTag;
+		tag = newTag == null
+				? TAG_EDEFAULT
+				: newTag;
 		boolean oldTagESet = tagESet;
 		tagESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DESIGN_COMMENT__TAG, oldTag, tag, !oldTagESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DESIGN_COMMENT__TAG, oldTag, tag, !oldTagESet));
+		}
 	}
 
 	/**
@@ -111,8 +119,10 @@ public class DesignCommentImpl extends CascadableAnnotationImpl implements Desig
 		boolean oldTagESet = tagESet;
 		tag = TAG_EDEFAULT;
 		tagESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.DESIGN_COMMENT__TAG, oldTag, TAG_EDEFAULT, oldTagESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.DESIGN_COMMENT__TAG, oldTag, TAG_EDEFAULT, oldTagESet));
+		}
 	}
 
 	/**
@@ -147,7 +157,7 @@ public class DesignCommentImpl extends CascadableAnnotationImpl implements Desig
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DESIGN_COMMENT__TAG:
-				setTag((DesignCommentTagKind)newValue);
+				setTag((DesignCommentTagKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,13 +199,19 @@ public class DesignCommentImpl extends CascadableAnnotationImpl implements Desig
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (tag: ");
-		if (tagESet) result.append(tag); else result.append("<unset>");
+		if (tagESet) {
+			result.append(tag);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //DesignCommentImpl
+} // DesignCommentImpl

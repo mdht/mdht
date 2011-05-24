@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.internal.impl;
 
 import java.math.BigInteger;
@@ -312,11 +316,15 @@ public class ThImpl extends FlowImpl implements Th {
 	 */
 	public void setAlign(AlignType newAlign) {
 		AlignType oldAlign = align;
-		align = newAlign == null ? ALIGN_EDEFAULT : newAlign;
+		align = newAlign == null
+				? ALIGN_EDEFAULT
+				: newAlign;
 		boolean oldAlignESet = alignESet;
 		alignESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TH__ALIGN, oldAlign, align, !oldAlignESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TH__ALIGN, oldAlign, align, !oldAlignESet));
+		}
 	}
 
 	/**
@@ -329,8 +337,10 @@ public class ThImpl extends FlowImpl implements Th {
 		boolean oldAlignESet = alignESet;
 		align = ALIGN_EDEFAULT;
 		alignESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TH__ALIGN, oldAlign, ALIGN_EDEFAULT, oldAlignESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TH__ALIGN, oldAlign, ALIGN_EDEFAULT, oldAlignESet));
+		}
 	}
 
 	/**
@@ -359,8 +369,9 @@ public class ThImpl extends FlowImpl implements Th {
 	public void setChar(String newChar) {
 		String oldChar = char_;
 		char_ = newChar;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TH__CHAR, oldChar, char_));
+		}
 	}
 
 	/**
@@ -380,8 +391,9 @@ public class ThImpl extends FlowImpl implements Th {
 	public void setCharoff(String newCharoff) {
 		String oldCharoff = charoff;
 		charoff = newCharoff;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TH__CHAROFF, oldCharoff, charoff));
+		}
 	}
 
 	/**
@@ -400,11 +412,15 @@ public class ThImpl extends FlowImpl implements Th {
 	 */
 	public void setClass(MifClassType newClass) {
 		MifClassType oldClass = class_;
-		class_ = newClass == null ? CLASS_EDEFAULT : newClass;
+		class_ = newClass == null
+				? CLASS_EDEFAULT
+				: newClass;
 		boolean oldClassESet = classESet;
 		classESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TH__CLASS, oldClass, class_, !oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TH__CLASS, oldClass, class_, !oldClassESet));
+		}
 	}
 
 	/**
@@ -417,8 +433,10 @@ public class ThImpl extends FlowImpl implements Th {
 		boolean oldClassESet = classESet;
 		class_ = CLASS_EDEFAULT;
 		classESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TH__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TH__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		}
 	}
 
 	/**
@@ -449,8 +467,10 @@ public class ThImpl extends FlowImpl implements Th {
 		colspan = newColspan;
 		boolean oldColspanESet = colspanESet;
 		colspanESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TH__COLSPAN, oldColspan, colspan, !oldColspanESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TH__COLSPAN, oldColspan, colspan, !oldColspanESet));
+		}
 	}
 
 	/**
@@ -463,8 +483,10 @@ public class ThImpl extends FlowImpl implements Th {
 		boolean oldColspanESet = colspanESet;
 		colspan = COLSPAN_EDEFAULT;
 		colspanESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TH__COLSPAN, oldColspan, COLSPAN_EDEFAULT, oldColspanESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TH__COLSPAN, oldColspan, COLSPAN_EDEFAULT, oldColspanESet));
+		}
 	}
 
 	/**
@@ -493,8 +515,9 @@ public class ThImpl extends FlowImpl implements Th {
 	public void setLang(String newLang) {
 		String oldLang = lang;
 		lang = newLang;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TH__LANG, oldLang, lang));
+		}
 	}
 
 	/**
@@ -516,8 +539,10 @@ public class ThImpl extends FlowImpl implements Th {
 		rowspan = newRowspan;
 		boolean oldRowspanESet = rowspanESet;
 		rowspanESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TH__ROWSPAN, oldRowspan, rowspan, !oldRowspanESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TH__ROWSPAN, oldRowspan, rowspan, !oldRowspanESet));
+		}
 	}
 
 	/**
@@ -530,8 +555,10 @@ public class ThImpl extends FlowImpl implements Th {
 		boolean oldRowspanESet = rowspanESet;
 		rowspan = ROWSPAN_EDEFAULT;
 		rowspanESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TH__ROWSPAN, oldRowspan, ROWSPAN_EDEFAULT, oldRowspanESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TH__ROWSPAN, oldRowspan, ROWSPAN_EDEFAULT, oldRowspanESet));
+		}
 	}
 
 	/**
@@ -559,11 +586,15 @@ public class ThImpl extends FlowImpl implements Th {
 	 */
 	public void setStyle(StyleSheet newStyle) {
 		StyleSheet oldStyle = style;
-		style = newStyle == null ? STYLE_EDEFAULT : newStyle;
+		style = newStyle == null
+				? STYLE_EDEFAULT
+				: newStyle;
 		boolean oldStyleESet = styleESet;
 		styleESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TH__STYLE, oldStyle, style, !oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TH__STYLE, oldStyle, style, !oldStyleESet));
+		}
 	}
 
 	/**
@@ -576,8 +607,10 @@ public class ThImpl extends FlowImpl implements Th {
 		boolean oldStyleESet = styleESet;
 		style = STYLE_EDEFAULT;
 		styleESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TH__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TH__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		}
 	}
 
 	/**
@@ -605,11 +638,15 @@ public class ThImpl extends FlowImpl implements Th {
 	 */
 	public void setValign(ValignType newValign) {
 		ValignType oldValign = valign;
-		valign = newValign == null ? VALIGN_EDEFAULT : newValign;
+		valign = newValign == null
+				? VALIGN_EDEFAULT
+				: newValign;
 		boolean oldValignESet = valignESet;
 		valignESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TH__VALIGN, oldValign, valign, !oldValignESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TH__VALIGN, oldValign, valign, !oldValignESet));
+		}
 	}
 
 	/**
@@ -622,8 +659,10 @@ public class ThImpl extends FlowImpl implements Th {
 		boolean oldValignESet = valignESet;
 		valign = VALIGN_EDEFAULT;
 		valignESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TH__VALIGN, oldValign, VALIGN_EDEFAULT, oldValignESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TH__VALIGN, oldValign, VALIGN_EDEFAULT, oldValignESet));
+		}
 	}
 
 	/**
@@ -674,31 +713,31 @@ public class ThImpl extends FlowImpl implements Th {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case XhtmlPackage.TH__ALIGN:
-				setAlign((AlignType)newValue);
+				setAlign((AlignType) newValue);
 				return;
 			case XhtmlPackage.TH__CHAR:
-				setChar((String)newValue);
+				setChar((String) newValue);
 				return;
 			case XhtmlPackage.TH__CHAROFF:
-				setCharoff((String)newValue);
+				setCharoff((String) newValue);
 				return;
 			case XhtmlPackage.TH__CLASS:
-				setClass((MifClassType)newValue);
+				setClass((MifClassType) newValue);
 				return;
 			case XhtmlPackage.TH__COLSPAN:
-				setColspan((BigInteger)newValue);
+				setColspan((BigInteger) newValue);
 				return;
 			case XhtmlPackage.TH__LANG:
-				setLang((String)newValue);
+				setLang((String) newValue);
 				return;
 			case XhtmlPackage.TH__ROWSPAN:
-				setRowspan((BigInteger)newValue);
+				setRowspan((BigInteger) newValue);
 				return;
 			case XhtmlPackage.TH__STYLE:
-				setStyle((StyleSheet)newValue);
+				setStyle((StyleSheet) newValue);
 				return;
 			case XhtmlPackage.TH__VALIGN:
-				setValign((ValignType)newValue);
+				setValign((ValignType) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -754,15 +793,21 @@ public class ThImpl extends FlowImpl implements Th {
 			case XhtmlPackage.TH__ALIGN:
 				return isSetAlign();
 			case XhtmlPackage.TH__CHAR:
-				return CHAR_EDEFAULT == null ? char_ != null : !CHAR_EDEFAULT.equals(char_);
+				return CHAR_EDEFAULT == null
+						? char_ != null
+						: !CHAR_EDEFAULT.equals(char_);
 			case XhtmlPackage.TH__CHAROFF:
-				return CHAROFF_EDEFAULT == null ? charoff != null : !CHAROFF_EDEFAULT.equals(charoff);
+				return CHAROFF_EDEFAULT == null
+						? charoff != null
+						: !CHAROFF_EDEFAULT.equals(charoff);
 			case XhtmlPackage.TH__CLASS:
 				return isSetClass();
 			case XhtmlPackage.TH__COLSPAN:
 				return isSetColspan();
 			case XhtmlPackage.TH__LANG:
-				return LANG_EDEFAULT == null ? lang != null : !LANG_EDEFAULT.equals(lang);
+				return LANG_EDEFAULT == null
+						? lang != null
+						: !LANG_EDEFAULT.equals(lang);
 			case XhtmlPackage.TH__ROWSPAN:
 				return isSetRowspan();
 			case XhtmlPackage.TH__STYLE:
@@ -780,29 +825,55 @@ public class ThImpl extends FlowImpl implements Th {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (align: ");
-		if (alignESet) result.append(align); else result.append("<unset>");
+		if (alignESet) {
+			result.append(align);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", char: ");
 		result.append(char_);
 		result.append(", charoff: ");
 		result.append(charoff);
 		result.append(", class: ");
-		if (classESet) result.append(class_); else result.append("<unset>");
+		if (classESet) {
+			result.append(class_);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", colspan: ");
-		if (colspanESet) result.append(colspan); else result.append("<unset>");
+		if (colspanESet) {
+			result.append(colspan);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", lang: ");
 		result.append(lang);
 		result.append(", rowspan: ");
-		if (rowspanESet) result.append(rowspan); else result.append("<unset>");
+		if (rowspanESet) {
+			result.append(rowspan);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", style: ");
-		if (styleESet) result.append(style); else result.append("<unset>");
+		if (styleESet) {
+			result.append(style);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", valign: ");
-		if (valignESet) result.append(valign); else result.append("<unset>");
+		if (valignESet) {
+			result.append(valign);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //ThImpl
+} // ThImpl

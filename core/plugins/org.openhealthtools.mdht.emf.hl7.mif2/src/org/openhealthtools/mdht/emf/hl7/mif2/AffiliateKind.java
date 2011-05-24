@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -847,43 +851,9 @@ public enum AffiliateKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final AffiliateKind[] VALUES_ARRAY =
-		new AffiliateKind[] {
-			AR,
-			AU,
-			AT,
-			BR,
-			CA,
-			CL,
-			CN,
-			HR,
-			CZ,
-			DK,
-			FI,
-			FR,
-			DE,
-			GR,
-			IN,
-			IE,
-			IT,
-			JP,
-			KR,
-			LT,
-			MX,
-			NL,
-			NZ,
-			RO,
-			SOA,
-			ES,
-			SE,
-			CH,
-			TW,
-			TR,
-			UK,
-			US,
-			UY,
-			UV,
-		};
+	private static final AffiliateKind[] VALUES_ARRAY = new AffiliateKind[] {
+			AR, AU, AT, BR, CA, CL, CN, HR, CZ, DK, FI, FR, DE, GR, IN, IE, IT, JP, KR, LT, MX, NL, NZ, RO, SOA, ES,
+			SE, CH, TW, TR, UK, US, UY, UV, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Affiliate Kind</b></em>' enumerators.
@@ -933,40 +903,74 @@ public enum AffiliateKind implements Enumerator {
 	 */
 	public static AffiliateKind get(int value) {
 		switch (value) {
-			case AR_VALUE: return AR;
-			case AU_VALUE: return AU;
-			case AT_VALUE: return AT;
-			case BR_VALUE: return BR;
-			case CA_VALUE: return CA;
-			case CL_VALUE: return CL;
-			case CN_VALUE: return CN;
-			case HR_VALUE: return HR;
-			case CZ_VALUE: return CZ;
-			case DK_VALUE: return DK;
-			case FI_VALUE: return FI;
-			case FR_VALUE: return FR;
-			case DE_VALUE: return DE;
-			case GR_VALUE: return GR;
-			case IN_VALUE: return IN;
-			case IE_VALUE: return IE;
-			case IT_VALUE: return IT;
-			case JP_VALUE: return JP;
-			case KR_VALUE: return KR;
-			case LT_VALUE: return LT;
-			case MX_VALUE: return MX;
-			case NL_VALUE: return NL;
-			case NZ_VALUE: return NZ;
-			case RO_VALUE: return RO;
-			case SOA_VALUE: return SOA;
-			case ES_VALUE: return ES;
-			case SE_VALUE: return SE;
-			case CH_VALUE: return CH;
-			case TW_VALUE: return TW;
-			case TR_VALUE: return TR;
-			case UK_VALUE: return UK;
-			case US_VALUE: return US;
-			case UY_VALUE: return UY;
-			case UV_VALUE: return UV;
+			case AR_VALUE:
+				return AR;
+			case AU_VALUE:
+				return AU;
+			case AT_VALUE:
+				return AT;
+			case BR_VALUE:
+				return BR;
+			case CA_VALUE:
+				return CA;
+			case CL_VALUE:
+				return CL;
+			case CN_VALUE:
+				return CN;
+			case HR_VALUE:
+				return HR;
+			case CZ_VALUE:
+				return CZ;
+			case DK_VALUE:
+				return DK;
+			case FI_VALUE:
+				return FI;
+			case FR_VALUE:
+				return FR;
+			case DE_VALUE:
+				return DE;
+			case GR_VALUE:
+				return GR;
+			case IN_VALUE:
+				return IN;
+			case IE_VALUE:
+				return IE;
+			case IT_VALUE:
+				return IT;
+			case JP_VALUE:
+				return JP;
+			case KR_VALUE:
+				return KR;
+			case LT_VALUE:
+				return LT;
+			case MX_VALUE:
+				return MX;
+			case NL_VALUE:
+				return NL;
+			case NZ_VALUE:
+				return NZ;
+			case RO_VALUE:
+				return RO;
+			case SOA_VALUE:
+				return SOA;
+			case ES_VALUE:
+				return ES;
+			case SE_VALUE:
+				return SE;
+			case CH_VALUE:
+				return CH;
+			case TW_VALUE:
+				return TW;
+			case TR_VALUE:
+				return TR;
+			case UK_VALUE:
+				return UK;
+			case US_VALUE:
+				return US;
+			case UY_VALUE:
+				return UY;
+			case UV_VALUE:
+				return UV;
 		}
 		return null;
 	}
@@ -1010,7 +1014,7 @@ public enum AffiliateKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -1019,7 +1023,7 @@ public enum AffiliateKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -1028,7 +1032,7 @@ public enum AffiliateKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -1041,5 +1045,5 @@ public enum AffiliateKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //AffiliateKind
+
+} // AffiliateKind

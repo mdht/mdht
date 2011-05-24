@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml;
 
 import java.util.Arrays;
@@ -257,18 +261,8 @@ public enum TFrame implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final TFrame[] VALUES_ARRAY =
-		new TFrame[] {
-			VOID,
-			ABOVE,
-			BELOW,
-			HSIDES,
-			LHS,
-			RHS,
-			VSIDES,
-			BOX,
-			BORDER,
-		};
+	private static final TFrame[] VALUES_ARRAY = new TFrame[] {
+			VOID, ABOVE, BELOW, HSIDES, LHS, RHS, VSIDES, BOX, BORDER, };
 
 	/**
 	 * A public read-only list of all the '<em><b>TFrame</b></em>' enumerators.
@@ -318,15 +312,24 @@ public enum TFrame implements Enumerator {
 	 */
 	public static TFrame get(int value) {
 		switch (value) {
-			case VOID_VALUE: return VOID;
-			case ABOVE_VALUE: return ABOVE;
-			case BELOW_VALUE: return BELOW;
-			case HSIDES_VALUE: return HSIDES;
-			case LHS_VALUE: return LHS;
-			case RHS_VALUE: return RHS;
-			case VSIDES_VALUE: return VSIDES;
-			case BOX_VALUE: return BOX;
-			case BORDER_VALUE: return BORDER;
+			case VOID_VALUE:
+				return VOID;
+			case ABOVE_VALUE:
+				return ABOVE;
+			case BELOW_VALUE:
+				return BELOW;
+			case HSIDES_VALUE:
+				return HSIDES;
+			case LHS_VALUE:
+				return LHS;
+			case RHS_VALUE:
+				return RHS;
+			case VSIDES_VALUE:
+				return VSIDES;
+			case BOX_VALUE:
+				return BOX;
+			case BORDER_VALUE:
+				return BORDER;
 		}
 		return null;
 	}
@@ -370,7 +373,7 @@ public enum TFrame implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -379,7 +382,7 @@ public enum TFrame implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -388,7 +391,7 @@ public enum TFrame implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -401,5 +404,5 @@ public enum TFrame implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //TFrame
+
+} // TFrame

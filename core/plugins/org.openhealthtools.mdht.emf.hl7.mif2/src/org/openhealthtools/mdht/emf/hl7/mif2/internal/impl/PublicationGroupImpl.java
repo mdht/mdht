@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -118,7 +122,8 @@ public class PublicationGroupImpl extends PublicationBaseImpl implements Publica
 	 */
 	public EList<ComplexMarkupWithLanguage> getFollowingText() {
 		if (followingText == null) {
-			followingText = new EObjectContainmentEList<ComplexMarkupWithLanguage>(ComplexMarkupWithLanguage.class, this, Mif2Package.PUBLICATION_GROUP__FOLLOWING_TEXT);
+			followingText = new EObjectContainmentEList<ComplexMarkupWithLanguage>(
+				ComplexMarkupWithLanguage.class, this, Mif2Package.PUBLICATION_GROUP__FOLLOWING_TEXT);
 		}
 		return followingText;
 	}
@@ -132,13 +137,13 @@ public class PublicationGroupImpl extends PublicationBaseImpl implements Publica
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.PUBLICATION_GROUP__PUBLICATION_CONTENT:
-				return ((InternalEList<?>)getPublicationContent()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPublicationContent()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PUBLICATION_GROUP__PUBLISHED_ITEM:
-				return ((InternalEList<?>)getPublishedItem()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPublishedItem()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PUBLICATION_GROUP__PUBLISHED_GROUP:
-				return ((InternalEList<?>)getPublishedGroup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPublishedGroup()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PUBLICATION_GROUP__FOLLOWING_TEXT:
-				return ((InternalEList<?>)getFollowingText()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getFollowingText()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -152,8 +157,10 @@ public class PublicationGroupImpl extends PublicationBaseImpl implements Publica
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mif2Package.PUBLICATION_GROUP__PUBLICATION_CONTENT:
-				if (coreType) return getPublicationContent();
-				return ((FeatureMap.Internal)getPublicationContent()).getWrapper();
+				if (coreType) {
+					return getPublicationContent();
+				}
+				return ((FeatureMap.Internal) getPublicationContent()).getWrapper();
 			case Mif2Package.PUBLICATION_GROUP__PUBLISHED_ITEM:
 				return getPublishedItem();
 			case Mif2Package.PUBLICATION_GROUP__PUBLISHED_GROUP:
@@ -174,19 +181,19 @@ public class PublicationGroupImpl extends PublicationBaseImpl implements Publica
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.PUBLICATION_GROUP__PUBLICATION_CONTENT:
-				((FeatureMap.Internal)getPublicationContent()).set(newValue);
+				((FeatureMap.Internal) getPublicationContent()).set(newValue);
 				return;
 			case Mif2Package.PUBLICATION_GROUP__PUBLISHED_ITEM:
 				getPublishedItem().clear();
-				getPublishedItem().addAll((Collection<? extends PublicationItem>)newValue);
+				getPublishedItem().addAll((Collection<? extends PublicationItem>) newValue);
 				return;
 			case Mif2Package.PUBLICATION_GROUP__PUBLISHED_GROUP:
 				getPublishedGroup().clear();
-				getPublishedGroup().addAll((Collection<? extends PublicationGroup>)newValue);
+				getPublishedGroup().addAll((Collection<? extends PublicationGroup>) newValue);
 				return;
 			case Mif2Package.PUBLICATION_GROUP__FOLLOWING_TEXT:
 				getFollowingText().clear();
-				getFollowingText().addAll((Collection<? extends ComplexMarkupWithLanguage>)newValue);
+				getFollowingText().addAll((Collection<? extends ComplexMarkupWithLanguage>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,7 +250,9 @@ public class PublicationGroupImpl extends PublicationBaseImpl implements Publica
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (publicationContent: ");
@@ -252,4 +261,4 @@ public class PublicationGroupImpl extends PublicationBaseImpl implements Publica
 		return result.toString();
 	}
 
-} //PublicationGroupImpl
+} // PublicationGroupImpl

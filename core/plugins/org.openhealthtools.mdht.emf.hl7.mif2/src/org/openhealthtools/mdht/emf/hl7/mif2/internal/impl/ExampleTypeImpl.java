@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -84,7 +88,7 @@ public class ExampleTypeImpl extends EObjectImpl implements ExampleType {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.EXAMPLE_TYPE__ANY:
-				return ((InternalEList<?>)getAny()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAny()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -98,8 +102,10 @@ public class ExampleTypeImpl extends EObjectImpl implements ExampleType {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mif2Package.EXAMPLE_TYPE__ANY:
-				if (coreType) return getAny();
-				return ((FeatureMap.Internal)getAny()).getWrapper();
+				if (coreType) {
+					return getAny();
+				}
+				return ((FeatureMap.Internal) getAny()).getWrapper();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,7 +119,7 @@ public class ExampleTypeImpl extends EObjectImpl implements ExampleType {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.EXAMPLE_TYPE__ANY:
-				((FeatureMap.Internal)getAny()).set(newValue);
+				((FeatureMap.Internal) getAny()).set(newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -155,7 +161,9 @@ public class ExampleTypeImpl extends EObjectImpl implements ExampleType {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (any: ");
@@ -164,4 +172,4 @@ public class ExampleTypeImpl extends EObjectImpl implements ExampleType {
 		return result.toString();
 	}
 
-} //ExampleTypeImpl
+} // ExampleTypeImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -23,7 +27,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.Mif2Package;
 import org.openhealthtools.mdht.emf.hl7.mif2.NegativeVoteResolutionKind;
 import org.openhealthtools.mdht.emf.hl7.mif2.VoteKind;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Inline;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -260,8 +263,14 @@ public class BallotSubmissionImpl extends EObjectImpl implements BallotSubmissio
 		Inline oldVoterComments = voterComments;
 		voterComments = newVoterComments;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__VOTER_COMMENTS, oldVoterComments, newVoterComments);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__VOTER_COMMENTS, oldVoterComments,
+				newVoterComments);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -274,15 +283,23 @@ public class BallotSubmissionImpl extends EObjectImpl implements BallotSubmissio
 	public void setVoterComments(Inline newVoterComments) {
 		if (newVoterComments != voterComments) {
 			NotificationChain msgs = null;
-			if (voterComments != null)
-				msgs = ((InternalEObject)voterComments).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.BALLOT_SUBMISSION__VOTER_COMMENTS, null, msgs);
-			if (newVoterComments != null)
-				msgs = ((InternalEObject)newVoterComments).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.BALLOT_SUBMISSION__VOTER_COMMENTS, null, msgs);
+			if (voterComments != null) {
+				msgs = ((InternalEObject) voterComments).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.BALLOT_SUBMISSION__VOTER_COMMENTS, null, msgs);
+			}
+			if (newVoterComments != null) {
+				msgs = ((InternalEObject) newVoterComments).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.BALLOT_SUBMISSION__VOTER_COMMENTS, null, msgs);
+			}
 			msgs = basicSetVoterComments(newVoterComments, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__VOTER_COMMENTS, newVoterComments,
+				newVoterComments));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__VOTER_COMMENTS, newVoterComments, newVoterComments));
 	}
 
 	/**
@@ -301,11 +318,16 @@ public class BallotSubmissionImpl extends EObjectImpl implements BallotSubmissio
 	 */
 	public void setResolution(NegativeVoteResolutionKind newResolution) {
 		NegativeVoteResolutionKind oldResolution = resolution;
-		resolution = newResolution == null ? RESOLUTION_EDEFAULT : newResolution;
+		resolution = newResolution == null
+				? RESOLUTION_EDEFAULT
+				: newResolution;
 		boolean oldResolutionESet = resolutionESet;
 		resolutionESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__RESOLUTION, oldResolution, resolution, !oldResolutionESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__RESOLUTION, oldResolution, resolution,
+				!oldResolutionESet));
+		}
 	}
 
 	/**
@@ -318,8 +340,11 @@ public class BallotSubmissionImpl extends EObjectImpl implements BallotSubmissio
 		boolean oldResolutionESet = resolutionESet;
 		resolution = RESOLUTION_EDEFAULT;
 		resolutionESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.BALLOT_SUBMISSION__RESOLUTION, oldResolution, RESOLUTION_EDEFAULT, oldResolutionESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.BALLOT_SUBMISSION__RESOLUTION, oldResolution,
+				RESOLUTION_EDEFAULT, oldResolutionESet));
+		}
 	}
 
 	/**
@@ -347,11 +372,15 @@ public class BallotSubmissionImpl extends EObjectImpl implements BallotSubmissio
 	 */
 	public void setStatus(ApprovalStatusKind newStatus) {
 		ApprovalStatusKind oldStatus = status;
-		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
+		status = newStatus == null
+				? STATUS_EDEFAULT
+				: newStatus;
 		boolean oldStatusESet = statusESet;
 		statusESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__STATUS, oldStatus, status, !oldStatusESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__STATUS, oldStatus, status, !oldStatusESet));
+		}
 	}
 
 	/**
@@ -364,8 +393,11 @@ public class BallotSubmissionImpl extends EObjectImpl implements BallotSubmissio
 		boolean oldStatusESet = statusESet;
 		status = STATUS_EDEFAULT;
 		statusESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.BALLOT_SUBMISSION__STATUS, oldStatus, STATUS_EDEFAULT, oldStatusESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.BALLOT_SUBMISSION__STATUS, oldStatus, STATUS_EDEFAULT,
+				oldStatusESet));
+		}
 	}
 
 	/**
@@ -394,8 +426,10 @@ public class BallotSubmissionImpl extends EObjectImpl implements BallotSubmissio
 	public void setStatusDate(XMLGregorianCalendar newStatusDate) {
 		XMLGregorianCalendar oldStatusDate = statusDate;
 		statusDate = newStatusDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__STATUS_DATE, oldStatusDate, statusDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__STATUS_DATE, oldStatusDate, statusDate));
+		}
 	}
 
 	/**
@@ -415,8 +449,10 @@ public class BallotSubmissionImpl extends EObjectImpl implements BallotSubmissio
 	public void setSubmissionId(String newSubmissionId) {
 		String oldSubmissionId = submissionId;
 		submissionId = newSubmissionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__SUBMISSION_ID, oldSubmissionId, submissionId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__SUBMISSION_ID, oldSubmissionId, submissionId));
+		}
 	}
 
 	/**
@@ -436,8 +472,10 @@ public class BallotSubmissionImpl extends EObjectImpl implements BallotSubmissio
 	public void setSubmitterName(String newSubmitterName) {
 		String oldSubmitterName = submitterName;
 		submitterName = newSubmitterName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__SUBMITTER_NAME, oldSubmitterName, submitterName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__SUBMITTER_NAME, oldSubmitterName, submitterName));
+		}
 	}
 
 	/**
@@ -457,8 +495,11 @@ public class BallotSubmissionImpl extends EObjectImpl implements BallotSubmissio
 	public void setSubmitterOrganization(String newSubmitterOrganization) {
 		String oldSubmitterOrganization = submitterOrganization;
 		submitterOrganization = newSubmitterOrganization;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__SUBMITTER_ORGANIZATION, oldSubmitterOrganization, submitterOrganization));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__SUBMITTER_ORGANIZATION,
+				oldSubmitterOrganization, submitterOrganization));
+		}
 	}
 
 	/**
@@ -477,11 +518,15 @@ public class BallotSubmissionImpl extends EObjectImpl implements BallotSubmissio
 	 */
 	public void setVote(VoteKind newVote) {
 		VoteKind oldVote = vote;
-		vote = newVote == null ? VOTE_EDEFAULT : newVote;
+		vote = newVote == null
+				? VOTE_EDEFAULT
+				: newVote;
 		boolean oldVoteESet = voteESet;
 		voteESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__VOTE, oldVote, vote, !oldVoteESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.BALLOT_SUBMISSION__VOTE, oldVote, vote, !oldVoteESet));
+		}
 	}
 
 	/**
@@ -494,8 +539,10 @@ public class BallotSubmissionImpl extends EObjectImpl implements BallotSubmissio
 		boolean oldVoteESet = voteESet;
 		vote = VOTE_EDEFAULT;
 		voteESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.BALLOT_SUBMISSION__VOTE, oldVote, VOTE_EDEFAULT, oldVoteESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.BALLOT_SUBMISSION__VOTE, oldVote, VOTE_EDEFAULT, oldVoteESet));
+		}
 	}
 
 	/**
@@ -558,28 +605,28 @@ public class BallotSubmissionImpl extends EObjectImpl implements BallotSubmissio
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.BALLOT_SUBMISSION__VOTER_COMMENTS:
-				setVoterComments((Inline)newValue);
+				setVoterComments((Inline) newValue);
 				return;
 			case Mif2Package.BALLOT_SUBMISSION__RESOLUTION:
-				setResolution((NegativeVoteResolutionKind)newValue);
+				setResolution((NegativeVoteResolutionKind) newValue);
 				return;
 			case Mif2Package.BALLOT_SUBMISSION__STATUS:
-				setStatus((ApprovalStatusKind)newValue);
+				setStatus((ApprovalStatusKind) newValue);
 				return;
 			case Mif2Package.BALLOT_SUBMISSION__STATUS_DATE:
-				setStatusDate((XMLGregorianCalendar)newValue);
+				setStatusDate((XMLGregorianCalendar) newValue);
 				return;
 			case Mif2Package.BALLOT_SUBMISSION__SUBMISSION_ID:
-				setSubmissionId((String)newValue);
+				setSubmissionId((String) newValue);
 				return;
 			case Mif2Package.BALLOT_SUBMISSION__SUBMITTER_NAME:
-				setSubmitterName((String)newValue);
+				setSubmitterName((String) newValue);
 				return;
 			case Mif2Package.BALLOT_SUBMISSION__SUBMITTER_ORGANIZATION:
-				setSubmitterOrganization((String)newValue);
+				setSubmitterOrganization((String) newValue);
 				return;
 			case Mif2Package.BALLOT_SUBMISSION__VOTE:
-				setVote((VoteKind)newValue);
+				setVote((VoteKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -594,7 +641,7 @@ public class BallotSubmissionImpl extends EObjectImpl implements BallotSubmissio
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.BALLOT_SUBMISSION__VOTER_COMMENTS:
-				setVoterComments((Inline)null);
+				setVoterComments((Inline) null);
 				return;
 			case Mif2Package.BALLOT_SUBMISSION__RESOLUTION:
 				unsetResolution();
@@ -636,13 +683,21 @@ public class BallotSubmissionImpl extends EObjectImpl implements BallotSubmissio
 			case Mif2Package.BALLOT_SUBMISSION__STATUS:
 				return isSetStatus();
 			case Mif2Package.BALLOT_SUBMISSION__STATUS_DATE:
-				return STATUS_DATE_EDEFAULT == null ? statusDate != null : !STATUS_DATE_EDEFAULT.equals(statusDate);
+				return STATUS_DATE_EDEFAULT == null
+						? statusDate != null
+						: !STATUS_DATE_EDEFAULT.equals(statusDate);
 			case Mif2Package.BALLOT_SUBMISSION__SUBMISSION_ID:
-				return SUBMISSION_ID_EDEFAULT == null ? submissionId != null : !SUBMISSION_ID_EDEFAULT.equals(submissionId);
+				return SUBMISSION_ID_EDEFAULT == null
+						? submissionId != null
+						: !SUBMISSION_ID_EDEFAULT.equals(submissionId);
 			case Mif2Package.BALLOT_SUBMISSION__SUBMITTER_NAME:
-				return SUBMITTER_NAME_EDEFAULT == null ? submitterName != null : !SUBMITTER_NAME_EDEFAULT.equals(submitterName);
+				return SUBMITTER_NAME_EDEFAULT == null
+						? submitterName != null
+						: !SUBMITTER_NAME_EDEFAULT.equals(submitterName);
 			case Mif2Package.BALLOT_SUBMISSION__SUBMITTER_ORGANIZATION:
-				return SUBMITTER_ORGANIZATION_EDEFAULT == null ? submitterOrganization != null : !SUBMITTER_ORGANIZATION_EDEFAULT.equals(submitterOrganization);
+				return SUBMITTER_ORGANIZATION_EDEFAULT == null
+						? submitterOrganization != null
+						: !SUBMITTER_ORGANIZATION_EDEFAULT.equals(submitterOrganization);
 			case Mif2Package.BALLOT_SUBMISSION__VOTE:
 				return isSetVote();
 		}
@@ -656,13 +711,23 @@ public class BallotSubmissionImpl extends EObjectImpl implements BallotSubmissio
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (resolution: ");
-		if (resolutionESet) result.append(resolution); else result.append("<unset>");
+		if (resolutionESet) {
+			result.append(resolution);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", status: ");
-		if (statusESet) result.append(status); else result.append("<unset>");
+		if (statusESet) {
+			result.append(status);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", statusDate: ");
 		result.append(statusDate);
 		result.append(", submissionId: ");
@@ -672,9 +737,13 @@ public class BallotSubmissionImpl extends EObjectImpl implements BallotSubmissio
 		result.append(", submitterOrganization: ");
 		result.append(submitterOrganization);
 		result.append(", vote: ");
-		if (voteESet) result.append(vote); else result.append("<unset>");
+		if (voteESet) {
+			result.append(vote);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //BallotSubmissionImpl
+} // BallotSubmissionImpl

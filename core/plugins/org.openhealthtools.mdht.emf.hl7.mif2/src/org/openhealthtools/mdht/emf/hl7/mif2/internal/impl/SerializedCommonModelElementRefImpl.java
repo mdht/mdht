@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -37,7 +41,8 @@ import org.openhealthtools.mdht.emf.hl7.mif2.SerializedCommonModelElementRef;
  *
  * @generated
  */
-public class SerializedCommonModelElementRefImpl extends CommonModelElementRefBaseImpl implements SerializedCommonModelElementRef {
+public class SerializedCommonModelElementRefImpl extends CommonModelElementRefBaseImpl implements
+		SerializedCommonModelElementRef {
 	/**
 	 * The cached value of the '{@link #getGroup() <em>Group</em>}' attribute list.
 	 * <!-- begin-user-doc -->
@@ -97,9 +102,9 @@ public class SerializedCommonModelElementRefImpl extends CommonModelElementRefBa
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.SERIALIZED_COMMON_MODEL_ELEMENT_REF__GROUP:
-				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getGroup()).basicRemove(otherEnd, msgs);
 			case Mif2Package.SERIALIZED_COMMON_MODEL_ELEMENT_REF__ARGUMENT:
-				return ((InternalEList<?>)getArgument()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getArgument()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -113,8 +118,10 @@ public class SerializedCommonModelElementRefImpl extends CommonModelElementRefBa
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mif2Package.SERIALIZED_COMMON_MODEL_ELEMENT_REF__GROUP:
-				if (coreType) return getGroup();
-				return ((FeatureMap.Internal)getGroup()).getWrapper();
+				if (coreType) {
+					return getGroup();
+				}
+				return ((FeatureMap.Internal) getGroup()).getWrapper();
 			case Mif2Package.SERIALIZED_COMMON_MODEL_ELEMENT_REF__ARGUMENT:
 				return getArgument();
 		}
@@ -131,11 +138,11 @@ public class SerializedCommonModelElementRefImpl extends CommonModelElementRefBa
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.SERIALIZED_COMMON_MODEL_ELEMENT_REF__GROUP:
-				((FeatureMap.Internal)getGroup()).set(newValue);
+				((FeatureMap.Internal) getGroup()).set(newValue);
 				return;
 			case Mif2Package.SERIALIZED_COMMON_MODEL_ELEMENT_REF__ARGUMENT:
 				getArgument().clear();
-				getArgument().addAll((Collection<? extends SerializedClassBindingArgument>)newValue);
+				getArgument().addAll((Collection<? extends SerializedClassBindingArgument>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -182,7 +189,9 @@ public class SerializedCommonModelElementRefImpl extends CommonModelElementRefBa
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (group: ");
@@ -191,4 +200,4 @@ public class SerializedCommonModelElementRefImpl extends CommonModelElementRefBa
 		return result.toString();
 	}
 
-} //SerializedCommonModelElementRefImpl
+} // SerializedCommonModelElementRefImpl

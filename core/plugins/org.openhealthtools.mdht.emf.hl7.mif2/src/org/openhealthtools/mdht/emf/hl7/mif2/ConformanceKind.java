@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -34,13 +38,13 @@ public enum ConformanceKind implements Enumerator {
 	 * @ordered
 	 */
 	I(0, "I", "I"), /**
-	 * The '<em><b>R</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #R_VALUE
-	 * @generated
-	 * @ordered
-	 */
+					* The '<em><b>R</b></em>' literal object.
+					* <!-- begin-user-doc -->
+					* <!-- end-user-doc -->
+					* @see #R_VALUE
+					* @generated
+					* @ordered
+					*/
 	R(1, "R", "R"),
 
 	/**
@@ -101,12 +105,7 @@ public enum ConformanceKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ConformanceKind[] VALUES_ARRAY =
-		new ConformanceKind[] {
-			I,
-			R,
-			NP,
-		};
+	private static final ConformanceKind[] VALUES_ARRAY = new ConformanceKind[] { I, R, NP, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Conformance Kind</b></em>' enumerators.
@@ -156,9 +155,12 @@ public enum ConformanceKind implements Enumerator {
 	 */
 	public static ConformanceKind get(int value) {
 		switch (value) {
-			case I_VALUE: return I;
-			case R_VALUE: return R;
-			case NP_VALUE: return NP;
+			case I_VALUE:
+				return I;
+			case R_VALUE:
+				return R;
+			case NP_VALUE:
+				return NP;
 		}
 		return null;
 	}
@@ -202,7 +204,7 @@ public enum ConformanceKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -211,7 +213,7 @@ public enum ConformanceKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -220,7 +222,7 @@ public enum ConformanceKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -233,5 +235,5 @@ public enum ConformanceKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //ConformanceKind
+
+} // ConformanceKind

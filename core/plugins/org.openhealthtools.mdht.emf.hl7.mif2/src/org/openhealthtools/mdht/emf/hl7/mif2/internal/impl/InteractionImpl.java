@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -175,8 +179,13 @@ public class InteractionImpl extends PackageArtifactImpl implements Interaction 
 		InteractionAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -189,15 +198,22 @@ public class InteractionImpl extends PackageArtifactImpl implements Interaction 
 	public void setAnnotations(InteractionAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -218,8 +234,14 @@ public class InteractionImpl extends PackageArtifactImpl implements Interaction 
 		PackageRef oldInvokingTriggerEvent = invokingTriggerEvent;
 		invokingTriggerEvent = newInvokingTriggerEvent;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION__INVOKING_TRIGGER_EVENT, oldInvokingTriggerEvent, newInvokingTriggerEvent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION__INVOKING_TRIGGER_EVENT, oldInvokingTriggerEvent,
+				newInvokingTriggerEvent);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -232,15 +254,23 @@ public class InteractionImpl extends PackageArtifactImpl implements Interaction 
 	public void setInvokingTriggerEvent(PackageRef newInvokingTriggerEvent) {
 		if (newInvokingTriggerEvent != invokingTriggerEvent) {
 			NotificationChain msgs = null;
-			if (invokingTriggerEvent != null)
-				msgs = ((InternalEObject)invokingTriggerEvent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION__INVOKING_TRIGGER_EVENT, null, msgs);
-			if (newInvokingTriggerEvent != null)
-				msgs = ((InternalEObject)newInvokingTriggerEvent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION__INVOKING_TRIGGER_EVENT, null, msgs);
+			if (invokingTriggerEvent != null) {
+				msgs = ((InternalEObject) invokingTriggerEvent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION__INVOKING_TRIGGER_EVENT, null, msgs);
+			}
+			if (newInvokingTriggerEvent != null) {
+				msgs = ((InternalEObject) newInvokingTriggerEvent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION__INVOKING_TRIGGER_EVENT, null, msgs);
+			}
 			msgs = basicSetInvokingTriggerEvent(newInvokingTriggerEvent, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION__INVOKING_TRIGGER_EVENT, newInvokingTriggerEvent,
+				newInvokingTriggerEvent));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION__INVOKING_TRIGGER_EVENT, newInvokingTriggerEvent, newInvokingTriggerEvent));
 	}
 
 	/**
@@ -261,8 +291,14 @@ public class InteractionImpl extends PackageArtifactImpl implements Interaction 
 		BoundStaticModel oldArgumentMessage = argumentMessage;
 		argumentMessage = newArgumentMessage;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION__ARGUMENT_MESSAGE, oldArgumentMessage, newArgumentMessage);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION__ARGUMENT_MESSAGE, oldArgumentMessage,
+				newArgumentMessage);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -275,15 +311,23 @@ public class InteractionImpl extends PackageArtifactImpl implements Interaction 
 	public void setArgumentMessage(BoundStaticModel newArgumentMessage) {
 		if (newArgumentMessage != argumentMessage) {
 			NotificationChain msgs = null;
-			if (argumentMessage != null)
-				msgs = ((InternalEObject)argumentMessage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION__ARGUMENT_MESSAGE, null, msgs);
-			if (newArgumentMessage != null)
-				msgs = ((InternalEObject)newArgumentMessage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.INTERACTION__ARGUMENT_MESSAGE, null, msgs);
+			if (argumentMessage != null) {
+				msgs = ((InternalEObject) argumentMessage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION__ARGUMENT_MESSAGE, null, msgs);
+			}
+			if (newArgumentMessage != null) {
+				msgs = ((InternalEObject) newArgumentMessage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.INTERACTION__ARGUMENT_MESSAGE, null, msgs);
+			}
 			msgs = basicSetArgumentMessage(newArgumentMessage, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION__ARGUMENT_MESSAGE, newArgumentMessage,
+				newArgumentMessage));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION__ARGUMENT_MESSAGE, newArgumentMessage, newArgumentMessage));
 	}
 
 	/**
@@ -293,7 +337,8 @@ public class InteractionImpl extends PackageArtifactImpl implements Interaction 
 	 */
 	public EList<ReceiverResponsibility> getReceiverResponsibilities() {
 		if (receiverResponsibilities == null) {
-			receiverResponsibilities = new EObjectContainmentEList<ReceiverResponsibility>(ReceiverResponsibility.class, this, Mif2Package.INTERACTION__RECEIVER_RESPONSIBILITIES);
+			receiverResponsibilities = new EObjectContainmentEList<ReceiverResponsibility>(
+				ReceiverResponsibility.class, this, Mif2Package.INTERACTION__RECEIVER_RESPONSIBILITIES);
 		}
 		return receiverResponsibilities;
 	}
@@ -305,7 +350,8 @@ public class InteractionImpl extends PackageArtifactImpl implements Interaction 
 	 */
 	public EList<PackageRef> getSendingApplication() {
 		if (sendingApplication == null) {
-			sendingApplication = new EObjectContainmentEList<PackageRef>(PackageRef.class, this, Mif2Package.INTERACTION__SENDING_APPLICATION);
+			sendingApplication = new EObjectContainmentEList<PackageRef>(
+				PackageRef.class, this, Mif2Package.INTERACTION__SENDING_APPLICATION);
 		}
 		return sendingApplication;
 	}
@@ -317,7 +363,8 @@ public class InteractionImpl extends PackageArtifactImpl implements Interaction 
 	 */
 	public EList<PackageRef> getReceivingApplication() {
 		if (receivingApplication == null) {
-			receivingApplication = new EObjectContainmentEList<PackageRef>(PackageRef.class, this, Mif2Package.INTERACTION__RECEIVING_APPLICATION);
+			receivingApplication = new EObjectContainmentEList<PackageRef>(
+				PackageRef.class, this, Mif2Package.INTERACTION__RECEIVING_APPLICATION);
 		}
 		return receivingApplication;
 	}
@@ -338,11 +385,16 @@ public class InteractionImpl extends PackageArtifactImpl implements Interaction 
 	 */
 	public void setInteractionType(InteractionKind newInteractionType) {
 		InteractionKind oldInteractionType = interactionType;
-		interactionType = newInteractionType == null ? INTERACTION_TYPE_EDEFAULT : newInteractionType;
+		interactionType = newInteractionType == null
+				? INTERACTION_TYPE_EDEFAULT
+				: newInteractionType;
 		boolean oldInteractionTypeESet = interactionTypeESet;
 		interactionTypeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.INTERACTION__INTERACTION_TYPE, oldInteractionType, interactionType, !oldInteractionTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.INTERACTION__INTERACTION_TYPE, oldInteractionType, interactionType,
+				!oldInteractionTypeESet));
+		}
 	}
 
 	/**
@@ -355,8 +407,11 @@ public class InteractionImpl extends PackageArtifactImpl implements Interaction 
 		boolean oldInteractionTypeESet = interactionTypeESet;
 		interactionType = INTERACTION_TYPE_EDEFAULT;
 		interactionTypeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.INTERACTION__INTERACTION_TYPE, oldInteractionType, INTERACTION_TYPE_EDEFAULT, oldInteractionTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.INTERACTION__INTERACTION_TYPE, oldInteractionType,
+				INTERACTION_TYPE_EDEFAULT, oldInteractionTypeESet));
+		}
 	}
 
 	/**
@@ -383,11 +438,11 @@ public class InteractionImpl extends PackageArtifactImpl implements Interaction 
 			case Mif2Package.INTERACTION__ARGUMENT_MESSAGE:
 				return basicSetArgumentMessage(null, msgs);
 			case Mif2Package.INTERACTION__RECEIVER_RESPONSIBILITIES:
-				return ((InternalEList<?>)getReceiverResponsibilities()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getReceiverResponsibilities()).basicRemove(otherEnd, msgs);
 			case Mif2Package.INTERACTION__SENDING_APPLICATION:
-				return ((InternalEList<?>)getSendingApplication()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSendingApplication()).basicRemove(otherEnd, msgs);
 			case Mif2Package.INTERACTION__RECEIVING_APPLICATION:
-				return ((InternalEList<?>)getReceivingApplication()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getReceivingApplication()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -428,28 +483,28 @@ public class InteractionImpl extends PackageArtifactImpl implements Interaction 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.INTERACTION__ANNOTATIONS:
-				setAnnotations((InteractionAnnotations)newValue);
+				setAnnotations((InteractionAnnotations) newValue);
 				return;
 			case Mif2Package.INTERACTION__INVOKING_TRIGGER_EVENT:
-				setInvokingTriggerEvent((PackageRef)newValue);
+				setInvokingTriggerEvent((PackageRef) newValue);
 				return;
 			case Mif2Package.INTERACTION__ARGUMENT_MESSAGE:
-				setArgumentMessage((BoundStaticModel)newValue);
+				setArgumentMessage((BoundStaticModel) newValue);
 				return;
 			case Mif2Package.INTERACTION__RECEIVER_RESPONSIBILITIES:
 				getReceiverResponsibilities().clear();
-				getReceiverResponsibilities().addAll((Collection<? extends ReceiverResponsibility>)newValue);
+				getReceiverResponsibilities().addAll((Collection<? extends ReceiverResponsibility>) newValue);
 				return;
 			case Mif2Package.INTERACTION__SENDING_APPLICATION:
 				getSendingApplication().clear();
-				getSendingApplication().addAll((Collection<? extends PackageRef>)newValue);
+				getSendingApplication().addAll((Collection<? extends PackageRef>) newValue);
 				return;
 			case Mif2Package.INTERACTION__RECEIVING_APPLICATION:
 				getReceivingApplication().clear();
-				getReceivingApplication().addAll((Collection<? extends PackageRef>)newValue);
+				getReceivingApplication().addAll((Collection<? extends PackageRef>) newValue);
 				return;
 			case Mif2Package.INTERACTION__INTERACTION_TYPE:
-				setInteractionType((InteractionKind)newValue);
+				setInteractionType((InteractionKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -464,13 +519,13 @@ public class InteractionImpl extends PackageArtifactImpl implements Interaction 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.INTERACTION__ANNOTATIONS:
-				setAnnotations((InteractionAnnotations)null);
+				setAnnotations((InteractionAnnotations) null);
 				return;
 			case Mif2Package.INTERACTION__INVOKING_TRIGGER_EVENT:
-				setInvokingTriggerEvent((PackageRef)null);
+				setInvokingTriggerEvent((PackageRef) null);
 				return;
 			case Mif2Package.INTERACTION__ARGUMENT_MESSAGE:
-				setArgumentMessage((BoundStaticModel)null);
+				setArgumentMessage((BoundStaticModel) null);
 				return;
 			case Mif2Package.INTERACTION__RECEIVER_RESPONSIBILITIES:
 				getReceiverResponsibilities().clear();
@@ -521,13 +576,19 @@ public class InteractionImpl extends PackageArtifactImpl implements Interaction 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (interactionType: ");
-		if (interactionTypeESet) result.append(interactionType); else result.append("<unset>");
+		if (interactionTypeESet) {
+			result.append(interactionType);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //InteractionImpl
+} // InteractionImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigDecimal;
@@ -22,7 +26,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.ChangeRequestEstimate;
 import org.openhealthtools.mdht.emf.hl7.mif2.EffortQuantifierKind;
 import org.openhealthtools.mdht.emf.hl7.mif2.Mif2Package;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Flow;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -199,8 +202,14 @@ public class ChangeRequestEstimateImpl extends EObjectImpl implements ChangeRequ
 		Flow oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CHANGE_REQUEST_ESTIMATE__DESCRIPTION, oldDescription, newDescription);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CHANGE_REQUEST_ESTIMATE__DESCRIPTION, oldDescription,
+				newDescription);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -213,15 +222,23 @@ public class ChangeRequestEstimateImpl extends EObjectImpl implements ChangeRequ
 	public void setDescription(Flow newDescription) {
 		if (newDescription != description) {
 			NotificationChain msgs = null;
-			if (description != null)
-				msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CHANGE_REQUEST_ESTIMATE__DESCRIPTION, null, msgs);
-			if (newDescription != null)
-				msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CHANGE_REQUEST_ESTIMATE__DESCRIPTION, null, msgs);
+			if (description != null) {
+				msgs = ((InternalEObject) description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CHANGE_REQUEST_ESTIMATE__DESCRIPTION, null, msgs);
+			}
+			if (newDescription != null) {
+				msgs = ((InternalEObject) newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CHANGE_REQUEST_ESTIMATE__DESCRIPTION, null, msgs);
+			}
 			msgs = basicSetDescription(newDescription, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CHANGE_REQUEST_ESTIMATE__DESCRIPTION, newDescription,
+				newDescription));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CHANGE_REQUEST_ESTIMATE__DESCRIPTION, newDescription, newDescription));
 	}
 
 	/**
@@ -241,8 +258,10 @@ public class ChangeRequestEstimateImpl extends EObjectImpl implements ChangeRequ
 	public void setCost(BigInteger newCost) {
 		BigInteger oldCost = cost;
 		cost = newCost;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CHANGE_REQUEST_ESTIMATE__COST, oldCost, cost));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CHANGE_REQUEST_ESTIMATE__COST, oldCost, cost));
+		}
 	}
 
 	/**
@@ -262,8 +281,11 @@ public class ChangeRequestEstimateImpl extends EObjectImpl implements ChangeRequ
 	public void setCostCurrency(String newCostCurrency) {
 		String oldCostCurrency = costCurrency;
 		costCurrency = newCostCurrency;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CHANGE_REQUEST_ESTIMATE__COST_CURRENCY, oldCostCurrency, costCurrency));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CHANGE_REQUEST_ESTIMATE__COST_CURRENCY, oldCostCurrency,
+				costCurrency));
+		}
 	}
 
 	/**
@@ -283,8 +305,10 @@ public class ChangeRequestEstimateImpl extends EObjectImpl implements ChangeRequ
 	public void setEffort(BigDecimal newEffort) {
 		BigDecimal oldEffort = effort;
 		effort = newEffort;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CHANGE_REQUEST_ESTIMATE__EFFORT, oldEffort, effort));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CHANGE_REQUEST_ESTIMATE__EFFORT, oldEffort, effort));
+		}
 	}
 
 	/**
@@ -303,11 +327,16 @@ public class ChangeRequestEstimateImpl extends EObjectImpl implements ChangeRequ
 	 */
 	public void setEffortQuantifier(EffortQuantifierKind newEffortQuantifier) {
 		EffortQuantifierKind oldEffortQuantifier = effortQuantifier;
-		effortQuantifier = newEffortQuantifier == null ? EFFORT_QUANTIFIER_EDEFAULT : newEffortQuantifier;
+		effortQuantifier = newEffortQuantifier == null
+				? EFFORT_QUANTIFIER_EDEFAULT
+				: newEffortQuantifier;
 		boolean oldEffortQuantifierESet = effortQuantifierESet;
 		effortQuantifierESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CHANGE_REQUEST_ESTIMATE__EFFORT_QUANTIFIER, oldEffortQuantifier, effortQuantifier, !oldEffortQuantifierESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CHANGE_REQUEST_ESTIMATE__EFFORT_QUANTIFIER, oldEffortQuantifier,
+				effortQuantifier, !oldEffortQuantifierESet));
+		}
 	}
 
 	/**
@@ -320,8 +349,11 @@ public class ChangeRequestEstimateImpl extends EObjectImpl implements ChangeRequ
 		boolean oldEffortQuantifierESet = effortQuantifierESet;
 		effortQuantifier = EFFORT_QUANTIFIER_EDEFAULT;
 		effortQuantifierESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CHANGE_REQUEST_ESTIMATE__EFFORT_QUANTIFIER, oldEffortQuantifier, EFFORT_QUANTIFIER_EDEFAULT, oldEffortQuantifierESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CHANGE_REQUEST_ESTIMATE__EFFORT_QUANTIFIER, oldEffortQuantifier,
+				EFFORT_QUANTIFIER_EDEFAULT, oldEffortQuantifierESet));
+		}
 	}
 
 	/**
@@ -350,8 +382,10 @@ public class ChangeRequestEstimateImpl extends EObjectImpl implements ChangeRequ
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CHANGE_REQUEST_ESTIMATE__TYPE, oldType, type));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CHANGE_REQUEST_ESTIMATE__TYPE, oldType, type));
+		}
 	}
 
 	/**
@@ -401,22 +435,22 @@ public class ChangeRequestEstimateImpl extends EObjectImpl implements ChangeRequ
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CHANGE_REQUEST_ESTIMATE__DESCRIPTION:
-				setDescription((Flow)newValue);
+				setDescription((Flow) newValue);
 				return;
 			case Mif2Package.CHANGE_REQUEST_ESTIMATE__COST:
-				setCost((BigInteger)newValue);
+				setCost((BigInteger) newValue);
 				return;
 			case Mif2Package.CHANGE_REQUEST_ESTIMATE__COST_CURRENCY:
-				setCostCurrency((String)newValue);
+				setCostCurrency((String) newValue);
 				return;
 			case Mif2Package.CHANGE_REQUEST_ESTIMATE__EFFORT:
-				setEffort((BigDecimal)newValue);
+				setEffort((BigDecimal) newValue);
 				return;
 			case Mif2Package.CHANGE_REQUEST_ESTIMATE__EFFORT_QUANTIFIER:
-				setEffortQuantifier((EffortQuantifierKind)newValue);
+				setEffortQuantifier((EffortQuantifierKind) newValue);
 				return;
 			case Mif2Package.CHANGE_REQUEST_ESTIMATE__TYPE:
-				setType((String)newValue);
+				setType((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -431,7 +465,7 @@ public class ChangeRequestEstimateImpl extends EObjectImpl implements ChangeRequ
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CHANGE_REQUEST_ESTIMATE__DESCRIPTION:
-				setDescription((Flow)null);
+				setDescription((Flow) null);
 				return;
 			case Mif2Package.CHANGE_REQUEST_ESTIMATE__COST:
 				setCost(COST_EDEFAULT);
@@ -463,15 +497,23 @@ public class ChangeRequestEstimateImpl extends EObjectImpl implements ChangeRequ
 			case Mif2Package.CHANGE_REQUEST_ESTIMATE__DESCRIPTION:
 				return description != null;
 			case Mif2Package.CHANGE_REQUEST_ESTIMATE__COST:
-				return COST_EDEFAULT == null ? cost != null : !COST_EDEFAULT.equals(cost);
+				return COST_EDEFAULT == null
+						? cost != null
+						: !COST_EDEFAULT.equals(cost);
 			case Mif2Package.CHANGE_REQUEST_ESTIMATE__COST_CURRENCY:
-				return COST_CURRENCY_EDEFAULT == null ? costCurrency != null : !COST_CURRENCY_EDEFAULT.equals(costCurrency);
+				return COST_CURRENCY_EDEFAULT == null
+						? costCurrency != null
+						: !COST_CURRENCY_EDEFAULT.equals(costCurrency);
 			case Mif2Package.CHANGE_REQUEST_ESTIMATE__EFFORT:
-				return EFFORT_EDEFAULT == null ? effort != null : !EFFORT_EDEFAULT.equals(effort);
+				return EFFORT_EDEFAULT == null
+						? effort != null
+						: !EFFORT_EDEFAULT.equals(effort);
 			case Mif2Package.CHANGE_REQUEST_ESTIMATE__EFFORT_QUANTIFIER:
 				return isSetEffortQuantifier();
 			case Mif2Package.CHANGE_REQUEST_ESTIMATE__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+				return TYPE_EDEFAULT == null
+						? type != null
+						: !TYPE_EDEFAULT.equals(type);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -483,7 +525,9 @@ public class ChangeRequestEstimateImpl extends EObjectImpl implements ChangeRequ
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (cost: ");
@@ -493,11 +537,15 @@ public class ChangeRequestEstimateImpl extends EObjectImpl implements ChangeRequ
 		result.append(", effort: ");
 		result.append(effort);
 		result.append(", effortQuantifier: ");
-		if (effortQuantifierESet) result.append(effortQuantifier); else result.append("<unset>");
+		if (effortQuantifierESet) {
+			result.append(effortQuantifier);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", type: ");
 		result.append(type);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ChangeRequestEstimateImpl
+} // ChangeRequestEstimateImpl

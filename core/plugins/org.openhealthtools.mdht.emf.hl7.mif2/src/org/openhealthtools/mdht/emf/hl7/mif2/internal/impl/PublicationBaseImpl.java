@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -223,7 +227,8 @@ public abstract class PublicationBaseImpl extends EObjectImpl implements Publica
 	 */
 	public EList<BusinessName> getBusinessName() {
 		if (businessName == null) {
-			businessName = new EObjectContainmentEList<BusinessName>(BusinessName.class, this, Mif2Package.PUBLICATION_BASE__BUSINESS_NAME);
+			businessName = new EObjectContainmentEList<BusinessName>(
+				BusinessName.class, this, Mif2Package.PUBLICATION_BASE__BUSINESS_NAME);
 		}
 		return businessName;
 	}
@@ -235,7 +240,8 @@ public abstract class PublicationBaseImpl extends EObjectImpl implements Publica
 	 */
 	public EList<ComplexMarkupWithLanguage> getRenderedText() {
 		if (renderedText == null) {
-			renderedText = new EObjectContainmentEList<ComplexMarkupWithLanguage>(ComplexMarkupWithLanguage.class, this, Mif2Package.PUBLICATION_BASE__RENDERED_TEXT);
+			renderedText = new EObjectContainmentEList<ComplexMarkupWithLanguage>(
+				ComplexMarkupWithLanguage.class, this, Mif2Package.PUBLICATION_BASE__RENDERED_TEXT);
 		}
 		return renderedText;
 	}
@@ -247,7 +253,8 @@ public abstract class PublicationBaseImpl extends EObjectImpl implements Publica
 	 */
 	public EList<ComplexMarkupWithLanguage> getPrecedingText() {
 		if (precedingText == null) {
-			precedingText = new EObjectContainmentEList<ComplexMarkupWithLanguage>(ComplexMarkupWithLanguage.class, this, Mif2Package.PUBLICATION_BASE__PRECEDING_TEXT);
+			precedingText = new EObjectContainmentEList<ComplexMarkupWithLanguage>(
+				ComplexMarkupWithLanguage.class, this, Mif2Package.PUBLICATION_BASE__PRECEDING_TEXT);
 		}
 		return precedingText;
 	}
@@ -268,11 +275,16 @@ public abstract class PublicationBaseImpl extends EObjectImpl implements Publica
 	 */
 	public void setContentsLevel(ContentsLevelKind newContentsLevel) {
 		ContentsLevelKind oldContentsLevel = contentsLevel;
-		contentsLevel = newContentsLevel == null ? CONTENTS_LEVEL_EDEFAULT : newContentsLevel;
+		contentsLevel = newContentsLevel == null
+				? CONTENTS_LEVEL_EDEFAULT
+				: newContentsLevel;
 		boolean oldContentsLevelESet = contentsLevelESet;
 		contentsLevelESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PUBLICATION_BASE__CONTENTS_LEVEL, oldContentsLevel, contentsLevel, !oldContentsLevelESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PUBLICATION_BASE__CONTENTS_LEVEL, oldContentsLevel, contentsLevel,
+				!oldContentsLevelESet));
+		}
 	}
 
 	/**
@@ -285,8 +297,11 @@ public abstract class PublicationBaseImpl extends EObjectImpl implements Publica
 		boolean oldContentsLevelESet = contentsLevelESet;
 		contentsLevel = CONTENTS_LEVEL_EDEFAULT;
 		contentsLevelESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.PUBLICATION_BASE__CONTENTS_LEVEL, oldContentsLevel, CONTENTS_LEVEL_EDEFAULT, oldContentsLevelESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.PUBLICATION_BASE__CONTENTS_LEVEL, oldContentsLevel,
+				CONTENTS_LEVEL_EDEFAULT, oldContentsLevelESet));
+		}
 	}
 
 	/**
@@ -315,8 +330,9 @@ public abstract class PublicationBaseImpl extends EObjectImpl implements Publica
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PUBLICATION_BASE__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -338,8 +354,11 @@ public abstract class PublicationBaseImpl extends EObjectImpl implements Publica
 		renderToLocation = newRenderToLocation;
 		boolean oldRenderToLocationESet = renderToLocationESet;
 		renderToLocationESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PUBLICATION_BASE__RENDER_TO_LOCATION, oldRenderToLocation, renderToLocation, !oldRenderToLocationESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PUBLICATION_BASE__RENDER_TO_LOCATION, oldRenderToLocation,
+				renderToLocation, !oldRenderToLocationESet));
+		}
 	}
 
 	/**
@@ -352,8 +371,11 @@ public abstract class PublicationBaseImpl extends EObjectImpl implements Publica
 		boolean oldRenderToLocationESet = renderToLocationESet;
 		renderToLocation = RENDER_TO_LOCATION_EDEFAULT;
 		renderToLocationESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.PUBLICATION_BASE__RENDER_TO_LOCATION, oldRenderToLocation, RENDER_TO_LOCATION_EDEFAULT, oldRenderToLocationESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.PUBLICATION_BASE__RENDER_TO_LOCATION, oldRenderToLocation,
+				RENDER_TO_LOCATION_EDEFAULT, oldRenderToLocationESet));
+		}
 	}
 
 	/**
@@ -382,8 +404,10 @@ public abstract class PublicationBaseImpl extends EObjectImpl implements Publica
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PUBLICATION_BASE__SORT_KEY, oldSortKey, sortKey));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PUBLICATION_BASE__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -403,8 +427,9 @@ public abstract class PublicationBaseImpl extends EObjectImpl implements Publica
 	public void setTitle(String newTitle) {
 		String oldTitle = title;
 		title = newTitle;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PUBLICATION_BASE__TITLE, oldTitle, title));
+		}
 	}
 
 	/**
@@ -416,11 +441,11 @@ public abstract class PublicationBaseImpl extends EObjectImpl implements Publica
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.PUBLICATION_BASE__BUSINESS_NAME:
-				return ((InternalEList<?>)getBusinessName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBusinessName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PUBLICATION_BASE__RENDERED_TEXT:
-				return ((InternalEList<?>)getRenderedText()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRenderedText()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PUBLICATION_BASE__PRECEDING_TEXT:
-				return ((InternalEList<?>)getPrecedingText()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPrecedingText()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -464,30 +489,30 @@ public abstract class PublicationBaseImpl extends EObjectImpl implements Publica
 		switch (featureID) {
 			case Mif2Package.PUBLICATION_BASE__BUSINESS_NAME:
 				getBusinessName().clear();
-				getBusinessName().addAll((Collection<? extends BusinessName>)newValue);
+				getBusinessName().addAll((Collection<? extends BusinessName>) newValue);
 				return;
 			case Mif2Package.PUBLICATION_BASE__RENDERED_TEXT:
 				getRenderedText().clear();
-				getRenderedText().addAll((Collection<? extends ComplexMarkupWithLanguage>)newValue);
+				getRenderedText().addAll((Collection<? extends ComplexMarkupWithLanguage>) newValue);
 				return;
 			case Mif2Package.PUBLICATION_BASE__PRECEDING_TEXT:
 				getPrecedingText().clear();
-				getPrecedingText().addAll((Collection<? extends ComplexMarkupWithLanguage>)newValue);
+				getPrecedingText().addAll((Collection<? extends ComplexMarkupWithLanguage>) newValue);
 				return;
 			case Mif2Package.PUBLICATION_BASE__CONTENTS_LEVEL:
-				setContentsLevel((ContentsLevelKind)newValue);
+				setContentsLevel((ContentsLevelKind) newValue);
 				return;
 			case Mif2Package.PUBLICATION_BASE__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.PUBLICATION_BASE__RENDER_TO_LOCATION:
-				setRenderToLocation((String)newValue);
+				setRenderToLocation((String) newValue);
 				return;
 			case Mif2Package.PUBLICATION_BASE__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 			case Mif2Package.PUBLICATION_BASE__TITLE:
-				setTitle((String)newValue);
+				setTitle((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -546,13 +571,19 @@ public abstract class PublicationBaseImpl extends EObjectImpl implements Publica
 			case Mif2Package.PUBLICATION_BASE__CONTENTS_LEVEL:
 				return isSetContentsLevel();
 			case Mif2Package.PUBLICATION_BASE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.PUBLICATION_BASE__RENDER_TO_LOCATION:
 				return isSetRenderToLocation();
 			case Mif2Package.PUBLICATION_BASE__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 			case Mif2Package.PUBLICATION_BASE__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+				return TITLE_EDEFAULT == null
+						? title != null
+						: !TITLE_EDEFAULT.equals(title);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -564,15 +595,25 @@ public abstract class PublicationBaseImpl extends EObjectImpl implements Publica
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (contentsLevel: ");
-		if (contentsLevelESet) result.append(contentsLevel); else result.append("<unset>");
+		if (contentsLevelESet) {
+			result.append(contentsLevel);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", name: ");
 		result.append(name);
 		result.append(", renderToLocation: ");
-		if (renderToLocationESet) result.append(renderToLocation); else result.append("<unset>");
+		if (renderToLocationESet) {
+			result.append(renderToLocation);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", sortKey: ");
 		result.append(sortKey);
 		result.append(", title: ");
@@ -581,4 +622,4 @@ public abstract class PublicationBaseImpl extends EObjectImpl implements Publica
 		return result.toString();
 	}
 
-} //PublicationBaseImpl
+} // PublicationBaseImpl

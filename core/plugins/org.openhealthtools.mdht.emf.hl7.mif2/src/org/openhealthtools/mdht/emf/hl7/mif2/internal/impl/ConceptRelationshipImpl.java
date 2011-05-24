@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -139,7 +143,8 @@ public class ConceptRelationshipImpl extends EObjectImpl implements ConceptRelat
 	 */
 	public EList<ConceptProperty> getProperty() {
 		if (property == null) {
-			property = new EObjectContainmentEList<ConceptProperty>(ConceptProperty.class, this, Mif2Package.CONCEPT_RELATIONSHIP__PROPERTY);
+			property = new EObjectContainmentEList<ConceptProperty>(
+				ConceptProperty.class, this, Mif2Package.CONCEPT_RELATIONSHIP__PROPERTY);
 		}
 		return property;
 	}
@@ -162,8 +167,14 @@ public class ConceptRelationshipImpl extends EObjectImpl implements ConceptRelat
 		ConceptRef oldTargetConcept = targetConcept;
 		targetConcept = newTargetConcept;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT_RELATIONSHIP__TARGET_CONCEPT, oldTargetConcept, newTargetConcept);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONCEPT_RELATIONSHIP__TARGET_CONCEPT, oldTargetConcept,
+				newTargetConcept);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -176,15 +187,23 @@ public class ConceptRelationshipImpl extends EObjectImpl implements ConceptRelat
 	public void setTargetConcept(ConceptRef newTargetConcept) {
 		if (newTargetConcept != targetConcept) {
 			NotificationChain msgs = null;
-			if (targetConcept != null)
-				msgs = ((InternalEObject)targetConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONCEPT_RELATIONSHIP__TARGET_CONCEPT, null, msgs);
-			if (newTargetConcept != null)
-				msgs = ((InternalEObject)newTargetConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONCEPT_RELATIONSHIP__TARGET_CONCEPT, null, msgs);
+			if (targetConcept != null) {
+				msgs = ((InternalEObject) targetConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONCEPT_RELATIONSHIP__TARGET_CONCEPT, null, msgs);
+			}
+			if (newTargetConcept != null) {
+				msgs = ((InternalEObject) newTargetConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONCEPT_RELATIONSHIP__TARGET_CONCEPT, null, msgs);
+			}
 			msgs = basicSetTargetConcept(newTargetConcept, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONCEPT_RELATIONSHIP__TARGET_CONCEPT, newTargetConcept,
+				newTargetConcept));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT_RELATIONSHIP__TARGET_CONCEPT, newTargetConcept, newTargetConcept));
 	}
 
 	/**
@@ -206,8 +225,11 @@ public class ConceptRelationshipImpl extends EObjectImpl implements ConceptRelat
 		isDerived = newIsDerived;
 		boolean oldIsDerivedESet = isDerivedESet;
 		isDerivedESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT_RELATIONSHIP__IS_DERIVED, oldIsDerived, isDerived, !oldIsDerivedESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONCEPT_RELATIONSHIP__IS_DERIVED, oldIsDerived, isDerived,
+				!oldIsDerivedESet));
+		}
 	}
 
 	/**
@@ -220,8 +242,11 @@ public class ConceptRelationshipImpl extends EObjectImpl implements ConceptRelat
 		boolean oldIsDerivedESet = isDerivedESet;
 		isDerived = IS_DERIVED_EDEFAULT;
 		isDerivedESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CONCEPT_RELATIONSHIP__IS_DERIVED, oldIsDerived, IS_DERIVED_EDEFAULT, oldIsDerivedESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CONCEPT_RELATIONSHIP__IS_DERIVED, oldIsDerived,
+				IS_DERIVED_EDEFAULT, oldIsDerivedESet));
+		}
 	}
 
 	/**
@@ -250,8 +275,11 @@ public class ConceptRelationshipImpl extends EObjectImpl implements ConceptRelat
 	public void setRelationshipName(String newRelationshipName) {
 		String oldRelationshipName = relationshipName;
 		relationshipName = newRelationshipName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT_RELATIONSHIP__RELATIONSHIP_NAME, oldRelationshipName, relationshipName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONCEPT_RELATIONSHIP__RELATIONSHIP_NAME, oldRelationshipName,
+				relationshipName));
+		}
 	}
 
 	/**
@@ -263,7 +291,7 @@ public class ConceptRelationshipImpl extends EObjectImpl implements ConceptRelat
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.CONCEPT_RELATIONSHIP__PROPERTY:
-				return ((InternalEList<?>)getProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getProperty()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CONCEPT_RELATIONSHIP__TARGET_CONCEPT:
 				return basicSetTargetConcept(null, msgs);
 		}
@@ -283,7 +311,9 @@ public class ConceptRelationshipImpl extends EObjectImpl implements ConceptRelat
 			case Mif2Package.CONCEPT_RELATIONSHIP__TARGET_CONCEPT:
 				return getTargetConcept();
 			case Mif2Package.CONCEPT_RELATIONSHIP__IS_DERIVED:
-				return isIsDerived() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsDerived()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.CONCEPT_RELATIONSHIP__RELATIONSHIP_NAME:
 				return getRelationshipName();
 		}
@@ -301,16 +331,16 @@ public class ConceptRelationshipImpl extends EObjectImpl implements ConceptRelat
 		switch (featureID) {
 			case Mif2Package.CONCEPT_RELATIONSHIP__PROPERTY:
 				getProperty().clear();
-				getProperty().addAll((Collection<? extends ConceptProperty>)newValue);
+				getProperty().addAll((Collection<? extends ConceptProperty>) newValue);
 				return;
 			case Mif2Package.CONCEPT_RELATIONSHIP__TARGET_CONCEPT:
-				setTargetConcept((ConceptRef)newValue);
+				setTargetConcept((ConceptRef) newValue);
 				return;
 			case Mif2Package.CONCEPT_RELATIONSHIP__IS_DERIVED:
-				setIsDerived(((Boolean)newValue).booleanValue());
+				setIsDerived(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.CONCEPT_RELATIONSHIP__RELATIONSHIP_NAME:
-				setRelationshipName((String)newValue);
+				setRelationshipName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -328,7 +358,7 @@ public class ConceptRelationshipImpl extends EObjectImpl implements ConceptRelat
 				getProperty().clear();
 				return;
 			case Mif2Package.CONCEPT_RELATIONSHIP__TARGET_CONCEPT:
-				setTargetConcept((ConceptRef)null);
+				setTargetConcept((ConceptRef) null);
 				return;
 			case Mif2Package.CONCEPT_RELATIONSHIP__IS_DERIVED:
 				unsetIsDerived();
@@ -355,7 +385,9 @@ public class ConceptRelationshipImpl extends EObjectImpl implements ConceptRelat
 			case Mif2Package.CONCEPT_RELATIONSHIP__IS_DERIVED:
 				return isSetIsDerived();
 			case Mif2Package.CONCEPT_RELATIONSHIP__RELATIONSHIP_NAME:
-				return RELATIONSHIP_NAME_EDEFAULT == null ? relationshipName != null : !RELATIONSHIP_NAME_EDEFAULT.equals(relationshipName);
+				return RELATIONSHIP_NAME_EDEFAULT == null
+						? relationshipName != null
+						: !RELATIONSHIP_NAME_EDEFAULT.equals(relationshipName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -367,15 +399,21 @@ public class ConceptRelationshipImpl extends EObjectImpl implements ConceptRelat
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isDerived: ");
-		if (isDerivedESet) result.append(isDerived); else result.append("<unset>");
+		if (isDerivedESet) {
+			result.append(isDerived);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", relationshipName: ");
 		result.append(relationshipName);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ConceptRelationshipImpl
+} // ConceptRelationshipImpl

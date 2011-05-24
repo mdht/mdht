@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -117,7 +121,8 @@ public class AssociationEndSpecializationImpl extends EObjectImpl implements Ass
 	 */
 	public EList<AssociationEndSpecialization> getChoiceItem() {
 		if (choiceItem == null) {
-			choiceItem = new EObjectContainmentEList<AssociationEndSpecialization>(AssociationEndSpecialization.class, this, Mif2Package.ASSOCIATION_END_SPECIALIZATION__CHOICE_ITEM);
+			choiceItem = new EObjectContainmentEList<AssociationEndSpecialization>(
+				AssociationEndSpecialization.class, this, Mif2Package.ASSOCIATION_END_SPECIALIZATION__CHOICE_ITEM);
 		}
 		return choiceItem;
 	}
@@ -139,8 +144,10 @@ public class AssociationEndSpecializationImpl extends EObjectImpl implements Ass
 	public void setClassName(String newClassName) {
 		String oldClassName = className;
 		className = newClassName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ASSOCIATION_END_SPECIALIZATION__CLASS_NAME, oldClassName, className));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ASSOCIATION_END_SPECIALIZATION__CLASS_NAME, oldClassName, className));
+		}
 	}
 
 	/**
@@ -160,8 +167,11 @@ public class AssociationEndSpecializationImpl extends EObjectImpl implements Ass
 	public void setTraversalName(String newTraversalName) {
 		String oldTraversalName = traversalName;
 		traversalName = newTraversalName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ASSOCIATION_END_SPECIALIZATION__TRAVERSAL_NAME, oldTraversalName, traversalName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ASSOCIATION_END_SPECIALIZATION__TRAVERSAL_NAME, oldTraversalName,
+				traversalName));
+		}
 	}
 
 	/**
@@ -173,7 +183,7 @@ public class AssociationEndSpecializationImpl extends EObjectImpl implements Ass
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.ASSOCIATION_END_SPECIALIZATION__CHOICE_ITEM:
-				return ((InternalEList<?>)getChoiceItem()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getChoiceItem()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -207,13 +217,13 @@ public class AssociationEndSpecializationImpl extends EObjectImpl implements Ass
 		switch (featureID) {
 			case Mif2Package.ASSOCIATION_END_SPECIALIZATION__CHOICE_ITEM:
 				getChoiceItem().clear();
-				getChoiceItem().addAll((Collection<? extends AssociationEndSpecialization>)newValue);
+				getChoiceItem().addAll((Collection<? extends AssociationEndSpecialization>) newValue);
 				return;
 			case Mif2Package.ASSOCIATION_END_SPECIALIZATION__CLASS_NAME:
-				setClassName((String)newValue);
+				setClassName((String) newValue);
 				return;
 			case Mif2Package.ASSOCIATION_END_SPECIALIZATION__TRAVERSAL_NAME:
-				setTraversalName((String)newValue);
+				setTraversalName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -251,9 +261,13 @@ public class AssociationEndSpecializationImpl extends EObjectImpl implements Ass
 			case Mif2Package.ASSOCIATION_END_SPECIALIZATION__CHOICE_ITEM:
 				return choiceItem != null && !choiceItem.isEmpty();
 			case Mif2Package.ASSOCIATION_END_SPECIALIZATION__CLASS_NAME:
-				return CLASS_NAME_EDEFAULT == null ? className != null : !CLASS_NAME_EDEFAULT.equals(className);
+				return CLASS_NAME_EDEFAULT == null
+						? className != null
+						: !CLASS_NAME_EDEFAULT.equals(className);
 			case Mif2Package.ASSOCIATION_END_SPECIALIZATION__TRAVERSAL_NAME:
-				return TRAVERSAL_NAME_EDEFAULT == null ? traversalName != null : !TRAVERSAL_NAME_EDEFAULT.equals(traversalName);
+				return TRAVERSAL_NAME_EDEFAULT == null
+						? traversalName != null
+						: !TRAVERSAL_NAME_EDEFAULT.equals(traversalName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -265,7 +279,9 @@ public class AssociationEndSpecializationImpl extends EObjectImpl implements Ass
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (className: ");
@@ -276,4 +292,4 @@ public class AssociationEndSpecializationImpl extends EObjectImpl implements Ass
 		return result.toString();
 	}
 
-} //AssociationEndSpecializationImpl
+} // AssociationEndSpecializationImpl

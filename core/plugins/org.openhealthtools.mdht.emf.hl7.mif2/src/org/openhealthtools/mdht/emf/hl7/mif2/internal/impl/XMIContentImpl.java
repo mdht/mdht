@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -115,8 +119,9 @@ public class XMIContentImpl extends EObjectImpl implements XMIContent {
 	public void setHref(String newHref) {
 		String oldHref = href;
 		href = newHref;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.XMI_CONTENT__HREF, oldHref, href));
+		}
 	}
 
 	/**
@@ -128,7 +133,7 @@ public class XMIContentImpl extends EObjectImpl implements XMIContent {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.XMI_CONTENT__ANY:
-				return ((InternalEList<?>)getAny()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAny()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -142,8 +147,10 @@ public class XMIContentImpl extends EObjectImpl implements XMIContent {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mif2Package.XMI_CONTENT__ANY:
-				if (coreType) return getAny();
-				return ((FeatureMap.Internal)getAny()).getWrapper();
+				if (coreType) {
+					return getAny();
+				}
+				return ((FeatureMap.Internal) getAny()).getWrapper();
 			case Mif2Package.XMI_CONTENT__HREF:
 				return getHref();
 		}
@@ -159,10 +166,10 @@ public class XMIContentImpl extends EObjectImpl implements XMIContent {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.XMI_CONTENT__ANY:
-				((FeatureMap.Internal)getAny()).set(newValue);
+				((FeatureMap.Internal) getAny()).set(newValue);
 				return;
 			case Mif2Package.XMI_CONTENT__HREF:
-				setHref((String)newValue);
+				setHref((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -197,7 +204,9 @@ public class XMIContentImpl extends EObjectImpl implements XMIContent {
 			case Mif2Package.XMI_CONTENT__ANY:
 				return any != null && !any.isEmpty();
 			case Mif2Package.XMI_CONTENT__HREF:
-				return HREF_EDEFAULT == null ? href != null : !HREF_EDEFAULT.equals(href);
+				return HREF_EDEFAULT == null
+						? href != null
+						: !HREF_EDEFAULT.equals(href);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -209,7 +218,9 @@ public class XMIContentImpl extends EObjectImpl implements XMIContent {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (any: ");
@@ -220,4 +231,4 @@ public class XMIContentImpl extends EObjectImpl implements XMIContent {
 		return result.toString();
 	}
 
-} //XMIContentImpl
+} // XMIContentImpl

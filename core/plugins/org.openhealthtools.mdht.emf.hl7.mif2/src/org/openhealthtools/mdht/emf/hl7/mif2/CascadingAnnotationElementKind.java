@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -368,23 +372,9 @@ public enum CascadingAnnotationElementKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final CascadingAnnotationElementKind[] VALUES_ARRAY =
-		new CascadingAnnotationElementKind[] {
-			STATIC_MODEL,
-			CLASS,
-			STUB,
-			CMET,
-			ENTRY_POINT,
-			ATTRIBUTE,
-			ASSOCIATION,
-			ASSOCIATION_END,
-			GENERALIZATION,
-			STATE_MACHINE,
-			STATE,
-			STATE_TRANSITION,
-			DATATYPE,
-			DATATYPE_OPERATION,
-		};
+	private static final CascadingAnnotationElementKind[] VALUES_ARRAY = new CascadingAnnotationElementKind[] {
+			STATIC_MODEL, CLASS, STUB, CMET, ENTRY_POINT, ATTRIBUTE, ASSOCIATION, ASSOCIATION_END, GENERALIZATION,
+			STATE_MACHINE, STATE, STATE_TRANSITION, DATATYPE, DATATYPE_OPERATION, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Cascading Annotation Element Kind</b></em>' enumerators.
@@ -434,20 +424,34 @@ public enum CascadingAnnotationElementKind implements Enumerator {
 	 */
 	public static CascadingAnnotationElementKind get(int value) {
 		switch (value) {
-			case STATIC_MODEL_VALUE: return STATIC_MODEL;
-			case CLASS_VALUE: return CLASS;
-			case STUB_VALUE: return STUB;
-			case CMET_VALUE: return CMET;
-			case ENTRY_POINT_VALUE: return ENTRY_POINT;
-			case ATTRIBUTE_VALUE: return ATTRIBUTE;
-			case ASSOCIATION_VALUE: return ASSOCIATION;
-			case ASSOCIATION_END_VALUE: return ASSOCIATION_END;
-			case GENERALIZATION_VALUE: return GENERALIZATION;
-			case STATE_MACHINE_VALUE: return STATE_MACHINE;
-			case STATE_VALUE: return STATE;
-			case STATE_TRANSITION_VALUE: return STATE_TRANSITION;
-			case DATATYPE_VALUE: return DATATYPE;
-			case DATATYPE_OPERATION_VALUE: return DATATYPE_OPERATION;
+			case STATIC_MODEL_VALUE:
+				return STATIC_MODEL;
+			case CLASS_VALUE:
+				return CLASS;
+			case STUB_VALUE:
+				return STUB;
+			case CMET_VALUE:
+				return CMET;
+			case ENTRY_POINT_VALUE:
+				return ENTRY_POINT;
+			case ATTRIBUTE_VALUE:
+				return ATTRIBUTE;
+			case ASSOCIATION_VALUE:
+				return ASSOCIATION;
+			case ASSOCIATION_END_VALUE:
+				return ASSOCIATION_END;
+			case GENERALIZATION_VALUE:
+				return GENERALIZATION;
+			case STATE_MACHINE_VALUE:
+				return STATE_MACHINE;
+			case STATE_VALUE:
+				return STATE;
+			case STATE_TRANSITION_VALUE:
+				return STATE_TRANSITION;
+			case DATATYPE_VALUE:
+				return DATATYPE;
+			case DATATYPE_OPERATION_VALUE:
+				return DATATYPE_OPERATION;
 		}
 		return null;
 	}
@@ -491,7 +495,7 @@ public enum CascadingAnnotationElementKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -500,7 +504,7 @@ public enum CascadingAnnotationElementKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -509,7 +513,7 @@ public enum CascadingAnnotationElementKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -522,5 +526,5 @@ public enum CascadingAnnotationElementKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //CascadingAnnotationElementKind
+
+} // CascadingAnnotationElementKind

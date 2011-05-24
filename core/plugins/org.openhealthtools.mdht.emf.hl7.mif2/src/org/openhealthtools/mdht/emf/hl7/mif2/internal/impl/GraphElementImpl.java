@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -79,8 +83,13 @@ public abstract class GraphElementImpl extends DiagramElementImpl implements Gra
 		Point oldPosition = position;
 		position = newPosition;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.GRAPH_ELEMENT__POSITION, oldPosition, newPosition);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GRAPH_ELEMENT__POSITION, oldPosition, newPosition);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -93,15 +102,22 @@ public abstract class GraphElementImpl extends DiagramElementImpl implements Gra
 	public void setPosition(Point newPosition) {
 		if (newPosition != position) {
 			NotificationChain msgs = null;
-			if (position != null)
-				msgs = ((InternalEObject)position).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.GRAPH_ELEMENT__POSITION, null, msgs);
-			if (newPosition != null)
-				msgs = ((InternalEObject)newPosition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.GRAPH_ELEMENT__POSITION, null, msgs);
+			if (position != null) {
+				msgs = ((InternalEObject) position).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.GRAPH_ELEMENT__POSITION, null, msgs);
+			}
+			if (newPosition != null) {
+				msgs = ((InternalEObject) newPosition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.GRAPH_ELEMENT__POSITION, null, msgs);
+			}
 			msgs = basicSetPosition(newPosition, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GRAPH_ELEMENT__POSITION, newPosition, newPosition));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GRAPH_ELEMENT__POSITION, newPosition, newPosition));
 	}
 
 	/**
@@ -141,7 +157,7 @@ public abstract class GraphElementImpl extends DiagramElementImpl implements Gra
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.GRAPH_ELEMENT__POSITION:
-				setPosition((Point)newValue);
+				setPosition((Point) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -156,7 +172,7 @@ public abstract class GraphElementImpl extends DiagramElementImpl implements Gra
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.GRAPH_ELEMENT__POSITION:
-				setPosition((Point)null);
+				setPosition((Point) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -176,4 +192,4 @@ public abstract class GraphElementImpl extends DiagramElementImpl implements Gra
 		return super.eIsSet(featureID);
 	}
 
-} //GraphElementImpl
+} // GraphElementImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigInteger;
@@ -172,8 +176,9 @@ public class ElementRefImpl extends ChangeImpl implements ElementRef {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ELEMENT_REF__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -195,8 +200,11 @@ public class ElementRefImpl extends ChangeImpl implements ElementRef {
 		repetition = newRepetition;
 		boolean oldRepetitionESet = repetitionESet;
 		repetitionESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ELEMENT_REF__REPETITION, oldRepetition, repetition, !oldRepetitionESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ELEMENT_REF__REPETITION, oldRepetition, repetition,
+				!oldRepetitionESet));
+		}
 	}
 
 	/**
@@ -209,8 +217,11 @@ public class ElementRefImpl extends ChangeImpl implements ElementRef {
 		boolean oldRepetitionESet = repetitionESet;
 		repetition = REPETITION_EDEFAULT;
 		repetitionESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.ELEMENT_REF__REPETITION, oldRepetition, REPETITION_EDEFAULT, oldRepetitionESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.ELEMENT_REF__REPETITION, oldRepetition, REPETITION_EDEFAULT,
+				oldRepetitionESet));
+		}
 	}
 
 	/**
@@ -231,11 +242,11 @@ public class ElementRefImpl extends ChangeImpl implements ElementRef {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.ELEMENT_REF__CONTEXT_REF:
-				return ((InternalEList<?>)getContextRef()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getContextRef()).basicRemove(otherEnd, msgs);
 			case Mif2Package.ELEMENT_REF__CONTEXT_ELEMENT:
-				return ((InternalEList<?>)getContextElement()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getContextElement()).basicRemove(otherEnd, msgs);
 			case Mif2Package.ELEMENT_REF__CONTEXT_ATTRIBUTE:
-				return ((InternalEList<?>)getContextAttribute()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getContextAttribute()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -249,8 +260,10 @@ public class ElementRefImpl extends ChangeImpl implements ElementRef {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mif2Package.ELEMENT_REF__CONTEXT_REF:
-				if (coreType) return getContextRef();
-				return ((FeatureMap.Internal)getContextRef()).getWrapper();
+				if (coreType) {
+					return getContextRef();
+				}
+				return ((FeatureMap.Internal) getContextRef()).getWrapper();
 			case Mif2Package.ELEMENT_REF__CONTEXT_ELEMENT:
 				return getContextElement();
 			case Mif2Package.ELEMENT_REF__CONTEXT_ATTRIBUTE:
@@ -273,21 +286,21 @@ public class ElementRefImpl extends ChangeImpl implements ElementRef {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.ELEMENT_REF__CONTEXT_REF:
-				((FeatureMap.Internal)getContextRef()).set(newValue);
+				((FeatureMap.Internal) getContextRef()).set(newValue);
 				return;
 			case Mif2Package.ELEMENT_REF__CONTEXT_ELEMENT:
 				getContextElement().clear();
-				getContextElement().addAll((Collection<? extends ElementValueRef>)newValue);
+				getContextElement().addAll((Collection<? extends ElementValueRef>) newValue);
 				return;
 			case Mif2Package.ELEMENT_REF__CONTEXT_ATTRIBUTE:
 				getContextAttribute().clear();
-				getContextAttribute().addAll((Collection<? extends AttributeValueRef>)newValue);
+				getContextAttribute().addAll((Collection<? extends AttributeValueRef>) newValue);
 				return;
 			case Mif2Package.ELEMENT_REF__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.ELEMENT_REF__REPETITION:
-				setRepetition((BigInteger)newValue);
+				setRepetition((BigInteger) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -335,7 +348,9 @@ public class ElementRefImpl extends ChangeImpl implements ElementRef {
 			case Mif2Package.ELEMENT_REF__CONTEXT_ATTRIBUTE:
 				return !getContextAttribute().isEmpty();
 			case Mif2Package.ELEMENT_REF__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.ELEMENT_REF__REPETITION:
 				return isSetRepetition();
 		}
@@ -349,7 +364,9 @@ public class ElementRefImpl extends ChangeImpl implements ElementRef {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (contextRef: ");
@@ -357,9 +374,13 @@ public class ElementRefImpl extends ChangeImpl implements ElementRef {
 		result.append(", name: ");
 		result.append(name);
 		result.append(", repetition: ");
-		if (repetitionESet) result.append(repetition); else result.append("<unset>");
+		if (repetitionESet) {
+			result.append(repetition);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //ElementRefImpl
+} // ElementRefImpl

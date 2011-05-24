@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml;
 
 import java.util.Arrays;
@@ -128,13 +132,7 @@ public enum Shape implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final Shape[] VALUES_ARRAY =
-		new Shape[] {
-			RECT,
-			CIRCLE,
-			POLY,
-			DEFAULT,
-		};
+	private static final Shape[] VALUES_ARRAY = new Shape[] { RECT, CIRCLE, POLY, DEFAULT, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Shape</b></em>' enumerators.
@@ -184,10 +182,14 @@ public enum Shape implements Enumerator {
 	 */
 	public static Shape get(int value) {
 		switch (value) {
-			case RECT_VALUE: return RECT;
-			case CIRCLE_VALUE: return CIRCLE;
-			case POLY_VALUE: return POLY;
-			case DEFAULT_VALUE: return DEFAULT;
+			case RECT_VALUE:
+				return RECT;
+			case CIRCLE_VALUE:
+				return CIRCLE;
+			case POLY_VALUE:
+				return POLY;
+			case DEFAULT_VALUE:
+				return DEFAULT;
 		}
 		return null;
 	}
@@ -231,7 +233,7 @@ public enum Shape implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -240,7 +242,7 @@ public enum Shape implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -249,7 +251,7 @@ public enum Shape implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -262,5 +264,5 @@ public enum Shape implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //Shape
+
+} // Shape

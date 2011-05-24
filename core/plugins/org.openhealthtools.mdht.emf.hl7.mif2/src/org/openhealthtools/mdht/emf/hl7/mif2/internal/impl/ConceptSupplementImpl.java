@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -155,8 +159,13 @@ public class ConceptSupplementImpl extends ConceptBaseImpl implements ConceptSup
 		ConceptSupplementAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT_SUPPLEMENT__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONCEPT_SUPPLEMENT__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -169,15 +178,22 @@ public class ConceptSupplementImpl extends ConceptBaseImpl implements ConceptSup
 	public void setAnnotations(ConceptSupplementAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONCEPT_SUPPLEMENT__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CONCEPT_SUPPLEMENT__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONCEPT_SUPPLEMENT__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CONCEPT_SUPPLEMENT__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CONCEPT_SUPPLEMENT__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT_SUPPLEMENT__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -187,7 +203,8 @@ public class ConceptSupplementImpl extends ConceptBaseImpl implements ConceptSup
 	 */
 	public EList<ConceptRelationship> getSupplementalConceptRelationship() {
 		if (supplementalConceptRelationship == null) {
-			supplementalConceptRelationship = new EObjectContainmentEList<ConceptRelationship>(ConceptRelationship.class, this, Mif2Package.CONCEPT_SUPPLEMENT__SUPPLEMENTAL_CONCEPT_RELATIONSHIP);
+			supplementalConceptRelationship = new EObjectContainmentEList<ConceptRelationship>(
+				ConceptRelationship.class, this, Mif2Package.CONCEPT_SUPPLEMENT__SUPPLEMENTAL_CONCEPT_RELATIONSHIP);
 		}
 		return supplementalConceptRelationship;
 	}
@@ -199,7 +216,8 @@ public class ConceptSupplementImpl extends ConceptBaseImpl implements ConceptSup
 	 */
 	public EList<ConceptProperty> getSupplementalConceptProperty() {
 		if (supplementalConceptProperty == null) {
-			supplementalConceptProperty = new EObjectContainmentEList<ConceptProperty>(ConceptProperty.class, this, Mif2Package.CONCEPT_SUPPLEMENT__SUPPLEMENTAL_CONCEPT_PROPERTY);
+			supplementalConceptProperty = new EObjectContainmentEList<ConceptProperty>(
+				ConceptProperty.class, this, Mif2Package.CONCEPT_SUPPLEMENT__SUPPLEMENTAL_CONCEPT_PROPERTY);
 		}
 		return supplementalConceptProperty;
 	}
@@ -211,7 +229,8 @@ public class ConceptSupplementImpl extends ConceptBaseImpl implements ConceptSup
 	 */
 	public EList<PrintName> getPrintName() {
 		if (printName == null) {
-			printName = new EObjectContainmentEList<PrintName>(PrintName.class, this, Mif2Package.CONCEPT_SUPPLEMENT__PRINT_NAME);
+			printName = new EObjectContainmentEList<PrintName>(
+				PrintName.class, this, Mif2Package.CONCEPT_SUPPLEMENT__PRINT_NAME);
 		}
 		return printName;
 	}
@@ -223,7 +242,8 @@ public class ConceptSupplementImpl extends ConceptBaseImpl implements ConceptSup
 	 */
 	public EList<CodeSupplement> getCodeSupplement() {
 		if (codeSupplement == null) {
-			codeSupplement = new EObjectContainmentEList<CodeSupplement>(CodeSupplement.class, this, Mif2Package.CONCEPT_SUPPLEMENT__CODE_SUPPLEMENT);
+			codeSupplement = new EObjectContainmentEList<CodeSupplement>(
+				CodeSupplement.class, this, Mif2Package.CONCEPT_SUPPLEMENT__CODE_SUPPLEMENT);
 		}
 		return codeSupplement;
 	}
@@ -245,8 +265,9 @@ public class ConceptSupplementImpl extends ConceptBaseImpl implements ConceptSup
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CONCEPT_SUPPLEMENT__CODE, oldCode, code));
+		}
 	}
 
 	/**
@@ -260,13 +281,13 @@ public class ConceptSupplementImpl extends ConceptBaseImpl implements ConceptSup
 			case Mif2Package.CONCEPT_SUPPLEMENT__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 			case Mif2Package.CONCEPT_SUPPLEMENT__SUPPLEMENTAL_CONCEPT_RELATIONSHIP:
-				return ((InternalEList<?>)getSupplementalConceptRelationship()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSupplementalConceptRelationship()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CONCEPT_SUPPLEMENT__SUPPLEMENTAL_CONCEPT_PROPERTY:
-				return ((InternalEList<?>)getSupplementalConceptProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSupplementalConceptProperty()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CONCEPT_SUPPLEMENT__PRINT_NAME:
-				return ((InternalEList<?>)getPrintName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPrintName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CONCEPT_SUPPLEMENT__CODE_SUPPLEMENT:
-				return ((InternalEList<?>)getCodeSupplement()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCodeSupplement()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -305,26 +326,26 @@ public class ConceptSupplementImpl extends ConceptBaseImpl implements ConceptSup
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CONCEPT_SUPPLEMENT__ANNOTATIONS:
-				setAnnotations((ConceptSupplementAnnotations)newValue);
+				setAnnotations((ConceptSupplementAnnotations) newValue);
 				return;
 			case Mif2Package.CONCEPT_SUPPLEMENT__SUPPLEMENTAL_CONCEPT_RELATIONSHIP:
 				getSupplementalConceptRelationship().clear();
-				getSupplementalConceptRelationship().addAll((Collection<? extends ConceptRelationship>)newValue);
+				getSupplementalConceptRelationship().addAll((Collection<? extends ConceptRelationship>) newValue);
 				return;
 			case Mif2Package.CONCEPT_SUPPLEMENT__SUPPLEMENTAL_CONCEPT_PROPERTY:
 				getSupplementalConceptProperty().clear();
-				getSupplementalConceptProperty().addAll((Collection<? extends ConceptProperty>)newValue);
+				getSupplementalConceptProperty().addAll((Collection<? extends ConceptProperty>) newValue);
 				return;
 			case Mif2Package.CONCEPT_SUPPLEMENT__PRINT_NAME:
 				getPrintName().clear();
-				getPrintName().addAll((Collection<? extends PrintName>)newValue);
+				getPrintName().addAll((Collection<? extends PrintName>) newValue);
 				return;
 			case Mif2Package.CONCEPT_SUPPLEMENT__CODE_SUPPLEMENT:
 				getCodeSupplement().clear();
-				getCodeSupplement().addAll((Collection<? extends CodeSupplement>)newValue);
+				getCodeSupplement().addAll((Collection<? extends CodeSupplement>) newValue);
 				return;
 			case Mif2Package.CONCEPT_SUPPLEMENT__CODE:
-				setCode((String)newValue);
+				setCode((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -339,7 +360,7 @@ public class ConceptSupplementImpl extends ConceptBaseImpl implements ConceptSup
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CONCEPT_SUPPLEMENT__ANNOTATIONS:
-				setAnnotations((ConceptSupplementAnnotations)null);
+				setAnnotations((ConceptSupplementAnnotations) null);
 				return;
 			case Mif2Package.CONCEPT_SUPPLEMENT__SUPPLEMENTAL_CONCEPT_RELATIONSHIP:
 				getSupplementalConceptRelationship().clear();
@@ -379,7 +400,9 @@ public class ConceptSupplementImpl extends ConceptBaseImpl implements ConceptSup
 			case Mif2Package.CONCEPT_SUPPLEMENT__CODE_SUPPLEMENT:
 				return codeSupplement != null && !codeSupplement.isEmpty();
 			case Mif2Package.CONCEPT_SUPPLEMENT__CODE:
-				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+				return CODE_EDEFAULT == null
+						? code != null
+						: !CODE_EDEFAULT.equals(code);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -391,7 +414,9 @@ public class ConceptSupplementImpl extends ConceptBaseImpl implements ConceptSup
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (code: ");
@@ -400,4 +425,4 @@ public class ConceptSupplementImpl extends ConceptBaseImpl implements ConceptSup
 		return result.toString();
 	}
 
-} //ConceptSupplementImpl
+} // ConceptSupplementImpl

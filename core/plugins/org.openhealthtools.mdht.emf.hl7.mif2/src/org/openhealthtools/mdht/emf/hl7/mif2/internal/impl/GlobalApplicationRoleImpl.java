@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -96,8 +100,11 @@ public class GlobalApplicationRoleImpl extends ApplicationRoleImpl implements Gl
 		schemaVersion = newSchemaVersion;
 		boolean oldSchemaVersionESet = schemaVersionESet;
 		schemaVersionESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GLOBAL_APPLICATION_ROLE__SCHEMA_VERSION, oldSchemaVersion, schemaVersion, !oldSchemaVersionESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GLOBAL_APPLICATION_ROLE__SCHEMA_VERSION, oldSchemaVersion,
+				schemaVersion, !oldSchemaVersionESet));
+		}
 	}
 
 	/**
@@ -110,8 +117,11 @@ public class GlobalApplicationRoleImpl extends ApplicationRoleImpl implements Gl
 		boolean oldSchemaVersionESet = schemaVersionESet;
 		schemaVersion = SCHEMA_VERSION_EDEFAULT;
 		schemaVersionESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.GLOBAL_APPLICATION_ROLE__SCHEMA_VERSION, oldSchemaVersion, SCHEMA_VERSION_EDEFAULT, oldSchemaVersionESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.GLOBAL_APPLICATION_ROLE__SCHEMA_VERSION, oldSchemaVersion,
+				SCHEMA_VERSION_EDEFAULT, oldSchemaVersionESet));
+		}
 	}
 
 	/**
@@ -146,7 +156,7 @@ public class GlobalApplicationRoleImpl extends ApplicationRoleImpl implements Gl
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.GLOBAL_APPLICATION_ROLE__SCHEMA_VERSION:
-				setSchemaVersion((String)newValue);
+				setSchemaVersion((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -188,13 +198,19 @@ public class GlobalApplicationRoleImpl extends ApplicationRoleImpl implements Gl
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (schemaVersion: ");
-		if (schemaVersionESet) result.append(schemaVersion); else result.append("<unset>");
+		if (schemaVersionESet) {
+			result.append(schemaVersion);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //GlobalApplicationRoleImpl
+} // GlobalApplicationRoleImpl

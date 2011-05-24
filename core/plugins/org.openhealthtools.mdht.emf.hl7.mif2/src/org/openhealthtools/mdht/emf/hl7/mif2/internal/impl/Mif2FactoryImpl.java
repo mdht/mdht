@@ -1,14 +1,17 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -16,21 +19,15 @@ import java.util.StringTokenizer;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.eclipse.emf.common.util.Enumerator;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import org.eclipse.emf.ecore.util.Diagnostician;
-
 import org.eclipse.emf.ecore.xml.type.XMLTypeFactory;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
-
 import org.openhealthtools.mdht.emf.hl7.mif2.*;
 
 /**
@@ -48,12 +45,11 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public static Mif2Factory init() {
 		try {
-			Mif2Factory theMif2Factory = (Mif2Factory)EPackage.Registry.INSTANCE.getEFactory("urn:hl7-org:v3/mif2"); 
+			Mif2Factory theMif2Factory = (Mif2Factory) EPackage.Registry.INSTANCE.getEFactory("urn:hl7-org:v3/mif2");
 			if (theMif2Factory != null) {
 				return theMif2Factory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new Mif2FactoryImpl();
@@ -77,381 +73,756 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case Mif2Package.ADD_ELEMENT_CONTENT: return createAddElementContent();
-			case Mif2Package.ANNOTATION_CASCADE_INFO: return createAnnotationCascadeInfo();
-			case Mif2Package.ANNOTATION_DERIVATION: return createAnnotationDerivation();
-			case Mif2Package.APPENDIX: return createAppendix();
-			case Mif2Package.APP_INFO: return createAppInfo();
-			case Mif2Package.APPLICATION_ROLE: return createApplicationRole();
-			case Mif2Package.APPLICATION_ROLE_ANNOTATIONS: return createApplicationRoleAnnotations();
-			case Mif2Package.APPLICATION_ROLE_APP_INFO: return createApplicationRoleAppInfo();
-			case Mif2Package.APPLICATION_ROLE_DOCUMENTATION: return createApplicationRoleDocumentation();
-			case Mif2Package.APPLIED_TEMPLATE_GROUP: return createAppliedTemplateGroup();
-			case Mif2Package.APPROVAL_INFO: return createApprovalInfo();
-			case Mif2Package.ARTIFACT_CROSS_REFERENCE: return createArtifactCrossReference();
-			case Mif2Package.ARTIFACT_DEPENDENCY: return createArtifactDependency();
-			case Mif2Package.ARTIFACT_SUPPLEMENT: return createArtifactSupplement();
-			case Mif2Package.ARTIFACT_SUPPLEMENT_ANNOTATIONS: return createArtifactSupplementAnnotations();
-			case Mif2Package.ARTIFACT_SUPPLEMENT_APP_INFO: return createArtifactSupplementAppInfo();
-			case Mif2Package.ARTIFACT_SUPPLEMENT_DOCUMENTATION: return createArtifactSupplementDocumentation();
-			case Mif2Package.ARTIFACT_XREF_SUMMARY: return createArtifactXRefSummary();
-			case Mif2Package.ASSOCIATION: return createAssociation();
-			case Mif2Package.ASSOCIATION_ANNOTATIONS: return createAssociationAnnotations();
-			case Mif2Package.ASSOCIATION_APP_INFO: return createAssociationAppInfo();
-			case Mif2Package.ASSOCIATION_BASE: return createAssociationBase();
-			case Mif2Package.ASSOCIATION_DOCUMENTATION: return createAssociationDocumentation();
-			case Mif2Package.ASSOCIATION_END: return createAssociationEnd();
-			case Mif2Package.ASSOCIATION_END_ANNOTATIONS: return createAssociationEndAnnotations();
-			case Mif2Package.ASSOCIATION_END_APP_INFO: return createAssociationEndAppInfo();
-			case Mif2Package.ASSOCIATION_END_BASE: return createAssociationEndBase();
-			case Mif2Package.ASSOCIATION_END_DERIVATION: return createAssociationEndDerivation();
-			case Mif2Package.ASSOCIATION_END_DOCUMENTATION: return createAssociationEndDocumentation();
-			case Mif2Package.ASSOCIATION_END_SPECIALIZATION: return createAssociationEndSpecialization();
-			case Mif2Package.ASSOCIATION_END_WITH_CLASS: return createAssociationEndWithClass();
-			case Mif2Package.ASSOCIATION_END_WITH_CLASS_REF: return createAssociationEndWithClassRef();
-			case Mif2Package.ATTRIBUTE: return createAttribute();
-			case Mif2Package.ATTRIBUTE_ANNOTATIONS: return createAttributeAnnotations();
-			case Mif2Package.ATTRIBUTE_APP_INFO: return createAttributeAppInfo();
-			case Mif2Package.ATTRIBUTE_CONTENT: return createAttributeContent();
-			case Mif2Package.ATTRIBUTE_DERIVATION: return createAttributeDerivation();
-			case Mif2Package.ATTRIBUTE_DOCUMENTATION: return createAttributeDocumentation();
-			case Mif2Package.ATTRIBUTE_PROPERTY: return createAttributeProperty();
-			case Mif2Package.ATTRIBUTE_REF: return createAttributeRef();
-			case Mif2Package.ATTRIBUTE_VALUE_REF: return createAttributeValueRef();
-			case Mif2Package.BALLOT_COMMENT: return createBallotComment();
-			case Mif2Package.BALLOT_COMMENT_RESOLUTION: return createBallotCommentResolution();
-			case Mif2Package.BALLOT_SUBMISSION: return createBallotSubmission();
-			case Mif2Package.BASIC_ANNOTATION: return createBasicAnnotation();
-			case Mif2Package.BINDING_REALM: return createBindingRealm();
-			case Mif2Package.BOUND_STATIC_MODEL: return createBoundStaticModel();
-			case Mif2Package.BUSINESS_NAME: return createBusinessName();
-			case Mif2Package.CASCADABLE_ANNOTATION: return createCascadableAnnotation();
-			case Mif2Package.CHANGE_REQUEST: return createChangeRequest();
-			case Mif2Package.CHANGE_REQUEST_ESTIMATE: return createChangeRequestEstimate();
-			case Mif2Package.CLASS_ANNOTATIONS: return createClassAnnotations();
-			case Mif2Package.CLASS_APP_INFO: return createClassAppInfo();
-			case Mif2Package.CLASS_BINDING_ARGUMENT: return createClassBindingArgument();
-			case Mif2Package.CLASS_BINDING_ARGUMENT_BASE: return createClassBindingArgumentBase();
-			case Mif2Package.CLASS_DERIVATION: return createClassDerivation();
-			case Mif2Package.CLASS_DOCUMENTATION: return createClassDocumentation();
-			case Mif2Package.CLASS_ELEMENT: return createClassElement();
-			case Mif2Package.CLASS_GENERALIZATION: return createClassGeneralization();
-			case Mif2Package.CLASS_GRAPHIC_INFORMATION: return createClassGraphicInformation();
-			case Mif2Package.CLASSIFIER: return createClassifier();
-			case Mif2Package.CLASS_OR_REFERENCE: return createClassOrReference();
-			case Mif2Package.CLASS_REF: return createClassRef();
-			case Mif2Package.CLASS_STUB_INTERFACE: return createClassStubInterface();
-			case Mif2Package.CLASS_STUB_INTERFACE_ANNOTATIONS: return createClassStubInterfaceAnnotations();
-			case Mif2Package.CLASS_STUB_INTERFACE_APP_INFO: return createClassStubInterfaceAppInfo();
-			case Mif2Package.CLASS_STUB_INTERFACE_DOCUMENTATION: return createClassStubInterfaceDocumentation();
-			case Mif2Package.CODE: return createCode();
-			case Mif2Package.CODE_BASED_CONTENT_DEFINITION: return createCodeBasedContentDefinition();
-			case Mif2Package.CODE_FILTER_CONTENT_DEFINITION: return createCodeFilterContentDefinition();
-			case Mif2Package.CODE_ICON: return createCodeIcon();
-			case Mif2Package.CODE_SUPPLEMENT: return createCodeSupplement();
-			case Mif2Package.CODE_SYSTEM: return createCodeSystem();
-			case Mif2Package.CODE_SYSTEM_ANNOTATIONS: return createCodeSystemAnnotations();
-			case Mif2Package.CODE_SYSTEM_APP_INFO: return createCodeSystemAppInfo();
-			case Mif2Package.CODE_SYSTEM_DOCUMENTATION: return createCodeSystemDocumentation();
-			case Mif2Package.CODE_SYSTEM_REF: return createCodeSystemRef();
-			case Mif2Package.CODE_SYSTEM_SUPPLEMENT: return createCodeSystemSupplement();
-			case Mif2Package.CODE_SYSTEM_VERSION: return createCodeSystemVersion();
-			case Mif2Package.CODE_SYSTEM_VERSION_ANNOTATIONS: return createCodeSystemVersionAnnotations();
-			case Mif2Package.CODE_SYSTEM_VERSION_APP_INFO: return createCodeSystemVersionAppInfo();
-			case Mif2Package.CODE_SYSTEM_VERSION_DOCUMENTATION: return createCodeSystemVersionDocumentation();
-			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT: return createCodeSystemVersionSupplement();
-			case Mif2Package.CODE_TRANSLATION: return createCodeTranslation();
-			case Mif2Package.CODE_TRANSLATION_ANNOTATIONS: return createCodeTranslationAnnotations();
-			case Mif2Package.CODE_TRANSLATION_APP_INFO: return createCodeTranslationAppInfo();
-			case Mif2Package.CODE_TRANSLATION_COLLECTION: return createCodeTranslationCollection();
-			case Mif2Package.CODE_TRANSLATION_COLLECTION_ANNOTATIONS: return createCodeTranslationCollectionAnnotations();
-			case Mif2Package.CODE_TRANSLATION_COLLECTION_APP_INFO: return createCodeTranslationCollectionAppInfo();
-			case Mif2Package.CODE_TRANSLATION_COLLECTION_DOCUMENTATION: return createCodeTranslationCollectionDocumentation();
-			case Mif2Package.CODE_TRANSLATION_DOCUMENTATION: return createCodeTranslationDocumentation();
-			case Mif2Package.COMBINED_CONTENT_DEFINITION: return createCombinedContentDefinition();
-			case Mif2Package.COMMITTEE_REFERENCE: return createCommitteeReference();
-			case Mif2Package.COMMON_MODEL_ELEMENT_DEFINITION: return createCommonModelElementDefinition();
-			case Mif2Package.COMMON_MODEL_ELEMENT_REF: return createCommonModelElementRef();
-			case Mif2Package.COMMON_MODEL_ELEMENT_REF_ANNOTATIONS: return createCommonModelElementRefAnnotations();
-			case Mif2Package.COMMON_MODEL_ELEMENT_REF_APP_INFO: return createCommonModelElementRefAppInfo();
-			case Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE: return createCommonModelElementRefBase();
-			case Mif2Package.COMMON_MODEL_ELEMENT_REF_DOCUMENTATION: return createCommonModelElementRefDocumentation();
-			case Mif2Package.COMPLEX_MARKUP_WITH_LANGUAGE: return createComplexMarkupWithLanguage();
-			case Mif2Package.CONCEPT: return createConcept();
-			case Mif2Package.CONCEPT_ANNOTATIONS: return createConceptAnnotations();
-			case Mif2Package.CONCEPT_APP_INFO: return createConceptAppInfo();
-			case Mif2Package.CONCEPT_DOCUMENTATION: return createConceptDocumentation();
-			case Mif2Package.CONCEPT_DOMAIN: return createConceptDomain();
-			case Mif2Package.CONCEPT_DOMAIN_ANNOTATIONS: return createConceptDomainAnnotations();
-			case Mif2Package.CONCEPT_DOMAIN_APP_INFO: return createConceptDomainAppInfo();
-			case Mif2Package.CONCEPT_DOMAIN_DOCUMENTATION: return createConceptDomainDocumentation();
-			case Mif2Package.CONCEPT_DOMAIN_PROPERTY: return createConceptDomainProperty();
-			case Mif2Package.CONCEPT_DOMAIN_REF: return createConceptDomainRef();
-			case Mif2Package.CONCEPT_PROPERTY: return createConceptProperty();
-			case Mif2Package.CONCEPT_PROPERTY_REF: return createConceptPropertyRef();
-			case Mif2Package.CONCEPT_REF: return createConceptRef();
-			case Mif2Package.CONCEPT_RELATIONSHIP: return createConceptRelationship();
-			case Mif2Package.CONCEPT_SUPPLEMENT: return createConceptSupplement();
-			case Mif2Package.CONCEPT_SUPPLEMENT_ANNOTATIONS: return createConceptSupplementAnnotations();
-			case Mif2Package.CONCEPT_SUPPLEMENT_APP_INFO: return createConceptSupplementAppInfo();
-			case Mif2Package.CONCEPT_SUPPLEMENT_DOCUMENTATION: return createConceptSupplementDocumentation();
-			case Mif2Package.CONCEPT_USE: return createConceptUse();
-			case Mif2Package.CONFORMANCE_PROFILE: return createConformanceProfile();
-			case Mif2Package.CONFORMANCE_PROFILE_ANNOTATIONS: return createConformanceProfileAnnotations();
-			case Mif2Package.CONFORMANCE_PROFILE_APP_INFO: return createConformanceProfileAppInfo();
-			case Mif2Package.CONFORMANCE_PROFILE_DOCUMENTATION: return createConformanceProfileDocumentation();
-			case Mif2Package.CONFORMANCE_TRIGGER_EVENTS: return createConformanceTriggerEvents();
-			case Mif2Package.CONTAINED_GRAPH_NODE: return createContainedGraphNode();
-			case Mif2Package.CONTENT_DEFINITION: return createContentDefinition();
-			case Mif2Package.CONTENT_DEFINITION_ANNOTATIONS: return createContentDefinitionAnnotations();
-			case Mif2Package.CONTENT_DEFINITION_APP_INFO: return createContentDefinitionAppInfo();
-			case Mif2Package.CONTENT_DEFINITION_DOCUMENTATION: return createContentDefinitionDocumentation();
-			case Mif2Package.CONTEXT_ANNOTATION: return createContextAnnotation();
-			case Mif2Package.CONTEXT_BINDING: return createContextBinding();
-			case Mif2Package.CONTRIBUTOR: return createContributor();
-			case Mif2Package.DATATYPE: return createDatatype();
-			case Mif2Package.DATATYPE_ANNOTATIONS: return createDatatypeAnnotations();
-			case Mif2Package.DATATYPE_APP_INFO: return createDatatypeAppInfo();
-			case Mif2Package.DATATYPE_BINDING: return createDatatypeBinding();
-			case Mif2Package.DATATYPE_DERIVATION: return createDatatypeDerivation();
-			case Mif2Package.DATATYPE_DOCUMENTATION: return createDatatypeDocumentation();
-			case Mif2Package.DATATYPE_IMPORT: return createDatatypeImport();
-			case Mif2Package.DATATYPE_LIMITATION: return createDatatypeLimitation();
-			case Mif2Package.DATATYPE_MODEL_LIBRARY: return createDatatypeModelLibrary();
-			case Mif2Package.DATATYPE_OPERATION: return createDatatypeOperation();
-			case Mif2Package.DATATYPE_PARAMETER: return createDatatypeParameter();
-			case Mif2Package.DATATYPE_REF: return createDatatypeRef();
-			case Mif2Package.DATATYPE_TEMPLATE_PARAMETER: return createDatatypeTemplateParameter();
-			case Mif2Package.DEPRECATION_INFO: return createDeprecationInfo();
-			case Mif2Package.DERIVED_STATIC_MODEL: return createDerivedStaticModel();
-			case Mif2Package.DERIVED_STATIC_MODELS_TYPE: return createDerivedStaticModelsType();
-			case Mif2Package.DESIGN_COMMENT: return createDesignComment();
-			case Mif2Package.DIAGRAM: return createDiagram();
-			case Mif2Package.DIAGRAM_GRAPHIC_INFORMATION: return createDiagramGraphicInformation();
-			case Mif2Package.DIMENSION: return createDimension();
-			case Mif2Package.DOCUMENTATION: return createDocumentation();
-			case Mif2Package.DOCUMENT_PROFILE: return createDocumentProfile();
-			case Mif2Package.DOCUMENT_PROFILE_APP_INFO: return createDocumentProfileAppInfo();
-			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION: return createDocumentProfileDocumentation();
-			case Mif2Package.DOCUMENT_ROOT: return createDocumentRoot();
-			case Mif2Package.DOCUMENT_TEST: return createDocumentTest();
-			case Mif2Package.DOMAIN_ANALYSIS_MODEL: return createDomainAnalysisModel();
-			case Mif2Package.DOMAIN_ANALYSIS_MODEL_ANNOTATIONS: return createDomainAnalysisModelAnnotations();
-			case Mif2Package.DOMAIN_ANALYSIS_MODEL_APP_INFO: return createDomainAnalysisModelAppInfo();
-			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION: return createDomainAnalysisModelDocumentation();
-			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE: return createDomainInstanceExample();
-			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_ANNOTATIONS: return createDomainInstanceExampleAnnotations();
-			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_APP_INFO: return createDomainInstanceExampleAppInfo();
-			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION: return createDomainInstanceExampleDocumentation();
-			case Mif2Package.ELEMENT_CHANGE: return createElementChange();
-			case Mif2Package.ELEMENT_DERIVATION: return createElementDerivation();
-			case Mif2Package.ELEMENT_REF: return createElementRef();
-			case Mif2Package.ELEMENT_VALUE_REF: return createElementValueRef();
-			case Mif2Package.ENTRY_POINT: return createEntryPoint();
-			case Mif2Package.ENTRY_POINT_ANNOTATIONS: return createEntryPointAnnotations();
-			case Mif2Package.ENTRY_POINT_APP_INFO: return createEntryPointAppInfo();
-			case Mif2Package.ENTRY_POINT_BASE: return createEntryPointBase();
-			case Mif2Package.ENTRY_POINT_DOCUMENTATION: return createEntryPointDocumentation();
-			case Mif2Package.ENVIRONMENTAL_OCCURRENCE: return createEnvironmentalOccurrence();
-			case Mif2Package.EXAMPLE_INTERACTION: return createExampleInteraction();
-			case Mif2Package.EXAMPLE_SYSTEM: return createExampleSystem();
-			case Mif2Package.EXAMPLE_TYPE: return createExampleType();
-			case Mif2Package.FEATURE: return createFeature();
-			case Mif2Package.FLAT_CLASS: return createFlatClass();
-			case Mif2Package.FORMAL_CONSTRAINT: return createFormalConstraint();
-			case Mif2Package.FORMAL_EXPRESSION: return createFormalExpression();
-			case Mif2Package.FREE_FORM_MARKUP_WITH_LANGUAGE: return createFreeFormMarkupWithLanguage();
-			case Mif2Package.FREEHAND_DOCUMENT: return createFreehandDocument();
-			case Mif2Package.FREEHAND_DOCUMENT_APP_INFO: return createFreehandDocumentAppInfo();
-			case Mif2Package.FREEHAND_DOCUMENT_DOCUMENTATION: return createFreehandDocumentDocumentation();
-			case Mif2Package.GENERALIZATION_ANNOTATIONS: return createGeneralizationAnnotations();
-			case Mif2Package.GENERALIZATION_APP_INFO: return createGeneralizationAppInfo();
-			case Mif2Package.GENERALIZATION_DOCUMENTATION: return createGeneralizationDocumentation();
-			case Mif2Package.GENERIC_PACKAGE: return createGenericPackage();
-			case Mif2Package.GLOBAL_APPLICATION_ROLE: return createGlobalApplicationRole();
-			case Mif2Package.GLOBAL_ARTIFACT_XREF_SUMMARY: return createGlobalArtifactXRefSummary();
-			case Mif2Package.GLOBAL_CODE_SYSTEM: return createGlobalCodeSystem();
-			case Mif2Package.GLOBAL_CODE_SYSTEM_SUPPLEMENT: return createGlobalCodeSystemSupplement();
-			case Mif2Package.GLOBAL_CONFORMANCE_PROFILE: return createGlobalConformanceProfile();
-			case Mif2Package.GLOBAL_DATATYPE_MODEL_LIBRARY: return createGlobalDatatypeModelLibrary();
-			case Mif2Package.GLOBAL_DERIVED_STATIC_MODEL: return createGlobalDerivedStaticModel();
-			case Mif2Package.GLOBAL_DOMAIN_ANALYSIS_MODEL: return createGlobalDomainAnalysisModel();
-			case Mif2Package.GLOBAL_DOMAIN_INSTANCE_EXAMPLE: return createGlobalDomainInstanceExample();
-			case Mif2Package.GLOBAL_FREEHAND_DOCUMENT: return createGlobalFreehandDocument();
-			case Mif2Package.GLOBAL_GENERIC_PACKAGE: return createGlobalGenericPackage();
-			case Mif2Package.GLOBAL_GLOSSARY: return createGlobalGlossary();
-			case Mif2Package.GLOBAL_INTERACTION: return createGlobalInteraction();
-			case Mif2Package.GLOBAL_INTERACTION_PROFILE: return createGlobalInteractionProfile();
-			case Mif2Package.GLOBAL_MIF_CHANGES: return createGlobalMifChanges();
-			case Mif2Package.GLOBAL_PUBLICATION_PACKAGE: return createGlobalPublicationPackage();
-			case Mif2Package.GLOBAL_SERIALIZED_STATIC_MODEL: return createGlobalSerializedStaticModel();
-			case Mif2Package.GLOBAL_STATIC_MODEL: return createGlobalStaticModel();
-			case Mif2Package.GLOBAL_STATIC_MODEL_INTERFACE_PACKAGE: return createGlobalStaticModelInterfacePackage();
-			case Mif2Package.GLOBAL_STORYBOARD: return createGlobalStoryboard();
-			case Mif2Package.GLOBAL_STRUCTURED_DOCUMENT: return createGlobalStructuredDocument();
-			case Mif2Package.GLOBAL_TEST_SCENARIO: return createGlobalTestScenario();
-			case Mif2Package.GLOBAL_TRIGGER_EVENT: return createGlobalTriggerEvent();
-			case Mif2Package.GLOBAL_VALUE_SET: return createGlobalValueSet();
-			case Mif2Package.GLOBAL_VOCABULARY_MODEL: return createGlobalVocabularyModel();
-			case Mif2Package.GLOSSARY: return createGlossary();
-			case Mif2Package.GRAPH_CONNECTOR: return createGraphConnector();
-			case Mif2Package.GRAPH_CONNECTOR_WITH_EDGE: return createGraphConnectorWithEdge();
-			case Mif2Package.GRAPH_EDGE_GRAPHIC_INFORMATION: return createGraphEdgeGraphicInformation();
-			case Mif2Package.GRAPH_EDGE_WITH_ANCHOR: return createGraphEdgeWithAnchor();
-			case Mif2Package.GRAPH_NODE: return createGraphNode();
-			case Mif2Package.GRAPH_NODE_WITH_OPTIONAL_CONNECTION: return createGraphNodeWithOptionalConnection();
-			case Mif2Package.GROUP_CHANGE: return createGroupChange();
-			case Mif2Package.GROUP_VOTE: return createGroupVote();
-			case Mif2Package.HEADER: return createHeader();
-			case Mif2Package.HISTORY_ITEM: return createHistoryItem();
-			case Mif2Package.IMPLEMENTATION_CONSTRAINTS: return createImplementationConstraints();
-			case Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS: return createImplementationMessageConstraints();
-			case Mif2Package.IMPORT_DATATYPE_MODEL_LIBRARY: return createImportDatatypeModelLibrary();
-			case Mif2Package.INCLUDE_RELATED_CODES: return createIncludeRelatedCodes();
-			case Mif2Package.INTERACTION: return createInteraction();
-			case Mif2Package.INTERACTION_ANNOTATIONS: return createInteractionAnnotations();
-			case Mif2Package.INTERACTION_APP_INFO: return createInteractionAppInfo();
-			case Mif2Package.INTERACTION_DOCUMENTATION: return createInteractionDocumentation();
-			case Mif2Package.INTERACTION_PROFILE: return createInteractionProfile();
-			case Mif2Package.INTERACTION_PROFILE_APP_INFO: return createInteractionProfileAppInfo();
-			case Mif2Package.INTERACTION_PROFILE_DOCUMENTATION: return createInteractionProfileDocumentation();
-			case Mif2Package.INTERACTION_TEST: return createInteractionTest();
-			case Mif2Package.INTERFACE: return createInterface();
-			case Mif2Package.ITEM_FILTER: return createItemFilter();
-			case Mif2Package.KEYED_NAME: return createKeyedName();
-			case Mif2Package.LEGALESE: return createLegalese();
-			case Mif2Package.LOCAL_CLASS_REF: return createLocalClassRef();
-			case Mif2Package.LOCAL_CLASS_REFERENCE: return createLocalClassReference();
-			case Mif2Package.MAPPING: return createMapping();
-			case Mif2Package.MIF_CHANGES: return createMifChanges();
-			case Mif2Package.MIF_CONTENT: return createMifContent();
-			case Mif2Package.NODE_GRAPHIC_INFORMATION: return createNodeGraphicInformation();
-			case Mif2Package.NODE_WITH_CONNECTION_GRAPHIC_INFORMATION: return createNodeWithConnectionGraphicInformation();
-			case Mif2Package.NON_COMPUTABLE_CONTENT_DEFINITION: return createNonComputableContentDefinition();
-			case Mif2Package.NON_TRAVERSABLE_ASSOCIATION_END: return createNonTraversableAssociationEnd();
-			case Mif2Package.OPEN_ISSUE: return createOpenIssue();
-			case Mif2Package.OPERATION_ANNOTATIONS: return createOperationAnnotations();
-			case Mif2Package.OPERATION_APP_INFO: return createOperationAppInfo();
-			case Mif2Package.OPERATION_DERIVATION: return createOperationDerivation();
-			case Mif2Package.OPERATION_DOCUMENTATION: return createOperationDocumentation();
-			case Mif2Package.OPERATION_PARAMETER: return createOperationParameter();
-			case Mif2Package.OTHER_ANNOTATION: return createOtherAnnotation();
-			case Mif2Package.PACKAGE_APP_INFO: return createPackageAppInfo();
-			case Mif2Package.PACKAGE_CONTENT: return createPackageContent();
-			case Mif2Package.PACKAGE_DEF_ID: return createPackageDefId();
-			case Mif2Package.PACKAGE_DERIVATION: return createPackageDerivation();
-			case Mif2Package.PACKAGE_DOCUMENTATION: return createPackageDocumentation();
-			case Mif2Package.PACKAGE_OR_ARTIFACT_REF: return createPackageOrArtifactRef();
-			case Mif2Package.PACKAGE_REF: return createPackageRef();
-			case Mif2Package.PARAMETER_MODEL: return createParameterModel();
-			case Mif2Package.POINT: return createPoint();
-			case Mif2Package.PRINT_NAME: return createPrintName();
-			case Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION: return createPropertyBasedContentDefinition();
-			case Mif2Package.PROPERTY_GROUP: return createPropertyGroup();
-			case Mif2Package.PUBLICATION_ANNOTATIONS: return createPublicationAnnotations();
-			case Mif2Package.PUBLICATION_APP_INFO: return createPublicationAppInfo();
-			case Mif2Package.PUBLICATION_DOCUMENTATION: return createPublicationDocumentation();
-			case Mif2Package.PUBLICATION_GROUP: return createPublicationGroup();
-			case Mif2Package.PUBLICATION_ITEM: return createPublicationItem();
-			case Mif2Package.PUBLICATION_PACKAGE: return createPublicationPackage();
-			case Mif2Package.RANGE_DEFINITION: return createRangeDefinition();
-			case Mif2Package.REALM_ELEMENT: return createRealmElement();
-			case Mif2Package.RECEIVER_RESPONSIBILITY: return createReceiverResponsibility();
-			case Mif2Package.RELATED_APP_ROLE: return createRelatedAppRole();
-			case Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION: return createRelationshipBasedContentDefinition();
-			case Mif2Package.RELEASE: return createRelease();
-			case Mif2Package.RELEASE_LIST: return createReleaseList();
-			case Mif2Package.RENDERING_INFORMATION: return createRenderingInformation();
-			case Mif2Package.REPLACE_ELEMENT_CONTENT: return createReplaceElementContent();
-			case Mif2Package.RESPONSIBLE_GROUP: return createResponsibleGroup();
-			case Mif2Package.SERIALIZED_ASSOCIATION_END: return createSerializedAssociationEnd();
-			case Mif2Package.SERIALIZED_ASSOCIATION_ENDS: return createSerializedAssociationEnds();
-			case Mif2Package.SERIALIZED_CLASS: return createSerializedClass();
-			case Mif2Package.SERIALIZED_CLASS_BINDING_ARGUMENT: return createSerializedClassBindingArgument();
-			case Mif2Package.SERIALIZED_CLASSES: return createSerializedClasses();
-			case Mif2Package.SERIALIZED_CLASS_GENERALIZATION: return createSerializedClassGeneralization();
-			case Mif2Package.SERIALIZED_COMMON_MODEL_ELEMENT_REF: return createSerializedCommonModelElementRef();
-			case Mif2Package.SERIALIZED_ENTRY_POINT: return createSerializedEntryPoint();
-			case Mif2Package.SERIALIZED_STATIC_MODEL: return createSerializedStaticModel();
-			case Mif2Package.SERIALIZED_STATIC_MODELS_TYPE: return createSerializedStaticModelsType();
-			case Mif2Package.SPECIALIZATION_CLASS: return createSpecializationClass();
-			case Mif2Package.STATE: return createState();
-			case Mif2Package.STATE_ANNOTATIONS: return createStateAnnotations();
-			case Mif2Package.STATE_APP_INFO: return createStateAppInfo();
-			case Mif2Package.STATE_DERIVATION: return createStateDerivation();
-			case Mif2Package.STATE_DOCUMENTATION: return createStateDocumentation();
-			case Mif2Package.STATE_MACHINE: return createStateMachine();
-			case Mif2Package.STATE_MACHINE_ANNOTATIONS: return createStateMachineAnnotations();
-			case Mif2Package.STATE_MACHINE_APP_INFO: return createStateMachineAppInfo();
-			case Mif2Package.STATE_MACHINE_DOCUMENTATION: return createStateMachineDocumentation();
-			case Mif2Package.STATIC_EXAMPLE: return createStaticExample();
-			case Mif2Package.STATIC_MODEL: return createStaticModel();
-			case Mif2Package.STATIC_MODEL_ANNOTATIONS: return createStaticModelAnnotations();
-			case Mif2Package.STATIC_MODEL_APP_INFO: return createStaticModelAppInfo();
-			case Mif2Package.STATIC_MODEL_BASE: return createStaticModelBase();
-			case Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER: return createStaticModelClassTemplateParameter();
-			case Mif2Package.STATIC_MODEL_DERIVATION: return createStaticModelDerivation();
-			case Mif2Package.STATIC_MODEL_DERIVATION_SOURCE: return createStaticModelDerivationSource();
-			case Mif2Package.STATIC_MODEL_DOCUMENTATION: return createStaticModelDocumentation();
-			case Mif2Package.STATIC_MODEL_INTERFACE_ANNOTATIONS: return createStaticModelInterfaceAnnotations();
-			case Mif2Package.STATIC_MODEL_INTERFACE_APP_INFO: return createStaticModelInterfaceAppInfo();
-			case Mif2Package.STATIC_MODEL_INTERFACE_DOCUMENTATION: return createStaticModelInterfaceDocumentation();
-			case Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE: return createStaticModelInterfacePackage();
-			case Mif2Package.STATIC_MODEL_REF_BASE: return createStaticModelRefBase();
-			case Mif2Package.STATIC_MODELS_TYPE: return createStaticModelsType();
-			case Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION: return createStaticPackageDiagramGraphicInformation();
-			case Mif2Package.STORYBOARD: return createStoryboard();
-			case Mif2Package.STORYBOARD_ANNOTATIONS: return createStoryboardAnnotations();
-			case Mif2Package.STORYBOARD_APP_INFO: return createStoryboardAppInfo();
-			case Mif2Package.STORYBOARD_ARTIFACT_REFERENCES: return createStoryboardArtifactReferences();
-			case Mif2Package.STORYBOARD_DOCUMENTATION: return createStoryboardDocumentation();
-			case Mif2Package.STORYBOARD_NARRATIVE: return createStoryboardNarrative();
-			case Mif2Package.STRUCTURED_DOCUMENT: return createStructuredDocument();
-			case Mif2Package.STRUCTURED_DOCUMENT_ANNOTATIONS: return createStructuredDocumentAnnotations();
-			case Mif2Package.STRUCTURED_DOCUMENT_APP_INFO: return createStructuredDocumentAppInfo();
-			case Mif2Package.STRUCTURED_DOCUMENT_DOCUMENTATION: return createStructuredDocumentDocumentation();
-			case Mif2Package.STUB_DEFINITION: return createStubDefinition();
-			case Mif2Package.SUBJECT_AREA_ANNOTATIONS: return createSubjectAreaAnnotations();
-			case Mif2Package.SUBJECT_AREA_APP_INFO: return createSubjectAreaAppInfo();
-			case Mif2Package.SUBJECT_AREA_DOCUMENTATION: return createSubjectAreaDocumentation();
-			case Mif2Package.SUBJECT_AREA_PACKAGE: return createSubjectAreaPackage();
-			case Mif2Package.SUB_SYSTEM: return createSubSystem();
-			case Mif2Package.SUPPORTED_CONCEPT_PROPERTY: return createSupportedConceptProperty();
-			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP: return createSupportedConceptRelationship();
-			case Mif2Package.SUPPORTED_PROPERTY: return createSupportedProperty();
-			case Mif2Package.TERM_DEFINITION: return createTermDefinition();
-			case Mif2Package.TERMINOLOGY_SERVER: return createTerminologyServer();
-			case Mif2Package.TEST: return createTest();
-			case Mif2Package.TEST_SCENARIO: return createTestScenario();
-			case Mif2Package.TEST_SYSTEM: return createTestSystem();
-			case Mif2Package.TRANSITION: return createTransition();
-			case Mif2Package.TRANSITION_ANNOTATIONS: return createTransitionAnnotations();
-			case Mif2Package.TRANSITION_APP_INFO: return createTransitionAppInfo();
-			case Mif2Package.TRANSITION_DERIVATION: return createTransitionDerivation();
-			case Mif2Package.TRANSITION_DOCUMENTATION: return createTransitionDocumentation();
-			case Mif2Package.TRANSITION_REF: return createTransitionRef();
-			case Mif2Package.TRIGGER_EVENT: return createTriggerEvent();
-			case Mif2Package.TRIGGER_EVENT_ANNOTATIONS: return createTriggerEventAnnotations();
-			case Mif2Package.TRIGGER_EVENT_APP_INFO: return createTriggerEventAppInfo();
-			case Mif2Package.TRIGGER_EVENT_DOCUMENTATION: return createTriggerEventDocumentation();
-			case Mif2Package.VALUE_SET: return createValueSet();
-			case Mif2Package.VALUE_SET_ANNOTATIONS: return createValueSetAnnotations();
-			case Mif2Package.VALUE_SET_APP_INFO: return createValueSetAppInfo();
-			case Mif2Package.VALUE_SET_DOCUMENTATION: return createValueSetDocumentation();
-			case Mif2Package.VALUE_SET_SUPPLEMENT: return createValueSetSupplement();
-			case Mif2Package.VALUE_SET_VERSION: return createValueSetVersion();
-			case Mif2Package.VARIOUS_MIXED_CONTENT: return createVariousMixedContent();
-			case Mif2Package.VOCABULARY_CODE_REF: return createVocabularyCodeRef();
-			case Mif2Package.VOCABULARY_CODE_REFS: return createVocabularyCodeRefs();
-			case Mif2Package.VOCABULARY_LIMITATION: return createVocabularyLimitation();
-			case Mif2Package.VOCABULARY_MODEL: return createVocabularyModel();
-			case Mif2Package.VOCABULARY_MODEL_ANNOTATIONS: return createVocabularyModelAnnotations();
-			case Mif2Package.VOCABULARY_MODEL_APP_INFO: return createVocabularyModelAppInfo();
-			case Mif2Package.VOCABULARY_MODEL_DOCUMENTATION: return createVocabularyModelDocumentation();
-			case Mif2Package.VOCABULARY_SPECIFICATION: return createVocabularySpecification();
-			case Mif2Package.VOCABULARY_VALUE_SET_BINDING: return createVocabularyValueSetBinding();
-			case Mif2Package.VOCABULARY_VALUE_SET_REF: return createVocabularyValueSetRef();
-			case Mif2Package.XMI_CONTENT: return createXMIContent();
+			case Mif2Package.ADD_ELEMENT_CONTENT:
+				return createAddElementContent();
+			case Mif2Package.ANNOTATION_CASCADE_INFO:
+				return createAnnotationCascadeInfo();
+			case Mif2Package.ANNOTATION_DERIVATION:
+				return createAnnotationDerivation();
+			case Mif2Package.APPENDIX:
+				return createAppendix();
+			case Mif2Package.APP_INFO:
+				return createAppInfo();
+			case Mif2Package.APPLICATION_ROLE:
+				return createApplicationRole();
+			case Mif2Package.APPLICATION_ROLE_ANNOTATIONS:
+				return createApplicationRoleAnnotations();
+			case Mif2Package.APPLICATION_ROLE_APP_INFO:
+				return createApplicationRoleAppInfo();
+			case Mif2Package.APPLICATION_ROLE_DOCUMENTATION:
+				return createApplicationRoleDocumentation();
+			case Mif2Package.APPLIED_TEMPLATE_GROUP:
+				return createAppliedTemplateGroup();
+			case Mif2Package.APPROVAL_INFO:
+				return createApprovalInfo();
+			case Mif2Package.ARTIFACT_CROSS_REFERENCE:
+				return createArtifactCrossReference();
+			case Mif2Package.ARTIFACT_DEPENDENCY:
+				return createArtifactDependency();
+			case Mif2Package.ARTIFACT_SUPPLEMENT:
+				return createArtifactSupplement();
+			case Mif2Package.ARTIFACT_SUPPLEMENT_ANNOTATIONS:
+				return createArtifactSupplementAnnotations();
+			case Mif2Package.ARTIFACT_SUPPLEMENT_APP_INFO:
+				return createArtifactSupplementAppInfo();
+			case Mif2Package.ARTIFACT_SUPPLEMENT_DOCUMENTATION:
+				return createArtifactSupplementDocumentation();
+			case Mif2Package.ARTIFACT_XREF_SUMMARY:
+				return createArtifactXRefSummary();
+			case Mif2Package.ASSOCIATION:
+				return createAssociation();
+			case Mif2Package.ASSOCIATION_ANNOTATIONS:
+				return createAssociationAnnotations();
+			case Mif2Package.ASSOCIATION_APP_INFO:
+				return createAssociationAppInfo();
+			case Mif2Package.ASSOCIATION_BASE:
+				return createAssociationBase();
+			case Mif2Package.ASSOCIATION_DOCUMENTATION:
+				return createAssociationDocumentation();
+			case Mif2Package.ASSOCIATION_END:
+				return createAssociationEnd();
+			case Mif2Package.ASSOCIATION_END_ANNOTATIONS:
+				return createAssociationEndAnnotations();
+			case Mif2Package.ASSOCIATION_END_APP_INFO:
+				return createAssociationEndAppInfo();
+			case Mif2Package.ASSOCIATION_END_BASE:
+				return createAssociationEndBase();
+			case Mif2Package.ASSOCIATION_END_DERIVATION:
+				return createAssociationEndDerivation();
+			case Mif2Package.ASSOCIATION_END_DOCUMENTATION:
+				return createAssociationEndDocumentation();
+			case Mif2Package.ASSOCIATION_END_SPECIALIZATION:
+				return createAssociationEndSpecialization();
+			case Mif2Package.ASSOCIATION_END_WITH_CLASS:
+				return createAssociationEndWithClass();
+			case Mif2Package.ASSOCIATION_END_WITH_CLASS_REF:
+				return createAssociationEndWithClassRef();
+			case Mif2Package.ATTRIBUTE:
+				return createAttribute();
+			case Mif2Package.ATTRIBUTE_ANNOTATIONS:
+				return createAttributeAnnotations();
+			case Mif2Package.ATTRIBUTE_APP_INFO:
+				return createAttributeAppInfo();
+			case Mif2Package.ATTRIBUTE_CONTENT:
+				return createAttributeContent();
+			case Mif2Package.ATTRIBUTE_DERIVATION:
+				return createAttributeDerivation();
+			case Mif2Package.ATTRIBUTE_DOCUMENTATION:
+				return createAttributeDocumentation();
+			case Mif2Package.ATTRIBUTE_PROPERTY:
+				return createAttributeProperty();
+			case Mif2Package.ATTRIBUTE_REF:
+				return createAttributeRef();
+			case Mif2Package.ATTRIBUTE_VALUE_REF:
+				return createAttributeValueRef();
+			case Mif2Package.BALLOT_COMMENT:
+				return createBallotComment();
+			case Mif2Package.BALLOT_COMMENT_RESOLUTION:
+				return createBallotCommentResolution();
+			case Mif2Package.BALLOT_SUBMISSION:
+				return createBallotSubmission();
+			case Mif2Package.BASIC_ANNOTATION:
+				return createBasicAnnotation();
+			case Mif2Package.BINDING_REALM:
+				return createBindingRealm();
+			case Mif2Package.BOUND_STATIC_MODEL:
+				return createBoundStaticModel();
+			case Mif2Package.BUSINESS_NAME:
+				return createBusinessName();
+			case Mif2Package.CASCADABLE_ANNOTATION:
+				return createCascadableAnnotation();
+			case Mif2Package.CHANGE_REQUEST:
+				return createChangeRequest();
+			case Mif2Package.CHANGE_REQUEST_ESTIMATE:
+				return createChangeRequestEstimate();
+			case Mif2Package.CLASS_ANNOTATIONS:
+				return createClassAnnotations();
+			case Mif2Package.CLASS_APP_INFO:
+				return createClassAppInfo();
+			case Mif2Package.CLASS_BINDING_ARGUMENT:
+				return createClassBindingArgument();
+			case Mif2Package.CLASS_BINDING_ARGUMENT_BASE:
+				return createClassBindingArgumentBase();
+			case Mif2Package.CLASS_DERIVATION:
+				return createClassDerivation();
+			case Mif2Package.CLASS_DOCUMENTATION:
+				return createClassDocumentation();
+			case Mif2Package.CLASS_ELEMENT:
+				return createClassElement();
+			case Mif2Package.CLASS_GENERALIZATION:
+				return createClassGeneralization();
+			case Mif2Package.CLASS_GRAPHIC_INFORMATION:
+				return createClassGraphicInformation();
+			case Mif2Package.CLASSIFIER:
+				return createClassifier();
+			case Mif2Package.CLASS_OR_REFERENCE:
+				return createClassOrReference();
+			case Mif2Package.CLASS_REF:
+				return createClassRef();
+			case Mif2Package.CLASS_STUB_INTERFACE:
+				return createClassStubInterface();
+			case Mif2Package.CLASS_STUB_INTERFACE_ANNOTATIONS:
+				return createClassStubInterfaceAnnotations();
+			case Mif2Package.CLASS_STUB_INTERFACE_APP_INFO:
+				return createClassStubInterfaceAppInfo();
+			case Mif2Package.CLASS_STUB_INTERFACE_DOCUMENTATION:
+				return createClassStubInterfaceDocumentation();
+			case Mif2Package.CODE:
+				return createCode();
+			case Mif2Package.CODE_BASED_CONTENT_DEFINITION:
+				return createCodeBasedContentDefinition();
+			case Mif2Package.CODE_FILTER_CONTENT_DEFINITION:
+				return createCodeFilterContentDefinition();
+			case Mif2Package.CODE_ICON:
+				return createCodeIcon();
+			case Mif2Package.CODE_SUPPLEMENT:
+				return createCodeSupplement();
+			case Mif2Package.CODE_SYSTEM:
+				return createCodeSystem();
+			case Mif2Package.CODE_SYSTEM_ANNOTATIONS:
+				return createCodeSystemAnnotations();
+			case Mif2Package.CODE_SYSTEM_APP_INFO:
+				return createCodeSystemAppInfo();
+			case Mif2Package.CODE_SYSTEM_DOCUMENTATION:
+				return createCodeSystemDocumentation();
+			case Mif2Package.CODE_SYSTEM_REF:
+				return createCodeSystemRef();
+			case Mif2Package.CODE_SYSTEM_SUPPLEMENT:
+				return createCodeSystemSupplement();
+			case Mif2Package.CODE_SYSTEM_VERSION:
+				return createCodeSystemVersion();
+			case Mif2Package.CODE_SYSTEM_VERSION_ANNOTATIONS:
+				return createCodeSystemVersionAnnotations();
+			case Mif2Package.CODE_SYSTEM_VERSION_APP_INFO:
+				return createCodeSystemVersionAppInfo();
+			case Mif2Package.CODE_SYSTEM_VERSION_DOCUMENTATION:
+				return createCodeSystemVersionDocumentation();
+			case Mif2Package.CODE_SYSTEM_VERSION_SUPPLEMENT:
+				return createCodeSystemVersionSupplement();
+			case Mif2Package.CODE_TRANSLATION:
+				return createCodeTranslation();
+			case Mif2Package.CODE_TRANSLATION_ANNOTATIONS:
+				return createCodeTranslationAnnotations();
+			case Mif2Package.CODE_TRANSLATION_APP_INFO:
+				return createCodeTranslationAppInfo();
+			case Mif2Package.CODE_TRANSLATION_COLLECTION:
+				return createCodeTranslationCollection();
+			case Mif2Package.CODE_TRANSLATION_COLLECTION_ANNOTATIONS:
+				return createCodeTranslationCollectionAnnotations();
+			case Mif2Package.CODE_TRANSLATION_COLLECTION_APP_INFO:
+				return createCodeTranslationCollectionAppInfo();
+			case Mif2Package.CODE_TRANSLATION_COLLECTION_DOCUMENTATION:
+				return createCodeTranslationCollectionDocumentation();
+			case Mif2Package.CODE_TRANSLATION_DOCUMENTATION:
+				return createCodeTranslationDocumentation();
+			case Mif2Package.COMBINED_CONTENT_DEFINITION:
+				return createCombinedContentDefinition();
+			case Mif2Package.COMMITTEE_REFERENCE:
+				return createCommitteeReference();
+			case Mif2Package.COMMON_MODEL_ELEMENT_DEFINITION:
+				return createCommonModelElementDefinition();
+			case Mif2Package.COMMON_MODEL_ELEMENT_REF:
+				return createCommonModelElementRef();
+			case Mif2Package.COMMON_MODEL_ELEMENT_REF_ANNOTATIONS:
+				return createCommonModelElementRefAnnotations();
+			case Mif2Package.COMMON_MODEL_ELEMENT_REF_APP_INFO:
+				return createCommonModelElementRefAppInfo();
+			case Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE:
+				return createCommonModelElementRefBase();
+			case Mif2Package.COMMON_MODEL_ELEMENT_REF_DOCUMENTATION:
+				return createCommonModelElementRefDocumentation();
+			case Mif2Package.COMPLEX_MARKUP_WITH_LANGUAGE:
+				return createComplexMarkupWithLanguage();
+			case Mif2Package.CONCEPT:
+				return createConcept();
+			case Mif2Package.CONCEPT_ANNOTATIONS:
+				return createConceptAnnotations();
+			case Mif2Package.CONCEPT_APP_INFO:
+				return createConceptAppInfo();
+			case Mif2Package.CONCEPT_DOCUMENTATION:
+				return createConceptDocumentation();
+			case Mif2Package.CONCEPT_DOMAIN:
+				return createConceptDomain();
+			case Mif2Package.CONCEPT_DOMAIN_ANNOTATIONS:
+				return createConceptDomainAnnotations();
+			case Mif2Package.CONCEPT_DOMAIN_APP_INFO:
+				return createConceptDomainAppInfo();
+			case Mif2Package.CONCEPT_DOMAIN_DOCUMENTATION:
+				return createConceptDomainDocumentation();
+			case Mif2Package.CONCEPT_DOMAIN_PROPERTY:
+				return createConceptDomainProperty();
+			case Mif2Package.CONCEPT_DOMAIN_REF:
+				return createConceptDomainRef();
+			case Mif2Package.CONCEPT_PROPERTY:
+				return createConceptProperty();
+			case Mif2Package.CONCEPT_PROPERTY_REF:
+				return createConceptPropertyRef();
+			case Mif2Package.CONCEPT_REF:
+				return createConceptRef();
+			case Mif2Package.CONCEPT_RELATIONSHIP:
+				return createConceptRelationship();
+			case Mif2Package.CONCEPT_SUPPLEMENT:
+				return createConceptSupplement();
+			case Mif2Package.CONCEPT_SUPPLEMENT_ANNOTATIONS:
+				return createConceptSupplementAnnotations();
+			case Mif2Package.CONCEPT_SUPPLEMENT_APP_INFO:
+				return createConceptSupplementAppInfo();
+			case Mif2Package.CONCEPT_SUPPLEMENT_DOCUMENTATION:
+				return createConceptSupplementDocumentation();
+			case Mif2Package.CONCEPT_USE:
+				return createConceptUse();
+			case Mif2Package.CONFORMANCE_PROFILE:
+				return createConformanceProfile();
+			case Mif2Package.CONFORMANCE_PROFILE_ANNOTATIONS:
+				return createConformanceProfileAnnotations();
+			case Mif2Package.CONFORMANCE_PROFILE_APP_INFO:
+				return createConformanceProfileAppInfo();
+			case Mif2Package.CONFORMANCE_PROFILE_DOCUMENTATION:
+				return createConformanceProfileDocumentation();
+			case Mif2Package.CONFORMANCE_TRIGGER_EVENTS:
+				return createConformanceTriggerEvents();
+			case Mif2Package.CONTAINED_GRAPH_NODE:
+				return createContainedGraphNode();
+			case Mif2Package.CONTENT_DEFINITION:
+				return createContentDefinition();
+			case Mif2Package.CONTENT_DEFINITION_ANNOTATIONS:
+				return createContentDefinitionAnnotations();
+			case Mif2Package.CONTENT_DEFINITION_APP_INFO:
+				return createContentDefinitionAppInfo();
+			case Mif2Package.CONTENT_DEFINITION_DOCUMENTATION:
+				return createContentDefinitionDocumentation();
+			case Mif2Package.CONTEXT_ANNOTATION:
+				return createContextAnnotation();
+			case Mif2Package.CONTEXT_BINDING:
+				return createContextBinding();
+			case Mif2Package.CONTRIBUTOR:
+				return createContributor();
+			case Mif2Package.DATATYPE:
+				return createDatatype();
+			case Mif2Package.DATATYPE_ANNOTATIONS:
+				return createDatatypeAnnotations();
+			case Mif2Package.DATATYPE_APP_INFO:
+				return createDatatypeAppInfo();
+			case Mif2Package.DATATYPE_BINDING:
+				return createDatatypeBinding();
+			case Mif2Package.DATATYPE_DERIVATION:
+				return createDatatypeDerivation();
+			case Mif2Package.DATATYPE_DOCUMENTATION:
+				return createDatatypeDocumentation();
+			case Mif2Package.DATATYPE_IMPORT:
+				return createDatatypeImport();
+			case Mif2Package.DATATYPE_LIMITATION:
+				return createDatatypeLimitation();
+			case Mif2Package.DATATYPE_MODEL_LIBRARY:
+				return createDatatypeModelLibrary();
+			case Mif2Package.DATATYPE_OPERATION:
+				return createDatatypeOperation();
+			case Mif2Package.DATATYPE_PARAMETER:
+				return createDatatypeParameter();
+			case Mif2Package.DATATYPE_REF:
+				return createDatatypeRef();
+			case Mif2Package.DATATYPE_TEMPLATE_PARAMETER:
+				return createDatatypeTemplateParameter();
+			case Mif2Package.DEPRECATION_INFO:
+				return createDeprecationInfo();
+			case Mif2Package.DERIVED_STATIC_MODEL:
+				return createDerivedStaticModel();
+			case Mif2Package.DERIVED_STATIC_MODELS_TYPE:
+				return createDerivedStaticModelsType();
+			case Mif2Package.DESIGN_COMMENT:
+				return createDesignComment();
+			case Mif2Package.DIAGRAM:
+				return createDiagram();
+			case Mif2Package.DIAGRAM_GRAPHIC_INFORMATION:
+				return createDiagramGraphicInformation();
+			case Mif2Package.DIMENSION:
+				return createDimension();
+			case Mif2Package.DOCUMENTATION:
+				return createDocumentation();
+			case Mif2Package.DOCUMENT_PROFILE:
+				return createDocumentProfile();
+			case Mif2Package.DOCUMENT_PROFILE_APP_INFO:
+				return createDocumentProfileAppInfo();
+			case Mif2Package.DOCUMENT_PROFILE_DOCUMENTATION:
+				return createDocumentProfileDocumentation();
+			case Mif2Package.DOCUMENT_ROOT:
+				return createDocumentRoot();
+			case Mif2Package.DOCUMENT_TEST:
+				return createDocumentTest();
+			case Mif2Package.DOMAIN_ANALYSIS_MODEL:
+				return createDomainAnalysisModel();
+			case Mif2Package.DOMAIN_ANALYSIS_MODEL_ANNOTATIONS:
+				return createDomainAnalysisModelAnnotations();
+			case Mif2Package.DOMAIN_ANALYSIS_MODEL_APP_INFO:
+				return createDomainAnalysisModelAppInfo();
+			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION:
+				return createDomainAnalysisModelDocumentation();
+			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE:
+				return createDomainInstanceExample();
+			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_ANNOTATIONS:
+				return createDomainInstanceExampleAnnotations();
+			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_APP_INFO:
+				return createDomainInstanceExampleAppInfo();
+			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE_DOCUMENTATION:
+				return createDomainInstanceExampleDocumentation();
+			case Mif2Package.ELEMENT_CHANGE:
+				return createElementChange();
+			case Mif2Package.ELEMENT_DERIVATION:
+				return createElementDerivation();
+			case Mif2Package.ELEMENT_REF:
+				return createElementRef();
+			case Mif2Package.ELEMENT_VALUE_REF:
+				return createElementValueRef();
+			case Mif2Package.ENTRY_POINT:
+				return createEntryPoint();
+			case Mif2Package.ENTRY_POINT_ANNOTATIONS:
+				return createEntryPointAnnotations();
+			case Mif2Package.ENTRY_POINT_APP_INFO:
+				return createEntryPointAppInfo();
+			case Mif2Package.ENTRY_POINT_BASE:
+				return createEntryPointBase();
+			case Mif2Package.ENTRY_POINT_DOCUMENTATION:
+				return createEntryPointDocumentation();
+			case Mif2Package.ENVIRONMENTAL_OCCURRENCE:
+				return createEnvironmentalOccurrence();
+			case Mif2Package.EXAMPLE_INTERACTION:
+				return createExampleInteraction();
+			case Mif2Package.EXAMPLE_SYSTEM:
+				return createExampleSystem();
+			case Mif2Package.EXAMPLE_TYPE:
+				return createExampleType();
+			case Mif2Package.FEATURE:
+				return createFeature();
+			case Mif2Package.FLAT_CLASS:
+				return createFlatClass();
+			case Mif2Package.FORMAL_CONSTRAINT:
+				return createFormalConstraint();
+			case Mif2Package.FORMAL_EXPRESSION:
+				return createFormalExpression();
+			case Mif2Package.FREE_FORM_MARKUP_WITH_LANGUAGE:
+				return createFreeFormMarkupWithLanguage();
+			case Mif2Package.FREEHAND_DOCUMENT:
+				return createFreehandDocument();
+			case Mif2Package.FREEHAND_DOCUMENT_APP_INFO:
+				return createFreehandDocumentAppInfo();
+			case Mif2Package.FREEHAND_DOCUMENT_DOCUMENTATION:
+				return createFreehandDocumentDocumentation();
+			case Mif2Package.GENERALIZATION_ANNOTATIONS:
+				return createGeneralizationAnnotations();
+			case Mif2Package.GENERALIZATION_APP_INFO:
+				return createGeneralizationAppInfo();
+			case Mif2Package.GENERALIZATION_DOCUMENTATION:
+				return createGeneralizationDocumentation();
+			case Mif2Package.GENERIC_PACKAGE:
+				return createGenericPackage();
+			case Mif2Package.GLOBAL_APPLICATION_ROLE:
+				return createGlobalApplicationRole();
+			case Mif2Package.GLOBAL_ARTIFACT_XREF_SUMMARY:
+				return createGlobalArtifactXRefSummary();
+			case Mif2Package.GLOBAL_CODE_SYSTEM:
+				return createGlobalCodeSystem();
+			case Mif2Package.GLOBAL_CODE_SYSTEM_SUPPLEMENT:
+				return createGlobalCodeSystemSupplement();
+			case Mif2Package.GLOBAL_CONFORMANCE_PROFILE:
+				return createGlobalConformanceProfile();
+			case Mif2Package.GLOBAL_DATATYPE_MODEL_LIBRARY:
+				return createGlobalDatatypeModelLibrary();
+			case Mif2Package.GLOBAL_DERIVED_STATIC_MODEL:
+				return createGlobalDerivedStaticModel();
+			case Mif2Package.GLOBAL_DOMAIN_ANALYSIS_MODEL:
+				return createGlobalDomainAnalysisModel();
+			case Mif2Package.GLOBAL_DOMAIN_INSTANCE_EXAMPLE:
+				return createGlobalDomainInstanceExample();
+			case Mif2Package.GLOBAL_FREEHAND_DOCUMENT:
+				return createGlobalFreehandDocument();
+			case Mif2Package.GLOBAL_GENERIC_PACKAGE:
+				return createGlobalGenericPackage();
+			case Mif2Package.GLOBAL_GLOSSARY:
+				return createGlobalGlossary();
+			case Mif2Package.GLOBAL_INTERACTION:
+				return createGlobalInteraction();
+			case Mif2Package.GLOBAL_INTERACTION_PROFILE:
+				return createGlobalInteractionProfile();
+			case Mif2Package.GLOBAL_MIF_CHANGES:
+				return createGlobalMifChanges();
+			case Mif2Package.GLOBAL_PUBLICATION_PACKAGE:
+				return createGlobalPublicationPackage();
+			case Mif2Package.GLOBAL_SERIALIZED_STATIC_MODEL:
+				return createGlobalSerializedStaticModel();
+			case Mif2Package.GLOBAL_STATIC_MODEL:
+				return createGlobalStaticModel();
+			case Mif2Package.GLOBAL_STATIC_MODEL_INTERFACE_PACKAGE:
+				return createGlobalStaticModelInterfacePackage();
+			case Mif2Package.GLOBAL_STORYBOARD:
+				return createGlobalStoryboard();
+			case Mif2Package.GLOBAL_STRUCTURED_DOCUMENT:
+				return createGlobalStructuredDocument();
+			case Mif2Package.GLOBAL_TEST_SCENARIO:
+				return createGlobalTestScenario();
+			case Mif2Package.GLOBAL_TRIGGER_EVENT:
+				return createGlobalTriggerEvent();
+			case Mif2Package.GLOBAL_VALUE_SET:
+				return createGlobalValueSet();
+			case Mif2Package.GLOBAL_VOCABULARY_MODEL:
+				return createGlobalVocabularyModel();
+			case Mif2Package.GLOSSARY:
+				return createGlossary();
+			case Mif2Package.GRAPH_CONNECTOR:
+				return createGraphConnector();
+			case Mif2Package.GRAPH_CONNECTOR_WITH_EDGE:
+				return createGraphConnectorWithEdge();
+			case Mif2Package.GRAPH_EDGE_GRAPHIC_INFORMATION:
+				return createGraphEdgeGraphicInformation();
+			case Mif2Package.GRAPH_EDGE_WITH_ANCHOR:
+				return createGraphEdgeWithAnchor();
+			case Mif2Package.GRAPH_NODE:
+				return createGraphNode();
+			case Mif2Package.GRAPH_NODE_WITH_OPTIONAL_CONNECTION:
+				return createGraphNodeWithOptionalConnection();
+			case Mif2Package.GROUP_CHANGE:
+				return createGroupChange();
+			case Mif2Package.GROUP_VOTE:
+				return createGroupVote();
+			case Mif2Package.HEADER:
+				return createHeader();
+			case Mif2Package.HISTORY_ITEM:
+				return createHistoryItem();
+			case Mif2Package.IMPLEMENTATION_CONSTRAINTS:
+				return createImplementationConstraints();
+			case Mif2Package.IMPLEMENTATION_MESSAGE_CONSTRAINTS:
+				return createImplementationMessageConstraints();
+			case Mif2Package.IMPORT_DATATYPE_MODEL_LIBRARY:
+				return createImportDatatypeModelLibrary();
+			case Mif2Package.INCLUDE_RELATED_CODES:
+				return createIncludeRelatedCodes();
+			case Mif2Package.INTERACTION:
+				return createInteraction();
+			case Mif2Package.INTERACTION_ANNOTATIONS:
+				return createInteractionAnnotations();
+			case Mif2Package.INTERACTION_APP_INFO:
+				return createInteractionAppInfo();
+			case Mif2Package.INTERACTION_DOCUMENTATION:
+				return createInteractionDocumentation();
+			case Mif2Package.INTERACTION_PROFILE:
+				return createInteractionProfile();
+			case Mif2Package.INTERACTION_PROFILE_APP_INFO:
+				return createInteractionProfileAppInfo();
+			case Mif2Package.INTERACTION_PROFILE_DOCUMENTATION:
+				return createInteractionProfileDocumentation();
+			case Mif2Package.INTERACTION_TEST:
+				return createInteractionTest();
+			case Mif2Package.INTERFACE:
+				return createInterface();
+			case Mif2Package.ITEM_FILTER:
+				return createItemFilter();
+			case Mif2Package.KEYED_NAME:
+				return createKeyedName();
+			case Mif2Package.LEGALESE:
+				return createLegalese();
+			case Mif2Package.LOCAL_CLASS_REF:
+				return createLocalClassRef();
+			case Mif2Package.LOCAL_CLASS_REFERENCE:
+				return createLocalClassReference();
+			case Mif2Package.MAPPING:
+				return createMapping();
+			case Mif2Package.MIF_CHANGES:
+				return createMifChanges();
+			case Mif2Package.MIF_CONTENT:
+				return createMifContent();
+			case Mif2Package.NODE_GRAPHIC_INFORMATION:
+				return createNodeGraphicInformation();
+			case Mif2Package.NODE_WITH_CONNECTION_GRAPHIC_INFORMATION:
+				return createNodeWithConnectionGraphicInformation();
+			case Mif2Package.NON_COMPUTABLE_CONTENT_DEFINITION:
+				return createNonComputableContentDefinition();
+			case Mif2Package.NON_TRAVERSABLE_ASSOCIATION_END:
+				return createNonTraversableAssociationEnd();
+			case Mif2Package.OPEN_ISSUE:
+				return createOpenIssue();
+			case Mif2Package.OPERATION_ANNOTATIONS:
+				return createOperationAnnotations();
+			case Mif2Package.OPERATION_APP_INFO:
+				return createOperationAppInfo();
+			case Mif2Package.OPERATION_DERIVATION:
+				return createOperationDerivation();
+			case Mif2Package.OPERATION_DOCUMENTATION:
+				return createOperationDocumentation();
+			case Mif2Package.OPERATION_PARAMETER:
+				return createOperationParameter();
+			case Mif2Package.OTHER_ANNOTATION:
+				return createOtherAnnotation();
+			case Mif2Package.PACKAGE_APP_INFO:
+				return createPackageAppInfo();
+			case Mif2Package.PACKAGE_CONTENT:
+				return createPackageContent();
+			case Mif2Package.PACKAGE_DEF_ID:
+				return createPackageDefId();
+			case Mif2Package.PACKAGE_DERIVATION:
+				return createPackageDerivation();
+			case Mif2Package.PACKAGE_DOCUMENTATION:
+				return createPackageDocumentation();
+			case Mif2Package.PACKAGE_OR_ARTIFACT_REF:
+				return createPackageOrArtifactRef();
+			case Mif2Package.PACKAGE_REF:
+				return createPackageRef();
+			case Mif2Package.PARAMETER_MODEL:
+				return createParameterModel();
+			case Mif2Package.POINT:
+				return createPoint();
+			case Mif2Package.PRINT_NAME:
+				return createPrintName();
+			case Mif2Package.PROPERTY_BASED_CONTENT_DEFINITION:
+				return createPropertyBasedContentDefinition();
+			case Mif2Package.PROPERTY_GROUP:
+				return createPropertyGroup();
+			case Mif2Package.PUBLICATION_ANNOTATIONS:
+				return createPublicationAnnotations();
+			case Mif2Package.PUBLICATION_APP_INFO:
+				return createPublicationAppInfo();
+			case Mif2Package.PUBLICATION_DOCUMENTATION:
+				return createPublicationDocumentation();
+			case Mif2Package.PUBLICATION_GROUP:
+				return createPublicationGroup();
+			case Mif2Package.PUBLICATION_ITEM:
+				return createPublicationItem();
+			case Mif2Package.PUBLICATION_PACKAGE:
+				return createPublicationPackage();
+			case Mif2Package.RANGE_DEFINITION:
+				return createRangeDefinition();
+			case Mif2Package.REALM_ELEMENT:
+				return createRealmElement();
+			case Mif2Package.RECEIVER_RESPONSIBILITY:
+				return createReceiverResponsibility();
+			case Mif2Package.RELATED_APP_ROLE:
+				return createRelatedAppRole();
+			case Mif2Package.RELATIONSHIP_BASED_CONTENT_DEFINITION:
+				return createRelationshipBasedContentDefinition();
+			case Mif2Package.RELEASE:
+				return createRelease();
+			case Mif2Package.RELEASE_LIST:
+				return createReleaseList();
+			case Mif2Package.RENDERING_INFORMATION:
+				return createRenderingInformation();
+			case Mif2Package.REPLACE_ELEMENT_CONTENT:
+				return createReplaceElementContent();
+			case Mif2Package.RESPONSIBLE_GROUP:
+				return createResponsibleGroup();
+			case Mif2Package.SERIALIZED_ASSOCIATION_END:
+				return createSerializedAssociationEnd();
+			case Mif2Package.SERIALIZED_ASSOCIATION_ENDS:
+				return createSerializedAssociationEnds();
+			case Mif2Package.SERIALIZED_CLASS:
+				return createSerializedClass();
+			case Mif2Package.SERIALIZED_CLASS_BINDING_ARGUMENT:
+				return createSerializedClassBindingArgument();
+			case Mif2Package.SERIALIZED_CLASSES:
+				return createSerializedClasses();
+			case Mif2Package.SERIALIZED_CLASS_GENERALIZATION:
+				return createSerializedClassGeneralization();
+			case Mif2Package.SERIALIZED_COMMON_MODEL_ELEMENT_REF:
+				return createSerializedCommonModelElementRef();
+			case Mif2Package.SERIALIZED_ENTRY_POINT:
+				return createSerializedEntryPoint();
+			case Mif2Package.SERIALIZED_STATIC_MODEL:
+				return createSerializedStaticModel();
+			case Mif2Package.SERIALIZED_STATIC_MODELS_TYPE:
+				return createSerializedStaticModelsType();
+			case Mif2Package.SPECIALIZATION_CLASS:
+				return createSpecializationClass();
+			case Mif2Package.STATE:
+				return createState();
+			case Mif2Package.STATE_ANNOTATIONS:
+				return createStateAnnotations();
+			case Mif2Package.STATE_APP_INFO:
+				return createStateAppInfo();
+			case Mif2Package.STATE_DERIVATION:
+				return createStateDerivation();
+			case Mif2Package.STATE_DOCUMENTATION:
+				return createStateDocumentation();
+			case Mif2Package.STATE_MACHINE:
+				return createStateMachine();
+			case Mif2Package.STATE_MACHINE_ANNOTATIONS:
+				return createStateMachineAnnotations();
+			case Mif2Package.STATE_MACHINE_APP_INFO:
+				return createStateMachineAppInfo();
+			case Mif2Package.STATE_MACHINE_DOCUMENTATION:
+				return createStateMachineDocumentation();
+			case Mif2Package.STATIC_EXAMPLE:
+				return createStaticExample();
+			case Mif2Package.STATIC_MODEL:
+				return createStaticModel();
+			case Mif2Package.STATIC_MODEL_ANNOTATIONS:
+				return createStaticModelAnnotations();
+			case Mif2Package.STATIC_MODEL_APP_INFO:
+				return createStaticModelAppInfo();
+			case Mif2Package.STATIC_MODEL_BASE:
+				return createStaticModelBase();
+			case Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER:
+				return createStaticModelClassTemplateParameter();
+			case Mif2Package.STATIC_MODEL_DERIVATION:
+				return createStaticModelDerivation();
+			case Mif2Package.STATIC_MODEL_DERIVATION_SOURCE:
+				return createStaticModelDerivationSource();
+			case Mif2Package.STATIC_MODEL_DOCUMENTATION:
+				return createStaticModelDocumentation();
+			case Mif2Package.STATIC_MODEL_INTERFACE_ANNOTATIONS:
+				return createStaticModelInterfaceAnnotations();
+			case Mif2Package.STATIC_MODEL_INTERFACE_APP_INFO:
+				return createStaticModelInterfaceAppInfo();
+			case Mif2Package.STATIC_MODEL_INTERFACE_DOCUMENTATION:
+				return createStaticModelInterfaceDocumentation();
+			case Mif2Package.STATIC_MODEL_INTERFACE_PACKAGE:
+				return createStaticModelInterfacePackage();
+			case Mif2Package.STATIC_MODEL_REF_BASE:
+				return createStaticModelRefBase();
+			case Mif2Package.STATIC_MODELS_TYPE:
+				return createStaticModelsType();
+			case Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION:
+				return createStaticPackageDiagramGraphicInformation();
+			case Mif2Package.STORYBOARD:
+				return createStoryboard();
+			case Mif2Package.STORYBOARD_ANNOTATIONS:
+				return createStoryboardAnnotations();
+			case Mif2Package.STORYBOARD_APP_INFO:
+				return createStoryboardAppInfo();
+			case Mif2Package.STORYBOARD_ARTIFACT_REFERENCES:
+				return createStoryboardArtifactReferences();
+			case Mif2Package.STORYBOARD_DOCUMENTATION:
+				return createStoryboardDocumentation();
+			case Mif2Package.STORYBOARD_NARRATIVE:
+				return createStoryboardNarrative();
+			case Mif2Package.STRUCTURED_DOCUMENT:
+				return createStructuredDocument();
+			case Mif2Package.STRUCTURED_DOCUMENT_ANNOTATIONS:
+				return createStructuredDocumentAnnotations();
+			case Mif2Package.STRUCTURED_DOCUMENT_APP_INFO:
+				return createStructuredDocumentAppInfo();
+			case Mif2Package.STRUCTURED_DOCUMENT_DOCUMENTATION:
+				return createStructuredDocumentDocumentation();
+			case Mif2Package.STUB_DEFINITION:
+				return createStubDefinition();
+			case Mif2Package.SUBJECT_AREA_ANNOTATIONS:
+				return createSubjectAreaAnnotations();
+			case Mif2Package.SUBJECT_AREA_APP_INFO:
+				return createSubjectAreaAppInfo();
+			case Mif2Package.SUBJECT_AREA_DOCUMENTATION:
+				return createSubjectAreaDocumentation();
+			case Mif2Package.SUBJECT_AREA_PACKAGE:
+				return createSubjectAreaPackage();
+			case Mif2Package.SUB_SYSTEM:
+				return createSubSystem();
+			case Mif2Package.SUPPORTED_CONCEPT_PROPERTY:
+				return createSupportedConceptProperty();
+			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP:
+				return createSupportedConceptRelationship();
+			case Mif2Package.SUPPORTED_PROPERTY:
+				return createSupportedProperty();
+			case Mif2Package.TERM_DEFINITION:
+				return createTermDefinition();
+			case Mif2Package.TERMINOLOGY_SERVER:
+				return createTerminologyServer();
+			case Mif2Package.TEST:
+				return createTest();
+			case Mif2Package.TEST_SCENARIO:
+				return createTestScenario();
+			case Mif2Package.TEST_SYSTEM:
+				return createTestSystem();
+			case Mif2Package.TRANSITION:
+				return createTransition();
+			case Mif2Package.TRANSITION_ANNOTATIONS:
+				return createTransitionAnnotations();
+			case Mif2Package.TRANSITION_APP_INFO:
+				return createTransitionAppInfo();
+			case Mif2Package.TRANSITION_DERIVATION:
+				return createTransitionDerivation();
+			case Mif2Package.TRANSITION_DOCUMENTATION:
+				return createTransitionDocumentation();
+			case Mif2Package.TRANSITION_REF:
+				return createTransitionRef();
+			case Mif2Package.TRIGGER_EVENT:
+				return createTriggerEvent();
+			case Mif2Package.TRIGGER_EVENT_ANNOTATIONS:
+				return createTriggerEventAnnotations();
+			case Mif2Package.TRIGGER_EVENT_APP_INFO:
+				return createTriggerEventAppInfo();
+			case Mif2Package.TRIGGER_EVENT_DOCUMENTATION:
+				return createTriggerEventDocumentation();
+			case Mif2Package.VALUE_SET:
+				return createValueSet();
+			case Mif2Package.VALUE_SET_ANNOTATIONS:
+				return createValueSetAnnotations();
+			case Mif2Package.VALUE_SET_APP_INFO:
+				return createValueSetAppInfo();
+			case Mif2Package.VALUE_SET_DOCUMENTATION:
+				return createValueSetDocumentation();
+			case Mif2Package.VALUE_SET_SUPPLEMENT:
+				return createValueSetSupplement();
+			case Mif2Package.VALUE_SET_VERSION:
+				return createValueSetVersion();
+			case Mif2Package.VARIOUS_MIXED_CONTENT:
+				return createVariousMixedContent();
+			case Mif2Package.VOCABULARY_CODE_REF:
+				return createVocabularyCodeRef();
+			case Mif2Package.VOCABULARY_CODE_REFS:
+				return createVocabularyCodeRefs();
+			case Mif2Package.VOCABULARY_LIMITATION:
+				return createVocabularyLimitation();
+			case Mif2Package.VOCABULARY_MODEL:
+				return createVocabularyModel();
+			case Mif2Package.VOCABULARY_MODEL_ANNOTATIONS:
+				return createVocabularyModelAnnotations();
+			case Mif2Package.VOCABULARY_MODEL_APP_INFO:
+				return createVocabularyModelAppInfo();
+			case Mif2Package.VOCABULARY_MODEL_DOCUMENTATION:
+				return createVocabularyModelDocumentation();
+			case Mif2Package.VOCABULARY_SPECIFICATION:
+				return createVocabularySpecification();
+			case Mif2Package.VOCABULARY_VALUE_SET_BINDING:
+				return createVocabularyValueSetBinding();
+			case Mif2Package.VOCABULARY_VALUE_SET_REF:
+				return createVocabularyValueSetRef();
+			case Mif2Package.XMI_CONTENT:
+				return createXMIContent();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -844,7 +1215,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 			case Mif2Package.YEARS:
 				return createYearsFromString(eDataType, initialValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
+						"' is not a valid classifier");
 		}
 	}
 
@@ -1235,7 +1607,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 			case Mif2Package.YEARS:
 				return convertYearsToString(eDataType, instanceValue);
 			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() +
+						"' is not a valid classifier");
 		}
 	}
 
@@ -4996,7 +5369,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public AffiliateKind createAffiliateKindFromString(EDataType eDataType, String initialValue) {
 		AffiliateKind result = AffiliateKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5006,7 +5382,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertAffiliateKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5014,9 +5392,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AffirmativeVoteResolutionKind createAffirmativeVoteResolutionKindFromString(EDataType eDataType, String initialValue) {
+	public AffirmativeVoteResolutionKind createAffirmativeVoteResolutionKindFromString(EDataType eDataType,
+			String initialValue) {
 		AffirmativeVoteResolutionKind result = AffirmativeVoteResolutionKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5026,7 +5408,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertAffirmativeVoteResolutionKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5036,7 +5420,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public AnnotationKind createAnnotationKindFromString(EDataType eDataType, String initialValue) {
 		AnnotationKind result = AnnotationKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5046,7 +5433,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertAnnotationKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5054,9 +5443,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ApplicationRoleRelationshipKind createApplicationRoleRelationshipKindFromString(EDataType eDataType, String initialValue) {
+	public ApplicationRoleRelationshipKind createApplicationRoleRelationshipKindFromString(EDataType eDataType,
+			String initialValue) {
 		ApplicationRoleRelationshipKind result = ApplicationRoleRelationshipKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5066,7 +5459,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertApplicationRoleRelationshipKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5076,7 +5471,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public ApprovalStatusKind createApprovalStatusKindFromString(EDataType eDataType, String initialValue) {
 		ApprovalStatusKind result = ApprovalStatusKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5086,7 +5484,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertApprovalStatusKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5096,7 +5496,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public ArtifactGroupKind createArtifactGroupKindFromString(EDataType eDataType, String initialValue) {
 		ArtifactGroupKind result = ArtifactGroupKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5106,7 +5509,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertArtifactGroupKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5116,7 +5521,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public ArtifactKind createArtifactKindFromString(EDataType eDataType, String initialValue) {
 		ArtifactKind result = ArtifactKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5126,7 +5534,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertArtifactKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5134,9 +5544,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArtifactRenderingStyleKind createArtifactRenderingStyleKindFromString(EDataType eDataType, String initialValue) {
+	public ArtifactRenderingStyleKind createArtifactRenderingStyleKindFromString(EDataType eDataType,
+			String initialValue) {
 		ArtifactRenderingStyleKind result = ArtifactRenderingStyleKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5146,7 +5560,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertArtifactRenderingStyleKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5156,7 +5572,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public AttributePropertyKind createAttributePropertyKindFromString(EDataType eDataType, String initialValue) {
 		AttributePropertyKind result = AttributePropertyKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5166,7 +5585,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertAttributePropertyKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5174,9 +5595,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CascadingAnnotationElementKind createCascadingAnnotationElementKindFromString(EDataType eDataType, String initialValue) {
+	public CascadingAnnotationElementKind createCascadingAnnotationElementKindFromString(EDataType eDataType,
+			String initialValue) {
 		CascadingAnnotationElementKind result = CascadingAnnotationElementKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5186,7 +5611,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertCascadingAnnotationElementKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5196,7 +5623,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public ChangeRequestStatus createChangeRequestStatusFromString(EDataType eDataType, String initialValue) {
 		ChangeRequestStatus result = ChangeRequestStatus.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5206,7 +5636,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertChangeRequestStatusToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5216,7 +5648,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public ClassPresentationKind createClassPresentationKindFromString(EDataType eDataType, String initialValue) {
 		ClassPresentationKind result = ClassPresentationKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5226,7 +5661,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertClassPresentationKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5236,7 +5673,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public CMETAttributionKind createCMETAttributionKindFromString(EDataType eDataType, String initialValue) {
 		CMETAttributionKind result = CMETAttributionKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5246,7 +5686,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertCMETAttributionKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5256,7 +5698,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public CMETEntryKind createCMETEntryKindFromString(EDataType eDataType, String initialValue) {
 		CMETEntryKind result = CMETEntryKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5266,7 +5711,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertCMETEntryKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5276,7 +5723,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public CodeFilterExpressionKind createCodeFilterExpressionKindFromString(EDataType eDataType, String initialValue) {
 		CodeFilterExpressionKind result = CodeFilterExpressionKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5286,7 +5736,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertCodeFilterExpressionKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5296,7 +5748,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public CodeStatusKind createCodeStatusKindFromString(EDataType eDataType, String initialValue) {
 		CodeStatusKind result = CodeStatusKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5306,7 +5761,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertCodeStatusKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5316,7 +5773,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public CodingStrengthKind createCodingStrengthKindFromString(EDataType eDataType, String initialValue) {
 		CodingStrengthKind result = CodingStrengthKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5326,7 +5786,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertCodingStrengthKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5336,7 +5798,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public ConceptDomainPropertyKind createConceptDomainPropertyKindFromString(EDataType eDataType, String initialValue) {
 		ConceptDomainPropertyKind result = ConceptDomainPropertyKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5346,7 +5811,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertConceptDomainPropertyKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5356,7 +5823,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public ConceptPropertyTypeKind createConceptPropertyTypeKindFromString(EDataType eDataType, String initialValue) {
 		ConceptPropertyTypeKind result = ConceptPropertyTypeKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5366,7 +5836,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertConceptPropertyTypeKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5376,7 +5848,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public ConceptRelationshipKind createConceptRelationshipKindFromString(EDataType eDataType, String initialValue) {
 		ConceptRelationshipKind result = ConceptRelationshipKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5386,7 +5861,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertConceptRelationshipKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5396,7 +5873,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public ConceptUseKind createConceptUseKindFromString(EDataType eDataType, String initialValue) {
 		ConceptUseKind result = ConceptUseKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5406,7 +5886,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertConceptUseKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5416,7 +5898,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public ConformanceKind createConformanceKindFromString(EDataType eDataType, String initialValue) {
 		ConformanceKind result = ConformanceKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5426,7 +5911,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertConformanceKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5436,7 +5923,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public ConstructedElementKind createConstructedElementKindFromString(EDataType eDataType, String initialValue) {
 		ConstructedElementKind result = ConstructedElementKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5446,7 +5936,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertConstructedElementKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5456,7 +5948,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public ContentsLevelKind createContentsLevelKindFromString(EDataType eDataType, String initialValue) {
 		ContentsLevelKind result = ContentsLevelKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5466,7 +5961,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertContentsLevelKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5476,7 +5973,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public DatatypeKind createDatatypeKindFromString(EDataType eDataType, String initialValue) {
 		DatatypeKind result = DatatypeKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5486,7 +5986,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertDatatypeKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5496,7 +5998,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public DatatypeOperationKind createDatatypeOperationKindFromString(EDataType eDataType, String initialValue) {
 		DatatypeOperationKind result = DatatypeOperationKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5506,7 +6011,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertDatatypeOperationKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5516,7 +6023,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public DatatypeQualifierKind createDatatypeQualifierKindFromString(EDataType eDataType, String initialValue) {
 		DatatypeQualifierKind result = DatatypeQualifierKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5526,7 +6036,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertDatatypeQualifierKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5536,7 +6048,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public DefaultDeterminerKind createDefaultDeterminerKindFromString(EDataType eDataType, String initialValue) {
 		DefaultDeterminerKind result = DefaultDeterminerKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5546,7 +6061,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertDefaultDeterminerKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5556,7 +6073,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public DefinedMappingSourceKind createDefinedMappingSourceKindFromString(EDataType eDataType, String initialValue) {
 		DefinedMappingSourceKind result = DefinedMappingSourceKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5566,7 +6086,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertDefinedMappingSourceKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5576,7 +6098,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public DefinedRoleKind createDefinedRoleKindFromString(EDataType eDataType, String initialValue) {
 		DefinedRoleKind result = DefinedRoleKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5586,7 +6111,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertDefinedRoleKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5594,9 +6121,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DerivationRelationshipKind createDerivationRelationshipKindFromString(EDataType eDataType, String initialValue) {
+	public DerivationRelationshipKind createDerivationRelationshipKindFromString(EDataType eDataType,
+			String initialValue) {
 		DerivationRelationshipKind result = DerivationRelationshipKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5606,7 +6137,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertDerivationRelationshipKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5616,7 +6149,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public DesignCommentTagKind createDesignCommentTagKindFromString(EDataType eDataType, String initialValue) {
 		DesignCommentTagKind result = DesignCommentTagKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5626,7 +6162,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertDesignCommentTagKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5636,7 +6174,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public DocumentProfileKind createDocumentProfileKindFromString(EDataType eDataType, String initialValue) {
 		DocumentProfileKind result = DocumentProfileKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5646,7 +6187,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertDocumentProfileKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5656,7 +6199,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public DomainKind createDomainKindFromString(EDataType eDataType, String initialValue) {
 		DomainKind result = DomainKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5666,7 +6212,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertDomainKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5676,7 +6224,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public DurationUnitsKind createDurationUnitsKindFromString(EDataType eDataType, String initialValue) {
 		DurationUnitsKind result = DurationUnitsKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5686,7 +6237,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertDurationUnitsKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5696,7 +6249,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public EffortQuantifierKind createEffortQuantifierKindFromString(EDataType eDataType, String initialValue) {
 		EffortQuantifierKind result = EffortQuantifierKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5706,7 +6262,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertEffortQuantifierKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5716,7 +6274,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public ExpressionLanguageKind createExpressionLanguageKindFromString(EDataType eDataType, String initialValue) {
 		ExpressionLanguageKind result = ExpressionLanguageKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5726,7 +6287,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertExpressionLanguageKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5736,7 +6299,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public FilterKind createFilterKindFromString(EDataType eDataType, String initialValue) {
 		FilterKind result = FilterKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5746,7 +6312,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertFilterKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5756,7 +6324,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public Functionalism createFunctionalismFromString(EDataType eDataType, String initialValue) {
 		Functionalism result = Functionalism.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5766,7 +6337,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertFunctionalismToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5776,7 +6349,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public IconFormatKind createIconFormatKindFromString(EDataType eDataType, String initialValue) {
 		IconFormatKind result = IconFormatKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5786,7 +6362,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertIconFormatKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5796,7 +6374,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public InteractionKind createInteractionKindFromString(EDataType eDataType, String initialValue) {
 		InteractionKind result = InteractionKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5806,7 +6387,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertInteractionKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5816,7 +6399,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public InteractionProfileKind createInteractionProfileKindFromString(EDataType eDataType, String initialValue) {
 		InteractionProfileKind result = InteractionProfileKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5826,7 +6412,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertInteractionProfileKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5836,7 +6424,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public ITSKind createITSKindFromString(EDataType eDataType, String initialValue) {
 		ITSKind result = ITSKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5846,7 +6437,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertITSKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5856,7 +6449,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public MapRelationshipKind createMapRelationshipKindFromString(EDataType eDataType, String initialValue) {
 		MapRelationshipKind result = MapRelationshipKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5866,7 +6462,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertMapRelationshipKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5876,7 +6474,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public ModelConformanceKind createModelConformanceKindFromString(EDataType eDataType, String initialValue) {
 		ModelConformanceKind result = ModelConformanceKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5886,7 +6487,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertModelConformanceKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5894,9 +6497,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NegativeVoteResolutionKind createNegativeVoteResolutionKindFromString(EDataType eDataType, String initialValue) {
+	public NegativeVoteResolutionKind createNegativeVoteResolutionKindFromString(EDataType eDataType,
+			String initialValue) {
 		NegativeVoteResolutionKind result = NegativeVoteResolutionKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5906,7 +6513,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertNegativeVoteResolutionKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5916,7 +6525,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public NodeOrientation createNodeOrientationFromString(EDataType eDataType, String initialValue) {
 		NodeOrientation result = NodeOrientation.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5926,7 +6538,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertNodeOrientationToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5936,7 +6550,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public OwnerScopeKind createOwnerScopeKindFromString(EDataType eDataType, String initialValue) {
 		OwnerScopeKind result = OwnerScopeKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5946,7 +6563,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertOwnerScopeKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5956,7 +6575,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public PackageKind createPackageKindFromString(EDataType eDataType, String initialValue) {
 		PackageKind result = PackageKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5966,7 +6588,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertPackageKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5976,7 +6600,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public PackageRootKind createPackageRootKindFromString(EDataType eDataType, String initialValue) {
 		PackageRootKind result = PackageRootKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -5986,7 +6613,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertPackageRootKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -5996,7 +6625,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public ParentArtifactKind createParentArtifactKindFromString(EDataType eDataType, String initialValue) {
 		ParentArtifactKind result = ParentArtifactKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6006,7 +6638,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertParentArtifactKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6014,9 +6648,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyDefaultHandlingKind createPropertyDefaultHandlingKindFromString(EDataType eDataType, String initialValue) {
+	public PropertyDefaultHandlingKind createPropertyDefaultHandlingKindFromString(EDataType eDataType,
+			String initialValue) {
 		PropertyDefaultHandlingKind result = PropertyDefaultHandlingKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6026,7 +6664,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertPropertyDefaultHandlingKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6036,7 +6676,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public Reflexivity createReflexivityFromString(EDataType eDataType, String initialValue) {
 		Reflexivity result = Reflexivity.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6046,7 +6689,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertReflexivityToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6056,7 +6701,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public RelationshipTraversalKind createRelationshipTraversalKindFromString(EDataType eDataType, String initialValue) {
 		RelationshipTraversalKind result = RelationshipTraversalKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6066,7 +6714,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertRelationshipTraversalKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6076,7 +6726,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public RevisionFrequencyKind createRevisionFrequencyKindFromString(EDataType eDataType, String initialValue) {
 		RevisionFrequencyKind result = RevisionFrequencyKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6086,7 +6739,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertRevisionFrequencyKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6096,7 +6751,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public SectionKind createSectionKindFromString(EDataType eDataType, String initialValue) {
 		SectionKind result = SectionKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6106,7 +6764,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertSectionKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6114,9 +6774,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StaticModelDiagramPresentationKind createStaticModelDiagramPresentationKindFromString(EDataType eDataType, String initialValue) {
+	public StaticModelDiagramPresentationKind createStaticModelDiagramPresentationKindFromString(EDataType eDataType,
+			String initialValue) {
 		StaticModelDiagramPresentationKind result = StaticModelDiagramPresentationKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6126,7 +6790,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertStaticModelDiagramPresentationKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6134,9 +6800,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StaticModelRepresentationKind createStaticModelRepresentationKindFromString(EDataType eDataType, String initialValue) {
+	public StaticModelRepresentationKind createStaticModelRepresentationKindFromString(EDataType eDataType,
+			String initialValue) {
 		StaticModelRepresentationKind result = StaticModelRepresentationKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6146,7 +6816,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertStaticModelRepresentationKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6156,7 +6828,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public StaticModelUseKind createStaticModelUseKindFromString(EDataType eDataType, String initialValue) {
 		StaticModelUseKind result = StaticModelUseKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6166,7 +6841,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertStaticModelUseKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6176,7 +6853,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public SubArtifactKind createSubArtifactKindFromString(EDataType eDataType, String initialValue) {
 		SubArtifactKind result = SubArtifactKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6186,7 +6866,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertSubArtifactKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6196,7 +6878,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public SubSectionKind createSubSectionKindFromString(EDataType eDataType, String initialValue) {
 		SubSectionKind result = SubSectionKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6206,7 +6891,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertSubSectionKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6216,7 +6903,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public Symmetry createSymmetryFromString(EDataType eDataType, String initialValue) {
 		Symmetry result = Symmetry.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6226,7 +6916,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertSymmetryToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6236,7 +6928,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public TerminologyServerKind createTerminologyServerKindFromString(EDataType eDataType, String initialValue) {
 		TerminologyServerKind result = TerminologyServerKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6246,7 +6941,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertTerminologyServerKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6256,7 +6953,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public Transitivity createTransitivityFromString(EDataType eDataType, String initialValue) {
 		Transitivity result = Transitivity.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6266,7 +6966,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertTransitivityToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6276,7 +6978,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public TranslatableDirectionKind createTranslatableDirectionKindFromString(EDataType eDataType, String initialValue) {
 		TranslatableDirectionKind result = TranslatableDirectionKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6286,7 +6991,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertTranslatableDirectionKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6296,7 +7003,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public UnlimitedMultiplicity createUnlimitedMultiplicityFromString(EDataType eDataType, String initialValue) {
 		UnlimitedMultiplicity result = UnlimitedMultiplicity.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6306,7 +7016,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertUnlimitedMultiplicityToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6316,7 +7028,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public UpdateModeKind createUpdateModeKindFromString(EDataType eDataType, String initialValue) {
 		UpdateModeKind result = UpdateModeKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6326,7 +7041,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertUpdateModeKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6336,7 +7053,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public VisibilityKind createVisibilityKindFromString(EDataType eDataType, String initialValue) {
 		VisibilityKind result = VisibilityKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6346,7 +7066,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertVisibilityKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6354,9 +7076,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VocabularyModelDefinitionKind createVocabularyModelDefinitionKindFromString(EDataType eDataType, String initialValue) {
+	public VocabularyModelDefinitionKind createVocabularyModelDefinitionKindFromString(EDataType eDataType,
+			String initialValue) {
 		VocabularyModelDefinitionKind result = VocabularyModelDefinitionKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6366,7 +7092,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertVocabularyModelDefinitionKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6376,7 +7104,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public VoteCommentKind createVoteCommentKindFromString(EDataType eDataType, String initialValue) {
 		VoteCommentKind result = VoteCommentKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6386,7 +7117,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertVoteCommentKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6396,7 +7129,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 */
 	public VoteKind createVoteKindFromString(EDataType eDataType, String initialValue) {
 		VoteKind result = VoteKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" +
+					eDataType.getName() + "'");
+		}
 		return result;
 	}
 
@@ -6406,7 +7142,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertVoteKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
 	}
 
 	/**
@@ -6432,8 +7170,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AffirmativeVoteResolutionKind createAffirmativeVoteResolutionKindObjectFromString(EDataType eDataType, String initialValue) {
-		return createAffirmativeVoteResolutionKindFromString(Mif2Package.Literals.AFFIRMATIVE_VOTE_RESOLUTION_KIND, initialValue);
+	public AffirmativeVoteResolutionKind createAffirmativeVoteResolutionKindObjectFromString(EDataType eDataType,
+			String initialValue) {
+		return createAffirmativeVoteResolutionKindFromString(
+			Mif2Package.Literals.AFFIRMATIVE_VOTE_RESOLUTION_KIND, initialValue);
 	}
 
 	/**
@@ -6442,7 +7182,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertAffirmativeVoteResolutionKindObjectToString(EDataType eDataType, Object instanceValue) {
-		return convertAffirmativeVoteResolutionKindToString(Mif2Package.Literals.AFFIRMATIVE_VOTE_RESOLUTION_KIND, instanceValue);
+		return convertAffirmativeVoteResolutionKindToString(
+			Mif2Package.Literals.AFFIRMATIVE_VOTE_RESOLUTION_KIND, instanceValue);
 	}
 
 	/**
@@ -6451,7 +7192,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createAllClassNameFromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null) return null;
+		if (initialValue == null) {
+			return null;
+		}
 		String result = null;
 		RuntimeException exception = null;
 		try {
@@ -6459,21 +7202,22 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
 		try {
-			result = createPrefixedUpperCamelCaseFromString(Mif2Package.Literals.PREFIXED_UPPER_CAMEL_CASE, initialValue);
+			result = createPrefixedUpperCamelCaseFromString(
+				Mif2Package.Literals.PREFIXED_UPPER_CAMEL_CASE, initialValue);
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
-		if (result != null || exception == null) return result;
-    
+		if (result != null || exception == null) {
+			return result;
+		}
+
 		throw exception;
 	}
 
@@ -6483,26 +7227,32 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertAllClassNameToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null) return null;
+		if (instanceValue == null) {
+			return null;
+		}
 		if (Mif2Package.Literals.FORMAL_PROPER_NAME.isInstance(instanceValue)) {
 			try {
 				String value = convertFormalProperNameToString(Mif2Package.Literals.FORMAL_PROPER_NAME, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
 		if (Mif2Package.Literals.PREFIXED_UPPER_CAMEL_CASE.isInstance(instanceValue)) {
 			try {
-				String value = convertPrefixedUpperCamelCaseToString(Mif2Package.Literals.PREFIXED_UPPER_CAMEL_CASE, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				String value = convertPrefixedUpperCamelCaseToString(
+					Mif2Package.Literals.PREFIXED_UPPER_CAMEL_CASE, instanceValue);
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
-		throw new IllegalArgumentException("Invalid value: '"+instanceValue+"' for datatype :"+eDataType.getName());
+		throw new IllegalArgumentException("Invalid value: '" + instanceValue + "' for datatype :" +
+				eDataType.getName());
 	}
 
 	/**
@@ -6528,8 +7278,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ApplicationRoleRelationshipKind createApplicationRoleRelationshipKindObjectFromString(EDataType eDataType, String initialValue) {
-		return createApplicationRoleRelationshipKindFromString(Mif2Package.Literals.APPLICATION_ROLE_RELATIONSHIP_KIND, initialValue);
+	public ApplicationRoleRelationshipKind createApplicationRoleRelationshipKindObjectFromString(EDataType eDataType,
+			String initialValue) {
+		return createApplicationRoleRelationshipKindFromString(
+			Mif2Package.Literals.APPLICATION_ROLE_RELATIONSHIP_KIND, initialValue);
 	}
 
 	/**
@@ -6538,7 +7290,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertApplicationRoleRelationshipKindObjectToString(EDataType eDataType, Object instanceValue) {
-		return convertApplicationRoleRelationshipKindToString(Mif2Package.Literals.APPLICATION_ROLE_RELATIONSHIP_KIND, instanceValue);
+		return convertApplicationRoleRelationshipKindToString(
+			Mif2Package.Literals.APPLICATION_ROLE_RELATIONSHIP_KIND, instanceValue);
 	}
 
 	/**
@@ -6600,8 +7353,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArtifactRenderingStyleKind createArtifactRenderingStyleKindObjectFromString(EDataType eDataType, String initialValue) {
-		return createArtifactRenderingStyleKindFromString(Mif2Package.Literals.ARTIFACT_RENDERING_STYLE_KIND, initialValue);
+	public ArtifactRenderingStyleKind createArtifactRenderingStyleKindObjectFromString(EDataType eDataType,
+			String initialValue) {
+		return createArtifactRenderingStyleKindFromString(
+			Mif2Package.Literals.ARTIFACT_RENDERING_STYLE_KIND, initialValue);
 	}
 
 	/**
@@ -6610,7 +7365,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertArtifactRenderingStyleKindObjectToString(EDataType eDataType, Object instanceValue) {
-		return convertArtifactRenderingStyleKindToString(Mif2Package.Literals.ARTIFACT_RENDERING_STYLE_KIND, instanceValue);
+		return convertArtifactRenderingStyleKindToString(
+			Mif2Package.Literals.ARTIFACT_RENDERING_STYLE_KIND, instanceValue);
 	}
 
 	/**
@@ -6655,7 +7411,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createBasicIdFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
 	}
 
 	/**
@@ -6672,8 +7428,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CascadingAnnotationElementKind createCascadingAnnotationElementKindObjectFromString(EDataType eDataType, String initialValue) {
-		return createCascadingAnnotationElementKindFromString(Mif2Package.Literals.CASCADING_ANNOTATION_ELEMENT_KIND, initialValue);
+	public CascadingAnnotationElementKind createCascadingAnnotationElementKindObjectFromString(EDataType eDataType,
+			String initialValue) {
+		return createCascadingAnnotationElementKindFromString(
+			Mif2Package.Literals.CASCADING_ANNOTATION_ELEMENT_KIND, initialValue);
 	}
 
 	/**
@@ -6682,7 +7440,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertCascadingAnnotationElementKindObjectToString(EDataType eDataType, Object instanceValue) {
-		return convertCascadingAnnotationElementKindToString(Mif2Package.Literals.CASCADING_ANNOTATION_ELEMENT_KIND, instanceValue);
+		return convertCascadingAnnotationElementKindToString(
+			Mif2Package.Literals.CASCADING_ANNOTATION_ELEMENT_KIND, instanceValue);
 	}
 
 	/**
@@ -6745,7 +7504,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createCMETAttributionStringFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
 	}
 
 	/**
@@ -6763,7 +7522,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public Object createCMETAttributionTypeFromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null) return null;
+		if (initialValue == null) {
+			return null;
+		}
 		Object result = null;
 		RuntimeException exception = null;
 		try {
@@ -6771,8 +7532,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
 		try {
@@ -6780,12 +7540,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
-		if (result != null || exception == null) return result;
-    
+		if (result != null || exception == null) {
+			return result;
+		}
+
 		throw exception;
 	}
 
@@ -6795,26 +7556,33 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertCMETAttributionTypeToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null) return null;
+		if (instanceValue == null) {
+			return null;
+		}
 		if (Mif2Package.Literals.CMET_ATTRIBUTION_STRING.isInstance(instanceValue)) {
 			try {
-				String value = convertCMETAttributionStringToString(Mif2Package.Literals.CMET_ATTRIBUTION_STRING, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				String value = convertCMETAttributionStringToString(
+					Mif2Package.Literals.CMET_ATTRIBUTION_STRING, instanceValue);
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
 		if (Mif2Package.Literals.CMET_ATTRIBUTION_KIND.isInstance(instanceValue)) {
 			try {
-				String value = convertCMETAttributionKindToString(Mif2Package.Literals.CMET_ATTRIBUTION_KIND, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				String value = convertCMETAttributionKindToString(
+					Mif2Package.Literals.CMET_ATTRIBUTION_KIND, instanceValue);
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
-		throw new IllegalArgumentException("Invalid value: '"+instanceValue+"' for datatype :"+eDataType.getName());
+		throw new IllegalArgumentException("Invalid value: '" + instanceValue + "' for datatype :" +
+				eDataType.getName());
 	}
 
 	/**
@@ -6840,7 +7608,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CodeFilterExpressionKind createCodeFilterExpressionKindObjectFromString(EDataType eDataType, String initialValue) {
+	public CodeFilterExpressionKind createCodeFilterExpressionKindObjectFromString(EDataType eDataType,
+			String initialValue) {
 		return createCodeFilterExpressionKindFromString(Mif2Package.Literals.CODE_FILTER_EXPRESSION_KIND, initialValue);
 	}
 
@@ -6895,7 +7664,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createCollapsedPackageIdFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.TOKEN, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.TOKEN, initialValue);
 	}
 
 	/**
@@ -6912,8 +7681,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConceptDomainPropertyKind createConceptDomainPropertyKindObjectFromString(EDataType eDataType, String initialValue) {
-		return createConceptDomainPropertyKindFromString(Mif2Package.Literals.CONCEPT_DOMAIN_PROPERTY_KIND, initialValue);
+	public ConceptDomainPropertyKind createConceptDomainPropertyKindObjectFromString(EDataType eDataType,
+			String initialValue) {
+		return createConceptDomainPropertyKindFromString(
+			Mif2Package.Literals.CONCEPT_DOMAIN_PROPERTY_KIND, initialValue);
 	}
 
 	/**
@@ -6922,7 +7693,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertConceptDomainPropertyKindObjectToString(EDataType eDataType, Object instanceValue) {
-		return convertConceptDomainPropertyKindToString(Mif2Package.Literals.CONCEPT_DOMAIN_PROPERTY_KIND, instanceValue);
+		return convertConceptDomainPropertyKindToString(
+			Mif2Package.Literals.CONCEPT_DOMAIN_PROPERTY_KIND, instanceValue);
 	}
 
 	/**
@@ -6930,7 +7702,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConceptPropertyTypeKind createConceptPropertyTypeKindObjectFromString(EDataType eDataType, String initialValue) {
+	public ConceptPropertyTypeKind createConceptPropertyTypeKindObjectFromString(EDataType eDataType,
+			String initialValue) {
 		return createConceptPropertyTypeKindFromString(Mif2Package.Literals.CONCEPT_PROPERTY_TYPE_KIND, initialValue);
 	}
 
@@ -6948,7 +7721,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConceptRelationshipKind createConceptRelationshipKindObjectFromString(EDataType eDataType, String initialValue) {
+	public ConceptRelationshipKind createConceptRelationshipKindObjectFromString(EDataType eDataType,
+			String initialValue) {
 		return createConceptRelationshipKindFromString(Mif2Package.Literals.CONCEPT_RELATIONSHIP_KIND, initialValue);
 	}
 
@@ -7057,7 +7831,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createDatatypeNameFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
 	}
 
 	/**
@@ -7111,29 +7885,33 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public XMLGregorianCalendar createDateOrTimestampFromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null) return null;
+		if (initialValue == null) {
+			return null;
+		}
 		XMLGregorianCalendar result = null;
 		RuntimeException exception = null;
 		try {
-			result = (XMLGregorianCalendar)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.DATE_TIME, initialValue);
+			result = (XMLGregorianCalendar) XMLTypeFactory.eINSTANCE.createFromString(
+				XMLTypePackage.Literals.DATE_TIME, initialValue);
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
 		try {
-			result = (XMLGregorianCalendar)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.DATE, initialValue);
+			result = (XMLGregorianCalendar) XMLTypeFactory.eINSTANCE.createFromString(
+				XMLTypePackage.Literals.DATE, initialValue);
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
-		if (result != null || exception == null) return result;
-    
+		if (result != null || exception == null) {
+			return result;
+		}
+
 		throw exception;
 	}
 
@@ -7143,26 +7921,32 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertDateOrTimestampToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null) return null;
+		if (instanceValue == null) {
+			return null;
+		}
 		if (XMLTypePackage.Literals.DATE_TIME.isInstance(instanceValue)) {
 			try {
-				String value = XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.DATE_TIME, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				String value = XMLTypeFactory.eINSTANCE.convertToString(
+					XMLTypePackage.Literals.DATE_TIME, instanceValue);
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
 		if (XMLTypePackage.Literals.DATE.isInstance(instanceValue)) {
 			try {
 				String value = XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.DATE, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
-		throw new IllegalArgumentException("Invalid value: '"+instanceValue+"' for datatype :"+eDataType.getName());
+		throw new IllegalArgumentException("Invalid value: '" + instanceValue + "' for datatype :" +
+				eDataType.getName());
 	}
 
 	/**
@@ -7171,7 +7955,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public BigDecimal createDecimalFromString(EDataType eDataType, String initialValue) {
-		return (BigDecimal)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.DECIMAL, initialValue);
+		return (BigDecimal) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.DECIMAL, initialValue);
 	}
 
 	/**
@@ -7207,20 +7991,23 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public Enumerator createDefinedContextKindFromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null) return null;
+		if (initialValue == null) {
+			return null;
+		}
 		Enumerator result = null;
 		RuntimeException exception = null;
 		try {
-			result = (Enumerator)createAffiliateKindFromString(Mif2Package.Literals.AFFILIATE_KIND, initialValue);
+			result = createAffiliateKindFromString(Mif2Package.Literals.AFFILIATE_KIND, initialValue);
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
-		if (result != null || exception == null) return result;
-    
+		if (result != null || exception == null) {
+			return result;
+		}
+
 		throw exception;
 	}
 
@@ -7230,17 +8017,21 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertDefinedContextKindToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null) return null;
+		if (instanceValue == null) {
+			return null;
+		}
 		if (Mif2Package.Literals.AFFILIATE_KIND.isInstance(instanceValue)) {
 			try {
 				String value = convertAffiliateKindToString(Mif2Package.Literals.AFFILIATE_KIND, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
-		throw new IllegalArgumentException("Invalid value: '"+instanceValue+"' for datatype :"+eDataType.getName());
+		throw new IllegalArgumentException("Invalid value: '" + instanceValue + "' for datatype :" +
+				eDataType.getName());
 	}
 
 	/**
@@ -7248,7 +8039,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DefinedMappingSourceKind createDefinedMappingSourceKindObjectFromString(EDataType eDataType, String initialValue) {
+	public DefinedMappingSourceKind createDefinedMappingSourceKindObjectFromString(EDataType eDataType,
+			String initialValue) {
 		return createDefinedMappingSourceKindFromString(Mif2Package.Literals.DEFINED_MAPPING_SOURCE_KIND, initialValue);
 	}
 
@@ -7284,8 +8076,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DerivationRelationshipKind createDerivationRelationshipKindObjectFromString(EDataType eDataType, String initialValue) {
-		return createDerivationRelationshipKindFromString(Mif2Package.Literals.DERIVATION_RELATIONSHIP_KIND, initialValue);
+	public DerivationRelationshipKind createDerivationRelationshipKindObjectFromString(EDataType eDataType,
+			String initialValue) {
+		return createDerivationRelationshipKindFromString(
+			Mif2Package.Literals.DERIVATION_RELATIONSHIP_KIND, initialValue);
 	}
 
 	/**
@@ -7294,7 +8088,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertDerivationRelationshipKindObjectToString(EDataType eDataType, Object instanceValue) {
-		return convertDerivationRelationshipKindToString(Mif2Package.Literals.DERIVATION_RELATIONSHIP_KIND, instanceValue);
+		return convertDerivationRelationshipKindToString(
+			Mif2Package.Literals.DERIVATION_RELATIONSHIP_KIND, instanceValue);
 	}
 
 	/**
@@ -7393,7 +8188,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createEMailFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.ANY_URI, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.ANY_URI, initialValue);
 	}
 
 	/**
@@ -7411,7 +8206,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createEnumerationStringFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
 	}
 
 	/**
@@ -7429,7 +8224,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createEnumerationTokenFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
 	}
 
 	/**
@@ -7537,7 +8332,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public BigDecimal createGraphicMeasurementFromString(EDataType eDataType, String initialValue) {
-		return (BigDecimal)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.DECIMAL, initialValue);
+		return (BigDecimal) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.DECIMAL, initialValue);
 	}
 
 	/**
@@ -7555,7 +8350,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createHashCodeFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
 	}
 
 	/**
@@ -7645,7 +8440,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createLocalFileReferenceFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.ANY_URI, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.ANY_URI, initialValue);
 	}
 
 	/**
@@ -7681,7 +8476,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createLowerCamelCaseFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
 	}
 
 	/**
@@ -7699,16 +8494,18 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public Object createMappingSourceKindFromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null) return null;
+		if (initialValue == null) {
+			return null;
+		}
 		Object result = null;
 		RuntimeException exception = null;
 		try {
-			result = createDefinedMappingSourceKindFromString(Mif2Package.Literals.DEFINED_MAPPING_SOURCE_KIND, initialValue);
+			result = createDefinedMappingSourceKindFromString(
+				Mif2Package.Literals.DEFINED_MAPPING_SOURCE_KIND, initialValue);
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
 		try {
@@ -7716,12 +8513,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
-		if (result != null || exception == null) return result;
-    
+		if (result != null || exception == null) {
+			return result;
+		}
+
 		throw exception;
 	}
 
@@ -7731,26 +8529,33 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertMappingSourceKindToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null) return null;
+		if (instanceValue == null) {
+			return null;
+		}
 		if (Mif2Package.Literals.DEFINED_MAPPING_SOURCE_KIND.isInstance(instanceValue)) {
 			try {
-				String value = convertDefinedMappingSourceKindToString(Mif2Package.Literals.DEFINED_MAPPING_SOURCE_KIND, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				String value = convertDefinedMappingSourceKindToString(
+					Mif2Package.Literals.DEFINED_MAPPING_SOURCE_KIND, instanceValue);
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
 		if (Mif2Package.Literals.SHORT_DESCRIPTIVE_NAME.isInstance(instanceValue)) {
 			try {
-				String value = convertShortDescriptiveNameToString(Mif2Package.Literals.SHORT_DESCRIPTIVE_NAME, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				String value = convertShortDescriptiveNameToString(
+					Mif2Package.Literals.SHORT_DESCRIPTIVE_NAME, instanceValue);
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
-		throw new IllegalArgumentException("Invalid value: '"+instanceValue+"' for datatype :"+eDataType.getName());
+		throw new IllegalArgumentException("Invalid value: '" + instanceValue + "' for datatype :" +
+				eDataType.getName());
 	}
 
 	/**
@@ -7777,7 +8582,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createMimeTypeFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.TOKEN, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.TOKEN, initialValue);
 	}
 
 	/**
@@ -7812,8 +8617,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NegativeVoteResolutionKind createNegativeVoteResolutionKindObjectFromString(EDataType eDataType, String initialValue) {
-		return createNegativeVoteResolutionKindFromString(Mif2Package.Literals.NEGATIVE_VOTE_RESOLUTION_KIND, initialValue);
+	public NegativeVoteResolutionKind createNegativeVoteResolutionKindObjectFromString(EDataType eDataType,
+			String initialValue) {
+		return createNegativeVoteResolutionKindFromString(
+			Mif2Package.Literals.NEGATIVE_VOTE_RESOLUTION_KIND, initialValue);
 	}
 
 	/**
@@ -7822,7 +8629,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertNegativeVoteResolutionKindObjectToString(EDataType eDataType, Object instanceValue) {
-		return convertNegativeVoteResolutionKindToString(Mif2Package.Literals.NEGATIVE_VOTE_RESOLUTION_KIND, instanceValue);
+		return convertNegativeVoteResolutionKindToString(
+			Mif2Package.Literals.NEGATIVE_VOTE_RESOLUTION_KIND, instanceValue);
 	}
 
 	/**
@@ -7849,7 +8657,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createNonEmptyStringFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.TOKEN, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.TOKEN, initialValue);
 	}
 
 	/**
@@ -7867,7 +8675,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public BigDecimal createNonNegativeDecimalFromString(EDataType eDataType, String initialValue) {
-		return (BigDecimal)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.DECIMAL, initialValue);
+		return (BigDecimal) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.DECIMAL, initialValue);
 	}
 
 	/**
@@ -7885,7 +8693,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createOidFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.TOKEN, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.TOKEN, initialValue);
 	}
 
 	/**
@@ -7975,7 +8783,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public BigDecimal createPositiveDecimalFromString(EDataType eDataType, String initialValue) {
-		return (BigDecimal)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.DECIMAL, initialValue);
+		return (BigDecimal) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.DECIMAL, initialValue);
 	}
 
 	/**
@@ -7993,7 +8801,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createPrefixedUpperCamelCaseFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
 	}
 
 	/**
@@ -8010,8 +8818,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyDefaultHandlingKind createPropertyDefaultHandlingKindObjectFromString(EDataType eDataType, String initialValue) {
-		return createPropertyDefaultHandlingKindFromString(Mif2Package.Literals.PROPERTY_DEFAULT_HANDLING_KIND, initialValue);
+	public PropertyDefaultHandlingKind createPropertyDefaultHandlingKindObjectFromString(EDataType eDataType,
+			String initialValue) {
+		return createPropertyDefaultHandlingKindFromString(
+			Mif2Package.Literals.PROPERTY_DEFAULT_HANDLING_KIND, initialValue);
 	}
 
 	/**
@@ -8020,7 +8830,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertPropertyDefaultHandlingKindObjectToString(EDataType eDataType, Object instanceValue) {
-		return convertPropertyDefaultHandlingKindToString(Mif2Package.Literals.PROPERTY_DEFAULT_HANDLING_KIND, instanceValue);
+		return convertPropertyDefaultHandlingKindToString(
+			Mif2Package.Literals.PROPERTY_DEFAULT_HANDLING_KIND, instanceValue);
 	}
 
 	/**
@@ -8029,7 +8840,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public Object createRealmKindFromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null) return null;
+		if (initialValue == null) {
+			return null;
+		}
 		Object result = null;
 		RuntimeException exception = null;
 		try {
@@ -8037,8 +8850,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
 		try {
@@ -8046,12 +8858,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
-		if (result != null || exception == null) return result;
-    
+		if (result != null || exception == null) {
+			return result;
+		}
+
 		throw exception;
 	}
 
@@ -8061,26 +8874,32 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertRealmKindToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null) return null;
+		if (instanceValue == null) {
+			return null;
+		}
 		if (Mif2Package.Literals.ENUMERATION_TOKEN.isInstance(instanceValue)) {
 			try {
 				String value = convertEnumerationTokenToString(Mif2Package.Literals.ENUMERATION_TOKEN, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
 		if (Mif2Package.Literals.DEFINED_CONTEXT_KIND.isInstance(instanceValue)) {
 			try {
-				String value = convertDefinedContextKindToString(Mif2Package.Literals.DEFINED_CONTEXT_KIND, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				String value = convertDefinedContextKindToString(
+					Mif2Package.Literals.DEFINED_CONTEXT_KIND, instanceValue);
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
-		throw new IllegalArgumentException("Invalid value: '"+instanceValue+"' for datatype :"+eDataType.getName());
+		throw new IllegalArgumentException("Invalid value: '" + instanceValue + "' for datatype :" +
+				eDataType.getName());
 	}
 
 	/**
@@ -8089,7 +8908,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public Object createRealmNamespaceKindFromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null) return null;
+		if (initialValue == null) {
+			return null;
+		}
 		Object result = null;
 		RuntimeException exception = null;
 		try {
@@ -8097,8 +8918,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
 		try {
@@ -8106,12 +8926,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
-		if (result != null || exception == null) return result;
-    
+		if (result != null || exception == null) {
+			return result;
+		}
+
 		throw exception;
 	}
 
@@ -8121,26 +8942,31 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertRealmNamespaceKindToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null) return null;
+		if (instanceValue == null) {
+			return null;
+		}
 		if (Mif2Package.Literals.REALM_KIND.isInstance(instanceValue)) {
 			try {
 				String value = convertRealmKindToString(Mif2Package.Literals.REALM_KIND, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
 		if (Mif2Package.Literals.OID.isInstance(instanceValue)) {
 			try {
 				String value = convertOidToString(Mif2Package.Literals.OID, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
-		throw new IllegalArgumentException("Invalid value: '"+instanceValue+"' for datatype :"+eDataType.getName());
+		throw new IllegalArgumentException("Invalid value: '" + instanceValue + "' for datatype :" +
+				eDataType.getName());
 	}
 
 	/**
@@ -8166,7 +8992,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RelationshipTraversalKind createRelationshipTraversalKindObjectFromString(EDataType eDataType, String initialValue) {
+	public RelationshipTraversalKind createRelationshipTraversalKindObjectFromString(EDataType eDataType,
+			String initialValue) {
 		return createRelationshipTraversalKindFromString(Mif2Package.Literals.RELATIONSHIP_TRAVERSAL_KIND, initialValue);
 	}
 
@@ -8203,7 +9030,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public Object createRoleKindFromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null) return null;
+		if (initialValue == null) {
+			return null;
+		}
 		Object result = null;
 		RuntimeException exception = null;
 		try {
@@ -8211,8 +9040,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
 		try {
@@ -8220,12 +9048,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
-		if (result != null || exception == null) return result;
-    
+		if (result != null || exception == null) {
+			return result;
+		}
+
 		throw exception;
 	}
 
@@ -8235,26 +9064,32 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertRoleKindToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null) return null;
+		if (instanceValue == null) {
+			return null;
+		}
 		if (Mif2Package.Literals.DEFINED_ROLE_KIND.isInstance(instanceValue)) {
 			try {
 				String value = convertDefinedRoleKindToString(Mif2Package.Literals.DEFINED_ROLE_KIND, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
 		if (Mif2Package.Literals.SHORT_DESCRIPTIVE_NAME.isInstance(instanceValue)) {
 			try {
-				String value = convertShortDescriptiveNameToString(Mif2Package.Literals.SHORT_DESCRIPTIVE_NAME, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				String value = convertShortDescriptiveNameToString(
+					Mif2Package.Literals.SHORT_DESCRIPTIVE_NAME, instanceValue);
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
-		throw new IllegalArgumentException("Invalid value: '"+instanceValue+"' for datatype :"+eDataType.getName());
+		throw new IllegalArgumentException("Invalid value: '" + instanceValue + "' for datatype :" +
+				eDataType.getName());
 	}
 
 	/**
@@ -8299,7 +9134,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createShortStringFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
 	}
 
 	/**
@@ -8317,7 +9152,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public BigInteger createSingleNonNegativeIntegerFromString(EDataType eDataType, String initialValue) {
-		return (BigInteger)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NON_NEGATIVE_INTEGER, initialValue);
+		return (BigInteger) XMLTypeFactory.eINSTANCE.createFromString(
+			XMLTypePackage.Literals.NON_NEGATIVE_INTEGER, initialValue);
 	}
 
 	/**
@@ -8335,7 +9171,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public BigInteger createSmallNonNegativeIntegerFromString(EDataType eDataType, String initialValue) {
-		return (BigInteger)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NON_NEGATIVE_INTEGER, initialValue);
+		return (BigInteger) XMLTypeFactory.eINSTANCE.createFromString(
+			XMLTypePackage.Literals.NON_NEGATIVE_INTEGER, initialValue);
 	}
 
 	/**
@@ -8353,7 +9190,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public BigInteger createSmallPositiveIntegerFromString(EDataType eDataType, String initialValue) {
-		return (BigInteger)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.POSITIVE_INTEGER, initialValue);
+		return (BigInteger) XMLTypeFactory.eINSTANCE.createFromString(
+			XMLTypePackage.Literals.POSITIVE_INTEGER, initialValue);
 	}
 
 	/**
@@ -8370,8 +9208,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StaticModelDiagramPresentationKind createStaticModelDiagramPresentationKindObjectFromString(EDataType eDataType, String initialValue) {
-		return createStaticModelDiagramPresentationKindFromString(Mif2Package.Literals.STATIC_MODEL_DIAGRAM_PRESENTATION_KIND, initialValue);
+	public StaticModelDiagramPresentationKind createStaticModelDiagramPresentationKindObjectFromString(
+			EDataType eDataType, String initialValue) {
+		return createStaticModelDiagramPresentationKindFromString(
+			Mif2Package.Literals.STATIC_MODEL_DIAGRAM_PRESENTATION_KIND, initialValue);
 	}
 
 	/**
@@ -8380,7 +9220,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertStaticModelDiagramPresentationKindObjectToString(EDataType eDataType, Object instanceValue) {
-		return convertStaticModelDiagramPresentationKindToString(Mif2Package.Literals.STATIC_MODEL_DIAGRAM_PRESENTATION_KIND, instanceValue);
+		return convertStaticModelDiagramPresentationKindToString(
+			Mif2Package.Literals.STATIC_MODEL_DIAGRAM_PRESENTATION_KIND, instanceValue);
 	}
 
 	/**
@@ -8388,8 +9229,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StaticModelRepresentationKind createStaticModelRepresentationKindObjectFromString(EDataType eDataType, String initialValue) {
-		return createStaticModelRepresentationKindFromString(Mif2Package.Literals.STATIC_MODEL_REPRESENTATION_KIND, initialValue);
+	public StaticModelRepresentationKind createStaticModelRepresentationKindObjectFromString(EDataType eDataType,
+			String initialValue) {
+		return createStaticModelRepresentationKindFromString(
+			Mif2Package.Literals.STATIC_MODEL_REPRESENTATION_KIND, initialValue);
 	}
 
 	/**
@@ -8398,7 +9241,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertStaticModelRepresentationKindObjectToString(EDataType eDataType, Object instanceValue) {
-		return convertStaticModelRepresentationKindToString(Mif2Package.Literals.STATIC_MODEL_REPRESENTATION_KIND, instanceValue);
+		return convertStaticModelRepresentationKindToString(
+			Mif2Package.Literals.STATIC_MODEL_REPRESENTATION_KIND, instanceValue);
 	}
 
 	/**
@@ -8479,7 +9323,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createTemplateIdFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
 	}
 
 	/**
@@ -8532,7 +9376,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TranslatableDirectionKind createTranslatableDirectionKindObjectFromString(EDataType eDataType, String initialValue) {
+	public TranslatableDirectionKind createTranslatableDirectionKindObjectFromString(EDataType eDataType,
+			String initialValue) {
 		return createTranslatableDirectionKindFromString(Mif2Package.Literals.TRANSLATABLE_DIRECTION_KIND, initialValue);
 	}
 
@@ -8551,7 +9396,9 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public Object createUnlimitedIntegerFromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null) return null;
+		if (initialValue == null) {
+			return null;
+		}
 		Object result = null;
 		RuntimeException exception = null;
 		try {
@@ -8559,8 +9406,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
 		try {
@@ -8568,12 +9414,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
-		if (result != null || exception == null) return result;
-    
+		if (result != null || exception == null) {
+			return result;
+		}
+
 		throw exception;
 	}
 
@@ -8583,26 +9430,33 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertUnlimitedIntegerToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null) return null;
+		if (instanceValue == null) {
+			return null;
+		}
 		if (Mif2Package.Literals.SMALL_POSITIVE_INTEGER.isInstance(instanceValue)) {
 			try {
-				String value = convertSmallPositiveIntegerToString(Mif2Package.Literals.SMALL_POSITIVE_INTEGER, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				String value = convertSmallPositiveIntegerToString(
+					Mif2Package.Literals.SMALL_POSITIVE_INTEGER, instanceValue);
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
 		if (Mif2Package.Literals.UNLIMITED_MULTIPLICITY.isInstance(instanceValue)) {
 			try {
-				String value = convertUnlimitedMultiplicityToString(Mif2Package.Literals.UNLIMITED_MULTIPLICITY, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				String value = convertUnlimitedMultiplicityToString(
+					Mif2Package.Literals.UNLIMITED_MULTIPLICITY, instanceValue);
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
-		throw new IllegalArgumentException("Invalid value: '"+instanceValue+"' for datatype :"+eDataType.getName());
+		throw new IllegalArgumentException("Invalid value: '" + instanceValue + "' for datatype :" +
+				eDataType.getName());
 	}
 
 	/**
@@ -8629,9 +9483,11 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public List<UpdateModeKind> createUpdateModeCodesFromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null) return null;
+		if (initialValue == null) {
+			return null;
+		}
 		List<UpdateModeKind> result = new ArrayList<UpdateModeKind>();
-		for (StringTokenizer stringTokenizer = new StringTokenizer(initialValue); stringTokenizer.hasMoreTokens(); ) {
+		for (StringTokenizer stringTokenizer = new StringTokenizer(initialValue); stringTokenizer.hasMoreTokens();) {
 			String item = stringTokenizer.nextToken();
 			result.add(createUpdateModeKindFromString(Mif2Package.Literals.UPDATE_MODE_KIND, item));
 		}
@@ -8644,9 +9500,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertUpdateModeCodesToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null) return null;
-		List<?> list = (List<?>)instanceValue;
-		if (list.isEmpty()) return "";
+		if (instanceValue == null) {
+			return null;
+		}
+		List<?> list = (List<?>) instanceValue;
+		if (list.isEmpty()) {
+			return "";
+		}
 		StringBuffer result = new StringBuffer();
 		for (Object item : list) {
 			result.append(convertUpdateModeKindToString(Mif2Package.Literals.UPDATE_MODE_KIND, item));
@@ -8679,7 +9539,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createUpperCamelCaseFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
 	}
 
 	/**
@@ -8697,7 +9557,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createUriFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.ANY_URI, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.ANY_URI, initialValue);
 	}
 
 	/**
@@ -8715,7 +9575,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createUrlFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.ANY_URI, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.ANY_URI, initialValue);
 	}
 
 	/**
@@ -8733,7 +9593,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createUuidFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.TOKEN, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.TOKEN, initialValue);
 	}
 
 	/**
@@ -8751,7 +9611,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createVersionFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
 	}
 
 	/**
@@ -8786,8 +9646,10 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VocabularyModelDefinitionKind createVocabularyModelDefinitionKindObjectFromString(EDataType eDataType, String initialValue) {
-		return createVocabularyModelDefinitionKindFromString(Mif2Package.Literals.VOCABULARY_MODEL_DEFINITION_KIND, initialValue);
+	public VocabularyModelDefinitionKind createVocabularyModelDefinitionKindObjectFromString(EDataType eDataType,
+			String initialValue) {
+		return createVocabularyModelDefinitionKindFromString(
+			Mif2Package.Literals.VOCABULARY_MODEL_DEFINITION_KIND, initialValue);
 	}
 
 	/**
@@ -8796,7 +9658,8 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertVocabularyModelDefinitionKindObjectToString(EDataType eDataType, Object instanceValue) {
-		return convertVocabularyModelDefinitionKindToString(Mif2Package.Literals.VOCABULARY_MODEL_DEFINITION_KIND, instanceValue);
+		return convertVocabularyModelDefinitionKindToString(
+			Mif2Package.Literals.VOCABULARY_MODEL_DEFINITION_KIND, instanceValue);
 	}
 
 	/**
@@ -8841,29 +9704,33 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public Enumerator createVoteResolutionKindFromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null) return null;
+		if (initialValue == null) {
+			return null;
+		}
 		Enumerator result = null;
 		RuntimeException exception = null;
 		try {
-			result = (Enumerator)createAffirmativeVoteResolutionKindFromString(Mif2Package.Literals.AFFIRMATIVE_VOTE_RESOLUTION_KIND, initialValue);
+			result = createAffirmativeVoteResolutionKindFromString(
+				Mif2Package.Literals.AFFIRMATIVE_VOTE_RESOLUTION_KIND, initialValue);
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
 		try {
-			result = (Enumerator)createNegativeVoteResolutionKindFromString(Mif2Package.Literals.NEGATIVE_VOTE_RESOLUTION_KIND, initialValue);
+			result = createNegativeVoteResolutionKindFromString(
+				Mif2Package.Literals.NEGATIVE_VOTE_RESOLUTION_KIND, initialValue);
 			if (result != null && Diagnostician.INSTANCE.validate(eDataType, result, null, null)) {
 				return result;
 			}
-		}
-		catch (RuntimeException e) {
+		} catch (RuntimeException e) {
 			exception = e;
 		}
-		if (result != null || exception == null) return result;
-    
+		if (result != null || exception == null) {
+			return result;
+		}
+
 		throw exception;
 	}
 
@@ -8873,26 +9740,33 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertVoteResolutionKindToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null) return null;
+		if (instanceValue == null) {
+			return null;
+		}
 		if (Mif2Package.Literals.AFFIRMATIVE_VOTE_RESOLUTION_KIND.isInstance(instanceValue)) {
 			try {
-				String value = convertAffirmativeVoteResolutionKindToString(Mif2Package.Literals.AFFIRMATIVE_VOTE_RESOLUTION_KIND, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				String value = convertAffirmativeVoteResolutionKindToString(
+					Mif2Package.Literals.AFFIRMATIVE_VOTE_RESOLUTION_KIND, instanceValue);
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
 		if (Mif2Package.Literals.NEGATIVE_VOTE_RESOLUTION_KIND.isInstance(instanceValue)) {
 			try {
-				String value = convertNegativeVoteResolutionKindToString(Mif2Package.Literals.NEGATIVE_VOTE_RESOLUTION_KIND, instanceValue);
-				if (value != null) return value;
-			}
-			catch (Exception e) {
+				String value = convertNegativeVoteResolutionKindToString(
+					Mif2Package.Literals.NEGATIVE_VOTE_RESOLUTION_KIND, instanceValue);
+				if (value != null) {
+					return value;
+				}
+			} catch (Exception e) {
 				// Keep trying other member types until all have failed.
 			}
 		}
-		throw new IllegalArgumentException("Invalid value: '"+instanceValue+"' for datatype :"+eDataType.getName());
+		throw new IllegalArgumentException("Invalid value: '" + instanceValue + "' for datatype :" +
+				eDataType.getName());
 	}
 
 	/**
@@ -8901,7 +9775,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String createXDomainNameFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.NMTOKEN, initialValue);
 	}
 
 	/**
@@ -8919,7 +9793,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public BigInteger createYearFromString(EDataType eDataType, String initialValue) {
-		return (BigInteger)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.INTEGER, initialValue);
+		return (BigInteger) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.INTEGER, initialValue);
 	}
 
 	/**
@@ -8937,9 +9811,11 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public List<BigInteger> createYearsFromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null) return null;
+		if (initialValue == null) {
+			return null;
+		}
 		List<BigInteger> result = new ArrayList<BigInteger>();
-		for (StringTokenizer stringTokenizer = new StringTokenizer(initialValue); stringTokenizer.hasMoreTokens(); ) {
+		for (StringTokenizer stringTokenizer = new StringTokenizer(initialValue); stringTokenizer.hasMoreTokens();) {
 			String item = stringTokenizer.nextToken();
 			result.add(createYearFromString(Mif2Package.Literals.YEAR, item));
 		}
@@ -8952,9 +9828,13 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public String convertYearsToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null) return null;
-		List<?> list = (List<?>)instanceValue;
-		if (list.isEmpty()) return "";
+		if (instanceValue == null) {
+			return null;
+		}
+		List<?> list = (List<?>) instanceValue;
+		if (list.isEmpty()) {
+			return "";
+		}
 		StringBuffer result = new StringBuffer();
 		for (Object item : list) {
 			result.append(convertYearToString(Mif2Package.Literals.YEAR, item));
@@ -8969,7 +9849,7 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 	 * @generated
 	 */
 	public Mif2Package getMif2Package() {
-		return (Mif2Package)getEPackage();
+		return (Mif2Package) getEPackage();
 	}
 
 	/**
@@ -8983,4 +9863,4 @@ public class Mif2FactoryImpl extends EFactoryImpl implements Mif2Factory {
 		return Mif2Package.eINSTANCE;
 	}
 
-} //Mif2FactoryImpl
+} // Mif2FactoryImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -152,14 +156,8 @@ public enum ArtifactRenderingStyleKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ArtifactRenderingStyleKind[] VALUES_ARRAY =
-		new ArtifactRenderingStyleKind[] {
-			GRAPHICAL_DETAILED,
-			GRAPHICAL_SUMMARY,
-			TABLE_VIEW,
-			EXCEL_VIEW,
-			TEXT_VIEW,
-		};
+	private static final ArtifactRenderingStyleKind[] VALUES_ARRAY = new ArtifactRenderingStyleKind[] {
+			GRAPHICAL_DETAILED, GRAPHICAL_SUMMARY, TABLE_VIEW, EXCEL_VIEW, TEXT_VIEW, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Artifact Rendering Style Kind</b></em>' enumerators.
@@ -209,11 +207,16 @@ public enum ArtifactRenderingStyleKind implements Enumerator {
 	 */
 	public static ArtifactRenderingStyleKind get(int value) {
 		switch (value) {
-			case GRAPHICAL_DETAILED_VALUE: return GRAPHICAL_DETAILED;
-			case GRAPHICAL_SUMMARY_VALUE: return GRAPHICAL_SUMMARY;
-			case TABLE_VIEW_VALUE: return TABLE_VIEW;
-			case EXCEL_VIEW_VALUE: return EXCEL_VIEW;
-			case TEXT_VIEW_VALUE: return TEXT_VIEW;
+			case GRAPHICAL_DETAILED_VALUE:
+				return GRAPHICAL_DETAILED;
+			case GRAPHICAL_SUMMARY_VALUE:
+				return GRAPHICAL_SUMMARY;
+			case TABLE_VIEW_VALUE:
+				return TABLE_VIEW;
+			case EXCEL_VIEW_VALUE:
+				return EXCEL_VIEW;
+			case TEXT_VIEW_VALUE:
+				return TEXT_VIEW;
 		}
 		return null;
 	}
@@ -257,7 +260,7 @@ public enum ArtifactRenderingStyleKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -266,7 +269,7 @@ public enum ArtifactRenderingStyleKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -275,7 +278,7 @@ public enum ArtifactRenderingStyleKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -288,5 +291,5 @@ public enum ArtifactRenderingStyleKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //ArtifactRenderingStyleKind
+
+} // ArtifactRenderingStyleKind

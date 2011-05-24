@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -188,11 +192,15 @@ public class DivImpl extends FlowImpl implements Div {
 	 */
 	public void setClass(MifClassType newClass) {
 		MifClassType oldClass = class_;
-		class_ = newClass == null ? CLASS_EDEFAULT : newClass;
+		class_ = newClass == null
+				? CLASS_EDEFAULT
+				: newClass;
 		boolean oldClassESet = classESet;
 		classESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.DIV__CLASS, oldClass, class_, !oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.DIV__CLASS, oldClass, class_, !oldClassESet));
+		}
 	}
 
 	/**
@@ -205,8 +213,10 @@ public class DivImpl extends FlowImpl implements Div {
 		boolean oldClassESet = classESet;
 		class_ = CLASS_EDEFAULT;
 		classESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.DIV__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.DIV__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		}
 	}
 
 	/**
@@ -235,8 +245,9 @@ public class DivImpl extends FlowImpl implements Div {
 	public void setHl7Id(String newHl7Id) {
 		String oldHl7Id = hl7Id;
 		hl7Id = newHl7Id;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.DIV__HL7_ID, oldHl7Id, hl7Id));
+		}
 	}
 
 	/**
@@ -256,8 +267,9 @@ public class DivImpl extends FlowImpl implements Div {
 	public void setLang(String newLang) {
 		String oldLang = lang;
 		lang = newLang;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.DIV__LANG, oldLang, lang));
+		}
 	}
 
 	/**
@@ -276,11 +288,15 @@ public class DivImpl extends FlowImpl implements Div {
 	 */
 	public void setStyle(StyleSheet newStyle) {
 		StyleSheet oldStyle = style;
-		style = newStyle == null ? STYLE_EDEFAULT : newStyle;
+		style = newStyle == null
+				? STYLE_EDEFAULT
+				: newStyle;
 		boolean oldStyleESet = styleESet;
 		styleESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.DIV__STYLE, oldStyle, style, !oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.DIV__STYLE, oldStyle, style, !oldStyleESet));
+		}
 	}
 
 	/**
@@ -293,8 +309,10 @@ public class DivImpl extends FlowImpl implements Div {
 		boolean oldStyleESet = styleESet;
 		style = STYLE_EDEFAULT;
 		styleESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.DIV__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.DIV__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		}
 	}
 
 	/**
@@ -323,8 +341,9 @@ public class DivImpl extends FlowImpl implements Div {
 	public void setTitle(String newTitle) {
 		String oldTitle = title;
 		title = newTitle;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.DIV__TITLE, oldTitle, title));
+		}
 	}
 
 	/**
@@ -358,19 +377,19 @@ public class DivImpl extends FlowImpl implements Div {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case XhtmlPackage.DIV__CLASS:
-				setClass((MifClassType)newValue);
+				setClass((MifClassType) newValue);
 				return;
 			case XhtmlPackage.DIV__HL7_ID:
-				setHl7Id((String)newValue);
+				setHl7Id((String) newValue);
 				return;
 			case XhtmlPackage.DIV__LANG:
-				setLang((String)newValue);
+				setLang((String) newValue);
 				return;
 			case XhtmlPackage.DIV__STYLE:
-				setStyle((StyleSheet)newValue);
+				setStyle((StyleSheet) newValue);
 				return;
 			case XhtmlPackage.DIV__TITLE:
-				setTitle((String)newValue);
+				setTitle((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -414,13 +433,19 @@ public class DivImpl extends FlowImpl implements Div {
 			case XhtmlPackage.DIV__CLASS:
 				return isSetClass();
 			case XhtmlPackage.DIV__HL7_ID:
-				return HL7_ID_EDEFAULT == null ? hl7Id != null : !HL7_ID_EDEFAULT.equals(hl7Id);
+				return HL7_ID_EDEFAULT == null
+						? hl7Id != null
+						: !HL7_ID_EDEFAULT.equals(hl7Id);
 			case XhtmlPackage.DIV__LANG:
-				return LANG_EDEFAULT == null ? lang != null : !LANG_EDEFAULT.equals(lang);
+				return LANG_EDEFAULT == null
+						? lang != null
+						: !LANG_EDEFAULT.equals(lang);
 			case XhtmlPackage.DIV__STYLE:
 				return isSetStyle();
 			case XhtmlPackage.DIV__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+				return TITLE_EDEFAULT == null
+						? title != null
+						: !TITLE_EDEFAULT.equals(title);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -432,21 +457,31 @@ public class DivImpl extends FlowImpl implements Div {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (class: ");
-		if (classESet) result.append(class_); else result.append("<unset>");
+		if (classESet) {
+			result.append(class_);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", hl7Id: ");
 		result.append(hl7Id);
 		result.append(", lang: ");
 		result.append(lang);
 		result.append(", style: ");
-		if (styleESet) result.append(style); else result.append("<unset>");
+		if (styleESet) {
+			result.append(style);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", title: ");
 		result.append(title);
 		result.append(')');
 		return result.toString();
 	}
 
-} //DivImpl
+} // DivImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -82,7 +86,7 @@ public class MifContentImpl extends EObjectImpl implements MifContent {
 	 * @generated
 	 */
 	public FeatureMap getAny() {
-		return (FeatureMap)getGroup().<FeatureMap.Entry>list(Mif2Package.Literals.MIF_CONTENT__ANY);
+		return (FeatureMap) getGroup().<FeatureMap.Entry> list(Mif2Package.Literals.MIF_CONTENT__ANY);
 	}
 
 	/**
@@ -94,9 +98,9 @@ public class MifContentImpl extends EObjectImpl implements MifContent {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.MIF_CONTENT__GROUP:
-				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getGroup()).basicRemove(otherEnd, msgs);
 			case Mif2Package.MIF_CONTENT__ANY:
-				return ((InternalEList<?>)getAny()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAny()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -110,11 +114,15 @@ public class MifContentImpl extends EObjectImpl implements MifContent {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mif2Package.MIF_CONTENT__GROUP:
-				if (coreType) return getGroup();
-				return ((FeatureMap.Internal)getGroup()).getWrapper();
+				if (coreType) {
+					return getGroup();
+				}
+				return ((FeatureMap.Internal) getGroup()).getWrapper();
 			case Mif2Package.MIF_CONTENT__ANY:
-				if (coreType) return getAny();
-				return ((FeatureMap.Internal)getAny()).getWrapper();
+				if (coreType) {
+					return getAny();
+				}
+				return ((FeatureMap.Internal) getAny()).getWrapper();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -128,10 +136,10 @@ public class MifContentImpl extends EObjectImpl implements MifContent {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.MIF_CONTENT__GROUP:
-				((FeatureMap.Internal)getGroup()).set(newValue);
+				((FeatureMap.Internal) getGroup()).set(newValue);
 				return;
 			case Mif2Package.MIF_CONTENT__ANY:
-				((FeatureMap.Internal)getAny()).set(newValue);
+				((FeatureMap.Internal) getAny()).set(newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -178,7 +186,9 @@ public class MifContentImpl extends EObjectImpl implements MifContent {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (group: ");
@@ -187,4 +197,4 @@ public class MifContentImpl extends EObjectImpl implements MifContent {
 		return result.toString();
 	}
 
-} //MifContentImpl
+} // MifContentImpl

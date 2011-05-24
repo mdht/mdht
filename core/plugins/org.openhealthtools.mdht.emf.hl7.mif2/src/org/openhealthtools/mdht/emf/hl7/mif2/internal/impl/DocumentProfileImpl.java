@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -146,8 +150,13 @@ public class DocumentProfileImpl extends PackageImpl implements DocumentProfile 
 		DocumentProfileAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -160,15 +169,22 @@ public class DocumentProfileImpl extends PackageImpl implements DocumentProfile 
 	public void setAnnotations(DocumentProfileAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -189,8 +205,13 @@ public class DocumentProfileImpl extends PackageImpl implements DocumentProfile 
 		PackageRef oldDocument = document;
 		document = newDocument;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__DOCUMENT, oldDocument, newDocument);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__DOCUMENT, oldDocument, newDocument);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -203,15 +224,22 @@ public class DocumentProfileImpl extends PackageImpl implements DocumentProfile 
 	public void setDocument(PackageRef newDocument) {
 		if (newDocument != document) {
 			NotificationChain msgs = null;
-			if (document != null)
-				msgs = ((InternalEObject)document).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE__DOCUMENT, null, msgs);
-			if (newDocument != null)
-				msgs = ((InternalEObject)newDocument).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE__DOCUMENT, null, msgs);
+			if (document != null) {
+				msgs = ((InternalEObject) document).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE__DOCUMENT, null, msgs);
+			}
+			if (newDocument != null) {
+				msgs = ((InternalEObject) newDocument).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE__DOCUMENT, null, msgs);
+			}
 			msgs = basicSetDocument(newDocument, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__DOCUMENT, newDocument, newDocument));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__DOCUMENT, newDocument, newDocument));
 	}
 
 	/**
@@ -228,12 +256,19 @@ public class DocumentProfileImpl extends PackageImpl implements DocumentProfile 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetImplementationConstraints(ImplementationConstraints newImplementationConstraints, NotificationChain msgs) {
+	public NotificationChain basicSetImplementationConstraints(ImplementationConstraints newImplementationConstraints,
+			NotificationChain msgs) {
 		ImplementationConstraints oldImplementationConstraints = implementationConstraints;
 		implementationConstraints = newImplementationConstraints;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__IMPLEMENTATION_CONSTRAINTS, oldImplementationConstraints, newImplementationConstraints);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__IMPLEMENTATION_CONSTRAINTS,
+				oldImplementationConstraints, newImplementationConstraints);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -246,15 +281,23 @@ public class DocumentProfileImpl extends PackageImpl implements DocumentProfile 
 	public void setImplementationConstraints(ImplementationConstraints newImplementationConstraints) {
 		if (newImplementationConstraints != implementationConstraints) {
 			NotificationChain msgs = null;
-			if (implementationConstraints != null)
-				msgs = ((InternalEObject)implementationConstraints).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE__IMPLEMENTATION_CONSTRAINTS, null, msgs);
-			if (newImplementationConstraints != null)
-				msgs = ((InternalEObject)newImplementationConstraints).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE__IMPLEMENTATION_CONSTRAINTS, null, msgs);
+			if (implementationConstraints != null) {
+				msgs = ((InternalEObject) implementationConstraints).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE__IMPLEMENTATION_CONSTRAINTS, null, msgs);
+			}
+			if (newImplementationConstraints != null) {
+				msgs = ((InternalEObject) newImplementationConstraints).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE__IMPLEMENTATION_CONSTRAINTS, null, msgs);
+			}
 			msgs = basicSetImplementationConstraints(newImplementationConstraints, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__IMPLEMENTATION_CONSTRAINTS,
+				newImplementationConstraints, newImplementationConstraints));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__IMPLEMENTATION_CONSTRAINTS, newImplementationConstraints, newImplementationConstraints));
 	}
 
 	/**
@@ -271,12 +314,19 @@ public class DocumentProfileImpl extends PackageImpl implements DocumentProfile 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEffectiveStaticModel(SerializedStaticModel newEffectiveStaticModel, NotificationChain msgs) {
+	public NotificationChain basicSetEffectiveStaticModel(SerializedStaticModel newEffectiveStaticModel,
+			NotificationChain msgs) {
 		SerializedStaticModel oldEffectiveStaticModel = effectiveStaticModel;
 		effectiveStaticModel = newEffectiveStaticModel;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__EFFECTIVE_STATIC_MODEL, oldEffectiveStaticModel, newEffectiveStaticModel);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__EFFECTIVE_STATIC_MODEL, oldEffectiveStaticModel,
+				newEffectiveStaticModel);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -289,15 +339,23 @@ public class DocumentProfileImpl extends PackageImpl implements DocumentProfile 
 	public void setEffectiveStaticModel(SerializedStaticModel newEffectiveStaticModel) {
 		if (newEffectiveStaticModel != effectiveStaticModel) {
 			NotificationChain msgs = null;
-			if (effectiveStaticModel != null)
-				msgs = ((InternalEObject)effectiveStaticModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE__EFFECTIVE_STATIC_MODEL, null, msgs);
-			if (newEffectiveStaticModel != null)
-				msgs = ((InternalEObject)newEffectiveStaticModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE__EFFECTIVE_STATIC_MODEL, null, msgs);
+			if (effectiveStaticModel != null) {
+				msgs = ((InternalEObject) effectiveStaticModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE__EFFECTIVE_STATIC_MODEL, null, msgs);
+			}
+			if (newEffectiveStaticModel != null) {
+				msgs = ((InternalEObject) newEffectiveStaticModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE__EFFECTIVE_STATIC_MODEL, null, msgs);
+			}
 			msgs = basicSetEffectiveStaticModel(newEffectiveStaticModel, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__EFFECTIVE_STATIC_MODEL, newEffectiveStaticModel,
+				newEffectiveStaticModel));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__EFFECTIVE_STATIC_MODEL, newEffectiveStaticModel, newEffectiveStaticModel));
 	}
 
 	/**
@@ -316,11 +374,16 @@ public class DocumentProfileImpl extends PackageImpl implements DocumentProfile 
 	 */
 	public void setProfileType(DocumentProfileKind newProfileType) {
 		DocumentProfileKind oldProfileType = profileType;
-		profileType = newProfileType == null ? PROFILE_TYPE_EDEFAULT : newProfileType;
+		profileType = newProfileType == null
+				? PROFILE_TYPE_EDEFAULT
+				: newProfileType;
 		boolean oldProfileTypeESet = profileTypeESet;
 		profileTypeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__PROFILE_TYPE, oldProfileType, profileType, !oldProfileTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE__PROFILE_TYPE, oldProfileType, profileType,
+				!oldProfileTypeESet));
+		}
 	}
 
 	/**
@@ -333,8 +396,11 @@ public class DocumentProfileImpl extends PackageImpl implements DocumentProfile 
 		boolean oldProfileTypeESet = profileTypeESet;
 		profileType = PROFILE_TYPE_EDEFAULT;
 		profileTypeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.DOCUMENT_PROFILE__PROFILE_TYPE, oldProfileType, PROFILE_TYPE_EDEFAULT, oldProfileTypeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.DOCUMENT_PROFILE__PROFILE_TYPE, oldProfileType,
+				PROFILE_TYPE_EDEFAULT, oldProfileTypeESet));
+		}
 	}
 
 	/**
@@ -397,19 +463,19 @@ public class DocumentProfileImpl extends PackageImpl implements DocumentProfile 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DOCUMENT_PROFILE__ANNOTATIONS:
-				setAnnotations((DocumentProfileAnnotations)newValue);
+				setAnnotations((DocumentProfileAnnotations) newValue);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE__DOCUMENT:
-				setDocument((PackageRef)newValue);
+				setDocument((PackageRef) newValue);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE__IMPLEMENTATION_CONSTRAINTS:
-				setImplementationConstraints((ImplementationConstraints)newValue);
+				setImplementationConstraints((ImplementationConstraints) newValue);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE__EFFECTIVE_STATIC_MODEL:
-				setEffectiveStaticModel((SerializedStaticModel)newValue);
+				setEffectiveStaticModel((SerializedStaticModel) newValue);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE__PROFILE_TYPE:
-				setProfileType((DocumentProfileKind)newValue);
+				setProfileType((DocumentProfileKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -424,16 +490,16 @@ public class DocumentProfileImpl extends PackageImpl implements DocumentProfile 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.DOCUMENT_PROFILE__ANNOTATIONS:
-				setAnnotations((DocumentProfileAnnotations)null);
+				setAnnotations((DocumentProfileAnnotations) null);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE__DOCUMENT:
-				setDocument((PackageRef)null);
+				setDocument((PackageRef) null);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE__IMPLEMENTATION_CONSTRAINTS:
-				setImplementationConstraints((ImplementationConstraints)null);
+				setImplementationConstraints((ImplementationConstraints) null);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE__EFFECTIVE_STATIC_MODEL:
-				setEffectiveStaticModel((SerializedStaticModel)null);
+				setEffectiveStaticModel((SerializedStaticModel) null);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE__PROFILE_TYPE:
 				unsetProfileType();
@@ -471,13 +537,19 @@ public class DocumentProfileImpl extends PackageImpl implements DocumentProfile 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (profileType: ");
-		if (profileTypeESet) result.append(profileType); else result.append("<unset>");
+		if (profileTypeESet) {
+			result.append(profileType);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //DocumentProfileImpl
+} // DocumentProfileImpl

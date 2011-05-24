@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -79,11 +83,7 @@ public enum FilterKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final FilterKind[] VALUES_ARRAY =
-		new FilterKind[] {
-			INCLUDE,
-			EXCLUDE,
-		};
+	private static final FilterKind[] VALUES_ARRAY = new FilterKind[] { INCLUDE, EXCLUDE, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Filter Kind</b></em>' enumerators.
@@ -133,8 +133,10 @@ public enum FilterKind implements Enumerator {
 	 */
 	public static FilterKind get(int value) {
 		switch (value) {
-			case INCLUDE_VALUE: return INCLUDE;
-			case EXCLUDE_VALUE: return EXCLUDE;
+			case INCLUDE_VALUE:
+				return INCLUDE;
+			case EXCLUDE_VALUE:
+				return EXCLUDE;
 		}
 		return null;
 	}
@@ -178,7 +180,7 @@ public enum FilterKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -187,7 +189,7 @@ public enum FilterKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -196,7 +198,7 @@ public enum FilterKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -209,5 +211,5 @@ public enum FilterKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //FilterKind
+
+} // FilterKind

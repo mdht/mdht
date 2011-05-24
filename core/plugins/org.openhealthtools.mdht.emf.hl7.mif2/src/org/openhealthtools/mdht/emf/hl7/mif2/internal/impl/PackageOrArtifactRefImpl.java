@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -85,8 +89,11 @@ public class PackageOrArtifactRefImpl extends PackageRefImpl implements PackageO
 	public void setArtifactName(String newArtifactName) {
 		String oldArtifactName = artifactName;
 		artifactName = newArtifactName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_OR_ARTIFACT_REF__ARTIFACT_NAME, oldArtifactName, artifactName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE_OR_ARTIFACT_REF__ARTIFACT_NAME, oldArtifactName,
+				artifactName));
+		}
 	}
 
 	/**
@@ -112,7 +119,7 @@ public class PackageOrArtifactRefImpl extends PackageRefImpl implements PackageO
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.PACKAGE_OR_ARTIFACT_REF__ARTIFACT_NAME:
-				setArtifactName((String)newValue);
+				setArtifactName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -142,7 +149,9 @@ public class PackageOrArtifactRefImpl extends PackageRefImpl implements PackageO
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.PACKAGE_OR_ARTIFACT_REF__ARTIFACT_NAME:
-				return ARTIFACT_NAME_EDEFAULT == null ? artifactName != null : !ARTIFACT_NAME_EDEFAULT.equals(artifactName);
+				return ARTIFACT_NAME_EDEFAULT == null
+						? artifactName != null
+						: !ARTIFACT_NAME_EDEFAULT.equals(artifactName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,7 +163,9 @@ public class PackageOrArtifactRefImpl extends PackageRefImpl implements PackageO
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (artifactName: ");
@@ -163,4 +174,4 @@ public class PackageOrArtifactRefImpl extends PackageRefImpl implements PackageO
 		return result.toString();
 	}
 
-} //PackageOrArtifactRefImpl
+} // PackageOrArtifactRefImpl

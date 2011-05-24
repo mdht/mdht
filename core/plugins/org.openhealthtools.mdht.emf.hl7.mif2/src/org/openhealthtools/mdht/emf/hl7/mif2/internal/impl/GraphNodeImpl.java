@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigDecimal;
@@ -193,8 +197,13 @@ public class GraphNodeImpl extends GraphElementImpl implements GraphNode {
 		Dimension oldSize = size;
 		size = newSize;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.GRAPH_NODE__SIZE, oldSize, newSize);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GRAPH_NODE__SIZE, oldSize, newSize);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -207,15 +216,21 @@ public class GraphNodeImpl extends GraphElementImpl implements GraphNode {
 	public void setSize(Dimension newSize) {
 		if (newSize != size) {
 			NotificationChain msgs = null;
-			if (size != null)
-				msgs = ((InternalEObject)size).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.GRAPH_NODE__SIZE, null, msgs);
-			if (newSize != null)
-				msgs = ((InternalEObject)newSize).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.GRAPH_NODE__SIZE, null, msgs);
+			if (size != null) {
+				msgs = ((InternalEObject) size).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.GRAPH_NODE__SIZE, null, msgs);
+			}
+			if (newSize != null) {
+				msgs = ((InternalEObject) newSize).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.GRAPH_NODE__SIZE, null, msgs);
+			}
 			msgs = basicSetSize(newSize, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GRAPH_NODE__SIZE, newSize, newSize));
+		}
 	}
 
 	/**
@@ -237,8 +252,11 @@ public class GraphNodeImpl extends GraphElementImpl implements GraphNode {
 		isHeightAutoSize = newIsHeightAutoSize;
 		boolean oldIsHeightAutoSizeESet = isHeightAutoSizeESet;
 		isHeightAutoSizeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GRAPH_NODE__IS_HEIGHT_AUTO_SIZE, oldIsHeightAutoSize, isHeightAutoSize, !oldIsHeightAutoSizeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GRAPH_NODE__IS_HEIGHT_AUTO_SIZE, oldIsHeightAutoSize,
+				isHeightAutoSize, !oldIsHeightAutoSizeESet));
+		}
 	}
 
 	/**
@@ -251,8 +269,11 @@ public class GraphNodeImpl extends GraphElementImpl implements GraphNode {
 		boolean oldIsHeightAutoSizeESet = isHeightAutoSizeESet;
 		isHeightAutoSize = IS_HEIGHT_AUTO_SIZE_EDEFAULT;
 		isHeightAutoSizeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.GRAPH_NODE__IS_HEIGHT_AUTO_SIZE, oldIsHeightAutoSize, IS_HEIGHT_AUTO_SIZE_EDEFAULT, oldIsHeightAutoSizeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.GRAPH_NODE__IS_HEIGHT_AUTO_SIZE, oldIsHeightAutoSize,
+				IS_HEIGHT_AUTO_SIZE_EDEFAULT, oldIsHeightAutoSizeESet));
+		}
 	}
 
 	/**
@@ -283,8 +304,11 @@ public class GraphNodeImpl extends GraphElementImpl implements GraphNode {
 		isWidthAutoSize = newIsWidthAutoSize;
 		boolean oldIsWidthAutoSizeESet = isWidthAutoSizeESet;
 		isWidthAutoSizeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GRAPH_NODE__IS_WIDTH_AUTO_SIZE, oldIsWidthAutoSize, isWidthAutoSize, !oldIsWidthAutoSizeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GRAPH_NODE__IS_WIDTH_AUTO_SIZE, oldIsWidthAutoSize,
+				isWidthAutoSize, !oldIsWidthAutoSizeESet));
+		}
 	}
 
 	/**
@@ -297,8 +321,11 @@ public class GraphNodeImpl extends GraphElementImpl implements GraphNode {
 		boolean oldIsWidthAutoSizeESet = isWidthAutoSizeESet;
 		isWidthAutoSize = IS_WIDTH_AUTO_SIZE_EDEFAULT;
 		isWidthAutoSizeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.GRAPH_NODE__IS_WIDTH_AUTO_SIZE, oldIsWidthAutoSize, IS_WIDTH_AUTO_SIZE_EDEFAULT, oldIsWidthAutoSizeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.GRAPH_NODE__IS_WIDTH_AUTO_SIZE, oldIsWidthAutoSize,
+				IS_WIDTH_AUTO_SIZE_EDEFAULT, oldIsWidthAutoSizeESet));
+		}
 	}
 
 	/**
@@ -326,11 +353,16 @@ public class GraphNodeImpl extends GraphElementImpl implements GraphNode {
 	 */
 	public void setNodeOrientation(NodeOrientation newNodeOrientation) {
 		NodeOrientation oldNodeOrientation = nodeOrientation;
-		nodeOrientation = newNodeOrientation == null ? NODE_ORIENTATION_EDEFAULT : newNodeOrientation;
+		nodeOrientation = newNodeOrientation == null
+				? NODE_ORIENTATION_EDEFAULT
+				: newNodeOrientation;
 		boolean oldNodeOrientationESet = nodeOrientationESet;
 		nodeOrientationESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GRAPH_NODE__NODE_ORIENTATION, oldNodeOrientation, nodeOrientation, !oldNodeOrientationESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GRAPH_NODE__NODE_ORIENTATION, oldNodeOrientation, nodeOrientation,
+				!oldNodeOrientationESet));
+		}
 	}
 
 	/**
@@ -343,8 +375,11 @@ public class GraphNodeImpl extends GraphElementImpl implements GraphNode {
 		boolean oldNodeOrientationESet = nodeOrientationESet;
 		nodeOrientation = NODE_ORIENTATION_EDEFAULT;
 		nodeOrientationESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.GRAPH_NODE__NODE_ORIENTATION, oldNodeOrientation, NODE_ORIENTATION_EDEFAULT, oldNodeOrientationESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.GRAPH_NODE__NODE_ORIENTATION, oldNodeOrientation,
+				NODE_ORIENTATION_EDEFAULT, oldNodeOrientationESet));
+		}
 	}
 
 	/**
@@ -373,8 +408,11 @@ public class GraphNodeImpl extends GraphElementImpl implements GraphNode {
 	public void setTextWrappingWidth(BigDecimal newTextWrappingWidth) {
 		BigDecimal oldTextWrappingWidth = textWrappingWidth;
 		textWrappingWidth = newTextWrappingWidth;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GRAPH_NODE__TEXT_WRAPPING_WIDTH, oldTextWrappingWidth, textWrappingWidth));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GRAPH_NODE__TEXT_WRAPPING_WIDTH, oldTextWrappingWidth,
+				textWrappingWidth));
+		}
 	}
 
 	/**
@@ -402,9 +440,13 @@ public class GraphNodeImpl extends GraphElementImpl implements GraphNode {
 			case Mif2Package.GRAPH_NODE__SIZE:
 				return getSize();
 			case Mif2Package.GRAPH_NODE__IS_HEIGHT_AUTO_SIZE:
-				return isIsHeightAutoSize() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsHeightAutoSize()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.GRAPH_NODE__IS_WIDTH_AUTO_SIZE:
-				return isIsWidthAutoSize() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsWidthAutoSize()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.GRAPH_NODE__NODE_ORIENTATION:
 				return getNodeOrientation();
 			case Mif2Package.GRAPH_NODE__TEXT_WRAPPING_WIDTH:
@@ -422,19 +464,19 @@ public class GraphNodeImpl extends GraphElementImpl implements GraphNode {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.GRAPH_NODE__SIZE:
-				setSize((Dimension)newValue);
+				setSize((Dimension) newValue);
 				return;
 			case Mif2Package.GRAPH_NODE__IS_HEIGHT_AUTO_SIZE:
-				setIsHeightAutoSize(((Boolean)newValue).booleanValue());
+				setIsHeightAutoSize(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.GRAPH_NODE__IS_WIDTH_AUTO_SIZE:
-				setIsWidthAutoSize(((Boolean)newValue).booleanValue());
+				setIsWidthAutoSize(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.GRAPH_NODE__NODE_ORIENTATION:
-				setNodeOrientation((NodeOrientation)newValue);
+				setNodeOrientation((NodeOrientation) newValue);
 				return;
 			case Mif2Package.GRAPH_NODE__TEXT_WRAPPING_WIDTH:
-				setTextWrappingWidth((BigDecimal)newValue);
+				setTextWrappingWidth((BigDecimal) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -449,7 +491,7 @@ public class GraphNodeImpl extends GraphElementImpl implements GraphNode {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.GRAPH_NODE__SIZE:
-				setSize((Dimension)null);
+				setSize((Dimension) null);
 				return;
 			case Mif2Package.GRAPH_NODE__IS_HEIGHT_AUTO_SIZE:
 				unsetIsHeightAutoSize();
@@ -484,7 +526,9 @@ public class GraphNodeImpl extends GraphElementImpl implements GraphNode {
 			case Mif2Package.GRAPH_NODE__NODE_ORIENTATION:
 				return isSetNodeOrientation();
 			case Mif2Package.GRAPH_NODE__TEXT_WRAPPING_WIDTH:
-				return TEXT_WRAPPING_WIDTH_EDEFAULT == null ? textWrappingWidth != null : !TEXT_WRAPPING_WIDTH_EDEFAULT.equals(textWrappingWidth);
+				return TEXT_WRAPPING_WIDTH_EDEFAULT == null
+						? textWrappingWidth != null
+						: !TEXT_WRAPPING_WIDTH_EDEFAULT.equals(textWrappingWidth);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -496,19 +540,33 @@ public class GraphNodeImpl extends GraphElementImpl implements GraphNode {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isHeightAutoSize: ");
-		if (isHeightAutoSizeESet) result.append(isHeightAutoSize); else result.append("<unset>");
+		if (isHeightAutoSizeESet) {
+			result.append(isHeightAutoSize);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", isWidthAutoSize: ");
-		if (isWidthAutoSizeESet) result.append(isWidthAutoSize); else result.append("<unset>");
+		if (isWidthAutoSizeESet) {
+			result.append(isWidthAutoSize);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", nodeOrientation: ");
-		if (nodeOrientationESet) result.append(nodeOrientation); else result.append("<unset>");
+		if (nodeOrientationESet) {
+			result.append(nodeOrientation);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", textWrappingWidth: ");
 		result.append(textWrappingWidth);
 		result.append(')');
 		return result.toString();
 	}
 
-} //GraphNodeImpl
+} // GraphNodeImpl

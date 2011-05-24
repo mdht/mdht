@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -72,7 +76,8 @@ public class StaticModelDerivationSourceImpl extends DerivationImpl implements S
 	 */
 	public EList<PackageRef> getSourceStaticModel() {
 		if (sourceStaticModel == null) {
-			sourceStaticModel = new EObjectContainmentEList<PackageRef>(PackageRef.class, this, Mif2Package.STATIC_MODEL_DERIVATION_SOURCE__SOURCE_STATIC_MODEL);
+			sourceStaticModel = new EObjectContainmentEList<PackageRef>(
+				PackageRef.class, this, Mif2Package.STATIC_MODEL_DERIVATION_SOURCE__SOURCE_STATIC_MODEL);
 		}
 		return sourceStaticModel;
 	}
@@ -86,7 +91,7 @@ public class StaticModelDerivationSourceImpl extends DerivationImpl implements S
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.STATIC_MODEL_DERIVATION_SOURCE__SOURCE_STATIC_MODEL:
-				return ((InternalEList<?>)getSourceStaticModel()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSourceStaticModel()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -116,7 +121,7 @@ public class StaticModelDerivationSourceImpl extends DerivationImpl implements S
 		switch (featureID) {
 			case Mif2Package.STATIC_MODEL_DERIVATION_SOURCE__SOURCE_STATIC_MODEL:
 				getSourceStaticModel().clear();
-				getSourceStaticModel().addAll((Collection<? extends PackageRef>)newValue);
+				getSourceStaticModel().addAll((Collection<? extends PackageRef>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -151,4 +156,4 @@ public class StaticModelDerivationSourceImpl extends DerivationImpl implements S
 		return super.eIsSet(featureID);
 	}
 
-} //StaticModelDerivationSourceImpl
+} // StaticModelDerivationSourceImpl

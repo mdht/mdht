@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -110,8 +114,13 @@ public class ClassStubInterfaceImpl extends ClassifierBaseImpl implements ClassS
 		ClassStubInterfaceAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_STUB_INTERFACE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_STUB_INTERFACE__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -124,15 +133,22 @@ public class ClassStubInterfaceImpl extends ClassifierBaseImpl implements ClassS
 	public void setAnnotations(ClassStubInterfaceAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CLASS_STUB_INTERFACE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CLASS_STUB_INTERFACE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CLASS_STUB_INTERFACE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CLASS_STUB_INTERFACE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_STUB_INTERFACE__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_STUB_INTERFACE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -151,11 +167,15 @@ public class ClassStubInterfaceImpl extends ClassifierBaseImpl implements ClassS
 	 */
 	public void setName(StaticModelUseKind newName) {
 		StaticModelUseKind oldName = name;
-		name = newName == null ? NAME_EDEFAULT : newName;
+		name = newName == null
+				? NAME_EDEFAULT
+				: newName;
 		boolean oldNameESet = nameESet;
 		nameESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_STUB_INTERFACE__NAME, oldName, name, !oldNameESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_STUB_INTERFACE__NAME, oldName, name, !oldNameESet));
+		}
 	}
 
 	/**
@@ -168,8 +188,10 @@ public class ClassStubInterfaceImpl extends ClassifierBaseImpl implements ClassS
 		boolean oldNameESet = nameESet;
 		name = NAME_EDEFAULT;
 		nameESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CLASS_STUB_INTERFACE__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CLASS_STUB_INTERFACE__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+		}
 	}
 
 	/**
@@ -220,10 +242,10 @@ public class ClassStubInterfaceImpl extends ClassifierBaseImpl implements ClassS
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CLASS_STUB_INTERFACE__ANNOTATIONS:
-				setAnnotations((ClassStubInterfaceAnnotations)newValue);
+				setAnnotations((ClassStubInterfaceAnnotations) newValue);
 				return;
 			case Mif2Package.CLASS_STUB_INTERFACE__NAME:
-				setName((StaticModelUseKind)newValue);
+				setName((StaticModelUseKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -238,7 +260,7 @@ public class ClassStubInterfaceImpl extends ClassifierBaseImpl implements ClassS
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CLASS_STUB_INTERFACE__ANNOTATIONS:
-				setAnnotations((ClassStubInterfaceAnnotations)null);
+				setAnnotations((ClassStubInterfaceAnnotations) null);
 				return;
 			case Mif2Package.CLASS_STUB_INTERFACE__NAME:
 				unsetName();
@@ -270,13 +292,19 @@ public class ClassStubInterfaceImpl extends ClassifierBaseImpl implements ClassS
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
-		if (nameESet) result.append(name); else result.append("<unset>");
+		if (nameESet) {
+			result.append(name);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //ClassStubInterfaceImpl
+} // ClassStubInterfaceImpl

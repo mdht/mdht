@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -297,45 +301,45 @@ public class PackageContentImpl extends EObjectImpl implements PackageContent {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.PACKAGE_CONTENT__GROUP:
-				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getGroup()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__FREEHAND_DOCUMENT:
-				return ((InternalEList<?>)getFreehandDocument()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getFreehandDocument()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__DOMAIN_ANALYSIS_MODEL:
-				return ((InternalEList<?>)getDomainAnalysisModel()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDomainAnalysisModel()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__DOMAIN_INSTANCE_EXAMPLE:
-				return ((InternalEList<?>)getDomainInstanceExample()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDomainInstanceExample()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__STORYBOARD:
-				return ((InternalEList<?>)getStoryboard()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getStoryboard()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__DATATYPE_MODEL_LIBRARY:
-				return ((InternalEList<?>)getDatatypeModelLibrary()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDatatypeModelLibrary()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__STATIC_MODEL_INTERFACE_PACKAGE:
-				return ((InternalEList<?>)getStaticModelInterfacePackage()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getStaticModelInterfacePackage()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__VOCABULARY_MODEL:
-				return ((InternalEList<?>)getVocabularyModel()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getVocabularyModel()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__STATIC_MODEL:
-				return ((InternalEList<?>)getStaticModel()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getStaticModel()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__SERIALIZED_STATIC_MODEL:
-				return ((InternalEList<?>)getSerializedStaticModel()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSerializedStaticModel()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__DERIVED_STATIC_MODEL:
-				return ((InternalEList<?>)getDerivedStaticModel()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDerivedStaticModel()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__STRUCTURED_DOCUMENT:
-				return ((InternalEList<?>)getStructuredDocument()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getStructuredDocument()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__TRIGGER_EVENT:
-				return ((InternalEList<?>)getTriggerEvent()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTriggerEvent()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__INTERACTION:
-				return ((InternalEList<?>)getInteraction()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getInteraction()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__APPLICATION_ROLE:
-				return ((InternalEList<?>)getApplicationRole()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getApplicationRole()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__INTERACTION_PROFILE:
-				return ((InternalEList<?>)getInteractionProfile()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getInteractionProfile()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__CONFORMANCE_PROFILE:
-				return ((InternalEList<?>)getConformanceProfile()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getConformanceProfile()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__TEST_SCENARIO:
-				return ((InternalEList<?>)getTestScenario()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTestScenario()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__PUBLICATION:
-				return ((InternalEList<?>)getPublication()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPublication()).basicRemove(otherEnd, msgs);
 			case Mif2Package.PACKAGE_CONTENT__PACKAGE:
-				return ((InternalEList<?>)getPackage()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPackage()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -349,8 +353,10 @@ public class PackageContentImpl extends EObjectImpl implements PackageContent {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mif2Package.PACKAGE_CONTENT__GROUP:
-				if (coreType) return getGroup();
-				return ((FeatureMap.Internal)getGroup()).getWrapper();
+				if (coreType) {
+					return getGroup();
+				}
+				return ((FeatureMap.Internal) getGroup()).getWrapper();
 			case Mif2Package.PACKAGE_CONTENT__FREEHAND_DOCUMENT:
 				return getFreehandDocument();
 			case Mif2Package.PACKAGE_CONTENT__DOMAIN_ANALYSIS_MODEL:
@@ -403,83 +409,84 @@ public class PackageContentImpl extends EObjectImpl implements PackageContent {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.PACKAGE_CONTENT__GROUP:
-				((FeatureMap.Internal)getGroup()).set(newValue);
+				((FeatureMap.Internal) getGroup()).set(newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__FREEHAND_DOCUMENT:
 				getFreehandDocument().clear();
-				getFreehandDocument().addAll((Collection<? extends GlobalFreehandDocument>)newValue);
+				getFreehandDocument().addAll((Collection<? extends GlobalFreehandDocument>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__DOMAIN_ANALYSIS_MODEL:
 				getDomainAnalysisModel().clear();
-				getDomainAnalysisModel().addAll((Collection<? extends GlobalDomainAnalysisModel>)newValue);
+				getDomainAnalysisModel().addAll((Collection<? extends GlobalDomainAnalysisModel>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__DOMAIN_INSTANCE_EXAMPLE:
 				getDomainInstanceExample().clear();
-				getDomainInstanceExample().addAll((Collection<? extends GlobalDomainInstanceExample>)newValue);
+				getDomainInstanceExample().addAll((Collection<? extends GlobalDomainInstanceExample>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__STORYBOARD:
 				getStoryboard().clear();
-				getStoryboard().addAll((Collection<? extends GlobalStoryboard>)newValue);
+				getStoryboard().addAll((Collection<? extends GlobalStoryboard>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__DATATYPE_MODEL_LIBRARY:
 				getDatatypeModelLibrary().clear();
-				getDatatypeModelLibrary().addAll((Collection<? extends GlobalDatatypeModelLibrary>)newValue);
+				getDatatypeModelLibrary().addAll((Collection<? extends GlobalDatatypeModelLibrary>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__STATIC_MODEL_INTERFACE_PACKAGE:
 				getStaticModelInterfacePackage().clear();
-				getStaticModelInterfacePackage().addAll((Collection<? extends GlobalStaticModelInterfacePackage>)newValue);
+				getStaticModelInterfacePackage().addAll(
+					(Collection<? extends GlobalStaticModelInterfacePackage>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__VOCABULARY_MODEL:
 				getVocabularyModel().clear();
-				getVocabularyModel().addAll((Collection<? extends GlobalVocabularyModel>)newValue);
+				getVocabularyModel().addAll((Collection<? extends GlobalVocabularyModel>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__STATIC_MODEL:
 				getStaticModel().clear();
-				getStaticModel().addAll((Collection<? extends GlobalStaticModel>)newValue);
+				getStaticModel().addAll((Collection<? extends GlobalStaticModel>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__SERIALIZED_STATIC_MODEL:
 				getSerializedStaticModel().clear();
-				getSerializedStaticModel().addAll((Collection<? extends GlobalSerializedStaticModel>)newValue);
+				getSerializedStaticModel().addAll((Collection<? extends GlobalSerializedStaticModel>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__DERIVED_STATIC_MODEL:
 				getDerivedStaticModel().clear();
-				getDerivedStaticModel().addAll((Collection<? extends GlobalDerivedStaticModel>)newValue);
+				getDerivedStaticModel().addAll((Collection<? extends GlobalDerivedStaticModel>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__STRUCTURED_DOCUMENT:
 				getStructuredDocument().clear();
-				getStructuredDocument().addAll((Collection<? extends GlobalStructuredDocument>)newValue);
+				getStructuredDocument().addAll((Collection<? extends GlobalStructuredDocument>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__TRIGGER_EVENT:
 				getTriggerEvent().clear();
-				getTriggerEvent().addAll((Collection<? extends GlobalTriggerEvent>)newValue);
+				getTriggerEvent().addAll((Collection<? extends GlobalTriggerEvent>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__INTERACTION:
 				getInteraction().clear();
-				getInteraction().addAll((Collection<? extends GlobalInteraction>)newValue);
+				getInteraction().addAll((Collection<? extends GlobalInteraction>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__APPLICATION_ROLE:
 				getApplicationRole().clear();
-				getApplicationRole().addAll((Collection<? extends GlobalApplicationRole>)newValue);
+				getApplicationRole().addAll((Collection<? extends GlobalApplicationRole>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__INTERACTION_PROFILE:
 				getInteractionProfile().clear();
-				getInteractionProfile().addAll((Collection<? extends GlobalInteractionProfile>)newValue);
+				getInteractionProfile().addAll((Collection<? extends GlobalInteractionProfile>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__CONFORMANCE_PROFILE:
 				getConformanceProfile().clear();
-				getConformanceProfile().addAll((Collection<? extends GlobalConformanceProfile>)newValue);
+				getConformanceProfile().addAll((Collection<? extends GlobalConformanceProfile>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__TEST_SCENARIO:
 				getTestScenario().clear();
-				getTestScenario().addAll((Collection<? extends GlobalTestScenario>)newValue);
+				getTestScenario().addAll((Collection<? extends GlobalTestScenario>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__PUBLICATION:
 				getPublication().clear();
-				getPublication().addAll((Collection<? extends GlobalPublicationPackage>)newValue);
+				getPublication().addAll((Collection<? extends GlobalPublicationPackage>) newValue);
 				return;
 			case Mif2Package.PACKAGE_CONTENT__PACKAGE:
 				getPackage().clear();
-				getPackage().addAll((Collection<? extends GlobalGenericPackage>)newValue);
+				getPackage().addAll((Collection<? extends GlobalGenericPackage>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -616,7 +623,9 @@ public class PackageContentImpl extends EObjectImpl implements PackageContent {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (group: ");
@@ -625,4 +634,4 @@ public class PackageContentImpl extends EObjectImpl implements PackageContent {
 		return result.toString();
 	}
 
-} //PackageContentImpl
+} // PackageContentImpl

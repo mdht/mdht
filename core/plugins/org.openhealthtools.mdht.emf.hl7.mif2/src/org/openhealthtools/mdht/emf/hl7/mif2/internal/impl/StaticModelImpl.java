@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -96,7 +100,8 @@ public class StaticModelImpl extends StaticModelBaseImpl implements StaticModel 
 	 */
 	public EList<EntryPoint> getEntryPoint() {
 		if (entryPoint == null) {
-			entryPoint = new EObjectContainmentEList<EntryPoint>(EntryPoint.class, this, Mif2Package.STATIC_MODEL__ENTRY_POINT);
+			entryPoint = new EObjectContainmentEList<EntryPoint>(
+				EntryPoint.class, this, Mif2Package.STATIC_MODEL__ENTRY_POINT);
 		}
 		return entryPoint;
 	}
@@ -108,7 +113,8 @@ public class StaticModelImpl extends StaticModelBaseImpl implements StaticModel 
 	 */
 	public EList<ClassElement> getContainedClass() {
 		if (containedClass == null) {
-			containedClass = new EObjectContainmentEList<ClassElement>(ClassElement.class, this, Mif2Package.STATIC_MODEL__CONTAINED_CLASS);
+			containedClass = new EObjectContainmentEList<ClassElement>(
+				ClassElement.class, this, Mif2Package.STATIC_MODEL__CONTAINED_CLASS);
 		}
 		return containedClass;
 	}
@@ -120,7 +126,8 @@ public class StaticModelImpl extends StaticModelBaseImpl implements StaticModel 
 	 */
 	public EList<Association> getAssociation() {
 		if (association == null) {
-			association = new EObjectContainmentEList<Association>(Association.class, this, Mif2Package.STATIC_MODEL__ASSOCIATION);
+			association = new EObjectContainmentEList<Association>(
+				Association.class, this, Mif2Package.STATIC_MODEL__ASSOCIATION);
 		}
 		return association;
 	}
@@ -134,11 +141,11 @@ public class StaticModelImpl extends StaticModelBaseImpl implements StaticModel 
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.STATIC_MODEL__ENTRY_POINT:
-				return ((InternalEList<?>)getEntryPoint()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getEntryPoint()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_MODEL__CONTAINED_CLASS:
-				return ((InternalEList<?>)getContainedClass()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getContainedClass()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_MODEL__ASSOCIATION:
-				return ((InternalEList<?>)getAssociation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAssociation()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -172,15 +179,15 @@ public class StaticModelImpl extends StaticModelBaseImpl implements StaticModel 
 		switch (featureID) {
 			case Mif2Package.STATIC_MODEL__ENTRY_POINT:
 				getEntryPoint().clear();
-				getEntryPoint().addAll((Collection<? extends EntryPoint>)newValue);
+				getEntryPoint().addAll((Collection<? extends EntryPoint>) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL__CONTAINED_CLASS:
 				getContainedClass().clear();
-				getContainedClass().addAll((Collection<? extends ClassElement>)newValue);
+				getContainedClass().addAll((Collection<? extends ClassElement>) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL__ASSOCIATION:
 				getAssociation().clear();
-				getAssociation().addAll((Collection<? extends Association>)newValue);
+				getAssociation().addAll((Collection<? extends Association>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -225,4 +232,4 @@ public class StaticModelImpl extends StaticModelBaseImpl implements StaticModel 
 		return super.eIsSet(featureID);
 	}
 
-} //StaticModelImpl
+} // StaticModelImpl

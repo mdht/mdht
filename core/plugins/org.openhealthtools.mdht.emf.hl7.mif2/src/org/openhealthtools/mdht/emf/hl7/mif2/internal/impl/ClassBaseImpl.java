@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -268,8 +272,13 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 		ClassAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_BASE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_BASE__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -282,15 +291,22 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 	public void setAnnotations(ClassAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CLASS_BASE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CLASS_BASE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CLASS_BASE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CLASS_BASE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_BASE__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_BASE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -311,8 +327,13 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 		StateMachine oldBehavior = behavior;
 		behavior = newBehavior;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_BASE__BEHAVIOR, oldBehavior, newBehavior);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_BASE__BEHAVIOR, oldBehavior, newBehavior);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -325,15 +346,22 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 	public void setBehavior(StateMachine newBehavior) {
 		if (newBehavior != behavior) {
 			NotificationChain msgs = null;
-			if (behavior != null)
-				msgs = ((InternalEObject)behavior).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CLASS_BASE__BEHAVIOR, null, msgs);
-			if (newBehavior != null)
-				msgs = ((InternalEObject)newBehavior).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.CLASS_BASE__BEHAVIOR, null, msgs);
+			if (behavior != null) {
+				msgs = ((InternalEObject) behavior).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CLASS_BASE__BEHAVIOR, null, msgs);
+			}
+			if (newBehavior != null) {
+				msgs = ((InternalEObject) newBehavior).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.CLASS_BASE__BEHAVIOR, null, msgs);
+			}
 			msgs = basicSetBehavior(newBehavior, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_BASE__BEHAVIOR, newBehavior, newBehavior));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_BASE__BEHAVIOR, newBehavior, newBehavior));
 	}
 
 	/**
@@ -343,7 +371,8 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 	 */
 	public EList<CommitteeReference> getStewardCommittee() {
 		if (stewardCommittee == null) {
-			stewardCommittee = new EObjectContainmentEList<CommitteeReference>(CommitteeReference.class, this, Mif2Package.CLASS_BASE__STEWARD_COMMITTEE);
+			stewardCommittee = new EObjectContainmentEList<CommitteeReference>(
+				CommitteeReference.class, this, Mif2Package.CLASS_BASE__STEWARD_COMMITTEE);
 		}
 		return stewardCommittee;
 	}
@@ -355,7 +384,8 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 	 */
 	public EList<CommitteeReference> getInterestedCommittee() {
 		if (interestedCommittee == null) {
-			interestedCommittee = new EObjectContainmentEList<CommitteeReference>(CommitteeReference.class, this, Mif2Package.CLASS_BASE__INTERESTED_COMMITTEE);
+			interestedCommittee = new EObjectContainmentEList<CommitteeReference>(
+				CommitteeReference.class, this, Mif2Package.CLASS_BASE__INTERESTED_COMMITTEE);
 		}
 		return interestedCommittee;
 	}
@@ -367,7 +397,8 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 	 */
 	public EList<AppliedTemplateGroup> getRequiredTemplateGroup() {
 		if (requiredTemplateGroup == null) {
-			requiredTemplateGroup = new EObjectContainmentEList<AppliedTemplateGroup>(AppliedTemplateGroup.class, this, Mif2Package.CLASS_BASE__REQUIRED_TEMPLATE_GROUP);
+			requiredTemplateGroup = new EObjectContainmentEList<AppliedTemplateGroup>(
+				AppliedTemplateGroup.class, this, Mif2Package.CLASS_BASE__REQUIRED_TEMPLATE_GROUP);
 		}
 		return requiredTemplateGroup;
 	}
@@ -379,7 +410,8 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 	 */
 	public EList<String> getSupportedTemplate() {
 		if (supportedTemplate == null) {
-			supportedTemplate = new EDataTypeEList<String>(String.class, this, Mif2Package.CLASS_BASE__SUPPORTED_TEMPLATE);
+			supportedTemplate = new EDataTypeEList<String>(
+				String.class, this, Mif2Package.CLASS_BASE__SUPPORTED_TEMPLATE);
 		}
 		return supportedTemplate;
 	}
@@ -415,8 +447,11 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 		isAbstract = newIsAbstract;
 		boolean oldIsAbstractESet = isAbstractESet;
 		isAbstractESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_BASE__IS_ABSTRACT, oldIsAbstract, isAbstract, !oldIsAbstractESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_BASE__IS_ABSTRACT, oldIsAbstract, isAbstract,
+				!oldIsAbstractESet));
+		}
 	}
 
 	/**
@@ -429,8 +464,11 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 		boolean oldIsAbstractESet = isAbstractESet;
 		isAbstract = IS_ABSTRACT_EDEFAULT;
 		isAbstractESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CLASS_BASE__IS_ABSTRACT, oldIsAbstract, IS_ABSTRACT_EDEFAULT, oldIsAbstractESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CLASS_BASE__IS_ABSTRACT, oldIsAbstract, IS_ABSTRACT_EDEFAULT,
+				oldIsAbstractESet));
+		}
 	}
 
 	/**
@@ -461,8 +499,11 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 		isComplete = newIsComplete;
 		boolean oldIsCompleteESet = isCompleteESet;
 		isCompleteESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_BASE__IS_COMPLETE, oldIsComplete, isComplete, !oldIsCompleteESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_BASE__IS_COMPLETE, oldIsComplete, isComplete,
+				!oldIsCompleteESet));
+		}
 	}
 
 	/**
@@ -475,8 +516,11 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 		boolean oldIsCompleteESet = isCompleteESet;
 		isComplete = IS_COMPLETE_EDEFAULT;
 		isCompleteESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CLASS_BASE__IS_COMPLETE, oldIsComplete, IS_COMPLETE_EDEFAULT, oldIsCompleteESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CLASS_BASE__IS_COMPLETE, oldIsComplete, IS_COMPLETE_EDEFAULT,
+				oldIsCompleteESet));
+		}
 	}
 
 	/**
@@ -505,8 +549,9 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_BASE__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -528,8 +573,11 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 		nameLocked = newNameLocked;
 		boolean oldNameLockedESet = nameLockedESet;
 		nameLockedESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CLASS_BASE__NAME_LOCKED, oldNameLocked, nameLocked, !oldNameLockedESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CLASS_BASE__NAME_LOCKED, oldNameLocked, nameLocked,
+				!oldNameLockedESet));
+		}
 	}
 
 	/**
@@ -542,8 +590,11 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 		boolean oldNameLockedESet = nameLockedESet;
 		nameLocked = NAME_LOCKED_EDEFAULT;
 		nameLockedESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CLASS_BASE__NAME_LOCKED, oldNameLocked, NAME_LOCKED_EDEFAULT, oldNameLockedESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CLASS_BASE__NAME_LOCKED, oldNameLocked, NAME_LOCKED_EDEFAULT,
+				oldNameLockedESet));
+		}
 	}
 
 	/**
@@ -568,13 +619,13 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 			case Mif2Package.CLASS_BASE__BEHAVIOR:
 				return basicSetBehavior(null, msgs);
 			case Mif2Package.CLASS_BASE__STEWARD_COMMITTEE:
-				return ((InternalEList<?>)getStewardCommittee()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getStewardCommittee()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CLASS_BASE__INTERESTED_COMMITTEE:
-				return ((InternalEList<?>)getInterestedCommittee()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getInterestedCommittee()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CLASS_BASE__REQUIRED_TEMPLATE_GROUP:
-				return ((InternalEList<?>)getRequiredTemplateGroup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRequiredTemplateGroup()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CLASS_BASE__ATTRIBUTE:
-				return ((InternalEList<?>)getAttribute()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAttribute()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -602,13 +653,19 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 			case Mif2Package.CLASS_BASE__ATTRIBUTE:
 				return getAttribute();
 			case Mif2Package.CLASS_BASE__IS_ABSTRACT:
-				return isIsAbstract() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsAbstract()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.CLASS_BASE__IS_COMPLETE:
-				return isIsComplete() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsComplete()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.CLASS_BASE__NAME:
 				return getName();
 			case Mif2Package.CLASS_BASE__NAME_LOCKED:
-				return isNameLocked() ? Boolean.TRUE : Boolean.FALSE;
+				return isNameLocked()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -623,42 +680,42 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.CLASS_BASE__ANNOTATIONS:
-				setAnnotations((ClassAnnotations)newValue);
+				setAnnotations((ClassAnnotations) newValue);
 				return;
 			case Mif2Package.CLASS_BASE__BEHAVIOR:
-				setBehavior((StateMachine)newValue);
+				setBehavior((StateMachine) newValue);
 				return;
 			case Mif2Package.CLASS_BASE__STEWARD_COMMITTEE:
 				getStewardCommittee().clear();
-				getStewardCommittee().addAll((Collection<? extends CommitteeReference>)newValue);
+				getStewardCommittee().addAll((Collection<? extends CommitteeReference>) newValue);
 				return;
 			case Mif2Package.CLASS_BASE__INTERESTED_COMMITTEE:
 				getInterestedCommittee().clear();
-				getInterestedCommittee().addAll((Collection<? extends CommitteeReference>)newValue);
+				getInterestedCommittee().addAll((Collection<? extends CommitteeReference>) newValue);
 				return;
 			case Mif2Package.CLASS_BASE__REQUIRED_TEMPLATE_GROUP:
 				getRequiredTemplateGroup().clear();
-				getRequiredTemplateGroup().addAll((Collection<? extends AppliedTemplateGroup>)newValue);
+				getRequiredTemplateGroup().addAll((Collection<? extends AppliedTemplateGroup>) newValue);
 				return;
 			case Mif2Package.CLASS_BASE__SUPPORTED_TEMPLATE:
 				getSupportedTemplate().clear();
-				getSupportedTemplate().addAll((Collection<? extends String>)newValue);
+				getSupportedTemplate().addAll((Collection<? extends String>) newValue);
 				return;
 			case Mif2Package.CLASS_BASE__ATTRIBUTE:
 				getAttribute().clear();
-				getAttribute().addAll((Collection<? extends Attribute>)newValue);
+				getAttribute().addAll((Collection<? extends Attribute>) newValue);
 				return;
 			case Mif2Package.CLASS_BASE__IS_ABSTRACT:
-				setIsAbstract(((Boolean)newValue).booleanValue());
+				setIsAbstract(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.CLASS_BASE__IS_COMPLETE:
-				setIsComplete(((Boolean)newValue).booleanValue());
+				setIsComplete(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.CLASS_BASE__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.CLASS_BASE__NAME_LOCKED:
-				setNameLocked(((Boolean)newValue).booleanValue());
+				setNameLocked(((Boolean) newValue).booleanValue());
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -673,10 +730,10 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.CLASS_BASE__ANNOTATIONS:
-				setAnnotations((ClassAnnotations)null);
+				setAnnotations((ClassAnnotations) null);
 				return;
 			case Mif2Package.CLASS_BASE__BEHAVIOR:
-				setBehavior((StateMachine)null);
+				setBehavior((StateMachine) null);
 				return;
 			case Mif2Package.CLASS_BASE__STEWARD_COMMITTEE:
 				getStewardCommittee().clear();
@@ -736,7 +793,9 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 			case Mif2Package.CLASS_BASE__IS_COMPLETE:
 				return isSetIsComplete();
 			case Mif2Package.CLASS_BASE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.CLASS_BASE__NAME_LOCKED:
 				return isSetNameLocked();
 		}
@@ -750,21 +809,35 @@ public abstract class ClassBaseImpl extends ClassifierBaseImpl implements ClassB
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (supportedTemplate: ");
 		result.append(supportedTemplate);
 		result.append(", isAbstract: ");
-		if (isAbstractESet) result.append(isAbstract); else result.append("<unset>");
+		if (isAbstractESet) {
+			result.append(isAbstract);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", isComplete: ");
-		if (isCompleteESet) result.append(isComplete); else result.append("<unset>");
+		if (isCompleteESet) {
+			result.append(isComplete);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", name: ");
 		result.append(name);
 		result.append(", nameLocked: ");
-		if (nameLockedESet) result.append(nameLocked); else result.append("<unset>");
+		if (nameLockedESet) {
+			result.append(nameLocked);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //ClassBaseImpl
+} // ClassBaseImpl

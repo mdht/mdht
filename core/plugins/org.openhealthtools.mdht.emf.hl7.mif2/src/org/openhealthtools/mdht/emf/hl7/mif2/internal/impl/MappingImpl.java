@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -193,7 +197,8 @@ public class MappingImpl extends CascadableAnnotationImpl implements Mapping {
 	 */
 	public EList<BusinessName> getBusinessName() {
 		if (businessName == null) {
-			businessName = new EObjectContainmentEList<BusinessName>(BusinessName.class, this, Mif2Package.MAPPING__BUSINESS_NAME);
+			businessName = new EObjectContainmentEList<BusinessName>(
+				BusinessName.class, this, Mif2Package.MAPPING__BUSINESS_NAME);
 		}
 		return businessName;
 	}
@@ -205,7 +210,8 @@ public class MappingImpl extends CascadableAnnotationImpl implements Mapping {
 	 */
 	public EList<AnnotationDerivation> getDerivationSupplier() {
 		if (derivationSupplier == null) {
-			derivationSupplier = new EObjectContainmentEList<AnnotationDerivation>(AnnotationDerivation.class, this, Mif2Package.MAPPING__DERIVATION_SUPPLIER);
+			derivationSupplier = new EObjectContainmentEList<AnnotationDerivation>(
+				AnnotationDerivation.class, this, Mif2Package.MAPPING__DERIVATION_SUPPLIER);
 		}
 		return derivationSupplier;
 	}
@@ -228,8 +234,13 @@ public class MappingImpl extends CascadableAnnotationImpl implements Mapping {
 		PackageOrArtifactRef oldSourceArtifact = sourceArtifact;
 		sourceArtifact = newSourceArtifact;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.MAPPING__SOURCE_ARTIFACT, oldSourceArtifact, newSourceArtifact);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.MAPPING__SOURCE_ARTIFACT, oldSourceArtifact, newSourceArtifact);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -242,15 +253,22 @@ public class MappingImpl extends CascadableAnnotationImpl implements Mapping {
 	public void setSourceArtifact(PackageOrArtifactRef newSourceArtifact) {
 		if (newSourceArtifact != sourceArtifact) {
 			NotificationChain msgs = null;
-			if (sourceArtifact != null)
-				msgs = ((InternalEObject)sourceArtifact).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.MAPPING__SOURCE_ARTIFACT, null, msgs);
-			if (newSourceArtifact != null)
-				msgs = ((InternalEObject)newSourceArtifact).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.MAPPING__SOURCE_ARTIFACT, null, msgs);
+			if (sourceArtifact != null) {
+				msgs = ((InternalEObject) sourceArtifact).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.MAPPING__SOURCE_ARTIFACT, null, msgs);
+			}
+			if (newSourceArtifact != null) {
+				msgs = ((InternalEObject) newSourceArtifact).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.MAPPING__SOURCE_ARTIFACT, null, msgs);
+			}
 			msgs = basicSetSourceArtifact(newSourceArtifact, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.MAPPING__SOURCE_ARTIFACT, newSourceArtifact, newSourceArtifact));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.MAPPING__SOURCE_ARTIFACT, newSourceArtifact, newSourceArtifact));
 	}
 
 	/**
@@ -270,8 +288,9 @@ public class MappingImpl extends CascadableAnnotationImpl implements Mapping {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.MAPPING__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -291,8 +310,10 @@ public class MappingImpl extends CascadableAnnotationImpl implements Mapping {
 	public void setSourceName(Object newSourceName) {
 		Object oldSourceName = sourceName;
 		sourceName = newSourceName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.MAPPING__SOURCE_NAME, oldSourceName, sourceName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.MAPPING__SOURCE_NAME, oldSourceName, sourceName));
+		}
 	}
 
 	/**
@@ -312,8 +333,10 @@ public class MappingImpl extends CascadableAnnotationImpl implements Mapping {
 	public void setSourceVersion(String newSourceVersion) {
 		String oldSourceVersion = sourceVersion;
 		sourceVersion = newSourceVersion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.MAPPING__SOURCE_VERSION, oldSourceVersion, sourceVersion));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.MAPPING__SOURCE_VERSION, oldSourceVersion, sourceVersion));
+		}
 	}
 
 	/**
@@ -332,11 +355,15 @@ public class MappingImpl extends CascadableAnnotationImpl implements Mapping {
 	 */
 	public void setStrength(MapRelationshipKind newStrength) {
 		MapRelationshipKind oldStrength = strength;
-		strength = newStrength == null ? STRENGTH_EDEFAULT : newStrength;
+		strength = newStrength == null
+				? STRENGTH_EDEFAULT
+				: newStrength;
 		boolean oldStrengthESet = strengthESet;
 		strengthESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.MAPPING__STRENGTH, oldStrength, strength, !oldStrengthESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.MAPPING__STRENGTH, oldStrength, strength, !oldStrengthESet));
+		}
 	}
 
 	/**
@@ -349,8 +376,11 @@ public class MappingImpl extends CascadableAnnotationImpl implements Mapping {
 		boolean oldStrengthESet = strengthESet;
 		strength = STRENGTH_EDEFAULT;
 		strengthESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.MAPPING__STRENGTH, oldStrength, STRENGTH_EDEFAULT, oldStrengthESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.MAPPING__STRENGTH, oldStrength, STRENGTH_EDEFAULT,
+				oldStrengthESet));
+		}
 	}
 
 	/**
@@ -371,9 +401,9 @@ public class MappingImpl extends CascadableAnnotationImpl implements Mapping {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.MAPPING__BUSINESS_NAME:
-				return ((InternalEList<?>)getBusinessName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBusinessName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.MAPPING__DERIVATION_SUPPLIER:
-				return ((InternalEList<?>)getDerivationSupplier()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDerivationSupplier()).basicRemove(otherEnd, msgs);
 			case Mif2Package.MAPPING__SOURCE_ARTIFACT:
 				return basicSetSourceArtifact(null, msgs);
 		}
@@ -417,26 +447,26 @@ public class MappingImpl extends CascadableAnnotationImpl implements Mapping {
 		switch (featureID) {
 			case Mif2Package.MAPPING__BUSINESS_NAME:
 				getBusinessName().clear();
-				getBusinessName().addAll((Collection<? extends BusinessName>)newValue);
+				getBusinessName().addAll((Collection<? extends BusinessName>) newValue);
 				return;
 			case Mif2Package.MAPPING__DERIVATION_SUPPLIER:
 				getDerivationSupplier().clear();
-				getDerivationSupplier().addAll((Collection<? extends AnnotationDerivation>)newValue);
+				getDerivationSupplier().addAll((Collection<? extends AnnotationDerivation>) newValue);
 				return;
 			case Mif2Package.MAPPING__SOURCE_ARTIFACT:
-				setSourceArtifact((PackageOrArtifactRef)newValue);
+				setSourceArtifact((PackageOrArtifactRef) newValue);
 				return;
 			case Mif2Package.MAPPING__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.MAPPING__SOURCE_NAME:
 				setSourceName(newValue);
 				return;
 			case Mif2Package.MAPPING__SOURCE_VERSION:
-				setSourceVersion((String)newValue);
+				setSourceVersion((String) newValue);
 				return;
 			case Mif2Package.MAPPING__STRENGTH:
-				setStrength((MapRelationshipKind)newValue);
+				setStrength((MapRelationshipKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -457,7 +487,7 @@ public class MappingImpl extends CascadableAnnotationImpl implements Mapping {
 				getDerivationSupplier().clear();
 				return;
 			case Mif2Package.MAPPING__SOURCE_ARTIFACT:
-				setSourceArtifact((PackageOrArtifactRef)null);
+				setSourceArtifact((PackageOrArtifactRef) null);
 				return;
 			case Mif2Package.MAPPING__NAME:
 				setName(NAME_EDEFAULT);
@@ -490,11 +520,17 @@ public class MappingImpl extends CascadableAnnotationImpl implements Mapping {
 			case Mif2Package.MAPPING__SOURCE_ARTIFACT:
 				return sourceArtifact != null;
 			case Mif2Package.MAPPING__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.MAPPING__SOURCE_NAME:
-				return SOURCE_NAME_EDEFAULT == null ? sourceName != null : !SOURCE_NAME_EDEFAULT.equals(sourceName);
+				return SOURCE_NAME_EDEFAULT == null
+						? sourceName != null
+						: !SOURCE_NAME_EDEFAULT.equals(sourceName);
 			case Mif2Package.MAPPING__SOURCE_VERSION:
-				return SOURCE_VERSION_EDEFAULT == null ? sourceVersion != null : !SOURCE_VERSION_EDEFAULT.equals(sourceVersion);
+				return SOURCE_VERSION_EDEFAULT == null
+						? sourceVersion != null
+						: !SOURCE_VERSION_EDEFAULT.equals(sourceVersion);
 			case Mif2Package.MAPPING__STRENGTH:
 				return isSetStrength();
 		}
@@ -508,7 +544,9 @@ public class MappingImpl extends CascadableAnnotationImpl implements Mapping {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -518,9 +556,13 @@ public class MappingImpl extends CascadableAnnotationImpl implements Mapping {
 		result.append(", sourceVersion: ");
 		result.append(sourceVersion);
 		result.append(", strength: ");
-		if (strengthESet) result.append(strength); else result.append("<unset>");
+		if (strengthESet) {
+			result.append(strength);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //MappingImpl
+} // MappingImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -98,8 +102,13 @@ public class FreehandDocumentImpl extends PackageImpl implements FreehandDocumen
 		FreehandDocumentAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.FREEHAND_DOCUMENT__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.FREEHAND_DOCUMENT__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -112,15 +121,22 @@ public class FreehandDocumentImpl extends PackageImpl implements FreehandDocumen
 	public void setAnnotations(FreehandDocumentAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.FREEHAND_DOCUMENT__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.FREEHAND_DOCUMENT__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.FREEHAND_DOCUMENT__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.FREEHAND_DOCUMENT__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.FREEHAND_DOCUMENT__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.FREEHAND_DOCUMENT__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -130,7 +146,8 @@ public class FreehandDocumentImpl extends PackageImpl implements FreehandDocumen
 	 */
 	public EList<ComplexMarkupWithLanguage> getDocumentContent() {
 		if (documentContent == null) {
-			documentContent = new EObjectContainmentEList<ComplexMarkupWithLanguage>(ComplexMarkupWithLanguage.class, this, Mif2Package.FREEHAND_DOCUMENT__DOCUMENT_CONTENT);
+			documentContent = new EObjectContainmentEList<ComplexMarkupWithLanguage>(
+				ComplexMarkupWithLanguage.class, this, Mif2Package.FREEHAND_DOCUMENT__DOCUMENT_CONTENT);
 		}
 		return documentContent;
 	}
@@ -146,7 +163,7 @@ public class FreehandDocumentImpl extends PackageImpl implements FreehandDocumen
 			case Mif2Package.FREEHAND_DOCUMENT__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 			case Mif2Package.FREEHAND_DOCUMENT__DOCUMENT_CONTENT:
-				return ((InternalEList<?>)getDocumentContent()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDocumentContent()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -177,11 +194,11 @@ public class FreehandDocumentImpl extends PackageImpl implements FreehandDocumen
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.FREEHAND_DOCUMENT__ANNOTATIONS:
-				setAnnotations((FreehandDocumentAnnotations)newValue);
+				setAnnotations((FreehandDocumentAnnotations) newValue);
 				return;
 			case Mif2Package.FREEHAND_DOCUMENT__DOCUMENT_CONTENT:
 				getDocumentContent().clear();
-				getDocumentContent().addAll((Collection<? extends ComplexMarkupWithLanguage>)newValue);
+				getDocumentContent().addAll((Collection<? extends ComplexMarkupWithLanguage>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -196,7 +213,7 @@ public class FreehandDocumentImpl extends PackageImpl implements FreehandDocumen
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.FREEHAND_DOCUMENT__ANNOTATIONS:
-				setAnnotations((FreehandDocumentAnnotations)null);
+				setAnnotations((FreehandDocumentAnnotations) null);
 				return;
 			case Mif2Package.FREEHAND_DOCUMENT__DOCUMENT_CONTENT:
 				getDocumentContent().clear();
@@ -221,4 +238,4 @@ public class FreehandDocumentImpl extends PackageImpl implements FreehandDocumen
 		return super.eIsSet(featureID);
 	}
 
-} //FreehandDocumentImpl
+} // FreehandDocumentImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.internal.impl;
 
 import java.util.Collection;
@@ -306,11 +310,15 @@ public class TrImpl extends EObjectImpl implements Tr {
 	 */
 	public void setAlign(AlignType newAlign) {
 		AlignType oldAlign = align;
-		align = newAlign == null ? ALIGN_EDEFAULT : newAlign;
+		align = newAlign == null
+				? ALIGN_EDEFAULT
+				: newAlign;
 		boolean oldAlignESet = alignESet;
 		alignESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TR__ALIGN, oldAlign, align, !oldAlignESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TR__ALIGN, oldAlign, align, !oldAlignESet));
+		}
 	}
 
 	/**
@@ -323,8 +331,10 @@ public class TrImpl extends EObjectImpl implements Tr {
 		boolean oldAlignESet = alignESet;
 		align = ALIGN_EDEFAULT;
 		alignESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TR__ALIGN, oldAlign, ALIGN_EDEFAULT, oldAlignESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TR__ALIGN, oldAlign, ALIGN_EDEFAULT, oldAlignESet));
+		}
 	}
 
 	/**
@@ -353,8 +363,9 @@ public class TrImpl extends EObjectImpl implements Tr {
 	public void setChar(String newChar) {
 		String oldChar = char_;
 		char_ = newChar;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TR__CHAR, oldChar, char_));
+		}
 	}
 
 	/**
@@ -374,8 +385,9 @@ public class TrImpl extends EObjectImpl implements Tr {
 	public void setCharoff(String newCharoff) {
 		String oldCharoff = charoff;
 		charoff = newCharoff;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TR__CHAROFF, oldCharoff, charoff));
+		}
 	}
 
 	/**
@@ -394,11 +406,15 @@ public class TrImpl extends EObjectImpl implements Tr {
 	 */
 	public void setClass(MifClassType newClass) {
 		MifClassType oldClass = class_;
-		class_ = newClass == null ? CLASS_EDEFAULT : newClass;
+		class_ = newClass == null
+				? CLASS_EDEFAULT
+				: newClass;
 		boolean oldClassESet = classESet;
 		classESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TR__CLASS, oldClass, class_, !oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TR__CLASS, oldClass, class_, !oldClassESet));
+		}
 	}
 
 	/**
@@ -411,8 +427,10 @@ public class TrImpl extends EObjectImpl implements Tr {
 		boolean oldClassESet = classESet;
 		class_ = CLASS_EDEFAULT;
 		classESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TR__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TR__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		}
 	}
 
 	/**
@@ -441,8 +459,9 @@ public class TrImpl extends EObjectImpl implements Tr {
 	public void setLang(String newLang) {
 		String oldLang = lang;
 		lang = newLang;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TR__LANG, oldLang, lang));
+		}
 	}
 
 	/**
@@ -461,11 +480,15 @@ public class TrImpl extends EObjectImpl implements Tr {
 	 */
 	public void setStyle(StyleSheet newStyle) {
 		StyleSheet oldStyle = style;
-		style = newStyle == null ? STYLE_EDEFAULT : newStyle;
+		style = newStyle == null
+				? STYLE_EDEFAULT
+				: newStyle;
 		boolean oldStyleESet = styleESet;
 		styleESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TR__STYLE, oldStyle, style, !oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TR__STYLE, oldStyle, style, !oldStyleESet));
+		}
 	}
 
 	/**
@@ -478,8 +501,10 @@ public class TrImpl extends EObjectImpl implements Tr {
 		boolean oldStyleESet = styleESet;
 		style = STYLE_EDEFAULT;
 		styleESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TR__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TR__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		}
 	}
 
 	/**
@@ -507,11 +532,15 @@ public class TrImpl extends EObjectImpl implements Tr {
 	 */
 	public void setValign(ValignType newValign) {
 		ValignType oldValign = valign;
-		valign = newValign == null ? VALIGN_EDEFAULT : newValign;
+		valign = newValign == null
+				? VALIGN_EDEFAULT
+				: newValign;
 		boolean oldValignESet = valignESet;
 		valignESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TR__VALIGN, oldValign, valign, !oldValignESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TR__VALIGN, oldValign, valign, !oldValignESet));
+		}
 	}
 
 	/**
@@ -524,8 +553,10 @@ public class TrImpl extends EObjectImpl implements Tr {
 		boolean oldValignESet = valignESet;
 		valign = VALIGN_EDEFAULT;
 		valignESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TR__VALIGN, oldValign, VALIGN_EDEFAULT, oldValignESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TR__VALIGN, oldValign, VALIGN_EDEFAULT, oldValignESet));
+		}
 	}
 
 	/**
@@ -546,11 +577,11 @@ public class TrImpl extends EObjectImpl implements Tr {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case XhtmlPackage.TR__GROUP:
-				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getGroup()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.TR__TH:
-				return ((InternalEList<?>)getTh()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTh()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.TR__TD:
-				return ((InternalEList<?>)getTd()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTd()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -564,8 +595,10 @@ public class TrImpl extends EObjectImpl implements Tr {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case XhtmlPackage.TR__GROUP:
-				if (coreType) return getGroup();
-				return ((FeatureMap.Internal)getGroup()).getWrapper();
+				if (coreType) {
+					return getGroup();
+				}
+				return ((FeatureMap.Internal) getGroup()).getWrapper();
 			case XhtmlPackage.TR__TH:
 				return getTh();
 			case XhtmlPackage.TR__TD:
@@ -598,36 +631,36 @@ public class TrImpl extends EObjectImpl implements Tr {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case XhtmlPackage.TR__GROUP:
-				((FeatureMap.Internal)getGroup()).set(newValue);
+				((FeatureMap.Internal) getGroup()).set(newValue);
 				return;
 			case XhtmlPackage.TR__TH:
 				getTh().clear();
-				getTh().addAll((Collection<? extends Th>)newValue);
+				getTh().addAll((Collection<? extends Th>) newValue);
 				return;
 			case XhtmlPackage.TR__TD:
 				getTd().clear();
-				getTd().addAll((Collection<? extends Td>)newValue);
+				getTd().addAll((Collection<? extends Td>) newValue);
 				return;
 			case XhtmlPackage.TR__ALIGN:
-				setAlign((AlignType)newValue);
+				setAlign((AlignType) newValue);
 				return;
 			case XhtmlPackage.TR__CHAR:
-				setChar((String)newValue);
+				setChar((String) newValue);
 				return;
 			case XhtmlPackage.TR__CHAROFF:
-				setCharoff((String)newValue);
+				setCharoff((String) newValue);
 				return;
 			case XhtmlPackage.TR__CLASS:
-				setClass((MifClassType)newValue);
+				setClass((MifClassType) newValue);
 				return;
 			case XhtmlPackage.TR__LANG:
-				setLang((String)newValue);
+				setLang((String) newValue);
 				return;
 			case XhtmlPackage.TR__STYLE:
-				setStyle((StyleSheet)newValue);
+				setStyle((StyleSheet) newValue);
 				return;
 			case XhtmlPackage.TR__VALIGN:
-				setValign((ValignType)newValue);
+				setValign((ValignType) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -692,13 +725,19 @@ public class TrImpl extends EObjectImpl implements Tr {
 			case XhtmlPackage.TR__ALIGN:
 				return isSetAlign();
 			case XhtmlPackage.TR__CHAR:
-				return CHAR_EDEFAULT == null ? char_ != null : !CHAR_EDEFAULT.equals(char_);
+				return CHAR_EDEFAULT == null
+						? char_ != null
+						: !CHAR_EDEFAULT.equals(char_);
 			case XhtmlPackage.TR__CHAROFF:
-				return CHAROFF_EDEFAULT == null ? charoff != null : !CHAROFF_EDEFAULT.equals(charoff);
+				return CHAROFF_EDEFAULT == null
+						? charoff != null
+						: !CHAROFF_EDEFAULT.equals(charoff);
 			case XhtmlPackage.TR__CLASS:
 				return isSetClass();
 			case XhtmlPackage.TR__LANG:
-				return LANG_EDEFAULT == null ? lang != null : !LANG_EDEFAULT.equals(lang);
+				return LANG_EDEFAULT == null
+						? lang != null
+						: !LANG_EDEFAULT.equals(lang);
 			case XhtmlPackage.TR__STYLE:
 				return isSetStyle();
 			case XhtmlPackage.TR__VALIGN:
@@ -714,27 +753,45 @@ public class TrImpl extends EObjectImpl implements Tr {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (group: ");
 		result.append(group);
 		result.append(", align: ");
-		if (alignESet) result.append(align); else result.append("<unset>");
+		if (alignESet) {
+			result.append(align);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", char: ");
 		result.append(char_);
 		result.append(", charoff: ");
 		result.append(charoff);
 		result.append(", class: ");
-		if (classESet) result.append(class_); else result.append("<unset>");
+		if (classESet) {
+			result.append(class_);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", lang: ");
 		result.append(lang);
 		result.append(", style: ");
-		if (styleESet) result.append(style); else result.append("<unset>");
+		if (styleESet) {
+			result.append(style);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", valign: ");
-		if (valignESet) result.append(valign); else result.append("<unset>");
+		if (valignESet) {
+			result.append(valign);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //TrImpl
+} // TrImpl

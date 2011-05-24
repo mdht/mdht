@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -172,23 +176,23 @@ public class GroupChangeImpl extends ChangeImpl implements GroupChange {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.GROUP_CHANGE__CHANGE_ITEMS:
-				return ((InternalEList<?>)getChangeItems()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getChangeItems()).basicRemove(otherEnd, msgs);
 			case Mif2Package.GROUP_CHANGE__ADD_ATTRIBUTE:
-				return ((InternalEList<?>)getAddAttribute()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAddAttribute()).basicRemove(otherEnd, msgs);
 			case Mif2Package.GROUP_CHANGE__ADD_ELEMENT:
-				return ((InternalEList<?>)getAddElement()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAddElement()).basicRemove(otherEnd, msgs);
 			case Mif2Package.GROUP_CHANGE__REMOVE_ATTRIBUTE:
-				return ((InternalEList<?>)getRemoveAttribute()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRemoveAttribute()).basicRemove(otherEnd, msgs);
 			case Mif2Package.GROUP_CHANGE__REPLACE_ATTRIBUTE:
-				return ((InternalEList<?>)getReplaceAttribute()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getReplaceAttribute()).basicRemove(otherEnd, msgs);
 			case Mif2Package.GROUP_CHANGE__REMOVE_ELEMENT:
-				return ((InternalEList<?>)getRemoveElement()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRemoveElement()).basicRemove(otherEnd, msgs);
 			case Mif2Package.GROUP_CHANGE__REPLACE_ELEMENT:
-				return ((InternalEList<?>)getReplaceElement()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getReplaceElement()).basicRemove(otherEnd, msgs);
 			case Mif2Package.GROUP_CHANGE__CHANGE_ELEMENT:
-				return ((InternalEList<?>)getChangeElement()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getChangeElement()).basicRemove(otherEnd, msgs);
 			case Mif2Package.GROUP_CHANGE__CHANGE_GROUP:
-				return ((InternalEList<?>)getChangeGroup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getChangeGroup()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -202,8 +206,10 @@ public class GroupChangeImpl extends ChangeImpl implements GroupChange {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mif2Package.GROUP_CHANGE__CHANGE_ITEMS:
-				if (coreType) return getChangeItems();
-				return ((FeatureMap.Internal)getChangeItems()).getWrapper();
+				if (coreType) {
+					return getChangeItems();
+				}
+				return ((FeatureMap.Internal) getChangeItems()).getWrapper();
 			case Mif2Package.GROUP_CHANGE__ADD_ATTRIBUTE:
 				return getAddAttribute();
 			case Mif2Package.GROUP_CHANGE__ADD_ELEMENT:
@@ -234,39 +240,39 @@ public class GroupChangeImpl extends ChangeImpl implements GroupChange {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.GROUP_CHANGE__CHANGE_ITEMS:
-				((FeatureMap.Internal)getChangeItems()).set(newValue);
+				((FeatureMap.Internal) getChangeItems()).set(newValue);
 				return;
 			case Mif2Package.GROUP_CHANGE__ADD_ATTRIBUTE:
 				getAddAttribute().clear();
-				getAddAttribute().addAll((Collection<? extends AttributeContent>)newValue);
+				getAddAttribute().addAll((Collection<? extends AttributeContent>) newValue);
 				return;
 			case Mif2Package.GROUP_CHANGE__ADD_ELEMENT:
 				getAddElement().clear();
-				getAddElement().addAll((Collection<? extends AddElementContent>)newValue);
+				getAddElement().addAll((Collection<? extends AddElementContent>) newValue);
 				return;
 			case Mif2Package.GROUP_CHANGE__REMOVE_ATTRIBUTE:
 				getRemoveAttribute().clear();
-				getRemoveAttribute().addAll((Collection<? extends AttributeRef>)newValue);
+				getRemoveAttribute().addAll((Collection<? extends AttributeRef>) newValue);
 				return;
 			case Mif2Package.GROUP_CHANGE__REPLACE_ATTRIBUTE:
 				getReplaceAttribute().clear();
-				getReplaceAttribute().addAll((Collection<? extends AttributeContent>)newValue);
+				getReplaceAttribute().addAll((Collection<? extends AttributeContent>) newValue);
 				return;
 			case Mif2Package.GROUP_CHANGE__REMOVE_ELEMENT:
 				getRemoveElement().clear();
-				getRemoveElement().addAll((Collection<? extends ElementRef>)newValue);
+				getRemoveElement().addAll((Collection<? extends ElementRef>) newValue);
 				return;
 			case Mif2Package.GROUP_CHANGE__REPLACE_ELEMENT:
 				getReplaceElement().clear();
-				getReplaceElement().addAll((Collection<? extends ReplaceElementContent>)newValue);
+				getReplaceElement().addAll((Collection<? extends ReplaceElementContent>) newValue);
 				return;
 			case Mif2Package.GROUP_CHANGE__CHANGE_ELEMENT:
 				getChangeElement().clear();
-				getChangeElement().addAll((Collection<? extends ElementChange>)newValue);
+				getChangeElement().addAll((Collection<? extends ElementChange>) newValue);
 				return;
 			case Mif2Package.GROUP_CHANGE__CHANGE_GROUP:
 				getChangeGroup().clear();
-				getChangeGroup().addAll((Collection<? extends GroupChange>)newValue);
+				getChangeGroup().addAll((Collection<? extends GroupChange>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -348,7 +354,9 @@ public class GroupChangeImpl extends ChangeImpl implements GroupChange {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (changeItems: ");
@@ -357,4 +365,4 @@ public class GroupChangeImpl extends ChangeImpl implements GroupChange {
 		return result.toString();
 	}
 
-} //GroupChangeImpl
+} // GroupChangeImpl

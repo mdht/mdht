@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -33,7 +37,8 @@ import org.openhealthtools.mdht.emf.hl7.mif2.StaticModelClassTemplateParameter;
  *
  * @generated
  */
-public class StaticModelClassTemplateParameterImpl extends ClassifierBaseImpl implements StaticModelClassTemplateParameter {
+public class StaticModelClassTemplateParameterImpl extends ClassifierBaseImpl implements
+		StaticModelClassTemplateParameter {
 	/**
 	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -121,8 +126,14 @@ public class StaticModelClassTemplateParameterImpl extends ClassifierBaseImpl im
 		ClassAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__ANNOTATIONS, oldAnnotations,
+				newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -135,15 +146,23 @@ public class StaticModelClassTemplateParameterImpl extends ClassifierBaseImpl im
 	public void setAnnotations(ClassAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__ANNOTATIONS, newAnnotations,
+				newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -163,8 +182,11 @@ public class StaticModelClassTemplateParameterImpl extends ClassifierBaseImpl im
 	public void setInterface(String newInterface) {
 		String oldInterface = interface_;
 		interface_ = newInterface;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__INTERFACE, oldInterface, interface_));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__INTERFACE, oldInterface,
+				interface_));
+		}
 	}
 
 	/**
@@ -184,8 +206,10 @@ public class StaticModelClassTemplateParameterImpl extends ClassifierBaseImpl im
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__NAME, oldName, name));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -229,13 +253,13 @@ public class StaticModelClassTemplateParameterImpl extends ClassifierBaseImpl im
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__ANNOTATIONS:
-				setAnnotations((ClassAnnotations)newValue);
+				setAnnotations((ClassAnnotations) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__INTERFACE:
-				setInterface((String)newValue);
+				setInterface((String) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -250,7 +274,7 @@ public class StaticModelClassTemplateParameterImpl extends ClassifierBaseImpl im
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__ANNOTATIONS:
-				setAnnotations((ClassAnnotations)null);
+				setAnnotations((ClassAnnotations) null);
 				return;
 			case Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__INTERFACE:
 				setInterface(INTERFACE_EDEFAULT);
@@ -273,9 +297,13 @@ public class StaticModelClassTemplateParameterImpl extends ClassifierBaseImpl im
 			case Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__ANNOTATIONS:
 				return annotations != null;
 			case Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__INTERFACE:
-				return INTERFACE_EDEFAULT == null ? interface_ != null : !INTERFACE_EDEFAULT.equals(interface_);
+				return INTERFACE_EDEFAULT == null
+						? interface_ != null
+						: !INTERFACE_EDEFAULT.equals(interface_);
 			case Mif2Package.STATIC_MODEL_CLASS_TEMPLATE_PARAMETER__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -287,7 +315,9 @@ public class StaticModelClassTemplateParameterImpl extends ClassifierBaseImpl im
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (interface: ");
@@ -298,4 +328,4 @@ public class StaticModelClassTemplateParameterImpl extends ClassifierBaseImpl im
 		return result.toString();
 	}
 
-} //StaticModelClassTemplateParameterImpl
+} // StaticModelClassTemplateParameterImpl

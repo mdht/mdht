@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -12,7 +16,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.ApprovalStatusKind;
 import org.openhealthtools.mdht.emf.hl7.mif2.NegativeVoteResolutionKind;
 import org.openhealthtools.mdht.emf.hl7.mif2.VoteKind;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Inline;
-
 
 /**
  * A sample validator interface for {@link org.openhealthtools.mdht.emf.hl7.mif2.BallotSubmission}.
@@ -24,11 +27,18 @@ public interface BallotSubmissionValidator {
 	boolean validate();
 
 	boolean validateVoterComments(Inline value);
+
 	boolean validateResolution(NegativeVoteResolutionKind value);
+
 	boolean validateStatus(ApprovalStatusKind value);
+
 	boolean validateStatusDate(XMLGregorianCalendar value);
+
 	boolean validateSubmissionId(String value);
+
 	boolean validateSubmitterName(String value);
+
 	boolean validateSubmitterOrganization(String value);
+
 	boolean validateVote(VoteKind value);
 }

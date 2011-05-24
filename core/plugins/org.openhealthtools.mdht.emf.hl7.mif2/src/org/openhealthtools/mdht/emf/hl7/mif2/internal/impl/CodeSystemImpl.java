@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -72,7 +76,8 @@ public class CodeSystemImpl extends CodeSystemBaseImpl implements CodeSystem {
 	 */
 	public EList<CodeSystemVersion> getReleasedVersion() {
 		if (releasedVersion == null) {
-			releasedVersion = new EObjectContainmentEList<CodeSystemVersion>(CodeSystemVersion.class, this, Mif2Package.CODE_SYSTEM__RELEASED_VERSION);
+			releasedVersion = new EObjectContainmentEList<CodeSystemVersion>(
+				CodeSystemVersion.class, this, Mif2Package.CODE_SYSTEM__RELEASED_VERSION);
 		}
 		return releasedVersion;
 	}
@@ -86,7 +91,7 @@ public class CodeSystemImpl extends CodeSystemBaseImpl implements CodeSystem {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.CODE_SYSTEM__RELEASED_VERSION:
-				return ((InternalEList<?>)getReleasedVersion()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getReleasedVersion()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -116,7 +121,7 @@ public class CodeSystemImpl extends CodeSystemBaseImpl implements CodeSystem {
 		switch (featureID) {
 			case Mif2Package.CODE_SYSTEM__RELEASED_VERSION:
 				getReleasedVersion().clear();
-				getReleasedVersion().addAll((Collection<? extends CodeSystemVersion>)newValue);
+				getReleasedVersion().addAll((Collection<? extends CodeSystemVersion>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -151,4 +156,4 @@ public class CodeSystemImpl extends CodeSystemBaseImpl implements CodeSystem {
 		return super.eIsSet(featureID);
 	}
 
-} //CodeSystemImpl
+} // CodeSystemImpl

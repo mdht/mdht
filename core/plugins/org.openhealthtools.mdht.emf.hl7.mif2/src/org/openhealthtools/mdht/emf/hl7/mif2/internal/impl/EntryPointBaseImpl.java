@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -173,8 +177,13 @@ public class EntryPointBaseImpl extends InterfaceImpl implements EntryPointBase 
 		EntryPointAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.ENTRY_POINT_BASE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ENTRY_POINT_BASE__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -187,15 +196,22 @@ public class EntryPointBaseImpl extends InterfaceImpl implements EntryPointBase 
 	public void setAnnotations(EntryPointAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ENTRY_POINT_BASE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ENTRY_POINT_BASE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ENTRY_POINT_BASE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ENTRY_POINT_BASE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ENTRY_POINT_BASE__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ENTRY_POINT_BASE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -215,8 +231,10 @@ public class EntryPointBaseImpl extends InterfaceImpl implements EntryPointBase 
 	public void setGraphicLinkId(String newGraphicLinkId) {
 		String oldGraphicLinkId = graphicLinkId;
 		graphicLinkId = newGraphicLinkId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ENTRY_POINT_BASE__GRAPHIC_LINK_ID, oldGraphicLinkId, graphicLinkId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ENTRY_POINT_BASE__GRAPHIC_LINK_ID, oldGraphicLinkId, graphicLinkId));
+		}
 	}
 
 	/**
@@ -236,8 +254,9 @@ public class EntryPointBaseImpl extends InterfaceImpl implements EntryPointBase 
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ENTRY_POINT_BASE__ID, oldId, id));
+		}
 	}
 
 	/**
@@ -257,8 +276,9 @@ public class EntryPointBaseImpl extends InterfaceImpl implements EntryPointBase 
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ENTRY_POINT_BASE__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -277,11 +297,15 @@ public class EntryPointBaseImpl extends InterfaceImpl implements EntryPointBase 
 	 */
 	public void setUseKind(StaticModelUseKind newUseKind) {
 		StaticModelUseKind oldUseKind = useKind;
-		useKind = newUseKind == null ? USE_KIND_EDEFAULT : newUseKind;
+		useKind = newUseKind == null
+				? USE_KIND_EDEFAULT
+				: newUseKind;
 		boolean oldUseKindESet = useKindESet;
 		useKindESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ENTRY_POINT_BASE__USE_KIND, oldUseKind, useKind, !oldUseKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ENTRY_POINT_BASE__USE_KIND, oldUseKind, useKind, !oldUseKindESet));
+		}
 	}
 
 	/**
@@ -294,8 +318,11 @@ public class EntryPointBaseImpl extends InterfaceImpl implements EntryPointBase 
 		boolean oldUseKindESet = useKindESet;
 		useKind = USE_KIND_EDEFAULT;
 		useKindESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.ENTRY_POINT_BASE__USE_KIND, oldUseKind, USE_KIND_EDEFAULT, oldUseKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.ENTRY_POINT_BASE__USE_KIND, oldUseKind, USE_KIND_EDEFAULT,
+				oldUseKindESet));
+		}
 	}
 
 	/**
@@ -352,19 +379,19 @@ public class EntryPointBaseImpl extends InterfaceImpl implements EntryPointBase 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.ENTRY_POINT_BASE__ANNOTATIONS:
-				setAnnotations((EntryPointAnnotations)newValue);
+				setAnnotations((EntryPointAnnotations) newValue);
 				return;
 			case Mif2Package.ENTRY_POINT_BASE__GRAPHIC_LINK_ID:
-				setGraphicLinkId((String)newValue);
+				setGraphicLinkId((String) newValue);
 				return;
 			case Mif2Package.ENTRY_POINT_BASE__ID:
-				setId((String)newValue);
+				setId((String) newValue);
 				return;
 			case Mif2Package.ENTRY_POINT_BASE__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.ENTRY_POINT_BASE__USE_KIND:
-				setUseKind((StaticModelUseKind)newValue);
+				setUseKind((StaticModelUseKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -379,7 +406,7 @@ public class EntryPointBaseImpl extends InterfaceImpl implements EntryPointBase 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.ENTRY_POINT_BASE__ANNOTATIONS:
-				setAnnotations((EntryPointAnnotations)null);
+				setAnnotations((EntryPointAnnotations) null);
 				return;
 			case Mif2Package.ENTRY_POINT_BASE__GRAPHIC_LINK_ID:
 				setGraphicLinkId(GRAPHIC_LINK_ID_EDEFAULT);
@@ -408,11 +435,17 @@ public class EntryPointBaseImpl extends InterfaceImpl implements EntryPointBase 
 			case Mif2Package.ENTRY_POINT_BASE__ANNOTATIONS:
 				return annotations != null;
 			case Mif2Package.ENTRY_POINT_BASE__GRAPHIC_LINK_ID:
-				return GRAPHIC_LINK_ID_EDEFAULT == null ? graphicLinkId != null : !GRAPHIC_LINK_ID_EDEFAULT.equals(graphicLinkId);
+				return GRAPHIC_LINK_ID_EDEFAULT == null
+						? graphicLinkId != null
+						: !GRAPHIC_LINK_ID_EDEFAULT.equals(graphicLinkId);
 			case Mif2Package.ENTRY_POINT_BASE__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+				return ID_EDEFAULT == null
+						? id != null
+						: !ID_EDEFAULT.equals(id);
 			case Mif2Package.ENTRY_POINT_BASE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.ENTRY_POINT_BASE__USE_KIND:
 				return isSetUseKind();
 		}
@@ -426,7 +459,9 @@ public class EntryPointBaseImpl extends InterfaceImpl implements EntryPointBase 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (graphicLinkId: ");
@@ -436,9 +471,13 @@ public class EntryPointBaseImpl extends InterfaceImpl implements EntryPointBase 
 		result.append(", name: ");
 		result.append(name);
 		result.append(", useKind: ");
-		if (useKindESet) result.append(useKind); else result.append("<unset>");
+		if (useKindESet) {
+			result.append(useKind);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //EntryPointBaseImpl
+} // EntryPointBaseImpl

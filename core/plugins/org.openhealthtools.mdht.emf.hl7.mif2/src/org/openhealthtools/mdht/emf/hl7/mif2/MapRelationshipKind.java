@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -127,13 +131,7 @@ public enum MapRelationshipKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final MapRelationshipKind[] VALUES_ARRAY =
-		new MapRelationshipKind[] {
-			BT,
-			E,
-			NT,
-			NC,
-		};
+	private static final MapRelationshipKind[] VALUES_ARRAY = new MapRelationshipKind[] { BT, E, NT, NC, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Map Relationship Kind</b></em>' enumerators.
@@ -183,10 +181,14 @@ public enum MapRelationshipKind implements Enumerator {
 	 */
 	public static MapRelationshipKind get(int value) {
 		switch (value) {
-			case BT_VALUE: return BT;
-			case E_VALUE: return E;
-			case NT_VALUE: return NT;
-			case NC_VALUE: return NC;
+			case BT_VALUE:
+				return BT;
+			case E_VALUE:
+				return E;
+			case NT_VALUE:
+				return NT;
+			case NC_VALUE:
+				return NC;
 		}
 		return null;
 	}
@@ -230,7 +232,7 @@ public enum MapRelationshipKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -239,7 +241,7 @@ public enum MapRelationshipKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -248,7 +250,7 @@ public enum MapRelationshipKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -261,5 +263,5 @@ public enum MapRelationshipKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //MapRelationshipKind
+
+} // MapRelationshipKind

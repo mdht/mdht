@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -29,15 +33,26 @@ public interface ContentDefinitionValidator {
 	boolean validate();
 
 	boolean validateAnnotations(ContentDefinitionAnnotations value);
+
 	boolean validateCombinedContent(CombinedContentDefinition value);
+
 	boolean validateCodeBasedContent(EList<CodeBasedContentDefinition> value);
+
 	boolean validatePropertyBasedContent(PropertyBasedContentDefinition value);
+
 	boolean validateCodeFilterContent(CodeFilterContentDefinition value);
+
 	boolean validateNonComputableContent(NonComputableContentDefinition value);
+
 	boolean validateValueSetRef(VocabularyValueSetRef value);
+
 	boolean validateAllowedQualifiers(EList<RelationshipBasedContentDefinition> value);
+
 	boolean validateProhibitedQualifiers(EList<RelationshipBasedContentDefinition> value);
+
 	boolean validateAreBaseQualifiersUnlimited(boolean value);
+
 	boolean validateCodeSystem(String value);
+
 	boolean validateVersionDate(XMLGregorianCalendar value);
 }

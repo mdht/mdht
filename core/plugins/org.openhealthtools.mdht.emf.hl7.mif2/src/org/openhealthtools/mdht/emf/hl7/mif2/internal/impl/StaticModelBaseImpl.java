@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -37,7 +41,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.VocabularyCodeRef;
 import org.openhealthtools.mdht.emf.hl7.mif2.VocabularyLimitation;
 import org.openhealthtools.mdht.emf.hl7.mif2.VocabularyModel;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Img;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -385,8 +388,13 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 		StaticModelAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -399,15 +407,22 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	public void setAnnotations(StaticModelAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_BASE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_BASE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -417,7 +432,9 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	 */
 	public EList<StaticPackageDiagramGraphicInformation> getGraphicRepresentation() {
 		if (graphicRepresentation == null) {
-			graphicRepresentation = new EObjectContainmentEList<StaticPackageDiagramGraphicInformation>(StaticPackageDiagramGraphicInformation.class, this, Mif2Package.STATIC_MODEL_BASE__GRAPHIC_REPRESENTATION);
+			graphicRepresentation = new EObjectContainmentEList<StaticPackageDiagramGraphicInformation>(
+				StaticPackageDiagramGraphicInformation.class, this,
+				Mif2Package.STATIC_MODEL_BASE__GRAPHIC_REPRESENTATION);
 		}
 		return graphicRepresentation;
 	}
@@ -440,8 +457,13 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 		Img oldFigure = figure;
 		figure = newFigure;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__FIGURE, oldFigure, newFigure);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__FIGURE, oldFigure, newFigure);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -454,15 +476,22 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	public void setFigure(Img newFigure) {
 		if (newFigure != figure) {
 			NotificationChain msgs = null;
-			if (figure != null)
-				msgs = ((InternalEObject)figure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__FIGURE, null, msgs);
-			if (newFigure != null)
-				msgs = ((InternalEObject)newFigure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__FIGURE, null, msgs);
+			if (figure != null) {
+				msgs = ((InternalEObject) figure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_BASE__FIGURE, null, msgs);
+			}
+			if (newFigure != null) {
+				msgs = ((InternalEObject) newFigure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_BASE__FIGURE, null, msgs);
+			}
 			msgs = basicSetFigure(newFigure, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__FIGURE, newFigure, newFigure));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__FIGURE, newFigure, newFigure));
 	}
 
 	/**
@@ -472,7 +501,8 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	 */
 	public EList<StaticModelDerivation> getDerivedFrom() {
 		if (derivedFrom == null) {
-			derivedFrom = new EObjectContainmentEList<StaticModelDerivation>(StaticModelDerivation.class, this, Mif2Package.STATIC_MODEL_BASE__DERIVED_FROM);
+			derivedFrom = new EObjectContainmentEList<StaticModelDerivation>(
+				StaticModelDerivation.class, this, Mif2Package.STATIC_MODEL_BASE__DERIVED_FROM);
 		}
 		return derivedFrom;
 	}
@@ -491,12 +521,19 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetHasDerivations(StaticModelDerivationSource newHasDerivations, NotificationChain msgs) {
+	public NotificationChain basicSetHasDerivations(StaticModelDerivationSource newHasDerivations,
+			NotificationChain msgs) {
 		StaticModelDerivationSource oldHasDerivations = hasDerivations;
 		hasDerivations = newHasDerivations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__HAS_DERIVATIONS, oldHasDerivations, newHasDerivations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__HAS_DERIVATIONS, oldHasDerivations,
+				newHasDerivations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -509,15 +546,23 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	public void setHasDerivations(StaticModelDerivationSource newHasDerivations) {
 		if (newHasDerivations != hasDerivations) {
 			NotificationChain msgs = null;
-			if (hasDerivations != null)
-				msgs = ((InternalEObject)hasDerivations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__HAS_DERIVATIONS, null, msgs);
-			if (newHasDerivations != null)
-				msgs = ((InternalEObject)newHasDerivations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__HAS_DERIVATIONS, null, msgs);
+			if (hasDerivations != null) {
+				msgs = ((InternalEObject) hasDerivations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_BASE__HAS_DERIVATIONS, null, msgs);
+			}
+			if (newHasDerivations != null) {
+				msgs = ((InternalEObject) newHasDerivations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_BASE__HAS_DERIVATIONS, null, msgs);
+			}
 			msgs = basicSetHasDerivations(newHasDerivations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__HAS_DERIVATIONS, newHasDerivations,
+				newHasDerivations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__HAS_DERIVATIONS, newHasDerivations, newHasDerivations));
 	}
 
 	/**
@@ -534,12 +579,19 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetImportedDatatypeModelPackage(PackageRef newImportedDatatypeModelPackage, NotificationChain msgs) {
+	public NotificationChain basicSetImportedDatatypeModelPackage(PackageRef newImportedDatatypeModelPackage,
+			NotificationChain msgs) {
 		PackageRef oldImportedDatatypeModelPackage = importedDatatypeModelPackage;
 		importedDatatypeModelPackage = newImportedDatatypeModelPackage;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORTED_DATATYPE_MODEL_PACKAGE, oldImportedDatatypeModelPackage, newImportedDatatypeModelPackage);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORTED_DATATYPE_MODEL_PACKAGE,
+				oldImportedDatatypeModelPackage, newImportedDatatypeModelPackage);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -552,15 +604,23 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	public void setImportedDatatypeModelPackage(PackageRef newImportedDatatypeModelPackage) {
 		if (newImportedDatatypeModelPackage != importedDatatypeModelPackage) {
 			NotificationChain msgs = null;
-			if (importedDatatypeModelPackage != null)
-				msgs = ((InternalEObject)importedDatatypeModelPackage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__IMPORTED_DATATYPE_MODEL_PACKAGE, null, msgs);
-			if (newImportedDatatypeModelPackage != null)
-				msgs = ((InternalEObject)newImportedDatatypeModelPackage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__IMPORTED_DATATYPE_MODEL_PACKAGE, null, msgs);
+			if (importedDatatypeModelPackage != null) {
+				msgs = ((InternalEObject) importedDatatypeModelPackage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_BASE__IMPORTED_DATATYPE_MODEL_PACKAGE, null, msgs);
+			}
+			if (newImportedDatatypeModelPackage != null) {
+				msgs = ((InternalEObject) newImportedDatatypeModelPackage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_BASE__IMPORTED_DATATYPE_MODEL_PACKAGE, null, msgs);
+			}
 			msgs = basicSetImportedDatatypeModelPackage(newImportedDatatypeModelPackage, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORTED_DATATYPE_MODEL_PACKAGE,
+				newImportedDatatypeModelPackage, newImportedDatatypeModelPackage));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORTED_DATATYPE_MODEL_PACKAGE, newImportedDatatypeModelPackage, newImportedDatatypeModelPackage));
 	}
 
 	/**
@@ -577,12 +637,19 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetImportedVocabularyModelPackage(PackageRef newImportedVocabularyModelPackage, NotificationChain msgs) {
+	public NotificationChain basicSetImportedVocabularyModelPackage(PackageRef newImportedVocabularyModelPackage,
+			NotificationChain msgs) {
 		PackageRef oldImportedVocabularyModelPackage = importedVocabularyModelPackage;
 		importedVocabularyModelPackage = newImportedVocabularyModelPackage;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORTED_VOCABULARY_MODEL_PACKAGE, oldImportedVocabularyModelPackage, newImportedVocabularyModelPackage);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORTED_VOCABULARY_MODEL_PACKAGE,
+				oldImportedVocabularyModelPackage, newImportedVocabularyModelPackage);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -595,15 +662,23 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	public void setImportedVocabularyModelPackage(PackageRef newImportedVocabularyModelPackage) {
 		if (newImportedVocabularyModelPackage != importedVocabularyModelPackage) {
 			NotificationChain msgs = null;
-			if (importedVocabularyModelPackage != null)
-				msgs = ((InternalEObject)importedVocabularyModelPackage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__IMPORTED_VOCABULARY_MODEL_PACKAGE, null, msgs);
-			if (newImportedVocabularyModelPackage != null)
-				msgs = ((InternalEObject)newImportedVocabularyModelPackage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__IMPORTED_VOCABULARY_MODEL_PACKAGE, null, msgs);
+			if (importedVocabularyModelPackage != null) {
+				msgs = ((InternalEObject) importedVocabularyModelPackage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_BASE__IMPORTED_VOCABULARY_MODEL_PACKAGE, null, msgs);
+			}
+			if (newImportedVocabularyModelPackage != null) {
+				msgs = ((InternalEObject) newImportedVocabularyModelPackage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_BASE__IMPORTED_VOCABULARY_MODEL_PACKAGE, null, msgs);
+			}
 			msgs = basicSetImportedVocabularyModelPackage(newImportedVocabularyModelPackage, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORTED_VOCABULARY_MODEL_PACKAGE,
+				newImportedVocabularyModelPackage, newImportedVocabularyModelPackage));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORTED_VOCABULARY_MODEL_PACKAGE, newImportedVocabularyModelPackage, newImportedVocabularyModelPackage));
 	}
 
 	/**
@@ -620,12 +695,19 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetImportedCommonModelElementPackage(PackageRef newImportedCommonModelElementPackage, NotificationChain msgs) {
+	public NotificationChain basicSetImportedCommonModelElementPackage(PackageRef newImportedCommonModelElementPackage,
+			NotificationChain msgs) {
 		PackageRef oldImportedCommonModelElementPackage = importedCommonModelElementPackage;
 		importedCommonModelElementPackage = newImportedCommonModelElementPackage;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORTED_COMMON_MODEL_ELEMENT_PACKAGE, oldImportedCommonModelElementPackage, newImportedCommonModelElementPackage);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORTED_COMMON_MODEL_ELEMENT_PACKAGE,
+				oldImportedCommonModelElementPackage, newImportedCommonModelElementPackage);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -638,15 +720,27 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	public void setImportedCommonModelElementPackage(PackageRef newImportedCommonModelElementPackage) {
 		if (newImportedCommonModelElementPackage != importedCommonModelElementPackage) {
 			NotificationChain msgs = null;
-			if (importedCommonModelElementPackage != null)
-				msgs = ((InternalEObject)importedCommonModelElementPackage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__IMPORTED_COMMON_MODEL_ELEMENT_PACKAGE, null, msgs);
-			if (newImportedCommonModelElementPackage != null)
-				msgs = ((InternalEObject)newImportedCommonModelElementPackage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__IMPORTED_COMMON_MODEL_ELEMENT_PACKAGE, null, msgs);
+			if (importedCommonModelElementPackage != null) {
+				msgs = ((InternalEObject) importedCommonModelElementPackage).eInverseRemove(
+					this,
+					EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__IMPORTED_COMMON_MODEL_ELEMENT_PACKAGE,
+					null, msgs);
+			}
+			if (newImportedCommonModelElementPackage != null) {
+				msgs = ((InternalEObject) newImportedCommonModelElementPackage).eInverseAdd(
+					this,
+					EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__IMPORTED_COMMON_MODEL_ELEMENT_PACKAGE,
+					null, msgs);
+			}
 			msgs = basicSetImportedCommonModelElementPackage(newImportedCommonModelElementPackage, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORTED_COMMON_MODEL_ELEMENT_PACKAGE,
+				newImportedCommonModelElementPackage, newImportedCommonModelElementPackage));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORTED_COMMON_MODEL_ELEMENT_PACKAGE, newImportedCommonModelElementPackage, newImportedCommonModelElementPackage));
 	}
 
 	/**
@@ -667,8 +761,14 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 		PackageRef oldImportedStubPackage = importedStubPackage;
 		importedStubPackage = newImportedStubPackage;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORTED_STUB_PACKAGE, oldImportedStubPackage, newImportedStubPackage);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORTED_STUB_PACKAGE, oldImportedStubPackage,
+				newImportedStubPackage);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -681,15 +781,23 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	public void setImportedStubPackage(PackageRef newImportedStubPackage) {
 		if (newImportedStubPackage != importedStubPackage) {
 			NotificationChain msgs = null;
-			if (importedStubPackage != null)
-				msgs = ((InternalEObject)importedStubPackage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__IMPORTED_STUB_PACKAGE, null, msgs);
-			if (newImportedStubPackage != null)
-				msgs = ((InternalEObject)newImportedStubPackage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__IMPORTED_STUB_PACKAGE, null, msgs);
+			if (importedStubPackage != null) {
+				msgs = ((InternalEObject) importedStubPackage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_BASE__IMPORTED_STUB_PACKAGE, null, msgs);
+			}
+			if (newImportedStubPackage != null) {
+				msgs = ((InternalEObject) newImportedStubPackage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_BASE__IMPORTED_STUB_PACKAGE, null, msgs);
+			}
 			msgs = basicSetImportedStubPackage(newImportedStubPackage, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORTED_STUB_PACKAGE, newImportedStubPackage,
+				newImportedStubPackage));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORTED_STUB_PACKAGE, newImportedStubPackage, newImportedStubPackage));
 	}
 
 	/**
@@ -706,12 +814,19 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetImportAnnotationLibrary(PackageRef newImportAnnotationLibrary, NotificationChain msgs) {
+	public NotificationChain basicSetImportAnnotationLibrary(PackageRef newImportAnnotationLibrary,
+			NotificationChain msgs) {
 		PackageRef oldImportAnnotationLibrary = importAnnotationLibrary;
 		importAnnotationLibrary = newImportAnnotationLibrary;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORT_ANNOTATION_LIBRARY, oldImportAnnotationLibrary, newImportAnnotationLibrary);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORT_ANNOTATION_LIBRARY,
+				oldImportAnnotationLibrary, newImportAnnotationLibrary);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -724,15 +839,23 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	public void setImportAnnotationLibrary(PackageRef newImportAnnotationLibrary) {
 		if (newImportAnnotationLibrary != importAnnotationLibrary) {
 			NotificationChain msgs = null;
-			if (importAnnotationLibrary != null)
-				msgs = ((InternalEObject)importAnnotationLibrary).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__IMPORT_ANNOTATION_LIBRARY, null, msgs);
-			if (newImportAnnotationLibrary != null)
-				msgs = ((InternalEObject)newImportAnnotationLibrary).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STATIC_MODEL_BASE__IMPORT_ANNOTATION_LIBRARY, null, msgs);
+			if (importAnnotationLibrary != null) {
+				msgs = ((InternalEObject) importAnnotationLibrary).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_BASE__IMPORT_ANNOTATION_LIBRARY, null, msgs);
+			}
+			if (newImportAnnotationLibrary != null) {
+				msgs = ((InternalEObject) newImportAnnotationLibrary).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STATIC_MODEL_BASE__IMPORT_ANNOTATION_LIBRARY, null, msgs);
+			}
 			msgs = basicSetImportAnnotationLibrary(newImportAnnotationLibrary, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORT_ANNOTATION_LIBRARY,
+				newImportAnnotationLibrary, newImportAnnotationLibrary));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IMPORT_ANNOTATION_LIBRARY, newImportAnnotationLibrary, newImportAnnotationLibrary));
 	}
 
 	/**
@@ -742,7 +865,8 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	 */
 	public EList<DatatypeModelLibrary> getAdditionalDatatypeModel() {
 		if (additionalDatatypeModel == null) {
-			additionalDatatypeModel = new EObjectContainmentEList<DatatypeModelLibrary>(DatatypeModelLibrary.class, this, Mif2Package.STATIC_MODEL_BASE__ADDITIONAL_DATATYPE_MODEL);
+			additionalDatatypeModel = new EObjectContainmentEList<DatatypeModelLibrary>(
+				DatatypeModelLibrary.class, this, Mif2Package.STATIC_MODEL_BASE__ADDITIONAL_DATATYPE_MODEL);
 		}
 		return additionalDatatypeModel;
 	}
@@ -754,7 +878,8 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	 */
 	public EList<DatatypeLimitation> getDatatypeLimitation() {
 		if (datatypeLimitation == null) {
-			datatypeLimitation = new EObjectContainmentEList<DatatypeLimitation>(DatatypeLimitation.class, this, Mif2Package.STATIC_MODEL_BASE__DATATYPE_LIMITATION);
+			datatypeLimitation = new EObjectContainmentEList<DatatypeLimitation>(
+				DatatypeLimitation.class, this, Mif2Package.STATIC_MODEL_BASE__DATATYPE_LIMITATION);
 		}
 		return datatypeLimitation;
 	}
@@ -766,7 +891,8 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	 */
 	public EList<VocabularyModel> getAdditionalVocabularyModel() {
 		if (additionalVocabularyModel == null) {
-			additionalVocabularyModel = new EObjectContainmentEList<VocabularyModel>(VocabularyModel.class, this, Mif2Package.STATIC_MODEL_BASE__ADDITIONAL_VOCABULARY_MODEL);
+			additionalVocabularyModel = new EObjectContainmentEList<VocabularyModel>(
+				VocabularyModel.class, this, Mif2Package.STATIC_MODEL_BASE__ADDITIONAL_VOCABULARY_MODEL);
 		}
 		return additionalVocabularyModel;
 	}
@@ -778,7 +904,8 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	 */
 	public EList<VocabularyLimitation> getVocabularyLimitation() {
 		if (vocabularyLimitation == null) {
-			vocabularyLimitation = new EObjectContainmentEList<VocabularyLimitation>(VocabularyLimitation.class, this, Mif2Package.STATIC_MODEL_BASE__VOCABULARY_LIMITATION);
+			vocabularyLimitation = new EObjectContainmentEList<VocabularyLimitation>(
+				VocabularyLimitation.class, this, Mif2Package.STATIC_MODEL_BASE__VOCABULARY_LIMITATION);
 		}
 		return vocabularyLimitation;
 	}
@@ -790,7 +917,8 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	 */
 	public EList<SubjectAreaPackage> getSubjectAreaPackage() {
 		if (subjectAreaPackage == null) {
-			subjectAreaPackage = new EObjectContainmentEList<SubjectAreaPackage>(SubjectAreaPackage.class, this, Mif2Package.STATIC_MODEL_BASE__SUBJECT_AREA_PACKAGE);
+			subjectAreaPackage = new EObjectContainmentEList<SubjectAreaPackage>(
+				SubjectAreaPackage.class, this, Mif2Package.STATIC_MODEL_BASE__SUBJECT_AREA_PACKAGE);
 		}
 		return subjectAreaPackage;
 	}
@@ -802,7 +930,8 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	 */
 	public EList<VocabularyCodeRef> getDefinitionalCode() {
 		if (definitionalCode == null) {
-			definitionalCode = new EObjectContainmentEList<VocabularyCodeRef>(VocabularyCodeRef.class, this, Mif2Package.STATIC_MODEL_BASE__DEFINITIONAL_CODE);
+			definitionalCode = new EObjectContainmentEList<VocabularyCodeRef>(
+				VocabularyCodeRef.class, this, Mif2Package.STATIC_MODEL_BASE__DEFINITIONAL_CODE);
 		}
 		return definitionalCode;
 	}
@@ -823,11 +952,16 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	 */
 	public void setConformanceLevel(ModelConformanceKind newConformanceLevel) {
 		ModelConformanceKind oldConformanceLevel = conformanceLevel;
-		conformanceLevel = newConformanceLevel == null ? CONFORMANCE_LEVEL_EDEFAULT : newConformanceLevel;
+		conformanceLevel = newConformanceLevel == null
+				? CONFORMANCE_LEVEL_EDEFAULT
+				: newConformanceLevel;
 		boolean oldConformanceLevelESet = conformanceLevelESet;
 		conformanceLevelESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__CONFORMANCE_LEVEL, oldConformanceLevel, conformanceLevel, !oldConformanceLevelESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__CONFORMANCE_LEVEL, oldConformanceLevel,
+				conformanceLevel, !oldConformanceLevelESet));
+		}
 	}
 
 	/**
@@ -840,8 +974,11 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 		boolean oldConformanceLevelESet = conformanceLevelESet;
 		conformanceLevel = CONFORMANCE_LEVEL_EDEFAULT;
 		conformanceLevelESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.STATIC_MODEL_BASE__CONFORMANCE_LEVEL, oldConformanceLevel, CONFORMANCE_LEVEL_EDEFAULT, oldConformanceLevelESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.STATIC_MODEL_BASE__CONFORMANCE_LEVEL, oldConformanceLevel,
+				CONFORMANCE_LEVEL_EDEFAULT, oldConformanceLevelESet));
+		}
 	}
 
 	/**
@@ -872,8 +1009,11 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 		isAbstract = newIsAbstract;
 		boolean oldIsAbstractESet = isAbstractESet;
 		isAbstractESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IS_ABSTRACT, oldIsAbstract, isAbstract, !oldIsAbstractESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IS_ABSTRACT, oldIsAbstract, isAbstract,
+				!oldIsAbstractESet));
+		}
 	}
 
 	/**
@@ -886,8 +1026,11 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 		boolean oldIsAbstractESet = isAbstractESet;
 		isAbstract = IS_ABSTRACT_EDEFAULT;
 		isAbstractESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.STATIC_MODEL_BASE__IS_ABSTRACT, oldIsAbstract, IS_ABSTRACT_EDEFAULT, oldIsAbstractESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.STATIC_MODEL_BASE__IS_ABSTRACT, oldIsAbstract,
+				IS_ABSTRACT_EDEFAULT, oldIsAbstractESet));
+		}
 	}
 
 	/**
@@ -918,8 +1061,11 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 		isSerializable = newIsSerializable;
 		boolean oldIsSerializableESet = isSerializableESet;
 		isSerializableESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IS_SERIALIZABLE, oldIsSerializable, isSerializable, !oldIsSerializableESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__IS_SERIALIZABLE, oldIsSerializable,
+				isSerializable, !oldIsSerializableESet));
+		}
 	}
 
 	/**
@@ -932,8 +1078,11 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 		boolean oldIsSerializableESet = isSerializableESet;
 		isSerializable = IS_SERIALIZABLE_EDEFAULT;
 		isSerializableESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.STATIC_MODEL_BASE__IS_SERIALIZABLE, oldIsSerializable, IS_SERIALIZABLE_EDEFAULT, oldIsSerializableESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.STATIC_MODEL_BASE__IS_SERIALIZABLE, oldIsSerializable,
+				IS_SERIALIZABLE_EDEFAULT, oldIsSerializableESet));
+		}
 	}
 
 	/**
@@ -961,11 +1110,16 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	 */
 	public void setRepresentationKind(StaticModelRepresentationKind newRepresentationKind) {
 		StaticModelRepresentationKind oldRepresentationKind = representationKind;
-		representationKind = newRepresentationKind == null ? REPRESENTATION_KIND_EDEFAULT : newRepresentationKind;
+		representationKind = newRepresentationKind == null
+				? REPRESENTATION_KIND_EDEFAULT
+				: newRepresentationKind;
 		boolean oldRepresentationKindESet = representationKindESet;
 		representationKindESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__REPRESENTATION_KIND, oldRepresentationKind, representationKind, !oldRepresentationKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_MODEL_BASE__REPRESENTATION_KIND, oldRepresentationKind,
+				representationKind, !oldRepresentationKindESet));
+		}
 	}
 
 	/**
@@ -978,8 +1132,11 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 		boolean oldRepresentationKindESet = representationKindESet;
 		representationKind = REPRESENTATION_KIND_EDEFAULT;
 		representationKindESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.STATIC_MODEL_BASE__REPRESENTATION_KIND, oldRepresentationKind, REPRESENTATION_KIND_EDEFAULT, oldRepresentationKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.STATIC_MODEL_BASE__REPRESENTATION_KIND, oldRepresentationKind,
+				REPRESENTATION_KIND_EDEFAULT, oldRepresentationKindESet));
+		}
 	}
 
 	/**
@@ -1002,11 +1159,11 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 			case Mif2Package.STATIC_MODEL_BASE__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
 			case Mif2Package.STATIC_MODEL_BASE__GRAPHIC_REPRESENTATION:
-				return ((InternalEList<?>)getGraphicRepresentation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getGraphicRepresentation()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_MODEL_BASE__FIGURE:
 				return basicSetFigure(null, msgs);
 			case Mif2Package.STATIC_MODEL_BASE__DERIVED_FROM:
-				return ((InternalEList<?>)getDerivedFrom()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDerivedFrom()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_MODEL_BASE__HAS_DERIVATIONS:
 				return basicSetHasDerivations(null, msgs);
 			case Mif2Package.STATIC_MODEL_BASE__IMPORTED_DATATYPE_MODEL_PACKAGE:
@@ -1020,17 +1177,17 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 			case Mif2Package.STATIC_MODEL_BASE__IMPORT_ANNOTATION_LIBRARY:
 				return basicSetImportAnnotationLibrary(null, msgs);
 			case Mif2Package.STATIC_MODEL_BASE__ADDITIONAL_DATATYPE_MODEL:
-				return ((InternalEList<?>)getAdditionalDatatypeModel()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAdditionalDatatypeModel()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_MODEL_BASE__DATATYPE_LIMITATION:
-				return ((InternalEList<?>)getDatatypeLimitation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDatatypeLimitation()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_MODEL_BASE__ADDITIONAL_VOCABULARY_MODEL:
-				return ((InternalEList<?>)getAdditionalVocabularyModel()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAdditionalVocabularyModel()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_MODEL_BASE__VOCABULARY_LIMITATION:
-				return ((InternalEList<?>)getVocabularyLimitation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getVocabularyLimitation()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_MODEL_BASE__SUBJECT_AREA_PACKAGE:
-				return ((InternalEList<?>)getSubjectAreaPackage()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSubjectAreaPackage()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_MODEL_BASE__DEFINITIONAL_CODE:
-				return ((InternalEList<?>)getDefinitionalCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDefinitionalCode()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1078,9 +1235,13 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 			case Mif2Package.STATIC_MODEL_BASE__CONFORMANCE_LEVEL:
 				return getConformanceLevel();
 			case Mif2Package.STATIC_MODEL_BASE__IS_ABSTRACT:
-				return isIsAbstract() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsAbstract()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.STATIC_MODEL_BASE__IS_SERIALIZABLE:
-				return isIsSerializable() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsSerializable()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.STATIC_MODEL_BASE__REPRESENTATION_KIND:
 				return getRepresentationKind();
 		}
@@ -1097,72 +1258,73 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.STATIC_MODEL_BASE__ANNOTATIONS:
-				setAnnotations((StaticModelAnnotations)newValue);
+				setAnnotations((StaticModelAnnotations) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__GRAPHIC_REPRESENTATION:
 				getGraphicRepresentation().clear();
-				getGraphicRepresentation().addAll((Collection<? extends StaticPackageDiagramGraphicInformation>)newValue);
+				getGraphicRepresentation().addAll(
+					(Collection<? extends StaticPackageDiagramGraphicInformation>) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__FIGURE:
-				setFigure((Img)newValue);
+				setFigure((Img) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__DERIVED_FROM:
 				getDerivedFrom().clear();
-				getDerivedFrom().addAll((Collection<? extends StaticModelDerivation>)newValue);
+				getDerivedFrom().addAll((Collection<? extends StaticModelDerivation>) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__HAS_DERIVATIONS:
-				setHasDerivations((StaticModelDerivationSource)newValue);
+				setHasDerivations((StaticModelDerivationSource) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__IMPORTED_DATATYPE_MODEL_PACKAGE:
-				setImportedDatatypeModelPackage((PackageRef)newValue);
+				setImportedDatatypeModelPackage((PackageRef) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__IMPORTED_VOCABULARY_MODEL_PACKAGE:
-				setImportedVocabularyModelPackage((PackageRef)newValue);
+				setImportedVocabularyModelPackage((PackageRef) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__IMPORTED_COMMON_MODEL_ELEMENT_PACKAGE:
-				setImportedCommonModelElementPackage((PackageRef)newValue);
+				setImportedCommonModelElementPackage((PackageRef) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__IMPORTED_STUB_PACKAGE:
-				setImportedStubPackage((PackageRef)newValue);
+				setImportedStubPackage((PackageRef) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__IMPORT_ANNOTATION_LIBRARY:
-				setImportAnnotationLibrary((PackageRef)newValue);
+				setImportAnnotationLibrary((PackageRef) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__ADDITIONAL_DATATYPE_MODEL:
 				getAdditionalDatatypeModel().clear();
-				getAdditionalDatatypeModel().addAll((Collection<? extends DatatypeModelLibrary>)newValue);
+				getAdditionalDatatypeModel().addAll((Collection<? extends DatatypeModelLibrary>) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__DATATYPE_LIMITATION:
 				getDatatypeLimitation().clear();
-				getDatatypeLimitation().addAll((Collection<? extends DatatypeLimitation>)newValue);
+				getDatatypeLimitation().addAll((Collection<? extends DatatypeLimitation>) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__ADDITIONAL_VOCABULARY_MODEL:
 				getAdditionalVocabularyModel().clear();
-				getAdditionalVocabularyModel().addAll((Collection<? extends VocabularyModel>)newValue);
+				getAdditionalVocabularyModel().addAll((Collection<? extends VocabularyModel>) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__VOCABULARY_LIMITATION:
 				getVocabularyLimitation().clear();
-				getVocabularyLimitation().addAll((Collection<? extends VocabularyLimitation>)newValue);
+				getVocabularyLimitation().addAll((Collection<? extends VocabularyLimitation>) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__SUBJECT_AREA_PACKAGE:
 				getSubjectAreaPackage().clear();
-				getSubjectAreaPackage().addAll((Collection<? extends SubjectAreaPackage>)newValue);
+				getSubjectAreaPackage().addAll((Collection<? extends SubjectAreaPackage>) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__DEFINITIONAL_CODE:
 				getDefinitionalCode().clear();
-				getDefinitionalCode().addAll((Collection<? extends VocabularyCodeRef>)newValue);
+				getDefinitionalCode().addAll((Collection<? extends VocabularyCodeRef>) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__CONFORMANCE_LEVEL:
-				setConformanceLevel((ModelConformanceKind)newValue);
+				setConformanceLevel((ModelConformanceKind) newValue);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__IS_ABSTRACT:
-				setIsAbstract(((Boolean)newValue).booleanValue());
+				setIsAbstract(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__IS_SERIALIZABLE:
-				setIsSerializable(((Boolean)newValue).booleanValue());
+				setIsSerializable(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__REPRESENTATION_KIND:
-				setRepresentationKind((StaticModelRepresentationKind)newValue);
+				setRepresentationKind((StaticModelRepresentationKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1177,34 +1339,34 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.STATIC_MODEL_BASE__ANNOTATIONS:
-				setAnnotations((StaticModelAnnotations)null);
+				setAnnotations((StaticModelAnnotations) null);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__GRAPHIC_REPRESENTATION:
 				getGraphicRepresentation().clear();
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__FIGURE:
-				setFigure((Img)null);
+				setFigure((Img) null);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__DERIVED_FROM:
 				getDerivedFrom().clear();
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__HAS_DERIVATIONS:
-				setHasDerivations((StaticModelDerivationSource)null);
+				setHasDerivations((StaticModelDerivationSource) null);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__IMPORTED_DATATYPE_MODEL_PACKAGE:
-				setImportedDatatypeModelPackage((PackageRef)null);
+				setImportedDatatypeModelPackage((PackageRef) null);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__IMPORTED_VOCABULARY_MODEL_PACKAGE:
-				setImportedVocabularyModelPackage((PackageRef)null);
+				setImportedVocabularyModelPackage((PackageRef) null);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__IMPORTED_COMMON_MODEL_ELEMENT_PACKAGE:
-				setImportedCommonModelElementPackage((PackageRef)null);
+				setImportedCommonModelElementPackage((PackageRef) null);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__IMPORTED_STUB_PACKAGE:
-				setImportedStubPackage((PackageRef)null);
+				setImportedStubPackage((PackageRef) null);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__IMPORT_ANNOTATION_LIBRARY:
-				setImportAnnotationLibrary((PackageRef)null);
+				setImportAnnotationLibrary((PackageRef) null);
 				return;
 			case Mif2Package.STATIC_MODEL_BASE__ADDITIONAL_DATATYPE_MODEL:
 				getAdditionalDatatypeModel().clear();
@@ -1299,19 +1461,37 @@ public class StaticModelBaseImpl extends SubSystemImpl implements StaticModelBas
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (conformanceLevel: ");
-		if (conformanceLevelESet) result.append(conformanceLevel); else result.append("<unset>");
+		if (conformanceLevelESet) {
+			result.append(conformanceLevel);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", isAbstract: ");
-		if (isAbstractESet) result.append(isAbstract); else result.append("<unset>");
+		if (isAbstractESet) {
+			result.append(isAbstract);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", isSerializable: ");
-		if (isSerializableESet) result.append(isSerializable); else result.append("<unset>");
+		if (isSerializableESet) {
+			result.append(isSerializable);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", representationKind: ");
-		if (representationKindESet) result.append(representationKind); else result.append("<unset>");
+		if (representationKindESet) {
+			result.append(representationKind);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //StaticModelBaseImpl
+} // StaticModelBaseImpl

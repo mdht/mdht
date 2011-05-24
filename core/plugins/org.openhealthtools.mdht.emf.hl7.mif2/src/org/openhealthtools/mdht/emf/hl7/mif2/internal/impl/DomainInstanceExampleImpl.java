@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -91,8 +95,14 @@ public class DomainInstanceExampleImpl extends PackageArtifactImpl implements Do
 		DomainInstanceExampleAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE__ANNOTATIONS, oldAnnotations,
+				newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -105,15 +115,23 @@ public class DomainInstanceExampleImpl extends PackageArtifactImpl implements Do
 	public void setAnnotations(DomainInstanceExampleAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_INSTANCE_EXAMPLE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_INSTANCE_EXAMPLE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_INSTANCE_EXAMPLE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_INSTANCE_EXAMPLE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE__ANNOTATIONS, newAnnotations,
+				newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -134,8 +152,13 @@ public class DomainInstanceExampleImpl extends PackageArtifactImpl implements Do
 		XMIContent oldModel = model;
 		model = newModel;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE__MODEL, oldModel, newModel);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE__MODEL, oldModel, newModel);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -148,15 +171,22 @@ public class DomainInstanceExampleImpl extends PackageArtifactImpl implements Do
 	public void setModel(XMIContent newModel) {
 		if (newModel != model) {
 			NotificationChain msgs = null;
-			if (model != null)
-				msgs = ((InternalEObject)model).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_INSTANCE_EXAMPLE__MODEL, null, msgs);
-			if (newModel != null)
-				msgs = ((InternalEObject)newModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_INSTANCE_EXAMPLE__MODEL, null, msgs);
+			if (model != null) {
+				msgs = ((InternalEObject) model).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_INSTANCE_EXAMPLE__MODEL, null, msgs);
+			}
+			if (newModel != null) {
+				msgs = ((InternalEObject) newModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_INSTANCE_EXAMPLE__MODEL, null, msgs);
+			}
 			msgs = basicSetModel(newModel, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE__MODEL, newModel, newModel));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_INSTANCE_EXAMPLE__MODEL, newModel, newModel));
 	}
 
 	/**
@@ -200,10 +230,10 @@ public class DomainInstanceExampleImpl extends PackageArtifactImpl implements Do
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE__ANNOTATIONS:
-				setAnnotations((DomainInstanceExampleAnnotations)newValue);
+				setAnnotations((DomainInstanceExampleAnnotations) newValue);
 				return;
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE__MODEL:
-				setModel((XMIContent)newValue);
+				setModel((XMIContent) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -218,10 +248,10 @@ public class DomainInstanceExampleImpl extends PackageArtifactImpl implements Do
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE__ANNOTATIONS:
-				setAnnotations((DomainInstanceExampleAnnotations)null);
+				setAnnotations((DomainInstanceExampleAnnotations) null);
 				return;
 			case Mif2Package.DOMAIN_INSTANCE_EXAMPLE__MODEL:
-				setModel((XMIContent)null);
+				setModel((XMIContent) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -243,4 +273,4 @@ public class DomainInstanceExampleImpl extends PackageArtifactImpl implements Do
 		return super.eIsSet(featureID);
 	}
 
-} //DomainInstanceExampleImpl
+} // DomainInstanceExampleImpl

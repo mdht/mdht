@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -208,7 +212,8 @@ public class StaticExampleImpl extends AnnotationBaseImpl implements StaticExamp
 	 */
 	public EList<FreeFormMarkupWithLanguage> getData() {
 		if (data == null) {
-			data = new EObjectContainmentEList<FreeFormMarkupWithLanguage>(FreeFormMarkupWithLanguage.class, this, Mif2Package.STATIC_EXAMPLE__DATA);
+			data = new EObjectContainmentEList<FreeFormMarkupWithLanguage>(
+				FreeFormMarkupWithLanguage.class, this, Mif2Package.STATIC_EXAMPLE__DATA);
 		}
 		return data;
 	}
@@ -241,7 +246,8 @@ public class StaticExampleImpl extends AnnotationBaseImpl implements StaticExamp
 	 */
 	public EList<BusinessName> getBusinessName() {
 		if (businessName == null) {
-			businessName = new EObjectContainmentEList<BusinessName>(BusinessName.class, this, Mif2Package.STATIC_EXAMPLE__BUSINESS_NAME);
+			businessName = new EObjectContainmentEList<BusinessName>(
+				BusinessName.class, this, Mif2Package.STATIC_EXAMPLE__BUSINESS_NAME);
 		}
 		return businessName;
 	}
@@ -253,7 +259,8 @@ public class StaticExampleImpl extends AnnotationBaseImpl implements StaticExamp
 	 */
 	public EList<AnnotationDerivation> getDerivationSupplier() {
 		if (derivationSupplier == null) {
-			derivationSupplier = new EObjectContainmentEList<AnnotationDerivation>(AnnotationDerivation.class, this, Mif2Package.STATIC_EXAMPLE__DERIVATION_SUPPLIER);
+			derivationSupplier = new EObjectContainmentEList<AnnotationDerivation>(
+				AnnotationDerivation.class, this, Mif2Package.STATIC_EXAMPLE__DERIVATION_SUPPLIER);
 		}
 		return derivationSupplier;
 	}
@@ -275,8 +282,9 @@ public class StaticExampleImpl extends AnnotationBaseImpl implements StaticExamp
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_EXAMPLE__ID, oldId, id));
+		}
 	}
 
 	/**
@@ -295,11 +303,15 @@ public class StaticExampleImpl extends AnnotationBaseImpl implements StaticExamp
 	 */
 	public void setItsName(ITSKind newItsName) {
 		ITSKind oldItsName = itsName;
-		itsName = newItsName == null ? ITS_NAME_EDEFAULT : newItsName;
+		itsName = newItsName == null
+				? ITS_NAME_EDEFAULT
+				: newItsName;
 		boolean oldItsNameESet = itsNameESet;
 		itsNameESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_EXAMPLE__ITS_NAME, oldItsName, itsName, !oldItsNameESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_EXAMPLE__ITS_NAME, oldItsName, itsName, !oldItsNameESet));
+		}
 	}
 
 	/**
@@ -312,8 +324,11 @@ public class StaticExampleImpl extends AnnotationBaseImpl implements StaticExamp
 		boolean oldItsNameESet = itsNameESet;
 		itsName = ITS_NAME_EDEFAULT;
 		itsNameESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.STATIC_EXAMPLE__ITS_NAME, oldItsName, ITS_NAME_EDEFAULT, oldItsNameESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.STATIC_EXAMPLE__ITS_NAME, oldItsName, ITS_NAME_EDEFAULT,
+				oldItsNameESet));
+		}
 	}
 
 	/**
@@ -342,8 +357,9 @@ public class StaticExampleImpl extends AnnotationBaseImpl implements StaticExamp
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_EXAMPLE__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -363,8 +379,10 @@ public class StaticExampleImpl extends AnnotationBaseImpl implements StaticExamp
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_EXAMPLE__SORT_KEY, oldSortKey, sortKey));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_EXAMPLE__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -376,15 +394,15 @@ public class StaticExampleImpl extends AnnotationBaseImpl implements StaticExamp
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.STATIC_EXAMPLE__DATA:
-				return ((InternalEList<?>)getData()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getData()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_EXAMPLE__CONTEXT:
-				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getContext()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_EXAMPLE__REALM_NAMESPACE:
-				return ((InternalEList<?>)getRealmNamespace()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmNamespace()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_EXAMPLE__BUSINESS_NAME:
-				return ((InternalEList<?>)getBusinessName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBusinessName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_EXAMPLE__DERIVATION_SUPPLIER:
-				return ((InternalEList<?>)getDerivationSupplier()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDerivationSupplier()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -400,8 +418,10 @@ public class StaticExampleImpl extends AnnotationBaseImpl implements StaticExamp
 			case Mif2Package.STATIC_EXAMPLE__DATA:
 				return getData();
 			case Mif2Package.STATIC_EXAMPLE__CONTEXT:
-				if (coreType) return getContext();
-				return ((FeatureMap.Internal)getContext()).getWrapper();
+				if (coreType) {
+					return getContext();
+				}
+				return ((FeatureMap.Internal) getContext()).getWrapper();
 			case Mif2Package.STATIC_EXAMPLE__REALM_NAMESPACE:
 				return getRealmNamespace();
 			case Mif2Package.STATIC_EXAMPLE__BUSINESS_NAME:
@@ -431,34 +451,34 @@ public class StaticExampleImpl extends AnnotationBaseImpl implements StaticExamp
 		switch (featureID) {
 			case Mif2Package.STATIC_EXAMPLE__DATA:
 				getData().clear();
-				getData().addAll((Collection<? extends FreeFormMarkupWithLanguage>)newValue);
+				getData().addAll((Collection<? extends FreeFormMarkupWithLanguage>) newValue);
 				return;
 			case Mif2Package.STATIC_EXAMPLE__CONTEXT:
-				((FeatureMap.Internal)getContext()).set(newValue);
+				((FeatureMap.Internal) getContext()).set(newValue);
 				return;
 			case Mif2Package.STATIC_EXAMPLE__REALM_NAMESPACE:
 				getRealmNamespace().clear();
-				getRealmNamespace().addAll((Collection<? extends RealmElement>)newValue);
+				getRealmNamespace().addAll((Collection<? extends RealmElement>) newValue);
 				return;
 			case Mif2Package.STATIC_EXAMPLE__BUSINESS_NAME:
 				getBusinessName().clear();
-				getBusinessName().addAll((Collection<? extends BusinessName>)newValue);
+				getBusinessName().addAll((Collection<? extends BusinessName>) newValue);
 				return;
 			case Mif2Package.STATIC_EXAMPLE__DERIVATION_SUPPLIER:
 				getDerivationSupplier().clear();
-				getDerivationSupplier().addAll((Collection<? extends AnnotationDerivation>)newValue);
+				getDerivationSupplier().addAll((Collection<? extends AnnotationDerivation>) newValue);
 				return;
 			case Mif2Package.STATIC_EXAMPLE__ID:
-				setId((String)newValue);
+				setId((String) newValue);
 				return;
 			case Mif2Package.STATIC_EXAMPLE__ITS_NAME:
-				setItsName((ITSKind)newValue);
+				setItsName((ITSKind) newValue);
 				return;
 			case Mif2Package.STATIC_EXAMPLE__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.STATIC_EXAMPLE__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -522,13 +542,19 @@ public class StaticExampleImpl extends AnnotationBaseImpl implements StaticExamp
 			case Mif2Package.STATIC_EXAMPLE__DERIVATION_SUPPLIER:
 				return derivationSupplier != null && !derivationSupplier.isEmpty();
 			case Mif2Package.STATIC_EXAMPLE__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+				return ID_EDEFAULT == null
+						? id != null
+						: !ID_EDEFAULT.equals(id);
 			case Mif2Package.STATIC_EXAMPLE__ITS_NAME:
 				return isSetItsName();
 			case Mif2Package.STATIC_EXAMPLE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.STATIC_EXAMPLE__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -540,7 +566,9 @@ public class StaticExampleImpl extends AnnotationBaseImpl implements StaticExamp
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (context: ");
@@ -548,7 +576,11 @@ public class StaticExampleImpl extends AnnotationBaseImpl implements StaticExamp
 		result.append(", id: ");
 		result.append(id);
 		result.append(", itsName: ");
-		if (itsNameESet) result.append(itsName); else result.append("<unset>");
+		if (itsNameESet) {
+			result.append(itsName);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", name: ");
 		result.append(name);
 		result.append(", sortKey: ");
@@ -557,4 +589,4 @@ public class StaticExampleImpl extends AnnotationBaseImpl implements StaticExamp
 		return result.toString();
 	}
 
-} //StaticExampleImpl
+} // StaticExampleImpl

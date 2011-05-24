@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -169,8 +173,14 @@ public class DomainAnalysisModelDocumentationImpl extends EObjectImpl implements
 		CascadableAnnotation oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__DESCRIPTION, oldDescription, newDescription);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__DESCRIPTION, oldDescription,
+				newDescription);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -183,15 +193,23 @@ public class DomainAnalysisModelDocumentationImpl extends EObjectImpl implements
 	public void setDescription(CascadableAnnotation newDescription) {
 		if (newDescription != description) {
 			NotificationChain msgs = null;
-			if (description != null)
-				msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__DESCRIPTION, null, msgs);
-			if (newDescription != null)
-				msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__DESCRIPTION, null, msgs);
+			if (description != null) {
+				msgs = ((InternalEObject) description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__DESCRIPTION, null, msgs);
+			}
+			if (newDescription != null) {
+				msgs = ((InternalEObject) newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__DESCRIPTION, null, msgs);
+			}
 			msgs = basicSetDescription(newDescription, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__DESCRIPTION, newDescription,
+				newDescription));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__DESCRIPTION, newDescription, newDescription));
 	}
 
 	/**
@@ -212,8 +230,14 @@ public class DomainAnalysisModelDocumentationImpl extends EObjectImpl implements
 		ContextAnnotation oldRequirements = requirements;
 		requirements = newRequirements;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__REQUIREMENTS, oldRequirements, newRequirements);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__REQUIREMENTS, oldRequirements,
+				newRequirements);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -226,15 +250,23 @@ public class DomainAnalysisModelDocumentationImpl extends EObjectImpl implements
 	public void setRequirements(ContextAnnotation newRequirements) {
 		if (newRequirements != requirements) {
 			NotificationChain msgs = null;
-			if (requirements != null)
-				msgs = ((InternalEObject)requirements).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__REQUIREMENTS, null, msgs);
-			if (newRequirements != null)
-				msgs = ((InternalEObject)newRequirements).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__REQUIREMENTS, null, msgs);
+			if (requirements != null) {
+				msgs = ((InternalEObject) requirements).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__REQUIREMENTS, null, msgs);
+			}
+			if (newRequirements != null) {
+				msgs = ((InternalEObject) newRequirements).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__REQUIREMENTS, null, msgs);
+			}
 			msgs = basicSetRequirements(newRequirements, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__REQUIREMENTS, newRequirements,
+				newRequirements));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__REQUIREMENTS, newRequirements, newRequirements));
 	}
 
 	/**
@@ -244,7 +276,8 @@ public class DomainAnalysisModelDocumentationImpl extends EObjectImpl implements
 	 */
 	public EList<DesignComment> getDesignComments() {
 		if (designComments == null) {
-			designComments = new EObjectContainmentEList<DesignComment>(DesignComment.class, this, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__DESIGN_COMMENTS);
+			designComments = new EObjectContainmentEList<DesignComment>(
+				DesignComment.class, this, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__DESIGN_COMMENTS);
 		}
 		return designComments;
 	}
@@ -256,7 +289,8 @@ public class DomainAnalysisModelDocumentationImpl extends EObjectImpl implements
 	 */
 	public EList<ContextAnnotation> getStabilityRemarks() {
 		if (stabilityRemarks == null) {
-			stabilityRemarks = new EObjectContainmentEList<ContextAnnotation>(ContextAnnotation.class, this, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__STABILITY_REMARKS);
+			stabilityRemarks = new EObjectContainmentEList<ContextAnnotation>(
+				ContextAnnotation.class, this, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__STABILITY_REMARKS);
 		}
 		return stabilityRemarks;
 	}
@@ -279,8 +313,14 @@ public class DomainAnalysisModelDocumentationImpl extends EObjectImpl implements
 		ContextAnnotation oldWalkthrough = walkthrough;
 		walkthrough = newWalkthrough;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__WALKTHROUGH, oldWalkthrough, newWalkthrough);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__WALKTHROUGH, oldWalkthrough,
+				newWalkthrough);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -293,15 +333,23 @@ public class DomainAnalysisModelDocumentationImpl extends EObjectImpl implements
 	public void setWalkthrough(ContextAnnotation newWalkthrough) {
 		if (newWalkthrough != walkthrough) {
 			NotificationChain msgs = null;
-			if (walkthrough != null)
-				msgs = ((InternalEObject)walkthrough).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__WALKTHROUGH, null, msgs);
-			if (newWalkthrough != null)
-				msgs = ((InternalEObject)newWalkthrough).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__WALKTHROUGH, null, msgs);
+			if (walkthrough != null) {
+				msgs = ((InternalEObject) walkthrough).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__WALKTHROUGH, null, msgs);
+			}
+			if (newWalkthrough != null) {
+				msgs = ((InternalEObject) newWalkthrough).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__WALKTHROUGH, null, msgs);
+			}
 			msgs = basicSetWalkthrough(newWalkthrough, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__WALKTHROUGH, newWalkthrough,
+				newWalkthrough));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__WALKTHROUGH, newWalkthrough, newWalkthrough));
 	}
 
 	/**
@@ -311,7 +359,8 @@ public class DomainAnalysisModelDocumentationImpl extends EObjectImpl implements
 	 */
 	public EList<OpenIssue> getOpenIssue() {
 		if (openIssue == null) {
-			openIssue = new EObjectContainmentEList<OpenIssue>(OpenIssue.class, this, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__OPEN_ISSUE);
+			openIssue = new EObjectContainmentEList<OpenIssue>(
+				OpenIssue.class, this, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__OPEN_ISSUE);
 		}
 		return openIssue;
 	}
@@ -323,7 +372,8 @@ public class DomainAnalysisModelDocumentationImpl extends EObjectImpl implements
 	 */
 	public EList<OtherAnnotation> getOtherAnnotation() {
 		if (otherAnnotation == null) {
-			otherAnnotation = new EObjectContainmentEList<OtherAnnotation>(OtherAnnotation.class, this, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__OTHER_ANNOTATION);
+			otherAnnotation = new EObjectContainmentEList<OtherAnnotation>(
+				OtherAnnotation.class, this, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__OTHER_ANNOTATION);
 		}
 		return otherAnnotation;
 	}
@@ -335,7 +385,8 @@ public class DomainAnalysisModelDocumentationImpl extends EObjectImpl implements
 	 */
 	public EList<Appendix> getAppendix() {
 		if (appendix == null) {
-			appendix = new EObjectContainmentEList<Appendix>(Appendix.class, this, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__APPENDIX);
+			appendix = new EObjectContainmentEList<Appendix>(
+				Appendix.class, this, Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__APPENDIX);
 		}
 		return appendix;
 	}
@@ -353,17 +404,17 @@ public class DomainAnalysisModelDocumentationImpl extends EObjectImpl implements
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__REQUIREMENTS:
 				return basicSetRequirements(null, msgs);
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__DESIGN_COMMENTS:
-				return ((InternalEList<?>)getDesignComments()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDesignComments()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__STABILITY_REMARKS:
-				return ((InternalEList<?>)getStabilityRemarks()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getStabilityRemarks()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__WALKTHROUGH:
 				return basicSetWalkthrough(null, msgs);
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__OPEN_ISSUE:
-				return ((InternalEList<?>)getOpenIssue()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getOpenIssue()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__OTHER_ANNOTATION:
-				return ((InternalEList<?>)getOtherAnnotation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getOtherAnnotation()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__APPENDIX:
-				return ((InternalEList<?>)getAppendix()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAppendix()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -406,33 +457,33 @@ public class DomainAnalysisModelDocumentationImpl extends EObjectImpl implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__DESCRIPTION:
-				setDescription((CascadableAnnotation)newValue);
+				setDescription((CascadableAnnotation) newValue);
 				return;
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__REQUIREMENTS:
-				setRequirements((ContextAnnotation)newValue);
+				setRequirements((ContextAnnotation) newValue);
 				return;
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__DESIGN_COMMENTS:
 				getDesignComments().clear();
-				getDesignComments().addAll((Collection<? extends DesignComment>)newValue);
+				getDesignComments().addAll((Collection<? extends DesignComment>) newValue);
 				return;
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__STABILITY_REMARKS:
 				getStabilityRemarks().clear();
-				getStabilityRemarks().addAll((Collection<? extends ContextAnnotation>)newValue);
+				getStabilityRemarks().addAll((Collection<? extends ContextAnnotation>) newValue);
 				return;
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__WALKTHROUGH:
-				setWalkthrough((ContextAnnotation)newValue);
+				setWalkthrough((ContextAnnotation) newValue);
 				return;
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__OPEN_ISSUE:
 				getOpenIssue().clear();
-				getOpenIssue().addAll((Collection<? extends OpenIssue>)newValue);
+				getOpenIssue().addAll((Collection<? extends OpenIssue>) newValue);
 				return;
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__OTHER_ANNOTATION:
 				getOtherAnnotation().clear();
-				getOtherAnnotation().addAll((Collection<? extends OtherAnnotation>)newValue);
+				getOtherAnnotation().addAll((Collection<? extends OtherAnnotation>) newValue);
 				return;
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__APPENDIX:
 				getAppendix().clear();
-				getAppendix().addAll((Collection<? extends Appendix>)newValue);
+				getAppendix().addAll((Collection<? extends Appendix>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -447,10 +498,10 @@ public class DomainAnalysisModelDocumentationImpl extends EObjectImpl implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__DESCRIPTION:
-				setDescription((CascadableAnnotation)null);
+				setDescription((CascadableAnnotation) null);
 				return;
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__REQUIREMENTS:
-				setRequirements((ContextAnnotation)null);
+				setRequirements((ContextAnnotation) null);
 				return;
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__DESIGN_COMMENTS:
 				getDesignComments().clear();
@@ -459,7 +510,7 @@ public class DomainAnalysisModelDocumentationImpl extends EObjectImpl implements
 				getStabilityRemarks().clear();
 				return;
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__WALKTHROUGH:
-				setWalkthrough((ContextAnnotation)null);
+				setWalkthrough((ContextAnnotation) null);
 				return;
 			case Mif2Package.DOMAIN_ANALYSIS_MODEL_DOCUMENTATION__OPEN_ISSUE:
 				getOpenIssue().clear();
@@ -502,4 +553,4 @@ public class DomainAnalysisModelDocumentationImpl extends EObjectImpl implements
 		return super.eIsSet(featureID);
 	}
 
-} //DomainAnalysisModelDocumentationImpl
+} // DomainAnalysisModelDocumentationImpl

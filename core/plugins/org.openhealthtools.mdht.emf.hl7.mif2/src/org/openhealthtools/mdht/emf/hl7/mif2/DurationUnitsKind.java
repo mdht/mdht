@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -151,14 +155,7 @@ public enum DurationUnitsKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final DurationUnitsKind[] VALUES_ARRAY =
-		new DurationUnitsKind[] {
-			MS,
-			S,
-			MIN,
-			H,
-			D,
-		};
+	private static final DurationUnitsKind[] VALUES_ARRAY = new DurationUnitsKind[] { MS, S, MIN, H, D, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Duration Units Kind</b></em>' enumerators.
@@ -208,11 +205,16 @@ public enum DurationUnitsKind implements Enumerator {
 	 */
 	public static DurationUnitsKind get(int value) {
 		switch (value) {
-			case MS_VALUE: return MS;
-			case S_VALUE: return S;
-			case MIN_VALUE: return MIN;
-			case H_VALUE: return H;
-			case D_VALUE: return D;
+			case MS_VALUE:
+				return MS;
+			case S_VALUE:
+				return S;
+			case MIN_VALUE:
+				return MIN;
+			case H_VALUE:
+				return H;
+			case D_VALUE:
+				return D;
 		}
 		return null;
 	}
@@ -256,7 +258,7 @@ public enum DurationUnitsKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -265,7 +267,7 @@ public enum DurationUnitsKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -274,7 +276,7 @@ public enum DurationUnitsKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -287,5 +289,5 @@ public enum DurationUnitsKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //DurationUnitsKind
+
+} // DurationUnitsKind

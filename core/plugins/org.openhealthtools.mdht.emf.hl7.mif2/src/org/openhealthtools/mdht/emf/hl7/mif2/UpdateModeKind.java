@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -175,15 +179,7 @@ public enum UpdateModeKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final UpdateModeKind[] VALUES_ARRAY =
-		new UpdateModeKind[] {
-			A,
-			D,
-			R,
-			AR,
-			N,
-			U,
-		};
+	private static final UpdateModeKind[] VALUES_ARRAY = new UpdateModeKind[] { A, D, R, AR, N, U, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Update Mode Kind</b></em>' enumerators.
@@ -233,12 +229,18 @@ public enum UpdateModeKind implements Enumerator {
 	 */
 	public static UpdateModeKind get(int value) {
 		switch (value) {
-			case A_VALUE: return A;
-			case D_VALUE: return D;
-			case R_VALUE: return R;
-			case AR_VALUE: return AR;
-			case N_VALUE: return N;
-			case U_VALUE: return U;
+			case A_VALUE:
+				return A;
+			case D_VALUE:
+				return D;
+			case R_VALUE:
+				return R;
+			case AR_VALUE:
+				return AR;
+			case N_VALUE:
+				return N;
+			case U_VALUE:
+				return U;
 		}
 		return null;
 	}
@@ -282,7 +284,7 @@ public enum UpdateModeKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -291,7 +293,7 @@ public enum UpdateModeKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -300,7 +302,7 @@ public enum UpdateModeKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -313,5 +315,5 @@ public enum UpdateModeKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //UpdateModeKind
+
+} // UpdateModeKind

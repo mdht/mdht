@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import java.math.BigInteger;
@@ -30,17 +34,30 @@ public interface AttributeValidator {
 	boolean validate();
 
 	boolean validateBusinessName(EList<BusinessName> value);
+
 	boolean validateAnnotations(AttributeAnnotations value);
+
 	boolean validateDerivedFrom(EList<AttributeDerivation> value);
+
 	boolean validateType(DatatypeRef value);
+
 	boolean validateVocabulary(VocabularySpecification value);
+
 	boolean validateProperty(EList<AttributeProperty> value);
+
 	boolean validateExtensionOID(String value);
+
 	boolean validateIsImmutable(boolean value);
+
 	boolean validateMaximumMultiplicity(Object value);
+
 	boolean validateMinimumMultiplicity(BigInteger value);
+
 	boolean validateName(String value);
+
 	boolean validateSortKey(String value);
+
 	boolean validateUpdateModeDefault(UpdateModeKind value);
+
 	boolean validateUpdateModesAllowed(List<UpdateModeKind> value);
 }

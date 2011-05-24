@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -231,7 +235,8 @@ public class OtherAnnotationImpl extends AnnotationBaseImpl implements OtherAnno
 	 */
 	public EList<BusinessName> getBusinessName() {
 		if (businessName == null) {
-			businessName = new EObjectContainmentEList<BusinessName>(BusinessName.class, this, Mif2Package.OTHER_ANNOTATION__BUSINESS_NAME);
+			businessName = new EObjectContainmentEList<BusinessName>(
+				BusinessName.class, this, Mif2Package.OTHER_ANNOTATION__BUSINESS_NAME);
 		}
 		return businessName;
 	}
@@ -243,7 +248,8 @@ public class OtherAnnotationImpl extends AnnotationBaseImpl implements OtherAnno
 	 */
 	public EList<AnnotationDerivation> getDerivationSupplier() {
 		if (derivationSupplier == null) {
-			derivationSupplier = new EObjectContainmentEList<AnnotationDerivation>(AnnotationDerivation.class, this, Mif2Package.OTHER_ANNOTATION__DERIVATION_SUPPLIER);
+			derivationSupplier = new EObjectContainmentEList<AnnotationDerivation>(
+				AnnotationDerivation.class, this, Mif2Package.OTHER_ANNOTATION__DERIVATION_SUPPLIER);
 		}
 		return derivationSupplier;
 	}
@@ -286,8 +292,9 @@ public class OtherAnnotationImpl extends AnnotationBaseImpl implements OtherAnno
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.OTHER_ANNOTATION__ID, oldId, id));
+		}
 	}
 
 	/**
@@ -307,8 +314,9 @@ public class OtherAnnotationImpl extends AnnotationBaseImpl implements OtherAnno
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.OTHER_ANNOTATION__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -328,8 +336,10 @@ public class OtherAnnotationImpl extends AnnotationBaseImpl implements OtherAnno
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.OTHER_ANNOTATION__SORT_KEY, oldSortKey, sortKey));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.OTHER_ANNOTATION__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -349,8 +359,9 @@ public class OtherAnnotationImpl extends AnnotationBaseImpl implements OtherAnno
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.OTHER_ANNOTATION__TYPE, oldType, type));
+		}
 	}
 
 	/**
@@ -362,19 +373,19 @@ public class OtherAnnotationImpl extends AnnotationBaseImpl implements OtherAnno
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.OTHER_ANNOTATION__OTHER_ANNOTATION_CONTENT:
-				return ((InternalEList<?>)getOtherAnnotationContent()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getOtherAnnotationContent()).basicRemove(otherEnd, msgs);
 			case Mif2Package.OTHER_ANNOTATION__TEXT:
-				return ((InternalEList<?>)getText()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getText()).basicRemove(otherEnd, msgs);
 			case Mif2Package.OTHER_ANNOTATION__DATA:
-				return ((InternalEList<?>)getData()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getData()).basicRemove(otherEnd, msgs);
 			case Mif2Package.OTHER_ANNOTATION__BUSINESS_NAME:
-				return ((InternalEList<?>)getBusinessName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBusinessName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.OTHER_ANNOTATION__DERIVATION_SUPPLIER:
-				return ((InternalEList<?>)getDerivationSupplier()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDerivationSupplier()).basicRemove(otherEnd, msgs);
 			case Mif2Package.OTHER_ANNOTATION__CONTEXT:
-				return ((InternalEList<?>)getContext()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getContext()).basicRemove(otherEnd, msgs);
 			case Mif2Package.OTHER_ANNOTATION__REALM_NAMESPACE:
-				return ((InternalEList<?>)getRealmNamespace()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getRealmNamespace()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -388,8 +399,10 @@ public class OtherAnnotationImpl extends AnnotationBaseImpl implements OtherAnno
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Mif2Package.OTHER_ANNOTATION__OTHER_ANNOTATION_CONTENT:
-				if (coreType) return getOtherAnnotationContent();
-				return ((FeatureMap.Internal)getOtherAnnotationContent()).getWrapper();
+				if (coreType) {
+					return getOtherAnnotationContent();
+				}
+				return ((FeatureMap.Internal) getOtherAnnotationContent()).getWrapper();
 			case Mif2Package.OTHER_ANNOTATION__TEXT:
 				return getText();
 			case Mif2Package.OTHER_ANNOTATION__DATA:
@@ -399,8 +412,10 @@ public class OtherAnnotationImpl extends AnnotationBaseImpl implements OtherAnno
 			case Mif2Package.OTHER_ANNOTATION__DERIVATION_SUPPLIER:
 				return getDerivationSupplier();
 			case Mif2Package.OTHER_ANNOTATION__CONTEXT:
-				if (coreType) return getContext();
-				return ((FeatureMap.Internal)getContext()).getWrapper();
+				if (coreType) {
+					return getContext();
+				}
+				return ((FeatureMap.Internal) getContext()).getWrapper();
 			case Mif2Package.OTHER_ANNOTATION__REALM_NAMESPACE:
 				return getRealmNamespace();
 			case Mif2Package.OTHER_ANNOTATION__ID:
@@ -425,42 +440,42 @@ public class OtherAnnotationImpl extends AnnotationBaseImpl implements OtherAnno
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.OTHER_ANNOTATION__OTHER_ANNOTATION_CONTENT:
-				((FeatureMap.Internal)getOtherAnnotationContent()).set(newValue);
+				((FeatureMap.Internal) getOtherAnnotationContent()).set(newValue);
 				return;
 			case Mif2Package.OTHER_ANNOTATION__TEXT:
 				getText().clear();
-				getText().addAll((Collection<? extends ComplexMarkupWithLanguage>)newValue);
+				getText().addAll((Collection<? extends ComplexMarkupWithLanguage>) newValue);
 				return;
 			case Mif2Package.OTHER_ANNOTATION__DATA:
 				getData().clear();
-				getData().addAll((Collection<? extends FreeFormMarkupWithLanguage>)newValue);
+				getData().addAll((Collection<? extends FreeFormMarkupWithLanguage>) newValue);
 				return;
 			case Mif2Package.OTHER_ANNOTATION__BUSINESS_NAME:
 				getBusinessName().clear();
-				getBusinessName().addAll((Collection<? extends BusinessName>)newValue);
+				getBusinessName().addAll((Collection<? extends BusinessName>) newValue);
 				return;
 			case Mif2Package.OTHER_ANNOTATION__DERIVATION_SUPPLIER:
 				getDerivationSupplier().clear();
-				getDerivationSupplier().addAll((Collection<? extends AnnotationDerivation>)newValue);
+				getDerivationSupplier().addAll((Collection<? extends AnnotationDerivation>) newValue);
 				return;
 			case Mif2Package.OTHER_ANNOTATION__CONTEXT:
-				((FeatureMap.Internal)getContext()).set(newValue);
+				((FeatureMap.Internal) getContext()).set(newValue);
 				return;
 			case Mif2Package.OTHER_ANNOTATION__REALM_NAMESPACE:
 				getRealmNamespace().clear();
-				getRealmNamespace().addAll((Collection<? extends RealmElement>)newValue);
+				getRealmNamespace().addAll((Collection<? extends RealmElement>) newValue);
 				return;
 			case Mif2Package.OTHER_ANNOTATION__ID:
-				setId((String)newValue);
+				setId((String) newValue);
 				return;
 			case Mif2Package.OTHER_ANNOTATION__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.OTHER_ANNOTATION__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 			case Mif2Package.OTHER_ANNOTATION__TYPE:
-				setType((String)newValue);
+				setType((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -534,13 +549,21 @@ public class OtherAnnotationImpl extends AnnotationBaseImpl implements OtherAnno
 			case Mif2Package.OTHER_ANNOTATION__REALM_NAMESPACE:
 				return !getRealmNamespace().isEmpty();
 			case Mif2Package.OTHER_ANNOTATION__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+				return ID_EDEFAULT == null
+						? id != null
+						: !ID_EDEFAULT.equals(id);
 			case Mif2Package.OTHER_ANNOTATION__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.OTHER_ANNOTATION__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 			case Mif2Package.OTHER_ANNOTATION__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+				return TYPE_EDEFAULT == null
+						? type != null
+						: !TYPE_EDEFAULT.equals(type);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -552,7 +575,9 @@ public class OtherAnnotationImpl extends AnnotationBaseImpl implements OtherAnno
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (otherAnnotationContent: ");
@@ -571,4 +596,4 @@ public class OtherAnnotationImpl extends AnnotationBaseImpl implements OtherAnno
 		return result.toString();
 	}
 
-} //OtherAnnotationImpl
+} // OtherAnnotationImpl

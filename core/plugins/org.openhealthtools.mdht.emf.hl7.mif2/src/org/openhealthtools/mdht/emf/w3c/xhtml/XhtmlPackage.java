@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -12434,7 +12438,6 @@ public interface XhtmlPackage extends EPackage {
 	 */
 	int VALIGN_TYPE_OBJECT = 83;
 
-
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.emf.w3c.xhtml.A <em>A</em>}'.
 	 * <!-- begin-user-doc -->
@@ -21192,4 +21195,4 @@ public interface XhtmlPackage extends EPackage {
 
 	}
 
-} //XhtmlPackage
+} // XhtmlPackage

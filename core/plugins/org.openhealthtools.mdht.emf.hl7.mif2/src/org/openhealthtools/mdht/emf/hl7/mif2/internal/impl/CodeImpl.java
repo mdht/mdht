@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -217,7 +221,8 @@ public class CodeImpl extends EObjectImpl implements Code {
 	 */
 	public EList<ConceptProperty> getCodeProperty() {
 		if (codeProperty == null) {
-			codeProperty = new EObjectContainmentEList<ConceptProperty>(ConceptProperty.class, this, Mif2Package.CODE__CODE_PROPERTY);
+			codeProperty = new EObjectContainmentEList<ConceptProperty>(
+				ConceptProperty.class, this, Mif2Package.CODE__CODE_PROPERTY);
 		}
 		return codeProperty;
 	}
@@ -239,8 +244,9 @@ public class CodeImpl extends EObjectImpl implements Code {
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE__CODE, oldCode, code));
+		}
 	}
 
 	/**
@@ -260,8 +266,10 @@ public class CodeImpl extends EObjectImpl implements Code {
 	public void setEffectiveDate(XMLGregorianCalendar newEffectiveDate) {
 		XMLGregorianCalendar oldEffectiveDate = effectiveDate;
 		effectiveDate = newEffectiveDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE__EFFECTIVE_DATE, oldEffectiveDate, effectiveDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE__EFFECTIVE_DATE, oldEffectiveDate, effectiveDate));
+		}
 	}
 
 	/**
@@ -281,8 +289,10 @@ public class CodeImpl extends EObjectImpl implements Code {
 	public void setPropertyGroup(String newPropertyGroup) {
 		String oldPropertyGroup = propertyGroup;
 		propertyGroup = newPropertyGroup;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE__PROPERTY_GROUP, oldPropertyGroup, propertyGroup));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE__PROPERTY_GROUP, oldPropertyGroup, propertyGroup));
+		}
 	}
 
 	/**
@@ -302,8 +312,10 @@ public class CodeImpl extends EObjectImpl implements Code {
 	public void setRetirementDate(XMLGregorianCalendar newRetirementDate) {
 		XMLGregorianCalendar oldRetirementDate = retirementDate;
 		retirementDate = newRetirementDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE__RETIREMENT_DATE, oldRetirementDate, retirementDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE__RETIREMENT_DATE, oldRetirementDate, retirementDate));
+		}
 	}
 
 	/**
@@ -322,11 +334,15 @@ public class CodeImpl extends EObjectImpl implements Code {
 	 */
 	public void setStatus(CodeStatusKind newStatus) {
 		CodeStatusKind oldStatus = status;
-		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
+		status = newStatus == null
+				? STATUS_EDEFAULT
+				: newStatus;
 		boolean oldStatusESet = statusESet;
 		statusESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.CODE__STATUS, oldStatus, status, !oldStatusESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.CODE__STATUS, oldStatus, status, !oldStatusESet));
+		}
 	}
 
 	/**
@@ -339,8 +355,10 @@ public class CodeImpl extends EObjectImpl implements Code {
 		boolean oldStatusESet = statusESet;
 		status = STATUS_EDEFAULT;
 		statusESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.CODE__STATUS, oldStatus, STATUS_EDEFAULT, oldStatusESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.CODE__STATUS, oldStatus, STATUS_EDEFAULT, oldStatusESet));
+		}
 	}
 
 	/**
@@ -361,9 +379,9 @@ public class CodeImpl extends EObjectImpl implements Code {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.CODE__PRINT_NAME:
-				return ((InternalEList<?>)getPrintName()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPrintName()).basicRemove(otherEnd, msgs);
 			case Mif2Package.CODE__CODE_PROPERTY:
-				return ((InternalEList<?>)getCodeProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCodeProperty()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -405,26 +423,26 @@ public class CodeImpl extends EObjectImpl implements Code {
 		switch (featureID) {
 			case Mif2Package.CODE__PRINT_NAME:
 				getPrintName().clear();
-				getPrintName().addAll((Collection<? extends PrintName>)newValue);
+				getPrintName().addAll((Collection<? extends PrintName>) newValue);
 				return;
 			case Mif2Package.CODE__CODE_PROPERTY:
 				getCodeProperty().clear();
-				getCodeProperty().addAll((Collection<? extends ConceptProperty>)newValue);
+				getCodeProperty().addAll((Collection<? extends ConceptProperty>) newValue);
 				return;
 			case Mif2Package.CODE__CODE:
-				setCode((String)newValue);
+				setCode((String) newValue);
 				return;
 			case Mif2Package.CODE__EFFECTIVE_DATE:
-				setEffectiveDate((XMLGregorianCalendar)newValue);
+				setEffectiveDate((XMLGregorianCalendar) newValue);
 				return;
 			case Mif2Package.CODE__PROPERTY_GROUP:
-				setPropertyGroup((String)newValue);
+				setPropertyGroup((String) newValue);
 				return;
 			case Mif2Package.CODE__RETIREMENT_DATE:
-				setRetirementDate((XMLGregorianCalendar)newValue);
+				setRetirementDate((XMLGregorianCalendar) newValue);
 				return;
 			case Mif2Package.CODE__STATUS:
-				setStatus((CodeStatusKind)newValue);
+				setStatus((CodeStatusKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -476,13 +494,21 @@ public class CodeImpl extends EObjectImpl implements Code {
 			case Mif2Package.CODE__CODE_PROPERTY:
 				return codeProperty != null && !codeProperty.isEmpty();
 			case Mif2Package.CODE__CODE:
-				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+				return CODE_EDEFAULT == null
+						? code != null
+						: !CODE_EDEFAULT.equals(code);
 			case Mif2Package.CODE__EFFECTIVE_DATE:
-				return EFFECTIVE_DATE_EDEFAULT == null ? effectiveDate != null : !EFFECTIVE_DATE_EDEFAULT.equals(effectiveDate);
+				return EFFECTIVE_DATE_EDEFAULT == null
+						? effectiveDate != null
+						: !EFFECTIVE_DATE_EDEFAULT.equals(effectiveDate);
 			case Mif2Package.CODE__PROPERTY_GROUP:
-				return PROPERTY_GROUP_EDEFAULT == null ? propertyGroup != null : !PROPERTY_GROUP_EDEFAULT.equals(propertyGroup);
+				return PROPERTY_GROUP_EDEFAULT == null
+						? propertyGroup != null
+						: !PROPERTY_GROUP_EDEFAULT.equals(propertyGroup);
 			case Mif2Package.CODE__RETIREMENT_DATE:
-				return RETIREMENT_DATE_EDEFAULT == null ? retirementDate != null : !RETIREMENT_DATE_EDEFAULT.equals(retirementDate);
+				return RETIREMENT_DATE_EDEFAULT == null
+						? retirementDate != null
+						: !RETIREMENT_DATE_EDEFAULT.equals(retirementDate);
 			case Mif2Package.CODE__STATUS:
 				return isSetStatus();
 		}
@@ -496,7 +522,9 @@ public class CodeImpl extends EObjectImpl implements Code {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (code: ");
@@ -508,9 +536,13 @@ public class CodeImpl extends EObjectImpl implements Code {
 		result.append(", retirementDate: ");
 		result.append(retirementDate);
 		result.append(", status: ");
-		if (statusESet) result.append(status); else result.append("<unset>");
+		if (statusESet) {
+			result.append(status);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //CodeImpl
+} // CodeImpl

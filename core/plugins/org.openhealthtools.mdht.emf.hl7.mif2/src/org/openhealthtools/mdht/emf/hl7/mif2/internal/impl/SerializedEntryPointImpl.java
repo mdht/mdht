@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -79,8 +83,13 @@ public class SerializedEntryPointImpl extends EntryPointBaseImpl implements Seri
 		SerializedClasses oldEntryClass = entryClass;
 		entryClass = newEntryClass;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.SERIALIZED_ENTRY_POINT__ENTRY_CLASS, oldEntryClass, newEntryClass);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SERIALIZED_ENTRY_POINT__ENTRY_CLASS, oldEntryClass, newEntryClass);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -93,15 +102,22 @@ public class SerializedEntryPointImpl extends EntryPointBaseImpl implements Seri
 	public void setEntryClass(SerializedClasses newEntryClass) {
 		if (newEntryClass != entryClass) {
 			NotificationChain msgs = null;
-			if (entryClass != null)
-				msgs = ((InternalEObject)entryClass).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SERIALIZED_ENTRY_POINT__ENTRY_CLASS, null, msgs);
-			if (newEntryClass != null)
-				msgs = ((InternalEObject)newEntryClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SERIALIZED_ENTRY_POINT__ENTRY_CLASS, null, msgs);
+			if (entryClass != null) {
+				msgs = ((InternalEObject) entryClass).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SERIALIZED_ENTRY_POINT__ENTRY_CLASS, null, msgs);
+			}
+			if (newEntryClass != null) {
+				msgs = ((InternalEObject) newEntryClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SERIALIZED_ENTRY_POINT__ENTRY_CLASS, null, msgs);
+			}
 			msgs = basicSetEntryClass(newEntryClass, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SERIALIZED_ENTRY_POINT__ENTRY_CLASS, newEntryClass, newEntryClass));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SERIALIZED_ENTRY_POINT__ENTRY_CLASS, newEntryClass, newEntryClass));
 	}
 
 	/**
@@ -141,7 +157,7 @@ public class SerializedEntryPointImpl extends EntryPointBaseImpl implements Seri
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.SERIALIZED_ENTRY_POINT__ENTRY_CLASS:
-				setEntryClass((SerializedClasses)newValue);
+				setEntryClass((SerializedClasses) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -156,7 +172,7 @@ public class SerializedEntryPointImpl extends EntryPointBaseImpl implements Seri
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.SERIALIZED_ENTRY_POINT__ENTRY_CLASS:
-				setEntryClass((SerializedClasses)null);
+				setEntryClass((SerializedClasses) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -176,4 +192,4 @@ public class SerializedEntryPointImpl extends EntryPointBaseImpl implements Seri
 		return super.eIsSet(featureID);
 	}
 
-} //SerializedEntryPointImpl
+} // SerializedEntryPointImpl

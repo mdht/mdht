@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.internal.impl;
 
 import java.util.Collection;
@@ -284,11 +288,15 @@ public class TbodyImpl extends EObjectImpl implements Tbody {
 	 */
 	public void setAlign(AlignType newAlign) {
 		AlignType oldAlign = align;
-		align = newAlign == null ? ALIGN_EDEFAULT : newAlign;
+		align = newAlign == null
+				? ALIGN_EDEFAULT
+				: newAlign;
 		boolean oldAlignESet = alignESet;
 		alignESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TBODY__ALIGN, oldAlign, align, !oldAlignESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TBODY__ALIGN, oldAlign, align, !oldAlignESet));
+		}
 	}
 
 	/**
@@ -301,8 +309,10 @@ public class TbodyImpl extends EObjectImpl implements Tbody {
 		boolean oldAlignESet = alignESet;
 		align = ALIGN_EDEFAULT;
 		alignESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TBODY__ALIGN, oldAlign, ALIGN_EDEFAULT, oldAlignESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TBODY__ALIGN, oldAlign, ALIGN_EDEFAULT, oldAlignESet));
+		}
 	}
 
 	/**
@@ -331,8 +341,9 @@ public class TbodyImpl extends EObjectImpl implements Tbody {
 	public void setChar(String newChar) {
 		String oldChar = char_;
 		char_ = newChar;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TBODY__CHAR, oldChar, char_));
+		}
 	}
 
 	/**
@@ -352,8 +363,9 @@ public class TbodyImpl extends EObjectImpl implements Tbody {
 	public void setCharoff(String newCharoff) {
 		String oldCharoff = charoff;
 		charoff = newCharoff;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TBODY__CHAROFF, oldCharoff, charoff));
+		}
 	}
 
 	/**
@@ -372,11 +384,15 @@ public class TbodyImpl extends EObjectImpl implements Tbody {
 	 */
 	public void setClass(MifClassType newClass) {
 		MifClassType oldClass = class_;
-		class_ = newClass == null ? CLASS_EDEFAULT : newClass;
+		class_ = newClass == null
+				? CLASS_EDEFAULT
+				: newClass;
 		boolean oldClassESet = classESet;
 		classESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TBODY__CLASS, oldClass, class_, !oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TBODY__CLASS, oldClass, class_, !oldClassESet));
+		}
 	}
 
 	/**
@@ -389,8 +405,10 @@ public class TbodyImpl extends EObjectImpl implements Tbody {
 		boolean oldClassESet = classESet;
 		class_ = CLASS_EDEFAULT;
 		classESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TBODY__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TBODY__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		}
 	}
 
 	/**
@@ -419,8 +437,9 @@ public class TbodyImpl extends EObjectImpl implements Tbody {
 	public void setLang(String newLang) {
 		String oldLang = lang;
 		lang = newLang;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TBODY__LANG, oldLang, lang));
+		}
 	}
 
 	/**
@@ -439,11 +458,15 @@ public class TbodyImpl extends EObjectImpl implements Tbody {
 	 */
 	public void setStyle(StyleSheet newStyle) {
 		StyleSheet oldStyle = style;
-		style = newStyle == null ? STYLE_EDEFAULT : newStyle;
+		style = newStyle == null
+				? STYLE_EDEFAULT
+				: newStyle;
 		boolean oldStyleESet = styleESet;
 		styleESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TBODY__STYLE, oldStyle, style, !oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TBODY__STYLE, oldStyle, style, !oldStyleESet));
+		}
 	}
 
 	/**
@@ -456,8 +479,10 @@ public class TbodyImpl extends EObjectImpl implements Tbody {
 		boolean oldStyleESet = styleESet;
 		style = STYLE_EDEFAULT;
 		styleESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TBODY__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TBODY__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		}
 	}
 
 	/**
@@ -485,11 +510,15 @@ public class TbodyImpl extends EObjectImpl implements Tbody {
 	 */
 	public void setValign(ValignType newValign) {
 		ValignType oldValign = valign;
-		valign = newValign == null ? VALIGN_EDEFAULT : newValign;
+		valign = newValign == null
+				? VALIGN_EDEFAULT
+				: newValign;
 		boolean oldValignESet = valignESet;
 		valignESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TBODY__VALIGN, oldValign, valign, !oldValignESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TBODY__VALIGN, oldValign, valign, !oldValignESet));
+		}
 	}
 
 	/**
@@ -502,8 +531,10 @@ public class TbodyImpl extends EObjectImpl implements Tbody {
 		boolean oldValignESet = valignESet;
 		valign = VALIGN_EDEFAULT;
 		valignESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TBODY__VALIGN, oldValign, VALIGN_EDEFAULT, oldValignESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TBODY__VALIGN, oldValign, VALIGN_EDEFAULT, oldValignESet));
+		}
 	}
 
 	/**
@@ -524,7 +555,7 @@ public class TbodyImpl extends EObjectImpl implements Tbody {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case XhtmlPackage.TBODY__TR:
-				return ((InternalEList<?>)getTr()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTr()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -568,28 +599,28 @@ public class TbodyImpl extends EObjectImpl implements Tbody {
 		switch (featureID) {
 			case XhtmlPackage.TBODY__TR:
 				getTr().clear();
-				getTr().addAll((Collection<? extends Tr>)newValue);
+				getTr().addAll((Collection<? extends Tr>) newValue);
 				return;
 			case XhtmlPackage.TBODY__ALIGN:
-				setAlign((AlignType)newValue);
+				setAlign((AlignType) newValue);
 				return;
 			case XhtmlPackage.TBODY__CHAR:
-				setChar((String)newValue);
+				setChar((String) newValue);
 				return;
 			case XhtmlPackage.TBODY__CHAROFF:
-				setCharoff((String)newValue);
+				setCharoff((String) newValue);
 				return;
 			case XhtmlPackage.TBODY__CLASS:
-				setClass((MifClassType)newValue);
+				setClass((MifClassType) newValue);
 				return;
 			case XhtmlPackage.TBODY__LANG:
-				setLang((String)newValue);
+				setLang((String) newValue);
 				return;
 			case XhtmlPackage.TBODY__STYLE:
-				setStyle((StyleSheet)newValue);
+				setStyle((StyleSheet) newValue);
 				return;
 			case XhtmlPackage.TBODY__VALIGN:
-				setValign((ValignType)newValue);
+				setValign((ValignType) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -644,13 +675,19 @@ public class TbodyImpl extends EObjectImpl implements Tbody {
 			case XhtmlPackage.TBODY__ALIGN:
 				return isSetAlign();
 			case XhtmlPackage.TBODY__CHAR:
-				return CHAR_EDEFAULT == null ? char_ != null : !CHAR_EDEFAULT.equals(char_);
+				return CHAR_EDEFAULT == null
+						? char_ != null
+						: !CHAR_EDEFAULT.equals(char_);
 			case XhtmlPackage.TBODY__CHAROFF:
-				return CHAROFF_EDEFAULT == null ? charoff != null : !CHAROFF_EDEFAULT.equals(charoff);
+				return CHAROFF_EDEFAULT == null
+						? charoff != null
+						: !CHAROFF_EDEFAULT.equals(charoff);
 			case XhtmlPackage.TBODY__CLASS:
 				return isSetClass();
 			case XhtmlPackage.TBODY__LANG:
-				return LANG_EDEFAULT == null ? lang != null : !LANG_EDEFAULT.equals(lang);
+				return LANG_EDEFAULT == null
+						? lang != null
+						: !LANG_EDEFAULT.equals(lang);
 			case XhtmlPackage.TBODY__STYLE:
 				return isSetStyle();
 			case XhtmlPackage.TBODY__VALIGN:
@@ -666,25 +703,43 @@ public class TbodyImpl extends EObjectImpl implements Tbody {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (align: ");
-		if (alignESet) result.append(align); else result.append("<unset>");
+		if (alignESet) {
+			result.append(align);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", char: ");
 		result.append(char_);
 		result.append(", charoff: ");
 		result.append(charoff);
 		result.append(", class: ");
-		if (classESet) result.append(class_); else result.append("<unset>");
+		if (classESet) {
+			result.append(class_);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", lang: ");
 		result.append(lang);
 		result.append(", style: ");
-		if (styleESet) result.append(style); else result.append("<unset>");
+		if (styleESet) {
+			result.append(style);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", valign: ");
-		if (valignESet) result.append(valign); else result.append("<unset>");
+		if (valignESet) {
+			result.append(valign);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //TbodyImpl
+} // TbodyImpl

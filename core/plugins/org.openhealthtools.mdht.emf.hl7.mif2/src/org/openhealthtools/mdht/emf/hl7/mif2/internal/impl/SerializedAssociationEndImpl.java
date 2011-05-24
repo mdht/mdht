@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -87,12 +91,19 @@ public class SerializedAssociationEndImpl extends AssociationBaseImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTargetConnection(AssociationEndWithClass newTargetConnection, NotificationChain msgs) {
+	public NotificationChain basicSetTargetConnection(AssociationEndWithClass newTargetConnection,
+			NotificationChain msgs) {
 		AssociationEndWithClass oldTargetConnection = targetConnection;
 		targetConnection = newTargetConnection;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.SERIALIZED_ASSOCIATION_END__TARGET_CONNECTION, oldTargetConnection, newTargetConnection);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SERIALIZED_ASSOCIATION_END__TARGET_CONNECTION, oldTargetConnection,
+				newTargetConnection);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -105,15 +116,23 @@ public class SerializedAssociationEndImpl extends AssociationBaseImpl implements
 	public void setTargetConnection(AssociationEndWithClass newTargetConnection) {
 		if (newTargetConnection != targetConnection) {
 			NotificationChain msgs = null;
-			if (targetConnection != null)
-				msgs = ((InternalEObject)targetConnection).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SERIALIZED_ASSOCIATION_END__TARGET_CONNECTION, null, msgs);
-			if (newTargetConnection != null)
-				msgs = ((InternalEObject)newTargetConnection).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SERIALIZED_ASSOCIATION_END__TARGET_CONNECTION, null, msgs);
+			if (targetConnection != null) {
+				msgs = ((InternalEObject) targetConnection).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SERIALIZED_ASSOCIATION_END__TARGET_CONNECTION, null, msgs);
+			}
+			if (newTargetConnection != null) {
+				msgs = ((InternalEObject) newTargetConnection).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SERIALIZED_ASSOCIATION_END__TARGET_CONNECTION, null, msgs);
+			}
 			msgs = basicSetTargetConnection(newTargetConnection, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SERIALIZED_ASSOCIATION_END__TARGET_CONNECTION, newTargetConnection,
+				newTargetConnection));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SERIALIZED_ASSOCIATION_END__TARGET_CONNECTION, newTargetConnection, newTargetConnection));
 	}
 
 	/**
@@ -130,12 +149,19 @@ public class SerializedAssociationEndImpl extends AssociationBaseImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSourceConnection(SerializedAssociationEnds newSourceConnection, NotificationChain msgs) {
+	public NotificationChain basicSetSourceConnection(SerializedAssociationEnds newSourceConnection,
+			NotificationChain msgs) {
 		SerializedAssociationEnds oldSourceConnection = sourceConnection;
 		sourceConnection = newSourceConnection;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.SERIALIZED_ASSOCIATION_END__SOURCE_CONNECTION, oldSourceConnection, newSourceConnection);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SERIALIZED_ASSOCIATION_END__SOURCE_CONNECTION, oldSourceConnection,
+				newSourceConnection);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -148,15 +174,23 @@ public class SerializedAssociationEndImpl extends AssociationBaseImpl implements
 	public void setSourceConnection(SerializedAssociationEnds newSourceConnection) {
 		if (newSourceConnection != sourceConnection) {
 			NotificationChain msgs = null;
-			if (sourceConnection != null)
-				msgs = ((InternalEObject)sourceConnection).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SERIALIZED_ASSOCIATION_END__SOURCE_CONNECTION, null, msgs);
-			if (newSourceConnection != null)
-				msgs = ((InternalEObject)newSourceConnection).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SERIALIZED_ASSOCIATION_END__SOURCE_CONNECTION, null, msgs);
+			if (sourceConnection != null) {
+				msgs = ((InternalEObject) sourceConnection).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SERIALIZED_ASSOCIATION_END__SOURCE_CONNECTION, null, msgs);
+			}
+			if (newSourceConnection != null) {
+				msgs = ((InternalEObject) newSourceConnection).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SERIALIZED_ASSOCIATION_END__SOURCE_CONNECTION, null, msgs);
+			}
 			msgs = basicSetSourceConnection(newSourceConnection, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SERIALIZED_ASSOCIATION_END__SOURCE_CONNECTION, newSourceConnection,
+				newSourceConnection));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SERIALIZED_ASSOCIATION_END__SOURCE_CONNECTION, newSourceConnection, newSourceConnection));
 	}
 
 	/**
@@ -200,10 +234,10 @@ public class SerializedAssociationEndImpl extends AssociationBaseImpl implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.SERIALIZED_ASSOCIATION_END__TARGET_CONNECTION:
-				setTargetConnection((AssociationEndWithClass)newValue);
+				setTargetConnection((AssociationEndWithClass) newValue);
 				return;
 			case Mif2Package.SERIALIZED_ASSOCIATION_END__SOURCE_CONNECTION:
-				setSourceConnection((SerializedAssociationEnds)newValue);
+				setSourceConnection((SerializedAssociationEnds) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -218,10 +252,10 @@ public class SerializedAssociationEndImpl extends AssociationBaseImpl implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.SERIALIZED_ASSOCIATION_END__TARGET_CONNECTION:
-				setTargetConnection((AssociationEndWithClass)null);
+				setTargetConnection((AssociationEndWithClass) null);
 				return;
 			case Mif2Package.SERIALIZED_ASSOCIATION_END__SOURCE_CONNECTION:
-				setSourceConnection((SerializedAssociationEnds)null);
+				setSourceConnection((SerializedAssociationEnds) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -243,4 +277,4 @@ public class SerializedAssociationEndImpl extends AssociationBaseImpl implements
 		return super.eIsSet(featureID);
 	}
 
-} //SerializedAssociationEndImpl
+} // SerializedAssociationEndImpl

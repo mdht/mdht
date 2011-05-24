@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -106,7 +110,8 @@ public class DerivedStaticModelsTypeImpl extends EObjectImpl implements DerivedS
 	 */
 	public EList<GlobalDerivedStaticModel> getDerivedStaticModel() {
 		if (derivedStaticModel == null) {
-			derivedStaticModel = new EObjectContainmentEList<GlobalDerivedStaticModel>(GlobalDerivedStaticModel.class, this, Mif2Package.DERIVED_STATIC_MODELS_TYPE__DERIVED_STATIC_MODEL);
+			derivedStaticModel = new EObjectContainmentEList<GlobalDerivedStaticModel>(
+				GlobalDerivedStaticModel.class, this, Mif2Package.DERIVED_STATIC_MODELS_TYPE__DERIVED_STATIC_MODEL);
 		}
 		return derivedStaticModel;
 	}
@@ -130,8 +135,11 @@ public class DerivedStaticModelsTypeImpl extends EObjectImpl implements DerivedS
 		schemaVersion = newSchemaVersion;
 		boolean oldSchemaVersionESet = schemaVersionESet;
 		schemaVersionESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DERIVED_STATIC_MODELS_TYPE__SCHEMA_VERSION, oldSchemaVersion, schemaVersion, !oldSchemaVersionESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DERIVED_STATIC_MODELS_TYPE__SCHEMA_VERSION, oldSchemaVersion,
+				schemaVersion, !oldSchemaVersionESet));
+		}
 	}
 
 	/**
@@ -144,8 +152,11 @@ public class DerivedStaticModelsTypeImpl extends EObjectImpl implements DerivedS
 		boolean oldSchemaVersionESet = schemaVersionESet;
 		schemaVersion = SCHEMA_VERSION_EDEFAULT;
 		schemaVersionESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.DERIVED_STATIC_MODELS_TYPE__SCHEMA_VERSION, oldSchemaVersion, SCHEMA_VERSION_EDEFAULT, oldSchemaVersionESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.DERIVED_STATIC_MODELS_TYPE__SCHEMA_VERSION, oldSchemaVersion,
+				SCHEMA_VERSION_EDEFAULT, oldSchemaVersionESet));
+		}
 	}
 
 	/**
@@ -166,7 +177,7 @@ public class DerivedStaticModelsTypeImpl extends EObjectImpl implements DerivedS
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.DERIVED_STATIC_MODELS_TYPE__DERIVED_STATIC_MODEL:
-				return ((InternalEList<?>)getDerivedStaticModel()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDerivedStaticModel()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -198,10 +209,10 @@ public class DerivedStaticModelsTypeImpl extends EObjectImpl implements DerivedS
 		switch (featureID) {
 			case Mif2Package.DERIVED_STATIC_MODELS_TYPE__DERIVED_STATIC_MODEL:
 				getDerivedStaticModel().clear();
-				getDerivedStaticModel().addAll((Collection<? extends GlobalDerivedStaticModel>)newValue);
+				getDerivedStaticModel().addAll((Collection<? extends GlobalDerivedStaticModel>) newValue);
 				return;
 			case Mif2Package.DERIVED_STATIC_MODELS_TYPE__SCHEMA_VERSION:
-				setSchemaVersion((String)newValue);
+				setSchemaVersion((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -248,13 +259,19 @@ public class DerivedStaticModelsTypeImpl extends EObjectImpl implements DerivedS
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (schemaVersion: ");
-		if (schemaVersionESet) result.append(schemaVersion); else result.append("<unset>");
+		if (schemaVersionESet) {
+			result.append(schemaVersion);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //DerivedStaticModelsTypeImpl
+} // DerivedStaticModelsTypeImpl

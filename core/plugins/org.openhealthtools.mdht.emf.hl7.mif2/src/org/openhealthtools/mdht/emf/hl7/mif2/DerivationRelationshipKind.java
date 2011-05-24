@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -151,14 +155,8 @@ public enum DerivationRelationshipKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final DerivationRelationshipKind[] VALUES_ARRAY =
-		new DerivationRelationshipKind[] {
-			RESTRICTION,
-			EXTENSION,
-			CONFLICTING,
-			ANNOTATED,
-			UNCHANGED,
-		};
+	private static final DerivationRelationshipKind[] VALUES_ARRAY = new DerivationRelationshipKind[] {
+			RESTRICTION, EXTENSION, CONFLICTING, ANNOTATED, UNCHANGED, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Derivation Relationship Kind</b></em>' enumerators.
@@ -208,11 +206,16 @@ public enum DerivationRelationshipKind implements Enumerator {
 	 */
 	public static DerivationRelationshipKind get(int value) {
 		switch (value) {
-			case RESTRICTION_VALUE: return RESTRICTION;
-			case EXTENSION_VALUE: return EXTENSION;
-			case CONFLICTING_VALUE: return CONFLICTING;
-			case ANNOTATED_VALUE: return ANNOTATED;
-			case UNCHANGED_VALUE: return UNCHANGED;
+			case RESTRICTION_VALUE:
+				return RESTRICTION;
+			case EXTENSION_VALUE:
+				return EXTENSION;
+			case CONFLICTING_VALUE:
+				return CONFLICTING;
+			case ANNOTATED_VALUE:
+				return ANNOTATED;
+			case UNCHANGED_VALUE:
+				return UNCHANGED;
 		}
 		return null;
 	}
@@ -256,7 +259,7 @@ public enum DerivationRelationshipKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -265,7 +268,7 @@ public enum DerivationRelationshipKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -274,7 +277,7 @@ public enum DerivationRelationshipKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -287,5 +290,5 @@ public enum DerivationRelationshipKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //DerivationRelationshipKind
+
+} // DerivationRelationshipKind

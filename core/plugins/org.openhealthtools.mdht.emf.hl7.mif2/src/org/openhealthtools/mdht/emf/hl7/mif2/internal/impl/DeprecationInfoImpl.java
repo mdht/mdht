@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -96,7 +100,8 @@ public class DeprecationInfoImpl extends ContextAnnotationImpl implements Deprec
 	 */
 	public EList<AnnotationDerivation> getDerivationSupplier() {
 		if (derivationSupplier == null) {
-			derivationSupplier = new EObjectContainmentEList<AnnotationDerivation>(AnnotationDerivation.class, this, Mif2Package.DEPRECATION_INFO__DERIVATION_SUPPLIER);
+			derivationSupplier = new EObjectContainmentEList<AnnotationDerivation>(
+				AnnotationDerivation.class, this, Mif2Package.DEPRECATION_INFO__DERIVATION_SUPPLIER);
 		}
 		return derivationSupplier;
 	}
@@ -118,8 +123,11 @@ public class DeprecationInfoImpl extends ContextAnnotationImpl implements Deprec
 	public void setDeprecationEffectiveVersion(String newDeprecationEffectiveVersion) {
 		String oldDeprecationEffectiveVersion = deprecationEffectiveVersion;
 		deprecationEffectiveVersion = newDeprecationEffectiveVersion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DEPRECATION_INFO__DEPRECATION_EFFECTIVE_VERSION, oldDeprecationEffectiveVersion, deprecationEffectiveVersion));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DEPRECATION_INFO__DEPRECATION_EFFECTIVE_VERSION,
+				oldDeprecationEffectiveVersion, deprecationEffectiveVersion));
+		}
 	}
 
 	/**
@@ -131,7 +139,7 @@ public class DeprecationInfoImpl extends ContextAnnotationImpl implements Deprec
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.DEPRECATION_INFO__DERIVATION_SUPPLIER:
-				return ((InternalEList<?>)getDerivationSupplier()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDerivationSupplier()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -163,10 +171,10 @@ public class DeprecationInfoImpl extends ContextAnnotationImpl implements Deprec
 		switch (featureID) {
 			case Mif2Package.DEPRECATION_INFO__DERIVATION_SUPPLIER:
 				getDerivationSupplier().clear();
-				getDerivationSupplier().addAll((Collection<? extends AnnotationDerivation>)newValue);
+				getDerivationSupplier().addAll((Collection<? extends AnnotationDerivation>) newValue);
 				return;
 			case Mif2Package.DEPRECATION_INFO__DEPRECATION_EFFECTIVE_VERSION:
-				setDeprecationEffectiveVersion((String)newValue);
+				setDeprecationEffectiveVersion((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -201,7 +209,9 @@ public class DeprecationInfoImpl extends ContextAnnotationImpl implements Deprec
 			case Mif2Package.DEPRECATION_INFO__DERIVATION_SUPPLIER:
 				return derivationSupplier != null && !derivationSupplier.isEmpty();
 			case Mif2Package.DEPRECATION_INFO__DEPRECATION_EFFECTIVE_VERSION:
-				return DEPRECATION_EFFECTIVE_VERSION_EDEFAULT == null ? deprecationEffectiveVersion != null : !DEPRECATION_EFFECTIVE_VERSION_EDEFAULT.equals(deprecationEffectiveVersion);
+				return DEPRECATION_EFFECTIVE_VERSION_EDEFAULT == null
+						? deprecationEffectiveVersion != null
+						: !DEPRECATION_EFFECTIVE_VERSION_EDEFAULT.equals(deprecationEffectiveVersion);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -213,7 +223,9 @@ public class DeprecationInfoImpl extends ContextAnnotationImpl implements Deprec
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (deprecationEffectiveVersion: ");
@@ -222,4 +234,4 @@ public class DeprecationInfoImpl extends ContextAnnotationImpl implements Deprec
 		return result.toString();
 	}
 
-} //DeprecationInfoImpl
+} // DeprecationInfoImpl

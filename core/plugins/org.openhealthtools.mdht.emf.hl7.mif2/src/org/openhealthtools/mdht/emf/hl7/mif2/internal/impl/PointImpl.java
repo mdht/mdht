@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigDecimal;
@@ -109,8 +113,9 @@ public class PointImpl extends EObjectImpl implements Point {
 	public void setX(BigDecimal newX) {
 		BigDecimal oldX = x;
 		x = newX;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.POINT__X, oldX, x));
+		}
 	}
 
 	/**
@@ -130,8 +135,9 @@ public class PointImpl extends EObjectImpl implements Point {
 	public void setY(BigDecimal newY) {
 		BigDecimal oldY = y;
 		y = newY;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.POINT__Y, oldY, y));
+		}
 	}
 
 	/**
@@ -159,10 +165,10 @@ public class PointImpl extends EObjectImpl implements Point {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.POINT__X:
-				setX((BigDecimal)newValue);
+				setX((BigDecimal) newValue);
 				return;
 			case Mif2Package.POINT__Y:
-				setY((BigDecimal)newValue);
+				setY((BigDecimal) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -195,9 +201,13 @@ public class PointImpl extends EObjectImpl implements Point {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.POINT__X:
-				return X_EDEFAULT == null ? x != null : !X_EDEFAULT.equals(x);
+				return X_EDEFAULT == null
+						? x != null
+						: !X_EDEFAULT.equals(x);
 			case Mif2Package.POINT__Y:
-				return Y_EDEFAULT == null ? y != null : !Y_EDEFAULT.equals(y);
+				return Y_EDEFAULT == null
+						? y != null
+						: !Y_EDEFAULT.equals(y);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -209,7 +219,9 @@ public class PointImpl extends EObjectImpl implements Point {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (x: ");
@@ -220,4 +232,4 @@ public class PointImpl extends EObjectImpl implements Point {
 		return result.toString();
 	}
 
-} //PointImpl
+} // PointImpl

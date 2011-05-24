@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.internal.impl;
 
 import java.math.BigInteger;
@@ -411,8 +415,13 @@ public class TableImpl extends EObjectImpl implements Table {
 		Caption oldCaption = caption;
 		caption = newCaption;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XhtmlPackage.TABLE__CAPTION, oldCaption, newCaption);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TABLE__CAPTION, oldCaption, newCaption);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -425,15 +434,21 @@ public class TableImpl extends EObjectImpl implements Table {
 	public void setCaption(Caption newCaption) {
 		if (newCaption != caption) {
 			NotificationChain msgs = null;
-			if (caption != null)
-				msgs = ((InternalEObject)caption).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XhtmlPackage.TABLE__CAPTION, null, msgs);
-			if (newCaption != null)
-				msgs = ((InternalEObject)newCaption).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XhtmlPackage.TABLE__CAPTION, null, msgs);
+			if (caption != null) {
+				msgs = ((InternalEObject) caption).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						XhtmlPackage.TABLE__CAPTION, null, msgs);
+			}
+			if (newCaption != null) {
+				msgs = ((InternalEObject) newCaption).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						XhtmlPackage.TABLE__CAPTION, null, msgs);
+			}
 			msgs = basicSetCaption(newCaption, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TABLE__CAPTION, newCaption, newCaption));
+		}
 	}
 
 	/**
@@ -478,8 +493,13 @@ public class TableImpl extends EObjectImpl implements Table {
 		Thead oldThead = thead;
 		thead = newThead;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XhtmlPackage.TABLE__THEAD, oldThead, newThead);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TABLE__THEAD, oldThead, newThead);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -492,15 +512,21 @@ public class TableImpl extends EObjectImpl implements Table {
 	public void setThead(Thead newThead) {
 		if (newThead != thead) {
 			NotificationChain msgs = null;
-			if (thead != null)
-				msgs = ((InternalEObject)thead).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XhtmlPackage.TABLE__THEAD, null, msgs);
-			if (newThead != null)
-				msgs = ((InternalEObject)newThead).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XhtmlPackage.TABLE__THEAD, null, msgs);
+			if (thead != null) {
+				msgs = ((InternalEObject) thead).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						XhtmlPackage.TABLE__THEAD, null, msgs);
+			}
+			if (newThead != null) {
+				msgs = ((InternalEObject) newThead).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						XhtmlPackage.TABLE__THEAD, null, msgs);
+			}
 			msgs = basicSetThead(newThead, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TABLE__THEAD, newThead, newThead));
+		}
 	}
 
 	/**
@@ -521,8 +547,13 @@ public class TableImpl extends EObjectImpl implements Table {
 		Tfoot oldTfoot = tfoot;
 		tfoot = newTfoot;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XhtmlPackage.TABLE__TFOOT, oldTfoot, newTfoot);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TABLE__TFOOT, oldTfoot, newTfoot);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -535,15 +566,21 @@ public class TableImpl extends EObjectImpl implements Table {
 	public void setTfoot(Tfoot newTfoot) {
 		if (newTfoot != tfoot) {
 			NotificationChain msgs = null;
-			if (tfoot != null)
-				msgs = ((InternalEObject)tfoot).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XhtmlPackage.TABLE__TFOOT, null, msgs);
-			if (newTfoot != null)
-				msgs = ((InternalEObject)newTfoot).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XhtmlPackage.TABLE__TFOOT, null, msgs);
+			if (tfoot != null) {
+				msgs = ((InternalEObject) tfoot).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						XhtmlPackage.TABLE__TFOOT, null, msgs);
+			}
+			if (newTfoot != null) {
+				msgs = ((InternalEObject) newTfoot).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						XhtmlPackage.TABLE__TFOOT, null, msgs);
+			}
 			msgs = basicSetTfoot(newTfoot, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TABLE__TFOOT, newTfoot, newTfoot));
+		}
 	}
 
 	/**
@@ -587,8 +624,9 @@ public class TableImpl extends EObjectImpl implements Table {
 	public void setBorder(BigInteger newBorder) {
 		BigInteger oldBorder = border;
 		border = newBorder;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TABLE__BORDER, oldBorder, border));
+		}
 	}
 
 	/**
@@ -608,8 +646,10 @@ public class TableImpl extends EObjectImpl implements Table {
 	public void setCellpadding(String newCellpadding) {
 		String oldCellpadding = cellpadding;
 		cellpadding = newCellpadding;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TABLE__CELLPADDING, oldCellpadding, cellpadding));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TABLE__CELLPADDING, oldCellpadding, cellpadding));
+		}
 	}
 
 	/**
@@ -629,8 +669,10 @@ public class TableImpl extends EObjectImpl implements Table {
 	public void setCellspacing(String newCellspacing) {
 		String oldCellspacing = cellspacing;
 		cellspacing = newCellspacing;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TABLE__CELLSPACING, oldCellspacing, cellspacing));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TABLE__CELLSPACING, oldCellspacing, cellspacing));
+		}
 	}
 
 	/**
@@ -649,11 +691,15 @@ public class TableImpl extends EObjectImpl implements Table {
 	 */
 	public void setClass(MifClassType newClass) {
 		MifClassType oldClass = class_;
-		class_ = newClass == null ? CLASS_EDEFAULT : newClass;
+		class_ = newClass == null
+				? CLASS_EDEFAULT
+				: newClass;
 		boolean oldClassESet = classESet;
 		classESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TABLE__CLASS, oldClass, class_, !oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TABLE__CLASS, oldClass, class_, !oldClassESet));
+		}
 	}
 
 	/**
@@ -666,8 +712,10 @@ public class TableImpl extends EObjectImpl implements Table {
 		boolean oldClassESet = classESet;
 		class_ = CLASS_EDEFAULT;
 		classESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TABLE__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TABLE__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		}
 	}
 
 	/**
@@ -695,11 +743,15 @@ public class TableImpl extends EObjectImpl implements Table {
 	 */
 	public void setFrame(TFrame newFrame) {
 		TFrame oldFrame = frame;
-		frame = newFrame == null ? FRAME_EDEFAULT : newFrame;
+		frame = newFrame == null
+				? FRAME_EDEFAULT
+				: newFrame;
 		boolean oldFrameESet = frameESet;
 		frameESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TABLE__FRAME, oldFrame, frame, !oldFrameESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TABLE__FRAME, oldFrame, frame, !oldFrameESet));
+		}
 	}
 
 	/**
@@ -712,8 +764,10 @@ public class TableImpl extends EObjectImpl implements Table {
 		boolean oldFrameESet = frameESet;
 		frame = FRAME_EDEFAULT;
 		frameESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TABLE__FRAME, oldFrame, FRAME_EDEFAULT, oldFrameESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TABLE__FRAME, oldFrame, FRAME_EDEFAULT, oldFrameESet));
+		}
 	}
 
 	/**
@@ -742,8 +796,9 @@ public class TableImpl extends EObjectImpl implements Table {
 	public void setHl7Id(String newHl7Id) {
 		String oldHl7Id = hl7Id;
 		hl7Id = newHl7Id;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TABLE__HL7_ID, oldHl7Id, hl7Id));
+		}
 	}
 
 	/**
@@ -763,8 +818,9 @@ public class TableImpl extends EObjectImpl implements Table {
 	public void setLang(String newLang) {
 		String oldLang = lang;
 		lang = newLang;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TABLE__LANG, oldLang, lang));
+		}
 	}
 
 	/**
@@ -783,11 +839,15 @@ public class TableImpl extends EObjectImpl implements Table {
 	 */
 	public void setRules(TRules newRules) {
 		TRules oldRules = rules;
-		rules = newRules == null ? RULES_EDEFAULT : newRules;
+		rules = newRules == null
+				? RULES_EDEFAULT
+				: newRules;
 		boolean oldRulesESet = rulesESet;
 		rulesESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TABLE__RULES, oldRules, rules, !oldRulesESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TABLE__RULES, oldRules, rules, !oldRulesESet));
+		}
 	}
 
 	/**
@@ -800,8 +860,10 @@ public class TableImpl extends EObjectImpl implements Table {
 		boolean oldRulesESet = rulesESet;
 		rules = RULES_EDEFAULT;
 		rulesESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TABLE__RULES, oldRules, RULES_EDEFAULT, oldRulesESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TABLE__RULES, oldRules, RULES_EDEFAULT, oldRulesESet));
+		}
 	}
 
 	/**
@@ -829,11 +891,15 @@ public class TableImpl extends EObjectImpl implements Table {
 	 */
 	public void setStyle(StyleSheet newStyle) {
 		StyleSheet oldStyle = style;
-		style = newStyle == null ? STYLE_EDEFAULT : newStyle;
+		style = newStyle == null
+				? STYLE_EDEFAULT
+				: newStyle;
 		boolean oldStyleESet = styleESet;
 		styleESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TABLE__STYLE, oldStyle, style, !oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.TABLE__STYLE, oldStyle, style, !oldStyleESet));
+		}
 	}
 
 	/**
@@ -846,8 +912,10 @@ public class TableImpl extends EObjectImpl implements Table {
 		boolean oldStyleESet = styleESet;
 		style = STYLE_EDEFAULT;
 		styleESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.TABLE__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.TABLE__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		}
 	}
 
 	/**
@@ -876,8 +944,9 @@ public class TableImpl extends EObjectImpl implements Table {
 	public void setWidth(String newWidth) {
 		String oldWidth = width;
 		width = newWidth;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.TABLE__WIDTH, oldWidth, width));
+		}
 	}
 
 	/**
@@ -891,17 +960,17 @@ public class TableImpl extends EObjectImpl implements Table {
 			case XhtmlPackage.TABLE__CAPTION:
 				return basicSetCaption(null, msgs);
 			case XhtmlPackage.TABLE__COL:
-				return ((InternalEList<?>)getCol()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCol()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.TABLE__COLGROUP:
-				return ((InternalEList<?>)getColgroup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getColgroup()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.TABLE__THEAD:
 				return basicSetThead(null, msgs);
 			case XhtmlPackage.TABLE__TFOOT:
 				return basicSetTfoot(null, msgs);
 			case XhtmlPackage.TABLE__TBODY:
-				return ((InternalEList<?>)getTbody()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTbody()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.TABLE__TR:
-				return ((InternalEList<?>)getTr()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTr()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -962,59 +1031,59 @@ public class TableImpl extends EObjectImpl implements Table {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case XhtmlPackage.TABLE__CAPTION:
-				setCaption((Caption)newValue);
+				setCaption((Caption) newValue);
 				return;
 			case XhtmlPackage.TABLE__COL:
 				getCol().clear();
-				getCol().addAll((Collection<? extends Col>)newValue);
+				getCol().addAll((Collection<? extends Col>) newValue);
 				return;
 			case XhtmlPackage.TABLE__COLGROUP:
 				getColgroup().clear();
-				getColgroup().addAll((Collection<? extends Colgroup>)newValue);
+				getColgroup().addAll((Collection<? extends Colgroup>) newValue);
 				return;
 			case XhtmlPackage.TABLE__THEAD:
-				setThead((Thead)newValue);
+				setThead((Thead) newValue);
 				return;
 			case XhtmlPackage.TABLE__TFOOT:
-				setTfoot((Tfoot)newValue);
+				setTfoot((Tfoot) newValue);
 				return;
 			case XhtmlPackage.TABLE__TBODY:
 				getTbody().clear();
-				getTbody().addAll((Collection<? extends Tbody>)newValue);
+				getTbody().addAll((Collection<? extends Tbody>) newValue);
 				return;
 			case XhtmlPackage.TABLE__TR:
 				getTr().clear();
-				getTr().addAll((Collection<? extends Tr>)newValue);
+				getTr().addAll((Collection<? extends Tr>) newValue);
 				return;
 			case XhtmlPackage.TABLE__BORDER:
-				setBorder((BigInteger)newValue);
+				setBorder((BigInteger) newValue);
 				return;
 			case XhtmlPackage.TABLE__CELLPADDING:
-				setCellpadding((String)newValue);
+				setCellpadding((String) newValue);
 				return;
 			case XhtmlPackage.TABLE__CELLSPACING:
-				setCellspacing((String)newValue);
+				setCellspacing((String) newValue);
 				return;
 			case XhtmlPackage.TABLE__CLASS:
-				setClass((MifClassType)newValue);
+				setClass((MifClassType) newValue);
 				return;
 			case XhtmlPackage.TABLE__FRAME:
-				setFrame((TFrame)newValue);
+				setFrame((TFrame) newValue);
 				return;
 			case XhtmlPackage.TABLE__HL7_ID:
-				setHl7Id((String)newValue);
+				setHl7Id((String) newValue);
 				return;
 			case XhtmlPackage.TABLE__LANG:
-				setLang((String)newValue);
+				setLang((String) newValue);
 				return;
 			case XhtmlPackage.TABLE__RULES:
-				setRules((TRules)newValue);
+				setRules((TRules) newValue);
 				return;
 			case XhtmlPackage.TABLE__STYLE:
-				setStyle((StyleSheet)newValue);
+				setStyle((StyleSheet) newValue);
 				return;
 			case XhtmlPackage.TABLE__WIDTH:
-				setWidth((String)newValue);
+				setWidth((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1029,7 +1098,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case XhtmlPackage.TABLE__CAPTION:
-				setCaption((Caption)null);
+				setCaption((Caption) null);
 				return;
 			case XhtmlPackage.TABLE__COL:
 				getCol().clear();
@@ -1038,10 +1107,10 @@ public class TableImpl extends EObjectImpl implements Table {
 				getColgroup().clear();
 				return;
 			case XhtmlPackage.TABLE__THEAD:
-				setThead((Thead)null);
+				setThead((Thead) null);
 				return;
 			case XhtmlPackage.TABLE__TFOOT:
-				setTfoot((Tfoot)null);
+				setTfoot((Tfoot) null);
 				return;
 			case XhtmlPackage.TABLE__TBODY:
 				getTbody().clear();
@@ -1106,25 +1175,37 @@ public class TableImpl extends EObjectImpl implements Table {
 			case XhtmlPackage.TABLE__TR:
 				return tr != null && !tr.isEmpty();
 			case XhtmlPackage.TABLE__BORDER:
-				return BORDER_EDEFAULT == null ? border != null : !BORDER_EDEFAULT.equals(border);
+				return BORDER_EDEFAULT == null
+						? border != null
+						: !BORDER_EDEFAULT.equals(border);
 			case XhtmlPackage.TABLE__CELLPADDING:
-				return CELLPADDING_EDEFAULT == null ? cellpadding != null : !CELLPADDING_EDEFAULT.equals(cellpadding);
+				return CELLPADDING_EDEFAULT == null
+						? cellpadding != null
+						: !CELLPADDING_EDEFAULT.equals(cellpadding);
 			case XhtmlPackage.TABLE__CELLSPACING:
-				return CELLSPACING_EDEFAULT == null ? cellspacing != null : !CELLSPACING_EDEFAULT.equals(cellspacing);
+				return CELLSPACING_EDEFAULT == null
+						? cellspacing != null
+						: !CELLSPACING_EDEFAULT.equals(cellspacing);
 			case XhtmlPackage.TABLE__CLASS:
 				return isSetClass();
 			case XhtmlPackage.TABLE__FRAME:
 				return isSetFrame();
 			case XhtmlPackage.TABLE__HL7_ID:
-				return HL7_ID_EDEFAULT == null ? hl7Id != null : !HL7_ID_EDEFAULT.equals(hl7Id);
+				return HL7_ID_EDEFAULT == null
+						? hl7Id != null
+						: !HL7_ID_EDEFAULT.equals(hl7Id);
 			case XhtmlPackage.TABLE__LANG:
-				return LANG_EDEFAULT == null ? lang != null : !LANG_EDEFAULT.equals(lang);
+				return LANG_EDEFAULT == null
+						? lang != null
+						: !LANG_EDEFAULT.equals(lang);
 			case XhtmlPackage.TABLE__RULES:
 				return isSetRules();
 			case XhtmlPackage.TABLE__STYLE:
 				return isSetStyle();
 			case XhtmlPackage.TABLE__WIDTH:
-				return WIDTH_EDEFAULT == null ? width != null : !WIDTH_EDEFAULT.equals(width);
+				return WIDTH_EDEFAULT == null
+						? width != null
+						: !WIDTH_EDEFAULT.equals(width);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1136,7 +1217,9 @@ public class TableImpl extends EObjectImpl implements Table {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (border: ");
@@ -1146,21 +1229,37 @@ public class TableImpl extends EObjectImpl implements Table {
 		result.append(", cellspacing: ");
 		result.append(cellspacing);
 		result.append(", class: ");
-		if (classESet) result.append(class_); else result.append("<unset>");
+		if (classESet) {
+			result.append(class_);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", frame: ");
-		if (frameESet) result.append(frame); else result.append("<unset>");
+		if (frameESet) {
+			result.append(frame);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", hl7Id: ");
 		result.append(hl7Id);
 		result.append(", lang: ");
 		result.append(lang);
 		result.append(", rules: ");
-		if (rulesESet) result.append(rules); else result.append("<unset>");
+		if (rulesESet) {
+			result.append(rules);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", style: ");
-		if (styleESet) result.append(style); else result.append("<unset>");
+		if (styleESet) {
+			result.append(style);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", width: ");
 		result.append(width);
 		result.append(')');
 		return result.toString();
 	}
 
-} //TableImpl
+} // TableImpl

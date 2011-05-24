@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -96,7 +100,8 @@ public class SerializedClassImpl extends ClassBaseImpl implements SerializedClas
 	 */
 	public EList<SerializedClassGeneralization> getChildClass() {
 		if (childClass == null) {
-			childClass = new EObjectContainmentEList<SerializedClassGeneralization>(SerializedClassGeneralization.class, this, Mif2Package.SERIALIZED_CLASS__CHILD_CLASS);
+			childClass = new EObjectContainmentEList<SerializedClassGeneralization>(
+				SerializedClassGeneralization.class, this, Mif2Package.SERIALIZED_CLASS__CHILD_CLASS);
 		}
 		return childClass;
 	}
@@ -108,7 +113,8 @@ public class SerializedClassImpl extends ClassBaseImpl implements SerializedClas
 	 */
 	public EList<LocalClassRef> getParentClass() {
 		if (parentClass == null) {
-			parentClass = new EObjectContainmentEList<LocalClassRef>(LocalClassRef.class, this, Mif2Package.SERIALIZED_CLASS__PARENT_CLASS);
+			parentClass = new EObjectContainmentEList<LocalClassRef>(
+				LocalClassRef.class, this, Mif2Package.SERIALIZED_CLASS__PARENT_CLASS);
 		}
 		return parentClass;
 	}
@@ -120,7 +126,8 @@ public class SerializedClassImpl extends ClassBaseImpl implements SerializedClas
 	 */
 	public EList<SerializedAssociationEnd> getAssociation() {
 		if (association == null) {
-			association = new EObjectContainmentEList<SerializedAssociationEnd>(SerializedAssociationEnd.class, this, Mif2Package.SERIALIZED_CLASS__ASSOCIATION);
+			association = new EObjectContainmentEList<SerializedAssociationEnd>(
+				SerializedAssociationEnd.class, this, Mif2Package.SERIALIZED_CLASS__ASSOCIATION);
 		}
 		return association;
 	}
@@ -134,11 +141,11 @@ public class SerializedClassImpl extends ClassBaseImpl implements SerializedClas
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.SERIALIZED_CLASS__CHILD_CLASS:
-				return ((InternalEList<?>)getChildClass()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getChildClass()).basicRemove(otherEnd, msgs);
 			case Mif2Package.SERIALIZED_CLASS__PARENT_CLASS:
-				return ((InternalEList<?>)getParentClass()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getParentClass()).basicRemove(otherEnd, msgs);
 			case Mif2Package.SERIALIZED_CLASS__ASSOCIATION:
-				return ((InternalEList<?>)getAssociation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAssociation()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -172,15 +179,15 @@ public class SerializedClassImpl extends ClassBaseImpl implements SerializedClas
 		switch (featureID) {
 			case Mif2Package.SERIALIZED_CLASS__CHILD_CLASS:
 				getChildClass().clear();
-				getChildClass().addAll((Collection<? extends SerializedClassGeneralization>)newValue);
+				getChildClass().addAll((Collection<? extends SerializedClassGeneralization>) newValue);
 				return;
 			case Mif2Package.SERIALIZED_CLASS__PARENT_CLASS:
 				getParentClass().clear();
-				getParentClass().addAll((Collection<? extends LocalClassRef>)newValue);
+				getParentClass().addAll((Collection<? extends LocalClassRef>) newValue);
 				return;
 			case Mif2Package.SERIALIZED_CLASS__ASSOCIATION:
 				getAssociation().clear();
-				getAssociation().addAll((Collection<? extends SerializedAssociationEnd>)newValue);
+				getAssociation().addAll((Collection<? extends SerializedAssociationEnd>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -225,4 +232,4 @@ public class SerializedClassImpl extends ClassBaseImpl implements SerializedClas
 		return super.eIsSet(featureID);
 	}
 
-} //SerializedClassImpl
+} // SerializedClassImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -55,10 +59,7 @@ public enum ConstructedElementKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ConstructedElementKind[] VALUES_ARRAY =
-		new ConstructedElementKind[] {
-			DATATYPE_SUMMARY,
-		};
+	private static final ConstructedElementKind[] VALUES_ARRAY = new ConstructedElementKind[] { DATATYPE_SUMMARY, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Constructed Element Kind</b></em>' enumerators.
@@ -108,7 +109,8 @@ public enum ConstructedElementKind implements Enumerator {
 	 */
 	public static ConstructedElementKind get(int value) {
 		switch (value) {
-			case DATATYPE_SUMMARY_VALUE: return DATATYPE_SUMMARY;
+			case DATATYPE_SUMMARY_VALUE:
+				return DATATYPE_SUMMARY;
 		}
 		return null;
 	}
@@ -152,7 +154,7 @@ public enum ConstructedElementKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -161,7 +163,7 @@ public enum ConstructedElementKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -170,7 +172,7 @@ public enum ConstructedElementKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -183,5 +185,5 @@ public enum ConstructedElementKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //ConstructedElementKind
+
+} // ConstructedElementKind

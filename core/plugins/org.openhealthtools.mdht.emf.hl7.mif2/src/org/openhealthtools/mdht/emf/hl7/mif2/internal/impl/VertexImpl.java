@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -85,8 +89,9 @@ public abstract class VertexImpl extends ModelElementImpl implements Vertex {
 	public void setSortKey(String newSortKey) {
 		String oldSortKey = sortKey;
 		sortKey = newSortKey;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VERTEX__SORT_KEY, oldSortKey, sortKey));
+		}
 	}
 
 	/**
@@ -112,7 +117,7 @@ public abstract class VertexImpl extends ModelElementImpl implements Vertex {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.VERTEX__SORT_KEY:
-				setSortKey((String)newValue);
+				setSortKey((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -142,7 +147,9 @@ public abstract class VertexImpl extends ModelElementImpl implements Vertex {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.VERTEX__SORT_KEY:
-				return SORT_KEY_EDEFAULT == null ? sortKey != null : !SORT_KEY_EDEFAULT.equals(sortKey);
+				return SORT_KEY_EDEFAULT == null
+						? sortKey != null
+						: !SORT_KEY_EDEFAULT.equals(sortKey);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,7 +161,9 @@ public abstract class VertexImpl extends ModelElementImpl implements Vertex {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (sortKey: ");
@@ -163,4 +172,4 @@ public abstract class VertexImpl extends ModelElementImpl implements Vertex {
 		return result.toString();
 	}
 
-} //VertexImpl
+} // VertexImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -79,8 +83,14 @@ public class DatatypeDerivationImpl extends DerivationImpl implements DatatypeDe
 		DatatypeRef oldTargetDatatype = targetDatatype;
 		targetDatatype = newTargetDatatype;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_DERIVATION__TARGET_DATATYPE, oldTargetDatatype, newTargetDatatype);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_DERIVATION__TARGET_DATATYPE, oldTargetDatatype,
+				newTargetDatatype);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -93,15 +103,23 @@ public class DatatypeDerivationImpl extends DerivationImpl implements DatatypeDe
 	public void setTargetDatatype(DatatypeRef newTargetDatatype) {
 		if (newTargetDatatype != targetDatatype) {
 			NotificationChain msgs = null;
-			if (targetDatatype != null)
-				msgs = ((InternalEObject)targetDatatype).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_DERIVATION__TARGET_DATATYPE, null, msgs);
-			if (newTargetDatatype != null)
-				msgs = ((InternalEObject)newTargetDatatype).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DATATYPE_DERIVATION__TARGET_DATATYPE, null, msgs);
+			if (targetDatatype != null) {
+				msgs = ((InternalEObject) targetDatatype).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_DERIVATION__TARGET_DATATYPE, null, msgs);
+			}
+			if (newTargetDatatype != null) {
+				msgs = ((InternalEObject) newTargetDatatype).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DATATYPE_DERIVATION__TARGET_DATATYPE, null, msgs);
+			}
 			msgs = basicSetTargetDatatype(newTargetDatatype, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DATATYPE_DERIVATION__TARGET_DATATYPE, newTargetDatatype,
+				newTargetDatatype));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DATATYPE_DERIVATION__TARGET_DATATYPE, newTargetDatatype, newTargetDatatype));
 	}
 
 	/**
@@ -141,7 +159,7 @@ public class DatatypeDerivationImpl extends DerivationImpl implements DatatypeDe
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.DATATYPE_DERIVATION__TARGET_DATATYPE:
-				setTargetDatatype((DatatypeRef)newValue);
+				setTargetDatatype((DatatypeRef) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -156,7 +174,7 @@ public class DatatypeDerivationImpl extends DerivationImpl implements DatatypeDe
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.DATATYPE_DERIVATION__TARGET_DATATYPE:
-				setTargetDatatype((DatatypeRef)null);
+				setTargetDatatype((DatatypeRef) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -176,4 +194,4 @@ public class DatatypeDerivationImpl extends DerivationImpl implements DatatypeDe
 		return super.eIsSet(featureID);
 	}
 
-} //DatatypeDerivationImpl
+} // DatatypeDerivationImpl

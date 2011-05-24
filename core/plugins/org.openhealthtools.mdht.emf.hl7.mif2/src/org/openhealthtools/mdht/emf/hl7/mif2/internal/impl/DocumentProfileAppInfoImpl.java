@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -88,7 +92,8 @@ public class DocumentProfileAppInfoImpl extends EObjectImpl implements DocumentP
 	 */
 	public EList<ChangeRequest> getChangeRequest() {
 		if (changeRequest == null) {
-			changeRequest = new EObjectContainmentEList<ChangeRequest>(ChangeRequest.class, this, Mif2Package.DOCUMENT_PROFILE_APP_INFO__CHANGE_REQUEST);
+			changeRequest = new EObjectContainmentEList<ChangeRequest>(
+				ChangeRequest.class, this, Mif2Package.DOCUMENT_PROFILE_APP_INFO__CHANGE_REQUEST);
 		}
 		return changeRequest;
 	}
@@ -111,8 +116,14 @@ public class DocumentProfileAppInfoImpl extends EObjectImpl implements DocumentP
 		DeprecationInfo oldDeprecationInfo = deprecationInfo;
 		deprecationInfo = newDeprecationInfo;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_APP_INFO__DEPRECATION_INFO, oldDeprecationInfo, newDeprecationInfo);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_APP_INFO__DEPRECATION_INFO, oldDeprecationInfo,
+				newDeprecationInfo);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -125,15 +136,23 @@ public class DocumentProfileAppInfoImpl extends EObjectImpl implements DocumentP
 	public void setDeprecationInfo(DeprecationInfo newDeprecationInfo) {
 		if (newDeprecationInfo != deprecationInfo) {
 			NotificationChain msgs = null;
-			if (deprecationInfo != null)
-				msgs = ((InternalEObject)deprecationInfo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE_APP_INFO__DEPRECATION_INFO, null, msgs);
-			if (newDeprecationInfo != null)
-				msgs = ((InternalEObject)newDeprecationInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.DOCUMENT_PROFILE_APP_INFO__DEPRECATION_INFO, null, msgs);
+			if (deprecationInfo != null) {
+				msgs = ((InternalEObject) deprecationInfo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE_APP_INFO__DEPRECATION_INFO, null, msgs);
+			}
+			if (newDeprecationInfo != null) {
+				msgs = ((InternalEObject) newDeprecationInfo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.DOCUMENT_PROFILE_APP_INFO__DEPRECATION_INFO, null, msgs);
+			}
 			msgs = basicSetDeprecationInfo(newDeprecationInfo, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_APP_INFO__DEPRECATION_INFO, newDeprecationInfo,
+				newDeprecationInfo));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.DOCUMENT_PROFILE_APP_INFO__DEPRECATION_INFO, newDeprecationInfo, newDeprecationInfo));
 	}
 
 	/**
@@ -145,7 +164,7 @@ public class DocumentProfileAppInfoImpl extends EObjectImpl implements DocumentP
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.DOCUMENT_PROFILE_APP_INFO__CHANGE_REQUEST:
-				return ((InternalEList<?>)getChangeRequest()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getChangeRequest()).basicRemove(otherEnd, msgs);
 			case Mif2Package.DOCUMENT_PROFILE_APP_INFO__DEPRECATION_INFO:
 				return basicSetDeprecationInfo(null, msgs);
 		}
@@ -179,10 +198,10 @@ public class DocumentProfileAppInfoImpl extends EObjectImpl implements DocumentP
 		switch (featureID) {
 			case Mif2Package.DOCUMENT_PROFILE_APP_INFO__CHANGE_REQUEST:
 				getChangeRequest().clear();
-				getChangeRequest().addAll((Collection<? extends ChangeRequest>)newValue);
+				getChangeRequest().addAll((Collection<? extends ChangeRequest>) newValue);
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_APP_INFO__DEPRECATION_INFO:
-				setDeprecationInfo((DeprecationInfo)newValue);
+				setDeprecationInfo((DeprecationInfo) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -200,7 +219,7 @@ public class DocumentProfileAppInfoImpl extends EObjectImpl implements DocumentP
 				getChangeRequest().clear();
 				return;
 			case Mif2Package.DOCUMENT_PROFILE_APP_INFO__DEPRECATION_INFO:
-				setDeprecationInfo((DeprecationInfo)null);
+				setDeprecationInfo((DeprecationInfo) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -222,4 +241,4 @@ public class DocumentProfileAppInfoImpl extends EObjectImpl implements DocumentP
 		return super.eIsSet(featureID);
 	}
 
-} //DocumentProfileAppInfoImpl
+} // DocumentProfileAppInfoImpl

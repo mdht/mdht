@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.internal.impl;
 
 import java.util.Collection;
@@ -149,7 +153,7 @@ public class FlowImpl extends EObjectImpl implements Flow {
 	 * @generated
 	 */
 	public FeatureMap getGroup() {
-		return (FeatureMap)getMixed().<FeatureMap.Entry>list(XhtmlPackage.Literals.FLOW__GROUP);
+		return (FeatureMap) getMixed().<FeatureMap.Entry> list(XhtmlPackage.Literals.FLOW__GROUP);
 	}
 
 	/**
@@ -449,73 +453,73 @@ public class FlowImpl extends EObjectImpl implements Flow {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case XhtmlPackage.FLOW__MIXED:
-				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getMixed()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__GROUP:
-				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getGroup()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__P:
-				return ((InternalEList<?>)getP()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getP()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__DIV:
-				return ((InternalEList<?>)getDiv()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDiv()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__UL:
-				return ((InternalEList<?>)getUl()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getUl()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__OL:
-				return ((InternalEList<?>)getOl()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getOl()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__DL:
-				return ((InternalEList<?>)getDl()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDl()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__PRE:
-				return ((InternalEList<?>)getPre()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getPre()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__HR:
-				return ((InternalEList<?>)getHr()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getHr()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__BLOCKQUOTE:
-				return ((InternalEList<?>)getBlockquote()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBlockquote()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__TABLE:
-				return ((InternalEList<?>)getTable()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTable()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__A:
-				return ((InternalEList<?>)getA()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getA()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__BR:
-				return ((InternalEList<?>)getBr()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBr()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__SPAN:
-				return ((InternalEList<?>)getSpan()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSpan()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__OBJECT:
-				return ((InternalEList<?>)getObject()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getObject()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__IMG:
-				return ((InternalEList<?>)getImg()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getImg()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__TT:
-				return ((InternalEList<?>)getTt()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTt()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__I:
-				return ((InternalEList<?>)getI()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getI()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__B:
-				return ((InternalEList<?>)getB()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getB()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__BIG:
-				return ((InternalEList<?>)getBig()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getBig()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__SMALL:
-				return ((InternalEList<?>)getSmall()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSmall()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__EM:
-				return ((InternalEList<?>)getEm()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getEm()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__STRONG:
-				return ((InternalEList<?>)getStrong()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getStrong()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__DFN:
-				return ((InternalEList<?>)getDfn()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getDfn()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__CODE:
-				return ((InternalEList<?>)getCode()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCode()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__Q:
-				return ((InternalEList<?>)getQ()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getQ()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__SAMP:
-				return ((InternalEList<?>)getSamp()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSamp()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__KBD:
-				return ((InternalEList<?>)getKbd()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getKbd()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__VAR:
-				return ((InternalEList<?>)getVar()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getVar()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__CITE:
-				return ((InternalEList<?>)getCite()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getCite()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__ABBR:
-				return ((InternalEList<?>)getAbbr()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAbbr()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__ACRONYM:
-				return ((InternalEList<?>)getAcronym()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAcronym()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__SUB:
-				return ((InternalEList<?>)getSub()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSub()).basicRemove(otherEnd, msgs);
 			case XhtmlPackage.FLOW__SUP:
-				return ((InternalEList<?>)getSup()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSup()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -529,11 +533,15 @@ public class FlowImpl extends EObjectImpl implements Flow {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case XhtmlPackage.FLOW__MIXED:
-				if (coreType) return getMixed();
-				return ((FeatureMap.Internal)getMixed()).getWrapper();
+				if (coreType) {
+					return getMixed();
+				}
+				return ((FeatureMap.Internal) getMixed()).getWrapper();
 			case XhtmlPackage.FLOW__GROUP:
-				if (coreType) return getGroup();
-				return ((FeatureMap.Internal)getGroup()).getWrapper();
+				if (coreType) {
+					return getGroup();
+				}
+				return ((FeatureMap.Internal) getGroup()).getWrapper();
 			case XhtmlPackage.FLOW__P:
 				return getP();
 			case XhtmlPackage.FLOW__DIV:
@@ -612,138 +620,138 @@ public class FlowImpl extends EObjectImpl implements Flow {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case XhtmlPackage.FLOW__MIXED:
-				((FeatureMap.Internal)getMixed()).set(newValue);
+				((FeatureMap.Internal) getMixed()).set(newValue);
 				return;
 			case XhtmlPackage.FLOW__GROUP:
-				((FeatureMap.Internal)getGroup()).set(newValue);
+				((FeatureMap.Internal) getGroup()).set(newValue);
 				return;
 			case XhtmlPackage.FLOW__P:
 				getP().clear();
-				getP().addAll((Collection<? extends P>)newValue);
+				getP().addAll((Collection<? extends P>) newValue);
 				return;
 			case XhtmlPackage.FLOW__DIV:
 				getDiv().clear();
-				getDiv().addAll((Collection<? extends Div>)newValue);
+				getDiv().addAll((Collection<? extends Div>) newValue);
 				return;
 			case XhtmlPackage.FLOW__UL:
 				getUl().clear();
-				getUl().addAll((Collection<? extends Ul>)newValue);
+				getUl().addAll((Collection<? extends Ul>) newValue);
 				return;
 			case XhtmlPackage.FLOW__OL:
 				getOl().clear();
-				getOl().addAll((Collection<? extends Ol>)newValue);
+				getOl().addAll((Collection<? extends Ol>) newValue);
 				return;
 			case XhtmlPackage.FLOW__DL:
 				getDl().clear();
-				getDl().addAll((Collection<? extends Dl>)newValue);
+				getDl().addAll((Collection<? extends Dl>) newValue);
 				return;
 			case XhtmlPackage.FLOW__PRE:
 				getPre().clear();
-				getPre().addAll((Collection<? extends Pre>)newValue);
+				getPre().addAll((Collection<? extends Pre>) newValue);
 				return;
 			case XhtmlPackage.FLOW__HR:
 				getHr().clear();
-				getHr().addAll((Collection<? extends Hr>)newValue);
+				getHr().addAll((Collection<? extends Hr>) newValue);
 				return;
 			case XhtmlPackage.FLOW__BLOCKQUOTE:
 				getBlockquote().clear();
-				getBlockquote().addAll((Collection<? extends Blockquote>)newValue);
+				getBlockquote().addAll((Collection<? extends Blockquote>) newValue);
 				return;
 			case XhtmlPackage.FLOW__TABLE:
 				getTable().clear();
-				getTable().addAll((Collection<? extends Table>)newValue);
+				getTable().addAll((Collection<? extends Table>) newValue);
 				return;
 			case XhtmlPackage.FLOW__A:
 				getA().clear();
-				getA().addAll((Collection<? extends A>)newValue);
+				getA().addAll((Collection<? extends A>) newValue);
 				return;
 			case XhtmlPackage.FLOW__BR:
 				getBr().clear();
-				getBr().addAll((Collection<? extends Br>)newValue);
+				getBr().addAll((Collection<? extends Br>) newValue);
 				return;
 			case XhtmlPackage.FLOW__SPAN:
 				getSpan().clear();
-				getSpan().addAll((Collection<? extends Span>)newValue);
+				getSpan().addAll((Collection<? extends Span>) newValue);
 				return;
 			case XhtmlPackage.FLOW__OBJECT:
 				getObject().clear();
-				getObject().addAll((Collection<? extends org.openhealthtools.mdht.emf.w3c.xhtml.Object>)newValue);
+				getObject().addAll((Collection<? extends org.openhealthtools.mdht.emf.w3c.xhtml.Object>) newValue);
 				return;
 			case XhtmlPackage.FLOW__IMG:
 				getImg().clear();
-				getImg().addAll((Collection<? extends Img>)newValue);
+				getImg().addAll((Collection<? extends Img>) newValue);
 				return;
 			case XhtmlPackage.FLOW__TT:
 				getTt().clear();
-				getTt().addAll((Collection<? extends Tt>)newValue);
+				getTt().addAll((Collection<? extends Tt>) newValue);
 				return;
 			case XhtmlPackage.FLOW__I:
 				getI().clear();
-				getI().addAll((Collection<? extends I>)newValue);
+				getI().addAll((Collection<? extends I>) newValue);
 				return;
 			case XhtmlPackage.FLOW__B:
 				getB().clear();
-				getB().addAll((Collection<? extends B>)newValue);
+				getB().addAll((Collection<? extends B>) newValue);
 				return;
 			case XhtmlPackage.FLOW__BIG:
 				getBig().clear();
-				getBig().addAll((Collection<? extends Big>)newValue);
+				getBig().addAll((Collection<? extends Big>) newValue);
 				return;
 			case XhtmlPackage.FLOW__SMALL:
 				getSmall().clear();
-				getSmall().addAll((Collection<? extends Small>)newValue);
+				getSmall().addAll((Collection<? extends Small>) newValue);
 				return;
 			case XhtmlPackage.FLOW__EM:
 				getEm().clear();
-				getEm().addAll((Collection<? extends Em>)newValue);
+				getEm().addAll((Collection<? extends Em>) newValue);
 				return;
 			case XhtmlPackage.FLOW__STRONG:
 				getStrong().clear();
-				getStrong().addAll((Collection<? extends Strong>)newValue);
+				getStrong().addAll((Collection<? extends Strong>) newValue);
 				return;
 			case XhtmlPackage.FLOW__DFN:
 				getDfn().clear();
-				getDfn().addAll((Collection<? extends Dfn>)newValue);
+				getDfn().addAll((Collection<? extends Dfn>) newValue);
 				return;
 			case XhtmlPackage.FLOW__CODE:
 				getCode().clear();
-				getCode().addAll((Collection<? extends Code>)newValue);
+				getCode().addAll((Collection<? extends Code>) newValue);
 				return;
 			case XhtmlPackage.FLOW__Q:
 				getQ().clear();
-				getQ().addAll((Collection<? extends Q>)newValue);
+				getQ().addAll((Collection<? extends Q>) newValue);
 				return;
 			case XhtmlPackage.FLOW__SAMP:
 				getSamp().clear();
-				getSamp().addAll((Collection<? extends Samp>)newValue);
+				getSamp().addAll((Collection<? extends Samp>) newValue);
 				return;
 			case XhtmlPackage.FLOW__KBD:
 				getKbd().clear();
-				getKbd().addAll((Collection<? extends Kbd>)newValue);
+				getKbd().addAll((Collection<? extends Kbd>) newValue);
 				return;
 			case XhtmlPackage.FLOW__VAR:
 				getVar().clear();
-				getVar().addAll((Collection<? extends Var>)newValue);
+				getVar().addAll((Collection<? extends Var>) newValue);
 				return;
 			case XhtmlPackage.FLOW__CITE:
 				getCite().clear();
-				getCite().addAll((Collection<? extends Cite>)newValue);
+				getCite().addAll((Collection<? extends Cite>) newValue);
 				return;
 			case XhtmlPackage.FLOW__ABBR:
 				getAbbr().clear();
-				getAbbr().addAll((Collection<? extends Abbr>)newValue);
+				getAbbr().addAll((Collection<? extends Abbr>) newValue);
 				return;
 			case XhtmlPackage.FLOW__ACRONYM:
 				getAcronym().clear();
-				getAcronym().addAll((Collection<? extends Acronym>)newValue);
+				getAcronym().addAll((Collection<? extends Acronym>) newValue);
 				return;
 			case XhtmlPackage.FLOW__SUB:
 				getSub().clear();
-				getSub().addAll((Collection<? extends Sub>)newValue);
+				getSub().addAll((Collection<? extends Sub>) newValue);
 				return;
 			case XhtmlPackage.FLOW__SUP:
 				getSup().clear();
-				getSup().addAll((Collection<? extends Sup>)newValue);
+				getSup().addAll((Collection<? extends Sup>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -950,7 +958,9 @@ public class FlowImpl extends EObjectImpl implements Flow {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mixed: ");
@@ -959,4 +969,4 @@ public class FlowImpl extends EObjectImpl implements Flow {
 		return result.toString();
 	}
 
-} //FlowImpl
+} // FlowImpl

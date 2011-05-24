@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -140,8 +144,10 @@ public class FreeFormMarkupWithLanguageImpl extends VariousMixedContentImpl impl
 		lang = newLang;
 		boolean oldLangESet = langESet;
 		langESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.FREE_FORM_MARKUP_WITH_LANGUAGE__LANG, oldLang, lang, !oldLangESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.FREE_FORM_MARKUP_WITH_LANGUAGE__LANG, oldLang, lang, !oldLangESet));
+		}
 	}
 
 	/**
@@ -154,8 +160,11 @@ public class FreeFormMarkupWithLanguageImpl extends VariousMixedContentImpl impl
 		boolean oldLangESet = langESet;
 		lang = LANG_EDEFAULT;
 		langESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.FREE_FORM_MARKUP_WITH_LANGUAGE__LANG, oldLang, LANG_EDEFAULT, oldLangESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.FREE_FORM_MARKUP_WITH_LANGUAGE__LANG, oldLang, LANG_EDEFAULT,
+				oldLangESet));
+		}
 	}
 
 	/**
@@ -184,8 +193,11 @@ public class FreeFormMarkupWithLanguageImpl extends VariousMixedContentImpl impl
 	public void setLastTranslated(XMLGregorianCalendar newLastTranslated) {
 		XMLGregorianCalendar oldLastTranslated = lastTranslated;
 		lastTranslated = newLastTranslated;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.FREE_FORM_MARKUP_WITH_LANGUAGE__LAST_TRANSLATED, oldLastTranslated, lastTranslated));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.FREE_FORM_MARKUP_WITH_LANGUAGE__LAST_TRANSLATED, oldLastTranslated,
+				lastTranslated));
+		}
 	}
 
 	/**
@@ -205,8 +217,10 @@ public class FreeFormMarkupWithLanguageImpl extends VariousMixedContentImpl impl
 	public void setMimeType(String newMimeType) {
 		String oldMimeType = mimeType;
 		mimeType = newMimeType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.FREE_FORM_MARKUP_WITH_LANGUAGE__MIME_TYPE, oldMimeType, mimeType));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.FREE_FORM_MARKUP_WITH_LANGUAGE__MIME_TYPE, oldMimeType, mimeType));
+		}
 	}
 
 	/**
@@ -236,13 +250,13 @@ public class FreeFormMarkupWithLanguageImpl extends VariousMixedContentImpl impl
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.FREE_FORM_MARKUP_WITH_LANGUAGE__LANG:
-				setLang((String)newValue);
+				setLang((String) newValue);
 				return;
 			case Mif2Package.FREE_FORM_MARKUP_WITH_LANGUAGE__LAST_TRANSLATED:
-				setLastTranslated((XMLGregorianCalendar)newValue);
+				setLastTranslated((XMLGregorianCalendar) newValue);
 				return;
 			case Mif2Package.FREE_FORM_MARKUP_WITH_LANGUAGE__MIME_TYPE:
-				setMimeType((String)newValue);
+				setMimeType((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -280,9 +294,13 @@ public class FreeFormMarkupWithLanguageImpl extends VariousMixedContentImpl impl
 			case Mif2Package.FREE_FORM_MARKUP_WITH_LANGUAGE__LANG:
 				return isSetLang();
 			case Mif2Package.FREE_FORM_MARKUP_WITH_LANGUAGE__LAST_TRANSLATED:
-				return LAST_TRANSLATED_EDEFAULT == null ? lastTranslated != null : !LAST_TRANSLATED_EDEFAULT.equals(lastTranslated);
+				return LAST_TRANSLATED_EDEFAULT == null
+						? lastTranslated != null
+						: !LAST_TRANSLATED_EDEFAULT.equals(lastTranslated);
 			case Mif2Package.FREE_FORM_MARKUP_WITH_LANGUAGE__MIME_TYPE:
-				return MIME_TYPE_EDEFAULT == null ? mimeType != null : !MIME_TYPE_EDEFAULT.equals(mimeType);
+				return MIME_TYPE_EDEFAULT == null
+						? mimeType != null
+						: !MIME_TYPE_EDEFAULT.equals(mimeType);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -294,11 +312,17 @@ public class FreeFormMarkupWithLanguageImpl extends VariousMixedContentImpl impl
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (lang: ");
-		if (langESet) result.append(lang); else result.append("<unset>");
+		if (langESet) {
+			result.append(lang);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", lastTranslated: ");
 		result.append(lastTranslated);
 		result.append(", mimeType: ");
@@ -307,4 +331,4 @@ public class FreeFormMarkupWithLanguageImpl extends VariousMixedContentImpl impl
 		return result.toString();
 	}
 
-} //FreeFormMarkupWithLanguageImpl
+} // FreeFormMarkupWithLanguageImpl

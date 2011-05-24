@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -182,7 +186,8 @@ public class VocabularyCodeRefImpl extends EObjectImpl implements VocabularyCode
 	 */
 	public EList<VocabularyCodeRef> getQualifier() {
 		if (qualifier == null) {
-			qualifier = new EObjectContainmentEList<VocabularyCodeRef>(VocabularyCodeRef.class, this, Mif2Package.VOCABULARY_CODE_REF__QUALIFIER);
+			qualifier = new EObjectContainmentEList<VocabularyCodeRef>(
+				VocabularyCodeRef.class, this, Mif2Package.VOCABULARY_CODE_REF__QUALIFIER);
 		}
 		return qualifier;
 	}
@@ -204,8 +209,9 @@ public class VocabularyCodeRefImpl extends EObjectImpl implements VocabularyCode
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_CODE_REF__CODE, oldCode, code));
+		}
 	}
 
 	/**
@@ -225,8 +231,11 @@ public class VocabularyCodeRefImpl extends EObjectImpl implements VocabularyCode
 	public void setCodePrintName(String newCodePrintName) {
 		String oldCodePrintName = codePrintName;
 		codePrintName = newCodePrintName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_CODE_REF__CODE_PRINT_NAME, oldCodePrintName, codePrintName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_CODE_REF__CODE_PRINT_NAME, oldCodePrintName,
+				codePrintName));
+		}
 	}
 
 	/**
@@ -246,8 +255,10 @@ public class VocabularyCodeRefImpl extends EObjectImpl implements VocabularyCode
 	public void setCodeSystem(String newCodeSystem) {
 		String oldCodeSystem = codeSystem;
 		codeSystem = newCodeSystem;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_CODE_REF__CODE_SYSTEM, oldCodeSystem, codeSystem));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_CODE_REF__CODE_SYSTEM, oldCodeSystem, codeSystem));
+		}
 	}
 
 	/**
@@ -267,8 +278,11 @@ public class VocabularyCodeRefImpl extends EObjectImpl implements VocabularyCode
 	public void setCodeSystemName(String newCodeSystemName) {
 		String oldCodeSystemName = codeSystemName;
 		codeSystemName = newCodeSystemName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_CODE_REF__CODE_SYSTEM_NAME, oldCodeSystemName, codeSystemName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_CODE_REF__CODE_SYSTEM_NAME, oldCodeSystemName,
+				codeSystemName));
+		}
 	}
 
 	/**
@@ -288,8 +302,11 @@ public class VocabularyCodeRefImpl extends EObjectImpl implements VocabularyCode
 	public void setCodeSystemVersion(XMLGregorianCalendar newCodeSystemVersion) {
 		XMLGregorianCalendar oldCodeSystemVersion = codeSystemVersion;
 		codeSystemVersion = newCodeSystemVersion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.VOCABULARY_CODE_REF__CODE_SYSTEM_VERSION, oldCodeSystemVersion, codeSystemVersion));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.VOCABULARY_CODE_REF__CODE_SYSTEM_VERSION, oldCodeSystemVersion,
+				codeSystemVersion));
+		}
 	}
 
 	/**
@@ -301,7 +318,7 @@ public class VocabularyCodeRefImpl extends EObjectImpl implements VocabularyCode
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.VOCABULARY_CODE_REF__QUALIFIER:
-				return ((InternalEList<?>)getQualifier()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getQualifier()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -341,22 +358,22 @@ public class VocabularyCodeRefImpl extends EObjectImpl implements VocabularyCode
 		switch (featureID) {
 			case Mif2Package.VOCABULARY_CODE_REF__QUALIFIER:
 				getQualifier().clear();
-				getQualifier().addAll((Collection<? extends VocabularyCodeRef>)newValue);
+				getQualifier().addAll((Collection<? extends VocabularyCodeRef>) newValue);
 				return;
 			case Mif2Package.VOCABULARY_CODE_REF__CODE:
-				setCode((String)newValue);
+				setCode((String) newValue);
 				return;
 			case Mif2Package.VOCABULARY_CODE_REF__CODE_PRINT_NAME:
-				setCodePrintName((String)newValue);
+				setCodePrintName((String) newValue);
 				return;
 			case Mif2Package.VOCABULARY_CODE_REF__CODE_SYSTEM:
-				setCodeSystem((String)newValue);
+				setCodeSystem((String) newValue);
 				return;
 			case Mif2Package.VOCABULARY_CODE_REF__CODE_SYSTEM_NAME:
-				setCodeSystemName((String)newValue);
+				setCodeSystemName((String) newValue);
 				return;
 			case Mif2Package.VOCABULARY_CODE_REF__CODE_SYSTEM_VERSION:
-				setCodeSystemVersion((XMLGregorianCalendar)newValue);
+				setCodeSystemVersion((XMLGregorianCalendar) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -403,15 +420,25 @@ public class VocabularyCodeRefImpl extends EObjectImpl implements VocabularyCode
 			case Mif2Package.VOCABULARY_CODE_REF__QUALIFIER:
 				return qualifier != null && !qualifier.isEmpty();
 			case Mif2Package.VOCABULARY_CODE_REF__CODE:
-				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+				return CODE_EDEFAULT == null
+						? code != null
+						: !CODE_EDEFAULT.equals(code);
 			case Mif2Package.VOCABULARY_CODE_REF__CODE_PRINT_NAME:
-				return CODE_PRINT_NAME_EDEFAULT == null ? codePrintName != null : !CODE_PRINT_NAME_EDEFAULT.equals(codePrintName);
+				return CODE_PRINT_NAME_EDEFAULT == null
+						? codePrintName != null
+						: !CODE_PRINT_NAME_EDEFAULT.equals(codePrintName);
 			case Mif2Package.VOCABULARY_CODE_REF__CODE_SYSTEM:
-				return CODE_SYSTEM_EDEFAULT == null ? codeSystem != null : !CODE_SYSTEM_EDEFAULT.equals(codeSystem);
+				return CODE_SYSTEM_EDEFAULT == null
+						? codeSystem != null
+						: !CODE_SYSTEM_EDEFAULT.equals(codeSystem);
 			case Mif2Package.VOCABULARY_CODE_REF__CODE_SYSTEM_NAME:
-				return CODE_SYSTEM_NAME_EDEFAULT == null ? codeSystemName != null : !CODE_SYSTEM_NAME_EDEFAULT.equals(codeSystemName);
+				return CODE_SYSTEM_NAME_EDEFAULT == null
+						? codeSystemName != null
+						: !CODE_SYSTEM_NAME_EDEFAULT.equals(codeSystemName);
 			case Mif2Package.VOCABULARY_CODE_REF__CODE_SYSTEM_VERSION:
-				return CODE_SYSTEM_VERSION_EDEFAULT == null ? codeSystemVersion != null : !CODE_SYSTEM_VERSION_EDEFAULT.equals(codeSystemVersion);
+				return CODE_SYSTEM_VERSION_EDEFAULT == null
+						? codeSystemVersion != null
+						: !CODE_SYSTEM_VERSION_EDEFAULT.equals(codeSystemVersion);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -423,7 +450,9 @@ public class VocabularyCodeRefImpl extends EObjectImpl implements VocabularyCode
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (code: ");
@@ -440,4 +469,4 @@ public class VocabularyCodeRefImpl extends EObjectImpl implements VocabularyCode
 		return result.toString();
 	}
 
-} //VocabularyCodeRefImpl
+} // VocabularyCodeRefImpl

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.w3c.xhtml.internal.impl;
 
 import java.lang.Object;
@@ -263,11 +267,15 @@ public class AImpl extends AContentImpl implements A {
 	 */
 	public void setClass(MifClassType newClass) {
 		MifClassType oldClass = class_;
-		class_ = newClass == null ? CLASS_EDEFAULT : newClass;
+		class_ = newClass == null
+				? CLASS_EDEFAULT
+				: newClass;
 		boolean oldClassESet = classESet;
 		classESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.A__CLASS, oldClass, class_, !oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, XhtmlPackage.A__CLASS, oldClass, class_, !oldClassESet));
+		}
 	}
 
 	/**
@@ -280,8 +288,10 @@ public class AImpl extends AContentImpl implements A {
 		boolean oldClassESet = classESet;
 		class_ = CLASS_EDEFAULT;
 		classESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.A__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.A__CLASS, oldClass, CLASS_EDEFAULT, oldClassESet));
+		}
 	}
 
 	/**
@@ -310,8 +320,9 @@ public class AImpl extends AContentImpl implements A {
 	public void setCoords(String newCoords) {
 		String oldCoords = coords;
 		coords = newCoords;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.A__COORDS, oldCoords, coords));
+		}
 	}
 
 	/**
@@ -331,8 +342,9 @@ public class AImpl extends AContentImpl implements A {
 	public void setHref(String newHref) {
 		String oldHref = href;
 		href = newHref;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.A__HREF, oldHref, href));
+		}
 	}
 
 	/**
@@ -352,8 +364,9 @@ public class AImpl extends AContentImpl implements A {
 	public void setLang(String newLang) {
 		String oldLang = lang;
 		lang = newLang;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.A__LANG, oldLang, lang));
+		}
 	}
 
 	/**
@@ -373,8 +386,9 @@ public class AImpl extends AContentImpl implements A {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.A__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -393,11 +407,14 @@ public class AImpl extends AContentImpl implements A {
 	 */
 	public void setShape(Shape newShape) {
 		Shape oldShape = shape;
-		shape = newShape == null ? SHAPE_EDEFAULT : newShape;
+		shape = newShape == null
+				? SHAPE_EDEFAULT
+				: newShape;
 		boolean oldShapeESet = shapeESet;
 		shapeESet = true;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.A__SHAPE, oldShape, shape, !oldShapeESet));
+		}
 	}
 
 	/**
@@ -410,8 +427,10 @@ public class AImpl extends AContentImpl implements A {
 		boolean oldShapeESet = shapeESet;
 		shape = SHAPE_EDEFAULT;
 		shapeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.A__SHAPE, oldShape, SHAPE_EDEFAULT, oldShapeESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.A__SHAPE, oldShape, SHAPE_EDEFAULT, oldShapeESet));
+		}
 	}
 
 	/**
@@ -439,11 +458,14 @@ public class AImpl extends AContentImpl implements A {
 	 */
 	public void setStyle(StyleSheet newStyle) {
 		StyleSheet oldStyle = style;
-		style = newStyle == null ? STYLE_EDEFAULT : newStyle;
+		style = newStyle == null
+				? STYLE_EDEFAULT
+				: newStyle;
 		boolean oldStyleESet = styleESet;
 		styleESet = true;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.A__STYLE, oldStyle, style, !oldStyleESet));
+		}
 	}
 
 	/**
@@ -456,8 +478,10 @@ public class AImpl extends AContentImpl implements A {
 		boolean oldStyleESet = styleESet;
 		style = STYLE_EDEFAULT;
 		styleESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, XhtmlPackage.A__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, XhtmlPackage.A__STYLE, oldStyle, STYLE_EDEFAULT, oldStyleESet));
+		}
 	}
 
 	/**
@@ -486,8 +510,9 @@ public class AImpl extends AContentImpl implements A {
 	public void setType(Object newType) {
 		Object oldType = type;
 		type = newType;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, XhtmlPackage.A__TYPE, oldType, type));
+		}
 	}
 
 	/**
@@ -527,25 +552,25 @@ public class AImpl extends AContentImpl implements A {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case XhtmlPackage.A__CLASS:
-				setClass((MifClassType)newValue);
+				setClass((MifClassType) newValue);
 				return;
 			case XhtmlPackage.A__COORDS:
-				setCoords((String)newValue);
+				setCoords((String) newValue);
 				return;
 			case XhtmlPackage.A__HREF:
-				setHref((String)newValue);
+				setHref((String) newValue);
 				return;
 			case XhtmlPackage.A__LANG:
-				setLang((String)newValue);
+				setLang((String) newValue);
 				return;
 			case XhtmlPackage.A__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case XhtmlPackage.A__SHAPE:
-				setShape((Shape)newValue);
+				setShape((Shape) newValue);
 				return;
 			case XhtmlPackage.A__STYLE:
-				setStyle((StyleSheet)newValue);
+				setStyle((StyleSheet) newValue);
 				return;
 			case XhtmlPackage.A__TYPE:
 				setType(newValue);
@@ -601,19 +626,29 @@ public class AImpl extends AContentImpl implements A {
 			case XhtmlPackage.A__CLASS:
 				return isSetClass();
 			case XhtmlPackage.A__COORDS:
-				return COORDS_EDEFAULT == null ? coords != null : !COORDS_EDEFAULT.equals(coords);
+				return COORDS_EDEFAULT == null
+						? coords != null
+						: !COORDS_EDEFAULT.equals(coords);
 			case XhtmlPackage.A__HREF:
-				return HREF_EDEFAULT == null ? href != null : !HREF_EDEFAULT.equals(href);
+				return HREF_EDEFAULT == null
+						? href != null
+						: !HREF_EDEFAULT.equals(href);
 			case XhtmlPackage.A__LANG:
-				return LANG_EDEFAULT == null ? lang != null : !LANG_EDEFAULT.equals(lang);
+				return LANG_EDEFAULT == null
+						? lang != null
+						: !LANG_EDEFAULT.equals(lang);
 			case XhtmlPackage.A__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case XhtmlPackage.A__SHAPE:
 				return isSetShape();
 			case XhtmlPackage.A__STYLE:
 				return isSetStyle();
 			case XhtmlPackage.A__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+				return TYPE_EDEFAULT == null
+						? type != null
+						: !TYPE_EDEFAULT.equals(type);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -625,11 +660,17 @@ public class AImpl extends AContentImpl implements A {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (class: ");
-		if (classESet) result.append(class_); else result.append("<unset>");
+		if (classESet) {
+			result.append(class_);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", coords: ");
 		result.append(coords);
 		result.append(", href: ");
@@ -639,13 +680,21 @@ public class AImpl extends AContentImpl implements A {
 		result.append(", name: ");
 		result.append(name);
 		result.append(", shape: ");
-		if (shapeESet) result.append(shape); else result.append("<unset>");
+		if (shapeESet) {
+			result.append(shape);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", style: ");
-		if (styleESet) result.append(style); else result.append("<unset>");
+		if (styleESet) {
+			result.append(style);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", type: ");
 		result.append(type);
 		result.append(')');
 		return result.toString();
 	}
 
-} //AImpl
+} // AImpl

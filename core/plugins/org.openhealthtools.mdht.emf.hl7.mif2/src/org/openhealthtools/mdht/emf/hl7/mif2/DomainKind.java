@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -826,42 +830,9 @@ public enum DomainKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final DomainKind[] VALUES_ARRAY =
-		new DomainKind[] {
-			DD,
-			AB,
-			AI,
-			BB,
-			CD,
-			CI,
-			CG,
-			CR,
-			CS,
-			CT,
-			DI,
-			DS,
-			II,
-			IZ,
-			LB,
-			ME,
-			MI,
-			MM,
-			MR,
-			MT,
-			OO,
-			PA,
-			PC,
-			PM,
-			QI,
-			RI,
-			RP,
-			RR,
-			RT,
-			RX,
-			SC,
-			SP,
-			TD,
-		};
+	private static final DomainKind[] VALUES_ARRAY = new DomainKind[] {
+			DD, AB, AI, BB, CD, CI, CG, CR, CS, CT, DI, DS, II, IZ, LB, ME, MI, MM, MR, MT, OO, PA, PC, PM, QI, RI, RP,
+			RR, RT, RX, SC, SP, TD, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Domain Kind</b></em>' enumerators.
@@ -911,39 +882,72 @@ public enum DomainKind implements Enumerator {
 	 */
 	public static DomainKind get(int value) {
 		switch (value) {
-			case DD_VALUE: return DD;
-			case AB_VALUE: return AB;
-			case AI_VALUE: return AI;
-			case BB_VALUE: return BB;
-			case CD_VALUE: return CD;
-			case CI_VALUE: return CI;
-			case CG_VALUE: return CG;
-			case CR_VALUE: return CR;
-			case CS_VALUE: return CS;
-			case CT_VALUE: return CT;
-			case DI_VALUE: return DI;
-			case DS_VALUE: return DS;
-			case II_VALUE: return II;
-			case IZ_VALUE: return IZ;
-			case LB_VALUE: return LB;
-			case ME_VALUE: return ME;
-			case MI_VALUE: return MI;
-			case MM_VALUE: return MM;
-			case MR_VALUE: return MR;
-			case MT_VALUE: return MT;
-			case OO_VALUE: return OO;
-			case PA_VALUE: return PA;
-			case PC_VALUE: return PC;
-			case PM_VALUE: return PM;
-			case QI_VALUE: return QI;
-			case RI_VALUE: return RI;
-			case RP_VALUE: return RP;
-			case RR_VALUE: return RR;
-			case RT_VALUE: return RT;
-			case RX_VALUE: return RX;
-			case SC_VALUE: return SC;
-			case SP_VALUE: return SP;
-			case TD_VALUE: return TD;
+			case DD_VALUE:
+				return DD;
+			case AB_VALUE:
+				return AB;
+			case AI_VALUE:
+				return AI;
+			case BB_VALUE:
+				return BB;
+			case CD_VALUE:
+				return CD;
+			case CI_VALUE:
+				return CI;
+			case CG_VALUE:
+				return CG;
+			case CR_VALUE:
+				return CR;
+			case CS_VALUE:
+				return CS;
+			case CT_VALUE:
+				return CT;
+			case DI_VALUE:
+				return DI;
+			case DS_VALUE:
+				return DS;
+			case II_VALUE:
+				return II;
+			case IZ_VALUE:
+				return IZ;
+			case LB_VALUE:
+				return LB;
+			case ME_VALUE:
+				return ME;
+			case MI_VALUE:
+				return MI;
+			case MM_VALUE:
+				return MM;
+			case MR_VALUE:
+				return MR;
+			case MT_VALUE:
+				return MT;
+			case OO_VALUE:
+				return OO;
+			case PA_VALUE:
+				return PA;
+			case PC_VALUE:
+				return PC;
+			case PM_VALUE:
+				return PM;
+			case QI_VALUE:
+				return QI;
+			case RI_VALUE:
+				return RI;
+			case RP_VALUE:
+				return RP;
+			case RR_VALUE:
+				return RR;
+			case RT_VALUE:
+				return RT;
+			case RX_VALUE:
+				return RX;
+			case SC_VALUE:
+				return SC;
+			case SP_VALUE:
+				return SP;
+			case TD_VALUE:
+				return TD;
 		}
 		return null;
 	}
@@ -987,7 +991,7 @@ public enum DomainKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -996,7 +1000,7 @@ public enum DomainKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -1005,7 +1009,7 @@ public enum DomainKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -1018,5 +1022,5 @@ public enum DomainKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //DomainKind
+
+} // DomainKind

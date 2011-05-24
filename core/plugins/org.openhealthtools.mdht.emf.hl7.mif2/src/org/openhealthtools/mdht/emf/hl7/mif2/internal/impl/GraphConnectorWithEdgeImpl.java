@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -79,8 +83,13 @@ public class GraphConnectorWithEdgeImpl extends GraphConnectorImpl implements Gr
 		GraphEdgeWithAnchor oldGraphEdge = graphEdge;
 		graphEdge = newGraphEdge;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.GRAPH_CONNECTOR_WITH_EDGE__GRAPH_EDGE, oldGraphEdge, newGraphEdge);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GRAPH_CONNECTOR_WITH_EDGE__GRAPH_EDGE, oldGraphEdge, newGraphEdge);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -93,15 +102,22 @@ public class GraphConnectorWithEdgeImpl extends GraphConnectorImpl implements Gr
 	public void setGraphEdge(GraphEdgeWithAnchor newGraphEdge) {
 		if (newGraphEdge != graphEdge) {
 			NotificationChain msgs = null;
-			if (graphEdge != null)
-				msgs = ((InternalEObject)graphEdge).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.GRAPH_CONNECTOR_WITH_EDGE__GRAPH_EDGE, null, msgs);
-			if (newGraphEdge != null)
-				msgs = ((InternalEObject)newGraphEdge).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.GRAPH_CONNECTOR_WITH_EDGE__GRAPH_EDGE, null, msgs);
+			if (graphEdge != null) {
+				msgs = ((InternalEObject) graphEdge).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.GRAPH_CONNECTOR_WITH_EDGE__GRAPH_EDGE, null, msgs);
+			}
+			if (newGraphEdge != null) {
+				msgs = ((InternalEObject) newGraphEdge).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.GRAPH_CONNECTOR_WITH_EDGE__GRAPH_EDGE, null, msgs);
+			}
 			msgs = basicSetGraphEdge(newGraphEdge, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.GRAPH_CONNECTOR_WITH_EDGE__GRAPH_EDGE, newGraphEdge, newGraphEdge));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.GRAPH_CONNECTOR_WITH_EDGE__GRAPH_EDGE, newGraphEdge, newGraphEdge));
 	}
 
 	/**
@@ -141,7 +157,7 @@ public class GraphConnectorWithEdgeImpl extends GraphConnectorImpl implements Gr
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.GRAPH_CONNECTOR_WITH_EDGE__GRAPH_EDGE:
-				setGraphEdge((GraphEdgeWithAnchor)newValue);
+				setGraphEdge((GraphEdgeWithAnchor) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -156,7 +172,7 @@ public class GraphConnectorWithEdgeImpl extends GraphConnectorImpl implements Gr
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.GRAPH_CONNECTOR_WITH_EDGE__GRAPH_EDGE:
-				setGraphEdge((GraphEdgeWithAnchor)null);
+				setGraphEdge((GraphEdgeWithAnchor) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -176,4 +192,4 @@ public class GraphConnectorWithEdgeImpl extends GraphConnectorImpl implements Gr
 		return super.eIsSet(featureID);
 	}
 
-} //GraphConnectorWithEdgeImpl
+} // GraphConnectorWithEdgeImpl

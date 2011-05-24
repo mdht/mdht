@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -121,8 +125,14 @@ public class CommonModelElementRefBaseImpl extends ClassifierBaseImpl implements
 		ClassAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__ANNOTATIONS, oldAnnotations,
+				newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -135,15 +145,23 @@ public class CommonModelElementRefBaseImpl extends ClassifierBaseImpl implements
 	public void setAnnotations(ClassAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__ANNOTATIONS, newAnnotations,
+				newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -163,8 +181,10 @@ public class CommonModelElementRefBaseImpl extends ClassifierBaseImpl implements
 	public void setCmetName(String newCmetName) {
 		String oldCmetName = cmetName;
 		cmetName = newCmetName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__CMET_NAME, oldCmetName, cmetName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__CMET_NAME, oldCmetName, cmetName));
+		}
 	}
 
 	/**
@@ -184,8 +204,10 @@ public class CommonModelElementRefBaseImpl extends ClassifierBaseImpl implements
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__NAME, oldName, name));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -229,13 +251,13 @@ public class CommonModelElementRefBaseImpl extends ClassifierBaseImpl implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__ANNOTATIONS:
-				setAnnotations((ClassAnnotations)newValue);
+				setAnnotations((ClassAnnotations) newValue);
 				return;
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__CMET_NAME:
-				setCmetName((String)newValue);
+				setCmetName((String) newValue);
 				return;
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -250,7 +272,7 @@ public class CommonModelElementRefBaseImpl extends ClassifierBaseImpl implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__ANNOTATIONS:
-				setAnnotations((ClassAnnotations)null);
+				setAnnotations((ClassAnnotations) null);
 				return;
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__CMET_NAME:
 				setCmetName(CMET_NAME_EDEFAULT);
@@ -273,9 +295,13 @@ public class CommonModelElementRefBaseImpl extends ClassifierBaseImpl implements
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__ANNOTATIONS:
 				return annotations != null;
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__CMET_NAME:
-				return CMET_NAME_EDEFAULT == null ? cmetName != null : !CMET_NAME_EDEFAULT.equals(cmetName);
+				return CMET_NAME_EDEFAULT == null
+						? cmetName != null
+						: !CMET_NAME_EDEFAULT.equals(cmetName);
 			case Mif2Package.COMMON_MODEL_ELEMENT_REF_BASE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -287,7 +313,9 @@ public class CommonModelElementRefBaseImpl extends ClassifierBaseImpl implements
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (cmetName: ");
@@ -298,4 +326,4 @@ public class CommonModelElementRefBaseImpl extends ClassifierBaseImpl implements
 		return result.toString();
 	}
 
-} //CommonModelElementRefBaseImpl
+} // CommonModelElementRefBaseImpl

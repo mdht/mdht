@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -196,8 +200,13 @@ public class StubDefinitionImpl extends ClassifierBaseImpl implements StubDefini
 		StaticModelInterfaceAnnotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STUB_DEFINITION__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STUB_DEFINITION__ANNOTATIONS, oldAnnotations, newAnnotations);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -210,15 +219,22 @@ public class StubDefinitionImpl extends ClassifierBaseImpl implements StubDefini
 	public void setAnnotations(StaticModelInterfaceAnnotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
-			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STUB_DEFINITION__ANNOTATIONS, null, msgs);
-			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STUB_DEFINITION__ANNOTATIONS, null, msgs);
+			if (annotations != null) {
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STUB_DEFINITION__ANNOTATIONS, null, msgs);
+			}
+			if (newAnnotations != null) {
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STUB_DEFINITION__ANNOTATIONS, null, msgs);
+			}
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STUB_DEFINITION__ANNOTATIONS, newAnnotations, newAnnotations));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STUB_DEFINITION__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
@@ -239,8 +255,14 @@ public class StubDefinitionImpl extends ClassifierBaseImpl implements StubDefini
 		PackageRef oldTypeStaticModel = typeStaticModel;
 		typeStaticModel = newTypeStaticModel;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STUB_DEFINITION__TYPE_STATIC_MODEL, oldTypeStaticModel, newTypeStaticModel);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STUB_DEFINITION__TYPE_STATIC_MODEL, oldTypeStaticModel,
+				newTypeStaticModel);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -253,15 +275,23 @@ public class StubDefinitionImpl extends ClassifierBaseImpl implements StubDefini
 	public void setTypeStaticModel(PackageRef newTypeStaticModel) {
 		if (newTypeStaticModel != typeStaticModel) {
 			NotificationChain msgs = null;
-			if (typeStaticModel != null)
-				msgs = ((InternalEObject)typeStaticModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STUB_DEFINITION__TYPE_STATIC_MODEL, null, msgs);
-			if (newTypeStaticModel != null)
-				msgs = ((InternalEObject)newTypeStaticModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STUB_DEFINITION__TYPE_STATIC_MODEL, null, msgs);
+			if (typeStaticModel != null) {
+				msgs = ((InternalEObject) typeStaticModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STUB_DEFINITION__TYPE_STATIC_MODEL, null, msgs);
+			}
+			if (newTypeStaticModel != null) {
+				msgs = ((InternalEObject) newTypeStaticModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STUB_DEFINITION__TYPE_STATIC_MODEL, null, msgs);
+			}
 			msgs = basicSetTypeStaticModel(newTypeStaticModel, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STUB_DEFINITION__TYPE_STATIC_MODEL, newTypeStaticModel,
+				newTypeStaticModel));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STUB_DEFINITION__TYPE_STATIC_MODEL, newTypeStaticModel, newTypeStaticModel));
 	}
 
 	/**
@@ -281,8 +311,10 @@ public class StubDefinitionImpl extends ClassifierBaseImpl implements StubDefini
 	public void setEntryClass(String newEntryClass) {
 		String oldEntryClass = entryClass;
 		entryClass = newEntryClass;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STUB_DEFINITION__ENTRY_CLASS, oldEntryClass, entryClass));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STUB_DEFINITION__ENTRY_CLASS, oldEntryClass, entryClass));
+		}
 	}
 
 	/**
@@ -303,8 +335,14 @@ public class StubDefinitionImpl extends ClassifierBaseImpl implements StubDefini
 		PackageRef oldConstraintStaticModel = constraintStaticModel;
 		constraintStaticModel = newConstraintStaticModel;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.STUB_DEFINITION__CONSTRAINT_STATIC_MODEL, oldConstraintStaticModel, newConstraintStaticModel);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STUB_DEFINITION__CONSTRAINT_STATIC_MODEL, oldConstraintStaticModel,
+				newConstraintStaticModel);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -317,15 +355,23 @@ public class StubDefinitionImpl extends ClassifierBaseImpl implements StubDefini
 	public void setConstraintStaticModel(PackageRef newConstraintStaticModel) {
 		if (newConstraintStaticModel != constraintStaticModel) {
 			NotificationChain msgs = null;
-			if (constraintStaticModel != null)
-				msgs = ((InternalEObject)constraintStaticModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STUB_DEFINITION__CONSTRAINT_STATIC_MODEL, null, msgs);
-			if (newConstraintStaticModel != null)
-				msgs = ((InternalEObject)newConstraintStaticModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.STUB_DEFINITION__CONSTRAINT_STATIC_MODEL, null, msgs);
+			if (constraintStaticModel != null) {
+				msgs = ((InternalEObject) constraintStaticModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STUB_DEFINITION__CONSTRAINT_STATIC_MODEL, null, msgs);
+			}
+			if (newConstraintStaticModel != null) {
+				msgs = ((InternalEObject) newConstraintStaticModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.STUB_DEFINITION__CONSTRAINT_STATIC_MODEL, null, msgs);
+			}
 			msgs = basicSetConstraintStaticModel(newConstraintStaticModel, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STUB_DEFINITION__CONSTRAINT_STATIC_MODEL, newConstraintStaticModel,
+				newConstraintStaticModel));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STUB_DEFINITION__CONSTRAINT_STATIC_MODEL, newConstraintStaticModel, newConstraintStaticModel));
 	}
 
 	/**
@@ -344,11 +390,16 @@ public class StubDefinitionImpl extends ClassifierBaseImpl implements StubDefini
 	 */
 	public void setEntryKind(CMETEntryKind newEntryKind) {
 		CMETEntryKind oldEntryKind = entryKind;
-		entryKind = newEntryKind == null ? ENTRY_KIND_EDEFAULT : newEntryKind;
+		entryKind = newEntryKind == null
+				? ENTRY_KIND_EDEFAULT
+				: newEntryKind;
 		boolean oldEntryKindESet = entryKindESet;
 		entryKindESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STUB_DEFINITION__ENTRY_KIND, oldEntryKind, entryKind, !oldEntryKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STUB_DEFINITION__ENTRY_KIND, oldEntryKind, entryKind,
+				!oldEntryKindESet));
+		}
 	}
 
 	/**
@@ -361,8 +412,11 @@ public class StubDefinitionImpl extends ClassifierBaseImpl implements StubDefini
 		boolean oldEntryKindESet = entryKindESet;
 		entryKind = ENTRY_KIND_EDEFAULT;
 		entryKindESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.STUB_DEFINITION__ENTRY_KIND, oldEntryKind, ENTRY_KIND_EDEFAULT, oldEntryKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.STUB_DEFINITION__ENTRY_KIND, oldEntryKind, ENTRY_KIND_EDEFAULT,
+				oldEntryKindESet));
+		}
 	}
 
 	/**
@@ -391,8 +445,9 @@ public class StubDefinitionImpl extends ClassifierBaseImpl implements StubDefini
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STUB_DEFINITION__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -412,8 +467,11 @@ public class StubDefinitionImpl extends ClassifierBaseImpl implements StubDefini
 	public void setOtherClassName(String newOtherClassName) {
 		String oldOtherClassName = otherClassName;
 		otherClassName = newOtherClassName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STUB_DEFINITION__OTHER_CLASS_NAME, oldOtherClassName, otherClassName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STUB_DEFINITION__OTHER_CLASS_NAME, oldOtherClassName,
+				otherClassName));
+		}
 	}
 
 	/**
@@ -469,25 +527,25 @@ public class StubDefinitionImpl extends ClassifierBaseImpl implements StubDefini
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.STUB_DEFINITION__ANNOTATIONS:
-				setAnnotations((StaticModelInterfaceAnnotations)newValue);
+				setAnnotations((StaticModelInterfaceAnnotations) newValue);
 				return;
 			case Mif2Package.STUB_DEFINITION__TYPE_STATIC_MODEL:
-				setTypeStaticModel((PackageRef)newValue);
+				setTypeStaticModel((PackageRef) newValue);
 				return;
 			case Mif2Package.STUB_DEFINITION__ENTRY_CLASS:
-				setEntryClass((String)newValue);
+				setEntryClass((String) newValue);
 				return;
 			case Mif2Package.STUB_DEFINITION__CONSTRAINT_STATIC_MODEL:
-				setConstraintStaticModel((PackageRef)newValue);
+				setConstraintStaticModel((PackageRef) newValue);
 				return;
 			case Mif2Package.STUB_DEFINITION__ENTRY_KIND:
-				setEntryKind((CMETEntryKind)newValue);
+				setEntryKind((CMETEntryKind) newValue);
 				return;
 			case Mif2Package.STUB_DEFINITION__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.STUB_DEFINITION__OTHER_CLASS_NAME:
-				setOtherClassName((String)newValue);
+				setOtherClassName((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -502,16 +560,16 @@ public class StubDefinitionImpl extends ClassifierBaseImpl implements StubDefini
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.STUB_DEFINITION__ANNOTATIONS:
-				setAnnotations((StaticModelInterfaceAnnotations)null);
+				setAnnotations((StaticModelInterfaceAnnotations) null);
 				return;
 			case Mif2Package.STUB_DEFINITION__TYPE_STATIC_MODEL:
-				setTypeStaticModel((PackageRef)null);
+				setTypeStaticModel((PackageRef) null);
 				return;
 			case Mif2Package.STUB_DEFINITION__ENTRY_CLASS:
 				setEntryClass(ENTRY_CLASS_EDEFAULT);
 				return;
 			case Mif2Package.STUB_DEFINITION__CONSTRAINT_STATIC_MODEL:
-				setConstraintStaticModel((PackageRef)null);
+				setConstraintStaticModel((PackageRef) null);
 				return;
 			case Mif2Package.STUB_DEFINITION__ENTRY_KIND:
 				unsetEntryKind();
@@ -539,15 +597,21 @@ public class StubDefinitionImpl extends ClassifierBaseImpl implements StubDefini
 			case Mif2Package.STUB_DEFINITION__TYPE_STATIC_MODEL:
 				return typeStaticModel != null;
 			case Mif2Package.STUB_DEFINITION__ENTRY_CLASS:
-				return ENTRY_CLASS_EDEFAULT == null ? entryClass != null : !ENTRY_CLASS_EDEFAULT.equals(entryClass);
+				return ENTRY_CLASS_EDEFAULT == null
+						? entryClass != null
+						: !ENTRY_CLASS_EDEFAULT.equals(entryClass);
 			case Mif2Package.STUB_DEFINITION__CONSTRAINT_STATIC_MODEL:
 				return constraintStaticModel != null;
 			case Mif2Package.STUB_DEFINITION__ENTRY_KIND:
 				return isSetEntryKind();
 			case Mif2Package.STUB_DEFINITION__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.STUB_DEFINITION__OTHER_CLASS_NAME:
-				return OTHER_CLASS_NAME_EDEFAULT == null ? otherClassName != null : !OTHER_CLASS_NAME_EDEFAULT.equals(otherClassName);
+				return OTHER_CLASS_NAME_EDEFAULT == null
+						? otherClassName != null
+						: !OTHER_CLASS_NAME_EDEFAULT.equals(otherClassName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -559,13 +623,19 @@ public class StubDefinitionImpl extends ClassifierBaseImpl implements StubDefini
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (entryClass: ");
 		result.append(entryClass);
 		result.append(", entryKind: ");
-		if (entryKindESet) result.append(entryKind); else result.append("<unset>");
+		if (entryKindESet) {
+			result.append(entryKind);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", name: ");
 		result.append(name);
 		result.append(", otherClassName: ");
@@ -574,4 +644,4 @@ public class StubDefinitionImpl extends ClassifierBaseImpl implements StubDefini
 		return result.toString();
 	}
 
-} //StubDefinitionImpl
+} // StubDefinitionImpl

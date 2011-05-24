@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigInteger;
@@ -145,8 +149,13 @@ public class ExampleInteractionImpl extends EObjectImpl implements ExampleIntera
 		PackageRef oldInteraction = interaction;
 		interaction = newInteraction;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.EXAMPLE_INTERACTION__INTERACTION, oldInteraction, newInteraction);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.EXAMPLE_INTERACTION__INTERACTION, oldInteraction, newInteraction);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -159,15 +168,22 @@ public class ExampleInteractionImpl extends EObjectImpl implements ExampleIntera
 	public void setInteraction(PackageRef newInteraction) {
 		if (newInteraction != interaction) {
 			NotificationChain msgs = null;
-			if (interaction != null)
-				msgs = ((InternalEObject)interaction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.EXAMPLE_INTERACTION__INTERACTION, null, msgs);
-			if (newInteraction != null)
-				msgs = ((InternalEObject)newInteraction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.EXAMPLE_INTERACTION__INTERACTION, null, msgs);
+			if (interaction != null) {
+				msgs = ((InternalEObject) interaction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.EXAMPLE_INTERACTION__INTERACTION, null, msgs);
+			}
+			if (newInteraction != null) {
+				msgs = ((InternalEObject) newInteraction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.EXAMPLE_INTERACTION__INTERACTION, null, msgs);
+			}
 			msgs = basicSetInteraction(newInteraction, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.EXAMPLE_INTERACTION__INTERACTION, newInteraction, newInteraction));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.EXAMPLE_INTERACTION__INTERACTION, newInteraction, newInteraction));
 	}
 
 	/**
@@ -187,8 +203,11 @@ public class ExampleInteractionImpl extends EObjectImpl implements ExampleIntera
 	public void setReceivingSystem(String newReceivingSystem) {
 		String oldReceivingSystem = receivingSystem;
 		receivingSystem = newReceivingSystem;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.EXAMPLE_INTERACTION__RECEIVING_SYSTEM, oldReceivingSystem, receivingSystem));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.EXAMPLE_INTERACTION__RECEIVING_SYSTEM, oldReceivingSystem,
+				receivingSystem));
+		}
 	}
 
 	/**
@@ -208,8 +227,11 @@ public class ExampleInteractionImpl extends EObjectImpl implements ExampleIntera
 	public void setSendingSystem(String newSendingSystem) {
 		String oldSendingSystem = sendingSystem;
 		sendingSystem = newSendingSystem;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.EXAMPLE_INTERACTION__SENDING_SYSTEM, oldSendingSystem, sendingSystem));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.EXAMPLE_INTERACTION__SENDING_SYSTEM, oldSendingSystem,
+				sendingSystem));
+		}
 	}
 
 	/**
@@ -229,8 +251,10 @@ public class ExampleInteractionImpl extends EObjectImpl implements ExampleIntera
 	public void setSequence(BigInteger newSequence) {
 		BigInteger oldSequence = sequence;
 		sequence = newSequence;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.EXAMPLE_INTERACTION__SEQUENCE, oldSequence, sequence));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.EXAMPLE_INTERACTION__SEQUENCE, oldSequence, sequence));
+		}
 	}
 
 	/**
@@ -276,16 +300,16 @@ public class ExampleInteractionImpl extends EObjectImpl implements ExampleIntera
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.EXAMPLE_INTERACTION__INTERACTION:
-				setInteraction((PackageRef)newValue);
+				setInteraction((PackageRef) newValue);
 				return;
 			case Mif2Package.EXAMPLE_INTERACTION__RECEIVING_SYSTEM:
-				setReceivingSystem((String)newValue);
+				setReceivingSystem((String) newValue);
 				return;
 			case Mif2Package.EXAMPLE_INTERACTION__SENDING_SYSTEM:
-				setSendingSystem((String)newValue);
+				setSendingSystem((String) newValue);
 				return;
 			case Mif2Package.EXAMPLE_INTERACTION__SEQUENCE:
-				setSequence((BigInteger)newValue);
+				setSequence((BigInteger) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -300,7 +324,7 @@ public class ExampleInteractionImpl extends EObjectImpl implements ExampleIntera
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.EXAMPLE_INTERACTION__INTERACTION:
-				setInteraction((PackageRef)null);
+				setInteraction((PackageRef) null);
 				return;
 			case Mif2Package.EXAMPLE_INTERACTION__RECEIVING_SYSTEM:
 				setReceivingSystem(RECEIVING_SYSTEM_EDEFAULT);
@@ -326,11 +350,17 @@ public class ExampleInteractionImpl extends EObjectImpl implements ExampleIntera
 			case Mif2Package.EXAMPLE_INTERACTION__INTERACTION:
 				return interaction != null;
 			case Mif2Package.EXAMPLE_INTERACTION__RECEIVING_SYSTEM:
-				return RECEIVING_SYSTEM_EDEFAULT == null ? receivingSystem != null : !RECEIVING_SYSTEM_EDEFAULT.equals(receivingSystem);
+				return RECEIVING_SYSTEM_EDEFAULT == null
+						? receivingSystem != null
+						: !RECEIVING_SYSTEM_EDEFAULT.equals(receivingSystem);
 			case Mif2Package.EXAMPLE_INTERACTION__SENDING_SYSTEM:
-				return SENDING_SYSTEM_EDEFAULT == null ? sendingSystem != null : !SENDING_SYSTEM_EDEFAULT.equals(sendingSystem);
+				return SENDING_SYSTEM_EDEFAULT == null
+						? sendingSystem != null
+						: !SENDING_SYSTEM_EDEFAULT.equals(sendingSystem);
 			case Mif2Package.EXAMPLE_INTERACTION__SEQUENCE:
-				return SEQUENCE_EDEFAULT == null ? sequence != null : !SEQUENCE_EDEFAULT.equals(sequence);
+				return SEQUENCE_EDEFAULT == null
+						? sequence != null
+						: !SEQUENCE_EDEFAULT.equals(sequence);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -342,7 +372,9 @@ public class ExampleInteractionImpl extends EObjectImpl implements ExampleIntera
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (receivingSystem: ");
@@ -355,4 +387,4 @@ public class ExampleInteractionImpl extends EObjectImpl implements ExampleIntera
 		return result.toString();
 	}
 
-} //ExampleInteractionImpl
+} // ExampleInteractionImpl

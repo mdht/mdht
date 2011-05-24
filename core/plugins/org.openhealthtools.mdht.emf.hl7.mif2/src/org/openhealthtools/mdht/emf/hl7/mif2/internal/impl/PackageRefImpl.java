@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.math.BigInteger;
@@ -360,11 +364,15 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 	 */
 	public void setArtifact(ArtifactKind newArtifact) {
 		ArtifactKind oldArtifact = artifact;
-		artifact = newArtifact == null ? ARTIFACT_EDEFAULT : newArtifact;
+		artifact = newArtifact == null
+				? ARTIFACT_EDEFAULT
+				: newArtifact;
 		boolean oldArtifactESet = artifactESet;
 		artifactESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_REF__ARTIFACT, oldArtifact, artifact, !oldArtifactESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE_REF__ARTIFACT, oldArtifact, artifact, !oldArtifactESet));
+		}
 	}
 
 	/**
@@ -377,8 +385,11 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 		boolean oldArtifactESet = artifactESet;
 		artifact = ARTIFACT_EDEFAULT;
 		artifactESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.PACKAGE_REF__ARTIFACT, oldArtifact, ARTIFACT_EDEFAULT, oldArtifactESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.PACKAGE_REF__ARTIFACT, oldArtifact, ARTIFACT_EDEFAULT,
+				oldArtifactESet));
+		}
 	}
 
 	/**
@@ -407,8 +418,10 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 	public void setCombinedId(String newCombinedId) {
 		String oldCombinedId = combinedId;
 		combinedId = newCombinedId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_REF__COMBINED_ID, oldCombinedId, combinedId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE_REF__COMBINED_ID, oldCombinedId, combinedId));
+		}
 	}
 
 	/**
@@ -427,11 +440,15 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 	 */
 	public void setDomain(DomainKind newDomain) {
 		DomainKind oldDomain = domain;
-		domain = newDomain == null ? DOMAIN_EDEFAULT : newDomain;
+		domain = newDomain == null
+				? DOMAIN_EDEFAULT
+				: newDomain;
 		boolean oldDomainESet = domainESet;
 		domainESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_REF__DOMAIN, oldDomain, domain, !oldDomainESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE_REF__DOMAIN, oldDomain, domain, !oldDomainESet));
+		}
 	}
 
 	/**
@@ -444,8 +461,10 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 		boolean oldDomainESet = domainESet;
 		domain = DOMAIN_EDEFAULT;
 		domainESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.PACKAGE_REF__DOMAIN, oldDomain, DOMAIN_EDEFAULT, oldDomainESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.PACKAGE_REF__DOMAIN, oldDomain, DOMAIN_EDEFAULT, oldDomainESet));
+		}
 	}
 
 	/**
@@ -474,8 +493,9 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 	public void setId(BigInteger newId) {
 		BigInteger oldId = id;
 		id = newId;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_REF__ID, oldId, id));
+		}
 	}
 
 	/**
@@ -495,8 +515,9 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_REF__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -516,8 +537,10 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 	public void setRealmNamespace(Object newRealmNamespace) {
 		Object oldRealmNamespace = realmNamespace;
 		realmNamespace = newRealmNamespace;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_REF__REALM_NAMESPACE, oldRealmNamespace, realmNamespace));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE_REF__REALM_NAMESPACE, oldRealmNamespace, realmNamespace));
+		}
 	}
 
 	/**
@@ -537,8 +560,10 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 	public void setReleaseDate(XMLGregorianCalendar newReleaseDate) {
 		XMLGregorianCalendar oldReleaseDate = releaseDate;
 		releaseDate = newReleaseDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_REF__RELEASE_DATE, oldReleaseDate, releaseDate));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE_REF__RELEASE_DATE, oldReleaseDate, releaseDate));
+		}
 	}
 
 	/**
@@ -557,11 +582,15 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 	 */
 	public void setRoot(PackageRootKind newRoot) {
 		PackageRootKind oldRoot = root;
-		root = newRoot == null ? ROOT_EDEFAULT : newRoot;
+		root = newRoot == null
+				? ROOT_EDEFAULT
+				: newRoot;
 		boolean oldRootESet = rootESet;
 		rootESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_REF__ROOT, oldRoot, root, !oldRootESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE_REF__ROOT, oldRoot, root, !oldRootESet));
+		}
 	}
 
 	/**
@@ -574,8 +603,10 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 		boolean oldRootESet = rootESet;
 		root = ROOT_EDEFAULT;
 		rootESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.PACKAGE_REF__ROOT, oldRoot, ROOT_EDEFAULT, oldRootESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.PACKAGE_REF__ROOT, oldRoot, ROOT_EDEFAULT, oldRootESet));
+		}
 	}
 
 	/**
@@ -604,8 +635,9 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 	public void setSection(String newSection) {
 		String oldSection = section;
 		section = newSection;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_REF__SECTION, oldSection, section));
+		}
 	}
 
 	/**
@@ -624,11 +656,16 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 	 */
 	public void setSubArtifact(SubArtifactKind newSubArtifact) {
 		SubArtifactKind oldSubArtifact = subArtifact;
-		subArtifact = newSubArtifact == null ? SUB_ARTIFACT_EDEFAULT : newSubArtifact;
+		subArtifact = newSubArtifact == null
+				? SUB_ARTIFACT_EDEFAULT
+				: newSubArtifact;
 		boolean oldSubArtifactESet = subArtifactESet;
 		subArtifactESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_REF__SUB_ARTIFACT, oldSubArtifact, subArtifact, !oldSubArtifactESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE_REF__SUB_ARTIFACT, oldSubArtifact, subArtifact,
+				!oldSubArtifactESet));
+		}
 	}
 
 	/**
@@ -641,8 +678,11 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 		boolean oldSubArtifactESet = subArtifactESet;
 		subArtifact = SUB_ARTIFACT_EDEFAULT;
 		subArtifactESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.PACKAGE_REF__SUB_ARTIFACT, oldSubArtifact, SUB_ARTIFACT_EDEFAULT, oldSubArtifactESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.PACKAGE_REF__SUB_ARTIFACT, oldSubArtifact, SUB_ARTIFACT_EDEFAULT,
+				oldSubArtifactESet));
+		}
 	}
 
 	/**
@@ -671,8 +711,10 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 	public void setSubSection(String newSubSection) {
 		String oldSubSection = subSection;
 		subSection = newSubSection;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_REF__SUB_SECTION, oldSubSection, subSection));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE_REF__SUB_SECTION, oldSubSection, subSection));
+		}
 	}
 
 	/**
@@ -692,8 +734,9 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 	public void setVersion(String newVersion) {
 		String oldVersion = version;
 		version = newVersion;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_REF__VERSION, oldVersion, version));
+		}
 	}
 
 	/**
@@ -741,40 +784,40 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.PACKAGE_REF__ARTIFACT:
-				setArtifact((ArtifactKind)newValue);
+				setArtifact((ArtifactKind) newValue);
 				return;
 			case Mif2Package.PACKAGE_REF__COMBINED_ID:
-				setCombinedId((String)newValue);
+				setCombinedId((String) newValue);
 				return;
 			case Mif2Package.PACKAGE_REF__DOMAIN:
-				setDomain((DomainKind)newValue);
+				setDomain((DomainKind) newValue);
 				return;
 			case Mif2Package.PACKAGE_REF__ID:
-				setId((BigInteger)newValue);
+				setId((BigInteger) newValue);
 				return;
 			case Mif2Package.PACKAGE_REF__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.PACKAGE_REF__REALM_NAMESPACE:
 				setRealmNamespace(newValue);
 				return;
 			case Mif2Package.PACKAGE_REF__RELEASE_DATE:
-				setReleaseDate((XMLGregorianCalendar)newValue);
+				setReleaseDate((XMLGregorianCalendar) newValue);
 				return;
 			case Mif2Package.PACKAGE_REF__ROOT:
-				setRoot((PackageRootKind)newValue);
+				setRoot((PackageRootKind) newValue);
 				return;
 			case Mif2Package.PACKAGE_REF__SECTION:
-				setSection((String)newValue);
+				setSection((String) newValue);
 				return;
 			case Mif2Package.PACKAGE_REF__SUB_ARTIFACT:
-				setSubArtifact((SubArtifactKind)newValue);
+				setSubArtifact((SubArtifactKind) newValue);
 				return;
 			case Mif2Package.PACKAGE_REF__SUB_SECTION:
-				setSubSection((String)newValue);
+				setSubSection((String) newValue);
 				return;
 			case Mif2Package.PACKAGE_REF__VERSION:
-				setVersion((String)newValue);
+				setVersion((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -839,27 +882,43 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 			case Mif2Package.PACKAGE_REF__ARTIFACT:
 				return isSetArtifact();
 			case Mif2Package.PACKAGE_REF__COMBINED_ID:
-				return COMBINED_ID_EDEFAULT == null ? combinedId != null : !COMBINED_ID_EDEFAULT.equals(combinedId);
+				return COMBINED_ID_EDEFAULT == null
+						? combinedId != null
+						: !COMBINED_ID_EDEFAULT.equals(combinedId);
 			case Mif2Package.PACKAGE_REF__DOMAIN:
 				return isSetDomain();
 			case Mif2Package.PACKAGE_REF__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+				return ID_EDEFAULT == null
+						? id != null
+						: !ID_EDEFAULT.equals(id);
 			case Mif2Package.PACKAGE_REF__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.PACKAGE_REF__REALM_NAMESPACE:
-				return REALM_NAMESPACE_EDEFAULT == null ? realmNamespace != null : !REALM_NAMESPACE_EDEFAULT.equals(realmNamespace);
+				return REALM_NAMESPACE_EDEFAULT == null
+						? realmNamespace != null
+						: !REALM_NAMESPACE_EDEFAULT.equals(realmNamespace);
 			case Mif2Package.PACKAGE_REF__RELEASE_DATE:
-				return RELEASE_DATE_EDEFAULT == null ? releaseDate != null : !RELEASE_DATE_EDEFAULT.equals(releaseDate);
+				return RELEASE_DATE_EDEFAULT == null
+						? releaseDate != null
+						: !RELEASE_DATE_EDEFAULT.equals(releaseDate);
 			case Mif2Package.PACKAGE_REF__ROOT:
 				return isSetRoot();
 			case Mif2Package.PACKAGE_REF__SECTION:
-				return SECTION_EDEFAULT == null ? section != null : !SECTION_EDEFAULT.equals(section);
+				return SECTION_EDEFAULT == null
+						? section != null
+						: !SECTION_EDEFAULT.equals(section);
 			case Mif2Package.PACKAGE_REF__SUB_ARTIFACT:
 				return isSetSubArtifact();
 			case Mif2Package.PACKAGE_REF__SUB_SECTION:
-				return SUB_SECTION_EDEFAULT == null ? subSection != null : !SUB_SECTION_EDEFAULT.equals(subSection);
+				return SUB_SECTION_EDEFAULT == null
+						? subSection != null
+						: !SUB_SECTION_EDEFAULT.equals(subSection);
 			case Mif2Package.PACKAGE_REF__VERSION:
-				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
+				return VERSION_EDEFAULT == null
+						? version != null
+						: !VERSION_EDEFAULT.equals(version);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -871,15 +930,25 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (artifact: ");
-		if (artifactESet) result.append(artifact); else result.append("<unset>");
+		if (artifactESet) {
+			result.append(artifact);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", combinedId: ");
 		result.append(combinedId);
 		result.append(", domain: ");
-		if (domainESet) result.append(domain); else result.append("<unset>");
+		if (domainESet) {
+			result.append(domain);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", id: ");
 		result.append(id);
 		result.append(", name: ");
@@ -889,11 +958,19 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 		result.append(", releaseDate: ");
 		result.append(releaseDate);
 		result.append(", root: ");
-		if (rootESet) result.append(root); else result.append("<unset>");
+		if (rootESet) {
+			result.append(root);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", section: ");
 		result.append(section);
 		result.append(", subArtifact: ");
-		if (subArtifactESet) result.append(subArtifact); else result.append("<unset>");
+		if (subArtifactESet) {
+			result.append(subArtifact);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", subSection: ");
 		result.append(subSection);
 		result.append(", version: ");
@@ -902,4 +979,4 @@ public class PackageRefImpl extends EObjectImpl implements PackageRef {
 		return result.toString();
 	}
 
-} //PackageRefImpl
+} // PackageRefImpl

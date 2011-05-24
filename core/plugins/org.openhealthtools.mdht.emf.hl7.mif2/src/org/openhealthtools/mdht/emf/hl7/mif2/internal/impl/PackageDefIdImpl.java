@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -85,8 +89,10 @@ public class PackageDefIdImpl extends PackageRefImpl implements PackageDefId {
 	public void setSecondaryId(String newSecondaryId) {
 		String oldSecondaryId = secondaryId;
 		secondaryId = newSecondaryId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.PACKAGE_DEF_ID__SECONDARY_ID, oldSecondaryId, secondaryId));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.PACKAGE_DEF_ID__SECONDARY_ID, oldSecondaryId, secondaryId));
+		}
 	}
 
 	/**
@@ -112,7 +118,7 @@ public class PackageDefIdImpl extends PackageRefImpl implements PackageDefId {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.PACKAGE_DEF_ID__SECONDARY_ID:
-				setSecondaryId((String)newValue);
+				setSecondaryId((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -142,7 +148,9 @@ public class PackageDefIdImpl extends PackageRefImpl implements PackageDefId {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Mif2Package.PACKAGE_DEF_ID__SECONDARY_ID:
-				return SECONDARY_ID_EDEFAULT == null ? secondaryId != null : !SECONDARY_ID_EDEFAULT.equals(secondaryId);
+				return SECONDARY_ID_EDEFAULT == null
+						? secondaryId != null
+						: !SECONDARY_ID_EDEFAULT.equals(secondaryId);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,7 +162,9 @@ public class PackageDefIdImpl extends PackageRefImpl implements PackageDefId {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (secondaryId: ");
@@ -163,4 +173,4 @@ public class PackageDefIdImpl extends PackageRefImpl implements PackageDefId {
 		return result.toString();
 	}
 
-} //PackageDefIdImpl
+} // PackageDefIdImpl

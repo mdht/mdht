@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -175,15 +179,8 @@ public enum ConceptPropertyTypeKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ConceptPropertyTypeKind[] VALUES_ARRAY =
-		new ConceptPropertyTypeKind[] {
-			BOOLEAN,
-			ENUMERATION,
-			INTEGER,
-			REAL,
-			STRING,
-			TOKEN,
-		};
+	private static final ConceptPropertyTypeKind[] VALUES_ARRAY = new ConceptPropertyTypeKind[] {
+			BOOLEAN, ENUMERATION, INTEGER, REAL, STRING, TOKEN, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Concept Property Type Kind</b></em>' enumerators.
@@ -233,12 +230,18 @@ public enum ConceptPropertyTypeKind implements Enumerator {
 	 */
 	public static ConceptPropertyTypeKind get(int value) {
 		switch (value) {
-			case BOOLEAN_VALUE: return BOOLEAN;
-			case ENUMERATION_VALUE: return ENUMERATION;
-			case INTEGER_VALUE: return INTEGER;
-			case REAL_VALUE: return REAL;
-			case STRING_VALUE: return STRING;
-			case TOKEN_VALUE: return TOKEN;
+			case BOOLEAN_VALUE:
+				return BOOLEAN;
+			case ENUMERATION_VALUE:
+				return ENUMERATION;
+			case INTEGER_VALUE:
+				return INTEGER;
+			case REAL_VALUE:
+				return REAL;
+			case STRING_VALUE:
+				return STRING;
+			case TOKEN_VALUE:
+				return TOKEN;
 		}
 		return null;
 	}
@@ -282,7 +285,7 @@ public enum ConceptPropertyTypeKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -291,7 +294,7 @@ public enum ConceptPropertyTypeKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -300,7 +303,7 @@ public enum ConceptPropertyTypeKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -313,5 +316,5 @@ public enum ConceptPropertyTypeKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //ConceptPropertyTypeKind
+
+} // ConceptPropertyTypeKind

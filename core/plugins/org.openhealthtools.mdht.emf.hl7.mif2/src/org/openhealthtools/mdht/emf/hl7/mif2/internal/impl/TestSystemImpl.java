@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -172,8 +176,13 @@ public class TestSystemImpl extends EObjectImpl implements TestSystem {
 		ComplexMarkupWithLanguage oldPreConditions = preConditions;
 		preConditions = newPreConditions;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.TEST_SYSTEM__PRE_CONDITIONS, oldPreConditions, newPreConditions);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TEST_SYSTEM__PRE_CONDITIONS, oldPreConditions, newPreConditions);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -186,15 +195,22 @@ public class TestSystemImpl extends EObjectImpl implements TestSystem {
 	public void setPreConditions(ComplexMarkupWithLanguage newPreConditions) {
 		if (newPreConditions != preConditions) {
 			NotificationChain msgs = null;
-			if (preConditions != null)
-				msgs = ((InternalEObject)preConditions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TEST_SYSTEM__PRE_CONDITIONS, null, msgs);
-			if (newPreConditions != null)
-				msgs = ((InternalEObject)newPreConditions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TEST_SYSTEM__PRE_CONDITIONS, null, msgs);
+			if (preConditions != null) {
+				msgs = ((InternalEObject) preConditions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TEST_SYSTEM__PRE_CONDITIONS, null, msgs);
+			}
+			if (newPreConditions != null) {
+				msgs = ((InternalEObject) newPreConditions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TEST_SYSTEM__PRE_CONDITIONS, null, msgs);
+			}
 			msgs = basicSetPreConditions(newPreConditions, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TEST_SYSTEM__PRE_CONDITIONS, newPreConditions, newPreConditions));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TEST_SYSTEM__PRE_CONDITIONS, newPreConditions, newPreConditions));
 	}
 
 	/**
@@ -211,12 +227,19 @@ public class TestSystemImpl extends EObjectImpl implements TestSystem {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetExpectedPostConditions(ComplexMarkupWithLanguage newExpectedPostConditions, NotificationChain msgs) {
+	public NotificationChain basicSetExpectedPostConditions(ComplexMarkupWithLanguage newExpectedPostConditions,
+			NotificationChain msgs) {
 		ComplexMarkupWithLanguage oldExpectedPostConditions = expectedPostConditions;
 		expectedPostConditions = newExpectedPostConditions;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.TEST_SYSTEM__EXPECTED_POST_CONDITIONS, oldExpectedPostConditions, newExpectedPostConditions);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TEST_SYSTEM__EXPECTED_POST_CONDITIONS, oldExpectedPostConditions,
+				newExpectedPostConditions);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -229,15 +252,23 @@ public class TestSystemImpl extends EObjectImpl implements TestSystem {
 	public void setExpectedPostConditions(ComplexMarkupWithLanguage newExpectedPostConditions) {
 		if (newExpectedPostConditions != expectedPostConditions) {
 			NotificationChain msgs = null;
-			if (expectedPostConditions != null)
-				msgs = ((InternalEObject)expectedPostConditions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TEST_SYSTEM__EXPECTED_POST_CONDITIONS, null, msgs);
-			if (newExpectedPostConditions != null)
-				msgs = ((InternalEObject)newExpectedPostConditions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.TEST_SYSTEM__EXPECTED_POST_CONDITIONS, null, msgs);
+			if (expectedPostConditions != null) {
+				msgs = ((InternalEObject) expectedPostConditions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TEST_SYSTEM__EXPECTED_POST_CONDITIONS, null, msgs);
+			}
+			if (newExpectedPostConditions != null) {
+				msgs = ((InternalEObject) newExpectedPostConditions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.TEST_SYSTEM__EXPECTED_POST_CONDITIONS, null, msgs);
+			}
 			msgs = basicSetExpectedPostConditions(newExpectedPostConditions, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TEST_SYSTEM__EXPECTED_POST_CONDITIONS, newExpectedPostConditions,
+				newExpectedPostConditions));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TEST_SYSTEM__EXPECTED_POST_CONDITIONS, newExpectedPostConditions, newExpectedPostConditions));
 	}
 
 	/**
@@ -247,7 +278,8 @@ public class TestSystemImpl extends EObjectImpl implements TestSystem {
 	 */
 	public EList<PackageOrArtifactRef> getTestedApplicationRole() {
 		if (testedApplicationRole == null) {
-			testedApplicationRole = new EObjectContainmentEList<PackageOrArtifactRef>(PackageOrArtifactRef.class, this, Mif2Package.TEST_SYSTEM__TESTED_APPLICATION_ROLE);
+			testedApplicationRole = new EObjectContainmentEList<PackageOrArtifactRef>(
+				PackageOrArtifactRef.class, this, Mif2Package.TEST_SYSTEM__TESTED_APPLICATION_ROLE);
 		}
 		return testedApplicationRole;
 	}
@@ -259,7 +291,8 @@ public class TestSystemImpl extends EObjectImpl implements TestSystem {
 	 */
 	public EList<PackageOrArtifactRef> getTestedProfile() {
 		if (testedProfile == null) {
-			testedProfile = new EObjectContainmentEList<PackageOrArtifactRef>(PackageOrArtifactRef.class, this, Mif2Package.TEST_SYSTEM__TESTED_PROFILE);
+			testedProfile = new EObjectContainmentEList<PackageOrArtifactRef>(
+				PackageOrArtifactRef.class, this, Mif2Package.TEST_SYSTEM__TESTED_PROFILE);
 		}
 		return testedProfile;
 	}
@@ -281,8 +314,9 @@ public class TestSystemImpl extends EObjectImpl implements TestSystem {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TEST_SYSTEM__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -304,8 +338,10 @@ public class TestSystemImpl extends EObjectImpl implements TestSystem {
 		underTest = newUnderTest;
 		boolean oldUnderTestESet = underTestESet;
 		underTestESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.TEST_SYSTEM__UNDER_TEST, oldUnderTest, underTest, !oldUnderTestESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.TEST_SYSTEM__UNDER_TEST, oldUnderTest, underTest, !oldUnderTestESet));
+		}
 	}
 
 	/**
@@ -318,8 +354,11 @@ public class TestSystemImpl extends EObjectImpl implements TestSystem {
 		boolean oldUnderTestESet = underTestESet;
 		underTest = UNDER_TEST_EDEFAULT;
 		underTestESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.TEST_SYSTEM__UNDER_TEST, oldUnderTest, UNDER_TEST_EDEFAULT, oldUnderTestESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.TEST_SYSTEM__UNDER_TEST, oldUnderTest, UNDER_TEST_EDEFAULT,
+				oldUnderTestESet));
+		}
 	}
 
 	/**
@@ -344,9 +383,9 @@ public class TestSystemImpl extends EObjectImpl implements TestSystem {
 			case Mif2Package.TEST_SYSTEM__EXPECTED_POST_CONDITIONS:
 				return basicSetExpectedPostConditions(null, msgs);
 			case Mif2Package.TEST_SYSTEM__TESTED_APPLICATION_ROLE:
-				return ((InternalEList<?>)getTestedApplicationRole()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTestedApplicationRole()).basicRemove(otherEnd, msgs);
 			case Mif2Package.TEST_SYSTEM__TESTED_PROFILE:
-				return ((InternalEList<?>)getTestedProfile()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getTestedProfile()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -370,7 +409,9 @@ public class TestSystemImpl extends EObjectImpl implements TestSystem {
 			case Mif2Package.TEST_SYSTEM__NAME:
 				return getName();
 			case Mif2Package.TEST_SYSTEM__UNDER_TEST:
-				return isUnderTest() ? Boolean.TRUE : Boolean.FALSE;
+				return isUnderTest()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -385,24 +426,24 @@ public class TestSystemImpl extends EObjectImpl implements TestSystem {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.TEST_SYSTEM__PRE_CONDITIONS:
-				setPreConditions((ComplexMarkupWithLanguage)newValue);
+				setPreConditions((ComplexMarkupWithLanguage) newValue);
 				return;
 			case Mif2Package.TEST_SYSTEM__EXPECTED_POST_CONDITIONS:
-				setExpectedPostConditions((ComplexMarkupWithLanguage)newValue);
+				setExpectedPostConditions((ComplexMarkupWithLanguage) newValue);
 				return;
 			case Mif2Package.TEST_SYSTEM__TESTED_APPLICATION_ROLE:
 				getTestedApplicationRole().clear();
-				getTestedApplicationRole().addAll((Collection<? extends PackageOrArtifactRef>)newValue);
+				getTestedApplicationRole().addAll((Collection<? extends PackageOrArtifactRef>) newValue);
 				return;
 			case Mif2Package.TEST_SYSTEM__TESTED_PROFILE:
 				getTestedProfile().clear();
-				getTestedProfile().addAll((Collection<? extends PackageOrArtifactRef>)newValue);
+				getTestedProfile().addAll((Collection<? extends PackageOrArtifactRef>) newValue);
 				return;
 			case Mif2Package.TEST_SYSTEM__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.TEST_SYSTEM__UNDER_TEST:
-				setUnderTest(((Boolean)newValue).booleanValue());
+				setUnderTest(((Boolean) newValue).booleanValue());
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -417,10 +458,10 @@ public class TestSystemImpl extends EObjectImpl implements TestSystem {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.TEST_SYSTEM__PRE_CONDITIONS:
-				setPreConditions((ComplexMarkupWithLanguage)null);
+				setPreConditions((ComplexMarkupWithLanguage) null);
 				return;
 			case Mif2Package.TEST_SYSTEM__EXPECTED_POST_CONDITIONS:
-				setExpectedPostConditions((ComplexMarkupWithLanguage)null);
+				setExpectedPostConditions((ComplexMarkupWithLanguage) null);
 				return;
 			case Mif2Package.TEST_SYSTEM__TESTED_APPLICATION_ROLE:
 				getTestedApplicationRole().clear();
@@ -455,7 +496,9 @@ public class TestSystemImpl extends EObjectImpl implements TestSystem {
 			case Mif2Package.TEST_SYSTEM__TESTED_PROFILE:
 				return testedProfile != null && !testedProfile.isEmpty();
 			case Mif2Package.TEST_SYSTEM__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.TEST_SYSTEM__UNDER_TEST:
 				return isSetUnderTest();
 		}
@@ -469,15 +512,21 @@ public class TestSystemImpl extends EObjectImpl implements TestSystem {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", underTest: ");
-		if (underTestESet) result.append(underTest); else result.append("<unset>");
+		if (underTestESet) {
+			result.append(underTest);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //TestSystemImpl
+} // TestSystemImpl

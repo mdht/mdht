@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -72,7 +76,8 @@ public class ImportDatatypeModelLibraryImpl extends ArtifactDependencyImpl imple
 	 */
 	public EList<DatatypeImport> getImportedDatatype() {
 		if (importedDatatype == null) {
-			importedDatatype = new EObjectContainmentEList<DatatypeImport>(DatatypeImport.class, this, Mif2Package.IMPORT_DATATYPE_MODEL_LIBRARY__IMPORTED_DATATYPE);
+			importedDatatype = new EObjectContainmentEList<DatatypeImport>(
+				DatatypeImport.class, this, Mif2Package.IMPORT_DATATYPE_MODEL_LIBRARY__IMPORTED_DATATYPE);
 		}
 		return importedDatatype;
 	}
@@ -86,7 +91,7 @@ public class ImportDatatypeModelLibraryImpl extends ArtifactDependencyImpl imple
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.IMPORT_DATATYPE_MODEL_LIBRARY__IMPORTED_DATATYPE:
-				return ((InternalEList<?>)getImportedDatatype()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getImportedDatatype()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -116,7 +121,7 @@ public class ImportDatatypeModelLibraryImpl extends ArtifactDependencyImpl imple
 		switch (featureID) {
 			case Mif2Package.IMPORT_DATATYPE_MODEL_LIBRARY__IMPORTED_DATATYPE:
 				getImportedDatatype().clear();
-				getImportedDatatype().addAll((Collection<? extends DatatypeImport>)newValue);
+				getImportedDatatype().addAll((Collection<? extends DatatypeImport>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -151,4 +156,4 @@ public class ImportDatatypeModelLibraryImpl extends ArtifactDependencyImpl imple
 		return super.eIsSet(featureID);
 	}
 
-} //ImportDatatypeModelLibraryImpl
+} // ImportDatatypeModelLibraryImpl

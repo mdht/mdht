@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -20,7 +24,8 @@ import org.openhealthtools.mdht.emf.hl7.mif2.StaticModelInterfaceDocumentation;
  *
  * @generated
  */
-public class StaticModelInterfaceDocumentationImpl extends DocumentationImpl implements StaticModelInterfaceDocumentation {
+public class StaticModelInterfaceDocumentationImpl extends DocumentationImpl implements
+		StaticModelInterfaceDocumentation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -40,4 +45,4 @@ public class StaticModelInterfaceDocumentationImpl extends DocumentationImpl imp
 		return Mif2Package.Literals.STATIC_MODEL_INTERFACE_DOCUMENTATION;
 	}
 
-} //StaticModelInterfaceDocumentationImpl
+} // StaticModelInterfaceDocumentationImpl

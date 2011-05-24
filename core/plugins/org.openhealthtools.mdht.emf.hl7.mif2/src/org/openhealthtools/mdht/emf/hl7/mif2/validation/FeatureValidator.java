@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.validation;
 
 import java.math.BigInteger;
@@ -24,12 +28,20 @@ public interface FeatureValidator {
 	boolean validate();
 
 	boolean validateEnumerationValue(EList<String> value);
+
 	boolean validateAllowedRange(EList<RangeDefinition> value);
+
 	boolean validateConformance(ConformanceKind value);
+
 	boolean validateDefaultFrom(DefaultDeterminerKind value);
+
 	boolean validateDefaultValue(String value);
+
 	boolean validateFixedValue(String value);
+
 	boolean validateIsMandatory(boolean value);
+
 	boolean validateMaximumLength(BigInteger value);
+
 	boolean validateMinimumLength(BigInteger value);
 }

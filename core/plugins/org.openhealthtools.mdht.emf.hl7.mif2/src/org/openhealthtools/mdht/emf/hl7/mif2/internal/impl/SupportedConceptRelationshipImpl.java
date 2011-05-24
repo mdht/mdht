@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -32,7 +36,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.SupportedProperty;
 import org.openhealthtools.mdht.emf.hl7.mif2.Symmetry;
 import org.openhealthtools.mdht.emf.hl7.mif2.Transitivity;
 import org.openhealthtools.mdht.emf.w3c.xhtml.Inline;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -404,8 +407,14 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 		Inline oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DESCRIPTION, oldDescription, newDescription);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DESCRIPTION, oldDescription,
+				newDescription);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -418,15 +427,23 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 	public void setDescription(Inline newDescription) {
 		if (newDescription != description) {
 			NotificationChain msgs = null;
-			if (description != null)
-				msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DESCRIPTION, null, msgs);
-			if (newDescription != null)
-				msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DESCRIPTION, null, msgs);
+			if (description != null) {
+				msgs = ((InternalEObject) description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DESCRIPTION, null, msgs);
+			}
+			if (newDescription != null) {
+				msgs = ((InternalEObject) newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DESCRIPTION, null, msgs);
+			}
 			msgs = basicSetDescription(newDescription, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DESCRIPTION, newDescription,
+				newDescription));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DESCRIPTION, newDescription, newDescription));
 	}
 
 	/**
@@ -447,8 +464,14 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 		ContentDefinition oldAllowedForSources = allowedForSources;
 		allowedForSources = newAllowedForSources;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_SOURCES, oldAllowedForSources, newAllowedForSources);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_SOURCES,
+				oldAllowedForSources, newAllowedForSources);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -461,15 +484,23 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 	public void setAllowedForSources(ContentDefinition newAllowedForSources) {
 		if (newAllowedForSources != allowedForSources) {
 			NotificationChain msgs = null;
-			if (allowedForSources != null)
-				msgs = ((InternalEObject)allowedForSources).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_SOURCES, null, msgs);
-			if (newAllowedForSources != null)
-				msgs = ((InternalEObject)newAllowedForSources).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_SOURCES, null, msgs);
+			if (allowedForSources != null) {
+				msgs = ((InternalEObject) allowedForSources).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_SOURCES, null, msgs);
+			}
+			if (newAllowedForSources != null) {
+				msgs = ((InternalEObject) newAllowedForSources).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_SOURCES, null, msgs);
+			}
 			msgs = basicSetAllowedForSources(newAllowedForSources, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_SOURCES,
+				newAllowedForSources, newAllowedForSources));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_SOURCES, newAllowedForSources, newAllowedForSources));
 	}
 
 	/**
@@ -490,8 +521,14 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 		ContentDefinition oldAllowedForTargets = allowedForTargets;
 		allowedForTargets = newAllowedForTargets;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_TARGETS, oldAllowedForTargets, newAllowedForTargets);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_TARGETS,
+				oldAllowedForTargets, newAllowedForTargets);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -504,15 +541,23 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 	public void setAllowedForTargets(ContentDefinition newAllowedForTargets) {
 		if (newAllowedForTargets != allowedForTargets) {
 			NotificationChain msgs = null;
-			if (allowedForTargets != null)
-				msgs = ((InternalEObject)allowedForTargets).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_TARGETS, null, msgs);
-			if (newAllowedForTargets != null)
-				msgs = ((InternalEObject)newAllowedForTargets).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_TARGETS, null, msgs);
+			if (allowedForTargets != null) {
+				msgs = ((InternalEObject) allowedForTargets).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_TARGETS, null, msgs);
+			}
+			if (newAllowedForTargets != null) {
+				msgs = ((InternalEObject) newAllowedForTargets).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_TARGETS, null, msgs);
+			}
 			msgs = basicSetAllowedForTargets(newAllowedForTargets, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_TARGETS,
+				newAllowedForTargets, newAllowedForTargets));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_TARGETS, newAllowedForTargets, newAllowedForTargets));
 	}
 
 	/**
@@ -533,8 +578,14 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 		ContentDefinition oldRequiredForSources = requiredForSources;
 		requiredForSources = newRequiredForSources;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_SOURCES, oldRequiredForSources, newRequiredForSources);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_SOURCES,
+				oldRequiredForSources, newRequiredForSources);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -547,15 +598,23 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 	public void setRequiredForSources(ContentDefinition newRequiredForSources) {
 		if (newRequiredForSources != requiredForSources) {
 			NotificationChain msgs = null;
-			if (requiredForSources != null)
-				msgs = ((InternalEObject)requiredForSources).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_SOURCES, null, msgs);
-			if (newRequiredForSources != null)
-				msgs = ((InternalEObject)newRequiredForSources).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_SOURCES, null, msgs);
+			if (requiredForSources != null) {
+				msgs = ((InternalEObject) requiredForSources).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_SOURCES, null, msgs);
+			}
+			if (newRequiredForSources != null) {
+				msgs = ((InternalEObject) newRequiredForSources).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_SOURCES, null, msgs);
+			}
 			msgs = basicSetRequiredForSources(newRequiredForSources, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_SOURCES,
+				newRequiredForSources, newRequiredForSources));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_SOURCES, newRequiredForSources, newRequiredForSources));
 	}
 
 	/**
@@ -576,8 +635,14 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 		ContentDefinition oldRequiredForTargets = requiredForTargets;
 		requiredForTargets = newRequiredForTargets;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_TARGETS, oldRequiredForTargets, newRequiredForTargets);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_TARGETS,
+				oldRequiredForTargets, newRequiredForTargets);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -590,15 +655,23 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 	public void setRequiredForTargets(ContentDefinition newRequiredForTargets) {
 		if (newRequiredForTargets != requiredForTargets) {
 			NotificationChain msgs = null;
-			if (requiredForTargets != null)
-				msgs = ((InternalEObject)requiredForTargets).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_TARGETS, null, msgs);
-			if (newRequiredForTargets != null)
-				msgs = ((InternalEObject)newRequiredForTargets).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_TARGETS, null, msgs);
+			if (requiredForTargets != null) {
+				msgs = ((InternalEObject) requiredForTargets).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_TARGETS, null, msgs);
+			}
+			if (newRequiredForTargets != null) {
+				msgs = ((InternalEObject) newRequiredForTargets).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_TARGETS, null, msgs);
+			}
 			msgs = basicSetRequiredForTargets(newRequiredForTargets, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_TARGETS,
+				newRequiredForTargets, newRequiredForTargets));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_TARGETS, newRequiredForTargets, newRequiredForTargets));
 	}
 
 	/**
@@ -608,7 +681,8 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 	 */
 	public EList<SupportedProperty> getSupportedProperty() {
 		if (supportedProperty == null) {
-			supportedProperty = new EObjectContainmentEList<SupportedProperty>(SupportedProperty.class, this, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__SUPPORTED_PROPERTY);
+			supportedProperty = new EObjectContainmentEList<SupportedProperty>(
+				SupportedProperty.class, this, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__SUPPORTED_PROPERTY);
 		}
 		return supportedProperty;
 	}
@@ -631,8 +705,14 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 		ConceptRef oldDefiningConcept = definingConcept;
 		definingConcept = newDefiningConcept;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DEFINING_CONCEPT, oldDefiningConcept, newDefiningConcept);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DEFINING_CONCEPT,
+				oldDefiningConcept, newDefiningConcept);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -645,15 +725,23 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 	public void setDefiningConcept(ConceptRef newDefiningConcept) {
 		if (newDefiningConcept != definingConcept) {
 			NotificationChain msgs = null;
-			if (definingConcept != null)
-				msgs = ((InternalEObject)definingConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DEFINING_CONCEPT, null, msgs);
-			if (newDefiningConcept != null)
-				msgs = ((InternalEObject)newDefiningConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DEFINING_CONCEPT, null, msgs);
+			if (definingConcept != null) {
+				msgs = ((InternalEObject) definingConcept).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DEFINING_CONCEPT, null, msgs);
+			}
+			if (newDefiningConcept != null) {
+				msgs = ((InternalEObject) newDefiningConcept).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DEFINING_CONCEPT, null, msgs);
+			}
 			msgs = basicSetDefiningConcept(newDefiningConcept, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DEFINING_CONCEPT,
+				newDefiningConcept, newDefiningConcept));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DEFINING_CONCEPT, newDefiningConcept, newDefiningConcept));
 	}
 
 	/**
@@ -675,8 +763,11 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 		functionalism = newFunctionalism;
 		boolean oldFunctionalismESet = functionalismESet;
 		functionalismESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__FUNCTIONALISM, oldFunctionalism, functionalism, !oldFunctionalismESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__FUNCTIONALISM, oldFunctionalism,
+				functionalism, !oldFunctionalismESet));
+		}
 	}
 
 	/**
@@ -689,8 +780,11 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 		boolean oldFunctionalismESet = functionalismESet;
 		functionalism = FUNCTIONALISM_EDEFAULT;
 		functionalismESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__FUNCTIONALISM, oldFunctionalism, FUNCTIONALISM_EDEFAULT, oldFunctionalismESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__FUNCTIONALISM, oldFunctionalism,
+				FUNCTIONALISM_EDEFAULT, oldFunctionalismESet));
+		}
 	}
 
 	/**
@@ -719,8 +813,10 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ID, oldId, id));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ID, oldId, id));
+		}
 	}
 
 	/**
@@ -740,8 +836,11 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 	public void setInverseName(String newInverseName) {
 		String oldInverseName = inverseName;
 		inverseName = newInverseName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__INVERSE_NAME, oldInverseName, inverseName));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__INVERSE_NAME, oldInverseName,
+				inverseName));
+		}
 	}
 
 	/**
@@ -763,8 +862,11 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 		isNavigable = newIsNavigable;
 		boolean oldIsNavigableESet = isNavigableESet;
 		isNavigableESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__IS_NAVIGABLE, oldIsNavigable, isNavigable, !oldIsNavigableESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__IS_NAVIGABLE, oldIsNavigable,
+				isNavigable, !oldIsNavigableESet));
+		}
 	}
 
 	/**
@@ -777,8 +879,11 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 		boolean oldIsNavigableESet = isNavigableESet;
 		isNavigable = IS_NAVIGABLE_EDEFAULT;
 		isNavigableESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__IS_NAVIGABLE, oldIsNavigable, IS_NAVIGABLE_EDEFAULT, oldIsNavigableESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__IS_NAVIGABLE, oldIsNavigable,
+				IS_NAVIGABLE_EDEFAULT, oldIsNavigableESet));
+		}
 	}
 
 	/**
@@ -807,8 +912,10 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__NAME, oldName, name));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -827,11 +934,16 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 	 */
 	public void setReflexivity(Reflexivity newReflexivity) {
 		Reflexivity oldReflexivity = reflexivity;
-		reflexivity = newReflexivity == null ? REFLEXIVITY_EDEFAULT : newReflexivity;
+		reflexivity = newReflexivity == null
+				? REFLEXIVITY_EDEFAULT
+				: newReflexivity;
 		boolean oldReflexivityESet = reflexivityESet;
 		reflexivityESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REFLEXIVITY, oldReflexivity, reflexivity, !oldReflexivityESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REFLEXIVITY, oldReflexivity,
+				reflexivity, !oldReflexivityESet));
+		}
 	}
 
 	/**
@@ -844,8 +956,11 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 		boolean oldReflexivityESet = reflexivityESet;
 		reflexivity = REFLEXIVITY_EDEFAULT;
 		reflexivityESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REFLEXIVITY, oldReflexivity, REFLEXIVITY_EDEFAULT, oldReflexivityESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REFLEXIVITY, oldReflexivity,
+				REFLEXIVITY_EDEFAULT, oldReflexivityESet));
+		}
 	}
 
 	/**
@@ -873,11 +988,16 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 	 */
 	public void setRelationshipKind(ConceptRelationshipKind newRelationshipKind) {
 		ConceptRelationshipKind oldRelationshipKind = relationshipKind;
-		relationshipKind = newRelationshipKind == null ? RELATIONSHIP_KIND_EDEFAULT : newRelationshipKind;
+		relationshipKind = newRelationshipKind == null
+				? RELATIONSHIP_KIND_EDEFAULT
+				: newRelationshipKind;
 		boolean oldRelationshipKindESet = relationshipKindESet;
 		relationshipKindESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__RELATIONSHIP_KIND, oldRelationshipKind, relationshipKind, !oldRelationshipKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__RELATIONSHIP_KIND,
+				oldRelationshipKind, relationshipKind, !oldRelationshipKindESet));
+		}
 	}
 
 	/**
@@ -890,8 +1010,11 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 		boolean oldRelationshipKindESet = relationshipKindESet;
 		relationshipKind = RELATIONSHIP_KIND_EDEFAULT;
 		relationshipKindESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__RELATIONSHIP_KIND, oldRelationshipKind, RELATIONSHIP_KIND_EDEFAULT, oldRelationshipKindESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__RELATIONSHIP_KIND,
+				oldRelationshipKind, RELATIONSHIP_KIND_EDEFAULT, oldRelationshipKindESet));
+		}
 	}
 
 	/**
@@ -919,11 +1042,16 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 	 */
 	public void setSymmetry(Symmetry newSymmetry) {
 		Symmetry oldSymmetry = symmetry;
-		symmetry = newSymmetry == null ? SYMMETRY_EDEFAULT : newSymmetry;
+		symmetry = newSymmetry == null
+				? SYMMETRY_EDEFAULT
+				: newSymmetry;
 		boolean oldSymmetryESet = symmetryESet;
 		symmetryESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__SYMMETRY, oldSymmetry, symmetry, !oldSymmetryESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__SYMMETRY, oldSymmetry, symmetry,
+				!oldSymmetryESet));
+		}
 	}
 
 	/**
@@ -936,8 +1064,11 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 		boolean oldSymmetryESet = symmetryESet;
 		symmetry = SYMMETRY_EDEFAULT;
 		symmetryESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__SYMMETRY, oldSymmetry, SYMMETRY_EDEFAULT, oldSymmetryESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__SYMMETRY, oldSymmetry,
+				SYMMETRY_EDEFAULT, oldSymmetryESet));
+		}
 	}
 
 	/**
@@ -965,11 +1096,16 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 	 */
 	public void setTransitivity(Transitivity newTransitivity) {
 		Transitivity oldTransitivity = transitivity;
-		transitivity = newTransitivity == null ? TRANSITIVITY_EDEFAULT : newTransitivity;
+		transitivity = newTransitivity == null
+				? TRANSITIVITY_EDEFAULT
+				: newTransitivity;
 		boolean oldTransitivityESet = transitivityESet;
 		transitivityESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__TRANSITIVITY, oldTransitivity, transitivity, !oldTransitivityESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__TRANSITIVITY, oldTransitivity,
+				transitivity, !oldTransitivityESet));
+		}
 	}
 
 	/**
@@ -982,8 +1118,11 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 		boolean oldTransitivityESet = transitivityESet;
 		transitivity = TRANSITIVITY_EDEFAULT;
 		transitivityESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__TRANSITIVITY, oldTransitivity, TRANSITIVITY_EDEFAULT, oldTransitivityESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__TRANSITIVITY, oldTransitivity,
+				TRANSITIVITY_EDEFAULT, oldTransitivityESet));
+		}
 	}
 
 	/**
@@ -1014,7 +1153,7 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_TARGETS:
 				return basicSetRequiredForTargets(null, msgs);
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__SUPPORTED_PROPERTY:
-				return ((InternalEList<?>)getSupportedProperty()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSupportedProperty()).basicRemove(otherEnd, msgs);
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DEFINING_CONCEPT:
 				return basicSetDefiningConcept(null, msgs);
 		}
@@ -1044,13 +1183,17 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DEFINING_CONCEPT:
 				return getDefiningConcept();
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__FUNCTIONALISM:
-				return isFunctionalism() ? Boolean.TRUE : Boolean.FALSE;
+				return isFunctionalism()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ID:
 				return getId();
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__INVERSE_NAME:
 				return getInverseName();
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__IS_NAVIGABLE:
-				return isIsNavigable() ? Boolean.TRUE : Boolean.FALSE;
+				return isIsNavigable()
+						? Boolean.TRUE
+						: Boolean.FALSE;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__NAME:
 				return getName();
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REFLEXIVITY:
@@ -1075,53 +1218,53 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DESCRIPTION:
-				setDescription((Inline)newValue);
+				setDescription((Inline) newValue);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_SOURCES:
-				setAllowedForSources((ContentDefinition)newValue);
+				setAllowedForSources((ContentDefinition) newValue);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_TARGETS:
-				setAllowedForTargets((ContentDefinition)newValue);
+				setAllowedForTargets((ContentDefinition) newValue);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_SOURCES:
-				setRequiredForSources((ContentDefinition)newValue);
+				setRequiredForSources((ContentDefinition) newValue);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_TARGETS:
-				setRequiredForTargets((ContentDefinition)newValue);
+				setRequiredForTargets((ContentDefinition) newValue);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__SUPPORTED_PROPERTY:
 				getSupportedProperty().clear();
-				getSupportedProperty().addAll((Collection<? extends SupportedProperty>)newValue);
+				getSupportedProperty().addAll((Collection<? extends SupportedProperty>) newValue);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DEFINING_CONCEPT:
-				setDefiningConcept((ConceptRef)newValue);
+				setDefiningConcept((ConceptRef) newValue);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__FUNCTIONALISM:
-				setFunctionalism(((Boolean)newValue).booleanValue());
+				setFunctionalism(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ID:
-				setId((String)newValue);
+				setId((String) newValue);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__INVERSE_NAME:
-				setInverseName((String)newValue);
+				setInverseName((String) newValue);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__IS_NAVIGABLE:
-				setIsNavigable(((Boolean)newValue).booleanValue());
+				setIsNavigable(((Boolean) newValue).booleanValue());
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REFLEXIVITY:
-				setReflexivity((Reflexivity)newValue);
+				setReflexivity((Reflexivity) newValue);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__RELATIONSHIP_KIND:
-				setRelationshipKind((ConceptRelationshipKind)newValue);
+				setRelationshipKind((ConceptRelationshipKind) newValue);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__SYMMETRY:
-				setSymmetry((Symmetry)newValue);
+				setSymmetry((Symmetry) newValue);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__TRANSITIVITY:
-				setTransitivity((Transitivity)newValue);
+				setTransitivity((Transitivity) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1136,25 +1279,25 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DESCRIPTION:
-				setDescription((Inline)null);
+				setDescription((Inline) null);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_SOURCES:
-				setAllowedForSources((ContentDefinition)null);
+				setAllowedForSources((ContentDefinition) null);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ALLOWED_FOR_TARGETS:
-				setAllowedForTargets((ContentDefinition)null);
+				setAllowedForTargets((ContentDefinition) null);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_SOURCES:
-				setRequiredForSources((ContentDefinition)null);
+				setRequiredForSources((ContentDefinition) null);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REQUIRED_FOR_TARGETS:
-				setRequiredForTargets((ContentDefinition)null);
+				setRequiredForTargets((ContentDefinition) null);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__SUPPORTED_PROPERTY:
 				getSupportedProperty().clear();
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__DEFINING_CONCEPT:
-				setDefiningConcept((ConceptRef)null);
+				setDefiningConcept((ConceptRef) null);
 				return;
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__FUNCTIONALISM:
 				unsetFunctionalism();
@@ -1212,13 +1355,19 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__FUNCTIONALISM:
 				return isSetFunctionalism();
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+				return ID_EDEFAULT == null
+						? id != null
+						: !ID_EDEFAULT.equals(id);
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__INVERSE_NAME:
-				return INVERSE_NAME_EDEFAULT == null ? inverseName != null : !INVERSE_NAME_EDEFAULT.equals(inverseName);
+				return INVERSE_NAME_EDEFAULT == null
+						? inverseName != null
+						: !INVERSE_NAME_EDEFAULT.equals(inverseName);
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__IS_NAVIGABLE:
 				return isSetIsNavigable();
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__REFLEXIVITY:
 				return isSetReflexivity();
 			case Mif2Package.SUPPORTED_CONCEPT_RELATIONSHIP__RELATIONSHIP_KIND:
@@ -1238,29 +1387,55 @@ public class SupportedConceptRelationshipImpl extends EObjectImpl implements Sup
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (functionalism: ");
-		if (functionalismESet) result.append(functionalism); else result.append("<unset>");
+		if (functionalismESet) {
+			result.append(functionalism);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", id: ");
 		result.append(id);
 		result.append(", inverseName: ");
 		result.append(inverseName);
 		result.append(", isNavigable: ");
-		if (isNavigableESet) result.append(isNavigable); else result.append("<unset>");
+		if (isNavigableESet) {
+			result.append(isNavigable);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", name: ");
 		result.append(name);
 		result.append(", reflexivity: ");
-		if (reflexivityESet) result.append(reflexivity); else result.append("<unset>");
+		if (reflexivityESet) {
+			result.append(reflexivity);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", relationshipKind: ");
-		if (relationshipKindESet) result.append(relationshipKind); else result.append("<unset>");
+		if (relationshipKindESet) {
+			result.append(relationshipKind);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", symmetry: ");
-		if (symmetryESet) result.append(symmetry); else result.append("<unset>");
+		if (symmetryESet) {
+			result.append(symmetry);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", transitivity: ");
-		if (transitivityESet) result.append(transitivity); else result.append("<unset>");
+		if (transitivityESet) {
+			result.append(transitivity);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //SupportedConceptRelationshipImpl
+} // SupportedConceptRelationshipImpl

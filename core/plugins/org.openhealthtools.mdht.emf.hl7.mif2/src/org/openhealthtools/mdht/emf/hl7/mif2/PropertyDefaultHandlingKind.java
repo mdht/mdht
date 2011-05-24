@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -79,11 +83,8 @@ public enum PropertyDefaultHandlingKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final PropertyDefaultHandlingKind[] VALUES_ARRAY =
-		new PropertyDefaultHandlingKind[] {
-			HIERARCHICAL,
-			FLAT,
-		};
+	private static final PropertyDefaultHandlingKind[] VALUES_ARRAY = new PropertyDefaultHandlingKind[] {
+			HIERARCHICAL, FLAT, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Property Default Handling Kind</b></em>' enumerators.
@@ -133,8 +134,10 @@ public enum PropertyDefaultHandlingKind implements Enumerator {
 	 */
 	public static PropertyDefaultHandlingKind get(int value) {
 		switch (value) {
-			case HIERARCHICAL_VALUE: return HIERARCHICAL;
-			case FLAT_VALUE: return FLAT;
+			case HIERARCHICAL_VALUE:
+				return HIERARCHICAL;
+			case FLAT_VALUE:
+				return FLAT;
 		}
 		return null;
 	}
@@ -178,7 +181,7 @@ public enum PropertyDefaultHandlingKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -187,7 +190,7 @@ public enum PropertyDefaultHandlingKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -196,7 +199,7 @@ public enum PropertyDefaultHandlingKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -209,5 +212,5 @@ public enum PropertyDefaultHandlingKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //PropertyDefaultHandlingKind
+
+} // PropertyDefaultHandlingKind

@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -88,12 +92,19 @@ public class ArtifactXRefSummaryImpl extends EObjectImpl implements ArtifactXRef
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRenderingInformation(RenderingInformation newRenderingInformation, NotificationChain msgs) {
+	public NotificationChain basicSetRenderingInformation(RenderingInformation newRenderingInformation,
+			NotificationChain msgs) {
 		RenderingInformation oldRenderingInformation = renderingInformation;
 		renderingInformation = newRenderingInformation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.ARTIFACT_XREF_SUMMARY__RENDERING_INFORMATION, oldRenderingInformation, newRenderingInformation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ARTIFACT_XREF_SUMMARY__RENDERING_INFORMATION,
+				oldRenderingInformation, newRenderingInformation);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -106,15 +117,23 @@ public class ArtifactXRefSummaryImpl extends EObjectImpl implements ArtifactXRef
 	public void setRenderingInformation(RenderingInformation newRenderingInformation) {
 		if (newRenderingInformation != renderingInformation) {
 			NotificationChain msgs = null;
-			if (renderingInformation != null)
-				msgs = ((InternalEObject)renderingInformation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ARTIFACT_XREF_SUMMARY__RENDERING_INFORMATION, null, msgs);
-			if (newRenderingInformation != null)
-				msgs = ((InternalEObject)newRenderingInformation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ARTIFACT_XREF_SUMMARY__RENDERING_INFORMATION, null, msgs);
+			if (renderingInformation != null) {
+				msgs = ((InternalEObject) renderingInformation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ARTIFACT_XREF_SUMMARY__RENDERING_INFORMATION, null, msgs);
+			}
+			if (newRenderingInformation != null) {
+				msgs = ((InternalEObject) newRenderingInformation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ARTIFACT_XREF_SUMMARY__RENDERING_INFORMATION, null, msgs);
+			}
 			msgs = basicSetRenderingInformation(newRenderingInformation, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ARTIFACT_XREF_SUMMARY__RENDERING_INFORMATION,
+				newRenderingInformation, newRenderingInformation));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ARTIFACT_XREF_SUMMARY__RENDERING_INFORMATION, newRenderingInformation, newRenderingInformation));
 	}
 
 	/**
@@ -135,8 +154,13 @@ public class ArtifactXRefSummaryImpl extends EObjectImpl implements ArtifactXRef
 		ArtifactCrossReference oldArtifact = artifact;
 		artifact = newArtifact;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.ARTIFACT_XREF_SUMMARY__ARTIFACT, oldArtifact, newArtifact);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ARTIFACT_XREF_SUMMARY__ARTIFACT, oldArtifact, newArtifact);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -149,15 +173,22 @@ public class ArtifactXRefSummaryImpl extends EObjectImpl implements ArtifactXRef
 	public void setArtifact(ArtifactCrossReference newArtifact) {
 		if (newArtifact != artifact) {
 			NotificationChain msgs = null;
-			if (artifact != null)
-				msgs = ((InternalEObject)artifact).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ARTIFACT_XREF_SUMMARY__ARTIFACT, null, msgs);
-			if (newArtifact != null)
-				msgs = ((InternalEObject)newArtifact).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.ARTIFACT_XREF_SUMMARY__ARTIFACT, null, msgs);
+			if (artifact != null) {
+				msgs = ((InternalEObject) artifact).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ARTIFACT_XREF_SUMMARY__ARTIFACT, null, msgs);
+			}
+			if (newArtifact != null) {
+				msgs = ((InternalEObject) newArtifact).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.ARTIFACT_XREF_SUMMARY__ARTIFACT, null, msgs);
+			}
 			msgs = basicSetArtifact(newArtifact, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.ARTIFACT_XREF_SUMMARY__ARTIFACT, newArtifact, newArtifact));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.ARTIFACT_XREF_SUMMARY__ARTIFACT, newArtifact, newArtifact));
 	}
 
 	/**
@@ -201,10 +232,10 @@ public class ArtifactXRefSummaryImpl extends EObjectImpl implements ArtifactXRef
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.ARTIFACT_XREF_SUMMARY__RENDERING_INFORMATION:
-				setRenderingInformation((RenderingInformation)newValue);
+				setRenderingInformation((RenderingInformation) newValue);
 				return;
 			case Mif2Package.ARTIFACT_XREF_SUMMARY__ARTIFACT:
-				setArtifact((ArtifactCrossReference)newValue);
+				setArtifact((ArtifactCrossReference) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -219,10 +250,10 @@ public class ArtifactXRefSummaryImpl extends EObjectImpl implements ArtifactXRef
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.ARTIFACT_XREF_SUMMARY__RENDERING_INFORMATION:
-				setRenderingInformation((RenderingInformation)null);
+				setRenderingInformation((RenderingInformation) null);
 				return;
 			case Mif2Package.ARTIFACT_XREF_SUMMARY__ARTIFACT:
-				setArtifact((ArtifactCrossReference)null);
+				setArtifact((ArtifactCrossReference) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -244,4 +275,4 @@ public class ArtifactXRefSummaryImpl extends EObjectImpl implements ArtifactXRef
 		return super.eIsSet(featureID);
 	}
 
-} //ArtifactXRefSummaryImpl
+} // ArtifactXRefSummaryImpl

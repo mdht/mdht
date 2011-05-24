@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -79,8 +83,13 @@ public class SerializedStaticModelImpl extends StaticModelBaseImpl implements Se
 		SerializedEntryPoint oldEntryPoint = entryPoint;
 		entryPoint = newEntryPoint;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Mif2Package.SERIALIZED_STATIC_MODEL__ENTRY_POINT, oldEntryPoint, newEntryPoint);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SERIALIZED_STATIC_MODEL__ENTRY_POINT, oldEntryPoint, newEntryPoint);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -93,15 +102,22 @@ public class SerializedStaticModelImpl extends StaticModelBaseImpl implements Se
 	public void setEntryPoint(SerializedEntryPoint newEntryPoint) {
 		if (newEntryPoint != entryPoint) {
 			NotificationChain msgs = null;
-			if (entryPoint != null)
-				msgs = ((InternalEObject)entryPoint).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SERIALIZED_STATIC_MODEL__ENTRY_POINT, null, msgs);
-			if (newEntryPoint != null)
-				msgs = ((InternalEObject)newEntryPoint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Mif2Package.SERIALIZED_STATIC_MODEL__ENTRY_POINT, null, msgs);
+			if (entryPoint != null) {
+				msgs = ((InternalEObject) entryPoint).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SERIALIZED_STATIC_MODEL__ENTRY_POINT, null, msgs);
+			}
+			if (newEntryPoint != null) {
+				msgs = ((InternalEObject) newEntryPoint).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						Mif2Package.SERIALIZED_STATIC_MODEL__ENTRY_POINT, null, msgs);
+			}
 			msgs = basicSetEntryPoint(newEntryPoint, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.SERIALIZED_STATIC_MODEL__ENTRY_POINT, newEntryPoint, newEntryPoint));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.SERIALIZED_STATIC_MODEL__ENTRY_POINT, newEntryPoint, newEntryPoint));
 	}
 
 	/**
@@ -141,7 +157,7 @@ public class SerializedStaticModelImpl extends StaticModelBaseImpl implements Se
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Mif2Package.SERIALIZED_STATIC_MODEL__ENTRY_POINT:
-				setEntryPoint((SerializedEntryPoint)newValue);
+				setEntryPoint((SerializedEntryPoint) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -156,7 +172,7 @@ public class SerializedStaticModelImpl extends StaticModelBaseImpl implements Se
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Mif2Package.SERIALIZED_STATIC_MODEL__ENTRY_POINT:
-				setEntryPoint((SerializedEntryPoint)null);
+				setEntryPoint((SerializedEntryPoint) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -176,4 +192,4 @@ public class SerializedStaticModelImpl extends StaticModelBaseImpl implements Se
 		return super.eIsSet(featureID);
 	}
 
-} //SerializedStaticModelImpl
+} // SerializedStaticModelImpl

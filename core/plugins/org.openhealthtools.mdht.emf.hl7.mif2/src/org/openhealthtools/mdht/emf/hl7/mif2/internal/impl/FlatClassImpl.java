@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -83,7 +87,8 @@ public class FlatClassImpl extends ClassBaseImpl implements FlatClass {
 	 */
 	public EList<ClassGeneralization> getChildClass() {
 		if (childClass == null) {
-			childClass = new EObjectContainmentEList<ClassGeneralization>(ClassGeneralization.class, this, Mif2Package.FLAT_CLASS__CHILD_CLASS);
+			childClass = new EObjectContainmentEList<ClassGeneralization>(
+				ClassGeneralization.class, this, Mif2Package.FLAT_CLASS__CHILD_CLASS);
 		}
 		return childClass;
 	}
@@ -95,7 +100,8 @@ public class FlatClassImpl extends ClassBaseImpl implements FlatClass {
 	 */
 	public EList<ClassGeneralization> getParentClass() {
 		if (parentClass == null) {
-			parentClass = new EObjectContainmentEList<ClassGeneralization>(ClassGeneralization.class, this, Mif2Package.FLAT_CLASS__PARENT_CLASS);
+			parentClass = new EObjectContainmentEList<ClassGeneralization>(
+				ClassGeneralization.class, this, Mif2Package.FLAT_CLASS__PARENT_CLASS);
 		}
 		return parentClass;
 	}
@@ -109,9 +115,9 @@ public class FlatClassImpl extends ClassBaseImpl implements FlatClass {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.FLAT_CLASS__CHILD_CLASS:
-				return ((InternalEList<?>)getChildClass()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getChildClass()).basicRemove(otherEnd, msgs);
 			case Mif2Package.FLAT_CLASS__PARENT_CLASS:
-				return ((InternalEList<?>)getParentClass()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getParentClass()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -143,11 +149,11 @@ public class FlatClassImpl extends ClassBaseImpl implements FlatClass {
 		switch (featureID) {
 			case Mif2Package.FLAT_CLASS__CHILD_CLASS:
 				getChildClass().clear();
-				getChildClass().addAll((Collection<? extends ClassGeneralization>)newValue);
+				getChildClass().addAll((Collection<? extends ClassGeneralization>) newValue);
 				return;
 			case Mif2Package.FLAT_CLASS__PARENT_CLASS:
 				getParentClass().clear();
-				getParentClass().addAll((Collection<? extends ClassGeneralization>)newValue);
+				getParentClass().addAll((Collection<? extends ClassGeneralization>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,4 +193,4 @@ public class FlatClassImpl extends ClassBaseImpl implements FlatClass {
 		return super.eIsSet(featureID);
 	}
 
-} //FlatClassImpl
+} // FlatClassImpl

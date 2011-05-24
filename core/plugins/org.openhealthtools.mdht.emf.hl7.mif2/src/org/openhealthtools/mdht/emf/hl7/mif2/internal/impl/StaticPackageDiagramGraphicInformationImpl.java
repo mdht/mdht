@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2.internal.impl;
 
 import java.util.Collection;
@@ -46,7 +50,8 @@ import org.openhealthtools.mdht.emf.hl7.mif2.StaticPackageDiagramGraphicInformat
  *
  * @generated
  */
-public class StaticPackageDiagramGraphicInformationImpl extends DiagramGraphicInformationImpl implements StaticPackageDiagramGraphicInformation {
+public class StaticPackageDiagramGraphicInformationImpl extends DiagramGraphicInformationImpl implements
+		StaticPackageDiagramGraphicInformation {
 	/**
 	 * The cached value of the '{@link #getEntryPoint() <em>Entry Point</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -152,7 +157,9 @@ public class StaticPackageDiagramGraphicInformationImpl extends DiagramGraphicIn
 	 */
 	public EList<NodeWithConnectionGraphicInformation> getEntryPoint() {
 		if (entryPoint == null) {
-			entryPoint = new EObjectContainmentEList<NodeWithConnectionGraphicInformation>(NodeWithConnectionGraphicInformation.class, this, Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__ENTRY_POINT);
+			entryPoint = new EObjectContainmentEList<NodeWithConnectionGraphicInformation>(
+				NodeWithConnectionGraphicInformation.class, this,
+				Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__ENTRY_POINT);
 		}
 		return entryPoint;
 	}
@@ -164,7 +171,8 @@ public class StaticPackageDiagramGraphicInformationImpl extends DiagramGraphicIn
 	 */
 	public EList<ClassGraphicInformation> getClass_() {
 		if (class_ == null) {
-			class_ = new EObjectContainmentEList<ClassGraphicInformation>(ClassGraphicInformation.class, this, Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__CLASS);
+			class_ = new EObjectContainmentEList<ClassGraphicInformation>(
+				ClassGraphicInformation.class, this, Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__CLASS);
 		}
 		return class_;
 	}
@@ -176,7 +184,9 @@ public class StaticPackageDiagramGraphicInformationImpl extends DiagramGraphicIn
 	 */
 	public EList<GraphEdgeGraphicInformation> getAssociation() {
 		if (association == null) {
-			association = new EObjectContainmentEList<GraphEdgeGraphicInformation>(GraphEdgeGraphicInformation.class, this, Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__ASSOCIATION);
+			association = new EObjectContainmentEList<GraphEdgeGraphicInformation>(
+				GraphEdgeGraphicInformation.class, this,
+				Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__ASSOCIATION);
 		}
 		return association;
 	}
@@ -188,7 +198,9 @@ public class StaticPackageDiagramGraphicInformationImpl extends DiagramGraphicIn
 	 */
 	public EList<GraphEdgeGraphicInformation> getGeneralization() {
 		if (generalization == null) {
-			generalization = new EObjectContainmentEList<GraphEdgeGraphicInformation>(GraphEdgeGraphicInformation.class, this, Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__GENERALIZATION);
+			generalization = new EObjectContainmentEList<GraphEdgeGraphicInformation>(
+				GraphEdgeGraphicInformation.class, this,
+				Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__GENERALIZATION);
 		}
 		return generalization;
 	}
@@ -200,7 +212,9 @@ public class StaticPackageDiagramGraphicInformationImpl extends DiagramGraphicIn
 	 */
 	public EList<NodeWithConnectionGraphicInformation> getAnnotation() {
 		if (annotation == null) {
-			annotation = new EObjectContainmentEList<NodeWithConnectionGraphicInformation>(NodeWithConnectionGraphicInformation.class, this, Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__ANNOTATION);
+			annotation = new EObjectContainmentEList<NodeWithConnectionGraphicInformation>(
+				NodeWithConnectionGraphicInformation.class, this,
+				Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__ANNOTATION);
 		}
 		return annotation;
 	}
@@ -221,11 +235,16 @@ public class StaticPackageDiagramGraphicInformationImpl extends DiagramGraphicIn
 	 */
 	public void setPresentation(StaticModelDiagramPresentationKind newPresentation) {
 		StaticModelDiagramPresentationKind oldPresentation = presentation;
-		presentation = newPresentation == null ? PRESENTATION_EDEFAULT : newPresentation;
+		presentation = newPresentation == null
+				? PRESENTATION_EDEFAULT
+				: newPresentation;
 		boolean oldPresentationESet = presentationESet;
 		presentationESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__PRESENTATION, oldPresentation, presentation, !oldPresentationESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__PRESENTATION,
+				oldPresentation, presentation, !oldPresentationESet));
+		}
 	}
 
 	/**
@@ -238,8 +257,11 @@ public class StaticPackageDiagramGraphicInformationImpl extends DiagramGraphicIn
 		boolean oldPresentationESet = presentationESet;
 		presentation = PRESENTATION_EDEFAULT;
 		presentationESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__PRESENTATION, oldPresentation, PRESENTATION_EDEFAULT, oldPresentationESet));
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__PRESENTATION,
+				oldPresentation, PRESENTATION_EDEFAULT, oldPresentationESet));
+		}
 	}
 
 	/**
@@ -260,15 +282,15 @@ public class StaticPackageDiagramGraphicInformationImpl extends DiagramGraphicIn
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__ENTRY_POINT:
-				return ((InternalEList<?>)getEntryPoint()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getEntryPoint()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__CLASS:
-				return ((InternalEList<?>)getClass_()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getClass_()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__ASSOCIATION:
-				return ((InternalEList<?>)getAssociation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAssociation()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__GENERALIZATION:
-				return ((InternalEList<?>)getGeneralization()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getGeneralization()).basicRemove(otherEnd, msgs);
 			case Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__ANNOTATION:
-				return ((InternalEList<?>)getAnnotation()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getAnnotation()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -308,26 +330,26 @@ public class StaticPackageDiagramGraphicInformationImpl extends DiagramGraphicIn
 		switch (featureID) {
 			case Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__ENTRY_POINT:
 				getEntryPoint().clear();
-				getEntryPoint().addAll((Collection<? extends NodeWithConnectionGraphicInformation>)newValue);
+				getEntryPoint().addAll((Collection<? extends NodeWithConnectionGraphicInformation>) newValue);
 				return;
 			case Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__CLASS:
 				getClass_().clear();
-				getClass_().addAll((Collection<? extends ClassGraphicInformation>)newValue);
+				getClass_().addAll((Collection<? extends ClassGraphicInformation>) newValue);
 				return;
 			case Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__ASSOCIATION:
 				getAssociation().clear();
-				getAssociation().addAll((Collection<? extends GraphEdgeGraphicInformation>)newValue);
+				getAssociation().addAll((Collection<? extends GraphEdgeGraphicInformation>) newValue);
 				return;
 			case Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__GENERALIZATION:
 				getGeneralization().clear();
-				getGeneralization().addAll((Collection<? extends GraphEdgeGraphicInformation>)newValue);
+				getGeneralization().addAll((Collection<? extends GraphEdgeGraphicInformation>) newValue);
 				return;
 			case Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__ANNOTATION:
 				getAnnotation().clear();
-				getAnnotation().addAll((Collection<? extends NodeWithConnectionGraphicInformation>)newValue);
+				getAnnotation().addAll((Collection<? extends NodeWithConnectionGraphicInformation>) newValue);
 				return;
 			case Mif2Package.STATIC_PACKAGE_DIAGRAM_GRAPHIC_INFORMATION__PRESENTATION:
-				setPresentation((StaticModelDiagramPresentationKind)newValue);
+				setPresentation((StaticModelDiagramPresentationKind) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -394,13 +416,19 @@ public class StaticPackageDiagramGraphicInformationImpl extends DiagramGraphicIn
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (presentation: ");
-		if (presentationESet) result.append(presentation); else result.append("<unset>");
+		if (presentationESet) {
+			result.append(presentation);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}
 
-} //StaticPackageDiagramGraphicInformationImpl
+} // StaticPackageDiagramGraphicInformationImpl

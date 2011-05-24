@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2006, 2009 David A Carlson
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.emf.hl7.mif2;
 
 import java.util.Arrays;
@@ -79,11 +83,7 @@ public enum CodingStrengthKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final CodingStrengthKind[] VALUES_ARRAY =
-		new CodingStrengthKind[] {
-			CNE,
-			CWE,
-		};
+	private static final CodingStrengthKind[] VALUES_ARRAY = new CodingStrengthKind[] { CNE, CWE, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Coding Strength Kind</b></em>' enumerators.
@@ -133,8 +133,10 @@ public enum CodingStrengthKind implements Enumerator {
 	 */
 	public static CodingStrengthKind get(int value) {
 		switch (value) {
-			case CNE_VALUE: return CNE;
-			case CWE_VALUE: return CWE;
+			case CNE_VALUE:
+				return CNE;
+			case CWE_VALUE:
+				return CWE;
 		}
 		return null;
 	}
@@ -178,7 +180,7 @@ public enum CodingStrengthKind implements Enumerator {
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
@@ -187,7 +189,7 @@ public enum CodingStrengthKind implements Enumerator {
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
@@ -196,7 +198,7 @@ public enum CodingStrengthKind implements Enumerator {
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
@@ -209,5 +211,5 @@ public enum CodingStrengthKind implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
-} //CodingStrengthKind
+
+} // CodingStrengthKind
