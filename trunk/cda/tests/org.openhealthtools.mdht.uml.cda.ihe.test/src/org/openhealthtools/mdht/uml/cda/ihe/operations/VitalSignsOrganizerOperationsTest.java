@@ -125,17 +125,6 @@ public class VitalSignsOrganizerOperationsTest extends
 					return VitalSignsOrganizerOperations.validateIHEVitalSignsOrganizerVitalSignObservation(
 						(VitalSignsOrganizer) objectToTest, diagnostician, map);
 				}
-			},
-
-			// Information Source
-			// -------------------------------------------------------------
-			new InformationSourceCCDValidationTest() {
-				@Override
-				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
-						final Map<Object, Object> map) {
-					return org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperations.validateVitalSignsOrganizerInformationSource(
-						(org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer) objectToTest, diagnostician, map);
-				}
 			}
 
 	}; // TEST_CASE_ARRAY
