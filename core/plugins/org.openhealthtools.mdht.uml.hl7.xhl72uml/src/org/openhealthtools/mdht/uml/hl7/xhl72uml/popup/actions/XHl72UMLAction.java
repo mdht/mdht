@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 1010 Sean Muir
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Sean Muir (JKM Software) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.hl7.xhl72uml.popup.actions;
 
 import java.io.IOException;
@@ -6,6 +16,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.xml.datatype.DatatypeConstants;
 
 import org.eclipse.core.internal.resources.File;
 import org.eclipse.core.resources.IResource;
@@ -22,6 +34,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
@@ -52,10 +65,6 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UML22UMLResource;
-import org.openhealthtools.hl7.smd.core.model.hl7metamodel.staticmetamodel.HL7StaticModel;
-import org.openhealthtools.hl7.smd.core.model.hl7metamodel.staticmetamodel.StaticmetamodelFactory;
-import org.openhealthtools.mdht.uml.hdf.util.HL7Resource;
-import org.openhealthtools.mdht.uml.hl7.core.util.DatatypeConstants;
 import org.openhealthtools.mdht.uml.hl7.xhl72uml.Activator;
 
 @SuppressWarnings("restriction")
@@ -136,7 +145,8 @@ public class XHl72UMLAction implements IObjectActionDelegate {
 			dlg.open();
 
 		} catch (InvocationTargetException invocationTargetException) {
-			MessageDialog.openError(shell, ActionTitle, "Error Processing Export " + invocationTargetException.getMessage());
+			MessageDialog.openError(
+				shell, ActionTitle, "Error Processing Export " + invocationTargetException.getMessage());
 
 		} catch (InterruptedException interruptedException) {
 			MessageDialog.openError(shell, ActionTitle, "Error Processing Export " + interruptedException.getMessage());
@@ -147,7 +157,6 @@ public class XHl72UMLAction implements IObjectActionDelegate {
 		}
 	}
 
-	
 	/**
 	 * umlPackage is cache used to support dialog content after qvt transformation is completed
 	 */
@@ -160,6 +169,7 @@ public class XHl72UMLAction implements IObjectActionDelegate {
 
 	/**
 	 * xhl72uml fires off qvt transformation
+	 * 
 	 * @param xhl7Path
 	 * @param umlPath
 	 */
@@ -180,27 +190,30 @@ public class XHl72UMLAction implements IObjectActionDelegate {
 
 		ResourceSet resourceSet = new ResourceSetImpl();
 
-		resourceSet.getLoadOptions().put(XMIResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+		resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
 
-		resourceSet.getLoadOptions().put(XMIResource.OPTION_DEFER_IDREF_RESOLUTION, Boolean.FALSE);
+		resourceSet.getLoadOptions().put(XMLResource.OPTION_DEFER_IDREF_RESOLUTION, Boolean.FALSE);
 
-		resourceSet.getLoadOptions().put(XMIResource.OPTION_DEFER_ATTACHMENT, Boolean.FALSE);
+		resourceSet.getLoadOptions().put(XMLResource.OPTION_DEFER_ATTACHMENT, Boolean.FALSE);
 
 		// Create the UML model target
 		Resource umlResource = UML22UMLResource.Factory.INSTANCE.createResource(umlModelURI);
 
 		// Load the xlh7 model from the workspace
-		HL7StaticModel staticModel = (HL7StaticModel) EcoreUtil.getObjectByType(resourceSet.getResource(hl7ModelURI, true).getContents(),
-				StaticmetamodelFactory.eINSTANCE.createHL7StaticModel().eClass());
+		HL7StaticModel staticModel = (HL7StaticModel) EcoreUtil.getObjectByType(
+			resourceSet.getResource(hl7ModelURI, true).getContents(),
+			StaticmetamodelFactory.eINSTANCE.createHL7StaticModel().eClass());
 
 		// Load the mdht uml profiles from the plugin
-		Profile hdfProfile = (Profile) EcoreUtil.getObjectByType(resourceSet.getResource(hdfProfileURI, true).getContents(), UMLPackage.eINSTANCE.getProfile());
+		Profile hdfProfile = (Profile) EcoreUtil.getObjectByType(
+			resourceSet.getResource(hdfProfileURI, true).getContents(), UMLPackage.eINSTANCE.getProfile());
 
-		Profile rimProfile = (Profile) EcoreUtil.getObjectByType(resourceSet.getResource(rimProfileURI, true).getContents(), UMLPackage.eINSTANCE.getProfile());
+		Profile rimProfile = (Profile) EcoreUtil.getObjectByType(
+			resourceSet.getResource(rimProfileURI, true).getContents(), UMLPackage.eINSTANCE.getProfile());
 
 		// Load the mdht uml data types library for hl7
-		Package datatypesLibrary = (Package) EcoreUtil.getObjectByType(resourceSet.getResource(hl7UMLDataTypeModel, true).getContents(), UMLPackage.eINSTANCE
-				.getPackage());
+		Package datatypesLibrary = (Package) EcoreUtil.getObjectByType(
+			resourceSet.getResource(hl7UMLDataTypeModel, true).getContents(), UMLPackage.eINSTANCE.getPackage());
 
 		// Create the qvt transform executer
 		EList<EObject> inModels = new BasicEList<EObject>();
@@ -240,15 +253,21 @@ public class XHl72UMLAction implements IObjectActionDelegate {
 			umlResource.save(options);
 
 		} catch (CoreException e) {
-			MessageDialog.openInformation(shell, "org.openhealthtools.mdht.uml.hl7.xhl72uml", "XHl72UMLAction CoreException " + e.getLocalizedMessage());
+			MessageDialog.openInformation(
+				shell, "org.openhealthtools.mdht.uml.hl7.xhl72uml",
+				"XHl72UMLAction CoreException " + e.getLocalizedMessage());
 
 			if (result != null) {
-				MessageDialog.openInformation(shell, "org.openhealthtools.mdht.uml.hl7.xhl72uml", "Console Output is " + result.getConsoleOutput());
+				MessageDialog.openInformation(shell, "org.openhealthtools.mdht.uml.hl7.xhl72uml", "Console Output is " +
+						result.getConsoleOutput());
 			}
 		} catch (IOException e) {
-			MessageDialog.openInformation(shell, "org.openhealthtools.mdht.uml.hl7.xhl72uml", "XHl72UMLAction IOException " + e.getLocalizedMessage());
+			MessageDialog.openInformation(
+				shell, "org.openhealthtools.mdht.uml.hl7.xhl72uml",
+				"XHl72UMLAction IOException " + e.getLocalizedMessage());
 			if (result != null) {
-				MessageDialog.openInformation(shell, "org.openhealthtools.mdht.uml.hl7.xhl72uml", "Console Output is " + result.getConsoleOutput());
+				MessageDialog.openInformation(shell, "org.openhealthtools.mdht.uml.hl7.xhl72uml", "Console Output is " +
+						result.getConsoleOutput());
 			}
 		}
 
@@ -256,17 +275,14 @@ public class XHl72UMLAction implements IObjectActionDelegate {
 
 	public void selectionChanged(IAction action, ISelection selection) {
 
-	
-
 	}
-
-
 
 	/**
 	 * UMLModelMetricsDialog displays the results from the qvt transformation
 	 * Give them something to look at insted of just an okay button
+	 * 
 	 * @author seanmuir
-	 *
+	 * 
 	 */
 	public class UMLModelMetricsDialog extends TitleAreaDialog {
 
@@ -281,15 +297,17 @@ public class XHl72UMLAction implements IObjectActionDelegate {
 
 		}
 
+		@Override
 		public void create() {
 			super.create();
 			setTitle("HL7 DSL to UML");
-			if (umlPackage  != null) {
+			if (umlPackage != null) {
 				setMessage("UML Model Metrics for " + umlPackage.getName());
 			}
 
 		}
 
+		@Override
 		protected Control createDialogArea(Composite parent) {
 
 			final Composite area = new Composite(parent, SWT.NULL);
@@ -319,10 +337,10 @@ public class XHl72UMLAction implements IObjectActionDelegate {
 			if (umlPackage != null) {
 
 				final TableItem elements = new TableItem(table, SWT.NONE);
-				elements.setText(new String[] { "UML Element(s)", String.valueOf(umlPackage .getOwnedElements().size()) });
+				elements.setText(new String[] { "UML Element(s)", String.valueOf(umlPackage.getOwnedElements().size()) });
 
 				int i = 0;
-				for (Element e : umlPackage .getOwnedElements()) {
+				for (Element e : umlPackage.getOwnedElements()) {
 					i += e.getOwnedElements().size();
 				}
 
@@ -330,16 +348,19 @@ public class XHl72UMLAction implements IObjectActionDelegate {
 				attributes.setText(new String[] { "UML Attribute(s)", String.valueOf(i) });
 
 				final TableItem profiles = new TableItem(table, SWT.NONE);
-				profiles.setText(new String[] { "UML Profiles(s)", String.valueOf(umlPackage.getAllAppliedProfiles().size()) });
+				profiles.setText(new String[] {
+						"UML Profiles(s)", String.valueOf(umlPackage.getAllAppliedProfiles().size()) });
 
 				final TableItem imports = new TableItem(table, SWT.NONE);
-				imports.setText(new String[] { "UML Imported Package(s) ", String.valueOf(umlPackage.getImportedPackages().size()) });
+				imports.setText(new String[] {
+						"UML Imported Package(s) ", String.valueOf(umlPackage.getImportedPackages().size()) });
 
 			}
 
 			return area;
 		}
 
+		@Override
 		protected void createButtonsForButtonBar(Composite parent) {
 
 			Button openButton = createButton(parent, OPEN, "Open QVT Log", true);
@@ -347,6 +368,7 @@ public class XHl72UMLAction implements IObjectActionDelegate {
 			openButton.setEnabled(true);
 
 			openButton.addSelectionListener(new SelectionAdapter() {
+				@Override
 				public void widgetSelected(SelectionEvent e) {
 					UMLQVTLogDialog dlg = new UMLQVTLogDialog(shell);
 					dlg.create();
@@ -357,6 +379,7 @@ public class XHl72UMLAction implements IObjectActionDelegate {
 			Button okButton = createButton(parent, OK, "Ok", false);
 
 			okButton.addSelectionListener(new SelectionAdapter() {
+				@Override
 				public void widgetSelected(SelectionEvent e) {
 					setReturnCode(OK);
 					close();
@@ -368,8 +391,9 @@ public class XHl72UMLAction implements IObjectActionDelegate {
 
 	/**
 	 * UMLQVTLogDialog dumps the qvt console results to a text widget to allow browsing
+	 * 
 	 * @author seanmuir
-	 *
+	 * 
 	 */
 	public class UMLQVTLogDialog extends TitleAreaDialog {
 
@@ -384,15 +408,17 @@ public class XHl72UMLAction implements IObjectActionDelegate {
 
 		}
 
+		@Override
 		public void create() {
 			super.create();
 			setTitle("HL7 DSL to UML");
-			if (umlPackage  != null) {
+			if (umlPackage != null) {
 				setMessage("UML Model Metrics for " + umlPackage.getName());
 			}
 
 		}
 
+		@Override
 		protected Control createDialogArea(Composite parent) {
 
 			final Composite area = new Composite(parent, SWT.NULL);
@@ -411,11 +437,13 @@ public class XHl72UMLAction implements IObjectActionDelegate {
 			return area;
 		}
 
+		@Override
 		protected void createButtonsForButtonBar(Composite parent) {
 
 			Button okButton = createButton(parent, OK, "Ok", false);
 
 			okButton.addSelectionListener(new SelectionAdapter() {
+				@Override
 				public void widgetSelected(SelectionEvent e) {
 					setReturnCode(OK);
 					close();
