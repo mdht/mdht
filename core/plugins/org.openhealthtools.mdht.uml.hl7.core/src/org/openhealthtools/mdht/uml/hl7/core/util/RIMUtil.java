@@ -19,8 +19,8 @@ import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.hdf.util.IRIMProfileConstants;
 
 /**
-* Common utility methods for working with the HL7 RIM model.
-*/
+ * Common utility methods for working with the HL7 RIM model.
+ */
 public class RIMUtil {
 
 	/**
@@ -28,23 +28,28 @@ public class RIMUtil {
 	 * This search does not consider qualified names, but only looks for a matching
 	 * local name.
 	 * 
-	 * @param basePackage	base package for the model in which library is imported
-	 * @param className		RIM class name
+	 * @param basePackage
+	 *            base package for the model in which library is imported
+	 * @param className
+	 *            RIM class name
 	 * @return a Class, or null if not found
 	 */
 	public static Class getClassByName(Package basePackage, String localName) {
 		// import the library
 		Package library = UMLUtil.importLibrary(basePackage, RIMConstants.HL7_RIM_LIBRARY_URI);
-		
+
 		return UMLUtil.getClassByName(library, localName);
 	}
 
 	/**
 	 * Search for the specified property within a RIM class.
 	 * 
-	 * @param basePackage	base package for the model in which library is imported
-	 * @param className		RIM class name
-	 * @param propertyName	RIM property name
+	 * @param basePackage
+	 *            base package for the model in which library is imported
+	 * @param className
+	 *            RIM class name
+	 * @param propertyName
+	 *            RIM property name
 	 * @return
 	 */
 	public static Property getRIMProperty(Package basePackage, String className, String propertyName) {
@@ -58,14 +63,13 @@ public class RIMUtil {
 	/**
 	 * Test if the given model attribute name is a RIM structural attribute.
 	 * 
-	 * @param name	attribute name
+	 * @param name
+	 *            attribute name
 	 * @return true if given name is structural
 	 */
 	public static boolean isStructuralAttribute(String name) {
-		return (IRIMProfileConstants.CLASS_CODE.equals(name)
-					|| IRIMProfileConstants.TYPE_CODE.equals(name)
-					|| IRIMProfileConstants.MOOD_CODE.equals(name)
-					|| IRIMProfileConstants.DETERMINER_CODE.equals(name));
+		return (IRIMProfileConstants.CLASS_CODE.equals(name) || IRIMProfileConstants.TYPE_CODE.equals(name) ||
+				IRIMProfileConstants.MOOD_CODE.equals(name) || IRIMProfileConstants.DETERMINER_CODE.equals(name));
 	}
 
 }
