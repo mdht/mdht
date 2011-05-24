@@ -48,15 +48,19 @@ import org.openhealthtools.mdht.uml.cda.transform.PluginPropertiesUtil;
 
 public class RemoveConstraintAnnotationsAction implements IObjectActionDelegate {
 	public static final String VALIDATION_ERROR = "constraints.validation.error";
+
 	public static final String VALIDATION_WARNING = "constraints.validation.warning";
+
 	public static final String VALIDATION_INFO = "constraints.validation.info";
 
 	public static final String SEVERITY_ERROR = "ERROR";
+
 	public static final String SEVERITY_WARNING = "WARNING";
+
 	public static final String SEVERITY_INFO = "INFO";
 
 	private NamedElement namedElement;
-	
+
 	public RemoveConstraintAnnotationsAction() {
 		super();
 	}
@@ -67,13 +71,12 @@ public class RemoveConstraintAnnotationsAction implements IObjectActionDelegate 
 	public void run(IAction action) {
 		try {
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
-			IUndoableOperation operation = new AbstractEMFOperation(
-					editingDomain, "Remove Constraint Annotations") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Remove Constraint Annotations") {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 
-					TreeIterator iterator = EcoreUtil.getAllContents(
-							Collections.singletonList(namedElement));
-					
+					TreeIterator<?> iterator = EcoreUtil.getAllContents(Collections.singletonList(namedElement));
+
 					while (iterator != null && iterator.hasNext()) {
 						Object child = iterator.next();
 						if (child instanceof Class) {
@@ -83,29 +86,32 @@ public class RemoveConstraintAnnotationsAction implements IObjectActionDelegate 
 							String infos = annotationsUtil.getAnnotation(VALIDATION_INFO);
 
 							PluginPropertiesUtil propertiesUtil = new PluginPropertiesUtil(childClass.eResource());
-							
+
 							for (Constraint constraint : childClass.getOwnedRules()) {
 								String severity = SEVERITY_ERROR;
-								if (warnings != null && warnings.indexOf(constraint.getName()) != -1)
+								if (warnings != null && warnings.indexOf(constraint.getName()) != -1) {
 									severity = SEVERITY_WARNING;
-								else if(infos != null && infos.indexOf(constraint.getName()) != -1)
+								} else if (infos != null && infos.indexOf(constraint.getName()) != -1) {
 									severity = SEVERITY_INFO;
-								
+								}
+
 								String message = propertiesUtil.getProperty(constraint.getName().trim());
-								
+
 								Stereotype validation = CDAProfileUtil.applyCDAStereotype(
-										constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
+									constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
 								constraint.setValue(validation, ICDAProfileConstants.VALIDATION_SEVERITY, severity);
 								constraint.setValue(validation, ICDAProfileConstants.VALIDATION_MESSAGE, message);
 							}
-							
+
 							annotationsUtil.removeAnnotation(VALIDATION_ERROR);
 							annotationsUtil.removeAnnotation(VALIDATION_WARNING);
 							annotationsUtil.removeAnnotation(VALIDATION_INFO);
 							annotationsUtil.saveAnnotations();
 
-							Stereotype eClass = EcoreTransformUtil.getEcoreStereotype(childClass, UMLUtil.STEREOTYPE__E_CLASS);
+							Stereotype eClass = EcoreTransformUtil.getEcoreStereotype(
+								childClass, UMLUtil.STEREOTYPE__E_CLASS);
 							if (eClass != null) {
+								@SuppressWarnings("unchecked")
 								List<String> annotations = (List<String>) childClass.getValue(eClass, "annotations");
 								if (annotations.isEmpty()) {
 									childClass.unapplyStereotype(eClass);
@@ -114,17 +120,18 @@ public class RemoveConstraintAnnotationsAction implements IObjectActionDelegate 
 						}
 					}
 
-			        return Status.OK_STATUS;
-			    }};
+					return Status.OK_STATUS;
+				}
+			};
 
-		    try {
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), null);
 
-		    } catch (ExecutionException ee) {
-		    	ee.printStackTrace();
-		    }
+			} catch (ExecutionException ee) {
+				ee.printStackTrace();
+			}
 
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
@@ -142,17 +149,17 @@ public class RemoveConstraintAnnotationsAction implements IObjectActionDelegate 
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
 		namedElement = null;
-		
-		if (((IStructuredSelection)selection).size() == 1) {
-			Object selected = ((IStructuredSelection)selection).getFirstElement();
+
+		if (((IStructuredSelection) selection).size() == 1) {
+			Object selected = ((IStructuredSelection) selection).getFirstElement();
 			if (selected instanceof IAdaptable) {
-				selected = (EObject) ((IAdaptable) selected).getAdapter(EObject.class);
+				selected = ((IAdaptable) selected).getAdapter(EObject.class);
 			}
 			if (selected instanceof NamedElement) {
 				namedElement = (NamedElement) selected;
 			}
 		}
-		
+
 		action.setEnabled(namedElement != null);
 	}
 
