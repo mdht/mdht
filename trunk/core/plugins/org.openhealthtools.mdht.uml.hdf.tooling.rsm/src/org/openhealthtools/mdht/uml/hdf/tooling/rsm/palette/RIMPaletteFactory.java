@@ -32,175 +32,157 @@ import org.openhealthtools.mdht.uml.hdf.tooling.rsm.l10n.RIMMessages;
 import org.openhealthtools.mdht.uml.hdf.tooling.rsm.types.RIMElementTypes;
 import org.openhealthtools.mdht.uml.hdf.tooling.rsm.utils.RIMUtil;
 
-
-
 /**
  * @generated
  */
 public class RIMPaletteFactory {
 
-    /**
-     * @generated
-     */
-    private ResourceSet resourceSet;
-    
-    /**
-     * @generated
-     */
-    public RIMPaletteFactory(DiagramEditor editor) {
-        this.resourceSet = editor.getEditingDomain().getResourceSet();
-    }
-    
-    /**
-     * @generated
-     */
-    public void fillPalette(PaletteRoot paletteRoot) {
-        paletteRoot.add(createRIMDrawer());
-    }
+	/**
+	 * @generated
+	 */
+	private ResourceSet resourceSet;
 
-    /**
-     * Modified to change order of items in palette.
-     * @generated NOT
-     */
-    private PaletteDrawer createRIMDrawer() {
-        PaletteDrawer paletteDrawer = new PaletteDrawer(RIMMessages.PaletteDrawer_RIM_name);
-        paletteDrawer.setId("RIM"); //$NON-NLS-1$
-        paletteDrawer.setDescription(RIMMessages.PaletteDrawer_RIM_description);
+	/**
+	 * @generated
+	 */
+	public RIMPaletteFactory(DiagramEditor editor) {
+		this.resourceSet = editor.getEditingDomain().getResourceSet();
+	}
+
+	/**
+	 * @generated
+	 */
+	public void fillPalette(PaletteRoot paletteRoot) {
+		paletteRoot.add(createRIMDrawer());
+	}
+
+	/**
+	 * Modified to change order of items in palette.
+	 * 
+	 * @generated NOT
+	 */
+	private PaletteDrawer createRIMDrawer() {
+		PaletteDrawer paletteDrawer = new PaletteDrawer(RIMMessages.PaletteDrawer_RIM_name);
+		paletteDrawer.setId("RIM"); //$NON-NLS-1$
+		paletteDrawer.setDescription(RIMMessages.PaletteDrawer_RIM_description);
 		paletteDrawer.setInitialState(PaletteDrawer.INITIAL_STATE_CLOSED);
-        paletteDrawer.add(create_Act__ClassCreationTool());
-        paletteDrawer.add(create_Entity__ClassCreationTool());
-        paletteDrawer.add(create_Role__ClassCreationTool());
-        paletteDrawer.add(create_ActRelationship__ClassCreationTool());
-        paletteDrawer.add(create_Participation__ClassCreationTool());
-        paletteDrawer.add(create_RoleLink__ClassCreationTool());
-        return paletteDrawer;
-    }
+		paletteDrawer.add(create_Act__ClassCreationTool());
+		paletteDrawer.add(create_Entity__ClassCreationTool());
+		paletteDrawer.add(create_Role__ClassCreationTool());
+		paletteDrawer.add(create_ActRelationship__ClassCreationTool());
+		paletteDrawer.add(create_Participation__ClassCreationTool());
+		paletteDrawer.add(create_RoleLink__ClassCreationTool());
+		return paletteDrawer;
+	}
 
-    /**
-     * @generated
-     */
-    private ToolEntry create_ActRelationship__ClassCreationTool() {
-        ImageDescriptor smallImage = RIMUtil.getSmallImage(RIMElementTypes._ACTRELATIONSHIP__CLASS, resourceSet);
-        ImageDescriptor largeImage = RIMUtil.getLargeImage(RIMElementTypes._ACTRELATIONSHIP__CLASS, resourceSet);    
-    
-        return new NodeToolEntry(
-                "RIM._ActRelationship__Class", //$NON-NLS-1$
-                RIMMessages.PaletteTool__ActRelationship__Class_name,
-                RIMMessages.PaletteTool__ActRelationship__Class_description,
-                smallImage,
-                largeImage,
-                RIMElementTypes._ACTRELATIONSHIP__CLASS);
-    }
+	/**
+	 * @generated
+	 */
+	private ToolEntry create_ActRelationship__ClassCreationTool() {
+		ImageDescriptor smallImage = RIMUtil.getSmallImage(RIMElementTypes._ACTRELATIONSHIP__CLASS, resourceSet);
+		ImageDescriptor largeImage = RIMUtil.getLargeImage(RIMElementTypes._ACTRELATIONSHIP__CLASS, resourceSet);
 
-    /**
-     * @generated
-     */
-    private ToolEntry create_Act__ClassCreationTool() {
-        ImageDescriptor smallImage = RIMUtil.getSmallImage(RIMElementTypes._ACT__CLASS, resourceSet);
-        ImageDescriptor largeImage = RIMUtil.getLargeImage(RIMElementTypes._ACT__CLASS, resourceSet);    
-    
-        return new NodeToolEntry(
-                "RIM._Act__Class", //$NON-NLS-1$
-                RIMMessages.PaletteTool__Act__Class_name,
-                RIMMessages.PaletteTool__Act__Class_description,
-                smallImage,
-                largeImage,
-                RIMElementTypes._ACT__CLASS);
-    }
+		return new NodeToolEntry(
+			"RIM._ActRelationship__Class", //$NON-NLS-1$
+			RIMMessages.PaletteTool__ActRelationship__Class_name,
+			RIMMessages.PaletteTool__ActRelationship__Class_description, smallImage, largeImage,
+			RIMElementTypes._ACTRELATIONSHIP__CLASS);
+	}
 
-    /**
-     * @generated
-     */
-    private ToolEntry create_RoleLink__ClassCreationTool() {
-        ImageDescriptor smallImage = RIMUtil.getSmallImage(RIMElementTypes._ROLELINK__CLASS, resourceSet);
-        ImageDescriptor largeImage = RIMUtil.getLargeImage(RIMElementTypes._ROLELINK__CLASS, resourceSet);    
-    
-        return new NodeToolEntry(
-                "RIM._RoleLink__Class", //$NON-NLS-1$
-                RIMMessages.PaletteTool__RoleLink__Class_name,
-                RIMMessages.PaletteTool__RoleLink__Class_description,
-                smallImage,
-                largeImage,
-                RIMElementTypes._ROLELINK__CLASS);
-    }
+	/**
+	 * @generated
+	 */
+	private ToolEntry create_Act__ClassCreationTool() {
+		ImageDescriptor smallImage = RIMUtil.getSmallImage(RIMElementTypes._ACT__CLASS, resourceSet);
+		ImageDescriptor largeImage = RIMUtil.getLargeImage(RIMElementTypes._ACT__CLASS, resourceSet);
 
-    /**
-     * @generated
-     */
-    private ToolEntry create_Participation__ClassCreationTool() {
-        ImageDescriptor smallImage = RIMUtil.getSmallImage(RIMElementTypes._PARTICIPATION__CLASS, resourceSet);
-        ImageDescriptor largeImage = RIMUtil.getLargeImage(RIMElementTypes._PARTICIPATION__CLASS, resourceSet);    
-    
-        return new NodeToolEntry(
-                "RIM._Participation__Class", //$NON-NLS-1$
-                RIMMessages.PaletteTool__Participation__Class_name,
-                RIMMessages.PaletteTool__Participation__Class_description,
-                smallImage,
-                largeImage,
-                RIMElementTypes._PARTICIPATION__CLASS);
-    }
+		return new NodeToolEntry(
+			"RIM._Act__Class", //$NON-NLS-1$
+			RIMMessages.PaletteTool__Act__Class_name, RIMMessages.PaletteTool__Act__Class_description, smallImage,
+			largeImage, RIMElementTypes._ACT__CLASS);
+	}
 
-    /**
-     * @generated
-     */
-    private ToolEntry create_Role__ClassCreationTool() {
-        ImageDescriptor smallImage = RIMUtil.getSmallImage(RIMElementTypes._ROLE__CLASS, resourceSet);
-        ImageDescriptor largeImage = RIMUtil.getLargeImage(RIMElementTypes._ROLE__CLASS, resourceSet);    
-    
-        return new NodeToolEntry(
-                "RIM._Role__Class", //$NON-NLS-1$
-                RIMMessages.PaletteTool__Role__Class_name,
-                RIMMessages.PaletteTool__Role__Class_description,
-                smallImage,
-                largeImage,
-                RIMElementTypes._ROLE__CLASS);
-    }
+	/**
+	 * @generated
+	 */
+	private ToolEntry create_RoleLink__ClassCreationTool() {
+		ImageDescriptor smallImage = RIMUtil.getSmallImage(RIMElementTypes._ROLELINK__CLASS, resourceSet);
+		ImageDescriptor largeImage = RIMUtil.getLargeImage(RIMElementTypes._ROLELINK__CLASS, resourceSet);
 
-    /**
-     * @generated
-     */
-    private ToolEntry create_Entity__ClassCreationTool() {
-        ImageDescriptor smallImage = RIMUtil.getSmallImage(RIMElementTypes._ENTITY__CLASS, resourceSet);
-        ImageDescriptor largeImage = RIMUtil.getLargeImage(RIMElementTypes._ENTITY__CLASS, resourceSet);    
-    
-        return new NodeToolEntry(
-                "RIM._Entity__Class", //$NON-NLS-1$
-                RIMMessages.PaletteTool__Entity__Class_name,
-                RIMMessages.PaletteTool__Entity__Class_description,
-                smallImage,
-                largeImage,
-                RIMElementTypes._ENTITY__CLASS);
-    }      
+		return new NodeToolEntry(
+			"RIM._RoleLink__Class", //$NON-NLS-1$
+			RIMMessages.PaletteTool__RoleLink__Class_name, RIMMessages.PaletteTool__RoleLink__Class_description,
+			smallImage, largeImage, RIMElementTypes._ROLELINK__CLASS);
+	}
 
-    /**
-     * @generated
-     */
-    private static class NodeToolEntry
-        extends ToolEntry {
+	/**
+	 * @generated
+	 */
+	private ToolEntry create_Participation__ClassCreationTool() {
+		ImageDescriptor smallImage = RIMUtil.getSmallImage(RIMElementTypes._PARTICIPATION__CLASS, resourceSet);
+		ImageDescriptor largeImage = RIMUtil.getLargeImage(RIMElementTypes._PARTICIPATION__CLASS, resourceSet);
 
-        /**
-         * @generated
-         */
-        private final IElementType elementType;
+		return new NodeToolEntry(
+			"RIM._Participation__Class", //$NON-NLS-1$
+			RIMMessages.PaletteTool__Participation__Class_name,
+			RIMMessages.PaletteTool__Participation__Class_description, smallImage, largeImage,
+			RIMElementTypes._PARTICIPATION__CLASS);
+	}
 
-        /**
-         * @generated
-         */
-        private NodeToolEntry(String id, String title, String description,
-                ImageDescriptor smallIcon, ImageDescriptor largeIcon,
-                IElementType elementType) {
-            super(title, description, smallIcon, largeIcon);
-            setId(id);
-            this.elementType = elementType;
-        }
+	/**
+	 * @generated
+	 */
+	private ToolEntry create_Role__ClassCreationTool() {
+		ImageDescriptor smallImage = RIMUtil.getSmallImage(RIMElementTypes._ROLE__CLASS, resourceSet);
+		ImageDescriptor largeImage = RIMUtil.getLargeImage(RIMElementTypes._ROLE__CLASS, resourceSet);
 
-        /**
-         * @generated
-         */
-        public Tool createTool() {
-            Tool tool = new CreationTool(elementType);
-            return tool;
-        }
-        
-    }
+		return new NodeToolEntry(
+			"RIM._Role__Class", //$NON-NLS-1$
+			RIMMessages.PaletteTool__Role__Class_name, RIMMessages.PaletteTool__Role__Class_description, smallImage,
+			largeImage, RIMElementTypes._ROLE__CLASS);
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry create_Entity__ClassCreationTool() {
+		ImageDescriptor smallImage = RIMUtil.getSmallImage(RIMElementTypes._ENTITY__CLASS, resourceSet);
+		ImageDescriptor largeImage = RIMUtil.getLargeImage(RIMElementTypes._ENTITY__CLASS, resourceSet);
+
+		return new NodeToolEntry(
+			"RIM._Entity__Class", //$NON-NLS-1$
+			RIMMessages.PaletteTool__Entity__Class_name, RIMMessages.PaletteTool__Entity__Class_description,
+			smallImage, largeImage, RIMElementTypes._ENTITY__CLASS);
+	}
+
+	/**
+	 * @generated
+	 */
+	private static class NodeToolEntry extends ToolEntry {
+
+		/**
+		 * @generated
+		 */
+		private final IElementType elementType;
+
+		/**
+		 * @generated
+		 */
+		private NodeToolEntry(String id, String title, String description, ImageDescriptor smallIcon,
+				ImageDescriptor largeIcon, IElementType elementType) {
+			super(title, description, smallIcon, largeIcon);
+			setId(id);
+			this.elementType = elementType;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public Tool createTool() {
+			Tool tool = new CreationTool(elementType);
+			return tool;
+		}
+
+	}
 }

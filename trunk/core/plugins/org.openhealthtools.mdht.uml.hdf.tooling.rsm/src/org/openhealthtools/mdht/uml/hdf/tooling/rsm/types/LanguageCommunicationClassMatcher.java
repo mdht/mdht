@@ -14,21 +14,19 @@ package org.openhealthtools.mdht.uml.hdf.tooling.rsm.types;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.IElementMatcher;
-import org.eclipse.uml2.uml.Element;
 import org.openhealthtools.mdht.uml.hdf.util.IRIMProfileConstants;
 import org.openhealthtools.mdht.uml.hdf.util.RIMProfileUtil;
 
 /**
  * @generated
  */
-public class LanguageCommunicationClassMatcher
-        implements IElementMatcher {
-    
-    /**
-     * @generated NOT
-     */
-    public boolean matches(EObject eObject) {
-        return RIMElementTypes._LANGUAGECOMMUNICATION__CLASS.getEClass() == eObject.eClass() &&
-        		RIMProfileUtil.isRIMType((Element)eObject, IRIMProfileConstants.LANGUAGE_COMMUNICATION);
-    }
+public class LanguageCommunicationClassMatcher implements IElementMatcher {
+
+	/**
+	 * @generated NOT
+	 */
+	public boolean matches(EObject eObject) {
+		return RIMElementTypes._LANGUAGECOMMUNICATION__CLASS.getEClass() == eObject.eClass() &&
+				RIMProfileUtil.isRIMType((Element) eObject, IRIMProfileConstants.LANGUAGE_COMMUNICATION);
+	}
 }

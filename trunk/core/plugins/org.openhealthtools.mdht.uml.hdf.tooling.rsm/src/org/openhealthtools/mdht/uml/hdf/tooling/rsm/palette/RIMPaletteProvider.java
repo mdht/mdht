@@ -30,34 +30,31 @@ import org.eclipse.ui.IEditorPart;
 /**
  * @generated
  */
-public class RIMPaletteProvider
-        extends AbstractProvider
-        implements IPaletteProvider {
-    
-    /**
-     * @generated
-     */
-    public boolean provides(IOperation operation) {
-        //for palette providers, return false for no reason
-        return false;
-    }
+public class RIMPaletteProvider extends AbstractProvider implements IPaletteProvider {
 
-    /**
-     * @generated
-     */
-    public void contributeToPalette(IEditorPart editor, Object content,
-            PaletteRoot root, Map predefinedEntries) {
-            
-        assert editor instanceof DiagramEditor;
-        
-        new RIMPaletteFactory((DiagramEditor)editor).fillPalette(root);
-    }
+	/**
+	 * @generated
+	 */
+	public boolean provides(IOperation operation) {
+		// for palette providers, return false for no reason
+		return false;
+	}
 
-    /**
-     * @generated
-     */
-    public void setContributions(IConfigurationElement configElement) {
-        //do nothing
-    }
+	/**
+	 * @generated
+	 */
+	public void contributeToPalette(IEditorPart editor, Object content, PaletteRoot root, Map predefinedEntries) {
+
+		assert editor instanceof DiagramEditor;
+
+		new RIMPaletteFactory((DiagramEditor) editor).fillPalette(root);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setContributions(IConfigurationElement configElement) {
+		// do nothing
+	}
 
 }

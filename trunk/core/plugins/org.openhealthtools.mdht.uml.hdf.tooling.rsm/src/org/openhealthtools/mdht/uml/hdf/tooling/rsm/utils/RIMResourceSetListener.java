@@ -28,92 +28,84 @@ import org.eclipse.emf.transaction.ResourceSetChangeEvent;
 import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.RollbackException;
 
-import org.eclipse.gmf.runtime.emf.core.util.EObjectUtil;
-
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 
-import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Stereotype;
-
-import org.eclipse.uml2.uml.util.UMLUtil;
-
 /**
  * @generated
  */
-public class RIMResourceSetListener
-    extends ResourceSetListenerImpl {
+public class RIMResourceSetListener extends ResourceSetListenerImpl {
 
 	/**
 	 * @generated
 	 */
-    public RIMResourceSetListener() {
-        super(NotificationFilter.createNotifierTypeFilter(EObject.class));
-    }
+	public RIMResourceSetListener() {
+		super(NotificationFilter.createNotifierTypeFilter(EObject.class));
+	}
 
 	/**
 	 * @generated
 	 */
-    public boolean isPrecommitOnly() {
-        return true;
-    }
+	@Override
+	public boolean isPrecommitOnly() {
+		return true;
+	}
 
 	/**
 	 * @generated NOT
 	 */
-    public Command transactionAboutToCommit(ResourceSetChangeEvent event)
-        throws RollbackException {
+	@Override
+	public Command transactionAboutToCommit(ResourceSetChangeEvent event) throws RollbackException {
 
-        for (Notification notification : event.getNotifications()) {
-            if (notification.getNotifier() instanceof EObject && notification.getFeature() instanceof EReference) {
-            	EObject stereotypeApplication = (EObject)notification.getNotifier();
-            	Element baseElement = UMLUtil.getBaseElement(stereotypeApplication);
-            	Stereotype stereotype = UMLUtil.getStereotype(stereotypeApplication);
-            	EReference feature = (EReference)notification.getFeature();
-            	
-            	if (baseElement != null && stereotype != null && feature instanceof EReference) {
-            		// the generated code causes bug when old value is a Collection (some Stereotype properties)
-//            		EObject oldValue = (EObject)notification.getOldValue();
-//            		if (oldValue != null) {
-            		Object oldValue = notification.getOldValue();
-            		if (oldValue instanceof EObject) {
-            			Element oldTargetElement = (oldValue instanceof Element) ? (Element)oldValue : UMLUtil.getBaseElement((EObject)oldValue);
-            			
-            			Collection baseElementReferences = EObjectUtil.getReferencers(
-            					baseElement, new EReference[] {NotationPackage.eINSTANCE.getView_Element()});
-            			
-            			Collection oldTargetElementReferencers = EObjectUtil.getReferencers(
-            					oldTargetElement, new EReference[] {NotationPackage.eINSTANCE.getView_Element()});
+		for (Notification notification : event.getNotifications()) {
+			if (notification.getNotifier() instanceof EObject && notification.getFeature() instanceof EReference) {
+				EObject stereotypeApplication = (EObject) notification.getNotifier();
+				Element baseElement = UMLUtil.getBaseElement(stereotypeApplication);
+				Stereotype stereotype = UMLUtil.getStereotype(stereotypeApplication);
+				EReference feature = (EReference) notification.getFeature();
 
-            			Collection<Edge> edges = new HashSet<Edge>();
-            			for (Object baseElementReferencer : baseElementReferences) {
-            				if (baseElementReferencer instanceof Node) {
-            					Node baseElementReferencerNode = (Node)baseElementReferencer;
-            					List sourceEdges = baseElementReferencerNode.getSourceEdges();
-            					if (!sourceEdges.isEmpty()) {
-	            					for (Object oldTargetElementReferencer : oldTargetElementReferencers) {
-	            						if (oldTargetElementReferencer instanceof Node) {
-	            							Node oldTargetElementReferencerNode = (Node)oldTargetElementReferencer;
-	            							for (Object edge : sourceEdges) {
-	            								if (oldTargetElementReferencerNode.equals(((Edge)edge).getTarget())) {
-	            									edges.add((Edge)edge);
-	            								}
-	            							}	
-	            						}
-	            					}
-            					}
-            				}
-            			}
-          					
-     				
-          				
-            		}
-            	}
-            }
-        }
+				if (baseElement != null && stereotype != null && feature instanceof EReference) {
+					// the generated code causes bug when old value is a Collection (some Stereotype properties)
+					// EObject oldValue = (EObject)notification.getOldValue();
+					// if (oldValue != null) {
+					Object oldValue = notification.getOldValue();
+					if (oldValue instanceof EObject) {
+						Element oldTargetElement = (oldValue instanceof Element)
+								? (Element) oldValue
+								: UMLUtil.getBaseElement((EObject) oldValue);
 
-        return null;
-    }
+						Collection baseElementReferences = EObjectUtil.getReferencers(
+							baseElement, new EReference[] { NotationPackage.eINSTANCE.getView_Element() });
+
+						Collection oldTargetElementReferencers = EObjectUtil.getReferencers(
+							oldTargetElement, new EReference[] { NotationPackage.eINSTANCE.getView_Element() });
+
+						Collection<Edge> edges = new HashSet<Edge>();
+						for (Object baseElementReferencer : baseElementReferences) {
+							if (baseElementReferencer instanceof Node) {
+								Node baseElementReferencerNode = (Node) baseElementReferencer;
+								List sourceEdges = baseElementReferencerNode.getSourceEdges();
+								if (!sourceEdges.isEmpty()) {
+									for (Object oldTargetElementReferencer : oldTargetElementReferencers) {
+										if (oldTargetElementReferencer instanceof Node) {
+											Node oldTargetElementReferencerNode = (Node) oldTargetElementReferencer;
+											for (Object edge : sourceEdges) {
+												if (oldTargetElementReferencerNode.equals(((Edge) edge).getTarget())) {
+													edges.add((Edge) edge);
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+
+					}
+				}
+			}
+		}
+
+		return null;
+	}
 }
-

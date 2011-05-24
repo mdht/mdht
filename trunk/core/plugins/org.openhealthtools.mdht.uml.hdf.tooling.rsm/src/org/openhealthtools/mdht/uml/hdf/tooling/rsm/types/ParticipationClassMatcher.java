@@ -16,24 +16,22 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.gmf.runtime.emf.type.core.IElementMatcher;
 
-import org.eclipse.uml2.uml.Element;
 import org.openhealthtools.mdht.uml.hdf.util.IRIMProfileConstants;
 import org.openhealthtools.mdht.uml.hdf.util.RIMProfileUtil;
 
 /**
  * @generated
  */
-public class ParticipationClassMatcher
-        implements IElementMatcher {
-    
-    /**
-     * @generated NOT
-     */
-    public boolean matches(EObject eObject) {
-//        return RIMElementTypes._PARTICIPATION__CLASS.getEClass() == eObject.eClass() &&
-//                ((Element)eObject).getAppliedStereotype(RIMElementTypes._PARTICIPATION__CLASS.getStereotypeName()) != null;
+public class ParticipationClassMatcher implements IElementMatcher {
 
-        return RIMElementTypes._PARTICIPATION__CLASS.getEClass() == eObject.eClass() &&
-        		RIMProfileUtil.isRIMType((Element)eObject, IRIMProfileConstants.PARTICIPATION);
-    }
+	/**
+	 * @generated NOT
+	 */
+	public boolean matches(EObject eObject) {
+		// return RIMElementTypes._PARTICIPATION__CLASS.getEClass() == eObject.eClass() &&
+		// ((Element)eObject).getAppliedStereotype(RIMElementTypes._PARTICIPATION__CLASS.getStereotypeName()) != null;
+
+		return RIMElementTypes._PARTICIPATION__CLASS.getEClass() == eObject.eClass() &&
+				RIMProfileUtil.isRIMType((Element) eObject, IRIMProfileConstants.PARTICIPATION);
+	}
 }
