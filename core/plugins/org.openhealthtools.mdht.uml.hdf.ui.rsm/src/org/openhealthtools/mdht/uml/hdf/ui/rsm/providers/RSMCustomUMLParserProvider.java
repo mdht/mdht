@@ -20,13 +20,13 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
  * 
  * 
  */
-public class RSMCustomUMLParserProvider extends org.openhealthtools.mdht.uml.hdf.ui.providers.CustomUMLParserProvider
-{
+public class RSMCustomUMLParserProvider extends org.openhealthtools.mdht.uml.hdf.ui.providers.CustomUMLParserProvider {
 	// RSM Visual Property ID for UML Properties is actually empty string ""
 	final static String PROPERTYVISUALID = "";
-	
+
+	@Override
 	protected IParser getParser(String visualID) {
-	
+
 		IParser parser = null;
 		if (PROPERTYVISUALID.equals(visualID)) {
 			parser = getCustomPropertyParser();
