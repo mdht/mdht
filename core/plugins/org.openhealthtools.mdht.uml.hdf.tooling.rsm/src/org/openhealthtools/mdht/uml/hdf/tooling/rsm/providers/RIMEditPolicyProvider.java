@@ -32,34 +32,31 @@ import org.openhealthtools.mdht.uml.hdf.tooling.rsm.types.RIMElementTypes;
 /**
  * @generated
  */
-public class RIMEditPolicyProvider extends AbstractProvider
-	implements IEditPolicyProvider {
+public class RIMEditPolicyProvider extends AbstractProvider implements IEditPolicyProvider {
 
 	private final static String PROFILE_ASSOCIATIONS_SEMANTIC_ROLE = "ProfileAssociationsSemanticRole"; //$NON-NLS-1$
-	
+
 	/**
- 	 * @generated
-     */
+	 * @generated
+	 */
 	public void createEditPolicies(EditPart editPart) {
-		editPart.installEditPolicy(PROFILE_ASSOCIATIONS_SEMANTIC_ROLE,
-			new RIMAssociationEditPolicy());
+		editPart.installEditPolicy(PROFILE_ASSOCIATIONS_SEMANTIC_ROLE, new RIMAssociationEditPolicy());
 	}
 
 	/**
- 	 * @generated
-     */	
+	 * @generated
+	 */
 	public boolean provides(IOperation operation) {
 		if (operation instanceof CreateEditPoliciesOperation) {
-			EditPart ep = ((CreateEditPoliciesOperation) operation)
-				.getEditPart();
-			
+			EditPart ep = ((CreateEditPoliciesOperation) operation).getEditPart();
+
 			if (ep instanceof IGraphicalEditPart) {
-				IGraphicalEditPart gep = (IGraphicalEditPart)ep;
+				IGraphicalEditPart gep = (IGraphicalEditPart) ep;
 				EObject element = gep.getNotationView().getElement();
 				if (element != null) {
 					for (IElementType elementType : RIMElementTypes.NODE_TYPES) {
 						if (elementType instanceof ISpecializationType) {
-							if (((ISpecializationType)elementType).getMatcher().matches(element)) {
+							if (((ISpecializationType) elementType).getMatcher().matches(element)) {
 								return true;
 							}
 						}
@@ -70,4 +67,3 @@ public class RIMEditPolicyProvider extends AbstractProvider
 		return false;
 	}
 }
-

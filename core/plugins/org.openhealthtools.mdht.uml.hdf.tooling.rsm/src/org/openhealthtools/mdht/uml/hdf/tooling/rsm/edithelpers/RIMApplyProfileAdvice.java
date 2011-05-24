@@ -12,10 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.hdf.tooling.rsm.edithelpers;
 
-import com.ibm.xtools.common.ui.reduction.util.EditingCapabilitiesUtil;
-
-import com.ibm.xtools.uml.type.UMLElementTypes;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -45,111 +41,108 @@ import org.eclipse.ui.activities.ITriggerPoint;
 import org.eclipse.ui.activities.ITriggerPointManager;
 import org.eclipse.ui.activities.WorkbenchActivityHelper;
 
-import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.ProfileApplication;
-
 import org.openhealthtools.mdht.uml.hdf.tooling.rsm.l10n.RIMMessages;
 import org.openhealthtools.mdht.uml.hdf.tooling.rsm.utils.RIMUtil;
-
 
 /**
  * @generated
  */
-public class RIMApplyProfileAdvice
-        extends AbstractEditHelperAdvice {
+public class RIMApplyProfileAdvice extends AbstractEditHelperAdvice {
 
-    /**
-     * @generated
-     */
-    protected ICommand getAfterCreateRelationshipCommand(
-            final CreateRelationshipRequest request) {
-        if (request.getElementType() == UMLElementTypes.PROFILE_APPLICATION) {
-            return new AbstractTransactionalCommand(request.getEditingDomain(),
-                    RIMMessages.CommandLabel_setProfileEditingCapabilities, null) {
+	/**
+	 * @generated
+	 */
+	@Override
+	protected ICommand getAfterCreateRelationshipCommand(final CreateRelationshipRequest request) {
+		if (request.getElementType() == UMLElementTypes.PROFILE_APPLICATION) {
+			return new AbstractTransactionalCommand(
+				request.getEditingDomain(), RIMMessages.CommandLabel_setProfileEditingCapabilities, null) {
 
-                /**
-                 * @generated
-                 */
-                protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-                        IAdaptable info) throws ExecutionException {
-                    ProfileApplication profileApplication = (ProfileApplication)request.getNewElement();
-                    if (profileApplication.getAppliedProfile().equals(RIMUtil.getProfile())) {
+				/**
+				 * @generated
+				 */
+				@Override
+				protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
+						throws ExecutionException {
+					ProfileApplication profileApplication = (ProfileApplication) request.getNewElement();
+					if (profileApplication.getAppliedProfile().equals(RIMUtil.getProfile())) {
 						EObject root = EcoreUtil.getRootContainer(profileApplication.getApplyingPackage());
-                        if (root instanceof Package) {
-                        	Package rootPackage = (Package)root;
-   
-	                        boolean hasEnabledEditingCapabilities = EditingCapabilitiesUtil.hasEnabledEditingCapabilities(rootPackage);
-	                        if (hasEnabledEditingCapabilities ||
-	                                EditingCapabilitiesUtil.hasDisabledEditingCapabilities(rootPackage)) {
-	                            Set<String> requiredActivityIds = new HashSet<String>();
-	                            Set<String> modelRequiredActivityIds = EditingCapabilitiesUtil.getRequiredActivityIds(rootPackage);
-	                            if (modelRequiredActivityIds != null) {
-	                                requiredActivityIds.addAll(modelRequiredActivityIds);
-	                            }
-	                            requiredActivityIds.add(RIMUtil.RIM_TOOLING_ACTIVITY_ID);
-	                            EditingCapabilitiesUtil.setRequiredActivityIds(rootPackage, requiredActivityIds);
-	                        }
-	                        
-	                        if (hasEnabledEditingCapabilities) {
-	                            EditingCapabilitiesUtil.reenableActivities();
-	                        } else {
-	                            ITriggerPoint point = PlatformUI.getWorkbench()
-	                                    .getActivitySupport().getTriggerPointManager()
-	                                    .getTriggerPoint(ITriggerPointManager.UNKNOWN_TRIGGER_POINT_ID);
-	                            IPluginContribution contribution = new IPluginContribution() {
-	                                
-	                                public String getLocalId() {
-	                                    return RIMUtil.RIM_TOOLING_ACTIVITY_ID;
-	                                }
-	                                
-	                                public String getPluginId() {
-	                                    return org.openhealthtools.mdht.uml.hdf.tooling.rsm.internal.Activator.PLUGIN_ID;
-	                                }
-	                            };
-	                            WorkbenchActivityHelper.allowUseOf(point, contribution);
-	                        }
-	                    }
-                    }
-                    return CommandResult.newOKCommandResult();
-                }
-            };
-        }
-        return super.getAfterCreateRelationshipCommand(request);
-    }
-    
-    /**
-     * @generated
-     */
-    protected ICommand getBeforeDestroyElementCommand(
-            final DestroyElementRequest request) {
-        final EObject elementToDestroy = request.getElementToDestroy();
-        if (elementToDestroy instanceof ProfileApplication) {
-            return new AbstractTransactionalCommand(request.getEditingDomain(),
-                    RIMMessages.CommandLabel_unsetProfileEditingCapabilities, null) {
+						if (root instanceof Package) {
+							Package rootPackage = (Package) root;
 
-                /**
-                 * @generated
-                 */
-                protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-                        IAdaptable info) throws ExecutionException {
-                    ProfileApplication profileApplication = (ProfileApplication)elementToDestroy;
-                    if (profileApplication.getAppliedProfile().equals(RIMUtil.getProfile())) {
-                       EObject root = EcoreUtil.getRootContainer(profileApplication.getApplyingPackage());
-                       if (root instanceof Package) {
-                       		Package rootPackage = (Package)root;
+							boolean hasEnabledEditingCapabilities = EditingCapabilitiesUtil.hasEnabledEditingCapabilities(rootPackage);
+							if (hasEnabledEditingCapabilities ||
+									EditingCapabilitiesUtil.hasDisabledEditingCapabilities(rootPackage)) {
+								Set<String> requiredActivityIds = new HashSet<String>();
+								Set<String> modelRequiredActivityIds = EditingCapabilitiesUtil.getRequiredActivityIds(rootPackage);
+								if (modelRequiredActivityIds != null) {
+									requiredActivityIds.addAll(modelRequiredActivityIds);
+								}
+								requiredActivityIds.add(RIMUtil.RIM_TOOLING_ACTIVITY_ID);
+								EditingCapabilitiesUtil.setRequiredActivityIds(rootPackage, requiredActivityIds);
+							}
+
+							if (hasEnabledEditingCapabilities) {
+								EditingCapabilitiesUtil.reenableActivities();
+							} else {
+								ITriggerPoint point = PlatformUI.getWorkbench().getActivitySupport().getTriggerPointManager().getTriggerPoint(
+									ITriggerPointManager.UNKNOWN_TRIGGER_POINT_ID);
+								IPluginContribution contribution = new IPluginContribution() {
+
+									public String getLocalId() {
+										return RIMUtil.RIM_TOOLING_ACTIVITY_ID;
+									}
+
+									public String getPluginId() {
+										return org.openhealthtools.mdht.uml.hdf.tooling.rsm.internal.Activator.PLUGIN_ID;
+									}
+								};
+								WorkbenchActivityHelper.allowUseOf(point, contribution);
+							}
+						}
+					}
+					return CommandResult.newOKCommandResult();
+				}
+			};
+		}
+		return super.getAfterCreateRelationshipCommand(request);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected ICommand getBeforeDestroyElementCommand(final DestroyElementRequest request) {
+		final EObject elementToDestroy = request.getElementToDestroy();
+		if (elementToDestroy instanceof ProfileApplication) {
+			return new AbstractTransactionalCommand(
+				request.getEditingDomain(), RIMMessages.CommandLabel_unsetProfileEditingCapabilities, null) {
+
+				/**
+				 * @generated
+				 */
+				@Override
+				protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
+						throws ExecutionException {
+					ProfileApplication profileApplication = (ProfileApplication) elementToDestroy;
+					if (profileApplication.getAppliedProfile().equals(RIMUtil.getProfile())) {
+						EObject root = EcoreUtil.getRootContainer(profileApplication.getApplyingPackage());
+						if (root instanceof Package) {
+							Package rootPackage = (Package) root;
 							if (EditingCapabilitiesUtil.hasEnabledEditingCapabilities(rootPackage) ||
-                           		EditingCapabilitiesUtil.hasDisabledEditingCapabilities(rootPackage)) {
-                            	Set<String> requiredActivityIds = new HashSet<String>(EditingCapabilitiesUtil.getRequiredActivityIds(rootPackage));
-                            	requiredActivityIds.remove(RIMUtil.RIM_TOOLING_ACTIVITY_ID);
-                            	EditingCapabilitiesUtil.setRequiredActivityIds(rootPackage, requiredActivityIds);
-                            	EditingCapabilitiesUtil.reenableActivities();
-                            }
-                        }
-                    }
-                    return CommandResult.newOKCommandResult();
-                }
-            };
-        }
-        return super.getAfterDestroyElementCommand(request);
-    }
+									EditingCapabilitiesUtil.hasDisabledEditingCapabilities(rootPackage)) {
+								Set<String> requiredActivityIds = new HashSet<String>(
+									EditingCapabilitiesUtil.getRequiredActivityIds(rootPackage));
+								requiredActivityIds.remove(RIMUtil.RIM_TOOLING_ACTIVITY_ID);
+								EditingCapabilitiesUtil.setRequiredActivityIds(rootPackage, requiredActivityIds);
+								EditingCapabilitiesUtil.reenableActivities();
+							}
+						}
+					}
+					return CommandResult.newOKCommandResult();
+				}
+			};
+		}
+		return super.getAfterDestroyElementCommand(request);
+	}
 }

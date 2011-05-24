@@ -16,24 +16,22 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.gmf.runtime.emf.type.core.IElementMatcher;
 
-import org.eclipse.uml2.uml.Element;
 import org.openhealthtools.mdht.uml.hdf.util.IRIMProfileConstants;
 import org.openhealthtools.mdht.uml.hdf.util.RIMProfileUtil;
 
 /**
  * @generated
  */
-public class RoleLinkClassMatcher
-        implements IElementMatcher {
-    
-    /**
-     * @generated NOT
-     */
-    public boolean matches(EObject eObject) {
-//        return RIMElementTypes._ROLELINK__CLASS.getEClass() == eObject.eClass() &&
-//                ((Element)eObject).getAppliedStereotype(RIMElementTypes._ROLELINK__CLASS.getStereotypeName()) != null;
+public class RoleLinkClassMatcher implements IElementMatcher {
 
-        return RIMElementTypes._ROLELINK__CLASS.getEClass() == eObject.eClass() &&
-        		RIMProfileUtil.isRIMType((Element)eObject, IRIMProfileConstants.ROLE_LINK);
-    }
+	/**
+	 * @generated NOT
+	 */
+	public boolean matches(EObject eObject) {
+		// return RIMElementTypes._ROLELINK__CLASS.getEClass() == eObject.eClass() &&
+		// ((Element)eObject).getAppliedStereotype(RIMElementTypes._ROLELINK__CLASS.getStereotypeName()) != null;
+
+		return RIMElementTypes._ROLELINK__CLASS.getEClass() == eObject.eClass() &&
+				RIMProfileUtil.isRIMType((Element) eObject, IRIMProfileConstants.ROLE_LINK);
+	}
 }

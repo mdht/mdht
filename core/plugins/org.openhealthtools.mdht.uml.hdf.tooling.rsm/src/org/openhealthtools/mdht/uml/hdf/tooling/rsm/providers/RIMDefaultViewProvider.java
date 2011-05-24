@@ -48,10 +48,6 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.uml.AssociationClass;
-import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.Stereotype;
-
 import org.openhealthtools.mdht.uml.hdf.tooling.rsm.types.RIMElementTypes;
 import org.openhealthtools.mdht.uml.hdf.tooling.rsm.viewFactories.ActClassViewCustomizer;
 import org.openhealthtools.mdht.uml.hdf.tooling.rsm.viewFactories.ActRelationshipClassViewCustomizer;
@@ -61,13 +57,11 @@ import org.openhealthtools.mdht.uml.hdf.tooling.rsm.viewFactories.RoleClassViewC
 import org.openhealthtools.mdht.uml.hdf.tooling.rsm.viewFactories.RoleLinkClassViewCustomizer;
 import org.openhealthtools.mdht.uml.hdf.ui.util.RIMColorUtil;
 
-
 /**
  * @generated
  */
-public class RIMDefaultViewProvider
-        extends AbstractProvider implements IViewProvider {
-    
+public class RIMDefaultViewProvider extends AbstractProvider implements IViewProvider {
+
 	/**
 	 * @generated
 	 */
@@ -77,7 +71,7 @@ public class RIMDefaultViewProvider
 		 */
 		public void customizeView(View view);
 	}
-	
+
 	/**
 	 * @generated
 	 */
@@ -101,78 +95,80 @@ public class RIMDefaultViewProvider
 			return baseAdaptable.getAdapter(adapter);
 		}
 	}
-	
-    /**
-     * @generated
-     */
-    private static Map<IElementType, IViewCustomizer> nodeMap = new HashMap<IElementType, IViewCustomizer>();
-    
-    /**
-     * @generated
-     */
-    static {
-	        nodeMap.put(RIMElementTypes._ACT__CLASS, ActClassViewCustomizer.INSTANCE);
-	        nodeMap.put(RIMElementTypes._ENTITY__CLASS, EntityClassViewCustomizer.INSTANCE);
-	        nodeMap.put(RIMElementTypes._ROLE__CLASS, RoleClassViewCustomizer.INSTANCE);
-	        nodeMap.put(RIMElementTypes._ROLELINK__CLASS, RoleLinkClassViewCustomizer.INSTANCE);
-	        nodeMap.put(RIMElementTypes._ACTRELATIONSHIP__CLASS, ActRelationshipClassViewCustomizer.INSTANCE);
-	        nodeMap.put(RIMElementTypes._PARTICIPATION__CLASS, ParticipationClassViewCustomizer.INSTANCE);
-	        nodeMap.put(RIMElementTypes._LANGUAGECOMMUNICATION__CLASS, ParticipationClassViewCustomizer.INSTANCE);
-	}
-  
+
 	/**
 	 * @generated
 	 */
-    public Diagram createDiagram(IAdaptable semanticAdapter,
-			String diagramKind, PreferencesHint preferencesHint) {
-		return ViewService.getInstance().createDiagram(new WrapperAdaptable(semanticAdapter), diagramKind, preferencesHint);
+	private static Map<IElementType, IViewCustomizer> nodeMap = new HashMap<IElementType, IViewCustomizer>();
+
+	/**
+	 * @generated
+	 */
+	static {
+		nodeMap.put(RIMElementTypes._ACT__CLASS, ActClassViewCustomizer.INSTANCE);
+		nodeMap.put(RIMElementTypes._ENTITY__CLASS, EntityClassViewCustomizer.INSTANCE);
+		nodeMap.put(RIMElementTypes._ROLE__CLASS, RoleClassViewCustomizer.INSTANCE);
+		nodeMap.put(RIMElementTypes._ROLELINK__CLASS, RoleLinkClassViewCustomizer.INSTANCE);
+		nodeMap.put(RIMElementTypes._ACTRELATIONSHIP__CLASS, ActRelationshipClassViewCustomizer.INSTANCE);
+		nodeMap.put(RIMElementTypes._PARTICIPATION__CLASS, ParticipationClassViewCustomizer.INSTANCE);
+		nodeMap.put(RIMElementTypes._LANGUAGECOMMUNICATION__CLASS, ParticipationClassViewCustomizer.INSTANCE);
+	}
+
+	/**
+	 * @generated
+	 */
+	public Diagram createDiagram(IAdaptable semanticAdapter, String diagramKind, PreferencesHint preferencesHint) {
+		return ViewService.getInstance().createDiagram(
+			new WrapperAdaptable(semanticAdapter), diagramKind, preferencesHint);
 	}
 
 	/**
 	 * @generated NOT
 	 */
-	public Edge createEdge(IAdaptable semanticAdapter, View containerView,
-			String semanticHint, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
-		Edge umlEdge = ViewService.getInstance().createEdge(new WrapperAdaptable(semanticAdapter), containerView, semanticHint, index, persisted, preferencesHint);
+	public Edge createEdge(IAdaptable semanticAdapter, View containerView, String semanticHint, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
+		Edge umlEdge = ViewService.getInstance().createEdge(
+			new WrapperAdaptable(semanticAdapter), containerView, semanticHint, index, persisted, preferencesHint);
 		IViewCustomizer customizer = getEdgeViewCustomizer(semanticAdapter, containerView, semanticHint);
-		if(customizer != null && umlEdge != null) {
+		if (customizer != null && umlEdge != null) {
 			customizer.customizeView(umlEdge);
 		}
 
 		// Assign RIM color to association classes
 		if (umlEdge != null && umlEdge.getElement() instanceof AssociationClass) {
-			for (Iterator iter = ((AssociationClass)umlEdge.getElement()).getAppliedStereotypes().iterator(); iter.hasNext();) {
+			for (Iterator iter = ((AssociationClass) umlEdge.getElement()).getAppliedStereotypes().iterator(); iter.hasNext();) {
 				Stereotype stereotype = (Stereotype) iter.next();
-				if (RIMColorUtil.assignRIMColor(umlEdge, stereotype) == true)
+				if (RIMColorUtil.assignRIMColor(umlEdge, stereotype) == true) {
 					break;
+				}
 			}
 		}
-		
+
 		return umlEdge;
 	}
 
 	/**
 	 * @generated NOT
 	 */
-	public Node createNode(IAdaptable semanticAdapter, View containerView,
-			String semanticHint, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
-		Node umlNode = ViewService.getInstance().createNode(new WrapperAdaptable(semanticAdapter), containerView, semanticHint, index, persisted, preferencesHint);
+	public Node createNode(IAdaptable semanticAdapter, View containerView, String semanticHint, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
+		Node umlNode = ViewService.getInstance().createNode(
+			new WrapperAdaptable(semanticAdapter), containerView, semanticHint, index, persisted, preferencesHint);
 		IViewCustomizer customizer = getNodeViewCustomizer(semanticAdapter, containerView, semanticHint);
-		if(customizer != null && umlNode != null) {
+		if (customizer != null && umlNode != null) {
 			customizer.customizeView(umlNode);
 		}
 
 		// Assign RIM color
 		if (umlNode != null && umlNode.getElement() instanceof Classifier) {
-			for (Iterator iter = ((Classifier)umlNode.getElement()).getAppliedStereotypes().iterator(); iter.hasNext();) {
+			for (Iterator iter = ((Classifier) umlNode.getElement()).getAppliedStereotypes().iterator(); iter.hasNext();) {
 				Stereotype stereotype = (Stereotype) iter.next();
-				if (RIMColorUtil.assignRIMColor(umlNode, stereotype) == true)
+				if (RIMColorUtil.assignRIMColor(umlNode, stereotype) == true) {
 					break;
+				}
 			}
 		}
-		
+
 		return umlNode;
 	}
 
@@ -181,16 +177,18 @@ public class RIMDefaultViewProvider
 	 */
 	public boolean provides(IOperation operation) {
 		/* if this is the CreateViewForKindOperation operation */
-		if (operation instanceof CreateViewForKindOperation)
+		if (operation instanceof CreateViewForKindOperation) {
 			return provides((CreateViewForKindOperation) operation);
+		}
 
 		/* call the specific provides method */
-		if (operation instanceof CreateDiagramViewOperation)
+		if (operation instanceof CreateDiagramViewOperation) {
 			return provides((CreateDiagramViewOperation) operation);
-		else if (operation instanceof CreateEdgeViewOperation)
+		} else if (operation instanceof CreateEdgeViewOperation) {
 			return provides((CreateEdgeViewOperation) operation);
-		else if (operation instanceof CreateNodeViewOperation)
+		} else if (operation instanceof CreateNodeViewOperation) {
 			return provides((CreateNodeViewOperation) operation);
+		}
 		return false;
 	}
 
@@ -198,12 +196,12 @@ public class RIMDefaultViewProvider
 	 * @generated
 	 */
 	protected boolean provides(CreateViewForKindOperation op) {
-		if (op.getViewKind() == Node.class)
-			return getNodeViewCustomizer(op.getSemanticAdapter(), op
-				.getContainerView(), op.getSemanticHint()) != null;
-		if (op.getViewKind() == Edge.class)
-			return getEdgeViewCustomizer(op.getSemanticAdapter(), op
-				.getContainerView(), op.getSemanticHint()) != null;
+		if (op.getViewKind() == Node.class) {
+			return getNodeViewCustomizer(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+		}
+		if (op.getViewKind() == Edge.class) {
+			return getEdgeViewCustomizer(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+		}
 		return true;
 	}
 
@@ -218,121 +216,123 @@ public class RIMDefaultViewProvider
 	 * @generated
 	 */
 	protected boolean provides(CreateEdgeViewOperation operation) {
-		return (getEdgeViewCustomizer(operation.getSemanticAdapter(), operation
-				.getContainerView(), operation.getSemanticHint()) != null);
+		return (getEdgeViewCustomizer(
+			operation.getSemanticAdapter(), operation.getContainerView(), operation.getSemanticHint()) != null);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean provides(CreateNodeViewOperation operation) {
-		return (getNodeViewCustomizer(operation.getSemanticAdapter(), operation
-				.getContainerView(), operation.getSemanticHint()) != null);
+		return (getNodeViewCustomizer(
+			operation.getSemanticAdapter(), operation.getContainerView(), operation.getSemanticHint()) != null);
 	}
-
-
-    /**
-     * @generated
-     */
-    protected IViewCustomizer getNodeViewCustomizer(IAdaptable semanticAdapter,
-            View containerView, String semanticHint) {
-		if(semanticAdapter instanceof WrapperAdaptable)
-			return null;
-
-        if (semanticHint != null && semanticHint.length() > 0) {
-            return (IViewCustomizer)nodeMap.get(semanticHint);
-        }
-        IElementType elementType = (IElementType)semanticAdapter.getAdapter(IElementType.class);
-        if (elementType != null) {
-            return (IViewCustomizer)nodeMap.get(elementType);
-        } else {
-            EObject eObject = getSemanticElement(semanticAdapter);
-            if (eObject != null) {
-                // first check specialization type matches
-                for (int i = 0; i < RIMElementTypes.NODE_TYPES.length; ++i) {
-                    elementType = RIMElementTypes.NODE_TYPES[i];
-                    if (elementType instanceof ISpecializationType) {
-                        if (((ISpecializationType)elementType).getMatcher().matches(eObject)) {
-                            return (IViewCustomizer) nodeMap.get(elementType);
-                        }
-                    }
-                }
-                // next check metamodel type matches
-                for (int i = 0; i < RIMElementTypes.NODE_TYPES.length; ++i) {
-                    elementType = RIMElementTypes.NODE_TYPES[i];
-                    if (elementType instanceof IMetamodelType) {
-                        if (eObject.eClass() == elementType.getEClass()) {
-                            return (IViewCustomizer) nodeMap.get(elementType);
-                        }
-                    }
-                }
-            }
-        }
-        return null;
-    }
-        
-    /**
-     * @generated
-     */
-    protected IViewCustomizer getEdgeViewCustomizer(IAdaptable semanticAdapter,
-            View containerView, String semanticHint) {
-		if(semanticAdapter instanceof WrapperAdaptable)
-			return null;
-            
-        if (semanticHint != null && semanticHint.length() > 0) {
-            return (IViewCustomizer)nodeMap.get(semanticHint);
-        }
-        IElementType elementType = (IElementType)semanticAdapter.getAdapter(IElementType.class);
-        if (elementType != null) {
-            return (IViewCustomizer)nodeMap.get(elementType);
-        } else {
-            EObject eObject = getSemanticElement(semanticAdapter);
-            if (eObject != null) {
-                // first check specialization type matches
-                for (int i = 0; i < RIMElementTypes.RELATIONSHIP_TYPES.length; ++i) {
-                    elementType = RIMElementTypes.RELATIONSHIP_TYPES[i];
-                    if (elementType instanceof ISpecializationType) {
-                        if (((ISpecializationType)elementType).getMatcher().matches(eObject)) {
-                            return (IViewCustomizer) nodeMap.get(elementType);
-                        }
-                    }
-                }
-                // next check metamodel type matches
-                for (int i = 0; i < RIMElementTypes.RELATIONSHIP_TYPES.length; ++i) {
-                    elementType = RIMElementTypes.RELATIONSHIP_TYPES[i];
-                    if (elementType instanceof IMetamodelType) {
-                        if (eObject.eClass() == elementType.getEClass()) {
-                            return (IViewCustomizer) nodeMap.get(elementType);
-                        }
-                    }
-                }
-            }
-        }
-        return null;       
-    }
 
 	/**
 	 * @generated
 	 */
-	protected EObject getSemanticElement(IAdaptable semanticAdapter) {
-		if (semanticAdapter == null)
+	protected IViewCustomizer getNodeViewCustomizer(IAdaptable semanticAdapter, View containerView, String semanticHint) {
+		if (semanticAdapter instanceof WrapperAdaptable) {
 			return null;
-		EObject eObject = (EObject) semanticAdapter.getAdapter(EObject.class);
-		if (eObject != null)
-			return EMFCoreUtil.resolve(TransactionUtil.getEditingDomain(eObject), eObject);
+		}
+
+		if (semanticHint != null && semanticHint.length() > 0) {
+			return nodeMap.get(semanticHint);
+		}
+		IElementType elementType = (IElementType) semanticAdapter.getAdapter(IElementType.class);
+		if (elementType != null) {
+			return nodeMap.get(elementType);
+		} else {
+			EObject eObject = getSemanticElement(semanticAdapter);
+			if (eObject != null) {
+				// first check specialization type matches
+				for (int i = 0; i < RIMElementTypes.NODE_TYPES.length; ++i) {
+					elementType = RIMElementTypes.NODE_TYPES[i];
+					if (elementType instanceof ISpecializationType) {
+						if (((ISpecializationType) elementType).getMatcher().matches(eObject)) {
+							return nodeMap.get(elementType);
+						}
+					}
+				}
+				// next check metamodel type matches
+				for (int i = 0; i < RIMElementTypes.NODE_TYPES.length; ++i) {
+					elementType = RIMElementTypes.NODE_TYPES[i];
+					if (elementType instanceof IMetamodelType) {
+						if (eObject.eClass() == elementType.getEClass()) {
+							return nodeMap.get(elementType);
+						}
+					}
+				}
+			}
+		}
 		return null;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected EObject getSemanticElement(IAdaptable semanticAdapter,
-			TransactionalEditingDomain domain) {
-		if (semanticAdapter == null)
+	protected IViewCustomizer getEdgeViewCustomizer(IAdaptable semanticAdapter, View containerView, String semanticHint) {
+		if (semanticAdapter instanceof WrapperAdaptable) {
 			return null;
+		}
+
+		if (semanticHint != null && semanticHint.length() > 0) {
+			return nodeMap.get(semanticHint);
+		}
+		IElementType elementType = (IElementType) semanticAdapter.getAdapter(IElementType.class);
+		if (elementType != null) {
+			return nodeMap.get(elementType);
+		} else {
+			EObject eObject = getSemanticElement(semanticAdapter);
+			if (eObject != null) {
+				// first check specialization type matches
+				for (int i = 0; i < RIMElementTypes.RELATIONSHIP_TYPES.length; ++i) {
+					elementType = RIMElementTypes.RELATIONSHIP_TYPES[i];
+					if (elementType instanceof ISpecializationType) {
+						if (((ISpecializationType) elementType).getMatcher().matches(eObject)) {
+							return nodeMap.get(elementType);
+						}
+					}
+				}
+				// next check metamodel type matches
+				for (int i = 0; i < RIMElementTypes.RELATIONSHIP_TYPES.length; ++i) {
+					elementType = RIMElementTypes.RELATIONSHIP_TYPES[i];
+					if (elementType instanceof IMetamodelType) {
+						if (eObject.eClass() == elementType.getEClass()) {
+							return nodeMap.get(elementType);
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected EObject getSemanticElement(IAdaptable semanticAdapter) {
+		if (semanticAdapter == null) {
+			return null;
+		}
 		EObject eObject = (EObject) semanticAdapter.getAdapter(EObject.class);
-		if (eObject != null)
+		if (eObject != null) {
+			return EMFCoreUtil.resolve(TransactionUtil.getEditingDomain(eObject), eObject);
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected EObject getSemanticElement(IAdaptable semanticAdapter, TransactionalEditingDomain domain) {
+		if (semanticAdapter == null) {
+			return null;
+		}
+		EObject eObject = (EObject) semanticAdapter.getAdapter(EObject.class);
+		if (eObject != null) {
 			return EMFCoreUtil.resolve(domain, eObject);
+		}
 		return null;
 	}
 }

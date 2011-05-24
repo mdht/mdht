@@ -27,33 +27,32 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 /**
  * @generated
  */
-public class RIMAssociationEditPolicy extends AbstractEditPolicy
-		implements EditPolicy {
+public class RIMAssociationEditPolicy extends AbstractEditPolicy implements EditPolicy {
 
 	/**
- 	 * @generated
-     */
+	 * @generated
+	 */
+	@Override
 	public Command getCommand(Request request) {
 		if (request instanceof ReconnectRequest) {
-			ReconnectRequest reconnectRequest = (ReconnectRequest)request;
+			ReconnectRequest reconnectRequest = (ReconnectRequest) request;
 			ConnectionEditPart connectionEP = reconnectRequest.getConnectionEditPart();
 			if (connectionEP instanceof IProfileAssociationConnectionEditPart) {
-				IProfileAssociationConnectionEditPart associationEP = (IProfileAssociationConnectionEditPart)connectionEP;
+				IProfileAssociationConnectionEditPart associationEP = (IProfileAssociationConnectionEditPart) connectionEP;
 				request.getExtendedData().put("SOURCE_FEATURE", associationEP.getSourceFeature());
 				request.getExtendedData().put("ELEMENT_TYPE", associationEP.getElementType());
 			}
 		}
-		
+
 		return super.getCommand(request);
 	}
-	
+
 	/**
- 	 * @generated
-     */	
+	 * @generated
+	 */
 	public interface IProfileAssociationConnectionEditPart {
 		public String getSourceFeature();
+
 		public IElementType getElementType();
 	}
 }
-
-
