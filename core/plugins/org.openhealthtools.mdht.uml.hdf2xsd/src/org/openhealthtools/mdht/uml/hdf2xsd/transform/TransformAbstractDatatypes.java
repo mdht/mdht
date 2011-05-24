@@ -29,15 +29,15 @@ public class TransformAbstractDatatypes extends UMLSwitch {
 	public TransformAbstractDatatypes(XSDTransformerOptions options) {
 		transformerOptions = options;
 	}
-	
+
+	@Override
 	public Object caseProperty(Property property) {
 		String typeName = null;
 		Classifier classifier = (Classifier) property.getType();
 		if (UMLUtil.isTemplateBinding(classifier)) {
 			// get HL7 XSD data types underscore name for template bindings
 			typeName = getTemplateBindingName(classifier);
-		}
-		else if (DatatypeUtil.isAbstractDatatype(classifier)) {
+		} else if (DatatypeUtil.isAbstractDatatype(classifier)) {
 			typeName = classifier.getName();
 
 			// GTS maps to SXCM_TS
@@ -45,20 +45,19 @@ public class TransformAbstractDatatypes extends UMLSwitch {
 				typeName = "SXCM_TS";
 			}
 		}
-		
+
 		if (typeName != null) {
 			Package basePackage = UMLUtil.getTopPackage(property);
 			Classifier xsdDatatype = XSDDatatypeUtil.getDatatypeByName(basePackage, typeName);
 			if (xsdDatatype != null) {
 				property.setType(xsdDatatype);
-			}
-			else {
+			} else {
 				property.setType(null);
-				System.out.println("Cannot map HL7 data type: '" + typeName + "' on property: "
-						+ UMLUtil.getPackageQualifiedName(property));
+				System.out.println("Cannot map HL7 data type: '" + typeName + "' on property: " +
+						UMLUtil.getPackageQualifiedName(property));
 			}
 		}
-		
+
 		return classifier;
 	}
 
@@ -67,27 +66,29 @@ public class TransformAbstractDatatypes extends UMLSwitch {
 	 * @return type name as mapped to XSD data types
 	 */
 	private String getTemplateBindingName(Classifier classifier) {
-		if (!UMLUtil.isTemplateBinding(classifier))
+		if (!UMLUtil.isTemplateBinding(classifier)) {
 			return classifier.getName();
-		
+		}
+
 		StringBuffer name = new StringBuffer();
 		Classifier template = UMLUtil.getTemplate(classifier);
-		if (!"SET".equals(template.getName())
-				&& !"BAG".equals(template.getName())
-				&& !"LIST".equals(template.getName())) {
-		
-			if (name.length() > 0)
+		if (!"SET".equals(template.getName()) && !"BAG".equals(template.getName()) &&
+				!"LIST".equals(template.getName())) {
+
+			if (name.length() > 0) {
 				name.append("_");
+			}
 			name.append(template.getName());
 		}
 
 		List<Classifier> params = UMLUtil.getTemplateBindingParameters(classifier);
 		for (Classifier param : params) {
-			if (name.length() > 0)
+			if (name.length() > 0) {
 				name.append("_");
+			}
 			name.append(getTemplateBindingName(param));
 		}
-		
+
 		return name.toString();
 	}
 

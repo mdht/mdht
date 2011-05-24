@@ -17,7 +17,6 @@ import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.openhealthtools.mdht.uml.hdf2xsd.internal.Activator;
 import org.openhealthtools.mdht.uml.hdf2xsd.transform.XSDTransformerOptions;
 
-
 /**
  * Class used to initialize default preference values.
  */
@@ -28,12 +27,12 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	 * 
 	 * @see org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer#initializeDefaultPreferences()
 	 */
+	@Override
 	public void initializeDefaultPreferences() {
-		Preferences store = Activator.getDefault()
-				.getPluginPreferences();
-		
+		Preferences store = Activator.getDefault().getPluginPreferences();
+
 		store.setDefault(XSDTransformerOptions.INCLUDE_VOCABULARY_CONSTRAINTS, false);
 		store.setDefault(XSDTransformerOptions.INCLUDE_EMPTY_ASSOCIATION_CLASSES, true);
 	}
-	
+
 }
