@@ -15,11 +15,13 @@ import static org.junit.Assert.assertTrue;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemSectionOperationsTest;
 import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
 
 /**
  * This class is a JUnit4 test case.
@@ -121,4 +123,19 @@ public class ActiveProblemsSectionOperationsTest extends ProblemSectionOperation
 		testValidateActiveProblemsSectionProblemConcernEntryTestCase.doValidationTest();
 	}
 
+	@Test
+	public void testGetIHEVitalSignsOrganizers() {
+		ActiveProblemsSection target = IHEFactory.eINSTANCE.createActiveProblemsSection().init();
+
+		final long TESTCOUNT = 100;
+		for (int vsoctr = 0; vsoctr < TESTCOUNT; vsoctr++) {
+			ProblemConcernEntry object = IHEFactory.eINSTANCE.createProblemConcernEntry().init();
+			target.addAct(object);
+		}
+
+		EList<ProblemConcernEntry> result = ActiveProblemsSectionOperations.getProblemConcernEntries(target);
+
+		org.junit.Assert.assertEquals(result.size(), TESTCOUNT);
+
+	}
 } // ActiveProblemsSectionOperationsTest

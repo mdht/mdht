@@ -220,4 +220,32 @@ public class PregnancyObservationOperationsTest extends SimpleObservationOperati
 		testCase.doValidationTest();
 	}
 
+	@Test
+	public void testValidatePregnancyObservationTemplateId() {
+		OperationsTestCase<PregnancyObservation> testCase = new OperationsTestCase<PregnancyObservation>(
+			"ValidatePregnancyObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_SIMPLE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PregnancyObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PregnancyObservation target) {
+				target.init();
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return PregnancyObservationOperations.validateSimpleObservationTemplateId(
+					(PregnancyObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+	}
+
 }
