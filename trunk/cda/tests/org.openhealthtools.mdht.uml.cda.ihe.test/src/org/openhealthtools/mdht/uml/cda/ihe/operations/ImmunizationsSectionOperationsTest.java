@@ -152,7 +152,7 @@ public class ImmunizationsSectionOperationsTest extends
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return ImmunizationsSectionOperations.validateImmunizationsSectionTemplateId(
+				return ImmunizationsSectionOperations.validateIHEImmunizationsSectionTemplateId(
 					(ImmunizationsSection) objectToTest, diagnostician, map);
 			}
 
