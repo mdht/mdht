@@ -21,17 +21,17 @@ import org.openhealthtools.mdht.uml.hdf.util.HL7ResourceUtil;
 import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
 
 /**
- * Selects an object if it is a UML Property with 
+ * Selects an object if it is a UML Property with
  * EnumerationConstraint stereotype applied.
  */
 public class EnumerationConstraintFilter implements IFilter {
 
 	public boolean select(Object object) {
 		Element element = HDFFilterUtil.getElement(object);
-		
+
 		if (element instanceof Property) {
 			Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-					element, IHDFProfileConstants.ENUMERATION_CONSTRAINT);
+				element, IHDFProfileConstants.ENUMERATION_CONSTRAINT);
 			return stereotype != null;
 		}
 		return false;

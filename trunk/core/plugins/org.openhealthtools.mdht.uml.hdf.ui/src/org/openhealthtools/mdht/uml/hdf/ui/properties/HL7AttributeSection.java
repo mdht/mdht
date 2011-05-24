@@ -12,7 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.hdf.ui.properties;
 
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
@@ -67,18 +66,22 @@ public class HL7AttributeSection extends AbstractModelerPropertySection {
 	private Property property;
 
 	private Button isImmutable;
+
 	private boolean isImmutableModified = false;
+
 	private Text minLengthText;
+
 	private boolean minLengthModified = false;
+
 	private Text maxLengthText;
+
 	private boolean maxLengthModified = false;
 
-    private ModifyListener modifyListener = new ModifyListener() {
+	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
 			if (minLengthText == event.getSource()) {
 				minLengthModified = true;
-			}
-			else if (maxLengthText == event.getSource()) {
+			} else if (maxLengthText == event.getSource()) {
 				maxLengthModified = true;
 			}
 		}
@@ -90,11 +93,12 @@ public class HL7AttributeSection extends AbstractModelerPropertySection {
 		}
 
 		public void keyReleased(KeyEvent e) {
-			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character)
+			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character) {
 				modifyFields();
+			}
 		}
 	};
-	
+
 	private FocusListener focusListener = new FocusListener() {
 		public void focusGained(FocusEvent e) {
 			// do nothing
@@ -104,102 +108,100 @@ public class HL7AttributeSection extends AbstractModelerPropertySection {
 			modifyFields();
 		}
 	};
-	
+
 	private void modifyFields() {
 		if (!(minLengthModified || maxLengthModified || isImmutableModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Stereotype stereotype = HL7ResourceUtil.applyHDFStereotype(
-							property, IHDFProfileConstants.HDF_ATTRIBUTE);
-					
+						property, IHDFProfileConstants.HDF_ATTRIBUTE);
+
 					if (minLengthModified) {
 						minLengthModified = false;
 						this.setLabel("Set Minimum Length");
 						String newValue = minLengthText.getText();
 						if (stereotype != null && newValue != null && newValue.trim().length() > 0) {
 							property.setValue(stereotype, IHDFProfileConstants.MINIMUM_LENGTH, newValue.trim());
-						}
-						else {
+						} else {
 							property.setValue(stereotype, IHDFProfileConstants.MINIMUM_LENGTH, null);
 						}
-					}
-					else if (maxLengthModified) {
+					} else if (maxLengthModified) {
 						maxLengthModified = false;
 						this.setLabel("Set Maximum Length");
 						String newValue = maxLengthText.getText();
 						if (stereotype != null && newValue != null && newValue.trim().length() > 0) {
 							property.setValue(stereotype, IHDFProfileConstants.MAXIMUM_LENGTH, newValue.trim());
-						}
-						else {
+						} else {
 							property.setValue(stereotype, IHDFProfileConstants.MAXIMUM_LENGTH, null);
 						}
-					}
-					else if (isImmutableModified) {
+					} else if (isImmutableModified) {
 						isImmutableModified = false;
 						this.setLabel("Set Structural");
-						if (stereotype != null)
-							property.setValue(stereotype, 
-									IHDFProfileConstants.IS_IMMUTABLE, 
+						if (stereotype != null) {
+							property.setValue(
+								stereotype, IHDFProfileConstants.IS_IMMUTABLE,
 								Boolean.valueOf(isImmutable.getSelection()));
-					}
-					else {
+						}
+					} else {
 						return Status.CANCEL_STATUS;
 					}
 
 					// fire notification for any stereotype property changes to update views
 					// this is a bogus notification of change to property name, but can't find a better option
-					Notification notification = new NotificationImpl(
-							Notification.SET, null, property.getName()) {
+					Notification notification = new NotificationImpl(Notification.SET, null, property.getName()) {
+						@Override
 						public Object getNotifier() {
 							return property;
 						}
+
+						@Override
 						public int getFeatureID(Class expectedClass) {
 							return UMLPackage.PROPERTY__NAME;
 						}
 					};
 					property.eNotify(notification);
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
-		Composite composite = getWidgetFactory()
-				.createFlatFormComposite(parent);
+		Composite composite = getWidgetFactory().createFlatFormComposite(parent);
 		FormData data = null;
 
-        int numberOfLines = 1;
-        
+		int numberOfLines = 1;
+
 		/* ---- Immutable checkbox ---- */
-		isImmutable = getWidgetFactory().createButton(composite, 
-				"Immutable", SWT.CHECK);
+		isImmutable = getWidgetFactory().createButton(composite, "Immutable", SWT.CHECK);
 		isImmutable.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				isImmutableModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				isImmutableModified = true;
 				modifyFields();
@@ -209,8 +211,7 @@ public class HL7AttributeSection extends AbstractModelerPropertySection {
 		/* ------ min and max length ------- */
 
 		minLengthText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel minLengthLabel = getWidgetFactory()
-				.createCLabel(composite, "Minimum Length:"); //$NON-NLS-1$
+		CLabel minLengthLabel = getWidgetFactory().createCLabel(composite, "Minimum Length:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(isImmutable, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(minLengthText, 0, SWT.CENTER);
@@ -219,12 +220,11 @@ public class HL7AttributeSection extends AbstractModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(minLengthLabel, 0);
 		data.width = 30;
-		data.top = new FormAttachment(0,numberOfLines, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(0, numberOfLines, ITabbedPropertyConstants.VSPACE);
 		minLengthText.setLayoutData(data);
 
 		maxLengthText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel maxLengthLabel = getWidgetFactory()
-				.createCLabel(composite, "Maximum Length:"); //$NON-NLS-1$
+		CLabel maxLengthLabel = getWidgetFactory().createCLabel(composite, "Maximum Length:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(minLengthText, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(maxLengthText, 0, SWT.CENTER);
@@ -233,20 +233,20 @@ public class HL7AttributeSection extends AbstractModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(maxLengthLabel, 0);
 		data.width = 30;
-		data.top = new FormAttachment(0,numberOfLines, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(0, numberOfLines, ITabbedPropertyConstants.VSPACE);
 		maxLengthText.setLayoutData(data);
 
 		data = new FormData();
-		data.left = new FormAttachment(0,5);
+		data.left = new FormAttachment(0, 5);
 		data.top = new FormAttachment(minLengthText, 0, SWT.CENTER);
 		isImmutable.setLayoutData(data);
-		
+
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (property != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
 			if (editingDomain != null && editingDomain.isReadOnly(property.eResource())) {
 				return true;
 			}
@@ -259,8 +259,10 @@ public class HL7AttributeSection extends AbstractModelerPropertySection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -270,33 +272,36 @@ public class HL7AttributeSection extends AbstractModelerPropertySection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
 		if (element instanceof View) {
-			element = ((View)element).getElement();
+			element = ((View) element).getElement();
 		}
 		Assert.isTrue(element instanceof Property);
 		this.property = (Property) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 		property = null;
 	}
 
+	@Override
 	public void refresh() {
-		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-				property, IHDFProfileConstants.HDF_ATTRIBUTE);
-		
+		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(property, IHDFProfileConstants.HDF_ATTRIBUTE);
+
 		minLengthText.removeModifyListener(modifyListener);
 		minLengthText.removeKeyListener(keyListener);
 		minLengthText.removeFocusListener(focusListener);
 		if (stereotype != null) {
 			Object value = property.getValue(stereotype, IHDFProfileConstants.MINIMUM_LENGTH);
-			minLengthText.setText(value != null ? value.toString() : "");
-		}
-		else {
+			minLengthText.setText(value != null
+					? value.toString()
+					: "");
+		} else {
 			minLengthText.setText("");
 		}
 		minLengthText.addModifyListener(modifyListener);
@@ -308,9 +313,10 @@ public class HL7AttributeSection extends AbstractModelerPropertySection {
 		maxLengthText.removeFocusListener(focusListener);
 		if (stereotype != null) {
 			Object value = property.getValue(stereotype, IHDFProfileConstants.MAXIMUM_LENGTH);
-			maxLengthText.setText(value != null ? value.toString() : "");
-		}
-		else {
+			maxLengthText.setText(value != null
+					? value.toString()
+					: "");
+		} else {
 			maxLengthText.setText("");
 		}
 		maxLengthText.addModifyListener(modifyListener);
@@ -318,12 +324,9 @@ public class HL7AttributeSection extends AbstractModelerPropertySection {
 		maxLengthText.addFocusListener(focusListener);
 
 		if (stereotype != null) {
-			boolean isChecked = Boolean.TRUE.equals(
-				(Boolean) property.getValue(stereotype, 
-						IHDFProfileConstants.IS_IMMUTABLE));
+			boolean isChecked = Boolean.TRUE.equals(property.getValue(stereotype, IHDFProfileConstants.IS_IMMUTABLE));
 			isImmutable.setSelection(isChecked);
-		}
-		else {
+		} else {
 			isImmutable.setSelection(false);
 		}
 
@@ -331,8 +334,7 @@ public class HL7AttributeSection extends AbstractModelerPropertySection {
 			isImmutable.setEnabled(false);
 			minLengthText.setEnabled(false);
 			maxLengthText.setEnabled(false);
-		}
-		else {
+		} else {
 			isImmutable.setEnabled(true);
 			minLengthText.setEnabled(true);
 			maxLengthText.setEnabled(true);
@@ -344,19 +346,23 @@ public class HL7AttributeSection extends AbstractModelerPropertySection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && property.eResource() != null)
+					if (!isDisposed() && property.eResource() != null) {
 						refresh();
+					}
 				}
 			});
 		}

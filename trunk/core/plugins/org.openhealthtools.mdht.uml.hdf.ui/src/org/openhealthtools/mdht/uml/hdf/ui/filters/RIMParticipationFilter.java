@@ -27,9 +27,9 @@ public class RIMParticipationFilter implements IFilter {
 
 	public boolean select(Object object) {
 		Element element = HDFFilterUtil.getElement(object);
-		
-		return (element instanceof Class || element instanceof Association)
-				&& RIMProfileUtil.isRIMType(element, IRIMProfileConstants.PARTICIPATION);
+
+		return (element instanceof Class || element instanceof Association) &&
+				RIMProfileUtil.isRIMType(element, IRIMProfileConstants.PARTICIPATION);
 	}
 
 }

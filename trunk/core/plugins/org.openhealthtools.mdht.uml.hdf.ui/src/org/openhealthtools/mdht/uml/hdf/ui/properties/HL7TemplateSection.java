@@ -12,7 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.hdf.ui.properties;
 
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
@@ -60,9 +59,10 @@ public class HL7TemplateSection extends AbstractModelerPropertySection {
 	private NamedElement namedElement;
 
 	private Text templateIdText;
+
 	private boolean templateIdModified = false;
 
-    private ModifyListener modifyListener = new ModifyListener() {
+	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
 			if (templateIdText == event.getSource()) {
 				templateIdModified = true;
@@ -76,11 +76,12 @@ public class HL7TemplateSection extends AbstractModelerPropertySection {
 		}
 
 		public void keyReleased(KeyEvent e) {
-			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character)
+			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character) {
 				modifyFields();
+			}
 		}
 	};
-	
+
 	private FocusListener focusListener = new FocusListener() {
 		public void focusGained(FocusEvent e) {
 			// do nothing
@@ -90,24 +91,23 @@ public class HL7TemplateSection extends AbstractModelerPropertySection {
 			modifyFields();
 		}
 	};
-	
+
 	private void modifyFields() {
 		if (!(templateIdModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(namedElement);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-							namedElement, IHDFProfileConstants.HL7_TEMPLATE);
-					
+						namedElement, IHDFProfileConstants.HL7_TEMPLATE);
+
 					if (stereotype == null) {
-						stereotype = HL7ResourceUtil.applyHDFStereotype(
-								namedElement, IHDFProfileConstants.HL7_TEMPLATE);
+						stereotype = HL7ResourceUtil.applyHDFStereotype(namedElement, IHDFProfileConstants.HL7_TEMPLATE);
 					}
 					if (templateIdModified) {
 						templateIdModified = false;
@@ -115,50 +115,48 @@ public class HL7TemplateSection extends AbstractModelerPropertySection {
 
 						if (stereotype != null) {
 							String value = templateIdText.getText().trim();
-							namedElement.setValue(stereotype, 
-									IHDFProfileConstants.HL7_TEMPLATE_ID,
-									value.length()>0 ? value : null);
+							namedElement.setValue(stereotype, IHDFProfileConstants.HL7_TEMPLATE_ID, value.length() > 0
+									? value
+									: null);
 
 						}
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
-		
-		Composite composite = getWidgetFactory()
-				.createGroup(parent, "HL7 Template");
-        FormLayout layout = new FormLayout();
-        layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
-        layout.marginHeight = ITabbedPropertyConstants.VSPACE;
-        layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
-        composite.setLayout(layout);
-		
+
+		Composite composite = getWidgetFactory().createGroup(parent, "HL7 Template");
+		FormLayout layout = new FormLayout();
+		layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+		layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+		layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+		composite.setLayout(layout);
+
 		FormData data = null;
 
 		templateIdText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel nameLabel = getWidgetFactory()
-				.createCLabel(composite, "ID:"); //$NON-NLS-1$
+		CLabel nameLabel = getWidgetFactory().createCLabel(composite, "ID:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(templateIdText, 0, SWT.CENTER);
@@ -167,15 +165,15 @@ public class HL7TemplateSection extends AbstractModelerPropertySection {
 		data = new FormData();
 		data.left = new FormAttachment(nameLabel, 0);
 		data.width = 200;
-		data.top = new FormAttachment(0,2, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(0, 2, ITabbedPropertyConstants.VSPACE);
 		templateIdText.setLayoutData(data);
 
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (namedElement != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(namedElement);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(namedElement);
 			if (editingDomain != null && editingDomain.isReadOnly(namedElement.eResource())) {
 				return true;
 			}
@@ -188,8 +186,10 @@ public class HL7TemplateSection extends AbstractModelerPropertySection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -199,6 +199,7 @@ public class HL7TemplateSection extends AbstractModelerPropertySection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
@@ -206,23 +207,25 @@ public class HL7TemplateSection extends AbstractModelerPropertySection {
 		this.namedElement = (NamedElement) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 
 	}
 
+	@Override
 	public void refresh() {
-		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-				namedElement, IHDFProfileConstants.HL7_TEMPLATE);
+		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(namedElement, IHDFProfileConstants.HL7_TEMPLATE);
 
 		templateIdText.removeModifyListener(modifyListener);
 		templateIdText.removeKeyListener(keyListener);
 		templateIdText.removeFocusListener(focusListener);
 		if (stereotype != null) {
 			String id = (String) namedElement.getValue(stereotype, IHDFProfileConstants.HL7_TEMPLATE_ID);
-			templateIdText.setText(id!=null ? id : "");
-		}
-		else {
+			templateIdText.setText(id != null
+					? id
+					: "");
+		} else {
 			templateIdText.setText("");
 		}
 		templateIdText.addModifyListener(modifyListener);
@@ -231,8 +234,7 @@ public class HL7TemplateSection extends AbstractModelerPropertySection {
 
 		if (isReadOnly()) {
 			templateIdText.setEnabled(false);
-		}
-		else {
+		} else {
 			templateIdText.setEnabled(true);
 		}
 
@@ -243,19 +245,23 @@ public class HL7TemplateSection extends AbstractModelerPropertySection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && namedElement.eResource() != null)
+					if (!isDisposed() && namedElement.eResource() != null) {
 						refresh();
+					}
 				}
 			});
 		}

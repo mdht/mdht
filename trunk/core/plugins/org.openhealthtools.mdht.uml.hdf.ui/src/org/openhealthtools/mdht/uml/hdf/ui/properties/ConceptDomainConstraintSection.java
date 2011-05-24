@@ -12,7 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.hdf.ui.properties;
 
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
@@ -54,8 +53,6 @@ import org.openhealthtools.mdht.uml.hdf.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.hdf.util.HL7ResourceUtil;
 import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
 
-
-
 /**
  * The profile properties section for Concept Domain Constraint.
  * 
@@ -63,11 +60,11 @@ import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
  */
 public class ConceptDomainConstraintSection extends AbstractConstraintSection {
 
-
 	private Text conceptDomainNameText;
+
 	private boolean conceptDomainNameModified = false;
 
-    private ModifyListener modifyListener = new ModifyListener() {
+	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
 			if (conceptDomainNameText == event.getSource()) {
 				conceptDomainNameModified = true;
@@ -81,11 +78,12 @@ public class ConceptDomainConstraintSection extends AbstractConstraintSection {
 		}
 
 		public void keyReleased(KeyEvent e) {
-			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character)
+			if (SWT.CR == e.character || SWT.KEYPAD_CR == e.character) {
 				modifyFields();
+			}
 		}
 	};
-	
+
 	private FocusListener focusListener = new FocusListener() {
 		public void focusGained(FocusEvent e) {
 			// do nothing
@@ -95,21 +93,21 @@ public class ConceptDomainConstraintSection extends AbstractConstraintSection {
 			modifyFields();
 		}
 	};
-	
+
 	private void modifyFields() {
 		if (!(conceptDomainNameModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-							property, IHDFProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
-					
+						property, IHDFProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+
 					if (stereotype == null) {
 						return Status.CANCEL_STATUS;
 					}
@@ -119,76 +117,74 @@ public class ConceptDomainConstraintSection extends AbstractConstraintSection {
 
 						if (stereotype != null) {
 							String value = conceptDomainNameText.getText().trim();
-							property.setValue(stereotype, 
-									IHDFProfileConstants.CONCEPT_DOMAIN_NAME,
-									value.length()>0 ? value : null);
+							property.setValue(stereotype, IHDFProfileConstants.CONCEPT_DOMAIN_NAME, value.length() > 0
+									? value
+									: null);
 						}
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
 
 					updateViews();
 
 					return Status.OK_STATUS;
-			    }};
+				}
+			};
 
-		    try {
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
 
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 
-		Composite composite = getWidgetFactory()
-				.createGroup(parent, "Concept Domain");
-        FormLayout layout = new FormLayout();
-        layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
-        layout.marginHeight = ITabbedPropertyConstants.VSPACE;
-        layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
-        composite.setLayout(layout);
-		
+		Composite composite = getWidgetFactory().createGroup(parent, "Concept Domain");
+		FormLayout layout = new FormLayout();
+		layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+		layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+		layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+		composite.setLayout(layout);
+
 		FormData data = null;
 
 		conceptDomainNameText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-		CLabel nameLabel = getWidgetFactory()
-				.createCLabel(composite, "Name:"); //$NON-NLS-1$
+		CLabel nameLabel = getWidgetFactory().createCLabel(composite, "Name:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(conceptDomainNameText, 0, SWT.CENTER);
 		nameLabel.setLayoutData(data);
-		
+
 		data = new FormData();
 		data.left = new FormAttachment(nameLabel, 0);
 		data.width = 200;
-		data.top = new FormAttachment(0,2, ITabbedPropertyConstants.VSPACE);
+		data.top = new FormAttachment(0, 2, ITabbedPropertyConstants.VSPACE);
 		conceptDomainNameText.setLayoutData(data);
-		
+
 		if (hasVocabularyExtension()) {
 			vocabularyBrowseButton = getWidgetFactory().createButton(composite, "Browse...", SWT.PUSH); //$NON-NLS-1$
-			
+
 			vocabularyBrowseButton.addSelectionListener(new SelectionAdapter() {
-				
+
+				@Override
 				public void widgetSelected(SelectionEvent event) {
 					IVocabularySelectionDelegate.IConceptConstraint conceptConstraint = (IVocabularySelectionDelegate.IConceptConstraint) browseVocabulary(IVocabularySelectionDelegate.Constraint.CONCEPTS);
 
 					if (conceptConstraint != null) {
-						HDFUIUtil.setStereoPropertyValue(property, 
-														IHDFProfileConstants.CONCEPT_DOMAIN_CONSTRAINT, 
-														new String[] { IHDFProfileConstants.CONCEPT_DOMAIN_NAME }, 
-														new Object[] {conceptConstraint.getConcept()}, 
-														getPart());
+						HDFUIUtil.setStereoPropertyValue(
+							property, IHDFProfileConstants.CONCEPT_DOMAIN_CONSTRAINT,
+							new String[] { IHDFProfileConstants.CONCEPT_DOMAIN_NAME },
+							new Object[] { conceptConstraint.getConcept() }, getPart());
 					}
 				}
 			});
@@ -197,13 +193,13 @@ public class ConceptDomainConstraintSection extends AbstractConstraintSection {
 			data.left = new FormAttachment(conceptDomainNameText, 0);
 			data.height = getButtonHeight();
 			vocabularyBrowseButton.setLayoutData(data);
-		} 
+		}
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (property != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
 			if (editingDomain != null && editingDomain.isReadOnly(property.eResource())) {
 				return true;
 			}
@@ -216,8 +212,10 @@ public class ConceptDomainConstraintSection extends AbstractConstraintSection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -227,6 +225,7 @@ public class ConceptDomainConstraintSection extends AbstractConstraintSection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
@@ -234,23 +233,26 @@ public class ConceptDomainConstraintSection extends AbstractConstraintSection {
 		this.property = (Property) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 
 	}
 
+	@Override
 	public void refresh() {
 		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-				property, IHDFProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+			property, IHDFProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
 
 		conceptDomainNameText.removeModifyListener(modifyListener);
 		conceptDomainNameText.removeKeyListener(keyListener);
 		conceptDomainNameText.removeFocusListener(focusListener);
 		if (stereotype != null) {
 			String name = (String) property.getValue(stereotype, IHDFProfileConstants.CONCEPT_DOMAIN_NAME);
-			conceptDomainNameText.setText(name!=null ? name : "");
-		}
-		else {
+			conceptDomainNameText.setText(name != null
+					? name
+					: "");
+		} else {
 			conceptDomainNameText.setText("");
 		}
 		conceptDomainNameText.addModifyListener(modifyListener);
@@ -259,8 +261,7 @@ public class ConceptDomainConstraintSection extends AbstractConstraintSection {
 
 		if (isReadOnly()) {
 			conceptDomainNameText.setEnabled(false);
-		}
-		else {
+		} else {
 			conceptDomainNameText.setEnabled(true);
 		}
 
@@ -271,50 +272,55 @@ public class ConceptDomainConstraintSection extends AbstractConstraintSection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && property.eResource() != null)
+					if (!isDisposed() && property.eResource() != null) {
 						refresh();
+					}
 				}
 			});
 		}
 	}
-	
-	
-//	private void openElementSelectionDialog() {
-//
-//		try {
-//
-//			IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(IVocabularySelectionDelegate.EXTENSION_POINT);
-//
-//			for (final IConfigurationElement configrationElement : config) {
-//
-//				final Object vocabularyDelegateTarget = configrationElement.createExecutableExtension(IVocabularySelectionDelegate.SELECTION_DELEGATE);
-//
-//				IVocabularySelectionDelegate vocabularySelectionDelegate = (IVocabularySelectionDelegate) vocabularyDelegateTarget;
-//
-//				final IVocabularySelectionDelegate.IConceptConstraint conceptConstraint = (IVocabularySelectionDelegate.IConceptConstraint) vocabularySelectionDelegate.chooseVocabularyConstraint(getPart().getSite().getShell(), null,
-//						IVocabularySelectionDelegate.Constraint.CONCEPTS);
-//
-//				if (conceptConstraint != null) {
-//					HDFUIUtil.setStereoPropertyValue(property, IHDFProfileConstants.CONCEPT_DOMAIN_CONSTRAINT, IHDFProfileConstants.CONCEPT_DOMAIN_NAME, conceptConstraint.getConcept(), getPart());
-//				}
-//
-//			}
-//
-//		} catch (Throwable e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
+
+	// private void openElementSelectionDialog() {
+	//
+	// try {
+	//
+	// IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(IVocabularySelectionDelegate.EXTENSION_POINT);
+	//
+	// for (final IConfigurationElement configrationElement : config) {
+	//
+	// final Object vocabularyDelegateTarget = configrationElement.createExecutableExtension(IVocabularySelectionDelegate.SELECTION_DELEGATE);
+	//
+	// IVocabularySelectionDelegate vocabularySelectionDelegate = (IVocabularySelectionDelegate) vocabularyDelegateTarget;
+	//
+	// final IVocabularySelectionDelegate.IConceptConstraint conceptConstraint = (IVocabularySelectionDelegate.IConceptConstraint)
+	// vocabularySelectionDelegate.chooseVocabularyConstraint(getPart().getSite().getShell(), null,
+	// IVocabularySelectionDelegate.Constraint.CONCEPTS);
+	//
+	// if (conceptConstraint != null) {
+	// HDFUIUtil.setStereoPropertyValue(property, IHDFProfileConstants.CONCEPT_DOMAIN_CONSTRAINT, IHDFProfileConstants.CONCEPT_DOMAIN_NAME,
+	// conceptConstraint.getConcept(), getPart());
+	// }
+	//
+	// }
+	//
+	// } catch (Throwable e) {
+	// // TODO Auto-generated catch block
+	// e.printStackTrace();
+	// }
+	// }
 
 }

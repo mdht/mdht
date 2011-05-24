@@ -19,6 +19,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IPath;
@@ -55,11 +56,12 @@ import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
 
 public class ReportConceptDomainsAction implements IObjectActionDelegate {
 	protected IWorkbenchPart activePart;
+
 	private List<NamedElement> elements = new ArrayList<NamedElement>();
 
 	/** Comma-delimited log, suitable for import to spreadsheets. */
 	private StringBuffer vocabularyReport = new StringBuffer();
-	
+
 	public ReportConceptDomainsAction() {
 		super();
 	}
@@ -70,9 +72,9 @@ public class ReportConceptDomainsAction implements IObjectActionDelegate {
 	public void run(IAction action) {
 		try {
 			vocabularyReport = new StringBuffer();
-			
+
 			reportConceptDomains();
-			
+
 			saveReport();
 
 		} catch (Exception e) {
@@ -92,30 +94,28 @@ public class ReportConceptDomainsAction implements IObjectActionDelegate {
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
 		elements.clear();
-		
-		if (((IStructuredSelection)selection).size() >= 1) {
-			for (Object selected : ((IStructuredSelection)selection).toList()) {
+
+		if (((IStructuredSelection) selection).size() >= 1) {
+			for (Object selected : ((IStructuredSelection) selection).toList()) {
 				if (selected instanceof IAdaptable) {
-					selected = (EObject) ((IAdaptable) selected).getAdapter(EObject.class);
+					selected = ((IAdaptable) selected).getAdapter(EObject.class);
 				}
 				if (selected instanceof NamedElement) {
 					elements.add((NamedElement) selected);
 				}
 			}
 		}
-		
+
 		action.setEnabled(!elements.isEmpty());
 	}
 
-
 	private void reportConceptDomains() {
 		UMLSwitch<Object> vocabulary = new UMLSwitch<Object>() {
-			
+
 			@Override
 			public Object caseClass(Class clazz) {
-				Stereotype choiceGroup = clazz.getAppliedStereotype(
-				IHDFProfileConstants.HDF_PROFILE_NAME
-						+ NamedElement.SEPARATOR + IHDFProfileConstants.CHOICE_GROUP);
+				Stereotype choiceGroup = clazz.getAppliedStereotype(IHDFProfileConstants.HDF_PROFILE_NAME +
+						NamedElement.SEPARATOR + IHDFProfileConstants.CHOICE_GROUP);
 				if (choiceGroup == null) {
 					return null;
 				}
@@ -124,41 +124,39 @@ public class ReportConceptDomainsAction implements IObjectActionDelegate {
 				for (Iterator<DirectedRelationship> iter = specializations.iterator(); iter.hasNext();) {
 					Generalization generalization = (Generalization) iter.next();
 					Package memberPackage = generalization.getSpecific().getNearestPackage();
-					if (clazz.getNearestPackage() != memberPackage
-							&& !elements.contains(memberPackage)) {
+					if (clazz.getNearestPackage() != memberPackage && !elements.contains(memberPackage)) {
 						elements.add(memberPackage);
-//							System.out.println("Adding choice CMET: " + memberPackage.getName());
+						// System.out.println("Adding choice CMET: " + memberPackage.getName());
 					}
 				}
-				
+
 				return super.caseClass(clazz);
 			}
 
 			@Override
 			public Object caseProperty(Property property) {
-//				Stereotype hdfAttr = property.getAppliedStereotype(
-//						IHDFProfileConstants.HDF_PROFILE_NAME
-//						+ NamedElement.SEPARATOR + IHDFProfileConstants.HDF_ATTRIBUTE);
-//				if (hdfAttr != null) {
-//					Enumeration domain = (Enumeration) property.getValue(hdfAttr, IHDFProfileConstants.VOCABULARY_DOMAIN);
-//					EnumerationLiteral mnemonic = (EnumerationLiteral) property.getValue(hdfAttr, IHDFProfileConstants.VOCABULARY_DOMAIN_MNEMONIC);
-//					if (domain != null || mnemonic != null) {
-//						addVocabularyUse(property, 
-//								domain != null ? domain.getName() : null, 
-//								mnemonic != null ? mnemonic.getName() : null);
-//					}
-//				}
-				
+				// Stereotype hdfAttr = property.getAppliedStereotype(
+				// IHDFProfileConstants.HDF_PROFILE_NAME
+				// + NamedElement.SEPARATOR + IHDFProfileConstants.HDF_ATTRIBUTE);
+				// if (hdfAttr != null) {
+				// Enumeration domain = (Enumeration) property.getValue(hdfAttr, IHDFProfileConstants.VOCABULARY_DOMAIN);
+				// EnumerationLiteral mnemonic = (EnumerationLiteral) property.getValue(hdfAttr, IHDFProfileConstants.VOCABULARY_DOMAIN_MNEMONIC);
+				// if (domain != null || mnemonic != null) {
+				// addVocabularyUse(property,
+				// domain != null ? domain.getName() : null,
+				// mnemonic != null ? mnemonic.getName() : null);
+				// }
+				// }
+
 				// include all referenced CMETs in vocabulary report
 				if (property.getType() != null) {
 					Package typePackage = property.getType().getNearestPackage();
-					if (property.getNearestPackage() != typePackage
-							&& !elements.contains(typePackage)) {
+					if (property.getNearestPackage() != typePackage && !elements.contains(typePackage)) {
 						elements.add(typePackage);
-//						System.out.println("Adding CMET: " + typePackage.getName());
+						// System.out.println("Adding CMET: " + typePackage.getName());
 					}
 				}
-				
+
 				return property;
 			}
 		};
@@ -166,24 +164,22 @@ public class ReportConceptDomainsAction implements IObjectActionDelegate {
 		int elementIndex = 0;
 		while (elements.size() > elementIndex) {
 			try {
-				TreeIterator<Object> iterator = EcoreUtil.getAllContents(
-						Collections.singletonList(elements.get(elementIndex)));
+				TreeIterator<Object> iterator = EcoreUtil.getAllContents(Collections.singletonList(elements.get(elementIndex)));
 				while (iterator != null && iterator.hasNext()) {
 					EObject child = (EObject) iterator.next();
 
 					// add nested packages to the elements list
 					if (child instanceof Package && !elements.contains(child)) {
-						elements.add((Package)child);
-//						System.out.println("Adding nested package: " + ((Package)child).getName());
-					}
-					else {
+						elements.add((Package) child);
+						// System.out.println("Adding nested package: " + ((Package)child).getName());
+					} else {
 						vocabulary.doSwitch(child);
 					}
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			
+
 			elementIndex++;
 		}
 	}
@@ -191,7 +187,7 @@ public class ReportConceptDomainsAction implements IObjectActionDelegate {
 	public String getVocabularyReport() {
 		return vocabularyReport.toString();
 	}
-	
+
 	protected void addVocabularyUse(NamedElement modelElement, String domainName, String mnemonic) {
 		vocabularyReport.append(getPackageQualifiedName(modelElement));
 		vocabularyReport.append(", ");
@@ -202,36 +198,35 @@ public class ReportConceptDomainsAction implements IObjectActionDelegate {
 		}
 		vocabularyReport.append(System.getProperty("line.separator"));
 	}
-	
+
 	protected void saveReport() {
 		NamedElement firstElement = elements.get(0);
 		if (vocabularyReport.length() > 0) {
 			URI reportURI = firstElement.eResource().getURI().trimFileExtension();
-//			String fileName = reportURI.lastSegment();
+			// String fileName = reportURI.lastSegment();
 			String fileName = firstElement.getName();
 			reportURI = reportURI.trimSegments(1);
 			reportURI = reportURI.appendSegment(fileName + "_vocabularyUse");
 			reportURI = reportURI.appendFileExtension("txt");
-			
+
 			IPath reportPath = new Path(reportURI.toPlatformString(true));
 			IFile reportFile = ResourcesPlugin.getWorkspace().getRoot().getFile(reportPath);
 			try {
 				ByteArrayInputStream input = new ByteArrayInputStream(vocabularyReport.toString().getBytes("UTF-8"));
 				if (reportFile.exists()) {
-					reportFile.setContents(input, IFile.FORCE, null);
-				}
-				else {
+					reportFile.setContents(input, IResource.FORCE, null);
+				} else {
 					reportFile.create(input, true, null);
 				}
-				reportFile.refreshLocal(IFile.DEPTH_ONE, null);
-				
+				reportFile.refreshLocal(IResource.DEPTH_ONE, null);
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
 			IWorkbench workbench = PlatformUI.getWorkbench();
 			IEditorDescriptor editorDescriptor = workbench.getEditorRegistry().getDefaultEditor(reportFile.getName());
-			
+
 			IEditorInput editorInput = new FileEditorInput(reportFile);
 			try {
 				IWorkbenchPage activePage = activePart.getSite().getPage();
@@ -242,14 +237,15 @@ public class ReportConceptDomainsAction implements IObjectActionDelegate {
 	}
 
 	protected String getPackageQualifiedName(NamedElement namedElement) {
-		if (namedElement.getName() == null)
+		if (namedElement.getName() == null) {
 			return null;
-		
+		}
+
 		StringBuffer qname = new StringBuffer(namedElement.getName());
 		Element container = namedElement.getOwner();
 		while (container instanceof NamedElement) {
 			qname.insert(0, NamedElement.SEPARATOR);
-			qname.insert(0, ((NamedElement)container).getName());
+			qname.insert(0, ((NamedElement) container).getName());
 			if (container instanceof Package) {
 				break;
 			}
@@ -257,5 +253,5 @@ public class ReportConceptDomainsAction implements IObjectActionDelegate {
 		}
 		return qname.toString();
 	}
-	
+
 }

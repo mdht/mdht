@@ -12,7 +12,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.hdf.ui.properties;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,29 +73,31 @@ public class EnumerationConstraintSection extends AbstractModelerPropertySection
 	private Property property;
 
 	private CLabel enumerationValue;
+
 	private Button enumerationValueButton;
+
 	private CCombo enumerationLiteralCombo;
+
 	private boolean enumerationLiteralModified = false;
 
 	private void modifyFields() {
 		if (!(enumerationLiteralModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-			    	Enumeration value = null;
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+					Enumeration value = null;
 					Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-							property, IHDFProfileConstants.ENUMERATION_CONSTRAINT);
+						property, IHDFProfileConstants.ENUMERATION_CONSTRAINT);
 					if (stereotype != null) {
-						value = (Enumeration) property.getValue(
-								stereotype, IHDFProfileConstants.ENUMERATION_VALUE);
+						value = (Enumeration) property.getValue(stereotype, IHDFProfileConstants.ENUMERATION_VALUE);
 					}
-					
+
 					if (enumerationLiteralModified) {
 						enumerationLiteralModified = false;
 						this.setLabel("Set Enumeration Code");
@@ -105,47 +106,47 @@ public class EnumerationConstraintSection extends AbstractModelerPropertySection
 								if (enumerationLiteralCombo.getSelectionIndex() == 0) {
 									// remove stereotype property
 									property.setValue(stereotype, IHDFProfileConstants.ENUMERATION_CODE, null);
-								}
-								else {
-									EnumerationLiteral literal = (EnumerationLiteral) value.getOwnedLiterals()
-										.get(enumerationLiteralCombo.getSelectionIndex() - 1);
+								} else {
+									EnumerationLiteral literal = value.getOwnedLiterals().get(
+										enumerationLiteralCombo.getSelectionIndex() - 1);
 									property.setValue(stereotype, IHDFProfileConstants.ENUMERATION_CODE, literal);
 								}
-							}
-							catch (IllegalArgumentException e) {
+							} catch (IllegalArgumentException e) {
 								// temporary until profile is updated
 							}
 						}
-					}
-					else {
+					} else {
 						return Status.CANCEL_STATUS;
 					}
 
 					// fire notification for any stereotype property changes to update views
 					// this is a bogus notification of change to property name, but can't find a better option
-					Notification notification = new NotificationImpl(
-							Notification.SET, null, property.getName()) {
+					Notification notification = new NotificationImpl(Notification.SET, null, property.getName()) {
+						@Override
 						public Object getNotifier() {
 							return property;
 						}
+
+						@Override
 						public int getFeatureID(Class expectedClass) {
 							return UMLPackage.PROPERTY__NAME;
 						}
 					};
 					property.eNotify(notification);
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
@@ -153,80 +154,78 @@ public class EnumerationConstraintSection extends AbstractModelerPropertySection
 
 	private void openElementSelectionDialog() {
 		final NamedElement element = DialogLaunchUtil.chooseElement(
-				new java.lang.Class[] {Enumeration.class},
-				property.eResource().getResourceSet(), 
-				getPart().getSite().getShell());
-		
+			new java.lang.Class[] { Enumeration.class }, property.eResource().getResourceSet(),
+			getPart().getSite().getShell());
+
 		if (element == null) {
 			return;
 		}
 
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-							property, IHDFProfileConstants.ENUMERATION_CONSTRAINT);
-					
+						property, IHDFProfileConstants.ENUMERATION_CONSTRAINT);
+
 					if (stereotype == null) {
 						return Status.CANCEL_STATUS;
 					}
 					this.setLabel("Set Enumeration value");
 
 					if (stereotype != null) {
-						property.setValue(stereotype, 
-								IHDFProfileConstants.ENUMERATION_VALUE,
-								(Enumeration)element);
+						property.setValue(stereotype, IHDFProfileConstants.ENUMERATION_VALUE, element);
 						refresh();
 					}
 
 					// fire notification for any stereotype property changes to update views
 					// this is a bogus notification of change to property name, but can't find a better option
-					Notification notification = new NotificationImpl(
-							Notification.SET, null, property.getName()) {
+					Notification notification = new NotificationImpl(Notification.SET, null, property.getName()) {
+						@Override
 						public Object getNotifier() {
 							return property;
 						}
+
+						@Override
 						public int getFeatureID(Class expectedClass) {
 							return UMLPackage.PROPERTY__NAME;
 						}
 					};
 					property.eNotify(notification);
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
 	}
-	
+
 	private void fillEnumerationLiteralCombo() {
-    	Enumeration value = null;
-    	if (property != null) {
+		Enumeration value = null;
+		if (property != null) {
 			Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-					property, IHDFProfileConstants.ENUMERATION_CONSTRAINT);
+				property, IHDFProfileConstants.ENUMERATION_CONSTRAINT);
 			if (stereotype != null) {
-				value = (Enumeration) property.getValue(
-						stereotype, IHDFProfileConstants.ENUMERATION_VALUE);
+				value = (Enumeration) property.getValue(stereotype, IHDFProfileConstants.ENUMERATION_VALUE);
 			}
-    	}
-		
+		}
+
 		if (value == null) {
 			enumerationLiteralCombo.setItems(new String[] {});
-		}
-		else {
+		} else {
 			List<String> items = new ArrayList<String>();
 			items.add("");
 			for (EnumerationLiteral literal : value.getOwnedLiterals()) {
@@ -235,82 +234,81 @@ public class EnumerationConstraintSection extends AbstractModelerPropertySection
 			enumerationLiteralCombo.setItems(items.toArray(new String[items.size()]));
 		}
 	}
-	
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 
-        Shell shell = new Shell();
-        GC gc = new GC(shell);
-        gc.setFont(shell.getFont());
-        Point point = gc.textExtent("");//$NON-NLS-1$
-        int buttonHeight = point.y + 10;
-        gc.dispose();
-        shell.dispose();
+		Shell shell = new Shell();
+		GC gc = new GC(shell);
+		gc.setFont(shell.getFont());
+		Point point = gc.textExtent("");//$NON-NLS-1$
+		int buttonHeight = point.y + 10;
+		gc.dispose();
+		shell.dispose();
 
-		Composite composite = getWidgetFactory()
-				.createGroup(parent, "Enumeration Constraint");
-        FormLayout layout = new FormLayout();
-        layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
-        layout.marginHeight = ITabbedPropertyConstants.VSPACE;
-        layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
-        composite.setLayout(layout);
-		
+		Composite composite = getWidgetFactory().createGroup(parent, "Enumeration Constraint");
+		FormLayout layout = new FormLayout();
+		layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+		layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+		layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+		composite.setLayout(layout);
+
 		FormData data = null;
 
 		/* value */
 		enumerationValue = getWidgetFactory().createCLabel(composite, "", SWT.BORDER); //$NON-NLS-1$
 
-        enumerationValueButton = getWidgetFactory().createButton(composite,
-            "Select...", SWT.PUSH); //$NON-NLS-1$
-        enumerationValueButton.addSelectionListener(new SelectionAdapter() {
-            public void widgetSelected(SelectionEvent event) {
-            	openElementSelectionDialog();
-            }
-        });
+		enumerationValueButton = getWidgetFactory().createButton(composite, "Select...", SWT.PUSH); //$NON-NLS-1$
+		enumerationValueButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+				openElementSelectionDialog();
+			}
+		});
 
-        data = new FormData();
-        data.left = new FormAttachment(0, 0);
-        data.height = buttonHeight;
-        enumerationValueButton.setLayoutData(data);
+		data = new FormData();
+		data.left = new FormAttachment(0, 0);
+		data.height = buttonHeight;
+		enumerationValueButton.setLayoutData(data);
 
-        data = new FormData();
-        data.left = new FormAttachment(enumerationValueButton, 0);
-        data.right = new FormAttachment(50, 0);
-        enumerationValue.setLayoutData(data);
+		data = new FormData();
+		data.left = new FormAttachment(enumerationValueButton, 0);
+		data.right = new FormAttachment(50, 0);
+		enumerationValue.setLayoutData(data);
 
 		/* ---- literals combo ---- */
-        enumerationLiteralCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY);
-        fillEnumerationLiteralCombo();
-        enumerationLiteralCombo.addSelectionListener(new SelectionListener() {
+		enumerationLiteralCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY);
+		fillEnumerationLiteralCombo();
+		enumerationLiteralCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				enumerationLiteralModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				enumerationLiteralModified = true;
 				modifyFields();
 			}
 		});
 
-		CLabel enumerationLiteralLabel = getWidgetFactory()
-				.createCLabel(composite, "Code:"); //$NON-NLS-1$
+		CLabel enumerationLiteralLabel = getWidgetFactory().createCLabel(composite, "Code:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(enumerationValue, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(enumerationValueButton, 0, SWT.CENTER);
 		enumerationLiteralLabel.setLayoutData(data);
 
 		data = new FormData();
-        data.left = new FormAttachment(enumerationLiteralLabel, 0);
+		data.left = new FormAttachment(enumerationLiteralLabel, 0);
 		data.top = new FormAttachment(enumerationValueButton, 0, SWT.CENTER);
 		enumerationLiteralCombo.setLayoutData(data);
 
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (property != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(property);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
 			if (editingDomain != null && editingDomain.isReadOnly(property.eResource())) {
 				return true;
 			}
@@ -323,8 +321,10 @@ public class EnumerationConstraintSection extends AbstractModelerPropertySection
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -334,6 +334,7 @@ public class EnumerationConstraintSection extends AbstractModelerPropertySection
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
@@ -341,46 +342,44 @@ public class EnumerationConstraintSection extends AbstractModelerPropertySection
 		this.property = (Property) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 
 	}
 
+	@Override
 	public void refresh() {
 		final AdapterFactory adapterFactory = new UMLItemProviderAdapterFactory();
 		final ILabelProvider labelProvider = new AdapterFactoryLabelProvider(adapterFactory);
-		
-		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
-				property, IHDFProfileConstants.ENUMERATION_CONSTRAINT);
 
-		Enumeration value = (Enumeration) property.getValue(
-				stereotype, IHDFProfileConstants.ENUMERATION_VALUE);
+		Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(
+			property, IHDFProfileConstants.ENUMERATION_CONSTRAINT);
+
+		Enumeration value = (Enumeration) property.getValue(stereotype, IHDFProfileConstants.ENUMERATION_VALUE);
 		if (value != null) {
 			enumerationValue.setText(labelProvider.getText(value));
 			enumerationValue.layout();
-		}
-		else {
+		} else {
 			enumerationValue.setText("");
 		}
 
-        fillEnumerationLiteralCombo();
-        enumerationLiteralCombo.select(0);
+		fillEnumerationLiteralCombo();
+		enumerationLiteralCombo.select(0);
 		try {
 			EnumerationLiteral code = (EnumerationLiteral) property.getValue(
-					stereotype, IHDFProfileConstants.ENUMERATION_CODE);
+				stereotype, IHDFProfileConstants.ENUMERATION_CODE);
 			if (value != null && code != null) {
 				int index = value.getOwnedLiterals().indexOf(code);
 				enumerationLiteralCombo.select(index);
 			}
-		}
-		catch (IllegalArgumentException e) {
+		} catch (IllegalArgumentException e) {
 			// temporary until profile is updated
 		}
 
 		if (isReadOnly()) {
 			enumerationValueButton.setEnabled(false);
-		}
-		else {
+		} else {
 			enumerationValueButton.setEnabled(true);
 		}
 
@@ -391,19 +390,23 @@ public class EnumerationConstraintSection extends AbstractModelerPropertySection
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {
 
 				public void run() {
 					// widget not disposed and UML element is not deleted
-					if (!isDisposed() && property.eResource() != null)
+					if (!isDisposed() && property.eResource() != null) {
 						refresh();
+					}
 				}
 			});
 		}

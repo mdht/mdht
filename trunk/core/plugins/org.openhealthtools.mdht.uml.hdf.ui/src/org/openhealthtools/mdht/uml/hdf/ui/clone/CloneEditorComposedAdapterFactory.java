@@ -15,19 +15,17 @@ import java.util.ArrayList;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 
-public class CloneEditorComposedAdapterFactory 
-{
+public class CloneEditorComposedAdapterFactory {
 	private static ComposedAdapterFactory mnCompAdapterFactory;
-	
-	public final static ComposedAdapterFactory getAdapterFactory()
-	{
-		if (mnCompAdapterFactory == null)
+
+	public final static ComposedAdapterFactory getAdapterFactory() {
+		if (mnCompAdapterFactory == null) {
 			mnCompAdapterFactory = new ComposedAdapterFactory(createFactoryList());
+		}
 		return mnCompAdapterFactory;
 	}
-	
-	public final static ArrayList<AdapterFactory> createFactoryList()
-	{
+
+	public final static ArrayList<AdapterFactory> createFactoryList() {
 		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
 		factories.add(new CloneUMLItemProviderAdapterFactory());
 		return factories;

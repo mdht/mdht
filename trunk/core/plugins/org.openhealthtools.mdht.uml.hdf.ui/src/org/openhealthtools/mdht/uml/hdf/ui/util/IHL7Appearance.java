@@ -39,10 +39,10 @@ public interface IHL7Appearance extends IUMLNotation {
 	 */
 	public final static int DISP_BUSINESS_NAME = 1 << 12;
 
-	
 	/**
 	 * Default HL7 property display.
 	 */
-	public final static int DEFAULT_HL7_PROPERTY = DISP_NAME | DISP_TYPE | DISP_MULTIPLICITY | DISP_DFLT_VALUE | DISP_VOCABULARY | DISP_UPDATE_MODE;
+	public final static int DEFAULT_HL7_PROPERTY = DISP_NAME | DISP_TYPE | DISP_MULTIPLICITY | DISP_DFLT_VALUE |
+			DISP_VOCABULARY | DISP_UPDATE_MODE;
 
 }
