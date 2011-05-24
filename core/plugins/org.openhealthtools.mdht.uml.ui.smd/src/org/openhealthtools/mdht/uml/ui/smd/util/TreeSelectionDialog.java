@@ -1,5 +1,3 @@
-package org.openhealthtools.mdht.uml.ui.smd.util;
-
 /*******************************************************************************
  * Copyright (c) 2000, 2008, 2009 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
@@ -13,6 +11,7 @@ package org.openhealthtools.mdht.uml.ui.smd.util;
  * 			ListSelectionDialog dialog alignment
  * 		Sean Muir (JKM Software) Extend to use tree versus list
  *******************************************************************************/
+package org.openhealthtools.mdht.uml.ui.smd.util;
 
 import java.util.ArrayList;
 
@@ -45,7 +44,9 @@ import org.eclipse.ui.internal.WorkbenchMessages;
  * Example:
  * 
  * <pre>
- * ListSelectionDialog dlg = new ListSelectionDialog(getShell(), input, new BaseWorkbenchContentProvider(), new WorkbenchLabelProvider(), &quot;Select the resources to save:&quot;);
+ * ListSelectionDialog dlg = new ListSelectionDialog(
+ * 	getShell(), input, new BaseWorkbenchContentProvider(), new WorkbenchLabelProvider(),
+ * 	&quot;Select the resources to save:&quot;);
  * dlg.setInitialSelections(dirtyEditors);
  * dlg.setTitle(&quot;Save Resources&quot;);
  * dlg.open();
@@ -99,10 +100,10 @@ public class TreeSelectionDialog extends SelectionDialog {
 	 * @param labelProvider
 	 *            the label provider for displaying model elements
 	 * @param message
-	 *            the message to be displayed at the top of this dialog, or
-	 *            <code>null</code> to display a default message
+	 *            the message to be displayed at the top of this dialog, or <code>null</code> to display a default message
 	 */
-	public TreeSelectionDialog(Shell parentShell, Object input, IStructuredContentProvider contentProvider, ILabelProvider labelProvider, String message) {
+	public TreeSelectionDialog(Shell parentShell, Object input, IStructuredContentProvider contentProvider,
+			ILabelProvider labelProvider, String message) {
 		super(parentShell);
 		setTitle(WorkbenchMessages.ListSelection_title);
 		inputElement = input;
@@ -122,50 +123,50 @@ public class TreeSelectionDialog extends SelectionDialog {
 	 *            org.eclipse.swt.widgets.Composite
 	 */
 	private void addSelectionButtons(Composite composite) {
-//		Composite buttonComposite = new Composite(composite, SWT.NONE);
-//		GridLayout layout = new GridLayout();
-//
-//		layout.numColumns = 0;
-//		layout.marginWidth = 0;
-//		layout.horizontalSpacing = convertHorizontalDLUsToPixels(IDialogConstants.HORIZONTAL_SPACING);
-//		buttonComposite.setLayout(layout);
-//		buttonComposite.setLayoutData(new GridData(SWT.END, SWT.TOP, true, false));
-//
-//		Button selectButton = createButton(buttonComposite, IDialogConstants.SELECT_ALL_ID, SELECT_ALL_TITLE, false);
-//
-//		SelectionListener listener = new SelectionAdapter() {
-//			public void widgetSelected(SelectionEvent e) {
-//				//                listViewer.setAllChecked(true);
-//			}
-//		};
-//		selectButton.addSelectionListener(listener);
-//
-//		Button deselectButton = createButton(buttonComposite, IDialogConstants.DESELECT_ALL_ID, DESELECT_ALL_TITLE, false);
-//
-//		listener = new SelectionAdapter() {
-//			public void widgetSelected(SelectionEvent e) {
-//				//                listViewer.setAllChecked(false);
-//			}
-//		};
-//		deselectButton.addSelectionListener(listener);
+		// Composite buttonComposite = new Composite(composite, SWT.NONE);
+		// GridLayout layout = new GridLayout();
+		//
+		// layout.numColumns = 0;
+		// layout.marginWidth = 0;
+		// layout.horizontalSpacing = convertHorizontalDLUsToPixels(IDialogConstants.HORIZONTAL_SPACING);
+		// buttonComposite.setLayout(layout);
+		// buttonComposite.setLayoutData(new GridData(SWT.END, SWT.TOP, true, false));
+		//
+		// Button selectButton = createButton(buttonComposite, IDialogConstants.SELECT_ALL_ID, SELECT_ALL_TITLE, false);
+		//
+		// SelectionListener listener = new SelectionAdapter() {
+		// public void widgetSelected(SelectionEvent e) {
+		// // listViewer.setAllChecked(true);
+		// }
+		// };
+		// selectButton.addSelectionListener(listener);
+		//
+		// Button deselectButton = createButton(buttonComposite, IDialogConstants.DESELECT_ALL_ID, DESELECT_ALL_TITLE, false);
+		//
+		// listener = new SelectionAdapter() {
+		// public void widgetSelected(SelectionEvent e) {
+		// // listViewer.setAllChecked(false);
+		// }
+		// };
+		// deselectButton.addSelectionListener(listener);
 	}
 
-	
 	Object[] selectionPath = null;
-	
+
 	/**
 	 * Visually checks the previously-specified elements in this dialog's list
 	 * viewer.
 	 */
+	@Override
 	public void setInitialSelections(Object[] selectionPath) {
-		
+
 		this.selectionPath = selectionPath;
-		
+
 	}
-	
+
 	HelpListener helpListener;
-	public void setHelpListener(HelpListener helpListener)
-	{
+
+	public void setHelpListener(HelpListener helpListener) {
 		this.helpListener = helpListener;
 	}
 
@@ -176,6 +177,7 @@ public class TreeSelectionDialog extends SelectionDialog {
 	 * org.eclipse.jface.window.Window#configureShell(org.eclipse.swt.widgets
 	 * .Shell)
 	 */
+	@Override
 	protected void configureShell(Shell shell) {
 		super.configureShell(shell);
 		PlatformUI.getWorkbench().getHelpSystem().setHelp(shell, IWorkbenchHelpContextIds.LIST_SELECTION_DIALOG);
@@ -184,6 +186,7 @@ public class TreeSelectionDialog extends SelectionDialog {
 	/*
 	 * (non-Javadoc) Method declared on Dialog.
 	 */
+	@Override
 	protected Control createDialogArea(final Composite parent) {
 		// page group
 		Composite composite = (Composite) super.createDialogArea(parent);
@@ -192,7 +195,7 @@ public class TreeSelectionDialog extends SelectionDialog {
 
 		createMessageArea(composite);
 
-		treeViewer = new TreeViewer(composite); //.newCheckList(composite, SWT.BORDER);
+		treeViewer = new TreeViewer(composite); // .newCheckList(composite, SWT.BORDER);
 		GridData data = new GridData(GridData.FILL_BOTH);
 		data.heightHint = SIZING_SELECTION_WIDGET_HEIGHT;
 		data.widthHint = SIZING_SELECTION_WIDGET_WIDTH;
@@ -205,7 +208,6 @@ public class TreeSelectionDialog extends SelectionDialog {
 		addSelectionButtons(composite);
 
 		initializeViewer();
-
 
 		Dialog.applyDialogFont(composite);
 
@@ -226,26 +228,24 @@ public class TreeSelectionDialog extends SelectionDialog {
 	 */
 	private void initializeViewer() {
 		treeViewer.setInput(inputElement);
-		
-		if (selectionPath != null){
+
+		if (selectionPath != null) {
 			treeViewer.setSelection(new TreeSelection(new TreePath(selectionPath)));
 		}
 
-		
-		if (helpListener != null)
-		{
-			treeViewer.addHelpListener(helpListener );
+		if (helpListener != null) {
+			treeViewer.addHelpListener(helpListener);
 		}
-//		treeViewer.setSelection(new StructuredSelection(inputElement),true);
+		// treeViewer.setSelection(new StructuredSelection(inputElement),true);
 
 	}
 
 	/**
-	 * The <code>ListSelectionDialog</code> implementation of this
-	 * <code>Dialog</code> method builds a list of the selected elements for
+	 * The <code>ListSelectionDialog</code> implementation of this <code>Dialog</code> method builds a list of the selected elements for
 	 * later retrieval by the client and closes this dialog. TODO Implement
 	 * okPressed when we know how and when we will use the dialog SWM
 	 */
+	@Override
 	protected void okPressed() {
 
 		ITreeSelection selection = (ITreeSelection) treeViewer.getSelection();
