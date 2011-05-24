@@ -26,6 +26,7 @@ public class UIMessages extends NLS {
 	public static String ConsoleName_default;
 
 	public static String ModelSave_task;
+
 	public static String FileSaveError;
 
 	static {

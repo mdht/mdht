@@ -32,9 +32,6 @@ import org.openhealthtools.mdht.emf.hl7.mif2.ContextBinding;
 import org.openhealthtools.mdht.emf.hl7.mif2.ValueSet;
 import org.openhealthtools.mdht.emf.hl7.mif2.util.Mif2Switch;
 
-
-
-
 /**
  * 
  * Mif2VocabularyLabelProvider Mif2VocabularyLabelProvider provides coloring and
@@ -51,9 +48,8 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 		super();
 		this.display = display;
 		vocabularyModelColorProviderSwitch = new VocabularyModelColorProviderSwitch(this.display);
-		
-	}
 
+	}
 
 	public Color getBackground(Object element) {
 		// Currently no background changes
@@ -68,6 +64,7 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 	}
 
 	VocabularyModelLabelProviderSwitch vocabularyModelLabelProviderSwitch = new VocabularyModelLabelProviderSwitch();
+
 	VocabularyModelColorProviderSwitch vocabularyModelColorProviderSwitch = null;
 
 	/**
@@ -90,6 +87,7 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 			this.display = display;
 		}
 
+		@Override
 		public Object caseConcept(Concept object) {
 
 			if (!object.getCode().isEmpty()) {
@@ -107,42 +105,36 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 			return object;
 		}
 
+		@Override
 		public Object caseCodeSystemSupplement(CodeSystemSupplement codeSystemSupplement) {
 
-			if (!codeSystemSupplement.getCodeSystemVersionSupplement().isEmpty()  )
-			{
-				if (codeSystemSupplement.getCodeSystemVersionSupplement().get(0).isHl7ApprovedIndicator())
-				{
-					foregroundColor = display.getSystemColor(SWT.COLOR_BLUE);	
-				} else
-				{
-					foregroundColor = display.getSystemColor(SWT.COLOR_RED);	
+			if (!codeSystemSupplement.getCodeSystemVersionSupplement().isEmpty()) {
+				if (codeSystemSupplement.getCodeSystemVersionSupplement().get(0).isHl7ApprovedIndicator()) {
+					foregroundColor = display.getSystemColor(SWT.COLOR_BLUE);
+				} else {
+					foregroundColor = display.getSystemColor(SWT.COLOR_RED);
 				}
 			}
-			
+
 			return codeSystemSupplement;
 		}
 
-		
-		
+		@Override
 		public Object caseCodeSystem(CodeSystem codeSystem) {
 
-			if (codeSystem.getReleasedVersion().size() > 0)
-			{
-				if (codeSystem.getReleasedVersion().get(0).isHl7ApprovedIndicator())
-				{
-					foregroundColor = display.getSystemColor(SWT.COLOR_BLUE);	
-				} else
-				{
-					foregroundColor = display.getSystemColor(SWT.COLOR_RED);	
+			if (codeSystem.getReleasedVersion().size() > 0) {
+				if (codeSystem.getReleasedVersion().get(0).isHl7ApprovedIndicator()) {
+					foregroundColor = display.getSystemColor(SWT.COLOR_BLUE);
+				} else {
+					foregroundColor = display.getSystemColor(SWT.COLOR_RED);
 				}
-		
+
 			}
-			
+
 			return codeSystem;
 		}
 
-		
+		@Override
 		public Object caseCode(Code object) {
 			if (object.getStatus() != null) {
 				if (object.getStatus().equals(CodeStatusKind.PROPOSED)) {
@@ -156,7 +148,7 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 			return object;
 		}
 
-		
+		@Override
 		public Object defaultCase(EObject object) {
 			foregroundColor = display.getSystemColor(SWT.COLOR_BLACK);
 			return object;
@@ -174,65 +166,64 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 
 		// label bucket set by the doSwitch
 		public String label;
-		
+
+		@Override
 		public Object caseCode(Code code) {
 			label = code.getCode();
 			return code;
 		}
 
-
+		@Override
 		public Object caseCodeSystemSupplement(CodeSystemSupplement codeSystemSupplement) {
-					
-			label = codeSystemSupplement.getName() + " : " + codeSystemSupplement.getCodeSystemId() + " *"; 
+
+			label = codeSystemSupplement.getName() + " : " + codeSystemSupplement.getCodeSystemId() + " *";
 
 			return codeSystemSupplement;
 		}
-		
+
+		@Override
 		public Object caseCodeSystem(CodeSystem codeSystem) {
-			
-			label = codeSystem.getName() + " : " + codeSystem.getCodeSystemId(); 
+
+			label = codeSystem.getName() + " : " + codeSystem.getCodeSystemId();
 
 			return codeSystem;
 		}
 
-		
+		@Override
 		public Object caseValueSet(ValueSet valueSet) {
-			
-			label = valueSet.getName() +" : " + valueSet.getId();
-			
+
+			label = valueSet.getName() + " : " + valueSet.getId();
+
 			return valueSet;
 		}
 
-		
-		public Object caseBindingRealm(BindingRealm object) {			
+		@Override
+		public Object caseBindingRealm(BindingRealm object) {
 			label = object.getName();
 			return object;
 		}
 
-		
+		@Override
 		public Object caseContextBinding(ContextBinding object) {
 			label = object.getConceptDomain();// + ":" + object.getValueSet() +
 			// ":" +
 			// object.getEffectiveDate();
 			return object;
 		}
-		
 
-		 public Object caseConceptSupplement(ConceptSupplement conceptSupplement)
-		 {
-			 label = conceptSupplement.getCode();
-			 return conceptSupplement;
-		 }
+		@Override
+		public Object caseConceptSupplement(ConceptSupplement conceptSupplement) {
+			label = conceptSupplement.getCode();
+			return conceptSupplement;
+		}
 
-	
-		
-		 public Object caseConceptDomain(ConceptDomain conceptDomain)
-		 {
-			 label = conceptDomain.getName();
-			 return conceptDomain;
-		 }
+		@Override
+		public Object caseConceptDomain(ConceptDomain conceptDomain) {
+			label = conceptDomain.getName();
+			return conceptDomain;
+		}
 
-		
+		@Override
 		public Object defaultCase(EObject object) {
 			// If we can not find it - We set to class name to give some
 			// guidance on troubleshooting and not just throw exception
@@ -240,7 +231,7 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 			return object;
 		}
 
-		
+		@Override
 		public Object caseConcept(Concept object) {
 			if (!object.getCode().isEmpty()) {
 				label = object.getCode().get(0).getCode();
@@ -248,7 +239,6 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 					label += " : " + object.getPrintName().get(0).getText();
 				}
 			}
-	
 
 			return object;
 		}
@@ -260,11 +250,10 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 		if (element instanceof EObject) {
 			vocabularyModelLabelProviderSwitch.doSwitch((EObject) element);
 			return vocabularyModelLabelProviderSwitch.label;
-		} else
-		{
-			return (String)element;
+		} else {
+			return (String) element;
 		}
-	
+
 	}
 
 	public void addListener(ILabelProviderListener listener) {
@@ -284,10 +273,8 @@ public class Mif2VocabularyLabelProvider implements ILabelProvider, IColorProvid
 
 	}
 
-	public org.eclipse.swt.graphics.Image getImage(Object element) {		
+	public org.eclipse.swt.graphics.Image getImage(Object element) {
 		return null;
 	}
-	
-	
 
 }

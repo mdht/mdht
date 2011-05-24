@@ -59,30 +59,34 @@ import org.openhealthtools.mdht.uml.hl7.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.hl7.ui.util.ConsoleUtil;
 import org.osgi.framework.Bundle;
 
-
 /**
  * 
  * $Id: $
  */
-public class ImportMIFAction
-		implements IObjectActionDelegate, IViewActionDelegate, IEditorActionDelegate {
+public class ImportMIFAction implements IObjectActionDelegate, IViewActionDelegate, IEditorActionDelegate {
 
 	protected IWorkbenchPart activePart;
+
 	protected IStructuredSelection currentSelection;
+
 	private ResourceSet resourceSet;
-	
+
 	public ImportMIFAction() {
 		super();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.IViewActionDelegate#init(org.eclipse.ui.IViewPart)
 	 */
 	public void init(IViewPart view) {
 		activePart = view;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.IEditorActionDelegate#setActiveEditor(org.eclipse.jface.action.IAction, org.eclipse.ui.IEditorPart)
 	 */
 	public void setActiveEditor(IAction action, IEditorPart targetEditor) {
@@ -100,42 +104,44 @@ public class ImportMIFAction
 	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
-		if (selection instanceof IStructuredSelection)
+		if (selection instanceof IStructuredSelection) {
 			currentSelection = (IStructuredSelection) selection;
-		else
+		} else {
 			currentSelection = null;
-		
+		}
+
 		action.setEnabled(currentSelection != null && !currentSelection.isEmpty());
 	}
-	
+
 	private IProject getCurrentProject() {
-		if (currentSelection.getFirstElement() instanceof IFile)
-			return ((IFile)currentSelection.getFirstElement()).getProject();
-		else
+		if (currentSelection.getFirstElement() instanceof IFile) {
+			return ((IFile) currentSelection.getFirstElement()).getProject();
+		} else {
 			return null;
+		}
 	}
-	
+
 	protected List<ModelElement> getModelElements() {
 		List<ModelElement> modelElements = new ArrayList<ModelElement>();
-		for (Object element : currentSelection.toList())  {
+		for (Object element : currentSelection.toList()) {
 			if (element instanceof IFile) {
-				element = loadMIFFile((IFile)element);
-			}
-			else {
+				element = loadMIFFile((IFile) element);
+			} else {
 				element = AdapterFactoryEditingDomain.unwrap(element);
 			}
-				
-			if (element instanceof ModelElement)
-				modelElements.add((ModelElement)element);
+
+			if (element instanceof ModelElement) {
+				modelElements.add((ModelElement) element);
+			}
 		}
-		
+
 		return modelElements;
 	}
-	
+
 	protected StaticModelBase loadMIFFile(IFile file) {
 		if (resourceSet == null) {
 			resourceSet = new ResourceSetImpl();
-			resourceSet.getLoadOptions().put(XMIResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+			resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
 		}
 		Resource resource = null;
 		StaticModelBase mifModel = null;
@@ -144,14 +150,13 @@ public class ImportMIFAction
 		// don't abandon processing if parse error in MIF file
 		try {
 			resource = resourceSet.getResource(modelURI, true);
-			
-			for (org.eclipse.emf.ecore.resource.Resource.Diagnostic diagnostic : resource.getErrors()){
+
+			for (org.eclipse.emf.ecore.resource.Resource.Diagnostic diagnostic : resource.getErrors()) {
 				ConsoleUtil.printError(ConsoleUtil.DEFAULT_CONSOLE_NAME, diagnostic.toString());
 			}
-		}
-		catch (Exception emfException) {
+		} catch (Exception emfException) {
 			resource = resourceSet.getResource(modelURI, false);
-			
+
 			ConsoleUtil.showConsole(ConsoleUtil.DEFAULT_CONSOLE_NAME);
 			ConsoleUtil.printError(ConsoleUtil.DEFAULT_CONSOLE_NAME, emfException.toString());
 
@@ -167,54 +172,53 @@ public class ImportMIFAction
 				}
 			}
 		}
-		
+
 		return mifModel;
 	}
-	
+
 	protected String getUMLFileExtension() {
 		@SuppressWarnings("unused")
 		Bundle rsaBundle = Platform.getBundle("com.ibm.xtools.modeler.ui");
-//		if (rsaBundle != null)
-//			return "emx";
-//		else
-			return UMLResource.FILE_EXTENSION;
+		// if (rsaBundle != null)
+		// return "emx";
+		// else
+		return UMLResource.FILE_EXTENSION;
 	}
 
 	/**
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(IAction action) {
-		ProgressMonitorDialog progressDialog = new ProgressMonitorDialog(
-				activePart.getSite().getShell());
+		ProgressMonitorDialog progressDialog = new ProgressMonitorDialog(activePart.getSite().getShell());
 		progressDialog.open();
-		
+
 		try {
 			Model umlModel = UMLFactory.eINSTANCE.createModel();
 			umlModel.setName("MIF_Import");
-			
+
 			// Must create UML model resource before importing
 			// so that MIF datatypes can be added to same resource set.
 			List<ModelElement> mifElements = getModelElements();
-			if (mifElements.isEmpty())
+			if (mifElements.isEmpty()) {
 				return;
-			
-			Resource mifResource = ((ModelElement) mifElements.get(0)).eResource();
+			}
+
+			Resource mifResource = (mifElements.get(0)).eResource();
 			URI umlURI = mifResource.getURI().trimFileExtension();
 			umlURI = umlURI.appendFileExtension(getUMLFileExtension());
-			
-			/* 
+
+			/*
 			 * Special case for rim.coremif
 			 * Create a model named "RIM", import content directly into top-level Model.
 			 */
-			if (mifElements.size() == 1 
-					&& "rim.coremif".equals(mifResource.getURI().lastSegment())) {
-				
+			if (mifElements.size() == 1 && "rim.coremif".equals(mifResource.getURI().lastSegment())) {
+
 				umlModel.setName("RIM");
 				umlURI.trimSegments(1);
 				umlURI = umlURI.appendSegment("RIM");
 				umlURI = umlURI.appendFileExtension(getUMLFileExtension());
 			}
-			
+
 			// save to current IProject
 			IProject project = getCurrentProject();
 			IFile umlFile = null;
@@ -222,84 +226,76 @@ public class ImportMIFAction
 				umlFile = project.getFile(umlURI.lastSegment());
 				umlURI = URI.createPlatformResourceURI(umlFile.getFullPath().toString(), false);
 			}
-			
+
 			Resource umlResource = mifResource.getResourceSet().createResource(umlURI);
 			umlResource.getContents().add(umlModel);
 
 			MIFImporter importer = new MIFImporter();
 			importer.setUMLModel(umlModel);
 
-			/* 
+			/*
 			 * Special case for rim.coremif
 			 * Create a model named "RIM", import content directly into top-level Model.
 			 */
-			if (mifElements.size() == 1 
-					&& "rim.coremif".equals(mifResource.getURI().lastSegment())
-					&& mifElements.get(0) instanceof StaticModelBase) {
-				
-				((XMLResource)umlResource).setID(umlModel, "RIM-model");
-				importer.processMIF((StaticModelBase) mifElements.get(0));
-			}
-			else {
+			if (mifElements.size() == 1 && "rim.coremif".equals(mifResource.getURI().lastSegment()) &&
+					mifElements.get(0) instanceof StaticModelBase) {
+
+				((XMLResource) umlResource).setID(umlModel, "RIM-model");
+				importer.processMIF(mifElements.get(0));
+			} else {
 				for (ModelElement element : mifElements) {
 					importer.processMIF(element);
 				}
 			}
 
-			umlResource.save(new HashMap<Object,Object>());
+			umlResource.save(new HashMap<Object, Object>());
 			// unload the model
 			umlModel.eResource().unload();
 			resourceSet = null;
-			
+
 			// refresh the Eclipse workspace to show this new file
 			IFile[] files = null;
 			if (umlFile != null) {
 				files = new IFile[1];
 				files[0] = umlFile;
 				project.refreshLocal(1, null);
-			}
-			else {
-				files = ResourcesPlugin.getWorkspace().getRoot().findFilesForLocation(
-					new Path(umlURI.toFileString()));
+			} else {
+				files = ResourcesPlugin.getWorkspace().getRoot().findFilesForLocation(new Path(umlURI.toFileString()));
 			}
 			if (files.length == 1) {
-				//files[0].getProject().refreshLocal(IResource.DEPTH_INFINITE, null);
+				// files[0].getProject().refreshLocal(IResource.DEPTH_INFINITE, null);
 				files[0].getParent().refreshLocal(IResource.DEPTH_ONE, null);
 
 				String editorID = "org.eclipse.uml2.uml.editor.presentation.UMLEditorID";
 				Bundle rsmBundle = Platform.getBundle("com.ibm.xtools.modeler.ui");
 				if (rsmBundle != null && "emx".equals(files[0].getFullPath().getFileExtension())) {
 					editorID = "com.ibm.xtools.modeler.ui.editors.internal.ModelEditor";
-				}
-				else if (activePart instanceof CommonNavigator) {
+				} else if (activePart instanceof CommonNavigator) {
 					// without this, the model file is in wrong sort position in navigator
-					CommonViewer viewer = ((CommonNavigator)activePart).getCommonViewer();
+					CommonViewer viewer = ((CommonNavigator) activePart).getCommonViewer();
 					viewer.refresh();
-					((CommonNavigator)activePart).selectReveal(new StructuredSelection(files[0]));
+					((CommonNavigator) activePart).selectReveal(new StructuredSelection(files[0]));
 				}
-//				else if (activePart instanceof ISetSelectionTarget) {
-//					((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(files[0]));
-//				}
+				// else if (activePart instanceof ISetSelectionTarget) {
+				// ((ISetSelectionTarget)activePart).selectReveal(new StructuredSelection(files[0]));
+				// }
 
 				IEditorInput editorInput = new FileEditorInput(files[0]);
 				try {
-					IWorkbenchPage activePage = 
-						activePart.getSite().getPage();
+					IWorkbenchPage activePage = activePart.getSite().getPage();
 					activePage.openEditor(editorInput, editorID);
 				} catch (PartInitException e) {
 				}
 
 				// display these last so that the error console will display after Rational console
 				ConsoleUtil.logToConsole(importer.getDiagnostics());
-				
+
 			}
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			ConsoleUtil.showConsole(ConsoleUtil.DEFAULT_CONSOLE_NAME);
 			ConsoleUtil.printError(ConsoleUtil.DEFAULT_CONSOLE_NAME, e.toString());
-		}
-		finally {
+		} finally {
 			progressDialog.close();
 		}
 	}
