@@ -18,10 +18,14 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemConcernEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * This class is a JUnit4 test case.
@@ -97,4 +101,25 @@ public class ProblemConcernEntryOperationsTest extends ConcernEntryOperationsTes
 		return IHEFactory.eINSTANCE.createProblemConcernEntry().init();
 	}
 
-} // ProblemConcernEntryOperationsTest
+	@Test
+	public void testGetProblemEntries() {
+
+		ProblemConcernEntry problemConcernEntry = IHEFactory.eINSTANCE.createProblemConcernEntry().init();
+
+		final long TESTCOUNT = 100;
+		for (int ctr = 0; ctr < TESTCOUNT; ctr++) {
+
+			ProblemEntry problemEntry = IHEFactory.eINSTANCE.createProblemEntry().init();
+
+			String vso = String.valueOf(ctr);
+			CD cd = DatatypesFactory.eINSTANCE.createCD(vso, vso, vso, vso);
+			problemEntry.setCode(cd);
+			problemConcernEntry.addObservation(problemEntry);
+		}
+
+		EList<ProblemEntry> result = ProblemConcernEntryOperations.getProblemEntries(problemConcernEntry);
+
+		org.junit.Assert.assertEquals(result.size(), TESTCOUNT);
+
+	}
+}

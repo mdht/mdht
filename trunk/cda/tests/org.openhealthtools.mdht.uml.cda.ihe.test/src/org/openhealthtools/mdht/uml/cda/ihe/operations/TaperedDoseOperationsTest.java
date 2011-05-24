@@ -10,15 +10,12 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
-import static org.junit.Assert.assertTrue;
-
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.TaperedDose;
 
@@ -28,50 +25,87 @@ import org.openhealthtools.mdht.uml.cda.ihe.TaperedDose;
 @SuppressWarnings("nls")
 public class TaperedDoseOperationsTest extends MedicationOperationsTest {
 
-	protected static final String TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.4.8";
+	public static class OperationsForOCL extends TaperedDoseOperations {
+		public String getOCLValue(String fieldName) {
 
-	/**
-	 * Not a real test, needed for EMMA to report 100% method coverage.
-	 */
-	@SuppressWarnings("unused")
-	@Test
-	public final void testConstructor() {
-		TaperedDoseOperations obj = new TaperedDoseOperations();
-		assertTrue(true);
-	} // testConstructor
+			String oclValue = null;
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// Template ID
-	// -------------------------------------------------------------
-	new TemplateIDValidationTest(TEMPLATE_ID) {
-
-		@Override
-		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
-				final Map<Object, Object> map) {
-			return TaperedDoseOperations.validateTaperedDoseTemplateId((TaperedDose) objectToTest, diagnostician, map);
+			try {
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+			} catch (Exception e) {
+				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
+			}
+			return oclValue;
 		}
-
 	}
 
-	}; // TEST_CASE_ARRAY
+	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
-	@Override
-	protected List<CDATestCase> getTestCases() {
-		// Return a new List because the one returned by Arrays.asList is
-		// unmodifiable so a sub-class can't append their test cases.
-		final List<CDATestCase> retValue = super.getTestCases();
-		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
-		return retValue;
+	public class ObjectFactory implements TestObjectFactory<TaperedDose> {
+		public TaperedDose create() {
+			return IHEFactory.eINSTANCE.createTaperedDose();
+		}
 	}
 
-	@Override
-	protected EObject getObjectToTest() {
-		return IHEFactory.eINSTANCE.createTaperedDose();
+	ObjectFactory objectFactory = new ObjectFactory();
+
+	@Test
+	public void testValidateTaperedDoseTaperedDosingSubstanceAdministration() {
+		OperationsTestCase<TaperedDose> testCase = new OperationsTestCase<TaperedDose>(
+			"validateTaperedDoseTaperedDosingSubstanceAdministration",
+			operationsForOCL.getOCLValue("VALIDATE_TAPERED_DOSE_TAPERED_DOSING_SUBSTANCE_ADMINISTRATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(TaperedDose target) {
+				target.init();
+
+			}
+
+			@Override
+			protected void updateToPass(TaperedDose target) {
+				SubstanceAdministration substanceAdministration = IHEFactory.eINSTANCE.createNormalDose().init(); // CDAFactory.eINSTANCE.createSubstanceAdministration();
+				target.addSubstanceAdministration(substanceAdministration);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return TaperedDoseOperations.validateTaperedDoseTaperedDosingSubstanceAdministration(
+					(TaperedDose) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
 	}
 
-	@Override
-	protected EObject getObjectInitToTest() {
-		return IHEFactory.eINSTANCE.createTaperedDose().init();
+	@Test
+	public void testValidateTaperedDoseTemplateId() {
+		OperationsTestCase<TaperedDose> testCase = new OperationsTestCase<TaperedDose>(
+			"ValidateTaperedDoseTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_TAPERED_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(TaperedDose target) {
+
+			}
+
+			@Override
+			protected void updateToPass(TaperedDose target) {
+				target.init();
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return TaperedDoseOperations.validateTaperedDoseTemplateId(
+					(TaperedDose) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
 	}
 
-} // TaperedDoseOperationsTest
+}
