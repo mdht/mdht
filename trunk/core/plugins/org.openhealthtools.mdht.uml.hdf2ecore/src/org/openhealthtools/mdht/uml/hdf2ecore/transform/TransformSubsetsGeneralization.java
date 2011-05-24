@@ -41,50 +41,50 @@ public class TransformSubsetsGeneralization {
 	public void transformAllContents(Element element) {
 		try {
 			// first, find all <<subsets>> generalizations
-			TreeIterator iterator = EcoreUtil.getAllContents(
-					Collections.singletonList(element));
+			TreeIterator iterator = EcoreUtil.getAllContents(Collections.singletonList(element));
 			while (iterator != null && iterator.hasNext()) {
 				EObject child = (EObject) iterator.next();
-				
+
 				UMLSwitch choiceSwitch = new UMLSwitch() {
+					@Override
 					public Object caseGeneralization(Generalization generalization) {
-						Classifier specific = (Classifier) generalization.getSpecific();
-						
-						Stereotype subsetsStereotype = 
-							HL7ResourceUtil.getAppliedHDFStereotype(generalization, IHDFProfileConstants.SUBSETS_GENERALIZATION);
+						Classifier specific = generalization.getSpecific();
+
+						Stereotype subsetsStereotype = HL7ResourceUtil.getAppliedHDFStereotype(
+							generalization, IHDFProfileConstants.SUBSETS_GENERALIZATION);
 						if (subsetsStereotype != null) {
 							// don't use this generalization in Ecore generation
 							generalizations.add(generalization);
 						}
-						
+
 						/*
-						 * TODO test for IHDFProfileConstants.EXCLUDED_PROPERTY in subclass properties 
+						 * TODO test for IHDFProfileConstants.EXCLUDED_PROPERTY in subclass properties
 						 * and find some way to support this in Ecore.
 						 */
 
 						return specific;
 					}
 				};
-				
+
 				choiceSwitch.doSwitch(child);
 			}
-			
+
 			// second, remove the generalizations
 			Generalization[] generalizationArray = new Generalization[generalizations.size()];
 			generalizationArray = generalizations.toArray(generalizationArray);
 			for (int i = 0; i < generalizationArray.length; i++) {
-				if (generalizationArray[i] != null)
+				if (generalizationArray[i] != null) {
 					transformSubsetsGeneralization(generalizationArray[i]);
+				}
 			}
-			
-		}
-		catch (IndexOutOfBoundsException e) {
+
+		} catch (IndexOutOfBoundsException e) {
 			Logger.logException(e);
 		}
 	}
-	
+
 	private void transformSubsetsGeneralization(Generalization generalization) {
 		generalization.destroy();
 	}
-	
+
 }

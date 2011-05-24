@@ -21,7 +21,7 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 
 public class EcoreTransformer {
-	
+
 	private EcoreTransformerOptions transformerOptions;
 
 	public EcoreTransformer() {
@@ -31,35 +31,31 @@ public class EcoreTransformer {
 	public EcoreTransformer(EcoreTransformerOptions options) {
 		transformerOptions = options;
 	}
-	
+
 	public void transformElement(Element element) {
 
-		TransformSubsetsGeneralization transformSubsetsGeneralization = 
-			new TransformSubsetsGeneralization(transformerOptions);
-		TransformChoiceGroups transformChoiceGroups = 
-			new TransformChoiceGroups(transformerOptions);
-		UMLSwitch transformTemplateBinding = 
-			new TransformTemplateBinding(transformerOptions);
+		TransformSubsetsGeneralization transformSubsetsGeneralization = new TransformSubsetsGeneralization(
+			transformerOptions);
+		TransformChoiceGroups transformChoiceGroups = new TransformChoiceGroups(transformerOptions);
+		UMLSwitch transformTemplateBinding = new TransformTemplateBinding(transformerOptions);
 
 		/*
 		 * Execute all structure transformations first (copy, delete, create)
 		 */
 		transformSubsetsGeneralization.transformAllContents(element);
 		transformChoiceGroups.transformAllContents(element);
-		
+
 		try {
-			TreeIterator iterator = EcoreUtil.getAllContents(
-					Collections.singletonList(element));
+			TreeIterator iterator = EcoreUtil.getAllContents(Collections.singletonList(element));
 			while (iterator != null && iterator.hasNext()) {
 				EObject child = (EObject) iterator.next();
 
 				transformTemplateBinding.doSwitch(child);
 			}
-		}
-		catch (IndexOutOfBoundsException e) {
+		} catch (IndexOutOfBoundsException e) {
 			e.printStackTrace();
 		}
 
 	}
-	
+
 }
