@@ -437,4 +437,35 @@ public class ProcedureEntryProcedureActivityProcedureOperationsTest extends Proc
 		testCase.doValidationTest();
 	}
 
+	@Test
+	public void testvalidateProcedureEntryProcedureActivityProcedureInternalReference() {
+		OperationsTestCase<ProcedureEntryProcedureActivityProcedure> testCase = new OperationsTestCase<ProcedureEntryProcedureActivityProcedure>(
+			"ValidateProcedureEntryProcedureActivityProcedureInternalReference",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_INTERNAL_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEntryProcedureActivityProcedure target) {
+				target.init();
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEntryProcedureActivityProcedure target) {
+				ED value = DatatypesFactory.eINSTANCE.createED("text");
+				target.setText(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ProcedureEntryProcedureActivityProcedureOperations.validateProcedureEntryProcedureActivityProcedureInternalReference(
+					(ProcedureEntryProcedureActivityProcedure) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+	}
+
 } // ProcedureEntryProcedureActivityProcedureOperationsTest
