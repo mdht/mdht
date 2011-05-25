@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import net.sourceforge.xmlmodeling.uml.xsd.profile.IXSDProfileConstants;
+import net.sourceforge.xmlmodeling.uml.xsd.profile.XSDProfileUtil;
+
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;

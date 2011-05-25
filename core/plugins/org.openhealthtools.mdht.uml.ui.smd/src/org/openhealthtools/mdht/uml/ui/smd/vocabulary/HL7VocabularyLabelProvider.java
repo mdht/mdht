@@ -20,6 +20,12 @@ import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Display;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7Code;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7CodeSystem;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7Concept;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7ConceptDomain;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7ValueSet;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.util.VocabularymetamodelSwitch;
 
 /**
  * 

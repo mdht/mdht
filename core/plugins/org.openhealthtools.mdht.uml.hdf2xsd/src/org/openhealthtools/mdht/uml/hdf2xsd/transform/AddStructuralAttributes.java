@@ -14,6 +14,9 @@ package org.openhealthtools.mdht.uml.hdf2xsd.transform;
 
 import java.util.List;
 
+import net.sourceforge.xmlmodeling.uml.xsd.profile.IXSDProfileConstants;
+import net.sourceforge.xmlmodeling.uml.xsd.profile.XSDProfileUtil;
+
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Package;

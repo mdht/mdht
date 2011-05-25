@@ -26,6 +26,17 @@ import org.eclipse.swt.events.HelpListener;
 import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.uml.Property;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7ChildCodeSet;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7Code;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7CodeSet;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7CodeSystem;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7Concept;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7ConceptDomain;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7ContentDefinition;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7SimpleCodeSet;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7ValueSet;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7ValueSetReferenceCodeSet;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.util.VocabularymetamodelSwitch;
 import org.openhealthtools.mdht.uml.hdf.ui.properties.IVocabularySelectionDelegate;
 import org.openhealthtools.mdht.uml.ui.smd.util.TreeSelectionDialog;
 

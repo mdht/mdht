@@ -12,6 +12,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.rsm.providers;
 
+import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 
 /**
  * This class provides custom edit parsers for HL7 class diagrams.

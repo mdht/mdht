@@ -37,6 +37,16 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMLMapImpl;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7ChildCodeSet;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7CodeSet;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7CodeSystem;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7Concept;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7ConceptDomain;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7ContextBinding;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7ValueSet;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7VocabularyArtifact;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.HL7VocabularyModel;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.vocabularymetamodel.util.VocabularymetamodelSwitch;
 import org.openhealthtools.mdht.uml.hdf.ui.properties.IVocabularySelectionDelegate.Constraint;
 
 /**
