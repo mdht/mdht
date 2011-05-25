@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2010 Sean Muir and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Sean Muir (JKM Software) - initial API and implementation
+ *******************************************************************************/
 package org.openhealttools.mdht.uml.cda.util.test;
 
 import java.io.FileInputStream;
@@ -43,6 +53,9 @@ public class TestCDAUtil extends TestCase {
 			}
 		}
 		assertNotNull(testDocument);
-		assertFalse("CDAUtil.load did not create CCD document, instead created document of type " + testDocument.getClass().getName(), testDocument.getClass().getName().equals(ClinicalDocumentImpl.class.getName()));
+		assertFalse(
+			"CDAUtil.load did not create CCD document, instead created document of type " +
+					testDocument.getClass().getName(),
+			testDocument.getClass().getName().equals(ClinicalDocumentImpl.class.getName()));
 	}
 }
