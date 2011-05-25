@@ -1,14 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2010 Sean Muir.
+ * Copyright (c) 2010, 2011 Sean Muir
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * Sean Muir (JKM Software) - initial API and implementation
- *
- * $Id$
+ *     Sean Muir (JKM Software) - initial API and implementation
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.builder;
 
@@ -36,19 +34,17 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
 public interface SectionBuilder<SectionTarget> {
 
-
 	public SectionTarget buildSection();
 
-	public void  construct(Section section);
+	public void construct(Section section);
 
-	public SectionBuilder<SectionTarget> with(Act act) ;
+	public SectionBuilder<SectionTarget> with(Act act);
 
 	public SectionBuilder<SectionTarget> with(Encounter encounter);
 
 	public SectionBuilder<SectionTarget> with(Entry entry);
 
-	public SectionBuilder<SectionTarget> with(
-			InfrastructureRootTypeId sectionTypeId);
+	public SectionBuilder<SectionTarget> with(InfrastructureRootTypeId sectionTypeId);
 
 	public SectionBuilder<SectionTarget> with(Observation observation);
 
@@ -68,28 +64,22 @@ public interface SectionBuilder<SectionTarget> {
 
 	public SectionBuilder<SectionTarget> with(Subject subject);
 
-	public SectionBuilder<SectionTarget> with(
-			SubstanceAdministration substanceAdministration);
+	public SectionBuilder<SectionTarget> with(SubstanceAdministration substanceAdministration);
 
 	public SectionBuilder<SectionTarget> with(Supply supply);
 
 	public SectionBuilder<SectionTarget> withId(II id);
 
-	public SectionBuilder<SectionTarget> withSectionClassCode(
-			ActClass sectionClassCode);
+	public SectionBuilder<SectionTarget> withSectionClassCode(ActClass sectionClassCode);
 
-	public SectionBuilder<SectionTarget> withSectionConfidentialityCode(
-			CE sectionConfidentialityCode);
-	
+	public SectionBuilder<SectionTarget> withSectionConfidentialityCode(CE sectionConfidentialityCode);
+
 	public SectionBuilder<SectionTarget> withSectionId(String sectionId);
 
-	public SectionBuilder<SectionTarget> withSectionLanguageCode(
-			CS sectionLanguageCode);
+	public SectionBuilder<SectionTarget> withSectionLanguageCode(CS sectionLanguageCode);
 
-	public SectionBuilder<SectionTarget> withSectionMoodCode(
-			ActMood sectionMoodCode);
+	public SectionBuilder<SectionTarget> withSectionMoodCode(ActMood sectionMoodCode);
 
-	public SectionBuilder<SectionTarget> withSectionNullFlavor(
-			NullFlavor sectionNullFlavor);
+	public SectionBuilder<SectionTarget> withSectionNullFlavor(NullFlavor sectionNullFlavor);
 
 }

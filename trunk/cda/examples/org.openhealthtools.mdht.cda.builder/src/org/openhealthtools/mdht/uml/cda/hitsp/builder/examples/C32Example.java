@@ -1,14 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2010 Sean Muir.
+ * Copyright (c) 2010, 2011 Sean Muir
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * Sean Muir (JKM Software) - initial API and implementation
- *
- * $Id$
+ *     Sean Muir (JKM Software) - initial API and implementation
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.hitsp.builder.examples;
 
@@ -101,7 +99,8 @@ public class C32Example {
 
 		AlertStatusObservation observationStatus = CCDFactory.eINSTANCE.createAlertStatusObservation().init();
 
-		observationStatus.getValues().add(DatatypesFactory.eINSTANCE.createCE("55561003", "2.16.840.1.113883.6.96", "", "Active"));
+		observationStatus.getValues().add(
+			DatatypesFactory.eINSTANCE.createCE("55561003", "2.16.840.1.113883.6.96", "", "Active"));
 
 		status.setObservation(observationStatus);
 
@@ -116,7 +115,8 @@ public class C32Example {
 
 		Observation observation = CDAFactory.eINSTANCE.createObservation();
 
-		observation.getValues().add(DatatypesFactory.eINSTANCE.createCE("48766-0", "2.16.840.1.113883.6.96", "", "Source of Information"));
+		observation.getValues().add(
+			DatatypesFactory.eINSTANCE.createCE("48766-0", "2.16.840.1.113883.6.96", "", "Source of Information"));
 
 		status.setObservation(observation);
 
@@ -170,7 +170,8 @@ public class C32Example {
 
 		hivesReaction.setCode(DatatypesFactory.eINSTANCE.createCD("ASSERTION", "2.16.840.1.113883.5.4", "", ""));
 
-		hivesReaction.getValues().add(DatatypesFactory.eINSTANCE.createCD("247472004", "2.16.840.1.113883.6.96", "", "Hives"));
+		hivesReaction.getValues().add(
+			DatatypesFactory.eINSTANCE.createCD("247472004", "2.16.840.1.113883.6.96", "", "Hives"));
 
 		hives.setObservation(hivesReaction);
 
@@ -330,16 +331,11 @@ public class C32Example {
 
 		sectionBuilder.with(DatatypesFactory.eINSTANCE.createST("Allergies and Adverse Reactions"));
 
-		
-		for (Entry entry : getEntries())
-		{
-			sectionBuilder.with(entry);	
+		for (Entry entry : getEntries()) {
+			sectionBuilder.with(entry);
 		}
-		
-		
 
 		return sectionBuilder.buildSection();
-
 
 	}
 
@@ -437,12 +433,8 @@ public class C32Example {
 
 			// Set the builder Sections and call the buildDocument method to
 			// create the Continuity Of Care Document
-			PatientSummary patientSummaryDocument = patientSummarybuilder.withDocumentId(documentId)
-																		 .with(documentType)
-																		 .withAuthors(getAuthors())
-																		 .with(getDocumentationsOf())
-																		 .with(getCustodian())
-																		 .with(getAllergiesSection()).buildDocument();
+			PatientSummary patientSummaryDocument = patientSummarybuilder.withDocumentId(documentId).with(documentType).withAuthors(
+				getAuthors()).with(getDocumentationsOf()).with(getCustodian()).with(getAllergiesSection()).buildDocument();
 
 			// Use the CDAUtil method to save instance to System.out, You can
 			// use the same method to save to a file

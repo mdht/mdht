@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 Sean Muir
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Sean Muir (JKM Software) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.builder;
 
 import org.openhealthtools.mdht.uml.cda.builder.impl.SectionBuilderImpl;
@@ -46,7 +56,8 @@ public class IHEBuilderFactory {
 		}
 	}
 
-	private static class AdmissionMedicationHistorySectionBuilder extends SectionBuilderImpl<AdmissionMedicationHistorySection> {
+	private static class AdmissionMedicationHistorySectionBuilder extends
+			SectionBuilderImpl<AdmissionMedicationHistorySection> {
 		@Override
 		public AdmissionMedicationHistorySection buildSection() {
 			AdmissionMedicationHistorySection section = IHEFactory.eINSTANCE.createAdmissionMedicationHistorySection().init();
@@ -76,7 +87,7 @@ public class IHEBuilderFactory {
 	private static class AssessmentAndPlanSectionBuilder extends SectionBuilderImpl<AssessmentAndPlanSection> {
 		@Override
 		public AssessmentAndPlanSection buildSection() {
-			AssessmentAndPlanSection section = (AssessmentAndPlanSection) IHEFactory.eINSTANCE.createAssessmentAndPlanSection().init();
+			AssessmentAndPlanSection section = IHEFactory.eINSTANCE.createAssessmentAndPlanSection().init();
 			construct(section);
 			return section;
 		}
@@ -172,7 +183,8 @@ public class IHEBuilderFactory {
 		}
 	}
 
-	private static class HospitalAdmissionDiagnosisSectionBuilder extends SectionBuilderImpl<HospitalAdmissionDiagnosisSection> {
+	private static class HospitalAdmissionDiagnosisSectionBuilder extends
+			SectionBuilderImpl<HospitalAdmissionDiagnosisSection> {
 		@Override
 		public HospitalAdmissionDiagnosisSection buildSection() {
 			HospitalAdmissionDiagnosisSection section = IHEFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
@@ -190,7 +202,8 @@ public class IHEBuilderFactory {
 		}
 	}
 
-	private static class HospitalDischargeMedicationsSectionBuilder extends SectionBuilderImpl<HospitalDischargeMedicationsSection> {
+	private static class HospitalDischargeMedicationsSectionBuilder extends
+			SectionBuilderImpl<HospitalDischargeMedicationsSection> {
 		@Override
 		public HospitalDischargeMedicationsSection buildSection() {
 			HospitalDischargeMedicationsSection section = IHEFactory.eINSTANCE.createHospitalDischargeMedicationsSection().init();
@@ -226,7 +239,8 @@ public class IHEBuilderFactory {
 		}
 	}
 
-	private static class MedicationsAdministeredSectionBuilder extends SectionBuilderImpl<MedicationsAdministeredSection> {
+	private static class MedicationsAdministeredSectionBuilder extends
+			SectionBuilderImpl<MedicationsAdministeredSection> {
 		@Override
 		public MedicationsAdministeredSection buildSection() {
 			MedicationsAdministeredSection section = IHEFactory.eINSTANCE.createMedicationsAdministeredSection().init();

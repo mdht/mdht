@@ -1,14 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2010 Sean Muir.
+ * Copyright (c) 2010, 2011 Sean Muir
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * Sean Muir (JKM Software) - initial API and implementation
- *
- * $Id$
+ *     Sean Muir (JKM Software) - initial API and implementation
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.builder.impl;
 
@@ -41,7 +39,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentProcedureMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
 @SuppressWarnings("rawtypes")
-public abstract class SectionBuilderImpl<SectionTarget> implements SectionBuilder{
+public abstract class SectionBuilderImpl<SectionTarget> implements SectionBuilder {
 
 	List<Act> acts = new ArrayList<Act>();
 
@@ -118,8 +116,9 @@ public abstract class SectionBuilderImpl<SectionTarget> implements SectionBuilde
 			section.setSectionId(sectionId);
 		}
 
-		if (subject != null)
+		if (subject != null) {
 			section.setSubject(subject);
+		}
 
 		if (strucDocText != null) {
 			section.setText(strucDocText);
@@ -216,8 +215,7 @@ public abstract class SectionBuilderImpl<SectionTarget> implements SectionBuilde
 		return this;
 	}
 
-	public SectionBuilderImpl<SectionTarget> with(
-			InfrastructureRootTypeId sectionTypeId) {
+	public SectionBuilderImpl<SectionTarget> with(InfrastructureRootTypeId sectionTypeId) {
 		this.sectionTypeId = sectionTypeId;
 		return this;
 	}
@@ -267,8 +265,7 @@ public abstract class SectionBuilderImpl<SectionTarget> implements SectionBuilde
 		return this;
 	}
 
-	public SectionBuilderImpl<SectionTarget> with(
-			SubstanceAdministration substanceAdministration) {
+	public SectionBuilderImpl<SectionTarget> with(SubstanceAdministration substanceAdministration) {
 		this.substanceAdministrations.add(substanceAdministration);
 		return this;
 	}
@@ -278,44 +275,37 @@ public abstract class SectionBuilderImpl<SectionTarget> implements SectionBuilde
 		return this;
 	}
 
-
 	public SectionBuilderImpl<SectionTarget> withId(II id) {
 		this.id = id;
 		return this;
 	}
 
-	public SectionBuilderImpl<SectionTarget> withSectionClassCode(
-			ActClass sectionClassCode) {
+	public SectionBuilderImpl<SectionTarget> withSectionClassCode(ActClass sectionClassCode) {
 		this.sectionClassCode = sectionClassCode;
 		return this;
 	}
 
-	public SectionBuilderImpl<SectionTarget> withSectionConfidentialityCode(
-			CE sectionConfidentialityCode) {
+	public SectionBuilderImpl<SectionTarget> withSectionConfidentialityCode(CE sectionConfidentialityCode) {
 		this.sectionConfidentialityCode = sectionConfidentialityCode;
 		return this;
 	}
-
 
 	public SectionBuilderImpl<SectionTarget> withSectionId(String sectionId) {
 		this.sectionId = sectionId;
 		return this;
 	}
 
-	public SectionBuilderImpl<SectionTarget> withSectionLanguageCode(
-			CS sectionLanguageCode) {
+	public SectionBuilderImpl<SectionTarget> withSectionLanguageCode(CS sectionLanguageCode) {
 		this.sectionLanguageCode = sectionLanguageCode;
 		return this;
 	}
 
-	public SectionBuilderImpl<SectionTarget> withSectionMoodCode(
-			ActMood sectionMoodCode) {
+	public SectionBuilderImpl<SectionTarget> withSectionMoodCode(ActMood sectionMoodCode) {
 		this.sectionMoodCode = sectionMoodCode;
 		return this;
 	}
 
-	public SectionBuilderImpl<SectionTarget> withSectionNullFlavor(
-			NullFlavor sectionNullFlavor) {
+	public SectionBuilderImpl<SectionTarget> withSectionNullFlavor(NullFlavor sectionNullFlavor) {
 		this.sectionNullFlavor = sectionNullFlavor;
 		return this;
 	}

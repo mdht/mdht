@@ -1,14 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2010 Sean Muir.
+ * Copyright (c) 2010, 2011 Sean Muir
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse private License v1.0
+ * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * Sean Muir (JKM Software) - initial API and implementation
- *
- * $Id$
+ *     Sean Muir (JKM Software) - initial API and implementation
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.builder.impl;
 
@@ -41,8 +39,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 
-public abstract class  DocumentBuilderImpl <Document> implements DocumentBuilder<Document>
-{
+public abstract class DocumentBuilderImpl<Document> implements DocumentBuilder<Document> {
 
 	List<Authenticator> authenticators = new ArrayList<Authenticator>();
 
@@ -120,8 +117,7 @@ public abstract class  DocumentBuilderImpl <Document> implements DocumentBuilder
 		}
 
 		if (documentConfidentialityCode != null) {
-			clinicalDocument
-					.setConfidentialityCode(documentConfidentialityCode);
+			clinicalDocument.setConfidentialityCode(documentConfidentialityCode);
 		}
 
 		if (documentLanguageCode != null) {
@@ -136,10 +132,9 @@ public abstract class  DocumentBuilderImpl <Document> implements DocumentBuilder
 			clinicalDocument.setVersionNumber(documentVersion);
 		}
 
-		
-
 		if (patient != null) {
-			PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();;
+			PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
+			;
 			patientRole.setPatient(patient);
 			clinicalDocument.addPatientRole(patientRole);
 		}
@@ -177,8 +172,7 @@ public abstract class  DocumentBuilderImpl <Document> implements DocumentBuilder
 		}
 
 		for (InformationRecipient informationRecipient : informationRecipients) {
-			clinicalDocument.getInformationRecipients().add(
-					informationRecipient);
+			clinicalDocument.getInformationRecipients().add(informationRecipient);
 		}
 
 		for (DocumentationOf documentationOf : documentationOfs) {
@@ -238,14 +232,12 @@ public abstract class  DocumentBuilderImpl <Document> implements DocumentBuilder
 		return this;
 	}
 
-	public DocumentBuilderImpl<Document> with(
-			InformationRecipient informationRecipient) {
+	public DocumentBuilderImpl<Document> with(InformationRecipient informationRecipient) {
 		informationRecipients.add(informationRecipient);
 		return this;
 	}
 
-	public DocumentBuilderImpl<Document> with(
-			InfrastructureRootTypeId infrastructureRootTypeId) {
+	public DocumentBuilderImpl<Document> with(InfrastructureRootTypeId infrastructureRootTypeId) {
 		this.infrastructureRootTypeId = infrastructureRootTypeId;
 		return this;
 	}
@@ -275,14 +267,12 @@ public abstract class  DocumentBuilderImpl <Document> implements DocumentBuilder
 		return this;
 	}
 
-	public DocumentBuilderImpl<Document> withAuthenticators(
-			List<Authenticator> authenticators) {
+	public DocumentBuilderImpl<Document> withAuthenticators(List<Authenticator> authenticators) {
 		authenticators.addAll(authenticators);
 		return this;
 	}
 
-	public DocumentBuilderImpl<Document> withAuthorizations(
-			List<Authorization> authorizations) {
+	public DocumentBuilderImpl<Document> withAuthorizations(List<Authorization> authorizations) {
 		authorizations.addAll(authorizations);
 		return this;
 	}
@@ -297,14 +287,12 @@ public abstract class  DocumentBuilderImpl <Document> implements DocumentBuilder
 		return this;
 	}
 
-	public DocumentBuilderImpl<Document> withDocumentConfidentialityCode(
-			CE documentConfidentialityCode) {
+	public DocumentBuilderImpl<Document> withDocumentConfidentialityCode(CE documentConfidentialityCode) {
 		this.documentConfidentialityCode = documentConfidentialityCode;
 		return this;
 	}
 
-	public DocumentBuilderImpl<Document> withDocumentEffectiveTime(
-			TS documentEffectiveTime) {
+	public DocumentBuilderImpl<Document> withDocumentEffectiveTime(TS documentEffectiveTime) {
 		this.documentEffectiveTime = documentEffectiveTime;
 		return this;
 	}
@@ -314,8 +302,7 @@ public abstract class  DocumentBuilderImpl <Document> implements DocumentBuilder
 		return this;
 	}
 
-	public DocumentBuilderImpl<Document> withDocumentLanguageCode(
-			CS documentLanguageCode) {
+	public DocumentBuilderImpl<Document> withDocumentLanguageCode(CS documentLanguageCode) {
 		this.documentLanguageCode = documentLanguageCode;
 		return this;
 	}
@@ -345,14 +332,12 @@ public abstract class  DocumentBuilderImpl <Document> implements DocumentBuilder
 		return this;
 	}
 
-	public DocumentBuilderImpl<Document> withInformationRecipients(
-			List<InformationRecipient> informationRecipients) {
+	public DocumentBuilderImpl<Document> withInformationRecipients(List<InformationRecipient> informationRecipients) {
 		informationRecipients.addAll(informationRecipients);
 		return this;
 	}
 
-	public DocumentBuilderImpl<Document> withInFulfillmentOfs(
-			List<InFulfillmentOf> inFulfillmentOfs) {
+	public DocumentBuilderImpl<Document> withInFulfillmentOfs(List<InFulfillmentOf> inFulfillmentOfs) {
 		this.inFulfillmentOfs.addAll(inFulfillmentOfs);
 		return this;
 	}

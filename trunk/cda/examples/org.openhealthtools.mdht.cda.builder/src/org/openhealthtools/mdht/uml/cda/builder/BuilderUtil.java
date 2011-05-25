@@ -1,14 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2010 Sean Muir.
+ * Copyright (c) 2010, 2011 Sean Muir
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * Sean Muir (JKM Software) - initial API and implementation
- *
- * $Id$
+ *     Sean Muir (JKM Software) - initial API and implementation
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.builder;
 
@@ -60,7 +58,6 @@ public class BuilderUtil {
 
 	}
 
-	
 	public static class BuildStrucDocText extends Builder<StrucDocText> {
 		String title;
 
@@ -71,26 +68,26 @@ public class BuilderUtil {
 
 		@Override
 		public StrucDocText construct() {
-			
+
 			StrucDocText strucDocText = CDAFactory.eINSTANCE.createStrucDocText();
 			strucDocText.addText(title);
 			return strucDocText;
 
 		}
 
-//		@Override
-//		public ST construct() {
-//			return DatatypesFactory.eINSTANCE.createST(title);
-//		}
+		// @Override
+		// public ST construct() {
+		// return DatatypesFactory.eINSTANCE.createST(title);
+		// }
 
 	}
-	
+
 	public static final String DATE_FORMAT_NOW = "yyyyMMdd";
-	
+
 	public static final SimpleDateFormat TSDF = new SimpleDateFormat(DATE_FORMAT_NOW);
-	
+
 	public static class BuildEffectiveTime extends Builder<TS> {
-		
+
 		String format = DATE_FORMAT_NOW;
 
 		public BuildEffectiveTime(Calendar cal) {
@@ -103,7 +100,7 @@ public class BuilderUtil {
 			this.cal = Calendar.getInstance();
 			;
 		}
-		
+
 		public BuildEffectiveTime(String format) {
 			super();
 			this.cal = Calendar.getInstance();
@@ -120,10 +117,14 @@ public class BuilderUtil {
 
 	}
 
+	@SuppressWarnings("hiding")
 	protected static abstract class BuildCode<Code> extends Builder<Code> {
 		String code;
+
 		String codeSystem;
+
 		String codeSystemName;
+
 		String displayName;
 
 		protected abstract Code create();
@@ -336,87 +337,79 @@ public class BuilderUtil {
 
 	}
 
-	public static final CE RomanCatholicAffiliationCode = DatatypesFactory.eINSTANCE.createCE("1041", "2.16.840.1.113883.5.1076", "HL7 ReligiousAffiliation", "Roman Catholic");
+	public static final CE RomanCatholicAffiliationCode = DatatypesFactory.eINSTANCE.createCE(
+		"1041", "2.16.840.1.113883.5.1076", "HL7 ReligiousAffiliation", "Roman Catholic");
 
 	public static final CD CD_NA = DatatypesFactory.eINSTANCE.createCD();
 	static {
 		CD_NA.setNullFlavor(NullFlavor.NA);
 	}
-	
+
 	public static final CD CD_UNK = DatatypesFactory.eINSTANCE.createCD();
 	static {
 		CD_UNK.setNullFlavor(NullFlavor.UNK);
 	}
-	
-	
-	public static final IVXB_TS createNullFlavorIVXB_TS(NullFlavor nullFlavor)
-	{
+
+	public static final IVXB_TS createNullFlavorIVXB_TS(NullFlavor nullFlavor) {
 		IVXB_TS ts = DatatypesFactory.eINSTANCE.createIVXB_TS();
 		ts.setNullFlavor(nullFlavor);
 		return ts;
-		
+
 	}
-	
-	public static final IVXB_TS getTS_UNK()
-	{
+
+	public static final IVXB_TS getTS_UNK() {
 		return createNullFlavorIVXB_TS(NullFlavor.UNK);
 	}
-	
-	public static final IVXB_TS getTS_NA()
-	{
+
+	public static final IVXB_TS getTS_NA() {
 		return createNullFlavorIVXB_TS(NullFlavor.NA);
 	}
-//	public static final  IVXB_TS TS_UNK = DatatypesFactory.eINSTANCE.createIVXB_TS();
-//
-//	static {
-//		TS_UNK.setNullFlavor(NullFlavor.UNK);
-//	}
-	
-	
-	
-	
-	
-	public static  AD AD_UNK = DatatypesFactory.eINSTANCE.createAD();
+
+	// public static final IVXB_TS TS_UNK = DatatypesFactory.eINSTANCE.createIVXB_TS();
+	//
+	// static {
+	// TS_UNK.setNullFlavor(NullFlavor.UNK);
+	// }
+
+	public static AD AD_UNK = DatatypesFactory.eINSTANCE.createAD();
 	static {
 		AD_UNK.setNullFlavor(NullFlavor.UNK);
 	};
-	
-	
-	public static  TEL TEL_UNK = DatatypesFactory.eINSTANCE.createTEL();
+
+	public static TEL TEL_UNK = DatatypesFactory.eINSTANCE.createTEL();
 	static {
 		TEL_UNK.setNullFlavor(NullFlavor.UNK);
 	}
-	
-	public static final TEL buildHomePhone(String phoneNumber)
-	{
-		return buildPhone(TelecommunicationAddressUse.HP,phoneNumber);
+
+	public static final TEL buildHomePhone(String phoneNumber) {
+		return buildPhone(TelecommunicationAddressUse.HP, phoneNumber);
 	}
 
-
-	public static final TEL buildPhone(TelecommunicationAddressUse use,String phoneNumber)
-	{
+	public static final TEL buildPhone(TelecommunicationAddressUse use, String phoneNumber) {
 		TEL phone = DatatypesFactory.eINSTANCE.createTEL();
 
 		phone.setValue(phoneNumber);
 
 		phone.getUses().add(use);
-		
+
 		return phone;
 	}
 
-	// none value used for interface 
+	// none value used for interface
 	private static final String[] NONE = new String[] {};
+
 	public static final AD buildHomeAddress(String city, String state) {
-		return buildAddress(PostalAddressUse.HP, NONE , new String[] {city}, new String[] {state}, NONE );
+		return buildAddress(PostalAddressUse.HP, NONE, new String[] { city }, new String[] { state }, NONE);
 	}
 
-	
 	public static final AD buildHomeAddress(String[] streets, String city, String state, String zip) {
-		return buildAddress(PostalAddressUse.HP, streets, new String[] {city}, new String[] {state}, new String[] {zip});
+		return buildAddress(
+			PostalAddressUse.HP, streets, new String[] { city }, new String[] { state }, new String[] { zip });
 	}
 
-	public static final AD buildAddress(PostalAddressUse use, String[] streets, String[] cities, String[] states, String[] zips) {
-		
+	public static final AD buildAddress(PostalAddressUse use, String[] streets, String[] cities, String[] states,
+			String[] zips) {
+
 		AD ad = DatatypesFactory.eINSTANCE.createAD();
 
 		ad.getUses().add(use);
@@ -424,74 +417,64 @@ public class BuilderUtil {
 		for (String street : streets) {
 			ad.getStreetAddressLines().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.STR, street));
 		}
-		
+
 		for (String city : cities) {
-		ad.getCities().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CTY, city));
+			ad.getCities().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.CTY, city));
 		}
-		
+
 		for (String state : states) {
-		ad.getStates().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.STA, state));
+			ad.getStates().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.STA, state));
 		}
-		
+
 		for (String zip : zips) {
-		ad.getPostalCodes().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.ZIP, zip));
+			ad.getPostalCodes().add(DatatypesFactory.eINSTANCE.createADXP(AddressPartType.ZIP, zip));
 		}
 		return ad;
 
 	}
 
-	public static final Person buildPerson(String prefix,String givenName,String familyName) {
-		return buildPerson(NONE , new String[]{ prefix }, new String[]{ givenName },new String[] {familyName}, NONE );
+	public static final Person buildPerson(String prefix, String givenName, String familyName) {
+		return buildPerson(NONE, new String[] { prefix }, new String[] { givenName }, new String[] { familyName }, NONE);
 	}
-	public static final Person buildPerson(String givenName,String familyName) {
-		return buildPerson(NONE , NONE , new String[]{ givenName },new String[] {familyName}, NONE );
+
+	public static final Person buildPerson(String givenName, String familyName) {
+		return buildPerson(NONE, NONE, new String[] { givenName }, new String[] { familyName }, NONE);
 	}
-	
-	public static final CD buildSNOMEDCT(String code)
-	{
-		return buildSNOMEDCT(code,"");
+
+	public static final CD buildSNOMEDCT(String code) {
+		return buildSNOMEDCT(code, "");
 	}
-	
-	public static final CD buildSNOMEDCT(String code,String displayName)
-	{
+
+	public static final CD buildSNOMEDCT(String code, String displayName) {
 		return DatatypesFactory.eINSTANCE.createCD(code, "2.16.840.1.113883.6.96", "SNOMED-CT", displayName);
 	}
-	
-	
-	public static final CD buildLOINC(String code)
-	{
-		return buildSNOMEDCT(code,"");
+
+	public static final CD buildLOINC(String code) {
+		return buildSNOMEDCT(code, "");
 	}
-	
-	public static final CD buildLOINC(String code,String displayName)
-	{
+
+	public static final CD buildLOINC(String code, String displayName) {
 		return DatatypesFactory.eINSTANCE.createCD(code, "2.16.840.1.113883.6.1", "LOINC", displayName);
 	}
-	
-	
-	public static final CE buildSNOMEDCE(String code)
-	{
-		return buildSNOMEDCE(code,"");
+
+	public static final CE buildSNOMEDCE(String code) {
+		return buildSNOMEDCE(code, "");
 	}
-	
-	public static final CE buildSNOMEDCE(String code,String displayName)
-	{
+
+	public static final CE buildSNOMEDCE(String code, String displayName) {
 		return DatatypesFactory.eINSTANCE.createCE(code, "2.16.840.1.113883.6.96", "SNOMED-CT", displayName);
 	}
-	
-	public static final CE buildRxNORM(String code,String displayName)
-	{
+
+	public static final CE buildRxNORM(String code, String displayName) {
 		return DatatypesFactory.eINSTANCE.createCE(code, "2.16.840.1.113883.6.88", "RxNorm", displayName);
 	}
 
-	public static final CE buildRxNORM(String code)
-	{
-		return buildRxNORM(code,"");
+	public static final CE buildRxNORM(String code) {
+		return buildRxNORM(code, "");
 	}
 
-	
-	
-	public static final Person buildPerson(String[] texts, String[] prefixes, String[] givenNames, String[] familyNames, String[] suffixes) {
+	public static final Person buildPerson(String[] texts, String[] prefixes, String[] givenNames,
+			String[] familyNames, String[] suffixes) {
 
 		Person person = CDAFactory.eINSTANCE.createPerson();
 
@@ -499,18 +482,18 @@ public class BuilderUtil {
 
 		return person;
 	}
-	
+
 	public static final PlayingEntity buildPlayingEntity(String name) {
 
-		PlayingEntity playingEntity= CDAFactory.eINSTANCE.createPlayingEntity ();
+		PlayingEntity playingEntity = CDAFactory.eINSTANCE.createPlayingEntity();
 
-		playingEntity.getNames().add(buildPN(new String[] {name}, NONE, NONE,NONE , NONE));
+		playingEntity.getNames().add(buildPN(new String[] { name }, NONE, NONE, NONE, NONE));
 
 		return playingEntity;
 	}
-	
-	private static final PN buildPN(String[] texts, String[] prefixes, String[] givenNames, String[] familyNames, String[] suffixes)
-	{
+
+	private static final PN buildPN(String[] texts, String[] prefixes, String[] givenNames, String[] familyNames,
+			String[] suffixes) {
 		PN pn = DatatypesFactory.eINSTANCE.createPN();
 
 		for (String text : texts) {
@@ -535,53 +518,46 @@ public class BuilderUtil {
 
 		return pn;
 	}
-	
-	
+
 	/*
 	 * IVL_TS effectiveTime = DatatypesFactory.eINSTANCE.createIVL_TS("1950", null);
-							
-							IVXB_TS low = DatatypesFactory.eINSTANCE.createIVXB_TS();
-							
-							IVXB_TS high = DatatypesFactory.eINSTANCE.createIVXB_TS();
-							
-							effectiveTime.setLow(low);
-							
-							effectiveTime.setHigh(high);
+	 * 
+	 * IVXB_TS low = DatatypesFactory.eINSTANCE.createIVXB_TS();
+	 * 
+	 * IVXB_TS high = DatatypesFactory.eINSTANCE.createIVXB_TS();
+	 * 
+	 * effectiveTime.setLow(low);
+	 * 
+	 * effectiveTime.setHigh(high);
 	 */
 
-	
-	public static final IVL_TS buildIVL_TSHigh(IVXB_TS low,String high)
-	{
+	public static final IVL_TS buildIVL_TSHigh(IVXB_TS low, String high) {
 		IVXB_TS h = DatatypesFactory.eINSTANCE.createIVXB_TS();
-		
+
 		h.setValue(high);
 
-		return buildIVL_TS(low,h);
+		return buildIVL_TS(low, h);
 	}
 
-	
-	public static final IVL_TS buildIVL_TSLow(String low,IVXB_TS high)
-	{
+	public static final IVL_TS buildIVL_TSLow(String low, IVXB_TS high) {
 		IVXB_TS l = DatatypesFactory.eINSTANCE.createIVXB_TS();
-		
+
 		l.setValue(low);
 
-		return buildIVL_TS(l,high);
+		return buildIVL_TS(l, high);
 	}
-	
-	public static final IVL_TS buildIVL_TS(String low,String high)
-	{
+
+	public static final IVL_TS buildIVL_TS(String low, String high) {
 		IVXB_TS l = DatatypesFactory.eINSTANCE.createIVXB_TS();
 		l.setValue(low);
 
 		IVXB_TS h = DatatypesFactory.eINSTANCE.createIVXB_TS();
 		h.setValue(high);
 
-		return buildIVL_TS(l,h);
+		return buildIVL_TS(l, h);
 	}
-	
-	public static final IVL_TS buildIVL_TS(IVXB_TS low,IVXB_TS high)
-	{
+
+	public static final IVL_TS buildIVL_TS(IVXB_TS low, IVXB_TS high) {
 		IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
 
 		if (low != null) {
@@ -591,54 +567,47 @@ public class BuilderUtil {
 		if (high != null) {
 			ts.setHigh(high);
 		}
-		
+
 		return ts;
 	}
-	
-	
 
-	public static final IVL_PQ buildIVL_PQUNK()
-	{
+	public static final IVL_PQ buildIVL_PQUNK() {
 		return buildIVL_PQ(NullFlavor.UNK);
-		
+
 	}
-	
-	public static final IVL_PQ buildIVL_PQ(NullFlavor nullFlavor)
-	{
+
+	public static final IVL_PQ buildIVL_PQ(NullFlavor nullFlavor) {
 		IVL_PQ pq = DatatypesFactory.eINSTANCE.createIVL_PQ();
-		
+
 		pq.setNullFlavor(nullFlavor);
-		
+
 		return pq;
 	}
-	
-	public static final CD buildCD(NullFlavor nullFlavor)
-	{
+
+	public static final CD buildCD(NullFlavor nullFlavor) {
 		CD cd = DatatypesFactory.eINSTANCE.createCD();
-		
+
 		cd.setNullFlavor(nullFlavor);
 		return cd;
 	}
-	
-	
-	public static final CD buildCDUNK()
-	{
+
+	public static final CD buildCDUNK() {
 		return buildCD(NullFlavor.UNK);
 	}
-	
-	public static final CD buildCDNA()
-	{
+
+	public static final CD buildCDNA() {
 		return buildCD(NullFlavor.NA);
 	}
-	
-	
-	private static class Code
-	{
+
+	private static class Code {
 		public String code;
+
 		public String codeDisplayName;
+
 		public String codeSystem;
+
 		public String codeSystemName;
-		
+
 		public Code(String code, String codeDisplayName, String codeSystem, String codeSystemName) {
 			super();
 			this.code = code;
@@ -646,46 +615,42 @@ public class BuilderUtil {
 			this.codeSystem = codeSystem;
 			this.codeSystemName = codeSystemName;
 		}
-		
-		
+
 	}
-	
-	 private static final HashMap<String,Code> CDCCVXCodes= new HashMap<String,Code>();
 
-	 static {
-		 CDCCVXCodes.put("09",new Code ("09","Tetanus and diphtheria toxoids","2.16.840.1.113883.6.59", "CVX"));
-		 CDCCVXCodes.put("113",new Code ("113","Tetanus and diphtheria toxoids - preservative free","2.16.840.1.113883.6.59", "CVX"));
-		 
-		 CDCCVXCodes.put("88",new Code ("88","Influenza virus vaccine","2.16.840.1.113883.6.59", "CVX"));
-		 
-		 CDCCVXCodes.put("111",new Code ("111","influenza, live, intranasal","2.16.840.1.113883.6.59","CVX"));
-		 
-		 
-		 CDCCVXCodes.put("33",new Code ("33","Pneumococcal polysaccharide vaccine","2.16.840.1.113883.6.59","CVX"));
-		 
-		CDCCVXCodes.put("109",new Code ("109","Pneumococcal NOS","2.16.840.1.113883.6.59","CVX"));
-		 
-		 
-	 };
-	 
-	 private static CD buildCD(Code code)
-	 {
-		 return DatatypesFactory.eINSTANCE.createCD(code.code, code.codeSystem, code.codeSystemName, code.codeDisplayName);
-	 }
-	 
-	 private static CE buildCE(Code code)
-	 {
-		 return DatatypesFactory.eINSTANCE.createCE(code.code, code.codeSystem, code.codeSystemName, code.codeDisplayName);
-	 }
-	
-	 public static CD createCDCCVXCD(String code)
-	 {
-		 return buildCD(CDCCVXCodes.get(code));
-	 }
+	private static final HashMap<String, Code> CDCCVXCodes = new HashMap<String, Code>();
 
-	 public static CE createCDCCVXCE(String code)
-	 {
-		 return buildCE(CDCCVXCodes.get(code));
-	 }
+	static {
+		CDCCVXCodes.put("09", new Code("09", "Tetanus and diphtheria toxoids", "2.16.840.1.113883.6.59", "CVX"));
+		CDCCVXCodes.put("113", new Code(
+			"113", "Tetanus and diphtheria toxoids - preservative free", "2.16.840.1.113883.6.59", "CVX"));
+
+		CDCCVXCodes.put("88", new Code("88", "Influenza virus vaccine", "2.16.840.1.113883.6.59", "CVX"));
+
+		CDCCVXCodes.put("111", new Code("111", "influenza, live, intranasal", "2.16.840.1.113883.6.59", "CVX"));
+
+		CDCCVXCodes.put("33", new Code("33", "Pneumococcal polysaccharide vaccine", "2.16.840.1.113883.6.59", "CVX"));
+
+		CDCCVXCodes.put("109", new Code("109", "Pneumococcal NOS", "2.16.840.1.113883.6.59", "CVX"));
+
+	};
+
+	private static CD buildCD(Code code) {
+		return DatatypesFactory.eINSTANCE.createCD(
+			code.code, code.codeSystem, code.codeSystemName, code.codeDisplayName);
+	}
+
+	private static CE buildCE(Code code) {
+		return DatatypesFactory.eINSTANCE.createCE(
+			code.code, code.codeSystem, code.codeSystemName, code.codeDisplayName);
+	}
+
+	public static CD createCDCCVXCD(String code) {
+		return buildCD(CDCCVXCodes.get(code));
+	}
+
+	public static CE createCDCCVXCE(String code) {
+		return buildCE(CDCCVXCodes.get(code));
+	}
 
 }

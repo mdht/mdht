@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 Sean Muir
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Sean Muir (JKM Software) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.cdt.builder;
 
 import org.openhealthtools.mdht.uml.cda.builder.impl.DocumentBuilderImpl;
@@ -44,7 +54,8 @@ public class CDTBuilderFactory {
 		}
 	}
 
-	private static class AssessmentAndPlanSectionProcNoteBuilder extends SectionBuilderImpl<AssessmentAndPlanSectionProcNote> {
+	private static class AssessmentAndPlanSectionProcNoteBuilder extends
+			SectionBuilderImpl<AssessmentAndPlanSectionProcNote> {
 		@Override
 		public AssessmentAndPlanSectionProcNote buildSection() {
 			AssessmentAndPlanSectionProcNote section = CDTFactory.eINSTANCE.createAssessmentAndPlanSectionProcNote().init();
@@ -194,7 +205,8 @@ public class CDTBuilderFactory {
 		}
 	}
 
-	private static class PastMedicalHistorySectionConsultBuilder extends SectionBuilderImpl<PastMedicalHistorySectionConsult> {
+	private static class PastMedicalHistorySectionConsultBuilder extends
+			SectionBuilderImpl<PastMedicalHistorySectionConsult> {
 		@Override
 		public PastMedicalHistorySectionConsult buildSection() {
 			PastMedicalHistorySectionConsult section = CDTFactory.eINSTANCE.createPastMedicalHistorySectionConsult().init();
@@ -240,7 +252,8 @@ public class CDTBuilderFactory {
 		}
 	}
 
-	private static class ReasonForVisitAndChiefComplaintSectionBuilder extends SectionBuilderImpl<ReasonForVisitAndChiefComplaintSection> {
+	private static class ReasonForVisitAndChiefComplaintSectionBuilder extends
+			SectionBuilderImpl<ReasonForVisitAndChiefComplaintSection> {
 		@Override
 		public ReasonForVisitAndChiefComplaintSection buildSection() {
 			ReasonForVisitAndChiefComplaintSection section = CDTFactory.eINSTANCE.createReasonForVisitAndChiefComplaintSection().init();
