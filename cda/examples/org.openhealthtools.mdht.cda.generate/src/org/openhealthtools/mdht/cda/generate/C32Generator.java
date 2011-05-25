@@ -171,7 +171,8 @@ public class C32Generator {
 
 								immunization.setNegationInd(false);
 
-								immunization.getIds().add(DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString()));
+								immunization.getIds().add(
+									DatatypesFactory.eINSTANCE.createII(java.util.UUID.randomUUID().toString()));
 
 								immunization.setStatusCode(DatatypesFactory.eINSTANCE.createCS("completed"));
 
@@ -181,7 +182,8 @@ public class C32Generator {
 
 								immunization.getEffectiveTimes().add(effectiveTime);
 
-								immunization.setCode(DatatypesFactory.eINSTANCE.createCD("IMMUNIZ", "2.16.840.1.113883.5.4", "ActCode", ""));
+								immunization.setCode(DatatypesFactory.eINSTANCE.createCD(
+									"IMMUNIZ", "2.16.840.1.113883.5.4", "ActCode", ""));
 
 								Consumable consumable = CDAFactory.eINSTANCE.createConsumable();
 

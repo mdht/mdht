@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2009, 2011 David A Carlson and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.example;
 
 import org.eclipse.emf.ecore.EClass;
@@ -530,7 +534,6 @@ public interface ExamplePackage extends EPackage {
 	 */
 	int MY_SECTION_FEATURE_COUNT = CDAPackage.SECTION_FEATURE_COUNT + 0;
 
-
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.example.impl.MyObservationImpl <em>My Observation</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -820,7 +823,6 @@ public interface ExamplePackage extends EPackage {
 	 */
 	int MY_OBSERVATION_FEATURE_COUNT = CCDPackage.PROBLEM_OBSERVATION_FEATURE_COUNT + 0;
 
-
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.cda.example.MyDocument <em>My Document</em>}'.
 	 * <!-- begin-user-doc -->
@@ -905,4 +907,4 @@ public interface ExamplePackage extends EPackage {
 
 	}
 
-} //ExamplePackage
+} // ExamplePackage

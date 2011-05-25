@@ -43,19 +43,22 @@ import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 
 public class CDADocumentEventRegistry {
 
-	
 	@SuppressWarnings("rawtypes")
 	private static class CDADocumentEventProcessorComparator implements Comparator<CDADocumentEventProcessor> {
 
-		public int compare(CDADocumentEventProcessor cdaDocumentEventProcessor0, CDADocumentEventProcessor cdaDocumentEventProcessor1) {
+		public int compare(CDADocumentEventProcessor cdaDocumentEventProcessor0,
+				CDADocumentEventProcessor cdaDocumentEventProcessor1) {
 
 			int result = 0;
 
 			if (cdaDocumentEventProcessor0 != null && cdaDocumentEventProcessor1 != null) {
 
-				result = (cdaDocumentEventProcessor0.getPriority() > cdaDocumentEventProcessor1.getPriority() ? 1
+				result = (cdaDocumentEventProcessor0.getPriority() > cdaDocumentEventProcessor1.getPriority()
+						? 1
 
-				: (cdaDocumentEventProcessor0.getPriority() < cdaDocumentEventProcessor1.getPriority() ? -1 : 0));
+						: (cdaDocumentEventProcessor0.getPriority() < cdaDocumentEventProcessor1.getPriority()
+								? -1
+								: 0));
 
 			}
 
@@ -65,14 +68,14 @@ public class CDADocumentEventRegistry {
 
 	};
 
-	
 	@SuppressWarnings("rawtypes")
 	static HashMap<EClass, ArrayList<CDADocumentEventProcessor>> documentEventRegistry = new HashMap<EClass, ArrayList<CDADocumentEventProcessor>>();
 
 	static CDADocumentEventProcessorComparator cdaDocumentEventProcessorComparator = new CDADocumentEventProcessorComparator();
 
 	@SuppressWarnings("rawtypes")
-	public static void registerCDADocumentEventProcessor(EClass cdaDocument, CDADocumentEventProcessor cdaDocumentEventProcessor) {
+	public static void registerCDADocumentEventProcessor(EClass cdaDocument,
+			CDADocumentEventProcessor cdaDocumentEventProcessor) {
 
 		if (!documentEventRegistry.containsKey(cdaDocument)) {
 

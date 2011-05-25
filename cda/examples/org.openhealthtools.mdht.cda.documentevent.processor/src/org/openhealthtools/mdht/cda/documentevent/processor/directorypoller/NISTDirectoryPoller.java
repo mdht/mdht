@@ -69,27 +69,25 @@ public class NISTDirectoryPoller {
 
 	public static HashMap<String, String> schamtrontospec = new HashMap<String, String>();
 
-	static public void FromToDiagnostic(String fromSource, String toSource,
-			HashMap<String, ArrayList<String>> from,
+	static public void FromToDiagnostic(String fromSource, String toSource, HashMap<String, ArrayList<String>> from,
 			HashMap<String, ArrayList<String>> to) {
 
 		for (String key : from.keySet()) {
-			
+
 			System.out.println("");
-			
+
 			System.out.println("Document Location : " + key);
 
 			System.out.println("Initial Diagnostics reported by " + fromSource);
-			
+
 			Collections.sort(from.get(key));
 			for (String message : from.get(key)) {
 				System.out.println(message);
 			}
 
-			
 			System.out.println("Corresponding Diagnostics reported by " + toSource);
 			if (to.containsKey(key)) {
-				Collections.sort(to.get(key));	
+				Collections.sort(to.get(key));
 				for (String message : to.get(key)) {
 					System.out.println(message);
 				}
@@ -100,93 +98,82 @@ public class NISTDirectoryPoller {
 			}
 			System.out.println("");
 
-			
 		}
 	}
 
 	public static HashMap<String, ArrayList<String>> nistdiagnostics = new HashMap<String, ArrayList<String>>();
 
 	static public void pushNISTDiagnostic(WSIndividualValidationResult validationResult) {
-		
+
 		// rudementary filtering
-		if ( !errorsOnly  || validationResult.getSeverity().startsWith("error")) {
-		
-		pushMDHTDiagnostic(nistdiagnostics,validationResult.getContext(), String.format("%s : %s : %s : %s",getNISTSpecification(validationResult.getSpecification()),validationResult.getSeverity(),validationResult.getMessage(),validationResult.getTest()));
+		if (!errorsOnly || validationResult.getSeverity().startsWith("error")) {
+
+			pushMDHTDiagnostic(nistdiagnostics, validationResult.getContext(), String.format(
+				"%s : %s : %s : %s", getNISTSpecification(validationResult.getSpecification()),
+				validationResult.getSeverity(), validationResult.getMessage(), validationResult.getTest()));
 
 		}
-		
+
 	}
-	
-	public static String getNISTSpecification(String nistSpecification)
-	{
-		if (schamtrontospec.size() == 0){
-			schamtrontospec.put("Schematron schema for validating conformance to CCD documents","org.openhealthtools.mdht.uml.cda.ccd");
+
+	public static String getNISTSpecification(String nistSpecification) {
+		if (schamtrontospec.size() == 0) {
+			schamtrontospec.put(
+				"Schematron schema for validating conformance to CCD documents", "org.openhealthtools.mdht.uml.cda.ccd");
 		}
 
-		if (schamtrontospec.containsKey(nistSpecification))
-		{
+		if (schamtrontospec.containsKey(nistSpecification)) {
 			return schamtrontospec.get(nistSpecification);
-		} else
-		{
-			return 	nistSpecification;
+		} else {
+			return nistSpecification;
 		}
-			
+
 	}
 
 	public static HashMap<String, ArrayList<String>> mdhtdiagnostics = new HashMap<String, ArrayList<String>>();
 
-	
-	static public void pushMDHTDiagnostic(Diagnostic diagnostic)
-	{
-		String path="";
-		String source="";
-		String level="";
-		String message="";
-		String ocl="OCL Unavailable";
-		
+	static public void pushMDHTDiagnostic(Diagnostic diagnostic) {
+		String path = "";
+		String source = "";
+		String level = "";
+		String message = "";
+		String ocl = "OCL Unavailable";
+
 		// If diagnostic data has eobject
-		if (diagnostic.getData().size() > 0 && diagnostic
-				.getData().get(0) instanceof EObject) { 
-		path  = getPath((EObject) diagnostic
-				.getData().get(0));
+		if (diagnostic.getData().size() > 0 && diagnostic.getData().get(0) instanceof EObject) {
+			path = getPath((EObject) diagnostic.getData().get(0));
 		}
-		
+
 		source = diagnostic.getSource();
-		
+
 		level = getLevel(diagnostic.getSeverity());
-		
+
 		message = diagnostic.getMessage();
-		 
+
 		// if diagnostic has ocl
-		if (diagnostic.getData().size() > 1
-				&& diagnostic.getData().get(1) instanceof org.eclipse.ocl.Query) {
-			org.eclipse.ocl.Query query = (org.eclipse.ocl.Query) diagnostic
-					.getData().get(1);
-			
+		if (diagnostic.getData().size() > 1 && diagnostic.getData().get(1) instanceof org.eclipse.ocl.Query) {
+			org.eclipse.ocl.Query query = (org.eclipse.ocl.Query) diagnostic.getData().get(1);
+
 			ocl = query.queryText();
-		}	
-		
+		}
 
 		// rudementary filtering
-		if ( !errorsOnly  || level.startsWith("error")) {
-			pushMDHTDiagnostic(mdhtdiagnostics,path, String.format("%s : %s : %s : %s",source,level,message,ocl));
+		if (!errorsOnly || level.startsWith("error")) {
+			pushMDHTDiagnostic(mdhtdiagnostics, path, String.format("%s : %s : %s : %s", source, level, message, ocl));
 		}
 	}
 
-	
-	 static public String getLevel(int level)
-	{
-		if (level == 1)
-		{
+	static public String getLevel(int level) {
+		if (level == 1) {
 			return "information";
-		} else if (level == 2)
-		{
+		} else if (level == 2) {
 			return "warning";
 		} else {
 			return "error";
 		}
 	}
-	static public void pushMDHTDiagnostic(HashMap<String, ArrayList<String>> diagnostics,String path, String content) {
+
+	static public void pushMDHTDiagnostic(HashMap<String, ArrayList<String>> diagnostics, String path, String content) {
 
 		String key = path.toLowerCase();
 
@@ -221,15 +208,13 @@ public class NISTDirectoryPoller {
 
 			String[] cdaFiles = cdaDirectory.list(xmlFilter);
 			if (cdaFiles == null) {
-				System.out
-						.println("Specified directory does not exist or is not a directory.");
+				System.out.println("Specified directory does not exist or is not a directory.");
 				System.exit(0);
 			} else {
 
 				for (int i = 0; i < cdaFiles.length; i++) {
-					String cdaFileName = cdaDirectory.getAbsolutePath()
-							+ System.getProperty("file.separator")
-							+ cdaFiles[i];
+					String cdaFileName = cdaDirectory.getAbsolutePath() + System.getProperty("file.separator") +
+							cdaFiles[i];
 
 					// Instead of deleting or moving the file -
 					// create a cache of processed files so you do not have to
@@ -239,8 +224,7 @@ public class NISTDirectoryPoller {
 					if (!processedFiles.containsKey(cdaFileName)) {
 						try {
 
-							System.out.println("Processing File : "
-									+ cdaFileName);
+							System.out.println("Processing File : " + cdaFileName);
 
 							loadAndProcess(new FileInputStream(cdaFileName));
 
@@ -268,8 +252,7 @@ public class NISTDirectoryPoller {
 		}
 	}
 
-	public static ClinicalDocument loadAndProcess(InputStream in)
-			throws Exception {
+	public static ClinicalDocument loadAndProcess(InputStream in) throws Exception {
 
 		ClinicalDocument clinicalDocument = CDAUtil.load(in, null);
 
@@ -298,183 +281,179 @@ public class NISTDirectoryPoller {
 	}
 
 	static boolean errorsOnly = true;
+
 	/*
 	 * ID: cdar2
-Name: CDA R2
-Description: HL7 CDA R2 (with no extensions)
-
-ID: ccd
-Name: CCD
-Description: Continuity of Care Document
-
-ID: crs
-Name: CRS Level 1 & 2
-Description: HL7 Care Record Summary
-
-ID: cda4Cdt
-Name: CDA4CDT (header only)
-Description: HL7 CDA For Common Document Types (CDA4CDT) -- header only
-
-ID: c32_v2_5
-Name: HITSP/C32 v2.5
-Description: HITSP/C32 v2.5 Summary Documents Using HL7 CCD
-
-ID: c32_v2_4
-Name: HITSP/C32 v2.4
-Description: HITSP/C32 v2.4 Summary Documents Using HL7 CCD
-
-ID: c32
-Name: HITSP/C32 v2.1
-Description: HITSP/C32 v2.1 Summary Documents Using HL7 CCD
-
-ID: summaryPatientRecord
-Name: NHIN Summary Patient Record
-Description: NHIN Summary Patient Record (based on HITSP/C32)
-
-ID: iheLab
-Name: IHE Lab 2008
-Description: IHE Laboratory Report -- 2008 (CONNECTATHON ONLY!)
-
-ID: c37
-Name: HITSP/C37
-Description: IHE Laboratory Report -- 2007
-
-ID: c28nursing
-Name: HITSP/C28 (Nursing)
-Description: IHE PCC - Emergency Department Nursing Note -- 2008 -- DO NOT USE FOR NA2010 CONNECTATHON.  Use IHE PCC EDES documents.  See Bob Yencha for questions
-
-ID: c28physician
-Name: HITSP/C28 (Physician)
-Description: IHE PCC - Emergency Department Physician Note -- 2008 -- DO NOT USE FOR NA2010 CONNECTATHON.  Use IHE PCC EDES documents.  See Bob Yencha for questions
-
-ID: c28triage
-Name: HITSP/C28 (Triage)
-Description: IHE PCC - Emergency Department Triage Note -- 2008 -- DO NOT USE FOR NA2010 CONNECTATHON.  Use IHE PCC EDES documents.  See Bob Yencha for questions
-
-ID: edNursing
-Name: IHE EDES Nursing Note
-Description: IHE PCC - Emergency Department Nursing Note -- 2009
-
-ID: edPhysician
-Name: IHE EDES Physician Note
-Description: IHE PCC - Emergency Department Physician Note -- 2009
-
-ID: edTriage
-Name: IHE EDES Triage Note
-Description: IHE PCC - Emergency Department Triage Note -- 2009
-
-ID: edComposite
-Name: IHE EDES Composite Triage and Nursing Note
-Description: IHE PCC - Emergency Department Composite Triage and Nursing Note -- 2009
-
-ID: c78
-Name: HITSP/C78
-Description: HITSP/C78 Immunization Document Component
-
-ID: c48ref
-Name: HITSP/C48 Referral
-Description: HITSP/C48 Encounter Document Using IHE Medical Summary (XDS-MS) Component -- Referral
-
-ID: c48dis
-Name: HITSP/C48 Discharge
-Description: HITSP/C48 Encounter Document Using IHE Medical Summary (XDS-MS) Component -- Discharge
-
-ID: iheXdsMsReferral
-Name: XDS-MS Referral Summary
-Description: IHE PCC - XDS-MS Referral Summary -- 2009
-
-ID: iheXdsMsDischarge
-Name: XDS-MS Discharge Summary
-Description: IHE PCC - XDS-MS Discharge Summary -- 2009
-
-ID: iheEdReferral
-Name: IHE ED Referral
-Description: IHE PCC - Emergency Department Referral -- 2009
-
-ID: ihePhrExtract
-Name: IHE PHR Extract
-Description: IHE PCC - PHR Extract (from XPHR Profile) -- 2009
-
-ID: ihePhrUpdate
-Name: IHE PHR Update
-Description: IHE PCC - PHR Update (from XPHR Profile) -- 2009
-
-ID: iheAps
-Name: IHE APS
-Description: IHE PCC - Antepartum Summary -- 2009
-
-ID: iheAphp
-Name: IHE APHP
-Description: IHE PCC - Antepartum History and Physical -- 2009
-
-ID: iheApe
-Name: IHE APE
-Description: IHE PCC - Antepartum Education -- 2009
-
-ID: iheId
-Name: IHE IC
-Description: IHE PCC - Immunization Content -- 2009
-
-ID: iheCrd
-Name: IHE CRD
-Description: IHE QRPH - Clinical Research Data Capture (CRD) -- CCD Option Only! -- 2009
-
-ID: iheBppc
-Name: IHE BPPC
-Description: IHE Basic Patient Privacy Concern -- 2009
-
-ID: iheMds
-Name: IHE MDS
-Description: IHE PCC - Labor and Delivery Record - Maternal Discharge Summary -- 2009
-
-ID: iheLds
-Name: IHE LDS
-Description: IHE PCC - Labor and Delivery Record - Labor and Delivery Summary -- 2009
-
-ID: iheLdhp
-Name: IHE LDHP
-Description: IHE PCC - Labor and Delivery Record - Labor and Delivery Admission History and Physical -- 2009
-
-
+	 * Name: CDA R2
+	 * Description: HL7 CDA R2 (with no extensions)
+	 * 
+	 * ID: ccd
+	 * Name: CCD
+	 * Description: Continuity of Care Document
+	 * 
+	 * ID: crs
+	 * Name: CRS Level 1 & 2
+	 * Description: HL7 Care Record Summary
+	 * 
+	 * ID: cda4Cdt
+	 * Name: CDA4CDT (header only)
+	 * Description: HL7 CDA For Common Document Types (CDA4CDT) -- header only
+	 * 
+	 * ID: c32_v2_5
+	 * Name: HITSP/C32 v2.5
+	 * Description: HITSP/C32 v2.5 Summary Documents Using HL7 CCD
+	 * 
+	 * ID: c32_v2_4
+	 * Name: HITSP/C32 v2.4
+	 * Description: HITSP/C32 v2.4 Summary Documents Using HL7 CCD
+	 * 
+	 * ID: c32
+	 * Name: HITSP/C32 v2.1
+	 * Description: HITSP/C32 v2.1 Summary Documents Using HL7 CCD
+	 * 
+	 * ID: summaryPatientRecord
+	 * Name: NHIN Summary Patient Record
+	 * Description: NHIN Summary Patient Record (based on HITSP/C32)
+	 * 
+	 * ID: iheLab
+	 * Name: IHE Lab 2008
+	 * Description: IHE Laboratory Report -- 2008 (CONNECTATHON ONLY!)
+	 * 
+	 * ID: c37
+	 * Name: HITSP/C37
+	 * Description: IHE Laboratory Report -- 2007
+	 * 
+	 * ID: c28nursing
+	 * Name: HITSP/C28 (Nursing)
+	 * Description: IHE PCC - Emergency Department Nursing Note -- 2008 -- DO NOT USE FOR NA2010 CONNECTATHON. Use IHE PCC EDES documents. See Bob
+	 * Yencha for questions
+	 * 
+	 * ID: c28physician
+	 * Name: HITSP/C28 (Physician)
+	 * Description: IHE PCC - Emergency Department Physician Note -- 2008 -- DO NOT USE FOR NA2010 CONNECTATHON. Use IHE PCC EDES documents. See Bob
+	 * Yencha for questions
+	 * 
+	 * ID: c28triage
+	 * Name: HITSP/C28 (Triage)
+	 * Description: IHE PCC - Emergency Department Triage Note -- 2008 -- DO NOT USE FOR NA2010 CONNECTATHON. Use IHE PCC EDES documents. See Bob
+	 * Yencha for questions
+	 * 
+	 * ID: edNursing
+	 * Name: IHE EDES Nursing Note
+	 * Description: IHE PCC - Emergency Department Nursing Note -- 2009
+	 * 
+	 * ID: edPhysician
+	 * Name: IHE EDES Physician Note
+	 * Description: IHE PCC - Emergency Department Physician Note -- 2009
+	 * 
+	 * ID: edTriage
+	 * Name: IHE EDES Triage Note
+	 * Description: IHE PCC - Emergency Department Triage Note -- 2009
+	 * 
+	 * ID: edComposite
+	 * Name: IHE EDES Composite Triage and Nursing Note
+	 * Description: IHE PCC - Emergency Department Composite Triage and Nursing Note -- 2009
+	 * 
+	 * ID: c78
+	 * Name: HITSP/C78
+	 * Description: HITSP/C78 Immunization Document Component
+	 * 
+	 * ID: c48ref
+	 * Name: HITSP/C48 Referral
+	 * Description: HITSP/C48 Encounter Document Using IHE Medical Summary (XDS-MS) Component -- Referral
+	 * 
+	 * ID: c48dis
+	 * Name: HITSP/C48 Discharge
+	 * Description: HITSP/C48 Encounter Document Using IHE Medical Summary (XDS-MS) Component -- Discharge
+	 * 
+	 * ID: iheXdsMsReferral
+	 * Name: XDS-MS Referral Summary
+	 * Description: IHE PCC - XDS-MS Referral Summary -- 2009
+	 * 
+	 * ID: iheXdsMsDischarge
+	 * Name: XDS-MS Discharge Summary
+	 * Description: IHE PCC - XDS-MS Discharge Summary -- 2009
+	 * 
+	 * ID: iheEdReferral
+	 * Name: IHE ED Referral
+	 * Description: IHE PCC - Emergency Department Referral -- 2009
+	 * 
+	 * ID: ihePhrExtract
+	 * Name: IHE PHR Extract
+	 * Description: IHE PCC - PHR Extract (from XPHR Profile) -- 2009
+	 * 
+	 * ID: ihePhrUpdate
+	 * Name: IHE PHR Update
+	 * Description: IHE PCC - PHR Update (from XPHR Profile) -- 2009
+	 * 
+	 * ID: iheAps
+	 * Name: IHE APS
+	 * Description: IHE PCC - Antepartum Summary -- 2009
+	 * 
+	 * ID: iheAphp
+	 * Name: IHE APHP
+	 * Description: IHE PCC - Antepartum History and Physical -- 2009
+	 * 
+	 * ID: iheApe
+	 * Name: IHE APE
+	 * Description: IHE PCC - Antepartum Education -- 2009
+	 * 
+	 * ID: iheId
+	 * Name: IHE IC
+	 * Description: IHE PCC - Immunization Content -- 2009
+	 * 
+	 * ID: iheCrd
+	 * Name: IHE CRD
+	 * Description: IHE QRPH - Clinical Research Data Capture (CRD) -- CCD Option Only! -- 2009
+	 * 
+	 * ID: iheBppc
+	 * Name: IHE BPPC
+	 * Description: IHE Basic Patient Privacy Concern -- 2009
+	 * 
+	 * ID: iheMds
+	 * Name: IHE MDS
+	 * Description: IHE PCC - Labor and Delivery Record - Maternal Discharge Summary -- 2009
+	 * 
+	 * ID: iheLds
+	 * Name: IHE LDS
+	 * Description: IHE PCC - Labor and Delivery Record - Labor and Delivery Summary -- 2009
+	 * 
+	 * ID: iheLdhp
+	 * Name: IHE LDHP
+	 * Description: IHE PCC - Labor and Delivery Record - Labor and Delivery Admission History and Physical -- 2009
 	 */
 	public static void main(String[] args) throws Exception {
 
 		if (args.length != 2) {
-			System.out
-					.println("Missing required arguments - CDA Directory and CDA Document Count");
+			System.out.println("Missing required arguments - CDA Directory and CDA Document Count");
 			System.exit(-1);
 		}
-		
+
 		HITSPPackage.eINSTANCE.eClass();
 
 		CDADocumentEventRegistry.registerCDADocumentEventProcessor(
-				CCDPackage.eINSTANCE.getContinuityOfCareDocument(),new NISTDocumentEventProcessor("ccd"));
+			CCDPackage.eINSTANCE.getContinuityOfCareDocument(), new NISTDocumentEventProcessor("ccd"));
 
-		
 		CDADocumentEventRegistry.registerCDADocumentEventProcessor(
-				HITSPPackage.eINSTANCE.getPatientSummary()  ,new NISTDocumentEventProcessor("c32_v2_5"));
+			HITSPPackage.eINSTANCE.getPatientSummary(), new NISTDocumentEventProcessor("c32_v2_5"));
 
 		Timer timer = new Timer();
-		timer.schedule(new CDADirectoryPollingTask(args[0], Integer
-				.valueOf(args[1])), 0, 2 * 1000);
+		timer.schedule(new CDADirectoryPollingTask(args[0], Integer.valueOf(args[1])), 0, 2 * 1000);
 	}
-	
-	
-	
-	
-	
-	
+
 	public static class NISTDocumentEventProcessor extends CDADocumentEventProcessor<ClinicalDocument> {
 
 		EndpointReference wsTarget = null;
+
 		org.apache.axis2.client.Options options = null;
+
 		ServiceClient serviceClient = null;
+
 		OMFactory factory = null;
+
 		OMNamespace namespace = null;
+
 		String specification;
-		
-		
-		
 
 		public NISTDocumentEventProcessor(String specification) {
 			super();
@@ -482,49 +461,39 @@ Description: IHE PCC - Labor and Delivery Record - Labor and Delivery Admission 
 		}
 
 		public void init(String target) throws AxisFault {
-			if (target != null)
+			if (target != null) {
 				wsTarget = new EndpointReference(target);
-			else
-				wsTarget = new EndpointReference(
-						"http://xreg2.nist.gov:8080/ws/services/ValidationWebService");
+			} else {
+				wsTarget = new EndpointReference("http://xreg2.nist.gov:8080/ws/services/ValidationWebService");
+			}
 
 			options = new org.apache.axis2.client.Options();
 			options.setTo(wsTarget);
-			options
-					.setTransportInProtocol(Constants.TRANSPORT_HTTP);
+			options.setTransportInProtocol(Constants.TRANSPORT_HTTP);
 			// options.setTransportInProtocol(Constants.TRANSPORT_JMS);
 			serviceClient = new ServiceClient();
 			serviceClient.setOptions(options);
 			factory = OMAbstractFactory.getOMFactory();
-			namespace = factory.createOMNamespace(
-					"http://validation.hitsp.nist.gov", "nns");
+			namespace = factory.createOMNamespace("http://validation.hitsp.nist.gov", "nns");
 		}
 
-		public void validate(String cdadocument,
-				String specificationId)
-				throws ParserConfigurationException, IOException,
-				SAXException {
-			OMElement method = factory.createOMElement(
-					"validateDocument", namespace);
-			OMElement specification = factory.createOMElement(
-					"specificationId", namespace);
-			OMElement document = factory.createOMElement(
-					"document", namespace);
+		public void validate(String cdadocument, String specificationId) throws ParserConfigurationException,
+				IOException, SAXException {
+			OMElement method = factory.createOMElement("validateDocument", namespace);
+			OMElement specification = factory.createOMElement("specificationId", namespace);
+			OMElement document = factory.createOMElement("document", namespace);
 
-			specification.addChild(factory.createOMText(
-					specification, specificationId));
+			specification.addChild(factory.createOMText(specification, specificationId));
 			String xml = cdadocument;
 			document.addChild(factory.createOMText(document, xml));
 			method.addChild(specification);
 			method.addChild(document);
 			OMElement result = serviceClient.sendReceive(method);
-			WSValidationResults resultsProcessed = new WSValidationResults(
-					result.getFirstElement());
+			WSValidationResults resultsProcessed = new WSValidationResults(result.getFirstElement());
 
-			OMElement a = result.getFirstElement();
+			result.getFirstElement();
 
-			WSIndividualValidationResult[] validationResults = resultsProcessed
-					.getIssue();
+			WSIndividualValidationResult[] validationResults = resultsProcessed.getIssue();
 
 			for (WSIndividualValidationResult validationResult : validationResults) {
 
@@ -534,9 +503,7 @@ Description: IHE PCC - Labor and Delivery Record - Labor and Delivery Admission 
 
 		}
 
-		private void validate(ClinicalDocument clinicalDocument)
-				throws Exception {
-
+		private void validate(ClinicalDocument clinicalDocument) throws Exception {
 
 			ByteArrayOutputStream buffer = new ByteArrayOutputStream();
 
@@ -548,44 +515,38 @@ Description: IHE PCC - Labor and Delivery Record - Labor and Delivery Admission 
 
 			validate(buffer.toString(), specification);
 
-			boolean valid = CDAUtil.validate(clinicalDocument,
-					new BasicValidationHandler() {
-						@Override
-						public void handleError(
-								Diagnostic diagnostic) {
-							pushMDHTDiagnostic(diagnostic);
-						}
+			CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
+				@Override
+				public void handleError(Diagnostic diagnostic) {
+					pushMDHTDiagnostic(diagnostic);
+				}
 
-						@Override
-						public void handleWarning(
-								Diagnostic diagnostic) {
-							pushMDHTDiagnostic(diagnostic);
-						}
+				@Override
+				public void handleWarning(Diagnostic diagnostic) {
+					pushMDHTDiagnostic(diagnostic);
+				}
 
-						@Override
-						public void handleInfo(Diagnostic diagnostic) {
-							pushMDHTDiagnostic(diagnostic);
+				@Override
+				public void handleInfo(Diagnostic diagnostic) {
+					pushMDHTDiagnostic(diagnostic);
 
-						}
-					});
+				}
+			});
 
 			System.out.println("");
 			System.out.println("Mapping NIST Diagnostics to MDHT Diagnostics");
-			FromToDiagnostic("NIST", "MDHT", nistdiagnostics,
-					mdhtdiagnostics);
+			FromToDiagnostic("NIST", "MDHT", nistdiagnostics, mdhtdiagnostics);
 			System.out.println("Mapping MDHT Diagnostics to NIST Diagnostics");
-			FromToDiagnostic("MDHT", "NIST", mdhtdiagnostics,
-					nistdiagnostics);
+			FromToDiagnostic("MDHT", "NIST", mdhtdiagnostics, nistdiagnostics);
 
 		}
 
 		@Override
-		public ClinicalDocument ProcessCDADocumentEvent(
-				ClinicalDocument cdaDocumentInstance) {
+		public ClinicalDocument ProcessCDADocumentEvent(ClinicalDocument cdaDocumentInstance) {
 			try {
 				validate(cdaDocumentInstance);
 
-			} catch (Exception e) {							
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			return null;

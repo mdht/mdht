@@ -23,7 +23,6 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDPackage;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
 import org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
-import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatus;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
@@ -42,10 +41,10 @@ public class Main {
 		ClinicalDocument clinicalDocument = CDAUtil.load(new FileInputStream("input/CCD_Example.xml"));
 		save(clinicalDocument);
 		validate(clinicalDocument);
-		
+
 		// Stand-alone example: programmatically construct CCD document instance
 		ContinuityOfCareDocument doc = CCDFactory.eINSTANCE.createContinuityOfCareDocument().init();
-		
+
 		PurposeSection purposeSection = CCDFactory.eINSTANCE.createPurposeSection().init();
 		doc.addSection(purposeSection);
 		PurposeActivity purposeActivity = CCDFactory.eINSTANCE.createPurposeActivity().init();
@@ -53,41 +52,43 @@ public class Main {
 		SubstanceAdministration purposeReason = CDAFactory.eINSTANCE.createSubstanceAdministration();
 		purposeActivity.addSubstanceAdministration(purposeReason);
 		purposeActivity.getEntryRelationships().get(0).setTypeCode(x_ActRelationshipEntryRelationship.RSON);
-		
+
 		ProblemAct problemAct = CCDFactory.eINSTANCE.createProblemAct().init();
-		ProblemObservation problemObservation = CCDFactory.eINSTANCE.createProblemObservation().init();	
+		ProblemObservation problemObservation = CCDFactory.eINSTANCE.createProblemObservation().init();
 		StatusObservation problemStatus = CCDFactory.eINSTANCE.createStatusObservation();
 		ProblemHealthStatusObservation problemHealthStatus = CCDFactory.eINSTANCE.createProblemHealthStatusObservation().init();
 		EpisodeObservation episodeObservation = CCDFactory.eINSTANCE.createEpisodeObservation().init();
-		
+
 		ProblemSection sect = CCDFactory.eINSTANCE.createProblemSection().init();
 		sect.addAct(problemAct);
 		problemAct.addObservation(problemObservation);
-		
+
 		sect.addObservation(problemStatus);
 		sect.addObservation(problemHealthStatus);
 		sect.addObservation(episodeObservation);
-		
+
 		doc.addSection(sect);
 
 		save(doc);
 		validate(doc);
 	}
-	
+
 	public static void save(ClinicalDocument doc) throws Exception {
 		CDAUtil.save(doc, System.out);
 	}
-	
+
 	public static void validate(ClinicalDocument doc) {
 		CDAUtil.validate(doc, new BasicValidationHandler() {
 			@Override
 			public void handleError(Diagnostic diagnostic) {
 				System.out.println("ERROR: " + diagnostic.getMessage());
 			}
+
 			@Override
 			public void handleWarning(Diagnostic diagnostic) {
 				System.out.println("WARNING: " + diagnostic.getMessage());
 			}
+
 			@Override
 			public void handleInfo(Diagnostic diagnostic) {
 				System.out.println("INFO: " + diagnostic.getMessage());

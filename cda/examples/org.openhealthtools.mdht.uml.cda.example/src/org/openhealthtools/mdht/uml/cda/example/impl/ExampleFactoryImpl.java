@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2009, 2011 David A Carlson and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.example.impl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -32,12 +36,11 @@ public class ExampleFactoryImpl extends EFactoryImpl implements ExampleFactory {
 	 */
 	public static ExampleFactory init() {
 		try {
-			ExampleFactory theExampleFactory = (ExampleFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/uml/cda/example"); 
+			ExampleFactory theExampleFactory = (ExampleFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.openhealthtools.org/mdht/uml/cda/example");
 			if (theExampleFactory != null) {
 				return theExampleFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new ExampleFactoryImpl();
@@ -61,9 +64,12 @@ public class ExampleFactoryImpl extends EFactoryImpl implements ExampleFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ExamplePackage.MY_DOCUMENT: return createMyDocument();
-			case ExamplePackage.MY_SECTION: return createMySection();
-			case ExamplePackage.MY_OBSERVATION: return createMyObservation();
+			case ExamplePackage.MY_DOCUMENT:
+				return createMyDocument();
+			case ExamplePackage.MY_SECTION:
+				return createMySection();
+			case ExamplePackage.MY_OBSERVATION:
+				return createMyObservation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -105,7 +111,7 @@ public class ExampleFactoryImpl extends EFactoryImpl implements ExampleFactory {
 	 * @generated
 	 */
 	public ExamplePackage getExamplePackage() {
-		return (ExamplePackage)getEPackage();
+		return (ExamplePackage) getEPackage();
 	}
 
 	/**
@@ -119,4 +125,4 @@ public class ExampleFactoryImpl extends EFactoryImpl implements ExampleFactory {
 		return ExamplePackage.eINSTANCE;
 	}
 
-} //ExampleFactoryImpl
+} // ExampleFactoryImpl

@@ -75,7 +75,8 @@ public class CDADirectoryPoller {
 			} else {
 
 				for (int i = 0; i < cdaFiles.length; i++) {
-					String cdaFileName = cdaDirectory.getAbsolutePath() + System.getProperty("file.separator") + cdaFiles[i];
+					String cdaFileName = cdaDirectory.getAbsolutePath() + System.getProperty("file.separator") +
+							cdaFiles[i];
 
 					// Instead of deleting or moving the file -
 					// create a cache of processed files so you do not have to
@@ -131,79 +132,76 @@ public class CDADirectoryPoller {
 		}
 
 		// Defining a CDA Document Event Handler
-		CDADocumentEventRegistry.registerCDADocumentEventProcessor(CDAPackage.eINSTANCE.getClinicalDocument(),
-				new CDADocumentEventProcessor<ClinicalDocument>() {
+		CDADocumentEventRegistry.registerCDADocumentEventProcessor(
+			CDAPackage.eINSTANCE.getClinicalDocument(), new CDADocumentEventProcessor<ClinicalDocument>() {
 
-					private void validate(ClinicalDocument clinicalDocument) throws Exception {
-						boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
-							@Override
-							public void handleError(Diagnostic diagnostic) {
-								 System.out.println("ERROR: " +
-								 diagnostic.getMessage());
-							}
-
-							@Override
-							public void handleWarning(Diagnostic diagnostic) {
-								 System.out.println("WARNING: " +
-								 diagnostic.getMessage());
-							}
-
-							@Override
-							public void handleInfo(Diagnostic diagnostic) {
-								 System.out.println("INFO: " +
-								 diagnostic.getMessage());
-							}
-						});
-
-						if (valid) {
-							System.out.println("CDA Document is valid");
-						} else {
-							System.out.println("CDA Document is invalid");
+				private void validate(ClinicalDocument clinicalDocument) throws Exception {
+					boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
+						@Override
+						public void handleError(Diagnostic diagnostic) {
+							System.out.println("ERROR: " + diagnostic.getMessage());
 						}
-					}
 
-					@Override
-					public ClinicalDocument ProcessCDADocumentEvent(ClinicalDocument cdaDocumentInstance) {
-						try {
-
-							System.out.println("Validating all ClinicalDocument Recieved ");
-
-							validate(cdaDocumentInstance);
-
-						} catch (Exception e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
+						@Override
+						public void handleWarning(Diagnostic diagnostic) {
+							System.out.println("WARNING: " + diagnostic.getMessage());
 						}
-						return null;
+
+						@Override
+						public void handleInfo(Diagnostic diagnostic) {
+							System.out.println("INFO: " + diagnostic.getMessage());
+						}
+					});
+
+					if (valid) {
+						System.out.println("CDA Document is valid");
+					} else {
+						System.out.println("CDA Document is invalid");
 					}
-				});
+				}
+
+				@Override
+				public ClinicalDocument ProcessCDADocumentEvent(ClinicalDocument cdaDocumentInstance) {
+					try {
+
+						System.out.println("Validating all ClinicalDocument Recieved ");
+
+						validate(cdaDocumentInstance);
+
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					return null;
+				}
+			});
 
 		// Defining a NCR Document Event Handler
-		CDADocumentEventRegistry.registerCDADocumentEventProcessor(NCRPackage.eINSTANCE.getNeonatalCareReport(),
-				new CDADocumentEventProcessor<NeonatalCareReport>() {
+		CDADocumentEventRegistry.registerCDADocumentEventProcessor(
+			NCRPackage.eINSTANCE.getNeonatalCareReport(), new CDADocumentEventProcessor<NeonatalCareReport>() {
 
-					@Override
-					public NeonatalCareReport ProcessCDADocumentEvent(NeonatalCareReport ncrDocument) {
-						try {
-							System.out.println(" Processing NeonatalCareReport - Save to specific table ");
+				@Override
+				public NeonatalCareReport ProcessCDADocumentEvent(NeonatalCareReport ncrDocument) {
+					try {
+						System.out.println(" Processing NeonatalCareReport - Save to specific table ");
 
-							for (Section section : ncrDocument.getSections()) {
+						for (Section section : ncrDocument.getSections()) {
 
-								ST st = section.getTitle();
+							ST st = section.getTitle();
 
-								if (st != null) {
-									System.out.println("Insert into ncr table values " + st.getText());
-								}
-
+							if (st != null) {
+								System.out.println("Insert into ncr table values " + st.getText());
 							}
 
-						} catch (Exception e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
 						}
-						return null;
+
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 					}
-				});
+					return null;
+				}
+			});
 
 		Timer timer = new Timer();
 		timer.schedule(new CDADirectoryPollingTask(args[0], Integer.valueOf(args[1])), 0, 2 * 1000);

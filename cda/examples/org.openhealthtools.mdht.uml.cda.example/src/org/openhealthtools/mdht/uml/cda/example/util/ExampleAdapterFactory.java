@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2009, 2011 David A Carlson and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.example.util;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -66,7 +70,7 @@ public class ExampleAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -77,57 +81,67 @@ public class ExampleAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExampleSwitch<Adapter> modelSwitch =
-		new ExampleSwitch<Adapter>() {
-			@Override
-			public Adapter caseMyDocument(MyDocument object) {
-				return createMyDocumentAdapter();
-			}
-			@Override
-			public Adapter caseMySection(MySection object) {
-				return createMySectionAdapter();
-			}
-			@Override
-			public Adapter caseMyObservation(MyObservation object) {
-				return createMyObservationAdapter();
-			}
-			@Override
-			public Adapter caseInfrastructureRoot(InfrastructureRoot object) {
-				return createInfrastructureRootAdapter();
-			}
-			@Override
-			public Adapter caseAct(Act object) {
-				return createActAdapter();
-			}
-			@Override
-			public Adapter caseClinicalDocument(ClinicalDocument object) {
-				return createClinicalDocumentAdapter();
-			}
-			@Override
-			public Adapter caseGeneralHeaderConstraints(GeneralHeaderConstraints object) {
-				return createGeneralHeaderConstraintsAdapter();
-			}
-			@Override
-			public Adapter caseSection(Section object) {
-				return createSectionAdapter();
-			}
-			@Override
-			public Adapter caseClinicalStatement(ClinicalStatement object) {
-				return createClinicalStatementAdapter();
-			}
-			@Override
-			public Adapter caseObservation(Observation object) {
-				return createObservationAdapter();
-			}
-			@Override
-			public Adapter caseProblemObservation(ProblemObservation object) {
-				return createProblemObservationAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected ExampleSwitch<Adapter> modelSwitch = new ExampleSwitch<Adapter>() {
+		@Override
+		public Adapter caseMyDocument(MyDocument object) {
+			return createMyDocumentAdapter();
+		}
+
+		@Override
+		public Adapter caseMySection(MySection object) {
+			return createMySectionAdapter();
+		}
+
+		@Override
+		public Adapter caseMyObservation(MyObservation object) {
+			return createMyObservationAdapter();
+		}
+
+		@Override
+		public Adapter caseInfrastructureRoot(InfrastructureRoot object) {
+			return createInfrastructureRootAdapter();
+		}
+
+		@Override
+		public Adapter caseAct(Act object) {
+			return createActAdapter();
+		}
+
+		@Override
+		public Adapter caseClinicalDocument(ClinicalDocument object) {
+			return createClinicalDocumentAdapter();
+		}
+
+		@Override
+		public Adapter caseGeneralHeaderConstraints(GeneralHeaderConstraints object) {
+			return createGeneralHeaderConstraintsAdapter();
+		}
+
+		@Override
+		public Adapter caseSection(Section object) {
+			return createSectionAdapter();
+		}
+
+		@Override
+		public Adapter caseClinicalStatement(ClinicalStatement object) {
+			return createClinicalStatementAdapter();
+		}
+
+		@Override
+		public Adapter caseObservation(Observation object) {
+			return createObservationAdapter();
+		}
+
+		@Override
+		public Adapter caseProblemObservation(ProblemObservation object) {
+			return createProblemObservationAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -139,9 +153,8 @@ public class ExampleAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
-
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.openhealthtools.mdht.uml.cda.example.MyDocument <em>My Document</em>}'.
@@ -309,4 +322,4 @@ public class ExampleAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //ExampleAdapterFactory
+} // ExampleAdapterFactory

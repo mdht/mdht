@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2010 Sean Muir
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Sean Muir (JKM Software) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.builder.hibernate;
 
 import java.io.BufferedWriter;
@@ -33,9 +43,7 @@ import org.hibernate.tuple.entity.EntityMetamodel;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 import org.openhealthtools.mdht.uml.hl7.rim.RIMPackage;
 
-
 public class CDASessionFactory {
-
 
 	/**
 	 * Extends Naming Strategy - Issue with Teneo not recognizing Struct_Text
@@ -59,9 +67,7 @@ public class CDASessionFactory {
 		}
 
 	}
-	
-	
-	
+
 	public static class CDAHbContext extends HbContext {
 
 		@Override
@@ -77,14 +83,12 @@ public class CDASessionFactory {
 	 */
 	public static class CDAEMFTuplizer extends EMFTuplizer {
 
-		public CDAEMFTuplizer(EntityMetamodel entityMetamodel,
-				PersistentClass mappedEntity) {
+		public CDAEMFTuplizer(EntityMetamodel entityMetamodel, PersistentClass mappedEntity) {
 			super(entityMetamodel, mappedEntity);
 		}
 
 		@Override
-		protected PropertyAccessor getPropertyAccessor(Property mappedProperty,
-				PersistentClass pc) {
+		protected PropertyAccessor getPropertyAccessor(Property mappedProperty, PersistentClass pc) {
 
 			if ("PatientID".equals(mappedProperty.getName())) {
 				return new SyntheticPropertyHandler(mappedProperty.getName());
@@ -95,59 +99,57 @@ public class CDASessionFactory {
 		}
 
 	}
-	
+
 	private static HbDataStore hbds;
-	
+
 	private static Properties connectionProperties = new Properties();
-	
+
 	private static EPackage patientPackage;
-	
-	public static final SessionFactory getSessionFactory(String database,EPackage[] ePackages)
-	{
-		if (hbds == null)
-		{
-			initializeDataStore(database,ePackages);
+
+	public static final SessionFactory getSessionFactory(String database, EPackage[] ePackages) {
+		if (hbds == null) {
+			initializeDataStore(database, ePackages);
 		}
 		return hbds.getSessionFactory();
-		
+
 	}
-	
-	private static void initializeDataStore(String database,EPackage[] ePackages) {
+
+	private static void initializeDataStore(String database, EPackage[] ePackages) {
 
 		initializeConnectionProperties();
-		
+
 		hbds = HbHelper.INSTANCE.createRegisterDataStore(database);
 
 		hbds.setProperties(connectionProperties);
-		
+
 		final ExtensionManager extensionManager = hbds.getExtensionManager();
-		
-		extensionManager.registerExtension(EntityNameStrategy.class.getName(), CDAQualifyingEntityNameStrategy.class.getName());
-		
+
+		extensionManager.registerExtension(
+			EntityNameStrategy.class.getName(), CDAQualifyingEntityNameStrategy.class.getName());
+
 		extensionManager.registerExtension(HbContext.class.getName(), CDAHbContext.class.getName());
-				
-		ArrayList<EPackage> cdaPackages = new ArrayList<EPackage> ();  
-		
+
+		ArrayList<EPackage> cdaPackages = new ArrayList<EPackage>();
+
 		EClass root = createRoot();
-		
+
 		RIMPackage.eINSTANCE.getInfrastructureRoot().getESuperTypes().add(root);
-		
+
 		DatatypesPackage.eINSTANCE.getANY().getESuperTypes().add(root);
-		
+
 		cdaPackages.add(patientPackage);
 
 		cdaPackages.addAll(Arrays.asList(ePackages));
 
 		hbds.setEPackages((EPackage[]) cdaPackages.toArray(new EPackage[cdaPackages.size()]));
 
-		hbds.initialize();	
-		
+		hbds.initialize();
+
 		logMapping();
 
 	}
-	
-	private static void initializeConnectionProperties()
-	{
+
+	private static void initializeConnectionProperties() {
 		try {
 			connectionProperties.load(new FileInputStream("hibernate.properties"));
 		} catch (FileNotFoundException e1) {
@@ -159,88 +161,87 @@ public class CDASessionFactory {
 		connectionProperties.setProperty("hibernate.hbm2ddl.auto", "create");
 
 		connectionProperties.setProperty("hibernate.show.sql", "true");
-		
+
 		connectionProperties.setProperty(PersistenceOptions.MAXIMUM_SQL_NAME_LENGTH, "64");
-		
-		connectionProperties.setProperty(PersistenceOptions.SET_FOREIGN_KEY_NAME,"false");
+
+		connectionProperties.setProperty(PersistenceOptions.SET_FOREIGN_KEY_NAME, "false");
 
 		connectionProperties.setProperty(PersistenceOptions.PERSISTENCE_XML, "annotations.xml");
-		
-		connectionProperties.setProperty(PersistenceOptions.ALWAYS_VERSION,"false");
-		
+
+		connectionProperties.setProperty(PersistenceOptions.ALWAYS_VERSION, "false");
+
 	}
-	
+
 	/**
 	 * Creates new root class for CDA Model to support teneo/hibernate integration
 	 */
-	private static EClass createRoot()
-	{
-		
+	private static EClass createRoot() {
+
 		patientPackage = EcoreFactory.eINSTANCE.createEPackage();
 
-		patientPackage.setName(RIMPackage.eINSTANCE.getName()+"Teneo");
+		patientPackage.setName(RIMPackage.eINSTANCE.getName() + "Teneo");
 
-		patientPackage.setNsPrefix(RIMPackage.eINSTANCE.getNsPrefix()+"Teneo");
+		patientPackage.setNsPrefix(RIMPackage.eINSTANCE.getNsPrefix() + "Teneo");
 
-		patientPackage.setNsURI(RIMPackage.eINSTANCE.getNsURI()+"/Teneo");
-		
+		patientPackage.setNsURI(RIMPackage.eINSTANCE.getNsURI() + "/Teneo");
+
 		EAnnotation eAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
 
 		eAnnotation.setSource("teneo.jpa");
 
-		eAnnotation.getDetails().put("value", "@GenericGenerator(name = customizedIdGenerator, strategy = org.openhealthtools.mdht.builder.hibernate.PatientIDGenerator  ) ");
-		
+		eAnnotation.getDetails().put(
+			"value",
+			"@GenericGenerator(name = customizedIdGenerator, strategy = org.openhealthtools.mdht.builder.hibernate.PatientIDGenerator  ) ");
+
 		patientPackage.getEAnnotations().add(eAnnotation);
-		
+
 		EPackage.Registry.INSTANCE.put(patientPackage.getNsURI(), patientPackage);
-			
-		EClass patient = null; 
-			
+
+		EClass patient = null;
+
 		patient = EcoreFactory.eINSTANCE.createEClass();
 
 		patient.setName("Patient");
-		
+
 		EAttribute id = EcoreFactory.eINSTANCE.createEAttribute();
 
 		id.setName("PatientID");
 
 		id.setEType(EcorePackage.eINSTANCE.getEString());
-		
+
 		id.setLowerBound(1);
-		
+
 		id.setUpperBound(1);
-		
+
 		eAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
-		
+
 		eAnnotation.setSource("teneo.jpa");
-		
+
 		id.getEAnnotations().add(eAnnotation);
 
 		eAnnotation.getDetails().put("value", "@Id @GeneratedValue(generator = customizedIdGenerator) ");
 
 		patient.getEStructuralFeatures().add(id);
-				
+
 		patientPackage.getEClassifiers().add(patient);
-		
+
 		return patient;
 
 	}
-	
 
 	/**
 	 *  Logs mapping file to xml for debug purposes
 	 */
-	private static void logMapping() 
-	{	
-		
+	private static void logMapping() {
+
 		try {
 			BufferedWriter out = new BufferedWriter(new FileWriter("cdamapping.xml"));
 			out.write(hbds.getMappingXML());
 			out.close();
 		} catch (IOException e) {
 			e.printStackTrace();
-		} 
-		return ;
+		}
+		return;
 	}
-	
+
 }

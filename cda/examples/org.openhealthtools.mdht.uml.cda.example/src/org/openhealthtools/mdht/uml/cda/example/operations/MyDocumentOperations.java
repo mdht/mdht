@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2009, 2011 David A Carlson and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.example.operations;
 
 import java.util.Map;
@@ -58,8 +62,8 @@ public class MyDocumentOperations extends GeneralHeaderConstraintsOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_MY_DOCUMENT_HAS_PATIENT_NAME_GIVEN_AND_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.recordTarget.patientRole.patient.name->exists("+
-"   name : datatypes::PN | not name.given->isEmpty() and not name.family->isEmpty())";
+	protected static final String VALIDATE_MY_DOCUMENT_HAS_PATIENT_NAME_GIVEN_AND_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.recordTarget.patientRole.patient.name->exists("
+			+ "   name : datatypes::PN | not name.given->isEmpty() and not name.family->isEmpty())";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateMyDocumentHasPatientNameGivenAndFamily(MyDocument, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate My Document Has Patient Name Given And Family</em>}' invariant operation.
@@ -83,26 +87,25 @@ public class MyDocumentOperations extends GeneralHeaderConstraintsOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateMyDocumentHasPatientNameGivenAndFamily(MyDocument myDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateMyDocumentHasPatientNameGivenAndFamily(MyDocument myDocument,
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_MY_DOCUMENT_HAS_PATIENT_NAME_GIVEN_AND_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(ExamplePackage.Literals.MY_DOCUMENT);
 			try {
 				VALIDATE_MY_DOCUMENT_HAS_PATIENT_NAME_GIVEN_AND_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MY_DOCUMENT_HAS_PATIENT_NAME_GIVEN_AND_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
-		if (!EOCL_ENV.createQuery(VALIDATE_MY_DOCUMENT_HAS_PATIENT_NAME_GIVEN_AND_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(myDocument)) {
+		if (!EOCL_ENV.createQuery(
+			VALIDATE_MY_DOCUMENT_HAS_PATIENT_NAME_GIVEN_AND_FAMILY__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(myDocument)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 ExampleValidator.DIAGNOSTIC_SOURCE,
-						 ExampleValidator.MY_DOCUMENT__MY_DOCUMENT_HAS_PATIENT_NAME_GIVEN_AND_FAMILY,
-						 ExamplePlugin.INSTANCE.getString("MyDocumentHasPatientNameGivenAndFamily"),
-						 new Object [] { myDocument }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, ExampleValidator.DIAGNOSTIC_SOURCE,
+					ExampleValidator.MY_DOCUMENT__MY_DOCUMENT_HAS_PATIENT_NAME_GIVEN_AND_FAMILY,
+					ExamplePlugin.INSTANCE.getString("MyDocumentHasPatientNameGivenAndFamily"),
+					new Object[] { myDocument }));
 			}
 			return false;
 		}
@@ -140,26 +143,23 @@ public class MyDocumentOperations extends GeneralHeaderConstraintsOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateMyDocumentTemplateId(MyDocument myDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateMyDocumentTemplateId(MyDocument myDocument, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_MY_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(ExamplePackage.Literals.MY_DOCUMENT);
 			try {
 				VALIDATE_MY_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MY_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_MY_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(myDocument)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 ExampleValidator.DIAGNOSTIC_SOURCE,
-						 ExampleValidator.MY_DOCUMENT__MY_DOCUMENT_TEMPLATE_ID,
-						 ExamplePlugin.INSTANCE.getString("MyDocumentTemplateId"),
-						 new Object [] { myDocument }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, ExampleValidator.DIAGNOSTIC_SOURCE,
+					ExampleValidator.MY_DOCUMENT__MY_DOCUMENT_TEMPLATE_ID,
+					ExamplePlugin.INSTANCE.getString("MyDocumentTemplateId"), new Object[] { myDocument }));
 			}
 			return false;
 		}
@@ -197,26 +197,23 @@ public class MyDocumentOperations extends GeneralHeaderConstraintsOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  boolean validateMyDocumentMySection(MyDocument myDocument, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public static boolean validateMyDocumentMySection(MyDocument myDocument, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
 		if (VALIDATE_MY_DOCUMENT_MY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(ExamplePackage.Literals.MY_DOCUMENT);
 			try {
 				VALIDATE_MY_DOCUMENT_MY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV = helper.createInvariant(VALIDATE_MY_DOCUMENT_MY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}
 		if (!EOCL_ENV.createQuery(VALIDATE_MY_DOCUMENT_MY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV).check(myDocument)) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 ExampleValidator.DIAGNOSTIC_SOURCE,
-						 ExampleValidator.MY_DOCUMENT__MY_DOCUMENT_MY_SECTION,
-						 ExamplePlugin.INSTANCE.getString("MyDocumentMySection"),
-						 new Object [] { myDocument }));
+				diagnostics.add(new BasicDiagnostic(
+					Diagnostic.ERROR, ExampleValidator.DIAGNOSTIC_SOURCE,
+					ExampleValidator.MY_DOCUMENT__MY_DOCUMENT_MY_SECTION,
+					ExamplePlugin.INSTANCE.getString("MyDocumentMySection"), new Object[] { myDocument }));
 			}
 			return false;
 		}
@@ -252,14 +249,14 @@ public class MyDocumentOperations extends GeneralHeaderConstraintsOperations {
 	 * <!-- end-model-doc -->
 	 * @generated
 	 */
-	public static  MySection getMySection(MyDocument myDocument) {
+	public static MySection getMySection(MyDocument myDocument) {
 		if (GET_MY_SECTION__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
-			helper.setOperationContext(ExamplePackage.Literals.MY_DOCUMENT, ExamplePackage.Literals.MY_DOCUMENT.getEAllOperations().get(61));
+			helper.setOperationContext(
+				ExamplePackage.Literals.MY_DOCUMENT, ExamplePackage.Literals.MY_DOCUMENT.getEAllOperations().get(61));
 			try {
 				GET_MY_SECTION__EOCL_QRY = helper.createQuery(GET_MY_SECTION__EOCL_EXP);
-			}
-			catch (ParserException pe) {
+			} catch (ParserException pe) {
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		}

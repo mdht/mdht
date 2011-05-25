@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2009, 2011 David A Carlson and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.example.util;
 
 import java.util.List;
@@ -78,13 +82,11 @@ public class ExampleSwitch<T> {
 	protected T doSwitch(EClass theEClass, EObject theEObject) {
 		if (theEClass.eContainer() == modelPackage) {
 			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
+		} else {
 			List<EClass> eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch(eSuperTypes.get(0), theEObject);
+			return eSuperTypes.isEmpty()
+					? defaultCase(theEObject)
+					: doSwitch(eSuperTypes.get(0), theEObject);
 		}
 	}
 
@@ -98,36 +100,67 @@ public class ExampleSwitch<T> {
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case ExamplePackage.MY_DOCUMENT: {
-				MyDocument myDocument = (MyDocument)theEObject;
+				MyDocument myDocument = (MyDocument) theEObject;
 				T result = caseMyDocument(myDocument);
-				if (result == null) result = caseGeneralHeaderConstraints(myDocument);
-				if (result == null) result = caseClinicalDocument(myDocument);
-				if (result == null) result = caseAct(myDocument);
-				if (result == null) result = caseInfrastructureRoot(myDocument);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseGeneralHeaderConstraints(myDocument);
+				}
+				if (result == null) {
+					result = caseClinicalDocument(myDocument);
+				}
+				if (result == null) {
+					result = caseAct(myDocument);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(myDocument);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case ExamplePackage.MY_SECTION: {
-				MySection mySection = (MySection)theEObject;
+				MySection mySection = (MySection) theEObject;
 				T result = caseMySection(mySection);
-				if (result == null) result = caseSection(mySection);
-				if (result == null) result = caseAct(mySection);
-				if (result == null) result = caseInfrastructureRoot(mySection);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseSection(mySection);
+				}
+				if (result == null) {
+					result = caseAct(mySection);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(mySection);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case ExamplePackage.MY_OBSERVATION: {
-				MyObservation myObservation = (MyObservation)theEObject;
+				MyObservation myObservation = (MyObservation) theEObject;
 				T result = caseMyObservation(myObservation);
-				if (result == null) result = caseProblemObservation(myObservation);
-				if (result == null) result = caseObservation(myObservation);
-				if (result == null) result = caseClinicalStatement(myObservation);
-				if (result == null) result = caseAct(myObservation);
-				if (result == null) result = caseInfrastructureRoot(myObservation);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseProblemObservation(myObservation);
+				}
+				if (result == null) {
+					result = caseObservation(myObservation);
+				}
+				if (result == null) {
+					result = caseClinicalStatement(myObservation);
+				}
+				if (result == null) {
+					result = caseAct(myObservation);
+				}
+				if (result == null) {
+					result = caseInfrastructureRoot(myObservation);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
-			default: return defaultCase(theEObject);
+			default:
+				return defaultCase(theEObject);
 		}
 	}
 
@@ -311,4 +344,4 @@ public class ExampleSwitch<T> {
 		return null;
 	}
 
-} //ExampleSwitch
+} // ExampleSwitch
