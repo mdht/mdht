@@ -16,64 +16,17 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntoleranceConcern;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * This class is a JUnit4 test case.
  */
 @SuppressWarnings("nls")
 public class AllergyIntoleranceConcernOperationsTest extends ConcernEntryOperationsTest {
-
-	// protected static final String ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.4.5.3";
-	//
-	// // /**
-	// // * Not a real test, needed for EMMA to report 100% method coverage.
-	// // */
-	// // @Override
-	// // @SuppressWarnings("unused")
-	// // @Test
-	// // public void testConstructor() {
-	// // AllergyIntoleranceConcernOperations obj = new
-	// // AllergyIntoleranceConcernOperations();
-	// // assertTrue(true);
-	// // } // testConstructor
-	//
-	// private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// // Template ID
-	// // -------------------------------------------------------------
-	// new TemplateIDValidationTest(ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID) {
-	//
-	// @Override
-	// protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
-	// final Map<Object, Object> map) {
-	// return AllergyIntoleranceConcernOperations.validateAllergyIntoleranceConcernTemplateId(
-	// (AllergyIntoleranceConcern) objectToTest, diagnostician, map);
-	// }
-	//
-	// }
-	//
-	// }; // TEST_CASE_ARRAY
-	//
-	// @Override
-	// protected List<CDATestCase> getTestCases() {
-	// // Return a new List because the one returned by Arrays.asList is
-	// // unmodifiable so a sub-class can't append their test cases.
-	// final List<CDATestCase> retValue = super.getTestCases();
-	// retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
-	// return retValue;
-	// }
-	//
-	// @Override
-	// protected EObject getObjectToTest() {
-	// return IHEFactory.eINSTANCE.createAllergyIntoleranceConcern();
-	// }
-	//
-	// @Override
-	// protected EObject getObjectInitToTest() {
-	// return IHEFactory.eINSTANCE.createAllergyIntoleranceConcern().init();
-	// }
 
 	public static class OperationsForOCL extends AllergyIntoleranceConcernOperations {
 		public String getOCLValue(String fieldName) {
@@ -102,7 +55,7 @@ public class AllergyIntoleranceConcernOperationsTest extends ConcernEntryOperati
 	@Test
 	public void testValidateAllergyIntoleranceConcernAllergyIntolerance() {
 		OperationsTestCase<AllergyIntoleranceConcern> testCase = new OperationsTestCase<AllergyIntoleranceConcern>(
-			"validateIHE AllergyIntoleranceConcernImmunization",
+			"ValidateAllergyIntoleranceConcernAllergyIntolerance",
 			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_CONCERN_ALLERGY_INTOLERANCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -116,6 +69,11 @@ public class AllergyIntoleranceConcernOperationsTest extends ConcernEntryOperati
 			protected void updateToPass(AllergyIntoleranceConcern target) {
 				AllergyIntolerance ai = IHEFactory.eINSTANCE.createAllergyIntolerance().init();
 				target.addObservation(ai);
+
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				}
+
 			}
 
 			@Override
@@ -125,14 +83,19 @@ public class AllergyIntoleranceConcernOperationsTest extends ConcernEntryOperati
 			}
 
 		};
-
+		/*
+		 * "self.entryRelationship->exists(entryRelationship : cda::EntryRelationship |
+		 * not entryRelationship.observation.oclIsUndefined() and
+		 * entryRelationship.observation.oclIsKindOf(ihe::AllergyIntolerance) and
+		 * entryRelationship.typeCode = vocab::x_ActRelationshipEntryRelationship::SUBJ)";
+		 */
 		testCase.doValidationTest();
 	}
 
 	@Test
 	public void testValidateAllergyIntoleranceConcernTemplateId() {
 		OperationsTestCase<AllergyIntoleranceConcern> testCase = new OperationsTestCase<AllergyIntoleranceConcern>(
-			"Validate AllergyIntoleranceConcernTemplateId",
+			"ValidateAllergyIntoleranceConcernTemplateId",
 			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_CONCERN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
