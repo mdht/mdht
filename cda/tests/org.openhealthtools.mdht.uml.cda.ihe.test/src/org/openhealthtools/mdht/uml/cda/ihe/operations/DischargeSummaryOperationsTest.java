@@ -17,6 +17,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 
@@ -94,12 +95,17 @@ public class DischargeSummaryOperationsTest extends MedicalSummaryOperationsTest
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
+				target.init();
 
 			}
 
 			@Override
 			protected void updateToPass(DischargeSummary target) {
-				target.init();
+
+				ActiveProblemsSection aps = IHEFactory.eINSTANCE.createActiveProblemsSection().init();
+
+				target.addSection(aps);
+
 			}
 
 			@Override
