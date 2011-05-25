@@ -222,4 +222,155 @@ public class ExternalReferenceTest extends ActOperationsTest {
 		testCase.doValidationTest();
 	}
 
+	@Test
+	public void testValidateExternalReferenceHasNoCode() {
+
+		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>(
+			"ValidateExternalReferenceHasNoCode",
+			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_NO_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ExternalReference target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(ExternalReference target) {
+				ED value = DatatypesFactory.eINSTANCE.createED("TextValueHere");
+				target.setText(value);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ExternalReferenceOperations.validateExternalReferenceHasNoCode(
+					(ExternalReference) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+
+	}
+
+	@Test
+	public void testValidateExternalReferenceHasReference() {
+		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>(
+			"ValidateExternalReferenceHasReference",
+			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ExternalReference target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(ExternalReference target) {
+				ED value = DatatypesFactory.eINSTANCE.createED("TextValueHere");
+				target.setText(value);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ExternalReferenceOperations.validateExternalReferenceHasReference(
+					(ExternalReference) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+
+	}
+
+	@Test
+	public void testvalidateExternalReferenceHasReferenceExternalDocument() {
+		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>(
+			"ValidateExternalReferenceHasReferenceExternalDocument",
+			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_REFERENCE_EXTERNAL_DOCUMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ExternalReference target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(ExternalReference target) {
+				ED value = DatatypesFactory.eINSTANCE.createED("TextValueHere");
+				target.setText(value);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ExternalReferenceOperations.validateExternalReferenceHasReferenceExternalDocument(
+					(ExternalReference) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+
+	}
+
+	@Test
+	public void testvalidateExternalReferenceHasReferenceExternalDocumentID() {
+		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>(
+			"ValidateExternalReferenceHasReferenceExternalDocumentID",
+			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_REFERENCE_EXTERNAL_DOCUMENT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ExternalReference target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(ExternalReference target) {
+				ED value = DatatypesFactory.eINSTANCE.createED("TextValueHere");
+				target.setText(value);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ExternalReferenceOperations.validateExternalReferenceHasReferenceExternalDocumentID(
+					(ExternalReference) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+
+	}
+
+	@Test
+	public void testvalidateExternalReferenceHasReferenceExternalDocumentText() {
+		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>(
+			"ValidateExternalReferenceHasReferenceExternalDocumentText",
+			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_REFERENCE_EXTERNAL_DOCUMENT_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ExternalReference target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(ExternalReference target) {
+				ED value = DatatypesFactory.eINSTANCE.createED("TextValueHere");
+				target.setText(value);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ExternalReferenceOperations.validateExternalReferenceHasReferenceExternalDocumentText(
+					(ExternalReference) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+
+	}
+
 }

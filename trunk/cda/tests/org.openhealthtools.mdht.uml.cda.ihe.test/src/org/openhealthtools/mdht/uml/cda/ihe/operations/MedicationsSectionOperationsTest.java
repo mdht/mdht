@@ -55,7 +55,9 @@ public class MedicationsSectionOperationsTest extends MedicationSectionOperation
 	@Test
 	public void testValidateIHEMedicationsSectionTemplateId() {
 		OperationsTestCase<MedicationsSection> testCase = new OperationsTestCase<MedicationsSection>(
-			"ValidateIHEMedicationsSectionTemplateId", operationsForOCL.getOCLValue("xxx"), objectFactory) {
+			"ValidateIHEMedicationsSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_MEDICATIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicationsSection target) {
@@ -69,7 +71,7 @@ public class MedicationsSectionOperationsTest extends MedicationSectionOperation
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return MedicationsSectionOperations.validateMedicationsSectionTemplateId(
+				return MedicationsSectionOperations.validateIHEMedicationsSectionTemplateId(
 					(MedicationsSection) objectToTest, diagnostician, map);
 			}
 

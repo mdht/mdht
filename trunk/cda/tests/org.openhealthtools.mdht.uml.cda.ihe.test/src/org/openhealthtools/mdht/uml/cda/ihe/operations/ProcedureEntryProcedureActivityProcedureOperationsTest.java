@@ -267,4 +267,174 @@ public class ProcedureEntryProcedureActivityProcedureOperationsTest extends Proc
 		testCase.doValidationTest();
 	}
 
+	/**
+	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.ProcedureEntryProcedureActivityProcedureOperations#validateProcedureEntryProcedureActivityProcedureMoodCode(org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProcedure, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 */
+	@Test
+	public void testValidateProcedureEntryProcedureActivityProcedureMoodCode() {
+		OperationsTestCase<ProcedureEntryProcedureActivityProcedure> testCase = new OperationsTestCase<ProcedureEntryProcedureActivityProcedure>(
+			"ValidateProcedureEntryProcedureActivityProcedureMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEntryProcedureActivityProcedure target) {
+				target.init();
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEntryProcedureActivityProcedure target) {
+				ED value = DatatypesFactory.eINSTANCE.createED("text");
+				target.setText(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ProcedureEntryProcedureActivityProcedureOperations.validateProcedureEntryProcedureActivityProcedureMoodCode(
+					(ProcedureEntryProcedureActivityProcedure) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+	}
+
+	/**
+	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.ProcedureEntryProcedureActivityProcedureOperations#validateProcedureEntryProcedureActivityProcedurePriorityCode(org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProcedure, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 */
+	@Test
+	public void testValidateProcedureEntryProcedureActivityProcedurePriorityCode() {
+		OperationsTestCase<ProcedureEntryProcedureActivityProcedure> testCase = new OperationsTestCase<ProcedureEntryProcedureActivityProcedure>(
+			"ValidateProcedureEntryProcedureActivityProcedurePriorityCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_PRIORITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEntryProcedureActivityProcedure target) {
+				target.init();
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEntryProcedureActivityProcedure target) {
+				ED value = DatatypesFactory.eINSTANCE.createED("text");
+				target.setText(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ProcedureEntryProcedureActivityProcedureOperations.validateProcedureEntryProcedureActivityProcedurePriorityCode(
+					(ProcedureEntryProcedureActivityProcedure) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+	}
+
+	/**
+	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.ProcedureEntryProcedureActivityProcedureOperations#validateProcedureEntryProcedureActivityProcedureHasInversionIndForEncounter(org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProcedure, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 */
+	@Test
+	public void testValidateProcedureEntryProcedureActivityProcedureHasInversionIndForEncounter() {
+		OperationsTestCase<ProcedureEntryProcedureActivityProcedure> testCase = new OperationsTestCase<ProcedureEntryProcedureActivityProcedure>(
+			"ValidateProcedureEntryProcedureActivityProcedureHasInversionIndForEncounter",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_HAS_INVERSION_IND_FOR_ENCOUNTER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEntryProcedureActivityProcedure target) {
+				target.init();
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEntryProcedureActivityProcedure target) {
+				ED value = DatatypesFactory.eINSTANCE.createED("text");
+				target.setText(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ProcedureEntryProcedureActivityProcedureOperations.validateProcedureEntryProcedureActivityProcedureHasInversionIndForEncounter(
+					(ProcedureEntryProcedureActivityProcedure) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+	}
+
+	/**
+	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.ProcedureEntryProcedureActivityProcedureOperations#validateProcedureEntryProcedureActivityProcedureClassCode(org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProcedure, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 */
+	@Test
+	public void testValidateProcedureEntryProcedureActivityProcedureClassCode() {
+		OperationsTestCase<ProcedureEntryProcedureActivityProcedure> testCase = new OperationsTestCase<ProcedureEntryProcedureActivityProcedure>(
+			"ValidateProcedureEntryProcedureActivityProcedureClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEntryProcedureActivityProcedure target) {
+				target.init();
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEntryProcedureActivityProcedure target) {
+				ED value = DatatypesFactory.eINSTANCE.createED("text");
+				target.setText(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ProcedureEntryProcedureActivityProcedureOperations.validateProcedureEntryProcedureActivityProcedureClassCode(
+					(ProcedureEntryProcedureActivityProcedure) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+	}
+
+	/**
+	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.ProcedureEntryProcedureActivityProcedureOperations#validateProcedureEntryProcedureActivityProcedureApproachSiteCode(org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProcedure, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 */
+	@Test
+	public void testValidateProcedureEntryProcedureActivityProcedureApproachSiteCode() {
+		OperationsTestCase<ProcedureEntryProcedureActivityProcedure> testCase = new OperationsTestCase<ProcedureEntryProcedureActivityProcedure>(
+			"ValidateProcedureEntryProcedureActivityProcedureApproachSiteCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE_APPROACH_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEntryProcedureActivityProcedure target) {
+				target.init();
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEntryProcedureActivityProcedure target) {
+				ED value = DatatypesFactory.eINSTANCE.createED("text");
+				target.setText(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ProcedureEntryProcedureActivityProcedureOperations.validateProcedureEntryProcedureActivityProcedureApproachSiteCode(
+					(ProcedureEntryProcedureActivityProcedure) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+	}
+
 } // ProcedureEntryProcedureActivityProcedureOperationsTest
