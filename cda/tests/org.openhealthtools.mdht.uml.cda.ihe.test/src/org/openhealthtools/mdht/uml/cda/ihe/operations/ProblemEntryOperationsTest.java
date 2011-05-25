@@ -330,6 +330,103 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 		testCase.doValidationTest();
 	}
 
+	@Test
+	public void testvalidateProblemEntryComment() {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
+			"ValidateProblemEntryComment",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_COMMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProblemEntry target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(ProblemEntry target) {
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				Severity severity = IHEFactory.eINSTANCE.createSeverity();
+				er.setObservation(severity);
+				target.getEntryRelationships().add(er);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ProblemEntryOperations.validateProblemEntryComment(
+					(ProblemEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+	}
+
+	@Test
+	public void testvalidateProblemEntryHealthStatusObservation() {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
+			"ValidateProblemEntryHealthStatusObservation",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_HEALTH_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProblemEntry target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(ProblemEntry target) {
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				Severity severity = IHEFactory.eINSTANCE.createSeverity();
+				er.setObservation(severity);
+				target.getEntryRelationships().add(er);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ProblemEntryOperations.validateProblemEntryHealthStatusObservation(
+					(ProblemEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+
+	}
+
+	@Test
+	public void testvalidateProblemEntryProblemStatusObservation() {
+		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
+			"ValidateProblemEntryProblemStatusObservation",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_PROBLEM_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProblemEntry target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(ProblemEntry target) {
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				Severity severity = IHEFactory.eINSTANCE.createSeverity();
+				er.setObservation(severity);
+				target.getEntryRelationships().add(er);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ProblemEntryOperations.validateProblemEntryProblemStatusObservation(
+					(ProblemEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+	}
+
 	// protected static final String PROBLEM_ENTRY_TEMPLATE_ID =
 	// "1.3.6.1.4.1.19376.1.5.3.1.4.5";
 	//

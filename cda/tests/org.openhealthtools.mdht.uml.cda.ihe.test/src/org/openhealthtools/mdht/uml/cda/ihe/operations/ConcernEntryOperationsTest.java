@@ -181,4 +181,68 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 
 	}
 
+	@Test
+	public void testValidateConcernEntryHasRelatedObservations() {
+		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>(
+			"ValidateConcernEntryHasRelatedObservations",
+			operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_HAS_RELATED_OBSERVATIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ConcernEntry target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(ConcernEntry target) {
+
+				IVL_TS value = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ConcernEntryOperations.validateConcernEntryHasRelatedObservations(
+					(ConcernEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+
+	}
+
+	@Test
+	public void testValidateConcernEntryRelatedObservationsTypeCode() {
+		OperationsTestCase<ConcernEntry> testCase = new OperationsTestCase<ConcernEntry>(
+			"ValidateConcernEntryRelatedObservationsTypeCode",
+			operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_RELATED_OBSERVATIONS_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ConcernEntry target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(ConcernEntry target) {
+
+				IVL_TS value = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ConcernEntryOperations.validateConcernEntryRelatedObservationsTypeCode(
+					(ConcernEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+
+	}
+
 } // ConcernEntryOperationsTest
