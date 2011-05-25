@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bundle-SymbolicName: org.openhealthtools.mdht.builder.cda
+Bundle-SymbolicName: org.openhealthtools.mdht.cda.builder
 Bundle-ManifestVersion: 2
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
@@ -13,8 +13,9 @@ Require-Bundle: org.eclipse.ui,
  org.openhealthtools.mdht.uml.hl7.datatypes;visibility:=reexport,
  org.openhealthtools.mdht.uml.hl7.vocab;visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Export-Package: org.openhealthtools.mdht.builder.ccd.helpers,
- org.openhealthtools.mdht.builder.cda,
- org.openhealthtools.mdht.builder.cda.helpers,
- org.openhealthtools.mdht.builder.hitsp,
- org.openhealthtools.mdht.uml.cda.ccd.builder
+Export-Package: org.openhealthtools.mdht.uml.cda.builder,
+ org.openhealthtools.mdht.uml.cda.ccd.builder,
+ org.openhealthtools.mdht.uml.cda.cdt.builder,
+ org.openhealthtools.mdht.uml.cda.hitsp.builder,
+ org.openhealthtools.mdht.uml.cda.ihe.builder,
+ org.openhealthtools.mdht.uml.datatypes.builder
