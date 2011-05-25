@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
+import static org.junit.Assert.fail;
+
 import java.math.BigDecimal;
 import java.util.Map;
 
@@ -607,6 +609,73 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 
 		validateMedicationEffectiveTimeTestCase.doValidationTest();
 
+	}
+
+	@Test
+	public final void testValidateMedicationReasonClassMood() {
+		OperationsTestCase<Medication> validateMedicationEffectiveTimeTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_REASON_CLASS_MOOD__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+			@Override
+			protected void updateToPass(Medication medication) {
+				medication.init();
+
+				SXCM_TS arg0 = DatatypesFactory.eINSTANCE.createSXCM_TS();
+				medication.getEffectiveTimes().add(arg0);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return MedicationOperations.validateMedicationReasonClassMood(
+					(Medication) objectToTest, diagnostician, map);
+			}
+
+			@Override
+			protected void updateToFail(Medication medication) {
+
+			}
+		};
+
+		validateMedicationEffectiveTimeTestCase.doValidationTest();
+
+	}
+
+	/*
+	 * CodedVitalSignsSection cvss = IHEFactory.eINSTANCE.createCodedVitalSignsSection().init();
+	 * 
+	 * final long TESTCOUNT = 100;
+	 * for (int vsoctr = 0; vsoctr < TESTCOUNT; vsoctr++) {
+	 * VitalSignsOrganizer vitalSignsOrganizer = IHEFactory.eINSTANCE.createVitalSignsOrganizer();
+	 * String vso = String.valueOf(vsoctr);
+	 * CD cd = DatatypesFactory.eINSTANCE.createCD(vso, vso, vso, vso);
+	 * vitalSignsOrganizer.setCode(cd);
+	 * cvss.addOrganizer(vitalSignsOrganizer);
+	 * }
+	 * 
+	 * EList<VitalSignsOrganizer> result = CodedVitalSignsSectionOperations.getIHEVitalSignsOrganizers(cvss);
+	 * 
+	 * org.junit.Assert.assertEquals(result.size(), TESTCOUNT);
+	 */
+
+	@Test
+	public final void testGetInternalReferences() {
+
+		fail("Yet to implement");
+
+	}
+
+	@Test
+	public final void testGetPatientMedicalInstructionss() {
+
+		fail("Yet to implement");
+	}
+
+	@Test
+	public final void testGetSupplyEntry() {
+
+		fail("Yet to implement");
 	}
 
 } // MedicationOperationsTest

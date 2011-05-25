@@ -81,9 +81,9 @@ public class PayersSectionOperationsTest extends
 	}
 
 	@Test
-	public void testValidatePayersSectionTemplateId() {
+	public void testValidateIHEPayersSectionTemplateId() {
 		OperationsTestCase<PayersSection> testCase = new OperationsTestCase<PayersSection>(
-			"Validate PayersSectionTemplateId",
+			"ValidateIHEPayersSectionTemplateId",
 			operationsForOCL.getOCLValue("VALIDATE_PAYERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -99,7 +99,7 @@ public class PayersSectionOperationsTest extends
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return PayersSectionOperations.validatePayersSectionTemplateId(
+				return PayersSectionOperations.validateIHEPayersSectionTemplateId(
 					(PayersSection) objectToTest, diagnostician, map);
 			}
 
