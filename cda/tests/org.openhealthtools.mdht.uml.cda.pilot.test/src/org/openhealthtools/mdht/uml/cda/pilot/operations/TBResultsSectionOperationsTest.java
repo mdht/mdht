@@ -1,15 +1,13 @@
-/**
+/*******************************************************************************
  * Copyright (c) 2010 IBM Corporation
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.pilot.operations;
 
 import static org.junit.Assert.assertNotNull;
@@ -33,8 +31,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * This class
  */
 @SuppressWarnings("nls")
-public class TBResultsSectionOperationsTest extends
-		ResultsSectionOperationsTest {
+public class TBResultsSectionOperationsTest extends ResultsSectionOperationsTest {
 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.15.2.6";
 
@@ -55,13 +52,10 @@ public class TBResultsSectionOperationsTest extends
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return TBResultsSectionOperations
-							.validateResultsSectionTemplateId(
-									(TBResultsSection) objectToTest,
-									diagnostician, map);
+					return TBResultsSectionOperations.validateResultsSectionTemplateId(
+						(TBResultsSection) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -70,13 +64,10 @@ public class TBResultsSectionOperationsTest extends
 			new TitleCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return TBResultsSectionOperations
-							.validateTBResultsSectionTitle(
-									(TBResultsSection) objectToTest,
-									diagnostician, map);
+					return TBResultsSectionOperations.validateTBResultsSectionTitle(
+						(TBResultsSection) objectToTest, diagnostician, map);
 				}
 
 				/**
@@ -95,13 +86,10 @@ public class TBResultsSectionOperationsTest extends
 			new TextCCDValidationTest() {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return TBResultsSectionOperations
-							.validateTBResultsSectionText(
-									(TBResultsSection) objectToTest,
-									diagnostician, map);
+					return TBResultsSectionOperations.validateTBResultsSectionText(
+						(TBResultsSection) objectToTest, diagnostician, map);
 				}
 
 			},
@@ -133,10 +121,8 @@ public class TBResultsSectionOperationsTest extends
 	@Test
 	public void testValidateTBResultsSectionTBResultOrganizer() {
 		TBResultsSection objectToTest = (TBResultsSection) getObjectToTest();
-		TBResultsSectionOperations.validateTBResultsSectionTBResultOrganizer(
-				objectToTest,
-				Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest),
-				map);
+		TBResultsSectionOperations.validateTBResultsSectionTbResultOrganizer(
+			objectToTest, Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -148,10 +134,8 @@ public class TBResultsSectionOperationsTest extends
 	@Test
 	public void testValidateTBResultsSectionTBResultObservation() {
 		TBResultsSection objectToTest = (TBResultsSection) getObjectToTest();
-		TBResultsSectionOperations.validateTBResultsSectionTBResultObservation(
-				objectToTest,
-				Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest),
-				map);
+		TBResultsSectionOperations.validateTBResultsSectionTbResultObservation(
+			objectToTest, Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -163,9 +147,8 @@ public class TBResultsSectionOperationsTest extends
 	@Test
 	public void testValidateResultsSectionCodeTBResultsSection() {
 		TBResultsSection objectToTest = (TBResultsSection) getObjectToTest();
-		TBResultsSectionOperations.validateResultsSectionCode(objectToTest,
-				Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest),
-				map);
+		TBResultsSectionOperations.validateResultsSectionCode(
+			objectToTest, Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -177,7 +160,7 @@ public class TBResultsSectionOperationsTest extends
 		assertNotNull(TBResultsSectionOperations.getTbResultObservations(null));
 		fail("Not implemented.");
 	} // testGetTbResultObservations
-	
+
 	/**
 	 * test
 	 */
@@ -186,5 +169,5 @@ public class TBResultsSectionOperationsTest extends
 		assertNotNull(TBResultsSectionOperations.getTbResultOrganizers(null));
 		fail("Not implemented.");
 	} // testGetTbResultOrganizers
-	
+
 } // TBResultsSectionOperationsTest

@@ -1,15 +1,13 @@
-/**
+/*******************************************************************************
  * Copyright (c) 2010 IBM Corporation
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.pilot.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -33,13 +31,13 @@ import org.openhealthtools.mdht.uml.cda.pilot.TBResultObservation;
 @SuppressWarnings("nls")
 public class TBResultObservationOperationsTest extends ResultOperationsTest {
 
-	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.15.3.13";
 
 	// Status code
 	private static final String STATUS_CODE = "completed";
+
 	private static final String STATUS_CODE_CODE_SYSTEM = "notspecified";
-	
+
 	/**
 	 * Not a real test, needed for EMMA to report 100% method coverage.
 	 */
@@ -50,35 +48,28 @@ public class TBResultObservationOperationsTest extends ResultOperationsTest {
 		TBResultObservationOperations obj = new TBResultObservationOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 
 			// Template ID
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return TBResultObservationOperations
-							.validateResultObservationTemplateId(
-									(TBResultObservation) objectToTest,
-									diagnostician, map);
+					return TBResultObservationOperations.validateResultObservationTemplateId(
+						(TBResultObservation) objectToTest, diagnostician, map);
 				}
 			},
 
 			// Status Code
 			// -------------------------------------------------------------
-			new StatusCodeCCDValidationTest(STATUS_CODE,
-					STATUS_CODE_CODE_SYSTEM) {
+			new StatusCodeCCDValidationTest(STATUS_CODE, STATUS_CODE_CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return TBResultObservationOperations
-							.validateResultObservationStatusCode(
-									(TBResultObservation) objectToTest,
-									diagnostician, map);
+					return TBResultObservationOperations.validateResultObservationStatusCode(
+						(TBResultObservation) objectToTest, diagnostician, map);
 				}
 			} };
 
@@ -108,8 +99,7 @@ public class TBResultObservationOperationsTest extends ResultOperationsTest {
 	public void testValidateTBResultObservationClassCode() {
 		TBResultObservation objectToTest = (TBResultObservation) getObjectToTest();
 		TBResultObservationOperations.validateTBResultObservationClassCode(
-				objectToTest, Diagnostician.INSTANCE
-						.createDefaultDiagnostic(objectToTest), map);
+			objectToTest, Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -122,8 +112,7 @@ public class TBResultObservationOperationsTest extends ResultOperationsTest {
 	public void testValidateResultObservationCode() {
 		TBResultObservation objectToTest = (TBResultObservation) getObjectToTest();
 		TBResultObservationOperations.validateResultObservationCode(
-				objectToTest, Diagnostician.INSTANCE
-						.createDefaultDiagnostic(objectToTest), map);
+			objectToTest, Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -133,20 +122,18 @@ public class TBResultObservationOperationsTest extends ResultOperationsTest {
 	public void testValidateResultObservationTemplateId() {
 		TBResultObservation objectToTest = (TBResultObservation) getObjectToTest();
 		TBResultObservationOperations.validateResultObservationTemplateId(
-				objectToTest, Diagnostician.INSTANCE
-						.createDefaultDiagnostic(objectToTest), map);
+			objectToTest, Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
-	
+
 	/**
 	 */
 	@Test
 	public void testValidateResultObservationStatusCode() {
 		TBResultObservation objectToTest = (TBResultObservation) getObjectToTest();
 		TBResultObservationOperations.validateResultObservationStatusCode(
-				objectToTest, Diagnostician.INSTANCE
-						.createDefaultDiagnostic(objectToTest), map);
+			objectToTest, Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
-	
+
 } // TBResultObservationOperationsTest
