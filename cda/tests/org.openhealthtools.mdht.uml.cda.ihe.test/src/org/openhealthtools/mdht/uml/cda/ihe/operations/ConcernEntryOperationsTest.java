@@ -15,12 +15,15 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemActOperationsTest;
+import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * This class is a JUnit4 test case.
@@ -196,8 +199,9 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 			@Override
 			protected void updateToPass(ConcernEntry target) {
 
-				IVL_TS value = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(value);
+				AllergyIntolerance ai = IHEFactory.eINSTANCE.createAllergyIntolerance().init();
+
+				target.addObservation(ai);
 
 			}
 
@@ -223,13 +227,17 @@ public class ConcernEntryOperationsTest extends ProblemActOperationsTest {
 			@Override
 			protected void updateToFail(ConcernEntry target) {
 				target.init();
+
+				AllergyIntolerance ai = IHEFactory.eINSTANCE.createAllergyIntolerance().init();
+
+				target.addObservation(ai);
 			}
 
 			@Override
 			protected void updateToPass(ConcernEntry target) {
-
-				IVL_TS value = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(value);
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				}
 
 			}
 
