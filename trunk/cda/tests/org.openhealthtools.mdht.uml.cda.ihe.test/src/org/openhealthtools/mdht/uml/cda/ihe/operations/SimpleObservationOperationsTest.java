@@ -11,12 +11,14 @@
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.operations.ObservationOperationsTest;
 
 /**
@@ -25,24 +27,24 @@ import org.openhealthtools.mdht.uml.cda.operations.ObservationOperationsTest;
 @SuppressWarnings("nls")
 public class SimpleObservationOperationsTest extends ObservationOperationsTest {
 
-	private static final CDATestCase TEST_CASE_ARRAY[] = {
-
-	};
-
-	@Override
-	protected List<CDATestCase> getTestCases() {
-		// Return a new List because the one returned by Arrays.asList is
-		// unmodifiable so a sub-class can't append their test cases.
-		final List<CDATestCase> retValue = super.getTestCases();
-		retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
-		return retValue;
-	}
-
+	// private static final CDATestCase TEST_CASE_ARRAY[] = {
+	//
+	// };
+	//
 	// @Override
-	// protected EObject getObjectToTest() {
-	// return IHEFactory.eINSTANCE.createSimpleObservation();
+	// protected List<CDATestCase> getTestCases() {
+	// // Return a new List because the one returned by Arrays.asList is
+	// // unmodifiable so a sub-class can't append their test cases.
+	// final List<CDATestCase> retValue = super.getTestCases();
+	// retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
+	// return retValue;
 	// }
 	//
+	// // @Override
+	// // protected EObject getObjectToTest() {
+	// // return IHEFactory.eINSTANCE.createSimpleObservation();
+	// // }
+	// //
 	/**
 	 * Not a real test, needed for EMMA to report 100% method coverage.
 	 */
@@ -54,6 +56,30 @@ public class SimpleObservationOperationsTest extends ObservationOperationsTest {
 		assertTrue(true);
 	} // testConstructor
 
+	public static class OperationsForOCL extends SimpleObservationOperations {
+		public String getOCLValue(String fieldName) {
+
+			String oclValue = null;
+
+			try {
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+			} catch (Exception e) {
+				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
+			}
+			return oclValue;
+		}
+	}
+
+	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
+
+	public class ObjectFactory implements TestObjectFactory<SimpleObservation> {
+		public SimpleObservation create() {
+			return IHEFactory.eINSTANCE.createPregnancyObservation();
+		}
+	}
+
+	ObjectFactory objectFactory = new ObjectFactory();
+
 	/**
 	 * Test method for
 	 * {@link org.openhealthtools.mdht.uml.cda.ihe.operations.SimpleObservationOperations#validateSimpleObservationTemplateId(org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}
@@ -61,7 +87,30 @@ public class SimpleObservationOperationsTest extends ObservationOperationsTest {
 	 */
 	@Test
 	public final void testValidateSimpleObservationTemplateId() {
-		fail("Not yet implemented"); // TODO
+		OperationsTestCase<SimpleObservation> testCase = new OperationsTestCase<SimpleObservation>(
+			"ValidateSimpleObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_SIMPLE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SimpleObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SimpleObservation target) {
+				target.init();
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return SimpleObservationOperations.validateSimpleObservationTemplateId(
+					(SimpleObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
 	}
 
 	/**
@@ -71,7 +120,30 @@ public class SimpleObservationOperationsTest extends ObservationOperationsTest {
 	 */
 	@Test
 	public final void testValidateSimpleObservationId() {
-		fail("Not yet implemented"); // TODO
+		OperationsTestCase<SimpleObservation> testCase = new OperationsTestCase<SimpleObservation>(
+			"ValidateSimpleObservationId",
+			operationsForOCL.getOCLValue("VALIDATE_SIMPLE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SimpleObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SimpleObservation target) {
+				target.init();
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return SimpleObservationOperations.validateSimpleObservationId(
+					(SimpleObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
 	}
 
 	/**
@@ -81,7 +153,30 @@ public class SimpleObservationOperationsTest extends ObservationOperationsTest {
 	 */
 	@Test
 	public final void testValidateSimpleObservationStatusCode() {
-		fail("Not yet implemented"); // TODO
+		OperationsTestCase<SimpleObservation> testCase = new OperationsTestCase<SimpleObservation>(
+			"ValidateSimpleObservationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_SIMPLE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SimpleObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SimpleObservation target) {
+				target.init();
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return SimpleObservationOperations.validateSimpleObservationStatusCode(
+					(SimpleObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
 	}
 
 } // SimpleObservationOperationsTest
