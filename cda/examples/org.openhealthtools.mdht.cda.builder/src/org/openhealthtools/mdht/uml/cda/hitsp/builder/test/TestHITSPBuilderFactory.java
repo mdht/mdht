@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 Sean Muir
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Sean Muir (JKM Software) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.hitsp.builder.test;
 
 import org.eclipse.emf.ecore.util.Diagnostician;
@@ -39,31 +49,27 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 @SuppressWarnings("unchecked")
 public class TestHITSPBuilderFactory {
-	
 
 	@Test
 	public void testPatientSummaryBuilder() throws Exception {
-			DocumentBuilder<PatientSummary> documentBuilder = HITSPBuilderFactory.createPatientSummaryBuilder();			
-			PatientSummary document = documentBuilder.buildDocument();
-			Assert.assertNotNull(document );
-			Diagnostician.INSTANCE.validate(document);
-			CDAUtil.save(document , System.out);		
+		DocumentBuilder<PatientSummary> documentBuilder = HITSPBuilderFactory.createPatientSummaryBuilder();
+		PatientSummary document = documentBuilder.buildDocument();
+		Assert.assertNotNull(document);
+		Diagnostician.INSTANCE.validate(document);
+		CDAUtil.save(document, System.out);
 	}
 
-	
 	@Test
 	public void testUnstructuredDocumentBuilder() throws Exception {
-			DocumentBuilder<UnstructuredDocument> documentBuilder = HITSPBuilderFactory.createUnstructuredDocumentBuilder();			
-			UnstructuredDocument document = documentBuilder.buildDocument();
-			Assert.assertNotNull(document );
-			Diagnostician.INSTANCE.validate(document);
-			CDAUtil.save(document , System.out);		
+		DocumentBuilder<UnstructuredDocument> documentBuilder = HITSPBuilderFactory.createUnstructuredDocumentBuilder();
+		UnstructuredDocument document = documentBuilder.buildDocument();
+		Assert.assertNotNull(document);
+		Diagnostician.INSTANCE.validate(document);
+		CDAUtil.save(document, System.out);
 	}
 
-	
-
 	@Test
-	public void testCreateAdmissionMedicationHistorySectionBuilder() throws Exception {		
+	public void testCreateAdmissionMedicationHistorySectionBuilder() throws Exception {
 		SectionBuilder<AdmissionMedicationHistorySection> sectionBuilder = HITSPBuilderFactory.createAdmissionMedicationHistorySectionBuilder();
 		AdmissionMedicationHistorySection section = sectionBuilder.buildSection();
 		Assert.assertNotNull(section);

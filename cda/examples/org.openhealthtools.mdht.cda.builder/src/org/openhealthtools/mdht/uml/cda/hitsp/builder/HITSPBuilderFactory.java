@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2010, 2011 Sean Muir
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Sean Muir (JKM Software) - initial API and implementation
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.hitsp.builder;
 
 import org.openhealthtools.mdht.uml.cda.builder.impl.DocumentBuilderImpl;
@@ -35,7 +45,8 @@ import org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection;
 
 public class HITSPBuilderFactory {
 
-	private static class AdmissionMedicationHistorySectionBuilder extends SectionBuilderImpl<AdmissionMedicationHistorySection> {
+	private static class AdmissionMedicationHistorySectionBuilder extends
+			SectionBuilderImpl<AdmissionMedicationHistorySection> {
 		@Override
 		public AdmissionMedicationHistorySection buildSection() {
 			AdmissionMedicationHistorySection section = HITSPFactory.eINSTANCE.createAdmissionMedicationHistorySection().init();
@@ -134,7 +145,8 @@ public class HITSPBuilderFactory {
 		}
 	}
 
-	private static class HospitalAdmissionDiagnosisSectionBuilder extends SectionBuilderImpl<HospitalAdmissionDiagnosisSection> {
+	private static class HospitalAdmissionDiagnosisSectionBuilder extends
+			SectionBuilderImpl<HospitalAdmissionDiagnosisSection> {
 		@Override
 		public HospitalAdmissionDiagnosisSection buildSection() {
 			HospitalAdmissionDiagnosisSection section = HITSPFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
@@ -152,7 +164,8 @@ public class HITSPBuilderFactory {
 		}
 	}
 
-	private static class HospitalDischargeMedicationsSectionBuilder extends SectionBuilderImpl<HospitalDischargeMedicationsSection> {
+	private static class HospitalDischargeMedicationsSectionBuilder extends
+			SectionBuilderImpl<HospitalDischargeMedicationsSection> {
 		@Override
 		public HospitalDischargeMedicationsSection buildSection() {
 			HospitalDischargeMedicationsSection section = HITSPFactory.eINSTANCE.createHospitalDischargeMedicationsSection().init();
@@ -179,7 +192,8 @@ public class HITSPBuilderFactory {
 		}
 	}
 
-	private static class MedicationsAdministeredSectionBuilder extends SectionBuilderImpl<MedicationsAdministeredSection> {
+	private static class MedicationsAdministeredSectionBuilder extends
+			SectionBuilderImpl<MedicationsAdministeredSection> {
 		@Override
 		public MedicationsAdministeredSection buildSection() {
 			MedicationsAdministeredSection section = HITSPFactory.eINSTANCE.createMedicationsAdministeredSection().init();
@@ -197,7 +211,6 @@ public class HITSPBuilderFactory {
 		}
 	}
 
-	
 	private static class PatientSummaryBuilder extends DocumentBuilderImpl<PatientSummary> {
 
 		@Override
@@ -208,7 +221,6 @@ public class HITSPBuilderFactory {
 		}
 	}
 
-	
 	private static class PayersSectionBuilder extends SectionBuilderImpl<PayersSection> {
 		@Override
 		public PayersSection buildSection() {
