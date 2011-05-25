@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 1010 Sean Muir
+ * Copyright (c) 2010 Sean Muir
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,8 +17,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.xml.datatype.DatatypeConstants;
-
 import org.eclipse.core.internal.resources.File;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
@@ -34,7 +32,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
-import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
@@ -65,6 +62,10 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UML22UMLResource;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.staticmetamodel.HL7StaticModel;
+import org.openhealthtools.hl7.smd.core.model.hl7metamodel.staticmetamodel.StaticmetamodelFactory;
+import org.openhealthtools.mdht.uml.hdf.util.HL7Resource;
+import org.openhealthtools.mdht.uml.hl7.core.util.DatatypeConstants;
 import org.openhealthtools.mdht.uml.hl7.xhl72uml.Activator;
 
 @SuppressWarnings("restriction")
@@ -190,11 +191,11 @@ public class XHl72UMLAction implements IObjectActionDelegate {
 
 		ResourceSet resourceSet = new ResourceSetImpl();
 
-		resourceSet.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+		resourceSet.getLoadOptions().put(XMIResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
 
-		resourceSet.getLoadOptions().put(XMLResource.OPTION_DEFER_IDREF_RESOLUTION, Boolean.FALSE);
+		resourceSet.getLoadOptions().put(XMIResource.OPTION_DEFER_IDREF_RESOLUTION, Boolean.FALSE);
 
-		resourceSet.getLoadOptions().put(XMLResource.OPTION_DEFER_ATTACHMENT, Boolean.FALSE);
+		resourceSet.getLoadOptions().put(XMIResource.OPTION_DEFER_ATTACHMENT, Boolean.FALSE);
 
 		// Create the UML model target
 		Resource umlResource = UML22UMLResource.Factory.INSTANCE.createResource(umlModelURI);
