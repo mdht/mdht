@@ -305,6 +305,35 @@ public class AllergyIntoleranceOperationsTest extends ProblemEntryOperationsTest
 
 	}
 
+	@Override
+	@Test
+	public void testValidateProblemEntryCode() {
+		OperationsTestCase<AllergyIntolerance> testCase = new OperationsTestCase<AllergyIntolerance>(
+			"ValidateProblemEntryCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+
+			@Override
+			protected void updateToFail(AllergyIntolerance target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AllergyIntolerance target) {
+				target.init();
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return AllergyIntoleranceOperations.validateProblemEntryCode(
+					(AllergyIntolerance) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+
+	}
+
 	/**
 	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.AllergyIntoleranceOperations#getProblemEntryReactionObservationContainers(org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance)}.
 	 */

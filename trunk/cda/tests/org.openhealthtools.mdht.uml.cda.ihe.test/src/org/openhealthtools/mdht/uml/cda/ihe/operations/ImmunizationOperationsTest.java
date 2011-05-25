@@ -210,4 +210,62 @@ public class ImmunizationOperationsTest extends MedicationActivityOperationsTest
 		testCase.doValidationTest();
 	}
 
+	@Test
+	public void testValidateImmunizationEffectiveTime() {
+		OperationsTestCase<Immunization> testCase = new OperationsTestCase<Immunization>(
+			"ValidateImmunizationEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Immunization target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Immunization target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ImmunizationOperations.validateImmunizationEffectiveTime(
+					(Immunization) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+	}
+
+	@Test
+	public void testValidateImmunizationComments() {
+		OperationsTestCase<Immunization> testCase = new OperationsTestCase<Immunization>(
+			"ValidateImmunizationComments",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_COMMENTS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Immunization target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Immunization target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return ImmunizationOperations.validateImmunizationComments(
+					(Immunization) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
+	}
+
 } // ImmunizationOperationsTest
