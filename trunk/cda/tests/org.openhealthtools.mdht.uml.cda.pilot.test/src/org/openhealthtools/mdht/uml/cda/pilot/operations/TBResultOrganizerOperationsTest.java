@@ -1,15 +1,13 @@
-/**
+/*******************************************************************************
  * Copyright (c) 2010 IBM Corporation
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.pilot.operations;
 
 import static org.junit.Assert.assertTrue;
@@ -31,12 +29,12 @@ import org.openhealthtools.mdht.uml.cda.pilot.TBResultOrganizer;
  * This class
  */
 @SuppressWarnings("nls")
-public class TBResultOrganizerOperationsTest extends
-		ResultOrganizerOperationsTest {
+public class TBResultOrganizerOperationsTest extends ResultOrganizerOperationsTest {
 
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.15.3.21";
 
 	protected static final String CODE = "notundefined";
+
 	protected static final String CODE_SYSTEM = "2.16.840.1.113883.6.1";
 
 	/**
@@ -56,13 +54,10 @@ public class TBResultOrganizerOperationsTest extends
 			new TemplateIDValidationTest(TEMPLATE_ID) {
 
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return TBResultOrganizerOperations
-							.validateResultOrganizerTemplateId(
-									(TBResultOrganizer) objectToTest,
-									diagnostician, map);
+					return TBResultOrganizerOperations.validateResultOrganizerTemplateId(
+						(TBResultOrganizer) objectToTest, diagnostician, map);
 				}
 			},
 
@@ -70,13 +65,10 @@ public class TBResultOrganizerOperationsTest extends
 			// -------------------------------------------------------------
 			new CodeCCDValidationTest(CODE, CODE_SYSTEM) {
 				@Override
-				protected boolean validate(final EObject objectToTest,
-						final BasicDiagnostic diagnostician,
+				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return TBResultOrganizerOperations
-							.validateResultOrganizerCode(
-									(TBResultOrganizer) objectToTest,
-									diagnostician, map);
+					return TBResultOrganizerOperations.validateResultOrganizerCode(
+						(TBResultOrganizer) objectToTest, diagnostician, map);
 				}
 			} };
 
@@ -105,10 +97,8 @@ public class TBResultOrganizerOperationsTest extends
 	@Test
 	public void testValidateTBResultOrganizerTBResultObservation() {
 		TBResultOrganizer objectToTest = (TBResultOrganizer) getObjectToTest();
-		TBResultOrganizerOperations
-				.validateTBResultOrganizerTBResultObservation(objectToTest,
-						Diagnostician.INSTANCE
-								.createDefaultDiagnostic(objectToTest), map);
+		TBResultOrganizerOperations.validateTBResultOrganizerTbResultObservation(
+			objectToTest, Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -118,9 +108,8 @@ public class TBResultOrganizerOperationsTest extends
 	@Test
 	public void testVvalidateResultOrganizerCode() {
 		TBResultOrganizer objectToTest = (TBResultOrganizer) getObjectToTest();
-		TBResultOrganizerOperations.validateResultOrganizerCode(objectToTest,
-				Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest),
-				map);
+		TBResultOrganizerOperations.validateResultOrganizerCode(
+			objectToTest, Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -130,9 +119,7 @@ public class TBResultOrganizerOperationsTest extends
 	public void testValidateResultOrganizerTemplateId() {
 		TBResultOrganizer objectToTest = (TBResultOrganizer) getObjectToTest();
 		TBResultOrganizerOperations.validateResultOrganizerTemplateId(
-				objectToTest,
-				Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest),
-				map);
+			objectToTest, Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 

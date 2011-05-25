@@ -1,15 +1,13 @@
-/**
+/*******************************************************************************
  * Copyright (c) 2010 IBM Corporation
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     IBM Corporation - initial API and implementation
- *
- * $Id$
- */
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.pilot.operations;
 
 import static org.junit.Assert.assertNotNull;
@@ -32,10 +30,8 @@ import org.openhealthtools.mdht.uml.cda.pilot.TuberculosisFollowUpProgressNote;
  * This class is a JUnit 4 test case.
  */
 @SuppressWarnings("nls")
-public class TuberculosisFollowUpProgressNoteOperationsTest extends
-		ClinicalDocumentOperationsTest {
+public class TuberculosisFollowUpProgressNoteOperationsTest extends ClinicalDocumentOperationsTest {
 
-	@SuppressWarnings("hiding")
 	protected static final String TEMPLATE_ID = "2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3";
 
 	/**
@@ -47,20 +43,17 @@ public class TuberculosisFollowUpProgressNoteOperationsTest extends
 		TuberculosisFollowUpProgressNoteOperations obj = new TuberculosisFollowUpProgressNoteOperations();
 		assertTrue(true);
 	} // testConstructor
-	
+
 	private static final CDATestCase TEST_CASE_ARRAY[] = {
 
 	// Template ID
 	new TemplateIDValidationTest(TEMPLATE_ID) {
 
 		@Override
-		protected boolean validate(final EObject objectToTest,
-				final BasicDiagnostic diagnostician,
+		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
-			return TuberculosisFollowUpProgressNoteOperations
-					.validateTuberculosisFollowUpProgressNoteTemplateId(
-							(TuberculosisFollowUpProgressNote) objectToTest,
-							diagnostician, map);
+			return TuberculosisFollowUpProgressNoteOperations.validateTuberculosisFollowUpProgressNoteTemplateId(
+				(TuberculosisFollowUpProgressNote) objectToTest, diagnostician, map);
 		}
 	} };
 
@@ -89,10 +82,8 @@ public class TuberculosisFollowUpProgressNoteOperationsTest extends
 	@Test
 	public void testValidateTuberculosisFollowUpProgressNotePatientNames() {
 		TuberculosisFollowUpProgressNote objectToTest = (TuberculosisFollowUpProgressNote) getObjectToTest();
-		TuberculosisFollowUpProgressNoteOperations
-				.validateTuberculosisFollowUpProgressNotePatientNames(
-						objectToTest, Diagnostician.INSTANCE
-								.createDefaultDiagnostic(objectToTest), map);
+		TuberculosisFollowUpProgressNoteOperations.validateTuberculosisFollowUpProgressNotePatientNames(
+			objectToTest, Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -104,10 +95,8 @@ public class TuberculosisFollowUpProgressNoteOperationsTest extends
 	@Test
 	public void testValidateTuberculosisFollowUpProgressNoteTBResultsSection() {
 		TuberculosisFollowUpProgressNote objectToTest = (TuberculosisFollowUpProgressNote) getObjectToTest();
-		TuberculosisFollowUpProgressNoteOperations
-				.validateTuberculosisFollowUpProgressNoteTBResultsSection(
-						objectToTest, Diagnostician.INSTANCE
-								.createDefaultDiagnostic(objectToTest), map);
+		TuberculosisFollowUpProgressNoteOperations.validateTuberculosisFollowUpProgressNoteTbResultsSection(
+			objectToTest, Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest), map);
 		fail("Not yet implemented");
 	}
 
@@ -119,5 +108,5 @@ public class TuberculosisFollowUpProgressNoteOperationsTest extends
 		assertNotNull(TuberculosisFollowUpProgressNoteOperations.getTbResultsSection(null));
 		fail("Not implemented.");
 	} // testGetTbResultsSection
-	
+
 } // TuberculosisFollowUpProgressNoteOperationsTest
