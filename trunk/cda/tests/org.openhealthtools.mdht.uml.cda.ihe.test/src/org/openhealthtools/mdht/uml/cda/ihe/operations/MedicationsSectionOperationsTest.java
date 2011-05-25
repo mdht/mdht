@@ -10,10 +10,14 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
-import static org.junit.Assert.fail;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.MedicationSectionOperationsTest;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 
 /**
  * This class is a JUnit4 test case.
@@ -21,66 +25,96 @@ import org.openhealthtools.mdht.uml.cda.ccd.operations.MedicationSectionOperatio
 @SuppressWarnings("nls")
 public class MedicationsSectionOperationsTest extends MedicationSectionOperationsTest {
 
-	// @SuppressWarnings("hiding")
-	// protected static final String TEMPLATE_ID =
-	// "2.16.840.1.113883.10.20.1.8";
-	//
-	// /**
-	// * Not a real test, needed for EMMA to report 100% method coverage.
-	// */
-	// @SuppressWarnings("unused")
-	// @Test
-	// public void testConstructor() {
-	// MedicationsSectionOperations obj = new MedicationsSectionOperations();
-	// assertTrue(true);
-	// } // testConstructor
-	//
-	// private static final CDATestCase TEST_CASE_ARRAY[] = {
-	// // Template ID
-	// // -------------------------------------------------------------
-	// new TemplateIDValidationTest(TEMPLATE_ID) {
-	//
-	// @SuppressWarnings("static-access")
-	// @Override
-	// protected boolean validate(final EObject objectToTest,
-	// final BasicDiagnostic diagnostician,
-	// final Map<Object, Object> map) {
-	// return MedicationsSectionOperations
-	// .validateMedicationsSectionTemplateId(
-	// (MedicationsSection) objectToTest, diagnostician,
-	// map);
-	// }
-	//
-	// }
-	//
-	// }; // TEST_CASE_ARRAY
-	//
-	// @Override
-	// protected List<CDATestCase> getTestCases() {
-	// // Return a new List because the one returned by Arrays.asList is
-	// // unmodifiable so a sub-class can't append their test cases.
-	// final List<CDATestCase> retValue = super.getTestCases();
-	// retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
-	// return retValue;
-	// }
-	//
-	// @Override
-	// protected EObject getObjectToTest() {
-	// return IHEFactory.eINSTANCE.createMedicationsSection();
-	// }
-	//
-	// @Override
-	// protected EObject getObjectInitToTest() {
-	// return IHEFactory.eINSTANCE.createMedicationsSection().init();
-	// }
+	public static class OperationsForOCL extends MedicationsSectionOperations {
+		public String getOCLValue(String fieldName) {
 
+			String oclValue = null;
+
+			try {
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+			} catch (Exception e) {
+				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
+			}
+			return oclValue;
+		}
+	}
+
+	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
+
+	public class ObjectFactory implements TestObjectFactory<MedicationsSection> {
+		public MedicationsSection create() {
+			return IHEFactory.eINSTANCE.createMedicationsSection();
+		}
+	}
+
+	ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.MedicationsSectionOperations#validateIHEMedicationsSectionTemplateId(org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 */
 	@Test
 	public void testValidateIHEMedicationsSectionTemplateId() {
-		fail("Not yet implemented");
+		OperationsTestCase<MedicationsSection> testCase = new OperationsTestCase<MedicationsSection>(
+			"ValidateIHEMedicationsSectionTemplateId", operationsForOCL.getOCLValue("xxx"), objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationsSection target) {
+				target.init();
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return MedicationsSectionOperations.validateMedicationsSectionTemplateId(
+					(MedicationsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
 	}
 
+	/**
+	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.MedicationsSectionOperations#validateIHEMedicationsSectionMedication(org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)}.
+	 */
 	@Test
 	public void testValidateIHEMedicationsSectionMedication() {
-		fail("Not yet implemented");
+		OperationsTestCase<MedicationsSection> testCase = new OperationsTestCase<MedicationsSection>(
+			"ValidateIHEMedicationsSectionMedication",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_MEDICATIONS_SECTION_MEDICATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationsSection target) {
+				target.init();
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+				return MedicationsSectionOperations.validateIHEMedicationsSectionMedication(
+					(MedicationsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		testCase.doValidationTest();
 	}
+
+	/**
+	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.MedicationsSectionOperations#getMedications(org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection)}.
+	 */
+	@Test
+	public void testGetMedications() {
+
+	}
+
 }// MedicationsSectionOperationsTest
