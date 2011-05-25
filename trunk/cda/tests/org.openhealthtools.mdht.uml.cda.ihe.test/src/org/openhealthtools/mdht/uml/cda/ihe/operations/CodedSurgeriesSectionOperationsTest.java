@@ -10,15 +10,15 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.operations;
 
-import static org.junit.Assert.fail;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ihe.CodedSurgeriesSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ExternalReference;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProcedure;
 
 /**
  * This class is a JUnit4 test case.
@@ -141,12 +141,15 @@ public class CodedSurgeriesSectionOperationsTest extends SurgeriesSectionOperati
 
 			@Override
 			protected void updateToFail(CodedSurgeriesSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(CodedSurgeriesSection target) {
-				target.init();
+
+				ExternalReference er = IHEFactory.eINSTANCE.createExternalReference().init();
+
+				target.addAct(er);
 			}
 
 			@Override
@@ -172,12 +175,15 @@ public class CodedSurgeriesSectionOperationsTest extends SurgeriesSectionOperati
 
 			@Override
 			protected void updateToFail(CodedSurgeriesSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(CodedSurgeriesSection target) {
-				target.init();
+
+				ProcedureEntryProcedureActivityProcedure pepap = IHEFactory.eINSTANCE.createProcedureEntryProcedureActivityProcedure().init();
+
+				target.addProcedure(pepap);
 			}
 
 			@Override
@@ -191,19 +197,4 @@ public class CodedSurgeriesSectionOperationsTest extends SurgeriesSectionOperati
 		testCase.doValidationTest();
 	}
 
-	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.CodedSurgeriesSectionOperations#getExternalReference(org.openhealthtools.mdht.uml.cda.ihe.CodedSurgeriesSection)}.
-	 */
-	@Test
-	public void testGetExternalReference() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link org.openhealthtools.mdht.uml.cda.ihe.operations.CodedSurgeriesSectionOperations#getProcedureEntryProcedureActivityProcedures(org.openhealthtools.mdht.uml.cda.ihe.CodedSurgeriesSection)}.
-	 */
-	@Test
-	public void testGetProcedureEntryProcedureActivityProcedures() {
-		fail("Not yet implemented");
-	}
 } // CodedSurgeriesSectionOperationsTest

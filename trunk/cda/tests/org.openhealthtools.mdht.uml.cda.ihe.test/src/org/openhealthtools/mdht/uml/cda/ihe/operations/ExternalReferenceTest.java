@@ -18,9 +18,11 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ihe.ExternalReference;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.operations.ActOperationsTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
 public class ExternalReferenceTest extends ActOperationsTest {
 
@@ -174,12 +176,14 @@ public class ExternalReferenceTest extends ActOperationsTest {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ExternalReference target) {
-				target.init();
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(ii);
+
 			}
 
 			@Override
@@ -233,12 +237,15 @@ public class ExternalReferenceTest extends ActOperationsTest {
 			@Override
 			protected void updateToFail(ExternalReference target) {
 				target.init();
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.setCode(value);
 			}
 
 			@Override
 			protected void updateToPass(ExternalReference target) {
-				ED value = DatatypesFactory.eINSTANCE.createED("TextValueHere");
-				target.setText(value);
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				value.setNullFlavor(NullFlavor.NA);
+				target.setCode(value);
 			}
 
 			@Override

@@ -20,6 +20,9 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.operations.EncounterOperationsTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 
 /**
  * This class is a JUnit test case.
@@ -45,7 +48,7 @@ public class EncounterEntryOperationsTest extends EncounterOperationsTest {
 
 	public class ObjectFactory implements TestObjectFactory<EncounterEntry> {
 		public EncounterEntry create() {
-			return IHEFactory.eINSTANCE.createEncounterActivity().init();
+			return IHEFactory.eINSTANCE.createEncounterActivity();
 		}
 	}
 
@@ -166,12 +169,13 @@ public class EncounterEntryOperationsTest extends EncounterOperationsTest {
 
 			@Override
 			protected void updateToFail(EncounterEntry target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(EncounterEntry target) {
-				target.init();
+				II ii = DatatypesFactory.eINSTANCE.createII("root");
+				target.getIds().add(ii);
 			}
 
 			@Override
@@ -197,12 +201,15 @@ public class EncounterEntryOperationsTest extends EncounterOperationsTest {
 
 			@Override
 			protected void updateToFail(EncounterEntry target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(EncounterEntry target) {
-				target.init();
+
+				ED ed = DatatypesFactory.eINSTANCE.createED("text");
+				target.setText(ed);
+
 			}
 
 			@Override

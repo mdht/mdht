@@ -17,8 +17,16 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance;
+import org.openhealthtools.mdht.uml.cda.ihe.Comment;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntryReactionObservationContainer;
+import org.openhealthtools.mdht.uml.cda.ihe.ProblemStatusObservation;
+import org.openhealthtools.mdht.uml.cda.ihe.Severity;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * This class is a JUnit4 test case.
@@ -157,12 +165,14 @@ public class AllergyIntoleranceOperationsTest extends ProblemEntryOperationsTest
 
 			@Override
 			protected void updateToFail(AllergyIntolerance target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(AllergyIntolerance target) {
-				target.init();
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(cd);
+
 			}
 
 			@Override
@@ -189,12 +199,20 @@ public class AllergyIntoleranceOperationsTest extends ProblemEntryOperationsTest
 
 			@Override
 			protected void updateToFail(AllergyIntolerance target) {
+				target.init();
+
+				ProblemEntryReactionObservationContainer peroc = IHEFactory.eINSTANCE.createProblemEntryReactionObservationContainer().init();
+				target.addObservation(peroc);
 
 			}
 
 			@Override
 			protected void updateToPass(AllergyIntolerance target) {
-				target.init();
+
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.MFST);
+				}
+
 			}
 
 			@Override
@@ -221,12 +239,16 @@ public class AllergyIntoleranceOperationsTest extends ProblemEntryOperationsTest
 
 			@Override
 			protected void updateToFail(AllergyIntolerance target) {
-
+				target.init();
+				Severity severity = IHEFactory.eINSTANCE.createSeverity().init();
+				target.addObservation(severity);
 			}
 
 			@Override
 			protected void updateToPass(AllergyIntolerance target) {
-				target.init();
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+				}
 			}
 
 			@Override
@@ -253,12 +275,18 @@ public class AllergyIntoleranceOperationsTest extends ProblemEntryOperationsTest
 
 			@Override
 			protected void updateToFail(AllergyIntolerance target) {
+				target.init();
+				ProblemStatusObservation pso = IHEFactory.eINSTANCE.createProblemStatusObservation().init();
 
 			}
 
 			@Override
 			protected void updateToPass(AllergyIntolerance target) {
-				target.init();
+
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+				}
+
 			}
 
 			@Override
@@ -285,12 +313,17 @@ public class AllergyIntoleranceOperationsTest extends ProblemEntryOperationsTest
 
 			@Override
 			protected void updateToFail(AllergyIntolerance target) {
-
+				target.init();
+				Comment comment = IHEFactory.eINSTANCE.createComment().init();
+				target.addAct(comment);
 			}
 
 			@Override
 			protected void updateToPass(AllergyIntolerance target) {
-				target.init();
+
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				}
 			}
 
 			@Override
