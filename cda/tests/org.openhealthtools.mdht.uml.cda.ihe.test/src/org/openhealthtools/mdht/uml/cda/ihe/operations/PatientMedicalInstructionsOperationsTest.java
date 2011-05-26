@@ -19,6 +19,9 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.PatientMedicalInstructions;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 
 /**
  * @author eclipse
@@ -155,12 +158,14 @@ public class PatientMedicalInstructionsOperationsTest extends CDAValidationTest 
 
 			@Override
 			protected void updateToFail(PatientMedicalInstructions target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PatientMedicalInstructions target) {
-				target.init();
+				CS status = DatatypesFactory.eINSTANCE.createCS();
+				target.setStatusCode(status);
+
 			}
 
 			@Override
@@ -186,12 +191,13 @@ public class PatientMedicalInstructionsOperationsTest extends CDAValidationTest 
 
 			@Override
 			protected void updateToFail(PatientMedicalInstructions target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PatientMedicalInstructions target) {
-				target.init();
+				ED text = DatatypesFactory.eINSTANCE.createED("text");
+				target.setText(text);
 			}
 
 			@Override

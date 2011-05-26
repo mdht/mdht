@@ -104,14 +104,19 @@ public class ScanDataEntererOperationsTest extends CDAValidationTest {
 			protected void updateToFail(ScanDataEnterer target) {
 				target.init();
 				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				ae.getIds().add(ii);
+
 				target.setAssignedEntity(ae);
 			}
 
 			@Override
 			protected void updateToPass(ScanDataEnterer target) {
-				II ii = DatatypesFactory.eINSTANCE.createII();
-				target.getAssignedEntity().getIds().add(ii);
-
+				for (II ii : target.getAssignedEntity().getIds()) {
+					ii.setExtension("extension");
+					ii.setRoot("root");
+				}
 			}
 
 			@Override

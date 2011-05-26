@@ -21,6 +21,9 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.InternalReference;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 
 /**
  * @author eclipse
@@ -98,16 +101,19 @@ public class InternalReferenceOperationsTest extends CDAValidationTest {
 	@Test
 	public void testValidateInternalReferenceCode() {
 		OperationsTestCase<InternalReference> testValidateInternalReferenceTemplateIdTestCase = new OperationsTestCase<InternalReference>(
-			"ValidateInternalReferenceCode", operationsForOCL.getOCLValue("xxx"), objectFactory) {
+			"ValidateInternalReferenceCode",
+			operationsForOCL.getOCLValue("VALIDATE_INTERNAL_REFERENCE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InternalReference target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(InternalReference target) {
-				target.init();
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				target.setCode(cd);
 
 			}
 
@@ -129,16 +135,19 @@ public class InternalReferenceOperationsTest extends CDAValidationTest {
 	@Test
 	public void testValidateInternalReferenceId() {
 		OperationsTestCase<InternalReference> testValidateInternalReferenceTemplateIdTestCase = new OperationsTestCase<InternalReference>(
-			"ValidateInternalReferenceId", operationsForOCL.getOCLValue("xxx"), objectFactory) {
+			"ValidateInternalReferenceId",
+			operationsForOCL.getOCLValue("VALIDATE_INTERNAL_REFERENCE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InternalReference target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(InternalReference target) {
-				target.init();
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(ii);
 
 			}
 

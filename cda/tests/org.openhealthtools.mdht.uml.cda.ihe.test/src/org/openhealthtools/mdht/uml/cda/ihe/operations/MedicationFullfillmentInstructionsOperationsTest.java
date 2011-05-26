@@ -16,11 +16,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
-import org.openhealthtools.mdht.uml.cda.CDAFactory;
-import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationFullfillmentInstructions;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 
 /**
  * @author eclipse
@@ -64,14 +66,12 @@ public class MedicationFullfillmentInstructionsOperationsTest extends CDAValidat
 
 			@Override
 			protected void updateToFail(MedicationFullfillmentInstructions target) {
-				target.init();
+
 			}
 
 			@Override
 			protected void updateToPass(MedicationFullfillmentInstructions target) {
-
-				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
-				target.addSubstanceAdministration(sa);
+				target.init();
 			}
 
 			@Override
@@ -97,14 +97,16 @@ public class MedicationFullfillmentInstructionsOperationsTest extends CDAValidat
 
 			@Override
 			protected void updateToFail(MedicationFullfillmentInstructions target) {
-				target.init();
+
 			}
 
 			@Override
 			protected void updateToPass(MedicationFullfillmentInstructions target) {
+				target.init();
+				CD cd = DatatypesFactory.eINSTANCE.createCD(
+					"FINSTRUCT", "1.3.6.1.4.1.19376.1.5.3.2", "1.3.6.1.4.1.19376.1.5.3.2", "FINSTRUCT");
 
-				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
-				target.addSubstanceAdministration(sa);
+				target.setCode(cd);
 			}
 
 			@Override
@@ -135,9 +137,8 @@ public class MedicationFullfillmentInstructionsOperationsTest extends CDAValidat
 
 			@Override
 			protected void updateToPass(MedicationFullfillmentInstructions target) {
-
-				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
-				target.addSubstanceAdministration(sa);
+				CS cs = DatatypesFactory.eINSTANCE.createCS("COMPLETE");
+				target.setStatusCode(cs);
 			}
 
 			@Override
@@ -169,8 +170,8 @@ public class MedicationFullfillmentInstructionsOperationsTest extends CDAValidat
 			@Override
 			protected void updateToPass(MedicationFullfillmentInstructions target) {
 
-				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
-				target.addSubstanceAdministration(sa);
+				ED instruction = DatatypesFactory.eINSTANCE.createED("instruction");
+				target.setText(instruction);
 			}
 
 			@Override

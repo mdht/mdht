@@ -15,8 +15,14 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Component4;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
  * This class is a JUnit4 test case.
@@ -148,16 +154,19 @@ public class VitalSignsOrganizerOperationsTest extends
 	@Test
 	public void testValidateIHEVitalSignsOrganizerEffectiveTime() {
 		OperationsTestCase<VitalSignsOrganizer> testCase = new OperationsTestCase<VitalSignsOrganizer>(
-			"ValidateIHEVitalSignsOrganizerEffectiveTime", operationsForOCL.getOCLValue("xxx"), objectFactory) {
+			"ValidateIHEVitalSignsOrganizerEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_VITAL_SIGNS_ORGANIZER_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(VitalSignsOrganizer target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(VitalSignsOrganizer target) {
-				target.init();
+				IVL_TS time = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(time);
 			}
 
 			@Override
@@ -177,16 +186,19 @@ public class VitalSignsOrganizerOperationsTest extends
 	@Test
 	public void testValidateIHEVitalSignsOrganizerId() {
 		OperationsTestCase<VitalSignsOrganizer> testCase = new OperationsTestCase<VitalSignsOrganizer>(
-			"ValidateIHEVitalSignsOrganizerId", operationsForOCL.getOCLValue("xxx"), objectFactory) {
+			"ValidateIHEVitalSignsOrganizerId",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_VITAL_SIGNS_ORGANIZER_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(VitalSignsOrganizer target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(VitalSignsOrganizer target) {
-				target.init();
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(ii);
 			}
 
 			@Override
@@ -206,16 +218,25 @@ public class VitalSignsOrganizerOperationsTest extends
 	@Test
 	public void testValidateIHEVitalSignsOrganizerVitalSignObservation() {
 		OperationsTestCase<VitalSignsOrganizer> testCase = new OperationsTestCase<VitalSignsOrganizer>(
-			"validateIHEVitalSignsOrganizerVitalSignObservation", operationsForOCL.getOCLValue("xxx"), objectFactory) {
+			"validateIHEVitalSignsOrganizerVitalSignObservation",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_VITAL_SIGNS_ORGANIZER_VITAL_SIGN_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(VitalSignsOrganizer target) {
-
+				target.init();
+				Component4 component = CDAFactory.eINSTANCE.createComponent4();
+				target.getComponents().add(component);
 			}
 
 			@Override
 			protected void updateToPass(VitalSignsOrganizer target) {
-				target.init();
+
+				for (Component4 component : target.getComponents()) {
+					VitalSignObservation obv = IHEFactory.eINSTANCE.createVitalSignObservation().init();
+					component.setObservation(obv);
+				}
+
 			}
 
 			@Override

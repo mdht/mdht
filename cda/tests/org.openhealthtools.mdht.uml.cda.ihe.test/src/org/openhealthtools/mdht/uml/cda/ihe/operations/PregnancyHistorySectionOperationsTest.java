@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.PregnancyHistorySection;
+import org.openhealthtools.mdht.uml.cda.ihe.PregnancyObservation;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -127,6 +128,8 @@ public class PregnancyHistorySectionOperationsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PregnancyHistorySection target) {
 				target.init();
+				PregnancyObservation observation = IHEFactory.eINSTANCE.createPregnancyObservation().init();
+				target.addObservation(observation);
 			}
 
 			@Override

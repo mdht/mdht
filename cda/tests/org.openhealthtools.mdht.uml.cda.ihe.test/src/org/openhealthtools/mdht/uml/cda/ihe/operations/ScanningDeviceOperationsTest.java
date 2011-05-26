@@ -254,14 +254,19 @@ public class ScanningDeviceOperationsTest extends CDAValidationTest {
 				target.init();
 				AssignedAuthor value = CDAFactory.eINSTANCE.createAssignedAuthor();
 				Organization reporg = CDAFactory.eINSTANCE.createOrganization();
+				II ii = DatatypesFactory.eINSTANCE.createII();
+
+				reporg.getIds().add(ii);
 				value.setRepresentedOrganization(reporg);
 				target.setAssignedAuthor(value);
 			}
 
 			@Override
 			protected void updateToPass(ScanningDevice target) {
-				II ii = DatatypesFactory.eINSTANCE.createII();
-				target.getAssignedAuthor().getRepresentedOrganization().getIds().add(ii);
+
+				for (II ii : target.getAssignedAuthor().getRepresentedOrganization().getIds()) {
+					ii.setRoot("root");
+				}
 
 			}
 

@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.MedicationSectionOperationsTest;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.Medication;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationsSection;
 
 /**
@@ -92,12 +93,13 @@ public class MedicationsSectionOperationsTest extends MedicationSectionOperation
 
 			@Override
 			protected void updateToFail(MedicationsSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(MedicationsSection target) {
-				target.init();
+				Medication sa = IHEFactory.eINSTANCE.createNormalDose().init();
+				target.addSubstanceAdministration(sa);
 			}
 
 			@Override

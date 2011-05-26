@@ -18,9 +18,14 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Organization;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.ScanOriginalAuthor;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 
 /**
  * @author eclipse
@@ -74,12 +79,20 @@ public class ScanOriginalAuthorOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScanOriginalAuthor target) {
+				target.init();
+				AssignedAuthor a = CDAFactory.eINSTANCE.createAssignedAuthor();
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				a.getIds().add(ii);
+				target.setAssignedAuthor(a);
 
 			}
 
 			@Override
 			protected void updateToPass(ScanOriginalAuthor target) {
-				target.init();
+				for (II ii : target.getAssignedAuthor().getIds()) {
+					ii.setRoot("root");
+					ii.setExtension("ext");
+				}
 
 			}
 
@@ -106,12 +119,23 @@ public class ScanOriginalAuthorOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScanOriginalAuthor target) {
+				target.init();
+				AssignedAuthor a = CDAFactory.eINSTANCE.createAssignedAuthor();
+				Organization o = CDAFactory.eINSTANCE.createOrganization();
+
+				a.setRepresentedOrganization(o);
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				o.getIds().add(ii);
+				target.setAssignedAuthor(a);
 
 			}
 
 			@Override
 			protected void updateToPass(ScanOriginalAuthor target) {
-				target.init();
+				for (II ii : target.getAssignedAuthor().getRepresentedOrganization().getIds()) {
+					ii.setRoot("root");
+					ii.setExtension("ext");
+				}
 
 			}
 

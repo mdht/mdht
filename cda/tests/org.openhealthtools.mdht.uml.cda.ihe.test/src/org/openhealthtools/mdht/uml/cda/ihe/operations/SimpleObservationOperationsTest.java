@@ -20,6 +20,8 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.SimpleObservation;
 import org.openhealthtools.mdht.uml.cda.operations.ObservationOperationsTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 
 /**
  * This class is a JUnit4 test case.
@@ -27,24 +29,6 @@ import org.openhealthtools.mdht.uml.cda.operations.ObservationOperationsTest;
 @SuppressWarnings("nls")
 public class SimpleObservationOperationsTest extends ObservationOperationsTest {
 
-	// private static final CDATestCase TEST_CASE_ARRAY[] = {
-	//
-	// };
-	//
-	// @Override
-	// protected List<CDATestCase> getTestCases() {
-	// // Return a new List because the one returned by Arrays.asList is
-	// // unmodifiable so a sub-class can't append their test cases.
-	// final List<CDATestCase> retValue = super.getTestCases();
-	// retValue.addAll(Arrays.asList(TEST_CASE_ARRAY));
-	// return retValue;
-	// }
-	//
-	// // @Override
-	// // protected EObject getObjectToTest() {
-	// // return IHEFactory.eINSTANCE.createSimpleObservation();
-	// // }
-	// //
 	/**
 	 * Not a real test, needed for EMMA to report 100% method coverage.
 	 */
@@ -127,12 +111,14 @@ public class SimpleObservationOperationsTest extends ObservationOperationsTest {
 
 			@Override
 			protected void updateToFail(SimpleObservation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(SimpleObservation target) {
-				target.init();
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(ii);
+
 			}
 
 			@Override

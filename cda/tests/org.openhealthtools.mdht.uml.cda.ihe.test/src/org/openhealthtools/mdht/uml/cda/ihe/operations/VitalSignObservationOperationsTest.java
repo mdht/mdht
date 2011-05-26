@@ -18,6 +18,10 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultObservationOperationsTest;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
 
 /**
  * This class is a JUnit4 test case.
@@ -92,12 +96,16 @@ public class VitalSignObservationOperationsTest extends ResultObservationOperati
 
 			@Override
 			protected void updateToFail(VitalSignObservation target) {
-
+				target.init();
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(cd);
 			}
 
 			@Override
 			protected void updateToPass(VitalSignObservation target) {
-				target.init();
+				target.getValues().clear();
+				PQ pq = DatatypesFactory.eINSTANCE.createPQ();
+				target.getValues().add(pq);
 			}
 
 			@Override
@@ -123,12 +131,13 @@ public class VitalSignObservationOperationsTest extends ResultObservationOperati
 
 			@Override
 			protected void updateToFail(VitalSignObservation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(VitalSignObservation target) {
-				target.init();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				target.getInterpretationCodes().add(ce);
 			}
 
 			@Override
@@ -154,12 +163,13 @@ public class VitalSignObservationOperationsTest extends ResultObservationOperati
 
 			@Override
 			protected void updateToFail(VitalSignObservation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(VitalSignObservation target) {
-				target.init();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				target.getMethodCodes().add(ce);
 			}
 
 			@Override
@@ -180,17 +190,18 @@ public class VitalSignObservationOperationsTest extends ResultObservationOperati
 	public void testValidateVitalSignObservationTargetSiteCode() {
 		OperationsTestCase<VitalSignObservation> testCase = new OperationsTestCase<VitalSignObservation>(
 			"ValidateVitalSignObservationTargetSiteCode",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_TARGET_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
 			protected void updateToFail(VitalSignObservation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(VitalSignObservation target) {
-				target.init();
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				target.getTargetSiteCodes().add(cd);
 			}
 
 			@Override
