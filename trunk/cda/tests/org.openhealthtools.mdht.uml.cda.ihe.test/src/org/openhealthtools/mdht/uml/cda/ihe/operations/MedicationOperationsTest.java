@@ -614,7 +614,7 @@ public class MedicationOperationsTest extends MedicationActivityOperationsTest {
 	@Test
 	public final void testValidateMedicationReasonClassMood() {
 		OperationsTestCase<Medication> validateMedicationEffectiveTimeTestCase = new OperationsTestCase<Medication>(
-			"validateMedicationEffectiveTime",
+			"ValidateMedicationReasonClassMood",
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_REASON_CLASS_MOOD__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 			@Override
