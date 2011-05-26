@@ -19,6 +19,9 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.PatientContactGuardian;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
 
 /**
  * @author eclipse
@@ -85,16 +88,19 @@ public class PatientContactGuardianOperationsTest extends CDAValidationTest {
 	@Test
 	public void testValidatePatientContactGuardianAddr() {
 		OperationsTestCase<PatientContactGuardian> testCase = new OperationsTestCase<PatientContactGuardian>(
-			"ValidatePatientContactGuardianAddr", operationsForOCL.getOCLValue("xxx"), objectFactory) {
+			"ValidatePatientContactGuardianAddr",
+			operationsForOCL.getOCLValue("VALIDATE_PATIENT_CONTACT_GUARDIAN_ADDR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PatientContactGuardian target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PatientContactGuardian target) {
-				target.init();
+				AD ad = DatatypesFactory.eINSTANCE.createAD();
+				target.getAddrs().add(ad);
 			}
 
 			@Override
@@ -176,12 +182,13 @@ public class PatientContactGuardianOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PatientContactGuardian target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PatientContactGuardian target) {
-				target.init();
+				TEL tel = DatatypesFactory.eINSTANCE.createTEL();
+				target.getTelecoms().add(tel);
 			}
 
 			@Override

@@ -19,6 +19,8 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.PatientContactParticipant;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
  * @author eclipse
@@ -93,12 +95,13 @@ public class PatientContactParticipantOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PatientContactParticipant target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PatientContactParticipant target) {
-				target.init();
+				IVL_TS time = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setTime(time);
 			}
 
 			@Override

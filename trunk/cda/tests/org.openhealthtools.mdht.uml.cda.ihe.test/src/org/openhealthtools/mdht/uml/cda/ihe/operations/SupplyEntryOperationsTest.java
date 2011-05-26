@@ -22,6 +22,9 @@ import org.openhealthtools.mdht.uml.cda.ccd.operations.SupplyActivityOperationsT
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.MedicationFullfillmentInstructions;
 import org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
+import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
 
 /**
  * @author eclipse
@@ -102,7 +105,7 @@ public class SupplyEntryOperationsTest extends SupplyActivityOperationsTest {
 	@Test
 	public void testValidateSupplyEntryQuantity() {
 		OperationsTestCase<SupplyEntry> testValidateSupplyEntryTemplateIdTestCase = new OperationsTestCase<SupplyEntry>(
-			"validateSupplyEntryTemplateId",
+			"ValidateSupplyEntryQuantity",
 			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ENTRY_QUANTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			SupplyEntryObjectFactory) {
 
@@ -113,6 +116,8 @@ public class SupplyEntryOperationsTest extends SupplyActivityOperationsTest {
 
 			@Override
 			protected void updateToPass(SupplyEntry target) {
+				PQ pq = DatatypesFactory.eINSTANCE.createPQ();
+				target.setQuantity(pq);
 
 			}
 
@@ -132,7 +137,7 @@ public class SupplyEntryOperationsTest extends SupplyActivityOperationsTest {
 	@Test
 	public void testValidateSupplyEntryRepeatNumber() {
 		OperationsTestCase<SupplyEntry> testValidateSupplyEntryTemplateIdTestCase = new OperationsTestCase<SupplyEntry>(
-			"validateSupplyEntryTemplateId",
+			"ValidateSupplyEntryRepeatNumber",
 			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ENTRY_REPEAT_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			SupplyEntryObjectFactory) {
 
@@ -143,6 +148,9 @@ public class SupplyEntryOperationsTest extends SupplyActivityOperationsTest {
 
 			@Override
 			protected void updateToPass(SupplyEntry target) {
+
+				IVL_INT value = DatatypesFactory.eINSTANCE.createIVL_INT();
+				target.setRepeatNumber(value);
 
 			}
 

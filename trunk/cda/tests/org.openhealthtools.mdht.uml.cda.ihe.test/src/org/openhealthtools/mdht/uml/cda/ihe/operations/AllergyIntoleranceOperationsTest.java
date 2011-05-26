@@ -277,6 +277,7 @@ public class AllergyIntoleranceOperationsTest extends ProblemEntryOperationsTest
 			protected void updateToFail(AllergyIntolerance target) {
 				target.init();
 				ProblemStatusObservation pso = IHEFactory.eINSTANCE.createProblemStatusObservation().init();
+				target.addObservation(pso);
 
 			}
 

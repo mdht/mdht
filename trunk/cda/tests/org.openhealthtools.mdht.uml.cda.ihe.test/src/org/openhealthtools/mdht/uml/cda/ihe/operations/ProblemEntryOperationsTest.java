@@ -19,8 +19,10 @@ import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemObservationOperationsTest;
+import org.openhealthtools.mdht.uml.cda.ihe.HealthStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
+import org.openhealthtools.mdht.uml.cda.ihe.ProblemStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.Severity;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
@@ -28,6 +30,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * This class is a JUnit4 test case.
@@ -340,14 +343,15 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 			@Override
 			protected void updateToFail(ProblemEntry target) {
 				target.init();
+				Act comment = IHEFactory.eINSTANCE.createComment().init();
+				target.addAct(comment);
 			}
 
 			@Override
 			protected void updateToPass(ProblemEntry target) {
-				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				Severity severity = IHEFactory.eINSTANCE.createSeverity();
-				er.setObservation(severity);
-				target.getEntryRelationships().add(er);
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				}
 
 			}
 
@@ -363,7 +367,7 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 	}
 
 	@Test
-	public void testvalidateProblemEntryHealthStatusObservation() {
+	public void testValidateProblemEntryHealthStatusObservation() {
 		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
 			"ValidateProblemEntryHealthStatusObservation",
 			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_HEALTH_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
@@ -372,14 +376,17 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 			@Override
 			protected void updateToFail(ProblemEntry target) {
 				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				HealthStatusObservation hso = IHEFactory.eINSTANCE.createHealthStatusObservation().init();
+				er.setObservation(hso);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected void updateToPass(ProblemEntry target) {
-				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				Severity severity = IHEFactory.eINSTANCE.createSeverity();
-				er.setObservation(severity);
-				target.getEntryRelationships().add(er);
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+				}
 
 			}
 
@@ -396,7 +403,7 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 	}
 
 	@Test
-	public void testvalidateProblemEntryProblemStatusObservation() {
+	public void testValidateProblemEntryProblemStatusObservation() {
 		OperationsTestCase<ProblemEntry> testCase = new OperationsTestCase<ProblemEntry>(
 			"ValidateProblemEntryProblemStatusObservation",
 			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_PROBLEM_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
@@ -405,14 +412,17 @@ public class ProblemEntryOperationsTest extends ProblemObservationOperationsTest
 			@Override
 			protected void updateToFail(ProblemEntry target) {
 				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				ProblemStatusObservation pso = IHEFactory.eINSTANCE.createProblemStatusObservation().init();
+				er.setObservation(pso);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected void updateToPass(ProblemEntry target) {
-				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				Severity severity = IHEFactory.eINSTANCE.createSeverity();
-				er.setObservation(severity);
-				target.getEntryRelationships().add(er);
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+				}
 
 			}
 
