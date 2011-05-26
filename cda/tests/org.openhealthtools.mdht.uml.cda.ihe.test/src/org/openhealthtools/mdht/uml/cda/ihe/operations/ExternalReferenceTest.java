@@ -15,14 +15,22 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.ExternalDocument;
+import org.openhealthtools.mdht.uml.cda.Reference;
 import org.openhealthtools.mdht.uml.cda.ihe.ExternalReference;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.impl.ExternalDocumentImpl;
 import org.openhealthtools.mdht.uml.cda.operations.ActOperationsTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActClassDocument;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipExternalReference;
 
 public class ExternalReferenceTest extends ActOperationsTest {
 
@@ -270,12 +278,28 @@ public class ExternalReferenceTest extends ActOperationsTest {
 			@Override
 			protected void updateToFail(ExternalReference target) {
 				target.init();
+
+				Reference ref = CDAFactory.eINSTANCE.createReference();
+				target.getReferences().add(ref);
+
+				ref = CDAFactory.eINSTANCE.createReference();
+				target.getReferences().add(ref);
+
 			}
 
 			@Override
 			protected void updateToPass(ExternalReference target) {
-				ED value = DatatypesFactory.eINSTANCE.createED("TextValueHere");
-				target.setText(value);
+
+				int a = 0;
+				for (Reference ref : target.getReferences()) {
+					if (a++ % 2 == 0) {
+						ref.setTypeCode(x_ActRelationshipExternalReference.SPRT);
+					} else {
+						ref.setTypeCode(x_ActRelationshipExternalReference.REFR);
+					}
+
+				}
+
 			}
 
 			@Override
@@ -291,7 +315,7 @@ public class ExternalReferenceTest extends ActOperationsTest {
 	}
 
 	@Test
-	public void testvalidateExternalReferenceHasReferenceExternalDocument() {
+	public void testValidateExternalReferenceHasReferenceExternalDocument() {
 		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>(
 			"ValidateExternalReferenceHasReferenceExternalDocument",
 			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_REFERENCE_EXTERNAL_DOCUMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
@@ -300,12 +324,26 @@ public class ExternalReferenceTest extends ActOperationsTest {
 			@Override
 			protected void updateToFail(ExternalReference target) {
 				target.init();
+
+				Reference ref = CDAFactory.eINSTANCE.createReference();
+				ExternalDocument extdoc = CDAFactory.eINSTANCE.createExternalDocument();
+				ExternalDocumentImpl foo;
+
+				extdoc.setClassCode(ActClassDocument.CDALVLONE);
+				ref.setExternalDocument(extdoc);
+				target.getReferences().add(ref);
+
 			}
 
 			@Override
 			protected void updateToPass(ExternalReference target) {
-				ED value = DatatypesFactory.eINSTANCE.createED("TextValueHere");
-				target.setText(value);
+
+				for (Reference ref : target.getReferences()) {
+					ref.setTypeCode(x_ActRelationshipExternalReference.SPRT);
+					ref.getExternalDocument().setClassCode(ActClassDocument.DOC);
+					ref.getExternalDocument().setMoodCode(ActMood.EVN);
+
+				}
 			}
 
 			@Override
@@ -321,7 +359,7 @@ public class ExternalReferenceTest extends ActOperationsTest {
 	}
 
 	@Test
-	public void testvalidateExternalReferenceHasReferenceExternalDocumentID() {
+	public void testValidateExternalReferenceHasReferenceExternalDocumentID() {
 		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>(
 			"ValidateExternalReferenceHasReferenceExternalDocumentID",
 			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_REFERENCE_EXTERNAL_DOCUMENT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
@@ -330,12 +368,21 @@ public class ExternalReferenceTest extends ActOperationsTest {
 			@Override
 			protected void updateToFail(ExternalReference target) {
 				target.init();
+				Reference ref = CDAFactory.eINSTANCE.createReference();
+				ref.setTypeCode(x_ActRelationshipExternalReference.SPRT);
+
+				ExternalDocument extdoc = CDAFactory.eINSTANCE.createExternalDocument();
+				extdoc.setClassCode(ActClassDocument.DOC);
+				ref.setExternalDocument(extdoc);
+				target.getReferences().add(ref);
 			}
 
 			@Override
 			protected void updateToPass(ExternalReference target) {
-				ED value = DatatypesFactory.eINSTANCE.createED("TextValueHere");
-				target.setText(value);
+				for (Reference ref : target.getReferences()) {
+					II ii = DatatypesFactory.eINSTANCE.createII();
+					ref.getExternalDocument().getIds().add(ii);
+				}
 			}
 
 			@Override
@@ -351,7 +398,7 @@ public class ExternalReferenceTest extends ActOperationsTest {
 	}
 
 	@Test
-	public void testvalidateExternalReferenceHasReferenceExternalDocumentText() {
+	public void testValidateExternalReferenceHasReferenceExternalDocumentText() {
 		OperationsTestCase<ExternalReference> testCase = new OperationsTestCase<ExternalReference>(
 			"ValidateExternalReferenceHasReferenceExternalDocumentText",
 			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_REFERENCE_EXTERNAL_DOCUMENT_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
@@ -360,12 +407,23 @@ public class ExternalReferenceTest extends ActOperationsTest {
 			@Override
 			protected void updateToFail(ExternalReference target) {
 				target.init();
+				Reference ref = CDAFactory.eINSTANCE.createReference();
+				ref.setTypeCode(x_ActRelationshipExternalReference.SPRT);
+				ExternalDocument extdoc = CDAFactory.eINSTANCE.createExternalDocument();
+				extdoc.setClassCode(ActClassDocument.DOC);
+				ED text = DatatypesFactory.eINSTANCE.createED("string");
+				extdoc.setText(text);
+				ref.setExternalDocument(extdoc);
+				target.getReferences().add(ref);
 			}
 
 			@Override
 			protected void updateToPass(ExternalReference target) {
-				ED value = DatatypesFactory.eINSTANCE.createED("TextValueHere");
-				target.setText(value);
+				for (Reference ref : target.getReferences()) {
+
+					TEL tel = DatatypesFactory.eINSTANCE.createTEL();
+					ref.getExternalDocument().getText().setReference(tel);
+				}
 			}
 
 			@Override
@@ -379,5 +437,4 @@ public class ExternalReferenceTest extends ActOperationsTest {
 		testCase.doValidationTest();
 
 	}
-
 }
