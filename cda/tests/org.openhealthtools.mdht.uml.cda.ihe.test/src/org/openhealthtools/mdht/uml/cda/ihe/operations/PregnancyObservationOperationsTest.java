@@ -19,7 +19,9 @@ import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.PregnancyObservation;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
 
 public class PregnancyObservationOperationsTest extends SimpleObservationOperationsTest {
 
@@ -91,6 +93,8 @@ public class PregnancyObservationOperationsTest extends SimpleObservationOperati
 
 			@Override
 			protected void updateToPass(PregnancyObservation target) {
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				target.getInterpretationCodes().add(ce);
 
 			}
 
@@ -119,7 +123,8 @@ public class PregnancyObservationOperationsTest extends SimpleObservationOperati
 
 			@Override
 			protected void updateToPass(PregnancyObservation target) {
-
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				target.getMethodCodes().add(ce);
 			}
 
 			@Override
@@ -147,7 +152,9 @@ public class PregnancyObservationOperationsTest extends SimpleObservationOperati
 
 			@Override
 			protected void updateToPass(PregnancyObservation target) {
-
+				IVL_INT rn = DatatypesFactory.eINSTANCE.createIVL_INT();
+				;
+				target.setRepeatNumber(rn);
 			}
 
 			@Override
@@ -175,7 +182,8 @@ public class PregnancyObservationOperationsTest extends SimpleObservationOperati
 
 			@Override
 			protected void updateToPass(PregnancyObservation target) {
-
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				target.getTargetSiteCodes().add(cd);
 			}
 
 			@Override
