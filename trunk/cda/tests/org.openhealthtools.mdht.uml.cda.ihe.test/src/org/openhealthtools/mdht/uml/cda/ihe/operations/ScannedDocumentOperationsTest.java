@@ -18,9 +18,38 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
+import org.openhealthtools.mdht.uml.cda.AssignedCustodian;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
+import org.openhealthtools.mdht.uml.cda.Author;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Component2;
+import org.openhealthtools.mdht.uml.cda.Custodian;
+import org.openhealthtools.mdht.uml.cda.CustodianOrganization;
+import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
+import org.openhealthtools.mdht.uml.cda.LegalAuthenticator;
+import org.openhealthtools.mdht.uml.cda.NonXMLBody;
+import org.openhealthtools.mdht.uml.cda.Patient;
+import org.openhealthtools.mdht.uml.cda.PatientRole;
+import org.openhealthtools.mdht.uml.cda.Person;
+import org.openhealthtools.mdht.uml.cda.RecordTarget;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.ScanDataEnterer;
+import org.openhealthtools.mdht.uml.cda.ihe.ScanOriginalAuthor;
 import org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument;
+import org.openhealthtools.mdht.uml.cda.ihe.ScanningDevice;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.BinaryDataEncoding;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ON;
+import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 
 /**
  * @author eclipse
@@ -74,12 +103,15 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				InfrastructureRootTypeId id = CDAFactory.eINSTANCE.createInfrastructureRootTypeId();
+				id.setRoot("2.16.840.1.113883.1.3");
+				id.setExtension("POCD_HD000040");
+				target.setTypeId(id);
 
 			}
 
@@ -106,12 +138,13 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
+				target.getRecordTargets().add(rt);
 
 			}
 
@@ -138,12 +171,18 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
+				target.init();
 
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				Author author = CDAFactory.eINSTANCE.createAuthor();
+				AssignedAuthor assigned = CDAFactory.eINSTANCE.createAssignedAuthor();
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				assigned.setAssignedPerson(person);
+				author.setAssignedAuthor(assigned);
+				target.getAuthors().add(author);
 
 			}
 
@@ -170,12 +209,17 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
+				RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
+				target.getRecordTargets().add(rt);
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				for (RecordTarget rt : target.getRecordTargets()) {
+					PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+					rt.setPatientRole(pr);
+				}
 
 			}
 
@@ -203,11 +247,20 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(ScannedDocument target) {
 
+				target.init();
+				RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				rt.setPatientRole(pr);
+				target.getRecordTargets().add(rt);
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				for (RecordTarget rt : target.getRecordTargets()) {
+					AD adr = DatatypesFactory.eINSTANCE.createAD();
+					adr.addCountry("country");
+					rt.getPatientRole().getAddrs().add(adr);
+				}
 
 			}
 
@@ -234,13 +287,25 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
+				target.init();
+				RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				pr.setPatient(patient);
+				rt.setPatientRole(pr);
+				target.getRecordTargets().add(rt);
 
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				for (RecordTarget rt : target.getRecordTargets()) {
+					PN name = DatatypesFactory.eINSTANCE.createPN();
+					name.addFamily("family");
+					name.addGiven("given");
+					rt.getPatientRole().getPatient().getNames().add(name);
 
+				}
 			}
 
 			@Override
@@ -266,12 +331,22 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
+				target.init();
+				RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				pr.setPatient(patient);
+				rt.setPatientRole(pr);
+				target.getRecordTargets().add(rt);
 
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				for (RecordTarget rt : target.getRecordTargets()) {
+					CE gender = DatatypesFactory.eINSTANCE.createCE();
+					rt.getPatientRole().getPatient().setAdministrativeGenderCode(gender);
+				}
 
 			}
 
@@ -298,12 +373,23 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
+				target.init();
+				RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				pr.setPatient(patient);
+				rt.setPatientRole(pr);
+				target.getRecordTargets().add(rt);
 
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				for (RecordTarget rt : target.getRecordTargets()) {
+					TS birth = DatatypesFactory.eINSTANCE.createTS("birth");
+
+					rt.getPatientRole().getPatient().setBirthTime(birth);
+				}
 
 			}
 
@@ -330,12 +416,13 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				ScanOriginalAuthor soa = IHEFactory.eINSTANCE.createScanOriginalAuthor().init();
+				target.getAuthors().add(soa);
 
 			}
 
@@ -362,12 +449,13 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				ScanningDevice device = IHEFactory.eINSTANCE.createScanningDevice().init();
+				target.getAuthors().add(device);
 
 			}
 
@@ -394,12 +482,13 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				ScanDataEnterer sde = IHEFactory.eINSTANCE.createScanDataEnterer().init();
+				target.setDataEnterer(sde);
 
 			}
 
@@ -426,12 +515,20 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
+				target.init();
+				Custodian custodian = CDAFactory.eINSTANCE.createCustodian();
+				AssignedCustodian assignedCustodian = CDAFactory.eINSTANCE.createAssignedCustodian();
+				CustodianOrganization organization = CDAFactory.eINSTANCE.createCustodianOrganization();
+				assignedCustodian.setRepresentedCustodianOrganization(organization);
+				custodian.setAssignedCustodian(assignedCustodian);
+				target.setCustodian(custodian);
 
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				ON name = DatatypesFactory.eINSTANCE.createON();
+				target.getCustodian().getAssignedCustodian().getRepresentedCustodianOrganization().setName(name);
 
 			}
 
@@ -458,12 +555,20 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
+				Custodian custodian = CDAFactory.eINSTANCE.createCustodian();
+				AssignedCustodian assignedCustodian = CDAFactory.eINSTANCE.createAssignedCustodian();
+				CustodianOrganization organization = CDAFactory.eINSTANCE.createCustodianOrganization();
+				assignedCustodian.setRepresentedCustodianOrganization(organization);
+				custodian.setAssignedCustodian(assignedCustodian);
+				target.setCustodian(custodian);
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				AD address = DatatypesFactory.eINSTANCE.createAD();
+				address.addCountry("country");
+				target.getCustodian().getAssignedCustodian().getRepresentedCustodianOrganization().setAddr(address);
 
 			}
 
@@ -490,12 +595,21 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
+				target.init();
+				LegalAuthenticator auth = CDAFactory.eINSTANCE.createLegalAuthenticator();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				ae.getIds().add(ii);
+				auth.setAssignedEntity(ae);
+				target.setLegalAuthenticator(auth);
 
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				target.getLegalAuthenticator().getAssignedEntity().getIds().clear();
+				II ii = DatatypesFactory.eINSTANCE.createII("root", "extension");
+				target.getLegalAuthenticator().getAssignedEntity().getIds().add(ii);
 
 			}
 
@@ -522,12 +636,16 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
+				Component2 comp = CDAFactory.eINSTANCE.createComponent2();
+				target.setComponent(comp);
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+
+				NonXMLBody nxb = CDAFactory.eINSTANCE.createNonXMLBody();
+				target.getComponent().setNonXMLBody(nxb);
 
 			}
 
@@ -554,12 +672,18 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
+				target.init();
+				Component2 comp = CDAFactory.eINSTANCE.createComponent2();
+				NonXMLBody nxb = CDAFactory.eINSTANCE.createNonXMLBody();
+				comp.setNonXMLBody(nxb);
+				target.setComponent(comp);
 
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				ED text = DatatypesFactory.eINSTANCE.createED("text");
+				target.getComponent().getNonXMLBody().setText(text);
 
 			}
 
@@ -586,12 +710,20 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
+				target.init();
+				Component2 comp = CDAFactory.eINSTANCE.createComponent2();
+				NonXMLBody nxb = CDAFactory.eINSTANCE.createNonXMLBody();
+				ED text = DatatypesFactory.eINSTANCE.createED("text");
+				nxb.setText(text);
+				comp.setNonXMLBody(nxb);
+				target.setComponent(comp);
 
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+
+				target.getComponent().getNonXMLBody().getText().setMediaType("application/pdf");
 
 			}
 
@@ -618,12 +750,19 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
+				Component2 comp = CDAFactory.eINSTANCE.createComponent2();
+				NonXMLBody nxb = CDAFactory.eINSTANCE.createNonXMLBody();
+				ED text = DatatypesFactory.eINSTANCE.createED("text");
+				nxb.setText(text);
+				comp.setNonXMLBody(nxb);
+				target.setComponent(comp);
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+
+				target.getComponent().getNonXMLBody().getText().setRepresentation(BinaryDataEncoding.B64);
 
 			}
 
@@ -683,13 +822,14 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
+				target.init();
 
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
-
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				target.setCode(ce);
 			}
 
 			@Override
@@ -715,12 +855,13 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				target.setConfidentialityCode(ce);
 
 			}
 
@@ -747,12 +888,13 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				TS time = DatatypesFactory.eINSTANCE.createTS();
+				target.setEffectiveTime(time);
 
 			}
 
@@ -779,12 +921,13 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				target.setId(ii);
 
 			}
 
@@ -811,12 +954,13 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				CS cs = DatatypesFactory.eINSTANCE.createCS();
+				target.setLanguageCode(cs);
 
 			}
 
@@ -843,12 +987,13 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				ST title = DatatypesFactory.eINSTANCE.createST();
+				target.setTitle(title);
 
 			}
 
@@ -875,12 +1020,14 @@ public class ScannedDocumentOperationsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
+				target.init();
 
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				InfrastructureRootTypeId id = CDAFactory.eINSTANCE.createInfrastructureRootTypeId();
+				target.setTypeId(id);
 
 			}
 
