@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     IBM Corporation - initial API and implementation
+ *     Sean Muir (JKM Software) -Operation Test and generation
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
 
@@ -524,7 +525,42 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		public TestObject create();
 	}
 
-	protected static abstract class OperationsTestCase<ValidationTarget> extends CDAValidationTestCase {
+	protected abstract static class OperationsTestCase<ValidationTarget> extends CDAValidationTestCase {
+
+		public abstract class PassTest {
+			abstract public void updateToPass(ValidationTarget target);
+		}
+
+		public abstract class FailTest {
+			abstract public void updateToFail(ValidationTarget target);
+		}
+
+		public void addPassTest(PassTest passTest) {
+			passTests.add(passTest);
+		}
+
+		public void addFailTests() {
+
+		}
+
+		public void addPassTests() {
+
+		}
+
+		public void addFailTest(FailTest failTest) {
+			failTests.add(failTest);
+		}
+
+		ArrayList<PassTest> passTests = new ArrayList<PassTest>();
+
+		ArrayList<FailTest> failTests = new ArrayList<FailTest>();
+
+		//
+		// Comparator<String> numStringComparator = new Comparator<String>() {
+		// public int compare(String o1, String o2) {
+		// return Integer.valueOf(o1).compareTo(Integer.valueOf(o2));
+		// }
+		// };
 
 		private static final String[] ENDTAGS = { "<failsnippet>", "</failsnippet>", "<passsnippet>", "</passsnippet>" };
 
@@ -545,18 +581,120 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 			} catch (Exception e) {
 			}
 
-			xml = ENDTAGS[snippetType] + xml + ENDTAGS[snippetType + 1];
+			xml = ENDTAGS[snippetType] + "<br/>" + xml + "<br/>" + ENDTAGS[snippetType + 1];
 
 			return xml;
 		}
 
 		TestObjectFactory<?> testObjectFactory;
 
+		String testLogDir = null;
+
 		public OperationsTestCase(String testTargetDescription, String ocl, TestObjectFactory<?> testObjectFactory) {
 			super(testTargetDescription);
-			this.ocl = StringEscapeUtils.escapeHtml(ocl);
+			this.ocl = ocl;
 			this.testObjectFactory = testObjectFactory;
+			testLogDir = System.getProperty("testlogdir");
 
+			if (testLogDir == null) {
+				System.out.println();
+				System.out.println("Running " + getTestTargetDescription());
+				System.out.println();
+			}
+
+		}
+
+		private void runFails(StringBuffer xmlSnippetsBuffer) {
+
+			boolean gotDiagnostic = false;
+
+			for (FailTest failTest : failTests) {
+
+				ValidationTarget target = (ValidationTarget) testObjectFactory.create();
+
+				BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic((EObject) target);
+
+				failTest.updateToFail(target);
+
+				if (target instanceof InfrastructureRoot) {
+					if (testLogDir != null) {
+						xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) target));
+					} else {
+						try {
+							CDAUtil.saveSnippet((InfrastructureRoot) target, System.out);
+						} catch (Exception e) {
+
+						}
+					}
+				}
+
+				validateExpectFail((EObject) target, diagnostician, map);
+
+				if (!gotDiagnostic) {
+					gotDiagnostic = true;
+					for (Diagnostic d : diagnostician.getChildren()) {
+
+						String message = d.getMessage();
+
+						xmlSnippetsBuffer.append("<diagnostic>");
+
+						message = StringEscapeUtils.escapeHtml(message);
+
+						message = message.replace(System.getProperty("line.separator"), "<br/>");
+
+						xmlSnippetsBuffer.append(message);
+						xmlSnippetsBuffer.append("</diagnostic>");
+					}
+				}
+			}
+
+		}
+
+		private void runPasses(StringBuffer xmlSnippetsBuffer) {
+			for (PassTest passTest : passTests) {
+
+				ValidationTarget target = (ValidationTarget) testObjectFactory.create();
+
+				BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic((EObject) target);
+
+				passTest.updateToPass(target);
+
+				if (target instanceof InfrastructureRoot) {
+					if (testLogDir != null) {
+						xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) target));
+					} else {
+						try {
+							CDAUtil.saveSnippet((InfrastructureRoot) target, System.out);
+						} catch (Exception e) {
+
+						}
+					}
+				}
+
+				validateExpectPass((EObject) target, diagnostician, map);
+
+			}
+		}
+
+		private void appendToBuffer(StringBuffer xmlSnippetsBuffer, String startTag, String contents, String endTag) {
+
+			if (testLogDir != null) {
+				xmlSnippetsBuffer.append(startTag);
+
+				contents = StringEscapeUtils.escapeHtml(contents);
+
+				contents = contents.replace(System.getProperty("line.separator"), "<br/>");
+
+				xmlSnippetsBuffer.append(contents);
+
+				xmlSnippetsBuffer.append(endTag);
+			} else {
+				System.out.println();
+				System.out.println(startTag);
+				System.out.println(contents);
+				System.out.println(endTag);
+				System.out.println();
+			}
 		}
 
 		String ocl = null;
@@ -568,49 +706,84 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 			StringBuffer xmlSnippetsBuffer = new StringBuffer();
 
 			try {
-				xmlSnippetsBuffer.append("<ocl>");
 
-				xmlSnippetsBuffer.append(ocl);
+				appendToBuffer(xmlSnippetsBuffer, "<ocl>", ocl, "</ocl>");
 
-				xmlSnippetsBuffer.append("</ocl>");
+				// xmlSnippetsBuffer.append();
+				//
+				// xmlSnippetsBuffer.append(ocl);
+				//
+				// xmlSnippetsBuffer.append("</ocl>");
 
-				updateToFail((ValidationTarget) objectToTest);
+				if (!failTests.isEmpty()) {
+					runFails(xmlSnippetsBuffer);
+				} else {
+					updateToFail((ValidationTarget) objectToTest);
 
-				if (objectToTest instanceof InfrastructureRoot) {
-					xmlSnippetsBuffer.append(escapeXML(FAILSNIPPET, (InfrastructureRoot) objectToTest));
+					if (objectToTest instanceof InfrastructureRoot) {
+						if (testLogDir != null) {
+							xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) objectToTest));
+						} else {
+							try {
+								System.out.println();
+								System.out.println("Fail Snippet");
+								CDAUtil.saveSnippet((InfrastructureRoot) objectToTest, System.out);
+								System.out.println();
+							} catch (Exception e) {
+
+							}
+						}
+					}
+
+					validateExpectFail(objectToTest, diagnostician, map);
+
+					for (Diagnostic d : diagnostician.getChildren()) {
+
+						String message = d.getMessage();
+
+						appendToBuffer(xmlSnippetsBuffer, "<diagnostic>", message, "</diagnostic>");
+
+						// xmlSnippetsBuffer.append("<diagnostic>");
+						//
+						// message = StringEscapeUtils.escapeHtml(message);
+						//
+						// message = message.replace(System.getProperty("line.separator"), "<br/>");
+						//
+						// xmlSnippetsBuffer.append(message);
+						// xmlSnippetsBuffer.append("</diagnostic>");
+					}
 				}
 
-				validateExpectFail(objectToTest, diagnostician, map);
+				if (!passTests.isEmpty()) {
+					runPasses(xmlSnippetsBuffer);
+				} else {
+					updateToPass((ValidationTarget) objectToTest);
 
-				for (Diagnostic d : diagnostician.getChildren()) {
+					if (objectToTest instanceof InfrastructureRoot) {
+						if (testLogDir != null) {
+							xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) objectToTest));
+						} else {
+							try {
+								System.out.println();
+								System.out.println("Pass Snippet");
+								CDAUtil.saveSnippet((InfrastructureRoot) objectToTest, System.out);
+								System.out.println();
+							} catch (Exception e) {
 
-					String message = d.getMessage();
+							}
+						}
+					}
 
-					xmlSnippetsBuffer.append("<diagnostic>");
-
-					message = StringEscapeUtils.escapeHtml(message);
-
-					message = message.replace(System.getProperty("line.separator"), "<br/>");
-
-					xmlSnippetsBuffer.append(message);
-					xmlSnippetsBuffer.append("</diagnostic>");
+					validateExpectPass(objectToTest, diagnostician, map);
 				}
 
-				updateToPass((ValidationTarget) objectToTest);
-
-				if (objectToTest instanceof InfrastructureRoot) {
-					xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) objectToTest));
-				}
-
-				validateExpectPass(objectToTest, diagnostician, map);
 			} finally {
 
-				String testLogDir = System.getProperty("testlogdir");
 				try {
+					String testName = String.format("test%s", getTestTargetDescription().substring(0, 1).toUpperCase() +
+							getTestTargetDescription().substring(1));
+
 					if (testLogDir != null) {
-						String testName = String.format(
-							"test%s", getTestTargetDescription().substring(0, 1).toUpperCase() +
-									getTestTargetDescription().substring(1));
 						String logFileName = String.format(
 							"%s/test%s", testLogDir, getTestTargetDescription().substring(0, 1).toUpperCase() +
 									getTestTargetDescription().substring(1) + ".xml");
@@ -620,6 +793,9 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 						out.write("<testresult name=\"" + testName + "\">" + xmlSnippetsBuffer.toString() +
 								"</testresult>");
 						out.close();
+					} else {
+						// System.out.println("<testresult name=\"" + testName + "\">" + xmlSnippetsBuffer.toString() +
+						// "</testresult>");
 					}
 				} catch (Exception e) {
 					System.err.println("Error: " + e.getMessage());
@@ -629,14 +805,20 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		}
 
 		public void doValidationTest() {
+
+			addFailTests();
+			addPassTests();
+
 			EObject objectToTest = (EObject) testObjectFactory.create();
 			BasicDiagnostic diagnostician = Diagnostician.INSTANCE.createDefaultDiagnostic(objectToTest);
 			doTest(objectToTest, diagnostician, map);
 		}
 
-		protected abstract void updateToFail(ValidationTarget target);
+		protected void updateToFail(ValidationTarget target) {
+		};
 
-		protected abstract void updateToPass(ValidationTarget target);
+		protected void updateToPass(ValidationTarget target) {
+		};
 
 	}
 
