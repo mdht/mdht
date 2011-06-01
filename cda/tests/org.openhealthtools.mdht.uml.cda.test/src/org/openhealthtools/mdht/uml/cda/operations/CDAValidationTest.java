@@ -618,7 +618,7 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 
 				if (target instanceof InfrastructureRoot) {
 					if (testLogDir != null) {
-						xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) target));
+						xmlSnippetsBuffer.append(escapeXML(FAILSNIPPET, (InfrastructureRoot) target));
 					} else {
 						try {
 							CDAUtil.saveSnippet((InfrastructureRoot) target, System.out);
@@ -722,7 +722,7 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 
 					if (objectToTest instanceof InfrastructureRoot) {
 						if (testLogDir != null) {
-							xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) objectToTest));
+							xmlSnippetsBuffer.append(escapeXML(FAILSNIPPET, (InfrastructureRoot) objectToTest));
 						} else {
 							try {
 								System.out.println();
