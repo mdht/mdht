@@ -15,8 +15,16 @@
 
     	<convertEcorePaths filePath="${ecoreModelPath.uml}"/>
 
+		<antcall target="convertDomainPaths"></antcall>
+
     	<antcall target="refresh"/>
     </target>
+
+	<available file="${domainModelPath.uml}" property="domainModelPath.uml.present"/>
+
+	<target name="convertDomainPaths" if="domainModelPath.uml.present">
+    	<convertEcorePaths filePath="${domainModelPath.uml}"/>
+	</target>
 
 	<target name="refresh" if="eclipse.running" description="Refresh this folder.">
 	  <eclipse.convertPath fileSystemPath="${basedir}" property="resourcePath"/>
