@@ -1,0 +1,144 @@
+<%@ jet package="org.eclipse.emf.codegen.ecore.templates.model" imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.eclipse.emf.codegen.util.CodeGenUtil import org.junit.Test" class="CDATestCase"  %>
+
+<%GenClass genClass = (GenClass)argument; GenPackage genPackage = genClass.getGenPackage(); GenModel genModel=genPackage.getGenModel();%>
+<%@ include file="../Header.jetinc"%>
+package <%=genPackage.getTestsPackageName() %>;
+
+
+<%genModel.markImportLocation(stringBuffer, genPackage);%>
+
+<%genModel.addImport("org.junit.Test");%>
+
+/**
+ * <!-- begin-user-doc -->
+ * A static utility class that provides operations related to '<em><b><%=genClass.getFormattedName()%></b></em>' model objects.
+ * <!-- end-user-doc -->
+ *
+<%if (!UML2GenModelUtil.getOperationsClassGenOperations(genClass).isEmpty()) { boolean first = true;%>
+  <%for (GenOperation genOperation : UML2GenModelUtil.getOperationsClassGenOperations(genClass)) {%>
+  <%if (!genOperation.hasBody()) {%>
+    <%if (first) { first = false;%>
+ * <p>
+ * The following operations are supported:
+ * <ul>
+    <%}%>
+ *   <li>{@link <%=genOperation.getGenClass().getQualifiedInterfaceName()%>#<%=genOperation.getName()%>(<%=genOperation.getParameterTypes(", ")%>) <em><%=genOperation.getFormattedName()%></em>}</li>
+  <%}%>
+  <%}%>
+  <% if (!first) {%>
+ * </ul>
+ * </p>
+  <%}%>
+<%}%>
+ *
+ * @generated
+ */
+ 
+public class <%=genClass.getName()%>Test extends  <%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest") %>
+{
+
+<% if ( !UML2GenModelUtil.getOperationsClassGenOperations(genClass).isEmpty() ) { %>
+
+<%for (GenOperation genOperation : UML2GenModelUtil.getOperationsClassGenOperations(genClass)) {%>
+
+<% if ( genOperation.getName().startsWith("validate") ) { %>
+/**
+*
+* @generated
+*/
+@Test
+
+ 
+									
+public void test<%= genOperation.getName().substring(0, 1).toUpperCase() +	genOperation.getName().substring(1) %>() {
+			OperationsTestCase<<%=genOperation.getGenClass().getName() %>> <%=genOperation.getName()%>TestCase = new OperationsTestCase<<%=genOperation.getGenClass().getName() %>>(
+			"<%=genOperation.getName()%>",
+			operationsForOCL.getOCLValue("<%=UML2GenModelUtil.getUpperName(genOperation.getName())%><%=genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))%>__EOCL_EXP")
+			,objectFactory) {
+
+			@Override
+			protected void updateToFail(<%=genOperation.getGenClass().getName() %> target) {
+
+			}
+
+			@Override
+			protected void updateToPass(<%=genOperation.getGenClass().getName() %> target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, <%=genModel.getImportedName("org.eclipse.emf.common.util.BasicDiagnostic") %> diagnostician, <%=genModel.getImportedName("java.util.Map") %><Object, Object> map) {
+			
+			
+			
+				return <%= genModel.getImportedName(UML2GenModelUtil.getQualifiedOperationsClassName(genClass)) %>.<%=genOperation.getName() %>(
+					(<%=genOperation.getGenClass().getName() %>) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		<%=genOperation.getName()%>TestCase.doValidationTest();
+}		
+
+<% } %>
+
+<%}%>
+
+/**
+*
+* @generated
+*/
+	private static class OperationsForOCL extends <%= genModel.getImportedName(UML2GenModelUtil.getQualifiedOperationsClassName(genClass)) %> {
+		public String getOCLValue(String fieldName) {
+
+			String oclValue = null;
+
+			try {
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+			} catch (Exception e) {
+				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
+			}
+			return oclValue;
+		}
+	}
+	
+/**
+*
+* @generated
+*/
+	private static class ObjectFactory implements <%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory") %><<%= genClass.getImportedInstanceClassName() %>> 
+	{
+		public <%= genClass.getName() %> create() {		
+			return <%= genModel.getImportedName(genPackage.getQualifiedFactoryInterfaceName())  %>.<%=genPackage.getFactoryInstanceName() %>.create<%= genClass.getName() %>();
+		}
+	}
+
+
+/**
+*
+* @generated
+*/
+	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
+
+/**
+*
+* @generated
+*/
+	private static ObjectFactory objectFactory = new ObjectFactory();
+
+
+	
+	<% } %>
+	
+	/**
+*
+* @generated
+*/
+	@Override
+	protected <%=genModel.getImportedName("org.eclipse.emf.ecore.EObject") %> getObjectToTest() {		
+		return null;
+	}
+	
+} // <%=UML2GenModelUtil.getOperationsClassName(genClass)%>
+<%genModel.emitSortedImports();%>
