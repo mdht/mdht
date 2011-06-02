@@ -64,7 +64,55 @@ public void test<%= genOperation.getName().substring(0, 1).toUpperCase() +	genOp
 			@Override
 			protected void updateToPass(<%=genOperation.getGenClass().getName() %> target) {
 				target.init();
+				
+				<% if ( genOperation.getName().endsWith("EffectiveTime") ) { %>
+					<%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS") %> ts = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory") %> .eINSTANCE.createIVL_TS();
+					target.setEffectiveTime(ts );								
+				<% } %>
+				
+				
+			<% if ( genOperation.getName().endsWith("StatusCode") ) { %>
+				<%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.CS") %> cs = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory") %>.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
+			<% } %>	
 
+				
+			<% if ( genOperation.getName().endsWith("Value") && ! genOperation.getName().endsWith("TitleValue") && ! genOperation.getName().endsWith("MoodCodeValue") ) { %>
+				<%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.CD") %> value = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory") %>.eINSTANCE.createCD();
+				target.getValues().add(value);
+			<% } %>	
+
+	
+		<% if ( genOperation.getName().endsWith("SectionTitle") ) { %>
+				<%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.ST") %>  title = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory") %>.eINSTANCE.createST("title");
+				target.setTitle(title );
+			<% } %>	
+
+	
+	<% if ( genOperation.getName().endsWith("SectionText") ) { %>	
+				<%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.StrucDocText") %> text = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.CDAFactory") %>.eINSTANCE.createStrucDocText();
+				target.setText(text );
+		<% } %>	
+				
+	<% if ( genOperation.getName().endsWith("SectionTitleValue") ) { %>
+				<%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.ST") %>  title = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory") %>.eINSTANCE.createST("<%=UML2GenModelUtil.getOCLBody(genOperation).split("'")[1]   %>");
+				
+				target.setTitle(title );
+			<% } %>	
+				
+				
+				
+			<% if ( genOperation.getName().endsWith("ObservationCode") ) { %>
+				<%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.CD") %> cd  = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory") %>.eINSTANCE.createCD();
+				target.setCode(cd);
+			<% } %>	
+				
+				
+			<% if ( genOperation.getName().endsWith("ObservationId") ) { %>
+				<%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.II") %> ii  = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory") %>.eINSTANCE.createII();
+				target.getIds().add(ii);				
+			<% } %>	
+				
 			}
 
 			@Override
