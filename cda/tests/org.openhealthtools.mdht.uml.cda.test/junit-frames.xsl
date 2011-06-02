@@ -943,30 +943,57 @@ h6 {
 <xsl:template name="display-failxml">
     <xsl:param name="value"/>   
     <p>
-    <xsl:copy-of select="document( concat($testlogdir,'allvalidationresults.xml') )/testresults/testresult[@name=$value]/failsnippet" />
+	<xsl:choose>
+  		<xsl:when test="starts-with(substring ($testlogdir, 2),':')">
+			<xsl:copy-of select="document( concat(substring ($testlogdir, 3),'allvalidationresults.xml') )/testresults/testresult[@name=$value]/failsnippet" />
+  		</xsl:when>
+  		<xsl:otherwise>
+			<xsl:copy-of select="document( concat($testlogdir,'allvalidationresults.xml') )/testresults/testresult[@name=$value]/failsnippet" />
+  		</xsl:otherwise>
+	</xsl:choose>
     </p>  	
 </xsl:template>
 
 <xsl:template name="display-passxml">
     <xsl:param name="value"/>   
     <p>
-    
-    <xsl:copy-of select="document( concat($testlogdir,'allvalidationresults.xml') )/testresults/testresult[@name=$value]/passsnippet" />
-    
+	<xsl:choose>
+  		<xsl:when test="starts-with(substring ($testlogdir, 2),':')">
+			<xsl:copy-of select="document( concat(substring ($testlogdir, 3),'allvalidationresults.xml') )/testresults/testresult[@name=$value]/passsnippet" />
+  		</xsl:when>
+  		<xsl:otherwise>
+			<xsl:copy-of select="document( concat($testlogdir,'allvalidationresults.xml') )/testresults/testresult[@name=$value]/passsnippet" />
+  		</xsl:otherwise>
+	</xsl:choose>
     </p>  	
 </xsl:template>
 
 <xsl:template name="display-diagnostic">
     <xsl:param name="value"/>   
     <p>
-    <xsl:copy-of select="document( concat($testlogdir,'allvalidationresults.xml') )/testresults/testresult[@name=$value]/diagnostic" />
+	<xsl:choose>
+  		<xsl:when test="starts-with(substring ($testlogdir, 2),':')">
+			<xsl:copy-of select="document( concat(substring ($testlogdir, 3),'allvalidationresults.xml') )/testresults/testresult[@name=$value]/diagnostic" />
+  		</xsl:when>
+  		<xsl:otherwise>
+			<xsl:copy-of select="document( concat($testlogdir,'allvalidationresults.xml') )/testresults/testresult[@name=$value]/diagnostic" />
+  		</xsl:otherwise>
+	</xsl:choose>
     </p>  	
 </xsl:template>
 
 <xsl:template name="display-ocl">
     <xsl:param name="value"/>   
     <p>
-       <xsl:copy-of select="document( concat($testlogdir,'allvalidationresults.xml') )/testresults/testresult[@name=$value]/ocl" />
+
+	<xsl:choose>
+  		<xsl:when test="starts-with(substring ($testlogdir, 2),':')">
+			<xsl:copy-of select="document( concat(substring ($testlogdir, 3),'allvalidationresults.xml') )/testresults/testresult[@name=$value]/ocl" />
+  		</xsl:when>
+  		<xsl:otherwise>
+			<xsl:copy-of select="document( concat($testlogdir,'allvalidationresults.xml') )/testresults/testresult[@name=$value]/ocl" />
+  		</xsl:otherwise>
+	</xsl:choose>
     </p>  	
 </xsl:template>
 
