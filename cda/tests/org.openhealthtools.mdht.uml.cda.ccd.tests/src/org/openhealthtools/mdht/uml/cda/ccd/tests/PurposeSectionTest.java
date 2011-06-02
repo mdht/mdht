@@ -9,44 +9,98 @@ package org.openhealthtools.mdht.uml.cda.ccd.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.PurposeSection;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.PurposeSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Purpose Section</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Purpose Section</b></em>' model objects. <!-- end-user-doc
+ * -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#validatePurposeSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#validatePurposeSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#validatePurposeSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Title</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#validatePurposeSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Text</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#validatePurposeSectionPurposeActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purpose Section Purpose Activity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#getPurposeActivities() <em>Get Purpose Activities</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#validatePurposeSectionTitleValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Purpose Section Title Value</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#validatePurposeSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Purpose Section Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#validatePurposeSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Purpose Section Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#validatePurposeSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Purpose Section Title</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#validatePurposeSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Purpose Section Text</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#validatePurposeSectionPurposeActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Purpose Section Purpose Activity</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PurposeSection#getPurposeActivities()
+ * <em>Get Purpose Activities</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
 public class PurposeSectionTest extends CDAValidationTest {
 
 	/**
-	 *
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidatePurposeSectionTitleValue() {
+		OperationsTestCase<PurposeSection> validatePurposeSectionTitleValueTestCase = new OperationsTestCase<PurposeSection>(
+				"validatePurposeSectionTitleValue",
+				operationsForOCL
+						.getOCLValue("VALIDATE_PURPOSE_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(PurposeSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PurposeSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("purpose");
+
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PurposeSectionOperations
+						.validatePurposeSectionTitleValue(
+								(PurposeSection) objectToTest, diagnostician,
+								map);
+			}
+
+		};
+
+		validatePurposeSectionTitleValueTestCase.doValidationTest();
+	}
+
+	/**
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -84,7 +138,7 @@ public class PurposeSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -120,7 +174,7 @@ public class PurposeSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -140,6 +194,9 @@ public class PurposeSectionTest extends CDAValidationTest {
 			protected void updateToPass(PurposeSection target) {
 				target.init();
 
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
 			}
 
 			@Override
@@ -156,7 +213,7 @@ public class PurposeSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -176,6 +233,9 @@ public class PurposeSectionTest extends CDAValidationTest {
 			protected void updateToPass(PurposeSection target) {
 				target.init();
 
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
 			}
 
 			@Override
@@ -192,7 +252,7 @@ public class PurposeSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -230,7 +290,7 @@ public class PurposeSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class OperationsForOCL extends PurposeSectionOperations {
@@ -249,7 +309,7 @@ public class PurposeSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class ObjectFactory implements
@@ -260,19 +320,19 @@ public class PurposeSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
