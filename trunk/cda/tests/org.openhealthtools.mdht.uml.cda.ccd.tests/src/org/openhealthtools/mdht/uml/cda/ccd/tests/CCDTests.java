@@ -7,15 +7,15 @@
 package org.openhealthtools.mdht.uml.cda.ccd.tests;
 
 import junit.framework.JUnit4TestAdapter;
+
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 /**
- * <!-- begin-user-doc -->
- * A test suite for the '<em><b>ccd</b></em>' package.
+ * <!-- begin-user-doc --> A test suite for the '<em><b>ccd</b></em>' package.
  * <!-- end-user-doc -->
- * 		
-
+ * 
+ * 
  * @generated
  */
 @RunWith(Suite.class)
@@ -63,12 +63,12 @@ import org.junit.runners.Suite;
 public class CCDTests {
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static junit.framework.Test suite() {
 		return new JUnit4TestAdapter(CCDTests.class);
 	}
 
-} //CCDTests
+} // CCDTests

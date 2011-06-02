@@ -9,50 +9,70 @@ package org.openhealthtools.mdht.uml.cda.ccd.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Problem Observation</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Problem Observation</b></em>' model objects. <!--
+ * end-user-doc -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Information Source</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationContainsPatientAwareness(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Contains Patient Awareness</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Mood Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Status Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationProblemStatus(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Problem Status</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationProblemHealthStatus(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Problem Health Status</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationAgeObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Age Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#getProblemStatus() <em>Get Problem Status</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#getProblemHealthStatus() <em>Get Problem Health Status</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#getAgeObservation() <em>Get Age Observation</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Problem Observation Information Source</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationContainsPatientAwareness(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Problem Observation Contains Patient Awareness</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Problem Observation Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Problem Observation Mood Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Problem Observation Status Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Problem Observation Effective Time</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationProblemStatus(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Problem Observation Problem Status</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationProblemHealthStatus(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Problem Observation Problem Health Status</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#validateProblemObservationAgeObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Problem Observation Age Observation</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#getProblemStatus()
+ * <em>Get Problem Status</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#getProblemHealthStatus()
+ * <em>Get Problem Health Status</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation#getAgeObservation()
+ * <em>Get Age Observation</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
 public class ProblemObservationTest extends CDAValidationTest {
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -90,7 +110,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -129,7 +149,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -167,7 +187,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -205,7 +225,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -225,6 +245,9 @@ public class ProblemObservationTest extends CDAValidationTest {
 			protected void updateToPass(ProblemObservation target) {
 				target.init();
 
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
+
 			}
 
 			@Override
@@ -243,7 +266,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -263,6 +286,9 @@ public class ProblemObservationTest extends CDAValidationTest {
 			protected void updateToPass(ProblemObservation target) {
 				target.init();
 
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
+
 			}
 
 			@Override
@@ -281,7 +307,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -319,7 +345,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -358,7 +384,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -396,7 +422,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class OperationsForOCL extends ProblemObservationOperations {
@@ -415,7 +441,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class ObjectFactory implements
@@ -426,19 +452,19 @@ public class ProblemObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

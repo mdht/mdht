@@ -9,47 +9,65 @@ package org.openhealthtools.mdht.uml.cda.ccd.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.MedicationsSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Medications Section</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Medications Section</b></em>' model objects. <!--
+ * end-user-doc -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionHasMedicationOrSupplyActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Has Medication Or Supply Activity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Title</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Text</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionMedicationActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Medication Activity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionSupplyActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Supply Activity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#getMedicationActivities() <em>Get Medication Activities</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#getSupplyActivities() <em>Get Supply Activities</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionHasMedicationOrSupplyActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medications Section Has Medication Or Supply Activity</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionTitleValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medications Section Title Value</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medications Section Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medications Section Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medications Section Title</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medications Section Text</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionMedicationActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medications Section Medication Activity</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionSupplyActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medications Section Supply Activity</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#getMedicationActivities()
+ * <em>Get Medication Activities</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#getSupplyActivities()
+ * <em>Get Supply Activities</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
 public class MedicationsSectionTest extends CDAValidationTest {
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -88,7 +106,49 @@ public class MedicationsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateMedicationsSectionTitleValue() {
+		OperationsTestCase<MedicationsSection> validateMedicationsSectionTitleValueTestCase = new OperationsTestCase<MedicationsSection>(
+				"validateMedicationsSectionTitleValue",
+				operationsForOCL
+						.getOCLValue("VALIDATE_MEDICATIONS_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationsSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("medication");
+
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationsSectionOperations
+						.validateMedicationsSectionTitleValue(
+								(MedicationsSection) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateMedicationsSectionTitleValueTestCase.doValidationTest();
+	}
+
+	/**
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -126,7 +186,7 @@ public class MedicationsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -164,7 +224,7 @@ public class MedicationsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -184,6 +244,9 @@ public class MedicationsSectionTest extends CDAValidationTest {
 			protected void updateToPass(MedicationsSection target) {
 				target.init();
 
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
 			}
 
 			@Override
@@ -202,7 +265,7 @@ public class MedicationsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -222,6 +285,9 @@ public class MedicationsSectionTest extends CDAValidationTest {
 			protected void updateToPass(MedicationsSection target) {
 				target.init();
 
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
 			}
 
 			@Override
@@ -240,7 +306,7 @@ public class MedicationsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -278,7 +344,7 @@ public class MedicationsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -316,7 +382,7 @@ public class MedicationsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class OperationsForOCL extends MedicationsSectionOperations {
@@ -335,7 +401,7 @@ public class MedicationsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class ObjectFactory implements
@@ -346,19 +412,19 @@ public class MedicationsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

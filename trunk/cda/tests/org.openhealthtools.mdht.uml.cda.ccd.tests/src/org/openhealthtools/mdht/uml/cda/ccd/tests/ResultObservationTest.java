@@ -9,50 +9,116 @@ package org.openhealthtools.mdht.uml.cda.ccd.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Result Observation</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Result Observation</b></em>' model objects. <!--
+ * end-user-doc -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationReferenceRangeRequired(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Reference Range Required</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationNoObservationRangeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation No Observation Range Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Information Source</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Mood Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Status Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationMethodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Method Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationInterpretationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Interpretation Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Value</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationCodeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Result Observation Code Value</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationReferenceRangeRequired(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Result Observation Reference Range Required</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationNoObservationRangeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Result Observation No Observation Range Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Result Observation Information Source</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Result Observation Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Result Observation Mood Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Result Observation Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Result Observation Effective Time</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Result Observation Status Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Result Observation Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationMethodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Result Observation Method Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationInterpretationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Result Observation Interpretation Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Result Observation Value</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
 public class ResultObservationTest extends CDAValidationTest {
 
 	/**
-	 *
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateResultObservationCodeValue() {
+		OperationsTestCase<ResultObservation> validateResultObservationCodeValueTestCase = new OperationsTestCase<ResultObservation>(
+				"validateResultObservationCodeValue",
+				operationsForOCL
+						.getOCLValue("VALIDATE_RESULT_OBSERVATION_CODE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(ResultObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ResultObservation target) {
+				target.init();
+
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ResultObservationOperations
+						.validateResultObservationCodeValue(
+								(ResultObservation) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateResultObservationCodeValueTestCase.doValidationTest();
+	}
+
+	/**
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -91,7 +157,7 @@ public class ResultObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -130,7 +196,7 @@ public class ResultObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -168,7 +234,7 @@ public class ResultObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -206,7 +272,7 @@ public class ResultObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -244,7 +310,7 @@ public class ResultObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -264,6 +330,9 @@ public class ResultObservationTest extends CDAValidationTest {
 			protected void updateToPass(ResultObservation target) {
 				target.init();
 
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(ii);
+
 			}
 
 			@Override
@@ -280,7 +349,7 @@ public class ResultObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -300,6 +369,9 @@ public class ResultObservationTest extends CDAValidationTest {
 			protected void updateToPass(ResultObservation target) {
 				target.init();
 
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
+
 			}
 
 			@Override
@@ -318,7 +390,7 @@ public class ResultObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -338,6 +410,9 @@ public class ResultObservationTest extends CDAValidationTest {
 			protected void updateToPass(ResultObservation target) {
 				target.init();
 
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
+
 			}
 
 			@Override
@@ -356,7 +431,7 @@ public class ResultObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -376,6 +451,9 @@ public class ResultObservationTest extends CDAValidationTest {
 			protected void updateToPass(ResultObservation target) {
 				target.init();
 
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				target.setCode(cd);
+
 			}
 
 			@Override
@@ -394,7 +472,7 @@ public class ResultObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -432,7 +510,7 @@ public class ResultObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -470,7 +548,7 @@ public class ResultObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -490,6 +568,9 @@ public class ResultObservationTest extends CDAValidationTest {
 			protected void updateToPass(ResultObservation target) {
 				target.init();
 
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
 			}
 
 			@Override
@@ -508,7 +589,7 @@ public class ResultObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class OperationsForOCL extends ResultObservationOperations {
@@ -527,7 +608,7 @@ public class ResultObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class ObjectFactory implements
@@ -538,19 +619,19 @@ public class ResultObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

@@ -9,50 +9,82 @@ package org.openhealthtools.mdht.uml.cda.ccd.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.AlertObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Alert Observation</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Alert Observation</b></em>' model objects. <!--
+ * end-user-doc -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Observation Information Source</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationAgentRepresentation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Observation Agent Representation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationPlayingEntityRequired(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Observation Playing Entity Required</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationPlayingEntityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Observation Playing Entity Class Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Observation Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Observation Mood Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Observation Status Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Observation Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationAlertStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Observation Alert Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationReactionObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alert Observation Reaction Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#getAlertStatusObservation() <em>Get Alert Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#getReactionObservations() <em>Get Reaction Observations</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alert Observation Information Source</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationAgentRepresentation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alert Observation Agent Representation</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationPlayingEntityRequired(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alert Observation Playing Entity Required</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationAgentRepresentationVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alert Observation Agent Representation Vocab</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationParticipantRoleClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alert Observation Participant Role Class Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationPlayingEntityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alert Observation Playing Entity Class Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationPlayingEntityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alert Observation Playing Entity Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationPlayingEntityCodeVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alert Observation Playing Entity Code Vocab</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alert Observation Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alert Observation Mood Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alert Observation Status Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alert Observation Effective Time</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationAlertStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alert Observation Alert Status Observation</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#validateAlertObservationReactionObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alert Observation Reaction Observation</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#getAlertStatusObservation()
+ * <em>Get Alert Status Observation</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertObservation#getReactionObservations()
+ * <em>Get Reaction Observations</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
 public class AlertObservationTest extends CDAValidationTest {
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -90,7 +122,7 @@ public class AlertObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -128,7 +160,7 @@ public class AlertObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -167,7 +199,85 @@ public class AlertObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateAlertObservationAgentRepresentationVocab() {
+		OperationsTestCase<AlertObservation> validateAlertObservationAgentRepresentationVocabTestCase = new OperationsTestCase<AlertObservation>(
+				"validateAlertObservationAgentRepresentationVocab",
+				operationsForOCL
+						.getOCLValue("VALIDATE_ALERT_OBSERVATION_AGENT_REPRESENTATION_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(AlertObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AlertObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AlertObservationOperations
+						.validateAlertObservationAgentRepresentationVocab(
+								(AlertObservation) objectToTest, diagnostician,
+								map);
+			}
+
+		};
+
+		validateAlertObservationAgentRepresentationVocabTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateAlertObservationParticipantRoleClassCode() {
+		OperationsTestCase<AlertObservation> validateAlertObservationParticipantRoleClassCodeTestCase = new OperationsTestCase<AlertObservation>(
+				"validateAlertObservationParticipantRoleClassCode",
+				operationsForOCL
+						.getOCLValue("VALIDATE_ALERT_OBSERVATION_PARTICIPANT_ROLE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(AlertObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AlertObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AlertObservationOperations
+						.validateAlertObservationParticipantRoleClassCode(
+								(AlertObservation) objectToTest, diagnostician,
+								map);
+			}
+
+		};
+
+		validateAlertObservationParticipantRoleClassCodeTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -206,7 +316,84 @@ public class AlertObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateAlertObservationPlayingEntityCode() {
+		OperationsTestCase<AlertObservation> validateAlertObservationPlayingEntityCodeTestCase = new OperationsTestCase<AlertObservation>(
+				"validateAlertObservationPlayingEntityCode",
+				operationsForOCL
+						.getOCLValue("VALIDATE_ALERT_OBSERVATION_PLAYING_ENTITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(AlertObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AlertObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AlertObservationOperations
+						.validateAlertObservationPlayingEntityCode(
+								(AlertObservation) objectToTest, diagnostician,
+								map);
+			}
+
+		};
+
+		validateAlertObservationPlayingEntityCodeTestCase.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateAlertObservationPlayingEntityCodeVocab() {
+		OperationsTestCase<AlertObservation> validateAlertObservationPlayingEntityCodeVocabTestCase = new OperationsTestCase<AlertObservation>(
+				"validateAlertObservationPlayingEntityCodeVocab",
+				operationsForOCL
+						.getOCLValue("VALIDATE_ALERT_OBSERVATION_PLAYING_ENTITY_CODE_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(AlertObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AlertObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AlertObservationOperations
+						.validateAlertObservationPlayingEntityCodeVocab(
+								(AlertObservation) objectToTest, diagnostician,
+								map);
+			}
+
+		};
+
+		validateAlertObservationPlayingEntityCodeVocabTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -244,7 +431,7 @@ public class AlertObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -282,7 +469,7 @@ public class AlertObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -302,6 +489,9 @@ public class AlertObservationTest extends CDAValidationTest {
 			protected void updateToPass(AlertObservation target) {
 				target.init();
 
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
+
 			}
 
 			@Override
@@ -320,7 +510,7 @@ public class AlertObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -340,6 +530,9 @@ public class AlertObservationTest extends CDAValidationTest {
 			protected void updateToPass(AlertObservation target) {
 				target.init();
 
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
+
 			}
 
 			@Override
@@ -358,7 +551,7 @@ public class AlertObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -397,7 +590,7 @@ public class AlertObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -435,7 +628,7 @@ public class AlertObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class OperationsForOCL extends AlertObservationOperations {
@@ -454,7 +647,7 @@ public class AlertObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class ObjectFactory implements
@@ -465,19 +658,19 @@ public class AlertObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

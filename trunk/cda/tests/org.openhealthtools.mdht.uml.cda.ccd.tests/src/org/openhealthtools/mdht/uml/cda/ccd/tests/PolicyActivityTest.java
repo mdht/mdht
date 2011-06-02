@@ -9,56 +9,87 @@ package org.openhealthtools.mdht.uml.cda.ccd.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.PolicyActivityOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Policy Activity</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Policy Activity</b></em>' model objects. <!-- end-user-doc
+ * -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityPayerEntityIsRequired(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer Entity Is Required</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityCoveredPartyIsRequired(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Covered Party Is Required</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityCoveredPartyTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Covered Party Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivitySubscriberIsAllowed(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Subscriber Is Allowed</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivitySubscriberTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Subscriber Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityEntryRelationshipREFR(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Entry Relationship REFR</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityEntryRelationshipTarget(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Entry Relationship Target</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Class Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Mood Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Status Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityPayerEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer Entity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityCoveredParty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Covered Party</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivitySubscriber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Subscriber</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#getPayerEntity() <em>Get Payer Entity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#getCoveredParty() <em>Get Covered Party</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#getSubscriber() <em>Get Subscriber</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityPayerEntityIsRequired(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Policy Activity Payer Entity Is Required</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityCoveredPartyIsRequired(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Policy Activity Covered Party Is Required</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityCoveredPartyTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Policy Activity Covered Party Time</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivitySubscriberIsAllowed(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Policy Activity Subscriber Is Allowed</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivitySubscriberTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Policy Activity Subscriber Time</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityEntryRelationshipREFR(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Policy Activity Entry Relationship REFR</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityEntryRelationshipTarget(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Policy Activity Entry Relationship Target</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Policy Activity Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Policy Activity Class Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Policy Activity Mood Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Policy Activity Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Policy Activity Status Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityPayerEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Policy Activity Payer Entity</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivityCoveredParty(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Policy Activity Covered Party</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#validatePolicyActivitySubscriber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Policy Activity Subscriber</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#getPayerEntity()
+ * <em>Get Payer Entity</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#getCoveredParty()
+ * <em>Get Covered Party</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity#getSubscriber()
+ * <em>Get Subscriber</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
 public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -96,7 +127,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -134,7 +165,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -172,7 +203,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -210,7 +241,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -248,7 +279,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -286,7 +317,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -325,7 +356,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -363,7 +394,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -401,7 +432,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -437,7 +468,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -473,7 +504,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -493,6 +524,9 @@ public class PolicyActivityTest extends CDAValidationTest {
 			protected void updateToPass(PolicyActivity target) {
 				target.init();
 
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
+
 			}
 
 			@Override
@@ -511,7 +545,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -549,7 +583,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -587,7 +621,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -625,7 +659,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class OperationsForOCL extends PolicyActivityOperations {
@@ -644,7 +678,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class ObjectFactory implements
@@ -655,19 +689,19 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

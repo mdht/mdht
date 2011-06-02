@@ -9,64 +9,112 @@ package org.openhealthtools.mdht.uml.cda.ccd.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.MedicationActivityOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Medication Activity</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Medication Activity</b></em>' model objects. <!--
+ * end-user-doc -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Mood Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityHasDoseQuantityOrRateQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Dose Quantity Or Rate Quantity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityHasConsents(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Consents</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Information Source</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityHasPreconditionCriterion(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Precondition Criterion</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityHasReason(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Reason</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityHasReasonProblem(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Reason Problem</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityHasProduct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Product</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Status Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityMaxDoseQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Max Dose Quantity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityRouteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Route Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityDoseQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Dose Quantity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityRateQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Rate Quantity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityMedicationSeriesNumberObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Medication Series Number Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityMedicationStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Medication Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityPatientInstruction(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Patient Instruction</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityReactionObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Reaction Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityProductInstance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Product Instance</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#getMedicationSeriesNumberObservation() <em>Get Medication Series Number Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#getMedicationStatusObservation() <em>Get Medication Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#getPatientInstructions() <em>Get Patient Instructions</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#getReactionObservations() <em>Get Reaction Observations</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#getProductInstances() <em>Get Product Instances</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Mood Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityHasDoseQuantityOrRateQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Has Dose Quantity Or Rate Quantity</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityHasConsents(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Has Consents</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Information Source</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityHasPreconditionCriterion(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Has Precondition Criterion</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityHasReason(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Has Reason</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityHasReasonProblem(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Has Reason Problem</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityHasProduct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Has Product</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Status Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Effective Time</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityMaxDoseQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Max Dose Quantity</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityRouteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Route Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityDoseQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Dose Quantity</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityRateQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Rate Quantity</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityMedicationSeriesNumberObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Medication Series Number Observation</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityMedicationStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Medication Status Observation</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityPatientInstruction(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Patient Instruction</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityReactionObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Reaction Observation</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#validateMedicationActivityProductInstance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Medication Activity Product Instance</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#getMedicationSeriesNumberObservation()
+ * <em>Get Medication Series Number Observation</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#getMedicationStatusObservation()
+ * <em>Get Medication Status Observation</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#getPatientInstructions()
+ * <em>Get Patient Instructions</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#getReactionObservations()
+ * <em>Get Reaction Observations</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity#getProductInstances()
+ * <em>Get Product Instances</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
 public class MedicationActivityTest extends CDAValidationTest {
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -104,7 +152,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -143,7 +191,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -181,7 +229,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -219,7 +267,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -258,7 +306,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -296,7 +344,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -334,7 +382,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -372,7 +420,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -410,7 +458,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -448,7 +496,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -468,6 +516,9 @@ public class MedicationActivityTest extends CDAValidationTest {
 			protected void updateToPass(MedicationActivity target) {
 				target.init();
 
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
+
 			}
 
 			@Override
@@ -486,8 +537,8 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
-	 * @generated
+	 * 
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationActivityEffectiveTime() {
@@ -505,6 +556,9 @@ public class MedicationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationActivity target) {
 				target.init();
+
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				// target.setEffectiveTime(ts );
 
 			}
 
@@ -524,7 +578,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -562,7 +616,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -600,7 +654,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -638,7 +692,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -676,7 +730,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -715,7 +769,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -754,7 +808,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -792,7 +846,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -831,7 +885,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -869,7 +923,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class OperationsForOCL extends MedicationActivityOperations {
@@ -888,7 +942,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class ObjectFactory implements
@@ -899,19 +953,19 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

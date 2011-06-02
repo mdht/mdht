@@ -9,44 +9,96 @@ package org.openhealthtools.mdht.uml.cda.ccd.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.AlertsSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Alerts Section</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Alerts Section</b></em>' model objects. <!-- end-user-doc
+ * -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#validateAlertsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alerts Section Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#validateAlertsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alerts Section Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#validateAlertsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alerts Section Title</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#validateAlertsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alerts Section Text</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#validateAlertsSectionProblemAct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Alerts Section Problem Act</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#getProblemActs() <em>Get Problem Acts</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#validateAlertsSectionTitleValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alerts Section Title Value</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#validateAlertsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alerts Section Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#validateAlertsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alerts Section Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#validateAlertsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alerts Section Title</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#validateAlertsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alerts Section Text</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#validateAlertsSectionProblemAct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Alerts Section Problem Act</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.AlertsSection#getProblemActs()
+ * <em>Get Problem Acts</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
 public class AlertsSectionTest extends CDAValidationTest {
 
 	/**
-	 *
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateAlertsSectionTitleValue() {
+		OperationsTestCase<AlertsSection> validateAlertsSectionTitleValueTestCase = new OperationsTestCase<AlertsSection>(
+				"validateAlertsSectionTitleValue",
+				operationsForOCL
+						.getOCLValue("VALIDATE_ALERTS_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(AlertsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AlertsSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("alert");
+
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AlertsSectionOperations.validateAlertsSectionTitleValue(
+						(AlertsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAlertsSectionTitleValueTestCase.doValidationTest();
+	}
+
+	/**
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -82,7 +134,7 @@ public class AlertsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -118,7 +170,7 @@ public class AlertsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -138,6 +190,9 @@ public class AlertsSectionTest extends CDAValidationTest {
 			protected void updateToPass(AlertsSection target) {
 				target.init();
 
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
 			}
 
 			@Override
@@ -154,7 +209,7 @@ public class AlertsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -174,6 +229,9 @@ public class AlertsSectionTest extends CDAValidationTest {
 			protected void updateToPass(AlertsSection target) {
 				target.init();
 
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
 			}
 
 			@Override
@@ -190,7 +248,7 @@ public class AlertsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -226,7 +284,7 @@ public class AlertsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class OperationsForOCL extends AlertsSectionOperations {
@@ -245,7 +303,7 @@ public class AlertsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class ObjectFactory implements
@@ -256,19 +314,19 @@ public class AlertsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

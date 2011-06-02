@@ -9,81 +9,163 @@ package org.openhealthtools.mdht.uml.cda.ccd.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ContinuityOfCareDocumentOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Continuity Of Care Document</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Continuity Of Care Document</b></em>' model objects. <!--
+ * end-user-doc -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentServiceEventRequired(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Service Event Required</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentServiceEventClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Service Event Class Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentServiceEventEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Service Event Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentNoTemplateIdExtension(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document No Template Id Extension</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentOneOrTwoRecordTarget(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document One Or Two Record Target</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentHasAssignedAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Has Assigned Author</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentHasAssignedAuthorNullFlavor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Has Assigned Author Null Flavor</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentHasInformationRecipient(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Has Information Recipient</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentLanguageCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Language Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentProblemSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Problem Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentFamilyHistorySection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Family History Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentSocialHistorySection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Social History Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentAlertsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Alerts Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Medications Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentResultsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Results Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentProceduresSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Procedures Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentEncountersSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Encounters Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentPlanOfCareSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Plan Of Care Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentImmunizationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Immunizations Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentVitalSignsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Vital Signs Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentMedicalEquipmentSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Medical Equipment Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentFunctionalStatusSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Functional Status Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentAdvanceDirectivesSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Advance Directives Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentPayersSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Payers Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentPurposeSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Purpose Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getProblemSection() <em>Get Problem Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getFamilyHistorySection() <em>Get Family History Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getSocialHistorySection() <em>Get Social History Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getAlertsSection() <em>Get Alerts Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getMedicationsSection() <em>Get Medications Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getResultsSection() <em>Get Results Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getProceduresSection() <em>Get Procedures Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getEncountersSection() <em>Get Encounters Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getPlanOfCareSection() <em>Get Plan Of Care Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getImmunizationsSection() <em>Get Immunizations Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getVitalSignsSection() <em>Get Vital Signs Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getMedicalEquipmentSection() <em>Get Medical Equipment Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getFunctionalStatusSection() <em>Get Functional Status Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getAdvanceDirectivesSection() <em>Get Advance Directives Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getPayersSection() <em>Get Payers Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getPurposeSection() <em>Get Purpose Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentServiceEventRequired(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Service Event Required</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentServiceEventClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Service Event Class Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentServiceEventEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Service Event Effective Time</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentNoTemplateIdExtension(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document No Template Id Extension</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentOneOrTwoRecordTarget(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document One Or Two Record Target</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentHasAssignedAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Has Assigned Author</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentHasAssignedAuthorNullFlavor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Has Assigned Author Null Flavor
+ * </em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentHasInformationRecipient(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Has Information Recipient</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentLanguageCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Language Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentProblemSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Problem Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentFamilyHistorySection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Family History Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentSocialHistorySection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Social History Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentAlertsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Alerts Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentMedicationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Medications Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentResultsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Results Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentProceduresSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Procedures Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentEncountersSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Encounters Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentPlanOfCareSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Plan Of Care Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentImmunizationsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Immunizations Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentVitalSignsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Vital Signs Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentMedicalEquipmentSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Medical Equipment Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentFunctionalStatusSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Functional Status Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentAdvanceDirectivesSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Advance Directives Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentPayersSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Payers Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentPurposeSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Continuity Of Care Document Purpose Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getProblemSection()
+ * <em>Get Problem Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getFamilyHistorySection()
+ * <em>Get Family History Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getSocialHistorySection()
+ * <em>Get Social History Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getAlertsSection()
+ * <em>Get Alerts Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getMedicationsSection()
+ * <em>Get Medications Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getResultsSection()
+ * <em>Get Results Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getProceduresSection()
+ * <em>Get Procedures Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getEncountersSection()
+ * <em>Get Encounters Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getPlanOfCareSection()
+ * <em>Get Plan Of Care Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getImmunizationsSection()
+ * <em>Get Immunizations Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getVitalSignsSection()
+ * <em>Get Vital Signs Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getMedicalEquipmentSection()
+ * <em>Get Medical Equipment Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getFunctionalStatusSection()
+ * <em>Get Functional Status Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getAdvanceDirectivesSection()
+ * <em>Get Advance Directives Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getPayersSection()
+ * <em>Get Payers Section</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#getPurposeSection()
+ * <em>Get Purpose Section</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
 public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -122,7 +204,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -161,7 +243,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -180,6 +262,9 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
 
 			}
 
@@ -200,7 +285,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -239,7 +324,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -278,7 +363,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -317,7 +402,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -356,7 +441,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -395,7 +480,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -433,7 +518,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -471,7 +556,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -509,7 +594,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -548,7 +633,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -587,7 +672,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -626,7 +711,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -665,7 +750,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -704,7 +789,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -743,7 +828,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -782,7 +867,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -821,7 +906,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -860,7 +945,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -899,7 +984,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -938,7 +1023,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -977,7 +1062,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -1016,7 +1101,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -1055,7 +1140,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -1094,7 +1179,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -1133,7 +1218,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class OperationsForOCL extends
@@ -1153,7 +1238,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class ObjectFactory implements
@@ -1164,19 +1249,19 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

@@ -9,42 +9,43 @@ package org.openhealthtools.mdht.uml.cda.ccd.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.PlanOfCareActivitySupplyOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Plan Of Care Activity Supply</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Plan Of Care Activity Supply</b></em>' model objects. <!--
+ * end-user-doc -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply#validatePlanOfCareActivitySupplyMoodCodeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Supply Mood Code Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply#validatePlanOfCareActivitySupplyTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Supply Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply#validatePlanOfCareActivitySupplyId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Supply Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply#validatePlanOfCareActivitySupplyMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Supply Mood Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply#validatePlanOfCareActivitySupplyMoodCodeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Plan Of Care Activity Supply Mood Code Value</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply#validatePlanOfCareActivitySupplyTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Plan Of Care Activity Supply Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply#validatePlanOfCareActivitySupplyId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Plan Of Care Activity Supply Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply#validatePlanOfCareActivitySupplyMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Plan Of Care Activity Supply Mood Code</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
 public class PlanOfCareActivitySupplyTest extends CDAValidationTest {
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -83,7 +84,7 @@ public class PlanOfCareActivitySupplyTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -121,7 +122,7 @@ public class PlanOfCareActivitySupplyTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -159,7 +160,7 @@ public class PlanOfCareActivitySupplyTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -197,7 +198,7 @@ public class PlanOfCareActivitySupplyTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class OperationsForOCL extends
@@ -217,7 +218,7 @@ public class PlanOfCareActivitySupplyTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class ObjectFactory implements
@@ -228,19 +229,19 @@ public class PlanOfCareActivitySupplyTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

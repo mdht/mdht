@@ -9,56 +9,88 @@ package org.openhealthtools.mdht.uml.cda.ccd.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.SupplyActivityOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Supply Activity</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Supply Activity</b></em>' model objects. <!-- end-user-doc
+ * -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Mood Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityHasAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Has Author</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityHasPerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Has Performer</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityHasParticipantLocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Has Participant Location</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Information Source</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityHasProduct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Has Product</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Status Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Quantity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityRepeatNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Repeat Number</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityMedicationStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Medication Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityFulfillmentInstruction(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Fulfillment Instruction</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityProductInstance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Product Instance</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#getMedicationStatusObservation() <em>Get Medication Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#getFulfillmentInstructions() <em>Get Fulfillment Instructions</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#getProductInstances() <em>Get Product Instances</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Supply Activity Mood Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityHasAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Supply Activity Has Author</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityHasPerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Supply Activity Has Performer</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityHasParticipantLocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Supply Activity Has Participant Location</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Supply Activity Information Source</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityHasProduct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Supply Activity Has Product</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Supply Activity Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Supply Activity Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Supply Activity Status Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Supply Activity Effective Time</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Supply Activity Quantity</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityRepeatNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Supply Activity Repeat Number</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityMedicationStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Supply Activity Medication Status Observation</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityFulfillmentInstruction(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Supply Activity Fulfillment Instruction</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#validateSupplyActivityProductInstance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Supply Activity Product Instance</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#getMedicationStatusObservation()
+ * <em>Get Medication Status Observation</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#getFulfillmentInstructions()
+ * <em>Get Fulfillment Instructions</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity#getProductInstances()
+ * <em>Get Product Instances</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
 public class SupplyActivityTest extends CDAValidationTest {
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -94,7 +126,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -132,7 +164,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -170,7 +202,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -208,7 +240,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -246,7 +278,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -284,7 +316,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -322,7 +354,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -358,7 +390,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -378,6 +410,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 			protected void updateToPass(SupplyActivity target) {
 				target.init();
 
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
+
 			}
 
 			@Override
@@ -396,8 +431,8 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
-	 * @generated
+	 * 
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSupplyActivityEffectiveTime() {
@@ -415,6 +450,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SupplyActivity target) {
 				target.init();
+
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				// target.setEffectiveTime(ts );
 
 			}
 
@@ -434,7 +472,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -470,7 +508,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -508,7 +546,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -547,7 +585,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -585,7 +623,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -623,7 +661,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class OperationsForOCL extends SupplyActivityOperations {
@@ -642,7 +680,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class ObjectFactory implements
@@ -653,19 +691,19 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

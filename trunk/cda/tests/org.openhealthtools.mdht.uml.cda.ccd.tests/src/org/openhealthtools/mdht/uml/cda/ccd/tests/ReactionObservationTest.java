@@ -9,44 +9,135 @@ package org.openhealthtools.mdht.uml.cda.ccd.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ReactionObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Reaction Observation</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Reaction Observation</b></em>' model objects. <!--
+ * end-user-doc -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Class Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Mood Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Status Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationSeverityObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Severity Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#getSeverityObservation() <em>Get Severity Observation</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationReactionInterventionTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Reaction Observation Reaction Intervention Type Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationReactionInterventionType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Reaction Observation Reaction Intervention Type</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Reaction Observation Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Reaction Observation Class Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Reaction Observation Mood Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Reaction Observation Status Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationSeverityObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Reaction Observation Severity Observation</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#getSeverityObservation()
+ * <em>Get Severity Observation</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
 public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
-	 *
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateReactionObservationReactionInterventionTypeCode() {
+		OperationsTestCase<ReactionObservation> validateReactionObservationReactionInterventionTypeCodeTestCase = new OperationsTestCase<ReactionObservation>(
+				"validateReactionObservationReactionInterventionTypeCode",
+				operationsForOCL
+						.getOCLValue("VALIDATE_REACTION_OBSERVATION_REACTION_INTERVENTION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(ReactionObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ReactionObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReactionObservationOperations
+						.validateReactionObservationReactionInterventionTypeCode(
+								(ReactionObservation) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateReactionObservationReactionInterventionTypeCodeTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateReactionObservationReactionInterventionType() {
+		OperationsTestCase<ReactionObservation> validateReactionObservationReactionInterventionTypeTestCase = new OperationsTestCase<ReactionObservation>(
+				"validateReactionObservationReactionInterventionType",
+				operationsForOCL
+						.getOCLValue("VALIDATE_REACTION_OBSERVATION_REACTION_INTERVENTION_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(ReactionObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ReactionObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReactionObservationOperations
+						.validateReactionObservationReactionInterventionType(
+								(ReactionObservation) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateReactionObservationReactionInterventionTypeTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -84,7 +175,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -122,7 +213,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -160,7 +251,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -180,6 +271,9 @@ public class ReactionObservationTest extends CDAValidationTest {
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
 
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
+
 			}
 
 			@Override
@@ -198,7 +292,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -237,7 +331,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class OperationsForOCL extends ReactionObservationOperations {
@@ -256,7 +350,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class ObjectFactory implements
@@ -267,19 +361,19 @@ public class ReactionObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

@@ -9,42 +9,43 @@ package org.openhealthtools.mdht.uml.cda.ccd.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.PlanOfCareActivityEncounterOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Plan Of Care Activity Encounter</b></em>' model objects.
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Plan Of Care Activity Encounter</b></em>' model objects.
  * <!-- end-user-doc -->
- *
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter#validatePlanOfCareActivityEncounterMoodCodeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Encounter Mood Code Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter#validatePlanOfCareActivityEncounterTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Encounter Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter#validatePlanOfCareActivityEncounterId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Encounter Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter#validatePlanOfCareActivityEncounterMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Encounter Mood Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter#validatePlanOfCareActivityEncounterMoodCodeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Plan Of Care Activity Encounter Mood Code Value</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter#validatePlanOfCareActivityEncounterTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Plan Of Care Activity Encounter Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter#validatePlanOfCareActivityEncounterId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Plan Of Care Activity Encounter Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivityEncounter#validatePlanOfCareActivityEncounterMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Plan Of Care Activity Encounter Mood Code</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 
 public class PlanOfCareActivityEncounterTest extends CDAValidationTest {
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -83,7 +84,7 @@ public class PlanOfCareActivityEncounterTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -122,7 +123,7 @@ public class PlanOfCareActivityEncounterTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -160,7 +161,7 @@ public class PlanOfCareActivityEncounterTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Test
@@ -198,7 +199,7 @@ public class PlanOfCareActivityEncounterTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class OperationsForOCL extends
@@ -218,7 +219,7 @@ public class PlanOfCareActivityEncounterTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static class ObjectFactory implements
@@ -229,19 +230,19 @@ public class PlanOfCareActivityEncounterTest extends CDAValidationTest {
 	}
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
