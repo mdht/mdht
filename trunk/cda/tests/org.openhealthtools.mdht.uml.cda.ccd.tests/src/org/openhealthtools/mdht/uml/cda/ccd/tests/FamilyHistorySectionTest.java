@@ -22,22 +22,16 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Family History Section</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Family History Section Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Family History Section Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Family History Section Title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Title</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -50,10 +44,9 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateFamilyHistorySectionTemplateId() {
 		OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionTemplateIdTestCase = new OperationsTestCase<FamilyHistorySection>(
-				"validateFamilyHistorySectionTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateFamilyHistorySectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(FamilyHistorySection target) {
@@ -67,13 +60,10 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FamilyHistorySectionOperations
-						.validateFamilyHistorySectionTemplateId(
-								(FamilyHistorySection) objectToTest,
-								diagnostician, map);
+				return FamilyHistorySectionOperations.validateFamilyHistorySectionTemplateId(
+					(FamilyHistorySection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -88,10 +78,9 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateFamilyHistorySectionCode() {
 		OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionCodeTestCase = new OperationsTestCase<FamilyHistorySection>(
-				"validateFamilyHistorySectionCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateFamilyHistorySectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(FamilyHistorySection target) {
@@ -105,13 +94,10 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FamilyHistorySectionOperations
-						.validateFamilyHistorySectionCode(
-								(FamilyHistorySection) objectToTest,
-								diagnostician, map);
+				return FamilyHistorySectionOperations.validateFamilyHistorySectionCode(
+					(FamilyHistorySection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -126,10 +112,9 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateFamilyHistorySectionTitle() {
 		OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionTitleTestCase = new OperationsTestCase<FamilyHistorySection>(
-				"validateFamilyHistorySectionTitle",
-				operationsForOCL
-						.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateFamilyHistorySectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(FamilyHistorySection target) {
@@ -146,13 +131,10 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FamilyHistorySectionOperations
-						.validateFamilyHistorySectionTitle(
-								(FamilyHistorySection) objectToTest,
-								diagnostician, map);
+				return FamilyHistorySectionOperations.validateFamilyHistorySectionTitle(
+					(FamilyHistorySection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -164,15 +146,13 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			FamilyHistorySectionOperations {
+	private static class OperationsForOCL extends FamilyHistorySectionOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -184,8 +164,7 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<FamilyHistorySection> {
+	private static class ObjectFactory implements TestObjectFactory<FamilyHistorySection> {
 		public FamilyHistorySection create() {
 			return CCDFactory.eINSTANCE.createFamilyHistorySection();
 		}
@@ -202,6 +181,23 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends FamilyHistorySectionOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

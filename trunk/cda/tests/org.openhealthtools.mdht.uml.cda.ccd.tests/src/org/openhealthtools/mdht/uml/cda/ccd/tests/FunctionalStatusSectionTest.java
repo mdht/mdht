@@ -22,25 +22,17 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Functional Status Section</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection#validateFunctionalStatusSectionClinicalStatements(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Functional Status Section Clinical Statements</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection#validateFunctionalStatusSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Functional Status Section Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection#validateFunctionalStatusSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Functional Status Section Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection#validateFunctionalStatusSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Functional Status Section Title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection#validateFunctionalStatusSectionClinicalStatements(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Clinical Statements</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection#validateFunctionalStatusSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection#validateFunctionalStatusSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection#validateFunctionalStatusSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Title</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -53,10 +45,9 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateFunctionalStatusSectionClinicalStatements() {
 		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionClinicalStatementsTestCase = new OperationsTestCase<FunctionalStatusSection>(
-				"validateFunctionalStatusSectionClinicalStatements",
-				operationsForOCL
-						.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_CLINICAL_STATEMENTS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateFunctionalStatusSectionClinicalStatements",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_CLINICAL_STATEMENTS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(FunctionalStatusSection target) {
@@ -70,19 +61,15 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FunctionalStatusSectionOperations
-						.validateFunctionalStatusSectionClinicalStatements(
-								(FunctionalStatusSection) objectToTest,
-								diagnostician, map);
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionClinicalStatements(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateFunctionalStatusSectionClinicalStatementsTestCase
-				.doValidationTest();
+		validateFunctionalStatusSectionClinicalStatementsTestCase.doValidationTest();
 	}
 
 	/**
@@ -92,10 +79,9 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateFunctionalStatusSectionTemplateId() {
 		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionTemplateIdTestCase = new OperationsTestCase<FunctionalStatusSection>(
-				"validateFunctionalStatusSectionTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateFunctionalStatusSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(FunctionalStatusSection target) {
@@ -109,13 +95,10 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FunctionalStatusSectionOperations
-						.validateFunctionalStatusSectionTemplateId(
-								(FunctionalStatusSection) objectToTest,
-								diagnostician, map);
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionTemplateId(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -130,10 +113,9 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateFunctionalStatusSectionCode() {
 		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionCodeTestCase = new OperationsTestCase<FunctionalStatusSection>(
-				"validateFunctionalStatusSectionCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateFunctionalStatusSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(FunctionalStatusSection target) {
@@ -147,13 +129,10 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FunctionalStatusSectionOperations
-						.validateFunctionalStatusSectionCode(
-								(FunctionalStatusSection) objectToTest,
-								diagnostician, map);
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionCode(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -168,10 +147,9 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateFunctionalStatusSectionTitle() {
 		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionTitleTestCase = new OperationsTestCase<FunctionalStatusSection>(
-				"validateFunctionalStatusSectionTitle",
-				operationsForOCL
-						.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateFunctionalStatusSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(FunctionalStatusSection target) {
@@ -188,13 +166,10 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FunctionalStatusSectionOperations
-						.validateFunctionalStatusSectionTitle(
-								(FunctionalStatusSection) objectToTest,
-								diagnostician, map);
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionTitle(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -206,15 +181,13 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			FunctionalStatusSectionOperations {
+	private static class OperationsForOCL extends FunctionalStatusSectionOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -226,8 +199,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<FunctionalStatusSection> {
+	private static class ObjectFactory implements TestObjectFactory<FunctionalStatusSection> {
 		public FunctionalStatusSection create() {
 			return CCDFactory.eINSTANCE.createFunctionalStatusSection();
 		}
@@ -244,6 +216,23 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends FunctionalStatusSectionOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

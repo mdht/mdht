@@ -20,16 +20,14 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Policy Subscriber</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.PolicySubscriber#validatePolicySubscriberId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Policy Subscriber Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PolicySubscriber#validatePolicySubscriberId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Subscriber Id</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -42,10 +40,9 @@ public class PolicySubscriberTest extends CDAValidationTest {
 	@Test
 	public void testValidatePolicySubscriberId() {
 		OperationsTestCase<PolicySubscriber> validatePolicySubscriberIdTestCase = new OperationsTestCase<PolicySubscriber>(
-				"validatePolicySubscriberId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_POLICY_SUBSCRIBER_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePolicySubscriberId",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_SUBSCRIBER_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PolicySubscriber target) {
@@ -59,11 +56,10 @@ public class PolicySubscriberTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return PolicySubscriberOperations.validatePolicySubscriberId(
-						(PolicySubscriber) objectToTest, diagnostician, map);
+					(PolicySubscriber) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -81,8 +77,7 @@ public class PolicySubscriberTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -94,8 +89,7 @@ public class PolicySubscriberTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<PolicySubscriber> {
+	private static class ObjectFactory implements TestObjectFactory<PolicySubscriber> {
 		public PolicySubscriber create() {
 			return CCDFactory.eINSTANCE.createPolicySubscriber();
 		}
@@ -112,6 +106,23 @@ public class PolicySubscriberTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends PolicySubscriberOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

@@ -95,10 +95,9 @@ public class PolicyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidatePolicyActivityPayerEntityIsRequired() {
 		OperationsTestCase<PolicyActivity> validatePolicyActivityPayerEntityIsRequiredTestCase = new OperationsTestCase<PolicyActivity>(
-				"validatePolicyActivityPayerEntityIsRequired",
-				operationsForOCL
-						.getOCLValue("VALIDATE_POLICY_ACTIVITY_PAYER_ENTITY_IS_REQUIRED__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePolicyActivityPayerEntityIsRequired",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_PAYER_ENTITY_IS_REQUIRED__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
@@ -112,13 +111,10 @@ public class PolicyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PolicyActivityOperations
-						.validatePolicyActivityPayerEntityIsRequired(
-								(PolicyActivity) objectToTest, diagnostician,
-								map);
+				return PolicyActivityOperations.validatePolicyActivityPayerEntityIsRequired(
+					(PolicyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -133,10 +129,9 @@ public class PolicyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidatePolicyActivityCoveredPartyIsRequired() {
 		OperationsTestCase<PolicyActivity> validatePolicyActivityCoveredPartyIsRequiredTestCase = new OperationsTestCase<PolicyActivity>(
-				"validatePolicyActivityCoveredPartyIsRequired",
-				operationsForOCL
-						.getOCLValue("VALIDATE_POLICY_ACTIVITY_COVERED_PARTY_IS_REQUIRED__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePolicyActivityCoveredPartyIsRequired",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_COVERED_PARTY_IS_REQUIRED__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
@@ -150,13 +145,10 @@ public class PolicyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PolicyActivityOperations
-						.validatePolicyActivityCoveredPartyIsRequired(
-								(PolicyActivity) objectToTest, diagnostician,
-								map);
+				return PolicyActivityOperations.validatePolicyActivityCoveredPartyIsRequired(
+					(PolicyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -171,10 +163,9 @@ public class PolicyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidatePolicyActivityCoveredPartyTime() {
 		OperationsTestCase<PolicyActivity> validatePolicyActivityCoveredPartyTimeTestCase = new OperationsTestCase<PolicyActivity>(
-				"validatePolicyActivityCoveredPartyTime",
-				operationsForOCL
-						.getOCLValue("VALIDATE_POLICY_ACTIVITY_COVERED_PARTY_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePolicyActivityCoveredPartyTime",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_COVERED_PARTY_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
@@ -188,13 +179,10 @@ public class PolicyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PolicyActivityOperations
-						.validatePolicyActivityCoveredPartyTime(
-								(PolicyActivity) objectToTest, diagnostician,
-								map);
+				return PolicyActivityOperations.validatePolicyActivityCoveredPartyTime(
+					(PolicyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -209,10 +197,9 @@ public class PolicyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidatePolicyActivitySubscriberIsAllowed() {
 		OperationsTestCase<PolicyActivity> validatePolicyActivitySubscriberIsAllowedTestCase = new OperationsTestCase<PolicyActivity>(
-				"validatePolicyActivitySubscriberIsAllowed",
-				operationsForOCL
-						.getOCLValue("VALIDATE_POLICY_ACTIVITY_SUBSCRIBER_IS_ALLOWED__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePolicyActivitySubscriberIsAllowed",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_SUBSCRIBER_IS_ALLOWED__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
@@ -226,13 +213,10 @@ public class PolicyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PolicyActivityOperations
-						.validatePolicyActivitySubscriberIsAllowed(
-								(PolicyActivity) objectToTest, diagnostician,
-								map);
+				return PolicyActivityOperations.validatePolicyActivitySubscriberIsAllowed(
+					(PolicyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -247,10 +231,9 @@ public class PolicyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidatePolicyActivitySubscriberTime() {
 		OperationsTestCase<PolicyActivity> validatePolicyActivitySubscriberTimeTestCase = new OperationsTestCase<PolicyActivity>(
-				"validatePolicyActivitySubscriberTime",
-				operationsForOCL
-						.getOCLValue("VALIDATE_POLICY_ACTIVITY_SUBSCRIBER_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePolicyActivitySubscriberTime",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_SUBSCRIBER_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
@@ -264,13 +247,10 @@ public class PolicyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PolicyActivityOperations
-						.validatePolicyActivitySubscriberTime(
-								(PolicyActivity) objectToTest, diagnostician,
-								map);
+				return PolicyActivityOperations.validatePolicyActivitySubscriberTime(
+					(PolicyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -285,10 +265,9 @@ public class PolicyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidatePolicyActivityEntryRelationshipREFR() {
 		OperationsTestCase<PolicyActivity> validatePolicyActivityEntryRelationshipREFRTestCase = new OperationsTestCase<PolicyActivity>(
-				"validatePolicyActivityEntryRelationshipREFR",
-				operationsForOCL
-						.getOCLValue("VALIDATE_POLICY_ACTIVITY_ENTRY_RELATIONSHIP_REFR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePolicyActivityEntryRelationshipREFR",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_ENTRY_RELATIONSHIP_REFR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
@@ -302,13 +281,10 @@ public class PolicyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PolicyActivityOperations
-						.validatePolicyActivityEntryRelationshipREFR(
-								(PolicyActivity) objectToTest, diagnostician,
-								map);
+				return PolicyActivityOperations.validatePolicyActivityEntryRelationshipREFR(
+					(PolicyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -323,10 +299,9 @@ public class PolicyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidatePolicyActivityEntryRelationshipTarget() {
 		OperationsTestCase<PolicyActivity> validatePolicyActivityEntryRelationshipTargetTestCase = new OperationsTestCase<PolicyActivity>(
-				"validatePolicyActivityEntryRelationshipTarget",
-				operationsForOCL
-						.getOCLValue("VALIDATE_POLICY_ACTIVITY_ENTRY_RELATIONSHIP_TARGET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePolicyActivityEntryRelationshipTarget",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_ENTRY_RELATIONSHIP_TARGET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
@@ -340,19 +315,15 @@ public class PolicyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PolicyActivityOperations
-						.validatePolicyActivityEntryRelationshipTarget(
-								(PolicyActivity) objectToTest, diagnostician,
-								map);
+				return PolicyActivityOperations.validatePolicyActivityEntryRelationshipTarget(
+					(PolicyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validatePolicyActivityEntryRelationshipTargetTestCase
-				.doValidationTest();
+		validatePolicyActivityEntryRelationshipTargetTestCase.doValidationTest();
 	}
 
 	/**
@@ -362,10 +333,9 @@ public class PolicyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidatePolicyActivityTemplateId() {
 		OperationsTestCase<PolicyActivity> validatePolicyActivityTemplateIdTestCase = new OperationsTestCase<PolicyActivity>(
-				"validatePolicyActivityTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_POLICY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePolicyActivityTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
@@ -379,13 +349,10 @@ public class PolicyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PolicyActivityOperations
-						.validatePolicyActivityTemplateId(
-								(PolicyActivity) objectToTest, diagnostician,
-								map);
+				return PolicyActivityOperations.validatePolicyActivityTemplateId(
+					(PolicyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -400,10 +367,9 @@ public class PolicyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidatePolicyActivityClassCode() {
 		OperationsTestCase<PolicyActivity> validatePolicyActivityClassCodeTestCase = new OperationsTestCase<PolicyActivity>(
-				"validatePolicyActivityClassCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_POLICY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePolicyActivityClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
@@ -417,13 +383,10 @@ public class PolicyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PolicyActivityOperations
-						.validatePolicyActivityClassCode(
-								(PolicyActivity) objectToTest, diagnostician,
-								map);
+				return PolicyActivityOperations.validatePolicyActivityClassCode(
+					(PolicyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -438,10 +401,9 @@ public class PolicyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidatePolicyActivityMoodCode() {
 		OperationsTestCase<PolicyActivity> validatePolicyActivityMoodCodeTestCase = new OperationsTestCase<PolicyActivity>(
-				"validatePolicyActivityMoodCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_POLICY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePolicyActivityMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
@@ -455,11 +417,10 @@ public class PolicyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return PolicyActivityOperations.validatePolicyActivityMoodCode(
-						(PolicyActivity) objectToTest, diagnostician, map);
+					(PolicyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -474,10 +435,8 @@ public class PolicyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidatePolicyActivityId() {
 		OperationsTestCase<PolicyActivity> validatePolicyActivityIdTestCase = new OperationsTestCase<PolicyActivity>(
-				"validatePolicyActivityId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_POLICY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePolicyActivityId",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
@@ -491,11 +450,10 @@ public class PolicyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return PolicyActivityOperations.validatePolicyActivityId(
-						(PolicyActivity) objectToTest, diagnostician, map);
+					(PolicyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -510,10 +468,9 @@ public class PolicyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidatePolicyActivityStatusCode() {
 		OperationsTestCase<PolicyActivity> validatePolicyActivityStatusCodeTestCase = new OperationsTestCase<PolicyActivity>(
-				"validatePolicyActivityStatusCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_POLICY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePolicyActivityStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
@@ -530,13 +487,10 @@ public class PolicyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PolicyActivityOperations
-						.validatePolicyActivityStatusCode(
-								(PolicyActivity) objectToTest, diagnostician,
-								map);
+				return PolicyActivityOperations.validatePolicyActivityStatusCode(
+					(PolicyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -551,10 +505,9 @@ public class PolicyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidatePolicyActivityPayerEntity() {
 		OperationsTestCase<PolicyActivity> validatePolicyActivityPayerEntityTestCase = new OperationsTestCase<PolicyActivity>(
-				"validatePolicyActivityPayerEntity",
-				operationsForOCL
-						.getOCLValue("VALIDATE_POLICY_ACTIVITY_PAYER_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePolicyActivityPayerEntity",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_PAYER_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
@@ -568,13 +521,10 @@ public class PolicyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PolicyActivityOperations
-						.validatePolicyActivityPayerEntity(
-								(PolicyActivity) objectToTest, diagnostician,
-								map);
+				return PolicyActivityOperations.validatePolicyActivityPayerEntity(
+					(PolicyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -589,10 +539,9 @@ public class PolicyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidatePolicyActivityCoveredParty() {
 		OperationsTestCase<PolicyActivity> validatePolicyActivityCoveredPartyTestCase = new OperationsTestCase<PolicyActivity>(
-				"validatePolicyActivityCoveredParty",
-				operationsForOCL
-						.getOCLValue("VALIDATE_POLICY_ACTIVITY_COVERED_PARTY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePolicyActivityCoveredParty",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_COVERED_PARTY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
@@ -606,13 +555,10 @@ public class PolicyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PolicyActivityOperations
-						.validatePolicyActivityCoveredParty(
-								(PolicyActivity) objectToTest, diagnostician,
-								map);
+				return PolicyActivityOperations.validatePolicyActivityCoveredParty(
+					(PolicyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -627,10 +573,9 @@ public class PolicyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidatePolicyActivitySubscriber() {
 		OperationsTestCase<PolicyActivity> validatePolicyActivitySubscriberTestCase = new OperationsTestCase<PolicyActivity>(
-				"validatePolicyActivitySubscriber",
-				operationsForOCL
-						.getOCLValue("VALIDATE_POLICY_ACTIVITY_SUBSCRIBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePolicyActivitySubscriber",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_SUBSCRIBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
@@ -644,13 +589,10 @@ public class PolicyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PolicyActivityOperations
-						.validatePolicyActivitySubscriber(
-								(PolicyActivity) objectToTest, diagnostician,
-								map);
+				return PolicyActivityOperations.validatePolicyActivitySubscriber(
+					(PolicyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -668,8 +610,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -681,8 +622,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<PolicyActivity> {
+	private static class ObjectFactory implements TestObjectFactory<PolicyActivity> {
 		public PolicyActivity create() {
 			return CCDFactory.eINSTANCE.createPolicyActivity();
 		}
@@ -699,6 +639,23 @@ public class PolicyActivityTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends PolicyActivityOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

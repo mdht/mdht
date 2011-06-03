@@ -20,19 +20,15 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Patient Instruction</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.PatientInstruction#validatePatientInstructionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Patient Instruction Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.PatientInstruction#validatePatientInstructionMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Patient Instruction Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PatientInstruction#validatePatientInstructionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Instruction Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PatientInstruction#validatePatientInstructionMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Instruction Mood Code</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -45,10 +41,9 @@ public class PatientInstructionTest extends CDAValidationTest {
 	@Test
 	public void testValidatePatientInstructionTemplateId() {
 		OperationsTestCase<PatientInstruction> validatePatientInstructionTemplateIdTestCase = new OperationsTestCase<PatientInstruction>(
-				"validatePatientInstructionTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PATIENT_INSTRUCTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePatientInstructionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PATIENT_INSTRUCTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PatientInstruction target) {
@@ -62,13 +57,10 @@ public class PatientInstructionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PatientInstructionOperations
-						.validatePatientInstructionTemplateId(
-								(PatientInstruction) objectToTest,
-								diagnostician, map);
+				return PatientInstructionOperations.validatePatientInstructionTemplateId(
+					(PatientInstruction) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -83,10 +75,9 @@ public class PatientInstructionTest extends CDAValidationTest {
 	@Test
 	public void testValidatePatientInstructionMoodCode() {
 		OperationsTestCase<PatientInstruction> validatePatientInstructionMoodCodeTestCase = new OperationsTestCase<PatientInstruction>(
-				"validatePatientInstructionMoodCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PATIENT_INSTRUCTION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePatientInstructionMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PATIENT_INSTRUCTION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PatientInstruction target) {
@@ -100,13 +91,10 @@ public class PatientInstructionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PatientInstructionOperations
-						.validatePatientInstructionMoodCode(
-								(PatientInstruction) objectToTest,
-								diagnostician, map);
+				return PatientInstructionOperations.validatePatientInstructionMoodCode(
+					(PatientInstruction) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -124,8 +112,7 @@ public class PatientInstructionTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -137,8 +124,7 @@ public class PatientInstructionTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<PatientInstruction> {
+	private static class ObjectFactory implements TestObjectFactory<PatientInstruction> {
 		public PatientInstruction create() {
 			return CCDFactory.eINSTANCE.createPatientInstruction();
 		}
@@ -155,6 +141,23 @@ public class PatientInstructionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends PatientInstructionOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

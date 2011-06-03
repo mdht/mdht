@@ -20,19 +20,15 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Vital Signs Organizer</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer#validateVitalSignsOrganizerInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Vital Signs Organizer Information Source</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer#validateResultOrganizerTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Organizer Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer#validateVitalSignsOrganizerInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Signs Organizer Information Source</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer#validateResultOrganizerTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Template Id</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -45,10 +41,9 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testValidateVitalSignsOrganizerInformationSource() {
 		OperationsTestCase<VitalSignsOrganizer> validateVitalSignsOrganizerInformationSourceTestCase = new OperationsTestCase<VitalSignsOrganizer>(
-				"validateVitalSignsOrganizerInformationSource",
-				operationsForOCL
-						.getOCLValue("VALIDATE_VITAL_SIGNS_ORGANIZER_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateVitalSignsOrganizerInformationSource",
+			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGNS_ORGANIZER_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(VitalSignsOrganizer target) {
@@ -62,13 +57,10 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return VitalSignsOrganizerOperations
-						.validateVitalSignsOrganizerInformationSource(
-								(VitalSignsOrganizer) objectToTest,
-								diagnostician, map);
+				return VitalSignsOrganizerOperations.validateVitalSignsOrganizerInformationSource(
+					(VitalSignsOrganizer) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -83,10 +75,9 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultOrganizerTemplateId() {
 		OperationsTestCase<VitalSignsOrganizer> validateResultOrganizerTemplateIdTestCase = new OperationsTestCase<VitalSignsOrganizer>(
-				"validateResultOrganizerTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_ORGANIZER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultOrganizerTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(VitalSignsOrganizer target) {
@@ -100,13 +91,10 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return VitalSignsOrganizerOperations
-						.validateResultOrganizerTemplateId(
-								(VitalSignsOrganizer) objectToTest,
-								diagnostician, map);
+				return VitalSignsOrganizerOperations.validateResultOrganizerTemplateId(
+					(VitalSignsOrganizer) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -124,8 +112,7 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -137,8 +124,7 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<VitalSignsOrganizer> {
+	private static class ObjectFactory implements TestObjectFactory<VitalSignsOrganizer> {
 		public VitalSignsOrganizer create() {
 			return CCDFactory.eINSTANCE.createVitalSignsOrganizer();
 		}
@@ -155,6 +141,23 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends VitalSignsOrganizerOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

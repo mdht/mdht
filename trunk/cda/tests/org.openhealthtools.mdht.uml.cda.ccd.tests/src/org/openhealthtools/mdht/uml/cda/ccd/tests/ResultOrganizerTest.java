@@ -15,7 +15,6 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultOrganizerOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -23,43 +22,23 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Result Organizer</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerCodeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Organizer Code Value</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerComponentElement(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Organizer Component Element</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Organizer Information Source</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Organizer Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Organizer Mood Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Organizer Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Organizer Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Organizer Status Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerResultObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Organizer Result Observation</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#getResultObservations()
- * <em>Get Result Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerCodeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Code Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerComponentElement(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Component Element</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Information Source</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#validateResultOrganizerResultObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Result Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer#getResultObservations() <em>Get Result Observations</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -72,10 +51,9 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultOrganizerCodeValue() {
 		OperationsTestCase<ResultOrganizer> validateResultOrganizerCodeValueTestCase = new OperationsTestCase<ResultOrganizer>(
-				"validateResultOrganizerCodeValue",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_ORGANIZER_CODE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultOrganizerCodeValue",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_CODE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultOrganizer target) {
@@ -85,20 +63,13 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultOrganizer target) {
 				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				// target.getValues().add(value);
-
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultOrganizerOperations
-						.validateResultOrganizerCodeValue(
-								(ResultOrganizer) objectToTest, diagnostician,
-								map);
+				return ResultOrganizerOperations.validateResultOrganizerCodeValue(
+					(ResultOrganizer) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -113,10 +84,9 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultOrganizerComponentElement() {
 		OperationsTestCase<ResultOrganizer> validateResultOrganizerComponentElementTestCase = new OperationsTestCase<ResultOrganizer>(
-				"validateResultOrganizerComponentElement",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_ORGANIZER_COMPONENT_ELEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultOrganizerComponentElement",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_COMPONENT_ELEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultOrganizer target) {
@@ -130,13 +100,10 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultOrganizerOperations
-						.validateResultOrganizerComponentElement(
-								(ResultOrganizer) objectToTest, diagnostician,
-								map);
+				return ResultOrganizerOperations.validateResultOrganizerComponentElement(
+					(ResultOrganizer) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -151,10 +118,9 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultOrganizerInformationSource() {
 		OperationsTestCase<ResultOrganizer> validateResultOrganizerInformationSourceTestCase = new OperationsTestCase<ResultOrganizer>(
-				"validateResultOrganizerInformationSource",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_ORGANIZER_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultOrganizerInformationSource",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultOrganizer target) {
@@ -168,13 +134,10 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultOrganizerOperations
-						.validateResultOrganizerInformationSource(
-								(ResultOrganizer) objectToTest, diagnostician,
-								map);
+				return ResultOrganizerOperations.validateResultOrganizerInformationSource(
+					(ResultOrganizer) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -189,10 +152,9 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultOrganizerTemplateId() {
 		OperationsTestCase<ResultOrganizer> validateResultOrganizerTemplateIdTestCase = new OperationsTestCase<ResultOrganizer>(
-				"validateResultOrganizerTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_ORGANIZER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultOrganizerTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultOrganizer target) {
@@ -206,13 +168,10 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultOrganizerOperations
-						.validateResultOrganizerTemplateId(
-								(ResultOrganizer) objectToTest, diagnostician,
-								map);
+				return ResultOrganizerOperations.validateResultOrganizerTemplateId(
+					(ResultOrganizer) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -227,10 +186,9 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultOrganizerMoodCode() {
 		OperationsTestCase<ResultOrganizer> validateResultOrganizerMoodCodeTestCase = new OperationsTestCase<ResultOrganizer>(
-				"validateResultOrganizerMoodCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_ORGANIZER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultOrganizerMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultOrganizer target) {
@@ -244,13 +202,10 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultOrganizerOperations
-						.validateResultOrganizerMoodCode(
-								(ResultOrganizer) objectToTest, diagnostician,
-								map);
+				return ResultOrganizerOperations.validateResultOrganizerMoodCode(
+					(ResultOrganizer) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -265,10 +220,8 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultOrganizerId() {
 		OperationsTestCase<ResultOrganizer> validateResultOrganizerIdTestCase = new OperationsTestCase<ResultOrganizer>(
-				"validateResultOrganizerId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_ORGANIZER_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultOrganizerId",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultOrganizer target) {
@@ -282,11 +235,10 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ResultOrganizerOperations.validateResultOrganizerId(
-						(ResultOrganizer) objectToTest, diagnostician, map);
+					(ResultOrganizer) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -301,10 +253,9 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultOrganizerCode() {
 		OperationsTestCase<ResultOrganizer> validateResultOrganizerCodeTestCase = new OperationsTestCase<ResultOrganizer>(
-				"validateResultOrganizerCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_ORGANIZER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultOrganizerCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultOrganizer target) {
@@ -318,11 +269,10 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ResultOrganizerOperations.validateResultOrganizerCode(
-						(ResultOrganizer) objectToTest, diagnostician, map);
+					(ResultOrganizer) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -337,10 +287,9 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultOrganizerStatusCode() {
 		OperationsTestCase<ResultOrganizer> validateResultOrganizerStatusCodeTestCase = new OperationsTestCase<ResultOrganizer>(
-				"validateResultOrganizerStatusCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_ORGANIZER_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultOrganizerStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultOrganizer target) {
@@ -357,13 +306,10 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultOrganizerOperations
-						.validateResultOrganizerStatusCode(
-								(ResultOrganizer) objectToTest, diagnostician,
-								map);
+				return ResultOrganizerOperations.validateResultOrganizerStatusCode(
+					(ResultOrganizer) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -378,10 +324,9 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultOrganizerResultObservation() {
 		OperationsTestCase<ResultOrganizer> validateResultOrganizerResultObservationTestCase = new OperationsTestCase<ResultOrganizer>(
-				"validateResultOrganizerResultObservation",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_ORGANIZER_RESULT_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultOrganizerResultObservation",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_RESULT_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultOrganizer target) {
@@ -395,13 +340,10 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultOrganizerOperations
-						.validateResultOrganizerResultObservation(
-								(ResultOrganizer) objectToTest, diagnostician,
-								map);
+				return ResultOrganizerOperations.validateResultOrganizerResultObservation(
+					(ResultOrganizer) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -419,8 +361,7 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -432,8 +373,7 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<ResultOrganizer> {
+	private static class ObjectFactory implements TestObjectFactory<ResultOrganizer> {
 		public ResultOrganizer create() {
 			return CCDFactory.eINSTANCE.createResultOrganizer();
 		}
@@ -450,6 +390,23 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends ResultOrganizerOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

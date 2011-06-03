@@ -13,14 +13,12 @@ import junit.textui.TestRunner;
 /**
  * <!-- begin-user-doc --> A test suite for the '<em><b>CCD</b></em>' model.
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class CCDAllTests extends TestSuite {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -29,7 +27,6 @@ public class CCDAllTests extends TestSuite {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static Test suite() {
@@ -40,7 +37,6 @@ public class CCDAllTests extends TestSuite {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public CCDAllTests(String name) {

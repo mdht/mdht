@@ -22,28 +22,18 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Advance Directives Section</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection#validateAdvanceDirectivesSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Advance Directives Section Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection#validateAdvanceDirectivesSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Advance Directives Section Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection#validateAdvanceDirectivesSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Advance Directives Section Title</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection#validateAdvanceDirectivesSectionAdvanceDirectiveObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Advance Directives Section Advance Directive Observation</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection#getAdvanceDirectiveObservations()
- * <em>Get Advance Directive Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection#validateAdvanceDirectivesSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directives Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection#validateAdvanceDirectivesSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directives Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection#validateAdvanceDirectivesSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directives Section Title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection#validateAdvanceDirectivesSectionAdvanceDirectiveObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directives Section Advance Directive Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection#getAdvanceDirectiveObservations() <em>Get Advance Directive Observations</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -56,10 +46,9 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateAdvanceDirectivesSectionTemplateId() {
 		OperationsTestCase<AdvanceDirectivesSection> validateAdvanceDirectivesSectionTemplateIdTestCase = new OperationsTestCase<AdvanceDirectivesSection>(
-				"validateAdvanceDirectivesSectionTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAdvanceDirectivesSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectivesSection target) {
@@ -73,13 +62,10 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AdvanceDirectivesSectionOperations
-						.validateAdvanceDirectivesSectionTemplateId(
-								(AdvanceDirectivesSection) objectToTest,
-								diagnostician, map);
+				return AdvanceDirectivesSectionOperations.validateAdvanceDirectivesSectionTemplateId(
+					(AdvanceDirectivesSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -94,10 +80,9 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateAdvanceDirectivesSectionCode() {
 		OperationsTestCase<AdvanceDirectivesSection> validateAdvanceDirectivesSectionCodeTestCase = new OperationsTestCase<AdvanceDirectivesSection>(
-				"validateAdvanceDirectivesSectionCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAdvanceDirectivesSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectivesSection target) {
@@ -111,13 +96,10 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AdvanceDirectivesSectionOperations
-						.validateAdvanceDirectivesSectionCode(
-								(AdvanceDirectivesSection) objectToTest,
-								diagnostician, map);
+				return AdvanceDirectivesSectionOperations.validateAdvanceDirectivesSectionCode(
+					(AdvanceDirectivesSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -132,10 +114,9 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateAdvanceDirectivesSectionTitle() {
 		OperationsTestCase<AdvanceDirectivesSection> validateAdvanceDirectivesSectionTitleTestCase = new OperationsTestCase<AdvanceDirectivesSection>(
-				"validateAdvanceDirectivesSectionTitle",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAdvanceDirectivesSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectivesSection target) {
@@ -152,13 +133,10 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AdvanceDirectivesSectionOperations
-						.validateAdvanceDirectivesSectionTitle(
-								(AdvanceDirectivesSection) objectToTest,
-								diagnostician, map);
+				return AdvanceDirectivesSectionOperations.validateAdvanceDirectivesSectionTitle(
+					(AdvanceDirectivesSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -173,10 +151,9 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateAdvanceDirectivesSectionAdvanceDirectiveObservation() {
 		OperationsTestCase<AdvanceDirectivesSection> validateAdvanceDirectivesSectionAdvanceDirectiveObservationTestCase = new OperationsTestCase<AdvanceDirectivesSection>(
-				"validateAdvanceDirectivesSectionAdvanceDirectiveObservation",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_ADVANCE_DIRECTIVE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAdvanceDirectivesSectionAdvanceDirectiveObservation",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_ADVANCE_DIRECTIVE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectivesSection target) {
@@ -190,34 +167,28 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AdvanceDirectivesSectionOperations
-						.validateAdvanceDirectivesSectionAdvanceDirectiveObservation(
-								(AdvanceDirectivesSection) objectToTest,
-								diagnostician, map);
+				return AdvanceDirectivesSectionOperations.validateAdvanceDirectivesSectionAdvanceDirectiveObservation(
+					(AdvanceDirectivesSection) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateAdvanceDirectivesSectionAdvanceDirectiveObservationTestCase
-				.doValidationTest();
+		validateAdvanceDirectivesSectionAdvanceDirectiveObservationTestCase.doValidationTest();
 	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			AdvanceDirectivesSectionOperations {
+	private static class OperationsForOCL extends AdvanceDirectivesSectionOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -229,8 +200,7 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<AdvanceDirectivesSection> {
+	private static class ObjectFactory implements TestObjectFactory<AdvanceDirectivesSection> {
 		public AdvanceDirectivesSection create() {
 			return CCDFactory.eINSTANCE.createAdvanceDirectivesSection();
 		}
@@ -247,6 +217,23 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends AdvanceDirectivesSectionOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

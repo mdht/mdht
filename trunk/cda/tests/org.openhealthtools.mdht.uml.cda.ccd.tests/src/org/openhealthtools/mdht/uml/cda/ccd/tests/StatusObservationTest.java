@@ -23,37 +23,21 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Status Observation</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationTargetOfEntryRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Status Observation Target Of Entry Relationship</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationNoAdditionalParticipants(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Status Observation No Additional Participants</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Status Observation Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Status Observation Class Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Status Observation Mood Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Status Observation Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Status Observation Status Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Status Observation Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationTargetOfEntryRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Target Of Entry Relationship</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationNoAdditionalParticipants(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation No Additional Participants</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Value</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -66,10 +50,9 @@ public class StatusObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateStatusObservationTargetOfEntryRelationship() {
 		OperationsTestCase<StatusObservation> validateStatusObservationTargetOfEntryRelationshipTestCase = new OperationsTestCase<StatusObservation>(
-				"validateStatusObservationTargetOfEntryRelationship",
-				operationsForOCL
-						.getOCLValue("VALIDATE_STATUS_OBSERVATION_TARGET_OF_ENTRY_RELATIONSHIP__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateStatusObservationTargetOfEntryRelationship",
+			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_TARGET_OF_ENTRY_RELATIONSHIP__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(StatusObservation target) {
@@ -83,19 +66,15 @@ public class StatusObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return StatusObservationOperations
-						.validateStatusObservationTargetOfEntryRelationship(
-								(StatusObservation) objectToTest,
-								diagnostician, map);
+				return StatusObservationOperations.validateStatusObservationTargetOfEntryRelationship(
+					(StatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateStatusObservationTargetOfEntryRelationshipTestCase
-				.doValidationTest();
+		validateStatusObservationTargetOfEntryRelationshipTestCase.doValidationTest();
 	}
 
 	/**
@@ -105,10 +84,9 @@ public class StatusObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateStatusObservationNoAdditionalParticipants() {
 		OperationsTestCase<StatusObservation> validateStatusObservationNoAdditionalParticipantsTestCase = new OperationsTestCase<StatusObservation>(
-				"validateStatusObservationNoAdditionalParticipants",
-				operationsForOCL
-						.getOCLValue("VALIDATE_STATUS_OBSERVATION_NO_ADDITIONAL_PARTICIPANTS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateStatusObservationNoAdditionalParticipants",
+			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_NO_ADDITIONAL_PARTICIPANTS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(StatusObservation target) {
@@ -122,19 +100,15 @@ public class StatusObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return StatusObservationOperations
-						.validateStatusObservationNoAdditionalParticipants(
-								(StatusObservation) objectToTest,
-								diagnostician, map);
+				return StatusObservationOperations.validateStatusObservationNoAdditionalParticipants(
+					(StatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateStatusObservationNoAdditionalParticipantsTestCase
-				.doValidationTest();
+		validateStatusObservationNoAdditionalParticipantsTestCase.doValidationTest();
 	}
 
 	/**
@@ -144,10 +118,9 @@ public class StatusObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateStatusObservationTemplateId() {
 		OperationsTestCase<StatusObservation> validateStatusObservationTemplateIdTestCase = new OperationsTestCase<StatusObservation>(
-				"validateStatusObservationTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateStatusObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(StatusObservation target) {
@@ -161,13 +134,10 @@ public class StatusObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return StatusObservationOperations
-						.validateStatusObservationTemplateId(
-								(StatusObservation) objectToTest,
-								diagnostician, map);
+				return StatusObservationOperations.validateStatusObservationTemplateId(
+					(StatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -182,10 +152,9 @@ public class StatusObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateStatusObservationClassCode() {
 		OperationsTestCase<StatusObservation> validateStatusObservationClassCodeTestCase = new OperationsTestCase<StatusObservation>(
-				"validateStatusObservationClassCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_STATUS_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateStatusObservationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(StatusObservation target) {
@@ -199,13 +168,10 @@ public class StatusObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return StatusObservationOperations
-						.validateStatusObservationClassCode(
-								(StatusObservation) objectToTest,
-								diagnostician, map);
+				return StatusObservationOperations.validateStatusObservationClassCode(
+					(StatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -220,10 +186,9 @@ public class StatusObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateStatusObservationMoodCode() {
 		OperationsTestCase<StatusObservation> validateStatusObservationMoodCodeTestCase = new OperationsTestCase<StatusObservation>(
-				"validateStatusObservationMoodCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_STATUS_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateStatusObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(StatusObservation target) {
@@ -237,13 +202,10 @@ public class StatusObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return StatusObservationOperations
-						.validateStatusObservationMoodCode(
-								(StatusObservation) objectToTest,
-								diagnostician, map);
+				return StatusObservationOperations.validateStatusObservationMoodCode(
+					(StatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -258,10 +220,9 @@ public class StatusObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateStatusObservationCode() {
 		OperationsTestCase<StatusObservation> validateStatusObservationCodeTestCase = new OperationsTestCase<StatusObservation>(
-				"validateStatusObservationCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_STATUS_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateStatusObservationCode",
+			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(StatusObservation target) {
@@ -278,13 +239,10 @@ public class StatusObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return StatusObservationOperations
-						.validateStatusObservationCode(
-								(StatusObservation) objectToTest,
-								diagnostician, map);
+				return StatusObservationOperations.validateStatusObservationCode(
+					(StatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -299,10 +257,9 @@ public class StatusObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateStatusObservationStatusCode() {
 		OperationsTestCase<StatusObservation> validateStatusObservationStatusCodeTestCase = new OperationsTestCase<StatusObservation>(
-				"validateStatusObservationStatusCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_STATUS_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateStatusObservationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(StatusObservation target) {
@@ -319,13 +276,10 @@ public class StatusObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return StatusObservationOperations
-						.validateStatusObservationStatusCode(
-								(StatusObservation) objectToTest,
-								diagnostician, map);
+				return StatusObservationOperations.validateStatusObservationStatusCode(
+					(StatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -340,10 +294,9 @@ public class StatusObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateStatusObservationValue() {
 		OperationsTestCase<StatusObservation> validateStatusObservationValueTestCase = new OperationsTestCase<StatusObservation>(
-				"validateStatusObservationValue",
-				operationsForOCL
-						.getOCLValue("VALIDATE_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateStatusObservationValue",
+			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(StatusObservation target) {
@@ -360,13 +313,10 @@ public class StatusObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return StatusObservationOperations
-						.validateStatusObservationValue(
-								(StatusObservation) objectToTest,
-								diagnostician, map);
+				return StatusObservationOperations.validateStatusObservationValue(
+					(StatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -384,8 +334,7 @@ public class StatusObservationTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -397,8 +346,7 @@ public class StatusObservationTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<StatusObservation> {
+	private static class ObjectFactory implements TestObjectFactory<StatusObservation> {
 		public StatusObservation create() {
 			return CCDFactory.eINSTANCE.createStatusObservation();
 		}
@@ -415,6 +363,23 @@ public class StatusObservationTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends StatusObservationOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

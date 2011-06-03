@@ -20,37 +20,21 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Encounter Location</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation#validateEncounterLocationHasParticipantRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Encounter Location Has Participant Role</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation#validateEncounterLocationHasParticipantRoleLocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Encounter Location Has Participant Role Location</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation#validateEncounterLocationHasParticipantRoleCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Encounter Location Has Participant Role Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation#validateEncounterLocationHasParticipantRoleCodeVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Encounter Location Has Participant Role Code Vocab</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation#validateEncounterLocationHasPlayingEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Encounter Location Has Playing Entity</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation#validateEncounterLocationHasPlayingEntityPlace(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Encounter Location Has Playing Entity Place</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation#validateEncounterLocationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Encounter Location Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation#validateEncounterLocationTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Encounter Location Type Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation#validateEncounterLocationHasParticipantRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Location Has Participant Role</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation#validateEncounterLocationHasParticipantRoleLocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Location Has Participant Role Location</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation#validateEncounterLocationHasParticipantRoleCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Location Has Participant Role Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation#validateEncounterLocationHasParticipantRoleCodeVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Location Has Participant Role Code Vocab</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation#validateEncounterLocationHasPlayingEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Location Has Playing Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation#validateEncounterLocationHasPlayingEntityPlace(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Location Has Playing Entity Place</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation#validateEncounterLocationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Location Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation#validateEncounterLocationTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Location Type Code</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -63,10 +47,9 @@ public class EncounterLocationTest extends CDAValidationTest {
 	@Test
 	public void testValidateEncounterLocationHasParticipantRole() {
 		OperationsTestCase<EncounterLocation> validateEncounterLocationHasParticipantRoleTestCase = new OperationsTestCase<EncounterLocation>(
-				"validateEncounterLocationHasParticipantRole",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_HAS_PARTICIPANT_ROLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEncounterLocationHasParticipantRole",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_HAS_PARTICIPANT_ROLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EncounterLocation target) {
@@ -80,13 +63,10 @@ public class EncounterLocationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EncounterLocationOperations
-						.validateEncounterLocationHasParticipantRole(
-								(EncounterLocation) objectToTest,
-								diagnostician, map);
+				return EncounterLocationOperations.validateEncounterLocationHasParticipantRole(
+					(EncounterLocation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -101,10 +81,9 @@ public class EncounterLocationTest extends CDAValidationTest {
 	@Test
 	public void testValidateEncounterLocationHasParticipantRoleLocation() {
 		OperationsTestCase<EncounterLocation> validateEncounterLocationHasParticipantRoleLocationTestCase = new OperationsTestCase<EncounterLocation>(
-				"validateEncounterLocationHasParticipantRoleLocation",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_HAS_PARTICIPANT_ROLE_LOCATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEncounterLocationHasParticipantRoleLocation",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_HAS_PARTICIPANT_ROLE_LOCATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EncounterLocation target) {
@@ -118,19 +97,15 @@ public class EncounterLocationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EncounterLocationOperations
-						.validateEncounterLocationHasParticipantRoleLocation(
-								(EncounterLocation) objectToTest,
-								diagnostician, map);
+				return EncounterLocationOperations.validateEncounterLocationHasParticipantRoleLocation(
+					(EncounterLocation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateEncounterLocationHasParticipantRoleLocationTestCase
-				.doValidationTest();
+		validateEncounterLocationHasParticipantRoleLocationTestCase.doValidationTest();
 	}
 
 	/**
@@ -140,10 +115,9 @@ public class EncounterLocationTest extends CDAValidationTest {
 	@Test
 	public void testValidateEncounterLocationHasParticipantRoleCode() {
 		OperationsTestCase<EncounterLocation> validateEncounterLocationHasParticipantRoleCodeTestCase = new OperationsTestCase<EncounterLocation>(
-				"validateEncounterLocationHasParticipantRoleCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_HAS_PARTICIPANT_ROLE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEncounterLocationHasParticipantRoleCode",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_HAS_PARTICIPANT_ROLE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EncounterLocation target) {
@@ -157,19 +131,15 @@ public class EncounterLocationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EncounterLocationOperations
-						.validateEncounterLocationHasParticipantRoleCode(
-								(EncounterLocation) objectToTest,
-								diagnostician, map);
+				return EncounterLocationOperations.validateEncounterLocationHasParticipantRoleCode(
+					(EncounterLocation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateEncounterLocationHasParticipantRoleCodeTestCase
-				.doValidationTest();
+		validateEncounterLocationHasParticipantRoleCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -179,10 +149,9 @@ public class EncounterLocationTest extends CDAValidationTest {
 	@Test
 	public void testValidateEncounterLocationHasParticipantRoleCodeVocab() {
 		OperationsTestCase<EncounterLocation> validateEncounterLocationHasParticipantRoleCodeVocabTestCase = new OperationsTestCase<EncounterLocation>(
-				"validateEncounterLocationHasParticipantRoleCodeVocab",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_HAS_PARTICIPANT_ROLE_CODE_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEncounterLocationHasParticipantRoleCodeVocab",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_HAS_PARTICIPANT_ROLE_CODE_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EncounterLocation target) {
@@ -196,19 +165,15 @@ public class EncounterLocationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EncounterLocationOperations
-						.validateEncounterLocationHasParticipantRoleCodeVocab(
-								(EncounterLocation) objectToTest,
-								diagnostician, map);
+				return EncounterLocationOperations.validateEncounterLocationHasParticipantRoleCodeVocab(
+					(EncounterLocation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateEncounterLocationHasParticipantRoleCodeVocabTestCase
-				.doValidationTest();
+		validateEncounterLocationHasParticipantRoleCodeVocabTestCase.doValidationTest();
 	}
 
 	/**
@@ -218,10 +183,9 @@ public class EncounterLocationTest extends CDAValidationTest {
 	@Test
 	public void testValidateEncounterLocationHasPlayingEntity() {
 		OperationsTestCase<EncounterLocation> validateEncounterLocationHasPlayingEntityTestCase = new OperationsTestCase<EncounterLocation>(
-				"validateEncounterLocationHasPlayingEntity",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_HAS_PLAYING_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEncounterLocationHasPlayingEntity",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_HAS_PLAYING_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EncounterLocation target) {
@@ -235,13 +199,10 @@ public class EncounterLocationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EncounterLocationOperations
-						.validateEncounterLocationHasPlayingEntity(
-								(EncounterLocation) objectToTest,
-								diagnostician, map);
+				return EncounterLocationOperations.validateEncounterLocationHasPlayingEntity(
+					(EncounterLocation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -256,10 +217,9 @@ public class EncounterLocationTest extends CDAValidationTest {
 	@Test
 	public void testValidateEncounterLocationHasPlayingEntityPlace() {
 		OperationsTestCase<EncounterLocation> validateEncounterLocationHasPlayingEntityPlaceTestCase = new OperationsTestCase<EncounterLocation>(
-				"validateEncounterLocationHasPlayingEntityPlace",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_HAS_PLAYING_ENTITY_PLACE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEncounterLocationHasPlayingEntityPlace",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_HAS_PLAYING_ENTITY_PLACE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EncounterLocation target) {
@@ -273,19 +233,15 @@ public class EncounterLocationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EncounterLocationOperations
-						.validateEncounterLocationHasPlayingEntityPlace(
-								(EncounterLocation) objectToTest,
-								diagnostician, map);
+				return EncounterLocationOperations.validateEncounterLocationHasPlayingEntityPlace(
+					(EncounterLocation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateEncounterLocationHasPlayingEntityPlaceTestCase
-				.doValidationTest();
+		validateEncounterLocationHasPlayingEntityPlaceTestCase.doValidationTest();
 	}
 
 	/**
@@ -295,10 +251,9 @@ public class EncounterLocationTest extends CDAValidationTest {
 	@Test
 	public void testValidateEncounterLocationTemplateId() {
 		OperationsTestCase<EncounterLocation> validateEncounterLocationTemplateIdTestCase = new OperationsTestCase<EncounterLocation>(
-				"validateEncounterLocationTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEncounterLocationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EncounterLocation target) {
@@ -312,13 +267,10 @@ public class EncounterLocationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EncounterLocationOperations
-						.validateEncounterLocationTemplateId(
-								(EncounterLocation) objectToTest,
-								diagnostician, map);
+				return EncounterLocationOperations.validateEncounterLocationTemplateId(
+					(EncounterLocation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -333,10 +285,9 @@ public class EncounterLocationTest extends CDAValidationTest {
 	@Test
 	public void testValidateEncounterLocationTypeCode() {
 		OperationsTestCase<EncounterLocation> validateEncounterLocationTypeCodeTestCase = new OperationsTestCase<EncounterLocation>(
-				"validateEncounterLocationTypeCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEncounterLocationTypeCode",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_LOCATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EncounterLocation target) {
@@ -350,13 +301,10 @@ public class EncounterLocationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EncounterLocationOperations
-						.validateEncounterLocationTypeCode(
-								(EncounterLocation) objectToTest,
-								diagnostician, map);
+				return EncounterLocationOperations.validateEncounterLocationTypeCode(
+					(EncounterLocation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -374,8 +322,7 @@ public class EncounterLocationTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -387,8 +334,7 @@ public class EncounterLocationTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<EncounterLocation> {
+	private static class ObjectFactory implements TestObjectFactory<EncounterLocation> {
 		public EncounterLocation create() {
 			return CCDFactory.eINSTANCE.createEncounterLocation();
 		}
@@ -405,6 +351,23 @@ public class EncounterLocationTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends EncounterLocationOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

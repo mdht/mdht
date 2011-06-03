@@ -20,25 +20,17 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Authorization Activity</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.AuthorizationActivity#validateAuthorizationActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Authorization Activity Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.AuthorizationActivity#validateAuthorizationActivityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Authorization Activity Class Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.AuthorizationActivity#validateAuthorizationActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Authorization Activity Mood Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.AuthorizationActivity#validateAuthorizationActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Authorization Activity Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AuthorizationActivity#validateAuthorizationActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Authorization Activity Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AuthorizationActivity#validateAuthorizationActivityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Authorization Activity Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AuthorizationActivity#validateAuthorizationActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Authorization Activity Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AuthorizationActivity#validateAuthorizationActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Authorization Activity Id</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -51,10 +43,9 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateAuthorizationActivityTemplateId() {
 		OperationsTestCase<AuthorizationActivity> validateAuthorizationActivityTemplateIdTestCase = new OperationsTestCase<AuthorizationActivity>(
-				"validateAuthorizationActivityTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAuthorizationActivityTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AuthorizationActivity target) {
@@ -68,13 +59,10 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AuthorizationActivityOperations
-						.validateAuthorizationActivityTemplateId(
-								(AuthorizationActivity) objectToTest,
-								diagnostician, map);
+				return AuthorizationActivityOperations.validateAuthorizationActivityTemplateId(
+					(AuthorizationActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -89,10 +77,9 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateAuthorizationActivityClassCode() {
 		OperationsTestCase<AuthorizationActivity> validateAuthorizationActivityClassCodeTestCase = new OperationsTestCase<AuthorizationActivity>(
-				"validateAuthorizationActivityClassCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAuthorizationActivityClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AuthorizationActivity target) {
@@ -106,13 +93,10 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AuthorizationActivityOperations
-						.validateAuthorizationActivityClassCode(
-								(AuthorizationActivity) objectToTest,
-								diagnostician, map);
+				return AuthorizationActivityOperations.validateAuthorizationActivityClassCode(
+					(AuthorizationActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -127,10 +111,9 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateAuthorizationActivityMoodCode() {
 		OperationsTestCase<AuthorizationActivity> validateAuthorizationActivityMoodCodeTestCase = new OperationsTestCase<AuthorizationActivity>(
-				"validateAuthorizationActivityMoodCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAuthorizationActivityMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AuthorizationActivity target) {
@@ -144,13 +127,10 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AuthorizationActivityOperations
-						.validateAuthorizationActivityMoodCode(
-								(AuthorizationActivity) objectToTest,
-								diagnostician, map);
+				return AuthorizationActivityOperations.validateAuthorizationActivityMoodCode(
+					(AuthorizationActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -165,10 +145,9 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateAuthorizationActivityId() {
 		OperationsTestCase<AuthorizationActivity> validateAuthorizationActivityIdTestCase = new OperationsTestCase<AuthorizationActivity>(
-				"validateAuthorizationActivityId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAuthorizationActivityId",
+			operationsForOCL.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AuthorizationActivity target) {
@@ -182,13 +161,10 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AuthorizationActivityOperations
-						.validateAuthorizationActivityId(
-								(AuthorizationActivity) objectToTest,
-								diagnostician, map);
+				return AuthorizationActivityOperations.validateAuthorizationActivityId(
+					(AuthorizationActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -200,15 +176,13 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			AuthorizationActivityOperations {
+	private static class OperationsForOCL extends AuthorizationActivityOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -220,8 +194,7 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<AuthorizationActivity> {
+	private static class ObjectFactory implements TestObjectFactory<AuthorizationActivity> {
 		public AuthorizationActivity create() {
 			return CCDFactory.eINSTANCE.createAuthorizationActivity();
 		}
@@ -238,6 +211,23 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends AuthorizationActivityOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

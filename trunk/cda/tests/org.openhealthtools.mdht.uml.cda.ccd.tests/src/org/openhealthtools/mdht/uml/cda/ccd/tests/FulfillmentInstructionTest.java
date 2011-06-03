@@ -20,19 +20,15 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Fulfillment Instruction</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.FulfillmentInstruction#validateFulfillmentInstructionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Fulfillment Instruction Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.FulfillmentInstruction#validateFulfillmentInstructionMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Fulfillment Instruction Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FulfillmentInstruction#validateFulfillmentInstructionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Fulfillment Instruction Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FulfillmentInstruction#validateFulfillmentInstructionMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Fulfillment Instruction Mood Code</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -45,10 +41,9 @@ public class FulfillmentInstructionTest extends CDAValidationTest {
 	@Test
 	public void testValidateFulfillmentInstructionTemplateId() {
 		OperationsTestCase<FulfillmentInstruction> validateFulfillmentInstructionTemplateIdTestCase = new OperationsTestCase<FulfillmentInstruction>(
-				"validateFulfillmentInstructionTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_FULFILLMENT_INSTRUCTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateFulfillmentInstructionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_FULFILLMENT_INSTRUCTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(FulfillmentInstruction target) {
@@ -62,13 +57,10 @@ public class FulfillmentInstructionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FulfillmentInstructionOperations
-						.validateFulfillmentInstructionTemplateId(
-								(FulfillmentInstruction) objectToTest,
-								diagnostician, map);
+				return FulfillmentInstructionOperations.validateFulfillmentInstructionTemplateId(
+					(FulfillmentInstruction) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -83,10 +75,9 @@ public class FulfillmentInstructionTest extends CDAValidationTest {
 	@Test
 	public void testValidateFulfillmentInstructionMoodCode() {
 		OperationsTestCase<FulfillmentInstruction> validateFulfillmentInstructionMoodCodeTestCase = new OperationsTestCase<FulfillmentInstruction>(
-				"validateFulfillmentInstructionMoodCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_FULFILLMENT_INSTRUCTION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateFulfillmentInstructionMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_FULFILLMENT_INSTRUCTION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(FulfillmentInstruction target) {
@@ -100,13 +91,10 @@ public class FulfillmentInstructionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FulfillmentInstructionOperations
-						.validateFulfillmentInstructionMoodCode(
-								(FulfillmentInstruction) objectToTest,
-								diagnostician, map);
+				return FulfillmentInstructionOperations.validateFulfillmentInstructionMoodCode(
+					(FulfillmentInstruction) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -118,15 +106,13 @@ public class FulfillmentInstructionTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			FulfillmentInstructionOperations {
+	private static class OperationsForOCL extends FulfillmentInstructionOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -138,8 +124,7 @@ public class FulfillmentInstructionTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<FulfillmentInstruction> {
+	private static class ObjectFactory implements TestObjectFactory<FulfillmentInstruction> {
 		public FulfillmentInstruction create() {
 			return CCDFactory.eINSTANCE.createFulfillmentInstruction();
 		}
@@ -156,6 +141,23 @@ public class FulfillmentInstructionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends FulfillmentInstructionOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

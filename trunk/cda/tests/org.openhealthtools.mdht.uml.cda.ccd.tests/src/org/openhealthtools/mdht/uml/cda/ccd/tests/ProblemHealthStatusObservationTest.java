@@ -22,19 +22,15 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Problem Health Status Observation</b></em>' model objects.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation#validateStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Status Observation Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation#validateStatusObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Status Observation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation#validateStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation#validateStatusObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Code</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -47,10 +43,9 @@ public class ProblemHealthStatusObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateStatusObservationTemplateId() {
 		OperationsTestCase<ProblemHealthStatusObservation> validateStatusObservationTemplateIdTestCase = new OperationsTestCase<ProblemHealthStatusObservation>(
-				"validateStatusObservationTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateStatusObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemHealthStatusObservation target) {
@@ -64,13 +59,10 @@ public class ProblemHealthStatusObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProblemHealthStatusObservationOperations
-						.validateStatusObservationTemplateId(
-								(ProblemHealthStatusObservation) objectToTest,
-								diagnostician, map);
+				return ProblemHealthStatusObservationOperations.validateStatusObservationTemplateId(
+					(ProblemHealthStatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -85,10 +77,9 @@ public class ProblemHealthStatusObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateStatusObservationCode() {
 		OperationsTestCase<ProblemHealthStatusObservation> validateStatusObservationCodeTestCase = new OperationsTestCase<ProblemHealthStatusObservation>(
-				"validateStatusObservationCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_STATUS_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateStatusObservationCode",
+			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemHealthStatusObservation target) {
@@ -105,13 +96,10 @@ public class ProblemHealthStatusObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProblemHealthStatusObservationOperations
-						.validateStatusObservationCode(
-								(ProblemHealthStatusObservation) objectToTest,
-								diagnostician, map);
+				return ProblemHealthStatusObservationOperations.validateStatusObservationCode(
+					(ProblemHealthStatusObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -123,15 +111,13 @@ public class ProblemHealthStatusObservationTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			ProblemHealthStatusObservationOperations {
+	private static class OperationsForOCL extends ProblemHealthStatusObservationOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -143,8 +129,7 @@ public class ProblemHealthStatusObservationTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<ProblemHealthStatusObservation> {
+	private static class ObjectFactory implements TestObjectFactory<ProblemHealthStatusObservation> {
 		public ProblemHealthStatusObservation create() {
 			return CCDFactory.eINSTANCE.createProblemHealthStatusObservation();
 		}
@@ -161,6 +146,23 @@ public class ProblemHealthStatusObservationTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends ProblemHealthStatusObservationOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
