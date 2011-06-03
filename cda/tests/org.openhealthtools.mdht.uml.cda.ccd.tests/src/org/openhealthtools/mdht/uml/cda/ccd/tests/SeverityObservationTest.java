@@ -23,31 +23,19 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Severity Observation</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation#validateSeverityObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Severity Observation Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation#validateSeverityObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Severity Observation Class Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation#validateSeverityObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Severity Observation Mood Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation#validateSeverityObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Severity Observation Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation#validateSeverityObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Severity Observation Status Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation#validateSeverityObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Severity Observation Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation#validateSeverityObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation#validateSeverityObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation#validateSeverityObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation#validateSeverityObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation#validateSeverityObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation#validateSeverityObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Value</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -60,10 +48,9 @@ public class SeverityObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateSeverityObservationTemplateId() {
 		OperationsTestCase<SeverityObservation> validateSeverityObservationTemplateIdTestCase = new OperationsTestCase<SeverityObservation>(
-				"validateSeverityObservationTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSeverityObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SeverityObservation target) {
@@ -77,13 +64,10 @@ public class SeverityObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SeverityObservationOperations
-						.validateSeverityObservationTemplateId(
-								(SeverityObservation) objectToTest,
-								diagnostician, map);
+				return SeverityObservationOperations.validateSeverityObservationTemplateId(
+					(SeverityObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -98,10 +82,9 @@ public class SeverityObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateSeverityObservationClassCode() {
 		OperationsTestCase<SeverityObservation> validateSeverityObservationClassCodeTestCase = new OperationsTestCase<SeverityObservation>(
-				"validateSeverityObservationClassCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSeverityObservationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SeverityObservation target) {
@@ -115,13 +98,10 @@ public class SeverityObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SeverityObservationOperations
-						.validateSeverityObservationClassCode(
-								(SeverityObservation) objectToTest,
-								diagnostician, map);
+				return SeverityObservationOperations.validateSeverityObservationClassCode(
+					(SeverityObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -136,10 +116,9 @@ public class SeverityObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateSeverityObservationMoodCode() {
 		OperationsTestCase<SeverityObservation> validateSeverityObservationMoodCodeTestCase = new OperationsTestCase<SeverityObservation>(
-				"validateSeverityObservationMoodCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSeverityObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SeverityObservation target) {
@@ -153,13 +132,10 @@ public class SeverityObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SeverityObservationOperations
-						.validateSeverityObservationMoodCode(
-								(SeverityObservation) objectToTest,
-								diagnostician, map);
+				return SeverityObservationOperations.validateSeverityObservationMoodCode(
+					(SeverityObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -174,10 +150,9 @@ public class SeverityObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateSeverityObservationCode() {
 		OperationsTestCase<SeverityObservation> validateSeverityObservationCodeTestCase = new OperationsTestCase<SeverityObservation>(
-				"validateSeverityObservationCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSeverityObservationCode",
+			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SeverityObservation target) {
@@ -194,13 +169,10 @@ public class SeverityObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SeverityObservationOperations
-						.validateSeverityObservationCode(
-								(SeverityObservation) objectToTest,
-								diagnostician, map);
+				return SeverityObservationOperations.validateSeverityObservationCode(
+					(SeverityObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -215,10 +187,9 @@ public class SeverityObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateSeverityObservationStatusCode() {
 		OperationsTestCase<SeverityObservation> validateSeverityObservationStatusCodeTestCase = new OperationsTestCase<SeverityObservation>(
-				"validateSeverityObservationStatusCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSeverityObservationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SeverityObservation target) {
@@ -235,13 +206,10 @@ public class SeverityObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SeverityObservationOperations
-						.validateSeverityObservationStatusCode(
-								(SeverityObservation) objectToTest,
-								diagnostician, map);
+				return SeverityObservationOperations.validateSeverityObservationStatusCode(
+					(SeverityObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -256,10 +224,9 @@ public class SeverityObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateSeverityObservationValue() {
 		OperationsTestCase<SeverityObservation> validateSeverityObservationValueTestCase = new OperationsTestCase<SeverityObservation>(
-				"validateSeverityObservationValue",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSeverityObservationValue",
+			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SeverityObservation target) {
@@ -276,13 +243,10 @@ public class SeverityObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SeverityObservationOperations
-						.validateSeverityObservationValue(
-								(SeverityObservation) objectToTest,
-								diagnostician, map);
+				return SeverityObservationOperations.validateSeverityObservationValue(
+					(SeverityObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -300,8 +264,7 @@ public class SeverityObservationTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -313,8 +276,7 @@ public class SeverityObservationTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<SeverityObservation> {
+	private static class ObjectFactory implements TestObjectFactory<SeverityObservation> {
 		public SeverityObservation create() {
 			return CCDFactory.eINSTANCE.createSeverityObservation();
 		}
@@ -331,6 +293,23 @@ public class SeverityObservationTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends SeverityObservationOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

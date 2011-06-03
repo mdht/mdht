@@ -63,10 +63,9 @@ public class AgeObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateAgeObservationRelatedSubjectBirthTime() {
 		OperationsTestCase<AgeObservation> validateAgeObservationRelatedSubjectBirthTimeTestCase = new OperationsTestCase<AgeObservation>(
-				"validateAgeObservationRelatedSubjectBirthTime",
-				operationsForOCL
-						.getOCLValue("VALIDATE_AGE_OBSERVATION_RELATED_SUBJECT_BIRTH_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAgeObservationRelatedSubjectBirthTime",
+			operationsForOCL.getOCLValue("VALIDATE_AGE_OBSERVATION_RELATED_SUBJECT_BIRTH_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AgeObservation target) {
@@ -80,19 +79,15 @@ public class AgeObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AgeObservationOperations
-						.validateAgeObservationRelatedSubjectBirthTime(
-								(AgeObservation) objectToTest, diagnostician,
-								map);
+				return AgeObservationOperations.validateAgeObservationRelatedSubjectBirthTime(
+					(AgeObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateAgeObservationRelatedSubjectBirthTimeTestCase
-				.doValidationTest();
+		validateAgeObservationRelatedSubjectBirthTimeTestCase.doValidationTest();
 	}
 
 	/**
@@ -102,10 +97,9 @@ public class AgeObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateAgeObservationTemplateId() {
 		OperationsTestCase<AgeObservation> validateAgeObservationTemplateIdTestCase = new OperationsTestCase<AgeObservation>(
-				"validateAgeObservationTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_AGE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAgeObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_AGE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AgeObservation target) {
@@ -119,13 +113,10 @@ public class AgeObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AgeObservationOperations
-						.validateAgeObservationTemplateId(
-								(AgeObservation) objectToTest, diagnostician,
-								map);
+				return AgeObservationOperations.validateAgeObservationTemplateId(
+					(AgeObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -140,10 +131,9 @@ public class AgeObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateAgeObservationClassCode() {
 		OperationsTestCase<AgeObservation> validateAgeObservationClassCodeTestCase = new OperationsTestCase<AgeObservation>(
-				"validateAgeObservationClassCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_AGE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAgeObservationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_AGE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AgeObservation target) {
@@ -157,13 +147,10 @@ public class AgeObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AgeObservationOperations
-						.validateAgeObservationClassCode(
-								(AgeObservation) objectToTest, diagnostician,
-								map);
+				return AgeObservationOperations.validateAgeObservationClassCode(
+					(AgeObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -178,10 +165,9 @@ public class AgeObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateAgeObservationMoodCode() {
 		OperationsTestCase<AgeObservation> validateAgeObservationMoodCodeTestCase = new OperationsTestCase<AgeObservation>(
-				"validateAgeObservationMoodCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_AGE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAgeObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_AGE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AgeObservation target) {
@@ -195,11 +181,10 @@ public class AgeObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return AgeObservationOperations.validateAgeObservationMoodCode(
-						(AgeObservation) objectToTest, diagnostician, map);
+					(AgeObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -214,10 +199,9 @@ public class AgeObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateAgeObservationCode() {
 		OperationsTestCase<AgeObservation> validateAgeObservationCodeTestCase = new OperationsTestCase<AgeObservation>(
-				"validateAgeObservationCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_AGE_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAgeObservationCode",
+			operationsForOCL.getOCLValue("VALIDATE_AGE_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AgeObservation target) {
@@ -234,11 +218,10 @@ public class AgeObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return AgeObservationOperations.validateAgeObservationCode(
-						(AgeObservation) objectToTest, diagnostician, map);
+					(AgeObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -253,10 +236,9 @@ public class AgeObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateAgeObservationStatusCode() {
 		OperationsTestCase<AgeObservation> validateAgeObservationStatusCodeTestCase = new OperationsTestCase<AgeObservation>(
-				"validateAgeObservationStatusCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_AGE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAgeObservationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_AGE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AgeObservation target) {
@@ -273,13 +255,10 @@ public class AgeObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AgeObservationOperations
-						.validateAgeObservationStatusCode(
-								(AgeObservation) objectToTest, diagnostician,
-								map);
+				return AgeObservationOperations.validateAgeObservationStatusCode(
+					(AgeObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -294,10 +273,9 @@ public class AgeObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateAgeObservationValue() {
 		OperationsTestCase<AgeObservation> validateAgeObservationValueTestCase = new OperationsTestCase<AgeObservation>(
-				"validateAgeObservationValue",
-				operationsForOCL
-						.getOCLValue("VALIDATE_AGE_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAgeObservationValue",
+			operationsForOCL.getOCLValue("VALIDATE_AGE_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AgeObservation target) {
@@ -314,11 +292,10 @@ public class AgeObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return AgeObservationOperations.validateAgeObservationValue(
-						(AgeObservation) objectToTest, diagnostician, map);
+					(AgeObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -336,8 +313,7 @@ public class AgeObservationTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -349,8 +325,7 @@ public class AgeObservationTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<AgeObservation> {
+	private static class ObjectFactory implements TestObjectFactory<AgeObservation> {
 		public AgeObservation create() {
 			return CCDFactory.eINSTANCE.createAgeObservation();
 		}
@@ -367,6 +342,23 @@ public class AgeObservationTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends AgeObservationOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

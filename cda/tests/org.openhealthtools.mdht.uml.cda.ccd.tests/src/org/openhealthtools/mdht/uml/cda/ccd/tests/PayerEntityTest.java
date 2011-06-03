@@ -42,10 +42,8 @@ public class PayerEntityTest extends CDAValidationTest {
 	@Test
 	public void testValidatePayerEntityId() {
 		OperationsTestCase<PayerEntity> validatePayerEntityIdTestCase = new OperationsTestCase<PayerEntity>(
-				"validatePayerEntityId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PAYER_ENTITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePayerEntityId",
+			operationsForOCL.getOCLValue("VALIDATE_PAYER_ENTITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(PayerEntity target) {
@@ -59,11 +57,9 @@ public class PayerEntityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PayerEntityOperations.validatePayerEntityId(
-						(PayerEntity) objectToTest, diagnostician, map);
+				return PayerEntityOperations.validatePayerEntityId((PayerEntity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -81,8 +77,7 @@ public class PayerEntityTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -94,8 +89,7 @@ public class PayerEntityTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<PayerEntity> {
+	private static class ObjectFactory implements TestObjectFactory<PayerEntity> {
 		public PayerEntity create() {
 			return CCDFactory.eINSTANCE.createPayerEntity();
 		}
@@ -112,6 +106,23 @@ public class PayerEntityTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends PayerEntityOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

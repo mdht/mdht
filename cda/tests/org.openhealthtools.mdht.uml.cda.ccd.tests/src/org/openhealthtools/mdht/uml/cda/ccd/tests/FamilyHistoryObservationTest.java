@@ -23,28 +23,18 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Family History Observation</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#validateFamilyHistoryObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Family History Observation Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#validateFamilyHistoryObservationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Family History Observation Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#validateFamilyHistoryObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Family History Observation Status Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#validateFamilyHistoryObservationAgeObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Family History Observation Age Observation</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#getAgeObservation()
- * <em>Get Age Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#validateFamilyHistoryObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#validateFamilyHistoryObservationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Observation Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#validateFamilyHistoryObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Observation Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#validateFamilyHistoryObservationAgeObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Observation Age Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#getAgeObservation() <em>Get Age Observation</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -57,10 +47,9 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateFamilyHistoryObservationTemplateId() {
 		OperationsTestCase<FamilyHistoryObservation> validateFamilyHistoryObservationTemplateIdTestCase = new OperationsTestCase<FamilyHistoryObservation>(
-				"validateFamilyHistoryObservationTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_FAMILY_HISTORY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateFamilyHistoryObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(FamilyHistoryObservation target) {
@@ -74,13 +63,10 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FamilyHistoryObservationOperations
-						.validateFamilyHistoryObservationTemplateId(
-								(FamilyHistoryObservation) objectToTest,
-								diagnostician, map);
+				return FamilyHistoryObservationOperations.validateFamilyHistoryObservationTemplateId(
+					(FamilyHistoryObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -95,10 +81,9 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateFamilyHistoryObservationId() {
 		OperationsTestCase<FamilyHistoryObservation> validateFamilyHistoryObservationIdTestCase = new OperationsTestCase<FamilyHistoryObservation>(
-				"validateFamilyHistoryObservationId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_FAMILY_HISTORY_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateFamilyHistoryObservationId",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(FamilyHistoryObservation target) {
@@ -115,13 +100,10 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FamilyHistoryObservationOperations
-						.validateFamilyHistoryObservationId(
-								(FamilyHistoryObservation) objectToTest,
-								diagnostician, map);
+				return FamilyHistoryObservationOperations.validateFamilyHistoryObservationId(
+					(FamilyHistoryObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -136,10 +118,9 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateFamilyHistoryObservationStatusCode() {
 		OperationsTestCase<FamilyHistoryObservation> validateFamilyHistoryObservationStatusCodeTestCase = new OperationsTestCase<FamilyHistoryObservation>(
-				"validateFamilyHistoryObservationStatusCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_FAMILY_HISTORY_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateFamilyHistoryObservationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(FamilyHistoryObservation target) {
@@ -156,13 +137,10 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FamilyHistoryObservationOperations
-						.validateFamilyHistoryObservationStatusCode(
-								(FamilyHistoryObservation) objectToTest,
-								diagnostician, map);
+				return FamilyHistoryObservationOperations.validateFamilyHistoryObservationStatusCode(
+					(FamilyHistoryObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -177,10 +155,9 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateFamilyHistoryObservationAgeObservation() {
 		OperationsTestCase<FamilyHistoryObservation> validateFamilyHistoryObservationAgeObservationTestCase = new OperationsTestCase<FamilyHistoryObservation>(
-				"validateFamilyHistoryObservationAgeObservation",
-				operationsForOCL
-						.getOCLValue("VALIDATE_FAMILY_HISTORY_OBSERVATION_AGE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateFamilyHistoryObservationAgeObservation",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_OBSERVATION_AGE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(FamilyHistoryObservation target) {
@@ -194,34 +171,28 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FamilyHistoryObservationOperations
-						.validateFamilyHistoryObservationAgeObservation(
-								(FamilyHistoryObservation) objectToTest,
-								diagnostician, map);
+				return FamilyHistoryObservationOperations.validateFamilyHistoryObservationAgeObservation(
+					(FamilyHistoryObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateFamilyHistoryObservationAgeObservationTestCase
-				.doValidationTest();
+		validateFamilyHistoryObservationAgeObservationTestCase.doValidationTest();
 	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			FamilyHistoryObservationOperations {
+	private static class OperationsForOCL extends FamilyHistoryObservationOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -233,8 +204,7 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<FamilyHistoryObservation> {
+	private static class ObjectFactory implements TestObjectFactory<FamilyHistoryObservation> {
 		public FamilyHistoryObservation create() {
 			return CCDFactory.eINSTANCE.createFamilyHistoryObservation();
 		}
@@ -251,6 +221,23 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends FamilyHistoryObservationOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

@@ -96,10 +96,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateSupplyActivityMoodCode() {
 		OperationsTestCase<SupplyActivity> validateSupplyActivityMoodCodeTestCase = new OperationsTestCase<SupplyActivity>(
-				"validateSupplyActivityMoodCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSupplyActivityMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SupplyActivity target) {
@@ -113,11 +112,10 @@ public class SupplyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return SupplyActivityOperations.validateSupplyActivityMoodCode(
-						(SupplyActivity) objectToTest, diagnostician, map);
+					(SupplyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -132,10 +130,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateSupplyActivityHasAuthor() {
 		OperationsTestCase<SupplyActivity> validateSupplyActivityHasAuthorTestCase = new OperationsTestCase<SupplyActivity>(
-				"validateSupplyActivityHasAuthor",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_HAS_AUTHOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSupplyActivityHasAuthor",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_HAS_AUTHOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SupplyActivity target) {
@@ -149,13 +146,10 @@ public class SupplyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SupplyActivityOperations
-						.validateSupplyActivityHasAuthor(
-								(SupplyActivity) objectToTest, diagnostician,
-								map);
+				return SupplyActivityOperations.validateSupplyActivityHasAuthor(
+					(SupplyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -170,10 +164,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateSupplyActivityHasPerformer() {
 		OperationsTestCase<SupplyActivity> validateSupplyActivityHasPerformerTestCase = new OperationsTestCase<SupplyActivity>(
-				"validateSupplyActivityHasPerformer",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_HAS_PERFORMER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSupplyActivityHasPerformer",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_HAS_PERFORMER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SupplyActivity target) {
@@ -187,13 +180,10 @@ public class SupplyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SupplyActivityOperations
-						.validateSupplyActivityHasPerformer(
-								(SupplyActivity) objectToTest, diagnostician,
-								map);
+				return SupplyActivityOperations.validateSupplyActivityHasPerformer(
+					(SupplyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -208,10 +198,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateSupplyActivityHasParticipantLocation() {
 		OperationsTestCase<SupplyActivity> validateSupplyActivityHasParticipantLocationTestCase = new OperationsTestCase<SupplyActivity>(
-				"validateSupplyActivityHasParticipantLocation",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_HAS_PARTICIPANT_LOCATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSupplyActivityHasParticipantLocation",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_HAS_PARTICIPANT_LOCATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SupplyActivity target) {
@@ -225,13 +214,10 @@ public class SupplyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SupplyActivityOperations
-						.validateSupplyActivityHasParticipantLocation(
-								(SupplyActivity) objectToTest, diagnostician,
-								map);
+				return SupplyActivityOperations.validateSupplyActivityHasParticipantLocation(
+					(SupplyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -246,10 +232,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateSupplyActivityInformationSource() {
 		OperationsTestCase<SupplyActivity> validateSupplyActivityInformationSourceTestCase = new OperationsTestCase<SupplyActivity>(
-				"validateSupplyActivityInformationSource",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSupplyActivityInformationSource",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SupplyActivity target) {
@@ -263,13 +248,10 @@ public class SupplyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SupplyActivityOperations
-						.validateSupplyActivityInformationSource(
-								(SupplyActivity) objectToTest, diagnostician,
-								map);
+				return SupplyActivityOperations.validateSupplyActivityInformationSource(
+					(SupplyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -284,10 +266,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateSupplyActivityHasProduct() {
 		OperationsTestCase<SupplyActivity> validateSupplyActivityHasProductTestCase = new OperationsTestCase<SupplyActivity>(
-				"validateSupplyActivityHasProduct",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_HAS_PRODUCT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSupplyActivityHasProduct",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_HAS_PRODUCT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SupplyActivity target) {
@@ -301,13 +282,10 @@ public class SupplyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SupplyActivityOperations
-						.validateSupplyActivityHasProduct(
-								(SupplyActivity) objectToTest, diagnostician,
-								map);
+				return SupplyActivityOperations.validateSupplyActivityHasProduct(
+					(SupplyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -322,10 +300,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateSupplyActivityTemplateId() {
 		OperationsTestCase<SupplyActivity> validateSupplyActivityTemplateIdTestCase = new OperationsTestCase<SupplyActivity>(
-				"validateSupplyActivityTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSupplyActivityTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SupplyActivity target) {
@@ -339,13 +316,10 @@ public class SupplyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SupplyActivityOperations
-						.validateSupplyActivityTemplateId(
-								(SupplyActivity) objectToTest, diagnostician,
-								map);
+				return SupplyActivityOperations.validateSupplyActivityTemplateId(
+					(SupplyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -360,10 +334,8 @@ public class SupplyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateSupplyActivityId() {
 		OperationsTestCase<SupplyActivity> validateSupplyActivityIdTestCase = new OperationsTestCase<SupplyActivity>(
-				"validateSupplyActivityId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSupplyActivityId",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(SupplyActivity target) {
@@ -377,11 +349,10 @@ public class SupplyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return SupplyActivityOperations.validateSupplyActivityId(
-						(SupplyActivity) objectToTest, diagnostician, map);
+					(SupplyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -396,10 +367,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateSupplyActivityStatusCode() {
 		OperationsTestCase<SupplyActivity> validateSupplyActivityStatusCodeTestCase = new OperationsTestCase<SupplyActivity>(
-				"validateSupplyActivityStatusCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSupplyActivityStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SupplyActivity target) {
@@ -416,13 +386,10 @@ public class SupplyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SupplyActivityOperations
-						.validateSupplyActivityStatusCode(
-								(SupplyActivity) objectToTest, diagnostician,
-								map);
+				return SupplyActivityOperations.validateSupplyActivityStatusCode(
+					(SupplyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -437,10 +404,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateSupplyActivityEffectiveTime() {
 		OperationsTestCase<SupplyActivity> validateSupplyActivityEffectiveTimeTestCase = new OperationsTestCase<SupplyActivity>(
-				"validateSupplyActivityEffectiveTime",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSupplyActivityEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SupplyActivity target) {
@@ -452,18 +418,16 @@ public class SupplyActivityTest extends CDAValidationTest {
 				target.init();
 
 				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.getEffectiveTimes().add(ts);
 				// target.setEffectiveTime(ts );
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SupplyActivityOperations
-						.validateSupplyActivityEffectiveTime(
-								(SupplyActivity) objectToTest, diagnostician,
-								map);
+				return SupplyActivityOperations.validateSupplyActivityEffectiveTime(
+					(SupplyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -478,10 +442,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateSupplyActivityQuantity() {
 		OperationsTestCase<SupplyActivity> validateSupplyActivityQuantityTestCase = new OperationsTestCase<SupplyActivity>(
-				"validateSupplyActivityQuantity",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_QUANTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSupplyActivityQuantity",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_QUANTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SupplyActivity target) {
@@ -495,11 +458,10 @@ public class SupplyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return SupplyActivityOperations.validateSupplyActivityQuantity(
-						(SupplyActivity) objectToTest, diagnostician, map);
+					(SupplyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -514,10 +476,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateSupplyActivityRepeatNumber() {
 		OperationsTestCase<SupplyActivity> validateSupplyActivityRepeatNumberTestCase = new OperationsTestCase<SupplyActivity>(
-				"validateSupplyActivityRepeatNumber",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_REPEAT_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSupplyActivityRepeatNumber",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_REPEAT_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SupplyActivity target) {
@@ -531,13 +492,10 @@ public class SupplyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SupplyActivityOperations
-						.validateSupplyActivityRepeatNumber(
-								(SupplyActivity) objectToTest, diagnostician,
-								map);
+				return SupplyActivityOperations.validateSupplyActivityRepeatNumber(
+					(SupplyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -552,10 +510,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateSupplyActivityMedicationStatusObservation() {
 		OperationsTestCase<SupplyActivity> validateSupplyActivityMedicationStatusObservationTestCase = new OperationsTestCase<SupplyActivity>(
-				"validateSupplyActivityMedicationStatusObservation",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSupplyActivityMedicationStatusObservation",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SupplyActivity target) {
@@ -569,19 +526,15 @@ public class SupplyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SupplyActivityOperations
-						.validateSupplyActivityMedicationStatusObservation(
-								(SupplyActivity) objectToTest, diagnostician,
-								map);
+				return SupplyActivityOperations.validateSupplyActivityMedicationStatusObservation(
+					(SupplyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateSupplyActivityMedicationStatusObservationTestCase
-				.doValidationTest();
+		validateSupplyActivityMedicationStatusObservationTestCase.doValidationTest();
 	}
 
 	/**
@@ -591,10 +544,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateSupplyActivityFulfillmentInstruction() {
 		OperationsTestCase<SupplyActivity> validateSupplyActivityFulfillmentInstructionTestCase = new OperationsTestCase<SupplyActivity>(
-				"validateSupplyActivityFulfillmentInstruction",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSupplyActivityFulfillmentInstruction",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_FULFILLMENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SupplyActivity target) {
@@ -608,13 +560,10 @@ public class SupplyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SupplyActivityOperations
-						.validateSupplyActivityFulfillmentInstruction(
-								(SupplyActivity) objectToTest, diagnostician,
-								map);
+				return SupplyActivityOperations.validateSupplyActivityFulfillmentInstruction(
+					(SupplyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -629,10 +578,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 	@Test
 	public void testValidateSupplyActivityProductInstance() {
 		OperationsTestCase<SupplyActivity> validateSupplyActivityProductInstanceTestCase = new OperationsTestCase<SupplyActivity>(
-				"validateSupplyActivityProductInstance",
-				operationsForOCL
-						.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_PRODUCT_INSTANCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateSupplyActivityProductInstance",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_PRODUCT_INSTANCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SupplyActivity target) {
@@ -646,13 +594,10 @@ public class SupplyActivityTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return SupplyActivityOperations
-						.validateSupplyActivityProductInstance(
-								(SupplyActivity) objectToTest, diagnostician,
-								map);
+				return SupplyActivityOperations.validateSupplyActivityProductInstance(
+					(SupplyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -670,8 +615,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -683,8 +627,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<SupplyActivity> {
+	private static class ObjectFactory implements TestObjectFactory<SupplyActivity> {
 		public SupplyActivity create() {
 			return CCDFactory.eINSTANCE.createSupplyActivity();
 		}
@@ -701,6 +644,23 @@ public class SupplyActivityTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends SupplyActivityOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

@@ -64,10 +64,9 @@ public class PurposeSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidatePurposeSectionTitleValue() {
 		OperationsTestCase<PurposeSection> validatePurposeSectionTitleValueTestCase = new OperationsTestCase<PurposeSection>(
-				"validatePurposeSectionTitleValue",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PURPOSE_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePurposeSectionTitleValue",
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeSection target) {
@@ -85,13 +84,10 @@ public class PurposeSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PurposeSectionOperations
-						.validatePurposeSectionTitleValue(
-								(PurposeSection) objectToTest, diagnostician,
-								map);
+				return PurposeSectionOperations.validatePurposeSectionTitleValue(
+					(PurposeSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -106,10 +102,9 @@ public class PurposeSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidatePurposeSectionTemplateId() {
 		OperationsTestCase<PurposeSection> validatePurposeSectionTemplateIdTestCase = new OperationsTestCase<PurposeSection>(
-				"validatePurposeSectionTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PURPOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePurposeSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeSection target) {
@@ -123,13 +118,10 @@ public class PurposeSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PurposeSectionOperations
-						.validatePurposeSectionTemplateId(
-								(PurposeSection) objectToTest, diagnostician,
-								map);
+				return PurposeSectionOperations.validatePurposeSectionTemplateId(
+					(PurposeSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -144,10 +136,9 @@ public class PurposeSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidatePurposeSectionCode() {
 		OperationsTestCase<PurposeSection> validatePurposeSectionCodeTestCase = new OperationsTestCase<PurposeSection>(
-				"validatePurposeSectionCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PURPOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePurposeSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeSection target) {
@@ -161,11 +152,10 @@ public class PurposeSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return PurposeSectionOperations.validatePurposeSectionCode(
-						(PurposeSection) objectToTest, diagnostician, map);
+					(PurposeSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -180,10 +170,9 @@ public class PurposeSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidatePurposeSectionTitle() {
 		OperationsTestCase<PurposeSection> validatePurposeSectionTitleTestCase = new OperationsTestCase<PurposeSection>(
-				"validatePurposeSectionTitle",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PURPOSE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePurposeSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeSection target) {
@@ -200,11 +189,10 @@ public class PurposeSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return PurposeSectionOperations.validatePurposeSectionTitle(
-						(PurposeSection) objectToTest, diagnostician, map);
+					(PurposeSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -219,10 +207,9 @@ public class PurposeSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidatePurposeSectionText() {
 		OperationsTestCase<PurposeSection> validatePurposeSectionTextTestCase = new OperationsTestCase<PurposeSection>(
-				"validatePurposeSectionText",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PURPOSE_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePurposeSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeSection target) {
@@ -239,11 +226,10 @@ public class PurposeSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return PurposeSectionOperations.validatePurposeSectionText(
-						(PurposeSection) objectToTest, diagnostician, map);
+					(PurposeSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -258,10 +244,9 @@ public class PurposeSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidatePurposeSectionPurposeActivity() {
 		OperationsTestCase<PurposeSection> validatePurposeSectionPurposeActivityTestCase = new OperationsTestCase<PurposeSection>(
-				"validatePurposeSectionPurposeActivity",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePurposeSectionPurposeActivity",
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeSection target) {
@@ -275,13 +260,10 @@ public class PurposeSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PurposeSectionOperations
-						.validatePurposeSectionPurposeActivity(
-								(PurposeSection) objectToTest, diagnostician,
-								map);
+				return PurposeSectionOperations.validatePurposeSectionPurposeActivity(
+					(PurposeSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -299,8 +281,7 @@ public class PurposeSectionTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -312,8 +293,7 @@ public class PurposeSectionTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<PurposeSection> {
+	private static class ObjectFactory implements TestObjectFactory<PurposeSection> {
 		public PurposeSection create() {
 			return CCDFactory.eINSTANCE.createPurposeSection();
 		}
@@ -330,6 +310,23 @@ public class PurposeSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends PurposeSectionOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

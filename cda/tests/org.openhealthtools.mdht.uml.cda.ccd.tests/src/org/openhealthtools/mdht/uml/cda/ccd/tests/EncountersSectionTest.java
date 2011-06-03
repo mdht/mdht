@@ -22,22 +22,16 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Encounters Section</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EncountersSection#validateEncountersSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Encounters Section Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EncountersSection#validateEncountersSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Encounters Section Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EncountersSection#validateEncountersSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Encounters Section Title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersSection#validateEncountersSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersSection#validateEncountersSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersSection#validateEncountersSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Section Title</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -50,10 +44,9 @@ public class EncountersSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateEncountersSectionTemplateId() {
 		OperationsTestCase<EncountersSection> validateEncountersSectionTemplateIdTestCase = new OperationsTestCase<EncountersSection>(
-				"validateEncountersSectionTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ENCOUNTERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEncountersSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EncountersSection target) {
@@ -67,13 +60,10 @@ public class EncountersSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EncountersSectionOperations
-						.validateEncountersSectionTemplateId(
-								(EncountersSection) objectToTest,
-								diagnostician, map);
+				return EncountersSectionOperations.validateEncountersSectionTemplateId(
+					(EncountersSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -88,10 +78,9 @@ public class EncountersSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateEncountersSectionCode() {
 		OperationsTestCase<EncountersSection> validateEncountersSectionCodeTestCase = new OperationsTestCase<EncountersSection>(
-				"validateEncountersSectionCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ENCOUNTERS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEncountersSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTERS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EncountersSection target) {
@@ -105,13 +94,10 @@ public class EncountersSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EncountersSectionOperations
-						.validateEncountersSectionCode(
-								(EncountersSection) objectToTest,
-								diagnostician, map);
+				return EncountersSectionOperations.validateEncountersSectionCode(
+					(EncountersSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -126,10 +112,9 @@ public class EncountersSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateEncountersSectionTitle() {
 		OperationsTestCase<EncountersSection> validateEncountersSectionTitleTestCase = new OperationsTestCase<EncountersSection>(
-				"validateEncountersSectionTitle",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ENCOUNTERS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEncountersSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTERS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EncountersSection target) {
@@ -146,13 +131,10 @@ public class EncountersSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EncountersSectionOperations
-						.validateEncountersSectionTitle(
-								(EncountersSection) objectToTest,
-								diagnostician, map);
+				return EncountersSectionOperations.validateEncountersSectionTitle(
+					(EncountersSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -170,8 +152,7 @@ public class EncountersSectionTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -183,8 +164,7 @@ public class EncountersSectionTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<EncountersSection> {
+	private static class ObjectFactory implements TestObjectFactory<EncountersSection> {
 		public EncountersSection create() {
 			return CCDFactory.eINSTANCE.createEncountersSection();
 		}
@@ -201,6 +181,23 @@ public class EncountersSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends EncountersSectionOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

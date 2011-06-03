@@ -19,40 +19,22 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Product</b></em>' model objects. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductHasMaterial(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Product Has Material</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductHasMaterialCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Product Has Material Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductHasMaterialCodeVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Product Has Material Code Vocab</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductHasMaterialCodeOriginalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Product Has Material Code Original Text</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductHasMaterialName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Product Has Material Name</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductMayHaveMaterialManufacturer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Product May Have Material Manufacturer</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductShouldHaveMaterialManufacturer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Product Should Have Material Manufacturer</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Product Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Product Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductHasMaterial(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Has Material</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductHasMaterialCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Has Material Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductHasMaterialCodeVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Has Material Code Vocab</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductHasMaterialCodeOriginalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Has Material Code Original Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductHasMaterialName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Has Material Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductMayHaveMaterialManufacturer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product May Have Material Manufacturer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductShouldHaveMaterialManufacturer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Should Have Material Manufacturer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.Product#validateProductId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Id</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -65,10 +47,9 @@ public class ProductTest extends CDAValidationTest {
 	@Test
 	public void testValidateProductHasMaterial() {
 		OperationsTestCase<Product> validateProductHasMaterialTestCase = new OperationsTestCase<Product>(
-				"validateProductHasMaterial",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PRODUCT_HAS_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateProductHasMaterial",
+			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_HAS_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Product target) {
@@ -82,11 +63,9 @@ public class ProductTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProductOperations.validateProductHasMaterial(
-						(Product) objectToTest, diagnostician, map);
+				return ProductOperations.validateProductHasMaterial((Product) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -101,10 +80,9 @@ public class ProductTest extends CDAValidationTest {
 	@Test
 	public void testValidateProductHasMaterialCode() {
 		OperationsTestCase<Product> validateProductHasMaterialCodeTestCase = new OperationsTestCase<Product>(
-				"validateProductHasMaterialCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PRODUCT_HAS_MATERIAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateProductHasMaterialCode",
+			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_HAS_MATERIAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Product target) {
@@ -118,11 +96,9 @@ public class ProductTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProductOperations.validateProductHasMaterialCode(
-						(Product) objectToTest, diagnostician, map);
+				return ProductOperations.validateProductHasMaterialCode((Product) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -137,10 +113,9 @@ public class ProductTest extends CDAValidationTest {
 	@Test
 	public void testValidateProductHasMaterialCodeVocab() {
 		OperationsTestCase<Product> validateProductHasMaterialCodeVocabTestCase = new OperationsTestCase<Product>(
-				"validateProductHasMaterialCodeVocab",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PRODUCT_HAS_MATERIAL_CODE_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateProductHasMaterialCodeVocab",
+			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_HAS_MATERIAL_CODE_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Product target) {
@@ -154,11 +129,9 @@ public class ProductTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProductOperations.validateProductHasMaterialCodeVocab(
-						(Product) objectToTest, diagnostician, map);
+				return ProductOperations.validateProductHasMaterialCodeVocab((Product) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -173,10 +146,9 @@ public class ProductTest extends CDAValidationTest {
 	@Test
 	public void testValidateProductHasMaterialCodeOriginalText() {
 		OperationsTestCase<Product> validateProductHasMaterialCodeOriginalTextTestCase = new OperationsTestCase<Product>(
-				"validateProductHasMaterialCodeOriginalText",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PRODUCT_HAS_MATERIAL_CODE_ORIGINAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateProductHasMaterialCodeOriginalText",
+			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_HAS_MATERIAL_CODE_ORIGINAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Product target) {
@@ -190,12 +162,10 @@ public class ProductTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProductOperations
-						.validateProductHasMaterialCodeOriginalText(
-								(Product) objectToTest, diagnostician, map);
+				return ProductOperations.validateProductHasMaterialCodeOriginalText(
+					(Product) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -210,10 +180,9 @@ public class ProductTest extends CDAValidationTest {
 	@Test
 	public void testValidateProductHasMaterialName() {
 		OperationsTestCase<Product> validateProductHasMaterialNameTestCase = new OperationsTestCase<Product>(
-				"validateProductHasMaterialName",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PRODUCT_HAS_MATERIAL_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateProductHasMaterialName",
+			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_HAS_MATERIAL_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Product target) {
@@ -227,11 +196,9 @@ public class ProductTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProductOperations.validateProductHasMaterialName(
-						(Product) objectToTest, diagnostician, map);
+				return ProductOperations.validateProductHasMaterialName((Product) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -246,10 +213,9 @@ public class ProductTest extends CDAValidationTest {
 	@Test
 	public void testValidateProductMayHaveMaterialManufacturer() {
 		OperationsTestCase<Product> validateProductMayHaveMaterialManufacturerTestCase = new OperationsTestCase<Product>(
-				"validateProductMayHaveMaterialManufacturer",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PRODUCT_MAY_HAVE_MATERIAL_MANUFACTURER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateProductMayHaveMaterialManufacturer",
+			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_MAY_HAVE_MATERIAL_MANUFACTURER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Product target) {
@@ -263,12 +229,10 @@ public class ProductTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProductOperations
-						.validateProductMayHaveMaterialManufacturer(
-								(Product) objectToTest, diagnostician, map);
+				return ProductOperations.validateProductMayHaveMaterialManufacturer(
+					(Product) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -283,10 +247,9 @@ public class ProductTest extends CDAValidationTest {
 	@Test
 	public void testValidateProductShouldHaveMaterialManufacturer() {
 		OperationsTestCase<Product> validateProductShouldHaveMaterialManufacturerTestCase = new OperationsTestCase<Product>(
-				"validateProductShouldHaveMaterialManufacturer",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PRODUCT_SHOULD_HAVE_MATERIAL_MANUFACTURER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateProductShouldHaveMaterialManufacturer",
+			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_SHOULD_HAVE_MATERIAL_MANUFACTURER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Product target) {
@@ -300,18 +263,15 @@ public class ProductTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProductOperations
-						.validateProductShouldHaveMaterialManufacturer(
-								(Product) objectToTest, diagnostician, map);
+				return ProductOperations.validateProductShouldHaveMaterialManufacturer(
+					(Product) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateProductShouldHaveMaterialManufacturerTestCase
-				.doValidationTest();
+		validateProductShouldHaveMaterialManufacturerTestCase.doValidationTest();
 	}
 
 	/**
@@ -321,10 +281,8 @@ public class ProductTest extends CDAValidationTest {
 	@Test
 	public void testValidateProductTemplateId() {
 		OperationsTestCase<Product> validateProductTemplateIdTestCase = new OperationsTestCase<Product>(
-				"validateProductTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateProductTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(Product target) {
@@ -338,11 +296,9 @@ public class ProductTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProductOperations.validateProductTemplateId(
-						(Product) objectToTest, diagnostician, map);
+				return ProductOperations.validateProductTemplateId((Product) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -357,10 +313,8 @@ public class ProductTest extends CDAValidationTest {
 	@Test
 	public void testValidateProductId() {
 		OperationsTestCase<Product> validateProductIdTestCase = new OperationsTestCase<Product>(
-				"validateProductId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PRODUCT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateProductId", operationsForOCL.getOCLValue("VALIDATE_PRODUCT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Product target) {
@@ -374,11 +328,9 @@ public class ProductTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProductOperations.validateProductId(
-						(Product) objectToTest, diagnostician, map);
+				return ProductOperations.validateProductId((Product) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -396,8 +348,7 @@ public class ProductTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -426,6 +377,23 @@ public class ProductTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends ProductOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

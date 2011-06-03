@@ -25,52 +25,26 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Result Observation</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationCodeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Observation Code Value</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationReferenceRangeRequired(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Observation Reference Range Required</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationNoObservationRangeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Observation No Observation Range Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Observation Information Source</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Observation Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Observation Mood Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Observation Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Observation Effective Time</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Observation Status Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Observation Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationMethodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Observation Method Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationInterpretationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Observation Interpretation Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Observation Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationCodeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Code Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationReferenceRangeRequired(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Reference Range Required</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationNoObservationRangeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation No Observation Range Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Information Source</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationMethodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Method Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationInterpretationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Interpretation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ResultObservation#validateResultObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Value</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -83,10 +57,9 @@ public class ResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultObservationCodeValue() {
 		OperationsTestCase<ResultObservation> validateResultObservationCodeValueTestCase = new OperationsTestCase<ResultObservation>(
-				"validateResultObservationCodeValue",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_OBSERVATION_CODE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultObservationCodeValue",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_CODE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
@@ -103,13 +76,10 @@ public class ResultObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultObservationOperations
-						.validateResultObservationCodeValue(
-								(ResultObservation) objectToTest,
-								diagnostician, map);
+				return ResultObservationOperations.validateResultObservationCodeValue(
+					(ResultObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -124,10 +94,9 @@ public class ResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultObservationReferenceRangeRequired() {
 		OperationsTestCase<ResultObservation> validateResultObservationReferenceRangeRequiredTestCase = new OperationsTestCase<ResultObservation>(
-				"validateResultObservationReferenceRangeRequired",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_OBSERVATION_REFERENCE_RANGE_REQUIRED__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultObservationReferenceRangeRequired",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_REFERENCE_RANGE_REQUIRED__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
@@ -141,19 +110,15 @@ public class ResultObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultObservationOperations
-						.validateResultObservationReferenceRangeRequired(
-								(ResultObservation) objectToTest,
-								diagnostician, map);
+				return ResultObservationOperations.validateResultObservationReferenceRangeRequired(
+					(ResultObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateResultObservationReferenceRangeRequiredTestCase
-				.doValidationTest();
+		validateResultObservationReferenceRangeRequiredTestCase.doValidationTest();
 	}
 
 	/**
@@ -163,10 +128,9 @@ public class ResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultObservationNoObservationRangeCode() {
 		OperationsTestCase<ResultObservation> validateResultObservationNoObservationRangeCodeTestCase = new OperationsTestCase<ResultObservation>(
-				"validateResultObservationNoObservationRangeCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_OBSERVATION_NO_OBSERVATION_RANGE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultObservationNoObservationRangeCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_NO_OBSERVATION_RANGE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
@@ -180,19 +144,15 @@ public class ResultObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultObservationOperations
-						.validateResultObservationNoObservationRangeCode(
-								(ResultObservation) objectToTest,
-								diagnostician, map);
+				return ResultObservationOperations.validateResultObservationNoObservationRangeCode(
+					(ResultObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateResultObservationNoObservationRangeCodeTestCase
-				.doValidationTest();
+		validateResultObservationNoObservationRangeCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -202,10 +162,9 @@ public class ResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultObservationInformationSource() {
 		OperationsTestCase<ResultObservation> validateResultObservationInformationSourceTestCase = new OperationsTestCase<ResultObservation>(
-				"validateResultObservationInformationSource",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_OBSERVATION_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultObservationInformationSource",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
@@ -219,13 +178,10 @@ public class ResultObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultObservationOperations
-						.validateResultObservationInformationSource(
-								(ResultObservation) objectToTest,
-								diagnostician, map);
+				return ResultObservationOperations.validateResultObservationInformationSource(
+					(ResultObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -240,10 +196,9 @@ public class ResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultObservationTemplateId() {
 		OperationsTestCase<ResultObservation> validateResultObservationTemplateIdTestCase = new OperationsTestCase<ResultObservation>(
-				"validateResultObservationTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
@@ -257,13 +212,10 @@ public class ResultObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultObservationOperations
-						.validateResultObservationTemplateId(
-								(ResultObservation) objectToTest,
-								diagnostician, map);
+				return ResultObservationOperations.validateResultObservationTemplateId(
+					(ResultObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -278,10 +230,9 @@ public class ResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultObservationMoodCode() {
 		OperationsTestCase<ResultObservation> validateResultObservationMoodCodeTestCase = new OperationsTestCase<ResultObservation>(
-				"validateResultObservationMoodCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
@@ -295,13 +246,10 @@ public class ResultObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultObservationOperations
-						.validateResultObservationMoodCode(
-								(ResultObservation) objectToTest,
-								diagnostician, map);
+				return ResultObservationOperations.validateResultObservationMoodCode(
+					(ResultObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -316,10 +264,9 @@ public class ResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultObservationId() {
 		OperationsTestCase<ResultObservation> validateResultObservationIdTestCase = new OperationsTestCase<ResultObservation>(
-				"validateResultObservationId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultObservationId",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
@@ -336,11 +283,10 @@ public class ResultObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ResultObservationOperations.validateResultObservationId(
-						(ResultObservation) objectToTest, diagnostician, map);
+					(ResultObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -355,10 +301,9 @@ public class ResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultObservationEffectiveTime() {
 		OperationsTestCase<ResultObservation> validateResultObservationEffectiveTimeTestCase = new OperationsTestCase<ResultObservation>(
-				"validateResultObservationEffectiveTime",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultObservationEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
@@ -375,13 +320,10 @@ public class ResultObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultObservationOperations
-						.validateResultObservationEffectiveTime(
-								(ResultObservation) objectToTest,
-								diagnostician, map);
+				return ResultObservationOperations.validateResultObservationEffectiveTime(
+					(ResultObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -396,10 +338,9 @@ public class ResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultObservationStatusCode() {
 		OperationsTestCase<ResultObservation> validateResultObservationStatusCodeTestCase = new OperationsTestCase<ResultObservation>(
-				"validateResultObservationStatusCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultObservationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
@@ -416,13 +357,10 @@ public class ResultObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultObservationOperations
-						.validateResultObservationStatusCode(
-								(ResultObservation) objectToTest,
-								diagnostician, map);
+				return ResultObservationOperations.validateResultObservationStatusCode(
+					(ResultObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -437,10 +375,9 @@ public class ResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultObservationCode() {
 		OperationsTestCase<ResultObservation> validateResultObservationCodeTestCase = new OperationsTestCase<ResultObservation>(
-				"validateResultObservationCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultObservationCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
@@ -457,13 +394,10 @@ public class ResultObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultObservationOperations
-						.validateResultObservationCode(
-								(ResultObservation) objectToTest,
-								diagnostician, map);
+				return ResultObservationOperations.validateResultObservationCode(
+					(ResultObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -478,10 +412,9 @@ public class ResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultObservationMethodCode() {
 		OperationsTestCase<ResultObservation> validateResultObservationMethodCodeTestCase = new OperationsTestCase<ResultObservation>(
-				"validateResultObservationMethodCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_OBSERVATION_METHOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultObservationMethodCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_METHOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
@@ -495,13 +428,10 @@ public class ResultObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultObservationOperations
-						.validateResultObservationMethodCode(
-								(ResultObservation) objectToTest,
-								diagnostician, map);
+				return ResultObservationOperations.validateResultObservationMethodCode(
+					(ResultObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -516,10 +446,9 @@ public class ResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultObservationInterpretationCode() {
 		OperationsTestCase<ResultObservation> validateResultObservationInterpretationCodeTestCase = new OperationsTestCase<ResultObservation>(
-				"validateResultObservationInterpretationCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_OBSERVATION_INTERPRETATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultObservationInterpretationCode",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_INTERPRETATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
@@ -533,13 +462,10 @@ public class ResultObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultObservationOperations
-						.validateResultObservationInterpretationCode(
-								(ResultObservation) objectToTest,
-								diagnostician, map);
+				return ResultObservationOperations.validateResultObservationInterpretationCode(
+					(ResultObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -554,10 +480,9 @@ public class ResultObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateResultObservationValue() {
 		OperationsTestCase<ResultObservation> validateResultObservationValueTestCase = new OperationsTestCase<ResultObservation>(
-				"validateResultObservationValue",
-				operationsForOCL
-						.getOCLValue("VALIDATE_RESULT_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateResultObservationValue",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
@@ -574,13 +499,10 @@ public class ResultObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ResultObservationOperations
-						.validateResultObservationValue(
-								(ResultObservation) objectToTest,
-								diagnostician, map);
+				return ResultObservationOperations.validateResultObservationValue(
+					(ResultObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -598,8 +520,7 @@ public class ResultObservationTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -611,8 +532,7 @@ public class ResultObservationTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<ResultObservation> {
+	private static class ObjectFactory implements TestObjectFactory<ResultObservation> {
 		public ResultObservation create() {
 			return CCDFactory.eINSTANCE.createResultObservation();
 		}
@@ -629,6 +549,23 @@ public class ResultObservationTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends ResultObservationOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

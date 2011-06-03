@@ -24,31 +24,19 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Advance Directive Observation</b></em>' model objects.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Advance Directive Observation Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Advance Directive Observation Class Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Advance Directive Observation Mood Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Advance Directive Observation Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Advance Directive Observation Status Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Advance Directive Observation Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Effective Time</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -61,10 +49,9 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateAdvanceDirectiveObservationTemplateId() {
 		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationTemplateIdTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
-				"validateAdvanceDirectiveObservationTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAdvanceDirectiveObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
@@ -78,19 +65,15 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AdvanceDirectiveObservationOperations
-						.validateAdvanceDirectiveObservationTemplateId(
-								(AdvanceDirectiveObservation) objectToTest,
-								diagnostician, map);
+				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationTemplateId(
+					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateAdvanceDirectiveObservationTemplateIdTestCase
-				.doValidationTest();
+		validateAdvanceDirectiveObservationTemplateIdTestCase.doValidationTest();
 	}
 
 	/**
@@ -100,10 +83,9 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateAdvanceDirectiveObservationClassCode() {
 		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationClassCodeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
-				"validateAdvanceDirectiveObservationClassCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAdvanceDirectiveObservationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
@@ -117,13 +99,10 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AdvanceDirectiveObservationOperations
-						.validateAdvanceDirectiveObservationClassCode(
-								(AdvanceDirectiveObservation) objectToTest,
-								diagnostician, map);
+				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationClassCode(
+					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -138,10 +117,9 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateAdvanceDirectiveObservationMoodCode() {
 		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationMoodCodeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
-				"validateAdvanceDirectiveObservationMoodCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAdvanceDirectiveObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
@@ -155,13 +133,10 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AdvanceDirectiveObservationOperations
-						.validateAdvanceDirectiveObservationMoodCode(
-								(AdvanceDirectiveObservation) objectToTest,
-								diagnostician, map);
+				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationMoodCode(
+					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -176,10 +151,9 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateAdvanceDirectiveObservationId() {
 		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationIdTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
-				"validateAdvanceDirectiveObservationId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAdvanceDirectiveObservationId",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
@@ -196,13 +170,10 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AdvanceDirectiveObservationOperations
-						.validateAdvanceDirectiveObservationId(
-								(AdvanceDirectiveObservation) objectToTest,
-								diagnostician, map);
+				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationId(
+					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -217,10 +188,9 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateAdvanceDirectiveObservationStatusCode() {
 		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationStatusCodeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
-				"validateAdvanceDirectiveObservationStatusCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAdvanceDirectiveObservationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
@@ -237,19 +207,15 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AdvanceDirectiveObservationOperations
-						.validateAdvanceDirectiveObservationStatusCode(
-								(AdvanceDirectiveObservation) objectToTest,
-								diagnostician, map);
+				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationStatusCode(
+					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateAdvanceDirectiveObservationStatusCodeTestCase
-				.doValidationTest();
+		validateAdvanceDirectiveObservationStatusCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -259,10 +225,9 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateAdvanceDirectiveObservationEffectiveTime() {
 		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationEffectiveTimeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
-				"validateAdvanceDirectiveObservationEffectiveTime",
-				operationsForOCL
-						.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateAdvanceDirectiveObservationEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
@@ -279,34 +244,28 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AdvanceDirectiveObservationOperations
-						.validateAdvanceDirectiveObservationEffectiveTime(
-								(AdvanceDirectiveObservation) objectToTest,
-								diagnostician, map);
+				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationEffectiveTime(
+					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateAdvanceDirectiveObservationEffectiveTimeTestCase
-				.doValidationTest();
+		validateAdvanceDirectiveObservationEffectiveTimeTestCase.doValidationTest();
 	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			AdvanceDirectiveObservationOperations {
+	private static class OperationsForOCL extends AdvanceDirectiveObservationOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -318,8 +277,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<AdvanceDirectiveObservation> {
+	private static class ObjectFactory implements TestObjectFactory<AdvanceDirectiveObservation> {
 		public AdvanceDirectiveObservation create() {
 			return CCDFactory.eINSTANCE.createAdvanceDirectiveObservation();
 		}
@@ -336,6 +294,23 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends AdvanceDirectiveObservationOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

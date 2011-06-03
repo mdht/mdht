@@ -23,31 +23,19 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Medication Series Number Observation</b></em>' model
  * objects. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation#validateMedicationSeriesNumberObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medication Series Number Observation Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation#validateMedicationSeriesNumberObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medication Series Number Observation Class Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation#validateMedicationSeriesNumberObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medication Series Number Observation Mood Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation#validateMedicationSeriesNumberObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medication Series Number Observation Status Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation#validateMedicationSeriesNumberObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medication Series Number Observation Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation#validateMedicationSeriesNumberObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medication Series Number Observation Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation#validateMedicationSeriesNumberObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Series Number Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation#validateMedicationSeriesNumberObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Series Number Observation Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation#validateMedicationSeriesNumberObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Series Number Observation Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation#validateMedicationSeriesNumberObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Series Number Observation Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation#validateMedicationSeriesNumberObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Series Number Observation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationSeriesNumberObservation#validateMedicationSeriesNumberObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Series Number Observation Value</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -60,10 +48,9 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateMedicationSeriesNumberObservationTemplateId() {
 		OperationsTestCase<MedicationSeriesNumberObservation> validateMedicationSeriesNumberObservationTemplateIdTestCase = new OperationsTestCase<MedicationSeriesNumberObservation>(
-				"validateMedicationSeriesNumberObservationTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MEDICATION_SERIES_NUMBER_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateMedicationSeriesNumberObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_SERIES_NUMBER_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicationSeriesNumberObservation target) {
@@ -77,19 +64,15 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return MedicationSeriesNumberObservationOperations
-						.validateMedicationSeriesNumberObservationTemplateId(
-								(MedicationSeriesNumberObservation) objectToTest,
-								diagnostician, map);
+				return MedicationSeriesNumberObservationOperations.validateMedicationSeriesNumberObservationTemplateId(
+					(MedicationSeriesNumberObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMedicationSeriesNumberObservationTemplateIdTestCase
-				.doValidationTest();
+		validateMedicationSeriesNumberObservationTemplateIdTestCase.doValidationTest();
 	}
 
 	/**
@@ -99,10 +82,9 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateMedicationSeriesNumberObservationClassCode() {
 		OperationsTestCase<MedicationSeriesNumberObservation> validateMedicationSeriesNumberObservationClassCodeTestCase = new OperationsTestCase<MedicationSeriesNumberObservation>(
-				"validateMedicationSeriesNumberObservationClassCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MEDICATION_SERIES_NUMBER_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateMedicationSeriesNumberObservationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_SERIES_NUMBER_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicationSeriesNumberObservation target) {
@@ -116,19 +98,15 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return MedicationSeriesNumberObservationOperations
-						.validateMedicationSeriesNumberObservationClassCode(
-								(MedicationSeriesNumberObservation) objectToTest,
-								diagnostician, map);
+				return MedicationSeriesNumberObservationOperations.validateMedicationSeriesNumberObservationClassCode(
+					(MedicationSeriesNumberObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMedicationSeriesNumberObservationClassCodeTestCase
-				.doValidationTest();
+		validateMedicationSeriesNumberObservationClassCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -138,10 +116,9 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateMedicationSeriesNumberObservationMoodCode() {
 		OperationsTestCase<MedicationSeriesNumberObservation> validateMedicationSeriesNumberObservationMoodCodeTestCase = new OperationsTestCase<MedicationSeriesNumberObservation>(
-				"validateMedicationSeriesNumberObservationMoodCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MEDICATION_SERIES_NUMBER_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateMedicationSeriesNumberObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_SERIES_NUMBER_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicationSeriesNumberObservation target) {
@@ -155,19 +132,15 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return MedicationSeriesNumberObservationOperations
-						.validateMedicationSeriesNumberObservationMoodCode(
-								(MedicationSeriesNumberObservation) objectToTest,
-								diagnostician, map);
+				return MedicationSeriesNumberObservationOperations.validateMedicationSeriesNumberObservationMoodCode(
+					(MedicationSeriesNumberObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMedicationSeriesNumberObservationMoodCodeTestCase
-				.doValidationTest();
+		validateMedicationSeriesNumberObservationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -177,10 +150,9 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateMedicationSeriesNumberObservationStatusCode() {
 		OperationsTestCase<MedicationSeriesNumberObservation> validateMedicationSeriesNumberObservationStatusCodeTestCase = new OperationsTestCase<MedicationSeriesNumberObservation>(
-				"validateMedicationSeriesNumberObservationStatusCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MEDICATION_SERIES_NUMBER_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateMedicationSeriesNumberObservationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_SERIES_NUMBER_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicationSeriesNumberObservation target) {
@@ -197,19 +169,15 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return MedicationSeriesNumberObservationOperations
-						.validateMedicationSeriesNumberObservationStatusCode(
-								(MedicationSeriesNumberObservation) objectToTest,
-								diagnostician, map);
+				return MedicationSeriesNumberObservationOperations.validateMedicationSeriesNumberObservationStatusCode(
+					(MedicationSeriesNumberObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMedicationSeriesNumberObservationStatusCodeTestCase
-				.doValidationTest();
+		validateMedicationSeriesNumberObservationStatusCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -219,10 +187,9 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateMedicationSeriesNumberObservationCode() {
 		OperationsTestCase<MedicationSeriesNumberObservation> validateMedicationSeriesNumberObservationCodeTestCase = new OperationsTestCase<MedicationSeriesNumberObservation>(
-				"validateMedicationSeriesNumberObservationCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MEDICATION_SERIES_NUMBER_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateMedicationSeriesNumberObservationCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_SERIES_NUMBER_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicationSeriesNumberObservation target) {
@@ -239,19 +206,15 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return MedicationSeriesNumberObservationOperations
-						.validateMedicationSeriesNumberObservationCode(
-								(MedicationSeriesNumberObservation) objectToTest,
-								diagnostician, map);
+				return MedicationSeriesNumberObservationOperations.validateMedicationSeriesNumberObservationCode(
+					(MedicationSeriesNumberObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMedicationSeriesNumberObservationCodeTestCase
-				.doValidationTest();
+		validateMedicationSeriesNumberObservationCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -261,10 +224,9 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateMedicationSeriesNumberObservationValue() {
 		OperationsTestCase<MedicationSeriesNumberObservation> validateMedicationSeriesNumberObservationValueTestCase = new OperationsTestCase<MedicationSeriesNumberObservation>(
-				"validateMedicationSeriesNumberObservationValue",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MEDICATION_SERIES_NUMBER_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateMedicationSeriesNumberObservationValue",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_SERIES_NUMBER_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicationSeriesNumberObservation target) {
@@ -281,34 +243,28 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return MedicationSeriesNumberObservationOperations
-						.validateMedicationSeriesNumberObservationValue(
-								(MedicationSeriesNumberObservation) objectToTest,
-								diagnostician, map);
+				return MedicationSeriesNumberObservationOperations.validateMedicationSeriesNumberObservationValue(
+					(MedicationSeriesNumberObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMedicationSeriesNumberObservationValueTestCase
-				.doValidationTest();
+		validateMedicationSeriesNumberObservationValueTestCase.doValidationTest();
 	}
 
 	/**
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			MedicationSeriesNumberObservationOperations {
+	private static class OperationsForOCL extends MedicationSeriesNumberObservationOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -320,11 +276,9 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<MedicationSeriesNumberObservation> {
+	private static class ObjectFactory implements TestObjectFactory<MedicationSeriesNumberObservation> {
 		public MedicationSeriesNumberObservation create() {
-			return CCDFactory.eINSTANCE
-					.createMedicationSeriesNumberObservation();
+			return CCDFactory.eINSTANCE.createMedicationSeriesNumberObservation();
 		}
 	}
 
@@ -339,6 +293,23 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends MedicationSeriesNumberObservationOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

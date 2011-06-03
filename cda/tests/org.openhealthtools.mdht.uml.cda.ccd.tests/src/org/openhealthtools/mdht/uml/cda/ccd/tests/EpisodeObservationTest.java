@@ -23,37 +23,21 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Episode Observation</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#validateEpisodeObservationOneEntryRelationshipSUBJ(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Episode Observation One Entry Relationship SUBJ</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#validateEpisodeObservationExistsEntryRelationshipSAS(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Episode Observation Exists Entry Relationship SAS</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#validateEpisodeObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Episode Observation Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#validateEpisodeObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Episode Observation Class Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#validateEpisodeObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Episode Observation Mood Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#validateEpisodeObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Episode Observation Status Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#validateEpisodeObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Episode Observation Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#validateEpisodeObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Episode Observation Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#validateEpisodeObservationOneEntryRelationshipSUBJ(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Episode Observation One Entry Relationship SUBJ</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#validateEpisodeObservationExistsEntryRelationshipSAS(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Episode Observation Exists Entry Relationship SAS</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#validateEpisodeObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Episode Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#validateEpisodeObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Episode Observation Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#validateEpisodeObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Episode Observation Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#validateEpisodeObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Episode Observation Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#validateEpisodeObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Episode Observation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation#validateEpisodeObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Episode Observation Value</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -66,10 +50,9 @@ public class EpisodeObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateEpisodeObservationOneEntryRelationshipSUBJ() {
 		OperationsTestCase<EpisodeObservation> validateEpisodeObservationOneEntryRelationshipSUBJTestCase = new OperationsTestCase<EpisodeObservation>(
-				"validateEpisodeObservationOneEntryRelationshipSUBJ",
-				operationsForOCL
-						.getOCLValue("VALIDATE_EPISODE_OBSERVATION_ONE_ENTRY_RELATIONSHIP_SUBJ__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEpisodeObservationOneEntryRelationshipSUBJ",
+			operationsForOCL.getOCLValue("VALIDATE_EPISODE_OBSERVATION_ONE_ENTRY_RELATIONSHIP_SUBJ__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EpisodeObservation target) {
@@ -83,19 +66,15 @@ public class EpisodeObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EpisodeObservationOperations
-						.validateEpisodeObservationOneEntryRelationshipSUBJ(
-								(EpisodeObservation) objectToTest,
-								diagnostician, map);
+				return EpisodeObservationOperations.validateEpisodeObservationOneEntryRelationshipSUBJ(
+					(EpisodeObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateEpisodeObservationOneEntryRelationshipSUBJTestCase
-				.doValidationTest();
+		validateEpisodeObservationOneEntryRelationshipSUBJTestCase.doValidationTest();
 	}
 
 	/**
@@ -105,10 +84,9 @@ public class EpisodeObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateEpisodeObservationExistsEntryRelationshipSAS() {
 		OperationsTestCase<EpisodeObservation> validateEpisodeObservationExistsEntryRelationshipSASTestCase = new OperationsTestCase<EpisodeObservation>(
-				"validateEpisodeObservationExistsEntryRelationshipSAS",
-				operationsForOCL
-						.getOCLValue("VALIDATE_EPISODE_OBSERVATION_EXISTS_ENTRY_RELATIONSHIP_SAS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEpisodeObservationExistsEntryRelationshipSAS",
+			operationsForOCL.getOCLValue("VALIDATE_EPISODE_OBSERVATION_EXISTS_ENTRY_RELATIONSHIP_SAS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EpisodeObservation target) {
@@ -122,19 +100,15 @@ public class EpisodeObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EpisodeObservationOperations
-						.validateEpisodeObservationExistsEntryRelationshipSAS(
-								(EpisodeObservation) objectToTest,
-								diagnostician, map);
+				return EpisodeObservationOperations.validateEpisodeObservationExistsEntryRelationshipSAS(
+					(EpisodeObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateEpisodeObservationExistsEntryRelationshipSASTestCase
-				.doValidationTest();
+		validateEpisodeObservationExistsEntryRelationshipSASTestCase.doValidationTest();
 	}
 
 	/**
@@ -144,10 +118,9 @@ public class EpisodeObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateEpisodeObservationTemplateId() {
 		OperationsTestCase<EpisodeObservation> validateEpisodeObservationTemplateIdTestCase = new OperationsTestCase<EpisodeObservation>(
-				"validateEpisodeObservationTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_EPISODE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEpisodeObservationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_EPISODE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EpisodeObservation target) {
@@ -161,13 +134,10 @@ public class EpisodeObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EpisodeObservationOperations
-						.validateEpisodeObservationTemplateId(
-								(EpisodeObservation) objectToTest,
-								diagnostician, map);
+				return EpisodeObservationOperations.validateEpisodeObservationTemplateId(
+					(EpisodeObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -182,10 +152,9 @@ public class EpisodeObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateEpisodeObservationClassCode() {
 		OperationsTestCase<EpisodeObservation> validateEpisodeObservationClassCodeTestCase = new OperationsTestCase<EpisodeObservation>(
-				"validateEpisodeObservationClassCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_EPISODE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEpisodeObservationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_EPISODE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EpisodeObservation target) {
@@ -199,13 +168,10 @@ public class EpisodeObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EpisodeObservationOperations
-						.validateEpisodeObservationClassCode(
-								(EpisodeObservation) objectToTest,
-								diagnostician, map);
+				return EpisodeObservationOperations.validateEpisodeObservationClassCode(
+					(EpisodeObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -220,10 +186,9 @@ public class EpisodeObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateEpisodeObservationMoodCode() {
 		OperationsTestCase<EpisodeObservation> validateEpisodeObservationMoodCodeTestCase = new OperationsTestCase<EpisodeObservation>(
-				"validateEpisodeObservationMoodCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_EPISODE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEpisodeObservationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_EPISODE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EpisodeObservation target) {
@@ -237,13 +202,10 @@ public class EpisodeObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EpisodeObservationOperations
-						.validateEpisodeObservationMoodCode(
-								(EpisodeObservation) objectToTest,
-								diagnostician, map);
+				return EpisodeObservationOperations.validateEpisodeObservationMoodCode(
+					(EpisodeObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -258,10 +220,9 @@ public class EpisodeObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateEpisodeObservationStatusCode() {
 		OperationsTestCase<EpisodeObservation> validateEpisodeObservationStatusCodeTestCase = new OperationsTestCase<EpisodeObservation>(
-				"validateEpisodeObservationStatusCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_EPISODE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEpisodeObservationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_EPISODE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EpisodeObservation target) {
@@ -278,13 +239,10 @@ public class EpisodeObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EpisodeObservationOperations
-						.validateEpisodeObservationStatusCode(
-								(EpisodeObservation) objectToTest,
-								diagnostician, map);
+				return EpisodeObservationOperations.validateEpisodeObservationStatusCode(
+					(EpisodeObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -299,10 +257,9 @@ public class EpisodeObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateEpisodeObservationCode() {
 		OperationsTestCase<EpisodeObservation> validateEpisodeObservationCodeTestCase = new OperationsTestCase<EpisodeObservation>(
-				"validateEpisodeObservationCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_EPISODE_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEpisodeObservationCode",
+			operationsForOCL.getOCLValue("VALIDATE_EPISODE_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EpisodeObservation target) {
@@ -319,13 +276,10 @@ public class EpisodeObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EpisodeObservationOperations
-						.validateEpisodeObservationCode(
-								(EpisodeObservation) objectToTest,
-								diagnostician, map);
+				return EpisodeObservationOperations.validateEpisodeObservationCode(
+					(EpisodeObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -340,10 +294,9 @@ public class EpisodeObservationTest extends CDAValidationTest {
 	@Test
 	public void testValidateEpisodeObservationValue() {
 		OperationsTestCase<EpisodeObservation> validateEpisodeObservationValueTestCase = new OperationsTestCase<EpisodeObservation>(
-				"validateEpisodeObservationValue",
-				operationsForOCL
-						.getOCLValue("VALIDATE_EPISODE_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateEpisodeObservationValue",
+			operationsForOCL.getOCLValue("VALIDATE_EPISODE_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(EpisodeObservation target) {
@@ -360,13 +313,10 @@ public class EpisodeObservationTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return EpisodeObservationOperations
-						.validateEpisodeObservationValue(
-								(EpisodeObservation) objectToTest,
-								diagnostician, map);
+				return EpisodeObservationOperations.validateEpisodeObservationValue(
+					(EpisodeObservation) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -384,8 +334,7 @@ public class EpisodeObservationTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -397,8 +346,7 @@ public class EpisodeObservationTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<EpisodeObservation> {
+	private static class ObjectFactory implements TestObjectFactory<EpisodeObservation> {
 		public EpisodeObservation create() {
 			return CCDFactory.eINSTANCE.createEpisodeObservation();
 		}
@@ -415,6 +363,23 @@ public class EpisodeObservationTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends EpisodeObservationOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

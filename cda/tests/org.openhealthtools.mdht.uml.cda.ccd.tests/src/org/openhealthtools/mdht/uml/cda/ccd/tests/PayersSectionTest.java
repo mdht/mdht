@@ -64,10 +64,9 @@ public class PayersSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidatePayersSectionTitleValue() {
 		OperationsTestCase<PayersSection> validatePayersSectionTitleValueTestCase = new OperationsTestCase<PayersSection>(
-				"validatePayersSectionTitleValue",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PAYERS_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePayersSectionTitleValue",
+			operationsForOCL.getOCLValue("VALIDATE_PAYERS_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PayersSection target) {
@@ -85,11 +84,10 @@ public class PayersSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return PayersSectionOperations.validatePayersSectionTitleValue(
-						(PayersSection) objectToTest, diagnostician, map);
+					(PayersSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -104,10 +102,9 @@ public class PayersSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidatePayersSectionTemplateId() {
 		OperationsTestCase<PayersSection> validatePayersSectionTemplateIdTestCase = new OperationsTestCase<PayersSection>(
-				"validatePayersSectionTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PAYERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePayersSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PAYERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PayersSection target) {
@@ -121,11 +118,10 @@ public class PayersSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return PayersSectionOperations.validatePayersSectionTemplateId(
-						(PayersSection) objectToTest, diagnostician, map);
+					(PayersSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -140,10 +136,8 @@ public class PayersSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidatePayersSectionCode() {
 		OperationsTestCase<PayersSection> validatePayersSectionCodeTestCase = new OperationsTestCase<PayersSection>(
-				"validatePayersSectionCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PAYERS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePayersSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_PAYERS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(PayersSection target) {
@@ -157,11 +151,10 @@ public class PayersSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return PayersSectionOperations.validatePayersSectionCode(
-						(PayersSection) objectToTest, diagnostician, map);
+					(PayersSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -176,10 +169,9 @@ public class PayersSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidatePayersSectionTitle() {
 		OperationsTestCase<PayersSection> validatePayersSectionTitleTestCase = new OperationsTestCase<PayersSection>(
-				"validatePayersSectionTitle",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PAYERS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePayersSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_PAYERS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PayersSection target) {
@@ -196,11 +188,10 @@ public class PayersSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return PayersSectionOperations.validatePayersSectionTitle(
-						(PayersSection) objectToTest, diagnostician, map);
+					(PayersSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -215,10 +206,8 @@ public class PayersSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidatePayersSectionText() {
 		OperationsTestCase<PayersSection> validatePayersSectionTextTestCase = new OperationsTestCase<PayersSection>(
-				"validatePayersSectionText",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PAYERS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePayersSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_PAYERS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(PayersSection target) {
@@ -235,11 +224,10 @@ public class PayersSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return PayersSectionOperations.validatePayersSectionText(
-						(PayersSection) objectToTest, diagnostician, map);
+					(PayersSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -254,10 +242,9 @@ public class PayersSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidatePayersSectionCoverageActivity() {
 		OperationsTestCase<PayersSection> validatePayersSectionCoverageActivityTestCase = new OperationsTestCase<PayersSection>(
-				"validatePayersSectionCoverageActivity",
-				operationsForOCL
-						.getOCLValue("VALIDATE_PAYERS_SECTION_COVERAGE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validatePayersSectionCoverageActivity",
+			operationsForOCL.getOCLValue("VALIDATE_PAYERS_SECTION_COVERAGE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PayersSection target) {
@@ -271,13 +258,10 @@ public class PayersSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PayersSectionOperations
-						.validatePayersSectionCoverageActivity(
-								(PayersSection) objectToTest, diagnostician,
-								map);
+				return PayersSectionOperations.validatePayersSectionCoverageActivity(
+					(PayersSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -295,8 +279,7 @@ public class PayersSectionTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -308,8 +291,7 @@ public class PayersSectionTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<PayersSection> {
+	private static class ObjectFactory implements TestObjectFactory<PayersSection> {
 		public PayersSection create() {
 			return CCDFactory.eINSTANCE.createPayersSection();
 		}
@@ -326,6 +308,23 @@ public class PayersSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends PayersSectionOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

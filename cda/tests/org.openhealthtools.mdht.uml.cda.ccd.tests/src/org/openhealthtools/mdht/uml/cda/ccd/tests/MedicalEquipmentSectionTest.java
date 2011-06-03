@@ -22,22 +22,16 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Medical Equipment Section</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection#validateMedicalEquipmentSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medical Equipment Section Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection#validateMedicalEquipmentSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medical Equipment Section Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection#validateMedicalEquipmentSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medical Equipment Section Title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection#validateMedicalEquipmentSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Equipment Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection#validateMedicalEquipmentSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Equipment Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection#validateMedicalEquipmentSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical Equipment Section Title</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -50,10 +44,9 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateMedicalEquipmentSectionTemplateId() {
 		OperationsTestCase<MedicalEquipmentSection> validateMedicalEquipmentSectionTemplateIdTestCase = new OperationsTestCase<MedicalEquipmentSection>(
-				"validateMedicalEquipmentSectionTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateMedicalEquipmentSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicalEquipmentSection target) {
@@ -67,13 +60,10 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return MedicalEquipmentSectionOperations
-						.validateMedicalEquipmentSectionTemplateId(
-								(MedicalEquipmentSection) objectToTest,
-								diagnostician, map);
+				return MedicalEquipmentSectionOperations.validateMedicalEquipmentSectionTemplateId(
+					(MedicalEquipmentSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -88,10 +78,9 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateMedicalEquipmentSectionCode() {
 		OperationsTestCase<MedicalEquipmentSection> validateMedicalEquipmentSectionCodeTestCase = new OperationsTestCase<MedicalEquipmentSection>(
-				"validateMedicalEquipmentSectionCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MEDICAL_EQUIPMENT_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateMedicalEquipmentSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_EQUIPMENT_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicalEquipmentSection target) {
@@ -105,13 +94,10 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return MedicalEquipmentSectionOperations
-						.validateMedicalEquipmentSectionCode(
-								(MedicalEquipmentSection) objectToTest,
-								diagnostician, map);
+				return MedicalEquipmentSectionOperations.validateMedicalEquipmentSectionCode(
+					(MedicalEquipmentSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -126,10 +112,9 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 	@Test
 	public void testValidateMedicalEquipmentSectionTitle() {
 		OperationsTestCase<MedicalEquipmentSection> validateMedicalEquipmentSectionTitleTestCase = new OperationsTestCase<MedicalEquipmentSection>(
-				"validateMedicalEquipmentSectionTitle",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MEDICAL_EQUIPMENT_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateMedicalEquipmentSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_EQUIPMENT_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicalEquipmentSection target) {
@@ -146,13 +131,10 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return MedicalEquipmentSectionOperations
-						.validateMedicalEquipmentSectionTitle(
-								(MedicalEquipmentSection) objectToTest,
-								diagnostician, map);
+				return MedicalEquipmentSectionOperations.validateMedicalEquipmentSectionTitle(
+					(MedicalEquipmentSection) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -164,15 +146,13 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			MedicalEquipmentSectionOperations {
+	private static class OperationsForOCL extends MedicalEquipmentSectionOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -184,8 +164,7 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<MedicalEquipmentSection> {
+	private static class ObjectFactory implements TestObjectFactory<MedicalEquipmentSection> {
 		public MedicalEquipmentSection create() {
 			return CCDFactory.eINSTANCE.createMedicalEquipmentSection();
 		}
@@ -202,6 +181,23 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends MedicalEquipmentSectionOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

@@ -22,19 +22,15 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Family History Organizer</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Family History Organizer Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Family History Organizer Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Status Code</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -47,10 +43,9 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testValidateFamilyHistoryOrganizerTemplateId() {
 		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerTemplateIdTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
-				"validateFamilyHistoryOrganizerTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateFamilyHistoryOrganizerTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(FamilyHistoryOrganizer target) {
@@ -64,13 +59,10 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FamilyHistoryOrganizerOperations
-						.validateFamilyHistoryOrganizerTemplateId(
-								(FamilyHistoryOrganizer) objectToTest,
-								diagnostician, map);
+				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerTemplateId(
+					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -85,10 +77,9 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 	@Test
 	public void testValidateFamilyHistoryOrganizerStatusCode() {
 		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerStatusCodeTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
-				"validateFamilyHistoryOrganizerStatusCode",
-				operationsForOCL
-						.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateFamilyHistoryOrganizerStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(FamilyHistoryOrganizer target) {
@@ -105,13 +96,10 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FamilyHistoryOrganizerOperations
-						.validateFamilyHistoryOrganizerStatusCode(
-								(FamilyHistoryOrganizer) objectToTest,
-								diagnostician, map);
+				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerStatusCode(
+					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -123,15 +111,13 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			FamilyHistoryOrganizerOperations {
+	private static class OperationsForOCL extends FamilyHistoryOrganizerOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -143,8 +129,7 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<FamilyHistoryOrganizer> {
+	private static class ObjectFactory implements TestObjectFactory<FamilyHistoryOrganizer> {
 		public FamilyHistoryOrganizer create() {
 			return CCDFactory.eINSTANCE.createFamilyHistoryOrganizer();
 		}
@@ -161,6 +146,23 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends FamilyHistoryOrganizerOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 

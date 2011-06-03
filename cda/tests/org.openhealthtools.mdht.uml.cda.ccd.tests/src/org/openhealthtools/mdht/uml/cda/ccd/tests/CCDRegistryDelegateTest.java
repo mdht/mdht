@@ -7,6 +7,7 @@
 package org.openhealthtools.mdht.uml.cda.ccd.tests;
 
 import org.eclipse.emf.ecore.EObject;
+import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDRegistryDelegate;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.CCDRegistryDelegateOperations;
@@ -16,16 +17,14 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Registry Delegate</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.RegistryDelegate#getEClass(java.lang.String, java.lang.Object)
- * <em>Get EClass</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.RegistryDelegate#getEClass(java.lang.String, java.lang.Object) <em>Get EClass</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -41,8 +40,7 @@ public class CCDRegistryDelegateTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -54,8 +52,7 @@ public class CCDRegistryDelegateTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<CCDRegistryDelegate> {
+	private static class ObjectFactory implements TestObjectFactory<CCDRegistryDelegate> {
 		public CCDRegistryDelegate create() {
 			return CCDFactory.eINSTANCE.createCCDRegistryDelegate();
 		}
@@ -72,6 +69,23 @@ public class CCDRegistryDelegateTest extends CDAValidationTest {
 	 * @generated
 	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	private static class ConstructorTestClass extends CCDRegistryDelegateOperations {
+	}
+
+	/**
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
+	@Test
+	public void testConstructor() {
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	} // testConstructor
 
 	/**
 	 * 
