@@ -155,7 +155,7 @@ public void test<%= genOperation.getName().substring(0, 1).toUpperCase() +	genOp
 *
 * @generated
 */
-	private static class ObjectFactory implements <%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory") %><<%= genClass.getImportedInstanceClassName() %>> 
+	private static class ObjectFactory implements TestObjectFactory<<%= genClass.getImportedInstanceClassName() %>> 
 	{
 		public <%= genClass.getName() %> create() {		
 			return <%= genModel.getImportedName(genPackage.getQualifiedFactoryInterfaceName())  %>.<%=genPackage.getFactoryInstanceName() %>.create<%= genClass.getName() %>();
@@ -176,6 +176,31 @@ public void test<%= genOperation.getName().substring(0, 1).toUpperCase() +	genOp
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 
+		/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends <%= genModel.getImportedName(UML2GenModelUtil.getQualifiedOperationsClassName(genClass)) %> {};
+	
+		/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+	
+	<% } else { %>
+
+		/**
+* No Operations Test
+* @generated
+*/	
+		@Test
+	public void testNoOperations() {
+	}
 	
 	<% } %>
 	
@@ -187,6 +212,10 @@ public void test<%= genOperation.getName().substring(0, 1).toUpperCase() +	genOp
 	protected <%=genModel.getImportedName("org.eclipse.emf.ecore.EObject") %> getObjectToTest() {		
 		return null;
 	}
+	
+	
+
+	
 	
 } // <%=UML2GenModelUtil.getOperationsClassName(genClass)%>
 <%genModel.emitSortedImports();%>
