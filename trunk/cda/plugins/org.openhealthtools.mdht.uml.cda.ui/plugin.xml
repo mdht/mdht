@@ -131,6 +131,12 @@
 			<visibility>
 				<objectClass name="org.eclipse.uml2.uml.Class" />
 			</visibility>
+			
+			<action label="%addPublicationSample.label"
+				class="org.openhealthtools.mdht.uml.cda.ui.actions.AddPublicationSample"
+				menubarPath="cdatools/edit" enablesFor="1"
+				id="org.openhealthtools.mdht.uml.cda.ui.actions.addPublicationSample">
+			</action>
 			<action label="%compareTemplateAction.label"
 				class="org.openhealthtools.mdht.uml.cda.ui.actions.CompareTemplateAction"
 				menubarPath="cdatools/edit" enablesFor="1"
@@ -312,6 +318,9 @@
       </objectContribution>
    </extension>
        
+       
+ 
+       
    <!-- UML Enumeration menu items -->
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution adaptable="true"
@@ -359,18 +368,8 @@
       </view>
    </extension>
    
-   <extension
-         point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension
-            targetID="org.openhealthtools.mdht.uml.ui.perspective">
-         <view
-               ratio="0.5"
-               relative="org.eclipse.ui.views.TaskList"
-               relationship="right"
-               id="org.openhealthtools.mdht.uml.cda.ui.instance.view.id">
-         </view>
-      </perspectiveExtension>
-   </extension>
+ 
+   
    <extension
          id="org.openhealthtools.mdht.uml.cda.builder.id"
          name="CDA Project Builder"
