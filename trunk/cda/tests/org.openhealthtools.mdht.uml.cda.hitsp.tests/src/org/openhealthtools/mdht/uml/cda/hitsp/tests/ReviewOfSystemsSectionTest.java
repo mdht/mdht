@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.ReviewOfSystemsSectionO
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -67,7 +65,30 @@ public void testValidateHITSPReviewOfSystemsSectionTemplateId() {
 			@Override
 			protected void updateToPass(ReviewOfSystemsSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -109,6 +130,7 @@ public void testValidateHITSPReviewOfSystemsSectionTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<ReviewOfSystemsSection> {
+		@Override
 		public ReviewOfSystemsSection create() {		
 			return HITSPFactory.eINSTANCE.createReviewOfSystemsSection();
 		}
@@ -131,6 +153,30 @@ public void testValidateHITSPReviewOfSystemsSectionTemplateId() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends ReviewOfSystemsSectionOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
+
+
 	/**
 *
 * @generated

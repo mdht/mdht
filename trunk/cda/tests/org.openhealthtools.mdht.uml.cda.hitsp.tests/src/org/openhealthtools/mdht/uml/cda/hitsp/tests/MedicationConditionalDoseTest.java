@@ -28,6 +28,14 @@ public class MedicationConditionalDoseTest extends  CDAValidationTest {
 
 	
 	/**
+* No Operations Test
+* @generated
+*/	
+		@Test
+	public void testNoOperations() {
+	}
+
+	/**
 *
 * @generated
 */

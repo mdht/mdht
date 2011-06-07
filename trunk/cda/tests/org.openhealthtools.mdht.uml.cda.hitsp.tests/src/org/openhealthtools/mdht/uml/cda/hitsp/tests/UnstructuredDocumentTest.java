@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.UnstructuredDocumentOpe
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -69,7 +67,30 @@ public void testValidateScannedDocumentTemplateId() {
 			@Override
 			protected void updateToPass(UnstructuredDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -110,7 +131,30 @@ public void testValidateUnstructuredDocumentNoStructuredData() {
 			@Override
 			protected void updateToPass(UnstructuredDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -151,7 +195,30 @@ public void testValidateUnstructuredDocumentOnePatientPerDocument() {
 			@Override
 			protected void updateToPass(UnstructuredDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -193,6 +260,7 @@ public void testValidateUnstructuredDocumentOnePatientPerDocument() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<UnstructuredDocument> {
+		@Override
 		public UnstructuredDocument create() {		
 			return HITSPFactory.eINSTANCE.createUnstructuredDocument();
 		}
@@ -215,6 +283,28 @@ public void testValidateUnstructuredDocumentOnePatientPerDocument() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends UnstructuredDocumentOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
 	/**
 *
 * @generated

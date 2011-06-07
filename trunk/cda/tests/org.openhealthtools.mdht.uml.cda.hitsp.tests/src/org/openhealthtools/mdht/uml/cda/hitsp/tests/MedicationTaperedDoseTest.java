@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.MedicationTaperedDoseOp
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +32,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectF
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationTaperedDose#validateTaperedDoseTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Tapered Dose Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationTaperedDose#validateHITSPMedicationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Medication Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,10 +51,10 @@ public class MedicationTaperedDoseTest extends  CDAValidationTest {
 
  
 									
-public void testValidateTaperedDoseTemplateId() {
-			OperationsTestCase<MedicationTaperedDose> validateTaperedDoseTemplateIdTestCase = new OperationsTestCase<MedicationTaperedDose>(
-			"validateTaperedDoseTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_TAPERED_DOSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+public void testValidateHITSPMedicationTemplateId() {
+			OperationsTestCase<MedicationTaperedDose> validateHITSPMedicationTemplateIdTestCase = new OperationsTestCase<MedicationTaperedDose>(
+			"validateHITSPMedicationTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
 			@Override
@@ -67,7 +65,30 @@ public void testValidateTaperedDoseTemplateId() {
 			@Override
 			protected void updateToPass(MedicationTaperedDose target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -75,14 +96,16 @@ public void testValidateTaperedDoseTemplateId() {
 			
 			
 			
-				return MedicationTaperedDoseOperations.validateTaperedDoseTemplateId(
+				return MedicationTaperedDoseOperations.validateHITSPMedicationTemplateId(
 					(MedicationTaperedDose) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateTaperedDoseTemplateIdTestCase.doValidationTest();
-}		
+		validateHITSPMedicationTemplateIdTestCase.doValidationTest();
+}
+
+
 
 
 
@@ -109,6 +132,7 @@ public void testValidateTaperedDoseTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<MedicationTaperedDose> {
+		@Override
 		public MedicationTaperedDose create() {		
 			return HITSPFactory.eINSTANCE.createMedicationTaperedDose();
 		}
@@ -131,6 +155,30 @@ public void testValidateTaperedDoseTemplateId() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends MedicationTaperedDoseOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
+
+
 	/**
 *
 * @generated

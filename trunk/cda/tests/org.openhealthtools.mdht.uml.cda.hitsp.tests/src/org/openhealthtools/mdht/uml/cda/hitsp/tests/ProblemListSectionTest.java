@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.ProblemListSectionOpera
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -69,7 +67,30 @@ public void testValidateProblemListSectionTemplateId() {
 			@Override
 			protected void updateToPass(ProblemListSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -110,7 +131,30 @@ public void testValidateProblemListSectionCondition() {
 			@Override
 			protected void updateToPass(ProblemListSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -154,6 +198,7 @@ public void testValidateProblemListSectionCondition() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<ProblemListSection> {
+		@Override
 		public ProblemListSection create() {		
 			return HITSPFactory.eINSTANCE.createProblemListSection();
 		}
@@ -176,6 +221,28 @@ public void testValidateProblemListSectionCondition() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends ProblemListSectionOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
 	/**
 *
 * @generated

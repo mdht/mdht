@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.AllergiesReactionsSecti
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -69,7 +67,30 @@ public void testValidateHITSPAllergiesReactionsSectionTemplateId() {
 			@Override
 			protected void updateToPass(AllergiesReactionsSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -110,7 +131,30 @@ public void testValidateHITSPAllergiesReactionsSectionAllergyDrugSensitivity() {
 			@Override
 			protected void updateToPass(AllergiesReactionsSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -154,6 +198,7 @@ public void testValidateHITSPAllergiesReactionsSectionAllergyDrugSensitivity() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<AllergiesReactionsSection> {
+		@Override
 		public AllergiesReactionsSection create() {		
 			return HITSPFactory.eINSTANCE.createAllergiesReactionsSection();
 		}
@@ -176,6 +221,28 @@ public void testValidateHITSPAllergiesReactionsSectionAllergyDrugSensitivity() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends AllergiesReactionsSectionOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
 	/**
 *
 * @generated

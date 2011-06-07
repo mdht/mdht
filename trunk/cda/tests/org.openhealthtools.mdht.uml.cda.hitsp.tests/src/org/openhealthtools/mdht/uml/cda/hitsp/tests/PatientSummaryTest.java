@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.PatientSummaryOperation
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -34,6 +32,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectF
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#validatePatientSummaryHealthcareProvider(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Summary Healthcare Provider</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#validatePatientSummaryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Summary Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#validatePatientSummaryAdvanceDirectivesSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Summary Advance Directives Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary#validatePatientSummaryAllergiesReactionsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Summary Allergies Reactions Section</em>}</li>
@@ -79,6 +78,70 @@ public class PatientSummaryTest extends  CDAValidationTest {
 
  
 									
+public void testValidatePatientSummaryHealthcareProvider() {
+			OperationsTestCase<PatientSummary> validatePatientSummaryHealthcareProviderTestCase = new OperationsTestCase<PatientSummary>(
+			"validatePatientSummaryHealthcareProvider",
+			operationsForOCL.getOCLValue("VALIDATE_PATIENT_SUMMARY_HEALTHCARE_PROVIDER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
+
+			@Override
+			protected void updateToFail(PatientSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PatientSummary target) {
+				target.init();
+				
+				
+				
+				
+				
+
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return PatientSummaryOperations.validatePatientSummaryHealthcareProvider(
+					(PatientSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePatientSummaryHealthcareProviderTestCase.doValidationTest();
+}
+
+
+
+/**
+*
+* @generated
+*/
+@Test
+
+ 
+									
 public void testValidatePatientSummaryTemplateId() {
 			OperationsTestCase<PatientSummary> validatePatientSummaryTemplateIdTestCase = new OperationsTestCase<PatientSummary>(
 			"validatePatientSummaryTemplateId",
@@ -93,7 +156,30 @@ public void testValidatePatientSummaryTemplateId() {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -134,7 +220,30 @@ public void testValidatePatientSummaryAdvanceDirectivesSection() {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -175,7 +284,30 @@ public void testValidatePatientSummaryAllergiesReactionsSection() {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -216,7 +348,30 @@ public void testValidatePatientSummaryProblemListSection() {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -257,7 +412,30 @@ public void testValidatePatientSummaryEncountersSection() {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -298,7 +476,30 @@ public void testValidatePatientSummaryImmunizationsSection() {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -339,7 +540,30 @@ public void testValidatePatientSummaryPayersSection() {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -380,7 +604,30 @@ public void testValidatePatientSummaryMedicationsSection() {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -421,7 +668,30 @@ public void testValidatePatientSummarySurgeriesSection() {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -462,7 +732,30 @@ public void testValidatePatientSummaryPlanOfCareSection() {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -503,7 +796,30 @@ public void testValidatePatientSummaryPregnancyHistorySection() {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -544,7 +860,30 @@ public void testValidatePatientSummaryVitalSignsSection() {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -585,7 +924,30 @@ public void testValidatePatientSummaryDiagnosticResultsSection() {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -655,6 +1017,7 @@ public void testValidatePatientSummaryDiagnosticResultsSection() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<PatientSummary> {
+		@Override
 		public PatientSummary create() {		
 			return HITSPFactory.eINSTANCE.createPatientSummary();
 		}
@@ -677,6 +1040,28 @@ public void testValidatePatientSummaryDiagnosticResultsSection() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends PatientSummaryOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
 	/**
 *
 * @generated

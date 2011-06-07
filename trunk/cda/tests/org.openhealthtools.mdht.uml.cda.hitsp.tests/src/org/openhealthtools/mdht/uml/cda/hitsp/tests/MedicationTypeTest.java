@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.MedicationTypeOperation
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -68,7 +66,30 @@ public void testValidateMedicationTypeTemplateId() {
 			@Override
 			protected void updateToPass(MedicationType target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -109,7 +130,30 @@ public void testValidateMedicationTypeCode() {
 			@Override
 			protected void updateToPass(MedicationType target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -151,6 +195,7 @@ public void testValidateMedicationTypeCode() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<MedicationType> {
+		@Override
 		public MedicationType create() {		
 			return HITSPFactory.eINSTANCE.createMedicationType();
 		}
@@ -173,6 +218,28 @@ public void testValidateMedicationTypeCode() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends MedicationTypeOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
 	/**
 *
 * @generated

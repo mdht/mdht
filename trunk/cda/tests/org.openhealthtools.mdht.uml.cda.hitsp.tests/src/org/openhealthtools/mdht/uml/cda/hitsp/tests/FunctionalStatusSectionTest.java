@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.FunctionalStatusSection
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -67,7 +65,30 @@ public void testValidateHITSPFunctionalStatusSectionTemplateId() {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -109,6 +130,7 @@ public void testValidateHITSPFunctionalStatusSectionTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<FunctionalStatusSection> {
+		@Override
 		public FunctionalStatusSection create() {		
 			return HITSPFactory.eINSTANCE.createFunctionalStatusSection();
 		}
@@ -131,6 +153,30 @@ public void testValidateHITSPFunctionalStatusSectionTemplateId() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends FunctionalStatusSectionOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
+
+
 	/**
 *
 * @generated

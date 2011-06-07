@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.SocialHistorySectionOpe
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -67,7 +65,30 @@ public void testValidateHITSPSocialHistorySectionTemplateId() {
 			@Override
 			protected void updateToPass(SocialHistorySection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -109,6 +130,7 @@ public void testValidateHITSPSocialHistorySectionTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<SocialHistorySection> {
+		@Override
 		public SocialHistorySection create() {		
 			return HITSPFactory.eINSTANCE.createSocialHistorySection();
 		}
@@ -131,6 +153,30 @@ public void testValidateHITSPSocialHistorySectionTemplateId() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends SocialHistorySectionOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
+
+
 	/**
 *
 * @generated

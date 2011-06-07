@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.ImmunizationOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -34,6 +32,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectF
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Immunization#validateHITSPImmunizationRefusalReason(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Immunization Refusal Reason</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Immunization#validateHITSPImmunizationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Immunization Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Immunization#validateImmunizationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Code</em>}</li>
  * </ul>
@@ -43,6 +42,70 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectF
  */
  
 public class ImmunizationTest extends  CDAValidationTest {
+
+
+
+/**
+*
+* @generated
+*/
+@Test
+
+ 
+									
+public void testValidateHITSPImmunizationRefusalReason() {
+			OperationsTestCase<Immunization> validateHITSPImmunizationRefusalReasonTestCase = new OperationsTestCase<Immunization>(
+			"validateHITSPImmunizationRefusalReason",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_IMMUNIZATION_REFUSAL_REASON__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
+
+			@Override
+			protected void updateToFail(Immunization target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Immunization target) {
+				target.init();
+				
+				
+				
+				
+				
+
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return ImmunizationOperations.validateHITSPImmunizationRefusalReason(
+					(Immunization) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPImmunizationRefusalReasonTestCase.doValidationTest();
+}
 
 
 
@@ -68,7 +131,30 @@ public void testValidateHITSPImmunizationTemplateId() {
 			@Override
 			protected void updateToPass(Immunization target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -109,7 +195,30 @@ public void testValidateImmunizationCode() {
 			@Override
 			protected void updateToPass(Immunization target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -151,6 +260,7 @@ public void testValidateImmunizationCode() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<Immunization> {
+		@Override
 		public Immunization create() {		
 			return HITSPFactory.eINSTANCE.createImmunization();
 		}
@@ -173,6 +283,28 @@ public void testValidateImmunizationCode() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends ImmunizationOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
 	/**
 *
 * @generated
