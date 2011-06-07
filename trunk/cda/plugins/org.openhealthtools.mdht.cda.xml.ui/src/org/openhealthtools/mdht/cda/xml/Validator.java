@@ -164,8 +164,9 @@ public class Validator extends AbstractNestedValidator {
 		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 
 		IProject activeProject = null;
+		// change doc project to generated project
 
-		URI cdaDocumentURI = URI.createURI(uri);
+		URI cdaDocumentURI = URI.createURI(uri.replace(".doc", ""));
 
 		/*
 		 * uri passed in is full path, need to determine which project in the workspace the file is actually located
@@ -195,7 +196,6 @@ public class Validator extends AbstractNestedValidator {
 				}
 
 				if (segmentCtr == projectSegments.length) {
-					System.out.println(project.getName());
 					activeProject = project;
 					break;
 				}
