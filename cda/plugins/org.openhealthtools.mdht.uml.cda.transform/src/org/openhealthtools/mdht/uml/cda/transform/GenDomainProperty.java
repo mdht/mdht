@@ -15,10 +15,10 @@ package org.openhealthtools.mdht.uml.cda.transform;
 import java.util.List;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Enumeration;
-import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -39,30 +39,43 @@ public class GenDomainProperty extends TransformAbstract {
 
 	@Override
 	public Object caseProperty(Property property) {
+		addProperty(property, property.getClass_());
+
+		return property;
+	}
+
+	public void addProperty(Property property, Class ownerClass) {
 		if (isRemoved(property)) {
-			return null;
+			return;
 		}
 
 		// only process properties that are owned by a Class
 		if (property.getClass_() == null) {
-			return null;
+			return;
 		}
 
 		// if greenCDA style interfaces, omit all operations for fixed values
 		if (isFixedValue(property) && !transformerOptions.isIncludeFixedValueGetters()) {
-			return null;
+			return;
 		}
 
 		// TODO omit classCode, moodCode for now due to incompatible enum types with CDA base model
 		// also, most or all class/mood codes should be defaulted in greenCDA
 		if (property.getType() instanceof Enumeration) {
-			return null;
+			return;
 		}
 
-		Interface domainInterface = getDomainInterface(property.getClass_());
-		Classifier domainType = (Classifier) property.getType();
-		if (UMLUtil.isSameModel(property.getType(), property.getClass_())) {
+		Classifier domainInterface = getDomainInterface(ownerClass);
+		Classifier domainType = null;
+		if (UMLUtil.isSameModel(property.getType(), ownerClass)) {
 			domainType = getDomainInterface(property.getType());
+		} else {
+			// Class cdaType = CDAModelUtil.getCDAClass((Classifier) property.getType());
+			// if (cdaType != null) {
+			// domainType = cdaType;
+			// } else {
+			domainType = (Classifier) property.getType();
+			// }
 		}
 
 		// "getter" operation
@@ -132,8 +145,6 @@ public class GenDomainProperty extends TransformAbstract {
 				conformanceRule.setBody(conformanceText);
 			}
 		}
-
-		return property;
 	}
 
 	private boolean isFixedValue(Property property) {
