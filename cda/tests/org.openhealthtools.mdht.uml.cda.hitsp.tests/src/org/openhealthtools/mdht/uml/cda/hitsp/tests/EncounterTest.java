@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.EncounterOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -68,7 +66,30 @@ public void testValidateHITSPEncounterTemplateId() {
 			@Override
 			protected void updateToPass(Encounter target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -109,7 +130,30 @@ public void testValidateHITSPEncounterCode() {
 			@Override
 			protected void updateToPass(Encounter target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -151,6 +195,7 @@ public void testValidateHITSPEncounterCode() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<Encounter> {
+		@Override
 		public Encounter create() {		
 			return HITSPFactory.eINSTANCE.createEncounter();
 		}
@@ -173,6 +218,28 @@ public void testValidateHITSPEncounterCode() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends EncounterOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
 	/**
 *
 * @generated

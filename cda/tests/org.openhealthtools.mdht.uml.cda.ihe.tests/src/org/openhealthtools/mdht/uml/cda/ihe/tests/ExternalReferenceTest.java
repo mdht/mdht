@@ -159,8 +159,6 @@ public class ExternalReferenceTest extends CDAValidationTest {
 
 				Reference ref = CDAFactory.eINSTANCE.createReference();
 				ExternalDocument extdoc = CDAFactory.eINSTANCE.createExternalDocument();
-				ExternalDocumentImpl foo;
-
 				extdoc.setClassCode(ActClassDocument.CDALVLONE);
 				ref.setExternalDocument(extdoc);
 				target.getReferences().add(ref);

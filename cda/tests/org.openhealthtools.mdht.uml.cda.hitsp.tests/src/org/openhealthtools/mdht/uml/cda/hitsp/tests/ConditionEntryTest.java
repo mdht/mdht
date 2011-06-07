@@ -23,7 +23,8 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.ConditionEntryOperation
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 
 /**
@@ -71,7 +72,30 @@ public void testValidateConditionEntryHasOnsetDate() {
 			@Override
 			protected void updateToPass(ConditionEntry target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -112,7 +136,30 @@ public void testValidateConditionEntryHasResolutionDate() {
 			@Override
 			protected void updateToPass(ConditionEntry target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -153,7 +200,30 @@ public void testValidateConditionEntryHasUnknownResolutionDate() {
 			@Override
 			protected void updateToPass(ConditionEntry target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -194,7 +264,30 @@ public void testValidateConditionEntryCode() {
 			@Override
 			protected void updateToPass(ConditionEntry target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -235,7 +328,33 @@ public void testValidateProblemEntryValue() {
 			@Override
 			protected void updateToPass(ConditionEntry target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+			
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -277,6 +396,7 @@ public void testValidateProblemEntryValue() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<ConditionEntry> {
+		@Override
 		public ConditionEntry create() {		
 			return HITSPFactory.eINSTANCE.createConditionEntry();
 		}
@@ -299,6 +419,28 @@ public void testValidateProblemEntryValue() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends ConditionEntryOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
 	/**
 *
 * @generated

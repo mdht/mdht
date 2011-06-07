@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.DischargeDiagnosisSecti
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -67,7 +65,30 @@ public void testValidateHITSPDischargeDiagnosisSectionTemplateId() {
 			@Override
 			protected void updateToPass(DischargeDiagnosisSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -109,6 +130,7 @@ public void testValidateHITSPDischargeDiagnosisSectionTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<DischargeDiagnosisSection> {
+		@Override
 		public DischargeDiagnosisSection create() {		
 			return HITSPFactory.eINSTANCE.createDischargeDiagnosisSection();
 		}
@@ -131,6 +153,30 @@ public void testValidateHITSPDischargeDiagnosisSectionTemplateId() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends DischargeDiagnosisSectionOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
+
+
 	/**
 *
 * @generated

@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.LanguageSpokenOperation
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -69,7 +67,30 @@ public void testValidateLanguageSpokenNoProficiencyLevelCode() {
 			@Override
 			protected void updateToPass(LanguageSpoken target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -110,7 +131,30 @@ public void testValidateLanguageSpokenTemplateId() {
 			@Override
 			protected void updateToPass(LanguageSpoken target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -151,7 +195,30 @@ public void testValidateLanguageSpokenModeCode() {
 			@Override
 			protected void updateToPass(LanguageSpoken target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -193,6 +260,7 @@ public void testValidateLanguageSpokenModeCode() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<LanguageSpoken> {
+		@Override
 		public LanguageSpoken create() {		
 			return HITSPFactory.eINSTANCE.createLanguageSpoken();
 		}
@@ -215,6 +283,28 @@ public void testValidateLanguageSpokenModeCode() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends LanguageSpokenOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
 	/**
 *
 * @generated

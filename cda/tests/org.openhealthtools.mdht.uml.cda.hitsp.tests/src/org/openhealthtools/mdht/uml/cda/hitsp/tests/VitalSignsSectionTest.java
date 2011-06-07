@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.VitalSignsSectionOperat
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -68,7 +66,30 @@ public void testValidateHITSPVitalSignsSectionVitalSignEntry() {
 			@Override
 			protected void updateToPass(VitalSignsSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -109,7 +130,30 @@ public void testValidateHITSPVitalSignsSectionTemplateId() {
 			@Override
 			protected void updateToPass(VitalSignsSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -151,6 +195,7 @@ public void testValidateHITSPVitalSignsSectionTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<VitalSignsSection> {
+		@Override
 		public VitalSignsSection create() {		
 			return HITSPFactory.eINSTANCE.createVitalSignsSection();
 		}
@@ -173,6 +218,28 @@ public void testValidateHITSPVitalSignsSectionTemplateId() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends VitalSignsSectionOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
 	/**
 *
 * @generated

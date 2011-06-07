@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.DiagnosticResultsSectio
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -71,7 +69,30 @@ public void testValidateDiagnosticResultsSectionTemplateId() {
 			@Override
 			protected void updateToPass(DiagnosticResultsSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -112,7 +133,30 @@ public void testValidateDiagnosticResultsSectionDiagnosticProcedure() {
 			@Override
 			protected void updateToPass(DiagnosticResultsSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -153,7 +197,30 @@ public void testValidateDiagnosticResultsSectionResult() {
 			@Override
 			protected void updateToPass(DiagnosticResultsSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -199,6 +266,7 @@ public void testValidateDiagnosticResultsSectionResult() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<DiagnosticResultsSection> {
+		@Override
 		public DiagnosticResultsSection create() {		
 			return HITSPFactory.eINSTANCE.createDiagnosticResultsSection();
 		}
@@ -221,6 +289,28 @@ public void testValidateDiagnosticResultsSectionResult() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends DiagnosticResultsSectionOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
 	/**
 *
 * @generated

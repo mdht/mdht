@@ -23,7 +23,9 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.ResultOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 
 /**
@@ -34,6 +36,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectF
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultTypeCodeSystem(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Type Code System</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultLaboratoryResultsValueSet(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Laboratory Results Value Set</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultValuePresence(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Value Presence</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Code</em>}</li>
@@ -46,6 +50,134 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectF
  */
  
 public class ResultTest extends  CDAValidationTest {
+
+
+
+/**
+*
+* @generated
+*/
+@Test
+
+ 
+									
+public void testValidateResultTypeCodeSystem() {
+			OperationsTestCase<Result> validateResultTypeCodeSystemTestCase = new OperationsTestCase<Result>(
+			"validateResultTypeCodeSystem",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_TYPE_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
+
+			@Override
+			protected void updateToFail(Result target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Result target) {
+				target.init();
+				
+				
+				
+				
+				
+
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return ResultOperations.validateResultTypeCodeSystem(
+					(Result) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResultTypeCodeSystemTestCase.doValidationTest();
+}
+
+
+
+	/**
+*
+* @generated
+*/
+@Test
+
+ 
+									
+public void testValidateResultLaboratoryResultsValueSet() {
+			OperationsTestCase<Result> validateResultLaboratoryResultsValueSetTestCase = new OperationsTestCase<Result>(
+			"validateResultLaboratoryResultsValueSet",
+			operationsForOCL.getOCLValue("VALIDATE_RESULT_LABORATORY_RESULTS_VALUE_SET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
+
+			@Override
+			protected void updateToFail(Result target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Result target) {
+				target.init();
+				
+				
+				
+				
+				
+
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return ResultOperations.validateResultLaboratoryResultsValueSet(
+					(Result) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResultLaboratoryResultsValueSetTestCase.doValidationTest();
+}
 
 
 
@@ -71,7 +203,30 @@ public void testValidateResultValuePresence() {
 			@Override
 			protected void updateToPass(Result target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -112,7 +267,30 @@ public void testValidateResultTemplateId() {
 			@Override
 			protected void updateToPass(Result target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -153,7 +331,30 @@ public void testValidateResultCode() {
 			@Override
 			protected void updateToPass(Result target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -194,7 +395,33 @@ public void testValidateResultEffectiveTime() {
 			@Override
 			protected void updateToPass(Result target) {
 				target.init();
+				
+				
+					IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
+					target.setEffectiveTime(ts );								
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -235,7 +462,33 @@ public void testValidateResultValue() {
 			@Override
 			protected void updateToPass(Result target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+			
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -277,6 +530,7 @@ public void testValidateResultValue() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<Result> {
+		@Override
 		public Result create() {		
 			return HITSPFactory.eINSTANCE.createResult();
 		}
@@ -299,6 +553,28 @@ public void testValidateResultValue() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends ResultOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
 	/**
 *
 * @generated

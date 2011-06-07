@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.ConditionOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -73,7 +71,30 @@ public void testValidateConditionHasTreatingProvider() {
 			@Override
 			protected void updateToPass(Condition target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -114,7 +135,30 @@ public void testValidateConditionHasProviderId() {
 			@Override
 			protected void updateToPass(Condition target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -155,7 +199,30 @@ public void testValidateConditionHasProviderTreatmentTime() {
 			@Override
 			protected void updateToPass(Condition target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -196,7 +263,30 @@ public void testValidateConditionTemplateId() {
 			@Override
 			protected void updateToPass(Condition target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -237,7 +327,30 @@ public void testValidateConditionConditionEntry() {
 			@Override
 			protected void updateToPass(Condition target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -283,6 +396,7 @@ public void testValidateConditionConditionEntry() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<Condition> {
+		@Override
 		public Condition create() {		
 			return HITSPFactory.eINSTANCE.createCondition();
 		}
@@ -305,6 +419,28 @@ public void testValidateConditionConditionEntry() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends ConditionOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
 	/**
 *
 * @generated

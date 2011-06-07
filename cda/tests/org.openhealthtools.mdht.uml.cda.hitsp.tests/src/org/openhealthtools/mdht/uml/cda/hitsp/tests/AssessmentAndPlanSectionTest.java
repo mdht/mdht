@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.AssessmentAndPlanSectio
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -67,7 +65,30 @@ public void testValidateHITSPAssessmentAndPlanSectionTemplateId() {
 			@Override
 			protected void updateToPass(AssessmentAndPlanSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -109,6 +130,7 @@ public void testValidateHITSPAssessmentAndPlanSectionTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<AssessmentAndPlanSection> {
+		@Override
 		public AssessmentAndPlanSection create() {		
 			return HITSPFactory.eINSTANCE.createAssessmentAndPlanSection();
 		}
@@ -131,6 +153,30 @@ public void testValidateHITSPAssessmentAndPlanSectionTemplateId() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends AssessmentAndPlanSectionOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
+
+
 	/**
 *
 * @generated

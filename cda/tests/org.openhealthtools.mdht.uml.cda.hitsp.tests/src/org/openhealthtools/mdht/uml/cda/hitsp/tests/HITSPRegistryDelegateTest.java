@@ -19,8 +19,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.HITSPRegistryDelegateOp
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -66,6 +64,7 @@ public class HITSPRegistryDelegateTest extends  CDAValidationTest {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<HITSPRegistryDelegate> {
+		@Override
 		public HITSPRegistryDelegate create() {		
 			return HITSPFactory.eINSTANCE.createHITSPRegistryDelegate();
 		}
@@ -88,6 +87,30 @@ public class HITSPRegistryDelegateTest extends  CDAValidationTest {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends HITSPRegistryDelegateOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
+
+
 	/**
 *
 * @generated

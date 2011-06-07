@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.ProcedureOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -71,7 +69,30 @@ public void testValidateHITSPProcedureHasCodeOriginalText() {
 			@Override
 			protected void updateToPass(Procedure target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -112,7 +133,30 @@ public void testValidateHITSPProcedurePerformerAssignedEntity() {
 			@Override
 			protected void updateToPass(Procedure target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -153,7 +197,30 @@ public void testValidateHITSPProcedureTemplateId() {
 			@Override
 			protected void updateToPass(Procedure target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -194,7 +261,30 @@ public void testValidateHITSPProcedureTargetSiteCode() {
 			@Override
 			protected void updateToPass(Procedure target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -235,7 +325,30 @@ public void testValidateHITSPProcedureCode() {
 			@Override
 			protected void updateToPass(Procedure target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -277,6 +390,7 @@ public void testValidateHITSPProcedureCode() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<Procedure> {
+		@Override
 		public Procedure create() {		
 			return HITSPFactory.eINSTANCE.createProcedure();
 		}
@@ -299,6 +413,28 @@ public void testValidateHITSPProcedureCode() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends ProcedureOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
 	/**
 *
 * @generated

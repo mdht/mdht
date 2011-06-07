@@ -23,7 +23,8 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.VitalSignOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 
 /**
@@ -68,7 +69,30 @@ public void testValidateVitalSignTemplateId() {
 			@Override
 			protected void updateToPass(VitalSign target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -109,7 +133,33 @@ public void testValidateResultObservationCode() {
 			@Override
 			protected void updateToPass(VitalSign target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+			
+				CD cd  = DatatypesFactory.eINSTANCE.createCD();
+				target.setCode(cd);
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -151,6 +201,7 @@ public void testValidateResultObservationCode() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<VitalSign> {
+		@Override
 		public VitalSign create() {		
 			return HITSPFactory.eINSTANCE.createVitalSign();
 		}
@@ -173,6 +224,28 @@ public void testValidateResultObservationCode() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends VitalSignOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
 	/**
 *
 * @generated

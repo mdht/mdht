@@ -23,8 +23,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.HistoryOfPastIllnessSec
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.TestObjectFactory;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -67,7 +65,30 @@ public void testValidateHITSPHistoryOfPastIllnessSectionTemplateId() {
 			@Override
 			protected void updateToPass(HistoryOfPastIllnessSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 
 			@Override
@@ -109,6 +130,7 @@ public void testValidateHITSPHistoryOfPastIllnessSectionTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<HistoryOfPastIllnessSection> {
+		@Override
 		public HistoryOfPastIllnessSection create() {		
 			return HITSPFactory.eINSTANCE.createHistoryOfPastIllnessSection();
 		}
@@ -131,6 +153,30 @@ public void testValidateHITSPHistoryOfPastIllnessSectionTemplateId() {
 	
 	
 	
+	/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends HistoryOfPastIllnessSectionOperations {}
+
+
+
+
+
+/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+
+
+
+
+
 	/**
 *
 * @generated
