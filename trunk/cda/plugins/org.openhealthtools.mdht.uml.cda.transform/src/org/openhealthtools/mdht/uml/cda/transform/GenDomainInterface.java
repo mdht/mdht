@@ -13,26 +13,36 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import java.util.List;
+
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.Interface;
+import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Operation;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.UMLPackage;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelConsolidator;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class GenDomainInterface extends TransformAbstract {
+	private GenDomainProperty genDomainProperty = new GenDomainProperty(transformerOptions);
+
 	public GenDomainInterface(EcoreTransformerOptions options) {
 		super(options);
 	}
 
 	@Override
 	public Object caseClass(Class umlClass) {
-		Interface domainInterface = getDomainInterface(umlClass);
+		Classifier domainInterface = getDomainInterface(umlClass);
 
-		if (transformerOptions.isIncludeInterfaceRealization()) {
-			umlClass.createInterfaceRealization(null, domainInterface);
+		if (transformerOptions.isIncludeInterfaceRealization() && domainInterface instanceof Interface) {
+			umlClass.createInterfaceRealization(null, (Interface) domainInterface);
 		}
 
 		// copy comments for use in Javadoc
@@ -54,7 +64,7 @@ public class GenDomainInterface extends TransformAbstract {
 		for (Generalization generalization : umlClass.getGeneralizations()) {
 			// TODO ultimately want to support domain interfaces in other models
 			if (UMLUtil.isSameModel(umlClass, generalization.getGeneral())) {
-				Interface extendsInterface = getDomainInterface(generalization.getGeneral());
+				Classifier extendsInterface = getDomainInterface(generalization.getGeneral());
 				if (extendsInterface != null) {
 					domainInterface.createGeneralization(extendsInterface);
 				}
@@ -63,13 +73,43 @@ public class GenDomainInterface extends TransformAbstract {
 
 		Class cdaType = CDAModelUtil.getCDAClass(umlClass);
 		if (cdaType != null) {
-			// toCDAType() operation
-			String operationName = "toCDAType";
-			Operation operation = domainInterface.createOwnedOperation(operationName, null, null, cdaType);
-			operation.setIsQuery(true); // make this a query method
+			if (domainInterface instanceof Interface) {
+				// toCDAType() operation
+				String operationName = "getCDAType";
+				Operation operation = ((Interface) domainInterface).createOwnedOperation(
+					operationName, null, null, cdaType);
+				operation.setIsQuery(true); // make this a query method
+
+				// create body constraint to implement the operation
+				StringBuffer operationBody = new StringBuffer();
+				operationBody.append("self.oclAsType(" + cdaType.getQualifiedName() + ")");
+				addBodyExpression(operation, "OCL", operationBody.toString());
+			} else {
+				((Class) domainInterface).createOwnedAttribute("cDAType", cdaType);
+			}
+		}
+
+		CDAModelConsolidator consolidator = new CDAModelConsolidator();
+		List<Property> allProperties = consolidator.getAllProperties(umlClass);
+		for (Property property : allProperties) {
+			genDomainProperty.addProperty(property, umlClass);
 		}
 
 		return domainInterface;
+	}
+
+	protected void addBodyAnnotation(Operation operation, String body) {
+		EcoreUtil.setAnnotation(operation, "http://www.eclipse.org/emf/2002/GenModel", "body", body);
+	}
+
+	protected void addBodyExpression(Operation operation, String language, String body) {
+		Constraint bodyConstraint = operation.createBodyCondition("body");
+		bodyConstraint.getConstrainedElements().add(operation);
+
+		OpaqueExpression bodyExpression = (OpaqueExpression) bodyConstraint.createSpecification(
+			null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
+		bodyExpression.getLanguages().add(language);
+		bodyExpression.getBodies().add(body);
 	}
 
 }

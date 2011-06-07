@@ -391,14 +391,22 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		return domainPkg;
 	}
 
-	protected Interface getDomainInterface(Type modelType) {
+	protected Classifier getDomainInterface(Type modelType) {
 		String classifierName = normalizeCodeName(modelType.getName());
 		if (transformerOptions.isUseBusinessNames()) {
 			classifierName = normalizeCodeName(modelType.getLabel(false));
 		}
 
 		Package domainPkg = getDomainInterfacePackage(modelType);
-		return (Interface) domainPkg.getOwnedType(
-			"I" + classifierName, false, UMLPackage.eINSTANCE.getInterface(), true);
+		Classifier domainInterface;
+		if (transformerOptions.isGenerateDomainInterface()) {
+			domainInterface = (Interface) domainPkg.getOwnedType(
+				"I" + classifierName, false, UMLPackage.eINSTANCE.getInterface(), true);
+		} else {
+			domainInterface = (Class) domainPkg.getOwnedType(
+				"I" + classifierName, false, UMLPackage.eINSTANCE.getClass_(), true);
+		}
+
+		return domainInterface;
 	}
 }
