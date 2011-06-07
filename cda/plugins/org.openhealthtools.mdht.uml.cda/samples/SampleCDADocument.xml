@@ -1016,7 +1016,7 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 					</text>
 					<entry>
 						<act classCode="ACT" moodCode="INT">
-							<id/>
+							<id nullFlavor="UNK"/>
 							<code code="23426006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pulmonary function test"/>
 							<text>Complete PFTs with lung volumes.</text>
 							<entryRelationship typeCode="COMP">
@@ -1038,7 +1038,7 @@ Readers should be aware of the evolving "Using SNOMED CT in HL7 Version 3" imple
 					</entry>
 					<entry>
 						<act classCode="ACT" moodCode="INT">
-							<id/>
+							<id nullFlavor="UNK"/>
 							<code code="223468009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Teaching of skills">
 								<qualifier>
 									<name code="363702006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="has focus"/>
