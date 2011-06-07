@@ -430,20 +430,6 @@ public class InstanceGenerator {
 
 					}
 
-					if (clinicalDocument != null) {
-
-						CDAUtil.Query query = new CDAUtil.Query(clinicalDocument);
-
-						eObject = query.getEObject((java.lang.Class<? extends EObject>) eClass.getInstanceClass());
-
-						if (eObject != null) {
-
-							return eObject;
-
-						}
-
-					}
-
 				}
 
 			} catch (FileNotFoundException e) {
@@ -454,6 +440,15 @@ public class InstanceGenerator {
 
 				e.printStackTrace();
 
+			}
+
+		}
+
+		if (clinicalDocument != null) {
+			CDAUtil.Query query = new CDAUtil.Query(clinicalDocument);
+			eObject = query.getEObject((java.lang.Class<? extends EObject>) eClass.getInstanceClass());
+			if (eObject != null) {
+				return eObject;
 			}
 
 		}
