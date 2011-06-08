@@ -67,11 +67,13 @@ public void testValidateResultTypeCodeSystem() {
 			operationsForOCL.getOCLValue("VALIDATE_RESULT_TYPE_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Result target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Result target) {
 				target.init();
@@ -101,6 +103,7 @@ public void testValidateResultTypeCodeSystem() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -131,11 +134,13 @@ public void testValidateResultLaboratoryResultsValueSet() {
 			operationsForOCL.getOCLValue("VALIDATE_RESULT_LABORATORY_RESULTS_VALUE_SET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Result target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Result target) {
 				target.init();
@@ -165,6 +170,7 @@ public void testValidateResultLaboratoryResultsValueSet() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -195,11 +201,13 @@ public void testValidateResultValuePresence() {
 			operationsForOCL.getOCLValue("VALIDATE_RESULT_VALUE_PRESENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Result target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Result target) {
 				target.init();
@@ -229,6 +237,7 @@ public void testValidateResultValuePresence() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -259,11 +268,13 @@ public void testValidateResultTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_RESULT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Result target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Result target) {
 				target.init();
@@ -293,6 +304,7 @@ public void testValidateResultTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -323,11 +335,13 @@ public void testValidateResultCode() {
 			operationsForOCL.getOCLValue("VALIDATE_RESULT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Result target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Result target) {
 				target.init();
@@ -357,6 +371,7 @@ public void testValidateResultCode() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -387,11 +402,13 @@ public void testValidateResultEffectiveTime() {
 			operationsForOCL.getOCLValue("VALIDATE_RESULT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Result target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Result target) {
 				target.init();
@@ -424,6 +441,7 @@ public void testValidateResultEffectiveTime() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -454,11 +472,13 @@ public void testValidateResultValue() {
 			operationsForOCL.getOCLValue("VALIDATE_RESULT_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Result target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Result target) {
 				target.init();
@@ -491,6 +511,7 @@ public void testValidateResultValue() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -530,6 +551,7 @@ public void testValidateResultValue() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<Result> {
+		
 		@Override
 		public Result create() {		
 			return HITSPFactory.eINSTANCE.createResult();
@@ -579,6 +601,7 @@ public void testValidateResultValue() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

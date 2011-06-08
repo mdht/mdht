@@ -61,11 +61,13 @@ public void testValidateDiagnosticResultsSectionTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_RESULTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(DiagnosticResultsSection target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(DiagnosticResultsSection target) {
 				target.init();
@@ -95,6 +97,7 @@ public void testValidateDiagnosticResultsSectionTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -125,11 +128,13 @@ public void testValidateDiagnosticResultsSectionDiagnosticProcedure() {
 			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_RESULTS_SECTION_DIAGNOSTIC_PROCEDURE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(DiagnosticResultsSection target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(DiagnosticResultsSection target) {
 				target.init();
@@ -159,6 +164,7 @@ public void testValidateDiagnosticResultsSectionDiagnosticProcedure() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -189,11 +195,13 @@ public void testValidateDiagnosticResultsSectionResult() {
 			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_RESULTS_SECTION_RESULT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(DiagnosticResultsSection target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(DiagnosticResultsSection target) {
 				target.init();
@@ -223,6 +231,7 @@ public void testValidateDiagnosticResultsSectionResult() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -266,6 +275,7 @@ public void testValidateDiagnosticResultsSectionResult() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<DiagnosticResultsSection> {
+		
 		@Override
 		public DiagnosticResultsSection create() {		
 			return HITSPFactory.eINSTANCE.createDiagnosticResultsSection();
@@ -315,6 +325,7 @@ public void testValidateDiagnosticResultsSectionResult() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

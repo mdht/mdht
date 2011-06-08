@@ -57,11 +57,13 @@ public void testValidateHITSPFunctionalStatusSectionTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(FunctionalStatusSection target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
@@ -91,6 +93,7 @@ public void testValidateHITSPFunctionalStatusSectionTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -130,6 +133,7 @@ public void testValidateHITSPFunctionalStatusSectionTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<FunctionalStatusSection> {
+		
 		@Override
 		public FunctionalStatusSection create() {		
 			return HITSPFactory.eINSTANCE.createFunctionalStatusSection();
@@ -181,6 +185,7 @@ public void testValidateHITSPFunctionalStatusSectionTemplateId() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

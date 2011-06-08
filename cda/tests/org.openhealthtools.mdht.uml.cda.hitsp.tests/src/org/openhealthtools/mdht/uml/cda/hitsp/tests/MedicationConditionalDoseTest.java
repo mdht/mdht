@@ -39,6 +39,7 @@ public class MedicationConditionalDoseTest extends  CDAValidationTest {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

@@ -59,11 +59,13 @@ public void testValidateHITSPAllergiesReactionsSectionTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(AllergiesReactionsSection target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(AllergiesReactionsSection target) {
 				target.init();
@@ -93,6 +95,7 @@ public void testValidateHITSPAllergiesReactionsSectionTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -123,11 +126,13 @@ public void testValidateHITSPAllergiesReactionsSectionAllergyDrugSensitivity() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_ALLERGIES_REACTIONS_SECTION_ALLERGY_DRUG_SENSITIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(AllergiesReactionsSection target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(AllergiesReactionsSection target) {
 				target.init();
@@ -157,6 +162,7 @@ public void testValidateHITSPAllergiesReactionsSectionAllergyDrugSensitivity() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -198,6 +204,7 @@ public void testValidateHITSPAllergiesReactionsSectionAllergyDrugSensitivity() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<AllergiesReactionsSection> {
+		
 		@Override
 		public AllergiesReactionsSection create() {		
 			return HITSPFactory.eINSTANCE.createAllergiesReactionsSection();
@@ -247,6 +254,7 @@ public void testValidateHITSPAllergiesReactionsSectionAllergyDrugSensitivity() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

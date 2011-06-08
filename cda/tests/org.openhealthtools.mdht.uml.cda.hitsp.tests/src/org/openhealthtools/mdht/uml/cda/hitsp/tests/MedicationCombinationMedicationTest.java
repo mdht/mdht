@@ -39,6 +39,7 @@ public class MedicationCombinationMedicationTest extends  CDAValidationTest {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

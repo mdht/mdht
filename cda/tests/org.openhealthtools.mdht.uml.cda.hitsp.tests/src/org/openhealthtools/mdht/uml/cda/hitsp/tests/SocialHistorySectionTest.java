@@ -57,11 +57,13 @@ public void testValidateHITSPSocialHistorySectionTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_SOCIAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(SocialHistorySection target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(SocialHistorySection target) {
 				target.init();
@@ -91,6 +93,7 @@ public void testValidateHITSPSocialHistorySectionTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -130,6 +133,7 @@ public void testValidateHITSPSocialHistorySectionTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<SocialHistorySection> {
+		
 		@Override
 		public SocialHistorySection create() {		
 			return HITSPFactory.eINSTANCE.createSocialHistorySection();
@@ -181,6 +185,7 @@ public void testValidateHITSPSocialHistorySectionTemplateId() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

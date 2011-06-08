@@ -61,11 +61,13 @@ public void testValidateHITSPProcedureHasCodeOriginalText() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_PROCEDURE_HAS_CODE_ORIGINAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Procedure target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Procedure target) {
 				target.init();
@@ -95,6 +97,7 @@ public void testValidateHITSPProcedureHasCodeOriginalText() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -125,11 +128,13 @@ public void testValidateHITSPProcedurePerformerAssignedEntity() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_PROCEDURE_PERFORMER_ASSIGNED_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Procedure target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Procedure target) {
 				target.init();
@@ -159,6 +164,7 @@ public void testValidateHITSPProcedurePerformerAssignedEntity() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -189,11 +195,13 @@ public void testValidateHITSPProcedureTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_PROCEDURE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Procedure target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Procedure target) {
 				target.init();
@@ -223,6 +231,7 @@ public void testValidateHITSPProcedureTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -253,11 +262,13 @@ public void testValidateHITSPProcedureTargetSiteCode() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_PROCEDURE_TARGET_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Procedure target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Procedure target) {
 				target.init();
@@ -287,6 +298,7 @@ public void testValidateHITSPProcedureTargetSiteCode() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -317,11 +329,13 @@ public void testValidateHITSPProcedureCode() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_PROCEDURE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Procedure target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Procedure target) {
 				target.init();
@@ -351,6 +365,7 @@ public void testValidateHITSPProcedureCode() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -390,6 +405,7 @@ public void testValidateHITSPProcedureCode() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<Procedure> {
+		
 		@Override
 		public Procedure create() {		
 			return HITSPFactory.eINSTANCE.createProcedure();
@@ -439,6 +455,7 @@ public void testValidateHITSPProcedureCode() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

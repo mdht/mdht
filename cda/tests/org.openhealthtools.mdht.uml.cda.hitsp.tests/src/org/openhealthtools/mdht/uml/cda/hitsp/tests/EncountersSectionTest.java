@@ -59,11 +59,13 @@ public void testValidateHITSPEncountersSectionTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_ENCOUNTERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(EncountersSection target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(EncountersSection target) {
 				target.init();
@@ -93,6 +95,7 @@ public void testValidateHITSPEncountersSectionTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -123,11 +126,13 @@ public void testValidateHITSPEncountersSectionEncounterEntry() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_ENCOUNTERS_SECTION_ENCOUNTER_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(EncountersSection target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(EncountersSection target) {
 				target.init();
@@ -157,6 +162,7 @@ public void testValidateHITSPEncountersSectionEncounterEntry() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -198,6 +204,7 @@ public void testValidateHITSPEncountersSectionEncounterEntry() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<EncountersSection> {
+		
 		@Override
 		public EncountersSection create() {		
 			return HITSPFactory.eINSTANCE.createEncountersSection();
@@ -247,6 +254,7 @@ public void testValidateHITSPEncountersSectionEncounterEntry() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

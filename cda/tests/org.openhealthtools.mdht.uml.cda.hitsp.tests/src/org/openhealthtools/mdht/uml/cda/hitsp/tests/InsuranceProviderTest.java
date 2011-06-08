@@ -57,11 +57,13 @@ public void testValidateInsuranceProviderTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
@@ -91,6 +93,7 @@ public void testValidateInsuranceProviderTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -130,6 +133,7 @@ public void testValidateInsuranceProviderTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<InsuranceProvider> {
+		
 		@Override
 		public InsuranceProvider create() {		
 			return HITSPFactory.eINSTANCE.createInsuranceProvider();
@@ -181,6 +185,7 @@ public void testValidateInsuranceProviderTemplateId() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

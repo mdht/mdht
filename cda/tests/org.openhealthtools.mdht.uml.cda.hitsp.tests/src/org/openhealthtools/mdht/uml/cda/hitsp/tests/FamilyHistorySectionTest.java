@@ -57,11 +57,13 @@ public void testValidateHITSPFamilyHistorySectionTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_FAMILY_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(FamilyHistorySection target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(FamilyHistorySection target) {
 				target.init();
@@ -91,6 +93,7 @@ public void testValidateHITSPFamilyHistorySectionTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -130,6 +133,7 @@ public void testValidateHITSPFamilyHistorySectionTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<FamilyHistorySection> {
+		
 		@Override
 		public FamilyHistorySection create() {		
 			return HITSPFactory.eINSTANCE.createFamilyHistorySection();
@@ -181,6 +185,7 @@ public void testValidateHITSPFamilyHistorySectionTemplateId() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

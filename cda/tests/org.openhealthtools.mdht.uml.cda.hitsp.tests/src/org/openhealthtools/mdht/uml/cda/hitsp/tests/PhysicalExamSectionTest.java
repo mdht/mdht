@@ -57,11 +57,13 @@ public void testValidateHITSPPhysicalExamSectionTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_PHYSICAL_EXAM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(PhysicalExamSection target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(PhysicalExamSection target) {
 				target.init();
@@ -91,6 +93,7 @@ public void testValidateHITSPPhysicalExamSectionTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -130,6 +133,7 @@ public void testValidateHITSPPhysicalExamSectionTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<PhysicalExamSection> {
+		
 		@Override
 		public PhysicalExamSection create() {		
 			return HITSPFactory.eINSTANCE.createPhysicalExamSection();
@@ -181,6 +185,7 @@ public void testValidateHITSPPhysicalExamSectionTemplateId() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

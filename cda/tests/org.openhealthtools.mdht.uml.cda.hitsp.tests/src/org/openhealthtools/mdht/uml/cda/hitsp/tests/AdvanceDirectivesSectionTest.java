@@ -57,11 +57,13 @@ public void testValidateHITSPAdvanceDirectivesSectionTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_ADVANCE_DIRECTIVES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(AdvanceDirectivesSection target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(AdvanceDirectivesSection target) {
 				target.init();
@@ -91,6 +93,7 @@ public void testValidateHITSPAdvanceDirectivesSectionTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -130,6 +133,7 @@ public void testValidateHITSPAdvanceDirectivesSectionTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<AdvanceDirectivesSection> {
+		
 		@Override
 		public AdvanceDirectivesSection create() {		
 			return HITSPFactory.eINSTANCE.createAdvanceDirectivesSection();
@@ -181,6 +185,7 @@ public void testValidateHITSPAdvanceDirectivesSectionTemplateId() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;
