@@ -99,6 +99,18 @@ public void test<%= genOperation.getName().substring(0, 1).toUpperCase() +	genOp
 				
 				target.setTitle(title );
 			<% } %>	
+			
+			<% if ( genOperation.getName().endsWith("Section") ) { %>
+				
+				/* <%= genOperation.getName().substring(genOperation.getName().indexOf(genClass.getName()) + genClass.getName().length()  ) %> */ 
+				<%= genModel.getImportedName(genOperation.getName().substring(genOperation.getName().indexOf(genClass.getName()) + genClass.getName().length()  )) %> section =
+				
+				<%= genModel.getImportedName(genPackage.getQualifiedFactoryInterfaceName())  %>.<%=genPackage.getFactoryInstanceName() %>.create<%= genModel.getImportedName(genOperation.getName().substring(genOperation.getName().indexOf(genClass.getName()) + genClass.getName().length()  )) %>().init(); 
+					
+			
+			target.addSection(section);
+			<% } %>	
+			
 				
 				
 				
@@ -130,6 +142,31 @@ public void test<%= genOperation.getName().substring(0, 1).toUpperCase() +	genOp
 }		
 
 <% } %>
+
+<% if ( genOperation.getName().startsWith("get") ) { %>
+
+/**
+*
+* @generated
+*/
+@Test
+
+ 
+									
+public void test<%= genOperation.getName().substring(0, 1).toUpperCase() +	genOperation.getName().substring(1) %>() {
+
+<% if ( genOperation.getGenParameters().isEmpty() ) { %>
+
+<%=genOperation.getGenClass().getName() %> target = objectFactory.create();
+target.<%= genOperation.getName() %>();
+
+
+<%}%>
+
+}
+
+
+<%}%>
 
 <%}%>
 
