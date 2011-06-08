@@ -9,56 +9,40 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Material;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.MedicationInformationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
+import org.openhealthtools.mdht.uml.hl7.datatypes.EN;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Medication Information</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedProductName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medication Information Coded Product Name</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedProductVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medication Information Coded Product Vocab</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedDrugClassVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medication Information Coded Drug Class Vocab</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedIngredientVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medication Information Coded Ingredient Vocab</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedBrandName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medication Information Coded Brand Name</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedBrandNameVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medication Information Coded Brand Name Vocab</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationFreeTextProductName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medication Information Free Text Product Name</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationFreeTextBrandName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medication Information Free Text Brand Name</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Medication Information Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedProductName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Coded Product Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedProductVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Coded Product Vocab</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedDrugClassVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Coded Drug Class Vocab</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedIngredientVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Coded Ingredient Vocab</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedBrandName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Coded Brand Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedBrandNameVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Coded Brand Name Vocab</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationFreeTextProductName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Free Text Product Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationFreeTextBrandName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Free Text Brand Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Template Id</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -66,7 +50,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationInformationCodedProductName() {
@@ -82,8 +66,13 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(MedicationInformation target) {
-				target.init();
-
+				Material mm = CDAFactory.eINSTANCE.createMaterial();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setCodeSystem("2.16.840.1.113883.3.88.12.80.17");
+				mm.setCode(ce);
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				ce.getTranslations().add(cd);
+				target.setManufacturedMaterial(mm);
 			}
 
 			@Override
@@ -100,7 +89,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationInformationCodedProductVocab() {
@@ -116,7 +105,13 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(MedicationInformation target) {
-				target.init();
+				Material mm = CDAFactory.eINSTANCE.createMaterial();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setCodeSystem("2.16.840.1.113883.3.88.12.80.17");
+				mm.setCode(ce);
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				ce.getTranslations().add(cd);
+				target.setManufacturedMaterial(mm);
 
 			}
 
@@ -134,7 +129,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationInformationCodedDrugClassVocab() {
@@ -150,7 +145,13 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(MedicationInformation target) {
-				target.init();
+				Material mm = CDAFactory.eINSTANCE.createMaterial();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setCodeSystem("2.16.840.1.113883.3.88.12.80.18");
+				mm.setCode(ce);
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				ce.getTranslations().add(cd);
+				target.setManufacturedMaterial(mm);
 
 			}
 
@@ -168,7 +169,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationInformationCodedIngredientVocab() {
@@ -184,7 +185,13 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(MedicationInformation target) {
-				target.init();
+				Material mm = CDAFactory.eINSTANCE.createMaterial();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setCodeSystem("2.16.840.1.113883.3.88.12.80.20");
+				mm.setCode(ce);
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				ce.getTranslations().add(cd);
+				target.setManufacturedMaterial(mm);
 
 			}
 
@@ -202,7 +209,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationInformationCodedBrandName() {
@@ -218,7 +225,13 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(MedicationInformation target) {
-				target.init();
+				Material mm = CDAFactory.eINSTANCE.createMaterial();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setCodeSystem("2.16.840.1.113883.3.88.12.80.16");
+				mm.setCode(ce);
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				ce.getTranslations().add(cd);
+				target.setManufacturedMaterial(mm);
 
 			}
 
@@ -236,7 +249,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationInformationCodedBrandNameVocab() {
@@ -252,7 +265,11 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(MedicationInformation target) {
-				target.init();
+				Material mm = CDAFactory.eINSTANCE.createMaterial();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setCodeSystem("2.16.840.1.113883.3.88.12.80.16");
+				mm.setCode(ce);
+				target.setManufacturedMaterial(mm);
 
 			}
 
@@ -270,7 +287,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationInformationFreeTextProductName() {
@@ -288,6 +305,13 @@ public class MedicationInformationTest extends CDAValidationTest {
 			protected void updateToPass(MedicationInformation target) {
 				target.init();
 
+				Material mm = CDAFactory.eINSTANCE.createMaterial();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ED ot = DatatypesFactory.eINSTANCE.createED();
+				ce.setOriginalText(ot);
+				mm.setCode(ce);
+				target.setManufacturedMaterial(mm);
+
 			}
 
 			@Override
@@ -304,7 +328,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationInformationFreeTextBrandName() {
@@ -321,6 +345,12 @@ public class MedicationInformationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationInformation target) {
 				target.init();
+
+				Material mm = CDAFactory.eINSTANCE.createMaterial();
+				EN name = DatatypesFactory.eINSTANCE.createEN();
+
+				mm.setName(name);
+				target.setManufacturedMaterial(mm);
 
 			}
 

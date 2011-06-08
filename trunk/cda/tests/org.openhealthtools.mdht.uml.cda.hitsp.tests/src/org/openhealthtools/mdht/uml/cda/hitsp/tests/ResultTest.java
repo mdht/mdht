@@ -28,34 +28,20 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Result</b></em>' model objects. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultTypeCodeSystem(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Type Code System</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultLaboratoryResultsValueSet(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Laboratory Results Value Set</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultValuePresence(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Value Presence</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Code</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Effective Time</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Result Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultTypeCodeSystem(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Type Code System</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultLaboratoryResultsValueSet(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Laboratory Results Value Set</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultValuePresence(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Value Presence</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Result#validateResultValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Value</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 

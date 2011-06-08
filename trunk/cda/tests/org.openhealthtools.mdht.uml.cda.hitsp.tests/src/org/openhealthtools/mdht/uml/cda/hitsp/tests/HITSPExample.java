@@ -30,16 +30,13 @@ import org.openhealthtools.mdht.uml.cda.hitsp.HITSPPackage;
 /**
  * <!-- begin-user-doc --> A sample utility for the '<em><b>hitsp</b></em>'
  * package. <!-- end-user-doc -->
- * 
  * @generated
  */
 public class HITSPExample {
 	/**
 	 * <!-- begin-user-doc --> Load all the argument file paths or URIs as
 	 * instances of the model. <!-- end-user-doc -->
-	 * 
-	 * @param args
-	 *            the file paths or URIs.
+	 * @param args the file paths or URIs.
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -47,8 +44,7 @@ public class HITSPExample {
 		//
 		ResourceSet resourceSet = new ResourceSetImpl();
 
-		// Register the appropriate resource factory to handle all file
-		// extensions.
+		// Register the appropriate resource factory to handle all file extensions.
 		//
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(
 			Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
@@ -74,8 +70,7 @@ public class HITSPExample {
 			//
 			for (int i = 0; i < args.length; ++i) {
 				// Construct the URI for the instance file.
-				// The argument is treated as a file path only if it denotes an
-				// existing file.
+				// The argument is treated as a file path only if it denotes an existing file.
 				// Otherwise, it's directly treated as a URL.
 				//
 				File file = new File(args[i]);
@@ -108,11 +103,8 @@ public class HITSPExample {
 	/**
 	 * <!-- begin-user-doc --> Prints diagnostics with indentation. <!--
 	 * end-user-doc -->
-	 * 
-	 * @param diagnostic
-	 *            the diagnostic to print.
-	 * @param indent
-	 *            the indentation for printing.
+	 * @param diagnostic the diagnostic to print.
+	 * @param indent the indentation for printing.
 	 * @generated
 	 */
 	protected static void printDiagnostic(Diagnostic diagnostic, String indent) {

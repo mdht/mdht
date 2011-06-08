@@ -24,34 +24,20 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Condition</b></em>' model objects. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#validateConditionHasTreatingProvider(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Condition Has Treating Provider</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#validateConditionHasProviderId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Condition Has Provider Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#validateConditionHasProviderTreatmentTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Condition Has Provider Treatment Time</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#validateConditionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Condition Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#validateConditionConditionEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Condition Condition Entry</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#createConditionEntry()
- * <em>Create Condition Entry</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#getConditionEntries()
- * <em>Get Condition Entries</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#validateConditionHasTreatingProvider(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Has Treating Provider</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#validateConditionHasProviderId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Has Provider Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#validateConditionHasProviderTreatmentTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Has Provider Treatment Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#validateConditionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#validateConditionConditionEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Condition Condition Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#createConditionEntry() <em>Create Condition Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Condition#getConditionEntries() <em>Get Condition Entries</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -222,6 +208,18 @@ public class ConditionTest extends CDAValidationTest {
 		};
 
 		validateConditionConditionEntryTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetConditionEntries() {
+
+		Condition target = objectFactory.create();
+		target.getConditionEntries();
+
 	}
 
 	/**

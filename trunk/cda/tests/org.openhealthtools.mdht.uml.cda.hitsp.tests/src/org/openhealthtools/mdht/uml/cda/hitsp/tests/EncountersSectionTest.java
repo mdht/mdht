@@ -25,22 +25,16 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Encounters Section</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection#validateHITSPEncountersSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate HITSP Encounters Section Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection#validateHITSPEncountersSectionEncounterEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate HITSP Encounters Section Encounter Entry</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection#getHITSPEncounterEntries()
- * <em>Get HITSP Encounter Entries</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection#validateHITSPEncountersSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Encounters Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection#validateHITSPEncountersSectionEncounterEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Encounters Section Encounter Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection#getHITSPEncounterEntries() <em>Get HITSP Encounter Entries</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -112,6 +106,18 @@ public class EncountersSectionTest extends CDAValidationTest {
 		};
 
 		validateHITSPEncountersSectionEncounterEntryTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetHITSPEncounterEntries() {
+
+		EncountersSection target = objectFactory.create();
+		target.getHITSPEncounterEntries();
+
 	}
 
 	/**

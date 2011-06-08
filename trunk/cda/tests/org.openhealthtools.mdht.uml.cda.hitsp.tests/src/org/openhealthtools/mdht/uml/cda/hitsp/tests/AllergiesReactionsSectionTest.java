@@ -25,23 +25,16 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Allergies Reactions Section</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection#validateHITSPAllergiesReactionsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate HITSP Allergies Reactions Section Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection#validateHITSPAllergiesReactionsSectionAllergyDrugSensitivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate HITSP Allergies Reactions Section Allergy Drug Sensitivity</em>}
- * </li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection#getAllergyDrugSensitivities()
- * <em>Get Allergy Drug Sensitivities</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection#validateHITSPAllergiesReactionsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Allergies Reactions Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection#validateHITSPAllergiesReactionsSectionAllergyDrugSensitivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Allergies Reactions Section Allergy Drug Sensitivity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection#getAllergyDrugSensitivities() <em>Get Allergy Drug Sensitivities</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -113,6 +106,18 @@ public class AllergiesReactionsSectionTest extends CDAValidationTest {
 		};
 
 		validateHITSPAllergiesReactionsSectionAllergyDrugSensitivityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetAllergyDrugSensitivities() {
+
+		AllergiesReactionsSection target = objectFactory.create();
+		target.getAllergyDrugSensitivities();
+
 	}
 
 	/**

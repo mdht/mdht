@@ -25,22 +25,16 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Problem List Section</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection#validateProblemListSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Problem List Section Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection#validateProblemListSectionCondition(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Problem List Section Condition</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection#getConditions()
- * <em>Get Conditions</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection#validateProblemListSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem List Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection#validateProblemListSectionCondition(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem List Section Condition</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection#getConditions() <em>Get Conditions</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -112,6 +106,18 @@ public class ProblemListSectionTest extends CDAValidationTest {
 		};
 
 		validateProblemListSectionConditionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetConditions() {
+
+		ProblemListSection target = objectFactory.create();
+		target.getConditions();
+
 	}
 
 	/**

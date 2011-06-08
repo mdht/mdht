@@ -25,22 +25,16 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Medications Section</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection#validateHITSPMedicationsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate HITSP Medications Section Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection#validateHITSPMedicationsSectionMedication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate HITSP Medications Section Medication</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection#getHITSPMedications()
- * <em>Get HITSP Medications</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection#validateHITSPMedicationsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Medications Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection#validateHITSPMedicationsSectionMedication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Medications Section Medication</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection#getHITSPMedications() <em>Get HITSP Medications</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -112,6 +106,18 @@ public class MedicationsSectionTest extends CDAValidationTest {
 		};
 
 		validateHITSPMedicationsSectionMedicationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetHITSPMedications() {
+
+		MedicationsSection target = objectFactory.create();
+		target.getHITSPMedications();
+
 	}
 
 	/**

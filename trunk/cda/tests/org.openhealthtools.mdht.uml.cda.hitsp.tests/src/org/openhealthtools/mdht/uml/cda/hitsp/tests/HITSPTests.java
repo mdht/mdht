@@ -13,8 +13,8 @@ import org.junit.runners.Suite;
 /**
  * <!-- begin-user-doc --> A test suite for the '<em><b>hitsp</b></em>' package.
  * <!-- end-user-doc -->
- * 
- * 
+ * 		
+
  * @generated
  */
 @RunWith(Suite.class)
@@ -41,7 +41,6 @@ public class HITSPTests {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static junit.framework.Test suite() {
