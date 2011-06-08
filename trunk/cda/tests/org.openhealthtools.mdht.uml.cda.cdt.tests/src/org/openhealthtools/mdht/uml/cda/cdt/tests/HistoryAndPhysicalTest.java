@@ -20,14 +20,20 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
+import org.openhealthtools.mdht.uml.cda.cdt.ChiefComplaintSection;
+import org.openhealthtools.mdht.uml.cda.cdt.DiagnosticFindings;
 import org.openhealthtools.mdht.uml.cda.cdt.GeneralStatusSection;
 import org.openhealthtools.mdht.uml.cda.cdt.HistoryAndPhysical;
+import org.openhealthtools.mdht.uml.cda.cdt.HistoryOfPresentIllness;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.cdt.PhysicalExaminationSection;
+import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSectionIHE;
 import org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.cdt.operations.HistoryAndPhysicalOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -183,7 +189,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalBothReasonForVisitAndChiefComplaint() {
@@ -201,6 +207,14 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 			protected void updateToPass(HistoryAndPhysical target) {
 				target.init();
 
+				ReasonForVisitSection rfvs = CDTFactory.eINSTANCE.createReasonForVisitSection().init();
+
+				ChiefComplaintSection ccs = CDTFactory.eINSTANCE.createChiefComplaintSection().init();
+
+				target.addSection(rfvs);
+
+				target.addSection(ccs);
+
 			}
 
 			@Override
@@ -217,7 +231,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalHistoryOfPresentIllness() {
@@ -234,6 +248,9 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysical target) {
 				target.init();
+
+				HistoryOfPresentIllness hopi = CDTFactory.eINSTANCE.createHistoryOfPresentIllness().init();
+				target.addSection(hopi);
 
 			}
 
@@ -620,7 +637,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalDiagnosticFindings() {
@@ -637,7 +654,8 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysical target) {
 				target.init();
-
+				DiagnosticFindings df = CDTFactory.eINSTANCE.createDiagnosticFindings().init();
+				target.addSection(df);
 			}
 
 			@Override
@@ -979,7 +997,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsCode() {
@@ -996,6 +1014,10 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysical target) {
 				target.init();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setCodeSystem("2.16.840.1.113883.6.1");
+				ce.setCode("111");
+				target.setCode(ce);
 
 			}
 
