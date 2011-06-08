@@ -64,6 +64,7 @@ public class HITSPRegistryDelegateTest extends  CDAValidationTest {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<HITSPRegistryDelegate> {
+		
 		@Override
 		public HITSPRegistryDelegate create() {		
 			return HITSPFactory.eINSTANCE.createHITSPRegistryDelegate();
@@ -115,6 +116,7 @@ public class HITSPRegistryDelegateTest extends  CDAValidationTest {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

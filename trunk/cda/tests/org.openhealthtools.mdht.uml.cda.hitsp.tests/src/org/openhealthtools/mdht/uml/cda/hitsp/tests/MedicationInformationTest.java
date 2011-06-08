@@ -65,11 +65,13 @@ public void testValidateMedicationInformationCodedProductName() {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_CODED_PRODUCT_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(MedicationInformation target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(MedicationInformation target) {
 				target.init();
@@ -99,6 +101,7 @@ public void testValidateMedicationInformationCodedProductName() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -131,11 +134,13 @@ public void testValidateMedicationInformationCodedProductVocab() {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_CODED_PRODUCT_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(MedicationInformation target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(MedicationInformation target) {
 				target.init();
@@ -165,6 +170,7 @@ public void testValidateMedicationInformationCodedProductVocab() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -197,11 +203,13 @@ public void testValidateMedicationInformationCodedDrugClassVocab() {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_CODED_DRUG_CLASS_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(MedicationInformation target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(MedicationInformation target) {
 				target.init();
@@ -231,6 +239,7 @@ public void testValidateMedicationInformationCodedDrugClassVocab() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -263,11 +272,13 @@ public void testValidateMedicationInformationCodedIngredientVocab() {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_CODED_INGREDIENT_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(MedicationInformation target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(MedicationInformation target) {
 				target.init();
@@ -297,6 +308,7 @@ public void testValidateMedicationInformationCodedIngredientVocab() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -329,11 +341,13 @@ public void testValidateMedicationInformationCodedBrandName() {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_CODED_BRAND_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(MedicationInformation target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(MedicationInformation target) {
 				target.init();
@@ -363,6 +377,7 @@ public void testValidateMedicationInformationCodedBrandName() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -395,11 +410,13 @@ public void testValidateMedicationInformationCodedBrandNameVocab() {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_CODED_BRAND_NAME_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(MedicationInformation target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(MedicationInformation target) {
 				target.init();
@@ -429,6 +446,7 @@ public void testValidateMedicationInformationCodedBrandNameVocab() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -461,11 +479,13 @@ public void testValidateMedicationInformationFreeTextProductName() {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_FREE_TEXT_PRODUCT_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(MedicationInformation target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(MedicationInformation target) {
 				target.init();
@@ -495,6 +515,7 @@ public void testValidateMedicationInformationFreeTextProductName() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -527,11 +548,13 @@ public void testValidateMedicationInformationFreeTextBrandName() {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_FREE_TEXT_BRAND_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(MedicationInformation target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(MedicationInformation target) {
 				target.init();
@@ -561,6 +584,7 @@ public void testValidateMedicationInformationFreeTextBrandName() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -593,11 +617,13 @@ public void testValidateMedicationInformationTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(MedicationInformation target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(MedicationInformation target) {
 				target.init();
@@ -627,6 +653,7 @@ public void testValidateMedicationInformationTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -666,6 +693,7 @@ public void testValidateMedicationInformationTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<MedicationInformation> {
+		
 		@Override
 		public MedicationInformation create() {		
 			return HITSPFactory.eINSTANCE.createMedicationInformation();
@@ -717,6 +745,7 @@ public void testValidateMedicationInformationTemplateId() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

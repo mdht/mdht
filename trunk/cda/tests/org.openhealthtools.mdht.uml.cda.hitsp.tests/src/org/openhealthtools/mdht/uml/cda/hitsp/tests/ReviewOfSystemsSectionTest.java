@@ -57,11 +57,13 @@ public void testValidateHITSPReviewOfSystemsSectionTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_REVIEW_OF_SYSTEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(ReviewOfSystemsSection target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(ReviewOfSystemsSection target) {
 				target.init();
@@ -91,6 +93,7 @@ public void testValidateHITSPReviewOfSystemsSectionTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -130,6 +133,7 @@ public void testValidateHITSPReviewOfSystemsSectionTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<ReviewOfSystemsSection> {
+		
 		@Override
 		public ReviewOfSystemsSection create() {		
 			return HITSPFactory.eINSTANCE.createReviewOfSystemsSection();
@@ -181,6 +185,7 @@ public void testValidateHITSPReviewOfSystemsSectionTemplateId() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

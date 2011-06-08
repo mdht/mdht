@@ -57,11 +57,13 @@ public void testValidateHITSPCommentTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_COMMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Comment target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Comment target) {
 				target.init();
@@ -91,6 +93,7 @@ public void testValidateHITSPCommentTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -130,6 +133,7 @@ public void testValidateHITSPCommentTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<Comment> {
+		
 		@Override
 		public Comment create() {		
 			return HITSPFactory.eINSTANCE.createComment();
@@ -181,6 +185,7 @@ public void testValidateHITSPCommentTemplateId() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

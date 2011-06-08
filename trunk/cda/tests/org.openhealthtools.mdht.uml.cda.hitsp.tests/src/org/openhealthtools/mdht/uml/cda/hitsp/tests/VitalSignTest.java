@@ -61,11 +61,13 @@ public void testValidateVitalSignTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(VitalSign target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(VitalSign target) {
 				target.init();
@@ -95,6 +97,7 @@ public void testValidateVitalSignTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -125,11 +128,13 @@ public void testValidateResultObservationCode() {
 			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(VitalSign target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(VitalSign target) {
 				target.init();
@@ -162,6 +167,7 @@ public void testValidateResultObservationCode() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -201,6 +207,7 @@ public void testValidateResultObservationCode() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<VitalSign> {
+		
 		@Override
 		public VitalSign create() {		
 			return HITSPFactory.eINSTANCE.createVitalSign();
@@ -250,6 +257,7 @@ public void testValidateResultObservationCode() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

@@ -84,11 +84,13 @@ public void testValidatePatientSummaryHealthcareProvider() {
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_SUMMARY_HEALTHCARE_PROVIDER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(PatientSummary target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
@@ -118,6 +120,7 @@ public void testValidatePatientSummaryHealthcareProvider() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -148,11 +151,13 @@ public void testValidatePatientSummaryTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_SUMMARY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(PatientSummary target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
@@ -182,6 +187,7 @@ public void testValidatePatientSummaryTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -212,11 +218,13 @@ public void testValidatePatientSummaryAdvanceDirectivesSection() {
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_SUMMARY_ADVANCE_DIRECTIVES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(PatientSummary target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
@@ -246,6 +254,7 @@ public void testValidatePatientSummaryAdvanceDirectivesSection() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -276,11 +285,13 @@ public void testValidatePatientSummaryAllergiesReactionsSection() {
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_SUMMARY_ALLERGIES_REACTIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(PatientSummary target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
@@ -310,6 +321,7 @@ public void testValidatePatientSummaryAllergiesReactionsSection() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -340,11 +352,13 @@ public void testValidatePatientSummaryProblemListSection() {
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_SUMMARY_PROBLEM_LIST_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(PatientSummary target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
@@ -374,6 +388,7 @@ public void testValidatePatientSummaryProblemListSection() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -404,11 +419,13 @@ public void testValidatePatientSummaryEncountersSection() {
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_SUMMARY_ENCOUNTERS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(PatientSummary target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
@@ -438,6 +455,7 @@ public void testValidatePatientSummaryEncountersSection() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -468,11 +486,13 @@ public void testValidatePatientSummaryImmunizationsSection() {
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_SUMMARY_IMMUNIZATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(PatientSummary target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
@@ -502,6 +522,7 @@ public void testValidatePatientSummaryImmunizationsSection() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -532,11 +553,13 @@ public void testValidatePatientSummaryPayersSection() {
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_SUMMARY_PAYERS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(PatientSummary target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
@@ -566,6 +589,7 @@ public void testValidatePatientSummaryPayersSection() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -596,11 +620,13 @@ public void testValidatePatientSummaryMedicationsSection() {
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_SUMMARY_MEDICATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(PatientSummary target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
@@ -630,6 +656,7 @@ public void testValidatePatientSummaryMedicationsSection() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -660,11 +687,13 @@ public void testValidatePatientSummarySurgeriesSection() {
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_SUMMARY_SURGERIES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(PatientSummary target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
@@ -694,6 +723,7 @@ public void testValidatePatientSummarySurgeriesSection() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -724,11 +754,13 @@ public void testValidatePatientSummaryPlanOfCareSection() {
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_SUMMARY_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(PatientSummary target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
@@ -758,6 +790,7 @@ public void testValidatePatientSummaryPlanOfCareSection() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -788,11 +821,13 @@ public void testValidatePatientSummaryPregnancyHistorySection() {
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_SUMMARY_PREGNANCY_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(PatientSummary target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
@@ -822,6 +857,7 @@ public void testValidatePatientSummaryPregnancyHistorySection() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -852,11 +888,13 @@ public void testValidatePatientSummaryVitalSignsSection() {
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_SUMMARY_VITAL_SIGNS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(PatientSummary target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
@@ -886,6 +924,7 @@ public void testValidatePatientSummaryVitalSignsSection() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -916,11 +955,13 @@ public void testValidatePatientSummaryDiagnosticResultsSection() {
 			operationsForOCL.getOCLValue("VALIDATE_PATIENT_SUMMARY_DIAGNOSTIC_RESULTS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(PatientSummary target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
@@ -950,6 +991,7 @@ public void testValidatePatientSummaryDiagnosticResultsSection() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -1017,6 +1059,7 @@ public void testValidatePatientSummaryDiagnosticResultsSection() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<PatientSummary> {
+		
 		@Override
 		public PatientSummary create() {		
 			return HITSPFactory.eINSTANCE.createPatientSummary();
@@ -1066,6 +1109,7 @@ public void testValidatePatientSummaryDiagnosticResultsSection() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

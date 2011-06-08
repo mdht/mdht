@@ -57,11 +57,13 @@ public void testValidateHealthcareProviderTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_HEALTHCARE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(HealthcareProvider target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(HealthcareProvider target) {
 				target.init();
@@ -91,6 +93,7 @@ public void testValidateHealthcareProviderTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -130,6 +133,7 @@ public void testValidateHealthcareProviderTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<HealthcareProvider> {
+		
 		@Override
 		public HealthcareProvider create() {		
 			return HITSPFactory.eINSTANCE.createHealthcareProvider();
@@ -181,6 +185,7 @@ public void testValidateHealthcareProviderTemplateId() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

@@ -63,11 +63,13 @@ public void testValidateConditionHasTreatingProvider() {
 			operationsForOCL.getOCLValue("VALIDATE_CONDITION_HAS_TREATING_PROVIDER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Condition target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Condition target) {
 				target.init();
@@ -97,6 +99,7 @@ public void testValidateConditionHasTreatingProvider() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -127,11 +130,13 @@ public void testValidateConditionHasProviderId() {
 			operationsForOCL.getOCLValue("VALIDATE_CONDITION_HAS_PROVIDER_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Condition target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Condition target) {
 				target.init();
@@ -161,6 +166,7 @@ public void testValidateConditionHasProviderId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -191,11 +197,13 @@ public void testValidateConditionHasProviderTreatmentTime() {
 			operationsForOCL.getOCLValue("VALIDATE_CONDITION_HAS_PROVIDER_TREATMENT_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Condition target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Condition target) {
 				target.init();
@@ -225,6 +233,7 @@ public void testValidateConditionHasProviderTreatmentTime() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -255,11 +264,13 @@ public void testValidateConditionTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_CONDITION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Condition target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Condition target) {
 				target.init();
@@ -289,6 +300,7 @@ public void testValidateConditionTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -319,11 +331,13 @@ public void testValidateConditionConditionEntry() {
 			operationsForOCL.getOCLValue("VALIDATE_CONDITION_CONDITION_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Condition target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Condition target) {
 				target.init();
@@ -353,6 +367,7 @@ public void testValidateConditionConditionEntry() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -396,6 +411,7 @@ public void testValidateConditionConditionEntry() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<Condition> {
+		
 		@Override
 		public Condition create() {		
 			return HITSPFactory.eINSTANCE.createCondition();
@@ -445,6 +461,7 @@ public void testValidateConditionConditionEntry() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

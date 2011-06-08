@@ -59,11 +59,13 @@ public void testValidateHITSPImmunizationRefusalReason() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_IMMUNIZATION_REFUSAL_REASON__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Immunization target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Immunization target) {
 				target.init();
@@ -93,6 +95,7 @@ public void testValidateHITSPImmunizationRefusalReason() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -123,11 +126,13 @@ public void testValidateHITSPImmunizationTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_IMMUNIZATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Immunization target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Immunization target) {
 				target.init();
@@ -157,6 +162,7 @@ public void testValidateHITSPImmunizationTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -187,11 +193,13 @@ public void testValidateImmunizationCode() {
 			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Immunization target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Immunization target) {
 				target.init();
@@ -221,6 +229,7 @@ public void testValidateImmunizationCode() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -260,6 +269,7 @@ public void testValidateImmunizationCode() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<Immunization> {
+		
 		@Override
 		public Immunization create() {		
 			return HITSPFactory.eINSTANCE.createImmunization();
@@ -309,6 +319,7 @@ public void testValidateImmunizationCode() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

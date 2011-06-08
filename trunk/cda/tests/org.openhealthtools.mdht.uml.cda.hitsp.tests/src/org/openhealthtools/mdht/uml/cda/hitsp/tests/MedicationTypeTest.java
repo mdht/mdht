@@ -58,11 +58,13 @@ public void testValidateMedicationTypeTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_TYPE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(MedicationType target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(MedicationType target) {
 				target.init();
@@ -92,6 +94,7 @@ public void testValidateMedicationTypeTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -122,11 +125,13 @@ public void testValidateMedicationTypeCode() {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(MedicationType target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(MedicationType target) {
 				target.init();
@@ -156,6 +161,7 @@ public void testValidateMedicationTypeCode() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -195,6 +201,7 @@ public void testValidateMedicationTypeCode() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<MedicationType> {
+		
 		@Override
 		public MedicationType create() {		
 			return HITSPFactory.eINSTANCE.createMedicationType();
@@ -244,6 +251,7 @@ public void testValidateMedicationTypeCode() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

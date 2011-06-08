@@ -57,11 +57,13 @@ public void testValidateHITSPPlanOfCareSectionTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_PLAN_OF_CARE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(PlanOfCareSection target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
@@ -91,6 +93,7 @@ public void testValidateHITSPPlanOfCareSectionTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -130,6 +133,7 @@ public void testValidateHITSPPlanOfCareSectionTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<PlanOfCareSection> {
+		
 		@Override
 		public PlanOfCareSection create() {		
 			return HITSPFactory.eINSTANCE.createPlanOfCareSection();
@@ -181,6 +185,7 @@ public void testValidateHITSPPlanOfCareSectionTemplateId() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

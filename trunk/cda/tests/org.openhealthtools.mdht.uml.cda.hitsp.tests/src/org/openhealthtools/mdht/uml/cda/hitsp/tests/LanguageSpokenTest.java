@@ -59,11 +59,13 @@ public void testValidateLanguageSpokenNoProficiencyLevelCode() {
 			operationsForOCL.getOCLValue("VALIDATE_LANGUAGE_SPOKEN_NO_PROFICIENCY_LEVEL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(LanguageSpoken target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(LanguageSpoken target) {
 				target.init();
@@ -93,6 +95,7 @@ public void testValidateLanguageSpokenNoProficiencyLevelCode() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -123,11 +126,13 @@ public void testValidateLanguageSpokenTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_LANGUAGE_SPOKEN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(LanguageSpoken target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(LanguageSpoken target) {
 				target.init();
@@ -157,6 +162,7 @@ public void testValidateLanguageSpokenTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -187,11 +193,13 @@ public void testValidateLanguageSpokenModeCode() {
 			operationsForOCL.getOCLValue("VALIDATE_LANGUAGE_SPOKEN_MODE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(LanguageSpoken target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(LanguageSpoken target) {
 				target.init();
@@ -221,6 +229,7 @@ public void testValidateLanguageSpokenModeCode() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -260,6 +269,7 @@ public void testValidateLanguageSpokenModeCode() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<LanguageSpoken> {
+		
 		@Override
 		public LanguageSpoken create() {		
 			return HITSPFactory.eINSTANCE.createLanguageSpoken();
@@ -309,6 +319,7 @@ public void testValidateLanguageSpokenModeCode() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

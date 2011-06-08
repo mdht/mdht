@@ -59,11 +59,13 @@ public void testValidateScannedDocumentTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_SCANNED_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(UnstructuredDocument target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(UnstructuredDocument target) {
 				target.init();
@@ -93,6 +95,7 @@ public void testValidateScannedDocumentTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -123,11 +126,13 @@ public void testValidateUnstructuredDocumentNoStructuredData() {
 			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_NO_STRUCTURED_DATA__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(UnstructuredDocument target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(UnstructuredDocument target) {
 				target.init();
@@ -157,6 +162,7 @@ public void testValidateUnstructuredDocumentNoStructuredData() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -187,11 +193,13 @@ public void testValidateUnstructuredDocumentOnePatientPerDocument() {
 			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_ONE_PATIENT_PER_DOCUMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(UnstructuredDocument target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(UnstructuredDocument target) {
 				target.init();
@@ -221,6 +229,7 @@ public void testValidateUnstructuredDocumentOnePatientPerDocument() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -260,6 +269,7 @@ public void testValidateUnstructuredDocumentOnePatientPerDocument() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<UnstructuredDocument> {
+		
 		@Override
 		public UnstructuredDocument create() {		
 			return HITSPFactory.eINSTANCE.createUnstructuredDocument();
@@ -309,6 +319,7 @@ public void testValidateUnstructuredDocumentOnePatientPerDocument() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

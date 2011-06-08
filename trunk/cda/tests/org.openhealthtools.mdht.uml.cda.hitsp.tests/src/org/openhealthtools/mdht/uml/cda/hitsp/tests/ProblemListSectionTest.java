@@ -59,11 +59,13 @@ public void testValidateProblemListSectionTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_LIST_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(ProblemListSection target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(ProblemListSection target) {
 				target.init();
@@ -93,6 +95,7 @@ public void testValidateProblemListSectionTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -123,11 +126,13 @@ public void testValidateProblemListSectionCondition() {
 			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_LIST_SECTION_CONDITION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(ProblemListSection target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(ProblemListSection target) {
 				target.init();
@@ -157,6 +162,7 @@ public void testValidateProblemListSectionCondition() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -198,6 +204,7 @@ public void testValidateProblemListSectionCondition() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<ProblemListSection> {
+		
 		@Override
 		public ProblemListSection create() {		
 			return HITSPFactory.eINSTANCE.createProblemListSection();
@@ -247,6 +254,7 @@ public void testValidateProblemListSectionCondition() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

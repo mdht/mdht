@@ -87,11 +87,13 @@ public void testValidateHITSPMedicationMedicationStopped() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_MEDICATION_STOPPED__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Medication target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
@@ -121,6 +123,7 @@ public void testValidateHITSPMedicationMedicationStopped() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -151,11 +154,13 @@ public void testValidateHITSPMedicationFirstEffectiveTimeDatatype() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_FIRST_EFFECTIVE_TIME_DATATYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Medication target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
@@ -185,6 +190,7 @@ public void testValidateHITSPMedicationFirstEffectiveTimeDatatype() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -215,11 +221,13 @@ public void testValidateHITSPMedicationDoseUnits() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_DOSE_UNITS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Medication target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
@@ -249,6 +257,7 @@ public void testValidateHITSPMedicationDoseUnits() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -279,11 +288,13 @@ public void testValidateHITSPMedicationDeliveryMethodDescription() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_DELIVERY_METHOD_DESCRIPTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Medication target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
@@ -313,6 +324,7 @@ public void testValidateHITSPMedicationDeliveryMethodDescription() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -343,11 +355,13 @@ public void testValidateHITSPMedicationHasMedicationInformation() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_HAS_MEDICATION_INFORMATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Medication target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
@@ -377,6 +391,7 @@ public void testValidateHITSPMedicationHasMedicationInformation() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -407,11 +422,13 @@ public void testValidateHITSPMedicationHasStatusOfMedication() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_HAS_STATUS_OF_MEDICATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Medication target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
@@ -441,6 +458,7 @@ public void testValidateHITSPMedicationHasStatusOfMedication() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -471,11 +489,13 @@ public void testValidateHITSPMedicationHasIndication() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_HAS_INDICATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Medication target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
@@ -505,6 +525,7 @@ public void testValidateHITSPMedicationHasIndication() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -535,11 +556,13 @@ public void testValidateHITSPMedicationHasIndicationNarrativeText() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_HAS_INDICATION_NARRATIVE_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Medication target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
@@ -569,6 +592,7 @@ public void testValidateHITSPMedicationHasIndicationNarrativeText() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -599,11 +623,13 @@ public void testValidateHITSPMedicationHasIndicationVocab() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_HAS_INDICATION_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Medication target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
@@ -633,6 +659,7 @@ public void testValidateHITSPMedicationHasIndicationVocab() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -663,11 +690,13 @@ public void testValidateHITSPMedicationHasPatientInstructions() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_HAS_PATIENT_INSTRUCTIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Medication target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
@@ -697,6 +726,7 @@ public void testValidateHITSPMedicationHasPatientInstructions() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -727,11 +757,13 @@ public void testValidateHITSPMedicationHasMedicationVehicle() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_HAS_MEDICATION_VEHICLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Medication target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
@@ -761,6 +793,7 @@ public void testValidateHITSPMedicationHasMedicationVehicle() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -791,11 +824,13 @@ public void testValidateHITSPMedicationMedicationVehicleType() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_MEDICATION_VEHICLE_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Medication target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
@@ -825,6 +860,7 @@ public void testValidateHITSPMedicationMedicationVehicleType() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -855,11 +891,13 @@ public void testValidateHITSPMedicationMedicationVehicleClass() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_MEDICATION_VEHICLE_CLASS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Medication target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
@@ -889,6 +927,7 @@ public void testValidateHITSPMedicationMedicationVehicleClass() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -919,11 +958,13 @@ public void testValidateHITSPMedicationMedicationVehicleCode() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_MEDICATION_VEHICLE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Medication target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
@@ -953,6 +994,7 @@ public void testValidateHITSPMedicationMedicationVehicleCode() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -983,11 +1025,13 @@ public void testValidateHITSPMedicationMedicationVehicleName() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_MEDICATION_VEHICLE_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Medication target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
@@ -1017,6 +1061,7 @@ public void testValidateHITSPMedicationMedicationVehicleName() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -1047,11 +1092,13 @@ public void testValidateHITSPMedicationMedicationVehicleCodedName() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_MEDICATION_VEHICLE_CODED_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Medication target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
@@ -1081,6 +1128,7 @@ public void testValidateHITSPMedicationMedicationVehicleCodedName() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -1111,12 +1159,13 @@ public void testValidateHITSPMedicationMedicationVehicleCodedNameVocab() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_MEDICATION_VEHICLE_CODED_NAME_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(Medication target) {
 
 			}
 
-			@Override
+			
 			protected void updateToPass(Medication target) {
 				target.init();
 				
@@ -1145,7 +1194,7 @@ public void testValidateHITSPMedicationMedicationVehicleCodedNameVocab() {
 				
 			}
 
-			@Override
+			
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
 			
@@ -1175,12 +1224,12 @@ public void testValidateHITSPMedicationTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
-			@Override
+			
 			protected void updateToFail(Medication target) {
 
 			}
 
-			@Override
+			
 			protected void updateToPass(Medication target) {
 				target.init();
 				
@@ -1209,7 +1258,7 @@ public void testValidateHITSPMedicationTemplateId() {
 				
 			}
 
-			@Override
+			
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
 			
@@ -1239,12 +1288,12 @@ public void testValidateHITSPMedicationEffectiveTime() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
-			@Override
+			
 			protected void updateToFail(Medication target) {
 
 			}
 
-			@Override
+			
 			protected void updateToPass(Medication target) {
 				target.init();
 				
@@ -1276,7 +1325,7 @@ public void testValidateHITSPMedicationEffectiveTime() {
 				
 			}
 
-			@Override
+			
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
 			
@@ -1306,12 +1355,12 @@ public void testValidateHITSPMedicationRouteCode() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_ROUTE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
-			@Override
+			
 			protected void updateToFail(Medication target) {
 
 			}
 
-			@Override
+			
 			protected void updateToPass(Medication target) {
 				target.init();
 				
@@ -1340,7 +1389,7 @@ public void testValidateHITSPMedicationRouteCode() {
 				
 			}
 
-			@Override
+			
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
 			
@@ -1370,12 +1419,12 @@ public void testValidateHITSPMedicationDoseQuantity() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_DOSE_QUANTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
-			@Override
+			
 			protected void updateToFail(Medication target) {
 
 			}
 
-			@Override
+			
 			protected void updateToPass(Medication target) {
 				target.init();
 				
@@ -1404,7 +1453,7 @@ public void testValidateHITSPMedicationDoseQuantity() {
 				
 			}
 
-			@Override
+			
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
 			
@@ -1434,12 +1483,12 @@ public void testValidateHITSPMedicationAdministrationUnitCode() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_ADMINISTRATION_UNIT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
-			@Override
+			
 			protected void updateToFail(Medication target) {
 
 			}
 
-			@Override
+			
 			protected void updateToPass(Medication target) {
 				target.init();
 				
@@ -1468,7 +1517,7 @@ public void testValidateHITSPMedicationAdministrationUnitCode() {
 				
 			}
 
-			@Override
+			
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
 			
@@ -1498,12 +1547,12 @@ public void testValidateHITSPMedicationMaxDoseQuantity() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_MAX_DOSE_QUANTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
-			@Override
+			
 			protected void updateToFail(Medication target) {
 
 			}
 
-			@Override
+			
 			protected void updateToPass(Medication target) {
 				target.init();
 				
@@ -1532,7 +1581,7 @@ public void testValidateHITSPMedicationMaxDoseQuantity() {
 				
 			}
 
-			@Override
+			
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
 			
@@ -1562,12 +1611,12 @@ public void testValidateHITSPMedicationApproachSiteCode() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_APPROACH_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
-			@Override
+			
 			protected void updateToFail(Medication target) {
 
 			}
 
-			@Override
+			
 			protected void updateToPass(Medication target) {
 				target.init();
 				
@@ -1596,7 +1645,7 @@ public void testValidateHITSPMedicationApproachSiteCode() {
 				
 			}
 
-			@Override
+			
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
 			
@@ -1626,12 +1675,12 @@ public void testValidateHITSPMedicationCode() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
-			@Override
+			
 			protected void updateToFail(Medication target) {
 
 			}
 
-			@Override
+			
 			protected void updateToPass(Medication target) {
 				target.init();
 				
@@ -1660,7 +1709,7 @@ public void testValidateHITSPMedicationCode() {
 				
 			}
 
-			@Override
+			
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
 			
@@ -1705,7 +1754,7 @@ public void testValidateHITSPMedicationCode() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<Medication> {
-		@Override
+		
 		public Medication create() {		
 			return HITSPFactory.eINSTANCE.createMedication();
 		}
@@ -1754,7 +1803,7 @@ public void testValidateHITSPMedicationCode() {
 *
 * @generated
 */
-	@Override
+	
 	protected EObject getObjectToTest() {		
 		return null;
 	}

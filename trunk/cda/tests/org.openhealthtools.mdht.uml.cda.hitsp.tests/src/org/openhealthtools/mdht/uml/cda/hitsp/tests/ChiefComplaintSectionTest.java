@@ -57,11 +57,13 @@ public void testValidateHITSPChiefComplaintSectionTemplateId() {
 			operationsForOCL.getOCLValue("VALIDATE_HITSP_CHIEF_COMPLAINT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
+			
 			@Override
 			protected void updateToFail(ChiefComplaintSection target) {
 
 			}
 
+			
 			@Override
 			protected void updateToPass(ChiefComplaintSection target) {
 				target.init();
@@ -91,6 +93,7 @@ public void testValidateHITSPChiefComplaintSectionTemplateId() {
 				
 			}
 
+			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 			
@@ -130,6 +133,7 @@ public void testValidateHITSPChiefComplaintSectionTemplateId() {
 * @generated
 */
 	private static class ObjectFactory implements TestObjectFactory<ChiefComplaintSection> {
+		
 		@Override
 		public ChiefComplaintSection create() {		
 			return HITSPFactory.eINSTANCE.createChiefComplaintSection();
@@ -181,6 +185,7 @@ public void testValidateHITSPChiefComplaintSectionTemplateId() {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;

@@ -39,6 +39,7 @@ public class MedicationSplitDoseTest extends  CDAValidationTest {
 *
 * @generated
 */
+	
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;
