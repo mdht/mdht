@@ -1,4 +1,3 @@
-
 /**
  * <copyright>
  * </copyright>
@@ -6,7 +5,6 @@
  * $Id$
  */
 package org.openhealthtools.mdht.uml.cda.hitsp.tests;
-
 
 import java.util.Map;
 
@@ -23,84 +21,57 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.AllergiesReactionsSecti
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Allergies Reactions Section</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Allergies Reactions Section</b></em>' model objects. <!--
+ * end-user-doc -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection#validateHITSPAllergiesReactionsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Allergies Reactions Section Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection#validateHITSPAllergiesReactionsSectionAllergyDrugSensitivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Allergies Reactions Section Allergy Drug Sensitivity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection#getAllergyDrugSensitivities() <em>Get Allergy Drug Sensitivities</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection#validateHITSPAllergiesReactionsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate HITSP Allergies Reactions Section Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection#validateHITSPAllergiesReactionsSectionAllergyDrugSensitivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate HITSP Allergies Reactions Section Allergy Drug Sensitivity</em>}
+ * </li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection#getAllergyDrugSensitivities()
+ * <em>Get Allergy Drug Sensitivities</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
- 
-public class AllergiesReactionsSectionTest extends  CDAValidationTest {
 
+public class AllergiesReactionsSectionTest extends CDAValidationTest {
 
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateHITSPAllergiesReactionsSectionTemplateId() {
-			OperationsTestCase<AllergiesReactionsSection> validateHITSPAllergiesReactionsSectionTemplateIdTestCase = new OperationsTestCase<AllergiesReactionsSection>(
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateHITSPAllergiesReactionsSectionTemplateId() {
+		OperationsTestCase<AllergiesReactionsSection> validateHITSPAllergiesReactionsSectionTemplateIdTestCase = new OperationsTestCase<AllergiesReactionsSection>(
 			"validateHITSPAllergiesReactionsSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_ALLERGIES_REACTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-			
 			@Override
 			protected void updateToFail(AllergiesReactionsSection target) {
 
 			}
 
-			
 			@Override
 			protected void updateToPass(AllergiesReactionsSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-				
-				
-				
-				
-				
-				
-				
-				
 			}
 
-			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return AllergiesReactionsSectionOperations.validateHITSPAllergiesReactionsSectionTemplateId(
 					(AllergiesReactionsSection) objectToTest, diagnostician, map);
 			}
@@ -108,66 +79,33 @@ public void testValidateHITSPAllergiesReactionsSectionTemplateId() {
 		};
 
 		validateHITSPAllergiesReactionsSectionTemplateIdTestCase.doValidationTest();
-}		
+	}
 
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateHITSPAllergiesReactionsSectionAllergyDrugSensitivity() {
-			OperationsTestCase<AllergiesReactionsSection> validateHITSPAllergiesReactionsSectionAllergyDrugSensitivityTestCase = new OperationsTestCase<AllergiesReactionsSection>(
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateHITSPAllergiesReactionsSectionAllergyDrugSensitivity() {
+		OperationsTestCase<AllergiesReactionsSection> validateHITSPAllergiesReactionsSectionAllergyDrugSensitivityTestCase = new OperationsTestCase<AllergiesReactionsSection>(
 			"validateHITSPAllergiesReactionsSectionAllergyDrugSensitivity",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_ALLERGIES_REACTIONS_SECTION_ALLERGY_DRUG_SENSITIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_ALLERGIES_REACTIONS_SECTION_ALLERGY_DRUG_SENSITIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-			
 			@Override
 			protected void updateToFail(AllergiesReactionsSection target) {
 
 			}
 
-			
 			@Override
 			protected void updateToPass(AllergiesReactionsSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-				
-				
-				
-				
-				
-				
-				
-				
 			}
 
-			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return AllergiesReactionsSectionOperations.validateHITSPAllergiesReactionsSectionAllergyDrugSensitivity(
 					(AllergiesReactionsSection) objectToTest, diagnostician, map);
 			}
@@ -175,16 +113,12 @@ public void testValidateHITSPAllergiesReactionsSectionAllergyDrugSensitivity() {
 		};
 
 		validateHITSPAllergiesReactionsSectionAllergyDrugSensitivityTestCase.doValidationTest();
-}		
+	}
 
-
-
-
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static class OperationsForOCL extends AllergiesReactionsSectionOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -198,66 +132,57 @@ public void testValidateHITSPAllergiesReactionsSectionAllergyDrugSensitivity() {
 			return oclValue;
 		}
 	}
-	
-/**
-*
-* @generated
-*/
+
+	/**
+	 * 
+	 * @generated
+	 */
 	private static class ObjectFactory implements TestObjectFactory<AllergiesReactionsSection> {
-		
-		@Override
-		public AllergiesReactionsSection create() {		
+
+		public AllergiesReactionsSection create() {
 			return HITSPFactory.eINSTANCE.createAllergiesReactionsSection();
 		}
 	}
 
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
-
-	
-	
-	
 	/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-	private static class ConstructorTestClass extends AllergiesReactionsSectionOperations {}
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	private static class ConstructorTestClass extends AllergiesReactionsSectionOperations {
+	}
 
-
-
-
-
-/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-		@Test
+	/**
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
-
-
 	/**
-*
-* @generated
-*/
-	
+	 * 
+	 * @generated
+	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
-	
+
 } // AllergiesReactionsSectionOperations

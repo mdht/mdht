@@ -1,4 +1,3 @@
-
 /**
  * <copyright>
  * </copyright>
@@ -6,7 +5,6 @@
  * $Id$
  */
 package org.openhealthtools.mdht.uml.cda.hitsp.tests;
-
 
 import java.util.Map;
 
@@ -17,91 +15,54 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 
 import org.openhealthtools.mdht.uml.cda.hitsp.AdmissionMedicationHistorySection;
-import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.AdmissionMedicationHistorySectionOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Admission Medication History Section</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Admission Medication History Section</b></em>' model
+ * objects. <!-- end-user-doc -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AdmissionMedicationHistorySection#validateHITSPAdmissionMedicationHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Admission Medication History Section Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.hitsp.AdmissionMedicationHistorySection#validateHITSPAdmissionMedicationHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate HITSP Admission Medication History Section Template Id</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
- 
-public class AdmissionMedicationHistorySectionTest extends  CDAValidationTest {
 
+public class AdmissionMedicationHistorySectionTest extends CDAValidationTest {
 
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateHITSPAdmissionMedicationHistorySectionTemplateId() {
-			OperationsTestCase<AdmissionMedicationHistorySection> validateHITSPAdmissionMedicationHistorySectionTemplateIdTestCase = new OperationsTestCase<AdmissionMedicationHistorySection>(
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateHITSPAdmissionMedicationHistorySectionTemplateId() {
+		OperationsTestCase<AdmissionMedicationHistorySection> validateHITSPAdmissionMedicationHistorySectionTemplateIdTestCase = new OperationsTestCase<AdmissionMedicationHistorySection>(
 			"validateHITSPAdmissionMedicationHistorySectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_ADMISSION_MEDICATION_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-			
-			
 			@Override
 			protected void updateToFail(AdmissionMedicationHistorySection target) {
 
 			}
 
-			
-			
 			@Override
 			protected void updateToPass(AdmissionMedicationHistorySection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-				
-				
-				
-				
-				
-				
-				
-				
 			}
 
-			
-			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return AdmissionMedicationHistorySectionOperations.validateHITSPAdmissionMedicationHistorySectionTemplateId(
 					(AdmissionMedicationHistorySection) objectToTest, diagnostician, map);
 			}
@@ -109,14 +70,12 @@ public void testValidateHITSPAdmissionMedicationHistorySectionTemplateId() {
 		};
 
 		validateHITSPAdmissionMedicationHistorySectionTemplateIdTestCase.doValidationTest();
-}		
+	}
 
-
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static class OperationsForOCL extends AdmissionMedicationHistorySectionOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -130,70 +89,64 @@ public void testValidateHITSPAdmissionMedicationHistorySectionTemplateId() {
 			return oclValue;
 		}
 	}
-	
-/**
-*
-* @generated
-*/
+
+	/**
+	 * 
+	 * @generated
+	 */
 	private static class ObjectFactory implements TestObjectFactory<AdmissionMedicationHistorySection> {
-		
-		
-		@Override
-		public AdmissionMedicationHistorySection create() {		
-			return HITSPFactory.eINSTANCE.createAdmissionMedicationHistorySection();
+
+		public AdmissionMedicationHistorySection create() {
+			// TODO Auto-generated method stub
+			return null;
 		}
+
+		//
+		// public AdmissionMedicationHistorySection create() {
+		// return
+		// HITSPFactory.eINSTANCE.createAdmissionMedicationHistorySection();
+		// }
 	}
 
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
-
-	
-	
-	
 	/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-	private static class ConstructorTestClass extends AdmissionMedicationHistorySectionOperations {}
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	private static class ConstructorTestClass extends AdmissionMedicationHistorySectionOperations {
+	}
 
-
-
-
-
-/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-		@Test
+	/**
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
-
-
-
-
 	/**
-*
-* @generated
-*/
-	
-	
+	 * 
+	 * @generated
+	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
-	
+
 } // AdmissionMedicationHistorySectionOperations

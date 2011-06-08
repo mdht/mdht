@@ -1,4 +1,3 @@
-
 /**
  * <copyright>
  * </copyright>
@@ -6,7 +5,6 @@
  * $Id$
  */
 package org.openhealthtools.mdht.uml.cda.hitsp.tests;
-
 
 import java.util.Map;
 
@@ -23,84 +21,56 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.ImmunizationOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Immunization</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Immunization</b></em>' model objects. <!-- end-user-doc
+ * -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Immunization#validateHITSPImmunizationRefusalReason(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Immunization Refusal Reason</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Immunization#validateHITSPImmunizationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Immunization Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Immunization#validateImmunizationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Code</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.hitsp.Immunization#validateHITSPImmunizationRefusalReason(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate HITSP Immunization Refusal Reason</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.hitsp.Immunization#validateHITSPImmunizationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate HITSP Immunization Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.hitsp.Immunization#validateImmunizationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Immunization Code</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
- 
-public class ImmunizationTest extends  CDAValidationTest {
 
+public class ImmunizationTest extends CDAValidationTest {
 
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateHITSPImmunizationRefusalReason() {
-			OperationsTestCase<Immunization> validateHITSPImmunizationRefusalReasonTestCase = new OperationsTestCase<Immunization>(
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateHITSPImmunizationRefusalReason() {
+		OperationsTestCase<Immunization> validateHITSPImmunizationRefusalReasonTestCase = new OperationsTestCase<Immunization>(
 			"validateHITSPImmunizationRefusalReason",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_IMMUNIZATION_REFUSAL_REASON__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_IMMUNIZATION_REFUSAL_REASON__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-			
 			@Override
 			protected void updateToFail(Immunization target) {
 
 			}
 
-			
 			@Override
 			protected void updateToPass(Immunization target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-				
-				
-				
-				
-				
-				
-				
-				
 			}
 
-			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ImmunizationOperations.validateHITSPImmunizationRefusalReason(
 					(Immunization) objectToTest, diagnostician, map);
 			}
@@ -108,66 +78,33 @@ public void testValidateHITSPImmunizationRefusalReason() {
 		};
 
 		validateHITSPImmunizationRefusalReasonTestCase.doValidationTest();
-}
+	}
 
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateHITSPImmunizationTemplateId() {
-			OperationsTestCase<Immunization> validateHITSPImmunizationTemplateIdTestCase = new OperationsTestCase<Immunization>(
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateHITSPImmunizationTemplateId() {
+		OperationsTestCase<Immunization> validateHITSPImmunizationTemplateIdTestCase = new OperationsTestCase<Immunization>(
 			"validateHITSPImmunizationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_IMMUNIZATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_IMMUNIZATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-			
 			@Override
 			protected void updateToFail(Immunization target) {
 
 			}
 
-			
 			@Override
 			protected void updateToPass(Immunization target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-				
-				
-				
-				
-				
-				
-				
-				
 			}
 
-			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ImmunizationOperations.validateHITSPImmunizationTemplateId(
 					(Immunization) objectToTest, diagnostician, map);
 			}
@@ -175,81 +112,44 @@ public void testValidateHITSPImmunizationTemplateId() {
 		};
 
 		validateHITSPImmunizationTemplateIdTestCase.doValidationTest();
-}		
+	}
 
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateImmunizationCode() {
-			OperationsTestCase<Immunization> validateImmunizationCodeTestCase = new OperationsTestCase<Immunization>(
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateImmunizationCode() {
+		OperationsTestCase<Immunization> validateImmunizationCodeTestCase = new OperationsTestCase<Immunization>(
 			"validateImmunizationCode",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
-			
 			@Override
 			protected void updateToFail(Immunization target) {
 
 			}
 
-			
 			@Override
 			protected void updateToPass(Immunization target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-				
-				
-				
-				
-				
-				
-				
-				
 			}
 
-			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return ImmunizationOperations.validateImmunizationCode(
-					(Immunization) objectToTest, diagnostician, map);
+
+				return ImmunizationOperations.validateImmunizationCode((Immunization) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateImmunizationCodeTestCase.doValidationTest();
-}		
+	}
 
-
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static class OperationsForOCL extends ImmunizationOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -263,66 +163,57 @@ public void testValidateImmunizationCode() {
 			return oclValue;
 		}
 	}
-	
-/**
-*
-* @generated
-*/
+
+	/**
+	 * 
+	 * @generated
+	 */
 	private static class ObjectFactory implements TestObjectFactory<Immunization> {
-		
-		@Override
-		public Immunization create() {		
+
+		public Immunization create() {
 			return HITSPFactory.eINSTANCE.createImmunization();
 		}
 	}
 
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
-
-	
-	
-	
 	/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-	private static class ConstructorTestClass extends ImmunizationOperations {}
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	private static class ConstructorTestClass extends ImmunizationOperations {
+	}
 
-
-
-
-
-/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-		@Test
+	/**
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
-
-
 	/**
-*
-* @generated
-*/
-	
+	 * 
+	 * @generated
+	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
-	
+
 } // ImmunizationOperations
