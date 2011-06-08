@@ -12,6 +12,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Entry;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection;
@@ -40,7 +41,7 @@ public class PastMedicalHistorySectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePastMedicalHistorySectionHasClinicalStatements() {
@@ -57,6 +58,10 @@ public class PastMedicalHistorySectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PastMedicalHistorySection target) {
 				target.init();
+
+				Entry entry = CDAFactory.eINSTANCE.createEntry();
+
+				target.getEntries().add(entry);
 
 			}
 

@@ -11,11 +11,20 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
+import org.openhealthtools.mdht.uml.cda.Authenticator;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
+import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.cdt.GeneralHeaderConstraints;
 import org.openhealthtools.mdht.uml.cda.cdt.operations.GeneralHeaderConstraintsOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -956,7 +965,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsAuthenticatorHasAssignedPerson() {
@@ -968,11 +977,25 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
 
+				target.init();
+
+				Authenticator authenticator = CDAFactory.eINSTANCE.createAuthenticator();
+
+				AssignedEntity assignedEntity = CDAFactory.eINSTANCE.createAssignedEntity();
+
+				authenticator.setAssignedEntity(assignedEntity);
+
+				target.getAuthenticators().add(authenticator);
+
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+
+				for (Authenticator authenticator : target.getAuthenticators()) {
+					Person person = CDAFactory.eINSTANCE.createPerson();
+					authenticator.getAssignedEntity().setAssignedPerson(person);
+				}
 
 			}
 
@@ -1092,7 +1115,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsCode() {
@@ -1109,6 +1132,8 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				target.init();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				target.setCode(ce);
 
 			}
 
@@ -1163,7 +1188,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsId() {
@@ -1180,6 +1205,8 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				target.init();
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				target.setId(ii);
 
 			}
 
@@ -1197,7 +1224,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsLanguageCode() {
@@ -1214,6 +1241,8 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				target.init();
+				CS cs = DatatypesFactory.eINSTANCE.createCS();
+				target.setLanguageCode(cs);
 
 			}
 
@@ -1265,7 +1294,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsTitle() {
@@ -1282,6 +1311,8 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				target.init();
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
 
 			}
 
@@ -1299,7 +1330,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsTypeId() {
@@ -1316,6 +1347,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				target.init();
+
+				InfrastructureRootTypeId value = CDAFactory.eINSTANCE.createInfrastructureRootTypeId();
+				target.setTypeId(value);
 
 			}
 

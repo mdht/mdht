@@ -21,11 +21,17 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.cdt.ConsultationNote;
+import org.openhealthtools.mdht.uml.cda.cdt.DiagnosticFindings;
 import org.openhealthtools.mdht.uml.cda.cdt.GeneralStatusSection;
-import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection;
+import org.openhealthtools.mdht.uml.cda.cdt.HistoryOfPresentIllness;
+import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySectionConsult;
+import org.openhealthtools.mdht.uml.cda.cdt.PhysicalExaminationSection;
+import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSectionConsult;
 import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.cdt.operations.ConsultationNoteOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -69,14 +75,14 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * </ul>
  * </p>
  *
- * @generated
+ * @generated NOT
  */
 
 public class ConsultationNoteTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateConsultationNoteReferralOrVisit() {
@@ -93,6 +99,8 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
+				ReasonForVisitSectionConsult rfvsc = CDTFactory.eINSTANCE.createReasonForVisitSectionConsult().init();
+				target.addSection(rfvsc);
 
 			}
 
@@ -128,6 +136,9 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
 
+				HistoryOfPresentIllness hopi = CDTFactory.eINSTANCE.createHistoryOfPresentIllness().init();
+				target.addSection(hopi);
+
 			}
 
 			@Override
@@ -144,7 +155,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateConsultationNotePhysicalExamination() {
@@ -161,6 +172,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
+
+				PhysicalExaminationSection pes = CDTFactory.eINSTANCE.createPhysicalExaminationSection().init();
+
+				target.addSection(pes);
 
 			}
 
@@ -260,7 +275,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateConsultationNotePastMedicalHistorySection() {
@@ -279,9 +294,9 @@ public class ConsultationNoteTest extends CDAValidationTest {
 				target.init();
 
 				/* PastMedicalHistorySection */
-				PastMedicalHistorySection section =
+				PastMedicalHistorySectionConsult section =
 
-				CDTFactory.eINSTANCE.createPastMedicalHistorySection().init();
+				CDTFactory.eINSTANCE.createPastMedicalHistorySectionConsult().init();
 
 				target.addSection(section);
 
@@ -629,7 +644,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateConsultationNoteDiagnosticFindings() {
@@ -646,6 +661,8 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
+				DiagnosticFindings df = CDTFactory.eINSTANCE.createDiagnosticFindings().init();
+				target.addSection(df);
 
 			}
 
@@ -865,7 +882,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsCode() {
@@ -882,6 +899,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setCodeSystem("2.16.840.1.113883.6.1");
+				ce.setCode("111");
+				target.setCode(ce);
 
 			}
 

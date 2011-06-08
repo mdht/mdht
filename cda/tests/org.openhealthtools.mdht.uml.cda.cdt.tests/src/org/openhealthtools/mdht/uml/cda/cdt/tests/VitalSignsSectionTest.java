@@ -12,7 +12,10 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Entry;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.cdt.operations.VitalSignsSectionOperations;
@@ -42,7 +45,7 @@ public class VitalSignsSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateVitalSignsSectionClinicalStatements() {
@@ -59,6 +62,10 @@ public class VitalSignsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(VitalSignsSection target) {
 				target.init();
+
+				Entry entry = CDAFactory.eINSTANCE.createEntry();
+
+				target.getEntries().add(entry);
 
 			}
 
@@ -181,7 +188,7 @@ public class VitalSignsSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateVitalSignsSectionVitalSignsOrganizer() {
@@ -199,6 +206,11 @@ public class VitalSignsSectionTest extends CDAValidationTest {
 			protected void updateToPass(VitalSignsSection target) {
 				target.init();
 
+				Entry entry = CDAFactory.eINSTANCE.createEntry();
+
+				VitalSignsOrganizer vso = CCDFactory.eINSTANCE.createVitalSignsOrganizer().init();
+				entry.setOrganizer(vso);
+				target.getEntries().add(entry);
 			}
 
 			@Override

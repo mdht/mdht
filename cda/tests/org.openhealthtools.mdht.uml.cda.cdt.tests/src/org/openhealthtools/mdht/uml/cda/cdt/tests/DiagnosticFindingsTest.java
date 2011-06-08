@@ -15,6 +15,8 @@ import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.cdt.DiagnosticFindings;
 import org.openhealthtools.mdht.uml.cda.cdt.operations.DiagnosticFindingsOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -35,7 +37,7 @@ public class DiagnosticFindingsTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateDiagnosticFindingsTitle() {
@@ -52,6 +54,8 @@ public class DiagnosticFindingsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticFindings target) {
 				target.init();
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
 
 			}
 
