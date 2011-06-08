@@ -1,4 +1,3 @@
-
 /**
  * <copyright>
  * </copyright>
@@ -6,7 +5,6 @@
  * $Id$
  */
 package org.openhealthtools.mdht.uml.cda.hitsp.tests;
-
 
 import java.util.Map;
 
@@ -23,84 +21,56 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.EncountersSectionOperat
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Encounters Section</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Encounters Section</b></em>' model objects. <!--
+ * end-user-doc -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection#validateHITSPEncountersSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Encounters Section Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection#validateHITSPEncountersSectionEncounterEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Encounters Section Encounter Entry</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection#getHITSPEncounterEntries() <em>Get HITSP Encounter Entries</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection#validateHITSPEncountersSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate HITSP Encounters Section Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection#validateHITSPEncountersSectionEncounterEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate HITSP Encounters Section Encounter Entry</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection#getHITSPEncounterEntries()
+ * <em>Get HITSP Encounter Entries</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
- 
-public class EncountersSectionTest extends  CDAValidationTest {
 
+public class EncountersSectionTest extends CDAValidationTest {
 
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateHITSPEncountersSectionTemplateId() {
-			OperationsTestCase<EncountersSection> validateHITSPEncountersSectionTemplateIdTestCase = new OperationsTestCase<EncountersSection>(
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateHITSPEncountersSectionTemplateId() {
+		OperationsTestCase<EncountersSection> validateHITSPEncountersSectionTemplateIdTestCase = new OperationsTestCase<EncountersSection>(
 			"validateHITSPEncountersSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_ENCOUNTERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_ENCOUNTERS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-			
 			@Override
 			protected void updateToFail(EncountersSection target) {
 
 			}
 
-			
 			@Override
 			protected void updateToPass(EncountersSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-				
-				
-				
-				
-				
-				
-				
-				
 			}
 
-			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return EncountersSectionOperations.validateHITSPEncountersSectionTemplateId(
 					(EncountersSection) objectToTest, diagnostician, map);
 			}
@@ -108,66 +78,33 @@ public void testValidateHITSPEncountersSectionTemplateId() {
 		};
 
 		validateHITSPEncountersSectionTemplateIdTestCase.doValidationTest();
-}		
+	}
 
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateHITSPEncountersSectionEncounterEntry() {
-			OperationsTestCase<EncountersSection> validateHITSPEncountersSectionEncounterEntryTestCase = new OperationsTestCase<EncountersSection>(
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateHITSPEncountersSectionEncounterEntry() {
+		OperationsTestCase<EncountersSection> validateHITSPEncountersSectionEncounterEntryTestCase = new OperationsTestCase<EncountersSection>(
 			"validateHITSPEncountersSectionEncounterEntry",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_ENCOUNTERS_SECTION_ENCOUNTER_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_ENCOUNTERS_SECTION_ENCOUNTER_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-			
 			@Override
 			protected void updateToFail(EncountersSection target) {
 
 			}
 
-			
 			@Override
 			protected void updateToPass(EncountersSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-				
-				
-				
-				
-				
-				
-				
-				
 			}
 
-			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return EncountersSectionOperations.validateHITSPEncountersSectionEncounterEntry(
 					(EncountersSection) objectToTest, diagnostician, map);
 			}
@@ -175,16 +112,12 @@ public void testValidateHITSPEncountersSectionEncounterEntry() {
 		};
 
 		validateHITSPEncountersSectionEncounterEntryTestCase.doValidationTest();
-}		
+	}
 
-
-
-
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static class OperationsForOCL extends EncountersSectionOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -198,66 +131,57 @@ public void testValidateHITSPEncountersSectionEncounterEntry() {
 			return oclValue;
 		}
 	}
-	
-/**
-*
-* @generated
-*/
+
+	/**
+	 * 
+	 * @generated
+	 */
 	private static class ObjectFactory implements TestObjectFactory<EncountersSection> {
-		
-		@Override
-		public EncountersSection create() {		
+
+		public EncountersSection create() {
 			return HITSPFactory.eINSTANCE.createEncountersSection();
 		}
 	}
 
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
-
-	
-	
-	
 	/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-	private static class ConstructorTestClass extends EncountersSectionOperations {}
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	private static class ConstructorTestClass extends EncountersSectionOperations {
+	}
 
-
-
-
-
-/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-		@Test
+	/**
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
-
-
 	/**
-*
-* @generated
-*/
-	
+	 * 
+	 * @generated
+	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
-	
+
 } // EncountersSectionOperations

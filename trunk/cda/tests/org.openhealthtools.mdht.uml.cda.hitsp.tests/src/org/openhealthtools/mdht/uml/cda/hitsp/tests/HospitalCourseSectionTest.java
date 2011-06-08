@@ -1,4 +1,3 @@
-
 /**
  * <copyright>
  * </copyright>
@@ -6,7 +5,6 @@
  * $Id$
  */
 package org.openhealthtools.mdht.uml.cda.hitsp.tests;
-
 
 import java.util.Map;
 
@@ -23,82 +21,50 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.HospitalCourseSectionOp
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Hospital Course Section</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Hospital Course Section</b></em>' model objects. <!--
+ * end-user-doc -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.HospitalCourseSection#validateHITSPHospitalCourseSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Hospital Course Section Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.hitsp.HospitalCourseSection#validateHITSPHospitalCourseSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate HITSP Hospital Course Section Template Id</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
- 
-public class HospitalCourseSectionTest extends  CDAValidationTest {
 
+public class HospitalCourseSectionTest extends CDAValidationTest {
 
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateHITSPHospitalCourseSectionTemplateId() {
-			OperationsTestCase<HospitalCourseSection> validateHITSPHospitalCourseSectionTemplateIdTestCase = new OperationsTestCase<HospitalCourseSection>(
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateHITSPHospitalCourseSectionTemplateId() {
+		OperationsTestCase<HospitalCourseSection> validateHITSPHospitalCourseSectionTemplateIdTestCase = new OperationsTestCase<HospitalCourseSection>(
 			"validateHITSPHospitalCourseSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_HOSPITAL_COURSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_HOSPITAL_COURSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-			
 			@Override
 			protected void updateToFail(HospitalCourseSection target) {
 
 			}
 
-			
 			@Override
 			protected void updateToPass(HospitalCourseSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-				
-				
-				
-				
-				
-				
-				
-				
 			}
 
-			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HospitalCourseSectionOperations.validateHITSPHospitalCourseSectionTemplateId(
 					(HospitalCourseSection) objectToTest, diagnostician, map);
 			}
@@ -106,14 +72,12 @@ public void testValidateHITSPHospitalCourseSectionTemplateId() {
 		};
 
 		validateHITSPHospitalCourseSectionTemplateIdTestCase.doValidationTest();
-}		
+	}
 
-
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static class OperationsForOCL extends HospitalCourseSectionOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -127,68 +91,57 @@ public void testValidateHITSPHospitalCourseSectionTemplateId() {
 			return oclValue;
 		}
 	}
-	
-/**
-*
-* @generated
-*/
+
+	/**
+	 * 
+	 * @generated
+	 */
 	private static class ObjectFactory implements TestObjectFactory<HospitalCourseSection> {
-		
-		@Override
-		public HospitalCourseSection create() {		
+
+		public HospitalCourseSection create() {
 			return HITSPFactory.eINSTANCE.createHospitalCourseSection();
 		}
 	}
 
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
-
-	
-	
-	
 	/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-	private static class ConstructorTestClass extends HospitalCourseSectionOperations {}
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	private static class ConstructorTestClass extends HospitalCourseSectionOperations {
+	}
 
-
-
-
-
-/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-		@Test
+	/**
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
-
-
-
-
 	/**
-*
-* @generated
-*/
-	
+	 * 
+	 * @generated
+	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
-	
+
 } // HospitalCourseSectionOperations

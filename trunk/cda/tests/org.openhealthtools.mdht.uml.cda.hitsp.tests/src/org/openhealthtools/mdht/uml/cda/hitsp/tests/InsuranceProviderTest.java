@@ -1,4 +1,3 @@
-
 /**
  * <copyright>
  * </copyright>
@@ -6,7 +5,6 @@
  * $Id$
  */
 package org.openhealthtools.mdht.uml.cda.hitsp.tests;
-
 
 import java.util.Map;
 
@@ -23,82 +21,50 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.InsuranceProviderOperat
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Insurance Provider</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Insurance Provider</b></em>' model objects. <!--
+ * end-user-doc -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.InsuranceProvider#validateInsuranceProviderTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Insurance Provider Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.hitsp.InsuranceProvider#validateInsuranceProviderTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Insurance Provider Template Id</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
- 
-public class InsuranceProviderTest extends  CDAValidationTest {
 
+public class InsuranceProviderTest extends CDAValidationTest {
 
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateInsuranceProviderTemplateId() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderTemplateIdTestCase = new OperationsTestCase<InsuranceProvider>(
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateInsuranceProviderTemplateId() {
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderTemplateIdTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-			
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
 
 			}
 
-			
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-				
-				
-				
-				
-				
-				
-				
-				
 			}
 
-			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderTemplateId(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -106,14 +72,12 @@ public void testValidateInsuranceProviderTemplateId() {
 		};
 
 		validateInsuranceProviderTemplateIdTestCase.doValidationTest();
-}		
+	}
 
-
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static class OperationsForOCL extends InsuranceProviderOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -127,68 +91,57 @@ public void testValidateInsuranceProviderTemplateId() {
 			return oclValue;
 		}
 	}
-	
-/**
-*
-* @generated
-*/
+
+	/**
+	 * 
+	 * @generated
+	 */
 	private static class ObjectFactory implements TestObjectFactory<InsuranceProvider> {
-		
-		@Override
-		public InsuranceProvider create() {		
+
+		public InsuranceProvider create() {
 			return HITSPFactory.eINSTANCE.createInsuranceProvider();
 		}
 	}
 
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
-
-	
-	
-	
 	/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-	private static class ConstructorTestClass extends InsuranceProviderOperations {}
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	private static class ConstructorTestClass extends InsuranceProviderOperations {
+	}
 
-
-
-
-
-/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-		@Test
+	/**
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
-
-
-
-
 	/**
-*
-* @generated
-*/
-	
+	 * 
+	 * @generated
+	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
-	
+
 } // InsuranceProviderOperations

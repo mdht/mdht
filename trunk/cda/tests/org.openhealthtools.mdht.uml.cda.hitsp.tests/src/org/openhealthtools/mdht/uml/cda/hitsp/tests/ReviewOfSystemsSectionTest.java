@@ -1,4 +1,3 @@
-
 /**
  * <copyright>
  * </copyright>
@@ -6,7 +5,6 @@
  * $Id$
  */
 package org.openhealthtools.mdht.uml.cda.hitsp.tests;
-
 
 import java.util.Map;
 
@@ -23,82 +21,50 @@ import org.openhealthtools.mdht.uml.cda.hitsp.operations.ReviewOfSystemsSectionO
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Review Of Systems Section</b></em>' model objects.
- * <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Review Of Systems Section</b></em>' model objects. <!--
+ * end-user-doc -->
+ * 
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ReviewOfSystemsSection#validateHITSPReviewOfSystemsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Review Of Systems Section Template Id</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.hitsp.ReviewOfSystemsSection#validateHITSPReviewOfSystemsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate HITSP Review Of Systems Section Template Id</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
- 
-public class ReviewOfSystemsSectionTest extends  CDAValidationTest {
 
+public class ReviewOfSystemsSectionTest extends CDAValidationTest {
 
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateHITSPReviewOfSystemsSectionTemplateId() {
-			OperationsTestCase<ReviewOfSystemsSection> validateHITSPReviewOfSystemsSectionTemplateIdTestCase = new OperationsTestCase<ReviewOfSystemsSection>(
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateHITSPReviewOfSystemsSectionTemplateId() {
+		OperationsTestCase<ReviewOfSystemsSection> validateHITSPReviewOfSystemsSectionTemplateIdTestCase = new OperationsTestCase<ReviewOfSystemsSection>(
 			"validateHITSPReviewOfSystemsSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_REVIEW_OF_SYSTEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_REVIEW_OF_SYSTEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-			
 			@Override
 			protected void updateToFail(ReviewOfSystemsSection target) {
 
 			}
 
-			
 			@Override
 			protected void updateToPass(ReviewOfSystemsSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-				
-				
-				
-				
-				
-				
-				
-				
 			}
 
-			
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ReviewOfSystemsSectionOperations.validateHITSPReviewOfSystemsSectionTemplateId(
 					(ReviewOfSystemsSection) objectToTest, diagnostician, map);
 			}
@@ -106,14 +72,12 @@ public void testValidateHITSPReviewOfSystemsSectionTemplateId() {
 		};
 
 		validateHITSPReviewOfSystemsSectionTemplateIdTestCase.doValidationTest();
-}		
+	}
 
-
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static class OperationsForOCL extends ReviewOfSystemsSectionOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -127,68 +91,57 @@ public void testValidateHITSPReviewOfSystemsSectionTemplateId() {
 			return oclValue;
 		}
 	}
-	
-/**
-*
-* @generated
-*/
+
+	/**
+	 * 
+	 * @generated
+	 */
 	private static class ObjectFactory implements TestObjectFactory<ReviewOfSystemsSection> {
-		
-		@Override
-		public ReviewOfSystemsSection create() {		
+
+		public ReviewOfSystemsSection create() {
 			return HITSPFactory.eINSTANCE.createReviewOfSystemsSection();
 		}
 	}
 
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
-
-	
-	
-	
 	/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-	private static class ConstructorTestClass extends ReviewOfSystemsSectionOperations {}
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	private static class ConstructorTestClass extends ReviewOfSystemsSectionOperations {
+	}
 
-
-
-
-
-/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-		@Test
+	/**
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
-
-
-
-
 	/**
-*
-* @generated
-*/
-	
+	 * 
+	 * @generated
+	 */
+
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
-	
+
 } // ReviewOfSystemsSectionOperations
