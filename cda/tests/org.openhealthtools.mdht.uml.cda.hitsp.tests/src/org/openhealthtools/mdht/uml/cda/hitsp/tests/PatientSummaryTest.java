@@ -9,16 +9,24 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.DiagnosticResultsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.EncountersSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
+import org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.PatientSummary;
-
+import org.openhealthtools.mdht.uml.cda.hitsp.PayersSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.PlanOfCareSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.PatientSummaryOperations;
-
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.PregnancyHistorySection;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -209,6 +217,13 @@ public class PatientSummaryTest extends CDAValidationTest {
 			protected void updateToPass(PatientSummary target) {
 				target.init();
 
+				/* AdvanceDirectivesSection */
+				AdvanceDirectivesSection section =
+
+				HITSPFactory.eINSTANCE.createAdvanceDirectivesSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
@@ -242,6 +257,13 @@ public class PatientSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+
+				/* AllergiesReactionsSection */
+				AllergiesReactionsSection section =
+
+				HITSPFactory.eINSTANCE.createAllergiesReactionsSection().init();
+
+				target.addSection(section);
 
 			}
 
@@ -277,6 +299,13 @@ public class PatientSummaryTest extends CDAValidationTest {
 			protected void updateToPass(PatientSummary target) {
 				target.init();
 
+				/* ProblemListSection */
+				ProblemListSection section =
+
+				HITSPFactory.eINSTANCE.createProblemListSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
@@ -310,6 +339,13 @@ public class PatientSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+
+				/* EncountersSection */
+				EncountersSection section =
+
+				HITSPFactory.eINSTANCE.createEncountersSection().init();
+
+				target.addSection(section);
 
 			}
 
@@ -345,6 +381,13 @@ public class PatientSummaryTest extends CDAValidationTest {
 			protected void updateToPass(PatientSummary target) {
 				target.init();
 
+				/* ImmunizationsSection */
+				ImmunizationsSection section =
+
+				HITSPFactory.eINSTANCE.createImmunizationsSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
@@ -378,6 +421,13 @@ public class PatientSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+
+				/* PayersSection */
+				PayersSection section =
+
+				HITSPFactory.eINSTANCE.createPayersSection().init();
+
+				target.addSection(section);
 
 			}
 
@@ -413,6 +463,13 @@ public class PatientSummaryTest extends CDAValidationTest {
 			protected void updateToPass(PatientSummary target) {
 				target.init();
 
+				/* MedicationsSection */
+				MedicationsSection section =
+
+				HITSPFactory.eINSTANCE.createMedicationsSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
@@ -446,6 +503,13 @@ public class PatientSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+
+				/* SurgeriesSection */
+				SurgeriesSection section =
+
+				HITSPFactory.eINSTANCE.createSurgeriesSection().init();
+
+				target.addSection(section);
 
 			}
 
@@ -481,6 +545,13 @@ public class PatientSummaryTest extends CDAValidationTest {
 			protected void updateToPass(PatientSummary target) {
 				target.init();
 
+				/* PlanOfCareSection */
+				PlanOfCareSection section =
+
+				HITSPFactory.eINSTANCE.createPlanOfCareSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
@@ -514,6 +585,13 @@ public class PatientSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+
+				/* PregnancyHistorySection */
+				PregnancyHistorySection section =
+
+				IHEFactory.eINSTANCE.createPregnancyHistorySection().init();
+
+				target.addSection(section);
 
 			}
 
@@ -549,6 +627,13 @@ public class PatientSummaryTest extends CDAValidationTest {
 			protected void updateToPass(PatientSummary target) {
 				target.init();
 
+				/* VitalSignsSection */
+				VitalSignsSection section =
+
+				HITSPFactory.eINSTANCE.createVitalSignsSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
@@ -583,6 +668,13 @@ public class PatientSummaryTest extends CDAValidationTest {
 			protected void updateToPass(PatientSummary target) {
 				target.init();
 
+				/* DiagnosticResultsSection */
+				DiagnosticResultsSection section =
+
+				HITSPFactory.eINSTANCE.createDiagnosticResultsSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
@@ -595,6 +687,150 @@ public class PatientSummaryTest extends CDAValidationTest {
 		};
 
 		validatePatientSummaryDiagnosticResultsSectionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetHITSPAdvanceDirectivesSection() {
+
+		PatientSummary target = objectFactory.create();
+		target.getHITSPAdvanceDirectivesSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetAllergiesReactionsSection() {
+
+		PatientSummary target = objectFactory.create();
+		target.getAllergiesReactionsSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetProblemListSection() {
+
+		PatientSummary target = objectFactory.create();
+		target.getProblemListSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetHITSPEncountersSection() {
+
+		PatientSummary target = objectFactory.create();
+		target.getHITSPEncountersSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetHITSPImmunizationsSection() {
+
+		PatientSummary target = objectFactory.create();
+		target.getHITSPImmunizationsSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetHITSPPayersSection() {
+
+		PatientSummary target = objectFactory.create();
+		target.getHITSPPayersSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetHITSPMedicationsSection() {
+
+		PatientSummary target = objectFactory.create();
+		target.getHITSPMedicationsSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetSurgeriesSection() {
+
+		PatientSummary target = objectFactory.create();
+		target.getSurgeriesSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetHITSPPlanOfCareSection() {
+
+		PatientSummary target = objectFactory.create();
+		target.getHITSPPlanOfCareSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPregnancyHistorySection() {
+
+		PatientSummary target = objectFactory.create();
+		target.getPregnancyHistorySection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetHITSPVitalSignsSection() {
+
+		PatientSummary target = objectFactory.create();
+		target.getHITSPVitalSignsSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetDiagnosticResultsSection() {
+
+		PatientSummary target = objectFactory.create();
+		target.getDiagnosticResultsSection();
+
 	}
 
 	/**

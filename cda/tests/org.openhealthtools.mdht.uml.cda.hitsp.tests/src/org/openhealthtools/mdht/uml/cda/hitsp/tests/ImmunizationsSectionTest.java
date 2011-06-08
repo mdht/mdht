@@ -25,22 +25,16 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Immunizations Section</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection#validateHITSPImmunizationsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate HITSP Immunizations Section Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection#validateHITSPImmunizationsSectionImmunization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate HITSP Immunizations Section Immunization</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection#getHITSPImmunizations()
- * <em>Get HITSP Immunizations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection#validateHITSPImmunizationsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Immunizations Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection#validateHITSPImmunizationsSectionImmunization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Immunizations Section Immunization</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection#getHITSPImmunizations() <em>Get HITSP Immunizations</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -112,6 +106,18 @@ public class ImmunizationsSectionTest extends CDAValidationTest {
 		};
 
 		validateHITSPImmunizationsSectionImmunizationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetHITSPImmunizations() {
+
+		ImmunizationsSection target = objectFactory.create();
+		target.getHITSPImmunizations();
+
 	}
 
 	/**
