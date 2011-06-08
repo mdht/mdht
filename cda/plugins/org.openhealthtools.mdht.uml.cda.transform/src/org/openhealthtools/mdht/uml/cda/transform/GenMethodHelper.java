@@ -23,11 +23,14 @@ import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Operation;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 
 public class GenMethodHelper {
 	public static final String LF = System.getProperty("line.separator");
@@ -199,7 +202,6 @@ public class GenMethodHelper {
 			Class sourceClass = property.getClass_();
 			Class cdaTargetClass = CDAModelUtil.getCDAClass((Classifier) property.getType());
 			Property cdaProperty = CDAModelUtil.getCDAProperty(property);
-			String nsURI = null;
 
 			if (CDAModelUtil.isDatatypeModel(property.getType())) {
 				operationBody.append("org.eclipse.emf.ecore.EPackage ePackage = org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage.eINSTANCE;" +
@@ -212,10 +214,21 @@ public class GenMethodHelper {
 				operationBody.append("org.eclipse.emf.ecore.EFactory eFactory = org.openhealthtools.mdht.uml.cda.CDAFactory.eINSTANCE;" +
 						LF);
 			} else {
-				Stereotype ePackage = property.getType().getNearestPackage().getAppliedStereotype("Ecore::EPackage");
+				String nsURI = null;
+				Package umlPackage = property.getType().getNearestPackage();
+				Stereotype ePackage = umlPackage.getAppliedStereotype("Ecore::EPackage");
 				if (ePackage != null) {
-					nsURI = (String) property.getType().getNearestPackage().getValue(ePackage, "nsURI");
+					nsURI = (String) umlPackage.getValue(ePackage, "nsURI");
 				} else {
+					Stereotype codegenSupport = CDAProfileUtil.getAppliedCDAStereotype(
+						umlPackage, ICDAProfileConstants.CODEGEN_SUPPORT);
+					if (codegenSupport != null) {
+						nsURI = (String) umlPackage.getValue(
+							codegenSupport, ICDAProfileConstants.CODEGEN_SUPPORT_NS_URI);
+					}
+				}
+
+				if (nsURI == null) {
 					return null;
 				}
 
@@ -229,7 +242,8 @@ public class GenMethodHelper {
 					property.getType().getName() + "\");" + LF);
 			operationBody.append("org.eclipse.emf.ecore.EObject eObject = eFactory.create(eClass);" + LF);
 
-			if (CDAModelUtil.isSection(cdaTargetClass) || CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
+			// run init() on template classes
+			if (property.getType() instanceof Class && CDAModelUtil.getTemplateId((Class) property.getType()) != null) {
 				operationBody.append("try {" + LF);
 				operationBody.append("	java.lang.reflect.Method initMethod = eObject.getClass().getMethod(\"init\", new java.lang.Class[0]);" +
 						LF);
@@ -237,56 +251,41 @@ public class GenMethodHelper {
 				operationBody.append("} catch (Exception e) {" + LF);
 				operationBody.append("	// no init() method" + LF);
 				operationBody.append("}" + LF);
+			}
 
-				if (transformerOptions.isGenerateDomainClasses()) {
-					operationBody.append("org.eclipse.emf.ecore.EPackage domainPackage = this.eClass().getEPackage();" +
-							LF);
-					operationBody.append("org.eclipse.emf.ecore.EFactory domainFactory = domainPackage.getEFactoryInstance();" +
-							LF);
-					operationBody.append("org.eclipse.emf.ecore.EClass domainEClass = (org.eclipse.emf.ecore.EClass) domainPackage.getEClassifier(\"" +
-							domainType.getName() + "\");" + LF);
-					operationBody.append(domainType.getName() + " value = (" + domainType.getName() +
-							")domainFactory.create(domainEClass);" + LF);
+			// instantiate domain class wrapper, only if domainType is in same package as interface we are building
+			if (transformerOptions.isGenerateDomainClasses() && cdaTargetClass != null &&
+					classifier.getNearestPackage() == domainType.getNearestPackage()) {
+				operationBody.append("org.eclipse.emf.ecore.EPackage domainPackage = this.eClass().getEPackage();" + LF);
+				operationBody.append("org.eclipse.emf.ecore.EFactory domainFactory = domainPackage.getEFactoryInstance();" +
+						LF);
+				operationBody.append("org.eclipse.emf.ecore.EClass domainEClass = (org.eclipse.emf.ecore.EClass) domainPackage.getEClassifier(\"" +
+						domainType.getName() + "\");" + LF);
+				operationBody.append(domainType.getName() + " value = (" + domainType.getName() +
+						")domainFactory.create(domainEClass);" + LF);
 
-					operationBody.append("value.setCDAType((org.openhealthtools.mdht.uml.cda." +
-							cdaTargetClass.getName() + ")eObject);" + LF);
+				operationBody.append("value.setCDAType((org.openhealthtools.mdht.uml.cda." + cdaTargetClass.getName() +
+						")eObject);" + LF);
 
-				} else {
-					operationBody.append(domainType.getName() + " value = " + "(" + domainType.getName() +
-							") eObject;" + LF);
-				}
+			} else {
+				operationBody.append(domainType.getName() + " value = " + "(" + domainType.getName() + ") eObject;" +
+						LF);
+			}
+
+			if (transformerOptions.isGenerateDomainClasses()) {
+				operationBody.append("this.getCDAType().");
 			}
 
 			if ((CDAModelUtil.isClinicalDocument(sourceClass) || CDAModelUtil.isSection(sourceClass)) &&
 					CDAModelUtil.isSection(cdaTargetClass)) {
-				// operationBody.append("section.init();" + LF);
-				// operationBody.append(domainType.getName() + " value = " + "(" + domainType.getName() + ") eObject;" +
-				// LF);
-
-				if (transformerOptions.isGenerateDomainClasses()) {
-					operationBody.append("this.getCDAType().");
-				}
 				operationBody.append("addSection((org.openhealthtools.mdht.uml.cda.Section)eObject);" + LF);
 				operationBody.append("return value;");
 			} else if ((CDAModelUtil.isSection(sourceClass) || CDAModelUtil.isClinicalStatement(sourceClass)) &&
 					CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
-				// operationBody.append("clinicalStatement.init();" + LF);
-				// operationBody.append(domainType.getName() + " value = " + "(" + domainType.getName() + ") eObject;" +
-				// LF);
-
-				if (transformerOptions.isGenerateDomainClasses()) {
-					operationBody.append("this.getCDAType().");
-				}
 				operationBody.append("add" + cdaTargetClass.getName() + "((org.openhealthtools.mdht.uml.cda." +
 						cdaTargetClass.getName() + ")eObject);" + LF);
 				operationBody.append("return value;");
 			} else if (CDAModelUtil.isDatatypeModel(property.getType())) {
-				operationBody.append(domainType.getName() + " value = " + "(" + domainType.getName() + ") eObject;" +
-						LF);
-
-				if (transformerOptions.isGenerateDomainClasses()) {
-					operationBody.append("this.getCDAType().");
-				}
 				if (cdaProperty.getUpper() == 1) {
 					operationBody.append("set" + capitalize(cdaProperty.getName()) + "(value);" + LF);
 				} else {
@@ -294,12 +293,6 @@ public class GenMethodHelper {
 				}
 				operationBody.append("return value;");
 			} else if (CDAModelUtil.isCDAModel(property.getType())) {
-				operationBody.append(domainType.getName() + " value = " + "(" + domainType.getName() + ") eObject;" +
-						LF);
-
-				if (transformerOptions.isGenerateDomainClasses()) {
-					operationBody.append("this.getCDAType().");
-				}
 				if (cdaProperty.getUpper() == 1) {
 					operationBody.append("set" + capitalize(cdaProperty.getName()) + "(value);" + LF);
 				} else {
@@ -307,12 +300,6 @@ public class GenMethodHelper {
 				}
 				operationBody.append("return value;");
 			} else {
-				operationBody.append(domainType.getName() + " value = " + "(" + domainType.getName() + ") eObject;" +
-						LF);
-
-				if (transformerOptions.isGenerateDomainClasses()) {
-					operationBody.append("this.getCDAType().");
-				}
 				if (property.getUpper() == 1) {
 					operationBody.append("set" + capitalize(property.getName()) + "(value);" + LF);
 				} else {
