@@ -110,7 +110,7 @@ public class TransformPropertyConstraint extends TransformAbstract {
 				// single-valued CDA property
 				if (property.getLower() == 1) {
 					if (property.getType() instanceof Enumeration) {
-						body.append("isDefined('" + selfName + "')");
+						body.append("isDefined('" + cdaProperty.getName() + "')");
 					} else {
 						body.append("not " + selfName + ".oclIsUndefined()");
 					}
@@ -232,7 +232,7 @@ public class TransformPropertyConstraint extends TransformAbstract {
 				// TODO is this adequate to catch MAY or SHOULD constraints?
 				if (cdaProperty.getUpper() == 1) {
 					if (property.getType() instanceof Enumeration) {
-						body.append("isDefined('" + selfName + "')");
+						body.append("isDefined('" + cdaProperty.getName() + "')");
 					} else {
 						body.append("not " + selfName + ".oclIsUndefined()");
 					}
