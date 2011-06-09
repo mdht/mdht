@@ -109,7 +109,11 @@ public class TransformPropertyConstraint extends TransformAbstract {
 			} else if (cdaProperty.getUpper() == 1) {
 				// single-valued CDA property
 				if (property.getLower() == 1) {
-					body.append("not " + selfName + ".oclIsUndefined()");
+					if (property.getType() instanceof Enumeration) {
+						body.append("isDefined('" + selfName + "')");
+					} else {
+						body.append("not " + selfName + ".oclIsUndefined()");
+					}
 				}
 			} else if (cdaProperty.getUpper() > 0 || cdaProperty.getUpper() == LiteralUnlimitedNatural.UNLIMITED) {
 				// multi-valued CDA property
@@ -227,7 +231,11 @@ public class TransformPropertyConstraint extends TransformAbstract {
 				// Constraints that have no multiplicity or type restriction
 				// TODO is this adequate to catch MAY or SHOULD constraints?
 				if (cdaProperty.getUpper() == 1) {
-					body.append("not " + selfName + ".oclIsUndefined()");
+					if (property.getType() instanceof Enumeration) {
+						body.append("isDefined('" + selfName + "')");
+					} else {
+						body.append("not " + selfName + ".oclIsUndefined()");
+					}
 				} else {
 					// body.append(selfName + "->exists(value : datatypes::ANY | not value.oclIsUndefined())");
 					body.append("not " + selfName + "->isEmpty()");
