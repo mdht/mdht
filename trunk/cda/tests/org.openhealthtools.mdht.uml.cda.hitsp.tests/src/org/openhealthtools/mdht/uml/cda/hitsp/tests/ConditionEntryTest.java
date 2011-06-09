@@ -9,20 +9,16 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ConditionEntryOperations;
-
+import org.openhealthtools.mdht.uml.cda.ihe.operations.ProblemEntryOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -57,7 +53,7 @@ public class ConditionEntryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateConditionEntryHasOnsetDate() {
@@ -74,6 +70,8 @@ public class ConditionEntryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConditionEntry target) {
 				target.init();
+				IVL_TS time = DatatypesFactory.eINSTANCE.createIVL_TS("low", "high");
+				target.setEffectiveTime(time);
 
 			}
 
@@ -91,7 +89,7 @@ public class ConditionEntryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateConditionEntryHasResolutionDate() {
@@ -108,6 +106,8 @@ public class ConditionEntryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConditionEntry target) {
 				target.init();
+				IVL_TS time = DatatypesFactory.eINSTANCE.createIVL_TS("low", "high");
+				target.setEffectiveTime(time);
 
 			}
 
@@ -125,7 +125,7 @@ public class ConditionEntryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateConditionEntryHasUnknownResolutionDate() {
@@ -142,6 +142,8 @@ public class ConditionEntryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConditionEntry target) {
 				target.init();
+				IVL_TS time = DatatypesFactory.eINSTANCE.createIVL_TS("low", "high");
+				target.setEffectiveTime(time);
 
 			}
 
@@ -159,41 +161,7 @@ public class ConditionEntryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateConditionEntryCode() {
-		OperationsTestCase<ConditionEntry> validateConditionEntryCodeTestCase = new OperationsTestCase<ConditionEntry>(
-			"validateConditionEntryCode",
-			operationsForOCL.getOCLValue("VALIDATE_CONDITION_ENTRY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ConditionEntry target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ConditionEntry target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ConditionEntryOperations.validateConditionEntryCode(
-					(ConditionEntry) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateConditionEntryCodeTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProblemEntryValue() {
@@ -211,6 +179,8 @@ public class ConditionEntryTest extends CDAValidationTest {
 				target.init();
 
 				CD value = DatatypesFactory.eINSTANCE.createCD();
+				value.setCode("111");
+				value.setCodeSystem("2.16.840.1.113883.6.96");
 				target.getValues().add(value);
 
 			}
@@ -218,7 +188,7 @@ public class ConditionEntryTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConditionEntryOperations.validateProblemEntryValue(
+				return ProblemEntryOperations.validateProblemEntryValue(
 					(ConditionEntry) objectToTest, diagnostician, map);
 			}
 

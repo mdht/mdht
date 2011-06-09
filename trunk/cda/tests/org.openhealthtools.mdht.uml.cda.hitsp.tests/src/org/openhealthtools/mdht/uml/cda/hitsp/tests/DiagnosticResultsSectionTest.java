@@ -9,16 +9,15 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Entry;
 import org.openhealthtools.mdht.uml.cda.hitsp.DiagnosticResultsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
-
+import org.openhealthtools.mdht.uml.cda.hitsp.Procedure;
+import org.openhealthtools.mdht.uml.cda.hitsp.Result;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.DiagnosticResultsSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -78,7 +77,7 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateDiagnosticResultsSectionDiagnosticProcedure() {
@@ -95,6 +94,8 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticResultsSection target) {
 				target.init();
+				Procedure procedure = HITSPFactory.eINSTANCE.createProcedure().init();
+				target.addProcedure(procedure);
 
 			}
 
@@ -112,7 +113,7 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateDiagnosticResultsSectionResult() {
@@ -129,6 +130,10 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticResultsSection target) {
 				target.init();
+				Entry entry = CDAFactory.eINSTANCE.createEntry();
+				Result obv = HITSPFactory.eINSTANCE.createResult().init();
+				entry.setObservation(obv);
+				target.getEntries().add(entry);
 
 			}
 

@@ -11,10 +11,22 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Participant2;
+import org.openhealthtools.mdht.uml.cda.ParticipantRole;
+import org.openhealthtools.mdht.uml.cda.PlayingEntity;
+import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.MedicationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_PQ;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.RTO_PQ_PQ;
+import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
+import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -401,7 +413,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationHasMedicationVehicle() {
@@ -418,6 +430,13 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
+				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
+
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				p2.setParticipantRole(pr);
+				sa.getParticipants().add(p2);
+				target.addSubstanceAdministration(sa);
 
 			}
 
@@ -452,6 +471,14 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
+				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
+
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				p2.setParticipantRole(pr);
+				p2.setTypeCode(ParticipationType.CSM);
+				sa.getParticipants().add(p2);
+				target.addSubstanceAdministration(sa);
 
 			}
 
@@ -571,7 +598,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationMedicationVehicleCodedName() {
@@ -588,6 +615,21 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
+				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				CE ce = DatatypesFactory.eINSTANCE.createCE("12345", "2.16.840.1.113883.3.88.12.80.21");
+
+				pe.setCode(ce);
+				pr.setClassCode(RoleClassRoot.MANU);
+				pr.setPlayingEntity(pe);
+				p2.setTypeCode(ParticipationType.CSM);
+				CE ce2 = DatatypesFactory.eINSTANCE.createCE("412307009", "2.16.840.1.113883.6.96");
+				pr.setCode(ce2);
+				p2.setParticipantRole(pr);
+				sa.getParticipants().add(p2);
+				target.addSubstanceAdministration(sa);
 
 			}
 
@@ -605,7 +647,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationMedicationVehicleCodedNameVocab() {
@@ -622,6 +664,21 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
+
+				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				CE ce = DatatypesFactory.eINSTANCE.createCE("12345", "2.16.840.1.113883.3.88.12.80.21");
+
+				pe.setCode(ce);
+				pr.setClassCode(RoleClassRoot.MANU);
+				pr.setPlayingEntity(pe);
+				CE ce2 = DatatypesFactory.eINSTANCE.createCE("412307009", "2.16.840.1.113883.6.96");
+				pr.setCode(ce2);
+				p2.setParticipantRole(pr);
+				sa.getParticipants().add(p2);
+				target.addSubstanceAdministration(sa);
 
 			}
 
@@ -691,6 +748,9 @@ public class MedicationTest extends CDAValidationTest {
 			protected void updateToPass(Medication target) {
 				target.init();
 
+				IVL_TS s = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.getEffectiveTimes().add(s);
+
 			}
 
 			@Override
@@ -707,41 +767,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateHITSPMedicationRouteCode() {
-		OperationsTestCase<Medication> validateHITSPMedicationRouteCodeTestCase = new OperationsTestCase<Medication>(
-			"validateHITSPMedicationRouteCode",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_ROUTE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(Medication target) {
-
-			}
-
-			@Override
-			protected void updateToPass(Medication target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationOperations.validateHITSPMedicationRouteCode(
-					(Medication) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateHITSPMedicationRouteCodeTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationDoseQuantity() {
@@ -759,6 +785,9 @@ public class MedicationTest extends CDAValidationTest {
 			protected void updateToPass(Medication target) {
 				target.init();
 
+				IVL_PQ q = DatatypesFactory.eINSTANCE.createIVL_PQ();
+				target.setDoseQuantity(q);
+
 			}
 
 			@Override
@@ -775,41 +804,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateHITSPMedicationAdministrationUnitCode() {
-		OperationsTestCase<Medication> validateHITSPMedicationAdministrationUnitCodeTestCase = new OperationsTestCase<Medication>(
-			"validateHITSPMedicationAdministrationUnitCode",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_ADMINISTRATION_UNIT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(Medication target) {
-
-			}
-
-			@Override
-			protected void updateToPass(Medication target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationOperations.validateHITSPMedicationAdministrationUnitCode(
-					(Medication) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateHITSPMedicationAdministrationUnitCodeTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationMaxDoseQuantity() {
@@ -827,6 +822,9 @@ public class MedicationTest extends CDAValidationTest {
 			protected void updateToPass(Medication target) {
 				target.init();
 
+				RTO_PQ_PQ q = DatatypesFactory.eINSTANCE.createRTO_PQ_PQ();
+				target.setMaxDoseQuantity(q);
+
 			}
 
 			@Override
@@ -839,40 +837,6 @@ public class MedicationTest extends CDAValidationTest {
 		};
 
 		validateHITSPMedicationMaxDoseQuantityTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateHITSPMedicationApproachSiteCode() {
-		OperationsTestCase<Medication> validateHITSPMedicationApproachSiteCodeTestCase = new OperationsTestCase<Medication>(
-			"validateHITSPMedicationApproachSiteCode",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_APPROACH_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(Medication target) {
-
-			}
-
-			@Override
-			protected void updateToPass(Medication target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationOperations.validateHITSPMedicationApproachSiteCode(
-					(Medication) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateHITSPMedicationApproachSiteCodeTestCase.doValidationTest();
 	}
 
 	/**

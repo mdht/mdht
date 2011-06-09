@@ -9,21 +9,17 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.Result;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ResultOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActMoodDocumentObservation;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -49,7 +45,7 @@ public class ResultTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateResultTypeCodeSystem() {
@@ -65,8 +61,35 @@ public class ResultTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(Result target) {
-				target.init();
 
+			}
+
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(Result target) {
+						target.init();
+						CD cd = DatatypesFactory.eINSTANCE.createCD();
+						cd.setCodeSystem("2.16.840.1.113883.6.1");
+						target.setCode(cd);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(Result target) {
+						target.init();
+						CD cd = DatatypesFactory.eINSTANCE.createCD();
+						cd.setCodeSystem("2.16.840.1.113883.6.96");
+						target.setCode(cd);
+					}
+
+				});
 			}
 
 			@Override
@@ -82,7 +105,7 @@ public class ResultTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateResultLaboratoryResultsValueSet() {
@@ -99,6 +122,9 @@ public class ResultTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Result target) {
 				target.init();
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCodeSystem("2.16.840.1.113883.6.1");
+				target.setCode(cd);
 
 			}
 
@@ -116,7 +142,7 @@ public class ResultTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateResultValuePresence() {
@@ -127,12 +153,15 @@ public class ResultTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(Result target) {
+				target.init();
+				target.setMoodCode(x_ActMoodDocumentObservation.EVN);
+				CE value = DatatypesFactory.eINSTANCE.createCE();
+				target.getValues().add(value);
 
 			}
 
 			@Override
 			protected void updateToPass(Result target) {
-				target.init();
 
 			}
 
@@ -181,7 +210,7 @@ public class ResultTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateResultCode() {
@@ -197,6 +226,8 @@ public class ResultTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Result target) {
 				target.init();
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				target.setCode(cd);
 
 			}
 

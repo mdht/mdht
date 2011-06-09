@@ -11,6 +11,10 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.DocumentationOf;
+import org.openhealthtools.mdht.uml.cda.Performer1;
+import org.openhealthtools.mdht.uml.cda.ServiceEvent;
 import org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.DiagnosticResultsSection;
@@ -131,7 +135,7 @@ public class PatientSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePatientSummaryHealthcareProvider() {
@@ -148,6 +152,13 @@ public class PatientSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PatientSummary target) {
 				target.init();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				;
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				Performer1 p = CDAFactory.eINSTANCE.createPerformer1();
+				se.getPerformers().add(p);
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
 
 			}
 

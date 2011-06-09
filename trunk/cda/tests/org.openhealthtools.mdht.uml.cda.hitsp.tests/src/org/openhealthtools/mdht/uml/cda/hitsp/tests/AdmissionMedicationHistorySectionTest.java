@@ -9,14 +9,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.AdmissionMedicationHistorySection;
+import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.AdmissionMedicationHistorySectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -95,15 +92,8 @@ public class AdmissionMedicationHistorySectionTest extends CDAValidationTest {
 	private static class ObjectFactory implements TestObjectFactory<AdmissionMedicationHistorySection> {
 
 		public AdmissionMedicationHistorySection create() {
-			// TODO Auto-generated method stub
-			return null;
+			return HITSPFactory.eINSTANCE.createAdmissionMedicationHistorySection();
 		}
-
-		//
-		// public AdmissionMedicationHistorySection create() {
-		// return
-		// HITSPFactory.eINSTANCE.createAdmissionMedicationHistorySection();
-		// }
 	}
 
 	/**

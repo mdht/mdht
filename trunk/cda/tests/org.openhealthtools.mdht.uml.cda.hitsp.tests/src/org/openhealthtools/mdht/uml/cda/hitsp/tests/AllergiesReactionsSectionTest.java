@@ -9,16 +9,12 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.AllergiesReactionsSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -76,7 +72,7 @@ public class AllergiesReactionsSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPAllergiesReactionsSectionAllergyDrugSensitivity() {
@@ -93,6 +89,8 @@ public class AllergiesReactionsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergiesReactionsSection target) {
 				target.init();
+				AllergyDrugSensitivity ads = HITSPFactory.eINSTANCE.createAllergyDrugSensitivity().init();
+				target.addAct(ads);
 
 			}
 

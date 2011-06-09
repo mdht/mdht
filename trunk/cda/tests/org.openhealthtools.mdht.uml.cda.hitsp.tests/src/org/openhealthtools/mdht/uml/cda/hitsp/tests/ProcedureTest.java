@@ -9,17 +9,19 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Performer2;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.Procedure;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ProcedureOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -43,7 +45,7 @@ public class ProcedureTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPProcedureHasCodeOriginalText() {
@@ -61,6 +63,14 @@ public class ProcedureTest extends CDAValidationTest {
 			protected void updateToPass(Procedure target) {
 				target.init();
 
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				ED ot = DatatypesFactory.eINSTANCE.createED();
+				TEL ref = DatatypesFactory.eINSTANCE.createTEL();
+				ref.setValue("111");
+				ot.setReference(ref);
+				cd.setOriginalText(ot);
+				target.setCode(cd);
+
 			}
 
 			@Override
@@ -77,7 +87,7 @@ public class ProcedureTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPProcedurePerformerAssignedEntity() {
@@ -88,12 +98,19 @@ public class ProcedureTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(Procedure target) {
+				target.init();
+				Performer2 p = CDAFactory.eINSTANCE.createPerformer2();
 
+				target.getPerformers().add(p);
 			}
 
 			@Override
 			protected void updateToPass(Procedure target) {
-				target.init();
+
+				for (Performer2 p : target.getPerformers()) {
+					AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+					p.setAssignedEntity(ae);
+				}
 
 			}
 
@@ -145,41 +162,7 @@ public class ProcedureTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateHITSPProcedureTargetSiteCode() {
-		OperationsTestCase<Procedure> validateHITSPProcedureTargetSiteCodeTestCase = new OperationsTestCase<Procedure>(
-			"validateHITSPProcedureTargetSiteCode",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_PROCEDURE_TARGET_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(Procedure target) {
-
-			}
-
-			@Override
-			protected void updateToPass(Procedure target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProcedureOperations.validateHITSPProcedureTargetSiteCode(
-					(Procedure) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateHITSPProcedureTargetSiteCodeTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPProcedureCode() {
@@ -196,6 +179,8 @@ public class ProcedureTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Procedure target) {
 				target.init();
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				target.setCode(cd);
 
 			}
 
