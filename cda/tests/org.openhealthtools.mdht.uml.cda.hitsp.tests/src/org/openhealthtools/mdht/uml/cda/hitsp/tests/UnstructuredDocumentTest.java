@@ -9,16 +9,17 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Component2;
+import org.openhealthtools.mdht.uml.cda.Patient;
+import org.openhealthtools.mdht.uml.cda.PatientRole;
+import org.openhealthtools.mdht.uml.cda.RecordTarget;
+import org.openhealthtools.mdht.uml.cda.StructuredBody;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.UnstructuredDocument;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.UnstructuredDocumentOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -76,7 +77,7 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateUnstructuredDocumentNoStructuredData() {
@@ -87,12 +88,16 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(UnstructuredDocument target) {
+				target.init();
+				Component2 component = CDAFactory.eINSTANCE.createComponent2();
+				target.setComponent(component);
 
 			}
 
 			@Override
 			protected void updateToPass(UnstructuredDocument target) {
-				target.init();
+				StructuredBody sb = CDAFactory.eINSTANCE.createStructuredBody();
+				target.getComponent().setStructuredBody(sb);
 
 			}
 
@@ -110,7 +115,7 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateUnstructuredDocumentOnePatientPerDocument() {
@@ -127,6 +132,14 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(UnstructuredDocument target) {
 				target.init();
+
+				RecordTarget rt = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient p = CDAFactory.eINSTANCE.createPatient();
+				pr.setPatient(p);
+				rt.setPatientRole(pr);
+
+				target.getRecordTargets().add(rt);
 
 			}
 

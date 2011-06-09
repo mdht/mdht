@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.Encounter;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.EncounterOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -70,39 +65,6 @@ public class EncounterTest extends CDAValidationTest {
 		};
 
 		validateHITSPEncounterTemplateIdTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateHITSPEncounterCode() {
-		OperationsTestCase<Encounter> validateHITSPEncounterCodeTestCase = new OperationsTestCase<Encounter>(
-			"validateHITSPEncounterCode",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_ENCOUNTER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(Encounter target) {
-
-			}
-
-			@Override
-			protected void updateToPass(Encounter target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return EncounterOperations.validateHITSPEncounterCode((Encounter) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateHITSPEncounterCodeTestCase.doValidationTest();
 	}
 
 	/**

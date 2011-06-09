@@ -138,7 +138,7 @@ public class ImmunizationTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ImmunizationOperations.validateImmunizationCode((Immunization) objectToTest, diagnostician, map);
+				return org.openhealthtools.mdht.uml.cda.ihe.operations.ImmunizationOperations.validateImmunizationCode((Immunization) objectToTest, diagnostician, map);
 			}
 
 		};

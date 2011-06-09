@@ -69,6 +69,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 				Material mm = CDAFactory.eINSTANCE.createMaterial();
 				CE ce = DatatypesFactory.eINSTANCE.createCE();
 				ce.setCodeSystem("2.16.840.1.113883.3.88.12.80.17");
+				ce.setCode("111");
 				mm.setCode(ce);
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				ce.getTranslations().add(cd);

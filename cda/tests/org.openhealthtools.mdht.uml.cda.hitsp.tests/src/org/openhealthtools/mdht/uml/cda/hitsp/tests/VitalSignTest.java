@@ -9,18 +9,13 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultObservationOperations;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSign;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.VitalSignOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -76,7 +71,7 @@ public class VitalSignTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateResultObservationCode() {
@@ -95,6 +90,8 @@ public class VitalSignTest extends CDAValidationTest {
 				target.init();
 
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCode("8306-3");
+				cd.setCodeSystem("2.16.840.1.113883.6.1");
 				target.setCode(cd);
 
 			}
@@ -102,7 +99,7 @@ public class VitalSignTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return VitalSignOperations.validateResultObservationCode((VitalSign) objectToTest, diagnostician, map);
+				return ResultObservationOperations.validateResultObservationCode((VitalSign) objectToTest, diagnostician, map);
 			}
 
 		};

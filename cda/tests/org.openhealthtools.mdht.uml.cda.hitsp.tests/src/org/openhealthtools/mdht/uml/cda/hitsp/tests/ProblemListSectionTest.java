@@ -9,16 +9,12 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ProblemListSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -76,7 +72,7 @@ public class ProblemListSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProblemListSectionCondition() {
@@ -93,6 +89,8 @@ public class ProblemListSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemListSection target) {
 				target.init();
+				Condition act = HITSPFactory.eINSTANCE.createCondition();
+				target.addAct(act);
 
 			}
 

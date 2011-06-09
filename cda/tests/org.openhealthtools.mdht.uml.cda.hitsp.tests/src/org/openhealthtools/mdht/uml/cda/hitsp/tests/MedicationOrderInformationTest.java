@@ -9,20 +9,16 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationOrderInformation;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.MedicationOrderInformationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
-import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
+import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -157,7 +153,7 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationOrderInformationQuantityUnit() {
@@ -168,12 +164,15 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MedicationOrderInformation target) {
+				PQ pq = DatatypesFactory.eINSTANCE.createPQ();
+				target.setQuantity(pq);
 
 			}
 
 			@Override
 			protected void updateToPass(MedicationOrderInformation target) {
 				target.init();
+				target.getQuantity().setUnit("unit");
 
 			}
 
@@ -327,7 +326,7 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationOrderInformationQuantityDispensed() {
@@ -338,6 +337,11 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MedicationOrderInformation target) {
+
+				target.setMoodCode(x_DocumentSubstanceMood.EVN);
+
+				PQ pq = DatatypesFactory.eINSTANCE.createPQ();
+				target.setQuantity(pq);
 
 			}
 
@@ -447,6 +451,9 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 			protected void updateToPass(MedicationOrderInformation target) {
 				target.init();
 
+				IVL_INT value = DatatypesFactory.eINSTANCE.createIVL_INT();
+				target.setRepeatNumber(value);
+
 			}
 
 			@Override
@@ -459,43 +466,6 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 		};
 
 		validateMedicationOrderInformationRepeatNumberTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateMedicationOrderInformationStatusCode() {
-		OperationsTestCase<MedicationOrderInformation> validateMedicationOrderInformationStatusCodeTestCase = new OperationsTestCase<MedicationOrderInformation>(
-			"validateMedicationOrderInformationStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ORDER_INFORMATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationOrderInformation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationOrderInformation target) {
-				target.init();
-
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationOrderInformationOperations.validateMedicationOrderInformationStatusCode(
-					(MedicationOrderInformation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationOrderInformationStatusCodeTestCase.doValidationTest();
 	}
 
 	/**

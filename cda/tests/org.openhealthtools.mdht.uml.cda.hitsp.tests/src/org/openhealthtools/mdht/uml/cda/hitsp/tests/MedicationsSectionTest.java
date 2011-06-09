@@ -9,16 +9,12 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
+import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationsSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.MedicationsSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -76,7 +72,7 @@ public class MedicationsSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationsSectionMedication() {
@@ -93,6 +89,9 @@ public class MedicationsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationsSection target) {
 				target.init();
+
+				Medication sa = HITSPFactory.eINSTANCE.createMedication().init();
+				target.addSubstanceAdministration(sa);
 
 			}
 

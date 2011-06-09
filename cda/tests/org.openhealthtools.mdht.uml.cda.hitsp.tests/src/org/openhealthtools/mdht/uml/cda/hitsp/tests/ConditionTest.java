@@ -9,17 +9,20 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Performer2;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
+import org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ConditionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -45,7 +48,7 @@ public class ConditionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateConditionHasTreatingProvider() {
@@ -63,6 +66,9 @@ public class ConditionTest extends CDAValidationTest {
 			protected void updateToPass(Condition target) {
 				target.init();
 
+				Performer2 p2 = CDAFactory.eINSTANCE.createPerformer2();
+				target.getPerformers().add(p2);
+
 			}
 
 			@Override
@@ -79,7 +85,7 @@ public class ConditionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateConditionHasProviderId() {
@@ -97,6 +103,13 @@ public class ConditionTest extends CDAValidationTest {
 			protected void updateToPass(Condition target) {
 				target.init();
 
+				Performer2 p2 = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				ae.getIds().add(ii);
+				p2.setAssignedEntity(ae);
+				target.getPerformers().add(p2);
+
 			}
 
 			@Override
@@ -112,7 +125,7 @@ public class ConditionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateConditionHasProviderTreatmentTime() {
@@ -129,6 +142,9 @@ public class ConditionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Condition target) {
 				target.init();
+
+				Performer2 p2 = CDAFactory.eINSTANCE.createPerformer2();
+				target.getPerformers().add(p2);
 
 			}
 
@@ -179,7 +195,7 @@ public class ConditionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateConditionConditionEntry() {
@@ -196,6 +212,14 @@ public class ConditionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Condition target) {
 				target.init();
+
+				ConditionEntry obv = HITSPFactory.eINSTANCE.createConditionEntry().init();
+				target.addObservation(obv);
+
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+
+				}
 
 			}
 

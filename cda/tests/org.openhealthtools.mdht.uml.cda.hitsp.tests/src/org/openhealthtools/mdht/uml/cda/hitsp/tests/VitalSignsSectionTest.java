@@ -9,16 +9,16 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Component4;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
+import org.openhealthtools.mdht.uml.cda.hitsp.VitalSign;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.VitalSignsSectionOperations;
-
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -58,6 +58,13 @@ public class VitalSignsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(VitalSignsSection target) {
 				target.init();
+				VitalSignsOrganizer organizer = IHEFactory.eINSTANCE.createVitalSignsOrganizer().init();
+				target.addOrganizer(organizer);
+
+				Component4 component = CDAFactory.eINSTANCE.createComponent4();
+				VitalSign observation = HITSPFactory.eINSTANCE.createVitalSign().init();
+				component.setObservation(observation);
+				organizer.getComponents().add(component);
 
 			}
 
