@@ -400,6 +400,90 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPlanOfCareActivities() {
+
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivities();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPlanOfCareActivityAct() {
+
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivityAct();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPlanOfCareActivityEncounter() {
+
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivityEncounter();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPlanOfCareActivityObservation() {
+
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivityObservation();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPlanOfCareActivityProcedure() {
+
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivityProcedure();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPlanOfCareActivitySubstanceAdministration() {
+
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivitySubstanceAdministration();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPlanOfCareActivitySupply() {
+
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivitySupply();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

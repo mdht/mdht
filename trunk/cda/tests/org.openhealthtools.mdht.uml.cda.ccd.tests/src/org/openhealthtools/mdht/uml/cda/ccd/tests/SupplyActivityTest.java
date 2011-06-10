@@ -606,6 +606,42 @@ public class SupplyActivityTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetMedicationStatusObservation() {
+
+		SupplyActivity target = objectFactory.create();
+		target.getMedicationStatusObservation();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetFulfillmentInstructions() {
+
+		SupplyActivity target = objectFactory.create();
+		target.getFulfillmentInstructions();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetProductInstances() {
+
+		SupplyActivity target = objectFactory.create();
+		target.getProductInstances();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

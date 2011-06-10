@@ -31,6 +31,15 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 public class CCDRegistryDelegateTest extends CDAValidationTest {
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetEClass() {
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

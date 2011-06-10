@@ -534,6 +534,30 @@ public class AlertObservationTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetAlertStatusObservation() {
+
+		AlertObservation target = objectFactory.create();
+		target.getAlertStatusObservation();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetReactionObservations() {
+
+		AlertObservation target = objectFactory.create();
+		target.getReactionObservations();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

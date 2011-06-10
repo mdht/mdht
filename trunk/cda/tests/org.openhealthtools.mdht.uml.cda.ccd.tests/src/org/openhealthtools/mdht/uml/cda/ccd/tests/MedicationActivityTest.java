@@ -783,6 +783,65 @@ public class MedicationActivityTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetMedicationSeriesNumberObservation() {
+
+		MedicationActivity target = objectFactory.create();
+		target.getMedicationSeriesNumberObservation();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetMedicationStatusObservation() {
+
+		MedicationActivity target = objectFactory.create();
+		target.getMedicationStatusObservation();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPatientInstructions() {
+
+		MedicationActivity target = objectFactory.create();
+		target.getPatientInstructions();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetReactionObservations() {
+
+		MedicationActivity target = objectFactory.create();
+		target.getReactionObservations();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetProductInstances() {
+
+		objectFactory.create();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

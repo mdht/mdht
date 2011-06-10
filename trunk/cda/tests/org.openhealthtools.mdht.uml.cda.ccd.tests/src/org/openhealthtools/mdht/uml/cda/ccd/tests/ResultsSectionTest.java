@@ -272,6 +272,18 @@ public class ResultsSectionTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetResultOrganizers() {
+
+		ResultsSection target = objectFactory.create();
+		target.getResultOrganizers();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

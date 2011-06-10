@@ -601,6 +601,43 @@ public class PolicyActivityTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPayerEntity() {
+
+		PolicyActivity target = objectFactory.create();
+		target.getPayerEntity();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetCoveredParty() {
+
+		PolicyActivity target = objectFactory.create();
+		target.getCoveredParty();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetSubscriber() {
+
+		PolicyActivity target = objectFactory.create();
+		target.init();
+		target.getSubscriber();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

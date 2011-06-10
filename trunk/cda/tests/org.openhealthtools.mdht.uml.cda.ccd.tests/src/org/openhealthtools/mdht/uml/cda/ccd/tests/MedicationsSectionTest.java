@@ -329,6 +329,30 @@ public class MedicationsSectionTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetMedicationActivities() {
+
+		MedicationsSection target = objectFactory.create();
+		target.getMedicationActivities();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetSupplyActivities() {
+
+		MedicationsSection target = objectFactory.create();
+		target.getSupplyActivities();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

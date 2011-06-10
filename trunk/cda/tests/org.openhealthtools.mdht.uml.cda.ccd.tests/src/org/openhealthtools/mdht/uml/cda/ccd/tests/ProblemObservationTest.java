@@ -360,6 +360,42 @@ public class ProblemObservationTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetProblemStatus() {
+
+		ProblemObservation target = objectFactory.create();
+		target.getProblemStatus();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetProblemHealthStatus() {
+
+		ProblemObservation target = objectFactory.create();
+		target.getProblemHealthStatus();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetAgeObservation() {
+
+		ProblemObservation target = objectFactory.create();
+		target.getAgeObservation();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

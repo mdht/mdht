@@ -354,6 +354,18 @@ public class CoverageActivityTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPolicyActivities() {
+
+		CoverageActivity target = objectFactory.create();
+		target.getPolicyActivities();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

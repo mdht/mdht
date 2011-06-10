@@ -11,8 +11,24 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument;
+import org.openhealthtools.mdht.uml.cda.ccd.EncountersSection;
+import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection;
+import org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicalEquipmentSection;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PayersSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
+import org.openhealthtools.mdht.uml.cda.ccd.PurposeSection;
+import org.openhealthtools.mdht.uml.cda.ccd.ResultsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
+import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ContinuityOfCareDocumentOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
@@ -474,6 +490,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
 
+				/* ProblemSection */
+				ProblemSection section =
+
+				CCDFactory.eINSTANCE.createProblemSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
@@ -507,6 +530,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+
+				/* FamilyHistorySection */
+				FamilyHistorySection section =
+
+				CCDFactory.eINSTANCE.createFamilyHistorySection().init();
+
+				target.addSection(section);
 
 			}
 
@@ -542,6 +572,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
 
+				/* SocialHistorySection */
+				SocialHistorySection section =
+
+				CCDFactory.eINSTANCE.createSocialHistorySection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
@@ -575,6 +612,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+
+				/* AlertsSection */
+				AlertsSection section =
+
+				CCDFactory.eINSTANCE.createAlertsSection().init();
+
+				target.addSection(section);
 
 			}
 
@@ -610,6 +654,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
 
+				/* MedicationsSection */
+				MedicationsSection section =
+
+				CCDFactory.eINSTANCE.createMedicationsSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
@@ -643,6 +694,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+
+				/* ResultsSection */
+				ResultsSection section =
+
+				CCDFactory.eINSTANCE.createResultsSection().init();
+
+				target.addSection(section);
 
 			}
 
@@ -678,6 +736,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
 
+				/* ProceduresSection */
+				ProceduresSection section =
+
+				CCDFactory.eINSTANCE.createProceduresSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
@@ -711,6 +776,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+
+				/* EncountersSection */
+				EncountersSection section =
+
+				CCDFactory.eINSTANCE.createEncountersSection().init();
+
+				target.addSection(section);
 
 			}
 
@@ -746,6 +818,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
 
+				/* PlanOfCareSection */
+				PlanOfCareSection section =
+
+				CCDFactory.eINSTANCE.createPlanOfCareSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
@@ -779,6 +858,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+
+				/* ImmunizationsSection */
+				ImmunizationsSection section =
+
+				CCDFactory.eINSTANCE.createImmunizationsSection().init();
+
+				target.addSection(section);
 
 			}
 
@@ -814,6 +900,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
 
+				/* VitalSignsSection */
+				VitalSignsSection section =
+
+				CCDFactory.eINSTANCE.createVitalSignsSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
@@ -847,6 +940,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+
+				/* MedicalEquipmentSection */
+				MedicalEquipmentSection section =
+
+				CCDFactory.eINSTANCE.createMedicalEquipmentSection().init();
+
+				target.addSection(section);
 
 			}
 
@@ -882,6 +982,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
 
+				/* FunctionalStatusSection */
+				FunctionalStatusSection section =
+
+				CCDFactory.eINSTANCE.createFunctionalStatusSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
@@ -915,6 +1022,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+
+				/* AdvanceDirectivesSection */
+				AdvanceDirectivesSection section =
+
+				CCDFactory.eINSTANCE.createAdvanceDirectivesSection().init();
+
+				target.addSection(section);
 
 			}
 
@@ -950,6 +1064,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
 
+				/* PayersSection */
+				PayersSection section =
+
+				CCDFactory.eINSTANCE.createPayersSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
@@ -984,6 +1105,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
 
+				/* PurposeSection */
+				PurposeSection section =
+
+				CCDFactory.eINSTANCE.createPurposeSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
@@ -996,6 +1124,198 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentPurposeSectionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetProblemSection() {
+
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getProblemSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetFamilyHistorySection() {
+
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getFamilyHistorySection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetSocialHistorySection() {
+
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getSocialHistorySection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetAlertsSection() {
+
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getAlertsSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetMedicationsSection() {
+
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getMedicationsSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetResultsSection() {
+
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getResultsSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetProceduresSection() {
+
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getProceduresSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetEncountersSection() {
+
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getEncountersSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPlanOfCareSection() {
+
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getPlanOfCareSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetImmunizationsSection() {
+
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getImmunizationsSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetVitalSignsSection() {
+
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getVitalSignsSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetMedicalEquipmentSection() {
+
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getMedicalEquipmentSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetFunctionalStatusSection() {
+
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getFunctionalStatusSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetAdvanceDirectivesSection() {
+
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getAdvanceDirectivesSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPayersSection() {
+
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getPayersSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPurposeSection() {
+
+		ContinuityOfCareDocument target = objectFactory.create();
+		target.getPurposeSection();
+
 	}
 
 	/**

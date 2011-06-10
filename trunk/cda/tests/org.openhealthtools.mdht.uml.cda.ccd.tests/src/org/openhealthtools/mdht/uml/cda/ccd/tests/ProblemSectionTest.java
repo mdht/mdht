@@ -272,6 +272,18 @@ public class ProblemSectionTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetProblemActs() {
+
+		ProblemSection target = objectFactory.create();
+		target.getProblemActs();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

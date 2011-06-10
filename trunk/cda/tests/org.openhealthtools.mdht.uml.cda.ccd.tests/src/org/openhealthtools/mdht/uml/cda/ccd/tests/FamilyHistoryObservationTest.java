@@ -183,6 +183,18 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetAgeObservation() {
+
+		FamilyHistoryObservation target = objectFactory.create();
+		target.getAgeObservation();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

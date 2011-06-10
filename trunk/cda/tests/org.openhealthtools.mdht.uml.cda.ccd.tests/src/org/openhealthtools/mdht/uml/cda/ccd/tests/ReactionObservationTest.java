@@ -284,6 +284,18 @@ public class ReactionObservationTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetSeverityObservation() {
+
+		ReactionObservation target = objectFactory.create();
+		target.getSeverityObservation();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

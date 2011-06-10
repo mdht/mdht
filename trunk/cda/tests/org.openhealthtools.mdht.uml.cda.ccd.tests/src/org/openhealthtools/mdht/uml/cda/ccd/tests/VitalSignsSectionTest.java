@@ -258,6 +258,18 @@ public class VitalSignsSectionTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetVitalSignsOrganizers() {
+
+		VitalSignsSection target = objectFactory.create();
+		target.getVitalSignsOrganizers();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */
