@@ -29,6 +29,8 @@ public class EcoreTransformerOptions {
 
 	public static final String GENERATE_DOMAIN_CLASSES = "generateDomainClasses";
 
+	public static final String GENERATE_BUILDER_CLASSES = "generateBuilderClasses";
+
 	public static final String INCLUDE_INTERFACE_REALIZATION = "includeInterfaceRealization";
 
 	public static final String INCLUDE_FIXED_VALUE_GETTERS = "includeFixedValueGetters";
@@ -38,6 +40,8 @@ public class EcoreTransformerOptions {
 	private boolean generateDomainInterface;
 
 	private boolean generateDomainClasses;
+
+	private boolean generateBuilderClasses;
 
 	private boolean includeFixedValueGetters;
 
@@ -49,6 +53,8 @@ public class EcoreTransformerOptions {
 	private List<Element> deletedElementList = new Vector<Element>();
 
 	private String domainModelPath;
+
+	private String builderModelPath;
 
 	private Package domainInterfacePackage;
 
@@ -63,6 +69,8 @@ public class EcoreTransformerOptions {
 			Activator.PLUGIN_ID, GENERATE_DOMAIN_INTERFACE, false, null);
 		generateDomainClasses = Platform.getPreferencesService().getBoolean(
 			Activator.PLUGIN_ID, GENERATE_DOMAIN_CLASSES, false, null);
+		generateBuilderClasses = Platform.getPreferencesService().getBoolean(
+			Activator.PLUGIN_ID, GENERATE_BUILDER_CLASSES, false, null);
 		includeFixedValueGetters = Platform.getPreferencesService().getBoolean(
 			Activator.PLUGIN_ID, INCLUDE_FIXED_VALUE_GETTERS, false, null);
 		includeInterfaceRealization = Platform.getPreferencesService().getBoolean(
@@ -137,6 +145,22 @@ public class EcoreTransformerOptions {
 
 	public void setDomainModelPath(String domainModelPath) {
 		this.domainModelPath = domainModelPath;
+	}
+
+	public boolean isGenerateBuilderClasses() {
+		return generateBuilderClasses;
+	}
+
+	public void setGenerateBuilderClasses(boolean generateBuilderClasses) {
+		this.generateBuilderClasses = generateBuilderClasses;
+	}
+
+	public String getBuilderModelPath() {
+		return builderModelPath;
+	}
+
+	public void setBuilderModelPath(String builderModelPath) {
+		this.builderModelPath = builderModelPath;
 	}
 
 }
