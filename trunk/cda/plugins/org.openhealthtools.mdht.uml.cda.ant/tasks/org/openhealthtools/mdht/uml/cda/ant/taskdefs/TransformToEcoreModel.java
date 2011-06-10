@@ -45,13 +45,17 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 
 	private String domainModelPath = null;
 
+	private String builderModelPath = null;
+
 	private Boolean generateDomainInterface = null;
+
+	private Boolean generateDomainClasses = null;
+
+	private Boolean generateBuilderClasses = null;
 
 	private Boolean includeFixedValueGetters = null;
 
 	private Boolean includeInterfaceRealization = null;
-
-	private Boolean generateDomainClasses = null;
 
 	private Boolean useBusinessNames = null;
 
@@ -76,12 +80,18 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		if (domainModelPath == null && project.getProperty("domainModel") != null) {
 			domainModelPath = project.getProperty("domainModel");
 		}
+		if (builderModelPath == null && project.getProperty("builderModel") != null) {
+			builderModelPath = project.getProperty("builderModel");
+		}
 
 		if (generateDomainInterface == null && project.getProperty("generateDomainInterface") != null) {
 			generateDomainInterface = Boolean.valueOf(project.getProperty("generateDomainInterface"));
 		}
 		if (generateDomainClasses == null && project.getProperty("generateDomainClasses") != null) {
 			generateDomainClasses = Boolean.valueOf(project.getProperty("generateDomainClasses"));
+		}
+		if (generateBuilderClasses == null && project.getProperty("generateBuilderClasses") != null) {
+			generateBuilderClasses = Boolean.valueOf(project.getProperty("generateBuilderClasses"));
 		}
 		if (includeFixedValueGetters == null && project.getProperty("includeFixedValueGetters") != null) {
 			includeFixedValueGetters = Boolean.valueOf(project.getProperty("includeFixedValueGetters"));
@@ -158,6 +168,17 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 				domainModelURI.lastSegment() + "_domain_Ecore");
 		}
 
+		URI builderModelURI = null;
+		if (builderModelPath != null) {
+			builderModelURI = URI.createFileURI(builderModelPath);
+		}
+		if (builderModelURI == null) {
+			builderModelURI = umlResource.getURI();
+			builderModelURI = builderModelURI.trimFileExtension();
+			builderModelURI = builderModelURI.trimSegments(1).appendSegment(
+				builderModelURI.lastSegment() + "_builder_Ecore");
+		}
+
 		String fileExtension = umlResource.getURI().fileExtension();
 		if (!fileExtension.equals(ecoreModelURI.fileExtension())) {
 			ecoreModelURI = ecoreModelURI.appendFileExtension(fileExtension);
@@ -165,17 +186,24 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		if (!fileExtension.equals(domainModelURI.fileExtension())) {
 			domainModelURI = domainModelURI.appendFileExtension(fileExtension);
 		}
+		if (!fileExtension.equals(builderModelURI.fileExtension())) {
+			builderModelURI = builderModelURI.appendFileExtension(fileExtension);
+		}
 
 		umlResource.setURI(ecoreModelURI);
 
 		EcoreTransformerOptions options = new EcoreTransformerOptions();
 		options.setDomainModelPath(domainModelPath);
+		options.setBuilderModelPath(builderModelPath);
 
 		if (generateDomainInterface != null) {
 			options.setGenerateDomainInterface(generateDomainInterface);
 		}
 		if (generateDomainClasses != null) {
 			options.setGenerateDomainClasses(generateDomainClasses);
+		}
+		if (generateBuilderClasses != null) {
+			options.setGenerateBuilderClasses(generateBuilderClasses);
 		}
 		if (includeFixedValueGetters != null) {
 			options.setIncludeFixedValueGetters(includeFixedValueGetters);
@@ -222,12 +250,20 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		domainModelPath = path;
 	}
 
+	public void setBuilderModel(String path) {
+		builderModelPath = path;
+	}
+
 	public void setGenerateDomainInterface(boolean include) {
 		generateDomainInterface = new Boolean(include);
 	}
 
 	public void setGenerateDomainClasses(boolean include) {
 		generateDomainClasses = new Boolean(include);
+	}
+
+	public void setGenerateBuilderClasses(boolean include) {
+		generateBuilderClasses = new Boolean(include);
 	}
 
 	public void setIncludeFixedValueGetters(boolean include) {

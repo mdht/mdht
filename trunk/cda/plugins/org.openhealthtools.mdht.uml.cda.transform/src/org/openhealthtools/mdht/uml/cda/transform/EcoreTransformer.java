@@ -42,7 +42,6 @@ public class EcoreTransformer {
 		transformerOptions.setPluginPropertiesUtil(propertiesUtil);
 
 		UMLSwitch<Object> genDomainInterface = new GenDomainInterface(transformerOptions);
-		// UMLSwitch<Object> genDomainProperty = new GenDomainProperty(transformerOptions);
 
 		UMLSwitch<Object> transformPackage = new TransformPackage(transformerOptions);
 		UMLSwitch<Object> transformClass = new TransformClass(transformerOptions);
@@ -60,7 +59,9 @@ public class EcoreTransformer {
 
 				if (transformerOptions.isGenerateDomainInterface() || transformerOptions.isGenerateDomainClasses()) {
 					genDomainInterface.doSwitch(child);
-					// genDomainProperty.doSwitch(child);
+				}
+				if (transformerOptions.isGenerateBuilderClasses()) {
+					// TODO
 				}
 
 				transformPackage.doSwitch(child);
