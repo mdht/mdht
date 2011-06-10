@@ -41,7 +41,7 @@ public class VitalSignsSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPVitalSignsSectionVitalSignEntry() {

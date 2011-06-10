@@ -33,7 +33,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Procedure#validateHITSPProcedureHasCodeOriginalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Procedure Has Code Original Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Procedure#validateHITSPProcedurePerformerAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Procedure Performer Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Procedure#validateHITSPProcedureTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Procedure Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Procedure#validateHITSPProcedureTargetSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Procedure Target Site Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Procedure#validateHITSPProcedureCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Procedure Code</em>}</li>
  * </ul>
  * </p>

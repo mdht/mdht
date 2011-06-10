@@ -579,7 +579,7 @@ public class PatientSummaryTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePatientSummaryPregnancyHistorySection() {
