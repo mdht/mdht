@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-Localization: plugin
 Bundle-SymbolicName: org.openhealthtools.mdht.uml.term.ui;singleton:=true
-Bundle-Version: 0.7.0.qualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.openhealthtools.mdht.uml.term.ui.internal.Activator
 Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.ui,
