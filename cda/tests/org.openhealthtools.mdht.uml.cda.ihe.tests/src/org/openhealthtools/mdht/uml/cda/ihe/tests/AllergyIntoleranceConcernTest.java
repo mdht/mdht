@@ -116,6 +116,18 @@ public class AllergyIntoleranceConcernTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
+	@Test
+	public void testGetAllergyIntolerances() {
+
+		AllergyIntoleranceConcern target = objectFactory.create();
+		target.getAllergyIntolerances();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
 	private static class OperationsForOCL extends AllergyIntoleranceConcernOperations {
 		public String getOCLValue(String fieldName) {
 

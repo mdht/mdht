@@ -17,7 +17,6 @@ import org.openhealthtools.mdht.uml.cda.Reference;
 import org.openhealthtools.mdht.uml.cda.ihe.ExternalReference;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ExternalReferenceOperations;
-import org.openhealthtools.mdht.uml.cda.impl.ExternalDocumentImpl;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
@@ -201,22 +200,13 @@ public class ExternalReferenceTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
-				target.init();
-				Reference ref = CDAFactory.eINSTANCE.createReference();
-				ref.setTypeCode(x_ActRelationshipExternalReference.SPRT);
 
-				ExternalDocument extdoc = CDAFactory.eINSTANCE.createExternalDocument();
-				extdoc.setClassCode(ActClassDocument.DOC);
-				ref.setExternalDocument(extdoc);
-				target.getReferences().add(ref);
 			}
 
 			@Override
 			protected void updateToPass(ExternalReference target) {
-				for (Reference ref : target.getReferences()) {
-					II ii = DatatypesFactory.eINSTANCE.createII();
-					ref.getExternalDocument().getIds().add(ii);
-				}
+				target.init();
+
 			}
 
 			@Override

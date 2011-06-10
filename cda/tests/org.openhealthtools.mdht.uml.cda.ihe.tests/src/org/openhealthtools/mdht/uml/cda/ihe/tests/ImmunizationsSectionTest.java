@@ -110,6 +110,18 @@ public class ImmunizationsSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
+	@Test
+	public void testGetImmunizations() {
+
+		ImmunizationsSection target = objectFactory.create();
+		target.getImmunizations();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
 	private static class OperationsForOCL extends ImmunizationsSectionOperations {
 		public String getOCLValue(String fieldName) {
 

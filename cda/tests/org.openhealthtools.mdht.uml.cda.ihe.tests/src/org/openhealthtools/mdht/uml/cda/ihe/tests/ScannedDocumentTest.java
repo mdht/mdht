@@ -973,6 +973,7 @@ public class ScannedDocumentTest extends CDAValidationTest {
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ScannedDocumentOperations.validateScannedDocumentId(
@@ -995,16 +996,19 @@ public class ScannedDocumentTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_SCANNED_DOCUMENT_LANGUAGE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(ScannedDocument target) {
 				target.init();
 			}
 
+			@Override
 			protected void updateToPass(ScannedDocument target) {
 				CS cs = DatatypesFactory.eINSTANCE.createCS();
 				target.setLanguageCode(cs);
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ScannedDocumentOperations.validateScannedDocumentLanguageCode(
@@ -1027,16 +1031,19 @@ public class ScannedDocumentTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_SCANNED_DOCUMENT_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(ScannedDocument target) {
 				target.init();
 			}
 
+			@Override
 			protected void updateToPass(ScannedDocument target) {
 				ST title = DatatypesFactory.eINSTANCE.createST();
 				target.setTitle(title);
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ScannedDocumentOperations.validateScannedDocumentTitle(
@@ -1059,17 +1066,20 @@ public class ScannedDocumentTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_SCANNED_DOCUMENT_TYPE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(ScannedDocument target) {
 				target.init();
 
 			}
 
+			@Override
 			protected void updateToPass(ScannedDocument target) {
 				InfrastructureRootTypeId id = CDAFactory.eINSTANCE.createInfrastructureRootTypeId();
 				target.setTypeId(id);
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ScannedDocumentOperations.validateScannedDocumentTypeId(
@@ -1144,6 +1154,7 @@ public class ScannedDocumentTest extends CDAValidationTest {
 	* @generated
 	*/
 
+	@Override
 	protected EObject getObjectToTest() {
 		return null;
 	}

@@ -116,6 +116,18 @@ public class ProblemConcernEntryTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
+	@Test
+	public void testGetProblemEntries() {
+
+		ProblemConcernEntry target = objectFactory.create();
+		target.getProblemEntries();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
 	private static class OperationsForOCL extends ProblemConcernEntryOperations {
 		public String getOCLValue(String fieldName) {
 

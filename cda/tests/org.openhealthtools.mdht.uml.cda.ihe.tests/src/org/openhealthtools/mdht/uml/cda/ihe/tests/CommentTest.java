@@ -65,18 +65,11 @@ public class CommentTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(Comment target) {
 
-				target.init();
-				ED value = DatatypesFactory.eINSTANCE.createED("sample text");
-				target.setText(value);
-
 			}
 
 			@Override
 			protected void updateToPass(Comment target) {
 				target.init();
-
-				TEL value = DatatypesFactory.eINSTANCE.createTEL("reference");
-				target.getText().setReference(value);
 
 			}
 

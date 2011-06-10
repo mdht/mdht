@@ -146,7 +146,7 @@ public class CodedResultsSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateCodedResultsSectionSimpleObservation() {
@@ -176,6 +176,30 @@ public class CodedResultsSectionTest extends CDAValidationTest {
 		};
 
 		validateCodedResultsSectionSimpleObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetExternalReferences() {
+
+		CodedResultsSection target = objectFactory.create();
+		target.getExternalReferences();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetSimpleObservations() {
+
+		CodedResultsSection target = objectFactory.create();
+		target.getSimpleObservations();
+
 	}
 
 	/**

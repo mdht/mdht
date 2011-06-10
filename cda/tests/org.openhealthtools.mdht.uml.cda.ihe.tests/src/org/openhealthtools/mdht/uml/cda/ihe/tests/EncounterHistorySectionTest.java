@@ -72,7 +72,7 @@ public class EncounterHistorySectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateEncounterHistorySectionEncounterEntry() {
@@ -104,6 +104,18 @@ public class EncounterHistorySectionTest extends CDAValidationTest {
 		};
 
 		validateEncounterHistorySectionEncounterEntryTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetEncounterEntries() {
+
+		EncounterHistorySection target = objectFactory.create();
+		target.getEncounterEntries();
+
 	}
 
 	/**

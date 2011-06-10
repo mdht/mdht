@@ -110,6 +110,18 @@ public class CodedVitalSignsSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
+	@Test
+	public void testGetIHEVitalSignsOrganizers() {
+
+		CodedVitalSignsSection target = objectFactory.create();
+		target.getIHEVitalSignsOrganizers();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
 	private static class OperationsForOCL extends CodedVitalSignsSectionOperations {
 		public String getOCLValue(String fieldName) {
 

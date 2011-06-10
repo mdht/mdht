@@ -108,6 +108,18 @@ public class ActiveProblemsSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
+	@Test
+	public void testGetProblemConcernEntries() {
+
+		ActiveProblemsSection target = objectFactory.create();
+		target.getProblemConcernEntries();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
 	private static class OperationsForOCL extends ActiveProblemsSectionOperations {
 		public String getOCLValue(String fieldName) {
 

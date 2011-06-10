@@ -149,6 +149,30 @@ public class CodedSurgeriesSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
+	@Test
+	public void testGetExternalReference() {
+
+		CodedSurgeriesSection target = objectFactory.create();
+		target.getExternalReference();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetProcedureEntryProcedureActivityProcedures() {
+
+		CodedSurgeriesSection target = objectFactory.create();
+		target.getProcedureEntryProcedureActivityProcedures();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
 	private static class OperationsForOCL extends CodedSurgeriesSectionOperations {
 		public String getOCLValue(String fieldName) {
 
