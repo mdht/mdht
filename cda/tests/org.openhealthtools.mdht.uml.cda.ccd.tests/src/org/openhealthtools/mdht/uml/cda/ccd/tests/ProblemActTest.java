@@ -453,6 +453,18 @@ public class ProblemActTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetEpisodeObservation() {
+
+		ProblemAct target = objectFactory.create();
+		target.getEpisodeObservation();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

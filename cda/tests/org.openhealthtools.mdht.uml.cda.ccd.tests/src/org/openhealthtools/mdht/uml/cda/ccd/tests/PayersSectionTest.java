@@ -270,6 +270,18 @@ public class PayersSectionTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetCoverageActivities() {
+
+		PayersSection target = objectFactory.create();
+		target.getCoverageActivities();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

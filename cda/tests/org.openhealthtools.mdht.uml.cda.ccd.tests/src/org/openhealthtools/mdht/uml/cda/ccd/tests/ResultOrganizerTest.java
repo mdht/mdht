@@ -352,6 +352,18 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetResultObservations() {
+
+		ResultOrganizer target = objectFactory.create();
+		target.getResultObservations();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

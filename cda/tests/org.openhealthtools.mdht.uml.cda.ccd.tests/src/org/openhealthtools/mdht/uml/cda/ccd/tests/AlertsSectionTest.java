@@ -270,6 +270,18 @@ public class AlertsSectionTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetProblemActs() {
+
+		AlertsSection target = objectFactory.create();
+		target.getProblemActs();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

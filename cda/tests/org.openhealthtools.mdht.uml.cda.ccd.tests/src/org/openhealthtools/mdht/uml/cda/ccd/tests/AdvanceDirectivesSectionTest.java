@@ -179,6 +179,18 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetAdvanceDirectiveObservations() {
+
+		AdvanceDirectivesSection target = objectFactory.create();
+		target.getAdvanceDirectiveObservations();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

@@ -272,6 +272,18 @@ public class PurposeSectionTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPurposeActivities() {
+
+		PurposeSection target = objectFactory.create();
+		target.getPurposeActivities();
+
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */
