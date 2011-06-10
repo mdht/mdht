@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CDA CDT JUnit 4 Test cases
+Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.consol.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: org.junit4,
+ org.openhealthtools.mdht.uml.cda.consol,
+ org.openhealthtools.mdht.uml.cda.test
