@@ -309,7 +309,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalMedicationsSection() {
@@ -350,7 +350,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalAlertsSection() {
@@ -391,7 +391,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalSocialHistorySection() {
@@ -432,7 +432,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalFamilyHistorySection() {
@@ -672,7 +672,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalProblemSection() {
@@ -713,7 +713,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalProceduresSection() {
@@ -754,7 +754,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalImmunizationsSection() {
