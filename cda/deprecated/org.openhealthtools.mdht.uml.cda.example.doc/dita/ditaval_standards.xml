@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<val>
-	<prop att="audience" val="standards" action="include" />
-	<prop att="audience" val="developer" action="exclude" />
-</val>
