@@ -33,6 +33,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateAllergyIntoleranceTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateProblemEntryCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Entry Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateAllergyIntoleranceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateAllergyIntoleranceProblemEntryReactionObservationContainer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Problem Entry Reaction Observation Container</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateAllergyIntoleranceSeverity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Severity</em>}</li>
@@ -42,7 +43,6 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#getIHESeverity() <em>Get IHE Severity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#getIHEProblemStatusObservation() <em>Get IHE Problem Status Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#getIHEComments() <em>Get IHE Comments</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateProblemEntryCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Entry Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -276,6 +276,54 @@ public class AllergyIntoleranceTest extends CDAValidationTest {
 		};
 
 		validateAllergyIntoleranceCommentTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetProblemEntryReactionObservationContainers() {
+
+		AllergyIntolerance target = objectFactory.create();
+		target.getProblemEntryReactionObservationContainers();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetIHESeverity() {
+
+		AllergyIntolerance target = objectFactory.create();
+		target.getIHESeverity();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetIHEProblemStatusObservation() {
+
+		AllergyIntolerance target = objectFactory.create();
+		target.getIHEProblemStatusObservation();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetIHEComments() {
+
+		AllergyIntolerance target = objectFactory.create();
+		target.getIHEComments();
+
 	}
 
 	/**

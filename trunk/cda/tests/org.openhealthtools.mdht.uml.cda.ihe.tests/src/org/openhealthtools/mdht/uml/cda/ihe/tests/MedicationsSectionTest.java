@@ -108,6 +108,18 @@ public class MedicationsSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
+	@Test
+	public void testGetMedications() {
+
+		MedicationsSection target = objectFactory.create();
+		target.getMedications();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
 	private static class OperationsForOCL extends MedicationsSectionOperations {
 		public String getOCLValue(String fieldName) {
 

@@ -60,7 +60,6 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Medication#validateMedicationApproachSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Approach Site Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Medication#validateMedicationDoseQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dose Quantity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Medication#validateMedicationRateQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Rate Quantity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Medication#validateMedicationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Medication#validateMedicationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Medication#validateMedicationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Medication#getInternalReferences() <em>Get Internal References</em>}</li>
@@ -656,38 +655,6 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationCode() {
-		OperationsTestCase<Medication> validateMedicationCodeTestCase = new OperationsTestCase<Medication>(
-			"validateMedicationCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
-
-			@Override
-			protected void updateToFail(Medication target) {
-
-			}
-
-			@Override
-			protected void updateToPass(Medication target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationOperations.validateMedicationCode((Medication) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
 	* @generated NOT
 	*/
 	@Test
@@ -757,6 +724,42 @@ public class MedicationTest extends CDAValidationTest {
 		};
 
 		validateMedicationEffectiveTimeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetInternalReferences() {
+
+		Medication target = objectFactory.create();
+		target.getInternalReferences();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPatientMedicalInstructionss() {
+
+		Medication target = objectFactory.create();
+		target.getPatientMedicalInstructionss();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetSupplyEntry() {
+
+		Medication target = objectFactory.create();
+		target.getSupplyEntry();
+
 	}
 
 	/**

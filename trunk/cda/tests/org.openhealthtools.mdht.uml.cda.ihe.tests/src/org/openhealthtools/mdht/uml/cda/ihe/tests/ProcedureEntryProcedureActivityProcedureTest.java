@@ -425,6 +425,30 @@ public class ProcedureEntryProcedureActivityProcedureTest extends CDAValidationT
 	*
 	* @generated
 	*/
+	@Test
+	public void testGetInternalReference() {
+
+		ProcedureEntryProcedureActivityProcedure target = objectFactory.create();
+		target.getInternalReference();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetInternalReferenceReasons() {
+
+		ProcedureEntryProcedureActivityProcedure target = objectFactory.create();
+		target.getInternalReferenceReasons();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
 	private static class OperationsForOCL extends ProcedureEntryProcedureActivityProcedureOperations {
 		public String getOCLValue(String fieldName) {
 

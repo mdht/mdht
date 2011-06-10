@@ -109,6 +109,18 @@ public class AllergiesReactionsSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
+	@Test
+	public void testGetAllergyIntoleranceConcerns() {
+
+		AllergiesReactionsSection target = objectFactory.create();
+		target.getAllergyIntoleranceConcerns();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
 	private static class OperationsForOCL extends AllergiesReactionsSectionOperations {
 		public String getOCLValue(String fieldName) {
 

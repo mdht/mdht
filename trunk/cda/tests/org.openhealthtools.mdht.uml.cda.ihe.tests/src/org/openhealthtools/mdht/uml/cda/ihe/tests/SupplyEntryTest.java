@@ -147,6 +147,18 @@ public class SupplyEntryTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
+	@Test
+	public void testGetMedicationFullfillmentInstructions() {
+
+		SupplyEntry target = objectFactory.create();
+		target.getMedicationFullfillmentInstructions();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
 	private static class OperationsForOCL extends SupplyEntryOperations {
 		public String getOCLValue(String fieldName) {
 

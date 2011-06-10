@@ -110,6 +110,18 @@ public class PayersSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
+	@Test
+	public void testGetCoverageEntries() {
+
+		PayersSection target = objectFactory.create();
+		target.getCoverageEntries();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
 	private static class OperationsForOCL extends PayersSectionOperations {
 		public String getOCLValue(String fieldName) {
 

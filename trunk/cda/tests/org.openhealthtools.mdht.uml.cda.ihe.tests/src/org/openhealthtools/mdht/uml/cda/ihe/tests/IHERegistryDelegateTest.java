@@ -34,6 +34,15 @@ public class IHERegistryDelegateTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
+	@Test
+	public void testGetEClass() {
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
 	private static class OperationsForOCL extends IHERegistryDelegateOperations {
 		public String getOCLValue(String fieldName) {
 

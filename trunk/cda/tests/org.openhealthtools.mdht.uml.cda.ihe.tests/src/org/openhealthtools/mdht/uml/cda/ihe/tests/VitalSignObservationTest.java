@@ -11,6 +11,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultObservationOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.VitalSignObservationOperations;
@@ -33,7 +34,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation#validateVitalSignObservationMethodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Method Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation#validateVitalSignObservationTargetSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Target Site Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation#validateVitalSignObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.VitalSignObservation#validateResultObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -245,7 +245,7 @@ public class VitalSignObservationTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return VitalSignObservationOperations.validateResultObservationCode(
+				return ResultObservationOperations.validateResultObservationCode(
 					(VitalSignObservation) objectToTest, diagnostician, map);
 			}
 

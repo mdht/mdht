@@ -266,6 +266,18 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testGetVitalSignObservations() {
+
+		VitalSignsOrganizer target = objectFactory.create();
+		target.getVitalSignObservations();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
 	public void testValidateResultOrganizerCode() {
 		OperationsTestCase<VitalSignsOrganizer> validateResultOrganizerCodeTestCase = new OperationsTestCase<VitalSignsOrganizer>(
 			"validateResultOrganizerCode",

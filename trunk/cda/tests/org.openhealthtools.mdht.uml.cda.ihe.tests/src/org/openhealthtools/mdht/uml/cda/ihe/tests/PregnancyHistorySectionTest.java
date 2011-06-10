@@ -144,6 +144,18 @@ public class PregnancyHistorySectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
+	@Test
+	public void testGetPregnancyObservations() {
+
+		PregnancyHistorySection target = objectFactory.create();
+		target.getPregnancyObservations();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
 	private static class OperationsForOCL extends PregnancyHistorySectionOperations {
 		public String getOCLValue(String fieldName) {
 
