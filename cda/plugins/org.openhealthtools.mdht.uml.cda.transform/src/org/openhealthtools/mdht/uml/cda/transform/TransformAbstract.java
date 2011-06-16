@@ -401,10 +401,10 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		Classifier domainInterface;
 		if (transformerOptions.isGenerateDomainInterface()) {
 			domainInterface = (Interface) domainPkg.getOwnedType(
-				"I" + classifierName, false, UMLPackage.eINSTANCE.getInterface(), true);
+				classifierName, false, UMLPackage.eINSTANCE.getInterface(), true);
 		} else {
 			domainInterface = (Class) domainPkg.getOwnedType(
-				"I" + classifierName, false, UMLPackage.eINSTANCE.getClass_(), true);
+				classifierName, false, UMLPackage.eINSTANCE.getClass_(), true);
 		}
 
 		return domainInterface;
