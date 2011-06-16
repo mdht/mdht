@@ -65,17 +65,16 @@ public class GenDomainProperty extends TransformAbstract {
 			return;
 		}
 
+		// create domain interface for every class that is not CDA or Datatype
+		// check if a more specialized type exists in domain model
 		Classifier domainInterface = getDomainInterface(ownerClass);
 		Classifier domainType = null;
 		if (UMLUtil.isSameModel(property.getType(), ownerClass)) {
 			domainType = getDomainInterface(property.getType());
+			// } else if (!CDAModelUtil.isCDAModel(property.getType()) && !CDAModelUtil.isDatatypeModel(property.getType())) {
+			// domainType = getDomainInterface(property.getType());
 		} else {
-			// Class cdaType = CDAModelUtil.getCDAClass((Classifier) property.getType());
-			// if (cdaType != null) {
-			// domainType = cdaType;
-			// } else {
 			domainType = (Classifier) property.getType();
-			// }
 		}
 
 		// "getter" operation

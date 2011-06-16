@@ -261,7 +261,7 @@ public class GenMethodHelper {
 						LF);
 				operationBody.append("org.eclipse.emf.ecore.EClass domainEClass = (org.eclipse.emf.ecore.EClass) domainPackage.getEClassifier(\"" +
 						domainType.getName() + "\");" + LF);
-				operationBody.append(domainType.getName() + " value = (" + domainType.getName() +
+				operationBody.append("I" + domainType.getName() + " value = (" + "I" + domainType.getName() +
 						")domainFactory.create(domainEClass);" + LF);
 
 				operationBody.append("value.setCDAType((org.openhealthtools.mdht.uml.cda." + cdaTargetClass.getName() +
@@ -299,6 +299,9 @@ public class GenMethodHelper {
 					operationBody.append("get" + capitalize(pluralize(cdaProperty.getName())) + "().add(value);" + LF);
 				}
 				operationBody.append("return value;");
+			} else if (cdaProperty == null) {
+				System.err.println("Unsupported facade property: " + property.getQualifiedName());
+				operationBody = new StringBuffer();
 			} else {
 				if (property.getUpper() == 1) {
 					operationBody.append("set" + capitalize(property.getName()) + "(value);" + LF);
@@ -367,7 +370,10 @@ public class GenMethodHelper {
 			businessName = normalizeCodeName(property.getName());
 		}
 
-		String operationName = "with" + capitalize(businessName);
+		String operationVerb = (property.getUpper() == 1)
+				? "set"
+				: "add";
+		String operationName = operationVerb + capitalize(businessName);
 		StringBuffer operationBody = new StringBuffer();
 
 		String[] paramNamesArray = { "value" };
@@ -410,6 +416,9 @@ public class GenMethodHelper {
 			} else {
 				operationBody.append("get" + capitalize(pluralize(cdaProperty.getName())) + "().add(value);" + LF);
 			}
+		} else if (cdaProperty == null) {
+			System.err.println("Unsupported facade property: " + property.getQualifiedName());
+			operationBody = new StringBuffer();
 		} else {
 			if (property.getUpper() == 1) {
 				operationBody.append("set" + capitalize(property.getName()) + "(value);" + LF);
