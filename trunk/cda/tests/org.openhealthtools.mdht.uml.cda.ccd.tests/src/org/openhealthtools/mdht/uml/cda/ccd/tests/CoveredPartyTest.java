@@ -19,6 +19,8 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.CoveredParty;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.CoveredPartyOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -44,7 +46,7 @@ public class CoveredPartyTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateCoveredPartyId() {
@@ -60,7 +62,7 @@ public class CoveredPartyTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(CoveredParty target) {
 				target.init();
-
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 			}
 
 			@Override
@@ -76,7 +78,7 @@ public class CoveredPartyTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateCoveredPartyCode() {
@@ -92,6 +94,8 @@ public class CoveredPartyTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(CoveredParty target) {
 				target.init();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				target.setCode(ce);
 
 			}
 

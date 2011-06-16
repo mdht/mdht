@@ -15,10 +15,14 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.ParticipantRole;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.PatientAwarenessOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -42,7 +46,7 @@ public class PatientAwarenessTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePatientAwarenessParticipantRoleId() {
@@ -59,7 +63,11 @@ public class PatientAwarenessTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PatientAwareness target) {
 				target.init();
-
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				II id = DatatypesFactory.eINSTANCE.createII();
+				id.setRoot("s");
+				pr.getIds().add(id);
+				target.setParticipantRole(pr);
 			}
 
 			@Override
@@ -144,7 +152,7 @@ public class PatientAwarenessTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePatientAwarenessAwarenessCode() {
@@ -161,7 +169,7 @@ public class PatientAwarenessTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PatientAwareness target) {
 				target.init();
-
+				target.setAwarenessCode(DatatypesFactory.eINSTANCE.createCE());
 			}
 
 			@Override

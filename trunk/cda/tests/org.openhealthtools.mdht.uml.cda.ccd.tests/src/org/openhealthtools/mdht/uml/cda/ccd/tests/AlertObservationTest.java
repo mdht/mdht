@@ -15,13 +15,26 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Informant12;
+import org.openhealthtools.mdht.uml.cda.Participant2;
+import org.openhealthtools.mdht.uml.cda.ParticipantRole;
+import org.openhealthtools.mdht.uml.cda.PlayingEntity;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.AlertObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassRoot;
+import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
+import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -57,7 +70,7 @@ public class AlertObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAlertObservationInformationSource() {
@@ -75,6 +88,9 @@ public class AlertObservationTest extends CDAValidationTest {
 			protected void updateToPass(AlertObservation target) {
 				target.init();
 
+				Informant12 inf = CDAFactory.eINSTANCE.createInformant12();
+				target.getInformants().add(inf);
+
 			}
 
 			@Override
@@ -91,7 +107,7 @@ public class AlertObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAlertObservationAgentRepresentation() {
@@ -107,7 +123,12 @@ public class AlertObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(AlertObservation target) {
+
 				target.init();
+				Participant2 e = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipationType value = ParticipationType.CSM;
+				e.setTypeCode(value);
+				target.getParticipants().add(e);
 
 			}
 
@@ -125,7 +146,7 @@ public class AlertObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAlertObservationPlayingEntityRequired() {
@@ -142,6 +163,12 @@ public class AlertObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AlertObservation target) {
 				target.init();
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole value = CDAFactory.eINSTANCE.createParticipantRole();
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				value.setPlayingEntity(pe);
+				p2.setParticipantRole(value);
+				target.getParticipants().add(p2);
 
 			}
 
@@ -159,7 +186,7 @@ public class AlertObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAlertObservationAgentRepresentationVocab() {
@@ -176,6 +203,10 @@ public class AlertObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AlertObservation target) {
 				target.init();
+				Participant2 e = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipationType value = ParticipationType.CSM;
+				e.setTypeCode(value);
+				target.getParticipants().add(e);
 
 			}
 
@@ -193,7 +224,7 @@ public class AlertObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAlertObservationParticipantRoleClassCode() {
@@ -210,6 +241,11 @@ public class AlertObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AlertObservation target) {
 				target.init();
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setClassCode(RoleClassRoot.MANU);
+				p2.setParticipantRole(pr);
+				target.getParticipants().add(p2);
 
 			}
 
@@ -227,7 +263,7 @@ public class AlertObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAlertObservationPlayingEntityClassCode() {
@@ -244,6 +280,16 @@ public class AlertObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AlertObservation target) {
 				target.init();
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pe.setClassCode(EntityClassRoot.MMAT);
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				code.setCode("test");
+				pe.setCode(code);
+				p2.setParticipantRole(pr);
+				pr.setPlayingEntity(pe);
+				target.getParticipants().add(p2);
 
 			}
 
@@ -261,7 +307,7 @@ public class AlertObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAlertObservationPlayingEntityCode() {
@@ -278,6 +324,15 @@ public class AlertObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AlertObservation target) {
 				target.init();
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				code.setCode("test");
+				pe.setCode(code);
+				p2.setParticipantRole(pr);
+				pr.setPlayingEntity(pe);
+				target.getParticipants().add(p2);
 
 			}
 
@@ -295,7 +350,7 @@ public class AlertObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAlertObservationPlayingEntityCodeVocab() {
@@ -312,6 +367,16 @@ public class AlertObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AlertObservation target) {
 				target.init();
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				code.setCode("test");
+				code.setCodeSystem("2.16.840.1.113883.6.88");
+				pe.setCode(code);
+				p2.setParticipantRole(pr);
+				pr.setPlayingEntity(pe);
+				target.getParticipants().add(p2);
 
 			}
 
@@ -434,7 +499,7 @@ public class AlertObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated 
 	 */
 	@Test
 	public void testValidateAlertObservationEffectiveTime() {
@@ -471,7 +536,7 @@ public class AlertObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAlertObservationAlertStatusObservation() {
@@ -488,6 +553,10 @@ public class AlertObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AlertObservation target) {
 				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				AlertStatusObservation so = CCDFactory.eINSTANCE.createAlertStatusObservation();
+				er.setObservation(so);
+				target.getEntryRelationships().add(er);
 
 			}
 
@@ -505,7 +574,7 @@ public class AlertObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAlertObservationReactionObservation() {
@@ -522,6 +591,11 @@ public class AlertObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AlertObservation target) {
 				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				ReactionObservation ro = CCDFactory.eINSTANCE.createReactionObservation();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.MFST);
+				er.setObservation(ro);
+				target.getEntryRelationships().add(er);
 
 			}
 

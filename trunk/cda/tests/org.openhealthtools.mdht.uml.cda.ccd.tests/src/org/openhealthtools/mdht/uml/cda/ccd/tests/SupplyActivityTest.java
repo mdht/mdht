@@ -15,13 +15,25 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.Author;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Informant12;
+import org.openhealthtools.mdht.uml.cda.Participant2;
+import org.openhealthtools.mdht.uml.cda.Product;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.cda.ccd.FulfillmentInstruction;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProductInstance;
 import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.SupplyActivityOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -95,7 +107,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSupplyActivityMoodCode() {
@@ -106,13 +118,13 @@ public class SupplyActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SupplyActivity target) {
-
+				target.setMoodCode(x_DocumentSubstanceMood.PRP);
 			}
 
 			@Override
 			protected void updateToPass(SupplyActivity target) {
 				target.init();
-
+				target.setMoodCode(x_DocumentSubstanceMood.EVN);
 			}
 
 			@Override
@@ -129,7 +141,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSupplyActivityHasAuthor() {
@@ -146,7 +158,8 @@ public class SupplyActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SupplyActivity target) {
 				target.init();
-
+				Author e = CDAFactory.eINSTANCE.createAuthor();
+				target.getAuthors().add(e);
 			}
 
 			@Override
@@ -163,7 +176,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSupplyActivityHasPerformer() {
@@ -180,7 +193,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SupplyActivity target) {
 				target.init();
-
+				target.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
 			}
 
 			@Override
@@ -197,7 +210,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSupplyActivityHasParticipantLocation() {
@@ -214,6 +227,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SupplyActivity target) {
 				target.init();
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				p2.setTypeCode(ParticipationType.LOC);
+				target.getParticipants().add(p2);
 
 			}
 
@@ -231,7 +247,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSupplyActivityInformationSource() {
@@ -249,6 +265,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 			protected void updateToPass(SupplyActivity target) {
 				target.init();
 
+				Informant12 inf = CDAFactory.eINSTANCE.createInformant12();
+				target.getInformants().add(inf);
+
 			}
 
 			@Override
@@ -265,7 +284,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSupplyActivityHasProduct() {
@@ -282,6 +301,9 @@ public class SupplyActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SupplyActivity target) {
 				target.init();
+
+				Product p = CDAFactory.eINSTANCE.createProduct();
+				target.setProduct(p);
 
 			}
 
@@ -333,7 +355,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSupplyActivityId() {
@@ -349,7 +371,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SupplyActivity target) {
 				target.init();
-
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 			}
 
 			@Override
@@ -441,7 +463,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSupplyActivityQuantity() {
@@ -458,7 +480,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SupplyActivity target) {
 				target.init();
-
+				target.setQuantity(DatatypesFactory.eINSTANCE.createPQ());
 			}
 
 			@Override
@@ -475,7 +497,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSupplyActivityRepeatNumber() {
@@ -492,7 +514,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SupplyActivity target) {
 				target.init();
-
+				target.setRepeatNumber(DatatypesFactory.eINSTANCE.createIVL_INT());
 			}
 
 			@Override
@@ -509,7 +531,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSupplyActivityMedicationStatusObservation() {
@@ -526,7 +548,10 @@ public class SupplyActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SupplyActivity target) {
 				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				MedicationStatusObservation obs = CCDFactory.eINSTANCE.createMedicationStatusObservation();
+				er.setObservation(obs);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -543,7 +568,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSupplyActivityFulfillmentInstruction() {
@@ -560,7 +585,11 @@ public class SupplyActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SupplyActivity target) {
 				target.init();
-
+				FulfillmentInstruction fi = CCDFactory.eINSTANCE.createFulfillmentInstruction();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				er.setAct(fi);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -577,7 +606,7 @@ public class SupplyActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSupplyActivityProductInstance() {
@@ -594,7 +623,10 @@ public class SupplyActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SupplyActivity target) {
 				target.init();
-
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				ProductInstance pi = CCDFactory.eINSTANCE.createProductInstance();
+				p2.setParticipantRole(pi);
+				target.getParticipants().add(p2);
 			}
 
 			@Override

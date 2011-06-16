@@ -15,13 +15,20 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Informant12;
+import org.openhealthtools.mdht.uml.cda.ccd.AgeObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemHealthStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -53,7 +60,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProblemObservationInformationSource() {
@@ -71,6 +78,9 @@ public class ProblemObservationTest extends CDAValidationTest {
 			protected void updateToPass(ProblemObservation target) {
 				target.init();
 
+				Informant12 inf = CDAFactory.eINSTANCE.createInformant12();
+				target.getInformants().add(inf);
+
 			}
 
 			@Override
@@ -87,7 +97,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProblemObservationContainsPatientAwareness() {
@@ -104,7 +114,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemObservation target) {
 				target.init();
-
+				target.getParticipants().add(CCDFactory.eINSTANCE.createPatientAwareness());
 			}
 
 			@Override
@@ -263,7 +273,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProblemObservationProblemStatus() {
@@ -280,7 +290,11 @@ public class ProblemObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemObservation target) {
 				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				ProblemStatusObservation obs = CCDFactory.eINSTANCE.createProblemStatusObservation();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+				er.setObservation(obs);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -297,7 +311,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProblemObservationProblemHealthStatus() {
@@ -314,7 +328,11 @@ public class ProblemObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemObservation target) {
 				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				ProblemHealthStatusObservation obs = CCDFactory.eINSTANCE.createProblemHealthStatusObservation();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+				er.setObservation(obs);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -331,7 +349,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProblemObservationAgeObservation() {
@@ -348,7 +366,11 @@ public class ProblemObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemObservation target) {
 				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				AgeObservation obs = CCDFactory.eINSTANCE.createAgeObservation();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				er.setObservation(obs);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override

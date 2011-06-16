@@ -66,44 +66,6 @@ public class AlertsSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testValidateAlertsSectionTitleValue() {
-		OperationsTestCase<AlertsSection> validateAlertsSectionTitleValueTestCase = new OperationsTestCase<AlertsSection>(
-			"validateAlertsSectionTitleValue",
-			operationsForOCL.getOCLValue("VALIDATE_ALERTS_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AlertsSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AlertsSection target) {
-				target.init();
-
-				ST title = DatatypesFactory.eINSTANCE.createST("alert");
-
-				target.setTitle(title);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AlertsSectionOperations.validateAlertsSectionTitleValue(
-					(AlertsSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAlertsSectionTitleValueTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
 	public void testValidateAlertsSectionTemplateId() {
 		OperationsTestCase<AlertsSection> validateAlertsSectionTemplateIdTestCase = new OperationsTestCase<AlertsSection>(
 			"validateAlertsSectionTemplateId",
@@ -241,7 +203,7 @@ public class AlertsSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAlertsSectionProblemAct() {
@@ -258,7 +220,7 @@ public class AlertsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AlertsSection target) {
 				target.init();
-
+				target.addAct(CCDFactory.eINSTANCE.createProblemAct());
 			}
 
 			@Override

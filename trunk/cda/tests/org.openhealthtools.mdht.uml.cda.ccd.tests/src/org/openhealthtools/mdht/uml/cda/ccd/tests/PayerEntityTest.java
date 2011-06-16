@@ -19,6 +19,8 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.PayerEntity;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.PayerEntityOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -41,7 +43,7 @@ public class PayerEntityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePayerEntityId() {
@@ -57,6 +59,8 @@ public class PayerEntityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PayerEntity target) {
 				target.init();
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(ii);
 
 			}
 

@@ -147,7 +147,7 @@ public class EncountersActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateEncountersActivityId() {
@@ -164,7 +164,7 @@ public class EncountersActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(EncountersActivity target) {
 				target.init();
-
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 			}
 
 			@Override

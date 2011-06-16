@@ -15,6 +15,12 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
+import org.openhealthtools.mdht.uml.cda.Author;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.DocumentationOf;
+import org.openhealthtools.mdht.uml.cda.Organization;
+import org.openhealthtools.mdht.uml.cda.ServiceEvent;
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.ccd.AlertsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
@@ -36,7 +42,10 @@ import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ContinuityOfCareDocumentOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActClassRoot;
+import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -99,7 +108,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentServiceEventRequired() {
@@ -117,6 +126,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
 
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				dof.setServiceEvent(CDAFactory.eINSTANCE.createServiceEvent());
+				target.getDocumentationOfs().add(dof);
+
 			}
 
 			@Override
@@ -133,7 +146,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentServiceEventClassCode() {
@@ -150,7 +163,11 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
-
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				se.setClassCode(ActClassRoot.PCPR);
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
 			}
 
 			@Override
@@ -167,7 +184,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentServiceEventEffectiveTime() {
@@ -186,7 +203,14 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 				target.init();
 
 				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				se.setClassCode(ActClassRoot.PCPR);
+				ts.setLow(DatatypesFactory.eINSTANCE.createIVXB_TS());
+				ts.setHigh(DatatypesFactory.eINSTANCE.createIVXB_TS());
+				se.setEffectiveTime(ts);
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
 
 			}
 
@@ -204,7 +228,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentNoTemplateIdExtension() {
@@ -216,10 +240,15 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
 
+				II te = DatatypesFactory.eINSTANCE.createII();
+				te.setRoot("2.16.840.1.113883.10.20.1");
+				te.setExtension("a");
+				target.getTemplateIds().add(te);
 			}
 
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
+				target.getTemplateIds().clear();
 				target.init();
 
 			}
@@ -238,7 +267,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentOneOrTwoRecordTarget() {
@@ -255,7 +284,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
-
+				target.getRecordTargets().add(CDAFactory.eINSTANCE.createRecordTarget());
 			}
 
 			@Override
@@ -272,7 +301,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentHasAssignedAuthor() {
@@ -289,7 +318,11 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
-
+				Author auth = CDAFactory.eINSTANCE.createAuthor();
+				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+				aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+				auth.setAssignedAuthor(aa);
+				target.getAuthors().add(auth);
 			}
 
 			@Override
@@ -306,7 +339,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentHasAssignedAuthorNullFlavor() {
@@ -323,7 +356,15 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
-
+				Author auth = CDAFactory.eINSTANCE.createAuthor();
+				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+				Organization org = CDAFactory.eINSTANCE.createOrganization();
+				aa.setRepresentedOrganization(org);
+				II id = DatatypesFactory.eINSTANCE.createII();
+				id.setNullFlavor(NullFlavor.NA);
+				aa.getIds().add(id);
+				auth.setAssignedAuthor(aa);
+				target.getAuthors().add(auth);
 			}
 
 			@Override
@@ -340,7 +381,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentHasInformationRecipient() {
@@ -357,6 +398,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+				target.getInformationRecipients().add(CDAFactory.eINSTANCE.createInformationRecipient());
 
 			}
 
@@ -442,7 +484,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentLanguageCode() {
@@ -459,7 +501,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
-
+				target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS());
 			}
 
 			@Override
@@ -476,7 +518,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentProblemSection() {
@@ -517,7 +559,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentFamilyHistorySection() {
@@ -558,7 +600,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentSocialHistorySection() {
@@ -599,7 +641,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentAlertsSection() {
@@ -640,7 +682,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentMedicationsSection() {
@@ -681,7 +723,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentResultsSection() {
@@ -722,7 +764,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentProceduresSection() {
@@ -763,7 +805,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentEncountersSection() {
@@ -804,7 +846,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentPlanOfCareSection() {
@@ -845,7 +887,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentImmunizationsSection() {
@@ -886,7 +928,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentVitalSignsSection() {
@@ -927,7 +969,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentMedicalEquipmentSection() {
@@ -968,7 +1010,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentFunctionalStatusSection() {
@@ -1009,7 +1051,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentAdvanceDirectivesSection() {
@@ -1050,7 +1092,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentPayersSection() {
@@ -1091,7 +1133,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateContinuityOfCareDocumentPurposeSection() {

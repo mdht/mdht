@@ -19,6 +19,8 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySupply;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.PlanOfCareActivitySupplyOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -42,7 +44,7 @@ public class PlanOfCareActivitySupplyTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePlanOfCareActivitySupplyMoodCodeValue() {
@@ -59,6 +61,7 @@ public class PlanOfCareActivitySupplyTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareActivitySupply target) {
 				target.init();
+				target.setMoodCode(x_DocumentSubstanceMood.INT);
 
 			}
 
@@ -110,7 +113,7 @@ public class PlanOfCareActivitySupplyTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePlanOfCareActivitySupplyId() {
@@ -127,7 +130,7 @@ public class PlanOfCareActivitySupplyTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareActivitySupply target) {
 				target.init();
-
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 			}
 
 			@Override
@@ -144,7 +147,7 @@ public class PlanOfCareActivitySupplyTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePlanOfCareActivitySupplyMoodCode() {
@@ -161,6 +164,7 @@ public class PlanOfCareActivitySupplyTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareActivitySupply target) {
 				target.init();
+				target.setMoodCode(x_DocumentSubstanceMood.EVN);
 
 			}
 

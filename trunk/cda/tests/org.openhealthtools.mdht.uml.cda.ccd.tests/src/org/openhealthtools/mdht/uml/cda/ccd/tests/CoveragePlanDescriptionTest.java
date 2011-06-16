@@ -19,6 +19,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.CoveragePlanDescription;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.CoveragePlanDescriptionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -75,7 +76,7 @@ public class CoveragePlanDescriptionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateCoveragePlanDescriptionId() {
@@ -92,7 +93,7 @@ public class CoveragePlanDescriptionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(CoveragePlanDescription target) {
 				target.init();
-
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 			}
 
 			@Override

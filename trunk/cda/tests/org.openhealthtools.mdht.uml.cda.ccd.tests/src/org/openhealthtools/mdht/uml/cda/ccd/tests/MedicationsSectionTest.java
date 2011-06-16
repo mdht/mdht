@@ -18,7 +18,9 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection;
+import org.openhealthtools.mdht.uml.cda.ccd.SupplyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.MedicationsSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
@@ -33,7 +35,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionHasMedicationOrSupplyActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Has Medication Or Supply Activity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionTitleValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Title Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Title</em>}</li>
@@ -52,7 +53,7 @@ public class MedicationsSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationsSectionHasMedicationOrSupplyActivity() {
@@ -69,7 +70,10 @@ public class MedicationsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationsSection target) {
 				target.init();
-
+				MedicationActivity sa = CCDFactory.eINSTANCE.createMedicationActivity();
+				SupplyActivity sup = CCDFactory.eINSTANCE.createSupplyActivity();
+				target.addSubstanceAdministration(sa);
+				target.addSupply(sup);
 			}
 
 			@Override
@@ -82,44 +86,6 @@ public class MedicationsSectionTest extends CDAValidationTest {
 		};
 
 		validateMedicationsSectionHasMedicationOrSupplyActivityTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateMedicationsSectionTitleValue() {
-		OperationsTestCase<MedicationsSection> validateMedicationsSectionTitleValueTestCase = new OperationsTestCase<MedicationsSection>(
-			"validateMedicationsSectionTitleValue",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATIONS_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationsSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationsSection target) {
-				target.init();
-
-				ST title = DatatypesFactory.eINSTANCE.createST("medication");
-
-				target.setTitle(title);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationsSectionOperations.validateMedicationsSectionTitleValue(
-					(MedicationsSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationsSectionTitleValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -266,7 +232,7 @@ public class MedicationsSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationsSectionMedicationActivity() {
@@ -283,7 +249,7 @@ public class MedicationsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationsSection target) {
 				target.init();
-
+				target.addSubstanceAdministration(CCDFactory.eINSTANCE.createMedicationActivity());
 			}
 
 			@Override
@@ -300,7 +266,7 @@ public class MedicationsSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationsSectionSupplyActivity() {
@@ -317,7 +283,7 @@ public class MedicationsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationsSection target) {
 				target.init();
-
+				target.addSupply(CCDFactory.eINSTANCE.createSupplyActivity());
 			}
 
 			@Override

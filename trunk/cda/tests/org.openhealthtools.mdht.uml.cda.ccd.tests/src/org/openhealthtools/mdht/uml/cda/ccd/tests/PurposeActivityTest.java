@@ -15,12 +15,15 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.PurposeActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.PurposeActivityOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -47,7 +50,7 @@ public class PurposeActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePurposeActivityHasReason() {
@@ -58,13 +61,17 @@ public class PurposeActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PurposeActivity target) {
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected void updateToPass(PurposeActivity target) {
 				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -81,7 +88,7 @@ public class PurposeActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePurposeActivityReasonType() {
@@ -92,13 +99,20 @@ public class PurposeActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PurposeActivity target) {
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				er.setOrganizer(CCDFactory.eINSTANCE.createFamilyHistoryOrganizer());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected void updateToPass(PurposeActivity target) {
 				target.init();
-
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				er.setObservation(CCDFactory.eINSTANCE.createAgeObservation());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override

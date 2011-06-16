@@ -15,12 +15,15 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ReactionObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -48,7 +51,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateReactionObservationReactionInterventionTypeCode() {
@@ -65,7 +68,10 @@ public class ReactionObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setSubstanceAdministration(CCDFactory.eINSTANCE.createMedicationActivity());
+				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -82,7 +88,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateReactionObservationReactionInterventionType() {
@@ -99,7 +105,10 @@ public class ReactionObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setSubstanceAdministration(CCDFactory.eINSTANCE.createMedicationActivity());
+				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -254,8 +263,8 @@ public class ReactionObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	 * 
-	 * @generated
+	 *  
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateReactionObservationSeverityObservation() {
@@ -272,7 +281,10 @@ public class ReactionObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setObservation(CCDFactory.eINSTANCE.createSeverityObservation());
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override

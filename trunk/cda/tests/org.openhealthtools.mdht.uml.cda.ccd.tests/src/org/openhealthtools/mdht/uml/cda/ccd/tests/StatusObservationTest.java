@@ -15,13 +15,18 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.StatusObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.StatusObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -49,7 +54,7 @@ public class StatusObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateStatusObservationTargetOfEntryRelationship() {
@@ -66,7 +71,9 @@ public class StatusObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(StatusObservation target) {
 				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -83,7 +90,7 @@ public class StatusObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateStatusObservationNoAdditionalParticipants() {
@@ -94,13 +101,14 @@ public class StatusObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(StatusObservation target) {
-
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				target.getParticipants().add(p2);
 			}
 
 			@Override
 			protected void updateToPass(StatusObservation target) {
 				target.init();
-
+				target.getParticipants().clear();
 			}
 
 			@Override
@@ -219,7 +227,7 @@ public class StatusObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateStatusObservationCode() {
@@ -238,6 +246,8 @@ public class StatusObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCode("33999-4");
+				cd.setCodeSystem("2.16.840.1.113883.6.1");
 				target.setCode(cd);
 
 			}
@@ -293,7 +303,7 @@ public class StatusObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateStatusObservationValue() {
@@ -311,7 +321,7 @@ public class StatusObservationTest extends CDAValidationTest {
 			protected void updateToPass(StatusObservation target) {
 				target.init();
 
-				CD value = DatatypesFactory.eINSTANCE.createCD();
+				CE value = DatatypesFactory.eINSTANCE.createCE();
 				target.getValues().add(value);
 
 			}

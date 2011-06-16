@@ -44,7 +44,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateFunctionalStatusSectionClinicalStatements() {
@@ -61,7 +61,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
-
+				target.addAct(CCDFactory.eINSTANCE.createProblemAct());
 			}
 
 			@Override

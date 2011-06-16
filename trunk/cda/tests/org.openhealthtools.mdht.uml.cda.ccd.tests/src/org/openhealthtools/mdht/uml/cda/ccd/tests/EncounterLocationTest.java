@@ -15,10 +15,17 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.ParticipantRole;
+import org.openhealthtools.mdht.uml.cda.PlayingEntity;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.EncounterLocation;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.EncounterLocationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassRoot;
+import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -46,7 +53,7 @@ public class EncounterLocationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateEncounterLocationHasParticipantRole() {
@@ -63,6 +70,8 @@ public class EncounterLocationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(EncounterLocation target) {
 				target.init();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				target.setParticipantRole(pr);
 
 			}
 
@@ -80,7 +89,7 @@ public class EncounterLocationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateEncounterLocationHasParticipantRoleLocation() {
@@ -97,6 +106,9 @@ public class EncounterLocationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(EncounterLocation target) {
 				target.init();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setClassCode(RoleClassRoot.SDLOC);
+				target.setParticipantRole(pr);
 
 			}
 
@@ -114,7 +126,7 @@ public class EncounterLocationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateEncounterLocationHasParticipantRoleCode() {
@@ -125,13 +137,19 @@ public class EncounterLocationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(EncounterLocation target) {
-
+				target.init();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setCode(null);
+				target.setParticipantRole(pr);
 			}
 
 			@Override
 			protected void updateToPass(EncounterLocation target) {
 				target.init();
-
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				pr.setCode(code);
+				target.setParticipantRole(pr);
 			}
 
 			@Override
@@ -148,7 +166,7 @@ public class EncounterLocationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateEncounterLocationHasParticipantRoleCodeVocab() {
@@ -165,7 +183,11 @@ public class EncounterLocationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(EncounterLocation target) {
 				target.init();
-
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				code.setCodeSystem("2.16.840.1.113883.1.11.17660");
+				pr.setCode(code);
+				target.setParticipantRole(pr);
 			}
 
 			@Override
@@ -182,7 +204,7 @@ public class EncounterLocationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateEncounterLocationHasPlayingEntity() {
@@ -193,12 +215,20 @@ public class EncounterLocationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(EncounterLocation target) {
+				target.init();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setPlayingEntity(null);
+				target.setParticipantRole(pr);
 
 			}
 
 			@Override
 			protected void updateToPass(EncounterLocation target) {
 				target.init();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pr.setPlayingEntity(pe);
+				target.setParticipantRole(pr);
 
 			}
 
@@ -216,7 +246,7 @@ public class EncounterLocationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateEncounterLocationHasPlayingEntityPlace() {
@@ -233,7 +263,11 @@ public class EncounterLocationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(EncounterLocation target) {
 				target.init();
-
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pe.setClassCode(EntityClassRoot.PLC);
+				pr.setPlayingEntity(pe);
+				target.setParticipantRole(pr);
 			}
 
 			@Override

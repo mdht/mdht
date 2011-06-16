@@ -16,8 +16,10 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Entry;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
@@ -32,7 +34,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection#validateVitalSignsSectionTitleValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Signs Section Title Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection#validateVitalSignsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Signs Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection#validateVitalSignsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Signs Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection#validateVitalSignsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Signs Section Title</em>}</li>
@@ -46,44 +47,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  */
 
 public class VitalSignsSectionTest extends CDAValidationTest {
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateVitalSignsSectionTitleValue() {
-		OperationsTestCase<VitalSignsSection> validateVitalSignsSectionTitleValueTestCase = new OperationsTestCase<VitalSignsSection>(
-			"validateVitalSignsSectionTitleValue",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGNS_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(VitalSignsSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(VitalSignsSection target) {
-				target.init();
-
-				ST title = DatatypesFactory.eINSTANCE.createST("vital signs");
-
-				target.setTitle(title);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return VitalSignsSectionOperations.validateVitalSignsSectionTitleValue(
-					(VitalSignsSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateVitalSignsSectionTitleValueTestCase.doValidationTest();
-	}
 
 	/**
 	 * 
@@ -229,7 +192,7 @@ public class VitalSignsSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateVitalSignsSectionVitalSignsOrganizer() {
@@ -246,6 +209,10 @@ public class VitalSignsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(VitalSignsSection target) {
 				target.init();
+				Entry entry = CDAFactory.eINSTANCE.createEntry();
+				VitalSignsOrganizer org = CCDFactory.eINSTANCE.createVitalSignsOrganizer().init();
+				entry.setOrganizer(org);
+				target.getEntries().add(entry);
 
 			}
 
