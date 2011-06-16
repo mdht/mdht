@@ -150,7 +150,7 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAdvanceDirectivesSectionAdvanceDirectiveObservation() {
@@ -167,7 +167,7 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdvanceDirectivesSection target) {
 				target.init();
-
+				target.addObservation(CCDFactory.eINSTANCE.createAdvanceDirectiveObservation());
 			}
 
 			@Override

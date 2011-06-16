@@ -66,44 +66,6 @@ public class ProblemSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testValidateProblemSectionTitleValue() {
-		OperationsTestCase<ProblemSection> validateProblemSectionTitleValueTestCase = new OperationsTestCase<ProblemSection>(
-			"validateProblemSectionTitleValue",
-			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProblemSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProblemSection target) {
-				target.init();
-
-				ST title = DatatypesFactory.eINSTANCE.createST("problems");
-
-				target.setTitle(title);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProblemSectionOperations.validateProblemSectionTitleValue(
-					(ProblemSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProblemSectionTitleValueTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
 	public void testValidateProblemSectionTemplateId() {
 		OperationsTestCase<ProblemSection> validateProblemSectionTemplateIdTestCase = new OperationsTestCase<ProblemSection>(
 			"validateProblemSectionTemplateId",
@@ -243,7 +205,7 @@ public class ProblemSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProblemSectionProblemAct() {
@@ -260,7 +222,7 @@ public class ProblemSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemSection target) {
 				target.init();
-
+				target.addAct(CCDFactory.eINSTANCE.createProblemAct());
 			}
 
 			@Override

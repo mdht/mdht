@@ -15,6 +15,8 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Informant12;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsOrganizer;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.VitalSignsOrganizerOperations;
@@ -40,7 +42,7 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateVitalSignsOrganizerInformationSource() {
@@ -57,6 +59,9 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(VitalSignsOrganizer target) {
 				target.init();
+
+				Informant12 inf = CDAFactory.eINSTANCE.createInformant12();
+				target.getInformants().add(inf);
 
 			}
 

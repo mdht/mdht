@@ -76,7 +76,7 @@ public class ProblemHealthStatusObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateStatusObservationCode() {
@@ -95,6 +95,8 @@ public class ProblemHealthStatusObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCode("11323-3");
+				cd.setCodeSystem("2.16.840.1.113883.6.1");
 				target.setCode(cd);
 
 			}

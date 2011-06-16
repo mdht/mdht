@@ -201,7 +201,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePlanOfCareSectionPlanOfCareActivityAct() {
@@ -218,7 +218,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-
+				target.addAct(CCDFactory.eINSTANCE.createPlanOfCareActivityAct());
 			}
 
 			@Override
@@ -235,7 +235,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePlanOfCareSectionPlanOfCareActivityEncounter() {
@@ -252,7 +252,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-
+				target.addEncounter(CCDFactory.eINSTANCE.createPlanOfCareActivityEncounter());
 			}
 
 			@Override
@@ -269,7 +269,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePlanOfCareSectionPlanOfCareActivityObservation() {
@@ -286,7 +286,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-
+				target.addObservation(CCDFactory.eINSTANCE.createPlanOfCareActivityObservation());
 			}
 
 			@Override
@@ -303,7 +303,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePlanOfCareSectionPlanOfCareActivityProcedure() {
@@ -320,7 +320,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-
+				target.addProcedure(CCDFactory.eINSTANCE.createPlanOfCareActivityProcedure());
 			}
 
 			@Override
@@ -337,7 +337,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePlanOfCareSectionPlanOfCareActivitySubstanceAdministration() {
@@ -354,7 +354,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-
+				target.addSubstanceAdministration(CCDFactory.eINSTANCE.createPlanOfCareActivitySubstanceAdministration());
 			}
 
 			@Override
@@ -371,7 +371,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePlanOfCareSectionPlanOfCareActivitySupply() {
@@ -388,7 +388,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-
+				target.addSupply(CCDFactory.eINSTANCE.createPlanOfCareActivitySupply());
 			}
 
 			@Override

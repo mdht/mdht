@@ -15,6 +15,10 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.RelatedSubject;
+import org.openhealthtools.mdht.uml.cda.Subject;
+import org.openhealthtools.mdht.uml.cda.SubjectPerson;
 import org.openhealthtools.mdht.uml.cda.ccd.AgeObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.AgeObservationOperations;
@@ -62,7 +66,7 @@ public class AgeObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAgeObservationRelatedSubjectBirthTime() {
@@ -79,7 +83,13 @@ public class AgeObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AgeObservation target) {
 				target.init();
-
+				Subject sub = CDAFactory.eINSTANCE.createSubject();
+				RelatedSubject rsub = CDAFactory.eINSTANCE.createRelatedSubject();
+				SubjectPerson sp = CDAFactory.eINSTANCE.createSubjectPerson();
+				sp.setBirthTime(DatatypesFactory.eINSTANCE.createTS());
+				rsub.setSubject(sp);
+				sub.setRelatedSubject(rsub);
+				target.setSubject(sub);
 			}
 
 			@Override
@@ -198,7 +208,7 @@ public class AgeObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAgeObservationCode() {
@@ -217,6 +227,8 @@ public class AgeObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCode("397659008");
+				cd.setCodeSystem("2.16.840.1.113883.6.96");
 				target.setCode(cd);
 
 			}

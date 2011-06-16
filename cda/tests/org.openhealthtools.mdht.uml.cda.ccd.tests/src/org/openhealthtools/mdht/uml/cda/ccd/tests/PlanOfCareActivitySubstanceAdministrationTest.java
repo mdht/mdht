@@ -19,6 +19,8 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareActivitySubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.PlanOfCareActivitySubstanceAdministrationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -42,7 +44,7 @@ public class PlanOfCareActivitySubstanceAdministrationTest extends CDAValidation
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePlanOfCareActivitySubstanceAdministrationMoodCodeValue() {
@@ -59,7 +61,7 @@ public class PlanOfCareActivitySubstanceAdministrationTest extends CDAValidation
 			@Override
 			protected void updateToPass(PlanOfCareActivitySubstanceAdministration target) {
 				target.init();
-
+				target.setMoodCode(x_DocumentSubstanceMood.INT);
 			}
 
 			@Override
@@ -110,7 +112,7 @@ public class PlanOfCareActivitySubstanceAdministrationTest extends CDAValidation
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePlanOfCareActivitySubstanceAdministrationId() {
@@ -127,7 +129,7 @@ public class PlanOfCareActivitySubstanceAdministrationTest extends CDAValidation
 			@Override
 			protected void updateToPass(PlanOfCareActivitySubstanceAdministration target) {
 				target.init();
-
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 			}
 
 			@Override
@@ -144,7 +146,7 @@ public class PlanOfCareActivitySubstanceAdministrationTest extends CDAValidation
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePlanOfCareActivitySubstanceAdministrationMoodCode() {
@@ -162,6 +164,7 @@ public class PlanOfCareActivitySubstanceAdministrationTest extends CDAValidation
 			protected void updateToPass(PlanOfCareActivitySubstanceAdministration target) {
 				target.init();
 
+				target.setMoodCode(x_DocumentSubstanceMood.EVN);
 			}
 
 			@Override

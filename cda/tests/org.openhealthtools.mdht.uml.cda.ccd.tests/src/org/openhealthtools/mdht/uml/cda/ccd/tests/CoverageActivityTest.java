@@ -15,12 +15,19 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Informant12;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.PolicyActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.CoverageActivityOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -50,7 +57,7 @@ public class CoverageActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateCoverageActivityInformationSource() {
@@ -68,6 +75,9 @@ public class CoverageActivityTest extends CDAValidationTest {
 			protected void updateToPass(CoverageActivity target) {
 				target.init();
 
+				Informant12 inf = CDAFactory.eINSTANCE.createInformant12();
+				target.getInformants().add(inf);
+
 			}
 
 			@Override
@@ -84,7 +94,7 @@ public class CoverageActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateCoverageActivitySequenceNumber() {
@@ -101,6 +111,10 @@ public class CoverageActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(CoverageActivity target) {
 				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				INT value = DatatypesFactory.eINSTANCE.createINT();
+				er.setSequenceNumber(value);
+				target.getEntryRelationships().add(er);
 
 			}
 
@@ -220,7 +234,7 @@ public class CoverageActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateCoverageActivityId() {
@@ -237,6 +251,8 @@ public class CoverageActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(CoverageActivity target) {
 				target.init();
+				II e = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(e);
 
 			}
 
@@ -325,7 +341,7 @@ public class CoverageActivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateCoverageActivityPolicyActivity() {
@@ -342,6 +358,11 @@ public class CoverageActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(CoverageActivity target) {
 				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				PolicyActivity pa = CCDFactory.eINSTANCE.createPolicyActivity();
+				er.setAct(pa);
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				target.getEntryRelationships().add(er);
 
 			}
 

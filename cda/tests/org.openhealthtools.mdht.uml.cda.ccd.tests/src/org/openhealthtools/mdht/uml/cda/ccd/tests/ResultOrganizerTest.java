@@ -15,12 +15,18 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Component4;
+import org.openhealthtools.mdht.uml.cda.Informant12;
+import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ResultOrganizerOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -67,6 +73,9 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultOrganizer target) {
 				target.init();
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				value.setCodeSystem("2.16.840.1.113883.6.96");
+				target.setCode(value);
 			}
 
 			@Override
@@ -83,7 +92,7 @@ public class ResultOrganizerTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateResultOrganizerComponentElement() {
@@ -100,7 +109,8 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultOrganizer target) {
 				target.init();
-
+				Component4 comp = CDAFactory.eINSTANCE.createComponent4();
+				target.getComponents().add(comp);
 			}
 
 			@Override
@@ -117,7 +127,7 @@ public class ResultOrganizerTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateResultOrganizerInformationSource() {
@@ -134,6 +144,9 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultOrganizer target) {
 				target.init();
+
+				Informant12 inf = CDAFactory.eINSTANCE.createInformant12();
+				target.getInformants().add(inf);
 
 			}
 
@@ -219,7 +232,7 @@ public class ResultOrganizerTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateResultOrganizerId() {
@@ -235,6 +248,9 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultOrganizer target) {
 				target.init();
+
+				II id = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(id);
 
 			}
 
@@ -252,7 +268,7 @@ public class ResultOrganizerTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateResultOrganizerCode() {
@@ -269,7 +285,8 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultOrganizer target) {
 				target.init();
-
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.setCode(value);
 			}
 
 			@Override
@@ -323,7 +340,7 @@ public class ResultOrganizerTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateResultOrganizerResultObservation() {
@@ -340,7 +357,10 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultOrganizer target) {
 				target.init();
-
+				Component4 comp = CDAFactory.eINSTANCE.createComponent4();
+				Observation obs = CCDFactory.eINSTANCE.createResultObservation();
+				comp.setObservation(obs);
+				target.getComponents().add(comp);
 			}
 
 			@Override

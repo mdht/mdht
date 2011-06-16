@@ -15,10 +15,14 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Material;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.Product;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProductOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -46,7 +50,7 @@ public class ProductTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProductHasMaterial() {
@@ -63,7 +67,7 @@ public class ProductTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Product target) {
 				target.init();
-
+				target.setManufacturedMaterial(CDAFactory.eINSTANCE.createMaterial());
 			}
 
 			@Override
@@ -79,7 +83,7 @@ public class ProductTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProductHasMaterialCode() {
@@ -96,7 +100,9 @@ public class ProductTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Product target) {
 				target.init();
-
+				Material mat = CDAFactory.eINSTANCE.createMaterial();
+				mat.setCode(DatatypesFactory.eINSTANCE.createCE());
+				target.setManufacturedMaterial(mat);
 			}
 
 			@Override
@@ -112,7 +118,7 @@ public class ProductTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProductHasMaterialCodeVocab() {
@@ -129,7 +135,12 @@ public class ProductTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Product target) {
 				target.init();
+				Material mat = CDAFactory.eINSTANCE.createMaterial();
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				code.setCodeSystem("2.16.840.1.113883.6.88");
+				mat.setCode(code);
 
+				target.setManufacturedMaterial(mat);
 			}
 
 			@Override
@@ -145,7 +156,7 @@ public class ProductTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProductHasMaterialCodeOriginalText() {
@@ -162,7 +173,11 @@ public class ProductTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Product target) {
 				target.init();
-
+				Material mat = CDAFactory.eINSTANCE.createMaterial();
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				code.setOriginalText(DatatypesFactory.eINSTANCE.createED());
+				mat.setCode(code);
+				target.setManufacturedMaterial(mat);
 			}
 
 			@Override
@@ -179,7 +194,7 @@ public class ProductTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProductHasMaterialName() {
@@ -196,7 +211,9 @@ public class ProductTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Product target) {
 				target.init();
-
+				Material mat = CDAFactory.eINSTANCE.createMaterial();
+				mat.setName(DatatypesFactory.eINSTANCE.createEN());
+				target.setManufacturedMaterial(mat);
 			}
 
 			@Override
@@ -212,7 +229,7 @@ public class ProductTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProductMayHaveMaterialManufacturer() {
@@ -229,7 +246,7 @@ public class ProductTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Product target) {
 				target.init();
-
+				target.setManufacturerOrganization(CDAFactory.eINSTANCE.createOrganization());
 			}
 
 			@Override
@@ -246,7 +263,7 @@ public class ProductTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProductShouldHaveMaterialManufacturer() {
@@ -257,13 +274,14 @@ public class ProductTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(Product target) {
-
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 			}
 
 			@Override
 			protected void updateToPass(Product target) {
 				target.init();
-
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				target.setManufacturerOrganization(CDAFactory.eINSTANCE.createOrganization());
 			}
 
 			@Override
@@ -312,7 +330,7 @@ public class ProductTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProductId() {
@@ -328,7 +346,7 @@ public class ProductTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Product target) {
 				target.init();
-
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 			}
 
 			@Override

@@ -22,6 +22,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -186,7 +187,7 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationSeriesNumberObservationCode() {
@@ -205,6 +206,8 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCode("30973-2");
+				cd.setCodeSystem("2.16.840.1.113883.6.1");
 				target.setCode(cd);
 
 			}
@@ -223,7 +226,7 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationSeriesNumberObservationValue() {
@@ -241,7 +244,7 @@ public class MedicationSeriesNumberObservationTest extends CDAValidationTest {
 			protected void updateToPass(MedicationSeriesNumberObservation target) {
 				target.init();
 
-				CD value = DatatypesFactory.eINSTANCE.createCD();
+				INT value = DatatypesFactory.eINSTANCE.createINT();
 				target.getValues().add(value);
 
 			}

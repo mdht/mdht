@@ -15,10 +15,12 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ProductInstance;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProductInstanceOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -41,7 +43,7 @@ public class ProductInstanceTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProductInstanceHasScopingEntity() {
@@ -52,13 +54,14 @@ public class ProductInstanceTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProductInstance target) {
-
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 			}
 
 			@Override
 			protected void updateToPass(ProductInstance target) {
 				target.init();
-
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				target.setScopingEntity(CDAFactory.eINSTANCE.createEntity());
 			}
 
 			@Override

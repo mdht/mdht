@@ -19,6 +19,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveVerification;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.AdvanceDirectiveVerificationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -109,7 +110,7 @@ public class AdvanceDirectiveVerificationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAdvanceDirectiveVerificationTime() {
@@ -126,7 +127,7 @@ public class AdvanceDirectiveVerificationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdvanceDirectiveVerification target) {
 				target.init();
-
+				target.setTime(DatatypesFactory.eINSTANCE.createIVL_TS());
 			}
 
 			@Override

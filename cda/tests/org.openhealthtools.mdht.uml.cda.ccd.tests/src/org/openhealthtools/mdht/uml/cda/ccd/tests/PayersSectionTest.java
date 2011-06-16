@@ -66,44 +66,6 @@ public class PayersSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testValidatePayersSectionTitleValue() {
-		OperationsTestCase<PayersSection> validatePayersSectionTitleValueTestCase = new OperationsTestCase<PayersSection>(
-			"validatePayersSectionTitleValue",
-			operationsForOCL.getOCLValue("VALIDATE_PAYERS_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PayersSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PayersSection target) {
-				target.init();
-
-				ST title = DatatypesFactory.eINSTANCE.createST("insurance");
-
-				target.setTitle(title);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PayersSectionOperations.validatePayersSectionTitleValue(
-					(PayersSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePayersSectionTitleValueTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
 	public void testValidatePayersSectionTemplateId() {
 		OperationsTestCase<PayersSection> validatePayersSectionTemplateIdTestCase = new OperationsTestCase<PayersSection>(
 			"validatePayersSectionTemplateId",
@@ -241,7 +203,7 @@ public class PayersSectionTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidatePayersSectionCoverageActivity() {
@@ -258,7 +220,7 @@ public class PayersSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PayersSection target) {
 				target.init();
-
+				target.addAct(CCDFactory.eINSTANCE.createCoverageActivity());
 			}
 
 			@Override

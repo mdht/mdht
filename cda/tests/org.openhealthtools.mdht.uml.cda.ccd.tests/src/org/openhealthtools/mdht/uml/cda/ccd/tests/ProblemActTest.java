@@ -15,12 +15,18 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.PatientAwareness;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProblemActOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -52,7 +58,7 @@ public class ProblemActTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProblemActEntryRelationshipRequired() {
@@ -69,6 +75,8 @@ public class ProblemActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemAct target) {
 				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				target.getEntryRelationships().add(er);
 
 			}
 
@@ -86,7 +94,7 @@ public class ProblemActTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProblemActSubjectOfTarget() {
@@ -97,13 +105,20 @@ public class ProblemActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProblemAct target) {
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				er.setObservation(CCDFactory.eINSTANCE.createEpisodeObservation());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected void updateToPass(ProblemAct target) {
 				target.init();
-
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				er.setObservation(CCDFactory.eINSTANCE.createProblemObservation());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -120,7 +135,7 @@ public class ProblemActTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProblemActContainsProblemObservation() {
@@ -137,6 +152,10 @@ public class ProblemActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemAct target) {
 				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				er.setObservation(CCDFactory.eINSTANCE.createProblemObservation());
+				target.getEntryRelationships().add(er);
 
 			}
 
@@ -154,7 +173,7 @@ public class ProblemActTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProblemActContainsAlertObservation() {
@@ -171,6 +190,10 @@ public class ProblemActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemAct target) {
 				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				er.setObservation(CCDFactory.eINSTANCE.createAlertObservation());
+				target.getEntryRelationships().add(er);
 
 			}
 
@@ -188,7 +211,7 @@ public class ProblemActTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProblemActContainsPatientAwareness() {
@@ -205,6 +228,8 @@ public class ProblemActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemAct target) {
 				target.init();
+				PatientAwareness p2 = CCDFactory.eINSTANCE.createPatientAwareness();
+				target.getParticipants().add(p2);
 
 			}
 
@@ -321,7 +346,7 @@ public class ProblemActTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProblemActId() {
@@ -338,6 +363,8 @@ public class ProblemActTest extends CDAValidationTest {
 			protected void updateToPass(ProblemAct target) {
 				target.init();
 
+				II id = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(id);
 			}
 
 			@Override
@@ -424,7 +451,7 @@ public class ProblemActTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateProblemActEpisodeObservation() {
@@ -441,6 +468,10 @@ public class ProblemActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemAct target) {
 				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				EpisodeObservation eo = CCDFactory.eINSTANCE.createEpisodeObservation();
+				er.setObservation(eo);
+				target.getEntryRelationships().add(er);
 
 			}
 

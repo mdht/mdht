@@ -32,7 +32,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection#validateProceduresSectionTitleValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section Title Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection#validateProceduresSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection#validateProceduresSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection#validateProceduresSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section Title</em>}</li>
@@ -44,44 +43,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  */
 
 public class ProceduresSectionTest extends CDAValidationTest {
-
-	/**
-	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateProceduresSectionTitleValue() {
-		OperationsTestCase<ProceduresSection> validateProceduresSectionTitleValueTestCase = new OperationsTestCase<ProceduresSection>(
-			"validateProceduresSectionTitleValue",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURES_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProceduresSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProceduresSection target) {
-				target.init();
-
-				ST title = DatatypesFactory.eINSTANCE.createST("procedures");
-
-				target.setTitle(title);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProceduresSectionOperations.validateProceduresSectionTitleValue(
-					(ProceduresSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProceduresSectionTitleValueTestCase.doValidationTest();
-	}
 
 	/**
 	 * 

@@ -15,13 +15,17 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.EpisodeObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.EpisodeObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -49,7 +53,7 @@ public class EpisodeObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateEpisodeObservationOneEntryRelationshipSUBJ() {
@@ -66,7 +70,11 @@ public class EpisodeObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(EpisodeObservation target) {
 				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				ProblemAct pa = CCDFactory.eINSTANCE.createProblemAct();
+				er.setAct(pa);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -83,7 +91,7 @@ public class EpisodeObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateEpisodeObservationExistsEntryRelationshipSAS() {
@@ -100,6 +108,11 @@ public class EpisodeObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(EpisodeObservation target) {
 				target.init();
+				ProblemAct act = CCDFactory.eINSTANCE.createProblemAct().init();
+				target.addAct(act);
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.SAS);
+				}
 
 			}
 
@@ -256,7 +269,7 @@ public class EpisodeObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT 
 	 */
 	@Test
 	public void testValidateEpisodeObservationCode() {
@@ -275,6 +288,8 @@ public class EpisodeObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCode("ASSERTION");
+				cd.setCodeSystem("2.16.840.1.113883.5.4");
 				target.setCode(cd);
 
 			}
@@ -293,7 +308,7 @@ public class EpisodeObservationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateEpisodeObservationValue() {
@@ -312,6 +327,9 @@ public class EpisodeObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD value = DatatypesFactory.eINSTANCE.createCD();
+				value.setCode("404684003");
+				value.setCodeSystem("2.16.840.1.113883.6.96");
+
 				target.getValues().add(value);
 
 			}
