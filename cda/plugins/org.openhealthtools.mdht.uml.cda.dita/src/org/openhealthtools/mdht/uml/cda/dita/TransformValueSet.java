@@ -176,7 +176,7 @@ public class TransformValueSet extends TransformAbstract {
 		writer.println("</title>");
 
 		ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
-		String valueSetId = valueSetVersion.getIdentifier() != null
+		String valueSetId = valueSetVersion != null && valueSetVersion.getIdentifier() != null
 				? valueSetVersion.getIdentifier()
 				: "not specified";
 
