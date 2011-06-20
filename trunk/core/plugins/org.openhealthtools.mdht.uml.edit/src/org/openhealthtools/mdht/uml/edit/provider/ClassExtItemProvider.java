@@ -97,7 +97,8 @@ public class ClassExtItemProvider extends ClassItemProvider implements ITableIte
 		}
 		// include associations after attributes
 		for (Property property : clazz.getOwnedAttributes()) {
-			if (property.getAssociation() != null && property.getOtherEnd().getType() == clazz) {
+			if (property.getAssociation() != null && property.getOtherEnd() != null &&
+					property.getOtherEnd().getType() == clazz) {
 				children.add(property.getAssociation());
 			}
 		}
