@@ -1,0 +1,84 @@
+package <c:get select="$package/@name"/>;
+
+import com.ibm.research.xml.facade.XMLFacade;
+<c:setVariable select="$facade/methods[emf.eClass()/@name='XMLFacadeGetterMethod']" var="getterMethods"/>
+<c:setVariable select="$facade/methods[emf.eClass()/@name='XMLFacadeSetterMethod']" var="setterMethods"/>
+<c:setVariable select="$facade/methods[emf.eClass()/@name='XMLFacadeCreateMethod']" var="createMethods"/>
+<c:setVariable select="$facade/annotations[emf.eClass()/@name='XMLFacadePrefixMappingAnnotation']" var="prefixMappings"/>
+<c:setVariable select="$facade/annotations[emf.eClass()/@name='XMLFacadeInitAnnotation']" var="initAnnotations"/>
+<c:setVariable select="$facade/annotations[emf.eClass()/@name='XMLFacadeConstraintAnnotation']" var="constraintAnnotations"/>
+<c:setVariable select="$facade/annotations[emf.eClass()/@name='XMLFacadeElementAnnotation']" var="elementAnnotation"/>
+<c:if test="$getterMethods">
+import com.ibm.research.xml.facade.annotation.Get;
+</c:if>
+<c:if test="$prefixMappings">
+import com.ibm.research.xml.facade.annotation.PrefixMappings;
+import com.ibm.research.xml.facade.annotation.PrefixMapping;
+</c:if>
+<c:if test="$initAnnotations">
+import com.ibm.research.xml.facade.annotation.Inits;
+import com.ibm.research.xml.facade.annotation.Init;
+</c:if>
+<c:if test="$constraintAnnotations">
+import com.ibm.research.xml.facade.annotation.Constraints;
+import com.ibm.research.xml.facade.annotation.Constraint;
+import com.ibm.research.xml.facade.annotation.SeverityType;
+</c:if>
+<c:if test="$elementAnnotation">
+import com.ibm.research.xml.facade.annotation.Element;
+</c:if>
+<c:if test="$createMethods">
+import com.ibm.research.xml.facade.annotation.Create;
+</c:if>
+
+<c:if test="$prefixMappings">
+@PrefixMappings({
+<c:iterate select="$prefixMappings" var="prefixMapping" delimiter=",">
+	@PrefixMapping(prefix = "<c:get select="$prefixMapping/@prefix"/>", namespaceURI = "<c:get select="$prefixMapping/@namespaceURI"/>")
+</c:iterate>
+})
+</c:if>
+<c:if test="$initAnnotations">
+@Inits({
+<c:iterate select="$initAnnotations" var="initAnnotation" delimiter=",">
+	@Init(path = "<c:get select="$initAnnotation/@path"/>", value = "<c:get select="$initAnnotation/@value"/>")
+</c:iterate>
+})
+</c:if>
+<c:if test="$constraintAnnotations">
+@Constraints({
+<c:iterate select="$constraintAnnotations" var="constraintAnnotation" delimiter=",">
+	@Constraint(test = "<c:get select="$constraintAnnotation/@test"/>", severity = SeverityType.<c:get select="$constraintAnnotation/@severity"/>, message = "<c:get select="$constraintAnnotation/@message"/>")
+</c:iterate>
+})
+</c:if>
+<c:if test="$elementAnnotation">
+@Element(qualifiedName = "<c:get select="$elementAnnotation/@qualifiedName"/>", namespaceURI = "<c:get select="$elementAnnotation/@namespaceURI"/>"<c:if test="$elementAnnotation/propOrder">, propOrder = { <c:iterate select="$elementAnnotation/propOrder" var="propName" delimiter=", ">"<c:get select="$propName"/>"</c:iterate> }</c:if>)
+</c:if>
+public interface <c:get select="$facade/@name"/> extends XMLFacade {
+	<c:iterate select="$facade/methods" var="method">
+	  <c:iterate select="$method/annotations" var="annotation">
+	    <c:choose>
+	      <c:when test="emf.eClass($annotation)/@name='XMLFacadeGetAnnotation'">
+	@Get("<c:get select="$annotation/@path"/>")
+	      </c:when>
+	      <c:when test="emf.eClass($annotation)/@name='XMLFacadeCreateAnnotation'">
+	@Create("<c:get select="$annotation/@path"/>")
+	      </c:when>
+	    </c:choose>
+	  </c:iterate>
+	  <c:choose>
+	    <c:when test="emf.eClass($method)/@name='XMLFacadeGetterMethod'">
+    <c:get select="$method/returnType/@name"/> <c:get select="$method/@name"/>();
+	    </c:when>
+	    <c:when test="emf.eClass($method)/@name='XMLFacadeSetterMethod'">
+	    </c:when>
+	    <c:when test="emf.eClass($method)/@name='XMLFacadeCreateMethod'">
+	<c:get select="$method/returnType/@name"/> <c:get select="$method/@name"/>();
+	    </c:when>
+	    <c:when test="emf.eClass($method)/@name='XMLFacadeAddMethod'">
+	    </c:when>
+	  </c:choose>
+	  
+	</c:iterate>
+}
