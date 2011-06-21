@@ -49,11 +49,14 @@ public class TransformClassContent extends TransformAbstract {
 
 	private InstanceGenerator instanceGenerator;
 
+	private TableGenerator tableGenerator;
+
 	public TransformClassContent(DitaTransformerOptions options) {
 		super(options);
 
 		if (Platform.getBundle("org.openhealthtools.mdht.uml.cda") != null) {
 			instanceGenerator = new InstanceGenerator();
+			tableGenerator = new TableGenerator();
 		}
 	}
 
@@ -225,7 +228,23 @@ public class TransformClassContent extends TransformAbstract {
 		appendClassDocumentation(writer, umlClass);
 		appendConformanceRules(writer, umlClass);
 		appendAggregateRules(writer, umlClass);
+		appendTable(writer, umlClass);
 		appendExample(writer, umlClass);
+
+		writer.println("<p><ph id=\"classformalname\">" + UMLUtil.splitName(umlClass) + "</ph></p>");
+
+		Class cdaClass = CDAModelUtil.getCDAClass(umlClass);
+		String cdaClassName = cdaClass != null
+				? cdaClass.getName()
+				: "MISSING_CDA_CLASS";
+		if (cdaClass != null) {
+			writer.print("<p id=\"shortdesc\">");
+			if (!umlClass.equals(cdaClass)) {
+				writer.print("[" + cdaClassName + ": templateId <tt>" + CDAModelUtil.getTemplateId(umlClass) + "</tt>]");
+			}
+			writer.println("</p>");
+
+		}
 
 		writer.println("</body>");
 		writer.println("</topic>");
@@ -505,4 +524,13 @@ public class TransformClassContent extends TransformAbstract {
 		return prefix.toString();
 	}
 
+	private void appendTable(PrintWriter writer, Class umlClass) {
+		if (tableGenerator != null) {
+			String table = tableGenerator.createTable(umlClass);
+			writer.println(table);
+		} else {
+			writer.print("TODO: Table Representation");
+		}
+
+	}
 }

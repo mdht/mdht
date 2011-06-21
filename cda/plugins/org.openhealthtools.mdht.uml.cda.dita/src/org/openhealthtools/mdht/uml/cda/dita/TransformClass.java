@@ -46,6 +46,13 @@ public class TransformClass extends TransformAbstract {
 		writer.println("<li></li>");
 		writer.println("</ol>");
 
+		writer.println("<p> </p>");
+
+		writer.println("<section conref=\"generated/_" + className + ".dita#classId/tableconformance\">");
+		writer.println("</section>");
+
+		writer.println("<p> </p>");
+
 		writer.println("<p> </p>"); // need a blank line before example code block
 		// writer.println("<fig>");
 		// writer.println("<title>" + UMLUtil.splitName(umlClass) + " example</title>");

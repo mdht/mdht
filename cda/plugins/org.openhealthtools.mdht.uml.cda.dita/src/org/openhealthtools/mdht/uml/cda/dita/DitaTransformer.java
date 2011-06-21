@@ -74,7 +74,12 @@ public class DitaTransformer {
 		UMLSwitch<Object> transformClass = new TransformClass(transformerOptions);
 		UMLSwitch<Object> transformClassProperties = new TransformClassContent(transformerOptions);
 		UMLSwitch<Object> transformValueSet = new TransformValueSet(transformerOptions);
+		UMLSwitch<Object> generateSections = new TransformCDA(transformerOptions);
 
+		File templateDirectory = new File(
+			transformerOptions.getOutputPath().removeLastSegments(1).append("templates").toOSString());
+
+		boolean useTemplates = templateDirectory.isDirectory();
 		try {
 			TreeIterator<EObject> iterator = EcoreUtil.getAllContents(Collections.singletonList(element));
 			while (iterator != null && iterator.hasNext()) {
@@ -84,8 +89,13 @@ public class DitaTransformer {
 				}
 
 				if (child != null) {
+
 					transformPackage.doSwitch(child);
-					transformClass.doSwitch(child);
+					if (useTemplates) {
+						generateSections.doSwitch(child);
+					} else {
+						transformClass.doSwitch(child);
+					}
 					transformClassProperties.doSwitch(child);
 					transformValueSet.doSwitch(child);
 				}
