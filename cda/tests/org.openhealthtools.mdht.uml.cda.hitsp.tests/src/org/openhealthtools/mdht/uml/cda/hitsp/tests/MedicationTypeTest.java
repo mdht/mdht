@@ -77,6 +77,41 @@ public class MedicationTypeTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateMedicationTypeCode() {
+		OperationsTestCase<MedicationType> validateMedicationTypeCodeTestCase = new OperationsTestCase<MedicationType>(
+			"validateMedicationTypeCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationType target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationType target) {
+				target.init();
+				target.getCode().setCode("329505003");
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationTypeOperations.validateMedicationTypeCode(
+					(MedicationType) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationTypeCodeTestCase.doValidationTest();
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

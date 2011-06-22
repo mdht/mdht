@@ -37,6 +37,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Procedure#validateHITSPProcedureHasCodeOriginalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Procedure Has Code Original Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Procedure#validateHITSPProcedurePerformerAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Procedure Performer Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Procedure#validateHITSPProcedureTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Procedure Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Procedure#validateHITSPProcedureTargetSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Procedure Target Site Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Procedure#validateHITSPProcedureCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Procedure Code</em>}</li>
  * </ul>
  * </p>
@@ -161,6 +162,48 @@ public class ProcedureTest extends CDAValidationTest {
 		};
 
 		validateHITSPProcedureTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateHITSPProcedureTargetSiteCode() {
+		OperationsTestCase<Procedure> validateHITSPProcedureTargetSiteCodeTestCase = new OperationsTestCase<Procedure>(
+			"validateHITSPProcedureTargetSiteCode",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_PROCEDURE_TARGET_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Procedure target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(Procedure target) {
+
+				for (CD cd : target.getTargetSiteCodes()) {
+					cd.setCode("11111");
+				}
+				// target.init();
+				// // 2.16.840.1.113883.5.60' and (value.code = 'ESGN' or
+				// CD cd = DatatypesFactory.eINSTANCE.createCD();
+				// cd.setCodeSystem("2.16.840.1.113883.3.88.12.3221.8.9");
+				// target.getTargetSiteCodes().add(cd);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureOperations.validateHITSPProcedureTargetSiteCode(
+					(Procedure) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPProcedureTargetSiteCodeTestCase.doValidationTest();
 	}
 
 	/**

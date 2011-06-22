@@ -19,6 +19,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.LanguageSpoken;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.LanguageSpokenOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
@@ -113,6 +114,44 @@ public class LanguageSpokenTest extends CDAValidationTest {
 		};
 
 		validateLanguageSpokenTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateLanguageSpokenModeCode() {
+		OperationsTestCase<LanguageSpoken> validateLanguageSpokenModeCodeTestCase = new OperationsTestCase<LanguageSpoken>(
+			"validateLanguageSpokenModeCode",
+			operationsForOCL.getOCLValue("VALIDATE_LANGUAGE_SPOKEN_MODE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(LanguageSpoken target) {
+
+			}
+
+			@Override
+			protected void updateToPass(LanguageSpoken target) {
+				target.init();
+				// 2.16.840.1.113883.5.60' and (value.code = 'ESGN' or
+				CE ce = DatatypesFactory.eINSTANCE.createCE("ESGN", "2.16.840.1.113883.5.60");
+
+				target.setModeCode(ce);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return LanguageSpokenOperations.validateLanguageSpokenModeCode(
+					(LanguageSpoken) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateLanguageSpokenModeCodeTestCase.doValidationTest();
 	}
 
 	/**

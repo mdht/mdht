@@ -15,14 +15,23 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.ccd.AgeObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.cda.ccd.CauseOfDeathObservation;
 import org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ConditionEntryOperations;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.ProblemStatusObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ProblemEntryOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -161,6 +170,234 @@ public class ConditionEntryTest extends CDAValidationTest {
 		};
 
 		validateConditionEntryHasUnknownResolutionDateTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateConditionEntryCode() {
+		OperationsTestCase<ConditionEntry> validateConditionEntryCodeTestCase = new OperationsTestCase<ConditionEntry>(
+			"validateConditionEntryCode",
+			operationsForOCL.getOCLValue("VALIDATE_CONDITION_ENTRY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ConditionEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ConditionEntry target) {
+				target.init();
+				target.getCode().setCode("404684003");
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ConditionEntryOperations.validateConditionEntryCode(
+					(ConditionEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateConditionEntryCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateConditionEntryText() {
+		OperationsTestCase<ConditionEntry> validateConditionEntryTextTestCase = new OperationsTestCase<ConditionEntry>(
+			"validateConditionEntryText",
+			operationsForOCL.getOCLValue("VALIDATE_CONDITION_ENTRY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ConditionEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ConditionEntry target) {
+				target.init();
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ConditionEntryOperations.validateConditionEntryText(
+					(ConditionEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateConditionEntryTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateConditionEntryAgeObservation() {
+		OperationsTestCase<ConditionEntry> validateConditionEntryAgeObservationTestCase = new OperationsTestCase<ConditionEntry>(
+			"validateConditionEntryAgeObservation",
+			operationsForOCL.getOCLValue("VALIDATE_CONDITION_ENTRY_AGE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ConditionEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ConditionEntry target) {
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				AgeObservation ob = CCDFactory.eINSTANCE.createAgeObservation().init();
+				er.setObservation(ob);
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+
+				target.getEntryRelationships().add(er);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ConditionEntryOperations.validateConditionEntryAgeObservation(
+					(ConditionEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateConditionEntryAgeObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateConditionEntryProblemStatusObservation() {
+		OperationsTestCase<ConditionEntry> validateConditionEntryProblemStatusObservationTestCase = new OperationsTestCase<ConditionEntry>(
+			"validateConditionEntryProblemStatusObservation",
+			operationsForOCL.getOCLValue("VALIDATE_CONDITION_ENTRY_PROBLEM_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ConditionEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ConditionEntry target) {
+
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				ProblemStatusObservation ob = IHEFactory.eINSTANCE.createProblemStatusObservation().init();
+				er.setObservation(ob);
+				er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+
+				target.getEntryRelationships().add(er);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ConditionEntryOperations.validateConditionEntryProblemStatusObservation(
+					(ConditionEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateConditionEntryProblemStatusObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateConditionEntryCauseOfDeathObservation() {
+		OperationsTestCase<ConditionEntry> validateConditionEntryCauseOfDeathObservationTestCase = new OperationsTestCase<ConditionEntry>(
+			"validateConditionEntryCauseOfDeathObservation",
+			operationsForOCL.getOCLValue("VALIDATE_CONDITION_ENTRY_CAUSE_OF_DEATH_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ConditionEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ConditionEntry target) {
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				CauseOfDeathObservation codo = CCDFactory.eINSTANCE.createCauseOfDeathObservation().init();
+				er.setObservation(codo);
+				er.setTypeCode(x_ActRelationshipEntryRelationship.CAUS);
+
+				target.getEntryRelationships().add(er);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ConditionEntryOperations.validateConditionEntryCauseOfDeathObservation(
+					(ConditionEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateConditionEntryCauseOfDeathObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetHITSPAgeObservation() {
+
+		ConditionEntry target = objectFactory.create();
+		target.getHITSPAgeObservation();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetHITSPProblemStatusObservation() {
+
+		ConditionEntry target = objectFactory.create();
+		target.getHITSPProblemStatusObservation();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetCauseOfDeathObservation() {
+
+		ConditionEntry target = objectFactory.create();
+		target.getCauseOfDeathObservation();
+
 	}
 
 	/**

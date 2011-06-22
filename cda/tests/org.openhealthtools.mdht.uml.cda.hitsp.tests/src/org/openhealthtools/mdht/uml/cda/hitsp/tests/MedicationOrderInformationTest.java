@@ -25,6 +25,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.MedicationOrderInformation;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.MedicationOrderInformationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
@@ -51,6 +52,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationOrderInformation#validateMedicationOrderInformationHasFillNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Order Information Has Fill Number</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationOrderInformation#validateMedicationOrderInformationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Order Information Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationOrderInformation#validateMedicationOrderInformationRepeatNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Order Information Repeat Number</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationOrderInformation#validateMedicationOrderInformationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Order Information Status Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -113,6 +115,7 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationOrderInformation target) {
 				target.init();
+
 			}
 
 			@Override
@@ -504,6 +507,44 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 		};
 
 		validateMedicationOrderInformationRepeatNumberTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateMedicationOrderInformationStatusCode() {
+		OperationsTestCase<MedicationOrderInformation> validateMedicationOrderInformationStatusCodeTestCase = new OperationsTestCase<MedicationOrderInformation>(
+			"validateMedicationOrderInformationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ORDER_INFORMATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationOrderInformation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationOrderInformation target) {
+				target.init();
+
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				cs.setCodeSystem("2.16.840.1.113883.3.88.12.80.64");
+				target.setStatusCode(cs);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationOrderInformationOperations.validateMedicationOrderInformationStatusCode(
+					(MedicationOrderInformation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationOrderInformationStatusCodeTestCase.doValidationTest();
 	}
 
 	/**

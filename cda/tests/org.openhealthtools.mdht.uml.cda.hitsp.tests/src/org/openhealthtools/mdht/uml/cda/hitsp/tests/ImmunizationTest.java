@@ -133,6 +133,38 @@ public class ImmunizationTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateImmunizationCode() {
+		OperationsTestCase<Immunization> validateImmunizationCodeTestCase = new OperationsTestCase<Immunization>(
+			"validateImmunizationCode",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+
+			@Override
+			protected void updateToFail(Immunization target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Immunization target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ImmunizationOperations.validateImmunizationCode((Immunization) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateImmunizationCodeTestCase.doValidationTest();
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */
