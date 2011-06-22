@@ -793,6 +793,7 @@ public class ScannedDocumentTest extends CDAValidationTest {
 				nxb.setText(text);
 				comp.setNonXMLBody(nxb);
 				target.setComponent(comp);
+				target.getComponent().getNonXMLBody().getText().setRepresentation(BinaryDataEncoding.B64);
 			}
 
 			@Override

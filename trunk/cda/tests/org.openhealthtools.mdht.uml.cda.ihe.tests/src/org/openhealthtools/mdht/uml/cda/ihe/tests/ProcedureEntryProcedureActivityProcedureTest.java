@@ -19,9 +19,11 @@ import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.InternalReference;
 import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryProcedureActivityProcedure;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ProcedureEntryProcedureActivityProcedureOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
@@ -332,9 +334,8 @@ public class ProcedureEntryProcedureActivityProcedureTest extends CDAValidationT
 
 			@Override
 			protected void updateToPass(ProcedureEntryProcedureActivityProcedure target) {
-				ED value = DatatypesFactory.eINSTANCE.createED("text");
-				target.setText(value);
-
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				target.getApproachSiteCodes().add(cd);
 			}
 
 			@Override
@@ -351,7 +352,7 @@ public class ProcedureEntryProcedureActivityProcedureTest extends CDAValidationT
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProcedureEntryProcedureActivityProcedureInternalReference() {
@@ -368,6 +369,12 @@ public class ProcedureEntryProcedureActivityProcedureTest extends CDAValidationT
 			@Override
 			protected void updateToPass(ProcedureEntryProcedureActivityProcedure target) {
 				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				InternalReference act = IHEFactory.eINSTANCE.createInternalReference().init();
+				er.setAct(act);
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+
+				target.getEntryRelationships().add(er);
 
 			}
 

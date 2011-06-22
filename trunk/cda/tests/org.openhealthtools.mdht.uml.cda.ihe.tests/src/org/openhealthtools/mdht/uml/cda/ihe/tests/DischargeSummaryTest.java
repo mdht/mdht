@@ -15,6 +15,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ihe.ActiveProblemsSection;
 import org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.DischargeSummaryOperations;
@@ -29,6 +30,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary#validateDischargeSummaryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary#validateDischargeSummaryActiveProblemsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Active Problems Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary#getActiveProblemsSection() <em>Get Active Problems Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.DischargeSummary#validateGeneralHeaderConstraintsCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,6 +73,93 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateDischargeSummaryActiveProblemsSection() {
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryActiveProblemsSectionTestCase = new OperationsTestCase<DischargeSummary>(
+			"validateDischargeSummaryActiveProblemsSection",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_ACTIVE_PROBLEMS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DischargeSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DischargeSummary target) {
+				target.init();
+
+				/* ActiveProblemsSection */
+				ActiveProblemsSection section =
+
+				IHEFactory.eINSTANCE.createActiveProblemsSection().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DischargeSummaryOperations.validateDischargeSummaryActiveProblemsSection(
+					(DischargeSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDischargeSummaryActiveProblemsSectionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetActiveProblemsSection() {
+
+		DischargeSummary target = objectFactory.create();
+		target.getActiveProblemsSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsCode() {
+		OperationsTestCase<DischargeSummary> validateGeneralHeaderConstraintsCodeTestCase = new OperationsTestCase<DischargeSummary>(
+			"validateGeneralHeaderConstraintsCode",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DischargeSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DischargeSummary target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DischargeSummaryOperations.validateGeneralHeaderConstraintsCode(
+					(DischargeSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsCodeTestCase.doValidationTest();
 	}
 
 	/**

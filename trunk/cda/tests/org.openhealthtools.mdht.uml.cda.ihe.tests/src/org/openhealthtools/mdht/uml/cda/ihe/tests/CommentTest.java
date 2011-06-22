@@ -57,7 +57,7 @@ public class CommentTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateIHECommentHasTextReference() {
@@ -74,6 +74,10 @@ public class CommentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Comment target) {
 				target.init();
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				TEL ref = DatatypesFactory.eINSTANCE.createTEL();
+				text.setReference(ref);
+				target.setText(text);
 
 			}
 
