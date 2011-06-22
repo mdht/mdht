@@ -615,7 +615,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityAllergyProductSpecificMedVocab() {
