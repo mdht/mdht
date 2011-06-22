@@ -13,17 +13,27 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Participant2;
+import org.openhealthtools.mdht.uml.cda.ParticipantRole;
+import org.openhealthtools.mdht.uml.cda.PlayingEntity;
+import org.openhealthtools.mdht.uml.cda.ccd.AlertObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.AllergyDrugSensitivityOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
+import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassRoot;
+import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
+import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -64,7 +74,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityAdvereEventDate() {
@@ -81,7 +91,9 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				obs.setEffectiveTime(DatatypesFactory.eINSTANCE.createIVL_TS());
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -97,8 +109,8 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 	}
 
 	/**
-	 * 
-	 * @generated
+	 *  
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityAdvereEventType() {
@@ -115,7 +127,10 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				obs.setCode(code);
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -132,7 +147,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityAdvereEventTypeVocab() {
@@ -149,7 +164,11 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				code.setCodeSystem("2.16.840.1.113883.3.88.12.3221.6.2");
+				obs.setCode(code);
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -166,7 +185,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityAllergyProduct() {
@@ -183,7 +202,9 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				obs.getParticipants().add(CDAFactory.eINSTANCE.createParticipant2());
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -200,7 +221,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityAllergyProductTypeCode() {
@@ -217,7 +238,11 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.CSM);
+				obs.getParticipants().add(par);
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -234,7 +259,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityProductDetailParticipantRole() {
@@ -251,7 +276,13 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.CSM);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				par.setParticipantRole(pr);
+				obs.getParticipants().add(par);
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -268,7 +299,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityProductDetailParticipantRoleClassCode() {
@@ -285,7 +316,14 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.CSM);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setClassCode(RoleClassRoot.MANU);
+				par.setParticipantRole(pr);
+				obs.getParticipants().add(par);
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -302,7 +340,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityProductDetailPlayingEntity() {
@@ -319,7 +357,17 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.CSM);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setClassCode(RoleClassRoot.MANU);
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pe.setClassCode(EntityClassRoot.MMAT);
+				pr.setPlayingEntity(pe);
+				par.setParticipantRole(pr);
+				obs.getParticipants().add(par);
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -336,7 +384,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityProductDetailPlayingEntityClassCode() {
@@ -353,7 +401,17 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.CSM);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setClassCode(RoleClassRoot.MANU);
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pe.setClassCode(EntityClassRoot.MMAT);
+				pr.setPlayingEntity(pe);
+				par.setParticipantRole(pr);
+				obs.getParticipants().add(par);
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -370,7 +428,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityProductDetailName() {
@@ -387,7 +445,20 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.CSM);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setClassCode(RoleClassRoot.MANU);
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pe.setClassCode(EntityClassRoot.MMAT);
+				PN name = DatatypesFactory.eINSTANCE.createPN();
 
+				pe.getNames().add(name);
+				pr.setPlayingEntity(pe);
+				par.setParticipantRole(pr);
+				obs.getParticipants().add(par);
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -404,7 +475,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityProductCode() {
@@ -421,7 +492,19 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.CSM);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setClassCode(RoleClassRoot.MANU);
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pe.setClassCode(EntityClassRoot.MMAT);
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				pe.setCode(code);
+				pr.setPlayingEntity(pe);
+				par.setParticipantRole(pr);
+				obs.getParticipants().add(par);
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -438,7 +521,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityAllergyProductFoodVocab() {
@@ -455,7 +538,20 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.CSM);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setClassCode(RoleClassRoot.MANU);
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pe.setClassCode(EntityClassRoot.MMAT);
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				code.setCodeSystem("2.16.840.1.113883.3.88.12.80.20");
+				pe.setCode(code);
+				pr.setPlayingEntity(pe);
+				par.setParticipantRole(pr);
+				obs.getParticipants().add(par);
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -472,7 +568,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityAllergyProductMedClassVocab() {
@@ -489,7 +585,20 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.CSM);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setClassCode(RoleClassRoot.MANU);
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pe.setClassCode(EntityClassRoot.MMAT);
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				code.setCodeSystem("2.16.840.1.113883.3.88.12.80.17");
+				pe.setCode(code);
+				pr.setPlayingEntity(pe);
+				par.setParticipantRole(pr);
+				obs.getParticipants().add(par);
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -523,7 +632,20 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.CSM);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setClassCode(RoleClassRoot.MANU);
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pe.setClassCode(EntityClassRoot.MMAT);
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				code.setCodeSystem("2.16.840.1.113883.3.88.12.80.16");
+				pe.setCode(code);
+				pr.setPlayingEntity(pe);
+				par.setParticipantRole(pr);
+				obs.getParticipants().add(par);
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -540,7 +662,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityReactionText() {
@@ -557,7 +679,11 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				ReactionObservation ro = CCDFactory.eINSTANCE.createReactionObservation();
+				ro.setText(DatatypesFactory.eINSTANCE.createED());
+				obs.addObservation(ro);
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -574,7 +700,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityReactionCode() {
@@ -591,7 +717,12 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				ReactionObservation ro = CCDFactory.eINSTANCE.createReactionObservation();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				ro.setCode(code);
+				obs.addObservation(ro);
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -608,7 +739,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityReactionCodeVocab() {
@@ -625,7 +756,13 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				ReactionObservation ro = CCDFactory.eINSTANCE.createReactionObservation();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				code.setCodeSystem("2.16.840.1.113883.3.88.12.3221.7.4");
+				ro.setCode(code);
+				obs.addObservation(ro);
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -642,7 +779,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivitySeverityText() {
@@ -659,7 +796,11 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				SeverityObservation so = CCDFactory.eINSTANCE.createSeverityObservation();
+				so.setText(DatatypesFactory.eINSTANCE.createED());
+				obs.addObservation(so);
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -676,7 +817,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivitySeverityCode() {
@@ -693,7 +834,12 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				SeverityObservation so = CCDFactory.eINSTANCE.createSeverityObservation();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				so.setCode(code);
+				obs.addObservation(so);
+				target.addObservation(obs);
 			}
 
 			@Override
@@ -710,7 +856,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivitySeverityCodeVocab() {
@@ -727,7 +873,13 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				SeverityObservation so = CCDFactory.eINSTANCE.createSeverityObservation();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				code.setCodeSystem("2.16.840.1.113883.3.88.12.3221.6.8");
+				so.setCode(code);
+				obs.addObservation(so);
+				target.addObservation(obs);
 			}
 
 			@Override

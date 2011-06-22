@@ -10,17 +10,25 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 
+import java.math.BigDecimal;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Performer2;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicationOrderInformation;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.MedicationOrderInformationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
 /**
@@ -53,7 +61,7 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationOrderInformationOrderNumber() {
@@ -64,13 +72,14 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MedicationOrderInformation target) {
-
+				target.init();
+				target.setMoodCode(x_DocumentSubstanceMood.INT);
 			}
 
 			@Override
 			protected void updateToPass(MedicationOrderInformation target) {
-				target.init();
-
+				target.setMoodCode(x_DocumentSubstanceMood.INT);
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 			}
 
 			@Override
@@ -104,7 +113,6 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationOrderInformation target) {
 				target.init();
-
 			}
 
 			@Override
@@ -121,7 +129,7 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationOrderInformationQuantityOrdered() {
@@ -138,7 +146,10 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationOrderInformation target) {
 				target.init();
-
+				PQ qt = DatatypesFactory.eINSTANCE.createPQ();
+				BigDecimal value = new BigDecimal(0);
+				qt.setValue(value);
+				target.setQuantity(qt);
 			}
 
 			@Override
@@ -167,6 +178,7 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(MedicationOrderInformation target) {
 				PQ pq = DatatypesFactory.eINSTANCE.createPQ();
+				pq.setUnit(null);
 				target.setQuantity(pq);
 
 			}
@@ -209,6 +221,10 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationOrderInformation target) {
 				target.init();
+				II id = DatatypesFactory.eINSTANCE.createII();
+				id.setExtension("1");
+				target.getIds().add(id);
+				target.setMoodCode(x_DocumentSubstanceMood.EVN);
 
 			}
 
@@ -226,7 +242,7 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationOrderInformationAssigningAuthority() {
@@ -243,7 +259,9 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationOrderInformation target) {
 				target.init();
-
+				II id = DatatypesFactory.eINSTANCE.createII();
+				id.setRoot("1");
+				target.getIds().add(id);
 			}
 
 			@Override
@@ -260,7 +278,7 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationOrderInformationDispenseDate() {
@@ -271,13 +289,14 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MedicationOrderInformation target) {
-
+				target.init();
+				target.setMoodCode(x_DocumentSubstanceMood.EVN);
 			}
 
 			@Override
 			protected void updateToPass(MedicationOrderInformation target) {
-				target.init();
 
+				target.getEffectiveTimes().add(DatatypesFactory.eINSTANCE.createSXCM_TS());
 			}
 
 			@Override
@@ -294,7 +313,7 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationOrderInformationDispensingPharmacyLocation() {
@@ -305,12 +324,21 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MedicationOrderInformation target) {
+				target.init();
+				Performer2 pr = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				pr.setAssignedEntity(ae);
+				target.setMoodCode(x_DocumentSubstanceMood.EVN);
+				target.getPerformers().add(pr);
 
 			}
 
 			@Override
 			protected void updateToPass(MedicationOrderInformation target) {
-				target.init();
+				for (Performer2 p2 : target.getPerformers()) {
+					AD addr = DatatypesFactory.eINSTANCE.createAD();
+					p2.getAssignedEntity().getAddrs().add(addr);
+				}
 
 			}
 
@@ -350,7 +378,12 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationOrderInformation target) {
 				target.init();
+				target.setMoodCode(x_DocumentSubstanceMood.EVN);
 
+				PQ pq = DatatypesFactory.eINSTANCE.createPQ();
+				BigDecimal value = new BigDecimal(0);
+				pq.setValue(value);
+				target.setQuantity(pq);
 			}
 
 			@Override
@@ -378,12 +411,18 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MedicationOrderInformation target) {
-
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected void updateToPass(MedicationOrderInformation target) {
-				target.init();
+
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setSequenceNumber(DatatypesFactory.eINSTANCE.createINT());
+				}
 
 			}
 
@@ -452,7 +491,7 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationOrderInformation target) {
 				target.init();
-
+				target.setRepeatNumber(DatatypesFactory.eINSTANCE.createIVL_INT());
 			}
 
 			@Override

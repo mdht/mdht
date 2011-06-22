@@ -16,16 +16,25 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Consumable;
 import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.ParticipantRole;
 import org.openhealthtools.mdht.uml.cda.PlayingEntity;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.cda.ccd.MedicationStatusObservation;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
+import org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.MedicationOperations;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.PatientMedicalInstructions;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_PQ;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.RTO_PQ_PQ;
@@ -74,41 +83,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
-	 */
-	@Test
-	public void testValidateHITSPMedicationMedicationStopped() {
-		OperationsTestCase<Medication> validateHITSPMedicationMedicationStoppedTestCase = new OperationsTestCase<Medication>(
-			"validateHITSPMedicationMedicationStopped",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_MEDICATION_STOPPED__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(Medication target) {
-
-			}
-
-			@Override
-			protected void updateToPass(Medication target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationOperations.validateHITSPMedicationMedicationStopped(
-					(Medication) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateHITSPMedicationMedicationStoppedTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationFirstEffectiveTimeDatatype() {
@@ -125,6 +100,7 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
+				target.getEffectiveTimes().add(DatatypesFactory.eINSTANCE.createSXCM_TS());
 
 			}
 
@@ -142,7 +118,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationDoseUnits() {
@@ -159,7 +135,9 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
-
+				IVL_PQ dq = DatatypesFactory.eINSTANCE.createIVL_PQ();
+				dq.setUnit("2.16.840.1.113883.3.88.12.80.29");
+				target.setDoseQuantity(dq);
 			}
 
 			@Override
@@ -176,7 +154,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationDeliveryMethodDescription() {
@@ -193,7 +171,9 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
-
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				code.setOriginalText(DatatypesFactory.eINSTANCE.createED());
+				target.setCode(code);
 			}
 
 			@Override
@@ -210,7 +190,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationHasMedicationInformation() {
@@ -221,12 +201,17 @@ public class MedicationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(Medication target) {
-
+				target.init();
+				Consumable con = CDAFactory.eINSTANCE.createConsumable();
+				target.setConsumable(con);
 			}
 
 			@Override
 			protected void updateToPass(Medication target) {
-				target.init();
+				Consumable con = CDAFactory.eINSTANCE.createConsumable();
+				MedicationInformation mi = HITSPFactory.eINSTANCE.createMedicationInformation();
+				con.setManufacturedProduct(mi);
+				target.setConsumable(con);
 
 			}
 
@@ -244,7 +229,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationHasStatusOfMedication() {
@@ -261,7 +246,8 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
-
+				MedicationStatusObservation mso = CCDFactory.eINSTANCE.createMedicationStatusObservation();
+				target.addObservation(mso);
 			}
 
 			@Override
@@ -278,7 +264,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationHasIndication() {
@@ -295,6 +281,8 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
+				ProblemObservation po = CCDFactory.eINSTANCE.createProblemObservation();
+				target.addObservation(po);
 
 			}
 
@@ -312,7 +300,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationHasIndicationNarrativeText() {
@@ -329,7 +317,11 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
-
+				ProblemObservation po = CCDFactory.eINSTANCE.createProblemObservation();
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL());
+				po.setText(txt);
+				target.addObservation(po);
 			}
 
 			@Override
@@ -346,7 +338,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationHasIndicationVocab() {
@@ -363,7 +355,11 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
-
+				ProblemObservation po = CCDFactory.eINSTANCE.createProblemObservation();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				code.setCodeSystem("2.16.840.1.113883.3.88.12.3221.7.4");
+				po.setCode(code);
+				target.addObservation(po);
 			}
 
 			@Override
@@ -380,7 +376,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationHasPatientInstructions() {
@@ -397,7 +393,8 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
-
+				PatientMedicalInstructions pmi = IHEFactory.eINSTANCE.createPatientMedicalInstructions();
+				target.addAct(pmi);
 			}
 
 			@Override
@@ -455,7 +452,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationMedicationVehicleType() {
@@ -472,7 +469,12 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
+				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
 
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				p2.setTypeCode(ParticipationType.CSM);
+				sa.getParticipants().add(p2);
+				target.addSubstanceAdministration(sa);
 			}
 
 			@Override
@@ -489,7 +491,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT 
 	 */
 	@Test
 	public void testValidateHITSPMedicationMedicationVehicleClass() {
@@ -506,6 +508,15 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
+				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
+
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				p2.setTypeCode(ParticipationType.CSM);
+				pr.setClassCode(RoleClassRoot.MANU);
+				p2.setParticipantRole(pr);
+				sa.getParticipants().add(p2);
+				target.addSubstanceAdministration(sa);
 
 			}
 
@@ -523,7 +534,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationMedicationVehicleCode() {
@@ -540,7 +551,19 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
+				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
 
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				p2.setTypeCode(ParticipationType.CSM);
+				pr.setClassCode(RoleClassRoot.MANU);
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				code.setCode("412307009");
+				code.setCodeSystem("2.16.840.1.113883.6.96");
+				pr.setCode(code);
+				p2.setParticipantRole(pr);
+				sa.getParticipants().add(p2);
+				target.addSubstanceAdministration(sa);
 			}
 
 			@Override
@@ -557,7 +580,7 @@ public class MedicationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPMedicationMedicationVehicleName() {
@@ -574,7 +597,22 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Medication target) {
 				target.init();
+				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
 
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				p2.setTypeCode(ParticipationType.CSM);
+				pr.setClassCode(RoleClassRoot.MANU);
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				code.setCode("412307009");
+				code.setCodeSystem("2.16.840.1.113883.6.96");
+				pr.setCode(code);
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pe.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+				pr.setPlayingEntity(pe);
+				p2.setParticipantRole(pr);
+				sa.getParticipants().add(p2);
+				target.addSubstanceAdministration(sa);
 			}
 
 			@Override
@@ -612,14 +650,16 @@ public class MedicationTest extends CDAValidationTest {
 				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
 				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
 				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
-				CE ce = DatatypesFactory.eINSTANCE.createCE("12345", "2.16.840.1.113883.3.88.12.80.21");
 
-				pe.setCode(ce);
-				pr.setClassCode(RoleClassRoot.MANU);
-				pr.setPlayingEntity(pe);
 				p2.setTypeCode(ParticipationType.CSM);
-				CE ce2 = DatatypesFactory.eINSTANCE.createCE("412307009", "2.16.840.1.113883.6.96");
-				pr.setCode(ce2);
+				pr.setClassCode(RoleClassRoot.MANU);
+
+				CE ce = DatatypesFactory.eINSTANCE.createCE("412307009", "2.16.840.1.113883.6.96");
+				CE ce2 = DatatypesFactory.eINSTANCE.createCE("12345", "2.16.840.1.113883.3.88.12.80.21");
+				pr.setCode(ce);
+				pe.setCode(ce2);
+
+				pr.setPlayingEntity(pe);
 				p2.setParticipantRole(pr);
 				sa.getParticipants().add(p2);
 				target.addSubstanceAdministration(sa);
@@ -662,17 +702,19 @@ public class MedicationTest extends CDAValidationTest {
 				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
 				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
 				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
-				CE ce = DatatypesFactory.eINSTANCE.createCE("12345", "2.16.840.1.113883.3.88.12.80.21");
 
-				pe.setCode(ce);
+				p2.setTypeCode(ParticipationType.CSM);
 				pr.setClassCode(RoleClassRoot.MANU);
+
+				CE ce = DatatypesFactory.eINSTANCE.createCE("412307009", "2.16.840.1.113883.6.96");
+				CE ce2 = DatatypesFactory.eINSTANCE.createCE("12345", "2.16.840.1.113883.3.88.12.80.21");
+				pr.setCode(ce);
+				pe.setCode(ce2);
+
 				pr.setPlayingEntity(pe);
-				CE ce2 = DatatypesFactory.eINSTANCE.createCE("412307009", "2.16.840.1.113883.6.96");
-				pr.setCode(ce2);
 				p2.setParticipantRole(pr);
 				sa.getParticipants().add(p2);
 				target.addSubstanceAdministration(sa);
-
 			}
 
 			@Override
