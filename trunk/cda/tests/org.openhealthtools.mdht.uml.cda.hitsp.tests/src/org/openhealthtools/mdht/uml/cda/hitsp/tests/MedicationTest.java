@@ -48,7 +48,6 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#validateHITSPMedicationMedicationStopped(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Medication Medication Stopped</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#validateHITSPMedicationFirstEffectiveTimeDatatype(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Medication First Effective Time Datatype</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#validateHITSPMedicationDoseUnits(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Medication Dose Units</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#validateHITSPMedicationDeliveryMethodDescription(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Medication Delivery Method Description</em>}</li>
@@ -67,8 +66,11 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#validateHITSPMedicationMedicationVehicleCodedNameVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Medication Medication Vehicle Coded Name Vocab</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#validateHITSPMedicationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Medication Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#validateHITSPMedicationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Medication Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#validateHITSPMedicationRouteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Medication Route Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#validateHITSPMedicationDoseQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Medication Dose Quantity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#validateHITSPMedicationAdministrationUnitCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Medication Administration Unit Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#validateHITSPMedicationMaxDoseQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Medication Max Dose Quantity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#validateHITSPMedicationApproachSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Medication Approach Site Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#validateHITSPMedicationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Medication Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#getMedicationType() <em>Get Medication Type</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#getMedicationOrderInformations() <em>Get Medication Order Informations</em>}</li>
@@ -801,6 +803,40 @@ public class MedicationTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHITSPMedicationRouteCode() {
+		OperationsTestCase<Medication> validateHITSPMedicationRouteCodeTestCase = new OperationsTestCase<Medication>(
+			"validateHITSPMedicationRouteCode",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_ROUTE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Medication target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Medication target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationOperations.validateHITSPMedicationRouteCode(
+					(Medication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPMedicationRouteCodeTestCase.doValidationTest();
+	}
+
+	/**
 	 * 
 	 * @generated NOT
 	 */
@@ -838,6 +874,43 @@ public class MedicationTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateHITSPMedicationAdministrationUnitCode() {
+		OperationsTestCase<Medication> validateHITSPMedicationAdministrationUnitCodeTestCase = new OperationsTestCase<Medication>(
+			"validateHITSPMedicationAdministrationUnitCode",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_ADMINISTRATION_UNIT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Medication target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Medication target) {
+				target.init();
+				CE ce = DatatypesFactory.eINSTANCE.createCE("code", "codeSystem");
+
+				target.setAdministrationUnitCode(ce);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationOperations.validateHITSPMedicationAdministrationUnitCode(
+					(Medication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPMedicationAdministrationUnitCodeTestCase.doValidationTest();
+	}
+
+	/**
 	 * 
 	 * @generated NOT
 	 */
@@ -872,6 +945,46 @@ public class MedicationTest extends CDAValidationTest {
 		};
 
 		validateHITSPMedicationMaxDoseQuantityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateHITSPMedicationApproachSiteCode() {
+		OperationsTestCase<Medication> validateHITSPMedicationApproachSiteCodeTestCase = new OperationsTestCase<Medication>(
+			"validateHITSPMedicationApproachSiteCode",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICATION_APPROACH_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Medication target) {
+				target.init();
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				target.getApproachSiteCodes().add(cd);
+
+			}
+
+			@Override
+			protected void updateToPass(Medication target) {
+
+				for (CD cd : target.getApproachSiteCodes()) {
+					cd.setCodeSystem("2.16.840.1.113883.3.88.12.3221.8.9");
+				}
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationOperations.validateHITSPMedicationApproachSiteCode(
+					(Medication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPMedicationApproachSiteCodeTestCase.doValidationTest();
 	}
 
 	/**
