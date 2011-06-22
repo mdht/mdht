@@ -158,7 +158,7 @@ public class ResultTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(Result target) {
 				target.init();
-				target.setMoodCode(x_ActMoodDocumentObservation.EVN);
+				target.setMoodCode(x_ActMoodDocumentObservation.INT);
 				CE value = DatatypesFactory.eINSTANCE.createCE();
 				target.getValues().add(value);
 
@@ -166,7 +166,9 @@ public class ResultTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(Result target) {
-
+				target.setMoodCode(x_ActMoodDocumentObservation.EVN);
+				CE value = DatatypesFactory.eINSTANCE.createCE();
+				target.getValues().add(value);
 			}
 
 			@Override

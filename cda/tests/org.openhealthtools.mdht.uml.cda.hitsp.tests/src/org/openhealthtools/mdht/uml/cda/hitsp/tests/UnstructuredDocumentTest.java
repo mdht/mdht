@@ -95,14 +95,15 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 				target.init();
 				Component2 component = CDAFactory.eINSTANCE.createComponent2();
 				target.setComponent(component);
+				StructuredBody sb = CDAFactory.eINSTANCE.createStructuredBody();
+				target.getComponent().setStructuredBody(sb);
 
 			}
 
 			@Override
 			protected void updateToPass(UnstructuredDocument target) {
-				StructuredBody sb = CDAFactory.eINSTANCE.createStructuredBody();
-				target.getComponent().setStructuredBody(sb);
-
+				Component2 component = CDAFactory.eINSTANCE.createComponent2();
+				target.setComponent(component);
 			}
 
 			@Override

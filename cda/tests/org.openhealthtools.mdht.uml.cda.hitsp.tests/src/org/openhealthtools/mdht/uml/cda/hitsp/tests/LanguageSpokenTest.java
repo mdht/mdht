@@ -19,6 +19,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.LanguageSpoken;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.LanguageSpokenOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -47,7 +48,7 @@ public class LanguageSpokenTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateLanguageSpokenNoProficiencyLevelCode() {
@@ -58,13 +59,14 @@ public class LanguageSpokenTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(LanguageSpoken target) {
+				target.init();
+				target.setProficiencyLevelCode(DatatypesFactory.eINSTANCE.createCE());
 
 			}
 
 			@Override
 			protected void updateToPass(LanguageSpoken target) {
-				target.init();
-
+				target.setProficiencyLevelCode(null);
 			}
 
 			@Override

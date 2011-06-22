@@ -15,10 +15,17 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.Immunization;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ImmunizationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -47,7 +54,7 @@ public class ImmunizationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHITSPImmunizationRefusalReason() {
@@ -58,12 +65,24 @@ public class ImmunizationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(Immunization target) {
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+
+				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				target.getEntryRelationships().add(er);
 
 			}
 
 			@Override
 			protected void updateToPass(Immunization target) {
-				target.init();
+
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					ProblemAct pa = CCDFactory.eINSTANCE.createProblemAct();
+					CD code = DatatypesFactory.eINSTANCE.createCD();
+					code.setCodeSystem("2.16.840.1.113883.1.11.19717");
+					pa.setCode(code);
+					er.setAct(pa);
+				}
 
 			}
 
