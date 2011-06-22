@@ -204,7 +204,7 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationOrderInformationPrescriptionNumber() {
@@ -400,7 +400,7 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationOrderInformationHasFillNumber() {
@@ -474,7 +474,7 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationOrderInformationRepeatNumber() {
