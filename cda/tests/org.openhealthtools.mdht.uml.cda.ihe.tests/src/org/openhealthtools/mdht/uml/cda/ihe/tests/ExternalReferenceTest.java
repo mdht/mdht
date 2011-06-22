@@ -193,7 +193,7 @@ public class ExternalReferenceTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateExternalReferenceHasReferenceExternalDocumentID() {
@@ -204,12 +204,25 @@ public class ExternalReferenceTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
+				target.init();
+				Reference ref = CDAFactory.eINSTANCE.createReference();
+				ref.setTypeCode(x_ActRelationshipExternalReference.SPRT);
+				ExternalDocument extdoc = CDAFactory.eINSTANCE.createExternalDocument();
+				extdoc.setClassCode(ActClassDocument.DOC);
+				ED text = DatatypesFactory.eINSTANCE.createED("string");
+				extdoc.setText(text);
+				ref.setExternalDocument(extdoc);
+				target.getReferences().add(ref);
 
 			}
 
 			@Override
 			protected void updateToPass(ExternalReference target) {
-				target.init();
+				for (Reference ref : target.getReferences()) {
+
+					II ii = DatatypesFactory.eINSTANCE.createII();
+					ref.getExternalDocument().getIds().add(ii);
+				}
 
 			}
 

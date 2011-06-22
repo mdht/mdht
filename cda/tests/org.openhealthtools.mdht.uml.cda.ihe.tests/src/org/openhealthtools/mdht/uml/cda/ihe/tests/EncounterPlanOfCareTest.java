@@ -19,6 +19,7 @@ import org.openhealthtools.mdht.uml.cda.ihe.EncounterPlanOfCare;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.EncounterPlanOfCareOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentEncounterMood;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,7 +75,7 @@ public class EncounterPlanOfCareTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateEncounterPlanOfCareMoodCodeValue() {
@@ -90,7 +91,36 @@ public class EncounterPlanOfCareTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(EncounterPlanOfCare target) {
-				target.init();
+
+			}
+
+			/*
+			 * (non-Javadoc)
+			 * 
+			 * @see org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.OperationsTestCase#addPassTests()
+			 */
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(EncounterPlanOfCare target) {
+						target.init();
+						target.setMoodCode(x_DocumentEncounterMood.ARQ);
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(EncounterPlanOfCare target) {
+						target.init();
+						target.setMoodCode(x_DocumentEncounterMood.PRMS);
+					}
+
+				});
 
 			}
 
