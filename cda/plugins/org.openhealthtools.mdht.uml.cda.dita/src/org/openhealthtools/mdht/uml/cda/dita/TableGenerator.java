@@ -13,6 +13,9 @@ package org.openhealthtools.mdht.uml.cda.dita;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
@@ -33,8 +36,17 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
+import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.Encounter;
+import org.openhealthtools.mdht.uml.cda.Observation;
+import org.openhealthtools.mdht.uml.cda.ObservationMedia;
+import org.openhealthtools.mdht.uml.cda.Organizer;
+import org.openhealthtools.mdht.uml.cda.Procedure;
+import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
 import org.openhealthtools.mdht.uml.cda.Section;
+import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
@@ -42,6 +54,7 @@ import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
@@ -283,7 +296,7 @@ public class TableGenerator {
 
 		StringBuffer tableBuffer = new StringBuffer();
 
-		EClass eClass = getEClass(umlClass);
+		final EClass eClass = getEClass(umlClass);
 
 		if (eClass == null) {
 			return "";
@@ -342,15 +355,64 @@ public class TableGenerator {
 				umlClass.getQualifiedName() +
 				"</entry>  </row>  <row><entry namest=\"col0\" nameend=\"col7\" >" +
 				startingXPath +
-				"</entry>  </row>  <row><entry>Name" +
-				eClass.getName() +
-				"</entry><entry>XPath</entry><entry>Cardinality</entry><entry>Severity</entry><entry>Nullable</entry><entry>Data Type</entry><entry>Conformance</entry><entry>Value(s)</entry></row></thead><tbody>");
+				"/" +
+				"</entry>  </row>  <row><entry>Name</entry><entry>XPath</entry><entry>Cardinality</entry><entry>Severity</entry><entry>Nullable</entry><entry>Data Type</entry><entry>Conformance</entry><entry>Value(s)</entry></row></thead><tbody>");
 
 		Hashtable<String, Element> elements = new Hashtable<String, Element>();
 
 		getTableRows(umlClass, elements);
 
-		for (Element element : elements.values()) {
+		List<Element> elementlist = new ArrayList<Element>(elements.values());
+
+		Comparator<Element> elementSorter = new Comparator<Element>() {
+
+			public int compare(Element o1, Element o2) {
+
+				Property leftProperty = (Property) o1;
+
+				EStructuralFeature leftFeature = eClass.getEStructuralFeature(leftProperty.getName());
+
+				Property rightProperty = (Property) o2;
+
+				EStructuralFeature rightFeature = eClass.getEStructuralFeature(rightProperty.getName());
+
+				// if both features or not features, sort by name business name
+				if ((leftFeature instanceof EAttribute && rightFeature instanceof EAttribute)) {
+					return NamedElementUtil.getBusinessName(leftProperty).compareToIgnoreCase(
+						NamedElementUtil.getBusinessName(rightProperty));
+				}
+
+				// if both not features
+				if (!(leftFeature instanceof EAttribute) && !(rightFeature instanceof EAttribute)) {
+
+					// if both data types or not data types, sort by business name
+					if ((CDAModelUtil.isDatatypeModel(leftProperty.getType()) && CDAModelUtil.isDatatypeModel(rightProperty.getType())) ||
+							(!CDAModelUtil.isDatatypeModel(leftProperty.getType()) && !CDAModelUtil.isDatatypeModel(rightProperty.getType()))) {
+						return NamedElementUtil.getBusinessName(leftProperty).compareToIgnoreCase(
+							NamedElementUtil.getBusinessName(rightProperty));
+					}
+
+					if (CDAModelUtil.isDatatypeModel(leftProperty.getType())) {
+						return -1;
+					} else {
+						return +1;
+					}
+
+				}
+
+				if (leftFeature instanceof EAttribute) {
+					return -1;
+				} else {
+					return +1;
+				}
+
+			}
+
+		};
+
+		Collections.sort(elementlist, elementSorter);
+
+		for (Element element : elementlist) {
 			if (element instanceof NamedElement) {
 				addRow(tableBuffer, element, eClass, eObject);
 			}
@@ -362,6 +424,23 @@ public class TableGenerator {
 		return tableBuffer.toString();
 	}
 
+	private String getRelativeXPath(Section section, InfrastructureRoot ir) {
+
+		return "";
+
+	}
+
+	private static void initEObject(EObject eObject) {
+		try {
+			Method initMethod = eObject.getClass().getDeclaredMethod("init", new java.lang.Class[0]);
+			if (initMethod != null) {
+				initMethod.invoke(eObject, new Object[0]);
+			}
+		} catch (Exception e) {
+
+		}
+	}
+
 	private void addRow(StringBuffer tableBuffer, Element element, EClass eClass, EObject eObject) {
 
 		if (element instanceof Property) {
@@ -370,11 +449,102 @@ public class TableGenerator {
 
 			EStructuralFeature feature = eClass.getEStructuralFeature(property.getName());
 
-			tableBuffer.append(String.format("<row><entry>%s</entry>", NamedElementUtil.getBusinessName(property)));
+			boolean isAttribute = feature instanceof EAttribute;
 
-			tableBuffer.append(String.format("<entry>%s</entry>", "/" + (feature instanceof EAttribute
-					? "@"
-					: "") + property.getName()));
+			String businessName = NamedElementUtil.getBusinessName(property);
+
+			if (businessName.compareTo(property.getName()) == 0) {
+				tableBuffer.append(String.format("<row><entry>%s</entry>", property.getName()));
+			} else {
+				tableBuffer.append(String.format("<row><entry>%s ( %s )</entry>", businessName, property.getName()));
+
+			}
+
+			String relativePath = null;
+			if (eObject instanceof Section && CDAModelUtil.isClinicalStatement(property.getType())) {
+
+				Section section = (Section) eObject;
+
+				String startingPath = getPath(eObject);
+
+				EClass ePropertyClass = getEClass(property.getType());
+
+				Class cdaClass = CDAModelUtil.getCDAClass((Class) property.getType());
+
+				if (cdaClass != null && ePropertyClass != null) {
+
+					EObject eClinicalStatementInstance = ePropertyClass.getEPackage().getEFactoryInstance().create(
+						ePropertyClass);
+					initEObject(eClinicalStatementInstance);
+
+					if ("Act".equals(cdaClass.getName())) {
+						section.addAct((Act) eClinicalStatementInstance);
+						relativePath = getPath(eClinicalStatementInstance);
+					}
+
+					if ("Encounter".equals(cdaClass.getName())) {
+						section.addEncounter((Encounter) eClinicalStatementInstance);
+						relativePath = getPath(eClinicalStatementInstance);
+					}
+
+					if ("Observation".equals(cdaClass.getName())) {
+						section.addObservation((Observation) eClinicalStatementInstance);
+						relativePath = getPath(eClinicalStatementInstance);
+					}
+
+					if ("ObservationMedia".equals(cdaClass.getName())) {
+						section.addObservationMedia((ObservationMedia) eClinicalStatementInstance);
+						relativePath = getPath(eClinicalStatementInstance);
+					}
+
+					if ("Organizer".equals(cdaClass.getName())) {
+						section.addOrganizer((Organizer) eClinicalStatementInstance);
+						relativePath = getPath(eClinicalStatementInstance);
+					}
+
+					if ("Procedure".equals(cdaClass.getName())) {
+						section.addProcedure((Procedure) eClinicalStatementInstance);
+						relativePath = getPath(eClinicalStatementInstance);
+					}
+
+					if ("RegionOfInterest".equals(cdaClass.getName())) {
+						section.addRegionOfInterest((RegionOfInterest) eClinicalStatementInstance);
+						relativePath = getPath(eClinicalStatementInstance);
+					}
+
+					if ("Section".equals(cdaClass.getName())) {
+						section.addSection((Section) eClinicalStatementInstance);
+						relativePath = getPath(eClinicalStatementInstance);
+					}
+
+					if ("SubstanceAdministration".equals(cdaClass.getName())) {
+						section.addSubstanceAdministration((SubstanceAdministration) eClinicalStatementInstance);
+						relativePath = getPath(eClinicalStatementInstance);
+					}
+
+					if ("Supply".equals(cdaClass.getName())) {
+						section.addSupply((Supply) eClinicalStatementInstance);
+						relativePath = getPath(eClinicalStatementInstance);
+					}
+
+					if (relativePath != null && startingPath != null &&
+							relativePath.length() > (startingPath.length() + 2)) {
+						relativePath = relativePath.substring(startingPath.length() + 1);
+					}
+
+				}
+
+			}
+
+			// (Section) eObject
+
+			if (relativePath != null) {
+				tableBuffer.append(String.format("<entry>%s</entry>", relativePath));
+			} else {
+				tableBuffer.append(String.format("<entry>%s</entry>", (isAttribute
+						? "@"
+						: "") + property.getName()));
+			}
 
 			tableBuffer.append(String.format("<entry>%s..%s</entry>", property.getLower(), (property.getUpper() >= 0
 					? property.getUpper()
@@ -386,11 +556,16 @@ public class TableGenerator {
 					? getSeverity(validation.getSeverity())
 					: "")));
 
-			tableBuffer.append(String.format("<entry>%s</entry>", (validation != null
-					? (validation.isMandatory()
-							? "NO"
-							: "YES")
-					: "YES")));
+			if (isAttribute) {
+				tableBuffer.append(String.format("<entry>%s</entry>", "NO"));
+			} else {
+				tableBuffer.append(String.format("<entry>%s</entry>", (validation != null
+						? (validation.isMandatory()
+								? "NO"
+								: "YES")
+						: "YES")));
+
+			}
 
 			tableBuffer.append(String.format("<entry>%s</entry>", getDataTypeName(property.getType().getName())));
 
