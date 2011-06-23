@@ -12,10 +12,16 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.dita;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -23,9 +29,17 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.compare.rangedifferencer.IRangeComparator;
+import org.eclipse.compare.rangedifferencer.RangeDifference;
+import org.eclipse.compare.rangedifferencer.RangeDifferencer;
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -37,7 +51,9 @@ import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Substitution;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.InstanceGenerator;
 import org.openhealthtools.mdht.uml.cda.core.util.RIMModelUtil;
@@ -230,6 +246,7 @@ public class TransformClassContent extends TransformAbstract {
 		appendAggregateRules(writer, umlClass);
 		appendTable(writer, umlClass);
 		appendExample(writer, umlClass);
+		appendChanges(writer, umlClass);
 
 		writer.println("<p><ph id=\"classformalname\">" + UMLUtil.splitName(umlClass) + "</ph></p>");
 
@@ -475,6 +492,7 @@ public class TransformClassContent extends TransformAbstract {
 
 	@Override
 	public Object caseClass(Class umlClass) {
+
 		String pathFolder = "classes";
 		IPath filePath = transformerOptions.getOutputPath().append(pathFolder).addTrailingSeparator().append(
 			"generated").addTrailingSeparator().append("_" + umlClass.getName()).addFileExtension("dita");
@@ -533,4 +551,242 @@ public class TransformClassContent extends TransformAbstract {
 		}
 
 	}
+
+	private void appendChanges(PrintWriter writer, Class umlClass) {
+
+		writer.println("<section id=\"changes\">");
+		;
+
+		for (Substitution substitution : umlClass.getSubstitutions()) {
+
+			for (NamedElement ne : substitution.getSuppliers()) {
+				if (ne instanceof Class) {
+					appendChangeLog(writer, umlClass, (Class) ne);
+				}
+			}
+
+		}
+
+		writer.println("</section>");
+
+	}
+
+	private static void composeAllConformanceMessages(Class element, final PrintWriter writer, final boolean markup) {
+		//
+		// for (Generalization generalization : element.getGeneralizations()) {
+		// if (generalization.getGeneral() instanceof Class) {
+		// composeAllConformanceMessages((Class) generalization.getGeneral(), writer, false);
+		// }
+		//
+		// }
+
+		final TreeIterator<EObject> iterator = EcoreUtil.getAllContents(Collections.singletonList(element));
+		while (iterator != null && iterator.hasNext()) {
+			EObject child = iterator.next();
+
+			UMLSwitch<Object> umlSwitch = new UMLSwitch<Object>() {
+
+				@Override
+				public Object caseAssociation(Association association) {
+					iterator.prune();
+					return association;
+				}
+
+				@Override
+				public Object caseClass(Class umlClass) {
+					String message = CDAModelUtil.computeConformanceMessage(umlClass, markup);
+					writer.println(message);
+
+					return umlClass;
+				}
+
+				@Override
+				public Object caseGeneralization(Generalization generalization) {
+					String message = CDAModelUtil.computeConformanceMessage(generalization, markup);
+					if (message.length() > 0) {
+						writer.println(message);
+					}
+					return generalization;
+				}
+
+				@Override
+				public Object caseProperty(Property property) {
+					String message = CDAModelUtil.computeConformanceMessage(property, markup);
+					if (message.length() > 0) {
+						writer.println(message);
+					}
+					return property;
+				}
+
+				@Override
+				public Object caseConstraint(Constraint constraint) {
+					String message = CDAModelUtil.computeConformanceMessage(constraint, markup);
+					if (message.length() > 0) {
+						writer.println(message);
+					}
+					return constraint;
+				}
+			};
+			umlSwitch.doSwitch(child);
+		}
+	}
+
+	class LineComparator implements IRangeComparator {
+
+		private String[] fLines;
+
+		public LineComparator(InputStream is) throws IOException {
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(is));
+			String line;
+			ArrayList ar = new ArrayList();
+			while ((line = br.readLine()) != null) {
+				ar.add(line);
+			}
+			// It is the responsibility of the caller to close the stream
+			fLines = (String[]) ar.toArray(new String[ar.size()]);
+		}
+
+		String getLine(int ix) {
+			return fLines[ix];
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see org.eclipse.compare.rangedifferencer.IRangeComparator#getRangeCount()
+		 */
+		public int getRangeCount() {
+			return fLines.length;
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see org.eclipse.compare.rangedifferencer.IRangeComparator#rangesEqual(int, org.eclipse.compare.rangedifferencer.IRangeComparator, int)
+		 */
+		public boolean rangesEqual(int thisIndex, IRangeComparator other, int otherIndex) {
+			String s1 = fLines[thisIndex];
+			String s2 = ((LineComparator) other).fLines[otherIndex];
+			return s1.equals(s2);
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see org.eclipse.compare.rangedifferencer.IRangeComparator#skipRangeComparison(int, int,
+		 * org.eclipse.compare.rangedifferencer.IRangeComparator)
+		 */
+		public boolean skipRangeComparison(int length, int maxLength, IRangeComparator other) {
+			return false;
+		}
+	}
+
+	public IStatus appendChanges(PrintWriter writer, InputStream target, InputStream other) {
+
+		IProgressMonitor monitor = null;
+
+		LineComparator t, o;
+
+		try {
+
+			t = new LineComparator(target);
+			o = new LineComparator(other);
+		} catch (UnsupportedEncodingException e) {
+			return null;
+			// return new Status(IStatus.ERROR, CompareUI.PLUGIN_ID, 1, MergeMessages.TextAutoMerge_inputEncodingError, e);
+		} catch (IOException e) {
+			return null;
+			// return new Status(IStatus.ERROR, CompareUI.PLUGIN_ID, 1, e.getMessage(), e);
+		}
+
+		// try {
+		String lineSeparator = System.getProperty("line.separator"); //$NON-NLS-1$
+		if (lineSeparator == null)
+		 {
+			lineSeparator = "\n"; //$NON-NLS-1$
+		}
+
+		RangeDifference[] diffs = RangeDifferencer.findRanges(monitor, t, o);
+
+		writer.append("<li>");
+		writer.println("<b>Modifications</b>");
+		writer.append("</li>");
+
+		for (int i = 0; i < diffs.length; i++) {
+			RangeDifference rd = diffs[i];
+			switch (rd.kind()) {
+				case RangeDifference.RIGHT:
+					for (int j = rd.rightStart(); j < rd.rightEnd(); j++) {
+						String s = o.getLine(j);
+						writer.append("<li>");
+						writer.println(s);
+						writer.append("</li>");
+
+					}
+					break;
+
+				default:
+					break;
+			}
+		}
+
+		writer.append("<li>");
+		writer.println("<b>Additions</b>");
+		writer.append("</li>");
+
+		for (int i = 0; i < diffs.length; i++) {
+			RangeDifference rd = diffs[i];
+			switch (rd.kind()) {
+
+				case RangeDifference.LEFT:
+					for (int j = rd.leftStart(); j < rd.leftEnd(); j++) {
+						String s = t.getLine(j);
+						writer.append("<li>");
+						writer.println(s);
+						writer.append("</li>");
+
+					}
+					break;
+
+				default:
+					break;
+			}
+		}
+
+		return Status.OK_STATUS;
+	}
+
+	void appendChangeLog(PrintWriter writer, Class source, Class substitute) {
+
+		writer.println("<p>");
+		// CDAModelUtil.get
+
+		writer.println("Change Log from " + CDAModelUtil.getModelPrefix(substitute) + "::" + substitute.getName());
+		writer.println("</p>");
+		writer.println("<p id=\"" + substitute.getName() + "\" >");
+		writer.append("<ul>");
+
+		StringWriter leftsw = new StringWriter();
+		PrintWriter leftpw = new PrintWriter(leftsw);
+
+		composeAllConformanceMessages(source, leftpw, false);
+
+		StringWriter rightsw = new StringWriter();
+		PrintWriter rightpw = new PrintWriter(rightsw);
+
+		composeAllConformanceMessages(substitute, rightpw, false);
+
+		InputStream sourceStream = new ByteArrayInputStream(leftsw.getBuffer().toString().getBytes());
+
+		InputStream substitueStream = new ByteArrayInputStream(rightsw.getBuffer().toString().getBytes());
+
+		appendChanges(writer, sourceStream, substitueStream);
+
+		writer.append("</ul>");
+
+		writer.println("</p>");
+
+	}
+
 }
