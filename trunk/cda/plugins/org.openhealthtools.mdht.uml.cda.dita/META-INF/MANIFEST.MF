@@ -30,7 +30,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.openhealthtools.mdht.uml.common,
  org.openhealthtools.mdht.uml.cda.resources,
  org.openhealthtools.mdht.uml.cda,
-  org.openhealthtools.mdht.uml.cda.ui,
+ org.openhealthtools.mdht.uml.cda.ui,
  org.openhealthtools.mdht.uml.cda.core,
  org.openhealthtools.mdht.uml.term.core,
  org.eclipse.ui,
@@ -43,5 +43,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.debug.ui;visibility:=reexport,
  org.eclipse.ant.launching;visibility:=reexport,
  org.eclipse.jdt.core,
- org.eclipse.core.externaltools
+ org.eclipse.core.externaltools,
+ org.eclipse.compare;bundle-version="3.5.100"
 Export-Package: org.openhealthtools.mdht.uml.cda.dita
