@@ -65,15 +65,17 @@ public class StatusObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(StatusObservation target) {
-
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SAS);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected void updateToPass(StatusObservation target) {
-				target.init();
-				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
-				target.getEntryRelationships().add(er);
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+				}
 			}
 
 			@Override
