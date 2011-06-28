@@ -33,6 +33,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationHasReactionIntervention(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Has Reaction Intervention</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationReactionInterventionTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Reaction Intervention Type Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationReactionInterventionType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Reaction Intervention Type</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation#validateReactionObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Template Id</em>}</li>
@@ -48,6 +49,40 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  */
 
 public class ReactionObservationTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateReactionObservationHasReactionIntervention() {
+		OperationsTestCase<ReactionObservation> validateReactionObservationHasReactionInterventionTestCase = new OperationsTestCase<ReactionObservation>(
+			"validateReactionObservationHasReactionIntervention",
+			operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_HAS_REACTION_INTERVENTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReactionObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ReactionObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReactionObservationOperations.validateReactionObservationHasReactionIntervention(
+					(ReactionObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateReactionObservationHasReactionInterventionTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -72,6 +107,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 				er.setSubstanceAdministration(CCDFactory.eINSTANCE.createMedicationActivity());
 				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
 				target.getEntryRelationships().add(er);
+
 			}
 
 			@Override
