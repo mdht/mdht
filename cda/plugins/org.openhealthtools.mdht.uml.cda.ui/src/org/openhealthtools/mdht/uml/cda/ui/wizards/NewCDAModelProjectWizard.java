@@ -19,7 +19,9 @@ import java.util.jar.Manifest;
 import org.eclipse.core.filesystem.EFS;
 import org.eclipse.core.filesystem.IFileStore;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
@@ -47,7 +49,6 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.CopyFilesAndFoldersOperation;
 import org.eclipse.ui.ide.IDE;
 import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Type;
@@ -188,6 +189,8 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 						createDocProject(docProject, modelName);
 
+						createPluginProperties(docProject, modelName);
+
 						createDitaProperties(docProject, modelName);
 
 						monitor.setTaskName("Create UML Model");
@@ -320,6 +323,27 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		java.net.URI[] transformuris = new java.net.URI[elements.size()];
 		elements.toArray(transformuris);
 		copyOperation.copyFiles(transformuris, project);
+
+		IProjectDescription description;
+		try {
+			description = project.getDescription();
+			String[] newNatures = new String[0];
+			description.setNatureIds(newNatures);
+			project.setDescription(description, null);
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+
+		IFolder srcFolder = project.getFolder("src");
+
+		if (srcFolder.exists()) {
+			try {
+				srcFolder.delete(true, null);
+			} catch (CoreException e) {
+				e.printStackTrace();
+			}
+
+		}
 
 	}
 
