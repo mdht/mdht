@@ -281,6 +281,10 @@ public class InstanceGenerator {
 	private static void sampleInstanceInitialization(EObject eObject, HashMap<String, String> shallShouldMayProperties,
 			int level) {
 
+		if (level < 0) {
+			return;
+		}
+
 		initEObject(eObject);
 
 		EClass eClass = eObject.eClass();
@@ -291,12 +295,11 @@ public class InstanceGenerator {
 				if (addOperation != null) {
 					EObject objectToAdd = eOperation.getEGenericType().getEClassifier().getEPackage().getEFactoryInstance().create(
 						(EClass) eOperation.getEGenericType().getEClassifier());
-					sampleInstanceInitialization(objectToAdd, shallShouldMayProperties, level);
-
-					addObject(eClass, addOperation, eObject, objectToAdd);
-
+					if (!eClass.equals(objectToAdd.eClass())) {
+						sampleInstanceInitialization(objectToAdd, shallShouldMayProperties, --level);
+						addObject(eClass, addOperation, eObject, objectToAdd);
+					}
 				}
-
 			}
 		}
 
