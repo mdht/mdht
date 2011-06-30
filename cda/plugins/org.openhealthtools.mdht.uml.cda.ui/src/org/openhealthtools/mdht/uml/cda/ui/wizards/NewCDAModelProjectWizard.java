@@ -345,6 +345,17 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 		}
 
+		IFolder binFolder = project.getFolder("bin");
+
+		if (binFolder.exists()) {
+			try {
+				binFolder.delete(true, null);
+			} catch (CoreException e) {
+				e.printStackTrace();
+			}
+
+		}
+
 	}
 
 	void createUMLModel(IProject project, String modelName) {
