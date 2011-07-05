@@ -193,11 +193,13 @@ public class CDAModelUtil {
 
 			UMLSwitch<Object> umlSwitch = new UMLSwitch<Object>() {
 
+				@Override
 				public Object caseAssociation(Association association) {
 					iterator.prune();
 					return association;
 				}
 
+				@Override
 				public Object caseClass(Class umlClass) {
 					String message = computeConformanceMessage(umlClass, markup);
 					stream.println(message);
@@ -205,6 +207,7 @@ public class CDAModelUtil {
 					return umlClass;
 				}
 
+				@Override
 				public Object caseGeneralization(Generalization generalization) {
 					String message = computeConformanceMessage(generalization, markup);
 					if (message.length() > 0) {
@@ -213,6 +216,7 @@ public class CDAModelUtil {
 					return generalization;
 				}
 
+				@Override
 				public Object caseProperty(Property property) {
 					String message = computeConformanceMessage(property, markup);
 					if (message.length() > 0) {
@@ -221,6 +225,7 @@ public class CDAModelUtil {
 					return property;
 				}
 
+				@Override
 				public Object caseConstraint(Constraint constraint) {
 					String message = computeConformanceMessage(constraint, markup);
 					if (message.length() > 0) {
@@ -237,6 +242,7 @@ public class CDAModelUtil {
 
 		UMLSwitch<Object> umlSwitch = new UMLSwitch<Object>() {
 
+			@Override
 			public Object caseAssociation(Association association) {
 				String message = null;
 				Property property = getNavigableEnd(association);
@@ -246,18 +252,22 @@ public class CDAModelUtil {
 				return message;
 			}
 
+			@Override
 			public Object caseClass(Class umlClass) {
 				return computeConformanceMessage(umlClass, markup);
 			}
 
+			@Override
 			public Object caseGeneralization(Generalization generalization) {
 				return computeConformanceMessage(generalization, markup);
 			}
 
+			@Override
 			public Object caseProperty(Property property) {
 				return computeConformanceMessage(property, markup);
 			}
 
+			@Override
 			public Object caseConstraint(Constraint constraint) {
 				return computeConformanceMessage(constraint, markup);
 			}
@@ -530,7 +540,7 @@ public class CDAModelUtil {
 		}
 
 		// TODO: what I should really do is test for an *implied* ActRelationship or Participation association
-		if (endType != null && !CDAModelUtil.isCDAModel(endType)) {
+		if (endType != null && getTemplateId(endType) != null) {
 			message.append(markup
 					? "\n<li>"
 					: " ");
