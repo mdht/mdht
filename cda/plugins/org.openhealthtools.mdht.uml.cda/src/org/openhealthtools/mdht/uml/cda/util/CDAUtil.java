@@ -96,6 +96,7 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.StructuredBody;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
+import org.openhealthtools.mdht.uml.cda.internal.registry.CDARegistry;
 import org.openhealthtools.mdht.uml.cda.internal.resource.CDAResource;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
@@ -113,6 +114,37 @@ public class CDAUtil {
 	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
 
 	private static final Pattern COMPONENT_PATTERN = Pattern.compile("(^[A-Za-z0-9]+)(\\[([1-9]+[0-9]*)\\])?");
+
+	/**
+	 * List of all template classes derived from ClinicalDocument.
+	 */
+	public static Map<String, EClass> getAllDocumentClasses() {
+		return CDARegistry.INSTANCE.getAllDocumentClasses();
+	}
+
+	/**
+	 * If not null, use this EClass as the document root in loader.
+	 */
+	public static EClass getDocumentClass() {
+		return CDARegistry.INSTANCE.getDocumentClass();
+	}
+
+	/**
+	 * EClass to use as the document root, or set to null for default behavior of
+	 * discovering EClass based on templateId.
+	 */
+	public static void setDocumentClass(EClass eClass) {
+		CDARegistry.INSTANCE.setDocumentClass(eClass);
+	}
+
+	/**
+	 * Model qualified name (e.g. ccd::ContinuityOfCareDocument) of the EClass to use 
+	 * as the document root, or set to null for default behavior of
+	 * discovering EClass based on templateId.
+	 */
+	public static void setDocumentClassQName(String documentClassQName) {
+		CDARegistry.INSTANCE.setDocumentClassQName(documentClassQName);
+	}
 
 	public static ClinicalDocument load(InputStream in) throws Exception {
 		return load(in, (ValidationHandler) null);
