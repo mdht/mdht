@@ -59,6 +59,13 @@ public class Validate {
 		return path;
 	}
 
+	/**
+	 * arg0 = CDA input URI
+	 * arg1 = output file for validation results
+	 * arg3 = model qualified name for document type class, or null
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		final String DELIMITER = "~";
@@ -89,6 +96,12 @@ public class Validate {
 				final XPathIndexer xpathIndexer = new XPathIndexer();
 
 				parser.setContentHandler(xpathIndexer);
+
+				// set the document type class, or null to discover from templateId
+				if (args.length >= 3) {
+					String documentClassQName = args[2];
+					CDAUtil.setDocumentClassQName(documentClassQName);
+				}
 
 				try {
 
