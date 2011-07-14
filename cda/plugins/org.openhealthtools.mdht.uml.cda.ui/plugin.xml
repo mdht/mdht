@@ -93,11 +93,11 @@
 	 	     id="property.section.cda.TextValueSection"
              filter="org.openhealthtools.mdht.uml.cda.ui.filters.TextAttributeFilter"/>
              
-          <!--
           <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.ActRelationshipSection" 
 	 	     id="property.section.cda.ActRelationshipSection"
              filter="org.openhealthtools.mdht.uml.cda.ui.filters.ActRelationshipFilter"/>
+          <!--
           <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.ParticipationSection" 
 	 	     id="property.section.cda.ParticipationSection"

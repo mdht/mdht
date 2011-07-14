@@ -42,6 +42,7 @@ import org.eclipse.wst.xml.core.internal.validation.core.ValidationMessage;
 import org.eclipse.wst.xml.core.internal.validation.core.ValidationReport;
 import org.eclipse.wst.xml.core.internal.validation.eclipse.XMLMessageInfoHelper;
 import org.openhealthtools.mdht.cda.xml.ui.Activator;
+import org.openhealthtools.mdht.uml.cda.ui.util.DocumentClassDialog;
 
 public class Validator extends AbstractNestedValidator {
 
@@ -160,7 +161,6 @@ public class Validator extends AbstractNestedValidator {
 			ValidationResult result)
 
 	{
-
 		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 
 		IProject activeProject = null;
@@ -205,6 +205,9 @@ public class Validator extends AbstractNestedValidator {
 		IPath validationsPath = Activator.getDefault().getStateLocation().append(
 			cdaDocumentURI.segment(cdaDocumentURI.segmentCount() - 1) + "validations");
 
+		DocumentClassDialog docClassDialog = new DocumentClassDialog();
+		String documentClassQName = docClassDialog.selectDocumentClass();
+
 		ILaunch launch = null;
 
 		/*
@@ -221,7 +224,8 @@ public class Validator extends AbstractNestedValidator {
 				IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME,
 				"org.openhealthtools.mdht.uml.cda.internal.validate.Validate");
 
-			String validateArguments = String.format(" \"%s\" \"%s\"  ", uri, validationsPath.toOSString());
+			String validateArguments = String.format(
+				" \"%s\" \"%s\" \"%s\"  ", uri, validationsPath.toOSString(), documentClassQName);
 
 			workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, validateArguments);
 
