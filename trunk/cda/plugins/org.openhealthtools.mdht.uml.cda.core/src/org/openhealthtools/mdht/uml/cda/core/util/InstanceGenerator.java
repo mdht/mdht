@@ -290,7 +290,8 @@ public class InstanceGenerator {
 
 		EClass eClass = eObject.eClass();
 		for (EOperation eOperation : eClass.getEOperations()) {
-			if (eOperation.getName().startsWith("get") && eOperation.getEType() instanceof EClass) {
+			if (eOperation.getName().startsWith("get") && eOperation.getEType() instanceof EClass &&
+					!((EClass) eOperation.getEType()).isAbstract()) {
 
 				EOperation addOperation = findAddOperation(eClass, eOperation);
 				if (addOperation != null) {
