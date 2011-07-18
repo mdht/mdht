@@ -39,6 +39,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Artifact;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -451,7 +452,7 @@ public class InstanceGenerator {
 			CDAUtil.Query query = new CDAUtil.Query(clinicalDocument);
 			eObject = query.getEObject((java.lang.Class<? extends EObject>) eClass.getInstanceClass());
 			if (eObject != null) {
-				return eObject;
+				return EcoreUtil.copy(eObject);
 			}
 
 		}
