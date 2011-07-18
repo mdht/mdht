@@ -37,6 +37,7 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.openhealthtools.mdht.uml.cda.Act;
+import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Encounter;
 import org.openhealthtools.mdht.uml.cda.Observation;
@@ -471,7 +472,7 @@ public class TableGenerator {
 
 				Class cdaClass = CDAModelUtil.getCDAClass((Class) property.getType());
 
-				if (cdaClass != null && ePropertyClass != null) {
+				if (cdaClass != null && ePropertyClass != null && !ePropertyClass.isAbstract()) {
 
 					EObject eClinicalStatementInstance = ePropertyClass.getEPackage().getEFactoryInstance().create(
 						ePropertyClass);
@@ -502,7 +503,13 @@ public class TableGenerator {
 						relativePath = getPath(eClinicalStatementInstance);
 					}
 
-					if ("Procedure".equals(cdaClass.getName())) {
+					/*
+					 * This fails for HITSP Procedure, need to investigate.
+					 * Probably due to use of multiple inheritance. But modified
+					 * use of isSuperTypeOf() seems to work.
+					 */
+					// if ("Procedure".equals(cdaClass.getName())) {
+					if (CDAPackage.eINSTANCE.getProcedure().isSuperTypeOf(ePropertyClass)) {
 						section.addProcedure((Procedure) eClinicalStatementInstance);
 						relativePath = getPath(eClinicalStatementInstance);
 					}
