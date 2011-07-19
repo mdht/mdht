@@ -77,7 +77,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediaType" ordered="false"
-        eType="#//csType" defaultValueLiteral="text/plain"/>
+        eType="#//csType" defaultValueLiteral="text/plain" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" ordered="false"
         eType="#//csType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="compression" ordered="false"

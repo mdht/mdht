@@ -229,56 +229,56 @@ public class STOperations extends EDOperations {
 	}
 
 	/**
-	* The cached OCL expression body for the '{@link #validateIntegrityCheckAlgorithm(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Integrity Check Algorithm</em>}' operation.
-	* <!-- begin-user-doc -->
+	 * The cached OCL expression body for the '{@link #validateIntegrityCheckAlgorithm(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Integrity Check Algorithm</em>}' operation.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #validateIntegrityCheckAlgorithm(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	* @generated
-	* @ordered
-	*/
+	 * @see #validateIntegrityCheckAlgorithm(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
 	protected static final String VALIDATE_INTEGRITY_CHECK_ALGORITHM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.isIntegrityCheckAlgorithmDefined()";
 
 	/**
-	* The cached OCL invariant for the '{@link #validateIntegrityCheckAlgorithm(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Integrity Check Algorithm</em>}' invariant operation.
-	* <!-- begin-user-doc -->
+	 * The cached OCL invariant for the '{@link #validateIntegrityCheckAlgorithm(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Integrity Check Algorithm</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #validateIntegrityCheckAlgorithm(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	* @generated
-	* @ordered
-	*/
+	 * @see #validateIntegrityCheckAlgorithm(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
 	protected static Constraint VALIDATE_INTEGRITY_CHECK_ALGORITHM__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
-	* The cached OCL expression body for the '{@link #validateCompression(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Compression</em>}' operation.
-	* <!-- begin-user-doc -->
+	 * The cached OCL expression body for the '{@link #validateCompression(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Compression</em>}' operation.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #validateCompression(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	* @generated
-	* @ordered
-	*/
+	 * @see #validateCompression(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
 	protected static final String VALIDATE_COMPRESSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "not self.isCompressionDefined()";
 
 	/**
-	* The cached OCL invariant for the '{@link #validateCompression(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Compression</em>}' invariant operation.
-	* <!-- begin-user-doc -->
+	 * The cached OCL invariant for the '{@link #validateCompression(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Compression</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #validateCompression(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	* @generated
-	* @ordered
-	*/
+	 * @see #validateCompression(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
 	protected static Constraint VALIDATE_COMPRESSION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* <!-- begin-model-doc -->
-	* not self.isCompressionDefined()
-	* @param st The receiving '<em><b>ST</b></em>' model object.
-	* @param diagnostics The chain of diagnostics to which problems are to be appended.
-	* @param context The cache of context-specific information.
-	* <!-- end-model-doc -->
-	* @generated
-	*/
+	 * <!-- begin-model-doc -->
+	 * not self.isCompressionDefined()
+	 * @param st The receiving '<em><b>ST</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
 	public static boolean validateCompression(ST st, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_COMPRESSION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
@@ -306,36 +306,36 @@ public class STOperations extends EDOperations {
 	}
 
 	/**
-	* The cached OCL expression body for the '{@link #validateRepresentation(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Representation</em>}' operation.
-	* <!-- begin-user-doc -->
+	 * The cached OCL expression body for the '{@link #validateRepresentation(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Representation</em>}' operation.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #validateRepresentation(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	* @generated
-	* @ordered
-	*/
+	 * @see #validateRepresentation(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
 	protected static final String VALIDATE_REPRESENTATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.isRepresentationDefined() implies self.representation=BinaryDataEncoding::TXT";
 
 	/**
-	* The cached OCL invariant for the '{@link #validateRepresentation(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Representation</em>}' invariant operation.
-	* <!-- begin-user-doc -->
+	 * The cached OCL invariant for the '{@link #validateRepresentation(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Representation</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #validateRepresentation(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	* @generated
-	* @ordered
-	*/
+	 * @see #validateRepresentation(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
 	protected static Constraint VALIDATE_REPRESENTATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* <!-- begin-model-doc -->
-	* self.isRepresentationDefined() implies self.representation=BinaryDataEncoding::TXT
-	* @param st The receiving '<em><b>ST</b></em>' model object.
-	* @param diagnostics The chain of diagnostics to which problems are to be appended.
-	* @param context The cache of context-specific information.
-	* <!-- end-model-doc -->
-	* @generated
-	*/
+	 * <!-- begin-model-doc -->
+	 * self.isRepresentationDefined() implies self.representation=BinaryDataEncoding::TXT
+	 * @param st The receiving '<em><b>ST</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
 	public static boolean validateRepresentation(ST st, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_REPRESENTATION__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
@@ -363,36 +363,36 @@ public class STOperations extends EDOperations {
 	}
 
 	/**
-	* The cached OCL expression body for the '{@link #validateST(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate ST</em>}' operation.
-	* <!-- begin-user-doc -->
+	 * The cached OCL expression body for the '{@link #validateST(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate ST</em>}' operation.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #validateST(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	* @generated
-	* @ordered
-	*/
+	 * @see #validateST(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
 	protected static final String VALIDATE_ST__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "(self.isNullFlavorDefined() or self.getText() <> '') and not(self.isNullFlavorDefined() and self.getText() <> '')";
 
 	/**
-	* The cached OCL invariant for the '{@link #validateST(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate ST</em>}' invariant operation.
-	* <!-- begin-user-doc -->
+	 * The cached OCL invariant for the '{@link #validateST(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate ST</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #validateST(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	* @generated
-	* @ordered
-	*/
+	 * @see #validateST(ST, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
 	protected static Constraint VALIDATE_ST__DIAGNOSTIC_CHAIN_MAP__EOCL_INV;
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* <!-- begin-model-doc -->
-	* (self.isNullFlavorDefined() or self.getText() <> '') and not(self.isNullFlavorDefined() and self.getText() <> '')
-	* @param st The receiving '<em><b>ST</b></em>' model object.
-	* @param diagnostics The chain of diagnostics to which problems are to be appended.
-	* @param context The cache of context-specific information.
-	* <!-- end-model-doc -->
-	* @generated
-	*/
+	 * <!-- begin-model-doc -->
+	 * (self.isNullFlavorDefined() or self.getText() <> '') and not(self.isNullFlavorDefined() and self.getText() <> '')
+	 * @param st The receiving '<em><b>ST</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
 	public static boolean validateST(ST st, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (VALIDATE_ST__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
@@ -420,34 +420,34 @@ public class STOperations extends EDOperations {
 	}
 
 	/**
-	* The cached OCL expression body for the '{@link #isCompressionDefined(ST) <em>Is Compression Defined</em>}' operation.
-	* <!-- begin-user-doc -->
+	 * The cached OCL expression body for the '{@link #isCompressionDefined(ST) <em>Is Compression Defined</em>}' operation.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #isCompressionDefined(ST)
-	* @generated
-	* @ordered
-	*/
+	 * @see #isCompressionDefined(ST)
+	 * @generated
+	 * @ordered
+	 */
 	protected static final String IS_COMPRESSION_DEFINED__EOCL_EXP = "self.isDefined('compression')";
 
 	/**
-	* The cached OCL query for the '{@link #isCompressionDefined(ST) <em>Is Compression Defined</em>}' query operation.
-	* <!-- begin-user-doc -->
+	 * The cached OCL query for the '{@link #isCompressionDefined(ST) <em>Is Compression Defined</em>}' query operation.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #isCompressionDefined(ST)
-	* @generated
-	* @ordered
-	*/
+	 * @see #isCompressionDefined(ST)
+	 * @generated
+	 * @ordered
+	 */
 	protected static OCLExpression<EClassifier> IS_COMPRESSION_DEFINED__EOCL_QRY;
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* <!-- begin-model-doc -->
-	* self.isDefined('compression')
-	* @param st The receiving '<em><b>ST</b></em>' model object.
-	* <!-- end-model-doc -->
-	* @generated
-	*/
+	 * <!-- begin-model-doc -->
+	 * self.isDefined('compression')
+	 * @param st The receiving '<em><b>ST</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
 	public static boolean isCompressionDefined(ST st) {
 		if (IS_COMPRESSION_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
@@ -464,34 +464,34 @@ public class STOperations extends EDOperations {
 	}
 
 	/**
-	* The cached OCL expression body for the '{@link #isIntegrityCheckAlgorithmDefined(ST) <em>Is Integrity Check Algorithm Defined</em>}' operation.
-	* <!-- begin-user-doc -->
+	 * The cached OCL expression body for the '{@link #isIntegrityCheckAlgorithmDefined(ST) <em>Is Integrity Check Algorithm Defined</em>}' operation.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #isIntegrityCheckAlgorithmDefined(ST)
-	* @generated
-	* @ordered
-	*/
+	 * @see #isIntegrityCheckAlgorithmDefined(ST)
+	 * @generated
+	 * @ordered
+	 */
 	protected static final String IS_INTEGRITY_CHECK_ALGORITHM_DEFINED__EOCL_EXP = "self.isDefined('integrityCheckAlgorithm')";
 
 	/**
-	* The cached OCL query for the '{@link #isIntegrityCheckAlgorithmDefined(ST) <em>Is Integrity Check Algorithm Defined</em>}' query operation.
-	* <!-- begin-user-doc -->
+	 * The cached OCL query for the '{@link #isIntegrityCheckAlgorithmDefined(ST) <em>Is Integrity Check Algorithm Defined</em>}' query operation.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #isIntegrityCheckAlgorithmDefined(ST)
-	* @generated
-	* @ordered
-	*/
+	 * @see #isIntegrityCheckAlgorithmDefined(ST)
+	 * @generated
+	 * @ordered
+	 */
 	protected static OCLExpression<EClassifier> IS_INTEGRITY_CHECK_ALGORITHM_DEFINED__EOCL_QRY;
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* <!-- begin-model-doc -->
-	* self.isDefined('integrityCheckAlgorithm')
-	* @param st The receiving '<em><b>ST</b></em>' model object.
-	* <!-- end-model-doc -->
-	* @generated
-	*/
+	 * <!-- begin-model-doc -->
+	 * self.isDefined('integrityCheckAlgorithm')
+	 * @param st The receiving '<em><b>ST</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
 	public static boolean isIntegrityCheckAlgorithmDefined(ST st) {
 		if (IS_INTEGRITY_CHECK_ALGORITHM_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
@@ -508,34 +508,34 @@ public class STOperations extends EDOperations {
 	}
 
 	/**
-	* The cached OCL expression body for the '{@link #isRepresentationDefined(ST) <em>Is Representation Defined</em>}' operation.
-	* <!-- begin-user-doc -->
+	 * The cached OCL expression body for the '{@link #isRepresentationDefined(ST) <em>Is Representation Defined</em>}' operation.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #isRepresentationDefined(ST)
-	* @generated
-	* @ordered
-	*/
+	 * @see #isRepresentationDefined(ST)
+	 * @generated
+	 * @ordered
+	 */
 	protected static final String IS_REPRESENTATION_DEFINED__EOCL_EXP = "self.isDefined('representation')";
 
 	/**
-	* The cached OCL query for the '{@link #isRepresentationDefined(ST) <em>Is Representation Defined</em>}' query operation.
-	* <!-- begin-user-doc -->
+	 * The cached OCL query for the '{@link #isRepresentationDefined(ST) <em>Is Representation Defined</em>}' query operation.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #isRepresentationDefined(ST)
-	* @generated
-	* @ordered
-	*/
+	 * @see #isRepresentationDefined(ST)
+	 * @generated
+	 * @ordered
+	 */
 	protected static OCLExpression<EClassifier> IS_REPRESENTATION_DEFINED__EOCL_QRY;
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* <!-- begin-model-doc -->
-	* self.isDefined('representation')
-	* @param st The receiving '<em><b>ST</b></em>' model object.
-	* <!-- end-model-doc -->
-	* @generated
-	*/
+	 * <!-- begin-model-doc -->
+	 * self.isDefined('representation')
+	 * @param st The receiving '<em><b>ST</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
 	public static boolean isRepresentationDefined(ST st) {
 		if (IS_REPRESENTATION_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
@@ -552,16 +552,16 @@ public class STOperations extends EDOperations {
 	}
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* <!-- begin-model-doc -->
-	* not self.isIntegrityCheckAlgorithmDefined()
-	* @param st The receiving '<em><b>ST</b></em>' model object.
-	* @param diagnostics The chain of diagnostics to which problems are to be appended.
-	* @param context The cache of context-specific information.
-	* <!-- end-model-doc -->
-	* @generated
-	*/
+	 * <!-- begin-model-doc -->
+	 * not self.isIntegrityCheckAlgorithmDefined()
+	 * @param st The receiving '<em><b>ST</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
 	public static boolean validateIntegrityCheckAlgorithm(ST st, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		if (VALIDATE_INTEGRITY_CHECK_ALGORITHM__DIAGNOSTIC_CHAIN_MAP__EOCL_INV == null) {
