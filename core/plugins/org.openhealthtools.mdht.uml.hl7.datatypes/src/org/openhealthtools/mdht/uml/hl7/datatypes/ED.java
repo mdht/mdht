@@ -122,9 +122,11 @@ public interface ED extends BIN {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Media Type</em>' attribute.
+	 * @see #isSetMediaType()
+	 * @see #unsetMediaType()
 	 * @see #setMediaType(String)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getED_MediaType()
-	 * @model default="text/plain" dataType="org.openhealthtools.mdht.uml.hl7.datatypes.csType" ordered="false"
+	 * @model default="text/plain" unsettable="true" dataType="org.openhealthtools.mdht.uml.hl7.datatypes.csType" ordered="false"
 	 * @generated
 	 */
 	String getMediaType();
@@ -134,10 +136,35 @@ public interface ED extends BIN {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Media Type</em>' attribute.
+	 * @see #isSetMediaType()
+	 * @see #unsetMediaType()
 	 * @see #getMediaType()
 	 * @generated
 	 */
 	void setMediaType(String value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#getMediaType <em>Media Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetMediaType()
+	 * @see #getMediaType()
+	 * @see #setMediaType(String)
+	 * @generated
+	 */
+	void unsetMediaType();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#getMediaType <em>Media Type</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Media Type</em>' attribute is set.
+	 * @see #unsetMediaType()
+	 * @see #getMediaType()
+	 * @see #setMediaType(String)
+	 * @generated
+	 */
+	boolean isSetMediaType();
 
 	/**
 	 * Returns the value of the '<em><b>Language</b></em>' attribute.

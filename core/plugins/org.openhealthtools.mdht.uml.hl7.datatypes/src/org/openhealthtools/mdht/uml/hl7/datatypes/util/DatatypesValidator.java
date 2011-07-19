@@ -142,43 +142,43 @@ public class DatatypesValidator extends EObjectValidator {
 	public static final int ST__COMPRESSION = 7;
 
 	/**
-	* The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Representation' of 'ST'.
-	* <!-- begin-user-doc -->
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Representation' of 'ST'.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final int ST__REPRESENTATION = 8;
 
 	/**
-	* The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate ST' of 'ST'.
-	* <!-- begin-user-doc -->
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate ST' of 'ST'.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final int ST__ST = 9;
 
 	/**
-	* The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate CR' of 'CR'.
-	* <!-- begin-user-doc -->
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate CR' of 'CR'.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final int CR__CR = 10;
 
 	/**
-	* The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Integrity Check Algorithm' of 'ST'.
-	* <!-- begin-user-doc -->
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Integrity Check Algorithm' of 'ST'.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final int ST__INTEGRITY_CHECK_ALGORITHM = 6;
 
 	/**
-	* The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Translation' of 'CV'.
-	* <!-- begin-user-doc -->
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Translation' of 'CV'.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final int CV__TRANSLATION = 11;
 
 	/**
@@ -1132,41 +1132,41 @@ public class DatatypesValidator extends EObjectValidator {
 	}
 
 	/**
-	* Validates the validateRepresentation constraint of '<em>ST</em>'.
-	* <!-- begin-user-doc -->
+	 * Validates the validateRepresentation constraint of '<em>ST</em>'.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean validateST_validateRepresentation(ST st, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return st.validateRepresentation(diagnostics, context);
 	}
 
 	/**
-	* Validates the validateST constraint of '<em>ST</em>'.
-	* <!-- begin-user-doc -->
+	 * Validates the validateST constraint of '<em>ST</em>'.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean validateST_validateST(ST st, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return st.validateST(diagnostics, context);
 	}
 
 	/**
-	* Validates the validateIntegrityCheckAlgorithm constraint of '<em>ST</em>'.
-	* <!-- begin-user-doc -->
+	 * Validates the validateIntegrityCheckAlgorithm constraint of '<em>ST</em>'.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean validateST_validateIntegrityCheckAlgorithm(ST st, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		return st.validateIntegrityCheckAlgorithm(diagnostics, context);
 	}
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean validateCD(CD cd, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(cd, diagnostics, context);
 	}

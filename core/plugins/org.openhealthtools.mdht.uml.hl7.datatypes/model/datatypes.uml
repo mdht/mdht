@@ -1623,4 +1623,5 @@
   <Ecore:EDataType xmi:id="_F2NlAEWyEeC7E8_5Rmjcog" instanceClassName="java.lang.String" base_PrimitiveType="_CWZPMEWyEeC7E8_5Rmjcog" dataTypeName="tsType">
     <annotation>http:///org/eclipse/emf/ecore/util/ExtendedMetaData pattern='[0-9]{1,8}|([0-9]{9,14}|[0-9]{14,14}\.[0-9]+)([+\-][0-9]{1,4})?'</annotation>
   </Ecore:EDataType>
+  <Ecore:EAttribute xmi:id="_oYGC0LIdEeCAEKnqHv4T9Q" isUnsettable="true" base_Property="_Q6aOAD54Ed6cla2oXsPtlA"/>
 </xmi:XMI>

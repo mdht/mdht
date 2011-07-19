@@ -66,90 +66,90 @@ public interface ST extends ED {
 	boolean validateIntegrityCheck(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* <!-- begin-model-doc -->
-	* not self.isCompressionDefined()
-	* @param diagnostics The chain of diagnostics to which problems are to be appended.
-	* @param context The cache of context-specific information.
-	* <!-- end-model-doc -->
-	* @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.isCompressionDefined()'"
-	* @generated
-	*/
+	 * <!-- begin-model-doc -->
+	 * not self.isCompressionDefined()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.isCompressionDefined()'"
+	 * @generated
+	 */
 	boolean validateCompression(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* <!-- begin-model-doc -->
-	* self.isRepresentationDefined() implies self.representation=BinaryDataEncoding::TXT
-	* @param diagnostics The chain of diagnostics to which problems are to be appended.
-	* @param context The cache of context-specific information.
-	* <!-- end-model-doc -->
-	* @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isRepresentationDefined() implies self.representation=BinaryDataEncoding::TXT'"
-	* @generated
-	*/
+	 * <!-- begin-model-doc -->
+	 * self.isRepresentationDefined() implies self.representation=BinaryDataEncoding::TXT
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isRepresentationDefined() implies self.representation=BinaryDataEncoding::TXT'"
+	 * @generated
+	 */
 	boolean validateRepresentation(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* <!-- begin-model-doc -->
-	* (self.isNullFlavorDefined() or self.getText() <> '') and not(self.isNullFlavorDefined() and self.getText() <> '')
-	* @param diagnostics The chain of diagnostics to which problems are to be appended.
-	* @param context The cache of context-specific information.
-	* <!-- end-model-doc -->
-	* @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='(self.isNullFlavorDefined() or self.getText() <> \'\') and not(self.isNullFlavorDefined() and self.getText() <> \'\')'"
-	* @generated
-	*/
+	 * <!-- begin-model-doc -->
+	 * (self.isNullFlavorDefined() or self.getText() <> '') and not(self.isNullFlavorDefined() and self.getText() <> '')
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='(self.isNullFlavorDefined() or self.getText() <> \'\') and not(self.isNullFlavorDefined() and self.getText() <> \'\')'"
+	 * @generated
+	 */
 	boolean validateST(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* <!-- begin-model-doc -->
-	* self.isDefined('compression')
-	* <!-- end-model-doc -->
-	* @model kind="operation" required="true" ordered="false"
-	*        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isDefined(\'compression\')'"
-	* @generated
-	*/
+	 * <!-- begin-model-doc -->
+	 * self.isDefined('compression')
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isDefined(\'compression\')'"
+	 * @generated
+	 */
 	boolean isCompressionDefined();
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* <!-- begin-model-doc -->
-	* self.isDefined('integrityCheckAlgorithm')
-	* <!-- end-model-doc -->
-	* @model kind="operation" required="true" ordered="false"
-	*        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isDefined(\'integrityCheckAlgorithm\')'"
-	* @generated
-	*/
+	 * <!-- begin-model-doc -->
+	 * self.isDefined('integrityCheckAlgorithm')
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isDefined(\'integrityCheckAlgorithm\')'"
+	 * @generated
+	 */
 	boolean isIntegrityCheckAlgorithmDefined();
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* <!-- begin-model-doc -->
-	* self.isDefined('representation')
-	* <!-- end-model-doc -->
-	* @model kind="operation" required="true" ordered="false"
-	*        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isDefined(\'representation\')'"
-	* @generated
-	*/
+	 * <!-- begin-model-doc -->
+	 * self.isDefined('representation')
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.isDefined(\'representation\')'"
+	 * @generated
+	 */
 	boolean isRepresentationDefined();
 
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* <!-- begin-model-doc -->
-	* not self.isIntegrityCheckAlgorithmDefined()
-	* @param diagnostics The chain of diagnostics to which problems are to be appended.
-	* @param context The cache of context-specific information.
-	* <!-- end-model-doc -->
-	* @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.isIntegrityCheckAlgorithmDefined()'"
-	* @generated
-	*/
+	 * <!-- begin-model-doc -->
+	 * not self.isIntegrityCheckAlgorithmDefined()
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='not self.isIntegrityCheckAlgorithmDefined()'"
+	 * @generated
+	 */
 	boolean validateIntegrityCheckAlgorithm(DiagnosticChain diagnostics, Map<Object, Object> context);
 } // ST

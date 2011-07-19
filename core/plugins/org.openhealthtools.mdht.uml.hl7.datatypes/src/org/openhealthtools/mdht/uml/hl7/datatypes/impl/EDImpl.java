@@ -80,6 +80,15 @@ public class EDImpl extends BINImpl implements ED {
 	protected String mediaType = MEDIA_TYPE_EDEFAULT;
 
 	/**
+	 * This is true if the Media Type attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean mediaTypeESet;
+
+	/**
 	 * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -279,10 +288,38 @@ public class EDImpl extends BINImpl implements ED {
 	public void setMediaType(String newMediaType) {
 		String oldMediaType = mediaType;
 		mediaType = newMediaType;
+		boolean oldMediaTypeESet = mediaTypeESet;
+		mediaTypeESet = true;
 		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(
-				this, Notification.SET, DatatypesPackage.ED__MEDIA_TYPE, oldMediaType, mediaType));
+				this, Notification.SET, DatatypesPackage.ED__MEDIA_TYPE, oldMediaType, mediaType, !oldMediaTypeESet));
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetMediaType() {
+		String oldMediaType = mediaType;
+		boolean oldMediaTypeESet = mediaTypeESet;
+		mediaType = MEDIA_TYPE_EDEFAULT;
+		mediaTypeESet = false;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, DatatypesPackage.ED__MEDIA_TYPE, oldMediaType, MEDIA_TYPE_EDEFAULT,
+				oldMediaTypeESet));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetMediaType() {
+		return mediaTypeESet;
 	}
 
 	/**
@@ -564,7 +601,7 @@ public class EDImpl extends BINImpl implements ED {
 				setThumbnail((ED) null);
 				return;
 			case DatatypesPackage.ED__MEDIA_TYPE:
-				setMediaType(MEDIA_TYPE_EDEFAULT);
+				unsetMediaType();
 				return;
 			case DatatypesPackage.ED__LANGUAGE:
 				setLanguage(LANGUAGE_EDEFAULT);
@@ -597,9 +634,7 @@ public class EDImpl extends BINImpl implements ED {
 			case DatatypesPackage.ED__THUMBNAIL:
 				return getThumbnail() != null;
 			case DatatypesPackage.ED__MEDIA_TYPE:
-				return MEDIA_TYPE_EDEFAULT == null
-						? mediaType != null
-						: !MEDIA_TYPE_EDEFAULT.equals(mediaType);
+				return isSetMediaType();
 			case DatatypesPackage.ED__LANGUAGE:
 				return LANGUAGE_EDEFAULT == null
 						? language != null
@@ -631,7 +666,11 @@ public class EDImpl extends BINImpl implements ED {
 		result.append(" (mixed: ");
 		result.append(mixed);
 		result.append(", mediaType: ");
-		result.append(mediaType);
+		if (mediaTypeESet) {
+			result.append(mediaType);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(", language: ");
 		result.append(language);
 		result.append(", compression: ");
