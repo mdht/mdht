@@ -7,6 +7,10 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Les Westberg - Fixed a problem related to generating the DITA for value sets
+ *                    that were not contained in the vocab project and that are in 
+ *                    models which are not based on CDA
+ *                   
  *     
  * $Id$
  *******************************************************************************/
@@ -156,6 +160,10 @@ public class TransformValueSet extends TransformAbstract {
 				writer.print(CDAModelUtil.fixNonXMLCharacters(valueSetVersion.getDefinition()));
 				writer.println("</entry></row>");
 			}
+		} else {
+			writer.print("<row><entry>Value Set</entry><entry>");
+			writer.print(umlEnumeration.getName());
+			writer.println("</entry></row>");
 		}
 
 		for (Comment comment : umlEnumeration.getOwnedComments()) {
