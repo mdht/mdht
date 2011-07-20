@@ -51,8 +51,13 @@ public class TransformAssociation extends TransformAbstract {
 		for (Property property : association.getMemberEnds()) {
 			if (property.isNavigable()) {
 				sourceClass = property.getClass_();
-				targetClass = (Class) property.getType();
-				sourceProperty = property;
+				// Fix for artf2708
+				// Primitive types are sub types of DataType interface. Hence need
+				// to validate if the property.getType() can be cast to Class type.
+				if (property.getType() instanceof Class) {
+					targetClass = (Class) property.getType();
+					sourceProperty = property;
+				}
 				break;
 			}
 		}
