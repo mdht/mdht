@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Copyright (c) 2011 Sean Muir and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Sean Muir - initial API and implementation
+ *     IBM Corporation - fixed issue related to project manifests (artf2756)
+ *    
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.wizards;
 
 import java.io.ByteArrayInputStream;
@@ -60,7 +72,6 @@ import org.openhealthtools.mdht.uml.cda.ui.internal.Activator;
 import org.openhealthtools.mdht.uml.cda.ui.util.CDAUIUtil;
 import org.osgi.framework.Bundle;
 
-@SuppressWarnings("restriction")
 public class NewCDAModelProjectWizard extends CDAWizard {
 
 	NewCDAModelPage newCDATemplatePage;
@@ -190,7 +201,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 						createDocProject(docProject, modelName);
 
 						createPluginProperties(docProject, modelName);
-
+						updateBuildProperties(docProject);
 						createDitaProperties(docProject, modelName);
 
 						monitor.setTaskName("Create UML Model");
@@ -205,6 +216,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 						monitor.setTaskName("Add Properties");
 						createPluginProperties(generatedProject, modelName);
+						updateBuildProperties(generatedProject);
 
 						monitor.setTaskName("Run MDHT Transformation");
 						org.openhealthtools.mdht.uml.cda.ui.builder.CDABuilder.runTransformation(
@@ -554,11 +566,36 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 	}
 
+	void updateBuildProperties(IProject project) {
+		try {
+			StringWriter swriter = new StringWriter();
+			PrintWriter writer = new PrintWriter(swriter);
+			writer.println("source.. = src/");
+			writer.println("output.. = bin/");
+			if (project.equals(docProject)) {
+				writer.println("bin.includes = META-INF/,\\");
+			} else {
+				writer.println("bin.includes = plugin.xml,\\");
+				writer.println("               META-INF/,\\");
+			}
+			writer.println("               .,\\");
+			writer.println("               plugin.properties");
+			writer.flush();
+			swriter.close();
+			InputStream is = new ByteArrayInputStream(swriter.toString().getBytes("UTF-8"));
+			IPath path = new Path("build.properties");
+			IFile file = CDAUIUtil.getBundleRelativeFile(project, path);
+			file.setContents(is, true, false, null);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	void createManifest(IProject project, String modelName) {
 
 		try {
 
-			IFile manfiestFile = cdaDocumentsManfiest.get(newCDATemplatePage.getCDADocument());
+			IFile manfiestFile = cdaDocumentsManifest.get(newCDATemplatePage.getCDADocument());
 
 			InputStream input = new FileInputStream(manfiestFile.getRawLocation().toOSString());
 
@@ -574,15 +611,21 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 			writer.println("Bundle-Name: %pluginName");
 
-			writer.println(String.format(
-				"Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.%s;singleton:=true", modelName));
+			if (!project.getName().endsWith("doc")) {
+				writer.println(String.format(
+					"Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.%s;singleton:=true", modelName));
+			} else {
+				// doc project
+				writer.println(String.format(
+					"Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.%s.doc;singleton:=true", modelName));
+			}
 
-			writer.println("Bundle-Version: 0.7.0.qualifier");
+			// writer.println("Bundle-Version: 0.7.0.qualifier");
 
 			writer.println("Bundle-ClassPath: .");
 			writer.println("Bundle-Vendor: %providerName");
 			writer.println("Bundle-Localization: plugin");
-			writer.println("Bundle-RequiredExecutionEnvironment: J2SE-1.5");
+			// writer.println("Bundle-RequiredExecutionEnvironment: J2SE-1.5");
 
 			String requiredBundles = attributes.getValue("Require-Bundle");
 
