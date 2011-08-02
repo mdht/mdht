@@ -1,3 +1,14 @@
+/*******************************************************************************
+ * Copyright (c) 2011 Sean Muir.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Sean Muir - initial API and implementation
+ *    
+ *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.wizards;
 
 import java.io.InputStream;
@@ -55,14 +66,13 @@ import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleException;
 import org.osgi.framework.Constants;
 
-@SuppressWarnings("restriction")
 public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 
 	protected HashMap<String, Package> cdaPackages = new HashMap<String, Package>();
 
 	protected HashMap<String, Type> cdaDocuments = new HashMap<String, Type>();
 
-	protected HashMap<String, IFile> cdaDocumentsManfiest = new HashMap<String, IFile>();
+	protected HashMap<String, IFile> cdaDocumentsManifest = new HashMap<String, IFile>();
 
 	protected HashMap<String, IFile> cdaDocumentsGenModels = new HashMap<String, IFile>();
 
@@ -335,7 +345,7 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 										}
 
 										cdaPackages.put(p.getQualifiedName(), p);
-										cdaDocumentsManfiest.put(
+										cdaDocumentsManifest.put(
 											p.getQualifiedName(), CDAUIUtil.getManifest(generatedProject));
 
 										if (generatedProject.getFolder(model).exists()) {
@@ -376,8 +386,8 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 				for (Type type : ps.getOwnedTypes()) {
 					if (type.conformsTo(clinicalDocument)) {
 						cdaDocuments.put(type.getQualifiedName(), type);
-						cdaDocumentsManfiest.put(
-							type.getQualifiedName(), cdaDocumentsManfiest.get(ps.getQualifiedName()));
+						cdaDocumentsManifest.put(
+							type.getQualifiedName(), cdaDocumentsManifest.get(ps.getQualifiedName()));
 						cdaDocumentsGenModels.put(
 							type.getQualifiedName(), cdaDocumentsGenModels.get(ps.getQualifiedName()));
 					}

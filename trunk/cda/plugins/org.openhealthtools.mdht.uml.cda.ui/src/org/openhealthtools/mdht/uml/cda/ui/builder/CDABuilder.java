@@ -89,7 +89,6 @@ import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-@SuppressWarnings("restriction")
 public class CDABuilder extends IncrementalProjectBuilder {
 
 	class CheckForModelChanged implements IResourceDeltaVisitor {
