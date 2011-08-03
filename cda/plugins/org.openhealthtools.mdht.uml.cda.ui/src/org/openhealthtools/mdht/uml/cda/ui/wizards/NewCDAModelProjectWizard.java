@@ -611,11 +611,10 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 			writer.println("Bundle-Name: %pluginName");
 
-			if (!project.getName().endsWith("doc")) {
+			if (project.equals(generatedProject)) {
 				writer.println(String.format(
 					"Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.%s;singleton:=true", modelName));
-			} else {
-				// doc project
+			} else if (project.equals(docProject)) {
 				writer.println(String.format(
 					"Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.%s.doc;singleton:=true", modelName));
 			}
