@@ -53,6 +53,8 @@ plugin@org.openhealthtools.mdht.uml.cda.ccd=SVN,trunk,https://www.projects.openh
 
 plugin@org.openhealthtools.mdht.uml.cda.hitsp=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.hitsp,force
 
+plugin@org.openhealthtools.mdht.uml.cda.hitsp.facade=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.hitsp.facade,force
+
 plugin@org.openhealthtools.mdht.uml.cda.ihe=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.ihe,force
 
 
