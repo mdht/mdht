@@ -1,0 +1,258 @@
+<%@ jet package="org.eclipse.emf.codegen.ecore.templates.model" imports="java.util.* org.eclipse.emf.codegen.ecore.genmodel.* org.eclipse.emf.codegen.util.CodeGenUtil import org.junit.Test" class="CDATestCase"  %>
+
+<%GenClass genClass = (GenClass)argument; GenPackage genPackage = genClass.getGenPackage(); GenModel genModel=genPackage.getGenModel();%>
+<%@ include file="../Header.jetinc"%>
+package <%=genPackage.getTestsPackageName() %>;
+
+
+<%genModel.markImportLocation(stringBuffer, genPackage);%>
+
+<%genModel.addImport("org.junit.Test");%>
+
+/**
+ * <!-- begin-user-doc -->
+ * A static utility class that provides operations related to '<em><b><%=genClass.getFormattedName()%></b></em>' model objects.
+ * <!-- end-user-doc -->
+ *
+<%if (!UML2GenModelUtil.getOperationsClassGenOperations(genClass).isEmpty()) { boolean first = true;%>
+  <%for (GenOperation genOperation : UML2GenModelUtil.getOperationsClassGenOperations(genClass)) {%>
+  <%if (!genOperation.hasBody()) {%>
+    <%if (first) { first = false;%>
+ * <p>
+ * The following operations are supported:
+ * <ul>
+    <%}%>
+ *   <li>{@link <%=genOperation.getGenClass().getQualifiedInterfaceName()%>#<%=genOperation.getName()%>(<%=genOperation.getParameterTypes(", ")%>) <em><%=genOperation.getFormattedName()%></em>}</li>
+  <%}%>
+  <%}%>
+  <% if (!first) {%>
+ * </ul>
+ * </p>
+  <%}%>
+<%}%>
+ *
+ * @generated
+ */
+ 
+public class <%=genClass.getName()%>Test extends  <%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest") %>
+{
+
+<% if ( !UML2GenModelUtil.getOperationsClassGenOperations(genClass).isEmpty() ) { %>
+
+<%for (GenOperation genOperation : UML2GenModelUtil.getOperationsClassGenOperations(genClass)) {%>
+
+<% if ( genOperation.getName().startsWith("validate") ) { %>
+/**
+*
+* @generated
+*/
+@Test
+
+ 
+									
+public void test<%= genOperation.getName().substring(0, 1).toUpperCase() +	genOperation.getName().substring(1) %>() {
+			OperationsTestCase<<%=genOperation.getGenClass().getName() %>> <%=genOperation.getName()%>TestCase = new OperationsTestCase<<%=genOperation.getGenClass().getName() %>>(
+			"<%=genOperation.getName()%>",
+			operationsForOCL.getOCLValue("<%=UML2GenModelUtil.getUpperName(genOperation.getName())%><%=genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))%>__EOCL_EXP")
+			,objectFactory) {
+
+			@Override
+			protected void updateToFail(<%=genOperation.getGenClass().getName() %> target) {
+
+			}
+
+			@Override
+			protected void updateToPass(<%=genOperation.getGenClass().getName() %> target) {
+				target.init();
+				
+				<% if ( genOperation.getName().endsWith("EffectiveTime") ) { %>
+					<%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS") %> ts = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory") %> .eINSTANCE.createIVL_TS();
+					target.setEffectiveTime(ts );								
+				<% } %>
+				
+				
+			<% if ( genOperation.getName().endsWith("StatusCode") ) { %>
+				<%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.CS") %> cs = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory") %>.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
+			<% } %>	
+
+				
+			<% if ( genOperation.getName().endsWith("Value") && ! genOperation.getName().endsWith("TitleValue") && ! genOperation.getName().endsWith("MoodCodeValue") ) { %>
+				<%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.CD") %> value = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory") %>.eINSTANCE.createCD();
+				target.getValues().add(value);
+			<% } %>	
+
+	
+		<% if ( genOperation.getName().endsWith("SectionTitle") ) { %>
+				<%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.ST") %>  title = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory") %>.eINSTANCE.createST("title");
+				target.setTitle(title );
+			<% } %>	
+
+	
+	<% if ( genOperation.getName().endsWith("SectionText") ) { %>	
+				<%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.StrucDocText") %> text = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.CDAFactory") %>.eINSTANCE.createStrucDocText();
+				target.setText(text );
+		<% } %>	
+				
+	<% if ( genOperation.getName().endsWith("SectionTitleValue") ) { %>
+				<%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.ST") %>  title = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory") %>.eINSTANCE.createST("<%=UML2GenModelUtil.getOCLBody(genOperation).split("'")[1]   %>");
+				
+				target.setTitle(title );
+			<% } %>	
+			
+			<% if ( genOperation.getName().endsWith("Section") ) { %>
+				
+				/* <%= genOperation.getName().substring(genOperation.getName().indexOf(genClass.getName()) + genClass.getName().length()  ) %> */ 
+				<%= genModel.getImportedName(genOperation.getName().substring(genOperation.getName().indexOf(genClass.getName()) + genClass.getName().length()  )) %> section =
+				
+				<%= genModel.getImportedName(genPackage.getQualifiedFactoryInterfaceName())  %>.<%=genPackage.getFactoryInstanceName() %>.create<%= genModel.getImportedName(genOperation.getName().substring(genOperation.getName().indexOf(genClass.getName()) + genClass.getName().length()  )) %>().init(); 
+					
+			
+			target.addSection(section);
+			<% } %>	
+			
+				
+				
+				
+			<% if ( genOperation.getName().endsWith("ObservationCode") ) { %>
+				<%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.CD") %> cd  = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory") %>.eINSTANCE.createCD();
+				target.setCode(cd);
+			<% } %>	
+				
+				
+			<% if ( genOperation.getName().endsWith("ObservationId") ) { %>
+				<%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.II") %> ii  = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory") %>.eINSTANCE.createII();
+				target.getIds().add(ii);				
+			<% } %>	
+				
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, <%=genModel.getImportedName("org.eclipse.emf.common.util.BasicDiagnostic") %> diagnostician, <%=genModel.getImportedName("java.util.Map") %><Object, Object> map) {
+			
+			
+			
+				return <%= genModel.getImportedName(UML2GenModelUtil.getQualifiedOperationsClassName(genClass)) %>.<%=genOperation.getName() %>(
+					(<%=genOperation.getGenClass().getName() %>) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		<%=genOperation.getName()%>TestCase.doValidationTest();
+}		
+
+<% } %>
+
+<% if ( genOperation.getName().startsWith("get") ) { %>
+
+/**
+*
+* @generated
+*/
+@Test
+
+ 
+									
+public void test<%= genOperation.getName().substring(0, 1).toUpperCase() +	genOperation.getName().substring(1) %>() {
+
+<% if ( genOperation.getGenParameters().isEmpty() ) { %>
+
+<%=genOperation.getGenClass().getName() %> target = objectFactory.create();
+target.<%= genOperation.getName() %>();
+
+
+<%}%>
+
+}
+
+
+<%}%>
+
+<%}%>
+
+/**
+*
+* @generated
+*/
+	private static class OperationsForOCL extends <%= genModel.getImportedName(UML2GenModelUtil.getQualifiedOperationsClassName(genClass)) %> {
+		public String getOCLValue(String fieldName) {
+
+			String oclValue = null;
+
+			try {
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+			} catch (Exception e) {
+				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
+			}
+			return oclValue;
+		}
+	}
+	
+/**
+*
+* @generated
+*/
+	private static class ObjectFactory implements TestObjectFactory<<%= genClass.getImportedInstanceClassName() %>> 
+	{
+		public <%= genClass.getName() %> create() {		
+			return <%= genModel.getImportedName(genPackage.getQualifiedFactoryInterfaceName())  %>.<%=genPackage.getFactoryInstanceName() %>.create<%= genClass.getName() %>();
+		}
+	}
+
+
+/**
+*
+* @generated
+*/
+	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
+
+/**
+*
+* @generated
+*/
+	private static ObjectFactory objectFactory = new ObjectFactory();
+
+
+		/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+	private static class ConstructorTestClass extends <%= genModel.getImportedName(UML2GenModelUtil.getQualifiedOperationsClassName(genClass)) %> {};
+	
+		/**
+* Tests Operations Constructor for 100% coverage
+* @generated
+*/	
+		@Test
+	public void testConstructor() {
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+	} // testConstructor
+	
+	<% } else { %>
+
+		/**
+* No Operations Test
+* @generated
+*/	
+		@Test
+	public void testNoOperations() {
+	}
+	
+	<% } %>
+	
+	/**
+*
+* @generated
+*/
+	@Override
+	protected <%=genModel.getImportedName("org.eclipse.emf.ecore.EObject") %> getObjectToTest() {		
+		return null;
+	}
+	
+	
+
+	
+	
+} // <%=UML2GenModelUtil.getOperationsClassName(genClass)%>
+<%genModel.emitSortedImports();%>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  Copyright (c) 2009, 2011 David A Carlson.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      David A Carlson - initial API and implementation
+      
+  $Id$
+-->
+
+<project name="Publish DITA"  >
+
+	<import file="${dita.dir}/integrator.xml"/>
+	
+	<target name="standards-pdf">
+
+   	<antcall target="pdf">
+    		<param name="dita.input.valfile" value="${ditaFilePath}/ditaval_standards.xml" />
+    		<param name="pdf.filename" value="${fileName}.pdf" />
+    	</antcall>
+	</target>
+
+	<target name="standards-eclipsehelp">
+		<antcall target="eclipsehelp">
+    		<param name="dita.input.valfile" value="${ditaFilePath}/ditaval_standards.xml" />
+    	</antcall>
+		
+	</target>
+
+	<target name="developer-pdf">
+		<echo message="${docProject}/${pdf.filename}" />
+    	<antcall target="pdf">
+    		<param name="dita.input.valfile" value="${ditaFilePath}/ditaval_developer.xml" />
+    		<param name="pdf.filename" value="${fileName}_developer.pdf" />
+    	</antcall>
+	</target>
+	
+
+	<target name="eclipsehelp" depends="integrate">
+		<property name="eclipsehelp.output" value="${outputLocation}" />
+
+		<delete quiet="true">
+			<fileset dir="${eclipsehelp.output}/introduction" includes="**"/>
+			<fileset dir="${eclipsehelp.output}/content" includes="**"/>
+			<fileset dir="${eclipsehelp.output}/classes" includes="**"/>
+			<fileset dir="${eclipsehelp.output}/terminology" includes="**"/>
+		</delete>
+			
+		<ant antfile="${dita.dir}/build.xml" target="init">
+			<property name="transtype" value="eclipsehelp" />
+			<property name="args.input" value="${ditaMapFile}" />
+			<property name="args.hdr" value="${ditaFilePath}/header.xml" />
+			<property name="output.dir" value="${eclipsehelp.output}" />
+			<property name="dita.extname" value=".dita" />
+			<property name="dita.temp.dir" location="temp" />
+			<property name="clean.temp" value="true" />
+			
+			<property name="args.csspath" value="css" />
+			<property name="args.copycss" value="no" />
+			<property name="dita.eclipse.plugin" value="no" />
+		</ant>
+
+		<delete file="${eclipsehelp.output}/dita.list"/>
+		<delete file="${eclipsehelp.output}/dita.xml.properties"/>
+		<delete file="${eclipsehelp.output}/delta.gif"/>
+		<delete file="${eclipsehelp.output}/deltaend.gif"/>
+	</target>
+
+	<target name="pdf" depends="integrate">
+		
+		<delete file="${docProject}/${pdf.filename}" />
+		
+		<ant antfile="${dita.dir}/build.xml" target="init" >
+				<property name="transtype" value="pdf" />
+				<property name="args.input" value="${ditaMapFile}" />
+				<property name="args.hdr" value="${ditaFilePath}/header.xml" />
+				<property name="dita.temp.dir" location="${tempFilePath}" />
+				<property name="clean.temp" value="true" />
+			   <property name="output.dir" value="${pdf.output}" />
+		</ant>
+
+<!--		<move file="${pdf.output}/${pdflocation}" tofile="${docProject}/${pdf.filename}" /> -->
+		
+		<!-- Seem to end up with the pdf file in different file dirs; so now we just move all pdfs, which there should be only one to the project directory then rename it there -->
+		
+	  <move todir="${docProject}" flatten="true">
+	    <fileset dir="${pdf.output}">
+	      <include name="**/${pdflocation}"/>
+	    </fileset>
+	  </move>
+		
+		<move file="${docProject}/${pdflocation}" tofile="${docProject}/${pdf.filename}" />
+
+		
+		<delete dir="${pdf.output}"/>
+		
+	</target>
+
+</project>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+ "topic.dtd">
+<topic id="topicId" xml:lang="en-us">
+	<title>Approach</title>
+	<body>
+		<p>Working with specifications generated from formal UML models provides the
+			opportunity to work with the data from the perspective of the
+			underlying model and electronic format and to explore many design
+			issues thoroughly. Taking this as an initial step ensures that the
+			data set developers and standards community can reach consensus prior
+			to the larger commitment of time that would be required to bring the
+			full data set into standard format.</p>
+		<p>This project supports reusability and ease of data collection
+			through a standard data representation harmonized with work developed
+			through Health Information Technology Expert Panel (HITEP), balloted
+			through Health Level Seven (HL7) and/or recognized by the Health
+			Information Technology Standards Panel (HITSP).</p>
+		<p>This implementation guide (IG) specifies a standard for electronic
+			submission of NCRs in a Clinical Document Architecture (CDA), Release
+			2 format.</p>
+	</body>
+</topic>
