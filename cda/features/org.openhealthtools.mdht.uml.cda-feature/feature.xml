@@ -2,7 +2,7 @@
 <feature
       id="org.openhealthtools.mdht.uml.cda"
       label="%featureName"
-      version="0.7.0.qualifier"
+      version="1.0.0.qualifier"
       provider-name="%featureProvider">
 
    <description url="http://mdht.projects.openhealthtools.org">
@@ -21,30 +21,26 @@
       <update label="%updateSiteName" url="http://oht-modeling.sourceforge.net/updates"/>
    </url>
 
-  <requires>
+   <requires>
       <import feature="org.eclipse.platform" version="3.5.0" match="greaterOrEqual"/>
       <import feature="org.eclipse.uml2" version="3.0.0" match="greaterOrEqual"/>
       <import feature="org.openhealthtools.mdht.uml" version="0.7.0" match="greaterOrEqual"/>
    </requires>
 
- 
-      <plugin
+   <plugin
          id="org.openhealthtools.mdht.uml.cda.core"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
+
    <plugin
          id="org.openhealthtools.mdht.uml.cda"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-         
- 
- 
+
    <plugin
          id="org.openhealthtools.mdht.uml.cda.ant"
          download-size="0"
@@ -65,15 +61,13 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
 
    <plugin
          id="org.openhealthtools.mdht.uml.cda.validation"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>         
-         
+         unpack="false"/>
 
    <plugin
          id="org.openhealthtools.mdht.uml.cda.ui"
@@ -102,24 +96,22 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-         
- <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.hl7.rim"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-         
-          <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.hl7.datatypes"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
-  <plugin
+   <plugin
          id="org.openhealthtools.mdht.uml.hl7.vocab"
          download-size="0"
          install-size="0"
