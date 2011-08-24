@@ -17,6 +17,7 @@ package org.openhealthtools.mdht.uml.cda.ant.taskdefs;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
 
@@ -115,8 +116,9 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 	}
 
 	private void transformToUML(IProgressMonitor monitor) {
-		Package umlModel = getHL7ModelingTask().getDefaultModel();
-		Resource umlResource = umlModel.eResource();
+		List<Package> umlModels = getHL7ModelingTask().getRootPackages();
+		Package defaultModel = getHL7ModelingTask().getDefaultModel();
+		Resource umlResource = defaultModel.eResource();
 
 		URI propertiesURI = UMLUtil.getPropertiesURI(umlResource);
 		String properties = UMLUtil.readProperties(propertiesURI);
@@ -215,8 +217,11 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 			options.setUseBusinessNames(useBusinessNames);
 		}
 
+		EcoreUtil.resolveAll(defaultModel.eResource().getResourceSet());
 		EcoreTransformer transformer = new EcoreTransformer(options);
-		transformer.transformElement(umlModel);
+		for (Package umlModel : umlModels) {
+			transformer.transformElement(umlModel);
+		}
 
 		monitor.worked(1);
 		if (monitor.isCanceled()) {
