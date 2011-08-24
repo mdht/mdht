@@ -20,6 +20,8 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.OpaqueExpression;
@@ -30,16 +32,29 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAModelConsolidator;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
-public class GenDomainInterface extends TransformAbstract {
-	private GenDomainProperty genDomainProperty = new GenDomainProperty(transformerOptions);
+public class GenDomainInterface extends TransformFacade {
+	private GenDomainProperty genDomainProperty;
 
-	public GenDomainInterface(EcoreTransformerOptions options) {
-		super(options);
+	public GenDomainInterface(EcoreTransformerOptions options, CDAModelConsolidator consolidator) {
+		super(options, consolidator);
+		this.genDomainProperty = new GenDomainProperty(transformerOptions, consolidator);
+	}
+
+	@Override
+	public Object caseElementImport(ElementImport elementImport) {
+		// a class may be imported into this domain facade interface
+		Element element = elementImport.getImportedElement();
+		if (element instanceof Class) {
+			return caseClass((Class) element);
+		}
+		return null;
 	}
 
 	@Override
 	public Object caseClass(Class umlClass) {
 		Classifier domainInterface = getDomainInterface(umlClass);
+		consolidator.getImportedClassifiers().remove(umlClass);
+		consolidator.addProcessedClassifier(umlClass);
 
 		if (transformerOptions.isIncludeInterfaceRealization() && domainInterface instanceof Interface) {
 			umlClass.createInterfaceRealization(null, (Interface) domainInterface);
@@ -89,7 +104,6 @@ public class GenDomainInterface extends TransformAbstract {
 			}
 		}
 
-		CDAModelConsolidator consolidator = new CDAModelConsolidator();
 		List<Property> allProperties = consolidator.getAllProperties(umlClass);
 		for (Property property : allProperties) {
 			genDomainProperty.addProperty(property, umlClass);

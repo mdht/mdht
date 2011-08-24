@@ -58,11 +58,17 @@ public class CDAModelConsolidator {
 
 	private Map<String, Enumeration> vocabMapping;
 
+	private List<Classifier> importedClassifiers;
+
+	private Set<Classifier> processedClassifiers;
+
 	public CDAModelConsolidator() {
 		sourceInheritance = new HashMap<Classifier, List<Classifier>>();
 		consolMapping = new HashMap<String, Class>();
 		consolInheritance = new HashMap<Classifier, List<Classifier>>();
 		vocabMapping = new HashMap<String, Enumeration>();
+		importedClassifiers = new ArrayList<Classifier>();
+		processedClassifiers = new HashSet<Classifier>();
 	}
 
 	public CDAModelConsolidator(Package sourcePackage, Package consolPackage, Package vocabPackage) {
@@ -84,6 +90,26 @@ public class CDAModelConsolidator {
 		}
 	}
 
+	public List<Classifier> getImportedClassifiers() {
+		return importedClassifiers;
+	}
+
+	public void addImportedClassifier(Classifier classifier) {
+		if (!importedClassifiers.contains(classifier)) {
+			importedClassifiers.add(classifier);
+		}
+	}
+
+	public Set<Classifier> getProcessedClassifiers() {
+		return processedClassifiers;
+	}
+
+	public void addProcessedClassifier(Classifier classifier) {
+		if (!processedClassifiers.contains(classifier)) {
+			processedClassifiers.add(classifier);
+		}
+	}
+
 	public Class consolidateClass(Class sourceClass) {
 		if (CDAModelUtil.isCDAModel(sourceClass)) {
 			return sourceClass;
@@ -91,7 +117,7 @@ public class CDAModelConsolidator {
 
 		Class consolidatedClass = consolMapping.get(EcoreUtil.getURI(sourceClass).toString());
 		if (consolidatedClass == null) {
-			System.out.println("Consolidate: " + sourceClass.getQualifiedName());
+			// System.out.println("Consolidate: " + sourceClass.getQualifiedName());
 			consolidatedClass = copyToConsolPackage(sourceClass);
 			mergeInheritedProperties(sourceClass, consolidatedClass);
 

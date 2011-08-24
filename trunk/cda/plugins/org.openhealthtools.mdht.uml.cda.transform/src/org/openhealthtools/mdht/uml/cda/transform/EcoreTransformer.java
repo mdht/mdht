@@ -21,8 +21,10 @@ import java.util.Map;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.util.UMLSwitch;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelConsolidator;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 
 public class EcoreTransformer {
@@ -41,7 +43,8 @@ public class EcoreTransformer {
 		PluginPropertiesUtil propertiesUtil = new PluginPropertiesUtil(element.eResource());
 		transformerOptions.setPluginPropertiesUtil(propertiesUtil);
 
-		UMLSwitch<Object> genDomainInterface = new GenDomainInterface(transformerOptions);
+		CDAModelConsolidator consolidator = new CDAModelConsolidator();
+		UMLSwitch<Object> genDomainInterface = new GenDomainInterface(transformerOptions, consolidator);
 
 		UMLSwitch<Object> transformPackage = new TransformPackage(transformerOptions);
 		UMLSwitch<Object> transformClass = new TransformClass(transformerOptions);
@@ -78,6 +81,12 @@ public class EcoreTransformer {
 		}
 
 		if (transformerOptions.isGenerateDomainInterface() || transformerOptions.isGenerateDomainClasses()) {
+			// generate all imported classes
+			while (!consolidator.getImportedClassifiers().isEmpty()) {
+				Classifier classifier = consolidator.getImportedClassifiers().remove(0);
+				genDomainInterface.doSwitch(classifier);
+			}
+
 			try {
 				Map<String, String> saveOptions = new HashMap<String, String>();
 				transformerOptions.getDomainInterfacePackage().eResource().save(saveOptions);
