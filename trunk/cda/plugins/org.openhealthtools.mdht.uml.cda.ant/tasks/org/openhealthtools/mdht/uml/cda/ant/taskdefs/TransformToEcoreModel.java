@@ -46,6 +46,12 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 
 	private String domainModelPath = null;
 
+	private String domainBasePackage = null;
+
+	private String domainPackageName = null;
+
+	private String domainNsURI = null;
+
 	private String builderModelPath = null;
 
 	private Boolean generateDomainInterface = null;
@@ -216,6 +222,15 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		if (useBusinessNames != null) {
 			options.setUseBusinessNames(useBusinessNames);
 		}
+		if (domainPackageName != null) {
+			options.setDomainPackageName(domainPackageName);
+		}
+		if (domainBasePackage != null) {
+			options.setDomainBasePackage(domainBasePackage);
+		}
+		if (domainNsURI != null) {
+			options.setDomainNsURI(domainNsURI);
+		}
 
 		EcoreUtil.resolveAll(defaultModel.eResource().getResourceSet());
 		EcoreTransformer transformer = new EcoreTransformer(options);
@@ -253,6 +268,18 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 
 	public void setDomainModel(String path) {
 		domainModelPath = path;
+	}
+
+	public void setDomainPackageName(String name) {
+		domainPackageName = name;
+	}
+
+	public void setDomainBasePackage(String basePackage) {
+		domainBasePackage = basePackage;
+	}
+
+	public void setDomainNsURI(String nsURI) {
+		domainNsURI = nsURI;
 	}
 
 	public void setBuilderModel(String path) {
