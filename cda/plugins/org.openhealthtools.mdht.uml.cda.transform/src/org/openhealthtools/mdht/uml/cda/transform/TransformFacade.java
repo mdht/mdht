@@ -59,33 +59,53 @@ public abstract class TransformFacade extends TransformAbstract {
 			if (domainResource.getContents().isEmpty() || !(domainResource.getContents().get(0) instanceof Package)) {
 				domainPkg = UMLFactory.eINSTANCE.createPackage();
 				domainResource.getContents().add(domainPkg);
-				domainPkg.setName("domain");
 
-				Stereotype codeGen = CDAProfileUtil.getAppliedCDAStereotype(
+				// assign Ecore EPackage stereotype
+				Stereotype ePackage = EcoreTransformUtil.getEcoreStereotype(modelPkg, UMLUtil.STEREOTYPE__E_PACKAGE);
+				UMLUtil.safeApplyStereotype(domainPkg, ePackage);
+
+				domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__NS_PREFIX, "domain");
+				domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__PREFIX, "Domain");
+
+				String domainPackageName = transformerOptions.getDomainPackageName();
+				String domainBasePackage = transformerOptions.getDomainBasePackage();
+				String domainNsURI = transformerOptions.getDomainNsURI();
+
+				String modelPackageName = null;
+				String modelNsURI = null;
+				String modelBasePackage = null;
+
+				Stereotype modelCodeGen = CDAProfileUtil.getAppliedCDAStereotype(
 					modelPkg, ICDAProfileConstants.CODEGEN_SUPPORT);
-				if (codeGen != null) {
-					// assign Ecore EPackage stereotype
-					Stereotype ePackage = EcoreTransformUtil.getEcoreStereotype(modelPkg, UMLUtil.STEREOTYPE__E_PACKAGE);
-					UMLUtil.safeApplyStereotype(domainPkg, ePackage);
-
-					domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__NS_PREFIX, "domain");
-					domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__PACKAGE_NAME, "domain");
-					domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__PREFIX, "Domain");
-
-					String packageName = (String) modelPkg.getValue(
-						codeGen, ICDAProfileConstants.CODEGEN_SUPPORT_PACKAGE_NAME);
-					String nsURI = (String) modelPkg.getValue(codeGen, ICDAProfileConstants.CODEGEN_SUPPORT_NS_URI);
-					String basePackage = (String) modelPkg.getValue(
-						codeGen, ICDAProfileConstants.CODEGEN_SUPPORT_BASE_PACKAGE);
-
-					if (basePackage != null && packageName != null) {
-						domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__BASE_PACKAGE, basePackage + "." +
-								packageName);
-					}
-					if (nsURI != null) {
-						domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__NS_URI, nsURI + "/domain");
-					}
+				if (modelCodeGen != null) {
+					modelPackageName = (String) modelPkg.getValue(
+						modelCodeGen, ICDAProfileConstants.CODEGEN_SUPPORT_PACKAGE_NAME);
+					modelNsURI = (String) modelPkg.getValue(modelCodeGen, ICDAProfileConstants.CODEGEN_SUPPORT_NS_URI);
+					modelBasePackage = (String) modelPkg.getValue(
+						modelCodeGen, ICDAProfileConstants.CODEGEN_SUPPORT_BASE_PACKAGE);
 				}
+
+				if (domainPackageName != null) {
+					domainPkg.setName(domainPackageName);
+					domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__PACKAGE_NAME, domainPackageName);
+				} else {
+					domainPkg.setName("domain");
+					domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__PACKAGE_NAME, "domain");
+				}
+
+				if (domainBasePackage != null) {
+					domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__BASE_PACKAGE, domainBasePackage);
+				} else if (modelBasePackage != null && modelPackageName != null) {
+					domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__BASE_PACKAGE, modelBasePackage + "." +
+							modelPackageName);
+				}
+
+				if (domainNsURI != null) {
+					domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__NS_URI, domainNsURI);
+				} else if (modelNsURI != null) {
+					domainPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__NS_URI, modelNsURI + "/domain");
+				}
+
 			} else {
 				domainPkg = (Package) domainResource.getContents().get(0);
 			}

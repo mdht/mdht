@@ -37,6 +37,12 @@ public class EcoreTransformerOptions {
 
 	public static final String USE_BUSINESS_NAMES = "useBusinessNames";
 
+	public static final String DOMAIN_BASE_PACKAGE = "domainBasePackage";
+
+	public static final String DOMAIN_PACKAGE_NAME = "domainPackageName";
+
+	public static final String DOMAIN_NSURI = "domainNsURI";
+
 	private boolean generateDomainInterface;
 
 	private boolean generateDomainClasses;
@@ -53,6 +59,12 @@ public class EcoreTransformerOptions {
 	private List<Element> deletedElementList = new Vector<Element>();
 
 	private String domainModelPath;
+
+	private String domainBasePackage;
+
+	private String domainPackageName;
+
+	private String domainNsURI;
 
 	private String builderModelPath;
 
@@ -145,6 +157,30 @@ public class EcoreTransformerOptions {
 
 	public void setDomainModelPath(String domainModelPath) {
 		this.domainModelPath = domainModelPath;
+	}
+
+	public String getDomainBasePackage() {
+		return domainBasePackage;
+	}
+
+	public void setDomainBasePackage(String domainBasePackage) {
+		this.domainBasePackage = domainBasePackage;
+	}
+
+	public String getDomainPackageName() {
+		return domainPackageName;
+	}
+
+	public void setDomainPackageName(String domainPackageName) {
+		this.domainPackageName = domainPackageName;
+	}
+
+	public String getDomainNsURI() {
+		return domainNsURI;
+	}
+
+	public void setDomainNsURI(String domainNsURI) {
+		this.domainNsURI = domainNsURI;
 	}
 
 	public boolean isGenerateBuilderClasses() {
