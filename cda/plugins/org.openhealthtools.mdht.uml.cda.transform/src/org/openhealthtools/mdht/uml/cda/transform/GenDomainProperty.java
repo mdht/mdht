@@ -22,19 +22,18 @@ import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLFactory;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelConsolidator;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
-public class GenDomainProperty extends TransformAbstract {
+public class GenDomainProperty extends TransformFacade {
+	private GenMethodHelper methodHelper;
 
-	protected GenMethodHelper methodHelper;
-
-	public GenDomainProperty(EcoreTransformerOptions options) {
-		super(options);
-
-		methodHelper = new GenMethodHelper(transformerOptions);
+	public GenDomainProperty(EcoreTransformerOptions options, CDAModelConsolidator consolidator) {
+		super(options, consolidator);
+		this.methodHelper = new GenMethodHelper(transformerOptions);
 	}
 
 	@Override
@@ -71,8 +70,8 @@ public class GenDomainProperty extends TransformAbstract {
 		Classifier domainType = null;
 		if (UMLUtil.isSameModel(property.getType(), ownerClass)) {
 			domainType = getDomainInterface(property.getType());
-			// } else if (!CDAModelUtil.isCDAModel(property.getType()) && !CDAModelUtil.isDatatypeModel(property.getType())) {
-			// domainType = getDomainInterface(property.getType());
+		} else if (!CDAModelUtil.isCDAModel(property.getType()) && !CDAModelUtil.isDatatypeModel(property.getType())) {
+			domainType = getDomainInterface(property.getType());
 		} else {
 			domainType = (Classifier) property.getType();
 		}
