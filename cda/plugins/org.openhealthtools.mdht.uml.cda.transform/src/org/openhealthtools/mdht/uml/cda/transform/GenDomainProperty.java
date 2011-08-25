@@ -53,6 +53,11 @@ public class GenDomainProperty extends TransformFacade {
 			return;
 		}
 
+		// prohibited properties have upper bound 0
+		if (property.getUpper() == 0) {
+			return;
+		}
+
 		// if greenCDA style interfaces, omit all operations for fixed values
 		if (isFixedValue(property) && !transformerOptions.isIncludeFixedValueGetters()) {
 			return;
