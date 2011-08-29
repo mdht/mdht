@@ -57,6 +57,9 @@ plugin@org.openhealthtools.mdht.uml.cda.hitsp.facade=SVN,trunk,https://www.proje
 
 plugin@org.openhealthtools.mdht.uml.cda.ihe=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.ihe,force
 
+plugin@org.openhealthtools.mdht.uml.cda.toc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.toc,force
+
+plugin@org.openhealthtools.mdht.uml.cda.toc.domain=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.toc.domain,force
 
 !####plugin@org.openhealthtools.mdht.uml.cda.ncr=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ncr,force
 
