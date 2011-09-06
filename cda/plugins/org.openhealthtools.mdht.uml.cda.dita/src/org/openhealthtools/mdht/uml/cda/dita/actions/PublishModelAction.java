@@ -276,7 +276,7 @@ public class PublishModelAction implements IObjectActionDelegate {
 
 		Map<String, String> antProperties = new HashMap<String, String>();
 
-		antProperties.put("dita.dir", ditadirURL.toURI().getRawPath());
+		antProperties.put("dita.dir", ditadirURL.getPath());
 		antProperties.put("ditaMapFile", ditaMapFile.getLocation().toOSString());
 		antProperties.put("outputLocation", ditaProject.getLocation().toOSString());
 		antProperties.put(
