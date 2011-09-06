@@ -654,7 +654,12 @@ public class UMLUtil {
 	 * @return A properties file URI.
 	 */
 	public static URI getPropertiesURI(Resource resource) {
-		return resource.getURI().trimFileExtension().appendFileExtension("properties");
+		// test added due to runtime NPE
+		if (resource != null && resource.getURI() != null) {
+			return resource.getURI().trimFileExtension().appendFileExtension("properties");
+		} else {
+			return null;
+		}
 	}
 
 	public static List<Property> getRedefinedProperties(Property property) {
@@ -926,15 +931,17 @@ public class UMLUtil {
 	 * @return The contents of the properties file as a string, or <code>null</code> if an exception occurs.
 	 */
 	public static String readProperties(URI uri) {
-		try {
-			BufferedInputStream bufferedInputStream = new BufferedInputStream(
-				new ExtensibleURIConverterImpl().createInputStream(uri));
-			byte[] input = new byte[bufferedInputStream.available()];
-			bufferedInputStream.read(input);
-			bufferedInputStream.close();
-			return new String(input, PROPERTIES_ENCODING);
-		} catch (IOException exception) {
-			// ignore
+		if (uri != null) {
+			try {
+				BufferedInputStream bufferedInputStream = new BufferedInputStream(
+					new ExtensibleURIConverterImpl().createInputStream(uri));
+				byte[] input = new byte[bufferedInputStream.available()];
+				bufferedInputStream.read(input);
+				bufferedInputStream.close();
+				return new String(input, PROPERTIES_ENCODING);
+			} catch (IOException exception) {
+				// ignore
+			}
 		}
 
 		return null;
