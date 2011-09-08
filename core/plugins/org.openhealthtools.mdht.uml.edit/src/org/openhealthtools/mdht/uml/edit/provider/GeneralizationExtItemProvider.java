@@ -25,12 +25,10 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Generalization;
-import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.edit.providers.GeneralizationItemProvider;
-import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
-import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
+import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 
@@ -140,19 +138,8 @@ public class GeneralizationExtItemProvider extends GeneralizationItemProvider im
 		switch (columnIndex) {
 			case IUMLTableProperties.NAME_INDEX:
 				return getText(object);
-			case IUMLTableProperties.ANNOTATION_INDEX: {
-				for (Profile profile : generalization.getNearestPackage().getAllAppliedProfiles()) {
-					// eResource is null for unresolved eProxyURI, missing profiles
-					if (profile.eResource() != null) {
-						// use the first notation provider found for an applied profile, ignore others
-						String profileURI = profile.eResource().getURI().toString();
-						INotationProvider provider = NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-						if (provider != null) {
-							return provider.getAnnotation(generalization.getGeneral());
-						}
-					}
-				}
-			}
+			case IUMLTableProperties.ANNOTATION_INDEX:
+				return NotationUtil.getAnnotation(generalization.getGeneral());
 			default:
 				return null;
 		}

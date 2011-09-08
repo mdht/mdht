@@ -13,7 +13,6 @@
 package org.openhealthtools.mdht.uml.cda.ui.dialogs;
 
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
 import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
@@ -27,22 +26,18 @@ public class TemplateEditorViewLabelProvider extends SubclassEditorViewLabelProv
 	@Override
 	public Image getImage(Object element) {
 		if (element instanceof Property) {
-			for (Profile profile : ((Property) element).getNearestPackage().getAllAppliedProfiles()) {
-				// use the first notation provider found for an applied profile, ignore others
-				String profileURI = profile.eResource().getURI().toString();
-				INotationProvider provider = NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-				if (provider != null) {
-					Property property = (Property) element;
-					Object image = null;
-					if (property.getAssociation() != null) {
-						image = provider.getAnnotationImage(property.getAssociation());
-					} else {
-						image = provider.getAnnotationImage(property);
-					}
+			Property property = (Property) element;
+			INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(property);
+			if (provider != null) {
+				Object image = null;
+				if (property.getAssociation() != null) {
+					image = provider.getAnnotationImage(property.getAssociation());
+				} else {
+					image = provider.getAnnotationImage(property);
+				}
 
-					if (image instanceof Image) {
-						return (Image) image;
-					}
+				if (image instanceof Image) {
+					return (Image) image;
 				}
 			}
 		}

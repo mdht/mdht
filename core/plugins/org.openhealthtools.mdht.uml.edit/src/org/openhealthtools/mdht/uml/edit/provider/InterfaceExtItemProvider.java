@@ -21,10 +21,12 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.edit.providers.InterfaceItemProvider;
+import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
@@ -79,9 +81,9 @@ public class InterfaceExtItemProvider extends InterfaceItemProvider implements I
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	@Override
-	public Collection getChildren(Object object) {
+	public Collection<Element> getChildren(Object object) {
 		Interface umlInterface = (Interface) object;
-		List children = new ArrayList();
+		List<Element> children = new ArrayList<Element>();
 		children.addAll(umlInterface.getOwnedComments());
 		children.addAll(umlInterface.getOwnedRules());
 		children.addAll(umlInterface.getGeneralizations());
@@ -96,6 +98,8 @@ public class InterfaceExtItemProvider extends InterfaceItemProvider implements I
 		switch (columnIndex) {
 			case IUMLTableProperties.NAME_INDEX:
 				return getImage(object);
+			case IUMLTableProperties.ANNOTATION_INDEX:
+				return NotationUtil.getAnnotationImage((Classifier) object);
 			default:
 				return null;
 		}
@@ -114,6 +118,8 @@ public class InterfaceExtItemProvider extends InterfaceItemProvider implements I
 				} else {
 					return classifier.getVisibility().getName();
 				}
+			case IUMLTableProperties.ANNOTATION_INDEX:
+				return NotationUtil.getAnnotation(classifier);
 			default:
 				return null;
 		}

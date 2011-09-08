@@ -21,10 +21,12 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.edit.providers.PrimitiveTypeItemProvider;
+import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
@@ -80,9 +82,9 @@ public class PrimitiveTypeExtItemProvider extends PrimitiveTypeItemProvider impl
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	@Override
-	public Collection getChildren(Object object) {
+	public Collection<Element> getChildren(Object object) {
 		PrimitiveType datatype = (PrimitiveType) object;
-		List children = new ArrayList();
+		List<Element> children = new ArrayList<Element>();
 		children.addAll(datatype.getOwnedComments());
 		children.addAll(datatype.getOwnedRules());
 		children.addAll(datatype.getGeneralizations());
@@ -94,9 +96,13 @@ public class PrimitiveTypeExtItemProvider extends PrimitiveTypeItemProvider impl
 
 	@Override
 	public Object getColumnImage(Object object, int columnIndex) {
+		Classifier classifier = (Classifier) object;
+
 		switch (columnIndex) {
 			case IUMLTableProperties.NAME_INDEX:
 				return getImage(object);
+			case IUMLTableProperties.ANNOTATION_INDEX:
+				return NotationUtil.getAnnotationImage(classifier);
 			default:
 				return null;
 		}
@@ -115,6 +121,8 @@ public class PrimitiveTypeExtItemProvider extends PrimitiveTypeItemProvider impl
 				} else {
 					return classifier.getVisibility().getName();
 				}
+			case IUMLTableProperties.ANNOTATION_INDEX:
+				return NotationUtil.getAnnotation(classifier);
 			default:
 				return null;
 		}

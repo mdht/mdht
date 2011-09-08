@@ -74,6 +74,11 @@ public interface IUMLNotation {
 	public final static int DEFAULT_UML_PROPERTY_ANNOTATIONS = DISP_MOFIFIERS;
 
 	/**
+	 * Default UML class display.
+	 */
+	public final static int DEFAULT_UML_CLASS = DISP_VISIBILITY | DISP_NAME;
+
+	/**
 	 * Default UML class annotations.
 	 */
 	public final static int DEFAULT_UML_CLASS_ANNOTATIONS = DISP_MOFIFIERS;
