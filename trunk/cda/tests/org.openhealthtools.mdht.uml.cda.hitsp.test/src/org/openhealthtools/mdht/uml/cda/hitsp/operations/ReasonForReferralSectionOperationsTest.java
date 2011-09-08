@@ -36,7 +36,7 @@ public class ReasonForReferralSectionOperationsTest extends
 		@Override
 		protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 				final Map<Object, Object> map) {
-			return ReasonForReferralSectionOperations.validateHITSPReasonForReferralSectionTemplateId(
+			return ReasonForReferralSectionOperations.validateReasonForReferralSectionTemplateId(
 				(ReasonForReferralSection) objectToTest, diagnostician, map);
 		}
 
