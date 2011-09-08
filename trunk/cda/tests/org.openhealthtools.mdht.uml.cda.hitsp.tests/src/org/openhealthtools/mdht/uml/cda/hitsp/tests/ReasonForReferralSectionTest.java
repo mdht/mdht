@@ -13,16 +13,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.ReasonForReferralSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ReasonForReferralSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -67,7 +62,7 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ReasonForReferralSectionOperations.validateHITSPReasonForReferralSectionTemplateId(
+				return ReasonForReferralSectionOperations.validateReasonForReferralSectionTemplateId(
 					(ReasonForReferralSection) objectToTest, diagnostician, map);
 			}
 
