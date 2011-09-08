@@ -68,8 +68,8 @@ import org.openhealthtools.mdht.uml.term.core.profile.BindingKind;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
 import org.openhealthtools.mdht.uml.term.core.profile.TermPackage;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
+import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
@@ -743,14 +743,16 @@ public class CodeSystemConstraintSection extends ResettableModelerPropertySectio
 			versionText.setEnabled(false);
 			codeText.setEnabled(false);
 			displayNameText.setEnabled(false);
+			bindingCombo.setEnabled(false);
 			restoreDefaultsButton.setEnabled(false);
 		} else {
 			codeSystemRefLabel.setEnabled(true);
 			idText.setEnabled(referenceEnum == null);
 			nameText.setEnabled(referenceEnum == null);
 			versionText.setEnabled(referenceEnum == null);
-			codeText.setEnabled(referenceEnum == null);
-			displayNameText.setEnabled(referenceEnum == null);
+			codeText.setEnabled(true);
+			displayNameText.setEnabled(true);
+			bindingCombo.setEnabled(true);
 			restoreDefaultsButton.setEnabled(codeSystemConstraint != null);
 		}
 
