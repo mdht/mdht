@@ -614,6 +614,10 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 			if (project.equals(generatedProject)) {
 				writer.println(String.format(
 					"Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.%s;singleton:=true", modelName));
+				writer.println("Bundle-ActivationPolicy: lazy");
+				writer.println(String.format(
+					"Bundle-Activator: org.openhealthtools.mdht.uml.cda.%s.%sPlugin$Implementation", modelName,
+					modelName.substring(0, 1).toUpperCase() + modelName.substring(1)));
 			} else if (project.equals(docProject)) {
 				writer.println(String.format(
 					"Bundle-SymbolicName: org.openhealthtools.mdht.uml.cda.%s.doc;singleton:=true", modelName));
