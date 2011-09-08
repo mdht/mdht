@@ -10,7 +10,7 @@
 
 
 <!-- MDHT UML Feature -->
-  <feature url="features/org.openhealthtools.mdht.uml_0.7.0.qualifier.jar" id="org.openhealthtools.mdht.uml" version="0.7.0.qualifier">
+  <feature url="features/org.openhealthtools.mdht.uml_1.0.0.qualifier.jar" id="org.openhealthtools.mdht.uml" version="1.0.0.qualifier">
      <category name="org.openhealthtools.mdht.uml.hdf.basic.cat"/>    
      <category name="org.openhealthtools.mdht.uml.hdf.rsm.cat"/>
      <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
@@ -18,7 +18,7 @@
 
 
 <!-- MDHT CDA Feature -->
-  <feature url="features/org.openhealthtools.mdht.uml.cda_0.7.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda" version="0.7.0.qualifier">
+  <feature url="features/org.openhealthtools.mdht.uml.cda_1.0.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda" version="1.0.0.qualifier">
      <category name="org.openhealthtools.mdht.uml.cda.basic.cat"/>
    </feature>
 
@@ -31,13 +31,18 @@
    </feature>
 
 
+<!-- MDHT CDA DOC Features  -->
+  <feature url="features/org.openhealthtools.mdht.uml.cda.models.doc_1.0.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.models.doc" version="1.0.0.qualifier">
+     <category name="org.openhealthtools.mdht.uml.cda.models.doc.cat"/>
+   </feature>
+
 
 <!-- MDHT CDA MODELS Features  -->
-  <feature url="features/org.openhealthtools.mdht.uml.cda.models_0.7.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.models" version="0.7.0.qualifier">
+  <feature url="features/org.openhealthtools.mdht.uml.cda.models_1.0.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.models" version="1.0.0.qualifier">
      <category name="org.openhealthtools.mdht.uml.cda.models.cat"/>
    </feature>
    
-  <feature url="features/org.openhealthtools.mdht.uml.cda.models.source_0.7.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.models.source" version="0.7.0.qualifier">
+  <feature url="features/org.openhealthtools.mdht.uml.cda.models.source_1.0.0.qualifier.jar" id="org.openhealthtools.mdht.uml.cda.models.source" version="1.0.0.qualifier">
      <category name="org.openhealthtools.mdht.uml.cda.models.cat"/>
    </feature>
  
@@ -59,13 +64,15 @@
 -->
 
 <!-- MDHT CDA Categories -->
-   <category-def name="org.openhealthtools.mdht.uml.cda.basic.cat" label="MDHT CDA for Implementation Guide Modeling"/>
+   <category-def name="org.openhealthtools.mdht.uml.cda.basic.cat" label="MDHT CDA Design"/>
    
-   <category-def name="org.openhealthtools.mdht.uml.cda.models.cat" label="MDHT CDA Runtime for Application Development"/>
+   <category-def name="org.openhealthtools.mdht.uml.cda.models.doc.cat" label="MDHT CDA Guides"/>
 
-   <category-def name="org.openhealthtools.mdht.uml.hdf.basic.cat" label="MDHT RIM for UML Modeling"/>
+   <category-def name="org.openhealthtools.mdht.uml.cda.models.cat" label="MDHT CDA Runtime"/>
 
-   <category-def name="org.openhealthtools.mdht.uml.hdf.rsm.cat" label="MDHT RIM for RSM UML Modeling"/>
+   <category-def name="org.openhealthtools.mdht.uml.hdf.basic.cat" label="MDHT RIM Design"/>
+
+   <category-def name="org.openhealthtools.mdht.uml.hdf.rsm.cat" label="MDHT RIM Design for RSM"/>
 
 
 
