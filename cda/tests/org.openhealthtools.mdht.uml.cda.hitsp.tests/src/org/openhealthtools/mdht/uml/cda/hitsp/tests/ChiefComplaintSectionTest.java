@@ -13,16 +13,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ChiefComplaintSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -34,6 +29,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ChiefComplaintSection#validateHITSPChiefComplaintSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Chief Complaint Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ChiefComplaintSection#validateHITSPChiefComplaintSectionCondition(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Chief Complaint Section Condition</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ChiefComplaintSection#getCondition() <em>Get Condition</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,6 +71,52 @@ public class ChiefComplaintSectionTest extends CDAValidationTest {
 		};
 
 		validateHITSPChiefComplaintSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHITSPChiefComplaintSectionCondition() {
+		OperationsTestCase<ChiefComplaintSection> validateHITSPChiefComplaintSectionConditionTestCase = new OperationsTestCase<ChiefComplaintSection>(
+			"validateHITSPChiefComplaintSectionCondition",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_CHIEF_COMPLAINT_SECTION_CONDITION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ChiefComplaintSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ChiefComplaintSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ChiefComplaintSectionOperations.validateHITSPChiefComplaintSectionCondition(
+					(ChiefComplaintSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPChiefComplaintSectionConditionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetCondition() {
+
+		ChiefComplaintSection target = objectFactory.create();
+		target.getCondition();
+
 	}
 
 	/**

@@ -13,16 +13,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.HospitalDischargeMedicationsSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.HospitalDischargeMedicationsSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -34,6 +29,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.HospitalDischargeMedicationsSection#validateHITSPHospitalDischargeMedicationsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Hospital Discharge Medications Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.HospitalDischargeMedicationsSection#validateHITSPHospitalDischargeMedicationsSectionMedication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Hospital Discharge Medications Section Medication</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.HospitalDischargeMedicationsSection#getHITSPMedication() <em>Get HITSP Medication</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,6 +71,52 @@ public class HospitalDischargeMedicationsSectionTest extends CDAValidationTest {
 		};
 
 		validateHITSPHospitalDischargeMedicationsSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHITSPHospitalDischargeMedicationsSectionMedication() {
+		OperationsTestCase<HospitalDischargeMedicationsSection> validateHITSPHospitalDischargeMedicationsSectionMedicationTestCase = new OperationsTestCase<HospitalDischargeMedicationsSection>(
+			"validateHITSPHospitalDischargeMedicationsSectionMedication",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_MEDICATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HospitalDischargeMedicationsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HospitalDischargeMedicationsSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HospitalDischargeMedicationsSectionOperations.validateHITSPHospitalDischargeMedicationsSectionMedication(
+					(HospitalDischargeMedicationsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPHospitalDischargeMedicationsSectionMedicationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetHITSPMedication() {
+
+		HospitalDischargeMedicationsSection target = objectFactory.create();
+		target.getHITSPMedication();
+
 	}
 
 	/**

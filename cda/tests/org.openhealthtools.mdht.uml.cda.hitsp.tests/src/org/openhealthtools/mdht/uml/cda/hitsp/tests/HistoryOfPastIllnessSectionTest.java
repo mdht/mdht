@@ -13,16 +13,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPastIllnessSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.HistoryOfPastIllnessSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -34,6 +29,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPastIllnessSection#validateHITSPHistoryOfPastIllnessSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP History Of Past Illness Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPastIllnessSection#validateHITSPHistoryOfPastIllnessSectionCondition(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP History Of Past Illness Section Condition</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPastIllnessSection#getCondition() <em>Get Condition</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,6 +71,52 @@ public class HistoryOfPastIllnessSectionTest extends CDAValidationTest {
 		};
 
 		validateHITSPHistoryOfPastIllnessSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHITSPHistoryOfPastIllnessSectionCondition() {
+		OperationsTestCase<HistoryOfPastIllnessSection> validateHITSPHistoryOfPastIllnessSectionConditionTestCase = new OperationsTestCase<HistoryOfPastIllnessSection>(
+			"validateHITSPHistoryOfPastIllnessSectionCondition",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_HISTORY_OF_PAST_ILLNESS_SECTION_CONDITION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HistoryOfPastIllnessSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HistoryOfPastIllnessSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HistoryOfPastIllnessSectionOperations.validateHITSPHistoryOfPastIllnessSectionCondition(
+					(HistoryOfPastIllnessSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPHistoryOfPastIllnessSectionConditionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetCondition() {
+
+		HistoryOfPastIllnessSection target = objectFactory.create();
+		target.getCondition();
+
 	}
 
 	/**

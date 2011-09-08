@@ -13,16 +13,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistorySection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.FamilyHistorySectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -34,6 +29,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistorySection#validateHITSPFamilyHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Family History Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistorySection#validateHITSPFamilyHistorySectionFamilyHistory(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Family History Section Family History</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistorySection#getFamilyHistories() <em>Get Family Histories</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,6 +71,52 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 		};
 
 		validateHITSPFamilyHistorySectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHITSPFamilyHistorySectionFamilyHistory() {
+		OperationsTestCase<FamilyHistorySection> validateHITSPFamilyHistorySectionFamilyHistoryTestCase = new OperationsTestCase<FamilyHistorySection>(
+			"validateHITSPFamilyHistorySectionFamilyHistory",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_FAMILY_HISTORY_SECTION_FAMILY_HISTORY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistorySection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistorySection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistorySectionOperations.validateHITSPFamilyHistorySectionFamilyHistory(
+					(FamilyHistorySection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPFamilyHistorySectionFamilyHistoryTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetFamilyHistories() {
+
+		FamilyHistorySection target = objectFactory.create();
+		target.getFamilyHistories();
+
 	}
 
 	/**

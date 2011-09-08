@@ -28,7 +28,11 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ReasonForReferralSection#validateHITSPReasonForReferralSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Reason For Referral Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ReasonForReferralSection#validateHITSPReasonForReferralSectionCondition(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Reason For Referral Section Condition</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ReasonForReferralSection#validateHITSPReasonForReferralSectionResult(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Reason For Referral Section Result</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ReasonForReferralSection#getConditions() <em>Get Conditions</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ReasonForReferralSection#getResults() <em>Get Results</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.ReasonForReferralSection#validateCodedReasonForReferralSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Reason For Referral Section Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,14 +42,14 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 public class ReasonForReferralSectionTest extends CDAValidationTest {
 
 	/**
-	 * 
-	 * @generated
-	 */
+	*
+	* @generated
+	*/
 	@Test
-	public void testValidateHITSPReasonForReferralSectionTemplateId() {
-		OperationsTestCase<ReasonForReferralSection> validateHITSPReasonForReferralSectionTemplateIdTestCase = new OperationsTestCase<ReasonForReferralSection>(
-			"validateHITSPReasonForReferralSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_REASON_FOR_REFERRAL_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateHITSPReasonForReferralSectionCondition() {
+		OperationsTestCase<ReasonForReferralSection> validateHITSPReasonForReferralSectionConditionTestCase = new OperationsTestCase<ReasonForReferralSection>(
+			"validateHITSPReasonForReferralSectionCondition",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_REASON_FOR_REFERRAL_SECTION_CONDITION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -62,13 +66,105 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ReasonForReferralSectionOperations.validateReasonForReferralSectionTemplateId(
+				return ReasonForReferralSectionOperations.validateHITSPReasonForReferralSectionCondition(
 					(ReasonForReferralSection) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateHITSPReasonForReferralSectionTemplateIdTestCase.doValidationTest();
+		validateHITSPReasonForReferralSectionConditionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHITSPReasonForReferralSectionResult() {
+		OperationsTestCase<ReasonForReferralSection> validateHITSPReasonForReferralSectionResultTestCase = new OperationsTestCase<ReasonForReferralSection>(
+			"validateHITSPReasonForReferralSectionResult",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_REASON_FOR_REFERRAL_SECTION_RESULT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReasonForReferralSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ReasonForReferralSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReasonForReferralSectionOperations.validateHITSPReasonForReferralSectionResult(
+					(ReasonForReferralSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPReasonForReferralSectionResultTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetConditions() {
+
+		ReasonForReferralSection target = objectFactory.create();
+		target.getConditions();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetResults() {
+
+		ReasonForReferralSection target = objectFactory.create();
+		target.getResults();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateCodedReasonForReferralSectionTemplateId() {
+		OperationsTestCase<ReasonForReferralSection> validateCodedReasonForReferralSectionTemplateIdTestCase = new OperationsTestCase<ReasonForReferralSection>(
+			"validateCodedReasonForReferralSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_CODED_REASON_FOR_REFERRAL_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReasonForReferralSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ReasonForReferralSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReasonForReferralSectionOperations.validateCodedReasonForReferralSectionTemplateId(
+					(ReasonForReferralSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCodedReasonForReferralSectionTemplateIdTestCase.doValidationTest();
 	}
 
 	/**

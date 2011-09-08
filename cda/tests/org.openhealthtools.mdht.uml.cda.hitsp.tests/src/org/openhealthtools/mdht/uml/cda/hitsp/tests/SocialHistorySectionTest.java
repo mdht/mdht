@@ -13,16 +13,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.SocialHistorySection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.SocialHistorySectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -34,6 +29,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.SocialHistorySection#validateHITSPSocialHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Social History Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.SocialHistorySection#validateHITSPSocialHistorySectionSocialHistory(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Social History Section Social History</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.SocialHistorySection#getSocialHistories() <em>Get Social Histories</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,6 +71,52 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 		};
 
 		validateHITSPSocialHistorySectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHITSPSocialHistorySectionSocialHistory() {
+		OperationsTestCase<SocialHistorySection> validateHITSPSocialHistorySectionSocialHistoryTestCase = new OperationsTestCase<SocialHistorySection>(
+			"validateHITSPSocialHistorySectionSocialHistory",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_SOCIAL_HISTORY_SECTION_SOCIAL_HISTORY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SocialHistorySection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SocialHistorySection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SocialHistorySectionOperations.validateHITSPSocialHistorySectionSocialHistory(
+					(SocialHistorySection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPSocialHistorySectionSocialHistoryTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetSocialHistories() {
+
+		SocialHistorySection target = objectFactory.create();
+		target.getSocialHistories();
+
 	}
 
 	/**

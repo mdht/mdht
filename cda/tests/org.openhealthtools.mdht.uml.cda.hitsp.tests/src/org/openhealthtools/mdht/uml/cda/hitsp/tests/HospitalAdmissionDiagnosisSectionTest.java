@@ -13,16 +13,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.HospitalAdmissionDiagnosisSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.HospitalAdmissionDiagnosisSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -34,6 +29,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.HospitalAdmissionDiagnosisSection#validateHITSPHospitalAdmissionDiagnosisSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Hospital Admission Diagnosis Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.HospitalAdmissionDiagnosisSection#validateHITSPHospitalAdmissionDiagnosisSectionCondition(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Hospital Admission Diagnosis Section Condition</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.HospitalAdmissionDiagnosisSection#getCondition() <em>Get Condition</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,6 +71,52 @@ public class HospitalAdmissionDiagnosisSectionTest extends CDAValidationTest {
 		};
 
 		validateHITSPHospitalAdmissionDiagnosisSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHITSPHospitalAdmissionDiagnosisSectionCondition() {
+		OperationsTestCase<HospitalAdmissionDiagnosisSection> validateHITSPHospitalAdmissionDiagnosisSectionConditionTestCase = new OperationsTestCase<HospitalAdmissionDiagnosisSection>(
+			"validateHITSPHospitalAdmissionDiagnosisSectionCondition",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_CONDITION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HospitalAdmissionDiagnosisSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HospitalAdmissionDiagnosisSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HospitalAdmissionDiagnosisSectionOperations.validateHITSPHospitalAdmissionDiagnosisSectionCondition(
+					(HospitalAdmissionDiagnosisSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPHospitalAdmissionDiagnosisSectionConditionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetCondition() {
+
+		HospitalAdmissionDiagnosisSection target = objectFactory.create();
+		target.getCondition();
+
 	}
 
 	/**

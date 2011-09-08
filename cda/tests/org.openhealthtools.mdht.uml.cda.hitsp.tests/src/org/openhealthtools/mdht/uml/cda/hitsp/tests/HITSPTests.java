@@ -11,6 +11,7 @@
 package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 
 import junit.framework.JUnit4TestAdapter;
+
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 

@@ -11,14 +11,10 @@
 package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPRegistryDelegate;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.HITSPRegistryDelegateOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
