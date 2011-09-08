@@ -192,7 +192,8 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 		genmodel.setModelName(String.format("%s_Ecore", modelName));
 		genmodel.setModelDirectory(String.format("%s/src", project.getName()));
-		genmodel.setModelPluginID(modelName);
+		genmodel.setModelPluginClass(modelName.substring(0, 1).toUpperCase() + modelName.substring(1) + "Plugin");
+		genmodel.setModelPluginID(CDABASE + "." + modelName);
 		genmodel.setImporterID(ECOREIMPORTER);
 		genmodel.setInvariantPrefix(VALIDATEPREFIX);
 		genmodel.setCopyrightFields(false);
