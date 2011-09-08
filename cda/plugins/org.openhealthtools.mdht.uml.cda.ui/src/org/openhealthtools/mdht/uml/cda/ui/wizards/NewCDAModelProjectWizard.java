@@ -486,7 +486,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 							cdaPackage).eResource())) {
 
 							writer.println(String.format(
-								"<replace file=\"@{filePath}\" token=\".model/model/.controlled/%s.uml\" value=\"/model/%s_Ecore.uml\"/>",
+								"<replace file=\"@{filePath}\" token=\".model/model/.controlled/%s\" value=\"/model/%s_Ecore.uml\"/>",
 								controlledResource.getURI().lastSegment(), cdaPackage));
 						}
 					}
