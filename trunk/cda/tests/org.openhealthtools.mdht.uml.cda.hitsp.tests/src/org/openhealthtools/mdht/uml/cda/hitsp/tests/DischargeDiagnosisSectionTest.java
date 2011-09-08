@@ -13,16 +13,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.DischargeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.DischargeDiagnosisSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -34,6 +29,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.DischargeDiagnosisSection#validateHITSPDischargeDiagnosisSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Discharge Diagnosis Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.DischargeDiagnosisSection#validateHITSPDischargeDiagnosisSectionCondition(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Discharge Diagnosis Section Condition</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.DischargeDiagnosisSection#getCondition() <em>Get Condition</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,6 +71,52 @@ public class DischargeDiagnosisSectionTest extends CDAValidationTest {
 		};
 
 		validateHITSPDischargeDiagnosisSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHITSPDischargeDiagnosisSectionCondition() {
+		OperationsTestCase<DischargeDiagnosisSection> validateHITSPDischargeDiagnosisSectionConditionTestCase = new OperationsTestCase<DischargeDiagnosisSection>(
+			"validateHITSPDischargeDiagnosisSectionCondition",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_DISCHARGE_DIAGNOSIS_SECTION_CONDITION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DischargeDiagnosisSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DischargeDiagnosisSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DischargeDiagnosisSectionOperations.validateHITSPDischargeDiagnosisSectionCondition(
+					(DischargeDiagnosisSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPDischargeDiagnosisSectionConditionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetCondition() {
+
+		DischargeDiagnosisSection target = objectFactory.create();
+		target.getCondition();
+
 	}
 
 	/**

@@ -13,16 +13,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.PayersSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.PayersSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -76,6 +71,52 @@ public class PayersSectionTest extends CDAValidationTest {
 		};
 
 		validateHITSPPayersSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHITSPPayersSectionInsuranceProvider() {
+		OperationsTestCase<PayersSection> validateHITSPPayersSectionInsuranceProviderTestCase = new OperationsTestCase<PayersSection>(
+			"validateHITSPPayersSectionInsuranceProvider",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_PAYERS_SECTION_INSURANCE_PROVIDER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PayersSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PayersSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PayersSectionOperations.validateHITSPPayersSectionInsuranceProvider(
+					(PayersSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPPayersSectionInsuranceProviderTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetInsuranceProviders() {
+
+		PayersSection target = objectFactory.create();
+		target.getInsuranceProviders();
+
 	}
 
 	/**

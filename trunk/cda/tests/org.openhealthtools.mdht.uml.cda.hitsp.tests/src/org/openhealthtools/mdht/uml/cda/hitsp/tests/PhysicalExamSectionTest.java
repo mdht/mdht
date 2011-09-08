@@ -13,16 +13,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.PhysicalExamSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.PhysicalExamSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -34,6 +29,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PhysicalExamSection#validateHITSPPhysicalExamSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Physical Exam Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PhysicalExamSection#validateHITSPPhysicalExamSectionCondition(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Physical Exam Section Condition</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.PhysicalExamSection#getConditions() <em>Get Conditions</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,6 +71,52 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 		};
 
 		validateHITSPPhysicalExamSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHITSPPhysicalExamSectionCondition() {
+		OperationsTestCase<PhysicalExamSection> validateHITSPPhysicalExamSectionConditionTestCase = new OperationsTestCase<PhysicalExamSection>(
+			"validateHITSPPhysicalExamSectionCondition",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_PHYSICAL_EXAM_SECTION_CONDITION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PhysicalExamSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PhysicalExamSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PhysicalExamSectionOperations.validateHITSPPhysicalExamSectionCondition(
+					(PhysicalExamSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPPhysicalExamSectionConditionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetConditions() {
+
+		PhysicalExamSection target = objectFactory.create();
+		target.getConditions();
+
 	}
 
 	/**

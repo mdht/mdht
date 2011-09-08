@@ -12,7 +12,6 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
-
 import junit.textui.TestRunner;
 
 /**

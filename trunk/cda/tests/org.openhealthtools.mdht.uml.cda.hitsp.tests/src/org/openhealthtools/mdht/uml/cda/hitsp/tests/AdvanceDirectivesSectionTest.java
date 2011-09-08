@@ -13,16 +13,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.AdvanceDirectivesSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -34,6 +29,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection#validateHITSPAdvanceDirectivesSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Advance Directives Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection#validateHITSPAdvanceDirectivesSectionAdvanceDirective(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Advance Directives Section Advance Directive</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection#getAdvanceDirectives() <em>Get Advance Directives</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,6 +71,52 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 		};
 
 		validateHITSPAdvanceDirectivesSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHITSPAdvanceDirectivesSectionAdvanceDirective() {
+		OperationsTestCase<AdvanceDirectivesSection> validateHITSPAdvanceDirectivesSectionAdvanceDirectiveTestCase = new OperationsTestCase<AdvanceDirectivesSection>(
+			"validateHITSPAdvanceDirectivesSectionAdvanceDirective",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_ADVANCE_DIRECTIVES_SECTION_ADVANCE_DIRECTIVE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AdvanceDirectivesSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AdvanceDirectivesSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AdvanceDirectivesSectionOperations.validateHITSPAdvanceDirectivesSectionAdvanceDirective(
+					(AdvanceDirectivesSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPAdvanceDirectivesSectionAdvanceDirectiveTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetAdvanceDirectives() {
+
+		AdvanceDirectivesSection target = objectFactory.create();
+		target.getAdvanceDirectives();
+
 	}
 
 	/**
