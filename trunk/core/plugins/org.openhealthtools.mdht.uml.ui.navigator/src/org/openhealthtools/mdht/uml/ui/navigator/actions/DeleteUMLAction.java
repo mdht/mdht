@@ -10,6 +10,8 @@ import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.ui.action.DeleteAction;
 import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Property;
 
 public class DeleteUMLAction extends DeleteAction {
 
@@ -33,7 +35,15 @@ public class DeleteUMLAction extends DeleteAction {
 	public Command createCommand(Collection<?> selection) {
 		List<Object> elements = new ArrayList<Object>();
 		for (Object object : selection) {
-			if (object instanceof Association) {
+			if (object instanceof Class) {
+				Class umlClass = (Class) object;
+				for (Property property : umlClass.getOwnedAttributes()) {
+					if (property.getAssociation() != null) {
+						elements.add(property.getAssociation());
+					}
+				}
+				elements.add(umlClass);
+			} else if (object instanceof Association) {
 				Association association = (Association) object;
 				elements.addAll(association.getMemberEnds());
 				elements.add(association);
