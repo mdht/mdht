@@ -123,7 +123,7 @@ public class ElementSelectionDialog extends TwoPaneElementSelector {
 	 */
 	public ElementSelectionDialog(Shell parent, IRunnableContext context, List typeList) {
 		super(parent, new ElementLabelProvider(ElementLabelProvider.SHOW_TYPE_ONLY), new ElementLabelProvider(
-			ElementLabelProvider.SHOW_TYPE_CONTAINER_ONLY + ElementLabelProvider.SHOW_ROOT_POSTFIX));
+			ElementLabelProvider.SHOW_TYPE_CONTAINER_ONLY + ElementLabelProvider.SHOW_RESOURCE_NAME_POSTFIX));
 
 		Assert.isNotNull(context);
 		this.typeList = typeList;

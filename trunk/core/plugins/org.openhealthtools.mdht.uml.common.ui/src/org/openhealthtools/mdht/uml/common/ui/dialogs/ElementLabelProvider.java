@@ -41,6 +41,8 @@ public class ElementLabelProvider extends LabelProvider {
 
 	public static final int SHOW_TYPE_CONTAINER_ONLY = 0x20;
 
+	public static final int SHOW_RESOURCE_NAME_POSTFIX = 0x40;
+
 	private static final AdapterFactory adapterFactory = new UMLItemProviderAdapterFactory();
 
 	private static final ILabelProvider labelProvider = new AdapterFactoryLabelProvider(adapterFactory);
@@ -107,6 +109,13 @@ public class ElementLabelProvider extends LabelProvider {
 				buf.append(getPackageName(packName));
 			}
 		}
+
+		if (isSet(SHOW_RESOURCE_NAME_POSTFIX)) {
+			buf.append(Messages.ElementLabelProvider_dash);
+			String resourceName = namedElement.eResource().getURI().lastSegment();
+			buf.append(resourceName);
+		}
+
 		return buf.toString();
 	}
 
