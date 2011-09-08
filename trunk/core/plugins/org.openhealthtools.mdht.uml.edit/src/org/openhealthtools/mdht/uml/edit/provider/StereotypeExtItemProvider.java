@@ -21,10 +21,12 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.edit.providers.StereotypeItemProvider;
+import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
@@ -79,9 +81,9 @@ public class StereotypeExtItemProvider extends StereotypeItemProvider implements
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	@Override
-	public Collection getChildren(Object object) {
+	public Collection<Element> getChildren(Object object) {
 		Stereotype clazz = (Stereotype) object;
-		List children = new ArrayList();
+		List<Element> children = new ArrayList<Element>();
 		children.addAll(clazz.getOwnedComments());
 		children.addAll(clazz.getOwnedRules());
 		// children.addAll(clazz.getExtensions());
@@ -117,6 +119,8 @@ public class StereotypeExtItemProvider extends StereotypeItemProvider implements
 				} else {
 					return classifier.getVisibility().getName();
 				}
+			case IUMLTableProperties.ANNOTATION_INDEX:
+				return NotationUtil.getAnnotation(classifier);
 			default:
 				return null;
 		}

@@ -38,12 +38,10 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.edit.providers.AssociationItemProvider;
-import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
-import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
+import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.internal.Logger;
@@ -194,19 +192,8 @@ public class AssociationExtItemProvider extends AssociationItemProvider implemen
 						return provider.getImage(endType);
 					}
 				}
-			case IUMLTableProperties.ANNOTATION_INDEX: {
-				for (Profile profile : association.getNearestPackage().getAllAppliedProfiles()) {
-					// eResource is null for unresolved eProxyURI, missing profiles
-					if (profile.eResource() != null) {
-						// use the first notation provider found for an applied profile, ignore others
-						String profileURI = profile.eResource().getURI().toString();
-						INotationProvider provider = NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-						if (provider != null) {
-							return provider.getAnnotationImage(association);
-						}
-					}
-				}
-			}
+			case IUMLTableProperties.ANNOTATION_INDEX:
+				return NotationUtil.getAnnotationImage(association);
 			default:
 				return null;
 		}
@@ -240,19 +227,8 @@ public class AssociationExtItemProvider extends AssociationItemProvider implemen
 				} else {
 					return association.getVisibility().getName();
 				}
-			case IUMLTableProperties.ANNOTATION_INDEX: {
-				for (Profile profile : association.getNearestPackage().getAllAppliedProfiles()) {
-					// eResource is null for unresolved eProxyURI, missing profiles
-					if (profile.eResource() != null) {
-						// use the first notation provider found for an applied profile, ignore others
-						String profileURI = profile.eResource().getURI().toString();
-						INotationProvider provider = NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-						if (provider != null) {
-							return provider.getAnnotation(association);
-						}
-					}
-				}
-			}
+			case IUMLTableProperties.ANNOTATION_INDEX:
+				return NotationUtil.getAnnotation(association);
 			default:
 				return null;
 		}

@@ -152,7 +152,7 @@ public class ParameterExtItemProvider extends ParameterItemProvider implements I
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	@Override
-	public Collection getChildren(Object object) {
+	public Collection<Element> getChildren(Object object) {
 		Parameter parameter = (Parameter) object;
 		List<Element> children = new ArrayList<Element>();
 

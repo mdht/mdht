@@ -21,6 +21,8 @@ import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Profile;
 import org.openhealthtools.mdht.uml.common.internal.Logger;
 
 public class NotationRegistry {
@@ -73,10 +75,29 @@ public class NotationRegistry {
 		return (element.getAttribute(ATT_PROFILE_URI) != null && element.getAttribute(ATT_CLASS) != null);
 	}
 
-	public INotationProvider getProviderInstance(String profileURI) {
+	private INotationProvider getProviderInstance(String profileURI) {
 		if (providers == null) {
 			load();
 		}
 		return providers.get(profileURI.toLowerCase());
+	}
+
+	public INotationProvider getNotationProvider(Element element) {
+		// package is null for deleted elements. fixes runtime NPE during table refresh.
+		if (element.getNearestPackage() != null) {
+			for (Profile profile : element.getNearestPackage().getAllAppliedProfiles()) {
+				// eResource is null for unresolved eProxyURI, missing profiles
+				if (profile.eResource() != null) {
+					// use the first notation provider found for an applied profile, ignore others
+					String profileURI = profile.eResource().getURI().toString();
+					INotationProvider provider = NotationRegistry.INSTANCE.getProviderInstance(profileURI);
+					if (provider != null) {
+						return provider;
+					}
+				}
+			}
+		}
+
+		return null;
 	}
 }

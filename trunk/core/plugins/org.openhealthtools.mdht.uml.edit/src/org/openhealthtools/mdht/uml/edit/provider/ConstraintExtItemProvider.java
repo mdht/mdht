@@ -23,13 +23,12 @@ import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.OpaqueExpression;
-import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.edit.providers.ConstraintItemProvider;
-import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
-import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
+import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
@@ -84,9 +83,9 @@ public class ConstraintExtItemProvider extends ConstraintItemProvider implements
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	@Override
-	public Collection getChildren(Object object) {
+	public Collection<Element> getChildren(Object object) {
 		Constraint constraint = (Constraint) object;
-		List children = new ArrayList();
+		List<Element> children = new ArrayList<Element>();
 		children.addAll(constraint.getOwnedComments());
 
 		return children;
@@ -113,22 +112,8 @@ public class ConstraintExtItemProvider extends ConstraintItemProvider implements
 		switch (columnIndex) {
 			case IUMLTableProperties.NAME_INDEX:
 				return getImage(object);
-			case IUMLTableProperties.ANNOTATION_INDEX: {
-				// eResource is null for deleted elements
-				if (constraint.eResource() != null) {
-					for (Profile profile : constraint.getNearestPackage().getAllAppliedProfiles()) {
-						// eResource is null for unresolved eProxyURI, missing profiles
-						if (profile.eResource() != null) {
-							// use the first notation provider found for an applied profile, ignore others
-							String profileURI = profile.eResource().getURI().toString();
-							INotationProvider provider = NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-							if (provider != null) {
-								return provider.getAnnotationImage(constraint);
-							}
-						}
-					}
-				}
-			}
+			case IUMLTableProperties.ANNOTATION_INDEX:
+				return NotationUtil.getAnnotationImage(constraint);
 			default:
 				return null;
 		}

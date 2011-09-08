@@ -20,12 +20,11 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.edit.providers.EnumerationLiteralItemProvider;
-import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
-import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
+import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
@@ -81,9 +80,9 @@ public class EnumerationLiteralExtItemProvider extends EnumerationLiteralItemPro
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	@Override
-	public Collection getChildren(Object object) {
+	public Collection<Element> getChildren(Object object) {
 		EnumerationLiteral literal = (EnumerationLiteral) object;
-		List children = new ArrayList();
+		List<Element> children = new ArrayList<Element>();
 		children.addAll(literal.getOwnedComments());
 
 		return children;
@@ -91,9 +90,13 @@ public class EnumerationLiteralExtItemProvider extends EnumerationLiteralItemPro
 
 	@Override
 	public Object getColumnImage(Object object, int columnIndex) {
+		EnumerationLiteral literal = (EnumerationLiteral) object;
+
 		switch (columnIndex) {
 			case IUMLTableProperties.NAME_INDEX:
 				return getImage(object);
+			case IUMLTableProperties.ANNOTATION_INDEX:
+				return NotationUtil.getAnnotationImage(literal);
 			default:
 				return null;
 		}
@@ -106,19 +109,8 @@ public class EnumerationLiteralExtItemProvider extends EnumerationLiteralItemPro
 		switch (columnIndex) {
 			case IUMLTableProperties.NAME_INDEX:
 				return getName(literal);
-			case IUMLTableProperties.ANNOTATION_INDEX: {
-				for (Profile profile : literal.getNearestPackage().getAllAppliedProfiles()) {
-					// eResource is null for unresolved eProxyURI, missing profiles
-					if (profile.eResource() != null) {
-						// use the first notation provider found for an applied profile, ignore others
-						String profileURI = profile.eResource().getURI().toString();
-						INotationProvider provider = NotationRegistry.INSTANCE.getProviderInstance(profileURI);
-						if (provider != null) {
-							return provider.getAnnotation(literal);
-						}
-					}
-				}
-			}
+			case IUMLTableProperties.ANNOTATION_INDEX:
+				return NotationUtil.getAnnotation(literal);
 			default:
 				return null;
 		}
