@@ -65,6 +65,7 @@ import org.eclipse.emf.codegen.ecore.genmodel.GenAnnotation;
 import org.eclipse.emf.codegen.ecore.genmodel.GenJDKLevel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
+import org.eclipse.emf.codegen.ecore.genmodel.GenRuntimeVersion;
 import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
@@ -198,6 +199,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 		genmodel.setInvariantPrefix(VALIDATEPREFIX);
 		genmodel.setCopyrightFields(false);
 		genmodel.setComplianceLevel(GenJDKLevel.JDK50_LITERAL);
+		genmodel.setRuntimeVersion(GenRuntimeVersion.EMF25);
 		genmodel.setTemplateDirectory(TEMPLATESDIR);
 		genmodel.setDynamicTemplates(true);
 		genmodel.getForeignModel().add(String.format("%s.uml", genmodel.getModelName()));
