@@ -462,7 +462,7 @@ public class CDAUtil {
 		try {
 			URL url = CDAUtil.class.getResource("/samples/CDA.xsd");
 			if (url == null) {
-				url = new File("samples/CDA.xsd").toURI().toURL();
+				url = new File("../org.openhealthtools.mdht.uml.cda/samples/CDA.xsd").toURI().toURL();
 			}
 
 			SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
