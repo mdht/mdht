@@ -1,0 +1,113 @@
+<project name="JUNIT" basedir="."  default="runtests">
+
+	<!-- JUnit Ant Task Definition -->
+	<taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" />
+
+
+	
+	<target name="runtests">
+		
+		<mkdir dir="${basedir}/testlogs" />
+
+		<mkdir dir="${basedir}/reports" />
+		
+		<junit printsummary="yes" showoutput="true" fork="true" >
+			
+			<sysproperty key="testlogdir" value="${basedir}/testlogs/"/>
+
+			<formatter type="xml" />
+			
+			<classpath>
+				<pathelement path="${basedir}/bin/"/>
+				<pathelement path="../org.openhealthtools.mdht.uml.cda.ihe/bin/"/>
+				<pathelement path="../org.openhealthtools.mdht.uml.cda.ihe/@dot"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.core.runtime_3.6.0.v20100505.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.osgi_3.6.1.R36x_v20100806.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.equinox.common_3.6.0.v20100503.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.core.jobs_3.5.1.R36x_v20100824.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.core.runtime.compatibility.registry_3.3.0.v20100520/runtime_registry_compatibility.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.core.runtime.compatibility.registry_3.3.0.v20100520"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.equinox.registry_3.5.0.v20100503.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.equinox.preferences_3.3.0.v20100503.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.core.contenttype_3.4.100.v20100505-1235.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.core.runtime.compatibility.auth_3.2.200.v20100517.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.equinox.app_1.3.1.R36x_v20100803.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.osgi.services_3.2.100.v20100503.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/javax.servlet_2.5.0.v200910301333.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.emf.ecore_2.6.1.v20100914-1218.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.emf.common_2.6.0.v20100914-1218.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.core.resources_3.6.0.R36x_v20100825-0600.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.ant.core_3.2.200.v20100427.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.core.variables_3.2.400.v20100505.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.core.expressions_3.4.200.v20100505.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.core.filesystem_1.3.1.R36x_v20100727-0745.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.core.filesystem.linux.x86_64_1.2.0.v20100505-1235.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.ocl.ecore_3.0.2.R30x_v201101110610.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.ocl_3.0.2.R30x_v201101110610.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/com.ibm.icu_4.2.1.v20100412.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.5.0.v20100521-1846.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/lpg.runtime.java_2.0.17.v201004271640.jar"/>
+				<pathelement path="../org.openhealthtools.mdht.uml.cda.cdt/bin/"/>
+				<pathelement path="../org.openhealthtools.mdht.uml.cda.cdt/@dot"/>
+				<pathelement path="../org.openhealthtools.mdht.uml.cda.ccd/bin/"/>
+				<pathelement path="../org.openhealthtools.mdht.uml.cda.ccd/@dot"/>
+				<pathelement path="../org.openhealthtools.mdht.uml.cda/bin/"/>
+				<pathelement path="../org.openhealthtools.mdht.uml.cda/@dot"/>
+				<pathelement path="../../helios/eclipse/plugins/org.openhealthtools.mdht.uml.cda.util.test_0.7.0.201106101154.jar"/>
+				<pathelement path="../org.openhealthtools.mdht.uml.hl7.datatypes/bin/"/>
+				<pathelement path="../org.openhealthtools.mdht.uml.hl7.datatypes/@dot"/>
+				<pathelement path="../../helios/eclipse/plugins/org.openhealthtools.mdht.uml.hl7.datatypes.test_1.0.0.201106101154.jar"/>
+				<pathelement path="../org.openhealthtools.mdht.uml.hl7.vocab/bin/"/>
+				<pathelement path="../org.openhealthtools.mdht.uml.hl7.vocab/@dot"/>
+				<pathelement path="../../helios/eclipse/plugins/org.openhealthtools.mdht.uml.hl7.vocab.test_0.7.0.201106101154.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.junit4_4.8.1.v20100525"/>
+				<pathelement path="../../helios/eclipse/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.junit_4.8.1.v4_8_1_v20100427-1100/junit.jar"/>
+				<pathelement path="../org.openhealthtools.mdht.uml.hl7.rim/bin/"/>
+				<pathelement path="../org.openhealthtools.mdht.uml.hl7.rim/@dot"/>
+				<pathelement path="../../helios/eclipse/plugins/org.openhealthtools.mdht.uml.cda.ccd.test_1.0.0.201106071606.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.eclipse.emf_2.6.0.v20100914-1218.jar"/>
+				<pathelement path="../org.openhealthtools.mdht.uml.cda.test/bin/"/>
+				<pathelement path="../org.openhealthtools.mdht.uml.cda.test/@dot"/>
+				<pathelement path="../../helios/eclipse/plugins/org.apache.commons.lang_2.3.0.v201005080501.jar"/>
+				<pathelement path="../../helios/eclipse/plugins/org.openhealthtools.mdht.uml.hl7.rim.test_0.7.0.201106101154.jar"/>
+			</classpath>
+			
+			<batchtest todir="${basedir}/testlogs" >
+			        <fileset dir="${basedir}/src" >
+				      <include name="**/*Test.java"/>
+				      <exclude name="**/CCD*.java"/>
+				    </fileset>				
+			</batchtest> 
+			
+			</junit> 
+		
+	
+
+		<concat destfile="${basedir}/testlogs/allvalidationresults.xml" force="no">
+ 			<filelist dir="../org.openhealthtools.mdht.uml.cda.test"  files="start.tag"/>
+		    <fileset dir="${basedir}/testlogs"	includes="test*.xml" />
+			<filelist dir="../org.openhealthtools.mdht.uml.cda.test"  files="end.tag"/>
+		 </concat>
+		
+		<junitreport todir="${basedir}/reports">
+			<fileset dir="${basedir}/testlogs">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report styledir="../org.openhealthtools.mdht.uml.cda.test" 
+				    format="frames" 
+					todir="${basedir}/reports/html">				
+				 <param name="testlogdir" expression="${basedir}/testlogs/"/>
+													  
+			</report>
+		</junitreport>
+
+		<eclipse.refreshLocal resource="${basedir}" depth="infinite"/>
+
+	</target>
+
+
+
+
+
+</project>
