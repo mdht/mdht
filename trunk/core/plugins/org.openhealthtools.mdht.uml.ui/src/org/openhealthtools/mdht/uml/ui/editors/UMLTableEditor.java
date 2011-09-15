@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Hashtable;
 import java.util.List;
-import java.util.Set;
 
 import org.eclipse.core.commands.operations.IOperationHistory;
 import org.eclipse.core.commands.operations.IOperationHistoryListener;
@@ -55,7 +54,6 @@ import org.eclipse.emf.transaction.ResourceSetListener;
 import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
-import org.eclipse.emf.workspace.ResourceUndoContext;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuListener;
@@ -105,10 +103,12 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.IPartListener;
+import org.eclipse.ui.ISaveablesLifecycleListener;
 import org.eclipse.ui.ISaveablesSource;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.Saveable;
+import org.eclipse.ui.SaveablesLifecycleEvent;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.navigator.ICommonMenuConstants;
@@ -271,10 +271,11 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 					event.getEventType() == OperationHistoryEvent.UNDONE ||
 					event.getEventType() == OperationHistoryEvent.REDONE) {
 
-				Set<Resource> affectedResources = ResourceUndoContext.getAffectedResources(event.getOperation());
-				for (Resource resource : affectedResources) {
-					resource.setModified(true);
-				}
+				// TODO only if affectedResources includes at least one of this editor's saveables
+				ISaveablesLifecycleListener saveablesListener = (ISaveablesLifecycleListener) getEditorSite().getService(
+					ISaveablesLifecycleListener.class);
+				saveablesListener.handleLifecycleEvent(new SaveablesLifecycleEvent(
+					this, PROP_DIRTY, getSaveables(), false));
 
 				getSite().getShell().getDisplay().asyncExec(new Runnable() {
 					public void run() {
@@ -1229,11 +1230,9 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 	 */
 	@Override
 	public boolean isDirty() {
-		if (resource.isModified()) {
-			return true;
-		}
-		for (Resource controlledResource : UMLUtil.getControlledResources(resource)) {
-			if (controlledResource.isModified()) {
+		Saveable[] saveables = getSaveables();
+		for (int i = 0; i < saveables.length; i++) {
+			if (saveables[i].isDirty()) {
 				return true;
 			}
 		}

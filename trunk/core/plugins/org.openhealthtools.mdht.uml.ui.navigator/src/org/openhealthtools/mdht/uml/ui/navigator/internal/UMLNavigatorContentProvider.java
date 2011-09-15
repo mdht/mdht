@@ -111,18 +111,16 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 				final Set<Resource> affectedResources = ResourceUndoContext.getAffectedResources(event.getOperation());
 
 				if (!affectedResources.isEmpty()) {
-					// final IUndoableOperation operation = event.getOperation();
-
-					// TODO getResource() is null when object is deleted; how to setModified?
+					List<Saveable> saveables = new ArrayList<Saveable>();
 					for (Resource resource : affectedResources) {
-						resource.setModified(true);
-
 						Saveable saveable = ModelManager.getManager().getModelDocument(resource);
 						if (saveable != null) {
-							fireSaveablesDirtyChanged(new Saveable[] { saveable });
-							viewer.refresh();
+							saveables.add(saveable);
 						}
 					}
+
+					fireSaveablesDirtyChanged(saveables.toArray(new Saveable[] {}));
+					viewer.refresh();
 				}
 			}
 		}
@@ -420,7 +418,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 	@Override
 	public Saveable[] getSaveables() {
 		// returns all writable resources
-		Collection saveables = ModelManager.getManager().getDocuments();
+		Collection<ModelDocument> saveables = ModelManager.getManager().getDocuments();
 		Saveable[] array = new Saveable[saveables.size()];
 		saveables.toArray(array);
 		return array;
