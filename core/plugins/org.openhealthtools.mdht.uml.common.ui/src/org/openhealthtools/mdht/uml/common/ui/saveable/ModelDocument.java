@@ -57,10 +57,10 @@ public class ModelDocument extends Saveable {
 				for (Notification notification : event.getNotifications()) {
 					Object notifier = notification.getNotifier();
 					if (notifier instanceof EObject && resource == ((EObject) notifier).eResource()) {
-						dirty = true;
+						setDirty(true);
 					} else if (notifier instanceof Resource && resource == notifier &&
 							Resource.RESOURCE__IS_MODIFIED == notification.getFeatureID(null)) {
-						dirty = resource.isModified();
+						setDirty(resource.isModified());
 					}
 				}
 			}
