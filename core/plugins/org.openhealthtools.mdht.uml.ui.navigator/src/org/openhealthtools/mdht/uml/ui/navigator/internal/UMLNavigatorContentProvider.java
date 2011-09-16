@@ -16,7 +16,6 @@ package org.openhealthtools.mdht.uml.ui.navigator.internal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Hashtable;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -304,7 +303,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 		if (parentElement instanceof IFile) {
 			Resource resource = ModelManager.getManager().getResource((IFile) parentElement);
 			if (resource != null) {
-				Collection result = wrapItems(resource.getContents(), parentElement);
+				List<UMLAbstractNavigatorItem> result = wrapModelElements(resource.getContents(), parentElement);
 				return result.toArray();
 			}
 		} else if (parentElement instanceof UMLAbstractNavigatorItem) {
@@ -360,6 +359,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 	public void saveState(IMemento aMemento) {
 	}
 
+	@SuppressWarnings("rawtypes")
 	public Object getAdapter(Class adapter) {
 		if (SaveablesProvider.class == adapter) {
 			return this;
@@ -424,19 +424,19 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 		return array;
 	}
 
-	private List wrapItems(List items, Object parentElement) {
-		List wrappedItems = new ArrayList();
-		for (Iterator iter = items.iterator(); iter.hasNext();) {
-			Object item = iter.next();
+	private List<UMLAbstractNavigatorItem> wrapModelElements(List<EObject> items, Object parentElement) {
+		List<UMLAbstractNavigatorItem> wrappedItems = new ArrayList<UMLAbstractNavigatorItem>();
+		for (EObject item : items) {
+			// this will omit stereotype applications when iterating over Resource
 			if (item instanceof Element) {
-				wrappedItems.add(new UMLDomainNavigatorItem((Element) item, parentElement, treeContentProvider));
+				wrappedItems.add(new UMLDomainNavigatorItem(item, parentElement, treeContentProvider));
 			}
 		}
 		return wrappedItems;
 	}
 
-	private Object[] wrapItems(Object[] items, Object parentElement) {
-		List wrappedItems = new ArrayList();
+	private UMLAbstractNavigatorItem[] wrapItems(Object[] items, Object parentElement) {
+		List<UMLAbstractNavigatorItem> wrappedItems = new ArrayList<UMLAbstractNavigatorItem>();
 		if (parentElement instanceof UMLDomainNavigatorItem &&
 				((UMLDomainNavigatorItem) parentElement).getEObject() instanceof Package) {
 			UMLNavigatorGroup group = getAssociations(
@@ -450,14 +450,13 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 				wrappedItems.add(new UMLDomainNavigatorItem((Element) items[i], parentElement, treeContentProvider));
 			}
 		}
-		return wrappedItems.toArray();
+		return wrappedItems.toArray(new UMLAbstractNavigatorItem[wrappedItems.size()]);
 	}
 
 	private UMLNavigatorGroup getAssociations(Package umlPackage, Object parentElement) {
 		UMLNavigatorGroup group = null;
-		List associations = new ArrayList();
-		for (Iterator iterator = umlPackage.getOwnedMembers().iterator(); iterator.hasNext();) {
-			NamedElement element = (NamedElement) iterator.next();
+		List<EObject> associations = new ArrayList<EObject>();
+		for (NamedElement element : umlPackage.getOwnedMembers()) {
 			if (element instanceof Association) {
 				associations.add(element);
 			}
@@ -465,7 +464,7 @@ public class UMLNavigatorContentProvider extends SaveablesProvider implements IC
 		if (!associations.isEmpty()) {
 			group = new UMLNavigatorGroup(
 				Messages.NavigatorGroupName_associations, "icons/associationsNavigatorGroup.gif", parentElement);
-			group.addChildren(wrapItems(associations, group));
+			group.addChildren(wrapModelElements(associations, group));
 		}
 		return group;
 	}
