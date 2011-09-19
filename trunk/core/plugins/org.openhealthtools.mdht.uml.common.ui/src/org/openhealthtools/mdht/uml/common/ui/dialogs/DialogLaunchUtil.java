@@ -68,14 +68,14 @@ public class DialogLaunchUtil {
 	 * 
 	 */
 	public static Type chooseType(ResourceSet resourceSet, Shell shell) {
-		Class[] filter = { Type.class };
+		Class<?>[] filter = { Type.class };
 		return (Type) chooseElement(filter, resourceSet, shell);
 	}
 
 	/**
 	 * 
 	 */
-	public static NamedElement chooseElement(Class[] filter, ResourceSet resourceSet, Shell shell) {
+	public static NamedElement chooseElement(Class<?>[] filter, ResourceSet resourceSet, Shell shell) {
 		return chooseElement(
 			filter, resourceSet, shell, Messages.ElementSelectionDialog_title, Messages.ElementSelectionDialog_message);
 	}
@@ -83,12 +83,12 @@ public class DialogLaunchUtil {
 	/**
 	 * 
 	 */
-	public static NamedElement chooseElement(Class[] filter, Package umlPackage, Shell shell) {
+	public static NamedElement chooseElement(Class<?>[] filter, Package umlPackage, Shell shell) {
 		return chooseElement(
 			filter, umlPackage, shell, Messages.ElementSelectionDialog_title, Messages.ElementSelectionDialog_message);
 	}
 
-	public static NamedElement chooseElement(Class[] filter, Package umlPackage, Shell shell, String title,
+	public static NamedElement chooseElement(Class<?>[] filter, Package umlPackage, Shell shell, String title,
 			String message) {
 		List<Element> typeList = new ArrayList<Element>();
 		for (int i = 0; i < filter.length; i++) {
@@ -105,7 +105,7 @@ public class DialogLaunchUtil {
 		return null;
 	}
 
-	public static NamedElement chooseElement(Class[] filter, Resource resource, Shell shell, String title,
+	public static NamedElement chooseElement(Class<?>[] filter, Resource resource, Shell shell, String title,
 			String message) {
 		List<Element> typeList = new ArrayList<Element>();
 		for (int i = 0; i < filter.length; i++) {
@@ -125,7 +125,7 @@ public class DialogLaunchUtil {
 	/**
 	 * 
 	 */
-	public static NamedElement chooseElement(Class[] filter, ResourceSet resourceSet, Shell shell, String title,
+	public static NamedElement chooseElement(Class<?>[] filter, ResourceSet resourceSet, Shell shell, String title,
 			String message) {
 		List<Element> typeList = new ArrayList<Element>();
 		for (int i = 0; i < filter.length; i++) {
@@ -169,8 +169,8 @@ public class DialogLaunchUtil {
 	 * 
 	 */
 	public static Package choosePackage(ResourceSet resourceSet, Shell shell) {
-		List packagesList = ModelSearch.findAllOf(resourceSet, Package.class);
-		Package[] packages = (Package[]) packagesList.toArray(new Package[packagesList.size()]);
+		List<Element> packagesList = ModelSearch.findAllOf(resourceSet, Package.class);
+		Package[] packages = packagesList.toArray(new Package[packagesList.size()]);
 
 		ElementListSelectionDialog dialog = new ElementListSelectionDialog(shell, new PackagesListLabelProvider());
 		dialog.setIgnoreCase(false);
