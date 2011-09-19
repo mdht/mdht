@@ -155,23 +155,30 @@ public class ModelSearch {
 			Object element = iterator.next();
 			if (Resource.class.isInstance(element)) {
 				continue;
-			} else if (ProfileApplication.class.isInstance(element)) {
+			}
+
+			// prune profile and metamodel contents
+			if (ProfileApplication.class.isInstance(element)) {
 				// ignore the the applied profiles
 				iterator.prune();
+				continue;
 			} else if (Profile.class.isInstance(element)) {
 				// ignore the the applied profiles
 				iterator.prune();
+				continue;
 			} else if (EAnnotation.class.isInstance(element)) {
 				iterator.prune();
-			}
-
-			else if (Package.class.isInstance(element)) {
+				continue;
+			} else if (Package.class.isInstance(element)) {
 				// if ("uml2".equals(((Package)element).getQualifiedName()))
 				// iterator.prune();
 				if (UMLResource.UML_METAMODEL_URI.equals(((Package) element).eResource().getURI().toString())) {
 					iterator.prune();
+					continue;
 				} else if (UMLResource.ECORE_METAMODEL_URI.equals(((Package) element).eResource().getURI().toString())) {
 					iterator.prune();
+					continue;
+
 					// else if (UMLResource.ECORE_PRIMITIVE_TYPES_LIBRARY_URI.equals(
 					// ((Package)element).eResource().getURI().toString()))
 					// iterator.prune();
@@ -182,10 +189,10 @@ public class ModelSearch {
 					// ((Package)element).eResource().getURI().toString()))
 					// iterator.prune();
 				}
-
 			}
 
-			else if (type.isInstance(element) && element instanceof Element) {
+			// select based on filter
+			if (type.isInstance(element) && element instanceof Element) {
 				elementList.add((Element) element);
 			} else if (!Package.class.isInstance(element)) {
 				iterator.prune();
