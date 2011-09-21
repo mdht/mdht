@@ -442,6 +442,10 @@ public class CDAUtil {
 		if (defaults) {
 			handleDefaults(clinicalDocument);
 		}
+		if (clinicalDocument.eResource() != null) {
+			// process diagnostics that were produced during EMF deserialization
+			processDiagnostic(EcoreUtil.computeDiagnostic(clinicalDocument.eResource(), true), handler);
+		}
 		Diagnostic diagnostic = Diagnostician.INSTANCE.validate(clinicalDocument);
 		if (handler != null) {
 			processDiagnostic(diagnostic, handler);
@@ -497,18 +501,19 @@ public class CDAUtil {
 		}
 
 		public void error(SAXParseException exception) throws SAXException {
-			handler.handleError(createDiagnostic(Diagnostic.ERROR, exception.getMessage()));
+			handler.handleError(createDiagnostic(Diagnostic.ERROR, exception));
 		}
 
 		public void fatalError(SAXParseException exception) throws SAXException {
 		}
 
 		public void warning(SAXParseException exception) throws SAXException {
-			handler.handleWarning(createDiagnostic(Diagnostic.WARNING, exception.getMessage()));
+			handler.handleWarning(createDiagnostic(Diagnostic.WARNING, exception));
 		}
 
-		private Diagnostic createDiagnostic(int severity, String message) {
-			return new BasicDiagnostic(severity, "javax.xml.validation.Validator", -1, message, null);
+		private Diagnostic createDiagnostic(int severity, SAXParseException exception) {
+			return new BasicDiagnostic(
+				severity, "javax.xml.validation.Validator", 0, exception.getMessage(), new Object[] { exception });
 		}
 	}
 
@@ -518,11 +523,21 @@ public class CDAUtil {
 		queue.add(diagnostic); // root
 		while (!queue.isEmpty()) {
 			Diagnostic d = queue.remove();
-			handleDiagnostic(d, handler); // visit
+			if (shouldHandle(d)) {
+				handleDiagnostic(d, handler); // visit
+			}
 			for (Diagnostic childDiagnostic : d.getChildren()) { // process successors
 				queue.add(childDiagnostic);
 			}
 		}
+	}
+
+	private static boolean shouldHandle(Diagnostic diagnostic) {
+		// filter out diagnostics with no message or with root diagnostic message
+		if (diagnostic.getMessage() == null || diagnostic.getMessage().startsWith("Diagnosis of")) {
+			return false;
+		}
+		return true;
 	}
 
 	private static void handleDiagnostic(Diagnostic diagnostic, ValidationHandler handler) {
