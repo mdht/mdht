@@ -117,6 +117,11 @@ public class Main {
 			System.out.println("WARNING: " + diagnostic.getMessage());
 		}
 
+		System.out.println("Number of Schema Validation Diagnostics: " + result.getSchemaValidationDiagnostics().size());
+		System.out.println("Number of EMF Resource Diagnostics: " + result.getEMFResourceDiagnostics().size());
+		System.out.println("Number of EMF Validation Diagnostics: " + result.getEMFValidationDiagnostics().size());
+		System.out.println("Number of Total Diagnostics: " + result.getAllDiagnostics().size());
+
 		if (!result.hasErrors()) {
 			System.out.println("Document is valid");
 		} else {
