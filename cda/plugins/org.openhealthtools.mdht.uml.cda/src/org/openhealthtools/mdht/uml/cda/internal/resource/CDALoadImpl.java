@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.internal.resource;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -20,6 +21,7 @@ import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.emf.ecore.xmi.XMLHelper;
@@ -233,5 +235,30 @@ public class CDALoadImpl extends XMLLoadImpl {
 			return result;
 		}
 		return eNamedElement.getName();
+	}
+
+	@Override
+	protected void handleErrors() throws IOException {
+		if (!resource.getErrors().isEmpty()) {
+			Resource.Diagnostic error = resource.getErrors().get(0);
+			if (error instanceof Exception) {
+				if (shouldThrow((Exception) error)) {
+					throw new Resource.IOWrappedException((Exception) error);
+				}
+			} else {
+				throw new IOException(error.getMessage());
+			}
+		}
+	}
+
+	private boolean shouldThrow(Exception exception) {
+		if (exception.getCause() != null) {
+			Throwable cause = exception.getCause();
+			String message = cause.getMessage();
+			if (message != null && message.contains("is not a valid enumerator of")) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
