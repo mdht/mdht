@@ -18,9 +18,13 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil.Filter;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil.ValidationHandler;
 
-// a class to collect diagnostics produced during XML schema validation and/or EMF validation
+// class to collect diagnostics produced during XML schema validation and/or EMF validation
 public class ValidationResult implements ValidationHandler {
-	private static final String JAVA_XML_VALIDATOR_SOURCE = "javax.xml.validation.Validator";
+	private static final String EMF_COMMON_DIAGNOSTIC_SOURCE = "org.eclipse.emf.common";
+
+	private static final String EMF_RESOURCE_DIAGNOSTIC_SOURCE = "org.eclipse.emf.ecore.resource";
+
+	private static final String SCHEMA_VALIDATION_DIAGNOSTIC_SOURCE = "javax.xml.validation.Validator";
 
 	private List<Diagnostic> allDiagnostics = null;
 
@@ -51,13 +55,23 @@ public class ValidationResult implements ValidationHandler {
 		return Collections.unmodifiableList(diagnostics);
 	}
 
-	// filter out diagnostics produced during EMF validation
+	// diagnostics produced during EMF validation
 	public List<Diagnostic> getEMFValidationDiagnostics() {
 		return getDiagnostics(new Filter<Diagnostic>() {
 			public boolean accept(Diagnostic item) {
-				return JAVA_XML_VALIDATOR_SOURCE.equals(item.getSource())
-						? false
-						: true;
+				return !SCHEMA_VALIDATION_DIAGNOSTIC_SOURCE.equals(item.getSource()) &&
+						!EMF_COMMON_DIAGNOSTIC_SOURCE.equals(item.getSource()) &&
+						!EMF_RESOURCE_DIAGNOSTIC_SOURCE.equals(item.getSource());
+			}
+		});
+	}
+
+	// diagnostics produced during EMF resource load (deserialization)
+	public List<Diagnostic> getEMFResourceDiagnostics() {
+		return getDiagnostics(new Filter<Diagnostic>() {
+			public boolean accept(Diagnostic item) {
+				return EMF_COMMON_DIAGNOSTIC_SOURCE.equals(item.getSource()) ||
+						EMF_RESOURCE_DIAGNOSTIC_SOURCE.equals(item.getSource());
 			}
 		});
 	}
@@ -70,13 +84,11 @@ public class ValidationResult implements ValidationHandler {
 		return Collections.unmodifiableList(infoDiagnostics);
 	}
 
-	// filter out diagnostics produced during XML schema validation
+	// diagnostics produced during XML schema validation
 	public List<Diagnostic> getSchemaValidationDiagnostics() {
 		return getDiagnostics(new Filter<Diagnostic>() {
 			public boolean accept(Diagnostic item) {
-				return JAVA_XML_VALIDATOR_SOURCE.equals(item.getSource())
-						? true
-						: false;
+				return SCHEMA_VALIDATION_DIAGNOSTIC_SOURCE.equals(item.getSource());
 			}
 		});
 	}
