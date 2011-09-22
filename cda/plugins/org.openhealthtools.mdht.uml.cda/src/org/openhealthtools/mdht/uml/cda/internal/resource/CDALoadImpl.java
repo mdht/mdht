@@ -252,8 +252,8 @@ public class CDALoadImpl extends XMLLoadImpl {
 	}
 
 	private boolean shouldThrow(Exception exception) {
-		if (exception.getCause() != null) {
-			Throwable cause = exception.getCause();
+		Throwable cause = exception.getCause();
+		if (cause != null) {
 			String message = cause.getMessage();
 			if (message != null && message.contains("is not a valid enumerator of")) {
 				return false;
