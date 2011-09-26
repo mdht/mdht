@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>org.openhealthtools.mdht.uml.cda.ihe.test</name>
+	<comment></comment>
+	<projects>
+		<project>org.openhealthtools.mdht.uml.cda</project>
+		<project>org.openhealthtools.mdht.uml.cda.ccd</project>
+		<project>org.openhealthtools.mdht.uml.cda.ccd.model</project>
+		<project>org.openhealthtools.mdht.uml.cda.cdt</project>
+		<project>org.openhealthtools.mdht.uml.cda.cdt.model</project>
+		<project>org.openhealthtools.mdht.uml.cda.consol.model</project>
+		<project>org.openhealthtools.mdht.uml.cda.core</project>
+		<project>org.openhealthtools.mdht.uml.cda.hitsp</project>
+		<project>org.openhealthtools.mdht.uml.cda.hitsp.model</project>
+		<project>org.openhealthtools.mdht.uml.cda.ihe</project>
+		<project>org.openhealthtools.mdht.uml.cda.ihe.model</project>
+		<project>org.openhealthtools.mdht.uml.cda.test</project>
+		<project>org.openhealthtools.mdht.uml.hdf</project>
+		<project>org.openhealthtools.mdht.uml.hl7.datatypes</project>
+		<project>org.openhealthtools.mdht.uml.hl7.rim</project>
+		<project>org.openhealthtools.mdht.uml.hl7.vocab</project>
+		<project>org.openhealthtools.mdht.uml.term.core</project>
+		<project>org.openhealthtools.mdht.uml.term.models</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.pde.ManifestBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.pde.SchemaBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.pde.PluginNature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+</projectDescription>

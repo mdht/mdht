@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+
+<!--
+  Copyright (c) 2009 David A Carlson.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      David A Carlson (XMLmodeling.com) - initial API and implementation
+      
+  $Id$
+-->
+
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+      		adaptable="true"
+            objectClass="org.eclipse.uml2.uml.Element"
+            id="org.openhealthtools.mdht.uml.ui.dev.popup">
+         <menu
+               label="%menu_CDATools"
+               path="additions"
+               id="cdatools">
+            <separator
+                  name="transform">
+            </separator>
+         </menu>
+         <action
+               label="%menu_RemoveConstraintAnnotations"
+               class="org.openhealthtools.mdht.uml.ui.dev.actions.RemoveConstraintAnnotationsAction"
+               menubarPath="cdatools/transform"
+               enablesFor="1"
+               id="org.openhealthtools.mdht.uml.ui.dev.actions.RemoveConstraintAnnotationsAction">
+         </action>
+         <action
+               label="%menu_TransformValidationSupport"
+               class="org.openhealthtools.mdht.uml.ui.dev.actions.TransformValidationSupportAction"
+               menubarPath="cdatools/transform"
+               enablesFor="1"
+               id="org.openhealthtools.mdht.uml.ui.dev.actions.TransformValidationSupportAction">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>
