@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?>
+<!-- The following sample document depicts a fictional character’s health summary. Any resemblance to a real person is coincidental. -->
+<!-- To illustrate as many data elements as possible, the clinical scenario may not be entirely plausible. -->
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+
+	<!-- 
+********************************************************
+CDA Header
+********************************************************
+-->
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+	<templateId root="2.16.840.1.113883.10.20.15.2.6.1.1.1.1.1.2.3" />
+	<!-- TB Report template root -->
+	<id root="db734647-fc99-424c-a864-7e3cda82e703" />
+	<code code="CaseRep-X" codeSystem="2.16.840.1.113883.6.1" displayName="Public Health Case report" />
+	<title>Public Health Case Report - Tuberculosis</title>
+	<effectiveTime value="20090110130000+0500" />
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
+	<languageCode code="en-US" />
+	<recordTarget>
+		<patientRole>
+			<id extension="996-756-495" root="2.16.840.1.113883.19.5" />
+			<addr>
+				<streetAddressLine>2222 Home Street</streetAddressLine>
+				<city>Ann Arbor</city>
+				<state>MI</state>
+				<postalCode>99999</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:+1-555-555-5003" />
+			<patient>
+				<name use="L">
+					<given>Eve</given>
+					<given qualifier="IN">E</given>
+					<family>Everywoman</family>
+				</name>
+				<administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" />
+				<birthTime value="19830924" />
+				<ethnicGroupCode code="2135-2" codeSystem="2.16.840.1.113883.6.238" displayName="HISPANIC OR LATINO" />
+				<birthplace>
+					<place>
+						<addr>
+							<country>USA</country>
+						</addr>
+					</place>
+				</birthplace>
+			</patient>
+			<providerOrganization>
+				<id root="2.16.840.1.113883.19.5" />
+				<name>Good Health Hospital</name>
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="20090110130000+0500" />
+		<assignedAuthor>
+			<id extension="33333334" root="2.16.840.1.113883.19.5" />
+			<addr>
+				<streetAddressLine>1004 Healthcare Drive</streetAddressLine>
+				<city>Ann Arbor</city>
+				<state>MI</state>
+				<postalCode>99999</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:+1-888-888-8888;ext=9998" />
+			<assignedPerson>
+				<name>
+					<given>Paula</given>
+					<family>Pasteur</family>
+					<suffix>RN</suffix>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="2.16.840.1.113883.19.5" />
+				<name>Good Health Hospital</name>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="2.16.840.1.113883.19.5" />
+				<name>Good Health Hospital</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<legalAuthenticator>
+		<time value="20090110" />
+		<signatureCode code="S" />
+		<assignedEntity>
+			<id extension="33333334" root="2.16.840.1.113883.19.5" />
+			<addr>
+				<streetAddressLine>1004 Healthcare Drive</streetAddressLine>
+				<city>Ann Arbor</city>
+				<state>MI</state>
+				<postalCode>99999</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:+1-888-888-8888;ext=9998" />
+			<assignedPerson>
+				<name>
+					<given>Paula</given>
+					<family>Pasteur</family>
+					<suffix>RN</suffix>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="2.16.840.1.113883.19.5" />
+				<name>Good Health Hospital</name>
+			</representedOrganization>
+		</assignedEntity>
+	</legalAuthenticator>
+	<!-- 
+********************************************************
+CDA Body
+********************************************************
+-->
+	<component>
+		<structuredBody>
+			<!-- 
+********************************************************
+Relevant diagnostic tests and/or laboratory data
+********************************************************
+-->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.15.2.6" />
+					<code code="30954-2" codeSystem="2.16.840.1.113883.6.1" displayName="Relevant diagnostic tests and/or laboratory data" />
+					<title>Results</title>
+					<text>
+						<list>
+							<item>Result observations:
+								<list><item>Tuberculosis reaction wheal^3D post 1 TU ID: 10mm</item><item>Sputum culture: 
+										<list><item>Sputum collected Dec 15, 2008 at GHH Outpatient Clinic</item><item>Collection procedure: Bronchoalveolar lavage</item><item>Mycobacterium tuberculosis
+												<list><item>Pyrazinamide MIC: 0.05 ug/mL (S)</item><item>Rifampin MIC: 0.04 ug/mL (S)</item></list></item></list></item><item>Mycobacterium sp DNA: January 7, 2009: Detected</item></list></item>
+							<item>Imaging observations:
+								<list><item>Radiologic infiltrate (Standard chest X-ray, Jan 07, 2009)</item></list></item>
+						</list>
+					</text>
+					<entry typeCode="DRIV">
+						<!-- TB Result Observation -->
+						<!-- TB skin test observation-->
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.15.3.13" />
+							<id nullFlavor="NI" />
+							<code code="43419-1" codeSystem="2.16.840.1.113883.6.1" displayName="Tuberculosis reaction wheal^3D post 1 TU ID" />
+							<statusCode code="completed" />
+							<effectiveTime value="20081201" />
+							<value xsi:type="PQ" value="10" unit="mm" />
+						</observation>
+					</entry>
+					<entry typeCode="DRIV">
+						<!-- TB Result Organizer -->
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.15.3.21" />
+							<id nullFlavor="NI" />
+							<code code="104173009" codeSystem="2.16.840.1.113883.6.96" displayName="Sputum culture" />
+							<statusCode code="completed" />
+							<effectiveTime value="20081215" />
+							<!-- Specimen collection date-->
+							<specimen>
+								<specimenRole>
+									<id root="d5a9ef50-d05e-11dd-ad8b-0800200c9a66" />
+									<specimenPlayingEntity>
+										<code code="119334006" codeSystem="2.16.840.1.113883.6.96" displayName="Sputum specimen"/>
+										<!-- Specimen type -->
+									</specimenPlayingEntity>
+								</specimenRole>
+							</specimen>
+							<component>
+								<!-- TB Result Observation -->
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.15.3.13" />
+									<id nullFlavor="NI" />
+									<code code="539-7" codeSystem="2.16.840.1.113883.6.1" displayName="Mycobacterium species identified" />
+									<!-- Test name -->
+									<statusCode code="completed" />
+									<effectiveTime value="20081215" />
+									<!-- Specimen collection date-->
+									<value xsi:type="CD" code="113861009" codeSystem="2.16.840.1.113883.6.96" displayName="Mycobacterium tuberculosis" />
+									<!-- Test result -->
+									<performer>
+										<time value="20081215" />
+										<!-- Date of test on specimen -->
+										<assignedEntity>
+											<id nullFlavor="NI" />
+										</assignedEntity>
+									</performer>
+									<participant typeCode="SBJ">
+										<participantRole classCode="ISLT">
+											<id root="63af5c4e-2b78-4d41-bd38-9c3caaf86d64" />
+											<playingEntity>
+												<code code="113861009" codeSystem="2.16.840.1.113883.6.96" displayName="Mycobacterium tuberculosis" />
+											</playingEntity>
+										</participantRole>
+									</participant>
+									<entryRelationship typeCode="COMP">
+										<!-- Susceptibility result -->
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.15.3.10" />
+											<code code="18769-0" codeSystem="2.16.840.1.113883.6.1" displayName="Microbial susceptibility tests" />
+											<statusCode code="completed" />
+											<participant typeCode="SBJ">
+												<participantRole classCode="ISLT">
+													<id root="63af5c4e-2b78-4d41-bd38-9c3caaf86d64" />
+													<playingEntity>
+														<code code="113861009" codeSystem="2.16.840.1.113883.6.96" displayName="Mycobacterium tuberculosis" />
+													</playingEntity>
+												</participantRole>
+											</participant>
+											<entryRelationship typeCode="COMP">
+												<observation classCode="OBS" moodCode="EVN">
+													<id nullFlavor="NI" />
+													<code code="424-2" codeSystem="2.16.840.1.113883.6.1" displayName="Pyrazinamide MIC" />
+													<statusCode code="completed" />
+													<value xsi:type="PQ" value="0.05" unit="ug/mL" />
+													<interpretationCode code="S" codeSystem="2.16.840.1.113883.5.83" displayName="Susceptible" />
+												</observation>
+											</entryRelationship>
+											<entryRelationship typeCode="COMP">
+												<observation classCode="OBS" moodCode="EVN">
+													<id nullFlavor="NI" />
+													<code code="428-3" codeSystem="2.16.840.1.113883.6.1" displayName="Rifampin MIC" />
+													<statusCode code="completed" />
+													<value xsi:type="PQ" value="0.04" unit="ug/mL" />
+													<interpretationCode code="S" codeSystem="2.16.840.1.113883.5.83" displayName="Susceptible" />
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+							<component>
+								<!-- Specimen collection procedure -->
+								<procedure classCode="PROC" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.15.3.2" />
+									<code code="397394009" codeSystem="2.16.840.1.113883.6.96" displayName="Bronchoalveolar lavage" />
+									<effectiveTime value="20081215" />
+									<!-- Specimen collection date-->
+									<!-- Specimen source -->
+									<targetSiteCode code="82094008" codeSystem="2.16.840.1.113883.6.96" displayName="Lower respiratory tract structure" />
+									<performer>
+										<assignedEntity>
+											<id root="250a11a0-d079-11dd-ad8b-0800200c9a66" />
+											<!-- ID of Organization collecting specimen -->
+											<representedOrganization>
+												<name>GHH Outpatient Clinic</name>
+												<!-- Name of Organization collecting specimen -->
+											</representedOrganization>
+										</assignedEntity>
+									</performer>
+									<participant typeCode="PRD">
+										<participantRole classCode="SPEC">
+											<id root="d5a9ef50-d05e-11dd-ad8b-0800200c9a66" />
+											<playingEntity>
+												<code code="119334006" codeSystem="2.16.840.1.113883.6.96" displayName="Sputum specimen">
+												</code>
+												<!-- Specimen type -->
+											</playingEntity>
+										</participantRole>
+									</participant>
+								</procedure>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>
