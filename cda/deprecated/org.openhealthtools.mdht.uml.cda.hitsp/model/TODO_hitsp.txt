@@ -1,8 +1,0 @@
-* Medications Section
-	- up to 2.2.2.8.5 Route of Administration Constraints
-	
-* Diagnostic Results Section
-	- 
-
-* Problem List Section
-	- 
