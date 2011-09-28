@@ -35,7 +35,6 @@ import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Interface;
-import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
@@ -75,7 +74,7 @@ public class ProfileExtItemProvider extends ProfileItemProvider implements ITabl
 
 	@Override
 	public String getText(Object object) {
-		String label = getName((Model) object);
+		String label = getName((Profile) object);
 		return label == null || label.length() == 0
 				? getString("_UI_Profile_type") : //$NON-NLS-1$
 				label;
