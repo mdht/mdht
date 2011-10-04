@@ -32,8 +32,10 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection#validateCodedResultsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Results Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection#validateCodedResultsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Results Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection#validateCodedResultsSectionProcedureEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Results Section Procedure Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection#validateCodedResultsSectionExternalReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Results Section External Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection#validateCodedResultsSectionSimpleObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Results Section Simple Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection#getProcedureEntries() <em>Get Procedure Entries</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection#getExternalReferences() <em>Get External References</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedResultsSection#getSimpleObservations() <em>Get Simple Observations</em>}</li>
  * </ul>
@@ -117,6 +119,40 @@ public class CodedResultsSectionTest extends CDAValidationTest {
 	* @generated NOT
 	*/
 	@Test
+	public void testValidateCodedResultsSectionProcedureEntry() {
+		OperationsTestCase<CodedResultsSection> validateCodedResultsSectionProcedureEntryTestCase = new OperationsTestCase<CodedResultsSection>(
+			"validateCodedResultsSectionProcedureEntry",
+			operationsForOCL.getOCLValue("VALIDATE_CODED_RESULTS_SECTION_PROCEDURE_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CodedResultsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(CodedResultsSection target) {
+				target.init();
+				target.addProcedure(IHEFactory.eINSTANCE.createProcedureEntryProcedureActivityProcedure());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CodedResultsSectionOperations.validateCodedResultsSectionProcedureEntry(
+					(CodedResultsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCodedResultsSectionProcedureEntryTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
 	public void testValidateCodedResultsSectionExternalReference() {
 		OperationsTestCase<CodedResultsSection> validateCodedResultsSectionExternalReferenceTestCase = new OperationsTestCase<CodedResultsSection>(
 			"validateCodedResultsSectionExternalReference",
@@ -180,6 +216,18 @@ public class CodedResultsSectionTest extends CDAValidationTest {
 		};
 
 		validateCodedResultsSectionSimpleObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetProcedureEntries() {
+
+		CodedResultsSection target = objectFactory.create();
+		target.getProcedureEntries();
+
 	}
 
 	/**

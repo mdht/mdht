@@ -15,6 +15,12 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
+import org.openhealthtools.mdht.uml.cda.Author;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Performer2;
+import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.SupplyEntryOperations;
@@ -22,6 +28,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActClassSupply;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,6 +39,16 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryHasIntentAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Has Intent Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryHasAuthorTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Has Author Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryHasAssignedAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Has Assigned Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryHasAssignedAuthorID(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Has Assigned Author ID</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryHasAssignedAuthorPersonOrOrg(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Has Assigned Author Person Or Org</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryHasPerformerTimeEvent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Has Performer Time Event</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryHasPerformerTimeIntent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Has Performer Time Intent</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryHasPerformerAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Has Performer Assigned Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryHasPerformerAssignedEntityID(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Has Performer Assigned Entity ID</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryHasPerformerEntityPersonOrOrg(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Has Performer Entity Person Or Org</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Quantity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryRepeatNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Repeat Number</em>}</li>
@@ -42,6 +60,389 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
  */
 
 public class SupplyEntryTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateSupplyEntryHasIntentAuthor() {
+		OperationsTestCase<SupplyEntry> validateSupplyEntryHasIntentAuthorTestCase = new OperationsTestCase<SupplyEntry>(
+			"validateSupplyEntryHasIntentAuthor",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ENTRY_HAS_INTENT_AUTHOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SupplyEntry target) {
+				target.init();
+				target.setClassCode(ActClassSupply.SPLY);
+				target.setMoodCode(x_DocumentSubstanceMood.INT);
+			}
+
+			@Override
+			protected void updateToPass(SupplyEntry target) {
+				target.setClassCode(ActClassSupply.SPLY);
+				target.setMoodCode(x_DocumentSubstanceMood.INT);
+				target.getAuthors().add(CDAFactory.eINSTANCE.createAuthor());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SupplyEntryOperations.validateSupplyEntryHasIntentAuthor(
+					(SupplyEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSupplyEntryHasIntentAuthorTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateSupplyEntryHasAuthorTime() {
+		OperationsTestCase<SupplyEntry> validateSupplyEntryHasAuthorTimeTestCase = new OperationsTestCase<SupplyEntry>(
+			"validateSupplyEntryHasAuthorTime",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ENTRY_HAS_AUTHOR_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SupplyEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SupplyEntry target) {
+				target.init();
+				Author auth = CDAFactory.eINSTANCE.createAuthor();
+				auth.setTime(DatatypesFactory.eINSTANCE.createTS());
+				target.getAuthors().add(auth);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SupplyEntryOperations.validateSupplyEntryHasAuthorTime(
+					(SupplyEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSupplyEntryHasAuthorTimeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateSupplyEntryHasAssignedAuthor() {
+		OperationsTestCase<SupplyEntry> validateSupplyEntryHasAssignedAuthorTestCase = new OperationsTestCase<SupplyEntry>(
+			"validateSupplyEntryHasAssignedAuthor",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ENTRY_HAS_ASSIGNED_AUTHOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SupplyEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SupplyEntry target) {
+				target.init();
+				Author auth = CDAFactory.eINSTANCE.createAuthor();
+				auth.setAssignedAuthor(CDAFactory.eINSTANCE.createAssignedAuthor());
+				target.getAuthors().add(auth);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SupplyEntryOperations.validateSupplyEntryHasAssignedAuthor(
+					(SupplyEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSupplyEntryHasAssignedAuthorTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateSupplyEntryHasAssignedAuthorID() {
+		OperationsTestCase<SupplyEntry> validateSupplyEntryHasAssignedAuthorIDTestCase = new OperationsTestCase<SupplyEntry>(
+			"validateSupplyEntryHasAssignedAuthorID",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ENTRY_HAS_ASSIGNED_AUTHOR_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SupplyEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SupplyEntry target) {
+				target.init();
+				Author auth = CDAFactory.eINSTANCE.createAuthor();
+				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+				aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				auth.setAssignedAuthor(aa);
+				target.getAuthors().add(auth);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SupplyEntryOperations.validateSupplyEntryHasAssignedAuthorID(
+					(SupplyEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSupplyEntryHasAssignedAuthorIDTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateSupplyEntryHasAssignedAuthorPersonOrOrg() {
+		OperationsTestCase<SupplyEntry> validateSupplyEntryHasAssignedAuthorPersonOrOrgTestCase = new OperationsTestCase<SupplyEntry>(
+			"validateSupplyEntryHasAssignedAuthorPersonOrOrg",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ENTRY_HAS_ASSIGNED_AUTHOR_PERSON_OR_ORG__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SupplyEntry target) {
+				target.init();
+				Author auth = CDAFactory.eINSTANCE.createAuthor();
+				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+				aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+				aa.setRepresentedOrganization(CDAFactory.eINSTANCE.createOrganization());
+				auth.setAssignedAuthor(aa);
+				target.getAuthors().add(auth);
+			}
+
+			@Override
+			protected void updateToPass(SupplyEntry target) {
+				Author auth = CDAFactory.eINSTANCE.createAuthor();
+				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+				Person per = CDAFactory.eINSTANCE.createPerson();
+				per.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+				aa.setAssignedPerson(per);
+				aa.setRepresentedOrganization(CDAFactory.eINSTANCE.createOrganization());
+				auth.setAssignedAuthor(aa);
+				target.getAuthors().add(auth);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SupplyEntryOperations.validateSupplyEntryHasAssignedAuthorPersonOrOrg(
+					(SupplyEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSupplyEntryHasAssignedAuthorPersonOrOrgTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateSupplyEntryHasPerformerTimeEvent() {
+		OperationsTestCase<SupplyEntry> validateSupplyEntryHasPerformerTimeEventTestCase = new OperationsTestCase<SupplyEntry>(
+			"validateSupplyEntryHasPerformerTimeEvent",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ENTRY_HAS_PERFORMER_TIME_EVENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SupplyEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SupplyEntry target) {
+				target.init();
+				target.setMoodCode(x_DocumentSubstanceMood.EVN);
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				per.setTime(DatatypesFactory.eINSTANCE.createIVL_TS());
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SupplyEntryOperations.validateSupplyEntryHasPerformerTimeEvent(
+					(SupplyEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSupplyEntryHasPerformerTimeEventTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateSupplyEntryHasPerformerTimeIntent() {
+		OperationsTestCase<SupplyEntry> validateSupplyEntryHasPerformerTimeIntentTestCase = new OperationsTestCase<SupplyEntry>(
+			"validateSupplyEntryHasPerformerTimeIntent",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ENTRY_HAS_PERFORMER_TIME_INTENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SupplyEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SupplyEntry target) {
+				target.init();
+				target.setMoodCode(x_DocumentSubstanceMood.INT);
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				per.setTime(DatatypesFactory.eINSTANCE.createIVL_TS());
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SupplyEntryOperations.validateSupplyEntryHasPerformerTimeIntent(
+					(SupplyEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSupplyEntryHasPerformerTimeIntentTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateSupplyEntryHasPerformerAssignedEntity() {
+		OperationsTestCase<SupplyEntry> validateSupplyEntryHasPerformerAssignedEntityTestCase = new OperationsTestCase<SupplyEntry>(
+			"validateSupplyEntryHasPerformerAssignedEntity",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ENTRY_HAS_PERFORMER_ASSIGNED_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SupplyEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SupplyEntry target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				per.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SupplyEntryOperations.validateSupplyEntryHasPerformerAssignedEntity(
+					(SupplyEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSupplyEntryHasPerformerAssignedEntityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateSupplyEntryHasPerformerAssignedEntityID() {
+		OperationsTestCase<SupplyEntry> validateSupplyEntryHasPerformerAssignedEntityIDTestCase = new OperationsTestCase<SupplyEntry>(
+			"validateSupplyEntryHasPerformerAssignedEntityID",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ENTRY_HAS_PERFORMER_ASSIGNED_ENTITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SupplyEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SupplyEntry target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SupplyEntryOperations.validateSupplyEntryHasPerformerAssignedEntityID(
+					(SupplyEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSupplyEntryHasPerformerAssignedEntityIDTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateSupplyEntryHasPerformerEntityPersonOrOrg() {
+		OperationsTestCase<SupplyEntry> validateSupplyEntryHasPerformerEntityPersonOrOrgTestCase = new OperationsTestCase<SupplyEntry>(
+			"validateSupplyEntryHasPerformerEntityPersonOrOrg",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ENTRY_HAS_PERFORMER_ENTITY_PERSON_OR_ORG__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SupplyEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SupplyEntry target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+				ae.setAssignedPerson(person);
+				ae.getRepresentedOrganizations().add(CDAFactory.eINSTANCE.createOrganization());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SupplyEntryOperations.validateSupplyEntryHasPerformerEntityPersonOrOrg(
+					(SupplyEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSupplyEntryHasPerformerEntityPersonOrOrgTestCase.doValidationTest();
+	}
 
 	/**
 	*

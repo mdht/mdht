@@ -15,7 +15,11 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Participant2;
+import org.openhealthtools.mdht.uml.cda.ParticipantRole;
+import org.openhealthtools.mdht.uml.cda.PlayingEntity;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance;
 import org.openhealthtools.mdht.uml.cda.ihe.Comment;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
@@ -25,7 +29,13 @@ import org.openhealthtools.mdht.uml.cda.ihe.Severity;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.AllergyIntoleranceOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
+import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassRoot;
+import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
+import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
@@ -36,6 +46,16 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateAllergyIntoleranceCodeCodeSystemRequired(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Code Code System Required</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateAllergyIntoleranceDisplayNameCodeName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Display Name Code Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateAllergyIntoleranceAllergySubstance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Allergy Substance</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateAllergyIntoleranceAllergySubstanceTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Allergy Substance Type Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateAllergyIntoleranceAllergySubstanceParticipantRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Allergy Substance Participant Role</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateAllergyIntoleranceAllergySubstanceParticipantRoleClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Allergy Substance Participant Role Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateAllergyIntoleranceAllergySubstancePlayingEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Allergy Substance Playing Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateAllergyIntoleranceAllergySubstancePlayingEntityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Allergy Substance Playing Entity Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateAllergyIntoleranceAllergySubstancePlayingEntityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Allergy Substance Playing Entity Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateAllergyIntolerancePlayingEntityCodeReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Playing Entity Code Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateAllergyIntoleranceTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateAllergyIntoleranceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance#validateAllergyIntoleranceProblemEntryReactionObservationContainer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Intolerance Problem Entry Reaction Observation Container</em>}</li>
@@ -54,6 +74,406 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  */
 
 public class AllergyIntoleranceTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateAllergyIntoleranceCodeCodeSystemRequired() {
+		OperationsTestCase<AllergyIntolerance> validateAllergyIntoleranceCodeCodeSystemRequiredTestCase = new OperationsTestCase<AllergyIntolerance>(
+			"validateAllergyIntoleranceCodeCodeSystemRequired",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_CODE_CODE_SYSTEM_REQUIRED__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AllergyIntolerance target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AllergyIntolerance target) {
+				target.init();
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCode("test");
+				cd.setCodeSystem("codeSystem");
+				target.setCode(cd);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AllergyIntoleranceOperations.validateAllergyIntoleranceCodeCodeSystemRequired(
+					(AllergyIntolerance) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAllergyIntoleranceCodeCodeSystemRequiredTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateAllergyIntoleranceDisplayNameCodeName() {
+		OperationsTestCase<AllergyIntolerance> validateAllergyIntoleranceDisplayNameCodeNameTestCase = new OperationsTestCase<AllergyIntolerance>(
+			"validateAllergyIntoleranceDisplayNameCodeName",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_DISPLAY_NAME_CODE_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AllergyIntolerance target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AllergyIntolerance target) {
+				target.init();
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setDisplayName("test");
+				cd.setCodeSystemName("codeSystemName");
+				target.setCode(cd);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AllergyIntoleranceOperations.validateAllergyIntoleranceDisplayNameCodeName(
+					(AllergyIntolerance) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAllergyIntoleranceDisplayNameCodeNameTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateAllergyIntoleranceAllergySubstance() {
+		OperationsTestCase<AllergyIntolerance> validateAllergyIntoleranceAllergySubstanceTestCase = new OperationsTestCase<AllergyIntolerance>(
+			"validateAllergyIntoleranceAllergySubstance",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_ALLERGY_SUBSTANCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AllergyIntolerance target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AllergyIntolerance target) {
+				target.init();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				target.getParticipants().add(par);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AllergyIntoleranceOperations.validateAllergyIntoleranceAllergySubstance(
+					(AllergyIntolerance) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAllergyIntoleranceAllergySubstanceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateAllergyIntoleranceAllergySubstanceTypeCode() {
+		OperationsTestCase<AllergyIntolerance> validateAllergyIntoleranceAllergySubstanceTypeCodeTestCase = new OperationsTestCase<AllergyIntolerance>(
+			"validateAllergyIntoleranceAllergySubstanceTypeCode",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_ALLERGY_SUBSTANCE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AllergyIntolerance target) {
+				target.init();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				target.getParticipants().add(par);
+			}
+
+			@Override
+			protected void updateToPass(AllergyIntolerance target) {
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.CSM);
+				target.getParticipants().clear();
+				target.getParticipants().add(par);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AllergyIntoleranceOperations.validateAllergyIntoleranceAllergySubstanceTypeCode(
+					(AllergyIntolerance) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAllergyIntoleranceAllergySubstanceTypeCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateAllergyIntoleranceAllergySubstanceParticipantRole() {
+		OperationsTestCase<AllergyIntolerance> validateAllergyIntoleranceAllergySubstanceParticipantRoleTestCase = new OperationsTestCase<AllergyIntolerance>(
+			"validateAllergyIntoleranceAllergySubstanceParticipantRole",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_ALLERGY_SUBSTANCE_PARTICIPANT_ROLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AllergyIntolerance target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AllergyIntolerance target) {
+				target.init();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.CSM);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				par.setParticipantRole(pr);
+				target.getParticipants().add(par);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AllergyIntoleranceOperations.validateAllergyIntoleranceAllergySubstanceParticipantRole(
+					(AllergyIntolerance) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAllergyIntoleranceAllergySubstanceParticipantRoleTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateAllergyIntoleranceAllergySubstanceParticipantRoleClassCode() {
+		OperationsTestCase<AllergyIntolerance> validateAllergyIntoleranceAllergySubstanceParticipantRoleClassCodeTestCase = new OperationsTestCase<AllergyIntolerance>(
+			"validateAllergyIntoleranceAllergySubstanceParticipantRoleClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_ALLERGY_SUBSTANCE_PARTICIPANT_ROLE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AllergyIntolerance target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AllergyIntolerance target) {
+				target.init();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.CSM);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setClassCode(RoleClassRoot.MANU);
+				par.setParticipantRole(pr);
+				target.getParticipants().add(par);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AllergyIntoleranceOperations.validateAllergyIntoleranceAllergySubstanceParticipantRoleClassCode(
+					(AllergyIntolerance) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAllergyIntoleranceAllergySubstanceParticipantRoleClassCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateAllergyIntoleranceAllergySubstancePlayingEntity() {
+		OperationsTestCase<AllergyIntolerance> validateAllergyIntoleranceAllergySubstancePlayingEntityTestCase = new OperationsTestCase<AllergyIntolerance>(
+			"validateAllergyIntoleranceAllergySubstancePlayingEntity",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_ALLERGY_SUBSTANCE_PLAYING_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AllergyIntolerance target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AllergyIntolerance target) {
+				target.init();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.CSM);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setClassCode(RoleClassRoot.MANU);
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pr.setPlayingEntity(pe);
+				par.setParticipantRole(pr);
+				target.getParticipants().add(par);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AllergyIntoleranceOperations.validateAllergyIntoleranceAllergySubstancePlayingEntity(
+					(AllergyIntolerance) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAllergyIntoleranceAllergySubstancePlayingEntityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateAllergyIntoleranceAllergySubstancePlayingEntityClassCode() {
+		OperationsTestCase<AllergyIntolerance> validateAllergyIntoleranceAllergySubstancePlayingEntityClassCodeTestCase = new OperationsTestCase<AllergyIntolerance>(
+			"validateAllergyIntoleranceAllergySubstancePlayingEntityClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_ALLERGY_SUBSTANCE_PLAYING_ENTITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AllergyIntolerance target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AllergyIntolerance target) {
+				target.init();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.CSM);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setClassCode(RoleClassRoot.MANU);
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pe.setClassCode(EntityClassRoot.MMAT);
+				pr.setPlayingEntity(pe);
+				par.setParticipantRole(pr);
+				target.getParticipants().add(par);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AllergyIntoleranceOperations.validateAllergyIntoleranceAllergySubstancePlayingEntityClassCode(
+					(AllergyIntolerance) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAllergyIntoleranceAllergySubstancePlayingEntityClassCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateAllergyIntoleranceAllergySubstancePlayingEntityCode() {
+		OperationsTestCase<AllergyIntolerance> validateAllergyIntoleranceAllergySubstancePlayingEntityCodeTestCase = new OperationsTestCase<AllergyIntolerance>(
+			"validateAllergyIntoleranceAllergySubstancePlayingEntityCode",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_ALLERGY_SUBSTANCE_PLAYING_ENTITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AllergyIntolerance target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AllergyIntolerance target) {
+				target.init();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.CSM);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setClassCode(RoleClassRoot.MANU);
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pe.setClassCode(EntityClassRoot.MMAT);
+				pe.setCode(DatatypesFactory.eINSTANCE.createCE());
+				pr.setPlayingEntity(pe);
+				par.setParticipantRole(pr);
+				target.getParticipants().add(par);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AllergyIntoleranceOperations.validateAllergyIntoleranceAllergySubstancePlayingEntityCode(
+					(AllergyIntolerance) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAllergyIntoleranceAllergySubstancePlayingEntityCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateAllergyIntolerancePlayingEntityCodeReference() {
+		OperationsTestCase<AllergyIntolerance> validateAllergyIntolerancePlayingEntityCodeReferenceTestCase = new OperationsTestCase<AllergyIntolerance>(
+			"validateAllergyIntolerancePlayingEntityCodeReference",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_INTOLERANCE_PLAYING_ENTITY_CODE_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AllergyIntolerance target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AllergyIntolerance target) {
+				target.init();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.CSM);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setClassCode(RoleClassRoot.MANU);
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pe.setClassCode(EntityClassRoot.MMAT);
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				ED ot = DatatypesFactory.eINSTANCE.createED();
+				TEL ref = DatatypesFactory.eINSTANCE.createTEL();
+				ot.setReference(ref);
+				code.setOriginalText(ot);
+				pe.setCode(code);
+				pr.setPlayingEntity(pe);
+				par.setParticipantRole(pr);
+				target.getParticipants().add(par);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AllergyIntoleranceOperations.validateAllergyIntolerancePlayingEntityCodeReference(
+					(AllergyIntolerance) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAllergyIntolerancePlayingEntityCodeReferenceTestCase.doValidationTest();
+	}
 
 	/**
 	*

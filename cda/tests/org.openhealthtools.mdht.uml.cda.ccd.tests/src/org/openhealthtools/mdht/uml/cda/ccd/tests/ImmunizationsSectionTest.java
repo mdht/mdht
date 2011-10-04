@@ -32,6 +32,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection#validateImmunizationsSectionTitleValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunizations Section Title Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection#validateImmunizationsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunizations Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection#validateImmunizationsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunizations Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ImmunizationsSection#validateMedicationsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Template Id</em>}</li>
@@ -43,6 +44,44 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  */
 
 public class ImmunizationsSectionTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateImmunizationsSectionTitleValue() {
+		OperationsTestCase<ImmunizationsSection> validateImmunizationsSectionTitleValueTestCase = new OperationsTestCase<ImmunizationsSection>(
+			"validateImmunizationsSectionTitleValue",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATIONS_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ImmunizationsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ImmunizationsSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("immunization");
+
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ImmunizationsSectionOperations.validateImmunizationsSectionTitleValue(
+					(ImmunizationsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateImmunizationsSectionTitleValueTestCase.doValidationTest();
+	}
 
 	/**
 	 * 

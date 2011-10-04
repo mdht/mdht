@@ -32,6 +32,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection#validatePlanOfCareSectionTitleValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Title Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection#validatePlanOfCareSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection#validatePlanOfCareSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.PlanOfCareSection#validatePlanOfCareSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Title</em>}</li>
@@ -56,6 +57,44 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  */
 
 public class PlanOfCareSectionTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePlanOfCareSectionTitleValue() {
+		OperationsTestCase<PlanOfCareSection> validatePlanOfCareSectionTitleValueTestCase = new OperationsTestCase<PlanOfCareSection>(
+			"validatePlanOfCareSectionTitleValue",
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PlanOfCareSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PlanOfCareSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("plan");
+
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PlanOfCareSectionOperations.validatePlanOfCareSectionTitleValue(
+					(PlanOfCareSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePlanOfCareSectionTitleValueTestCase.doValidationTest();
+	}
 
 	/**
 	 * 

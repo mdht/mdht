@@ -39,6 +39,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionMedicationActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Medication Activity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#validateMedicationsSectionSupplyActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Supply Activity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#getMedicationActivities() <em>Get Medication Activities</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.MedicationsSection#getSupplyActivities() <em>Get Supply Activities</em>}</li>
  * </ul>
@@ -226,6 +228,74 @@ public class MedicationsSectionTest extends CDAValidationTest {
 		};
 
 		validateMedicationsSectionTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateMedicationsSectionMedicationActivity() {
+		OperationsTestCase<MedicationsSection> validateMedicationsSectionMedicationActivityTestCase = new OperationsTestCase<MedicationsSection>(
+			"validateMedicationsSectionMedicationActivity",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATIONS_SECTION_MEDICATION_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationsSection target) {
+				target.init();
+				target.addSubstanceAdministration(CCDFactory.eINSTANCE.createMedicationActivity());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationsSectionOperations.validateMedicationsSectionMedicationActivity(
+					(MedicationsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationsSectionMedicationActivityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateMedicationsSectionSupplyActivity() {
+		OperationsTestCase<MedicationsSection> validateMedicationsSectionSupplyActivityTestCase = new OperationsTestCase<MedicationsSection>(
+			"validateMedicationsSectionSupplyActivity",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATIONS_SECTION_SUPPLY_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationsSection target) {
+				target.init();
+				target.addSupply(CCDFactory.eINSTANCE.createSupplyActivity());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationsSectionOperations.validateMedicationsSectionSupplyActivity(
+					(MedicationsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationsSectionSupplyActivityTestCase.doValidationTest();
 	}
 
 	/**
