@@ -30,6 +30,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.HospitalAdmissionDiagnosisSection#validateHospitalAdmissionDiagnosisSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Admission Diagnosis Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.HospitalAdmissionDiagnosisSection#validateHospitalAdmissionDiagnosisSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Admission Diagnosis Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.HospitalAdmissionDiagnosisSection#validateHospitalAdmissionDiagnosisSectionProblemConcernEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Admission Diagnosis Section Problem Concern Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.HospitalAdmissionDiagnosisSection#getProblemConcernEntry() <em>Get Problem Concern Entry</em>}</li>
  * </ul>
  * </p>
  *
@@ -104,6 +106,52 @@ public class HospitalAdmissionDiagnosisSectionTest extends CDAValidationTest {
 		};
 
 		validateHospitalAdmissionDiagnosisSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateHospitalAdmissionDiagnosisSectionProblemConcernEntry() {
+		OperationsTestCase<HospitalAdmissionDiagnosisSection> validateHospitalAdmissionDiagnosisSectionProblemConcernEntryTestCase = new OperationsTestCase<HospitalAdmissionDiagnosisSection>(
+			"validateHospitalAdmissionDiagnosisSectionProblemConcernEntry",
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HospitalAdmissionDiagnosisSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HospitalAdmissionDiagnosisSection target) {
+				target.init();
+				target.addAct(IHEFactory.eINSTANCE.createProblemConcernEntry());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HospitalAdmissionDiagnosisSectionOperations.validateHospitalAdmissionDiagnosisSectionProblemConcernEntry(
+					(HospitalAdmissionDiagnosisSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHospitalAdmissionDiagnosisSectionProblemConcernEntryTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetProblemConcernEntry() {
+
+		HospitalAdmissionDiagnosisSection target = objectFactory.create();
+		target.getProblemConcernEntry();
+
 	}
 
 	/**

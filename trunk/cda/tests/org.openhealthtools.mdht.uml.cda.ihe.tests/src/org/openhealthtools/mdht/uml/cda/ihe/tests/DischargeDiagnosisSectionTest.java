@@ -30,6 +30,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection#validateDischargeDiagnosisSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Diagnosis Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection#validateDischargeDiagnosisSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Diagnosis Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection#validateDischargeDiagnosisSectionProblemConcernEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Diagnosis Section Problem Concern Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.DischargeDiagnosisSection#getProblemConcernEntry() <em>Get Problem Concern Entry</em>}</li>
  * </ul>
  * </p>
  *
@@ -104,6 +106,52 @@ public class DischargeDiagnosisSectionTest extends CDAValidationTest {
 		};
 
 		validateDischargeDiagnosisSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateDischargeDiagnosisSectionProblemConcernEntry() {
+		OperationsTestCase<DischargeDiagnosisSection> validateDischargeDiagnosisSectionProblemConcernEntryTestCase = new OperationsTestCase<DischargeDiagnosisSection>(
+			"validateDischargeDiagnosisSectionProblemConcernEntry",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_DIAGNOSIS_SECTION_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DischargeDiagnosisSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DischargeDiagnosisSection target) {
+				target.init();
+				target.addAct(IHEFactory.eINSTANCE.createProblemConcernEntry());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DischargeDiagnosisSectionOperations.validateDischargeDiagnosisSectionProblemConcernEntry(
+					(DischargeDiagnosisSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDischargeDiagnosisSectionProblemConcernEntryTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetProblemConcernEntry() {
+
+		DischargeDiagnosisSection target = objectFactory.create();
+		target.getProblemConcernEntry();
+
 	}
 
 	/**

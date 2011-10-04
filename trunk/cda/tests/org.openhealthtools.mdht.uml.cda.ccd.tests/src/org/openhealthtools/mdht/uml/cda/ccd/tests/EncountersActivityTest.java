@@ -15,12 +15,17 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Performer2;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.EncountersActivityOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -30,11 +35,18 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#validateEncountersActivityHasIndications(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activity Has Indications</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#validateEncountersActivityHasPractitioners(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activity Has Practitioners</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#validateEncountersActivityPractitionerRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activity Practitioner Role</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#validateEncountersActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activity Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#validateEncountersActivityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activity Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#validateEncountersActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activity Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#validateEncountersActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activity Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#validateEncountersActivityEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activity Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#validateEncountersActivityPatientInstruction(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activity Patient Instruction</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#validateEncountersActivityAgeObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activity Age Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#getPatientInstructions() <em>Get Patient Instructions</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#getAgeObservation() <em>Get Age Observation</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +54,116 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  */
 
 public class EncountersActivityTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateEncountersActivityHasIndications() {
+		OperationsTestCase<EncountersActivity> validateEncountersActivityHasIndicationsTestCase = new OperationsTestCase<EncountersActivity>(
+			"validateEncountersActivityHasIndications",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTERS_ACTIVITY_HAS_INDICATIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(EncountersActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(EncountersActivity target) {
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				target.getEntryRelationships().add(er);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EncountersActivityOperations.validateEncountersActivityHasIndications(
+					(EncountersActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEncountersActivityHasIndicationsTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateEncountersActivityHasPractitioners() {
+		OperationsTestCase<EncountersActivity> validateEncountersActivityHasPractitionersTestCase = new OperationsTestCase<EncountersActivity>(
+			"validateEncountersActivityHasPractitioners",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTERS_ACTIVITY_HAS_PRACTITIONERS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(EncountersActivity target) {
+				// AFAICT There is no way to make this constraint fail
+				// KP Sethi.
+			}
+
+			@Override
+			protected void updateToPass(EncountersActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EncountersActivityOperations.validateEncountersActivityHasPractitioners(
+					(EncountersActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEncountersActivityHasPractitionersTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateEncountersActivityPractitionerRole() {
+		OperationsTestCase<EncountersActivity> validateEncountersActivityPractitionerRoleTestCase = new OperationsTestCase<EncountersActivity>(
+			"validateEncountersActivityPractitionerRole",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTERS_ACTIVITY_PRACTITIONER_ROLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(EncountersActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected void updateToPass(EncountersActivity target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.setCode(DatatypesFactory.eINSTANCE.createCE());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EncountersActivityOperations.validateEncountersActivityPractitionerRole(
+					(EncountersActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEncountersActivityPractitionerRoleTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
@@ -214,6 +336,101 @@ public class EncountersActivityTest extends CDAValidationTest {
 		};
 
 		validateEncountersActivityEffectiveTimeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateEncountersActivityPatientInstruction() {
+		OperationsTestCase<EncountersActivity> validateEncountersActivityPatientInstructionTestCase = new OperationsTestCase<EncountersActivity>(
+			"validateEncountersActivityPatientInstruction",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTERS_ACTIVITY_PATIENT_INSTRUCTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(EncountersActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(EncountersActivity target) {
+				target.init();
+				target.addAct(CCDFactory.eINSTANCE.createPatientInstruction());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EncountersActivityOperations.validateEncountersActivityPatientInstruction(
+					(EncountersActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEncountersActivityPatientInstructionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateEncountersActivityAgeObservation() {
+		OperationsTestCase<EncountersActivity> validateEncountersActivityAgeObservationTestCase = new OperationsTestCase<EncountersActivity>(
+			"validateEncountersActivityAgeObservation",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTERS_ACTIVITY_AGE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(EncountersActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(EncountersActivity target) {
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				er.setObservation(CCDFactory.eINSTANCE.createAgeObservation());
+				target.getEntryRelationships().add(er);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EncountersActivityOperations.validateEncountersActivityAgeObservation(
+					(EncountersActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEncountersActivityAgeObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPatientInstructions() {
+
+		EncountersActivity target = objectFactory.create();
+		target.getPatientInstructions();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetAgeObservation() {
+
+		EncountersActivity target = objectFactory.create();
+		target.getAgeObservation();
+
 	}
 
 	/**

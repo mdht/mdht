@@ -15,10 +15,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.CoverageEntryOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +32,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry#validateCoverageEntryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Entry Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry#validateCoverageEntryPayerEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Entry Payer Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry#getPayerEntries() <em>Get Payer Entries</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,6 +74,55 @@ public class CoverageEntryTest extends CDAValidationTest {
 		};
 
 		validateCoverageEntryTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateCoverageEntryPayerEntry() {
+		OperationsTestCase<CoverageEntry> validateCoverageEntryPayerEntryTestCase = new OperationsTestCase<CoverageEntry>(
+			"validateCoverageEntryPayerEntry",
+			operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ENTRY_PAYER_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CoverageEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(CoverageEntry target) {
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				er.setAct(IHEFactory.eINSTANCE.createPayerEntry());
+				target.getEntryRelationships().add(er);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CoverageEntryOperations.validateCoverageEntryPayerEntry(
+					(CoverageEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCoverageEntryPayerEntryTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPayerEntries() {
+
+		CoverageEntry target = objectFactory.create();
+		target.getPayerEntries();
+
 	}
 
 	/**

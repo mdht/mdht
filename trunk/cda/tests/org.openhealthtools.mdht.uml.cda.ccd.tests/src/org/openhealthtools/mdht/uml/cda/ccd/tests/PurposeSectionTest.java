@@ -62,6 +62,44 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 public class PurposeSectionTest extends CDAValidationTest {
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePurposeSectionTitleValue() {
+		OperationsTestCase<PurposeSection> validatePurposeSectionTitleValueTestCase = new OperationsTestCase<PurposeSection>(
+			"validatePurposeSectionTitleValue",
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PurposeSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PurposeSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("purpose");
+
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PurposeSectionOperations.validatePurposeSectionTitleValue(
+					(PurposeSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePurposeSectionTitleValueTestCase.doValidationTest();
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */

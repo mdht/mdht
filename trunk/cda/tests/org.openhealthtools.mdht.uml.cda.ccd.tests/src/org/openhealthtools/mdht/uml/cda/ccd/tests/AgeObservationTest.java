@@ -15,10 +15,6 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
-import org.openhealthtools.mdht.uml.cda.CDAFactory;
-import org.openhealthtools.mdht.uml.cda.RelatedSubject;
-import org.openhealthtools.mdht.uml.cda.Subject;
-import org.openhealthtools.mdht.uml.cda.SubjectPerson;
 import org.openhealthtools.mdht.uml.cda.ccd.AgeObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.AgeObservationOperations;
@@ -63,45 +59,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  */
 
 public class AgeObservationTest extends CDAValidationTest {
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateAgeObservationRelatedSubjectBirthTime() {
-		OperationsTestCase<AgeObservation> validateAgeObservationRelatedSubjectBirthTimeTestCase = new OperationsTestCase<AgeObservation>(
-			"validateAgeObservationRelatedSubjectBirthTime",
-			operationsForOCL.getOCLValue("VALIDATE_AGE_OBSERVATION_RELATED_SUBJECT_BIRTH_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AgeObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AgeObservation target) {
-				target.init();
-				Subject sub = CDAFactory.eINSTANCE.createSubject();
-				RelatedSubject rsub = CDAFactory.eINSTANCE.createRelatedSubject();
-				SubjectPerson sp = CDAFactory.eINSTANCE.createSubjectPerson();
-				sp.setBirthTime(DatatypesFactory.eINSTANCE.createTS());
-				rsub.setSubject(sp);
-				sub.setRelatedSubject(rsub);
-				target.setSubject(sub);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-				return true;
-				// return AgeObservationOperations.validateAgeObservationRelatedSubjectBirthTime((AgeObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAgeObservationRelatedSubjectBirthTimeTestCase.doValidationTest();
-	}
 
 	/**
 	 * 

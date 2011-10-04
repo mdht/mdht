@@ -29,6 +29,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedAdvanceDirectivesSection#validateCodedAdvanceDirectivesSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Advance Directives Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedAdvanceDirectivesSection#validateCodedAdvanceDirectivesSectionAdvanceDirectivesObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coded Advance Directives Section Advance Directives Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.CodedAdvanceDirectivesSection#getAdvanceDirectivesObservations() <em>Get Advance Directives Observations</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,6 +71,53 @@ public class CodedAdvanceDirectivesSectionTest extends CDAValidationTest {
 		};
 
 		validateCodedAdvanceDirectivesSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateCodedAdvanceDirectivesSectionAdvanceDirectivesObservation() {
+		OperationsTestCase<CodedAdvanceDirectivesSection> validateCodedAdvanceDirectivesSectionAdvanceDirectivesObservationTestCase = new OperationsTestCase<CodedAdvanceDirectivesSection>(
+			"validateCodedAdvanceDirectivesSectionAdvanceDirectivesObservation",
+			operationsForOCL.getOCLValue("VALIDATE_CODED_ADVANCE_DIRECTIVES_SECTION_ADVANCE_DIRECTIVES_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CodedAdvanceDirectivesSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(CodedAdvanceDirectivesSection target) {
+				target.init();
+				target.addObservation(IHEFactory.eINSTANCE.createAdvanceDirectiveObservation());
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CodedAdvanceDirectivesSectionOperations.validateCodedAdvanceDirectivesSectionAdvanceDirectivesObservation(
+					(CodedAdvanceDirectivesSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCodedAdvanceDirectivesSectionAdvanceDirectivesObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetAdvanceDirectivesObservations() {
+
+		CodedAdvanceDirectivesSection target = objectFactory.create();
+		target.getAdvanceDirectivesObservations();
+
 	}
 
 	/**

@@ -15,6 +15,8 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.FamilyHistorySectionOperations;
@@ -30,9 +32,15 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionTitleValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Title Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionFamilyHistoryObsOrgs(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Family History Obs Orgs</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionNoSubject(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section No Subject</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionFamilyHistoryOrganizer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Family History Organizer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#getFamilyHistoryOrganizers() <em>Get Family History Organizers</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,8 +50,115 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 public class FamilyHistorySectionTest extends CDAValidationTest {
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateFamilyHistorySectionTitleValue() {
+		OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionTitleValueTestCase = new OperationsTestCase<FamilyHistorySection>(
+			"validateFamilyHistorySectionTitleValue",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistorySection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistorySection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("family history");
+
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistorySectionOperations.validateFamilyHistorySectionTitleValue(
+					(FamilyHistorySection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistorySectionTitleValueTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateFamilyHistorySectionFamilyHistoryObsOrgs() {
+		OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionFamilyHistoryObsOrgsTestCase = new OperationsTestCase<FamilyHistorySection>(
+			"validateFamilyHistorySectionFamilyHistoryObsOrgs",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_FAMILY_HISTORY_OBS_ORGS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistorySection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistorySection target) {
+				target.init();
+				target.addOrganizer(CCDFactory.eINSTANCE.createFamilyHistoryOrganizer());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistorySectionOperations.validateFamilyHistorySectionFamilyHistoryObsOrgs(
+					(FamilyHistorySection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistorySectionFamilyHistoryObsOrgsTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateFamilyHistorySectionNoSubject() {
+		OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionNoSubjectTestCase = new OperationsTestCase<FamilyHistorySection>(
+			"validateFamilyHistorySectionNoSubject",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_NO_SUBJECT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistorySection target) {
+				target.init();
+				target.setSubject(CDAFactory.eINSTANCE.createSubject());
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistorySection target) {
+				target.setSubject(null);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistorySectionOperations.validateFamilyHistorySectionNoSubject(
+					(FamilyHistorySection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistorySectionNoSubjectTestCase.doValidationTest();
+	}
+
+	/**
 	 * 
-	 * @generated
+	 * @generated 
 	 */
 	@Test
 	public void testValidateFamilyHistorySectionTemplateId() {
@@ -144,6 +259,89 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 		};
 
 		validateFamilyHistorySectionTitleTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateFamilyHistorySectionText() {
+		OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionTextTestCase = new OperationsTestCase<FamilyHistorySection>(
+			"validateFamilyHistorySectionText",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistorySection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistorySection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistorySectionOperations.validateFamilyHistorySectionText(
+					(FamilyHistorySection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistorySectionTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateFamilyHistorySectionFamilyHistoryOrganizer() {
+		OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionFamilyHistoryOrganizerTestCase = new OperationsTestCase<FamilyHistorySection>(
+			"validateFamilyHistorySectionFamilyHistoryOrganizer",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_FAMILY_HISTORY_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistorySection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistorySection target) {
+				target.init();
+				target.addOrganizer(CCDFactory.eINSTANCE.createFamilyHistoryOrganizer());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistorySectionOperations.validateFamilyHistorySectionFamilyHistoryOrganizer(
+					(FamilyHistorySection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistorySectionFamilyHistoryOrganizerTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetFamilyHistoryOrganizers() {
+
+		FamilyHistorySection target = objectFactory.create();
+		target.getFamilyHistoryOrganizers();
+
 	}
 
 	/**
