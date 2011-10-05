@@ -82,7 +82,7 @@ public class ConsolidateTemplatesAction implements IObjectActionDelegate {
 
 	private Map<Classifier, List<Classifier>> sourceInheritance;
 
-	private String projectName = "demo";
+	private String projectName = "consol";
 
 	private String modelPath = "org.openhealthtools.mdht.uml.cda." + projectName + ".model/model/";
 
