@@ -115,7 +115,7 @@ public class UMLUtil {
 
 	public static void cloneStereotypes(Element first, Element second) {
 		for (Stereotype s : first.getAppliedStereotypes()) {
-			if (second.isStereotypeApplicable(s)) {
+			if (second.isStereotypeApplicable(s) && !second.isStereotypeApplied(s)) {
 				second.applyStereotype(s);
 
 				for (Property sProperty : s.getAllAttributes()) {
