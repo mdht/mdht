@@ -371,7 +371,7 @@ public class TransformClassContent extends TransformAbstract {
 		writer.print("<codeblock id=\"example\"><![CDATA[");
 
 		if (instanceGenerator != null) {
-			EObject eObject = instanceGenerator.createInstance(umlClass, 1);
+			EObject eObject = instanceGenerator.createInstance(umlClass, 4);
 			if (eObject != null) {
 				instanceGenerator.save(eObject, writer);
 			}
@@ -702,8 +702,7 @@ public class TransformClassContent extends TransformAbstract {
 
 		// try {
 		String lineSeparator = System.getProperty("line.separator"); //$NON-NLS-1$
-		if (lineSeparator == null)
-		 {
+		if (lineSeparator == null) {
 			lineSeparator = "\n"; //$NON-NLS-1$
 		}
 
