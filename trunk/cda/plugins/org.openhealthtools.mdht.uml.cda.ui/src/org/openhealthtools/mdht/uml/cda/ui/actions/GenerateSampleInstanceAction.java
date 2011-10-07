@@ -175,7 +175,7 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 							out.println();
 							out.println();
 							InstanceGenerator generator = new InstanceGenerator(false);
-							EObject instance = generator.createInstance(selectedElement, -1);
+							EObject instance = generator.createInstance(selectedElement, Integer.MAX_VALUE);
 							PrintWriter writer = new PrintWriter(out);
 							generator.save(instance, writer);
 
