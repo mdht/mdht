@@ -106,7 +106,7 @@ public class Generate {
 
 				InstanceGenerator generator = new InstanceGenerator(true);
 
-				EObject instance = generator.createInstance(generationTarget, 5);
+				EObject instance = generator.createInstance(generationTarget, Integer.MAX_VALUE);
 
 				PrintWriter writer = new PrintWriter(System.out);
 
