@@ -137,8 +137,8 @@ public class CDABuilder extends IncrementalProjectBuilder {
 			}
 
 			if (project.getName().endsWith(".doc")) {
-				for (IResource pdfResources : project.members()) {
-					if (pdfResources.getName().endsWith(".pdf")) {
+				for (IResource pdfResources : project.getFolder(new Path("dita/classes/generated")).members()) {
+					if (pdfResources.getName().endsWith(".dita")) {
 						if (pdfResources.getModificationStamp() > lastGenerated) {
 							lastGenerated = pdfResources.getModificationStamp();
 						}
@@ -382,17 +382,22 @@ public class CDABuilder extends IncrementalProjectBuilder {
 		return genPackages;
 	}
 
-	public static void runGenerate(IProject project, IProgressMonitor monitor) {
+	public static void runGenerate(boolean cleanBuild, IProject project, IProgressMonitor monitor) {
 
 		if (project.getName().endsWith(".doc")) {
-			try {
-				runPublishDita(project, monitor);
-			} catch (IOException e) {
+			if (cleanBuild) {
+				try {
+					runPublishDita(project, monitor);
 
-			} catch (CoreException e) {
+					project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 
-			} catch (URISyntaxException e) {
+				} catch (IOException e) {
 
+				} catch (CoreException e) {
+
+				} catch (URISyntaxException e) {
+
+				}
 			}
 		} else {
 			UMLImporter umlImporter = new UMLImporter();
@@ -646,7 +651,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 		if (cfmc.hasModelChanged || checkBuildStatus(modelProject, getProject())) {
 			runTransformation(getProject(), monitor);
-			runGenerate(getProject(), monitor);
+			runGenerate(IncrementalProjectBuilder.FULL_BUILD == kind, getProject(), monitor);
 		}
 
 		return projects;
@@ -655,7 +660,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 	@Override
 	protected void clean(IProgressMonitor monitor) throws CoreException {
 		runTransformation(getProject(), monitor);
-		runGenerate(getProject(), monitor);
+		runGenerate(true, getProject(), monitor);
 	}
 
 }
