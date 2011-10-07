@@ -62,7 +62,6 @@ import org.eclipse.ui.actions.CopyFilesAndFoldersOperation;
 import org.eclipse.ui.ide.IDE;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UML22UMLResource;
@@ -228,7 +227,8 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 						monitor.worked(1);
 
 						monitor.setTaskName("Generate");
-						org.openhealthtools.mdht.uml.cda.ui.builder.CDABuilder.runGenerate(generatedProject, monitor);
+						org.openhealthtools.mdht.uml.cda.ui.builder.CDABuilder.runGenerate(
+							false, generatedProject, monitor);
 						monitor.worked(1);
 						generatedProject.build(IncrementalProjectBuilder.INCREMENTAL_BUILD, monitor);
 
@@ -370,88 +370,97 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 	}
 
+	private Package cloneModel(IProject project, ResourceSet resourceSet, Map<String, String> options,
+			String sourcePathName, String clonePath, String packageName) throws IOException {
+
+		URI cloneModelURI = URI.createPlatformPluginURI(sourcePathName, false);
+
+		Package sourcePackage = (Package) EcoreUtil.getObjectByType(
+			resourceSet.getResource(cloneModelURI, true).getContents(), UMLPackage.eINSTANCE.getPackageableElement());
+
+		Package clonedPackage = EcoreUtil.copy(sourcePackage);
+
+		clonedPackage.setName(packageName);
+
+		IPath cloneFilePath = new Path(clonePath);
+
+		IFile file = CDAUIUtil.getBundleRelativeFile(project, cloneFilePath);
+
+		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
+
+		String cdaUMLPath = myWorkspaceRoot.getLocation().toOSString() + file.getFullPath().toOSString();
+
+		URI targetModelURI = URI.createFileURI(cdaUMLPath);
+
+		Resource umlResource = UML22UMLResource.Factory.INSTANCE.createResource(targetModelURI);
+
+		umlResource.getContents().add(clonedPackage);
+
+		umlResource.save(options);
+
+		return clonedPackage;
+	}
+
+	private final String TEMPLATEURI = String.format("%s/resources/model/%s", Activator.PLUGIN_ID, "example.uml");
+
+	private final String VOCABURI = String.format("%s/resources/model/%s", Activator.PLUGIN_ID, "example-vocab.uml");
+
 	void createUMLModel(IProject project, String modelName) {
 
 		try {
 
 			ResourceSet resourceSet = new ResourceSetImpl();
 
-			URI cdaTemplateModelURI = URI.createPlatformPluginURI(
-				Activator.PLUGIN_ID + "/resources/model/example.uml", false);
-
-			PackageableElement cdaTemplateModel = (PackageableElement) EcoreUtil.getObjectByType(
-				resourceSet.getResource(cdaTemplateModelURI, true).getContents(),
-				UMLPackage.eINSTANCE.getPackageableElement());
-
-			PackageableElement clonedModel = EcoreUtil.copy(cdaTemplateModel);
-
-			IPath filePath = new Path("model/" + modelName.toLowerCase() + ".uml");
-
-			IFile file = CDAUIUtil.getBundleRelativeFile(project, filePath);
-
-			IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
-
-			String cdaUMLPath = myWorkspaceRoot.getLocation().toOSString() + file.getFullPath().toOSString();
-
-			URI cdaUMLURI = URI.createFileURI(cdaUMLPath);
-
-			Resource umlResource = UML22UMLResource.Factory.INSTANCE.createResource(cdaUMLURI);
-
-			umlResource.getContents().add(clonedModel);
-
 			Map<String, String> options = new HashMap<String, String>();
 
-			// Save initial clone model - This is required to allow uml2
-			// stereotypes to actually be applied
-			umlResource.save(options);
+			Package templatePackage = cloneModel(
+				project, resourceSet, options, TEMPLATEURI, String.format("model/%s.uml", modelName.toLowerCase()),
+				modelName.toLowerCase());
 
-			if (clonedModel instanceof Package) {
+			Package vocabPackage = cloneModel(
+				project, resourceSet, options, VOCABURI, String.format("model/%s-vocab.uml", modelName.toLowerCase()),
+				String.format("%s-vocab", modelName.toLowerCase()));
 
-				Package clonePackage = (Package) clonedModel;
+			CodegenSupport codegenSupport = (CodegenSupport) templatePackage.applyStereotype(templatePackage.getApplicableStereotype("CDA::CodegenSupport"));
 
-				CodegenSupport codegenSupport = (CodegenSupport) clonePackage.applyStereotype(clonePackage.getApplicableStereotype("CDA::CodegenSupport"));
+			codegenSupport.setBase_Namespace(templatePackage);
 
-				codegenSupport.setBase_Namespace(clonePackage);
+			codegenSupport.setBasePackage("org.openhealthtools.mdht.uml.cda");
 
-				codegenSupport.setBasePackage("org.openhealthtools.mdht.uml.cda");
+			codegenSupport.setNsURI("http://www.openhealthtools.org/mdht/uml/cda/" + modelName.toLowerCase());
 
-				codegenSupport.setNsURI("http://www.openhealthtools.org/mdht/uml/cda/" + modelName.toLowerCase());
+			codegenSupport.setNsPrefix(modelName.toLowerCase());
 
-				codegenSupport.setNsPrefix(modelName.toLowerCase());
+			codegenSupport.setPackageName(modelName.toLowerCase());
 
-				codegenSupport.setPackageName(modelName.toLowerCase());
+			codegenSupport.setPrefix(modelName);
 
-				codegenSupport.setPrefix(modelName);
+			Class cdaClass = templatePackage.createOwnedClass(newCDATemplatePage.getCDADocumentName(), false);
 
-				clonePackage.setName(modelName.toLowerCase());
+			CDATemplate template = (CDATemplate) cdaClass.applyStereotype(cdaClass.getApplicableStereotype("CDA::CDATemplate"));
 
-				Class cdaClass = clonePackage.createOwnedClass(newCDATemplatePage.getCDADocumentName(), false);
+			template.setBase_Class(cdaClass);
 
-				CDATemplate template = (CDATemplate) cdaClass.applyStereotype(cdaClass.getApplicableStereotype("CDA::CDATemplate"));
+			template.setTemplateId(newCDATemplatePage.getTemplateId());
 
-				template.setBase_Class(cdaClass);
+			template.setAssigningAuthorityName(newCDATemplatePage.getTemplateAssigningAuthority());
 
-				template.setTemplateId(newCDATemplatePage.getTemplateId());
+			Type t = cdaDocuments.get(newCDATemplatePage.getCDADocument());
 
-				template.setAssigningAuthorityName(newCDATemplatePage.getTemplateAssigningAuthority());
-
-				Type t = cdaDocuments.get(newCDATemplatePage.getCDADocument());
-
-				if (t instanceof Class) {
-					Class documentClass = (Class) t;
-
-					cdaClass.createGeneralization(documentClass);
-					Package documentPackage = documentClass.getNearestPackage();
-					EcoreUtil.resolveAll(documentPackage);
-					clonePackage.createPackageImport(documentClass.getNearestPackage());
-					for (Package importedPackage : documentPackage.getImportedPackages()) {
-						clonePackage.createPackageImport(importedPackage);
-					}
+			if (t instanceof Class) {
+				Class documentClass = (Class) t;
+				cdaClass.createGeneralization(documentClass);
+				Package documentPackage = documentClass.getNearestPackage();
+				EcoreUtil.resolveAll(documentPackage);
+				templatePackage.createPackageImport(documentClass.getNearestPackage());
+				for (Package importedPackage : documentPackage.getImportedPackages()) {
+					templatePackage.createPackageImport(importedPackage);
 				}
-
 			}
 
-			umlResource.save(options);
+			templatePackage.createPackageImport(vocabPackage);
+
+			templatePackage.eResource().save(options);
 
 		} catch (IOException e) {
 

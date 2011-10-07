@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CDA="http://www.openhealthtools.org/mdht/schemas/cda/4" xmlns:Default="http:///schemas/Default/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/Default/1 pathmap://UML2_MSL_PROFILES/Default.epx#_IN8k8MmBEdqBcN1R6EvWUw?Default/Default?">
   <uml:Package xmi:id="_qQyD8jxVEd6JwqSGecoePg" name="example">
-    <packagedElement xmi:type="uml:Association" xmi:id="_Ucv9daX0Ed6JRdOhEffuGA" memberEnd="_Ucv9dqX0Ed6JRdOhEffuGA">
-      <ownedEnd xmi:id="_Ucv9dqX0Ed6JRdOhEffuGA" name="" visibility="private" association="_Ucv9daX0Ed6JRdOhEffuGA">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ucv9d6X0Ed6JRdOhEffuGA" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ucv9eKX0Ed6JRdOhEffuGA"/>
-      </ownedEnd>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_v0rX0KX0Ed6JRdOhEffuGA" memberEnd="_v01I0KX0Ed6JRdOhEffuGA">
-      <ownedEnd xmi:id="_v01I0KX0Ed6JRdOhEffuGA" name="" visibility="private" association="_v0rX0KX0Ed6JRdOhEffuGA">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_v01I0qX0Ed6JRdOhEffuGA" value="*"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_v01I0aX0Ed6JRdOhEffuGA"/>
-      </ownedEnd>
-    </packagedElement>
     <profileApplication xmi:id="_qQyD9zxVEd6JwqSGecoePg">
       <eAnnotations xmi:id="_qQyD-DxVEd6JwqSGecoePg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
@@ -26,24 +14,4 @@
       <appliedProfile href="pathmap://CDA_PROFILES/CDA.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </profileApplication>
   </uml:Package>
-  <CDA:CDATemplate xmi:id="_1dDy4JmOEd6T5tg3G_f09Q" message="Example My Document SHALL contain the template identifier 1.2.3.4" templateId="1.2.3.4"/>
-  <CDA:CodegenSupport xmi:id="_THvvwJmzEd6BO7rW3XxHIA" basePackage="org.openhealthtools.mdht.uml.cda" nsPrefix="example" nsURI="http://www.openhealthtools.org/mdht/uml/cda/example" packageName="example" prefix="Example" base_Namespace="_qQyD8jxVEd6JwqSGecoePg"/>
-  <CDA:CDATemplate xmi:id="_Uc5uYKX0Ed6JRdOhEffuGA" message="Example My Activity SHALL contain the template identifier 1.2.3.4.2" templateId="1.2.3.4.2"/>
-  <Default:Documentation xmi:id="_Uc5uYaX0Ed6JRdOhEffuGA"/>
-  <CDA:PropertyValidation xmi:id="_Uc5uZKX0Ed6JRdOhEffuGA" message="Example My Activity SHALL contain [1..1] @classCode = &quot;ACT&quot;"/>
-  <CDA:PropertyValidation xmi:id="_Uc5uZaX0Ed6JRdOhEffuGA" message="Example My Activity SHALL contain [1..1] @moodCode = &quot;EVN&quot;"/>
-  <CDA:CDATemplate xmi:id="_Uc5uaaX0Ed6JRdOhEffuGA" message="Example My Section SHALL contain the template identifier 1.2.3.4.1" templateId="1.2.3.4.1"/>
-  <Default:Documentation xmi:id="_Uc5uaqX0Ed6JRdOhEffuGA"/>
-  <CDA:AssociationValidation xmi:id="_vvhgIKX2Ed6JRdOhEffuGA" message="Example My Document SHALL contain [1..1] component such that it, SHALL contain [1..1] My Section (templateId: 1.2.3.4.1)" base_Association="_v0rX0KX0Ed6JRdOhEffuGA"/>
-  <CDA:Entry xmi:id="_auV_cK0UEd6_kOk8Ilc2Dw" message="Example My Section SHOULD contain [1..*] entry such that it, SHALL contain [1..1] @typeCode=&quot;COMP&quot; COMP (component), SHALL contain [1..1] My Activity (templateId: 1.2.3.4.2)" severity="WARNING" base_Association="_Ucv9daX0Ed6JRdOhEffuGA"/>
-  <CDA:TextValue xmi:id="_xJaggK0jEd6_kOk8Ilc2Dw" message="Example My Section SHALL contain [1..1] title"/>
-  <CDA:CodeSystemConstraint xmi:id="_68FaADOiEd-4N_xqnt9Yew" code="23745001" displayName="Documentation procedure" message="Example My Activity SHALL contain [1..1] code/@code = &quot;23745001&quot; Documentation procedure (CodeSystem: 2.16.840.1.113883.6.96 SNOMEDCT STATIC 20080731)">
-    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
-  </CDA:CodeSystemConstraint>
-  <CDA:CodeSystemConstraint xmi:id="_68JEYDOiEd-4N_xqnt9Yew" code="completed" message="Example My Activity SHALL contain [1..1] statusCode/@code = &quot;completed&quot;  (CodeSystem: 2.16.840.1.113883.5.14 ActStatus STATIC V3NE08)">
-    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_e8ZEoCWvEd-iTYfpNb4PkQ"/>
-  </CDA:CodeSystemConstraint>
-  <CDA:CodeSystemConstraint xmi:id="_68K5kDOiEd-4N_xqnt9Yew" code="48764-5" displayName="Summary purpose" message="Example My Section SHALL contain [1..1] code/@code = &quot;48764-5&quot; Summary purpose (CodeSystem: 2.16.840.1.113883.6.1 LOINC STATIC 2.26)">
-    <reference href="../../org.openhealthtools.mdht.uml.term.models/model/CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
-  </CDA:CodeSystemConstraint>
 </xmi:XMI>
