@@ -113,7 +113,8 @@ public class AddPublicationSample implements IObjectActionDelegate {
 							OutputStream out;
 							try {
 								InstanceGenerator ig = new InstanceGenerator();
-								EObject instance = ig.createInstance(clinicalDocument, -1);
+
+								EObject instance = ig.createInstance(clinicalDocument, Integer.MAX_VALUE);
 								out = new FileOutputStream(
 									root.getLocation().append(samplesFile.getFullPath()).toFile());
 								CDAUtil.save((ClinicalDocument) instance, out);
