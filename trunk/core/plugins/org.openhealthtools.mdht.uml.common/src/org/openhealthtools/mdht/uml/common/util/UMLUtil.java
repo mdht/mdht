@@ -728,7 +728,7 @@ public class UMLUtil {
 	 * @return a Package
 	 */
 	public static Package getTopPackage(Element element) {
-		return element.eIsProxy()
+		return element == null || element.eIsProxy()
 				? null
 				: getTopPackage(element.getNearestPackage());
 	}
@@ -740,7 +740,7 @@ public class UMLUtil {
 	 * @return a Package
 	 */
 	public static Package getTopPackage(Package pkg) {
-		if (pkg.eIsProxy()) {
+		if (pkg == null || pkg.eIsProxy()) {
 			return null;
 		}
 
