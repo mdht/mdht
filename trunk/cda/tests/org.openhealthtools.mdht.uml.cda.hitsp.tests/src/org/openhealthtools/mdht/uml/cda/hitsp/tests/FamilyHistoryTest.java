@@ -24,6 +24,10 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistory#validateFamilyHistoryRelatedSubjectCodeValueSet(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Related Subject Code Value Set</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistory#validateFamilyHistoryHasFamilyName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Has Family Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistory#validateFamilyHistoryHasGenderCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Has Gender Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistory#validateFamilyHistoryFamilyMemberCondition(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Family Member Condition</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistory#validateFamilyHistoryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistory#validateFamilyHistoryProblemStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Problem Status Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistory#getProblemStatusObservations() <em>Get Problem Status Observations</em>}</li>
@@ -34,6 +38,142 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class FamilyHistoryTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateFamilyHistoryRelatedSubjectCodeValueSet() {
+		OperationsTestCase<FamilyHistory> validateFamilyHistoryRelatedSubjectCodeValueSetTestCase = new OperationsTestCase<FamilyHistory>(
+			"validateFamilyHistoryRelatedSubjectCodeValueSet",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_RELATED_SUBJECT_CODE_VALUE_SET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistory target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistory target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryOperations.validateFamilyHistoryRelatedSubjectCodeValueSet(
+					(FamilyHistory) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryRelatedSubjectCodeValueSetTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateFamilyHistoryHasFamilyName() {
+		OperationsTestCase<FamilyHistory> validateFamilyHistoryHasFamilyNameTestCase = new OperationsTestCase<FamilyHistory>(
+			"validateFamilyHistoryHasFamilyName",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_HAS_FAMILY_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistory target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistory target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryOperations.validateFamilyHistoryHasFamilyName(
+					(FamilyHistory) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryHasFamilyNameTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateFamilyHistoryHasGenderCode() {
+		OperationsTestCase<FamilyHistory> validateFamilyHistoryHasGenderCodeTestCase = new OperationsTestCase<FamilyHistory>(
+			"validateFamilyHistoryHasGenderCode",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_HAS_GENDER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistory target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistory target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryOperations.validateFamilyHistoryHasGenderCode(
+					(FamilyHistory) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryHasGenderCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateFamilyHistoryFamilyMemberCondition() {
+		OperationsTestCase<FamilyHistory> validateFamilyHistoryFamilyMemberConditionTestCase = new OperationsTestCase<FamilyHistory>(
+			"validateFamilyHistoryFamilyMemberCondition",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_FAMILY_MEMBER_CONDITION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistory target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistory target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryOperations.validateFamilyHistoryFamilyMemberCondition(
+					(FamilyHistory) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryFamilyMemberConditionTestCase.doValidationTest();
+	}
 
 	/**
 	*

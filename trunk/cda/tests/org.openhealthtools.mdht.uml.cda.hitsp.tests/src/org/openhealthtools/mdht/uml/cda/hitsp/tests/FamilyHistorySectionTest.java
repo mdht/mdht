@@ -15,6 +15,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistory;
 import org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistorySection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.FamilyHistorySectionOperations;
@@ -75,7 +76,7 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHITSPFamilyHistorySectionFamilyHistory() {
@@ -92,6 +93,9 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FamilyHistorySection target) {
 				target.init();
+
+				FamilyHistory familyHistory = HITSPFactory.eINSTANCE.createFamilyHistory().init();
+				target.addOrganizer(familyHistory);
 
 			}
 

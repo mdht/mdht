@@ -15,6 +15,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.HistoryOfPastIllnessSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.HistoryOfPastIllnessSectionOperations;
@@ -75,7 +76,7 @@ public class HistoryOfPastIllnessSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHITSPHistoryOfPastIllnessSectionCondition() {
@@ -92,6 +93,10 @@ public class HistoryOfPastIllnessSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryOfPastIllnessSection target) {
 				target.init();
+
+				Condition condition = HITSPFactory.eINSTANCE.createCondition().init();
+
+				target.addAct(condition);
 
 			}
 

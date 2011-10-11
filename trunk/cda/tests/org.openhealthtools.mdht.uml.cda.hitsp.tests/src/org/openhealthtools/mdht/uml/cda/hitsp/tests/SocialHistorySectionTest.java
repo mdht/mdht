@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
+import org.openhealthtools.mdht.uml.cda.hitsp.SocialHistory;
 import org.openhealthtools.mdht.uml.cda.hitsp.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.SocialHistorySectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
@@ -75,7 +76,7 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHITSPSocialHistorySectionSocialHistory() {
@@ -92,6 +93,13 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistorySection target) {
 				target.init();
+
+				SocialHistory socialHistory = HITSPFactory.eINSTANCE.createSocialHistory().init();
+
+				SocialHistory socialHistory2 = HITSPFactory.eINSTANCE.createSocialHistory().init();
+
+				target.addObservation(socialHistory);
+				target.addObservation(socialHistory2);
 
 			}
 

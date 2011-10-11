@@ -15,6 +15,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
 import org.openhealthtools.mdht.uml.cda.hitsp.DischargeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.DischargeDiagnosisSectionOperations;
@@ -75,7 +76,7 @@ public class DischargeDiagnosisSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHITSPDischargeDiagnosisSectionCondition() {
@@ -92,6 +93,9 @@ public class DischargeDiagnosisSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeDiagnosisSection target) {
 				target.init();
+
+				Condition condition = HITSPFactory.eINSTANCE.createCondition().init();
+				target.addAct(condition);
 
 			}
 

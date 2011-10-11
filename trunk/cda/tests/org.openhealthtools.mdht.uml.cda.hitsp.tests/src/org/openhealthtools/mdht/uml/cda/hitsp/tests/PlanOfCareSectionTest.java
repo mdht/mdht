@@ -15,8 +15,12 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.hitsp.Encounter;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
+import org.openhealthtools.mdht.uml.cda.hitsp.Immunization;
+import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.PlanOfCareSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.Procedure;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.PlanOfCareSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
@@ -81,7 +85,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHITSPPlanOfCareSectionMedication() {
@@ -99,6 +103,10 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
 
+				Medication medication = HITSPFactory.eINSTANCE.createMedication().init();
+
+				target.addSubstanceAdministration(medication);
+
 			}
 
 			@Override
@@ -115,7 +123,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHITSPPlanOfCareSectionImmunization() {
@@ -133,6 +141,10 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
 
+				Immunization immunization = HITSPFactory.eINSTANCE.createImmunization().init();
+
+				target.addSubstanceAdministration(immunization);
+
 			}
 
 			@Override
@@ -149,7 +161,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHITSPPlanOfCareSectionEncounter() {
@@ -167,6 +179,9 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
 
+				Encounter encounter = HITSPFactory.eINSTANCE.createEncounter().init();
+				target.addEncounter(encounter);
+
 			}
 
 			@Override
@@ -183,7 +198,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHITSPPlanOfCareSectionProcedure() {
@@ -200,6 +215,10 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
+
+				Procedure procedure = HITSPFactory.eINSTANCE.createProcedure().init();
+
+				target.addProcedure(procedure);
 
 			}
 

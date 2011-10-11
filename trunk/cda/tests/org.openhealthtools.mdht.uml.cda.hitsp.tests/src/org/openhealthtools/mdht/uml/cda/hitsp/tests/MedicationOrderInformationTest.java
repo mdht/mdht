@@ -98,7 +98,7 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateMedicationOrderInformationOrderExpiration() {
@@ -110,11 +110,18 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(MedicationOrderInformation target) {
 
+				target.init();
+				target.setMoodCode(x_DocumentSubstanceMood.INT);
+
 			}
 
 			@Override
 			protected void updateToPass(MedicationOrderInformation target) {
-				target.init();
+
+				// SXCM_TS ef = DatatypesFactory.eINSTANCE.createSXCM_TS();
+				// // ef.
+				// // ef.setValue("value");
+				// target.getEffectiveTimes().add(ef);
 
 			}
 
