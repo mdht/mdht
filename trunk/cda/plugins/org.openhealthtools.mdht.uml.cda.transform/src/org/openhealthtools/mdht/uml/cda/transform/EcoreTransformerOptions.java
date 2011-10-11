@@ -31,6 +31,8 @@ public class EcoreTransformerOptions {
 
 	public static final String GENERATE_BUILDER_CLASSES = "generateBuilderClasses";
 
+	public static final String GENERATE_CONSOLIDATED_MODEL = "generateConsolidatedModel";
+
 	public static final String INCLUDE_INTERFACE_REALIZATION = "includeInterfaceRealization";
 
 	public static final String INCLUDE_FIXED_VALUE_GETTERS = "includeFixedValueGetters";
@@ -49,6 +51,8 @@ public class EcoreTransformerOptions {
 
 	private boolean generateBuilderClasses;
 
+	private boolean generateConsolidatedModel;
+
 	private boolean includeFixedValueGetters;
 
 	private boolean includeInterfaceRealization;
@@ -65,6 +69,8 @@ public class EcoreTransformerOptions {
 	private String domainPackageName;
 
 	private String domainNsURI;
+
+	private String consolidatedModelPath;
 
 	private String builderModelPath;
 
@@ -83,6 +89,8 @@ public class EcoreTransformerOptions {
 			Activator.PLUGIN_ID, GENERATE_DOMAIN_CLASSES, false, null);
 		generateBuilderClasses = Platform.getPreferencesService().getBoolean(
 			Activator.PLUGIN_ID, GENERATE_BUILDER_CLASSES, false, null);
+		generateConsolidatedModel = Platform.getPreferencesService().getBoolean(
+			Activator.PLUGIN_ID, GENERATE_CONSOLIDATED_MODEL, true, null);
 		includeFixedValueGetters = Platform.getPreferencesService().getBoolean(
 			Activator.PLUGIN_ID, INCLUDE_FIXED_VALUE_GETTERS, false, null);
 		includeInterfaceRealization = Platform.getPreferencesService().getBoolean(
@@ -181,6 +189,22 @@ public class EcoreTransformerOptions {
 
 	public void setDomainNsURI(String domainNsURI) {
 		this.domainNsURI = domainNsURI;
+	}
+
+	public boolean isGenerateConsolidatedModel() {
+		return generateConsolidatedModel;
+	}
+
+	public void setGenerateConsolidatedModel(boolean generateConsolidatedModel) {
+		this.generateConsolidatedModel = generateConsolidatedModel;
+	}
+
+	public String getConsolidatedModelPath() {
+		return consolidatedModelPath;
+	}
+
+	public void setConsolidatedModelPath(String consolModelPath) {
+		this.consolidatedModelPath = consolModelPath;
 	}
 
 	public boolean isGenerateBuilderClasses() {
