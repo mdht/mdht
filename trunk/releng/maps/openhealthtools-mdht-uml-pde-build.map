@@ -185,6 +185,8 @@ plugin@org.openhealthtools.mdht.uml.cda.ihe.test=SVN,trunk,https://www.projects.
 
 plugin@org.openhealthtools.mdht.uml.cda.ihe.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.ihe.tests,force
 
+plugin@org.openhealthtools.mdht.uml.cda.toc.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.toc.tests,force
+
 plugin@org.openhealthtools.mdht.uml.cda.pilot.test=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.pilot.test,force
 
 plugin@org.openhealthtools.mdht.uml.cda.ncr.test=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.ncr.test,force
