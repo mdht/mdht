@@ -15,6 +15,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirective;
 import org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.AdvanceDirectivesSectionOperations;
@@ -75,7 +76,7 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHITSPAdvanceDirectivesSectionAdvanceDirective() {
@@ -92,6 +93,8 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdvanceDirectivesSection target) {
 				target.init();
+				AdvanceDirective advanceDirective = HITSPFactory.eINSTANCE.createAdvanceDirective().init();
+				target.addObservation(advanceDirective);
 
 			}
 

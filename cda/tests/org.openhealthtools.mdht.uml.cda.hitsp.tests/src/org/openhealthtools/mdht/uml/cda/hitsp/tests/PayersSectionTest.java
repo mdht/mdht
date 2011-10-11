@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
+import org.openhealthtools.mdht.uml.cda.hitsp.InsuranceProvider;
 import org.openhealthtools.mdht.uml.cda.hitsp.PayersSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.PayersSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
@@ -75,7 +76,7 @@ public class PayersSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHITSPPayersSectionInsuranceProvider() {
@@ -92,6 +93,9 @@ public class PayersSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PayersSection target) {
 				target.init();
+				InsuranceProvider insuranceProvider = HITSPFactory.eINSTANCE.createInsuranceProvider().init();
+
+				target.addAct(insuranceProvider);
 
 			}
 

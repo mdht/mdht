@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.hitsp.ChiefComplaintSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ChiefComplaintSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
@@ -75,7 +76,7 @@ public class ChiefComplaintSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHITSPChiefComplaintSectionCondition() {
@@ -92,6 +93,10 @@ public class ChiefComplaintSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ChiefComplaintSection target) {
 				target.init();
+
+				Condition condition = HITSPFactory.eINSTANCE.createCondition().init();
+
+				target.addAct(condition);
 
 			}
 

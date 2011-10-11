@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.HospitalDischargeMedicationsSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.Medication;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.HospitalDischargeMedicationsSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
@@ -75,7 +76,7 @@ public class HospitalDischargeMedicationsSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHITSPHospitalDischargeMedicationsSectionMedication() {
@@ -92,6 +93,9 @@ public class HospitalDischargeMedicationsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HospitalDischargeMedicationsSection target) {
 				target.init();
+
+				Medication medication = HITSPFactory.eINSTANCE.createMedication().init();
+				target.addSubstanceAdministration(medication);
 
 			}
 

@@ -15,6 +15,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.PhysicalExamSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.PhysicalExamSectionOperations;
@@ -75,7 +76,7 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHITSPPhysicalExamSectionCondition() {
@@ -92,6 +93,9 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PhysicalExamSection target) {
 				target.init();
+
+				Condition condition = HITSPFactory.eINSTANCE.createCondition().init();
+				target.addAct(condition);
 
 			}
 

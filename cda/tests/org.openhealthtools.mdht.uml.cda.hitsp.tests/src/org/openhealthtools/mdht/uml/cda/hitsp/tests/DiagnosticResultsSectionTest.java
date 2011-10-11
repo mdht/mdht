@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.Entry;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
 import org.openhealthtools.mdht.uml.cda.hitsp.DiagnosticResultsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.Procedure;
@@ -50,7 +52,7 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateDiagnosticResultsSectionHasResult() {
@@ -67,6 +69,14 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticResultsSection target) {
 				target.init();
+
+				ResultOrganizer resultOrganizer = CCDFactory.eINSTANCE.createResultOrganizer().init();
+
+				Result result = HITSPFactory.eINSTANCE.createResult().init();
+
+				resultOrganizer.addObservation(result);
+
+				target.addOrganizer(resultOrganizer);
 
 			}
 
@@ -192,7 +202,7 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateDiagnosticResultsSectionResultOrganizer() {
@@ -209,6 +219,10 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticResultsSection target) {
 				target.init();
+
+				ResultOrganizer resultOrganizer = HITSPFactory.eINSTANCE.createResultOrganizer().init();
+
+				target.addOrganizer(resultOrganizer);
 
 			}
 

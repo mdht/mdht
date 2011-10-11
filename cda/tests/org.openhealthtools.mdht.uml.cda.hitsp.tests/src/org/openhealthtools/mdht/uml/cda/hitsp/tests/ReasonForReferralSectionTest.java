@@ -15,8 +15,10 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.ReasonForReferralSection;
+import org.openhealthtools.mdht.uml.cda.hitsp.Result;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ReasonForReferralSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
@@ -43,7 +45,7 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHITSPReasonForReferralSectionCondition() {
@@ -60,6 +62,8 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReasonForReferralSection target) {
 				target.init();
+				Condition condition = HITSPFactory.eINSTANCE.createCondition().init();
+				target.addAct(condition);
 
 			}
 
@@ -77,7 +81,7 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHITSPReasonForReferralSectionResult() {
@@ -94,6 +98,10 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReasonForReferralSection target) {
 				target.init();
+
+				Result result = HITSPFactory.eINSTANCE.createResult().init();
+
+				target.addObservation(result);
 
 			}
 

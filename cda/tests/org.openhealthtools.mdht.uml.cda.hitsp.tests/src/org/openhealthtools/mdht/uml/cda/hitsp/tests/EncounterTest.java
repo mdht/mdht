@@ -27,6 +27,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Encounter#validateHITSPEncounterAdmissionSourceValueSet(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Encounter Admission Source Value Set</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Encounter#validateHITSPEncounterTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Encounter Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Encounter#validateHITSPEncounterCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Encounter Code</em>}</li>
  * </ul>
@@ -36,6 +37,40 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class EncounterTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHITSPEncounterAdmissionSourceValueSet() {
+		OperationsTestCase<Encounter> validateHITSPEncounterAdmissionSourceValueSetTestCase = new OperationsTestCase<Encounter>(
+			"validateHITSPEncounterAdmissionSourceValueSet",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_ENCOUNTER_ADMISSION_SOURCE_VALUE_SET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Encounter target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Encounter target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EncounterOperations.validateHITSPEncounterAdmissionSourceValueSet(
+					(Encounter) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPEncounterAdmissionSourceValueSetTestCase.doValidationTest();
+	}
 
 	/**
 	 * 
