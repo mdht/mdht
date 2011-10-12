@@ -185,7 +185,7 @@ public class EncounterLocationTest extends CDAValidationTest {
 				target.init();
 				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
 				CE code = DatatypesFactory.eINSTANCE.createCE();
-				code.setCodeSystem("2.16.840.1.113883.1.11.17660");
+				code.setCodeSystem("2.16.840.1.113883.5.111");
 				pr.setCode(code);
 				target.setParticipantRole(pr);
 			}

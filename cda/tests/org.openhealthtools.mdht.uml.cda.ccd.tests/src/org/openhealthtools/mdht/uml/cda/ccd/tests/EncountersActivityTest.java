@@ -23,6 +23,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.EncountersActivityOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
@@ -128,7 +129,7 @@ public class EncountersActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateEncountersActivityPractitionerRole() {
@@ -139,18 +140,20 @@ public class EncountersActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(EncountersActivity target) {
-				target.init();
 
 			}
 
 			@Override
 			protected void updateToPass(EncountersActivity target) {
 				target.init();
-				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+
+				Performer2 performer = CDAFactory.eINSTANCE.createPerformer2();
 				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
-				ae.setCode(DatatypesFactory.eINSTANCE.createCE());
-				per.setAssignedEntity(ae);
-				target.getPerformers().add(per);
+				performer.setAssignedEntity(ae);
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ae.setCode(ce);
+				target.getPerformers().add(performer);
+
 			}
 
 			@Override

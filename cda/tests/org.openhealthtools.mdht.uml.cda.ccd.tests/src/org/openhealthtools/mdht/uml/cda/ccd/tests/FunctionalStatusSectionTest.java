@@ -186,7 +186,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.getEntries().clear();
 				CE ce = DatatypesFactory.eINSTANCE.createCE();
-				ce.setCodeSystem("2.16.840.1.113883.1.11.20.6");
+				ce.setCodeSystem("2.16.840.1.113883.6.96");
 				ProblemObservation po = CCDFactory.eINSTANCE.createProblemObservation();
 				po.setCode(ce);
 				target.addObservation(po);

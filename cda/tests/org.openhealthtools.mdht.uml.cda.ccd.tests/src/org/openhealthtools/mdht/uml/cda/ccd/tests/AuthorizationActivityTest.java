@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Performer2;
 import org.openhealthtools.mdht.uml.cda.ccd.AuthorizationActivity;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.AuthorizationActivityOperations;
@@ -120,7 +121,7 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAuthorizationActivityHasProviders() {
@@ -137,7 +138,10 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AuthorizationActivity target) {
 				target.init();
-				target.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+
+				Performer2 performer = CDAFactory.eINSTANCE.createPerformer2();
+				target.getPerformers().add(performer);
+
 			}
 
 			@Override
