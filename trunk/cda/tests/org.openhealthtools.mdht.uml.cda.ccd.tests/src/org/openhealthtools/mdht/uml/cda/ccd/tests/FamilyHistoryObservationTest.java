@@ -241,7 +241,7 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 				Subject s = CDAFactory.eINSTANCE.createSubject();
 				RelatedSubject rs = CDAFactory.eINSTANCE.createRelatedSubject();
 				CE code = DatatypesFactory.eINSTANCE.createCE();
-				code.setCodeSystem("2.16.840.1.113883.1.11.19579");
+				code.setCodeSystem("2.16.840.1.113883.5.111");
 				rs.setCode(code);
 				s.setRelatedSubject(rs);
 				target.setSubject(s);

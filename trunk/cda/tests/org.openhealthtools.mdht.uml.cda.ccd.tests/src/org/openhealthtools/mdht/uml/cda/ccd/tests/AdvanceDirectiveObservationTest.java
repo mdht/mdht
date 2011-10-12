@@ -74,7 +74,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			protected void updateToPass(AdvanceDirectiveObservation target) {
 				target.init();
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
-				cd.setCodeSystem("2.16.840.1.113883.1.11.20.2");
+				cd.setCodeSystem("2.16.840.1.113883.6.96");
 				target.setCode(cd);
 			}
 

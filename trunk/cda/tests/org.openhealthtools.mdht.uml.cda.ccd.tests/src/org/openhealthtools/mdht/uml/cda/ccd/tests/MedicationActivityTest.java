@@ -38,7 +38,6 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProductInstance;
 import org.openhealthtools.mdht.uml.cda.ccd.ReactionObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.MedicationActivityOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
@@ -195,12 +194,29 @@ public class MedicationActivityTest extends CDAValidationTest {
 				section.addSubstanceAdministration(target);
 				ccd.addSection(section);
 
-				try {
+				// self.getClinicalDocument().authorization->size() > 0 and self.getClinicalDocument().authorization.consent->size() > 0
+				//
+				// try {
+				// CDAUtil.save(target.getClinicalDocument(), System.out);
 
-					CDAUtil.save(target.getClinicalDocument(), System.out);
-				} catch (Exception e) {
-					e.printStackTrace();
+				for (Authorization authorization : target.getClinicalDocument().getAuthorizations()) {
+					System.out.println(authorization.toString());
+
+					System.out.println(authorization.getConsent());
+
 				}
+				//
+				// } catch (Exception e1) {
+				// // TODO Auto-generated catch block
+				// e1.printStackTrace();
+				// }
+				//
+				// try {
+				//
+				// CDAUtil.save(target.getClinicalDocument(), System.out);
+				// } catch (Exception e) {
+				// e.printStackTrace();
+				// }
 			}
 
 			@Override
