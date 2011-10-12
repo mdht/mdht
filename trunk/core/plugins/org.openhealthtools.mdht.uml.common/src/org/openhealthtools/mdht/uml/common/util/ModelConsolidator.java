@@ -83,28 +83,30 @@ public class ModelConsolidator {
 	 * Default implementation: element's classifier has no superclass from a different package.
 	 */
 	protected boolean isBaseModel(Element element) {
-		Package elementPackage = element.getNearestPackage();
-		Classifier elementClassifier = null;
-		if (element instanceof Classifier) {
-			elementClassifier = (Classifier) element;
-		} else {
-			EObject eContainer = element.eContainer();
-			while (eContainer != null) {
-				if (eContainer instanceof Classifier) {
-					elementClassifier = (Classifier) eContainer;
-					break;
-				}
-				eContainer = eContainer.eContainer();
-			}
-		}
+		return false;
 
-		for (Classifier general : UMLUtil.getAllGeneralizations(elementClassifier)) {
-			if (elementPackage != general.getNearestPackage()) {
-				return false;
-			}
-		}
-
-		return true;
+		// Package elementPackage = element.getNearestPackage();
+		// Classifier elementClassifier = null;
+		// if (element instanceof Classifier) {
+		// elementClassifier = (Classifier) element;
+		// } else {
+		// EObject eContainer = element.eContainer();
+		// while (eContainer != null) {
+		// if (eContainer instanceof Classifier) {
+		// elementClassifier = (Classifier) eContainer;
+		// break;
+		// }
+		// eContainer = eContainer.eContainer();
+		// }
+		// }
+		//
+		// for (Classifier general : UMLUtil.getAllGeneralizations(elementClassifier)) {
+		// if (elementPackage != general.getNearestPackage()) {
+		// return false;
+		// }
+		// }
+		//
+		// return true;
 	}
 
 	/**
@@ -221,7 +223,7 @@ public class ModelConsolidator {
 		return getAllProperties(umlClass, null);
 	}
 
-	public List<Property> getAllProperties(Class umlClass, Class consolidationStop) {
+	public List<Property> getAllProperties(Classifier umlClass, Class consolidationStop) {
 		List<Property> allProperties = new ArrayList<Property>();
 		List<Property> allAssociations = new ArrayList<Property>();
 
@@ -525,7 +527,7 @@ public class ModelConsolidator {
 	 * Stop when reaching a previously consolidated class.
 	 * TODO: doesn't support multiple inheritance
 	 */
-	protected List<Classifier> getConsolidatedGeneralizations(Class classifier, Class consolidationStop) {
+	protected List<Classifier> getConsolidatedGeneralizations(Classifier classifier, Class consolidationStop) {
 		List<Classifier> parents = new ArrayList<Classifier>();
 		parents.add(classifier);
 
@@ -537,7 +539,7 @@ public class ModelConsolidator {
 			if (consolidationStop == null ||
 					(!parents.contains(parent) && !consolidationStop.equals(parent) && !consolidationStop.equals(special))) {
 
-				parents.addAll(getConsolidatedGeneralizations((Class) parent, consolidationStop));
+				parents.addAll(getConsolidatedGeneralizations(parent, consolidationStop));
 			}
 		}
 
