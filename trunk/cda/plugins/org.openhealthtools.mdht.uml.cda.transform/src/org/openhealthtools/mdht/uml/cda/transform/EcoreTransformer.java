@@ -62,9 +62,12 @@ public class EcoreTransformer {
 
 		Package consolidatedPackage = null;
 		Package consolidatedVocabPackage = null;
+		Package flattenedPackage = null;
 		if (useConsolidator && consolidator == null) {
 			consolidatedPackage = initializeConsolidationPackageFrom(element);
 			consolidatedVocabPackage = initializeVocabPackageFrom(element);
+			flattenedPackage = initializeFlattenedPackageFrom(element);
+
 			consolidator = new CDAModelConsolidator(
 				element.getNearestPackage(), consolidatedPackage, consolidatedVocabPackage);
 		}
@@ -135,6 +138,15 @@ public class EcoreTransformer {
 			}
 		}
 
+		if (flattenedPackage != null) {
+			try {
+				Map<String, String> saveOptions = new HashMap<String, String>();
+				flattenedPackage.eResource().save(saveOptions);
+			} catch (IOException e) {
+				Logger.logException(e);
+			}
+		}
+
 		if (transformerOptions.isGenerateDomainInterface() || transformerOptions.isGenerateDomainClasses()) {
 			try {
 				Map<String, String> saveOptions = new HashMap<String, String>();
@@ -166,6 +178,10 @@ public class EcoreTransformer {
 		}
 
 		return vocabPkg;
+	}
+
+	private Package initializeFlattenedPackageFrom(Element element) {
+		return initializeModelPackageFrom(element, null, "flattened", "flat", "Flat");
 	}
 
 	private Package initializeModelPackageFrom(Element element, String newModelPath, String suffix, String nsPrefix,

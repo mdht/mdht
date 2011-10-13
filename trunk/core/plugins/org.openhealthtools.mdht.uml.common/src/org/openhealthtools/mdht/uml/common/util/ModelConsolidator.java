@@ -219,7 +219,7 @@ public class ModelConsolidator {
 		return consolidatedClass;
 	}
 
-	public List<Property> getAllProperties(Class umlClass) {
+	public List<Property> getAllProperties(Classifier umlClass) {
 		return getAllProperties(umlClass, null);
 	}
 
@@ -232,9 +232,9 @@ public class ModelConsolidator {
 
 		// process parents in reverse order, CDA base class first
 		for (int i = consolidatedParents.size() - 1; i >= 0; i--) {
-			Class parent = (Class) consolidatedParents.get(i);
+			Classifier parent = consolidatedParents.get(i);
 
-			for (Property property : parent.getOwnedAttributes()) {
+			for (Property property : UMLUtil.getOwnedAttributes(parent)) {
 				if (property.getAssociation() != null) {
 					allAssociations.add(property);
 				} else {
