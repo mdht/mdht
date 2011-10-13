@@ -90,7 +90,7 @@ public class EcoreTransformerOptions {
 		generateBuilderClasses = Platform.getPreferencesService().getBoolean(
 			Activator.PLUGIN_ID, GENERATE_BUILDER_CLASSES, false, null);
 		generateConsolidatedModel = Platform.getPreferencesService().getBoolean(
-			Activator.PLUGIN_ID, GENERATE_CONSOLIDATED_MODEL, true, null);
+			Activator.PLUGIN_ID, GENERATE_CONSOLIDATED_MODEL, false, null);
 		includeFixedValueGetters = Platform.getPreferencesService().getBoolean(
 			Activator.PLUGIN_ID, INCLUDE_FIXED_VALUE_GETTERS, false, null);
 		includeInterfaceRealization = Platform.getPreferencesService().getBoolean(

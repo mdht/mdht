@@ -54,11 +54,15 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 
 	private String builderModelPath = null;
 
+	private String consolidatedModelPath = null;
+
 	private Boolean generateDomainInterface = null;
 
 	private Boolean generateDomainClasses = null;
 
 	private Boolean generateBuilderClasses = null;
+
+	private Boolean generateConsolidatedModel;
 
 	private Boolean includeFixedValueGetters = null;
 
@@ -90,6 +94,9 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		if (builderModelPath == null && project.getProperty("builderModel") != null) {
 			builderModelPath = project.getProperty("builderModel");
 		}
+		if (consolidatedModelPath == null && project.getProperty("consolidatedModel") != null) {
+			consolidatedModelPath = project.getProperty("consolidatedModel");
+		}
 
 		if (generateDomainInterface == null && project.getProperty("generateDomainInterface") != null) {
 			generateDomainInterface = Boolean.valueOf(project.getProperty("generateDomainInterface"));
@@ -99,6 +106,9 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		}
 		if (generateBuilderClasses == null && project.getProperty("generateBuilderClasses") != null) {
 			generateBuilderClasses = Boolean.valueOf(project.getProperty("generateBuilderClasses"));
+		}
+		if (generateConsolidatedModel == null && project.getProperty("generateConsolidatedModel") != null) {
+			generateConsolidatedModel = Boolean.valueOf(project.getProperty("generateConsolidatedModel"));
 		}
 		if (includeFixedValueGetters == null && project.getProperty("includeFixedValueGetters") != null) {
 			includeFixedValueGetters = Boolean.valueOf(project.getProperty("includeFixedValueGetters"));
@@ -187,6 +197,17 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 				builderModelURI.lastSegment() + "_builder_Ecore");
 		}
 
+		URI consolidatedModelURI = null;
+		if (consolidatedModelPath != null) {
+			consolidatedModelURI = URI.createFileURI(consolidatedModelPath);
+		}
+		if (consolidatedModelURI == null) {
+			consolidatedModelURI = umlResource.getURI();
+			consolidatedModelURI = builderModelURI.trimFileExtension();
+			consolidatedModelURI = builderModelURI.trimSegments(1).appendSegment(
+				consolidatedModelURI.lastSegment() + "_consolidated");
+		}
+
 		String fileExtension = umlResource.getURI().fileExtension();
 		if (!fileExtension.equals(ecoreModelURI.fileExtension())) {
 			ecoreModelURI = ecoreModelURI.appendFileExtension(fileExtension);
@@ -197,12 +218,16 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		if (!fileExtension.equals(builderModelURI.fileExtension())) {
 			builderModelURI = builderModelURI.appendFileExtension(fileExtension);
 		}
+		if (!fileExtension.equals(consolidatedModelURI.fileExtension())) {
+			consolidatedModelURI = consolidatedModelURI.appendFileExtension(fileExtension);
+		}
 
 		umlResource.setURI(ecoreModelURI);
 
 		EcoreTransformerOptions options = new EcoreTransformerOptions();
 		options.setDomainModelPath(domainModelPath);
 		options.setBuilderModelPath(builderModelPath);
+		options.setConsolidatedModelPath(consolidatedModelPath);
 
 		if (generateDomainInterface != null) {
 			options.setGenerateDomainInterface(generateDomainInterface);
@@ -212,6 +237,9 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		}
 		if (generateBuilderClasses != null) {
 			options.setGenerateBuilderClasses(generateBuilderClasses);
+		}
+		if (generateConsolidatedModel != null) {
+			options.setGenerateConsolidatedModel(generateConsolidatedModel);
 		}
 		if (includeFixedValueGetters != null) {
 			options.setIncludeFixedValueGetters(includeFixedValueGetters);
@@ -286,6 +314,10 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		builderModelPath = path;
 	}
 
+	public void setConsolidatedModel(String path) {
+		consolidatedModelPath = path;
+	}
+
 	public void setGenerateDomainInterface(boolean include) {
 		generateDomainInterface = new Boolean(include);
 	}
@@ -296,6 +328,10 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 
 	public void setGenerateBuilderClasses(boolean include) {
 		generateBuilderClasses = new Boolean(include);
+	}
+
+	public void setGenerateConsolidatedModel(boolean include) {
+		generateConsolidatedModel = new Boolean(include);
 	}
 
 	public void setIncludeFixedValueGetters(boolean include) {
