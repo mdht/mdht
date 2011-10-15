@@ -95,31 +95,30 @@ public class NamedElementUtil extends UMLUtil {
 	 * 
 	 * @param namedElement
 	 *            The named element.
-	 * @return A propert key for the named element.
+	 * @return A property key for the named element.
 	 */
-	public static String getPropertyKey(NamedElement namedElement) {
+	public static String getPropertyKey(NamedElement namedElement, String prefix) {
 		String qualifiedName = namedElement.getQualifiedName();
-		return "_label_" + UML2Util.getValidJavaIdentifier(UML2Util.isEmpty(qualifiedName)
+		String prefixString = prefix == null
+				? ""
+				: "_" + prefix + "_";
+		return prefixString + UML2Util.getValidJavaIdentifier(UML2Util.isEmpty(qualifiedName)
 				? UML2Util.EMPTY_STRING
 				: qualifiedName.replace(':', '_'));
 	}
 
 	/**
-	 * Returns the "business name" for the specified named element, or the name
-	 * if none exists. The "business name" of a named element corresponds to the
-	 * (potentially localized) label that is stored in a properties file and
-	 * returned for the element by {@link NamedElement#getLabel()}.
+	 * Returns the property value for the specified named element, using the given key prefix.
 	 * 
 	 * @param namedElement
 	 *            The named element.
-	 * @return The "business name" for the element (if one exists); otherwise,
-	 *         the name of the element.
+	 * @return The property value, or null if none exists.
 	 */
-	public static String getBusinessName(NamedElement namedElement) {
+	public static String getPropertyValue(NamedElement namedElement, String prefix) {
 		String properties = readProperties(getPropertiesURI(namedElement.eResource()));
 
 		if (properties != null) {
-			String property = parseProperties(properties).get(getPropertyKey(namedElement));
+			String property = parseProperties(properties).get(getPropertyKey(namedElement, prefix));
 
 			if (property != null) {
 				int index = property.indexOf('=');
@@ -134,21 +133,48 @@ public class NamedElementUtil extends UMLUtil {
 	}
 
 	/**
-	 * Removes the "business name" that is currently set for the specified named
+	 * Sets the property value for the specified named element, and given key prefix,
+	 * to the given string value.
+	 * 
+	 * @param namedElement
+	 *            The named element.
+	 * @param businessName
+	 *            The new value.
+	 * @return Whether the value was successfully set.
+	 */
+	public static boolean setPropertyValue(NamedElement namedElement, String prefix, String value) {
+		URI uri = getPropertiesURI(namedElement.eResource());
+		String properties = readProperties(uri);
+		Map<String, String> parsedProperties = properties != null
+				? parseProperties(properties)
+				: new LinkedHashMap<String, String>();
+		String key = getPropertyKey(namedElement, prefix);
+		String property = parsedProperties.get(key);
+		int index = property != null
+				? property.indexOf('=')
+				: -1;
+		parsedProperties.put(key, (index != -1 && property.indexOf('#') != -1
+				? "#"
+				: "") + key + " = " + value + System.getProperty("line.separator"));
+		return writeProperties(uri, parsedProperties);
+	}
+
+	/**
+	 * Removes the property value that is currently set for the specified named
 	 * element, if any.
 	 * 
 	 * @param namedElement
 	 *            The named element.
-	 * @return The "business name" that was set for the element (if one
+	 * @return The value that was set for the element (if one
 	 *         existed); otherwise <code>null</code>.
 	 */
-	public static String removeBusinessName(NamedElement namedElement) {
+	public static String removePropertyValue(NamedElement namedElement, String prefix) {
 		URI uri = getPropertiesURI(namedElement.eResource());
 		String properties = readProperties(uri);
 
 		if (properties != null) {
 			Map<String, String> parsedProperties = parseProperties(properties);
-			String property = parsedProperties.remove(getPropertyKey(namedElement));
+			String property = parsedProperties.remove(getPropertyKey(namedElement, prefix));
 
 			if (property != null && writeProperties(uri, parsedProperties)) {
 				int index = property.indexOf('=');
@@ -163,6 +189,45 @@ public class NamedElementUtil extends UMLUtil {
 	}
 
 	/**
+	 * Returns a (model) properties file key for the specified named element with 'label' prefix.
+	 * 
+	 * @param namedElement
+	 *            The named element.
+	 * @return A label property key for the named element.
+	 */
+	public static String getLabelPropertyKey(NamedElement namedElement) {
+		return getPropertyKey(namedElement, "label");
+	}
+
+	/**
+	 * Returns the "business name" for the specified named element, or the name
+	 * if none exists. The "business name" of a named element corresponds to the
+	 * (potentially localized) label that is stored in a properties file and
+	 * returned for the element by {@link NamedElement#getLabel()}.
+	 * 
+	 * @param namedElement
+	 *            The named element.
+	 * @return The "business name" for the element (if one exists); otherwise,
+	 *         the name of the element.
+	 */
+	public static String getBusinessName(NamedElement namedElement) {
+		return getPropertyValue(namedElement, "label");
+	}
+
+	/**
+	 * Removes the "business name" that is currently set for the specified named
+	 * element, if any.
+	 * 
+	 * @param namedElement
+	 *            The named element.
+	 * @return The "business name" that was set for the element (if one
+	 *         existed); otherwise <code>null</code>.
+	 */
+	public static String removeBusinessName(NamedElement namedElement) {
+		return removePropertyValue(namedElement, "label");
+	}
+
+	/**
 	 * Sets the "business name" for the specified named element to the given
 	 * string.
 	 * 
@@ -173,20 +238,58 @@ public class NamedElementUtil extends UMLUtil {
 	 * @return Whether the "business name" was successfully set.
 	 */
 	public static boolean setBusinessName(NamedElement namedElement, String businessName) {
-		URI uri = getPropertiesURI(namedElement.eResource());
-		String properties = readProperties(uri);
-		Map<String, String> parsedProperties = properties != null
-				? parseProperties(properties)
-				: new LinkedHashMap<String, String>();
-		String key = getPropertyKey(namedElement);
-		String property = parsedProperties.get(key);
-		int index = property != null
-				? property.indexOf('=')
-				: -1;
-		parsedProperties.put(key, (index != -1 && property.indexOf('#') != -1
-				? "#"
-				: "") + key + " = " + businessName + System.getProperty("line.separator"));
-		return writeProperties(uri, parsedProperties);
+		return setPropertyValue(namedElement, "label", businessName);
+	}
+
+	/**
+	 * Returns a (model) properties file key for the specified named element with 'filter' prefix.
+	 * 
+	 * @param namedElement
+	 *            The named element.
+	 * @return A label property key for the named element.
+	 */
+	public static String getFilterPropertyKey(NamedElement namedElement) {
+		return getPropertyKey(namedElement, "filter");
+	}
+
+	/**
+	 * Returns whether the named element is filtered, false if not defined.
+	 * 
+	 * @param namedElement
+	 *            The named element.
+	 * @return true if filtered property is true, otherwise false.
+	 */
+	public static boolean isFiltered(NamedElement namedElement) {
+		String value = getPropertyValue(namedElement, "filter");
+		return "true".equals(value)
+				? true
+				: false;
+	}
+
+	/**
+	 * Sets whether for the specified named element is filtered.
+	 * 
+	 * @param namedElement
+	 *            The named element.
+	 * @param filtered
+	 *            boolean value
+	 * @return Whether the property was successfully set.
+	 */
+	public static boolean setFilteredProperty(NamedElement namedElement, boolean filtered) {
+		return setPropertyValue(namedElement, "filter", Boolean.toString(filtered));
+	}
+
+	/**
+	 * Removes the "filter" property that is currently set for the specified named
+	 * element, if any.
+	 * 
+	 * @param namedElement
+	 *            The named element.
+	 * @return The "filter" value that was set for the element (if one
+	 *         existed); otherwise <code>null</code>.
+	 */
+	public static String removeFilteredProperty(NamedElement namedElement) {
+		return removePropertyValue(namedElement, "filter");
 	}
 
 }
