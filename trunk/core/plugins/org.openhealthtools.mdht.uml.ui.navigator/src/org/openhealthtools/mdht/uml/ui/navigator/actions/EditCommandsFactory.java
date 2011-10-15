@@ -384,7 +384,7 @@ public class EditCommandsFactory implements IPropertyListener {
 									EObject next = allProperContents.next();
 
 									if (next instanceof NamedElement) {
-										String propertyKey = NamedElementUtil.getPropertyKey((NamedElement) next);
+										String propertyKey = NamedElementUtil.getLabelPropertyKey((NamedElement) next);
 										String property = eResourceParsedProperties.remove(propertyKey);
 
 										if (property != null) {
@@ -508,7 +508,7 @@ public class EditCommandsFactory implements IPropertyListener {
 									EObject next = allProperContents.next();
 
 									if (next instanceof NamedElement) {
-										String propertyKey = NamedElementUtil.getPropertyKey((NamedElement) next);
+										String propertyKey = NamedElementUtil.getLabelPropertyKey((NamedElement) next);
 										String property = eResourceParsedProperties.remove(propertyKey);
 
 										if (property != null) {
