@@ -83,7 +83,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 
 		URL url = bundle.getEntry("/");
 
-		if (url.getPath().indexOf(" ") < 0) {
+		if (url.getPath().indexOf(" ") >= 0) {
 			return true;
 		}
 
@@ -92,7 +92,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		IWorkspaceRoot root = workspace.getRoot();
 
 		IPath rootPath = root.getLocation();
-		if (rootPath.toOSString().indexOf(" ") < 0) {
+		if (rootPath.toOSString().indexOf(" ") >= 0) {
 			return true;
 		}
 
