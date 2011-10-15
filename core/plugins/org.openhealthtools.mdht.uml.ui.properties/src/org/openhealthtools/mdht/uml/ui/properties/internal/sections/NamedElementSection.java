@@ -142,7 +142,7 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 						localNameModified = false;
 						this.setLabel("Set Name");
 
-						String oldPropertyKey = NamedElementUtil.getPropertyKey(namedElement);
+						String oldPropertyKey = NamedElementUtil.getLabelPropertyKey(namedElement);
 						Map<String, String> parsedProperties = properties != null
 								? UMLUtil.parseProperties(properties)
 								: new LinkedHashMap<String, String>();
@@ -151,7 +151,7 @@ public class NamedElementSection extends AbstractModelerPropertySection {
 						namedElement.setName(localNameText.getText());
 
 						if (oldProperty != null) {
-							String newPropertyKey = NamedElementUtil.getPropertyKey(namedElement);
+							String newPropertyKey = NamedElementUtil.getLabelPropertyKey(namedElement);
 							parsedProperties.put(newPropertyKey, oldProperty.replace(oldPropertyKey, newPropertyKey));
 
 							UMLUtil.writeProperties(propertiesURI, parsedProperties);
