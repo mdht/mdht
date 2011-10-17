@@ -25,6 +25,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.edit.provider.ComposedImage;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -64,19 +65,23 @@ public class AssociationExtItemProvider extends AssociationItemProvider implemen
 
 	@Override
 	public Object getImage(Object object) {
-		boolean navigable = false;
-
+		Property navigableEnd = null;
 		for (Property memberEnd : ((Association) object).getMemberEnds()) {
 			if (memberEnd.isNavigable()) {
-				navigable = true;
+				navigableEnd = memberEnd;
 			}
 		}
 
-		if (navigable) {
-			return overlayImage(object, UMLExtEditPlugin.INSTANCE.getImage("full/obj16/Association_navigable")); //$NON-NLS-1$
-		} else {
-			return super.getImage(object);
+		ComposedImage composedImage = (ComposedImage) super.getImage(object);
+		if (navigableEnd != null) {
+			composedImage = (ComposedImage) overlayImage(
+				object, UMLExtEditPlugin.INSTANCE.getImage("full/obj16/Association_navigable")); //$NON-NLS-1$
+			if (NamedElementUtil.isFiltered(navigableEnd)) {
+				composedImage.getImages().add(UMLExtEditPlugin.INSTANCE.getImage("full/ovr16/filtered"));
+			}
 		}
+
+		return composedImage;
 	}
 
 	protected String getName(NamedElement namedElement) {

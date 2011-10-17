@@ -29,6 +29,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.edit.provider.ComposedImage;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -54,6 +55,7 @@ import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.internal.Logger;
+import org.openhealthtools.mdht.uml.edit.internal.UMLExtEditPlugin;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
 
 /**
@@ -77,7 +79,11 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return super.getImage(object);
+		ComposedImage composedImage = (ComposedImage) super.getImage(object);
+		if (NamedElementUtil.isFiltered((Property) object)) {
+			composedImage.getImages().add(UMLExtEditPlugin.INSTANCE.getImage("full/ovr16/filtered"));
+		}
+		return composedImage;
 	}
 
 	protected String getName(NamedElement namedElement) {
