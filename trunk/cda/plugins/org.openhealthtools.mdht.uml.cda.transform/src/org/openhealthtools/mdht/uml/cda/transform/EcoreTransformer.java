@@ -36,6 +36,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAModelConsolidator;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
+import org.openhealthtools.mdht.uml.common.util.ModelFilter;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 public class EcoreTransformer {
@@ -63,10 +64,11 @@ public class EcoreTransformer {
 		Package consolidatedPackage = null;
 		Package consolidatedVocabPackage = null;
 		Package flattenedPackage = null;
+		Package filteredPackage = null;
+
 		if (useConsolidator && consolidator == null) {
 			consolidatedPackage = initializeConsolidationPackageFrom(element);
 			consolidatedVocabPackage = initializeVocabPackageFrom(element);
-			flattenedPackage = initializeFlattenedPackageFrom(element);
 
 			consolidator = new CDAModelConsolidator(
 				element.getNearestPackage(), consolidatedPackage, consolidatedVocabPackage);
@@ -138,10 +140,53 @@ public class EcoreTransformer {
 			}
 		}
 
+		if (consolidatedPackage != null) {
+			// flatten the consolidated model
+			flattenedPackage = initializeFlattenedPackageFrom(consolidatedPackage);
+			consolidator = new CDAModelConsolidator(consolidatedPackage, flattenedPackage, true);
+			try {
+				TreeIterator<EObject> iterator = EcoreUtil.getAllContents(Collections.singletonList(consolidatedPackage));
+				while (iterator != null && iterator.hasNext()) {
+					EObject child = iterator.next();
+
+					if (child instanceof Class) {
+						consolidator.consolidateClass((Class) child);
+					}
+				}
+			} catch (Exception e) {
+				Logger.logException(e);
+			}
+
+			// filter the flattened model
+			filteredPackage = initializeFilteredPackageFrom(flattenedPackage);
+			ModelFilter modelFilter = new ModelFilter(flattenedPackage, filteredPackage);
+			try {
+				TreeIterator<EObject> iterator = EcoreUtil.getAllContents(Collections.singletonList(flattenedPackage));
+				while (iterator != null && iterator.hasNext()) {
+					EObject child = iterator.next();
+
+					if (child instanceof Class) {
+						modelFilter.filterClass((Class) child);
+					}
+				}
+			} catch (Exception e) {
+				Logger.logException(e);
+			}
+		}
+
 		if (flattenedPackage != null) {
 			try {
 				Map<String, String> saveOptions = new HashMap<String, String>();
 				flattenedPackage.eResource().save(saveOptions);
+			} catch (IOException e) {
+				Logger.logException(e);
+			}
+		}
+
+		if (filteredPackage != null) {
+			try {
+				Map<String, String> saveOptions = new HashMap<String, String>();
+				filteredPackage.eResource().save(saveOptions);
 			} catch (IOException e) {
 				Logger.logException(e);
 			}
@@ -184,6 +229,10 @@ public class EcoreTransformer {
 		return initializeModelPackageFrom(element, null, "flattened", "flat", "Flat");
 	}
 
+	private Package initializeFilteredPackageFrom(Element element) {
+		return initializeModelPackageFrom(element, null, "filtered", "flat", "Flat");
+	}
+
 	private Package initializeModelPackageFrom(Element element, String newModelPath, String suffix, String nsPrefix,
 			String prefix) {
 		Package sourcePkg = element.getNearestPackage();
@@ -205,6 +254,12 @@ public class EcoreTransformer {
 		Resource newModelResource = element.eResource().getResourceSet().createResource(newModelURI);
 		newModelPkg = UMLFactory.eINSTANCE.createPackage();
 		newModelResource.getContents().add(newModelPkg);
+
+		// apply CDA profile
+		Profile cdaProfile = CDAProfileUtil.getCDAProfile(element.eResource().getResourceSet());
+		if (cdaProfile != null) {
+			newModelPkg.applyProfile(cdaProfile);
+		}
 
 		// assign Ecore EPackage stereotype
 		Stereotype ePackage = EcoreTransformUtil.getEcoreStereotype(sourcePkg, UMLUtil.STEREOTYPE__E_PACKAGE);

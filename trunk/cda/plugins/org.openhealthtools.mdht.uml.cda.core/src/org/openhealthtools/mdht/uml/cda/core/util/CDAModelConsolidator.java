@@ -23,12 +23,14 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.openhealthtools.mdht.uml.common.util.ModelConsolidator;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
+import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
@@ -57,6 +59,11 @@ public class CDAModelConsolidator extends ModelConsolidator {
 		}
 	}
 
+	public CDAModelConsolidator(Package sourcePackage, Package consolPackage, boolean flatten) {
+		super(sourcePackage, consolPackage, flatten);
+		this.vocabMapping = new HashMap<String, Enumeration>();
+	}
+
 	@Override
 	public boolean isBaseModel(Element element) {
 		return CDAModelUtil.isCDAModel(element);
@@ -75,6 +82,32 @@ public class CDAModelConsolidator extends ModelConsolidator {
 	@Override
 	protected Property getBaseModelProperty(Property property) {
 		return CDAModelUtil.getCDAProperty(property);
+	}
+
+	@Override
+	protected boolean isDefaultFiltered(NamedElement element) {
+		boolean filtered = false;
+
+		if (element instanceof Property) {
+			// optional properties from base model
+			Property property = (Property) element;
+			if ((CDAModelUtil.isCDAModel(property) || RIMModelUtil.isRIMModel(property)) && property.getLower() == 0) {
+				filtered = true;
+			}
+
+			// structural attribute: classCode, moodCode, etc.
+			if (property.getType() instanceof Enumeration) {
+				filtered = true;
+			}
+
+			// fixed code value
+			CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
+			if (codeSystemConstraint != null && codeSystemConstraint.getCode() != null) {
+				filtered = true;
+			}
+		}
+
+		return filtered;
 	}
 
 	@Override

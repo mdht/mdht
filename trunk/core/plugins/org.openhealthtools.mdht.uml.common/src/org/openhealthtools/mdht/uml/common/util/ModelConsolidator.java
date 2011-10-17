@@ -31,9 +31,11 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.Substitution;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -52,6 +54,8 @@ public class ModelConsolidator {
 	private List<Classifier> importedClassifiers;
 
 	private Set<Classifier> processedClassifiers;
+
+	private boolean flatten = false;
 
 	public ModelConsolidator() {
 		sourceInheritance = new HashMap<Classifier, List<Classifier>>();
@@ -77,6 +81,12 @@ public class ModelConsolidator {
 			mapExistingConsolidation();
 			mapConsolInheritance(consolPackage, consolInheritance);
 		}
+	}
+
+	public ModelConsolidator(Package sourcePackage, Package consolPackage, boolean flatten) {
+		this(sourcePackage, consolPackage);
+
+		this.flatten = flatten;
 	}
 
 	/**
@@ -159,6 +169,23 @@ public class ModelConsolidator {
 		return null;
 	}
 
+	public boolean isFlattened() {
+		return flatten;
+	}
+
+	protected boolean isDefaultFiltered(NamedElement element) {
+		boolean filtered = false;
+
+		if (element instanceof Property) {
+			Property property = (Property) element;
+			if (isBaseModel(property) && property.getLower() == 0) {
+				filtered = true;
+			}
+		}
+
+		return filtered;
+	}
+
 	protected boolean isXMLAttribute(Property property) {
 		Property baseProperty = getBaseModelProperty(property);
 		if (baseProperty != null) {
@@ -230,7 +257,7 @@ public class ModelConsolidator {
 		List<Classifier> consolidatedParents = getConsolidatedGeneralizations(
 			umlClass, getConsolSource(consolidationStop));
 
-		// process parents in reverse order, CDA base class first
+		// process parents in reverse order, base model class first
 		for (int i = consolidatedParents.size() - 1; i >= 0; i--) {
 			Classifier parent = consolidatedParents.get(i);
 
@@ -252,16 +279,17 @@ public class ModelConsolidator {
 		Iterator<Property> propertyIterator = allProperties.iterator();
 		while (propertyIterator.hasNext()) {
 			Property property = propertyIterator.next();
-			if (isBaseModel(property) && property.getLower() == 0) {
+			if (!isFlattened() && isBaseModel(property) && property.getLower() == 0) {
 				// include only required base model class properties
 				propertyIterator.remove();
+
 			}
 		}
 
 		Iterator<Property> associationIterator = allAssociations.iterator();
 		while (associationIterator.hasNext()) {
 			Property property = associationIterator.next();
-			if (isBaseModel(property) && property.getLower() == 0) {
+			if (!isFlattened() && isBaseModel(property) && property.getLower() == 0) {
 				// include only required base model class properties
 				associationIterator.remove();
 			}
@@ -317,7 +345,7 @@ public class ModelConsolidator {
 		Class consolidationStop = null;
 		// umlClass.getGeneralizations().clear();
 		for (Classifier classifier : allParents) {
-			if (isBaseModel(classifier)) {
+			if (!isFlattened() && isBaseModel(classifier)) {
 				break;
 			}
 			Class consolClass = consolMapping.get(EcoreUtil.getURI(classifier).toString());
@@ -362,14 +390,21 @@ public class ModelConsolidator {
 
 		// XML attributes
 		for (Property property : allAttributes) {
+			Property mergedProperty = null;
 			if (umlClass.getOwnedAttributes().contains(property)) {
+				mergedProperty = property;
 				// remove and re-add for correct sort order
 				umlClass.getOwnedAttributes().remove(property);
 				umlClass.getOwnedAttributes().add(property);
 			} else {
-				Property clone = EcoreUtil.copy(property);
-				umlClass.getOwnedAttributes().add(clone);
-				UMLUtil.cloneStereotypes(property, clone);
+				mergedProperty = EcoreUtil.copy(property);
+				umlClass.getOwnedAttributes().add(mergedProperty);
+				UMLUtil.cloneStereotypes(property, mergedProperty);
+			}
+
+			// test original property so that we can evaluate base model context
+			if (isFlattened() && isDefaultFiltered(property)) {
+				NamedElementUtil.setFilteredProperty(mergedProperty, true);
 			}
 		}
 
@@ -393,7 +428,7 @@ public class ModelConsolidator {
 				Type endType = property.getType();
 				if (endType instanceof Class) {
 					Class consolType = null;
-					// if association to CDA type, leave it unchanged
+					// if association to base model type, leave it unchanged
 					if (!isBaseModel(endType)) {
 						// if a more specific type defined in consol or source model, use it
 						consolType = findConsolSpecialization((Class) endType);
@@ -420,6 +455,11 @@ public class ModelConsolidator {
 
 					UMLUtil.cloneStereotypes(property.getAssociation(), assocClone);
 				}
+			}
+
+			// test original property so that we can evaluate base model context
+			if (isFlattened() && isDefaultFiltered(property)) {
+				NamedElementUtil.setFilteredProperty(mergedProperty, true);
 			}
 		}
 
@@ -456,21 +496,29 @@ public class ModelConsolidator {
 		// update generalizations
 		// remove non-consolidated superclasses
 		umlClass.getGeneralizations().clear();
-		if (consolidationStop != null) {
+		if (!isFlattened() && consolidationStop != null) {
 			umlClass.createGeneralization(consolidationStop);
 		}
-		if (umlClass.getGeneralizations().isEmpty()) {
+		if (!isFlattened() && umlClass.getGeneralizations().isEmpty() && baseModelClass != null) {
 			umlClass.createGeneralization(baseModelClass);
 		}
 
-		// add Substitition for all source model generalizations
-		Set<Class> substitutions = new HashSet<Class>();
-		for (int i = allSourceParents.size() - 1; i >= 0; i--) {
-			Class parent = (Class) allSourceParents.get(i);
-			if (!isReferenceModel(parent) && !isBaseModel(parent) && !substitutions.contains(parent)) {
-				// add Substitution
-				umlClass.createSubstitution(null, parent);
-				substitutions.add(parent);
+		if (isFlattened()) {
+			List<Substitution> substitutions = new ArrayList<Substitution>(umlClass.getSubstitutions());
+			for (Substitution subst : substitutions) {
+				subst.destroy();
+			}
+		} else {
+			// add Substitition for all source model generalizations
+			Set<Class> substitutions = new HashSet<Class>();
+			for (int i = allSourceParents.size() - 1; i >= 0; i--) {
+				Class parent = (Class) allSourceParents.get(i);
+				if ((isFlattened() || (!isReferenceModel(parent) && !isBaseModel(parent))) &&
+						!substitutions.contains(parent)) {
+					// add Substitution
+					umlClass.createSubstitution(null, parent);
+					substitutions.add(parent);
+				}
 			}
 		}
 	}
@@ -507,12 +555,16 @@ public class ModelConsolidator {
 			for (Property property : umlClass.getOwnedAttributes()) {
 				if (property.getAssociation() != null) {
 					Property mappedProperty = mappedClass.getOwnedAttribute(property.getName(), property.getType());
+					if (mappedProperty == null) {
+						// this should never happen
+						continue;
+					}
 
-					Association assocClone = (Association) umlClass.getNearestPackage().createOwnedType(
+					Association assocClone = (Association) mappedClass.getNearestPackage().createOwnedType(
 						null, UMLPackage.Literals.ASSOCIATION);
 					assocClone.getMemberEnds().add(mappedProperty);
 					Property ownedEnd = UMLFactory.eINSTANCE.createProperty();
-					ownedEnd.setType(umlClass);
+					ownedEnd.setType(mappedClass);
 					assocClone.getOwnedEnds().add(ownedEnd);
 
 					UMLUtil.cloneStereotypes(property.getAssociation(), assocClone);
