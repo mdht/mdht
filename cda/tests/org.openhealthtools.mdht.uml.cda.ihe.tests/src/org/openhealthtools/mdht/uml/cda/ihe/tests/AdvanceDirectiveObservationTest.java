@@ -72,7 +72,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveObservationCode() {
@@ -91,6 +91,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCodeSystem("2.16.840.1.113883.6.96");
 				target.setCode(cd);
 
 			}

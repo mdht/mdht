@@ -12,6 +12,7 @@ package org.openhealthtools.mdht.uml.cda.ihe.tests;
 
 import java.util.Map;
 
+import org.eclipse.emf.codegen.ecore.genmodel.impl.GenOperationImpl;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
@@ -95,6 +96,8 @@ public class ImmunizationsSectionTest extends CDAValidationTest {
 			protected void updateToPass(ImmunizationsSection target) {
 				SubstanceAdministration substanceAdministration = IHEFactory.eINSTANCE.createImmunization().init();
 				target.addSubstanceAdministration(substanceAdministration);
+
+				org.eclipse.uml2.codegen.ecore.genmodel.util.UML2GenModelUtil.getOCLBody(null);
 
 			}
 
