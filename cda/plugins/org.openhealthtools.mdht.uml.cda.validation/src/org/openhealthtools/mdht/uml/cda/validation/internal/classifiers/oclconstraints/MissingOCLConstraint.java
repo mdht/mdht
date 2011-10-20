@@ -16,6 +16,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.validation.AbstractModelConstraint;
 import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.ValueSpecification;
@@ -36,6 +37,12 @@ public class MissingOCLConstraint extends AbstractModelConstraint implements CDA
 	public MissingOCLConstraint() {
 		super();
 	}
+
+	final private static String ANALYSISLANGUAGE = "ANALYSIS";
+
+	final private static String OCLLANGUAGE = "OCL";
+
+	final private static String UNIMPLEMENTABLE = "UNIMPLEMENTABLE";
 
 	@Override
 	public IStatus validate(IValidationContext context) {
@@ -59,12 +66,11 @@ public class MissingOCLConstraint extends AbstractModelConstraint implements CDA
 
 				for (String language : oe.getLanguages()) {
 
-					if ("OCL".equalsIgnoreCase(language)) {
+					if (OCLLANGUAGE.equalsIgnoreCase(language)) {
 						ocl = oe.getBodies().get(languageCtr);
-
 					}
 
-					if ("Analysis".equalsIgnoreCase(language)) {
+					if (ANALYSISLANGUAGE.equalsIgnoreCase(language)) {
 						analysis = oe.getBodies().get(languageCtr);
 					}
 
@@ -73,7 +79,14 @@ public class MissingOCLConstraint extends AbstractModelConstraint implements CDA
 
 				if (analysis != null) {
 
-					if (ocl == null || ocl.trim().length() == 0) {
+					boolean unimplementable = false;
+					for (Comment comment : constraint.getOwnedComments()) {
+						if (comment.getBody() != null && comment.getBody().startsWith(UNIMPLEMENTABLE)) {
+							unimplementable = true;
+						}
+					}
+
+					if (!unimplementable && (ocl == null || ocl.trim().length() == 0)) {
 						result = context.createFailureStatus(new Object[] { constraint.getQualifiedName() });
 					}
 				}
@@ -81,11 +94,6 @@ public class MissingOCLConstraint extends AbstractModelConstraint implements CDA
 			}
 		}
 
-		// }
-
-		// final Class rimClass = (Class) context.getTarget();
-
 		return result;
 	}
-
 }
