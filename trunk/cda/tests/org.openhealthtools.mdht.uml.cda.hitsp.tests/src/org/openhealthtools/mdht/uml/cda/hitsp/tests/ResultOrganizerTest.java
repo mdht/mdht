@@ -36,7 +36,7 @@ public class ResultOrganizerTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHITSPResultOrganizerResult() {
@@ -53,7 +53,7 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultOrganizer target) {
 				target.init();
-
+				target.addObservation(HITSPFactory.eINSTANCE.createResult());
 			}
 
 			@Override

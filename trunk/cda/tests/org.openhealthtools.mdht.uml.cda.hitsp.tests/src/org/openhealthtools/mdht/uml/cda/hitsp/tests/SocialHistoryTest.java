@@ -15,6 +15,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.SocialHistory;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.SocialHistoryOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
@@ -74,7 +75,7 @@ public class SocialHistoryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateSocialHistoryCode() {
@@ -90,7 +91,10 @@ public class SocialHistoryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistory target) {
 				target.init();
-
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				code.setCodeSystem("2.16.840.1.113883.6.96");
+				code.setCode("160573003");
+				target.setCode(code);
 			}
 
 			@Override
@@ -144,7 +148,7 @@ public class SocialHistoryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateSocialHistoryText() {
@@ -160,7 +164,7 @@ public class SocialHistoryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistory target) {
 				target.init();
-
+				target.setText(DatatypesFactory.eINSTANCE.createED());
 			}
 
 			@Override

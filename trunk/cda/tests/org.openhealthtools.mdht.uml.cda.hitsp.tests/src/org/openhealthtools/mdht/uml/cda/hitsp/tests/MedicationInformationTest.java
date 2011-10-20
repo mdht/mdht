@@ -112,7 +112,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 			protected void updateToPass(MedicationInformation target) {
 				Material mm = CDAFactory.eINSTANCE.createMaterial();
 				CE ce = DatatypesFactory.eINSTANCE.createCE();
-				ce.setCodeSystem("2.16.840.1.113883.3.88.12.80.17");
+				ce.setCodeSystem("2.16.840.1.113883.6.88");
 				mm.setCode(ce);
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				ce.getTranslations().add(cd);
@@ -152,7 +152,8 @@ public class MedicationInformationTest extends CDAValidationTest {
 			protected void updateToPass(MedicationInformation target) {
 				Material mm = CDAFactory.eINSTANCE.createMaterial();
 				CE ce = DatatypesFactory.eINSTANCE.createCE();
-				ce.setCodeSystem("2.16.840.1.113883.3.88.12.80.18");
+				ce.setCodeSystem("2.16.840.1.113883.3.26.1.5");
+				ce.setCode("N0000000002");
 				mm.setCode(ce);
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				ce.getTranslations().add(cd);
@@ -192,7 +193,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 			protected void updateToPass(MedicationInformation target) {
 				Material mm = CDAFactory.eINSTANCE.createMaterial();
 				CE ce = DatatypesFactory.eINSTANCE.createCE();
-				ce.setCodeSystem("2.16.840.1.113883.3.88.12.80.20");
+				ce.setCodeSystem("2.16.840.1.113883.4.9");
 				mm.setCode(ce);
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				ce.getTranslations().add(cd);
@@ -232,7 +233,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 			protected void updateToPass(MedicationInformation target) {
 				Material mm = CDAFactory.eINSTANCE.createMaterial();
 				CE ce = DatatypesFactory.eINSTANCE.createCE();
-				ce.setCodeSystem("2.16.840.1.113883.3.88.12.80.16");
+				ce.setCodeSystem("2.16.840.1.113883.6.88");
 				mm.setCode(ce);
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				ce.getTranslations().add(cd);
@@ -272,7 +273,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 			protected void updateToPass(MedicationInformation target) {
 				Material mm = CDAFactory.eINSTANCE.createMaterial();
 				CE ce = DatatypesFactory.eINSTANCE.createCE();
-				ce.setCodeSystem("2.16.840.1.113883.3.88.12.80.16");
+				ce.setCodeSystem("2.16.840.1.113883.6.88");
 				mm.setCode(ce);
 				target.setManufacturedMaterial(mm);
 

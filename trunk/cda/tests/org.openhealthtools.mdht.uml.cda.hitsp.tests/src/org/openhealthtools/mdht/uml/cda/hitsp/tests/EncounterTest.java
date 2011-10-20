@@ -15,10 +15,16 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Participant2;
+import org.openhealthtools.mdht.uml.cda.ParticipantRole;
 import org.openhealthtools.mdht.uml.cda.hitsp.Encounter;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.EncounterOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -40,7 +46,7 @@ public class EncounterTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHITSPEncounterAdmissionSourceValueSet() {
@@ -57,7 +63,14 @@ public class EncounterTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Encounter target) {
 				target.init();
-
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.ORG);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				code.setCodeSystem("2.16.840.1.113883.3.88.12.80.33");
+				pr.setCode(code);
+				par.setParticipantRole(pr);
+				target.getParticipants().add(par);
 			}
 
 			@Override

@@ -29,6 +29,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
+import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
@@ -118,10 +119,10 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationOrderInformation target) {
 
-				// SXCM_TS ef = DatatypesFactory.eINSTANCE.createSXCM_TS();
-				// // ef.
-				// // ef.setValue("value");
-				// target.getEffectiveTimes().add(ef);
+				SXCM_TS ef = DatatypesFactory.eINSTANCE.createSXCM_TS();
+				// ef.
+				// ef.setValue("value");
+				target.getEffectiveTimes().add(ef);
 
 			}
 

@@ -359,7 +359,7 @@ public class MedicationTest extends CDAValidationTest {
 				target.init();
 				ProblemObservation po = CCDFactory.eINSTANCE.createProblemObservation();
 				CD code = DatatypesFactory.eINSTANCE.createCD();
-				code.setCodeSystem("2.16.840.1.113883.3.88.12.3221.7.4");
+				code.setCodeSystem("2.16.840.1.113883.6.96");
 				po.setCode(code);
 				target.addObservation(po);
 			}
@@ -709,7 +709,7 @@ public class MedicationTest extends CDAValidationTest {
 				pr.setClassCode(RoleClassRoot.MANU);
 
 				CE ce = DatatypesFactory.eINSTANCE.createCE("412307009", "2.16.840.1.113883.6.96");
-				CE ce2 = DatatypesFactory.eINSTANCE.createCE("12345", "2.16.840.1.113883.3.88.12.80.21");
+				CE ce2 = DatatypesFactory.eINSTANCE.createCE("12345", "2.16.840.1.113883.6.96");
 				pr.setCode(ce);
 				pe.setCode(ce2);
 
