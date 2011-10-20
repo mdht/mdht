@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.NeurologicSystemSection;
+import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.NeurologicSystemSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
@@ -123,6 +124,9 @@ public class NeurologicSystemSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(NeurologicSystemSection target) {
 				target.init();
+
+				ProblemEntry entry = IHEFactory.eINSTANCE.createProblemEntry().init();
+				target.addObservation(entry);
 
 			}
 

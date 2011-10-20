@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ihe.GeneralAppearanceSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.GeneralAppearanceSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
@@ -106,7 +107,7 @@ public class GeneralAppearanceSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateGeneralAppearanceSectionProblemEntry() {
@@ -123,6 +124,8 @@ public class GeneralAppearanceSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralAppearanceSection target) {
 				target.init();
+				ProblemEntry entry = IHEFactory.eINSTANCE.createProblemEntry().init();
+				target.addObservation(entry);
 
 			}
 
