@@ -11,10 +11,17 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.RelatedSubject;
+import org.openhealthtools.mdht.uml.cda.Subject;
+import org.openhealthtools.mdht.uml.cda.SubjectPerson;
 import org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistory;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.FamilyHistoryOperations;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,7 +48,7 @@ public class FamilyHistoryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateFamilyHistoryRelatedSubjectCodeValueSet() {
@@ -58,6 +65,13 @@ public class FamilyHistoryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FamilyHistory target) {
 				target.init();
+				Subject sub = CDAFactory.eINSTANCE.createSubject();
+				target.setSubject(sub);
+				RelatedSubject rs = CDAFactory.eINSTANCE.createRelatedSubject();
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				code.setCodeSystem("2.16.840.1.113883.5.111");
+				rs.setCode(code);
+				sub.setRelatedSubject(rs);
 
 			}
 
@@ -75,7 +89,7 @@ public class FamilyHistoryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateFamilyHistoryHasFamilyName() {
@@ -93,6 +107,16 @@ public class FamilyHistoryTest extends CDAValidationTest {
 			protected void updateToPass(FamilyHistory target) {
 				target.init();
 
+				Subject sub = CDAFactory.eINSTANCE.createSubject();
+				SubjectPerson sp = CDAFactory.eINSTANCE.createSubjectPerson();
+
+				target.setSubject(sub);
+				RelatedSubject rs = CDAFactory.eINSTANCE.createRelatedSubject();
+
+				rs.setSubject(sp);
+				sp.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+				sub.setRelatedSubject(rs);
+
 			}
 
 			@Override
@@ -109,7 +133,7 @@ public class FamilyHistoryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateFamilyHistoryHasGenderCode() {
@@ -127,6 +151,20 @@ public class FamilyHistoryTest extends CDAValidationTest {
 			protected void updateToPass(FamilyHistory target) {
 				target.init();
 
+				Subject sub = CDAFactory.eINSTANCE.createSubject();
+				SubjectPerson sp = CDAFactory.eINSTANCE.createSubjectPerson();
+				CE agc = DatatypesFactory.eINSTANCE.createCE();
+				agc.setCodeSystem("2.16.840.1.113883.5.1");
+				agc.setCode("F");
+				sp.setAdministrativeGenderCode(agc);
+				sp.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+
+				RelatedSubject rs = CDAFactory.eINSTANCE.createRelatedSubject();
+
+				rs.setSubject(sp);
+
+				sub.setRelatedSubject(rs);
+				target.setSubject(sub);
 			}
 
 			@Override
@@ -143,7 +181,7 @@ public class FamilyHistoryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateFamilyHistoryFamilyMemberCondition() {
@@ -160,7 +198,7 @@ public class FamilyHistoryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FamilyHistory target) {
 				target.init();
-
+				target.addObservation(IHEFactory.eINSTANCE.createFamilyHistoryObservation());
 			}
 
 			@Override
@@ -211,7 +249,7 @@ public class FamilyHistoryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateFamilyHistoryProblemStatusObservation() {
@@ -228,7 +266,7 @@ public class FamilyHistoryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FamilyHistory target) {
 				target.init();
-
+				target.addObservation(IHEFactory.eINSTANCE.createProblemStatusObservation());
 			}
 
 			@Override

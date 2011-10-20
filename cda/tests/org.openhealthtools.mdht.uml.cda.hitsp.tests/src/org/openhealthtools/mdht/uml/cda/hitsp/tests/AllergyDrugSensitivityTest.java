@@ -166,7 +166,8 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 				target.init();
 				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
 				CD code = DatatypesFactory.eINSTANCE.createCD();
-				code.setCodeSystem("2.16.840.1.113883.3.88.12.3221.6.2");
+				code.setCodeSystem("2.16.840.1.113883.6.96");
+				code.setCode("416098002");
 				obs.setCode(code);
 				target.addObservation(obs);
 			}
@@ -546,7 +547,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
 				pe.setClassCode(EntityClassRoot.MMAT);
 				CE code = DatatypesFactory.eINSTANCE.createCE();
-				code.setCodeSystem("2.16.840.1.113883.3.88.12.80.20");
+				code.setCodeSystem("2.16.840.1.113883.4.9");
 				pe.setCode(code);
 				pr.setPlayingEntity(pe);
 				par.setParticipantRole(pr);
@@ -593,7 +594,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
 				pe.setClassCode(EntityClassRoot.MMAT);
 				CE code = DatatypesFactory.eINSTANCE.createCE();
-				code.setCodeSystem("2.16.840.1.113883.3.88.12.80.17");
+				code.setCodeSystem("2.16.840.1.113883.3.26.1.5");
 				pe.setCode(code);
 				pr.setPlayingEntity(pe);
 				par.setParticipantRole(pr);
@@ -640,7 +641,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
 				pe.setClassCode(EntityClassRoot.MMAT);
 				CE code = DatatypesFactory.eINSTANCE.createCE();
-				code.setCodeSystem("2.16.840.1.113883.3.88.12.80.16");
+				code.setCodeSystem("2.16.840.1.113883.6.88");
 				pe.setCode(code);
 				pr.setPlayingEntity(pe);
 				par.setParticipantRole(pr);
@@ -759,7 +760,8 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
 				ReactionObservation ro = CCDFactory.eINSTANCE.createReactionObservation();
 				CD code = DatatypesFactory.eINSTANCE.createCD();
-				code.setCodeSystem("2.16.840.1.113883.3.88.12.3221.7.4");
+				code.setCodeSystem("2.16.840.1.113883.6.96");
+				code.setCode("243796009");
 				ro.setCode(code);
 				obs.addObservation(ro);
 				target.addObservation(obs);
@@ -876,7 +878,8 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
 				SeverityObservation so = CCDFactory.eINSTANCE.createSeverityObservation();
 				CD code = DatatypesFactory.eINSTANCE.createCD();
-				code.setCodeSystem("2.16.840.1.113883.3.88.12.3221.6.8");
+				code.setCodeSystem("2.16.840.1.113883.6.96");
+				code.setCode("371923003");
 				so.setCode(code);
 				obs.addObservation(so);
 				target.addObservation(obs);

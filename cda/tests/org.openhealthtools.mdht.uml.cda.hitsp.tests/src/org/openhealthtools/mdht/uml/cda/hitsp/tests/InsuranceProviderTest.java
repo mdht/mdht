@@ -15,10 +15,27 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Participant2;
+import org.openhealthtools.mdht.uml.cda.ParticipantRole;
+import org.openhealthtools.mdht.uml.cda.Performer2;
+import org.openhealthtools.mdht.uml.cda.PlayingEntity;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.InsuranceProvider;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.InsuranceProviderOperations;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.PayerEntry;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationPhysicalPerformer;
+import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
+import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -60,7 +77,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderPaymentProviders() {
@@ -77,7 +94,8 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
@@ -94,7 +112,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderPayerEntryID() {
@@ -105,13 +123,19 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
-
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				II id = DatatypesFactory.eINSTANCE.createII();
+				id.setRoot("root");
+				pe.getIds().add(id);
+				target.addAct(pe);
 			}
 
 			@Override
@@ -128,7 +152,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderHealthInsuranceType() {
@@ -139,12 +163,20 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				code.setCode("13");
+				code.setCodeSystem("2.16.840.1.113883.6.255.1336");
+				pe.setCode(code);
+				target.addAct(pe);
 
 			}
 
@@ -162,7 +194,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderInsuranceInformation() {
@@ -173,12 +205,20 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Performer2 perm = CDAFactory.eINSTANCE.createPerformer2();
+				perm.setTypeCode(ParticipationPhysicalPerformer.PRF);
+				perm.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+				pe.getPerformers().add(perm);
+				target.addAct(pe);
 
 			}
 
@@ -196,7 +236,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderInsuranceInfoSourceID() {
@@ -207,12 +247,22 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Performer2 perm = CDAFactory.eINSTANCE.createPerformer2();
+				perm.setTypeCode(ParticipationPhysicalPerformer.PRF);
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				perm.setAssignedEntity(ae);
+				pe.getPerformers().add(perm);
+				target.addAct(pe);
 
 			}
 
@@ -230,7 +280,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderInsuranceInfoSourceAddr() {
@@ -241,13 +291,22 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
-
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Performer2 perm = CDAFactory.eINSTANCE.createPerformer2();
+				perm.setTypeCode(ParticipationPhysicalPerformer.PRF);
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+				perm.setAssignedEntity(ae);
+				pe.getPerformers().add(perm);
+				target.addAct(pe);
 			}
 
 			@Override
@@ -264,7 +323,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderHealthPlanCoverageStartTime() {
@@ -275,12 +334,24 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.COV);
+
+				IVL_TS time = DatatypesFactory.eINSTANCE.createIVL_TS();
+				IVXB_TS lw = DatatypesFactory.eINSTANCE.createIVXB_TS();
+				time.setLow(lw);
+				par.setTime(time);
+				pe.getParticipants().add(par);
+				target.addAct(pe);
 
 			}
 
@@ -298,7 +369,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderHealthPlanCoverageStopTime() {
@@ -309,12 +380,24 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.COV);
+
+				IVL_TS time = DatatypesFactory.eINSTANCE.createIVL_TS();
+				IVXB_TS high = DatatypesFactory.eINSTANCE.createIVXB_TS();
+				time.setHigh(high);
+				par.setTime(time);
+				pe.getParticipants().add(par);
+				target.addAct(pe);
 
 			}
 
@@ -332,7 +415,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderPatientInformation() {
@@ -343,12 +426,22 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.COV);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setClassCode(RoleClassRoot.PAT);
+				par.setParticipantRole(pr);
+				pe.getParticipants().add(par);
+				target.addAct(pe);
 
 			}
 
@@ -366,7 +459,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderMemberId() {
@@ -377,12 +470,23 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.COV);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				pr.setClassCode(RoleClassRoot.PAT);
+				par.setParticipantRole(pr);
+				pe.getParticipants().add(par);
+				target.addAct(pe);
 
 			}
 
@@ -400,7 +504,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderMemberIdRoot() {
@@ -411,12 +515,25 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.COV);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				II id = DatatypesFactory.eINSTANCE.createII();
+				id.setRoot("root");
+				pr.getIds().add(id);
+				pr.setClassCode(RoleClassRoot.PAT);
+				par.setParticipantRole(pr);
+				pe.getParticipants().add(par);
+				target.addAct(pe);
 
 			}
 
@@ -434,7 +551,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderRelationshipToSubscriber() {
@@ -445,12 +562,24 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.COV);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				pr.setCode(code);
+				pr.setClassCode(RoleClassRoot.PAT);
+				par.setParticipantRole(pr);
+				pe.getParticipants().add(par);
+				target.addAct(pe);
 
 			}
 
@@ -468,7 +597,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderRelationshipToSubscriberCodeSystem() {
@@ -479,12 +608,26 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.COV);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				code.setCodeSystem("2.16.840.1.113883.5.111");
+				code.setCode("FAMDEP");
+				pr.setCode(code);
+				pr.setClassCode(RoleClassRoot.PAT);
+				par.setParticipantRole(pr);
+				pe.getParticipants().add(par);
+				target.addAct(pe);
 
 			}
 
@@ -502,7 +645,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderPatientName() {
@@ -513,12 +656,25 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.COV);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				PlayingEntity pl = CDAFactory.eINSTANCE.createPlayingEntity();
+				pl.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+				pr.setPlayingEntity(pl);
+				pr.setClassCode(RoleClassRoot.PAT);
+				par.setParticipantRole(pr);
+				pe.getParticipants().add(par);
+				target.addAct(pe);
 
 			}
 
@@ -536,7 +692,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderSubscriberInformation() {
@@ -547,12 +703,19 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.HLD);
+				pe.getParticipants().add(par);
+				target.addAct(pe);
 
 			}
 
@@ -570,7 +733,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderSubscriberId() {
@@ -581,12 +744,25 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.HLD);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				II id = DatatypesFactory.eINSTANCE.createII();
+				id.setRoot("root");
+				pr.getIds().add(id);
+				pr.setClassCode(RoleClassRoot.PAT);
+				par.setParticipantRole(pr);
+				pe.getParticipants().add(par);
+				target.addAct(pe);
 
 			}
 
@@ -604,7 +780,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderSubscriberIdRoot() {
@@ -615,12 +791,25 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.HLD);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				II id = DatatypesFactory.eINSTANCE.createII();
+				id.setRoot("root");
+				pr.getIds().add(id);
+				pr.setClassCode(RoleClassRoot.PAT);
+				par.setParticipantRole(pr);
+				pe.getParticipants().add(par);
+				target.addAct(pe);
 
 			}
 
@@ -638,7 +827,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderSubscriberAddress() {
@@ -649,12 +838,23 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setTypeCode(ParticipationType.HLD);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+				pr.setClassCode(RoleClassRoot.PAT);
+				par.setParticipantRole(pr);
+				pe.getParticipants().add(par);
+				target.addAct(pe);
 
 			}
 
@@ -672,7 +872,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderFinancialResponsibilityPartyType() {
@@ -683,12 +883,23 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				ae.setCode(code);
+				per.setAssignedEntity(ae);
+				per.setTypeCode(ParticipationPhysicalPerformer.PRF);
+				pe.getPerformers().add(per);
+				target.addAct(pe);
 
 			}
 
@@ -706,7 +917,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderFinancialResponsibilityPartyTypeCode() {
@@ -717,12 +928,24 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				code.setCodeSystem("2.16.840.1.113883.5.110");
+				ae.setCode(code);
+				per.setAssignedEntity(ae);
+				per.setTypeCode(ParticipationPhysicalPerformer.PRF);
+				pe.getPerformers().add(per);
+				target.addAct(pe);
 
 			}
 
@@ -740,7 +963,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateInsuranceProviderFinancialResponsibilityPartyAddress() {
@@ -751,12 +974,22 @@ public class InsuranceProviderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
-
+				target.init();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				target.addAct(pe);
 			}
 
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				PayerEntry pe = IHEFactory.eINSTANCE.createPayerEntry();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+				per.setAssignedEntity(ae);
+				per.setTypeCode(ParticipationPhysicalPerformer.PRF);
+				pe.getPerformers().add(per);
+				target.addAct(pe);
 
 			}
 
