@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Rama Ramakrishnan - modifications to the URL handling for instance generation.
  *    
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.actions;
@@ -136,9 +137,10 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 									IJavaLaunchConfigurationConstants.ATTR_MAIN_TYPE_NAME,
 									"org.openhealthtools.mdht.uml.cda.core.internal.generate.Generate");
 								String cdaGenerateArguments = String.format(
-									" \"%s\" \"%s\" \"jar:%s\" \"jar:%s\" ", file.getRawLocation().toOSString(),
-									selectedElement.getName(), getJarLocation("org.eclipse.uml2.uml.resources"),
-									getJarLocation("org.openhealthtools.mdht.uml.cda.resources"));
+									" \"%s\" \"%s\" \"%s\" \"%s\" ", file.getRawLocation().toOSString(),
+									selectedElement.getName(),
+									getFormattedResourceLocation("org.eclipse.uml2.uml.resources"),
+									getFormattedResourceLocation("org.openhealthtools.mdht.uml.cda.resources"));
 								workingCopy.setAttribute(
 									IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, cdaGenerateArguments);
 								workingCopy.setAttribute(
@@ -224,25 +226,38 @@ public class GenerateSampleInstanceAction implements IObjectActionDelegate {
 	}
 
 	/**
-	 * Returns jar location from symboic name used in generatexml to load the
-	 * uml and cda resources appropriately
+	 * Returns URL of the file /jar resource based on the symbolic name
 	 * 
 	 * @param symbolicName
-	 * @return
+	 * @return URL
 	 */
-	private String getJarLocation(String symbolicName) {
+	private URL getURLFromSymbolicName(String symbolicName) {
 
 		try {
 			Bundle bundle = Platform.getBundle(symbolicName);
 			URL url = bundle.getEntry("/");
 			url = FileLocator.resolve(url);
-			return url.getFile();
+			return url;
 
 		} catch (IOException e) {
 
 		}
 
-		return "";
+		return null;
+	}
+
+	/**
+	 * Gets the formatted url with the type of resource.
+	 * e.g. URL's with jar protocol will be returned as jar:file:/<resource-path>
+	 * URL's with file protocol will be returned as file:/<resource-path>
+	 * 
+	 * @param resource
+	 * @return
+	 */
+	private String getFormattedResourceLocation(String resource) {
+
+		URL fileURL = getURLFromSymbolicName(resource);
+		return fileURL.toExternalForm();
 	}
 
 	@SuppressWarnings("rawtypes")
