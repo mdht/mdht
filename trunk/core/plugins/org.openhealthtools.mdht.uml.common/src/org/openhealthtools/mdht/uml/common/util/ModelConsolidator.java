@@ -233,13 +233,13 @@ public class ModelConsolidator {
 			consolidatedClass = findConsolSpecialization(sourceClass);
 
 			if (consolidatedClass == null) {
-				Class sourceSpecialization = findSourceSpecialization(sourceClass);
-				if (sourceSpecialization != null && sourceSpecialization != sourceClass) {
-					consolidateClass(sourceSpecialization);
-				} else {
-					consolidatedClass = copyToConsolPackage(sourceClass);
-					mergeInheritedProperties(sourceClass, consolidatedClass);
-				}
+				// Class sourceSpecialization = findSourceSpecialization(sourceClass);
+				// if (sourceSpecialization != null && sourceSpecialization != sourceClass) {
+				// consolidateClass(sourceSpecialization);
+				// } else {
+				consolidatedClass = copyToConsolPackage(sourceClass);
+				mergeInheritedProperties(sourceClass, consolidatedClass);
+				// }
 			}
 		}
 
@@ -424,6 +424,11 @@ public class ModelConsolidator {
 				UMLUtil.cloneStereotypes(property, mergedProperty);
 			}
 
+			// test original property so that we can evaluate base model context
+			if (isFlattened() && isDefaultFiltered(property)) {
+				NamedElementUtil.setFilteredProperty(mergedProperty, true);
+			}
+
 			if (property.getAssociation() != null) {
 				Type endType = property.getType();
 				if (endType instanceof Class) {
@@ -446,20 +451,17 @@ public class ModelConsolidator {
 
 					mergedProperty.setType(consolType);
 
-					Association assocClone = (Association) umlClass.getNearestPackage().createOwnedType(
-						null, UMLPackage.Literals.ASSOCIATION);
-					assocClone.getMemberEnds().add(mergedProperty);
-					Property ownedEnd = UMLFactory.eINSTANCE.createProperty();
-					ownedEnd.setType(umlClass);
-					assocClone.getOwnedEnds().add(ownedEnd);
+					if (property.getAssociation().getNearestPackage() != umlClass.getNearestPackage()) {
+						Association assocClone = (Association) umlClass.getNearestPackage().createOwnedType(
+							null, UMLPackage.Literals.ASSOCIATION);
+						assocClone.getMemberEnds().add(mergedProperty);
+						Property ownedEnd = UMLFactory.eINSTANCE.createProperty();
+						ownedEnd.setType(umlClass);
+						assocClone.getOwnedEnds().add(ownedEnd);
 
-					UMLUtil.cloneStereotypes(property.getAssociation(), assocClone);
+						UMLUtil.cloneStereotypes(property.getAssociation(), assocClone);
+					}
 				}
-			}
-
-			// test original property so that we can evaluate base model context
-			if (isFlattened() && isDefaultFiltered(property)) {
-				NamedElementUtil.setFilteredProperty(mergedProperty, true);
 			}
 		}
 
