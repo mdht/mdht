@@ -282,16 +282,17 @@ public class CDAUtil {
 			root.getXSISchemaLocation().put(CDAPackage.eNS_URI, "CDA.xsd");
 			resource.getContents().add(root);
 		} else {
-			// DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
 			DocumentRoot root = (DocumentRoot) clinicalDocument.eContainer();
-			Iterator<Map.Entry<String, String>> iterator = root.getXMLNSPrefixMap().entrySet().iterator();
-			while (iterator.hasNext()) {
-				Map.Entry<String, String> entry = iterator.next();
-				if (EPackage.Registry.INSTANCE.keySet().contains(entry.getValue()) &&
-						!CDAPackage.eNS_URI.equals(entry.getValue())) {
-					iterator.remove();
+			List<String> keys = new ArrayList<String>();
+			for (Map.Entry<String, String> entry : root.getXMLNSPrefixMap().entrySet()) {
+				if (EPackage.Registry.INSTANCE.keySet().contains(entry.getValue())) {
+					keys.add(entry.getKey());
 				}
 			}
+			for (String key : keys) {
+				root.getXMLNSPrefixMap().removeKey(key);
+			}
+			root.getXMLNSPrefixMap().put("", CDAPackage.eNS_URI);
 		}
 		return resource;
 	}
