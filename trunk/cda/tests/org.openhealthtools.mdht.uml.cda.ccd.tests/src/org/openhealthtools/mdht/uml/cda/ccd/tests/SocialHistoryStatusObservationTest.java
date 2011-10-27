@@ -9,19 +9,13 @@ package org.openhealthtools.mdht.uml.cda.ccd.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.SocialHistoryStatusObservation;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.SocialHistoryStatusObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
-import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
@@ -78,7 +72,7 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateStatusObservationValue() {
@@ -96,7 +90,11 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 			protected void updateToPass(SocialHistoryStatusObservation target) {
 				target.init();
 
-				CD value = DatatypesFactory.eINSTANCE.createCD();
+				CE value = DatatypesFactory.eINSTANCE.createCE();
+				value.setCode("12345");
+
+				value.setCodeSystem("2.16.840.1.113883.1.11.20.17");
+
 				target.getValues().add(value);
 
 			}

@@ -32,7 +32,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionTitleValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Title Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionFamilyHistoryObsOrgs(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Family History Obs Orgs</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionNoSubject(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section No Subject</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistorySection#validateFamilyHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Template Id</em>}</li>
@@ -48,44 +47,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  */
 
 public class FamilyHistorySectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFamilyHistorySectionTitleValue() {
-		OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionTitleValueTestCase = new OperationsTestCase<FamilyHistorySection>(
-			"validateFamilyHistorySectionTitleValue",
-			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FamilyHistorySection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FamilyHistorySection target) {
-				target.init();
-
-				ST title = DatatypesFactory.eINSTANCE.createST("family history");
-
-				target.setTitle(title);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FamilyHistorySectionOperations.validateFamilyHistorySectionTitleValue(
-					(FamilyHistorySection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFamilyHistorySectionTitleValueTestCase.doValidationTest();
-	}
 
 	/**
 	*
