@@ -198,13 +198,13 @@ public class MedicationActivityTest extends CDAValidationTest {
 				//
 				// try {
 				// CDAUtil.save(target.getClinicalDocument(), System.out);
-
-				for (Authorization authorization : target.getClinicalDocument().getAuthorizations()) {
-					System.out.println(authorization.toString());
-
-					System.out.println(authorization.getConsent());
-
-				}
+				//
+				// for (Authorization authorization : target.getClinicalDocument().getAuthorizations()) {
+				// System.out.println(authorization.toString());
+				//
+				// System.out.println(authorization.getConsent());
+				//
+				// }
 				//
 				// } catch (Exception e1) {
 				// // TODO Auto-generated catch block

@@ -9,17 +9,20 @@ package org.openhealthtools.mdht.uml.cda.ccd.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.ExternalDocument;
+import org.openhealthtools.mdht.uml.cda.Reference;
 import org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveReference;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
-
 import org.openhealthtools.mdht.uml.cda.ccd.operations.AdvanceDirectiveReferenceOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipExternalReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +32,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveReference#validateAdvanceDirectiveReferenceHasConformanceTo(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Reference Has Conformance To</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveReference#validateAdvanceDirectiveReferenceHasReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Reference Has Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveReference#validateAdvanceDirectiveReferenceHasURL(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Reference Has URL</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveReference#validateAdvanceDirectiveReferenceHasMIMEType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Reference Has MIME Type</em>}</li>
@@ -44,7 +48,49 @@ public class AdvanceDirectiveReferenceTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateAdvanceDirectiveReferenceHasConformanceTo() {
+		OperationsTestCase<AdvanceDirectiveReference> validateAdvanceDirectiveReferenceHasConformanceToTestCase = new OperationsTestCase<AdvanceDirectiveReference>(
+			"validateAdvanceDirectiveReferenceHasConformanceTo",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_REFERENCE_HAS_CONFORMANCE_TO__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AdvanceDirectiveReference target) {
+
+				target.init();
+
+				Reference reference = CDAFactory.eINSTANCE.createReference();
+				target.getReferences().add(reference);
+			}
+
+			@Override
+			protected void updateToPass(AdvanceDirectiveReference target) {
+
+				for (Reference reference : target.getReferences()) {
+					ExternalDocument ed = CDAFactory.eINSTANCE.createExternalDocument();
+					reference.setExternalDocument(ed);
+				}
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AdvanceDirectiveReferenceOperations.validateAdvanceDirectiveReferenceHasConformanceTo(
+					(AdvanceDirectiveReference) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAdvanceDirectiveReferenceHasConformanceToTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveReferenceHasReference() {
@@ -56,11 +102,20 @@ public class AdvanceDirectiveReferenceTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(AdvanceDirectiveReference target) {
 
+				target.init();
+
+				Reference reference = CDAFactory.eINSTANCE.createReference();
+				target.getReferences().add(reference);
+
 			}
 
 			@Override
 			protected void updateToPass(AdvanceDirectiveReference target) {
-				target.init();
+
+				for (Reference reference : target.getReferences()) {
+
+					reference.setTypeCode(x_ActRelationshipExternalReference.REFR);
+				}
 
 			}
 
@@ -78,7 +133,7 @@ public class AdvanceDirectiveReferenceTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveReferenceHasURL() {
@@ -95,6 +150,18 @@ public class AdvanceDirectiveReferenceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdvanceDirectiveReference target) {
 				target.init();
+				Reference reference = CDAFactory.eINSTANCE.createReference();
+
+				ExternalDocument externalDocument = CDAFactory.eINSTANCE.createExternalDocument();
+
+				ED ed = DatatypesFactory.eINSTANCE.createED();
+				TEL tel = DatatypesFactory.eINSTANCE.createTEL("url");
+				ed.setReference(tel);
+				externalDocument.setText(ed);
+
+				reference.setExternalDocument(externalDocument);
+
+				target.getReferences().add(reference);
 
 			}
 
@@ -112,7 +179,7 @@ public class AdvanceDirectiveReferenceTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveReferenceHasMIMEType() {
@@ -124,11 +191,32 @@ public class AdvanceDirectiveReferenceTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(AdvanceDirectiveReference target) {
 
+				target.init();
+
+				Reference reference = CDAFactory.eINSTANCE.createReference();
+
+				ExternalDocument doc = CDAFactory.eINSTANCE.createExternalDocument();
+				ED ed = DatatypesFactory.eINSTANCE.createED();
+
+				// ed.setMediaType("AAAAAAAAAAA");
+				doc.setText(ed);
+
+				reference.setExternalDocument(doc);
+
+				target.getReferences().add(reference);
+
 			}
 
+			/*
+			 * The MIME type of a referenced advance directive document MAY be present, and SHALL be represented in Observation / reference /
+			 * ExternalDocument / text / @mediaType
+			 */
 			@Override
 			protected void updateToPass(AdvanceDirectiveReference target) {
-				target.init();
+
+				for (Reference reference : target.getReferences()) {
+					reference.getExternalDocument().getText().setMediaType("somemediatype");
+				}
 
 			}
 
@@ -180,7 +268,7 @@ public class AdvanceDirectiveReferenceTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveReferenceId() {
@@ -197,6 +285,8 @@ public class AdvanceDirectiveReferenceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdvanceDirectiveReference target) {
 				target.init();
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(ii);
 
 			}
 

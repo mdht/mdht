@@ -32,7 +32,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection#validateSocialHistorySectionTitleValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Section Title Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection#validateSocialHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection#validateSocialHistorySectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection#validateSocialHistorySectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Section Title</em>}</li>
@@ -46,44 +45,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  */
 
 public class SocialHistorySectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateSocialHistorySectionTitleValue() {
-		OperationsTestCase<SocialHistorySection> validateSocialHistorySectionTitleValueTestCase = new OperationsTestCase<SocialHistorySection>(
-			"validateSocialHistorySectionTitleValue",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_TITLE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SocialHistorySection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(SocialHistorySection target) {
-				target.init();
-
-				ST title = DatatypesFactory.eINSTANCE.createST("social history");
-
-				target.setTitle(title);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SocialHistorySectionOperations.validateSocialHistorySectionTitleValue(
-					(SocialHistorySection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSocialHistorySectionTitleValueTestCase.doValidationTest();
-	}
 
 	/**
 	 * 
