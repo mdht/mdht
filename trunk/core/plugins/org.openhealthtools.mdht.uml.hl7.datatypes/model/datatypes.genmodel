@@ -43,6 +43,10 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ANY/isDefined">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ANY/isDefined/featureName"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ANY/matches">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ANY/matches/featureName"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ANY/matches/regularExpression"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="datatypes.ecore#//BIN">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute datatypes.ecore#//BIN/representation"/>
@@ -68,6 +72,9 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ED/addText/text"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ED/getText"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="datatypes.ecore#//ED/matches">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="datatypes.ecore#//ED/matches/regularExpression"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="datatypes.ecore#//TEL">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

@@ -39,6 +39,20 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_jAwm8Pv5EeCyhLcwvvU4Nw" name="matches">
+        <ownedComment xmi:id="_b8W6oPv6EeCyhLcwvvU4Nw">
+          <body>Provides Regular Expression support to ocl in the form of Feature Name to evaluated and the Regular Expression</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_jAwm8fv5EeCyhLcwvvU4Nw" name="featureName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_jAwm8vv5EeCyhLcwvvU4Nw" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_7_EP4Pv_EeCyhLcwvvU4Nw" name="regularExpression">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Av5_kDxaEd6JwqSGecoePg" name="BIN" isAbstract="true">
       <generalization xmi:id="_F-I_ADxaEd6JwqSGecoePg" general="__I8BwDxZEd6JwqSGecoePg"/>
@@ -101,6 +115,17 @@
       </ownedOperation>
       <ownedOperation xmi:id="_VUFVMD9CEd6uA6ElmbQH3Q" name="getText" isQuery="true">
         <ownedParameter xmi:id="_V-QTkD9CEd6uA6ElmbQH3Q" name="Parameter1" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1iZnEADkEeGQrt4VJGN6-w" name="matches">
+        <ownedComment xmi:id="_1iZnEQDkEeGQrt4VJGN6-w">
+          <body>Provides Regular Expression support to ocl</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_1iZnEwDkEeGQrt4VJGN6-w" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_1iZnFADkEeGQrt4VJGN6-w" name="regularExpression">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>

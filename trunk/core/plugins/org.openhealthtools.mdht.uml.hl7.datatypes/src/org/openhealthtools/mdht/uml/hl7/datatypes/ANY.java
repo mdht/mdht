@@ -118,4 +118,12 @@ public interface ANY extends EObject {
 	 */
 	boolean isDefined(String featureName);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" featureNameRequired="true" featureNameOrdered="false" regularExpressionRequired="true" regularExpressionOrdered="false"
+	 * @generated
+	 */
+	boolean matches(String featureName, String regularExpression);
+
 } // ANY

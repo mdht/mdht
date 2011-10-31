@@ -2284,6 +2284,10 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		EOperation op = addEOperation(anyEClass, ecorePackage.getEBoolean(), "isDefined", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "featureName", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		op = addEOperation(anyEClass, ecorePackage.getEBoolean(), "matches", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "featureName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "regularExpression", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(
 			binEClass, org.openhealthtools.mdht.uml.hl7.datatypes.BIN.class, "BIN", IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
@@ -2342,6 +2346,9 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		addEParameter(op, ecorePackage.getEString(), "text", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		addEOperation(edEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = addEOperation(edEClass, ecorePackage.getEBoolean(), "matches", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "regularExpression", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(
 			telEClass, org.openhealthtools.mdht.uml.hl7.datatypes.TEL.class, "TEL", !IS_ABSTRACT, !IS_INTERFACE,

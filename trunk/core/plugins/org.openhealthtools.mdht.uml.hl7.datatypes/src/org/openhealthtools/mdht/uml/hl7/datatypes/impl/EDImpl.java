@@ -507,6 +507,15 @@ public class EDImpl extends BINImpl implements ED {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean matches(String regularExpression) {
+		return EDOperations.matches(this, regularExpression);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
