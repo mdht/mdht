@@ -831,7 +831,8 @@ public class UMLUtil {
 		if (firstPackage == null || secondPackage == null) {
 			return first.eResource().getURI().equals(second.eResource().getURI());
 		} else {
-			return firstPackage.equals(secondPackage) || firstPackage.getImportedElements().contains(second);
+			// return firstPackage.equals(secondPackage) || firstPackage.getImportedElements().contains(second);
+			return firstPackage.equals(secondPackage);
 		}
 	}
 
