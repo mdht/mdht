@@ -49,6 +49,8 @@ public class ModelConsolidator {
 
 	private Map<String, Class> consolMapping;
 
+	private Map<String, String> qnameMapping;
+
 	private Map<Classifier, List<Classifier>> consolInheritance;
 
 	private List<Classifier> importedClassifiers;
@@ -60,6 +62,7 @@ public class ModelConsolidator {
 	public ModelConsolidator() {
 		sourceInheritance = new HashMap<Classifier, List<Classifier>>();
 		consolMapping = new HashMap<String, Class>();
+		qnameMapping = new HashMap<String, String>();
 		consolInheritance = new HashMap<Classifier, List<Classifier>>();
 		importedClassifiers = new ArrayList<Classifier>();
 		processedClassifiers = new HashSet<Classifier>();
@@ -220,6 +223,20 @@ public class ModelConsolidator {
 
 	public Map<String, Class> getConsolMapping() {
 		return consolMapping;
+	}
+
+	public void removeAllConsolidationAnnotations() {
+		for (Type type : consolPackage.getOwnedTypes()) {
+			EAnnotation annotation = type.getEAnnotation("sourceClass");
+			if (annotation != null) {
+				type.getEAnnotations().remove(annotation);
+			}
+		}
+	}
+
+	public void renameReferencesInOCL() {
+		// iterate through all OCL expressions in consolidated package
+
 	}
 
 	public Class consolidateClass(Class sourceClass) {
@@ -424,6 +441,9 @@ public class ModelConsolidator {
 				UMLUtil.cloneStereotypes(property, mergedProperty);
 			}
 
+			// remove all property redefinition relationships to old superclasses
+			mergedProperty.getRedefinedProperties().clear();
+
 			// test original property so that we can evaluate base model context
 			if (isFlattened() && isDefaultFiltered(property)) {
 				NamedElementUtil.setFilteredProperty(mergedProperty, true);
@@ -475,6 +495,9 @@ public class ModelConsolidator {
 				Constraint clone = EcoreUtil.copy(constraint);
 				umlClass.getOwnedRules().add(clone);
 				UMLUtil.cloneStereotypes(constraint, clone);
+
+				// remove constrainedElement to parent class model
+				clone.getConstrainedElements().clear();
 			}
 		}
 
@@ -495,6 +518,12 @@ public class ModelConsolidator {
 		}
 		umlClass.getOwnedComments().addAll(currentComments);
 
+		// consolidated comments may refer to consolidated parent class
+		for (Comment comment : umlClass.getOwnedComments()) {
+			comment.getAnnotatedElements().clear();
+			comment.getAnnotatedElements().add(umlClass);
+		}
+
 		// update generalizations
 		// remove non-consolidated superclasses
 		umlClass.getGeneralizations().clear();
@@ -510,6 +539,8 @@ public class ModelConsolidator {
 			for (Substitution subst : substitutions) {
 				subst.destroy();
 			}
+			umlClass.createSubstitution(null, baseModelClass);
+
 		} else {
 			// add Substitition for all source model generalizations
 			Set<Class> substitutions = new HashSet<Class>();
@@ -522,6 +553,7 @@ public class ModelConsolidator {
 					substitutions.add(parent);
 				}
 			}
+
 		}
 	}
 
@@ -547,6 +579,22 @@ public class ModelConsolidator {
 			consolPackage.getOwnedTypes().add(mappedClass);
 			UMLUtil.cloneStereotypes(umlClass, mappedClass);
 			consolMapping.put(EcoreUtil.getURI(umlClass).toString(), mappedClass);
+
+			if (!umlClass.getQualifiedName().equals(mappedClass.getQualifiedName())) {
+				qnameMapping.put(umlClass.getQualifiedName(), mappedClass.getQualifiedName());
+				// System.out.println("mapping: " + umlClass.getQualifiedName() + " -> " + mappedClass.getQualifiedName());
+
+				// also map all superclass types to the consolidated class
+				List<Classifier> allParents = UMLUtil.getAllGeneralizations(umlClass);
+				for (Classifier classifier : allParents) {
+					if (!isBaseModel(classifier) && !isReferenceModel(classifier) &&
+							qnameMapping.get(classifier.getQualifiedName()) == null) {
+						qnameMapping.put(classifier.getQualifiedName(), mappedClass.getQualifiedName());
+						// System.out.println("parent mapping: " + classifier.getQualifiedName() + " -> " +
+						// mappedClass.getQualifiedName());
+					}
+				}
+			}
 
 			// add Ecore annotation with source UML class reference
 			EAnnotation sourceAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
