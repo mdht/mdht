@@ -68,7 +68,7 @@ public class EcoreTransformer {
 
 		if (useConsolidator && consolidator == null) {
 			consolidatedPackage = initializeConsolidationPackageFrom(element);
-			consolidatedVocabPackage = initializeVocabPackageFrom(element);
+			consolidatedVocabPackage = initializeVocabPackageFrom(consolidatedPackage);
 
 			consolidator = new CDAModelConsolidator(
 				element.getNearestPackage(), consolidatedPackage, consolidatedVocabPackage);
@@ -123,6 +123,12 @@ public class EcoreTransformer {
 		}
 
 		if (consolidatedPackage != null) {
+			// remove EAnnotations used during consolidation
+			consolidator.removeAllConsolidationAnnotations();
+
+			// replace qualified class names in OCL expressions
+			consolidator.renameReferencesInOCL();
+
 			try {
 				Map<String, String> saveOptions = new HashMap<String, String>();
 				consolidatedPackage.eResource().save(saveOptions);
