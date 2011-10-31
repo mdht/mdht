@@ -360,4 +360,12 @@ public interface ED extends BIN {
 	 */
 	String getText();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" regularExpressionRequired="true" regularExpressionOrdered="false"
+	 * @generated
+	 */
+	boolean matches(String regularExpression);
+
 } // ED

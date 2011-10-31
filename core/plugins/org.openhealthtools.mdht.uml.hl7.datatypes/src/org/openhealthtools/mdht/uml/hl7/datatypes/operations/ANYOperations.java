@@ -25,6 +25,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ANY;
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ANY#isNullFlavorUndefined() <em>Is Null Flavor Undefined</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ANY#hasContent() <em>Has Content</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ANY#isDefined(java.lang.String) <em>Is Defined</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ANY#matches(java.lang.String, java.lang.String) <em>Matches</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,6 +80,21 @@ public class ANYOperations {
 	 */
 	public static boolean isDefined(ANY any, String featureName) {
 		return (any.eIsSet(any.eClass().getEStructuralFeature(featureName)));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public static boolean matches(ANY any, String featureName, String regularExpression) {
+		if (hasContent(any) && isDefined(any, featureName)) {
+			Object value = any.eGet(any.eClass().getEStructuralFeature(featureName));
+			if (value instanceof String) {
+				return ((String) value).matches(regularExpression);
+			}
+		}
+		return false;
 	}
 
 } // ANYOperations

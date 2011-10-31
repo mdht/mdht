@@ -176,6 +176,15 @@ public abstract class ANYImpl extends EObjectImpl implements ANY {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean matches(String featureName, String regularExpression) {
+		return ANYOperations.matches(this, featureName, regularExpression);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {

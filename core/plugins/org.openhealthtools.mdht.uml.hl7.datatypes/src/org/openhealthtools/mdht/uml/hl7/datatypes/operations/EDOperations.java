@@ -35,6 +35,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#validateThumbnailThumbnail(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Thumbnail Thumbnail</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#addText(java.lang.String) <em>Add Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#getText() <em>Get Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.ED#matches(java.lang.String) <em>Matches</em>}</li>
  * </ul>
  * </p>
  *
@@ -142,6 +143,15 @@ public class EDOperations extends ANYOperations {
 			}
 		}
 		return text.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public static boolean matches(ED ed, String regularExpression) {
+		return ed.getText().matches(regularExpression);
 	}
 
 } // EDOperations

@@ -452,7 +452,7 @@ public class STOperations extends EDOperations {
 		if (IS_COMPRESSION_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(
-				DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(14));
+				DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(16));
 			try {
 				IS_COMPRESSION_DEFINED__EOCL_QRY = helper.createQuery(IS_COMPRESSION_DEFINED__EOCL_EXP);
 			} catch (ParserException pe) {
@@ -496,7 +496,7 @@ public class STOperations extends EDOperations {
 		if (IS_INTEGRITY_CHECK_ALGORITHM_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(
-				DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(15));
+				DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(17));
 			try {
 				IS_INTEGRITY_CHECK_ALGORITHM_DEFINED__EOCL_QRY = helper.createQuery(IS_INTEGRITY_CHECK_ALGORITHM_DEFINED__EOCL_EXP);
 			} catch (ParserException pe) {
@@ -540,7 +540,7 @@ public class STOperations extends EDOperations {
 		if (IS_REPRESENTATION_DEFINED__EOCL_QRY == null) {
 			OCL.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setOperationContext(
-				DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(16));
+				DatatypesPackage.Literals.ST, DatatypesPackage.Literals.ST.getEAllOperations().get(18));
 			try {
 				IS_REPRESENTATION_DEFINED__EOCL_QRY = helper.createQuery(IS_REPRESENTATION_DEFINED__EOCL_EXP);
 			} catch (ParserException pe) {
