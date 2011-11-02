@@ -33,7 +33,7 @@ import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class TransformAssociation extends TransformAbstract {
-	public TransformAssociation(EcoreTransformerOptions options) {
+	public TransformAssociation(TransformerOptions options) {
 		super(options);
 	}
 

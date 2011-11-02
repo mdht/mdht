@@ -13,93 +13,54 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
-import java.io.IOException;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.Profile;
-import org.eclipse.uml2.uml.Stereotype;
-import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.util.UMLSwitch;
-import org.eclipse.uml2.uml.util.UMLUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelConsolidator;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
-import org.openhealthtools.mdht.uml.common.util.ModelFilter;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
-public class EcoreTransformer {
+public class EcoreTransformer extends AbstractTransformer {
 
-	private EcoreTransformerOptions transformerOptions;
+	private PluginPropertiesUtil propertiesUtil;
 
-	private CDAModelConsolidator consolidator = null;
+	UMLSwitch<Object> transformPackage;
 
-	private boolean useConsolidator = false;
+	UMLSwitch<Object> transformClass;
+
+	UMLSwitch<Object> transformConstraint;
+
+	UMLSwitch<Object> transformClinicalDocument;
+
+	UMLSwitch<Object> transformTemplateIdentifier;
+
+	UMLSwitch<Object> transformVocabConstraint;
+
+	UMLSwitch<Object> transformPropertyConstraint;
+
+	UMLSwitch<Object> transformAssociation;
 
 	public EcoreTransformer() {
-		this(new EcoreTransformerOptions());
+		this(new TransformerOptions());
 	}
 
-	public EcoreTransformer(EcoreTransformerOptions options) {
+	public EcoreTransformer(TransformerOptions options) {
 		transformerOptions = options;
-		useConsolidator = transformerOptions.isGenerateConsolidatedModel() ||
-				transformerOptions.isGenerateDomainClasses() || transformerOptions.isGenerateDomainInterface();
 	}
 
-	public void transformElement(Element element) {
-		PluginPropertiesUtil propertiesUtil = new PluginPropertiesUtil(element.eResource());
-		transformerOptions.setPluginPropertiesUtil(propertiesUtil);
-
-		Package consolidatedPackage = null;
-		Package consolidatedVocabPackage = null;
-		Package flattenedPackage = null;
-		Package filteredPackage = null;
-
-		if (useConsolidator && consolidator == null) {
-			consolidatedPackage = initializeConsolidationPackageFrom(element);
-			consolidatedVocabPackage = initializeVocabPackageFrom(consolidatedPackage);
-
-			consolidator = new CDAModelConsolidator(
-				element.getNearestPackage(), consolidatedPackage, consolidatedVocabPackage);
+	@Override
+	public void transformModelElement(Element element) {
+		if (transformPackage == null) {
+			initialize(element.getNearestPackage());
 		}
-
-		UMLSwitch<Object> genDomainInterface = new GenDomainInterface(transformerOptions, consolidator);
-
-		UMLSwitch<Object> transformPackage = new TransformPackage(transformerOptions);
-		UMLSwitch<Object> transformClass = new TransformClass(transformerOptions);
-		UMLSwitch<Object> transformConstraint = new TransformConstraint(transformerOptions);
-		UMLSwitch<Object> transformClinicalDocument = new TransformClinicalDocument(transformerOptions);
-		UMLSwitch<Object> transformTemplateIdentifier = new TransformTemplateIdentifier(transformerOptions);
-		UMLSwitch<Object> transformVocabConstraint = new TransformVocabConstraint(transformerOptions);
-		UMLSwitch<Object> transformPropertyConstraint = new TransformPropertyConstraint(transformerOptions);
-		UMLSwitch<Object> transformAssociation = new TransformAssociation(transformerOptions);
 
 		try {
 			TreeIterator<EObject> iterator = EcoreUtil.getAllContents(Collections.singletonList(element));
 			while (iterator != null && iterator.hasNext()) {
 				EObject child = iterator.next();
-
-				if (consolidator != null && child instanceof Class) {
-					consolidator.consolidateClass((Class) child);
-				}
-
-				if (transformerOptions.isGenerateDomainInterface() || transformerOptions.isGenerateDomainClasses()) {
-					genDomainInterface.doSwitch(child);
-				}
-				if (transformerOptions.isGenerateBuilderClasses()) {
-					// TODO
-				}
 
 				transformPackage.doSwitch(child);
 				transformConstraint.doSwitch(child);
@@ -113,194 +74,29 @@ public class EcoreTransformer {
 		} catch (IndexOutOfBoundsException e) {
 			Logger.logException(e);
 		}
+	}
 
-		if (useConsolidator) {
-			// generate all imported classes
-			while (!consolidator.getImportedClassifiers().isEmpty()) {
-				Classifier classifier = consolidator.getImportedClassifiers().remove(0);
-				genDomainInterface.doSwitch(classifier);
-			}
-		}
+	public void initialize(Package sourcePackage) {
+		propertiesUtil = new PluginPropertiesUtil(sourcePackage.eResource());
+		transformerOptions.setPluginPropertiesUtil(propertiesUtil);
 
-		if (consolidatedPackage != null) {
-			// remove EAnnotations used during consolidation
-			consolidator.removeAllConsolidationAnnotations();
+		transformPackage = new TransformPackage(transformerOptions);
+		transformClass = new TransformClass(transformerOptions);
+		transformConstraint = new TransformConstraint(transformerOptions);
+		transformClinicalDocument = new TransformClinicalDocument(transformerOptions);
+		transformTemplateIdentifier = new TransformTemplateIdentifier(transformerOptions);
+		transformVocabConstraint = new TransformVocabConstraint(transformerOptions);
+		transformPropertyConstraint = new TransformPropertyConstraint(transformerOptions);
+		transformAssociation = new TransformAssociation(transformerOptions);
+	}
 
-			// replace qualified class names in OCL expressions
-			consolidator.renameReferencesInOCL();
-
-			try {
-				Map<String, String> saveOptions = new HashMap<String, String>();
-				consolidatedPackage.eResource().save(saveOptions);
-			} catch (IOException e) {
-				Logger.logException(e);
-			}
-		}
-
-		if (consolidatedVocabPackage != null) {
-			try {
-				Map<String, String> saveOptions = new HashMap<String, String>();
-				consolidatedVocabPackage.eResource().save(saveOptions);
-			} catch (IOException e) {
-				Logger.logException(e);
-			}
-		}
-
-		if (consolidatedPackage != null) {
-			// flatten the consolidated model
-			flattenedPackage = initializeFlattenedPackageFrom(consolidatedPackage);
-			consolidator = new CDAModelConsolidator(consolidatedPackage, flattenedPackage, true);
-			try {
-				TreeIterator<EObject> iterator = EcoreUtil.getAllContents(Collections.singletonList(consolidatedPackage));
-				while (iterator != null && iterator.hasNext()) {
-					EObject child = iterator.next();
-
-					if (child instanceof Class) {
-						consolidator.consolidateClass((Class) child);
-					}
-				}
-			} catch (Exception e) {
-				Logger.logException(e);
-			}
-
-			// filter the flattened model
-			filteredPackage = initializeFilteredPackageFrom(flattenedPackage);
-			ModelFilter modelFilter = new ModelFilter(flattenedPackage, filteredPackage);
-			try {
-				TreeIterator<EObject> iterator = EcoreUtil.getAllContents(Collections.singletonList(flattenedPackage));
-				while (iterator != null && iterator.hasNext()) {
-					EObject child = iterator.next();
-
-					if (child instanceof Class) {
-						modelFilter.filterClass((Class) child);
-					}
-				}
-			} catch (Exception e) {
-				Logger.logException(e);
-			}
-		}
-
-		if (flattenedPackage != null) {
-			try {
-				Map<String, String> saveOptions = new HashMap<String, String>();
-				flattenedPackage.eResource().save(saveOptions);
-			} catch (IOException e) {
-				Logger.logException(e);
-			}
-		}
-
-		if (filteredPackage != null) {
-			try {
-				Map<String, String> saveOptions = new HashMap<String, String>();
-				filteredPackage.eResource().save(saveOptions);
-			} catch (IOException e) {
-				Logger.logException(e);
-			}
-		}
-
-		if (transformerOptions.isGenerateDomainInterface() || transformerOptions.isGenerateDomainClasses()) {
-			try {
-				Map<String, String> saveOptions = new HashMap<String, String>();
-				transformerOptions.getDomainInterfacePackage().eResource().save(saveOptions);
-			} catch (IOException e) {
-				Logger.logException(e);
-			}
-		}
-
+	public void saveResources() {
 		// save the updated plugin.properties file
 		propertiesUtil.save();
 
 		for (Element deleted : transformerOptions.getDeletedElementList()) {
 			deleted.destroy();
 		}
-
-	}
-
-	private Package initializeConsolidationPackageFrom(Element element) {
-		return initializeModelPackageFrom(
-			element, transformerOptions.getConsolidatedModelPath(), "consolidated", "consol", "Consol");
-	}
-
-	private Package initializeVocabPackageFrom(Element element) {
-		Package vocabPkg = initializeModelPackageFrom(element, null, "consolidated_vocab", "vocab", "Vocab");
-		Profile termProfile = TermProfileUtil.getTerminologyProfile(vocabPkg.eResource().getResourceSet());
-		if (termProfile != null) {
-			vocabPkg.applyProfile(termProfile);
-		}
-
-		return vocabPkg;
-	}
-
-	private Package initializeFlattenedPackageFrom(Element element) {
-		return initializeModelPackageFrom(element, null, "flattened", "flat", "Flat");
-	}
-
-	private Package initializeFilteredPackageFrom(Element element) {
-		return initializeModelPackageFrom(element, null, "filtered", "flat", "Flat");
-	}
-
-	private Package initializeModelPackageFrom(Element element, String newModelPath, String suffix, String nsPrefix,
-			String prefix) {
-		Package sourcePkg = element.getNearestPackage();
-		Package newModelPkg = null;
-
-		URI newModelURI = null;
-		if (newModelPath != null) {
-			newModelURI = URI.createFileURI(newModelPath);
-		}
-		if (newModelURI == null) {
-			newModelURI = sourcePkg.eResource().getURI();
-			newModelURI = newModelURI.trimFileExtension();
-			// newModelURI = newModelURI.trimSegments(1).appendSegment(newModelURI.lastSegment() + "_" + suffix);
-			newModelURI = newModelURI.trimSegments(1).appendSegment(sourcePkg.getName() + "_" + suffix);
-			newModelURI = newModelURI.appendFileExtension(sourcePkg.eResource().getURI().fileExtension());
-		}
-
-		// create model if necessary, assign default EPackage stereotype values
-		Resource newModelResource = element.eResource().getResourceSet().createResource(newModelURI);
-		newModelPkg = UMLFactory.eINSTANCE.createPackage();
-		newModelResource.getContents().add(newModelPkg);
-
-		// apply CDA profile
-		Profile cdaProfile = CDAProfileUtil.getCDAProfile(element.eResource().getResourceSet());
-		if (cdaProfile != null) {
-			newModelPkg.applyProfile(cdaProfile);
-		}
-
-		// assign Ecore EPackage stereotype
-		Stereotype ePackage = EcoreTransformUtil.getEcoreStereotype(sourcePkg, UMLUtil.STEREOTYPE__E_PACKAGE);
-		UMLUtil.safeApplyStereotype(newModelPkg, ePackage);
-
-		newModelPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__NS_PREFIX, nsPrefix);
-		newModelPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__PREFIX, prefix);
-
-		String modelPackageName = null;
-		String modelNsURI = null;
-		String modelBasePackage = null;
-
-		Stereotype modelCodeGen = CDAProfileUtil.getAppliedCDAStereotype(
-			sourcePkg, ICDAProfileConstants.CODEGEN_SUPPORT);
-		if (modelCodeGen != null) {
-			modelPackageName = (String) sourcePkg.getValue(
-				modelCodeGen, ICDAProfileConstants.CODEGEN_SUPPORT_PACKAGE_NAME);
-			modelNsURI = (String) sourcePkg.getValue(modelCodeGen, ICDAProfileConstants.CODEGEN_SUPPORT_NS_URI);
-			modelBasePackage = (String) sourcePkg.getValue(
-				modelCodeGen, ICDAProfileConstants.CODEGEN_SUPPORT_BASE_PACKAGE);
-		}
-
-		newModelPkg.setName(sourcePkg.getName());
-		newModelPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__PACKAGE_NAME, sourcePkg.getName());
-
-		if (modelBasePackage != null && modelPackageName != null) {
-			newModelPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__BASE_PACKAGE, modelBasePackage + "." +
-					modelPackageName);
-		}
-
-		if (modelNsURI != null) {
-			newModelPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__NS_URI, modelNsURI + "/" + nsPrefix);
-		}
-
-		return newModelPkg;
 	}
 
 }

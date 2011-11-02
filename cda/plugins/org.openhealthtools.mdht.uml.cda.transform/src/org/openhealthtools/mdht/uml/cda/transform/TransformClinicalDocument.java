@@ -15,7 +15,7 @@ package org.openhealthtools.mdht.uml.cda.transform;
 import org.eclipse.uml2.uml.Class;
 
 public class TransformClinicalDocument extends TransformAbstract {
-	public TransformClinicalDocument(EcoreTransformerOptions options) {
+	public TransformClinicalDocument(TransformerOptions options) {
 		super(options);
 	}
 

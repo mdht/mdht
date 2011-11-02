@@ -35,7 +35,7 @@ public abstract class TransformFacade extends TransformAbstract {
 
 	protected CDAModelConsolidator consolidator;
 
-	public TransformFacade(EcoreTransformerOptions options, CDAModelConsolidator consolidator) {
+	public TransformFacade(TransformerOptions options, CDAModelConsolidator consolidator) {
 		super(options);
 		this.consolidator = consolidator;
 	}
@@ -141,7 +141,8 @@ public abstract class TransformFacade extends TransformAbstract {
 				classifierName, false, UMLPackage.eINSTANCE.getClass_(), true);
 		}
 
-		if (modelType instanceof Classifier && !consolidator.getProcessedClassifiers().contains(modelType)) {
+		if (consolidator != null && modelType instanceof Classifier &&
+				!consolidator.getProcessedClassifiers().contains(modelType)) {
 			consolidator.addImportedClassifier((Classifier) modelType);
 		}
 

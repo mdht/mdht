@@ -32,7 +32,7 @@ import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.core.util.ValueSetConstraintUtil;
 
 public class TransformVocabConstraint extends TransformAbstract {
-	public TransformVocabConstraint(EcoreTransformerOptions options) {
+	public TransformVocabConstraint(TransformerOptions options) {
 		super(options);
 	}
 

@@ -35,7 +35,7 @@ import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 public class GenDomainInterface extends TransformFacade {
 	private GenDomainProperty genDomainProperty;
 
-	public GenDomainInterface(EcoreTransformerOptions options, CDAModelConsolidator consolidator) {
+	public GenDomainInterface(TransformerOptions options, CDAModelConsolidator consolidator) {
 		super(options, consolidator);
 		this.genDomainProperty = new GenDomainProperty(transformerOptions, consolidator);
 	}
@@ -53,8 +53,10 @@ public class GenDomainInterface extends TransformFacade {
 	@Override
 	public Object caseClass(Class umlClass) {
 		Classifier domainInterface = getDomainInterface(umlClass);
-		consolidator.getImportedClassifiers().remove(umlClass);
-		consolidator.addProcessedClassifier(umlClass);
+		if (consolidator != null) {
+			consolidator.getImportedClassifiers().remove(umlClass);
+			consolidator.addProcessedClassifier(umlClass);
+		}
 
 		if (transformerOptions.isIncludeInterfaceRealization() && domainInterface instanceof Interface) {
 			umlClass.createInterfaceRealization(null, (Interface) domainInterface);
@@ -104,7 +106,12 @@ public class GenDomainInterface extends TransformFacade {
 			}
 		}
 
-		List<Property> allProperties = consolidator.getAllProperties(umlClass);
+		List<Property> allProperties;
+		if (consolidator != null) {
+			allProperties = consolidator.getAllProperties(umlClass);
+		} else {
+			allProperties = umlClass.getOwnedAttributes();
+		}
 		for (Property property : allProperties) {
 			genDomainProperty.addProperty(property, umlClass);
 		}

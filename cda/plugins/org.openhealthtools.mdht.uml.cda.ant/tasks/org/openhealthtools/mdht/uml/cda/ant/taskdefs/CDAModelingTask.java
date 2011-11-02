@@ -34,6 +34,7 @@ import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.openhealthtools.mdht.uml.cda.ant.types.ModelElement;
 import org.openhealthtools.mdht.uml.cda.ant.types.ModelLocation;
 
 /**
@@ -54,6 +55,8 @@ public class CDAModelingTask extends Task {
 
 	private List<ModelLocation> modelLocations;
 
+	private List<ModelElement> modelElements = new ArrayList<ModelElement>();
+
 	private Package defaultModel = null;
 
 	private List<Package> rootPackages = new ArrayList<Package>();
@@ -72,6 +75,10 @@ public class CDAModelingTask extends Task {
 
 	public final List<Package> getRootPackages() {
 		return rootPackages;
+	}
+
+	public final List<ModelElement> getModelElements() {
+		return modelElements;
 	}
 
 	// Implementation of Ant Task ----------------------------------------------
@@ -96,6 +103,16 @@ public class CDAModelingTask extends Task {
 			throw new BuildException("This task doesn't support multiple models");
 		}
 	}
+
+	public ModelElement createModelElement() {
+		ModelElement modelElement = new ModelElement();
+		modelElements.add(modelElement);
+		return modelElement;
+	}
+
+	// public void addConfiguredModelElement(ModelElement elem) {
+	// elements.add(elem);
+	// }
 
 	/**
 	 * All the attribute checks should be performed in this method.
@@ -224,6 +241,24 @@ public class CDAModelingTask extends Task {
 
 	public TransformToEcoreModel createTransformToEcoreModel() {
 		TransformToEcoreModel subtask = new TransformToEcoreModel(this);
+		subtasks.add(subtask);
+		return subtask;
+	}
+
+	public TransformToDomainModel createTransformToDomainModel() {
+		TransformToDomainModel subtask = new TransformToDomainModel(this);
+		subtasks.add(subtask);
+		return subtask;
+	}
+
+	public FlattenModel createFlattenModel() {
+		FlattenModel subtask = new FlattenModel(this);
+		subtasks.add(subtask);
+		return subtask;
+	}
+
+	public FilterModel createFilterModel() {
+		FilterModel subtask = new FilterModel(this);
 		subtasks.add(subtask);
 		return subtask;
 	}
