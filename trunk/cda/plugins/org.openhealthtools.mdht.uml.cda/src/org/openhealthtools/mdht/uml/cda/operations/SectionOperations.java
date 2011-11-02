@@ -59,67 +59,58 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntry;
  * <!-- begin-user-doc -->
  * A static utility class that provides operations related to '<em><b>Section</b></em>' model objects.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#validateClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate
- * Class Code</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#validateMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mood
- * Code</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#addAct(org.openhealthtools.mdht.uml.cda.Act) <em>Add Act</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#addEncounter(org.openhealthtools.mdht.uml.cda.Encounter) <em>Add Encounter</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#addObservation(org.openhealthtools.mdht.uml.cda.Observation) <em>Add Observation</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#addObservationMedia(org.openhealthtools.mdht.uml.cda.ObservationMedia) <em>Add Observation
- * Media</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#addOrganizer(org.openhealthtools.mdht.uml.cda.Organizer) <em>Add Organizer</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#addProcedure(org.openhealthtools.mdht.uml.cda.Procedure) <em>Add Procedure</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#addRegionOfInterest(org.openhealthtools.mdht.uml.cda.RegionOfInterest) <em>Add Region Of
- * Interest</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#addSection(org.openhealthtools.mdht.uml.cda.Section) <em>Add Section</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#addSubstanceAdministration(org.openhealthtools.mdht.uml.cda.SubstanceAdministration) <em>Add
- * Substance Administration</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#addSupply(org.openhealthtools.mdht.uml.cda.Supply) <em>Add Supply</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#createStrucDocText(java.lang.String) <em>Create Struc Doc Text</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#getActs() <em>Get Acts</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#getClinicalDocument() <em>Get Clinical Document</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#getEncounters() <em>Get Encounters</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#getObservations() <em>Get Observations</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#getObservationMedia() <em>Get Observation Media</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#getOrganizers() <em>Get Organizers</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#getProcedures() <em>Get Procedures</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#getRegionsOfInterest() <em>Get Regions Of Interest</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#getSections() <em>Get Sections</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#getAllSections() <em>Get All Sections</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#getSubstanceAdministrations() <em>Get Substance Administrations</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#getSupplies() <em>Get Supplies</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasActTemplate(java.lang.String) <em>Has Act Template</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasCode(java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasEncounterTemplate(java.lang.String) <em>Has Encounter Template</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasObservationMediaTemplate(java.lang.String) <em>Has Observation Media Template</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasObservationTemplate(java.lang.String) <em>Has Observation Template</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasOrganizerTemplate(java.lang.String) <em>Has Organizer Template</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasProcedureTemplate(java.lang.String) <em>Has Procedure Template</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasRegionOfInterestTemplate(java.lang.String) <em>Has Region Of Interest Template</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasSubstanceAdministrationTemplate(java.lang.String) <em>Has Substance Administration Template
- * </em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasSectionTemplate(java.lang.String) <em>Has Section Template</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasSupplyTemplate(java.lang.String) <em>Has Supply Template</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasTemplateId(java.lang.String) <em>Has Template Id</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.Section#getEntryTargets(org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntry, java.lang.Object)
- * <em>Get Entry Targets</em>}</li>
- * <li>{@link org.openhealthtools.mdht.uml.cda.Section#getEntryTargets(java.lang.Object) <em>Get Entry Targets</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#validateClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#validateMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#addAct(org.openhealthtools.mdht.uml.cda.Act) <em>Add Act</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#addEncounter(org.openhealthtools.mdht.uml.cda.Encounter) <em>Add Encounter</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#addObservation(org.openhealthtools.mdht.uml.cda.Observation) <em>Add Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#addObservationMedia(org.openhealthtools.mdht.uml.cda.ObservationMedia) <em>Add Observation Media</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#addOrganizer(org.openhealthtools.mdht.uml.cda.Organizer) <em>Add Organizer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#addProcedure(org.openhealthtools.mdht.uml.cda.Procedure) <em>Add Procedure</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#addRegionOfInterest(org.openhealthtools.mdht.uml.cda.RegionOfInterest) <em>Add Region Of Interest</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#addSection(org.openhealthtools.mdht.uml.cda.Section) <em>Add Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#addSubstanceAdministration(org.openhealthtools.mdht.uml.cda.SubstanceAdministration) <em>Add Substance Administration</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#addSupply(org.openhealthtools.mdht.uml.cda.Supply) <em>Add Supply</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#createStrucDocText(java.lang.String) <em>Create Struc Doc Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getActs() <em>Get Acts</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getClinicalDocument() <em>Get Clinical Document</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getEncounters() <em>Get Encounters</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getObservations() <em>Get Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getObservationMedia() <em>Get Observation Media</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getOrganizers() <em>Get Organizers</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getProcedures() <em>Get Procedures</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getRegionsOfInterest() <em>Get Regions Of Interest</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getSections() <em>Get Sections</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getAllSections() <em>Get All Sections</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getSubstanceAdministrations() <em>Get Substance Administrations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getSupplies() <em>Get Supplies</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasActTemplate(java.lang.String) <em>Has Act Template</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasCode(java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasEncounterTemplate(java.lang.String) <em>Has Encounter Template</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasObservationMediaTemplate(java.lang.String) <em>Has Observation Media Template</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasObservationTemplate(java.lang.String) <em>Has Observation Template</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasOrganizerTemplate(java.lang.String) <em>Has Organizer Template</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasProcedureTemplate(java.lang.String) <em>Has Procedure Template</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasRegionOfInterestTemplate(java.lang.String) <em>Has Region Of Interest Template</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasSubstanceAdministrationTemplate(java.lang.String) <em>Has Substance Administration Template</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasSectionTemplate(java.lang.String) <em>Has Section Template</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasSupplyTemplate(java.lang.String) <em>Has Supply Template</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#hasTemplateId(java.lang.String) <em>Has Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getEntryTargets(org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntry, java.lang.Object) <em>Get Entry Targets</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.Section#getEntryTargets(java.lang.Object) <em>Get Entry Targets</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class SectionOperations extends ActOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected SectionOperations() {
@@ -127,11 +118,9 @@ public class SectionOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #validateClassCode(Section, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Validate Class Code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateClassCode(Section, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Class Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #validateClassCode(Section, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -139,11 +128,9 @@ public class SectionOperations extends ActOperations {
 	protected static final String VALIDATE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.isClassCodeDefined() implies self.classCode=vocab::ActClass::DOCSECT";
 
 	/**
-	 * The cached OCL invariant for the '{@link #validateClassCode(Section, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Validate Class Code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateClassCode(Section, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Class Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #validateClassCode(Section, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -155,14 +142,10 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.isClassCodeDefined() implies self.classCode=vocab::ActClass::DOCSECT
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
-	 * @param context
-	 *            The cache of context-specific information.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean validateClassCode(Section section, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -192,11 +175,9 @@ public class SectionOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #validateMoodCode(Section, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Validate Mood Code</em>}' operation.
+	 * The cached OCL expression body for the '{@link #validateMoodCode(Section, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mood Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #validateMoodCode(Section, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -204,11 +185,9 @@ public class SectionOperations extends ActOperations {
 	protected static final String VALIDATE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN";
 
 	/**
-	 * The cached OCL invariant for the '{@link #validateMoodCode(Section, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * <em>Validate Mood Code</em>}' invariant operation.
+	 * The cached OCL invariant for the '{@link #validateMoodCode(Section, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mood Code</em>}' invariant operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #validateMoodCode(Section, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 * @ordered
@@ -220,14 +199,10 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.isMoodCodeDefined() implies self.moodCode=vocab::ActMood::EVN
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 * @param diagnostics
-	 *            The chain of diagnostics to which problems are to be appended.
-	 * @param context
-	 *            The cache of context-specific information.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
+	 * @param context The cache of context-specific information.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean validateMoodCode(Section section, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -402,7 +377,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL expression body for the '{@link #getActs(Section) <em>Get Acts</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getActs(Section)
 	 * @generated
 	 * @ordered
@@ -413,7 +387,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #getActs(Section) <em>Get Acts</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getActs(Section)
 	 * @generated
 	 * @ordered
@@ -425,10 +398,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.entry.act->select(act : cda::Act | not act.oclIsUndefined())
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<Act> getActs(Section section) {
@@ -462,7 +433,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL expression body for the '{@link #getEncounters(Section) <em>Get Encounters</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getEncounters(Section)
 	 * @generated
 	 * @ordered
@@ -473,7 +443,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #getEncounters(Section) <em>Get Encounters</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getEncounters(Section)
 	 * @generated
 	 * @ordered
@@ -485,10 +454,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.entry.encounter->select(enc : cda::Encounter | not enc.oclIsUndefined())
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<Encounter> getEncounters(Section section) {
@@ -512,7 +479,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL expression body for the '{@link #getObservations(Section) <em>Get Observations</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getObservations(Section)
 	 * @generated
 	 * @ordered
@@ -523,7 +489,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #getObservations(Section) <em>Get Observations</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getObservations(Section)
 	 * @generated
 	 * @ordered
@@ -535,10 +500,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.entry.observation->select(obs : cda::Observation | not obs.oclIsUndefined())
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<Observation> getObservations(Section section) {
@@ -562,7 +525,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL expression body for the '{@link #getObservationMedia(Section) <em>Get Observation Media</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getObservationMedia(Section)
 	 * @generated
 	 * @ordered
@@ -573,7 +535,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #getObservationMedia(Section) <em>Get Observation Media</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getObservationMedia(Section)
 	 * @generated
 	 * @ordered
@@ -585,10 +546,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.entry.observationMedia->select(media : cda::ObservationMedia | not media.oclIsUndefined())
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<ObservationMedia> getObservationMedia(Section section) {
@@ -612,7 +571,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL expression body for the '{@link #getOrganizers(Section) <em>Get Organizers</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getOrganizers(Section)
 	 * @generated
 	 * @ordered
@@ -623,7 +581,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #getOrganizers(Section) <em>Get Organizers</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getOrganizers(Section)
 	 * @generated
 	 * @ordered
@@ -635,10 +592,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.entry.organizer->select(org : cda::Organizer | not org.oclIsUndefined())
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<Organizer> getOrganizers(Section section) {
@@ -662,7 +617,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL expression body for the '{@link #getProcedures(Section) <em>Get Procedures</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getProcedures(Section)
 	 * @generated
 	 * @ordered
@@ -673,7 +627,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #getProcedures(Section) <em>Get Procedures</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getProcedures(Section)
 	 * @generated
 	 * @ordered
@@ -685,10 +638,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.entry.procedure->select(proc : cda::Procedure | not proc.oclIsUndefined())
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<Procedure> getProcedures(Section section) {
@@ -712,7 +663,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL expression body for the '{@link #getRegionsOfInterest(Section) <em>Get Regions Of Interest</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getRegionsOfInterest(Section)
 	 * @generated
 	 * @ordered
@@ -723,7 +673,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #getRegionsOfInterest(Section) <em>Get Regions Of Interest</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getRegionsOfInterest(Section)
 	 * @generated
 	 * @ordered
@@ -735,10 +684,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.entry.regionOfInterest->select(reg : cda::RegionOfInterest | not reg.oclIsUndefined())
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<RegionOfInterest> getRegionsOfInterest(Section section) {
@@ -762,7 +709,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL expression body for the '{@link #getSections(Section) <em>Get Sections</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getSections(Section)
 	 * @generated
 	 * @ordered
@@ -773,7 +719,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #getSections(Section) <em>Get Sections</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getSections(Section)
 	 * @generated
 	 * @ordered
@@ -785,10 +730,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.component.section
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<Section> getSections(Section section) {
@@ -823,7 +766,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL expression body for the '{@link #getSubstanceAdministrations(Section) <em>Get Substance Administrations</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getSubstanceAdministrations(Section)
 	 * @generated
 	 * @ordered
@@ -834,7 +776,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #getSubstanceAdministrations(Section) <em>Get Substance Administrations</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getSubstanceAdministrations(Section)
 	 * @generated
 	 * @ordered
@@ -846,10 +787,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.entry.substanceAdministration->select(sub : cda::SubstanceAdministration | not sub.oclIsUndefined())
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<SubstanceAdministration> getSubstanceAdministrations(Section section) {
@@ -873,7 +812,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL expression body for the '{@link #getSupplies(Section) <em>Get Supplies</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getSupplies(Section)
 	 * @generated
 	 * @ordered
@@ -884,7 +822,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #getSupplies(Section) <em>Get Supplies</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getSupplies(Section)
 	 * @generated
 	 * @ordered
@@ -896,10 +833,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.entry.supply->select(sup : cda::Supply | not sup.oclIsUndefined())
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static EList<Supply> getSupplies(Section section) {
@@ -923,7 +858,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL expression body for the '{@link #hasActTemplate(Section, java.lang.String) <em>Has Act Template</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasActTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -934,7 +868,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #hasActTemplate(Section, java.lang.String) <em>Has Act Template</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasActTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -946,10 +879,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.getActs()->exists(act : cda::Act | act.hasTemplateId(templateId))
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasActTemplate(Section section, String templateId) {
@@ -970,11 +901,9 @@ public class SectionOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #hasCode(Section, java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}'
-	 * operation.
+	 * The cached OCL expression body for the '{@link #hasCode(Section, java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasCode(Section, java.lang.String, java.lang.String, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -982,11 +911,9 @@ public class SectionOperations extends ActOperations {
 	protected static final String HAS_CODE__STRING_STRING_STRING__EOCL_EXP = "self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName";
 
 	/**
-	 * The cached OCL query for the '{@link #hasCode(Section, java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}' query
-	 * operation.
+	 * The cached OCL query for the '{@link #hasCode(Section, java.lang.String, java.lang.String, java.lang.String) <em>Has Code</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasCode(Section, java.lang.String, java.lang.String, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -998,10 +925,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.code.code = code and self.code.codeSystem = codeSystem and self.code.codeSystemName = codeSystemName
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasCode(Section section, String code, String codeSystem, String codeSystemName) {
@@ -1027,7 +952,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL expression body for the '{@link #hasEncounterTemplate(Section, java.lang.String) <em>Has Encounter Template</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasEncounterTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1038,7 +962,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #hasEncounterTemplate(Section, java.lang.String) <em>Has Encounter Template</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasEncounterTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1050,10 +973,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.getEncounters()->exists(enc : cda::Encounter | enc.hasTemplateId(templateId))
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasEncounterTemplate(Section section, String templateId) {
@@ -1074,11 +995,9 @@ public class SectionOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #hasObservationMediaTemplate(Section, java.lang.String) <em>Has Observation Media Template</em>}
-	 * ' operation.
+	 * The cached OCL expression body for the '{@link #hasObservationMediaTemplate(Section, java.lang.String) <em>Has Observation Media Template</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasObservationMediaTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1086,11 +1005,9 @@ public class SectionOperations extends ActOperations {
 	protected static final String HAS_OBSERVATION_MEDIA_TEMPLATE__STRING__EOCL_EXP = "self.getObservationMedia()->exists(media : cda::ObservationMedia | media.hasTemplateId(templateId))";
 
 	/**
-	 * The cached OCL query for the '{@link #hasObservationMediaTemplate(Section, java.lang.String) <em>Has Observation Media Template</em>}' query
-	 * operation.
+	 * The cached OCL query for the '{@link #hasObservationMediaTemplate(Section, java.lang.String) <em>Has Observation Media Template</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasObservationMediaTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1102,10 +1019,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.getObservationMedia()->exists(media : cda::ObservationMedia | media.hasTemplateId(templateId))
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasObservationMediaTemplate(Section section, String templateId) {
@@ -1126,11 +1041,9 @@ public class SectionOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #hasObservationTemplate(Section, java.lang.String) <em>Has Observation Template</em>}'
-	 * operation.
+	 * The cached OCL expression body for the '{@link #hasObservationTemplate(Section, java.lang.String) <em>Has Observation Template</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasObservationTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1141,7 +1054,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #hasObservationTemplate(Section, java.lang.String) <em>Has Observation Template</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasObservationTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1153,10 +1065,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.getObservations()->exists(obs : cda::Observation | obs.hasTemplateId(templateId))
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasObservationTemplate(Section section, String templateId) {
@@ -1180,7 +1090,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL expression body for the '{@link #hasOrganizerTemplate(Section, java.lang.String) <em>Has Organizer Template</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasOrganizerTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1191,7 +1100,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #hasOrganizerTemplate(Section, java.lang.String) <em>Has Organizer Template</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasOrganizerTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1203,10 +1111,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.getOrganizers()->exists(org : cda::Organizer | org.hasTemplateId(templateId))
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasOrganizerTemplate(Section section, String templateId) {
@@ -1230,7 +1136,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL expression body for the '{@link #hasProcedureTemplate(Section, java.lang.String) <em>Has Procedure Template</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasProcedureTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1241,7 +1146,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #hasProcedureTemplate(Section, java.lang.String) <em>Has Procedure Template</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasProcedureTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1253,10 +1157,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.getProcedures()->exists(proc : cda::Procedure | proc.hasTemplateId(templateId))
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasProcedureTemplate(Section section, String templateId) {
@@ -1277,11 +1179,9 @@ public class SectionOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #hasRegionOfInterestTemplate(Section, java.lang.String)
-	 * <em>Has Region Of Interest Template</em>}' operation.
+	 * The cached OCL expression body for the '{@link #hasRegionOfInterestTemplate(Section, java.lang.String) <em>Has Region Of Interest Template</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasRegionOfInterestTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1289,11 +1189,9 @@ public class SectionOperations extends ActOperations {
 	protected static final String HAS_REGION_OF_INTEREST_TEMPLATE__STRING__EOCL_EXP = "self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))";
 
 	/**
-	 * The cached OCL query for the '{@link #hasRegionOfInterestTemplate(Section, java.lang.String) <em>Has Region Of Interest Template</em>}' query
-	 * operation.
+	 * The cached OCL query for the '{@link #hasRegionOfInterestTemplate(Section, java.lang.String) <em>Has Region Of Interest Template</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasRegionOfInterestTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1305,10 +1203,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.getRegionsOfInterest()->exists(reg : cda::RegionOfInterest | reg.hasTemplateId(templateId))
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasRegionOfInterestTemplate(Section section, String templateId) {
@@ -1329,11 +1225,9 @@ public class SectionOperations extends ActOperations {
 	}
 
 	/**
-	 * The cached OCL expression body for the '{@link #hasSubstanceAdministrationTemplate(Section, java.lang.String)
-	 * <em>Has Substance Administration Template</em>}' operation.
+	 * The cached OCL expression body for the '{@link #hasSubstanceAdministrationTemplate(Section, java.lang.String) <em>Has Substance Administration Template</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasSubstanceAdministrationTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1341,11 +1235,9 @@ public class SectionOperations extends ActOperations {
 	protected static final String HAS_SUBSTANCE_ADMINISTRATION_TEMPLATE__STRING__EOCL_EXP = "self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))";
 
 	/**
-	 * The cached OCL query for the '{@link #hasSubstanceAdministrationTemplate(Section, java.lang.String)
-	 * <em>Has Substance Administration Template</em>}' query operation.
+	 * The cached OCL query for the '{@link #hasSubstanceAdministrationTemplate(Section, java.lang.String) <em>Has Substance Administration Template</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasSubstanceAdministrationTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1357,10 +1249,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.getSubstanceAdministrations()->exists(sub : cda::SubstanceAdministration | sub.hasTemplateId(templateId))
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasSubstanceAdministrationTemplate(Section section, String templateId) {
@@ -1384,7 +1274,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL expression body for the '{@link #hasSectionTemplate(Section, java.lang.String) <em>Has Section Template</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasSectionTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1395,7 +1284,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #hasSectionTemplate(Section, java.lang.String) <em>Has Section Template</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasSectionTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1407,10 +1295,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.getSections()->exists(sect : cda::Section | sect.hasTemplateId(templateId))
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasSectionTemplate(Section section, String templateId) {
@@ -1434,7 +1320,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL expression body for the '{@link #hasSupplyTemplate(Section, java.lang.String) <em>Has Supply Template</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasSupplyTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1445,7 +1330,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #hasSupplyTemplate(Section, java.lang.String) <em>Has Supply Template</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasSupplyTemplate(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1457,10 +1341,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.getSupplies()->exists(sup : cda::Supply | sup.hasTemplateId(templateId))
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasSupplyTemplate(Section section, String templateId) {
@@ -1484,7 +1366,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL expression body for the '{@link #hasTemplateId(Section, java.lang.String) <em>Has Template Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasTemplateId(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1495,7 +1376,6 @@ public class SectionOperations extends ActOperations {
 	 * The cached OCL query for the '{@link #hasTemplateId(Section, java.lang.String) <em>Has Template Id</em>}' query operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #hasTemplateId(Section, java.lang.String)
 	 * @generated
 	 * @ordered
@@ -1507,10 +1387,8 @@ public class SectionOperations extends ActOperations {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * self.templateId->exists(id : datatypes::II | id.root = templateId)
-	 * 
-	 * @param section
-	 *            The receiving '<em><b>Section</b></em>' model object.
-	 *            <!-- end-model-doc -->
+	 * @param section The receiving '<em><b>Section</b></em>' model object.
+	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean hasTemplateId(Section section, String templateId) {

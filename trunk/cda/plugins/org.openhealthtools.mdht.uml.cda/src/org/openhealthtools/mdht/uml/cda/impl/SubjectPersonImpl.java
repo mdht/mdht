@@ -26,6 +26,7 @@ import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.SubjectPerson;
 import org.openhealthtools.mdht.uml.cda.operations.SubjectPersonOperations;
+import org.openhealthtools.mdht.uml.hl7.datatypes.BL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -49,6 +50,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getNames <em>Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getAdministrativeGenderCode <em>Administrative Gender Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getBirthTime <em>Birth Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getSDTCDeceasedInd <em>SDTC Deceased Ind</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getSDTCDeceasedTime <em>SDTC Deceased Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getClassCode <em>Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getDeterminerCode <em>Determiner Code</em>}</li>
@@ -117,6 +120,26 @@ public class SubjectPersonImpl extends EntityImpl implements SubjectPerson {
 	 * @ordered
 	 */
 	protected TS birthTime;
+
+	/**
+	 * The cached value of the '{@link #getSDTCDeceasedInd() <em>SDTC Deceased Ind</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCDeceasedInd()
+	 * @generated
+	 * @ordered
+	 */
+	protected BL sDTCDeceasedInd;
+
+	/**
+	 * The cached value of the '{@link #getSDTCDeceasedTime() <em>SDTC Deceased Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCDeceasedTime()
+	 * @generated
+	 * @ordered
+	 */
+	protected TS sDTCDeceasedTime;
 
 	/**
 	 * The default value of the '{@link #getNullFlavor() <em>Null Flavor</em>}' attribute.
@@ -435,6 +458,120 @@ public class SubjectPersonImpl extends EntityImpl implements SubjectPerson {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public BL getSDTCDeceasedInd() {
+		return sDTCDeceasedInd;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSDTCDeceasedInd(BL newSDTCDeceasedInd, NotificationChain msgs) {
+		BL oldSDTCDeceasedInd = sDTCDeceasedInd;
+		sDTCDeceasedInd = newSDTCDeceasedInd;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_IND, oldSDTCDeceasedInd,
+				newSDTCDeceasedInd);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSDTCDeceasedInd(BL newSDTCDeceasedInd) {
+		if (newSDTCDeceasedInd != sDTCDeceasedInd) {
+			NotificationChain msgs = null;
+			if (sDTCDeceasedInd != null) {
+				msgs = ((InternalEObject) sDTCDeceasedInd).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_IND, null, msgs);
+			}
+			if (newSDTCDeceasedInd != null) {
+				msgs = ((InternalEObject) newSDTCDeceasedInd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_IND, null, msgs);
+			}
+			msgs = basicSetSDTCDeceasedInd(newSDTCDeceasedInd, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_IND, newSDTCDeceasedInd,
+				newSDTCDeceasedInd));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TS getSDTCDeceasedTime() {
+		return sDTCDeceasedTime;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSDTCDeceasedTime(TS newSDTCDeceasedTime, NotificationChain msgs) {
+		TS oldSDTCDeceasedTime = sDTCDeceasedTime;
+		sDTCDeceasedTime = newSDTCDeceasedTime;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_TIME, oldSDTCDeceasedTime,
+				newSDTCDeceasedTime);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSDTCDeceasedTime(TS newSDTCDeceasedTime) {
+		if (newSDTCDeceasedTime != sDTCDeceasedTime) {
+			NotificationChain msgs = null;
+			if (sDTCDeceasedTime != null) {
+				msgs = ((InternalEObject) sDTCDeceasedTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_TIME, null, msgs);
+			}
+			if (newSDTCDeceasedTime != null) {
+				msgs = ((InternalEObject) newSDTCDeceasedTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE -
+						CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_TIME, null, msgs);
+			}
+			msgs = basicSetSDTCDeceasedTime(newSDTCDeceasedTime, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_TIME, newSDTCDeceasedTime,
+				newSDTCDeceasedTime));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NullFlavor getNullFlavor() {
 		return nullFlavor;
@@ -633,6 +770,10 @@ public class SubjectPersonImpl extends EntityImpl implements SubjectPerson {
 				return basicSetAdministrativeGenderCode(null, msgs);
 			case CDAPackage.SUBJECT_PERSON__BIRTH_TIME:
 				return basicSetBirthTime(null, msgs);
+			case CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_IND:
+				return basicSetSDTCDeceasedInd(null, msgs);
+			case CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_TIME:
+				return basicSetSDTCDeceasedTime(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -657,6 +798,10 @@ public class SubjectPersonImpl extends EntityImpl implements SubjectPerson {
 				return getAdministrativeGenderCode();
 			case CDAPackage.SUBJECT_PERSON__BIRTH_TIME:
 				return getBirthTime();
+			case CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_IND:
+				return getSDTCDeceasedInd();
+			case CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_TIME:
+				return getSDTCDeceasedTime();
 			case CDAPackage.SUBJECT_PERSON__NULL_FLAVOR:
 				return getNullFlavor();
 			case CDAPackage.SUBJECT_PERSON__CLASS_CODE:
@@ -697,6 +842,12 @@ public class SubjectPersonImpl extends EntityImpl implements SubjectPerson {
 			case CDAPackage.SUBJECT_PERSON__BIRTH_TIME:
 				setBirthTime((TS) newValue);
 				return;
+			case CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_IND:
+				setSDTCDeceasedInd((BL) newValue);
+				return;
+			case CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_TIME:
+				setSDTCDeceasedTime((TS) newValue);
+				return;
 			case CDAPackage.SUBJECT_PERSON__NULL_FLAVOR:
 				setNullFlavor((NullFlavor) newValue);
 				return;
@@ -736,6 +887,12 @@ public class SubjectPersonImpl extends EntityImpl implements SubjectPerson {
 			case CDAPackage.SUBJECT_PERSON__BIRTH_TIME:
 				setBirthTime((TS) null);
 				return;
+			case CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_IND:
+				setSDTCDeceasedInd((BL) null);
+				return;
+			case CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_TIME:
+				setSDTCDeceasedTime((TS) null);
+				return;
 			case CDAPackage.SUBJECT_PERSON__NULL_FLAVOR:
 				unsetNullFlavor();
 				return;
@@ -769,6 +926,10 @@ public class SubjectPersonImpl extends EntityImpl implements SubjectPerson {
 				return administrativeGenderCode != null;
 			case CDAPackage.SUBJECT_PERSON__BIRTH_TIME:
 				return birthTime != null;
+			case CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_IND:
+				return sDTCDeceasedInd != null;
+			case CDAPackage.SUBJECT_PERSON__SDTC_DECEASED_TIME:
+				return sDTCDeceasedTime != null;
 			case CDAPackage.SUBJECT_PERSON__NULL_FLAVOR:
 				return isSetNullFlavor();
 			case CDAPackage.SUBJECT_PERSON__CLASS_CODE:

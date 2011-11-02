@@ -117,7 +117,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesValidator;
  * <!-- begin-user-doc -->
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
- * 
  * @see org.openhealthtools.mdht.uml.cda.CDAPackage
  * @generated
  */
@@ -126,17 +125,14 @@ public class CDAValidator extends EObjectValidator {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final CDAValidator INSTANCE = new CDAValidator();
 
 	/**
-	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic
-	 * {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
+	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see org.eclipse.emf.common.util.Diagnostic#getSource()
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
@@ -147,7 +143,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Clinical Document'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int CLINICAL_DOCUMENT__CLASS_CODE = 1;
@@ -156,7 +151,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Clinical Document'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int CLINICAL_DOCUMENT__MOOD_CODE = 2;
@@ -165,17 +159,14 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Redefined Root' of 'Infrastructure Root Type Id'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_ROOT = 3;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Redefined Extension' of 'Infrastructure Root Type
-	 * Id'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Redefined Extension' of 'Infrastructure Root Type Id'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int INFRASTRUCTURE_ROOT_TYPE_ID__REDEFINED_EXTENSION = 4;
@@ -184,7 +175,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate II' of 'Infrastructure Root Type Id'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int INFRASTRUCTURE_ROOT_TYPE_ID__II = 5;
@@ -193,7 +183,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Record Target'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int RECORD_TARGET__TYPE_CODE = 6;
@@ -202,7 +191,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Control Code' of 'Record Target'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int RECORD_TARGET__CONTEXT_CONTROL_CODE = 7;
@@ -211,7 +199,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Patient Role'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int PATIENT_ROLE__CLASS_CODE = 8;
@@ -220,7 +207,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Patient'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int PATIENT__CLASS_CODE = 9;
@@ -229,7 +215,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Patient'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int PATIENT__DETERMINER_CODE = 10;
@@ -238,7 +223,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Guardian Choice' of 'Guardian'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int GUARDIAN__GUARDIAN_CHOICE = 11;
@@ -247,7 +231,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Guardian'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int GUARDIAN__CLASS_CODE = 12;
@@ -256,7 +239,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Person'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int PERSON__CLASS_CODE = 13;
@@ -265,7 +247,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Person'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int PERSON__DETERMINER_CODE = 14;
@@ -274,7 +255,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Organization'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int ORGANIZATION__CLASS_CODE = 15;
@@ -283,7 +263,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Organization'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int ORGANIZATION__DETERMINER_CODE = 16;
@@ -292,7 +271,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Organization Part Of'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int ORGANIZATION_PART_OF__CLASS_CODE = 17;
@@ -301,7 +279,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Birthplace'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int BIRTHPLACE__CLASS_CODE = 18;
@@ -310,7 +287,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Place'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int PLACE__CLASS_CODE = 19;
@@ -319,7 +295,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Place'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int PLACE__DETERMINER_CODE = 20;
@@ -328,7 +303,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Author'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int AUTHOR__TYPE_CODE = 21;
@@ -337,7 +311,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Control Code' of 'Author'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int AUTHOR__CONTEXT_CONTROL_CODE = 22;
@@ -346,7 +319,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Assigned Author Choice' of 'Assigned Author'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int ASSIGNED_AUTHOR__ASSIGNED_AUTHOR_CHOICE = 23;
@@ -355,7 +327,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Assigned Author'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int ASSIGNED_AUTHOR__CLASS_CODE = 24;
@@ -364,7 +335,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Authoring Device'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int AUTHORING_DEVICE__CLASS_CODE = 25;
@@ -373,7 +343,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Authoring Device'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int AUTHORING_DEVICE__DETERMINER_CODE = 26;
@@ -382,7 +351,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Maintained Entity'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int MAINTAINED_ENTITY__CLASS_CODE = 27;
@@ -391,7 +359,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Data Enterer'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int DATA_ENTERER__TYPE_CODE = 28;
@@ -400,7 +367,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Control Code' of 'Data Enterer'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int DATA_ENTERER__CONTEXT_CONTROL_CODE = 29;
@@ -409,7 +375,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Assigned Entity'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int ASSIGNED_ENTITY__CLASS_CODE = 30;
@@ -418,7 +383,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Informant Choice' of 'Informant12'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int INFORMANT12__INFORMANT_CHOICE = 31;
@@ -427,7 +391,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Informant12'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int INFORMANT12__TYPE_CODE = 32;
@@ -436,7 +399,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Control Code' of 'Informant12'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int INFORMANT12__CONTEXT_CONTROL_CODE = 33;
@@ -445,7 +407,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Custodian'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int CUSTODIAN__TYPE_CODE = 34;
@@ -454,7 +415,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Assigned Custodian'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int ASSIGNED_CUSTODIAN__CLASS_CODE = 35;
@@ -463,7 +423,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Custodian Organization'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int CUSTODIAN_ORGANIZATION__CLASS_CODE = 36;
@@ -472,7 +431,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Custodian Organization'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int CUSTODIAN_ORGANIZATION__DETERMINER_CODE = 37;
@@ -481,7 +439,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Legal Authenticator'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int LEGAL_AUTHENTICATOR__TYPE_CODE = 38;
@@ -490,7 +447,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Control Code' of 'Legal Authenticator'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int LEGAL_AUTHENTICATOR__CONTEXT_CONTROL_CODE = 39;
@@ -499,7 +455,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Authenticator'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int AUTHENTICATOR__TYPE_CODE = 40;
@@ -508,7 +463,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Control Code' of 'Participant1'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int PARTICIPANT1__CONTEXT_CONTROL_CODE = 41;
@@ -517,7 +471,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'In Fulfillment Of'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int IN_FULFILLMENT_OF__TYPE_CODE = 42;
@@ -526,7 +479,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Order'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int ORDER__MOOD_CODE = 43;
@@ -535,7 +487,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Documentation Of'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int DOCUMENTATION_OF__TYPE_CODE = 44;
@@ -544,7 +495,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Service Event'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int SERVICE_EVENT__MOOD_CODE = 45;
@@ -553,7 +503,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Parent Document'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int PARENT_DOCUMENT__CLASS_CODE = 46;
@@ -562,7 +511,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Parent Document'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int PARENT_DOCUMENT__MOOD_CODE = 47;
@@ -571,7 +519,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Authorization'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int AUTHORIZATION__TYPE_CODE = 48;
@@ -580,7 +527,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Consent'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int CONSENT__CLASS_CODE = 49;
@@ -589,7 +535,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Consent'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int CONSENT__MOOD_CODE = 50;
@@ -598,7 +543,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Component1'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int COMPONENT1__TYPE_CODE = 51;
@@ -607,7 +551,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Encompassing Encounter'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int ENCOMPASSING_ENCOUNTER__CLASS_CODE = 52;
@@ -616,7 +559,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Encompassing Encounter'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int ENCOMPASSING_ENCOUNTER__MOOD_CODE = 53;
@@ -625,7 +567,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Responsible Party'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int RESPONSIBLE_PARTY__TYPE_CODE = 54;
@@ -634,7 +575,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Location'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int LOCATION__TYPE_CODE = 55;
@@ -643,7 +583,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Body Choice' of 'Component2'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int COMPONENT2__BODY_CHOICE = 56;
@@ -652,7 +591,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Component2'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int COMPONENT2__TYPE_CODE = 57;
@@ -661,7 +599,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Conduction Ind' of 'Component2'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int COMPONENT2__CONTEXT_CONDUCTION_IND = 58;
@@ -670,7 +607,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Non XML Body'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int NON_XML_BODY__CLASS_CODE = 59;
@@ -679,7 +615,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Non XML Body'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int NON_XML_BODY__MOOD_CODE = 60;
@@ -688,7 +623,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Structured Body'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int STRUCTURED_BODY__CLASS_CODE = 61;
@@ -697,7 +631,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Structured Body'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int STRUCTURED_BODY__MOOD_CODE = 62;
@@ -706,7 +639,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Component3'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int COMPONENT3__TYPE_CODE = 63;
@@ -715,7 +647,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Conduction Ind' of 'Component3'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int COMPONENT3__CONTEXT_CONDUCTION_IND = 64;
@@ -724,7 +655,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int SECTION__CLASS_CODE = 65;
@@ -733,7 +663,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Section'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int SECTION__MOOD_CODE = 66;
@@ -742,7 +671,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Subject'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int SUBJECT__TYPE_CODE = 67;
@@ -751,7 +679,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Control Code' of 'Subject'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int SUBJECT__CONTEXT_CONTROL_CODE = 68;
@@ -760,7 +687,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Subject Person'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int SUBJECT_PERSON__CLASS_CODE = 69;
@@ -769,7 +695,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Subject Person'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int SUBJECT_PERSON__DETERMINER_CODE = 70;
@@ -778,7 +703,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Clinical Statement' of 'Entry'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int ENTRY__CLINICAL_STATEMENT = 71;
@@ -787,7 +711,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Conduction Ind' of 'Entry'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int ENTRY__CONTEXT_CONDUCTION_IND = 72;
@@ -796,7 +719,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Specimen'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int SPECIMEN__TYPE_CODE = 73;
@@ -805,7 +727,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Specimen Role'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int SPECIMEN_ROLE__CLASS_CODE = 74;
@@ -814,7 +735,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Playing Entity'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int PLAYING_ENTITY__DETERMINER_CODE = 75;
@@ -823,7 +743,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Performer2'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int PERFORMER2__TYPE_CODE = 76;
@@ -832,7 +751,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Control Code' of 'Participant2'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int PARTICIPANT2__CONTEXT_CONTROL_CODE = 77;
@@ -841,7 +759,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Playing Entity Choice' of 'Participant Role'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int PARTICIPANT_ROLE__PLAYING_ENTITY_CHOICE = 78;
@@ -850,7 +767,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Device'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int DEVICE__DETERMINER_CODE = 79;
@@ -859,7 +775,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Entity'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int ENTITY__DETERMINER_CODE = 80;
@@ -868,7 +783,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Clinical Statement' of 'Entry Relationship'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int ENTRY_RELATIONSHIP__CLINICAL_STATEMENT = 81;
@@ -877,7 +791,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate External Act Choice' of 'Reference'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int REFERENCE__EXTERNAL_ACT_CHOICE = 82;
@@ -886,7 +799,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'External Act'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int EXTERNAL_ACT__MOOD_CODE = 83;
@@ -895,7 +807,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'External Observation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int EXTERNAL_OBSERVATION__MOOD_CODE = 84;
@@ -904,7 +815,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'External Procedure'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int EXTERNAL_PROCEDURE__CLASS_CODE = 85;
@@ -913,7 +823,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'External Procedure'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int EXTERNAL_PROCEDURE__MOOD_CODE = 86;
@@ -922,7 +831,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'External Document'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int EXTERNAL_DOCUMENT__MOOD_CODE = 87;
@@ -931,7 +839,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Precondition'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int PRECONDITION__TYPE_CODE = 88;
@@ -940,7 +847,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Criterion'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int CRITERION__MOOD_CODE = 89;
@@ -949,7 +855,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Reference Range'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int REFERENCE_RANGE__TYPE_CODE = 90;
@@ -958,7 +863,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Observation Range'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int OBSERVATION_RANGE__MOOD_CODE = 91;
@@ -967,7 +871,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Clinical Statement' of 'Component4'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int COMPONENT4__CLINICAL_STATEMENT = 92;
@@ -976,7 +879,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Component4'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int COMPONENT4__TYPE_CODE = 93;
@@ -985,7 +887,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Conduction Ind' of 'Component4'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int COMPONENT4__CONTEXT_CONDUCTION_IND = 94;
@@ -994,7 +895,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Region Of Interest'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int REGION_OF_INTEREST__CLASS_CODE = 95;
@@ -1003,7 +903,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Mood Code' of 'Region Of Interest'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int REGION_OF_INTEREST__MOOD_CODE = 96;
@@ -1012,7 +911,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Substance Administration'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int SUBSTANCE_ADMINISTRATION__CLASS_CODE = 97;
@@ -1021,17 +919,14 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Consumable'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int CONSUMABLE__TYPE_CODE = 98;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Manufactured Drug Or Other Material' of
-	 * 'Manufactured Product'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Manufactured Drug Or Other Material' of 'Manufactured Product'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int MANUFACTURED_PRODUCT__MANUFACTURED_DRUG_OR_OTHER_MATERIAL = 99;
@@ -1040,7 +935,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Manufactured Product'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int MANUFACTURED_PRODUCT__CLASS_CODE = 100;
@@ -1049,7 +943,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Labeled Drug'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int LABELED_DRUG__CLASS_CODE = 101;
@@ -1058,7 +951,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Labeled Drug'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int LABELED_DRUG__DETERMINER_CODE = 102;
@@ -1067,7 +959,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Material'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int MATERIAL__CLASS_CODE = 103;
@@ -1076,7 +967,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Determiner Code' of 'Material'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int MATERIAL__DETERMINER_CODE = 104;
@@ -1085,7 +975,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Class Code' of 'Supply'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int SUPPLY__CLASS_CODE = 105;
@@ -1094,7 +983,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Product'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int PRODUCT__TYPE_CODE = 106;
@@ -1103,7 +991,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Type Code' of 'Component5'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int COMPONENT5__TYPE_CODE = 107;
@@ -1112,7 +999,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Validate Context Conduction Ind' of 'Component5'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final int COMPONENT5__CONTEXT_CONDUCTION_IND = 108;
@@ -1121,7 +1007,6 @@ public class CDAValidator extends EObjectValidator {
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 108;
@@ -1130,7 +1015,6 @@ public class CDAValidator extends EObjectValidator {
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
@@ -1139,7 +1023,6 @@ public class CDAValidator extends EObjectValidator {
 	 * The cached base package validator.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected DatatypesValidator datatypesValidator;
@@ -1148,7 +1031,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public CDAValidator() {
@@ -1160,7 +1042,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Returns the package of this validator switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1172,7 +1053,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Returns the resource locator that will be used to fetch messages for this validator's diagnostics.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1184,7 +1064,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Calls <code>validateXXX</code> for the corresponding classifier of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1384,7 +1263,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAct(Act act, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -1394,7 +1272,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAssignedAuthor(AssignedAuthor assignedAuthor, DiagnosticChain diagnostics,
@@ -1434,7 +1311,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateAssignedAuthorChoice constraint of '<em>Assigned Author</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAssignedAuthor_validateAssignedAuthorChoice(AssignedAuthor assignedAuthor,
@@ -1446,7 +1322,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Assigned Author</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAssignedAuthor_validateClassCode(AssignedAuthor assignedAuthor, DiagnosticChain diagnostics,
@@ -1457,7 +1332,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAssignedCustodian(AssignedCustodian assignedCustodian, DiagnosticChain diagnostics,
@@ -1494,7 +1368,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Assigned Custodian</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAssignedCustodian_validateClassCode(AssignedCustodian assignedCustodian,
@@ -1505,7 +1378,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAssignedEntity(AssignedEntity assignedEntity, DiagnosticChain diagnostics,
@@ -1542,7 +1414,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Assigned Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAssignedEntity_validateClassCode(AssignedEntity assignedEntity, DiagnosticChain diagnostics,
@@ -1553,7 +1424,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAssociatedEntity(AssociatedEntity associatedEntity, DiagnosticChain diagnostics,
@@ -1564,7 +1434,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAuthenticator(Authenticator authenticator, DiagnosticChain diagnostics,
@@ -1601,7 +1470,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Authenticator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAuthenticator_validateTypeCode(Authenticator authenticator, DiagnosticChain diagnostics,
@@ -1612,7 +1480,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAuthor(Author author, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -1651,7 +1518,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateContextControlCode constraint of '<em>Author</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAuthor_validateContextControlCode(Author author, DiagnosticChain diagnostics,
@@ -1663,7 +1529,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Author</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAuthor_validateTypeCode(Author author, DiagnosticChain diagnostics,
@@ -1674,7 +1539,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAuthoringDevice(AuthoringDevice authoringDevice, DiagnosticChain diagnostics,
@@ -1714,7 +1578,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Authoring Device</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAuthoringDevice_validateClassCode(AuthoringDevice authoringDevice,
@@ -1726,7 +1589,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateDeterminerCode constraint of '<em>Authoring Device</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAuthoringDevice_validateDeterminerCode(AuthoringDevice authoringDevice,
@@ -1737,7 +1599,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAuthorization(Authorization authorization, DiagnosticChain diagnostics,
@@ -1774,7 +1635,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Authorization</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateAuthorization_validateTypeCode(Authorization authorization, DiagnosticChain diagnostics,
@@ -1785,7 +1645,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateBirthplace(Birthplace birthplace, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -1821,7 +1680,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Birthplace</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateBirthplace_validateClassCode(Birthplace birthplace, DiagnosticChain diagnostics,
@@ -1832,7 +1690,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateClinicalDocument(ClinicalDocument clinicalDocument, DiagnosticChain diagnostics,
@@ -1872,7 +1729,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Clinical Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateClinicalDocument_validateClassCode(ClinicalDocument clinicalDocument,
@@ -1884,7 +1740,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateMoodCode constraint of '<em>Clinical Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateClinicalDocument_validateMoodCode(ClinicalDocument clinicalDocument,
@@ -1895,7 +1750,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateClinicalStatement(ClinicalStatement clinicalStatement, DiagnosticChain diagnostics,
@@ -1906,7 +1760,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateComponent1(Component1 component1, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -1942,7 +1795,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Component1</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateComponent1_validateTypeCode(Component1 component1, DiagnosticChain diagnostics,
@@ -1953,7 +1805,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateComponent2(Component2 component2, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -1995,7 +1846,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateBodyChoice constraint of '<em>Component2</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateComponent2_validateBodyChoice(Component2 component2, DiagnosticChain diagnostics,
@@ -2007,7 +1857,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateContextConductionInd constraint of '<em>Component2</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateComponent2_validateContextConductionInd(Component2 component2, DiagnosticChain diagnostics,
@@ -2019,7 +1868,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Component2</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateComponent2_validateTypeCode(Component2 component2, DiagnosticChain diagnostics,
@@ -2030,7 +1878,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateComponent3(Component3 component3, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -2069,7 +1916,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateContextConductionInd constraint of '<em>Component3</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateComponent3_validateContextConductionInd(Component3 component3, DiagnosticChain diagnostics,
@@ -2081,7 +1927,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Component3</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateComponent3_validateTypeCode(Component3 component3, DiagnosticChain diagnostics,
@@ -2092,7 +1937,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateComponent4(Component4 component4, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -2134,7 +1978,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClinicalStatement constraint of '<em>Component4</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateComponent4_validateClinicalStatement(Component4 component4, DiagnosticChain diagnostics,
@@ -2146,7 +1989,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateContextConductionInd constraint of '<em>Component4</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateComponent4_validateContextConductionInd(Component4 component4, DiagnosticChain diagnostics,
@@ -2158,7 +2000,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Component4</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateComponent4_validateTypeCode(Component4 component4, DiagnosticChain diagnostics,
@@ -2169,7 +2010,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateComponent5(Component5 component5, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -2208,7 +2048,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateContextConductionInd constraint of '<em>Component5</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateComponent5_validateContextConductionInd(Component5 component5, DiagnosticChain diagnostics,
@@ -2220,7 +2059,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Component5</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateComponent5_validateTypeCode(Component5 component5, DiagnosticChain diagnostics,
@@ -2231,7 +2069,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateConsent(Consent consent, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -2270,7 +2107,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Consent</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateConsent_validateClassCode(Consent consent, DiagnosticChain diagnostics,
@@ -2282,7 +2118,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateMoodCode constraint of '<em>Consent</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateConsent_validateMoodCode(Consent consent, DiagnosticChain diagnostics,
@@ -2293,7 +2128,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateConsumable(Consumable consumable, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -2329,7 +2163,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Consumable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateConsumable_validateTypeCode(Consumable consumable, DiagnosticChain diagnostics,
@@ -2340,7 +2173,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateCriterion(Criterion criterion, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -2376,7 +2208,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateMoodCode constraint of '<em>Criterion</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateCriterion_validateMoodCode(Criterion criterion, DiagnosticChain diagnostics,
@@ -2387,7 +2218,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateCustodian(Custodian custodian, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -2423,7 +2253,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Custodian</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateCustodian_validateTypeCode(Custodian custodian, DiagnosticChain diagnostics,
@@ -2434,7 +2263,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateCustodianOrganization(CustodianOrganization custodianOrganization,
@@ -2474,7 +2302,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Custodian Organization</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateCustodianOrganization_validateClassCode(CustodianOrganization custodianOrganization,
@@ -2486,7 +2313,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateDeterminerCode constraint of '<em>Custodian Organization</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateCustodianOrganization_validateDeterminerCode(CustodianOrganization custodianOrganization,
@@ -2497,7 +2323,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateDataEnterer(DataEnterer dataEnterer, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -2536,7 +2361,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateContextControlCode constraint of '<em>Data Enterer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateDataEnterer_validateContextControlCode(DataEnterer dataEnterer, DiagnosticChain diagnostics,
@@ -2548,7 +2372,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Data Enterer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateDataEnterer_validateTypeCode(DataEnterer dataEnterer, DiagnosticChain diagnostics,
@@ -2559,7 +2382,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateDevice(Device device, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -2595,7 +2417,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateDeterminerCode constraint of '<em>Device</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateDevice_validateDeterminerCode(Device device, DiagnosticChain diagnostics,
@@ -2606,7 +2427,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateDocumentationOf(DocumentationOf documentationOf, DiagnosticChain diagnostics,
@@ -2643,7 +2463,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Documentation Of</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateDocumentationOf_validateTypeCode(DocumentationOf documentationOf,
@@ -2654,7 +2473,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateDocumentRoot(DocumentRoot documentRoot, DiagnosticChain diagnostics,
@@ -2665,7 +2483,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateEncompassingEncounter(EncompassingEncounter encompassingEncounter,
@@ -2705,7 +2522,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Encompassing Encounter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateEncompassingEncounter_validateClassCode(EncompassingEncounter encompassingEncounter,
@@ -2717,7 +2533,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateMoodCode constraint of '<em>Encompassing Encounter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateEncompassingEncounter_validateMoodCode(EncompassingEncounter encompassingEncounter,
@@ -2728,7 +2543,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateEncounter(Encounter encounter, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -2738,7 +2552,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateEncounterParticipant(EncounterParticipant encounterParticipant, DiagnosticChain diagnostics,
@@ -2749,7 +2562,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateEntity(Entity entity, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -2785,7 +2597,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateDeterminerCode constraint of '<em>Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateEntity_validateDeterminerCode(Entity entity, DiagnosticChain diagnostics,
@@ -2796,7 +2607,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateEntry(Entry entry, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -2835,7 +2645,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClinicalStatement constraint of '<em>Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateEntry_validateClinicalStatement(Entry entry, DiagnosticChain diagnostics,
@@ -2847,7 +2656,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateContextConductionInd constraint of '<em>Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateEntry_validateContextConductionInd(Entry entry, DiagnosticChain diagnostics,
@@ -2858,7 +2666,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateEntryRelationship(EntryRelationship entryRelationship, DiagnosticChain diagnostics,
@@ -2895,7 +2702,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClinicalStatement constraint of '<em>Entry Relationship</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateEntryRelationship_validateClinicalStatement(EntryRelationship entryRelationship,
@@ -2906,7 +2712,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateExternalAct(ExternalAct externalAct, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -2942,7 +2747,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateMoodCode constraint of '<em>External Act</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateExternalAct_validateMoodCode(ExternalAct externalAct, DiagnosticChain diagnostics,
@@ -2953,7 +2757,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateExternalDocument(ExternalDocument externalDocument, DiagnosticChain diagnostics,
@@ -2990,7 +2793,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateMoodCode constraint of '<em>External Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateExternalDocument_validateMoodCode(ExternalDocument externalDocument,
@@ -3001,7 +2803,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateExternalObservation(ExternalObservation externalObservation, DiagnosticChain diagnostics,
@@ -3038,7 +2839,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateMoodCode constraint of '<em>External Observation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateExternalObservation_validateMoodCode(ExternalObservation externalObservation,
@@ -3049,7 +2849,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateExternalProcedure(ExternalProcedure externalProcedure, DiagnosticChain diagnostics,
@@ -3089,7 +2888,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>External Procedure</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateExternalProcedure_validateClassCode(ExternalProcedure externalProcedure,
@@ -3101,7 +2899,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateMoodCode constraint of '<em>External Procedure</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateExternalProcedure_validateMoodCode(ExternalProcedure externalProcedure,
@@ -3112,7 +2909,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateGuardian(Guardian guardian, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -3151,7 +2947,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Guardian</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateGuardian_validateClassCode(Guardian guardian, DiagnosticChain diagnostics,
@@ -3163,7 +2958,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateGuardianChoice constraint of '<em>Guardian</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateGuardian_validateGuardianChoice(Guardian guardian, DiagnosticChain diagnostics,
@@ -3174,7 +2968,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateHealthCareFacility(HealthCareFacility healthCareFacility, DiagnosticChain diagnostics,
@@ -3185,7 +2978,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateInformant12(Informant12 informant12, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -3227,7 +3019,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateContextControlCode constraint of '<em>Informant12</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateInformant12_validateContextControlCode(Informant12 informant12, DiagnosticChain diagnostics,
@@ -3239,7 +3030,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateInformantChoice constraint of '<em>Informant12</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateInformant12_validateInformantChoice(Informant12 informant12, DiagnosticChain diagnostics,
@@ -3251,7 +3041,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Informant12</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateInformant12_validateTypeCode(Informant12 informant12, DiagnosticChain diagnostics,
@@ -3262,7 +3051,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateInformationRecipient(InformationRecipient informationRecipient, DiagnosticChain diagnostics,
@@ -3273,7 +3061,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateInfrastructureRootTypeId(InfrastructureRootTypeId infrastructureRootTypeId,
@@ -3330,7 +3117,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateRedefinedExtension constraint of '<em>Infrastructure Root Type Id</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateInfrastructureRootTypeId_validateRedefinedExtension(
@@ -3342,7 +3128,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateRedefinedRoot constraint of '<em>Infrastructure Root Type Id</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateInfrastructureRootTypeId_validateRedefinedRoot(
@@ -3353,7 +3138,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateInFulfillmentOf(InFulfillmentOf inFulfillmentOf, DiagnosticChain diagnostics,
@@ -3390,7 +3174,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>In Fulfillment Of</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateInFulfillmentOf_validateTypeCode(InFulfillmentOf inFulfillmentOf,
@@ -3401,7 +3184,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateIntendedRecipient(IntendedRecipient intendedRecipient, DiagnosticChain diagnostics,
@@ -3412,7 +3194,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateLabeledDrug(LabeledDrug labeledDrug, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -3451,7 +3232,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Labeled Drug</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateLabeledDrug_validateClassCode(LabeledDrug labeledDrug, DiagnosticChain diagnostics,
@@ -3463,7 +3243,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateDeterminerCode constraint of '<em>Labeled Drug</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateLabeledDrug_validateDeterminerCode(LabeledDrug labeledDrug, DiagnosticChain diagnostics,
@@ -3474,7 +3253,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateLanguageCommunication(LanguageCommunication languageCommunication,
@@ -3485,7 +3263,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateLegalAuthenticator(LegalAuthenticator legalAuthenticator, DiagnosticChain diagnostics,
@@ -3525,7 +3302,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateContextControlCode constraint of '<em>Legal Authenticator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateLegalAuthenticator_validateContextControlCode(LegalAuthenticator legalAuthenticator,
@@ -3537,7 +3313,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Legal Authenticator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateLegalAuthenticator_validateTypeCode(LegalAuthenticator legalAuthenticator,
@@ -3548,7 +3323,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateLocation(Location location, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -3584,7 +3358,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Location</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateLocation_validateTypeCode(Location location, DiagnosticChain diagnostics,
@@ -3595,7 +3368,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateMaintainedEntity(MaintainedEntity maintainedEntity, DiagnosticChain diagnostics,
@@ -3632,7 +3404,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Maintained Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateMaintainedEntity_validateClassCode(MaintainedEntity maintainedEntity,
@@ -3643,7 +3414,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateManufacturedProduct(ManufacturedProduct manufacturedProduct, DiagnosticChain diagnostics,
@@ -3684,7 +3454,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Manufactured Product</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateManufacturedProduct_validateClassCode(ManufacturedProduct manufacturedProduct,
@@ -3696,7 +3465,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateManufacturedDrugOrOtherMaterial constraint of '<em>Manufactured Product</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateManufacturedProduct_validateManufacturedDrugOrOtherMaterial(
@@ -3707,7 +3475,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateMaterial(Material material, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -3746,7 +3513,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Material</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateMaterial_validateClassCode(Material material, DiagnosticChain diagnostics,
@@ -3758,7 +3524,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateDeterminerCode constraint of '<em>Material</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateMaterial_validateDeterminerCode(Material material, DiagnosticChain diagnostics,
@@ -3769,7 +3534,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateNonXMLBody(NonXMLBody nonXMLBody, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -3808,7 +3572,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Non XML Body</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateNonXMLBody_validateClassCode(NonXMLBody nonXMLBody, DiagnosticChain diagnostics,
@@ -3820,7 +3583,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateMoodCode constraint of '<em>Non XML Body</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateNonXMLBody_validateMoodCode(NonXMLBody nonXMLBody, DiagnosticChain diagnostics,
@@ -3831,7 +3593,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateObservation(Observation observation, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -3841,7 +3602,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateObservationMedia(ObservationMedia observationMedia, DiagnosticChain diagnostics,
@@ -3852,7 +3612,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateObservationRange(ObservationRange observationRange, DiagnosticChain diagnostics,
@@ -3889,7 +3648,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateMoodCode constraint of '<em>Observation Range</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateObservationRange_validateMoodCode(ObservationRange observationRange,
@@ -3900,7 +3658,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateOrder(Order order, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -3936,7 +3693,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateMoodCode constraint of '<em>Order</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateOrder_validateMoodCode(Order order, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -3946,7 +3702,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateOrganization(Organization organization, DiagnosticChain diagnostics,
@@ -3986,7 +3741,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Organization</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateOrganization_validateClassCode(Organization organization, DiagnosticChain diagnostics,
@@ -3998,7 +3752,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateDeterminerCode constraint of '<em>Organization</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateOrganization_validateDeterminerCode(Organization organization, DiagnosticChain diagnostics,
@@ -4009,7 +3762,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateOrganizationPartOf(OrganizationPartOf organizationPartOf, DiagnosticChain diagnostics,
@@ -4046,7 +3798,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Organization Part Of</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateOrganizationPartOf_validateClassCode(OrganizationPartOf organizationPartOf,
@@ -4057,7 +3808,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateOrganizer(Organizer organizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -4067,7 +3817,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateParentDocument(ParentDocument parentDocument, DiagnosticChain diagnostics,
@@ -4107,7 +3856,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Parent Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateParentDocument_validateClassCode(ParentDocument parentDocument, DiagnosticChain diagnostics,
@@ -4119,7 +3867,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateMoodCode constraint of '<em>Parent Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateParentDocument_validateMoodCode(ParentDocument parentDocument, DiagnosticChain diagnostics,
@@ -4130,7 +3877,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateParticipant1(Participant1 participant1, DiagnosticChain diagnostics,
@@ -4167,7 +3913,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateContextControlCode constraint of '<em>Participant1</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateParticipant1_validateContextControlCode(Participant1 participant1,
@@ -4178,7 +3923,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateParticipant2(Participant2 participant2, DiagnosticChain diagnostics,
@@ -4215,7 +3959,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateContextControlCode constraint of '<em>Participant2</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateParticipant2_validateContextControlCode(Participant2 participant2,
@@ -4226,7 +3969,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateParticipantRole(ParticipantRole participantRole, DiagnosticChain diagnostics,
@@ -4263,7 +4005,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validatePlayingEntityChoice constraint of '<em>Participant Role</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateParticipantRole_validatePlayingEntityChoice(ParticipantRole participantRole,
@@ -4274,7 +4015,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePatient(Patient patient, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -4313,7 +4053,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Patient</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePatient_validateClassCode(Patient patient, DiagnosticChain diagnostics,
@@ -4325,7 +4064,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateDeterminerCode constraint of '<em>Patient</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePatient_validateDeterminerCode(Patient patient, DiagnosticChain diagnostics,
@@ -4336,7 +4074,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePatientRole(PatientRole patientRole, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -4372,7 +4109,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Patient Role</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePatientRole_validateClassCode(PatientRole patientRole, DiagnosticChain diagnostics,
@@ -4383,7 +4119,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePerformer1(Performer1 performer1, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -4393,7 +4128,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePerformer2(Performer2 performer2, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -4429,7 +4163,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Performer2</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePerformer2_validateTypeCode(Performer2 performer2, DiagnosticChain diagnostics,
@@ -4440,7 +4173,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePerson(Person person, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -4479,7 +4211,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Person</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePerson_validateClassCode(Person person, DiagnosticChain diagnostics,
@@ -4491,7 +4222,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateDeterminerCode constraint of '<em>Person</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePerson_validateDeterminerCode(Person person, DiagnosticChain diagnostics,
@@ -4502,7 +4232,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePlace(Place place, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -4541,7 +4270,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Place</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePlace_validateClassCode(Place place, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -4552,7 +4280,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateDeterminerCode constraint of '<em>Place</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePlace_validateDeterminerCode(Place place, DiagnosticChain diagnostics,
@@ -4563,7 +4290,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePlayingEntity(PlayingEntity playingEntity, DiagnosticChain diagnostics,
@@ -4600,7 +4326,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateDeterminerCode constraint of '<em>Playing Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePlayingEntity_validateDeterminerCode(PlayingEntity playingEntity,
@@ -4611,7 +4336,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePrecondition(Precondition precondition, DiagnosticChain diagnostics,
@@ -4648,7 +4372,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Precondition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validatePrecondition_validateTypeCode(Precondition precondition, DiagnosticChain diagnostics,
@@ -4659,7 +4382,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateProcedure(Procedure procedure, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -4669,7 +4391,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateProduct(Product product, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -4705,7 +4426,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Product</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateProduct_validateTypeCode(Product product, DiagnosticChain diagnostics,
@@ -4716,7 +4436,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateRecordTarget(RecordTarget recordTarget, DiagnosticChain diagnostics,
@@ -4756,7 +4475,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateContextControlCode constraint of '<em>Record Target</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateRecordTarget_validateContextControlCode(RecordTarget recordTarget,
@@ -4768,7 +4486,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Record Target</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateRecordTarget_validateTypeCode(RecordTarget recordTarget, DiagnosticChain diagnostics,
@@ -4779,7 +4496,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateReference(Reference reference, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -4815,7 +4531,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateExternalActChoice constraint of '<em>Reference</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateReference_validateExternalActChoice(Reference reference, DiagnosticChain diagnostics,
@@ -4826,7 +4541,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateReferenceRange(ReferenceRange referenceRange, DiagnosticChain diagnostics,
@@ -4863,7 +4577,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Reference Range</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateReferenceRange_validateTypeCode(ReferenceRange referenceRange, DiagnosticChain diagnostics,
@@ -4874,7 +4587,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateRegionOfInterest(RegionOfInterest regionOfInterest, DiagnosticChain diagnostics,
@@ -4914,7 +4626,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Region Of Interest</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateRegionOfInterest_validateClassCode(RegionOfInterest regionOfInterest,
@@ -4926,7 +4637,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateMoodCode constraint of '<em>Region Of Interest</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateRegionOfInterest_validateMoodCode(RegionOfInterest regionOfInterest,
@@ -4937,7 +4647,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateRegionOfInterestValue(RegionOfInterestValue regionOfInterestValue,
@@ -4973,7 +4682,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateRegistryDelegate(RegistryDelegate registryDelegate, DiagnosticChain diagnostics,
@@ -4984,7 +4692,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateRelatedDocument(RelatedDocument relatedDocument, DiagnosticChain diagnostics,
@@ -4995,7 +4702,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateRelatedEntity(RelatedEntity relatedEntity, DiagnosticChain diagnostics,
@@ -5006,7 +4712,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateRelatedSubject(RelatedSubject relatedSubject, DiagnosticChain diagnostics,
@@ -5017,7 +4722,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateResponsibleParty(ResponsibleParty responsibleParty, DiagnosticChain diagnostics,
@@ -5054,7 +4758,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Responsible Party</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateResponsibleParty_validateTypeCode(ResponsibleParty responsibleParty,
@@ -5065,7 +4768,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSDTCPatient(SDTCPatient sdtcPatient, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -5075,7 +4777,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSection(Section section, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -5114,7 +4815,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSection_validateClassCode(Section section, DiagnosticChain diagnostics,
@@ -5126,7 +4826,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateMoodCode constraint of '<em>Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSection_validateMoodCode(Section section, DiagnosticChain diagnostics,
@@ -5137,7 +4836,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateServiceEvent(ServiceEvent serviceEvent, DiagnosticChain diagnostics,
@@ -5174,7 +4872,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateMoodCode constraint of '<em>Service Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateServiceEvent_validateMoodCode(ServiceEvent serviceEvent, DiagnosticChain diagnostics,
@@ -5185,7 +4882,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSpecimen(Specimen specimen, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -5221,7 +4917,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Specimen</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSpecimen_validateTypeCode(Specimen specimen, DiagnosticChain diagnostics,
@@ -5232,7 +4927,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSpecimenRole(SpecimenRole specimenRole, DiagnosticChain diagnostics,
@@ -5269,7 +4963,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Specimen Role</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSpecimenRole_validateClassCode(SpecimenRole specimenRole, DiagnosticChain diagnostics,
@@ -5280,7 +4973,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateStrucDocText(StrucDocText strucDocText, DiagnosticChain diagnostics,
@@ -5291,7 +4983,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateStructuredBody(StructuredBody structuredBody, DiagnosticChain diagnostics,
@@ -5331,7 +5022,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Structured Body</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateStructuredBody_validateClassCode(StructuredBody structuredBody, DiagnosticChain diagnostics,
@@ -5343,7 +5033,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateMoodCode constraint of '<em>Structured Body</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateStructuredBody_validateMoodCode(StructuredBody structuredBody, DiagnosticChain diagnostics,
@@ -5354,7 +5043,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSubject(Subject subject, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -5393,7 +5081,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateContextControlCode constraint of '<em>Subject</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSubject_validateContextControlCode(Subject subject, DiagnosticChain diagnostics,
@@ -5405,7 +5092,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateTypeCode constraint of '<em>Subject</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSubject_validateTypeCode(Subject subject, DiagnosticChain diagnostics,
@@ -5416,7 +5102,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSubjectPerson(SubjectPerson subjectPerson, DiagnosticChain diagnostics,
@@ -5456,7 +5141,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Subject Person</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSubjectPerson_validateClassCode(SubjectPerson subjectPerson, DiagnosticChain diagnostics,
@@ -5468,7 +5152,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateDeterminerCode constraint of '<em>Subject Person</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSubjectPerson_validateDeterminerCode(SubjectPerson subjectPerson,
@@ -5479,7 +5162,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSubstanceAdministration(SubstanceAdministration substanceAdministration,
@@ -5516,7 +5198,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Substance Administration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSubstanceAdministration_validateClassCode(SubstanceAdministration substanceAdministration,
@@ -5527,7 +5208,6 @@ public class CDAValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSupply(Supply supply, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -5563,7 +5243,6 @@ public class CDAValidator extends EObjectValidator {
 	 * Validates the validateClassCode constraint of '<em>Supply</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean validateSupply_validateClassCode(Supply supply, DiagnosticChain diagnostics,

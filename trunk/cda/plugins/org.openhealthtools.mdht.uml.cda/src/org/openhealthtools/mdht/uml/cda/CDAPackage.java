@@ -5430,13 +5430,31 @@ public interface CDAPackage extends EPackage {
 	int SUBJECT_PERSON__BIRTH_TIME = RIMPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>SDTC Deceased Ind</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBJECT_PERSON__SDTC_DECEASED_IND = RIMPackage.ENTITY_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>SDTC Deceased Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBJECT_PERSON__SDTC_DECEASED_TIME = RIMPackage.ENTITY_FEATURE_COUNT + 7;
+
+	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__NULL_FLAVOR = RIMPackage.ENTITY_FEATURE_COUNT + 6;
+	int SUBJECT_PERSON__NULL_FLAVOR = RIMPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -5445,7 +5463,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__CLASS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 7;
+	int SUBJECT_PERSON__CLASS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Determiner Code</b></em>' attribute.
@@ -5454,7 +5472,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__DETERMINER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 8;
+	int SUBJECT_PERSON__DETERMINER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Subject Person</em>' class.
@@ -5463,7 +5481,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON_FEATURE_COUNT = RIMPackage.ENTITY_FEATURE_COUNT + 9;
+	int SUBJECT_PERSON_FEATURE_COUNT = RIMPackage.ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.EntryImpl <em>Entry</em>}' class.
@@ -16199,6 +16217,28 @@ public interface CDAPackage extends EPackage {
 	EReference getSubjectPerson_BirthTime();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getSDTCDeceasedInd <em>SDTC Deceased Ind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>SDTC Deceased Ind</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.SubjectPerson#getSDTCDeceasedInd()
+	 * @see #getSubjectPerson()
+	 * @generated
+	 */
+	EReference getSubjectPerson_SDTCDeceasedInd();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getSDTCDeceasedTime <em>SDTC Deceased Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>SDTC Deceased Time</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.SubjectPerson#getSDTCDeceasedTime()
+	 * @see #getSubjectPerson()
+	 * @generated
+	 */
+	EReference getSubjectPerson_SDTCDeceasedTime();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getNullFlavor <em>Null Flavor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -26110,6 +26150,22 @@ public interface CDAPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SUBJECT_PERSON__BIRTH_TIME = eINSTANCE.getSubjectPerson_BirthTime();
+
+		/**
+		 * The meta object literal for the '<em><b>SDTC Deceased Ind</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBJECT_PERSON__SDTC_DECEASED_IND = eINSTANCE.getSubjectPerson_SDTCDeceasedInd();
+
+		/**
+		 * The meta object literal for the '<em><b>SDTC Deceased Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBJECT_PERSON__SDTC_DECEASED_TIME = eINSTANCE.getSubjectPerson_SDTCDeceasedTime();
 
 		/**
 		 * The meta object literal for the '<em><b>Null Flavor</b></em>' attribute feature.

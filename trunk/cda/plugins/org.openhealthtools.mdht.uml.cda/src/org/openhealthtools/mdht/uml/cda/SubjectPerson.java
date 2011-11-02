@@ -14,6 +14,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
+import org.openhealthtools.mdht.uml.hl7.datatypes.BL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -38,6 +39,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getNames <em>Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getAdministrativeGenderCode <em>Administrative Gender Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getBirthTime <em>Birth Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getSDTCDeceasedInd <em>SDTC Deceased Ind</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getSDTCDeceasedTime <em>SDTC Deceased Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getNullFlavor <em>Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getClassCode <em>Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getDeterminerCode <em>Determiner Code</em>}</li>
@@ -180,6 +183,60 @@ public interface SubjectPerson extends Entity {
 	 * @generated
 	 */
 	void setBirthTime(TS value);
+
+	/**
+	 * Returns the value of the '<em><b>SDTC Deceased Ind</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>SDTC Deceased Ind</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>SDTC Deceased Ind</em>' containment reference.
+	 * @see #setSDTCDeceasedInd(BL)
+	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubjectPerson_SDTCDeceasedInd()
+	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="name='deceasedInd' namespace='urn:hl7-org:sdtc' kind='element'"
+	 * @generated
+	 */
+	BL getSDTCDeceasedInd();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getSDTCDeceasedInd <em>SDTC Deceased Ind</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>SDTC Deceased Ind</em>' containment reference.
+	 * @see #getSDTCDeceasedInd()
+	 * @generated
+	 */
+	void setSDTCDeceasedInd(BL value);
+
+	/**
+	 * Returns the value of the '<em><b>SDTC Deceased Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>SDTC Deceased Time</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>SDTC Deceased Time</em>' containment reference.
+	 * @see #setSDTCDeceasedTime(TS)
+	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubjectPerson_SDTCDeceasedTime()
+	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="name='deceasedTime' namespace='urn:hl7-org:sdtc' kind='element'"
+	 * @generated
+	 */
+	TS getSDTCDeceasedTime();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getSDTCDeceasedTime <em>SDTC Deceased Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>SDTC Deceased Time</em>' containment reference.
+	 * @see #getSDTCDeceasedTime()
+	 * @generated
+	 */
+	void setSDTCDeceasedTime(TS value);
 
 	/**
 	 * Returns the value of the '<em><b>Null Flavor</b></em>' attribute.
