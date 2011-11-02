@@ -31,7 +31,7 @@ import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 public class GenDomainProperty extends TransformFacade {
 	private GenMethodHelper methodHelper;
 
-	public GenDomainProperty(EcoreTransformerOptions options, CDAModelConsolidator consolidator) {
+	public GenDomainProperty(TransformerOptions options, CDAModelConsolidator consolidator) {
 		super(options, consolidator);
 		this.methodHelper = new GenMethodHelper(transformerOptions);
 	}

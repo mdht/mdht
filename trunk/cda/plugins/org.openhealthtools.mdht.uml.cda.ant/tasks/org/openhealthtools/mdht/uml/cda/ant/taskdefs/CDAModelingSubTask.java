@@ -12,7 +12,12 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ant.taskdefs;
 
+import java.util.Collection;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
 
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
@@ -21,10 +26,17 @@ import org.eclipse.ant.core.AntCorePlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
+import org.openhealthtools.mdht.uml.cda.ant.types.ModelElement;
+import org.openhealthtools.mdht.uml.cda.transform.AbstractTransformer;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public abstract class CDAModelingSubTask extends Task {
 
@@ -135,6 +147,68 @@ public abstract class CDAModelingSubTask extends Task {
 			container = container.getOwner();
 		}
 		return qname.toString();
+	}
+
+	protected Map<String, String> resolveAndLoadFragments(Resource umlResource) {
+		URI propertiesURI = UMLUtil.getPropertiesURI(umlResource);
+		String properties = UMLUtil.readProperties(propertiesURI);
+		Map<String, String> parsedProperties = properties != null
+				? UMLUtil.parseProperties(properties)
+				: new LinkedHashMap<String, String>();
+
+		EcoreUtil.resolveAll(umlResource.getResourceSet());
+
+		EList<EObject> umlResourceContents = umlResource.getContents();
+
+		for (Resource controlledResource : UMLUtil.getControlledResources(umlResource)) {
+			URI controlledPropertiesURI = UMLUtil.getPropertiesURI(controlledResource);
+			String controlledProperties = UMLUtil.readProperties(controlledPropertiesURI);
+
+			if (controlledProperties != null) {
+				parsedProperties.putAll(UMLUtil.parseProperties(controlledProperties));
+			}
+
+			for (ListIterator<EObject> contents = controlledResource.getContents().listIterator(); contents.hasNext();) {
+				EObject next = contents.next();
+
+				contents.remove();
+
+				if (next.eContainer() == null) {
+					umlResourceContents.add(next);
+				}
+			}
+		}
+
+		return parsedProperties;
+	}
+
+	protected void processModelElements(AbstractTransformer transformer) {
+		// process modelElement types first
+		for (ModelElement modelElement : getHL7ModelingTask().getModelElements()) {
+			Collection<NamedElement> umlElements = org.eclipse.uml2.uml.util.UMLUtil.findNamedElements(
+				getHL7ModelingTask().getResourceSet(), modelElement.getQname());
+
+			if (umlElements.size() > 1) {
+				logWarning("Found " + umlElements.size() + " matches for: '" + modelElement.getQname() + "'");
+			}
+
+			if (umlElements.isEmpty()) {
+				logError("Model element not found: '" + modelElement.getQname() + "'");
+			} else {
+				for (NamedElement namedElement : umlElements) {
+					logInfo("Model element processed: '" + namedElement.getQualifiedName() + "'");
+					transformer.transformModelElement(namedElement);
+				}
+			}
+		}
+
+		// process all model packages
+		List<Package> umlModels = getHL7ModelingTask().getRootPackages();
+		for (Package umlModel : umlModels) {
+			transformer.transformModelElement(umlModel);
+		}
+
+		transformer.saveResources();
 	}
 
 	/**

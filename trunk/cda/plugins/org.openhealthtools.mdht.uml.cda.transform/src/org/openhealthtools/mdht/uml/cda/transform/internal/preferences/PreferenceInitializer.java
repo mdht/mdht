@@ -15,7 +15,7 @@ package org.openhealthtools.mdht.uml.cda.transform.internal.preferences;
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.core.runtime.preferences.DefaultScope;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
-import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformerOptions;
+import org.openhealthtools.mdht.uml.cda.transform.TransformerOptions;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Activator;
 
 /**
@@ -27,11 +27,11 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	public void initializeDefaultPreferences() {
 		IEclipsePreferences node = new DefaultScope().getNode(Activator.PLUGIN_ID);
 
-		node.putBoolean(EcoreTransformerOptions.GENERATE_DOMAIN_INTERFACE, false);
-		node.putBoolean(EcoreTransformerOptions.GENERATE_DOMAIN_CLASSES, false);
-		node.putBoolean(EcoreTransformerOptions.INCLUDE_FIXED_VALUE_GETTERS, false);
-		node.putBoolean(EcoreTransformerOptions.INCLUDE_INTERFACE_REALIZATION, false);
-		node.putBoolean(EcoreTransformerOptions.USE_BUSINESS_NAMES, true);
+		node.putBoolean(TransformerOptions.GENERATE_DOMAIN_INTERFACE, false);
+		node.putBoolean(TransformerOptions.GENERATE_DOMAIN_CLASSES, false);
+		node.putBoolean(TransformerOptions.INCLUDE_FIXED_VALUE_GETTERS, false);
+		node.putBoolean(TransformerOptions.INCLUDE_INTERFACE_REALIZATION, false);
+		node.putBoolean(TransformerOptions.USE_BUSINESS_NAMES, true);
 	}
 
 }

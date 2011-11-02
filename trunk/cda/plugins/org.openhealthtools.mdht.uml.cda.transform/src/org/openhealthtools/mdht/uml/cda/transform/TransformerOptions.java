@@ -23,7 +23,7 @@ import org.openhealthtools.mdht.uml.cda.transform.internal.Activator;
 /**
  *
  */
-public class EcoreTransformerOptions {
+public class TransformerOptions {
 
 	public static final String GENERATE_DOMAIN_INTERFACE = "generateDomainInterface";
 
@@ -36,6 +36,8 @@ public class EcoreTransformerOptions {
 	public static final String INCLUDE_INTERFACE_REALIZATION = "includeInterfaceRealization";
 
 	public static final String INCLUDE_FIXED_VALUE_GETTERS = "includeFixedValueGetters";
+
+	public static final String INCLUDE_BASE_MODEL = "includeBaseModel";
 
 	public static final String USE_BUSINESS_NAMES = "useBusinessNames";
 
@@ -57,10 +59,9 @@ public class EcoreTransformerOptions {
 
 	private boolean includeInterfaceRealization;
 
-	private boolean useBusinessNames;
+	private boolean includeBaseModel;
 
-	// use Vector for a thread-safe synchronized List
-	private List<Element> deletedElementList = new Vector<Element>();
+	private boolean useBusinessNames;
 
 	private String domainModelPath;
 
@@ -70,15 +71,18 @@ public class EcoreTransformerOptions {
 
 	private String domainNsURI;
 
-	private String consolidatedModelPath;
+	private String outputModelPath;
 
-	private String builderModelPath;
+	private String vocabModelPath;
 
 	private Package domainInterfacePackage;
 
+	// use Vector for a thread-safe synchronized List
+	private List<Element> deletedElementList = new Vector<Element>();
+
 	private PluginPropertiesUtil pluginPropertiesUtil = null;
 
-	public EcoreTransformerOptions() {
+	public TransformerOptions() {
 		initializePreferences();
 	}
 
@@ -95,6 +99,8 @@ public class EcoreTransformerOptions {
 			Activator.PLUGIN_ID, INCLUDE_FIXED_VALUE_GETTERS, false, null);
 		includeInterfaceRealization = Platform.getPreferencesService().getBoolean(
 			Activator.PLUGIN_ID, INCLUDE_INTERFACE_REALIZATION, false, null);
+		includeBaseModel = Platform.getPreferencesService().getBoolean(
+			Activator.PLUGIN_ID, INCLUDE_BASE_MODEL, false, null);
 		useBusinessNames = Platform.getPreferencesService().getBoolean(
 			Activator.PLUGIN_ID, USE_BUSINESS_NAMES, true, null);
 	}
@@ -131,6 +137,14 @@ public class EcoreTransformerOptions {
 		this.generateDomainClasses = generateDomainClasses;
 	}
 
+	public boolean isIncludeBaseModel() {
+		return includeBaseModel;
+	}
+
+	public void setIncludeBaseModel(boolean includeBaseModel) {
+		this.includeBaseModel = includeBaseModel;
+	}
+
 	public boolean isUseBusinessNames() {
 		return useBusinessNames;
 	}
@@ -149,6 +163,22 @@ public class EcoreTransformerOptions {
 
 	protected void setPluginPropertiesUtil(PluginPropertiesUtil util) {
 		pluginPropertiesUtil = util;
+	}
+
+	public String getOutputModelPath() {
+		return outputModelPath;
+	}
+
+	public void setOutputModelPath(String outputModelPath) {
+		this.outputModelPath = outputModelPath;
+	}
+
+	public String getVocabModelPath() {
+		return vocabModelPath;
+	}
+
+	public void setVocabModelPath(String vocabModelPath) {
+		this.vocabModelPath = vocabModelPath;
 	}
 
 	public Package getDomainInterfacePackage() {
@@ -199,28 +229,12 @@ public class EcoreTransformerOptions {
 		this.generateConsolidatedModel = generateConsolidatedModel;
 	}
 
-	public String getConsolidatedModelPath() {
-		return consolidatedModelPath;
-	}
-
-	public void setConsolidatedModelPath(String consolModelPath) {
-		this.consolidatedModelPath = consolModelPath;
-	}
-
 	public boolean isGenerateBuilderClasses() {
 		return generateBuilderClasses;
 	}
 
 	public void setGenerateBuilderClasses(boolean generateBuilderClasses) {
 		this.generateBuilderClasses = generateBuilderClasses;
-	}
-
-	public String getBuilderModelPath() {
-		return builderModelPath;
-	}
-
-	public void setBuilderModelPath(String builderModelPath) {
-		this.builderModelPath = builderModelPath;
 	}
 
 }

@@ -21,7 +21,7 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Substitution;
 
 public class TransformClass extends TransformAbstract {
-	public TransformClass(EcoreTransformerOptions options) {
+	public TransformClass(TransformerOptions options) {
 		super(options);
 	}
 

@@ -34,7 +34,7 @@ import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
  */
 public class TransformPropertyConstraint extends TransformAbstract {
 
-	public TransformPropertyConstraint(EcoreTransformerOptions options) {
+	public TransformPropertyConstraint(TransformerOptions options) {
 		super(options);
 	}
 

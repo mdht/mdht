@@ -58,9 +58,9 @@ public class GenMethodHelper {
 		return name + "s";
 	}
 
-	protected EcoreTransformerOptions transformerOptions;
+	protected TransformerOptions transformerOptions;
 
-	public GenMethodHelper(EcoreTransformerOptions options) {
+	public GenMethodHelper(TransformerOptions options) {
 		this.transformerOptions = options;
 	}
 

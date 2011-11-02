@@ -53,9 +53,9 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 
 	public static final String CDA_PACKAGE_NAME = "cda";
 
-	protected EcoreTransformerOptions transformerOptions;
+	protected TransformerOptions transformerOptions;
 
-	public TransformAbstract(EcoreTransformerOptions options) {
+	public TransformAbstract(TransformerOptions options) {
 		transformerOptions = options;
 	}
 

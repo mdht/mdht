@@ -62,8 +62,8 @@ public class CDAModelConsolidator extends ModelConsolidator {
 		}
 	}
 
-	public CDAModelConsolidator(Package sourcePackage, Package consolPackage, boolean flatten) {
-		super(sourcePackage, consolPackage, flatten);
+	public CDAModelConsolidator(Package sourcePackage, Package consolPackage) {
+		super(sourcePackage, consolPackage);
 		this.vocabMapping = new HashMap<String, Enumeration>();
 	}
 
@@ -203,8 +203,8 @@ public class CDAModelConsolidator extends ModelConsolidator {
 	}
 
 	private Enumeration copyToConsolVocab(Enumeration vocabEnum) {
-		Enumeration mappedEnum = vocabMapping.get(EcoreUtil.getURI(vocabEnum).toString());
 		if (vocabPackage != null) {
+			Enumeration mappedEnum = vocabMapping.get(EcoreUtil.getURI(vocabEnum).toString());
 			if (mappedEnum == null) {
 				mappedEnum = EcoreUtil.copy(vocabEnum);
 
@@ -219,9 +219,10 @@ public class CDAModelConsolidator extends ModelConsolidator {
 				sourceAnnotation.getReferences().add(vocabEnum);
 				mappedEnum.getEAnnotations().add(sourceAnnotation);
 			}
+			return mappedEnum;
 		}
 
-		return mappedEnum;
+		return null;
 	}
 
 }

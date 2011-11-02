@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2011 David A Carlson and others.
+ * Copyright (c) 2011 David A Carlson.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,10 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     Kenn Hussey - adjusted to handle containment proxies
- *     Kenn Hussey - adjusted to handle (model) properties files
- *     
- * $Id$
+ *
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ant.taskdefs;
 
@@ -23,23 +20,23 @@ import org.apache.tools.ant.Project;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Package;
-import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformer;
 import org.openhealthtools.mdht.uml.cda.transform.TransformerOptions;
-import org.openhealthtools.mdht.uml.common.util.UMLUtil;
+import org.openhealthtools.mdht.uml.cda.transform.FilterTransformer;
 
 /**
- * Transform CDA conceptual model to UML with Ecore extensions.
+ * Filter the UML model content and optionally apply business names.
  * 
  * @version $Id: $
  */
-public class TransformToEcoreModel extends CDAModelingSubTask {
+public class FilterModel extends CDAModelingSubTask {
 
 	/* attributes of this Ant task */
-	private String ecoreModelPath = null;
+	private String outputModelPath = null;
 
-	public TransformToEcoreModel(CDAModelingTask parentTask) {
+	private Boolean useBusinessNames = null;
+
+	public FilterModel(CDAModelingTask parentTask) {
 		super(parentTask);
 	}
 
@@ -51,9 +48,13 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 	private void initializeProperties() {
 		Project project = getProject();
 
-		if (ecoreModelPath == null && project.getProperty("ecoreModel") != null) {
-			ecoreModelPath = project.getProperty("ecoreModel");
+		if (outputModelPath == null && project.getProperty("outputModel") != null) {
+			outputModelPath = project.getProperty("outputModel");
 		}
+		if (useBusinessNames == null && project.getProperty("useBusinessNames") != null) {
+			useBusinessNames = Boolean.valueOf(project.getProperty("useBusinessNames"));
+		}
+
 	}
 
 	@Override
@@ -69,35 +70,33 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		Package defaultModel = getHL7ModelingTask().getDefaultModel();
 		Resource umlResource = defaultModel.eResource();
 
-		Map<String, String> parsedProperties = resolveAndLoadFragments(umlResource);
-
-		URI ecoreModelURI = null;
-		if (ecoreModelPath != null) {
-			ecoreModelURI = URI.createFileURI(ecoreModelPath);
+		URI filteredModelURI = null;
+		if (outputModelPath != null) {
+			filteredModelURI = URI.createFileURI(outputModelPath);
 		}
-		if (ecoreModelURI == null) {
-			ecoreModelURI = umlResource.getURI();
-			ecoreModelURI = ecoreModelURI.trimFileExtension();
-			ecoreModelURI = ecoreModelURI.trimSegments(1).appendSegment(ecoreModelURI.lastSegment() + "_Ecore");
+		if (filteredModelURI == null) {
+			filteredModelURI = umlResource.getURI();
+			filteredModelURI = filteredModelURI.trimFileExtension();
+			filteredModelURI = filteredModelURI.trimSegments(1).appendSegment(
+				filteredModelURI.lastSegment() + "_filtered");
 		}
 
 		String fileExtension = umlResource.getURI().fileExtension();
-		if (!fileExtension.equals(ecoreModelURI.fileExtension())) {
-			ecoreModelURI = ecoreModelURI.appendFileExtension(fileExtension);
+		if (!fileExtension.equals(filteredModelURI.fileExtension())) {
+			filteredModelURI = filteredModelURI.appendFileExtension(fileExtension);
 		}
 
-		// change URI of the source model, then modify it
-		// TODO change this to create elements in a new model
-		umlResource.setURI(ecoreModelURI);
-
-		EcoreUtil.resolveAll(defaultModel.eResource().getResourceSet());
-
 		TransformerOptions options = new TransformerOptions();
+		options.setOutputModelPath(outputModelPath);
 
-		monitor.setTaskName("Generating Ecore model");
-		logInfo("Generating Ecore model...");
+		if (useBusinessNames != null) {
+			options.setUseBusinessNames(useBusinessNames);
+		}
 
-		EcoreTransformer transformer = new EcoreTransformer(options);
+		monitor.setTaskName("Generating filtered model");
+		logInfo("Generating filtered model...");
+
+		FilterTransformer transformer = new FilterTransformer(options);
 		transformer.initialize(defaultModel);
 		processModelElements(transformer);
 
@@ -107,15 +106,13 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		}
 
 		/* Save */
-		monitor.setTaskName("Saving Ecore model");
-		logInfo("Saving Ecore model: " + ecoreModelURI.toString());
+		monitor.setTaskName("Saving filtered model");
+		logInfo("Saving filtered model: " + filteredModelURI.toString());
 
 		try {
-			Map<String, String> saveOptions = new HashMap<String, String>();
-			umlResource.save(saveOptions);
-
-			if (!parsedProperties.isEmpty()) {
-				UMLUtil.writeProperties(UMLUtil.getPropertiesURI(umlResource), parsedProperties);
+			if (transformer.getFilteredPackage() != null) {
+				Map<String, String> saveOptions = new HashMap<String, String>();
+				transformer.getFilteredPackage().eResource().save(saveOptions);
 			}
 
 		} catch (IOException e) {
@@ -125,16 +122,12 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 
 	// ANT task attributes -----------------------------------------------------
 
-	public void setEcoreModel(String path) {
-		ecoreModelPath = path;
+	public void setOutputModel(String path) {
+		outputModelPath = path;
 	}
 
-	/**
-	 * @deprecated
-	 */
-	@Deprecated
-	public void setDomainModel(String path) {
-		// deprecated, leave for backward compatibility with ant scripts
+	public void setUseBusinessNames(boolean include) {
+		useBusinessNames = new Boolean(include);
 	}
 
 	// ANT task child elements

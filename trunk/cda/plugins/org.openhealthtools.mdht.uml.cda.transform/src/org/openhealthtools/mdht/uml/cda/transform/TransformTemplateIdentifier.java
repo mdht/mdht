@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 public class TransformTemplateIdentifier extends TransformAbstract {
 	private static final String REGISTRY_DELEGATE_NAME = "RegistryDelegate";
 
-	public TransformTemplateIdentifier(EcoreTransformerOptions options) {
+	public TransformTemplateIdentifier(TransformerOptions options) {
 		super(options);
 	}
 

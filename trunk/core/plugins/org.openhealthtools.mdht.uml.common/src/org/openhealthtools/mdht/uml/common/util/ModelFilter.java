@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
@@ -117,6 +118,12 @@ public class ModelFilter {
 
 					mappedProperty.setName(businessName);
 				}
+			}
+
+			// remove all constraints from filtered model
+			List<Constraint> constraints = new ArrayList<Constraint>(filteredClass.getOwnedRules());
+			for (Constraint constraint : constraints) {
+				constraint.destroy();
 			}
 		}
 

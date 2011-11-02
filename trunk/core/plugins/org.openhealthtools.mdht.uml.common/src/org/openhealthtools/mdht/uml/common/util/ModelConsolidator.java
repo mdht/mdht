@@ -57,7 +57,7 @@ public class ModelConsolidator {
 
 	private Set<Classifier> processedClassifiers;
 
-	private boolean flatten = false;
+	private boolean includeBaseModel = false;
 
 	public ModelConsolidator() {
 		sourceInheritance = new HashMap<Classifier, List<Classifier>>();
@@ -86,10 +86,12 @@ public class ModelConsolidator {
 		}
 	}
 
-	public ModelConsolidator(Package sourcePackage, Package consolPackage, boolean flatten) {
-		this(sourcePackage, consolPackage);
+	public boolean isIncludeBaseModel() {
+		return includeBaseModel;
+	}
 
-		this.flatten = flatten;
+	public void setIncludeBaseModel(boolean includeBaseModel) {
+		this.includeBaseModel = includeBaseModel;
 	}
 
 	/**
@@ -170,10 +172,6 @@ public class ModelConsolidator {
 		}
 
 		return null;
-	}
-
-	public boolean isFlattened() {
-		return flatten;
 	}
 
 	protected boolean isDefaultFiltered(NamedElement element) {
@@ -296,7 +294,7 @@ public class ModelConsolidator {
 		Iterator<Property> propertyIterator = allProperties.iterator();
 		while (propertyIterator.hasNext()) {
 			Property property = propertyIterator.next();
-			if (!isFlattened() && isBaseModel(property) && property.getLower() == 0) {
+			if (!isIncludeBaseModel() && isBaseModel(property) && property.getLower() == 0) {
 				// include only required base model class properties
 				propertyIterator.remove();
 
@@ -306,7 +304,7 @@ public class ModelConsolidator {
 		Iterator<Property> associationIterator = allAssociations.iterator();
 		while (associationIterator.hasNext()) {
 			Property property = associationIterator.next();
-			if (!isFlattened() && isBaseModel(property) && property.getLower() == 0) {
+			if (!isIncludeBaseModel() && isBaseModel(property) && property.getLower() == 0) {
 				// include only required base model class properties
 				associationIterator.remove();
 			}
@@ -362,7 +360,7 @@ public class ModelConsolidator {
 		Class consolidationStop = null;
 		// umlClass.getGeneralizations().clear();
 		for (Classifier classifier : allParents) {
-			if (!isFlattened() && isBaseModel(classifier)) {
+			if (!isIncludeBaseModel() && isBaseModel(classifier)) {
 				break;
 			}
 			Class consolClass = consolMapping.get(EcoreUtil.getURI(classifier).toString());
@@ -420,7 +418,7 @@ public class ModelConsolidator {
 			}
 
 			// test original property so that we can evaluate base model context
-			if (isFlattened() && isDefaultFiltered(property)) {
+			if (isIncludeBaseModel() && isDefaultFiltered(property)) {
 				NamedElementUtil.setFilteredProperty(mergedProperty, true);
 			}
 		}
@@ -445,7 +443,7 @@ public class ModelConsolidator {
 			mergedProperty.getRedefinedProperties().clear();
 
 			// test original property so that we can evaluate base model context
-			if (isFlattened() && isDefaultFiltered(property)) {
+			if (isIncludeBaseModel() && isDefaultFiltered(property)) {
 				NamedElementUtil.setFilteredProperty(mergedProperty, true);
 			}
 
@@ -527,14 +525,14 @@ public class ModelConsolidator {
 		// update generalizations
 		// remove non-consolidated superclasses
 		umlClass.getGeneralizations().clear();
-		if (!isFlattened() && consolidationStop != null) {
+		if (!isIncludeBaseModel() && consolidationStop != null) {
 			umlClass.createGeneralization(consolidationStop);
 		}
-		if (!isFlattened() && umlClass.getGeneralizations().isEmpty() && baseModelClass != null) {
+		if (!isIncludeBaseModel() && umlClass.getGeneralizations().isEmpty() && baseModelClass != null) {
 			umlClass.createGeneralization(baseModelClass);
 		}
 
-		if (isFlattened()) {
+		if (isIncludeBaseModel()) {
 			List<Substitution> substitutions = new ArrayList<Substitution>(umlClass.getSubstitutions());
 			for (Substitution subst : substitutions) {
 				subst.destroy();
@@ -546,7 +544,7 @@ public class ModelConsolidator {
 			Set<Class> substitutions = new HashSet<Class>();
 			for (int i = allSourceParents.size() - 1; i >= 0; i--) {
 				Class parent = (Class) allSourceParents.get(i);
-				if ((isFlattened() || (!isReferenceModel(parent) && !isBaseModel(parent))) &&
+				if ((isIncludeBaseModel() || (!isReferenceModel(parent) && !isBaseModel(parent))) &&
 						!substitutions.contains(parent)) {
 					// add Substitution
 					umlClass.createSubstitution(null, parent);

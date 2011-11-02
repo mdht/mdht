@@ -7,7 +7,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 
 public class TransformPackage extends TransformAbstract {
-	public TransformPackage(EcoreTransformerOptions options) {
+	public TransformPackage(TransformerOptions options) {
 		super(options);
 	}
 

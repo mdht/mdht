@@ -22,7 +22,7 @@ import org.eclipse.uml2.uml.ValueSpecification;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 
 public class TransformConstraint extends TransformAbstract {
-	public TransformConstraint(EcoreTransformerOptions options) {
+	public TransformConstraint(TransformerOptions options) {
 		super(options);
 	}
 
