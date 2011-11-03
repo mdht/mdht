@@ -3,6 +3,10 @@
 	<property name="modelPath.uml" location="${basedir}.model/model/${modelName}.uml"/>
 	<property name="ecoreModelPath.uml" location="${basedir}/model/${modelName}_Ecore.uml"/>
 	<property name="domainModelPath.uml" location="${basedir}/model/${modelName}_domain_Ecore.uml"/>
+	<property name="consolidatedModelPath.uml" location="${basedir}/model/${modelName}_consolidated.uml"/>
+	<property name="vocabModelPath.uml" location="${basedir}/model/${modelName}_consolidated-vocab.uml"/>
+	<property name="flattenedModelPath.uml" location="${basedir}/model/${modelName}_flattened.uml"/>
+	<property name="filteredModelPath.uml" location="${basedir}/model/${modelName}_filtered.uml"/>
 	
 	<target name="all">
 		<antcall target="transformModel"></antcall>
@@ -10,12 +14,10 @@
 
     <target name="transformModel" description="Transform Ecore UML model.">
         <cdatools model="${modelPath.uml}">
-            <transformToEcoreModel ecoreModel="${ecoreModelPath.uml}" domainModel="${domainModelPath.uml}" />
+            <transformToEcoreModel ecoreModel="${ecoreModelPath.uml}" />
         </cdatools>
 
     	<convertEcorePaths filePath="${ecoreModelPath.uml}"/>
-
-		<antcall target="convertDomainPaths"></antcall>
 
     	<antcall target="refresh"/>
     </target>
