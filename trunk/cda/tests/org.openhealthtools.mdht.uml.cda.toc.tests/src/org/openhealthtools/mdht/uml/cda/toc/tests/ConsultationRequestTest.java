@@ -17,7 +17,6 @@ import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.cdt.GeneralStatusSection;
-import org.openhealthtools.mdht.uml.cda.cdt.tests.GeneralStatusSectionTest;
 import org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AssessmentAndPlanSection;
@@ -40,26 +39,7 @@ import org.openhealthtools.mdht.uml.cda.hitsp.ReasonForReferralSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.hitsp.SurgeriesSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.VitalSignsSection;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.AdvanceDirectivesSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.AllergiesReactionsSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.AssessmentAndPlanSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.ChiefComplaintSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.DiagnosticResultsSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.EncountersSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.FamilyHistorySectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.FunctionalStatusSectionTest;
 import org.openhealthtools.mdht.uml.cda.hitsp.tests.HistoryOfPastIllnessSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.ImmunizationsSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.MedicalEquipmentSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.MedicationsSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.PayersSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.PhysicalExamSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.PlanOfCareSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.ProblemListSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.ReasonForReferralSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.SocialHistorySectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.SurgeriesSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.VitalSignsSectionTest;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.cda.toc.ConsultationRequest;
 import org.openhealthtools.mdht.uml.cda.toc.ToCFactory;
@@ -121,14 +101,14 @@ import org.openhealthtools.mdht.uml.cda.toc.operations.ConsultationRequestOperat
  * </ul>
  * </p>
  *
- * @generated
+ * @generated NOT
  */
 
 public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestAllergiesReactionsSection() {
@@ -165,16 +145,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestAllergiesReactionsSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(AllergiesReactionsSectionTest.class);
-
-		assertTrue(AllergiesReactionsSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestMedicationsSection() {
@@ -211,16 +186,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestMedicationsSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(MedicationsSectionTest.class);
-
-		assertTrue(MedicationsSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestProblemListSection() {
@@ -257,16 +227,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestProblemListSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(ProblemListSectionTest.class);
-
-		assertTrue(ProblemListSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestSurgeriesSection() {
@@ -303,16 +268,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestSurgeriesSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(SurgeriesSectionTest.class);
-
-		assertTrue(SurgeriesSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestDiagnosticResultsSection() {
@@ -349,16 +309,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestDiagnosticResultsSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(DiagnosticResultsSectionTest.class);
-
-		assertTrue(DiagnosticResultsSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestAdvanceDirectivesSection() {
@@ -395,16 +350,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestAdvanceDirectivesSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(AdvanceDirectivesSectionTest.class);
-
-		assertTrue(AdvanceDirectivesSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestAssessmentAndPlanSection() {
@@ -441,16 +391,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestAssessmentAndPlanSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(AssessmentAndPlanSectionTest.class);
-
-		assertTrue(AssessmentAndPlanSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated NOT
+	* @generated NOT NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestHistoryOfPresentIllness() {
@@ -489,7 +434,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestPhysicalExamSection() {
@@ -526,16 +471,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestPhysicalExamSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(PhysicalExamSectionTest.class);
-
-		assertTrue(PhysicalExamSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestReasonForReferralSection() {
@@ -572,16 +512,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestReasonForReferralSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(ReasonForReferralSectionTest.class);
-
-		assertTrue(ReasonForReferralSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestEncountersSection() {
@@ -618,16 +553,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestEncountersSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(EncountersSectionTest.class);
-
-		assertTrue(EncountersSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestFamilyHistorySection() {
@@ -664,16 +594,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestFamilyHistorySectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(FamilyHistorySectionTest.class);
-
-		assertTrue(FamilyHistorySectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestFunctionalStatusSection() {
@@ -710,16 +635,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestFunctionalStatusSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(FunctionalStatusSectionTest.class);
-
-		assertTrue(FunctionalStatusSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestImmunizationsSection() {
@@ -756,16 +676,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestImmunizationsSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(ImmunizationsSectionTest.class);
-
-		assertTrue(ImmunizationsSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestMedicalEquipmentSection() {
@@ -802,16 +717,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestMedicalEquipmentSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(MedicalEquipmentSectionTest.class);
-
-		assertTrue(MedicalEquipmentSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestPlanOfCareSection() {
@@ -848,16 +758,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestPlanOfCareSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(PlanOfCareSectionTest.class);
-
-		assertTrue(PlanOfCareSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestSocialHistorySection() {
@@ -894,16 +799,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestSocialHistorySectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(SocialHistorySectionTest.class);
-
-		assertTrue(SocialHistorySectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestVitalSignsSection() {
@@ -940,16 +840,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestVitalSignsSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(VitalSignsSectionTest.class);
-
-		assertTrue(VitalSignsSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestChiefComplaintSection() {
@@ -986,16 +881,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestChiefComplaintSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(ChiefComplaintSectionTest.class);
-
-		assertTrue(ChiefComplaintSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestGeneralStatusSection() {
@@ -1032,16 +922,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestGeneralStatusSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(GeneralStatusSectionTest.class);
-
-		assertTrue(GeneralStatusSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated NOT
+	* @generated NOT NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestHistoryOfPastIllnessSection() {
@@ -1087,7 +972,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateConsultationRequestPayersSection() {
@@ -1124,16 +1009,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateConsultationRequestPayersSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(PayersSectionTest.class);
-
-		assertTrue(PayersSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetAllergiesReactionsSection() {
@@ -1145,7 +1025,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetMedicationsSection() {
@@ -1157,7 +1037,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetProblemListSection() {
@@ -1169,7 +1049,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetSurgeriesSection() {
@@ -1181,7 +1061,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetDiagnosticResultsSection() {
@@ -1193,7 +1073,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetAdvanceDirectivesSection() {
@@ -1205,7 +1085,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetAssessmentAndPlanSection() {
@@ -1217,7 +1097,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetHistoryOfPresentIllness() {
@@ -1229,7 +1109,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetPhysicalExamSection() {
@@ -1241,7 +1121,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetReasonForReferralSection() {
@@ -1253,7 +1133,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetEncountersSection() {
@@ -1265,7 +1145,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetFamilyHistorySection() {
@@ -1277,7 +1157,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetFunctionalStatusSection() {
@@ -1289,7 +1169,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetImmunizationsSection() {
@@ -1301,7 +1181,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetMedicalEquipmentSection() {
@@ -1313,7 +1193,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetPlanOfCareSection() {
@@ -1325,7 +1205,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetSocialHistorySection() {
@@ -1337,7 +1217,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetVitalSignsSection() {
@@ -1349,7 +1229,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetChiefComplaintSection() {
@@ -1361,7 +1241,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetGeneralStatusSection() {
@@ -1373,7 +1253,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetHistoryOfPastIllnessSection() {
@@ -1385,7 +1265,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetPayersSection() {
@@ -1397,7 +1277,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsTemplateId() {
@@ -1427,12 +1307,11 @@ public class ConsultationRequestTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	private static class OperationsForOCL extends ConsultationRequestOperations {
 		public String getOCLValue(String fieldName) {
@@ -1450,7 +1329,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ConsultationRequest> {
 
@@ -1461,26 +1340,26 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
 	* Tests Operations Constructor for 100% coverage
-	* @generated
+	* @generated NOT
 	*/
 	private static class ConstructorTestClass extends ConsultationRequestOperations {
 	};
 
 	/**
 	* Tests Operations Constructor for 100% coverage
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testConstructor() {
@@ -1490,7 +1369,7 @@ public class ConsultationRequestTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 
 	@Override

@@ -940,10 +940,13 @@ public class ProgressNoteTest extends CDAValidationTest {
 	@Test
 	public void testGetAssessmentAndPlanSection() {
 
-		ProgressNote target = objectFactory.create();
-		target.getAssessmentAndPlanSection();
 
-	}
+ProgressNote target = objectFactory.create();
+target.getAssessmentAndPlanSection();
+
+
+
+}
 
 	/**
 	*
@@ -952,10 +955,13 @@ public class ProgressNoteTest extends CDAValidationTest {
 	@Test
 	public void testGetAssessmentSection() {
 
-		ProgressNote target = objectFactory.create();
-		target.getAssessmentSection();
 
-	}
+ProgressNote target = objectFactory.create();
+target.getAssessmentSection();
+
+
+
+}
 
 	/**
 	*
@@ -964,10 +970,13 @@ public class ProgressNoteTest extends CDAValidationTest {
 	@Test
 	public void testGetPlanSection() {
 
-		ProgressNote target = objectFactory.create();
-		target.getPlanSection();
 
-	}
+ProgressNote target = objectFactory.create();
+target.getPlanSection();
+
+
+
+}
 
 	/**
 	*
@@ -976,10 +985,13 @@ public class ProgressNoteTest extends CDAValidationTest {
 	@Test
 	public void testGetAlertsSection() {
 
-		ProgressNote target = objectFactory.create();
-		target.getAlertsSection();
 
-	}
+ProgressNote target = objectFactory.create();
+target.getAlertsSection();
+
+
+
+}
 
 	/**
 	*
@@ -988,10 +1000,13 @@ public class ProgressNoteTest extends CDAValidationTest {
 	@Test
 	public void testGetChiefComplaintSection() {
 
-		ProgressNote target = objectFactory.create();
-		target.getChiefComplaintSection();
 
-	}
+ProgressNote target = objectFactory.create();
+target.getChiefComplaintSection();
+
+
+
+}
 
 	/**
 	*
@@ -1000,10 +1015,13 @@ public class ProgressNoteTest extends CDAValidationTest {
 	@Test
 	public void testGetMedicationsSection() {
 
-		ProgressNote target = objectFactory.create();
-		target.getMedicationsSection();
 
-	}
+ProgressNote target = objectFactory.create();
+target.getMedicationsSection();
+
+
+
+}
 
 	/**
 	*
@@ -1012,10 +1030,13 @@ public class ProgressNoteTest extends CDAValidationTest {
 	@Test
 	public void testGetObjectiveSection() {
 
-		ProgressNote target = objectFactory.create();
-		target.getObjectiveSection();
 
-	}
+ProgressNote target = objectFactory.create();
+target.getObjectiveSection();
+
+
+
+}
 
 	/**
 	*
@@ -1024,10 +1045,13 @@ public class ProgressNoteTest extends CDAValidationTest {
 	@Test
 	public void testGetPhysicalExaminationSection() {
 
-		ProgressNote target = objectFactory.create();
-		target.getPhysicalExaminationSection();
 
-	}
+ProgressNote target = objectFactory.create();
+target.getPhysicalExaminationSection();
+
+
+
+}
 
 	/**
 	*
@@ -1036,10 +1060,13 @@ public class ProgressNoteTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemSection() {
 
-		ProgressNote target = objectFactory.create();
-		target.getProblemSection();
 
-	}
+ProgressNote target = objectFactory.create();
+target.getProblemSection();
+
+
+
+}
 
 	/**
 	*
@@ -1048,10 +1075,13 @@ public class ProgressNoteTest extends CDAValidationTest {
 	@Test
 	public void testGetResultsSection() {
 
-		ProgressNote target = objectFactory.create();
-		target.getResultsSection();
 
-	}
+ProgressNote target = objectFactory.create();
+target.getResultsSection();
+
+
+
+}
 
 	/**
 	*
@@ -1060,10 +1090,13 @@ public class ProgressNoteTest extends CDAValidationTest {
 	@Test
 	public void testGetVitalSignsSection() {
 
-		ProgressNote target = objectFactory.create();
-		target.getVitalSignsSection();
 
-	}
+ProgressNote target = objectFactory.create();
+target.getVitalSignsSection();
+
+
+
+}
 
 	/**
 	*
@@ -1072,10 +1105,13 @@ public class ProgressNoteTest extends CDAValidationTest {
 	@Test
 	public void testGetReviewOfSystemsSection() {
 
-		ProgressNote target = objectFactory.create();
-		target.getReviewOfSystemsSection();
 
-	}
+ProgressNote target = objectFactory.create();
+target.getReviewOfSystemsSection();
+
+
+
+}
 
 	/**
 	*
@@ -1084,10 +1120,13 @@ public class ProgressNoteTest extends CDAValidationTest {
 	@Test
 	public void testGetSubjectiveSection() {
 
-		ProgressNote target = objectFactory.create();
-		target.getSubjectiveSection();
 
-	}
+ProgressNote target = objectFactory.create();
+target.getSubjectiveSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -1095,10 +1134,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsTemplateId() {
-		OperationsTestCase<ProgressNote> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<ProgressNote>(
+			OperationsTestCase<ProgressNote> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<ProgressNote>(
 			"validateGeneralHeaderConstraintsTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ProgressNote target) {
@@ -1108,12 +1147,44 @@ public class ProgressNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProgressNote target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ProgressNoteOperations.validateGeneralHeaderConstraintsTemplateId(
 					(ProgressNote) objectToTest, diagnostician, map);
 			}
@@ -1121,7 +1192,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	 * 
@@ -1218,8 +1289,8 @@ public class ProgressNoteTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -1228,7 +1299,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

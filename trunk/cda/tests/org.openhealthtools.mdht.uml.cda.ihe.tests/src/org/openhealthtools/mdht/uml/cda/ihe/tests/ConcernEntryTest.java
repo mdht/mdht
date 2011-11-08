@@ -37,6 +37,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry#validateConcernEntryEffectiveTimeLowHigh(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Effective Time Low High</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry#validateConcernEntryHasRelatedObservations(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Has Related Observations</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry#validateConcernEntryRelatedObservationsTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Related Observations Type Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry#validateConcernEntryHasRelatedReferencesTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Has Related References Type Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry#validateConcernEntryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry#validateConcernEntryEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Concern Entry Effective Time</em>}</li>
  * </ul>
@@ -161,6 +162,40 @@ public class ConcernEntryTest extends CDAValidationTest {
 		};
 
 		validateConcernEntryRelatedObservationsTypeCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateConcernEntryHasRelatedReferencesTypeCode() {
+		OperationsTestCase<ConcernEntry> validateConcernEntryHasRelatedReferencesTypeCodeTestCase = new OperationsTestCase<ConcernEntry>(
+			"validateConcernEntryHasRelatedReferencesTypeCode",
+			operationsForOCL.getOCLValue("VALIDATE_CONCERN_ENTRY_HAS_RELATED_REFERENCES_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ConcernEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ConcernEntry target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ConcernEntryOperations.validateConcernEntryHasRelatedReferencesTypeCode(
+					(ConcernEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateConcernEntryHasRelatedReferencesTypeCodeTestCase.doValidationTest();
 	}
 
 	/**

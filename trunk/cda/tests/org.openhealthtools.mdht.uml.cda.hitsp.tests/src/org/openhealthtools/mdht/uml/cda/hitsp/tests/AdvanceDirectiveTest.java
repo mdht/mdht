@@ -22,6 +22,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
 
@@ -75,7 +76,9 @@ public class AdvanceDirectiveTest extends CDAValidationTest {
 			protected void updateToPass(AdvanceDirective target) {
 
 				IVL_TS ef = DatatypesFactory.eINSTANCE.createIVL_TS();
-				ef.setLow(DatatypesFactory.eINSTANCE.createIVXB_TS());
+				IVXB_TS low = DatatypesFactory.eINSTANCE.createIVXB_TS();
+				low.setValue("high");
+				ef.setLow(low);
 				target.setEffectiveTime(ef);
 			}
 
@@ -114,7 +117,9 @@ public class AdvanceDirectiveTest extends CDAValidationTest {
 			protected void updateToPass(AdvanceDirective target) {
 
 				IVL_TS ef = DatatypesFactory.eINSTANCE.createIVL_TS();
-				ef.setHigh(DatatypesFactory.eINSTANCE.createIVXB_TS());
+				IVXB_TS high = DatatypesFactory.eINSTANCE.createIVXB_TS();
+				high.setValue("high");
+				ef.setHigh(high);
 				target.setEffectiveTime(ef);
 			}
 

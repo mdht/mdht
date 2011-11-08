@@ -38,6 +38,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationTargetOfEntryRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Target Of Entry Relationship</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationNoAdditionalParticipants(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation No Additional Participants</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationNoAdditionalRelationships(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation No Additional Relationships</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Mood Code</em>}</li>
@@ -123,6 +124,41 @@ public class StatusObservationTest extends CDAValidationTest {
 		};
 
 		validateStatusObservationNoAdditionalParticipantsTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateStatusObservationNoAdditionalRelationships() {
+		OperationsTestCase<StatusObservation> validateStatusObservationNoAdditionalRelationshipsTestCase = new OperationsTestCase<StatusObservation>(
+			"validateStatusObservationNoAdditionalRelationships",
+			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_NO_ADDITIONAL_RELATIONSHIPS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(StatusObservation target) {
+				target.init();
+				target.addObservation(CDAFactory.eINSTANCE.createObservation());
+			}
+
+			@Override
+			protected void updateToPass(StatusObservation target) {
+				target.getEntryRelationships().clear();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return StatusObservationOperations.validateStatusObservationNoAdditionalRelationships(
+					(StatusObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateStatusObservationNoAdditionalRelationshipsTestCase.doValidationTest();
 	}
 
 	/**

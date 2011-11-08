@@ -6,15 +6,11 @@
  */
 package org.openhealthtools.mdht.uml.cda.toc.tests;
 
-import static org.junit.Assert.assertTrue;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
-import org.junit.runner.JUnitCore;
-import org.junit.runner.Result;
 import org.openhealthtools.mdht.uml.cda.hitsp.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergiesReactionsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.DischargeDiagnosisSection;
@@ -23,13 +19,6 @@ import org.openhealthtools.mdht.uml.cda.hitsp.ImmunizationsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.ProblemListSection;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.AdvanceDirectivesSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.AllergiesReactionsSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.DischargeDiagnosisSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.ImmunizationsSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.MedicalEquipmentSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.PlanOfCareSectionTest;
-import org.openhealthtools.mdht.uml.cda.hitsp.tests.ProblemListSectionTest;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.cda.toc.DischargeInstructions;
 import org.openhealthtools.mdht.uml.cda.toc.ToCFactory;
@@ -61,14 +50,14 @@ import org.openhealthtools.mdht.uml.cda.toc.operations.DischargeInstructionsOper
  * </ul>
  * </p>
  *
- * @generated
+ * @generated NOT
  */
 
 public class DischargeInstructionsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateDischargeInstructionsPlanOfCareSection() {
@@ -105,16 +94,11 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 		};
 
 		validateDischargeInstructionsPlanOfCareSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(PlanOfCareSectionTest.class);
-
-		assertTrue(PlanOfCareSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateDischargeInstructionsAllergiesReactionsSection() {
@@ -151,16 +135,11 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 		};
 
 		validateDischargeInstructionsAllergiesReactionsSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(AllergiesReactionsSectionTest.class);
-
-		assertTrue(AllergiesReactionsSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateDischargeInstructionsProblemListSection() {
@@ -197,16 +176,11 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 		};
 
 		validateDischargeInstructionsProblemListSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(ProblemListSectionTest.class);
-
-		assertTrue(ProblemListSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateDischargeInstructionsDischargeDiagnosisSection() {
@@ -243,16 +217,11 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 		};
 
 		validateDischargeInstructionsDischargeDiagnosisSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(DischargeDiagnosisSectionTest.class);
-
-		assertTrue(DischargeDiagnosisSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateDischargeInstructionsAdvanceDirectivesSection() {
@@ -289,16 +258,11 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 		};
 
 		validateDischargeInstructionsAdvanceDirectivesSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(AdvanceDirectivesSectionTest.class);
-
-		assertTrue(AdvanceDirectivesSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateDischargeInstructionsImmunizationsSection() {
@@ -335,16 +299,11 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 		};
 
 		validateDischargeInstructionsImmunizationsSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(ImmunizationsSectionTest.class);
-
-		assertTrue(ImmunizationsSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateDischargeInstructionsMedicalEquipmentSection() {
@@ -381,16 +340,11 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 		};
 
 		validateDischargeInstructionsMedicalEquipmentSectionTestCase.doValidationTest();
-
-		Result result = JUnitCore.runClasses(MedicalEquipmentSectionTest.class);
-
-		assertTrue(MedicalEquipmentSectionTest.class.getName() + " Failed", result.getFailures().isEmpty());
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetPlanOfCareSection() {
@@ -402,7 +356,7 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetAllergiesReactionsSection() {
@@ -414,7 +368,7 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetProblemListSection() {
@@ -426,7 +380,7 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetDischargeDiagnosisSection() {
@@ -438,7 +392,7 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetAdvanceDirectivesSection() {
@@ -450,7 +404,7 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetImmunizationsSection() {
@@ -462,7 +416,7 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testGetMedicalEquipmentSection() {
@@ -474,7 +428,7 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsTemplateId() {
@@ -504,12 +458,11 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
-
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	private static class OperationsForOCL extends DischargeInstructionsOperations {
 		public String getOCLValue(String fieldName) {
@@ -527,36 +480,37 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	private static class ObjectFactory implements TestObjectFactory<DischargeInstructions> {
 		public DischargeInstructions create() {
 			return ToCFactory.eINSTANCE.createDischargeInstructions();
+
 		}
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
 	* Tests Operations Constructor for 100% coverage
-	* @generated
+	* @generated NOT
 	*/
 	private static class ConstructorTestClass extends DischargeInstructionsOperations {
 	};
 
 	/**
 	* Tests Operations Constructor for 100% coverage
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testConstructor() {
@@ -566,7 +520,7 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Override
 	protected EObject getObjectToTest() {

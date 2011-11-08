@@ -41,6 +41,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ContinuityOfCareDocumentOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -59,6 +60,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentServiceEventRequired(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Service Event Required</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentServiceEventClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Service Event Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentServiceEventEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Service Event Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentLanguageCodeFormat(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Language Code Format</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentNoTemplateIdExtension(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document No Template Id Extension</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentHasEffectiveTimeSeconds(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Has Effective Time Seconds</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ContinuityOfCareDocument#validateContinuityOfCareDocumentHasEffectiveTimeZone(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Has Effective Time Zone</em>}</li>
@@ -227,6 +229,143 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentServiceEventEffectiveTimeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateContinuityOfCareDocumentLanguageCodeFormat() {
+		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentLanguageCodeFormatTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			"validateContinuityOfCareDocumentLanguageCodeFormat",
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_LANGUAGE_CODE_FORMAT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ContinuityOfCareDocument target) {
+
+			}
+
+			/*
+			 * (non-Javadoc)
+			 * 
+			 * @see org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.OperationsTestCase#addFailTests()
+			 */
+			@Override
+			public void addFailTests() {
+
+				this.addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(ContinuityOfCareDocument target) {
+
+						target.init();
+
+						CS cs = DatatypesFactory.eINSTANCE.createCS("someincorrectformat");
+
+						target.setLanguageCode(cs);
+					}
+
+				});
+
+				this.addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(ContinuityOfCareDocument target) {
+
+						target.init();
+
+						CS cs = DatatypesFactory.eINSTANCE.createCS("AA-aa");
+
+						target.setLanguageCode(cs);
+					}
+
+				});
+
+				this.addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(ContinuityOfCareDocument target) {
+
+						target.init();
+
+						CS cs = DatatypesFactory.eINSTANCE.createCS("11");
+
+						target.setLanguageCode(cs);
+					}
+
+				});
+
+				this.addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(ContinuityOfCareDocument target) {
+
+						target.init();
+
+						CS cs = DatatypesFactory.eINSTANCE.createCS("zz-22");
+
+						target.setLanguageCode(cs);
+					}
+
+				});
+
+			}
+
+			/*
+			 * (non-Javadoc)
+			 * 
+			 * @see org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.OperationsTestCase#addPassTests()
+			 */
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ContinuityOfCareDocument target) {
+						target.init();
+
+						CS cs = DatatypesFactory.eINSTANCE.createCS("aa");
+
+						target.setLanguageCode(cs);
+
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ContinuityOfCareDocument target) {
+						target.init();
+
+						CS cs = DatatypesFactory.eINSTANCE.createCS("aa-AA");
+
+						target.setLanguageCode(cs);
+
+					}
+
+				});
+
+			}
+
+			@Override
+			protected void updateToPass(ContinuityOfCareDocument target) {
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentLanguageCodeFormat(
+					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateContinuityOfCareDocumentLanguageCodeFormatTestCase.doValidationTest();
 	}
 
 	/**

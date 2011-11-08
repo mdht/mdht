@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusObservation;
@@ -24,8 +25,10 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.FunctionalStatusSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
@@ -39,6 +42,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection#validateFunctionalStatusSectionClinicalStatements(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Clinical Statements</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection#validateFunctionalStatusSectionObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection#validateFunctionalStatusSectionObservationCodeValueSet(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Observation Code Value Set</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection#validateFunctionalStatusSectionValueDatatype(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Value Datatype</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection#validateFunctionalStatusSectionIcfCodeSystem(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Icf Code System</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection#validateFunctionalStatusSectionProblemStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Problem Status Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection#validateFunctionalStatusSectionResultStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Result Status Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FunctionalStatusSection#validateFunctionalStatusSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Template Id</em>}</li>
@@ -164,6 +169,96 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 		};
 
 		validateFunctionalStatusSectionObservationCodeValueSetTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateFunctionalStatusSectionValueDatatype() {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionValueDatatypeTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionValueDatatype",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_VALUE_DATATYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
+				Observation observation = CDAFactory.eINSTANCE.createObservation();
+				ED ed = DatatypesFactory.eINSTANCE.createED();
+				observation.getValues().add(ed);
+
+				target.addObservation(observation);
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+				target.init();
+				for (Observation observation : target.getObservations()) {
+					observation.getValues().clear();
+					observation.getValues().add(DatatypesFactory.eINSTANCE.createCE());
+					observation.getValues().add(DatatypesFactory.eINSTANCE.createCD());
+				}
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionValueDatatype(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFunctionalStatusSectionValueDatatypeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateFunctionalStatusSectionIcfCodeSystem() {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionIcfCodeSystemTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionIcfCodeSystem",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_ICF_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
+				target.init();
+				Observation observation = CDAFactory.eINSTANCE.createObservation();
+				DatatypesFactory.eINSTANCE.createED();
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCodeSystem("fffff");
+				observation.setCode(cd);
+
+				target.addObservation(observation);
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+
+				for (Observation observation : target.getObservations()) {
+
+					observation.getCode().setCodeSystem("2.16.840.1.113883.6.254");
+				}
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionIcfCodeSystem(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFunctionalStatusSectionIcfCodeSystemTestCase.doValidationTest();
 	}
 
 	/**

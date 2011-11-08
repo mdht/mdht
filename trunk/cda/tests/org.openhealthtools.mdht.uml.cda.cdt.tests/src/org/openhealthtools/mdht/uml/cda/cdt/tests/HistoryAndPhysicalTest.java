@@ -24,14 +24,12 @@ import org.openhealthtools.mdht.uml.cda.ccd.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
-import org.openhealthtools.mdht.uml.cda.cdt.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.cdt.DiagnosticFindings;
 import org.openhealthtools.mdht.uml.cda.cdt.GeneralStatusSection;
 import org.openhealthtools.mdht.uml.cda.cdt.HistoryAndPhysical;
 import org.openhealthtools.mdht.uml.cda.cdt.HistoryOfPresentIllness;
 import org.openhealthtools.mdht.uml.cda.cdt.PastMedicalHistorySection;
 import org.openhealthtools.mdht.uml.cda.cdt.PhysicalExaminationSection;
-import org.openhealthtools.mdht.uml.cda.cdt.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.cdt.ReviewOfSystemsSectionIHE;
 import org.openhealthtools.mdht.uml.cda.cdt.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.cdt.operations.HistoryAndPhysicalOperations;
@@ -91,7 +89,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalAssessmentAndPlan() {
@@ -108,6 +106,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysical target) {
 				target.init();
+				target.addSection(CDTFactory.eINSTANCE.createAssessmentAndPlanSection().init());
 
 			}
 
@@ -125,7 +124,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalBothAssessmentAndPlan() {
@@ -136,12 +135,17 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysical target) {
+				target.init();
+				target.addSection(CDTFactory.eINSTANCE.createAssessmentSection().init());
+
+				// target.addSection(CDTFactory.eINSTANCE.createAssessmentAndPlanSection().init());
+				// target.addSection(CDTFactory.eINSTANCE.createAssessmentSection().init());
 
 			}
 
 			@Override
 			protected void updateToPass(HistoryAndPhysical target) {
-				target.init();
+				target.addSection(CDTFactory.eINSTANCE.createPlanSection().init());
 
 			}
 
@@ -163,10 +167,10 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalReasonForVisitAndChiefComplaint() {
-		OperationsTestCase<HistoryAndPhysical> validateHistoryAndPhysicalReasonForVisitAndChiefComplaintTestCase = new OperationsTestCase<HistoryAndPhysical>(
+			OperationsTestCase<HistoryAndPhysical> validateHistoryAndPhysicalReasonForVisitAndChiefComplaintTestCase = new OperationsTestCase<HistoryAndPhysical>(
 			"validateHistoryAndPhysicalReasonForVisitAndChiefComplaint",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_REASON_FOR_VISIT_AND_CHIEF_COMPLAINT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_REASON_FOR_VISIT_AND_CHIEF_COMPLAINT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysical target) {
@@ -176,12 +180,44 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysical target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return HistoryAndPhysicalOperations.validateHistoryAndPhysicalReasonForVisitAndChiefComplaint(
 					(HistoryAndPhysical) objectToTest, diagnostician, map);
 			}
@@ -189,7 +225,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalReasonForVisitAndChiefComplaintTestCase.doValidationTest();
-	}
+}
 
 	/**
 	 * 
@@ -205,19 +241,20 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(HistoryAndPhysical target) {
 
+				target.init();
+				target.addSection(CDTFactory.eINSTANCE.createChiefComplaintSection().init());
+
+				//
+				// ReasonForVisitSection rfvs = CDTFactory.eINSTANCE.createReasonForVisitSection().init();
+
 			}
 
 			@Override
 			protected void updateToPass(HistoryAndPhysical target) {
-				target.init();
 
-				ReasonForVisitSection rfvs = CDTFactory.eINSTANCE.createReasonForVisitSection().init();
-
-				ChiefComplaintSection ccs = CDTFactory.eINSTANCE.createChiefComplaintSection().init();
-
-				target.addSection(rfvs);
-
-				target.addSection(ccs);
+				// ChiefComplaintSection ccs = CDTFactory.eINSTANCE.createChiefComplaintSection().init();
+				//
+				target.addSection(CDTFactory.eINSTANCE.createReasonForVisitSection().init());
 
 			}
 
@@ -276,10 +313,10 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalPastMedicalHistorySection() {
-		OperationsTestCase<HistoryAndPhysical> validateHistoryAndPhysicalPastMedicalHistorySectionTestCase = new OperationsTestCase<HistoryAndPhysical>(
+			OperationsTestCase<HistoryAndPhysical> validateHistoryAndPhysicalPastMedicalHistorySectionTestCase = new OperationsTestCase<HistoryAndPhysical>(
 			"validateHistoryAndPhysicalPastMedicalHistorySection",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_PAST_MEDICAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_PAST_MEDICAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysical target) {
@@ -289,19 +326,53 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysical target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* PastMedicalHistorySection */
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+			
+			
+				
+				/* PastMedicalHistorySection */ 
 				PastMedicalHistorySection section =
-
-				CDTFactory.eINSTANCE.createPastMedicalHistorySection().init();
-
-				target.addSection(section);
-
+				
+				CDTFactory.eINSTANCE.createPastMedicalHistorySection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return HistoryAndPhysicalOperations.validateHistoryAndPhysicalPastMedicalHistorySection(
 					(HistoryAndPhysical) objectToTest, diagnostician, map);
 			}
@@ -309,7 +380,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalPastMedicalHistorySectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	 * 
@@ -522,10 +593,10 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalPhysicalExaminationSection() {
-		OperationsTestCase<HistoryAndPhysical> validateHistoryAndPhysicalPhysicalExaminationSectionTestCase = new OperationsTestCase<HistoryAndPhysical>(
+			OperationsTestCase<HistoryAndPhysical> validateHistoryAndPhysicalPhysicalExaminationSectionTestCase = new OperationsTestCase<HistoryAndPhysical>(
 			"validateHistoryAndPhysicalPhysicalExaminationSection",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_PHYSICAL_EXAMINATION_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_PHYSICAL_EXAMINATION_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysical target) {
@@ -535,19 +606,53 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysical target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* PhysicalExaminationSection */
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+			
+			
+				
+				/* PhysicalExaminationSection */ 
 				PhysicalExaminationSection section =
-
-				CDTFactory.eINSTANCE.createPhysicalExaminationSection().init();
-
-				target.addSection(section);
-
+				
+				CDTFactory.eINSTANCE.createPhysicalExaminationSection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return HistoryAndPhysicalOperations.validateHistoryAndPhysicalPhysicalExaminationSection(
 					(HistoryAndPhysical) objectToTest, diagnostician, map);
 			}
@@ -555,7 +660,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalPhysicalExaminationSectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	 * 
@@ -563,10 +668,10 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalVitalSignsSection() {
-		OperationsTestCase<HistoryAndPhysical> validateHistoryAndPhysicalVitalSignsSectionTestCase = new OperationsTestCase<HistoryAndPhysical>(
+			OperationsTestCase<HistoryAndPhysical> validateHistoryAndPhysicalVitalSignsSectionTestCase = new OperationsTestCase<HistoryAndPhysical>(
 			"validateHistoryAndPhysicalVitalSignsSection",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_VITAL_SIGNS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_VITAL_SIGNS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysical target) {
@@ -576,19 +681,53 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysical target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* VitalSignsSection */
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+			
+			
+				
+				/* VitalSignsSection */ 
 				VitalSignsSection section =
-
-				CDTFactory.eINSTANCE.createVitalSignsSection().init();
-
-				target.addSection(section);
-
+				
+				CDTFactory.eINSTANCE.createVitalSignsSection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return HistoryAndPhysicalOperations.validateHistoryAndPhysicalVitalSignsSection(
 					(HistoryAndPhysical) objectToTest, diagnostician, map);
 			}
@@ -596,7 +735,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalVitalSignsSectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	 * 
@@ -604,10 +743,10 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHistoryAndPhysicalGeneralStatusSection() {
-		OperationsTestCase<HistoryAndPhysical> validateHistoryAndPhysicalGeneralStatusSectionTestCase = new OperationsTestCase<HistoryAndPhysical>(
+			OperationsTestCase<HistoryAndPhysical> validateHistoryAndPhysicalGeneralStatusSectionTestCase = new OperationsTestCase<HistoryAndPhysical>(
 			"validateHistoryAndPhysicalGeneralStatusSection",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_GENERAL_STATUS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_GENERAL_STATUS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysical target) {
@@ -617,19 +756,53 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysical target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* GeneralStatusSection */
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+			
+			
+				
+				/* GeneralStatusSection */ 
 				GeneralStatusSection section =
-
-				CDTFactory.eINSTANCE.createGeneralStatusSection().init();
-
-				target.addSection(section);
-
+				
+				CDTFactory.eINSTANCE.createGeneralStatusSection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return HistoryAndPhysicalOperations.validateHistoryAndPhysicalGeneralStatusSection(
 					(HistoryAndPhysical) objectToTest, diagnostician, map);
 			}
@@ -637,7 +810,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalGeneralStatusSectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	 * 
@@ -804,10 +977,13 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	@Test
 	public void testGetHistoryOfPresentIllness() {
 
-		HistoryAndPhysical target = objectFactory.create();
-		target.getHistoryOfPresentIllness();
 
-	}
+HistoryAndPhysical target = objectFactory.create();
+target.getHistoryOfPresentIllness();
+
+
+
+}
 
 	/**
 	*
@@ -816,10 +992,13 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	@Test
 	public void testGetPastMedicalHistorySection() {
 
-		HistoryAndPhysical target = objectFactory.create();
-		target.getPastMedicalHistorySection();
 
-	}
+HistoryAndPhysical target = objectFactory.create();
+target.getPastMedicalHistorySection();
+
+
+
+}
 
 	/**
 	*
@@ -828,10 +1007,13 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	@Test
 	public void testGetMedicationsSection() {
 
-		HistoryAndPhysical target = objectFactory.create();
-		target.getMedicationsSection();
 
-	}
+HistoryAndPhysical target = objectFactory.create();
+target.getMedicationsSection();
+
+
+
+}
 
 	/**
 	*
@@ -840,10 +1022,13 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	@Test
 	public void testGetAlertsSection() {
 
-		HistoryAndPhysical target = objectFactory.create();
-		target.getAlertsSection();
 
-	}
+HistoryAndPhysical target = objectFactory.create();
+target.getAlertsSection();
+
+
+
+}
 
 	/**
 	*
@@ -852,10 +1037,13 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	@Test
 	public void testGetSocialHistorySection() {
 
-		HistoryAndPhysical target = objectFactory.create();
-		target.getSocialHistorySection();
 
-	}
+HistoryAndPhysical target = objectFactory.create();
+target.getSocialHistorySection();
+
+
+
+}
 
 	/**
 	*
@@ -864,10 +1052,13 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	@Test
 	public void testGetFamilyHistorySection() {
 
-		HistoryAndPhysical target = objectFactory.create();
-		target.getFamilyHistorySection();
 
-	}
+HistoryAndPhysical target = objectFactory.create();
+target.getFamilyHistorySection();
+
+
+
+}
 
 	/**
 	*
@@ -876,10 +1067,13 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	@Test
 	public void testGetReviewOfSystemsSection() {
 
-		HistoryAndPhysical target = objectFactory.create();
-		target.getReviewOfSystemsSection();
 
-	}
+HistoryAndPhysical target = objectFactory.create();
+target.getReviewOfSystemsSection();
+
+
+
+}
 
 	/**
 	*
@@ -888,10 +1082,13 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	@Test
 	public void testGetPhysicalExaminationSection() {
 
-		HistoryAndPhysical target = objectFactory.create();
-		target.getPhysicalExaminationSection();
 
-	}
+HistoryAndPhysical target = objectFactory.create();
+target.getPhysicalExaminationSection();
+
+
+
+}
 
 	/**
 	*
@@ -900,10 +1097,13 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	@Test
 	public void testGetVitalSignsSection() {
 
-		HistoryAndPhysical target = objectFactory.create();
-		target.getVitalSignsSection();
 
-	}
+HistoryAndPhysical target = objectFactory.create();
+target.getVitalSignsSection();
+
+
+
+}
 
 	/**
 	*
@@ -912,10 +1112,13 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	@Test
 	public void testGetGeneralStatusSection() {
 
-		HistoryAndPhysical target = objectFactory.create();
-		target.getGeneralStatusSection();
 
-	}
+HistoryAndPhysical target = objectFactory.create();
+target.getGeneralStatusSection();
+
+
+
+}
 
 	/**
 	*
@@ -924,10 +1127,13 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	@Test
 	public void testGetDiagnosticFindings() {
 
-		HistoryAndPhysical target = objectFactory.create();
-		target.getDiagnosticFindings();
 
-	}
+HistoryAndPhysical target = objectFactory.create();
+target.getDiagnosticFindings();
+
+
+
+}
 
 	/**
 	*
@@ -936,10 +1142,13 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemSection() {
 
-		HistoryAndPhysical target = objectFactory.create();
-		target.getProblemSection();
 
-	}
+HistoryAndPhysical target = objectFactory.create();
+target.getProblemSection();
+
+
+
+}
 
 	/**
 	*
@@ -948,10 +1157,13 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	@Test
 	public void testGetProceduresSection() {
 
-		HistoryAndPhysical target = objectFactory.create();
-		target.getProceduresSection();
 
-	}
+HistoryAndPhysical target = objectFactory.create();
+target.getProceduresSection();
+
+
+
+}
 
 	/**
 	*
@@ -960,10 +1172,13 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	@Test
 	public void testGetImmunizationsSection() {
 
-		HistoryAndPhysical target = objectFactory.create();
-		target.getImmunizationsSection();
 
-	}
+HistoryAndPhysical target = objectFactory.create();
+target.getImmunizationsSection();
+
+
+
+}
 
 	/**
 	 * 
@@ -971,10 +1186,10 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateGeneralHeaderConstraintsTemplateId() {
-		OperationsTestCase<HistoryAndPhysical> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<HistoryAndPhysical>(
+			OperationsTestCase<HistoryAndPhysical> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<HistoryAndPhysical>(
 			"validateGeneralHeaderConstraintsTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysical target) {
@@ -984,12 +1199,44 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysical target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return HistoryAndPhysicalOperations.validateGeneralHeaderConstraintsTemplateId(
 					(HistoryAndPhysical) objectToTest, diagnostician, map);
 			}
@@ -997,7 +1244,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	 * 
@@ -1093,8 +1340,8 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -1103,7 +1350,7 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 
