@@ -44,10 +44,10 @@ public class ChiefComplaintSectionProcNoteTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateChiefComplaintSectionProcNoteTemplateId() {
-		OperationsTestCase<ChiefComplaintSectionProcNote> validateChiefComplaintSectionProcNoteTemplateIdTestCase = new OperationsTestCase<ChiefComplaintSectionProcNote>(
+			OperationsTestCase<ChiefComplaintSectionProcNote> validateChiefComplaintSectionProcNoteTemplateIdTestCase = new OperationsTestCase<ChiefComplaintSectionProcNote>(
 			"validateChiefComplaintSectionProcNoteTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_CHIEF_COMPLAINT_SECTION_PROC_NOTE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CHIEF_COMPLAINT_SECTION_PROC_NOTE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ChiefComplaintSectionProcNote target) {
@@ -57,12 +57,44 @@ public class ChiefComplaintSectionProcNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ChiefComplaintSectionProcNote target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ChiefComplaintSectionProcNoteOperations.validateChiefComplaintSectionProcNoteTemplateId(
 					(ChiefComplaintSectionProcNote) objectToTest, diagnostician, map);
 			}
@@ -70,7 +102,7 @@ public class ChiefComplaintSectionProcNoteTest extends CDAValidationTest {
 		};
 
 		validateChiefComplaintSectionProcNoteTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	 * 
@@ -78,10 +110,10 @@ public class ChiefComplaintSectionProcNoteTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateChiefComplaintSectionProcNoteCode() {
-		OperationsTestCase<ChiefComplaintSectionProcNote> validateChiefComplaintSectionProcNoteCodeTestCase = new OperationsTestCase<ChiefComplaintSectionProcNote>(
+			OperationsTestCase<ChiefComplaintSectionProcNote> validateChiefComplaintSectionProcNoteCodeTestCase = new OperationsTestCase<ChiefComplaintSectionProcNote>(
 			"validateChiefComplaintSectionProcNoteCode",
-			operationsForOCL.getOCLValue("VALIDATE_CHIEF_COMPLAINT_SECTION_PROC_NOTE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CHIEF_COMPLAINT_SECTION_PROC_NOTE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ChiefComplaintSectionProcNote target) {
@@ -91,12 +123,44 @@ public class ChiefComplaintSectionProcNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ChiefComplaintSectionProcNote target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ChiefComplaintSectionProcNoteOperations.validateChiefComplaintSectionProcNoteCode(
 					(ChiefComplaintSectionProcNote) objectToTest, diagnostician, map);
 			}
@@ -104,7 +168,7 @@ public class ChiefComplaintSectionProcNoteTest extends CDAValidationTest {
 		};
 
 		validateChiefComplaintSectionProcNoteCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	 * 
@@ -162,8 +226,8 @@ public class ChiefComplaintSectionProcNoteTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -172,7 +236,7 @@ public class ChiefComplaintSectionProcNoteTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

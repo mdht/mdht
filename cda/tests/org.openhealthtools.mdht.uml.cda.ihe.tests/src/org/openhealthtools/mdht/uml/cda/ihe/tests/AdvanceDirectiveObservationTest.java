@@ -26,7 +26,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectiveObservation#validateIHEAdvanceDirectiveObservationHasExternalReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Advance Directive Observation Has External Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectiveObservation#validateIHEAdvanceDirectiveObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Advance Directive Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectiveObservation#validateIHEAdvanceDirectiveObservationRepeatNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Advance Directive Observation Repeat Number</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectiveObservation#validateIHEAdvanceDirectiveObservationInterpretationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Advance Directive Observation Interpretation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectiveObservation#validateIHEAdvanceDirectiveObservationTargetSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Advance Directive Observation Target Site Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Code</em>}</li>
  * </ul>
  * </p>
@@ -35,6 +39,40 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  */
 
 public class AdvanceDirectiveObservationTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateIHEAdvanceDirectiveObservationHasExternalReference() {
+		OperationsTestCase<AdvanceDirectiveObservation> validateIHEAdvanceDirectiveObservationHasExternalReferenceTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
+			"validateIHEAdvanceDirectiveObservationHasExternalReference",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_ADVANCE_DIRECTIVE_OBSERVATION_HAS_EXTERNAL_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AdvanceDirectiveObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AdvanceDirectiveObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AdvanceDirectiveObservationOperations.validateIHEAdvanceDirectiveObservationHasExternalReference(
+					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateIHEAdvanceDirectiveObservationHasExternalReferenceTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -68,6 +106,108 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 		};
 
 		validateIHEAdvanceDirectiveObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateIHEAdvanceDirectiveObservationRepeatNumber() {
+		OperationsTestCase<AdvanceDirectiveObservation> validateIHEAdvanceDirectiveObservationRepeatNumberTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
+			"validateIHEAdvanceDirectiveObservationRepeatNumber",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_ADVANCE_DIRECTIVE_OBSERVATION_REPEAT_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AdvanceDirectiveObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AdvanceDirectiveObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AdvanceDirectiveObservationOperations.validateIHEAdvanceDirectiveObservationRepeatNumber(
+					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateIHEAdvanceDirectiveObservationRepeatNumberTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateIHEAdvanceDirectiveObservationInterpretationCode() {
+		OperationsTestCase<AdvanceDirectiveObservation> validateIHEAdvanceDirectiveObservationInterpretationCodeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
+			"validateIHEAdvanceDirectiveObservationInterpretationCode",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_ADVANCE_DIRECTIVE_OBSERVATION_INTERPRETATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AdvanceDirectiveObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AdvanceDirectiveObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AdvanceDirectiveObservationOperations.validateIHEAdvanceDirectiveObservationInterpretationCode(
+					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateIHEAdvanceDirectiveObservationInterpretationCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateIHEAdvanceDirectiveObservationTargetSiteCode() {
+		OperationsTestCase<AdvanceDirectiveObservation> validateIHEAdvanceDirectiveObservationTargetSiteCodeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
+			"validateIHEAdvanceDirectiveObservationTargetSiteCode",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_ADVANCE_DIRECTIVE_OBSERVATION_TARGET_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AdvanceDirectiveObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AdvanceDirectiveObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AdvanceDirectiveObservationOperations.validateIHEAdvanceDirectiveObservationTargetSiteCode(
+					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateIHEAdvanceDirectiveObservationTargetSiteCodeTestCase.doValidationTest();
 	}
 
 	/**

@@ -42,7 +42,7 @@ public class CDTTests {
 	 * @generated
 	 */
 	public static junit.framework.Test suite() {
-		return new JUnit4TestAdapter(CDTTests.class);
+		return new JUnit4TestAdapter( CDTTests.class);
 	}
 
 } // CDTTests

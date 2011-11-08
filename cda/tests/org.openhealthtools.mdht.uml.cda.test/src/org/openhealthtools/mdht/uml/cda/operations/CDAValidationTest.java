@@ -18,6 +18,7 @@ import static org.junit.Assert.fail;
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.FileWriter;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -35,8 +36,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
@@ -243,16 +246,6 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 				final Map<Object, Object> map) {
 			final boolean isValid = validate(objectToTest, diagnostician, map);
 
-			// new ByteArrayOutputStream();
-			//
-			// String xml = "";
-			//
-			// try {
-			// CDAUtil.saveSnippet((InfrastructureRoot) objectToTest, out);
-			// xml = out.toString();
-			// } catch (Exception e) {
-			// }
-
 			assertTrue(
 				"ERROR EXPECT IGNORE " +
 						CDAValidationTest.createAssertionFailureMessage(diagnostician, getTestTargetDescription()),
@@ -264,16 +257,6 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 				final Map<Object, Object> map) {
 			final boolean isValid = validate(objectToTest, diagnostician, map);
 
-			// ByteArrayOutputStream out = new ByteArrayOutputStream();
-			//
-			// String xml = "";
-			//
-			// try {
-			// CDAUtil.saveSnippet((InfrastructureRoot) objectToTest, out);
-			// xml = out.toString();
-			// } catch (Exception e) {
-			// }
-			//
 			assertTrue(
 				"ERROR EXPECT PASS " +
 						CDAValidationTest.createAssertionFailureMessage(diagnostician, getTestTargetDescription()),
@@ -290,7 +273,7 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 			String xml = "";
 
 			try {
-				CDAUtil.saveSnippet((InfrastructureRoot) objectToTest, out);
+				CDAValidationTest.saveTestSnippet((InfrastructureRoot) objectToTest, out);
 				xml = out.toString();
 			} catch (Exception e) {
 			}
@@ -521,6 +504,18 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 		return sb.toString();
 	}
 
+	private static void saveTestSnippet(InfrastructureRoot snippet, OutputStream out) throws Exception {
+
+		ClinicalDocument containerDocument = CDAUtil.getClinicalDocument(snippet);
+
+		if (containerDocument != null) {
+			CDAUtil.save(EcoreUtil.copy(containerDocument), out);
+		} else {
+			CDAUtil.saveSnippet(EcoreUtil.copy(snippet), out);
+		}
+
+	}
+
 	public interface TestObjectFactory<TestObject> {
 		public TestObject create();
 	}
@@ -555,13 +550,6 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 
 		ArrayList<FailTest> failTests = new ArrayList<FailTest>();
 
-		//
-		// Comparator<String> numStringComparator = new Comparator<String>() {
-		// public int compare(String o1, String o2) {
-		// return Integer.valueOf(o1).compareTo(Integer.valueOf(o2));
-		// }
-		// };
-
 		private static final String[] ENDTAGS = { "<failsnippet>", "</failsnippet>", "<passsnippet>", "</passsnippet>" };
 
 		private static final int FAILSNIPPET = 0;
@@ -572,7 +560,7 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 			String xml = "";
 			try {
 				ByteArrayOutputStream out = new ByteArrayOutputStream();
-				CDAUtil.saveSnippet(objectToTest, out);
+				CDAValidationTest.saveTestSnippet(objectToTest, out);
 
 				xml = StringEscapeUtils.escapeHtml(out.toString());
 
@@ -621,7 +609,7 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 						xmlSnippetsBuffer.append(escapeXML(FAILSNIPPET, (InfrastructureRoot) target));
 					} else {
 						try {
-							CDAUtil.saveSnippet((InfrastructureRoot) target, System.out);
+							CDAValidationTest.saveTestSnippet((InfrastructureRoot) target, System.out);
 						} catch (Exception e) {
 
 						}
@@ -664,7 +652,7 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 						xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) target));
 					} else {
 						try {
-							CDAUtil.saveSnippet((InfrastructureRoot) target, System.out);
+							CDAValidationTest.saveTestSnippet((InfrastructureRoot) target, System.out);
 						} catch (Exception e) {
 
 						}
@@ -727,7 +715,7 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 							try {
 								System.out.println();
 								System.out.println("Fail Snippet");
-								CDAUtil.saveSnippet((InfrastructureRoot) objectToTest, System.out);
+								CDAValidationTest.saveTestSnippet((InfrastructureRoot) objectToTest, System.out);
 								System.out.println();
 							} catch (Exception e) {
 
@@ -766,7 +754,7 @@ public abstract class CDAValidationTest extends RIMOperationTest {
 							try {
 								System.out.println();
 								System.out.println("Pass Snippet");
-								CDAUtil.saveSnippet((InfrastructureRoot) objectToTest, System.out);
+								CDAValidationTest.saveTestSnippet((InfrastructureRoot) objectToTest, System.out);
 								System.out.println();
 							} catch (Exception e) {
 

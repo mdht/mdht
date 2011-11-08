@@ -43,10 +43,10 @@ public class LevelThreeConformanceTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateLevelOneConformanceTemplateId() {
-		OperationsTestCase<LevelThreeConformance> validateLevelOneConformanceTemplateIdTestCase = new OperationsTestCase<LevelThreeConformance>(
+			OperationsTestCase<LevelThreeConformance> validateLevelOneConformanceTemplateIdTestCase = new OperationsTestCase<LevelThreeConformance>(
 			"validateLevelOneConformanceTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_LEVEL_ONE_CONFORMANCE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_LEVEL_ONE_CONFORMANCE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(LevelThreeConformance target) {
@@ -56,12 +56,44 @@ public class LevelThreeConformanceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(LevelThreeConformance target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return LevelThreeConformanceOperations.validateLevelOneConformanceTemplateId(
 					(LevelThreeConformance) objectToTest, diagnostician, map);
 			}
@@ -69,7 +101,7 @@ public class LevelThreeConformanceTest extends CDAValidationTest {
 		};
 
 		validateLevelOneConformanceTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	 * 
@@ -127,8 +159,8 @@ public class LevelThreeConformanceTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -137,7 +169,7 @@ public class LevelThreeConformanceTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

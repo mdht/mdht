@@ -18,6 +18,8 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
+import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct;
+import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProceduresSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
@@ -32,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection#validateProceduresSectionHasProcedureActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section Has Procedure Activity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection#validateProceduresSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection#validateProceduresSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProceduresSection#validateProceduresSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section Title</em>}</li>
@@ -43,6 +46,77 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  */
 
 public class ProceduresSectionTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateProceduresSectionHasProcedureActivity() {
+		OperationsTestCase<ProceduresSection> validateProceduresSectionHasProcedureActivityTestCase = new OperationsTestCase<ProceduresSection>(
+			"validateProceduresSectionHasProcedureActivity",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURES_SECTION_HAS_PROCEDURE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProceduresSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProceduresSection target) {
+
+			}
+
+			/*
+			 * (non-Javadoc)
+			 * 
+			 * @see org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.OperationsTestCase#addPassTests()
+			 */
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ProceduresSection target) {
+						target.init();
+
+						ProcedureActivityAct paa = CCDFactory.eINSTANCE.createProcedureActivityAct().init();
+
+						target.addAct(paa);
+
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ProceduresSection target) {
+						target.init();
+
+						ProcedureActivityObservation pao = CCDFactory.eINSTANCE.createProcedureActivityObservation().init();
+
+						target.addObservation(pao);
+
+					}
+
+				});
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProceduresSectionOperations.validateProceduresSectionHasProcedureActivity(
+					(ProceduresSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProceduresSectionHasProcedureActivityTestCase.doValidationTest();
+	}
 
 	/**
 	 * 

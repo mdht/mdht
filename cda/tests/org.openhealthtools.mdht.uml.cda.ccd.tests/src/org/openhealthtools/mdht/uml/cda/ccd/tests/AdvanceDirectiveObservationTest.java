@@ -43,9 +43,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#getAdvanceDirectiveStatusObservation() <em>Get Advance Directive Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#getAdvanceDirectiveReference() <em>Get Advance Directive Reference</em>}</li>
  * </ul>
  * </p>
  *
@@ -413,40 +411,6 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated NOT
-	*/
-	@Test
-	public void testValidateAdvanceDirectiveObservationAdvanceDirectiveReference() {
-		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationAdvanceDirectiveReferenceTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
-			"validateAdvanceDirectiveObservationAdvanceDirectiveReference",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_ADVANCE_DIRECTIVE_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AdvanceDirectiveObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AdvanceDirectiveObservation target) {
-				target.init();
-				target.addObservation(CCDFactory.eINSTANCE.createAdvanceDirectiveReference());
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationAdvanceDirectiveReference(
-					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAdvanceDirectiveObservationAdvanceDirectiveReferenceTestCase.doValidationTest();
-	}
-
-	/**
-	*
 	* @generated
 	*/
 	@Test
@@ -454,18 +418,6 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 		AdvanceDirectiveObservation target = objectFactory.create();
 		target.getAdvanceDirectiveStatusObservation();
-
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testGetAdvanceDirectiveReference() {
-
-		AdvanceDirectiveObservation target = objectFactory.create();
-		target.getAdvanceDirectiveReference();
 
 	}
 

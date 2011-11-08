@@ -44,10 +44,10 @@ public class ReasonForVisitSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateReasonForVisitSectionTemplateId() {
-		OperationsTestCase<ReasonForVisitSection> validateReasonForVisitSectionTemplateIdTestCase = new OperationsTestCase<ReasonForVisitSection>(
+			OperationsTestCase<ReasonForVisitSection> validateReasonForVisitSectionTemplateIdTestCase = new OperationsTestCase<ReasonForVisitSection>(
 			"validateReasonForVisitSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_VISIT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_VISIT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ReasonForVisitSection target) {
@@ -57,12 +57,44 @@ public class ReasonForVisitSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReasonForVisitSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ReasonForVisitSectionOperations.validateReasonForVisitSectionTemplateId(
 					(ReasonForVisitSection) objectToTest, diagnostician, map);
 			}
@@ -70,7 +102,7 @@ public class ReasonForVisitSectionTest extends CDAValidationTest {
 		};
 
 		validateReasonForVisitSectionTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	 * 
@@ -78,10 +110,10 @@ public class ReasonForVisitSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateReasonForVisitSectionCode() {
-		OperationsTestCase<ReasonForVisitSection> validateReasonForVisitSectionCodeTestCase = new OperationsTestCase<ReasonForVisitSection>(
+			OperationsTestCase<ReasonForVisitSection> validateReasonForVisitSectionCodeTestCase = new OperationsTestCase<ReasonForVisitSection>(
 			"validateReasonForVisitSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_VISIT_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_VISIT_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ReasonForVisitSection target) {
@@ -91,12 +123,44 @@ public class ReasonForVisitSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReasonForVisitSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ReasonForVisitSectionOperations.validateReasonForVisitSectionCode(
 					(ReasonForVisitSection) objectToTest, diagnostician, map);
 			}
@@ -104,7 +168,7 @@ public class ReasonForVisitSectionTest extends CDAValidationTest {
 		};
 
 		validateReasonForVisitSectionCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	 * 
@@ -162,8 +226,8 @@ public class ReasonForVisitSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -172,7 +236,7 @@ public class ReasonForVisitSectionTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 
