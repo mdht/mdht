@@ -41,6 +41,8 @@ import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public class ModelConsolidator {
+	public static final String SOURCE_CLASS_ANNOTATION = "org.openhealthtools.mdht.sourceClass";
+
 	private Package sourcePackage;
 
 	private Map<Classifier, List<Classifier>> sourceInheritance;
@@ -225,7 +227,7 @@ public class ModelConsolidator {
 
 	public void removeAllConsolidationAnnotations() {
 		for (Type type : consolPackage.getOwnedTypes()) {
-			EAnnotation annotation = type.getEAnnotation("sourceClass");
+			EAnnotation annotation = type.getEAnnotation(SOURCE_CLASS_ANNOTATION);
 			if (annotation != null) {
 				type.getEAnnotations().remove(annotation);
 			}
@@ -244,7 +246,7 @@ public class ModelConsolidator {
 
 		Class consolidatedClass = consolMapping.get(EcoreUtil.getURI(sourceClass).toString());
 		if (consolidatedClass == null) {
-			// if a more specific type defined in consol or source model, use it
+			// if a more specific type defined in flattened model, use it
 			consolidatedClass = findConsolSpecialization(sourceClass);
 
 			if (consolidatedClass == null) {
@@ -350,37 +352,37 @@ public class ModelConsolidator {
 		return allProperties;
 	}
 
-	protected void mergeInheritedProperties(Class sourceClass, Class umlClass) {
-		Class baseModelClass = getBaseModelClass(umlClass);
-		// List<Classifier> allParents = new ArrayList<Classifier>(sourceClass.allParents());
-		// allParents.add(0, sourceClass);
-		List<Classifier> allSourceParents = UMLUtil.getAllGeneralizations(sourceClass);
-		List<Classifier> allParents = UMLUtil.getAllGeneralizations(umlClass);
+	protected void mergeInheritedProperties(Class sourceClass, Class consolidatedClass) {
+		Class baseModelClass = getBaseModelClass(sourceClass);
+		List<Classifier> allConsolidatedParents = UMLUtil.getAllGeneralizations(consolidatedClass);
 
 		Class consolidationStop = null;
 		// umlClass.getGeneralizations().clear();
-		for (Classifier classifier : allParents) {
-			if (!isIncludeBaseModel() && isBaseModel(classifier)) {
+		for (Classifier consolParent : allConsolidatedParents) {
+			if (!isIncludeBaseModel() && isBaseModel(consolParent)) {
 				break;
 			}
-			Class consolClass = consolMapping.get(EcoreUtil.getURI(classifier).toString());
-			if (consolClass != null && consolClass != umlClass) {
-				// umlClass.createGeneralization(consolClass);
-				consolidationStop = consolClass;
+
+			// Does a parent class exist in consolidated model? If so, retain that generalization
+			Class parentConsolClass = consolMapping.get(EcoreUtil.getURI(consolParent).toString());
+			if (parentConsolClass != null && parentConsolClass != consolidatedClass) {
+				consolidationStop = parentConsolClass;
 				break;
 			}
-			Class consolSpecial = findConsolSpecialization((Class) classifier);
-			if (consolSpecial != null && consolClass != umlClass) {
-				// umlClass.createGeneralization(consolSpecial);
-				consolidationStop = consolSpecial;
+
+			// Does a specialization of the parent class exist in consolidated model? If so, retain that generalization
+			Class consolSpecial = findConsolSpecialization((Class) consolParent);
+			if (consolSpecial != null && consolSpecial != consolidatedClass) {
+				// TODO problems with multiple subclasses in template models
+				// consolidationStop = consolSpecial;
 				break;
 			}
 		}
 
 		List<Classifier> consolidatedParents = getConsolidatedGeneralizations(
-			umlClass, getConsolSource(consolidationStop));
+			consolidatedClass, getConsolSource(consolidationStop));
 
-		List<Property> allProperties = getAllProperties(umlClass);
+		List<Property> allProperties = getAllProperties(consolidatedClass);
 		List<Property> allAttributes = new ArrayList<Property>();
 		List<Constraint> allConstraints = new ArrayList<Constraint>();
 
@@ -406,14 +408,14 @@ public class ModelConsolidator {
 		// XML attributes
 		for (Property property : allAttributes) {
 			Property mergedProperty = null;
-			if (umlClass.getOwnedAttributes().contains(property)) {
+			if (consolidatedClass.getOwnedAttributes().contains(property)) {
 				mergedProperty = property;
 				// remove and re-add for correct sort order
-				umlClass.getOwnedAttributes().remove(property);
-				umlClass.getOwnedAttributes().add(property);
+				consolidatedClass.getOwnedAttributes().remove(property);
+				consolidatedClass.getOwnedAttributes().add(property);
 			} else {
 				mergedProperty = EcoreUtil.copy(property);
-				umlClass.getOwnedAttributes().add(mergedProperty);
+				consolidatedClass.getOwnedAttributes().add(mergedProperty);
 				UMLUtil.cloneStereotypes(property, mergedProperty);
 			}
 
@@ -427,15 +429,15 @@ public class ModelConsolidator {
 		for (Property property : allProperties) {
 			Property mergedProperty = null;
 
-			if (umlClass.getOwnedAttributes().contains(property)) {
+			if (consolidatedClass.getOwnedAttributes().contains(property)) {
 				mergedProperty = property;
 				// remove and re-add for correct sort order
-				umlClass.getOwnedAttributes().remove(property);
-				umlClass.getOwnedAttributes().add(mergedProperty);
+				consolidatedClass.getOwnedAttributes().remove(property);
+				consolidatedClass.getOwnedAttributes().add(mergedProperty);
 			} else {
 				mergedProperty = EcoreUtil.copy(property);
 				// must be added to model before applying stereotypes
-				umlClass.getOwnedAttributes().add(mergedProperty);
+				consolidatedClass.getOwnedAttributes().add(mergedProperty);
 				UMLUtil.cloneStereotypes(property, mergedProperty);
 			}
 
@@ -469,12 +471,12 @@ public class ModelConsolidator {
 
 					mergedProperty.setType(consolType);
 
-					if (property.getAssociation().getNearestPackage() != umlClass.getNearestPackage()) {
-						Association assocClone = (Association) umlClass.getNearestPackage().createOwnedType(
+					if (property.getAssociation().getNearestPackage() != consolidatedClass.getNearestPackage()) {
+						Association assocClone = (Association) consolidatedClass.getNearestPackage().createOwnedType(
 							null, UMLPackage.Literals.ASSOCIATION);
 						assocClone.getMemberEnds().add(mergedProperty);
 						Property ownedEnd = UMLFactory.eINSTANCE.createProperty();
-						ownedEnd.setType(umlClass);
+						ownedEnd.setType(consolidatedClass);
 						assocClone.getOwnedEnds().add(ownedEnd);
 
 						UMLUtil.cloneStereotypes(property.getAssociation(), assocClone);
@@ -485,13 +487,13 @@ public class ModelConsolidator {
 
 		// Constraints
 		for (Constraint constraint : allConstraints) {
-			if (umlClass.getOwnedRules().contains(constraint)) {
+			if (consolidatedClass.getOwnedRules().contains(constraint)) {
 				// remove and re-add for correct sort order
-				umlClass.getOwnedRules().remove(constraint);
-				umlClass.getOwnedRules().add(constraint);
+				consolidatedClass.getOwnedRules().remove(constraint);
+				consolidatedClass.getOwnedRules().add(constraint);
 			} else {
 				Constraint clone = EcoreUtil.copy(constraint);
-				umlClass.getOwnedRules().add(clone);
+				consolidatedClass.getOwnedRules().add(clone);
 				UMLUtil.cloneStereotypes(constraint, clone);
 
 				// remove constrainedElement to parent class model
@@ -500,8 +502,8 @@ public class ModelConsolidator {
 		}
 
 		// Comments
-		List<Comment> currentComments = new ArrayList<Comment>(umlClass.getOwnedComments());
-		umlClass.getOwnedComments().clear();
+		List<Comment> currentComments = new ArrayList<Comment>(consolidatedClass.getOwnedComments());
+		consolidatedClass.getOwnedComments().clear();
 
 		// use i>0 to omit the consolidated class
 		for (int i = consolidatedParents.size() - 1; i > 0; i--) {
@@ -510,44 +512,46 @@ public class ModelConsolidator {
 
 			for (Comment comment : comments) {
 				Comment clone = EcoreUtil.copy(comment);
-				umlClass.getOwnedComments().add(clone);
+				consolidatedClass.getOwnedComments().add(clone);
 				UMLUtil.cloneStereotypes(comment, clone);
 			}
 		}
-		umlClass.getOwnedComments().addAll(currentComments);
+		consolidatedClass.getOwnedComments().addAll(currentComments);
 
 		// consolidated comments may refer to consolidated parent class
-		for (Comment comment : umlClass.getOwnedComments()) {
+		for (Comment comment : consolidatedClass.getOwnedComments()) {
 			comment.getAnnotatedElements().clear();
-			comment.getAnnotatedElements().add(umlClass);
+			comment.getAnnotatedElements().add(consolidatedClass);
 		}
 
 		// update generalizations
 		// remove non-consolidated superclasses
-		umlClass.getGeneralizations().clear();
+		consolidatedClass.getGeneralizations().clear();
 		if (!isIncludeBaseModel() && consolidationStop != null) {
-			umlClass.createGeneralization(consolidationStop);
+			// TODO for now, omit all generalization within consolidated model
+			consolidatedClass.createGeneralization(consolidationStop);
 		}
-		if (!isIncludeBaseModel() && umlClass.getGeneralizations().isEmpty() && baseModelClass != null) {
-			umlClass.createGeneralization(baseModelClass);
+		if (!isIncludeBaseModel() && baseModelClass != null && consolidatedClass.getGeneralizations().isEmpty()) {
+			consolidatedClass.createGeneralization(baseModelClass);
 		}
 
 		if (isIncludeBaseModel()) {
-			List<Substitution> substitutions = new ArrayList<Substitution>(umlClass.getSubstitutions());
+			List<Substitution> substitutions = new ArrayList<Substitution>(consolidatedClass.getSubstitutions());
 			for (Substitution subst : substitutions) {
 				subst.destroy();
 			}
-			umlClass.createSubstitution(null, baseModelClass);
+			consolidatedClass.createSubstitution(null, baseModelClass);
 
 		} else {
 			// add Substitition for all source model generalizations
 			Set<Class> substitutions = new HashSet<Class>();
+			List<Classifier> allSourceParents = UMLUtil.getAllGeneralizations(sourceClass);
 			for (int i = allSourceParents.size() - 1; i >= 0; i--) {
 				Class parent = (Class) allSourceParents.get(i);
 				if ((isIncludeBaseModel() || (!isReferenceModel(parent) && !isBaseModel(parent))) &&
 						!substitutions.contains(parent)) {
 					// add Substitution
-					umlClass.createSubstitution(null, parent);
+					// consolidatedClass.createSubstitution(null, parent);
 					substitutions.add(parent);
 				}
 			}
@@ -558,7 +562,7 @@ public class ModelConsolidator {
 	protected void mapExistingConsolidation() {
 		for (Type consolType : consolPackage.getOwnedTypes()) {
 			if (consolType instanceof Class) {
-				EAnnotation annotation = consolType.getEAnnotation("sourceClass");
+				EAnnotation annotation = consolType.getEAnnotation(SOURCE_CLASS_ANNOTATION);
 				if (annotation != null && !annotation.getReferences().isEmpty()) {
 					for (EObject reference : annotation.getReferences()) {
 						if (reference instanceof Class) {
@@ -570,20 +574,22 @@ public class ModelConsolidator {
 		}
 	}
 
-	protected Class copyToConsolPackage(Class umlClass) {
-		Class mappedClass = consolMapping.get(EcoreUtil.getURI(umlClass).toString());
+	protected Class copyToConsolPackage(Class sourceClass) {
+		Class mappedClass = consolMapping.get(EcoreUtil.getURI(sourceClass).toString());
 		if (mappedClass == null) {
-			mappedClass = EcoreUtil.copy(umlClass);
+			mappedClass = EcoreUtil.copy(sourceClass);
 			consolPackage.getOwnedTypes().add(mappedClass);
-			UMLUtil.cloneStereotypes(umlClass, mappedClass);
-			consolMapping.put(EcoreUtil.getURI(umlClass).toString(), mappedClass);
+			UMLUtil.cloneStereotypes(sourceClass, mappedClass);
 
-			if (!umlClass.getQualifiedName().equals(mappedClass.getQualifiedName())) {
-				qnameMapping.put(umlClass.getQualifiedName(), mappedClass.getQualifiedName());
+			consolMapping.put(EcoreUtil.getURI(sourceClass).toString(), mappedClass);
+			consolInheritance.put(mappedClass, UMLUtil.getAllGeneralizations(sourceClass));
+
+			if (!sourceClass.getQualifiedName().equals(mappedClass.getQualifiedName())) {
+				qnameMapping.put(sourceClass.getQualifiedName(), mappedClass.getQualifiedName());
 				// System.out.println("mapping: " + umlClass.getQualifiedName() + " -> " + mappedClass.getQualifiedName());
 
 				// also map all superclass types to the consolidated class
-				List<Classifier> allParents = UMLUtil.getAllGeneralizations(umlClass);
+				List<Classifier> allParents = UMLUtil.getAllGeneralizations(sourceClass);
 				for (Classifier classifier : allParents) {
 					if (!isBaseModel(classifier) && !isReferenceModel(classifier) &&
 							qnameMapping.get(classifier.getQualifiedName()) == null) {
@@ -596,11 +602,11 @@ public class ModelConsolidator {
 
 			// add Ecore annotation with source UML class reference
 			EAnnotation sourceAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
-			sourceAnnotation.setSource("sourceClass");
-			sourceAnnotation.getReferences().add(umlClass);
+			sourceAnnotation.setSource(SOURCE_CLASS_ANNOTATION);
+			sourceAnnotation.getReferences().add(sourceClass);
 			mappedClass.getEAnnotations().add(sourceAnnotation);
 
-			for (Property property : umlClass.getOwnedAttributes()) {
+			for (Property property : sourceClass.getOwnedAttributes()) {
 				if (property.getAssociation() != null) {
 					Property mappedProperty = mappedClass.getOwnedAttribute(property.getName(), property.getType());
 					if (mappedProperty == null) {
@@ -627,11 +633,11 @@ public class ModelConsolidator {
 	 * Stop when reaching a previously consolidated class.
 	 * TODO: doesn't support multiple inheritance
 	 */
-	protected List<Classifier> getConsolidatedGeneralizations(Classifier classifier, Class consolidationStop) {
+	protected List<Classifier> getConsolidatedGeneralizations(Classifier consolidatedClass, Class consolidationStop) {
 		List<Classifier> parents = new ArrayList<Classifier>();
-		parents.add(classifier);
+		parents.add(consolidatedClass);
 
-		for (Classifier parent : classifier.getGenerals()) {
+		for (Classifier parent : consolidatedClass.getGenerals()) {
 			Class special = findConsolSpecialization((Class) parent);
 			if (special != null) {
 				special = getConsolSource(special);
@@ -669,7 +675,7 @@ public class ModelConsolidator {
 	}
 
 	private void mapConsolInheritance(Class umlClass, Map<Classifier, List<Classifier>> map) {
-		EAnnotation annotation = umlClass.getEAnnotation("sourceClass");
+		EAnnotation annotation = umlClass.getEAnnotation(SOURCE_CLASS_ANNOTATION);
 		if (annotation != null && !annotation.getReferences().isEmpty()) {
 			for (EObject reference : annotation.getReferences()) {
 				if (reference instanceof Class) {
@@ -679,9 +685,9 @@ public class ModelConsolidator {
 		}
 	}
 
-	protected Class getConsolSource(Class umlClass) {
-		if (umlClass != null) {
-			EAnnotation annotation = umlClass.getEAnnotation("sourceClass");
+	protected Class getConsolSource(Class consolidatedClass) {
+		if (consolidatedClass != null) {
+			EAnnotation annotation = consolidatedClass.getEAnnotation(SOURCE_CLASS_ANNOTATION);
 			if (annotation != null && !annotation.getReferences().isEmpty()) {
 				for (EObject reference : annotation.getReferences()) {
 					if (reference instanceof Class) {
