@@ -828,12 +828,15 @@ public class UMLUtil {
 		Package firstPackage = UMLUtil.getTopPackage(first);
 		Package secondPackage = UMLUtil.getTopPackage(second);
 
-		if (firstPackage == null || secondPackage == null) {
-			return first.eResource().getURI().equals(second.eResource().getURI());
-		} else {
+		if (firstPackage != null || secondPackage != null) {
 			// return firstPackage.equals(secondPackage) || firstPackage.getImportedElements().contains(second);
 			return firstPackage.equals(secondPackage);
+
+		} else if (first.eResource() != null && second.eResource() != null) {
+			return first.eResource().getURI().equals(second.eResource().getURI());
 		}
+
+		return false;
 	}
 
 	public static boolean isSameProject(Element first, Element second) {
