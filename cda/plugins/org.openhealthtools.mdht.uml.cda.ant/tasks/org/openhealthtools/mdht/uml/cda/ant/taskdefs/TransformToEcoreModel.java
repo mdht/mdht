@@ -69,7 +69,8 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		Package defaultModel = getHL7ModelingTask().getDefaultModel();
 		Resource umlResource = defaultModel.eResource();
 
-		Map<String, String> parsedProperties = resolveAndLoadFragments(umlResource);
+		Map<String, String> parsedProperties = aggregateFragmentProperties(umlResource);
+		collapseFragments(umlResource);
 
 		URI ecoreModelURI = null;
 		if (ecoreModelPath != null) {

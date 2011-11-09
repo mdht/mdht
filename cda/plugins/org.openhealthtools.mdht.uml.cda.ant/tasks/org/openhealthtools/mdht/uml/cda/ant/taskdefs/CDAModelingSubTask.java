@@ -150,7 +150,7 @@ public abstract class CDAModelingSubTask extends Task {
 		return qname.toString();
 	}
 
-	protected Map<String, String> resolveAndLoadFragments(Resource umlResource) {
+	protected Map<String, String> aggregateFragmentProperties(Resource umlResource) {
 		URI propertiesURI = UMLUtil.getPropertiesURI(umlResource);
 		String properties = UMLUtil.readProperties(propertiesURI);
 		Map<String, String> parsedProperties = properties != null
@@ -159,8 +159,6 @@ public abstract class CDAModelingSubTask extends Task {
 
 		EcoreUtil.resolveAll(umlResource.getResourceSet());
 
-		EList<EObject> umlResourceContents = umlResource.getContents();
-
 		for (Resource controlledResource : UMLUtil.getControlledResources(umlResource)) {
 			URI controlledPropertiesURI = UMLUtil.getPropertiesURI(controlledResource);
 			String controlledProperties = UMLUtil.readProperties(controlledPropertiesURI);
@@ -168,6 +166,16 @@ public abstract class CDAModelingSubTask extends Task {
 			if (controlledProperties != null) {
 				parsedProperties.putAll(UMLUtil.parseProperties(controlledProperties));
 			}
+		}
+
+		return parsedProperties;
+	}
+
+	protected void collapseFragments(Resource umlResource) {
+		EcoreUtil.resolveAll(umlResource.getResourceSet());
+
+		for (Resource controlledResource : UMLUtil.getControlledResources(umlResource)) {
+			EList<EObject> umlResourceContents = umlResource.getContents();
 
 			for (ListIterator<EObject> contents = controlledResource.getContents().listIterator(); contents.hasNext();) {
 				EObject next = contents.next();
@@ -179,8 +187,6 @@ public abstract class CDAModelingSubTask extends Task {
 				}
 			}
 		}
-
-		return parsedProperties;
 	}
 
 	protected void processModelElements(AbstractTransformer transformer) {

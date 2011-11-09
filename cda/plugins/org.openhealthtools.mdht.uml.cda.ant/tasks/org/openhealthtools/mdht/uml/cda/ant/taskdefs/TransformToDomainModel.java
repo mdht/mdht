@@ -103,7 +103,7 @@ public class TransformToDomainModel extends CDAModelingSubTask {
 	private void transformToUML(IProgressMonitor monitor) {
 		Package defaultModel = getHL7ModelingTask().getDefaultModel();
 		Resource umlResource = defaultModel.eResource();
-		resolveAndLoadFragments(umlResource);
+		collapseFragments(umlResource);
 
 		URI domainModelURI = null;
 		if (domainModelPath != null) {

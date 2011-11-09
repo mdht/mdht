@@ -21,6 +21,7 @@ import org.apache.tools.ant.Project;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl;
 import org.eclipse.uml2.uml.Package;
 import org.openhealthtools.mdht.uml.cda.transform.FlattenTransformer;
 import org.openhealthtools.mdht.uml.cda.transform.TransformerOptions;
@@ -75,7 +76,7 @@ public class FlattenModel extends CDAModelingSubTask {
 	private void transformToUML(IProgressMonitor monitor) {
 		Package defaultModel = getHL7ModelingTask().getDefaultModel();
 		Resource umlResource = defaultModel.eResource();
-		Map<String, String> parsedProperties = resolveAndLoadFragments(umlResource);
+		Map<String, String> parsedProperties = aggregateFragmentProperties(umlResource);
 
 		URI outputModelURI = null;
 		if (outputModelPath != null) {
@@ -111,16 +112,21 @@ public class FlattenModel extends CDAModelingSubTask {
 			options.setUseBusinessNames(useBusinessNames);
 		}
 
-		monitor.setTaskName("Generating flattened model (includeBaseModel = " + includeBaseModel + ")");
-		logInfo("Generating flattened model...");
+		monitor.setTaskName("Generating flattened model");
+		logInfo("Generating flattened model (includeBaseModel = " + includeBaseModel + ")...");
 
 		FlattenTransformer transformer = new FlattenTransformer(options);
 		transformer.initialize(defaultModel);
 
 		// write out copied properties before transform so that 'filter' keywords may be added
 		if (!parsedProperties.isEmpty()) {
-			UMLUtil.writeProperties(
-				UMLUtil.getPropertiesURI(transformer.getFlattenedPackage().eResource()), parsedProperties);
+			URI propertiesURI = UMLUtil.getPropertiesURI(transformer.getFlattenedPackage().eResource());
+
+			// don't overwrite properties file if it already exists
+			if (!new ExtensibleURIConverterImpl().exists(propertiesURI, null)) {
+				logInfo("Saving properties file: " + propertiesURI);
+				UMLUtil.writeProperties(propertiesURI, parsedProperties);
+			}
 		}
 
 		processModelElements(transformer);
