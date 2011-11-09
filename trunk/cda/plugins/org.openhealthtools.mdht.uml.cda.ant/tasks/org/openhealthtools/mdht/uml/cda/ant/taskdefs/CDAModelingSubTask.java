@@ -12,6 +12,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ant.taskdefs;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -185,17 +186,26 @@ public abstract class CDAModelingSubTask extends Task {
 	protected void processModelElements(AbstractTransformer transformer) {
 		// process modelElement types first
 		for (ModelElement modelElement : getHL7ModelingTask().getModelElements()) {
+			String qname = modelElement.getQname();
 			Collection<NamedElement> umlElements = org.eclipse.uml2.uml.util.UMLUtil.findNamedElements(
-				getHL7ModelingTask().getResourceSet(), modelElement.getQname());
+				getHL7ModelingTask().getResourceSet(), qname);
 
-			if (umlElements.size() > 1) {
-				logWarning("Found " + umlElements.size() + " matches for: '" + modelElement.getQname() + "'");
+			// do not include packageImport elements
+			Collection<NamedElement> exactMatches = new ArrayList<NamedElement>();
+			for (NamedElement namedElement : umlElements) {
+				if (qname.equals(namedElement.getQualifiedName())) {
+					exactMatches.add(namedElement);
+				}
 			}
 
-			if (umlElements.isEmpty()) {
+			if (exactMatches.size() > 1) {
+				logWarning("Found " + exactMatches.size() + " matches for: '" + qname + "'");
+			}
+
+			if (exactMatches.isEmpty()) {
 				logError("Model element not found: '" + modelElement.getQname() + "'");
 			} else {
-				for (NamedElement namedElement : umlElements) {
+				for (NamedElement namedElement : exactMatches) {
 					logInfo("Model element processed: '" + namedElement.getQualifiedName() + "'");
 					transformer.transformModelElement(namedElement);
 				}
