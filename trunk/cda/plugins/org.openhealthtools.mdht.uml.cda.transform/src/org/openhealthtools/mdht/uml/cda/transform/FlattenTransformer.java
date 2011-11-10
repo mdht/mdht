@@ -85,7 +85,7 @@ public class FlattenTransformer extends AbstractTransformer {
 	@Override
 	public void saveResources() {
 		// remove EAnnotations used during consolidation
-		// consolidator.removeAllConsolidationAnnotations();
+		consolidator.removeAllConsolidationAnnotations();
 
 		// replace qualified class names in OCL expressions
 		consolidator.renameReferencesInOCL();
