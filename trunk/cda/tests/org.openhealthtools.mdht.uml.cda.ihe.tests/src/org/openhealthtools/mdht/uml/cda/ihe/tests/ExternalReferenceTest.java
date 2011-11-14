@@ -26,7 +26,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
-import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassDocument;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
 import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
@@ -257,7 +256,7 @@ public class ExternalReferenceTest extends CDAValidationTest {
 				ExternalDocument extdoc = CDAFactory.eINSTANCE.createExternalDocument();
 				extdoc.setClassCode(ActClassDocument.DOC);
 				ED text = DatatypesFactory.eINSTANCE.createED("string");
-				extdoc.setText(text);
+				// extdoc.setText(text);
 				ref.setExternalDocument(extdoc);
 				target.getReferences().add(ref);
 			}
@@ -266,8 +265,8 @@ public class ExternalReferenceTest extends CDAValidationTest {
 			protected void updateToPass(ExternalReference target) {
 				for (Reference ref : target.getReferences()) {
 
-					TEL tel = DatatypesFactory.eINSTANCE.createTEL();
-					ref.getExternalDocument().getText().setReference(tel);
+					ED text = DatatypesFactory.eINSTANCE.createED("string");
+					ref.getExternalDocument().setText(text);
 				}
 			}
 
