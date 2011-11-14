@@ -757,11 +757,11 @@ public class UMLUtil {
 	 */
 	public static String getUniqueNestedClassifierName(Class owner, String name) {
 		int seqNo = 1;
-		String uniqueName;
+		String uniqueName = name;
 
-		do {
+		while (null != owner.getNestedClassifier(uniqueName)) {
 			uniqueName = name + String.valueOf(seqNo++);
-		} while (null != owner.getNestedClassifier(uniqueName));
+		}
 
 		return uniqueName;
 	}
@@ -771,11 +771,11 @@ public class UMLUtil {
 	 */
 	public static String getUniqueTypeName(Package owner, String name) {
 		int seqNo = 1;
-		String uniqueName;
+		String uniqueName = name;
 
-		do {
+		while (null != owner.getOwnedType(uniqueName)) {
 			uniqueName = name + String.valueOf(seqNo++);
-		} while (null != owner.getOwnedType(uniqueName));
+		}
 
 		return uniqueName;
 	}
