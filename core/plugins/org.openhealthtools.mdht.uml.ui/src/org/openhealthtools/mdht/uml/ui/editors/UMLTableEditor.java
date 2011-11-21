@@ -274,8 +274,10 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 				// TODO only if affectedResources includes at least one of this editor's saveables
 				ISaveablesLifecycleListener saveablesListener = (ISaveablesLifecycleListener) getEditorSite().getService(
 					ISaveablesLifecycleListener.class);
-				saveablesListener.handleLifecycleEvent(new SaveablesLifecycleEvent(
-					UMLTableEditor.this, PROP_DIRTY, getSaveables(), false));
+				if (saveablesListener != null) {
+					saveablesListener.handleLifecycleEvent(new SaveablesLifecycleEvent(
+						UMLTableEditor.this, PROP_DIRTY, getSaveables(), false));
+				}
 
 				getSite().getShell().getDisplay().asyncExec(new Runnable() {
 					public void run() {
