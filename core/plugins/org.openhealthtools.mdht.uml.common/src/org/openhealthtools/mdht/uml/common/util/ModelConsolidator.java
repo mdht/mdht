@@ -357,10 +357,9 @@ public class ModelConsolidator {
 		List<Classifier> allConsolidatedParents = UMLUtil.getAllGeneralizations(consolidatedClass);
 
 		Class consolidationStop = null;
-		// umlClass.getGeneralizations().clear();
 		for (Classifier consolParent : allConsolidatedParents) {
-			if (!isIncludeBaseModel() && isBaseModel(consolParent)) {
-				break;
+			if (!isIncludeBaseModel() && (isBaseModel(consolParent) || isReferenceModel(consolParent))) {
+				continue;
 			}
 
 			// Does a parent class exist in consolidated model? If so, retain that generalization
@@ -375,14 +374,14 @@ public class ModelConsolidator {
 			if (consolSpecial != null && consolSpecial != consolidatedClass) {
 				// TODO problems with multiple subclasses in template models
 				// consolidationStop = consolSpecial;
-				break;
+				// break;
 			}
 		}
 
 		List<Classifier> consolidatedParents = getConsolidatedGeneralizations(
 			consolidatedClass, getConsolSource(consolidationStop));
 
-		List<Property> allProperties = getAllProperties(consolidatedClass);
+		List<Property> allProperties = getAllProperties(consolidatedClass, consolidationStop);
 		List<Property> allAttributes = new ArrayList<Property>();
 		List<Constraint> allConstraints = new ArrayList<Constraint>();
 
@@ -528,7 +527,6 @@ public class ModelConsolidator {
 		// remove non-consolidated superclasses
 		consolidatedClass.getGeneralizations().clear();
 		if (!isIncludeBaseModel() && consolidationStop != null) {
-			// TODO for now, omit all generalization within consolidated model
 			consolidatedClass.createGeneralization(consolidationStop);
 		}
 		if (!isIncludeBaseModel() && baseModelClass != null && consolidatedClass.getGeneralizations().isEmpty()) {
