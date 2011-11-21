@@ -7,6 +7,7 @@
 package org.openhealthtools.mdht.uml.cda.ccd.tests;
 
 import junit.framework.JUnit4TestAdapter;
+
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -25,10 +26,11 @@ import org.junit.runners.Suite;
 		ReactionObservationTest.class, SeverityObservationTest.class, ProductInstanceTest.class,
 		SupplyActivityTest.class, FulfillmentInstructionTest.class, ContinuityOfCareDocumentTest.class,
 		ProblemSectionTest.class, ProblemActTest.class, EpisodeObservationTest.class, FamilyHistorySectionTest.class,
-		FamilyHistoryOrganizerTest.class, FamilyHistoryObservationTest.class, AgeObservationTest.class,
-		ProblemStatusObservationTest.class, CauseOfDeathObservationTest.class, SocialHistorySectionTest.class,
-		SocialHistoryObservationTest.class, SocialHistoryStatusObservationTest.class, AlertsSectionTest.class,
-		ResultsSectionTest.class, ResultOrganizerTest.class, ResultObservationTest.class, ProceduresSectionTest.class,
+		FamilyHistoryOrganizerTest.class, FamilyHistoryObservationTest.class,
+		FamilyHistoryCauseOfDeathObservationTest.class, AgeObservationTest.class, ProblemStatusObservationTest.class,
+		CauseOfDeathObservationTest.class, SocialHistorySectionTest.class, SocialHistoryObservationTest.class,
+		SocialHistoryStatusObservationTest.class, AlertsSectionTest.class, ResultsSectionTest.class,
+		ResultOrganizerTest.class, ResultObservationTest.class, ProceduresSectionTest.class,
 		EncountersSectionTest.class, EncountersActivityTest.class, PlanOfCareSectionTest.class,
 		PlanOfCareActivityActTest.class, PlanOfCareActivityEncounterTest.class,
 		PlanOfCareActivityObservationTest.class, PlanOfCareActivityProcedureTest.class,

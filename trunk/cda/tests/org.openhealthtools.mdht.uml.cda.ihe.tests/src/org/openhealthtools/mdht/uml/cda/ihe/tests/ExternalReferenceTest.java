@@ -255,7 +255,7 @@ public class ExternalReferenceTest extends CDAValidationTest {
 				ref.setTypeCode(x_ActRelationshipExternalReference.SPRT);
 				ExternalDocument extdoc = CDAFactory.eINSTANCE.createExternalDocument();
 				extdoc.setClassCode(ActClassDocument.DOC);
-				ED text = DatatypesFactory.eINSTANCE.createED("string");
+				DatatypesFactory.eINSTANCE.createED("string");
 				// extdoc.setText(text);
 				ref.setExternalDocument(extdoc);
 				target.getReferences().add(ref);

@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.ccd.CoverageActivity;
+import org.openhealthtools.mdht.uml.cda.ccd.operations.CoverageActivityOperations;
 import org.openhealthtools.mdht.uml.cda.ihe.CoverageEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.CoverageEntryOperations;
@@ -111,6 +113,40 @@ public class CoverageEntryTest extends CDAValidationTest {
 		};
 
 		validateCoverageEntryPayerEntryTestCase.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated NOT
+	 */
+	@Test
+	public void testValidateCoverageActivityMoodCode() {
+		OperationsTestCase<CoverageActivity> validateCoverageActivityMoodCodeTestCase = new OperationsTestCase<CoverageActivity>(
+			"validateCoverageActivityMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CoverageActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(CoverageActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CoverageActivityOperations.validateCoverageActivityMoodCode(
+					(CoverageActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCoverageActivityMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

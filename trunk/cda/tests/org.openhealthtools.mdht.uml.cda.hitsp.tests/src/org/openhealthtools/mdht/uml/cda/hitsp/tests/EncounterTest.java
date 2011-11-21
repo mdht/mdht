@@ -58,19 +58,30 @@ public class EncounterTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(Encounter target) {
 
-			}
-
-			@Override
-			protected void updateToPass(Encounter target) {
 				target.init();
 				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
 				par.setTypeCode(ParticipationType.ORG);
 				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
-				CE code = DatatypesFactory.eINSTANCE.createCE();
-				code.setCodeSystem("2.16.840.1.113883.3.88.12.80.33");
-				pr.setCode(code);
+
 				par.setParticipantRole(pr);
 				target.getParticipants().add(par);
+
+			}
+
+			@Override
+			protected void updateToPass(Encounter target) {
+
+				for (Participant2 par : target.getParticipants())
+
+				{
+
+					CE code = DatatypesFactory.eINSTANCE.createCE();
+					code.setCodeSystem("2.16.840.1.113883.3.88.12.80.33");
+
+					par.getParticipantRole().setCode(code);
+
+				}
+
 			}
 
 			@Override

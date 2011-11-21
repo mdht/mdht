@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.ParticipantRole;
 import org.openhealthtools.mdht.uml.cda.PlayingEntity;
@@ -26,6 +27,7 @@ import org.openhealthtools.mdht.uml.cda.ccd.SeverityObservation;
 import org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.AllergyDrugSensitivityOperations;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
@@ -43,9 +45,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity#validateAllergyDrugSensitivityAdvereEventDate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Drug Sensitivity Advere Event Date</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity#validateAllergyDrugSensitivityAdvereEventType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Drug Sensitivity Advere Event Type</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity#validateAllergyDrugSensitivityAdvereEventTypeVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Drug Sensitivity Advere Event Type Vocab</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity#validateAllergyDrugSensitivityAdverseEventDate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Drug Sensitivity Adverse Event Date</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity#validateAllergyDrugSensitivityAdverseEventType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Drug Sensitivity Adverse Event Type</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity#validateAllergyDrugSensitivityAdverseEventTypeVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Drug Sensitivity Adverse Event Type Vocab</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity#validateAllergyDrugSensitivityAllergyProduct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Drug Sensitivity Allergy Product</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity#validateAllergyDrugSensitivityAllergyProductTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Drug Sensitivity Allergy Product Type Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.AllergyDrugSensitivity#validateAllergyDrugSensitivityProductDetailParticipantRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Drug Sensitivity Product Detail Participant Role</em>}</li>
@@ -77,10 +79,10 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 	 * @generated NOT
 	 */
 	@Test
-	public void testValidateAllergyDrugSensitivityAdvereEventDate() {
-		OperationsTestCase<AllergyDrugSensitivity> validateAllergyDrugSensitivityAdvereEventDateTestCase = new OperationsTestCase<AllergyDrugSensitivity>(
-			"validateAllergyDrugSensitivityAdvereEventDate",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_DRUG_SENSITIVITY_ADVERE_EVENT_DATE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateAllergyDrugSensitivityAdverseEventDate() {
+		OperationsTestCase<AllergyDrugSensitivity> validateAllergyDrugSensitivityAdverseEventDateTestCase = new OperationsTestCase<AllergyDrugSensitivity>(
+			"validateAllergyDrugSensitivityAdverseEventDate",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_DRUG_SENSITIVITY_Adverse_EVENT_DATE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -99,13 +101,13 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AllergyDrugSensitivityOperations.validateAllergyDrugSensitivityAdvereEventDate(
+				return AllergyDrugSensitivityOperations.validateAllergyDrugSensitivityAdverseEventDate(
 					(AllergyDrugSensitivity) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateAllergyDrugSensitivityAdvereEventDateTestCase.doValidationTest();
+		validateAllergyDrugSensitivityAdverseEventDateTestCase.doValidationTest();
 	}
 
 	/**
@@ -113,10 +115,10 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 	 * @generated NOT
 	 */
 	@Test
-	public void testValidateAllergyDrugSensitivityAdvereEventType() {
-		OperationsTestCase<AllergyDrugSensitivity> validateAllergyDrugSensitivityAdvereEventTypeTestCase = new OperationsTestCase<AllergyDrugSensitivity>(
-			"validateAllergyDrugSensitivityAdvereEventType",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_DRUG_SENSITIVITY_ADVERE_EVENT_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateAllergyDrugSensitivityAdverseEventType() {
+		OperationsTestCase<AllergyDrugSensitivity> validateAllergyDrugSensitivityAdverseEventTypeTestCase = new OperationsTestCase<AllergyDrugSensitivity>(
+			"validateAllergyDrugSensitivityAdverseEventType",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_DRUG_SENSITIVITY_Adverse_EVENT_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -136,13 +138,13 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AllergyDrugSensitivityOperations.validateAllergyDrugSensitivityAdvereEventType(
+				return AllergyDrugSensitivityOperations.validateAllergyDrugSensitivityAdverseEventType(
 					(AllergyDrugSensitivity) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateAllergyDrugSensitivityAdvereEventTypeTestCase.doValidationTest();
+		validateAllergyDrugSensitivityAdverseEventTypeTestCase.doValidationTest();
 	}
 
 	/**
@@ -150,10 +152,10 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 	 * @generated NOT
 	 */
 	@Test
-	public void testValidateAllergyDrugSensitivityAdvereEventTypeVocab() {
-		OperationsTestCase<AllergyDrugSensitivity> validateAllergyDrugSensitivityAdvereEventTypeVocabTestCase = new OperationsTestCase<AllergyDrugSensitivity>(
-			"validateAllergyDrugSensitivityAdvereEventTypeVocab",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_DRUG_SENSITIVITY_ADVERE_EVENT_TYPE_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateAllergyDrugSensitivityAdverseEventTypeVocab() {
+		OperationsTestCase<AllergyDrugSensitivity> validateAllergyDrugSensitivityAdverseEventTypeVocabTestCase = new OperationsTestCase<AllergyDrugSensitivity>(
+			"validateAllergyDrugSensitivityAdverseEventTypeVocab",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_DRUG_SENSITIVITY_Adverse_EVENT_TYPE_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -175,13 +177,13 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AllergyDrugSensitivityOperations.validateAllergyDrugSensitivityAdvereEventTypeVocab(
+				return AllergyDrugSensitivityOperations.validateAllergyDrugSensitivityAdverseEventTypeVocab(
 					(AllergyDrugSensitivity) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateAllergyDrugSensitivityAdvereEventTypeVocabTestCase.doValidationTest();
+		validateAllergyDrugSensitivityAdverseEventTypeVocabTestCase.doValidationTest();
 	}
 
 	/**
@@ -586,7 +588,7 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
 				target.init();
-				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				Observation obs = IHEFactory.eINSTANCE.createAllergyIntolerance().init();
 				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
 				par.setTypeCode(ParticipationType.CSM);
 				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
@@ -594,7 +596,10 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
 				pe.setClassCode(EntityClassRoot.MMAT);
 				CE code = DatatypesFactory.eINSTANCE.createCE();
-				code.setCodeSystem("2.16.840.1.113883.3.26.1.5");
+				code.setCodeSystem("2.16.840.1.113883.6.88"); // "2.16.840.1.113883.3.26.1.5");
+				// code.setCode("1191");
+				// code.setDisplayName("Aspirin");
+				//
 				pe.setCode(code);
 				pr.setPlayingEntity(pe);
 				par.setParticipantRole(pr);
@@ -675,16 +680,27 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(AllergyDrugSensitivity target) {
 
+				target.init();
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation().init();
+				ReactionObservation ro = CCDFactory.eINSTANCE.createReactionObservation().init();
+
+				// ro.setText(DatatypesFactory.eINSTANCE.createED());
+				obs.addObservation(ro);
+				obs.addObservation(CCDFactory.eINSTANCE.createStatusObservation().init());
+				target.addObservation(obs);
+
 			}
 
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
-				target.init();
-				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
-				ReactionObservation ro = CCDFactory.eINSTANCE.createReactionObservation();
-				ro.setText(DatatypesFactory.eINSTANCE.createED());
-				obs.addObservation(ro);
-				target.addObservation(obs);
+
+				for (Observation observation : target.getObservations()) {
+					for (Observation observation2 : observation.getObservations()) {
+						observation2.setText(DatatypesFactory.eINSTANCE.createED("somecontent"));
+					}
+
+				}
+
 			}
 
 			@Override
