@@ -90,6 +90,8 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.ValueSpecification;
+import org.openhealthtools.mdht.uml.common.ui.saveable.ModelDocument;
+import org.openhealthtools.mdht.uml.common.ui.saveable.ModelManager;
 import org.openhealthtools.mdht.uml.common.ui.util.IResourceConstants;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
@@ -328,6 +330,12 @@ public class EditCommandsFactory implements IPropertyListener {
 
 					controlledElements.add((Element) eObject);
 
+					// mark the target resource dirty so it can be saved
+					ModelDocument targetDocument = ModelManager.getManager().manage(resource);
+					if (targetDocument != null) {
+						targetDocument.setDirty(true);
+					}
+
 					if (eObject instanceof org.eclipse.uml2.uml.Class) {
 
 						for (Property ownedAttribute : ((org.eclipse.uml2.uml.Class) eObject).getOwnedAttributes()) {
@@ -343,6 +351,11 @@ public class EditCommandsFactory implements IPropertyListener {
 					}
 
 					for (Element element : controlledElements) {
+						// mark all source resources dirty so that they can be saved
+						ModelDocument sourceDocument = ModelManager.getManager().manage(element.eResource());
+						if (sourceDocument != null) {
+							sourceDocument.setDirty(true);
+						}
 
 						for (EObject stereotypeApplication : element.getStereotypeApplications()) {
 							operation.add(new EMFCommandOperation(ted, new AddCommand(
@@ -450,6 +463,12 @@ public class EditCommandsFactory implements IPropertyListener {
 
 					uncontrolledElements.add((Element) eObject);
 
+					// mark the source resource dirty so it can be saved
+					ModelDocument sourceDocument = ModelManager.getManager().manage(eContainerResource);
+					if (sourceDocument != null) {
+						sourceDocument.setDirty(true);
+					}
+
 					if (eObject instanceof org.eclipse.uml2.uml.Class) {
 
 						for (Property ownedAttribute : ((org.eclipse.uml2.uml.Class) eObject).getOwnedAttributes()) {
@@ -467,6 +486,11 @@ public class EditCommandsFactory implements IPropertyListener {
 					EList<EObject> eContainerResourceContents = eContainerResource.getContents();
 
 					for (Element element : uncontrolledElements) {
+						// mark all target resources dirty so that they can be saved
+						ModelDocument targetDocument = ModelManager.getManager().manage(element.eResource());
+						if (targetDocument != null) {
+							targetDocument.setDirty(true);
+						}
 
 						for (EObject stereotypeApplication : element.getStereotypeApplications()) {
 							operation.add(new EMFCommandOperation(ted, new AddCommand(
