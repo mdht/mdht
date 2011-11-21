@@ -466,17 +466,25 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(Medication target) {
 
-			}
-
-			@Override
-			protected void updateToPass(Medication target) {
 				target.init();
 				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
 
 				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
-				p2.setTypeCode(ParticipationType.CSM);
+				// p2.setTypeCode(ParticipationType.CSM);
 				sa.getParticipants().add(p2);
 				target.addSubstanceAdministration(sa);
+			}
+
+			@Override
+			protected void updateToPass(Medication target) {
+
+				for (SubstanceAdministration sa : target.getSubstanceAdministrations()) {
+					for (Participant2 p2 : sa.getParticipants()) {
+						p2.setTypeCode(ParticipationType.CSM);
+					}
+
+				}
+
 			}
 
 			@Override
@@ -505,20 +513,29 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(Medication target) {
 
-			}
-
-			@Override
-			protected void updateToPass(Medication target) {
 				target.init();
 				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
 
 				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
 				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
-				p2.setTypeCode(ParticipationType.CSM);
-				pr.setClassCode(RoleClassRoot.MANU);
+				// p2.setTypeCode(ParticipationType.CSM);
+				// pr.setClassCode(RoleClassRoot.MANU);
 				p2.setParticipantRole(pr);
 				sa.getParticipants().add(p2);
 				target.addSubstanceAdministration(sa);
+
+			}
+
+			@Override
+			protected void updateToPass(Medication target) {
+
+				for (SubstanceAdministration sa : target.getSubstanceAdministrations()) {
+					for (Participant2 p2 : sa.getParticipants()) {
+						p2.setTypeCode(ParticipationType.CSM);
+						p2.getParticipantRole().setClassCode(RoleClassRoot.MANU);
+					}
+
+				}
 
 			}
 
@@ -548,24 +565,33 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(Medication target) {
 
-			}
-
-			@Override
-			protected void updateToPass(Medication target) {
 				target.init();
 				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
 
 				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
 				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
-				p2.setTypeCode(ParticipationType.CSM);
-				pr.setClassCode(RoleClassRoot.MANU);
-				CE code = DatatypesFactory.eINSTANCE.createCE();
-				code.setCode("412307009");
-				code.setCodeSystem("2.16.840.1.113883.6.96");
-				pr.setCode(code);
+
 				p2.setParticipantRole(pr);
 				sa.getParticipants().add(p2);
 				target.addSubstanceAdministration(sa);
+			}
+
+			@Override
+			protected void updateToPass(Medication target) {
+
+				for (SubstanceAdministration sa : target.getSubstanceAdministrations()) {
+					for (Participant2 p2 : sa.getParticipants()) {
+
+						p2.setTypeCode(ParticipationType.CSM);
+						p2.getParticipantRole().setClassCode(RoleClassRoot.MANU);
+						CE code = DatatypesFactory.eINSTANCE.createCE();
+						code.setCode("412307009");
+						code.setCodeSystem("2.16.840.1.113883.6.96");
+						p2.getParticipantRole().setCode(code);
+					}
+
+				}
+
 			}
 
 			@Override
@@ -594,10 +620,6 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(Medication target) {
 
-			}
-
-			@Override
-			protected void updateToPass(Medication target) {
 				target.init();
 				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
 
@@ -610,11 +632,25 @@ public class MedicationTest extends CDAValidationTest {
 				code.setCodeSystem("2.16.840.1.113883.6.96");
 				pr.setCode(code);
 				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
-				pe.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+
 				pr.setPlayingEntity(pe);
 				p2.setParticipantRole(pr);
 				sa.getParticipants().add(p2);
 				target.addSubstanceAdministration(sa);
+			}
+
+			@Override
+			protected void updateToPass(Medication target) {
+
+				for (SubstanceAdministration sa : target.getSubstanceAdministrations()) {
+					for (Participant2 p2 : sa.getParticipants()) {
+
+						p2.getParticipantRole().getPlayingEntity().getNames().add(DatatypesFactory.eINSTANCE.createPN());
+
+					}
+
+				}
+
 			}
 
 			@Override
@@ -643,10 +679,6 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(Medication target) {
 
-			}
-
-			@Override
-			protected void updateToPass(Medication target) {
 				target.init();
 				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
 				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
@@ -656,15 +688,29 @@ public class MedicationTest extends CDAValidationTest {
 				p2.setTypeCode(ParticipationType.CSM);
 				pr.setClassCode(RoleClassRoot.MANU);
 
-				CE ce = DatatypesFactory.eINSTANCE.createCE("412307009", "2.16.840.1.113883.6.96");
-				CE ce2 = DatatypesFactory.eINSTANCE.createCE("12345", "2.16.840.1.113883.3.88.12.80.21");
-				pr.setCode(ce);
-				pe.setCode(ce2);
-
 				pr.setPlayingEntity(pe);
 				p2.setParticipantRole(pr);
 				sa.getParticipants().add(p2);
 				target.addSubstanceAdministration(sa);
+
+			}
+
+			@Override
+			protected void updateToPass(Medication target) {
+
+				for (SubstanceAdministration sa : target.getSubstanceAdministrations()) {
+					for (Participant2 p2 : sa.getParticipants()) {
+
+						CE ce = DatatypesFactory.eINSTANCE.createCE("412307009", "2.16.840.1.113883.6.96");
+						CE ce2 = DatatypesFactory.eINSTANCE.createCE("12345", "2.16.840.1.113883.3.88.12.80.21");
+						p2.getParticipantRole().setCode(ce);
+						p2.getParticipantRole().getPlayingEntity().setCode(ce2);
+
+						p2.getParticipantRole().getPlayingEntity().getNames().add(DatatypesFactory.eINSTANCE.createPN());
+
+					}
+
+				}
 
 			}
 
@@ -694,10 +740,6 @@ public class MedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(Medication target) {
 
-			}
-
-			@Override
-			protected void updateToPass(Medication target) {
 				target.init();
 
 				SubstanceAdministration sa = CDAFactory.eINSTANCE.createSubstanceAdministration();
@@ -708,15 +750,26 @@ public class MedicationTest extends CDAValidationTest {
 				p2.setTypeCode(ParticipationType.CSM);
 				pr.setClassCode(RoleClassRoot.MANU);
 
-				CE ce = DatatypesFactory.eINSTANCE.createCE("412307009", "2.16.840.1.113883.6.96");
-				CE ce2 = DatatypesFactory.eINSTANCE.createCE("12345", "2.16.840.1.113883.6.96");
-				pr.setCode(ce);
-				pe.setCode(ce2);
-
 				pr.setPlayingEntity(pe);
 				p2.setParticipantRole(pr);
 				sa.getParticipants().add(p2);
 				target.addSubstanceAdministration(sa);
+			}
+
+			@Override
+			protected void updateToPass(Medication target) {
+
+				for (SubstanceAdministration sa : target.getSubstanceAdministrations()) {
+					for (Participant2 p2 : sa.getParticipants()) {
+
+						CE ce = DatatypesFactory.eINSTANCE.createCE("412307009", "2.16.840.1.113883.6.96");
+						CE ce2 = DatatypesFactory.eINSTANCE.createCE("12345", "2.16.840.1.113883.6.96");
+						p2.getParticipantRole().setCode(ce);
+						p2.getParticipantRole().getPlayingEntity().setCode(ce2);
+					}
+
+				}
+
 			}
 
 			@Override
