@@ -37,7 +37,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.EN;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedProductName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Coded Product Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedProductVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Coded Product Vocab</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedDrugClassVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Coded Drug Class Vocab</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedIngredientVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Coded Ingredient Vocab</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedBrandName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Coded Brand Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationInformation#validateMedicationInformationCodedBrandNameVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Coded Brand Name Vocab</em>}</li>
@@ -130,47 +129,6 @@ public class MedicationInformationTest extends CDAValidationTest {
 		};
 
 		validateMedicationInformationCodedProductVocabTestCase.doValidationTest();
-	}
-
-	/**
-	 * 
-	 * @generated NOT
-	 */
-	@Test
-	public void testValidateMedicationInformationCodedDrugClassVocab() {
-		OperationsTestCase<MedicationInformation> validateMedicationInformationCodedDrugClassVocabTestCase = new OperationsTestCase<MedicationInformation>(
-			"validateMedicationInformationCodedDrugClassVocab",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_CODED_DRUG_CLASS_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationInformation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationInformation target) {
-				Material mm = CDAFactory.eINSTANCE.createMaterial();
-				CE ce = DatatypesFactory.eINSTANCE.createCE();
-				ce.setCodeSystem("2.16.840.1.113883.3.26.1.5");
-				ce.setCode("N0000000002");
-				mm.setCode(ce);
-				CD cd = DatatypesFactory.eINSTANCE.createCD();
-				ce.getTranslations().add(cd);
-				target.setManufacturedMaterial(mm);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationInformationOperations.validateMedicationInformationCodedDrugClassVocab(
-					(MedicationInformation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationInformationCodedDrugClassVocabTestCase.doValidationTest();
 	}
 
 	/**
