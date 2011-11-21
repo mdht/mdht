@@ -16,7 +16,6 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
-import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.StatusObservation;
@@ -26,7 +25,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -54,9 +52,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
 public class StatusObservationTest extends CDAValidationTest {
 
 	/**
-	 * 
-	 * @generated NOT
-	 */
+	*
+	* @generated
+	*/
 	@Test
 	public void testValidateStatusObservationTargetOfEntryRelationship() {
 		OperationsTestCase<StatusObservation> validateStatusObservationTargetOfEntryRelationshipTestCase = new OperationsTestCase<StatusObservation>(
@@ -66,17 +64,13 @@ public class StatusObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(StatusObservation target) {
-				target.init();
-				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setTypeCode(x_ActRelationshipEntryRelationship.SAS);
-				target.getEntryRelationships().add(er);
+
 			}
 
 			@Override
 			protected void updateToPass(StatusObservation target) {
-				for (EntryRelationship er : target.getEntryRelationships()) {
-					er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
-				}
+				target.init();
+
 			}
 
 			@Override

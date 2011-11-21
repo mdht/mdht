@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ihe.tests;
 
+import java.math.BigDecimal;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -19,6 +20,8 @@ import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
 import org.openhealthtools.mdht.uml.cda.AssignedEntity;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Organization;
 import org.openhealthtools.mdht.uml.cda.Performer2;
 import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
@@ -29,6 +32,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassSupply;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
 /**
@@ -49,9 +53,11 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryHasPerformerAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Has Performer Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryHasPerformerAssignedEntityID(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Has Performer Assigned Entity ID</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryHasPerformerEntityPersonOrOrg(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Has Performer Entity Person Or Org</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryQuantityHasValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Quantity Has Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Quantity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryRepeatNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Repeat Number</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#validateSupplyEntryMedicationFullfillmentInstructions(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Entry Medication Fullfillment Instructions</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.SupplyEntry#getMedicationFullfillmentInstructions() <em>Get Medication Fullfillment Instructions</em>}</li>
  * </ul>
  * </p>
@@ -111,15 +117,19 @@ public class SupplyEntryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SupplyEntry target) {
+				target.init();
+				Author auth = CDAFactory.eINSTANCE.createAuthor();
 
+				target.getAuthors().add(auth);
 			}
 
 			@Override
 			protected void updateToPass(SupplyEntry target) {
-				target.init();
-				Author auth = CDAFactory.eINSTANCE.createAuthor();
-				auth.setTime(DatatypesFactory.eINSTANCE.createTS());
-				target.getAuthors().add(auth);
+
+				for (Author author : target.getAuthors()) {
+					author.setTime(DatatypesFactory.eINSTANCE.createTS());
+				}
+
 			}
 
 			@Override
@@ -148,14 +158,19 @@ public class SupplyEntryTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(SupplyEntry target) {
 
+				target.init();
+				Author auth = CDAFactory.eINSTANCE.createAuthor();
+				// auth.setAssignedAuthor(CDAFactory.eINSTANCE.createAssignedAuthor());
+				target.getAuthors().add(auth);
 			}
 
 			@Override
 			protected void updateToPass(SupplyEntry target) {
-				target.init();
-				Author auth = CDAFactory.eINSTANCE.createAuthor();
-				auth.setAssignedAuthor(CDAFactory.eINSTANCE.createAssignedAuthor());
-				target.getAuthors().add(auth);
+
+				for (Author auth : target.getAuthors()) {
+					auth.setAssignedAuthor(CDAFactory.eINSTANCE.createAssignedAuthor());
+				}
+
 			}
 
 			@Override
@@ -184,16 +199,22 @@ public class SupplyEntryTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(SupplyEntry target) {
 
+				target.init();
+				Author auth = CDAFactory.eINSTANCE.createAuthor();
+				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+				// aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				auth.setAssignedAuthor(aa);
+				target.getAuthors().add(auth);
+
 			}
 
 			@Override
 			protected void updateToPass(SupplyEntry target) {
-				target.init();
-				Author auth = CDAFactory.eINSTANCE.createAuthor();
-				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
-				aa.getIds().add(DatatypesFactory.eINSTANCE.createII());
-				auth.setAssignedAuthor(aa);
-				target.getAuthors().add(auth);
+
+				for (Author auth : target.getAuthors()) {
+					auth.getAssignedAuthor().getIds().add(DatatypesFactory.eINSTANCE.createII());
+
+				}
 			}
 
 			@Override
@@ -269,15 +290,20 @@ public class SupplyEntryTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(SupplyEntry target) {
 
+				target.init();
+				target.setMoodCode(x_DocumentSubstanceMood.EVN);
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+
+				target.getPerformers().add(per);
+
 			}
 
 			@Override
 			protected void updateToPass(SupplyEntry target) {
-				target.init();
-				target.setMoodCode(x_DocumentSubstanceMood.EVN);
-				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
-				per.setTime(DatatypesFactory.eINSTANCE.createIVL_TS());
-				target.getPerformers().add(per);
+
+				for (Performer2 per : target.getPerformers()) {
+					per.setTime(DatatypesFactory.eINSTANCE.createIVL_TS());
+				}
 			}
 
 			@Override
@@ -306,15 +332,18 @@ public class SupplyEntryTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(SupplyEntry target) {
 
+				target.init();
+				target.setMoodCode(x_DocumentSubstanceMood.INT);
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				target.getPerformers().add(per);
 			}
 
 			@Override
 			protected void updateToPass(SupplyEntry target) {
-				target.init();
-				target.setMoodCode(x_DocumentSubstanceMood.INT);
-				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
-				per.setTime(DatatypesFactory.eINSTANCE.createIVL_TS());
-				target.getPerformers().add(per);
+
+				for (Performer2 per : target.getPerformers()) {
+					per.setTime(DatatypesFactory.eINSTANCE.createIVL_TS());
+				}
 			}
 
 			@Override
@@ -343,14 +372,19 @@ public class SupplyEntryTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(SupplyEntry target) {
 
+				target.init();
+				target.setMoodCode(x_DocumentSubstanceMood.INT);
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				target.getPerformers().add(per);
+
 			}
 
 			@Override
 			protected void updateToPass(SupplyEntry target) {
-				target.init();
-				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
-				per.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
-				target.getPerformers().add(per);
+
+				for (Performer2 per : target.getPerformers()) {
+					per.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+				}
 			}
 
 			@Override
@@ -379,16 +413,20 @@ public class SupplyEntryTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(SupplyEntry target) {
 
+				target.init();
+				target.setMoodCode(x_DocumentSubstanceMood.INT);
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				per.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+				target.getPerformers().add(per);
+
 			}
 
 			@Override
 			protected void updateToPass(SupplyEntry target) {
-				target.init();
-				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
-				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
-				ae.getIds().add(DatatypesFactory.eINSTANCE.createII());
-				per.setAssignedEntity(ae);
-				target.getPerformers().add(per);
+
+				for (Performer2 per : target.getPerformers()) {
+					per.getAssignedEntity().getIds().add(DatatypesFactory.eINSTANCE.createII());
+				}
 			}
 
 			@Override
@@ -415,21 +453,91 @@ public class SupplyEntryTest extends CDAValidationTest {
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(SupplyEntry target) {
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(SupplyEntry target) {
+						target.init();
+						Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+						AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+						per.setAssignedEntity(ae);
+						target.getPerformers().add(per);
+
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(SupplyEntry target) {
+						target.init();
+						Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+						AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+						ae.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						per.setAssignedEntity(ae);
+						target.getPerformers().add(per);
+
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(SupplyEntry target) {
+						target.init();
+						Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+						AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+						ae.getRepresentedOrganizations().add(CDAFactory.eINSTANCE.createOrganization());
+						per.setAssignedEntity(ae);
+						target.getPerformers().add(per);
+
+					}
+				});
+
+			}
+
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(SupplyEntry target) {
+						target.init();
+						Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+						AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+						Person person = CDAFactory.eINSTANCE.createPerson();
+						person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+						ae.setAssignedPerson(person);
+						per.setAssignedEntity(ae);
+						target.getPerformers().add(per);
+
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(SupplyEntry target) {
+						target.init();
+						Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+						AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+						Organization organization = CDAFactory.eINSTANCE.createOrganization();
+						organization.getNames().add(DatatypesFactory.eINSTANCE.createON());
+						ae.getRepresentedOrganizations().add(organization);
+						per.setAssignedEntity(ae);
+						target.getPerformers().add(per);
+
+					}
+				});
 
 			}
 
 			@Override
 			protected void updateToPass(SupplyEntry target) {
-				target.init();
-				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
-				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
-				Person person = CDAFactory.eINSTANCE.createPerson();
-				person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
-				ae.setAssignedPerson(person);
-				ae.getRepresentedOrganizations().add(CDAFactory.eINSTANCE.createOrganization());
-				per.setAssignedEntity(ae);
-				target.getPerformers().add(per);
+
 			}
 
 			@Override
@@ -442,6 +550,46 @@ public class SupplyEntryTest extends CDAValidationTest {
 		};
 
 		validateSupplyEntryHasPerformerEntityPersonOrOrgTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateSupplyEntryQuantityHasValue() {
+		OperationsTestCase<SupplyEntry> validateSupplyEntryQuantityHasValueTestCase = new OperationsTestCase<SupplyEntry>(
+			"validateSupplyEntryQuantityHasValue",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ENTRY_QUANTITY_HAS_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SupplyEntry target) {
+				target.init();
+				PQ pq = DatatypesFactory.eINSTANCE.createPQ();
+				target.setQuantity(pq);
+			}
+
+			@Override
+			protected void updateToPass(SupplyEntry target) {
+
+				target.getQuantity().setValue(new BigDecimal(1234));
+
+				// CD value = DatatypesFactory.eINSTANCE.createCD();
+				// target.getValues().add(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SupplyEntryOperations.validateSupplyEntryQuantityHasValue(
+					(SupplyEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSupplyEntryQuantityHasValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -546,6 +694,46 @@ public class SupplyEntryTest extends CDAValidationTest {
 		};
 
 		validateSupplyEntryRepeatNumberTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateSupplyEntryMedicationFullfillmentInstructions() {
+		OperationsTestCase<SupplyEntry> validateSupplyEntryMedicationFullfillmentInstructionsTestCase = new OperationsTestCase<SupplyEntry>(
+			"validateSupplyEntryMedicationFullfillmentInstructions",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ENTRY_MEDICATION_FULLFILLMENT_INSTRUCTIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SupplyEntry target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(SupplyEntry target) {
+
+				target.addAct(IHEFactory.eINSTANCE.createMedicationFullfillmentInstructions().init());
+
+				for (EntryRelationship entryRelationship : target.getEntryRelationships()) {
+					entryRelationship.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+
+				}
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SupplyEntryOperations.validateSupplyEntryMedicationFullfillmentInstructions(
+					(SupplyEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSupplyEntryMedicationFullfillmentInstructionsTestCase.doValidationTest();
 	}
 
 	/**

@@ -41,7 +41,6 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubject;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#validateFamilyHistoryObservationHasSubject(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Observation Has Subject</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#validateFamilyHistoryObservationHasSubjectPatientRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Observation Has Subject Patient Relationship</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#validateFamilyHistoryObservationRelationshipValueCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Observation Relationship Value Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#validateFamilyHistoryObservationHasRelatedSubjectCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Observation Has Related Subject Code</em>}</li>
@@ -56,10 +55,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubject;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#validateFamilyHistoryObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#validateFamilyHistoryObservationAgeObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Observation Age Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#validateFamilyHistoryObservationProblemStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Observation Problem Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#validateFamilyHistoryObservationCauseOfDeathObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Observation Cause Of Death Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#getAgeObservation() <em>Get Age Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#getProblemStatusObservation() <em>Get Problem Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryObservation#getCauseOfDeathObservations() <em>Get Cause Of Death Observations</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,40 +64,6 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubject;
  */
 
 public class FamilyHistoryObservationTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated NOT
-	*/
-	@Test
-	public void testValidateFamilyHistoryObservationHasSubject() {
-		OperationsTestCase<FamilyHistoryObservation> validateFamilyHistoryObservationHasSubjectTestCase = new OperationsTestCase<FamilyHistoryObservation>(
-			"validateFamilyHistoryObservationHasSubject",
-			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_OBSERVATION_HAS_SUBJECT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FamilyHistoryObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FamilyHistoryObservation target) {
-				target.init();
-				target.setSubject(CDAFactory.eINSTANCE.createSubject());
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FamilyHistoryObservationOperations.validateFamilyHistoryObservationHasSubject(
-					(FamilyHistoryObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFamilyHistoryObservationHasSubjectTestCase.doValidationTest();
-	}
 
 	/**
 	*
@@ -649,40 +612,6 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated NOT
-	*/
-	@Test
-	public void testValidateFamilyHistoryObservationCauseOfDeathObservation() {
-		OperationsTestCase<FamilyHistoryObservation> validateFamilyHistoryObservationCauseOfDeathObservationTestCase = new OperationsTestCase<FamilyHistoryObservation>(
-			"validateFamilyHistoryObservationCauseOfDeathObservation",
-			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_OBSERVATION_CAUSE_OF_DEATH_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FamilyHistoryObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FamilyHistoryObservation target) {
-				target.init();
-				target.addObservation(CCDFactory.eINSTANCE.createCauseOfDeathObservation());
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FamilyHistoryObservationOperations.validateFamilyHistoryObservationCauseOfDeathObservation(
-					(FamilyHistoryObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFamilyHistoryObservationCauseOfDeathObservationTestCase.doValidationTest();
-	}
-
-	/**
-	*
 	* @generated
 	*/
 	@Test
@@ -702,18 +631,6 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 
 		FamilyHistoryObservation target = objectFactory.create();
 		target.getProblemStatusObservation();
-
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testGetCauseOfDeathObservations() {
-
-		FamilyHistoryObservation target = objectFactory.create();
-		target.getCauseOfDeathObservations();
 
 	}
 

@@ -20,9 +20,10 @@ import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Performer2;
 import org.openhealthtools.mdht.uml.cda.hitsp.Condition;
-import org.openhealthtools.mdht.uml.cda.hitsp.ConditionEntry;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ConditionOperations;
+import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -217,11 +218,15 @@ public class ConditionTest extends CDAValidationTest {
 			protected void updateToPass(Condition target) {
 				target.init();
 
-				ConditionEntry obv = HITSPFactory.eINSTANCE.createConditionEntry().init();
+				// ConditionEntry obv = HITSPFactory.eINSTANCE.createConditionEntry().init();
+
+				ProblemEntry obv = IHEFactory.eINSTANCE.createProblemEntry().init();
+
 				target.addObservation(obv);
 
 				for (EntryRelationship er : target.getEntryRelationships()) {
 					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+					er.setInversionInd(false);
 
 				}
 

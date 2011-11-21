@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
-import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.NormalDose;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.NormalDoseOperations;
@@ -56,13 +56,16 @@ public class NormalDoseTest extends CDAValidationTest {
 				// target.getSubstanceAdministrations().clear();
 				target.getEntryRelationships().clear();
 
+				target.addObservation(CCDFactory.eINSTANCE.createMedicationStatusObservation().init());
+
 			}
 
 			@Override
 			protected void updateToFail(NormalDose target) {
 				target.init();
-				SubstanceAdministration substanceAdministration = CDAFactory.eINSTANCE.createSubstanceAdministration();
-				target.addSubstanceAdministration(substanceAdministration);
+				CDAFactory.eINSTANCE.createSubstanceAdministration();
+
+				target.addObservation(CCDFactory.eINSTANCE.createMedicationStatusObservation().init());
 
 			}
 
