@@ -275,7 +275,7 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 				ISaveablesLifecycleListener saveablesListener = (ISaveablesLifecycleListener) getEditorSite().getService(
 					ISaveablesLifecycleListener.class);
 				saveablesListener.handleLifecycleEvent(new SaveablesLifecycleEvent(
-					this, PROP_DIRTY, getSaveables(), false));
+					UMLTableEditor.this, PROP_DIRTY, getSaveables(), false));
 
 				getSite().getShell().getDisplay().asyncExec(new Runnable() {
 					public void run() {
