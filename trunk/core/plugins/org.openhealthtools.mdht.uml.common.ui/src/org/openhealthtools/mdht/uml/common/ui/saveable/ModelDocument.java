@@ -133,7 +133,7 @@ public class ModelDocument extends Saveable {
 		return dirty;
 	}
 
-	/* package */void setDirty(boolean dirty) {
+	public void setDirty(boolean dirty) {
 		this.dirty = dirty;
 		resource.setModified(dirty);
 	}
