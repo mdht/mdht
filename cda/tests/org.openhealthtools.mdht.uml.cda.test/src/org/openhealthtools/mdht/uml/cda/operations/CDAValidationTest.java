@@ -47,14 +47,24 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
-import org.openhealthtools.mdht.uml.hl7.rim.operations.RIMOperationTest;
 
 /**
  * This class is the super class for all JUnit4 test cases for CDA based
  * classes.
  */
 @SuppressWarnings("nls")
-public abstract class CDAValidationTest extends RIMOperationTest {
+public abstract class CDAValidationTest {
+
+	protected abstract EObject getObjectToTest();
+
+	/**
+	 * This is not currently used, but is implemented in many subclasses.
+	 * 
+	 * @return the initialized EObject instance to test
+	 */
+	protected EObject getObjectInitToTest() {
+		return null;
+	}
 
 	/**
 	 * The template id to use for the has* tests.
