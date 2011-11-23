@@ -136,7 +136,10 @@ public class CDALoadImpl extends XMLLoadImpl {
 	private void handleDataType(Element element, Element root) {
 		if (element.hasAttributeNS(XMLResource.XSI_URI, "type")) {
 			String type = element.getAttributeNS(XMLResource.XSI_URI, "type");
-			if (type != null && !type.contains(":")) {
+			if (type != null) {
+				if (type.contains(":")) {
+					type = type.substring(type.indexOf(":") + 1);
+				}
 				String nsPrefix = getNsPrefix(DatatypesPackage.eNS_URI);
 				if (helper.getPrefix(DatatypesPackage.eNS_URI) == null) {
 					helper.addPrefix(nsPrefix, DatatypesPackage.eNS_URI);
