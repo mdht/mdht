@@ -90,7 +90,6 @@ public class PolicyActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<PolicyActivity> {
-
 		public PolicyActivity create() {
 			return ConsolFactory.eINSTANCE.createPolicyActivity();
 		}
@@ -129,7 +128,6 @@ public class PolicyActivityTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

@@ -160,7 +160,6 @@ public class InternalReferenceTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<InternalReference> {
-
 		public InternalReference create() {
 			return ConsolFactory.eINSTANCE.createInternalReference();
 		}
@@ -199,7 +198,6 @@ public class InternalReferenceTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

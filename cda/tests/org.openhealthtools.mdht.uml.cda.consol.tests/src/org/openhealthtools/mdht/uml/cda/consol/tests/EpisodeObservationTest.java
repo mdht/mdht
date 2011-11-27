@@ -347,7 +347,6 @@ public class EpisodeObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<EpisodeObservation> {
-
 		public EpisodeObservation create() {
 			return ConsolFactory.eINSTANCE.createEpisodeObservation();
 		}
@@ -386,7 +385,6 @@ public class EpisodeObservationTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

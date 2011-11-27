@@ -1040,7 +1040,6 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<UnstructuredDocument> {
-
 		public UnstructuredDocument create() {
 			return ConsolFactory.eINSTANCE.createUnstructuredDocument();
 		}
@@ -1079,7 +1078,6 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

@@ -253,7 +253,6 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<AdvanceDirectivesSection> {
-
 		public AdvanceDirectivesSection create() {
 			return ConsolFactory.eINSTANCE.createAdvanceDirectivesSection();
 		}
@@ -292,7 +291,6 @@ public class AdvanceDirectivesSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

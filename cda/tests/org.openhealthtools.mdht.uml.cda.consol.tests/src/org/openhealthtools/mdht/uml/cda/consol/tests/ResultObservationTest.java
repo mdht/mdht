@@ -638,7 +638,6 @@ public class ResultObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ResultObservation> {
-
 		public ResultObservation create() {
 			return ConsolFactory.eINSTANCE.createResultObservation();
 		}
@@ -677,7 +676,6 @@ public class ResultObservationTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

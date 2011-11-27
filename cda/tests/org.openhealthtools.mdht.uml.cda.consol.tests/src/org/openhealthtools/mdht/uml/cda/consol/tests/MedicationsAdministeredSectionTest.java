@@ -125,7 +125,6 @@ public class MedicationsAdministeredSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<MedicationsAdministeredSection> {
-
 		public MedicationsAdministeredSection create() {
 			return ConsolFactory.eINSTANCE.createMedicationsAdministeredSection();
 		}
@@ -164,7 +163,6 @@ public class MedicationsAdministeredSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

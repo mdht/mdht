@@ -125,7 +125,6 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ProceduresSectionEntriesOptional> {
-
 		public ProceduresSectionEntriesOptional create() {
 			return ConsolFactory.eINSTANCE.createProceduresSectionEntriesOptional();
 		}
@@ -164,7 +163,6 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

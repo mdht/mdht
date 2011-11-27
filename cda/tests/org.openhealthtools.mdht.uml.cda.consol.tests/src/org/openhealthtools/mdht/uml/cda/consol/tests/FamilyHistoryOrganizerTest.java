@@ -843,7 +843,6 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<FamilyHistoryOrganizer> {
-
 		public FamilyHistoryOrganizer create() {
 			return ConsolFactory.eINSTANCE.createFamilyHistoryOrganizer();
 		}
@@ -882,7 +881,6 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

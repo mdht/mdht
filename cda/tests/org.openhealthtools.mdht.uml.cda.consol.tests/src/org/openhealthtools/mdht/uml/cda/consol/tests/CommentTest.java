@@ -396,7 +396,6 @@ public class CommentTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<Comment> {
-
 		public Comment create() {
 			return ConsolFactory.eINSTANCE.createComment();
 		}
@@ -435,7 +434,6 @@ public class CommentTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

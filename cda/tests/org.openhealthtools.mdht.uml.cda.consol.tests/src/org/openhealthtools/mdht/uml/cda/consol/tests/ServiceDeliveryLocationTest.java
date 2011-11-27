@@ -335,7 +335,6 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ServiceDeliveryLocation> {
-
 		public ServiceDeliveryLocation create() {
 			return ConsolFactory.eINSTANCE.createServiceDeliveryLocation();
 		}
@@ -374,7 +373,6 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

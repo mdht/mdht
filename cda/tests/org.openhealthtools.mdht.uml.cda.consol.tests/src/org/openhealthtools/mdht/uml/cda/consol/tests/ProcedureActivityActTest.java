@@ -12,45 +12,45 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
-import org.openhealthtools.mdht.uml.cda.consol.PolicySubscriber;
-import org.openhealthtools.mdht.uml.cda.consol.operations.PolicySubscriberOperations;
+import org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct;
+import org.openhealthtools.mdht.uml.cda.consol.operations.ProcedureActivityActOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
  * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Policy Subscriber</b></em>' model objects.
+ * A static utility class that provides operations related to '<em><b>Procedure Activity Act</b></em>' model objects.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicySubscriber#validatePolicySubscriberId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Subscriber Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Template Id</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 
-public class PolicySubscriberTest extends CDAValidationTest {
+public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
 	* @generated
 	*/
 	@Test
-	public void testValidatePolicySubscriberId() {
-		OperationsTestCase<PolicySubscriber> validatePolicySubscriberIdTestCase = new OperationsTestCase<PolicySubscriber>(
-			"validatePolicySubscriberId",
-			operationsForOCL.getOCLValue("VALIDATE_POLICY_SUBSCRIBER_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateProcedureActivityActTemplateId() {
+		OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActTemplateIdTestCase = new OperationsTestCase<ProcedureActivityAct>(
+			"validateProcedureActivityActTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(PolicySubscriber target) {
+			protected void updateToFail(ProcedureActivityAct target) {
 
 			}
 
 			@Override
-			protected void updateToPass(PolicySubscriber target) {
+			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
 
 			}
@@ -58,20 +58,20 @@ public class PolicySubscriberTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PolicySubscriberOperations.validatePolicySubscriberId(
-					(PolicySubscriber) objectToTest, diagnostician, map);
+				return ProcedureActivityActOperations.validateProcedureActivityActTemplateId(
+					(ProcedureActivityAct) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validatePolicySubscriberIdTestCase.doValidationTest();
+		validateProcedureActivityActTemplateIdTestCase.doValidationTest();
 	}
 
 	/**
 	*
 	* @generated
 	*/
-	private static class OperationsForOCL extends PolicySubscriberOperations {
+	private static class OperationsForOCL extends ProcedureActivityActOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
@@ -89,9 +89,9 @@ public class PolicySubscriberTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-	private static class ObjectFactory implements TestObjectFactory<PolicySubscriber> {
-		public PolicySubscriber create() {
-			return ConsolFactory.eINSTANCE.createPolicySubscriber();
+	private static class ObjectFactory implements TestObjectFactory<ProcedureActivityAct> {
+		public ProcedureActivityAct create() {
+			return ConsolFactory.eINSTANCE.createProcedureActivityAct();
 		}
 	}
 
@@ -111,7 +111,7 @@ public class PolicySubscriberTest extends CDAValidationTest {
 	* Tests Operations Constructor for 100% coverage
 	* @generated
 	*/
-	private static class ConstructorTestClass extends PolicySubscriberOperations {
+	private static class ConstructorTestClass extends ProcedureActivityActOperations {
 	};
 
 	/**
@@ -133,4 +133,4 @@ public class PolicySubscriberTest extends CDAValidationTest {
 		return null;
 	}
 
-} // PolicySubscriberOperations
+} // ProcedureActivityActOperations

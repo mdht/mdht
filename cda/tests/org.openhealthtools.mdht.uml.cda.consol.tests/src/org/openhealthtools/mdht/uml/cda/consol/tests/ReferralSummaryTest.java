@@ -230,7 +230,6 @@ public class ReferralSummaryTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ReferralSummary> {
-
 		public ReferralSummary create() {
 			return ConsolFactory.eINSTANCE.createReferralSummary();
 		}
@@ -269,7 +268,6 @@ public class ReferralSummaryTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

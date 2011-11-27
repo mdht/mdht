@@ -229,7 +229,6 @@ public class ProcedureTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<Procedure> {
-
 		public Procedure create() {
 			return ConsolFactory.eINSTANCE.createProcedure();
 		}
@@ -268,7 +267,6 @@ public class ProcedureTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

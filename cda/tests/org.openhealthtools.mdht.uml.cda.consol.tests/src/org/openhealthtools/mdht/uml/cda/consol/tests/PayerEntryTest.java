@@ -616,7 +616,6 @@ public class PayerEntryTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<PayerEntry> {
-
 		public PayerEntry create() {
 			return ConsolFactory.eINSTANCE.createPayerEntry();
 		}
@@ -655,7 +654,6 @@ public class PayerEntryTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

@@ -124,9 +124,6 @@ public class ThoraxLungsSectionTest extends CDAValidationTest {
 			protected void updateToPass(ThoraxLungsSection target) {
 				target.init();
 
-				// ProblemEntry entry = IHEFactory.eINSTANCE.createProblemEntry().init();
-				// target.addObservation(entry);
-
 			}
 
 			@Override
@@ -176,7 +173,6 @@ public class ThoraxLungsSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ThoraxLungsSection> {
-
 		public ThoraxLungsSection create() {
 			return ConsolFactory.eINSTANCE.createThoraxLungsSection();
 		}
@@ -215,7 +211,6 @@ public class ThoraxLungsSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

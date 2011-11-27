@@ -160,7 +160,6 @@ public class LanguageSpokenTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<LanguageSpoken> {
-
 		public LanguageSpoken create() {
 			return ConsolFactory.eINSTANCE.createLanguageSpoken();
 		}
@@ -199,7 +198,6 @@ public class LanguageSpokenTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

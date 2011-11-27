@@ -230,7 +230,6 @@ public class AdvanceDirectiveReferenceTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<AdvanceDirectiveReference> {
-
 		public AdvanceDirectiveReference create() {
 			return ConsolFactory.eINSTANCE.createAdvanceDirectiveReference();
 		}
@@ -269,7 +268,6 @@ public class AdvanceDirectiveReferenceTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

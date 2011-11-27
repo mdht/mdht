@@ -41,10 +41,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistoryObservation#validateSocialHistoryObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Observation Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistoryObservation#validateSocialHistoryObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Observation Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistoryObservation#validateSocialHistoryObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Observation Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistoryObservation#validateSocialHistoryObservationSocialHistoryStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Observation Social History Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistoryObservation#validateSocialHistoryObservationEpisodeObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Observation Episode Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistoryObservation#getSocialHistoryStatusObservation() <em>Get Social History Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistoryObservation#getEpisodeObservation() <em>Get Episode Observation</em>}</li>
  * </ul>
  * </p>
  *
@@ -480,98 +476,6 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-	@Test
-	public void testValidateSocialHistoryObservationSocialHistoryStatusObservation() {
-		OperationsTestCase<SocialHistoryObservation> validateSocialHistoryObservationSocialHistoryStatusObservationTestCase = new OperationsTestCase<SocialHistoryObservation>(
-			"validateSocialHistoryObservationSocialHistoryStatusObservation",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_OBSERVATION_SOCIAL_HISTORY_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SocialHistoryObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(SocialHistoryObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SocialHistoryObservationOperations.validateSocialHistoryObservationSocialHistoryStatusObservation(
-					(SocialHistoryObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSocialHistoryObservationSocialHistoryStatusObservationTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateSocialHistoryObservationEpisodeObservation() {
-		OperationsTestCase<SocialHistoryObservation> validateSocialHistoryObservationEpisodeObservationTestCase = new OperationsTestCase<SocialHistoryObservation>(
-			"validateSocialHistoryObservationEpisodeObservation",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_OBSERVATION_EPISODE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SocialHistoryObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(SocialHistoryObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SocialHistoryObservationOperations.validateSocialHistoryObservationEpisodeObservation(
-					(SocialHistoryObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSocialHistoryObservationEpisodeObservationTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testGetSocialHistoryStatusObservation() {
-
-		SocialHistoryObservation target = objectFactory.create();
-		target.getSocialHistoryStatusObservation();
-
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testGetEpisodeObservation() {
-
-		SocialHistoryObservation target = objectFactory.create();
-		target.getEpisodeObservation();
-
-	}
-
-	/**
-	*
-	* @generated
-	*/
 	private static class OperationsForOCL extends SocialHistoryObservationOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -591,7 +495,6 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<SocialHistoryObservation> {
-
 		public SocialHistoryObservation create() {
 			return ConsolFactory.eINSTANCE.createSocialHistoryObservation();
 		}
@@ -630,7 +533,6 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

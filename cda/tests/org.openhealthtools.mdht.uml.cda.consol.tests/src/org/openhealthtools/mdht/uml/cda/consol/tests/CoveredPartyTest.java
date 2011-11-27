@@ -121,7 +121,6 @@ public class CoveredPartyTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<CoveredParty> {
-
 		public CoveredParty create() {
 			return ConsolFactory.eINSTANCE.createCoveredParty();
 		}
@@ -160,7 +159,6 @@ public class CoveredPartyTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

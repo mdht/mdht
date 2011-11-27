@@ -323,7 +323,6 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<FamilyHistorySection> {
-
 		public FamilyHistorySection create() {
 			return ConsolFactory.eINSTANCE.createFamilyHistorySection();
 		}
@@ -362,7 +361,6 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

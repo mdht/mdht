@@ -90,7 +90,6 @@ public class HealthcareProviderTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<HealthcareProvider> {
-
 		public HealthcareProvider create() {
 			return ConsolFactory.eINSTANCE.createHealthcareProvider();
 		}
@@ -129,7 +128,6 @@ public class HealthcareProviderTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

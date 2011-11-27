@@ -64,8 +64,6 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			protected void updateToPass(ResultOrganizer target) {
 				target.init();
 
-				DatatypesFactory.eINSTANCE.createCD();
-
 			}
 
 			@Override
@@ -389,7 +387,6 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ResultOrganizer> {
-
 		public ResultOrganizer create() {
 			return ConsolFactory.eINSTANCE.createResultOrganizer();
 		}
@@ -428,7 +425,6 @@ public class ResultOrganizerTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

@@ -344,7 +344,6 @@ public class MedicationStatusObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<MedicationStatusObservation> {
-
 		public MedicationStatusObservation create() {
 			return ConsolFactory.eINSTANCE.createMedicationStatusObservation();
 		}
@@ -383,7 +382,6 @@ public class MedicationStatusObservationTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

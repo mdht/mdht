@@ -122,10 +122,6 @@ public class EarsSectionTest extends CDAValidationTest {
 			protected void updateToPass(EarsSection target) {
 				target.init();
 
-				// ProblemEntry entry = IHEFactory.eINSTANCE.createProblemEntry().init();
-				// target.addObservation(entry);
-				//
-
 			}
 
 			@Override
@@ -175,7 +171,6 @@ public class EarsSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<EarsSection> {
-
 		public EarsSection create() {
 			return ConsolFactory.eINSTANCE.createEarsSection();
 		}
@@ -214,7 +209,6 @@ public class EarsSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

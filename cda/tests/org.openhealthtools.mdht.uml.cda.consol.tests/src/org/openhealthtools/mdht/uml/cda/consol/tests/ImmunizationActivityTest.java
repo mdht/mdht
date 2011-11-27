@@ -563,8 +563,6 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 			protected void updateToPass(ImmunizationActivity target) {
 				target.init();
 
-				DatatypesFactory.eINSTANCE.createIVL_TS();
-
 			}
 
 			@Override
@@ -958,7 +956,6 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ImmunizationActivity> {
-
 		public ImmunizationActivity create() {
 			return ConsolFactory.eINSTANCE.createImmunizationActivity();
 		}
@@ -997,7 +994,6 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

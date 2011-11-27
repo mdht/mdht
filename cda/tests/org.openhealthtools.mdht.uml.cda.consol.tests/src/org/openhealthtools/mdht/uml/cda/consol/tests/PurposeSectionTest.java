@@ -253,7 +253,6 @@ public class PurposeSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<PurposeSection> {
-
 		public PurposeSection create() {
 			return ConsolFactory.eINSTANCE.createPurposeSection();
 		}
@@ -292,7 +291,6 @@ public class PurposeSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

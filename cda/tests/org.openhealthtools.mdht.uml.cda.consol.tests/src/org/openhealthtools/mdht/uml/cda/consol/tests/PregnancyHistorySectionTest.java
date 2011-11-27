@@ -173,7 +173,6 @@ public class PregnancyHistorySectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<PregnancyHistorySection> {
-
 		public PregnancyHistorySection create() {
 			return ConsolFactory.eINSTANCE.createPregnancyHistorySection();
 		}
@@ -212,7 +211,6 @@ public class PregnancyHistorySectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

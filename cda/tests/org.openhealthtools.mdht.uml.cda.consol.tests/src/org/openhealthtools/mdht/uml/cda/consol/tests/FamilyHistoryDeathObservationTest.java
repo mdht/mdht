@@ -40,9 +40,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryDeathObservation#validateFamilyHistoryDeathObservationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Death Observation Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryDeathObservation#validateFamilyHistoryDeathObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Death Observation Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryDeathObservation#validateFamilyHistoryDeathObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Death Observation Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryDeathObservation#validateFamilyHistoryDeathObservationAgeObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Death Observation Age Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryDeathObservation#validateFamilyHistoryDeathObservationProblemStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Death Observation Problem Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryDeathObservation#getAgeObservation() <em>Get Age Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryDeathObservation#getProblemStatusObservation() <em>Get Problem Status Observation</em>}</li>
  * </ul>
  * </p>
@@ -474,40 +472,6 @@ public class FamilyHistoryDeathObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateFamilyHistoryDeathObservationAgeObservation() {
-		OperationsTestCase<FamilyHistoryDeathObservation> validateFamilyHistoryDeathObservationAgeObservationTestCase = new OperationsTestCase<FamilyHistoryDeathObservation>(
-			"validateFamilyHistoryDeathObservationAgeObservation",
-			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_DEATH_OBSERVATION_AGE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FamilyHistoryDeathObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FamilyHistoryDeathObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FamilyHistoryDeathObservationOperations.validateFamilyHistoryDeathObservationAgeObservation(
-					(FamilyHistoryDeathObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFamilyHistoryDeathObservationAgeObservationTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
 	public void testValidateFamilyHistoryDeathObservationProblemStatusObservation() {
 		OperationsTestCase<FamilyHistoryDeathObservation> validateFamilyHistoryDeathObservationProblemStatusObservationTestCase = new OperationsTestCase<FamilyHistoryDeathObservation>(
 			"validateFamilyHistoryDeathObservationProblemStatusObservation",
@@ -535,18 +499,6 @@ public class FamilyHistoryDeathObservationTest extends CDAValidationTest {
 		};
 
 		validateFamilyHistoryDeathObservationProblemStatusObservationTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testGetAgeObservation() {
-
-		FamilyHistoryDeathObservation target = objectFactory.create();
-		target.getAgeObservation();
-
 	}
 
 	/**
@@ -584,7 +536,6 @@ public class FamilyHistoryDeathObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<FamilyHistoryDeathObservation> {
-
 		public FamilyHistoryDeathObservation create() {
 			return ConsolFactory.eINSTANCE.createFamilyHistoryDeathObservation();
 		}
@@ -623,7 +574,6 @@ public class FamilyHistoryDeathObservationTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

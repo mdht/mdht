@@ -277,7 +277,6 @@ public class AgeObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<AgeObservation> {
-
 		public AgeObservation create() {
 			return ConsolFactory.eINSTANCE.createAgeObservation();
 		}
@@ -316,7 +315,6 @@ public class AgeObservationTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

@@ -125,7 +125,6 @@ public class MedicationNormalDoseTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<MedicationNormalDose> {
-
 		public MedicationNormalDose create() {
 			return ConsolFactory.eINSTANCE.createMedicationNormalDose();
 		}
@@ -164,7 +163,6 @@ public class MedicationNormalDoseTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

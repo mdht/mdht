@@ -15,7 +15,6 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ScanningDevice;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ScanningDeviceOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,8 +58,6 @@ public class ScanningDeviceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ScanningDevice target) {
 				target.init();
-
-				DatatypesFactory.eINSTANCE.createIVL_TS();
 
 			}
 
@@ -303,7 +300,6 @@ public class ScanningDeviceTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ScanningDevice> {
-
 		public ScanningDevice create() {
 			return ConsolFactory.eINSTANCE.createScanningDevice();
 		}
@@ -342,7 +338,6 @@ public class ScanningDeviceTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

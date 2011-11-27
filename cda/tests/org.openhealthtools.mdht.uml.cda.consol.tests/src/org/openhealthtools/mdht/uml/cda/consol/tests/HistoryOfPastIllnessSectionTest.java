@@ -208,7 +208,6 @@ public class HistoryOfPastIllnessSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<HistoryOfPastIllnessSection> {
-
 		public HistoryOfPastIllnessSection create() {
 			return ConsolFactory.eINSTANCE.createHistoryOfPastIllnessSection();
 		}
@@ -247,7 +246,6 @@ public class HistoryOfPastIllnessSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

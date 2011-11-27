@@ -103,8 +103,6 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
 
-				DatatypesFactory.eINSTANCE.createCD();
-
 			}
 
 			@Override
@@ -478,7 +476,6 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<FunctionalStatusSection> {
-
 		public FunctionalStatusSection create() {
 			return ConsolFactory.eINSTANCE.createFunctionalStatusSection();
 		}
@@ -517,7 +514,6 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

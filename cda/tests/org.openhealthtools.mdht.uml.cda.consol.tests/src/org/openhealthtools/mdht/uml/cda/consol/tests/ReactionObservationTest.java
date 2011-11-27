@@ -648,7 +648,6 @@ public class ReactionObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ReactionObservation> {
-
 		public ReactionObservation create() {
 			return ConsolFactory.eINSTANCE.createReactionObservation();
 		}
@@ -687,7 +686,6 @@ public class ReactionObservationTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

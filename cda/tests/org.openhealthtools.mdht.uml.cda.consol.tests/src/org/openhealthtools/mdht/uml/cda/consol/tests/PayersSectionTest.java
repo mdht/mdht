@@ -216,7 +216,6 @@ public class PayersSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<PayersSection> {
-
 		public PayersSection create() {
 			return ConsolFactory.eINSTANCE.createPayersSection();
 		}
@@ -255,7 +254,6 @@ public class PayersSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

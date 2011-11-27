@@ -327,16 +327,6 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
 
-				/* AllergiesReactionsSection */
-				// AllergiesReactionsSection section =
-				//
-				// ConsolFactory.eINSTANCE.createAllergiesReactionsSection().init();
-				//
-				//
-				// target.addSection(section);
-				//
-				//
-
 			}
 
 			@Override
@@ -1112,7 +1102,6 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<DischargeSummary> {
-
 		public DischargeSummary create() {
 			return ConsolFactory.eINSTANCE.createDischargeSummary();
 		}
@@ -1151,7 +1140,6 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

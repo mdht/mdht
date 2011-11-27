@@ -261,7 +261,6 @@ public class EncounterTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<Encounter> {
-
 		public Encounter create() {
 			return ConsolFactory.eINSTANCE.createEncounter();
 		}
@@ -300,7 +299,6 @@ public class EncounterTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

@@ -766,15 +766,18 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CONDITIONAL_DOSE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationConditionalDose target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationConditionalDose target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationConditionalDoseOperations.validateMedicationConditionalDoseId(
@@ -797,10 +800,12 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CONDITIONAL_DOSE_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationConditionalDose target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationConditionalDose target) {
 				target.init();
 
@@ -809,6 +814,7 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationConditionalDoseOperations.validateMedicationConditionalDoseStatusCode(
@@ -831,17 +837,18 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CONDITIONAL_DOSE_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationConditionalDose target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationConditionalDose target) {
 				target.init();
 
-				DatatypesFactory.eINSTANCE.createIVL_TS();
-
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationConditionalDoseOperations.validateMedicationConditionalDoseEffectiveTime(
@@ -864,15 +871,18 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CONDITIONAL_DOSE_ROUTE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationConditionalDose target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationConditionalDose target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationConditionalDoseOperations.validateMedicationConditionalDoseRouteCode(
@@ -895,15 +905,18 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CONDITIONAL_DOSE_APPROACH_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationConditionalDose target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationConditionalDose target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationConditionalDoseOperations.validateMedicationConditionalDoseApproachSiteCode(
@@ -926,15 +939,18 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CONDITIONAL_DOSE_DOSE_QUANTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationConditionalDose target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationConditionalDose target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationConditionalDoseOperations.validateMedicationConditionalDoseDoseQuantity(
@@ -957,15 +973,18 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CONDITIONAL_DOSE_RATE_QUANTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationConditionalDose target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationConditionalDose target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationConditionalDoseOperations.validateMedicationConditionalDoseRateQuantity(
@@ -988,15 +1007,18 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CONDITIONAL_DOSE_MAX_DOSE_QUANTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationConditionalDose target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationConditionalDose target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationConditionalDoseOperations.validateMedicationConditionalDoseMaxDoseQuantity(
@@ -1019,15 +1041,18 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CONDITIONAL_DOSE_MEDICATION_SERIES_NUMBER_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationConditionalDose target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationConditionalDose target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationConditionalDoseOperations.validateMedicationConditionalDoseMedicationSeriesNumberObservation(
@@ -1050,15 +1075,18 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CONDITIONAL_DOSE_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationConditionalDose target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationConditionalDose target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationConditionalDoseOperations.validateMedicationConditionalDoseMedicationStatusObservation(
@@ -1081,15 +1109,18 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CONDITIONAL_DOSE_REACTION_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationConditionalDose target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationConditionalDose target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationConditionalDoseOperations.validateMedicationConditionalDoseReactionObservation(
@@ -1112,15 +1143,18 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CONDITIONAL_DOSE_PRODUCT_INSTANCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationConditionalDose target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationConditionalDose target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationConditionalDoseOperations.validateMedicationConditionalDoseProductInstance(
@@ -1227,15 +1261,18 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationConditionalDose target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationConditionalDose target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationConditionalDoseOperations.validateMedicationActivityTemplateId(
@@ -1258,15 +1295,18 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationConditionalDose target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationConditionalDose target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationConditionalDoseOperations.validateMedicationActivityCode(
@@ -1301,7 +1341,6 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<MedicationConditionalDose> {
-
 		public MedicationConditionalDose create() {
 			return ConsolFactory.eINSTANCE.createMedicationConditionalDose();
 		}
@@ -1340,7 +1379,7 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
+	@Override
 	protected EObject getObjectToTest() {
 		return null;
 	}

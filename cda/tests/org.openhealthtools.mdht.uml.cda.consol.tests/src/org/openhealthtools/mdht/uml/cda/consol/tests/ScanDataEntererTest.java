@@ -15,7 +15,6 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ScanDataEnterer;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ScanDataEntererOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,8 +55,6 @@ public class ScanDataEntererTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ScanDataEnterer target) {
 				target.init();
-
-				DatatypesFactory.eINSTANCE.createIVL_TS();
 
 			}
 
@@ -198,7 +195,6 @@ public class ScanDataEntererTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ScanDataEnterer> {
-
 		public ScanDataEnterer create() {
 			return ConsolFactory.eINSTANCE.createScanDataEnterer();
 		}
@@ -237,7 +233,6 @@ public class ScanDataEntererTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

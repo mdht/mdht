@@ -352,7 +352,6 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<DiagnosticResultsSection> {
-
 		public DiagnosticResultsSection create() {
 			return ConsolFactory.eINSTANCE.createDiagnosticResultsSection();
 		}
@@ -391,7 +390,6 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

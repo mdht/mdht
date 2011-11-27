@@ -266,7 +266,6 @@ public class InstructionsTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<Instructions> {
-
 		public Instructions create() {
 			return ConsolFactory.eINSTANCE.createInstructions();
 		}
@@ -305,7 +304,6 @@ public class InstructionsTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;
