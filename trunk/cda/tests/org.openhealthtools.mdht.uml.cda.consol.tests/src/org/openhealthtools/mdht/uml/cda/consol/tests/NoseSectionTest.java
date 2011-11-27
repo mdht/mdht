@@ -122,9 +122,6 @@ public class NoseSectionTest extends CDAValidationTest {
 			protected void updateToPass(NoseSection target) {
 				target.init();
 
-				// ProblemEntry entry = IHEFactory.eINSTANCE.createProblemEntry().init();
-				// target.addObservation(entry);
-
 			}
 
 			@Override
@@ -174,7 +171,6 @@ public class NoseSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<NoseSection> {
-
 		public NoseSection create() {
 			return ConsolFactory.eINSTANCE.createNoseSection();
 		}
@@ -213,7 +209,6 @@ public class NoseSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

@@ -125,7 +125,6 @@ public class ImmunizationsSectionEntriesOptionalTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ImmunizationsSectionEntriesOptional> {
-
 		public ImmunizationsSectionEntriesOptional create() {
 			return ConsolFactory.eINSTANCE.createImmunizationsSectionEntriesOptional();
 		}
@@ -164,7 +163,6 @@ public class ImmunizationsSectionEntriesOptionalTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

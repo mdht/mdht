@@ -123,11 +123,6 @@ public class RectumSectionTest extends CDAValidationTest {
 			protected void updateToPass(RectumSection target) {
 				target.init();
 
-				//
-				// ProblemEntry entry = IHEFactory.eINSTANCE.createProblemEntry().init();
-				// target.addObservation(entry);
-				//
-
 			}
 
 			@Override
@@ -177,7 +172,6 @@ public class RectumSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<RectumSection> {
-
 		public RectumSection create() {
 			return ConsolFactory.eINSTANCE.createRectumSection();
 		}
@@ -216,7 +210,6 @@ public class RectumSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

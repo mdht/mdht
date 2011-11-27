@@ -880,7 +880,6 @@ public class ConditionEntryTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ConditionEntry> {
-
 		public ConditionEntry create() {
 			return ConsolFactory.eINSTANCE.createConditionEntry();
 		}
@@ -919,7 +918,6 @@ public class ConditionEntryTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

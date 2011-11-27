@@ -124,10 +124,6 @@ public class VesselsSectionTest extends CDAValidationTest {
 			protected void updateToPass(VesselsSection target) {
 				target.init();
 
-				// ProblemEntry entry = IHEFactory.eINSTANCE.createProblemEntry().init();
-				// target.addObservation(entry);
-				//
-
 			}
 
 			@Override
@@ -177,7 +173,6 @@ public class VesselsSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<VesselsSection> {
-
 		public VesselsSection create() {
 			return ConsolFactory.eINSTANCE.createVesselsSection();
 		}
@@ -216,7 +211,6 @@ public class VesselsSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

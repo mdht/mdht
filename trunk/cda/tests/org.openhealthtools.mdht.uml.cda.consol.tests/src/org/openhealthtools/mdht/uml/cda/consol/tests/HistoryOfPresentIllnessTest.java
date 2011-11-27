@@ -125,7 +125,6 @@ public class HistoryOfPresentIllnessTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<HistoryOfPresentIllness> {
-
 		public HistoryOfPresentIllness create() {
 			return ConsolFactory.eINSTANCE.createHistoryOfPresentIllness();
 		}
@@ -164,7 +163,6 @@ public class HistoryOfPresentIllnessTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

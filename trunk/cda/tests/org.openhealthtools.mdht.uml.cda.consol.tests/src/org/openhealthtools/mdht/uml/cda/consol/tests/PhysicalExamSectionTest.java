@@ -1573,7 +1573,6 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<PhysicalExamSection> {
-
 		public PhysicalExamSection create() {
 			return ConsolFactory.eINSTANCE.createPhysicalExamSection();
 		}
@@ -1612,7 +1611,6 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

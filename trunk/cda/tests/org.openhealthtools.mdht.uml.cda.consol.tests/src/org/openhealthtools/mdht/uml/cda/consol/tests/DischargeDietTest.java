@@ -124,7 +124,6 @@ public class DischargeDietTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<DischargeDiet> {
-
 		public DischargeDiet create() {
 			return ConsolFactory.eINSTANCE.createDischargeDiet();
 		}
@@ -163,7 +162,6 @@ public class DischargeDietTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

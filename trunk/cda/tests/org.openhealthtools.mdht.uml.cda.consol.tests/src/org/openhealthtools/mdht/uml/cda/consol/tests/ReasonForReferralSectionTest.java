@@ -196,10 +196,6 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 			protected void updateToPass(ReasonForReferralSection target) {
 				target.init();
 
-				// ProblemEntry entry = IHEFactory.eINSTANCE.createProblemEntry().init();
-				// target.addObservation(entry);
-				//
-
 			}
 
 			@Override
@@ -273,7 +269,6 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ReasonForReferralSection> {
-
 		public ReasonForReferralSection create() {
 			return ConsolFactory.eINSTANCE.createReasonForReferralSection();
 		}
@@ -312,7 +307,6 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

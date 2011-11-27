@@ -124,9 +124,6 @@ public class GenitaliaSectionTest extends CDAValidationTest {
 			protected void updateToPass(GenitaliaSection target) {
 				target.init();
 
-				// ProblemEntry entry = IHEFactory.eINSTANCE.createProblemEntry().init();
-				// target.addObservation(entry);
-
 			}
 
 			@Override
@@ -176,7 +173,6 @@ public class GenitaliaSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<GenitaliaSection> {
-
 		public GenitaliaSection create() {
 			return ConsolFactory.eINSTANCE.createGenitaliaSection();
 		}
@@ -215,7 +211,6 @@ public class GenitaliaSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

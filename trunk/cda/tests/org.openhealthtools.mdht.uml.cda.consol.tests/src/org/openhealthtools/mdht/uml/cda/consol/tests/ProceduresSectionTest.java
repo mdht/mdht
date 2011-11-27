@@ -32,12 +32,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProceduresSection#validateProceduresSectionEntriesOptionalCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section Entries Optional Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProceduresSection#validateProceduresSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProceduresSection#validateProceduresSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section Text</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProceduresSection#validateProceduresSectionProcedureActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section Procedure Activity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProceduresSection#validateProceduresSectionExternalReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section External Reference</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProceduresSection#validateProceduresSectionProcedureEntryProcedureActivityProcedure(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section Procedure Entry Procedure Activity Procedure</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProceduresSection#getnullProcedureActivities() <em>Getnull Procedure Activities</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProceduresSection#getnullExternalReference() <em>Getnull External Reference</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProceduresSection#getnullProcedureEntryProcedureActivityProcedures() <em>Getnull Procedure Entry Procedure Activity Procedures</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProceduresSection#validateProceduresSectionProcedureActivityAct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section Procedure Activity Act</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProceduresSection#validateProceduresSectionProcedureActivityProcedure(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section Procedure Activity Procedure</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProceduresSection#getProcedureActivityAct() <em>Get Procedure Activity Act</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProceduresSection#getProcedureActivityProcedure() <em>Get Procedure Activity Procedure</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProceduresSection#getProcedureAcivityObservation() <em>Get Procedure Acivity Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProceduresSection#validateProceduresSectionEntriesOptionalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedures Section Entries Optional Template Id</em>}</li>
  * </ul>
  * </p>
@@ -194,10 +193,10 @@ public class ProceduresSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateProceduresSectionProcedureActivity() {
-		OperationsTestCase<ProceduresSection> validateProceduresSectionProcedureActivityTestCase = new OperationsTestCase<ProceduresSection>(
-			"validateProceduresSectionProcedureActivity",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURES_SECTION_PROCEDURE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateProceduresSectionProcedureActivityAct() {
+		OperationsTestCase<ProceduresSection> validateProceduresSectionProcedureActivityActTestCase = new OperationsTestCase<ProceduresSection>(
+			"validateProceduresSectionProcedureActivityAct",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURES_SECTION_PROCEDURE_ACTIVITY_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -214,13 +213,13 @@ public class ProceduresSectionTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProceduresSectionOperations.validateProceduresSectionProcedureActivity(
+				return ProceduresSectionOperations.validateProceduresSectionProcedureActivityAct(
 					(ProceduresSection) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateProceduresSectionProcedureActivityTestCase.doValidationTest();
+		validateProceduresSectionProcedureActivityActTestCase.doValidationTest();
 	}
 
 	/**
@@ -228,10 +227,10 @@ public class ProceduresSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateProceduresSectionExternalReference() {
-		OperationsTestCase<ProceduresSection> validateProceduresSectionExternalReferenceTestCase = new OperationsTestCase<ProceduresSection>(
-			"validateProceduresSectionExternalReference",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURES_SECTION_EXTERNAL_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateProceduresSectionProcedureActivityProcedure() {
+		OperationsTestCase<ProceduresSection> validateProceduresSectionProcedureActivityProcedureTestCase = new OperationsTestCase<ProceduresSection>(
+			"validateProceduresSectionProcedureActivityProcedure",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURES_SECTION_PROCEDURE_ACTIVITY_PROCEDURE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -248,13 +247,13 @@ public class ProceduresSectionTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProceduresSectionOperations.validateProceduresSectionExternalReference(
+				return ProceduresSectionOperations.validateProceduresSectionProcedureActivityProcedure(
 					(ProceduresSection) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateProceduresSectionExternalReferenceTestCase.doValidationTest();
+		validateProceduresSectionProcedureActivityProcedureTestCase.doValidationTest();
 	}
 
 	/**
@@ -262,44 +261,10 @@ public class ProceduresSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateProceduresSectionProcedureEntryProcedureActivityProcedure() {
-		OperationsTestCase<ProceduresSection> validateProceduresSectionProcedureEntryProcedureActivityProcedureTestCase = new OperationsTestCase<ProceduresSection>(
-			"validateProceduresSectionProcedureEntryProcedureActivityProcedure",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURES_SECTION_PROCEDURE_ENTRY_PROCEDURE_ACTIVITY_PROCEDURE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProceduresSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProceduresSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProceduresSectionOperations.validateProceduresSectionProcedureEntryProcedureActivityProcedure(
-					(ProceduresSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProceduresSectionProcedureEntryProcedureActivityProcedureTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testGetnullProcedureActivities() {
+	public void testGetProcedureActivityAct() {
 
 		ProceduresSection target = objectFactory.create();
-		target.getnullProcedureActivities();
+		target.getProcedureActivityAct();
 
 	}
 
@@ -308,10 +273,10 @@ public class ProceduresSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetnullExternalReference() {
+	public void testGetProcedureActivityProcedure() {
 
 		ProceduresSection target = objectFactory.create();
-		target.getnullExternalReference();
+		target.getProcedureActivityProcedure();
 
 	}
 
@@ -320,10 +285,10 @@ public class ProceduresSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetnullProcedureEntryProcedureActivityProcedures() {
+	public void testGetProcedureAcivityObservation() {
 
 		ProceduresSection target = objectFactory.create();
-		target.getnullProcedureEntryProcedureActivityProcedures();
+		target.getProcedureAcivityObservation();
 
 	}
 
@@ -384,7 +349,6 @@ public class ProceduresSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ProceduresSection> {
-
 		public ProceduresSection create() {
 			return ConsolFactory.eINSTANCE.createProceduresSection();
 		}
@@ -423,7 +387,6 @@ public class ProceduresSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

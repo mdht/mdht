@@ -234,7 +234,6 @@ public class ProblemObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ProblemObservation> {
-
 		public ProblemObservation create() {
 			return ConsolFactory.eINSTANCE.createProblemObservation();
 		}
@@ -273,7 +272,6 @@ public class ProblemObservationTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

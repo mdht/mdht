@@ -124,9 +124,6 @@ public class RespiratorySystemSectionTest extends CDAValidationTest {
 			protected void updateToPass(RespiratorySystemSection target) {
 				target.init();
 
-				// ProblemEntry entry = IHEFactory.eINSTANCE.createProblemEntry().init();
-				// target.addObservation(entry);
-
 			}
 
 			@Override
@@ -176,7 +173,6 @@ public class RespiratorySystemSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<RespiratorySystemSection> {
-
 		public RespiratorySystemSection create() {
 			return ConsolFactory.eINSTANCE.createRespiratorySystemSection();
 		}
@@ -215,7 +211,6 @@ public class RespiratorySystemSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

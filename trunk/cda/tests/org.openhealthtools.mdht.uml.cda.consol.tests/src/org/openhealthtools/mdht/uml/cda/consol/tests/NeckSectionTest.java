@@ -122,11 +122,6 @@ public class NeckSectionTest extends CDAValidationTest {
 			protected void updateToPass(NeckSection target) {
 				target.init();
 
-				//
-				// ProblemEntry entry = IHEFactory.eINSTANCE.createProblemEntry().init();
-				// target.addObservation(entry);
-				//
-
 			}
 
 			@Override
@@ -176,7 +171,6 @@ public class NeckSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<NeckSection> {
-
 		public NeckSection create() {
 			return ConsolFactory.eINSTANCE.createNeckSection();
 		}
@@ -215,7 +209,6 @@ public class NeckSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

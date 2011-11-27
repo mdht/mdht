@@ -90,7 +90,6 @@ public class SupportParticipantTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<SupportParticipant> {
-
 		public SupportParticipant create() {
 			return ConsolFactory.eINSTANCE.createSupportParticipant();
 		}
@@ -129,7 +128,6 @@ public class SupportParticipantTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

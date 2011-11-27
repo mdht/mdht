@@ -1294,11 +1294,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 
 			}
 
+			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ContinuityOfCareDocumentOperations.validateGeneralHeaderConstraintsTemplateId(
@@ -1321,15 +1323,18 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
 
 			}
 
+			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return ContinuityOfCareDocumentOperations.validateGeneralHeaderConstraintsCode(
@@ -1364,7 +1369,6 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ContinuityOfCareDocument> {
-
 		public ContinuityOfCareDocument create() {
 			return ConsolFactory.eINSTANCE.createContinuityOfCareDocument();
 		}
@@ -1403,7 +1407,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
+	@Override
 	protected EObject getObjectToTest() {
 		return null;
 	}

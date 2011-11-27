@@ -124,9 +124,6 @@ public class VisibleImplantedMedicalDevicesSectionTest extends CDAValidationTest
 			protected void updateToPass(VisibleImplantedMedicalDevicesSection target) {
 				target.init();
 
-				// ProblemEntry entry = IHEFactory.eINSTANCE.createProblemEntry().init();
-				// target.addObservation(entry);
-
 			}
 
 			@Override
@@ -176,7 +173,6 @@ public class VisibleImplantedMedicalDevicesSectionTest extends CDAValidationTest
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<VisibleImplantedMedicalDevicesSection> {
-
 		public VisibleImplantedMedicalDevicesSection create() {
 			return ConsolFactory.eINSTANCE.createVisibleImplantedMedicalDevicesSection();
 		}
@@ -215,7 +211,6 @@ public class VisibleImplantedMedicalDevicesSectionTest extends CDAValidationTest
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

@@ -305,7 +305,6 @@ public class PurposeActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<PurposeActivity> {
-
 		public PurposeActivity create() {
 			return ConsolFactory.eINSTANCE.createPurposeActivity();
 		}
@@ -344,7 +343,6 @@ public class PurposeActivityTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

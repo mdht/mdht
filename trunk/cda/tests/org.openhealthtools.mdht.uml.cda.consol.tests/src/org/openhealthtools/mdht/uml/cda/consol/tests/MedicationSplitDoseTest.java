@@ -125,7 +125,6 @@ public class MedicationSplitDoseTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<MedicationSplitDose> {
-
 		public MedicationSplitDose create() {
 			return ConsolFactory.eINSTANCE.createMedicationSplitDose();
 		}
@@ -164,7 +163,6 @@ public class MedicationSplitDoseTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

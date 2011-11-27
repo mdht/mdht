@@ -125,7 +125,6 @@ public class MedicationTypeTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<MedicationType> {
-
 		public MedicationType create() {
 			return ConsolFactory.eINSTANCE.createMedicationType();
 		}
@@ -164,7 +163,6 @@ public class MedicationTypeTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

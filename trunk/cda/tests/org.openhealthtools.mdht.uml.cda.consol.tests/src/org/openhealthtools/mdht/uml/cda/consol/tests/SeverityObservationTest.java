@@ -347,7 +347,6 @@ public class SeverityObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<SeverityObservation> {
-
 		public SeverityObservation create() {
 			return ConsolFactory.eINSTANCE.createSeverityObservation();
 		}
@@ -386,7 +385,6 @@ public class SeverityObservationTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

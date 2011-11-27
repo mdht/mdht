@@ -59,12 +59,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.NonMedicinalSupplyActivity#validateNonMedicinalSupplyActivityEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Non Medicinal Supply Activity Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.NonMedicinalSupplyActivity#validateNonMedicinalSupplyActivityRepeatNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Non Medicinal Supply Activity Repeat Number</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.NonMedicinalSupplyActivity#validateNonMedicinalSupplyActivityQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Non Medicinal Supply Activity Quantity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.NonMedicinalSupplyActivity#validateNonMedicinalSupplyActivityMedicationStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Non Medicinal Supply Activity Medication Status Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.NonMedicinalSupplyActivity#validateNonMedicinalSupplyActivityProductInstance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Non Medicinal Supply Activity Product Instance</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.NonMedicinalSupplyActivity#validateNonMedicinalSupplyActivityMedicationFullfillmentInstructions(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Non Medicinal Supply Activity Medication Fullfillment Instructions</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.NonMedicinalSupplyActivity#getMedicationStatusObservation() <em>Get Medication Status Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.NonMedicinalSupplyActivity#getProductInstances() <em>Get Product Instances</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.NonMedicinalSupplyActivity#getMedicationFullfillmentInstructions() <em>Get Medication Fullfillment Instructions</em>}</li>
  * </ul>
  * </p>
  *
@@ -637,8 +633,6 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
-				DatatypesFactory.eINSTANCE.createCD();
-
 			}
 
 			@Override
@@ -669,11 +663,13 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 
 			}
 
+			@Override
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityOrderNumber(
@@ -696,15 +692,18 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_ORDER_EXPIRATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
 
 			}
 
+			@Override
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityOrderExpiration(
@@ -727,15 +726,18 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_QUANTITY_ORDERED__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
 
 			}
 
+			@Override
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityQuantityOrdered(
@@ -758,15 +760,18 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_QUANTITY_UNIT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
 
 			}
 
+			@Override
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityQuantityUnit(
@@ -789,15 +794,18 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_PRESCRIPTION_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
 
 			}
 
+			@Override
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityPrescriptionNumber(
@@ -820,15 +828,18 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_ASSIGNING_AUTHORITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
 
 			}
 
+			@Override
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityAssigningAuthority(
@@ -851,15 +862,18 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_DISPENSE_DATE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
 
 			}
 
+			@Override
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityDispenseDate(
@@ -882,15 +896,18 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_DISPENSING_PHARMACY_LOCATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
 
 			}
 
+			@Override
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityDispensingPharmacyLocation(
@@ -913,15 +930,18 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_QUANTITY_DISPENSED__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
 
 			}
 
+			@Override
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityQuantityDispensed(
@@ -944,15 +964,18 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_HAS_FILL_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
 
 			}
 
+			@Override
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityHasFillNumber(
@@ -975,15 +998,18 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
 
 			}
 
+			@Override
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityTemplateId(
@@ -1006,15 +1032,18 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
 
 			}
 
+			@Override
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityId(
@@ -1037,10 +1066,12 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
 
 			}
 
+			@Override
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
@@ -1049,6 +1080,7 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityStatusCode(
@@ -1071,17 +1103,18 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
 
 			}
 
+			@Override
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
-				DatatypesFactory.eINSTANCE.createIVL_TS();
-
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityEffectiveTime(
@@ -1104,15 +1137,18 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_REPEAT_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
 
 			}
 
+			@Override
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityRepeatNumber(
@@ -1135,15 +1171,18 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_QUANTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
 
 			}
 
+			@Override
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityQuantity(
@@ -1160,52 +1199,24 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateNonMedicinalSupplyActivityMedicationStatusObservation() {
-		OperationsTestCase<NonMedicinalSupplyActivity> validateNonMedicinalSupplyActivityMedicationStatusObservationTestCase = new OperationsTestCase<NonMedicinalSupplyActivity>(
-			"validateNonMedicinalSupplyActivityMedicationStatusObservation",
-			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			protected void updateToFail(NonMedicinalSupplyActivity target) {
-
-			}
-
-			protected void updateToPass(NonMedicinalSupplyActivity target) {
-				target.init();
-
-			}
-
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityMedicationStatusObservation(
-					(NonMedicinalSupplyActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateNonMedicinalSupplyActivityMedicationStatusObservationTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
 	public void testValidateNonMedicinalSupplyActivityProductInstance() {
 		OperationsTestCase<NonMedicinalSupplyActivity> validateNonMedicinalSupplyActivityProductInstanceTestCase = new OperationsTestCase<NonMedicinalSupplyActivity>(
 			"validateNonMedicinalSupplyActivityProductInstance",
 			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_PRODUCT_INSTANCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
 
 			}
 
+			@Override
 			protected void updateToPass(NonMedicinalSupplyActivity target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityProductInstance(
@@ -1222,65 +1233,10 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateNonMedicinalSupplyActivityMedicationFullfillmentInstructions() {
-		OperationsTestCase<NonMedicinalSupplyActivity> validateNonMedicinalSupplyActivityMedicationFullfillmentInstructionsTestCase = new OperationsTestCase<NonMedicinalSupplyActivity>(
-			"validateNonMedicinalSupplyActivityMedicationFullfillmentInstructions",
-			operationsForOCL.getOCLValue("VALIDATE_NON_MEDICINAL_SUPPLY_ACTIVITY_MEDICATION_FULLFILLMENT_INSTRUCTIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			protected void updateToFail(NonMedicinalSupplyActivity target) {
-
-			}
-
-			protected void updateToPass(NonMedicinalSupplyActivity target) {
-				target.init();
-
-			}
-
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return NonMedicinalSupplyActivityOperations.validateNonMedicinalSupplyActivityMedicationFullfillmentInstructions(
-					(NonMedicinalSupplyActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateNonMedicinalSupplyActivityMedicationFullfillmentInstructionsTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testGetMedicationStatusObservation() {
-
-		NonMedicinalSupplyActivity target = objectFactory.create();
-		target.getMedicationStatusObservation();
-
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
 	public void testGetProductInstances() {
 
 		NonMedicinalSupplyActivity target = objectFactory.create();
 		target.getProductInstances();
-
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testGetMedicationFullfillmentInstructions() {
-
-		NonMedicinalSupplyActivity target = objectFactory.create();
-		target.getMedicationFullfillmentInstructions();
 
 	}
 
@@ -1307,7 +1263,6 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<NonMedicinalSupplyActivity> {
-
 		public NonMedicinalSupplyActivity create() {
 			return ConsolFactory.eINSTANCE.createNonMedicinalSupplyActivity();
 		}
@@ -1346,7 +1301,7 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
+	@Override
 	protected EObject getObjectToTest() {
 		return null;
 	}

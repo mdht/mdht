@@ -124,10 +124,6 @@ public class NeurologicSystemSectionTest extends CDAValidationTest {
 			protected void updateToPass(NeurologicSystemSection target) {
 				target.init();
 
-				// ProblemEntry entry = IHEFactory.eINSTANCE.createProblemEntry().init();
-				// target.addObservation(entry);
-				//
-
 			}
 
 			@Override
@@ -177,7 +173,6 @@ public class NeurologicSystemSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<NeurologicSystemSection> {
-
 		public NeurologicSystemSection create() {
 			return ConsolFactory.eINSTANCE.createNeurologicSystemSection();
 		}
@@ -216,7 +211,6 @@ public class NeurologicSystemSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

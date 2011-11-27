@@ -90,7 +90,6 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ImmunizationMedicationInformation> {
-
 		public ImmunizationMedicationInformation create() {
 			return ConsolFactory.eINSTANCE.createImmunizationMedicationInformation();
 		}
@@ -129,7 +128,6 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

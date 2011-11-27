@@ -160,7 +160,6 @@ public class ProductInstanceTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ProductInstance> {
-
 		public ProductInstance create() {
 			return ConsolFactory.eINSTANCE.createProductInstance();
 		}
@@ -199,7 +198,6 @@ public class ProductInstanceTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

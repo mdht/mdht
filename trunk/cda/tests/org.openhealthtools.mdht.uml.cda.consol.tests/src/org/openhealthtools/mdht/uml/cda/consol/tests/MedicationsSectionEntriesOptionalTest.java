@@ -125,7 +125,6 @@ public class MedicationsSectionEntriesOptionalTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<MedicationsSectionEntriesOptional> {
-
 		public MedicationsSectionEntriesOptional create() {
 			return ConsolFactory.eINSTANCE.createMedicationsSectionEntriesOptional();
 		}
@@ -164,7 +163,6 @@ public class MedicationsSectionEntriesOptionalTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

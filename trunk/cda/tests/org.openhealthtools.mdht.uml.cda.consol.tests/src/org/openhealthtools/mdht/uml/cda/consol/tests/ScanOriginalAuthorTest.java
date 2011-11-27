@@ -160,7 +160,6 @@ public class ScanOriginalAuthorTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ScanOriginalAuthor> {
-
 		public ScanOriginalAuthor create() {
 			return ConsolFactory.eINSTANCE.createScanOriginalAuthor();
 		}
@@ -199,7 +198,6 @@ public class ScanOriginalAuthorTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

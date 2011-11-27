@@ -124,7 +124,6 @@ public class BreastSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<BreastSection> {
-
 		public BreastSection create() {
 			return ConsolFactory.eINSTANCE.createBreastSection();
 		}
@@ -163,7 +162,6 @@ public class BreastSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

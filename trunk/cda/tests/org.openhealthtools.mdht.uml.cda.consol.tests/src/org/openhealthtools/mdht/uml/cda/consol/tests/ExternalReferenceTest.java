@@ -405,7 +405,6 @@ public class ExternalReferenceTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<ExternalReference> {
-
 		public ExternalReference create() {
 			return ConsolFactory.eINSTANCE.createExternalReference();
 		}
@@ -444,7 +443,6 @@ public class ExternalReferenceTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

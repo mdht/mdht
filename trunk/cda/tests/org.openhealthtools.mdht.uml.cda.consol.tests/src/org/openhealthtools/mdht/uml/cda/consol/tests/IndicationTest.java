@@ -89,7 +89,6 @@ public class IndicationTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<Indication> {
-
 		public Indication create() {
 			return ConsolFactory.eINSTANCE.createIndication();
 		}
@@ -128,7 +127,6 @@ public class IndicationTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

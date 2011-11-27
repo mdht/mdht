@@ -511,7 +511,6 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<SocialHistorySection> {
-
 		public SocialHistorySection create() {
 			return ConsolFactory.eINSTANCE.createSocialHistorySection();
 		}
@@ -550,7 +549,6 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

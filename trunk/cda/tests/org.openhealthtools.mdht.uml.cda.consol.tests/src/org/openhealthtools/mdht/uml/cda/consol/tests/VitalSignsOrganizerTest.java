@@ -68,8 +68,6 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 			protected void updateToPass(VitalSignsOrganizer target) {
 				target.init();
 
-				DatatypesFactory.eINSTANCE.createCD();
-
 			}
 
 			@Override
@@ -499,7 +497,6 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<VitalSignsOrganizer> {
-
 		public VitalSignsOrganizer create() {
 			return ConsolFactory.eINSTANCE.createVitalSignsOrganizer();
 		}
@@ -538,7 +535,6 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

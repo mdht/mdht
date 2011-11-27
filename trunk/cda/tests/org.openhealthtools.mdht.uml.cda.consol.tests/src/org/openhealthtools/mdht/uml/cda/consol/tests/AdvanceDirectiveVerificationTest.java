@@ -160,7 +160,6 @@ public class AdvanceDirectiveVerificationTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<AdvanceDirectiveVerification> {
-
 		public AdvanceDirectiveVerification create() {
 			return ConsolFactory.eINSTANCE.createAdvanceDirectiveVerification();
 		}
@@ -199,7 +198,6 @@ public class AdvanceDirectiveVerificationTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

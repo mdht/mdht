@@ -766,15 +766,18 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_COMBINATION_MEDICATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationCombinationMedication target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationCombinationMedication target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationCombinationMedicationOperations.validateMedicationCombinationMedicationId(
@@ -797,10 +800,12 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_COMBINATION_MEDICATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationCombinationMedication target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationCombinationMedication target) {
 				target.init();
 
@@ -809,6 +814,7 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationCombinationMedicationOperations.validateMedicationCombinationMedicationStatusCode(
@@ -831,17 +837,18 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_COMBINATION_MEDICATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationCombinationMedication target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationCombinationMedication target) {
 				target.init();
 
-				DatatypesFactory.eINSTANCE.createIVL_TS();
-
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationCombinationMedicationOperations.validateMedicationCombinationMedicationEffectiveTime(
@@ -864,15 +871,18 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_COMBINATION_MEDICATION_ROUTE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationCombinationMedication target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationCombinationMedication target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationCombinationMedicationOperations.validateMedicationCombinationMedicationRouteCode(
@@ -895,15 +905,18 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_COMBINATION_MEDICATION_APPROACH_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationCombinationMedication target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationCombinationMedication target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationCombinationMedicationOperations.validateMedicationCombinationMedicationApproachSiteCode(
@@ -926,15 +939,18 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_COMBINATION_MEDICATION_DOSE_QUANTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationCombinationMedication target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationCombinationMedication target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationCombinationMedicationOperations.validateMedicationCombinationMedicationDoseQuantity(
@@ -957,15 +973,18 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_COMBINATION_MEDICATION_RATE_QUANTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationCombinationMedication target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationCombinationMedication target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationCombinationMedicationOperations.validateMedicationCombinationMedicationRateQuantity(
@@ -988,15 +1007,18 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_COMBINATION_MEDICATION_MAX_DOSE_QUANTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationCombinationMedication target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationCombinationMedication target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationCombinationMedicationOperations.validateMedicationCombinationMedicationMaxDoseQuantity(
@@ -1019,15 +1041,18 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_COMBINATION_MEDICATION_MEDICATION_SERIES_NUMBER_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationCombinationMedication target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationCombinationMedication target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationCombinationMedicationOperations.validateMedicationCombinationMedicationMedicationSeriesNumberObservation(
@@ -1050,15 +1075,18 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_COMBINATION_MEDICATION_MEDICATION_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationCombinationMedication target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationCombinationMedication target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationCombinationMedicationOperations.validateMedicationCombinationMedicationMedicationStatusObservation(
@@ -1081,15 +1109,18 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_COMBINATION_MEDICATION_REACTION_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationCombinationMedication target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationCombinationMedication target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationCombinationMedicationOperations.validateMedicationCombinationMedicationReactionObservation(
@@ -1112,15 +1143,18 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_COMBINATION_MEDICATION_PRODUCT_INSTANCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationCombinationMedication target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationCombinationMedication target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationCombinationMedicationOperations.validateMedicationCombinationMedicationProductInstance(
@@ -1227,15 +1261,18 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationCombinationMedication target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationCombinationMedication target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationCombinationMedicationOperations.validateMedicationActivityTemplateId(
@@ -1258,15 +1295,18 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			@Override
 			protected void updateToFail(MedicationCombinationMedication target) {
 
 			}
 
+			@Override
 			protected void updateToPass(MedicationCombinationMedication target) {
 				target.init();
 
 			}
 
+			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return MedicationCombinationMedicationOperations.validateMedicationActivityCode(
@@ -1301,7 +1341,6 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 	* @generated
 	*/
 	private static class ObjectFactory implements TestObjectFactory<MedicationCombinationMedication> {
-
 		public MedicationCombinationMedication create() {
 			return ConsolFactory.eINSTANCE.createMedicationCombinationMedication();
 		}
@@ -1340,7 +1379,7 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
+	@Override
 	protected EObject getObjectToTest() {
 		return null;
 	}

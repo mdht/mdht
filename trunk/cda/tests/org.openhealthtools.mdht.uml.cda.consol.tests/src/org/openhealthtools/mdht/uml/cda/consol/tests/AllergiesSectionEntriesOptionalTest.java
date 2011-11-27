@@ -33,7 +33,6 @@ public class AllergiesSectionEntriesOptionalTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-
 	@Override
 	protected EObject getObjectToTest() {
 		return null;
