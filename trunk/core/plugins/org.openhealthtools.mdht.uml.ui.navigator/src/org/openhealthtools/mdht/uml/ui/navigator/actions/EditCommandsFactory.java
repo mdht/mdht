@@ -89,6 +89,8 @@ import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Relationship;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.openhealthtools.mdht.uml.common.ui.saveable.ModelDocument;
 import org.openhealthtools.mdht.uml.common.ui.saveable.ModelManager;
@@ -350,6 +352,18 @@ public class EditCommandsFactory implements IPropertyListener {
 						}
 					}
 
+					// find all associations that refer to eObject and mark them dirty
+					List<Relationship> otherTargets = ((Element) eObject).getRelationships(UMLPackage.Literals.ASSOCIATION);
+					for (Relationship relationship : otherTargets) {
+						// mark all source resources dirty so that they can be saved
+						for (Element element : relationship.getRelatedElements()) {
+							ModelDocument sourceDocument = ModelManager.getManager().manage(element.eResource());
+							if (sourceDocument != null) {
+								sourceDocument.setDirty(true);
+							}
+						}
+					}
+
 					for (Element element : controlledElements) {
 						// mark all source resources dirty so that they can be saved
 						ModelDocument sourceDocument = ModelManager.getManager().manage(element.eResource());
@@ -479,6 +493,18 @@ public class EditCommandsFactory implements IPropertyListener {
 									ted, eResourceContents, association)));
 
 								uncontrolledElements.add(association);
+							}
+						}
+					}
+
+					// find all associations that refer to eObject and mark them dirty
+					List<Relationship> otherTargets = ((Element) eObject).getRelationships(UMLPackage.Literals.ASSOCIATION);
+					for (Relationship relationship : otherTargets) {
+						// mark all source resources dirty so that they can be saved
+						for (Element element : relationship.getRelatedElements()) {
+							ModelDocument targetDocument = ModelManager.getManager().manage(element.eResource());
+							if (targetDocument != null) {
+								targetDocument.setDirty(true);
 							}
 						}
 					}
