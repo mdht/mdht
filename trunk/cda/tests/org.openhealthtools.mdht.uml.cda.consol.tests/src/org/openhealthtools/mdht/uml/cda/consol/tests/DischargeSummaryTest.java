@@ -11,10 +11,8 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
-import org.openhealthtools.mdht.uml.cda.consol.AdmissionMedicationHistorySection;
 import org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
-import org.openhealthtools.mdht.uml.cda.consol.DischargeDiagnosisSection;
 import org.openhealthtools.mdht.uml.cda.consol.DischargeSummary;
 import org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection;
 import org.openhealthtools.mdht.uml.cda.consol.HistoryOfPastIllnessSection;
@@ -24,6 +22,7 @@ import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeMedicationsSecti
 import org.openhealthtools.mdht.uml.cda.consol.MedicalEquipmentSection;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.consol.PhysicalExamSection;
+import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.consol.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.consol.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.consol.operations.DischargeSummaryOperations;
@@ -52,6 +51,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryHospitalCourseSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Hospital Course Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryMedicalEquipmentSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Medical Equipment Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryPhysicalExamSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Physical Exam Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryPlanOfCareSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Plan Of Care Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryHistoryOfPastIllnessSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary History Of Past Illness Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryReviewOfSystemsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Review Of Systems Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryMedicationsAdministeredSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Medications Administered Section</em>}</li>
@@ -68,6 +68,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getHospitalCourseSection() <em>Get Hospital Course Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getMedicalEquipmentSection() <em>Get Medical Equipment Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getPhysicalExamSection() <em>Get Physical Exam Section</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getPlanOfCareSection() <em>Get Plan Of Care Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getHistoryOfPastIllnessSection() <em>Get History Of Past Illness Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getReviewOfSystemsSection() <em>Get Review Of Systems Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#getMedicationsAdministeredSection() <em>Get Medications Administered Section</em>}</li>
@@ -203,13 +204,6 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-
-				/* AdmissionMedicationHistorySection */
-				AdmissionMedicationHistorySection section =
-
-				ConsolFactory.eINSTANCE.createAdmissionMedicationHistorySection().init();
-
-				target.addSection(section);
 
 			}
 
@@ -360,13 +354,6 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-
-				/* DischargeDiagnosisSection */
-				DischargeDiagnosisSection section =
-
-				ConsolFactory.eINSTANCE.createDischargeDiagnosisSection().init();
-
-				target.addSection(section);
 
 			}
 
@@ -653,6 +640,47 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryPhysicalExamSectionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateDischargeSummaryPlanOfCareSection() {
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryPlanOfCareSectionTestCase = new OperationsTestCase<DischargeSummary>(
+			"validateDischargeSummaryPlanOfCareSection",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DischargeSummary target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DischargeSummary target) {
+				target.init();
+
+				/* PlanOfCareSection */
+				PlanOfCareSection section =
+
+				ConsolFactory.eINSTANCE.createPlanOfCareSection().init();
+
+				target.addSection(section);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DischargeSummaryOperations.validateDischargeSummaryPlanOfCareSection(
+					(DischargeSummary) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDischargeSummaryPlanOfCareSectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -960,6 +988,18 @@ public class DischargeSummaryTest extends CDAValidationTest {
 
 		DischargeSummary target = objectFactory.create();
 		target.getPhysicalExamSection();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPlanOfCareSection() {
+
+		DischargeSummary target = objectFactory.create();
+		target.getPlanOfCareSection();
 
 	}
 

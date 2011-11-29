@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EyesSection#validateEyesSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Eyes Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EyesSection#validateEyesSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Eyes Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EyesSection#validateEyesSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Eyes Section Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EyesSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class EyesSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateEyesSectionTemplateId() {
-		OperationsTestCase<EyesSection> validateEyesSectionTemplateIdTestCase = new OperationsTestCase<EyesSection>(
-			"validateEyesSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_EYES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(EyesSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(EyesSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return EyesSectionOperations.validateEyesSectionTemplateId(
-					(EyesSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateEyesSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InternalReference#validateInternalReferenceTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Internal Reference Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InternalReference#validateInternalReferenceId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Internal Reference Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InternalReference#validateInternalReferenceCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Internal Reference Code</em>}</li>
  * </ul>
@@ -34,40 +33,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class InternalReferenceTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateInternalReferenceTemplateId() {
-		OperationsTestCase<InternalReference> validateInternalReferenceTemplateIdTestCase = new OperationsTestCase<InternalReference>(
-			"validateInternalReferenceTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_INTERNAL_REFERENCE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(InternalReference target) {
-
-			}
-
-			@Override
-			protected void updateToPass(InternalReference target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return InternalReferenceOperations.validateInternalReferenceTemplateId(
-					(InternalReference) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateInternalReferenceTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MouthThroatTeethSection#validateMouthThroatTeethSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mouth Throat Teeth Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MouthThroatTeethSection#validateMouthThroatTeethSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mouth Throat Teeth Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MouthThroatTeethSection#validateMouthThroatTeethSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mouth Throat Teeth Section Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MouthThroatTeethSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class MouthThroatTeethSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMouthThroatTeethSectionTemplateId() {
-		OperationsTestCase<MouthThroatTeethSection> validateMouthThroatTeethSectionTemplateIdTestCase = new OperationsTestCase<MouthThroatTeethSection>(
-			"validateMouthThroatTeethSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_MOUTH_THROAT_TEETH_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MouthThroatTeethSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MouthThroatTeethSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MouthThroatTeethSectionOperations.validateMouthThroatTeethSectionTemplateId(
-					(MouthThroatTeethSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMouthThroatTeethSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

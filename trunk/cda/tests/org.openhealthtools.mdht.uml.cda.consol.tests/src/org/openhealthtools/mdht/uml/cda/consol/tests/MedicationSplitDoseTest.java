@@ -25,7 +25,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSplitDose#validateMedicationSplitDoseSplitDosingSubstanceAdministration(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Split Dose Split Dosing Substance Administration</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSplitDose#validateMedicationActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,40 +65,6 @@ public class MedicationSplitDoseTest extends CDAValidationTest {
 		};
 
 		validateMedicationSplitDoseSplitDosingSubstanceAdministrationTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityTemplateId() {
-		OperationsTestCase<MedicationSplitDose> validateMedicationActivityTemplateIdTestCase = new OperationsTestCase<MedicationSplitDose>(
-			"validateMedicationActivityTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationSplitDose target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationSplitDose target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationSplitDoseOperations.validateMedicationActivityTemplateId(
-					(MedicationSplitDose) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityTemplateIdTestCase.doValidationTest();
 	}
 
 	/**

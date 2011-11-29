@@ -33,7 +33,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PayerEntry#validatePayerEntrySubscriberTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Payer Entry Subscriber Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PayerEntry#validatePayerEntryEntryRelationshipREFR(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Payer Entry Entry Relationship REFR</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PayerEntry#validatePayerEntryEntryRelationshipTarget(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Payer Entry Entry Relationship Target</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PayerEntry#validatePayerEntryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Payer Entry Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PayerEntry#validatePayerEntryClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Payer Entry Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PayerEntry#validatePayerEntryMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Payer Entry Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PayerEntry#validatePayerEntryId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Payer Entry Id</em>}</li>
@@ -288,39 +287,6 @@ public class PayerEntryTest extends CDAValidationTest {
 		};
 
 		validatePayerEntryEntryRelationshipTargetTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePayerEntryTemplateId() {
-		OperationsTestCase<PayerEntry> validatePayerEntryTemplateIdTestCase = new OperationsTestCase<PayerEntry>(
-			"validatePayerEntryTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PAYER_ENTRY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PayerEntry target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PayerEntry target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PayerEntryOperations.validatePayerEntryTemplateId((PayerEntry) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePayerEntryTemplateIdTestCase.doValidationTest();
 	}
 
 	/**

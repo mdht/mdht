@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.RectumSection#validateRectumSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Rectum Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.RectumSection#validateRectumSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Rectum Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.RectumSection#validateRectumSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Rectum Section Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.RectumSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class RectumSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateRectumSectionTemplateId() {
-		OperationsTestCase<RectumSection> validateRectumSectionTemplateIdTestCase = new OperationsTestCase<RectumSection>(
-			"validateRectumSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_RECTUM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(RectumSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(RectumSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return RectumSectionOperations.validateRectumSectionTemplateId(
-					(RectumSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateRectumSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

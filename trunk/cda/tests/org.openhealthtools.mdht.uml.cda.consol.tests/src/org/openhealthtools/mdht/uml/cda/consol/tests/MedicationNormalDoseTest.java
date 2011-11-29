@@ -25,7 +25,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationNormalDose#validateMedicationNormalDoseNoSubordinateSubstanceAdministration(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Normal Dose No Subordinate Substance Administration</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationNormalDose#validateMedicationActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,40 +65,6 @@ public class MedicationNormalDoseTest extends CDAValidationTest {
 		};
 
 		validateMedicationNormalDoseNoSubordinateSubstanceAdministrationTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityTemplateId() {
-		OperationsTestCase<MedicationNormalDose> validateMedicationActivityTemplateIdTestCase = new OperationsTestCase<MedicationNormalDose>(
-			"validateMedicationActivityTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationNormalDose target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationNormalDose target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationNormalDoseOperations.validateMedicationActivityTemplateId(
-					(MedicationNormalDose) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityTemplateIdTestCase.doValidationTest();
 	}
 
 	/**

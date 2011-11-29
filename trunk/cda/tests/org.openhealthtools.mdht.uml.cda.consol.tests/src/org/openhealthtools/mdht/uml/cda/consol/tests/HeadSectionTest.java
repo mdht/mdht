@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HeadSection#validateHeadSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Head Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HeadSection#validateHeadSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Head Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HeadSection#validateHeadSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Head Section Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HeadSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class HeadSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateHeadSectionTemplateId() {
-		OperationsTestCase<HeadSection> validateHeadSectionTemplateIdTestCase = new OperationsTestCase<HeadSection>(
-			"validateHeadSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HEAD_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(HeadSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(HeadSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return HeadSectionOperations.validateHeadSectionTemplateId(
-					(HeadSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateHeadSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

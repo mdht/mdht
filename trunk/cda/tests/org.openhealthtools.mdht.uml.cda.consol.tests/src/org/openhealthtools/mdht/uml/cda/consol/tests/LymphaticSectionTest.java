@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.LymphaticSection#validateLymphaticSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Lymphatic Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.LymphaticSection#validateLymphaticSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Lymphatic Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.LymphaticSection#validateLymphaticSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Lymphatic Section Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.LymphaticSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class LymphaticSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateLymphaticSectionTemplateId() {
-		OperationsTestCase<LymphaticSection> validateLymphaticSectionTemplateIdTestCase = new OperationsTestCase<LymphaticSection>(
-			"validateLymphaticSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_LYMPHATIC_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(LymphaticSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(LymphaticSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return LymphaticSectionOperations.validateLymphaticSectionTemplateId(
-					(LymphaticSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateLymphaticSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

@@ -25,7 +25,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Encounter#validateConsolEncounterAdmissionSourceValueSet(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consol Encounter Admission Source Value Set</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Encounter#validateConsolEncounterTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consol Encounter Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Encounter#validateConsolEncounterClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consol Encounter Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Encounter#validateConsolEncounterId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consol Encounter Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Encounter#validateConsolEncounterCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consol Encounter Code</em>}</li>
@@ -70,40 +69,6 @@ public class EncounterTest extends CDAValidationTest {
 		};
 
 		validateConsolEncounterAdmissionSourceValueSetTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateConsolEncounterTemplateId() {
-		OperationsTestCase<Encounter> validateConsolEncounterTemplateIdTestCase = new OperationsTestCase<Encounter>(
-			"validateConsolEncounterTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_CONSOL_ENCOUNTER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(Encounter target) {
-
-			}
-
-			@Override
-			protected void updateToPass(Encounter target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return EncounterOperations.validateConsolEncounterTemplateId(
-					(Encounter) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateConsolEncounterTemplateIdTestCase.doValidationTest();
 	}
 
 	/**

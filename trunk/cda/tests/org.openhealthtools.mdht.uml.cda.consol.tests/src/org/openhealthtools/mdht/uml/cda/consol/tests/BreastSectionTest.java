@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.BreastSection#validateBreastSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Breast Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.BreastSection#validateBreastSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Breast Section Code</em>}</li>
  * </ul>
  * </p>
@@ -33,40 +32,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class BreastSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateBreastSectionTemplateId() {
-		OperationsTestCase<BreastSection> validateBreastSectionTemplateIdTestCase = new OperationsTestCase<BreastSection>(
-			"validateBreastSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_BREAST_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(BreastSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(BreastSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return BreastSectionOperations.validateBreastSectionTemplateId(
-					(BreastSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateBreastSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

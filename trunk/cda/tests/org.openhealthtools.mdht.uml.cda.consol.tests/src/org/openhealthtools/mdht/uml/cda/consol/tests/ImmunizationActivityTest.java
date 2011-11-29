@@ -4,6 +4,7 @@
  *
  * $Id$
  */
+
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
 import java.util.Map;

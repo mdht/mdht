@@ -30,7 +30,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ScanningDevice#validateScanningDeviceHasDeviceManufacturerModelName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scanning Device Has Device Manufacturer Model Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ScanningDevice#validateScanningDeviceHasDeviceSoftwareName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scanning Device Has Device Software Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ScanningDevice#validateScanningDeviceHasAssignedAuthorRepresentedOrganizationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scanning Device Has Assigned Author Represented Organization Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ScanningDevice#validateScanningDeviceTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scanning Device Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -241,40 +240,6 @@ public class ScanningDeviceTest extends CDAValidationTest {
 		};
 
 		validateScanningDeviceHasAssignedAuthorRepresentedOrganizationIdTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateScanningDeviceTemplateId() {
-		OperationsTestCase<ScanningDevice> validateScanningDeviceTemplateIdTestCase = new OperationsTestCase<ScanningDevice>(
-			"validateScanningDeviceTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_SCANNING_DEVICE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ScanningDevice target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ScanningDevice target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ScanningDeviceOperations.validateScanningDeviceTemplateId(
-					(ScanningDevice) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateScanningDeviceTemplateIdTestCase.doValidationTest();
 	}
 
 	/**

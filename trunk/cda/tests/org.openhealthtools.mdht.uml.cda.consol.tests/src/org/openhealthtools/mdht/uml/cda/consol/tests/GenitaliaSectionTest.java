@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GenitaliaSection#validateGenitaliaSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Genitalia Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GenitaliaSection#validateGenitaliaSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Genitalia Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GenitaliaSection#validateGenitaliaSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Genitalia Section Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GenitaliaSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class GenitaliaSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateGenitaliaSectionTemplateId() {
-		OperationsTestCase<GenitaliaSection> validateGenitaliaSectionTemplateIdTestCase = new OperationsTestCase<GenitaliaSection>(
-			"validateGenitaliaSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_GENITALIA_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(GenitaliaSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(GenitaliaSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return GenitaliaSectionOperations.validateGenitaliaSectionTemplateId(
-					(GenitaliaSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateGenitaliaSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

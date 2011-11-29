@@ -65,7 +65,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#getInternalReferences() <em>Get Internal References</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#getPatientMedicalInstructionss() <em>Get Patient Medical Instructionss</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#getSupplyEntry() <em>Get Supply Entry</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#validateMedicationActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#validateMedicationActivityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Code</em>}</li>
  * </ul>
  * </p>
@@ -1248,40 +1247,6 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 		MedicationConditionalDose target = objectFactory.create();
 		target.getSupplyEntry();
 
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityTemplateId() {
-		OperationsTestCase<MedicationConditionalDose> validateMedicationActivityTemplateIdTestCase = new OperationsTestCase<MedicationConditionalDose>(
-			"validateMedicationActivityTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationConditionalDose target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationConditionalDose target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationConditionalDoseOperations.validateMedicationActivityTemplateId(
-					(MedicationConditionalDose) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityTemplateIdTestCase.doValidationTest();
 	}
 
 	/**

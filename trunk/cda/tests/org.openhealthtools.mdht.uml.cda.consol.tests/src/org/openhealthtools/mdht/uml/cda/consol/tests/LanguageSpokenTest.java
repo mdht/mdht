@@ -25,7 +25,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.LanguageSpoken#validateLanguageSpokenNoProficiencyLevelCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Language Spoken No Proficiency Level Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.LanguageSpoken#validateLanguageSpokenTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Language Spoken Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.LanguageSpoken#validateLanguageSpokenModeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Language Spoken Mode Code</em>}</li>
  * </ul>
  * </p>
@@ -67,40 +66,6 @@ public class LanguageSpokenTest extends CDAValidationTest {
 		};
 
 		validateLanguageSpokenNoProficiencyLevelCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateLanguageSpokenTemplateId() {
-		OperationsTestCase<LanguageSpoken> validateLanguageSpokenTemplateIdTestCase = new OperationsTestCase<LanguageSpoken>(
-			"validateLanguageSpokenTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_LANGUAGE_SPOKEN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(LanguageSpoken target) {
-
-			}
-
-			@Override
-			protected void updateToPass(LanguageSpoken target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return LanguageSpokenOperations.validateLanguageSpokenTemplateId(
-					(LanguageSpoken) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateLanguageSpokenTemplateIdTestCase.doValidationTest();
 	}
 
 	/**

@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.IntegumentarySystemSection#validateIntegumentarySystemSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Integumentary System Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.IntegumentarySystemSection#validateIntegumentarySystemSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Integumentary System Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.IntegumentarySystemSection#validateIntegumentarySystemSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Integumentary System Section Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.IntegumentarySystemSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class IntegumentarySystemSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateIntegumentarySystemSectionTemplateId() {
-		OperationsTestCase<IntegumentarySystemSection> validateIntegumentarySystemSectionTemplateIdTestCase = new OperationsTestCase<IntegumentarySystemSection>(
-			"validateIntegumentarySystemSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_INTEGUMENTARY_SYSTEM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(IntegumentarySystemSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(IntegumentarySystemSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return IntegumentarySystemSectionOperations.validateIntegumentarySystemSectionTemplateId(
-					(IntegumentarySystemSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateIntegumentarySystemSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

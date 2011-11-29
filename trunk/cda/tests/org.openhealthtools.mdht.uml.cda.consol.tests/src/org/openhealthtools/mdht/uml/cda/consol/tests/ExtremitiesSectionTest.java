@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ExtremitiesSection#validateExtremitiesSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Extremities Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ExtremitiesSection#validateExtremitiesSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Extremities Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ExtremitiesSection#validateExtremitiesSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Extremities Section Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ExtremitiesSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class ExtremitiesSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateExtremitiesSectionTemplateId() {
-		OperationsTestCase<ExtremitiesSection> validateExtremitiesSectionTemplateIdTestCase = new OperationsTestCase<ExtremitiesSection>(
-			"validateExtremitiesSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_EXTREMITIES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ExtremitiesSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ExtremitiesSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ExtremitiesSectionOperations.validateExtremitiesSectionTemplateId(
-					(ExtremitiesSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateExtremitiesSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

@@ -20,7 +20,6 @@ import org.openhealthtools.mdht.uml.cda.consol.EarsSection;
 import org.openhealthtools.mdht.uml.cda.consol.EndocrineSystemSection;
 import org.openhealthtools.mdht.uml.cda.consol.ExtremitiesSection;
 import org.openhealthtools.mdht.uml.cda.consol.EyesSection;
-import org.openhealthtools.mdht.uml.cda.consol.GeneralAppearanceSection;
 import org.openhealthtools.mdht.uml.cda.consol.GenitaliaSection;
 import org.openhealthtools.mdht.uml.cda.consol.HeadSection;
 import org.openhealthtools.mdht.uml.cda.consol.HeartSection;
@@ -273,13 +272,6 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PhysicalExamSection target) {
 				target.init();
-
-				/* GeneralAppearanceSection */
-				GeneralAppearanceSection section =
-
-				ConsolFactory.eINSTANCE.createGeneralAppearanceSection().init();
-
-				target.addSection(section);
 
 			}
 

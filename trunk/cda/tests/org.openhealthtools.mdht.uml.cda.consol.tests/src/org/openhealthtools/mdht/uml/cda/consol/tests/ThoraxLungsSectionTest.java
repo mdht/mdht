@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ThoraxLungsSection#validateThoraxLungsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Thorax Lungs Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ThoraxLungsSection#validateThoraxLungsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Thorax Lungs Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ThoraxLungsSection#validateThoraxLungsSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Thorax Lungs Section Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ThoraxLungsSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class ThoraxLungsSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateThoraxLungsSectionTemplateId() {
-		OperationsTestCase<ThoraxLungsSection> validateThoraxLungsSectionTemplateIdTestCase = new OperationsTestCase<ThoraxLungsSection>(
-			"validateThoraxLungsSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_THORAX_LUNGS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ThoraxLungsSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ThoraxLungsSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ThoraxLungsSectionOperations.validateThoraxLungsSectionTemplateId(
-					(ThoraxLungsSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateThoraxLungsSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*
