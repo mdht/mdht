@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.NeurologicSystemSection#validateNeurologicSystemSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neurologic System Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.NeurologicSystemSection#validateNeurologicSystemSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neurologic System Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.NeurologicSystemSection#validateNeurologicSystemSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Neurologic System Section Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.NeurologicSystemSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class NeurologicSystemSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateNeurologicSystemSectionTemplateId() {
-		OperationsTestCase<NeurologicSystemSection> validateNeurologicSystemSectionTemplateIdTestCase = new OperationsTestCase<NeurologicSystemSection>(
-			"validateNeurologicSystemSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_NEUROLOGIC_SYSTEM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(NeurologicSystemSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(NeurologicSystemSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return NeurologicSystemSectionOperations.validateNeurologicSystemSectionTemplateId(
-					(NeurologicSystemSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateNeurologicSystemSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

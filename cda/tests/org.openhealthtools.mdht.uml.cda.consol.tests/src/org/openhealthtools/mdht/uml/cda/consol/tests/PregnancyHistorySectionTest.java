@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyHistorySection#validatePregnancyHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy History Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyHistorySection#validatePregnancyHistorySectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy History Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyHistorySection#validatePregnancyHistorySectionPregnancyObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy History Section Pregnancy Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyHistorySection#getPregnancyObservations() <em>Get Pregnancy Observations</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class PregnancyHistorySectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePregnancyHistorySectionTemplateId() {
-		OperationsTestCase<PregnancyHistorySection> validatePregnancyHistorySectionTemplateIdTestCase = new OperationsTestCase<PregnancyHistorySection>(
-			"validatePregnancyHistorySectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PregnancyHistorySection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PregnancyHistorySection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PregnancyHistorySectionOperations.validatePregnancyHistorySectionTemplateId(
-					(PregnancyHistorySection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePregnancyHistorySectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

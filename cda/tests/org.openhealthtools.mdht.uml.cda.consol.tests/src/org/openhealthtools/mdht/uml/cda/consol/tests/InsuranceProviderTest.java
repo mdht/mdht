@@ -49,7 +49,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InsuranceProvider#validateInsuranceProviderFinancialResponsibilityPartyType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Insurance Provider Financial Responsibility Party Type</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InsuranceProvider#validateInsuranceProviderFinancialResponsibilityPartyTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Insurance Provider Financial Responsibility Party Type Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InsuranceProvider#validateInsuranceProviderFinancialResponsibilityPartyAddress(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Insurance Provider Financial Responsibility Party Address</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InsuranceProvider#validateInsuranceProviderTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Insurance Provider Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InsuranceProvider#validateInsuranceProviderClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Insurance Provider Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InsuranceProvider#validateInsuranceProviderMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Insurance Provider Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InsuranceProvider#validateInsuranceProviderId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Insurance Provider Id</em>}</li>
@@ -845,40 +844,6 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderFinancialResponsibilityPartyAddressTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateInsuranceProviderTemplateId() {
-		OperationsTestCase<InsuranceProvider> validateInsuranceProviderTemplateIdTestCase = new OperationsTestCase<InsuranceProvider>(
-			"validateInsuranceProviderTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(InsuranceProvider target) {
-
-			}
-
-			@Override
-			protected void updateToPass(InsuranceProvider target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return InsuranceProviderOperations.validateInsuranceProviderTemplateId(
-					(InsuranceProvider) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateInsuranceProviderTemplateIdTestCase.doValidationTest();
 	}
 
 	/**

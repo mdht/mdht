@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AbdomenSection#validateAbdomenSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Abdomen Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AbdomenSection#validateAbdomenSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Abdomen Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AbdomenSection#validateAbdomenSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Abdomen Section Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AbdomenSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class AbdomenSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateAbdomenSectionTemplateId() {
-		OperationsTestCase<AbdomenSection> validateAbdomenSectionTemplateIdTestCase = new OperationsTestCase<AbdomenSection>(
-			"validateAbdomenSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ABDOMEN_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AbdomenSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AbdomenSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AbdomenSectionOperations.validateAbdomenSectionTemplateId(
-					(AbdomenSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAbdomenSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

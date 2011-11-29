@@ -26,7 +26,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationFullfillmentInstructions#validateMedicationFullfillmentInstructionsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Fullfillment Instructions Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationFullfillmentInstructions#validateMedicationFullfillmentInstructionsMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Fullfillment Instructions Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationFullfillmentInstructions#validateMedicationFullfillmentInstructionsCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Fullfillment Instructions Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationFullfillmentInstructions#validateMedicationFullfillmentInstructionsText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Fullfillment Instructions Text</em>}</li>
@@ -38,40 +37,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  */
 
 public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationFullfillmentInstructionsTemplateId() {
-		OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsTemplateIdTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
-			"validateMedicationFullfillmentInstructionsTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationFullfillmentInstructions target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationFullfillmentInstructions target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationFullfillmentInstructionsOperations.validateMedicationFullfillmentInstructionsTemplateId(
-					(MedicationFullfillmentInstructions) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationFullfillmentInstructionsTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

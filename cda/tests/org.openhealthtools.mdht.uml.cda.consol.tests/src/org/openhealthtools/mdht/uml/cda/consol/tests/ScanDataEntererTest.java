@@ -26,7 +26,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ScanDataEnterer#validateScanDataEntererTimeEqualsDocumentEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scan Data Enterer Time Equals Document Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ScanDataEnterer#validateScanDataEntererHasAssignedEntityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scan Data Enterer Has Assigned Entity Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ScanDataEnterer#validateScanDataEntererTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scan Data Enterer Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ScanDataEnterer#validateScanDataEntererTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scan Data Enterer Time</em>}</li>
  * </ul>
  * </p>
@@ -102,40 +101,6 @@ public class ScanDataEntererTest extends CDAValidationTest {
 		};
 
 		validateScanDataEntererHasAssignedEntityIdTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateScanDataEntererTemplateId() {
-		OperationsTestCase<ScanDataEnterer> validateScanDataEntererTemplateIdTestCase = new OperationsTestCase<ScanDataEnterer>(
-			"validateScanDataEntererTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_SCAN_DATA_ENTERER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ScanDataEnterer target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ScanDataEnterer target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ScanDataEntererOperations.validateScanDataEntererTemplateId(
-					(ScanDataEnterer) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateScanDataEntererTemplateIdTestCase.doValidationTest();
 	}
 
 	/**

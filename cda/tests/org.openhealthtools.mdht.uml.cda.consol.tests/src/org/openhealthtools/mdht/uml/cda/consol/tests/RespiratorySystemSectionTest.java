@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.RespiratorySystemSection#validateRespiratorySystemSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Respiratory System Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.RespiratorySystemSection#validateRespiratorySystemSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Respiratory System Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.RespiratorySystemSection#validateRespiratorySystemSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Respiratory System Section Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.RespiratorySystemSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class RespiratorySystemSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateRespiratorySystemSectionTemplateId() {
-		OperationsTestCase<RespiratorySystemSection> validateRespiratorySystemSectionTemplateIdTestCase = new OperationsTestCase<RespiratorySystemSection>(
-			"validateRespiratorySystemSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_RESPIRATORY_SYSTEM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(RespiratorySystemSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(RespiratorySystemSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return RespiratorySystemSectionOperations.validateRespiratorySystemSectionTemplateId(
-					(RespiratorySystemSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateRespiratorySystemSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

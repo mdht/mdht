@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VesselsSection#validateVesselsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vessels Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VesselsSection#validateVesselsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vessels Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VesselsSection#validateVesselsSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vessels Section Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VesselsSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class VesselsSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateVesselsSectionTemplateId() {
-		OperationsTestCase<VesselsSection> validateVesselsSectionTemplateIdTestCase = new OperationsTestCase<VesselsSection>(
-			"validateVesselsSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_VESSELS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(VesselsSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(VesselsSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return VesselsSectionOperations.validateVesselsSectionTemplateId(
-					(VesselsSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateVesselsSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

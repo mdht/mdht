@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.NoseSection#validateNoseSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Nose Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.NoseSection#validateNoseSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Nose Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.NoseSection#validateNoseSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Nose Section Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.NoseSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class NoseSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateNoseSectionTemplateId() {
-		OperationsTestCase<NoseSection> validateNoseSectionTemplateIdTestCase = new OperationsTestCase<NoseSection>(
-			"validateNoseSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_NOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(NoseSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(NoseSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return NoseSectionOperations.validateNoseSectionTemplateId(
-					(NoseSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateNoseSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

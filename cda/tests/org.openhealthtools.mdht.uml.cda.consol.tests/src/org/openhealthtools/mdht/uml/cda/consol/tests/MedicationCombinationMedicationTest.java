@@ -65,7 +65,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#getInternalReferences() <em>Get Internal References</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#getPatientMedicalInstructionss() <em>Get Patient Medical Instructionss</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#getSupplyEntry() <em>Get Supply Entry</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#validateMedicationActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#validateMedicationActivityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Code</em>}</li>
  * </ul>
  * </p>
@@ -1248,40 +1247,6 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 		MedicationCombinationMedication target = objectFactory.create();
 		target.getSupplyEntry();
 
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityTemplateId() {
-		OperationsTestCase<MedicationCombinationMedication> validateMedicationActivityTemplateIdTestCase = new OperationsTestCase<MedicationCombinationMedication>(
-			"validateMedicationActivityTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationCombinationMedication target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationCombinationMedication target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationCombinationMedicationOperations.validateMedicationActivityTemplateId(
-					(MedicationCombinationMedication) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityTemplateIdTestCase.doValidationTest();
 	}
 
 	/**

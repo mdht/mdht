@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EarsNoseMouthThroatSection#validateEarsNoseMouthThroatSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Ears Nose Mouth Throat Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EarsNoseMouthThroatSection#validateEarsNoseMouthThroatSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Ears Nose Mouth Throat Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EarsNoseMouthThroatSection#validateEarsNoseMouthThroatSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Ears Nose Mouth Throat Section Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EarsNoseMouthThroatSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class EarsNoseMouthThroatSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateEarsNoseMouthThroatSectionTemplateId() {
-		OperationsTestCase<EarsNoseMouthThroatSection> validateEarsNoseMouthThroatSectionTemplateIdTestCase = new OperationsTestCase<EarsNoseMouthThroatSection>(
-			"validateEarsNoseMouthThroatSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_EARS_NOSE_MOUTH_THROAT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(EarsNoseMouthThroatSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(EarsNoseMouthThroatSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return EarsNoseMouthThroatSectionOperations.validateEarsNoseMouthThroatSectionTemplateId(
-					(EarsNoseMouthThroatSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateEarsNoseMouthThroatSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VisibleImplantedMedicalDevicesSection#validateVisibleImplantedMedicalDevicesSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Visible Implanted Medical Devices Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VisibleImplantedMedicalDevicesSection#validateVisibleImplantedMedicalDevicesSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Visible Implanted Medical Devices Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VisibleImplantedMedicalDevicesSection#validateVisibleImplantedMedicalDevicesSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Visible Implanted Medical Devices Section Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VisibleImplantedMedicalDevicesSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class VisibleImplantedMedicalDevicesSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateVisibleImplantedMedicalDevicesSectionTemplateId() {
-		OperationsTestCase<VisibleImplantedMedicalDevicesSection> validateVisibleImplantedMedicalDevicesSectionTemplateIdTestCase = new OperationsTestCase<VisibleImplantedMedicalDevicesSection>(
-			"validateVisibleImplantedMedicalDevicesSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_VISIBLE_IMPLANTED_MEDICAL_DEVICES_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(VisibleImplantedMedicalDevicesSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(VisibleImplantedMedicalDevicesSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return VisibleImplantedMedicalDevicesSectionOperations.validateVisibleImplantedMedicalDevicesSectionTemplateId(
-					(VisibleImplantedMedicalDevicesSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateVisibleImplantedMedicalDevicesSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*

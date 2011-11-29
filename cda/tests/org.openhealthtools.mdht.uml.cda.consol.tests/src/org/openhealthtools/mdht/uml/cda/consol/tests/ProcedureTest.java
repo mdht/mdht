@@ -26,7 +26,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Procedure#validateConsolProcedureHasCodeOriginalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consol Procedure Has Code Original Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Procedure#validateConsolProcedurePerformerAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consol Procedure Performer Assigned Entity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Procedure#validateConsolProcedureTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consol Procedure Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Procedure#validateConsolProcedureCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consol Procedure Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Procedure#validateConsolProcedureTargetSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consol Procedure Target Site Code</em>}</li>
  * </ul>
@@ -103,40 +102,6 @@ public class ProcedureTest extends CDAValidationTest {
 		};
 
 		validateConsolProcedurePerformerAssignedEntityTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateConsolProcedureTemplateId() {
-		OperationsTestCase<Procedure> validateConsolProcedureTemplateIdTestCase = new OperationsTestCase<Procedure>(
-			"validateConsolProcedureTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_CONSOL_PROCEDURE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(Procedure target) {
-
-			}
-
-			@Override
-			protected void updateToPass(Procedure target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProcedureOperations.validateConsolProcedureTemplateId(
-					(Procedure) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateConsolProcedureTemplateIdTestCase.doValidationTest();
 	}
 
 	/**

@@ -24,7 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EndocrineSystemSection#validateEndocrineSystemSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Endocrine System Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EndocrineSystemSection#validateEndocrineSystemSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Endocrine System Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EndocrineSystemSection#validateEndocrineSystemSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Endocrine System Section Problem Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EndocrineSystemSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
@@ -35,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class EndocrineSystemSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateEndocrineSystemSectionTemplateId() {
-		OperationsTestCase<EndocrineSystemSection> validateEndocrineSystemSectionTemplateIdTestCase = new OperationsTestCase<EndocrineSystemSection>(
-			"validateEndocrineSystemSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ENDOCRINE_SYSTEM_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(EndocrineSystemSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(EndocrineSystemSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return EndocrineSystemSectionOperations.validateEndocrineSystemSectionTemplateId(
-					(EndocrineSystemSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateEndocrineSystemSectionTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*
