@@ -135,7 +135,9 @@ public class RIMModelUtil {
 	}
 
 	public static boolean isRIMModel(Element element) {
-		return RIM_PACKAGE_NAME.equals(element.getNearestPackage().getName());
+		return RIM_PACKAGE_NAME.equals((element.getNearestPackage() != null)
+				? element.getNearestPackage().getName()
+				: "");
 	}
 
 	public static boolean isRIMType(Type umlClass, String typeName) {
