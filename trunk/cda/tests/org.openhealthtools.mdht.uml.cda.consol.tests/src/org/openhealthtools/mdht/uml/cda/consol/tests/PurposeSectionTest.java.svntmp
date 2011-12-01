@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.junit.Test;
+import org.junit.Test; import org.openhealthtools.mdht.uml.cda.consol.*;
 
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;

@@ -60,7 +60,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#validateMedicationCombinationMedicationProductInstance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Combination Medication Product Instance</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#getMedicationSeriesNumberObservation() <em>Get Medication Series Number Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#getMedicationStatusObservation() <em>Get Medication Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#getnullReactionObservations() <em>Getnull Reaction Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#getConsolReactionObservations() <em>Get Consol Reaction Observations</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#getProductInstances() <em>Get Product Instances</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#getInternalReferences() <em>Get Internal References</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#getPatientMedicalInstructionss() <em>Get Patient Medical Instructionss</em>}</li>
@@ -827,7 +827,7 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationCombinationMedicationEffectiveTime() {
@@ -1194,10 +1194,10 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetnullReactionObservations() {
+	public void testGetConsolReactionObservations() {
 
 		MedicationCombinationMedication target = objectFactory.create();
-		target.getnullReactionObservations();
+		target.getConsolReactionObservations();
 
 	}
 

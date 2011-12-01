@@ -187,7 +187,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateDischargeSummaryAdmissionMedicationHistorySection() {
@@ -303,7 +303,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateDischargeSummaryAllergiesReactionsSection() {
@@ -337,7 +337,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateDischargeSummaryDischargeDiagnosisSection() {

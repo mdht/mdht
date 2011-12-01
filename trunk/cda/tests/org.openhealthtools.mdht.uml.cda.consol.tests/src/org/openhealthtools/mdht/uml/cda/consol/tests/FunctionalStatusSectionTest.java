@@ -85,7 +85,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateFunctionalStatusSectionObservationCode() {

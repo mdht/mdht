@@ -11,10 +11,15 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Criterion;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.PreconditionForSubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.consol.operations.PreconditionForSubstanceAdministrationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +29,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PreconditionForSubstanceAdministration#validatePreconditionForSubstanceAdministrationCriterionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Precondition For Substance Administration Criterion Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PreconditionForSubstanceAdministration#validatePreconditionForSubstanceAdministrationCriterionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Precondition For Substance Administration Criterion Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PreconditionForSubstanceAdministration#validatePreconditionForSubstanceAdministrationCriterionValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Precondition For Substance Administration Criterion Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PreconditionForSubstanceAdministration#validatePreconditionForSubstanceAdministrationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Precondition For Substance Administration Template Id</em>}</li>
  * </ul>
  * </p>
@@ -32,6 +40,119 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class PreconditionForSubstanceAdministrationTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidatePreconditionForSubstanceAdministrationCriterionCode() {
+		OperationsTestCase<PreconditionForSubstanceAdministration> validatePreconditionForSubstanceAdministrationCriterionCodeTestCase = new OperationsTestCase<PreconditionForSubstanceAdministration>(
+			"validatePreconditionForSubstanceAdministrationCriterionCode",
+			operationsForOCL.getOCLValue("VALIDATE_PRECONDITION_FOR_SUBSTANCE_ADMINISTRATION_CRITERION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PreconditionForSubstanceAdministration target) {
+				target.init();
+				Criterion criterion = CDAFactory.eINSTANCE.createCriterion();
+				target.setCriterion(criterion);
+			}
+
+			@Override
+			protected void updateToPass(PreconditionForSubstanceAdministration target) {
+
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				target.getCriterion().setCode(cd);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PreconditionForSubstanceAdministrationOperations.validatePreconditionForSubstanceAdministrationCriterionCode(
+					(PreconditionForSubstanceAdministration) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePreconditionForSubstanceAdministrationCriterionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidatePreconditionForSubstanceAdministrationCriterionText() {
+		OperationsTestCase<PreconditionForSubstanceAdministration> validatePreconditionForSubstanceAdministrationCriterionTextTestCase = new OperationsTestCase<PreconditionForSubstanceAdministration>(
+			"validatePreconditionForSubstanceAdministrationCriterionText",
+			operationsForOCL.getOCLValue("VALIDATE_PRECONDITION_FOR_SUBSTANCE_ADMINISTRATION_CRITERION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PreconditionForSubstanceAdministration target) {
+
+				target.init();
+				Criterion criterion = CDAFactory.eINSTANCE.createCriterion();
+				target.setCriterion(criterion);
+			}
+
+			@Override
+			protected void updateToPass(PreconditionForSubstanceAdministration target) {
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.getCriterion().setText(text);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PreconditionForSubstanceAdministrationOperations.validatePreconditionForSubstanceAdministrationCriterionText(
+					(PreconditionForSubstanceAdministration) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePreconditionForSubstanceAdministrationCriterionTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidatePreconditionForSubstanceAdministrationCriterionValue() {
+		OperationsTestCase<PreconditionForSubstanceAdministration> validatePreconditionForSubstanceAdministrationCriterionValueTestCase = new OperationsTestCase<PreconditionForSubstanceAdministration>(
+			"validatePreconditionForSubstanceAdministrationCriterionValue",
+			operationsForOCL.getOCLValue("VALIDATE_PRECONDITION_FOR_SUBSTANCE_ADMINISTRATION_CRITERION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PreconditionForSubstanceAdministration target) {
+				target.init();
+				Criterion criterion = CDAFactory.eINSTANCE.createCriterion();
+				target.setCriterion(criterion);
+
+			}
+
+			@Override
+			protected void updateToPass(PreconditionForSubstanceAdministration target) {
+
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getCriterion().setValue(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PreconditionForSubstanceAdministrationOperations.validatePreconditionForSubstanceAdministrationCriterionValue(
+					(PreconditionForSubstanceAdministration) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePreconditionForSubstanceAdministrationCriterionValueTestCase.doValidationTest();
+	}
 
 	/**
 	*
