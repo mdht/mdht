@@ -430,8 +430,6 @@ public class VitalSignObservationTest extends CDAValidationTest {
 			protected void updateToPass(VitalSignObservation target) {
 				target.init();
 
-				target.getTargetSiteCodes().add(DatatypesFactory.eINSTANCE.createCD());
-
 			}
 
 			@Override
