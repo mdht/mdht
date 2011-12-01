@@ -1,35 +1,30 @@
-/*******************************************************************************
- * Copyright (c) 2011 Sean Muir and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+/**
+ * <copyright>
+ * </copyright>
  *
- * Contributors:
- *     Sean Muir (JKM Software) - initial API and implementation
- *******************************************************************************/
+ * $Id$
+ */
 package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.junit.Test;
-import org.openhealthtools.mdht.uml.cda.CDAFactory;
-import org.openhealthtools.mdht.uml.cda.Entry;
-import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
-import org.openhealthtools.mdht.uml.cda.ccd.ResultOrganizer;
+
 import org.openhealthtools.mdht.uml.cda.hitsp.DiagnosticResultsSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
-import org.openhealthtools.mdht.uml.cda.hitsp.Procedure;
-import org.openhealthtools.mdht.uml.cda.hitsp.Result;
+
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.DiagnosticResultsSectionOperations;
+
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
- * <!-- begin-user-doc --> A static utility class that provides operations
- * related to '<em><b>Diagnostic Results Section</b></em>' model objects. <!--
- * end-user-doc -->
+ * <!-- begin-user-doc -->
+ * A static utility class that provides operations related to '<em><b>Diagnostic Results Section</b></em>' model objects.
+ * <!-- end-user-doc -->
  *
  * <p>
  * The following operations are supported:
@@ -52,7 +47,7 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated NOT
+	* @generated
 	*/
 	@Test
 	public void testValidateDiagnosticResultsSectionHasResult() {
@@ -70,14 +65,6 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 			protected void updateToPass(DiagnosticResultsSection target) {
 				target.init();
 
-				ResultOrganizer resultOrganizer = CCDFactory.eINSTANCE.createResultOrganizer().init();
-
-				Result result = HITSPFactory.eINSTANCE.createResult().init();
-
-				resultOrganizer.addObservation(result);
-
-				target.addOrganizer(resultOrganizer);
-
 			}
 
 			@Override
@@ -93,9 +80,9 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 * 
-	 * @generated
-	 */
+	*
+	* @generated
+	*/
 	@Test
 	public void testValidateDiagnosticResultsSectionTemplateId() {
 		OperationsTestCase<DiagnosticResultsSection> validateDiagnosticResultsSectionTemplateIdTestCase = new OperationsTestCase<DiagnosticResultsSection>(
@@ -127,9 +114,9 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 * 
-	 * @generated NOT
-	 */
+	*
+	* @generated
+	*/
 	@Test
 	public void testValidateDiagnosticResultsSectionDiagnosticProcedure() {
 		OperationsTestCase<DiagnosticResultsSection> validateDiagnosticResultsSectionDiagnosticProcedureTestCase = new OperationsTestCase<DiagnosticResultsSection>(
@@ -145,8 +132,6 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticResultsSection target) {
 				target.init();
-				Procedure procedure = HITSPFactory.eINSTANCE.createProcedure().init();
-				target.addProcedure(procedure);
 
 			}
 
@@ -163,9 +148,9 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 * 
-	 * @generated NOT
-	 */
+	*
+	* @generated
+	*/
 	@Test
 	public void testValidateDiagnosticResultsSectionResult() {
 		OperationsTestCase<DiagnosticResultsSection> validateDiagnosticResultsSectionResultTestCase = new OperationsTestCase<DiagnosticResultsSection>(
@@ -181,10 +166,6 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticResultsSection target) {
 				target.init();
-				Entry entry = CDAFactory.eINSTANCE.createEntry();
-				Result obv = HITSPFactory.eINSTANCE.createResult().init();
-				entry.setObservation(obv);
-				target.getEntries().add(entry);
 
 			}
 
@@ -202,7 +183,7 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated NOT
+	* @generated
 	*/
 	@Test
 	public void testValidateDiagnosticResultsSectionResultOrganizer() {
@@ -219,10 +200,6 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticResultsSection target) {
 				target.init();
-
-				ResultOrganizer resultOrganizer = HITSPFactory.eINSTANCE.createResultOrganizer().init();
-
-				target.addOrganizer(resultOrganizer);
 
 			}
 
@@ -275,9 +252,9 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 * 
-	 * @generated
-	 */
+	*
+	* @generated
+	*/
 	private static class OperationsForOCL extends DiagnosticResultsSectionOperations {
 		public String getOCLValue(String fieldName) {
 
@@ -293,41 +270,38 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 	}
 
 	/**
-	 * 
-	 * @generated
-	 */
+	*
+	* @generated
+	*/
 	private static class ObjectFactory implements TestObjectFactory<DiagnosticResultsSection> {
-
 		public DiagnosticResultsSection create() {
 			return HITSPFactory.eINSTANCE.createDiagnosticResultsSection();
 		}
 	}
 
 	/**
-	 * 
-	 * @generated
-	 */
+	*
+	* @generated
+	*/
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
 	/**
-	 * 
-	 * @generated
-	 */
+	*
+	* @generated
+	*/
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
 	/**
-	 * Tests Operations Constructor for 100% coverage
-	 * 
-	 * @generated
-	 */
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
 	private static class ConstructorTestClass extends DiagnosticResultsSectionOperations {
-	}
+	};
 
 	/**
-	 * Tests Operations Constructor for 100% coverage
-	 * 
-	 * @generated
-	 */
+	* Tests Operations Constructor for 100% coverage
+	* @generated
+	*/
 	@Test
 	public void testConstructor() {
 		@SuppressWarnings("unused")
@@ -335,10 +309,9 @@ public class DiagnosticResultsSectionTest extends CDAValidationTest {
 	} // testConstructor
 
 	/**
-	 * 
-	 * @generated
-	 */
-
+	*
+	* @generated
+	*/
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

@@ -25,7 +25,7 @@ import org.junit.runners.Suite;
 		ProblemListSectionTest.class, MedicationsSectionTest.class, AdvanceDirectivesSectionTest.class,
 		AdvanceDirectiveTest.class, AllergiesReactionsSectionTest.class, EncountersSectionTest.class,
 		EncounterTest.class, ImmunizationsSectionTest.class, ImmunizationTest.class, PayersSectionTest.class,
-		InsuranceProviderTest.class, SurgeriesSectionTest.class, ProcedureTest.class, PlanOfCareSectionTest.class,
+		InsuranceProviderTest.class, SurgeriesSectionTest.class, PlanOfCareSectionTest.class,
 		VitalSignsSectionTest.class, DiagnosticResultsSectionTest.class, ResultTest.class, ResultOrganizerTest.class,
 		VitalSignTest.class, HistoryOfPastIllnessSectionTest.class, ChiefComplaintSectionTest.class,
 		ReasonForReferralSectionTest.class, HistoryOfPresentIllnessTest.class, FunctionalStatusSectionTest.class,
@@ -39,7 +39,7 @@ import org.junit.runners.Suite;
 		MedicationConditionalDoseTest.class, MedicationCombinationMedicationTest.class, SupportGuardianTest.class,
 		SupportParticipantTest.class, UnstructuredDocumentTest.class, MedicationInformationTest.class,
 		UnstructuredOrScannedDocumentTest.class, ReferralSummaryTest.class, DischargeSummaryTest.class,
-		HITSPRegistryDelegateTest.class })
+		PlannedProcedureTest.class, PastProcedureTest.class, HITSPRegistryDelegateTest.class })
 public class HITSPTests {
 
 	/**

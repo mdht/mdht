@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package org.openhealthtools.mdht.uml.cda.ihe.tests;
+package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -14,14 +14,14 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
  * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Procedure Entry Procedure Activity Procedure</b></em>' model objects.
+ * A static utility class that provides operations related to '<em><b>Past Procedure</b></em>' model objects.
  * <!-- end-user-doc -->
  *
  *
  * @generated
  */
 
-public class ProcedureEntryProcedureActivityProcedureTest extends CDAValidationTest {
+public class PastProcedureTest extends CDAValidationTest {
 
 	/**
 	* No Operations Test
@@ -40,4 +40,4 @@ public class ProcedureEntryProcedureActivityProcedureTest extends CDAValidationT
 		return null;
 	}
 
-} // ProcedureEntryProcedureActivityProcedureOperations
+} // PastProcedureOperations
