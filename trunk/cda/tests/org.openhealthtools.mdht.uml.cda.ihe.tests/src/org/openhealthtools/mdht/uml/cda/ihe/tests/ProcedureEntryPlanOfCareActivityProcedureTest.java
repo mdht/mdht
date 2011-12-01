@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryPlanOfCareActivityProcedure#validateProcedureEntryPlanOfCareActivityProcedureTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Entry Plan Of Care Activity Procedure Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntryPlanOfCareActivityProcedure#validateProcedureEntryPlanOfCareActivityProcedureMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Entry Plan Of Care Activity Procedure Mood Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,10 +42,10 @@ public class ProcedureEntryPlanOfCareActivityProcedureTest extends CDAValidation
 	* @generated
 	*/
 	@Test
-	public void testValidateProcedureEntryPlanOfCareActivityProcedureTemplateId() {
-		OperationsTestCase<ProcedureEntryPlanOfCareActivityProcedure> validateProcedureEntryPlanOfCareActivityProcedureTemplateIdTestCase = new OperationsTestCase<ProcedureEntryPlanOfCareActivityProcedure>(
-			"validateProcedureEntryPlanOfCareActivityProcedureTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateProcedureEntryPlanOfCareActivityProcedureMoodCode() {
+		OperationsTestCase<ProcedureEntryPlanOfCareActivityProcedure> validateProcedureEntryPlanOfCareActivityProcedureMoodCodeTestCase = new OperationsTestCase<ProcedureEntryPlanOfCareActivityProcedure>(
+			"validateProcedureEntryPlanOfCareActivityProcedureMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PLAN_OF_CARE_ACTIVITY_PROCEDURE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -62,13 +62,13 @@ public class ProcedureEntryPlanOfCareActivityProcedureTest extends CDAValidation
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProcedureEntryPlanOfCareActivityProcedureOperations.validateProcedureEntryPlanOfCareActivityProcedureTemplateId(
+				return ProcedureEntryPlanOfCareActivityProcedureOperations.validateProcedureEntryPlanOfCareActivityProcedureMoodCode(
 					(ProcedureEntryPlanOfCareActivityProcedure) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateProcedureEntryPlanOfCareActivityProcedureTemplateIdTestCase.doValidationTest();
+		validateProcedureEntryPlanOfCareActivityProcedureMoodCodeTestCase.doValidationTest();
 	}
 
 	/**

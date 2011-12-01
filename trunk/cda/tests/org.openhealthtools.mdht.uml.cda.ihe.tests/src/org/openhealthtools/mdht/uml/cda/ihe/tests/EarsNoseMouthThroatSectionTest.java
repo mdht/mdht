@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ihe.EarsNoseMouthThroatSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
-import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.EarsNoseMouthThroatSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
@@ -124,9 +123,6 @@ public class EarsNoseMouthThroatSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(EarsNoseMouthThroatSection target) {
 				target.init();
-
-				ProblemEntry entry = IHEFactory.eINSTANCE.createProblemEntry().init();
-				target.addObservation(entry);
 
 			}
 

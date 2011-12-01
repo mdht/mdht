@@ -28,7 +28,18 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry#validateProcedureEntryMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Entry Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry#validateProcedureEntryHasTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Entry Has Text Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry#validateProcedureEntryPriorityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Entry Priority Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry#validateProcedureEntryHasInversionIndForEncounter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Entry Has Inversion Ind For Encounter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry#validateProcedureEntryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Entry Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry#validateProcedureEntryClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Entry Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry#validateProcedureEntryText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Entry Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry#validateProcedureEntryApproachSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Entry Approach Site Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry#validateProcedureEntryInternalReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Entry Internal Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry#validateProcedureEntryInternalReferenceReason(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Entry Internal Reference Reason</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry#getInternalReference() <em>Get Internal Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry#getInternalReferenceReasons() <em>Get Internal Reference Reasons</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,6 +47,142 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class ProcedureEntryTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureEntryMoodCode() {
+		OperationsTestCase<ProcedureEntry> validateProcedureEntryMoodCodeTestCase = new OperationsTestCase<ProcedureEntry>(
+			"validateProcedureEntryMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEntry target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureEntryOperations.validateProcedureEntryMoodCode(
+					(ProcedureEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureEntryMoodCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureEntryHasTextReference() {
+		OperationsTestCase<ProcedureEntry> validateProcedureEntryHasTextReferenceTestCase = new OperationsTestCase<ProcedureEntry>(
+			"validateProcedureEntryHasTextReference",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEntry target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureEntryOperations.validateProcedureEntryHasTextReference(
+					(ProcedureEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureEntryHasTextReferenceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureEntryPriorityCode() {
+		OperationsTestCase<ProcedureEntry> validateProcedureEntryPriorityCodeTestCase = new OperationsTestCase<ProcedureEntry>(
+			"validateProcedureEntryPriorityCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_PRIORITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEntry target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureEntryOperations.validateProcedureEntryPriorityCode(
+					(ProcedureEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureEntryPriorityCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureEntryHasInversionIndForEncounter() {
+		OperationsTestCase<ProcedureEntry> validateProcedureEntryHasInversionIndForEncounterTestCase = new OperationsTestCase<ProcedureEntry>(
+			"validateProcedureEntryHasInversionIndForEncounter",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_HAS_INVERSION_IND_FOR_ENCOUNTER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEntry target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureEntryOperations.validateProcedureEntryHasInversionIndForEncounter(
+					(ProcedureEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureEntryHasInversionIndForEncounterTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -69,6 +216,200 @@ public class ProcedureEntryTest extends CDAValidationTest {
 		};
 
 		validateProcedureEntryTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureEntryClassCode() {
+		OperationsTestCase<ProcedureEntry> validateProcedureEntryClassCodeTestCase = new OperationsTestCase<ProcedureEntry>(
+			"validateProcedureEntryClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEntry target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureEntryOperations.validateProcedureEntryClassCode(
+					(ProcedureEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureEntryClassCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureEntryText() {
+		OperationsTestCase<ProcedureEntry> validateProcedureEntryTextTestCase = new OperationsTestCase<ProcedureEntry>(
+			"validateProcedureEntryText",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEntry target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureEntryOperations.validateProcedureEntryText(
+					(ProcedureEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureEntryTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureEntryApproachSiteCode() {
+		OperationsTestCase<ProcedureEntry> validateProcedureEntryApproachSiteCodeTestCase = new OperationsTestCase<ProcedureEntry>(
+			"validateProcedureEntryApproachSiteCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_APPROACH_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEntry target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureEntryOperations.validateProcedureEntryApproachSiteCode(
+					(ProcedureEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureEntryApproachSiteCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureEntryInternalReference() {
+		OperationsTestCase<ProcedureEntry> validateProcedureEntryInternalReferenceTestCase = new OperationsTestCase<ProcedureEntry>(
+			"validateProcedureEntryInternalReference",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_INTERNAL_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEntry target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureEntryOperations.validateProcedureEntryInternalReference(
+					(ProcedureEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureEntryInternalReferenceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureEntryInternalReferenceReason() {
+		OperationsTestCase<ProcedureEntry> validateProcedureEntryInternalReferenceReasonTestCase = new OperationsTestCase<ProcedureEntry>(
+			"validateProcedureEntryInternalReferenceReason",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENTRY_INTERNAL_REFERENCE_REASON__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEntry target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureEntryOperations.validateProcedureEntryInternalReferenceReason(
+					(ProcedureEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureEntryInternalReferenceReasonTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetInternalReference() {
+
+		ProcedureEntry target = objectFactory.create();
+		target.getInternalReference();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetInternalReferenceReasons() {
+
+		ProcedureEntry target = objectFactory.create();
+		target.getInternalReferenceReasons();
+
 	}
 
 	/**

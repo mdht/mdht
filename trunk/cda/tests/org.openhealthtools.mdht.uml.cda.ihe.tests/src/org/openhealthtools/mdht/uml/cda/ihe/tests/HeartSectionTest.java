@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ihe.HeartSection;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
-import org.openhealthtools.mdht.uml.cda.ihe.ProblemEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.HeartSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
@@ -122,9 +121,6 @@ public class HeartSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HeartSection target) {
 				target.init();
-
-				ProblemEntry entry = IHEFactory.eINSTANCE.createProblemEntry().init();
-				target.addObservation(entry);
 
 			}
 
