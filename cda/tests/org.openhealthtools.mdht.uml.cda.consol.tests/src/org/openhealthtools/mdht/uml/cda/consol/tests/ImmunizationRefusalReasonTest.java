@@ -15,6 +15,10 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ImmunizationRefusalReason;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ImmunizationRefusalReasonOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +29,11 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationRefusalReason#validateImmunizationRefusalReasonTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Refusal Reason Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationRefusalReason#validateImmunizationRefusalReasonClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Refusal Reason Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationRefusalReason#validateImmunizationRefusalReasonCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Refusal Reason Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationRefusalReason#validateImmunizationRefusalReasonId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Refusal Reason Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationRefusalReason#validateImmunizationRefusalReasonMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Refusal Reason Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationRefusalReason#validateImmunizationRefusalReasonStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Refusal Reason Status Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,6 +74,182 @@ public class ImmunizationRefusalReasonTest extends CDAValidationTest {
 		};
 
 		validateImmunizationRefusalReasonTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateImmunizationRefusalReasonClassCode() {
+		OperationsTestCase<ImmunizationRefusalReason> validateImmunizationRefusalReasonClassCodeTestCase = new OperationsTestCase<ImmunizationRefusalReason>(
+			"validateImmunizationRefusalReasonClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_REFUSAL_REASON_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ImmunizationRefusalReason target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ImmunizationRefusalReason target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ImmunizationRefusalReasonOperations.validateImmunizationRefusalReasonClassCode(
+					(ImmunizationRefusalReason) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateImmunizationRefusalReasonClassCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateImmunizationRefusalReasonCode() {
+		OperationsTestCase<ImmunizationRefusalReason> validateImmunizationRefusalReasonCodeTestCase = new OperationsTestCase<ImmunizationRefusalReason>(
+			"validateImmunizationRefusalReasonCode",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_REFUSAL_REASON_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ImmunizationRefusalReason target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(ImmunizationRefusalReason target) {
+
+				CD cd = DatatypesFactory.eINSTANCE.createCD("IMMUNE", "2.16.840.1.113883.5.8", "", "");
+				target.setCode(cd);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ImmunizationRefusalReasonOperations.validateImmunizationRefusalReasonCode(
+					(ImmunizationRefusalReason) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateImmunizationRefusalReasonCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateImmunizationRefusalReasonId() {
+		OperationsTestCase<ImmunizationRefusalReason> validateImmunizationRefusalReasonIdTestCase = new OperationsTestCase<ImmunizationRefusalReason>(
+			"validateImmunizationRefusalReasonId",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_REFUSAL_REASON_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ImmunizationRefusalReason target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ImmunizationRefusalReason target) {
+				target.init();
+				II ii = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(ii);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ImmunizationRefusalReasonOperations.validateImmunizationRefusalReasonId(
+					(ImmunizationRefusalReason) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateImmunizationRefusalReasonIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateImmunizationRefusalReasonMoodCode() {
+		OperationsTestCase<ImmunizationRefusalReason> validateImmunizationRefusalReasonMoodCodeTestCase = new OperationsTestCase<ImmunizationRefusalReason>(
+			"validateImmunizationRefusalReasonMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_REFUSAL_REASON_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ImmunizationRefusalReason target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ImmunizationRefusalReason target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ImmunizationRefusalReasonOperations.validateImmunizationRefusalReasonMoodCode(
+					(ImmunizationRefusalReason) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateImmunizationRefusalReasonMoodCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateImmunizationRefusalReasonStatusCode() {
+		OperationsTestCase<ImmunizationRefusalReason> validateImmunizationRefusalReasonStatusCodeTestCase = new OperationsTestCase<ImmunizationRefusalReason>(
+			"validateImmunizationRefusalReasonStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_REFUSAL_REASON_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ImmunizationRefusalReason target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ImmunizationRefusalReason target) {
+				target.init();
+
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ImmunizationRefusalReasonOperations.validateImmunizationRefusalReasonStatusCode(
+					(ImmunizationRefusalReason) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateImmunizationRefusalReasonStatusCodeTestCase.doValidationTest();
 	}
 
 	/**

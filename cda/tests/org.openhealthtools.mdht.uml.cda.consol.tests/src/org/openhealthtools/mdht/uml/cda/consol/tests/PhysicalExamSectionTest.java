@@ -255,7 +255,7 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePhysicalExamSectionGeneralAppearanceSection() {

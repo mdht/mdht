@@ -37,7 +37,7 @@ public class ScanDataEntererTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateScanDataEntererTimeEqualsDocumentEffectiveTime() {

@@ -14,6 +14,7 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity;
 import org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ImmunizationsSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
@@ -28,13 +29,12 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSection#validateImmunizationsSectionHasMedicationOrSupplyActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunizations Section Has Medication Or Supply Activity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSection#validateImmunizationsSectionEntriesOptionalCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunizations Section Entries Optional Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSection#validateImmunizationsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunizations Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSection#validateImmunizationsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunizations Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSection#validateImmunizationsSectionImmunization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunizations Section Immunization</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSection#getnullImmunizations() <em>Getnull Immunizations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSection#getConsolImmunizations() <em>Get Consol Immunizations</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSection#validateImmunizationsSectionEntriesOptionalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunizations Section Entries Optional Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSection#validateImmunizationsSectionEntriesOptionalCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunizations Section Entries Optional Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,40 +42,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  */
 
 public class ImmunizationsSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateImmunizationsSectionHasMedicationOrSupplyActivity() {
-		OperationsTestCase<ImmunizationsSection> validateImmunizationsSectionHasMedicationOrSupplyActivityTestCase = new OperationsTestCase<ImmunizationsSection>(
-			"validateImmunizationsSectionHasMedicationOrSupplyActivity",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATIONS_SECTION_HAS_MEDICATION_OR_SUPPLY_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ImmunizationsSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ImmunizationsSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ImmunizationsSectionOperations.validateImmunizationsSectionHasMedicationOrSupplyActivity(
-					(ImmunizationsSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateImmunizationsSectionHasMedicationOrSupplyActivityTestCase.doValidationTest();
-	}
 
 	/**
 	*
@@ -187,7 +153,7 @@ public class ImmunizationsSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationsSectionImmunization() {
@@ -204,6 +170,10 @@ public class ImmunizationsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ImmunizationsSection target) {
 				target.init();
+
+				ImmunizationActivity immunizationActivity = ConsolFactory.eINSTANCE.createImmunizationActivity().init();
+
+				target.addSubstanceAdministration(immunizationActivity);
 
 			}
 
@@ -224,10 +194,10 @@ public class ImmunizationsSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetnullImmunizations() {
+	public void testGetConsolImmunizations() {
 
 		ImmunizationsSection target = objectFactory.create();
-		target.getnullImmunizations();
+		target.getConsolImmunizations();
 
 	}
 

@@ -15,6 +15,10 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.Indication;
 import org.openhealthtools.mdht.uml.cda.consol.operations.IndicationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +29,13 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,6 +75,253 @@ public class IndicationTest extends CDAValidationTest {
 		};
 
 		validateIndicationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateIndicationClassCode() {
+		OperationsTestCase<Indication> validateIndicationClassCodeTestCase = new OperationsTestCase<Indication>(
+			"validateIndicationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_INDICATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Indication target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Indication target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return IndicationOperations.validateIndicationClassCode((Indication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateIndicationClassCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateIndicationCode() {
+		OperationsTestCase<Indication> validateIndicationCodeTestCase = new OperationsTestCase<Indication>(
+			"validateIndicationCode",
+			operationsForOCL.getOCLValue("VALIDATE_INDICATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+
+			@Override
+			protected void updateToFail(Indication target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Indication target) {
+				target.init();
+
+				CD cd = DatatypesFactory.eINSTANCE.createCD("404684003", "2.16.840.1.113883.6.96", "", "");
+
+				target.setCode(cd);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return IndicationOperations.validateIndicationCode((Indication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateIndicationCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateIndicationEffectiveTime() {
+		OperationsTestCase<Indication> validateIndicationEffectiveTimeTestCase = new OperationsTestCase<Indication>(
+			"validateIndicationEffectiveTime",
+			operationsForOCL.getOCLValue("VALIDATE_INDICATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Indication target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Indication target) {
+				target.init();
+
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return IndicationOperations.validateIndicationEffectiveTime(
+					(Indication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateIndicationEffectiveTimeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateIndicationId() {
+		OperationsTestCase<Indication> validateIndicationIdTestCase = new OperationsTestCase<Indication>(
+			"validateIndicationId",
+			operationsForOCL.getOCLValue("VALIDATE_INDICATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+
+			@Override
+			protected void updateToFail(Indication target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Indication target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return IndicationOperations.validateIndicationId((Indication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateIndicationIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateIndicationMoodCode() {
+		OperationsTestCase<Indication> validateIndicationMoodCodeTestCase = new OperationsTestCase<Indication>(
+			"validateIndicationMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_INDICATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Indication target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Indication target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return IndicationOperations.validateIndicationMoodCode((Indication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateIndicationMoodCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateIndicationStatusCode() {
+		OperationsTestCase<Indication> validateIndicationStatusCodeTestCase = new OperationsTestCase<Indication>(
+			"validateIndicationStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_INDICATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Indication target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Indication target) {
+				target.init();
+
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return IndicationOperations.validateIndicationStatusCode((Indication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateIndicationStatusCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateIndicationValue() {
+		OperationsTestCase<Indication> validateIndicationValueTestCase = new OperationsTestCase<Indication>(
+			"validateIndicationValue",
+			operationsForOCL.getOCLValue("VALIDATE_INDICATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+
+			@Override
+			protected void updateToFail(Indication target) {
+
+				target.getValues().add(DatatypesFactory.eINSTANCE.createCS());
+
+			}
+
+			@Override
+			protected void updateToPass(Indication target) {
+				target.init();
+
+				target.getValues().clear();
+
+				CD value = DatatypesFactory.eINSTANCE.createCD("code", "2.16.840.1.113883.6.96", "", "");
+
+				target.getValues().add(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return IndicationOperations.validateIndicationValue((Indication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateIndicationValueTestCase.doValidationTest();
 	}
 
 	/**

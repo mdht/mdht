@@ -29,11 +29,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VitalSignObservation#validateVitalSignObservationCodeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Code Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VitalSignObservation#validateVitalSignObservationReferenceRangeRequired(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Reference Range Required</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VitalSignObservation#validateVitalSignObservationNoObservationRangeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation No Observation Range Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VitalSignObservation#validateVitalSignObservationInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Information Source</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VitalSignObservation#validateVitalSignObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VitalSignObservation#validateVitalSignObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VitalSignObservation#validateVitalSignObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VitalSignObservation#validateVitalSignObservationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VitalSignObservation#validateVitalSignObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Code</em>}</li>
@@ -50,145 +47,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  */
 
 public class VitalSignObservationTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateVitalSignObservationCodeValue() {
-		OperationsTestCase<VitalSignObservation> validateVitalSignObservationCodeValueTestCase = new OperationsTestCase<VitalSignObservation>(
-			"validateVitalSignObservationCodeValue",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_CODE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(VitalSignObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(VitalSignObservation target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return VitalSignObservationOperations.validateVitalSignObservationCodeValue(
-					(VitalSignObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateVitalSignObservationCodeValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateVitalSignObservationReferenceRangeRequired() {
-		OperationsTestCase<VitalSignObservation> validateVitalSignObservationReferenceRangeRequiredTestCase = new OperationsTestCase<VitalSignObservation>(
-			"validateVitalSignObservationReferenceRangeRequired",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_REFERENCE_RANGE_REQUIRED__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(VitalSignObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(VitalSignObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return VitalSignObservationOperations.validateVitalSignObservationReferenceRangeRequired(
-					(VitalSignObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateVitalSignObservationReferenceRangeRequiredTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateVitalSignObservationNoObservationRangeCode() {
-		OperationsTestCase<VitalSignObservation> validateVitalSignObservationNoObservationRangeCodeTestCase = new OperationsTestCase<VitalSignObservation>(
-			"validateVitalSignObservationNoObservationRangeCode",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_NO_OBSERVATION_RANGE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(VitalSignObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(VitalSignObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return VitalSignObservationOperations.validateVitalSignObservationNoObservationRangeCode(
-					(VitalSignObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateVitalSignObservationNoObservationRangeCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateVitalSignObservationInformationSource() {
-		OperationsTestCase<VitalSignObservation> validateVitalSignObservationInformationSourceTestCase = new OperationsTestCase<VitalSignObservation>(
-			"validateVitalSignObservationInformationSource",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(VitalSignObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(VitalSignObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return VitalSignObservationOperations.validateVitalSignObservationInformationSource(
-					(VitalSignObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateVitalSignObservationInformationSourceTestCase.doValidationTest();
-	}
 
 	/**
 	*
@@ -222,6 +80,40 @@ public class VitalSignObservationTest extends CDAValidationTest {
 		};
 
 		validateVitalSignObservationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateVitalSignObservationClassCode() {
+		OperationsTestCase<VitalSignObservation> validateVitalSignObservationClassCodeTestCase = new OperationsTestCase<VitalSignObservation>(
+			"validateVitalSignObservationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(VitalSignObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(VitalSignObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return VitalSignObservationOperations.validateVitalSignObservationClassCode(
+					(VitalSignObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateVitalSignObservationClassCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -297,7 +189,7 @@ public class VitalSignObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateVitalSignObservationCode() {
@@ -315,7 +207,7 @@ public class VitalSignObservationTest extends CDAValidationTest {
 			protected void updateToPass(VitalSignObservation target) {
 				target.init();
 
-				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				CD cd = DatatypesFactory.eINSTANCE.createCD("8310-5", "2.16.840.1.113883.6.1", "", "");
 				target.setCode(cd);
 
 			}
@@ -408,7 +300,7 @@ public class VitalSignObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateVitalSignObservationValue() {
@@ -420,14 +312,18 @@ public class VitalSignObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(VitalSignObservation target) {
 
-			}
-
-			@Override
-			protected void updateToPass(VitalSignObservation target) {
 				target.init();
 
 				CD value = DatatypesFactory.eINSTANCE.createCD();
 				target.getValues().add(value);
+			}
+
+			@Override
+			protected void updateToPass(VitalSignObservation target) {
+
+				target.getValues().clear();
+
+				target.getValues().add(DatatypesFactory.eINSTANCE.createPQ());
 
 			}
 
@@ -445,7 +341,7 @@ public class VitalSignObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateVitalSignObservationInterpretationCode() {
@@ -462,6 +358,7 @@ public class VitalSignObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(VitalSignObservation target) {
 				target.init();
+				target.getInterpretationCodes().add(DatatypesFactory.eINSTANCE.createCE());
 
 			}
 
@@ -479,7 +376,7 @@ public class VitalSignObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateVitalSignObservationMethodCode() {
@@ -496,6 +393,8 @@ public class VitalSignObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(VitalSignObservation target) {
 				target.init();
+
+				target.getMethodCodes().add(DatatypesFactory.eINSTANCE.createCE());
 
 			}
 
@@ -530,6 +429,8 @@ public class VitalSignObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(VitalSignObservation target) {
 				target.init();
+
+				target.getTargetSiteCodes().add(DatatypesFactory.eINSTANCE.createCD());
 
 			}
 

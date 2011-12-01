@@ -615,7 +615,7 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateNonMedicinalSupplyActivityQuantityHasValue() {
@@ -1094,7 +1094,7 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateNonMedicinalSupplyActivityEffectiveTime() {

@@ -32,7 +32,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#validateProblemSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#validateProblemSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#validateProblemSectionCondition(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Section Condition</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#getnullConditions() <em>Getnull Conditions</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#getConsolConditions() <em>Get Consol Conditions</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#validateProblemSectionEntriesOptionalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Section Entries Optional Template Id</em>}</li>
  * </ul>
  * </p>
@@ -189,10 +189,10 @@ public class ProblemSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetnullConditions() {
+	public void testGetConsolConditions() {
 
 		ProblemSection target = objectFactory.create();
-		target.getnullConditions();
+		target.getConsolConditions();
 
 	}
 

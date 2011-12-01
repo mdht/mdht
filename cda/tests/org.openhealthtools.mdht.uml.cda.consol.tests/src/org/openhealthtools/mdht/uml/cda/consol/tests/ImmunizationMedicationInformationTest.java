@@ -25,6 +25,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,6 +67,74 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 		};
 
 		validateImmunizationMedicationInformationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateImmunizationMedicationInformationClassCode() {
+		OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationClassCodeTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
+			"validateImmunizationMedicationInformationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ImmunizationMedicationInformation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ImmunizationMedicationInformation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ImmunizationMedicationInformationOperations.validateImmunizationMedicationInformationClassCode(
+					(ImmunizationMedicationInformation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateImmunizationMedicationInformationClassCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateImmunizationMedicationInformationId() {
+		OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationIdTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
+			"validateImmunizationMedicationInformationId",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ImmunizationMedicationInformation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ImmunizationMedicationInformation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ImmunizationMedicationInformationOperations.validateImmunizationMedicationInformationId(
+					(ImmunizationMedicationInformation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateImmunizationMedicationInformationIdTestCase.doValidationTest();
 	}
 
 	/**

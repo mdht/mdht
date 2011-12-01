@@ -28,12 +28,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection#validateSocialHistorySectionMaritalStatus(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Section Marital Status</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection#validateSocialHistorySectionReligiousAffiliation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Section Religious Affiliation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection#validateSocialHistorySectionPatientRace(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Section Patient Race</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection#validateSocialHistorySectionPatientRaceCodeSystem(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Section Patient Race Code System</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection#validateSocialHistorySectionPatientEthnicity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Section Patient Ethnicity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection#validateSocialHistorySectionPatientEthnicityCodeSystem(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Section Patient Ethnicity Code System</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection#validateSocialHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection#validateSocialHistorySectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection#validateSocialHistorySectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Section Title</em>}</li>
@@ -41,7 +35,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection#validateSocialHistorySectionSocialHistoryObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Section Social History Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection#validateSocialHistorySectionPregnancyObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Section Pregnancy Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection#getSocialHistoryObservations() <em>Get Social History Observations</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection#getPregnancyObservation() <em>Get Pregnancy Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection#getPregnancyObservations() <em>Get Pregnancy Observations</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,210 +43,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  */
 
 public class SocialHistorySectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateSocialHistorySectionMaritalStatus() {
-		OperationsTestCase<SocialHistorySection> validateSocialHistorySectionMaritalStatusTestCase = new OperationsTestCase<SocialHistorySection>(
-			"validateSocialHistorySectionMaritalStatus",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_MARITAL_STATUS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SocialHistorySection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(SocialHistorySection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SocialHistorySectionOperations.validateSocialHistorySectionMaritalStatus(
-					(SocialHistorySection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSocialHistorySectionMaritalStatusTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateSocialHistorySectionReligiousAffiliation() {
-		OperationsTestCase<SocialHistorySection> validateSocialHistorySectionReligiousAffiliationTestCase = new OperationsTestCase<SocialHistorySection>(
-			"validateSocialHistorySectionReligiousAffiliation",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_RELIGIOUS_AFFILIATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SocialHistorySection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(SocialHistorySection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SocialHistorySectionOperations.validateSocialHistorySectionReligiousAffiliation(
-					(SocialHistorySection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSocialHistorySectionReligiousAffiliationTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateSocialHistorySectionPatientRace() {
-		OperationsTestCase<SocialHistorySection> validateSocialHistorySectionPatientRaceTestCase = new OperationsTestCase<SocialHistorySection>(
-			"validateSocialHistorySectionPatientRace",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_PATIENT_RACE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SocialHistorySection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(SocialHistorySection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SocialHistorySectionOperations.validateSocialHistorySectionPatientRace(
-					(SocialHistorySection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSocialHistorySectionPatientRaceTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateSocialHistorySectionPatientRaceCodeSystem() {
-		OperationsTestCase<SocialHistorySection> validateSocialHistorySectionPatientRaceCodeSystemTestCase = new OperationsTestCase<SocialHistorySection>(
-			"validateSocialHistorySectionPatientRaceCodeSystem",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_PATIENT_RACE_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SocialHistorySection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(SocialHistorySection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SocialHistorySectionOperations.validateSocialHistorySectionPatientRaceCodeSystem(
-					(SocialHistorySection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSocialHistorySectionPatientRaceCodeSystemTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateSocialHistorySectionPatientEthnicity() {
-		OperationsTestCase<SocialHistorySection> validateSocialHistorySectionPatientEthnicityTestCase = new OperationsTestCase<SocialHistorySection>(
-			"validateSocialHistorySectionPatientEthnicity",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_PATIENT_ETHNICITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SocialHistorySection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(SocialHistorySection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SocialHistorySectionOperations.validateSocialHistorySectionPatientEthnicity(
-					(SocialHistorySection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSocialHistorySectionPatientEthnicityTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateSocialHistorySectionPatientEthnicityCodeSystem() {
-		OperationsTestCase<SocialHistorySection> validateSocialHistorySectionPatientEthnicityCodeSystemTestCase = new OperationsTestCase<SocialHistorySection>(
-			"validateSocialHistorySectionPatientEthnicityCodeSystem",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_PATIENT_ETHNICITY_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SocialHistorySection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(SocialHistorySection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SocialHistorySectionOperations.validateSocialHistorySectionPatientEthnicityCodeSystem(
-					(SocialHistorySection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSocialHistorySectionPatientEthnicityCodeSystemTestCase.doValidationTest();
-	}
 
 	/**
 	*
@@ -481,10 +271,10 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetPregnancyObservation() {
+	public void testGetPregnancyObservations() {
 
 		SocialHistorySection target = objectFactory.create();
-		target.getPregnancyObservation();
+		target.getPregnancyObservations();
 
 	}
 

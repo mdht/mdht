@@ -1422,7 +1422,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationActivityEffectiveTime() {

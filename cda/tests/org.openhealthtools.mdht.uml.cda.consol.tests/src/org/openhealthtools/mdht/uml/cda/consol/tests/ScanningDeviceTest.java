@@ -40,7 +40,7 @@ public class ScanningDeviceTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateScanningDeviceTimeEqualsDocumentEffectiveTime() {

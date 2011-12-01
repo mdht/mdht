@@ -60,7 +60,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#validateMedicationConditionalDoseProductInstance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Conditional Dose Product Instance</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#getMedicationSeriesNumberObservation() <em>Get Medication Series Number Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#getMedicationStatusObservation() <em>Get Medication Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#getnullReactionObservations() <em>Getnull Reaction Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#getConsolReactionObservations() <em>Get Consol Reaction Observations</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#getProductInstances() <em>Get Product Instances</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#getInternalReferences() <em>Get Internal References</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#getPatientMedicalInstructionss() <em>Get Patient Medical Instructionss</em>}</li>
@@ -827,7 +827,7 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationConditionalDoseEffectiveTime() {
@@ -1194,10 +1194,10 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetnullReactionObservations() {
+	public void testGetConsolReactionObservations() {
 
 		MedicationConditionalDose target = objectFactory.create();
-		target.getnullReactionObservations();
+		target.getConsolReactionObservations();
 
 	}
 
