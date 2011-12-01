@@ -59,6 +59,10 @@
 		download-size="0" install-size="0" version="0.0.0" unpack="false" />
 
 
+
+	<plugin id="org.openhealthtools.mdht.uml.cda.consol.tests"
+		download-size="0" install-size="0" version="0.0.0" unpack="false" />
+		
 	<plugin id="org.openhealthtools.mdht.uml.cda.toc.tests"
 		download-size="0" install-size="0" version="0.0.0" unpack="false" />
 		
