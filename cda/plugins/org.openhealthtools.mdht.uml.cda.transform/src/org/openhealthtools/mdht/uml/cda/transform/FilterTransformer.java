@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAModelFilter;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
-import org.openhealthtools.mdht.uml.common.util.ModelFilter;
 
 /**
  * @author dcarlson
@@ -28,7 +28,7 @@ import org.openhealthtools.mdht.uml.common.util.ModelFilter;
  */
 public class FilterTransformer extends AbstractTransformer {
 
-	private ModelFilter modelFilter;
+	private CDAModelFilter modelFilter;
 
 	private Package filteredPackage = null;
 
@@ -67,7 +67,7 @@ public class FilterTransformer extends AbstractTransformer {
 	public void initialize(Package sourcePackage) {
 		filteredPackage = initializeModelPackageFrom(
 			sourcePackage, transformerOptions.getOutputModelPath(), "filtered", "flat", "Flat");
-		modelFilter = new ModelFilter(sourcePackage, filteredPackage);
+		modelFilter = new CDAModelFilter(sourcePackage, filteredPackage);
 	}
 
 	@Override

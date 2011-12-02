@@ -52,6 +52,7 @@ import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
+import org.openhealthtools.mdht.uml.common.util.ModelFilterUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.internal.Logger;
@@ -80,7 +81,7 @@ public class PropertyExtItemProvider extends org.eclipse.uml2.uml.edit.providers
 	@Override
 	public Object getImage(Object object) {
 		ComposedImage composedImage = (ComposedImage) super.getImage(object);
-		if (NamedElementUtil.isFiltered((Property) object)) {
+		if (ModelFilterUtil.isHidden((Property) object)) {
 			composedImage.getImages().add(UMLExtEditPlugin.INSTANCE.getImage("full/ovr16/filtered"));
 		}
 		return composedImage;
