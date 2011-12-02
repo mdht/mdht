@@ -8,7 +8,6 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     
- * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.util;
 
@@ -133,6 +132,23 @@ public class CDAModelConsolidator extends ModelConsolidator {
 		}
 
 		return filtered;
+	}
+
+	@Override
+	protected boolean isDefaultCollapsed(NamedElement element) {
+		boolean collapsed = false;
+
+		if (element instanceof Property) {
+			Property property = (Property) element;
+
+			// associations with multiplicity upper bound = 1
+			if (property.getAssociation() != null && property.getUpper() == 1) {
+				collapsed = true;
+			}
+
+		}
+
+		return collapsed;
 	}
 
 	@Override

@@ -189,6 +189,12 @@ public class ModelConsolidator {
 		return filtered;
 	}
 
+	protected boolean isDefaultCollapsed(NamedElement element) {
+		boolean collapsed = false;
+
+		return collapsed;
+	}
+
 	protected boolean isXMLAttribute(Property property) {
 		Property baseProperty = getBaseModelProperty(property);
 		if (baseProperty != null) {
@@ -419,8 +425,8 @@ public class ModelConsolidator {
 			}
 
 			// test original property so that we can evaluate base model context
-			if (isIncludeBaseModel() && isDefaultFiltered(property)) {
-				NamedElementUtil.setFilteredProperty(mergedProperty, true);
+			if (isIncludeBaseModel() && !ModelFilterUtil.hasFilterState(mergedProperty) && isDefaultFiltered(property)) {
+				ModelFilterUtil.setAsHidden(mergedProperty);
 			}
 		}
 
@@ -444,8 +450,12 @@ public class ModelConsolidator {
 			mergedProperty.getRedefinedProperties().clear();
 
 			// test original property so that we can evaluate base model context
-			if (isIncludeBaseModel() && isDefaultFiltered(property)) {
-				NamedElementUtil.setFilteredProperty(mergedProperty, true);
+			if (isIncludeBaseModel() && !ModelFilterUtil.hasFilterState(mergedProperty)) {
+				if (isDefaultFiltered(property)) {
+					ModelFilterUtil.setAsHidden(mergedProperty);
+				} else if (isDefaultCollapsed(property)) {
+					ModelFilterUtil.setAsCollapsed(mergedProperty);
+				}
 			}
 
 			if (property.getAssociation() != null) {

@@ -129,7 +129,7 @@ public class NamedElementUtil extends UMLUtil {
 			}
 		}
 
-		return namedElement.getName();
+		return null;
 	}
 
 	/**
@@ -196,7 +196,10 @@ public class NamedElementUtil extends UMLUtil {
 	 * @return A label property key for the named element.
 	 */
 	public static String getLabelPropertyKey(NamedElement namedElement) {
-		return getPropertyKey(namedElement, "label");
+		String value = getPropertyValue(namedElement, "label");
+		return (value == null)
+				? namedElement.getName()
+				: value;
 	}
 
 	/**
@@ -211,7 +214,10 @@ public class NamedElementUtil extends UMLUtil {
 	 *         the name of the element.
 	 */
 	public static String getBusinessName(NamedElement namedElement) {
-		return getPropertyValue(namedElement, "label");
+		String value = getPropertyValue(namedElement, "label");
+		return (value == null)
+				? namedElement.getName()
+				: value;
 	}
 
 	/**
@@ -239,57 +245,6 @@ public class NamedElementUtil extends UMLUtil {
 	 */
 	public static boolean setBusinessName(NamedElement namedElement, String businessName) {
 		return setPropertyValue(namedElement, "label", businessName);
-	}
-
-	/**
-	 * Returns a (model) properties file key for the specified named element with 'filter' prefix.
-	 * 
-	 * @param namedElement
-	 *            The named element.
-	 * @return A label property key for the named element.
-	 */
-	public static String getFilterPropertyKey(NamedElement namedElement) {
-		return getPropertyKey(namedElement, "filter");
-	}
-
-	/**
-	 * Returns whether the named element is filtered, false if not defined.
-	 * 
-	 * @param namedElement
-	 *            The named element.
-	 * @return true if filtered property is true, otherwise false.
-	 */
-	public static boolean isFiltered(NamedElement namedElement) {
-		String value = getPropertyValue(namedElement, "filter");
-		return "true".equals(value)
-				? true
-				: false;
-	}
-
-	/**
-	 * Sets whether for the specified named element is filtered.
-	 * 
-	 * @param namedElement
-	 *            The named element.
-	 * @param filtered
-	 *            boolean value
-	 * @return Whether the property was successfully set.
-	 */
-	public static boolean setFilteredProperty(NamedElement namedElement, boolean filtered) {
-		return setPropertyValue(namedElement, "filter", Boolean.toString(filtered));
-	}
-
-	/**
-	 * Removes the "filter" property that is currently set for the specified named
-	 * element, if any.
-	 * 
-	 * @param namedElement
-	 *            The named element.
-	 * @return The "filter" value that was set for the element (if one
-	 *         existed); otherwise <code>null</code>.
-	 */
-	public static String removeFilteredProperty(NamedElement namedElement) {
-		return removePropertyValue(namedElement, "filter");
 	}
 
 }

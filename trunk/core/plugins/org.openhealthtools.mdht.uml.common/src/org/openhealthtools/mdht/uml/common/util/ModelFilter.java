@@ -13,10 +13,13 @@
 package org.openhealthtools.mdht.uml.common.util;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Association;
@@ -28,6 +31,7 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.openhealthtools.mdht.uml.common.internal.Logger;
 
 public class ModelFilter {
 	private Package sourcePackage;
@@ -50,11 +54,30 @@ public class ModelFilter {
 		}
 	}
 
+	public Package getFilteredPackage() {
+		return filteredPackage;
+	}
+
 	protected boolean isXMLAttribute(Property property) {
 		Stereotype eAttribute = property.getAppliedStereotype("Ecore::EAttribute");
 		return (eAttribute != null)
 				? true
 				: false;
+	}
+
+	public void filterPackage(Package pkg) {
+		try {
+			TreeIterator<EObject> iterator = EcoreUtil.getAllContents(Collections.singletonList(pkg));
+			while (iterator != null && iterator.hasNext()) {
+				EObject child = iterator.next();
+
+				if (child instanceof Class) {
+					filterClass((Class) child);
+				}
+			}
+		} catch (IndexOutOfBoundsException e) {
+			Logger.logException(e);
+		}
 	}
 
 	public Class filterClass(Class sourceClass) {
@@ -83,7 +106,7 @@ public class ModelFilter {
 				}
 
 				// remove filtered properties
-				if (NamedElementUtil.isFiltered(property)) {
+				if (ModelFilterUtil.isHidden(property)) {
 					filteredClass.getOwnedAttributes().remove(mappedProperty);
 					mappedProperty.destroy();
 					continue;
@@ -108,6 +131,9 @@ public class ModelFilter {
 					assocClone.getOwnedEnds().add(ownedEnd);
 
 					UMLUtil.cloneStereotypes(property.getAssociation(), assocClone);
+				} else {
+					// property type may be replaced with a specialized filter type, e.g. an Enumeration
+					replacePropertyType(mappedProperty);
 				}
 
 				// rename using business name (use sourceClass property to get corresponding .properties)
@@ -128,6 +154,10 @@ public class ModelFilter {
 		}
 
 		return filteredClass;
+	}
+
+	protected void replacePropertyType(Property property) {
+		// may be overridden by subclass
 	}
 
 }

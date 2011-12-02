@@ -43,6 +43,7 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.edit.providers.AssociationItemProvider;
 import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
+import org.openhealthtools.mdht.uml.common.util.ModelFilterUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.internal.Logger;
@@ -76,7 +77,7 @@ public class AssociationExtItemProvider extends AssociationItemProvider implemen
 		if (navigableEnd != null) {
 			composedImage = (ComposedImage) overlayImage(
 				object, UMLExtEditPlugin.INSTANCE.getImage("full/obj16/Association_navigable")); //$NON-NLS-1$
-			if (NamedElementUtil.isFiltered(navigableEnd)) {
+			if (ModelFilterUtil.isHidden(navigableEnd)) {
 				composedImage.getImages().add(UMLExtEditPlugin.INSTANCE.getImage("full/ovr16/filtered"));
 			}
 		}
