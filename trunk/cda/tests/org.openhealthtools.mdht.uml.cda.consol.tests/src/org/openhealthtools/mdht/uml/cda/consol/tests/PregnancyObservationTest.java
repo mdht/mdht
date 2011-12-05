@@ -18,7 +18,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
@@ -32,14 +31,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Mood Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Status Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationRepeatNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Repeat Number</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Value</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationInterpretationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Interpretation Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationMethodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Method Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationTargetSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Target Site Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationEstimatedDateOfDelivery(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Estimated Date Of Delivery</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#getEstimatedDateOfDelivery() <em>Get Estimated Date Of Delivery</em>}</li>
@@ -158,43 +152,6 @@ public class PregnancyObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidatePregnancyObservationId() {
-		OperationsTestCase<PregnancyObservation> validatePregnancyObservationIdTestCase = new OperationsTestCase<PregnancyObservation>(
-			"validatePregnancyObservationId",
-			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PregnancyObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PregnancyObservation target) {
-				target.init();
-
-				II ii = DatatypesFactory.eINSTANCE.createII();
-				target.getIds().add(ii);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PregnancyObservationOperations.validatePregnancyObservationId(
-					(PregnancyObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePregnancyObservationIdTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
 	public void testValidatePregnancyObservationCode() {
 		OperationsTestCase<PregnancyObservation> validatePregnancyObservationCodeTestCase = new OperationsTestCase<PregnancyObservation>(
 			"validatePregnancyObservationCode",
@@ -269,40 +226,6 @@ public class PregnancyObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidatePregnancyObservationRepeatNumber() {
-		OperationsTestCase<PregnancyObservation> validatePregnancyObservationRepeatNumberTestCase = new OperationsTestCase<PregnancyObservation>(
-			"validatePregnancyObservationRepeatNumber",
-			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_REPEAT_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PregnancyObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PregnancyObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PregnancyObservationOperations.validatePregnancyObservationRepeatNumber(
-					(PregnancyObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePregnancyObservationRepeatNumberTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
 	public void testValidatePregnancyObservationValue() {
 		OperationsTestCase<PregnancyObservation> validatePregnancyObservationValueTestCase = new OperationsTestCase<PregnancyObservation>(
 			"validatePregnancyObservationValue",
@@ -333,108 +256,6 @@ public class PregnancyObservationTest extends CDAValidationTest {
 		};
 
 		validatePregnancyObservationValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePregnancyObservationInterpretationCode() {
-		OperationsTestCase<PregnancyObservation> validatePregnancyObservationInterpretationCodeTestCase = new OperationsTestCase<PregnancyObservation>(
-			"validatePregnancyObservationInterpretationCode",
-			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_INTERPRETATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PregnancyObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PregnancyObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PregnancyObservationOperations.validatePregnancyObservationInterpretationCode(
-					(PregnancyObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePregnancyObservationInterpretationCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePregnancyObservationMethodCode() {
-		OperationsTestCase<PregnancyObservation> validatePregnancyObservationMethodCodeTestCase = new OperationsTestCase<PregnancyObservation>(
-			"validatePregnancyObservationMethodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_METHOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PregnancyObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PregnancyObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PregnancyObservationOperations.validatePregnancyObservationMethodCode(
-					(PregnancyObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePregnancyObservationMethodCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePregnancyObservationTargetSiteCode() {
-		OperationsTestCase<PregnancyObservation> validatePregnancyObservationTargetSiteCodeTestCase = new OperationsTestCase<PregnancyObservation>(
-			"validatePregnancyObservationTargetSiteCode",
-			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_TARGET_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PregnancyObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PregnancyObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PregnancyObservationOperations.validatePregnancyObservationTargetSiteCode(
-					(PregnancyObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePregnancyObservationTargetSiteCodeTestCase.doValidationTest();
 	}
 
 	/**
