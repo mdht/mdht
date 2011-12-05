@@ -15,6 +15,8 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ExternalReference;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ExternalReferenceOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 
 /**
  * <!-- begin-user-doc -->
@@ -198,6 +200,9 @@ public class ExternalReferenceTest extends CDAValidationTest {
 			protected void updateToPass(ExternalReference target) {
 				target.init();
 
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
+
 			}
 
 			@Override
@@ -367,6 +372,9 @@ public class ExternalReferenceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ExternalReference target) {
 				target.init();
+
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
 
 			}
 

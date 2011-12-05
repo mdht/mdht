@@ -15,6 +15,8 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.Encounter;
 import org.openhealthtools.mdht.uml.cda.consol.operations.EncounterOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 
 /**
  * <!-- begin-user-doc -->
@@ -189,6 +191,9 @@ public class EncounterTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Encounter target) {
 				target.init();
+
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
 
 			}
 

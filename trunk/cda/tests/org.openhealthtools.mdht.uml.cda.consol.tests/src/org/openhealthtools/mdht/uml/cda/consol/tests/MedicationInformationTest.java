@@ -152,7 +152,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationInformationHasMaterialCodeOriginalText() {

@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.junit.Test;
 
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ProceduresSectionEntriesOptional;
 
@@ -133,6 +135,9 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProceduresSectionEntriesOptional target) {
 				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
 
 			}
 

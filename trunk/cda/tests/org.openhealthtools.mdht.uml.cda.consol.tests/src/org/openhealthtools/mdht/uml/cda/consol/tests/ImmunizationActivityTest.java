@@ -18,6 +18,7 @@ import org.openhealthtools.mdht.uml.cda.consol.operations.ImmunizationActivityOp
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +28,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#validateImmunizationActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Activity Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#validateImmunizationActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Activity Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#validateImmunizationActivityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Activity Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#validateImmunizationActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Activity Id</em>}</li>
@@ -44,7 +44,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#validateImmunizationActivityDrugVehicle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Activity Drug Vehicle</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#validateImmunizationActivityIndication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Activity Indication</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#validateImmunizationActivityInstructions(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Activity Instructions</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#validateImmunizationActivityNonMedicinalSupplyActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Activity Non Medicinal Supply Activity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#validateImmunizationActivityMedicationDispense(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Activity Medication Dispense</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#validateImmunizationActivityReactionObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Activity Reaction Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#validateImmunizationActivityImmunizationRefusalReason(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Activity Immunization Refusal Reason</em>}</li>
@@ -52,7 +51,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#getDrugVehicle() <em>Get Drug Vehicle</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#getIndication() <em>Get Indication</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#getInstructions() <em>Get Instructions</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#getNonMedicinalSupplyActivity() <em>Get Non Medicinal Supply Activity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#getMedicationDispense() <em>Get Medication Dispense</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#getReactionObservation() <em>Get Reaction Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#getImmunizationRefusalReason() <em>Get Immunization Refusal Reason</em>}</li>
@@ -64,40 +62,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  */
 
 public class ImmunizationActivityTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateImmunizationActivityMoodCode() {
-		OperationsTestCase<ImmunizationActivity> validateImmunizationActivityMoodCodeTestCase = new OperationsTestCase<ImmunizationActivity>(
-			"validateImmunizationActivityMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ImmunizationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ImmunizationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ImmunizationActivityOperations.validateImmunizationActivityMoodCode(
-					(ImmunizationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateImmunizationActivityMoodCodeTestCase.doValidationTest();
-	}
 
 	/**
 	*
@@ -462,6 +426,9 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 			protected void updateToPass(ImmunizationActivity target) {
 				target.init();
 
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
+
 			}
 
 			@Override
@@ -651,40 +618,6 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateImmunizationActivityNonMedicinalSupplyActivity() {
-		OperationsTestCase<ImmunizationActivity> validateImmunizationActivityNonMedicinalSupplyActivityTestCase = new OperationsTestCase<ImmunizationActivity>(
-			"validateImmunizationActivityNonMedicinalSupplyActivity",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_ACTIVITY_NON_MEDICINAL_SUPPLY_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ImmunizationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ImmunizationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ImmunizationActivityOperations.validateImmunizationActivityNonMedicinalSupplyActivity(
-					(ImmunizationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateImmunizationActivityNonMedicinalSupplyActivityTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
 	public void testValidateImmunizationActivityMedicationDispense() {
 		OperationsTestCase<ImmunizationActivity> validateImmunizationActivityMedicationDispenseTestCase = new OperationsTestCase<ImmunizationActivity>(
 			"validateImmunizationActivityMedicationDispense",
@@ -849,18 +782,6 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 		ImmunizationActivity target = objectFactory.create();
 		target.getInstructions();
-
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testGetNonMedicinalSupplyActivity() {
-
-		ImmunizationActivity target = objectFactory.create();
-		target.getNonMedicinalSupplyActivity();
 
 	}
 
