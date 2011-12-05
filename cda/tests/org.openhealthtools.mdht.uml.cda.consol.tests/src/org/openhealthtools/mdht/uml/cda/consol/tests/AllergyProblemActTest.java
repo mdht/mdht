@@ -15,6 +15,7 @@ import org.openhealthtools.mdht.uml.cda.consol.AllergyProblemAct;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.operations.AllergyProblemActOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
@@ -59,7 +60,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyProblemAct#validateAllergyProblemActClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Problem Act Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyProblemAct#validateAllergyProblemActMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Problem Act Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyProblemAct#validateAllergyProblemActId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Problem Act Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyProblemAct#validateAllergyProblemActCodeNullFlavor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Problem Act Code Null Flavor</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyProblemAct#validateAllergyProblemActCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Problem Act Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyProblemAct#validateAllergyProblemActStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Problem Act Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyProblemAct#validateAllergyProblemActEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Problem Act Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyProblemAct#validateAllergyProblemActAllergyObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Problem Act Allergy Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyProblemAct#getAllergyObservations() <em>Get Allergy Observations</em>}</li>
@@ -1198,10 +1200,10 @@ public class AllergyProblemActTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateAllergyProblemActCodeNullFlavor() {
-		OperationsTestCase<AllergyProblemAct> validateAllergyProblemActCodeNullFlavorTestCase = new OperationsTestCase<AllergyProblemAct>(
-			"validateAllergyProblemActCodeNullFlavor",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_PROBLEM_ACT_CODE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateAllergyProblemActCode() {
+		OperationsTestCase<AllergyProblemAct> validateAllergyProblemActCodeTestCase = new OperationsTestCase<AllergyProblemAct>(
+			"validateAllergyProblemActCode",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_PROBLEM_ACT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -1218,13 +1220,50 @@ public class AllergyProblemActTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AllergyProblemActOperations.validateAllergyProblemActCodeNullFlavor(
+				return AllergyProblemActOperations.validateAllergyProblemActCode(
 					(AllergyProblemAct) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateAllergyProblemActCodeNullFlavorTestCase.doValidationTest();
+		validateAllergyProblemActCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAllergyProblemActStatusCode() {
+		OperationsTestCase<AllergyProblemAct> validateAllergyProblemActStatusCodeTestCase = new OperationsTestCase<AllergyProblemAct>(
+			"validateAllergyProblemActStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_PROBLEM_ACT_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AllergyProblemAct target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AllergyProblemAct target) {
+				target.init();
+
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AllergyProblemActOperations.validateAllergyProblemActStatusCode(
+					(AllergyProblemAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAllergyProblemActStatusCodeTestCase.doValidationTest();
 	}
 
 	/**
