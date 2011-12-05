@@ -17,6 +17,7 @@ import org.openhealthtools.mdht.uml.cda.consol.operations.UnstructuredOrScannedD
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -514,7 +515,7 @@ public class UnstructuredOrScannedDocumentTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateUnstructuredOrScannedDocumentHasNonXMLBodyBinaryText() {
@@ -956,7 +957,7 @@ public class UnstructuredOrScannedDocumentTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateUnstructuredOrScannedDocumentHasNonXMLBodyText() {
@@ -1214,6 +1215,9 @@ public class UnstructuredOrScannedDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(UnstructuredOrScannedDocument target) {
 				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
 
 			}
 

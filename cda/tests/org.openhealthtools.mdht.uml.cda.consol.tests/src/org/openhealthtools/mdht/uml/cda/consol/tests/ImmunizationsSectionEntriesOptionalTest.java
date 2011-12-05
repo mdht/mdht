@@ -11,10 +11,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSectionEntriesOptional;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ImmunizationsSectionEntriesOptionalOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -106,7 +109,7 @@ public class ImmunizationsSectionEntriesOptionalTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated 
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationsSectionEntriesOptionalTitle() {
@@ -117,12 +120,12 @@ public class ImmunizationsSectionEntriesOptionalTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ImmunizationsSectionEntriesOptional target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationsSectionEntriesOptional target) {
-				target.init();
+				target.setTitle(DatatypesFactory.eINSTANCE.createST());
 
 			}
 
@@ -157,6 +160,9 @@ public class ImmunizationsSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ImmunizationsSectionEntriesOptional target) {
 				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
 
 			}
 
