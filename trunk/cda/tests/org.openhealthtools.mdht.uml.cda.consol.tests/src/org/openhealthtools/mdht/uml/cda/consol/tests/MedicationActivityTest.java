@@ -27,42 +27,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Mood Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasDoseQuantityOrRateQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Dose Quantity Or Rate Quantity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasConsents(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Consents</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityInformationSource(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Information Source</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasPreconditionCriterion(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Precondition Criterion</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasReason(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Reason</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasReasonProblem(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Reason Problem</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasProduct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Product</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasDosing(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Dosing</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityDosingRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Dosing Relationship</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasDescriptionNoMedNotKnown(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Description No Med Not Known</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityReasonClassMood(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Reason Class Mood</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasProductEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Product Entry</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasIntructionsInversion(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Intructions Inversion</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityProductStrength(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Product Strength</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityProductName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Product Name</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityPreconditionReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Precondition Reference</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasSupplyEntryInversion(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Supply Entry Inversion</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasFillNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Fill Number</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityFirstEffectiveTimeDatatype(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity First Effective Time Datatype</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityDoseUnits(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Dose Units</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityDeliveryMethodDescription(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Delivery Method Description</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasMedicationInformation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Medication Information</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasStatusOfMedication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Status Of Medication</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasIndication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Indication</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasIndicationNarrativeText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Indication Narrative Text</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasIndicationVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Indication Vocab</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasPatientInstructions(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Patient Instructions</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityHasMedicationVehicle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Has Medication Vehicle</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityMedicationVehicleType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Medication Vehicle Type</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityMedicationVehicleClass(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Medication Vehicle Class</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityMedicationVehicleCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Medication Vehicle Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityMedicationVehicleName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Medication Vehicle Name</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityMedicationVehicleCodedName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Medication Vehicle Coded Name</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityMedicationVehicleCodedNameVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Medication Vehicle Coded Name Vocab</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Status Code</em>}</li>
@@ -73,17 +39,20 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityRateQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Rate Quantity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityMaxDoseQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Max Dose Quantity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityAdministrationUnitCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Administration Unit Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityRepeatNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Repeat Number</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityMedicationSupplyOrder(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Medication Supply Order</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityReactionObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Reaction Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityInstructions(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Instructions</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityIndication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Indication</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityMedicationDispense(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Medication Dispense</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#validateMedicationActivityDrugVehicle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Drug Vehicle</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#getMedicationSupplyOrders() <em>Get Medication Supply Orders</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#getReactionObservation() <em>Get Reaction Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#getInstructionss() <em>Get Instructionss</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#getIndication() <em>Get Indication</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#getInstructions() <em>Get Instructions</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#getIndications() <em>Get Indications</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#getMedicationDispense() <em>Get Medication Dispense</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#getDrugVehicle() <em>Get Drug Vehicle</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationActivity#getDrugVehicles() <em>Get Drug Vehicles</em>}</li>
  * </ul>
  * </p>
  *
@@ -91,1199 +60,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  */
 
 public class MedicationActivityTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityMoodCode() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityMoodCodeTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityMoodCode(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityMoodCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasDoseQuantityOrRateQuantity() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasDoseQuantityOrRateQuantityTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasDoseQuantityOrRateQuantity",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_DOSE_QUANTITY_OR_RATE_QUANTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasDoseQuantityOrRateQuantity(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasDoseQuantityOrRateQuantityTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasConsents() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasConsentsTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasConsents",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_CONSENTS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasConsents(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasConsentsTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityInformationSource() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityInformationSourceTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityInformationSource",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityInformationSource(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityInformationSourceTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasPreconditionCriterion() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasPreconditionCriterionTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasPreconditionCriterion",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_PRECONDITION_CRITERION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasPreconditionCriterion(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasPreconditionCriterionTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasReason() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasReasonTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasReason",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_REASON__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasReason(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasReasonTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasReasonProblem() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasReasonProblemTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasReasonProblem",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_REASON_PROBLEM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasReasonProblem(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasReasonProblemTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasProduct() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasProductTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasProduct",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_PRODUCT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasProduct(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasProductTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasDosing() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasDosingTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasDosing",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_DOSING__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasDosing(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasDosingTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityDosingRelationship() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityDosingRelationshipTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityDosingRelationship",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_DOSING_RELATIONSHIP__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityDosingRelationship(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityDosingRelationshipTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasDescriptionNoMedNotKnown() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasDescriptionNoMedNotKnownTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasDescriptionNoMedNotKnown",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_DESCRIPTION_NO_MED_NOT_KNOWN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasDescriptionNoMedNotKnown(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasDescriptionNoMedNotKnownTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityReasonClassMood() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityReasonClassMoodTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityReasonClassMood",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_REASON_CLASS_MOOD__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityReasonClassMood(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityReasonClassMoodTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasProductEntry() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasProductEntryTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasProductEntry",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_PRODUCT_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasProductEntry(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasProductEntryTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasIntructionsInversion() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasIntructionsInversionTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasIntructionsInversion",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_INTRUCTIONS_INVERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasIntructionsInversion(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasIntructionsInversionTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityProductStrength() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityProductStrengthTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityProductStrength",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_PRODUCT_STRENGTH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityProductStrength(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityProductStrengthTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityProductName() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityProductNameTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityProductName",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_PRODUCT_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityProductName(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityProductNameTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityPreconditionReference() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityPreconditionReferenceTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityPreconditionReference",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_PRECONDITION_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityPreconditionReference(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityPreconditionReferenceTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasSupplyEntryInversion() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasSupplyEntryInversionTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasSupplyEntryInversion",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_SUPPLY_ENTRY_INVERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasSupplyEntryInversion(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasSupplyEntryInversionTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasFillNumber() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasFillNumberTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasFillNumber",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_FILL_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasFillNumber(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasFillNumberTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityFirstEffectiveTimeDatatype() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityFirstEffectiveTimeDatatypeTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityFirstEffectiveTimeDatatype",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_FIRST_EFFECTIVE_TIME_DATATYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityFirstEffectiveTimeDatatype(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityFirstEffectiveTimeDatatypeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityDoseUnits() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityDoseUnitsTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityDoseUnits",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_DOSE_UNITS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityDoseUnits(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityDoseUnitsTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityDeliveryMethodDescription() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityDeliveryMethodDescriptionTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityDeliveryMethodDescription",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_DELIVERY_METHOD_DESCRIPTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityDeliveryMethodDescription(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityDeliveryMethodDescriptionTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasMedicationInformation() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasMedicationInformationTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasMedicationInformation",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_MEDICATION_INFORMATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasMedicationInformation(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasMedicationInformationTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasStatusOfMedication() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasStatusOfMedicationTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasStatusOfMedication",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_STATUS_OF_MEDICATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasStatusOfMedication(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasStatusOfMedicationTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasIndication() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasIndicationTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasIndication",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_INDICATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasIndication(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasIndicationTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasIndicationNarrativeText() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasIndicationNarrativeTextTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasIndicationNarrativeText",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_INDICATION_NARRATIVE_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-				ED text = DatatypesFactory.eINSTANCE.createED();
-				target.setText(text);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasIndicationNarrativeText(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasIndicationNarrativeTextTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasIndicationVocab() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasIndicationVocabTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasIndicationVocab",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_INDICATION_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasIndicationVocab(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasIndicationVocabTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasPatientInstructions() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasPatientInstructionsTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasPatientInstructions",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_PATIENT_INSTRUCTIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasPatientInstructions(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasPatientInstructionsTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityHasMedicationVehicle() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityHasMedicationVehicleTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityHasMedicationVehicle",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_HAS_MEDICATION_VEHICLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityHasMedicationVehicle(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityHasMedicationVehicleTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityMedicationVehicleType() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityMedicationVehicleTypeTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityMedicationVehicleType",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_MEDICATION_VEHICLE_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityMedicationVehicleType(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityMedicationVehicleTypeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityMedicationVehicleClass() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityMedicationVehicleClassTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityMedicationVehicleClass",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_MEDICATION_VEHICLE_CLASS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityMedicationVehicleClass(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityMedicationVehicleClassTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityMedicationVehicleCode() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityMedicationVehicleCodeTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityMedicationVehicleCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_MEDICATION_VEHICLE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityMedicationVehicleCode(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityMedicationVehicleCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityMedicationVehicleName() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityMedicationVehicleNameTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityMedicationVehicleName",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_MEDICATION_VEHICLE_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityMedicationVehicleName(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityMedicationVehicleNameTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityMedicationVehicleCodedName() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityMedicationVehicleCodedNameTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityMedicationVehicleCodedName",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_MEDICATION_VEHICLE_CODED_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityMedicationVehicleCodedName(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityMedicationVehicleCodedNameTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationActivityMedicationVehicleCodedNameVocab() {
-		OperationsTestCase<MedicationActivity> validateMedicationActivityMedicationVehicleCodedNameVocabTestCase = new OperationsTestCase<MedicationActivity>(
-			"validateMedicationActivityMedicationVehicleCodedNameVocab",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_MEDICATION_VEHICLE_CODED_NAME_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationActivityOperations.validateMedicationActivityMedicationVehicleCodedNameVocab(
-					(MedicationActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationActivityMedicationVehicleCodedNameVocabTestCase.doValidationTest();
-	}
 
 	/**
 	*
@@ -1317,6 +93,40 @@ public class MedicationActivityTest extends CDAValidationTest {
 		};
 
 		validateMedicationActivityTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMedicationActivityClassCode() {
+		OperationsTestCase<MedicationActivity> validateMedicationActivityClassCodeTestCase = new OperationsTestCase<MedicationActivity>(
+			"validateMedicationActivityClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationActivityOperations.validateMedicationActivityClassCode(
+					(MedicationActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationActivityClassCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -1667,6 +477,77 @@ public class MedicationActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidateMedicationActivityText() {
+		OperationsTestCase<MedicationActivity> validateMedicationActivityTextTestCase = new OperationsTestCase<MedicationActivity>(
+			"validateMedicationActivityText",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationActivity target) {
+				target.init();
+
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationActivityOperations.validateMedicationActivityText(
+					(MedicationActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationActivityTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMedicationActivityRepeatNumber() {
+		OperationsTestCase<MedicationActivity> validateMedicationActivityRepeatNumberTestCase = new OperationsTestCase<MedicationActivity>(
+			"validateMedicationActivityRepeatNumber",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_REPEAT_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationActivityOperations.validateMedicationActivityRepeatNumber(
+					(MedicationActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationActivityRepeatNumberTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
 	public void testValidateMedicationActivityMedicationSupplyOrder() {
 		OperationsTestCase<MedicationActivity> validateMedicationActivityMedicationSupplyOrderTestCase = new OperationsTestCase<MedicationActivity>(
 			"validateMedicationActivityMedicationSupplyOrder",
@@ -1694,6 +575,40 @@ public class MedicationActivityTest extends CDAValidationTest {
 		};
 
 		validateMedicationActivityMedicationSupplyOrderTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMedicationActivityReactionObservation() {
+		OperationsTestCase<MedicationActivity> validateMedicationActivityReactionObservationTestCase = new OperationsTestCase<MedicationActivity>(
+			"validateMedicationActivityReactionObservation",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_REACTION_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationActivityOperations.validateMedicationActivityReactionObservation(
+					(MedicationActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationActivityReactionObservationTestCase.doValidationTest();
 	}
 
 	/**
@@ -1861,10 +776,10 @@ public class MedicationActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetInstructionss() {
+	public void testGetInstructions() {
 
 		MedicationActivity target = objectFactory.create();
-		target.getInstructionss();
+		target.getInstructions();
 
 	}
 
@@ -1873,10 +788,10 @@ public class MedicationActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetIndication() {
+	public void testGetIndications() {
 
 		MedicationActivity target = objectFactory.create();
-		target.getIndication();
+		target.getIndications();
 
 	}
 
@@ -1897,10 +812,10 @@ public class MedicationActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetDrugVehicle() {
+	public void testGetDrugVehicles() {
 
 		MedicationActivity target = objectFactory.create();
-		target.getDrugVehicle();
+		target.getDrugVehicles();
 
 	}
 

@@ -18,6 +18,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
@@ -29,6 +30,12 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureAcivityObservation#validateProcedureAcivityObservationCodeCodeSystems(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Acivity Observation Code Code Systems</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureAcivityObservation#validateProcedureAcivityObservationCodeOriginalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Acivity Observation Code Original Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureAcivityObservation#validateProcedureAcivityObservationOriginalTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Acivity Observation Original Text Reference Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureAcivityObservation#validateProcedureAcivityObservationReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Acivity Observation Reference Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureAcivityObservation#validateProcedureAcivityObservationEncounterInversion(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Acivity Observation Encounter Inversion</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureAcivityObservation#validateProcedureAcivityObservationInstructionsInversion(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Acivity Observation Instructions Inversion</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureAcivityObservation#validateProcedureAcivityObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Acivity Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureAcivityObservation#validateProcedureAcivityObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Acivity Observation Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureAcivityObservation#validateProcedureAcivityObservationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Acivity Observation Id</em>}</li>
@@ -54,6 +61,219 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  */
 
 public class ProcedureAcivityObservationTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureAcivityObservationCodeCodeSystems() {
+		OperationsTestCase<ProcedureAcivityObservation> validateProcedureAcivityObservationCodeCodeSystemsTestCase = new OperationsTestCase<ProcedureAcivityObservation>(
+			"validateProcedureAcivityObservationCodeCodeSystems",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACIVITY_OBSERVATION_CODE_CODE_SYSTEMS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureAcivityObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureAcivityObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureAcivityObservationOperations.validateProcedureAcivityObservationCodeCodeSystems(
+					(ProcedureAcivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureAcivityObservationCodeCodeSystemsTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureAcivityObservationCodeOriginalText() {
+		OperationsTestCase<ProcedureAcivityObservation> validateProcedureAcivityObservationCodeOriginalTextTestCase = new OperationsTestCase<ProcedureAcivityObservation>(
+			"validateProcedureAcivityObservationCodeOriginalText",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACIVITY_OBSERVATION_CODE_ORIGINAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureAcivityObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureAcivityObservation target) {
+				target.init();
+
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureAcivityObservationOperations.validateProcedureAcivityObservationCodeOriginalText(
+					(ProcedureAcivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureAcivityObservationCodeOriginalTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureAcivityObservationOriginalTextReferenceValue() {
+		OperationsTestCase<ProcedureAcivityObservation> validateProcedureAcivityObservationOriginalTextReferenceValueTestCase = new OperationsTestCase<ProcedureAcivityObservation>(
+			"validateProcedureAcivityObservationOriginalTextReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACIVITY_OBSERVATION_ORIGINAL_TEXT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureAcivityObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureAcivityObservation target) {
+				target.init();
+
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureAcivityObservationOperations.validateProcedureAcivityObservationOriginalTextReferenceValue(
+					(ProcedureAcivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureAcivityObservationOriginalTextReferenceValueTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureAcivityObservationReferenceValue() {
+		OperationsTestCase<ProcedureAcivityObservation> validateProcedureAcivityObservationReferenceValueTestCase = new OperationsTestCase<ProcedureAcivityObservation>(
+			"validateProcedureAcivityObservationReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACIVITY_OBSERVATION_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureAcivityObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureAcivityObservation target) {
+				target.init();
+
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureAcivityObservationOperations.validateProcedureAcivityObservationReferenceValue(
+					(ProcedureAcivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureAcivityObservationReferenceValueTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureAcivityObservationEncounterInversion() {
+		OperationsTestCase<ProcedureAcivityObservation> validateProcedureAcivityObservationEncounterInversionTestCase = new OperationsTestCase<ProcedureAcivityObservation>(
+			"validateProcedureAcivityObservationEncounterInversion",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACIVITY_OBSERVATION_ENCOUNTER_INVERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureAcivityObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureAcivityObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureAcivityObservationOperations.validateProcedureAcivityObservationEncounterInversion(
+					(ProcedureAcivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureAcivityObservationEncounterInversionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureAcivityObservationInstructionsInversion() {
+		OperationsTestCase<ProcedureAcivityObservation> validateProcedureAcivityObservationInstructionsInversionTestCase = new OperationsTestCase<ProcedureAcivityObservation>(
+			"validateProcedureAcivityObservationInstructionsInversion",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACIVITY_OBSERVATION_INSTRUCTIONS_INVERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureAcivityObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureAcivityObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureAcivityObservationOperations.validateProcedureAcivityObservationInstructionsInversion(
+					(ProcedureAcivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureAcivityObservationInstructionsInversionTestCase.doValidationTest();
+	}
 
 	/**
 	*

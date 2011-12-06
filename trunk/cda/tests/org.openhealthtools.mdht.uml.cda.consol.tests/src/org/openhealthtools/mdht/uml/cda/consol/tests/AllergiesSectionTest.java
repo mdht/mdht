@@ -31,7 +31,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergiesSection#validateAllergiesSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergies Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergiesSection#validateAllergiesSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergies Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergiesSection#validateAllergiesSectionAllergyDrugSensitivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergies Section Allergy Drug Sensitivity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergiesSection#getConsolAllergyDrugSensitivities() <em>Get Consol Allergy Drug Sensitivities</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergiesSection#getAllergyDrugSensitivities() <em>Get Allergy Drug Sensitivities</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergiesSection#validateAllergiesSectionEntriesOptionalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergies Section Entries Optional Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergiesSection#validateAllergiesSectionEntriesOptionalCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergies Section Entries Optional Code</em>}</li>
  * </ul>
@@ -189,10 +189,10 @@ public class AllergiesSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetConsolAllergyDrugSensitivities() {
+	public void testGetAllergyDrugSensitivities() {
 
 		AllergiesSection target = objectFactory.create();
-		target.getConsolAllergyDrugSensitivities();
+		target.getAllergyDrugSensitivities();
 
 	}
 

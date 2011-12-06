@@ -32,6 +32,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergiesSectionEntriesOptional#validateAllergiesSectionEntriesOptionalCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergies Section Entries Optional Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergiesSectionEntriesOptional#validateAllergiesSectionEntriesOptionalTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergies Section Entries Optional Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergiesSectionEntriesOptional#validateAllergiesSectionEntriesOptionalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergies Section Entries Optional Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergiesSectionEntriesOptional#getAllergyProblemActs() <em>Get Allergy Problem Acts</em>}</li>
  * </ul>
  * </p>
  *
@@ -180,6 +181,18 @@ public class AllergiesSectionEntriesOptionalTest extends CDAValidationTest {
 		};
 
 		validateAllergiesSectionEntriesOptionalTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetAllergyProblemActs() {
+
+		AllergiesSectionEntriesOptional target = objectFactory.create();
+		target.getAllergyProblemActs();
+
 	}
 
 	/**
