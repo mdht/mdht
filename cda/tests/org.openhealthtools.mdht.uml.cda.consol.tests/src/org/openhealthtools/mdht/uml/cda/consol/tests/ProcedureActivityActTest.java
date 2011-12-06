@@ -17,6 +17,7 @@ import org.openhealthtools.mdht.uml.cda.consol.operations.ProcedureActivityActOp
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
@@ -27,6 +28,12 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActCodeCodeSystems(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Code Code Systems</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActCodeOriginalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Code Original Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActOriginalTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Original Text Reference Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Reference Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActEncounterInversion(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Encounter Inversion</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActInstructionsInversion(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Instructions Inversion</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Id</em>}</li>
@@ -49,6 +56,213 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  */
 
 public class ProcedureActivityActTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureActivityActCodeCodeSystems() {
+		OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActCodeCodeSystemsTestCase = new OperationsTestCase<ProcedureActivityAct>(
+			"validateProcedureActivityActCodeCodeSystems",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_CODE_CODE_SYSTEMS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityAct target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityAct target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityActOperations.validateProcedureActivityActCodeCodeSystems(
+					(ProcedureActivityAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityActCodeCodeSystemsTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureActivityActCodeOriginalText() {
+		OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActCodeOriginalTextTestCase = new OperationsTestCase<ProcedureActivityAct>(
+			"validateProcedureActivityActCodeOriginalText",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_CODE_ORIGINAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityAct target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityAct target) {
+				target.init();
+
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityActOperations.validateProcedureActivityActCodeOriginalText(
+					(ProcedureActivityAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityActCodeOriginalTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityActOriginalTextReferenceValue() {
+		OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActOriginalTextReferenceValueTestCase = new OperationsTestCase<ProcedureActivityAct>(
+			"validateProcedureActivityActOriginalTextReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_ORIGINAL_TEXT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityAct target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityAct target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityActOperations.validateProcedureActivityActOriginalTextReferenceValue(
+					(ProcedureActivityAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityActOriginalTextReferenceValueTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityActReferenceValue() {
+		OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActReferenceValueTestCase = new OperationsTestCase<ProcedureActivityAct>(
+			"validateProcedureActivityActReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityAct target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityAct target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityActOperations.validateProcedureActivityActReferenceValue(
+					(ProcedureActivityAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityActReferenceValueTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureActivityActEncounterInversion() {
+		OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActEncounterInversionTestCase = new OperationsTestCase<ProcedureActivityAct>(
+			"validateProcedureActivityActEncounterInversion",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_ENCOUNTER_INVERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityAct target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityAct target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityActOperations.validateProcedureActivityActEncounterInversion(
+					(ProcedureActivityAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityActEncounterInversionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureActivityActInstructionsInversion() {
+		OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActInstructionsInversionTestCase = new OperationsTestCase<ProcedureActivityAct>(
+			"validateProcedureActivityActInstructionsInversion",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_INSTRUCTIONS_INVERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityAct target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityAct target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityActOperations.validateProcedureActivityActInstructionsInversion(
+					(ProcedureActivityAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityActInstructionsInversionTestCase.doValidationTest();
+	}
 
 	/**
 	*

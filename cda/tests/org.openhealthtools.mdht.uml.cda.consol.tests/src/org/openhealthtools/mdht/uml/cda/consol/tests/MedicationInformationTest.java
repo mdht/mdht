@@ -40,6 +40,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationFreeTextBrandName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Free Text Brand Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Class Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -590,6 +591,40 @@ public class MedicationInformationTest extends CDAValidationTest {
 		};
 
 		validateMedicationInformationIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMedicationInformationClassCode() {
+		OperationsTestCase<MedicationInformation> validateMedicationInformationClassCodeTestCase = new OperationsTestCase<MedicationInformation>(
+			"validateMedicationInformationClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationInformation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationInformation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationInformationOperations.validateMedicationInformationClassCode(
+					(MedicationInformation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationInformationClassCodeTestCase.doValidationTest();
 	}
 
 	/**
