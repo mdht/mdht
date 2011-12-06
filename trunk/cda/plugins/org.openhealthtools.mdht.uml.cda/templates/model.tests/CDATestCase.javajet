@@ -83,16 +83,21 @@ public void test<%= genOperation.getName().substring(0, 1).toUpperCase() +	genOp
 			<% } %>	
 
 	
-		<% if ( genOperation.getName().endsWith("SectionTitle") ) { %>
+		<% if ( genOperation.getName().endsWith("Title") ) { %>
 				<%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.ST") %>  title = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory") %>.eINSTANCE.createST("title");
 				target.setTitle(title );
 			<% } %>	
 
 	
-	<% if ( genOperation.getName().endsWith("SectionText") ) { %>	
+	<% if ( genOperation.getName().endsWith("SectionText") || genOperation.getName().endsWith("OptionalText") ) { %>	
 				<%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.StrucDocText") %> text = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.CDAFactory") %>.eINSTANCE.createStrucDocText();
 				target.setText(text );
 		<% } %>	
+		
+		<% if ( genOperation.getName().endsWith("Text") && ! genOperation.getName().endsWith("SectionText") && ! genOperation.getName().endsWith("OptionalText") ) { %>	
+		<%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.ED") %> text = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory") %>.eINSTANCE.createED();
+		target.setText(text );
+<% } %>	
 				
 	<% if ( genOperation.getName().endsWith("SectionTitleValue") ) { %>
 				<%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.ST") %>  title = <%=genModel.getImportedName("org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory") %>.eINSTANCE.createST("<%=UML2GenModelUtil.getOCLBody(genOperation).split("'")[1]   %>");
@@ -127,8 +132,7 @@ public void test<%= genOperation.getName().substring(0, 1).toUpperCase() +	genOp
 			
 			
 				<% if ( genOperation.getName().endsWith("ProblemEntry") ) { %>
-				ProblemEntry entry = IHEFactory.eINSTANCE.createProblemEntry().init();
-				target.addObservation(entry);
+				
 							
 			<% } %>	
 			
