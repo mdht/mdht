@@ -34,7 +34,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncountersActivites#validateEncountersActivitesMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activites Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncountersActivites#validateEncountersActivitesId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activites Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncountersActivites#validateEncountersActivitesEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activites Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncountersActivites#validateEncountersActivitesServiceDeliveryLocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activites Service Delivery Location</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncountersActivites#validateEncountersActivitesIndication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activites Indication</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncountersActivites#getServiceDeliveryLocations() <em>Get Service Delivery Locations</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncountersActivites#getIndication() <em>Get Indication</em>}</li>
  * </ul>
  * </p>
@@ -324,6 +326,40 @@ public class EncountersActivitesTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidateEncountersActivitesServiceDeliveryLocation() {
+		OperationsTestCase<EncountersActivites> validateEncountersActivitesServiceDeliveryLocationTestCase = new OperationsTestCase<EncountersActivites>(
+			"validateEncountersActivitesServiceDeliveryLocation",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTERS_ACTIVITES_SERVICE_DELIVERY_LOCATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(EncountersActivites target) {
+
+			}
+
+			@Override
+			protected void updateToPass(EncountersActivites target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EncountersActivitesOperations.validateEncountersActivitesServiceDeliveryLocation(
+					(EncountersActivites) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEncountersActivitesServiceDeliveryLocationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
 	public void testValidateEncountersActivitesIndication() {
 		OperationsTestCase<EncountersActivites> validateEncountersActivitesIndicationTestCase = new OperationsTestCase<EncountersActivites>(
 			"validateEncountersActivitesIndication",
@@ -351,6 +387,18 @@ public class EncountersActivitesTest extends CDAValidationTest {
 		};
 
 		validateEncountersActivitesIndicationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetServiceDeliveryLocations() {
+
+		EncountersActivites target = objectFactory.create();
+		target.getServiceDeliveryLocations();
+
 	}
 
 	/**

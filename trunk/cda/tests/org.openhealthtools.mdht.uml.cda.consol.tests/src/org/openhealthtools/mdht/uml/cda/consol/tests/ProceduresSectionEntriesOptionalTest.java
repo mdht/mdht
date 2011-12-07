@@ -9,18 +9,13 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ProceduresSectionEntriesOptional;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.ProceduresSectionEntriesOptionalOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -118,7 +113,7 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProceduresSectionEntriesOptionalText() {
@@ -136,9 +131,8 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 			protected void updateToPass(ProceduresSectionEntriesOptional target) {
 				target.init();
 
-				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
-
+				StrucDocText value = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(value);
 			}
 
 			@Override
@@ -155,7 +149,7 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProceduresSectionEntriesOptionalProcedureActivityProcedure() {
@@ -172,7 +166,7 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProceduresSectionEntriesOptional target) {
 				target.init();
-
+				target.addProcedure(ConsolFactory.eINSTANCE.createProcedureActivityProcedure());
 			}
 
 			@Override
@@ -189,7 +183,7 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProceduresSectionEntriesOptionalProcedureAcivityObservation() {
@@ -206,7 +200,7 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProceduresSectionEntriesOptional target) {
 				target.init();
-
+				target.addObservation(ConsolFactory.eINSTANCE.createProcedureActivityObservation());
 			}
 
 			@Override
@@ -223,7 +217,7 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProceduresSectionEntriesOptionalProcedureActivityAct() {
@@ -240,7 +234,7 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProceduresSectionEntriesOptional target) {
 				target.init();
-
+				target.addAct(ConsolFactory.eINSTANCE.createProcedureActivityAct());
 			}
 
 			@Override
