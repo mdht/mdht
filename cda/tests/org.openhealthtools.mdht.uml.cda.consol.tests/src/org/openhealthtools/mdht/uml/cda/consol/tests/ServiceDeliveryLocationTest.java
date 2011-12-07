@@ -24,14 +24,12 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ServiceDeliveryLocation#validateServiceDeliveryLocationHasParticipantRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Service Delivery Location Has Participant Role</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ServiceDeliveryLocation#validateServiceDeliveryLocationHasParticipantRoleLocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Service Delivery Location Has Participant Role Location</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ServiceDeliveryLocation#validateServiceDeliveryLocationHasParticipantRoleCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Service Delivery Location Has Participant Role Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ServiceDeliveryLocation#validateServiceDeliveryLocationHasParticipantRoleCodeVocab(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Service Delivery Location Has Participant Role Code Vocab</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ServiceDeliveryLocation#validateServiceDeliveryLocationHasPlayingEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Service Delivery Location Has Playing Entity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ServiceDeliveryLocation#validateServiceDeliveryLocationHasPlayingEntityPlace(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Service Delivery Location Has Playing Entity Place</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ServiceDeliveryLocation#validateServiceDeliveryLocationHasPlayingEntityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Service Delivery Location Has Playing Entity Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ServiceDeliveryLocation#validateServiceDeliveryLocationHasPlayingEntityClassCodeName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Service Delivery Location Has Playing Entity Class Code Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ServiceDeliveryLocation#validateServiceDeliveryLocationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Service Delivery Location Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ServiceDeliveryLocation#validateServiceDeliveryLocationTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Service Delivery Location Type Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ServiceDeliveryLocation#validateServiceDeliveryLocationAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Service Delivery Location Addr</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ServiceDeliveryLocation#validateServiceDeliveryLocationTelecom(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Service Delivery Location Telecom</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,142 +37,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class ServiceDeliveryLocationTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateServiceDeliveryLocationHasParticipantRole() {
-		OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationHasParticipantRoleTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
-			"validateServiceDeliveryLocationHasParticipantRole",
-			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_HAS_PARTICIPANT_ROLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ServiceDeliveryLocation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ServiceDeliveryLocation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationHasParticipantRole(
-					(ServiceDeliveryLocation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateServiceDeliveryLocationHasParticipantRoleTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateServiceDeliveryLocationHasParticipantRoleLocation() {
-		OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationHasParticipantRoleLocationTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
-			"validateServiceDeliveryLocationHasParticipantRoleLocation",
-			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_HAS_PARTICIPANT_ROLE_LOCATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ServiceDeliveryLocation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ServiceDeliveryLocation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationHasParticipantRoleLocation(
-					(ServiceDeliveryLocation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateServiceDeliveryLocationHasParticipantRoleLocationTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateServiceDeliveryLocationHasParticipantRoleCode() {
-		OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationHasParticipantRoleCodeTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
-			"validateServiceDeliveryLocationHasParticipantRoleCode",
-			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_HAS_PARTICIPANT_ROLE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ServiceDeliveryLocation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ServiceDeliveryLocation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationHasParticipantRoleCode(
-					(ServiceDeliveryLocation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateServiceDeliveryLocationHasParticipantRoleCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateServiceDeliveryLocationHasParticipantRoleCodeVocab() {
-		OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationHasParticipantRoleCodeVocabTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
-			"validateServiceDeliveryLocationHasParticipantRoleCodeVocab",
-			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_HAS_PARTICIPANT_ROLE_CODE_VOCAB__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ServiceDeliveryLocation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ServiceDeliveryLocation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationHasParticipantRoleCodeVocab(
-					(ServiceDeliveryLocation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateServiceDeliveryLocationHasParticipantRoleCodeVocabTestCase.doValidationTest();
-	}
 
 	/**
 	*
@@ -215,10 +77,10 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateServiceDeliveryLocationHasPlayingEntityPlace() {
-		OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationHasPlayingEntityPlaceTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
-			"validateServiceDeliveryLocationHasPlayingEntityPlace",
-			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_HAS_PLAYING_ENTITY_PLACE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateServiceDeliveryLocationHasPlayingEntityClassCode() {
+		OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationHasPlayingEntityClassCodeTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
+			"validateServiceDeliveryLocationHasPlayingEntityClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_HAS_PLAYING_ENTITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -235,13 +97,47 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationHasPlayingEntityPlace(
+				return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationHasPlayingEntityClassCode(
 					(ServiceDeliveryLocation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateServiceDeliveryLocationHasPlayingEntityPlaceTestCase.doValidationTest();
+		validateServiceDeliveryLocationHasPlayingEntityClassCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateServiceDeliveryLocationHasPlayingEntityClassCodeName() {
+		OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationHasPlayingEntityClassCodeNameTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
+			"validateServiceDeliveryLocationHasPlayingEntityClassCodeName",
+			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_HAS_PLAYING_ENTITY_CLASS_CODE_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ServiceDeliveryLocation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ServiceDeliveryLocation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationHasPlayingEntityClassCodeName(
+					(ServiceDeliveryLocation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateServiceDeliveryLocationHasPlayingEntityClassCodeNameTestCase.doValidationTest();
 	}
 
 	/**
@@ -283,10 +179,10 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateServiceDeliveryLocationTypeCode() {
-		OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationTypeCodeTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
-			"validateServiceDeliveryLocationTypeCode",
-			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateServiceDeliveryLocationAddr() {
+		OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationAddrTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
+			"validateServiceDeliveryLocationAddr",
+			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_ADDR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -303,13 +199,47 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationTypeCode(
+				return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationAddr(
 					(ServiceDeliveryLocation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateServiceDeliveryLocationTypeCodeTestCase.doValidationTest();
+		validateServiceDeliveryLocationAddrTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateServiceDeliveryLocationTelecom() {
+		OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationTelecomTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
+			"validateServiceDeliveryLocationTelecom",
+			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_TELECOM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ServiceDeliveryLocation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ServiceDeliveryLocation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationTelecom(
+					(ServiceDeliveryLocation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateServiceDeliveryLocationTelecomTestCase.doValidationTest();
 	}
 
 	/**

@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ProceduresSection;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.ProceduresSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
@@ -45,7 +39,7 @@ public class ProceduresSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProceduresSectionHasProcedureActivity() {
@@ -62,7 +56,7 @@ public class ProceduresSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProceduresSection target) {
 				target.init();
-
+				target.addProcedure(ConsolFactory.eINSTANCE.createProcedureActivityProcedure());
 			}
 
 			@Override
@@ -79,7 +73,7 @@ public class ProceduresSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProceduresSectionTitle() {
@@ -97,7 +91,7 @@ public class ProceduresSectionTest extends CDAValidationTest {
 			protected void updateToPass(ProceduresSection target) {
 				target.init();
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				ST title = DatatypesFactory.eINSTANCE.createST("Procedures");
 				target.setTitle(title);
 
 			}

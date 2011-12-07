@@ -28,13 +28,14 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationCodeNullFlavor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Code Null Flavor</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Class Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Value</em>}</li>
  * </ul>
  * </p>
@@ -43,6 +44,40 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  */
 
 public class IndicationTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateIndicationCodeNullFlavor() {
+		OperationsTestCase<Indication> validateIndicationCodeNullFlavorTestCase = new OperationsTestCase<Indication>(
+			"validateIndicationCodeNullFlavor",
+			operationsForOCL.getOCLValue("VALIDATE_INDICATION_CODE_NULL_FLAVOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Indication target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Indication target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return IndicationOperations.validateIndicationCodeNullFlavor(
+					(Indication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateIndicationCodeNullFlavorTestCase.doValidationTest();
+	}
 
 	/**
 	*

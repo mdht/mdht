@@ -9,17 +9,15 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.SpecimenRole;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ProcedureSpecimen;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.ProcedureSpecimenOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +27,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureSpecimen#validateProcedureSpecimenSpecimenRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Specimen Specimen Role</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureSpecimen#validateProcedureSpecimenSpecimentRoleId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Specimen Speciment Role Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureSpecimen#validateProcedureSpecimenTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Specimen Template Id</em>}</li>
  * </ul>
  * </p>
@@ -37,6 +37,76 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class ProcedureSpecimenTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateProcedureSpecimenSpecimenRole() {
+		OperationsTestCase<ProcedureSpecimen> validateProcedureSpecimenSpecimenRoleTestCase = new OperationsTestCase<ProcedureSpecimen>(
+			"validateProcedureSpecimenSpecimenRole",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_SPECIMEN_SPECIMEN_ROLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureSpecimen target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureSpecimen target) {
+				target.init();
+				target.setSpecimenRole(org.openhealthtools.mdht.uml.cda.CDAFactory.eINSTANCE.createSpecimenRole());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureSpecimenOperations.validateProcedureSpecimenSpecimenRole(
+					(ProcedureSpecimen) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureSpecimenSpecimenRoleTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateProcedureSpecimenSpecimentRoleId() {
+		OperationsTestCase<ProcedureSpecimen> validateProcedureSpecimenSpecimentRoleIdTestCase = new OperationsTestCase<ProcedureSpecimen>(
+			"validateProcedureSpecimenSpecimentRoleId",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_SPECIMEN_SPECIMENT_ROLE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureSpecimen target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureSpecimen target) {
+				target.init();
+				SpecimenRole value = CDAFactory.eINSTANCE.createSpecimenRole();
+				value.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				target.setSpecimenRole(value);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureSpecimenOperations.validateProcedureSpecimenSpecimentRoleId(
+					(ProcedureSpecimen) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureSpecimenSpecimentRoleIdTestCase.doValidationTest();
+	}
 
 	/**
 	*

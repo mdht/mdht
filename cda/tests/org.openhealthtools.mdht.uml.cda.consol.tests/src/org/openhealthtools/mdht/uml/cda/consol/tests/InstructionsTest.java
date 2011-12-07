@@ -27,6 +27,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Instructions#validateInstructionsTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Instructions Text Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Instructions#validateInstructionsTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Instructions Text Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Instructions#validateInstructionsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Instructions Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Instructions#validateInstructionsClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Instructions Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Instructions#validateInstructionsMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Instructions Mood Code</em>}</li>
@@ -39,6 +41,74 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  */
 
 public class InstructionsTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateInstructionsTextReference() {
+		OperationsTestCase<Instructions> validateInstructionsTextReferenceTestCase = new OperationsTestCase<Instructions>(
+			"validateInstructionsTextReference",
+			operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Instructions target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Instructions target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return InstructionsOperations.validateInstructionsTextReference(
+					(Instructions) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateInstructionsTextReferenceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateInstructionsTextReferenceValue() {
+		OperationsTestCase<Instructions> validateInstructionsTextReferenceValueTestCase = new OperationsTestCase<Instructions>(
+			"validateInstructionsTextReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_TEXT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Instructions target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Instructions target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return InstructionsOperations.validateInstructionsTextReferenceValue(
+					(Instructions) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateInstructionsTextReferenceValueTestCase.doValidationTest();
+	}
 
 	/**
 	*

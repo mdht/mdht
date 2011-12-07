@@ -11,14 +11,21 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ProcedureActivityActOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
+import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,6 +40,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActOriginalTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Original Text Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActEncounterInversion(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Encounter Inversion</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActServiceDeliveryLocationTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Service Delivery Location Type Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActInstructionsInversion(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Instructions Inversion</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Class Code</em>}</li>
@@ -41,10 +49,12 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActPriorityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Priority Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActServiceDeliveryLocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Service Delivery Location</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActProcedureEncounter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Procedure Encounter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActInstructions(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Instructions</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActIndication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Indication</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActMedicationActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Medication Activity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#getServiceDeliveryLocations() <em>Get Service Delivery Locations</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#getProcedureEncounters() <em>Get Procedure Encounters</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#getInstructions() <em>Get Instructions</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#getIndications() <em>Get Indications</em>}</li>
@@ -59,7 +69,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProcedureActivityActCodeCodeSystems() {
@@ -76,7 +86,9 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
-
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				code.setCodeSystem("2.16.840.1.113883.6.96");
+				target.setCode(code);
 			}
 
 			@Override
@@ -93,7 +105,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProcedureActivityActCodeOriginalText() {
@@ -110,10 +122,9 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
-
-				ED text = DatatypesFactory.eINSTANCE.createED();
-				target.setText(text);
-
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				code.setOriginalText(DatatypesFactory.eINSTANCE.createED());
+				target.setCode(code);
 			}
 
 			@Override
@@ -130,7 +141,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProcedureActivityActOriginalTextReferenceValue() {
@@ -141,12 +152,24 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
-
+				target.init();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				ED ot = DatatypesFactory.eINSTANCE.createED();
+				TEL ref = DatatypesFactory.eINSTANCE.createTEL();
+				ot.setReference(ref);
+				code.setOriginalText(ot);
+				target.setCode(code);
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
-				target.init();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				ED ot = DatatypesFactory.eINSTANCE.createED();
+				TEL ref = DatatypesFactory.eINSTANCE.createTEL();
+				ref.setValue("test");
+				ot.setReference(ref);
+				code.setOriginalText(ot);
+				target.setCode(code);
 
 			}
 
@@ -164,7 +187,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProcedureActivityActReferenceValue() {
@@ -198,7 +221,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProcedureActivityActEncounterInversion() {
@@ -209,12 +232,20 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 
+				er.setEncounter(ConsolFactory.eINSTANCE.createProcedureEncounter());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
-				target.init();
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setInversionInd(true);
+				er.setEncounter(ConsolFactory.eINSTANCE.createProcedureEncounter());
+				target.getEntryRelationships().add(er);
 
 			}
 
@@ -232,7 +263,48 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateProcedureActivityActServiceDeliveryLocationTypeCode() {
+		OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActServiceDeliveryLocationTypeCodeTestCase = new OperationsTestCase<ProcedureActivityAct>(
+			"validateProcedureActivityActServiceDeliveryLocationTypeCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_SERVICE_DELIVERY_LOCATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityAct target) {
+				target.init();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setParticipantRole(ConsolFactory.eINSTANCE.createServiceDeliveryLocation());
+				target.getParticipants().add(par);
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityAct target) {
+				target.getParticipants().clear();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setParticipantRole(ConsolFactory.eINSTANCE.createServiceDeliveryLocation());
+				par.setTypeCode(ParticipationType.LOC);
+				target.getParticipants().add(par);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityActOperations.validateProcedureActivityActServiceDeliveryLocationTypeCode(
+					(ProcedureActivityAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityActServiceDeliveryLocationTypeCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProcedureActivityActInstructionsInversion() {
@@ -243,12 +315,20 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
-
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setAct(ConsolFactory.eINSTANCE.createInstructions());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
-				target.init();
+
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setInversionInd(true);
+				er.setAct(ConsolFactory.eINSTANCE.createInstructions());
+				target.getEntryRelationships().add(er);
 
 			}
 
@@ -334,7 +414,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProcedureActivityActId() {
@@ -351,7 +431,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
-
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 			}
 
 			@Override
@@ -368,7 +448,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProcedureActivityActCode() {
@@ -385,7 +465,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
-
+				target.setCode(DatatypesFactory.eINSTANCE.createCD());
 			}
 
 			@Override
@@ -402,7 +482,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProcedureActivityActStatusCode() {
@@ -419,8 +499,8 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
-
 				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				cs.setCodeSystem("2.16.840.1.113883.5.14");
 				target.setStatusCode(cs);
 
 			}
@@ -510,7 +590,43 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateProcedureActivityActServiceDeliveryLocation() {
+		OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActServiceDeliveryLocationTestCase = new OperationsTestCase<ProcedureActivityAct>(
+			"validateProcedureActivityActServiceDeliveryLocation",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_SERVICE_DELIVERY_LOCATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityAct target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityAct target) {
+				target.init();
+				Participant2 par = CDAFactory.eINSTANCE.createParticipant2();
+				par.setParticipantRole(ConsolFactory.eINSTANCE.createServiceDeliveryLocation());
+				target.getParticipants().add(par);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityActOperations.validateProcedureActivityActServiceDeliveryLocation(
+					(ProcedureActivityAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityActServiceDeliveryLocationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProcedureActivityActProcedureEncounter() {
@@ -527,7 +643,10 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				er.setEncounter(ConsolFactory.eINSTANCE.createProcedureEncounter());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -544,7 +663,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProcedureActivityActInstructions() {
@@ -561,7 +680,10 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				er.setAct(ConsolFactory.eINSTANCE.createInstructions());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -578,7 +700,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProcedureActivityActIndication() {
@@ -595,7 +717,10 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				er.setObservation(ConsolFactory.eINSTANCE.createIndication());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -612,7 +737,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProcedureActivityActMedicationActivity() {
@@ -629,6 +754,10 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				er.setSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity());
+				target.getEntryRelationships().add(er);
 
 			}
 
@@ -642,6 +771,18 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 		};
 
 		validateProcedureActivityActMedicationActivityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetServiceDeliveryLocations() {
+
+		ProcedureActivityAct target = objectFactory.create();
+		target.getServiceDeliveryLocations();
+
 	}
 
 	/**
