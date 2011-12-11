@@ -28,8 +28,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySection#validateFamilyHistorySectionFamilyHistoryObsOrgs(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Family History Obs Orgs</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySection#validateFamilyHistorySectionNoSubject(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section No Subject</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySection#validateFamilyHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySection#validateFamilyHistorySectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySection#validateFamilyHistorySectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Title</em>}</li>
@@ -43,74 +41,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  */
 
 public class FamilyHistorySectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFamilyHistorySectionFamilyHistoryObsOrgs() {
-		OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionFamilyHistoryObsOrgsTestCase = new OperationsTestCase<FamilyHistorySection>(
-			"validateFamilyHistorySectionFamilyHistoryObsOrgs",
-			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_FAMILY_HISTORY_OBS_ORGS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FamilyHistorySection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FamilyHistorySection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FamilyHistorySectionOperations.validateFamilyHistorySectionFamilyHistoryObsOrgs(
-					(FamilyHistorySection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFamilyHistorySectionFamilyHistoryObsOrgsTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFamilyHistorySectionNoSubject() {
-		OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionNoSubjectTestCase = new OperationsTestCase<FamilyHistorySection>(
-			"validateFamilyHistorySectionNoSubject",
-			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_NO_SUBJECT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FamilyHistorySection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FamilyHistorySection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FamilyHistorySectionOperations.validateFamilyHistorySectionNoSubject(
-					(FamilyHistorySection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFamilyHistorySectionNoSubjectTestCase.doValidationTest();
-	}
 
 	/**
 	*
@@ -256,7 +186,7 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateFamilyHistorySectionFamilyHistory() {
@@ -273,7 +203,7 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FamilyHistorySection target) {
 				target.init();
-
+				target.addOrganizer(ConsolFactory.eINSTANCE.createFamilyHistoryOrganizer());
 			}
 
 			@Override
