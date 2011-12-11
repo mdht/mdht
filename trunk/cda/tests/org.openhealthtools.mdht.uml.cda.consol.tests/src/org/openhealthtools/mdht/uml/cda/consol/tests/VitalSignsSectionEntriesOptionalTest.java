@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.VitalSignsOrganizer;
 import org.openhealthtools.mdht.uml.cda.consol.VitalSignsSectionEntriesOptional;
 import org.openhealthtools.mdht.uml.cda.consol.operations.VitalSignsSectionEntriesOptionalOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
@@ -146,7 +147,7 @@ public class VitalSignsSectionEntriesOptionalTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateVitalSignsSectionEntriesOptionalVitalSignsOrganizer() {
@@ -157,12 +158,14 @@ public class VitalSignsSectionEntriesOptionalTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(VitalSignsSectionEntriesOptional target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(VitalSignsSectionEntriesOptional target) {
-				target.init();
+
+				VitalSignsOrganizer organizer = ConsolFactory.eINSTANCE.createVitalSignsOrganizer().init();
+				target.addOrganizer(organizer);
 
 			}
 
