@@ -15,6 +15,7 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ImmunizationMedicationInformationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -105,7 +106,7 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationMedicationInformationId() {
@@ -116,12 +117,12 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ImmunizationMedicationInformation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationMedicationInformation target) {
-				target.init();
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 
 			}
 

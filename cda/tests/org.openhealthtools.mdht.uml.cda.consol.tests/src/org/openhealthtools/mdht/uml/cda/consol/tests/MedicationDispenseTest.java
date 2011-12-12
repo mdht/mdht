@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.AssignedEntity;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Performer2;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationDispense;
@@ -24,6 +25,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -267,7 +269,7 @@ public class MedicationDispenseTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationDispenseStatusCode() {
@@ -286,6 +288,7 @@ public class MedicationDispenseTest extends CDAValidationTest {
 				target.init();
 
 				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				cs.setCodeSystem("2.16.840.1.113883.5.14");
 				target.setStatusCode(cs);
 
 			}
@@ -367,6 +370,10 @@ public class MedicationDispenseTest extends CDAValidationTest {
 				MedicationSupplyOrder supply = ConsolFactory.eINSTANCE.createMedicationSupplyOrder().init();
 
 				target.addSupply(supply);
+
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+				}
 
 			}
 

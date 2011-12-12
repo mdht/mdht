@@ -11,10 +11,12 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.DrugVehicle;
 import org.openhealthtools.mdht.uml.cda.consol.operations.DrugVehicleOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +40,7 @@ public class DrugVehicleTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateDrugVehiclePlayingEntityCode() {
@@ -49,12 +51,15 @@ public class DrugVehicleTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(DrugVehicle target) {
+				target.init();
 
+				target.setPlayingEntity(CDAFactory.eINSTANCE.createPlayingEntity());
 			}
 
 			@Override
 			protected void updateToPass(DrugVehicle target) {
-				target.init();
+
+				target.getPlayingEntity().setCode(DatatypesFactory.eINSTANCE.createCE());
 
 			}
 
