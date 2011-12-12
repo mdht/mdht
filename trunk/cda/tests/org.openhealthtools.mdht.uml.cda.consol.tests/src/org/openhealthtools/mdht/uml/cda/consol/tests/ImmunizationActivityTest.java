@@ -803,7 +803,8 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 	@Test
 	public void testGetDrugVehicle() {
 
-		objectFactory.create();
+		ImmunizationActivity target = objectFactory.create();
+		target.getDrugVehicle();
 
 	}
 
