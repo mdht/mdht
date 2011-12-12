@@ -459,7 +459,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateReactionObservationSeverityObservation() {
@@ -476,6 +476,12 @@ public class ReactionObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
+
+				target.addObservation(ConsolFactory.eINSTANCE.createSeverityObservation().init());
+
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				}
 
 			}
 

@@ -29,11 +29,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AssessmentAndPlanSection#validateAssessmentAndPlanSectionMedication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assessment And Plan Section Medication</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AssessmentAndPlanSection#validateAssessmentAndPlanSectionImmunization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assessment And Plan Section Immunization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AssessmentAndPlanSection#validateAssessmentAndPlanSectionEncounterEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assessment And Plan Section Encounter Entry</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AssessmentAndPlanSection#validateAssessmentAndPlanSectionProcedureEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assessment And Plan Section Procedure Entry</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AssessmentAndPlanSection#getMedications() <em>Get Medications</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AssessmentAndPlanSection#getImmunizations() <em>Get Immunizations</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AssessmentAndPlanSection#getEncounterEntries() <em>Get Encounter Entries</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AssessmentAndPlanSection#getProcedureEntries() <em>Get Procedure Entries</em>}</li>
  * </ul>
  * </p>
  *
@@ -217,40 +215,6 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateAssessmentAndPlanSectionProcedureEntry() {
-		OperationsTestCase<AssessmentAndPlanSection> validateAssessmentAndPlanSectionProcedureEntryTestCase = new OperationsTestCase<AssessmentAndPlanSection>(
-			"validateAssessmentAndPlanSectionProcedureEntry",
-			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_SECTION_PROCEDURE_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AssessmentAndPlanSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AssessmentAndPlanSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AssessmentAndPlanSectionOperations.validateAssessmentAndPlanSectionProcedureEntry(
-					(AssessmentAndPlanSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAssessmentAndPlanSectionProcedureEntryTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
 	public void testGetMedications() {
 
 		AssessmentAndPlanSection target = objectFactory.create();
@@ -279,18 +243,6 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 
 		AssessmentAndPlanSection target = objectFactory.create();
 		target.getEncounterEntries();
-
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testGetProcedureEntries() {
-
-		AssessmentAndPlanSection target = objectFactory.create();
-		target.getProcedureEntries();
 
 	}
 

@@ -56,11 +56,15 @@ public class InstructionsTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(Instructions target) {
 
+				target.init();
+
+				target.setText(DatatypesFactory.eINSTANCE.createED());
 			}
 
 			@Override
 			protected void updateToPass(Instructions target) {
-				target.init();
+
+				target.getText().setReference(DatatypesFactory.eINSTANCE.createTEL("aa"));
 
 			}
 

@@ -19,6 +19,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,7 +48,7 @@ public class IndicationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIndicationCodeNullFlavor() {
@@ -64,6 +65,12 @@ public class IndicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Indication target) {
 				target.init();
+
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+
+				cd.setNullFlavor(NullFlavor.UNK);
+
+				target.getValues().add(cd);
 
 			}
 

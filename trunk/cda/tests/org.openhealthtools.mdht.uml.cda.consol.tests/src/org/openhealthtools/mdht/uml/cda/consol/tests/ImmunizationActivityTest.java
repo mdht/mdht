@@ -12,13 +12,19 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity;
+import org.openhealthtools.mdht.uml.cda.consol.Indication;
+import org.openhealthtools.mdht.uml.cda.consol.Instructions;
+import org.openhealthtools.mdht.uml.cda.consol.MedicationDispense;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ImmunizationActivityOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -133,7 +139,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationActivityId() {
@@ -144,12 +150,12 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ImmunizationActivity target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
-				target.init();
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 
 			}
 
@@ -167,7 +173,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationActivityCode() {
@@ -178,12 +184,12 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ImmunizationActivity target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
-				target.init();
+				target.setCode(DatatypesFactory.eINSTANCE.createCD());
 
 			}
 
@@ -249,12 +255,12 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ImmunizationActivity target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
-				target.init();
+				target.getEffectiveTimes().add(DatatypesFactory.eINSTANCE.createSXCM_TS());
 
 			}
 
@@ -272,7 +278,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationActivityRouteCode() {
@@ -283,12 +289,12 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ImmunizationActivity target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
-				target.init();
+				target.setRouteCode(DatatypesFactory.eINSTANCE.createCE("code", "codeSystem"));
 
 			}
 
@@ -306,7 +312,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationActivityApproachSiteCode() {
@@ -318,11 +324,17 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(ImmunizationActivity target) {
 
+				target.getApproachSiteCodes().add(DatatypesFactory.eINSTANCE.createCD());
+
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
 				target.init();
+
+				target.getApproachSiteCodes().clear();
+				target.getApproachSiteCodes().add(
+					DatatypesFactory.eINSTANCE.createCD("code", "codeSystem", "codeSystemName", "displayName"));
 
 			}
 
@@ -340,7 +352,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationActivityDoseQuantity() {
@@ -351,12 +363,12 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ImmunizationActivity target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
-				target.init();
+				target.setDoseQuantity(DatatypesFactory.eINSTANCE.createIVL_PQ());
 
 			}
 
@@ -445,7 +457,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationActivityRepeatNumber() {
@@ -456,12 +468,13 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ImmunizationActivity target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
-				target.init();
+
+				target.setRepeatNumber(DatatypesFactory.eINSTANCE.createIVL_INT());
 
 			}
 
@@ -479,7 +492,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationActivityAdministrationUnitCode() {
@@ -490,12 +503,12 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ImmunizationActivity target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
-				target.init();
+				target.setAdministrationUnitCode(DatatypesFactory.eINSTANCE.createCE("code", "codeSystem"));
 
 			}
 
@@ -513,7 +526,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationActivityDrugVehicle() {
@@ -524,13 +537,16 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ImmunizationActivity target) {
-
+				target.init();
+				target.getParticipants().add(org.openhealthtools.mdht.uml.cda.CDAFactory.eINSTANCE.createParticipant2());
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
-				target.init();
 
+				for (Participant2 p : target.getParticipants()) {
+					p.setParticipantRole(ConsolFactory.eINSTANCE.createDrugVehicle().init());
+				}
 			}
 
 			@Override
@@ -547,7 +563,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationActivityIndication() {
@@ -564,6 +580,11 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
 				target.init();
+				Indication indication = ConsolFactory.eINSTANCE.createIndication().init();
+				target.addObservation(indication);
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				}
 
 			}
 
@@ -581,7 +602,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationActivityInstructions() {
@@ -598,6 +619,12 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
 				target.init();
+				Instructions instruction = ConsolFactory.eINSTANCE.createInstructions().init();
+				target.addAct(instruction);
+
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				}
 
 			}
 
@@ -615,7 +642,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationActivityMedicationDispense() {
@@ -632,7 +659,12 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
 				target.init();
+				MedicationDispense md = ConsolFactory.eINSTANCE.createMedicationDispense().init();
+				target.addSupply(md);
 
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+				}
 			}
 
 			@Override
@@ -649,7 +681,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationActivityReactionObservation() {
@@ -667,6 +699,11 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 			protected void updateToPass(ImmunizationActivity target) {
 				target.init();
 
+				target.addObservation(ConsolFactory.eINSTANCE.createReactionObservation().init());
+
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.CAUS);
+				}
 			}
 
 			@Override
@@ -683,7 +720,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationActivityImmunizationRefusalReason() {
@@ -701,6 +738,12 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 			protected void updateToPass(ImmunizationActivity target) {
 				target.init();
 
+				target.addObservation(ConsolFactory.eINSTANCE.createImmunizationRefusalReason().init());
+
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				}
+
 			}
 
 			@Override
@@ -717,7 +760,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationActivityMedicationSupplyOrder() {
@@ -734,6 +777,10 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
 				target.init();
+				target.addSupply(ConsolFactory.eINSTANCE.createMedicationSupplyOrder().init());
+				for (EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+				}
 
 			}
 
@@ -756,8 +803,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 	@Test
 	public void testGetDrugVehicle() {
 
-		ImmunizationActivity target = objectFactory.create();
-		target.getDrugVehicle();
+		objectFactory.create();
 
 	}
 
