@@ -23,7 +23,6 @@ import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UMLResource;
-import org.eclipse.uml2.uml.util.UMLUtil;
 
 public abstract class EcoreTransformUtil {
 
