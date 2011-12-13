@@ -28,13 +28,12 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSectionEntriesOptional#validateMedicationsSectionEntriesOptionalHasMedicationOrSupplyActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Entries Optional Has Medication Or Supply Activity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSectionEntriesOptional#validateMedicationsSectionEntriesOptionalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Entries Optional Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSectionEntriesOptional#validateMedicationsSectionEntriesOptionalCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Entries Optional Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSectionEntriesOptional#validateMedicationsSectionEntriesOptionalTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Entries Optional Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSectionEntriesOptional#validateMedicationsSectionEntriesOptionalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Entries Optional Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSectionEntriesOptional#validateMedicationsSectionEntriesOptionalMedicationActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Entries Optional Medication Activity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSectionEntriesOptional#getMedicationActivity() <em>Get Medication Activity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSectionEntriesOptional#getMedicationActivities() <em>Get Medication Activities</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,40 +41,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  */
 
 public class MedicationsSectionEntriesOptionalTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationsSectionEntriesOptionalHasMedicationOrSupplyActivity() {
-		OperationsTestCase<MedicationsSectionEntriesOptional> validateMedicationsSectionEntriesOptionalHasMedicationOrSupplyActivityTestCase = new OperationsTestCase<MedicationsSectionEntriesOptional>(
-			"validateMedicationsSectionEntriesOptionalHasMedicationOrSupplyActivity",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_HAS_MEDICATION_OR_SUPPLY_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationsSectionEntriesOptional target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationsSectionEntriesOptional target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationsSectionEntriesOptionalOperations.validateMedicationsSectionEntriesOptionalHasMedicationOrSupplyActivity(
-					(MedicationsSectionEntriesOptional) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationsSectionEntriesOptionalHasMedicationOrSupplyActivityTestCase.doValidationTest();
-	}
 
 	/**
 	*
@@ -113,7 +78,7 @@ public class MedicationsSectionEntriesOptionalTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated 
 	*/
 	@Test
 	public void testValidateMedicationsSectionEntriesOptionalCode() {
@@ -147,7 +112,7 @@ public class MedicationsSectionEntriesOptionalTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationsSectionEntriesOptionalTitle() {
@@ -165,7 +130,7 @@ public class MedicationsSectionEntriesOptionalTest extends CDAValidationTest {
 			protected void updateToPass(MedicationsSectionEntriesOptional target) {
 				target.init();
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				ST title = DatatypesFactory.eINSTANCE.createST("Medications");
 				target.setTitle(title);
 
 			}
@@ -221,7 +186,7 @@ public class MedicationsSectionEntriesOptionalTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationsSectionEntriesOptionalMedicationActivity() {
@@ -238,6 +203,8 @@ public class MedicationsSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationsSectionEntriesOptional target) {
 				target.init();
+
+				target.addSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity().init());
 
 			}
 
@@ -258,10 +225,10 @@ public class MedicationsSectionEntriesOptionalTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetMedicationActivity() {
+	public void testGetMedicationActivities() {
 
 		MedicationsSectionEntriesOptional target = objectFactory.create();
-		target.getMedicationActivity();
+		target.getMedicationActivities();
 
 	}
 

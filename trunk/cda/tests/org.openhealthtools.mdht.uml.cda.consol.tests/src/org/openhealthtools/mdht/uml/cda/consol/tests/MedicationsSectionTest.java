@@ -28,7 +28,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSection#validateMedicationsSectionHasMedicationOrSupplyActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Has Medication Or Supply Activity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSection#validateMedicationsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSection#validateMedicationsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSection#validateMedicationsSectionMedication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Medication</em>}</li>
@@ -42,40 +41,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  */
 
 public class MedicationsSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationsSectionHasMedicationOrSupplyActivity() {
-		OperationsTestCase<MedicationsSection> validateMedicationsSectionHasMedicationOrSupplyActivityTestCase = new OperationsTestCase<MedicationsSection>(
-			"validateMedicationsSectionHasMedicationOrSupplyActivity",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATIONS_SECTION_HAS_MEDICATION_OR_SUPPLY_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationsSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationsSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationsSectionOperations.validateMedicationsSectionHasMedicationOrSupplyActivity(
-					(MedicationsSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationsSectionHasMedicationOrSupplyActivityTestCase.doValidationTest();
-	}
 
 	/**
 	*
@@ -113,7 +78,7 @@ public class MedicationsSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationsSectionTitle() {
@@ -131,7 +96,7 @@ public class MedicationsSectionTest extends CDAValidationTest {
 			protected void updateToPass(MedicationsSection target) {
 				target.init();
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				ST title = DatatypesFactory.eINSTANCE.createST("Medications");
 				target.setTitle(title);
 
 			}
@@ -187,7 +152,7 @@ public class MedicationsSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationsSectionMedication() {
@@ -204,6 +169,8 @@ public class MedicationsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationsSection target) {
 				target.init();
+
+				target.addSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity().init());
 
 			}
 
