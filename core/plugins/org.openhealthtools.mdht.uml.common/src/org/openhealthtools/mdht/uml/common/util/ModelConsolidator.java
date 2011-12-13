@@ -31,7 +31,6 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
@@ -174,25 +173,6 @@ public class ModelConsolidator {
 		}
 
 		return null;
-	}
-
-	protected boolean isDefaultFiltered(NamedElement element) {
-		boolean filtered = false;
-
-		if (element instanceof Property) {
-			Property property = (Property) element;
-			if (isBaseModel(property) && property.getLower() == 0) {
-				filtered = true;
-			}
-		}
-
-		return filtered;
-	}
-
-	protected boolean isDefaultCollapsed(NamedElement element) {
-		boolean collapsed = false;
-
-		return collapsed;
 	}
 
 	protected boolean isXMLAttribute(Property property) {
@@ -425,9 +405,9 @@ public class ModelConsolidator {
 			}
 
 			// test original property so that we can evaluate base model context
-			if (isIncludeBaseModel() && !ModelFilterUtil.hasFilterState(mergedProperty) && isDefaultFiltered(property)) {
-				ModelFilterUtil.setAsHidden(mergedProperty);
-			}
+			// if (isIncludeBaseModel() && !ModelFilterUtil.hasFilterState(mergedProperty) && isDefaultFiltered(property)) {
+			// ModelFilterUtil.setAsHidden(mergedProperty);
+			// }
 		}
 
 		// XML elements
@@ -450,13 +430,13 @@ public class ModelConsolidator {
 			mergedProperty.getRedefinedProperties().clear();
 
 			// test original property so that we can evaluate base model context
-			if (isIncludeBaseModel() && !ModelFilterUtil.hasFilterState(mergedProperty)) {
-				if (isDefaultFiltered(property)) {
-					ModelFilterUtil.setAsHidden(mergedProperty);
-				} else if (isDefaultCollapsed(property)) {
-					ModelFilterUtil.setAsCollapsed(mergedProperty);
-				}
-			}
+			// if (isIncludeBaseModel() && !ModelFilterUtil.hasFilterState(mergedProperty)) {
+			// if (isDefaultFiltered(property)) {
+			// ModelFilterUtil.setAsHidden(mergedProperty);
+			// } else if (isDefaultCollapsed(property)) {
+			// ModelFilterUtil.setAsCollapsed(mergedProperty);
+			// }
+			// }
 
 			if (property.getAssociation() != null) {
 				Type endType = property.getType();
@@ -475,7 +455,11 @@ public class ModelConsolidator {
 						}
 					}
 					if (consolType == null) {
-						consolType = consolidateClass((Class) endType);
+						if (endType.eIsProxy()) {
+							System.err.println("Property type is unresolved proxy: " + property.getQualifiedName());
+						} else {
+							consolType = consolidateClass((Class) endType);
+						}
 					}
 
 					mergedProperty.setType(consolType);
@@ -515,7 +499,8 @@ public class ModelConsolidator {
 		consolidatedClass.getOwnedComments().clear();
 
 		// use i>0 to omit the consolidated class
-		for (int i = consolidatedParents.size() - 1; i > 0; i--) {
+		// for (int i = consolidatedParents.size() - 1; i > 0; i--) {
+		for (int i = 1; i < consolidatedParents.size(); i++) {
 			Classifier parent = consolidatedParents.get(i);
 			List<Comment> comments = new ArrayList<Comment>(parent.getOwnedComments());
 
@@ -523,6 +508,11 @@ public class ModelConsolidator {
 				Comment clone = EcoreUtil.copy(comment);
 				consolidatedClass.getOwnedComments().add(clone);
 				UMLUtil.cloneStereotypes(comment, clone);
+			}
+
+			// copy comments from only the nearest parent that has comments
+			if (comments.size() > 0) {
+				break;
 			}
 		}
 		consolidatedClass.getOwnedComments().addAll(currentComments);

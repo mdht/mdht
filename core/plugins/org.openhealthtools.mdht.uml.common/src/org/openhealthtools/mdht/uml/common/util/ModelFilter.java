@@ -13,18 +13,23 @@
 package org.openhealthtools.mdht.uml.common.util;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
@@ -52,17 +57,45 @@ public class ModelFilter {
 		if (filteredPackage != null) {
 			EcoreUtil.resolveAll(filteredPackage.eResource());
 		}
+
+		// attempt to load XSD DataTypes library, if available
+		URI xsdDatatypesURI = URI.createURI("pathmap://XMLmodeling_LIBRARIES/XSDDataTypes.library.uml");
+		sourcePackage.eResource().getResourceSet().getResource(xsdDatatypesURI, true);
+
+		assignFilteredNamespaceURI(sourcePackage, filteredPackage);
 	}
 
 	public Package getFilteredPackage() {
 		return filteredPackage;
 	}
 
-	protected boolean isXMLAttribute(Property property) {
-		Stereotype eAttribute = property.getAppliedStereotype("Ecore::EAttribute");
-		return (eAttribute != null)
+	protected boolean isDefaultHidden(NamedElement element) {
+		boolean hidden = false;
+
+		return hidden;
+	}
+
+	protected boolean isDefaultCollapsed(NamedElement element) {
+		boolean collapsed = false;
+
+		return collapsed;
+	}
+
+	public boolean isHidden(NamedElement element) {
+		if (ModelFilterUtil.isHidden(element))
+			return true;
+		else if (ModelFilterUtil.isShown(element))
+			return false;
+		else if (ModelFilterUtil.isCollapsed(element))
+			return false;
+		else
+			return isDefaultHidden(element);
+	}
+
+	public boolean isCollapsed(NamedElement element) {
+		return ModelFilterUtil.isCollapsed(element)
 				? true
-				: false;
+				: isDefaultCollapsed(element);
 	}
 
 	public void filterPackage(Package pkg) {
@@ -81,6 +114,11 @@ public class ModelFilter {
 	}
 
 	public Class filterClass(Class sourceClass) {
+		if (isHidden(sourceClass)) {
+			// omit this class from filtered model
+			return null;
+		}
+
 		Class filteredClass = filteredMapping.get(EcoreUtil.getURI(sourceClass).toString());
 		if (filteredClass == null) {
 			filteredClass = EcoreUtil.copy(sourceClass);
@@ -89,61 +127,14 @@ public class ModelFilter {
 			filteredMapping.put(EcoreUtil.getURI(sourceClass).toString(), filteredClass);
 
 			// rename using business name (use sourceClass to get corresponding .properties)
-			String businessName = NamedElementUtil.getBusinessName(sourceClass);
+			String businessName = getFilteredClassName(sourceClass);
 			if (businessName != null) {
-				businessName = UML2Util.getValidJavaIdentifier(businessName);
-				businessName = businessName.substring(0, 1).toUpperCase() + businessName.substring(1);
-
 				filteredClass.setName(businessName);
 			}
 
 			List<Property> sourceAttributes = new ArrayList<Property>(sourceClass.getOwnedAttributes());
 			for (Property property : sourceAttributes) {
-				Property mappedProperty = filteredClass.getOwnedAttribute(property.getName(), property.getType());
-				if (mappedProperty == null) {
-					// this should never happen
-					continue;
-				}
-
-				// remove filtered properties
-				if (ModelFilterUtil.isHidden(property)) {
-					filteredClass.getOwnedAttributes().remove(mappedProperty);
-					mappedProperty.destroy();
-					continue;
-				}
-
-				Type filteredType = null;
-				if (property.getType() instanceof Class &&
-						property.getType().getNearestPackage() == property.getNearestPackage()) {
-					filteredType = filterClass((Class) property.getType());
-					mappedProperty.setType(filteredType);
-				} else {
-					filteredType = property.getType();
-				}
-
-				// copy association
-				if (property.getAssociation() != null) {
-					Association assocClone = (Association) filteredPackage.createOwnedType(
-						null, UMLPackage.Literals.ASSOCIATION);
-					assocClone.getMemberEnds().add(mappedProperty);
-					Property ownedEnd = UMLFactory.eINSTANCE.createProperty();
-					ownedEnd.setType(filteredClass);
-					assocClone.getOwnedEnds().add(ownedEnd);
-
-					UMLUtil.cloneStereotypes(property.getAssociation(), assocClone);
-				} else {
-					// property type may be replaced with a specialized filter type, e.g. an Enumeration
-					replacePropertyType(mappedProperty);
-				}
-
-				// rename using business name (use sourceClass property to get corresponding .properties)
-				businessName = NamedElementUtil.getBusinessName(property);
-				if (businessName != null) {
-					businessName = UML2Util.getValidJavaIdentifier(businessName);
-					businessName = businessName.substring(0, 1).toLowerCase() + businessName.substring(1);
-
-					mappedProperty.setName(businessName);
-				}
+				processProperty(property, filteredClass);
 			}
 
 			// remove all constraints from filtered model
@@ -156,8 +147,157 @@ public class ModelFilter {
 		return filteredClass;
 	}
 
-	protected void replacePropertyType(Property property) {
-		// may be overridden by subclass
+	protected void processProperty(Property property, Class filteredClass) {
+		Property mappedProperty = filteredClass.getOwnedAttribute(property.getName(), property.getType());
+		if (mappedProperty == null) {
+			// this should never happen
+			return;
+		}
+
+		// remove hidden properties
+		if (isHidden(property)) {
+			filteredClass.getOwnedAttributes().remove(mappedProperty);
+			mappedProperty.destroy();
+			return;
+		}
+
+		// process collapsed properties
+		if (isCollapsed(property)) {
+			List<Property> collapsedContent = getCollapsedContent(property);
+			// remove original property and replace with collapsed content
+			filteredClass.getOwnedAttributes().remove(mappedProperty);
+			mappedProperty.destroy();
+
+			for (Property collapsedProperty : collapsedContent) {
+				filteredClass.getOwnedAttributes().add(collapsedProperty);
+
+				// if only one collapsed property, rename to same as parent
+				if (collapsedContent.size() == 1) {
+					// rename using business name (use sourceClass property to get corresponding .properties)
+					String businessName = getFilteredPropertyName(property);
+					if (businessName != null) {
+						collapsedProperty.setName(businessName);
+					}
+				}
+
+				// collapsed property cannot have lower bound multiplicity greater than its parent
+				if (collapsedProperty.getLower() > property.getLower()) {
+					collapsedProperty.setLower(property.getLower());
+				}
+
+				// process collapsed content recursively
+				processProperty(collapsedProperty, filteredClass);
+			}
+			return;
+		}
+
+		// if property type is a class in the same package, create filtered class as new property type
+		Type filteredType = null;
+		if (property.getType() instanceof Class &&
+				property.getType().getNearestPackage() == property.getNearestPackage()) {
+			filteredType = filterClass((Class) property.getType());
+			mappedProperty.setType(filteredType);
+		} else {
+			filteredType = property.getType();
+		}
+
+		// copy association
+		if (property.getAssociation() != null) {
+			Association assocClone = (Association) filteredPackage.createOwnedType(
+				null, UMLPackage.Literals.ASSOCIATION);
+			assocClone.getMemberEnds().add(mappedProperty);
+			Property ownedEnd = UMLFactory.eINSTANCE.createProperty();
+			ownedEnd.setType(filteredClass);
+			assocClone.getOwnedEnds().add(ownedEnd);
+
+			UMLUtil.cloneStereotypes(property.getAssociation(), assocClone);
+
+		} else {
+			// property type may be replaced with a specialized type, e.g. an Enumeration
+			// use source property to allow for resource properties file lookup
+			Classifier newType = getFilteredPropertyType(property);
+			if (newType != null) {
+				mappedProperty.setType(newType);
+			}
+		}
+
+		// rename using business name (use sourceClass property to get corresponding .properties)
+		String businessName = getFilteredPropertyName(property);
+		if (businessName != null) {
+			mappedProperty.setName(businessName);
+		}
 	}
 
+	protected boolean isXMLAttribute(Property property) {
+		Stereotype eAttribute = property.getAppliedStereotype("Ecore::EAttribute");
+		return (eAttribute != null)
+				? true
+				: false;
+	}
+
+	protected String normalizeCodeName(String name) {
+		String result = "";
+		String[] parts = name.split(" ");
+		for (String part : parts) {
+			result += part.substring(0, 1).toUpperCase() + part.substring(1);
+		}
+		return result;
+	}
+
+	protected void assignFilteredNamespaceURI(Package sourcePackage, Package filteredPackage) {
+		// may be implemented by subclasses
+	}
+
+	protected String getFilteredClassName(Class umlClass) {
+		String businessName = NamedElementUtil.getBusinessName(umlClass);
+		if (businessName != null) {
+			businessName = normalizeCodeName(businessName);
+			businessName = UML2Util.getValidJavaIdentifier(businessName);
+			businessName = businessName.substring(0, 1).toUpperCase() + businessName.substring(1);
+		}
+		return businessName;
+	}
+
+	protected String getFilteredPropertyName(Property property) {
+		String businessName = NamedElementUtil.getBusinessName(property);
+		if (businessName != null) {
+			businessName = normalizeCodeName(businessName);
+			businessName = UML2Util.getValidJavaIdentifier(businessName);
+			businessName = businessName.substring(0, 1).toLowerCase() + businessName.substring(1);
+		}
+		return businessName;
+	}
+
+	protected Classifier getFilteredPropertyType(Property property) {
+		return getPropertyTypeReplacement(property);
+	}
+
+	protected List<Property> getCollapsedContent(Property property) {
+		List<Property> collapsedContent = new ArrayList<Property>();
+		if (property.getType() instanceof Class) {
+			for (Property nestedProperty : ((Class) property.getType()).getOwnedAttributes()) {
+				if (!isHidden(nestedProperty)) {
+					collapsedContent.add(nestedProperty);
+				}
+			}
+		}
+
+		return collapsedContent;
+	}
+
+	protected Classifier getPropertyTypeReplacement(Property property) {
+		String qualifiedName = ModelFilterUtil.getTypeReplacement(property);
+		if (qualifiedName != null) {
+			ResourceSet resourceSet = property.eResource().getResourceSet();
+
+			Collection<NamedElement> elements = org.eclipse.uml2.uml.util.UMLUtil.findNamedElements(
+				resourceSet, qualifiedName);
+			for (NamedElement namedElement : elements) {
+				if (namedElement instanceof Classifier)
+					return (Classifier) namedElement;
+			}
+		}
+
+		return null;
+	}
 }
