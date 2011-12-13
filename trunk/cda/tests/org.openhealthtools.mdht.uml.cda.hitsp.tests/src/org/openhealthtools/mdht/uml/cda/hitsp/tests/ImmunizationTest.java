@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
+ *     Rama Ramakrishnan - Added testValidateHITSPImmunizationCodedProductName
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 
@@ -16,7 +17,10 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Consumable;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.ManufacturedProduct;
+import org.openhealthtools.mdht.uml.cda.Material;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ProblemAct;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
@@ -24,7 +28,10 @@ import org.openhealthtools.mdht.uml.cda.hitsp.Immunization;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ImmunizationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassManufacturedProduct;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
@@ -99,6 +106,45 @@ public class ImmunizationTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateHITSPImmunizationCodedProductName() {
+		OperationsTestCase<Immunization> validateHITSPImmunizationCodedProductNameTestCase = new OperationsTestCase<Immunization>(
+			"validateHITSPImmunizationCodedProductName",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_IMMUNIZATION_CODED_PRODUCT_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Immunization target) {
+				target.init();
+				Consumable consumable = createConsumableForVaccine();
+				consumable.getManufacturedProduct().getManufacturedMaterial().getCode().setCodeSystem(
+					"INVALID CODESYSTEM");
+				target.setConsumable(consumable);
+			}
+
+			@Override
+			protected void updateToPass(Immunization target) {
+				target.init();
+				Consumable consumable = createConsumableForVaccine();
+				target.setConsumable(consumable);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ImmunizationOperations.validateHITSPImmunizationCodedProductName(
+					(Immunization) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPImmunizationCodedProductNameTestCase.doValidationTest();
+	}
+
+	/**
 	 * 
 	 * @generated
 	 */
@@ -130,38 +176,6 @@ public class ImmunizationTest extends CDAValidationTest {
 		};
 
 		validateHITSPImmunizationTemplateIdTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateImmunizationCode() {
-		OperationsTestCase<Immunization> validateImmunizationCodeTestCase = new OperationsTestCase<Immunization>(
-			"validateImmunizationCode",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
-
-			@Override
-			protected void updateToFail(Immunization target) {
-
-			}
-
-			@Override
-			protected void updateToPass(Immunization target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ImmunizationOperations.validateImmunizationCode((Immunization) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateImmunizationCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -232,6 +246,36 @@ public class ImmunizationTest extends CDAValidationTest {
 	@Override
 	protected EObject getObjectToTest() {
 		return null;
+	}
+
+	/**
+	 * Create a valid Consumable for a Hepatitis Vaccine
+	 * @return consumable
+	 */
+	protected Consumable createConsumableForVaccine() {
+
+		Consumable consumable = CDAFactory.eINSTANCE.createConsumable();
+
+		ManufacturedProduct mProduct = CDAFactory.eINSTANCE.createManufacturedProduct();
+		mProduct.setClassCode(RoleClassManufacturedProduct.MANU);
+
+		II ccdTemplateId = DatatypesFactory.eINSTANCE.createII();
+		ccdTemplateId.setRoot("2.16.840.1.113883.10.20.1.53");
+		mProduct.getTemplateIds().add(ccdTemplateId);
+
+		II iheTemplateId = DatatypesFactory.eINSTANCE.createII();
+		iheTemplateId.setRoot("1.3.6.1.4.1.19376.1.5.3.1.4.7.2");
+		mProduct.getTemplateIds().add(iheTemplateId);
+
+		Material mMaterial = CDAFactory.eINSTANCE.createMaterial();
+		CE code = DatatypesFactory.eINSTANCE.createCE("52", "2.16.840.1.113883.6.59");
+		code.setDisplayName("Hepatitis A vaccine");
+		mMaterial.setCode(code);
+
+		mProduct.setManufacturedMaterial(mMaterial);
+		consumable.setManufacturedProduct(mProduct);
+
+		return consumable;
 	}
 
 } // ImmunizationOperations
