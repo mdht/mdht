@@ -148,10 +148,13 @@ public class ModelFilter {
 	}
 
 	protected void processProperty(Property property, Class filteredClass) {
-		Property mappedProperty = filteredClass.getOwnedAttribute(property.getName(), property.getType());
+		String businessName = getFilteredPropertyName(property);
+		Property mappedProperty = filteredClass.getOwnedAttribute(property.getName(), null);
 		if (mappedProperty == null) {
-			// this should never happen
-			return;
+			mappedProperty = filteredClass.getOwnedAttribute(businessName, null);
+			if (mappedProperty == null) {
+				return;
+			}
 		}
 
 		// remove hidden properties
@@ -169,27 +172,31 @@ public class ModelFilter {
 			mappedProperty.destroy();
 
 			for (Property collapsedProperty : collapsedContent) {
-				filteredClass.getOwnedAttributes().add(collapsedProperty);
-
-				// if only one collapsed property, rename to same as parent
-				if (collapsedContent.size() == 1) {
-					// rename using business name (use sourceClass property to get corresponding .properties)
-					String businessName = getFilteredPropertyName(property);
-					if (businessName != null) {
-						collapsedProperty.setName(businessName);
-					}
-				}
+				// clone the property
+				Property clonedProperty = EcoreUtil.copy(collapsedProperty);
+				filteredClass.getOwnedAttributes().add(clonedProperty);
+				UMLUtil.cloneStereotypes(collapsedProperty, clonedProperty);
 
 				// collapsed property cannot have lower bound multiplicity greater than its parent
-				if (collapsedProperty.getLower() > property.getLower()) {
-					collapsedProperty.setLower(property.getLower());
+				if (clonedProperty.getLower() > property.getLower()) {
+					clonedProperty.setLower(property.getLower());
 				}
 
 				// process collapsed content recursively
+				// use the source property to gain access to original structure and filtering criteria
 				processProperty(collapsedProperty, filteredClass);
+
+				// if only one collapsed property, rename to same as parent
+				// do this last, to not interfere with processing property in previous step
+				if (collapsedContent.size() == 1) {
+					clonedProperty.setName(businessName);
+				}
 			}
 			return;
 		}
+
+		// rename using business name (use sourceClass property to get corresponding .properties)
+		mappedProperty.setName(businessName);
 
 		// if property type is a class in the same package, create filtered class as new property type
 		Type filteredType = null;
@@ -219,12 +226,6 @@ public class ModelFilter {
 			if (newType != null) {
 				mappedProperty.setType(newType);
 			}
-		}
-
-		// rename using business name (use sourceClass property to get corresponding .properties)
-		String businessName = getFilteredPropertyName(property);
-		if (businessName != null) {
-			mappedProperty.setName(businessName);
 		}
 	}
 
