@@ -11,5 +11,6 @@ Require-Bundle: org.eclipse.emf,
  org.openhealthtools.mdht.uml.hl7.vocab,
  org.openhealthtools.mdht.uml.cda,
  org.openhealthtools.mdht.uml.cda.test;visibility:=reexport,
- org.openhealthtools.mdht.uml.cda.ccd;visibility:=reexport
+ org.openhealthtools.mdht.uml.cda.ccd;visibility:=reexport,
+ org.openhealthtools.mdht.uml.hl7.rim.test
 Export-Package: org.openhealthtools.mdht.uml.cda.ccd.operations
