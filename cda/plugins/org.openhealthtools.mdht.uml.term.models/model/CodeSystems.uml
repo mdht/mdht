@@ -104,8 +104,8 @@
   <term:CodeSystemVersion xmi:id="_ywdZ4Gg7Ed-ilOLYnIx0jA" identifier="2.16.840.1.113883.5.111" version="V3NE08" source="Health Level Seven (HL7)" url="http://www.hl7.org/memonly/downloads/v3edition.cfm#V32008" base_Enumeration="_ywcy0Gg7Ed-ilOLYnIx0jA"/>
   <term:CodeSystemVersion xmi:id="_c2eGAaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.12.23" version="HL7 v2.5" source="HL70023" base_Enumeration="_c2eGAKDqEd-dVeaMP0XXQw"/>
   <term:CodeSystemVersion xmi:id="_c2mB0aDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.12.7" version="HL7 v2.5" source="HL70007" base_Enumeration="_c2mB0KDqEd-dVeaMP0XXQw"/>
-  <term:CodeSystemVersion xmi:id="_c6o0UaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.4.9" version="20100122" source="FDAUNII" base_Enumeration="_c6o0UKDqEd-dVeaMP0XXQw"/>
-  <term:CodeSystemVersion xmi:id="_dHfkkaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.69" version="20080902" source="NDC" base_Enumeration="_dHfkkKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_c6o0UaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.4.9" source="FDAUNII" base_Enumeration="_c6o0UKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dHfkkaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.69" source="NDC" base_Enumeration="_dHfkkKDqEd-dVeaMP0XXQw"/>
   <term:CodeSystemVersion xmi:id="_dHx4caDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.5.110" version="20090501" source="HITSP-CS-110" base_Enumeration="_dHx4cKDqEd-dVeaMP0XXQw"/>
   <term:CodeSystemVersion xmi:id="_dH_64aDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.5.53" version="8.1" source="HCPT" base_Enumeration="_dH_64KDqEd-dVeaMP0XXQw"/>
   <term:CodeSystemVersion xmi:id="_dIGokaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.5.293" version="20060630" source="NIP001" base_Enumeration="_dIGokKDqEd-dVeaMP0XXQw"/>
@@ -113,8 +113,8 @@
   <term:CodeSystemVersion xmi:id="_dLvLYaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.5.60" version="20090501" source="HITSP-CS-60" base_Enumeration="_dLvLYKDqEd-dVeaMP0XXQw"/>
   <term:CodeSystemVersion xmi:id="_dL4VUaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.12.227" version="07/30/2008" source="MVX" base_Enumeration="_dL4VUKDqEd-dVeaMP0XXQw"/>
   <term:CodeSystemVersion xmi:id="_dRQkkaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.5.2" version="20090501" source="HITSP-CS-2" base_Enumeration="_dRQkkKDqEd-dVeaMP0XXQw"/>
-  <term:CodeSystemVersion xmi:id="_dSLxoaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.88" version="20100201" source="RXNORM" base_Enumeration="_dSLxoKDqEd-dVeaMP0XXQw"/>
-  <term:CodeSystemVersion xmi:id="_dV4l4aDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.3.26.1.5" version="20090310" source="NDFRT" base_Enumeration="_dV4l4KDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dSLxoaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.88" source="RXNORM" base_Enumeration="_dSLxoKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dV4l4aDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.3.26.1.5" source="NDFRT" base_Enumeration="_dV4l4KDqEd-dVeaMP0XXQw"/>
   <term:CodeSystemVersion xmi:id="_dWKSsaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.3.26.1.1" version="20090526" source="NCIT" base_Enumeration="_dWKSsKDqEd-dVeaMP0XXQw"/>
   <term:CodeSystemVersion xmi:id="_dWuTYaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.5.8" version="20090501" source="HITSP-CS-8" base_Enumeration="_dWuTYKDqEd-dVeaMP0XXQw"/>
   <term:CodeSystemVersion xmi:id="_dfNhAaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.12.443" version="2.5.1" source="HL70443" base_Enumeration="_dfNhAKDqEd-dVeaMP0XXQw"/>
