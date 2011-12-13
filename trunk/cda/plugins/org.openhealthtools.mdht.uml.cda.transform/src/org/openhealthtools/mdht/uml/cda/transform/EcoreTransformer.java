@@ -43,6 +43,8 @@ public class EcoreTransformer extends AbstractTransformer {
 
 	UMLSwitch<Object> transformAssociation;
 
+	UMLSwitch<Object> transformInlinedAssociations;
+
 	public EcoreTransformer() {
 		this(new TransformerOptions());
 	}
@@ -68,9 +70,18 @@ public class EcoreTransformer extends AbstractTransformer {
 				transformTemplateIdentifier.doSwitch(child);
 				transformVocabConstraint.doSwitch(child);
 				transformPropertyConstraint.doSwitch(child);
+
 				transformAssociation.doSwitch(child);
 				transformClass.doSwitch(child);
+
 			}
+
+			iterator = EcoreUtil.getAllContents(Collections.singletonList(element));
+			while (iterator != null && iterator.hasNext()) {
+				EObject child = iterator.next();
+				transformInlinedAssociations.doSwitch(child);
+			}
+
 		} catch (IndexOutOfBoundsException e) {
 			Logger.logException(e);
 		}
@@ -88,8 +99,11 @@ public class EcoreTransformer extends AbstractTransformer {
 		transformVocabConstraint = new TransformVocabConstraint(transformerOptions);
 		transformPropertyConstraint = new TransformPropertyConstraint(transformerOptions);
 		transformAssociation = new TransformAssociation(transformerOptions);
+		transformInlinedAssociations = new TransformInlinedAssociations(transformerOptions);
+
 	}
 
+	@Override
 	public void saveResources() {
 		// save the updated plugin.properties file
 		propertiesUtil.save();
