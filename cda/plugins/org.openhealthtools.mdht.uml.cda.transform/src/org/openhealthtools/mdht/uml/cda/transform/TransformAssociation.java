@@ -33,15 +33,19 @@ import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class TransformAssociation extends TransformAbstract {
+
 	public TransformAssociation(TransformerOptions options) {
 		super(options);
 	}
 
 	@Override
 	public Object caseAssociation(Association association) {
+
 		if (isRemoved(association)) {
 			return null;
 		}
+
+		boolean firstOrderAssociation = false;
 
 		Class sourceClass = null;
 		Class targetClass = null;
@@ -143,13 +147,49 @@ public class TransformAssociation extends TransformAbstract {
 				associationEnd = "performer";
 				variableDeclaration = "performer : cda::Performer2";
 			} else {
-				String message = "Unsupported association: " + sourceClass.getQualifiedName() + " -> " +
-						targetClass.getQualifiedName();
-				Logger.log(Logger.ERROR, message);
 
-				removeModelElement(sourceProperty);
-				removeModelElement(association);
-				return null;
+				// See if we have a property with the same class type
+				Property property = cdaSourceClass.getOwnedAttribute(null, targetClass, true, null, false);
+
+				// If not - walk the hierarchy and check for properties
+				if (property == null) {
+					for (Classifier c : targetClass.allParents()) {
+
+						property = cdaSourceClass.getOwnedAttribute(null, c, true, null, false);
+
+						if (property != null || CDAModelUtil.isCDAModel(c)) {
+							break;
+						}
+
+					}
+				}
+
+				// If we still can not find - use the name - this is not optimal but CDA has some hop scotch hierarchies such as consumable and
+				// manufactured product
+				if (property == null) {
+					property = cdaSourceClass.getOwnedAttribute(sourceProperty.getName(), null, true, null, false);
+				}
+
+				// If we found it, process it
+				if (property != null) {
+					associationEnd = property.getName();
+
+					variableDeclaration = property.getName() + " : cda::" + property.getType().getName();
+
+					// do not generate a getter already there
+					firstOrderAssociation = true;
+
+				} else {
+
+					String message = "Unsupported association: " + sourceClass.getQualifiedName() + " -> " +
+							targetClass.getQualifiedName();
+					Logger.log(Logger.ERROR, message);
+
+					removeModelElement(sourceProperty);
+					removeModelElement(association);
+					return null;
+				}
+
 			}
 
 			constraintBody.append("self." + associationEnd + "->");
@@ -160,7 +200,7 @@ public class TransformAssociation extends TransformAbstract {
 			constraintBody.append(" | ");
 
 			String reference = associationEnd;
-			if (!CDAModelUtil.isEntry(targetClass)) {
+			if (!firstOrderAssociation && !CDAModelUtil.isEntry(targetClass)) {
 				reference += "." + cdaTargetLowerName;
 			}
 			constraintBody.append("not " + reference + ".oclIsUndefined() and ");
@@ -236,7 +276,7 @@ public class TransformAssociation extends TransformAbstract {
 		}
 
 		// create "getter" operation (only if not producing a domain interface)
-		if (!transformerOptions.isGenerateDomainInterface()) {
+		if (!firstOrderAssociation && !transformerOptions.isGenerateDomainInterface()) {
 			// finish building "getter" operation body
 			if (sourceProperty.getUpper() == 1) {
 				operationBody.append("->asSequence()->first()");
@@ -269,5 +309,4 @@ public class TransformAssociation extends TransformAbstract {
 
 		return association;
 	}
-
 }
