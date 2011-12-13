@@ -40,7 +40,10 @@ public class ModelFilterUtil {
 	}
 
 	public static boolean isShown(NamedElement namedElement) {
-		return !isHidden(namedElement);
+		String value = NamedElementUtil.getPropertyValue(namedElement, "filter");
+		return FILTER_SHOW.equals(value)
+				? true
+				: false;
 	}
 
 	/**
@@ -94,6 +97,14 @@ public class ModelFilterUtil {
 		setFilterProperty(namedElement, FILTER_COLLAPSE);
 	}
 
+	public static void setTypeReplacement(NamedElement namedElement, String qualifiedName) {
+		setTypeProperty(namedElement, qualifiedName);
+	}
+
+	public static String getTypeReplacement(NamedElement namedElement) {
+		return NamedElementUtil.getPropertyValue(namedElement, "type");
+	}
+
 	/**
 	 * Sets filter state for the specified named element.
 	 * 
@@ -104,6 +115,18 @@ public class ModelFilterUtil {
 	 */
 	protected static void setFilterProperty(NamedElement namedElement, String filterState) {
 		NamedElementUtil.setPropertyValue(namedElement, "filter", filterState);
+	}
+
+	/**
+	 * Sets the 'type' property for the specified named element.
+	 * 
+	 * @param namedElement
+	 *            The named element.
+	 * @param typeQName
+	 *            qualified name for model element
+	 */
+	protected static void setTypeProperty(NamedElement namedElement, String typeQName) {
+		NamedElementUtil.setPropertyValue(namedElement, "type", typeQName);
 	}
 
 }

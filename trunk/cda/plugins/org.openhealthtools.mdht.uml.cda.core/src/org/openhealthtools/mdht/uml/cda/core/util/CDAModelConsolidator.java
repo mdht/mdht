@@ -18,21 +18,16 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
-import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
-import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
-import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
 import org.openhealthtools.mdht.uml.common.util.ModelConsolidator;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
-import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
@@ -84,71 +79,6 @@ public class CDAModelConsolidator extends ModelConsolidator {
 	@Override
 	protected Property getBaseModelProperty(Property property) {
 		return CDAModelUtil.getCDAProperty(property);
-	}
-
-	@Override
-	protected boolean isDefaultFiltered(NamedElement element) {
-		boolean filtered = false;
-
-		if (element instanceof Property) {
-			Property property = (Property) element;
-
-			// optional properties from base model
-			if ((CDAModelUtil.isCDAModel(property) || RIMModelUtil.isRIMModel(property)) && property.getLower() == 0) {
-				filtered = true;
-			}
-
-			// structural attribute: classCode, moodCode, etc.
-			if (property.getType() instanceof Enumeration) {
-				filtered = true;
-			}
-
-			// fixed code value
-			CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
-			if (codeSystemConstraint != null && codeSystemConstraint.getCode() != null) {
-				filtered = true;
-			}
-
-			// severity = INFO
-			Validation validation = CDAProfileUtil.getValidation(property);
-			if (validation != null && SeverityKind.INFO == validation.getSeverity()) {
-				filtered = true;
-			} else if (property.getAssociation() != null) {
-				validation = CDAProfileUtil.getValidation(property.getAssociation());
-				if (validation != null && SeverityKind.INFO == validation.getSeverity()) {
-					filtered = true;
-				}
-			}
-		}
-
-		if (element instanceof Association) {
-			Association association = (Association) element;
-
-			// severity = INFO
-			Validation validation = CDAProfileUtil.getValidation(association);
-			if (validation != null && SeverityKind.INFO == validation.getSeverity()) {
-				filtered = true;
-			}
-		}
-
-		return filtered;
-	}
-
-	@Override
-	protected boolean isDefaultCollapsed(NamedElement element) {
-		boolean collapsed = false;
-
-		if (element instanceof Property) {
-			Property property = (Property) element;
-
-			// associations with multiplicity upper bound = 1
-			if (property.getAssociation() != null && property.getUpper() == 1) {
-				collapsed = true;
-			}
-
-		}
-
-		return collapsed;
 	}
 
 	@Override
