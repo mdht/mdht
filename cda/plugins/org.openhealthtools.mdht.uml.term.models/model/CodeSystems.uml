@@ -123,7 +123,7 @@
   <term:CodeSystemVersion xmi:id="_df-9EaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.12.162" version="HL7 v2.5" source="HL70162" base_Enumeration="_df-9EKDqEd-dVeaMP0XXQw"/>
   <term:CodeSystemVersion xmi:id="_dkSOQaDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.92" version="19870528" source="FIPS5_2" base_Enumeration="_dkSOQKDqEd-dVeaMP0XXQw"/>
   <term:CodeSystemVersion xmi:id="_dkiF4KDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.8" version="1.7" source="UCUM" base_Enumeration="_dkhe0KDqEd-dVeaMP0XXQw"/>
-  <term:CodeSystemVersion xmi:id="_dk7ugKDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.12.292" version="20100107" source="CVX" base_Enumeration="_dk7HcKDqEd-dVeaMP0XXQw"/>
+  <term:CodeSystemVersion xmi:id="_dk7ugKDqEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.59" version="20100107" source="CVX" base_Enumeration="_dk7HcKDqEd-dVeaMP0XXQw"/>
   <term:CodeSystemVersion xmi:id="_1ZiywKFkEd-dVeaMP0XXQw" identifier="1.0.3166.1" version="1997 Edition" source="ISO3166_1" base_Enumeration="_1ZiLsKFkEd-dVeaMP0XXQw"/>
   <term:CodeSystemVersion xmi:id="_1dcbUKFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.5.274" version="20100308" source="CDCPHINVS" base_Enumeration="_1db0QKFkEd-dVeaMP0XXQw"/>
   <term:CodeSystemVersion xmi:id="_1dllQaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.6.86" version="2009AA" source="UML" base_Enumeration="_1dllQKFkEd-dVeaMP0XXQw"/>
