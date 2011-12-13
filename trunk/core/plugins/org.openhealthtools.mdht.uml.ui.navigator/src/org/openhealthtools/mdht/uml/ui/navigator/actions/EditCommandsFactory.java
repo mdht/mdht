@@ -355,20 +355,26 @@ public class EditCommandsFactory implements IPropertyListener {
 					// find all associations that refer to eObject and mark them dirty
 					List<Relationship> otherTargets = ((Element) eObject).getRelationships(UMLPackage.Literals.ASSOCIATION);
 					for (Relationship relationship : otherTargets) {
-						// mark all source resources dirty so that they can be saved
 						for (Element element : relationship.getRelatedElements()) {
-							ModelDocument sourceDocument = ModelManager.getManager().manage(element.eResource());
-							if (sourceDocument != null) {
-								sourceDocument.setDirty(true);
+							// fix bug for broken association references
+							if (element.eResource() != null) {
+								// mark all source resources dirty so that they can be saved
+								ModelDocument sourceDocument = ModelManager.getManager().manage(element.eResource());
+								if (sourceDocument != null) {
+									sourceDocument.setDirty(true);
+								}
 							}
 						}
 					}
 
 					for (Element element : controlledElements) {
-						// mark all source resources dirty so that they can be saved
-						ModelDocument sourceDocument = ModelManager.getManager().manage(element.eResource());
-						if (sourceDocument != null) {
-							sourceDocument.setDirty(true);
+						// fix bug for broken association references
+						if (element.eResource() != null) {
+							// mark all source resources dirty so that they can be saved
+							ModelDocument sourceDocument = ModelManager.getManager().manage(element.eResource());
+							if (sourceDocument != null) {
+								sourceDocument.setDirty(true);
+							}
 						}
 
 						for (EObject stereotypeApplication : element.getStereotypeApplications()) {
@@ -500,11 +506,14 @@ public class EditCommandsFactory implements IPropertyListener {
 					// find all associations that refer to eObject and mark them dirty
 					List<Relationship> otherTargets = ((Element) eObject).getRelationships(UMLPackage.Literals.ASSOCIATION);
 					for (Relationship relationship : otherTargets) {
-						// mark all source resources dirty so that they can be saved
 						for (Element element : relationship.getRelatedElements()) {
-							ModelDocument targetDocument = ModelManager.getManager().manage(element.eResource());
-							if (targetDocument != null) {
-								targetDocument.setDirty(true);
+							// fix bug for broken association references
+							if (element.eResource() != null) {
+								// mark all source resources dirty so that they can be saved
+								ModelDocument targetDocument = ModelManager.getManager().manage(element.eResource());
+								if (targetDocument != null) {
+									targetDocument.setDirty(true);
+								}
 							}
 						}
 					}
@@ -512,10 +521,13 @@ public class EditCommandsFactory implements IPropertyListener {
 					EList<EObject> eContainerResourceContents = eContainerResource.getContents();
 
 					for (Element element : uncontrolledElements) {
-						// mark all target resources dirty so that they can be saved
-						ModelDocument targetDocument = ModelManager.getManager().manage(element.eResource());
-						if (targetDocument != null) {
-							targetDocument.setDirty(true);
+						// fix bug for broken association references
+						if (element.eResource() != null) {
+							// mark all target resources dirty so that they can be saved
+							ModelDocument targetDocument = ModelManager.getManager().manage(element.eResource());
+							if (targetDocument != null) {
+								targetDocument.setDirty(true);
+							}
 						}
 
 						for (EObject stereotypeApplication : element.getStereotypeApplications()) {
