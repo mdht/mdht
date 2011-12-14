@@ -152,7 +152,7 @@ public class AllergiesSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAllergiesSectionAllergyDrugSensitivity() {
@@ -169,7 +169,7 @@ public class AllergiesSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergiesSection target) {
 				target.init();
-
+				target.addAct(ConsolFactory.eINSTANCE.createAllergyProblemAct());
 			}
 
 			@Override

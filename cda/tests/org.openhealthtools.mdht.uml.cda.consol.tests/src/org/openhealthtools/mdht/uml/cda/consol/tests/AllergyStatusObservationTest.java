@@ -18,7 +18,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,15 +27,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyStatusObservation#validateAllergyStatusObservationTargetOfEntryRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Status Observation Target Of Entry Relationship</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyStatusObservation#validateAllergyStatusObservationNoAdditionalParticipants(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Status Observation No Additional Participants</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyStatusObservation#validateAllergyStatusObservationNoAdditionalRelationships(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Status Observation No Additional Relationships</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyStatusObservation#validateAllergyStatusObservationHasTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Status Observation Has Text Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyStatusObservation#validateAllergyStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Status Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyStatusObservation#validateAllergyStatusObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Status Observation Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyStatusObservation#validateAllergyStatusObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Status Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyStatusObservation#validateAllergyStatusObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Status Observation Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyStatusObservation#validateAllergyStatusObservationText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Status Observation Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyStatusObservation#validateAllergyStatusObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Status Observation Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyStatusObservation#validateAllergyStatusObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Status Observation Value</em>}</li>
  * </ul>
@@ -46,142 +40,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  */
 
 public class AllergyStatusObservationTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateAllergyStatusObservationTargetOfEntryRelationship() {
-		OperationsTestCase<AllergyStatusObservation> validateAllergyStatusObservationTargetOfEntryRelationshipTestCase = new OperationsTestCase<AllergyStatusObservation>(
-			"validateAllergyStatusObservationTargetOfEntryRelationship",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_STATUS_OBSERVATION_TARGET_OF_ENTRY_RELATIONSHIP__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AllergyStatusObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AllergyStatusObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AllergyStatusObservationOperations.validateAllergyStatusObservationTargetOfEntryRelationship(
-					(AllergyStatusObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAllergyStatusObservationTargetOfEntryRelationshipTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateAllergyStatusObservationNoAdditionalParticipants() {
-		OperationsTestCase<AllergyStatusObservation> validateAllergyStatusObservationNoAdditionalParticipantsTestCase = new OperationsTestCase<AllergyStatusObservation>(
-			"validateAllergyStatusObservationNoAdditionalParticipants",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_STATUS_OBSERVATION_NO_ADDITIONAL_PARTICIPANTS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AllergyStatusObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AllergyStatusObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AllergyStatusObservationOperations.validateAllergyStatusObservationNoAdditionalParticipants(
-					(AllergyStatusObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAllergyStatusObservationNoAdditionalParticipantsTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateAllergyStatusObservationNoAdditionalRelationships() {
-		OperationsTestCase<AllergyStatusObservation> validateAllergyStatusObservationNoAdditionalRelationshipsTestCase = new OperationsTestCase<AllergyStatusObservation>(
-			"validateAllergyStatusObservationNoAdditionalRelationships",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_STATUS_OBSERVATION_NO_ADDITIONAL_RELATIONSHIPS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AllergyStatusObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AllergyStatusObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AllergyStatusObservationOperations.validateAllergyStatusObservationNoAdditionalRelationships(
-					(AllergyStatusObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAllergyStatusObservationNoAdditionalRelationshipsTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateAllergyStatusObservationHasTextReference() {
-		OperationsTestCase<AllergyStatusObservation> validateAllergyStatusObservationHasTextReferenceTestCase = new OperationsTestCase<AllergyStatusObservation>(
-			"validateAllergyStatusObservationHasTextReference",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_STATUS_OBSERVATION_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AllergyStatusObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AllergyStatusObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AllergyStatusObservationOperations.validateAllergyStatusObservationHasTextReference(
-					(AllergyStatusObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAllergyStatusObservationHasTextReferenceTestCase.doValidationTest();
-	}
 
 	/**
 	*
@@ -320,43 +178,6 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 		};
 
 		validateAllergyStatusObservationCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateAllergyStatusObservationText() {
-		OperationsTestCase<AllergyStatusObservation> validateAllergyStatusObservationTextTestCase = new OperationsTestCase<AllergyStatusObservation>(
-			"validateAllergyStatusObservationText",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_STATUS_OBSERVATION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AllergyStatusObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AllergyStatusObservation target) {
-				target.init();
-
-				ED text = DatatypesFactory.eINSTANCE.createED();
-				target.setText(text);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AllergyStatusObservationOperations.validateAllergyStatusObservationText(
-					(AllergyStatusObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAllergyStatusObservationTextTestCase.doValidationTest();
 	}
 
 	/**
