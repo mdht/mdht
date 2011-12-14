@@ -11,10 +11,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
-import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
-import org.openhealthtools.mdht.uml.cda.consol.MedicationActivity;
-import org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityProcedure;
 import org.openhealthtools.mdht.uml.cda.consol.ReactionObservation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ReactionObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
@@ -24,7 +21,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
-import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,6 +32,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#validateReactionObservationTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Text Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#validateReactionObservationReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Reference Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#validateReactionObservationSeverityObservationInversionInd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Severity Observation Inversion Ind</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#validateReactionObservationProcedureActivityProcedureInversionInd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Procedure Activity Procedure Inversion Ind</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#validateReactionObservationMedicationActivityInversionInd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Medication Activity Inversion Ind</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#validateReactionObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#validateReactionObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#validateReactionObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Mood Code</em>}</li>
@@ -49,8 +48,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#validateReactionObservationProcedureActivityProcedure(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Procedure Activity Procedure</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#validateReactionObservationMedicationActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Medication Activity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#getSeverityObservation() <em>Get Severity Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#getProcedureActivityProcedure() <em>Get Procedure Activity Procedure</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#getMedicationActivity() <em>Get Medication Activity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#getProcedureActivityProcedures() <em>Get Procedure Activity Procedures</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#getMedicationActivities() <em>Get Medication Activities</em>}</li>
  * </ul>
  * </p>
  *
@@ -128,6 +127,108 @@ public class ReactionObservationTest extends CDAValidationTest {
 		};
 
 		validateReactionObservationReferenceValueTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateReactionObservationSeverityObservationInversionInd() {
+		OperationsTestCase<ReactionObservation> validateReactionObservationSeverityObservationInversionIndTestCase = new OperationsTestCase<ReactionObservation>(
+			"validateReactionObservationSeverityObservationInversionInd",
+			operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_SEVERITY_OBSERVATION_INVERSION_IND__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReactionObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ReactionObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReactionObservationOperations.validateReactionObservationSeverityObservationInversionInd(
+					(ReactionObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateReactionObservationSeverityObservationInversionIndTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateReactionObservationProcedureActivityProcedureInversionInd() {
+		OperationsTestCase<ReactionObservation> validateReactionObservationProcedureActivityProcedureInversionIndTestCase = new OperationsTestCase<ReactionObservation>(
+			"validateReactionObservationProcedureActivityProcedureInversionInd",
+			operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_PROCEDURE_ACTIVITY_PROCEDURE_INVERSION_IND__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReactionObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ReactionObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReactionObservationOperations.validateReactionObservationProcedureActivityProcedureInversionInd(
+					(ReactionObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateReactionObservationProcedureActivityProcedureInversionIndTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateReactionObservationMedicationActivityInversionInd() {
+		OperationsTestCase<ReactionObservation> validateReactionObservationMedicationActivityInversionIndTestCase = new OperationsTestCase<ReactionObservation>(
+			"validateReactionObservationMedicationActivityInversionInd",
+			operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_MEDICATION_ACTIVITY_INVERSION_IND__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReactionObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ReactionObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReactionObservationOperations.validateReactionObservationMedicationActivityInversionInd(
+					(ReactionObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateReactionObservationMedicationActivityInversionIndTestCase.doValidationTest();
 	}
 
 	/**
@@ -271,7 +372,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated NOT
+	* @generated
 	*/
 	@Test
 	public void testValidateReactionObservationCode() {
@@ -289,8 +390,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
 
-				CD cd = DatatypesFactory.eINSTANCE.createCD("", "2.16.840.1.113883.6.96", "", "");
-
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				target.setCode(cd);
 
 			}
@@ -309,7 +409,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated NOT
+	* @generated
 	*/
 	@Test
 	public void testValidateReactionObservationText() {
@@ -328,7 +428,6 @@ public class ReactionObservationTest extends CDAValidationTest {
 				target.init();
 
 				ED text = DatatypesFactory.eINSTANCE.createED();
-
 				target.setText(text);
 
 			}
@@ -421,7 +520,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated NOT
+	* @generated
 	*/
 	@Test
 	public void testValidateReactionObservationValue() {
@@ -439,8 +538,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
 
-				CD value = DatatypesFactory.eINSTANCE.createCD("value", "2.16.840.1.113883.6.96", "", "");
-
+				CD value = DatatypesFactory.eINSTANCE.createCD();
 				target.getValues().add(value);
 
 			}
@@ -459,7 +557,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not
+	* @generated
 	*/
 	@Test
 	public void testValidateReactionObservationSeverityObservation() {
@@ -477,12 +575,6 @@ public class ReactionObservationTest extends CDAValidationTest {
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
 
-				target.addObservation(ConsolFactory.eINSTANCE.createSeverityObservation().init());
-
-				for (EntryRelationship er : target.getEntryRelationships()) {
-					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
-				}
-
 			}
 
 			@Override
@@ -499,7 +591,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated NOT
+	* @generated
 	*/
 	@Test
 	public void testValidateReactionObservationProcedureActivityProcedure() {
@@ -517,15 +609,6 @@ public class ReactionObservationTest extends CDAValidationTest {
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
 
-				ProcedureActivityProcedure procedureActivityProcedure = ConsolFactory.eINSTANCE.createProcedureActivityProcedure().init();
-
-				target.addProcedure(procedureActivityProcedure);
-
-				for (EntryRelationship er : target.getEntryRelationships()) {
-					er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
-
-				}
-
 			}
 
 			@Override
@@ -542,7 +625,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated NOT
+	* @generated
 	*/
 	@Test
 	public void testValidateReactionObservationMedicationActivity() {
@@ -553,20 +636,12 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ReactionObservation target) {
-				target.init();
+
 			}
 
 			@Override
 			protected void updateToPass(ReactionObservation target) {
-
-				MedicationActivity medicationActivity = ConsolFactory.eINSTANCE.createMedicationActivity().init();
-
-				target.addSubstanceAdministration(medicationActivity);
-
-				for (EntryRelationship er : target.getEntryRelationships()) {
-					er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
-
-				}
+				target.init();
 
 			}
 
@@ -599,10 +674,10 @@ public class ReactionObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetProcedureActivityProcedure() {
+	public void testGetProcedureActivityProcedures() {
 
 		ReactionObservation target = objectFactory.create();
-		target.getProcedureActivityProcedure();
+		target.getProcedureActivityProcedures();
 
 	}
 
@@ -611,10 +686,10 @@ public class ReactionObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetMedicationActivity() {
+	public void testGetMedicationActivities() {
 
 		ReactionObservation target = objectFactory.create();
-		target.getMedicationActivity();
+		target.getMedicationActivities();
 
 	}
 
