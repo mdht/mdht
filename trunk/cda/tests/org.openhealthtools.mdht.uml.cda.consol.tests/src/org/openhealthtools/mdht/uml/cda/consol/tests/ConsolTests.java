@@ -32,7 +32,8 @@ import org.junit.runners.Suite;
 		ContinuityOfCareDocumentTest.class, AdvanceDirectivesSectionEntriesOptionalTest.class,
 		AllergiesSectionTest.class, AllergiesSectionEntriesOptionalTest.class,
 		EncountersSectionEntriesOptionalTest.class, ImmunizationsSectionEntriesOptionalTest.class,
-		PayersSectionTest.class, CoverageActivityTest.class, PolicyActivityTest.class, AuthorizationActivityTest.class,
+		ImmunizationActivityTest.class, ImmunizationRefusalReasonTest.class, PayersSectionTest.class,
+		CoverageActivityTest.class, PolicyActivityTest.class, AuthorizationActivityTest.class,
 		MedicationsSectionTest.class, MedicationsSectionEntriesOptionalTest.class, PlanOfCareSectionTest.class,
 		PlanOfCareActivityActTest.class, PlanOfCareActivityEncounterTest.class,
 		PlanOfCareActivityObservationTest.class, PlanOfCareActivityProcedureTest.class,
@@ -49,10 +50,9 @@ import org.junit.runners.Suite;
 		PurposeActivityTest.class, AdvanceDirectivesSectionTest.class, AdvanceDirectiveObservationTest.class,
 		AdvanceDirectiveVerificationTest.class, AdvanceDirectiveStatusObservationTest.class,
 		AdvanceDirectiveReferenceTest.class, EncountersSectionTest.class, EncountersActivitesTest.class,
-		EncounterTest.class, ImmunizationsSectionTest.class, ImmunizationActivityTest.class,
-		ImmunizationRefusalReasonTest.class, InsuranceProviderTest.class, PayerEntryTest.class, CoveredPartyTest.class,
-		PolicySubscriberTest.class, PregnancyHistorySectionTest.class, ExternalReferenceTest.class,
-		VitalSignsSectionTest.class, DiagnosticResultsSectionTest.class, HistoryOfPastIllnessSectionTest.class,
+		EncounterTest.class, ImmunizationsSectionTest.class, InsuranceProviderTest.class, PayerEntryTest.class,
+		CoveredPartyTest.class, PolicySubscriberTest.class, PregnancyHistorySectionTest.class,
+		ExternalReferenceTest.class, VitalSignsSectionTest.class, HistoryOfPastIllnessSectionTest.class,
 		ChiefComplaintSectionTest.class, ReasonForReferralSectionTest.class, HistoryOfPresentIllnessTest.class,
 		HospitalAdmissionDiagnosisSectionTest.class, HospitalDischargeDiagnosisSectionTest.class,
 		HospitalAdmissionMedicationsSectionEntriesOptionalTest.class, HospitalDischargeMedicationsSectionTest.class,
@@ -72,7 +72,8 @@ import org.junit.runners.Suite;
 		UnstructuredOrScannedDocumentTest.class, ReferralSummaryTest.class, DischargeSummaryTest.class,
 		DischargeDietSectionTest.class, PreconditionForSubstanceAdministrationTest.class,
 		ImmunizationMedicationInformationTest.class, ProcedureSpecimenTest.class, ProcedurePerformerTest.class,
-		ProcedureEncounterTest.class, MedicationInformationManufacturedMaterialTest.class })
+		ProcedureEncounterTest.class, MedicationInformationManufacturedMaterialTest.class,
+		FamilyHistorySubjectTest.class })
 public class ConsolTests {
 
 	/**
