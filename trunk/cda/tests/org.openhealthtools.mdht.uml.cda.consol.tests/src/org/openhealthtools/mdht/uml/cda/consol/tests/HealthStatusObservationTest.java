@@ -28,10 +28,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation#validateHealthStatusObservationTargetOfEntryRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Health Status Observation Target Of Entry Relationship</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation#validateHealthStatusObservationNoAdditionalParticipants(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Health Status Observation No Additional Participants</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation#validateHealthStatusObservationNoAdditionalRelationships(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Health Status Observation No Additional Relationships</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation#validateHealthStatusObservationHasTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Health Status Observation Has Text Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation#validateHealthStatusObservationHasTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Health Status Observation Has Text Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation#validateHealthStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Health Status Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation#validateHealthStatusObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Health Status Observation Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation#validateHealthStatusObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Health Status Observation Mood Code</em>}</li>
@@ -49,109 +47,7 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
-	*/
-	@Test
-	public void testValidateHealthStatusObservationTargetOfEntryRelationship() {
-		OperationsTestCase<HealthStatusObservation> validateHealthStatusObservationTargetOfEntryRelationshipTestCase = new OperationsTestCase<HealthStatusObservation>(
-			"validateHealthStatusObservationTargetOfEntryRelationship",
-			operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_TARGET_OF_ENTRY_RELATIONSHIP__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(HealthStatusObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(HealthStatusObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return HealthStatusObservationOperations.validateHealthStatusObservationTargetOfEntryRelationship(
-					(HealthStatusObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateHealthStatusObservationTargetOfEntryRelationshipTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateHealthStatusObservationNoAdditionalParticipants() {
-		OperationsTestCase<HealthStatusObservation> validateHealthStatusObservationNoAdditionalParticipantsTestCase = new OperationsTestCase<HealthStatusObservation>(
-			"validateHealthStatusObservationNoAdditionalParticipants",
-			operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_NO_ADDITIONAL_PARTICIPANTS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(HealthStatusObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(HealthStatusObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return HealthStatusObservationOperations.validateHealthStatusObservationNoAdditionalParticipants(
-					(HealthStatusObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateHealthStatusObservationNoAdditionalParticipantsTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateHealthStatusObservationNoAdditionalRelationships() {
-		OperationsTestCase<HealthStatusObservation> validateHealthStatusObservationNoAdditionalRelationshipsTestCase = new OperationsTestCase<HealthStatusObservation>(
-			"validateHealthStatusObservationNoAdditionalRelationships",
-			operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_NO_ADDITIONAL_RELATIONSHIPS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(HealthStatusObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(HealthStatusObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return HealthStatusObservationOperations.validateHealthStatusObservationNoAdditionalRelationships(
-					(HealthStatusObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateHealthStatusObservationNoAdditionalRelationshipsTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHealthStatusObservationHasTextReference() {
@@ -168,7 +64,9 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HealthStatusObservation target) {
 				target.init();
-
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL("test"));
+				target.setText(txt);
 			}
 
 			@Override
@@ -181,6 +79,43 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 		};
 
 		validateHealthStatusObservationHasTextReferenceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHealthStatusObservationHasTextReferenceValue() {
+		OperationsTestCase<HealthStatusObservation> validateHealthStatusObservationHasTextReferenceValueTestCase = new OperationsTestCase<HealthStatusObservation>(
+			"validateHealthStatusObservationHasTextReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_HAS_TEXT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HealthStatusObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HealthStatusObservation target) {
+				target.init();
+
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HealthStatusObservationOperations.validateHealthStatusObservationHasTextReferenceValue(
+					(HealthStatusObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHealthStatusObservationHasTextReferenceValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -287,7 +222,7 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHealthStatusObservationCode() {
@@ -306,6 +241,8 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCodeSystem("2.16.840.1.113883.6.1");
+				cd.setCode("11323-3");
 				target.setCode(cd);
 
 			}
@@ -398,7 +335,7 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateHealthStatusObservationValue() {
@@ -417,6 +354,8 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD value = DatatypesFactory.eINSTANCE.createCD();
+				value.setCodeSystem("2.16.840.1.113883.6.96");
+				value.setCode("55561003");
 				target.getValues().add(value);
 
 			}

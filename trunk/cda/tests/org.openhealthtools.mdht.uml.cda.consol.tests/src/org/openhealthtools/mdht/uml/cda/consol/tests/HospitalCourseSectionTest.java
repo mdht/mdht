@@ -11,10 +11,14 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalCourseSection;
 import org.openhealthtools.mdht.uml.cda.consol.operations.HospitalCourseSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +30,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalCourseSection#validateHospitalCourseSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Course Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalCourseSection#validateHospitalCourseSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Course Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalCourseSection#validateHospitalCourseSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Course Section Title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalCourseSection#validateHospitalCourseSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Course Section Text</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,6 +106,80 @@ public class HospitalCourseSectionTest extends CDAValidationTest {
 		};
 
 		validateHospitalCourseSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHospitalCourseSectionTitle() {
+		OperationsTestCase<HospitalCourseSection> validateHospitalCourseSectionTitleTestCase = new OperationsTestCase<HospitalCourseSection>(
+			"validateHospitalCourseSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_COURSE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HospitalCourseSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HospitalCourseSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HospitalCourseSectionOperations.validateHospitalCourseSectionTitle(
+					(HospitalCourseSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHospitalCourseSectionTitleTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHospitalCourseSectionText() {
+		OperationsTestCase<HospitalCourseSection> validateHospitalCourseSectionTextTestCase = new OperationsTestCase<HospitalCourseSection>(
+			"validateHospitalCourseSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_COURSE_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HospitalCourseSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HospitalCourseSection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HospitalCourseSectionOperations.validateHospitalCourseSectionText(
+					(HospitalCourseSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHospitalCourseSectionTextTestCase.doValidationTest();
 	}
 
 	/**

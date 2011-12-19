@@ -18,6 +18,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
 
 /**
  * <!-- begin-user-doc -->
@@ -145,7 +146,7 @@ public class AgeObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAgeObservationCode() {
@@ -164,6 +165,8 @@ public class AgeObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCodeSystem("2.16.840.1.113883.6.96");
+				cd.setCode("445518008");
 				target.setCode(cd);
 
 			}
@@ -219,7 +222,7 @@ public class AgeObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAgeObservationValue() {
@@ -237,7 +240,7 @@ public class AgeObservationTest extends CDAValidationTest {
 			protected void updateToPass(AgeObservation target) {
 				target.init();
 
-				CD value = DatatypesFactory.eINSTANCE.createCD();
+				PQ value = DatatypesFactory.eINSTANCE.createPQ();
 				target.getValues().add(value);
 
 			}

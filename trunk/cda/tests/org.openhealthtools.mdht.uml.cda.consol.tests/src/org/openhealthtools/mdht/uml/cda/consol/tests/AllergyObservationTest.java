@@ -12,15 +12,18 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.consol.AllergyObservation;
+import org.openhealthtools.mdht.uml.cda.consol.AllergyStatusObservation;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.ReactionObservation;
+import org.openhealthtools.mdht.uml.cda.consol.SeverityObservation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.AllergyObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,7 +61,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAllergyObservationAllergyStatusInversionIndicator() {
@@ -69,12 +72,22 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AllergyObservation target) {
-
+				target.init();
+				// EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				// er.setAct(ConsolFactory.eINSTANCE.createInstructions());
+				// target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected void updateToPass(AllergyObservation target) {
 				target.init();
+				/*
+				 * target.getEntryRelationships().clear();
+				 * EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				 * er.setInversionInd(true);
+				 * er.setAct(ConsolFactory.eINSTANCE.createInstructions());
+				 * target.getEntryRelationships().add(er);
+				 */
 
 			}
 
@@ -299,7 +312,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAllergyObservationCode() {
@@ -318,6 +331,8 @@ public class AllergyObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCode("ASSERTION");
+				cd.setCodeSystem("2.16.840.1.113883.5.4");
 				target.setCode(cd);
 
 			}
@@ -336,7 +351,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAllergyObservationText() {
@@ -353,10 +368,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyObservation target) {
 				target.init();
-
-				ED text = DatatypesFactory.eINSTANCE.createED();
-				target.setText(text);
-
+				target.setText(DatatypesFactory.eINSTANCE.createED());
 			}
 
 			@Override
@@ -447,7 +459,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAllergyObservationValue() {
@@ -466,6 +478,8 @@ public class AllergyObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD value = DatatypesFactory.eINSTANCE.createCD();
+				value.setCodeSystem("2.16.840.1.113883.6.96");
+				value.setCode("420134006");
 				target.getValues().add(value);
 
 			}
@@ -484,7 +498,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAllergyObservationProblemEntryReactionObservationContainer() {
@@ -501,6 +515,11 @@ public class AllergyObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyObservation target) {
 				target.init();
+				ReactionObservation observation = ConsolFactory.eINSTANCE.createReactionObservation().init();
+				target.addObservation(observation);
+				for (org.openhealthtools.mdht.uml.cda.EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.MFST);
+				}
 
 			}
 
@@ -518,7 +537,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAllergyObservationSeverity() {
@@ -535,6 +554,11 @@ public class AllergyObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyObservation target) {
 				target.init();
+				SeverityObservation observation = ConsolFactory.eINSTANCE.createSeverityObservation().init();
+				target.addObservation(observation);
+				for (org.openhealthtools.mdht.uml.cda.EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				}
 
 			}
 
@@ -552,7 +576,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAllergyObservationAllergyStatusObservation() {
@@ -569,6 +593,12 @@ public class AllergyObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyObservation target) {
 				target.init();
+
+				AllergyStatusObservation observation = ConsolFactory.eINSTANCE.createAllergyStatusObservation().init();
+				target.addObservation(observation);
+				for (org.openhealthtools.mdht.uml.cda.EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				}
 
 			}
 

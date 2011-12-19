@@ -54,8 +54,7 @@ import org.junit.runners.Suite;
 		CoveredPartyTest.class, PolicySubscriberTest.class, PregnancyHistorySectionTest.class,
 		ExternalReferenceTest.class, VitalSignsSectionTest.class, HistoryOfPastIllnessSectionTest.class,
 		ChiefComplaintSectionTest.class, ReasonForReferralSectionTest.class, HistoryOfPresentIllnessTest.class,
-		HospitalAdmissionDiagnosisSectionTest.class, HospitalDischargeDiagnosisSectionTest.class,
-		HospitalAdmissionMedicationsSectionEntriesOptionalTest.class, HospitalDischargeMedicationsSectionTest.class,
+		HospitalAdmissionDiagnosisSectionTest.class, HospitalAdmissionMedicationsSectionEntriesOptionalTest.class,
 		MedicationsAdministeredSectionTest.class, PhysicalExamSectionTest.class, GeneralStatusSectionTest.class,
 		VisibleImplantedMedicalDevicesSectionTest.class, IntegumentarySystemSectionTest.class, HeadSectionTest.class,
 		EyesSectionTest.class, EarsNoseMouthThroatSectionTest.class, EarsSectionTest.class, NoseSectionTest.class,
@@ -64,16 +63,20 @@ import org.junit.runners.Suite;
 		RespiratorySystemSectionTest.class, AbdomenSectionTest.class, LymphaticSectionTest.class,
 		VesselsSectionTest.class, MusculoskeletalSystemSectionTest.class, NeurologicSystemSectionTest.class,
 		GenitaliaSectionTest.class, RectumSectionTest.class, ExtremitiesSectionTest.class,
-		ReviewOfSystemsSectionTest.class, HospitalCourseSectionTest.class, AssessmentAndPlanSectionTest.class,
-		LanguageSpokenTest.class, HealthcareProviderTest.class, MedicationNormalDoseTest.class,
-		MedicationSplitDoseTest.class, MedicationTaperedDoseTest.class, MedicationConditionalDoseTest.class,
+		ReviewOfSystemsSectionTest.class, AssessmentAndPlanSectionTest.class, LanguageSpokenTest.class,
+		HealthcareProviderTest.class, MedicationNormalDoseTest.class, MedicationSplitDoseTest.class,
+		MedicationTaperedDoseTest.class, MedicationConditionalDoseTest.class,
 		MedicationCombinationMedicationTest.class, UnstructuredDocumentTest.class, ScanOriginalAuthorTest.class,
 		ScanningDeviceTest.class, ScanDataEntererTest.class, MedicationInformationTest.class,
 		UnstructuredOrScannedDocumentTest.class, ReferralSummaryTest.class, DischargeSummaryTest.class,
-		DischargeDietSectionTest.class, PreconditionForSubstanceAdministrationTest.class,
-		ImmunizationMedicationInformationTest.class, ProcedureSpecimenTest.class, ProcedurePerformerTest.class,
-		ProcedureEncounterTest.class, MedicationInformationManufacturedMaterialTest.class,
-		FamilyHistorySubjectTest.class })
+		HospitalDischargeDiagnosisSectionTest.class, DischargeDietSectionTest.class,
+		HospitalDischargeMedicationsSectionEntriesOptionalTest.class, HospitalCourseSectionTest.class,
+		PreconditionForSubstanceAdministrationTest.class, ImmunizationMedicationInformationTest.class,
+		ProcedureSpecimenTest.class, ProcedurePerformerTest.class, ProcedureEncounterTest.class,
+		MedicationInformationManufacturedMaterialTest.class, FamilyHistorySubjectTest.class,
+		HospitalDischargeStudiesSummarySectionTest.class, DischargeMedicationTest.class,
+		HospitalDischargeDiagnosisTest.class, HospitalDischargeInstructionsSectionTest.class,
+		HospitalDischargeMedicationsSectionTest.class, HospitalDischargePhysicalSectionTest.class })
 public class ConsolTests {
 
 	/**

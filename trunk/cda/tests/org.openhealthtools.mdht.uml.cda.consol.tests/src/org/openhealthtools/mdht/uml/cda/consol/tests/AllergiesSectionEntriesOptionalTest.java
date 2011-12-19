@@ -12,13 +12,11 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
-import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.AllergiesSectionEntriesOptional;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.operations.AllergiesSectionEntriesOptionalOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,7 +110,7 @@ public class AllergiesSectionEntriesOptionalTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAllergiesSectionEntriesOptionalTitle() {
@@ -129,10 +127,7 @@ public class AllergiesSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergiesSectionEntriesOptional target) {
 				target.init();
-
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
-
+				target.setTitle(DatatypesFactory.eINSTANCE.createST());
 			}
 
 			@Override
@@ -149,7 +144,7 @@ public class AllergiesSectionEntriesOptionalTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAllergiesSectionEntriesOptionalText() {
@@ -166,10 +161,7 @@ public class AllergiesSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergiesSectionEntriesOptional target) {
 				target.init();
-
-				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
-
+				target.setText(CDAFactory.eINSTANCE.createStrucDocText());
 			}
 
 			@Override
@@ -186,7 +178,7 @@ public class AllergiesSectionEntriesOptionalTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAllergiesSectionEntriesOptionalAllergyProblemAct() {
@@ -203,6 +195,7 @@ public class AllergiesSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergiesSectionEntriesOptional target) {
 				target.init();
+				target.addAct(ConsolFactory.eINSTANCE.createAllergyProblemAct());
 
 			}
 

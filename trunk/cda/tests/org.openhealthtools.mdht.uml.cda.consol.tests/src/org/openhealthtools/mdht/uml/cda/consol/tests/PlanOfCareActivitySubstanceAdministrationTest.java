@@ -24,9 +24,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivitySubstanceAdministration#validatePlanOfCareActivitySubstanceAdministrationMoodCodeValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Substance Administration Mood Code Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivitySubstanceAdministration#validatePlanOfCareActivitySubstanceAdministrationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Substance Administration Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivitySubstanceAdministration#validatePlanOfCareActivitySubstanceAdministrationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Substance Administration Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivitySubstanceAdministration#validatePlanOfCareActivitySubstanceAdministrationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Substance Administration Id</em>}</li>
  * </ul>
  * </p>
@@ -35,40 +33,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class PlanOfCareActivitySubstanceAdministrationTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePlanOfCareActivitySubstanceAdministrationMoodCodeValue() {
-		OperationsTestCase<PlanOfCareActivitySubstanceAdministration> validatePlanOfCareActivitySubstanceAdministrationMoodCodeValueTestCase = new OperationsTestCase<PlanOfCareActivitySubstanceAdministration>(
-			"validatePlanOfCareActivitySubstanceAdministrationMoodCodeValue",
-			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION_MOOD_CODE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PlanOfCareActivitySubstanceAdministration target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PlanOfCareActivitySubstanceAdministration target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PlanOfCareActivitySubstanceAdministrationOperations.validatePlanOfCareActivitySubstanceAdministrationMoodCodeValue(
-					(PlanOfCareActivitySubstanceAdministration) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePlanOfCareActivitySubstanceAdministrationMoodCodeValueTestCase.doValidationTest();
-	}
 
 	/**
 	*
@@ -102,40 +66,6 @@ public class PlanOfCareActivitySubstanceAdministrationTest extends CDAValidation
 		};
 
 		validatePlanOfCareActivitySubstanceAdministrationTemplateIdTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePlanOfCareActivitySubstanceAdministrationMoodCode() {
-		OperationsTestCase<PlanOfCareActivitySubstanceAdministration> validatePlanOfCareActivitySubstanceAdministrationMoodCodeTestCase = new OperationsTestCase<PlanOfCareActivitySubstanceAdministration>(
-			"validatePlanOfCareActivitySubstanceAdministrationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PlanOfCareActivitySubstanceAdministration target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PlanOfCareActivitySubstanceAdministration target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PlanOfCareActivitySubstanceAdministrationOperations.validatePlanOfCareActivitySubstanceAdministrationMoodCode(
-					(PlanOfCareActivitySubstanceAdministration) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePlanOfCareActivitySubstanceAdministrationMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
