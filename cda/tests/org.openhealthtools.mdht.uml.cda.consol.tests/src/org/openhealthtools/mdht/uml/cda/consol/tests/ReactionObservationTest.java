@@ -13,14 +13,15 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ReactionObservation;
+import org.openhealthtools.mdht.uml.cda.consol.SeverityObservation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ReactionObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -409,7 +410,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateReactionObservationText() {
@@ -426,10 +427,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
-
-				ED text = DatatypesFactory.eINSTANCE.createED();
-				target.setText(text);
-
+				target.setText(DatatypesFactory.eINSTANCE.createED());
 			}
 
 			@Override
@@ -520,7 +518,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateReactionObservationValue() {
@@ -537,8 +535,10 @@ public class ReactionObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
-
+				target.getValues().clear();
 				CD value = DatatypesFactory.eINSTANCE.createCD();
+				value.setCodeSystem("2.16.840.1.113883.3.88.12.3221.7.4");
+				value.setCode("234422006");
 				target.getValues().add(value);
 
 			}
@@ -557,7 +557,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateReactionObservationSeverityObservation() {
@@ -575,6 +575,12 @@ public class ReactionObservationTest extends CDAValidationTest {
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
 
+				SeverityObservation observation = ConsolFactory.eINSTANCE.createSeverityObservation().init();
+				target.addObservation(observation);
+				for (org.openhealthtools.mdht.uml.cda.EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				}
+
 			}
 
 			@Override
@@ -591,7 +597,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateReactionObservationProcedureActivityProcedure() {
@@ -608,6 +614,12 @@ public class ReactionObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
+
+				SeverityObservation observation = ConsolFactory.eINSTANCE.createSeverityObservation().init();
+				target.addObservation(observation);
+				for (org.openhealthtools.mdht.uml.cda.EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				}
 
 			}
 

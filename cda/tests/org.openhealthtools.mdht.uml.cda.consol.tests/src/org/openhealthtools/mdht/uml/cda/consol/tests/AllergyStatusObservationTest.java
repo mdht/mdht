@@ -145,7 +145,7 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAllergyStatusObservationCode() {
@@ -162,9 +162,6 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyStatusObservation target) {
 				target.init();
-
-				CD cd = DatatypesFactory.eINSTANCE.createCD();
-				target.setCode(cd);
 
 			}
 
@@ -219,7 +216,7 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT 
 	*/
 	@Test
 	public void testValidateAllergyStatusObservationValue() {
@@ -238,6 +235,8 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD value = DatatypesFactory.eINSTANCE.createCD();
+				value.setCodeSystem("2.16.840.1.113883.6.96");
+				value.setCode("55561003");
 				target.getValues().add(value);
 
 			}

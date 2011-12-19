@@ -11,6 +11,8 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ProblemObservationOperations;
@@ -21,6 +23,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActClassObservation;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,9 +35,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemObservation#validateProblemObservationHasTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Has Text Reference</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemObservation#validateProblemObservationHasOnsetDate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Has Onset Date</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemObservation#validateProblemObservationHasResolutionDate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Has Resolution Date</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemObservation#validateProblemObservationHasUnknownResolutionDate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Has Unknown Resolution Date</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemObservation#validateProblemObservationHasTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Has Text Reference Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemObservation#validateProblemObservationAgeObservationInversion(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Age Observation Inversion</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemObservation#validateProblemObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemObservation#validateProblemObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemObservation#validateProblemObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Observation Mood Code</em>}</li>
@@ -60,7 +63,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProblemObservationHasTextReference() {
@@ -77,7 +80,9 @@ public class ProblemObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemObservation target) {
 				target.init();
-
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL("test"));
+				target.setText(txt);
 			}
 
 			@Override
@@ -97,10 +102,10 @@ public class ProblemObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateProblemObservationHasOnsetDate() {
-		OperationsTestCase<ProblemObservation> validateProblemObservationHasOnsetDateTestCase = new OperationsTestCase<ProblemObservation>(
-			"validateProblemObservationHasOnsetDate",
-			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_OBSERVATION_HAS_ONSET_DATE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateProblemObservationHasTextReferenceValue() {
+		OperationsTestCase<ProblemObservation> validateProblemObservationHasTextReferenceValueTestCase = new OperationsTestCase<ProblemObservation>(
+			"validateProblemObservationHasTextReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_OBSERVATION_HAS_TEXT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -112,86 +117,61 @@ public class ProblemObservationTest extends CDAValidationTest {
 			protected void updateToPass(ProblemObservation target) {
 				target.init();
 
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProblemObservationOperations.validateProblemObservationHasOnsetDate(
+				return ProblemObservationOperations.validateProblemObservationHasTextReferenceValue(
 					(ProblemObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateProblemObservationHasOnsetDateTestCase.doValidationTest();
+		validateProblemObservationHasTextReferenceValueTestCase.doValidationTest();
 	}
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
-	public void testValidateProblemObservationHasResolutionDate() {
-		OperationsTestCase<ProblemObservation> validateProblemObservationHasResolutionDateTestCase = new OperationsTestCase<ProblemObservation>(
-			"validateProblemObservationHasResolutionDate",
-			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_OBSERVATION_HAS_RESOLUTION_DATE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateProblemObservationAgeObservationInversion() {
+		OperationsTestCase<ProblemObservation> validateProblemObservationAgeObservationInversionTestCase = new OperationsTestCase<ProblemObservation>(
+			"validateProblemObservationAgeObservationInversion",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_OBSERVATION_AGE_OBSERVATION_INVERSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemObservation target) {
-
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setObservation(ConsolFactory.eINSTANCE.createAgeObservation());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected void updateToPass(ProblemObservation target) {
-				target.init();
-
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setObservation(ConsolFactory.eINSTANCE.createAgeObservation());
+				er.setInversionInd(true);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ProblemObservationOperations.validateProblemObservationHasResolutionDate(
+				return ProblemObservationOperations.validateProblemObservationAgeObservationInversion(
 					(ProblemObservation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateProblemObservationHasResolutionDateTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateProblemObservationHasUnknownResolutionDate() {
-		OperationsTestCase<ProblemObservation> validateProblemObservationHasUnknownResolutionDateTestCase = new OperationsTestCase<ProblemObservation>(
-			"validateProblemObservationHasUnknownResolutionDate",
-			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_OBSERVATION_HAS_UNKNOWN_RESOLUTION_DATE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProblemObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProblemObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProblemObservationOperations.validateProblemObservationHasUnknownResolutionDate(
-					(ProblemObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProblemObservationHasUnknownResolutionDateTestCase.doValidationTest();
+		validateProblemObservationAgeObservationInversionTestCase.doValidationTest();
 	}
 
 	/**
@@ -230,7 +210,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProblemObservationClassCode() {
@@ -247,7 +227,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemObservation target) {
 				target.init();
-
+				target.setClassCode(ActClassObservation.OBS);
 			}
 
 			@Override
@@ -298,7 +278,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProblemObservationNegationInd() {
@@ -315,7 +295,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemObservation target) {
 				target.init();
-
+				target.setNegationInd(true);
 			}
 
 			@Override
@@ -369,7 +349,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProblemObservationCode() {
@@ -388,6 +368,8 @@ public class ProblemObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCodeSystem("2.16.840.1.113883.6.96");
+				cd.setCode("404684003");
 				target.setCode(cd);
 
 			}
@@ -517,7 +499,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProblemObservationValue() {
@@ -536,6 +518,8 @@ public class ProblemObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD value = DatatypesFactory.eINSTANCE.createCD();
+				value.setCodeSystem("2.16.840.1.113883.6.96");
+				value.setCode("test");
 				target.getValues().add(value);
 
 			}
@@ -554,7 +538,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProblemObservationAgeObservation() {
@@ -571,7 +555,10 @@ public class ProblemObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemObservation target) {
 				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				er.setObservation(ConsolFactory.eINSTANCE.createAgeObservation());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -588,7 +575,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProblemObservationHealthStatusObservation() {
@@ -605,7 +592,10 @@ public class ProblemObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemObservation target) {
 				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+				er.setObservation(ConsolFactory.eINSTANCE.createHealthStatusObservation());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -622,7 +612,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProblemObservationProblemStatus() {
@@ -639,7 +629,10 @@ public class ProblemObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemObservation target) {
 				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+				er.setObservation(ConsolFactory.eINSTANCE.createProblemStatus());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
