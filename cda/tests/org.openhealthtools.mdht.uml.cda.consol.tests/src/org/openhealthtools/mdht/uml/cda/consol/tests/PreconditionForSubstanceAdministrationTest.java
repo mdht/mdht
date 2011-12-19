@@ -33,6 +33,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PreconditionForSubstanceAdministration#validatePreconditionForSubstanceAdministrationCriterionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Precondition For Substance Administration Criterion Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PreconditionForSubstanceAdministration#validatePreconditionForSubstanceAdministrationCriterionValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Precondition For Substance Administration Criterion Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PreconditionForSubstanceAdministration#validatePreconditionForSubstanceAdministrationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Precondition For Substance Administration Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PreconditionForSubstanceAdministration#validatePreconditionForSubstanceAdministrationCriterion(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Precondition For Substance Administration Criterion</em>}</li>
  * </ul>
  * </p>
  *
@@ -186,6 +187,40 @@ public class PreconditionForSubstanceAdministrationTest extends CDAValidationTes
 		};
 
 		validatePreconditionForSubstanceAdministrationTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePreconditionForSubstanceAdministrationCriterion() {
+		OperationsTestCase<PreconditionForSubstanceAdministration> validatePreconditionForSubstanceAdministrationCriterionTestCase = new OperationsTestCase<PreconditionForSubstanceAdministration>(
+			"validatePreconditionForSubstanceAdministrationCriterion",
+			operationsForOCL.getOCLValue("VALIDATE_PRECONDITION_FOR_SUBSTANCE_ADMINISTRATION_CRITERION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PreconditionForSubstanceAdministration target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PreconditionForSubstanceAdministration target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PreconditionForSubstanceAdministrationOperations.validatePreconditionForSubstanceAdministrationCriterion(
+					(PreconditionForSubstanceAdministration) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePreconditionForSubstanceAdministrationCriterionTestCase.doValidationTest();
 	}
 
 	/**

@@ -56,6 +56,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#validateMedicationCombinationMedicationMaxDoseQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Combination Medication Max Dose Quantity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#validateMedicationCombinationMedicationMedicationSeriesNumberObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Combination Medication Medication Series Number Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#validateMedicationCombinationMedicationMedicationStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Combination Medication Medication Status Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#validateMedicationCombinationMedicationPerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Combination Medication Performer</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#validateMedicationCombinationMedicationReactionObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Combination Medication Reaction Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#validateMedicationCombinationMedicationProductInstance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Combination Medication Product Instance</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationCombinationMedication#getMedicationSeriesNumberObservation() <em>Get Medication Series Number Observation</em>}</li>
@@ -1095,6 +1096,40 @@ public class MedicationCombinationMedicationTest extends CDAValidationTest {
 		};
 
 		validateMedicationCombinationMedicationMedicationStatusObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMedicationCombinationMedicationPerformer() {
+		OperationsTestCase<MedicationCombinationMedication> validateMedicationCombinationMedicationPerformerTestCase = new OperationsTestCase<MedicationCombinationMedication>(
+			"validateMedicationCombinationMedicationPerformer",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_COMBINATION_MEDICATION_PERFORMER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationCombinationMedication target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationCombinationMedication target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationCombinationMedicationOperations.validateMedicationCombinationMedicationPerformer(
+					(MedicationCombinationMedication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationCombinationMedicationPerformerTestCase.doValidationTest();
 	}
 
 	/**

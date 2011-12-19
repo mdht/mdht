@@ -37,6 +37,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Comment#validateCommentCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Comment#validateCommentText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Comment#validateCommentStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Comment#validateCommentAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Author</em>}</li>
  * </ul>
  * </p>
  *
@@ -375,6 +376,38 @@ public class CommentTest extends CDAValidationTest {
 		};
 
 		validateCommentStatusCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateCommentAuthor() {
+		OperationsTestCase<Comment> validateCommentAuthorTestCase = new OperationsTestCase<Comment>(
+			"validateCommentAuthor",
+			operationsForOCL.getOCLValue("VALIDATE_COMMENT_AUTHOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+
+			@Override
+			protected void updateToFail(Comment target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Comment target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CommentOperations.validateCommentAuthor((Comment) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCommentAuthorTestCase.doValidationTest();
 	}
 
 	/**

@@ -31,6 +31,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerFamilyHistoryObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Family History Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerSubject(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Subject</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#getFamilyHistoryObservations() <em>Get Family History Observations</em>}</li>
  * </ul>
  * </p>
@@ -211,6 +212,40 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 		};
 
 		validateFamilyHistoryOrganizerFamilyHistoryObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateFamilyHistoryOrganizerSubject() {
+		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerSubjectTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
+			"validateFamilyHistoryOrganizerSubject",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_SUBJECT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistoryOrganizer target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistoryOrganizer target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerSubject(
+					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryOrganizerSubjectTestCase.doValidationTest();
 	}
 
 	/**
