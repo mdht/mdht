@@ -41,6 +41,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VitalSignObservation#validateVitalSignObservationMethodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Method Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VitalSignObservation#validateVitalSignObservationTargetSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Target Site Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VitalSignObservation#validateVitalSignObservationText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.VitalSignObservation#validateVitalSignObservationAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Author</em>}</li>
  * </ul>
  * </p>
  *
@@ -478,6 +479,40 @@ public class VitalSignObservationTest extends CDAValidationTest {
 		};
 
 		validateVitalSignObservationTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateVitalSignObservationAuthor() {
+		OperationsTestCase<VitalSignObservation> validateVitalSignObservationAuthorTestCase = new OperationsTestCase<VitalSignObservation>(
+			"validateVitalSignObservationAuthor",
+			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_AUTHOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(VitalSignObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(VitalSignObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return VitalSignObservationOperations.validateVitalSignObservationAuthor(
+					(VitalSignObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateVitalSignObservationAuthorTestCase.doValidationTest();
 	}
 
 	/**

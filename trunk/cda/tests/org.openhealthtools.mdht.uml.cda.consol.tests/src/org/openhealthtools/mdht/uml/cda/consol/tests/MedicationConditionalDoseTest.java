@@ -56,6 +56,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#validateMedicationConditionalDoseMaxDoseQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Conditional Dose Max Dose Quantity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#validateMedicationConditionalDoseMedicationSeriesNumberObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Conditional Dose Medication Series Number Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#validateMedicationConditionalDoseMedicationStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Conditional Dose Medication Status Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#validateMedicationConditionalDosePerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Conditional Dose Performer</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#validateMedicationConditionalDoseReactionObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Conditional Dose Reaction Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#validateMedicationConditionalDoseProductInstance(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Conditional Dose Product Instance</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationConditionalDose#getMedicationSeriesNumberObservation() <em>Get Medication Series Number Observation</em>}</li>
@@ -1095,6 +1096,40 @@ public class MedicationConditionalDoseTest extends CDAValidationTest {
 		};
 
 		validateMedicationConditionalDoseMedicationStatusObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMedicationConditionalDosePerformer() {
+		OperationsTestCase<MedicationConditionalDose> validateMedicationConditionalDosePerformerTestCase = new OperationsTestCase<MedicationConditionalDose>(
+			"validateMedicationConditionalDosePerformer",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_CONDITIONAL_DOSE_PERFORMER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationConditionalDose target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationConditionalDose target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationConditionalDoseOperations.validateMedicationConditionalDosePerformer(
+					(MedicationConditionalDose) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationConditionalDosePerformerTestCase.doValidationTest();
 	}
 
 	/**

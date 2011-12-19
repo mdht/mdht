@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Organization</em>}</li>
  * </ul>
  * </p>
  *
@@ -136,6 +137,40 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 		};
 
 		validateImmunizationMedicationInformationIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateImmunizationMedicationInformationOrganization() {
+		OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationOrganizationTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
+			"validateImmunizationMedicationInformationOrganization",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ImmunizationMedicationInformation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ImmunizationMedicationInformation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ImmunizationMedicationInformationOperations.validateImmunizationMedicationInformationOrganization(
+					(ImmunizationMedicationInformation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateImmunizationMedicationInformationOrganizationTestCase.doValidationTest();
 	}
 
 	/**

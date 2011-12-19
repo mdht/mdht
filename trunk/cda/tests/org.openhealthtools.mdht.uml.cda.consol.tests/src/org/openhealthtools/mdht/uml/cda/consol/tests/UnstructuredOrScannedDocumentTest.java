@@ -62,6 +62,12 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredOrScannedDocument#validateUnstructuredOrScannedDocumentLanguageCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Or Scanned Document Language Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredOrScannedDocument#validateUnstructuredOrScannedDocumentTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Or Scanned Document Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredOrScannedDocument#validateUnstructuredOrScannedDocumentTypeId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Or Scanned Document Type Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredOrScannedDocument#validateUnstructuredOrScannedDocumentScanOriginalAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Or Scanned Document Scan Original Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredOrScannedDocument#validateUnstructuredOrScannedDocumentScanningDevice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Or Scanned Document Scanning Device</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredOrScannedDocument#validateUnstructuredOrScannedDocumentScanDataEnterer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Or Scanned Document Scan Data Enterer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredOrScannedDocument#validateUnstructuredOrScannedDocumentLegalAuthenticator(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Or Scanned Document Legal Authenticator</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredOrScannedDocument#validateUnstructuredOrScannedDocumentDocumentationOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Or Scanned Document Documentation Of</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredOrScannedDocument#validateUnstructuredOrScannedDocumentCustodian(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Or Scanned Document Custodian</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.UnstructuredOrScannedDocument#validateGeneralHeaderConstraintsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Template Id</em>}</li>
  * </ul>
  * </p>
@@ -1265,6 +1271,210 @@ public class UnstructuredOrScannedDocumentTest extends CDAValidationTest {
 		};
 
 		validateUnstructuredOrScannedDocumentTypeIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateUnstructuredOrScannedDocumentScanOriginalAuthor() {
+		OperationsTestCase<UnstructuredOrScannedDocument> validateUnstructuredOrScannedDocumentScanOriginalAuthorTestCase = new OperationsTestCase<UnstructuredOrScannedDocument>(
+			"validateUnstructuredOrScannedDocumentScanOriginalAuthor",
+			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_OR_SCANNED_DOCUMENT_SCAN_ORIGINAL_AUTHOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(UnstructuredOrScannedDocument target) {
+
+			}
+
+			@Override
+			protected void updateToPass(UnstructuredOrScannedDocument target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return UnstructuredOrScannedDocumentOperations.validateUnstructuredOrScannedDocumentScanOriginalAuthor(
+					(UnstructuredOrScannedDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateUnstructuredOrScannedDocumentScanOriginalAuthorTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateUnstructuredOrScannedDocumentScanningDevice() {
+		OperationsTestCase<UnstructuredOrScannedDocument> validateUnstructuredOrScannedDocumentScanningDeviceTestCase = new OperationsTestCase<UnstructuredOrScannedDocument>(
+			"validateUnstructuredOrScannedDocumentScanningDevice",
+			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_OR_SCANNED_DOCUMENT_SCANNING_DEVICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(UnstructuredOrScannedDocument target) {
+
+			}
+
+			@Override
+			protected void updateToPass(UnstructuredOrScannedDocument target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return UnstructuredOrScannedDocumentOperations.validateUnstructuredOrScannedDocumentScanningDevice(
+					(UnstructuredOrScannedDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateUnstructuredOrScannedDocumentScanningDeviceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateUnstructuredOrScannedDocumentScanDataEnterer() {
+		OperationsTestCase<UnstructuredOrScannedDocument> validateUnstructuredOrScannedDocumentScanDataEntererTestCase = new OperationsTestCase<UnstructuredOrScannedDocument>(
+			"validateUnstructuredOrScannedDocumentScanDataEnterer",
+			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_OR_SCANNED_DOCUMENT_SCAN_DATA_ENTERER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(UnstructuredOrScannedDocument target) {
+
+			}
+
+			@Override
+			protected void updateToPass(UnstructuredOrScannedDocument target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return UnstructuredOrScannedDocumentOperations.validateUnstructuredOrScannedDocumentScanDataEnterer(
+					(UnstructuredOrScannedDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateUnstructuredOrScannedDocumentScanDataEntererTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateUnstructuredOrScannedDocumentLegalAuthenticator() {
+		OperationsTestCase<UnstructuredOrScannedDocument> validateUnstructuredOrScannedDocumentLegalAuthenticatorTestCase = new OperationsTestCase<UnstructuredOrScannedDocument>(
+			"validateUnstructuredOrScannedDocumentLegalAuthenticator",
+			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_OR_SCANNED_DOCUMENT_LEGAL_AUTHENTICATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(UnstructuredOrScannedDocument target) {
+
+			}
+
+			@Override
+			protected void updateToPass(UnstructuredOrScannedDocument target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return UnstructuredOrScannedDocumentOperations.validateUnstructuredOrScannedDocumentLegalAuthenticator(
+					(UnstructuredOrScannedDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateUnstructuredOrScannedDocumentLegalAuthenticatorTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateUnstructuredOrScannedDocumentDocumentationOf() {
+		OperationsTestCase<UnstructuredOrScannedDocument> validateUnstructuredOrScannedDocumentDocumentationOfTestCase = new OperationsTestCase<UnstructuredOrScannedDocument>(
+			"validateUnstructuredOrScannedDocumentDocumentationOf",
+			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_OR_SCANNED_DOCUMENT_DOCUMENTATION_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(UnstructuredOrScannedDocument target) {
+
+			}
+
+			@Override
+			protected void updateToPass(UnstructuredOrScannedDocument target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return UnstructuredOrScannedDocumentOperations.validateUnstructuredOrScannedDocumentDocumentationOf(
+					(UnstructuredOrScannedDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateUnstructuredOrScannedDocumentDocumentationOfTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateUnstructuredOrScannedDocumentCustodian() {
+		OperationsTestCase<UnstructuredOrScannedDocument> validateUnstructuredOrScannedDocumentCustodianTestCase = new OperationsTestCase<UnstructuredOrScannedDocument>(
+			"validateUnstructuredOrScannedDocumentCustodian",
+			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_OR_SCANNED_DOCUMENT_CUSTODIAN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(UnstructuredOrScannedDocument target) {
+
+			}
+
+			@Override
+			protected void updateToPass(UnstructuredOrScannedDocument target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return UnstructuredOrScannedDocumentOperations.validateUnstructuredOrScannedDocumentCustodian(
+					(UnstructuredOrScannedDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateUnstructuredOrScannedDocumentCustodianTestCase.doValidationTest();
 	}
 
 	/**
