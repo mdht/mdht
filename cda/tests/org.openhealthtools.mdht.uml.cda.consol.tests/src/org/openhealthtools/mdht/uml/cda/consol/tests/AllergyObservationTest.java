@@ -11,6 +11,8 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.consol.AllergyObservation;
 import org.openhealthtools.mdht.uml.cda.consol.AllergyStatusObservation;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
@@ -73,22 +75,19 @@ public class AllergyObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(AllergyObservation target) {
 				target.init();
-				// EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				// er.setAct(ConsolFactory.eINSTANCE.createInstructions());
-				// target.getEntryRelationships().add(er);
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setObservation(ConsolFactory.eINSTANCE.createAllergyStatusObservation());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected void updateToPass(AllergyObservation target) {
 				target.init();
-				/*
-				 * target.getEntryRelationships().clear();
-				 * EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				 * er.setInversionInd(true);
-				 * er.setAct(ConsolFactory.eINSTANCE.createInstructions());
-				 * target.getEntryRelationships().add(er);
-				 */
-
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setObservation(ConsolFactory.eINSTANCE.createAllergyStatusObservation());
+				er.setInversionInd(true);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -105,7 +104,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAllergyObservationReactionInversionIndicator() {
@@ -116,12 +115,20 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AllergyObservation target) {
-
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setObservation(ConsolFactory.eINSTANCE.createReactionObservation());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected void updateToPass(AllergyObservation target) {
 				target.init();
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setObservation(ConsolFactory.eINSTANCE.createReactionObservation());
+				er.setInversionInd(true);
+				target.getEntryRelationships().add(er);
 
 			}
 
@@ -139,7 +146,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateAllergyObservationSeverityInversionIndicator() {
@@ -150,12 +157,20 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AllergyObservation target) {
-
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setObservation(ConsolFactory.eINSTANCE.createSeverityObservation());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected void updateToPass(AllergyObservation target) {
 				target.init();
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setObservation(ConsolFactory.eINSTANCE.createSeverityObservation());
+				er.setInversionInd(true);
+				target.getEntryRelationships().add(er);
 
 			}
 
