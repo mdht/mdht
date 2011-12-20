@@ -186,7 +186,7 @@ public class ProblemSectionEntriesOptionalTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProblemSectionEntriesOptionalProblemConcern() {
@@ -203,7 +203,7 @@ public class ProblemSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemSectionEntriesOptional target) {
 				target.init();
-
+				target.addAct(ConsolFactory.eINSTANCE.createProblemConcernAct());
 			}
 
 			@Override

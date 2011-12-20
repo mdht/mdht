@@ -519,7 +519,7 @@ public class ProblemObservationTest extends CDAValidationTest {
 
 				CD value = DatatypesFactory.eINSTANCE.createCD();
 				value.setCodeSystem("2.16.840.1.113883.6.96");
-				value.setCode("test");
+				value.setCode("234422006");
 				target.getValues().add(value);
 
 			}

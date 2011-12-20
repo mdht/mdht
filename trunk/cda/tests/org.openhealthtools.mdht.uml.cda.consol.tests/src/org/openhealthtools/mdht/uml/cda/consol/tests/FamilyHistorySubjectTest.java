@@ -18,6 +18,7 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySubject;
 import org.openhealthtools.mdht.uml.cda.consol.operations.FamilyHistorySubjectOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.BL;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
@@ -327,7 +328,7 @@ public class FamilyHistorySubjectTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateFamilyHistorySubjectRelatedSubjectSubjectDeceasedInd() {
@@ -338,12 +339,20 @@ public class FamilyHistorySubjectTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(FamilyHistorySubject target) {
-
+				RelatedSubject rs = CDAFactory.eINSTANCE.createRelatedSubject();
+				SubjectPerson sub = CDAFactory.eINSTANCE.createSubjectPerson();
+				rs.setSubject(sub);
+				target.setRelatedSubject(rs);
 			}
 
 			@Override
 			protected void updateToPass(FamilyHistorySubject target) {
-				target.init();
+				RelatedSubject rs = CDAFactory.eINSTANCE.createRelatedSubject();
+				SubjectPerson sub = CDAFactory.eINSTANCE.createSubjectPerson();
+				BL di = DatatypesFactory.eINSTANCE.createBL();
+				sub.setSDTCDeceasedInd(di);
+				rs.setSubject(sub);
+				target.setRelatedSubject(rs);
 
 			}
 
@@ -372,6 +381,7 @@ public class FamilyHistorySubjectTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(FamilyHistorySubject target) {
+				target.init();
 				RelatedSubject rs = CDAFactory.eINSTANCE.createRelatedSubject();
 				SubjectPerson sub = CDAFactory.eINSTANCE.createSubjectPerson();
 				rs.setSubject(sub);

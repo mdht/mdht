@@ -24,6 +24,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeMedicationsSection#validateHospitalDischargeMedicationsSectionDischargeMedication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Discharge Medications Section Discharge Medication</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeMedicationsSection#getConsolDischargeMedications() <em>Get Consol Discharge Medications</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeMedicationsSection#validateHospitalDischargeMedicationsSectionEntriesOptionalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Discharge Medications Section Entries Optional Template Id</em>}</li>
  * </ul>
  * </p>
@@ -32,6 +34,52 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class HospitalDischargeMedicationsSectionTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateHospitalDischargeMedicationsSectionDischargeMedication() {
+		OperationsTestCase<HospitalDischargeMedicationsSection> validateHospitalDischargeMedicationsSectionDischargeMedicationTestCase = new OperationsTestCase<HospitalDischargeMedicationsSection>(
+			"validateHospitalDischargeMedicationsSectionDischargeMedication",
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_DISCHARGE_MEDICATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HospitalDischargeMedicationsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HospitalDischargeMedicationsSection target) {
+				target.init();
+				target.addAct(ConsolFactory.eINSTANCE.createDischargeMedication());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HospitalDischargeMedicationsSectionOperations.validateHospitalDischargeMedicationsSectionDischargeMedication(
+					(HospitalDischargeMedicationsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHospitalDischargeMedicationsSectionDischargeMedicationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetConsolDischargeMedications() {
+
+		HospitalDischargeMedicationsSection target = objectFactory.create();
+		target.getConsolDischargeMedications();
+
+	}
 
 	/**
 	*

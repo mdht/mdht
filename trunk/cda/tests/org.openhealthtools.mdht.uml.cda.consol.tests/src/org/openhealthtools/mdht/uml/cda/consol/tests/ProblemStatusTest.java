@@ -28,6 +28,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemStatus#validateProblemStatusTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Status Text Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemStatus#validateProblemStatusTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Status Text Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemStatus#validateProblemStatusTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Status Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemStatus#validateProblemStatusClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Status Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemStatus#validateProblemStatusMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Status Mood Code</em>}</li>
@@ -42,6 +44,79 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  */
 
 public class ProblemStatusTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateProblemStatusTextReference() {
+		OperationsTestCase<ProblemStatus> validateProblemStatusTextReferenceTestCase = new OperationsTestCase<ProblemStatus>(
+			"validateProblemStatusTextReference",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProblemStatus target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProblemStatus target) {
+				target.init();
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL("test"));
+				target.setText(txt);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProblemStatusOperations.validateProblemStatusTextReference(
+					(ProblemStatus) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProblemStatusTextReferenceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProblemStatusTextReferenceValue() {
+		OperationsTestCase<ProblemStatus> validateProblemStatusTextReferenceValueTestCase = new OperationsTestCase<ProblemStatus>(
+			"validateProblemStatusTextReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_TEXT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProblemStatus target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProblemStatus target) {
+				target.init();
+
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProblemStatusOperations.validateProblemStatusTextReferenceValue(
+					(ProblemStatus) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProblemStatusTextReferenceValueTestCase.doValidationTest();
+	}
 
 	/**
 	*

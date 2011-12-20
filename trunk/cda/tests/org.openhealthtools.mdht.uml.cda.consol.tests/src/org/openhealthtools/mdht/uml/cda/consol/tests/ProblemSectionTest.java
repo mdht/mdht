@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemSection;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.ProblemSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -29,6 +24,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#validateProblemSectionProblemConcern(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Section Problem Concern</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#getConsolProblemConcerns() <em>Get Consol Problem Concerns</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemSection#validateProblemSectionEntriesOptionalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Section Entries Optional Template Id</em>}</li>
  * </ul>
  * </p>
@@ -37,6 +34,52 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class ProblemSectionTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateProblemSectionProblemConcern() {
+		OperationsTestCase<ProblemSection> validateProblemSectionProblemConcernTestCase = new OperationsTestCase<ProblemSection>(
+			"validateProblemSectionProblemConcern",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_SECTION_PROBLEM_CONCERN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProblemSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProblemSection target) {
+				target.init();
+				target.addAct(ConsolFactory.eINSTANCE.createProblemConcernAct());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProblemSectionOperations.validateProblemSectionProblemConcern(
+					(ProblemSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProblemSectionProblemConcernTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetConsolProblemConcerns() {
+
+		ProblemSection target = objectFactory.create();
+		target.getConsolProblemConcerns();
+
+	}
 
 	/**
 	*

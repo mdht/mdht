@@ -19,6 +19,7 @@ import org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityProcedure;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ProcedureActivityProcedureOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
@@ -611,7 +612,7 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateProcedureActivityProcedurePriorityCode() {
@@ -628,7 +629,8 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityProcedure target) {
 				target.init();
-
+				CE pc = DatatypesFactory.eINSTANCE.createCE();
+				target.setPriorityCode(pc);
 			}
 
 			@Override
