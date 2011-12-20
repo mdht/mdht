@@ -11,10 +11,14 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ChiefComplaintSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,8 +30,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection#validateChiefComplaintSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chief Complaint Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection#validateChiefComplaintSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chief Complaint Section Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection#validateChiefComplaintSectionCondition(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chief Complaint Section Condition</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection#getCondition() <em>Get Condition</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection#validateChiefComplaintSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chief Complaint Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection#validateChiefComplaintSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chief Complaint Section Title</em>}</li>
  * </ul>
  * </p>
  *
@@ -109,10 +113,10 @@ public class ChiefComplaintSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateChiefComplaintSectionCondition() {
-		OperationsTestCase<ChiefComplaintSection> validateChiefComplaintSectionConditionTestCase = new OperationsTestCase<ChiefComplaintSection>(
-			"validateChiefComplaintSectionCondition",
-			operationsForOCL.getOCLValue("VALIDATE_CHIEF_COMPLAINT_SECTION_CONDITION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateChiefComplaintSectionText() {
+		OperationsTestCase<ChiefComplaintSection> validateChiefComplaintSectionTextTestCase = new OperationsTestCase<ChiefComplaintSection>(
+			"validateChiefComplaintSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_CHIEF_COMPLAINT_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -124,18 +128,21 @@ public class ChiefComplaintSectionTest extends CDAValidationTest {
 			protected void updateToPass(ChiefComplaintSection target) {
 				target.init();
 
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ChiefComplaintSectionOperations.validateChiefComplaintSectionCondition(
+				return ChiefComplaintSectionOperations.validateChiefComplaintSectionText(
 					(ChiefComplaintSection) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateChiefComplaintSectionConditionTestCase.doValidationTest();
+		validateChiefComplaintSectionTextTestCase.doValidationTest();
 	}
 
 	/**
@@ -143,11 +150,36 @@ public class ChiefComplaintSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetCondition() {
+	public void testValidateChiefComplaintSectionTitle() {
+		OperationsTestCase<ChiefComplaintSection> validateChiefComplaintSectionTitleTestCase = new OperationsTestCase<ChiefComplaintSection>(
+			"validateChiefComplaintSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_CHIEF_COMPLAINT_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-		ChiefComplaintSection target = objectFactory.create();
-		target.getCondition();
+			@Override
+			protected void updateToFail(ChiefComplaintSection target) {
 
+			}
+
+			@Override
+			protected void updateToPass(ChiefComplaintSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ChiefComplaintSectionOperations.validateChiefComplaintSectionTitle(
+					(ChiefComplaintSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateChiefComplaintSectionTitleTestCase.doValidationTest();
 	}
 
 	/**

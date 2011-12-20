@@ -9,17 +9,15 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.DischargeMedication;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.DischargeMedicationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,7 +43,7 @@ public class DischargeMedicationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateDischargeMedicationMedicationActivity() {
@@ -62,7 +60,10 @@ public class DischargeMedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeMedication target) {
 				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity());
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
