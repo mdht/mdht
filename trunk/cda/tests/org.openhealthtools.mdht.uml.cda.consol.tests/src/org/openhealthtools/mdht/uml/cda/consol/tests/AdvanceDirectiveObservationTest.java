@@ -499,7 +499,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveObservationAdvanceDirectiveObservationVerifierTemplateId() {
@@ -516,6 +516,8 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
 				target.init();
+
+				target.getParticipants().add(ConsolFactory.eINSTANCE.createAdvanceDirectiveObservationVerifier().init());
 
 			}
 
