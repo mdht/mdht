@@ -15,6 +15,7 @@ package org.openhealthtools.mdht.uml.edit.provider;
 import java.util.List;
 import java.util.Vector;
 
+import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.impl.BasicNotifierImpl;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -29,14 +30,14 @@ public class SimpleListNotifier extends BasicNotifierImpl {
 	 * The list of {@link org.eclipse.emf.common.notify.Adapter}s
 	 * associated with the notifier.
 	 */
-	protected BasicEList eAdapters;
+	protected BasicEList<Adapter> eAdapters;
 
-	private List members = new Vector();
+	private List<Object> members = new Vector<Object>();
 
 	public SimpleListNotifier() {
 	}
 
-	public List getMembers() {
+	public List<Object> getMembers() {
 		return members;
 	}
 
@@ -54,15 +55,15 @@ public class SimpleListNotifier extends BasicNotifierImpl {
 	}
 
 	@Override
-	public EList eAdapters() {
+	public EList<Adapter> eAdapters() {
 		if (eAdapters == null) {
-			eAdapters = new EAdapterList(this);
+			eAdapters = new EAdapterList<Adapter>(this);
 		}
 		return eAdapters;
 	}
 
 	@Override
-	protected BasicEList eBasicAdapters() {
+	protected BasicEList<Adapter> eBasicAdapters() {
 		return eAdapters;
 	}
 
