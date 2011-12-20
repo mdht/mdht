@@ -48,7 +48,6 @@ import org.eclipse.emf.edit.ui.EMFEditUIPlugin;
 import org.eclipse.emf.edit.ui.action.ControlAction;
 import org.eclipse.emf.edit.ui.action.CopyAction;
 import org.eclipse.emf.edit.ui.action.CutAction;
-import org.eclipse.emf.edit.ui.action.DeleteAction;
 import org.eclipse.emf.edit.ui.action.LoadResourceAction;
 import org.eclipse.emf.edit.ui.action.PasteAction;
 import org.eclipse.emf.edit.ui.action.RedoAction;
@@ -650,7 +649,7 @@ public class EditCommandsFactory implements IPropertyListener {
 	/**
 	 * This is the action used to implement delete.
 	 */
-	protected DeleteAction deleteAction;
+	protected DeleteUMLAction deleteAction;
 
 	/**
 	 * This is the action used to implement cut.
@@ -704,7 +703,7 @@ public class EditCommandsFactory implements IPropertyListener {
 
 		ISharedImages sharedImages = PlatformUI.getWorkbench().getSharedImages();
 
-		deleteAction = new DeleteUMLAction(editingDomain, removeAllReferencesOnDelete()) {
+		deleteAction = new DeleteUMLAction(editingDomain) {
 			@Override
 			public boolean updateSelection(IStructuredSelection selection) {
 				return super.updateSelection(unwrap(selection));

@@ -234,6 +234,10 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 		}
 
 		public ISelection getSelection() {
+			if (fControl.isDisposed()) {
+				setDefaultSelection();
+			}
+
 			if (fControl instanceof Tree) {
 				TreeItem[] selection = ((Tree) fControl).getSelection();
 				Object[] values = new Object[selection.length];
@@ -256,6 +260,7 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 			fListeners.remove(listener);
 		}
 
+		@SuppressWarnings("unchecked")
 		public void setSelection(ISelection selection) {
 			SimpleListNotifier rootList = new SimpleListNotifier();
 			rootList.getMembers().addAll(((IStructuredSelection) selection).toList());
@@ -281,6 +286,9 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 
 				getSite().getShell().getDisplay().asyncExec(new Runnable() {
 					public void run() {
+						// refresh the table, primarily for Delete
+						refresh();
+
 						// TODO this fires even if change did not originate
 						// in this editor
 						if (propertySheetPage != null) {
@@ -396,6 +404,9 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 	}
 
 	void refresh() {
+		// get current selection, which may update for deleted objects
+		getSite().getSelectionProvider().getSelection();
+
 		treeViewerWithColumns.refresh();
 	}
 
