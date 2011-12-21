@@ -28,17 +28,12 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionClinicalStatements(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Clinical Statements</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Observation Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionObservationCodeValueSet(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Observation Code Value Set</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionValueDatatype(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Value Datatype</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionIcfCodeSystem(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Icf Code System</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionProblemStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Problem Status Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionResultStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Result Status Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Problem Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionResultObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Result Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getProblemObservation() <em>Get Problem Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getResultObservation() <em>Get Result Observation</em>}</li>
  * </ul>
@@ -48,244 +43,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  */
 
 public class FunctionalStatusSectionTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFunctionalStatusSectionClinicalStatements() {
-		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionClinicalStatementsTestCase = new OperationsTestCase<FunctionalStatusSection>(
-			"validateFunctionalStatusSectionClinicalStatements",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_CLINICAL_STATEMENTS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionClinicalStatements(
-					(FunctionalStatusSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusSectionClinicalStatementsTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateFunctionalStatusSectionObservationCode() {
-		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionObservationCodeTestCase = new OperationsTestCase<FunctionalStatusSection>(
-			"validateFunctionalStatusSectionObservationCode",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionObservationCode(
-					(FunctionalStatusSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusSectionObservationCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFunctionalStatusSectionObservationCodeValueSet() {
-		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionObservationCodeValueSetTestCase = new OperationsTestCase<FunctionalStatusSection>(
-			"validateFunctionalStatusSectionObservationCodeValueSet",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_OBSERVATION_CODE_VALUE_SET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionObservationCodeValueSet(
-					(FunctionalStatusSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusSectionObservationCodeValueSetTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFunctionalStatusSectionValueDatatype() {
-		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionValueDatatypeTestCase = new OperationsTestCase<FunctionalStatusSection>(
-			"validateFunctionalStatusSectionValueDatatype",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_VALUE_DATATYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionValueDatatype(
-					(FunctionalStatusSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusSectionValueDatatypeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFunctionalStatusSectionIcfCodeSystem() {
-		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionIcfCodeSystemTestCase = new OperationsTestCase<FunctionalStatusSection>(
-			"validateFunctionalStatusSectionIcfCodeSystem",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_ICF_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionIcfCodeSystem(
-					(FunctionalStatusSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusSectionIcfCodeSystemTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFunctionalStatusSectionProblemStatusObservation() {
-		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionProblemStatusObservationTestCase = new OperationsTestCase<FunctionalStatusSection>(
-			"validateFunctionalStatusSectionProblemStatusObservation",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_PROBLEM_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionProblemStatusObservation(
-					(FunctionalStatusSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusSectionProblemStatusObservationTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFunctionalStatusSectionResultStatusObservation() {
-		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionResultStatusObservationTestCase = new OperationsTestCase<FunctionalStatusSection>(
-			"validateFunctionalStatusSectionResultStatusObservation",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_RESULT_STATUS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FunctionalStatusSection target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FunctionalStatusSection target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionResultStatusObservation(
-					(FunctionalStatusSection) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFunctionalStatusSectionResultStatusObservationTestCase.doValidationTest();
-	}
 
 	/**
 	*
@@ -427,6 +184,74 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 		};
 
 		validateFunctionalStatusSectionTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateFunctionalStatusSectionProblemObservation() {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionProblemObservationTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionProblemObservation",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+				target.init();
+				target.addObservation(ConsolFactory.eINSTANCE.createProblemObservation());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionProblemObservation(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFunctionalStatusSectionProblemObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateFunctionalStatusSectionResultObservation() {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionResultObservationTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionResultObservation",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_RESULT_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+				target.init();
+				target.addObservation(ConsolFactory.eINSTANCE.createResultObservation());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionResultObservation(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFunctionalStatusSectionResultObservationTestCase.doValidationTest();
 	}
 
 	/**

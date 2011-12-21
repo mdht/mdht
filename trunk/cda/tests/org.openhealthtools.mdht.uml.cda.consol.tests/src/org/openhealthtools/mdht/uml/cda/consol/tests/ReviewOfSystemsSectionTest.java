@@ -11,10 +11,14 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ReviewOfSystemsSection;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ReviewOfSystemsSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +30,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReviewOfSystemsSection#validateReviewOfSystemsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Review Of Systems Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReviewOfSystemsSection#validateReviewOfSystemsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Review Of Systems Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReviewOfSystemsSection#validateReviewOfSystemsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Review Of Systems Section Title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReviewOfSystemsSection#validateReviewOfSystemsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Review Of Systems Section Text</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,6 +106,80 @@ public class ReviewOfSystemsSectionTest extends CDAValidationTest {
 		};
 
 		validateReviewOfSystemsSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateReviewOfSystemsSectionTitle() {
+		OperationsTestCase<ReviewOfSystemsSection> validateReviewOfSystemsSectionTitleTestCase = new OperationsTestCase<ReviewOfSystemsSection>(
+			"validateReviewOfSystemsSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_REVIEW_OF_SYSTEMS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReviewOfSystemsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ReviewOfSystemsSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReviewOfSystemsSectionOperations.validateReviewOfSystemsSectionTitle(
+					(ReviewOfSystemsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateReviewOfSystemsSectionTitleTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateReviewOfSystemsSectionText() {
+		OperationsTestCase<ReviewOfSystemsSection> validateReviewOfSystemsSectionTextTestCase = new OperationsTestCase<ReviewOfSystemsSection>(
+			"validateReviewOfSystemsSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_REVIEW_OF_SYSTEMS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReviewOfSystemsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ReviewOfSystemsSection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReviewOfSystemsSectionOperations.validateReviewOfSystemsSectionText(
+					(ReviewOfSystemsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateReviewOfSystemsSectionTextTestCase.doValidationTest();
 	}
 
 	/**

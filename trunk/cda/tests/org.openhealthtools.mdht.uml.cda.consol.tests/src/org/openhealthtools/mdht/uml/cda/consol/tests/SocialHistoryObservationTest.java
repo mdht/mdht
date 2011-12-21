@@ -20,6 +20,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,7 +50,7 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateSocialHistoryObservationOriginalText() {
@@ -60,15 +61,17 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SocialHistoryObservation target) {
-
+				target.init();
+				CD objCode = DatatypesFactory.eINSTANCE.createCD();
+				target.setCode(objCode);
 			}
 
 			@Override
 			protected void updateToPass(SocialHistoryObservation target) {
-				target.init();
-
-				ED text = DatatypesFactory.eINSTANCE.createED();
-				target.setText(text);
+				target.setClassCode(null);
+				CD objCode = DatatypesFactory.eINSTANCE.createCD();
+				objCode.setOriginalText(DatatypesFactory.eINSTANCE.createED());
+				target.setCode(objCode);
 
 			}
 
@@ -86,7 +89,7 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateSocialHistoryObservationReference() {
@@ -97,12 +100,23 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SocialHistoryObservation target) {
+				target.init();
+				CD objCode = DatatypesFactory.eINSTANCE.createCD();
+				ED objOrigText = DatatypesFactory.eINSTANCE.createED();
+				objCode.setOriginalText(objOrigText);
+				target.setCode(objCode);
 
 			}
 
 			@Override
 			protected void updateToPass(SocialHistoryObservation target) {
-				target.init();
+				CD objCode = DatatypesFactory.eINSTANCE.createCD();
+				ED objOrigText = DatatypesFactory.eINSTANCE.createED();
+				TEL objReference = DatatypesFactory.eINSTANCE.createTEL();
+				objReference.setValue("#test");
+				objOrigText.setReference(objReference);
+				objCode.setOriginalText(objOrigText);
+				target.setCode(objCode);
 
 			}
 
@@ -120,7 +134,7 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateSocialHistoryObservationReferenceValue() {
@@ -131,15 +145,44 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SocialHistoryObservation target) {
+				target.init();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				ED ot = DatatypesFactory.eINSTANCE.createED();
+				TEL ref = DatatypesFactory.eINSTANCE.createTEL();
+				ot.setReference(ref);
+				code.setOriginalText(ot);
+				target.setCode(code);
 
 			}
 
 			@Override
 			protected void updateToPass(SocialHistoryObservation target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				ED ot = DatatypesFactory.eINSTANCE.createED();
+				TEL ref = DatatypesFactory.eINSTANCE.createTEL();
+				ref.setValue("test");
+				ot.setReference(ref);
+				code.setOriginalText(ot);
+				target.setCode(code);
+				/*
+				 * //get the section that contains the entry(target)
+				 * Section containerSection = target.getSection();
+				 * StrucDocText text = containerSection.getText();
+				 * String textValue = text.getText();
+				 * Section section =
+				 * 
+				 * DatatypesFactory.eINSTANCE.
+				 * 
+				 * 
+				 * 
+				 * StrucDocText narrativeText = DatatypesFactory.eINSTANCE.
+				 * 
+				 * //self.getSection().text.getText(self.code.originalText.reference.value
+				 * //StrucDocText text = target.getSection().getText();
+				 * 
+				 * CD value = DatatypesFactory.eINSTANCE.createCD();
+				 * target.getValues().add(value);
+				 */
 
 			}
 
@@ -296,7 +339,7 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateSocialHistoryObservationCode() {
@@ -315,6 +358,8 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCodeSystem("2.16.840.1.113883.6.96");
+				cd.setCode("256235009");
 				target.setCode(cd);
 
 			}
@@ -333,7 +378,7 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated 
 	*/
 	@Test
 	public void testValidateSocialHistoryObservationStatusCode() {
