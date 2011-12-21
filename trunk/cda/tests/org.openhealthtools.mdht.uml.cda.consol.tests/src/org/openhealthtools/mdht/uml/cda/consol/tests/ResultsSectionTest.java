@@ -14,6 +14,7 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.ResultOrganizer;
 import org.openhealthtools.mdht.uml.cda.consol.ResultsSection;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ResultsSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
@@ -118,7 +119,7 @@ public class ResultsSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateResultsSectionResultOrganizer() {
@@ -135,7 +136,8 @@ public class ResultsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultsSection target) {
 				target.init();
-
+				ResultOrganizer org = ConsolFactory.eINSTANCE.createResultOrganizer();
+				target.addOrganizer(org);
 			}
 
 			@Override
