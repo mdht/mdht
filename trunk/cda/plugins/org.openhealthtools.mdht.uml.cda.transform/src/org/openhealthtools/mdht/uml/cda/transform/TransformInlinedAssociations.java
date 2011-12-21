@@ -86,6 +86,22 @@ public class TransformInlinedAssociations extends TransformAbstract {
 
 	}
 
+	private static String getInlineFilter(Class inlineClass) {
+		String filter = "";
+		for (Comment comment : inlineClass.getOwnedComments()) {
+			if (comment.getBody().startsWith("INLINE&")) {
+				String[] temp = comment.getBody().split("&");
+				if (temp.length == 2) {
+					filter = String.format("->select(%s)", temp[1]);
+				}
+				break;
+			}
+		}
+
+		return filter;
+
+	}
+
 	@Override
 	public Object caseAssociation(Association association) {
 
@@ -102,8 +118,9 @@ public class TransformInlinedAssociations extends TransformAbstract {
 						property.getClass_(), (Class) property.getType(),
 						CDAModelUtil.getValidationSeverity(association),
 						CDAModelUtil.getValidationMessage(association),
-						"self." + getPath(getCDAClass(property.getClass_()), (Class) property.getType(), property),
-						property.getClass_().getName(), constraints, property.getName());
+						"self." + getPath(getCDAClass(property.getClass_()), (Class) property.getType(), property) +
+								getInlineFilter((Class) property.getType()), property.getClass_().getName(),
+						constraints, property.getName());
 				}
 
 			}
