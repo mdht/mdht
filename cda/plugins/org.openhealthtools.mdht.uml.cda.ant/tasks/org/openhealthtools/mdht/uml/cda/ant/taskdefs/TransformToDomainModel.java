@@ -21,6 +21,7 @@ import org.apache.tools.ant.Project;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Package;
 import org.openhealthtools.mdht.uml.cda.transform.DomainTransformer;
 import org.openhealthtools.mdht.uml.cda.transform.TransformerOptions;
@@ -103,7 +104,9 @@ public class TransformToDomainModel extends CDAModelingSubTask {
 	private void transformToUML(IProgressMonitor monitor) {
 		Package defaultModel = getHL7ModelingTask().getDefaultModel();
 		Resource umlResource = defaultModel.eResource();
-		collapseFragments(umlResource);
+
+		// load all controlled resources, if used
+		EcoreUtil.resolveAll(umlResource.getResourceSet());
 
 		URI domainModelURI = null;
 		if (domainModelPath != null) {
@@ -178,15 +181,17 @@ public class TransformToDomainModel extends CDAModelingSubTask {
 		}
 
 		/* Save */
-		monitor.setTaskName("Saving domain model");
-		logInfo("Saving domain model: " + domainModelURI.toString());
+		if (transformerOptions.getDomainInterfacePackage() != null) {
+			monitor.setTaskName("Saving domain model");
+			logInfo("Saving domain model: " + domainModelURI.toString());
 
-		try {
-			Map<String, String> saveOptions = new HashMap<String, String>();
-			transformerOptions.getDomainInterfacePackage().eResource().save(saveOptions);
+			try {
+				Map<String, String> saveOptions = new HashMap<String, String>();
+				transformerOptions.getDomainInterfacePackage().eResource().save(saveOptions);
 
-		} catch (IOException e) {
-			throw new BuildException(e);
+			} catch (IOException e) {
+				throw new BuildException(e);
+			}
 		}
 
 	}
