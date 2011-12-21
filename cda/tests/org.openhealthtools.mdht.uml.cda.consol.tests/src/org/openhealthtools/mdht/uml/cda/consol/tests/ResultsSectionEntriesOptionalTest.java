@@ -14,9 +14,11 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.ResultOrganizer;
 import org.openhealthtools.mdht.uml.cda.consol.ResultsSectionEntriesOptional;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ResultsSectionEntriesOptionalOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
@@ -78,7 +80,7 @@ public class ResultsSectionEntriesOptionalTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateResultsSectionEntriesOptionalCode() {
@@ -89,12 +91,17 @@ public class ResultsSectionEntriesOptionalTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ResultsSectionEntriesOptional target) {
-
+				target.setCode(null);
 			}
 
 			@Override
 			protected void updateToPass(ResultsSectionEntriesOptional target) {
-				target.init();
+
+				CE code = DatatypesFactory.eINSTANCE.createCE();
+				code.setCodeSystem("2.16.840.1.113883.6.1");
+				code.setCode("30954-2");
+				code.setCodeSystemName("Relevant diagnostic tests and/or laboratory data");
+				target.setCode(code);
 
 			}
 
@@ -112,7 +119,7 @@ public class ResultsSectionEntriesOptionalTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateResultsSectionEntriesOptionalTitle() {
@@ -129,7 +136,6 @@ public class ResultsSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultsSectionEntriesOptional target) {
 				target.init();
-
 				ST title = DatatypesFactory.eINSTANCE.createST("title");
 				target.setTitle(title);
 
@@ -186,7 +192,7 @@ public class ResultsSectionEntriesOptionalTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateResultsSectionEntriesOptionalResultOrganizer() {
@@ -203,7 +209,8 @@ public class ResultsSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultsSectionEntriesOptional target) {
 				target.init();
-
+				ResultOrganizer org = ConsolFactory.eINSTANCE.createResultOrganizer();
+				target.addOrganizer(org);
 			}
 
 			@Override

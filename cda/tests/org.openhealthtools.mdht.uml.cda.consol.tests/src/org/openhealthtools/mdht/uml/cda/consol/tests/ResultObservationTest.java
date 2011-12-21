@@ -11,12 +11,16 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.Author;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.ObservationRange;
+import org.openhealthtools.mdht.uml.cda.ReferenceRange;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ResultObservation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ResultObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -37,7 +41,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ResultObservation#validateResultObservationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ResultObservation#validateResultObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ResultObservation#validateResultObservationText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Text</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ResultObservation#validateResultObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ResultObservation#validateResultObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ResultObservation#validateResultObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ResultObservation#validateResultObservationInterpretationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Interpretation Code</em>}</li>
@@ -53,7 +56,7 @@ public class ResultObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateResultObservationCodeValue() {
@@ -64,16 +67,20 @@ public class ResultObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
-
+				target.init();
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				// setting invalid codeSystem to cause failure
+				value.setCodeSystem("invalidCodeSystem");
+				target.setCode(value);
 			}
 
 			@Override
 			protected void updateToPass(ResultObservation target) {
-				target.init();
 
 				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
-
+				// setting valid codeSystem
+				value.setCodeSystem("2.16.840.1.113883.6.1");
+				target.setCode(value);
 			}
 
 			@Override
@@ -90,7 +97,7 @@ public class ResultObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateResultObservationNoObservationRangeCode() {
@@ -101,18 +108,31 @@ public class ResultObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
+				target.init();
+				ReferenceRange refRange = CDAFactory.eINSTANCE.createReferenceRange();
+				ObservationRange obsRange = CDAFactory.eINSTANCE.createObservationRange();
+				CD value = DatatypesFactory.eINSTANCE.createCD();
 
+				value.setCode("Test");
+				obsRange.setCode(value);
+				refRange.setObservationRange(obsRange);
+				target.getReferenceRanges().add(refRange);
 			}
 
 			@Override
 			protected void updateToPass(ResultObservation target) {
-				target.init();
+				ReferenceRange refRange = CDAFactory.eINSTANCE.createReferenceRange();
+				ObservationRange obsRange = CDAFactory.eINSTANCE.createObservationRange();
+				CD value = DatatypesFactory.eINSTANCE.createCD();
 
+				target.getReferenceRanges().clear();
+				obsRange.setCode(value);
+				refRange.setObservationRange(obsRange);
+				target.getReferenceRanges().add(refRange);
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
 				return ResultObservationOperations.validateResultObservationNoObservationRangeCode(
 					(ResultObservation) objectToTest, diagnostician, map);
 			}
@@ -124,7 +144,7 @@ public class ResultObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateResultObservationAuthorMultiplicity() {
@@ -135,13 +155,20 @@ public class ResultObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
+				target.init();
+				Author author1 = CDAFactory.eINSTANCE.createAuthor();
+				Author author2 = CDAFactory.eINSTANCE.createAuthor();
+
+				// adding two authors
+				target.getAuthors().add(author1);
+				target.getAuthors().add(author2);
 
 			}
 
 			@Override
 			protected void updateToPass(ResultObservation target) {
-				target.init();
 
+				target.getAuthors().clear();
 			}
 
 			@Override
@@ -192,7 +219,7 @@ public class ResultObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateResultObservationId() {
@@ -208,11 +235,9 @@ public class ResultObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(ResultObservation target) {
-				target.init();
 
 				II ii = DatatypesFactory.eINSTANCE.createII();
 				target.getIds().add(ii);
-
 			}
 
 			@Override
@@ -229,7 +254,7 @@ public class ResultObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateResultObservationCode() {
@@ -240,16 +265,14 @@ public class ResultObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ResultObservation target) {
-
+				target.setCode(null);
 			}
 
 			@Override
 			protected void updateToPass(ResultObservation target) {
 				target.init();
-
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				target.setCode(cd);
-
 			}
 
 			@Override
@@ -265,8 +288,8 @@ public class ResultObservationTest extends CDAValidationTest {
 	}
 
 	/**
-	*
-	* @generated
+	* check
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateResultObservationText() {
@@ -283,7 +306,6 @@ public class ResultObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultObservation target) {
 				target.init();
-
 				ED text = DatatypesFactory.eINSTANCE.createED();
 				target.setText(text);
 
@@ -303,44 +325,7 @@ public class ResultObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
-	*/
-	@Test
-	public void testValidateResultObservationStatusCode() {
-		OperationsTestCase<ResultObservation> validateResultObservationStatusCodeTestCase = new OperationsTestCase<ResultObservation>(
-			"validateResultObservationStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_RESULT_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ResultObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ResultObservation target) {
-				target.init();
-
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ResultObservationOperations.validateResultObservationStatusCode(
-					(ResultObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateResultObservationStatusCodeTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateResultObservationEffectiveTime() {
@@ -357,7 +342,6 @@ public class ResultObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultObservation target) {
 				target.init();
-
 				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
 				target.setEffectiveTime(ts);
 
@@ -377,7 +361,7 @@ public class ResultObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateResultObservationValue() {
@@ -394,7 +378,6 @@ public class ResultObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultObservation target) {
 				target.init();
-
 				CD value = DatatypesFactory.eINSTANCE.createCD();
 				target.getValues().add(value);
 
@@ -414,7 +397,7 @@ public class ResultObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateResultObservationInterpretationCode() {
@@ -431,7 +414,8 @@ public class ResultObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultObservation target) {
 				target.init();
-
+				CE interpCode = DatatypesFactory.eINSTANCE.createCE();
+				target.getInterpretationCodes().add(interpCode);
 			}
 
 			@Override
@@ -448,7 +432,7 @@ public class ResultObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateResultObservationMethodCode() {
@@ -465,6 +449,8 @@ public class ResultObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultObservation target) {
 				target.init();
+				CE methodCode = DatatypesFactory.eINSTANCE.createCE();
+				target.getMethodCodes().add(methodCode);
 
 			}
 
@@ -482,7 +468,8 @@ public class ResultObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
+	* TODO:Check
 	*/
 	@Test
 	public void testValidateResultObservationTargetSiteCode() {
@@ -494,11 +481,19 @@ public class ResultObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(ResultObservation target) {
 
+				target.init();
+				CD tsCode2 = DatatypesFactory.eINSTANCE.createCD();
+				target.getTargetSiteCodes().add(tsCode2);
+
 			}
 
 			@Override
 			protected void updateToPass(ResultObservation target) {
-				target.init();
+				target.getTargetSiteCodes().clear();
+				CE tsCode1 = DatatypesFactory.eINSTANCE.createCE();
+				target.getTargetSiteCodes().add(tsCode1);
+				CE tsCode3 = DatatypesFactory.eINSTANCE.createCE();
+				target.getTargetSiteCodes().add(tsCode3);
 
 			}
 
