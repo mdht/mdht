@@ -532,6 +532,18 @@ public abstract class CDAValidationTest {
 
 	protected abstract static class OperationsTestCase<ValidationTarget> extends CDAValidationTestCase {
 
+		private boolean skipFailsTest = false;
+
+		private boolean skipPassTest = false;
+
+		public void skipFailsTest() {
+			skipFailsTest = true;
+		}
+
+		public void skipPassTest() {
+			skipPassTest = true;
+		}
+
 		public abstract class PassTest {
 			abstract public void updateToPass(ValidationTarget target);
 		}
@@ -582,6 +594,10 @@ public abstract class CDAValidationTest {
 			xml = ENDTAGS[snippetType] + "<br/>" + xml + "<br/>" + ENDTAGS[snippetType + 1];
 
 			return xml;
+		}
+
+		private static String generateSkipMessage(int snippetType, String message) {
+			return ENDTAGS[snippetType] + "<br/>" + message + "<br/>" + ENDTAGS[snippetType + 1];
 		}
 
 		TestObjectFactory<?> testObjectFactory;
@@ -707,72 +723,79 @@ public abstract class CDAValidationTest {
 
 				appendToBuffer(xmlSnippetsBuffer, "<ocl>", ocl, "</ocl>");
 
-				// xmlSnippetsBuffer.append();
-				//
-				// xmlSnippetsBuffer.append(ocl);
-				//
-				// xmlSnippetsBuffer.append("</ocl>");
+				if (!skipFailsTest) {
+					if (!failTests.isEmpty()) {
+						runFails(xmlSnippetsBuffer);
+					} else {
+						updateToFail((ValidationTarget) objectToTest);
 
-				if (!failTests.isEmpty()) {
-					runFails(xmlSnippetsBuffer);
-				} else {
-					updateToFail((ValidationTarget) objectToTest);
+						if (objectToTest instanceof InfrastructureRoot) {
+							if (testLogDir != null) {
+								xmlSnippetsBuffer.append(escapeXML(FAILSNIPPET, (InfrastructureRoot) objectToTest));
+							} else {
+								try {
+									System.out.println();
+									System.out.println("Fail Snippet");
+									CDAValidationTest.saveTestSnippet((InfrastructureRoot) objectToTest, System.out);
+									System.out.println();
+								} catch (Exception e) {
 
-					if (objectToTest instanceof InfrastructureRoot) {
-						if (testLogDir != null) {
-							xmlSnippetsBuffer.append(escapeXML(FAILSNIPPET, (InfrastructureRoot) objectToTest));
-						} else {
-							try {
-								System.out.println();
-								System.out.println("Fail Snippet");
-								CDAValidationTest.saveTestSnippet((InfrastructureRoot) objectToTest, System.out);
-								System.out.println();
-							} catch (Exception e) {
-
+								}
 							}
 						}
+
+						validateExpectFail(objectToTest, diagnostician, map);
+
+						for (Diagnostic d : diagnostician.getChildren()) {
+
+							String message = d.getMessage();
+
+							appendToBuffer(xmlSnippetsBuffer, "<diagnostic>", message, "</diagnostic>");
+
+						}
 					}
+				} else {
 
-					validateExpectFail(objectToTest, diagnostician, map);
-
-					for (Diagnostic d : diagnostician.getChildren()) {
-
-						String message = d.getMessage();
-
-						appendToBuffer(xmlSnippetsBuffer, "<diagnostic>", message, "</diagnostic>");
-
-						// xmlSnippetsBuffer.append("<diagnostic>");
-						//
-						// message = StringEscapeUtils.escapeHtml(message);
-						//
-						// message = message.replace(System.getProperty("line.separator"), "<br/>");
-						//
-						// xmlSnippetsBuffer.append(message);
-						// xmlSnippetsBuffer.append("</diagnostic>");
+					if (testLogDir != null) {
+						xmlSnippetsBuffer.append(generateSkipMessage(FAILSNIPPET, "Skip Fail Test"));
+					} else {
+						System.out.println();
+						System.out.println("Skipped Fail Test");
+						System.out.println();
 					}
 				}
 
-				if (!passTests.isEmpty()) {
-					runPasses(xmlSnippetsBuffer);
-				} else {
-					updateToPass((ValidationTarget) objectToTest);
+				if (!skipPassTest) {
+					if (!passTests.isEmpty()) {
+						runPasses(xmlSnippetsBuffer);
+					} else {
+						updateToPass((ValidationTarget) objectToTest);
 
-					if (objectToTest instanceof InfrastructureRoot) {
-						if (testLogDir != null) {
-							xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) objectToTest));
-						} else {
-							try {
-								System.out.println();
-								System.out.println("Pass Snippet");
-								CDAValidationTest.saveTestSnippet((InfrastructureRoot) objectToTest, System.out);
-								System.out.println();
-							} catch (Exception e) {
+						if (objectToTest instanceof InfrastructureRoot) {
+							if (testLogDir != null) {
+								xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) objectToTest));
+							} else {
+								try {
+									System.out.println();
+									System.out.println("Pass Snippet");
+									CDAValidationTest.saveTestSnippet((InfrastructureRoot) objectToTest, System.out);
+									System.out.println();
+								} catch (Exception e) {
 
+								}
 							}
 						}
+						validateExpectPass(objectToTest, diagnostician, map);
 					}
+				} else {
 
-					validateExpectPass(objectToTest, diagnostician, map);
+					if (testLogDir != null) {
+						xmlSnippetsBuffer.append(generateSkipMessage(FAILSNIPPET, "Skip Pass Test"));
+					} else {
+						System.out.println();
+						System.out.println("Skipped Pass Test");
+						System.out.println();
+					}
 				}
 
 			} finally {
