@@ -11,10 +11,14 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.HistoryOfPresentIllness;
 import org.openhealthtools.mdht.uml.cda.consol.operations.HistoryOfPresentIllnessOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +30,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryOfPresentIllness#validateHistoryOfPresentIllnessTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History Of Present Illness Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryOfPresentIllness#validateHistoryOfPresentIllnessCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History Of Present Illness Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryOfPresentIllness#validateHistoryOfPresentIllnessTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History Of Present Illness Title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryOfPresentIllness#validateHistoryOfPresentIllnessText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History Of Present Illness Text</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,6 +106,80 @@ public class HistoryOfPresentIllnessTest extends CDAValidationTest {
 		};
 
 		validateHistoryOfPresentIllnessCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHistoryOfPresentIllnessTitle() {
+		OperationsTestCase<HistoryOfPresentIllness> validateHistoryOfPresentIllnessTitleTestCase = new OperationsTestCase<HistoryOfPresentIllness>(
+			"validateHistoryOfPresentIllnessTitle",
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_OF_PRESENT_ILLNESS_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HistoryOfPresentIllness target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HistoryOfPresentIllness target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HistoryOfPresentIllnessOperations.validateHistoryOfPresentIllnessTitle(
+					(HistoryOfPresentIllness) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHistoryOfPresentIllnessTitleTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateHistoryOfPresentIllnessText() {
+		OperationsTestCase<HistoryOfPresentIllness> validateHistoryOfPresentIllnessTextTestCase = new OperationsTestCase<HistoryOfPresentIllness>(
+			"validateHistoryOfPresentIllnessText",
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_OF_PRESENT_ILLNESS_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HistoryOfPresentIllness target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HistoryOfPresentIllness target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HistoryOfPresentIllnessOperations.validateHistoryOfPresentIllnessText(
+					(HistoryOfPresentIllness) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHistoryOfPresentIllnessTextTestCase.doValidationTest();
 	}
 
 	/**

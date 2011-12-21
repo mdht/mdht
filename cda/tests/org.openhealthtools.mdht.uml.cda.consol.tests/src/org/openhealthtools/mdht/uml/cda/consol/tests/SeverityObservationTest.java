@@ -16,11 +16,8 @@ import org.openhealthtools.mdht.uml.cda.consol.SeverityObservation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.SeverityObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
-import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,8 +27,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeverityObservation#validateSeverityObservationTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Text Reference</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeverityObservation#validateSeverityObservationReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeverityObservation#validateSeverityObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeverityObservation#validateSeverityObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeverityObservation#validateSeverityObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Mood Code</em>}</li>
@@ -46,94 +41,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
  */
 
 public class SeverityObservationTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated NOT
-	*/
-	@Test
-	public void testValidateSeverityObservationTextReference() {
-		OperationsTestCase<SeverityObservation> validateSeverityObservationTextReferenceTestCase = new OperationsTestCase<SeverityObservation>(
-			"validateSeverityObservationTextReference",
-			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SeverityObservation target) {
-				target.init();
-				target.setText(DatatypesFactory.eINSTANCE.createED());
-			}
-
-			@Override
-			protected void updateToPass(SeverityObservation target) {
-				target.init();
-				ED ot = DatatypesFactory.eINSTANCE.createED();
-				TEL ref = DatatypesFactory.eINSTANCE.createTEL();
-				ref.setValue("#reference");
-				ot.setReference(ref);
-				target.setText(ot);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SeverityObservationOperations.validateSeverityObservationTextReference(
-					(SeverityObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSeverityObservationTextReferenceTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated NOT
-	*/
-	@Test
-	public void testValidateSeverityObservationReferenceValue() {
-		OperationsTestCase<SeverityObservation> validateSeverityObservationReferenceValueTestCase = new OperationsTestCase<SeverityObservation>(
-			"validateSeverityObservationReferenceValue",
-			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SeverityObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(SeverityObservation target) {
-				target.init();
-
-				CD code = DatatypesFactory.eINSTANCE.createCD();
-				ED ot = DatatypesFactory.eINSTANCE.createED();
-				TEL ref = DatatypesFactory.eINSTANCE.createTEL();
-				ref.setValue("#severity");
-				ot.setReference(ref);
-				target.setText(ot);
-				// target.setCode(code);
-				code.setCode("371924009");
-				code.setDisplayName("Moderate to severe");
-				code.setCodeSystem("2.16.840.1.113883.6.96");
-				code.setCodeSystemName("SNOMED CT");
-
-				target.getValues().add(code);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SeverityObservationOperations.validateSeverityObservationReferenceValue(
-					(SeverityObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSeverityObservationReferenceValueTestCase.doValidationTest();
-	}
 
 	/**
 	*
@@ -382,46 +289,6 @@ public class SeverityObservationTest extends CDAValidationTest {
 		};
 
 		validateSeverityObservationValueTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated NOT
-	*/
-	@Test
-	public void testValidateSeverityObservationInterpretationCode() {
-		OperationsTestCase<SeverityObservation> validateSeverityObservationInterpretationCodeTestCase = new OperationsTestCase<SeverityObservation>(
-			"validateSeverityObservationInterpretationCode",
-			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_INTERPRETATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SeverityObservation target) {
-				target.init();
-				CE code = DatatypesFactory.eINSTANCE.createCE();
-				code.setCodeSystem("2.16.840.1.113883.5.14");
-				target.getInterpretationCodes().add(code);
-
-			}
-
-			@Override
-			protected void updateToPass(SeverityObservation target) {
-				// target.init();
-				CE code = DatatypesFactory.eINSTANCE.createCE();
-				code.setCodeSystem("2.16.840.1.113883.1.11.78");
-				target.getInterpretationCodes().add(code);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SeverityObservationOperations.validateSeverityObservationClassCode(
-					(SeverityObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSeverityObservationInterpretationCodeTestCase.doValidationTest();
 	}
 
 	/**

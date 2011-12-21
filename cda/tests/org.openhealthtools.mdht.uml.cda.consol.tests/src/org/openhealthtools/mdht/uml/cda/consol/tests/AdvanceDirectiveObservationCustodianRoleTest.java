@@ -32,7 +32,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservationCustodianRole#validateAdvanceDirectiveObservationCustodianRoleAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Custodian Role Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservationCustodianRole#validateAdvanceDirectiveObservationCustodianRoleClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Custodian Role Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservationCustodianRole#validateAdvanceDirectiveObservationCustodianRoleTelecom(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Custodian Role Telecom</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservationCustodianRole#validateAdvanceDirectiveObservationCustodianRoleAdvanceDirectiveObservationCustodianEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Custodian Role Advance Directive Observation Custodian Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservationCustodianRole#validateAdvanceDirectiveObservationCustodianRolePlayingEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Custodian Role Playing Entity</em>}</li>
  * </ul>
  * </p>
  *
@@ -148,10 +148,10 @@ public class AdvanceDirectiveObservationCustodianRoleTest extends CDAValidationT
 	* @generated
 	*/
 	@Test
-	public void testValidateAdvanceDirectiveObservationCustodianRoleAdvanceDirectiveObservationCustodianEntity() {
-		OperationsTestCase<AdvanceDirectiveObservationCustodianRole> validateAdvanceDirectiveObservationCustodianRoleAdvanceDirectiveObservationCustodianEntityTestCase = new OperationsTestCase<AdvanceDirectiveObservationCustodianRole>(
-			"validateAdvanceDirectiveObservationCustodianRoleAdvanceDirectiveObservationCustodianEntity",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_CUSTODIAN_ROLE_ADVANCE_DIRECTIVE_OBSERVATION_CUSTODIAN_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateAdvanceDirectiveObservationCustodianRolePlayingEntity() {
+		OperationsTestCase<AdvanceDirectiveObservationCustodianRole> validateAdvanceDirectiveObservationCustodianRolePlayingEntityTestCase = new OperationsTestCase<AdvanceDirectiveObservationCustodianRole>(
+			"validateAdvanceDirectiveObservationCustodianRolePlayingEntity",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_CUSTODIAN_ROLE_PLAYING_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -168,13 +168,13 @@ public class AdvanceDirectiveObservationCustodianRoleTest extends CDAValidationT
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AdvanceDirectiveObservationCustodianRoleOperations.validateAdvanceDirectiveObservationCustodianRoleAdvanceDirectiveObservationCustodianEntity(
+				return AdvanceDirectiveObservationCustodianRoleOperations.validateAdvanceDirectiveObservationCustodianRolePlayingEntity(
 					(AdvanceDirectiveObservationCustodianRole) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateAdvanceDirectiveObservationCustodianRoleAdvanceDirectiveObservationCustodianEntityTestCase.doValidationTest();
+		validateAdvanceDirectiveObservationCustodianRolePlayingEntityTestCase.doValidationTest();
 	}
 
 	/**
