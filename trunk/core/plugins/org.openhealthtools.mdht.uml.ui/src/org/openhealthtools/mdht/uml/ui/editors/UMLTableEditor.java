@@ -68,11 +68,13 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.ITreeViewerListener;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.TextCellEditor;
+import org.eclipse.jface.viewers.TreeExpansionEvent;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.window.Window;
@@ -284,7 +286,7 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 						UMLTableEditor.this, PROP_DIRTY, getSaveables(), false));
 				}
 
-				getSite().getShell().getDisplay().asyncExec(new Runnable() {
+				getSite().getShell().getDisplay().syncExec(new Runnable() {
 					public void run() {
 						// refresh the table, primarily for Delete
 						refresh();
@@ -771,6 +773,17 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 		if (viewSelection != null && viewSelection.size() > 1) {
 			treeViewerWithColumns.setAutoExpandLevel(1);
 		}
+
+		treeViewerWithColumns.addTreeListener(new ITreeViewerListener() {
+			public void treeCollapsed(TreeExpansionEvent event) {
+				// nothing to do
+			}
+
+			public void treeExpanded(TreeExpansionEvent event) {
+				// TODO fix bug where row of expanded node is incorrectly displayed, after scrolling
+				// this method is fired before expanding, not afterward
+			}
+		});
 
 		getEditorSite().setSelectionProvider(new SelectionProvider(tree));
 		updateViewContents();
