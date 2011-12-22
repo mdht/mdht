@@ -52,6 +52,11 @@ public class GenDomainInterface extends TransformFacade {
 
 	@Override
 	public Object caseClass(Class umlClass) {
+		if (CDAModelUtil.getCDAClass(umlClass) == null) {
+			System.err.println("Does not inherit from CDA: " + umlClass.getQualifiedName());
+			return null;
+		}
+
 		Classifier domainInterface = getDomainInterface(umlClass);
 		if (consolidator != null) {
 			consolidator.getImportedClassifiers().remove(umlClass);

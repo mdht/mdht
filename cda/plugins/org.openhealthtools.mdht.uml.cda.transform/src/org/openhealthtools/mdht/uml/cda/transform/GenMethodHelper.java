@@ -35,29 +35,6 @@ import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 public class GenMethodHelper {
 	public static final String LF = System.getProperty("line.separator");
 
-	protected static String capitalize(String name) {
-		return name.substring(0, 1).toUpperCase() + name.substring(1);
-	}
-
-	protected static String pluralize(String name) {
-		if (name.endsWith("us")) {
-			return name.substring(0, name.length() - 2) + "i";
-		}
-		if (name.endsWith("ss")) {
-			return name + "es";
-		}
-		if (name.endsWith("s")) {
-			return name;
-		}
-		if (name.endsWith("y")) {
-			return name.substring(0, name.length() - 1) + "ies";
-		}
-		if (name.endsWith("ia")) {
-			return name;
-		}
-		return name + "s";
-	}
-
 	protected TransformerOptions transformerOptions;
 
 	public GenMethodHelper(TransformerOptions options) {
@@ -82,12 +59,12 @@ public class GenMethodHelper {
 		Operation operation = null;
 		String businessName = null;
 		if (transformerOptions.isUseBusinessNames()) {
-			businessName = normalizeCodeName(property.getLabel(false));
+			businessName = TransformAbstract.normalizeCodeName(property.getLabel(false));
 		} else {
-			businessName = normalizeCodeName(property.getName());
+			businessName = TransformAbstract.normalizeCodeName(property.getName());
 		}
 
-		String operationName = "add" + capitalize(businessName);
+		String operationName = "add" + TransformAbstract.capitalize(businessName);
 
 		String[] paramNamesArray = { "value" };
 		EList<String> parmNames = new UnmodifiableEList<String>(1, paramNamesArray);
@@ -114,9 +91,9 @@ public class GenMethodHelper {
 
 		String businessName = null;
 		if (transformerOptions.isUseBusinessNames()) {
-			businessName = normalizeCodeName(sourceProperty.getLabel(false));
+			businessName = TransformAbstract.normalizeCodeName(sourceProperty.getLabel(false));
 		} else {
-			businessName = normalizeCodeName(sourceProperty.getName());
+			businessName = TransformAbstract.normalizeCodeName(sourceProperty.getName());
 		}
 
 		Operation operation = null;
@@ -125,8 +102,8 @@ public class GenMethodHelper {
 		// operationName += CDAModelUtil.getModelPrefix(sourceProperty);
 		// }
 		operationName += ((sourceProperty.getUpper() == 1)
-				? capitalize(businessName)
-				: capitalize(pluralize(businessName)));
+				? TransformAbstract.capitalize(businessName)
+				: TransformAbstract.capitalize(TransformAbstract.pluralize(businessName)));
 
 		if (classifier instanceof Class) {
 			operation = ((Class) classifier).createOwnedOperation(operationName, null, null, domainType);
@@ -159,7 +136,7 @@ public class GenMethodHelper {
 					domainTypeQName + "))");
 
 		} else {
-			operationBody.append("self.get" + pluralize(cdaTargetName) + "()->select(");
+			operationBody.append("self.get" + TransformAbstract.pluralize(cdaTargetName) + "()->select(");
 			operationBody.append(cdaTargetLowerName + " : " + cdaTargetQName + " | ");
 			operationBody.append("not " + cdaTargetLowerName + ".oclIsUndefined() and ");
 			operationBody.append(cdaTargetLowerName + ".oclIsKindOf(" + domainTypeQName + "))");
@@ -180,15 +157,15 @@ public class GenMethodHelper {
 		Operation operation = null;
 		String businessName = null;
 		if (transformerOptions.isUseBusinessNames()) {
-			businessName = normalizeCodeName(property.getLabel(false));
+			businessName = TransformAbstract.normalizeCodeName(property.getLabel(false));
 		} else {
-			businessName = normalizeCodeName(property.getName());
+			businessName = TransformAbstract.normalizeCodeName(property.getName());
 		}
 
 		String operationVerb = (property.getUpper() == 1)
 				? "with"
 				: "add";
-		String operationName = operationVerb + capitalize(businessName);
+		String operationName = operationVerb + TransformAbstract.capitalize(businessName);
 		StringBuffer operationBody = new StringBuffer();
 
 		if (classifier instanceof Interface) {
@@ -285,28 +262,34 @@ public class GenMethodHelper {
 				operationBody.append("add" + cdaTargetClass.getName() + "((org.openhealthtools.mdht.uml.cda." +
 						cdaTargetClass.getName() + ")eObject);" + LF);
 				operationBody.append("return value;");
+			} else if (cdaProperty == null) {
+				System.err.println("Unsupported facade property: " + property.getQualifiedName());
+				operationBody = new StringBuffer();
 			} else if (CDAModelUtil.isDatatypeModel(property.getType())) {
 				if (cdaProperty.getUpper() == 1) {
-					operationBody.append("set" + capitalize(cdaProperty.getName()) + "(value);" + LF);
+					operationBody.append("set" + TransformAbstract.capitalize(cdaProperty.getName()) + "(value);" + LF);
 				} else {
-					operationBody.append("get" + capitalize(pluralize(cdaProperty.getName())) + "().add(value);" + LF);
+					operationBody.append("get" +
+							TransformAbstract.capitalize(TransformAbstract.pluralize(cdaProperty.getName())) +
+							"().add(value);" + LF);
 				}
 				operationBody.append("return value;");
 			} else if (CDAModelUtil.isCDAModel(property.getType())) {
 				if (cdaProperty.getUpper() == 1) {
-					operationBody.append("set" + capitalize(cdaProperty.getName()) + "(value);" + LF);
+					operationBody.append("set" + TransformAbstract.capitalize(cdaProperty.getName()) + "(value);" + LF);
 				} else {
-					operationBody.append("get" + capitalize(pluralize(cdaProperty.getName())) + "().add(value);" + LF);
+					operationBody.append("get" +
+							TransformAbstract.capitalize(TransformAbstract.pluralize(cdaProperty.getName())) +
+							"().add(value);" + LF);
 				}
 				operationBody.append("return value;");
-			} else if (cdaProperty == null) {
-				System.err.println("Unsupported facade property: " + property.getQualifiedName());
-				operationBody = new StringBuffer();
 			} else {
 				if (property.getUpper() == 1) {
-					operationBody.append("set" + capitalize(property.getName()) + "(value);" + LF);
+					operationBody.append("set" + TransformAbstract.capitalize(property.getName()) + "(value);" + LF);
 				} else {
-					operationBody.append("get" + capitalize(pluralize(property.getName())) + "().add(value);" + LF);
+					operationBody.append("get" +
+							TransformAbstract.capitalize(TransformAbstract.pluralize(property.getName())) +
+							"().add(value);" + LF);
 				}
 				operationBody.append("return value;");
 			}
@@ -328,14 +311,14 @@ public class GenMethodHelper {
 		Operation operation = null;
 		String businessName = null;
 		if (transformerOptions.isUseBusinessNames()) {
-			businessName = normalizeCodeName(property.getLabel(false));
+			businessName = TransformAbstract.normalizeCodeName(property.getLabel(false));
 		} else {
-			businessName = normalizeCodeName(property.getName());
+			businessName = TransformAbstract.normalizeCodeName(property.getName());
 		}
 
 		String operationName = "get" + ((property.getUpper() == 1)
-				? capitalize(businessName)
-				: capitalize(pluralize(businessName)));
+				? TransformAbstract.capitalize(businessName)
+				: TransformAbstract.capitalize(TransformAbstract.pluralize(businessName)));
 		StringBuffer operationBody = new StringBuffer();
 
 		if (classifier instanceof Interface) {
@@ -365,15 +348,15 @@ public class GenMethodHelper {
 		Operation operation = null;
 		String businessName = null;
 		if (transformerOptions.isUseBusinessNames()) {
-			businessName = normalizeCodeName(property.getLabel(false));
+			businessName = TransformAbstract.normalizeCodeName(property.getLabel(false));
 		} else {
-			businessName = normalizeCodeName(property.getName());
+			businessName = TransformAbstract.normalizeCodeName(property.getName());
 		}
 
 		String operationVerb = (property.getUpper() == 1)
 				? "set"
 				: "add";
-		String operationName = operationVerb + capitalize(businessName);
+		String operationName = operationVerb + TransformAbstract.capitalize(businessName);
 		StringBuffer operationBody = new StringBuffer();
 
 		String[] paramNamesArray = { "value" };
@@ -404,26 +387,32 @@ public class GenMethodHelper {
 				CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
 			operationBody.append("add" + cdaTargetClass.getName() + "((org.openhealthtools.mdht.uml.cda." +
 					cdaTargetClass.getName() + ")value);" + LF);
-		} else if (CDAModelUtil.isDatatypeModel(property.getType())) {
-			if (cdaProperty.getUpper() == 1) {
-				operationBody.append("set" + capitalize(cdaProperty.getName()) + "(value);" + LF);
-			} else {
-				operationBody.append("get" + capitalize(pluralize(cdaProperty.getName())) + "().add(value);" + LF);
-			}
-		} else if (CDAModelUtil.isCDAModel(property.getType())) {
-			if (cdaProperty.getUpper() == 1) {
-				operationBody.append("set" + capitalize(cdaProperty.getName()) + "(value);" + LF);
-			} else {
-				operationBody.append("get" + capitalize(pluralize(cdaProperty.getName())) + "().add(value);" + LF);
-			}
 		} else if (cdaProperty == null) {
 			System.err.println("Unsupported facade property: " + property.getQualifiedName());
 			operationBody = new StringBuffer();
+		} else if (CDAModelUtil.isDatatypeModel(property.getType())) {
+			if (cdaProperty.getUpper() == 1) {
+				operationBody.append("set" + TransformAbstract.capitalize(cdaProperty.getName()) + "(value);" + LF);
+			} else {
+				operationBody.append("get" +
+						TransformAbstract.capitalize(TransformAbstract.pluralize(cdaProperty.getName())) +
+						"().add(value);" + LF);
+			}
+		} else if (CDAModelUtil.isCDAModel(property.getType())) {
+			if (cdaProperty.getUpper() == 1) {
+				operationBody.append("set" + TransformAbstract.capitalize(cdaProperty.getName()) + "(value);" + LF);
+			} else {
+				operationBody.append("get" +
+						TransformAbstract.capitalize(TransformAbstract.pluralize(cdaProperty.getName())) +
+						"().add(value);" + LF);
+			}
 		} else {
 			if (property.getUpper() == 1) {
-				operationBody.append("set" + capitalize(property.getName()) + "(value);" + LF);
+				operationBody.append("set" + TransformAbstract.capitalize(property.getName()) + "(value);" + LF);
 			} else {
-				operationBody.append("get" + capitalize(pluralize(property.getName())) + "().add(value);" + LF);
+				operationBody.append("get" +
+						TransformAbstract.capitalize(TransformAbstract.pluralize(property.getName())) +
+						"().add(value);" + LF);
 			}
 		}
 
@@ -435,15 +424,6 @@ public class GenMethodHelper {
 		}
 
 		return operation;
-	}
-
-	protected String normalizeCodeName(String name) {
-		String result = "";
-		String[] parts = name.split(" ");
-		for (String part : parts) {
-			result += part.substring(0, 1).toUpperCase() + part.substring(1);
-		}
-		return result;
 	}
 
 }
