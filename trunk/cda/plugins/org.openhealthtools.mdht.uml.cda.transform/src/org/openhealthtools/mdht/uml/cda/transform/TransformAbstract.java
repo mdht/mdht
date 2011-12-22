@@ -15,6 +15,7 @@ package org.openhealthtools.mdht.uml.cda.transform;
 
 import java.util.List;
 
+import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
@@ -290,7 +291,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		return constraintName;
 	}
 
-	protected String normalizeConstraintName(String constraintName) {
+	public static String normalizeConstraintName(String constraintName) {
 		String result = "";
 		String[] parts = constraintName.split("_");
 		for (String part : parts) {
@@ -299,16 +300,17 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		return result;
 	}
 
-	protected String normalizeCodeName(String name) {
+	public static String normalizeCodeName(String name) {
 		String result = "";
 		String[] parts = name.split(" ");
 		for (String part : parts) {
 			result += part.substring(0, 1).toUpperCase() + part.substring(1);
 		}
+		result = UML2Util.getValidJavaIdentifier(result);
 		return result;
 	}
 
-	protected String pluralize(String name) {
+	public static String pluralize(String name) {
 		if (name.endsWith("y")) {
 			return name.substring(0, name.length() - 1) + "ies";
 		}
@@ -318,7 +320,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		return name + "s";
 	}
 
-	protected String capitalize(String name) {
+	public static String capitalize(String name) {
 		return name.substring(0, 1).toUpperCase() + name.substring(1);
 	}
 
