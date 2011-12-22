@@ -269,11 +269,13 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 				Class class_ = (Class) classifier;
 				if (umlClass.getName().equals(class_.getName())) {
 					Package umlPackage = umlClass.getPackage();
-					Stereotype ePackage = EcoreTransformUtil.getAppliedEcoreStereotype(
-						umlPackage, UMLUtil.STEREOTYPE__E_PACKAGE);
-					if (ePackage != null) {
-						prefix = (String) umlPackage.getValue(ePackage, UMLUtil.TAG_DEFINITION__PREFIX);
-						break;
+					if (umlPackage != null) {
+						Stereotype ePackage = EcoreTransformUtil.getAppliedEcoreStereotype(
+							umlPackage, UMLUtil.STEREOTYPE__E_PACKAGE);
+						if (ePackage != null) {
+							prefix = (String) umlPackage.getValue(ePackage, UMLUtil.TAG_DEFINITION__PREFIX);
+							break;
+						}
 					}
 				}
 			}
