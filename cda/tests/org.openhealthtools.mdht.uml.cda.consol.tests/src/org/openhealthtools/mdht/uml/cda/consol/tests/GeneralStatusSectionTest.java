@@ -11,10 +11,14 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.GeneralStatusSection;
 import org.openhealthtools.mdht.uml.cda.consol.operations.GeneralStatusSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,8 +30,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralStatusSection#validateGeneralStatusSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Status Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralStatusSection#validateGeneralStatusSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Status Section Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralStatusSection#validateGeneralStatusSectionProblemEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Status Section Problem Entry</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralStatusSection#getProblemEntry() <em>Get Problem Entry</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralStatusSection#validateGeneralStatusSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Status Section Title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralStatusSection#validateGeneralStatusSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Status Section Text</em>}</li>
  * </ul>
  * </p>
  *
@@ -109,10 +113,10 @@ public class GeneralStatusSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateGeneralStatusSectionProblemEntry() {
-		OperationsTestCase<GeneralStatusSection> validateGeneralStatusSectionProblemEntryTestCase = new OperationsTestCase<GeneralStatusSection>(
-			"validateGeneralStatusSectionProblemEntry",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_STATUS_SECTION_PROBLEM_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateGeneralStatusSectionTitle() {
+		OperationsTestCase<GeneralStatusSection> validateGeneralStatusSectionTitleTestCase = new OperationsTestCase<GeneralStatusSection>(
+			"validateGeneralStatusSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_STATUS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -124,18 +128,21 @@ public class GeneralStatusSectionTest extends CDAValidationTest {
 			protected void updateToPass(GeneralStatusSection target) {
 				target.init();
 
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return GeneralStatusSectionOperations.validateGeneralStatusSectionProblemEntry(
+				return GeneralStatusSectionOperations.validateGeneralStatusSectionTitle(
 					(GeneralStatusSection) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateGeneralStatusSectionProblemEntryTestCase.doValidationTest();
+		validateGeneralStatusSectionTitleTestCase.doValidationTest();
 	}
 
 	/**
@@ -143,11 +150,36 @@ public class GeneralStatusSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetProblemEntry() {
+	public void testValidateGeneralStatusSectionText() {
+		OperationsTestCase<GeneralStatusSection> validateGeneralStatusSectionTextTestCase = new OperationsTestCase<GeneralStatusSection>(
+			"validateGeneralStatusSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_STATUS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-		GeneralStatusSection target = objectFactory.create();
-		target.getProblemEntry();
+			@Override
+			protected void updateToFail(GeneralStatusSection target) {
 
+			}
+
+			@Override
+			protected void updateToPass(GeneralStatusSection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralStatusSectionOperations.validateGeneralStatusSectionText(
+					(GeneralStatusSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralStatusSectionTextTestCase.doValidationTest();
 	}
 
 	/**
