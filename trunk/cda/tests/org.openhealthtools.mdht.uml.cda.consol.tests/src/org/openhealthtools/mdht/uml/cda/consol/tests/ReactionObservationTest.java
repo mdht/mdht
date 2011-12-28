@@ -11,7 +11,11 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.MedicationActivity;
+import org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityProcedure;
 import org.openhealthtools.mdht.uml.cda.consol.ReactionObservation;
 import org.openhealthtools.mdht.uml.cda.consol.SeverityObservation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ReactionObservationOperations;
@@ -59,7 +63,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateReactionObservationSeverityObservationInversionInd() {
@@ -70,12 +74,20 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ReactionObservation target) {
+				target.init();
+				target.getEntryRelationships().clear();
+				target.getEntryRelationships().add(
+					createEntryRelationship(ENTRY_RELATIONSHIP_OBJECT.SEVERITY_OBS, false));
 
 			}
 
 			@Override
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
+				// Add Severity Observation
+				target.getEntryRelationships().clear();
+				target.getEntryRelationships().add(
+					createEntryRelationship(ENTRY_RELATIONSHIP_OBJECT.SEVERITY_OBS, true));
 
 			}
 
@@ -93,7 +105,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateReactionObservationProcedureActivityProcedureInversionInd() {
@@ -104,13 +116,18 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ReactionObservation target) {
-
+				target.init();
+				target.getEntryRelationships().clear();
+				target.getEntryRelationships().add(
+					createEntryRelationship(ENTRY_RELATIONSHIP_OBJECT.PROCEDURE_ACTIVITY_PROCEDURE, false));
 			}
 
 			@Override
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
-
+				target.getEntryRelationships().clear();
+				target.getEntryRelationships().add(
+					createEntryRelationship(ENTRY_RELATIONSHIP_OBJECT.PROCEDURE_ACTIVITY_PROCEDURE, true));
 			}
 
 			@Override
@@ -127,7 +144,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated  NOT
 	*/
 	@Test
 	public void testValidateReactionObservationMedicationActivityInversionInd() {
@@ -138,13 +155,18 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ReactionObservation target) {
-
+				target.init();
+				target.getEntryRelationships().clear();
+				target.getEntryRelationships().add(
+					createEntryRelationship(ENTRY_RELATIONSHIP_OBJECT.MEDICATION_ACTIVITY, false));
 			}
 
 			@Override
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
-
+				target.getEntryRelationships().clear();
+				target.getEntryRelationships().add(
+					createEntryRelationship(ENTRY_RELATIONSHIP_OBJECT.MEDICATION_ACTIVITY, true));
 			}
 
 			@Override
@@ -456,7 +478,12 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ReactionObservation target) {
-
+				target.init();
+				target.getValues().clear();
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				value.setCodeSystem("2.16.840.1.113883.3.88.12.3221.7.4");
+				value.setCode("234422006");
+				target.getValues().add(value);
 			}
 
 			@Override
@@ -464,10 +491,9 @@ public class ReactionObservationTest extends CDAValidationTest {
 				target.init();
 				target.getValues().clear();
 				CD value = DatatypesFactory.eINSTANCE.createCD();
-				value.setCodeSystem("2.16.840.1.113883.3.88.12.3221.7.4");
+				value.setCodeSystem("2.16.840.1.113883.6.96");
 				value.setCode("234422006");
 				target.getValues().add(value);
-
 			}
 
 			@Override
@@ -535,19 +561,22 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ReactionObservation target) {
-
+				target.init();
+				EntryRelationship er = createEntryRelationship(
+					ENTRY_RELATIONSHIP_OBJECT.PROCEDURE_ACTIVITY_PROCEDURE, true);
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				target.getEntryRelationships().clear();
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
-
-				SeverityObservation observation = ConsolFactory.eINSTANCE.createSeverityObservation().init();
-				target.addObservation(observation);
-				for (org.openhealthtools.mdht.uml.cda.EntryRelationship er : target.getEntryRelationships()) {
-					er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
-				}
-
+				EntryRelationship er = createEntryRelationship(
+					ENTRY_RELATIONSHIP_OBJECT.PROCEDURE_ACTIVITY_PROCEDURE, true);
+				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				target.getEntryRelationships().clear();
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -564,7 +593,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateReactionObservationMedicationActivity() {
@@ -575,13 +604,20 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ReactionObservation target) {
-
+				target.init();
+				EntryRelationship er = createEntryRelationship(ENTRY_RELATIONSHIP_OBJECT.MEDICATION_ACTIVITY, true);
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				target.getEntryRelationships().clear();
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
-
+				EntryRelationship er = createEntryRelationship(ENTRY_RELATIONSHIP_OBJECT.MEDICATION_ACTIVITY, true);
+				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				target.getEntryRelationships().clear();
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -698,4 +734,38 @@ public class ReactionObservationTest extends CDAValidationTest {
 		return null;
 	}
 
+	private enum ENTRY_RELATIONSHIP_OBJECT {
+		SEVERITY_OBS, PROCEDURE_ACTIVITY_PROCEDURE, MEDICATION_ACTIVITY
+	};
+
+	/**
+	 * Creates the entryRelationship object with one entry based on the input type
+	 * @param type
+	 * @param inversionInd
+	 * @return
+	 */
+	protected EntryRelationship createEntryRelationship(ENTRY_RELATIONSHIP_OBJECT type, boolean inversionInd) {
+
+		EntryRelationship e = CDAFactory.eINSTANCE.createEntryRelationship();
+		switch (type) {
+			case SEVERITY_OBS:
+				SeverityObservation sObs = ConsolFactory.eINSTANCE.createSeverityObservation();
+				sObs.init();
+				e.setObservation(sObs);
+				break;
+			case PROCEDURE_ACTIVITY_PROCEDURE:
+				ProcedureActivityProcedure paProcedure = ConsolFactory.eINSTANCE.createProcedureActivityProcedure();
+				paProcedure.init();
+				e.setProcedure(paProcedure);
+				break;
+			case MEDICATION_ACTIVITY:
+				MedicationActivity mAct = ConsolFactory.eINSTANCE.createMedicationActivity();
+				mAct.init();
+				e.setSubstanceAdministration(mAct);
+				break;
+		}
+		e.setInversionInd(Boolean.valueOf(inversionInd));
+
+		return e;
+	}
 } // ReactionObservationOperations

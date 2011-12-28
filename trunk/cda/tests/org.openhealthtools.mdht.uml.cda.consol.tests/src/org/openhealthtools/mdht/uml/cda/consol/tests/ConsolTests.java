@@ -7,7 +7,6 @@
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
 import junit.framework.JUnit4TestAdapter;
-
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -50,38 +49,37 @@ import org.junit.runners.Suite;
 		ProblemSectionEntriesOptionalTest.class, SocialHistoryStatusObservationTest.class, PurposeSectionTest.class,
 		PurposeActivityTest.class, AdvanceDirectivesSectionTest.class, AdvanceDirectiveVerificationTest.class,
 		AdvanceDirectiveStatusObservationTest.class, AdvanceDirectiveReferenceTest.class, EncountersSectionTest.class,
-		EncountersActivitesTest.class, EncounterTest.class, ImmunizationsSectionTest.class,
+		EncounterActivitiesTest.class, EncounterTest.class, ImmunizationsSectionTest.class,
 		InsuranceProviderTest.class, PayerEntryTest.class, CoveredPartyTest.class, PolicySubscriberTest.class,
-		PregnancyHistorySectionTest.class, ExternalReferenceTest.class, VitalSignsSectionTest.class,
-		HistoryOfPastIllnessSectionTest.class, ChiefComplaintSectionTest.class, ReasonForReferralSectionTest.class,
-		HistoryOfPresentIllnessTest.class, HospitalAdmissionDiagnosisSectionTest.class,
-		HospitalAdmissionMedicationsSectionEntriesOptionalTest.class, MedicationsAdministeredSectionTest.class,
-		PhysicalExamSectionTest.class, GeneralStatusSectionTest.class, VisibleImplantedMedicalDevicesSectionTest.class,
-		IntegumentarySystemSectionTest.class, HeadSectionTest.class, EyesSectionTest.class,
-		EarsNoseMouthThroatSectionTest.class, EarsSectionTest.class, NoseSectionTest.class,
-		MouthThroatTeethSectionTest.class, NeckSectionTest.class, EndocrineSystemSectionTest.class,
-		ThoraxLungsSectionTest.class, ChestWallSectionTest.class, BreastSectionTest.class, HeartSectionTest.class,
-		RespiratorySystemSectionTest.class, AbdomenSectionTest.class, LymphaticSectionTest.class,
-		VesselsSectionTest.class, MusculoskeletalSystemSectionTest.class, NeurologicSystemSectionTest.class,
-		GenitaliaSectionTest.class, RectumSectionTest.class, ExtremitiesSectionTest.class,
+		ExternalReferenceTest.class, VitalSignsSectionTest.class, HistoryOfPastIllnessSectionTest.class,
+		ChiefComplaintSectionTest.class, ReasonForReferralSectionTest.class, HistoryOfPresentIllnessTest.class,
+		HospitalAdmissionDiagnosisSectionTest.class, HospitalAdmissionMedicationsSectionEntriesOptionalTest.class,
+		MedicationsAdministeredSectionTest.class, PhysicalExamSectionTest.class, GeneralStatusSectionTest.class,
 		ReviewOfSystemsSectionTest.class, AssessmentAndPlanSectionTest.class, LanguageSpokenTest.class,
-		HealthcareProviderTest.class, MedicationNormalDoseTest.class, MedicationSplitDoseTest.class,
-		MedicationTaperedDoseTest.class, MedicationConditionalDoseTest.class,
-		MedicationCombinationMedicationTest.class, UnstructuredDocumentTest.class, ScanOriginalAuthorTest.class,
-		ScanningDeviceTest.class, ScanDataEntererTest.class, MedicationInformationTest.class,
-		UnstructuredOrScannedDocumentTest.class, ReferralSummaryTest.class, DischargeSummaryTest.class,
-		HospitalDischargeDiagnosisSectionTest.class, HospitalDischargeDiagnosisTest.class,
+		HealthcareProviderTest.class, MedicationTaperedDoseTest.class, UnstructuredDocumentTest.class,
+		ScanOriginalAuthorTest.class, ScanningDeviceTest.class, ScanDataEntererTest.class,
+		MedicationInformationTest.class, UnstructuredOrScannedDocumentTest.class, ReferralSummaryTest.class,
+		DischargeSummaryTest.class, HospitalDischargeDiagnosisSectionTest.class, HospitalDischargeDiagnosisTest.class,
 		DischargeDietSectionTest.class, HospitalDischargeMedicationsSectionEntriesOptionalTest.class,
 		DischargeMedicationTest.class, HospitalCourseSectionTest.class,
 		PreconditionForSubstanceAdministrationTest.class, ImmunizationMedicationInformationTest.class,
 		ProcedureSpecimenTest.class, ProcedurePerformerTest.class, ProcedureEncounterTest.class,
 		MedicationInformationManufacturedMaterialTest.class, FamilyHistorySubjectTest.class,
 		HospitalDischargeStudiesSummarySectionTest.class, HospitalDischargeInstructionsSectionTest.class,
-		HospitalDischargeMedicationsSectionTest.class, AdvanceDirectiveObservationVerifierTest.class,
-		AdvanceDirectiveObservationCustodianTest.class, AdvanceDirectiveObservationCustodianRoleTest.class,
-		AdvanceDirectiveObservationCustodianEntityTest.class, AdvanceDirectiveObservationReferenceTest.class,
-		AdvanceDirectiveObservationExternalDocumentTest.class, HospitalDischargePhysicalSectionTest.class,
-		ChiefComplaintAndReasonForVisitSectionTest.class, ReasonForVisitSectionTest.class })
+		HospitalDischargeMedicationsSectionTest.class, HospitalDischargePhysicalSectionTest.class,
+		ChiefComplaintAndReasonForVisitSectionTest.class, ReasonForVisitSectionTest.class, RelatedInformantTest.class,
+		EncounterPerformerTest.class, EncounterPerformerAssignedEntityTest.class, AuthorTest.class, PersonTest.class,
+		RecordTargetTest.class, DataEntererTest.class, CustodianTest.class, InformationRecipientTest.class,
+		LegalAuthenticatorTest.class, AuthenticatorTest.class, InformantTest.class, ParticipantSupportTest.class,
+		InFulfillmentOfTest.class, ComponentOfTest.class, AssignedAuthenticatorTest.class, AssignedAuthorTest.class,
+		EncompassingEncounterTest.class, AssignedCustodianTest.class, CustodianOrganizationTest.class,
+		AuthoringDeviceTest.class, AssignedInformantTest.class, IntendedRecipientTest.class,
+		AssignedDataEntererTest.class, OrderTest.class, RecievedOrganizationTest.class, PatientRoleTest.class,
+		PatientTest.class, BirthplaceTest.class, GuardianTest.class, ProviderOrganizationTest.class,
+		LanguageCommunicationTest.class, PlaceTest.class, AdvanceDirectiveObservationCustodianTest.class,
+		AdvanceDirectiveObservationReferenceTest.class, AdvanceDirectiveObservationVerifierTest.class,
+		AdvanceDirectiveObservationCustodianRoleTest.class, AdvanceDirectiveObservationCustodianEntityTest.class,
+		AdvanceDirectiveObservationExternalDocumentTest.class })
 public class ConsolTests {
 
 	/**

@@ -27,7 +27,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
-import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,17 +48,17 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationVerifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Verifier</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationCustodian(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Custodian</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveObservationVerifierParticipantRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Observation Verifier Participant Role</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveObservationVerifierTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Observation Verifier Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveObservationVerifierTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Observation Verifier Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveObservationVerifierTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Observation Verifier Type Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveObservationVerifierParticipantRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Observation Verifier Participant Role</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveObservationCustodianAdvanceDirectiveObservationCustodianRoleAdvanceDirectiveObservationCustodianEntityName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Observation Custodian Advance Directive Observation Custodian Role Advance Directive Observation Custodian Entity Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveObservationCustodianAdvanceDirectiveObservationCustodianRolePlayingEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Observation Custodian Advance Directive Observation Custodian Role Playing Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveObservationCustodianAdvanceDirectiveObservationCustodianRoleAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Observation Custodian Advance Directive Observation Custodian Role Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveObservationCustodianAdvanceDirectiveObservationCustodianRoleClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Observation Custodian Advance Directive Observation Custodian Role Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveObservationCustodianAdvanceDirectiveObservationCustodianRoleTelecom(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Observation Custodian Advance Directive Observation Custodian Role Telecom</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveObservationCustodianAdvanceDirectiveObservationCustodianRolePlayingEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Observation Custodian Advance Directive Observation Custodian Role Playing Entity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveObservationCustodianTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Observation Custodian Type Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveObservationCustodianAdvanceDirectiveObservationCustodianRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Observation Custodian Advance Directive Observation Custodian Role</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveObservationCustodianTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Observation Custodian Type Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -751,29 +750,12 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
-				target.init();
-				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
-				p2.setTypeCode(ParticipationType.CST);
-				target.getParticipants().add(p2);
 
 			}
 
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
-				target.getParticipants().clear();
-				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
-
-				p2.setTypeCode(ParticipationType.CST);
-
-				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
-
-				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
-
-				pr.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
-				pr.setPlayingEntity(pe);
-
-				p2.setParticipantRole(pr);
-				target.getParticipants().add(p2);
+				target.init();
 
 			}
 
@@ -802,29 +784,12 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
-				target.init();
-				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
-				p2.setTypeCode(ParticipationType.CST);
-				target.getParticipants().add(p2);
 
 			}
 
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
-
-				target.getParticipants().clear();
-				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
-
-				p2.setTypeCode(ParticipationType.CST);
-
-				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
-				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
-
-				pr.setClassCode(RoleClassRoot.ROL);
-				pr.setPlayingEntity(pe);
-
-				p2.setParticipantRole(pr);
-				target.getParticipants().add(p2);
+				target.init();
 
 			}
 
@@ -854,30 +819,11 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
 
-				target.init();
-				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
-				p2.setTypeCode(ParticipationType.CST);
-				target.getParticipants().add(p2);
-
 			}
 
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
-
-				target.getParticipants().clear();
-				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
-
-				p2.setTypeCode(ParticipationType.CST);
-
-				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
-				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
-
-				pr.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
-
-				pr.setPlayingEntity(pe);
-
-				p2.setParticipantRole(pr);
-				target.getParticipants().add(p2);
+				target.init();
 
 			}
 
@@ -907,28 +853,11 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
 
-				target.init();
-				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
-				p2.setTypeCode(ParticipationType.CST);
-				target.getParticipants().add(p2);
-
 			}
 
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
-
-				target.getParticipants().clear();
-				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
-
-				p2.setTypeCode(ParticipationType.CST);
-
-				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
-				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
-
-				pr.setPlayingEntity(pe);
-
-				p2.setParticipantRole(pr);
-				target.getParticipants().add(p2);
+				target.init();
 
 			}
 
@@ -955,34 +884,14 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_ADVANCE_DIRECTIVE_OBSERVATION_CUSTODIAN_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
-			{
-				skipFailsTest();
-			}
-
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
-
-				target.init();
-				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
-				p2.setTypeCode(ParticipationType.CST);
-				target.getParticipants().add(p2);
 
 			}
 
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
-				target.getParticipants().clear();
-				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
-
-				p2.setTypeCode(ParticipationType.CST);
-
-				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
-				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
-
-				pr.setPlayingEntity(pe);
-
-				p2.setParticipantRole(pr);
-				target.getParticipants().add(p2);
+				target.init();
 
 			}
 
@@ -1012,27 +921,11 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
 
-				target.init();
-				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
-				p2.setTypeCode(ParticipationType.CST);
-				target.getParticipants().add(p2);
-
 			}
 
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
-				target.getParticipants().clear();
-				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
-
-				p2.setTypeCode(ParticipationType.CST);
-
-				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
-				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
-
-				pr.setPlayingEntity(pe);
-
-				p2.setParticipantRole(pr);
-				target.getParticipants().add(p2);
+				target.init();
 
 			}
 

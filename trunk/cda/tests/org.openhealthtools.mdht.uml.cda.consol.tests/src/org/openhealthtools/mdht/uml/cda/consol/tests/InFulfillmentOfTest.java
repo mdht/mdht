@@ -9,47 +9,53 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.junit.Test;
-import org.openhealthtools.mdht.uml.cda.consol.BreastSection;
+
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
-import org.openhealthtools.mdht.uml.cda.consol.operations.BreastSectionOperations;
+import org.openhealthtools.mdht.uml.cda.consol.InFulfillmentOf;
+
+import org.openhealthtools.mdht.uml.cda.consol.operations.InFulfillmentOfOperations;
+
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
  * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Breast Section</b></em>' model objects.
+ * A static utility class that provides operations related to '<em><b>In Fulfillment Of</b></em>' model objects.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.BreastSection#validateBreastSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Breast Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InFulfillmentOf#validateConsolInFulfillmentOfOrder(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consol In Fulfillment Of Order</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 
-public class BreastSectionTest extends CDAValidationTest {
+public class InFulfillmentOfTest extends CDAValidationTest {
 
 	/**
 	*
 	* @generated
 	*/
 	@Test
-	public void testValidateBreastSectionCode() {
-		OperationsTestCase<BreastSection> validateBreastSectionCodeTestCase = new OperationsTestCase<BreastSection>(
-			"validateBreastSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_BREAST_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+	public void testValidateConsolInFulfillmentOfOrder() {
+		OperationsTestCase<InFulfillmentOf> validateConsolInFulfillmentOfOrderTestCase = new OperationsTestCase<InFulfillmentOf>(
+			"validateConsolInFulfillmentOfOrder",
+			operationsForOCL.getOCLValue("VALIDATE_CONSOL_IN_FULFILLMENT_OF_ORDER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
-			protected void updateToFail(BreastSection target) {
+			protected void updateToFail(InFulfillmentOf target) {
 
 			}
 
 			@Override
-			protected void updateToPass(BreastSection target) {
+			protected void updateToPass(InFulfillmentOf target) {
 				target.init();
 
 			}
@@ -57,20 +63,20 @@ public class BreastSectionTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return BreastSectionOperations.validateBreastSectionCode(
-					(BreastSection) objectToTest, diagnostician, map);
+				return InFulfillmentOfOperations.validateConsolInFulfillmentOfOrder(
+					(InFulfillmentOf) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateBreastSectionCodeTestCase.doValidationTest();
+		validateConsolInFulfillmentOfOrderTestCase.doValidationTest();
 	}
 
 	/**
 	*
 	* @generated
 	*/
-	private static class OperationsForOCL extends BreastSectionOperations {
+	private static class OperationsForOCL extends InFulfillmentOfOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
@@ -88,9 +94,9 @@ public class BreastSectionTest extends CDAValidationTest {
 	*
 	* @generated
 	*/
-	private static class ObjectFactory implements TestObjectFactory<BreastSection> {
-		public BreastSection create() {
-			return ConsolFactory.eINSTANCE.createBreastSection();
+	private static class ObjectFactory implements TestObjectFactory<InFulfillmentOf> {
+		public InFulfillmentOf create() {
+			return ConsolFactory.eINSTANCE.createInFulfillmentOf();
 		}
 	}
 
@@ -110,7 +116,7 @@ public class BreastSectionTest extends CDAValidationTest {
 	* Tests Operations Constructor for 100% coverage
 	* @generated
 	*/
-	private static class ConstructorTestClass extends BreastSectionOperations {
+	private static class ConstructorTestClass extends InFulfillmentOfOperations {
 	};
 
 	/**
@@ -132,4 +138,4 @@ public class BreastSectionTest extends CDAValidationTest {
 		return null;
 	}
 
-} // BreastSectionOperations
+} // InFulfillmentOfOperations
