@@ -15,7 +15,7 @@ import org.openhealthtools.mdht.uml.cda.consol.AllergyStatusObservation;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.operations.AllergyStatusObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -234,7 +234,7 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 			protected void updateToPass(AllergyStatusObservation target) {
 				target.init();
 
-				CD value = DatatypesFactory.eINSTANCE.createCD();
+				CE value = DatatypesFactory.eINSTANCE.createCE();
 				value.setCodeSystem("2.16.840.1.113883.6.96");
 				value.setCode("55561003");
 				target.getValues().add(value);
