@@ -23,6 +23,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
@@ -35,6 +36,10 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#validateReactionObservationTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Text Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#validateReactionObservationReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Reference Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#validateReactionObservationEffectiveTimeLow(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Effective Time Low</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#validateReactionObservationEffectiveTimeHigh(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Effective Time High</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#validateReactionObservationSeverityObservationInversionInd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Severity Observation Inversion Ind</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#validateReactionObservationProcedureActivityProcedureInversionInd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Procedure Activity Procedure Inversion Ind</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReactionObservation#validateReactionObservationMedicationActivityInversionInd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reaction Observation Medication Activity Inversion Ind</em>}</li>
@@ -60,6 +65,151 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  */
 
 public class ReactionObservationTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateReactionObservationTextReference() {
+		OperationsTestCase<ReactionObservation> validateReactionObservationTextReferenceTestCase = new OperationsTestCase<ReactionObservation>(
+			"validateReactionObservationTextReference",
+			operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReactionObservation target) {
+				target.init();
+				target.setText(DatatypesFactory.eINSTANCE.createED("test"));
+			}
+
+			@Override
+			protected void updateToPass(ReactionObservation target) {
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL("test"));
+				target.setText(txt);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReactionObservationOperations.validateReactionObservationTextReference(
+					(ReactionObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateReactionObservationTextReferenceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateReactionObservationReferenceValue() {
+		OperationsTestCase<ReactionObservation> validateReactionObservationReferenceValueTestCase = new OperationsTestCase<ReactionObservation>(
+			"validateReactionObservationReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReactionObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ReactionObservation target) {
+				target.init();
+
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReactionObservationOperations.validateReactionObservationReferenceValue(
+					(ReactionObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateReactionObservationReferenceValueTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateReactionObservationEffectiveTimeLow() {
+		OperationsTestCase<ReactionObservation> validateReactionObservationEffectiveTimeLowTestCase = new OperationsTestCase<ReactionObservation>(
+			"validateReactionObservationEffectiveTimeLow",
+			operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_EFFECTIVE_TIME_LOW__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReactionObservation target) {
+				target.init();
+				target.setEffectiveTime(DatatypesFactory.eINSTANCE.createIVL_TS());
+			}
+
+			@Override
+			protected void updateToPass(ReactionObservation target) {
+				IVL_TS ef = DatatypesFactory.eINSTANCE.createIVL_TS();
+				ef.setLow(DatatypesFactory.eINSTANCE.createIVXB_TS());
+				target.setEffectiveTime(ef);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReactionObservationOperations.validateReactionObservationEffectiveTimeLow(
+					(ReactionObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateReactionObservationEffectiveTimeLowTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateReactionObservationEffectiveTimeHigh() {
+		OperationsTestCase<ReactionObservation> validateReactionObservationEffectiveTimeHighTestCase = new OperationsTestCase<ReactionObservation>(
+			"validateReactionObservationEffectiveTimeHigh",
+			operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_EFFECTIVE_TIME_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReactionObservation target) {
+				target.init();
+				target.setEffectiveTime(DatatypesFactory.eINSTANCE.createIVL_TS());
+			}
+
+			@Override
+			protected void updateToPass(ReactionObservation target) {
+				IVL_TS ef = DatatypesFactory.eINSTANCE.createIVL_TS();
+				ef.setHigh(DatatypesFactory.eINSTANCE.createIVXB_TS());
+				target.setEffectiveTime(ef);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReactionObservationOperations.validateReactionObservationEffectiveTimeHigh(
+					(ReactionObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateReactionObservationEffectiveTimeHighTestCase.doValidationTest();
+	}
 
 	/**
 	*

@@ -18,6 +18,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +28,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeverityObservation#validateSeverityObservationTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Text Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeverityObservation#validateSeverityObservationReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeverityObservation#validateSeverityObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeverityObservation#validateSeverityObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeverityObservation#validateSeverityObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Severity Observation Mood Code</em>}</li>
@@ -41,6 +44,79 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  */
 
 public class SeverityObservationTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateSeverityObservationTextReference() {
+		OperationsTestCase<SeverityObservation> validateSeverityObservationTextReferenceTestCase = new OperationsTestCase<SeverityObservation>(
+			"validateSeverityObservationTextReference",
+			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SeverityObservation target) {
+				target.init();
+				target.setText(DatatypesFactory.eINSTANCE.createED("test"));
+			}
+
+			@Override
+			protected void updateToPass(SeverityObservation target) {
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL("test"));
+				target.setText(txt);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SeverityObservationOperations.validateSeverityObservationTextReference(
+					(SeverityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSeverityObservationTextReferenceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateSeverityObservationReferenceValue() {
+		OperationsTestCase<SeverityObservation> validateSeverityObservationReferenceValueTestCase = new OperationsTestCase<SeverityObservation>(
+			"validateSeverityObservationReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_SEVERITY_OBSERVATION_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SeverityObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SeverityObservation target) {
+				target.init();
+
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				target.getValues().add(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SeverityObservationOperations.validateSeverityObservationReferenceValue(
+					(SeverityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSeverityObservationReferenceValueTestCase.doValidationTest();
+	}
 
 	/**
 	*
