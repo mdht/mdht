@@ -20,7 +20,22 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-		GeneralHeaderConstraintsTest.class, AllergyProblemActTest.class, AllergyObservationTest.class,
+		GeneralHeaderConstraintsTest.class, GeneralHeaderConstraints_RecordTargetTest.class,
+		RecordTarget_PatientRoleTest.class, PatientRole_PatientTest.class, Patient_GuardianTest.class,
+		Patient_LanguageCommunicationTest.class, Patient_BirthplaceTest.class, Birthplace_PlaceTest.class,
+		PatientRole_ProviderOrganizationTest.class, GeneralHeaderConstraints_ComponentOfTest.class,
+		ComponentOf_EncompassingEncounterTest.class, GeneralHeaderConstraints_AuthorTest.class,
+		Author_AssignedAuthorTest.class, AssignedAuthor_AuthoringDeviceTest.class,
+		GeneralHeaderConstraints_PersonTest.class, GeneralHeaderConstraints_DataEntererTest.class,
+		DataEnterer_AssignedEntityTest.class, GeneralHeaderConstraints_CustodianTest.class,
+		Custodian_AssignedCustodianTest.class, AssignedCustodian_CustodianOrganizationTest.class,
+		GeneralHeaderConstraints_InformationRecipientTest.class, InformationRecipient_IntendedRecipientTest.class,
+		IntendedRecipient_OrganizationTest.class, GeneralHeaderConstraints_LegalAuthenticatorTest.class,
+		LegalAuthenticator_AssignedEntityTest.class, GeneralHeaderConstraints_AuthenticatorTest.class,
+		Authenticator_AssignedEntityTest.class, GeneralHeaderConstraints_InformantTest.class,
+		Informant_AssignedEntityTest.class, Informant_RelatedEntityTest.class,
+		GeneralHeaderConstraints_ParticipantSupportTest.class, GeneralHeaderConstraints_InFulfillmentOfTest.class,
+		InFulfillmentOf_OrderTest.class, AllergyProblemActTest.class, AllergyObservationTest.class,
 		ReactionObservationTest.class, SeverityObservationTest.class, ProcedureActivityProcedureTest.class,
 		IndicationTest.class, ServiceDeliveryLocationTest.class, MedicationActivityTest.class,
 		MedicationSupplyOrderTest.class, InstructionsTest.class, MedicationDispenseTest.class, DrugVehicleTest.class,
@@ -71,15 +86,9 @@ import org.junit.runners.Suite;
 		HospitalDischargeStudiesSummarySectionTest.class, HospitalDischargeInstructionsSectionTest.class,
 		HospitalDischargeMedicationsSectionTest.class, HospitalDischargePhysicalSectionTest.class,
 		ChiefComplaintAndReasonForVisitSectionTest.class, ReasonForVisitSectionTest.class, RelatedInformantTest.class,
-		EncounterPerformerTest.class, EncounterPerformerAssignedEntityTest.class, AuthorTest.class, PersonTest.class,
-		RecordTargetTest.class, DataEntererTest.class, CustodianTest.class, InformationRecipientTest.class,
-		LegalAuthenticatorTest.class, AuthenticatorTest.class, InformantTest.class, ParticipantSupportTest.class,
-		InFulfillmentOfTest.class, ComponentOfTest.class, AssignedAuthenticatorTest.class, AssignedAuthorTest.class,
-		EncompassingEncounterTest.class, AssignedCustodianTest.class, CustodianOrganizationTest.class,
-		AuthoringDeviceTest.class, AssignedInformantTest.class, IntendedRecipientTest.class,
-		AssignedDataEntererTest.class, OrderTest.class, RecievedOrganizationTest.class, PatientRoleTest.class,
-		PatientTest.class, BirthplaceTest.class, GuardianTest.class, ProviderOrganizationTest.class,
-		LanguageCommunicationTest.class, PlaceTest.class })
+		EncounterPerformerTest.class, EncounterPerformerAssignedEntityTest.class,
+		AllergyObservationParticipantTest.class, AllergyObservationParticipantRoleTest.class,
+		AllergyObservationPlayingEntityTest.class })
 public class ConsolTests {
 
 	/**
