@@ -29,6 +29,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PatientRole_ProviderOrganization#validateProviderOrganizationHasNationalProviderIdentifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Organization Has National Provider Identifier</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PatientRole_ProviderOrganization#validateProviderOrganizationAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Organization Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PatientRole_ProviderOrganization#validateProviderOrganizationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Organization Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PatientRole_ProviderOrganization#validateProviderOrganizationName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Provider Organization Name</em>}</li>
@@ -40,6 +41,40 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class PatientRole_ProviderOrganizationTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProviderOrganizationHasNationalProviderIdentifier() {
+		OperationsTestCase<PatientRole_ProviderOrganization> validateProviderOrganizationHasNationalProviderIdentifierTestCase = new OperationsTestCase<PatientRole_ProviderOrganization>(
+			"validateProviderOrganizationHasNationalProviderIdentifier",
+			operationsForOCL.getOCLValue("VALIDATE_PROVIDER_ORGANIZATION_HAS_NATIONAL_PROVIDER_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PatientRole_ProviderOrganization target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PatientRole_ProviderOrganization target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PatientRole_ProviderOrganizationOperations.validateProviderOrganizationHasNationalProviderIdentifier(
+					(PatientRole_ProviderOrganization) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProviderOrganizationHasNationalProviderIdentifierTestCase.doValidationTest();
+	}
 
 	/**
 	*

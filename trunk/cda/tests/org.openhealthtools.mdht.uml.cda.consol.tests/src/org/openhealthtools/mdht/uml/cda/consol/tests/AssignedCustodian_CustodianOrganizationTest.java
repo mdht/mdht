@@ -29,6 +29,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AssignedCustodian_CustodianOrganization#validateCustodianOrganizationHasNationalProviderIdentifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Custodian Organization Has National Provider Identifier</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AssignedCustodian_CustodianOrganization#validateCustodianOrganizationAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Custodian Organization Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AssignedCustodian_CustodianOrganization#validateCustodianOrganizationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Custodian Organization Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AssignedCustodian_CustodianOrganization#validateCustodianOrganizationName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Custodian Organization Name</em>}</li>
@@ -40,6 +41,40 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class AssignedCustodian_CustodianOrganizationTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateCustodianOrganizationHasNationalProviderIdentifier() {
+		OperationsTestCase<AssignedCustodian_CustodianOrganization> validateCustodianOrganizationHasNationalProviderIdentifierTestCase = new OperationsTestCase<AssignedCustodian_CustodianOrganization>(
+			"validateCustodianOrganizationHasNationalProviderIdentifier",
+			operationsForOCL.getOCLValue("VALIDATE_CUSTODIAN_ORGANIZATION_HAS_NATIONAL_PROVIDER_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AssignedCustodian_CustodianOrganization target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AssignedCustodian_CustodianOrganization target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AssignedCustodian_CustodianOrganizationOperations.validateCustodianOrganizationHasNationalProviderIdentifier(
+					(AssignedCustodian_CustodianOrganization) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCustodianOrganizationHasNationalProviderIdentifierTestCase.doValidationTest();
+	}
 
 	/**
 	*

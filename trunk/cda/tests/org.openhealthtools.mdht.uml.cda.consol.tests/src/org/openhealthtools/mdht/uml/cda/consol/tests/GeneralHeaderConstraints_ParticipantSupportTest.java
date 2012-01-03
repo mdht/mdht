@@ -29,6 +29,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints_ParticipantSupport#validateParticipantSupportAssociatedEntityHasAssociatedPersonOrScopingOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Participant Support Associated Entity Has Associated Person Or Scoping Organization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints_ParticipantSupport#validateParticipantSupportTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Participant Support Time</em>}</li>
  * </ul>
  * </p>
@@ -37,6 +38,40 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class GeneralHeaderConstraints_ParticipantSupportTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateParticipantSupportAssociatedEntityHasAssociatedPersonOrScopingOrganization() {
+		OperationsTestCase<GeneralHeaderConstraints_ParticipantSupport> validateParticipantSupportAssociatedEntityHasAssociatedPersonOrScopingOrganizationTestCase = new OperationsTestCase<GeneralHeaderConstraints_ParticipantSupport>(
+			"validateParticipantSupportAssociatedEntityHasAssociatedPersonOrScopingOrganization",
+			operationsForOCL.getOCLValue("VALIDATE_PARTICIPANT_SUPPORT_ASSOCIATED_ENTITY_HAS_ASSOCIATED_PERSON_OR_SCOPING_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints_ParticipantSupport target) {
+
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints_ParticipantSupport target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraints_ParticipantSupportOperations.validateParticipantSupportAssociatedEntityHasAssociatedPersonOrScopingOrganization(
+					(GeneralHeaderConstraints_ParticipantSupport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateParticipantSupportAssociatedEntityHasAssociatedPersonOrScopingOrganizationTestCase.doValidationTest();
+	}
 
 	/**
 	*

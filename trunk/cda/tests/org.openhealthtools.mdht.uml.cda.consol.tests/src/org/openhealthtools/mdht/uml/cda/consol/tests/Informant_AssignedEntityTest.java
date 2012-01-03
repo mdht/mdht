@@ -29,6 +29,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Informant_AssignedEntity#validateAssignedEntityHasNationalProviderIdentifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assigned Entity Has National Provider Identifier</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Informant_AssignedEntity#validateAssignedEntityAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assigned Entity Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Informant_AssignedEntity#validateAssignedEntityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assigned Entity Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Informant_AssignedEntity#validateAssignedEntityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assigned Entity Id</em>}</li>
@@ -40,6 +41,40 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class Informant_AssignedEntityTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAssignedEntityHasNationalProviderIdentifier() {
+		OperationsTestCase<Informant_AssignedEntity> validateAssignedEntityHasNationalProviderIdentifierTestCase = new OperationsTestCase<Informant_AssignedEntity>(
+			"validateAssignedEntityHasNationalProviderIdentifier",
+			operationsForOCL.getOCLValue("VALIDATE_ASSIGNED_ENTITY_HAS_NATIONAL_PROVIDER_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Informant_AssignedEntity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Informant_AssignedEntity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return Informant_AssignedEntityOperations.validateAssignedEntityHasNationalProviderIdentifier(
+					(Informant_AssignedEntity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAssignedEntityHasNationalProviderIdentifierTestCase.doValidationTest();
+	}
 
 	/**
 	*
