@@ -13,6 +13,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.dita;
 
+import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 
@@ -37,6 +38,16 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 
 	protected boolean isRemoved(Element element) {
 		return transformerOptions.getDeletedElementList().contains(element);
+	}
+
+	public static String normalizeCodeName(String name) {
+		String result = "";
+		String[] parts = name.split(" ");
+		for (String part : parts) {
+			result += part.substring(0, 1).toUpperCase() + part.substring(1);
+		}
+		result = UML2Util.getValidJavaIdentifier(result);
+		return result;
 	}
 
 }
