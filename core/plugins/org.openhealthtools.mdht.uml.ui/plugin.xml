@@ -170,6 +170,14 @@
             <objectState name="umlType" value="Class"/>
          </visibility>
          <action
+               label="%addUMLNestedClass.label"
+               icon="icons/full/obj16/Class.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddUMLClassAction"
+               menubarPath="mdht.addUML/classifierGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.class">
+         </action>
+         <action
                label="%addUMLGeneralization.label"
                icon="icons/full/obj16/Generalization.gif"
                class="org.openhealthtools.mdht.uml.ui.actions.AddGeneralizationAction"
