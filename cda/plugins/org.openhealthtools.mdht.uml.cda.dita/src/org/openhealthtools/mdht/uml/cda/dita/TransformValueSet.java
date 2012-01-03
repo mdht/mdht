@@ -215,8 +215,8 @@ public class TransformValueSet extends TransformAbstract {
 
 	@Override
 	public Object caseEnumeration(Enumeration umlEnumeration) {
+		String fileName = normalizeCodeName(umlEnumeration.getName()) + ".dita";
 		String pathFolder = "terminology";
-		String fileName = CDAModelUtil.validFileName(umlEnumeration.getName()) + ".dita";
 		IPath filePath = transformerOptions.getOutputPath().append(pathFolder).addTrailingSeparator().append(fileName);
 		File file = filePath.toFile();
 		PrintWriter writer = null;

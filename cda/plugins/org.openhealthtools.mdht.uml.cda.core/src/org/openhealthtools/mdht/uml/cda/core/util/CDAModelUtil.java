@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -41,14 +42,15 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.util.UMLSwitch;
-import org.openhealthtools.mdht.uml.cda.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
-import org.openhealthtools.mdht.uml.cda.core.profile.ValueSetConstraint;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.term.core.profile.BindingKind;
+import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
 import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
+import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 public class CDAModelUtil {
 
@@ -321,7 +323,6 @@ public class CDAModelUtil {
 		String prefix = !UMLUtil.isSameModel(xrefSource, general)
 				? getModelPrefix(general) + " "
 				: "";
-		// String prefix = getModelPrefix(general)+" ";
 		String xref = computeXref(xrefSource, general);
 		boolean showXref = markup && (xref != null);
 		String format = showXref && xref.endsWith(".html")
@@ -407,7 +408,6 @@ public class CDAModelUtil {
 			String prefix = !UMLUtil.isSameModel(xrefSource, endType)
 					? getModelPrefix(endType) + " "
 					: "";
-			// String prefix = getModelPrefix(endType)+" ";
 			String xref = computeXref(xrefSource, endType);
 			boolean showXref = markup && (xref != null);
 			String format = showXref && xref.endsWith(".html")
@@ -551,7 +551,6 @@ public class CDAModelUtil {
 			String prefix = !UMLUtil.isSameModel(xrefSource, endType)
 					? getModelPrefix(endType) + " "
 					: "";
-			// String prefix = getModelPrefix(endType)+" ";
 			String xref = computeXref(xrefSource, endType);
 			boolean showXref = markup && (xref != null);
 			String format = showXref && xref.endsWith(".html")
@@ -680,21 +679,16 @@ public class CDAModelUtil {
 
 		// Stereotype conceptDomainConstraint = CDAProfileUtil.getAppliedCDAStereotype(
 		// property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
-		Stereotype codeSystemConstraint = CDAProfileUtil.getAppliedCDAStereotype(
+		Stereotype codeSystemConstraint = TermProfileUtil.getAppliedStereotype(
 			property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
-		Stereotype valueSetConstraint = CDAProfileUtil.getAppliedCDAStereotype(
+		Stereotype valueSetConstraint = TermProfileUtil.getAppliedStereotype(
 			property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
-		Stereotype vocabSpecification = CDAProfileUtil.getAppliedCDAStereotype(
-			property, ICDAProfileConstants.VOCAB_SPECIFICATION);
 
 		if (codeSystemConstraint != null) {
 			String vocab = computeCodeSystemMessage(property, markup);
 			message.append(vocab);
 		} else if (valueSetConstraint != null) {
 			String vocab = computeValueSetMessage(property, markup, xrefSource);
-			message.append(vocab);
-		} else if (vocabSpecification != null) {
-			String vocab = computeVocabSpecificationMessage(property, markup);
 			message.append(vocab);
 		} else if (isHL7VocabAttribute(property) && property.getDefault() != null) {
 			String vocab = computeHL7VocabAttributeMessage(property, markup);
@@ -782,9 +776,7 @@ public class CDAModelUtil {
 	}
 
 	private static String computeCodeSystemMessage(Property property, boolean markup) {
-		Stereotype codeSystemConstraintStereotype = CDAProfileUtil.getAppliedCDAStereotype(
-			property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
-		CodeSystemConstraint codeSystemConstraint = (CodeSystemConstraint) property.getStereotypeApplication(codeSystemConstraintStereotype);
+		CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
 
 		String id = null;
 		String name = null;
@@ -861,9 +853,7 @@ public class CDAModelUtil {
 	}
 
 	private static String computeValueSetMessage(Property property, boolean markup, Package xrefSource) {
-		Stereotype valueSetConstraintStereotype = CDAProfileUtil.getAppliedCDAStereotype(
-			property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
-		ValueSetConstraint valueSetConstraint = (ValueSetConstraint) property.getStereotypeApplication(valueSetConstraintStereotype);
+		ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
 
 		String keyword = getValidationKeyword(property);
 		String id = null;
@@ -939,89 +929,6 @@ public class CDAModelUtil {
 
 		if (BindingKind.STATIC == binding && version != null) {
 			message.append(" ").append(version);
-		}
-
-		return message.toString();
-	}
-
-	private static String computeVocabSpecificationMessage(Property property, boolean markup) {
-		Stereotype vocabSpecification = CDAProfileUtil.getAppliedCDAStereotype(
-			property, ICDAProfileConstants.VOCAB_SPECIFICATION);
-
-		StringBuffer message = new StringBuffer();
-		String codeSystem = (String) property.getValue(
-			vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM);
-		String codeSystemName = (String) property.getValue(
-			vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_NAME);
-		String codeSystemVersion = (String) property.getValue(
-			vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
-		String code = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE);
-		String displayName = (String) property.getValue(
-			vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_DISPLAY_NAME);
-
-		if (code != null) {
-			message.append(markup
-					? "<tt>"
-					: "");
-			message.append("/@code");
-			message.append(markup
-					? "</tt>"
-					: "");
-
-			message.append(" = \"").append(code).append("\" ");
-
-			if (displayName != null) {
-				message.append(markup
-						? "<i>"
-						: "");
-				message.append(displayName);
-				message.append(markup
-						? "</i>"
-						: "");
-			}
-
-			if (codeSystem != null || codeSystemName != null) {
-				message.append(" (CodeSystem:");
-				if (codeSystem != null) {
-					message.append(" ").append(codeSystem);
-				}
-				if (codeSystemName != null) {
-					message.append(" ").append(codeSystemName);
-				}
-				message.append(" STATIC");
-				if (codeSystemVersion != null) {
-					message.append(" ").append(codeSystemVersion);
-				}
-				message.append(")");
-			}
-		}
-		// TODO for now, assume it's a value set if no code
-		else if (codeSystem != null || codeSystemName != null) {
-			String keyword = getValidationKeyword(property);
-
-			message.append(", which ");
-			message.append(markup
-					? "<b>"
-					: "");
-			message.append(keyword);
-			message.append(markup
-					? "</b>"
-					: "");
-			message.append(" be selected from ValueSet");
-
-			if (codeSystem != null) {
-				message.append(" ").append(codeSystem);
-			}
-			if (codeSystemName != null) {
-				message.append(" ").append(codeSystemName);
-			}
-
-			if (codeSystemVersion != null) {
-				message.append(" STATIC");
-				message.append(" ").append(codeSystemVersion);
-			} else {
-				message.append(" DYNAMIC");
-			}
 		}
 
 		return message.toString();
@@ -1151,7 +1058,7 @@ public class CDAModelUtil {
 	protected static String computeXref(Element source, Class target) {
 		String href = null;
 		if (UMLUtil.isSameModel(source, target)) {
-			href = "../" + target.getName() + ".dita";
+			href = "../" + normalizeCodeName(target.getName()) + ".dita";
 		} else if (isCDAModel(target)) {
 			// no xref to CDA available at this time
 		} else {
@@ -1179,11 +1086,11 @@ public class CDAModelUtil {
 			}
 
 			href = INFOCENTER_URL + "/topic/" + basePackage + "." + prefix + "doc/" + pathFolder + "/" +
-					target.getName() + ".html";
+					normalizeCodeName(target.getName()) + ".html";
 
 			// pathFolder = "dita/classes";
 			// href = "../../../../" + basePackage + "."
-			// + prefix + "doc/" + pathFolder + "/" + target.getName() + ".dita";
+			// + prefix + "doc/" + pathFolder + "/" + normalizeCodeName(target.getName()) + ".dita";
 		}
 		return href;
 	}
@@ -1191,7 +1098,7 @@ public class CDAModelUtil {
 	protected static String computeTerminologyXref(Class source, Enumeration target) {
 		String href = null;
 		if (UMLUtil.isSameProject(source, target)) {
-			href = "../../terminology/" + validFileName(target.getName()) + ".dita";
+			href = "../../terminology/" + normalizeCodeName(target.getName()) + ".dita";
 		}
 		return href;
 	}
@@ -1309,7 +1216,9 @@ public class CDAModelUtil {
 			prefix = "RIM";
 		}
 
-		return prefix;
+		return prefix != null
+				? prefix
+				: "";
 	}
 
 	public static String getModelNamespacePrefix(Element element) {
@@ -1358,7 +1267,7 @@ public class CDAModelUtil {
 	public static String getPrefixedSplitName(NamedElement element) {
 		StringBuffer buffer = new StringBuffer();
 		String modelPrefix = getModelPrefix(element);
-		if (modelPrefix != null) {
+		if (modelPrefix != null && modelPrefix.length() > 0) {
 			buffer.append(modelPrefix).append(" ");
 		}
 		buffer.append(UMLUtil.splitName(element));
@@ -1573,21 +1482,14 @@ public class CDAModelUtil {
 		return newText.toString();
 	}
 
-	public static String validFileName(String fileName) {
-		StringBuffer validName = new StringBuffer();
-		for (int i = 0; i < fileName.length(); i++) {
-			if (fileName.charAt(i) == '/') {
-				validName.append(" ");
-			} else if (fileName.charAt(i) == '\\') {
-				validName.append(" ");
-			} else if (fileName.charAt(i) == '?') {
-				validName.append("");
-			} else {
-				validName.append(fileName.charAt(i));
-			}
+	public static String normalizeCodeName(String name) {
+		String result = "";
+		String[] parts = name.split(" ");
+		for (String part : parts) {
+			result += part.substring(0, 1).toUpperCase() + part.substring(1);
 		}
-
-		return validName.toString();
+		result = UML2Util.getValidJavaIdentifier(result);
+		return result;
 	}
 
 }

@@ -395,18 +395,18 @@ public class TransformClassContent extends TransformAbstract {
 		String cdaClassName = cdaClass != null
 				? cdaClass.getName()
 				: "MISSING_CDA_CLASS";
-		if (cdaClass != null) {
-			writer.print("<shortdesc id=\"shortdesc\">");
-			if (!umlClass.equals(cdaClass)) {
-				writer.print("[" + cdaClassName + ": templateId <tt>" + CDAModelUtil.getTemplateId(umlClass) + "</tt>]");
-			}
-			writer.println("</shortdesc>");
+		writer.print("<shortdesc id=\"shortdesc\">");
+		if (cdaClass != null && !umlClass.equals(cdaClass)) {
+			writer.print("[" + cdaClassName + ": templateId <tt>" + CDAModelUtil.getTemplateId(umlClass) + "</tt>]");
+		}
+		writer.println("</shortdesc>");
 
-			writer.println("<prolog id=\"prolog\">");
+		writer.println("<prolog id=\"prolog\">");
+		if (cdaClass != null) {
 			writer.println("<metadata><category>" + cdaClassName + "</category></metadata>");
 			writer.println("<resourceid id=\"" + CDAModelUtil.getTemplateId(umlClass) + "\"/>");
-			writer.println("</prolog>");
 		}
+		writer.println("</prolog>");
 	}
 
 	private void appendPropertyComments(PrintWriter writer, Property property) {
@@ -492,10 +492,11 @@ public class TransformClassContent extends TransformAbstract {
 
 	@Override
 	public Object caseClass(Class umlClass) {
+		String normalizedClassName = normalizeCodeName(umlClass.getName());
 
 		String pathFolder = "classes";
 		IPath filePath = transformerOptions.getOutputPath().append(pathFolder).addTrailingSeparator().append(
-			"generated").addTrailingSeparator().append("_" + umlClass.getName()).addFileExtension("dita");
+			"generated").addTrailingSeparator().append("_" + normalizedClassName).addFileExtension("dita");
 		File file = filePath.toFile();
 		PrintWriter writer = null;
 
