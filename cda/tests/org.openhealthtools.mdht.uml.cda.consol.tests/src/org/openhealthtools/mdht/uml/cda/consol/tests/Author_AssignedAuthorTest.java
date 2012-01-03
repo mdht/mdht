@@ -29,6 +29,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Author_AssignedAuthor#validateAssignedAuthorHasAssignedPersonOrAssignedAuthoringDevice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assigned Author Has Assigned Person Or Assigned Authoring Device</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Author_AssignedAuthor#validateAssignedAuthorHasNationalProviderIdentifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assigned Author Has National Provider Identifier</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Author_AssignedAuthor#validateAssignedAuthorAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assigned Author Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Author_AssignedAuthor#validateAssignedAuthorCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assigned Author Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Author_AssignedAuthor#validateAssignedAuthorId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assigned Author Id</em>}</li>
@@ -40,6 +42,74 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class Author_AssignedAuthorTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAssignedAuthorHasAssignedPersonOrAssignedAuthoringDevice() {
+		OperationsTestCase<Author_AssignedAuthor> validateAssignedAuthorHasAssignedPersonOrAssignedAuthoringDeviceTestCase = new OperationsTestCase<Author_AssignedAuthor>(
+			"validateAssignedAuthorHasAssignedPersonOrAssignedAuthoringDevice",
+			operationsForOCL.getOCLValue("VALIDATE_ASSIGNED_AUTHOR_HAS_ASSIGNED_PERSON_OR_ASSIGNED_AUTHORING_DEVICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Author_AssignedAuthor target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Author_AssignedAuthor target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return Author_AssignedAuthorOperations.validateAssignedAuthorHasAssignedPersonOrAssignedAuthoringDevice(
+					(Author_AssignedAuthor) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAssignedAuthorHasAssignedPersonOrAssignedAuthoringDeviceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAssignedAuthorHasNationalProviderIdentifier() {
+		OperationsTestCase<Author_AssignedAuthor> validateAssignedAuthorHasNationalProviderIdentifierTestCase = new OperationsTestCase<Author_AssignedAuthor>(
+			"validateAssignedAuthorHasNationalProviderIdentifier",
+			operationsForOCL.getOCLValue("VALIDATE_ASSIGNED_AUTHOR_HAS_NATIONAL_PROVIDER_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Author_AssignedAuthor target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Author_AssignedAuthor target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return Author_AssignedAuthorOperations.validateAssignedAuthorHasNationalProviderIdentifier(
+					(Author_AssignedAuthor) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAssignedAuthorHasNationalProviderIdentifierTestCase.doValidationTest();
+	}
 
 	/**
 	*

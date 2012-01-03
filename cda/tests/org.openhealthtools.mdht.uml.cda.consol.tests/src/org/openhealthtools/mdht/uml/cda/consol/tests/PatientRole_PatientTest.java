@@ -25,6 +25,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PatientRole_Patient#validatePatientBirthTimePreciseToYear(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Birth Time Precise To Year</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PatientRole_Patient#validatePatientBirthTimePreciseToDay(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Birth Time Precise To Day</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PatientRole_Patient#validatePatientBirthTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Birth Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PatientRole_Patient#validatePatientEthnicGroupCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Ethnic Group Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PatientRole_Patient#validatePatientMaritalStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Marital Status Code</em>}</li>
@@ -41,6 +43,74 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  */
 
 public class PatientRole_PatientTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePatientBirthTimePreciseToYear() {
+		OperationsTestCase<PatientRole_Patient> validatePatientBirthTimePreciseToYearTestCase = new OperationsTestCase<PatientRole_Patient>(
+			"validatePatientBirthTimePreciseToYear",
+			operationsForOCL.getOCLValue("VALIDATE_PATIENT_BIRTH_TIME_PRECISE_TO_YEAR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PatientRole_Patient target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PatientRole_Patient target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PatientRole_PatientOperations.validatePatientBirthTimePreciseToYear(
+					(PatientRole_Patient) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePatientBirthTimePreciseToYearTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePatientBirthTimePreciseToDay() {
+		OperationsTestCase<PatientRole_Patient> validatePatientBirthTimePreciseToDayTestCase = new OperationsTestCase<PatientRole_Patient>(
+			"validatePatientBirthTimePreciseToDay",
+			operationsForOCL.getOCLValue("VALIDATE_PATIENT_BIRTH_TIME_PRECISE_TO_DAY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PatientRole_Patient target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PatientRole_Patient target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PatientRole_PatientOperations.validatePatientBirthTimePreciseToDay(
+					(PatientRole_Patient) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePatientBirthTimePreciseToDayTestCase.doValidationTest();
+	}
 
 	/**
 	*

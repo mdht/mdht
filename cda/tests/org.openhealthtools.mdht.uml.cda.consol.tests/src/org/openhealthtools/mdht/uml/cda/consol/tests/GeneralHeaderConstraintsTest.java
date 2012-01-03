@@ -14,6 +14,7 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
 import org.openhealthtools.mdht.uml.cda.AssignedCustodian;
 import org.openhealthtools.mdht.uml.cda.AssignedEntity;
+import org.openhealthtools.mdht.uml.cda.AssociatedEntity;
 import org.openhealthtools.mdht.uml.cda.Authenticator;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.AuthoringDevice;
@@ -79,16 +80,20 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInFulfillmentOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints In Fulfillment Of</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorAuthoringDeviceManufacturerModelName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Authoring Device Manufacturer Model Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorAuthoringDeviceSoftwareName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Authoring Device Software Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorHasAssignedPersonOrAssignedAuthoringDevice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Has Assigned Person Or Assigned Authoring Device</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorHasNationalProviderIdentifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Has National Provider Identifier</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthorTelecom(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author Telecom</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthorAssignedAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Author Assigned Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDataEntererAssignedEntityHasNationalProviderIdentifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Data Enterer Assigned Entity Has National Provider Identifier</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDataEntererAssignedEntityAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Data Enterer Assigned Entity Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDataEntererAssignedEntityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Data Enterer Assigned Entity Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDataEntererAssignedEntityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Data Enterer Assigned Entity Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDataEntererAssignedEntityTelecom(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Data Enterer Assigned Entity Telecom</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsDataEntererAssignedEntityAssignedPerson(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Data Enterer Assigned Entity Assigned Person</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsCustodianAssignedCustodianCustodianOrganizationHasNationalProviderIdentifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Custodian Assigned Custodian Custodian Organization Has National Provider Identifier</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsCustodianAssignedCustodianCustodianOrganizationAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Custodian Assigned Custodian Custodian Organization Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsCustodianAssignedCustodianCustodianOrganizationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Custodian Assigned Custodian Custodian Organization Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsCustodianAssignedCustodianCustodianOrganizationName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Custodian Assigned Custodian Custodian Organization Name</em>}</li>
@@ -99,6 +104,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInformationRecipientIntendedRecipientInformationRecipient(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Information Recipient Intended Recipient Information Recipient</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInformationRecipientIntendedRecipientRecievedOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Information Recipient Intended Recipient Recieved Organization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInformationRecipientIntendedRecipient(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Information Recipient Intended Recipient</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsLegalAuthenticatorAssignedEntityHasNationalProviderIdentifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Legal Authenticator Assigned Entity Has National Provider Identifier</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsLegalAuthenticatorAssignedEntityAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Legal Authenticator Assigned Entity Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsLegalAuthenticatorAssignedEntityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Legal Authenticator Assigned Entity Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsLegalAuthenticatorAssignedEntityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Legal Authenticator Assigned Entity Id</em>}</li>
@@ -106,6 +112,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsLegalAuthenticatorAssignedEntityAssignedPerson(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Legal Authenticator Assigned Entity Assigned Person</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsLegalAuthenticatorTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Legal Authenticator Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsLegalAuthenticatorSignatureCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Legal Authenticator Signature Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthenticatorAssignedEntityHasNationalProviderIdentifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Authenticator Assigned Entity Has National Provider Identifier</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthenticatorAssignedEntityAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Authenticator Assigned Entity Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthenticatorAssignedEntityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Authenticator Assigned Entity Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthenticatorAssignedEntityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Authenticator Assigned Entity Id</em>}</li>
@@ -113,6 +120,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthenticatorTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Authenticator Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthenticatorSignatureCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Authenticator Signature Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsAuthenticatorAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Authenticator Assigned Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRoleProviderOrganizationHasNationalProviderIdentifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Provider Organization Has National Provider Identifier</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRoleProviderOrganizationAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Provider Organization Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRoleProviderOrganizationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Provider Organization Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRoleProviderOrganizationName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Provider Organization Name</em>}</li>
@@ -125,6 +133,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Guardian Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianTelecom(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Guardian Telecom</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianGuardianPerson(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Guardian Guardian Person</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToYear(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Birth Time Precise To Year</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToDay(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Birth Time Precise To Day</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Birth Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientEthnicGroupCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Ethnic Group Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRecordTargetPatientRolePatientMaritalStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Record Target Patient Role Patient Marital Status Code</em>}</li>
@@ -144,10 +154,13 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsComponentOfEncompassingEncounter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Component Of Encompassing Encounter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInformantRelatedEntityAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Informant Related Entity Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInformantRelatedEntityPerson(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Informant Related Entity Person</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInformantAssignedEntityHasNationalProviderIdentifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Informant Assigned Entity Has National Provider Identifier</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInformantAssignedEntityAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Informant Assigned Entity Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInformantAssignedEntityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Informant Assigned Entity Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInformantAssignedEntityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Informant Assigned Entity Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInformantAssignedEntityPerson(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Informant Assigned Entity Person</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInformantHasAssignedEntityOrRelatedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Informant Has Assigned Entity Or Related Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsParticipantSupportAssociatedEntityHasAssociatedPersonOrScopingOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Participant Support Associated Entity Has Associated Person Or Scoping Organization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsParticipantSupportTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Participant Support Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInFulfillmentOfOrderId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints In Fulfillment Of Order Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInFulfillmentOfOrder(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints In Fulfillment Of Order</em>}</li>
@@ -1056,6 +1069,158 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
+	public void testValidateGeneralHeaderConstraintsAuthorAssignedAuthorHasAssignedPersonOrAssignedAuthoringDevice() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsAuthorAssignedAuthorHasAssignedPersonOrAssignedAuthoringDeviceTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsAuthorAssignedAuthorHasAssignedPersonOrAssignedAuthoringDevice",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_AUTHOR_ASSIGNED_AUTHOR_HAS_ASSIGNED_PERSON_OR_ASSIGNED_AUTHORING_DEVICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			/*
+			 * (non-Javadoc)
+			 * 
+			 * @see org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.OperationsTestCase#addFailTests()
+			 */
+			@Override
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						author.setAssignedAuthor(aa);
+						target.getAuthors().add(author);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						author.setAssignedAuthor(aa);
+						aa.setAssignedAuthoringDevice(CDAFactory.eINSTANCE.createAuthoringDevice());
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						target.getAuthors().add(author);
+					}
+				});
+
+			}
+
+			/*
+			 * (non-Javadoc)
+			 * 
+			 * @see org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.OperationsTestCase#addPassTests()
+			 */
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						author.setAssignedAuthor(aa);
+						aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+						target.getAuthors().add(author);
+					}
+				}
+
+				);
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						target.init();
+						Author author = CDAFactory.eINSTANCE.createAuthor();
+						AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+						author.setAssignedAuthor(aa);
+						aa.setAssignedAuthoringDevice(CDAFactory.eINSTANCE.createAuthoringDevice());
+						target.getAuthors().add(author);
+					}
+				}
+
+				);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsAuthorAssignedAuthorHasAssignedPersonOrAssignedAuthoringDevice(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsAuthorAssignedAuthorHasAssignedPersonOrAssignedAuthoringDeviceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsAuthorAssignedAuthorHasNationalProviderIdentifier() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsAuthorAssignedAuthorHasNationalProviderIdentifierTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsAuthorAssignedAuthorHasNationalProviderIdentifier",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_AUTHOR_ASSIGNED_AUTHOR_HAS_NATIONAL_PROVIDER_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+
+				target.init();
+				Author author = CDAFactory.eINSTANCE.createAuthor();
+				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+				aa.getIds().add(DatatypesFactory.eINSTANCE.createII("111111"));
+
+				author.setAssignedAuthor(aa);
+				aa.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+				target.getAuthors().add(author);
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+
+				target.getAuthors().clear();
+
+				Author author = CDAFactory.eINSTANCE.createAuthor();
+
+				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+
+				aa.getIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.4.6"));
+
+				author.setAssignedAuthor(aa);
+
+				target.getAuthors().add(author);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsAuthorAssignedAuthorHasNationalProviderIdentifier(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsAuthorAssignedAuthorHasNationalProviderIdentifierTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
 	public void testValidateGeneralHeaderConstraintsAuthorAssignedAuthorAddr() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsAuthorAssignedAuthorAddrTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
 			"validateGeneralHeaderConstraintsAuthorAssignedAuthorAddr",
@@ -1308,6 +1473,46 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
+	public void testValidateGeneralHeaderConstraintsDataEntererAssignedEntityHasNationalProviderIdentifier() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsDataEntererAssignedEntityHasNationalProviderIdentifierTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsDataEntererAssignedEntityHasNationalProviderIdentifier",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_DATA_ENTERER_ASSIGNED_ENTITY_HAS_NATIONAL_PROVIDER_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				DataEnterer de = CDAFactory.eINSTANCE.createDataEnterer();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				de.setAssignedEntity(ae);
+
+				target.setDataEnterer(de);
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.getDataEnterer().getAssignedEntity().getIds().add(
+					DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.4.6"));
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsDataEntererAssignedEntityHasNationalProviderIdentifier(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsDataEntererAssignedEntityHasNationalProviderIdentifierTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
 	public void testValidateGeneralHeaderConstraintsDataEntererAssignedEntityAddr() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsDataEntererAssignedEntityAddrTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
 			"validateGeneralHeaderConstraintsDataEntererAssignedEntityAddr",
@@ -1499,6 +1704,47 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsDataEntererAssignedEntityAssignedPersonTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsCustodianAssignedCustodianCustodianOrganizationHasNationalProviderIdentifier() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsCustodianAssignedCustodianCustodianOrganizationHasNationalProviderIdentifierTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsCustodianAssignedCustodianCustodianOrganizationHasNationalProviderIdentifier",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CUSTODIAN_ASSIGNED_CUSTODIAN_CUSTODIAN_ORGANIZATION_HAS_NATIONAL_PROVIDER_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				Custodian custodian = CDAFactory.eINSTANCE.createCustodian();
+				AssignedCustodian ac = CDAFactory.eINSTANCE.createAssignedCustodian();
+				CustodianOrganization organization = CDAFactory.eINSTANCE.createCustodianOrganization();
+				ac.setRepresentedCustodianOrganization(organization);
+				custodian.setAssignedCustodian(ac);
+				target.setCustodian(custodian);
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.getCustodian().getAssignedCustodian().getRepresentedCustodianOrganization().getIds().add(
+					DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.4.6"));
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsCustodianAssignedCustodianCustodianOrganizationHasNationalProviderIdentifier(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsCustodianAssignedCustodianCustodianOrganizationHasNationalProviderIdentifierTestCase.doValidationTest();
 	}
 
 	/**
@@ -1933,6 +2179,45 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
+	* @generated  not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsLegalAuthenticatorAssignedEntityHasNationalProviderIdentifier() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsLegalAuthenticatorAssignedEntityHasNationalProviderIdentifierTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsLegalAuthenticatorAssignedEntityHasNationalProviderIdentifier",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_LEGAL_AUTHENTICATOR_ASSIGNED_ENTITY_HAS_NATIONAL_PROVIDER_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				LegalAuthenticator la = CDAFactory.eINSTANCE.createLegalAuthenticator();
+				target.setLegalAuthenticator(la);
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				la.setAssignedEntity(ae);
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.getLegalAuthenticator().getAssignedEntity().getIds().add(
+					DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.4.6"));
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsLegalAuthenticatorAssignedEntityHasNationalProviderIdentifier(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsLegalAuthenticatorAssignedEntityHasNationalProviderIdentifierTestCase.doValidationTest();
+	}
+
+	/**
+	*
 	* @generated not
 	*/
 	@Test
@@ -2199,6 +2484,49 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsLegalAuthenticatorSignatureCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated  not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsAuthenticatorAssignedEntityHasNationalProviderIdentifier() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsAuthenticatorAssignedEntityHasNationalProviderIdentifierTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsAuthenticatorAssignedEntityHasNationalProviderIdentifier",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_AUTHENTICATOR_ASSIGNED_ENTITY_HAS_NATIONAL_PROVIDER_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				Authenticator authenticator = CDAFactory.eINSTANCE.createAuthenticator();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				authenticator.setAssignedEntity(ae);
+				target.getAuthenticators().add(authenticator);
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.getAuthenticators().clear();
+				Authenticator authenticator = CDAFactory.eINSTANCE.createAuthenticator();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.4.6"));
+				authenticator.setAssignedEntity(ae);
+				target.getAuthenticators().add(authenticator);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsAuthenticatorAssignedEntityHasNationalProviderIdentifier(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsAuthenticatorAssignedEntityHasNationalProviderIdentifierTestCase.doValidationTest();
 	}
 
 	/**
@@ -2507,6 +2835,53 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
+	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRoleProviderOrganizationHasNationalProviderIdentifier() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRoleProviderOrganizationHasNationalProviderIdentifierTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsRecordTargetPatientRoleProviderOrganizationHasNationalProviderIdentifier",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PROVIDER_ORGANIZATION_HAS_NATIONAL_PROVIDER_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Organization organization = CDAFactory.eINSTANCE.createOrganization();
+				pr.setProviderOrganization(organization);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.getRecordTargets().clear();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Organization organization = CDAFactory.eINSTANCE.createOrganization();
+				organization.getIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.4.6"));
+				pr.setProviderOrganization(organization);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRoleProviderOrganizationHasNationalProviderIdentifier(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsRecordTargetPatientRoleProviderOrganizationHasNationalProviderIdentifierTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianAddr() {
 		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianAddrTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
 			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianAddr",
@@ -2705,6 +3080,100 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianGuardianPersonTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated  not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToYear() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToYearTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToYear",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_BIRTH_TIME_PRECISE_TO_YEAR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS("10"));
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.getRecordTargets().clear();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS("1980"));
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToYear(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToYearTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated  not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToDay() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToDayTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToDay",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_RECORD_TARGET_PATIENT_ROLE_PATIENT_BIRTH_TIME_PRECISE_TO_DAY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS());
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.getRecordTargets().clear();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS("19800101"));
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToDay(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsRecordTargetPatientRolePatientBirthTimePreciseToDayTestCase.doValidationTest();
 	}
 
 	/**
@@ -3985,25 +4454,19 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-
 				target.init();
-
 				Informant12 informant = CDAFactory.eINSTANCE.createInformant12();
 				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
-
 				informant.setAssignedEntity(ae);
 				target.getInformants().add(informant);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-
 				target.getInformants().clear();
-
 				Informant12 informant = CDAFactory.eINSTANCE.createInformant12();
 				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
 				ae.getIds().add(DatatypesFactory.eINSTANCE.createII());
-
 				informant.setAssignedEntity(ae);
 				target.getInformants().add(informant);
 
@@ -4035,10 +4498,8 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
 				target.init();
-
 				Informant12 informant = CDAFactory.eINSTANCE.createInformant12();
 				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
-
 				informant.setAssignedEntity(ae);
 				target.getInformants().add(informant);
 			}
@@ -4046,16 +4507,12 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				target.getInformants().clear();
-
 				Informant12 informant = CDAFactory.eINSTANCE.createInformant12();
 				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
 				ae.getIds().add(DatatypesFactory.eINSTANCE.createII());
-
 				ae.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
 				informant.setAssignedEntity(ae);
-
 				target.getInformants().add(informant);
-
 			}
 
 			@Override
@@ -4068,6 +4525,198 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsInformantAssignedEntityPersonTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated  not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsInformantHasAssignedEntityOrRelatedEntity() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsInformantHasAssignedEntityOrRelatedEntityTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsInformantHasAssignedEntityOrRelatedEntity",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_INFORMANT_HAS_ASSIGNED_ENTITY_OR_RELATED_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			/*
+			 * (non-Javadoc)
+			 * 
+			 * @see org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.OperationsTestCase#addFailTests()
+			 */
+			@Override
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						target.init();
+
+						Informant12 informant = CDAFactory.eINSTANCE.createInformant12();
+
+						target.getInformants().add(informant);
+
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						target.init();
+
+						Informant12 informant = CDAFactory.eINSTANCE.createInformant12();
+						AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+						informant.setAssignedEntity(ae);
+						RelatedEntity re = CDAFactory.eINSTANCE.createRelatedEntity();
+
+						informant.setRelatedEntity(re);
+
+						target.getInformants().add(informant);
+
+					}
+				});
+
+			}
+
+			/*
+			 * (non-Javadoc)
+			 * 
+			 * @see org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.OperationsTestCase#addPassTests()
+			 */
+			@Override
+			public void addPassTests() {
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						target.init();
+
+						Informant12 informant = CDAFactory.eINSTANCE.createInformant12();
+						AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+						informant.setAssignedEntity(ae);
+
+						target.getInformants().add(informant);
+
+					}
+
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						target.init();
+
+						Informant12 informant = CDAFactory.eINSTANCE.createInformant12();
+
+						RelatedEntity re = CDAFactory.eINSTANCE.createRelatedEntity();
+
+						informant.setRelatedEntity(re);
+
+						target.getInformants().add(informant);
+
+					}
+
+				});
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsInformantHasAssignedEntityOrRelatedEntity(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsInformantHasAssignedEntityOrRelatedEntityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated  not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsParticipantSupportAssociatedEntityHasAssociatedPersonOrScopingOrganization() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsParticipantSupportAssociatedEntityHasAssociatedPersonOrScopingOrganizationTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsParticipantSupportAssociatedEntityHasAssociatedPersonOrScopingOrganization",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_PARTICIPANT_SUPPORT_ASSOCIATED_ENTITY_HAS_ASSOCIATED_PERSON_OR_SCOPING_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			/*
+			 * (non-Javadoc)
+			 * 
+			 * @see org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.OperationsTestCase#addFailTests()
+			 */
+			@Override
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						target.init();
+						Participant1 participant = CDAFactory.eINSTANCE.createParticipant1();
+						AssociatedEntity ae = CDAFactory.eINSTANCE.createAssociatedEntity();
+						ae.setAssociatedPerson(CDAFactory.eINSTANCE.createPerson());
+						ae.setScopingOrganization(CDAFactory.eINSTANCE.createOrganization());
+						participant.setAssociatedEntity(ae);
+						target.getParticipants().add(participant);
+					}
+				});
+
+			}
+
+			/*
+			 * (non-Javadoc)
+			 * 
+			 * @see org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.OperationsTestCase#addPassTests()
+			 */
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						target.init();
+						Participant1 participant = CDAFactory.eINSTANCE.createParticipant1();
+						AssociatedEntity ae = CDAFactory.eINSTANCE.createAssociatedEntity();
+						ae.setScopingOrganization(CDAFactory.eINSTANCE.createOrganization());
+						participant.setAssociatedEntity(ae);
+						target.getParticipants().add(participant);
+
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						target.init();
+						Participant1 participant = CDAFactory.eINSTANCE.createParticipant1();
+						AssociatedEntity ae = CDAFactory.eINSTANCE.createAssociatedEntity();
+						ae.setAssociatedPerson(CDAFactory.eINSTANCE.createPerson());
+						participant.setAssociatedEntity(ae);
+						target.getParticipants().add(participant);
+
+					}
+				});
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsParticipantSupportAssociatedEntityHasAssociatedPersonOrScopingOrganization(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsParticipantSupportAssociatedEntityHasAssociatedPersonOrScopingOrganizationTestCase.doValidationTest();
 	}
 
 	/**
@@ -4165,6 +4814,53 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsInformantRelatedEntityPersonTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated  not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsInformantAssignedEntityHasNationalProviderIdentifier() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsInformantAssignedEntityHasNationalProviderIdentifierTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsInformantAssignedEntityHasNationalProviderIdentifier",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_INFORMANT_ASSIGNED_ENTITY_HAS_NATIONAL_PROVIDER_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+
+				Informant12 informant = CDAFactory.eINSTANCE.createInformant12();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+
+				informant.setAssignedEntity(ae);
+				target.getInformants().add(informant);
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.getInformants().clear();
+
+				Informant12 informant = CDAFactory.eINSTANCE.createInformant12();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getIds().add(DatatypesFactory.eINSTANCE.createII("2.16.840.1.113883.4.6"));
+
+				informant.setAssignedEntity(ae);
+				target.getInformants().add(informant);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsInformantAssignedEntityHasNationalProviderIdentifier(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsInformantAssignedEntityHasNationalProviderIdentifierTestCase.doValidationTest();
 	}
 
 	/**
