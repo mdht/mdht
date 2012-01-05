@@ -27,7 +27,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistoryStatusObservation#validateSocialHistoryStatusObservationTargetOfEntryRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Status Observation Target Of Entry Relationship</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistoryStatusObservation#validateSocialHistoryStatusObservationNoAdditionalParticipants(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Status Observation No Additional Participants</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistoryStatusObservation#validateSocialHistoryStatusObservationNoAdditionalRelationships(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Status Observation No Additional Relationships</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SocialHistoryStatusObservation#validateSocialHistoryStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Status Observation Template Id</em>}</li>
@@ -43,40 +42,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  */
 
 public class SocialHistoryStatusObservationTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateSocialHistoryStatusObservationTargetOfEntryRelationship() {
-		OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationTargetOfEntryRelationshipTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
-			"validateSocialHistoryStatusObservationTargetOfEntryRelationship",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_TARGET_OF_ENTRY_RELATIONSHIP__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(SocialHistoryStatusObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(SocialHistoryStatusObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return SocialHistoryStatusObservationOperations.validateSocialHistoryStatusObservationTargetOfEntryRelationship(
-					(SocialHistoryStatusObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateSocialHistoryStatusObservationTargetOfEntryRelationshipTestCase.doValidationTest();
-	}
 
 	/**
 	*

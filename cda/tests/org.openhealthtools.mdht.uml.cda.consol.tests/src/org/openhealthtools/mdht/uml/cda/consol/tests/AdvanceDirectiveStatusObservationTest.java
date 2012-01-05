@@ -27,7 +27,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveStatusObservation#validateAdvanceDirectiveStatusObservationTargetOfEntryRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Status Observation Target Of Entry Relationship</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveStatusObservation#validateAdvanceDirectiveStatusObservationNoAdditionalParticipants(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Status Observation No Additional Participants</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveStatusObservation#validateAdvanceDirectiveStatusObservationNoAdditionalRelationships(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Status Observation No Additional Relationships</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveStatusObservation#validateAdvanceDirectiveStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Status Observation Template Id</em>}</li>
@@ -42,40 +41,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  */
 
 public class AdvanceDirectiveStatusObservationTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateAdvanceDirectiveStatusObservationTargetOfEntryRelationship() {
-		OperationsTestCase<AdvanceDirectiveStatusObservation> validateAdvanceDirectiveStatusObservationTargetOfEntryRelationshipTestCase = new OperationsTestCase<AdvanceDirectiveStatusObservation>(
-			"validateAdvanceDirectiveStatusObservationTargetOfEntryRelationship",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_STATUS_OBSERVATION_TARGET_OF_ENTRY_RELATIONSHIP__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AdvanceDirectiveStatusObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AdvanceDirectiveStatusObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AdvanceDirectiveStatusObservationOperations.validateAdvanceDirectiveStatusObservationTargetOfEntryRelationship(
-					(AdvanceDirectiveStatusObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAdvanceDirectiveStatusObservationTargetOfEntryRelationshipTestCase.doValidationTest();
-	}
 
 	/**
 	*

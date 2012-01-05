@@ -17,7 +17,6 @@ import org.openhealthtools.mdht.uml.cda.consol.operations.AllergyObservationPlay
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +27,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservationPlayingEntity#validateAllergyObservationPlayingEntityCodeOriginalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Playing Entity Code Original Text</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservationPlayingEntity#validateAllergyObservationPlayingEntityOriginalTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Playing Entity Original Text Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservationPlayingEntity#validateAllergyObservationPlayingEntityOriginalTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Playing Entity Original Text Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservationPlayingEntity#validateAllergyObservationPlayingEntityCodeTranslation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Playing Entity Code Translation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservationPlayingEntity#validateAllergyObservationPlayingEntityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Playing Entity Class Code</em>}</li>
@@ -75,45 +73,6 @@ public class AllergyObservationPlayingEntityTest extends CDAValidationTest {
 		};
 
 		validateAllergyObservationPlayingEntityCodeOriginalTextTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated NOT
-	*/
-	@Test
-	public void testValidateAllergyObservationPlayingEntityOriginalTextReference() {
-		OperationsTestCase<AllergyObservationPlayingEntity> validateAllergyObservationPlayingEntityOriginalTextReferenceTestCase = new OperationsTestCase<AllergyObservationPlayingEntity>(
-			"validateAllergyObservationPlayingEntityOriginalTextReference",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_OBSERVATION_PLAYING_ENTITY_ORIGINAL_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AllergyObservationPlayingEntity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AllergyObservationPlayingEntity target) {
-				target.init();
-				CE code = DatatypesFactory.eINSTANCE.createCE();
-				ED ot = DatatypesFactory.eINSTANCE.createED();
-				ot.setReference(DatatypesFactory.eINSTANCE.createTEL("test"));
-				code.setOriginalText(ot);
-				target.setCode(code);
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AllergyObservationPlayingEntityOperations.validateAllergyObservationPlayingEntityOriginalTextReference(
-					(AllergyObservationPlayingEntity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateAllergyObservationPlayingEntityOriginalTextReferenceTestCase.doValidationTest();
 	}
 
 	/**

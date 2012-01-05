@@ -29,7 +29,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation_Verifier#validateVerifierTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Verifier Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation_Verifier#validateVerifierTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Verifier Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation_Verifier#validateVerifierTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Verifier Type Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation_Verifier#validateVerifierParticipantRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Verifier Participant Role</em>}</li>
@@ -40,40 +39,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class AdvanceDirectiveObservation_VerifierTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateVerifierTemplateId() {
-		OperationsTestCase<AdvanceDirectiveObservation_Verifier> validateVerifierTemplateIdTestCase = new OperationsTestCase<AdvanceDirectiveObservation_Verifier>(
-			"validateVerifierTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_VERIFIER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(AdvanceDirectiveObservation_Verifier target) {
-
-			}
-
-			@Override
-			protected void updateToPass(AdvanceDirectiveObservation_Verifier target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return AdvanceDirectiveObservation_VerifierOperations.validateVerifierTemplateId(
-					(AdvanceDirectiveObservation_Verifier) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateVerifierTemplateIdTestCase.doValidationTest();
-	}
 
 	/**
 	*
