@@ -74,7 +74,7 @@ import org.junit.runners.Suite;
 		HospitalAdmissionMedicationsSectionEntriesOptionalTest.class, MedicationsAdministeredSectionTest.class,
 		PhysicalExamSectionTest.class, GeneralStatusSectionTest.class, ReviewOfSystemsSectionTest.class,
 		AssessmentAndPlanSectionTest.class, LanguageSpokenTest.class, HealthcareProviderTest.class,
-		MedicationTaperedDoseTest.class, UnstructuredDocumentTest.class, ScanOriginalAuthorTest.class,
+		SurgicalDrainsSectionTest.class, UnstructuredDocumentTest.class, ScanOriginalAuthorTest.class,
 		ScanningDeviceTest.class, ScanDataEntererTest.class, MedicationInformationTest.class,
 		UnstructuredOrScannedDocumentTest.class, ReferralSummaryTest.class, DischargeSummaryTest.class,
 		HospitalDischargeDiagnosisSectionTest.class, HospitalDischargeDiagnosisTest.class,
@@ -88,7 +88,16 @@ import org.junit.runners.Suite;
 		ChiefComplaintAndReasonForVisitSectionTest.class, ReasonForVisitSectionTest.class, RelatedInformantTest.class,
 		EncounterPerformerTest.class, EncounterPerformerAssignedEntityTest.class,
 		AllergyObservationParticipantTest.class, AllergyObservationParticipantRoleTest.class,
-		AllergyObservationPlayingEntityTest.class })
+		AllergyObservationPlayingEntityTest.class, AnesthesiaSectionTest.class, ComplicationsSectionTest.class,
+		DICOMObjectCatalogSectionTest.class, FindingsSectionTest.class, HospitalConsultationsSectionTest.class,
+		InterventionsSectionTest.class, MedicalHistorySectionTest.class, ObjectiveSectionTest.class,
+		OperativeNoteFluidSectionTest.class, OperativeNoteSurgicalProcedureSectionTest.class,
+		PlannedProcedureSectionTest.class, PostoperativeDiagnosisSectionTest.class,
+		PostprocedureDiagnosisSectionTest.class, PreoperativeDiagnosisSectionTest.class,
+		ProcedureDescriptionSectionTest.class, ProcedureDispositionSectionTest.class,
+		ProcedureEstimatedBloodLossSectionTest.class, ProcedureFindingsSectionTest.class,
+		ProcedureImplantsSectionTest.class, ProcedureIndicationsSectionTest.class,
+		ProcedureSpecimensTakenSectionTest.class, SubjectiveSectionTest.class })
 public class ConsolTests {
 
 	/**

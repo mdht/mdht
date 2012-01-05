@@ -36,9 +36,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryMedicalSummaryProblemConcernEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Medical Summary Problem Concern Entry</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryMedicalSummaryAllergyConcernEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Medical Summary Allergy Concern Entry</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryMedicalSummaryMedications(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Medical Summary Medications</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryAdmissionMedicationHistorySection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Admission Medication History Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryHospitalAdmissionDiagnosisSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Hospital Admission Diagnosis Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DischargeSummary#validateDischargeSummaryAdvanceDirectivesSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Summary Advance Directives Section</em>}</li>
@@ -82,108 +79,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class DischargeSummaryTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateDischargeSummaryMedicalSummaryProblemConcernEntry() {
-		OperationsTestCase<DischargeSummary> validateDischargeSummaryMedicalSummaryProblemConcernEntryTestCase = new OperationsTestCase<DischargeSummary>(
-			"validateDischargeSummaryMedicalSummaryProblemConcernEntry",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_MEDICAL_SUMMARY_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DischargeSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DischargeSummary target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DischargeSummaryOperations.validateDischargeSummaryMedicalSummaryProblemConcernEntry(
-					(DischargeSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDischargeSummaryMedicalSummaryProblemConcernEntryTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateDischargeSummaryMedicalSummaryAllergyConcernEntry() {
-		OperationsTestCase<DischargeSummary> validateDischargeSummaryMedicalSummaryAllergyConcernEntryTestCase = new OperationsTestCase<DischargeSummary>(
-			"validateDischargeSummaryMedicalSummaryAllergyConcernEntry",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_MEDICAL_SUMMARY_ALLERGY_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DischargeSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DischargeSummary target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DischargeSummaryOperations.validateDischargeSummaryMedicalSummaryAllergyConcernEntry(
-					(DischargeSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDischargeSummaryMedicalSummaryAllergyConcernEntryTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateDischargeSummaryMedicalSummaryMedications() {
-		OperationsTestCase<DischargeSummary> validateDischargeSummaryMedicalSummaryMedicationsTestCase = new OperationsTestCase<DischargeSummary>(
-			"validateDischargeSummaryMedicalSummaryMedications",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_MEDICAL_SUMMARY_MEDICATIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DischargeSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DischargeSummary target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DischargeSummaryOperations.validateDischargeSummaryMedicalSummaryMedications(
-					(DischargeSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDischargeSummaryMedicalSummaryMedicationsTestCase.doValidationTest();
-	}
 
 	/**
 	*
