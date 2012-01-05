@@ -36,7 +36,6 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubject;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySubject#validateFamilyHistorySubjectRelatedSubjectCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Subject Related Subject Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySubject#validateFamilyHistorySubjectRelatedSubjectCodeValueSet(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Subject Related Subject Code Value Set</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySubject#validateFamilyHistorySubjectRelatedSubjectSubject(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Subject Related Subject Subject</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySubject#validateFamilyHistorySubjectRelatedSubjectSubjectId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Subject Related Subject Subject Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySubject#validateFamilyHistorySubjectRelatedSubjectSubjectAdmGenderCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Subject Related Subject Subject Adm Gender Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySubject#validateFamilyHistorySubjectRelatedSubjectSubjectBirthTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Subject Related Subject Subject Birth Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySubject#validateFamilyHistorySubjectRelatedSubjectSubjectDeceasedInd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Subject Related Subject Subject Deceased Ind</em>}</li>
@@ -204,40 +203,6 @@ public class FamilyHistorySubjectTest extends CDAValidationTest {
 		};
 
 		validateFamilyHistorySubjectRelatedSubjectSubjectTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateFamilyHistorySubjectRelatedSubjectSubjectId() {
-		OperationsTestCase<FamilyHistorySubject> validateFamilyHistorySubjectRelatedSubjectSubjectIdTestCase = new OperationsTestCase<FamilyHistorySubject>(
-			"validateFamilyHistorySubjectRelatedSubjectSubjectId",
-			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SUBJECT_RELATED_SUBJECT_SUBJECT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(FamilyHistorySubject target) {
-
-			}
-
-			@Override
-			protected void updateToPass(FamilyHistorySubject target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return FamilyHistorySubjectOperations.validateFamilyHistorySubjectRelatedSubjectSubjectId(
-					(FamilyHistorySubject) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateFamilyHistorySubjectRelatedSubjectSubjectIdTestCase.doValidationTest();
 	}
 
 	/**

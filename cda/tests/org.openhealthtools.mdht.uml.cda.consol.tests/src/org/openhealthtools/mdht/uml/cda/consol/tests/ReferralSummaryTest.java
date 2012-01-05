@@ -24,9 +24,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReferralSummary#validateReferralSummaryMedicalSummaryProblemConcernEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Referral Summary Medical Summary Problem Concern Entry</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReferralSummary#validateReferralSummaryMedicalSummaryAllergyConcernEntry(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Referral Summary Medical Summary Allergy Concern Entry</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReferralSummary#validateReferralSummaryMedicalSummaryMedications(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Referral Summary Medical Summary Medications</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReferralSummary#validateGeneralHeaderConstraintsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReferralSummary#validateGeneralHeaderConstraintsCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Code</em>}</li>
  * </ul>
@@ -36,108 +33,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class ReferralSummaryTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateReferralSummaryMedicalSummaryProblemConcernEntry() {
-		OperationsTestCase<ReferralSummary> validateReferralSummaryMedicalSummaryProblemConcernEntryTestCase = new OperationsTestCase<ReferralSummary>(
-			"validateReferralSummaryMedicalSummaryProblemConcernEntry",
-			operationsForOCL.getOCLValue("VALIDATE_REFERRAL_SUMMARY_MEDICAL_SUMMARY_PROBLEM_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ReferralSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ReferralSummary target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ReferralSummaryOperations.validateReferralSummaryMedicalSummaryProblemConcernEntry(
-					(ReferralSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateReferralSummaryMedicalSummaryProblemConcernEntryTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateReferralSummaryMedicalSummaryAllergyConcernEntry() {
-		OperationsTestCase<ReferralSummary> validateReferralSummaryMedicalSummaryAllergyConcernEntryTestCase = new OperationsTestCase<ReferralSummary>(
-			"validateReferralSummaryMedicalSummaryAllergyConcernEntry",
-			operationsForOCL.getOCLValue("VALIDATE_REFERRAL_SUMMARY_MEDICAL_SUMMARY_ALLERGY_CONCERN_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ReferralSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ReferralSummary target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ReferralSummaryOperations.validateReferralSummaryMedicalSummaryAllergyConcernEntry(
-					(ReferralSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateReferralSummaryMedicalSummaryAllergyConcernEntryTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateReferralSummaryMedicalSummaryMedications() {
-		OperationsTestCase<ReferralSummary> validateReferralSummaryMedicalSummaryMedicationsTestCase = new OperationsTestCase<ReferralSummary>(
-			"validateReferralSummaryMedicalSummaryMedications",
-			operationsForOCL.getOCLValue("VALIDATE_REFERRAL_SUMMARY_MEDICAL_SUMMARY_MEDICATIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ReferralSummary target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ReferralSummary target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ReferralSummaryOperations.validateReferralSummaryMedicalSummaryMedications(
-					(ReferralSummary) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateReferralSummaryMedicalSummaryMedicationsTestCase.doValidationTest();
-	}
 
 	/**
 	*
