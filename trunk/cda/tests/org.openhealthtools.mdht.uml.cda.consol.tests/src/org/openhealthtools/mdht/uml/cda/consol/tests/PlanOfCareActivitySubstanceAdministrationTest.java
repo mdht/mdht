@@ -15,6 +15,8 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivitySubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.consol.operations.PlanOfCareActivitySubstanceAdministrationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,7 +72,7 @@ public class PlanOfCareActivitySubstanceAdministrationTest extends CDAValidation
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePlanOfCareActivitySubstanceAdministrationId() {
@@ -87,6 +89,8 @@ public class PlanOfCareActivitySubstanceAdministrationTest extends CDAValidation
 			@Override
 			protected void updateToPass(PlanOfCareActivitySubstanceAdministration target) {
 				target.init();
+				II id = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(id);
 
 			}
 

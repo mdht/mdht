@@ -14,6 +14,12 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityAct;
+import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityEncounter;
+import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityObservation;
+import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityProcedure;
+import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivitySubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivitySupply;
 import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.consol.operations.PlanOfCareSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
@@ -119,7 +125,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePlanOfCareSectionText() {
@@ -156,7 +162,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePlanOfCareSectionPlanOfCareActivityAct() {
@@ -173,6 +179,8 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
+				PlanOfCareActivityAct ActivityAct = ConsolFactory.eINSTANCE.createPlanOfCareActivityAct();
+				target.addAct(ActivityAct);
 
 			}
 
@@ -190,7 +198,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePlanOfCareSectionPlanOfCareActivityEncounter() {
@@ -207,7 +215,8 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-
+				PlanOfCareActivityEncounter Actent = ConsolFactory.eINSTANCE.createPlanOfCareActivityEncounter();
+				target.addEncounter(Actent);
 			}
 
 			@Override
@@ -224,7 +233,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePlanOfCareSectionPlanOfCareActivityObservation() {
@@ -241,7 +250,8 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-
+				PlanOfCareActivityObservation ActObs = ConsolFactory.eINSTANCE.createPlanOfCareActivityObservation();
+				target.addObservation(ActObs);
 			}
 
 			@Override
@@ -258,7 +268,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePlanOfCareSectionPlanOfCareActivityProcedure() {
@@ -275,7 +285,8 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-
+				PlanOfCareActivityProcedure ActProc = ConsolFactory.eINSTANCE.createPlanOfCareActivityProcedure();
+				target.addProcedure(ActProc);
 			}
 
 			@Override
@@ -292,7 +303,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePlanOfCareSectionPlanOfCareActivitySubstanceAdministration() {
@@ -309,7 +320,8 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-
+				PlanOfCareActivitySubstanceAdministration ActObs = ConsolFactory.eINSTANCE.createPlanOfCareActivitySubstanceAdministration();
+				target.addSubstanceAdministration(ActObs);
 			}
 
 			@Override
@@ -326,7 +338,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePlanOfCareSectionPlanOfCareActivitySupply() {
@@ -343,7 +355,8 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-
+				PlanOfCareActivitySupply ActSupply = ConsolFactory.eINSTANCE.createPlanOfCareActivitySupply();
+				target.addSupply(ActSupply);
 			}
 
 			@Override

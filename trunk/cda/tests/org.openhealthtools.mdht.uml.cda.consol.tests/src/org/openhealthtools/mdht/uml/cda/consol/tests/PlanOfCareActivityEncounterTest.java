@@ -15,6 +15,8 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivityEncounter;
 import org.openhealthtools.mdht.uml.cda.consol.operations.PlanOfCareActivityEncounterOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,7 +72,7 @@ public class PlanOfCareActivityEncounterTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePlanOfCareActivityEncounterId() {
@@ -87,6 +89,8 @@ public class PlanOfCareActivityEncounterTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareActivityEncounter target) {
 				target.init();
+				II id = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(id);
 
 			}
 
