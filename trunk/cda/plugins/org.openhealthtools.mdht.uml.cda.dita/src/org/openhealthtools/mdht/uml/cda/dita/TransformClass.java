@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.uml2.uml.Class;
@@ -129,7 +130,14 @@ public class TransformClass extends TransformAbstract {
 				transformerOptions.getClassList().add(fileName);
 			}
 		} else {
-			transformerOptions.getClassList().add(fileName);
+			// temporary workaround for QDM category section in pub, use section list
+			List<String> parentNames = UMLUtil.getAllParentNames(umlClass);
+			parentNames.remove(0);
+			if (parentNames.contains("QDM Element")) {
+				transformerOptions.getSectionList().add(fileName);
+			} else {
+				transformerOptions.getClassList().add(fileName);
+			}
 		}
 
 		return umlClass;
