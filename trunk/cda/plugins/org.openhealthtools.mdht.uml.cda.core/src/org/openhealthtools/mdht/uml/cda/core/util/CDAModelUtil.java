@@ -329,14 +329,21 @@ public class CDAModelUtil {
 				? "format=\"html\" "
 				: "";
 
-		message.append(markup
-				? "<b>"
-				: "");
-		message.append("SHALL");
-		message.append(markup
-				? "</b>"
-				: "");
-		message.append(" conform to ");
+		Class cdaGeneral = getCDAClass(general);
+
+		if (cdaGeneral != null) {
+			message.append(markup
+					? "<b>"
+					: "");
+			message.append("SHALL");
+			message.append(markup
+					? "</b>"
+					: "");
+			message.append(" conform to ");
+		} else {
+			message.append("Extends ");
+		}
+
 		message.append(showXref
 				? "<xref " + format + "href=\"" + xref + "\">"
 				: "");
@@ -890,14 +897,20 @@ public class CDAModelUtil {
 
 		StringBuffer message = new StringBuffer();
 		message.append(", which ");
-		message.append(markup
-				? "<b>"
-				: "");
-		message.append(keyword);
-		message.append(markup
-				? "</b>"
-				: "");
-		message.append(" be selected from ValueSet");
+		if (keyword != null) {
+			message.append(markup
+					? "<b>"
+					: "");
+			message.append(keyword);
+			message.append(markup
+					? "</b>"
+					: "");
+
+			message.append(" be");
+		} else {
+			message.append("is");
+		}
+		message.append(" selected from ValueSet");
 
 		message.append(markup
 				? "<tt>"
@@ -1057,7 +1070,7 @@ public class CDAModelUtil {
 
 	protected static String computeXref(Element source, Class target) {
 		String href = null;
-		if (UMLUtil.isSameModel(source, target)) {
+		if (UMLUtil.isSameProject(source, target)) {
 			href = "../" + normalizeCodeName(target.getName()) + ".dita";
 		} else if (isCDAModel(target)) {
 			// no xref to CDA available at this time
