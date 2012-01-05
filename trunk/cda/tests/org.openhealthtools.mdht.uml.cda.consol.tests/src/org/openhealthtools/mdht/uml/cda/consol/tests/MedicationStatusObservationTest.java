@@ -27,7 +27,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationStatusObservation#validateMedicationStatusObservationTargetOfEntryRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Status Observation Target Of Entry Relationship</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationStatusObservation#validateMedicationStatusObservationNoAdditionalParticipants(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Status Observation No Additional Participants</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationStatusObservation#validateMedicationStatusObservationNoAdditionalRelationships(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Status Observation No Additional Relationships</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationStatusObservation#validateMedicationStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Status Observation Template Id</em>}</li>
@@ -42,40 +41,6 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  */
 
 public class MedicationStatusObservationTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateMedicationStatusObservationTargetOfEntryRelationship() {
-		OperationsTestCase<MedicationStatusObservation> validateMedicationStatusObservationTargetOfEntryRelationshipTestCase = new OperationsTestCase<MedicationStatusObservation>(
-			"validateMedicationStatusObservationTargetOfEntryRelationship",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_STATUS_OBSERVATION_TARGET_OF_ENTRY_RELATIONSHIP__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationStatusObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationStatusObservation target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationStatusObservationOperations.validateMedicationStatusObservationTargetOfEntryRelationship(
-					(MedicationStatusObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationStatusObservationTargetOfEntryRelationshipTestCase.doValidationTest();
-	}
 
 	/**
 	*
