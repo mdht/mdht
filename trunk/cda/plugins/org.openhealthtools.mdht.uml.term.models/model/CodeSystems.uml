@@ -85,6 +85,7 @@
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_Z0A90E6SEeC5ttwajeXVXg" name="HL7ParticipationType"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_f6DH8E6SEeC5ttwajeXVXg" name="HL7ActRelationshipType"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_R4Y6wCAqEeGetMjKLkqR8g" name="HL7"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_tKR9cDrrEeG-aJb2h_4S8w" name="Accredited Standards Committee (ASC) X12"/>
     <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
       <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
@@ -136,4 +137,5 @@
   <term:CodeSystemVersion xmi:id="_Z0Bk4E6SEeC5ttwajeXVXg" identifier="2.16.840.1.113883.5.90" base_Enumeration="_Z0A90E6SEeC5ttwajeXVXg"/>
   <term:CodeSystemVersion xmi:id="_f6DvAE6SEeC5ttwajeXVXg" identifier="2.16.840.1.113883.5.1002" base_Enumeration="_f6DH8E6SEeC5ttwajeXVXg"/>
   <term:CodeSystemVersion xmi:id="_R4Y6wSAqEeGetMjKLkqR8g" identifier="2.16.840.1.113883.5.14" source="Health Level Seven (HL7)" base_Enumeration="_R4Y6wCAqEeGetMjKLkqR8g"/>
+  <term:CodeSystemVersion xmi:id="_tKTLkDrrEeG-aJb2h_4S8w" version="004010" fullName="Accredited Standards Committee (ASC)" url="http://www.x12.org/" base_Enumeration="_tKR9cDrrEeG-aJb2h_4S8w"/>
 </xmi:XMI>
