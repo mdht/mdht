@@ -3251,6 +3251,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				Birthplace birthplace = CDAFactory.eINSTANCE.createBirthplace();
 				Place place = CDAFactory.eINSTANCE.createPlace();
 				birthplace.setPlace(place);
+				// patient.setBirthplace(birthplace);
 				pr.setPatient(patient);
 				re.setPatientRole(pr);
 				target.getRecordTargets().add(re);
