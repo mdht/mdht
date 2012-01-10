@@ -14,7 +14,9 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.Component1;
 import org.openhealthtools.mdht.uml.cda.EncompassingEncounter;
+import org.openhealthtools.mdht.uml.cda.EncounterParticipant;
 import org.openhealthtools.mdht.uml.cda.InFulfillmentOf;
+import org.openhealthtools.mdht.uml.cda.ResponsibleParty;
 import org.openhealthtools.mdht.uml.cda.consol.AllergiesSection;
 import org.openhealthtools.mdht.uml.cda.consol.AssessmentAndPlanSection;
 import org.openhealthtools.mdht.uml.cda.consol.AssessmentSection;
@@ -1153,7 +1155,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateConsultationNoteComponentOfEncompassingEncounter2EncounterParticipantAssignedEntity() {
@@ -1164,12 +1166,23 @@ public class ConsultationNoteTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
+				target.init();
+				Component1 component = CDAFactory.eINSTANCE.createComponent1();
+				EncounterParticipant ep = CDAFactory.eINSTANCE.createEncounterParticipant();
 
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				ee.getEncounterParticipants().add(ep);
+				component.setEncompassingEncounter(ee);
+
+				target.setComponentOf(component);
 			}
 
 			@Override
 			protected void updateToPass(ConsultationNote target) {
-				target.init();
+				target.getComponentOf().getEncompassingEncounter().getEncounterParticipants().clear();
+				EncounterParticipant ep = CDAFactory.eINSTANCE.createEncounterParticipant();
+				ep.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+				target.getComponentOf().getEncompassingEncounter().getEncounterParticipants().add(ep);
 
 			}
 
@@ -1187,7 +1200,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateConsultationNoteComponentOfEncompassingEncounter2ResponsiblePartyAssignedEntity() {
@@ -1198,12 +1211,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
-
+				target.init();
+				Component1 component = CDAFactory.eINSTANCE.createComponent1();
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				ResponsibleParty rp = CDAFactory.eINSTANCE.createResponsibleParty();
+				ee.setResponsibleParty(rp);
+				component.setEncompassingEncounter(ee);
+				target.setComponentOf(component);
 			}
 
 			@Override
 			protected void updateToPass(ConsultationNote target) {
-				target.init();
+				target.getComponentOf().getEncompassingEncounter().getResponsibleParty().setAssignedEntity(
+					CDAFactory.eINSTANCE.createAssignedEntity());
 
 			}
 
@@ -1221,7 +1241,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateConsultationNoteComponentOfEncompassingEncounter2EffectiveTime() {
@@ -1232,15 +1252,18 @@ public class ConsultationNoteTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
-
+				target.init();
+				Component1 component = CDAFactory.eINSTANCE.createComponent1();
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				component.setEncompassingEncounter(ee);
+				target.setComponentOf(component);
 			}
 
 			@Override
 			protected void updateToPass(ConsultationNote target) {
-				target.init();
 
 				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+				target.getComponentOf().getEncompassingEncounter().setEffectiveTime(ts);
 
 			}
 
@@ -1258,7 +1281,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateConsultationNoteComponentOfEncompassingEncounter2Id() {
@@ -1269,13 +1292,16 @@ public class ConsultationNoteTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
-
+				target.init();
+				Component1 component = CDAFactory.eINSTANCE.createComponent1();
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				component.setEncompassingEncounter(ee);
+				target.setComponentOf(component);
 			}
 
 			@Override
 			protected void updateToPass(ConsultationNote target) {
-				target.init();
-
+				target.getComponentOf().getEncompassingEncounter().getIds().add(DatatypesFactory.eINSTANCE.createII());
 			}
 
 			@Override
@@ -1292,7 +1318,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateConsultationNoteComponentOfEncompassingEncounter2ResponsibleParty() {
@@ -1303,12 +1329,18 @@ public class ConsultationNoteTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
-
+				target.init();
+				Component1 component = CDAFactory.eINSTANCE.createComponent1();
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				component.setEncompassingEncounter(ee);
+				target.setComponentOf(component);
 			}
 
 			@Override
 			protected void updateToPass(ConsultationNote target) {
-				target.init();
+
+				ResponsibleParty rp = CDAFactory.eINSTANCE.createResponsibleParty();
+				target.getComponentOf().getEncompassingEncounter().setResponsibleParty(rp);
 
 			}
 
@@ -1326,7 +1358,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateConsultationNoteComponentOfEncompassingEncounter2EncounterParticipant() {
@@ -1338,13 +1370,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(ConsultationNote target) {
 				target.init();
-				System.out.println(target.getComponentOf());
+				Component1 component = CDAFactory.eINSTANCE.createComponent1();
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				component.setEncompassingEncounter(ee);
+				target.setComponentOf(component);
 
 			}
 
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 
+				EncounterParticipant ep = CDAFactory.eINSTANCE.createEncounterParticipant();
+
+				target.getComponentOf().getEncompassingEncounter().getEncounterParticipants().add(ep);
 			}
 
 			@Override
@@ -1361,7 +1399,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateConsultationNoteComponentOfEncompassingEncounter() {
@@ -1373,14 +1411,15 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(ConsultationNote target) {
 				target.init();
-				// Component1 component = CDAFactory.eINSTANCE.createComponent1();
-				// target.setComponentOf(component);
+				Component1 component = CDAFactory.eINSTANCE.createComponent1();
+				target.setComponentOf(component);
 
 			}
 
 			@Override
 			protected void updateToPass(ConsultationNote target) {
-				CDAFactory.eINSTANCE.createEncompassingEncounter();
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				target.getComponentOf().setEncompassingEncounter(ee);
 
 			}
 
