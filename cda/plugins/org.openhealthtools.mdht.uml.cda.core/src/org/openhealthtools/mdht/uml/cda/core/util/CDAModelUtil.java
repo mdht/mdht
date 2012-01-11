@@ -709,7 +709,29 @@ public class CDAModelUtil {
 
 		if (property.getType() != null &&
 				(redefinedProperty == null || (!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType())))) {
-			message.append(", where its data type is ").append(property.getType().getName());
+			message.append(", where its data type is ");
+
+			String xref = (property.getType() instanceof Classifier && UMLUtil.isSameProject(
+				property, property.getType()))
+					? computeXref(xrefSource, (Classifier) property.getType())
+					: null;
+			boolean showXref = markup && (xref != null);
+
+			if (showXref) {
+				String format = showXref && xref.endsWith(".html")
+						? "format=\"html\" "
+						: "";
+				message.append(showXref
+						? "<xref " + format + "href=\"" + xref + "\">"
+						: "");
+				message.append(UMLUtil.splitName(property.getType()));
+				message.append(showXref
+						? "</xref>"
+						: "");
+			} else {
+				message.append(property.getType().getName());
+			}
+
 		}
 
 		appendConformanceRuleIds(property, message, markup);
@@ -1068,7 +1090,11 @@ public class CDAModelUtil {
 		return output;
 	}
 
-	protected static String computeXref(Element source, Class target) {
+	protected static String computeXref(Element source, Classifier target) {
+		if (target instanceof Enumeration) {
+			return computeTerminologyXref(source, (Enumeration) target);
+		}
+
 		String href = null;
 		if (UMLUtil.isSameProject(source, target)) {
 			href = "../" + normalizeCodeName(target.getName()) + ".dita";
@@ -1108,7 +1134,7 @@ public class CDAModelUtil {
 		return href;
 	}
 
-	protected static String computeTerminologyXref(Class source, Enumeration target) {
+	protected static String computeTerminologyXref(Element source, Enumeration target) {
 		String href = null;
 		if (UMLUtil.isSameProject(source, target)) {
 			href = "../../terminology/" + normalizeCodeName(target.getName()) + ".dita";
