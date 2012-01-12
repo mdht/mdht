@@ -241,7 +241,7 @@ public class TransformInlinedAssociations extends TransformAbstract {
 				}
 
 				appendInlinedOCLConstraint(bucketClass, stack + constraint.getName(), severity, message +
-						constraintMessage, path + "->forAll(" + relativeOCL + ")");
+						constraintMessage, path + "->select(not oclIsUndefined())->forAll(" + relativeOCL + ")");
 			}
 
 		}
