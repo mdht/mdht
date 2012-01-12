@@ -16,12 +16,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 
 public class TransformConstraint extends TransformAbstract {
+	private static final String VALIDATION_QUERY = "constraints.validation.query";
+
+	private static boolean isQueryConstraint(Constraint constraint) {
+		boolean inline = false;
+		for (Comment comment : constraint.getOwnedComments()) {
+			if (comment.getBody().startsWith("QUERY")) {
+				inline = true;
+				break;
+			}
+		}
+		return inline;
+	}
+
 	public TransformConstraint(TransformerOptions options) {
 		super(options);
 	}
@@ -74,6 +88,12 @@ public class TransformConstraint extends TransformAbstract {
 			constraintName = constraintPrefix + constraintName;
 		}
 		constraint.setName(constraintName);
+
+		if (isQueryConstraint(constraint)) {
+			AnnotationsUtil annotationsUtil = new AnnotationsUtil(constrainedClass);
+			annotationsUtil.addAnnotation(VALIDATION_QUERY, constraintName);
+			annotationsUtil.saveAnnotations();
+		}
 
 		if (SEVERITY_INFO.equals(severity)) {
 			addValidationInfo(constrainedClass, constraint.getName(), message);
