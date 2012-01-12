@@ -216,7 +216,7 @@ public class EstimatedDateOfDeliveryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateEstimatedDateOfDeliveryValue() {
