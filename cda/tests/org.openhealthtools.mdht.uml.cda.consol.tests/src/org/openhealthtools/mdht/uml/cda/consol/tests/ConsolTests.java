@@ -97,7 +97,10 @@ import org.junit.runners.Suite;
 		ProcedureDescriptionSectionTest.class, ProcedureDispositionSectionTest.class,
 		ProcedureEstimatedBloodLossSectionTest.class, ProcedureFindingsSectionTest.class,
 		ProcedureImplantsSectionTest.class, ProcedureIndicationsSectionTest.class,
-		ProcedureSpecimensTakenSectionTest.class, SubjectiveSectionTest.class })
+		ProcedureSpecimensTakenSectionTest.class, SubjectiveSectionTest.class, ConsultationNoteTest.class,
+		ConsultationNote_ComponentOfTest.class, ComponentOf_EncompassingEncounter2Test.class,
+		EncompassingEncounter2_ResponsiblePartyTest.class, EncompassingEncounter2_EncounterParticipantTest.class,
+		AssessmentSectionTest.class })
 public class ConsolTests {
 
 	/**
