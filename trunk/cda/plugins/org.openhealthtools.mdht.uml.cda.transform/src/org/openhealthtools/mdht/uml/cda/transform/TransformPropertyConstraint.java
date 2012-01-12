@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 /**
  * Transform UML property constraints for: multiplicity, type restriction.
@@ -157,8 +158,10 @@ public class TransformPropertyConstraint extends TransformAbstract {
 				}
 				if (property.getType() instanceof Enumeration) {
 					body.append(selfName + "=" + templateTypeQName + "::" + property.getDefault());
-				} else {
+				} else if (UMLUtil.isTypeString(property.getType())) {
 					body.append(selfName + "='" + property.getDefault() + "'");
+				} else {
+					body.append(selfName + "=" + property.getDefault());
 				}
 			}
 
