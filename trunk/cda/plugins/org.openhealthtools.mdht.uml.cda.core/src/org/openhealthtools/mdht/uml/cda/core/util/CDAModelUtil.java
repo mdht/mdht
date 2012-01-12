@@ -129,11 +129,12 @@ public class CDAModelUtil {
 	}
 
 	public static boolean isDatatypeModel(Element element) {
-		Stereotype ePackage = element.getNearestPackage().getAppliedStereotype("Ecore::EPackage");
-		if (ePackage != null) {
-			return DATATYPES_NS_URI.equals(element.getNearestPackage().getValue(ePackage, "nsURI"));
+		if (element != null && element.getNearestPackage() != null) {
+			Stereotype ePackage = element.getNearestPackage().getAppliedStereotype("Ecore::EPackage");
+			if (ePackage != null) {
+				return DATATYPES_NS_URI.equals(element.getNearestPackage().getValue(ePackage, "nsURI"));
+			}
 		}
-
 		return false;
 	}
 
