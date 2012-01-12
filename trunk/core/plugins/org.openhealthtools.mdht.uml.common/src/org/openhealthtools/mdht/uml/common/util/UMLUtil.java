@@ -59,6 +59,7 @@ import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageImport;
 import org.eclipse.uml2.uml.ParameterableElement;
+import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Signal;
@@ -1274,4 +1275,18 @@ public class UMLUtil {
 		}
 	}
 
+	/**
+	 * isTypeString returns true if primitive type and is a String
+	 * 
+	 * @param type
+	 * @return
+	 */
+	public static boolean isTypeString(Type type) {
+		if (type instanceof PrimitiveType) {
+			if ("EString".equals(type.getName()) || "String".equals(type.getName())) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
