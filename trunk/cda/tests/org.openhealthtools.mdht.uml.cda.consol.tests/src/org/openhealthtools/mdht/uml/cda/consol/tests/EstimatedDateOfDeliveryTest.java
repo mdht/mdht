@@ -15,9 +15,9 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.EstimatedDateOfDelivery;
 import org.openhealthtools.mdht.uml.cda.consol.operations.EstimatedDateOfDeliveryOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
 
 /**
  * <!-- begin-user-doc -->
@@ -234,7 +234,7 @@ public class EstimatedDateOfDeliveryTest extends CDAValidationTest {
 			protected void updateToPass(EstimatedDateOfDelivery target) {
 				target.init();
 
-				CD value = DatatypesFactory.eINSTANCE.createCD();
+				TS value = DatatypesFactory.eINSTANCE.createTS();
 				target.getValues().add(value);
 
 			}

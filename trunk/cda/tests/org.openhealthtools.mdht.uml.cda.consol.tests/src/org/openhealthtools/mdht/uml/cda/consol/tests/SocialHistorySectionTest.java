@@ -188,7 +188,7 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateSocialHistorySectionSocialHistoryObservation() {
@@ -205,7 +205,7 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistorySection target) {
 				target.init();
-
+				target.addObservation(ConsolFactory.eINSTANCE.createSocialHistoryObservation());
 			}
 
 			@Override
@@ -239,7 +239,7 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistorySection target) {
 				target.init();
-
+				target.addObservation(ConsolFactory.eINSTANCE.createPregnancyObservation());
 			}
 
 			@Override

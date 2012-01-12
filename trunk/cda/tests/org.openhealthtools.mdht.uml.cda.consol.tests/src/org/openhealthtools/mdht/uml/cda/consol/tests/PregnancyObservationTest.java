@@ -11,6 +11,8 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.PregnancyObservationOperations;
@@ -19,6 +21,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -149,7 +152,7 @@ public class PregnancyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePregnancyObservationCode() {
@@ -168,6 +171,8 @@ public class PregnancyObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCode("ASSERTION");
+				cd.setCodeSystem("2.16.840.1.113883.5.4");
 				target.setCode(cd);
 
 			}
@@ -223,7 +228,7 @@ public class PregnancyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePregnancyObservationValue() {
@@ -242,6 +247,8 @@ public class PregnancyObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD value = DatatypesFactory.eINSTANCE.createCD();
+				value.setCodeSystem("2.16.840.1.113883.6.96");
+				value.setCode("77386006");
 				target.getValues().add(value);
 
 			}
@@ -297,7 +304,7 @@ public class PregnancyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePregnancyObservationEstimatedDateOfDelivery() {
@@ -314,6 +321,11 @@ public class PregnancyObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PregnancyObservation target) {
 				target.init();
+
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+				er.setObservation(ConsolFactory.eINSTANCE.createEstimatedDateOfDelivery());
+				target.getEntryRelationships().add(er);
 
 			}
 
