@@ -29,6 +29,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncompassingEncounter2_EncounterParticipant#validateEncounterParticipantAssignedEntityHasPersonOrganizationOrBoth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Participant Assigned Entity Has Person Organization Or Both</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncompassingEncounter2_EncounterParticipant#validateEncounterParticipantAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Participant Assigned Entity</em>}</li>
  * </ul>
  * </p>
@@ -37,6 +38,40 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class EncompassingEncounter2_EncounterParticipantTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateEncounterParticipantAssignedEntityHasPersonOrganizationOrBoth() {
+		OperationsTestCase<EncompassingEncounter2_EncounterParticipant> validateEncounterParticipantAssignedEntityHasPersonOrganizationOrBothTestCase = new OperationsTestCase<EncompassingEncounter2_EncounterParticipant>(
+			"validateEncounterParticipantAssignedEntityHasPersonOrganizationOrBoth",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_PARTICIPANT_ASSIGNED_ENTITY_HAS_PERSON_ORGANIZATION_OR_BOTH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(EncompassingEncounter2_EncounterParticipant target) {
+
+			}
+
+			@Override
+			protected void updateToPass(EncompassingEncounter2_EncounterParticipant target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EncompassingEncounter2_EncounterParticipantOperations.validateEncounterParticipantAssignedEntityHasPersonOrganizationOrBoth(
+					(EncompassingEncounter2_EncounterParticipant) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEncounterParticipantAssignedEntityHasPersonOrganizationOrBothTestCase.doValidationTest();
+	}
 
 	/**
 	*

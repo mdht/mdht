@@ -15,6 +15,8 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.CoverageActivity;
 import org.openhealthtools.mdht.uml.cda.consol.operations.CoverageActivityOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,8 +27,13 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CoverageActivity#validateCoverageActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CoverageActivity#validateCoverageActivityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CoverageActivity#validateCoverageActivityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CoverageActivity#validateCoverageActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CoverageActivity#validateCoverageActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CoverageActivity#validateCoverageActivityStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CoverageActivity#validateCoverageActivityPolicyActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Policy Activity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CoverageActivity#getPolicyActivity() <em>Get Policy Activity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CoverageActivity#getPolicyActivities() <em>Get Policy Activities</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,6 +81,179 @@ public class CoverageActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidateCoverageActivityClassCode() {
+		OperationsTestCase<CoverageActivity> validateCoverageActivityClassCodeTestCase = new OperationsTestCase<CoverageActivity>(
+			"validateCoverageActivityClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CoverageActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(CoverageActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CoverageActivityOperations.validateCoverageActivityClassCode(
+					(CoverageActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCoverageActivityClassCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateCoverageActivityCode() {
+		OperationsTestCase<CoverageActivity> validateCoverageActivityCodeTestCase = new OperationsTestCase<CoverageActivity>(
+			"validateCoverageActivityCode",
+			operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CoverageActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(CoverageActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CoverageActivityOperations.validateCoverageActivityCode(
+					(CoverageActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCoverageActivityCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateCoverageActivityId() {
+		OperationsTestCase<CoverageActivity> validateCoverageActivityIdTestCase = new OperationsTestCase<CoverageActivity>(
+			"validateCoverageActivityId",
+			operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ACTIVITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CoverageActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(CoverageActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CoverageActivityOperations.validateCoverageActivityId(
+					(CoverageActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCoverageActivityIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateCoverageActivityMoodCode() {
+		OperationsTestCase<CoverageActivity> validateCoverageActivityMoodCodeTestCase = new OperationsTestCase<CoverageActivity>(
+			"validateCoverageActivityMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CoverageActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(CoverageActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CoverageActivityOperations.validateCoverageActivityMoodCode(
+					(CoverageActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCoverageActivityMoodCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateCoverageActivityStatusCode() {
+		OperationsTestCase<CoverageActivity> validateCoverageActivityStatusCodeTestCase = new OperationsTestCase<CoverageActivity>(
+			"validateCoverageActivityStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CoverageActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(CoverageActivity target) {
+				target.init();
+
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CoverageActivityOperations.validateCoverageActivityStatusCode(
+					(CoverageActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCoverageActivityStatusCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
 	public void testValidateCoverageActivityPolicyActivity() {
 		OperationsTestCase<CoverageActivity> validateCoverageActivityPolicyActivityTestCase = new OperationsTestCase<CoverageActivity>(
 			"validateCoverageActivityPolicyActivity",
@@ -108,10 +288,10 @@ public class CoverageActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetPolicyActivity() {
+	public void testGetPolicyActivities() {
 
 		CoverageActivity target = objectFactory.create();
-		target.getPolicyActivity();
+		target.getPolicyActivities();
 
 	}
 

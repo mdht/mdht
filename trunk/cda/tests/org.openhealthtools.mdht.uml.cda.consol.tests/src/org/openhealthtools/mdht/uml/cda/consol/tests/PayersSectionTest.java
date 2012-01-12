@@ -32,7 +32,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PayersSection#validatePayersSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Payers Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PayersSection#validatePayersSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Payers Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PayersSection#validatePayersSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Payers Section Text</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PayersSection#getCoverageActivity() <em>Get Coverage Activity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PayersSection#validatePayersSectionCoverageActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Payers Section Coverage Activity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PayersSection#getCoverageActivities() <em>Get Coverage Activities</em>}</li>
  * </ul>
  * </p>
  *
@@ -186,10 +187,44 @@ public class PayersSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetCoverageActivity() {
+	public void testValidatePayersSectionCoverageActivity() {
+		OperationsTestCase<PayersSection> validatePayersSectionCoverageActivityTestCase = new OperationsTestCase<PayersSection>(
+			"validatePayersSectionCoverageActivity",
+			operationsForOCL.getOCLValue("VALIDATE_PAYERS_SECTION_COVERAGE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PayersSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PayersSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PayersSectionOperations.validatePayersSectionCoverageActivity(
+					(PayersSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePayersSectionCoverageActivityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetCoverageActivities() {
 
 		PayersSection target = objectFactory.create();
-		target.getCoverageActivity();
+		target.getCoverageActivities();
 
 	}
 
