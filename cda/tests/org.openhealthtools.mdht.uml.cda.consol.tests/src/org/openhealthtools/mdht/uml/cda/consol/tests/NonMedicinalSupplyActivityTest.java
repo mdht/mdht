@@ -17,7 +17,6 @@ import org.openhealthtools.mdht.uml.cda.consol.operations.NonMedicinalSupplyActi
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
  * <!-- begin-user-doc -->

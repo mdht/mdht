@@ -78,7 +78,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateConsultationNoteVitalSignsSectionEntriesOptional(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Vital Signs Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateConsultationNoteInFulfillmentOfOrderId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note In Fulfillment Of Order Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateConsultationNoteInFulfillmentOfOrder(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note In Fulfillment Of Order</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateConsultationNoteComponentOfEncompassingEncounter2EncounterParticipantAssignedEntityHasPersonOrganizationOrBoth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Component Of Encompassing Encounter2 Encounter Participant Assigned Entity Has Person Organization Or Both</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateConsultationNoteComponentOfEncompassingEncounter2EncounterParticipantAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Component Of Encompassing Encounter2 Encounter Participant Assigned Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateConsultationNoteComponentOfEncompassingEncounter2ResponsiblePartyAssignedEntityHasPersonOrganizationOrBoth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Component Of Encompassing Encounter2 Responsible Party Assigned Entity Has Person Organization Or Both</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateConsultationNoteComponentOfEncompassingEncounter2ResponsiblePartyAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Component Of Encompassing Encounter2 Responsible Party Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateConsultationNoteComponentOfEncompassingEncounter2EffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Component Of Encompassing Encounter2 Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ConsultationNote#validateConsultationNoteComponentOfEncompassingEncounter2Id(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Consultation Note Component Of Encompassing Encounter2 Id</em>}</li>
@@ -360,7 +362,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 
-				target.addSection(ConsolFactory.eINSTANCE.createHistoryOfPresentIllness());
+				target.addSection(ConsolFactory.eINSTANCE.createHistoryOfPresentIllnessSection());
 
 			}
 
@@ -1158,6 +1160,61 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
+	public void testValidateConsultationNoteComponentOfEncompassingEncounter2EncounterParticipantAssignedEntityHasPersonOrganizationOrBoth() {
+		OperationsTestCase<ConsultationNote> validateConsultationNoteComponentOfEncompassingEncounter2EncounterParticipantAssignedEntityHasPersonOrganizationOrBothTestCase = new OperationsTestCase<ConsultationNote>(
+			"validateConsultationNoteComponentOfEncompassingEncounter2EncounterParticipantAssignedEntityHasPersonOrganizationOrBoth",
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_COMPONENT_OF_ENCOMPASSING_ENCOUNTER2_ENCOUNTER_PARTICIPANT_ASSIGNED_ENTITY_HAS_PERSON_ORGANIZATION_OR_BOTH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ConsultationNote target) {
+				target.init();
+				Component1 component = CDAFactory.eINSTANCE.createComponent1();
+				EncounterParticipant ep = CDAFactory.eINSTANCE.createEncounterParticipant();
+
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+
+				ep.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+
+				ee.getEncounterParticipants().add(ep);
+				component.setEncompassingEncounter(ee);
+
+				target.setComponentOf(component);
+			}
+
+			@Override
+			protected void updateToPass(ConsultationNote target) {
+				target.getComponentOf().getEncompassingEncounter().getEncounterParticipants().clear();
+
+				EncounterParticipant ep = CDAFactory.eINSTANCE.createEncounterParticipant();
+
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+
+				ep.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+				ep.getAssignedEntity().setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+				ee.getEncounterParticipants().add(ep);
+
+				target.getComponentOf().getEncompassingEncounter().getEncounterParticipants().add(ep);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ConsultationNoteOperations.validateConsultationNoteComponentOfEncompassingEncounter2EncounterParticipantAssignedEntityHasPersonOrganizationOrBoth(
+					(ConsultationNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateConsultationNoteComponentOfEncompassingEncounter2EncounterParticipantAssignedEntityHasPersonOrganizationOrBothTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
 	public void testValidateConsultationNoteComponentOfEncompassingEncounter2EncounterParticipantAssignedEntity() {
 		OperationsTestCase<ConsultationNote> validateConsultationNoteComponentOfEncompassingEncounter2EncounterParticipantAssignedEntityTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteComponentOfEncompassingEncounter2EncounterParticipantAssignedEntity",
@@ -1196,6 +1253,51 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteComponentOfEncompassingEncounter2EncounterParticipantAssignedEntityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateConsultationNoteComponentOfEncompassingEncounter2ResponsiblePartyAssignedEntityHasPersonOrganizationOrBoth() {
+		OperationsTestCase<ConsultationNote> validateConsultationNoteComponentOfEncompassingEncounter2ResponsiblePartyAssignedEntityHasPersonOrganizationOrBothTestCase = new OperationsTestCase<ConsultationNote>(
+			"validateConsultationNoteComponentOfEncompassingEncounter2ResponsiblePartyAssignedEntityHasPersonOrganizationOrBoth",
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_COMPONENT_OF_ENCOMPASSING_ENCOUNTER2_RESPONSIBLE_PARTY_ASSIGNED_ENTITY_HAS_PERSON_ORGANIZATION_OR_BOTH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ConsultationNote target) {
+				target.init();
+				Component1 component = CDAFactory.eINSTANCE.createComponent1();
+				EncompassingEncounter ee = CDAFactory.eINSTANCE.createEncompassingEncounter();
+				ResponsibleParty rp = CDAFactory.eINSTANCE.createResponsibleParty();
+				rp.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+
+				ee.setResponsibleParty(rp);
+
+				component.setEncompassingEncounter(ee);
+				target.setComponentOf(component);
+			}
+
+			@Override
+			protected void updateToPass(ConsultationNote target) {
+
+				target.getComponentOf().getEncompassingEncounter().getResponsibleParty().getAssignedEntity().getRepresentedOrganizations().add(
+					CDAFactory.eINSTANCE.createOrganization());
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ConsultationNoteOperations.validateConsultationNoteComponentOfEncompassingEncounter2ResponsiblePartyAssignedEntityHasPersonOrganizationOrBoth(
+					(ConsultationNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateConsultationNoteComponentOfEncompassingEncounter2ResponsiblePartyAssignedEntityHasPersonOrganizationOrBothTestCase.doValidationTest();
 	}
 
 	/**

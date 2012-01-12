@@ -29,6 +29,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncompassingEncounter2_ResponsibleParty#validateResponsiblePartyAssignedEntityHasPersonOrganizationOrBoth(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Responsible Party Assigned Entity Has Person Organization Or Both</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncompassingEncounter2_ResponsibleParty#validateResponsiblePartyAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Responsible Party Assigned Entity</em>}</li>
  * </ul>
  * </p>
@@ -37,6 +38,40 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class EncompassingEncounter2_ResponsiblePartyTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateResponsiblePartyAssignedEntityHasPersonOrganizationOrBoth() {
+		OperationsTestCase<EncompassingEncounter2_ResponsibleParty> validateResponsiblePartyAssignedEntityHasPersonOrganizationOrBothTestCase = new OperationsTestCase<EncompassingEncounter2_ResponsibleParty>(
+			"validateResponsiblePartyAssignedEntityHasPersonOrganizationOrBoth",
+			operationsForOCL.getOCLValue("VALIDATE_RESPONSIBLE_PARTY_ASSIGNED_ENTITY_HAS_PERSON_ORGANIZATION_OR_BOTH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(EncompassingEncounter2_ResponsibleParty target) {
+
+			}
+
+			@Override
+			protected void updateToPass(EncompassingEncounter2_ResponsibleParty target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EncompassingEncounter2_ResponsiblePartyOperations.validateResponsiblePartyAssignedEntityHasPersonOrganizationOrBoth(
+					(EncompassingEncounter2_ResponsibleParty) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateResponsiblePartyAssignedEntityHasPersonOrganizationOrBothTestCase.doValidationTest();
+	}
 
 	/**
 	*
