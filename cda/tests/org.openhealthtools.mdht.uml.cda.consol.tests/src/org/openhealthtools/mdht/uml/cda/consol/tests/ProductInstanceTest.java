@@ -24,9 +24,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProductInstance#validateProductInstanceHasScopingEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Instance Has Scoping Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProductInstance#validateProductInstanceTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Instance Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProductInstance#validateProductInstanceClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Instance Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProductInstance#validateProductInstanceId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Instance Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,40 +34,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class ProductInstanceTest extends CDAValidationTest {
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateProductInstanceHasScopingEntity() {
-		OperationsTestCase<ProductInstance> validateProductInstanceHasScopingEntityTestCase = new OperationsTestCase<ProductInstance>(
-			"validateProductInstanceHasScopingEntity",
-			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_INSTANCE_HAS_SCOPING_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProductInstance target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProductInstance target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProductInstanceOperations.validateProductInstanceHasScopingEntity(
-					(ProductInstance) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProductInstanceHasScopingEntityTestCase.doValidationTest();
-	}
 
 	/**
 	*
@@ -135,6 +101,39 @@ public class ProductInstanceTest extends CDAValidationTest {
 		};
 
 		validateProductInstanceClassCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProductInstanceId() {
+		OperationsTestCase<ProductInstance> validateProductInstanceIdTestCase = new OperationsTestCase<ProductInstance>(
+			"validateProductInstanceId",
+			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_INSTANCE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+
+			@Override
+			protected void updateToFail(ProductInstance target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProductInstance target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProductInstanceOperations.validateProductInstanceId(
+					(ProductInstance) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProductInstanceIdTestCase.doValidationTest();
 	}
 
 	/**
