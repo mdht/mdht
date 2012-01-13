@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.junit.Test;
 
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.AssessmentSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 
@@ -30,6 +32,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AssessmentSection#validateAssessmentSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assessment Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AssessmentSection#validateAssessmentSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assessment Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AssessmentSection#validateAssessmentSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assessment Section Text</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +74,77 @@ public class AssessmentSectionTest extends CDAValidationTest {
 		};
 
 		validateAssessmentSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAssessmentSectionCode() {
+		OperationsTestCase<AssessmentSection> validateAssessmentSectionCodeTestCase = new OperationsTestCase<AssessmentSection>(
+			"validateAssessmentSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AssessmentSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AssessmentSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AssessmentSectionOperations.validateAssessmentSectionCode(
+					(AssessmentSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAssessmentSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAssessmentSectionText() {
+		OperationsTestCase<AssessmentSection> validateAssessmentSectionTextTestCase = new OperationsTestCase<AssessmentSection>(
+			"validateAssessmentSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AssessmentSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AssessmentSection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AssessmentSectionOperations.validateAssessmentSectionText(
+					(AssessmentSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAssessmentSectionTextTestCase.doValidationTest();
 	}
 
 	/**
