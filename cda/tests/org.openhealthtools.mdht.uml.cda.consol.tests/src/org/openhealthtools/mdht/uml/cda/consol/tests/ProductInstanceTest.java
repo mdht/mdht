@@ -27,6 +27,10 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProductInstance#validateProductInstanceTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Instance Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProductInstance#validateProductInstanceClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Instance Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProductInstance#validateProductInstanceId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Instance Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProductInstance#validateProductInstanceScopingEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Instance Scoping Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProductInstance#validateProductInstancePlayingDevice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Instance Playing Device</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProductInstance#validateProductInstanceScopingEntityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Instance Scoping Entity Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProductInstance#validateProductInstancePlayingDeviceCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Product Instance Playing Device Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -134,6 +138,142 @@ public class ProductInstanceTest extends CDAValidationTest {
 		};
 
 		validateProductInstanceIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProductInstanceScopingEntity() {
+		OperationsTestCase<ProductInstance> validateProductInstanceScopingEntityTestCase = new OperationsTestCase<ProductInstance>(
+			"validateProductInstanceScopingEntity",
+			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_INSTANCE_SCOPING_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProductInstance target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProductInstance target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProductInstanceOperations.validateProductInstanceScopingEntity(
+					(ProductInstance) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProductInstanceScopingEntityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProductInstancePlayingDevice() {
+		OperationsTestCase<ProductInstance> validateProductInstancePlayingDeviceTestCase = new OperationsTestCase<ProductInstance>(
+			"validateProductInstancePlayingDevice",
+			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_INSTANCE_PLAYING_DEVICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProductInstance target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProductInstance target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProductInstanceOperations.validateProductInstancePlayingDevice(
+					(ProductInstance) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProductInstancePlayingDeviceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProductInstanceScopingEntityId() {
+		OperationsTestCase<ProductInstance> validateProductInstanceScopingEntityIdTestCase = new OperationsTestCase<ProductInstance>(
+			"validateProductInstanceScopingEntityId",
+			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_INSTANCE_SCOPING_ENTITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProductInstance target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProductInstance target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProductInstanceOperations.validateProductInstanceScopingEntityId(
+					(ProductInstance) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProductInstanceScopingEntityIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProductInstancePlayingDeviceCode() {
+		OperationsTestCase<ProductInstance> validateProductInstancePlayingDeviceCodeTestCase = new OperationsTestCase<ProductInstance>(
+			"validateProductInstancePlayingDeviceCode",
+			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_INSTANCE_PLAYING_DEVICE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProductInstance target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProductInstance target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProductInstanceOperations.validateProductInstancePlayingDeviceCode(
+					(ProductInstance) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProductInstancePlayingDeviceCodeTestCase.doValidationTest();
 	}
 
 	/**
