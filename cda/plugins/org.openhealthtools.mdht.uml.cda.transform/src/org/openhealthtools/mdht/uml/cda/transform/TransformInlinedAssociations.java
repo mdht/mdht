@@ -102,6 +102,22 @@ public class TransformInlinedAssociations extends TransformAbstract {
 
 	}
 
+	private static String getScopeFilter(Class inlineClass) {
+		String filter = "";
+		for (Comment comment : inlineClass.getOwnedComments()) {
+			if (comment.getBody().startsWith("SCOPE&")) {
+				String[] temp = comment.getBody().split("&");
+				if (temp.length == 2) {
+					filter = String.format("->select(%s)", temp[1]);
+				}
+				break;
+			}
+		}
+
+		return filter;
+
+	}
+
 	@Override
 	public Object caseAssociation(Association association) {
 
@@ -239,9 +255,9 @@ public class TransformInlinedAssociations extends TransformAbstract {
 				if (constraintMessage != null) {
 					constraintMessage = constraintMessage.replaceAll(splitName, associationName);
 				}
-
 				appendInlinedOCLConstraint(bucketClass, stack + constraint.getName(), severity, message +
-						constraintMessage, path + "->select(not oclIsUndefined())->forAll(" + relativeOCL + ")");
+						constraintMessage, path + getScopeFilter(inlineClass) +
+						"->select(not oclIsUndefined())->forAll(" + relativeOCL + ")");
 			}
 
 		}
