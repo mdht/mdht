@@ -14,12 +14,16 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.junit.Test;
 
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ProcedureEstimatedBloodLossSection;
 
 import org.openhealthtools.mdht.uml.cda.consol.operations.ProcedureEstimatedBloodLossSectionOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +34,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureEstimatedBloodLossSection#validateProcedureEstimatedBloodLossSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Estimated Blood Loss Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureEstimatedBloodLossSection#validateProcedureEstimatedBloodLossSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Estimated Blood Loss Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureEstimatedBloodLossSection#validateProcedureEstimatedBloodLossSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Estimated Blood Loss Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureEstimatedBloodLossSection#validateProcedureEstimatedBloodLossSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Estimated Blood Loss Section Title</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +77,114 @@ public class ProcedureEstimatedBloodLossSectionTest extends CDAValidationTest {
 		};
 
 		validateProcedureEstimatedBloodLossSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureEstimatedBloodLossSectionCode() {
+		OperationsTestCase<ProcedureEstimatedBloodLossSection> validateProcedureEstimatedBloodLossSectionCodeTestCase = new OperationsTestCase<ProcedureEstimatedBloodLossSection>(
+			"validateProcedureEstimatedBloodLossSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ESTIMATED_BLOOD_LOSS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEstimatedBloodLossSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEstimatedBloodLossSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureEstimatedBloodLossSectionOperations.validateProcedureEstimatedBloodLossSectionCode(
+					(ProcedureEstimatedBloodLossSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureEstimatedBloodLossSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureEstimatedBloodLossSectionText() {
+		OperationsTestCase<ProcedureEstimatedBloodLossSection> validateProcedureEstimatedBloodLossSectionTextTestCase = new OperationsTestCase<ProcedureEstimatedBloodLossSection>(
+			"validateProcedureEstimatedBloodLossSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ESTIMATED_BLOOD_LOSS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEstimatedBloodLossSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEstimatedBloodLossSection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureEstimatedBloodLossSectionOperations.validateProcedureEstimatedBloodLossSectionText(
+					(ProcedureEstimatedBloodLossSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureEstimatedBloodLossSectionTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureEstimatedBloodLossSectionTitle() {
+		OperationsTestCase<ProcedureEstimatedBloodLossSection> validateProcedureEstimatedBloodLossSectionTitleTestCase = new OperationsTestCase<ProcedureEstimatedBloodLossSection>(
+			"validateProcedureEstimatedBloodLossSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ESTIMATED_BLOOD_LOSS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureEstimatedBloodLossSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureEstimatedBloodLossSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureEstimatedBloodLossSectionOperations.validateProcedureEstimatedBloodLossSectionTitle(
+					(ProcedureEstimatedBloodLossSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureEstimatedBloodLossSectionTitleTestCase.doValidationTest();
 	}
 
 	/**

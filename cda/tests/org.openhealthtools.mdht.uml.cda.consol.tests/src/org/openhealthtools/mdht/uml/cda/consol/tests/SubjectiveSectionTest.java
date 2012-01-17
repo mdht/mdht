@@ -14,12 +14,16 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.junit.Test;
 
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.SubjectiveSection;
 
 import org.openhealthtools.mdht.uml.cda.consol.operations.SubjectiveSectionOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +34,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SubjectiveSection#validateSubjectiveSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Subjective Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SubjectiveSection#validateSubjectiveSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Subjective Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SubjectiveSection#validateSubjectiveSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Subjective Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SubjectiveSection#validateSubjectiveSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Subjective Section Title</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +77,114 @@ public class SubjectiveSectionTest extends CDAValidationTest {
 		};
 
 		validateSubjectiveSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateSubjectiveSectionCode() {
+		OperationsTestCase<SubjectiveSection> validateSubjectiveSectionCodeTestCase = new OperationsTestCase<SubjectiveSection>(
+			"validateSubjectiveSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_SUBJECTIVE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SubjectiveSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SubjectiveSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SubjectiveSectionOperations.validateSubjectiveSectionCode(
+					(SubjectiveSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSubjectiveSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateSubjectiveSectionText() {
+		OperationsTestCase<SubjectiveSection> validateSubjectiveSectionTextTestCase = new OperationsTestCase<SubjectiveSection>(
+			"validateSubjectiveSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_SUBJECTIVE_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SubjectiveSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SubjectiveSection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SubjectiveSectionOperations.validateSubjectiveSectionText(
+					(SubjectiveSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSubjectiveSectionTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateSubjectiveSectionTitle() {
+		OperationsTestCase<SubjectiveSection> validateSubjectiveSectionTitleTestCase = new OperationsTestCase<SubjectiveSection>(
+			"validateSubjectiveSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_SUBJECTIVE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SubjectiveSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SubjectiveSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SubjectiveSectionOperations.validateSubjectiveSectionTitle(
+					(SubjectiveSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSubjectiveSectionTitleTestCase.doValidationTest();
 	}
 
 	/**

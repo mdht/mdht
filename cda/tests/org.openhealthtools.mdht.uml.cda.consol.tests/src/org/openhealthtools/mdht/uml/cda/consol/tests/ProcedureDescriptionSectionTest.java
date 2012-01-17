@@ -14,12 +14,16 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.junit.Test;
 
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ProcedureDescriptionSection;
 
 import org.openhealthtools.mdht.uml.cda.consol.operations.ProcedureDescriptionSectionOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +34,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureDescriptionSection#validateProcedureDescriptionSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Description Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureDescriptionSection#validateProcedureDescriptionSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Description Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureDescriptionSection#validateProcedureDescriptionSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Description Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureDescriptionSection#validateProcedureDescriptionSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Description Section Title</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +77,114 @@ public class ProcedureDescriptionSectionTest extends CDAValidationTest {
 		};
 
 		validateProcedureDescriptionSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureDescriptionSectionCode() {
+		OperationsTestCase<ProcedureDescriptionSection> validateProcedureDescriptionSectionCodeTestCase = new OperationsTestCase<ProcedureDescriptionSection>(
+			"validateProcedureDescriptionSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_DESCRIPTION_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureDescriptionSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureDescriptionSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureDescriptionSectionOperations.validateProcedureDescriptionSectionCode(
+					(ProcedureDescriptionSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureDescriptionSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureDescriptionSectionText() {
+		OperationsTestCase<ProcedureDescriptionSection> validateProcedureDescriptionSectionTextTestCase = new OperationsTestCase<ProcedureDescriptionSection>(
+			"validateProcedureDescriptionSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_DESCRIPTION_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureDescriptionSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureDescriptionSection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureDescriptionSectionOperations.validateProcedureDescriptionSectionText(
+					(ProcedureDescriptionSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureDescriptionSectionTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureDescriptionSectionTitle() {
+		OperationsTestCase<ProcedureDescriptionSection> validateProcedureDescriptionSectionTitleTestCase = new OperationsTestCase<ProcedureDescriptionSection>(
+			"validateProcedureDescriptionSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_DESCRIPTION_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureDescriptionSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureDescriptionSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureDescriptionSectionOperations.validateProcedureDescriptionSectionTitle(
+					(ProcedureDescriptionSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureDescriptionSectionTitleTestCase.doValidationTest();
 	}
 
 	/**

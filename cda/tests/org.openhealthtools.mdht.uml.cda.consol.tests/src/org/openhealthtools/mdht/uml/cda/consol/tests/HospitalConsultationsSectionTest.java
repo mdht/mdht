@@ -14,12 +14,16 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.junit.Test;
 
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalConsultationsSection;
 
 import org.openhealthtools.mdht.uml.cda.consol.operations.HospitalConsultationsSectionOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +34,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalConsultationsSection#validateHospitalConsultationsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Consultations Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalConsultationsSection#validateHospitalConsultationsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Consultations Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalConsultationsSection#validateHospitalConsultationsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Consultations Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalConsultationsSection#validateHospitalConsultationsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Consultations Section Title</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +77,114 @@ public class HospitalConsultationsSectionTest extends CDAValidationTest {
 		};
 
 		validateHospitalConsultationsSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHospitalConsultationsSectionCode() {
+		OperationsTestCase<HospitalConsultationsSection> validateHospitalConsultationsSectionCodeTestCase = new OperationsTestCase<HospitalConsultationsSection>(
+			"validateHospitalConsultationsSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_CONSULTATIONS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HospitalConsultationsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HospitalConsultationsSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HospitalConsultationsSectionOperations.validateHospitalConsultationsSectionCode(
+					(HospitalConsultationsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHospitalConsultationsSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHospitalConsultationsSectionText() {
+		OperationsTestCase<HospitalConsultationsSection> validateHospitalConsultationsSectionTextTestCase = new OperationsTestCase<HospitalConsultationsSection>(
+			"validateHospitalConsultationsSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_CONSULTATIONS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HospitalConsultationsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HospitalConsultationsSection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HospitalConsultationsSectionOperations.validateHospitalConsultationsSectionText(
+					(HospitalConsultationsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHospitalConsultationsSectionTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHospitalConsultationsSectionTitle() {
+		OperationsTestCase<HospitalConsultationsSection> validateHospitalConsultationsSectionTitleTestCase = new OperationsTestCase<HospitalConsultationsSection>(
+			"validateHospitalConsultationsSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_CONSULTATIONS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HospitalConsultationsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HospitalConsultationsSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HospitalConsultationsSectionOperations.validateHospitalConsultationsSectionTitle(
+					(HospitalConsultationsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHospitalConsultationsSectionTitleTestCase.doValidationTest();
 	}
 
 	/**

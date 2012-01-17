@@ -14,12 +14,16 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.junit.Test;
 
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ProcedureSpecimensTakenSection;
 
 import org.openhealthtools.mdht.uml.cda.consol.operations.ProcedureSpecimensTakenSectionOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +34,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureSpecimensTakenSection#validateProcedureSpecimensTakenSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Specimens Taken Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureSpecimensTakenSection#validateProcedureSpecimensTakenSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Specimens Taken Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureSpecimensTakenSection#validateProcedureSpecimensTakenSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Specimens Taken Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureSpecimensTakenSection#validateProcedureSpecimensTakenSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Specimens Taken Section Title</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +77,114 @@ public class ProcedureSpecimensTakenSectionTest extends CDAValidationTest {
 		};
 
 		validateProcedureSpecimensTakenSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureSpecimensTakenSectionCode() {
+		OperationsTestCase<ProcedureSpecimensTakenSection> validateProcedureSpecimensTakenSectionCodeTestCase = new OperationsTestCase<ProcedureSpecimensTakenSection>(
+			"validateProcedureSpecimensTakenSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_SPECIMENS_TAKEN_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureSpecimensTakenSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureSpecimensTakenSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureSpecimensTakenSectionOperations.validateProcedureSpecimensTakenSectionCode(
+					(ProcedureSpecimensTakenSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureSpecimensTakenSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureSpecimensTakenSectionText() {
+		OperationsTestCase<ProcedureSpecimensTakenSection> validateProcedureSpecimensTakenSectionTextTestCase = new OperationsTestCase<ProcedureSpecimensTakenSection>(
+			"validateProcedureSpecimensTakenSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_SPECIMENS_TAKEN_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureSpecimensTakenSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureSpecimensTakenSection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureSpecimensTakenSectionOperations.validateProcedureSpecimensTakenSectionText(
+					(ProcedureSpecimensTakenSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureSpecimensTakenSectionTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureSpecimensTakenSectionTitle() {
+		OperationsTestCase<ProcedureSpecimensTakenSection> validateProcedureSpecimensTakenSectionTitleTestCase = new OperationsTestCase<ProcedureSpecimensTakenSection>(
+			"validateProcedureSpecimensTakenSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_SPECIMENS_TAKEN_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureSpecimensTakenSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureSpecimensTakenSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureSpecimensTakenSectionOperations.validateProcedureSpecimensTakenSectionTitle(
+					(ProcedureSpecimensTakenSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureSpecimensTakenSectionTitleTestCase.doValidationTest();
 	}
 
 	/**

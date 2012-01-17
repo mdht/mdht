@@ -14,12 +14,16 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.junit.Test;
 
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ProcedureDispositionSection;
 
 import org.openhealthtools.mdht.uml.cda.consol.operations.ProcedureDispositionSectionOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +34,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureDispositionSection#validateProcedureDispositionSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Disposition Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureDispositionSection#validateProcedureDispositionSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Disposition Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureDispositionSection#validateProcedureDispositionSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Disposition Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureDispositionSection#validateProcedureDispositionSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Disposition Section Title</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +77,114 @@ public class ProcedureDispositionSectionTest extends CDAValidationTest {
 		};
 
 		validateProcedureDispositionSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureDispositionSectionCode() {
+		OperationsTestCase<ProcedureDispositionSection> validateProcedureDispositionSectionCodeTestCase = new OperationsTestCase<ProcedureDispositionSection>(
+			"validateProcedureDispositionSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_DISPOSITION_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureDispositionSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureDispositionSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureDispositionSectionOperations.validateProcedureDispositionSectionCode(
+					(ProcedureDispositionSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureDispositionSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureDispositionSectionText() {
+		OperationsTestCase<ProcedureDispositionSection> validateProcedureDispositionSectionTextTestCase = new OperationsTestCase<ProcedureDispositionSection>(
+			"validateProcedureDispositionSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_DISPOSITION_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureDispositionSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureDispositionSection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureDispositionSectionOperations.validateProcedureDispositionSectionText(
+					(ProcedureDispositionSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureDispositionSectionTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureDispositionSectionTitle() {
+		OperationsTestCase<ProcedureDispositionSection> validateProcedureDispositionSectionTitleTestCase = new OperationsTestCase<ProcedureDispositionSection>(
+			"validateProcedureDispositionSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_DISPOSITION_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureDispositionSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureDispositionSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureDispositionSectionOperations.validateProcedureDispositionSectionTitle(
+					(ProcedureDispositionSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureDispositionSectionTitleTestCase.doValidationTest();
 	}
 
 	/**

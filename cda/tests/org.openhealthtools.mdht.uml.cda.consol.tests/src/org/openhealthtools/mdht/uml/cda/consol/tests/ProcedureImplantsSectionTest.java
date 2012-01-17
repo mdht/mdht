@@ -14,12 +14,16 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.junit.Test;
 
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ProcedureImplantsSection;
 
 import org.openhealthtools.mdht.uml.cda.consol.operations.ProcedureImplantsSectionOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +34,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureImplantsSection#validateProcedureImplantsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Implants Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureImplantsSection#validateProcedureImplantsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Implants Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureImplantsSection#validateProcedureImplantsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Implants Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureImplantsSection#validateProcedureImplantsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Implants Section Title</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +77,114 @@ public class ProcedureImplantsSectionTest extends CDAValidationTest {
 		};
 
 		validateProcedureImplantsSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureImplantsSectionCode() {
+		OperationsTestCase<ProcedureImplantsSection> validateProcedureImplantsSectionCodeTestCase = new OperationsTestCase<ProcedureImplantsSection>(
+			"validateProcedureImplantsSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_IMPLANTS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureImplantsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureImplantsSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureImplantsSectionOperations.validateProcedureImplantsSectionCode(
+					(ProcedureImplantsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureImplantsSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureImplantsSectionText() {
+		OperationsTestCase<ProcedureImplantsSection> validateProcedureImplantsSectionTextTestCase = new OperationsTestCase<ProcedureImplantsSection>(
+			"validateProcedureImplantsSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_IMPLANTS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureImplantsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureImplantsSection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureImplantsSectionOperations.validateProcedureImplantsSectionText(
+					(ProcedureImplantsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureImplantsSectionTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureImplantsSectionTitle() {
+		OperationsTestCase<ProcedureImplantsSection> validateProcedureImplantsSectionTitleTestCase = new OperationsTestCase<ProcedureImplantsSection>(
+			"validateProcedureImplantsSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_IMPLANTS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureImplantsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureImplantsSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureImplantsSectionOperations.validateProcedureImplantsSectionTitle(
+					(ProcedureImplantsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureImplantsSectionTitleTestCase.doValidationTest();
 	}
 
 	/**
