@@ -14,12 +14,16 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.junit.Test;
 
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.SurgicalDrainsSection;
 
 import org.openhealthtools.mdht.uml.cda.consol.operations.SurgicalDrainsSectionOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +34,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SurgicalDrainsSection#validateSurgicalDrainsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Surgical Drains Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SurgicalDrainsSection#validateSurgicalDrainsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Surgical Drains Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SurgicalDrainsSection#validateSurgicalDrainsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Surgical Drains Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SurgicalDrainsSection#validateSurgicalDrainsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Surgical Drains Section Title</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +77,114 @@ public class SurgicalDrainsSectionTest extends CDAValidationTest {
 		};
 
 		validateSurgicalDrainsSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateSurgicalDrainsSectionCode() {
+		OperationsTestCase<SurgicalDrainsSection> validateSurgicalDrainsSectionCodeTestCase = new OperationsTestCase<SurgicalDrainsSection>(
+			"validateSurgicalDrainsSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_SURGICAL_DRAINS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SurgicalDrainsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SurgicalDrainsSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SurgicalDrainsSectionOperations.validateSurgicalDrainsSectionCode(
+					(SurgicalDrainsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSurgicalDrainsSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateSurgicalDrainsSectionText() {
+		OperationsTestCase<SurgicalDrainsSection> validateSurgicalDrainsSectionTextTestCase = new OperationsTestCase<SurgicalDrainsSection>(
+			"validateSurgicalDrainsSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_SURGICAL_DRAINS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SurgicalDrainsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SurgicalDrainsSection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SurgicalDrainsSectionOperations.validateSurgicalDrainsSectionText(
+					(SurgicalDrainsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSurgicalDrainsSectionTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateSurgicalDrainsSectionTitle() {
+		OperationsTestCase<SurgicalDrainsSection> validateSurgicalDrainsSectionTitleTestCase = new OperationsTestCase<SurgicalDrainsSection>(
+			"validateSurgicalDrainsSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_SURGICAL_DRAINS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SurgicalDrainsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SurgicalDrainsSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SurgicalDrainsSectionOperations.validateSurgicalDrainsSectionTitle(
+					(SurgicalDrainsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSurgicalDrainsSectionTitleTestCase.doValidationTest();
 	}
 
 	/**

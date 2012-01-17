@@ -14,12 +14,16 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.junit.Test;
 
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.MedicalHistorySection;
 
 import org.openhealthtools.mdht.uml.cda.consol.operations.MedicalHistorySectionOperations;
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +34,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicalHistorySection#validateMedicalHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical History Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicalHistorySection#validateMedicalHistorySectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical History Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicalHistorySection#validateMedicalHistorySectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical History Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicalHistorySection#validateMedicalHistorySectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medical History Section Title</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +77,114 @@ public class MedicalHistorySectionTest extends CDAValidationTest {
 		};
 
 		validateMedicalHistorySectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMedicalHistorySectionCode() {
+		OperationsTestCase<MedicalHistorySection> validateMedicalHistorySectionCodeTestCase = new OperationsTestCase<MedicalHistorySection>(
+			"validateMedicalHistorySectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicalHistorySection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicalHistorySection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicalHistorySectionOperations.validateMedicalHistorySectionCode(
+					(MedicalHistorySection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicalHistorySectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMedicalHistorySectionText() {
+		OperationsTestCase<MedicalHistorySection> validateMedicalHistorySectionTextTestCase = new OperationsTestCase<MedicalHistorySection>(
+			"validateMedicalHistorySectionText",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_HISTORY_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicalHistorySection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicalHistorySection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicalHistorySectionOperations.validateMedicalHistorySectionText(
+					(MedicalHistorySection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicalHistorySectionTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMedicalHistorySectionTitle() {
+		OperationsTestCase<MedicalHistorySection> validateMedicalHistorySectionTitleTestCase = new OperationsTestCase<MedicalHistorySection>(
+			"validateMedicalHistorySectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicalHistorySection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicalHistorySection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicalHistorySectionOperations.validateMedicalHistorySectionTitle(
+					(MedicalHistorySection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicalHistorySectionTitleTestCase.doValidationTest();
 	}
 
 	/**

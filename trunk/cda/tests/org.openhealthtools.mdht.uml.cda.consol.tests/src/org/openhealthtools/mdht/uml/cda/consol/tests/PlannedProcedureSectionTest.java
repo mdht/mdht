@@ -9,17 +9,16 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.PlannedProcedureSection;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.PlannedProcedureSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +29,11 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlannedProcedureSection#validatePlannedProcedureSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Planned Procedure Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlannedProcedureSection#validatePlannedProcedureSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Planned Procedure Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlannedProcedureSection#validatePlannedProcedureSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Planned Procedure Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlannedProcedureSection#validatePlannedProcedureSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Planned Procedure Section Title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlannedProcedureSection#validatePlannedProcedureSectionPlanOfCareActivityProcedure(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Planned Procedure Section Plan Of Care Activity Procedure</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlannedProcedureSection#getPlanOfCareActivityProcedure() <em>Get Plan Of Care Activity Procedure</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +74,161 @@ public class PlannedProcedureSectionTest extends CDAValidationTest {
 		};
 
 		validatePlannedProcedureSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePlannedProcedureSectionCode() {
+		OperationsTestCase<PlannedProcedureSection> validatePlannedProcedureSectionCodeTestCase = new OperationsTestCase<PlannedProcedureSection>(
+			"validatePlannedProcedureSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_PLANNED_PROCEDURE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PlannedProcedureSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PlannedProcedureSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PlannedProcedureSectionOperations.validatePlannedProcedureSectionCode(
+					(PlannedProcedureSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePlannedProcedureSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePlannedProcedureSectionText() {
+		OperationsTestCase<PlannedProcedureSection> validatePlannedProcedureSectionTextTestCase = new OperationsTestCase<PlannedProcedureSection>(
+			"validatePlannedProcedureSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_PLANNED_PROCEDURE_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PlannedProcedureSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PlannedProcedureSection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PlannedProcedureSectionOperations.validatePlannedProcedureSectionText(
+					(PlannedProcedureSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePlannedProcedureSectionTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePlannedProcedureSectionTitle() {
+		OperationsTestCase<PlannedProcedureSection> validatePlannedProcedureSectionTitleTestCase = new OperationsTestCase<PlannedProcedureSection>(
+			"validatePlannedProcedureSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_PLANNED_PROCEDURE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PlannedProcedureSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PlannedProcedureSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PlannedProcedureSectionOperations.validatePlannedProcedureSectionTitle(
+					(PlannedProcedureSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePlannedProcedureSectionTitleTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidatePlannedProcedureSectionPlanOfCareActivityProcedure() {
+		OperationsTestCase<PlannedProcedureSection> validatePlannedProcedureSectionPlanOfCareActivityProcedureTestCase = new OperationsTestCase<PlannedProcedureSection>(
+			"validatePlannedProcedureSectionPlanOfCareActivityProcedure",
+			operationsForOCL.getOCLValue("VALIDATE_PLANNED_PROCEDURE_SECTION_PLAN_OF_CARE_ACTIVITY_PROCEDURE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PlannedProcedureSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected void updateToPass(PlannedProcedureSection target) {
+				target.addProcedure(ConsolFactory.eINSTANCE.createPlanOfCareActivityProcedure().init());
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PlannedProcedureSectionOperations.validatePlannedProcedureSectionPlanOfCareActivityProcedure(
+					(PlannedProcedureSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePlannedProcedureSectionPlanOfCareActivityProcedureTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPlanOfCareActivityProcedure() {
+
+		PlannedProcedureSection target = objectFactory.create();
+		target.getPlanOfCareActivityProcedure();
+
 	}
 
 	/**
