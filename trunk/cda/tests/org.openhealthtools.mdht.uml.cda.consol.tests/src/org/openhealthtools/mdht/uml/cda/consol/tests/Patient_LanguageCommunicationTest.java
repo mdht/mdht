@@ -29,7 +29,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Patient_LanguageCommunication#validateLanguageCommunicationLanguageCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Language Communication Language Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Patient_LanguageCommunication#validateLanguageCommunicationPreferenceInd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Language Communication Preference Ind</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Patient_LanguageCommunication#validateLanguageCommunicationProficiencyLevelCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Language Communication Proficiency Level Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Patient_LanguageCommunication#validateLanguageCommunicationModeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Language Communication Mode Code</em>}</li>
  * </ul>
  * </p>
@@ -38,6 +40,40 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class Patient_LanguageCommunicationTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateLanguageCommunicationLanguageCode() {
+		OperationsTestCase<Patient_LanguageCommunication> validateLanguageCommunicationLanguageCodeTestCase = new OperationsTestCase<Patient_LanguageCommunication>(
+			"validateLanguageCommunicationLanguageCode",
+			operationsForOCL.getOCLValue("VALIDATE_LANGUAGE_COMMUNICATION_LANGUAGE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Patient_LanguageCommunication target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Patient_LanguageCommunication target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return Patient_LanguageCommunicationOperations.validateLanguageCommunicationLanguageCode(
+					(Patient_LanguageCommunication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateLanguageCommunicationLanguageCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -71,6 +107,40 @@ public class Patient_LanguageCommunicationTest extends CDAValidationTest {
 		};
 
 		validateLanguageCommunicationPreferenceIndTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateLanguageCommunicationProficiencyLevelCode() {
+		OperationsTestCase<Patient_LanguageCommunication> validateLanguageCommunicationProficiencyLevelCodeTestCase = new OperationsTestCase<Patient_LanguageCommunication>(
+			"validateLanguageCommunicationProficiencyLevelCode",
+			operationsForOCL.getOCLValue("VALIDATE_LANGUAGE_COMMUNICATION_PROFICIENCY_LEVEL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Patient_LanguageCommunication target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Patient_LanguageCommunication target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return Patient_LanguageCommunicationOperations.validateLanguageCommunicationProficiencyLevelCode(
+					(Patient_LanguageCommunication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateLanguageCommunicationProficiencyLevelCodeTestCase.doValidationTest();
 	}
 
 	/**
