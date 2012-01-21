@@ -14,6 +14,8 @@
 package org.openhealthtools.mdht.uml.cda.core.util;
 
 import java.io.PrintStream;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -43,6 +45,7 @@ import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
+import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.term.core.profile.BindingKind;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
@@ -411,27 +414,49 @@ public class CDAModelUtil {
 				: null;
 
 		if (endType != null) {
-			message.append(", where its type is ");
 
-			String prefix = !UMLUtil.isSameModel(xrefSource, endType)
-					? getModelPrefix(endType) + " "
-					: "";
-			String xref = computeXref(xrefSource, endType);
-			boolean showXref = markup && (xref != null);
-			String format = showXref && xref.endsWith(".html")
-					? "format=\"html\" "
-					: "";
+			if (endType.getOwner() instanceof Class) {
+				StringWriter sw = new StringWriter();
+				PrintWriter pw = new PrintWriter(sw);
+				StringBuffer sb = sw.getBuffer();
 
-			message.append(showXref
-					? "<xref " + format + "href=\"" + xref + "\">"
-					: "");
-			message.append(prefix).append(UMLUtil.splitName(endType));
-			message.append(showXref
-					? "</xref>"
-					: "");
+				appendConformanceRuleIds(association, message, markup);
+
+				appendPropertyComments(pw, property);
+
+				appendConformanceRules(pw, endType, String.format(" %s%s%s ", (property.getUpper() == 1
+						? "This "
+						: "Such "), elementName, (property.getUpper() == 1
+						? ""
+						: "s")));
+				message.append(" " + sw.getBuffer() + " ");
+
+			} else {
+
+				message.append(", where its type is ");
+
+				String prefix = !UMLUtil.isSameModel(xrefSource, endType)
+						? getModelPrefix(endType) + " "
+						: "";
+				String xref = computeXref(xrefSource, endType);
+				boolean showXref = markup && (xref != null);
+				String format = showXref && xref.endsWith(".html")
+						? "format=\"html\" "
+						: "";
+
+				message.append(showXref
+						? "<xref " + format + "href=\"" + xref + "\">"
+						: "");
+				message.append(prefix).append(UMLUtil.splitName(endType));
+				message.append(showXref
+						? "</xref>"
+						: "");
+
+				appendConformanceRuleIds(association, message, markup);
+			}
+		} else {
+			appendConformanceRuleIds(association, message, markup);
 		}
-
-		appendConformanceRuleIds(association, message, markup);
 
 		return message.toString();
 	}
@@ -472,13 +497,29 @@ public class CDAModelUtil {
 				: "");
 
 		appendConformanceRuleIds(association, message, markup);
-		message.append(", such that");
+		if (property.getType() instanceof Class) {
+			Class inlinedClass = (Class) property.getType();
+
+			if (inlinedClass.getOwner() instanceof Class) {
+				StringWriter sw = new StringWriter();
+				PrintWriter pw = new PrintWriter(sw);
+				StringBuffer sb = sw.getBuffer();
+
+				appendPropertyComments(pw, property);
+
+				appendConformanceRules(pw, inlinedClass, String.format(" %s%s%s ", (property.getUpper() == 1
+						? "This "
+						: "Such "), elementName, (property.getUpper() == 1
+						? ""
+						: "s")));
+				message.append(" " + sw.getBuffer());
+
+			}
+		}
 
 		if (!markup) {
 			String assocConstraints = computeAssociationConstraints(property, markup);
 			if (assocConstraints.length() > 0) {
-				// message.append(", such that ");
-				// message.append(property.upperBound()==1 ? "it" : "each");
 				message.append(assocConstraints);
 			}
 		}
@@ -738,6 +779,166 @@ public class CDAModelUtil {
 		appendConformanceRuleIds(property, message, markup);
 
 		return message.toString();
+	}
+
+	static private void appendConformanceRules(PrintWriter writer, Class umlClass, String prefix) {
+		writer.println("<ol>");
+
+		boolean hasRules = false;
+		for (Generalization generalization : umlClass.getGeneralizations()) {
+			Classifier general = generalization.getGeneral();
+			if (!RIMModelUtil.isRIMModel(general) && !CDAModelUtil.isCDAModel(general)) {
+				String message = CDAModelUtil.computeConformanceMessage(generalization, true);
+				if (message.length() > 0) {
+					hasRules = true;
+					writer.println("<li>" + prefix + message + "</li>");
+				}
+			}
+		}
+
+		// categorize constraints by constrainedElement name
+		List<Constraint> unprocessedConstraints = new ArrayList<Constraint>();
+		// propertyName -> constraints
+		Map<String, List<Constraint>> constraintMap = new HashMap<String, List<Constraint>>();
+		// constraint -> sub-constraints
+		Map<Constraint, List<Constraint>> subConstraintMap = new HashMap<Constraint, List<Constraint>>();
+
+		for (Constraint constraint : umlClass.getOwnedRules()) {
+			unprocessedConstraints.add(constraint);
+			for (Element element : constraint.getConstrainedElements()) {
+				if (element instanceof Property) {
+					String name = ((Property) element).getName();
+					List<Constraint> rules = constraintMap.get(name);
+					if (rules == null) {
+						rules = new ArrayList<Constraint>();
+						constraintMap.put(name, rules);
+					}
+					rules.add(constraint);
+				} else if (element instanceof Constraint) {
+					Constraint subConstraint = (Constraint) element;
+					List<Constraint> rules = subConstraintMap.get(subConstraint);
+					if (rules == null) {
+						rules = new ArrayList<Constraint>();
+						subConstraintMap.put(subConstraint, rules);
+					}
+					rules.add(constraint);
+				}
+			}
+		}
+
+		List<Property> allProperties = new ArrayList<Property>(umlClass.getOwnedAttributes());
+		List<Property> allAttributes = new ArrayList<Property>();
+		for (Property property : allProperties) {
+			if (CDAModelUtil.isXMLAttribute(property)) {
+				allAttributes.add(property);
+			}
+		}
+		allProperties.removeAll(allAttributes);
+		Collections.sort(allAttributes, new NamedElementComparator());
+		// XML attributes
+		for (Property property : allAttributes) {
+			hasRules = true;
+			writer.println("<li>" + prefix + CDAModelUtil.computeConformanceMessage(property, true));
+			appendPropertyComments(writer, property);
+			appendPropertyRules(writer, property, constraintMap, subConstraintMap, unprocessedConstraints);
+			writer.println("</li>");
+		}
+		// XML elements
+		for (Property property : allProperties) {
+			hasRules = true;
+			writer.println("<li>" + prefix + CDAModelUtil.computeConformanceMessage(property, true));
+			appendPropertyComments(writer, property);
+			appendPropertyRules(writer, property, constraintMap, subConstraintMap, unprocessedConstraints);
+			writer.println("</li>");
+		}
+
+		for (Constraint constraint : unprocessedConstraints) {
+			hasRules = true;
+			writer.println("<li>" + prefix + CDAModelUtil.computeConformanceMessage(constraint, true) + "</li>");
+		}
+
+		if (!hasRules) {
+			writer.println("<li></li>");
+		}
+
+		writer.println("</ol>");
+	}
+
+	private static void appendPropertyComments(PrintWriter writer, Property property) {
+		Association association = property.getAssociation();
+		if (association != null && association.getOwnedComments().size() > 0) {
+			writer.append("<p><i>");
+			for (Comment comment : association.getOwnedComments()) {
+				writer.append(CDAModelUtil.fixNonXMLCharacters(comment.getBody()));
+			}
+			writer.append("</i></p>");
+		}
+
+		if (property.getOwnedComments().size() > 0) {
+			writer.append("<p><i>");
+			for (Comment comment : property.getOwnedComments()) {
+				writer.append(CDAModelUtil.fixNonXMLCharacters(comment.getBody()));
+			}
+			writer.append("</i></p>");
+		}
+	}
+
+	private static void appendPropertyRules(PrintWriter writer, Property property,
+			Map<String, List<Constraint>> constraintMap, Map<Constraint, List<Constraint>> subConstraintMap,
+			List<Constraint> unprocessedConstraints) {
+
+		// association typeCode and property type
+		String assocConstraints = "";
+		if (property.getAssociation() != null) {
+			assocConstraints = CDAModelUtil.computeAssociationConstraints(property, true);
+		}
+
+		StringBuffer ruleConstraints = new StringBuffer();
+		List<Constraint> rules = constraintMap.get(property.getName());
+		if (rules != null && !rules.isEmpty()) {
+			for (Constraint constraint : rules) {
+				unprocessedConstraints.remove(constraint);
+				ruleConstraints.append("\n<li>" + CDAModelUtil.computeConformanceMessage(constraint, true));
+				appendSubConstraintRules(ruleConstraints, constraint, subConstraintMap, unprocessedConstraints);
+
+				// List<Constraint> subConstraints = subConstraintMap.get(constraint);
+				// if (subConstraints != null && subConstraints.size() > 0) {
+				// ruleConstraints.append("<ol>");
+				// for (Constraint subConstraint : subConstraints) {
+				// unprocessedConstraints.remove(subConstraint);
+				// ruleConstraints.append("\n<li>" + CDAModelUtil.computeConformanceMessage(subConstraint, true) + "</li>");
+				// }
+				// ruleConstraints.append("</ol>");
+				// }
+				ruleConstraints.append("</li>");
+			}
+		}
+
+		if (assocConstraints.length() > 0 || ruleConstraints.length() > 0) {
+			// writer.append(", such that ");
+			// writer.append(property.upperBound()==1 ? "it" : "each");
+
+			writer.append("<ol>");
+			writer.append(assocConstraints);
+			writer.append(ruleConstraints);
+			writer.append("</ol>");
+		}
+	}
+
+	private static void appendSubConstraintRules(StringBuffer ruleConstraints, Constraint constraint,
+			Map<Constraint, List<Constraint>> subConstraintMap, List<Constraint> unprocessedConstraints) {
+
+		List<Constraint> subConstraints = subConstraintMap.get(constraint);
+		if (subConstraints != null && subConstraints.size() > 0) {
+			ruleConstraints.append("<ol>");
+			for (Constraint subConstraint : subConstraints) {
+				unprocessedConstraints.remove(subConstraint);
+				ruleConstraints.append("\n<li>" + CDAModelUtil.computeConformanceMessage(subConstraint, true));
+				appendSubConstraintRules(ruleConstraints, subConstraint, subConstraintMap, unprocessedConstraints);
+				ruleConstraints.append("</li>");
+			}
+			ruleConstraints.append("</ol>");
+		}
 	}
 
 	private static boolean isHL7VocabAttribute(Property property) {
