@@ -841,12 +841,32 @@ public class UMLUtil {
 	}
 
 	public static boolean isSameProject(Element first, Element second) {
-		// get Resource, compare base path except for file name
-		// TODO also strip folder within project
+		// This approach does not guarantee the same project but path
+		// Walk the shorter of the segments up until file name, if the paths have matched up to that point
+		// there is good chance they are in the same project within eclipse
+		// TODO Move this to a plugin which supports ResourcePlugin
+
 		URI firstURI = first.eResource().getURI();
+
 		URI secondURI = second.eResource().getURI();
 
-		return firstURI.trimSegments(1).equals(secondURI.trimSegments(1));
+		boolean isSameProject = true;
+
+		if (firstURI.segmentCount() <= secondURI.segmentCount()) {
+			for (int ctr = 0; ctr < firstURI.segmentCount() - 1; ctr++) {
+				if (!firstURI.segment(ctr).equals(secondURI.segment(ctr))) {
+					isSameProject = false;
+				}
+			}
+		} else {
+			for (int ctr = 0; ctr < secondURI.segmentCount() - 1; ctr++) {
+				if (!firstURI.segment(ctr).equals(secondURI.segment(ctr))) {
+					isSameProject = false;
+				}
+			}
+		}
+		return isSameProject;
+
 	}
 
 	/**
