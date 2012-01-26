@@ -3148,9 +3148,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
 				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS("1980"));
-				pr.setPatient(patient);
-				re.setPatientRole(pr);
+				// patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS("1980"));
+				// pr.setPatient(patient);
+				// re.setPatientRole(pr);
 				target.getRecordTargets().add(re);
 			}
 
@@ -3182,9 +3182,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				target.init();
 				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
-				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS());
-				pr.setPatient(patient);
+				// Patient patient = CDAFactory.eINSTANCE.createPatient();
+				// patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS());
+				// pr.setPatient(patient);
 				re.setPatientRole(pr);
 				target.getRecordTargets().add(re);
 			}
@@ -3198,7 +3198,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS("19800101"));
 				pr.setPatient(patient);
 				re.setPatientRole(pr);
-				target.getRecordTargets().add(re);
+				// target.getRecordTargets().add(re);
 			}
 
 			@Override
@@ -3252,8 +3252,10 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				patient.setBirthplace(birthplace);
 				pr.setPatient(patient);
 				re.setPatientRole(pr);
+
 				target.getRecordTargets().add(re);
 
+				// patientRole->one(patientRole : cda::PatientRole | not patientRole.oclIsUndefined() and patientRole.oclIsKindOf(cda::PatientRole))
 			}
 
 			@Override

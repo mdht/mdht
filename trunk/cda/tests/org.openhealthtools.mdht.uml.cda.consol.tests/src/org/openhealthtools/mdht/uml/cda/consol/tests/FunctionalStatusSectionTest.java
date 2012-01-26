@@ -34,8 +34,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Problem Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionResultObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Result Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getProblemObservation() <em>Get Problem Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getResultObservation() <em>Get Result Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getProblemObservations() <em>Get Problem Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getResultObservations() <em>Get Result Observations</em>}</li>
  * </ul>
  * </p>
  *
@@ -259,10 +259,10 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetProblemObservation() {
+	public void testGetProblemObservations() {
 
 		FunctionalStatusSection target = objectFactory.create();
-		target.getProblemObservation();
+		target.getProblemObservations();
 
 	}
 
@@ -271,10 +271,10 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetResultObservation() {
+	public void testGetResultObservations() {
 
 		FunctionalStatusSection target = objectFactory.create();
-		target.getResultObservation();
+		target.getResultObservations();
 
 	}
 

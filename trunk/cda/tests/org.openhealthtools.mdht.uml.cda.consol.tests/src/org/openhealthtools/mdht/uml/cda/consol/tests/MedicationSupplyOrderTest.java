@@ -11,6 +11,8 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.Instructions;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder;
@@ -32,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder#validateMedicationSupplyOrderInstructionInversionInd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Supply Order Instruction Inversion Ind</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder#validateMedicationSupplyOrderTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Supply Order Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder#validateMedicationSupplyOrderClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Supply Order Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder#validateMedicationSupplyOrderEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Supply Order Effective Time</em>}</li>
@@ -40,6 +43,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder#validateMedicationSupplyOrderRepeatNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Supply Order Repeat Number</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder#validateMedicationSupplyOrderStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Supply Order Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder#validateMedicationSupplyOrderId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Supply Order Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder#validateMedicationSupplyOrderProduct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Supply Order Product</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder#validateMedicationSupplyOrderAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Supply Order Author</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder#validateMedicationSupplyOrderInstructions(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Supply Order Instructions</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder#getInstructions() <em>Get Instructions</em>}</li>
@@ -50,6 +54,48 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  */
 
 public class MedicationSupplyOrderTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateMedicationSupplyOrderInstructionInversionInd() {
+		OperationsTestCase<MedicationSupplyOrder> validateMedicationSupplyOrderInstructionInversionIndTestCase = new OperationsTestCase<MedicationSupplyOrder>(
+			"validateMedicationSupplyOrderInstructionInversionInd",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_SUPPLY_ORDER_INSTRUCTION_INVERSION_IND__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationSupplyOrder target) {
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+
+				er.setAct(ConsolFactory.eINSTANCE.createInstructions());
+				target.getEntryRelationships().add(er);
+			}
+
+			@Override
+			protected void updateToPass(MedicationSupplyOrder target) {
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				er.setInversionInd(true);
+				er.setAct(ConsolFactory.eINSTANCE.createInstructions());
+				target.getEntryRelationships().add(er);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationSupplyOrderOperations.validateMedicationSupplyOrderInstructionInversionInd(
+					(MedicationSupplyOrder) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationSupplyOrderInstructionInversionIndTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -343,6 +389,40 @@ public class MedicationSupplyOrderTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidateMedicationSupplyOrderProduct() {
+		OperationsTestCase<MedicationSupplyOrder> validateMedicationSupplyOrderProductTestCase = new OperationsTestCase<MedicationSupplyOrder>(
+			"validateMedicationSupplyOrderProduct",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_SUPPLY_ORDER_PRODUCT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationSupplyOrder target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationSupplyOrder target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationSupplyOrderOperations.validateMedicationSupplyOrderProduct(
+					(MedicationSupplyOrder) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationSupplyOrderProductTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
 	public void testValidateMedicationSupplyOrderAuthor() {
 		OperationsTestCase<MedicationSupplyOrder> validateMedicationSupplyOrderAuthorTestCase = new OperationsTestCase<MedicationSupplyOrder>(
 			"validateMedicationSupplyOrderAuthor",
@@ -357,7 +437,7 @@ public class MedicationSupplyOrderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationSupplyOrder target) {
 				target.init();
-
+				target.getAuthors().add(CDAFactory.eINSTANCE.createAuthor());
 			}
 
 			@Override

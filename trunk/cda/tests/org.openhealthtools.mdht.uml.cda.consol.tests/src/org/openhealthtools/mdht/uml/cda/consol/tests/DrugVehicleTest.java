@@ -12,6 +12,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.PlayingEntity;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.DrugVehicle;
 import org.openhealthtools.mdht.uml.cda.consol.operations.DrugVehicleOperations;
@@ -27,6 +28,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DrugVehicle#validateDrugVehiclePlayingEntityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Drug Vehicle Playing Entity Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DrugVehicle#validateDrugVehiclePlayingEntityName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Drug Vehicle Playing Entity Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DrugVehicle#validateDrugVehicleTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Drug Vehicle Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DrugVehicle#validateDrugVehicleClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Drug Vehicle Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DrugVehicle#validateDrugVehicleCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Drug Vehicle Code</em>}</li>
@@ -74,6 +76,42 @@ public class DrugVehicleTest extends CDAValidationTest {
 		};
 
 		validateDrugVehiclePlayingEntityCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateDrugVehiclePlayingEntityName() {
+		OperationsTestCase<DrugVehicle> validateDrugVehiclePlayingEntityNameTestCase = new OperationsTestCase<DrugVehicle>(
+			"validateDrugVehiclePlayingEntityName",
+			operationsForOCL.getOCLValue("VALIDATE_DRUG_VEHICLE_PLAYING_ENTITY_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DrugVehicle target) {
+				target.init();
+				target.setPlayingEntity(CDAFactory.eINSTANCE.createPlayingEntity());
+			}
+
+			@Override
+			protected void updateToPass(DrugVehicle target) {
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pe.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+				target.setPlayingEntity(pe);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DrugVehicleOperations.validateDrugVehiclePlayingEntityName(
+					(DrugVehicle) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDrugVehiclePlayingEntityNameTestCase.doValidationTest();
 	}
 
 	/**
@@ -178,7 +216,7 @@ public class DrugVehicleTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateDrugVehiclePlayingEntity() {
@@ -195,7 +233,7 @@ public class DrugVehicleTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DrugVehicle target) {
 				target.init();
-
+				target.setPlayingEntity(CDAFactory.eINSTANCE.createPlayingEntity());
 			}
 
 			@Override

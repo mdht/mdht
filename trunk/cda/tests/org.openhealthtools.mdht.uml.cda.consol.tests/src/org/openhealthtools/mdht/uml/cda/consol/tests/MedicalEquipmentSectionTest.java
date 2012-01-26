@@ -186,7 +186,7 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicalEquipmentSectionNonMedicinalSupplyActivity() {
@@ -203,7 +203,7 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicalEquipmentSection target) {
 				target.init();
-
+				target.addSupply(ConsolFactory.eINSTANCE.createNonMedicinalSupplyActivity());
 			}
 
 			@Override

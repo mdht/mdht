@@ -11,10 +11,14 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Device;
+import org.openhealthtools.mdht.uml.cda.Entity;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ProductInstance;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ProductInstanceOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,7 +113,7 @@ public class ProductInstanceTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProductInstanceId() {
@@ -125,7 +129,7 @@ public class ProductInstanceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProductInstance target) {
 				target.init();
-
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 			}
 
 			@Override
@@ -142,7 +146,7 @@ public class ProductInstanceTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProductInstanceScopingEntity() {
@@ -159,7 +163,7 @@ public class ProductInstanceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProductInstance target) {
 				target.init();
-
+				target.setScopingEntity(CDAFactory.eINSTANCE.createEntity());
 			}
 
 			@Override
@@ -176,7 +180,7 @@ public class ProductInstanceTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProductInstancePlayingDevice() {
@@ -193,7 +197,7 @@ public class ProductInstanceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProductInstance target) {
 				target.init();
-
+				target.setPlayingDevice(CDAFactory.eINSTANCE.createDevice());
 			}
 
 			@Override
@@ -210,7 +214,7 @@ public class ProductInstanceTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProductInstanceScopingEntityId() {
@@ -221,13 +225,17 @@ public class ProductInstanceTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProductInstance target) {
+				target.init();
+				Entity ent = CDAFactory.eINSTANCE.createEntity();
 
+				target.setScopingEntity(ent);
 			}
 
 			@Override
 			protected void updateToPass(ProductInstance target) {
-				target.init();
-
+				Entity ent = CDAFactory.eINSTANCE.createEntity();
+				ent.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				target.setScopingEntity(ent);
 			}
 
 			@Override
@@ -244,7 +252,7 @@ public class ProductInstanceTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProductInstancePlayingDeviceCode() {
@@ -255,12 +263,16 @@ public class ProductInstanceTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProductInstance target) {
-
+				target.init();
+				Device pd = CDAFactory.eINSTANCE.createDevice();
+				target.setPlayingDevice(pd);
 			}
 
 			@Override
 			protected void updateToPass(ProductInstance target) {
-				target.init();
+				Device pd = CDAFactory.eINSTANCE.createDevice();
+				pd.setCode(DatatypesFactory.eINSTANCE.createCE());
+				target.setPlayingDevice(pd);
 
 			}
 
