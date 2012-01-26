@@ -191,7 +191,7 @@ public class PreconditionForSubstanceAdministrationTest extends CDAValidationTes
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePreconditionForSubstanceAdministrationCriterion() {
@@ -208,7 +208,7 @@ public class PreconditionForSubstanceAdministrationTest extends CDAValidationTes
 			@Override
 			protected void updateToPass(PreconditionForSubstanceAdministration target) {
 				target.init();
-
+				target.setCriterion(CDAFactory.eINSTANCE.createCriterion());
 			}
 
 			@Override

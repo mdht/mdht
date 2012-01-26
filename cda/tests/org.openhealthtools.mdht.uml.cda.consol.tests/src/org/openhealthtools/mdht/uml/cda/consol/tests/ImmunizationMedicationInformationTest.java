@@ -28,7 +28,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Organization</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationManufacturerOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Manufacturer Organization</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationManufacturedMaterial(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Manufactured Material</em>}</li>
  * </ul>
  * </p>
  *
@@ -144,10 +145,10 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateImmunizationMedicationInformationOrganization() {
-		OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationOrganizationTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
-			"validateImmunizationMedicationInformationOrganization",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateImmunizationMedicationInformationManufacturerOrganization() {
+		OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationManufacturerOrganizationTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
+			"validateImmunizationMedicationInformationManufacturerOrganization",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_MANUFACTURER_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -164,13 +165,47 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ImmunizationMedicationInformationOperations.validateImmunizationMedicationInformationOrganization(
+				return ImmunizationMedicationInformationOperations.validateImmunizationMedicationInformationManufacturerOrganization(
 					(ImmunizationMedicationInformation) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateImmunizationMedicationInformationOrganizationTestCase.doValidationTest();
+		validateImmunizationMedicationInformationManufacturerOrganizationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateImmunizationMedicationInformationManufacturedMaterial() {
+		OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationManufacturedMaterialTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
+			"validateImmunizationMedicationInformationManufacturedMaterial",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_MANUFACTURED_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ImmunizationMedicationInformation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ImmunizationMedicationInformation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ImmunizationMedicationInformationOperations.validateImmunizationMedicationInformationManufacturedMaterial(
+					(ImmunizationMedicationInformation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateImmunizationMedicationInformationManufacturedMaterialTestCase.doValidationTest();
 	}
 
 	/**
