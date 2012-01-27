@@ -418,7 +418,7 @@ public class CDAModelUtil {
 
 		if (endType != null) {
 
-			if (endType.getOwner() instanceof Class) {
+			if (false && endType.getOwner() instanceof Class) {
 				StringWriter sw = new StringWriter();
 				PrintWriter pw = new PrintWriter(sw);
 				StringBuffer sb = sw.getBuffer();
@@ -500,7 +500,7 @@ public class CDAModelUtil {
 				: "");
 
 		appendConformanceRuleIds(association, message, markup);
-		if (property.getType() instanceof Class) {
+		if (false && property.getType() instanceof Class) {
 			Class inlinedClass = (Class) property.getType();
 
 			if (inlinedClass.getOwner() instanceof Class) {
@@ -795,7 +795,7 @@ public class CDAModelUtil {
 
 	private static final String[] OL = { "<ol>", "</ol>" };
 
-	private static final String[] LI = { "<ol>", "</ol>" };
+	private static final String[] LI = { "<li>", "</li>" };
 
 	private static final String[] NOOL = { "", " " };
 
@@ -886,7 +886,7 @@ public class CDAModelUtil {
 
 		for (Constraint constraint : unprocessedConstraints) {
 			hasRules = true;
-			writer.print(li[0] + prefix + CDAModelUtil.computeConformanceMessage(constraint, markup) + LI[1]);
+			writer.print(li[0] + prefix + CDAModelUtil.computeConformanceMessage(constraint, markup) + li[1]);
 		}
 
 		if (!hasRules) {
