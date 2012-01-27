@@ -65,16 +65,13 @@ public class AllergyProblemActTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(AllergyProblemAct target) {
 				target.init();
-				CS pc = DatatypesFactory.eINSTANCE.createCS();
-				pc.setCode("aborted");
-				target.setStatusCode(pc);
+				target.setStatusCode(DatatypesFactory.eINSTANCE.createCS("413322009"));
 			}
 
 			@Override
 			protected void updateToPass(AllergyProblemAct target) {
-				CS pc = DatatypesFactory.eINSTANCE.createCS();
-				pc.setCode("aborted");
-				target.setStatusCode(pc);
+				target.init();
+				target.setStatusCode(DatatypesFactory.eINSTANCE.createCS("413322009"));
 				IVL_TS pt = DatatypesFactory.eINSTANCE.createIVL_TS();
 				IVXB_TS high = DatatypesFactory.eINSTANCE.createIVXB_TS();
 				pt.setHigh(high);
@@ -107,16 +104,13 @@ public class AllergyProblemActTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(AllergyProblemAct target) {
 				target.init();
-				CS sc = DatatypesFactory.eINSTANCE.createCS();
-				sc.setCode("active");
-				target.setStatusCode(sc);
+				target.setStatusCode(DatatypesFactory.eINSTANCE.createCS("55561003"));
 			}
 
 			@Override
 			protected void updateToPass(AllergyProblemAct target) {
-				CS sc = DatatypesFactory.eINSTANCE.createCS();
-				sc.setCode("active");
-				target.setStatusCode(sc);
+				target.init();
+				target.setStatusCode(DatatypesFactory.eINSTANCE.createCS("55561003"));
 				IVL_TS et = DatatypesFactory.eINSTANCE.createIVL_TS();
 				IVXB_TS low = DatatypesFactory.eINSTANCE.createIVXB_TS();
 				et.setLow(low);
@@ -329,9 +323,8 @@ public class AllergyProblemActTest extends CDAValidationTest {
 			protected void updateToPass(AllergyProblemAct target) {
 				target.init();
 
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				CS cs = DatatypesFactory.eINSTANCE.createCS("413322009");
 				cs.setCodeSystem("2.16.840.1.113883.6.96");
-				cs.setCode("55561003");
 				target.setStatusCode(cs);
 
 			}
