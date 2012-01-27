@@ -39,6 +39,7 @@ plugin@org.openhealthtools.mdht.uml.cda.hitsp.doc=SVN,trunk,https://www.projects
 
 plugin@org.openhealthtools.mdht.uml.cda.consol.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,doc/org.openhealthtools.mdht.uml.cda.consol.doc,force
 
+plugin@org.openhealthtools.mdht.uml.cda.consoltoc.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,doc/org.openhealthtools.mdht.uml.cda.consoltoc.doc,force
 
 plugin@org.openhealthtools.mdht.uml.cda.ihe.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,doc/org.openhealthtools.mdht.uml.cda.ihe.doc,force
 
@@ -62,6 +63,8 @@ plugin@org.openhealthtools.mdht.uml.cda.consol=SVN,trunk,https://www.projects.op
 plugin@org.openhealthtools.mdht.uml.cda.hitsp.facade=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.hitsp.facade,force
 
 plugin@org.openhealthtools.mdht.uml.cda.ihe=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.ihe,force
+
+plugin@org.openhealthtools.mdht.uml.cda.consoltoc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.consoltoc,force
 
 plugin@org.openhealthtools.mdht.uml.cda.toc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.toc,force
 
@@ -195,6 +198,8 @@ plugin@org.openhealthtools.mdht.uml.cda.ihe.test=SVN,trunk,https://www.projects.
 plugin@org.openhealthtools.mdht.uml.cda.ihe.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.ihe.tests,force
 
 plugin@org.openhealthtools.mdht.uml.cda.toc.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.toc.tests,force
+
+plugin@org.openhealthtools.mdht.uml.cda.consoltoc.tests=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.consoltoc.tests,force
 
 plugin@org.openhealthtools.mdht.uml.cda.pilot.test=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/tests/org.openhealthtools.mdht.uml.cda.pilot.test,force
 
