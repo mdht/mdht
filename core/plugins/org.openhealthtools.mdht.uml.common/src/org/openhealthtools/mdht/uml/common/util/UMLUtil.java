@@ -830,9 +830,9 @@ public class UMLUtil {
 		Package secondPackage = UMLUtil.getTopPackage(second);
 
 		if (firstPackage != null || secondPackage != null) {
-			// return firstPackage.equals(secondPackage) || firstPackage.getImportedElements().contains(second);
-			return firstPackage.equals(secondPackage);
-
+			if (firstPackage != null) {
+				return firstPackage.equals(secondPackage);
+			}
 		} else if (first.eResource() != null && second.eResource() != null) {
 			return first.eResource().getURI().equals(second.eResource().getURI());
 		}
