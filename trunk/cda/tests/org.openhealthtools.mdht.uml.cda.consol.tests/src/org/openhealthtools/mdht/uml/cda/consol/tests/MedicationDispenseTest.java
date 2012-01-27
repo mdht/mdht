@@ -20,7 +20,6 @@ import org.openhealthtools.mdht.uml.cda.consol.MedicationDispense;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder;
 import org.openhealthtools.mdht.uml.cda.consol.operations.MedicationDispenseOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
@@ -289,11 +288,7 @@ public class MedicationDispenseTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationDispense target) {
 				target.init();
-
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				cs.setCodeSystem("2.16.840.1.113883.5.14");
-				target.setStatusCode(cs);
-
+				target.setStatusCode(DatatypesFactory.eINSTANCE.createCS("completed"));
 			}
 
 			@Override

@@ -18,7 +18,6 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.operations.AllergyProblemActOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
@@ -322,11 +321,7 @@ public class AllergyProblemActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyProblemAct target) {
 				target.init();
-
-				CS cs = DatatypesFactory.eINSTANCE.createCS("413322009");
-				cs.setCodeSystem("2.16.840.1.113883.6.96");
-				target.setStatusCode(cs);
-
+				target.setStatusCode(DatatypesFactory.eINSTANCE.createCS("413322009"));
 			}
 
 			@Override
