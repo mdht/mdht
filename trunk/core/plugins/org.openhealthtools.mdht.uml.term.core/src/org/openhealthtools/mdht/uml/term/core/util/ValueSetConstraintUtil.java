@@ -7,12 +7,15 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Rama Ramakrishnan  - 1/27/2012 - Added check for CS data type
  *    
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.util;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
@@ -35,7 +38,7 @@ public class ValueSetConstraintUtil {
 			String name = codeSystem.getEnumerationName();
 			// String version = codeSystem.getVersion();
 
-			if (id != null && id.length() > 0) {
+			if (id != null && id.length() > 0 && !isCSType(property)) {
 				if (needsAnd) {
 					body.append(" and ");
 				}
@@ -48,7 +51,7 @@ public class ValueSetConstraintUtil {
 			/*
 			 * Only add this constraint if codeSystem is not specified.
 			 */
-			if ((id == null || id.length() == 0) && name != null && name.length() > 0) {
+			if ((id == null || id.length() == 0) && name != null && name.length() > 0 && !isCSType(property)) {
 				if (needsAnd) {
 					body.append(" and ");
 				}
@@ -57,15 +60,6 @@ public class ValueSetConstraintUtil {
 				body.append("'");
 				needsAnd = true;
 			}
-
-			// if (version != null && version.length() > 0) {
-			// if (needsAnd) {
-			// body.append(" and ");
-			// }
-			// body.append("value.codeSystemVersion = '");
-			// body.append(version);
-			// body.append("'");
-			// }
 
 			List<EnumerationLiteral> literals = valueSetConstraint.getReference().getBase_Enumeration().getOwnedLiterals();
 			if (literals.size() > 0 && literals.size() < 20) {
@@ -83,7 +77,10 @@ public class ValueSetConstraintUtil {
 					body.append(literal.getName());
 					body.append("'");
 				}
-				body.append(")");
+				if (needsAnd) {
+					body.append(")");
+				}
+
 			} else {
 				if (needsAnd) {
 					body.append(" and ");
@@ -95,4 +92,19 @@ public class ValueSetConstraintUtil {
 
 		return body.toString();
 	}
+
+	public static boolean isCSType(Property property) {
+		Classifier type = (Classifier) property.getType();
+		if (type != null) {
+			List<Classifier> allTypes = new ArrayList<Classifier>(type.allParents());
+			allTypes.add(0, type);
+			for (Classifier classifier : allTypes) {
+				if ("datatypes::CS".equals(classifier.getQualifiedName())) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
 }
