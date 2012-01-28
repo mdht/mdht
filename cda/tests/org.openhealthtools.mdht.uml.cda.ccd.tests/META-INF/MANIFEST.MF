@@ -17,6 +17,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.openhealthtools.mdht.uml.hl7.rim;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.junit;visibility:=reexport,
- org.openhealthtools.mdht.uml.cda.ccd.test;visibility:=reexport
+ org.openhealthtools.mdht.uml.cda.test
 Bundle-ActivationPolicy: lazy
 Import-Package: org.openhealthtools.mdht.uml.cda.ihe
