@@ -30,6 +30,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DICOMObjectCatalogSection#validateDICOMObjectCatalogSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate DICOM Object Catalog Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DICOMObjectCatalogSection#validateDICOMObjectCatalogSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate DICOM Object Catalog Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DICOMObjectCatalogSection#validateDICOMObjectCatalogSectionStudyAct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate DICOM Object Catalog Section Study Act</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DICOMObjectCatalogSection#getStudyAct() <em>Get Study Act</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +73,86 @@ public class DICOMObjectCatalogSectionTest extends CDAValidationTest {
 		};
 
 		validateDICOMObjectCatalogSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateDICOMObjectCatalogSectionCode() {
+		OperationsTestCase<DICOMObjectCatalogSection> validateDICOMObjectCatalogSectionCodeTestCase = new OperationsTestCase<DICOMObjectCatalogSection>(
+			"validateDICOMObjectCatalogSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_DICOM_OBJECT_CATALOG_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DICOMObjectCatalogSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DICOMObjectCatalogSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DICOMObjectCatalogSectionOperations.validateDICOMObjectCatalogSectionCode(
+					(DICOMObjectCatalogSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDICOMObjectCatalogSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateDICOMObjectCatalogSectionStudyAct() {
+		OperationsTestCase<DICOMObjectCatalogSection> validateDICOMObjectCatalogSectionStudyActTestCase = new OperationsTestCase<DICOMObjectCatalogSection>(
+			"validateDICOMObjectCatalogSectionStudyAct",
+			operationsForOCL.getOCLValue("VALIDATE_DICOM_OBJECT_CATALOG_SECTION_STUDY_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DICOMObjectCatalogSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(DICOMObjectCatalogSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DICOMObjectCatalogSectionOperations.validateDICOMObjectCatalogSectionStudyAct(
+					(DICOMObjectCatalogSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDICOMObjectCatalogSectionStudyActTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetStudyAct() {
+
+		DICOMObjectCatalogSection target = objectFactory.create();
+		target.getStudyAct();
+
 	}
 
 	/**
