@@ -13,6 +13,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
 
+import java.util.List;
 import java.util.StringTokenizer;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -60,6 +61,8 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Enumeration;
+import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.MultiplicityElement;
@@ -83,6 +86,8 @@ public class PropertySection extends AbstractModelerPropertySection {
 	private Button typeButton;
 
 	private Text defaultValueText;
+
+	private CCombo defaultValueCombo;
 
 	private boolean defaultValueModified = false;
 
@@ -158,7 +163,14 @@ public class PropertySection extends AbstractModelerPropertySection {
 						if (property.getDefaultValue() != null) {
 							property.getDefaultValue().destroy();
 						}
-						String newValue = defaultValueText.getText();
+
+						String newValue = null;
+						if (property.getType() instanceof Enumeration) {
+							newValue = defaultValueCombo.getText();
+						} else {
+							newValue = defaultValueText.getText();
+						}
+
 						if (newValue != null && newValue.trim().length() > 0) {
 							// TODO check property type and create appropriate literal type
 							LiteralString literal = UMLFactory.eINSTANCE.createLiteralString();
@@ -326,8 +338,29 @@ public class PropertySection extends AbstractModelerPropertySection {
 		data.top = new FormAttachment(0, 0);
 		multiplicityCombo.setLayoutData(data);
 
-		/* ------------------------------- */
+		/* ----- Default Value ----- */
+		defaultValueCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT);
+		defaultValueCombo.addSelectionListener(new SelectionListener() {
+			public void widgetDefaultSelected(SelectionEvent e) {
+				defaultValueModified = true;
+				modifyFields();
+			}
+
+			public void widgetSelected(SelectionEvent e) {
+				defaultValueModified = true;
+				modifyFields();
+			}
+		});
+
+		data = new FormData();
+		// TODO figure out how to set correct wider label width
+		data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH + 20);
+		data.right = new FormAttachment(30, 0);
+		data.top = new FormAttachment(1, 3, ITabbedPropertyConstants.VSPACE);
+		defaultValueCombo.setLayoutData(data);
+
 		defaultValueText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
+
 		data = new FormData();
 		// TODO figure out how to set correct wider label width
 		data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH + 20);
@@ -338,8 +371,8 @@ public class PropertySection extends AbstractModelerPropertySection {
 		CLabel defaultValueLabel = getWidgetFactory().createCLabel(composite, "Default Value:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
-		data.right = new FormAttachment(defaultValueText, -ITabbedPropertyConstants.HSPACE);
-		data.top = new FormAttachment(defaultValueText, 0, SWT.CENTER);
+		data.right = new FormAttachment(defaultValueCombo, -ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(defaultValueCombo, 0, SWT.CENTER);
 		defaultValueLabel.setLayoutData(data);
 
 		/* ---- Is Derived checkbox ---- */
@@ -501,23 +534,41 @@ public class PropertySection extends AbstractModelerPropertySection {
 			typeName.setText("");
 		}
 
-		defaultValueText.removeModifyListener(modifyListener);
-		defaultValueText.removeKeyListener(keyListener);
-		defaultValueText.removeFocusListener(focusListener);
-		if (property.getType() == null) {
-			defaultValueText.setEditable(false);
-		} else {
-			defaultValueText.setEditable(true);
+		String defaultValue = "";
+		if (property.getDefaultValue() != null && property.getDefaultValue().stringValue() != null) {
+			defaultValue = property.getDefaultValue().stringValue();
 		}
 
-		if (property.getDefaultValue() != null && property.getDefaultValue().stringValue() != null) {
-			defaultValueText.setText(property.getDefaultValue().stringValue());
+		if (property.getType() instanceof Enumeration) {
+			List<EnumerationLiteral> literals = ((Enumeration) property.getType()).getOwnedLiterals();
+			String[] literalLabels = new String[literals.size()];
+			for (int i = 0; i < literals.size(); i++) {
+				literalLabels[i] = literals.get(i).getName();
+			}
+			defaultValueCombo.setItems(literalLabels);
+			defaultValueCombo.setText(defaultValue);
+
+			defaultValueText.setVisible(false);
+			defaultValueCombo.setVisible(true);
+
 		} else {
-			defaultValueText.setText("");
+			defaultValueText.removeModifyListener(modifyListener);
+			defaultValueText.removeKeyListener(keyListener);
+			defaultValueText.removeFocusListener(focusListener);
+			if (property.getType() == null) {
+				defaultValueText.setEditable(false);
+			} else {
+				defaultValueText.setEditable(true);
+			}
+			defaultValueText.setText(defaultValue);
+
+			defaultValueText.addModifyListener(modifyListener);
+			defaultValueText.addKeyListener(keyListener);
+			defaultValueText.addFocusListener(focusListener);
+
+			defaultValueCombo.setVisible(false);
+			defaultValueText.setVisible(true);
 		}
-		defaultValueText.addModifyListener(modifyListener);
-		defaultValueText.addKeyListener(keyListener);
-		defaultValueText.addFocusListener(focusListener);
 
 		multiplicityCombo.setText(displayMultiplicity(property));
 		aggregationCombo.setText(property.getAggregation().getName());
@@ -534,6 +585,7 @@ public class PropertySection extends AbstractModelerPropertySection {
 			typeButton.setEnabled(false);
 			multiplicityCombo.setEnabled(false);
 			defaultValueText.setEnabled(false);
+			defaultValueCombo.setEnabled(false);
 			aggregationCombo.setEnabled(false);
 		} else {
 			isDerived.setEnabled(true);
@@ -543,6 +595,7 @@ public class PropertySection extends AbstractModelerPropertySection {
 			typeButton.setEnabled(true);
 			multiplicityCombo.setEnabled(true);
 			defaultValueText.setEnabled(true);
+			defaultValueCombo.setEnabled(true);
 			aggregationCombo.setEnabled(true);
 		}
 	}
