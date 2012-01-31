@@ -340,12 +340,11 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		Bundle bundle = Platform.getBundle(org.openhealthtools.mdht.uml.cda.ui.internal.Activator.PLUGIN_ID);
 		ArrayList<java.net.URI> elements = new ArrayList<java.net.URI>();
 
-		Enumeration<Object> entries = bundle.findEntries("resources/dita", "*", true);
+		Enumeration<java.net.URL> entries = bundle.findEntries("resources/dita", "*", true);
 
 		while (entries.hasMoreElements()) {
 
-			elements.add(FileLocator.toFileURL(
-				new URL(bundle.getEntry("/"), ((java.net.URL) entries.nextElement()).getPath())).toURI());
+			elements.add(FileLocator.toFileURL(new URL(bundle.getEntry("/"), entries.nextElement().getPath())).toURI());
 
 		}
 
@@ -357,8 +356,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		elements.clear();
 		while (entries.hasMoreElements()) {
 
-			elements.add(FileLocator.toFileURL(
-				new URL(bundle.getEntry("/"), ((java.net.URL) entries.nextElement()).getPath())).toURI());
+			elements.add(FileLocator.toFileURL(new URL(bundle.getEntry("/"), entries.nextElement().getPath())).toURI());
 
 		}
 
@@ -371,8 +369,7 @@ public class NewCDAModelProjectWizard extends CDAWizard {
 		elements.clear();
 		while (entries.hasMoreElements()) {
 
-			elements.add(FileLocator.toFileURL(
-				new URL(bundle.getEntry("/"), ((java.net.URL) entries.nextElement()).getPath())).toURI());
+			elements.add(FileLocator.toFileURL(new URL(bundle.getEntry("/"), entries.nextElement().getPath())).toURI());
 
 		}
 
