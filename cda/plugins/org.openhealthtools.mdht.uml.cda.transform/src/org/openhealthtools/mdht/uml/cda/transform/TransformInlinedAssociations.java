@@ -28,7 +28,11 @@ import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 public class TransformInlinedAssociations extends TransformAbstract {
 
-	private void appendInlinedOCLConstraint(Class classToBeConstrained, String constraintName, String severity,
+	private enum Severity {
+		INFO, WARNING, ERROR
+	}
+
+	private void appendInlinedOCLConstraint(Class classToBeConstrained, String constraintName, Severity severity,
 			String validationMessage, String oclConstraintGuard, String oclConstraint) {
 
 		int ctr = 1;
@@ -45,16 +49,18 @@ public class TransformInlinedAssociations extends TransformAbstract {
 		expression.getLanguages().add("OCL");
 
 		expression.getBodies().add(String.format("if %s then %s else true endif", oclConstraintGuard, oclConstraint));
-		if (severity != null) {
-			if ("INFO".equals(severity)) {
+
+		switch (severity) {
+			case INFO:
 				addValidationInfo(classToBeConstrained, constraintName, validationMessage);
-			} else if ("WARNING".equals(severity)) {
+				break;
+			case WARNING:
 				addValidationWarning(classToBeConstrained, constraintName, validationMessage);
-			} else {
+				break;
+			default:
 				addValidationError(classToBeConstrained, constraintName, validationMessage);
-			}
-		} else {
-			addValidationError(classToBeConstrained, constraintName, validationMessage);
+				break;
+
 		}
 
 	}
@@ -132,7 +138,6 @@ public class TransformInlinedAssociations extends TransformAbstract {
 
 					collectConstraints(
 						property.getClass_(), (Class) property.getType(),
-						CDAModelUtil.getValidationSeverity(association),
 						CDAModelUtil.getValidationMessage(association),
 						"self." + getPath(getCDAClass(property.getClass_()), (Class) property.getType(), property),
 						"self." + getPath(getCDAClass(property.getClass_()), (Class) property.getType(), property) +
@@ -208,9 +213,13 @@ public class TransformInlinedAssociations extends TransformAbstract {
 	 * @param constraints
 	 * @param associationName
 	 */
-	private void collectConstraints(Class bucketClass, Class inlineClass, String severity, String message,
-			String guard, String path, String stack, HashMap<String, ArrayList<String>> constraints,
-			String associationName) {
+	private void collectConstraints(Class bucketClass, Class inlineClass, String message, String guard, String path,
+			String stack, HashMap<String, ArrayList<String>> constraints, String associationName) {
+
+		AnnotationsUtil inlineClassAnnotations = new AnnotationsUtil(inlineClass);
+
+		String warnings = inlineClassAnnotations.getAnnotation(VALIDATION_WARNING);
+		String infos = inlineClassAnnotations.getAnnotation(VALIDATION_INFO);
 
 		String splitName = CDAModelUtil.getPrefixedSplitName(inlineClass);
 
@@ -240,9 +249,9 @@ public class TransformInlinedAssociations extends TransformAbstract {
 
 					}
 					collectConstraints(
-						bucketClass, (Class) property.getType(), severity, message + " " + associationMessage, guard +
+						bucketClass, (Class) property.getType(), message + " " + associationMessage, guard + "." +
+								getPath(getCDAClass(property.getClass_()), (Class) property.getType(), property), path +
 								"." + getPath(getCDAClass(property.getClass_()), (Class) property.getType(), property),
-						path + "." + getPath(getCDAClass(property.getClass_()), (Class) property.getType(), property),
 						stack + property.getClass_().getName(), constraints, property.getName());
 				}
 			}
@@ -273,6 +282,14 @@ public class TransformInlinedAssociations extends TransformAbstract {
 
 		for (Constraint constraint : inlineClass.getOwnedRules()) {
 
+			Severity constraintSeverity = Severity.ERROR;
+
+			if (infos != null && infos.contains(constraint.getName())) {
+				constraintSeverity = Severity.INFO;
+			} else if (warnings != null && warnings.contains(constraint.getName())) {
+				constraintSeverity = Severity.WARNING;
+			}
+
 			String relativeOCL = getRelativeOCL(constraint);
 
 			if (relativeOCL != null) {
@@ -286,8 +303,8 @@ public class TransformInlinedAssociations extends TransformAbstract {
 				 * TODO Fix constraint messages implementation - currently only setting the specific rule with out the path to the rule
 				 */
 				appendInlinedOCLConstraint(
-					bucketClass, stack + constraint.getName(), severity, constraintMessage, constraintGuard.toString(),
-					path + getScopeFilter(inlineClass) + "->forAll(" + relativeOCL + ")");
+					bucketClass, stack + constraint.getName(), constraintSeverity, constraintMessage,
+					constraintGuard.toString(), path + getScopeFilter(inlineClass) + "->forAll(" + relativeOCL + ")");
 			}
 
 		}
