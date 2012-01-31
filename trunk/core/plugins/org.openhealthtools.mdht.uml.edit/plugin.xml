@@ -17,7 +17,7 @@
    
   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
     <factory 
-       uri = "http://www.eclipse.org/uml2/2.0.0/UML" 
+       uri = "http://www.eclipse.org/uml2/3.0.0/UML" 
        class = "org.openhealthtools.mdht.uml.edit.provider.UML2ExtendedAdapterFactory"
        supportedTypes = 
          "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
