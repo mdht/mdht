@@ -83,6 +83,9 @@ public class AddUMLAssociationAction extends UML2AbstractAction {
 							ownedEnd.setType(source);
 							association.getOwnedEnds().add(ownedEnd);
 
+							// add association to same resource as source class
+							source.eResource().getContents().add(association);
+
 							if (activePart instanceof ISetSelectionTarget) {
 								((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(source));
 								((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(association));
