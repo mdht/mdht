@@ -597,7 +597,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAllergyObservationParticipant() {
@@ -608,13 +608,12 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AllergyObservation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(AllergyObservation target) {
-				target.init();
-
+				target.getParticipants().add(CDAFactory.eINSTANCE.createParticipant2());
 			}
 
 			@Override
