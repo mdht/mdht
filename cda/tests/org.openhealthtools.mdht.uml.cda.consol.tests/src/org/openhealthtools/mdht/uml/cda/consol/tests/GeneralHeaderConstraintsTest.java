@@ -460,7 +460,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsLanguageCode() {
@@ -471,13 +471,13 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
 
+				target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("value"));
 			}
 
 			@Override
@@ -3148,9 +3148,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
 				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				// patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS("1980"));
-				// pr.setPatient(patient);
-				// re.setPatientRole(pr);
+				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS("1980"));
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
 				target.getRecordTargets().add(re);
 			}
 
@@ -3182,9 +3182,9 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				target.init();
 				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
-				// Patient patient = CDAFactory.eINSTANCE.createPatient();
-				// patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS());
-				// pr.setPatient(patient);
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS());
+				pr.setPatient(patient);
 				re.setPatientRole(pr);
 				target.getRecordTargets().add(re);
 			}
@@ -3198,7 +3198,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				patient.setBirthTime(DatatypesFactory.eINSTANCE.createTS("19800101"));
 				pr.setPatient(patient);
 				re.setPatientRole(pr);
-				// target.getRecordTargets().add(re);
+				target.getRecordTargets().add(re);
 			}
 
 			@Override
@@ -3289,8 +3289,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				Patient patient = CDAFactory.eINSTANCE.createPatient();
 				Birthplace birthplace = CDAFactory.eINSTANCE.createBirthplace();
 				Place place = CDAFactory.eINSTANCE.createPlace();
-				birthplace.setPlace(place);
-				// patient.setBirthplace(birthplace);
+				patient.setBirthplace(birthplace);
 				pr.setPatient(patient);
 				re.setPatientRole(pr);
 				target.getRecordTargets().add(re);
@@ -3381,7 +3380,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationProficiencyLevelCode() {
@@ -3392,12 +3391,34 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				LanguageCommunication languageCommunication = CDAFactory.eINSTANCE.createLanguageCommunication();
 
+				patient.getLanguageCommunications().add(languageCommunication);
+
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				target.getRecordTargets().clear();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				LanguageCommunication languageCommunication = CDAFactory.eINSTANCE.createLanguageCommunication();
+				languageCommunication.setProficiencyLevelCode(DatatypesFactory.eINSTANCE.createCE(
+					"", "2.16.840.1.113883.6.1", "", ""));
+
+				patient.getLanguageCommunications().add(languageCommunication);
+
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
 
 			}
 
@@ -4086,7 +4107,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientLanguageCommunicationLanguageCode() {
@@ -4097,12 +4118,30 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-
+				target.init();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				Guardian guardian = CDAFactory.eINSTANCE.createGuardian();
+				patient.getLanguageCommunications().add(CDAFactory.eINSTANCE.createLanguageCommunication());
+				patient.getGuardians().add(guardian);
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				target.getRecordTargets().clear();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				LanguageCommunication languageCommunication = CDAFactory.eINSTANCE.createLanguageCommunication();
+				languageCommunication.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("code"));
+				patient.getLanguageCommunications().add(languageCommunication);
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
 
 			}
 
