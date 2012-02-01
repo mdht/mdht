@@ -61,10 +61,10 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePlanOfCareSectionTemplateId() {
-			OperationsTestCase<PlanOfCareSection> validatePlanOfCareSectionTemplateIdTestCase = new OperationsTestCase<PlanOfCareSection>(
+		OperationsTestCase<PlanOfCareSection> validatePlanOfCareSectionTemplateIdTestCase = new OperationsTestCase<PlanOfCareSection>(
 			"validatePlanOfCareSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PlanOfCareSection target) {
@@ -74,46 +74,12 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PlanOfCareSectionOperations.validatePlanOfCareSectionTemplateId(
 					(PlanOfCareSection) objectToTest, diagnostician, map);
 			}
@@ -121,7 +87,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 		};
 
 		validatePlanOfCareSectionTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -129,10 +95,10 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePlanOfCareSectionCode() {
-			OperationsTestCase<PlanOfCareSection> validatePlanOfCareSectionCodeTestCase = new OperationsTestCase<PlanOfCareSection>(
+		OperationsTestCase<PlanOfCareSection> validatePlanOfCareSectionCodeTestCase = new OperationsTestCase<PlanOfCareSection>(
 			"validatePlanOfCareSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PlanOfCareSection target) {
@@ -142,46 +108,12 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PlanOfCareSectionOperations.validatePlanOfCareSectionCode(
 					(PlanOfCareSection) objectToTest, diagnostician, map);
 			}
@@ -189,7 +121,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 		};
 
 		validatePlanOfCareSectionCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -446,13 +378,10 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetPlanOfCareActivityAct() {
 
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivityAct();
 
-PlanOfCareSection target = objectFactory.create();
-target.getPlanOfCareActivityAct();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -461,13 +390,10 @@ target.getPlanOfCareActivityAct();
 	@Test
 	public void testGetPlanOfCareActivityEncounter() {
 
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivityEncounter();
 
-PlanOfCareSection target = objectFactory.create();
-target.getPlanOfCareActivityEncounter();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -476,13 +402,10 @@ target.getPlanOfCareActivityEncounter();
 	@Test
 	public void testGetPlanOfCareActivityObservation() {
 
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivityObservation();
 
-PlanOfCareSection target = objectFactory.create();
-target.getPlanOfCareActivityObservation();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -491,13 +414,10 @@ target.getPlanOfCareActivityObservation();
 	@Test
 	public void testGetPlanOfCareActivityProcedure() {
 
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivityProcedure();
 
-PlanOfCareSection target = objectFactory.create();
-target.getPlanOfCareActivityProcedure();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -506,13 +426,10 @@ target.getPlanOfCareActivityProcedure();
 	@Test
 	public void testGetPlanOfCareActivitySubstanceAdministration() {
 
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivitySubstanceAdministration();
 
-PlanOfCareSection target = objectFactory.create();
-target.getPlanOfCareActivitySubstanceAdministration();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -521,13 +438,10 @@ target.getPlanOfCareActivitySubstanceAdministration();
 	@Test
 	public void testGetPlanOfCareActivitySupply() {
 
+		PlanOfCareSection target = objectFactory.create();
+		target.getPlanOfCareActivitySupply();
 
-PlanOfCareSection target = objectFactory.create();
-target.getPlanOfCareActivitySupply();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -582,8 +496,8 @@ target.getPlanOfCareActivitySupply();
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -591,7 +505,7 @@ target.getPlanOfCareActivitySupply();
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

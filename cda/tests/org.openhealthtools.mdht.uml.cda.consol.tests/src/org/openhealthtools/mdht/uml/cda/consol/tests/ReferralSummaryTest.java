@@ -40,10 +40,10 @@ public class ReferralSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsTemplateId() {
-			OperationsTestCase<ReferralSummary> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<ReferralSummary>(
+		OperationsTestCase<ReferralSummary> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<ReferralSummary>(
 			"validateGeneralHeaderConstraintsTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ReferralSummary target) {
@@ -53,46 +53,12 @@ public class ReferralSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReferralSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ReferralSummaryOperations.validateGeneralHeaderConstraintsTemplateId(
 					(ReferralSummary) objectToTest, diagnostician, map);
 			}
@@ -100,7 +66,7 @@ public class ReferralSummaryTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -108,10 +74,10 @@ public class ReferralSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsCode() {
-			OperationsTestCase<ReferralSummary> validateGeneralHeaderConstraintsCodeTestCase = new OperationsTestCase<ReferralSummary>(
+		OperationsTestCase<ReferralSummary> validateGeneralHeaderConstraintsCodeTestCase = new OperationsTestCase<ReferralSummary>(
 			"validateGeneralHeaderConstraintsCode",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ReferralSummary target) {
@@ -121,46 +87,12 @@ public class ReferralSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReferralSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ReferralSummaryOperations.validateGeneralHeaderConstraintsCode(
 					(ReferralSummary) objectToTest, diagnostician, map);
 			}
@@ -168,7 +100,7 @@ public class ReferralSummaryTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -223,8 +155,8 @@ public class ReferralSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -232,7 +164,7 @@ public class ReferralSummaryTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

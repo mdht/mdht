@@ -144,10 +144,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryHospitalAdmissionMedicationsSectionEntriesOptional() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalAdmissionMedicationsSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalAdmissionMedicationsSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryHospitalAdmissionMedicationsSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -157,55 +157,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* HospitalAdmissionMedicationsSectionEntriesOptional */ 
+				/* HospitalAdmissionMedicationsSectionEntriesOptional */
 				HospitalAdmissionMedicationsSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createHospitalAdmissionMedicationsSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createHospitalAdmissionMedicationsSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryHospitalAdmissionMedicationsSectionEntriesOptional(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -213,7 +177,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryHospitalAdmissionMedicationsSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -221,10 +185,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryHospitalAdmissionDiagnosisSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalAdmissionDiagnosisSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalAdmissionDiagnosisSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryHospitalAdmissionDiagnosisSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_ADMISSION_DIAGNOSIS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -234,55 +198,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* HospitalAdmissionDiagnosisSection */ 
+				/* HospitalAdmissionDiagnosisSection */
 				HospitalAdmissionDiagnosisSection section =
-				
-				ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createHospitalAdmissionDiagnosisSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryHospitalAdmissionDiagnosisSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -290,7 +218,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryHospitalAdmissionDiagnosisSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -298,10 +226,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryAdvanceDirectivesSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryAdvanceDirectivesSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryAdvanceDirectivesSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryAdvanceDirectivesSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_ADVANCE_DIRECTIVES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_ADVANCE_DIRECTIVES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -311,55 +239,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* AdvanceDirectivesSection */ 
+				/* AdvanceDirectivesSection */
 				AdvanceDirectivesSection section =
-				
-				ConsolFactory.eINSTANCE.createAdvanceDirectivesSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createAdvanceDirectivesSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryAdvanceDirectivesSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -367,7 +259,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryAdvanceDirectivesSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -375,10 +267,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryAllergiesSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryAllergiesSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryAllergiesSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryAllergiesSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_ALLERGIES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_ALLERGIES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -388,55 +280,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* AllergiesSection */ 
+				/* AllergiesSection */
 				AllergiesSection section =
-				
-				ConsolFactory.eINSTANCE.createAllergiesSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createAllergiesSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryAllergiesSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -444,7 +300,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryAllergiesSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -452,10 +308,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryHospitalDischargeDiagnosisSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalDischargeDiagnosisSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalDischargeDiagnosisSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryHospitalDischargeDiagnosisSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_DISCHARGE_DIAGNOSIS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_DISCHARGE_DIAGNOSIS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -465,55 +321,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* HospitalDischargeDiagnosisSection */ 
+				/* HospitalDischargeDiagnosisSection */
 				HospitalDischargeDiagnosisSection section =
-				
-				ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createHospitalDischargeDiagnosisSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryHospitalDischargeDiagnosisSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -521,7 +341,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryHospitalDischargeDiagnosisSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -529,10 +349,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryDischargeDietSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryDischargeDietSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryDischargeDietSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryDischargeDietSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_DISCHARGE_DIET_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_DISCHARGE_DIET_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -542,55 +362,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* DischargeDietSection */ 
+				/* DischargeDietSection */
 				DischargeDietSection section =
-				
-				ConsolFactory.eINSTANCE.createDischargeDietSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createDischargeDietSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryDischargeDietSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -598,7 +382,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryDischargeDietSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -606,10 +390,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryHospitalDischargeMedicationsSectionEntriesOptional() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalDischargeMedicationsSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalDischargeMedicationsSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryHospitalDischargeMedicationsSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -619,55 +403,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* HospitalDischargeMedicationsSectionEntriesOptional */ 
+				/* HospitalDischargeMedicationsSectionEntriesOptional */
 				HospitalDischargeMedicationsSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createHospitalDischargeMedicationsSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createHospitalDischargeMedicationsSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryHospitalDischargeMedicationsSectionEntriesOptional(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -675,7 +423,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryHospitalDischargeMedicationsSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -683,10 +431,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryFunctionalStatusSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryFunctionalStatusSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryFunctionalStatusSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryFunctionalStatusSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_FUNCTIONAL_STATUS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_FUNCTIONAL_STATUS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -696,55 +444,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* FunctionalStatusSection */ 
+				/* FunctionalStatusSection */
 				FunctionalStatusSection section =
-				
-				ConsolFactory.eINSTANCE.createFunctionalStatusSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createFunctionalStatusSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryFunctionalStatusSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -752,7 +464,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryFunctionalStatusSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -760,10 +472,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryHistoryOfPresentIllnessSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryHistoryOfPresentIllnessSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryHistoryOfPresentIllnessSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryHistoryOfPresentIllnessSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HISTORY_OF_PRESENT_ILLNESS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HISTORY_OF_PRESENT_ILLNESS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -773,55 +485,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* HistoryOfPresentIllnessSection */ 
+				/* HistoryOfPresentIllnessSection */
 				HistoryOfPresentIllnessSection section =
-				
-				ConsolFactory.eINSTANCE.createHistoryOfPresentIllnessSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createHistoryOfPresentIllnessSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryHistoryOfPresentIllnessSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -829,7 +505,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryHistoryOfPresentIllnessSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -837,10 +513,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryHospitalCourseSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalCourseSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalCourseSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryHospitalCourseSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_COURSE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_COURSE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -850,55 +526,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* HospitalCourseSection */ 
+				/* HospitalCourseSection */
 				HospitalCourseSection section =
-				
-				ConsolFactory.eINSTANCE.createHospitalCourseSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createHospitalCourseSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryHospitalCourseSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -906,7 +546,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryHospitalCourseSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -914,10 +554,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryMedicalEquipmentSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryMedicalEquipmentSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryMedicalEquipmentSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryMedicalEquipmentSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_MEDICAL_EQUIPMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_MEDICAL_EQUIPMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -927,55 +567,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* MedicalEquipmentSection */ 
+				/* MedicalEquipmentSection */
 				MedicalEquipmentSection section =
-				
-				ConsolFactory.eINSTANCE.createMedicalEquipmentSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createMedicalEquipmentSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryMedicalEquipmentSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -983,7 +587,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryMedicalEquipmentSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -991,10 +595,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryPhysicalExamSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryPhysicalExamSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryPhysicalExamSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryPhysicalExamSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_PHYSICAL_EXAM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_PHYSICAL_EXAM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -1004,55 +608,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* PhysicalExamSection */ 
+				/* PhysicalExamSection */
 				PhysicalExamSection section =
-				
-				ConsolFactory.eINSTANCE.createPhysicalExamSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createPhysicalExamSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryPhysicalExamSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -1060,7 +628,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryPhysicalExamSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1068,10 +636,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryPlanOfCareSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryPlanOfCareSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryPlanOfCareSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryPlanOfCareSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -1081,55 +649,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* PlanOfCareSection */ 
+				/* PlanOfCareSection */
 				PlanOfCareSection section =
-				
-				ConsolFactory.eINSTANCE.createPlanOfCareSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createPlanOfCareSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryPlanOfCareSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -1137,7 +669,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryPlanOfCareSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1145,10 +677,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryHistoryOfPastIllnessSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryHistoryOfPastIllnessSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryHistoryOfPastIllnessSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryHistoryOfPastIllnessSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HISTORY_OF_PAST_ILLNESS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HISTORY_OF_PAST_ILLNESS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -1158,55 +690,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* HistoryOfPastIllnessSection */ 
+				/* HistoryOfPastIllnessSection */
 				HistoryOfPastIllnessSection section =
-				
-				ConsolFactory.eINSTANCE.createHistoryOfPastIllnessSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createHistoryOfPastIllnessSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryHistoryOfPastIllnessSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -1214,7 +710,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryHistoryOfPastIllnessSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1222,10 +718,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryReviewOfSystemsSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryReviewOfSystemsSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryReviewOfSystemsSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryReviewOfSystemsSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_REVIEW_OF_SYSTEMS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_REVIEW_OF_SYSTEMS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -1235,55 +731,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ReviewOfSystemsSection */ 
+				/* ReviewOfSystemsSection */
 				ReviewOfSystemsSection section =
-				
-				ConsolFactory.eINSTANCE.createReviewOfSystemsSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createReviewOfSystemsSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryReviewOfSystemsSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -1291,7 +751,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryReviewOfSystemsSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1299,10 +759,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryVitalSignsSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryVitalSignsSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryVitalSignsSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryVitalSignsSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_VITAL_SIGNS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_VITAL_SIGNS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -1312,55 +772,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* VitalSignsSection */ 
+				/* VitalSignsSection */
 				VitalSignsSection section =
-				
-				ConsolFactory.eINSTANCE.createVitalSignsSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createVitalSignsSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryVitalSignsSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -1368,7 +792,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryVitalSignsSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1413,10 +837,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryChiefComplaintAndReasonForVisitSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryChiefComplaintAndReasonForVisitSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryChiefComplaintAndReasonForVisitSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryChiefComplaintAndReasonForVisitSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -1426,55 +850,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ChiefComplaintAndReasonForVisitSection */ 
+				/* ChiefComplaintAndReasonForVisitSection */
 				ChiefComplaintAndReasonForVisitSection section =
-				
-				ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryChiefComplaintAndReasonForVisitSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -1482,7 +870,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryChiefComplaintAndReasonForVisitSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1490,10 +878,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryChiefComplaintSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryChiefComplaintSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryChiefComplaintSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryChiefComplaintSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_CHIEF_COMPLAINT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_CHIEF_COMPLAINT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -1503,55 +891,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ChiefComplaintSection */ 
+				/* ChiefComplaintSection */
 				ChiefComplaintSection section =
-				
-				ConsolFactory.eINSTANCE.createChiefComplaintSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createChiefComplaintSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryChiefComplaintSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -1559,7 +911,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryChiefComplaintSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1567,10 +919,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryFamilyHistorySection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryFamilyHistorySectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryFamilyHistorySectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryFamilyHistorySection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_FAMILY_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_FAMILY_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -1580,55 +932,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* FamilyHistorySection */ 
+				/* FamilyHistorySection */
 				FamilyHistorySection section =
-				
-				ConsolFactory.eINSTANCE.createFamilyHistorySection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createFamilyHistorySection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryFamilyHistorySection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -1636,7 +952,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryFamilyHistorySectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1644,10 +960,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryHospitalConsultationsSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalConsultationsSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalConsultationsSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryHospitalConsultationsSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_CONSULTATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_CONSULTATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -1657,55 +973,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* HospitalConsultationsSection */ 
+				/* HospitalConsultationsSection */
 				HospitalConsultationsSection section =
-				
-				ConsolFactory.eINSTANCE.createHospitalConsultationsSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createHospitalConsultationsSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryHospitalConsultationsSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -1713,7 +993,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryHospitalConsultationsSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1721,10 +1001,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryHospitalDischargeInstructionsSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalDischargeInstructionsSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalDischargeInstructionsSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryHospitalDischargeInstructionsSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_DISCHARGE_INSTRUCTIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_DISCHARGE_INSTRUCTIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -1734,55 +1014,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* HospitalDischargeInstructionsSection */ 
+				/* HospitalDischargeInstructionsSection */
 				HospitalDischargeInstructionsSection section =
-				
-				ConsolFactory.eINSTANCE.createHospitalDischargeInstructionsSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createHospitalDischargeInstructionsSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryHospitalDischargeInstructionsSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -1790,7 +1034,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryHospitalDischargeInstructionsSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1798,10 +1042,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryHospitalDischargePhysicalSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalDischargePhysicalSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalDischargePhysicalSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryHospitalDischargePhysicalSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_DISCHARGE_PHYSICAL_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_DISCHARGE_PHYSICAL_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -1811,55 +1055,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* HospitalDischargePhysicalSection */ 
+				/* HospitalDischargePhysicalSection */
 				HospitalDischargePhysicalSection section =
-				
-				ConsolFactory.eINSTANCE.createHospitalDischargePhysicalSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createHospitalDischargePhysicalSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryHospitalDischargePhysicalSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -1867,7 +1075,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryHospitalDischargePhysicalSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1875,10 +1083,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryHospitalDischargeStudiesSummarySection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalDischargeStudiesSummarySectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalDischargeStudiesSummarySectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryHospitalDischargeStudiesSummarySection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_DISCHARGE_STUDIES_SUMMARY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_DISCHARGE_STUDIES_SUMMARY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -1888,55 +1096,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* HospitalDischargeStudiesSummarySection */ 
+				/* HospitalDischargeStudiesSummarySection */
 				HospitalDischargeStudiesSummarySection section =
-				
-				ConsolFactory.eINSTANCE.createHospitalDischargeStudiesSummarySection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createHospitalDischargeStudiesSummarySection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryHospitalDischargeStudiesSummarySection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -1944,7 +1116,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryHospitalDischargeStudiesSummarySectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1952,10 +1124,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryImmunizationsSectionEntriesOptional() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryImmunizationsSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryImmunizationsSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryImmunizationsSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_IMMUNIZATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_IMMUNIZATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -1965,55 +1137,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ImmunizationsSectionEntriesOptional */ 
+				/* ImmunizationsSectionEntriesOptional */
 				ImmunizationsSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createImmunizationsSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createImmunizationsSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryImmunizationsSectionEntriesOptional(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -2021,7 +1157,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryImmunizationsSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -2029,10 +1165,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryProblemSectionEntriesOptional() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryProblemSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryProblemSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryProblemSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_PROBLEM_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_PROBLEM_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -2042,55 +1178,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ProblemSectionEntriesOptional */ 
+				/* ProblemSectionEntriesOptional */
 				ProblemSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createProblemSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createProblemSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryProblemSectionEntriesOptional(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -2098,7 +1198,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryProblemSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -2106,10 +1206,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryProceduresSectionEntriesOptional() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryProceduresSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryProceduresSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryProceduresSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_PROCEDURES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_PROCEDURES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -2119,55 +1219,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ProceduresSectionEntriesOptional */ 
+				/* ProceduresSectionEntriesOptional */
 				ProceduresSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createProceduresSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createProceduresSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryProceduresSectionEntriesOptional(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -2175,7 +1239,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryProceduresSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -2183,10 +1247,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummaryReasonForVisitSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryReasonForVisitSectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryReasonForVisitSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryReasonForVisitSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -2196,55 +1260,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ReasonForVisitSection */ 
+				/* ReasonForVisitSection */
 				ReasonForVisitSection section =
-				
-				ConsolFactory.eINSTANCE.createReasonForVisitSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createReasonForVisitSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummaryReasonForVisitSection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -2252,7 +1280,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummaryReasonForVisitSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -2260,10 +1288,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeSummarySocialHistorySection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummarySocialHistorySectionTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateDischargeSummarySocialHistorySectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummarySocialHistorySection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -2273,55 +1301,19 @@ public class DischargeSummaryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* SocialHistorySection */ 
+				/* SocialHistorySection */
 				SocialHistorySection section =
-				
-				ConsolFactory.eINSTANCE.createSocialHistorySection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createSocialHistorySection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateDischargeSummarySocialHistorySection(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -2329,7 +1321,7 @@ public class DischargeSummaryTest extends CDAValidationTest {
 		};
 
 		validateDischargeSummarySocialHistorySectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -2804,13 +1796,10 @@ public class DischargeSummaryTest extends CDAValidationTest {
 	@Test
 	public void testGetHospitalAdmissionMedicationsSectionEntriesOptional() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getHospitalAdmissionMedicationsSectionEntriesOptional();
 
-DischargeSummary target = objectFactory.create();
-target.getHospitalAdmissionMedicationsSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2819,13 +1808,10 @@ target.getHospitalAdmissionMedicationsSectionEntriesOptional();
 	@Test
 	public void testGetHospitalAdmissionDiagnosisSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getHospitalAdmissionDiagnosisSection();
 
-DischargeSummary target = objectFactory.create();
-target.getHospitalAdmissionDiagnosisSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2834,13 +1820,10 @@ target.getHospitalAdmissionDiagnosisSection();
 	@Test
 	public void testGetAdvanceDirectivesSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getAdvanceDirectivesSection();
 
-DischargeSummary target = objectFactory.create();
-target.getAdvanceDirectivesSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2849,13 +1832,10 @@ target.getAdvanceDirectivesSection();
 	@Test
 	public void testGetAllergiesSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getAllergiesSection();
 
-DischargeSummary target = objectFactory.create();
-target.getAllergiesSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2864,13 +1844,10 @@ target.getAllergiesSection();
 	@Test
 	public void testGetHospitalDischargeDiagnosisSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getHospitalDischargeDiagnosisSection();
 
-DischargeSummary target = objectFactory.create();
-target.getHospitalDischargeDiagnosisSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2879,13 +1856,10 @@ target.getHospitalDischargeDiagnosisSection();
 	@Test
 	public void testGetDischargeDietSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getDischargeDietSection();
 
-DischargeSummary target = objectFactory.create();
-target.getDischargeDietSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2894,13 +1868,10 @@ target.getDischargeDietSection();
 	@Test
 	public void testGetHospitalDischargeMedicationsSectionEntriesOptional() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getHospitalDischargeMedicationsSectionEntriesOptional();
 
-DischargeSummary target = objectFactory.create();
-target.getHospitalDischargeMedicationsSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2909,13 +1880,10 @@ target.getHospitalDischargeMedicationsSectionEntriesOptional();
 	@Test
 	public void testGetFunctionalStatusSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getFunctionalStatusSection();
 
-DischargeSummary target = objectFactory.create();
-target.getFunctionalStatusSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2924,13 +1892,10 @@ target.getFunctionalStatusSection();
 	@Test
 	public void testGetHistoryOfPresentIllnessSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getHistoryOfPresentIllnessSection();
 
-DischargeSummary target = objectFactory.create();
-target.getHistoryOfPresentIllnessSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2939,13 +1904,10 @@ target.getHistoryOfPresentIllnessSection();
 	@Test
 	public void testGetHospitalCourseSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getHospitalCourseSection();
 
-DischargeSummary target = objectFactory.create();
-target.getHospitalCourseSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2954,13 +1916,10 @@ target.getHospitalCourseSection();
 	@Test
 	public void testGetMedicalEquipmentSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getMedicalEquipmentSection();
 
-DischargeSummary target = objectFactory.create();
-target.getMedicalEquipmentSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2969,13 +1928,10 @@ target.getMedicalEquipmentSection();
 	@Test
 	public void testGetPhysicalExamSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getPhysicalExamSection();
 
-DischargeSummary target = objectFactory.create();
-target.getPhysicalExamSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2984,13 +1940,10 @@ target.getPhysicalExamSection();
 	@Test
 	public void testGetPlanOfCareSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getPlanOfCareSection();
 
-DischargeSummary target = objectFactory.create();
-target.getPlanOfCareSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2999,13 +1952,10 @@ target.getPlanOfCareSection();
 	@Test
 	public void testGetHistoryOfPastIllnessSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getHistoryOfPastIllnessSection();
 
-DischargeSummary target = objectFactory.create();
-target.getHistoryOfPastIllnessSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -3014,13 +1964,10 @@ target.getHistoryOfPastIllnessSection();
 	@Test
 	public void testGetReviewOfSystemsSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getReviewOfSystemsSection();
 
-DischargeSummary target = objectFactory.create();
-target.getReviewOfSystemsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -3029,13 +1976,10 @@ target.getReviewOfSystemsSection();
 	@Test
 	public void testGetVitalSignsSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getVitalSignsSection();
 
-DischargeSummary target = objectFactory.create();
-target.getVitalSignsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -3044,13 +1988,10 @@ target.getVitalSignsSection();
 	@Test
 	public void testGetChiefComplaintAndReasonForVisitSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getChiefComplaintAndReasonForVisitSection();
 
-DischargeSummary target = objectFactory.create();
-target.getChiefComplaintAndReasonForVisitSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -3059,13 +2000,10 @@ target.getChiefComplaintAndReasonForVisitSection();
 	@Test
 	public void testGetChiefComplaintSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getChiefComplaintSection();
 
-DischargeSummary target = objectFactory.create();
-target.getChiefComplaintSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -3074,13 +2012,10 @@ target.getChiefComplaintSection();
 	@Test
 	public void testGetFamilyHistorySection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getFamilyHistorySection();
 
-DischargeSummary target = objectFactory.create();
-target.getFamilyHistorySection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -3089,13 +2024,10 @@ target.getFamilyHistorySection();
 	@Test
 	public void testGetHospitalConsultationsSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getHospitalConsultationsSection();
 
-DischargeSummary target = objectFactory.create();
-target.getHospitalConsultationsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -3104,13 +2036,10 @@ target.getHospitalConsultationsSection();
 	@Test
 	public void testGetHospitalDischargeInstructionsSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getHospitalDischargeInstructionsSection();
 
-DischargeSummary target = objectFactory.create();
-target.getHospitalDischargeInstructionsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -3119,13 +2048,10 @@ target.getHospitalDischargeInstructionsSection();
 	@Test
 	public void testGetHospitalDischargePhysicalSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getHospitalDischargePhysicalSection();
 
-DischargeSummary target = objectFactory.create();
-target.getHospitalDischargePhysicalSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -3134,13 +2060,10 @@ target.getHospitalDischargePhysicalSection();
 	@Test
 	public void testGetHospitalDischargeStudiesSummarySection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getHospitalDischargeStudiesSummarySection();
 
-DischargeSummary target = objectFactory.create();
-target.getHospitalDischargeStudiesSummarySection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -3149,13 +2072,10 @@ target.getHospitalDischargeStudiesSummarySection();
 	@Test
 	public void testGetImmunizationsSectionEntriesOptional() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getImmunizationsSectionEntriesOptional();
 
-DischargeSummary target = objectFactory.create();
-target.getImmunizationsSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -3164,13 +2084,10 @@ target.getImmunizationsSectionEntriesOptional();
 	@Test
 	public void testGetProblemSectionEntriesOptional() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getProblemSectionEntriesOptional();
 
-DischargeSummary target = objectFactory.create();
-target.getProblemSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -3179,13 +2096,10 @@ target.getProblemSectionEntriesOptional();
 	@Test
 	public void testGetProceduresSectionEntriesOptional() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getProceduresSectionEntriesOptional();
 
-DischargeSummary target = objectFactory.create();
-target.getProceduresSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -3194,13 +2108,10 @@ target.getProceduresSectionEntriesOptional();
 	@Test
 	public void testGetReasonForVisitSection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getReasonForVisitSection();
 
-DischargeSummary target = objectFactory.create();
-target.getReasonForVisitSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -3209,13 +2120,10 @@ target.getReasonForVisitSection();
 	@Test
 	public void testGetSocialHistorySection() {
 
+		DischargeSummary target = objectFactory.create();
+		target.getSocialHistorySection();
 
-DischargeSummary target = objectFactory.create();
-target.getSocialHistorySection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -3223,10 +2131,10 @@ target.getSocialHistorySection();
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsTemplateId() {
-			OperationsTestCase<DischargeSummary> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateGeneralHeaderConstraintsTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -3236,46 +2144,12 @@ target.getSocialHistorySection();
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateGeneralHeaderConstraintsTemplateId(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -3283,7 +2157,7 @@ target.getSocialHistorySection();
 		};
 
 		validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -3291,10 +2165,10 @@ target.getSocialHistorySection();
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsCode() {
-			OperationsTestCase<DischargeSummary> validateGeneralHeaderConstraintsCodeTestCase = new OperationsTestCase<DischargeSummary>(
+		OperationsTestCase<DischargeSummary> validateGeneralHeaderConstraintsCodeTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateGeneralHeaderConstraintsCode",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -3304,46 +2178,12 @@ target.getSocialHistorySection();
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DischargeSummaryOperations.validateGeneralHeaderConstraintsCode(
 					(DischargeSummary) objectToTest, diagnostician, map);
 			}
@@ -3351,7 +2191,7 @@ target.getSocialHistorySection();
 		};
 
 		validateGeneralHeaderConstraintsCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -3406,8 +2246,8 @@ target.getSocialHistorySection();
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -3415,7 +2255,7 @@ target.getSocialHistorySection();
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

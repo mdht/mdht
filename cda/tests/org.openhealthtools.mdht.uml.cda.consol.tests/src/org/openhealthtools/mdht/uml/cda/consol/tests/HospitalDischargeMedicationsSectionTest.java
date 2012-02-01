@@ -76,13 +76,10 @@ public class HospitalDischargeMedicationsSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetConsolDischargeMedications() {
 
+		HospitalDischargeMedicationsSection target = objectFactory.create();
+		target.getConsolDischargeMedications();
 
-HospitalDischargeMedicationsSection target = objectFactory.create();
-target.getConsolDischargeMedications();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -90,10 +87,10 @@ target.getConsolDischargeMedications();
 	*/
 	@Test
 	public void testValidateHospitalDischargeMedicationsSectionEntriesOptionalTemplateId() {
-			OperationsTestCase<HospitalDischargeMedicationsSection> validateHospitalDischargeMedicationsSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<HospitalDischargeMedicationsSection>(
+		OperationsTestCase<HospitalDischargeMedicationsSection> validateHospitalDischargeMedicationsSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<HospitalDischargeMedicationsSection>(
 			"validateHospitalDischargeMedicationsSectionEntriesOptionalTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HospitalDischargeMedicationsSection target) {
@@ -103,46 +100,12 @@ target.getConsolDischargeMedications();
 			@Override
 			protected void updateToPass(HospitalDischargeMedicationsSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HospitalDischargeMedicationsSectionOperations.validateHospitalDischargeMedicationsSectionEntriesOptionalTemplateId(
 					(HospitalDischargeMedicationsSection) objectToTest, diagnostician, map);
 			}
@@ -150,7 +113,7 @@ target.getConsolDischargeMedications();
 		};
 
 		validateHospitalDischargeMedicationsSectionEntriesOptionalTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -205,8 +168,8 @@ target.getConsolDischargeMedications();
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -214,7 +177,7 @@ target.getConsolDischargeMedications();
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

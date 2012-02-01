@@ -46,10 +46,10 @@ public class PostprocedureDiagnosisTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePostprocedureDiagnosisTemplateId() {
-			OperationsTestCase<PostprocedureDiagnosis> validatePostprocedureDiagnosisTemplateIdTestCase = new OperationsTestCase<PostprocedureDiagnosis>(
+		OperationsTestCase<PostprocedureDiagnosis> validatePostprocedureDiagnosisTemplateIdTestCase = new OperationsTestCase<PostprocedureDiagnosis>(
 			"validatePostprocedureDiagnosisTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_POSTPROCEDURE_DIAGNOSIS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_POSTPROCEDURE_DIAGNOSIS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PostprocedureDiagnosis target) {
@@ -59,46 +59,12 @@ public class PostprocedureDiagnosisTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PostprocedureDiagnosis target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PostprocedureDiagnosisOperations.validatePostprocedureDiagnosisTemplateId(
 					(PostprocedureDiagnosis) objectToTest, diagnostician, map);
 			}
@@ -106,7 +72,7 @@ public class PostprocedureDiagnosisTest extends CDAValidationTest {
 		};
 
 		validatePostprocedureDiagnosisTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -114,10 +80,10 @@ public class PostprocedureDiagnosisTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePostprocedureDiagnosisClassCode() {
-			OperationsTestCase<PostprocedureDiagnosis> validatePostprocedureDiagnosisClassCodeTestCase = new OperationsTestCase<PostprocedureDiagnosis>(
+		OperationsTestCase<PostprocedureDiagnosis> validatePostprocedureDiagnosisClassCodeTestCase = new OperationsTestCase<PostprocedureDiagnosis>(
 			"validatePostprocedureDiagnosisClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_POSTPROCEDURE_DIAGNOSIS_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_POSTPROCEDURE_DIAGNOSIS_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PostprocedureDiagnosis target) {
@@ -127,46 +93,12 @@ public class PostprocedureDiagnosisTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PostprocedureDiagnosis target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PostprocedureDiagnosisOperations.validatePostprocedureDiagnosisClassCode(
 					(PostprocedureDiagnosis) objectToTest, diagnostician, map);
 			}
@@ -174,7 +106,7 @@ public class PostprocedureDiagnosisTest extends CDAValidationTest {
 		};
 
 		validatePostprocedureDiagnosisClassCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -182,10 +114,10 @@ public class PostprocedureDiagnosisTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePostprocedureDiagnosisCode() {
-			OperationsTestCase<PostprocedureDiagnosis> validatePostprocedureDiagnosisCodeTestCase = new OperationsTestCase<PostprocedureDiagnosis>(
+		OperationsTestCase<PostprocedureDiagnosis> validatePostprocedureDiagnosisCodeTestCase = new OperationsTestCase<PostprocedureDiagnosis>(
 			"validatePostprocedureDiagnosisCode",
-			operationsForOCL.getOCLValue("VALIDATE_POSTPROCEDURE_DIAGNOSIS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_POSTPROCEDURE_DIAGNOSIS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PostprocedureDiagnosis target) {
@@ -195,46 +127,12 @@ public class PostprocedureDiagnosisTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PostprocedureDiagnosis target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PostprocedureDiagnosisOperations.validatePostprocedureDiagnosisCode(
 					(PostprocedureDiagnosis) objectToTest, diagnostician, map);
 			}
@@ -242,7 +140,7 @@ public class PostprocedureDiagnosisTest extends CDAValidationTest {
 		};
 
 		validatePostprocedureDiagnosisCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -250,10 +148,10 @@ public class PostprocedureDiagnosisTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePostprocedureDiagnosisMoodCode() {
-			OperationsTestCase<PostprocedureDiagnosis> validatePostprocedureDiagnosisMoodCodeTestCase = new OperationsTestCase<PostprocedureDiagnosis>(
+		OperationsTestCase<PostprocedureDiagnosis> validatePostprocedureDiagnosisMoodCodeTestCase = new OperationsTestCase<PostprocedureDiagnosis>(
 			"validatePostprocedureDiagnosisMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_POSTPROCEDURE_DIAGNOSIS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_POSTPROCEDURE_DIAGNOSIS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PostprocedureDiagnosis target) {
@@ -263,46 +161,12 @@ public class PostprocedureDiagnosisTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PostprocedureDiagnosis target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PostprocedureDiagnosisOperations.validatePostprocedureDiagnosisMoodCode(
 					(PostprocedureDiagnosis) objectToTest, diagnostician, map);
 			}
@@ -310,7 +174,7 @@ public class PostprocedureDiagnosisTest extends CDAValidationTest {
 		};
 
 		validatePostprocedureDiagnosisMoodCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -358,13 +222,10 @@ public class PostprocedureDiagnosisTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemObservations() {
 
+		PostprocedureDiagnosis target = objectFactory.create();
+		target.getProblemObservations();
 
-PostprocedureDiagnosis target = objectFactory.create();
-target.getProblemObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -419,8 +280,8 @@ target.getProblemObservations();
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -428,7 +289,7 @@ target.getProblemObservations();
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

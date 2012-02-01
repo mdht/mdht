@@ -50,10 +50,10 @@ public class ExternalReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateExternalReferenceHasNoCode() {
-			OperationsTestCase<ExternalReference> validateExternalReferenceHasNoCodeTestCase = new OperationsTestCase<ExternalReference>(
+		OperationsTestCase<ExternalReference> validateExternalReferenceHasNoCodeTestCase = new OperationsTestCase<ExternalReference>(
 			"validateExternalReferenceHasNoCode",
-			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_NO_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_NO_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
@@ -63,46 +63,12 @@ public class ExternalReferenceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ExternalReference target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ExternalReferenceOperations.validateExternalReferenceHasNoCode(
 					(ExternalReference) objectToTest, diagnostician, map);
 			}
@@ -110,7 +76,7 @@ public class ExternalReferenceTest extends CDAValidationTest {
 		};
 
 		validateExternalReferenceHasNoCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -118,10 +84,10 @@ public class ExternalReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateExternalReferenceHasReference() {
-			OperationsTestCase<ExternalReference> validateExternalReferenceHasReferenceTestCase = new OperationsTestCase<ExternalReference>(
+		OperationsTestCase<ExternalReference> validateExternalReferenceHasReferenceTestCase = new OperationsTestCase<ExternalReference>(
 			"validateExternalReferenceHasReference",
-			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
@@ -131,46 +97,12 @@ public class ExternalReferenceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ExternalReference target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ExternalReferenceOperations.validateExternalReferenceHasReference(
 					(ExternalReference) objectToTest, diagnostician, map);
 			}
@@ -178,7 +110,7 @@ public class ExternalReferenceTest extends CDAValidationTest {
 		};
 
 		validateExternalReferenceHasReferenceTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -186,10 +118,10 @@ public class ExternalReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateExternalReferenceHasReferenceExternalDocument() {
-			OperationsTestCase<ExternalReference> validateExternalReferenceHasReferenceExternalDocumentTestCase = new OperationsTestCase<ExternalReference>(
+		OperationsTestCase<ExternalReference> validateExternalReferenceHasReferenceExternalDocumentTestCase = new OperationsTestCase<ExternalReference>(
 			"validateExternalReferenceHasReferenceExternalDocument",
-			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_REFERENCE_EXTERNAL_DOCUMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_REFERENCE_EXTERNAL_DOCUMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
@@ -199,46 +131,12 @@ public class ExternalReferenceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ExternalReference target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ExternalReferenceOperations.validateExternalReferenceHasReferenceExternalDocument(
 					(ExternalReference) objectToTest, diagnostician, map);
 			}
@@ -246,7 +144,7 @@ public class ExternalReferenceTest extends CDAValidationTest {
 		};
 
 		validateExternalReferenceHasReferenceExternalDocumentTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -254,10 +152,10 @@ public class ExternalReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateExternalReferenceHasReferenceExternalDocumentID() {
-			OperationsTestCase<ExternalReference> validateExternalReferenceHasReferenceExternalDocumentIDTestCase = new OperationsTestCase<ExternalReference>(
+		OperationsTestCase<ExternalReference> validateExternalReferenceHasReferenceExternalDocumentIDTestCase = new OperationsTestCase<ExternalReference>(
 			"validateExternalReferenceHasReferenceExternalDocumentID",
-			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_REFERENCE_EXTERNAL_DOCUMENT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_REFERENCE_EXTERNAL_DOCUMENT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
@@ -267,46 +165,12 @@ public class ExternalReferenceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ExternalReference target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ExternalReferenceOperations.validateExternalReferenceHasReferenceExternalDocumentID(
 					(ExternalReference) objectToTest, diagnostician, map);
 			}
@@ -314,7 +178,7 @@ public class ExternalReferenceTest extends CDAValidationTest {
 		};
 
 		validateExternalReferenceHasReferenceExternalDocumentIDTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -322,10 +186,10 @@ public class ExternalReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateExternalReferenceHasReferenceExternalDocumentText() {
-			OperationsTestCase<ExternalReference> validateExternalReferenceHasReferenceExternalDocumentTextTestCase = new OperationsTestCase<ExternalReference>(
+		OperationsTestCase<ExternalReference> validateExternalReferenceHasReferenceExternalDocumentTextTestCase = new OperationsTestCase<ExternalReference>(
 			"validateExternalReferenceHasReferenceExternalDocumentText",
-			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_REFERENCE_EXTERNAL_DOCUMENT_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_HAS_REFERENCE_EXTERNAL_DOCUMENT_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
@@ -335,48 +199,15 @@ public class ExternalReferenceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ExternalReference target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
 
-	
-			
-
-	
-		
-		
-			
-		ED text = DatatypesFactory.eINSTANCE.createED();
-		target.setText(text );	
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ExternalReferenceOperations.validateExternalReferenceHasReferenceExternalDocumentText(
 					(ExternalReference) objectToTest, diagnostician, map);
 			}
@@ -384,7 +215,7 @@ public class ExternalReferenceTest extends CDAValidationTest {
 		};
 
 		validateExternalReferenceHasReferenceExternalDocumentTextTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -392,10 +223,10 @@ public class ExternalReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateExternalReferenceTemplateId() {
-			OperationsTestCase<ExternalReference> validateExternalReferenceTemplateIdTestCase = new OperationsTestCase<ExternalReference>(
+		OperationsTestCase<ExternalReference> validateExternalReferenceTemplateIdTestCase = new OperationsTestCase<ExternalReference>(
 			"validateExternalReferenceTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
@@ -405,46 +236,12 @@ public class ExternalReferenceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ExternalReference target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ExternalReferenceOperations.validateExternalReferenceTemplateId(
 					(ExternalReference) objectToTest, diagnostician, map);
 			}
@@ -452,7 +249,7 @@ public class ExternalReferenceTest extends CDAValidationTest {
 		};
 
 		validateExternalReferenceTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -460,10 +257,10 @@ public class ExternalReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateExternalReferenceClassCode() {
-			OperationsTestCase<ExternalReference> validateExternalReferenceClassCodeTestCase = new OperationsTestCase<ExternalReference>(
+		OperationsTestCase<ExternalReference> validateExternalReferenceClassCodeTestCase = new OperationsTestCase<ExternalReference>(
 			"validateExternalReferenceClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
@@ -473,46 +270,12 @@ public class ExternalReferenceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ExternalReference target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ExternalReferenceOperations.validateExternalReferenceClassCode(
 					(ExternalReference) objectToTest, diagnostician, map);
 			}
@@ -520,7 +283,7 @@ public class ExternalReferenceTest extends CDAValidationTest {
 		};
 
 		validateExternalReferenceClassCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -528,10 +291,10 @@ public class ExternalReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateExternalReferenceMoodCode() {
-			OperationsTestCase<ExternalReference> validateExternalReferenceMoodCodeTestCase = new OperationsTestCase<ExternalReference>(
+		OperationsTestCase<ExternalReference> validateExternalReferenceMoodCodeTestCase = new OperationsTestCase<ExternalReference>(
 			"validateExternalReferenceMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
@@ -541,46 +304,12 @@ public class ExternalReferenceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ExternalReference target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ExternalReferenceOperations.validateExternalReferenceMoodCode(
 					(ExternalReference) objectToTest, diagnostician, map);
 			}
@@ -588,7 +317,7 @@ public class ExternalReferenceTest extends CDAValidationTest {
 		};
 
 		validateExternalReferenceMoodCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -596,10 +325,10 @@ public class ExternalReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateExternalReferenceId() {
-			OperationsTestCase<ExternalReference> validateExternalReferenceIdTestCase = new OperationsTestCase<ExternalReference>(
+		OperationsTestCase<ExternalReference> validateExternalReferenceIdTestCase = new OperationsTestCase<ExternalReference>(
 			"validateExternalReferenceId",
-			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
@@ -609,46 +338,12 @@ public class ExternalReferenceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ExternalReference target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ExternalReferenceOperations.validateExternalReferenceId(
 					(ExternalReference) objectToTest, diagnostician, map);
 			}
@@ -656,7 +351,7 @@ public class ExternalReferenceTest extends CDAValidationTest {
 		};
 
 		validateExternalReferenceIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -664,10 +359,10 @@ public class ExternalReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateExternalReferenceText() {
-			OperationsTestCase<ExternalReference> validateExternalReferenceTextTestCase = new OperationsTestCase<ExternalReference>(
+		OperationsTestCase<ExternalReference> validateExternalReferenceTextTestCase = new OperationsTestCase<ExternalReference>(
 			"validateExternalReferenceText",
-			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_EXTERNAL_REFERENCE_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ExternalReference target) {
@@ -677,48 +372,15 @@ public class ExternalReferenceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ExternalReference target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
 
-	
-			
-
-	
-		
-		
-			
-		ED text = DatatypesFactory.eINSTANCE.createED();
-		target.setText(text );	
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ExternalReferenceOperations.validateExternalReferenceText(
 					(ExternalReference) objectToTest, diagnostician, map);
 			}
@@ -726,7 +388,7 @@ public class ExternalReferenceTest extends CDAValidationTest {
 		};
 
 		validateExternalReferenceTextTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -781,8 +443,8 @@ public class ExternalReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -790,7 +452,7 @@ public class ExternalReferenceTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

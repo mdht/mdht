@@ -49,10 +49,10 @@ public class ResultsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateResultsSectionTitle() {
-			OperationsTestCase<ResultsSection> validateResultsSectionTitleTestCase = new OperationsTestCase<ResultsSection>(
+		OperationsTestCase<ResultsSection> validateResultsSectionTitleTestCase = new OperationsTestCase<ResultsSection>(
 			"validateResultsSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_RESULTS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_RESULTS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultsSection target) {
@@ -62,49 +62,15 @@ public class ResultsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultsSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
 
-	
-		
-				ST  title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title );
-				
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ResultsSectionOperations.validateResultsSectionTitle(
 					(ResultsSection) objectToTest, diagnostician, map);
 			}
@@ -112,7 +78,7 @@ public class ResultsSectionTest extends CDAValidationTest {
 		};
 
 		validateResultsSectionTitleTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -120,10 +86,10 @@ public class ResultsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateResultsSectionText() {
-			OperationsTestCase<ResultsSection> validateResultsSectionTextTestCase = new OperationsTestCase<ResultsSection>(
+		OperationsTestCase<ResultsSection> validateResultsSectionTextTestCase = new OperationsTestCase<ResultsSection>(
 			"validateResultsSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_RESULTS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_RESULTS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultsSection target) {
@@ -133,49 +99,15 @@ public class ResultsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultsSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
 				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text );
-			
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+				target.setText(text);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ResultsSectionOperations.validateResultsSectionText(
 					(ResultsSection) objectToTest, diagnostician, map);
 			}
@@ -183,7 +115,7 @@ public class ResultsSectionTest extends CDAValidationTest {
 		};
 
 		validateResultsSectionTextTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -227,13 +159,10 @@ public class ResultsSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetConsolResultOrganizers() {
 
+		ResultsSection target = objectFactory.create();
+		target.getConsolResultOrganizers();
 
-ResultsSection target = objectFactory.create();
-target.getConsolResultOrganizers();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -241,10 +170,10 @@ target.getConsolResultOrganizers();
 	*/
 	@Test
 	public void testValidateResultsSectionEntriesOptionalTemplateId() {
-			OperationsTestCase<ResultsSection> validateResultsSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<ResultsSection>(
+		OperationsTestCase<ResultsSection> validateResultsSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<ResultsSection>(
 			"validateResultsSectionEntriesOptionalTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_RESULTS_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_RESULTS_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultsSection target) {
@@ -254,46 +183,12 @@ target.getConsolResultOrganizers();
 			@Override
 			protected void updateToPass(ResultsSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ResultsSectionOperations.validateResultsSectionEntriesOptionalTemplateId(
 					(ResultsSection) objectToTest, diagnostician, map);
 			}
@@ -301,7 +196,7 @@ target.getConsolResultOrganizers();
 		};
 
 		validateResultsSectionEntriesOptionalTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -309,10 +204,10 @@ target.getConsolResultOrganizers();
 	*/
 	@Test
 	public void testValidateResultsSectionEntriesOptionalCode() {
-			OperationsTestCase<ResultsSection> validateResultsSectionEntriesOptionalCodeTestCase = new OperationsTestCase<ResultsSection>(
+		OperationsTestCase<ResultsSection> validateResultsSectionEntriesOptionalCodeTestCase = new OperationsTestCase<ResultsSection>(
 			"validateResultsSectionEntriesOptionalCode",
-			operationsForOCL.getOCLValue("VALIDATE_RESULTS_SECTION_ENTRIES_OPTIONAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_RESULTS_SECTION_ENTRIES_OPTIONAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ResultsSection target) {
@@ -322,46 +217,12 @@ target.getConsolResultOrganizers();
 			@Override
 			protected void updateToPass(ResultsSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ResultsSectionOperations.validateResultsSectionEntriesOptionalCode(
 					(ResultsSection) objectToTest, diagnostician, map);
 			}
@@ -369,7 +230,7 @@ target.getConsolResultOrganizers();
 		};
 
 		validateResultsSectionEntriesOptionalCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -424,8 +285,8 @@ target.getConsolResultOrganizers();
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -433,7 +294,7 @@ target.getConsolResultOrganizers();
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

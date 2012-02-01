@@ -51,10 +51,10 @@ public class ProcedureImplantsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureImplantsSectionTemplateId() {
-			OperationsTestCase<ProcedureImplantsSection> validateProcedureImplantsSectionTemplateIdTestCase = new OperationsTestCase<ProcedureImplantsSection>(
+		OperationsTestCase<ProcedureImplantsSection> validateProcedureImplantsSectionTemplateIdTestCase = new OperationsTestCase<ProcedureImplantsSection>(
 			"validateProcedureImplantsSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_IMPLANTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_IMPLANTS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureImplantsSection target) {
@@ -64,46 +64,12 @@ public class ProcedureImplantsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureImplantsSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProcedureImplantsSectionOperations.validateProcedureImplantsSectionTemplateId(
 					(ProcedureImplantsSection) objectToTest, diagnostician, map);
 			}
@@ -111,7 +77,7 @@ public class ProcedureImplantsSectionTest extends CDAValidationTest {
 		};
 
 		validateProcedureImplantsSectionTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -119,10 +85,10 @@ public class ProcedureImplantsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureImplantsSectionCode() {
-			OperationsTestCase<ProcedureImplantsSection> validateProcedureImplantsSectionCodeTestCase = new OperationsTestCase<ProcedureImplantsSection>(
+		OperationsTestCase<ProcedureImplantsSection> validateProcedureImplantsSectionCodeTestCase = new OperationsTestCase<ProcedureImplantsSection>(
 			"validateProcedureImplantsSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_IMPLANTS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_IMPLANTS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureImplantsSection target) {
@@ -132,46 +98,12 @@ public class ProcedureImplantsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureImplantsSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProcedureImplantsSectionOperations.validateProcedureImplantsSectionCode(
 					(ProcedureImplantsSection) objectToTest, diagnostician, map);
 			}
@@ -179,7 +111,7 @@ public class ProcedureImplantsSectionTest extends CDAValidationTest {
 		};
 
 		validateProcedureImplantsSectionCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -187,10 +119,10 @@ public class ProcedureImplantsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureImplantsSectionText() {
-			OperationsTestCase<ProcedureImplantsSection> validateProcedureImplantsSectionTextTestCase = new OperationsTestCase<ProcedureImplantsSection>(
+		OperationsTestCase<ProcedureImplantsSection> validateProcedureImplantsSectionTextTestCase = new OperationsTestCase<ProcedureImplantsSection>(
 			"validateProcedureImplantsSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_IMPLANTS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_IMPLANTS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureImplantsSection target) {
@@ -200,49 +132,15 @@ public class ProcedureImplantsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureImplantsSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
 				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text );
-			
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+				target.setText(text);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProcedureImplantsSectionOperations.validateProcedureImplantsSectionText(
 					(ProcedureImplantsSection) objectToTest, diagnostician, map);
 			}
@@ -250,7 +148,7 @@ public class ProcedureImplantsSectionTest extends CDAValidationTest {
 		};
 
 		validateProcedureImplantsSectionTextTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -258,10 +156,10 @@ public class ProcedureImplantsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureImplantsSectionTitle() {
-			OperationsTestCase<ProcedureImplantsSection> validateProcedureImplantsSectionTitleTestCase = new OperationsTestCase<ProcedureImplantsSection>(
+		OperationsTestCase<ProcedureImplantsSection> validateProcedureImplantsSectionTitleTestCase = new OperationsTestCase<ProcedureImplantsSection>(
 			"validateProcedureImplantsSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_IMPLANTS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_IMPLANTS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureImplantsSection target) {
@@ -271,49 +169,15 @@ public class ProcedureImplantsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureImplantsSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
 
-	
-		
-				ST  title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title );
-				
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProcedureImplantsSectionOperations.validateProcedureImplantsSectionTitle(
 					(ProcedureImplantsSection) objectToTest, diagnostician, map);
 			}
@@ -321,7 +185,7 @@ public class ProcedureImplantsSectionTest extends CDAValidationTest {
 		};
 
 		validateProcedureImplantsSectionTitleTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -376,8 +240,8 @@ public class ProcedureImplantsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -385,7 +249,7 @@ public class ProcedureImplantsSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

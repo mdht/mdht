@@ -45,10 +45,10 @@ public class EncounterTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsolEncounterAdmissionSourceValueSet() {
-			OperationsTestCase<Encounter> validateConsolEncounterAdmissionSourceValueSetTestCase = new OperationsTestCase<Encounter>(
+		OperationsTestCase<Encounter> validateConsolEncounterAdmissionSourceValueSetTestCase = new OperationsTestCase<Encounter>(
 			"validateConsolEncounterAdmissionSourceValueSet",
-			operationsForOCL.getOCLValue("VALIDATE_CONSOL_ENCOUNTER_ADMISSION_SOURCE_VALUE_SET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSOL_ENCOUNTER_ADMISSION_SOURCE_VALUE_SET__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Encounter target) {
@@ -58,46 +58,12 @@ public class EncounterTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Encounter target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return EncounterOperations.validateConsolEncounterAdmissionSourceValueSet(
 					(Encounter) objectToTest, diagnostician, map);
 			}
@@ -105,7 +71,7 @@ public class EncounterTest extends CDAValidationTest {
 		};
 
 		validateConsolEncounterAdmissionSourceValueSetTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -113,10 +79,10 @@ public class EncounterTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsolEncounterClassCode() {
-			OperationsTestCase<Encounter> validateConsolEncounterClassCodeTestCase = new OperationsTestCase<Encounter>(
+		OperationsTestCase<Encounter> validateConsolEncounterClassCodeTestCase = new OperationsTestCase<Encounter>(
 			"validateConsolEncounterClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_CONSOL_ENCOUNTER_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSOL_ENCOUNTER_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Encounter target) {
@@ -126,46 +92,12 @@ public class EncounterTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Encounter target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return EncounterOperations.validateConsolEncounterClassCode(
 					(Encounter) objectToTest, diagnostician, map);
 			}
@@ -173,7 +105,7 @@ public class EncounterTest extends CDAValidationTest {
 		};
 
 		validateConsolEncounterClassCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -181,10 +113,9 @@ public class EncounterTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsolEncounterId() {
-			OperationsTestCase<Encounter> validateConsolEncounterIdTestCase = new OperationsTestCase<Encounter>(
+		OperationsTestCase<Encounter> validateConsolEncounterIdTestCase = new OperationsTestCase<Encounter>(
 			"validateConsolEncounterId",
-			operationsForOCL.getOCLValue("VALIDATE_CONSOL_ENCOUNTER_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSOL_ENCOUNTER_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(Encounter target) {
@@ -194,54 +125,19 @@ public class EncounterTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Encounter target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EncounterOperations.validateConsolEncounterId(
-					(Encounter) objectToTest, diagnostician, map);
+
+				return EncounterOperations.validateConsolEncounterId((Encounter) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateConsolEncounterIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -249,10 +145,10 @@ public class EncounterTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsolEncounterCode() {
-			OperationsTestCase<Encounter> validateConsolEncounterCodeTestCase = new OperationsTestCase<Encounter>(
+		OperationsTestCase<Encounter> validateConsolEncounterCodeTestCase = new OperationsTestCase<Encounter>(
 			"validateConsolEncounterCode",
-			operationsForOCL.getOCLValue("VALIDATE_CONSOL_ENCOUNTER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSOL_ENCOUNTER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Encounter target) {
@@ -262,54 +158,19 @@ public class EncounterTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Encounter target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EncounterOperations.validateConsolEncounterCode(
-					(Encounter) objectToTest, diagnostician, map);
+
+				return EncounterOperations.validateConsolEncounterCode((Encounter) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateConsolEncounterCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -317,10 +178,10 @@ public class EncounterTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsolEncounterText() {
-			OperationsTestCase<Encounter> validateConsolEncounterTextTestCase = new OperationsTestCase<Encounter>(
+		OperationsTestCase<Encounter> validateConsolEncounterTextTestCase = new OperationsTestCase<Encounter>(
 			"validateConsolEncounterText",
-			operationsForOCL.getOCLValue("VALIDATE_CONSOL_ENCOUNTER_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSOL_ENCOUNTER_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(Encounter target) {
@@ -330,56 +191,22 @@ public class EncounterTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Encounter target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
 
-	
-			
-
-	
-		
-		
-			
-		ED text = DatatypesFactory.eINSTANCE.createED();
-		target.setText(text );	
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return EncounterOperations.validateConsolEncounterText(
-					(Encounter) objectToTest, diagnostician, map);
+
+				return EncounterOperations.validateConsolEncounterText((Encounter) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateConsolEncounterTextTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -434,8 +261,8 @@ public class EncounterTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -443,7 +270,7 @@ public class EncounterTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

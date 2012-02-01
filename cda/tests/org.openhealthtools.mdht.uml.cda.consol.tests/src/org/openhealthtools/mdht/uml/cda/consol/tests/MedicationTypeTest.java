@@ -39,10 +39,10 @@ public class MedicationTypeTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationTypeCode() {
-			OperationsTestCase<MedicationType> validateMedicationTypeCodeTestCase = new OperationsTestCase<MedicationType>(
+		OperationsTestCase<MedicationType> validateMedicationTypeCodeTestCase = new OperationsTestCase<MedicationType>(
 			"validateMedicationTypeCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicationType target) {
@@ -52,46 +52,12 @@ public class MedicationTypeTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationType target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return MedicationTypeOperations.validateMedicationTypeCode(
 					(MedicationType) objectToTest, diagnostician, map);
 			}
@@ -99,7 +65,7 @@ public class MedicationTypeTest extends CDAValidationTest {
 		};
 
 		validateMedicationTypeCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -154,8 +120,8 @@ public class MedicationTypeTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -163,7 +129,7 @@ public class MedicationTypeTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

@@ -70,10 +70,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderInformationSource() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderInformationSourceTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderInformationSourceTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderInformationSource",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_INFORMATION_SOURCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -83,46 +83,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderInformationSource(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -130,7 +96,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderInformationSourceTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -138,10 +104,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderSequenceNumber() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderSequenceNumberTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderSequenceNumberTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderSequenceNumber",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_SEQUENCE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_SEQUENCE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -151,46 +117,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderSequenceNumber(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -198,7 +130,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderSequenceNumberTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -206,10 +138,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderPaymentProviders() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderPaymentProvidersTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderPaymentProvidersTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderPaymentProviders",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_PAYMENT_PROVIDERS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_PAYMENT_PROVIDERS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -219,46 +151,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderPaymentProviders(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -266,7 +164,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderPaymentProvidersTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -274,10 +172,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderPayerEntryID() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderPayerEntryIDTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderPayerEntryIDTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderPayerEntryID",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_PAYER_ENTRY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_PAYER_ENTRY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -287,46 +185,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderPayerEntryID(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -334,7 +198,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderPayerEntryIDTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -342,10 +206,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderHealthInsuranceType() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderHealthInsuranceTypeTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderHealthInsuranceTypeTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderHealthInsuranceType",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_HEALTH_INSURANCE_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_HEALTH_INSURANCE_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -355,46 +219,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderHealthInsuranceType(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -402,7 +232,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderHealthInsuranceTypeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -410,10 +240,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderInsuranceInformation() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderInsuranceInformationTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderInsuranceInformationTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderInsuranceInformation",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_INSURANCE_INFORMATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_INSURANCE_INFORMATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -423,46 +253,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderInsuranceInformation(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -470,7 +266,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderInsuranceInformationTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -478,10 +274,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderInsuranceInfoSourceID() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderInsuranceInfoSourceIDTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderInsuranceInfoSourceIDTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderInsuranceInfoSourceID",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_INSURANCE_INFO_SOURCE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_INSURANCE_INFO_SOURCE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -491,46 +287,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderInsuranceInfoSourceID(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -538,7 +300,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderInsuranceInfoSourceIDTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -546,10 +308,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderInsuranceInfoSourceAddr() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderInsuranceInfoSourceAddrTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderInsuranceInfoSourceAddrTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderInsuranceInfoSourceAddr",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_INSURANCE_INFO_SOURCE_ADDR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_INSURANCE_INFO_SOURCE_ADDR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -559,46 +321,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderInsuranceInfoSourceAddr(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -606,7 +334,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderInsuranceInfoSourceAddrTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -614,10 +342,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderHealthPlanCoverageStartTime() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderHealthPlanCoverageStartTimeTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderHealthPlanCoverageStartTimeTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderHealthPlanCoverageStartTime",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_HEALTH_PLAN_COVERAGE_START_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_HEALTH_PLAN_COVERAGE_START_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -627,46 +355,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderHealthPlanCoverageStartTime(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -674,7 +368,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderHealthPlanCoverageStartTimeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -682,10 +376,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderHealthPlanCoverageStopTime() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderHealthPlanCoverageStopTimeTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderHealthPlanCoverageStopTimeTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderHealthPlanCoverageStopTime",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_HEALTH_PLAN_COVERAGE_STOP_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_HEALTH_PLAN_COVERAGE_STOP_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -695,46 +389,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderHealthPlanCoverageStopTime(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -742,7 +402,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderHealthPlanCoverageStopTimeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -750,10 +410,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderPatientInformation() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderPatientInformationTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderPatientInformationTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderPatientInformation",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_PATIENT_INFORMATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_PATIENT_INFORMATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -763,46 +423,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderPatientInformation(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -810,7 +436,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderPatientInformationTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -818,10 +444,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderMemberId() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderMemberIdTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderMemberIdTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderMemberId",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_MEMBER_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_MEMBER_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -831,46 +457,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderMemberId(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -878,7 +470,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderMemberIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -886,10 +478,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderMemberIdRoot() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderMemberIdRootTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderMemberIdRootTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderMemberIdRoot",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_MEMBER_ID_ROOT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_MEMBER_ID_ROOT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -899,46 +491,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderMemberIdRoot(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -946,7 +504,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderMemberIdRootTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -954,10 +512,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderRelationshipToSubscriber() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderRelationshipToSubscriberTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderRelationshipToSubscriberTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderRelationshipToSubscriber",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_RELATIONSHIP_TO_SUBSCRIBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_RELATIONSHIP_TO_SUBSCRIBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -967,46 +525,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderRelationshipToSubscriber(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -1014,7 +538,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderRelationshipToSubscriberTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1022,10 +546,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderRelationshipToSubscriberCodeSystem() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderRelationshipToSubscriberCodeSystemTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderRelationshipToSubscriberCodeSystemTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderRelationshipToSubscriberCodeSystem",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_RELATIONSHIP_TO_SUBSCRIBER_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_RELATIONSHIP_TO_SUBSCRIBER_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -1035,46 +559,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderRelationshipToSubscriberCodeSystem(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -1082,7 +572,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderRelationshipToSubscriberCodeSystemTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1090,10 +580,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderPatientName() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderPatientNameTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderPatientNameTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderPatientName",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_PATIENT_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_PATIENT_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -1103,46 +593,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderPatientName(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -1150,7 +606,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderPatientNameTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1158,10 +614,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderSubscriberInformation() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderSubscriberInformationTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderSubscriberInformationTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderSubscriberInformation",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_SUBSCRIBER_INFORMATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_SUBSCRIBER_INFORMATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -1171,46 +627,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderSubscriberInformation(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -1218,7 +640,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderSubscriberInformationTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1226,10 +648,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderSubscriberId() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderSubscriberIdTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderSubscriberIdTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderSubscriberId",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_SUBSCRIBER_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_SUBSCRIBER_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -1239,46 +661,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderSubscriberId(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -1286,7 +674,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderSubscriberIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1294,10 +682,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderSubscriberIdRoot() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderSubscriberIdRootTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderSubscriberIdRootTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderSubscriberIdRoot",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_SUBSCRIBER_ID_ROOT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_SUBSCRIBER_ID_ROOT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -1307,46 +695,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderSubscriberIdRoot(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -1354,7 +708,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderSubscriberIdRootTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1362,10 +716,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderSubscriberAddress() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderSubscriberAddressTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderSubscriberAddressTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderSubscriberAddress",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_SUBSCRIBER_ADDRESS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_SUBSCRIBER_ADDRESS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -1375,46 +729,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderSubscriberAddress(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -1422,7 +742,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderSubscriberAddressTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1430,10 +750,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderFinancialResponsibilityPartyType() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderFinancialResponsibilityPartyTypeTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderFinancialResponsibilityPartyTypeTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderFinancialResponsibilityPartyType",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_FINANCIAL_RESPONSIBILITY_PARTY_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_FINANCIAL_RESPONSIBILITY_PARTY_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -1443,46 +763,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderFinancialResponsibilityPartyType(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -1490,7 +776,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderFinancialResponsibilityPartyTypeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1498,10 +784,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderFinancialResponsibilityPartyTypeCode() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderFinancialResponsibilityPartyTypeCodeTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderFinancialResponsibilityPartyTypeCodeTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderFinancialResponsibilityPartyTypeCode",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_FINANCIAL_RESPONSIBILITY_PARTY_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_FINANCIAL_RESPONSIBILITY_PARTY_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -1511,46 +797,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderFinancialResponsibilityPartyTypeCode(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -1558,7 +810,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderFinancialResponsibilityPartyTypeCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1566,10 +818,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderFinancialResponsibilityPartyAddress() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderFinancialResponsibilityPartyAddressTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderFinancialResponsibilityPartyAddressTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderFinancialResponsibilityPartyAddress",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_FINANCIAL_RESPONSIBILITY_PARTY_ADDRESS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_FINANCIAL_RESPONSIBILITY_PARTY_ADDRESS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -1579,46 +831,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderFinancialResponsibilityPartyAddress(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -1626,7 +844,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderFinancialResponsibilityPartyAddressTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1634,10 +852,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderClassCode() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderClassCodeTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderClassCodeTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -1647,46 +865,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderClassCode(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -1694,7 +878,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderClassCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1702,10 +886,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderMoodCode() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderMoodCodeTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderMoodCodeTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -1715,46 +899,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderMoodCode(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -1762,7 +912,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderMoodCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1770,10 +920,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderId() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderIdTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderIdTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderId",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -1783,46 +933,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderId(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -1830,7 +946,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1838,10 +954,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderCode() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderCodeTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderCodeTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderCode",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -1851,46 +967,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderCode(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -1898,7 +980,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1906,10 +988,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderStatusCode() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderStatusCodeTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderStatusCodeTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -1919,49 +1001,15 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-			
+
 				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
 				target.setStatusCode(cs);
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderStatusCode(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -1969,7 +1017,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderStatusCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1977,10 +1025,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInsuranceProviderPayerEntry() {
-			OperationsTestCase<InsuranceProvider> validateInsuranceProviderPayerEntryTestCase = new OperationsTestCase<InsuranceProvider>(
+		OperationsTestCase<InsuranceProvider> validateInsuranceProviderPayerEntryTestCase = new OperationsTestCase<InsuranceProvider>(
 			"validateInsuranceProviderPayerEntry",
-			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_PAYER_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INSURANCE_PROVIDER_PAYER_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(InsuranceProvider target) {
@@ -1990,46 +1038,12 @@ public class InsuranceProviderTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InsuranceProvider target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return InsuranceProviderOperations.validateInsuranceProviderPayerEntry(
 					(InsuranceProvider) objectToTest, diagnostician, map);
 			}
@@ -2037,7 +1051,7 @@ public class InsuranceProviderTest extends CDAValidationTest {
 		};
 
 		validateInsuranceProviderPayerEntryTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -2046,13 +1060,10 @@ public class InsuranceProviderTest extends CDAValidationTest {
 	@Test
 	public void testGetPayerEntries() {
 
+		InsuranceProvider target = objectFactory.create();
+		target.getPayerEntries();
 
-InsuranceProvider target = objectFactory.create();
-target.getPayerEntries();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2107,8 +1118,8 @@ target.getPayerEntries();
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -2116,7 +1127,7 @@ target.getPayerEntries();
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

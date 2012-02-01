@@ -44,10 +44,10 @@ public class PreoperativeDiagnosisSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePreoperativeDiagnosisSectionTemplateId() {
-			OperationsTestCase<PreoperativeDiagnosisSection> validatePreoperativeDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<PreoperativeDiagnosisSection>(
+		OperationsTestCase<PreoperativeDiagnosisSection> validatePreoperativeDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<PreoperativeDiagnosisSection>(
 			"validatePreoperativeDiagnosisSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PREOPERATIVE_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PREOPERATIVE_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PreoperativeDiagnosisSection target) {
@@ -57,46 +57,12 @@ public class PreoperativeDiagnosisSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PreoperativeDiagnosisSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PreoperativeDiagnosisSectionOperations.validatePreoperativeDiagnosisSectionTemplateId(
 					(PreoperativeDiagnosisSection) objectToTest, diagnostician, map);
 			}
@@ -104,7 +70,7 @@ public class PreoperativeDiagnosisSectionTest extends CDAValidationTest {
 		};
 
 		validatePreoperativeDiagnosisSectionTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -159,8 +125,8 @@ public class PreoperativeDiagnosisSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -168,7 +134,7 @@ public class PreoperativeDiagnosisSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 
