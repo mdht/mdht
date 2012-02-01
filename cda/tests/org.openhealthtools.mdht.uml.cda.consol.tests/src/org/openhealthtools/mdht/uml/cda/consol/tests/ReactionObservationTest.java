@@ -104,7 +104,7 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateReactionObservationReferenceValue() {
