@@ -301,10 +301,10 @@ public class TransformInlinedAssociations extends TransformAbstract {
 
 				/*
 				 * TODO Fix constraint messages implementation - currently only setting the specific rule with out the path to the rule
-				 */
-				appendInlinedOCLConstraint(
-					bucketClass, stack + constraint.getName(), constraintSeverity, constraintMessage,
-					constraintGuard.toString(), path + getScopeFilter(inlineClass) + "->forAll(" + relativeOCL + ")");
+				 */			
+				appendInlinedOCLConstraint(bucketClass, stack + constraint.getName(), constraintSeverity, message +
+						" " + constraintMessage, constraintGuard.toString(), path + getScopeFilter(inlineClass) +
+						"->forAll(" + relativeOCL + ")");
 			}
 
 		}
