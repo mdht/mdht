@@ -51,10 +51,10 @@ public class ProcedureEstimatedBloodLossSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureEstimatedBloodLossSectionTemplateId() {
-		OperationsTestCase<ProcedureEstimatedBloodLossSection> validateProcedureEstimatedBloodLossSectionTemplateIdTestCase = new OperationsTestCase<ProcedureEstimatedBloodLossSection>(
+			OperationsTestCase<ProcedureEstimatedBloodLossSection> validateProcedureEstimatedBloodLossSectionTemplateIdTestCase = new OperationsTestCase<ProcedureEstimatedBloodLossSection>(
 			"validateProcedureEstimatedBloodLossSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ESTIMATED_BLOOD_LOSS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ESTIMATED_BLOOD_LOSS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureEstimatedBloodLossSection target) {
@@ -64,12 +64,46 @@ public class ProcedureEstimatedBloodLossSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureEstimatedBloodLossSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ProcedureEstimatedBloodLossSectionOperations.validateProcedureEstimatedBloodLossSectionTemplateId(
 					(ProcedureEstimatedBloodLossSection) objectToTest, diagnostician, map);
 			}
@@ -77,7 +111,7 @@ public class ProcedureEstimatedBloodLossSectionTest extends CDAValidationTest {
 		};
 
 		validateProcedureEstimatedBloodLossSectionTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -85,10 +119,10 @@ public class ProcedureEstimatedBloodLossSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureEstimatedBloodLossSectionCode() {
-		OperationsTestCase<ProcedureEstimatedBloodLossSection> validateProcedureEstimatedBloodLossSectionCodeTestCase = new OperationsTestCase<ProcedureEstimatedBloodLossSection>(
+			OperationsTestCase<ProcedureEstimatedBloodLossSection> validateProcedureEstimatedBloodLossSectionCodeTestCase = new OperationsTestCase<ProcedureEstimatedBloodLossSection>(
 			"validateProcedureEstimatedBloodLossSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ESTIMATED_BLOOD_LOSS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ESTIMATED_BLOOD_LOSS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureEstimatedBloodLossSection target) {
@@ -98,12 +132,46 @@ public class ProcedureEstimatedBloodLossSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureEstimatedBloodLossSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ProcedureEstimatedBloodLossSectionOperations.validateProcedureEstimatedBloodLossSectionCode(
 					(ProcedureEstimatedBloodLossSection) objectToTest, diagnostician, map);
 			}
@@ -111,7 +179,7 @@ public class ProcedureEstimatedBloodLossSectionTest extends CDAValidationTest {
 		};
 
 		validateProcedureEstimatedBloodLossSectionCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -119,10 +187,10 @@ public class ProcedureEstimatedBloodLossSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureEstimatedBloodLossSectionText() {
-		OperationsTestCase<ProcedureEstimatedBloodLossSection> validateProcedureEstimatedBloodLossSectionTextTestCase = new OperationsTestCase<ProcedureEstimatedBloodLossSection>(
+			OperationsTestCase<ProcedureEstimatedBloodLossSection> validateProcedureEstimatedBloodLossSectionTextTestCase = new OperationsTestCase<ProcedureEstimatedBloodLossSection>(
 			"validateProcedureEstimatedBloodLossSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ESTIMATED_BLOOD_LOSS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ESTIMATED_BLOOD_LOSS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureEstimatedBloodLossSection target) {
@@ -132,15 +200,49 @@ public class ProcedureEstimatedBloodLossSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureEstimatedBloodLossSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
 				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
-
+				target.setText(text );
+			
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ProcedureEstimatedBloodLossSectionOperations.validateProcedureEstimatedBloodLossSectionText(
 					(ProcedureEstimatedBloodLossSection) objectToTest, diagnostician, map);
 			}
@@ -148,7 +250,7 @@ public class ProcedureEstimatedBloodLossSectionTest extends CDAValidationTest {
 		};
 
 		validateProcedureEstimatedBloodLossSectionTextTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -156,10 +258,10 @@ public class ProcedureEstimatedBloodLossSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureEstimatedBloodLossSectionTitle() {
-		OperationsTestCase<ProcedureEstimatedBloodLossSection> validateProcedureEstimatedBloodLossSectionTitleTestCase = new OperationsTestCase<ProcedureEstimatedBloodLossSection>(
+			OperationsTestCase<ProcedureEstimatedBloodLossSection> validateProcedureEstimatedBloodLossSectionTitleTestCase = new OperationsTestCase<ProcedureEstimatedBloodLossSection>(
 			"validateProcedureEstimatedBloodLossSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ESTIMATED_BLOOD_LOSS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ESTIMATED_BLOOD_LOSS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureEstimatedBloodLossSection target) {
@@ -169,15 +271,49 @@ public class ProcedureEstimatedBloodLossSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureEstimatedBloodLossSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
+				
+				
 
+	
+		
+				ST  title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title );
+				
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ProcedureEstimatedBloodLossSectionOperations.validateProcedureEstimatedBloodLossSectionTitle(
 					(ProcedureEstimatedBloodLossSection) objectToTest, diagnostician, map);
 			}
@@ -185,7 +321,7 @@ public class ProcedureEstimatedBloodLossSectionTest extends CDAValidationTest {
 		};
 
 		validateProcedureEstimatedBloodLossSectionTitleTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -240,8 +376,8 @@ public class ProcedureEstimatedBloodLossSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -249,7 +385,7 @@ public class ProcedureEstimatedBloodLossSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

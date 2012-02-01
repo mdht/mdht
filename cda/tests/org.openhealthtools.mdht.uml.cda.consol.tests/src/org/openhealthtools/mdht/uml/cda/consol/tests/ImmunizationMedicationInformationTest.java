@@ -44,10 +44,10 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateImmunizationMedicationInformationTemplateId() {
-		OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationTemplateIdTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
+			OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationTemplateIdTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
 			"validateImmunizationMedicationInformationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ImmunizationMedicationInformation target) {
@@ -57,12 +57,46 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ImmunizationMedicationInformation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ImmunizationMedicationInformationOperations.validateImmunizationMedicationInformationTemplateId(
 					(ImmunizationMedicationInformation) objectToTest, diagnostician, map);
 			}
@@ -70,7 +104,7 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 		};
 
 		validateImmunizationMedicationInformationTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -78,10 +112,10 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateImmunizationMedicationInformationClassCode() {
-		OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationClassCodeTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
+			OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationClassCodeTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
 			"validateImmunizationMedicationInformationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ImmunizationMedicationInformation target) {
@@ -91,12 +125,46 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ImmunizationMedicationInformation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ImmunizationMedicationInformationOperations.validateImmunizationMedicationInformationClassCode(
 					(ImmunizationMedicationInformation) objectToTest, diagnostician, map);
 			}
@@ -104,7 +172,7 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 		};
 
 		validateImmunizationMedicationInformationClassCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -146,10 +214,10 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateImmunizationMedicationInformationManufacturerOrganization() {
-		OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationManufacturerOrganizationTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
+			OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationManufacturerOrganizationTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
 			"validateImmunizationMedicationInformationManufacturerOrganization",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_MANUFACTURER_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_MANUFACTURER_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ImmunizationMedicationInformation target) {
@@ -159,12 +227,46 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ImmunizationMedicationInformation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ImmunizationMedicationInformationOperations.validateImmunizationMedicationInformationManufacturerOrganization(
 					(ImmunizationMedicationInformation) objectToTest, diagnostician, map);
 			}
@@ -172,7 +274,7 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 		};
 
 		validateImmunizationMedicationInformationManufacturerOrganizationTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -180,10 +282,10 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateImmunizationMedicationInformationManufacturedMaterial() {
-		OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationManufacturedMaterialTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
+			OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationManufacturedMaterialTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
 			"validateImmunizationMedicationInformationManufacturedMaterial",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_MANUFACTURED_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_MANUFACTURED_MATERIAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ImmunizationMedicationInformation target) {
@@ -193,12 +295,46 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ImmunizationMedicationInformation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ImmunizationMedicationInformationOperations.validateImmunizationMedicationInformationManufacturedMaterial(
 					(ImmunizationMedicationInformation) objectToTest, diagnostician, map);
 			}
@@ -206,7 +342,7 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 		};
 
 		validateImmunizationMedicationInformationManufacturedMaterialTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -261,8 +397,8 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -270,7 +406,7 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

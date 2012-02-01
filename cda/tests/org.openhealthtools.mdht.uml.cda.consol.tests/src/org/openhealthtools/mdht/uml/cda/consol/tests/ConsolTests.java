@@ -95,7 +95,7 @@ public class ConsolTests {
 	 * @generated
 	 */
 	public static junit.framework.Test suite() {
-		return new JUnit4TestAdapter(ConsolTests.class);
+		return new JUnit4TestAdapter( ConsolTests.class);
 	}
 
 } // ConsolTests

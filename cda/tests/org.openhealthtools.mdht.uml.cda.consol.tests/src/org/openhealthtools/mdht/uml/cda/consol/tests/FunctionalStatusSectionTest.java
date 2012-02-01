@@ -50,10 +50,10 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusSectionTemplateId() {
-		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionTemplateIdTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionTemplateIdTestCase = new OperationsTestCase<FunctionalStatusSection>(
 			"validateFunctionalStatusSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(FunctionalStatusSection target) {
@@ -63,12 +63,46 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionTemplateId(
 					(FunctionalStatusSection) objectToTest, diagnostician, map);
 			}
@@ -76,7 +110,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 		};
 
 		validateFunctionalStatusSectionTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -84,10 +118,10 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusSectionCode() {
-		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionCodeTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionCodeTestCase = new OperationsTestCase<FunctionalStatusSection>(
 			"validateFunctionalStatusSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(FunctionalStatusSection target) {
@@ -97,12 +131,46 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionCode(
 					(FunctionalStatusSection) objectToTest, diagnostician, map);
 			}
@@ -110,7 +178,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 		};
 
 		validateFunctionalStatusSectionCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -118,10 +186,10 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusSectionTitle() {
-		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionTitleTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionTitleTestCase = new OperationsTestCase<FunctionalStatusSection>(
 			"validateFunctionalStatusSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(FunctionalStatusSection target) {
@@ -131,15 +199,49 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
+				
+				
 
+	
+		
+				ST  title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title );
+				
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionTitle(
 					(FunctionalStatusSection) objectToTest, diagnostician, map);
 			}
@@ -147,7 +249,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 		};
 
 		validateFunctionalStatusSectionTitleTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -155,10 +257,10 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFunctionalStatusSectionText() {
-		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionTextTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionTextTestCase = new OperationsTestCase<FunctionalStatusSection>(
 			"validateFunctionalStatusSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(FunctionalStatusSection target) {
@@ -168,15 +270,49 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
 				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
-
+				target.setText(text );
+			
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionText(
 					(FunctionalStatusSection) objectToTest, diagnostician, map);
 			}
@@ -184,7 +320,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 		};
 
 		validateFunctionalStatusSectionTextTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -261,10 +397,13 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemObservations() {
 
-		FunctionalStatusSection target = objectFactory.create();
-		target.getProblemObservations();
 
-	}
+FunctionalStatusSection target = objectFactory.create();
+target.getProblemObservations();
+
+
+
+}
 
 	/**
 	*
@@ -273,10 +412,13 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetResultObservations() {
 
-		FunctionalStatusSection target = objectFactory.create();
-		target.getResultObservations();
 
-	}
+FunctionalStatusSection target = objectFactory.create();
+target.getResultObservations();
+
+
+
+}
 
 	/**
 	*
@@ -331,8 +473,8 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -340,7 +482,7 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

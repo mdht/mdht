@@ -15,6 +15,8 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ScanDataEnterer;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ScanDataEntererOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
  * <!-- begin-user-doc -->
@@ -75,10 +77,10 @@ public class ScanDataEntererTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateScanDataEntererHasAssignedEntityId() {
-		OperationsTestCase<ScanDataEnterer> validateScanDataEntererHasAssignedEntityIdTestCase = new OperationsTestCase<ScanDataEnterer>(
+			OperationsTestCase<ScanDataEnterer> validateScanDataEntererHasAssignedEntityIdTestCase = new OperationsTestCase<ScanDataEnterer>(
 			"validateScanDataEntererHasAssignedEntityId",
-			operationsForOCL.getOCLValue("VALIDATE_SCAN_DATA_ENTERER_HAS_ASSIGNED_ENTITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SCAN_DATA_ENTERER_HAS_ASSIGNED_ENTITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanDataEnterer target) {
@@ -88,12 +90,46 @@ public class ScanDataEntererTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ScanDataEnterer target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ScanDataEntererOperations.validateScanDataEntererHasAssignedEntityId(
 					(ScanDataEnterer) objectToTest, diagnostician, map);
 			}
@@ -101,7 +137,7 @@ public class ScanDataEntererTest extends CDAValidationTest {
 		};
 
 		validateScanDataEntererHasAssignedEntityIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -109,10 +145,10 @@ public class ScanDataEntererTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateScanDataEntererTime() {
-		OperationsTestCase<ScanDataEnterer> validateScanDataEntererTimeTestCase = new OperationsTestCase<ScanDataEnterer>(
+			OperationsTestCase<ScanDataEnterer> validateScanDataEntererTimeTestCase = new OperationsTestCase<ScanDataEnterer>(
 			"validateScanDataEntererTime",
-			operationsForOCL.getOCLValue("VALIDATE_SCAN_DATA_ENTERER_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SCAN_DATA_ENTERER_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanDataEnterer target) {
@@ -122,12 +158,46 @@ public class ScanDataEntererTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ScanDataEnterer target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ScanDataEntererOperations.validateScanDataEntererTime(
 					(ScanDataEnterer) objectToTest, diagnostician, map);
 			}
@@ -135,7 +205,7 @@ public class ScanDataEntererTest extends CDAValidationTest {
 		};
 
 		validateScanDataEntererTimeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -190,8 +260,8 @@ public class ScanDataEntererTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -199,7 +269,7 @@ public class ScanDataEntererTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

@@ -48,10 +48,10 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 	*/
 	@Test
 	public void testValidateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateId() {
-		OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional> validateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional>(
+			OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional> validateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional>(
 			"validateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(HospitalAdmissionMedicationsSectionEntriesOptional target) {
@@ -61,12 +61,46 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 			@Override
 			protected void updateToPass(HospitalAdmissionMedicationsSectionEntriesOptional target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return HospitalAdmissionMedicationsSectionEntriesOptionalOperations.validateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateId(
 					(HospitalAdmissionMedicationsSectionEntriesOptional) objectToTest, diagnostician, map);
 			}
@@ -74,7 +108,7 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 		};
 
 		validateHospitalAdmissionMedicationsSectionEntriesOptionalTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -82,10 +116,10 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 	*/
 	@Test
 	public void testValidateHospitalAdmissionMedicationsSectionEntriesOptionalCode() {
-		OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional> validateHospitalAdmissionMedicationsSectionEntriesOptionalCodeTestCase = new OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional>(
+			OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional> validateHospitalAdmissionMedicationsSectionEntriesOptionalCodeTestCase = new OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional>(
 			"validateHospitalAdmissionMedicationsSectionEntriesOptionalCode",
-			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(HospitalAdmissionMedicationsSectionEntriesOptional target) {
@@ -95,12 +129,46 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 			@Override
 			protected void updateToPass(HospitalAdmissionMedicationsSectionEntriesOptional target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return HospitalAdmissionMedicationsSectionEntriesOptionalOperations.validateHospitalAdmissionMedicationsSectionEntriesOptionalCode(
 					(HospitalAdmissionMedicationsSectionEntriesOptional) objectToTest, diagnostician, map);
 			}
@@ -108,7 +176,7 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 		};
 
 		validateHospitalAdmissionMedicationsSectionEntriesOptionalCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -116,10 +184,10 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 	*/
 	@Test
 	public void testValidateHospitalAdmissionMedicationsSectionEntriesOptionalText() {
-		OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional> validateHospitalAdmissionMedicationsSectionEntriesOptionalTextTestCase = new OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional>(
+			OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional> validateHospitalAdmissionMedicationsSectionEntriesOptionalTextTestCase = new OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional>(
 			"validateHospitalAdmissionMedicationsSectionEntriesOptionalText",
-			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(HospitalAdmissionMedicationsSectionEntriesOptional target) {
@@ -129,15 +197,49 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 			@Override
 			protected void updateToPass(HospitalAdmissionMedicationsSectionEntriesOptional target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
 				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
-
+				target.setText(text );
+			
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return HospitalAdmissionMedicationsSectionEntriesOptionalOperations.validateHospitalAdmissionMedicationsSectionEntriesOptionalText(
 					(HospitalAdmissionMedicationsSectionEntriesOptional) objectToTest, diagnostician, map);
 			}
@@ -145,7 +247,7 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 		};
 
 		validateHospitalAdmissionMedicationsSectionEntriesOptionalTextTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -153,10 +255,10 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 	*/
 	@Test
 	public void testValidateHospitalAdmissionMedicationsSectionEntriesOptionalTitle() {
-		OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional> validateHospitalAdmissionMedicationsSectionEntriesOptionalTitleTestCase = new OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional>(
+			OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional> validateHospitalAdmissionMedicationsSectionEntriesOptionalTitleTestCase = new OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional>(
 			"validateHospitalAdmissionMedicationsSectionEntriesOptionalTitle",
-			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(HospitalAdmissionMedicationsSectionEntriesOptional target) {
@@ -166,15 +268,49 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 			@Override
 			protected void updateToPass(HospitalAdmissionMedicationsSectionEntriesOptional target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
+				
+				
 
+	
+		
+				ST  title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title );
+				
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return HospitalAdmissionMedicationsSectionEntriesOptionalOperations.validateHospitalAdmissionMedicationsSectionEntriesOptionalTitle(
 					(HospitalAdmissionMedicationsSectionEntriesOptional) objectToTest, diagnostician, map);
 			}
@@ -182,7 +318,7 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 		};
 
 		validateHospitalAdmissionMedicationsSectionEntriesOptionalTitleTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -225,10 +361,13 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 	@Test
 	public void testGetAdmissionMedication() {
 
-		HospitalAdmissionMedicationsSectionEntriesOptional target = objectFactory.create();
-		target.getAdmissionMedication();
 
-	}
+HospitalAdmissionMedicationsSectionEntriesOptional target = objectFactory.create();
+target.getAdmissionMedication();
+
+
+
+}
 
 	/**
 	*
@@ -283,8 +422,8 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -292,7 +431,7 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

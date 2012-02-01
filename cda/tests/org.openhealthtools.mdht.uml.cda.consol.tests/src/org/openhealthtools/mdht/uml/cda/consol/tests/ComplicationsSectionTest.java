@@ -44,10 +44,10 @@ public class ComplicationsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateComplicationsSectionTemplateId() {
-		OperationsTestCase<ComplicationsSection> validateComplicationsSectionTemplateIdTestCase = new OperationsTestCase<ComplicationsSection>(
+			OperationsTestCase<ComplicationsSection> validateComplicationsSectionTemplateIdTestCase = new OperationsTestCase<ComplicationsSection>(
 			"validateComplicationsSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_COMPLICATIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_COMPLICATIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ComplicationsSection target) {
@@ -57,12 +57,46 @@ public class ComplicationsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ComplicationsSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ComplicationsSectionOperations.validateComplicationsSectionTemplateId(
 					(ComplicationsSection) objectToTest, diagnostician, map);
 			}
@@ -70,7 +104,7 @@ public class ComplicationsSectionTest extends CDAValidationTest {
 		};
 
 		validateComplicationsSectionTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -125,8 +159,8 @@ public class ComplicationsSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -134,7 +168,7 @@ public class ComplicationsSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

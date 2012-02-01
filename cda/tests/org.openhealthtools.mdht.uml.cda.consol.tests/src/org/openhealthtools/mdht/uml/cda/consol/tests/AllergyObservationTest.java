@@ -529,7 +529,7 @@ public class AllergyObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AllergyObservation target) {
-
+				target.init();
 			}
 
 			@Override

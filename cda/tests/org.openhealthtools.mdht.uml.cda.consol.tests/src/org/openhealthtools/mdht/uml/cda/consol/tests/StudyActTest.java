@@ -56,10 +56,10 @@ public class StudyActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateStudyActTemplateId() {
-		OperationsTestCase<StudyAct> validateStudyActTemplateIdTestCase = new OperationsTestCase<StudyAct>(
+			OperationsTestCase<StudyAct> validateStudyActTemplateIdTestCase = new OperationsTestCase<StudyAct>(
 			"validateStudyActTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(StudyAct target) {
@@ -69,19 +69,54 @@ public class StudyActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(StudyAct target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return StudyActOperations.validateStudyActTemplateId((StudyAct) objectToTest, diagnostician, map);
+			
+			
+			
+				return StudyActOperations.validateStudyActTemplateId(
+					(StudyAct) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateStudyActTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -89,10 +124,10 @@ public class StudyActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateStudyActClassCode() {
-		OperationsTestCase<StudyAct> validateStudyActClassCodeTestCase = new OperationsTestCase<StudyAct>(
+			OperationsTestCase<StudyAct> validateStudyActClassCodeTestCase = new OperationsTestCase<StudyAct>(
 			"validateStudyActClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(StudyAct target) {
@@ -102,19 +137,54 @@ public class StudyActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(StudyAct target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return StudyActOperations.validateStudyActClassCode((StudyAct) objectToTest, diagnostician, map);
+			
+			
+			
+				return StudyActOperations.validateStudyActClassCode(
+					(StudyAct) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateStudyActClassCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -122,9 +192,10 @@ public class StudyActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateStudyActMoodCode() {
-		OperationsTestCase<StudyAct> validateStudyActMoodCodeTestCase = new OperationsTestCase<StudyAct>(
+			OperationsTestCase<StudyAct> validateStudyActMoodCodeTestCase = new OperationsTestCase<StudyAct>(
 			"validateStudyActMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(StudyAct target) {
@@ -134,19 +205,54 @@ public class StudyActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(StudyAct target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return StudyActOperations.validateStudyActMoodCode((StudyAct) objectToTest, diagnostician, map);
+			
+			
+			
+				return StudyActOperations.validateStudyActMoodCode(
+					(StudyAct) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateStudyActMoodCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -154,9 +260,10 @@ public class StudyActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateStudyActId() {
-		OperationsTestCase<StudyAct> validateStudyActIdTestCase = new OperationsTestCase<StudyAct>(
+			OperationsTestCase<StudyAct> validateStudyActIdTestCase = new OperationsTestCase<StudyAct>(
 			"validateStudyActId",
-			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(StudyAct target) {
@@ -166,19 +273,54 @@ public class StudyActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(StudyAct target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return StudyActOperations.validateStudyActId((StudyAct) objectToTest, diagnostician, map);
+			
+			
+			
+				return StudyActOperations.validateStudyActId(
+					(StudyAct) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateStudyActIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -186,9 +328,10 @@ public class StudyActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateStudyActCode() {
-		OperationsTestCase<StudyAct> validateStudyActCodeTestCase = new OperationsTestCase<StudyAct>(
+			OperationsTestCase<StudyAct> validateStudyActCodeTestCase = new OperationsTestCase<StudyAct>(
 			"validateStudyActCode",
-			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(StudyAct target) {
@@ -198,19 +341,54 @@ public class StudyActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(StudyAct target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return StudyActOperations.validateStudyActCode((StudyAct) objectToTest, diagnostician, map);
+			
+			
+			
+				return StudyActOperations.validateStudyActCode(
+					(StudyAct) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateStudyActCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -218,10 +396,10 @@ public class StudyActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateStudyActEffectiveTime() {
-		OperationsTestCase<StudyAct> validateStudyActEffectiveTimeTestCase = new OperationsTestCase<StudyAct>(
+			OperationsTestCase<StudyAct> validateStudyActEffectiveTimeTestCase = new OperationsTestCase<StudyAct>(
 			"validateStudyActEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(StudyAct target) {
@@ -231,22 +409,57 @@ public class StudyActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(StudyAct target) {
 				target.init();
+				
+				
+					IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
+					target.setEffectiveTime(ts );								
+				
+				
+				
+				
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+				
+				
 
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return StudyActOperations.validateStudyActEffectiveTime((StudyAct) objectToTest, diagnostician, map);
+			
+			
+			
+				return StudyActOperations.validateStudyActEffectiveTime(
+					(StudyAct) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateStudyActEffectiveTimeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -254,9 +467,10 @@ public class StudyActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateStudyActText() {
-		OperationsTestCase<StudyAct> validateStudyActTextTestCase = new OperationsTestCase<StudyAct>(
+			OperationsTestCase<StudyAct> validateStudyActTextTestCase = new OperationsTestCase<StudyAct>(
 			"validateStudyActText",
-			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(StudyAct target) {
@@ -266,22 +480,56 @@ public class StudyActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(StudyAct target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				ED text = DatatypesFactory.eINSTANCE.createED();
-				target.setText(text);
+				
+				
 
+	
+			
+
+	
+		
+		
+			
+		ED text = DatatypesFactory.eINSTANCE.createED();
+		target.setText(text );	
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return StudyActOperations.validateStudyActText((StudyAct) objectToTest, diagnostician, map);
+			
+			
+			
+				return StudyActOperations.validateStudyActText(
+					(StudyAct) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateStudyActTextTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -289,10 +537,10 @@ public class StudyActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateStudyActSeriesAct() {
-		OperationsTestCase<StudyAct> validateStudyActSeriesActTestCase = new OperationsTestCase<StudyAct>(
+			OperationsTestCase<StudyAct> validateStudyActSeriesActTestCase = new OperationsTestCase<StudyAct>(
 			"validateStudyActSeriesAct",
-			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_SERIES_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_SERIES_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(StudyAct target) {
@@ -302,19 +550,54 @@ public class StudyActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(StudyAct target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return StudyActOperations.validateStudyActSeriesAct((StudyAct) objectToTest, diagnostician, map);
+			
+			
+			
+				return StudyActOperations.validateStudyActSeriesAct(
+					(StudyAct) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateStudyActSeriesActTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -323,10 +606,13 @@ public class StudyActTest extends CDAValidationTest {
 	@Test
 	public void testGetSeriesAct() {
 
-		StudyAct target = objectFactory.create();
-		target.getSeriesAct();
 
-	}
+StudyAct target = objectFactory.create();
+target.getSeriesAct();
+
+
+
+}
 
 	/**
 	*
@@ -381,8 +667,8 @@ public class StudyActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -390,7 +676,7 @@ public class StudyActTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

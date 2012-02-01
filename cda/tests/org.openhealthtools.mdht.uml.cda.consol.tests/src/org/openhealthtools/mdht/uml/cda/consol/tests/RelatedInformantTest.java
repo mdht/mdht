@@ -41,25 +41,59 @@ public class RelatedInformantTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateRelatedInformantAddr() {
-		OperationsTestCase<RelatedInformant> validateRelatedInformantAddrTestCase = new OperationsTestCase<RelatedInformant>(
+			OperationsTestCase<RelatedInformant> validateRelatedInformantAddrTestCase = new OperationsTestCase<RelatedInformant>(
 			"validateRelatedInformantAddr",
-			operationsForOCL.getOCLValue("VALIDATE_RELATED_INFORMANT_ADDR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_RELATED_INFORMANT_ADDR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(RelatedInformant target) {
-				target.init();
+
 			}
 
 			@Override
 			protected void updateToPass(RelatedInformant target) {
-				target.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return RelatedInformantOperations.validateRelatedInformantAddr(
 					(RelatedInformant) objectToTest, diagnostician, map);
 			}
@@ -67,7 +101,7 @@ public class RelatedInformantTest extends CDAValidationTest {
 		};
 
 		validateRelatedInformantAddrTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -157,8 +191,8 @@ public class RelatedInformantTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -166,7 +200,7 @@ public class RelatedInformantTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

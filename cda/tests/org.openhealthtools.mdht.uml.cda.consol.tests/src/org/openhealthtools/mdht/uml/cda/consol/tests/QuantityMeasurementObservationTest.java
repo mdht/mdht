@@ -44,10 +44,10 @@ public class QuantityMeasurementObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateQuantityMeasurementObservationTemplateId() {
-		OperationsTestCase<QuantityMeasurementObservation> validateQuantityMeasurementObservationTemplateIdTestCase = new OperationsTestCase<QuantityMeasurementObservation>(
+			OperationsTestCase<QuantityMeasurementObservation> validateQuantityMeasurementObservationTemplateIdTestCase = new OperationsTestCase<QuantityMeasurementObservation>(
 			"validateQuantityMeasurementObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_QUANTITY_MEASUREMENT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_QUANTITY_MEASUREMENT_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(QuantityMeasurementObservation target) {
@@ -57,12 +57,46 @@ public class QuantityMeasurementObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(QuantityMeasurementObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return QuantityMeasurementObservationOperations.validateQuantityMeasurementObservationTemplateId(
 					(QuantityMeasurementObservation) objectToTest, diagnostician, map);
 			}
@@ -70,7 +104,7 @@ public class QuantityMeasurementObservationTest extends CDAValidationTest {
 		};
 
 		validateQuantityMeasurementObservationTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -125,8 +159,8 @@ public class QuantityMeasurementObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -134,7 +168,7 @@ public class QuantityMeasurementObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 
