@@ -48,10 +48,10 @@ public class PurposeSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePurposeSectionTemplateId() {
-			OperationsTestCase<PurposeSection> validatePurposeSectionTemplateIdTestCase = new OperationsTestCase<PurposeSection>(
+		OperationsTestCase<PurposeSection> validatePurposeSectionTemplateIdTestCase = new OperationsTestCase<PurposeSection>(
 			"validatePurposeSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeSection target) {
@@ -61,46 +61,12 @@ public class PurposeSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PurposeSectionOperations.validatePurposeSectionTemplateId(
 					(PurposeSection) objectToTest, diagnostician, map);
 			}
@@ -108,7 +74,7 @@ public class PurposeSectionTest extends CDAValidationTest {
 		};
 
 		validatePurposeSectionTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -116,10 +82,10 @@ public class PurposeSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePurposeSectionCode() {
-			OperationsTestCase<PurposeSection> validatePurposeSectionCodeTestCase = new OperationsTestCase<PurposeSection>(
+		OperationsTestCase<PurposeSection> validatePurposeSectionCodeTestCase = new OperationsTestCase<PurposeSection>(
 			"validatePurposeSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeSection target) {
@@ -129,46 +95,12 @@ public class PurposeSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PurposeSectionOperations.validatePurposeSectionCode(
 					(PurposeSection) objectToTest, diagnostician, map);
 			}
@@ -176,7 +108,7 @@ public class PurposeSectionTest extends CDAValidationTest {
 		};
 
 		validatePurposeSectionCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -184,10 +116,10 @@ public class PurposeSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePurposeSectionTitle() {
-			OperationsTestCase<PurposeSection> validatePurposeSectionTitleTestCase = new OperationsTestCase<PurposeSection>(
+		OperationsTestCase<PurposeSection> validatePurposeSectionTitleTestCase = new OperationsTestCase<PurposeSection>(
 			"validatePurposeSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeSection target) {
@@ -197,49 +129,15 @@ public class PurposeSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
 
-	
-		
-				ST  title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title );
-				
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PurposeSectionOperations.validatePurposeSectionTitle(
 					(PurposeSection) objectToTest, diagnostician, map);
 			}
@@ -247,7 +145,7 @@ public class PurposeSectionTest extends CDAValidationTest {
 		};
 
 		validatePurposeSectionTitleTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -255,10 +153,10 @@ public class PurposeSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePurposeSectionText() {
-			OperationsTestCase<PurposeSection> validatePurposeSectionTextTestCase = new OperationsTestCase<PurposeSection>(
+		OperationsTestCase<PurposeSection> validatePurposeSectionTextTestCase = new OperationsTestCase<PurposeSection>(
 			"validatePurposeSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeSection target) {
@@ -268,49 +166,15 @@ public class PurposeSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
 				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text );
-			
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+				target.setText(text);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PurposeSectionOperations.validatePurposeSectionText(
 					(PurposeSection) objectToTest, diagnostician, map);
 			}
@@ -318,7 +182,7 @@ public class PurposeSectionTest extends CDAValidationTest {
 		};
 
 		validatePurposeSectionTextTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -326,10 +190,10 @@ public class PurposeSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePurposeSectionPurposeActivity() {
-			OperationsTestCase<PurposeSection> validatePurposeSectionPurposeActivityTestCase = new OperationsTestCase<PurposeSection>(
+		OperationsTestCase<PurposeSection> validatePurposeSectionPurposeActivityTestCase = new OperationsTestCase<PurposeSection>(
 			"validatePurposeSectionPurposeActivity",
-			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_SECTION_PURPOSE_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeSection target) {
@@ -339,46 +203,12 @@ public class PurposeSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PurposeSectionOperations.validatePurposeSectionPurposeActivity(
 					(PurposeSection) objectToTest, diagnostician, map);
 			}
@@ -386,7 +216,7 @@ public class PurposeSectionTest extends CDAValidationTest {
 		};
 
 		validatePurposeSectionPurposeActivityTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -395,13 +225,10 @@ public class PurposeSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetPurposeActivities() {
 
+		PurposeSection target = objectFactory.create();
+		target.getPurposeActivities();
 
-PurposeSection target = objectFactory.create();
-target.getPurposeActivities();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -456,8 +283,8 @@ target.getPurposeActivities();
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -465,7 +292,7 @@ target.getPurposeActivities();
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

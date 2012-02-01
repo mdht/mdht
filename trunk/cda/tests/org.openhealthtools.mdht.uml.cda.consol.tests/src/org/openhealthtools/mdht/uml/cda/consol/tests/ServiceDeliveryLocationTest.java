@@ -44,10 +44,10 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateServiceDeliveryLocationHasPlayingEntity() {
-			OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationHasPlayingEntityTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
+		OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationHasPlayingEntityTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
 			"validateServiceDeliveryLocationHasPlayingEntity",
-			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_HAS_PLAYING_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_HAS_PLAYING_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ServiceDeliveryLocation target) {
@@ -57,46 +57,12 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ServiceDeliveryLocation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationHasPlayingEntity(
 					(ServiceDeliveryLocation) objectToTest, diagnostician, map);
 			}
@@ -104,7 +70,7 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 		};
 
 		validateServiceDeliveryLocationHasPlayingEntityTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -112,10 +78,10 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateServiceDeliveryLocationHasPlayingEntityClassCode() {
-			OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationHasPlayingEntityClassCodeTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
+		OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationHasPlayingEntityClassCodeTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
 			"validateServiceDeliveryLocationHasPlayingEntityClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_HAS_PLAYING_ENTITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_HAS_PLAYING_ENTITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ServiceDeliveryLocation target) {
@@ -125,46 +91,12 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ServiceDeliveryLocation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationHasPlayingEntityClassCode(
 					(ServiceDeliveryLocation) objectToTest, diagnostician, map);
 			}
@@ -172,7 +104,7 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 		};
 
 		validateServiceDeliveryLocationHasPlayingEntityClassCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -180,10 +112,10 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateServiceDeliveryLocationTemplateId() {
-			OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationTemplateIdTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
+		OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationTemplateIdTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
 			"validateServiceDeliveryLocationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ServiceDeliveryLocation target) {
@@ -193,46 +125,12 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ServiceDeliveryLocation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationTemplateId(
 					(ServiceDeliveryLocation) objectToTest, diagnostician, map);
 			}
@@ -240,7 +138,7 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 		};
 
 		validateServiceDeliveryLocationTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -248,10 +146,10 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateServiceDeliveryLocationCode() {
-			OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationCodeTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
+		OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationCodeTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
 			"validateServiceDeliveryLocationCode",
-			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ServiceDeliveryLocation target) {
@@ -261,46 +159,12 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ServiceDeliveryLocation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationCode(
 					(ServiceDeliveryLocation) objectToTest, diagnostician, map);
 			}
@@ -308,7 +172,7 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 		};
 
 		validateServiceDeliveryLocationCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -316,10 +180,10 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateServiceDeliveryLocationAddr() {
-			OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationAddrTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
+		OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationAddrTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
 			"validateServiceDeliveryLocationAddr",
-			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_ADDR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_ADDR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ServiceDeliveryLocation target) {
@@ -329,46 +193,12 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ServiceDeliveryLocation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationAddr(
 					(ServiceDeliveryLocation) objectToTest, diagnostician, map);
 			}
@@ -376,7 +206,7 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 		};
 
 		validateServiceDeliveryLocationAddrTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -384,10 +214,10 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateServiceDeliveryLocationTelecom() {
-			OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationTelecomTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
+		OperationsTestCase<ServiceDeliveryLocation> validateServiceDeliveryLocationTelecomTestCase = new OperationsTestCase<ServiceDeliveryLocation>(
 			"validateServiceDeliveryLocationTelecom",
-			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_TELECOM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_TELECOM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ServiceDeliveryLocation target) {
@@ -397,46 +227,12 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ServiceDeliveryLocation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ServiceDeliveryLocationOperations.validateServiceDeliveryLocationTelecom(
 					(ServiceDeliveryLocation) objectToTest, diagnostician, map);
 			}
@@ -444,7 +240,7 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 		};
 
 		validateServiceDeliveryLocationTelecomTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -499,8 +295,8 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -508,7 +304,7 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

@@ -47,10 +47,10 @@ public class PurposeActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePurposeActivityHasReason() {
-			OperationsTestCase<PurposeActivity> validatePurposeActivityHasReasonTestCase = new OperationsTestCase<PurposeActivity>(
+		OperationsTestCase<PurposeActivity> validatePurposeActivityHasReasonTestCase = new OperationsTestCase<PurposeActivity>(
 			"validatePurposeActivityHasReason",
-			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_ACTIVITY_HAS_REASON__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_ACTIVITY_HAS_REASON__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeActivity target) {
@@ -60,46 +60,12 @@ public class PurposeActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeActivity target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PurposeActivityOperations.validatePurposeActivityHasReason(
 					(PurposeActivity) objectToTest, diagnostician, map);
 			}
@@ -107,7 +73,7 @@ public class PurposeActivityTest extends CDAValidationTest {
 		};
 
 		validatePurposeActivityHasReasonTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -115,10 +81,10 @@ public class PurposeActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePurposeActivityReasonType() {
-			OperationsTestCase<PurposeActivity> validatePurposeActivityReasonTypeTestCase = new OperationsTestCase<PurposeActivity>(
+		OperationsTestCase<PurposeActivity> validatePurposeActivityReasonTypeTestCase = new OperationsTestCase<PurposeActivity>(
 			"validatePurposeActivityReasonType",
-			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_ACTIVITY_REASON_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_ACTIVITY_REASON_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeActivity target) {
@@ -128,46 +94,12 @@ public class PurposeActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeActivity target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PurposeActivityOperations.validatePurposeActivityReasonType(
 					(PurposeActivity) objectToTest, diagnostician, map);
 			}
@@ -175,7 +107,7 @@ public class PurposeActivityTest extends CDAValidationTest {
 		};
 
 		validatePurposeActivityReasonTypeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -183,10 +115,10 @@ public class PurposeActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePurposeActivityTemplateId() {
-			OperationsTestCase<PurposeActivity> validatePurposeActivityTemplateIdTestCase = new OperationsTestCase<PurposeActivity>(
+		OperationsTestCase<PurposeActivity> validatePurposeActivityTemplateIdTestCase = new OperationsTestCase<PurposeActivity>(
 			"validatePurposeActivityTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeActivity target) {
@@ -196,46 +128,12 @@ public class PurposeActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeActivity target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PurposeActivityOperations.validatePurposeActivityTemplateId(
 					(PurposeActivity) objectToTest, diagnostician, map);
 			}
@@ -243,7 +141,7 @@ public class PurposeActivityTest extends CDAValidationTest {
 		};
 
 		validatePurposeActivityTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -251,10 +149,10 @@ public class PurposeActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePurposeActivityClassCode() {
-			OperationsTestCase<PurposeActivity> validatePurposeActivityClassCodeTestCase = new OperationsTestCase<PurposeActivity>(
+		OperationsTestCase<PurposeActivity> validatePurposeActivityClassCodeTestCase = new OperationsTestCase<PurposeActivity>(
 			"validatePurposeActivityClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeActivity target) {
@@ -264,46 +162,12 @@ public class PurposeActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeActivity target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PurposeActivityOperations.validatePurposeActivityClassCode(
 					(PurposeActivity) objectToTest, diagnostician, map);
 			}
@@ -311,7 +175,7 @@ public class PurposeActivityTest extends CDAValidationTest {
 		};
 
 		validatePurposeActivityClassCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -319,10 +183,10 @@ public class PurposeActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePurposeActivityMoodCode() {
-			OperationsTestCase<PurposeActivity> validatePurposeActivityMoodCodeTestCase = new OperationsTestCase<PurposeActivity>(
+		OperationsTestCase<PurposeActivity> validatePurposeActivityMoodCodeTestCase = new OperationsTestCase<PurposeActivity>(
 			"validatePurposeActivityMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeActivity target) {
@@ -332,46 +196,12 @@ public class PurposeActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeActivity target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PurposeActivityOperations.validatePurposeActivityMoodCode(
 					(PurposeActivity) objectToTest, diagnostician, map);
 			}
@@ -379,7 +209,7 @@ public class PurposeActivityTest extends CDAValidationTest {
 		};
 
 		validatePurposeActivityMoodCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -387,10 +217,10 @@ public class PurposeActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePurposeActivityCode() {
-			OperationsTestCase<PurposeActivity> validatePurposeActivityCodeTestCase = new OperationsTestCase<PurposeActivity>(
+		OperationsTestCase<PurposeActivity> validatePurposeActivityCodeTestCase = new OperationsTestCase<PurposeActivity>(
 			"validatePurposeActivityCode",
-			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeActivity target) {
@@ -400,46 +230,12 @@ public class PurposeActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeActivity target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PurposeActivityOperations.validatePurposeActivityCode(
 					(PurposeActivity) objectToTest, diagnostician, map);
 			}
@@ -447,7 +243,7 @@ public class PurposeActivityTest extends CDAValidationTest {
 		};
 
 		validatePurposeActivityCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -455,10 +251,10 @@ public class PurposeActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePurposeActivityStatusCode() {
-			OperationsTestCase<PurposeActivity> validatePurposeActivityStatusCodeTestCase = new OperationsTestCase<PurposeActivity>(
+		OperationsTestCase<PurposeActivity> validatePurposeActivityStatusCodeTestCase = new OperationsTestCase<PurposeActivity>(
 			"validatePurposeActivityStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSE_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeActivity target) {
@@ -468,49 +264,15 @@ public class PurposeActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeActivity target) {
 				target.init();
-				
-				
-				
-				
-			
+
 				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
 				target.setStatusCode(cs);
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PurposeActivityOperations.validatePurposeActivityStatusCode(
 					(PurposeActivity) objectToTest, diagnostician, map);
 			}
@@ -518,7 +280,7 @@ public class PurposeActivityTest extends CDAValidationTest {
 		};
 
 		validatePurposeActivityStatusCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -573,8 +335,8 @@ public class PurposeActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -582,7 +344,7 @@ public class PurposeActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

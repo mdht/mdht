@@ -123,10 +123,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteTemplateId() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteTemplateIdTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteTemplateIdTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -136,46 +136,12 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteTemplateId(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -183,7 +149,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -261,10 +227,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteAssessmentSection() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteAssessmentSectionTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteAssessmentSectionTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteAssessmentSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_ASSESSMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_ASSESSMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -274,55 +240,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* AssessmentSection */ 
+				/* AssessmentSection */
 				AssessmentSection section =
-				
-				ConsolFactory.eINSTANCE.createAssessmentSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createAssessmentSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteAssessmentSection(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -330,7 +260,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteAssessmentSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -338,10 +268,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteAssessmentAndPlanSection() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteAssessmentAndPlanSectionTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteAssessmentAndPlanSectionTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteAssessmentAndPlanSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_ASSESSMENT_AND_PLAN_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_ASSESSMENT_AND_PLAN_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -351,55 +281,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* AssessmentAndPlanSection */ 
+				/* AssessmentAndPlanSection */
 				AssessmentAndPlanSection section =
-				
-				ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteAssessmentAndPlanSection(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -407,7 +301,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteAssessmentAndPlanSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -415,10 +309,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNotePlanOfCareSection() {
-			OperationsTestCase<ConsultationNote> validateConsultationNotePlanOfCareSectionTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNotePlanOfCareSectionTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNotePlanOfCareSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -428,55 +322,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* PlanOfCareSection */ 
+				/* PlanOfCareSection */
 				PlanOfCareSection section =
-				
-				ConsolFactory.eINSTANCE.createPlanOfCareSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createPlanOfCareSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNotePlanOfCareSection(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -484,7 +342,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNotePlanOfCareSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -527,10 +385,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNotePhysicalExamSection() {
-			OperationsTestCase<ConsultationNote> validateConsultationNotePhysicalExamSectionTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNotePhysicalExamSectionTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNotePhysicalExamSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_PHYSICAL_EXAM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_PHYSICAL_EXAM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -540,55 +398,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* PhysicalExamSection */ 
+				/* PhysicalExamSection */
 				PhysicalExamSection section =
-				
-				ConsolFactory.eINSTANCE.createPhysicalExamSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createPhysicalExamSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNotePhysicalExamSection(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -596,7 +418,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNotePhysicalExamSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -604,10 +426,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteReasonForReferralSection() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteReasonForReferralSectionTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteReasonForReferralSectionTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteReasonForReferralSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_REASON_FOR_REFERRAL_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_REASON_FOR_REFERRAL_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -617,55 +439,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ReasonForReferralSection */ 
+				/* ReasonForReferralSection */
 				ReasonForReferralSection section =
-				
-				ConsolFactory.eINSTANCE.createReasonForReferralSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createReasonForReferralSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteReasonForReferralSection(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -673,7 +459,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteReasonForReferralSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -681,10 +467,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteReasonForVisitSection() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteReasonForVisitSectionTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteReasonForVisitSectionTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteReasonForVisitSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -694,55 +480,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ReasonForVisitSection */ 
+				/* ReasonForVisitSection */
 				ReasonForVisitSection section =
-				
-				ConsolFactory.eINSTANCE.createReasonForVisitSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createReasonForVisitSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteReasonForVisitSection(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -750,7 +500,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteReasonForVisitSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -758,10 +508,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteAllergiesSection() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteAllergiesSectionTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteAllergiesSectionTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteAllergiesSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_ALLERGIES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_ALLERGIES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -771,55 +521,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* AllergiesSection */ 
+				/* AllergiesSection */
 				AllergiesSection section =
-				
-				ConsolFactory.eINSTANCE.createAllergiesSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createAllergiesSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteAllergiesSection(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -827,7 +541,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteAllergiesSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -835,10 +549,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteChiefComplaintSection() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteChiefComplaintSectionTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteChiefComplaintSectionTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteChiefComplaintSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_CHIEF_COMPLAINT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_CHIEF_COMPLAINT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -848,55 +562,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ChiefComplaintSection */ 
+				/* ChiefComplaintSection */
 				ChiefComplaintSection section =
-				
-				ConsolFactory.eINSTANCE.createChiefComplaintSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createChiefComplaintSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteChiefComplaintSection(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -904,7 +582,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteChiefComplaintSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -912,10 +590,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteChiefComplaintAndReasonForVisitSection() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteChiefComplaintAndReasonForVisitSectionTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteChiefComplaintAndReasonForVisitSectionTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteChiefComplaintAndReasonForVisitSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -925,55 +603,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ChiefComplaintAndReasonForVisitSection */ 
+				/* ChiefComplaintAndReasonForVisitSection */
 				ChiefComplaintAndReasonForVisitSection section =
-				
-				ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteChiefComplaintAndReasonForVisitSection(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -981,7 +623,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteChiefComplaintAndReasonForVisitSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -989,10 +631,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteFamilyHistorySection() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteFamilyHistorySectionTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteFamilyHistorySectionTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteFamilyHistorySection",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_FAMILY_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_FAMILY_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -1002,55 +644,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* FamilyHistorySection */ 
+				/* FamilyHistorySection */
 				FamilyHistorySection section =
-				
-				ConsolFactory.eINSTANCE.createFamilyHistorySection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createFamilyHistorySection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteFamilyHistorySection(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -1058,7 +664,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteFamilyHistorySectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1066,10 +672,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteGeneralStatusSection() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteGeneralStatusSectionTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteGeneralStatusSectionTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteGeneralStatusSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_GENERAL_STATUS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_GENERAL_STATUS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -1079,55 +685,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* GeneralStatusSection */ 
+				/* GeneralStatusSection */
 				GeneralStatusSection section =
-				
-				ConsolFactory.eINSTANCE.createGeneralStatusSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createGeneralStatusSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteGeneralStatusSection(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -1135,7 +705,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteGeneralStatusSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1143,10 +713,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteHistoryOfPastIllnessSection() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteHistoryOfPastIllnessSectionTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteHistoryOfPastIllnessSectionTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteHistoryOfPastIllnessSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_HISTORY_OF_PAST_ILLNESS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_HISTORY_OF_PAST_ILLNESS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -1156,55 +726,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* HistoryOfPastIllnessSection */ 
+				/* HistoryOfPastIllnessSection */
 				HistoryOfPastIllnessSection section =
-				
-				ConsolFactory.eINSTANCE.createHistoryOfPastIllnessSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createHistoryOfPastIllnessSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteHistoryOfPastIllnessSection(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -1212,7 +746,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteHistoryOfPastIllnessSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1220,10 +754,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteImmunizationsSection() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteImmunizationsSectionTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteImmunizationsSectionTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteImmunizationsSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_IMMUNIZATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_IMMUNIZATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -1233,55 +767,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ImmunizationsSection */ 
+				/* ImmunizationsSection */
 				ImmunizationsSection section =
-				
-				ConsolFactory.eINSTANCE.createImmunizationsSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createImmunizationsSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteImmunizationsSection(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -1289,7 +787,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteImmunizationsSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1297,10 +795,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteMedicationsSectionEntriesOptional() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteMedicationsSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteMedicationsSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteMedicationsSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -1310,55 +808,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* MedicationsSectionEntriesOptional */ 
+				/* MedicationsSectionEntriesOptional */
 				MedicationsSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createMedicationsSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createMedicationsSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteMedicationsSectionEntriesOptional(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -1366,7 +828,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteMedicationsSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1374,10 +836,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteProblemSectionEntriesOptional() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteProblemSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteProblemSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteProblemSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_PROBLEM_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_PROBLEM_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -1387,55 +849,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ProblemSectionEntriesOptional */ 
+				/* ProblemSectionEntriesOptional */
 				ProblemSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createProblemSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createProblemSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteProblemSectionEntriesOptional(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -1443,7 +869,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteProblemSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1451,10 +877,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteProceduresSectionEntriesOptional() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteProceduresSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteProceduresSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteProceduresSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_PROCEDURES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_PROCEDURES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -1464,55 +890,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ProceduresSectionEntriesOptional */ 
+				/* ProceduresSectionEntriesOptional */
 				ProceduresSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createProceduresSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createProceduresSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteProceduresSectionEntriesOptional(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -1520,7 +910,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteProceduresSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1528,10 +918,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteResultsSectionEntriesOptional() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteResultsSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteResultsSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteResultsSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_RESULTS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_RESULTS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -1541,55 +931,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ResultsSectionEntriesOptional */ 
+				/* ResultsSectionEntriesOptional */
 				ResultsSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createResultsSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createResultsSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteResultsSectionEntriesOptional(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -1597,7 +951,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteResultsSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1605,10 +959,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteReviewOfSystemsSection() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteReviewOfSystemsSectionTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteReviewOfSystemsSectionTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteReviewOfSystemsSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_REVIEW_OF_SYSTEMS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_REVIEW_OF_SYSTEMS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -1618,55 +972,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ReviewOfSystemsSection */ 
+				/* ReviewOfSystemsSection */
 				ReviewOfSystemsSection section =
-				
-				ConsolFactory.eINSTANCE.createReviewOfSystemsSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createReviewOfSystemsSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteReviewOfSystemsSection(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -1674,7 +992,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteReviewOfSystemsSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1682,10 +1000,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteSocialHistorySection() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteSocialHistorySectionTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteSocialHistorySectionTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteSocialHistorySection",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -1695,55 +1013,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* SocialHistorySection */ 
+				/* SocialHistorySection */
 				SocialHistorySection section =
-				
-				ConsolFactory.eINSTANCE.createSocialHistorySection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createSocialHistorySection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteSocialHistorySection(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -1751,7 +1033,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteSocialHistorySectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1759,10 +1041,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateConsultationNoteVitalSignsSectionEntriesOptional() {
-			OperationsTestCase<ConsultationNote> validateConsultationNoteVitalSignsSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationNote>(
+		OperationsTestCase<ConsultationNote> validateConsultationNoteVitalSignsSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationNote>(
 			"validateConsultationNoteVitalSignsSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_VITAL_SIGNS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_NOTE_VITAL_SIGNS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationNote target) {
@@ -1772,55 +1054,19 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* VitalSignsSectionEntriesOptional */ 
+				/* VitalSignsSectionEntriesOptional */
 				VitalSignsSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createVitalSignsSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createVitalSignsSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ConsultationNoteOperations.validateConsultationNoteVitalSignsSectionEntriesOptional(
 					(ConsultationNote) objectToTest, diagnostician, map);
 			}
@@ -1828,7 +1074,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 		};
 
 		validateConsultationNoteVitalSignsSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -2299,13 +1545,10 @@ public class ConsultationNoteTest extends CDAValidationTest {
 	@Test
 	public void testGetAssessmentSection() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getAssessmentSection();
 
-ConsultationNote target = objectFactory.create();
-target.getAssessmentSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2314,13 +1557,10 @@ target.getAssessmentSection();
 	@Test
 	public void testGetAssessmentAndPlanSection() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getAssessmentAndPlanSection();
 
-ConsultationNote target = objectFactory.create();
-target.getAssessmentAndPlanSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2329,13 +1569,10 @@ target.getAssessmentAndPlanSection();
 	@Test
 	public void testGetPlanOfCareSection() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getPlanOfCareSection();
 
-ConsultationNote target = objectFactory.create();
-target.getPlanOfCareSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2344,13 +1581,10 @@ target.getPlanOfCareSection();
 	@Test
 	public void testGetHistoryOfPresentIllness() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getHistoryOfPresentIllness();
 
-ConsultationNote target = objectFactory.create();
-target.getHistoryOfPresentIllness();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2359,13 +1593,10 @@ target.getHistoryOfPresentIllness();
 	@Test
 	public void testGetPhysicalExamSection() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getPhysicalExamSection();
 
-ConsultationNote target = objectFactory.create();
-target.getPhysicalExamSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2374,13 +1605,10 @@ target.getPhysicalExamSection();
 	@Test
 	public void testGetReasonForReferralSection() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getReasonForReferralSection();
 
-ConsultationNote target = objectFactory.create();
-target.getReasonForReferralSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2389,13 +1617,10 @@ target.getReasonForReferralSection();
 	@Test
 	public void testGetReasonForVisitSection() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getReasonForVisitSection();
 
-ConsultationNote target = objectFactory.create();
-target.getReasonForVisitSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2404,13 +1629,10 @@ target.getReasonForVisitSection();
 	@Test
 	public void testGetAllergiesSection() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getAllergiesSection();
 
-ConsultationNote target = objectFactory.create();
-target.getAllergiesSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2419,13 +1641,10 @@ target.getAllergiesSection();
 	@Test
 	public void testGetChiefComplaintSection() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getChiefComplaintSection();
 
-ConsultationNote target = objectFactory.create();
-target.getChiefComplaintSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2434,13 +1653,10 @@ target.getChiefComplaintSection();
 	@Test
 	public void testGetChiefComplaintAndReasonForVisitSection() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getChiefComplaintAndReasonForVisitSection();
 
-ConsultationNote target = objectFactory.create();
-target.getChiefComplaintAndReasonForVisitSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2449,13 +1665,10 @@ target.getChiefComplaintAndReasonForVisitSection();
 	@Test
 	public void testGetFamilyHistorySection() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getFamilyHistorySection();
 
-ConsultationNote target = objectFactory.create();
-target.getFamilyHistorySection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2464,13 +1677,10 @@ target.getFamilyHistorySection();
 	@Test
 	public void testGetGeneralStatusSection() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getGeneralStatusSection();
 
-ConsultationNote target = objectFactory.create();
-target.getGeneralStatusSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2479,13 +1689,10 @@ target.getGeneralStatusSection();
 	@Test
 	public void testGetHistoryOfPastIllnessSection() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getHistoryOfPastIllnessSection();
 
-ConsultationNote target = objectFactory.create();
-target.getHistoryOfPastIllnessSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2494,13 +1701,10 @@ target.getHistoryOfPastIllnessSection();
 	@Test
 	public void testGetImmunizationsSection() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getImmunizationsSection();
 
-ConsultationNote target = objectFactory.create();
-target.getImmunizationsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2509,13 +1713,10 @@ target.getImmunizationsSection();
 	@Test
 	public void testGetMedicationsSectionEntriesOptional() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getMedicationsSectionEntriesOptional();
 
-ConsultationNote target = objectFactory.create();
-target.getMedicationsSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2524,13 +1725,10 @@ target.getMedicationsSectionEntriesOptional();
 	@Test
 	public void testGetProblemSectionEntriesOptional() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getProblemSectionEntriesOptional();
 
-ConsultationNote target = objectFactory.create();
-target.getProblemSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2539,13 +1737,10 @@ target.getProblemSectionEntriesOptional();
 	@Test
 	public void testGetProceduresSectionEntriesOptional() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getProceduresSectionEntriesOptional();
 
-ConsultationNote target = objectFactory.create();
-target.getProceduresSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2554,13 +1749,10 @@ target.getProceduresSectionEntriesOptional();
 	@Test
 	public void testGetResultsSectionEntriesOptional() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getResultsSectionEntriesOptional();
 
-ConsultationNote target = objectFactory.create();
-target.getResultsSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2569,13 +1761,10 @@ target.getResultsSectionEntriesOptional();
 	@Test
 	public void testGetReviewOfSystemsSection() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getReviewOfSystemsSection();
 
-ConsultationNote target = objectFactory.create();
-target.getReviewOfSystemsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2584,13 +1773,10 @@ target.getReviewOfSystemsSection();
 	@Test
 	public void testGetSocialHistorySection() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getSocialHistorySection();
 
-ConsultationNote target = objectFactory.create();
-target.getSocialHistorySection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2599,13 +1785,10 @@ target.getSocialHistorySection();
 	@Test
 	public void testGetVitalSignsSectionEntriesOptional() {
 
+		ConsultationNote target = objectFactory.create();
+		target.getVitalSignsSectionEntriesOptional();
 
-ConsultationNote target = objectFactory.create();
-target.getVitalSignsSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2696,8 +1879,8 @@ target.getVitalSignsSectionEntriesOptional();
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -2705,7 +1888,7 @@ target.getVitalSignsSectionEntriesOptional();
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

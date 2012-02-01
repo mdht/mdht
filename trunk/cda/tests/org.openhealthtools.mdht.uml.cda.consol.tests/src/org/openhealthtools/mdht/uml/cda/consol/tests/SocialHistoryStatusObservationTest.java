@@ -49,10 +49,10 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSocialHistoryStatusObservationNoAdditionalParticipants() {
-			OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationNoAdditionalParticipantsTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
+		OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationNoAdditionalParticipantsTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
 			"validateSocialHistoryStatusObservationNoAdditionalParticipants",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_NO_ADDITIONAL_PARTICIPANTS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_NO_ADDITIONAL_PARTICIPANTS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SocialHistoryStatusObservation target) {
@@ -62,46 +62,12 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistoryStatusObservation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return SocialHistoryStatusObservationOperations.validateSocialHistoryStatusObservationNoAdditionalParticipants(
 					(SocialHistoryStatusObservation) objectToTest, diagnostician, map);
 			}
@@ -109,7 +75,7 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 		};
 
 		validateSocialHistoryStatusObservationNoAdditionalParticipantsTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -117,10 +83,10 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSocialHistoryStatusObservationNoAdditionalRelationships() {
-			OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationNoAdditionalRelationshipsTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
+		OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationNoAdditionalRelationshipsTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
 			"validateSocialHistoryStatusObservationNoAdditionalRelationships",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_NO_ADDITIONAL_RELATIONSHIPS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_NO_ADDITIONAL_RELATIONSHIPS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SocialHistoryStatusObservation target) {
@@ -130,46 +96,12 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistoryStatusObservation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return SocialHistoryStatusObservationOperations.validateSocialHistoryStatusObservationNoAdditionalRelationships(
 					(SocialHistoryStatusObservation) objectToTest, diagnostician, map);
 			}
@@ -177,7 +109,7 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 		};
 
 		validateSocialHistoryStatusObservationNoAdditionalRelationshipsTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -185,10 +117,10 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSocialHistoryStatusObservationTemplateId() {
-			OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationTemplateIdTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
+		OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationTemplateIdTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
 			"validateSocialHistoryStatusObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SocialHistoryStatusObservation target) {
@@ -198,46 +130,12 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistoryStatusObservation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return SocialHistoryStatusObservationOperations.validateSocialHistoryStatusObservationTemplateId(
 					(SocialHistoryStatusObservation) objectToTest, diagnostician, map);
 			}
@@ -245,7 +143,7 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 		};
 
 		validateSocialHistoryStatusObservationTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -253,10 +151,10 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSocialHistoryStatusObservationClassCode() {
-			OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationClassCodeTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
+		OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationClassCodeTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
 			"validateSocialHistoryStatusObservationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SocialHistoryStatusObservation target) {
@@ -266,46 +164,12 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistoryStatusObservation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return SocialHistoryStatusObservationOperations.validateSocialHistoryStatusObservationClassCode(
 					(SocialHistoryStatusObservation) objectToTest, diagnostician, map);
 			}
@@ -313,7 +177,7 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 		};
 
 		validateSocialHistoryStatusObservationClassCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -321,10 +185,10 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSocialHistoryStatusObservationMoodCode() {
-			OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationMoodCodeTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
+		OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationMoodCodeTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
 			"validateSocialHistoryStatusObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SocialHistoryStatusObservation target) {
@@ -334,46 +198,12 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistoryStatusObservation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return SocialHistoryStatusObservationOperations.validateSocialHistoryStatusObservationMoodCode(
 					(SocialHistoryStatusObservation) objectToTest, diagnostician, map);
 			}
@@ -381,7 +211,7 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 		};
 
 		validateSocialHistoryStatusObservationMoodCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -389,10 +219,10 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSocialHistoryStatusObservationCode() {
-			OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationCodeTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
+		OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationCodeTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
 			"validateSocialHistoryStatusObservationCode",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SocialHistoryStatusObservation target) {
@@ -402,49 +232,15 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistoryStatusObservation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-			
-				CD cd  = DatatypesFactory.eINSTANCE.createCD();
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				target.setCode(cd);
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return SocialHistoryStatusObservationOperations.validateSocialHistoryStatusObservationCode(
 					(SocialHistoryStatusObservation) objectToTest, diagnostician, map);
 			}
@@ -452,7 +248,7 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 		};
 
 		validateSocialHistoryStatusObservationCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -460,10 +256,10 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSocialHistoryStatusObservationStatusCode() {
-			OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationStatusCodeTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
+		OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationStatusCodeTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
 			"validateSocialHistoryStatusObservationStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SocialHistoryStatusObservation target) {
@@ -473,49 +269,15 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistoryStatusObservation target) {
 				target.init();
-				
-				
-				
-				
-			
+
 				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
 				target.setStatusCode(cs);
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return SocialHistoryStatusObservationOperations.validateSocialHistoryStatusObservationStatusCode(
 					(SocialHistoryStatusObservation) objectToTest, diagnostician, map);
 			}
@@ -523,7 +285,7 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 		};
 
 		validateSocialHistoryStatusObservationStatusCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -531,10 +293,10 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSocialHistoryStatusObservationValue() {
-			OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationValueTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
+		OperationsTestCase<SocialHistoryStatusObservation> validateSocialHistoryStatusObservationValueTestCase = new OperationsTestCase<SocialHistoryStatusObservation>(
 			"validateSocialHistoryStatusObservationValue",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_STATUS_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SocialHistoryStatusObservation target) {
@@ -544,49 +306,15 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistoryStatusObservation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-			
 				CD value = DatatypesFactory.eINSTANCE.createCD();
 				target.getValues().add(value);
-				
 
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return SocialHistoryStatusObservationOperations.validateSocialHistoryStatusObservationValue(
 					(SocialHistoryStatusObservation) objectToTest, diagnostician, map);
 			}
@@ -594,7 +322,7 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 		};
 
 		validateSocialHistoryStatusObservationValueTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -649,8 +377,8 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -658,7 +386,7 @@ public class SocialHistoryStatusObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

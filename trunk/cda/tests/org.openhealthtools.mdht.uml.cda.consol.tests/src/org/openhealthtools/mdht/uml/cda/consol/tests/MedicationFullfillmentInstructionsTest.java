@@ -45,10 +45,10 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationFullfillmentInstructionsMoodCode() {
-			OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsMoodCodeTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
+		OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsMoodCodeTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
 			"validateMedicationFullfillmentInstructionsMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicationFullfillmentInstructions target) {
@@ -58,46 +58,12 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationFullfillmentInstructions target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return MedicationFullfillmentInstructionsOperations.validateMedicationFullfillmentInstructionsMoodCode(
 					(MedicationFullfillmentInstructions) objectToTest, diagnostician, map);
 			}
@@ -105,7 +71,7 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 		};
 
 		validateMedicationFullfillmentInstructionsMoodCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -113,10 +79,10 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationFullfillmentInstructionsCode() {
-			OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsCodeTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
+		OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsCodeTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
 			"validateMedicationFullfillmentInstructionsCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicationFullfillmentInstructions target) {
@@ -126,46 +92,12 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationFullfillmentInstructions target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return MedicationFullfillmentInstructionsOperations.validateMedicationFullfillmentInstructionsCode(
 					(MedicationFullfillmentInstructions) objectToTest, diagnostician, map);
 			}
@@ -173,7 +105,7 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 		};
 
 		validateMedicationFullfillmentInstructionsCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -181,10 +113,10 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationFullfillmentInstructionsText() {
-			OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsTextTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
+		OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsTextTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
 			"validateMedicationFullfillmentInstructionsText",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicationFullfillmentInstructions target) {
@@ -194,48 +126,15 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationFullfillmentInstructions target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
 
-	
-			
-
-	
-		
-		
-			
-		ED text = DatatypesFactory.eINSTANCE.createED();
-		target.setText(text );	
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return MedicationFullfillmentInstructionsOperations.validateMedicationFullfillmentInstructionsText(
 					(MedicationFullfillmentInstructions) objectToTest, diagnostician, map);
 			}
@@ -243,7 +142,7 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 		};
 
 		validateMedicationFullfillmentInstructionsTextTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -251,10 +150,10 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationFullfillmentInstructionsStatusCode() {
-			OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsStatusCodeTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
+		OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsStatusCodeTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
 			"validateMedicationFullfillmentInstructionsStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicationFullfillmentInstructions target) {
@@ -264,49 +163,15 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationFullfillmentInstructions target) {
 				target.init();
-				
-				
-				
-				
-			
+
 				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
 				target.setStatusCode(cs);
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return MedicationFullfillmentInstructionsOperations.validateMedicationFullfillmentInstructionsStatusCode(
 					(MedicationFullfillmentInstructions) objectToTest, diagnostician, map);
 			}
@@ -314,7 +179,7 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 		};
 
 		validateMedicationFullfillmentInstructionsStatusCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -369,8 +234,8 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -378,7 +243,7 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

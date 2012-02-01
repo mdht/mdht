@@ -40,10 +40,10 @@ public class ScanOriginalAuthorTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateScanOriginalAuthorHasAssignedAuthorId() {
-			OperationsTestCase<ScanOriginalAuthor> validateScanOriginalAuthorHasAssignedAuthorIdTestCase = new OperationsTestCase<ScanOriginalAuthor>(
+		OperationsTestCase<ScanOriginalAuthor> validateScanOriginalAuthorHasAssignedAuthorIdTestCase = new OperationsTestCase<ScanOriginalAuthor>(
 			"validateScanOriginalAuthorHasAssignedAuthorId",
-			operationsForOCL.getOCLValue("VALIDATE_SCAN_ORIGINAL_AUTHOR_HAS_ASSIGNED_AUTHOR_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SCAN_ORIGINAL_AUTHOR_HAS_ASSIGNED_AUTHOR_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanOriginalAuthor target) {
@@ -53,46 +53,12 @@ public class ScanOriginalAuthorTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ScanOriginalAuthor target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ScanOriginalAuthorOperations.validateScanOriginalAuthorHasAssignedAuthorId(
 					(ScanOriginalAuthor) objectToTest, diagnostician, map);
 			}
@@ -100,7 +66,7 @@ public class ScanOriginalAuthorTest extends CDAValidationTest {
 		};
 
 		validateScanOriginalAuthorHasAssignedAuthorIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -108,10 +74,10 @@ public class ScanOriginalAuthorTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateScanOriginalAuthorHasAssignedAuthorRepresentedOrganizationId() {
-			OperationsTestCase<ScanOriginalAuthor> validateScanOriginalAuthorHasAssignedAuthorRepresentedOrganizationIdTestCase = new OperationsTestCase<ScanOriginalAuthor>(
+		OperationsTestCase<ScanOriginalAuthor> validateScanOriginalAuthorHasAssignedAuthorRepresentedOrganizationIdTestCase = new OperationsTestCase<ScanOriginalAuthor>(
 			"validateScanOriginalAuthorHasAssignedAuthorRepresentedOrganizationId",
-			operationsForOCL.getOCLValue("VALIDATE_SCAN_ORIGINAL_AUTHOR_HAS_ASSIGNED_AUTHOR_REPRESENTED_ORGANIZATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SCAN_ORIGINAL_AUTHOR_HAS_ASSIGNED_AUTHOR_REPRESENTED_ORGANIZATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ScanOriginalAuthor target) {
@@ -121,46 +87,12 @@ public class ScanOriginalAuthorTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ScanOriginalAuthor target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ScanOriginalAuthorOperations.validateScanOriginalAuthorHasAssignedAuthorRepresentedOrganizationId(
 					(ScanOriginalAuthor) objectToTest, diagnostician, map);
 			}
@@ -168,7 +100,7 @@ public class ScanOriginalAuthorTest extends CDAValidationTest {
 		};
 
 		validateScanOriginalAuthorHasAssignedAuthorRepresentedOrganizationIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -223,8 +155,8 @@ public class ScanOriginalAuthorTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -232,7 +164,7 @@ public class ScanOriginalAuthorTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

@@ -114,10 +114,10 @@ public class ProceduresSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProceduresSectionEntriesOptionalTemplateId() {
-			OperationsTestCase<ProceduresSection> validateProceduresSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<ProceduresSection>(
+		OperationsTestCase<ProceduresSection> validateProceduresSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<ProceduresSection>(
 			"validateProceduresSectionEntriesOptionalTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURES_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURES_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProceduresSection target) {
@@ -127,46 +127,12 @@ public class ProceduresSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProceduresSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProceduresSectionOperations.validateProceduresSectionEntriesOptionalTemplateId(
 					(ProceduresSection) objectToTest, diagnostician, map);
 			}
@@ -174,7 +140,7 @@ public class ProceduresSectionTest extends CDAValidationTest {
 		};
 
 		validateProceduresSectionEntriesOptionalTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -229,8 +195,8 @@ public class ProceduresSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -238,7 +204,7 @@ public class ProceduresSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

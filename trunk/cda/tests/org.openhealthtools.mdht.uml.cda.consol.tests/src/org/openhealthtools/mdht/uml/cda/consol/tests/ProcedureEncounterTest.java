@@ -42,10 +42,10 @@ public class ProcedureEncounterTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureEncounterClassCode() {
-			OperationsTestCase<ProcedureEncounter> validateProcedureEncounterClassCodeTestCase = new OperationsTestCase<ProcedureEncounter>(
+		OperationsTestCase<ProcedureEncounter> validateProcedureEncounterClassCodeTestCase = new OperationsTestCase<ProcedureEncounter>(
 			"validateProcedureEncounterClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENCOUNTER_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENCOUNTER_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureEncounter target) {
@@ -55,46 +55,12 @@ public class ProcedureEncounterTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureEncounter target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProcedureEncounterOperations.validateProcedureEncounterClassCode(
 					(ProcedureEncounter) objectToTest, diagnostician, map);
 			}
@@ -102,7 +68,7 @@ public class ProcedureEncounterTest extends CDAValidationTest {
 		};
 
 		validateProcedureEncounterClassCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -110,10 +76,10 @@ public class ProcedureEncounterTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureEncounterMoodCode() {
-			OperationsTestCase<ProcedureEncounter> validateProcedureEncounterMoodCodeTestCase = new OperationsTestCase<ProcedureEncounter>(
+		OperationsTestCase<ProcedureEncounter> validateProcedureEncounterMoodCodeTestCase = new OperationsTestCase<ProcedureEncounter>(
 			"validateProcedureEncounterMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENCOUNTER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ENCOUNTER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureEncounter target) {
@@ -123,46 +89,12 @@ public class ProcedureEncounterTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureEncounter target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProcedureEncounterOperations.validateProcedureEncounterMoodCode(
 					(ProcedureEncounter) objectToTest, diagnostician, map);
 			}
@@ -170,7 +102,7 @@ public class ProcedureEncounterTest extends CDAValidationTest {
 		};
 
 		validateProcedureEncounterMoodCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -259,8 +191,8 @@ public class ProcedureEncounterTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -268,7 +200,7 @@ public class ProcedureEncounterTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

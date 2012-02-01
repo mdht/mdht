@@ -42,10 +42,10 @@ public class DICOMObjectCatalogSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDICOMObjectCatalogSectionTemplateId() {
-			OperationsTestCase<DICOMObjectCatalogSection> validateDICOMObjectCatalogSectionTemplateIdTestCase = new OperationsTestCase<DICOMObjectCatalogSection>(
+		OperationsTestCase<DICOMObjectCatalogSection> validateDICOMObjectCatalogSectionTemplateIdTestCase = new OperationsTestCase<DICOMObjectCatalogSection>(
 			"validateDICOMObjectCatalogSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_DICOM_OBJECT_CATALOG_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DICOM_OBJECT_CATALOG_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DICOMObjectCatalogSection target) {
@@ -55,46 +55,12 @@ public class DICOMObjectCatalogSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DICOMObjectCatalogSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DICOMObjectCatalogSectionOperations.validateDICOMObjectCatalogSectionTemplateId(
 					(DICOMObjectCatalogSection) objectToTest, diagnostician, map);
 			}
@@ -102,7 +68,7 @@ public class DICOMObjectCatalogSectionTest extends CDAValidationTest {
 		};
 
 		validateDICOMObjectCatalogSectionTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -110,10 +76,10 @@ public class DICOMObjectCatalogSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDICOMObjectCatalogSectionCode() {
-			OperationsTestCase<DICOMObjectCatalogSection> validateDICOMObjectCatalogSectionCodeTestCase = new OperationsTestCase<DICOMObjectCatalogSection>(
+		OperationsTestCase<DICOMObjectCatalogSection> validateDICOMObjectCatalogSectionCodeTestCase = new OperationsTestCase<DICOMObjectCatalogSection>(
 			"validateDICOMObjectCatalogSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_DICOM_OBJECT_CATALOG_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DICOM_OBJECT_CATALOG_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DICOMObjectCatalogSection target) {
@@ -123,46 +89,12 @@ public class DICOMObjectCatalogSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DICOMObjectCatalogSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DICOMObjectCatalogSectionOperations.validateDICOMObjectCatalogSectionCode(
 					(DICOMObjectCatalogSection) objectToTest, diagnostician, map);
 			}
@@ -170,7 +102,7 @@ public class DICOMObjectCatalogSectionTest extends CDAValidationTest {
 		};
 
 		validateDICOMObjectCatalogSectionCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -178,10 +110,10 @@ public class DICOMObjectCatalogSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDICOMObjectCatalogSectionStudyAct() {
-			OperationsTestCase<DICOMObjectCatalogSection> validateDICOMObjectCatalogSectionStudyActTestCase = new OperationsTestCase<DICOMObjectCatalogSection>(
+		OperationsTestCase<DICOMObjectCatalogSection> validateDICOMObjectCatalogSectionStudyActTestCase = new OperationsTestCase<DICOMObjectCatalogSection>(
 			"validateDICOMObjectCatalogSectionStudyAct",
-			operationsForOCL.getOCLValue("VALIDATE_DICOM_OBJECT_CATALOG_SECTION_STUDY_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DICOM_OBJECT_CATALOG_SECTION_STUDY_ACT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DICOMObjectCatalogSection target) {
@@ -191,46 +123,12 @@ public class DICOMObjectCatalogSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DICOMObjectCatalogSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DICOMObjectCatalogSectionOperations.validateDICOMObjectCatalogSectionStudyAct(
 					(DICOMObjectCatalogSection) objectToTest, diagnostician, map);
 			}
@@ -238,7 +136,7 @@ public class DICOMObjectCatalogSectionTest extends CDAValidationTest {
 		};
 
 		validateDICOMObjectCatalogSectionStudyActTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -247,13 +145,10 @@ public class DICOMObjectCatalogSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetStudyAct() {
 
+		DICOMObjectCatalogSection target = objectFactory.create();
+		target.getStudyAct();
 
-DICOMObjectCatalogSection target = objectFactory.create();
-target.getStudyAct();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -308,8 +203,8 @@ target.getStudyAct();
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -317,7 +212,7 @@ target.getStudyAct();
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

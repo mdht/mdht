@@ -51,10 +51,10 @@ public class BoundaryObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateBoundaryObservationTemplateId() {
-			OperationsTestCase<BoundaryObservation> validateBoundaryObservationTemplateIdTestCase = new OperationsTestCase<BoundaryObservation>(
+		OperationsTestCase<BoundaryObservation> validateBoundaryObservationTemplateIdTestCase = new OperationsTestCase<BoundaryObservation>(
 			"validateBoundaryObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_BOUNDARY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_BOUNDARY_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(BoundaryObservation target) {
@@ -64,46 +64,12 @@ public class BoundaryObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(BoundaryObservation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return BoundaryObservationOperations.validateBoundaryObservationTemplateId(
 					(BoundaryObservation) objectToTest, diagnostician, map);
 			}
@@ -111,7 +77,7 @@ public class BoundaryObservationTest extends CDAValidationTest {
 		};
 
 		validateBoundaryObservationTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -119,10 +85,10 @@ public class BoundaryObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateBoundaryObservationClassCode() {
-			OperationsTestCase<BoundaryObservation> validateBoundaryObservationClassCodeTestCase = new OperationsTestCase<BoundaryObservation>(
+		OperationsTestCase<BoundaryObservation> validateBoundaryObservationClassCodeTestCase = new OperationsTestCase<BoundaryObservation>(
 			"validateBoundaryObservationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_BOUNDARY_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_BOUNDARY_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(BoundaryObservation target) {
@@ -132,46 +98,12 @@ public class BoundaryObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(BoundaryObservation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return BoundaryObservationOperations.validateBoundaryObservationClassCode(
 					(BoundaryObservation) objectToTest, diagnostician, map);
 			}
@@ -179,7 +111,7 @@ public class BoundaryObservationTest extends CDAValidationTest {
 		};
 
 		validateBoundaryObservationClassCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -187,10 +119,10 @@ public class BoundaryObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateBoundaryObservationCode() {
-			OperationsTestCase<BoundaryObservation> validateBoundaryObservationCodeTestCase = new OperationsTestCase<BoundaryObservation>(
+		OperationsTestCase<BoundaryObservation> validateBoundaryObservationCodeTestCase = new OperationsTestCase<BoundaryObservation>(
 			"validateBoundaryObservationCode",
-			operationsForOCL.getOCLValue("VALIDATE_BOUNDARY_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_BOUNDARY_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(BoundaryObservation target) {
@@ -200,49 +132,15 @@ public class BoundaryObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(BoundaryObservation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-			
-				CD cd  = DatatypesFactory.eINSTANCE.createCD();
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
 				target.setCode(cd);
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return BoundaryObservationOperations.validateBoundaryObservationCode(
 					(BoundaryObservation) objectToTest, diagnostician, map);
 			}
@@ -250,7 +148,7 @@ public class BoundaryObservationTest extends CDAValidationTest {
 		};
 
 		validateBoundaryObservationCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -258,10 +156,10 @@ public class BoundaryObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateBoundaryObservationMoodCode() {
-			OperationsTestCase<BoundaryObservation> validateBoundaryObservationMoodCodeTestCase = new OperationsTestCase<BoundaryObservation>(
+		OperationsTestCase<BoundaryObservation> validateBoundaryObservationMoodCodeTestCase = new OperationsTestCase<BoundaryObservation>(
 			"validateBoundaryObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_BOUNDARY_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_BOUNDARY_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(BoundaryObservation target) {
@@ -271,46 +169,12 @@ public class BoundaryObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(BoundaryObservation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return BoundaryObservationOperations.validateBoundaryObservationMoodCode(
 					(BoundaryObservation) objectToTest, diagnostician, map);
 			}
@@ -318,7 +182,7 @@ public class BoundaryObservationTest extends CDAValidationTest {
 		};
 
 		validateBoundaryObservationMoodCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -326,10 +190,10 @@ public class BoundaryObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateBoundaryObservationValue() {
-			OperationsTestCase<BoundaryObservation> validateBoundaryObservationValueTestCase = new OperationsTestCase<BoundaryObservation>(
+		OperationsTestCase<BoundaryObservation> validateBoundaryObservationValueTestCase = new OperationsTestCase<BoundaryObservation>(
 			"validateBoundaryObservationValue",
-			operationsForOCL.getOCLValue("VALIDATE_BOUNDARY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_BOUNDARY_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(BoundaryObservation target) {
@@ -339,49 +203,15 @@ public class BoundaryObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(BoundaryObservation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-			
 				CD value = DatatypesFactory.eINSTANCE.createCD();
 				target.getValues().add(value);
-				
 
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return BoundaryObservationOperations.validateBoundaryObservationValue(
 					(BoundaryObservation) objectToTest, diagnostician, map);
 			}
@@ -389,7 +219,7 @@ public class BoundaryObservationTest extends CDAValidationTest {
 		};
 
 		validateBoundaryObservationValueTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -444,8 +274,8 @@ public class BoundaryObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -453,7 +283,7 @@ public class BoundaryObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 
