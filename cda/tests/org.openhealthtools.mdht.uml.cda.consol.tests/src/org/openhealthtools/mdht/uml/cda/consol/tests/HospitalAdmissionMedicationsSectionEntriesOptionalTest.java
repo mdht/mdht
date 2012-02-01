@@ -186,7 +186,7 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication() {
@@ -197,12 +197,12 @@ public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends CDAV
 
 			@Override
 			protected void updateToFail(HospitalAdmissionMedicationsSectionEntriesOptional target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(HospitalAdmissionMedicationsSectionEntriesOptional target) {
-				target.init();
+				target.addAct(ConsolFactory.eINSTANCE.createAdmissionMedication().init());
 
 			}
 

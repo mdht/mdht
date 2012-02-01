@@ -15,6 +15,7 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.PolicySubscriber;
 import org.openhealthtools.mdht.uml.cda.consol.operations.PolicySubscriberOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +36,7 @@ public class PolicySubscriberTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicySubscriberId() {
@@ -46,13 +47,12 @@ public class PolicySubscriberTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PolicySubscriber target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PolicySubscriber target) {
-				target.init();
-
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 			}
 
 			@Override

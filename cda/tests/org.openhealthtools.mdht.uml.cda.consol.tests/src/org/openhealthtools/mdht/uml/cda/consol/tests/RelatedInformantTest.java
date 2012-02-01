@@ -9,17 +9,13 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.RelatedInformant;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.RelatedInformantOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,12 +48,12 @@ public class RelatedInformantTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(RelatedInformant target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(RelatedInformant target) {
-				target.init();
+				target.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
 
 			}
 
@@ -75,7 +71,7 @@ public class RelatedInformantTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateRelatedInformantCode() {
@@ -92,6 +88,7 @@ public class RelatedInformantTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(RelatedInformant target) {
 				target.init();
+				target.setCode(DatatypesFactory.eINSTANCE.createCE());
 
 			}
 
