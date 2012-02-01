@@ -1792,7 +1792,7 @@ public class ConsultationNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsCode() {
@@ -1809,6 +1809,8 @@ public class ConsultationNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ConsultationNote target) {
 				target.init();
+
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("", "2.16.840.1.113883.6.1"));
 
 			}
 

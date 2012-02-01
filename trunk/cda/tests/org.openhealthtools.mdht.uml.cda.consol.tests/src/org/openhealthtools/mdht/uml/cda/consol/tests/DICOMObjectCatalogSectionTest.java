@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.DICOMObjectCatalogSection;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.DICOMObjectCatalogSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -122,12 +117,12 @@ public class DICOMObjectCatalogSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(DICOMObjectCatalogSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(DICOMObjectCatalogSection target) {
-				target.init();
+				target.addAct(ConsolFactory.eINSTANCE.createStudyAct().init());
 
 			}
 
