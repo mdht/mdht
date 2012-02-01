@@ -106,7 +106,7 @@ public class DICOMObjectCatalogSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateDICOMObjectCatalogSectionStudyAct() {
@@ -123,6 +123,8 @@ public class DICOMObjectCatalogSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DICOMObjectCatalogSection target) {
 				target.init();
+
+				target.addAct(ConsolFactory.eINSTANCE.createStudyAct().init());
 
 			}
 
