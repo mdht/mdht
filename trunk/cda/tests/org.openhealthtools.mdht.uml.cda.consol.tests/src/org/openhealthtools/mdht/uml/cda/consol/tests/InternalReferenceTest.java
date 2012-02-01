@@ -40,10 +40,10 @@ public class InternalReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInternalReferenceId() {
-		OperationsTestCase<InternalReference> validateInternalReferenceIdTestCase = new OperationsTestCase<InternalReference>(
+			OperationsTestCase<InternalReference> validateInternalReferenceIdTestCase = new OperationsTestCase<InternalReference>(
 			"validateInternalReferenceId",
-			operationsForOCL.getOCLValue("VALIDATE_INTERNAL_REFERENCE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INTERNAL_REFERENCE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(InternalReference target) {
@@ -53,12 +53,46 @@ public class InternalReferenceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InternalReference target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return InternalReferenceOperations.validateInternalReferenceId(
 					(InternalReference) objectToTest, diagnostician, map);
 			}
@@ -66,7 +100,7 @@ public class InternalReferenceTest extends CDAValidationTest {
 		};
 
 		validateInternalReferenceIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -74,10 +108,10 @@ public class InternalReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateInternalReferenceCode() {
-		OperationsTestCase<InternalReference> validateInternalReferenceCodeTestCase = new OperationsTestCase<InternalReference>(
+			OperationsTestCase<InternalReference> validateInternalReferenceCodeTestCase = new OperationsTestCase<InternalReference>(
 			"validateInternalReferenceCode",
-			operationsForOCL.getOCLValue("VALIDATE_INTERNAL_REFERENCE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INTERNAL_REFERENCE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(InternalReference target) {
@@ -87,12 +121,46 @@ public class InternalReferenceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(InternalReference target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return InternalReferenceOperations.validateInternalReferenceCode(
 					(InternalReference) objectToTest, diagnostician, map);
 			}
@@ -100,7 +168,7 @@ public class InternalReferenceTest extends CDAValidationTest {
 		};
 
 		validateInternalReferenceCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -155,8 +223,8 @@ public class InternalReferenceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -164,7 +232,7 @@ public class InternalReferenceTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

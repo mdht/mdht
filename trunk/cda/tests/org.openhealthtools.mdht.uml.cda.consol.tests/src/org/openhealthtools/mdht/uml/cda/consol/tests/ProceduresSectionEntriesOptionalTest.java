@@ -49,10 +49,10 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProceduresSectionEntriesOptionalTemplateId() {
-		OperationsTestCase<ProceduresSectionEntriesOptional> validateProceduresSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<ProceduresSectionEntriesOptional>(
+			OperationsTestCase<ProceduresSectionEntriesOptional> validateProceduresSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<ProceduresSectionEntriesOptional>(
 			"validateProceduresSectionEntriesOptionalTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURES_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURES_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ProceduresSectionEntriesOptional target) {
@@ -62,12 +62,46 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProceduresSectionEntriesOptional target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ProceduresSectionEntriesOptionalOperations.validateProceduresSectionEntriesOptionalTemplateId(
 					(ProceduresSectionEntriesOptional) objectToTest, diagnostician, map);
 			}
@@ -75,7 +109,7 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 		};
 
 		validateProceduresSectionEntriesOptionalTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -83,10 +117,10 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProceduresSectionEntriesOptionalCode() {
-		OperationsTestCase<ProceduresSectionEntriesOptional> validateProceduresSectionEntriesOptionalCodeTestCase = new OperationsTestCase<ProceduresSectionEntriesOptional>(
+			OperationsTestCase<ProceduresSectionEntriesOptional> validateProceduresSectionEntriesOptionalCodeTestCase = new OperationsTestCase<ProceduresSectionEntriesOptional>(
 			"validateProceduresSectionEntriesOptionalCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURES_SECTION_ENTRIES_OPTIONAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURES_SECTION_ENTRIES_OPTIONAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ProceduresSectionEntriesOptional target) {
@@ -96,12 +130,46 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProceduresSectionEntriesOptional target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ProceduresSectionEntriesOptionalOperations.validateProceduresSectionEntriesOptionalCode(
 					(ProceduresSectionEntriesOptional) objectToTest, diagnostician, map);
 			}
@@ -109,7 +177,7 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 		};
 
 		validateProceduresSectionEntriesOptionalCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -256,10 +324,13 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 	@Test
 	public void testGetProcedureActivityProcedures() {
 
-		ProceduresSectionEntriesOptional target = objectFactory.create();
-		target.getProcedureActivityProcedures();
 
-	}
+ProceduresSectionEntriesOptional target = objectFactory.create();
+target.getProcedureActivityProcedures();
+
+
+
+}
 
 	/**
 	*
@@ -268,10 +339,13 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 	@Test
 	public void testGetProcedureAcivityObservations() {
 
-		ProceduresSectionEntriesOptional target = objectFactory.create();
-		target.getProcedureAcivityObservations();
 
-	}
+ProceduresSectionEntriesOptional target = objectFactory.create();
+target.getProcedureAcivityObservations();
+
+
+
+}
 
 	/**
 	*
@@ -280,10 +354,13 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 	@Test
 	public void testGetProcedureActivityActs() {
 
-		ProceduresSectionEntriesOptional target = objectFactory.create();
-		target.getProcedureActivityActs();
 
-	}
+ProceduresSectionEntriesOptional target = objectFactory.create();
+target.getProcedureActivityActs();
+
+
+
+}
 
 	/**
 	*
@@ -338,8 +415,8 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -347,7 +424,7 @@ public class ProceduresSectionEntriesOptionalTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

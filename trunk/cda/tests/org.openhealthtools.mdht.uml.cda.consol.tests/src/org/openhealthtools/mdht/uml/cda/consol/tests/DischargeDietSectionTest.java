@@ -46,10 +46,10 @@ public class DischargeDietSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeDietSectionTemplateId() {
-		OperationsTestCase<DischargeDietSection> validateDischargeDietSectionTemplateIdTestCase = new OperationsTestCase<DischargeDietSection>(
+			OperationsTestCase<DischargeDietSection> validateDischargeDietSectionTemplateIdTestCase = new OperationsTestCase<DischargeDietSection>(
 			"validateDischargeDietSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_DIET_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_DIET_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeDietSection target) {
@@ -59,12 +59,46 @@ public class DischargeDietSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeDietSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DischargeDietSectionOperations.validateDischargeDietSectionTemplateId(
 					(DischargeDietSection) objectToTest, diagnostician, map);
 			}
@@ -72,7 +106,7 @@ public class DischargeDietSectionTest extends CDAValidationTest {
 		};
 
 		validateDischargeDietSectionTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -80,10 +114,10 @@ public class DischargeDietSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeDietSectionCode() {
-		OperationsTestCase<DischargeDietSection> validateDischargeDietSectionCodeTestCase = new OperationsTestCase<DischargeDietSection>(
+			OperationsTestCase<DischargeDietSection> validateDischargeDietSectionCodeTestCase = new OperationsTestCase<DischargeDietSection>(
 			"validateDischargeDietSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_DIET_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_DIET_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeDietSection target) {
@@ -93,12 +127,46 @@ public class DischargeDietSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeDietSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DischargeDietSectionOperations.validateDischargeDietSectionCode(
 					(DischargeDietSection) objectToTest, diagnostician, map);
 			}
@@ -106,7 +174,7 @@ public class DischargeDietSectionTest extends CDAValidationTest {
 		};
 
 		validateDischargeDietSectionCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -114,10 +182,10 @@ public class DischargeDietSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeDietSectionTitle() {
-		OperationsTestCase<DischargeDietSection> validateDischargeDietSectionTitleTestCase = new OperationsTestCase<DischargeDietSection>(
+			OperationsTestCase<DischargeDietSection> validateDischargeDietSectionTitleTestCase = new OperationsTestCase<DischargeDietSection>(
 			"validateDischargeDietSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_DIET_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_DIET_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeDietSection target) {
@@ -127,15 +195,49 @@ public class DischargeDietSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeDietSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
+				
+				
 
+	
+		
+				ST  title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title );
+				
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DischargeDietSectionOperations.validateDischargeDietSectionTitle(
 					(DischargeDietSection) objectToTest, diagnostician, map);
 			}
@@ -143,7 +245,7 @@ public class DischargeDietSectionTest extends CDAValidationTest {
 		};
 
 		validateDischargeDietSectionTitleTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -151,10 +253,10 @@ public class DischargeDietSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeDietSectionText() {
-		OperationsTestCase<DischargeDietSection> validateDischargeDietSectionTextTestCase = new OperationsTestCase<DischargeDietSection>(
+			OperationsTestCase<DischargeDietSection> validateDischargeDietSectionTextTestCase = new OperationsTestCase<DischargeDietSection>(
 			"validateDischargeDietSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_DIET_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_DIET_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeDietSection target) {
@@ -164,15 +266,49 @@ public class DischargeDietSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeDietSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
 				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
-
+				target.setText(text );
+			
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DischargeDietSectionOperations.validateDischargeDietSectionText(
 					(DischargeDietSection) objectToTest, diagnostician, map);
 			}
@@ -180,7 +316,7 @@ public class DischargeDietSectionTest extends CDAValidationTest {
 		};
 
 		validateDischargeDietSectionTextTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -235,8 +371,8 @@ public class DischargeDietSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -244,7 +380,7 @@ public class DischargeDietSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

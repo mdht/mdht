@@ -48,10 +48,10 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePostprocedureDiagnosisSectionTemplateId() {
-		OperationsTestCase<PostprocedureDiagnosisSection> validatePostprocedureDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<PostprocedureDiagnosisSection>(
+			OperationsTestCase<PostprocedureDiagnosisSection> validatePostprocedureDiagnosisSectionTemplateIdTestCase = new OperationsTestCase<PostprocedureDiagnosisSection>(
 			"validatePostprocedureDiagnosisSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_POSTPROCEDURE_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_POSTPROCEDURE_DIAGNOSIS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(PostprocedureDiagnosisSection target) {
@@ -61,12 +61,46 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PostprocedureDiagnosisSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return PostprocedureDiagnosisSectionOperations.validatePostprocedureDiagnosisSectionTemplateId(
 					(PostprocedureDiagnosisSection) objectToTest, diagnostician, map);
 			}
@@ -74,7 +108,7 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 		};
 
 		validatePostprocedureDiagnosisSectionTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -82,10 +116,10 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePostprocedureDiagnosisSectionCode() {
-		OperationsTestCase<PostprocedureDiagnosisSection> validatePostprocedureDiagnosisSectionCodeTestCase = new OperationsTestCase<PostprocedureDiagnosisSection>(
+			OperationsTestCase<PostprocedureDiagnosisSection> validatePostprocedureDiagnosisSectionCodeTestCase = new OperationsTestCase<PostprocedureDiagnosisSection>(
 			"validatePostprocedureDiagnosisSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_POSTPROCEDURE_DIAGNOSIS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_POSTPROCEDURE_DIAGNOSIS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(PostprocedureDiagnosisSection target) {
@@ -95,12 +129,46 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PostprocedureDiagnosisSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return PostprocedureDiagnosisSectionOperations.validatePostprocedureDiagnosisSectionCode(
 					(PostprocedureDiagnosisSection) objectToTest, diagnostician, map);
 			}
@@ -108,7 +176,7 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 		};
 
 		validatePostprocedureDiagnosisSectionCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -116,10 +184,10 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePostprocedureDiagnosisSectionText() {
-		OperationsTestCase<PostprocedureDiagnosisSection> validatePostprocedureDiagnosisSectionTextTestCase = new OperationsTestCase<PostprocedureDiagnosisSection>(
+			OperationsTestCase<PostprocedureDiagnosisSection> validatePostprocedureDiagnosisSectionTextTestCase = new OperationsTestCase<PostprocedureDiagnosisSection>(
 			"validatePostprocedureDiagnosisSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_POSTPROCEDURE_DIAGNOSIS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_POSTPROCEDURE_DIAGNOSIS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(PostprocedureDiagnosisSection target) {
@@ -129,15 +197,49 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PostprocedureDiagnosisSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
 				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
-
+				target.setText(text );
+			
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return PostprocedureDiagnosisSectionOperations.validatePostprocedureDiagnosisSectionText(
 					(PostprocedureDiagnosisSection) objectToTest, diagnostician, map);
 			}
@@ -145,7 +247,7 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 		};
 
 		validatePostprocedureDiagnosisSectionTextTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -153,10 +255,10 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePostprocedureDiagnosisSectionTitle() {
-		OperationsTestCase<PostprocedureDiagnosisSection> validatePostprocedureDiagnosisSectionTitleTestCase = new OperationsTestCase<PostprocedureDiagnosisSection>(
+			OperationsTestCase<PostprocedureDiagnosisSection> validatePostprocedureDiagnosisSectionTitleTestCase = new OperationsTestCase<PostprocedureDiagnosisSection>(
 			"validatePostprocedureDiagnosisSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_POSTPROCEDURE_DIAGNOSIS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_POSTPROCEDURE_DIAGNOSIS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(PostprocedureDiagnosisSection target) {
@@ -166,15 +268,49 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PostprocedureDiagnosisSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
+				
+				
 
+	
+		
+				ST  title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title );
+				
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return PostprocedureDiagnosisSectionOperations.validatePostprocedureDiagnosisSectionTitle(
 					(PostprocedureDiagnosisSection) objectToTest, diagnostician, map);
 			}
@@ -182,7 +318,7 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 		};
 
 		validatePostprocedureDiagnosisSectionTitleTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -226,10 +362,13 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetPostprocedureDiagnosis() {
 
-		PostprocedureDiagnosisSection target = objectFactory.create();
-		target.getPostprocedureDiagnosis();
 
-	}
+PostprocedureDiagnosisSection target = objectFactory.create();
+target.getPostprocedureDiagnosis();
+
+
+
+}
 
 	/**
 	*
@@ -284,8 +423,8 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -293,7 +432,7 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

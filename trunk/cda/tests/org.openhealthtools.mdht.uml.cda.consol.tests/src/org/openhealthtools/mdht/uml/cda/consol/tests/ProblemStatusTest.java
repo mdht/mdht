@@ -87,10 +87,10 @@ public class ProblemStatusTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProblemStatusTextReferenceValue() {
-		OperationsTestCase<ProblemStatus> validateProblemStatusTextReferenceValueTestCase = new OperationsTestCase<ProblemStatus>(
+			OperationsTestCase<ProblemStatus> validateProblemStatusTextReferenceValueTestCase = new OperationsTestCase<ProblemStatus>(
 			"validateProblemStatusTextReferenceValue",
-			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_TEXT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_TEXT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemStatus target) {
@@ -100,15 +100,49 @@ public class ProblemStatusTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemStatus target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+			
 				CD value = DatatypesFactory.eINSTANCE.createCD();
 				target.getValues().add(value);
+				
 
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ProblemStatusOperations.validateProblemStatusTextReferenceValue(
 					(ProblemStatus) objectToTest, diagnostician, map);
 			}
@@ -116,7 +150,7 @@ public class ProblemStatusTest extends CDAValidationTest {
 		};
 
 		validateProblemStatusTextReferenceValueTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -124,10 +158,10 @@ public class ProblemStatusTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProblemStatusTemplateId() {
-		OperationsTestCase<ProblemStatus> validateProblemStatusTemplateIdTestCase = new OperationsTestCase<ProblemStatus>(
+			OperationsTestCase<ProblemStatus> validateProblemStatusTemplateIdTestCase = new OperationsTestCase<ProblemStatus>(
 			"validateProblemStatusTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemStatus target) {
@@ -137,12 +171,46 @@ public class ProblemStatusTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemStatus target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ProblemStatusOperations.validateProblemStatusTemplateId(
 					(ProblemStatus) objectToTest, diagnostician, map);
 			}
@@ -150,7 +218,7 @@ public class ProblemStatusTest extends CDAValidationTest {
 		};
 
 		validateProblemStatusTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -158,10 +226,10 @@ public class ProblemStatusTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProblemStatusClassCode() {
-		OperationsTestCase<ProblemStatus> validateProblemStatusClassCodeTestCase = new OperationsTestCase<ProblemStatus>(
+			OperationsTestCase<ProblemStatus> validateProblemStatusClassCodeTestCase = new OperationsTestCase<ProblemStatus>(
 			"validateProblemStatusClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemStatus target) {
@@ -171,12 +239,46 @@ public class ProblemStatusTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemStatus target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ProblemStatusOperations.validateProblemStatusClassCode(
 					(ProblemStatus) objectToTest, diagnostician, map);
 			}
@@ -184,7 +286,7 @@ public class ProblemStatusTest extends CDAValidationTest {
 		};
 
 		validateProblemStatusClassCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -192,10 +294,10 @@ public class ProblemStatusTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProblemStatusMoodCode() {
-		OperationsTestCase<ProblemStatus> validateProblemStatusMoodCodeTestCase = new OperationsTestCase<ProblemStatus>(
+			OperationsTestCase<ProblemStatus> validateProblemStatusMoodCodeTestCase = new OperationsTestCase<ProblemStatus>(
 			"validateProblemStatusMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemStatus target) {
@@ -205,12 +307,46 @@ public class ProblemStatusTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemStatus target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ProblemStatusOperations.validateProblemStatusMoodCode(
 					(ProblemStatus) objectToTest, diagnostician, map);
 			}
@@ -218,7 +354,7 @@ public class ProblemStatusTest extends CDAValidationTest {
 		};
 
 		validateProblemStatusMoodCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -226,9 +362,10 @@ public class ProblemStatusTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProblemStatusCode() {
-		OperationsTestCase<ProblemStatus> validateProblemStatusCodeTestCase = new OperationsTestCase<ProblemStatus>(
+			OperationsTestCase<ProblemStatus> validateProblemStatusCodeTestCase = new OperationsTestCase<ProblemStatus>(
 			"validateProblemStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemStatus target) {
@@ -238,15 +375,49 @@ public class ProblemStatusTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemStatus target) {
 				target.init();
-
+				
+				
+				
+				
+			
 				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
 				target.setStatusCode(cs);
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ProblemStatusOperations.validateProblemStatusCode(
 					(ProblemStatus) objectToTest, diagnostician, map);
 			}
@@ -254,7 +425,7 @@ public class ProblemStatusTest extends CDAValidationTest {
 		};
 
 		validateProblemStatusCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -262,10 +433,10 @@ public class ProblemStatusTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProblemStatusStatusCode() {
-		OperationsTestCase<ProblemStatus> validateProblemStatusStatusCodeTestCase = new OperationsTestCase<ProblemStatus>(
+			OperationsTestCase<ProblemStatus> validateProblemStatusStatusCodeTestCase = new OperationsTestCase<ProblemStatus>(
 			"validateProblemStatusStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemStatus target) {
@@ -275,15 +446,49 @@ public class ProblemStatusTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemStatus target) {
 				target.init();
-
+				
+				
+				
+				
+			
 				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
 				target.setStatusCode(cs);
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ProblemStatusOperations.validateProblemStatusStatusCode(
 					(ProblemStatus) objectToTest, diagnostician, map);
 			}
@@ -291,7 +496,7 @@ public class ProblemStatusTest extends CDAValidationTest {
 		};
 
 		validateProblemStatusStatusCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -299,9 +504,10 @@ public class ProblemStatusTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProblemStatusText() {
-		OperationsTestCase<ProblemStatus> validateProblemStatusTextTestCase = new OperationsTestCase<ProblemStatus>(
+			OperationsTestCase<ProblemStatus> validateProblemStatusTextTestCase = new OperationsTestCase<ProblemStatus>(
 			"validateProblemStatusText",
-			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemStatus target) {
@@ -311,15 +517,48 @@ public class ProblemStatusTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemStatus target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				ED text = DatatypesFactory.eINSTANCE.createED();
-				target.setText(text);
+				
+				
 
+	
+			
+
+	
+		
+		
+			
+		ED text = DatatypesFactory.eINSTANCE.createED();
+		target.setText(text );	
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ProblemStatusOperations.validateProblemStatusText(
 					(ProblemStatus) objectToTest, diagnostician, map);
 			}
@@ -327,7 +566,7 @@ public class ProblemStatusTest extends CDAValidationTest {
 		};
 
 		validateProblemStatusTextTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -421,8 +660,8 @@ public class ProblemStatusTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -430,7 +669,7 @@ public class ProblemStatusTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

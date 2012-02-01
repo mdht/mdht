@@ -18,6 +18,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
@@ -56,10 +57,10 @@ public class VitalSignObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVitalSignObservationTemplateId() {
-		OperationsTestCase<VitalSignObservation> validateVitalSignObservationTemplateIdTestCase = new OperationsTestCase<VitalSignObservation>(
+			OperationsTestCase<VitalSignObservation> validateVitalSignObservationTemplateIdTestCase = new OperationsTestCase<VitalSignObservation>(
 			"validateVitalSignObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(VitalSignObservation target) {
@@ -69,12 +70,46 @@ public class VitalSignObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(VitalSignObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return VitalSignObservationOperations.validateVitalSignObservationTemplateId(
 					(VitalSignObservation) objectToTest, diagnostician, map);
 			}
@@ -82,7 +117,7 @@ public class VitalSignObservationTest extends CDAValidationTest {
 		};
 
 		validateVitalSignObservationTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -90,10 +125,10 @@ public class VitalSignObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVitalSignObservationClassCode() {
-		OperationsTestCase<VitalSignObservation> validateVitalSignObservationClassCodeTestCase = new OperationsTestCase<VitalSignObservation>(
+			OperationsTestCase<VitalSignObservation> validateVitalSignObservationClassCodeTestCase = new OperationsTestCase<VitalSignObservation>(
 			"validateVitalSignObservationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(VitalSignObservation target) {
@@ -103,12 +138,46 @@ public class VitalSignObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(VitalSignObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return VitalSignObservationOperations.validateVitalSignObservationClassCode(
 					(VitalSignObservation) objectToTest, diagnostician, map);
 			}
@@ -116,7 +185,7 @@ public class VitalSignObservationTest extends CDAValidationTest {
 		};
 
 		validateVitalSignObservationClassCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -124,10 +193,10 @@ public class VitalSignObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVitalSignObservationMoodCode() {
-		OperationsTestCase<VitalSignObservation> validateVitalSignObservationMoodCodeTestCase = new OperationsTestCase<VitalSignObservation>(
+			OperationsTestCase<VitalSignObservation> validateVitalSignObservationMoodCodeTestCase = new OperationsTestCase<VitalSignObservation>(
 			"validateVitalSignObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(VitalSignObservation target) {
@@ -137,12 +206,46 @@ public class VitalSignObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(VitalSignObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return VitalSignObservationOperations.validateVitalSignObservationMoodCode(
 					(VitalSignObservation) objectToTest, diagnostician, map);
 			}
@@ -150,7 +253,7 @@ public class VitalSignObservationTest extends CDAValidationTest {
 		};
 
 		validateVitalSignObservationMoodCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -158,10 +261,10 @@ public class VitalSignObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVitalSignObservationId() {
-		OperationsTestCase<VitalSignObservation> validateVitalSignObservationIdTestCase = new OperationsTestCase<VitalSignObservation>(
+			OperationsTestCase<VitalSignObservation> validateVitalSignObservationIdTestCase = new OperationsTestCase<VitalSignObservation>(
 			"validateVitalSignObservationId",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(VitalSignObservation target) {
@@ -171,15 +274,49 @@ public class VitalSignObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(VitalSignObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				II ii = DatatypesFactory.eINSTANCE.createII();
-				target.getIds().add(ii);
+				
+				
 
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+			
+				II ii  = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(ii);				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return VitalSignObservationOperations.validateVitalSignObservationId(
 					(VitalSignObservation) objectToTest, diagnostician, map);
 			}
@@ -187,7 +324,7 @@ public class VitalSignObservationTest extends CDAValidationTest {
 		};
 
 		validateVitalSignObservationIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -232,10 +369,10 @@ public class VitalSignObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVitalSignObservationStatusCode() {
-		OperationsTestCase<VitalSignObservation> validateVitalSignObservationStatusCodeTestCase = new OperationsTestCase<VitalSignObservation>(
+			OperationsTestCase<VitalSignObservation> validateVitalSignObservationStatusCodeTestCase = new OperationsTestCase<VitalSignObservation>(
 			"validateVitalSignObservationStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(VitalSignObservation target) {
@@ -245,15 +382,49 @@ public class VitalSignObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(VitalSignObservation target) {
 				target.init();
-
+				
+				
+				
+				
+			
 				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
 				target.setStatusCode(cs);
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return VitalSignObservationOperations.validateVitalSignObservationStatusCode(
 					(VitalSignObservation) objectToTest, diagnostician, map);
 			}
@@ -261,7 +432,7 @@ public class VitalSignObservationTest extends CDAValidationTest {
 		};
 
 		validateVitalSignObservationStatusCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -269,10 +440,10 @@ public class VitalSignObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVitalSignObservationEffectiveTime() {
-		OperationsTestCase<VitalSignObservation> validateVitalSignObservationEffectiveTimeTestCase = new OperationsTestCase<VitalSignObservation>(
+			OperationsTestCase<VitalSignObservation> validateVitalSignObservationEffectiveTimeTestCase = new OperationsTestCase<VitalSignObservation>(
 			"validateVitalSignObservationEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(VitalSignObservation target) {
@@ -282,15 +453,49 @@ public class VitalSignObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(VitalSignObservation target) {
 				target.init();
+				
+				
+					IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
+					target.setEffectiveTime(ts );								
+				
+				
+				
+				
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+				
+				
 
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return VitalSignObservationOperations.validateVitalSignObservationEffectiveTime(
 					(VitalSignObservation) objectToTest, diagnostician, map);
 			}
@@ -298,7 +503,7 @@ public class VitalSignObservationTest extends CDAValidationTest {
 		};
 
 		validateVitalSignObservationEffectiveTimeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -487,10 +692,10 @@ public class VitalSignObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateVitalSignObservationAuthor() {
-		OperationsTestCase<VitalSignObservation> validateVitalSignObservationAuthorTestCase = new OperationsTestCase<VitalSignObservation>(
+			OperationsTestCase<VitalSignObservation> validateVitalSignObservationAuthorTestCase = new OperationsTestCase<VitalSignObservation>(
 			"validateVitalSignObservationAuthor",
-			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_AUTHOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_AUTHOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(VitalSignObservation target) {
@@ -500,12 +705,46 @@ public class VitalSignObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(VitalSignObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return VitalSignObservationOperations.validateVitalSignObservationAuthor(
 					(VitalSignObservation) objectToTest, diagnostician, map);
 			}
@@ -513,7 +752,7 @@ public class VitalSignObservationTest extends CDAValidationTest {
 		};
 
 		validateVitalSignObservationAuthorTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -568,8 +807,8 @@ public class VitalSignObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -577,7 +816,7 @@ public class VitalSignObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

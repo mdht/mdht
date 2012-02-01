@@ -92,10 +92,10 @@ public class IndicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateIndicationTemplateId() {
-		OperationsTestCase<Indication> validateIndicationTemplateIdTestCase = new OperationsTestCase<Indication>(
+			OperationsTestCase<Indication> validateIndicationTemplateIdTestCase = new OperationsTestCase<Indication>(
 			"validateIndicationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_INDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(Indication target) {
@@ -105,19 +105,54 @@ public class IndicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Indication target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return IndicationOperations.validateIndicationTemplateId((Indication) objectToTest, diagnostician, map);
+			
+			
+			
+				return IndicationOperations.validateIndicationTemplateId(
+					(Indication) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateIndicationTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -125,10 +160,10 @@ public class IndicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateIndicationClassCode() {
-		OperationsTestCase<Indication> validateIndicationClassCodeTestCase = new OperationsTestCase<Indication>(
+			OperationsTestCase<Indication> validateIndicationClassCodeTestCase = new OperationsTestCase<Indication>(
 			"validateIndicationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_INDICATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INDICATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(Indication target) {
@@ -138,19 +173,54 @@ public class IndicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Indication target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return IndicationOperations.validateIndicationClassCode((Indication) objectToTest, diagnostician, map);
+			
+			
+			
+				return IndicationOperations.validateIndicationClassCode(
+					(Indication) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateIndicationClassCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -194,10 +264,10 @@ public class IndicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateIndicationEffectiveTime() {
-		OperationsTestCase<Indication> validateIndicationEffectiveTimeTestCase = new OperationsTestCase<Indication>(
+			OperationsTestCase<Indication> validateIndicationEffectiveTimeTestCase = new OperationsTestCase<Indication>(
 			"validateIndicationEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_INDICATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INDICATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(Indication target) {
@@ -207,15 +277,49 @@ public class IndicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Indication target) {
 				target.init();
+				
+				
+					IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
+					target.setEffectiveTime(ts );								
+				
+				
+				
+				
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+				
+				
 
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return IndicationOperations.validateIndicationEffectiveTime(
 					(Indication) objectToTest, diagnostician, map);
 			}
@@ -223,7 +327,7 @@ public class IndicationTest extends CDAValidationTest {
 		};
 
 		validateIndicationEffectiveTimeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -231,9 +335,10 @@ public class IndicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateIndicationId() {
-		OperationsTestCase<Indication> validateIndicationIdTestCase = new OperationsTestCase<Indication>(
+			OperationsTestCase<Indication> validateIndicationIdTestCase = new OperationsTestCase<Indication>(
 			"validateIndicationId",
-			operationsForOCL.getOCLValue("VALIDATE_INDICATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INDICATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(Indication target) {
@@ -243,19 +348,54 @@ public class IndicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Indication target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return IndicationOperations.validateIndicationId((Indication) objectToTest, diagnostician, map);
+			
+			
+			
+				return IndicationOperations.validateIndicationId(
+					(Indication) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateIndicationIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -263,10 +403,10 @@ public class IndicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateIndicationMoodCode() {
-		OperationsTestCase<Indication> validateIndicationMoodCodeTestCase = new OperationsTestCase<Indication>(
+			OperationsTestCase<Indication> validateIndicationMoodCodeTestCase = new OperationsTestCase<Indication>(
 			"validateIndicationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_INDICATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INDICATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(Indication target) {
@@ -276,19 +416,54 @@ public class IndicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Indication target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return IndicationOperations.validateIndicationMoodCode((Indication) objectToTest, diagnostician, map);
+			
+			
+			
+				return IndicationOperations.validateIndicationMoodCode(
+					(Indication) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateIndicationMoodCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -296,10 +471,10 @@ public class IndicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateIndicationStatusCode() {
-		OperationsTestCase<Indication> validateIndicationStatusCodeTestCase = new OperationsTestCase<Indication>(
+			OperationsTestCase<Indication> validateIndicationStatusCodeTestCase = new OperationsTestCase<Indication>(
 			"validateIndicationStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_INDICATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_INDICATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(Indication target) {
@@ -309,22 +484,57 @@ public class IndicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Indication target) {
 				target.init();
-
+				
+				
+				
+				
+			
 				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
 				target.setStatusCode(cs);
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return IndicationOperations.validateIndicationStatusCode((Indication) objectToTest, diagnostician, map);
+			
+			
+			
+				return IndicationOperations.validateIndicationStatusCode(
+					(Indication) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateIndicationStatusCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -419,8 +629,8 @@ public class IndicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -428,7 +638,7 @@ public class IndicationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

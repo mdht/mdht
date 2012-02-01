@@ -41,10 +41,10 @@ public class LanguageSpokenTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateLanguageSpokenNoProficiencyLevelCode() {
-		OperationsTestCase<LanguageSpoken> validateLanguageSpokenNoProficiencyLevelCodeTestCase = new OperationsTestCase<LanguageSpoken>(
+			OperationsTestCase<LanguageSpoken> validateLanguageSpokenNoProficiencyLevelCodeTestCase = new OperationsTestCase<LanguageSpoken>(
 			"validateLanguageSpokenNoProficiencyLevelCode",
-			operationsForOCL.getOCLValue("VALIDATE_LANGUAGE_SPOKEN_NO_PROFICIENCY_LEVEL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_LANGUAGE_SPOKEN_NO_PROFICIENCY_LEVEL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(LanguageSpoken target) {
@@ -54,12 +54,46 @@ public class LanguageSpokenTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(LanguageSpoken target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return LanguageSpokenOperations.validateLanguageSpokenNoProficiencyLevelCode(
 					(LanguageSpoken) objectToTest, diagnostician, map);
 			}
@@ -67,7 +101,7 @@ public class LanguageSpokenTest extends CDAValidationTest {
 		};
 
 		validateLanguageSpokenNoProficiencyLevelCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -75,10 +109,10 @@ public class LanguageSpokenTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateLanguageSpokenLanguageCode() {
-		OperationsTestCase<LanguageSpoken> validateLanguageSpokenLanguageCodeTestCase = new OperationsTestCase<LanguageSpoken>(
+			OperationsTestCase<LanguageSpoken> validateLanguageSpokenLanguageCodeTestCase = new OperationsTestCase<LanguageSpoken>(
 			"validateLanguageSpokenLanguageCode",
-			operationsForOCL.getOCLValue("VALIDATE_LANGUAGE_SPOKEN_LANGUAGE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_LANGUAGE_SPOKEN_LANGUAGE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(LanguageSpoken target) {
@@ -88,12 +122,46 @@ public class LanguageSpokenTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(LanguageSpoken target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return LanguageSpokenOperations.validateLanguageSpokenLanguageCode(
 					(LanguageSpoken) objectToTest, diagnostician, map);
 			}
@@ -101,7 +169,7 @@ public class LanguageSpokenTest extends CDAValidationTest {
 		};
 
 		validateLanguageSpokenLanguageCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -109,10 +177,10 @@ public class LanguageSpokenTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateLanguageSpokenModeCode() {
-		OperationsTestCase<LanguageSpoken> validateLanguageSpokenModeCodeTestCase = new OperationsTestCase<LanguageSpoken>(
+			OperationsTestCase<LanguageSpoken> validateLanguageSpokenModeCodeTestCase = new OperationsTestCase<LanguageSpoken>(
 			"validateLanguageSpokenModeCode",
-			operationsForOCL.getOCLValue("VALIDATE_LANGUAGE_SPOKEN_MODE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_LANGUAGE_SPOKEN_MODE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(LanguageSpoken target) {
@@ -122,12 +190,46 @@ public class LanguageSpokenTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(LanguageSpoken target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return LanguageSpokenOperations.validateLanguageSpokenModeCode(
 					(LanguageSpoken) objectToTest, diagnostician, map);
 			}
@@ -135,7 +237,7 @@ public class LanguageSpokenTest extends CDAValidationTest {
 		};
 
 		validateLanguageSpokenModeCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -190,8 +292,8 @@ public class LanguageSpokenTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -199,7 +301,7 @@ public class LanguageSpokenTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

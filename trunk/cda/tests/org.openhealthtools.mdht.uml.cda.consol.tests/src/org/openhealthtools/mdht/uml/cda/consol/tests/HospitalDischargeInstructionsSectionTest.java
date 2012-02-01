@@ -46,10 +46,10 @@ public class HospitalDischargeInstructionsSectionTest extends CDAValidationTest 
 	*/
 	@Test
 	public void testValidateHospitalDischargeInstructionsSectionTemplateId() {
-		OperationsTestCase<HospitalDischargeInstructionsSection> validateHospitalDischargeInstructionsSectionTemplateIdTestCase = new OperationsTestCase<HospitalDischargeInstructionsSection>(
+			OperationsTestCase<HospitalDischargeInstructionsSection> validateHospitalDischargeInstructionsSectionTemplateIdTestCase = new OperationsTestCase<HospitalDischargeInstructionsSection>(
 			"validateHospitalDischargeInstructionsSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_INSTRUCTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_INSTRUCTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(HospitalDischargeInstructionsSection target) {
@@ -59,12 +59,46 @@ public class HospitalDischargeInstructionsSectionTest extends CDAValidationTest 
 			@Override
 			protected void updateToPass(HospitalDischargeInstructionsSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return HospitalDischargeInstructionsSectionOperations.validateHospitalDischargeInstructionsSectionTemplateId(
 					(HospitalDischargeInstructionsSection) objectToTest, diagnostician, map);
 			}
@@ -72,7 +106,7 @@ public class HospitalDischargeInstructionsSectionTest extends CDAValidationTest 
 		};
 
 		validateHospitalDischargeInstructionsSectionTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -80,10 +114,10 @@ public class HospitalDischargeInstructionsSectionTest extends CDAValidationTest 
 	*/
 	@Test
 	public void testValidateHospitalDischargeInstructionsSectionCode() {
-		OperationsTestCase<HospitalDischargeInstructionsSection> validateHospitalDischargeInstructionsSectionCodeTestCase = new OperationsTestCase<HospitalDischargeInstructionsSection>(
+			OperationsTestCase<HospitalDischargeInstructionsSection> validateHospitalDischargeInstructionsSectionCodeTestCase = new OperationsTestCase<HospitalDischargeInstructionsSection>(
 			"validateHospitalDischargeInstructionsSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_INSTRUCTIONS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_INSTRUCTIONS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(HospitalDischargeInstructionsSection target) {
@@ -93,12 +127,46 @@ public class HospitalDischargeInstructionsSectionTest extends CDAValidationTest 
 			@Override
 			protected void updateToPass(HospitalDischargeInstructionsSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return HospitalDischargeInstructionsSectionOperations.validateHospitalDischargeInstructionsSectionCode(
 					(HospitalDischargeInstructionsSection) objectToTest, diagnostician, map);
 			}
@@ -106,7 +174,7 @@ public class HospitalDischargeInstructionsSectionTest extends CDAValidationTest 
 		};
 
 		validateHospitalDischargeInstructionsSectionCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -114,10 +182,10 @@ public class HospitalDischargeInstructionsSectionTest extends CDAValidationTest 
 	*/
 	@Test
 	public void testValidateHospitalDischargeInstructionsSectionText() {
-		OperationsTestCase<HospitalDischargeInstructionsSection> validateHospitalDischargeInstructionsSectionTextTestCase = new OperationsTestCase<HospitalDischargeInstructionsSection>(
+			OperationsTestCase<HospitalDischargeInstructionsSection> validateHospitalDischargeInstructionsSectionTextTestCase = new OperationsTestCase<HospitalDischargeInstructionsSection>(
 			"validateHospitalDischargeInstructionsSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_INSTRUCTIONS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_INSTRUCTIONS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(HospitalDischargeInstructionsSection target) {
@@ -127,15 +195,49 @@ public class HospitalDischargeInstructionsSectionTest extends CDAValidationTest 
 			@Override
 			protected void updateToPass(HospitalDischargeInstructionsSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
 				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
-
+				target.setText(text );
+			
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return HospitalDischargeInstructionsSectionOperations.validateHospitalDischargeInstructionsSectionText(
 					(HospitalDischargeInstructionsSection) objectToTest, diagnostician, map);
 			}
@@ -143,7 +245,7 @@ public class HospitalDischargeInstructionsSectionTest extends CDAValidationTest 
 		};
 
 		validateHospitalDischargeInstructionsSectionTextTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -151,10 +253,10 @@ public class HospitalDischargeInstructionsSectionTest extends CDAValidationTest 
 	*/
 	@Test
 	public void testValidateHospitalDischargeInstructionsSectionTitle() {
-		OperationsTestCase<HospitalDischargeInstructionsSection> validateHospitalDischargeInstructionsSectionTitleTestCase = new OperationsTestCase<HospitalDischargeInstructionsSection>(
+			OperationsTestCase<HospitalDischargeInstructionsSection> validateHospitalDischargeInstructionsSectionTitleTestCase = new OperationsTestCase<HospitalDischargeInstructionsSection>(
 			"validateHospitalDischargeInstructionsSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_INSTRUCTIONS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_INSTRUCTIONS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(HospitalDischargeInstructionsSection target) {
@@ -164,15 +266,49 @@ public class HospitalDischargeInstructionsSectionTest extends CDAValidationTest 
 			@Override
 			protected void updateToPass(HospitalDischargeInstructionsSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
+				
+				
 
+	
+		
+				ST  title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title );
+				
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return HospitalDischargeInstructionsSectionOperations.validateHospitalDischargeInstructionsSectionTitle(
 					(HospitalDischargeInstructionsSection) objectToTest, diagnostician, map);
 			}
@@ -180,7 +316,7 @@ public class HospitalDischargeInstructionsSectionTest extends CDAValidationTest 
 		};
 
 		validateHospitalDischargeInstructionsSectionTitleTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -235,8 +371,8 @@ public class HospitalDischargeInstructionsSectionTest extends CDAValidationTest 
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -244,7 +380,7 @@ public class HospitalDischargeInstructionsSectionTest extends CDAValidationTest 
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

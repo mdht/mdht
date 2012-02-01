@@ -41,10 +41,10 @@ public class AdvanceDirectiveVerificationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveVerificationTemplateId() {
-		OperationsTestCase<AdvanceDirectiveVerification> validateAdvanceDirectiveVerificationTemplateIdTestCase = new OperationsTestCase<AdvanceDirectiveVerification>(
+			OperationsTestCase<AdvanceDirectiveVerification> validateAdvanceDirectiveVerificationTemplateIdTestCase = new OperationsTestCase<AdvanceDirectiveVerification>(
 			"validateAdvanceDirectiveVerificationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveVerification target) {
@@ -54,12 +54,46 @@ public class AdvanceDirectiveVerificationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdvanceDirectiveVerification target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AdvanceDirectiveVerificationOperations.validateAdvanceDirectiveVerificationTemplateId(
 					(AdvanceDirectiveVerification) objectToTest, diagnostician, map);
 			}
@@ -67,7 +101,7 @@ public class AdvanceDirectiveVerificationTest extends CDAValidationTest {
 		};
 
 		validateAdvanceDirectiveVerificationTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -75,10 +109,10 @@ public class AdvanceDirectiveVerificationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveVerificationTypeCode() {
-		OperationsTestCase<AdvanceDirectiveVerification> validateAdvanceDirectiveVerificationTypeCodeTestCase = new OperationsTestCase<AdvanceDirectiveVerification>(
+			OperationsTestCase<AdvanceDirectiveVerification> validateAdvanceDirectiveVerificationTypeCodeTestCase = new OperationsTestCase<AdvanceDirectiveVerification>(
 			"validateAdvanceDirectiveVerificationTypeCode",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveVerification target) {
@@ -88,12 +122,46 @@ public class AdvanceDirectiveVerificationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdvanceDirectiveVerification target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AdvanceDirectiveVerificationOperations.validateAdvanceDirectiveVerificationTypeCode(
 					(AdvanceDirectiveVerification) objectToTest, diagnostician, map);
 			}
@@ -101,7 +169,7 @@ public class AdvanceDirectiveVerificationTest extends CDAValidationTest {
 		};
 
 		validateAdvanceDirectiveVerificationTypeCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -109,10 +177,10 @@ public class AdvanceDirectiveVerificationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveVerificationTime() {
-		OperationsTestCase<AdvanceDirectiveVerification> validateAdvanceDirectiveVerificationTimeTestCase = new OperationsTestCase<AdvanceDirectiveVerification>(
+			OperationsTestCase<AdvanceDirectiveVerification> validateAdvanceDirectiveVerificationTimeTestCase = new OperationsTestCase<AdvanceDirectiveVerification>(
 			"validateAdvanceDirectiveVerificationTime",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_VERIFICATION_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveVerification target) {
@@ -122,12 +190,46 @@ public class AdvanceDirectiveVerificationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdvanceDirectiveVerification target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AdvanceDirectiveVerificationOperations.validateAdvanceDirectiveVerificationTime(
 					(AdvanceDirectiveVerification) objectToTest, diagnostician, map);
 			}
@@ -135,7 +237,7 @@ public class AdvanceDirectiveVerificationTest extends CDAValidationTest {
 		};
 
 		validateAdvanceDirectiveVerificationTimeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -190,8 +292,8 @@ public class AdvanceDirectiveVerificationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -199,7 +301,7 @@ public class AdvanceDirectiveVerificationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

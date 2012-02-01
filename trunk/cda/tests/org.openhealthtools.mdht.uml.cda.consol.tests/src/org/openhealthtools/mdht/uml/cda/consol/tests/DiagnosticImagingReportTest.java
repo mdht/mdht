@@ -51,10 +51,10 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportTemplateId() {
-		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportTemplateIdTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportTemplateIdTestCase = new OperationsTestCase<DiagnosticImagingReport>(
 			"validateDiagnosticImagingReportTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
@@ -64,12 +64,46 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportTemplateId(
 					(DiagnosticImagingReport) objectToTest, diagnostician, map);
 			}
@@ -77,7 +111,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 		};
 
 		validateDiagnosticImagingReportTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -85,10 +119,10 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportId() {
-		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportIdTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportIdTestCase = new OperationsTestCase<DiagnosticImagingReport>(
 			"validateDiagnosticImagingReportId",
-			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
@@ -98,12 +132,46 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportId(
 					(DiagnosticImagingReport) objectToTest, diagnostician, map);
 			}
@@ -111,7 +179,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 		};
 
 		validateDiagnosticImagingReportIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -119,10 +187,10 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportInformant() {
-		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportInformantTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportInformantTestCase = new OperationsTestCase<DiagnosticImagingReport>(
 			"validateDiagnosticImagingReportInformant",
-			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_INFORMANT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_INFORMANT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
@@ -132,12 +200,46 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportInformant(
 					(DiagnosticImagingReport) objectToTest, diagnostician, map);
 			}
@@ -145,7 +247,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 		};
 
 		validateDiagnosticImagingReportInformantTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -153,10 +255,10 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportInformationRecipient() {
-		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportInformationRecipientTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportInformationRecipientTestCase = new OperationsTestCase<DiagnosticImagingReport>(
 			"validateDiagnosticImagingReportInformationRecipient",
-			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_INFORMATION_RECIPIENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_INFORMATION_RECIPIENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
@@ -166,12 +268,46 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportInformationRecipient(
 					(DiagnosticImagingReport) objectToTest, diagnostician, map);
 			}
@@ -179,7 +315,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 		};
 
 		validateDiagnosticImagingReportInformationRecipientTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -187,10 +323,10 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportParticipant1() {
-		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportParticipant1TestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportParticipant1TestCase = new OperationsTestCase<DiagnosticImagingReport>(
 			"validateDiagnosticImagingReportParticipant1",
-			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_PARTICIPANT1__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_PARTICIPANT1__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
@@ -200,12 +336,46 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportParticipant1(
 					(DiagnosticImagingReport) objectToTest, diagnostician, map);
 			}
@@ -213,7 +383,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 		};
 
 		validateDiagnosticImagingReportParticipant1TestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -221,10 +391,10 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportInFulfillmentOf() {
-		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportInFulfillmentOfTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportInFulfillmentOfTestCase = new OperationsTestCase<DiagnosticImagingReport>(
 			"validateDiagnosticImagingReportInFulfillmentOf",
-			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_IN_FULFILLMENT_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_IN_FULFILLMENT_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
@@ -234,12 +404,46 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportInFulfillmentOf(
 					(DiagnosticImagingReport) objectToTest, diagnostician, map);
 			}
@@ -247,7 +451,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 		};
 
 		validateDiagnosticImagingReportInFulfillmentOfTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -255,10 +459,10 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportDocumentationOf() {
-		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportDocumentationOfTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportDocumentationOfTestCase = new OperationsTestCase<DiagnosticImagingReport>(
 			"validateDiagnosticImagingReportDocumentationOf",
-			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_DOCUMENTATION_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_DOCUMENTATION_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
@@ -268,12 +472,46 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportDocumentationOf(
 					(DiagnosticImagingReport) objectToTest, diagnostician, map);
 			}
@@ -281,7 +519,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 		};
 
 		validateDiagnosticImagingReportDocumentationOfTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -289,10 +527,10 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportRelatedDocument() {
-		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportRelatedDocumentTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportRelatedDocumentTestCase = new OperationsTestCase<DiagnosticImagingReport>(
 			"validateDiagnosticImagingReportRelatedDocument",
-			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_RELATED_DOCUMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_RELATED_DOCUMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
@@ -302,12 +540,46 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportRelatedDocument(
 					(DiagnosticImagingReport) objectToTest, diagnostician, map);
 			}
@@ -315,7 +587,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 		};
 
 		validateDiagnosticImagingReportRelatedDocumentTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -323,10 +595,10 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportComponentOf() {
-		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportComponentOfTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportComponentOfTestCase = new OperationsTestCase<DiagnosticImagingReport>(
 			"validateDiagnosticImagingReportComponentOf",
-			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_COMPONENT_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_COMPONENT_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
@@ -336,12 +608,46 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportComponentOf(
 					(DiagnosticImagingReport) objectToTest, diagnostician, map);
 			}
@@ -349,7 +655,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 		};
 
 		validateDiagnosticImagingReportComponentOfTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -357,10 +663,10 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportFindingsSection() {
-		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportFindingsSectionTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportFindingsSectionTestCase = new OperationsTestCase<DiagnosticImagingReport>(
 			"validateDiagnosticImagingReportFindingsSection",
-			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_FINDINGS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_FINDINGS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
@@ -370,19 +676,55 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* FindingsSection */
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+			
+				
+				/* FindingsSection */ 
 				FindingsSection section =
-
-				ConsolFactory.eINSTANCE.createFindingsSection().init();
-
-				target.addSection(section);
-
+				
+				ConsolFactory.eINSTANCE.createFindingsSection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportFindingsSection(
 					(DiagnosticImagingReport) objectToTest, diagnostician, map);
 			}
@@ -390,7 +732,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 		};
 
 		validateDiagnosticImagingReportFindingsSectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -399,10 +741,13 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 	@Test
 	public void testGetFindingsSection() {
 
-		DiagnosticImagingReport target = objectFactory.create();
-		target.getFindingsSection();
 
-	}
+DiagnosticImagingReport target = objectFactory.create();
+target.getFindingsSection();
+
+
+
+}
 
 	/**
 	*
@@ -410,10 +755,10 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsCode() {
-		OperationsTestCase<DiagnosticImagingReport> validateGeneralHeaderConstraintsCodeTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			OperationsTestCase<DiagnosticImagingReport> validateGeneralHeaderConstraintsCodeTestCase = new OperationsTestCase<DiagnosticImagingReport>(
 			"validateGeneralHeaderConstraintsCode",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
@@ -423,12 +768,46 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DiagnosticImagingReportOperations.validateGeneralHeaderConstraintsCode(
 					(DiagnosticImagingReport) objectToTest, diagnostician, map);
 			}
@@ -436,7 +815,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -491,8 +870,8 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -500,7 +879,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

@@ -84,10 +84,10 @@ public class DischargeMedicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeMedicationTemplateId() {
-		OperationsTestCase<DischargeMedication> validateDischargeMedicationTemplateIdTestCase = new OperationsTestCase<DischargeMedication>(
+			OperationsTestCase<DischargeMedication> validateDischargeMedicationTemplateIdTestCase = new OperationsTestCase<DischargeMedication>(
 			"validateDischargeMedicationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeMedication target) {
@@ -97,12 +97,46 @@ public class DischargeMedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeMedication target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DischargeMedicationOperations.validateDischargeMedicationTemplateId(
 					(DischargeMedication) objectToTest, diagnostician, map);
 			}
@@ -110,7 +144,7 @@ public class DischargeMedicationTest extends CDAValidationTest {
 		};
 
 		validateDischargeMedicationTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -118,10 +152,10 @@ public class DischargeMedicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeMedicationClassCode() {
-		OperationsTestCase<DischargeMedication> validateDischargeMedicationClassCodeTestCase = new OperationsTestCase<DischargeMedication>(
+			OperationsTestCase<DischargeMedication> validateDischargeMedicationClassCodeTestCase = new OperationsTestCase<DischargeMedication>(
 			"validateDischargeMedicationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_MEDICATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_MEDICATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeMedication target) {
@@ -131,12 +165,46 @@ public class DischargeMedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeMedication target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DischargeMedicationOperations.validateDischargeMedicationClassCode(
 					(DischargeMedication) objectToTest, diagnostician, map);
 			}
@@ -144,7 +212,7 @@ public class DischargeMedicationTest extends CDAValidationTest {
 		};
 
 		validateDischargeMedicationClassCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -152,10 +220,10 @@ public class DischargeMedicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeMedicationMoodCode() {
-		OperationsTestCase<DischargeMedication> validateDischargeMedicationMoodCodeTestCase = new OperationsTestCase<DischargeMedication>(
+			OperationsTestCase<DischargeMedication> validateDischargeMedicationMoodCodeTestCase = new OperationsTestCase<DischargeMedication>(
 			"validateDischargeMedicationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_MEDICATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_MEDICATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeMedication target) {
@@ -165,12 +233,46 @@ public class DischargeMedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeMedication target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DischargeMedicationOperations.validateDischargeMedicationMoodCode(
 					(DischargeMedication) objectToTest, diagnostician, map);
 			}
@@ -178,7 +280,7 @@ public class DischargeMedicationTest extends CDAValidationTest {
 		};
 
 		validateDischargeMedicationMoodCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -186,10 +288,10 @@ public class DischargeMedicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDischargeMedicationCode() {
-		OperationsTestCase<DischargeMedication> validateDischargeMedicationCodeTestCase = new OperationsTestCase<DischargeMedication>(
+			OperationsTestCase<DischargeMedication> validateDischargeMedicationCodeTestCase = new OperationsTestCase<DischargeMedication>(
 			"validateDischargeMedicationCode",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_MEDICATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_MEDICATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeMedication target) {
@@ -199,12 +301,46 @@ public class DischargeMedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DischargeMedication target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return DischargeMedicationOperations.validateDischargeMedicationCode(
 					(DischargeMedication) objectToTest, diagnostician, map);
 			}
@@ -212,7 +348,7 @@ public class DischargeMedicationTest extends CDAValidationTest {
 		};
 
 		validateDischargeMedicationCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -221,10 +357,13 @@ public class DischargeMedicationTest extends CDAValidationTest {
 	@Test
 	public void testGetMedicationActivity() {
 
-		DischargeMedication target = objectFactory.create();
-		target.getMedicationActivity();
 
-	}
+DischargeMedication target = objectFactory.create();
+target.getMedicationActivity();
+
+
+
+}
 
 	/**
 	*
@@ -279,8 +418,8 @@ public class DischargeMedicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -288,7 +427,7 @@ public class DischargeMedicationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

@@ -161,10 +161,10 @@ public class PreconditionForSubstanceAdministrationTest extends CDAValidationTes
 	*/
 	@Test
 	public void testValidatePreconditionForSubstanceAdministrationTemplateId() {
-		OperationsTestCase<PreconditionForSubstanceAdministration> validatePreconditionForSubstanceAdministrationTemplateIdTestCase = new OperationsTestCase<PreconditionForSubstanceAdministration>(
+			OperationsTestCase<PreconditionForSubstanceAdministration> validatePreconditionForSubstanceAdministrationTemplateIdTestCase = new OperationsTestCase<PreconditionForSubstanceAdministration>(
 			"validatePreconditionForSubstanceAdministrationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PRECONDITION_FOR_SUBSTANCE_ADMINISTRATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PRECONDITION_FOR_SUBSTANCE_ADMINISTRATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(PreconditionForSubstanceAdministration target) {
@@ -174,12 +174,46 @@ public class PreconditionForSubstanceAdministrationTest extends CDAValidationTes
 			@Override
 			protected void updateToPass(PreconditionForSubstanceAdministration target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return PreconditionForSubstanceAdministrationOperations.validatePreconditionForSubstanceAdministrationTemplateId(
 					(PreconditionForSubstanceAdministration) objectToTest, diagnostician, map);
 			}
@@ -187,7 +221,7 @@ public class PreconditionForSubstanceAdministrationTest extends CDAValidationTes
 		};
 
 		validatePreconditionForSubstanceAdministrationTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -276,8 +310,8 @@ public class PreconditionForSubstanceAdministrationTest extends CDAValidationTes
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -285,7 +319,7 @@ public class PreconditionForSubstanceAdministrationTest extends CDAValidationTes
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 
