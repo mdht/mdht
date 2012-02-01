@@ -9,21 +9,14 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.StrucDocText;
-
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.InstructionsSection;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.InstructionsSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
@@ -158,7 +151,7 @@ public class InstructionsSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateInstructionsSectionInstructions() {
@@ -169,13 +162,12 @@ public class InstructionsSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(InstructionsSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(InstructionsSection target) {
-				target.init();
-
+				target.addAct(ConsolFactory.eINSTANCE.createInstructions().init());
 			}
 
 			@Override
