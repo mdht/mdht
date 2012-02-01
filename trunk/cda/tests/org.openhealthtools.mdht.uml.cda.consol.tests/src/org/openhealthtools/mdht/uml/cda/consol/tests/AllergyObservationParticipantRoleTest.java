@@ -7,11 +7,11 @@
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
 import java.util.Map;
+
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.consol.AllergyObservationParticipantRole;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.operations.AllergyObservationParticipantRoleOperations;
@@ -36,7 +36,7 @@ public class AllergyObservationParticipantRoleTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAllergyObservationParticipantRolePlayingEntity() {
@@ -48,12 +48,13 @@ public class AllergyObservationParticipantRoleTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(AllergyObservationParticipantRole target) {
 
+				target.init();
+
 			}
 
 			@Override
 			protected void updateToPass(AllergyObservationParticipantRole target) {
-				target.init();
-
+				target.setPlayingEntity(CDAFactory.eINSTANCE.createPlayingEntity());
 			}
 
 			@Override

@@ -9,17 +9,13 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.consol.AdmissionMedication;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.AdmissionMedicationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -181,7 +177,7 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated  not
 	*/
 	@Test
 	public void testValidateAdmissionMedicationMedicationActivity() {
@@ -192,12 +188,15 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AdmissionMedication target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(AdmissionMedication target) {
-				target.init();
+				target.addSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity().init());
+				for (org.openhealthtools.mdht.uml.cda.EntryRelationship er : target.getEntryRelationships()) {
+					er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				}
 
 			}
 

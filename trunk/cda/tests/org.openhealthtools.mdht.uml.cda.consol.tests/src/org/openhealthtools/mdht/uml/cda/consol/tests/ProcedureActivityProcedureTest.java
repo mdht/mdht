@@ -756,7 +756,7 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureActivityProcedureSpecimen() {
@@ -767,12 +767,12 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureActivityProcedure target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityProcedure target) {
-				target.init();
+				target.getSpecimens().add(CDAFactory.eINSTANCE.createSpecimen());
 
 			}
 
@@ -827,7 +827,7 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureActivityProcedurePerformer() {
@@ -838,13 +838,12 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureActivityProcedure target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityProcedure target) {
-				target.init();
-
+				target.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
 			}
 
 			@Override
