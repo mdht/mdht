@@ -418,7 +418,7 @@ public class CDAModelUtil {
 
 		if (endType != null) {
 
-			if (false && endType.getOwner() instanceof Class) {
+			if (markup && endType.getOwner() instanceof Class) {
 				StringWriter sw = new StringWriter();
 				PrintWriter pw = new PrintWriter(sw);
 				StringBuffer sb = sw.getBuffer();
@@ -500,15 +500,15 @@ public class CDAModelUtil {
 				: "");
 
 		appendConformanceRuleIds(association, message, markup);
-		if (false && property.getType() instanceof Class) {
+		if (property.getType() instanceof Class) {
 			Class inlinedClass = (Class) property.getType();
 
-			if (inlinedClass.getOwner() instanceof Class) {
+			if (markup && inlinedClass.getOwner() instanceof Class) {
 				StringWriter sw = new StringWriter();
 				PrintWriter pw = new PrintWriter(sw);
 				StringBuffer sb = sw.getBuffer();
 
-				// appendPropertyComments(pw, property);
+				appendPropertyComments(pw, property, markup);
 
 				appendConformanceRules(pw, inlinedClass, String.format(" %s%s%s ", (property.getUpper() == 1
 						? "This "
@@ -1321,7 +1321,7 @@ public class CDAModelUtil {
 		}
 
 		// Include other constraint languages, e.g. OCL or XPath
-		if (markup && langBodyMap.size() > 0) {
+		if (false && langBodyMap.size() > 0) {
 			message.append("<ul>");
 			for (String lang : langBodyMap.keySet()) {
 				message.append("<li>");
