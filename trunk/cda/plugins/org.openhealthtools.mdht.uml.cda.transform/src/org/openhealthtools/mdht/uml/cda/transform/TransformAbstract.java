@@ -134,6 +134,10 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 				return package_;
 			}
 		}
+		Class cdaClass = getCDAClass(templateClass);
+		if (cdaClass != null) {
+			return cdaClass.getNearestPackage();
+		}
 		return null;
 	}
 
