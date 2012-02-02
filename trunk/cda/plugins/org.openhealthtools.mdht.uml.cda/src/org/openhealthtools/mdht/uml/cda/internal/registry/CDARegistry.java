@@ -100,26 +100,32 @@ public class CDARegistry {
 			try {
 				EPackage ePackage = registry.getEPackage(key);
 				for (EClassifier eClassifier : ePackage.getEClassifiers()) {
-					if (clinicalDocumentClass != null && clinicalDocumentClass.isSuperTypeOf((EClass) eClassifier)) {
-						String qname = eClassifier.getEPackage().getNsPrefix() + "::" + eClassifier.getName();
-						allDocumentClasses.put(qname, (EClass) eClassifier);
-					}
-
-					String templateId = EcoreUtil.getAnnotation(eClassifier, CDA_ANNOTATION_SOURCE, TEMPLATE_ID_ROOT);
-					if (templateId != null) {
-						String contextDependent = EcoreUtil.getAnnotation(
-							eClassifier, CDA_ANNOTATION_SOURCE, CONTEXT_DEPENDENT);
-						if ("true".equals(contextDependent)) {
-							String registryDelegate = EcoreUtil.getAnnotation(
-								ePackage, CDA_ANNOTATION_SOURCE, REGISTRY_DELEGATE);
-							EClass eClass = (EClass) ePackage.getEClassifier(registryDelegate);
-							classes.put(templateId, eClass);
-							if (!delegates.containsKey(eClass)) {
-								delegates.put(eClass, (RegistryDelegate) EcoreUtil.create(eClass));
+					try {
+						if (eClassifier instanceof EClass) {
+							if (clinicalDocumentClass != null &&
+									clinicalDocumentClass.isSuperTypeOf((EClass) eClassifier)) {
+								String qname = eClassifier.getEPackage().getNsPrefix() + "::" + eClassifier.getName();
+								allDocumentClasses.put(qname, (EClass) eClassifier);
 							}
-						} else {
-							classes.put(templateId, (EClass) eClassifier);
+							String templateId = EcoreUtil.getAnnotation(
+								eClassifier, CDA_ANNOTATION_SOURCE, TEMPLATE_ID_ROOT);
+							if (templateId != null) {
+								String contextDependent = EcoreUtil.getAnnotation(
+									eClassifier, CDA_ANNOTATION_SOURCE, CONTEXT_DEPENDENT);
+								if ("true".equals(contextDependent)) {
+									String registryDelegate = EcoreUtil.getAnnotation(
+										ePackage, CDA_ANNOTATION_SOURCE, REGISTRY_DELEGATE);
+									EClass eClass = (EClass) ePackage.getEClassifier(registryDelegate);
+									classes.put(templateId, eClass);
+									if (!delegates.containsKey(eClass)) {
+										delegates.put(eClass, (RegistryDelegate) EcoreUtil.create(eClass));
+									}
+								} else {
+									classes.put(templateId, (EClass) eClassifier);
+								}
+							}
 						}
+					} catch (Exception e) {
 					}
 				}
 			} catch (Exception e) {
