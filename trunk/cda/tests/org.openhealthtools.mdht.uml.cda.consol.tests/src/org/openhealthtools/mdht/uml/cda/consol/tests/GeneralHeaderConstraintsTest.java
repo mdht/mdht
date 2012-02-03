@@ -3629,7 +3629,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 						RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
 						PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
 						Patient patient = CDAFactory.eINSTANCE.createPatient();
-						// patient.setMaritalStatusCode(DatatypesFactory.eINSTANCE.createCE("A", "2.16.840.1.113883.5.2"));
+						patient.setMaritalStatusCode(DatatypesFactory.eINSTANCE.createCE("A", "2.16.840.1.113883.5.2"));
 						pr.setPatient(patient);
 						re.setPatientRole(pr);
 						target.getRecordTargets().add(re);
