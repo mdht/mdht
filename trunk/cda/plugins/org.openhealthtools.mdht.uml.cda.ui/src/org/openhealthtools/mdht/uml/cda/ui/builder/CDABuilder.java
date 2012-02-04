@@ -129,8 +129,8 @@ public class CDABuilder extends IncrementalProjectBuilder {
 			for (IResource umlResources : modelProject.getFolder(new Path("model")).members()) {
 				if (umlResources.getName().endsWith(".uml")) {
 
-					if (umlResources.getModificationStamp() > modelModification) {
-						modelModification = umlResources.getModificationStamp();
+					if (umlResources.getLocalTimeStamp() > modelModification) {
+						modelModification = umlResources.getLocalTimeStamp();
 					}
 
 				}
@@ -139,8 +139,8 @@ public class CDABuilder extends IncrementalProjectBuilder {
 			if (project.getName().endsWith(".doc")) {
 				for (IResource pdfResources : project.getFolder(new Path("dita/classes/generated")).members()) {
 					if (pdfResources.getName().endsWith(".dita")) {
-						if (pdfResources.getModificationStamp() > lastGenerated) {
-							lastGenerated = pdfResources.getModificationStamp();
+						if (pdfResources.getLocalTimeStamp() > lastGenerated) {
+							lastGenerated = pdfResources.getLocalTimeStamp();
 						}
 
 					}
@@ -148,8 +148,8 @@ public class CDABuilder extends IncrementalProjectBuilder {
 			} else {
 				for (IResource ecoreUMLResources : project.getFolder(new Path("model")).members()) {
 					if (ecoreUMLResources.getName().endsWith("_Ecore.uml")) {
-						if (ecoreUMLResources.getModificationStamp() > lastGenerated) {
-							lastGenerated = ecoreUMLResources.getModificationStamp();
+						if (ecoreUMLResources.getLocalTimeStamp() > lastGenerated) {
+							lastGenerated = ecoreUMLResources.getLocalTimeStamp();
 						}
 
 					}
