@@ -299,7 +299,7 @@ public class InstanceGenerator {
 					EObject objectToAdd = eOperation.getEGenericType().getEClassifier().getEPackage().getEFactoryInstance().create(
 						(EClass) eOperation.getEGenericType().getEClassifier());
 					if (!eClass.equals(objectToAdd.eClass())) {
-						sampleInstanceInitialization(objectToAdd, shallShouldMayProperties, --level);
+						sampleInstanceInitialization(objectToAdd, shallShouldMayProperties, level - 1);
 						addObject(eClass, addOperation, eObject, objectToAdd);
 					}
 				}
@@ -326,7 +326,7 @@ public class InstanceGenerator {
 								datatypesInit.setCurrentFeature(structuralFeature);
 								datatypesInit.doSwitch(objectToAdd);
 							} else {
-								sampleInstanceInitialization(objectToAdd, shallShouldMayProperties, level);
+								sampleInstanceInitialization(objectToAdd, shallShouldMayProperties, level - 1);
 							}
 							result.add(objectToAdd);
 						}
