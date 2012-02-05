@@ -89,10 +89,16 @@ public class TransformCDA extends TransformAbstract {
 				generateSection(umlClass);
 				transformerOptions.getSectionList().add(fileName);
 			} else if (CDAModelUtil.isClinicalStatement(cdaClass)) {
-				generateClinicalStatement(umlClass);
-				transformerOptions.getClinicalStatementList().add(fileName);
+
+				if (!(umlClass.getOwner() instanceof Class)) {
+					generateClinicalStatement(umlClass);
+					transformerOptions.getClinicalStatementList().add(fileName);
+				}
+
 			} else {
-				transformerOptions.getClassList().add(fileName);
+				if (!(umlClass.getOwner() instanceof Class)) {
+					transformerOptions.getClassList().add(fileName);
+				}
 			}
 		} else {
 			transformerOptions.getClassList().add(fileName);
@@ -104,7 +110,8 @@ public class TransformCDA extends TransformAbstract {
 	private void generateClinicalDocument(Class umlClass) {
 
 		generateDitaFromTemplate(
-			umlClass, createTemplateParameters(umlClass), umlClass.getName(), "dita", "classes", "templates/class.xml");
+			umlClass, createTemplateParameters(umlClass), umlClass.getName(), "dita", "classes",
+			"templates/document.xml");
 
 	}
 
