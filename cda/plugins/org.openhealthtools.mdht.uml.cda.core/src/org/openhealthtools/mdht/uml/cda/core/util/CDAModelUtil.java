@@ -909,7 +909,10 @@ public class CDAModelUtil {
 			li = NOLI;
 		}
 
+		// INLINE
+
 		Association association = property.getAssociation();
+
 		if (association != null && association.getOwnedComments().size() > 0) {
 			if (markup) {
 				writer.append("<p><i>");
@@ -1310,7 +1313,7 @@ public class CDAModelUtil {
 		appendConformanceRuleIds(constraint, message, markup);
 
 		// include comment text only in markup output
-		if (markup && constraint.getOwnedComments().size() > 0) {
+		if (false && markup && constraint.getOwnedComments().size() > 0) {
 			message.append("<ul>");
 			for (Comment comment : constraint.getOwnedComments()) {
 				message.append("<li>");
