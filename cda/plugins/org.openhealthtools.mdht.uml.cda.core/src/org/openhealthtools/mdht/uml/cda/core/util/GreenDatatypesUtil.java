@@ -83,6 +83,8 @@ public class GreenDatatypesUtil {
 			greenTypeName = "IntervalOfTimestamps";
 		else if ("TEL".equals(typeName))
 			greenTypeName = "TelecomAddress";
+		else if ("RTO_PQ_PQ".equals(typeName))
+			greenTypeName = "Ratio";
 
 		else
 			greenTypeName = typeName;
