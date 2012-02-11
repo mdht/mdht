@@ -1436,38 +1436,17 @@ public class CDAModelUtil {
 	}
 
 	public static String getCDAElementName(Property property) {
-		Class cdaSourceClass = getCDAClass(property.getClass_());
-		Class endType = (property.getType() instanceof Class)
-				? (Class) property.getType()
-				: null;
-		Class cdaTargetClass = endType != null
-				? getCDAClass(endType)
-				: null;
-
-		// TODO this is incomplete determination of XML element name
 		String elementName = property.getName();
-		if (cdaSourceClass == null) {
-			elementName = property.getName();
-		} else if ("ClinicalDocument".equals(cdaSourceClass.getName()) &&
-				(CDAModelUtil.isSection(cdaTargetClass) || CDAModelUtil.isClinicalStatement(cdaTargetClass))) {
-			elementName = "component";
-		} else if (CDAModelUtil.isSection(cdaSourceClass) && (CDAModelUtil.isSection(cdaTargetClass))) {
-			elementName = "component";
-		} else if (CDAModelUtil.isSection(cdaSourceClass) &&
-				(CDAModelUtil.isClinicalStatement(cdaTargetClass) || CDAModelUtil.isEntry(cdaTargetClass))) {
-			elementName = "entry";
-		} else if (CDAModelUtil.isOrganizer(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
-			elementName = "component";
-		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
-			elementName = "entryRelationship";
-		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) &&
-				"ParticipantRole".equals(cdaTargetClass.getName())) {
-			elementName = "participant";
-		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) &&
-				"AssignedEntity".equals(cdaTargetClass.getName())) {
-			elementName = "performer";
+		if (property.getType() instanceof Class) {
+			Class cdaSourceClass = getCDAClass(property.getClass_());
+			if (cdaSourceClass != null) {
+				Property cdaProperty = cdaSourceClass.getOwnedAttribute(
+					null, getCDAClass((Classifier) property.getType()));
+				if (cdaProperty != null && cdaProperty.getName() != null) {
+					elementName = cdaProperty.getName();
+				}
+			}
 		}
-
 		return elementName;
 	}
 
