@@ -154,6 +154,22 @@ public class ProblemObservationTest extends CDAValidationTest {
 			}
 
 			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ProblemObservation target) {
+						// Test case with multiple entryRelationships.. Should check for inversion Indicator only if AgeObservation is present
+						target.getEntryRelationships().clear();
+						target.getEntryRelationships().add(CDAFactory.eINSTANCE.createEntryRelationship());
+						target.getEntryRelationships().add(CDAFactory.eINSTANCE.createEntryRelationship());
+					}
+
+				});
+			}
+
+			@Override
 			protected void updateToPass(ProblemObservation target) {
 				target.getEntryRelationships().clear();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
