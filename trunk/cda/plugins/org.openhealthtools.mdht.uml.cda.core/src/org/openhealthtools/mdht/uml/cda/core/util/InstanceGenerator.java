@@ -18,7 +18,6 @@ import java.io.FileNotFoundException;
 import java.io.Writer;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -32,27 +31,25 @@ import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EParameter;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Artifact;
+import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.InstanceSpecification;
-import org.eclipse.uml2.uml.InstanceValue;
-import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.Slot;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.eclipse.uml2.uml.ValueSpecification;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
@@ -62,7 +59,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.datatypes.INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVXB_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
@@ -162,6 +161,28 @@ public class InstanceGenerator {
 			return object;
 		}
 
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesSwitch#caseED(org.openhealthtools.mdht.uml.hl7.datatypes.ED)
+		 */
+		@Override
+		public Object caseED(ED object) {
+			object.addText("Text Value");
+			return object;
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesSwitch#caseINT(org.openhealthtools.mdht.uml.hl7.datatypes.INT)
+		 */
+		@Override
+		public Object caseINT(INT object) {
+			object.setValue(new Integer(1));
+			return super.caseINT(object);
+		}
+
 		@Override
 		public Object defaultCase(EObject object) {
 			return super.defaultCase(object);
@@ -193,28 +214,6 @@ public class InstanceGenerator {
 		shallShouldMayProperties.put("title", "title");
 
 		return shallShouldMayProperties;
-
-	}
-
-	private static void createValues(InstanceSpecification instanceSpecification, ArrayList<String> annotations) {
-		for (Slot slot : instanceSpecification.getSlots()) {
-
-			for (ValueSpecification vs : slot.getValues()) {
-				if (vs instanceof InstanceValue) {
-					InstanceValue instanceValue = (InstanceValue) vs;
-					createValues(instanceValue.getInstance(), annotations);
-				} else {
-					if (vs instanceof LiteralString) {
-						LiteralString literalString = (LiteralString) vs;
-						if (literalString.getValue() != null && literalString.getValue().length() > 0) {
-							annotations.add(vs.getName());
-							annotations.add(literalString.getValue());
-						}
-					}
-
-				}
-			}
-		}
 
 	}
 
@@ -276,12 +275,13 @@ public class InstanceGenerator {
 				initMethod.invoke(eObject, new Object[0]);
 			}
 		} catch (Exception e) {
-
+			// e.printStackTrace();
 		}
 	}
 
-	private static void sampleInstanceInitialization(EObject eObject, HashMap<String, String> shallShouldMayProperties,
-			int level) {
+	@SuppressWarnings("unchecked")
+	private void sampleInstanceInitialization(Class umlClass, EObject eObject,
+			HashMap<String, String> shallShouldMayProperties, int level) {
 
 		if (level < 0) {
 			return;
@@ -290,6 +290,51 @@ public class InstanceGenerator {
 		initEObject(eObject);
 
 		EClass eClass = eObject.eClass();
+
+		for (Association association : umlClass.getAssociations()) {
+			for (Property property : association.getMemberEnds()) {
+				if (umlClass.getOwnedAttribute(property.getName(), property.getType()) != null) {
+					if (property.getType() instanceof Class) {
+						Class cdaSourceClass = CDAModelUtil.getCDAClass(umlClass);
+						Class cdaTypeClass = CDAModelUtil.getCDAClass((Classifier) property.getType());
+						Property cdaProperty = cdaSourceClass.getAttribute(null, cdaTypeClass);
+						if (cdaProperty != null) {
+							EStructuralFeature cdaFeature = eClass.getEStructuralFeature(cdaProperty.getName());
+							if (cdaFeature instanceof EReference) {
+								EReference cdaReference = (EReference) cdaFeature;
+								EObject objectToAdd = cdaReference.getEReferenceType().getEPackage().getEFactoryInstance().create(
+									cdaReference.getEReferenceType());
+								String ePackageURI = CDAModelUtil.getEcorePackageURI(property.getType());
+								EPackage ePackage = getEPackageForURI(ePackageURI);
+								if (ePackage != null) {
+									EClassifier eet = ePackage.getEClassifier(UML2Util.getValidJavaIdentifier(umlClass.getName()) +
+											"_" + UML2Util.getValidJavaIdentifier(property.getType().getName()));
+									if (eet != null) {
+										EAnnotation annotation = eet.getEAnnotation(CDAUtil.CDA_ANNOTATION_SOURCE);
+										if (annotation != null) {
+											CDAUtil.init(objectToAdd, annotation.getDetails().map());
+										}
+									}
+								}
+
+								HashMap<String, String> inlineshallShouldMayProperties = new HashMap<String, String>();
+
+								createvalueSetProperies((Class) property.getType(), inlineshallShouldMayProperties);
+
+								sampleInstanceInitialization(
+									(Class) property.getType(), objectToAdd, inlineshallShouldMayProperties, level - 1);
+								if (cdaReference.isMany()) {
+									((EList) eObject.eGet(cdaReference)).add(objectToAdd);
+								} else {
+									eObject.eSet(cdaReference, objectToAdd);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
 		for (EOperation eOperation : eClass.getEOperations()) {
 			if (eOperation.getName().startsWith("get") && eOperation.getEType() instanceof EClass &&
 					!((EClass) eOperation.getEType()).isAbstract()) {
@@ -299,7 +344,7 @@ public class InstanceGenerator {
 					EObject objectToAdd = eOperation.getEGenericType().getEClassifier().getEPackage().getEFactoryInstance().create(
 						(EClass) eOperation.getEGenericType().getEClassifier());
 					if (!eClass.equals(objectToAdd.eClass())) {
-						sampleInstanceInitialization(objectToAdd, shallShouldMayProperties, level - 1);
+						sampleInstanceInitialization(umlClass, objectToAdd, shallShouldMayProperties, level - 1);
 						addObject(eClass, addOperation, eObject, objectToAdd);
 					}
 				}
@@ -313,28 +358,35 @@ public class InstanceGenerator {
 			if (structuralFeature.getLowerBound() > 0 ||
 					shallShouldMayProperties.containsKey(structuralFeature.getName())) {
 
-				if (structuralFeature.getEGenericType().getEClassifier() instanceof EClass &&
-						!((EClass) structuralFeature.getEGenericType().getEClassifier()).isAbstract()) {
+				EClassifier sfEClass = structuralFeature.getEGenericType().getEClassifier();
+
+				Property sfp = umlClass.getOwnedAttribute(structuralFeature.getName(), null);
+				if (sfp != null) {
+
+					sfEClass = getEClass(sfp.getType());
+				}
+
+				if (sfEClass instanceof EClass && !((EClass) sfEClass).isAbstract()) {
 
 					if (structuralFeature.isMany() && !structuralFeature.getName().equals("mixed")) {
+
 						EList result = (EList) eObject.eGet(structuralFeature);
 						if (result.size() == 0) {
-							EObject objectToAdd = structuralFeature.getEGenericType().getEClassifier().getEPackage().getEFactoryInstance().create(
-								(EClass) structuralFeature.getEGenericType().getEClassifier());
+							EObject objectToAdd = sfEClass.getEPackage().getEFactoryInstance().create((EClass) sfEClass);
 							if (DatatypesPackage.eINSTANCE.getNsURI().equals(
 								objectToAdd.eClass().getEPackage().getNsURI())) {
 								datatypesInit.setCurrentFeature(structuralFeature);
 								datatypesInit.doSwitch(objectToAdd);
 							} else {
-								sampleInstanceInitialization(objectToAdd, shallShouldMayProperties, level - 1);
+								sampleInstanceInitialization(umlClass, objectToAdd, shallShouldMayProperties, level - 1);
 							}
 							result.add(objectToAdd);
 						}
 					} else {
+
 						Object result = eObject.eGet(structuralFeature);
 						if (result == null && structuralFeature.getEType() instanceof EClass) {
-							EObject objectToSet = structuralFeature.getEGenericType().getEClassifier().getEPackage().getEFactoryInstance().create(
-								(EClass) structuralFeature.getEGenericType().getEClassifier());
+							EObject objectToSet = sfEClass.getEPackage().getEFactoryInstance().create((EClass) sfEClass);
 
 							if (DatatypesPackage.eINSTANCE.getNsURI().equals(
 								objectToSet.eClass().getEPackage().getNsURI())) {
@@ -467,7 +519,7 @@ public class InstanceGenerator {
 
 			eObject = eClass.getEPackage().getEFactoryInstance().create(eClass);
 			// topPackage.eResource().getResourceSet(), shallShouldMayProperties,
-			sampleInstanceInitialization(eObject, shallShouldMayProperties, levels);
+			sampleInstanceInitialization(umlClass, eObject, shallShouldMayProperties, levels);
 
 		}
 
