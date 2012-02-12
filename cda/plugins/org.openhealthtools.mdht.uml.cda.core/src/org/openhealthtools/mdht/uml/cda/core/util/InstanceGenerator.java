@@ -297,7 +297,11 @@ public class InstanceGenerator {
 					if (property.getType() instanceof Class) {
 						Class cdaSourceClass = CDAModelUtil.getCDAClass(umlClass);
 						Class cdaTypeClass = CDAModelUtil.getCDAClass((Classifier) property.getType());
-						Property cdaProperty = cdaSourceClass.getAttribute(null, cdaTypeClass);
+						Property cdaProperty = null;
+						if (cdaSourceClass != null) {
+							cdaProperty = cdaSourceClass.getAttribute(null, cdaTypeClass);
+						}
+
 						if (cdaProperty != null) {
 							EStructuralFeature cdaFeature = eClass.getEStructuralFeature(cdaProperty.getName());
 							if (cdaFeature instanceof EReference) {
@@ -380,13 +384,19 @@ public class InstanceGenerator {
 							} else {
 								sampleInstanceInitialization(umlClass, objectToAdd, shallShouldMayProperties, level - 1);
 							}
-							result.add(objectToAdd);
+							try {
+								result.add(objectToAdd);
+							} catch (ClassCastException cce) {
+								System.out.println("Unable to add " + eClass.getName() + "." +
+										structuralFeature.getName() + " using type " + objectToAdd.eClass().getName());
+							}
 						}
 					} else {
 
 						Object result = eObject.eGet(structuralFeature);
 						if (result == null && structuralFeature.getEType() instanceof EClass) {
-							EObject objectToSet = sfEClass.getEPackage().getEFactoryInstance().create((EClass) sfEClass);
+							EObject objectToSet = structuralFeature.getEType().getEPackage().getEFactoryInstance().create(
+								(EClass) structuralFeature.getEType());
 
 							if (DatatypesPackage.eINSTANCE.getNsURI().equals(
 								objectToSet.eClass().getEPackage().getNsURI())) {
@@ -394,7 +404,13 @@ public class InstanceGenerator {
 								datatypesInit.setCurrentFeature(structuralFeature);
 								datatypesInit.doSwitch(objectToSet);
 							}
-							eObject.eSet(structuralFeature, objectToSet);
+							try {
+								eObject.eSet(structuralFeature, objectToSet);
+							} catch (ClassCastException cce) {
+								System.out.println("Unable to set " + eClass.getName() + "." +
+										structuralFeature.getEType().getName() + structuralFeature.getName() +
+										" using type " + objectToSet.eClass().getName());
+							}
 						}
 					}
 				}
