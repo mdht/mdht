@@ -6611,6 +6611,11 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fTX1t0xwEd6h-an5IXo-DA" value="*"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fTX1uExwEd6h-an5IXo-DA"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_jSS_4FZvEeGCdLgBm6VHOQ" name="sDTCId" visibility="private" aggregation="composite">
+        <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nDs08FZvEeGCdLgBm6VHOQ" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_minhIFZvEeGCdLgBm6VHOQ"/>
+      </ownedAttribute>
       <ownedAttribute xmi:id="_DUdpAErqEd6FXKclYGEDCw" name="name" visibility="private" aggregation="composite">
         <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_3VD9wD5yEd6cla2oXsPtlA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EK_oYUrqEd6FXKclYGEDCw" value="*"/>
@@ -8995,4 +9000,5 @@
   <Ecore:EReference xmi:id="_n2Q-MICaEd-tCqqhK7qkow" xmlName="birthTime" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_UbzwoICaEd-tCqqhK7qkow"/>
   <Ecore:EReference xmi:id="_yczXkAPjEeGdM61FsLhcmQ" xmlName="deceasedInd" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_rS5VoAPjEeGdM61FsLhcmQ"/>
   <Ecore:EReference xmi:id="_T7cRkAPkEeGdM61FsLhcmQ" xmlName="deceasedTime" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_LJEdAAPkEeGdM61FsLhcmQ"/>
+  <Ecore:EReference xmi:id="_wjqvUFZvEeGCdLgBm6VHOQ" xmlName="id" xmlNamespace="urn:hl7-org:sdtc" xmlFeatureKind="Element" base_Property="_jSS_4FZvEeGCdLgBm6VHOQ"/>
 </xmi:XMI>

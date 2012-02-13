@@ -5403,13 +5403,22 @@ public interface CDAPackage extends EPackage {
 	int SUBJECT_PERSON__TEMPLATE_ID = RIMPackage.ENTITY_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>SDTC Id</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBJECT_PERSON__SDTC_ID = RIMPackage.ENTITY_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__NAME = RIMPackage.ENTITY_FEATURE_COUNT + 3;
+	int SUBJECT_PERSON__NAME = RIMPackage.ENTITY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Administrative Gender Code</b></em>' containment reference.
@@ -5418,7 +5427,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__ADMINISTRATIVE_GENDER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 4;
+	int SUBJECT_PERSON__ADMINISTRATIVE_GENDER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Birth Time</b></em>' containment reference.
@@ -5427,7 +5436,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__BIRTH_TIME = RIMPackage.ENTITY_FEATURE_COUNT + 5;
+	int SUBJECT_PERSON__BIRTH_TIME = RIMPackage.ENTITY_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>SDTC Deceased Ind</b></em>' containment reference.
@@ -5436,7 +5445,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__SDTC_DECEASED_IND = RIMPackage.ENTITY_FEATURE_COUNT + 6;
+	int SUBJECT_PERSON__SDTC_DECEASED_IND = RIMPackage.ENTITY_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>SDTC Deceased Time</b></em>' containment reference.
@@ -5445,7 +5454,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__SDTC_DECEASED_TIME = RIMPackage.ENTITY_FEATURE_COUNT + 7;
+	int SUBJECT_PERSON__SDTC_DECEASED_TIME = RIMPackage.ENTITY_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Null Flavor</b></em>' attribute.
@@ -5454,7 +5463,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__NULL_FLAVOR = RIMPackage.ENTITY_FEATURE_COUNT + 8;
+	int SUBJECT_PERSON__NULL_FLAVOR = RIMPackage.ENTITY_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Class Code</b></em>' attribute.
@@ -5463,7 +5472,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__CLASS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 9;
+	int SUBJECT_PERSON__CLASS_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Determiner Code</b></em>' attribute.
@@ -5472,7 +5481,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON__DETERMINER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 10;
+	int SUBJECT_PERSON__DETERMINER_CODE = RIMPackage.ENTITY_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Subject Person</em>' class.
@@ -5481,7 +5490,7 @@ public interface CDAPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBJECT_PERSON_FEATURE_COUNT = RIMPackage.ENTITY_FEATURE_COUNT + 11;
+	int SUBJECT_PERSON_FEATURE_COUNT = RIMPackage.ENTITY_FEATURE_COUNT + 12;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.cda.impl.EntryImpl <em>Entry</em>}' class.
@@ -16184,6 +16193,17 @@ public interface CDAPackage extends EPackage {
 	EReference getSubjectPerson_TemplateId();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getSDTCIds <em>SDTC Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>SDTC Id</em>'.
+	 * @see org.openhealthtools.mdht.uml.cda.SubjectPerson#getSDTCIds()
+	 * @see #getSubjectPerson()
+	 * @generated
+	 */
+	EReference getSubjectPerson_SDTCId();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getNames <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -26126,6 +26146,14 @@ public interface CDAPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SUBJECT_PERSON__TEMPLATE_ID = eINSTANCE.getSubjectPerson_TemplateId();
+
+		/**
+		 * The meta object literal for the '<em><b>SDTC Id</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBJECT_PERSON__SDTC_ID = eINSTANCE.getSubjectPerson_SDTCId();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' containment reference list feature.

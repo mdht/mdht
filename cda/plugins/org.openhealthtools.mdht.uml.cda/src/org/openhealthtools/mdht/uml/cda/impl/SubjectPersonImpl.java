@@ -47,6 +47,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getTypeId <em>Type Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getSDTCIds <em>SDTC Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getNames <em>Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getAdministrativeGenderCode <em>Administrative Gender Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.impl.SubjectPersonImpl#getBirthTime <em>Birth Time</em>}</li>
@@ -90,6 +91,16 @@ public class SubjectPersonImpl extends EntityImpl implements SubjectPerson {
 	 * @ordered
 	 */
 	protected EList<II> templateIds;
+
+	/**
+	 * The cached value of the '{@link #getSDTCIds() <em>SDTC Id</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSDTCIds()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<II> sDTCIds;
 
 	/**
 	 * The cached value of the '{@link #getNames() <em>Name</em>}' containment reference list.
@@ -327,6 +338,18 @@ public class SubjectPersonImpl extends EntityImpl implements SubjectPerson {
 			templateIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.SUBJECT_PERSON__TEMPLATE_ID);
 		}
 		return templateIds;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<II> getSDTCIds() {
+		if (sDTCIds == null) {
+			sDTCIds = new EObjectContainmentEList<II>(II.class, this, CDAPackage.SUBJECT_PERSON__SDTC_ID);
+		}
+		return sDTCIds;
 	}
 
 	/**
@@ -764,6 +787,8 @@ public class SubjectPersonImpl extends EntityImpl implements SubjectPerson {
 				return basicSetTypeId(null, msgs);
 			case CDAPackage.SUBJECT_PERSON__TEMPLATE_ID:
 				return ((InternalEList<?>) getTemplateIds()).basicRemove(otherEnd, msgs);
+			case CDAPackage.SUBJECT_PERSON__SDTC_ID:
+				return ((InternalEList<?>) getSDTCIds()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBJECT_PERSON__NAME:
 				return ((InternalEList<?>) getNames()).basicRemove(otherEnd, msgs);
 			case CDAPackage.SUBJECT_PERSON__ADMINISTRATIVE_GENDER_CODE:
@@ -792,6 +817,8 @@ public class SubjectPersonImpl extends EntityImpl implements SubjectPerson {
 				return getTypeId();
 			case CDAPackage.SUBJECT_PERSON__TEMPLATE_ID:
 				return getTemplateIds();
+			case CDAPackage.SUBJECT_PERSON__SDTC_ID:
+				return getSDTCIds();
 			case CDAPackage.SUBJECT_PERSON__NAME:
 				return getNames();
 			case CDAPackage.SUBJECT_PERSON__ADMINISTRATIVE_GENDER_CODE:
@@ -831,6 +858,10 @@ public class SubjectPersonImpl extends EntityImpl implements SubjectPerson {
 			case CDAPackage.SUBJECT_PERSON__TEMPLATE_ID:
 				getTemplateIds().clear();
 				getTemplateIds().addAll((Collection<? extends II>) newValue);
+				return;
+			case CDAPackage.SUBJECT_PERSON__SDTC_ID:
+				getSDTCIds().clear();
+				getSDTCIds().addAll((Collection<? extends II>) newValue);
 				return;
 			case CDAPackage.SUBJECT_PERSON__NAME:
 				getNames().clear();
@@ -878,6 +909,9 @@ public class SubjectPersonImpl extends EntityImpl implements SubjectPerson {
 			case CDAPackage.SUBJECT_PERSON__TEMPLATE_ID:
 				getTemplateIds().clear();
 				return;
+			case CDAPackage.SUBJECT_PERSON__SDTC_ID:
+				getSDTCIds().clear();
+				return;
 			case CDAPackage.SUBJECT_PERSON__NAME:
 				getNames().clear();
 				return;
@@ -920,6 +954,8 @@ public class SubjectPersonImpl extends EntityImpl implements SubjectPerson {
 				return typeId != null;
 			case CDAPackage.SUBJECT_PERSON__TEMPLATE_ID:
 				return templateIds != null && !templateIds.isEmpty();
+			case CDAPackage.SUBJECT_PERSON__SDTC_ID:
+				return sDTCIds != null && !sDTCIds.isEmpty();
 			case CDAPackage.SUBJECT_PERSON__NAME:
 				return names != null && !names.isEmpty();
 			case CDAPackage.SUBJECT_PERSON__ADMINISTRATIVE_GENDER_CODE:
