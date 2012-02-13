@@ -36,6 +36,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getRealmCodes <em>Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getTypeId <em>Type Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getTemplateIds <em>Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getSDTCIds <em>SDTC Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getNames <em>Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getAdministrativeGenderCode <em>Administrative Gender Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.SubjectPerson#getBirthTime <em>Birth Time</em>}</li>
@@ -112,6 +113,23 @@ public interface SubjectPerson extends Entity {
 	 * @generated
 	 */
 	EList<II> getTemplateIds();
+
+	/**
+	 * Returns the value of the '<em><b>SDTC Id</b></em>' containment reference list.
+	 * The list contents are of type {@link org.openhealthtools.mdht.uml.hl7.datatypes.II}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>SDTC Id</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>SDTC Id</em>' containment reference list.
+	 * @see org.openhealthtools.mdht.uml.cda.CDAPackage#getSubjectPerson_SDTCId()
+	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="name='id' namespace='urn:hl7-org:sdtc' kind='element'"
+	 * @generated
+	 */
+	EList<II> getSDTCIds();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' containment reference list.

@@ -5745,7 +5745,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSubjectPerson_Name() {
+	public EReference getSubjectPerson_SDTCId() {
 		return (EReference) getSubjectPerson().getEStructuralFeatures().get(3);
 	}
 
@@ -5754,7 +5754,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSubjectPerson_AdministrativeGenderCode() {
+	public EReference getSubjectPerson_Name() {
 		return (EReference) getSubjectPerson().getEStructuralFeatures().get(4);
 	}
 
@@ -5763,7 +5763,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSubjectPerson_BirthTime() {
+	public EReference getSubjectPerson_AdministrativeGenderCode() {
 		return (EReference) getSubjectPerson().getEStructuralFeatures().get(5);
 	}
 
@@ -5772,7 +5772,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSubjectPerson_SDTCDeceasedInd() {
+	public EReference getSubjectPerson_BirthTime() {
 		return (EReference) getSubjectPerson().getEStructuralFeatures().get(6);
 	}
 
@@ -5781,7 +5781,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSubjectPerson_SDTCDeceasedTime() {
+	public EReference getSubjectPerson_SDTCDeceasedInd() {
 		return (EReference) getSubjectPerson().getEStructuralFeatures().get(7);
 	}
 
@@ -5790,8 +5790,8 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSubjectPerson_NullFlavor() {
-		return (EAttribute) getSubjectPerson().getEStructuralFeatures().get(8);
+	public EReference getSubjectPerson_SDTCDeceasedTime() {
+		return (EReference) getSubjectPerson().getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -5799,7 +5799,7 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSubjectPerson_ClassCode() {
+	public EAttribute getSubjectPerson_NullFlavor() {
 		return (EAttribute) getSubjectPerson().getEStructuralFeatures().get(9);
 	}
 
@@ -5808,8 +5808,17 @@ public class CDAPackageImpl extends EPackageImpl implements CDAPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSubjectPerson_DeterminerCode() {
+	public EAttribute getSubjectPerson_ClassCode() {
 		return (EAttribute) getSubjectPerson().getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSubjectPerson_DeterminerCode() {
+		return (EAttribute) getSubjectPerson().getEStructuralFeatures().get(11);
 	}
 
 	/**
