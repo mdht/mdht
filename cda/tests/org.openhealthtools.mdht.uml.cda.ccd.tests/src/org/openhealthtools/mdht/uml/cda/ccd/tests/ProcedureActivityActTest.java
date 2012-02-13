@@ -35,6 +35,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct#validateProcedureActivityActCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct#validateProcedureActivityActEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct#validateProcedureActivityActId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct#validateProcedureActivityActEncounterLocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Encounter Location</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct#validateProcedureActivityActPerformer2(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Performer2</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct#validateProcedureActivityActProblemAct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Problem Act</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct#validateProcedureActivityActProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Problem Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct#validateProcedureActivityActAgeObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Age Observation</em>}</li>
@@ -224,6 +226,74 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 		};
 
 		validateProcedureActivityActIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureActivityActEncounterLocation() {
+		OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActEncounterLocationTestCase = new OperationsTestCase<ProcedureActivityAct>(
+			"validateProcedureActivityActEncounterLocation",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_ENCOUNTER_LOCATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityAct target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityAct target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityActOperations.validateProcedureActivityActEncounterLocation(
+					(ProcedureActivityAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityActEncounterLocationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureActivityActPerformer2() {
+		OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActPerformer2TestCase = new OperationsTestCase<ProcedureActivityAct>(
+			"validateProcedureActivityActPerformer2",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_PERFORMER2__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityAct target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityAct target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityActOperations.validateProcedureActivityActPerformer2(
+					(ProcedureActivityAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityActPerformer2TestCase.doValidationTest();
 	}
 
 	/**

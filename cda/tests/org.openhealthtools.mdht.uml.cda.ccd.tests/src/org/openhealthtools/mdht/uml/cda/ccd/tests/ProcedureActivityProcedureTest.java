@@ -35,6 +35,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityProcedure#validateProcedureActivityProcedureCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Procedure Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityProcedure#validateProcedureActivityProcedureEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Procedure Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityProcedure#validateProcedureActivityProcedureId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Procedure Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityProcedure#validateProcedureActivityProcedureSpecimen(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Procedure Specimen</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityProcedure#validateProcedureActivityProcedureEncounterLocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Procedure Encounter Location</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityProcedure#validateProcedureActivityProcedurePerformer2(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Procedure Performer2</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityProcedure#validateProcedureActivityProcedureProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Procedure Problem Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityProcedure#validateProcedureActivityProcedureProblemAct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Procedure Problem Act</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityProcedure#validateProcedureActivityProcedureAgeObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Procedure Age Observation</em>}</li>
@@ -224,6 +227,108 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 		};
 
 		validateProcedureActivityProcedureIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureActivityProcedureSpecimen() {
+		OperationsTestCase<ProcedureActivityProcedure> validateProcedureActivityProcedureSpecimenTestCase = new OperationsTestCase<ProcedureActivityProcedure>(
+			"validateProcedureActivityProcedureSpecimen",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_PROCEDURE_SPECIMEN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityProcedure target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityProcedure target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityProcedureOperations.validateProcedureActivityProcedureSpecimen(
+					(ProcedureActivityProcedure) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityProcedureSpecimenTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureActivityProcedureEncounterLocation() {
+		OperationsTestCase<ProcedureActivityProcedure> validateProcedureActivityProcedureEncounterLocationTestCase = new OperationsTestCase<ProcedureActivityProcedure>(
+			"validateProcedureActivityProcedureEncounterLocation",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_PROCEDURE_ENCOUNTER_LOCATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityProcedure target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityProcedure target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityProcedureOperations.validateProcedureActivityProcedureEncounterLocation(
+					(ProcedureActivityProcedure) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityProcedureEncounterLocationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureActivityProcedurePerformer2() {
+		OperationsTestCase<ProcedureActivityProcedure> validateProcedureActivityProcedurePerformer2TestCase = new OperationsTestCase<ProcedureActivityProcedure>(
+			"validateProcedureActivityProcedurePerformer2",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_PROCEDURE_PERFORMER2__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityProcedure target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityProcedure target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityProcedureOperations.validateProcedureActivityProcedurePerformer2(
+					(ProcedureActivityProcedure) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityProcedurePerformer2TestCase.doValidationTest();
 	}
 
 	/**
