@@ -227,7 +227,7 @@ public class IndicationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIndicationId() {
@@ -237,13 +237,13 @@ public class IndicationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(Indication target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(Indication target) {
-				target.init();
 
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 			}
 
 			@Override

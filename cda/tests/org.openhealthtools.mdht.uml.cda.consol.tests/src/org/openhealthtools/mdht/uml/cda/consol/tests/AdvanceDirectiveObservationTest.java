@@ -717,9 +717,17 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 				target.init();
 				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
 
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setPlayingEntity(CDAFactory.eINSTANCE.createPlayingEntity());
+
+				pr.setClassCode(RoleClassRoot.ROL);
+
+				// pr.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+
+				p2.setParticipantRole(pr);
+
 				p2.setTypeCode(ParticipationType.CST);
 				target.getParticipants().add(p2);
-
 			}
 
 			@Override
@@ -769,25 +777,36 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 				target.init();
 				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
 
-				p2.setTypeCode(ParticipationType.CST);
-				target.getParticipants().add(p2);
-
-			}
-
-			@Override
-			protected void updateToPass(AdvanceDirectiveObservation target) {
-				target.getParticipants().clear();
-				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
 				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
 				pr.setPlayingEntity(CDAFactory.eINSTANCE.createPlayingEntity());
 
-				pr.setClassCode(RoleClassRoot.ROL);
+				// pr.setClassCode(RoleClassRoot.ROL);
+
+				// pr.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
 
 				p2.setParticipantRole(pr);
 
 				p2.setTypeCode(ParticipationType.CST);
 				target.getParticipants().add(p2);
+			}
 
+			@Override
+			protected void updateToPass(AdvanceDirectiveObservation target) {
+				target.getParticipants().clear();
+
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setPlayingEntity(CDAFactory.eINSTANCE.createPlayingEntity());
+
+				pr.setClassCode(RoleClassRoot.ROL);
+
+				// pr.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+
+				p2.setParticipantRole(pr);
+
+				p2.setTypeCode(ParticipationType.CST);
+				target.getParticipants().add(p2);
 			}
 
 			@Override
@@ -817,6 +836,15 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			protected void updateToFail(AdvanceDirectiveObservation target) {
 				target.init();
 				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setPlayingEntity(CDAFactory.eINSTANCE.createPlayingEntity());
+
+				pr.setClassCode(RoleClassRoot.ROL);
+
+				pr.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+
+				p2.setParticipantRole(pr);
 
 				p2.setTypeCode(ParticipationType.CST);
 				target.getParticipants().add(p2);

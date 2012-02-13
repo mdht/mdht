@@ -417,7 +417,7 @@ public class MedicationDispenseTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationDispenseProduct() {
@@ -428,13 +428,12 @@ public class MedicationDispenseTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MedicationDispense target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(MedicationDispense target) {
-				target.init();
-
+				target.setProduct(CDAFactory.eINSTANCE.createProduct());
 			}
 
 			@Override
