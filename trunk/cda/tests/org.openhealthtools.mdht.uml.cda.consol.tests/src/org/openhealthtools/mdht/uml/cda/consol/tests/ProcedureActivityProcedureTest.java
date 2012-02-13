@@ -1073,6 +1073,8 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 	public void testGetProductInstances() {
 
 		ProcedureActivityProcedure target = objectFactory.create();
+		// self.getParticipantRoles()->select(participantRole : cda::ParticipantRole | not participantRole.oclIsUndefined() and
+		// participantRole.oclIsKindOf(consol::ProductInstance)).oclAsType(consol::ProductInstance)
 		target.getProductInstances();
 
 	}

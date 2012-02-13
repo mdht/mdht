@@ -11,6 +11,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ImmunizationMedicationInformationOperations;
@@ -142,7 +143,7 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationMedicationInformationManufacturerOrganization() {
@@ -153,12 +154,12 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ImmunizationMedicationInformation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationMedicationInformation target) {
-				target.init();
+				target.setManufacturerOrganization(CDAFactory.eINSTANCE.createOrganization());
 
 			}
 
@@ -176,7 +177,7 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationMedicationInformationManufacturedMaterial() {
@@ -187,12 +188,12 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ImmunizationMedicationInformation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationMedicationInformation target) {
-				target.init();
+				target.setManufacturedMaterial(CDAFactory.eINSTANCE.createMaterial());
 
 			}
 
