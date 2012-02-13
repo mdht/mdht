@@ -43,6 +43,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateStatusObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Status Observation Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.StatusObservation#validateTargetOfEntryRelationship() <em>Validate Target Of Entry Relationship</em>}</li>
  * </ul>
  * </p>
  *
@@ -368,6 +369,38 @@ public class StatusObservationTest extends CDAValidationTest {
 		};
 
 		validateStatusObservationValueTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidateTargetOfEntryRelationship() {
+		OperationsTestCase<StatusObservation> validateTargetOfEntryRelationshipTestCase = new OperationsTestCase<StatusObservation>(
+			"validateTargetOfEntryRelationship",
+			operationsForOCL.getOCLValue("VALIDATE_TARGET_OF_ENTRY_RELATIONSHIP__EOCL_EXP"), objectFactory) {
+
+			@Override
+			protected void updateToFail(StatusObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(StatusObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return StatusObservationOperations.validateTargetOfEntryRelationship((StatusObservation) objectToTest);
+			}
+
+		};
+
+		validateTargetOfEntryRelationshipTestCase.doValidationTest();
 	}
 
 	/**

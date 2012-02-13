@@ -46,6 +46,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#validateEncountersActivityEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activity Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#validateEncountersActivityPatientInstruction(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activity Patient Instruction</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#validateEncountersActivityAgeObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activity Age Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#validateEncountersActivityEncounterLocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Activity Encounter Location</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#getPatientInstructions() <em>Get Patient Instructions</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.EncountersActivity#getAgeObservation() <em>Get Age Observation</em>}</li>
  * </ul>
@@ -410,6 +411,40 @@ public class EncountersActivityTest extends CDAValidationTest {
 		};
 
 		validateEncountersActivityAgeObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateEncountersActivityEncounterLocation() {
+		OperationsTestCase<EncountersActivity> validateEncountersActivityEncounterLocationTestCase = new OperationsTestCase<EncountersActivity>(
+			"validateEncountersActivityEncounterLocation",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTERS_ACTIVITY_ENCOUNTER_LOCATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(EncountersActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(EncountersActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EncountersActivityOperations.validateEncountersActivityEncounterLocation(
+					(EncountersActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEncountersActivityEncounterLocationTestCase.doValidationTest();
 	}
 
 	/**

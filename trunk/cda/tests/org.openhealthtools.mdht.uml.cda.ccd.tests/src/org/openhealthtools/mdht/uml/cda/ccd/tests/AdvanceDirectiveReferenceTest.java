@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveReference#validateAdvanceDirectiveReferenceExternalDocumentHasId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Reference External Document Has Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveReference#validateAdvanceDirectiveReferenceTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Reference Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveReference#validateAdvanceDirectiveReferenceTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Reference Type Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveReference#validateAdvanceDirectiveReferenceExternalDocument(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Reference External Document</em>}</li>
  * </ul>
  * </p>
  *
@@ -234,6 +235,40 @@ public class AdvanceDirectiveReferenceTest extends CDAValidationTest {
 		};
 
 		validateAdvanceDirectiveReferenceTypeCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAdvanceDirectiveReferenceExternalDocument() {
+		OperationsTestCase<AdvanceDirectiveReference> validateAdvanceDirectiveReferenceExternalDocumentTestCase = new OperationsTestCase<AdvanceDirectiveReference>(
+			"validateAdvanceDirectiveReferenceExternalDocument",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_REFERENCE_EXTERNAL_DOCUMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AdvanceDirectiveReference target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AdvanceDirectiveReference target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AdvanceDirectiveReferenceOperations.validateAdvanceDirectiveReferenceExternalDocument(
+					(AdvanceDirectiveReference) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAdvanceDirectiveReferenceExternalDocumentTestCase.doValidationTest();
 	}
 
 	/**

@@ -42,7 +42,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveVerification(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Verification</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveStatusObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Status Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationAdvanceDirectiveReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Advance Directive Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ccd.AdvanceDirectiveObservation#getAdvanceDirectiveStatusObservation() <em>Get Advance Directive Status Observation</em>}</li>
  * </ul>
  * </p>
@@ -377,6 +379,40 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 	/**
 	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAdvanceDirectiveObservationAdvanceDirectiveVerification() {
+		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationAdvanceDirectiveVerificationTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
+			"validateAdvanceDirectiveObservationAdvanceDirectiveVerification",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_ADVANCE_DIRECTIVE_VERIFICATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AdvanceDirectiveObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AdvanceDirectiveObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationAdvanceDirectiveVerification(
+					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAdvanceDirectiveObservationAdvanceDirectiveVerificationTestCase.doValidationTest();
+	}
+
+	/**
+	*
 	* @generated NOT
 	*/
 	@Test
@@ -407,6 +443,40 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 		};
 
 		validateAdvanceDirectiveObservationAdvanceDirectiveStatusObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAdvanceDirectiveObservationAdvanceDirectiveReference() {
+		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationAdvanceDirectiveReferenceTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
+			"validateAdvanceDirectiveObservationAdvanceDirectiveReference",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_ADVANCE_DIRECTIVE_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AdvanceDirectiveObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AdvanceDirectiveObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationAdvanceDirectiveReference(
+					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAdvanceDirectiveObservationAdvanceDirectiveReferenceTestCase.doValidationTest();
 	}
 
 	/**

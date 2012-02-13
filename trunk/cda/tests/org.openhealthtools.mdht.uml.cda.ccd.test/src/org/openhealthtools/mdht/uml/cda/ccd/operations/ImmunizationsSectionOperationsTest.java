@@ -42,7 +42,7 @@ public class ImmunizationsSectionOperationsTest extends CCDValidationTest {
 				@Override
 				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ImmunizationsSectionOperations.validateMedicationsSectionTemplateId(
+					return ImmunizationsSectionOperations.validateImmunizationsSectionTemplateId(
 						(ImmunizationsSection) objectToTest, diagnostician, map);
 				}
 
@@ -80,7 +80,7 @@ public class ImmunizationsSectionOperationsTest extends CCDValidationTest {
 				@Override
 				protected boolean validate(final EObject objectToTest, final BasicDiagnostic diagnostician,
 						final Map<Object, Object> map) {
-					return ImmunizationsSectionOperations.validateMedicationsSectionCode(
+					return ImmunizationsSectionOperations.validateImmunizationsSectionCode(
 						(ImmunizationsSection) objectToTest, diagnostician, map);
 				}
 			}
