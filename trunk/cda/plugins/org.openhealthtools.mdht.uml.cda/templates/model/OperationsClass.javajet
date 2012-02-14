@@ -79,6 +79,7 @@ public class <%=UML2GenModelUtil.getOperationsClassName(genClass)%><%=UML2GenMod
 	}
 
 <%for (GenOperation genOperation : UML2GenModelUtil.getOperationsClassGenOperations(genClass)) {%>
+<% boolean isQueryConstraint = EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query") != null && Arrays.asList(EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query").split(" ")).contains(genOperation.getName().replaceFirst("^validate", "")); %>
 <%if (!genOperation.hasBody()) {%>
 <%@ include file="Operations/genOperation.override.javajetinc" fail="alternative" %>
 <%@ start %>
@@ -102,7 +103,7 @@ public class <%=UML2GenModelUtil.getOperationsClassName(genClass)%><%=UML2GenMod
 	 * @generated
 	 * @ordered
 	 */
-	<%if (EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query") != null && Arrays.asList(EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query").split(" ")).contains(genOperation.getName().replaceFirst("^validate", ""))) {%>
+	<%if (isQueryConstraint) {%>
 	protected static <%=genModel.getImportedName("org.eclipse.ocl.Query")%><?, ?, ?> <%=UML2GenModelUtil.getUpperName(genOperation.getName())%><%=genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))%>__EOCL_QRY;
 	<%} else {%>
 	protected static <%=genModel.getImportedName("org.eclipse.ocl.ecore.Constraint")%> <%=UML2GenModelUtil.getUpperName(genOperation.getName())%><%=genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))%>__EOCL_INV;
@@ -144,7 +145,7 @@ public class <%=UML2GenModelUtil.getOperationsClassName(genClass)%><%=UML2GenMod
   <%}%>
 	 * @generated
 	 */
-	<%if (EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query") != null && Arrays.asList(EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query").split(" ")).contains(genOperation.getName().replaceFirst("^validate", ""))) {%>@SuppressWarnings("unchecked")<%}%>
+	<%if (isQueryConstraint) {%>@SuppressWarnings("unchecked")<%}%>
 	public static <%=genClass.getTypeParameters().length() > 0 && genOperation.getTypeParameters(genClass).length() > 0 ? genClass.getTypeParameters().substring(0, genClass.getTypeParameters().length() - 2) + ", " + genOperation.getTypeParameters(genClass).trim().substring(1) : genClass.getTypeParameters().trim() + genOperation.getTypeParameters(genClass).trim()%> <%=genOperation.getImportedType(genClass)%> <%=genOperation.getName()%>(<%=genClass.getImportedInterfaceName()%><%=genClass.getTypeParameters().trim()%> <%=genClass.safeName(genClass.getUncapName())%><%if (!genOperation.getGenParameters().isEmpty()) {%>, <%}%><%=genOperation.getParameters(genClass)%>)<%=genOperation.getThrows(genClass)%>
 	{
   <%if (genOperation.hasBody()) {%>
@@ -155,15 +156,14 @@ public class <%=UML2GenModelUtil.getOperationsClassName(genClass)%><%=UML2GenMod
   		String context = genOperation.getGenParameters().get(1).getName();%>
       <%if (UML2GenModelUtil.hasOCLBody(genOperation)) {
       	String oclInv = UML2GenModelUtil.getUpperName(genOperation.getName()) + (genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))) + "__EOCL_INV";
-      	if (EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query") != null && Arrays.asList(EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query").split(" ")).contains(genOperation.getName().replaceFirst("^validate", ""))) {
+      	if (isQueryConstraint) {
        		oclInv = UML2GenModelUtil.getUpperName(genOperation.getName()) + (genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))) + "__EOCL_QRY";
        	}%>
-		if (<%=oclInv%> == null)
-		{
+		<%if (!isQueryConstraint) {%>if (<%=oclInv%> == null) {<%}%>
 			<%=genModel.getImportedName("org.eclipse.ocl.ecore.OCL")%>.Helper helper = EOCL_ENV.createOCLHelper();
 			helper.setContext(<%=opClass.getQualifiedClassifierAccessor()%>);
 			try
-			{<%if (EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query") != null && Arrays.asList(EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query").split(" ")).contains(genOperation.getName().replaceFirst("^validate", ""))) {%>
+			{<%if (isQueryConstraint) {%>
 				<%=genModel.getImportedName("org.eclipse.ocl.expressions.OCLExpression") %><<%=genModel.getImportedName("org.eclipse.emf.ecore.EClassifier") %>> oclExpression = helper.createQuery(<%=UML2GenModelUtil.getUpperName(genOperation.getName())%><%=genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))%>__EOCL_EXP);
 				<%=oclInv%> = EOCL_ENV.createQuery(oclExpression);<%} else {%>
 				<%=oclInv%> = helper.createInvariant(<%=UML2GenModelUtil.getUpperName(genOperation.getName())%><%=genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))%>__EOCL_EXP);<%}%>
@@ -172,7 +172,7 @@ public class <%=UML2GenModelUtil.getOperationsClassName(genClass)%><%=UML2GenMod
 			{
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
-		}<%if (EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query") != null && Arrays.asList(EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query").split(" ")).contains(genOperation.getName().replaceFirst("^validate", ""))) {%>
+		<%if (!isQueryConstraint) {%>}<%}%><%if (isQueryConstraint) {%>
 		Object oclResultSet = <%=oclInv%>.evaluate(<%=genClass.safeName(genClass.getUncapName())%>);		
 		if (oclResultSet != null && oclResultSet instanceof <%=genModel.getImportedName("java.util.Collection") %>) {
 			if (<%=diagnostics%> != null) {
