@@ -37,6 +37,7 @@ import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.internal.Logger;
+import org.openhealthtools.mdht.uml.common.modelfilter.ModelFilterUtil;
 
 public class ModelFilter {
 	private Package sourcePackage;
