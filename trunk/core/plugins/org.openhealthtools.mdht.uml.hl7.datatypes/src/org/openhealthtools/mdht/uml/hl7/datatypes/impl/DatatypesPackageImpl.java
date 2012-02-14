@@ -3707,7 +3707,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 		initEAttribute(
 			getPIVL_TS_InstitutionSpecified(), ecorePackage.getEBooleanObject(), "institutionSpecified", "false", 0, 1,
 			org.openhealthtools.mdht.uml.hl7.datatypes.PIVL_TS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+			IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(
 			eivL_eventEClass, EIVL_event.class, "EIVL_event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

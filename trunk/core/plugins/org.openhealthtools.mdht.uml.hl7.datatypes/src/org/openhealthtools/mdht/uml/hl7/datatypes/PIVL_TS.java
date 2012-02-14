@@ -152,9 +152,11 @@ public interface PIVL_TS extends SXCM_TS {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Institution Specified</em>' attribute.
+	 * @see #isSetInstitutionSpecified()
+	 * @see #unsetInstitutionSpecified()
 	 * @see #setInstitutionSpecified(Boolean)
 	 * @see org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage#getPIVL_TS_InstitutionSpecified()
-	 * @model default="false" ordered="false"
+	 * @model default="false" unsettable="true" ordered="false"
 	 * @generated
 	 */
 	Boolean getInstitutionSpecified();
@@ -164,9 +166,34 @@ public interface PIVL_TS extends SXCM_TS {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Institution Specified</em>' attribute.
+	 * @see #isSetInstitutionSpecified()
+	 * @see #unsetInstitutionSpecified()
 	 * @see #getInstitutionSpecified()
 	 * @generated
 	 */
 	void setInstitutionSpecified(Boolean value);
+
+	/**
+	 * Unsets the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.PIVL_TS#getInstitutionSpecified <em>Institution Specified</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetInstitutionSpecified()
+	 * @see #getInstitutionSpecified()
+	 * @see #setInstitutionSpecified(Boolean)
+	 * @generated
+	 */
+	void unsetInstitutionSpecified();
+
+	/**
+	 * Returns whether the value of the '{@link org.openhealthtools.mdht.uml.hl7.datatypes.PIVL_TS#getInstitutionSpecified <em>Institution Specified</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Institution Specified</em>' attribute is set.
+	 * @see #unsetInstitutionSpecified()
+	 * @see #getInstitutionSpecified()
+	 * @see #setInstitutionSpecified(Boolean)
+	 * @generated
+	 */
+	boolean isSetInstitutionSpecified();
 
 } // PIVL_TS
