@@ -9,9 +9,10 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.common.util;
+package org.openhealthtools.mdht.uml.common.modelfilter;
 
 import org.eclipse.uml2.uml.NamedElement;
+import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 
 /**
  * @author dcarlson
@@ -19,11 +20,11 @@ import org.eclipse.uml2.uml.NamedElement;
  */
 public class ModelFilterUtil {
 
-	public static final String FILTER_HIDE = "hide";
+	protected static final String FILTER_HIDE = "hide";
 
-	public static final String FILTER_SHOW = "show";
+	protected static final String FILTER_SHOW = "show";
 
-	public static final String FILTER_COLLAPSE = "collapse";
+	protected static final String FILTER_COLLAPSE = "collapse";
 
 	/**
 	 * Returns whether the named element is hidden, false if not defined.
@@ -33,13 +34,38 @@ public class ModelFilterUtil {
 	 * @return true if filtered property is "hide", otherwise false.
 	 */
 	public static boolean isHidden(NamedElement namedElement) {
+		if (isHiddenByUser(namedElement))
+			return true;
+		else if (isShownByUser(namedElement))
+			return false;
+		else if (isCollapsedByUser(namedElement))
+			return false;
+		else
+			return false;
+		// return isHiddenByFilterProvider(namedElement);
+	}
+
+	protected static boolean isHiddenByUser(NamedElement namedElement) {
 		String value = NamedElementUtil.getPropertyValue(namedElement, "filter");
 		return FILTER_HIDE.equals(value)
 				? true
 				: false;
 	}
 
+	protected static boolean isHiddenByFilterProvider(NamedElement namedElement) {
+		IModelFilterProvider provider = ModelFilterRegistry.INSTANCE.getModelFilterProvider(namedElement);
+		if (provider != null) {
+			return provider.isHidden(namedElement);
+		}
+
+		return false;
+	}
+
 	public static boolean isShown(NamedElement namedElement) {
+		return isShownByUser(namedElement);
+	}
+
+	protected static boolean isShownByUser(NamedElement namedElement) {
 		String value = NamedElementUtil.getPropertyValue(namedElement, "filter");
 		return FILTER_SHOW.equals(value)
 				? true
@@ -54,10 +80,25 @@ public class ModelFilterUtil {
 	 * @return true if filtered property is "collapse", otherwise false.
 	 */
 	public static boolean isCollapsed(NamedElement namedElement) {
+		return isCollapsedByUser(namedElement)
+				? true
+				: isCollapsedByFilterProvider(namedElement);
+	}
+
+	protected static boolean isCollapsedByUser(NamedElement namedElement) {
 		String value = NamedElementUtil.getPropertyValue(namedElement, "filter");
 		return FILTER_COLLAPSE.equals(value)
 				? true
 				: false;
+	}
+
+	protected static boolean isCollapsedByFilterProvider(NamedElement namedElement) {
+		IModelFilterProvider provider = ModelFilterRegistry.INSTANCE.getModelFilterProvider(namedElement);
+		if (provider != null) {
+			return provider.isCollapsed(namedElement);
+		}
+
+		return false;
 	}
 
 	/**

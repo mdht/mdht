@@ -17,4 +17,6 @@
 
    <extension-point id="notation" name="org.openhealthtools.mdht.uml.common" schema="schema/notation.exsd"/>
 
+   <extension-point id="modelFilter" name="org.openhealthtools.mdht.uml.common" schema="schema/modelfilter.exsd"/>
+
 </plugin>
