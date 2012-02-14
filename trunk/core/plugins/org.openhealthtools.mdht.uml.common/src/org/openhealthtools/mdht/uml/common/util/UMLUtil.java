@@ -112,6 +112,15 @@ public class UMLUtil {
 				cloneStereotypes(constraint1, constraint2);
 			}
 		}
+		for (Classifier nested1 : first.getNestedClassifiers()) {
+			Classifier nested2 = second.getNestedClassifier(nested1.getName());
+			if (nested2 != null) {
+				if (nested1 instanceof Class && nested2 instanceof Class)
+					cloneStereotypes((Class) nested1, (Class) nested2);
+				else
+					cloneStereotypes(nested1, nested2);
+			}
+		}
 	}
 
 	public static void cloneStereotypes(Element first, Element second) {
