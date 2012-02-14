@@ -230,6 +230,10 @@ public class ModelConsolidator {
 			return sourceClass;
 		}
 
+		if (sourceClass.getOwner() instanceof Class) {
+			System.out.println("Inner class: " + sourceClass.getQualifiedName());
+		}
+
 		Class consolidatedClass = consolMapping.get(EcoreUtil.getURI(sourceClass).toString());
 		if (consolidatedClass == null) {
 			// if a more specific type defined in flattened model, use it
@@ -575,9 +579,18 @@ public class ModelConsolidator {
 	protected Class copyToConsolPackage(Class sourceClass) {
 		Class mappedClass = consolMapping.get(EcoreUtil.getURI(sourceClass).toString());
 		if (mappedClass == null) {
-			mappedClass = EcoreUtil.copy(sourceClass);
-			consolPackage.getOwnedTypes().add(mappedClass);
-			UMLUtil.cloneStereotypes(sourceClass, mappedClass);
+			// inner classes were previously copied as content of parent class
+			if (sourceClass.getOwner() instanceof Class) {
+				Class mappedOwner = consolMapping.get(EcoreUtil.getURI(sourceClass.getOwner()).toString());
+				if (mappedOwner != null) {
+					mappedClass = (Class) mappedOwner.getNestedClassifier(sourceClass.getName());
+				}
+			}
+			if (mappedClass == null) {
+				mappedClass = EcoreUtil.copy(sourceClass);
+				consolPackage.getOwnedTypes().add(mappedClass);
+				UMLUtil.cloneStereotypes(sourceClass, mappedClass);
+			}
 
 			consolMapping.put(EcoreUtil.getURI(sourceClass).toString(), mappedClass);
 			consolInheritance.put(mappedClass, UMLUtil.getAllGeneralizations(sourceClass));
