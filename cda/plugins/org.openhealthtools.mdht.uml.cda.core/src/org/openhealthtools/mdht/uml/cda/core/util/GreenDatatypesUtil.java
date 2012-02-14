@@ -75,11 +75,15 @@ public class GreenDatatypesUtil {
 			greenTypeName = "PhysicalQuantity";
 		else if ("INT".equals(typeName))
 			greenTypeName = "IntegerNumber";
+		else if ("IVL_INT".equals(typeName))
+			greenTypeName = "IntervalOfInteger";
 		else if ("MO".equals(typeName))
 			greenTypeName = "MonetaryAmount";
 		else if ("TS".equals(typeName))
 			greenTypeName = "Timestamp";
 		else if ("IVL_TS".equals(typeName))
+			greenTypeName = "IntervalOfTimestamps";
+		else if ("SXCM_TS".equals(typeName))
 			greenTypeName = "IntervalOfTimestamps";
 		else if ("TEL".equals(typeName))
 			greenTypeName = "TelecomAddress";
