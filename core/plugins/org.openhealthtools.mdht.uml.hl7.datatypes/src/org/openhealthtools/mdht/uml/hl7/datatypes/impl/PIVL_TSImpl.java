@@ -108,6 +108,15 @@ public class PIVL_TSImpl extends SXCM_TSImpl implements PIVL_TS {
 	protected Boolean institutionSpecified = INSTITUTION_SPECIFIED_EDEFAULT;
 
 	/**
+	 * This is true if the Institution Specified attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean institutionSpecifiedESet;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -305,11 +314,39 @@ public class PIVL_TSImpl extends SXCM_TSImpl implements PIVL_TS {
 	public void setInstitutionSpecified(Boolean newInstitutionSpecified) {
 		Boolean oldInstitutionSpecified = institutionSpecified;
 		institutionSpecified = newInstitutionSpecified;
+		boolean oldInstitutionSpecifiedESet = institutionSpecifiedESet;
+		institutionSpecifiedESet = true;
 		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(
 				this, Notification.SET, DatatypesPackage.PIVL_TS__INSTITUTION_SPECIFIED, oldInstitutionSpecified,
-				institutionSpecified));
+				institutionSpecified, !oldInstitutionSpecifiedESet));
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetInstitutionSpecified() {
+		Boolean oldInstitutionSpecified = institutionSpecified;
+		boolean oldInstitutionSpecifiedESet = institutionSpecifiedESet;
+		institutionSpecified = INSTITUTION_SPECIFIED_EDEFAULT;
+		institutionSpecifiedESet = false;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.UNSET, DatatypesPackage.PIVL_TS__INSTITUTION_SPECIFIED, oldInstitutionSpecified,
+				INSTITUTION_SPECIFIED_EDEFAULT, oldInstitutionSpecifiedESet));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetInstitutionSpecified() {
+		return institutionSpecifiedESet;
 	}
 
 	/**
@@ -390,7 +427,7 @@ public class PIVL_TSImpl extends SXCM_TSImpl implements PIVL_TS {
 				unsetAlignment();
 				return;
 			case DatatypesPackage.PIVL_TS__INSTITUTION_SPECIFIED:
-				setInstitutionSpecified(INSTITUTION_SPECIFIED_EDEFAULT);
+				unsetInstitutionSpecified();
 				return;
 		}
 		super.eUnset(featureID);
@@ -411,9 +448,7 @@ public class PIVL_TSImpl extends SXCM_TSImpl implements PIVL_TS {
 			case DatatypesPackage.PIVL_TS__ALIGNMENT:
 				return isSetAlignment();
 			case DatatypesPackage.PIVL_TS__INSTITUTION_SPECIFIED:
-				return INSTITUTION_SPECIFIED_EDEFAULT == null
-						? institutionSpecified != null
-						: !INSTITUTION_SPECIFIED_EDEFAULT.equals(institutionSpecified);
+				return isSetInstitutionSpecified();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -437,7 +472,11 @@ public class PIVL_TSImpl extends SXCM_TSImpl implements PIVL_TS {
 			result.append("<unset>");
 		}
 		result.append(", institutionSpecified: ");
-		result.append(institutionSpecified);
+		if (institutionSpecifiedESet) {
+			result.append(institutionSpecified);
+		} else {
+			result.append("<unset>");
+		}
 		result.append(')');
 		return result.toString();
 	}

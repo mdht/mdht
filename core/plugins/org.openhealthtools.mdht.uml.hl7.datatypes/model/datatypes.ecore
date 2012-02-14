@@ -2516,7 +2516,7 @@
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="institutionSpecified" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        defaultValueLiteral="false"/>
+        defaultValueLiteral="false" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EIVL_event" eSuperTypes="#//CE">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
