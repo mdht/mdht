@@ -121,9 +121,19 @@ public class ModelFilter {
 
 		Class filteredClass = filteredMapping.get(EcoreUtil.getURI(sourceClass).toString());
 		if (filteredClass == null) {
-			filteredClass = EcoreUtil.copy(sourceClass);
-			filteredPackage.getOwnedTypes().add(filteredClass);
-			UMLUtil.cloneStereotypes(sourceClass, filteredClass);
+			// inner classes were previously copied as content of parent class
+			if (sourceClass.getOwner() instanceof Class) {
+				Class filteredOwner = filteredMapping.get(EcoreUtil.getURI(sourceClass.getOwner()).toString());
+				if (filteredOwner != null) {
+					filteredClass = (Class) filteredOwner.getNestedClassifier(sourceClass.getName());
+				}
+			}
+			if (filteredClass == null) {
+				filteredClass = EcoreUtil.copy(sourceClass);
+				filteredPackage.getOwnedTypes().add(filteredClass);
+				UMLUtil.cloneStereotypes(sourceClass, filteredClass);
+			}
+
 			filteredMapping.put(EcoreUtil.getURI(sourceClass).toString(), filteredClass);
 
 			// rename using business name (use sourceClass to get corresponding .properties)
