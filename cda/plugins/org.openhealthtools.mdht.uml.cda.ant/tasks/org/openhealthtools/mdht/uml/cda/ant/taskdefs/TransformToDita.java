@@ -24,9 +24,13 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.ant.types.EPackageClass;
+import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
+import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.dita.DitaTransformer;
 import org.openhealthtools.mdht.uml.cda.dita.DitaTransformerOptions;
+import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 
 /**
  * Transform CDA conceptual model to DITA files for publishing.
@@ -62,6 +66,44 @@ public class TransformToDita extends CDAModelingSubTask {
 
 	@Override
 	public void doExecute() throws Exception {
+
+		CDAUtil.loadPackages();
+
+		for (Package pkg : getHL7ModelingTask().getRootPackages()) {
+			Stereotype codegenSupport = CDAProfileUtil.getAppliedCDAStereotype(
+				pkg, ICDAProfileConstants.CODEGEN_SUPPORT);
+
+			if (codegenSupport != null) {
+
+				String basePackage = (String) pkg.getValue(
+					codegenSupport, ICDAProfileConstants.CODEGEN_SUPPORT_BASE_PACKAGE);
+
+				String packageName = (String) pkg.getValue(
+					codegenSupport, ICDAProfileConstants.CODEGEN_SUPPORT_PACKAGE_NAME);
+
+				String prefix = (String) pkg.getValue(codegenSupport, ICDAProfileConstants.CODEGEN_SUPPORT_PREFIX);
+
+				if (basePackage != null && packageName != null && prefix != null) {
+					String generatedPackage = String.format(
+						"%s.%s.%sPackage", basePackage, packageName.toLowerCase(),
+						Character.toUpperCase(prefix.charAt(0)) + prefix.substring(1));
+
+					try {
+
+						logInfo("Loading Runtime " + generatedPackage);
+						Class<?> c = Class.forName(generatedPackage);
+						if (c != null) {
+							c.getDeclaredField("eINSTANCE");
+						}
+					} catch (Throwable t) {
+						logWarning("Unable to load Run time,  Samples will not be generated! " + t.getMessage() +
+								generatedPackage);
+					}
+
+				}
+			}
+		}
+
 		// initial values from Ant global project properties
 		initializeProperties();
 
