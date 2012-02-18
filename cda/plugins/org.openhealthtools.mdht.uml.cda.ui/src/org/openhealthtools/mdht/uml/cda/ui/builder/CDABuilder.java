@@ -34,6 +34,9 @@ import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
+import org.eclipse.ant.core.AntCorePlugin;
+import org.eclipse.ant.core.IAntClasspathEntry;
+import org.eclipse.ant.internal.core.AntClasspathEntry;
 import org.eclipse.ant.internal.launching.launchConfigurations.AntHomeClasspathEntry;
 import org.eclipse.ant.internal.launching.launchConfigurations.ContributedClasspathEntriesEntry;
 import org.eclipse.ant.launching.IAntLaunchConstants;
@@ -55,6 +58,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunch;
+import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationType;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.ILaunchManager;
@@ -593,10 +597,57 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 			ILaunchManager launchManager = DebugPlugin.getDefault().getLaunchManager();
 
+			String launchMemento = String.format("%s.%s", project.getName(), antFileName);
+
+			try {
+				ILaunchConfiguration oldLaunchConfiguration = launchManager.getLaunchConfiguration(launchMemento);
+				if (oldLaunchConfiguration != null) {
+					oldLaunchConfiguration.delete();
+				}
+			} catch (CoreException ce) {
+				// Ignore exception, keep going
+			}
+
+			ArrayList<IAntClasspathEntry> classpathEntries = new ArrayList<IAntClasspathEntry>();
+
+			IAntClasspathEntry[] additionalClassPathEntries = AntCorePlugin.getPlugin().getPreferences().getAdditionalClasspathEntries();
+
+			if (additionalClassPathEntries != null) {
+				for (IAntClasspathEntry antClasspathEntry : additionalClassPathEntries) {
+					classpathEntries.add(antClasspathEntry);
+				}
+			}
+
+			final String BIN = "bin";
+			for (IProject wsProject : project.getWorkspace().getRoot().getProjects()) {
+				if (wsProject.isOpen() && !wsProject.getName().startsWith(".")) {
+					IFolder binFolder = wsProject.getFolder(BIN);
+					if (binFolder.exists()) {
+						String binFolderString = binFolder.getLocation().toOSString();
+						// check to see if the entry exists
+						boolean needToAdd = true;
+						for (IAntClasspathEntry antClasspathEntry : classpathEntries) {
+							if (antClasspathEntry.getEntryURL().toString().endsWith(binFolderString)) {
+								needToAdd = false;
+								break;
+							}
+
+						}
+						if (needToAdd) {
+							classpathEntries.add(new AntClasspathEntry(binFolderString));
+						}
+					}
+				}
+
+			}
+
+			AntCorePlugin.getPlugin().getPreferences().setAdditionalClasspathEntries(
+				classpathEntries.toArray(new IAntClasspathEntry[classpathEntries.size()]));
+
 			ILaunchConfigurationType type = launchManager.getLaunchConfigurationType(IAntLaunchConstants.ID_ANT_LAUNCH_CONFIGURATION_TYPE);
 
 			IFile transformxml = project.getFile(antFileName);
-			String name = launchManager.generateLaunchConfigurationName(project.getName() + transformxml.getName());
+			String name = launchManager.generateLaunchConfigurationName(launchMemento);
 			ILaunchConfigurationWorkingCopy workingCopy = type.newInstance(null, name);
 			workingCopy.setAttribute(
 				"org.eclipse.ui.externaltools.ATTR_LOCATION", transformxml.getLocation().toOSString());
