@@ -445,100 +445,102 @@ public class InstanceGenerator {
 
 		EClass eClass = getEClass(umlClass);
 
-		if (type != null && type instanceof Artifact) {
+		if (eClass != null) {
 
-			Artifact sampleArtifact = (Artifact) type;
+			if (type != null && type instanceof Artifact) {
 
-			try {
+				Artifact sampleArtifact = (Artifact) type;
 
-				if (clinicalDocument == null) {
+				try {
 
-					IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+					if (clinicalDocument == null) {
 
-					IProject docProject = root.getProject(topPackage.eResource().getURI().segment(1).replace(
-						".model", ".doc"));
+						IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 
-					if (docProject.exists()) {
-						IFolder samplesFolder = docProject.getFolder("samples");
-						if (samplesFolder.exists()) {
-							IFile samplesFile = samplesFolder.getFile(sampleArtifact.getFileName());
+						IProject docProject = root.getProject(topPackage.eResource().getURI().segment(1).replace(
+							".model", ".doc"));
 
-							if (samplesFile.exists()) {
-								clinicalDocument = CDAUtil.load(new FileInputStream(root.getLocation().append(
-									samplesFile.getFullPath()).toFile()));
-							}
-						}
+						if (docProject.exists()) {
+							IFolder samplesFolder = docProject.getFolder("samples");
+							if (samplesFolder.exists()) {
+								IFile samplesFile = samplesFolder.getFile(sampleArtifact.getFileName());
 
-					} else {
-
-						URI uri = topPackage.eResource().getURI();
-
-						if (uri != null) {
-
-							String[] segments = uri.segments();
-
-							if (segments.length > 3) {
-
-								String docProjectName = segments[segments.length - 3].replace(".model", ".doc");
-
-								String sampleInstancePath = uri.path();
-
-								if (sampleInstancePath != null) {
-
-									sampleInstancePath = sampleInstancePath.replace(
-										segments[segments.length - 3], docProjectName);
-									sampleInstancePath = sampleInstancePath.replace(
-										segments[segments.length - 2], "samples");
-									sampleInstancePath = sampleInstancePath.replace(
-										segments[segments.length - 1], sampleArtifact.getFileName());
-
-									File file = new File(sampleInstancePath);
-									if (file.exists()) {
-										clinicalDocument = CDAUtil.load(new FileInputStream(file));
-									}
-
+								if (samplesFile.exists()) {
+									clinicalDocument = CDAUtil.load(new FileInputStream(root.getLocation().append(
+										samplesFile.getFullPath()).toFile()));
 								}
+							}
+
+						} else {
+
+							URI uri = topPackage.eResource().getURI();
+
+							if (uri != null) {
+
+								String[] segments = uri.segments();
+
+								if (segments.length > 3) {
+
+									String docProjectName = segments[segments.length - 3].replace(".model", ".doc");
+
+									String sampleInstancePath = uri.path();
+
+									if (sampleInstancePath != null) {
+
+										sampleInstancePath = sampleInstancePath.replace(
+											segments[segments.length - 3], docProjectName);
+										sampleInstancePath = sampleInstancePath.replace(
+											segments[segments.length - 2], "samples");
+										sampleInstancePath = sampleInstancePath.replace(
+											segments[segments.length - 1], sampleArtifact.getFileName());
+
+										File file = new File(sampleInstancePath);
+										if (file.exists()) {
+											clinicalDocument = CDAUtil.load(new FileInputStream(file));
+										}
+
+									}
+								}
+
 							}
 
 						}
 
 					}
 
+				} catch (FileNotFoundException e) {
+
+					e.printStackTrace();
+
+				} catch (Exception e) {
+
+					e.printStackTrace();
+
 				}
 
-			} catch (FileNotFoundException e) {
+			}
 
-				e.printStackTrace();
-
-			} catch (Exception e) {
-
-				e.printStackTrace();
+			if (clinicalDocument != null) {
+				CDAUtil.Query query = new CDAUtil.Query(clinicalDocument);
+				eObject = query.getEObject((java.lang.Class<? extends EObject>) eClass.getInstanceClass());
+				if (eObject != null) {
+					return EcoreUtil.copy(eObject);
+				}
 
 			}
 
-		}
+			HashMap<String, String> shallShouldMayProperties = createshallShouldMayProperties();
 
-		if (clinicalDocument != null) {
-			CDAUtil.Query query = new CDAUtil.Query(clinicalDocument);
-			eObject = query.getEObject((java.lang.Class<? extends EObject>) eClass.getInstanceClass());
-			if (eObject != null) {
-				return EcoreUtil.copy(eObject);
+			createvalueSetProperies(umlClass, shallShouldMayProperties);
+
+			if (eClass != null && !eClass.isAbstract()) {
+
+				eObject = eClass.getEPackage().getEFactoryInstance().create(eClass);
+				// topPackage.eResource().getResourceSet(), shallShouldMayProperties,
+				sampleInstanceInitialization(umlClass, eObject, shallShouldMayProperties, levels);
+
 			}
-
 		}
-
-		HashMap<String, String> shallShouldMayProperties = createshallShouldMayProperties();
-
-		createvalueSetProperies(umlClass, shallShouldMayProperties);
-
-		if (eClass != null && !eClass.isAbstract()) {
-
-			eObject = eClass.getEPackage().getEFactoryInstance().create(eClass);
-			// topPackage.eResource().getResourceSet(), shallShouldMayProperties,
-			sampleInstanceInitialization(umlClass, eObject, shallShouldMayProperties, levels);
-
-		}
-
 		return eObject;
 
 	}
