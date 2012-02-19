@@ -44,10 +44,10 @@ public class ReasonForVisitAndChiefComplaintSectionTest extends CDAValidationTes
 	 */
 	@Test
 	public void testValidateReasonForVisitAndChiefComplaintSectionTemplateId() {
-			OperationsTestCase<ReasonForVisitAndChiefComplaintSection> validateReasonForVisitAndChiefComplaintSectionTemplateIdTestCase = new OperationsTestCase<ReasonForVisitAndChiefComplaintSection>(
+		OperationsTestCase<ReasonForVisitAndChiefComplaintSection> validateReasonForVisitAndChiefComplaintSectionTemplateIdTestCase = new OperationsTestCase<ReasonForVisitAndChiefComplaintSection>(
 			"validateReasonForVisitAndChiefComplaintSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ReasonForVisitAndChiefComplaintSection target) {
@@ -57,44 +57,12 @@ public class ReasonForVisitAndChiefComplaintSectionTest extends CDAValidationTes
 			@Override
 			protected void updateToPass(ReasonForVisitAndChiefComplaintSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ReasonForVisitAndChiefComplaintSectionOperations.validateReasonForVisitAndChiefComplaintSectionTemplateId(
 					(ReasonForVisitAndChiefComplaintSection) objectToTest, diagnostician, map);
 			}
@@ -102,7 +70,7 @@ public class ReasonForVisitAndChiefComplaintSectionTest extends CDAValidationTes
 		};
 
 		validateReasonForVisitAndChiefComplaintSectionTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	 * 
@@ -110,10 +78,10 @@ public class ReasonForVisitAndChiefComplaintSectionTest extends CDAValidationTes
 	 */
 	@Test
 	public void testValidateReasonForVisitAndChiefComplaintSectionCode() {
-			OperationsTestCase<ReasonForVisitAndChiefComplaintSection> validateReasonForVisitAndChiefComplaintSectionCodeTestCase = new OperationsTestCase<ReasonForVisitAndChiefComplaintSection>(
+		OperationsTestCase<ReasonForVisitAndChiefComplaintSection> validateReasonForVisitAndChiefComplaintSectionCodeTestCase = new OperationsTestCase<ReasonForVisitAndChiefComplaintSection>(
 			"validateReasonForVisitAndChiefComplaintSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_VISIT_AND_CHIEF_COMPLAINT_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ReasonForVisitAndChiefComplaintSection target) {
@@ -123,44 +91,12 @@ public class ReasonForVisitAndChiefComplaintSectionTest extends CDAValidationTes
 			@Override
 			protected void updateToPass(ReasonForVisitAndChiefComplaintSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ReasonForVisitAndChiefComplaintSectionOperations.validateReasonForVisitAndChiefComplaintSectionCode(
 					(ReasonForVisitAndChiefComplaintSection) objectToTest, diagnostician, map);
 			}
@@ -168,7 +104,7 @@ public class ReasonForVisitAndChiefComplaintSectionTest extends CDAValidationTes
 		};
 
 		validateReasonForVisitAndChiefComplaintSectionCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	 * 
@@ -226,8 +162,8 @@ public class ReasonForVisitAndChiefComplaintSectionTest extends CDAValidationTes
 	 */
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -236,7 +172,7 @@ public class ReasonForVisitAndChiefComplaintSectionTest extends CDAValidationTes
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

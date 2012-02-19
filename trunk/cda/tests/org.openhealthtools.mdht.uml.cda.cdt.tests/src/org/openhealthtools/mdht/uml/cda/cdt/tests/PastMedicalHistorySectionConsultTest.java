@@ -47,10 +47,10 @@ public class PastMedicalHistorySectionConsultTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidatePastMedicalHistorySectionConsultTemplateId() {
-			OperationsTestCase<PastMedicalHistorySectionConsult> validatePastMedicalHistorySectionConsultTemplateIdTestCase = new OperationsTestCase<PastMedicalHistorySectionConsult>(
+		OperationsTestCase<PastMedicalHistorySectionConsult> validatePastMedicalHistorySectionConsultTemplateIdTestCase = new OperationsTestCase<PastMedicalHistorySectionConsult>(
 			"validatePastMedicalHistorySectionConsultTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PAST_MEDICAL_HISTORY_SECTION_CONSULT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PAST_MEDICAL_HISTORY_SECTION_CONSULT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PastMedicalHistorySectionConsult target) {
@@ -60,44 +60,12 @@ public class PastMedicalHistorySectionConsultTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PastMedicalHistorySectionConsult target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PastMedicalHistorySectionConsultOperations.validatePastMedicalHistorySectionConsultTemplateId(
 					(PastMedicalHistorySectionConsult) objectToTest, diagnostician, map);
 			}
@@ -105,7 +73,7 @@ public class PastMedicalHistorySectionConsultTest extends CDAValidationTest {
 		};
 
 		validatePastMedicalHistorySectionConsultTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	 * 
@@ -113,10 +81,10 @@ public class PastMedicalHistorySectionConsultTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidatePastMedicalHistorySectionConsultCode() {
-			OperationsTestCase<PastMedicalHistorySectionConsult> validatePastMedicalHistorySectionConsultCodeTestCase = new OperationsTestCase<PastMedicalHistorySectionConsult>(
+		OperationsTestCase<PastMedicalHistorySectionConsult> validatePastMedicalHistorySectionConsultCodeTestCase = new OperationsTestCase<PastMedicalHistorySectionConsult>(
 			"validatePastMedicalHistorySectionConsultCode",
-			operationsForOCL.getOCLValue("VALIDATE_PAST_MEDICAL_HISTORY_SECTION_CONSULT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PAST_MEDICAL_HISTORY_SECTION_CONSULT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PastMedicalHistorySectionConsult target) {
@@ -126,44 +94,12 @@ public class PastMedicalHistorySectionConsultTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PastMedicalHistorySectionConsult target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PastMedicalHistorySectionConsultOperations.validatePastMedicalHistorySectionConsultCode(
 					(PastMedicalHistorySectionConsult) objectToTest, diagnostician, map);
 			}
@@ -171,7 +107,7 @@ public class PastMedicalHistorySectionConsultTest extends CDAValidationTest {
 		};
 
 		validatePastMedicalHistorySectionConsultCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	 * 
@@ -266,8 +202,8 @@ public class PastMedicalHistorySectionConsultTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -276,7 +212,7 @@ public class PastMedicalHistorySectionConsultTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

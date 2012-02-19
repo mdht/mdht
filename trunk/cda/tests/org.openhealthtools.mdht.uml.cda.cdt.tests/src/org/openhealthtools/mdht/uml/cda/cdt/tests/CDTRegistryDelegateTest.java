@@ -41,8 +41,7 @@ public class CDTRegistryDelegateTest extends CDAValidationTest {
 	@Test
 	public void testGetEClass() {
 
-
-}
+	}
 
 	/**
 	 * 
@@ -100,8 +99,8 @@ public class CDTRegistryDelegateTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -110,7 +109,7 @@ public class CDTRegistryDelegateTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

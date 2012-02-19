@@ -44,10 +44,10 @@ public class AssessmentSectionProcNoteTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateAssessmentSectionProcNoteTemplateId() {
-			OperationsTestCase<AssessmentSectionProcNote> validateAssessmentSectionProcNoteTemplateIdTestCase = new OperationsTestCase<AssessmentSectionProcNote>(
+		OperationsTestCase<AssessmentSectionProcNote> validateAssessmentSectionProcNoteTemplateIdTestCase = new OperationsTestCase<AssessmentSectionProcNote>(
 			"validateAssessmentSectionProcNoteTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SECTION_PROC_NOTE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SECTION_PROC_NOTE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AssessmentSectionProcNote target) {
@@ -57,44 +57,12 @@ public class AssessmentSectionProcNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AssessmentSectionProcNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return AssessmentSectionProcNoteOperations.validateAssessmentSectionProcNoteTemplateId(
 					(AssessmentSectionProcNote) objectToTest, diagnostician, map);
 			}
@@ -102,7 +70,7 @@ public class AssessmentSectionProcNoteTest extends CDAValidationTest {
 		};
 
 		validateAssessmentSectionProcNoteTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	 * 
@@ -110,10 +78,10 @@ public class AssessmentSectionProcNoteTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateAssessmentSectionProcNoteCode() {
-			OperationsTestCase<AssessmentSectionProcNote> validateAssessmentSectionProcNoteCodeTestCase = new OperationsTestCase<AssessmentSectionProcNote>(
+		OperationsTestCase<AssessmentSectionProcNote> validateAssessmentSectionProcNoteCodeTestCase = new OperationsTestCase<AssessmentSectionProcNote>(
 			"validateAssessmentSectionProcNoteCode",
-			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SECTION_PROC_NOTE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_SECTION_PROC_NOTE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AssessmentSectionProcNote target) {
@@ -123,44 +91,12 @@ public class AssessmentSectionProcNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AssessmentSectionProcNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return AssessmentSectionProcNoteOperations.validateAssessmentSectionProcNoteCode(
 					(AssessmentSectionProcNote) objectToTest, diagnostician, map);
 			}
@@ -168,7 +104,7 @@ public class AssessmentSectionProcNoteTest extends CDAValidationTest {
 		};
 
 		validateAssessmentSectionProcNoteCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	 * 
@@ -226,8 +162,8 @@ public class AssessmentSectionProcNoteTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -236,7 +172,7 @@ public class AssessmentSectionProcNoteTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 
