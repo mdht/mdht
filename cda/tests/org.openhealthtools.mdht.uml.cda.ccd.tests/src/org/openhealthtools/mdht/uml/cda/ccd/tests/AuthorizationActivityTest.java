@@ -526,7 +526,7 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAuthorizationActivityEntryRelationship() {
@@ -537,12 +537,12 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AuthorizationActivity target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(AuthorizationActivity target) {
-				target.init();
+				target.getEntryRelationships().add(CDAFactory.eINSTANCE.createEntryRelationship());
 
 			}
 

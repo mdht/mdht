@@ -11,10 +11,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.FamilyHistoryCauseOfDeathObservation;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.FamilyHistoryCauseOfDeathObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +40,7 @@ public class FamilyHistoryCauseOfDeathObservationTest extends CDAValidationTest 
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateFamilyHistoryCauseOfDeathObservationCauseOfDeathObservation() {
@@ -48,13 +51,17 @@ public class FamilyHistoryCauseOfDeathObservationTest extends CDAValidationTest 
 
 			@Override
 			protected void updateToFail(FamilyHistoryCauseOfDeathObservation target) {
-
+				target.init();
+				target.addObservation(CDAFactory.eINSTANCE.createObservation());
 			}
 
 			@Override
 			protected void updateToPass(FamilyHistoryCauseOfDeathObservation target) {
-				target.init();
-
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.CAUS);
+				er.setObservation(CCDFactory.eINSTANCE.createCauseOfDeathObservation().init());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
