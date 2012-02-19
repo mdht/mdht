@@ -44,10 +44,10 @@ public class ReviewOfSystemsSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateReviewOfSystemsSectionTemplateId() {
-			OperationsTestCase<ReviewOfSystemsSection> validateReviewOfSystemsSectionTemplateIdTestCase = new OperationsTestCase<ReviewOfSystemsSection>(
+		OperationsTestCase<ReviewOfSystemsSection> validateReviewOfSystemsSectionTemplateIdTestCase = new OperationsTestCase<ReviewOfSystemsSection>(
 			"validateReviewOfSystemsSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_REVIEW_OF_SYSTEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_REVIEW_OF_SYSTEMS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ReviewOfSystemsSection target) {
@@ -57,44 +57,12 @@ public class ReviewOfSystemsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReviewOfSystemsSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ReviewOfSystemsSectionOperations.validateReviewOfSystemsSectionTemplateId(
 					(ReviewOfSystemsSection) objectToTest, diagnostician, map);
 			}
@@ -102,7 +70,7 @@ public class ReviewOfSystemsSectionTest extends CDAValidationTest {
 		};
 
 		validateReviewOfSystemsSectionTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	 * 
@@ -110,10 +78,10 @@ public class ReviewOfSystemsSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateReviewOfSystemsSectionCode() {
-			OperationsTestCase<ReviewOfSystemsSection> validateReviewOfSystemsSectionCodeTestCase = new OperationsTestCase<ReviewOfSystemsSection>(
+		OperationsTestCase<ReviewOfSystemsSection> validateReviewOfSystemsSectionCodeTestCase = new OperationsTestCase<ReviewOfSystemsSection>(
 			"validateReviewOfSystemsSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_REVIEW_OF_SYSTEMS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_REVIEW_OF_SYSTEMS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ReviewOfSystemsSection target) {
@@ -123,44 +91,12 @@ public class ReviewOfSystemsSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReviewOfSystemsSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ReviewOfSystemsSectionOperations.validateReviewOfSystemsSectionCode(
 					(ReviewOfSystemsSection) objectToTest, diagnostician, map);
 			}
@@ -168,7 +104,7 @@ public class ReviewOfSystemsSectionTest extends CDAValidationTest {
 		};
 
 		validateReviewOfSystemsSectionCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	 * 
@@ -226,8 +162,8 @@ public class ReviewOfSystemsSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -236,7 +172,7 @@ public class ReviewOfSystemsSectionTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 
