@@ -826,7 +826,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationActivityPerformer() {
@@ -843,6 +843,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationActivity target) {
 				target.init();
+				target.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
 
 			}
 

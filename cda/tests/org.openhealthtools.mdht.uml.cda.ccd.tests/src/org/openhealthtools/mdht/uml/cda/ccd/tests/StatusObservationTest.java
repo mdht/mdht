@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.StatusObservation;
@@ -25,6 +26,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -54,7 +56,7 @@ public class StatusObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateStatusObservationTargetOfEntryRelationship() {
@@ -63,14 +65,21 @@ public class StatusObservationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_TARGET_OF_ENTRY_RELATIONSHIP__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+
 			@Override
 			protected void updateToFail(StatusObservation target) {
+
+				er.setObservation(target);
+
+				target.init();
 
 			}
 
 			@Override
 			protected void updateToPass(StatusObservation target) {
-				target.init();
+
+				er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
 
 			}
 
@@ -380,6 +389,12 @@ public class StatusObservationTest extends CDAValidationTest {
 		OperationsTestCase<StatusObservation> validateTargetOfEntryRelationshipTestCase = new OperationsTestCase<StatusObservation>(
 			"validateTargetOfEntryRelationship",
 			operationsForOCL.getOCLValue("VALIDATE_TARGET_OF_ENTRY_RELATIONSHIP__EOCL_EXP"), objectFactory) {
+
+			{
+				// This is non test
+				this.skipFailsTest();
+				this.skipPassTest();
+			}
 
 			@Override
 			protected void updateToFail(StatusObservation target) {
