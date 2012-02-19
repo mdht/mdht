@@ -105,11 +105,6 @@ public class ReactionObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(ReactionObservation target) {
-				target.init();
-				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setSubstanceAdministration(CCDFactory.eINSTANCE.createMedicationActivity());
-				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
-				target.getEntryRelationships().add(er);
 
 			}
 

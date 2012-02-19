@@ -51,7 +51,7 @@ public class ImmunizationsSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationsSectionHasMedicationOrSupplyActivity() {
@@ -62,13 +62,14 @@ public class ImmunizationsSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ImmunizationsSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationsSection target) {
-				target.init();
 
+				target.addSubstanceAdministration(CCDFactory.eINSTANCE.createMedicationActivity().init());
+				target.addSupply(CCDFactory.eINSTANCE.createSupplyActivity().init());
 			}
 
 			@Override
@@ -227,7 +228,7 @@ public class ImmunizationsSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationsSectionMedicationActivity() {
@@ -238,12 +239,13 @@ public class ImmunizationsSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ImmunizationsSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationsSection target) {
-				target.init();
+
+				target.addSubstanceAdministration(CCDFactory.eINSTANCE.createMedicationActivity().init());
 
 			}
 
@@ -261,7 +263,7 @@ public class ImmunizationsSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationsSectionSupplyActivity() {
@@ -272,13 +274,12 @@ public class ImmunizationsSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ImmunizationsSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationsSection target) {
-				target.init();
-
+				target.addSupply(CCDFactory.eINSTANCE.createSupplyActivity().init());
 			}
 
 			@Override

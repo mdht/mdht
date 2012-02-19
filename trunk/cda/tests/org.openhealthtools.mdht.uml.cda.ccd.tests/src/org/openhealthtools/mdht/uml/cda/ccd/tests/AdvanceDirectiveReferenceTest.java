@@ -239,7 +239,7 @@ public class AdvanceDirectiveReferenceTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveReferenceExternalDocument() {
@@ -250,13 +250,12 @@ public class AdvanceDirectiveReferenceTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveReference target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(AdvanceDirectiveReference target) {
-				target.init();
-
+				target.setExternalDocument(CDAFactory.eINSTANCE.createExternalDocument());
 			}
 
 			@Override

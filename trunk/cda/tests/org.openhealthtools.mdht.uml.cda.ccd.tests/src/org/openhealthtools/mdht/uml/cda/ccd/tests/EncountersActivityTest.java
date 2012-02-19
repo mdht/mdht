@@ -103,6 +103,9 @@ public class EncountersActivityTest extends CDAValidationTest {
 			"validateEncountersActivityHasPractitioners",
 			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTERS_ACTIVITY_HAS_PRACTITIONERS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+			{
+				this.skipFailsTest();
+			}
 
 			@Override
 			protected void updateToFail(EncountersActivity target) {
@@ -415,7 +418,7 @@ public class EncountersActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateEncountersActivityEncounterLocation() {
@@ -426,13 +429,12 @@ public class EncountersActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(EncountersActivity target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(EncountersActivity target) {
-				target.init();
-
+				target.getParticipants().add(CCDFactory.eINSTANCE.createEncounterLocation().init());
 			}
 
 			@Override

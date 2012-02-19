@@ -378,7 +378,7 @@ public class ResultOrganizerTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateResultOrganizerSpecimen() {
@@ -389,13 +389,13 @@ public class ResultOrganizerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ResultOrganizer target) {
+				target.init();
 
 			}
 
 			@Override
 			protected void updateToPass(ResultOrganizer target) {
-				target.init();
-
+				target.getSpecimens().add(CDAFactory.eINSTANCE.createSpecimen());
 			}
 
 			@Override

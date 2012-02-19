@@ -15,12 +15,15 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ccd.ProcedureActivityAct;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ProcedureActivityActOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc --> A static utility class that provides operations
@@ -125,7 +128,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureActivityActCode() {
@@ -136,12 +139,12 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
-				target.init();
+				target.setCode(DatatypesFactory.eINSTANCE.createCD());
 
 			}
 
@@ -196,7 +199,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureActivityActId() {
@@ -207,12 +210,12 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
-				target.init();
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 
 			}
 
@@ -230,7 +233,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureActivityActEncounterLocation() {
@@ -241,13 +244,12 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
-				target.init();
-
+				target.getParticipants().add(CCDFactory.eINSTANCE.createEncounterLocation().init());
 			}
 
 			@Override
@@ -263,8 +265,8 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 	}
 
 	/**
-	*
-	* @generated
+	* 
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureActivityActPerformer2() {
@@ -275,12 +277,12 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
-				target.init();
+				target.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
 
 			}
 
@@ -298,7 +300,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureActivityActProblemAct() {
@@ -309,12 +311,16 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
-				target.init();
+
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				er.setAct(CCDFactory.eINSTANCE.createProblemAct().init());
+				target.getEntryRelationships().add(er);
 
 			}
 
@@ -332,7 +338,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureActivityActProblemObservation() {
@@ -343,12 +349,16 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
-				target.init();
+
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				er.setObservation(CCDFactory.eINSTANCE.createProblemObservation().init());
+				target.getEntryRelationships().add(er);
 
 			}
 
@@ -366,7 +376,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureActivityActAgeObservation() {
@@ -378,11 +388,16 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
 
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
-				target.init();
+
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				er.setObservation(CCDFactory.eINSTANCE.createAgeObservation().init());
+				target.getEntryRelationships().add(er);
 
 			}
 
@@ -400,7 +415,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureActivityActMedicationActivity() {
@@ -411,13 +426,15 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
-				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				er.setSubstanceAdministration(CCDFactory.eINSTANCE.createMedicationActivity().init());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -434,7 +451,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureActivityActPatientInstruction() {
@@ -445,12 +462,12 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
-				target.init();
+				target.addAct(CCDFactory.eINSTANCE.createPatientInstruction().init());
 
 			}
 

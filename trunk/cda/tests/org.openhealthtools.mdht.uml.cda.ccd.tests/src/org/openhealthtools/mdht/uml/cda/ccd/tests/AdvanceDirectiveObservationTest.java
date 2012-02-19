@@ -379,7 +379,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveObservationAdvanceDirectiveVerification() {
@@ -390,12 +390,12 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
-				target.init();
+				target.getParticipants().add(CCDFactory.eINSTANCE.createAdvanceDirectiveVerification().init());
 
 			}
 
@@ -447,7 +447,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveObservationAdvanceDirectiveReference() {
@@ -458,13 +458,12 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
-				target.init();
-
+				target.getReferences().add(CCDFactory.eINSTANCE.createAdvanceDirectiveReference().init());
 			}
 
 			@Override
