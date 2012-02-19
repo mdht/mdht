@@ -116,17 +116,19 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(FamilyHistoryObservation target) {
+				target.init();
+				Subject s = CDAFactory.eINSTANCE.createSubject();
+				RelatedSubject rs = CDAFactory.eINSTANCE.createRelatedSubject();
 
+				s.setRelatedSubject(rs);
+				target.setSubject(s);
+				target.getSubject().getRelatedSubject().setClassCode(x_DocumentSubject.PAT);
 			}
 
 			@Override
 			protected void updateToPass(FamilyHistoryObservation target) {
-				target.init();
-				Subject s = CDAFactory.eINSTANCE.createSubject();
-				RelatedSubject rs = CDAFactory.eINSTANCE.createRelatedSubject();
-				rs.setClassCode(x_DocumentSubject.PRS);
-				s.setRelatedSubject(rs);
-				target.setSubject(s);
+				target.getSubject().getRelatedSubject().getClassCode();
+				target.getSubject().getRelatedSubject().setClassCode(x_DocumentSubject.PRS);
 			}
 
 			@Override
@@ -195,19 +197,20 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(FamilyHistoryObservation target) {
-
+				target.init();
+				Subject s = CDAFactory.eINSTANCE.createSubject();
+				RelatedSubject rs = CDAFactory.eINSTANCE.createRelatedSubject();
+				s.setRelatedSubject(rs);
+				target.setSubject(s);
 			}
 
 			@Override
 			protected void updateToPass(FamilyHistoryObservation target) {
-				target.init();
-				Subject s = CDAFactory.eINSTANCE.createSubject();
-				RelatedSubject rs = CDAFactory.eINSTANCE.createRelatedSubject();
+
 				CE code = DatatypesFactory.eINSTANCE.createCE();
 				code.setCodeSystem("2.16.840.1.113883.5.111");
-				rs.setCode(code);
-				s.setRelatedSubject(rs);
-				target.setSubject(s);
+				target.getSubject().getRelatedSubject().setCode(code);
+
 			}
 
 			@Override
