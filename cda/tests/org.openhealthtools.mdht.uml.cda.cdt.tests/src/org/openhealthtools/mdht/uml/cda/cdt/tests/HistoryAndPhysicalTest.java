@@ -174,12 +174,12 @@ public class HistoryAndPhysicalTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysical target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(HistoryAndPhysical target) {
-				target.init();
+				target.addSection(CDTFactory.eINSTANCE.createReasonForVisitAndChiefComplaintSection().init());
 
 			}
 
