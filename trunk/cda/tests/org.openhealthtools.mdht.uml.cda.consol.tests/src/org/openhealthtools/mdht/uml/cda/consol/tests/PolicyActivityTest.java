@@ -11,10 +11,19 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Organization;
+import org.openhealthtools.mdht.uml.cda.Performer2;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.PolicyActivity;
 import org.openhealthtools.mdht.uml.cda.consol.operations.PolicyActivityOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ON;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,8 +38,24 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityAuthorizationActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Authorization Activity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityPerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Performer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityPayer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityGuarantor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Guarantor</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityPayerPayerAssignedEntityPayerOrganizationName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer Payer Assigned Entity Payer Organization Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityPayerPayerAssignedEntityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer Payer Assigned Entity Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityPayerPayerAssignedEntityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer Payer Assigned Entity Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityPayerPayerAssignedEntityAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer Payer Assigned Entity Addr</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityPayerPayerAssignedEntityTelecom(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer Payer Assigned Entity Telecom</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityPayerPayerAssignedEntityPayerOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer Payer Assigned Entity Payer Organization</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityPayerTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityPayerTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer Type Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityPayerPayerAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer Payer Assigned Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityGuarantorGuarantorAssignedEntityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Guarantor Guarantor Assigned Entity Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityGuarantorGuarantorAssignedEntityAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Guarantor Guarantor Assigned Entity Addr</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityGuarantorGuarantorAssignedEntityTelecom(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Guarantor Guarantor Assigned Entity Telecom</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityGuarantorTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Guarantor Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityGuarantorGuarantorAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Guarantor Guarantor Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#getAuthorizationActivity() <em>Get Authorization Activity</em>}</li>
  * </ul>
  * </p>
@@ -110,7 +135,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityCode() {
@@ -127,6 +152,8 @@ public class PolicyActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PolicyActivity target) {
 				target.init();
+				CD cd = DatatypesFactory.eINSTANCE.createCD("A", "2.16.840.1.113883.6.1", null, null);
+				target.setCode(cd);
 
 			}
 
@@ -144,7 +171,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePolicyActivityId() {
@@ -160,7 +187,8 @@ public class PolicyActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PolicyActivity target) {
 				target.init();
-
+				II ii = DatatypesFactory.eINSTANCE.createII("12345678-0");
+				target.getIds().add(ii);
 			}
 
 			@Override
@@ -214,6 +242,43 @@ public class PolicyActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidatePolicyActivityStatusCode() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityStatusCodeTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.init();
+
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityStatusCode(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityStatusCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated 
+	*/
+	@Test
 	public void testValidatePolicyActivityAuthorizationActivity() {
 		OperationsTestCase<PolicyActivity> validatePolicyActivityAuthorizationActivityTestCase = new OperationsTestCase<PolicyActivity>(
 			"validatePolicyActivityAuthorizationActivity",
@@ -245,13 +310,145 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
+	* @generated NOT
+	*/
+	@Test
+	public void testValidatePolicyActivityPayer() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityPayerTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityPayer",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_PAYER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.init();
+				Performer2 payer = CDAFactory.eINSTANCE.createPerformer2();
+				CDAFactory.eINSTANCE.createPerformer2();
+				target.getPerformers().add(payer);
+				// Once Sean's fix is in, this condition should passS
+				// target.getPerformers().add(guarantor);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityPayer(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityPayerTestCase.doValidationTest();
+	}
+
+	/**
+	*
 	* @generated
 	*/
 	@Test
-	public void testValidatePolicyActivityPerformer() {
-		OperationsTestCase<PolicyActivity> validatePolicyActivityPerformerTestCase = new OperationsTestCase<PolicyActivity>(
-			"validatePolicyActivityPerformer",
-			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_PERFORMER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidatePolicyActivityGuarantor() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityGuarantorTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityGuarantor",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_GUARANTOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.init();
+				Performer2 payer = CDAFactory.eINSTANCE.createPerformer2();
+				CDAFactory.eINSTANCE.createPerformer2();
+				target.getPerformers().add(payer);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityGuarantor(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityGuarantorTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePolicyActivityPayerPayerAssignedEntityPayerOrganizationName() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityPayerPayerAssignedEntityPayerOrganizationNameTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityPayerPayerAssignedEntityPayerOrganizationName",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_PAYER_PAYER_ASSIGNED_ENTITY_PAYER_ORGANIZATION_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+				target.init();
+				target.getPerformers().clear();
+				Performer2 payer = CDAFactory.eINSTANCE.createPerformer2();
+				CDAFactory.eINSTANCE.createPerformer2();
+				target.getPerformers().add(payer);
+				AssignedEntity payerEntity = CDAFactory.eINSTANCE.createAssignedEntity();
+				payer.setAssignedEntity(payerEntity);
+
+				Organization repOrg = CDAFactory.eINSTANCE.createOrganization();
+				payerEntity.getRepresentedOrganizations().add(repOrg);
+
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.init();
+				target.getPerformers().clear();
+				Performer2 payer = CDAFactory.eINSTANCE.createPerformer2();
+				CDAFactory.eINSTANCE.createPerformer2();
+				target.getPerformers().add(payer);
+				AssignedEntity payerEntity = CDAFactory.eINSTANCE.createAssignedEntity();
+				payer.setAssignedEntity(payerEntity);
+
+				Organization repOrg = CDAFactory.eINSTANCE.createOrganization();
+				ON name = DatatypesFactory.eINSTANCE.createON();
+				repOrg.getNames().add(name);
+
+				payerEntity.getRepresentedOrganizations().add(repOrg);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityPayerPayerAssignedEntityPayerOrganizationName(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityPayerPayerAssignedEntityPayerOrganizationNameTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePolicyActivityPayerPayerAssignedEntityId() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityPayerPayerAssignedEntityIdTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityPayerPayerAssignedEntityId",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_PAYER_PAYER_ASSIGNED_ENTITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -268,13 +465,421 @@ public class PolicyActivityTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return PolicyActivityOperations.validatePolicyActivityPerformer(
+				return PolicyActivityOperations.validatePolicyActivityPayerPayerAssignedEntityId(
 					(PolicyActivity) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validatePolicyActivityPerformerTestCase.doValidationTest();
+		validatePolicyActivityPayerPayerAssignedEntityIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePolicyActivityPayerPayerAssignedEntityCode() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityPayerPayerAssignedEntityCodeTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityPayerPayerAssignedEntityCode",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_PAYER_PAYER_ASSIGNED_ENTITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityPayerPayerAssignedEntityCode(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityPayerPayerAssignedEntityCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePolicyActivityPayerPayerAssignedEntityAddr() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityPayerPayerAssignedEntityAddrTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityPayerPayerAssignedEntityAddr",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_PAYER_PAYER_ASSIGNED_ENTITY_ADDR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityPayerPayerAssignedEntityAddr(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityPayerPayerAssignedEntityAddrTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePolicyActivityPayerPayerAssignedEntityTelecom() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityPayerPayerAssignedEntityTelecomTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityPayerPayerAssignedEntityTelecom",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_PAYER_PAYER_ASSIGNED_ENTITY_TELECOM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityPayerPayerAssignedEntityTelecom(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityPayerPayerAssignedEntityTelecomTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePolicyActivityPayerPayerAssignedEntityPayerOrganization() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityPayerPayerAssignedEntityPayerOrganizationTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityPayerPayerAssignedEntityPayerOrganization",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_PAYER_PAYER_ASSIGNED_ENTITY_PAYER_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityPayerPayerAssignedEntityPayerOrganization(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityPayerPayerAssignedEntityPayerOrganizationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePolicyActivityPayerTemplateId() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityPayerTemplateIdTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityPayerTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_PAYER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityPayerTemplateId(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityPayerTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePolicyActivityPayerTypeCode() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityPayerTypeCodeTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityPayerTypeCode",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_PAYER_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityPayerTypeCode(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityPayerTypeCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePolicyActivityPayerPayerAssignedEntity() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityPayerPayerAssignedEntityTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityPayerPayerAssignedEntity",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_PAYER_PAYER_ASSIGNED_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityPayerPayerAssignedEntity(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityPayerPayerAssignedEntityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityCode() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityGuarantorGuarantorAssignedEntityCodeTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityGuarantorGuarantorAssignedEntityCode",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_GUARANTOR_GUARANTOR_ASSIGNED_ENTITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityGuarantorGuarantorAssignedEntityCode(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityGuarantorGuarantorAssignedEntityCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityAddr() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityGuarantorGuarantorAssignedEntityAddrTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityGuarantorGuarantorAssignedEntityAddr",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_GUARANTOR_GUARANTOR_ASSIGNED_ENTITY_ADDR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityGuarantorGuarantorAssignedEntityAddr(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityGuarantorGuarantorAssignedEntityAddrTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntityTelecom() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityGuarantorGuarantorAssignedEntityTelecomTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityGuarantorGuarantorAssignedEntityTelecom",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_GUARANTOR_GUARANTOR_ASSIGNED_ENTITY_TELECOM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityGuarantorGuarantorAssignedEntityTelecom(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityGuarantorGuarantorAssignedEntityTelecomTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePolicyActivityGuarantorTime() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityGuarantorTimeTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityGuarantorTime",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_GUARANTOR_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityGuarantorTime(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityGuarantorTimeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePolicyActivityGuarantorGuarantorAssignedEntity() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityGuarantorGuarantorAssignedEntityTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityGuarantorGuarantorAssignedEntity",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_GUARANTOR_GUARANTOR_ASSIGNED_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityGuarantorGuarantorAssignedEntity(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityGuarantorGuarantorAssignedEntityTestCase.doValidationTest();
 	}
 
 	/**
