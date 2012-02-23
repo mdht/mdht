@@ -33,7 +33,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlannedProcedureSection#validatePlannedProcedureSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Planned Procedure Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlannedProcedureSection#validatePlannedProcedureSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Planned Procedure Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlannedProcedureSection#validatePlannedProcedureSectionPlanOfCareActivityProcedure(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Planned Procedure Section Plan Of Care Activity Procedure</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlannedProcedureSection#getPlanOfCareActivityProcedure() <em>Get Plan Of Care Activity Procedure</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlannedProcedureSection#getPlanOfCareActivityProcedures() <em>Get Plan Of Care Activity Procedures</em>}</li>
  * </ul>
  * </p>
  *
@@ -224,10 +224,10 @@ public class PlannedProcedureSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetPlanOfCareActivityProcedure() {
+	public void testGetPlanOfCareActivityProcedures() {
 
 		PlannedProcedureSection target = objectFactory.create();
-		target.getPlanOfCareActivityProcedure();
+		target.getPlanOfCareActivityProcedures();
 
 	}
 

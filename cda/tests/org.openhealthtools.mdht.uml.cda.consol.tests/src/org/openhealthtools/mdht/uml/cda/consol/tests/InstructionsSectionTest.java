@@ -28,11 +28,12 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InstructionsSection#validateInstructionsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Instructions Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InstructionsSection#validateInstructionsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Instructions Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InstructionsSection#validateInstructionsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Instructions Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InstructionsSection#validateInstructionsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Instructions Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InstructionsSection#validateInstructionsSectionInstructions(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Instructions Section Instructions</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InstructionsSection#getInstructions() <em>Get Instructions</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.InstructionsSection#getInstructionss() <em>Get Instructionss</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +41,40 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  */
 
 public class InstructionsSectionTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateInstructionsSectionTemplateId() {
+		OperationsTestCase<InstructionsSection> validateInstructionsSectionTemplateIdTestCase = new OperationsTestCase<InstructionsSection>(
+			"validateInstructionsSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(InstructionsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(InstructionsSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return InstructionsSectionOperations.validateInstructionsSectionTemplateId(
+					(InstructionsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateInstructionsSectionTemplateIdTestCase.doValidationTest();
+	}
 
 	/**
 	*
@@ -187,10 +222,10 @@ public class InstructionsSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetInstructions() {
+	public void testGetInstructionss() {
 
 		InstructionsSection target = objectFactory.create();
-		target.getInstructions();
+		target.getInstructionss();
 
 	}
 

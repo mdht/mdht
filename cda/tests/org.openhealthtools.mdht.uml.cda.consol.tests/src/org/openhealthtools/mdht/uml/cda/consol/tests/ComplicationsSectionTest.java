@@ -9,17 +9,16 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ComplicationsSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.ComplicationsSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +29,11 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ComplicationsSection#validateComplicationsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complications Section Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ComplicationsSection#validateComplicationsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complications Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ComplicationsSection#validateComplicationsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complications Section Title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ComplicationsSection#validateComplicationsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complications Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ComplicationsSection#validateComplicationsSectionProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Complications Section Problem Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ComplicationsSection#getProblemObservations() <em>Get Problem Observations</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +74,160 @@ public class ComplicationsSectionTest extends CDAValidationTest {
 		};
 
 		validateComplicationsSectionTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateComplicationsSectionCode() {
+		OperationsTestCase<ComplicationsSection> validateComplicationsSectionCodeTestCase = new OperationsTestCase<ComplicationsSection>(
+			"validateComplicationsSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_COMPLICATIONS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ComplicationsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ComplicationsSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ComplicationsSectionOperations.validateComplicationsSectionCode(
+					(ComplicationsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateComplicationsSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateComplicationsSectionTitle() {
+		OperationsTestCase<ComplicationsSection> validateComplicationsSectionTitleTestCase = new OperationsTestCase<ComplicationsSection>(
+			"validateComplicationsSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_COMPLICATIONS_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ComplicationsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ComplicationsSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ComplicationsSectionOperations.validateComplicationsSectionTitle(
+					(ComplicationsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateComplicationsSectionTitleTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateComplicationsSectionText() {
+		OperationsTestCase<ComplicationsSection> validateComplicationsSectionTextTestCase = new OperationsTestCase<ComplicationsSection>(
+			"validateComplicationsSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_COMPLICATIONS_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ComplicationsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ComplicationsSection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ComplicationsSectionOperations.validateComplicationsSectionText(
+					(ComplicationsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateComplicationsSectionTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateComplicationsSectionProblemObservation() {
+		OperationsTestCase<ComplicationsSection> validateComplicationsSectionProblemObservationTestCase = new OperationsTestCase<ComplicationsSection>(
+			"validateComplicationsSectionProblemObservation",
+			operationsForOCL.getOCLValue("VALIDATE_COMPLICATIONS_SECTION_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ComplicationsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ComplicationsSection target) {
+				target.init();
+				target.addObservation(ConsolFactory.eINSTANCE.createProblemObservation());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ComplicationsSectionOperations.validateComplicationsSectionProblemObservation(
+					(ComplicationsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateComplicationsSectionProblemObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetProblemObservations() {
+
+		ComplicationsSection target = objectFactory.create();
+		target.getProblemObservations();
+
 	}
 
 	/**
