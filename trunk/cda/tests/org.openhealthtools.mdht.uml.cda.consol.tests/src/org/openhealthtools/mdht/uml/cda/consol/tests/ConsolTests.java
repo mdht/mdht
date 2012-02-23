@@ -21,22 +21,30 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-		GeneralHeaderConstraintsTest.class, AllergyProblemActTest.class, AllergyObservationTest.class,
-		ReactionObservationTest.class, SeverityObservationTest.class, ProcedureActivityProcedureTest.class,
-		IndicationTest.class, ServiceDeliveryLocationTest.class, MedicationActivityTest.class,
-		MedicationSupplyOrderTest.class, InstructionsTest.class, MedicationDispenseTest.class, DrugVehicleTest.class,
-		ProductInstanceTest.class, AllergyStatusObservationTest.class, AgeObservationTest.class,
-		HealthStatusObservationTest.class, CommentTest.class, InternalReferenceTest.class, MedicationTypeTest.class,
-		NonMedicinalSupplyActivityTest.class, MedicationFullfillmentInstructionsTest.class,
-		ProblemConcernActTest.class, ProblemObservationTest.class, ProblemStatusTest.class,
-		ContinuityOfCareDocumentTest.class, AllergiesSectionTest.class, AllergiesSectionEntriesOptionalTest.class,
-		MedicationsSectionTest.class, MedicationsSectionEntriesOptionalTest.class, ProblemSectionTest.class,
-		ProblemSectionEntriesOptionalTest.class, ProceduresSectionTest.class,
-		ProceduresSectionEntriesOptionalTest.class, ProcedureActivityObservationTest.class,
-		ProcedureActivityActTest.class, ResultsSectionTest.class, ResultsSectionEntriesOptionalTest.class,
-		ResultOrganizerTest.class, ResultObservationTest.class, AdvanceDirectivesSectionTest.class,
-		AdvanceDirectivesSectionEntriesOptionalTest.class, AdvanceDirectiveObservationTest.class,
-		EncountersSectionTest.class, EncountersSectionEntriesOptionalTest.class, EncounterActivitiesTest.class,
+		GeneralHeaderConstraintsTest.class
+
+		, AllergyProblemActTest.class, AllergyObservationTest.class, ReactionObservationTest.class,
+		SeverityObservationTest.class, ProcedureActivityProcedureTest.class, IndicationTest.class,
+		ServiceDeliveryLocationTest.class, MedicationActivityTest.class, MedicationSupplyOrderTest.class
+
+		, InstructionsTest.class, MedicationDispenseTest.class
+
+		, DrugVehicleTest.class, ProductInstanceTest.class
+
+		, AllergyStatusObservationTest.class, AgeObservationTest.class, HealthStatusObservationTest.class,
+		CommentTest.class, InternalReferenceTest.class, MedicationTypeTest.class, NonMedicinalSupplyActivityTest.class,
+		MedicationFullfillmentInstructionsTest.class, ProblemConcernActTest.class, ProblemObservationTest.class,
+		ProblemStatusTest.class, ContinuityOfCareDocumentTest.class
+
+		, AllergiesSectionTest.class, AllergiesSectionEntriesOptionalTest.class, MedicationsSectionTest.class,
+		MedicationsSectionEntriesOptionalTest.class, ProblemSectionTest.class, ProblemSectionEntriesOptionalTest.class,
+		ProceduresSectionTest.class, ProceduresSectionEntriesOptionalTest.class,
+		ProcedureActivityObservationTest.class, ProcedureActivityActTest.class, ResultsSectionTest.class,
+		ResultsSectionEntriesOptionalTest.class, ResultOrganizerTest.class, ResultObservationTest.class,
+		AdvanceDirectivesSectionTest.class, AdvanceDirectivesSectionEntriesOptionalTest.class,
+		AdvanceDirectiveObservationTest.class
+
+		, EncountersSectionTest.class, EncountersSectionEntriesOptionalTest.class, EncounterActivitiesTest.class,
 		FamilyHistorySectionTest.class, FamilyHistoryOrganizerTest.class, FamilyHistoryObservationTest.class,
 		FamilyHistoryDeathObservationTest.class, FunctionalStatusSectionTest.class,
 		ImmunizationsSectionEntriesOptionalTest.class, ImmunizationActivityTest.class,
@@ -53,13 +61,17 @@ import org.junit.runners.Suite;
 		CoveredPartyTest.class, PolicySubscriberTest.class, ExternalReferenceTest.class, VitalSignsSectionTest.class,
 		HistoryOfPastIllnessSectionTest.class, ChiefComplaintSectionTest.class, ReasonForReferralSectionTest.class,
 		HistoryOfPresentIllnessSectionTest.class, HospitalAdmissionDiagnosisSectionTest.class,
-		HospitalAdmissionMedicationsSectionEntriesOptionalTest.class, AdmissionMedicationTest.class,
-		MedicationsAdministeredSectionTest.class, PhysicalExamSectionTest.class, GeneralStatusSectionTest.class,
-		ReviewOfSystemsSectionTest.class, AssessmentAndPlanSectionTest.class, LanguageSpokenTest.class,
-		HealthcareProviderTest.class, SurgicalDrainsSectionTest.class, UnstructuredDocumentTest.class,
-		ScanOriginalAuthorTest.class, ScanningDeviceTest.class, ScanDataEntererTest.class,
+		HospitalAdmissionDiagnosisTest.class, HospitalAdmissionMedicationsSectionEntriesOptionalTest.class,
+		AdmissionMedicationTest.class, MedicationsAdministeredSectionTest.class, PhysicalExamSectionTest.class,
+		GeneralStatusSectionTest.class, ReviewOfSystemsSectionTest.class, AssessmentAndPlanSectionTest.class,
+		LanguageSpokenTest.class, HealthcareProviderTest.class, SurgicalDrainsSectionTest.class,
+		UnstructuredDocumentTest.class
+
+		, ScanOriginalAuthorTest.class, ScanningDeviceTest.class, ScanDataEntererTest.class,
 		MedicationInformationTest.class, UnstructuredOrScannedDocumentTest.class, ReferralSummaryTest.class,
-		DischargeSummaryTest.class, HospitalDischargeDiagnosisSectionTest.class, HospitalDischargeDiagnosisTest.class,
+		DischargeSummaryTest.class
+
+		, HospitalDischargeDiagnosisSectionTest.class, HospitalDischargeDiagnosisTest.class,
 		DischargeDietSectionTest.class, HospitalDischargeMedicationsSectionEntriesOptionalTest.class,
 		DischargeMedicationTest.class, HospitalCourseSectionTest.class,
 		ChiefComplaintAndReasonForVisitSectionTest.class, HospitalConsultationsSectionTest.class,
@@ -72,21 +84,34 @@ import org.junit.runners.Suite;
 		EncounterPerformerAssignedEntityTest.class, AllergyObservationParticipantTest.class,
 		AllergyObservationParticipantRoleTest.class, AllergyObservationPlayingEntityTest.class,
 		AnesthesiaSectionTest.class, ComplicationsSectionTest.class, DICOMObjectCatalogSectionTest.class,
+		StudyActTest.class, SeriesActTest.class, SOPInstanceObservationTest.class,
+		PurposeofReferenceObservationTest.class, ReferencedFramesObservationTest.class, BoundaryObservationTest.class,
 		FindingsSectionTest.class, InterventionsSectionTest.class, MedicalHistorySectionTest.class,
 		ObjectiveSectionTest.class, OperativeNoteFluidSectionTest.class,
 		OperativeNoteSurgicalProcedureSectionTest.class, PlannedProcedureSectionTest.class,
 		PostoperativeDiagnosisSectionTest.class, PostprocedureDiagnosisSectionTest.class,
-		PostprocedureDiagnosisTest.class, PreoperativeDiagnosisSectionTest.class,
+		PostprocedureDiagnosisTest.class, PreoperativeDiagnosisSectionTest.class, PreoperativeDiagnosisTest.class,
 		ProcedureDescriptionSectionTest.class, ProcedureDispositionSectionTest.class,
 		ProcedureEstimatedBloodLossSectionTest.class, ProcedureFindingsSectionTest.class,
 		ProcedureImplantsSectionTest.class, ProcedureIndicationsSectionTest.class,
 		ProcedureSpecimensTakenSectionTest.class, SubjectiveSectionTest.class, ConsultationNoteTest.class,
+		AssessmentSectionTest.class, HistoryAndPhysicalNoteTest.class
 
-		AssessmentSectionTest.class, HistoryAndPhysicalNoteTest.class, OperativeNoteTest.class,
-		ProcedureNoteTest.class, ProgressNoteTest.class,
+		, OperativeNoteTest.class
 
-		PreoperativeDiagnosisTest.class, InstructionsSectionTest.class, HospitalAdmissionDiagnosisTest.class,
-		MedicationDispenseAssignedEntityTest.class, ImmunizationMedicationInformationManufacturedMaterialTest.class })
+		, ProcedureNoteTest.class
+
+		, ProgressNoteTest.class
+
+		, InstructionsSectionTest.class, MedicationDispenseAssignedEntityTest.class,
+		ImmunizationMedicationInformationManufacturedMaterialTest.class, DiagnosticImagingReportTest.class
+
+		, PhysicianReadingStudyPerformerTest.class
+
+		, PhysicianofRecordParticipantTest.class
+
+		, TextObservationTest.class, QuantityMeasurementObservationTest.class, CodeObservationsTest.class,
+		ProcedureContextTest.class })
 public class ConsolTests {
 
 	/**

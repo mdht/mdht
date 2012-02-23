@@ -33,7 +33,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureIndicationsSection#validateProcedureIndicationsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Indications Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureIndicationsSection#validateProcedureIndicationsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Indications Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureIndicationsSection#validateProcedureIndicationsSectionIndication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Indications Section Indication</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureIndicationsSection#getIndication() <em>Get Indication</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureIndicationsSection#getIndications() <em>Get Indications</em>}</li>
  * </ul>
  * </p>
  *
@@ -223,10 +223,10 @@ public class ProcedureIndicationsSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetIndication() {
+	public void testGetIndications() {
 
 		ProcedureIndicationsSection target = objectFactory.create();
-		target.getIndication();
+		target.getIndications();
 
 	}
 

@@ -21,6 +21,7 @@ import org.openhealthtools.mdht.uml.cda.consol.operations.SOPInstanceObservation
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
@@ -40,12 +41,13 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SOPInstanceObservation#validateSOPInstanceObservationId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate SOP Instance Observation Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SOPInstanceObservation#validateSOPInstanceObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate SOP Instance Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SOPInstanceObservation#validateSOPInstanceObservationText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate SOP Instance Observation Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SOPInstanceObservation#validateSOPInstanceObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate SOP Instance Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SOPInstanceObservation#validateSOPInstanceObservationSOPInstanceObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate SOP Instance Observation SOP Instance Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SOPInstanceObservation#validateSOPInstanceObservationPurposeofReferenceObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate SOP Instance Observation Purposeof Reference Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SOPInstanceObservation#validateSOPInstanceObservationReferencedFramesObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate SOP Instance Observation Referenced Frames Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SOPInstanceObservation#getSOPInstanceObservation() <em>Get SOP Instance Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SOPInstanceObservation#getPurposeofReferenceObservation() <em>Get Purposeof Reference Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SOPInstanceObservation#getReferencedFramesObservation() <em>Get Referenced Frames Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SOPInstanceObservation#getSOPInstanceObservations() <em>Get SOP Instance Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SOPInstanceObservation#getPurposeofReferenceObservations() <em>Get Purposeof Reference Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SOPInstanceObservation#getReferencedFramesObservations() <em>Get Referenced Frames Observations</em>}</li>
  * </ul>
  * </p>
  *
@@ -272,6 +274,43 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidateSOPInstanceObservationCode() {
+		OperationsTestCase<SOPInstanceObservation> validateSOPInstanceObservationCodeTestCase = new OperationsTestCase<SOPInstanceObservation>(
+			"validateSOPInstanceObservationCode",
+			operationsForOCL.getOCLValue("VALIDATE_SOP_INSTANCE_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SOPInstanceObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SOPInstanceObservation target) {
+				target.init();
+
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				target.setCode(cd);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SOPInstanceObservationOperations.validateSOPInstanceObservationCode(
+					(SOPInstanceObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSOPInstanceObservationCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
 	public void testValidateSOPInstanceObservationSOPInstanceObservation() {
 		OperationsTestCase<SOPInstanceObservation> validateSOPInstanceObservationSOPInstanceObservationTestCase = new OperationsTestCase<SOPInstanceObservation>(
 			"validateSOPInstanceObservationSOPInstanceObservation",
@@ -374,10 +413,10 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetSOPInstanceObservation() {
+	public void testGetSOPInstanceObservations() {
 
 		SOPInstanceObservation target = objectFactory.create();
-		target.getSOPInstanceObservation();
+		target.getSOPInstanceObservations();
 
 	}
 
@@ -386,10 +425,10 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetPurposeofReferenceObservation() {
+	public void testGetPurposeofReferenceObservations() {
 
 		SOPInstanceObservation target = objectFactory.create();
-		target.getPurposeofReferenceObservation();
+		target.getPurposeofReferenceObservations();
 
 	}
 
@@ -398,10 +437,10 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetReferencedFramesObservation() {
+	public void testGetReferencedFramesObservations() {
 
 		SOPInstanceObservation target = objectFactory.create();
-		target.getReferencedFramesObservation();
+		target.getReferencedFramesObservations();
 
 	}
 

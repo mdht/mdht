@@ -11,10 +11,14 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.consol.operations.MedicationsAdministeredSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +30,10 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsAdministeredSection#validateMedicationsAdministeredSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Administered Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsAdministeredSection#validateMedicationsAdministeredSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Administered Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsAdministeredSection#validateMedicationsAdministeredSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Administered Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsAdministeredSection#validateMedicationsAdministeredSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Administered Section Title</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsAdministeredSection#validateMedicationsAdministeredSectionMedicationActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Administered Section Medication Activity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsAdministeredSection#getMedicationActivities() <em>Get Medication Activities</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,6 +108,126 @@ public class MedicationsAdministeredSectionTest extends CDAValidationTest {
 		};
 
 		validateMedicationsAdministeredSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMedicationsAdministeredSectionText() {
+		OperationsTestCase<MedicationsAdministeredSection> validateMedicationsAdministeredSectionTextTestCase = new OperationsTestCase<MedicationsAdministeredSection>(
+			"validateMedicationsAdministeredSectionText",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATIONS_ADMINISTERED_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationsAdministeredSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationsAdministeredSection target) {
+				target.init();
+
+				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+				target.setText(text);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationsAdministeredSectionOperations.validateMedicationsAdministeredSectionText(
+					(MedicationsAdministeredSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationsAdministeredSectionTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMedicationsAdministeredSectionTitle() {
+		OperationsTestCase<MedicationsAdministeredSection> validateMedicationsAdministeredSectionTitleTestCase = new OperationsTestCase<MedicationsAdministeredSection>(
+			"validateMedicationsAdministeredSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATIONS_ADMINISTERED_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationsAdministeredSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationsAdministeredSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationsAdministeredSectionOperations.validateMedicationsAdministeredSectionTitle(
+					(MedicationsAdministeredSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationsAdministeredSectionTitleTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateMedicationsAdministeredSectionMedicationActivity() {
+		OperationsTestCase<MedicationsAdministeredSection> validateMedicationsAdministeredSectionMedicationActivityTestCase = new OperationsTestCase<MedicationsAdministeredSection>(
+			"validateMedicationsAdministeredSectionMedicationActivity",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATIONS_ADMINISTERED_SECTION_MEDICATION_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationsAdministeredSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationsAdministeredSection target) {
+				target.init();
+				target.addSubstanceAdministration(ConsolFactory.eINSTANCE.createMedicationActivity());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationsAdministeredSectionOperations.validateMedicationsAdministeredSectionMedicationActivity(
+					(MedicationsAdministeredSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationsAdministeredSectionMedicationActivityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetMedicationActivities() {
+
+		MedicationsAdministeredSection target = objectFactory.create();
+		target.getMedicationActivities();
+
 	}
 
 	/**
