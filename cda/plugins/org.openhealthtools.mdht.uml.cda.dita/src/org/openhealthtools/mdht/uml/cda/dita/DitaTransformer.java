@@ -24,9 +24,11 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ElementImport;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Logger;
@@ -91,12 +93,17 @@ public class DitaTransformer {
 				if (child != null) {
 
 					transformPackage.doSwitch(child);
-					if (useTemplates) {
-						generateSections.doSwitch(child);
-					} else {
-						transformClass.doSwitch(child);
+
+					// omit nested classes
+					if (child instanceof Class && ((Class) child).getOwner() instanceof Package) {
+						if (useTemplates) {
+							generateSections.doSwitch(child);
+						} else {
+							transformClass.doSwitch(child);
+						}
+						transformClassProperties.doSwitch(child);
 					}
-					transformClassProperties.doSwitch(child);
+
 					transformValueSet.doSwitch(child);
 				}
 			}
