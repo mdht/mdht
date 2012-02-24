@@ -268,7 +268,7 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIHEVitalSignsOrganizerAuthor() {
@@ -279,13 +279,13 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(VitalSignsOrganizer target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(VitalSignsOrganizer target) {
-				target.init();
 
+				target.getAuthors().add(CDAFactory.eINSTANCE.createAuthor());
 			}
 
 			@Override
