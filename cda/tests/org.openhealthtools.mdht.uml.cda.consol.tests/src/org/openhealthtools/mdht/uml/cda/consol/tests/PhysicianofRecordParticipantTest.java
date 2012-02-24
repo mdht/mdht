@@ -9,16 +9,12 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.PhysicianofRecordParticipant;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.PhysicianofRecordParticipantOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -110,7 +106,7 @@ public class PhysicianofRecordParticipantTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePhysicianofRecordParticipantAssignedEntity() {
@@ -121,12 +117,12 @@ public class PhysicianofRecordParticipantTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PhysicianofRecordParticipant target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PhysicianofRecordParticipant target) {
-				target.init();
+				target.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
 
 			}
 
