@@ -104,7 +104,7 @@ public class HeadSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateHeadSectionProblemEntry() {
@@ -115,12 +115,12 @@ public class HeadSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(HeadSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(HeadSection target) {
-				target.init();
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 
 			}
 

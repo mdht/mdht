@@ -104,7 +104,7 @@ public class HeartSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateHeartSectionProblemEntry() {
@@ -115,13 +115,12 @@ public class HeartSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(HeartSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(HeartSection target) {
-				target.init();
-
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

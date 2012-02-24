@@ -73,7 +73,7 @@ public class CodedReasonForReferralSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateCodedReasonForReferralSectionSimpleObservation() {
@@ -84,12 +84,12 @@ public class CodedReasonForReferralSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(CodedReasonForReferralSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(CodedReasonForReferralSection target) {
-				target.init();
+				target.addObservation(IHEFactory.eINSTANCE.createVitalSignObservation().init());
 
 			}
 
@@ -107,7 +107,7 @@ public class CodedReasonForReferralSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateCodedReasonForReferralSectionProblemEntry() {
@@ -118,13 +118,12 @@ public class CodedReasonForReferralSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(CodedReasonForReferralSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(CodedReasonForReferralSection target) {
-				target.init();
-
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

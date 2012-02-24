@@ -106,7 +106,7 @@ public class RespiratorySystemSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateRespiratorySystemSectionProblemEntry() {
@@ -117,13 +117,13 @@ public class RespiratorySystemSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(RespiratorySystemSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(RespiratorySystemSection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

@@ -106,7 +106,7 @@ public class ThoraxLungsSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateThoraxLungsSectionProblemEntry() {
@@ -117,13 +117,13 @@ public class ThoraxLungsSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ThoraxLungsSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ThoraxLungsSection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

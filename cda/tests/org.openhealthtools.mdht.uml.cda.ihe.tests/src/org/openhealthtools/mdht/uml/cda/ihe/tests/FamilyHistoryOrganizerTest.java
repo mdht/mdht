@@ -11,10 +11,17 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Participant2;
+import org.openhealthtools.mdht.uml.cda.ParticipantRole;
+import org.openhealthtools.mdht.uml.cda.PlayingEntity;
 import org.openhealthtools.mdht.uml.cda.ihe.FamilyHistoryOrganizer;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.FamilyHistoryOrganizerOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassRoot;
+import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +49,7 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIHEFamilyHistoryOrganizerHasParticipant() {
@@ -53,13 +60,12 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(FamilyHistoryOrganizer target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(FamilyHistoryOrganizer target) {
-				target.init();
-
+				target.getParticipants().add(CDAFactory.eINSTANCE.createParticipant2());
 			}
 
 			@Override
@@ -76,7 +82,7 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIHEFamilyHistoryOrganizerHasParticipantParticipantRole() {
@@ -87,13 +93,19 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(FamilyHistoryOrganizer target) {
+				target.init();
 
 			}
 
 			@Override
 			protected void updateToPass(FamilyHistoryOrganizer target) {
-				target.init();
 
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setClassCode(RoleClassRoot.PRS);
+				pr.setCode(DatatypesFactory.eINSTANCE.createCE());
+				p2.setParticipantRole(pr);
+				target.getParticipants().add(p2);
 			}
 
 			@Override
@@ -110,7 +122,7 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIHEFamilyHistoryOrganizerHasParticipantRoleCode() {
@@ -121,13 +133,17 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(FamilyHistoryOrganizer target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(FamilyHistoryOrganizer target) {
-				target.init();
 
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setCode(DatatypesFactory.eINSTANCE.createCE());
+				p2.setParticipantRole(pr);
+				target.getParticipants().add(p2);
 			}
 
 			@Override
@@ -144,7 +160,7 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIHEFamilyHistoryOrganizerHasParticipantRolePlayingEntity() {
@@ -155,13 +171,20 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(FamilyHistoryOrganizer target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(FamilyHistoryOrganizer target) {
-				target.init();
 
+				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.setCode(DatatypesFactory.eINSTANCE.createCE());
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pe.setClassCode(EntityClassRoot.PSN);
+				pr.setPlayingEntity(pe);
+				p2.setParticipantRole(pr);
+				target.getParticipants().add(p2);
 			}
 
 			@Override
@@ -246,7 +269,7 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIHEFamilyHistoryOrganizerFamilyHistoryObservation() {
@@ -257,13 +280,13 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(FamilyHistoryOrganizer target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(FamilyHistoryOrganizer target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createFamilyHistoryObservation().init());
 			}
 
 			@Override

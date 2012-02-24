@@ -15,7 +15,9 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Reference;
 import org.openhealthtools.mdht.uml.cda.ihe.AllergyIntolerance;
 import org.openhealthtools.mdht.uml.cda.ihe.ConcernEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
@@ -25,6 +27,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipExternalReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -166,7 +169,7 @@ public class ConcernEntryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateConcernEntryHasRelatedReferencesTypeCode() {
@@ -177,12 +180,17 @@ public class ConcernEntryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ConcernEntry target) {
-
+				target.init();
+				target.getReferences().add(CDAFactory.eINSTANCE.createReference());
 			}
 
 			@Override
 			protected void updateToPass(ConcernEntry target) {
-				target.init();
+				for (Reference ref : target.getReferences()) {
+
+					ref.setTypeCode(x_ActRelationshipExternalReference.REFR);
+
+				}
 
 			}
 

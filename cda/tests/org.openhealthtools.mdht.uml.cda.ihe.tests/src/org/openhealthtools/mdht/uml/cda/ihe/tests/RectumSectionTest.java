@@ -105,7 +105,7 @@ public class RectumSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateRectumSectionProblemEntry() {
@@ -116,13 +116,13 @@ public class RectumSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(RectumSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(RectumSection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

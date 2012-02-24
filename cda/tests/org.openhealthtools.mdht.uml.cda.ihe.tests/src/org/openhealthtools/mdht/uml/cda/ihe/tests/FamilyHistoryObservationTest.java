@@ -73,7 +73,7 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIHEFamilyHistoryObservationCode() {
@@ -92,6 +92,8 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 				target.init();
 
 				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				cd.setCodeSystem("2.16.840.1.113883.6.96");
+				cd.setCode("404684003");
 				target.setCode(cd);
 
 			}

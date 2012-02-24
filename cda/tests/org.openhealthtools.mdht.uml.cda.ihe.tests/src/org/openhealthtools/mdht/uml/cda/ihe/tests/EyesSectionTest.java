@@ -104,7 +104,7 @@ public class EyesSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateEyesSectionProblemEntry() {
@@ -115,13 +115,13 @@ public class EyesSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(EyesSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(EyesSection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

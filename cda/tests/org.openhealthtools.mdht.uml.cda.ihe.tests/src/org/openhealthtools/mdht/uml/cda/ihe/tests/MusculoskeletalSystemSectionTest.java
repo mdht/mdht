@@ -106,7 +106,7 @@ public class MusculoskeletalSystemSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMusculoskeletalSystemSectionProblemEntry() {
@@ -117,13 +117,13 @@ public class MusculoskeletalSystemSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MusculoskeletalSystemSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(MusculoskeletalSystemSection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

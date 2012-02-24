@@ -71,7 +71,7 @@ public class CodedFamilyMedicalHistorySectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateCodedFamilyMedicalHistorySectionFamilyHistoryOrganizer() {
@@ -82,12 +82,12 @@ public class CodedFamilyMedicalHistorySectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(CodedFamilyMedicalHistorySection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(CodedFamilyMedicalHistorySection target) {
-				target.init();
+				target.addOrganizer(IHEFactory.eINSTANCE.createFamilyHistoryOrganizer().init());
 
 			}
 

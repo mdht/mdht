@@ -106,7 +106,7 @@ public class EndocrineSystemSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateEndocrineSystemSectionProblemEntry() {
@@ -117,13 +117,13 @@ public class EndocrineSystemSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(EndocrineSystemSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(EndocrineSystemSection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

@@ -106,7 +106,7 @@ public class ExtremitiesSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateExtremitiesSectionProblemEntry() {
@@ -117,13 +117,13 @@ public class ExtremitiesSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ExtremitiesSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ExtremitiesSection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

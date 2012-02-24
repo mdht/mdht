@@ -106,7 +106,7 @@ public class MouthThroatTeethSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMouthThroatTeethSectionProblemEntry() {
@@ -117,13 +117,13 @@ public class MouthThroatTeethSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MouthThroatTeethSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(MouthThroatTeethSection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override
