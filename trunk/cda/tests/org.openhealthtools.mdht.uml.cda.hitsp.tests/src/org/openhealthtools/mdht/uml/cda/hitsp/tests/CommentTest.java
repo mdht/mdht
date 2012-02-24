@@ -15,6 +15,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.Comment;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.CommentOperations;
@@ -28,6 +29,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Comment#validateHITSPCommentTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Comment Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Comment#validateHITSPCommentAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate HITSP Comment Author</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,6 +69,39 @@ public class CommentTest extends CDAValidationTest {
 		};
 
 		validateHITSPCommentTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateHITSPCommentAuthor() {
+		OperationsTestCase<Comment> validateHITSPCommentAuthorTestCase = new OperationsTestCase<Comment>(
+			"validateHITSPCommentAuthor",
+			operationsForOCL.getOCLValue("VALIDATE_HITSP_COMMENT_AUTHOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Comment target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(Comment target) {
+
+				target.getAuthors().add(CDAFactory.eINSTANCE.createAuthor());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CommentOperations.validateHITSPCommentAuthor((Comment) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHITSPCommentAuthorTestCase.doValidationTest();
 	}
 
 	/**
