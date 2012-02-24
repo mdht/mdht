@@ -15,6 +15,8 @@ import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.Procedure;
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.ProcedureOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,6 +58,9 @@ public class ProcedureTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Procedure target) {
 				target.init();
+
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
 
 			}
 

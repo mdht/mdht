@@ -32,6 +32,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistory#validateFamilyHistoryRelatedSubjectCodeValueSet(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Related Subject Code Value Set</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistory#validateFamilyHistoryHasSDTCid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Has SDT Cid</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistory#validateFamilyHistoryHasFamilyName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Has Family Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistory#validateFamilyHistoryHasGenderCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Has Gender Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.FamilyHistory#validateFamilyHistoryFamilyMemberCondition(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Family Member Condition</em>}</li>
@@ -85,6 +86,47 @@ public class FamilyHistoryTest extends CDAValidationTest {
 		};
 
 		validateFamilyHistoryRelatedSubjectCodeValueSetTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFamilyHistoryHasSDTCid() {
+		OperationsTestCase<FamilyHistory> validateFamilyHistoryHasSDTCidTestCase = new OperationsTestCase<FamilyHistory>(
+			"validateFamilyHistoryHasSDTCid",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_HAS_SDT_CID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistory target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistory target) {
+				Subject subject = CDAFactory.eINSTANCE.createSubject();
+				RelatedSubject rs = CDAFactory.eINSTANCE.createRelatedSubject();
+				SubjectPerson sp = CDAFactory.eINSTANCE.createSubjectPerson();
+				sp.getSDTCIds().add(DatatypesFactory.eINSTANCE.createII());
+				rs.setSubject(sp);
+				subject.setRelatedSubject(rs);
+
+				target.setSubject(subject);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryOperations.validateFamilyHistoryHasSDTCid(
+					(FamilyHistory) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryHasSDTCidTestCase.doValidationTest();
 	}
 
 	/**
