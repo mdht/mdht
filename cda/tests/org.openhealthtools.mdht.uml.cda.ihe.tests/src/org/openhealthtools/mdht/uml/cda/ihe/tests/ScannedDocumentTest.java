@@ -84,6 +84,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument#validateScannedDocumentLanguageCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scanned Document Language Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument#validateScannedDocumentTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scanned Document Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument#validateScannedDocumentTypeId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scanned Document Type Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument#validateScannedDocumentScanOriginalAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scanned Document Scan Original Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument#validateScannedDocumentScanningDevice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scanned Document Scanning Device</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument#validateScannedDocumentScanDataEnterer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scanned Document Scan Data Enterer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument#validateScannedDocumentLegalAuthenticator(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scanned Document Legal Authenticator</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.ScannedDocument#validateScannedDocumentDocumentationOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Scanned Document Documentation Of</em>}</li>
  * </ul>
  * </p>
  *
@@ -1094,6 +1099,176 @@ public class ScannedDocumentTest extends CDAValidationTest {
 		};
 
 		validateScannedDocumentTypeIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateScannedDocumentScanOriginalAuthor() {
+		OperationsTestCase<ScannedDocument> validateScannedDocumentScanOriginalAuthorTestCase = new OperationsTestCase<ScannedDocument>(
+			"validateScannedDocumentScanOriginalAuthor",
+			operationsForOCL.getOCLValue("VALIDATE_SCANNED_DOCUMENT_SCAN_ORIGINAL_AUTHOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ScannedDocument target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ScannedDocument target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ScannedDocumentOperations.validateScannedDocumentScanOriginalAuthor(
+					(ScannedDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateScannedDocumentScanOriginalAuthorTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateScannedDocumentScanningDevice() {
+		OperationsTestCase<ScannedDocument> validateScannedDocumentScanningDeviceTestCase = new OperationsTestCase<ScannedDocument>(
+			"validateScannedDocumentScanningDevice",
+			operationsForOCL.getOCLValue("VALIDATE_SCANNED_DOCUMENT_SCANNING_DEVICE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ScannedDocument target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ScannedDocument target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ScannedDocumentOperations.validateScannedDocumentScanningDevice(
+					(ScannedDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateScannedDocumentScanningDeviceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateScannedDocumentScanDataEnterer() {
+		OperationsTestCase<ScannedDocument> validateScannedDocumentScanDataEntererTestCase = new OperationsTestCase<ScannedDocument>(
+			"validateScannedDocumentScanDataEnterer",
+			operationsForOCL.getOCLValue("VALIDATE_SCANNED_DOCUMENT_SCAN_DATA_ENTERER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ScannedDocument target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ScannedDocument target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ScannedDocumentOperations.validateScannedDocumentScanDataEnterer(
+					(ScannedDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateScannedDocumentScanDataEntererTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateScannedDocumentLegalAuthenticator() {
+		OperationsTestCase<ScannedDocument> validateScannedDocumentLegalAuthenticatorTestCase = new OperationsTestCase<ScannedDocument>(
+			"validateScannedDocumentLegalAuthenticator",
+			operationsForOCL.getOCLValue("VALIDATE_SCANNED_DOCUMENT_LEGAL_AUTHENTICATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ScannedDocument target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ScannedDocument target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ScannedDocumentOperations.validateScannedDocumentLegalAuthenticator(
+					(ScannedDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateScannedDocumentLegalAuthenticatorTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateScannedDocumentDocumentationOf() {
+		OperationsTestCase<ScannedDocument> validateScannedDocumentDocumentationOfTestCase = new OperationsTestCase<ScannedDocument>(
+			"validateScannedDocumentDocumentationOf",
+			operationsForOCL.getOCLValue("VALIDATE_SCANNED_DOCUMENT_DOCUMENTATION_OF__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ScannedDocument target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ScannedDocument target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ScannedDocumentOperations.validateScannedDocumentDocumentationOf(
+					(ScannedDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateScannedDocumentDocumentationOfTestCase.doValidationTest();
 	}
 
 	/**

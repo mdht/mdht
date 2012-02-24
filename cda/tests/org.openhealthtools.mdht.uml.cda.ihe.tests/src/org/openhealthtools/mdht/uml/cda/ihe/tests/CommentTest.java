@@ -46,6 +46,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Comment#validateIHECommentHasAuthorOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Comment Has Author Organization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Comment#validateIHECommentStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Comment Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Comment#validateIHECommentText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Comment Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Comment#validateIHECommentAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Comment Author</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.Comment#validateCommentTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Template Id</em>}</li>
  * </ul>
  * </p>
@@ -284,6 +285,38 @@ public class CommentTest extends CDAValidationTest {
 		};
 
 		validateIHECommentTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateIHECommentAuthor() {
+		OperationsTestCase<Comment> validateIHECommentAuthorTestCase = new OperationsTestCase<Comment>(
+			"validateIHECommentAuthor",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_COMMENT_AUTHOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+
+			@Override
+			protected void updateToFail(Comment target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Comment target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CommentOperations.validateIHECommentAuthor((Comment) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateIHECommentAuthorTestCase.doValidationTest();
 	}
 
 	/**
