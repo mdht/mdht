@@ -41,6 +41,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer#validateIHEVitalSignsOrganizerEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Vital Signs Organizer Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer#validateIHEVitalSignsOrganizerId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Vital Signs Organizer Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer#validateIHEVitalSignsOrganizerVitalSignObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Vital Signs Organizer Vital Sign Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer#validateIHEVitalSignsOrganizerAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IHE Vital Signs Organizer Author</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer#getVitalSignObservations() <em>Get Vital Sign Observations</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer#validateResultOrganizerCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.VitalSignsOrganizer#validateResultOrganizerStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Organizer Status Code</em>}</li>
@@ -263,6 +264,40 @@ public class VitalSignsOrganizerTest extends CDAValidationTest {
 		};
 
 		validateIHEVitalSignsOrganizerVitalSignObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateIHEVitalSignsOrganizerAuthor() {
+		OperationsTestCase<VitalSignsOrganizer> validateIHEVitalSignsOrganizerAuthorTestCase = new OperationsTestCase<VitalSignsOrganizer>(
+			"validateIHEVitalSignsOrganizerAuthor",
+			operationsForOCL.getOCLValue("VALIDATE_IHE_VITAL_SIGNS_ORGANIZER_AUTHOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(VitalSignsOrganizer target) {
+
+			}
+
+			@Override
+			protected void updateToPass(VitalSignsOrganizer target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return VitalSignsOrganizerOperations.validateIHEVitalSignsOrganizerAuthor(
+					(VitalSignsOrganizer) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateIHEVitalSignsOrganizerAuthorTestCase.doValidationTest();
 	}
 
 	/**
