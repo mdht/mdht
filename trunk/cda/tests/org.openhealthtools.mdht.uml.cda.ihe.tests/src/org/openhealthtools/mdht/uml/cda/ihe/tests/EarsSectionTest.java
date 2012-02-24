@@ -104,7 +104,7 @@ public class EarsSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateEarsSectionProblemEntry() {
@@ -115,13 +115,13 @@ public class EarsSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(EarsSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(EarsSection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

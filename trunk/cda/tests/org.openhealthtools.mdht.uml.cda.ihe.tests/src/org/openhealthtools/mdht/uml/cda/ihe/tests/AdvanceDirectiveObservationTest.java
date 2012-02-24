@@ -11,6 +11,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.ccd.CCDFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.AdvanceDirectiveObservation;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.AdvanceDirectiveObservationOperations;
@@ -42,7 +43,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIHEAdvanceDirectiveObservationHasExternalReference() {
@@ -53,12 +54,14 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
-				target.init();
+
+				target.getReferences().add(CCDFactory.eINSTANCE.createAdvanceDirectiveReference().init());
+				;
 
 			}
 
@@ -110,7 +113,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIHEAdvanceDirectiveObservationRepeatNumber() {
@@ -121,13 +124,13 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
-				target.init();
 
+				target.setRepeatNumber(DatatypesFactory.eINSTANCE.createIVL_INT());
 			}
 
 			@Override
@@ -144,7 +147,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIHEAdvanceDirectiveObservationInterpretationCode() {
@@ -155,13 +158,13 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
-				target.init();
 
+				target.getInterpretationCodes().add(DatatypesFactory.eINSTANCE.createCE());
 			}
 
 			@Override
@@ -178,7 +181,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIHEAdvanceDirectiveObservationTargetSiteCode() {
@@ -189,13 +192,12 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
-				target.init();
-
+				target.getTargetSiteCodes().add(DatatypesFactory.eINSTANCE.createCD());
 			}
 
 			@Override

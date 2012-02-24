@@ -104,7 +104,7 @@ public class NeckSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateNeckSectionProblemEntry() {
@@ -115,13 +115,13 @@ public class NeckSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(NeckSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(NeckSection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

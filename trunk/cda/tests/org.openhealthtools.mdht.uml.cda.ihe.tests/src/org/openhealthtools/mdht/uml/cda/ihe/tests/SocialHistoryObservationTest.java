@@ -42,7 +42,7 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIHESocialHistoryObservationNoRepeatNumber() {
@@ -53,12 +53,13 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SocialHistoryObservation target) {
-
+				target.init();
+				target.setRepeatNumber(DatatypesFactory.eINSTANCE.createIVL_INT());
 			}
 
 			@Override
 			protected void updateToPass(SocialHistoryObservation target) {
-				target.init();
+				target.setRepeatNumber(null);
 
 			}
 
@@ -76,7 +77,7 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIHESocialHistoryObservationNoInterpretationCode() {
@@ -87,12 +88,13 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SocialHistoryObservation target) {
-
+				target.init();
+				target.getInterpretationCodes().add(DatatypesFactory.eINSTANCE.createCE());
 			}
 
 			@Override
 			protected void updateToPass(SocialHistoryObservation target) {
-				target.init();
+				target.getInterpretationCodes().clear();
 
 			}
 
@@ -110,7 +112,7 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIHESocialHistoryObservationNoMethodCode() {
@@ -121,12 +123,13 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SocialHistoryObservation target) {
-
+				target.init();
+				target.getMethodCodes().add(DatatypesFactory.eINSTANCE.createCE());
 			}
 
 			@Override
 			protected void updateToPass(SocialHistoryObservation target) {
-				target.init();
+				target.getMethodCodes().clear();
 
 			}
 
@@ -144,7 +147,7 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIHESocialHistoryObservationNoTargetSiteCode() {
@@ -155,13 +158,13 @@ public class SocialHistoryObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SocialHistoryObservation target) {
-
+				target.init();
+				target.getTargetSiteCodes().add(DatatypesFactory.eINSTANCE.createCD());
 			}
 
 			@Override
 			protected void updateToPass(SocialHistoryObservation target) {
-				target.init();
-
+				target.getTargetSiteCodes().clear();
 			}
 
 			@Override

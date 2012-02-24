@@ -106,7 +106,7 @@ public class LymphaticSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not 
 	*/
 	@Test
 	public void testValidateLymphaticSectionProblemEntry() {
@@ -117,13 +117,13 @@ public class LymphaticSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(LymphaticSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(LymphaticSection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

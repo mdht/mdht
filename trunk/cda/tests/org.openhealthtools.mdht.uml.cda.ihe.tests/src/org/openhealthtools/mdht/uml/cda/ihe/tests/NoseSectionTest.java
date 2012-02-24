@@ -104,7 +104,7 @@ public class NoseSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateNoseSectionProblemEntry() {
@@ -115,13 +115,13 @@ public class NoseSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(NoseSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(NoseSection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

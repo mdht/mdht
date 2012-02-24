@@ -106,7 +106,7 @@ public class ChestWallSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateChestWallSectionProblemEntry() {
@@ -117,13 +117,13 @@ public class ChestWallSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ChestWallSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ChestWallSection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

@@ -106,7 +106,7 @@ public class VesselsSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateVesselsSectionProblemEntry() {
@@ -117,13 +117,13 @@ public class VesselsSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(VesselsSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(VesselsSection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

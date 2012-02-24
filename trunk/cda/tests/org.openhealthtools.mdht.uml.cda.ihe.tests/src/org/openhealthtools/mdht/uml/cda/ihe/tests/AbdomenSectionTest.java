@@ -106,7 +106,7 @@ public class AbdomenSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAbdomenSectionProblemEntry() {
@@ -117,13 +117,13 @@ public class AbdomenSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AbdomenSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(AbdomenSection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

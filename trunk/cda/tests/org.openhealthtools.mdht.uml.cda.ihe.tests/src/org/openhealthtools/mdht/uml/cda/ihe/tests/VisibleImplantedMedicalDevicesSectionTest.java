@@ -106,7 +106,7 @@ public class VisibleImplantedMedicalDevicesSectionTest extends CDAValidationTest
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateVisibleImplantedMedicalDevicesSectionProblemEntry() {
@@ -117,12 +117,12 @@ public class VisibleImplantedMedicalDevicesSectionTest extends CDAValidationTest
 
 			@Override
 			protected void updateToFail(VisibleImplantedMedicalDevicesSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(VisibleImplantedMedicalDevicesSection target) {
-				target.init();
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 
 			}
 

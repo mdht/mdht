@@ -106,7 +106,7 @@ public class GenitaliaSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGenitaliaSectionProblemEntry() {
@@ -117,13 +117,13 @@ public class GenitaliaSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GenitaliaSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(GenitaliaSection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

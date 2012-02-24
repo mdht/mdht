@@ -106,7 +106,7 @@ public class NeurologicSystemSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateNeurologicSystemSectionProblemEntry() {
@@ -117,13 +117,13 @@ public class NeurologicSystemSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(NeurologicSystemSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(NeurologicSystemSection target) {
-				target.init();
 
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override

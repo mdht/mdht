@@ -106,7 +106,7 @@ public class IntegumentarySystemSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIntegumentarySystemSectionProblemEntry() {
@@ -117,13 +117,12 @@ public class IntegumentarySystemSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(IntegumentarySystemSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(IntegumentarySystemSection target) {
-				target.init();
-
+				target.addObservation(IHEFactory.eINSTANCE.createProblemEntry().init());
 			}
 
 			@Override
