@@ -366,8 +366,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PolicyActivity target) {
 				target.init();
-				Performer2 guarantor = createPerformer();
-				target.getPerformers().add(guarantor);
+
 			}
 
 			@Override
@@ -686,6 +685,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PolicyActivity target) {
 				target.init();
+
 			}
 
 			@Override

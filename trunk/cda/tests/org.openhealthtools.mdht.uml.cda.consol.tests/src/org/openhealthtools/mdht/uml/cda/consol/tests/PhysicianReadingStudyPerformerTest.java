@@ -9,17 +9,14 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.PhysicianReadingStudyPerformer;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.PhysicianReadingStudyPerformerOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
 
 /**
  * <!-- begin-user-doc -->
@@ -77,7 +74,7 @@ public class PhysicianReadingStudyPerformerTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePhysicianReadingStudyPerformerTime() {
@@ -110,8 +107,8 @@ public class PhysicianReadingStudyPerformerTest extends CDAValidationTest {
 	}
 
 	/**
-	*
-	* @generated
+	* 
+	* @generated not
 	*/
 	@Test
 	public void testValidatePhysicianReadingStudyPerformerTypeCode() {
@@ -122,12 +119,13 @@ public class PhysicianReadingStudyPerformerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PhysicianReadingStudyPerformer target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PhysicianReadingStudyPerformer target) {
-				target.init();
+
+				target.setTypeCode(x_ServiceEventPerformer.PPRF);
 
 			}
 
@@ -145,7 +143,7 @@ public class PhysicianReadingStudyPerformerTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePhysicianReadingStudyPerformerAssignedEntity() {
@@ -156,13 +154,13 @@ public class PhysicianReadingStudyPerformerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PhysicianReadingStudyPerformer target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PhysicianReadingStudyPerformer target) {
-				target.init();
 
+				target.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
 			}
 
 			@Override
