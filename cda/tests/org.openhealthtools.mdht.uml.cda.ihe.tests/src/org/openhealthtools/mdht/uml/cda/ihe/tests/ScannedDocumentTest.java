@@ -1103,7 +1103,7 @@ public class ScannedDocumentTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateScannedDocumentScanOriginalAuthor() {
@@ -1114,13 +1114,13 @@ public class ScannedDocumentTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
 
+				target.getAuthors().add(IHEFactory.eINSTANCE.createScanOriginalAuthor().init());
 			}
 
 			@Override
@@ -1137,7 +1137,7 @@ public class ScannedDocumentTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateScannedDocumentScanningDevice() {
@@ -1148,13 +1148,12 @@ public class ScannedDocumentTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
-
+				target.getAuthors().add(IHEFactory.eINSTANCE.createScanningDevice().init());
 			}
 
 			@Override
@@ -1171,7 +1170,7 @@ public class ScannedDocumentTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateScannedDocumentScanDataEnterer() {
@@ -1182,12 +1181,12 @@ public class ScannedDocumentTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				target.setDataEnterer(IHEFactory.eINSTANCE.createScanDataEnterer().init());
 
 			}
 
@@ -1205,7 +1204,7 @@ public class ScannedDocumentTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateScannedDocumentLegalAuthenticator() {
@@ -1216,12 +1215,12 @@ public class ScannedDocumentTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
+				target.setLegalAuthenticator(CDAFactory.eINSTANCE.createLegalAuthenticator());
 
 			}
 
@@ -1239,7 +1238,7 @@ public class ScannedDocumentTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateScannedDocumentDocumentationOf() {
@@ -1250,13 +1249,13 @@ public class ScannedDocumentTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ScannedDocument target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ScannedDocument target) {
-				target.init();
 
+				target.getDocumentationOfs().add(CDAFactory.eINSTANCE.createDocumentationOf());
 			}
 
 			@Override

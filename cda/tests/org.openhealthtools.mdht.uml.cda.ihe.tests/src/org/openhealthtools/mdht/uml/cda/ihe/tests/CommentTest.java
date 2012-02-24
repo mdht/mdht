@@ -289,7 +289,7 @@ public class CommentTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateIHECommentAuthor() {
@@ -299,12 +299,12 @@ public class CommentTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(Comment target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(Comment target) {
-				target.init();
+				target.getAuthors().add(CDAFactory.eINSTANCE.createAuthor());
 
 			}
 
