@@ -16,7 +16,7 @@
 <plugin>
    <extension point="org.openhealthtools.mdht.uml.common.modelFilter">
       <provider profileURI="pathmap://CDA_PROFILES/cda.profile.uml"
-      		 class="org.openhealthtools.mdht.uml.cda.core.modelfilter.CDAFilterProvider"/>
+      		 class="org.openhealthtools.mdht.uml.cda.core.modelfilter.CDAModelFilterProvider"/>
    </extension>
    
    <extension point="org.eclipse.uml2.uml.generated_package">
