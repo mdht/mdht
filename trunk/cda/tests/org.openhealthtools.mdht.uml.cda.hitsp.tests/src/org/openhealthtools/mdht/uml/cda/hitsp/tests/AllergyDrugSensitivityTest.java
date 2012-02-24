@@ -728,12 +728,18 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AllergyDrugSensitivity target) {
-
+				target.init();
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				ReactionObservation ro = CCDFactory.eINSTANCE.createReactionObservation();
+				// CD code = DatatypesFactory.eINSTANCE.createCD();
+				// ro.setCode(code);
+				obs.addObservation(ro);
+				target.addObservation(obs);
 			}
 
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
-				target.init();
+				target.getEntryRelationships().clear();
 				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
 				ReactionObservation ro = CCDFactory.eINSTANCE.createReactionObservation();
 				CD code = DatatypesFactory.eINSTANCE.createCD();
@@ -767,12 +773,20 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AllergyDrugSensitivity target) {
-
+				target.init();
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				ReactionObservation ro = CCDFactory.eINSTANCE.createReactionObservation();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				// code.setCodeSystem("2.16.840.1.113883.6.96");
+				// code.setCode("243796009");
+				ro.setCode(code);
+				obs.addObservation(ro);
+				target.addObservation(obs);
 			}
 
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
-				target.init();
+				target.getEntryRelationships().clear();
 				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
 				ReactionObservation ro = CCDFactory.eINSTANCE.createReactionObservation();
 				CD code = DatatypesFactory.eINSTANCE.createCD();
@@ -808,14 +822,19 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AllergyDrugSensitivity target) {
-
+				target.init();
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				SeverityObservation so = CCDFactory.eINSTANCE.createSeverityObservation().init();
+				// so.setText(DatatypesFactory.eINSTANCE.createED());
+				obs.addObservation(so);
+				target.addObservation(obs);
 			}
 
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
-				target.init();
+				target.getEntryRelationships().clear();
 				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
-				SeverityObservation so = CCDFactory.eINSTANCE.createSeverityObservation();
+				SeverityObservation so = CCDFactory.eINSTANCE.createSeverityObservation().init();
 				so.setText(DatatypesFactory.eINSTANCE.createED());
 				obs.addObservation(so);
 				target.addObservation(obs);
@@ -846,12 +865,18 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AllergyDrugSensitivity target) {
-
+				target.init();
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				SeverityObservation so = CCDFactory.eINSTANCE.createSeverityObservation();
+				DatatypesFactory.eINSTANCE.createCD();
+				// so.setCode(code);
+				obs.addObservation(so);
+				target.addObservation(obs);
 			}
 
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
-				target.init();
+				target.getEntryRelationships().clear();
 				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
 				SeverityObservation so = CCDFactory.eINSTANCE.createSeverityObservation();
 				CD code = DatatypesFactory.eINSTANCE.createCD();
@@ -885,12 +910,20 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AllergyDrugSensitivity target) {
-
+				target.init();
+				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
+				SeverityObservation so = CCDFactory.eINSTANCE.createSeverityObservation();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				code.setCodeSystem("2.16.840.1.113883.6.96");
+				code.setCode("371923003");
+				// so.setCode(code);
+				obs.addObservation(so);
+				target.addObservation(obs);
 			}
 
 			@Override
 			protected void updateToPass(AllergyDrugSensitivity target) {
-				target.init();
+				target.getEntryRelationships().clear();
 				AlertObservation obs = CCDFactory.eINSTANCE.createAlertObservation();
 				SeverityObservation so = CCDFactory.eINSTANCE.createSeverityObservation();
 				CD code = DatatypesFactory.eINSTANCE.createCD();

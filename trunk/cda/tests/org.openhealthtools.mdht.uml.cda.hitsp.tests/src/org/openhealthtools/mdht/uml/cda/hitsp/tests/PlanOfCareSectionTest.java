@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
 import org.openhealthtools.mdht.uml.cda.hitsp.PlanOfCareSection;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.PlanOfCareSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -82,7 +77,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateHITSPPlanOfCareSectionMedication() {
@@ -93,12 +88,12 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PlanOfCareSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
-				target.init();
+				target.addSubstanceAdministration(HITSPFactory.eINSTANCE.createMedicationNormalDose().init());
 
 			}
 
@@ -116,7 +111,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateHITSPPlanOfCareSectionImmunization() {
@@ -127,13 +122,13 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PlanOfCareSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
-				target.init();
 
+				target.addSubstanceAdministration(HITSPFactory.eINSTANCE.createImmunization().init());
 			}
 
 			@Override
@@ -150,7 +145,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateHITSPPlanOfCareSectionEncounter() {
@@ -161,13 +156,12 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PlanOfCareSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
-				target.init();
-
+				target.addEncounter(HITSPFactory.eINSTANCE.createEncounter().init());
 			}
 
 			@Override
@@ -184,7 +178,7 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateHITSPPlanOfCareSectionProcedure() {
@@ -195,13 +189,12 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PlanOfCareSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PlanOfCareSection target) {
-				target.init();
-
+				target.addProcedure(HITSPFactory.eINSTANCE.createPastProcedure().init());
 			}
 
 			@Override
