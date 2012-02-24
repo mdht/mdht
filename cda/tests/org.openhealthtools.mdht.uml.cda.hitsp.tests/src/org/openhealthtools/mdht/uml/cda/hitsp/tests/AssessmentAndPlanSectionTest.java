@@ -9,16 +9,11 @@ package org.openhealthtools.mdht.uml.cda.hitsp.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.AssessmentAndPlanSection;
 import org.openhealthtools.mdht.uml.cda.hitsp.HITSPFactory;
-
 import org.openhealthtools.mdht.uml.cda.hitsp.operations.AssessmentAndPlanSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
 /**
@@ -82,7 +77,7 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateHITSPAssessmentAndPlanSectionMedication() {
@@ -93,12 +88,12 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AssessmentAndPlanSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(AssessmentAndPlanSection target) {
-				target.init();
+				target.addSubstanceAdministration(HITSPFactory.eINSTANCE.createMedication().init());
 
 			}
 
@@ -116,7 +111,7 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateHITSPAssessmentAndPlanSectionImmunization() {
@@ -127,13 +122,13 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AssessmentAndPlanSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(AssessmentAndPlanSection target) {
-				target.init();
 
+				target.addSubstanceAdministration(HITSPFactory.eINSTANCE.createImmunization().init());
 			}
 
 			@Override
@@ -150,7 +145,7 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateHITSPAssessmentAndPlanSectionEncounterEntry() {
@@ -161,13 +156,13 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AssessmentAndPlanSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(AssessmentAndPlanSection target) {
-				target.init();
 
+				target.addEncounter(HITSPFactory.eINSTANCE.createEncounter().init());
 			}
 
 			@Override
@@ -184,7 +179,7 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateHITSPAssessmentAndPlanSectionProcedureEntry() {
@@ -195,13 +190,13 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AssessmentAndPlanSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(AssessmentAndPlanSection target) {
-				target.init();
 
+				target.addProcedure(HITSPFactory.eINSTANCE.createPastProcedure().init());
 			}
 
 			@Override
