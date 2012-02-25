@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2011 David A Carlson and others.
+ * Copyright (c) 2009, 2011, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,6 +8,7 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     John T.E. Timm (IBM Corporation) - added support for TransformAssociation
+ *     Sean Muir (JKM Software) - added support for Inlined Transformations
  *     
  * $Id$
  *******************************************************************************/
@@ -44,6 +45,8 @@ public class EcoreTransformer extends AbstractTransformer {
 	UMLSwitch<Object> transformAssociation;
 
 	UMLSwitch<Object> transformInlinedAssociations;
+
+	UMLSwitch<Object> transformInnerClasses;
 
 	public EcoreTransformer() {
 		this(new TransformerOptions());
@@ -82,6 +85,13 @@ public class EcoreTransformer extends AbstractTransformer {
 				transformInlinedAssociations.doSwitch(child);
 			}
 
+			// transformInnerClasses drops any constraints from the inner class definitions so it must be run last
+			iterator = EcoreUtil.getAllContents(Collections.singletonList(element));
+			while (iterator != null && iterator.hasNext()) {
+				EObject child = iterator.next();
+				transformInnerClasses.doSwitch(child);
+			}
+
 		} catch (IndexOutOfBoundsException e) {
 			Logger.logException(e);
 		}
@@ -100,6 +110,8 @@ public class EcoreTransformer extends AbstractTransformer {
 		transformPropertyConstraint = new TransformPropertyConstraint(transformerOptions);
 		transformAssociation = new TransformAssociation(transformerOptions);
 		transformInlinedAssociations = new TransformInlinedAssociations(transformerOptions);
+
+		transformInnerClasses = new TransformInnerClasses(transformerOptions);
 
 	}
 
