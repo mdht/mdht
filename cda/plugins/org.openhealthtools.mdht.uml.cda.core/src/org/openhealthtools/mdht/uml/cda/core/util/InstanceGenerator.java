@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 David A Carlson and others.
+ * Copyright (c) 2010, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,7 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     Sean Muir
+ *     Sean Muir (JKM Software) - Add support for inline class generation
  *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.util;
@@ -310,14 +310,23 @@ public class InstanceGenerator {
 									cdaReference.getEReferenceType());
 								String ePackageURI = CDAModelUtil.getEcorePackageURI(property.getType());
 								EPackage ePackage = getEPackageForURI(ePackageURI);
+
 								if (ePackage != null) {
-									EClassifier eet = ePackage.getEClassifier(UML2Util.getValidJavaIdentifier(umlClass.getName()) +
-											"_" + UML2Util.getValidJavaIdentifier(property.getType().getName()));
-									if (eet != null) {
-										EAnnotation annotation = eet.getEAnnotation(CDAUtil.CDA_ANNOTATION_SOURCE);
-										if (annotation != null) {
-											CDAUtil.init(objectToAdd, annotation.getDetails().map());
+									if (property.getType().getOwner() instanceof Class) {
+										Class owner = (Class) property.getType().getOwner();
+										while (owner.getOwner() instanceof Class) {
+											owner = (Class) owner.getOwner();
 										}
+										EClassifier eet = ePackage.getEClassifier(UML2Util.getValidJavaIdentifier(owner.getName()));
+										if (eet != null) {
+											EAnnotation annotation = eet.getEAnnotation(CDAUtil.CDA_ANNOTATION_SOURCE +
+													"/" +
+													UML2Util.getValidJavaIdentifier(property.getType().getQualifiedName()));
+											if (annotation != null) {
+												CDAUtil.init(objectToAdd, annotation.getDetails().map());
+											}
+										}
+
 									}
 								}
 
