@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Sean Muir (JKM Software) - added copy annotation method
  *     
  * $Id$
  *******************************************************************************/
@@ -42,6 +43,13 @@ public class AnnotationsUtil {
 
 	private Integer cdaAnnotationIndex = null;
 
+	private String annotationSource = CDA_ANNOTATION_SOURCE;
+
+	public AnnotationsUtil(Class umlClass, String annotationSource) {
+		this.annotationSource = annotationSource;
+		this.element = umlClass;
+	}
+
 	public AnnotationsUtil(Class umlClass) {
 		this.element = umlClass;
 	}
@@ -72,6 +80,12 @@ public class AnnotationsUtil {
 	 */
 	public void setAnnotation(String key, String value) {
 		getCDAAnnotations().put(key, value);
+	}
+
+	public void copyAnnotation(AnnotationsUtil source) {
+		for (String key : source.getCDAAnnotations().keySet()) {
+			getCDAAnnotations().put(key, source.getCDAAnnotations().get(key));
+		}
 	}
 
 	/**
@@ -144,7 +158,7 @@ public class AnnotationsUtil {
 					Matcher matcher = ANNOTATION_PATTERN.matcher(annotation);
 					if (matcher.find()) {
 						String sourceURI = matcher.group(1);
-						if (sourceURI == null || !sourceURI.trim().equals(CDA_ANNOTATION_SOURCE)) {
+						if (sourceURI == null || !sourceURI.trim().equals(annotationSource)) {
 							continue;
 						}
 
@@ -171,7 +185,7 @@ public class AnnotationsUtil {
 			return;
 		}
 		StringBuffer cdaAnnotation = new StringBuffer();
-		cdaAnnotation.append(CDA_ANNOTATION_SOURCE);
+		cdaAnnotation.append(annotationSource);
 
 		for (String key : cdaAnnotations.keySet()) {
 			String value = cdaAnnotations.get(key);
