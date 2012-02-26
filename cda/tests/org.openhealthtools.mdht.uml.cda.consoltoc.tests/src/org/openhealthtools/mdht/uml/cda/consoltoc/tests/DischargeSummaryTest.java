@@ -1,4 +1,3 @@
-
 /**
  * <copyright>
  * </copyright>
@@ -7,22 +6,41 @@
  */
 package org.openhealthtools.mdht.uml.cda.consoltoc.tests;
 
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.consol.AllergiesSectionEntriesOptional;
+import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintAndReasonForVisitSection;
+import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection;
+import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.DischargeDietSection;
+import org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySection;
+import org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection;
+import org.openhealthtools.mdht.uml.cda.consol.HistoryOfPresentIllnessSection;
+import org.openhealthtools.mdht.uml.cda.consol.HospitalCourseSection;
+import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeDiagnosisSection;
+import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeMedicationsSectionEntriesOptional;
+import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargePhysicalSection;
+import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeStudiesSummarySection;
+import org.openhealthtools.mdht.uml.cda.consol.ImmunizationsSectionEntriesOptional;
+import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection;
+import org.openhealthtools.mdht.uml.cda.consol.ProblemSectionEntriesOptional;
+import org.openhealthtools.mdht.uml.cda.consol.ProceduresSectionEntriesOptional;
+import org.openhealthtools.mdht.uml.cda.consol.ReasonForVisitSection;
+import org.openhealthtools.mdht.uml.cda.consol.ReviewOfSystemsSection;
+import org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection;
+import org.openhealthtools.mdht.uml.cda.consol.VitalSignsSectionEntriesOptional;
 import org.openhealthtools.mdht.uml.cda.consoltoc.ConsoltocFactory;
 import org.openhealthtools.mdht.uml.cda.consoltoc.DischargeSummary;
 import org.openhealthtools.mdht.uml.cda.consoltoc.operations.DischargeSummaryOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Discharge Summary</b></em>' model objects.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '<em><b>Discharge Summary</b></em>' model objects. <!--
+ * end-user-doc -->
  *
  * <p>
  * The following operations are supported:
@@ -73,26 +91,19 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *
  * @generated
  */
- 
-public class DischargeSummaryTest extends  CDAValidationTest {
 
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryAllergiesSectionEntriesOptional() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryAllergiesSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
-			"validateDischargeSummaryAllergiesSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_ALLERGIES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+public class DischargeSummaryTest extends CDAValidationTest {
+	/**
+	 * 
+	 * @generated NOT
+	 */
+	@Test
+	public void testValidateDischargeSummaryAllergiesSectionEntriesOptional() {
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryAllergiesSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
+				"validateDischargeSummaryAllergiesSectionEntriesOptional",
+				operationsForOCL
+						.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_ALLERGIES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -102,82 +113,41 @@ public void testValidateDischargeSummaryAllergiesSectionEntriesOptional() {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
-
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* AllergiesSectionEntriesOptional */ 
+				/* AllergiesSectionEntriesOptional */
 				AllergiesSectionEntriesOptional section =
-				
-				ConsoltocFactory.eINSTANCE.createAllergiesSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE
+						.createAllergiesSectionEntriesOptional().init();
+				target.addSection(section);
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return DischargeSummaryOperations.validateDischargeSummaryAllergiesSectionEntriesOptional(
-					(DischargeSummary) objectToTest, diagnostician, map);
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DischargeSummaryOperations
+						.validateDischargeSummaryAllergiesSectionEntriesOptional(
+								(DischargeSummary) objectToTest, diagnostician,
+								map);
 			}
 
 		};
 
-		validateDischargeSummaryAllergiesSectionEntriesOptionalTestCase.doValidationTest();
-}
-
-
-
-
-
+		validateDischargeSummaryAllergiesSectionEntriesOptionalTestCase
+				.doValidationTest();
+	}
 
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryHospitalCourseSection() {
-			OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalCourseSectionTestCase = new OperationsTestCase<DischargeSummary>(
-			"validateDischargeSummaryHospitalCourseSection",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_COURSE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+	 * 
+	 * @generated NOT
+	 */
+	@Test
+	public void testValidateDischargeSummaryHospitalCourseSection() {
+		OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalCourseSectionTestCase = new OperationsTestCase<DischargeSummary>(
+				"validateDischargeSummaryHospitalCourseSection",
+				operationsForOCL
+						.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_COURSE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeSummary target) {
@@ -187,78 +157,38 @@ public void testValidateDischargeSummaryHospitalCourseSection() {
 			@Override
 			protected void updateToPass(DischargeSummary target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* HospitalCourseSection */ 
+				/* HospitalCourseSection */
 				HospitalCourseSection section =
-				
-				ConsoltocFactory.eINSTANCE.createHospitalCourseSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createHospitalCourseSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return DischargeSummaryOperations.validateDischargeSummaryHospitalCourseSection(
-					(DischargeSummary) objectToTest, diagnostician, map);
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DischargeSummaryOperations
+						.validateDischargeSummaryHospitalCourseSection(
+								(DischargeSummary) objectToTest, diagnostician,
+								map);
 			}
 
 		};
 
-		validateDischargeSummaryHospitalCourseSectionTestCase.doValidationTest();
-}
-
-
-
-
-
+		validateDischargeSummaryHospitalCourseSectionTestCase
+				.doValidationTest();
+	}
 
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryHospitalDischargeDiagnosisSection() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummaryHospitalDischargeDiagnosisSection() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalDischargeDiagnosisSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryHospitalDischargeDiagnosisSection",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_DISCHARGE_DIAGNOSIS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -330,20 +260,12 @@ public void testValidateDischargeSummaryHospitalDischargeDiagnosisSection() {
 		validateDischargeSummaryHospitalDischargeDiagnosisSectionTestCase.doValidationTest();
 }
 
-
-
-
-
-
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryHospitalDischargeMedicationsSectionEntriesOptional() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummaryHospitalDischargeMedicationsSectionEntriesOptional() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalDischargeMedicationsSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryHospitalDischargeMedicationsSectionEntriesOptional",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -415,20 +337,12 @@ public void testValidateDischargeSummaryHospitalDischargeMedicationsSectionEntri
 		validateDischargeSummaryHospitalDischargeMedicationsSectionEntriesOptionalTestCase.doValidationTest();
 }
 
-
-
-
-
-
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryPlanOfCareSection() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummaryPlanOfCareSection() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummaryPlanOfCareSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryPlanOfCareSection",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -500,20 +414,12 @@ public void testValidateDischargeSummaryPlanOfCareSection() {
 		validateDischargeSummaryPlanOfCareSectionTestCase.doValidationTest();
 }
 
-
-
-
-
-
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryProblemSectionEntriesOptional() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummaryProblemSectionEntriesOptional() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummaryProblemSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryProblemSectionEntriesOptional",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_PROBLEM_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -585,20 +491,12 @@ public void testValidateDischargeSummaryProblemSectionEntriesOptional() {
 		validateDischargeSummaryProblemSectionEntriesOptionalTestCase.doValidationTest();
 }
 
-
-
-
-
-
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryChiefComplaintSection() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummaryChiefComplaintSection() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummaryChiefComplaintSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryChiefComplaintSection",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_CHIEF_COMPLAINT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -670,20 +568,12 @@ public void testValidateDischargeSummaryChiefComplaintSection() {
 		validateDischargeSummaryChiefComplaintSectionTestCase.doValidationTest();
 }
 
-
-
-
-
-
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryChiefComplaintAndReasonForVisitSection() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummaryChiefComplaintAndReasonForVisitSection() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummaryChiefComplaintAndReasonForVisitSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryChiefComplaintAndReasonForVisitSection",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -755,20 +645,12 @@ public void testValidateDischargeSummaryChiefComplaintAndReasonForVisitSection()
 		validateDischargeSummaryChiefComplaintAndReasonForVisitSectionTestCase.doValidationTest();
 }
 
-
-
-
-
-
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryDischargeDietSection() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummaryDischargeDietSection() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummaryDischargeDietSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryDischargeDietSection",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_DISCHARGE_DIET_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -840,20 +722,12 @@ public void testValidateDischargeSummaryDischargeDietSection() {
 		validateDischargeSummaryDischargeDietSectionTestCase.doValidationTest();
 }
 
-
-
-
-
-
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryFamilyHistorySection() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummaryFamilyHistorySection() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummaryFamilyHistorySectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryFamilyHistorySection",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_FAMILY_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -925,20 +799,12 @@ public void testValidateDischargeSummaryFamilyHistorySection() {
 		validateDischargeSummaryFamilyHistorySectionTestCase.doValidationTest();
 }
 
-
-
-
-
-
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryFunctionalStatusSection() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummaryFunctionalStatusSection() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummaryFunctionalStatusSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryFunctionalStatusSection",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_FUNCTIONAL_STATUS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -1010,20 +876,12 @@ public void testValidateDischargeSummaryFunctionalStatusSection() {
 		validateDischargeSummaryFunctionalStatusSectionTestCase.doValidationTest();
 }
 
-
-
-
-
-
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryHistoryOfPresentIllnessSection() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummaryHistoryOfPresentIllnessSection() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummaryHistoryOfPresentIllnessSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryHistoryOfPresentIllnessSection",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HISTORY_OF_PRESENT_ILLNESS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -1095,20 +953,12 @@ public void testValidateDischargeSummaryHistoryOfPresentIllnessSection() {
 		validateDischargeSummaryHistoryOfPresentIllnessSectionTestCase.doValidationTest();
 }
 
-
-
-
-
-
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryHospitalDischargePhysicalSection() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummaryHospitalDischargePhysicalSection() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalDischargePhysicalSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryHospitalDischargePhysicalSection",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_DISCHARGE_PHYSICAL_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -1180,20 +1030,12 @@ public void testValidateDischargeSummaryHospitalDischargePhysicalSection() {
 		validateDischargeSummaryHospitalDischargePhysicalSectionTestCase.doValidationTest();
 }
 
-
-
-
-
-
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryHospitalDischargeStudiesSummarySection() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummaryHospitalDischargeStudiesSummarySection() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummaryHospitalDischargeStudiesSummarySectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryHospitalDischargeStudiesSummarySection",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_HOSPITAL_DISCHARGE_STUDIES_SUMMARY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -1265,20 +1107,12 @@ public void testValidateDischargeSummaryHospitalDischargeStudiesSummarySection()
 		validateDischargeSummaryHospitalDischargeStudiesSummarySectionTestCase.doValidationTest();
 }
 
-
-
-
-
-
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryProceduresSectionEntriesOptional() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummaryProceduresSectionEntriesOptional() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummaryProceduresSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryProceduresSectionEntriesOptional",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_PROCEDURES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -1350,20 +1184,12 @@ public void testValidateDischargeSummaryProceduresSectionEntriesOptional() {
 		validateDischargeSummaryProceduresSectionEntriesOptionalTestCase.doValidationTest();
 }
 
-
-
-
-
-
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryReasonForVisitSection() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummaryReasonForVisitSection() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummaryReasonForVisitSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryReasonForVisitSection",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -1435,20 +1261,12 @@ public void testValidateDischargeSummaryReasonForVisitSection() {
 		validateDischargeSummaryReasonForVisitSectionTestCase.doValidationTest();
 }
 
-
-
-
-
-
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryReviewOfSystemsSection() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummaryReviewOfSystemsSection() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummaryReviewOfSystemsSectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryReviewOfSystemsSection",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_REVIEW_OF_SYSTEMS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -1520,20 +1338,12 @@ public void testValidateDischargeSummaryReviewOfSystemsSection() {
 		validateDischargeSummaryReviewOfSystemsSectionTestCase.doValidationTest();
 }
 
-
-
-
-
-
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummarySocialHistorySection() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummarySocialHistorySection() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummarySocialHistorySectionTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummarySocialHistorySection",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -1605,20 +1415,12 @@ public void testValidateDischargeSummarySocialHistorySection() {
 		validateDischargeSummarySocialHistorySectionTestCase.doValidationTest();
 }
 
-
-
-
-
-
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryVitalSignsSectionEntriesOptional() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummaryVitalSignsSectionEntriesOptional() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummaryVitalSignsSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryVitalSignsSectionEntriesOptional",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_VITAL_SIGNS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -1690,20 +1492,12 @@ public void testValidateDischargeSummaryVitalSignsSectionEntriesOptional() {
 		validateDischargeSummaryVitalSignsSectionEntriesOptionalTestCase.doValidationTest();
 }
 
-
-
-
-
-
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateDischargeSummaryImmunizationsSectionEntriesOptional() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateDischargeSummaryImmunizationsSectionEntriesOptional() {
 			OperationsTestCase<DischargeSummary> validateDischargeSummaryImmunizationsSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateDischargeSummaryImmunizationsSectionEntriesOptional",
 			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_SUMMARY_IMMUNIZATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -1775,20 +1569,12 @@ public void testValidateDischargeSummaryImmunizationsSectionEntriesOptional() {
 		validateDischargeSummaryImmunizationsSectionEntriesOptionalTestCase.doValidationTest();
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetAllergiesSectionEntriesOptional() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetAllergiesSectionEntriesOptional() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -1798,20 +1584,12 @@ target.getAllergiesSectionEntriesOptional();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetHospitalCourseSection() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetHospitalCourseSection() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -1821,20 +1599,12 @@ target.getHospitalCourseSection();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetHospitalDischargeDiagnosisSection() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetHospitalDischargeDiagnosisSection() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -1844,20 +1614,12 @@ target.getHospitalDischargeDiagnosisSection();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetHospitalDischargeMedicationsSectionEntriesOptional() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetHospitalDischargeMedicationsSectionEntriesOptional() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -1867,20 +1629,12 @@ target.getHospitalDischargeMedicationsSectionEntriesOptional();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetPlanOfCareSection() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetPlanOfCareSection() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -1890,20 +1644,12 @@ target.getPlanOfCareSection();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetProblemSectionEntriesOptional() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetProblemSectionEntriesOptional() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -1913,20 +1659,12 @@ target.getProblemSectionEntriesOptional();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetChiefComplaintSection() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetChiefComplaintSection() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -1936,20 +1674,12 @@ target.getChiefComplaintSection();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetChiefComplaintAndReasonForVisitSection() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetChiefComplaintAndReasonForVisitSection() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -1959,20 +1689,12 @@ target.getChiefComplaintAndReasonForVisitSection();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetDischargeDietSection() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetDischargeDietSection() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -1982,20 +1704,12 @@ target.getDischargeDietSection();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetFamilyHistorySection() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetFamilyHistorySection() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -2005,20 +1719,12 @@ target.getFamilyHistorySection();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetFunctionalStatusSection() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetFunctionalStatusSection() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -2028,20 +1734,12 @@ target.getFunctionalStatusSection();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetHistoryOfPresentIllnessSection() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetHistoryOfPresentIllnessSection() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -2051,20 +1749,12 @@ target.getHistoryOfPresentIllnessSection();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetHospitalDischargePhysicalSection() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetHospitalDischargePhysicalSection() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -2074,20 +1764,12 @@ target.getHospitalDischargePhysicalSection();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetHospitalDischargeStudiesSummarySection() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetHospitalDischargeStudiesSummarySection() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -2097,20 +1779,12 @@ target.getHospitalDischargeStudiesSummarySection();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetProceduresSectionEntriesOptional() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetProceduresSectionEntriesOptional() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -2120,20 +1794,12 @@ target.getProceduresSectionEntriesOptional();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetReasonForVisitSection() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetReasonForVisitSection() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -2143,20 +1809,12 @@ target.getReasonForVisitSection();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetReviewOfSystemsSection() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetReviewOfSystemsSection() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -2166,20 +1824,12 @@ target.getReviewOfSystemsSection();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetSocialHistorySection() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetSocialHistorySection() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -2189,20 +1839,12 @@ target.getSocialHistorySection();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetVitalSignsSectionEntriesOptional() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetVitalSignsSectionEntriesOptional() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -2212,20 +1854,12 @@ target.getVitalSignsSectionEntriesOptional();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetImmunizationsSectionEntriesOptional() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetImmunizationsSectionEntriesOptional() {
 
 
 DischargeSummary target = objectFactory.create();
@@ -2235,18 +1869,12 @@ target.getImmunizationsSectionEntriesOptional();
 
 }
 
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateGeneralHeaderConstraintsTemplateId() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateGeneralHeaderConstraintsTemplateId() {
 			OperationsTestCase<DischargeSummary> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<DischargeSummary>(
 			"validateGeneralHeaderConstraintsTemplateId",
 			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -2307,83 +1935,78 @@ public void testValidateGeneralHeaderConstraintsTemplateId() {
 		};
 
 		validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
-}		
+}
 
-
-
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static class OperationsForOCL extends DischargeSummaryOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass()
+						.getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
 			return oclValue;
 		}
 	}
-	
-/**
-*
-* @generated
-*/
-	private static class ObjectFactory implements TestObjectFactory<DischargeSummary> {
+
+	/**
+	 * 
+	 * @generated
+	 */
+	private static class ObjectFactory implements
+			TestObjectFactory<DischargeSummary> {
 		@Override
-		public DischargeSummary create() {		
+		public DischargeSummary create() {
 			return ConsoltocFactory.eINSTANCE.createDischargeSummary();
 		}
 	}
 
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
+	/**
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	private static class ConstructorTestClass extends
+			DischargeSummaryOperations {
+	};
 
-		/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-	private static class ConstructorTestClass extends DischargeSummaryOperations {};
-	
-		/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-		@Test
+	/**
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	@Test
 	public void testConstructor() {
 	        @SuppressWarnings("unused")
 			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
-	
-	
-	
+
 	/**
-*
-* @generated
-*/
+	 * 
+	 * @generated
+	 */
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;
 	}
-	
-	
 
-	
-	
 } // DischargeSummaryOperations
