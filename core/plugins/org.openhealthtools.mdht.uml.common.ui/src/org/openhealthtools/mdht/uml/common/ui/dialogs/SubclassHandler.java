@@ -16,7 +16,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.uml.Association;
@@ -109,7 +108,8 @@ public class SubclassHandler {
 				UMLUtil.cloneStereotypes(property, clonedProperty);
 
 				// add redefinition relationship
-				clonedProperty.getRedefinedProperties().add(property);
+				// don't add redefinition for properties with same name as in superclass
+				// clonedProperty.getRedefinedProperties().add(property);
 
 				// add association
 				if (property.getAssociation() != null) {
