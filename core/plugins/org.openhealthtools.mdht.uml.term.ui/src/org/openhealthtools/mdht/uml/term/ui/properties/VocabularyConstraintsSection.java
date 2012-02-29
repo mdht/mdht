@@ -41,11 +41,12 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
+import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.ui.internal.Logger;
 
 /**
@@ -73,6 +74,26 @@ public class VocabularyConstraintsSection extends AbstractModelerPropertySection
 
 	private boolean isValueSetConstraintModified = false;
 
+	/**
+	 * Allow for other profiles to subclass Terminology stereotypes.
+	 */
+	private Stereotype getApplicableStereotype(Element element, String stereotypeName) {
+		Stereotype stereotype = null;
+		for (Stereotype applicable : element.getApplicableStereotypes()) {
+			if (applicable.getName().equals(stereotypeName)) {
+				stereotype = applicable;
+				break;
+			}
+			Class superclass = applicable.getSuperClass(stereotypeName);
+			if (superclass instanceof Stereotype) {
+				stereotype = (Stereotype) superclass;
+				break;
+			}
+		}
+
+		return stereotype;
+	}
+
 	private void modifyFields() {
 		if (!(isConceptDomainConstraintModified || isCodeSystemConstraintModified || isValueSetConstraintModified)) {
 			return;
@@ -87,35 +108,41 @@ public class VocabularyConstraintsSection extends AbstractModelerPropertySection
 					if (isConceptDomainConstraintModified) {
 						isConceptDomainConstraintModified = false;
 						this.setLabel("Add ConceptDomainConstraint");
-						Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
+						Stereotype stereotype = getApplicableStereotype(
 							property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
-						if (isConceptDomainConstraint.getSelection() && stereotype == null) {
-							TermProfileUtil.applyStereotype(property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
-						}
-						if (!isConceptDomainConstraint.getSelection() && stereotype != null) {
-							TermProfileUtil.unapplyStereotype(property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+						if (stereotype != null) {
+							boolean isApplied = property.isStereotypeApplied(stereotype);
+							if (isConceptDomainConstraint.getSelection() && !isApplied) {
+								property.applyStereotype(stereotype);
+							} else if (!isConceptDomainConstraint.getSelection() && isApplied) {
+								property.unapplyStereotype(stereotype);
+							}
 						}
 					} else if (isCodeSystemConstraintModified) {
 						isCodeSystemConstraintModified = false;
 						this.setLabel("Add CodeSystemConstraint");
-						Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
+						Stereotype stereotype = getApplicableStereotype(
 							property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
-						if (isCodeSystemConstraint.getSelection() && stereotype == null) {
-							TermProfileUtil.applyStereotype(property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
-						}
-						if (!isCodeSystemConstraint.getSelection() && stereotype != null) {
-							TermProfileUtil.unapplyStereotype(property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
+						if (stereotype != null) {
+							boolean isApplied = property.isStereotypeApplied(stereotype);
+							if (isCodeSystemConstraint.getSelection() && !isApplied) {
+								property.applyStereotype(stereotype);
+							} else if (!isCodeSystemConstraint.getSelection() && isApplied) {
+								property.unapplyStereotype(stereotype);
+							}
 						}
 					} else if (isValueSetConstraintModified) {
 						isValueSetConstraintModified = false;
 						this.setLabel("Add ValueSetConstraint");
-						Stereotype stereotype = TermProfileUtil.getAppliedStereotype(
+						Stereotype stereotype = getApplicableStereotype(
 							property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
-						if (isValueSetConstraint.getSelection() && stereotype == null) {
-							TermProfileUtil.applyStereotype(property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
-						}
-						if (!isValueSetConstraint.getSelection() && stereotype != null) {
-							TermProfileUtil.unapplyStereotype(property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
+						if (stereotype != null) {
+							boolean isApplied = property.isStereotypeApplied(stereotype);
+							if (isValueSetConstraint.getSelection() && !isApplied) {
+								property.applyStereotype(stereotype);
+							} else if (!isValueSetConstraint.getSelection() && isApplied) {
+								property.unapplyStereotype(stereotype);
+							}
 						}
 					} else {
 						return Status.CANCEL_STATUS;

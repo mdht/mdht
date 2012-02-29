@@ -16,11 +16,14 @@ import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.common.notation.IUMLNotation;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
+import org.openhealthtools.mdht.uml.term.ui.notation.TermPropertyNotation;
 
 /**
  * Utility class to display HL7 CDA association string.
@@ -54,7 +57,7 @@ public class CDAAssociationNotation {
 		if ((style & IUMLNotation.DISP_MOFIFIERS) != 0) {
 			boolean multiLine = ((style & IUMLNotation.DISP_MULTI_LINE) != 0);
 			// class modifiers
-			String modifiers = getModifiersAsString(association, multiLine);
+			String modifiers = getModifiersAsString(association, style);
 			if (!modifiers.equals("")) {
 				if (multiLine) {
 					buffer.append("\n");
@@ -83,23 +86,14 @@ public class CDAAssociationNotation {
 		return buffer.toString();
 	}
 
-	protected static String getModifiersAsString(Association association, boolean multiLine) {
-		StringBuffer buffer = new StringBuffer();
-		boolean needsComma = false;
-
-		if (association.isAbstract()) {
-			buffer.append("abstract");
-			needsComma = true;
-		}
-		if (association.isLeaf()) {
-			if (needsComma) {
-				buffer.append(",");
-			}
-			buffer.append("leaf");
-			needsComma = true;
+	protected static String getModifiersAsString(Association association, int style) {
+		String annotation = null;
+		Property navigableEnd = UMLUtil.getNavigableEnd(association);
+		if (navigableEnd != null) {
+			annotation = TermPropertyNotation.getTerminologyAnnotations(navigableEnd, style);
 		}
 
-		return buffer.toString();
+		return annotation;
 	}
 
 	private static String getHL7Metadata(Association association, int style) {

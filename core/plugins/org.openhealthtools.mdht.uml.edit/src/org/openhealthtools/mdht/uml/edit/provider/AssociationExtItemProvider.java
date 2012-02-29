@@ -45,6 +45,7 @@ import org.eclipse.uml2.uml.edit.providers.AssociationItemProvider;
 import org.openhealthtools.mdht.uml.common.modelfilter.ModelFilterUtil;
 import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.internal.Logger;
 import org.openhealthtools.mdht.uml.edit.internal.UMLExtEditPlugin;
@@ -129,7 +130,7 @@ public class AssociationExtItemProvider extends AssociationItemProvider implemen
 		List<Element> children = new ArrayList<Element>();
 		children.addAll(association.getOwnedComments());
 
-		Property navigableEnd = getNavigableEnd(association);
+		Property navigableEnd = UMLUtil.getNavigableEnd(association);
 		if (navigableEnd != null && navigableEnd.getType() instanceof Class) {
 			Class endType = (Class) navigableEnd.getType();
 			for (Property property : endType.getOwnedAttributes()) {
@@ -160,20 +161,6 @@ public class AssociationExtItemProvider extends AssociationItemProvider implemen
 		return children;
 	}
 
-	private Property getNavigableEnd(Association association) {
-		Property navigableEnd = null;
-		for (Property end : association.getMemberEnds()) {
-			if (end.isNavigable()) {
-				if (navigableEnd != null) {
-					return null; // multiple navigable ends
-				}
-				navigableEnd = end;
-			}
-		}
-
-		return navigableEnd;
-	}
-
 	@Override
 	public Object getColumnImage(Object object, int columnIndex) {
 		Association association = (Association) object;
@@ -181,7 +168,7 @@ public class AssociationExtItemProvider extends AssociationItemProvider implemen
 			// occurs when association is deleted
 			return null;
 		}
-		Property navigableEnd = getNavigableEnd(association);
+		Property navigableEnd = UMLUtil.getNavigableEnd(association);
 		Class endType = null;
 		if (navigableEnd != null && navigableEnd.getType() instanceof Class) {
 			endType = (Class) navigableEnd.getType();
@@ -212,7 +199,7 @@ public class AssociationExtItemProvider extends AssociationItemProvider implemen
 			// occurs when association is deleted
 			return null;
 		}
-		Property navigableEnd = getNavigableEnd(association);
+		Property navigableEnd = UMLUtil.getNavigableEnd(association);
 		Class endType = null;
 		if (navigableEnd != null && navigableEnd.getType() instanceof Class) {
 			endType = (Class) navigableEnd.getType();
@@ -264,7 +251,7 @@ public class AssociationExtItemProvider extends AssociationItemProvider implemen
 	 * @see org.eclipse.jface.viewers.ICellModifier#getValue(java.lang.Object, java.lang.String)
 	 */
 	public Object getValue(Object element, String property) {
-		Property navigableEnd = getNavigableEnd((Association) element);
+		Property navigableEnd = UMLUtil.getNavigableEnd((Association) element);
 
 		if (navigableEnd != null) {
 			if (IUMLTableProperties.NAME_PROPERTY.equals(property)) {
@@ -287,7 +274,7 @@ public class AssociationExtItemProvider extends AssociationItemProvider implemen
 	 */
 	public void modify(final Object element, final String property, final Object value) {
 		final Association association = (Association) element;
-		final Property navigableEnd = getNavigableEnd(association);
+		final Property navigableEnd = UMLUtil.getNavigableEnd(association);
 		if (navigableEnd == null) {
 			return;
 		}

@@ -549,6 +549,19 @@ public class UMLUtil {
 		}.doSwitch(type);
 	}
 
+	public static String getClassQualifiedName(Property property) {
+		if (property.eIsProxy() || property.getName() == null) {
+			return null;
+		}
+
+		StringBuffer qname = new StringBuffer();
+		qname.append(property.getClass_().getName());
+		qname.append(NamedElement.SEPARATOR);
+		qname.append(property.getName());
+
+		return qname.toString();
+	}
+
 	public static String getPackageQualifiedName(NamedElement namedElement) {
 		if (namedElement.eIsProxy() || namedElement.getName() == null) {
 			return null;
@@ -670,6 +683,27 @@ public class UMLUtil {
 		} else {
 			return null;
 		}
+	}
+
+	/**
+	 * Returns the navigable end of an assoiciation's member properties,
+	 * or null if none or more than one navigable end.
+	 * 
+	 * @param association
+	 * @return Property, or null if none or more than one navigable end
+	 */
+	public static Property getNavigableEnd(Association association) {
+		Property navigableEnd = null;
+		for (Property end : association.getMemberEnds()) {
+			if (end.isNavigable()) {
+				if (navigableEnd != null) {
+					return null; // multiple navigable ends
+				}
+				navigableEnd = end;
+			}
+		}
+
+		return navigableEnd;
 	}
 
 	public static List<Property> getRedefinedProperties(Property property) {

@@ -73,9 +73,8 @@
              filter="org.openhealthtools.mdht.uml.term.ui.filters.ConceptDomainConstraintFilter">
 	      </propertySection>
 	      
-	      <!-- must use cda.ui.properties.VocabularyConstraintsSection because we are applying CDA stereotypes -->
           <propertySection tab="property.tab.CDAPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.VocabularyConstraintsSection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.VocabularyConstraintsSection" 
 	 	     id="property.section.VocabularyConstraintsSection"
              filter="org.openhealthtools.mdht.uml.term.ui.filters.CodedAttributeFilter">
 	      </propertySection>
@@ -84,10 +83,6 @@
              class="org.openhealthtools.mdht.uml.cda.ui.properties.TemplateSection"
              id="property.section.cda.TemplateSection"
              filter="org.openhealthtools.mdht.uml.cda.ui.filters.TemplateFilter"/>
-          <propertySection tab="property.tab.CDAPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.VocabularySpecificationSection" 
-	 	     id="property.section.cda.VocabularyConstraintSection"
-             filter="org.openhealthtools.mdht.uml.cda.ui.filters.VocabSpecificationFilter"/>
           <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.TextValueSection" 
 	 	     id="property.section.cda.TextValueSection"

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2012 David A Carlson.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,17 +7,10 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
- *     
- * $Id$
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cda.ui.util;
+package org.openhealthtools.mdht.uml.term.ui.notation;
 
-import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.Stereotype;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.common.notation.IUMLNotation;
 import org.openhealthtools.mdht.uml.common.notation.PropertyNotationUtil;
 import org.openhealthtools.mdht.uml.common.util.MultiplicityElementUtil;
@@ -30,9 +23,9 @@ import org.openhealthtools.mdht.uml.term.core.profile.ValueSetVersion;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 
 /**
- * Utility class to display HL7 CDA property string.
+ * Utility class to display terminology in property notation.
  */
-public class CDAPropertyNotation extends PropertyNotationUtil {
+public class TermPropertyNotation extends PropertyNotationUtil {
 
 	/**
 	 * return the custom label of the property, given UML2 specification and a
@@ -89,45 +82,48 @@ public class CDAPropertyNotation extends PropertyNotationUtil {
 			}
 		}
 
-		boolean showBrackets = buffer.length() > 0;
+		boolean multiLine = ((style & IUMLNotation.DISP_MULTI_LINE) != 0);
+		StringBuffer annotations = new StringBuffer();
 
 		if ((style & IUMLNotation.DISP_MOFIFIERS) != 0) {
-			boolean multiLine = ((style & IUMLNotation.DISP_MULTI_LINE) != 0);
 			// property modifiers
 			String modifiers = PropertyNotationUtil.getModifiersAsString(property, multiLine);
 			if (!modifiers.equals("")) {
-				if (multiLine) {
-					buffer.append("\n");
-				}
-				buffer.append(showBrackets
-						? " {"
-						: "");
-				buffer.append(modifiers);
-				buffer.append(showBrackets
-						? "}"
-						: "");
+				annotations.append(modifiers);
 			}
 		}
 
-		String hl7Metadata = getHL7Metadata(property, style);
-		if (hl7Metadata.length() > 0) {
+		String termMetadata = getTerminologyAnnotations(property, style);
+		if (termMetadata.length() > 0) {
+			if (annotations.length() > 0) {
+				annotations.append(" ");
+			}
+			annotations.append(termMetadata);
+		}
+
+		if (annotations.length() > 0) {
+			if (multiLine) {
+				buffer.append("\n");
+			}
+
+			boolean showBrackets = buffer.length() > 0;
 			buffer.append(showBrackets
 					? " {"
 					: "");
-			buffer.append(hl7Metadata);
+			buffer.append(annotations);
 			buffer.append(showBrackets
 					? "}"
 					: "");
 		}
 
-		return buffer.toString();
+		return buffer.toString().trim();
 	}
 
-	private static String getHL7Metadata(Property property, int style) {
+	public static String getTerminologyAnnotations(Property property, int style) {
 		StringBuffer buffer = new StringBuffer();
 
 		// vocabBinding
-		if ((style & IHL7Appearance.DISP_VOCABULARY) != 0) {
+		if ((style & ITermAppearance.DISP_VOCABULARY) != 0) {
 			String vocab = null;
 			if (TermProfileUtil.getConceptDomainConstraint(property) != null) {
 				vocab = getConceptDomainAnnotation(property);
@@ -135,8 +131,6 @@ public class CDAPropertyNotation extends PropertyNotationUtil {
 				vocab = getCodeSystemAnnotation(property);
 			} else if (TermProfileUtil.getValueSetConstraint(property) != null) {
 				vocab = getValueSetAnnotation(property);
-			} else {
-				vocab = getVocabularySpecification(property);
 			}
 
 			if (vocab != null && vocab.length() > 0) {
@@ -144,50 +138,6 @@ public class CDAPropertyNotation extends PropertyNotationUtil {
 					buffer.append(" ");
 				}
 				buffer.append(vocab);
-			}
-		}
-		// other template constraints
-		if ((style & IHL7Appearance.DISP_TEMPLATE_CONSTRAINTS) != 0) {
-			String value = null;
-			Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(property, ICDAProfileConstants.TEXT_VALUE);
-			if (stereotype != null) {
-				value = (String) property.getValue(stereotype, ICDAProfileConstants.TEXT_VALUE_VALUE);
-			}
-
-			if (value != null && value.length() > 0) {
-				if (buffer.length() > 0) {
-					buffer.append(" ");
-				}
-				buffer.append(value);
-			}
-		}
-
-		// fixedValue
-		if (property.isReadOnly()) {
-			if (buffer.length() > 0) {
-				buffer.append(" ");
-			}
-			buffer.append("fixed");
-		}
-
-		// nullFlavor
-		Stereotype nullFlavorStereotype = CDAProfileUtil.getAppliedCDAStereotype(
-			property, ICDAProfileConstants.NULL_FLAVOR);
-		if (nullFlavorStereotype != null) {
-			Object value = property.getValue(nullFlavorStereotype, ICDAProfileConstants.NULL_FLAVOR_NULL_FLAVOR);
-
-			String nullFlavor = null;
-			if (value instanceof EnumerationLiteral) {
-				nullFlavor = ((EnumerationLiteral) value).getName();
-			} else if (value instanceof Enumerator) {
-				nullFlavor = ((Enumerator) value).getName();
-			}
-
-			if (nullFlavor != null) {
-				if (buffer.length() > 0) {
-					buffer.append(" ");
-				}
-				buffer.append("nullFlavor=" + nullFlavor);
 			}
 		}
 
@@ -271,35 +221,6 @@ public class CDAPropertyNotation extends PropertyNotationUtil {
 		if (annotation != null && annotation.length() > 0) {
 			value.append("V:" + annotation);
 		}
-		return value.toString();
-	}
-
-	/**
-	 * @deprecated
-	 */
-	@Deprecated
-	private static String getVocabularySpecification(Property property) {
-		StringBuffer value = new StringBuffer();
-		Stereotype vocabSpecification = CDAProfileUtil.getAppliedCDAStereotype(
-			property, ICDAProfileConstants.VOCAB_SPECIFICATION);
-
-		try {
-			if (vocabSpecification != null) {
-				String id = (String) property.getValue(
-					vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM);
-				String name = (String) property.getValue(
-					vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_NAME);
-				String code = (String) property.getValue(
-					vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE);
-				String version = (String) property.getValue(
-					vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
-
-				value.append(getVocabularyString(id, name, version, code));
-			}
-		} catch (IllegalArgumentException ex) {
-			// ignore invalid property names
-		}
-
 		return value.toString();
 	}
 

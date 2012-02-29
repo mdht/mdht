@@ -9,7 +9,7 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.term.ui.util;
+package org.openhealthtools.mdht.uml.term.ui.notation;
 
 import org.openhealthtools.mdht.uml.common.notation.IUMLNotation;
 
@@ -27,5 +27,11 @@ public interface ITermAppearance extends IUMLNotation {
 	 * Style constant for template ID display in labels.
 	 */
 	public final static int DISP_IDENTIFIER = 1 << 10;
+
+	/**
+	 * Default UML property display.
+	 */
+	public final static int DEFAULT_UML_PROPERTY = DISP_DERIVE | DISP_NAME | DISP_TYPE | DISP_MULTIPLICITY |
+			DISP_DFLT_VALUE | DISP_MOFIFIERS;
 
 }

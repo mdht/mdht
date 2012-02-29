@@ -169,6 +169,15 @@
          <visibility>
             <objectState name="umlType" value="Class"/>
          </visibility>
+         
+		  <action label="%openSubclassEditor.label"
+                icon="icons/full/obj16/Class.gif"
+				class="org.openhealthtools.mdht.uml.common.ui.actions.OpenSubclassEditorAction"
+				menubarPath="group.openWith" 
+				enablesFor="1"
+				id="org.openhealthtools.mdht.uml.common.ui.actions.openSubclassEditorAction">
+		 </action>
+			
          <action
                label="%addUMLNestedClass.label"
                icon="icons/full/obj16/Class.gif"

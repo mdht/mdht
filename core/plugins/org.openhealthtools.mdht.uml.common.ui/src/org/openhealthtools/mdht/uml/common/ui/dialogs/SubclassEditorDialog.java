@@ -89,7 +89,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 
 		public SelectBaseTypeAction() {
 			super("Select Type...", IAction.AS_PUSH_BUTTON);
-			setToolTipText("Select template base type");
+			setToolTipText("Select base type");
 
 			URL enableURL = Activator.getDefault().getBundle().getEntry(ICONS_PATH + "/elcl16/Class.gif");
 			ImageDescriptor enableImage = ImageDescriptor.createFromURL(enableURL);
@@ -174,7 +174,7 @@ public class SubclassEditorDialog extends SelectionStatusDialog {
 		fExpandedElements = null;
 		int shellStyle = getShellStyle();
 		setShellStyle(shellStyle | SWT.MAX | SWT.RESIZE);
-		setTitle("Template Editor");
+		setTitle("Subclass Editor");
 		setMessage(null);
 		setContainerMode(true);
 		setSize(60, 18);

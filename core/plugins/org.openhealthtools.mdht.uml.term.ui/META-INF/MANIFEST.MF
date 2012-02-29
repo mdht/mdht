@@ -21,5 +21,5 @@ Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.term.ui.actions,
  org.openhealthtools.mdht.uml.term.ui.filters,
  org.openhealthtools.mdht.uml.term.ui.properties,
- org.openhealthtools.mdht.uml.term.ui.util
+ org.openhealthtools.mdht.uml.term.ui.notation
 Import-Package: org.eclipse.ui.dialogs

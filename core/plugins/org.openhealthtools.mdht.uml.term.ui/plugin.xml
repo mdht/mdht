@@ -15,7 +15,7 @@
 
    <extension point="org.openhealthtools.mdht.uml.common.notation">
       <provider profileURI="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml"
-      		 class="org.openhealthtools.mdht.uml.term.ui.util.TermAnnotationProvider"/>
+      		 class="org.openhealthtools.mdht.uml.term.ui.notation.TermAnnotationProvider"/>
    </extension>
    
    
