@@ -65,8 +65,8 @@ public interface IUMLNotation {
 	/**
 	 * Default UML property display.
 	 */
-	public final static int DEFAULT_UML_PROPERTY = DISP_VISIBILITY | DISP_DERIVE | DISP_NAME | DISP_TYPE |
-			DISP_MULTIPLICITY | DISP_DFLT_VALUE | DISP_MOFIFIERS;
+	public final static int DEFAULT_UML_PROPERTY = DISP_DERIVE | DISP_NAME | DISP_TYPE | DISP_MULTIPLICITY |
+			DISP_DFLT_VALUE | DISP_MOFIFIERS;
 
 	/**
 	 * Default UML property annotations.
