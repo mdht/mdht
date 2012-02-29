@@ -12,7 +12,9 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.dita;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Vector;
 
 import org.eclipse.core.runtime.IPath;
@@ -20,6 +22,7 @@ import org.eclipse.core.runtime.Preferences;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Package;
 import org.openhealthtools.mdht.uml.cda.dita.internal.Activator;
 
 /**
@@ -41,6 +44,8 @@ public class DitaTransformerOptions {
 
 	// use Vector for a thread-safe synchronized List
 	private List<Element> deletedElementList = new Vector<Element>();
+
+	private Map<Package, List<String>> packageContentMap = new HashMap<Package, List<String>>();
 
 	private List<String> documentList = new Vector<String>();
 
@@ -100,6 +105,19 @@ public class DitaTransformerOptions {
 
 	protected List<Element> getDeletedElementList() {
 		return deletedElementList;
+	}
+
+	protected Map<Package, List<String>> getPackageContentMap() {
+		return packageContentMap;
+	}
+
+	protected List<String> getPackageContentList(Package pkg) {
+		List<String> contentList = packageContentMap.get(pkg);
+		if (contentList == null) {
+			contentList = new Vector<String>();
+			packageContentMap.put(pkg, contentList);
+		}
+		return contentList;
 	}
 
 	protected List<String> getDocumentList() {

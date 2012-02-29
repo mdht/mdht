@@ -118,6 +118,9 @@ public class TransformClass extends TransformAbstract {
 			}
 		}
 
+		List<String> packageContent = transformerOptions.getPackageContentList(umlClass.getNearestPackage());
+		packageContent.add(fileName);
+
 		Class cdaClass = CDAModelUtil.getCDAClass(umlClass);
 		if (cdaClass != null) {
 			if (CDAModelUtil.isClinicalDocument(cdaClass)) {
