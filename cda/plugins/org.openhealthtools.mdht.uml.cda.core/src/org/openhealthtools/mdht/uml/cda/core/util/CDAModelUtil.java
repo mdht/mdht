@@ -412,6 +412,8 @@ public class CDAModelUtil {
 				? "</b></tt>"
 				: "");
 
+		appendSubsetsNotation(property, message, markup, xrefSource);
+
 		Class endType = (property.getType() instanceof Class)
 				? (Class) property.getType()
 				: null;
@@ -791,6 +793,38 @@ public class CDAModelUtil {
 		appendConformanceRuleIds(property, message, markup);
 
 		return message.toString();
+	}
+
+	private static void appendSubsetsNotation(Property property, StringBuffer message, boolean markup,
+			Package xrefSource) {
+		StringBuffer notation = new StringBuffer();
+		for (Property subsets : property.getSubsettedProperties()) {
+			if (notation.length() == 0) {
+				notation.append(" {subsets ");
+			} else {
+				notation.append(", ");
+			}
+
+			String xref = computeXref(xrefSource, subsets.getClass_());
+			boolean showXref = markup && (xref != null);
+			String format = showXref && xref.endsWith(".html")
+					? "format=\"html\" "
+					: "";
+			notation.append(showXref
+					? " <xref " + format + "href=\"" + xref + "\">"
+					: " ");
+			notation.append(UMLUtil.splitName(subsets.getClass_()));
+			notation.append(showXref
+					? "</xref>"
+					: "");
+
+			notation.append("::" + subsets.getName());
+		}
+		if (notation.length() > 0) {
+			notation.append("}");
+		}
+
+		message.append(notation);
 	}
 
 	private static final String[] OL = { "<ol>", "</ol>" };

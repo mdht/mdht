@@ -220,7 +220,10 @@ public class TransformClassContent extends TransformAbstract {
 		for (Property property : allProperties) {
 			writer.println("<li>" + CDAModelUtil.computeConformanceMessage(property, true));
 			appendPropertyRules(writer, property, constraintMap, subConstraintMap, unprocessedConstraints);
-			appendPropertyComments(writer, property);
+			if (!(property.getType().getOwner() instanceof Class)) {
+				// comments are output preceding inline classes
+				appendPropertyComments(writer, property);
+			}
 			writer.println("</li>");
 		}
 
@@ -350,7 +353,10 @@ public class TransformClassContent extends TransformAbstract {
 		for (Property property : allProperties) {
 			hasRules = true;
 			writer.println("<li>" + CDAModelUtil.computeConformanceMessage(property, true));
-			appendPropertyComments(writer, property);
+			if (!(property.getType().getOwner() instanceof Class)) {
+				// comments are output preceding inline classes
+				appendPropertyComments(writer, property);
+			}
 			appendPropertyRules(writer, property, constraintMap, subConstraintMap, unprocessedConstraints);
 			writer.println("</li>");
 		}

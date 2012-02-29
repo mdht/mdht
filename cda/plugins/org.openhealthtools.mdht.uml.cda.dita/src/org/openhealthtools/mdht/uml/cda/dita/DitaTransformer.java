@@ -24,6 +24,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
@@ -109,6 +110,13 @@ public class DitaTransformer {
 			}
 		} catch (IndexOutOfBoundsException e) {
 			Logger.logException(e);
+		}
+
+		for (Package umlPackage : transformerOptions.getPackageContentMap().keySet()) {
+			String normalizedPackageName = UML2Util.getValidJavaIdentifier(umlPackage.getName());
+			writeMapFile(
+				"classes", "package_" + normalizedPackageName, "Package: " + umlPackage.getName(),
+				transformerOptions.getPackageContentList(umlPackage));
 		}
 
 		writeMapFile("classes", "document", "Document Templates", transformerOptions.getDocumentList());
