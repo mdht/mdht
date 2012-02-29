@@ -14,6 +14,8 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.uml.Property;
+import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
+import org.openhealthtools.mdht.uml.common.notation.NotationRegistry;
 import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
 
 public class SubclassEditorViewLabelProvider extends AdapterFactoryLabelProvider implements ILabelProvider {
@@ -24,6 +26,29 @@ public class SubclassEditorViewLabelProvider extends AdapterFactoryLabelProvider
 
 	@Override
 	public Image getImage(Object element) {
+		if (element instanceof Property) {
+			Property property = (Property) element;
+			INotationProvider provider = NotationRegistry.INSTANCE.getNotationProvider(property);
+			if (provider != null) {
+				Object image = null;
+				if (property.getAssociation() != null) {
+					image = provider.getAnnotationImage(property.getAssociation());
+				} else {
+					image = provider.getAnnotationImage(property);
+				}
+
+				if (image instanceof Image) {
+					return (Image) image;
+				}
+			}
+
+			if (property.getAssociation() != null) {
+				return super.getImage(property.getAssociation());
+			} else {
+				return super.getImage(property);
+			}
+		}
+
 		return super.getImage(element);
 	}
 

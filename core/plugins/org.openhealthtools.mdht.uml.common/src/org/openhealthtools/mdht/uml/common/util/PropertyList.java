@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009, 2012 David A Carlson.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -89,18 +89,6 @@ public class PropertyList {
 				if (isOmitAssociations) {
 					continue;
 				}
-
-				// TODO design a way to generalize this using a filter parameter
-				// // omit association properties from base CDA model
-				// if (CDAModelUtil.CDA_PACKAGE_NAME.equals(
-				// UMLUtil.getTopPackage(aClass).getName())) {
-				// continue;
-				// }
-			}
-
-			// filter some CDA attributes
-			if ("templateId".equals(property.getName())) {
-				continue;
 			}
 
 			// skip implicit redefinitions
