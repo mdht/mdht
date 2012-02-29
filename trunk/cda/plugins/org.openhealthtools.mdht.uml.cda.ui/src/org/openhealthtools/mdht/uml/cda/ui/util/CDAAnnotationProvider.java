@@ -26,15 +26,15 @@ import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Activator;
 import org.openhealthtools.mdht.uml.common.notation.INotationProvider;
 import org.openhealthtools.mdht.uml.common.notation.IUMLNotation;
+import org.openhealthtools.mdht.uml.term.ui.notation.TermPropertyNotation;
 
 public class CDAAnnotationProvider implements INotationProvider, IExecutableExtension {
 
 	public final static int CDA_CLASS_ANNOTATION = IHL7Appearance.DISP_TEMPLATE_ID;
 
-	public final static int CDA_ASSOCIATION_ANNOTATION = IHL7Appearance.DISP_VOCABULARY;
+	public final static int CDA_ASSOCIATION_ANNOTATION = IHL7Appearance.DISP_VOCABULARY | IHL7Appearance.DISP_MOFIFIERS;
 
-	public final static int CDA_PROPERTY_ANNOTATION = IHL7Appearance.DISP_VOCABULARY |
-			IHL7Appearance.DISP_TEMPLATE_CONSTRAINTS;
+	public final static int CDA_PROPERTY_ANNOTATION = IHL7Appearance.DISP_VOCABULARY | IHL7Appearance.DISP_MOFIFIERS;
 
 	public static final String SEVERITY_ERROR = "ERROR";
 
@@ -50,7 +50,7 @@ public class CDAAnnotationProvider implements INotationProvider, IExecutableExte
 		} else if (element instanceof Association) {
 			annotation = CDAAssociationNotation.getCustomLabel((Association) element, CDA_ASSOCIATION_ANNOTATION);
 		} else if (element instanceof Property) {
-			annotation = CDAPropertyNotation.getCustomLabel((Property) element, CDA_PROPERTY_ANNOTATION);
+			annotation = TermPropertyNotation.getCustomLabel((Property) element, CDA_PROPERTY_ANNOTATION);
 		}
 
 		return annotation;
@@ -93,7 +93,7 @@ public class CDAAnnotationProvider implements INotationProvider, IExecutableExte
 		} else if (element instanceof Association) {
 			printString = CDAAssociationNotation.getCustomLabel((Association) element, IUMLNotation.DISP_NAME);
 		} else if (element instanceof Property) {
-			printString = CDAPropertyNotation.getCustomLabel((Property) element, IHL7Appearance.DEFAULT_HL7_PROPERTY);
+			printString = TermPropertyNotation.getCustomLabel((Property) element, IHL7Appearance.DEFAULT_HL7_PROPERTY);
 		}
 
 		return printString;

@@ -264,7 +264,7 @@ public class PropertyNotationUtil {
 			buffer.append("ordered");
 			needsComma = true;
 		}
-		if (property.isUnique() && property.getUpper() != 1) {
+		if (property.isUnique() && property.getUpper() > 1) {
 			if (needsComma) {
 				buffer.append(",");
 				buffer.append(NL);
@@ -277,14 +277,17 @@ public class PropertyNotationUtil {
 		Iterator<org.eclipse.uml2.uml.Property> it;
 		it = property.getRedefinedProperties().iterator();
 		while (it.hasNext()) {
-			org.eclipse.uml2.uml.Property current = it.next();
-			if (needsComma) {
-				buffer.append(",");
-				buffer.append(NL);
+			org.eclipse.uml2.uml.Property redefinedProperty = it.next();
+			// display only if redefined property has a different name (i.e., not "implicit")
+			if (!redefinedProperty.getName().equals(property.getName())) {
+				if (needsComma) {
+					buffer.append(" ,");
+					buffer.append(NL);
+				}
+				buffer.append("redefines ");
+				buffer.append(redefinedProperty.getName());
+				needsComma = true;
 			}
-			buffer.append("redefines ");
-			buffer.append(current.getName());
-			needsComma = true;
 		}
 
 		// is the property subsetting another property ?
@@ -292,7 +295,7 @@ public class PropertyNotationUtil {
 		while (it.hasNext()) {
 			Property current = it.next();
 			if (needsComma) {
-				buffer.append(",");
+				buffer.append(" ,");
 				buffer.append(NL);
 			}
 			buffer.append("subsets ");
