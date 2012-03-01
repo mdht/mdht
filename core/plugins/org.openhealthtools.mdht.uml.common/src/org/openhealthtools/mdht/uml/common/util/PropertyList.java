@@ -32,7 +32,7 @@ public class PropertyList {
 
 	private boolean isAllSuperclasses = true;
 
-	private boolean isSorted = true;
+	private boolean isSorted = false;
 
 	public PropertyList(Class clazz) {
 		this.clazz = clazz;
@@ -84,7 +84,10 @@ public class PropertyList {
 	}
 
 	private void addProperties(Class aClass) {
-		for (Property property : aClass.getOwnedAttributes()) {
+		List<Property> ownedAttributes = new ArrayList<Property>(aClass.getOwnedAttributes());
+		Collections.reverse(ownedAttributes);
+
+		for (Property property : ownedAttributes) {
 			if (property.getAssociation() != null) {
 				if (isOmitAssociations) {
 					continue;
@@ -94,9 +97,9 @@ public class PropertyList {
 			// skip implicit redefinitions
 			if (getForName(property.getName()) == null) {
 				if (property.getAssociation() == null) {
-					attributes.add(property);
+					attributes.add(0, property);
 				} else {
-					associationEnds.add(property);
+					associationEnds.add(0, property);
 				}
 			}
 
