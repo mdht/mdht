@@ -38,7 +38,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consoltoc.DischargeInstructions#validateDischargeInstructionsAdvanceDirectivesSectionEntriesOptional(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Instructions Advance Directives Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consoltoc.DischargeInstructions#validateDischargeInstructionsImmunizationsSectionEntriesOptional(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Instructions Immunizations Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consoltoc.DischargeInstructions#validateDischargeInstructionsMedicalEquipmentSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Instructions Medical Equipment Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consoltoc.DischargeInstructions#validateDischargeInstructionsAdvanceDirectivesSectionEntriesOptional2(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Discharge Instructions Advance Directives Section Entries Optional2</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consoltoc.DischargeInstructions#getPlanOfCareSection() <em>Get Plan Of Care Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consoltoc.DischargeInstructions#getAllergiesSectionEntriesOptional() <em>Get Allergies Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consoltoc.DischargeInstructions#getProblemSectionEntriesOptional() <em>Get Problem Section Entries Optional</em>}</li>
@@ -46,7 +45,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consoltoc.DischargeInstructions#getAdvanceDirectivesSectionEntriesOptional() <em>Get Advance Directives Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consoltoc.DischargeInstructions#getImmunizationsSectionEntriesOptional() <em>Get Immunizations Section Entries Optional</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consoltoc.DischargeInstructions#getMedicalEquipmentSection() <em>Get Medical Equipment Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consoltoc.DischargeInstructions#getAdvanceDirectivesSectionEntriesOptional2() <em>Get Advance Directives Section Entries Optional2</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consoltoc.DischargeInstructions#validateGeneralHeaderConstraintsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Template Id</em>}</li>
  * </ul>
  * </p>
@@ -663,82 +661,6 @@ public void testValidateDischargeInstructionsMedicalEquipmentSection() {
 
  
 									
-public void testValidateDischargeInstructionsAdvanceDirectivesSectionEntriesOptional2() {
-			OperationsTestCase<DischargeInstructions> validateDischargeInstructionsAdvanceDirectivesSectionEntriesOptional2TestCase = new OperationsTestCase<DischargeInstructions>(
-			"validateDischargeInstructionsAdvanceDirectivesSectionEntriesOptional2",
-			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_INSTRUCTIONS_ADVANCE_DIRECTIVES_SECTION_ENTRIES_OPTIONAL2__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
-
-			@Override
-			protected void updateToFail(DischargeInstructions target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DischargeInstructions target) {
-				target.init();
-				
-				
-				
-				
-				
-
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return DischargeInstructionsOperations.validateDischargeInstructionsAdvanceDirectivesSectionEntriesOptional2(
-					(DischargeInstructions) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateDischargeInstructionsAdvanceDirectivesSectionEntriesOptional2TestCase.doValidationTest();
-}
-
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
 public void testGetPlanOfCareSection() {
 
 
@@ -888,27 +810,6 @@ target.getMedicalEquipmentSection();
 }
 
 
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetAdvanceDirectivesSectionEntriesOptional2() {
-
-
-DischargeInstructions target = objectFactory.create();
-target.getAdvanceDirectivesSectionEntriesOptional2();
-
-
-
-}
 
 
 
