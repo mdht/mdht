@@ -34,8 +34,8 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		System.out.println("=========================");
-//		testDS("DS.sample.l3.conformances");
-		validateAndLog("DS.sample.l3.conformances");
+		testDS("DS.sample.l3.conformances");
+		validateAndLog("DI_sample_l3_conformances");
 		System.out.println("=========================");
 	}
 
