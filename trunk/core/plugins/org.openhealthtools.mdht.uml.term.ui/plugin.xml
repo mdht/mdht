@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-  Copyright (c) 2010, 2011 David A Carlson.
+  Copyright (c) 2010, 2012 David A Carlson.
   All rights reserved. This program and the accompanying materials
   are made available under the terms of the Eclipse Public License v1.0
   which accompanies this distribution, and is available at
@@ -18,31 +18,130 @@
       		 class="org.openhealthtools.mdht.uml.term.ui.notation.TermAnnotationProvider"/>
    </extension>
    
-   
-      <extension
-         point="org.eclipse.ui.popupMenus">
+   <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
             objectClass="org.eclipse.core.resources.IFile"
             id="org.openhealthtools.mdht.uml.term.ui.import"
-             nameFilter="*.uml"
-            >
-         <menu
-               label="OHT Model Tools"
-               path="additions"
-               id="org.openhealthtools.mdht.uml.term.ui.import.menu">
-            <separator
-                  name="group1">
-            </separator>
-         </menu>
+            nameFilter="*.uml">
          <action
-               label="Import from PHIN VADS"
+               label="%menu.importPhinVads.label"
                class="org.openhealthtools.mdht.uml.term.ui.actions.ImportTerminologyAction"
-               menubarPath="org.openhealthtools.mdht.uml.term.ui.import.menu/group1"
+               menubarPath="org.openhealthtools.mdht.uml.ui.ide.popupMenus.file/port"
                enablesFor="1"
-               id="org.openhealthtools.mdht.uml.term.ui.import">
+               id="org.openhealthtools.mdht.uml.term.ui.actions.ImportTerminologyAction">
          </action>
       </objectContribution>
    </extension>
    
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution adaptable="true"
+			objectClass="org.eclipse.uml2.uml.Element"
+            id="mdht.objectContribution.uml">
+         <visibility>
+			<objectClass name="org.eclipse.uml2.uml.Element" />
+         </visibility>
+         <menu
+               label="%menu.addTerm.label"
+               path="group.new"
+               id="mdht.addTerm">
+            <separator name="propertyGroup"/>
+            <separator name="classifierGroup"/>
+            <separator name="packageGroup"/>
+            <separator name="constraintGroup"/>
+            <separator name="commentGroup"/>
+         </menu>
+      </objectContribution>
+   </extension>
+     
+   <!-- UML Package menu items -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution adaptable="true"
+			objectClass="org.eclipse.uml2.uml.Element"
+            id="mdht.objectContribution.uml.package.term">
+         <visibility>
+			<objectClass name="org.eclipse.uml2.uml.Package" />
+			<!-- TODO and has Terminology profile applied -->
+         </visibility>
+         <action
+               label="%menu.addValueSetVersion.label"
+               icon="icons/full/obj16/Enumeration.gif"
+               class="org.openhealthtools.mdht.uml.term.ui.actions.AddValueSetVersionAction"
+               menubarPath="mdht.addTerm/classifierGroup"
+               enablesFor="1"
+               id="mdht.actions.addTerm.valueSetVersion">
+         </action>
+         <action
+               label="%menu.addCodeSystemVersion.label"
+               icon="icons/full/obj16/Enumeration.gif"
+               class="org.openhealthtools.mdht.uml.term.ui.actions.AddCodeSystemVersionAction"
+               menubarPath="mdht.addTerm/classifierGroup"
+               enablesFor="1"
+               id="mdht.actions.addTerm.codeSystemVersion">
+         </action>
+      </objectContribution>
+   </extension>
+         
+   <!-- UML Enumeration menu items -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution adaptable="true"
+			objectClass="org.eclipse.uml2.uml.Element"
+            id="mdht.objectContribution.uml.enumeration.term">
+         <visibility>
+            <objectClass name="org.eclipse.uml2.uml.Enumeration" />
+			<!-- TODO and has stereotype ValueSetVersion applied -->
+         </visibility>
+         <action
+               label="%menu.addValueSetCode.label"
+               icon="icons/full/obj16/EnumerationLiteral.gif"
+               class="org.openhealthtools.mdht.uml.term.ui.actions.AddValueSetCodeAction"
+               menubarPath="mdht.addTerm/propertyGroup"
+               enablesFor="1"
+               id="mdht.actions.addTerm.valueSetCode">
+         </action>
+      </objectContribution>
+   </extension>
+   
+   <!-- Properties view tab contribution -->
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+       <propertySections contributorId="org.openhealthtools.mdht.uml.ui.properties">
+          <propertySection tab="property.tab.MDHTPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.CodeSystemVersionSection" 
+	 	     id="property.section.CodeSystemVersionSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodeSystemVersionFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.MDHTPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetVersionSection" 
+	 	     id="property.section.ValueSetVersionSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetVersionFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.MDHTPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetCodeSection" 
+	 	     id="property.section.ValueSetCodeSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetCodeFilter">
+	      </propertySection>
+	      
+          <propertySection tab="property.tab.MDHTPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetConstraintSection" 
+	 	     id="property.section.ValueSetConstraintSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetConstraintFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.MDHTPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.CodeSystemConstraintSection" 
+	 	     id="property.section.CodeSystemConstraintSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodeSystemConstraintFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.MDHTPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ConceptDomainConstraintSection" 
+	 	     id="property.section.ConceptDomainConstraintSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.ConceptDomainConstraintFilter">
+	      </propertySection>
+	      
+          <propertySection tab="property.tab.MDHTPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.VocabularyConstraintsSection" 
+	 	     id="property.section.VocabularyConstraintsSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodedAttributeFilter">
+	      </propertySection>
+	  </propertySections>
+   </extension> 
    
 </plugin>
