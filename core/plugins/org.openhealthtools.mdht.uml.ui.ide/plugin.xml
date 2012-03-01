@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2012 David A Carlson.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+      David A Carlson (XMLmodeling.com) - initial API and implementation
+-->
+
+<plugin>
+
+	<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+		<propertyTabs contributorId="org.openhealthtools.mdht.uml.ui.properties">   
+			<propertyTab
+               category="domain"
+               label="%MDHT.propertyTabs.label"
+               afterTab="property.tab.GeneralPropertySection"
+               id="property.tab.MDHTPropertySection">           
+			</propertyTab> 
+		</propertyTabs>
+	</extension>
+ 
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution adaptable="true"
+			objectClass="org.eclipse.uml2.uml.Element" 
+			id="org.openhealthtools.mdht.uml.ui.ide.popupMenus.umlElement">
+			<menu label="%MDHT.menu.label" path="additions" 
+					id="org.openhealthtools.mdht.uml.ui.ide.popupMenus.umlElement">
+				<separator name="edit"/>
+				<separator name="port"/>
+			</menu>
+		</objectContribution>
+		<objectContribution
+			objectClass="org.eclipse.core.resources.IFile" 
+			id="org.openhealthtools.mdht.uml.ui.ide.popupMenus.file">
+			<menu label="%MDHT.menu.label" path="additions" 
+					id="org.openhealthtools.mdht.uml.ui.ide.popupMenus.file">
+				<separator name="edit"/>
+				<separator name="port"/>
+			</menu>
+		</objectContribution>
+		<objectContribution adaptable="true"
+			objectClass="org.eclipse.gmf.runtime.notation.View" 
+			id="org.openhealthtools.mdht.uml.ui.ide.popupMenus.notationView">
+			<menu label="%MDHT.menu.label" path="additions" 
+					id="org.openhealthtools.mdht.uml.ui.ide.popupMenus.notationView">
+				<separator name="edit"/>
+				<separator name="port"/>
+			</menu>
+		</objectContribution>
+	</extension>
+	
+</plugin>
