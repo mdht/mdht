@@ -634,7 +634,7 @@ public class CDABuilder extends IncrementalProjectBuilder {
 
 						}
 						if (needToAdd) {
-							classpathEntries.add(new AntClasspathEntry(binFolderString));
+							classpathEntries.add(new AntClasspathEntry(binFolderString + "/"));
 						}
 					}
 				}
