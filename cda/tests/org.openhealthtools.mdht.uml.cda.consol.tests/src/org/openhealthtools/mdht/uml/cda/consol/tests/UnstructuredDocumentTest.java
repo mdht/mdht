@@ -61,10 +61,10 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateUnstructuredDocumentTemplateId() {
-		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentTemplateIdTestCase = new OperationsTestCase<UnstructuredDocument>(
+			OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentTemplateIdTestCase = new OperationsTestCase<UnstructuredDocument>(
 			"validateUnstructuredDocumentTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(UnstructuredDocument target) {
@@ -74,12 +74,46 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(UnstructuredDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return UnstructuredDocumentOperations.validateUnstructuredDocumentTemplateId(
 					(UnstructuredDocument) objectToTest, diagnostician, map);
 			}
@@ -87,7 +121,7 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 		};
 
 		validateUnstructuredDocumentTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -619,8 +653,8 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -628,7 +662,7 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

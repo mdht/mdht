@@ -114,10 +114,10 @@ public class ProcedureSpecimenTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureSpecimenTemplateId() {
-		OperationsTestCase<ProcedureSpecimen> validateProcedureSpecimenTemplateIdTestCase = new OperationsTestCase<ProcedureSpecimen>(
+			OperationsTestCase<ProcedureSpecimen> validateProcedureSpecimenTemplateIdTestCase = new OperationsTestCase<ProcedureSpecimen>(
 			"validateProcedureSpecimenTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_SPECIMEN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_SPECIMEN_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureSpecimen target) {
@@ -127,12 +127,46 @@ public class ProcedureSpecimenTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureSpecimen target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ProcedureSpecimenOperations.validateProcedureSpecimenTemplateId(
 					(ProcedureSpecimen) objectToTest, diagnostician, map);
 			}
@@ -140,7 +174,7 @@ public class ProcedureSpecimenTest extends CDAValidationTest {
 		};
 
 		validateProcedureSpecimenTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -195,8 +229,8 @@ public class ProcedureSpecimenTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -204,7 +238,7 @@ public class ProcedureSpecimenTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

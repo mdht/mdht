@@ -48,10 +48,10 @@ public class AllergiesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAllergiesSectionEntriesOptionalCode() {
-		OperationsTestCase<AllergiesSection> validateAllergiesSectionEntriesOptionalCodeTestCase = new OperationsTestCase<AllergiesSection>(
+			OperationsTestCase<AllergiesSection> validateAllergiesSectionEntriesOptionalCodeTestCase = new OperationsTestCase<AllergiesSection>(
 			"validateAllergiesSectionEntriesOptionalCode",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGIES_SECTION_ENTRIES_OPTIONAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGIES_SECTION_ENTRIES_OPTIONAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AllergiesSection target) {
@@ -61,12 +61,46 @@ public class AllergiesSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergiesSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AllergiesSectionOperations.validateAllergiesSectionEntriesOptionalCode(
 					(AllergiesSection) objectToTest, diagnostician, map);
 			}
@@ -74,7 +108,7 @@ public class AllergiesSectionTest extends CDAValidationTest {
 		};
 
 		validateAllergiesSectionEntriesOptionalCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -82,10 +116,10 @@ public class AllergiesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAllergiesSectionTitle() {
-		OperationsTestCase<AllergiesSection> validateAllergiesSectionTitleTestCase = new OperationsTestCase<AllergiesSection>(
+			OperationsTestCase<AllergiesSection> validateAllergiesSectionTitleTestCase = new OperationsTestCase<AllergiesSection>(
 			"validateAllergiesSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGIES_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGIES_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AllergiesSection target) {
@@ -95,15 +129,49 @@ public class AllergiesSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergiesSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
+				
+				
 
+	
+		
+				ST  title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title );
+				
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AllergiesSectionOperations.validateAllergiesSectionTitle(
 					(AllergiesSection) objectToTest, diagnostician, map);
 			}
@@ -111,7 +179,7 @@ public class AllergiesSectionTest extends CDAValidationTest {
 		};
 
 		validateAllergiesSectionTitleTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -119,10 +187,10 @@ public class AllergiesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAllergiesSectionText() {
-		OperationsTestCase<AllergiesSection> validateAllergiesSectionTextTestCase = new OperationsTestCase<AllergiesSection>(
+			OperationsTestCase<AllergiesSection> validateAllergiesSectionTextTestCase = new OperationsTestCase<AllergiesSection>(
 			"validateAllergiesSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGIES_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGIES_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AllergiesSection target) {
@@ -132,15 +200,49 @@ public class AllergiesSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergiesSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
 				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
-
+				target.setText(text );
+			
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AllergiesSectionOperations.validateAllergiesSectionText(
 					(AllergiesSection) objectToTest, diagnostician, map);
 			}
@@ -148,7 +250,7 @@ public class AllergiesSectionTest extends CDAValidationTest {
 		};
 
 		validateAllergiesSectionTextTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -191,10 +293,13 @@ public class AllergiesSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetAllergyDrugSensitivities() {
 
-		AllergiesSection target = objectFactory.create();
-		target.getAllergyDrugSensitivities();
 
-	}
+AllergiesSection target = objectFactory.create();
+target.getAllergyDrugSensitivities();
+
+
+
+}
 
 	/**
 	*
@@ -202,10 +307,10 @@ public class AllergiesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAllergiesSectionEntriesOptionalTemplateId() {
-		OperationsTestCase<AllergiesSection> validateAllergiesSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<AllergiesSection>(
+			OperationsTestCase<AllergiesSection> validateAllergiesSectionEntriesOptionalTemplateIdTestCase = new OperationsTestCase<AllergiesSection>(
 			"validateAllergiesSectionEntriesOptionalTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGIES_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGIES_SECTION_ENTRIES_OPTIONAL_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AllergiesSection target) {
@@ -215,12 +320,46 @@ public class AllergiesSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergiesSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AllergiesSectionOperations.validateAllergiesSectionEntriesOptionalTemplateId(
 					(AllergiesSection) objectToTest, diagnostician, map);
 			}
@@ -228,7 +367,7 @@ public class AllergiesSectionTest extends CDAValidationTest {
 		};
 
 		validateAllergiesSectionEntriesOptionalTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -283,8 +422,8 @@ public class AllergiesSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -292,7 +431,7 @@ public class AllergiesSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

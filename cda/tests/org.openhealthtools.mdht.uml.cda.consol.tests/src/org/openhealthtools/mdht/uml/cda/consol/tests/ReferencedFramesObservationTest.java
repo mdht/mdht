@@ -52,10 +52,10 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateReferencedFramesObservationTemplateId() {
-		OperationsTestCase<ReferencedFramesObservation> validateReferencedFramesObservationTemplateIdTestCase = new OperationsTestCase<ReferencedFramesObservation>(
+			OperationsTestCase<ReferencedFramesObservation> validateReferencedFramesObservationTemplateIdTestCase = new OperationsTestCase<ReferencedFramesObservation>(
 			"validateReferencedFramesObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_REFERENCED_FRAMES_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_REFERENCED_FRAMES_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ReferencedFramesObservation target) {
@@ -65,12 +65,46 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReferencedFramesObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ReferencedFramesObservationOperations.validateReferencedFramesObservationTemplateId(
 					(ReferencedFramesObservation) objectToTest, diagnostician, map);
 			}
@@ -78,7 +112,7 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 		};
 
 		validateReferencedFramesObservationTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -86,10 +120,10 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateReferencedFramesObservationClassCode() {
-		OperationsTestCase<ReferencedFramesObservation> validateReferencedFramesObservationClassCodeTestCase = new OperationsTestCase<ReferencedFramesObservation>(
+			OperationsTestCase<ReferencedFramesObservation> validateReferencedFramesObservationClassCodeTestCase = new OperationsTestCase<ReferencedFramesObservation>(
 			"validateReferencedFramesObservationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_REFERENCED_FRAMES_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_REFERENCED_FRAMES_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ReferencedFramesObservation target) {
@@ -99,12 +133,46 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReferencedFramesObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ReferencedFramesObservationOperations.validateReferencedFramesObservationClassCode(
 					(ReferencedFramesObservation) objectToTest, diagnostician, map);
 			}
@@ -112,7 +180,7 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 		};
 
 		validateReferencedFramesObservationClassCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -120,10 +188,10 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateReferencedFramesObservationCode() {
-		OperationsTestCase<ReferencedFramesObservation> validateReferencedFramesObservationCodeTestCase = new OperationsTestCase<ReferencedFramesObservation>(
+			OperationsTestCase<ReferencedFramesObservation> validateReferencedFramesObservationCodeTestCase = new OperationsTestCase<ReferencedFramesObservation>(
 			"validateReferencedFramesObservationCode",
-			operationsForOCL.getOCLValue("VALIDATE_REFERENCED_FRAMES_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_REFERENCED_FRAMES_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ReferencedFramesObservation target) {
@@ -133,15 +201,49 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReferencedFramesObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+			
+				CD cd  = DatatypesFactory.eINSTANCE.createCD();
 				target.setCode(cd);
-
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ReferencedFramesObservationOperations.validateReferencedFramesObservationCode(
 					(ReferencedFramesObservation) objectToTest, diagnostician, map);
 			}
@@ -149,7 +251,7 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 		};
 
 		validateReferencedFramesObservationCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -157,10 +259,10 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateReferencedFramesObservationMoodCode() {
-		OperationsTestCase<ReferencedFramesObservation> validateReferencedFramesObservationMoodCodeTestCase = new OperationsTestCase<ReferencedFramesObservation>(
+			OperationsTestCase<ReferencedFramesObservation> validateReferencedFramesObservationMoodCodeTestCase = new OperationsTestCase<ReferencedFramesObservation>(
 			"validateReferencedFramesObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_REFERENCED_FRAMES_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_REFERENCED_FRAMES_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ReferencedFramesObservation target) {
@@ -170,12 +272,46 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReferencedFramesObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ReferencedFramesObservationOperations.validateReferencedFramesObservationMoodCode(
 					(ReferencedFramesObservation) objectToTest, diagnostician, map);
 			}
@@ -183,7 +319,7 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 		};
 
 		validateReferencedFramesObservationMoodCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -191,10 +327,10 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateReferencedFramesObservationBoundaryObservation() {
-		OperationsTestCase<ReferencedFramesObservation> validateReferencedFramesObservationBoundaryObservationTestCase = new OperationsTestCase<ReferencedFramesObservation>(
+			OperationsTestCase<ReferencedFramesObservation> validateReferencedFramesObservationBoundaryObservationTestCase = new OperationsTestCase<ReferencedFramesObservation>(
 			"validateReferencedFramesObservationBoundaryObservation",
-			operationsForOCL.getOCLValue("VALIDATE_REFERENCED_FRAMES_OBSERVATION_BOUNDARY_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_REFERENCED_FRAMES_OBSERVATION_BOUNDARY_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ReferencedFramesObservation target) {
@@ -204,12 +340,46 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReferencedFramesObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ReferencedFramesObservationOperations.validateReferencedFramesObservationBoundaryObservation(
 					(ReferencedFramesObservation) objectToTest, diagnostician, map);
 			}
@@ -217,7 +387,7 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 		};
 
 		validateReferencedFramesObservationBoundaryObservationTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -226,10 +396,13 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 	@Test
 	public void testGetBoundaryObservation() {
 
-		ReferencedFramesObservation target = objectFactory.create();
-		target.getBoundaryObservation();
 
-	}
+ReferencedFramesObservation target = objectFactory.create();
+target.getBoundaryObservation();
+
+
+
+}
 
 	/**
 	*
@@ -284,8 +457,8 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -293,7 +466,7 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

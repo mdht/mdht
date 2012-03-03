@@ -42,10 +42,10 @@ public class PlanOfCareActivityActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePlanOfCareActivityActTemplateId() {
-		OperationsTestCase<PlanOfCareActivityAct> validatePlanOfCareActivityActTemplateIdTestCase = new OperationsTestCase<PlanOfCareActivityAct>(
+			OperationsTestCase<PlanOfCareActivityAct> validatePlanOfCareActivityActTemplateIdTestCase = new OperationsTestCase<PlanOfCareActivityAct>(
 			"validatePlanOfCareActivityActTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(PlanOfCareActivityAct target) {
@@ -55,12 +55,46 @@ public class PlanOfCareActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlanOfCareActivityAct target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return PlanOfCareActivityActOperations.validatePlanOfCareActivityActTemplateId(
 					(PlanOfCareActivityAct) objectToTest, diagnostician, map);
 			}
@@ -68,7 +102,7 @@ public class PlanOfCareActivityActTest extends CDAValidationTest {
 		};
 
 		validatePlanOfCareActivityActTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -159,8 +193,8 @@ public class PlanOfCareActivityActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -168,7 +202,7 @@ public class PlanOfCareActivityActTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

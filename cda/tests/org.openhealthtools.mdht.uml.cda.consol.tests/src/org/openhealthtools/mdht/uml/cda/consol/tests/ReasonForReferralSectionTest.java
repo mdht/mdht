@@ -46,10 +46,10 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateReasonForReferralSectionTemplateId() {
-		OperationsTestCase<ReasonForReferralSection> validateReasonForReferralSectionTemplateIdTestCase = new OperationsTestCase<ReasonForReferralSection>(
+			OperationsTestCase<ReasonForReferralSection> validateReasonForReferralSectionTemplateIdTestCase = new OperationsTestCase<ReasonForReferralSection>(
 			"validateReasonForReferralSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_REFERRAL_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_REFERRAL_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ReasonForReferralSection target) {
@@ -59,12 +59,46 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReasonForReferralSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ReasonForReferralSectionOperations.validateReasonForReferralSectionTemplateId(
 					(ReasonForReferralSection) objectToTest, diagnostician, map);
 			}
@@ -72,7 +106,7 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 		};
 
 		validateReasonForReferralSectionTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -80,10 +114,10 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateReasonForReferralSectionCode() {
-		OperationsTestCase<ReasonForReferralSection> validateReasonForReferralSectionCodeTestCase = new OperationsTestCase<ReasonForReferralSection>(
+			OperationsTestCase<ReasonForReferralSection> validateReasonForReferralSectionCodeTestCase = new OperationsTestCase<ReasonForReferralSection>(
 			"validateReasonForReferralSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_REFERRAL_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_REFERRAL_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ReasonForReferralSection target) {
@@ -93,12 +127,46 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReasonForReferralSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ReasonForReferralSectionOperations.validateReasonForReferralSectionCode(
 					(ReasonForReferralSection) objectToTest, diagnostician, map);
 			}
@@ -106,7 +174,7 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 		};
 
 		validateReasonForReferralSectionCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -114,10 +182,10 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateReasonForReferralSectionTitle() {
-		OperationsTestCase<ReasonForReferralSection> validateReasonForReferralSectionTitleTestCase = new OperationsTestCase<ReasonForReferralSection>(
+			OperationsTestCase<ReasonForReferralSection> validateReasonForReferralSectionTitleTestCase = new OperationsTestCase<ReasonForReferralSection>(
 			"validateReasonForReferralSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_REFERRAL_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_REFERRAL_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ReasonForReferralSection target) {
@@ -127,15 +195,49 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReasonForReferralSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
+				
+				
 
+	
+		
+				ST  title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title );
+				
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ReasonForReferralSectionOperations.validateReasonForReferralSectionTitle(
 					(ReasonForReferralSection) objectToTest, diagnostician, map);
 			}
@@ -143,7 +245,7 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 		};
 
 		validateReasonForReferralSectionTitleTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -151,10 +253,10 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateReasonForReferralSectionText() {
-		OperationsTestCase<ReasonForReferralSection> validateReasonForReferralSectionTextTestCase = new OperationsTestCase<ReasonForReferralSection>(
+			OperationsTestCase<ReasonForReferralSection> validateReasonForReferralSectionTextTestCase = new OperationsTestCase<ReasonForReferralSection>(
 			"validateReasonForReferralSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_REFERRAL_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_REFERRAL_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ReasonForReferralSection target) {
@@ -164,15 +266,49 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ReasonForReferralSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
 				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
-
+				target.setText(text );
+			
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ReasonForReferralSectionOperations.validateReasonForReferralSectionText(
 					(ReasonForReferralSection) objectToTest, diagnostician, map);
 			}
@@ -180,7 +316,7 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 		};
 
 		validateReasonForReferralSectionTextTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -235,8 +371,8 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -244,7 +380,7 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 
