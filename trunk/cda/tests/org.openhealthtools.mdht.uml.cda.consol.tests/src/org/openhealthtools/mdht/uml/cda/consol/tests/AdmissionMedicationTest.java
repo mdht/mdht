@@ -45,10 +45,10 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdmissionMedicationTemplateId() {
-		OperationsTestCase<AdmissionMedication> validateAdmissionMedicationTemplateIdTestCase = new OperationsTestCase<AdmissionMedication>(
+			OperationsTestCase<AdmissionMedication> validateAdmissionMedicationTemplateIdTestCase = new OperationsTestCase<AdmissionMedication>(
 			"validateAdmissionMedicationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AdmissionMedication target) {
@@ -58,12 +58,46 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdmissionMedication target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AdmissionMedicationOperations.validateAdmissionMedicationTemplateId(
 					(AdmissionMedication) objectToTest, diagnostician, map);
 			}
@@ -71,7 +105,7 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 		};
 
 		validateAdmissionMedicationTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -79,10 +113,10 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdmissionMedicationClassCode() {
-		OperationsTestCase<AdmissionMedication> validateAdmissionMedicationClassCodeTestCase = new OperationsTestCase<AdmissionMedication>(
+			OperationsTestCase<AdmissionMedication> validateAdmissionMedicationClassCodeTestCase = new OperationsTestCase<AdmissionMedication>(
 			"validateAdmissionMedicationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AdmissionMedication target) {
@@ -92,12 +126,46 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdmissionMedication target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AdmissionMedicationOperations.validateAdmissionMedicationClassCode(
 					(AdmissionMedication) objectToTest, diagnostician, map);
 			}
@@ -105,7 +173,7 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 		};
 
 		validateAdmissionMedicationClassCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -113,10 +181,10 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdmissionMedicationCode() {
-		OperationsTestCase<AdmissionMedication> validateAdmissionMedicationCodeTestCase = new OperationsTestCase<AdmissionMedication>(
+			OperationsTestCase<AdmissionMedication> validateAdmissionMedicationCodeTestCase = new OperationsTestCase<AdmissionMedication>(
 			"validateAdmissionMedicationCode",
-			operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AdmissionMedication target) {
@@ -126,12 +194,46 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdmissionMedication target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AdmissionMedicationOperations.validateAdmissionMedicationCode(
 					(AdmissionMedication) objectToTest, diagnostician, map);
 			}
@@ -139,7 +241,7 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 		};
 
 		validateAdmissionMedicationCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -147,10 +249,10 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdmissionMedicationMoodCode() {
-		OperationsTestCase<AdmissionMedication> validateAdmissionMedicationMoodCodeTestCase = new OperationsTestCase<AdmissionMedication>(
+			OperationsTestCase<AdmissionMedication> validateAdmissionMedicationMoodCodeTestCase = new OperationsTestCase<AdmissionMedication>(
 			"validateAdmissionMedicationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ADMISSION_MEDICATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AdmissionMedication target) {
@@ -160,12 +262,46 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdmissionMedication target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AdmissionMedicationOperations.validateAdmissionMedicationMoodCode(
 					(AdmissionMedication) objectToTest, diagnostician, map);
 			}
@@ -173,7 +309,7 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 		};
 
 		validateAdmissionMedicationMoodCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -219,10 +355,13 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 	@Test
 	public void testGetMedicationActivity() {
 
-		AdmissionMedication target = objectFactory.create();
-		target.getMedicationActivity();
 
-	}
+AdmissionMedication target = objectFactory.create();
+target.getMedicationActivity();
+
+
+
+}
 
 	/**
 	*
@@ -277,8 +416,8 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -286,7 +425,7 @@ public class AdmissionMedicationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

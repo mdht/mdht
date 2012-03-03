@@ -51,10 +51,10 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePurposeofReferenceObservationTemplateId() {
-		OperationsTestCase<PurposeofReferenceObservation> validatePurposeofReferenceObservationTemplateIdTestCase = new OperationsTestCase<PurposeofReferenceObservation>(
+			OperationsTestCase<PurposeofReferenceObservation> validatePurposeofReferenceObservationTemplateIdTestCase = new OperationsTestCase<PurposeofReferenceObservation>(
 			"validatePurposeofReferenceObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PURPOSEOF_REFERENCE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSEOF_REFERENCE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeofReferenceObservation target) {
@@ -64,12 +64,46 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeofReferenceObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return PurposeofReferenceObservationOperations.validatePurposeofReferenceObservationTemplateId(
 					(PurposeofReferenceObservation) objectToTest, diagnostician, map);
 			}
@@ -77,7 +111,7 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 		};
 
 		validatePurposeofReferenceObservationTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -85,10 +119,10 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePurposeofReferenceObservationClassCode() {
-		OperationsTestCase<PurposeofReferenceObservation> validatePurposeofReferenceObservationClassCodeTestCase = new OperationsTestCase<PurposeofReferenceObservation>(
+			OperationsTestCase<PurposeofReferenceObservation> validatePurposeofReferenceObservationClassCodeTestCase = new OperationsTestCase<PurposeofReferenceObservation>(
 			"validatePurposeofReferenceObservationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_PURPOSEOF_REFERENCE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSEOF_REFERENCE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeofReferenceObservation target) {
@@ -98,12 +132,46 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeofReferenceObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return PurposeofReferenceObservationOperations.validatePurposeofReferenceObservationClassCode(
 					(PurposeofReferenceObservation) objectToTest, diagnostician, map);
 			}
@@ -111,7 +179,7 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 		};
 
 		validatePurposeofReferenceObservationClassCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -119,10 +187,10 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePurposeofReferenceObservationCode() {
-		OperationsTestCase<PurposeofReferenceObservation> validatePurposeofReferenceObservationCodeTestCase = new OperationsTestCase<PurposeofReferenceObservation>(
+			OperationsTestCase<PurposeofReferenceObservation> validatePurposeofReferenceObservationCodeTestCase = new OperationsTestCase<PurposeofReferenceObservation>(
 			"validatePurposeofReferenceObservationCode",
-			operationsForOCL.getOCLValue("VALIDATE_PURPOSEOF_REFERENCE_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSEOF_REFERENCE_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeofReferenceObservation target) {
@@ -132,15 +200,49 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeofReferenceObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+			
+				CD cd  = DatatypesFactory.eINSTANCE.createCD();
 				target.setCode(cd);
-
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return PurposeofReferenceObservationOperations.validatePurposeofReferenceObservationCode(
 					(PurposeofReferenceObservation) objectToTest, diagnostician, map);
 			}
@@ -148,7 +250,7 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 		};
 
 		validatePurposeofReferenceObservationCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -156,10 +258,10 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePurposeofReferenceObservationMoodCode() {
-		OperationsTestCase<PurposeofReferenceObservation> validatePurposeofReferenceObservationMoodCodeTestCase = new OperationsTestCase<PurposeofReferenceObservation>(
+			OperationsTestCase<PurposeofReferenceObservation> validatePurposeofReferenceObservationMoodCodeTestCase = new OperationsTestCase<PurposeofReferenceObservation>(
 			"validatePurposeofReferenceObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_PURPOSEOF_REFERENCE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSEOF_REFERENCE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeofReferenceObservation target) {
@@ -169,12 +271,46 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeofReferenceObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return PurposeofReferenceObservationOperations.validatePurposeofReferenceObservationMoodCode(
 					(PurposeofReferenceObservation) objectToTest, diagnostician, map);
 			}
@@ -182,7 +318,7 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 		};
 
 		validatePurposeofReferenceObservationMoodCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -190,10 +326,10 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePurposeofReferenceObservationValue() {
-		OperationsTestCase<PurposeofReferenceObservation> validatePurposeofReferenceObservationValueTestCase = new OperationsTestCase<PurposeofReferenceObservation>(
+			OperationsTestCase<PurposeofReferenceObservation> validatePurposeofReferenceObservationValueTestCase = new OperationsTestCase<PurposeofReferenceObservation>(
 			"validatePurposeofReferenceObservationValue",
-			operationsForOCL.getOCLValue("VALIDATE_PURPOSEOF_REFERENCE_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSEOF_REFERENCE_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(PurposeofReferenceObservation target) {
@@ -203,15 +339,49 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeofReferenceObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+			
 				CD value = DatatypesFactory.eINSTANCE.createCD();
 				target.getValues().add(value);
+				
 
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return PurposeofReferenceObservationOperations.validatePurposeofReferenceObservationValue(
 					(PurposeofReferenceObservation) objectToTest, diagnostician, map);
 			}
@@ -219,7 +389,7 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 		};
 
 		validatePurposeofReferenceObservationValueTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -274,8 +444,8 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -283,7 +453,7 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

@@ -24,6 +24,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
@@ -147,10 +148,10 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveObservationTemplateId() {
-		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationTemplateIdTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
+			OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationTemplateIdTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
 			"validateAdvanceDirectiveObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
@@ -160,12 +161,46 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationTemplateId(
 					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
 			}
@@ -173,7 +208,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 		};
 
 		validateAdvanceDirectiveObservationTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -181,10 +216,10 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveObservationClassCode() {
-		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationClassCodeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
+			OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationClassCodeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
 			"validateAdvanceDirectiveObservationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
@@ -194,12 +229,46 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationClassCode(
 					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
 			}
@@ -207,7 +276,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 		};
 
 		validateAdvanceDirectiveObservationClassCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -215,10 +284,10 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveObservationMoodCode() {
-		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationMoodCodeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
+			OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationMoodCodeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
 			"validateAdvanceDirectiveObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
@@ -228,12 +297,46 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationMoodCode(
 					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
 			}
@@ -241,7 +344,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 		};
 
 		validateAdvanceDirectiveObservationMoodCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -249,10 +352,10 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveObservationId() {
-		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationIdTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
+			OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationIdTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
 			"validateAdvanceDirectiveObservationId",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
@@ -262,15 +365,49 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				II ii = DatatypesFactory.eINSTANCE.createII();
-				target.getIds().add(ii);
+				
+				
 
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+			
+				II ii  = DatatypesFactory.eINSTANCE.createII();
+				target.getIds().add(ii);				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationId(
 					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
 			}
@@ -278,7 +415,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 		};
 
 		validateAdvanceDirectiveObservationIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -323,10 +460,10 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveObservationStatusCode() {
-		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationStatusCodeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
+			OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationStatusCodeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
 			"validateAdvanceDirectiveObservationStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
@@ -336,15 +473,49 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
 				target.init();
-
+				
+				
+				
+				
+			
 				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
 				target.setStatusCode(cs);
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationStatusCode(
 					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
 			}
@@ -352,7 +523,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 		};
 
 		validateAdvanceDirectiveObservationStatusCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -360,10 +531,10 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveObservationEffectiveTime() {
-		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationEffectiveTimeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
+			OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationEffectiveTimeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
 			"validateAdvanceDirectiveObservationEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
@@ -373,15 +544,49 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
 				target.init();
+				
+				
+					IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
+					target.setEffectiveTime(ts );								
+				
+				
+				
+				
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+				
+				
 
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationEffectiveTime(
 					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
 			}
@@ -389,7 +594,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 		};
 
 		validateAdvanceDirectiveObservationEffectiveTimeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -1195,8 +1400,8 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -1204,7 +1409,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

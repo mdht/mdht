@@ -20,7 +20,9 @@ import org.openhealthtools.mdht.uml.cda.consol.MedicationDispense;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder;
 import org.openhealthtools.mdht.uml.cda.consol.operations.MedicationDispenseOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS;
@@ -62,10 +64,10 @@ public class MedicationDispenseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationDispenseTemplateId() {
-		OperationsTestCase<MedicationDispense> validateMedicationDispenseTemplateIdTestCase = new OperationsTestCase<MedicationDispense>(
+			OperationsTestCase<MedicationDispense> validateMedicationDispenseTemplateIdTestCase = new OperationsTestCase<MedicationDispense>(
 			"validateMedicationDispenseTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicationDispense target) {
@@ -75,12 +77,46 @@ public class MedicationDispenseTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationDispense target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return MedicationDispenseOperations.validateMedicationDispenseTemplateId(
 					(MedicationDispense) objectToTest, diagnostician, map);
 			}
@@ -88,7 +124,7 @@ public class MedicationDispenseTest extends CDAValidationTest {
 		};
 
 		validateMedicationDispenseTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -96,10 +132,10 @@ public class MedicationDispenseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationDispenseClassCode() {
-		OperationsTestCase<MedicationDispense> validateMedicationDispenseClassCodeTestCase = new OperationsTestCase<MedicationDispense>(
+			OperationsTestCase<MedicationDispense> validateMedicationDispenseClassCodeTestCase = new OperationsTestCase<MedicationDispense>(
 			"validateMedicationDispenseClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicationDispense target) {
@@ -109,12 +145,46 @@ public class MedicationDispenseTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationDispense target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return MedicationDispenseOperations.validateMedicationDispenseClassCode(
 					(MedicationDispense) objectToTest, diagnostician, map);
 			}
@@ -122,7 +192,7 @@ public class MedicationDispenseTest extends CDAValidationTest {
 		};
 
 		validateMedicationDispenseClassCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -204,10 +274,10 @@ public class MedicationDispenseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicationDispenseMoodCode() {
-		OperationsTestCase<MedicationDispense> validateMedicationDispenseMoodCodeTestCase = new OperationsTestCase<MedicationDispense>(
+			OperationsTestCase<MedicationDispense> validateMedicationDispenseMoodCodeTestCase = new OperationsTestCase<MedicationDispense>(
 			"validateMedicationDispenseMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(MedicationDispense target) {
@@ -217,12 +287,46 @@ public class MedicationDispenseTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationDispense target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return MedicationDispenseOperations.validateMedicationDispenseMoodCode(
 					(MedicationDispense) objectToTest, diagnostician, map);
 			}
@@ -230,7 +334,7 @@ public class MedicationDispenseTest extends CDAValidationTest {
 		};
 
 		validateMedicationDispenseMoodCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -496,10 +600,13 @@ public class MedicationDispenseTest extends CDAValidationTest {
 	@Test
 	public void testGetAssignedEntity() {
 
-		MedicationDispense target = objectFactory.create();
-		target.getAssignedEntity();
 
-	}
+MedicationDispense target = objectFactory.create();
+target.getAssignedEntity();
+
+
+
+}
 
 	/**
 	*
@@ -508,10 +615,13 @@ public class MedicationDispenseTest extends CDAValidationTest {
 	@Test
 	public void testGetMedicationSupplyOrder() {
 
-		MedicationDispense target = objectFactory.create();
-		target.getMedicationSupplyOrder();
 
-	}
+MedicationDispense target = objectFactory.create();
+target.getMedicationSupplyOrder();
+
+
+
+}
 
 	/**
 	*
@@ -566,8 +676,8 @@ public class MedicationDispenseTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -575,7 +685,7 @@ public class MedicationDispenseTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

@@ -37,6 +37,7 @@ import org.openhealthtools.mdht.uml.cda.consol.VitalSignsSectionEntriesOptional;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ContinuityOfCareDocumentOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
 
@@ -48,7 +49,6 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
  * <p>
  * The following operations are supported:
  * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentLanguageCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Language Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Author</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentAllergiesSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Allergies Section</em>}</li>
@@ -93,7 +93,6 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#getPlanOfCareSection() <em>Get Plan Of Care Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#getSocialHistorySection() <em>Get Social History Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#getVitalSignsSectionEntriesOptional() <em>Get Vital Signs Section Entries Optional</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateGeneralHeaderConstraintsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateGeneralHeaderConstraintsCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Code</em>}</li>
  * </ul>
  * </p>
@@ -213,10 +212,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateContinuityOfCareDocumentAdvanceDirectivesSection() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentAdvanceDirectivesSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentAdvanceDirectivesSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
 			"validateContinuityOfCareDocumentAdvanceDirectivesSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_ADVANCE_DIRECTIVES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_ADVANCE_DIRECTIVES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
@@ -226,19 +225,55 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* AdvanceDirectivesSection */
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+			
+				
+				/* AdvanceDirectivesSection */ 
 				AdvanceDirectivesSection section =
-
-				ConsolFactory.eINSTANCE.createAdvanceDirectivesSection().init();
-
-				target.addSection(section);
-
+				
+				ConsolFactory.eINSTANCE.createAdvanceDirectivesSection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentAdvanceDirectivesSection(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
@@ -246,7 +281,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentAdvanceDirectivesSectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -254,10 +289,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateContinuityOfCareDocumentAllergiesSection() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentAllergiesSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentAllergiesSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
 			"validateContinuityOfCareDocumentAllergiesSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_ALLERGIES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_ALLERGIES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
@@ -267,19 +302,55 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* AllergiesSection */
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+			
+				
+				/* AllergiesSection */ 
 				AllergiesSection section =
-
-				ConsolFactory.eINSTANCE.createAllergiesSection().init();
-
-				target.addSection(section);
-
+				
+				ConsolFactory.eINSTANCE.createAllergiesSection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentAllergiesSection(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
@@ -287,7 +358,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentAllergiesSectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -295,10 +366,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateContinuityOfCareDocumentEncountersSection() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentEncountersSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentEncountersSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
 			"validateContinuityOfCareDocumentEncountersSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_ENCOUNTERS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_ENCOUNTERS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
@@ -308,19 +379,55 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* EncountersSection */
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+			
+				
+				/* EncountersSection */ 
 				EncountersSection section =
-
-				ConsolFactory.eINSTANCE.createEncountersSection().init();
-
-				target.addSection(section);
-
+				
+				ConsolFactory.eINSTANCE.createEncountersSection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentEncountersSection(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
@@ -328,7 +435,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentEncountersSectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -336,10 +443,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateContinuityOfCareDocumentPayersSection() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentPayersSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentPayersSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
 			"validateContinuityOfCareDocumentPayersSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_PAYERS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_PAYERS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
@@ -349,19 +456,55 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* PayersSection */
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+			
+				
+				/* PayersSection */ 
 				PayersSection section =
-
-				ConsolFactory.eINSTANCE.createPayersSection().init();
-
-				target.addSection(section);
-
+				
+				ConsolFactory.eINSTANCE.createPayersSection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentPayersSection(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
@@ -369,7 +512,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentPayersSectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -377,10 +520,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateContinuityOfCareDocumentMedicationsSection() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentMedicationsSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentMedicationsSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
 			"validateContinuityOfCareDocumentMedicationsSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_MEDICATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_MEDICATIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
@@ -390,19 +533,55 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* MedicationsSection */
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+			
+				
+				/* MedicationsSection */ 
 				MedicationsSection section =
-
-				ConsolFactory.eINSTANCE.createMedicationsSection().init();
-
-				target.addSection(section);
-
+				
+				ConsolFactory.eINSTANCE.createMedicationsSection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentMedicationsSection(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
@@ -410,7 +589,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentMedicationsSectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -418,10 +597,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateContinuityOfCareDocumentPlanOfCareSection() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentPlanOfCareSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentPlanOfCareSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
 			"validateContinuityOfCareDocumentPlanOfCareSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
@@ -431,19 +610,55 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* PlanOfCareSection */
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+			
+				
+				/* PlanOfCareSection */ 
 				PlanOfCareSection section =
-
-				ConsolFactory.eINSTANCE.createPlanOfCareSection().init();
-
-				target.addSection(section);
-
+				
+				ConsolFactory.eINSTANCE.createPlanOfCareSection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentPlanOfCareSection(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
@@ -451,7 +666,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentPlanOfCareSectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -459,10 +674,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateContinuityOfCareDocumentProceduresSection() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentProceduresSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentProceduresSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
 			"validateContinuityOfCareDocumentProceduresSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_PROCEDURES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_PROCEDURES_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
@@ -472,19 +687,55 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* ProceduresSection */
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+			
+				
+				/* ProceduresSection */ 
 				ProceduresSection section =
-
-				ConsolFactory.eINSTANCE.createProceduresSection().init();
-
-				target.addSection(section);
-
+				
+				ConsolFactory.eINSTANCE.createProceduresSection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentProceduresSection(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
@@ -492,7 +743,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentProceduresSectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -500,10 +751,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateContinuityOfCareDocumentFamilyHistorySection() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentFamilyHistorySectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentFamilyHistorySectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
 			"validateContinuityOfCareDocumentFamilyHistorySection",
-			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_FAMILY_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_FAMILY_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
@@ -513,19 +764,55 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* FamilyHistorySection */
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+			
+				
+				/* FamilyHistorySection */ 
 				FamilyHistorySection section =
-
-				ConsolFactory.eINSTANCE.createFamilyHistorySection().init();
-
-				target.addSection(section);
-
+				
+				ConsolFactory.eINSTANCE.createFamilyHistorySection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentFamilyHistorySection(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
@@ -533,7 +820,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentFamilyHistorySectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -541,10 +828,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateContinuityOfCareDocumentSocialHistorySection() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentSocialHistorySectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentSocialHistorySectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
 			"validateContinuityOfCareDocumentSocialHistorySection",
-			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
@@ -554,19 +841,55 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* SocialHistorySection */
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+			
+				
+				/* SocialHistorySection */ 
 				SocialHistorySection section =
-
-				ConsolFactory.eINSTANCE.createSocialHistorySection().init();
-
-				target.addSection(section);
-
+				
+				ConsolFactory.eINSTANCE.createSocialHistorySection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentSocialHistorySection(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
@@ -574,7 +897,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentSocialHistorySectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -582,10 +905,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateContinuityOfCareDocumentVitalSignsSectionEntriesOptional() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentVitalSignsSectionEntriesOptionalTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentVitalSignsSectionEntriesOptionalTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
 			"validateContinuityOfCareDocumentVitalSignsSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_VITAL_SIGNS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_VITAL_SIGNS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
@@ -595,19 +918,55 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* VitalSignsSectionEntriesOptional */
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+			
+				
+				/* VitalSignsSectionEntriesOptional */ 
 				VitalSignsSectionEntriesOptional section =
-
-				ConsolFactory.eINSTANCE.createVitalSignsSectionEntriesOptional().init();
-
-				target.addSection(section);
-
+				
+				ConsolFactory.eINSTANCE.createVitalSignsSectionEntriesOptional().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentVitalSignsSectionEntriesOptional(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
@@ -615,7 +974,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentVitalSignsSectionEntriesOptionalTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -1190,10 +1549,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateContinuityOfCareDocumentResultsSection() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentResultsSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentResultsSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
 			"validateContinuityOfCareDocumentResultsSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_RESULTS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_RESULTS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
@@ -1203,19 +1562,55 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* ResultsSection */
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+			
+				
+				/* ResultsSection */ 
 				ResultsSection section =
-
-				ConsolFactory.eINSTANCE.createResultsSection().init();
-
-				target.addSection(section);
-
+				
+				ConsolFactory.eINSTANCE.createResultsSection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentResultsSection(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
@@ -1223,7 +1618,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentResultsSectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -1231,10 +1626,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateContinuityOfCareDocumentMedicalEquipmentSection() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentMedicalEquipmentSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentMedicalEquipmentSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
 			"validateContinuityOfCareDocumentMedicalEquipmentSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_MEDICAL_EQUIPMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_MEDICAL_EQUIPMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
@@ -1244,19 +1639,55 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* MedicalEquipmentSection */
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+			
+				
+				/* MedicalEquipmentSection */ 
 				MedicalEquipmentSection section =
-
-				ConsolFactory.eINSTANCE.createMedicalEquipmentSection().init();
-
-				target.addSection(section);
-
+				
+				ConsolFactory.eINSTANCE.createMedicalEquipmentSection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentMedicalEquipmentSection(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
@@ -1264,7 +1695,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentMedicalEquipmentSectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -1272,10 +1703,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateContinuityOfCareDocumentFunctionalStatusSection() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentFunctionalStatusSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentFunctionalStatusSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
 			"validateContinuityOfCareDocumentFunctionalStatusSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_FUNCTIONAL_STATUS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_FUNCTIONAL_STATUS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
@@ -1285,19 +1716,55 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* FunctionalStatusSection */
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+			
+				
+				/* FunctionalStatusSection */ 
 				FunctionalStatusSection section =
-
-				ConsolFactory.eINSTANCE.createFunctionalStatusSection().init();
-
-				target.addSection(section);
-
+				
+				ConsolFactory.eINSTANCE.createFunctionalStatusSection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentFunctionalStatusSection(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
@@ -1305,7 +1772,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentFunctionalStatusSectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -1313,10 +1780,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateContinuityOfCareDocumentImmunizationsSectionEntriesOptional() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentImmunizationsSectionEntriesOptionalTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentImmunizationsSectionEntriesOptionalTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
 			"validateContinuityOfCareDocumentImmunizationsSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_IMMUNIZATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_IMMUNIZATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
@@ -1326,19 +1793,55 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* ImmunizationsSectionEntriesOptional */
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+			
+				
+				/* ImmunizationsSectionEntriesOptional */ 
 				ImmunizationsSectionEntriesOptional section =
-
-				ConsolFactory.eINSTANCE.createImmunizationsSectionEntriesOptional().init();
-
-				target.addSection(section);
-
+				
+				ConsolFactory.eINSTANCE.createImmunizationsSectionEntriesOptional().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentImmunizationsSectionEntriesOptional(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
@@ -1346,7 +1849,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentImmunizationsSectionEntriesOptionalTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -1354,10 +1857,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateContinuityOfCareDocumentProblemSection() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentProblemSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentProblemSectionTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
 			"validateContinuityOfCareDocumentProblemSection",
-			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_PROBLEM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_PROBLEM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
@@ -1367,19 +1870,55 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
-				/* ProblemSection */
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+			
+				
+				/* ProblemSection */ 
 				ProblemSection section =
-
-				ConsolFactory.eINSTANCE.createProblemSection().init();
-
-				target.addSection(section);
-
+				
+				ConsolFactory.eINSTANCE.createProblemSection().init(); 
+					
+			
+			target.addSection(section);
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentProblemSection(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
@@ -1387,7 +1926,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentProblemSectionTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -1396,10 +1935,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	@Test
 	public void testGetAdvanceDirectivesSection() {
 
-		ContinuityOfCareDocument target = objectFactory.create();
-		target.getAdvanceDirectivesSection();
 
-	}
+ContinuityOfCareDocument target = objectFactory.create();
+target.getAdvanceDirectivesSection();
+
+
+
+}
 
 	/**
 	*
@@ -1408,10 +1950,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	@Test
 	public void testGetAllergiesSection() {
 
-		ContinuityOfCareDocument target = objectFactory.create();
-		target.getAllergiesSection();
 
-	}
+ContinuityOfCareDocument target = objectFactory.create();
+target.getAllergiesSection();
+
+
+
+}
 
 	/**
 	*
@@ -1420,10 +1965,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	@Test
 	public void testGetEncountersSection() {
 
-		ContinuityOfCareDocument target = objectFactory.create();
-		target.getEncountersSection();
 
-	}
+ContinuityOfCareDocument target = objectFactory.create();
+target.getEncountersSection();
+
+
+
+}
 
 	/**
 	*
@@ -1432,10 +1980,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	@Test
 	public void testGetPayersSection() {
 
-		ContinuityOfCareDocument target = objectFactory.create();
-		target.getPayersSection();
 
-	}
+ContinuityOfCareDocument target = objectFactory.create();
+target.getPayersSection();
+
+
+
+}
 
 	/**
 	*
@@ -1444,10 +1995,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	@Test
 	public void testGetMedicationsSection() {
 
-		ContinuityOfCareDocument target = objectFactory.create();
-		target.getMedicationsSection();
 
-	}
+ContinuityOfCareDocument target = objectFactory.create();
+target.getMedicationsSection();
+
+
+
+}
 
 	/**
 	*
@@ -1456,10 +2010,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	@Test
 	public void testGetPlanOfCareSection() {
 
-		ContinuityOfCareDocument target = objectFactory.create();
-		target.getPlanOfCareSection();
 
-	}
+ContinuityOfCareDocument target = objectFactory.create();
+target.getPlanOfCareSection();
+
+
+
+}
 
 	/**
 	*
@@ -1468,10 +2025,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	@Test
 	public void testGetProceduresSection() {
 
-		ContinuityOfCareDocument target = objectFactory.create();
-		target.getProceduresSection();
 
-	}
+ContinuityOfCareDocument target = objectFactory.create();
+target.getProceduresSection();
+
+
+
+}
 
 	/**
 	*
@@ -1480,10 +2040,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	@Test
 	public void testGetFamilyHistorySection() {
 
-		ContinuityOfCareDocument target = objectFactory.create();
-		target.getFamilyHistorySection();
 
-	}
+ContinuityOfCareDocument target = objectFactory.create();
+target.getFamilyHistorySection();
+
+
+
+}
 
 	/**
 	*
@@ -1492,10 +2055,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	@Test
 	public void testGetSocialHistorySection() {
 
-		ContinuityOfCareDocument target = objectFactory.create();
-		target.getSocialHistorySection();
 
-	}
+ContinuityOfCareDocument target = objectFactory.create();
+target.getSocialHistorySection();
+
+
+
+}
 
 	/**
 	*
@@ -1504,10 +2070,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	@Test
 	public void testGetVitalSignsSectionEntriesOptional() {
 
-		ContinuityOfCareDocument target = objectFactory.create();
-		target.getVitalSignsSectionEntriesOptional();
 
-	}
+ContinuityOfCareDocument target = objectFactory.create();
+target.getVitalSignsSectionEntriesOptional();
+
+
+
+}
 
 	/**
 	*
@@ -1516,10 +2085,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	@Test
 	public void testGetResultsSection() {
 
-		ContinuityOfCareDocument target = objectFactory.create();
-		target.getResultsSection();
 
-	}
+ContinuityOfCareDocument target = objectFactory.create();
+target.getResultsSection();
+
+
+
+}
 
 	/**
 	*
@@ -1528,10 +2100,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	@Test
 	public void testGetMedicalEquipmentSection() {
 
-		ContinuityOfCareDocument target = objectFactory.create();
-		target.getMedicalEquipmentSection();
 
-	}
+ContinuityOfCareDocument target = objectFactory.create();
+target.getMedicalEquipmentSection();
+
+
+
+}
 
 	/**
 	*
@@ -1540,10 +2115,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	@Test
 	public void testGetFunctionalStatusSection() {
 
-		ContinuityOfCareDocument target = objectFactory.create();
-		target.getFunctionalStatusSection();
 
-	}
+ContinuityOfCareDocument target = objectFactory.create();
+target.getFunctionalStatusSection();
+
+
+
+}
 
 	/**
 	*
@@ -1552,10 +2130,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	@Test
 	public void testGetImmunizationsSectionEntriesOptional() {
 
-		ContinuityOfCareDocument target = objectFactory.create();
-		target.getImmunizationsSectionEntriesOptional();
 
-	}
+ContinuityOfCareDocument target = objectFactory.create();
+target.getImmunizationsSectionEntriesOptional();
+
+
+
+}
 
 	/**
 	*
@@ -1564,44 +2145,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemSection() {
 
-		ContinuityOfCareDocument target = objectFactory.create();
-		target.getProblemSection();
 
-	}
+ContinuityOfCareDocument target = objectFactory.create();
+target.getProblemSection();
 
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateGeneralHeaderConstraintsTemplateId() {
-		OperationsTestCase<ContinuityOfCareDocument> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
-			"validateGeneralHeaderConstraintsTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
 
-			@Override
-			protected void updateToFail(ContinuityOfCareDocument target) {
 
-			}
-
-			@Override
-			protected void updateToPass(ContinuityOfCareDocument target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ContinuityOfCareDocumentOperations.validateGeneralHeaderConstraintsTemplateId(
-					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsTemplateIdTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -1609,10 +2159,10 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsCode() {
-		OperationsTestCase<ContinuityOfCareDocument> validateGeneralHeaderConstraintsCodeTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			OperationsTestCase<ContinuityOfCareDocument> validateGeneralHeaderConstraintsCodeTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
 			"validateGeneralHeaderConstraintsCode",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(ContinuityOfCareDocument target) {
@@ -1622,12 +2172,46 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ContinuityOfCareDocument target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return ContinuityOfCareDocumentOperations.validateGeneralHeaderConstraintsCode(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
@@ -1635,7 +2219,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -1690,8 +2274,8 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -1699,7 +2283,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

@@ -17,6 +17,7 @@ import org.openhealthtools.mdht.uml.cda.consol.operations.AllergyObservationPlay
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 
 /**
  * <!-- begin-user-doc -->
@@ -116,10 +117,10 @@ public class AllergyObservationPlayingEntityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAllergyObservationPlayingEntityClassCode() {
-		OperationsTestCase<AllergyObservationPlayingEntity> validateAllergyObservationPlayingEntityClassCodeTestCase = new OperationsTestCase<AllergyObservationPlayingEntity>(
+			OperationsTestCase<AllergyObservationPlayingEntity> validateAllergyObservationPlayingEntityClassCodeTestCase = new OperationsTestCase<AllergyObservationPlayingEntity>(
 			"validateAllergyObservationPlayingEntityClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_OBSERVATION_PLAYING_ENTITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_OBSERVATION_PLAYING_ENTITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(AllergyObservationPlayingEntity target) {
@@ -129,12 +130,46 @@ public class AllergyObservationPlayingEntityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyObservationPlayingEntity target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
+			
+			
+			
 				return AllergyObservationPlayingEntityOperations.validateAllergyObservationPlayingEntityClassCode(
 					(AllergyObservationPlayingEntity) objectToTest, diagnostician, map);
 			}
@@ -142,7 +177,7 @@ public class AllergyObservationPlayingEntityTest extends CDAValidationTest {
 		};
 
 		validateAllergyObservationPlayingEntityClassCodeTestCase.doValidationTest();
-	}
+}
 
 	/**
 	*
@@ -231,8 +266,8 @@ public class AllergyObservationPlayingEntityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -240,7 +275,7 @@ public class AllergyObservationPlayingEntityTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 
