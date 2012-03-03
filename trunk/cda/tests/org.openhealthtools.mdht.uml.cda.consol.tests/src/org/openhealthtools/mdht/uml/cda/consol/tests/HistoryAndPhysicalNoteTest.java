@@ -290,10 +290,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteTemplateId() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteTemplateIdTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteTemplateIdTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -303,46 +303,12 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteTemplateId(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -350,7 +316,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -426,10 +392,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteAllergiesSectionEntriesOptional() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteAllergiesSectionEntriesOptionalTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteAllergiesSectionEntriesOptionalTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteAllergiesSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_ALLERGIES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_ALLERGIES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -439,55 +405,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* AllergiesSectionEntriesOptional */ 
+				/* AllergiesSectionEntriesOptional */
 				AllergiesSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createAllergiesSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createAllergiesSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteAllergiesSectionEntriesOptional(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -495,7 +425,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteAllergiesSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -503,10 +433,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteAssessmentSection() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteAssessmentSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteAssessmentSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteAssessmentSection",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_ASSESSMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_ASSESSMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -516,55 +446,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* AssessmentSection */ 
+				/* AssessmentSection */
 				AssessmentSection section =
-				
-				ConsolFactory.eINSTANCE.createAssessmentSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createAssessmentSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteAssessmentSection(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -572,7 +466,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteAssessmentSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -580,10 +474,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNotePlanOfCareSection() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNotePlanOfCareSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNotePlanOfCareSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNotePlanOfCareSection",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -593,55 +487,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* PlanOfCareSection */ 
+				/* PlanOfCareSection */
 				PlanOfCareSection section =
-				
-				ConsolFactory.eINSTANCE.createPlanOfCareSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createPlanOfCareSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNotePlanOfCareSection(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -649,7 +507,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNotePlanOfCareSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -657,10 +515,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteAssessmentAndPlanSection() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteAssessmentAndPlanSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteAssessmentAndPlanSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteAssessmentAndPlanSection",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_ASSESSMENT_AND_PLAN_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_ASSESSMENT_AND_PLAN_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -670,55 +528,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* AssessmentAndPlanSection */ 
+				/* AssessmentAndPlanSection */
 				AssessmentAndPlanSection section =
-				
-				ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteAssessmentAndPlanSection(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -726,7 +548,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteAssessmentAndPlanSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -734,10 +556,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteChiefComplaintSection() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteChiefComplaintSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteChiefComplaintSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteChiefComplaintSection",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_CHIEF_COMPLAINT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_CHIEF_COMPLAINT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -747,55 +569,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ChiefComplaintSection */ 
+				/* ChiefComplaintSection */
 				ChiefComplaintSection section =
-				
-				ConsolFactory.eINSTANCE.createChiefComplaintSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createChiefComplaintSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteChiefComplaintSection(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -803,7 +589,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteChiefComplaintSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -811,10 +597,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteChiefComplaintAndReasonForVisitSection() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteChiefComplaintAndReasonForVisitSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteChiefComplaintAndReasonForVisitSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteChiefComplaintAndReasonForVisitSection",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -824,55 +610,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ChiefComplaintAndReasonForVisitSection */ 
+				/* ChiefComplaintAndReasonForVisitSection */
 				ChiefComplaintAndReasonForVisitSection section =
-				
-				ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteChiefComplaintAndReasonForVisitSection(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -880,7 +630,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteChiefComplaintAndReasonForVisitSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -888,10 +638,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteFamilyHistorySection() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteFamilyHistorySectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteFamilyHistorySectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteFamilyHistorySection",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_FAMILY_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_FAMILY_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -901,55 +651,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* FamilyHistorySection */ 
+				/* FamilyHistorySection */
 				FamilyHistorySection section =
-				
-				ConsolFactory.eINSTANCE.createFamilyHistorySection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createFamilyHistorySection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteFamilyHistorySection(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -957,7 +671,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteFamilyHistorySectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -965,10 +679,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteGeneralStatusSection() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteGeneralStatusSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteGeneralStatusSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteGeneralStatusSection",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_GENERAL_STATUS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_GENERAL_STATUS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -978,55 +692,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* GeneralStatusSection */ 
+				/* GeneralStatusSection */
 				GeneralStatusSection section =
-				
-				ConsolFactory.eINSTANCE.createGeneralStatusSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createGeneralStatusSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteGeneralStatusSection(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -1034,7 +712,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteGeneralStatusSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1042,10 +720,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteHistoryOfPastIllnessSection() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteHistoryOfPastIllnessSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteHistoryOfPastIllnessSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteHistoryOfPastIllnessSection",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_HISTORY_OF_PAST_ILLNESS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_HISTORY_OF_PAST_ILLNESS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -1055,55 +733,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* HistoryOfPastIllnessSection */ 
+				/* HistoryOfPastIllnessSection */
 				HistoryOfPastIllnessSection section =
-				
-				ConsolFactory.eINSTANCE.createHistoryOfPastIllnessSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createHistoryOfPastIllnessSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteHistoryOfPastIllnessSection(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -1111,7 +753,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteHistoryOfPastIllnessSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1119,10 +761,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteMedicationsSectionEntriesOptional() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteMedicationsSectionEntriesOptionalTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteMedicationsSectionEntriesOptionalTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteMedicationsSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -1132,55 +774,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* MedicationsSectionEntriesOptional */ 
+				/* MedicationsSectionEntriesOptional */
 				MedicationsSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createMedicationsSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createMedicationsSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteMedicationsSectionEntriesOptional(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -1188,7 +794,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteMedicationsSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1196,10 +802,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNotePhysicalExamSection() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNotePhysicalExamSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNotePhysicalExamSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNotePhysicalExamSection",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_PHYSICAL_EXAM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_PHYSICAL_EXAM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -1209,55 +815,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* PhysicalExamSection */ 
+				/* PhysicalExamSection */
 				PhysicalExamSection section =
-				
-				ConsolFactory.eINSTANCE.createPhysicalExamSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createPhysicalExamSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNotePhysicalExamSection(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -1265,7 +835,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNotePhysicalExamSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1273,10 +843,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteReasonForVisitSection() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteReasonForVisitSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteReasonForVisitSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteReasonForVisitSection",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_REASON_FOR_VISIT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -1286,55 +856,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ReasonForVisitSection */ 
+				/* ReasonForVisitSection */
 				ReasonForVisitSection section =
-				
-				ConsolFactory.eINSTANCE.createReasonForVisitSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createReasonForVisitSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteReasonForVisitSection(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -1342,7 +876,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteReasonForVisitSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1350,10 +884,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteResultsSectionEntriesOptional() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteResultsSectionEntriesOptionalTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteResultsSectionEntriesOptionalTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteResultsSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_RESULTS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_RESULTS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -1363,55 +897,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ResultsSectionEntriesOptional */ 
+				/* ResultsSectionEntriesOptional */
 				ResultsSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createResultsSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createResultsSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteResultsSectionEntriesOptional(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -1419,7 +917,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteResultsSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1427,10 +925,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteReviewOfSystemsSection() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteReviewOfSystemsSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteReviewOfSystemsSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteReviewOfSystemsSection",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_REVIEW_OF_SYSTEMS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_REVIEW_OF_SYSTEMS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -1440,55 +938,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ReviewOfSystemsSection */ 
+				/* ReviewOfSystemsSection */
 				ReviewOfSystemsSection section =
-				
-				ConsolFactory.eINSTANCE.createReviewOfSystemsSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createReviewOfSystemsSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteReviewOfSystemsSection(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -1496,7 +958,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteReviewOfSystemsSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1504,10 +966,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteSocialHistorySection() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteSocialHistorySectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteSocialHistorySectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteSocialHistorySection",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -1517,55 +979,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* SocialHistorySection */ 
+				/* SocialHistorySection */
 				SocialHistorySection section =
-				
-				ConsolFactory.eINSTANCE.createSocialHistorySection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createSocialHistorySection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteSocialHistorySection(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -1573,7 +999,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteSocialHistorySectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1581,10 +1007,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteHistoryOfPresentIllnessSection() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteHistoryOfPresentIllnessSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteHistoryOfPresentIllnessSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteHistoryOfPresentIllnessSection",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_HISTORY_OF_PRESENT_ILLNESS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_HISTORY_OF_PRESENT_ILLNESS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -1594,55 +1020,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* HistoryOfPresentIllnessSection */ 
+				/* HistoryOfPresentIllnessSection */
 				HistoryOfPresentIllnessSection section =
-				
-				ConsolFactory.eINSTANCE.createHistoryOfPresentIllnessSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createHistoryOfPresentIllnessSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteHistoryOfPresentIllnessSection(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -1650,7 +1040,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteHistoryOfPresentIllnessSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1658,10 +1048,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteImmunizationsSectionEntriesOptional() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteImmunizationsSectionEntriesOptionalTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteImmunizationsSectionEntriesOptionalTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteImmunizationsSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_IMMUNIZATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_IMMUNIZATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -1671,55 +1061,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ImmunizationsSectionEntriesOptional */ 
+				/* ImmunizationsSectionEntriesOptional */
 				ImmunizationsSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createImmunizationsSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createImmunizationsSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteImmunizationsSectionEntriesOptional(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -1727,7 +1081,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteImmunizationsSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1735,10 +1089,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteProblemSectionEntriesOptional() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteProblemSectionEntriesOptionalTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteProblemSectionEntriesOptionalTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteProblemSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_PROBLEM_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_PROBLEM_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -1748,55 +1102,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ProblemSectionEntriesOptional */ 
+				/* ProblemSectionEntriesOptional */
 				ProblemSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createProblemSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createProblemSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteProblemSectionEntriesOptional(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -1804,7 +1122,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteProblemSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1812,10 +1130,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteProceduresSectionEntriesOptional() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteProceduresSectionEntriesOptionalTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteProceduresSectionEntriesOptionalTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteProceduresSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_PROCEDURES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_PROCEDURES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -1825,55 +1143,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ProceduresSectionEntriesOptional */ 
+				/* ProceduresSectionEntriesOptional */
 				ProceduresSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createProceduresSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createProceduresSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteProceduresSectionEntriesOptional(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -1881,7 +1163,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteProceduresSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1889,10 +1171,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHistoryAndPhysicalNoteVitalSignsSectionEntriesOptional() {
-			OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteVitalSignsSectionEntriesOptionalTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteVitalSignsSectionEntriesOptionalTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
 			"validateHistoryAndPhysicalNoteVitalSignsSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_VITAL_SIGNS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_VITAL_SIGNS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(HistoryAndPhysicalNote target) {
@@ -1902,55 +1184,19 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HistoryAndPhysicalNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* VitalSignsSectionEntriesOptional */ 
+				/* VitalSignsSectionEntriesOptional */
 				VitalSignsSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createVitalSignsSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createVitalSignsSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteVitalSignsSectionEntriesOptional(
 					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
 			}
@@ -1958,7 +1204,7 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteVitalSignsSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -2425,13 +1671,10 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 	@Test
 	public void testGetAllergiesSectionEntriesOptional() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getAllergiesSectionEntriesOptional();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getAllergiesSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2440,13 +1683,10 @@ target.getAllergiesSectionEntriesOptional();
 	@Test
 	public void testGetAssessmentSection() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getAssessmentSection();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getAssessmentSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2455,13 +1695,10 @@ target.getAssessmentSection();
 	@Test
 	public void testGetPlanOfCareSection() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getPlanOfCareSection();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getPlanOfCareSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2470,13 +1707,10 @@ target.getPlanOfCareSection();
 	@Test
 	public void testGetAssessmentAndPlanSection() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getAssessmentAndPlanSection();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getAssessmentAndPlanSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2485,13 +1719,10 @@ target.getAssessmentAndPlanSection();
 	@Test
 	public void testGetChiefComplaintSection() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getChiefComplaintSection();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getChiefComplaintSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2500,13 +1731,10 @@ target.getChiefComplaintSection();
 	@Test
 	public void testGetChiefComplaintAndReasonForVisitSection() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getChiefComplaintAndReasonForVisitSection();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getChiefComplaintAndReasonForVisitSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2515,13 +1743,10 @@ target.getChiefComplaintAndReasonForVisitSection();
 	@Test
 	public void testGetFamilyHistorySection() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getFamilyHistorySection();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getFamilyHistorySection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2530,13 +1755,10 @@ target.getFamilyHistorySection();
 	@Test
 	public void testGetGeneralStatusSection() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getGeneralStatusSection();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getGeneralStatusSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2545,13 +1767,10 @@ target.getGeneralStatusSection();
 	@Test
 	public void testGetHistoryOfPastIllnessSection() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getHistoryOfPastIllnessSection();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getHistoryOfPastIllnessSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2560,13 +1779,10 @@ target.getHistoryOfPastIllnessSection();
 	@Test
 	public void testGetMedicationsSectionEntriesOptional() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getMedicationsSectionEntriesOptional();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getMedicationsSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2575,13 +1791,10 @@ target.getMedicationsSectionEntriesOptional();
 	@Test
 	public void testGetPhysicalExamSection() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getPhysicalExamSection();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getPhysicalExamSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2590,13 +1803,10 @@ target.getPhysicalExamSection();
 	@Test
 	public void testGetReasonForVisitSection() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getReasonForVisitSection();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getReasonForVisitSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2605,13 +1815,10 @@ target.getReasonForVisitSection();
 	@Test
 	public void testGetResultsSectionEntriesOptional() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getResultsSectionEntriesOptional();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getResultsSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2620,13 +1827,10 @@ target.getResultsSectionEntriesOptional();
 	@Test
 	public void testGetReviewOfSystemsSection() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getReviewOfSystemsSection();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getReviewOfSystemsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2635,13 +1839,10 @@ target.getReviewOfSystemsSection();
 	@Test
 	public void testGetSocialHistorySection() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getSocialHistorySection();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getSocialHistorySection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2650,13 +1851,10 @@ target.getSocialHistorySection();
 	@Test
 	public void testGetHistoryOfPresentIllnessSection() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getHistoryOfPresentIllnessSection();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getHistoryOfPresentIllnessSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2665,13 +1863,10 @@ target.getHistoryOfPresentIllnessSection();
 	@Test
 	public void testGetImmunizationsSectionEntriesOptional() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getImmunizationsSectionEntriesOptional();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getImmunizationsSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2680,13 +1875,10 @@ target.getImmunizationsSectionEntriesOptional();
 	@Test
 	public void testGetProblemSectionEntriesOptional() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getProblemSectionEntriesOptional();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getProblemSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2695,13 +1887,10 @@ target.getProblemSectionEntriesOptional();
 	@Test
 	public void testGetProceduresSectionEntriesOptional() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getProceduresSectionEntriesOptional();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getProceduresSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2710,13 +1899,10 @@ target.getProceduresSectionEntriesOptional();
 	@Test
 	public void testGetVitalSignsSectionEntriesOptional() {
 
+		HistoryAndPhysicalNote target = objectFactory.create();
+		target.getVitalSignsSectionEntriesOptional();
 
-HistoryAndPhysicalNote target = objectFactory.create();
-target.getVitalSignsSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2806,8 +1992,8 @@ target.getVitalSignsSectionEntriesOptional();
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -2815,7 +2001,7 @@ target.getVitalSignsSectionEntriesOptional();
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

@@ -48,10 +48,10 @@ public class PlannedProcedureSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePlannedProcedureSectionTemplateId() {
-			OperationsTestCase<PlannedProcedureSection> validatePlannedProcedureSectionTemplateIdTestCase = new OperationsTestCase<PlannedProcedureSection>(
+		OperationsTestCase<PlannedProcedureSection> validatePlannedProcedureSectionTemplateIdTestCase = new OperationsTestCase<PlannedProcedureSection>(
 			"validatePlannedProcedureSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PLANNED_PROCEDURE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PLANNED_PROCEDURE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PlannedProcedureSection target) {
@@ -61,46 +61,12 @@ public class PlannedProcedureSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlannedProcedureSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PlannedProcedureSectionOperations.validatePlannedProcedureSectionTemplateId(
 					(PlannedProcedureSection) objectToTest, diagnostician, map);
 			}
@@ -108,7 +74,7 @@ public class PlannedProcedureSectionTest extends CDAValidationTest {
 		};
 
 		validatePlannedProcedureSectionTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -116,10 +82,10 @@ public class PlannedProcedureSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePlannedProcedureSectionCode() {
-			OperationsTestCase<PlannedProcedureSection> validatePlannedProcedureSectionCodeTestCase = new OperationsTestCase<PlannedProcedureSection>(
+		OperationsTestCase<PlannedProcedureSection> validatePlannedProcedureSectionCodeTestCase = new OperationsTestCase<PlannedProcedureSection>(
 			"validatePlannedProcedureSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_PLANNED_PROCEDURE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PLANNED_PROCEDURE_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PlannedProcedureSection target) {
@@ -129,46 +95,12 @@ public class PlannedProcedureSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlannedProcedureSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PlannedProcedureSectionOperations.validatePlannedProcedureSectionCode(
 					(PlannedProcedureSection) objectToTest, diagnostician, map);
 			}
@@ -176,7 +108,7 @@ public class PlannedProcedureSectionTest extends CDAValidationTest {
 		};
 
 		validatePlannedProcedureSectionCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -184,10 +116,10 @@ public class PlannedProcedureSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePlannedProcedureSectionText() {
-			OperationsTestCase<PlannedProcedureSection> validatePlannedProcedureSectionTextTestCase = new OperationsTestCase<PlannedProcedureSection>(
+		OperationsTestCase<PlannedProcedureSection> validatePlannedProcedureSectionTextTestCase = new OperationsTestCase<PlannedProcedureSection>(
 			"validatePlannedProcedureSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_PLANNED_PROCEDURE_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PLANNED_PROCEDURE_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PlannedProcedureSection target) {
@@ -197,49 +129,15 @@ public class PlannedProcedureSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlannedProcedureSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
 				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text );
-			
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+				target.setText(text);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PlannedProcedureSectionOperations.validatePlannedProcedureSectionText(
 					(PlannedProcedureSection) objectToTest, diagnostician, map);
 			}
@@ -247,7 +145,7 @@ public class PlannedProcedureSectionTest extends CDAValidationTest {
 		};
 
 		validatePlannedProcedureSectionTextTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -255,10 +153,10 @@ public class PlannedProcedureSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidatePlannedProcedureSectionTitle() {
-			OperationsTestCase<PlannedProcedureSection> validatePlannedProcedureSectionTitleTestCase = new OperationsTestCase<PlannedProcedureSection>(
+		OperationsTestCase<PlannedProcedureSection> validatePlannedProcedureSectionTitleTestCase = new OperationsTestCase<PlannedProcedureSection>(
 			"validatePlannedProcedureSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_PLANNED_PROCEDURE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PLANNED_PROCEDURE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(PlannedProcedureSection target) {
@@ -268,49 +166,15 @@ public class PlannedProcedureSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PlannedProcedureSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
 
-	
-		
-				ST  title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title );
-				
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return PlannedProcedureSectionOperations.validatePlannedProcedureSectionTitle(
 					(PlannedProcedureSection) objectToTest, diagnostician, map);
 			}
@@ -318,7 +182,7 @@ public class PlannedProcedureSectionTest extends CDAValidationTest {
 		};
 
 		validatePlannedProcedureSectionTitleTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -362,13 +226,10 @@ public class PlannedProcedureSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetPlanOfCareActivityProcedures() {
 
+		PlannedProcedureSection target = objectFactory.create();
+		target.getPlanOfCareActivityProcedures();
 
-PlannedProcedureSection target = objectFactory.create();
-target.getPlanOfCareActivityProcedures();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -423,8 +284,8 @@ target.getPlanOfCareActivityProcedures();
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -432,7 +293,7 @@ target.getPlanOfCareActivityProcedures();
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

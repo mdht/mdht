@@ -120,10 +120,10 @@ public class DrugVehicleTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDrugVehicleTemplateId() {
-			OperationsTestCase<DrugVehicle> validateDrugVehicleTemplateIdTestCase = new OperationsTestCase<DrugVehicle>(
+		OperationsTestCase<DrugVehicle> validateDrugVehicleTemplateIdTestCase = new OperationsTestCase<DrugVehicle>(
 			"validateDrugVehicleTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_DRUG_VEHICLE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DRUG_VEHICLE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DrugVehicle target) {
@@ -133,46 +133,12 @@ public class DrugVehicleTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DrugVehicle target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DrugVehicleOperations.validateDrugVehicleTemplateId(
 					(DrugVehicle) objectToTest, diagnostician, map);
 			}
@@ -180,7 +146,7 @@ public class DrugVehicleTest extends CDAValidationTest {
 		};
 
 		validateDrugVehicleTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -188,10 +154,10 @@ public class DrugVehicleTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDrugVehicleClassCode() {
-			OperationsTestCase<DrugVehicle> validateDrugVehicleClassCodeTestCase = new OperationsTestCase<DrugVehicle>(
+		OperationsTestCase<DrugVehicle> validateDrugVehicleClassCodeTestCase = new OperationsTestCase<DrugVehicle>(
 			"validateDrugVehicleClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_DRUG_VEHICLE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DRUG_VEHICLE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DrugVehicle target) {
@@ -201,46 +167,12 @@ public class DrugVehicleTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DrugVehicle target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return DrugVehicleOperations.validateDrugVehicleClassCode(
 					(DrugVehicle) objectToTest, diagnostician, map);
 			}
@@ -248,7 +180,7 @@ public class DrugVehicleTest extends CDAValidationTest {
 		};
 
 		validateDrugVehicleClassCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -256,10 +188,9 @@ public class DrugVehicleTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateDrugVehicleCode() {
-			OperationsTestCase<DrugVehicle> validateDrugVehicleCodeTestCase = new OperationsTestCase<DrugVehicle>(
+		OperationsTestCase<DrugVehicle> validateDrugVehicleCodeTestCase = new OperationsTestCase<DrugVehicle>(
 			"validateDrugVehicleCode",
-			operationsForOCL.getOCLValue("VALIDATE_DRUG_VEHICLE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_DRUG_VEHICLE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
 
 			@Override
 			protected void updateToFail(DrugVehicle target) {
@@ -269,54 +200,19 @@ public class DrugVehicleTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(DrugVehicle target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
-				return DrugVehicleOperations.validateDrugVehicleCode(
-					(DrugVehicle) objectToTest, diagnostician, map);
+
+				return DrugVehicleOperations.validateDrugVehicleCode((DrugVehicle) objectToTest, diagnostician, map);
 			}
 
 		};
 
 		validateDrugVehicleCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -405,8 +301,8 @@ public class DrugVehicleTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -414,7 +310,7 @@ public class DrugVehicleTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

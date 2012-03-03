@@ -46,10 +46,10 @@ public class ChiefComplaintAndReasonForVisitSectionTest extends CDAValidationTes
 	*/
 	@Test
 	public void testValidateChiefComplaintAndReasonForVisitSectionTemplateId() {
-			OperationsTestCase<ChiefComplaintAndReasonForVisitSection> validateChiefComplaintAndReasonForVisitSectionTemplateIdTestCase = new OperationsTestCase<ChiefComplaintAndReasonForVisitSection>(
+		OperationsTestCase<ChiefComplaintAndReasonForVisitSection> validateChiefComplaintAndReasonForVisitSectionTemplateIdTestCase = new OperationsTestCase<ChiefComplaintAndReasonForVisitSection>(
 			"validateChiefComplaintAndReasonForVisitSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ChiefComplaintAndReasonForVisitSection target) {
@@ -59,46 +59,12 @@ public class ChiefComplaintAndReasonForVisitSectionTest extends CDAValidationTes
 			@Override
 			protected void updateToPass(ChiefComplaintAndReasonForVisitSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ChiefComplaintAndReasonForVisitSectionOperations.validateChiefComplaintAndReasonForVisitSectionTemplateId(
 					(ChiefComplaintAndReasonForVisitSection) objectToTest, diagnostician, map);
 			}
@@ -106,7 +72,7 @@ public class ChiefComplaintAndReasonForVisitSectionTest extends CDAValidationTes
 		};
 
 		validateChiefComplaintAndReasonForVisitSectionTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -114,10 +80,10 @@ public class ChiefComplaintAndReasonForVisitSectionTest extends CDAValidationTes
 	*/
 	@Test
 	public void testValidateChiefComplaintAndReasonForVisitSectionCode() {
-			OperationsTestCase<ChiefComplaintAndReasonForVisitSection> validateChiefComplaintAndReasonForVisitSectionCodeTestCase = new OperationsTestCase<ChiefComplaintAndReasonForVisitSection>(
+		OperationsTestCase<ChiefComplaintAndReasonForVisitSection> validateChiefComplaintAndReasonForVisitSectionCodeTestCase = new OperationsTestCase<ChiefComplaintAndReasonForVisitSection>(
 			"validateChiefComplaintAndReasonForVisitSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ChiefComplaintAndReasonForVisitSection target) {
@@ -127,46 +93,12 @@ public class ChiefComplaintAndReasonForVisitSectionTest extends CDAValidationTes
 			@Override
 			protected void updateToPass(ChiefComplaintAndReasonForVisitSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ChiefComplaintAndReasonForVisitSectionOperations.validateChiefComplaintAndReasonForVisitSectionCode(
 					(ChiefComplaintAndReasonForVisitSection) objectToTest, diagnostician, map);
 			}
@@ -174,7 +106,7 @@ public class ChiefComplaintAndReasonForVisitSectionTest extends CDAValidationTes
 		};
 
 		validateChiefComplaintAndReasonForVisitSectionCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -182,10 +114,10 @@ public class ChiefComplaintAndReasonForVisitSectionTest extends CDAValidationTes
 	*/
 	@Test
 	public void testValidateChiefComplaintAndReasonForVisitSectionText() {
-			OperationsTestCase<ChiefComplaintAndReasonForVisitSection> validateChiefComplaintAndReasonForVisitSectionTextTestCase = new OperationsTestCase<ChiefComplaintAndReasonForVisitSection>(
+		OperationsTestCase<ChiefComplaintAndReasonForVisitSection> validateChiefComplaintAndReasonForVisitSectionTextTestCase = new OperationsTestCase<ChiefComplaintAndReasonForVisitSection>(
 			"validateChiefComplaintAndReasonForVisitSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ChiefComplaintAndReasonForVisitSection target) {
@@ -195,49 +127,15 @@ public class ChiefComplaintAndReasonForVisitSectionTest extends CDAValidationTes
 			@Override
 			protected void updateToPass(ChiefComplaintAndReasonForVisitSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
 				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text );
-			
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+				target.setText(text);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ChiefComplaintAndReasonForVisitSectionOperations.validateChiefComplaintAndReasonForVisitSectionText(
 					(ChiefComplaintAndReasonForVisitSection) objectToTest, diagnostician, map);
 			}
@@ -245,7 +143,7 @@ public class ChiefComplaintAndReasonForVisitSectionTest extends CDAValidationTes
 		};
 
 		validateChiefComplaintAndReasonForVisitSectionTextTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -253,10 +151,10 @@ public class ChiefComplaintAndReasonForVisitSectionTest extends CDAValidationTes
 	*/
 	@Test
 	public void testValidateChiefComplaintAndReasonForVisitSectionTitle() {
-			OperationsTestCase<ChiefComplaintAndReasonForVisitSection> validateChiefComplaintAndReasonForVisitSectionTitleTestCase = new OperationsTestCase<ChiefComplaintAndReasonForVisitSection>(
+		OperationsTestCase<ChiefComplaintAndReasonForVisitSection> validateChiefComplaintAndReasonForVisitSectionTitleTestCase = new OperationsTestCase<ChiefComplaintAndReasonForVisitSection>(
 			"validateChiefComplaintAndReasonForVisitSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ChiefComplaintAndReasonForVisitSection target) {
@@ -266,49 +164,15 @@ public class ChiefComplaintAndReasonForVisitSectionTest extends CDAValidationTes
 			@Override
 			protected void updateToPass(ChiefComplaintAndReasonForVisitSection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
 
-	
-		
-				ST  title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title );
-				
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ChiefComplaintAndReasonForVisitSectionOperations.validateChiefComplaintAndReasonForVisitSectionTitle(
 					(ChiefComplaintAndReasonForVisitSection) objectToTest, diagnostician, map);
 			}
@@ -316,7 +180,7 @@ public class ChiefComplaintAndReasonForVisitSectionTest extends CDAValidationTes
 		};
 
 		validateChiefComplaintAndReasonForVisitSectionTitleTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -371,8 +235,8 @@ public class ChiefComplaintAndReasonForVisitSectionTest extends CDAValidationTes
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -380,7 +244,7 @@ public class ChiefComplaintAndReasonForVisitSectionTest extends CDAValidationTes
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

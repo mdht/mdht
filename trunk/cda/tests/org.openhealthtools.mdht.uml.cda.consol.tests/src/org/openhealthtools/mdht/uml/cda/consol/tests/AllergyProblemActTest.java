@@ -17,7 +17,6 @@ import org.openhealthtools.mdht.uml.cda.consol.AllergyProblemAct;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.operations.AllergyProblemActOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -135,10 +134,10 @@ public class AllergyProblemActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAllergyProblemActTemplateId() {
-			OperationsTestCase<AllergyProblemAct> validateAllergyProblemActTemplateIdTestCase = new OperationsTestCase<AllergyProblemAct>(
+		OperationsTestCase<AllergyProblemAct> validateAllergyProblemActTemplateIdTestCase = new OperationsTestCase<AllergyProblemAct>(
 			"validateAllergyProblemActTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_PROBLEM_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AllergyProblemAct target) {
@@ -148,46 +147,12 @@ public class AllergyProblemActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyProblemAct target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return AllergyProblemActOperations.validateAllergyProblemActTemplateId(
 					(AllergyProblemAct) objectToTest, diagnostician, map);
 			}
@@ -195,7 +160,7 @@ public class AllergyProblemActTest extends CDAValidationTest {
 		};
 
 		validateAllergyProblemActTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -203,10 +168,10 @@ public class AllergyProblemActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAllergyProblemActClassCode() {
-			OperationsTestCase<AllergyProblemAct> validateAllergyProblemActClassCodeTestCase = new OperationsTestCase<AllergyProblemAct>(
+		OperationsTestCase<AllergyProblemAct> validateAllergyProblemActClassCodeTestCase = new OperationsTestCase<AllergyProblemAct>(
 			"validateAllergyProblemActClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_PROBLEM_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_PROBLEM_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AllergyProblemAct target) {
@@ -216,46 +181,12 @@ public class AllergyProblemActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyProblemAct target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return AllergyProblemActOperations.validateAllergyProblemActClassCode(
 					(AllergyProblemAct) objectToTest, diagnostician, map);
 			}
@@ -263,7 +194,7 @@ public class AllergyProblemActTest extends CDAValidationTest {
 		};
 
 		validateAllergyProblemActClassCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -271,10 +202,10 @@ public class AllergyProblemActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAllergyProblemActMoodCode() {
-			OperationsTestCase<AllergyProblemAct> validateAllergyProblemActMoodCodeTestCase = new OperationsTestCase<AllergyProblemAct>(
+		OperationsTestCase<AllergyProblemAct> validateAllergyProblemActMoodCodeTestCase = new OperationsTestCase<AllergyProblemAct>(
 			"validateAllergyProblemActMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_PROBLEM_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_PROBLEM_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AllergyProblemAct target) {
@@ -284,46 +215,12 @@ public class AllergyProblemActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyProblemAct target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return AllergyProblemActOperations.validateAllergyProblemActMoodCode(
 					(AllergyProblemAct) objectToTest, diagnostician, map);
 			}
@@ -331,7 +228,7 @@ public class AllergyProblemActTest extends CDAValidationTest {
 		};
 
 		validateAllergyProblemActMoodCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -445,10 +342,10 @@ public class AllergyProblemActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAllergyProblemActEffectiveTime() {
-			OperationsTestCase<AllergyProblemAct> validateAllergyProblemActEffectiveTimeTestCase = new OperationsTestCase<AllergyProblemAct>(
+		OperationsTestCase<AllergyProblemAct> validateAllergyProblemActEffectiveTimeTestCase = new OperationsTestCase<AllergyProblemAct>(
 			"validateAllergyProblemActEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_PROBLEM_ACT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_PROBLEM_ACT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AllergyProblemAct target) {
@@ -458,49 +355,15 @@ public class AllergyProblemActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyProblemAct target) {
 				target.init();
-				
-				
-					IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
-					target.setEffectiveTime(ts );								
-				
-				
-				
-				
 
-				
-				
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
 
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return AllergyProblemActOperations.validateAllergyProblemActEffectiveTime(
 					(AllergyProblemAct) objectToTest, diagnostician, map);
 			}
@@ -508,7 +371,7 @@ public class AllergyProblemActTest extends CDAValidationTest {
 		};
 
 		validateAllergyProblemActEffectiveTimeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -556,13 +419,10 @@ public class AllergyProblemActTest extends CDAValidationTest {
 	@Test
 	public void testGetAllergyObservations() {
 
+		AllergyProblemAct target = objectFactory.create();
+		target.getAllergyObservations();
 
-AllergyProblemAct target = objectFactory.create();
-target.getAllergyObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -617,8 +477,8 @@ target.getAllergyObservations();
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -626,7 +486,7 @@ target.getAllergyObservations();
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

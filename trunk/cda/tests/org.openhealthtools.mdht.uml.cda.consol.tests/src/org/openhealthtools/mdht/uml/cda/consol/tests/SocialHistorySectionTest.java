@@ -50,10 +50,10 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSocialHistorySectionTemplateId() {
-			OperationsTestCase<SocialHistorySection> validateSocialHistorySectionTemplateIdTestCase = new OperationsTestCase<SocialHistorySection>(
+		OperationsTestCase<SocialHistorySection> validateSocialHistorySectionTemplateIdTestCase = new OperationsTestCase<SocialHistorySection>(
 			"validateSocialHistorySectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SocialHistorySection target) {
@@ -63,46 +63,12 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistorySection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return SocialHistorySectionOperations.validateSocialHistorySectionTemplateId(
 					(SocialHistorySection) objectToTest, diagnostician, map);
 			}
@@ -110,7 +76,7 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 		};
 
 		validateSocialHistorySectionTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -118,10 +84,10 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSocialHistorySectionCode() {
-			OperationsTestCase<SocialHistorySection> validateSocialHistorySectionCodeTestCase = new OperationsTestCase<SocialHistorySection>(
+		OperationsTestCase<SocialHistorySection> validateSocialHistorySectionCodeTestCase = new OperationsTestCase<SocialHistorySection>(
 			"validateSocialHistorySectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SocialHistorySection target) {
@@ -131,46 +97,12 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistorySection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return SocialHistorySectionOperations.validateSocialHistorySectionCode(
 					(SocialHistorySection) objectToTest, diagnostician, map);
 			}
@@ -178,7 +110,7 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 		};
 
 		validateSocialHistorySectionCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -186,10 +118,10 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSocialHistorySectionTitle() {
-			OperationsTestCase<SocialHistorySection> validateSocialHistorySectionTitleTestCase = new OperationsTestCase<SocialHistorySection>(
+		OperationsTestCase<SocialHistorySection> validateSocialHistorySectionTitleTestCase = new OperationsTestCase<SocialHistorySection>(
 			"validateSocialHistorySectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SocialHistorySection target) {
@@ -199,49 +131,15 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistorySection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
 
-	
-		
-				ST  title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title );
-				
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return SocialHistorySectionOperations.validateSocialHistorySectionTitle(
 					(SocialHistorySection) objectToTest, diagnostician, map);
 			}
@@ -249,7 +147,7 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 		};
 
 		validateSocialHistorySectionTitleTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -257,10 +155,10 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateSocialHistorySectionText() {
-			OperationsTestCase<SocialHistorySection> validateSocialHistorySectionTextTestCase = new OperationsTestCase<SocialHistorySection>(
+		OperationsTestCase<SocialHistorySection> validateSocialHistorySectionTextTestCase = new OperationsTestCase<SocialHistorySection>(
 			"validateSocialHistorySectionText",
-			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(SocialHistorySection target) {
@@ -270,49 +168,15 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SocialHistorySection target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
 				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text );
-			
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+				target.setText(text);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return SocialHistorySectionOperations.validateSocialHistorySectionText(
 					(SocialHistorySection) objectToTest, diagnostician, map);
 			}
@@ -320,7 +184,7 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 		};
 
 		validateSocialHistorySectionTextTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -397,13 +261,10 @@ public class SocialHistorySectionTest extends CDAValidationTest {
 	@Test
 	public void testGetSocialHistoryObservations() {
 
+		SocialHistorySection target = objectFactory.create();
+		target.getSocialHistoryObservations();
 
-SocialHistorySection target = objectFactory.create();
-target.getSocialHistoryObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -412,13 +273,10 @@ target.getSocialHistoryObservations();
 	@Test
 	public void testGetPregnancyObservations() {
 
+		SocialHistorySection target = objectFactory.create();
+		target.getPregnancyObservations();
 
-SocialHistorySection target = objectFactory.create();
-target.getPregnancyObservations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -473,8 +331,8 @@ target.getPregnancyObservations();
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -482,7 +340,7 @@ target.getPregnancyObservations();
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 
