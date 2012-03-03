@@ -146,7 +146,8 @@ public class CDAModelFilter extends ModelFilter {
 			ValueSetConstraint constraint = TermProfileUtil.getValueSetConstraint(property);
 			if (constraint != null) {
 				ValueSetVersion valueSet = constraint.getReference();
-				if (valueSet != null && valueSet.getBase_Enumeration().getOwnedLiterals().size() > 0) {
+				if (valueSet != null && valueSet.getBase_Enumeration() != null &&
+						valueSet.getBase_Enumeration().getOwnedLiterals().size() > 0) {
 					Enumeration filteredEnum = addValueSetEnum(valueSet);
 					newType = filteredEnum;
 				}
