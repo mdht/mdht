@@ -21,7 +21,6 @@ import org.openhealthtools.mdht.uml.cda.consol.operations.CommentActivityOperati
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 
@@ -53,10 +52,10 @@ public class CommentActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCommentActivityHasTextReference() {
-			OperationsTestCase<CommentActivity> validateCommentActivityHasTextReferenceTestCase = new OperationsTestCase<CommentActivity>(
+		OperationsTestCase<CommentActivity> validateCommentActivityHasTextReferenceTestCase = new OperationsTestCase<CommentActivity>(
 			"validateCommentActivityHasTextReference",
-			operationsForOCL.getOCLValue("VALIDATE_COMMENT_ACTIVITY_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_COMMENT_ACTIVITY_HAS_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(CommentActivity target) {
@@ -66,46 +65,12 @@ public class CommentActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(CommentActivity target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return CommentActivityOperations.validateCommentActivityHasTextReference(
 					(CommentActivity) objectToTest, diagnostician, map);
 			}
@@ -113,7 +78,7 @@ public class CommentActivityTest extends CDAValidationTest {
 		};
 
 		validateCommentActivityHasTextReferenceTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -121,10 +86,10 @@ public class CommentActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCommentActivityTemplateId() {
-			OperationsTestCase<CommentActivity> validateCommentActivityTemplateIdTestCase = new OperationsTestCase<CommentActivity>(
+		OperationsTestCase<CommentActivity> validateCommentActivityTemplateIdTestCase = new OperationsTestCase<CommentActivity>(
 			"validateCommentActivityTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_COMMENT_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_COMMENT_ACTIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(CommentActivity target) {
@@ -134,46 +99,12 @@ public class CommentActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(CommentActivity target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return CommentActivityOperations.validateCommentActivityTemplateId(
 					(CommentActivity) objectToTest, diagnostician, map);
 			}
@@ -181,7 +112,7 @@ public class CommentActivityTest extends CDAValidationTest {
 		};
 
 		validateCommentActivityTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -189,10 +120,10 @@ public class CommentActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCommentActivityClassCode() {
-			OperationsTestCase<CommentActivity> validateCommentActivityClassCodeTestCase = new OperationsTestCase<CommentActivity>(
+		OperationsTestCase<CommentActivity> validateCommentActivityClassCodeTestCase = new OperationsTestCase<CommentActivity>(
 			"validateCommentActivityClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_COMMENT_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_COMMENT_ACTIVITY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(CommentActivity target) {
@@ -202,46 +133,12 @@ public class CommentActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(CommentActivity target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return CommentActivityOperations.validateCommentActivityClassCode(
 					(CommentActivity) objectToTest, diagnostician, map);
 			}
@@ -249,7 +146,7 @@ public class CommentActivityTest extends CDAValidationTest {
 		};
 
 		validateCommentActivityClassCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -257,10 +154,10 @@ public class CommentActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCommentActivityMoodCode() {
-			OperationsTestCase<CommentActivity> validateCommentActivityMoodCodeTestCase = new OperationsTestCase<CommentActivity>(
+		OperationsTestCase<CommentActivity> validateCommentActivityMoodCodeTestCase = new OperationsTestCase<CommentActivity>(
 			"validateCommentActivityMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_COMMENT_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_COMMENT_ACTIVITY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(CommentActivity target) {
@@ -270,46 +167,12 @@ public class CommentActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(CommentActivity target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return CommentActivityOperations.validateCommentActivityMoodCode(
 					(CommentActivity) objectToTest, diagnostician, map);
 			}
@@ -317,7 +180,7 @@ public class CommentActivityTest extends CDAValidationTest {
 		};
 
 		validateCommentActivityMoodCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -325,10 +188,10 @@ public class CommentActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCommentActivityCode() {
-			OperationsTestCase<CommentActivity> validateCommentActivityCodeTestCase = new OperationsTestCase<CommentActivity>(
+		OperationsTestCase<CommentActivity> validateCommentActivityCodeTestCase = new OperationsTestCase<CommentActivity>(
 			"validateCommentActivityCode",
-			operationsForOCL.getOCLValue("VALIDATE_COMMENT_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_COMMENT_ACTIVITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(CommentActivity target) {
@@ -338,46 +201,12 @@ public class CommentActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(CommentActivity target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return CommentActivityOperations.validateCommentActivityCode(
 					(CommentActivity) objectToTest, diagnostician, map);
 			}
@@ -385,7 +214,7 @@ public class CommentActivityTest extends CDAValidationTest {
 		};
 
 		validateCommentActivityCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -393,10 +222,10 @@ public class CommentActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCommentActivityText() {
-			OperationsTestCase<CommentActivity> validateCommentActivityTextTestCase = new OperationsTestCase<CommentActivity>(
+		OperationsTestCase<CommentActivity> validateCommentActivityTextTestCase = new OperationsTestCase<CommentActivity>(
 			"validateCommentActivityText",
-			operationsForOCL.getOCLValue("VALIDATE_COMMENT_ACTIVITY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_COMMENT_ACTIVITY_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(CommentActivity target) {
@@ -406,48 +235,15 @@ public class CommentActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(CommentActivity target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				target.setText(text);
 
-	
-			
-
-	
-		
-		
-			
-		ED text = DatatypesFactory.eINSTANCE.createED();
-		target.setText(text );	
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return CommentActivityOperations.validateCommentActivityText(
 					(CommentActivity) objectToTest, diagnostician, map);
 			}
@@ -455,7 +251,7 @@ public class CommentActivityTest extends CDAValidationTest {
 		};
 
 		validateCommentActivityTextTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -510,8 +306,8 @@ public class CommentActivityTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -519,7 +315,7 @@ public class CommentActivityTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

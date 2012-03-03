@@ -44,10 +44,10 @@ public class CodeObservationsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateCodeObservationsTemplateId() {
-			OperationsTestCase<CodeObservations> validateCodeObservationsTemplateIdTestCase = new OperationsTestCase<CodeObservations>(
+		OperationsTestCase<CodeObservations> validateCodeObservationsTemplateIdTestCase = new OperationsTestCase<CodeObservations>(
 			"validateCodeObservationsTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_CODE_OBSERVATIONS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_CODE_OBSERVATIONS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(CodeObservations target) {
@@ -57,46 +57,12 @@ public class CodeObservationsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(CodeObservations target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return CodeObservationsOperations.validateCodeObservationsTemplateId(
 					(CodeObservations) objectToTest, diagnostician, map);
 			}
@@ -104,7 +70,7 @@ public class CodeObservationsTest extends CDAValidationTest {
 		};
 
 		validateCodeObservationsTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -159,8 +125,8 @@ public class CodeObservationsTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -168,7 +134,7 @@ public class CodeObservationsTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

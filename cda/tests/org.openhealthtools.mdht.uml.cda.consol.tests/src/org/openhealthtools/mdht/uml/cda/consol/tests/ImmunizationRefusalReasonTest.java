@@ -47,10 +47,10 @@ public class ImmunizationRefusalReasonTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateImmunizationRefusalReasonTemplateId() {
-			OperationsTestCase<ImmunizationRefusalReason> validateImmunizationRefusalReasonTemplateIdTestCase = new OperationsTestCase<ImmunizationRefusalReason>(
+		OperationsTestCase<ImmunizationRefusalReason> validateImmunizationRefusalReasonTemplateIdTestCase = new OperationsTestCase<ImmunizationRefusalReason>(
 			"validateImmunizationRefusalReasonTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_REFUSAL_REASON_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_REFUSAL_REASON_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ImmunizationRefusalReason target) {
@@ -60,46 +60,12 @@ public class ImmunizationRefusalReasonTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ImmunizationRefusalReason target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ImmunizationRefusalReasonOperations.validateImmunizationRefusalReasonTemplateId(
 					(ImmunizationRefusalReason) objectToTest, diagnostician, map);
 			}
@@ -107,7 +73,7 @@ public class ImmunizationRefusalReasonTest extends CDAValidationTest {
 		};
 
 		validateImmunizationRefusalReasonTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -115,10 +81,10 @@ public class ImmunizationRefusalReasonTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateImmunizationRefusalReasonClassCode() {
-			OperationsTestCase<ImmunizationRefusalReason> validateImmunizationRefusalReasonClassCodeTestCase = new OperationsTestCase<ImmunizationRefusalReason>(
+		OperationsTestCase<ImmunizationRefusalReason> validateImmunizationRefusalReasonClassCodeTestCase = new OperationsTestCase<ImmunizationRefusalReason>(
 			"validateImmunizationRefusalReasonClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_REFUSAL_REASON_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_REFUSAL_REASON_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ImmunizationRefusalReason target) {
@@ -128,46 +94,12 @@ public class ImmunizationRefusalReasonTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ImmunizationRefusalReason target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ImmunizationRefusalReasonOperations.validateImmunizationRefusalReasonClassCode(
 					(ImmunizationRefusalReason) objectToTest, diagnostician, map);
 			}
@@ -175,7 +107,7 @@ public class ImmunizationRefusalReasonTest extends CDAValidationTest {
 		};
 
 		validateImmunizationRefusalReasonClassCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -254,10 +186,10 @@ public class ImmunizationRefusalReasonTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateImmunizationRefusalReasonMoodCode() {
-			OperationsTestCase<ImmunizationRefusalReason> validateImmunizationRefusalReasonMoodCodeTestCase = new OperationsTestCase<ImmunizationRefusalReason>(
+		OperationsTestCase<ImmunizationRefusalReason> validateImmunizationRefusalReasonMoodCodeTestCase = new OperationsTestCase<ImmunizationRefusalReason>(
 			"validateImmunizationRefusalReasonMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_REFUSAL_REASON_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_REFUSAL_REASON_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ImmunizationRefusalReason target) {
@@ -267,46 +199,12 @@ public class ImmunizationRefusalReasonTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ImmunizationRefusalReason target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ImmunizationRefusalReasonOperations.validateImmunizationRefusalReasonMoodCode(
 					(ImmunizationRefusalReason) objectToTest, diagnostician, map);
 			}
@@ -314,7 +212,7 @@ public class ImmunizationRefusalReasonTest extends CDAValidationTest {
 		};
 
 		validateImmunizationRefusalReasonMoodCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -322,10 +220,10 @@ public class ImmunizationRefusalReasonTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateImmunizationRefusalReasonStatusCode() {
-			OperationsTestCase<ImmunizationRefusalReason> validateImmunizationRefusalReasonStatusCodeTestCase = new OperationsTestCase<ImmunizationRefusalReason>(
+		OperationsTestCase<ImmunizationRefusalReason> validateImmunizationRefusalReasonStatusCodeTestCase = new OperationsTestCase<ImmunizationRefusalReason>(
 			"validateImmunizationRefusalReasonStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_REFUSAL_REASON_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_REFUSAL_REASON_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ImmunizationRefusalReason target) {
@@ -335,49 +233,15 @@ public class ImmunizationRefusalReasonTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ImmunizationRefusalReason target) {
 				target.init();
-				
-				
-				
-				
-			
+
 				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
 				target.setStatusCode(cs);
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ImmunizationRefusalReasonOperations.validateImmunizationRefusalReasonStatusCode(
 					(ImmunizationRefusalReason) objectToTest, diagnostician, map);
 			}
@@ -385,7 +249,7 @@ public class ImmunizationRefusalReasonTest extends CDAValidationTest {
 		};
 
 		validateImmunizationRefusalReasonStatusCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -440,8 +304,8 @@ public class ImmunizationRefusalReasonTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -449,7 +313,7 @@ public class ImmunizationRefusalReasonTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

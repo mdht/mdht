@@ -35,7 +35,6 @@ import org.openhealthtools.mdht.uml.cda.consol.VitalSignsSectionEntriesOptional;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ProgressNoteOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
-import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActClassRoot;
 
 /**
@@ -263,10 +262,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProgressNoteTemplateId() {
-			OperationsTestCase<ProgressNote> validateProgressNoteTemplateIdTestCase = new OperationsTestCase<ProgressNote>(
+		OperationsTestCase<ProgressNote> validateProgressNoteTemplateIdTestCase = new OperationsTestCase<ProgressNote>(
 			"validateProgressNoteTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProgressNote target) {
@@ -276,46 +275,12 @@ public class ProgressNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProgressNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProgressNoteOperations.validateProgressNoteTemplateId(
 					(ProgressNote) objectToTest, diagnostician, map);
 			}
@@ -323,7 +288,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 		};
 
 		validateProgressNoteTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -401,10 +366,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProgressNoteAssessmentSection() {
-			OperationsTestCase<ProgressNote> validateProgressNoteAssessmentSectionTestCase = new OperationsTestCase<ProgressNote>(
+		OperationsTestCase<ProgressNote> validateProgressNoteAssessmentSectionTestCase = new OperationsTestCase<ProgressNote>(
 			"validateProgressNoteAssessmentSection",
-			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_ASSESSMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_ASSESSMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProgressNote target) {
@@ -414,55 +379,19 @@ public class ProgressNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProgressNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* AssessmentSection */ 
+				/* AssessmentSection */
 				AssessmentSection section =
-				
-				ConsolFactory.eINSTANCE.createAssessmentSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createAssessmentSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProgressNoteOperations.validateProgressNoteAssessmentSection(
 					(ProgressNote) objectToTest, diagnostician, map);
 			}
@@ -470,7 +399,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 		};
 
 		validateProgressNoteAssessmentSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -478,10 +407,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProgressNotePlanOfCareSection() {
-			OperationsTestCase<ProgressNote> validateProgressNotePlanOfCareSectionTestCase = new OperationsTestCase<ProgressNote>(
+		OperationsTestCase<ProgressNote> validateProgressNotePlanOfCareSectionTestCase = new OperationsTestCase<ProgressNote>(
 			"validateProgressNotePlanOfCareSection",
-			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProgressNote target) {
@@ -491,55 +420,19 @@ public class ProgressNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProgressNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* PlanOfCareSection */ 
+				/* PlanOfCareSection */
 				PlanOfCareSection section =
-				
-				ConsolFactory.eINSTANCE.createPlanOfCareSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createPlanOfCareSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProgressNoteOperations.validateProgressNotePlanOfCareSection(
 					(ProgressNote) objectToTest, diagnostician, map);
 			}
@@ -547,7 +440,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 		};
 
 		validateProgressNotePlanOfCareSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -555,10 +448,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProgressNoteAssessmentAndPlanSection() {
-			OperationsTestCase<ProgressNote> validateProgressNoteAssessmentAndPlanSectionTestCase = new OperationsTestCase<ProgressNote>(
+		OperationsTestCase<ProgressNote> validateProgressNoteAssessmentAndPlanSectionTestCase = new OperationsTestCase<ProgressNote>(
 			"validateProgressNoteAssessmentAndPlanSection",
-			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_ASSESSMENT_AND_PLAN_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_ASSESSMENT_AND_PLAN_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProgressNote target) {
@@ -568,55 +461,19 @@ public class ProgressNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProgressNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* AssessmentAndPlanSection */ 
+				/* AssessmentAndPlanSection */
 				AssessmentAndPlanSection section =
-				
-				ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createAssessmentAndPlanSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProgressNoteOperations.validateProgressNoteAssessmentAndPlanSection(
 					(ProgressNote) objectToTest, diagnostician, map);
 			}
@@ -624,7 +481,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 		};
 
 		validateProgressNoteAssessmentAndPlanSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -632,10 +489,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProgressNoteAllergiesSectionEntriesOptional() {
-			OperationsTestCase<ProgressNote> validateProgressNoteAllergiesSectionEntriesOptionalTestCase = new OperationsTestCase<ProgressNote>(
+		OperationsTestCase<ProgressNote> validateProgressNoteAllergiesSectionEntriesOptionalTestCase = new OperationsTestCase<ProgressNote>(
 			"validateProgressNoteAllergiesSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_ALLERGIES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_ALLERGIES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProgressNote target) {
@@ -645,55 +502,19 @@ public class ProgressNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProgressNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* AllergiesSectionEntriesOptional */ 
+				/* AllergiesSectionEntriesOptional */
 				AllergiesSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createAllergiesSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createAllergiesSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProgressNoteOperations.validateProgressNoteAllergiesSectionEntriesOptional(
 					(ProgressNote) objectToTest, diagnostician, map);
 			}
@@ -701,7 +522,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 		};
 
 		validateProgressNoteAllergiesSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -709,10 +530,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProgressNoteChiefComplaintSection() {
-			OperationsTestCase<ProgressNote> validateProgressNoteChiefComplaintSectionTestCase = new OperationsTestCase<ProgressNote>(
+		OperationsTestCase<ProgressNote> validateProgressNoteChiefComplaintSectionTestCase = new OperationsTestCase<ProgressNote>(
 			"validateProgressNoteChiefComplaintSection",
-			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_CHIEF_COMPLAINT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_CHIEF_COMPLAINT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProgressNote target) {
@@ -722,55 +543,19 @@ public class ProgressNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProgressNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ChiefComplaintSection */ 
+				/* ChiefComplaintSection */
 				ChiefComplaintSection section =
-				
-				ConsolFactory.eINSTANCE.createChiefComplaintSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createChiefComplaintSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProgressNoteOperations.validateProgressNoteChiefComplaintSection(
 					(ProgressNote) objectToTest, diagnostician, map);
 			}
@@ -778,7 +563,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 		};
 
 		validateProgressNoteChiefComplaintSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -786,10 +571,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProgressNoteInterventionsSection() {
-			OperationsTestCase<ProgressNote> validateProgressNoteInterventionsSectionTestCase = new OperationsTestCase<ProgressNote>(
+		OperationsTestCase<ProgressNote> validateProgressNoteInterventionsSectionTestCase = new OperationsTestCase<ProgressNote>(
 			"validateProgressNoteInterventionsSection",
-			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_INTERVENTIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_INTERVENTIONS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProgressNote target) {
@@ -799,55 +584,19 @@ public class ProgressNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProgressNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* InterventionsSection */ 
+				/* InterventionsSection */
 				InterventionsSection section =
-				
-				ConsolFactory.eINSTANCE.createInterventionsSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createInterventionsSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProgressNoteOperations.validateProgressNoteInterventionsSection(
 					(ProgressNote) objectToTest, diagnostician, map);
 			}
@@ -855,7 +604,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 		};
 
 		validateProgressNoteInterventionsSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -863,10 +612,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProgressNoteMedicationsSectionEntriesOptional() {
-			OperationsTestCase<ProgressNote> validateProgressNoteMedicationsSectionEntriesOptionalTestCase = new OperationsTestCase<ProgressNote>(
+		OperationsTestCase<ProgressNote> validateProgressNoteMedicationsSectionEntriesOptionalTestCase = new OperationsTestCase<ProgressNote>(
 			"validateProgressNoteMedicationsSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProgressNote target) {
@@ -876,55 +625,19 @@ public class ProgressNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProgressNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* MedicationsSectionEntriesOptional */ 
+				/* MedicationsSectionEntriesOptional */
 				MedicationsSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createMedicationsSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createMedicationsSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProgressNoteOperations.validateProgressNoteMedicationsSectionEntriesOptional(
 					(ProgressNote) objectToTest, diagnostician, map);
 			}
@@ -932,7 +645,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 		};
 
 		validateProgressNoteMedicationsSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -940,10 +653,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProgressNoteObjectiveSection() {
-			OperationsTestCase<ProgressNote> validateProgressNoteObjectiveSectionTestCase = new OperationsTestCase<ProgressNote>(
+		OperationsTestCase<ProgressNote> validateProgressNoteObjectiveSectionTestCase = new OperationsTestCase<ProgressNote>(
 			"validateProgressNoteObjectiveSection",
-			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_OBJECTIVE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_OBJECTIVE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProgressNote target) {
@@ -953,55 +666,19 @@ public class ProgressNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProgressNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ObjectiveSection */ 
+				/* ObjectiveSection */
 				ObjectiveSection section =
-				
-				ConsolFactory.eINSTANCE.createObjectiveSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createObjectiveSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProgressNoteOperations.validateProgressNoteObjectiveSection(
 					(ProgressNote) objectToTest, diagnostician, map);
 			}
@@ -1009,7 +686,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 		};
 
 		validateProgressNoteObjectiveSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1017,10 +694,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProgressNotePhysicalExamSection() {
-			OperationsTestCase<ProgressNote> validateProgressNotePhysicalExamSectionTestCase = new OperationsTestCase<ProgressNote>(
+		OperationsTestCase<ProgressNote> validateProgressNotePhysicalExamSectionTestCase = new OperationsTestCase<ProgressNote>(
 			"validateProgressNotePhysicalExamSection",
-			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_PHYSICAL_EXAM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_PHYSICAL_EXAM_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProgressNote target) {
@@ -1030,55 +707,19 @@ public class ProgressNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProgressNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* PhysicalExamSection */ 
+				/* PhysicalExamSection */
 				PhysicalExamSection section =
-				
-				ConsolFactory.eINSTANCE.createPhysicalExamSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createPhysicalExamSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProgressNoteOperations.validateProgressNotePhysicalExamSection(
 					(ProgressNote) objectToTest, diagnostician, map);
 			}
@@ -1086,7 +727,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 		};
 
 		validateProgressNotePhysicalExamSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1094,10 +735,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProgressNoteProblemSectionEntriesOptional() {
-			OperationsTestCase<ProgressNote> validateProgressNoteProblemSectionEntriesOptionalTestCase = new OperationsTestCase<ProgressNote>(
+		OperationsTestCase<ProgressNote> validateProgressNoteProblemSectionEntriesOptionalTestCase = new OperationsTestCase<ProgressNote>(
 			"validateProgressNoteProblemSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_PROBLEM_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_PROBLEM_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProgressNote target) {
@@ -1107,55 +748,19 @@ public class ProgressNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProgressNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ProblemSectionEntriesOptional */ 
+				/* ProblemSectionEntriesOptional */
 				ProblemSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createProblemSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createProblemSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProgressNoteOperations.validateProgressNoteProblemSectionEntriesOptional(
 					(ProgressNote) objectToTest, diagnostician, map);
 			}
@@ -1163,7 +768,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 		};
 
 		validateProgressNoteProblemSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1171,10 +776,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProgressNoteResultsSectionEntriesOptional() {
-			OperationsTestCase<ProgressNote> validateProgressNoteResultsSectionEntriesOptionalTestCase = new OperationsTestCase<ProgressNote>(
+		OperationsTestCase<ProgressNote> validateProgressNoteResultsSectionEntriesOptionalTestCase = new OperationsTestCase<ProgressNote>(
 			"validateProgressNoteResultsSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_RESULTS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_RESULTS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProgressNote target) {
@@ -1184,55 +789,19 @@ public class ProgressNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProgressNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ResultsSectionEntriesOptional */ 
+				/* ResultsSectionEntriesOptional */
 				ResultsSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createResultsSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createResultsSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProgressNoteOperations.validateProgressNoteResultsSectionEntriesOptional(
 					(ProgressNote) objectToTest, diagnostician, map);
 			}
@@ -1240,7 +809,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 		};
 
 		validateProgressNoteResultsSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1248,10 +817,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProgressNoteReviewOfSystemsSection() {
-			OperationsTestCase<ProgressNote> validateProgressNoteReviewOfSystemsSectionTestCase = new OperationsTestCase<ProgressNote>(
+		OperationsTestCase<ProgressNote> validateProgressNoteReviewOfSystemsSectionTestCase = new OperationsTestCase<ProgressNote>(
 			"validateProgressNoteReviewOfSystemsSection",
-			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_REVIEW_OF_SYSTEMS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_REVIEW_OF_SYSTEMS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProgressNote target) {
@@ -1261,55 +830,19 @@ public class ProgressNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProgressNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* ReviewOfSystemsSection */ 
+				/* ReviewOfSystemsSection */
 				ReviewOfSystemsSection section =
-				
-				ConsolFactory.eINSTANCE.createReviewOfSystemsSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createReviewOfSystemsSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProgressNoteOperations.validateProgressNoteReviewOfSystemsSection(
 					(ProgressNote) objectToTest, diagnostician, map);
 			}
@@ -1317,7 +850,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 		};
 
 		validateProgressNoteReviewOfSystemsSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1325,10 +858,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProgressNoteSubjectiveSection() {
-			OperationsTestCase<ProgressNote> validateProgressNoteSubjectiveSectionTestCase = new OperationsTestCase<ProgressNote>(
+		OperationsTestCase<ProgressNote> validateProgressNoteSubjectiveSectionTestCase = new OperationsTestCase<ProgressNote>(
 			"validateProgressNoteSubjectiveSection",
-			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_SUBJECTIVE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_SUBJECTIVE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProgressNote target) {
@@ -1338,55 +871,19 @@ public class ProgressNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProgressNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* SubjectiveSection */ 
+				/* SubjectiveSection */
 				SubjectiveSection section =
-				
-				ConsolFactory.eINSTANCE.createSubjectiveSection().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createSubjectiveSection().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProgressNoteOperations.validateProgressNoteSubjectiveSection(
 					(ProgressNote) objectToTest, diagnostician, map);
 			}
@@ -1394,7 +891,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 		};
 
 		validateProgressNoteSubjectiveSectionTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1402,10 +899,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProgressNoteVitalSignsSectionEntriesOptional() {
-			OperationsTestCase<ProgressNote> validateProgressNoteVitalSignsSectionEntriesOptionalTestCase = new OperationsTestCase<ProgressNote>(
+		OperationsTestCase<ProgressNote> validateProgressNoteVitalSignsSectionEntriesOptionalTestCase = new OperationsTestCase<ProgressNote>(
 			"validateProgressNoteVitalSignsSectionEntriesOptional",
-			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_VITAL_SIGNS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROGRESS_NOTE_VITAL_SIGNS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProgressNote target) {
@@ -1415,55 +912,19 @@ public class ProgressNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProgressNote target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-			
-				
-				/* VitalSignsSectionEntriesOptional */ 
+				/* VitalSignsSectionEntriesOptional */
 				VitalSignsSectionEntriesOptional section =
-				
-				ConsolFactory.eINSTANCE.createVitalSignsSectionEntriesOptional().init(); 
-					
-			
-			target.addSection(section);
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
+
+				ConsolFactory.eINSTANCE.createVitalSignsSectionEntriesOptional().init();
+
+				target.addSection(section);
+
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProgressNoteOperations.validateProgressNoteVitalSignsSectionEntriesOptional(
 					(ProgressNote) objectToTest, diagnostician, map);
 			}
@@ -1471,7 +932,7 @@ public class ProgressNoteTest extends CDAValidationTest {
 		};
 
 		validateProgressNoteVitalSignsSectionEntriesOptionalTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -1763,13 +1224,10 @@ public class ProgressNoteTest extends CDAValidationTest {
 	@Test
 	public void testGetAssessmentSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getAssessmentSection();
 
-ProgressNote target = objectFactory.create();
-target.getAssessmentSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1778,13 +1236,10 @@ target.getAssessmentSection();
 	@Test
 	public void testGetPlanOfCareSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getPlanOfCareSection();
 
-ProgressNote target = objectFactory.create();
-target.getPlanOfCareSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1793,13 +1248,10 @@ target.getPlanOfCareSection();
 	@Test
 	public void testGetAssessmentAndPlanSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getAssessmentAndPlanSection();
 
-ProgressNote target = objectFactory.create();
-target.getAssessmentAndPlanSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1808,13 +1260,10 @@ target.getAssessmentAndPlanSection();
 	@Test
 	public void testGetAllergiesSectionEntriesOptional() {
 
+		ProgressNote target = objectFactory.create();
+		target.getAllergiesSectionEntriesOptional();
 
-ProgressNote target = objectFactory.create();
-target.getAllergiesSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1823,13 +1272,10 @@ target.getAllergiesSectionEntriesOptional();
 	@Test
 	public void testGetChiefComplaintSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getChiefComplaintSection();
 
-ProgressNote target = objectFactory.create();
-target.getChiefComplaintSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1838,13 +1284,10 @@ target.getChiefComplaintSection();
 	@Test
 	public void testGetInterventionsSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getInterventionsSection();
 
-ProgressNote target = objectFactory.create();
-target.getInterventionsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1853,13 +1296,10 @@ target.getInterventionsSection();
 	@Test
 	public void testGetMedicationsSectionEntriesOptional() {
 
+		ProgressNote target = objectFactory.create();
+		target.getMedicationsSectionEntriesOptional();
 
-ProgressNote target = objectFactory.create();
-target.getMedicationsSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1868,13 +1308,10 @@ target.getMedicationsSectionEntriesOptional();
 	@Test
 	public void testGetObjectiveSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getObjectiveSection();
 
-ProgressNote target = objectFactory.create();
-target.getObjectiveSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1883,13 +1320,10 @@ target.getObjectiveSection();
 	@Test
 	public void testGetPhysicalExamSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getPhysicalExamSection();
 
-ProgressNote target = objectFactory.create();
-target.getPhysicalExamSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1898,13 +1332,10 @@ target.getPhysicalExamSection();
 	@Test
 	public void testGetProblemSectionEntriesOptional() {
 
+		ProgressNote target = objectFactory.create();
+		target.getProblemSectionEntriesOptional();
 
-ProgressNote target = objectFactory.create();
-target.getProblemSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1913,13 +1344,10 @@ target.getProblemSectionEntriesOptional();
 	@Test
 	public void testGetResultsSectionEntriesOptional() {
 
+		ProgressNote target = objectFactory.create();
+		target.getResultsSectionEntriesOptional();
 
-ProgressNote target = objectFactory.create();
-target.getResultsSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1928,13 +1356,10 @@ target.getResultsSectionEntriesOptional();
 	@Test
 	public void testGetReviewOfSystemsSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getReviewOfSystemsSection();
 
-ProgressNote target = objectFactory.create();
-target.getReviewOfSystemsSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1943,13 +1368,10 @@ target.getReviewOfSystemsSection();
 	@Test
 	public void testGetSubjectiveSection() {
 
+		ProgressNote target = objectFactory.create();
+		target.getSubjectiveSection();
 
-ProgressNote target = objectFactory.create();
-target.getSubjectiveSection();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1958,13 +1380,10 @@ target.getSubjectiveSection();
 	@Test
 	public void testGetVitalSignsSectionEntriesOptional() {
 
+		ProgressNote target = objectFactory.create();
+		target.getVitalSignsSectionEntriesOptional();
 
-ProgressNote target = objectFactory.create();
-target.getVitalSignsSectionEntriesOptional();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -2053,8 +1472,8 @@ target.getVitalSignsSectionEntriesOptional();
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -2062,7 +1481,7 @@ target.getVitalSignsSectionEntriesOptional();
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

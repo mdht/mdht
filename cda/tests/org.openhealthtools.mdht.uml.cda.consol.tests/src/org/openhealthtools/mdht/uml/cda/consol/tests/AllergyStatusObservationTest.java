@@ -15,7 +15,6 @@ import org.openhealthtools.mdht.uml.cda.consol.AllergyStatusObservation;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.operations.AllergyStatusObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
@@ -48,10 +47,10 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAllergyStatusObservationTemplateId() {
-			OperationsTestCase<AllergyStatusObservation> validateAllergyStatusObservationTemplateIdTestCase = new OperationsTestCase<AllergyStatusObservation>(
+		OperationsTestCase<AllergyStatusObservation> validateAllergyStatusObservationTemplateIdTestCase = new OperationsTestCase<AllergyStatusObservation>(
 			"validateAllergyStatusObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AllergyStatusObservation target) {
@@ -61,46 +60,12 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyStatusObservation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return AllergyStatusObservationOperations.validateAllergyStatusObservationTemplateId(
 					(AllergyStatusObservation) objectToTest, diagnostician, map);
 			}
@@ -108,7 +73,7 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 		};
 
 		validateAllergyStatusObservationTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -116,10 +81,10 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAllergyStatusObservationClassCode() {
-			OperationsTestCase<AllergyStatusObservation> validateAllergyStatusObservationClassCodeTestCase = new OperationsTestCase<AllergyStatusObservation>(
+		OperationsTestCase<AllergyStatusObservation> validateAllergyStatusObservationClassCodeTestCase = new OperationsTestCase<AllergyStatusObservation>(
 			"validateAllergyStatusObservationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_STATUS_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_STATUS_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AllergyStatusObservation target) {
@@ -129,46 +94,12 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyStatusObservation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return AllergyStatusObservationOperations.validateAllergyStatusObservationClassCode(
 					(AllergyStatusObservation) objectToTest, diagnostician, map);
 			}
@@ -176,7 +107,7 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 		};
 
 		validateAllergyStatusObservationClassCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -184,10 +115,10 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAllergyStatusObservationMoodCode() {
-			OperationsTestCase<AllergyStatusObservation> validateAllergyStatusObservationMoodCodeTestCase = new OperationsTestCase<AllergyStatusObservation>(
+		OperationsTestCase<AllergyStatusObservation> validateAllergyStatusObservationMoodCodeTestCase = new OperationsTestCase<AllergyStatusObservation>(
 			"validateAllergyStatusObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_STATUS_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_STATUS_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AllergyStatusObservation target) {
@@ -197,46 +128,12 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyStatusObservation target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return AllergyStatusObservationOperations.validateAllergyStatusObservationMoodCode(
 					(AllergyStatusObservation) objectToTest, diagnostician, map);
 			}
@@ -244,7 +141,7 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 		};
 
 		validateAllergyStatusObservationMoodCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -286,10 +183,10 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAllergyStatusObservationStatusCode() {
-			OperationsTestCase<AllergyStatusObservation> validateAllergyStatusObservationStatusCodeTestCase = new OperationsTestCase<AllergyStatusObservation>(
+		OperationsTestCase<AllergyStatusObservation> validateAllergyStatusObservationStatusCodeTestCase = new OperationsTestCase<AllergyStatusObservation>(
 			"validateAllergyStatusObservationStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_STATUS_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_STATUS_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(AllergyStatusObservation target) {
@@ -299,49 +196,15 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(AllergyStatusObservation target) {
 				target.init();
-				
-				
-				
-				
-			
+
 				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
 				target.setStatusCode(cs);
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return AllergyStatusObservationOperations.validateAllergyStatusObservationStatusCode(
 					(AllergyStatusObservation) objectToTest, diagnostician, map);
 			}
@@ -349,7 +212,7 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 		};
 
 		validateAllergyStatusObservationStatusCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -443,8 +306,8 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -452,7 +315,7 @@ public class AllergyStatusObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

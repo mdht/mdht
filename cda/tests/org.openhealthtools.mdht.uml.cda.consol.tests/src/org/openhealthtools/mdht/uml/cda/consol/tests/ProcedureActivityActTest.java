@@ -351,10 +351,10 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureActivityActTemplateId() {
-			OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActTemplateIdTestCase = new OperationsTestCase<ProcedureActivityAct>(
+		OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActTemplateIdTestCase = new OperationsTestCase<ProcedureActivityAct>(
 			"validateProcedureActivityActTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
@@ -364,46 +364,12 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProcedureActivityActOperations.validateProcedureActivityActTemplateId(
 					(ProcedureActivityAct) objectToTest, diagnostician, map);
 			}
@@ -411,7 +377,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 		};
 
 		validateProcedureActivityActTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -419,10 +385,10 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureActivityActClassCode() {
-			OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActClassCodeTestCase = new OperationsTestCase<ProcedureActivityAct>(
+		OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActClassCodeTestCase = new OperationsTestCase<ProcedureActivityAct>(
 			"validateProcedureActivityActClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
@@ -432,46 +398,12 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProcedureActivityActOperations.validateProcedureActivityActClassCode(
 					(ProcedureActivityAct) objectToTest, diagnostician, map);
 			}
@@ -479,7 +411,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 		};
 
 		validateProcedureActivityActClassCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -592,10 +524,10 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureActivityActEffectiveTime() {
-			OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActEffectiveTimeTestCase = new OperationsTestCase<ProcedureActivityAct>(
+		OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActEffectiveTimeTestCase = new OperationsTestCase<ProcedureActivityAct>(
 			"validateProcedureActivityActEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
@@ -605,49 +537,15 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
-				
-				
-					IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
-					target.setEffectiveTime(ts );								
-				
-				
-				
-				
 
-				
-				
+				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
+				target.setEffectiveTime(ts);
 
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProcedureActivityActOperations.validateProcedureActivityActEffectiveTime(
 					(ProcedureActivityAct) objectToTest, diagnostician, map);
 			}
@@ -655,7 +553,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 		};
 
 		validateProcedureActivityActEffectiveTimeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -698,10 +596,10 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureActivityActPerformer() {
-			OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActPerformerTestCase = new OperationsTestCase<ProcedureActivityAct>(
+		OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActPerformerTestCase = new OperationsTestCase<ProcedureActivityAct>(
 			"validateProcedureActivityActPerformer",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_PERFORMER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_PERFORMER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
@@ -711,46 +609,12 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProcedureActivityActOperations.validateProcedureActivityActPerformer(
 					(ProcedureActivityAct) objectToTest, diagnostician, map);
 			}
@@ -758,7 +622,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 		};
 
 		validateProcedureActivityActPerformerTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -952,13 +816,10 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 	@Test
 	public void testGetServiceDeliveryLocations() {
 
+		ProcedureActivityAct target = objectFactory.create();
+		target.getServiceDeliveryLocations();
 
-ProcedureActivityAct target = objectFactory.create();
-target.getServiceDeliveryLocations();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -967,13 +828,10 @@ target.getServiceDeliveryLocations();
 	@Test
 	public void testGetProcedureEncounters() {
 
+		ProcedureActivityAct target = objectFactory.create();
+		target.getProcedureEncounters();
 
-ProcedureActivityAct target = objectFactory.create();
-target.getProcedureEncounters();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -982,13 +840,10 @@ target.getProcedureEncounters();
 	@Test
 	public void testGetInstructions() {
 
+		ProcedureActivityAct target = objectFactory.create();
+		target.getInstructions();
 
-ProcedureActivityAct target = objectFactory.create();
-target.getInstructions();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -997,13 +852,10 @@ target.getInstructions();
 	@Test
 	public void testGetIndications() {
 
+		ProcedureActivityAct target = objectFactory.create();
+		target.getIndications();
 
-ProcedureActivityAct target = objectFactory.create();
-target.getIndications();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1012,13 +864,10 @@ target.getIndications();
 	@Test
 	public void testGetMedicationActivity() {
 
+		ProcedureActivityAct target = objectFactory.create();
+		target.getMedicationActivity();
 
-ProcedureActivityAct target = objectFactory.create();
-target.getMedicationActivity();
-
-
-
-}
+	}
 
 	/**
 	*
@@ -1073,8 +922,8 @@ target.getMedicationActivity();
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -1082,7 +931,7 @@ target.getMedicationActivity();
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 

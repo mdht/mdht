@@ -49,10 +49,10 @@ public class ProductInstanceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProductInstanceTemplateId() {
-			OperationsTestCase<ProductInstance> validateProductInstanceTemplateIdTestCase = new OperationsTestCase<ProductInstance>(
+		OperationsTestCase<ProductInstance> validateProductInstanceTemplateIdTestCase = new OperationsTestCase<ProductInstance>(
 			"validateProductInstanceTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_INSTANCE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_INSTANCE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProductInstance target) {
@@ -62,46 +62,12 @@ public class ProductInstanceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProductInstance target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProductInstanceOperations.validateProductInstanceTemplateId(
 					(ProductInstance) objectToTest, diagnostician, map);
 			}
@@ -109,7 +75,7 @@ public class ProductInstanceTest extends CDAValidationTest {
 		};
 
 		validateProductInstanceTemplateIdTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -117,10 +83,10 @@ public class ProductInstanceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProductInstanceClassCode() {
-			OperationsTestCase<ProductInstance> validateProductInstanceClassCodeTestCase = new OperationsTestCase<ProductInstance>(
+		OperationsTestCase<ProductInstance> validateProductInstanceClassCodeTestCase = new OperationsTestCase<ProductInstance>(
 			"validateProductInstanceClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_INSTANCE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
-			,objectFactory) {
+			operationsForOCL.getOCLValue("VALIDATE_PRODUCT_INSTANCE_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProductInstance target) {
@@ -130,46 +96,12 @@ public class ProductInstanceTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProductInstance target) {
 				target.init();
-				
-				
-				
-				
-				
 
-				
-				
-
-	
-			
-
-	
-		
-		
-			
-				
-		
-			
-				
-			
-				
-				
-				
-				
-				
-				
-				
-			
-			
-					
-			
-				
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-			
-			
-			
+
 				return ProductInstanceOperations.validateProductInstanceClassCode(
 					(ProductInstance) objectToTest, diagnostician, map);
 			}
@@ -177,7 +109,7 @@ public class ProductInstanceTest extends CDAValidationTest {
 		};
 
 		validateProductInstanceClassCodeTestCase.doValidationTest();
-}
+	}
 
 	/**
 	*
@@ -409,8 +341,8 @@ public class ProductInstanceTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-	        @SuppressWarnings("unused")
-			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+		@SuppressWarnings("unused")
+		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
 	} // testConstructor
 
 	/**
@@ -418,7 +350,7 @@ public class ProductInstanceTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {		
+	protected EObject getObjectToTest() {
 		return null;
 	}
 
