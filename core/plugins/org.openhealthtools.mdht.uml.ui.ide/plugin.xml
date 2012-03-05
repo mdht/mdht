@@ -32,6 +32,7 @@
 					id="org.openhealthtools.mdht.uml.ui.ide.popupMenus.umlElement">
 				<separator name="edit"/>
 				<separator name="port"/>
+				<separator name="transform"/>
 			</menu>
 		</objectContribution>
 		<objectContribution
@@ -41,6 +42,7 @@
 					id="org.openhealthtools.mdht.uml.ui.ide.popupMenus.file">
 				<separator name="edit"/>
 				<separator name="port"/>
+				<separator name="transform"/>
 			</menu>
 		</objectContribution>
 		<objectContribution adaptable="true"
@@ -50,6 +52,7 @@
 					id="org.openhealthtools.mdht.uml.ui.ide.popupMenus.notationView">
 				<separator name="edit"/>
 				<separator name="port"/>
+				<separator name="transform"/>
 			</menu>
 		</objectContribution>
 	</extension>
