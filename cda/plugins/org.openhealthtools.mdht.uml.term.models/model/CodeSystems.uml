@@ -96,6 +96,7 @@
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_u8E4IGShEeGWUMIQLWW7Kg" name="EntityNamePartQualifier"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_WdRxgGSiEeGWUMIQLWW7Kg" name="US Postal Codes"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_lC1ssGSiEeGWUMIQLWW7Kg" name="AddressUse"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_PaaCgGdREeGkeaezs0FtvA" name="LanguageAbilityProficiency"/>
     <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
       <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
@@ -154,4 +155,8 @@
   <term:CodeSystemVersion xmi:id="_u8E4IWShEeGWUMIQLWW7Kg" identifier="2.16.840.1.113883.5.43" base_Enumeration="_u8E4IGShEeGWUMIQLWW7Kg"/>
   <term:CodeSystemVersion xmi:id="_WdSYkGSiEeGWUMIQLWW7Kg" identifier="2.16.840.1.113883.6.231" base_Enumeration="_WdRxgGSiEeGWUMIQLWW7Kg"/>
   <term:CodeSystemVersion xmi:id="_lC2TwGSiEeGWUMIQLWW7Kg" identifier="2.16.840.1.113883.5.1119" base_Enumeration="_lC1ssGSiEeGWUMIQLWW7Kg"/>
+  <term:CodeSystemVersion xmi:id="_xwG2cGdIEeGkeaezs0FtvA" identifier="2.16.840.1.113883.5.89" base_Enumeration="_ZhyZUDVYEeGIw7CntkyPQw"/>
+  <term:CodeSystemVersion xmi:id="_-5gOQGdLEeGkeaezs0FtvA" identifier="2.16.840.1.113883.5.25" base_Enumeration="_vNtCQDVPEeGIw7CntkyPQw"/>
+  <term:CodeSystemVersion xmi:id="_Q7taAGdNEeGkeaezs0FtvA" identifier="1.2.840.10008.2.16.4" base_Enumeration="_TYKKYEb4EeGp67IkyTw1fg"/>
+  <term:CodeSystemVersion xmi:id="_PaapkGdREeGkeaezs0FtvA" identifier="2.16.840.1.113883.5.61" base_Enumeration="_PaaCgGdREeGkeaezs0FtvA"/>
 </xmi:XMI>
