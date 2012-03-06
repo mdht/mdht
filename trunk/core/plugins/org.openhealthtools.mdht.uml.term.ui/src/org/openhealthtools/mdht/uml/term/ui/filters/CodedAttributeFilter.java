@@ -16,6 +16,7 @@ import java.util.List;
 
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
@@ -34,6 +35,10 @@ public class CodedAttributeFilter extends TermFilter {
 				if (params.size() == 1) {
 					type = params.get(0);
 				}
+			}
+
+			if (type instanceof Enumeration) {
+				return true;
 			}
 
 			List<String> allParentNames = UMLUtil.getAllParentNames(type);
