@@ -34,8 +34,8 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		System.out.println("=========================");
-		testDS("DS.sample.l3.conformances");
-		validateAndLog("DI_sample_l3_conformances");
+//		testDS("DS.sample.l3.conformances");
+		validateAndLog("DS.sample.l3.conformances");
 		System.out.println("=========================");
 	}
 
@@ -84,21 +84,21 @@ public class Main {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		for (Diagnostic d: result.getInfoDiagnostics()) {
-			CDADiagnostic cdaDiagnostic = new CDADiagnostic(d);
-			sb.append("INFO|"+cdaDiagnostic.getMessage() +"|"+cdaDiagnostic.getPath()+ "|"+ cdaDiagnostic.getCode() + "|" + cdaDiagnostic.getSource());
-			sb.append("\n");
-		}
+//		for (Diagnostic d: result.getInfoDiagnostics()) {
+//			CDADiagnostic cdaDiagnostic = new CDADiagnostic(d);
+//			sb.append("INFO|"+cdaDiagnostic.getMessage() +"|"+cdaDiagnostic.getPath()+ "|"+ cdaDiagnostic.getCode() + "|" + cdaDiagnostic.getSource());
+//			sb.append("\n");
+//		}
 		for (Diagnostic dq: result.getErrorDiagnostics()) {
 			CDADiagnostic cdaDiagnosticq = new CDADiagnostic(dq);
 			sb.append("ERROR|"+cdaDiagnosticq.getMessage() +"|"+ cdaDiagnosticq.getPath()+ "|" + cdaDiagnosticq.getCode() + "|" + cdaDiagnosticq.getSource() );
 			sb.append("\n");
 		}
-		for (Diagnostic dw: result.getWarningDiagnostics()) {
-			CDADiagnostic cdaDiagnosticw = new CDADiagnostic(dw);
-			sb.append("WARN|"+cdaDiagnosticw.getMessage() +"|"+ cdaDiagnosticw.getPath()+ "|"+ cdaDiagnosticw.getSource() + "|" + cdaDiagnosticw.getCode() + "|" + cdaDiagnosticw.getSource() );
-			sb.append("\n");
-		}
+//		for (Diagnostic dw: result.getWarningDiagnostics()) {
+//			CDADiagnostic cdaDiagnosticw = new CDADiagnostic(dw);
+//			sb.append("WARN|"+cdaDiagnosticw.getMessage() +"|"+ cdaDiagnosticw.getPath()+ "|"+ cdaDiagnosticw.getSource() + "|" + cdaDiagnosticw.getCode() + "|" + cdaDiagnosticw.getSource() );
+//			sb.append("\n");
+//		}
 		System.out.println(sb.toString());
 		return sb;
 	}
