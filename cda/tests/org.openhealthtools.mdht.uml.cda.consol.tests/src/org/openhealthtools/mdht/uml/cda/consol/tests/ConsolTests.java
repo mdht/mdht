@@ -7,7 +7,6 @@
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
 import junit.framework.JUnit4TestAdapter;
-
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -78,10 +77,11 @@ import org.junit.runners.Suite;
 		ProcedureImplantsSectionTest.class, ProcedureIndicationsSectionTest.class,
 		ProcedureSpecimensTakenSectionTest.class, SubjectiveSectionTest.class, ConsultationNoteTest.class,
 		AssessmentSectionTest.class, HistoryAndPhysicalNoteTest.class, OperativeNoteTest.class,
-		ProcedureNoteTest.class, InstructionsSectionTest.class, MedicationDispenseAssignedEntityTest.class,
-		ImmunizationMedicationInformationManufacturedMaterialTest.class, DiagnosticImagingReportTest.class,
-		PhysicianReadingStudyPerformerTest.class, PhysicianofRecordParticipantTest.class, TextObservationTest.class,
-		QuantityMeasurementObservationTest.class, CodeObservationsTest.class, ProcedureContextTest.class })
+		ProcedureNoteTest.class, ProgressNoteTest.class, InstructionsSectionTest.class,
+		MedicationDispenseAssignedEntityTest.class, ImmunizationMedicationInformationManufacturedMaterialTest.class,
+		DiagnosticImagingReportTest.class, PhysicianReadingStudyPerformerTest.class,
+		PhysicianofRecordParticipantTest.class, TextObservationTest.class, QuantityMeasurementObservationTest.class,
+		CodeObservationsTest.class, ProcedureContextTest.class })
 public class ConsolTests {
 
 	/**
