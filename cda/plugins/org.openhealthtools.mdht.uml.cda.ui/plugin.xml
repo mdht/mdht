@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-  Copyright (c) 2009, 2011 David A Carlson.
+  Copyright (c) 2009, 2012 David A Carlson.
   All rights reserved. This program and the accompanying materials
   are made available under the terms of the Eclipse Public License v1.0
   which accompanies this distribution, and is available at
@@ -36,57 +36,6 @@
  
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
        <propertySections contributorId="org.openhealthtools.mdht.uml.ui.properties">
-          <propertySection tab="property.tab.CDAPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.CodeSystemVersionSection" 
-	 	     id="property.section.CodeSystemVersionSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodeSystemVersionFilter">
-	      </propertySection>
-          <propertySection tab="property.tab.CDAPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetVersionSection" 
-	 	     id="property.section.ValueSetVersionSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetVersionFilter">
-	      </propertySection>
-          <propertySection tab="property.tab.CDAPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetCodeSection" 
-	 	     id="property.section.ValueSetCodeSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetCodeFilter">
-	      </propertySection>
-	      
-          <propertySection tab="property.tab.CDAPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.ValidationSection" 
-	 	     id="property.section.cda.ValidationSection"
-             filter="org.openhealthtools.mdht.uml.cda.ui.filters.ValidationFilter"/>
-             
-          <propertySection tab="property.tab.CDAPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetConstraintSection" 
-	 	     id="property.section.ValueSetConstraintSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetConstraintFilter">
-	      </propertySection>
-          <propertySection tab="property.tab.CDAPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.CodeSystemConstraintSection" 
-	 	     id="property.section.CodeSystemConstraintSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodeSystemConstraintFilter">
-	      </propertySection>
-          <propertySection tab="property.tab.CDAPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ConceptDomainConstraintSection" 
-	 	     id="property.section.ConceptDomainConstraintSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.ConceptDomainConstraintFilter">
-	      </propertySection>
-	      
-          <propertySection tab="property.tab.CDAPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.VocabularyConstraintsSection" 
-	 	     id="property.section.VocabularyConstraintsSection"
-             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodedAttributeFilter">
-	      </propertySection>
-	      
-          <propertySection tab="property.tab.CDAPropertySection"
-             class="org.openhealthtools.mdht.uml.cda.ui.properties.TemplateSection"
-             id="property.section.cda.TemplateSection"
-             filter="org.openhealthtools.mdht.uml.cda.ui.filters.TemplateFilter"/>
-          <propertySection tab="property.tab.CDAPropertySection" 
-	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.TextValueSection" 
-	 	     id="property.section.cda.TextValueSection"
-             filter="org.openhealthtools.mdht.uml.cda.ui.filters.TextAttributeFilter"/>
              
           <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.ActRelationshipSection" 
@@ -99,11 +48,6 @@
              filter="org.openhealthtools.mdht.uml.cda.ui.filters.ParticipationFilter"/>
           -->
              
-          <propertySection tab="property.tab.CDAPropertySection"
-             class="org.openhealthtools.mdht.uml.cda.ui.properties.GeneralizationSection"
-             id="property.section.cda.GeneralizationSection"
-             filter="org.openhealthtools.mdht.uml.cda.ui.filters.ConformsToFilter"/>
-             
           <!-- deprecated -->
           <propertySection tab="property.tab.CDAPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.EntrySection" 
@@ -113,6 +57,43 @@
 	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.EntryRelationshipSection" 
 	 	     id="property.section.cda.EntryRelationshipSection"
              filter="org.openhealthtools.mdht.uml.cda.ui.filters.EntryRelationshipFilter"/>
+             
+          <propertySection tab="property.tab.CDAPropertySection"
+             class="org.openhealthtools.mdht.uml.cda.ui.properties.AssociationValidationSection"
+             id="property.section.cda.AssociationValidationSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.AssociationFilter"/>
+             
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.TextValueSection" 
+	 	     id="property.section.cda.TextValueSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.TextAttributeFilter"/>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.TerminologyValidationSection" 
+	 	     id="property.section.cda.TerminologyValidationSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.TerminologyConstraintFilter"/>
+          <propertySection tab="property.tab.CDAPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.cda.ui.properties.PropertySection" 
+	 	     id="property.section.cda.PropertySection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.PropertyFilter"/>
+             
+          <propertySection tab="property.tab.CDAPropertySection"
+             class="org.openhealthtools.mdht.uml.cda.ui.properties.ConstraintValidationSection"
+             id="property.section.cda.ConstraintValidationSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.ConstraintFilter"/>
+          <propertySection tab="property.tab.CDAPropertySection"
+             class="org.openhealthtools.mdht.uml.cda.ui.properties.GeneralizationSection"
+             id="property.section.cda.GeneralizationSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.ConformsToFilter"/>
+          <propertySection tab="property.tab.CDAPropertySection"
+             class="org.openhealthtools.mdht.uml.cda.ui.properties.TemplateSection"
+             id="property.section.cda.TemplateSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.TemplateFilter"/>
+             
+          <propertySection tab="property.tab.CDAPropertySection"
+             class="org.openhealthtools.mdht.uml.cda.ui.properties.ConformanceRuleSection"
+             id="property.section.cda.ConformanceRuleSection"
+             filter="org.openhealthtools.mdht.uml.cda.ui.filters.ValidationFilter"/>
+             
       </propertySections>
    </extension> 
  
@@ -162,11 +143,6 @@
 			<visibility>
 				<objectClass name="org.eclipse.uml2.uml.Package" />
 			</visibility>
-			<action label="%setRequiresParentId.label"
-				class="org.openhealthtools.mdht.uml.cda.ui.actions.SetRequiresParentIdAction"
-				menubarPath="cdatools/edit" enablesFor="1"
-				id="org.openhealthtools.mdht.uml.cda.ui.actions.setRequiresParentIdAction">
-			</action>
 			<!--
 			<action label="%updateProfileVersion.label"
 				class="org.openhealthtools.mdht.uml.cda.ui.actions.UpdateProfileVersionAction"
@@ -186,7 +162,6 @@
 			</action>
 		</objectContribution>
 		
-
 		<objectContribution adaptable="true"
 			objectClass="org.eclipse.gmf.runtime.notation.View" 
 			id="org.openhealthtools.mdht.uml.cda.ui.dialogs.contribution3">
@@ -200,37 +175,6 @@
 			</action>
 		</objectContribution>
 		
-		<!--
-        <objectContribution
-      		adaptable="true"
-            objectClass="org.eclipse.uml2.uml.Element"
-            id="org.openhealthtools.mdht.uml.ui.dev.popup">
-          <menu label="%CDATools.menu.label" path="additions" id="cdatools">
-            <separator name="transform"/>
-          </menu>
-			<visibility>
-				<or>
-					<objectClass name="org.eclipse.uml2.uml.Package" />
-					<objectClass name="org.eclipse.uml2.uml.Class" />
-				</or>
-			</visibility>
-          <action
-               label="%consolidateResource.label"
-               class="org.openhealthtools.mdht.uml.cda.ui.actions.ConsolidateResourceAction"
-               menubarPath="cdatools/transform"
-               enablesFor="1"
-               id="org.openhealthtools.mdht.uml.ui.dev.actions.ConsolidateResourceAction">
-          </action>
-          <action
-               label="%consolidateTemplates.label"
-               class="org.openhealthtools.mdht.uml.cda.ui.actions.ConsolidateTemplatesAction"
-               menubarPath="cdatools/transform"
-               enablesFor="1"
-               id="org.openhealthtools.mdht.uml.ui.dev.actions.ConsolidateTemplatesAction">
-          </action>
-        </objectContribution>
-        -->
-        
         <objectContribution
               adaptable="true"
               id="org.openhealthtools.mdht.uml.cda.ui.contribution1"
@@ -244,8 +188,6 @@
                  menubarPath="additions">
            </action>
         </objectContribution>
-      
-  
 	</extension>
 	
    <extension point="org.eclipse.ui.popupMenus">
@@ -272,34 +214,6 @@
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution adaptable="true"
 			objectClass="org.eclipse.uml2.uml.Element"
-            id="mdht.objectContribution.uml.package.term">
-         <visibility>
-			<objectClass name="org.eclipse.uml2.uml.Package" />
-			<!-- TODO and has Terminology profile applied -->
-         </visibility>
-         <action
-               label="%addValueSetVersion.label"
-               icon="icons/full/obj16/Enumeration.gif"
-               class="org.openhealthtools.mdht.uml.term.ui.actions.AddValueSetVersionAction"
-               menubarPath="mdht.addCDA/classifierGroup"
-               enablesFor="1"
-               id="mdht.actions.addCDA.valueSetVersion">
-         </action>
-         <action
-               label="%addCodeSystemVersion.label"
-               icon="icons/full/obj16/Enumeration.gif"
-               class="org.openhealthtools.mdht.uml.term.ui.actions.AddCodeSystemVersionAction"
-               menubarPath="mdht.addCDA/classifierGroup"
-               enablesFor="1"
-               id="mdht.actions.addCDA.codeSystemVersion">
-         </action>
-      </objectContribution>
-   </extension>
-         
-   <!-- UML Package menu items -->
-   <extension point="org.eclipse.ui.popupMenus">
-      <objectContribution adaptable="true"
-			objectClass="org.eclipse.uml2.uml.Element"
             id="mdht.objectContribution.uml.package.cda">
          <visibility>
 			<objectClass name="org.eclipse.uml2.uml.Package" />
@@ -315,33 +229,7 @@
          </action>
       </objectContribution>
    </extension>
-       
-       
- 
-       
-   <!-- UML Enumeration menu items -->
-   <extension point="org.eclipse.ui.popupMenus">
-      <objectContribution adaptable="true"
-			objectClass="org.eclipse.uml2.uml.Element"
-            id="mdht.objectContribution.uml.package.term">
-         <visibility>
-            <objectClass name="org.eclipse.uml2.uml.Enumeration" />
-			<!-- TODO and has stereotype ValueSetVersion applied -->
-         </visibility>
-         <action
-               label="%addValueSetCode.label"
-               icon="icons/full/obj16/EnumerationLiteral.gif"
-               class="org.openhealthtools.mdht.uml.term.ui.actions.AddValueSetCodeAction"
-               menubarPath="mdht.addCDA/propertyGroup"
-               enablesFor="1"
-               id="mdht.actions.addCDA.valueSetCode">
-         </action>
-      </objectContribution>
-   </extension>
-   
 
-   
-   
    <extension
          id="xmlProblem"
          name="XML Problem"
@@ -355,7 +243,6 @@
    </extension>
 
    <extension point="org.eclipse.ui.views">
-     
      	<category name="UML Modeling" id="org.openhealthtools.mdht.uml.cda.ui.instance.car" />
 
       <view
@@ -365,9 +252,7 @@
             name="UML Instance View">
       </view>
    </extension>
-   
- 
-   
+
    <extension
          id="org.openhealthtools.mdht.uml.cda.builder.id"
          name="CDA Project Builder"
@@ -403,7 +288,6 @@
             value="true">
       </persistent>
    </extension>
-
   
    <extension point="org.eclipse.ui.newWizards">
       <category
@@ -419,6 +303,5 @@
             project="true">
       </wizard>
    </extension>
-      
             
 </plugin>

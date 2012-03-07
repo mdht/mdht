@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2011 David A Carlson and others.
+ * Copyright (c) 2009, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.impl.NotificationImpl;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -43,72 +44,48 @@ import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
-import org.eclipse.swt.graphics.GC;
-import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
-import org.eclipse.swt.layout.FormLayout;
-import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
-import org.eclipse.uml2.uml.Association;
-import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
-import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.Profile;
-import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
-import org.openhealthtools.mdht.uml.cda.ui.filters.TextAttributeFilter;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.ui.properties.sections.ResettableModelerPropertySection;
 
 /**
  * The profile properties section for CDA Validation.
  */
-public class ValidationSection extends ResettableModelerPropertySection {
+public abstract class ValidationSection extends ResettableModelerPropertySection {
 
-	private Element modelElement;
+	protected Element modelElement;
 
-	private CCombo severityCombo;
+	protected CCombo severityCombo;
 
-	private boolean severityModified = false;
+	protected boolean severityModified = false;
 
-	private Text ruleIdText;
+	protected Text ruleIdText;
 
-	private boolean ruleIdModified = false;
-
-	private Text messageDisplay;
-
-	private Text messageText;
-
-	private boolean messageModified = false;
-
-	private Button mandatoryButton;
-
-	private boolean mandatoryModified = false;
+	protected boolean ruleIdModified = false;
 
 	/**
 	 * Duplicate copy of private field in superclass. I'd like to remove this,
 	 * but can't find another way to refresh all page sections.
 	 */
-	private TabbedPropertySheetPage myTabbedPropertySheetPage;
+	protected TabbedPropertySheetPage myTabbedPropertySheetPage;
 
 	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
-			if (messageText == event.getSource()) {
-				messageModified = true;
-			}
 			if (ruleIdText == event.getSource()) {
 				ruleIdModified = true;
 			}
@@ -137,8 +114,13 @@ public class ValidationSection extends ResettableModelerPropertySection {
 		}
 	};
 
-	private void modifyFields() {
-		if (!(messageModified || ruleIdModified || severityModified || mandatoryModified)) {
+	/**
+	 * Stereotype must be subclass of Validation stereotype.
+	 */
+	protected abstract Stereotype getValidationStereotype();
+
+	protected void modifyFields() {
+		if (!(ruleIdModified || severityModified)) {
 			return;
 		}
 
@@ -148,8 +130,7 @@ public class ValidationSection extends ResettableModelerPropertySection {
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 				@Override
 				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-						modelElement, ICDAProfileConstants.VALIDATION);
+					Stereotype stereotype = getValidationStereotype();
 
 					Enumeration severityKind = null;
 					Profile cdaProfile = CDAProfileUtil.getCDAProfile(modelElement.eResource().getResourceSet());
@@ -158,10 +139,10 @@ public class ValidationSection extends ResettableModelerPropertySection {
 					}
 
 					if (stereotype == null) {
-						stereotype = applyValidationStereotype(modelElement);
-					}
-					if (stereotype == null) {
 						return Status.CANCEL_STATUS;
+					}
+					if (!modelElement.isStereotypeApplied(stereotype)) {
+						modelElement.applyStereotype(stereotype);
 					}
 
 					if (severityModified) {
@@ -189,23 +170,11 @@ public class ValidationSection extends ResettableModelerPropertySection {
 						while (tokenizer.hasMoreTokens()) {
 							validation.getRuleId().add(tokenizer.nextToken());
 						}
-					} else if (mandatoryModified) {
-						mandatoryModified = false;
-						this.setLabel("Set Validation Mandatory");
-						modelElement.setValue(
-							stereotype, ICDAProfileConstants.VALIDATION_MANDATORY, mandatoryButton.getSelection());
-					} else if (messageModified) {
-						messageModified = false;
-						this.setLabel("Set Validation Message");
-
-						String value = messageText.getText().trim();
-						modelElement.setValue(stereotype, ICDAProfileConstants.VALIDATION_MESSAGE, value.length() > 0
-								? value
-								: null);
 					} else {
 						return Status.CANCEL_STATUS;
 					}
 
+					updateViews();
 					return Status.OK_STATUS;
 				}
 			};
@@ -233,14 +202,15 @@ public class ValidationSection extends ResettableModelerPropertySection {
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Restore Default Values") {
 				@Override
 				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					Stereotype validationStereotype = CDAProfileUtil.getAppliedCDAStereotype(
-						modelElement, ICDAProfileConstants.VALIDATION);
+					Stereotype stereotype = getValidationStereotype();
 
-					if (validationStereotype == null) {
+					if (stereotype == null) {
 						return Status.CANCEL_STATUS;
 					}
 
-					modelElement.unapplyStereotype(validationStereotype);
+					if (modelElement.isStereotypeApplied(stereotype)) {
+						modelElement.unapplyStereotype(stereotype);
+					}
 
 					/*
 					 * Refresh all sections on this tabbed page, especially the filtered stereotype specific sections.
@@ -268,55 +238,7 @@ public class ValidationSection extends ResettableModelerPropertySection {
 		}
 	}
 
-	private Stereotype applyValidationStereotype(Element element) {
-		Profile cdaProfile = CDAProfileUtil.getCDAProfile(element.eResource().getResourceSet());
-		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
-
-		if (stereotype == null && cdaProfile != null) {
-			if (element instanceof Association) {
-				stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.ASSOCIATION_VALIDATION);
-			} else if (element instanceof Class) {
-				stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.CLASS_VALIDATION);
-			} else if (element instanceof Constraint) {
-				stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.CONSTRAINT_VALIDATION);
-			} else if (element instanceof Generalization) {
-				stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.CONFORMS_TO);
-			} else if (element instanceof Property) {
-				// if (new CodedAttributeFilter().select(element))
-				// stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.VOCAB_SPECIFICATION);
-				// else
-				if (new TextAttributeFilter().select(element)) {
-					stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.TEXT_VALUE);
-				} else {
-					stereotype = CDAProfileUtil.applyCDAStereotype(element, ICDAProfileConstants.PROPERTY_VALIDATION);
-				}
-			}
-		}
-
-		return stereotype;
-	}
-
-	@Override
-	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
-		super.createControls(parent, aTabbedPropertySheetPage);
-
-		myTabbedPropertySheetPage = aTabbedPropertySheetPage;
-
-		Shell shell = new Shell();
-		GC gc = new GC(shell);
-		gc.setFont(shell.getFont());
-		Point point = gc.textExtent("");//$NON-NLS-1$
-		int charHeight = point.y;
-		gc.dispose();
-		shell.dispose();
-
-		Composite composite = getWidgetFactory().createGroup(parent, "Validation");
-		FormLayout layout = new FormLayout();
-		layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
-		layout.marginHeight = ITabbedPropertyConstants.VSPACE;
-		layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
-		composite.setLayout(layout);
-
+	protected void addValidationControls(final Composite composite, int numerator, int offset) {
 		FormData data = null;
 
 		/* ---- severity combo ---- */
@@ -342,7 +264,7 @@ public class ValidationSection extends ResettableModelerPropertySection {
 
 		data = new FormData();
 		data.left = new FormAttachment(severityLabel, 0);
-		data.top = new FormAttachment(0, 4);
+		data.top = new FormAttachment(numerator, offset, ITabbedPropertyConstants.VSPACE);
 		severityCombo.setLayoutData(data);
 
 		/* ---- Rule Id text ---- */
@@ -359,59 +281,85 @@ public class ValidationSection extends ResettableModelerPropertySection {
 		data.top = new FormAttachment(severityCombo, 0, SWT.CENTER);
 		ruleIdText.setLayoutData(data);
 
-		/* ---- mandatory checkbox ---- */
-		mandatoryButton = getWidgetFactory().createButton(composite, "Mandatory", SWT.CHECK);
-		data = new FormData();
-		data.left = new FormAttachment(ruleIdText, ITabbedPropertyConstants.HSPACE);
-		data.top = new FormAttachment(ruleIdText, 0, SWT.CENTER);
-		mandatoryButton.setLayoutData(data);
-		mandatoryButton.addSelectionListener(new SelectionListener() {
-			public void widgetDefaultSelected(SelectionEvent e) {
-				mandatoryModified = true;
-				modifyFields();
+	}
+
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+		super.createControls(parent, aTabbedPropertySheetPage);
+
+		myTabbedPropertySheetPage = aTabbedPropertySheetPage;
+
+		// Composite composite = getWidgetFactory().createGroup(parent, "Validation");
+		// FormLayout layout = new FormLayout();
+		// layout.marginWidth = ITabbedPropertyConstants.HSPACE + 2;
+		// layout.marginHeight = ITabbedPropertyConstants.VSPACE;
+		// layout.spacing = ITabbedPropertyConstants.VMARGIN + 1;
+		// composite.setLayout(layout);
+		//
+		// addValidationControls(composite, 0, 1);
+	}
+
+	@Override
+	public void refresh() {
+		Stereotype stereotype = getValidationStereotype();
+
+		Enumeration severityKind = null;
+		Profile cdaProfile = CDAProfileUtil.getCDAProfile(modelElement.eResource().getResourceSet());
+		if (cdaProfile != null) {
+			severityKind = (Enumeration) cdaProfile.getOwnedType(ICDAProfileConstants.SEVERITY_KIND);
+		}
+
+		ruleIdText.removeModifyListener(modifyListener);
+		ruleIdText.removeKeyListener(keyListener);
+		ruleIdText.removeFocusListener(focusListener);
+		Object ruleIds = null;
+		if (stereotype != null && modelElement.isStereotypeApplied(stereotype)) {
+			ruleIds = modelElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_RULE_ID);
+		}
+		if (ruleIds != null) {
+			StringBuffer ruleIdDisplay = new StringBuffer();
+			Validation validation = (Validation) modelElement.getStereotypeApplication(stereotype);
+			for (String ruleId : validation.getRuleId()) {
+				if (ruleIdDisplay.length() > 0) {
+					ruleIdDisplay.append(", ");
+				}
+				ruleIdDisplay.append(ruleId);
+			}
+			ruleIdText.setText(ruleIdDisplay.toString());
+		} else {
+			ruleIdText.setText("");
+		}
+		ruleIdText.addModifyListener(modifyListener);
+		ruleIdText.addKeyListener(keyListener);
+		ruleIdText.addFocusListener(focusListener);
+
+		severityCombo.select(0);
+		if (stereotype != null && modelElement.isStereotypeApplied(stereotype)) {
+			Object value = modelElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY);
+			String severity = null;
+			if (value instanceof EnumerationLiteral) {
+				severity = ((EnumerationLiteral) value).getName();
+			} else if (value instanceof Enumerator) {
+				severity = ((Enumerator) value).getName();
 			}
 
-			public void widgetSelected(SelectionEvent e) {
-				mandatoryModified = true;
-				modifyFields();
+			if (severityKind != null && severity != null) {
+				EnumerationLiteral literal = severityKind.getOwnedLiteral(severity);
+				if (literal != null) {
+					int index = severityKind.getOwnedLiterals().indexOf(literal);
+					severityCombo.select(index + 1);
+				}
 			}
-		});
+		}
 
-		/* ---- Restore Defaults button ---- */
-		createRestoreDefaultsButton(composite);
-		data = new FormData();
-		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(mandatoryButton, 0, SWT.CENTER);
-		restoreDefaultsButton.setLayoutData(data);
+		if (isReadOnly()) {
+			severityCombo.setEnabled(false);
+			ruleIdText.setEnabled(false);
+		} else {
+			severityCombo.setEnabled(true);
+			ruleIdText.setEnabled(true);
+		}
 
-		/* ---- message display ---- */
-		messageDisplay = getWidgetFactory().createText(composite, "", SWT.V_SCROLL | SWT.WRAP | SWT.READ_ONLY); //$NON-NLS-1$
-		data = new FormData();
-		data.left = new FormAttachment(0, 0);
-		// if I set the width AND right, then I get proper wrapping for long text... whatever.
-		data.width = 300;
-		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(severityCombo, 0, SWT.BOTTOM);
-		data.height = charHeight * 3;
-		messageDisplay.setLayoutData(data);
-
-		/* ---- custom message text ---- */
-		messageText = getWidgetFactory().createText(composite, "", SWT.V_SCROLL | SWT.WRAP);
-		CLabel messageLabel = getWidgetFactory().createCLabel(composite, "Custom Message:"); //$NON-NLS-1$
-		data = new FormData();
-		data.left = new FormAttachment(0, 0);
-		data.top = new FormAttachment(messageDisplay, 0, SWT.BOTTOM);
-		messageLabel.setLayoutData(data);
-
-		data = new FormData();
-		data.left = new FormAttachment(messageLabel, 0);
-		// if I set the width AND right, then I get proper wrapping for long text... whatever.
-		data.width = 300;
-		data.right = new FormAttachment(100, 0);
-		// if I set the top AND height, then I get vertical scroll within the tab page
-		data.top = new FormAttachment(messageDisplay, 0, SWT.BOTTOM);
-		data.height = charHeight * 4;
-		messageText.setLayoutData(data);
 	}
 
 	@Override
@@ -457,100 +405,6 @@ public class ValidationSection extends ResettableModelerPropertySection {
 
 	}
 
-	@Override
-	public void refresh() {
-		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(modelElement, ICDAProfileConstants.VALIDATION);
-
-		Enumeration severityKind = null;
-		Profile cdaProfile = CDAProfileUtil.getCDAProfile(modelElement.eResource().getResourceSet());
-		if (cdaProfile != null) {
-			severityKind = (Enumeration) cdaProfile.getOwnedType(ICDAProfileConstants.SEVERITY_KIND);
-		}
-
-		String computedMessage = CDAModelUtil.computeConformanceMessage(modelElement, false);
-		messageDisplay.setText(computedMessage != null
-				? computedMessage
-				: "");
-
-		messageText.removeModifyListener(modifyListener);
-		messageText.removeKeyListener(keyListener);
-		messageText.removeFocusListener(focusListener);
-		if (stereotype != null) {
-			String message = (String) modelElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_MESSAGE);
-			messageText.setText(message != null
-					? message
-					: "");
-		} else {
-			messageText.setText("");
-		}
-		messageText.addModifyListener(modifyListener);
-		messageText.addKeyListener(keyListener);
-		messageText.addFocusListener(focusListener);
-
-		ruleIdText.removeModifyListener(modifyListener);
-		ruleIdText.removeKeyListener(keyListener);
-		ruleIdText.removeFocusListener(focusListener);
-		Object ruleIds = null;
-		if (stereotype != null) {
-			ruleIds = modelElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_RULE_ID);
-		}
-		if (ruleIds != null) {
-			StringBuffer ruleIdDisplay = new StringBuffer();
-			Validation validation = (Validation) modelElement.getStereotypeApplication(stereotype);
-			for (String ruleId : validation.getRuleId()) {
-				if (ruleIdDisplay.length() > 0) {
-					ruleIdDisplay.append(", ");
-				}
-				ruleIdDisplay.append(ruleId);
-			}
-			ruleIdText.setText(ruleIdDisplay.toString());
-		} else {
-			ruleIdText.setText("");
-		}
-		ruleIdText.addModifyListener(modifyListener);
-		ruleIdText.addKeyListener(keyListener);
-		ruleIdText.addFocusListener(focusListener);
-
-		severityCombo.select(0);
-		if (stereotype != null) {
-			Object value = modelElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_SEVERITY);
-			String severity = null;
-			if (value instanceof EnumerationLiteral) {
-				severity = ((EnumerationLiteral) value).getName();
-			} else if (value instanceof Enumerator) {
-				severity = ((Enumerator) value).getName();
-			}
-
-			if (severityKind != null && severity != null) {
-				EnumerationLiteral literal = severityKind.getOwnedLiteral(severity);
-				if (literal != null) {
-					int index = severityKind.getOwnedLiterals().indexOf(literal);
-					severityCombo.select(index + 1);
-				}
-			}
-		}
-
-		if (stereotype != null) {
-			Object value = modelElement.getValue(stereotype, ICDAProfileConstants.VALIDATION_MANDATORY);
-			mandatoryButton.setSelection(Boolean.TRUE.equals(value));
-		} else {
-			mandatoryButton.setSelection(false);
-		}
-
-		if (isReadOnly()) {
-			severityCombo.setEnabled(false);
-			messageText.setEnabled(false);
-			mandatoryButton.setEnabled(false);
-			restoreDefaultsButton.setEnabled(false);
-		} else {
-			severityCombo.setEnabled(true);
-			messageText.setEnabled(true);
-			mandatoryButton.setEnabled(true);
-			restoreDefaultsButton.setEnabled(stereotype != null);
-		}
-
-	}
-
 	/**
 	 * Update if necessary, upon receiving the model event.
 	 * 
@@ -578,4 +432,20 @@ public class ValidationSection extends ResettableModelerPropertySection {
 		}
 	}
 
+	protected void updateViews() {
+		// fire notification for any stereotype umlEnumeration changes to update views
+		// this is a bogus notification of change to modelElement comments, but can't find a better option
+		Notification notification = new NotificationImpl(Notification.SET, null, modelElement.getOwnedComments()) {
+			@Override
+			public Object getNotifier() {
+				return modelElement;
+			}
+
+			@Override
+			public int getFeatureID(java.lang.Class<?> expectedClass) {
+				return UMLPackage.ELEMENT__OWNED_COMMENT;
+			}
+		};
+		modelElement.eNotify(notification);
+	}
 }
