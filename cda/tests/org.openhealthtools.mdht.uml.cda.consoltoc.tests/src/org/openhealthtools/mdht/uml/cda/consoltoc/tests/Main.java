@@ -25,7 +25,7 @@ import org.openhealthtools.mdht.uml.cda.util.ValidationResult;
 
 /**
  * @author ramakrishnanr
- *
+ * 
  */
 public class Main {
 
@@ -34,7 +34,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		System.out.println("=========================");
-//		testDS("DS.sample.l3.conformances");
+		// testDS("DS.sample.l3.conformances");
 		validateAndLog("DS.sample.l3.conformances");
 		System.out.println("=========================");
 	}
@@ -45,26 +45,27 @@ public class Main {
 		ConsoltocPackage.eINSTANCE.eClass();
 		ValidationResult result = new ValidationResult();
 		try {
-			ClinicalDocument clinicalDocument = CDAUtil.load((new FileInputStream(path + fileName + ".xml")), result);
-			
+			ClinicalDocument clinicalDocument = CDAUtil.load(
+					(new FileInputStream(path + fileName + ".xml")), result);
+
 			System.out.println(clinicalDocument);
 			System.out.println(clinicalDocument.getAllSections().size());
 			for (Object j : clinicalDocument.getAllSections()) {
 				System.out.println(j);
 			}
-			
-			DischargeSummary ds = (DischargeSummary)clinicalDocument ;
+
+			DischargeSummary ds = (DischargeSummary) clinicalDocument;
 			System.out.println(ds.getAllergiesSectionEntriesOptional());
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void writeLog(String fileName, StringBuffer sb) {
-		String path = "log/" ;
+		String path = "log/";
 		try {
-			FileWriter fw = new FileWriter(path + fileName + ".log" );
+			FileWriter fw = new FileWriter(path + fileName + ".log");
 			BufferedWriter out = new BufferedWriter(fw);
 			out.write(sb.toString());
 			out.close();
@@ -72,42 +73,48 @@ public class Main {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static StringBuffer validate(String fileName) {
 		StringBuffer sb = new StringBuffer();
-		String path = "samples/" ;
-		
+		String path = "samples/";
+
 		ValidationResult result = new ValidationResult();
 		try {
-			ClinicalDocument clinicalDocument = CDAUtil.load ( (new FileInputStream(path +fileName + ".xml")),result);	
-			
-		}catch(Exception e) {
+			ClinicalDocument clinicalDocument = CDAUtil.load(
+					(new FileInputStream(path + fileName + ".xml")), result);
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-//		for (Diagnostic d: result.getInfoDiagnostics()) {
-//			CDADiagnostic cdaDiagnostic = new CDADiagnostic(d);
-//			sb.append("INFO|"+cdaDiagnostic.getMessage() +"|"+cdaDiagnostic.getPath()+ "|"+ cdaDiagnostic.getCode() + "|" + cdaDiagnostic.getSource());
-//			sb.append("\n");
-//		}
-		for (Diagnostic dq: result.getErrorDiagnostics()) {
+		// for (Diagnostic d: result.getInfoDiagnostics()) {
+		// CDADiagnostic cdaDiagnostic = new CDADiagnostic(d);
+		// sb.append("INFO|"+cdaDiagnostic.getMessage()
+		// +"|"+cdaDiagnostic.getPath()+ "|"+ cdaDiagnostic.getCode() + "|" +
+		// cdaDiagnostic.getSource());
+		// sb.append("\n");
+		// }
+		for (Diagnostic dq : result.getErrorDiagnostics()) {
 			CDADiagnostic cdaDiagnosticq = new CDADiagnostic(dq);
-			sb.append("ERROR|"+cdaDiagnosticq.getMessage() +"|"+ cdaDiagnosticq.getPath()+ "|" + cdaDiagnosticq.getCode() + "|" + cdaDiagnosticq.getSource() );
+			sb.append("ERROR|" + cdaDiagnosticq.getMessage() + "|"
+					+ cdaDiagnosticq.getPath() + "|" + cdaDiagnosticq.getCode()
+					+ "|" + cdaDiagnosticq.getSource());
 			sb.append("\n");
 		}
-//		for (Diagnostic dw: result.getWarningDiagnostics()) {
-//			CDADiagnostic cdaDiagnosticw = new CDADiagnostic(dw);
-//			sb.append("WARN|"+cdaDiagnosticw.getMessage() +"|"+ cdaDiagnosticw.getPath()+ "|"+ cdaDiagnosticw.getSource() + "|" + cdaDiagnosticw.getCode() + "|" + cdaDiagnosticw.getSource() );
-//			sb.append("\n");
-//		}
+		// for (Diagnostic dw: result.getWarningDiagnostics()) {
+		// CDADiagnostic cdaDiagnosticw = new CDADiagnostic(dw);
+		// sb.append("WARN|"+cdaDiagnosticw.getMessage() +"|"+
+		// cdaDiagnosticw.getPath()+ "|"+ cdaDiagnosticw.getSource() + "|" +
+		// cdaDiagnosticw.getCode() + "|" + cdaDiagnosticw.getSource() );
+		// sb.append("\n");
+		// }
 		System.out.println(sb.toString());
 		return sb;
 	}
-	
+
 	public static void validateAndLog(String fileName) {
 		ConsoltocPackage.eINSTANCE.eClass();
 		StringBuffer sb = validate(fileName);
 		writeLog(fileName, sb);
 	}
-
 
 }

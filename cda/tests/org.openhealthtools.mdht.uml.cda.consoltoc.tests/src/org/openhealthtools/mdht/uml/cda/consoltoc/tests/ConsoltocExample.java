@@ -28,16 +28,14 @@ import org.openhealthtools.mdht.uml.cda.consoltoc.ConsoltocPackage;
 import org.openhealthtools.mdht.uml.cda.consoltoc.DischargeSummary;
 
 /**
- * <!-- begin-user-doc -->
- * A sample utility for the '<em><b>consoltoc</b></em>' package.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A sample utility for the '<em><b>consoltoc</b></em>'
+ * package. <!-- end-user-doc -->
  * @generated
  */
 public class ConsoltocExample {
 	/**
-	 * <!-- begin-user-doc -->
-	 * Load all the argument file paths or URIs as instances of the model.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> Load all the argument file paths or URIs as
+	 * instances of the model. <!-- end-user-doc -->
 	 * @param args the file paths or URIs.
 	 * @generated
 	 */
@@ -105,11 +103,10 @@ public class ConsoltocExample {
 			}
 		}
 	}
-	
+
 	/**
-	 * <!-- begin-user-doc -->
-	 * Prints diagnostics with indentation.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> Prints diagnostics with indentation. <!--
+	 * end-user-doc -->
 	 * @param diagnostic the diagnostic to print.
 	 * @param indent the indentation for printing.
 	 * @generated
@@ -122,4 +119,4 @@ public class ConsoltocExample {
 		}
 	}
 
-} //ConsoltocExample
+} // ConsoltocExample
