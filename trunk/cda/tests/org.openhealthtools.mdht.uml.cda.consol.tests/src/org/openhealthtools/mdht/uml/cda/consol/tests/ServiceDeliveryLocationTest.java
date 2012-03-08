@@ -11,10 +11,14 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.PlayingEntity;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ServiceDeliveryLocation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ServiceDeliveryLocationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassRoot;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +44,7 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateServiceDeliveryLocationHasPlayingEntity() {
@@ -51,13 +55,14 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ServiceDeliveryLocation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ServiceDeliveryLocation target) {
-				target.init();
 
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				target.setPlayingEntity(pe);
 			}
 
 			@Override
@@ -74,7 +79,7 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateServiceDeliveryLocationHasPlayingEntityClassCode() {
@@ -85,13 +90,19 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ServiceDeliveryLocation target) {
+				target.init();
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
 
+				target.setPlayingEntity(pe);
 			}
 
 			@Override
 			protected void updateToPass(ServiceDeliveryLocation target) {
-				target.init();
 
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+
+				pe.setClassCode(EntityClassRoot.PLC);
+				target.setPlayingEntity(pe);
 			}
 
 			@Override
@@ -142,7 +153,7 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateServiceDeliveryLocationCode() {
@@ -153,12 +164,12 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ServiceDeliveryLocation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ServiceDeliveryLocation target) {
-				target.init();
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("", "2.16.840.1.113883.6.1"));
 
 			}
 
@@ -176,7 +187,7 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateServiceDeliveryLocationAddr() {
@@ -187,13 +198,13 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ServiceDeliveryLocation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ServiceDeliveryLocation target) {
-				target.init();
 
+				target.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
 			}
 
 			@Override
@@ -210,7 +221,7 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateServiceDeliveryLocationTelecom() {
@@ -221,13 +232,12 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ServiceDeliveryLocation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ServiceDeliveryLocation target) {
-				target.init();
-
+				target.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
 			}
 
 			@Override

@@ -65,6 +65,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_EncounterParticipant;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNoteHasAnAssementAndPlanSectionOrIndividualAssementAndPlanSections(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Has An Assement And Plan Section Or Individual Assement And Plan Sections</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNoteDoesNotHaveIndividualAssementAndPlanSectionsWhenAssementAndPlanSectionPresent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Does Not Have Individual Assement And Plan Sections When Assement And Plan Section Present</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNoteDoesNotHaveChiefComplaintAndReasonForVisitWithChiefComplaintSectionOrReasonSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Does Not Have Chief Complaint And Reason For Visit With Chief Complaint Section Or Reason Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNoteTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNoteIndividual(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Individual</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureNote#validateProcedureNoteComponentOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Note Component Of</em>}</li>
@@ -309,6 +310,87 @@ public class ProcedureNoteTest extends CDAValidationTest {
 		};
 
 		validateProcedureNoteDoesNotHaveIndividualAssementAndPlanSectionsWhenAssementAndPlanSectionPresentTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureNoteDoesNotHaveChiefComplaintAndReasonForVisitWithChiefComplaintSectionOrReasonSection() {
+		OperationsTestCase<ProcedureNote> validateProcedureNoteDoesNotHaveChiefComplaintAndReasonForVisitWithChiefComplaintSectionOrReasonSectionTestCase = new OperationsTestCase<ProcedureNote>(
+			"validateProcedureNoteDoesNotHaveChiefComplaintAndReasonForVisitWithChiefComplaintSectionOrReasonSection",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_NOTE_DOES_NOT_HAVE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_WITH_CHIEF_COMPLAINT_SECTION_OR_REASON_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(ProcedureNote target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init());
+						target.addSection(ConsolFactory.eINSTANCE.createChiefComplaintSection().init());
+					}
+
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(ProcedureNote target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init());
+						target.addSection(ConsolFactory.eINSTANCE.createReasonForVisitSection().init());
+					}
+
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(ProcedureNote target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init());
+						target.addSection(ConsolFactory.eINSTANCE.createChiefComplaintSection().init());
+						target.addSection(ConsolFactory.eINSTANCE.createReasonForVisitSection().init());
+					}
+
+				});
+
+			}
+
+			@Override
+			public void addPassTests() {
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(ProcedureNote target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init());
+
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(ProcedureNote target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createChiefComplaintSection().init());
+						target.addSection(ConsolFactory.eINSTANCE.createReasonForVisitSection().init());
+					}
+				});
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureNoteOperations.validateProcedureNoteDoesNotHaveChiefComplaintAndReasonForVisitWithChiefComplaintSectionOrReasonSection(
+					(ProcedureNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureNoteDoesNotHaveChiefComplaintAndReasonForVisitWithChiefComplaintSectionOrReasonSectionTestCase.doValidationTest();
 	}
 
 	/**

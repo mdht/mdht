@@ -55,6 +55,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteHasAnAssementAndPlanSectionOrIndividualAssementAndPlanSections(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Has An Assement And Plan Section Or Individual Assement And Plan Sections</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteDoesNotHaveIndividualAssementAndPlanSectionsWhenAssementAndPlanSectionPresent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Does Not Have Individual Assement And Plan Sections When Assement And Plan Section Present</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteHasChiefComplaintAndReasonForVisitChiefComplaintOrReasonForVisit(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Has Chief Complaint And Reason For Visit Chief Complaint Or Reason For Visit</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteDoesNotHaveChiefComplaintAndReasonForVisitWithChiefComplaintSectionOrReasonSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Does Not Have Chief Complaint And Reason For Visit With Chief Complaint Section Or Reason Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteInFulfillmentOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note In Fulfillment Of</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HistoryAndPhysicalNote#validateHistoryAndPhysicalNoteComponentOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate History And Physical Note Component Of</em>}</li>
@@ -282,6 +284,173 @@ public class HistoryAndPhysicalNoteTest extends CDAValidationTest {
 		};
 
 		validateHistoryAndPhysicalNoteDoesNotHaveIndividualAssementAndPlanSectionsWhenAssementAndPlanSectionPresentTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateHistoryAndPhysicalNoteHasChiefComplaintAndReasonForVisitChiefComplaintOrReasonForVisit() {
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteHasChiefComplaintAndReasonForVisitChiefComplaintOrReasonForVisitTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+			"validateHistoryAndPhysicalNoteHasChiefComplaintAndReasonForVisitChiefComplaintOrReasonForVisit",
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_HAS_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_CHIEF_COMPLAINT_OR_REASON_FOR_VISIT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(HistoryAndPhysicalNote target) {
+						target.init();
+					}
+
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(HistoryAndPhysicalNote target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createChiefComplaintSection().init());
+					}
+
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(HistoryAndPhysicalNote target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createReasonForVisitSection().init());
+					}
+
+				});
+
+			}
+
+			/*
+			 * (non-Javadoc)
+			 * 
+			 * @see org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.OperationsTestCase#addPassTests()
+			 */
+			@Override
+			public void addPassTests() {
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(HistoryAndPhysicalNote target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init());
+
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(HistoryAndPhysicalNote target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createChiefComplaintSection().init());
+						target.addSection(ConsolFactory.eINSTANCE.createReasonForVisitSection().init());
+					}
+				});
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteHasChiefComplaintAndReasonForVisitChiefComplaintOrReasonForVisit(
+					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHistoryAndPhysicalNoteHasChiefComplaintAndReasonForVisitChiefComplaintOrReasonForVisitTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateHistoryAndPhysicalNoteDoesNotHaveChiefComplaintAndReasonForVisitWithChiefComplaintSectionOrReasonSection() {
+		OperationsTestCase<HistoryAndPhysicalNote> validateHistoryAndPhysicalNoteDoesNotHaveChiefComplaintAndReasonForVisitWithChiefComplaintSectionOrReasonSectionTestCase = new OperationsTestCase<HistoryAndPhysicalNote>(
+			"validateHistoryAndPhysicalNoteDoesNotHaveChiefComplaintAndReasonForVisitWithChiefComplaintSectionOrReasonSection",
+			operationsForOCL.getOCLValue("VALIDATE_HISTORY_AND_PHYSICAL_NOTE_DOES_NOT_HAVE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_WITH_CHIEF_COMPLAINT_SECTION_OR_REASON_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			/*
+			 * (non-Javadoc)
+			 * 
+			 * @see org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.OperationsTestCase#addFailTests()
+			 */
+			@Override
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(HistoryAndPhysicalNote target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init());
+						target.addSection(ConsolFactory.eINSTANCE.createChiefComplaintSection().init());
+					}
+
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(HistoryAndPhysicalNote target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init());
+						target.addSection(ConsolFactory.eINSTANCE.createReasonForVisitSection().init());
+					}
+
+				});
+
+				addFailTest(new FailTest() {
+					@Override
+					public void updateToFail(HistoryAndPhysicalNote target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init());
+						target.addSection(ConsolFactory.eINSTANCE.createChiefComplaintSection().init());
+						target.addSection(ConsolFactory.eINSTANCE.createReasonForVisitSection().init());
+					}
+
+				});
+
+			}
+
+			@Override
+			public void addPassTests() {
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(HistoryAndPhysicalNote target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createChiefComplaintAndReasonForVisitSection().init());
+
+					}
+				});
+
+				addPassTest(new PassTest() {
+					@Override
+					public void updateToPass(HistoryAndPhysicalNote target) {
+						target.init();
+						target.addSection(ConsolFactory.eINSTANCE.createChiefComplaintSection().init());
+						target.addSection(ConsolFactory.eINSTANCE.createReasonForVisitSection().init());
+					}
+				});
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HistoryAndPhysicalNoteOperations.validateHistoryAndPhysicalNoteDoesNotHaveChiefComplaintAndReasonForVisitWithChiefComplaintSectionOrReasonSection(
+					(HistoryAndPhysicalNote) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHistoryAndPhysicalNoteDoesNotHaveChiefComplaintAndReasonForVisitWithChiefComplaintSectionOrReasonSectionTestCase.doValidationTest();
 	}
 
 	/**
