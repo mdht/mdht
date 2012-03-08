@@ -386,7 +386,7 @@ public class MedicationSupplyOrderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationSupplyOrderProduct() {
@@ -397,12 +397,12 @@ public class MedicationSupplyOrderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MedicationSupplyOrder target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(MedicationSupplyOrder target) {
-				target.init();
+				target.setProduct(CDAFactory.eINSTANCE.createProduct());
 
 			}
 
