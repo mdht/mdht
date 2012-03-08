@@ -66,18 +66,18 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentPlanOfCareSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Plan Of Care Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentSocialHistorySection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Social History Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentVitalSignsSectionEntriesOptional(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Vital Signs Section Entries Optional</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityHasNationalProviderIdentifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event3 Performer Assigned Entity Has National Provider Identifier</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event3 Performer Assigned Entity Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event3 Performer Assigned Entity Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event3 Performer Type Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event3 Performer Assigned Entity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTimeLow(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event3 Effective Time Low</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTimeHigh(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event3 Effective Time High</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEvent3ClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event3 Class Code</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event3 Effective Time</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEvent3Performer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event3 Performer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityHasNationalProviderIdentifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event Performer Assigned Entity Has National Provider Identifier</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event Performer Assigned Entity Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event Performer Assigned Entity Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event Performer Type Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event Performer Assigned Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTimeLow(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event Effective Time Low</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTimeHigh(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event Effective Time High</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEventClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEventPerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event Performer</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEvent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentAuthorAssignedAuthor3(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Author Assigned Author3</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentAuthorAssignedAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Author Assigned Author</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#getAllergiesSection() <em>Get Allergies Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#getMedicationsSection() <em>Get Medications Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#getProblemSection() <em>Get Problem Section</em>}</li>
@@ -622,9 +622,9 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityHasNationalProviderIdentifier() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityHasNationalProviderIdentifierTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
-			"validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityHasNationalProviderIdentifier",
+	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityHasNationalProviderIdentifier() {
+		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityHasNationalProviderIdentifierTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			"validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityHasNationalProviderIdentifier",
 			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_DOCUMENTATION_OF_SERVICE_EVENT3_PERFORMER_ASSIGNED_ENTITY_HAS_NATIONAL_PROVIDER_IDENTIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -661,13 +661,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityHasNationalProviderIdentifier(
+				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityHasNationalProviderIdentifier(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityHasNationalProviderIdentifierTestCase.doValidationTest();
+		validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityHasNationalProviderIdentifierTestCase.doValidationTest();
 	}
 
 	/**
@@ -675,9 +675,9 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityCode() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityCodeTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
-			"validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityCode",
+	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityCode() {
+		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityCodeTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			"validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityCode",
 			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_DOCUMENTATION_OF_SERVICE_EVENT3_PERFORMER_ASSIGNED_ENTITY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -713,13 +713,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityCode(
+				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityCode(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityCodeTestCase.doValidationTest();
+		validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -727,9 +727,9 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityId() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityIdTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
-			"validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityId",
+	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityId() {
+		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityIdTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			"validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityId",
 			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_DOCUMENTATION_OF_SERVICE_EVENT3_PERFORMER_ASSIGNED_ENTITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -766,13 +766,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityId(
+				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityId(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityIdTestCase.doValidationTest();
+		validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityIdTestCase.doValidationTest();
 	}
 
 	/**
@@ -780,9 +780,9 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerTypeCode() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerTypeCodeTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
-			"validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerTypeCode",
+	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEventPerformerTypeCode() {
+		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerTypeCodeTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			"validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerTypeCode",
 			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_DOCUMENTATION_OF_SERVICE_EVENT3_PERFORMER_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -823,13 +823,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerTypeCode(
+				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerTypeCode(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerTypeCodeTestCase.doValidationTest();
+		validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerTypeCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -837,9 +837,9 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntity() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
-			"validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntity",
+	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntity() {
+		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			"validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntity",
 			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_DOCUMENTATION_OF_SERVICE_EVENT3_PERFORMER_ASSIGNED_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -873,13 +873,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntity(
+				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntity(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerAssignedEntityTestCase.doValidationTest();
+		validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerAssignedEntityTestCase.doValidationTest();
 	}
 
 	/**
@@ -887,9 +887,9 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTimeLow() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTimeLowTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
-			"validateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTimeLow",
+	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTimeLow() {
+		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTimeLowTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			"validateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTimeLow",
 			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_DOCUMENTATION_OF_SERVICE_EVENT3_EFFECTIVE_TIME_LOW__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -917,13 +917,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTimeLow(
+				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTimeLow(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTimeLowTestCase.doValidationTest();
+		validateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTimeLowTestCase.doValidationTest();
 	}
 
 	/**
@@ -931,9 +931,9 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTimeHigh() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTimeHighTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
-			"validateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTimeHigh",
+	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTimeHigh() {
+		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTimeHighTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			"validateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTimeHigh",
 			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_DOCUMENTATION_OF_SERVICE_EVENT3_EFFECTIVE_TIME_HIGH__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -961,13 +961,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTimeHigh(
+				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTimeHigh(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTimeHighTestCase.doValidationTest();
+		validateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTimeHighTestCase.doValidationTest();
 	}
 
 	/**
@@ -975,9 +975,9 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEvent3ClassCode() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEvent3ClassCodeTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
-			"validateContinuityOfCareDocumentDocumentationOfServiceEvent3ClassCode",
+	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEventClassCode() {
+		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEventClassCodeTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			"validateContinuityOfCareDocumentDocumentationOfServiceEventClassCode",
 			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_DOCUMENTATION_OF_SERVICE_EVENT3_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -1005,13 +1005,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEvent3ClassCode(
+				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEventClassCode(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateContinuityOfCareDocumentDocumentationOfServiceEvent3ClassCodeTestCase.doValidationTest();
+		validateContinuityOfCareDocumentDocumentationOfServiceEventClassCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -1019,9 +1019,9 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTime() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTimeTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
-			"validateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTime",
+	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTime() {
+		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTimeTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			"validateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTime",
 			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_DOCUMENTATION_OF_SERVICE_EVENT3_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -1050,13 +1050,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTime(
+				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTime(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateContinuityOfCareDocumentDocumentationOfServiceEvent3EffectiveTimeTestCase.doValidationTest();
+		validateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTimeTestCase.doValidationTest();
 	}
 
 	/**
@@ -1064,9 +1064,9 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEvent3Performer() {
-		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
-			"validateContinuityOfCareDocumentDocumentationOfServiceEvent3Performer",
+	public void testValidateContinuityOfCareDocumentDocumentationOfServiceEventPerformer() {
+		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			"validateContinuityOfCareDocumentDocumentationOfServiceEventPerformer",
 			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_DOCUMENTATION_OF_SERVICE_EVENT3_PERFORMER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
@@ -1094,13 +1094,13 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEvent3Performer(
+				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentDocumentationOfServiceEventPerformer(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateContinuityOfCareDocumentDocumentationOfServiceEvent3PerformerTestCase.doValidationTest();
+		validateContinuityOfCareDocumentDocumentationOfServiceEventPerformerTestCase.doValidationTest();
 	}
 
 	/**
@@ -1149,7 +1149,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateContinuityOfCareDocumentAuthorAssignedAuthor3() {
+	public void testValidateContinuityOfCareDocumentAuthorAssignedAuthor() {
 		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentAuthorAssignedAuthor3TestCase = new OperationsTestCase<ContinuityOfCareDocument>(
 			"validateContinuityOfCareDocumentAuthorAssignedAuthor3",
 			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_AUTHOR_ASSIGNED_AUTHOR3__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
@@ -1175,7 +1175,7 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentAuthorAssignedAuthor3(
+				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentAuthorAssignedAuthor(
 					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
 			}
 
