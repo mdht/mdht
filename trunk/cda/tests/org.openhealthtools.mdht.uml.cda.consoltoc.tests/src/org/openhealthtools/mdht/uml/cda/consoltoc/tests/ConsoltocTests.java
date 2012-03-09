@@ -18,8 +18,8 @@ import org.junit.runners.Suite;
  * @generated
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ DischargeSummaryTest.class,
-		ConsultationRequestTest.class, ConsultationSummaryTest.class,
+@Suite.SuiteClasses({
+		DischargeSummaryTest.class, ConsultationRequestTest.class, ConsultationSummaryTest.class,
 		DischargeInstructionsTest.class })
 public class ConsoltocTests {
 
@@ -28,7 +28,7 @@ public class ConsoltocTests {
 	 * @generated
 	 */
 	public static junit.framework.Test suite() {
-		return new JUnit4TestAdapter( ConsoltocTests.class);
+		return new JUnit4TestAdapter(ConsoltocTests.class);
 	}
 
 } // ConsoltocTests

@@ -40,13 +40,12 @@ public class Main {
 	}
 
 	public static void testDS(String fileName) {
-		StringBuffer sb = new StringBuffer();
+		new StringBuffer();
 		String path = "samples/";
 		ConsoltocPackage.eINSTANCE.eClass();
 		ValidationResult result = new ValidationResult();
 		try {
-			ClinicalDocument clinicalDocument = CDAUtil.load(
-					(new FileInputStream(path + fileName + ".xml")), result);
+			ClinicalDocument clinicalDocument = CDAUtil.load((new FileInputStream(path + fileName + ".xml")), result);
 
 			System.out.println(clinicalDocument);
 			System.out.println(clinicalDocument.getAllSections().size());
@@ -80,8 +79,7 @@ public class Main {
 
 		ValidationResult result = new ValidationResult();
 		try {
-			ClinicalDocument clinicalDocument = CDAUtil.load(
-					(new FileInputStream(path + fileName + ".xml")), result);
+			CDAUtil.load((new FileInputStream(path + fileName + ".xml")), result);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -95,9 +93,8 @@ public class Main {
 		// }
 		for (Diagnostic dq : result.getErrorDiagnostics()) {
 			CDADiagnostic cdaDiagnosticq = new CDADiagnostic(dq);
-			sb.append("ERROR|" + cdaDiagnosticq.getMessage() + "|"
-					+ cdaDiagnosticq.getPath() + "|" + cdaDiagnosticq.getCode()
-					+ "|" + cdaDiagnosticq.getSource());
+			sb.append("ERROR|" + cdaDiagnosticq.getMessage() + "|" + cdaDiagnosticq.getPath() + "|" +
+					cdaDiagnosticq.getCode() + "|" + cdaDiagnosticq.getSource());
 			sb.append("\n");
 		}
 		// for (Diagnostic dw: result.getWarningDiagnostics()) {
