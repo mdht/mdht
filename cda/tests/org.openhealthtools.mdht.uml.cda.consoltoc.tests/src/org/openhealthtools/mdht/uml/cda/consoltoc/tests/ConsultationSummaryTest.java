@@ -154,10 +154,9 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateConsultationSummaryAllergiesSectionEntriesOptional() {
 		OperationsTestCase<ConsultationSummary> validateConsultationSummaryAllergiesSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationSummary>(
-				"validateConsultationSummaryAllergiesSectionEntriesOptional",
-				operationsForOCL
-						.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_ALLERGIES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateConsultationSummaryAllergiesSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_ALLERGIES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationSummary target) {
@@ -171,27 +170,22 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 				/* AllergiesSectionEntriesOptional */
 				AllergiesSectionEntriesOptional section =
 
-				ConsolFactory.eINSTANCE
-						.createAllergiesSectionEntriesOptional().init();
+				ConsolFactory.eINSTANCE.createAllergiesSectionEntriesOptional().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConsultationSummaryOperations
-						.validateConsultationSummaryAllergiesSectionEntriesOptional(
-								(ConsultationSummary) objectToTest,
-								diagnostician, map);
+				return ConsultationSummaryOperations.validateConsultationSummaryAllergiesSectionEntriesOptional(
+					(ConsultationSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateConsultationSummaryAllergiesSectionEntriesOptionalTestCase
-				.doValidationTest();
+		validateConsultationSummaryAllergiesSectionEntriesOptionalTestCase.doValidationTest();
 	}
 
 	/**
@@ -201,10 +195,9 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateConsultationSummaryMedicationsSectionEntriesOptional() {
 		OperationsTestCase<ConsultationSummary> validateConsultationSummaryMedicationsSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationSummary>(
-				"validateConsultationSummaryMedicationsSectionEntriesOptional",
-				operationsForOCL
-						.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateConsultationSummaryMedicationsSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationSummary target) {
@@ -218,27 +211,22 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 				/* MedicationsSectionEntriesOptional */
 				MedicationsSectionEntriesOptional section =
 
-				ConsolFactory.eINSTANCE
-						.createMedicationsSectionEntriesOptional().init();
+				ConsolFactory.eINSTANCE.createMedicationsSectionEntriesOptional().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConsultationSummaryOperations
-						.validateConsultationSummaryMedicationsSectionEntriesOptional(
-								(ConsultationSummary) objectToTest,
-								diagnostician, map);
+				return ConsultationSummaryOperations.validateConsultationSummaryMedicationsSectionEntriesOptional(
+					(ConsultationSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateConsultationSummaryMedicationsSectionEntriesOptionalTestCase
-				.doValidationTest();
+		validateConsultationSummaryMedicationsSectionEntriesOptionalTestCase.doValidationTest();
 	}
 
 	/**
@@ -248,10 +236,9 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateConsultationSummaryProblemSectionEntriesOptional() {
 		OperationsTestCase<ConsultationSummary> validateConsultationSummaryProblemSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationSummary>(
-				"validateConsultationSummaryProblemSectionEntriesOptional",
-				operationsForOCL
-						.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_PROBLEM_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateConsultationSummaryProblemSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_PROBLEM_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationSummary target) {
@@ -265,27 +252,22 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 				/* ProblemSectionEntriesOptional */
 				ProblemSectionEntriesOptional section =
 
-				ConsolFactory.eINSTANCE
-						.createProblemSectionEntriesOptional().init();
+				ConsolFactory.eINSTANCE.createProblemSectionEntriesOptional().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConsultationSummaryOperations
-						.validateConsultationSummaryProblemSectionEntriesOptional(
-								(ConsultationSummary) objectToTest,
-								diagnostician, map);
+				return ConsultationSummaryOperations.validateConsultationSummaryProblemSectionEntriesOptional(
+					(ConsultationSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateConsultationSummaryProblemSectionEntriesOptionalTestCase
-				.doValidationTest();
+		validateConsultationSummaryProblemSectionEntriesOptionalTestCase.doValidationTest();
 	}
 
 	/**
@@ -295,10 +277,9 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateConsultationSummaryResultsSectionEntriesOptional() {
 		OperationsTestCase<ConsultationSummary> validateConsultationSummaryResultsSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationSummary>(
-				"validateConsultationSummaryResultsSectionEntriesOptional",
-				operationsForOCL
-						.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_RESULTS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateConsultationSummaryResultsSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_RESULTS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationSummary target) {
@@ -312,27 +293,22 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 				/* ResultsSectionEntriesOptional */
 				ResultsSectionEntriesOptional section =
 
-				ConsolFactory.eINSTANCE
-						.createResultsSectionEntriesOptional().init();
+				ConsolFactory.eINSTANCE.createResultsSectionEntriesOptional().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConsultationSummaryOperations
-						.validateConsultationSummaryResultsSectionEntriesOptional(
-								(ConsultationSummary) objectToTest,
-								diagnostician, map);
+				return ConsultationSummaryOperations.validateConsultationSummaryResultsSectionEntriesOptional(
+					(ConsultationSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateConsultationSummaryResultsSectionEntriesOptionalTestCase
-				.doValidationTest();
+		validateConsultationSummaryResultsSectionEntriesOptionalTestCase.doValidationTest();
 	}
 
 	/**
@@ -342,10 +318,9 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateConsultationSummaryAdvanceDirectivesSectionEntriesOptional() {
 		OperationsTestCase<ConsultationSummary> validateConsultationSummaryAdvanceDirectivesSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationSummary>(
-				"validateConsultationSummaryAdvanceDirectivesSectionEntriesOptional",
-				operationsForOCL
-						.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_ADVANCE_DIRECTIVES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateConsultationSummaryAdvanceDirectivesSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_ADVANCE_DIRECTIVES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationSummary target) {
@@ -359,27 +334,22 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 				/* AdvanceDirectivesSectionEntriesOptional */
 				AdvanceDirectivesSectionEntriesOptional section =
 
-				ConsolFactory.eINSTANCE
-						.createAdvanceDirectivesSectionEntriesOptional().init();
+				ConsolFactory.eINSTANCE.createAdvanceDirectivesSectionEntriesOptional().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConsultationSummaryOperations
-						.validateConsultationSummaryAdvanceDirectivesSectionEntriesOptional(
-								(ConsultationSummary) objectToTest,
-								diagnostician, map);
+				return ConsultationSummaryOperations.validateConsultationSummaryAdvanceDirectivesSectionEntriesOptional(
+					(ConsultationSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateConsultationSummaryAdvanceDirectivesSectionEntriesOptionalTestCase
-				.doValidationTest();
+		validateConsultationSummaryAdvanceDirectivesSectionEntriesOptionalTestCase.doValidationTest();
 	}
 
 	/**
@@ -389,10 +359,9 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateConsultationSummaryEncountersSectionEntriesOptional() {
 		OperationsTestCase<ConsultationSummary> validateConsultationSummaryEncountersSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationSummary>(
-				"validateConsultationSummaryEncountersSectionEntriesOptional",
-				operationsForOCL
-						.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_ENCOUNTERS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateConsultationSummaryEncountersSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_ENCOUNTERS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationSummary target) {
@@ -406,27 +375,22 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 				/* EncountersSectionEntriesOptional */
 				EncountersSectionEntriesOptional section =
 
-				ConsolFactory.eINSTANCE
-						.createEncountersSectionEntriesOptional().init();
+				ConsolFactory.eINSTANCE.createEncountersSectionEntriesOptional().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConsultationSummaryOperations
-						.validateConsultationSummaryEncountersSectionEntriesOptional(
-								(ConsultationSummary) objectToTest,
-								diagnostician, map);
+				return ConsultationSummaryOperations.validateConsultationSummaryEncountersSectionEntriesOptional(
+					(ConsultationSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateConsultationSummaryEncountersSectionEntriesOptionalTestCase
-				.doValidationTest();
+		validateConsultationSummaryEncountersSectionEntriesOptionalTestCase.doValidationTest();
 	}
 
 	/**
@@ -436,10 +400,9 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateConsultationSummaryFamilyHistorySection() {
 		OperationsTestCase<ConsultationSummary> validateConsultationSummaryFamilyHistorySectionTestCase = new OperationsTestCase<ConsultationSummary>(
-				"validateConsultationSummaryFamilyHistorySection",
-				operationsForOCL
-						.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_FAMILY_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateConsultationSummaryFamilyHistorySection",
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_FAMILY_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationSummary target) {
@@ -460,19 +423,15 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConsultationSummaryOperations
-						.validateConsultationSummaryFamilyHistorySection(
-								(ConsultationSummary) objectToTest,
-								diagnostician, map);
+				return ConsultationSummaryOperations.validateConsultationSummaryFamilyHistorySection(
+					(ConsultationSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateConsultationSummaryFamilyHistorySectionTestCase
-				.doValidationTest();
+		validateConsultationSummaryFamilyHistorySectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -482,10 +441,9 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateConsultationSummaryFunctionalStatusSection() {
 		OperationsTestCase<ConsultationSummary> validateConsultationSummaryFunctionalStatusSectionTestCase = new OperationsTestCase<ConsultationSummary>(
-				"validateConsultationSummaryFunctionalStatusSection",
-				operationsForOCL
-						.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_FUNCTIONAL_STATUS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateConsultationSummaryFunctionalStatusSection",
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_FUNCTIONAL_STATUS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationSummary target) {
@@ -499,27 +457,22 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 				/* FunctionalStatusSection */
 				FunctionalStatusSection section =
 
-				ConsolFactory.eINSTANCE.createFunctionalStatusSection()
-						.init();
+				ConsolFactory.eINSTANCE.createFunctionalStatusSection().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConsultationSummaryOperations
-						.validateConsultationSummaryFunctionalStatusSection(
-								(ConsultationSummary) objectToTest,
-								diagnostician, map);
+				return ConsultationSummaryOperations.validateConsultationSummaryFunctionalStatusSection(
+					(ConsultationSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateConsultationSummaryFunctionalStatusSectionTestCase
-				.doValidationTest();
+		validateConsultationSummaryFunctionalStatusSectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -529,10 +482,9 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateConsultationSummaryImmunizationsSectionEntriesOptional() {
 		OperationsTestCase<ConsultationSummary> validateConsultationSummaryImmunizationsSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationSummary>(
-				"validateConsultationSummaryImmunizationsSectionEntriesOptional",
-				operationsForOCL
-						.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_IMMUNIZATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateConsultationSummaryImmunizationsSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_IMMUNIZATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationSummary target) {
@@ -546,27 +498,22 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 				/* ImmunizationsSectionEntriesOptional */
 				ImmunizationsSectionEntriesOptional section =
 
-				ConsolFactory.eINSTANCE
-						.createImmunizationsSectionEntriesOptional().init();
+				ConsolFactory.eINSTANCE.createImmunizationsSectionEntriesOptional().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConsultationSummaryOperations
-						.validateConsultationSummaryImmunizationsSectionEntriesOptional(
-								(ConsultationSummary) objectToTest,
-								diagnostician, map);
+				return ConsultationSummaryOperations.validateConsultationSummaryImmunizationsSectionEntriesOptional(
+					(ConsultationSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateConsultationSummaryImmunizationsSectionEntriesOptionalTestCase
-				.doValidationTest();
+		validateConsultationSummaryImmunizationsSectionEntriesOptionalTestCase.doValidationTest();
 	}
 
 	/**
@@ -576,10 +523,9 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateConsultationSummaryProceduresSectionEntriesOptional() {
 		OperationsTestCase<ConsultationSummary> validateConsultationSummaryProceduresSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationSummary>(
-				"validateConsultationSummaryProceduresSectionEntriesOptional",
-				operationsForOCL
-						.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_PROCEDURES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateConsultationSummaryProceduresSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_PROCEDURES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationSummary target) {
@@ -593,27 +539,22 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 				/* ProceduresSectionEntriesOptional */
 				ProceduresSectionEntriesOptional section =
 
-				ConsolFactory.eINSTANCE
-						.createProceduresSectionEntriesOptional().init();
+				ConsolFactory.eINSTANCE.createProceduresSectionEntriesOptional().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConsultationSummaryOperations
-						.validateConsultationSummaryProceduresSectionEntriesOptional(
-								(ConsultationSummary) objectToTest,
-								diagnostician, map);
+				return ConsultationSummaryOperations.validateConsultationSummaryProceduresSectionEntriesOptional(
+					(ConsultationSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateConsultationSummaryProceduresSectionEntriesOptionalTestCase
-				.doValidationTest();
+		validateConsultationSummaryProceduresSectionEntriesOptionalTestCase.doValidationTest();
 	}
 
 	/**
@@ -623,10 +564,9 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateConsultationSummaryMedicalEquipmentSection() {
 		OperationsTestCase<ConsultationSummary> validateConsultationSummaryMedicalEquipmentSectionTestCase = new OperationsTestCase<ConsultationSummary>(
-				"validateConsultationSummaryMedicalEquipmentSection",
-				operationsForOCL
-						.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_MEDICAL_EQUIPMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateConsultationSummaryMedicalEquipmentSection",
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_MEDICAL_EQUIPMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationSummary target) {
@@ -640,27 +580,22 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 				/* MedicalEquipmentSection */
 				MedicalEquipmentSection section =
 
-				ConsolFactory.eINSTANCE.createMedicalEquipmentSection()
-						.init();
+				ConsolFactory.eINSTANCE.createMedicalEquipmentSection().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConsultationSummaryOperations
-						.validateConsultationSummaryMedicalEquipmentSection(
-								(ConsultationSummary) objectToTest,
-								diagnostician, map);
+				return ConsultationSummaryOperations.validateConsultationSummaryMedicalEquipmentSection(
+					(ConsultationSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateConsultationSummaryMedicalEquipmentSectionTestCase
-				.doValidationTest();
+		validateConsultationSummaryMedicalEquipmentSectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -670,10 +605,9 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateConsultationSummaryPayersSection() {
 		OperationsTestCase<ConsultationSummary> validateConsultationSummaryPayersSectionTestCase = new OperationsTestCase<ConsultationSummary>(
-				"validateConsultationSummaryPayersSection",
-				operationsForOCL
-						.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_PAYERS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateConsultationSummaryPayersSection",
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_PAYERS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationSummary target) {
@@ -694,13 +628,10 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConsultationSummaryOperations
-						.validateConsultationSummaryPayersSection(
-								(ConsultationSummary) objectToTest,
-								diagnostician, map);
+				return ConsultationSummaryOperations.validateConsultationSummaryPayersSection(
+					(ConsultationSummary) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -715,10 +646,9 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateConsultationSummaryPlanOfCareSection() {
 		OperationsTestCase<ConsultationSummary> validateConsultationSummaryPlanOfCareSectionTestCase = new OperationsTestCase<ConsultationSummary>(
-				"validateConsultationSummaryPlanOfCareSection",
-				operationsForOCL
-						.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateConsultationSummaryPlanOfCareSection",
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationSummary target) {
@@ -739,13 +669,10 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConsultationSummaryOperations
-						.validateConsultationSummaryPlanOfCareSection(
-								(ConsultationSummary) objectToTest,
-								diagnostician, map);
+				return ConsultationSummaryOperations.validateConsultationSummaryPlanOfCareSection(
+					(ConsultationSummary) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -760,10 +687,9 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateConsultationSummarySocialHistorySection() {
 		OperationsTestCase<ConsultationSummary> validateConsultationSummarySocialHistorySectionTestCase = new OperationsTestCase<ConsultationSummary>(
-				"validateConsultationSummarySocialHistorySection",
-				operationsForOCL
-						.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateConsultationSummarySocialHistorySection",
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_SOCIAL_HISTORY_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationSummary target) {
@@ -784,19 +710,15 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConsultationSummaryOperations
-						.validateConsultationSummarySocialHistorySection(
-								(ConsultationSummary) objectToTest,
-								diagnostician, map);
+				return ConsultationSummaryOperations.validateConsultationSummarySocialHistorySection(
+					(ConsultationSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateConsultationSummarySocialHistorySectionTestCase
-				.doValidationTest();
+		validateConsultationSummarySocialHistorySectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -806,10 +728,9 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateConsultationSummaryVitalSignsSectionEntriesOptional() {
 		OperationsTestCase<ConsultationSummary> validateConsultationSummaryVitalSignsSectionEntriesOptionalTestCase = new OperationsTestCase<ConsultationSummary>(
-				"validateConsultationSummaryVitalSignsSectionEntriesOptional",
-				operationsForOCL
-						.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_VITAL_SIGNS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateConsultationSummaryVitalSignsSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_CONSULTATION_SUMMARY_VITAL_SIGNS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationSummary target) {
@@ -823,27 +744,22 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 				/* VitalSignsSectionEntriesOptional */
 				VitalSignsSectionEntriesOptional section =
 
-				ConsolFactory.eINSTANCE
-						.createVitalSignsSectionEntriesOptional().init();
+				ConsolFactory.eINSTANCE.createVitalSignsSectionEntriesOptional().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConsultationSummaryOperations
-						.validateConsultationSummaryVitalSignsSectionEntriesOptional(
-								(ConsultationSummary) objectToTest,
-								diagnostician, map);
+				return ConsultationSummaryOperations.validateConsultationSummaryVitalSignsSectionEntriesOptional(
+					(ConsultationSummary) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateConsultationSummaryVitalSignsSectionEntriesOptionalTestCase
-				.doValidationTest();
+		validateConsultationSummaryVitalSignsSectionEntriesOptionalTestCase.doValidationTest();
 	}
 
 	/**
@@ -1033,10 +949,9 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	@Test
 	public void testValidateGeneralHeaderConstraintsTemplateId() {
 		OperationsTestCase<ConsultationSummary> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<ConsultationSummary>(
-				"validateGeneralHeaderConstraintsTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateGeneralHeaderConstraintsTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(ConsultationSummary target) {
@@ -1050,13 +965,10 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return ConsultationSummaryOperations
-						.validateGeneralHeaderConstraintsTemplateId(
-								(ConsultationSummary) objectToTest,
-								diagnostician, map);
+				return ConsultationSummaryOperations.validateGeneralHeaderConstraintsTemplateId(
+					(ConsultationSummary) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -1074,8 +986,7 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -1087,9 +998,8 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<ConsultationSummary> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<ConsultationSummary> {
+
 		public ConsultationSummary create() {
 			return ConsoltocFactory.eINSTANCE.createConsultationSummary();
 		}
@@ -1112,8 +1022,7 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			ConsultationSummaryOperations {
+	private static class ConstructorTestClass extends ConsultationSummaryOperations {
 	};
 
 	/**
@@ -1131,6 +1040,7 @@ public class ConsultationSummaryTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
+
 	@Override
 	protected EObject getObjectToTest() {
 		return null;

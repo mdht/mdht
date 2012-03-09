@@ -99,10 +99,9 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 	@Test
 	public void testValidateDischargeInstructionsPlanOfCareSection() {
 		OperationsTestCase<DischargeInstructions> validateDischargeInstructionsPlanOfCareSectionTestCase = new OperationsTestCase<DischargeInstructions>(
-				"validateDischargeInstructionsPlanOfCareSection",
-				operationsForOCL
-						.getOCLValue("VALIDATE_DISCHARGE_INSTRUCTIONS_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateDischargeInstructionsPlanOfCareSection",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_INSTRUCTIONS_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeInstructions target) {
@@ -123,19 +122,15 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return DischargeInstructionsOperations
-						.validateDischargeInstructionsPlanOfCareSection(
-								(DischargeInstructions) objectToTest,
-								diagnostician, map);
+				return DischargeInstructionsOperations.validateDischargeInstructionsPlanOfCareSection(
+					(DischargeInstructions) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateDischargeInstructionsPlanOfCareSectionTestCase
-				.doValidationTest();
+		validateDischargeInstructionsPlanOfCareSectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -145,10 +140,9 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 	@Test
 	public void testValidateDischargeInstructionsAllergiesSectionEntriesOptional() {
 		OperationsTestCase<DischargeInstructions> validateDischargeInstructionsAllergiesSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeInstructions>(
-				"validateDischargeInstructionsAllergiesSectionEntriesOptional",
-				operationsForOCL
-						.getOCLValue("VALIDATE_DISCHARGE_INSTRUCTIONS_ALLERGIES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateDischargeInstructionsAllergiesSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_INSTRUCTIONS_ALLERGIES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeInstructions target) {
@@ -162,27 +156,22 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 				/* AllergiesSectionEntriesOptional */
 				AllergiesSectionEntriesOptional section =
 
-				ConsolFactory.eINSTANCE
-						.createAllergiesSectionEntriesOptional().init();
+				ConsolFactory.eINSTANCE.createAllergiesSectionEntriesOptional().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return DischargeInstructionsOperations
-						.validateDischargeInstructionsAllergiesSectionEntriesOptional(
-								(DischargeInstructions) objectToTest,
-								diagnostician, map);
+				return DischargeInstructionsOperations.validateDischargeInstructionsAllergiesSectionEntriesOptional(
+					(DischargeInstructions) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateDischargeInstructionsAllergiesSectionEntriesOptionalTestCase
-				.doValidationTest();
+		validateDischargeInstructionsAllergiesSectionEntriesOptionalTestCase.doValidationTest();
 	}
 
 	/**
@@ -192,10 +181,9 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 	@Test
 	public void testValidateDischargeInstructionsProblemSectionEntriesOptional() {
 		OperationsTestCase<DischargeInstructions> validateDischargeInstructionsProblemSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeInstructions>(
-				"validateDischargeInstructionsProblemSectionEntriesOptional",
-				operationsForOCL
-						.getOCLValue("VALIDATE_DISCHARGE_INSTRUCTIONS_PROBLEM_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateDischargeInstructionsProblemSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_INSTRUCTIONS_PROBLEM_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeInstructions target) {
@@ -209,27 +197,22 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 				/* ProblemSectionEntriesOptional */
 				ProblemSectionEntriesOptional section =
 
-				ConsolFactory.eINSTANCE
-						.createProblemSectionEntriesOptional().init();
+				ConsolFactory.eINSTANCE.createProblemSectionEntriesOptional().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return DischargeInstructionsOperations
-						.validateDischargeInstructionsProblemSectionEntriesOptional(
-								(DischargeInstructions) objectToTest,
-								diagnostician, map);
+				return DischargeInstructionsOperations.validateDischargeInstructionsProblemSectionEntriesOptional(
+					(DischargeInstructions) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateDischargeInstructionsProblemSectionEntriesOptionalTestCase
-				.doValidationTest();
+		validateDischargeInstructionsProblemSectionEntriesOptionalTestCase.doValidationTest();
 	}
 
 	/**
@@ -239,10 +222,9 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 	@Test
 	public void testValidateDischargeInstructionsHospitalDischargeMedicationsSectionEntriesOptional() {
 		OperationsTestCase<DischargeInstructions> validateDischargeInstructionsHospitalDischargeMedicationsSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeInstructions>(
-				"validateDischargeInstructionsHospitalDischargeMedicationsSectionEntriesOptional",
-				operationsForOCL
-						.getOCLValue("VALIDATE_DISCHARGE_INSTRUCTIONS_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateDischargeInstructionsHospitalDischargeMedicationsSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_INSTRUCTIONS_HOSPITAL_DISCHARGE_MEDICATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeInstructions target) {
@@ -256,28 +238,22 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 				/* HospitalDischargeMedicationsSectionEntriesOptional */
 				HospitalDischargeMedicationsSectionEntriesOptional section =
 
-				ConsolFactory.eINSTANCE
-						.createHospitalDischargeMedicationsSectionEntriesOptional()
-						.init();
+				ConsolFactory.eINSTANCE.createHospitalDischargeMedicationsSectionEntriesOptional().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return DischargeInstructionsOperations
-						.validateDischargeInstructionsHospitalDischargeMedicationsSectionEntriesOptional(
-								(DischargeInstructions) objectToTest,
-								diagnostician, map);
+				return DischargeInstructionsOperations.validateDischargeInstructionsHospitalDischargeMedicationsSectionEntriesOptional(
+					(DischargeInstructions) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateDischargeInstructionsHospitalDischargeMedicationsSectionEntriesOptionalTestCase
-				.doValidationTest();
+		validateDischargeInstructionsHospitalDischargeMedicationsSectionEntriesOptionalTestCase.doValidationTest();
 	}
 
 	/**
@@ -287,10 +263,9 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 	@Test
 	public void testValidateDischargeInstructionsAdvanceDirectivesSectionEntriesOptional() {
 		OperationsTestCase<DischargeInstructions> validateDischargeInstructionsAdvanceDirectivesSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeInstructions>(
-				"validateDischargeInstructionsAdvanceDirectivesSectionEntriesOptional",
-				operationsForOCL
-						.getOCLValue("VALIDATE_DISCHARGE_INSTRUCTIONS_ADVANCE_DIRECTIVES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateDischargeInstructionsAdvanceDirectivesSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_INSTRUCTIONS_ADVANCE_DIRECTIVES_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeInstructions target) {
@@ -304,27 +279,22 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 				/* AdvanceDirectivesSectionEntriesOptional */
 				AdvanceDirectivesSectionEntriesOptional section =
 
-				ConsolFactory.eINSTANCE
-						.createAdvanceDirectivesSectionEntriesOptional().init();
+				ConsolFactory.eINSTANCE.createAdvanceDirectivesSectionEntriesOptional().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return DischargeInstructionsOperations
-						.validateDischargeInstructionsAdvanceDirectivesSectionEntriesOptional(
-								(DischargeInstructions) objectToTest,
-								diagnostician, map);
+				return DischargeInstructionsOperations.validateDischargeInstructionsAdvanceDirectivesSectionEntriesOptional(
+					(DischargeInstructions) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateDischargeInstructionsAdvanceDirectivesSectionEntriesOptionalTestCase
-				.doValidationTest();
+		validateDischargeInstructionsAdvanceDirectivesSectionEntriesOptionalTestCase.doValidationTest();
 	}
 
 	/**
@@ -334,10 +304,9 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 	@Test
 	public void testValidateDischargeInstructionsImmunizationsSectionEntriesOptional() {
 		OperationsTestCase<DischargeInstructions> validateDischargeInstructionsImmunizationsSectionEntriesOptionalTestCase = new OperationsTestCase<DischargeInstructions>(
-				"validateDischargeInstructionsImmunizationsSectionEntriesOptional",
-				operationsForOCL
-						.getOCLValue("VALIDATE_DISCHARGE_INSTRUCTIONS_IMMUNIZATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateDischargeInstructionsImmunizationsSectionEntriesOptional",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_INSTRUCTIONS_IMMUNIZATIONS_SECTION_ENTRIES_OPTIONAL__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeInstructions target) {
@@ -351,27 +320,22 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 				/* ImmunizationsSectionEntriesOptional */
 				ImmunizationsSectionEntriesOptional section =
 
-				ConsolFactory.eINSTANCE
-						.createImmunizationsSectionEntriesOptional().init();
+				ConsolFactory.eINSTANCE.createImmunizationsSectionEntriesOptional().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return DischargeInstructionsOperations
-						.validateDischargeInstructionsImmunizationsSectionEntriesOptional(
-								(DischargeInstructions) objectToTest,
-								diagnostician, map);
+				return DischargeInstructionsOperations.validateDischargeInstructionsImmunizationsSectionEntriesOptional(
+					(DischargeInstructions) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateDischargeInstructionsImmunizationsSectionEntriesOptionalTestCase
-				.doValidationTest();
+		validateDischargeInstructionsImmunizationsSectionEntriesOptionalTestCase.doValidationTest();
 	}
 
 	/**
@@ -381,10 +345,9 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 	@Test
 	public void testValidateDischargeInstructionsMedicalEquipmentSection() {
 		OperationsTestCase<DischargeInstructions> validateDischargeInstructionsMedicalEquipmentSectionTestCase = new OperationsTestCase<DischargeInstructions>(
-				"validateDischargeInstructionsMedicalEquipmentSection",
-				operationsForOCL
-						.getOCLValue("VALIDATE_DISCHARGE_INSTRUCTIONS_MEDICAL_EQUIPMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateDischargeInstructionsMedicalEquipmentSection",
+			operationsForOCL.getOCLValue("VALIDATE_DISCHARGE_INSTRUCTIONS_MEDICAL_EQUIPMENT_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeInstructions target) {
@@ -398,27 +361,22 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 				/* MedicalEquipmentSection */
 				MedicalEquipmentSection section =
 
-				ConsolFactory.eINSTANCE.createMedicalEquipmentSection()
-						.init();
+				ConsolFactory.eINSTANCE.createMedicalEquipmentSection().init();
 
 				target.addSection(section);
 
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return DischargeInstructionsOperations
-						.validateDischargeInstructionsMedicalEquipmentSection(
-								(DischargeInstructions) objectToTest,
-								diagnostician, map);
+				return DischargeInstructionsOperations.validateDischargeInstructionsMedicalEquipmentSection(
+					(DischargeInstructions) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateDischargeInstructionsMedicalEquipmentSectionTestCase
-				.doValidationTest();
+		validateDischargeInstructionsMedicalEquipmentSectionTestCase.doValidationTest();
 	}
 
 	/**
@@ -512,10 +470,9 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 	@Test
 	public void testValidateGeneralHeaderConstraintsTemplateId() {
 		OperationsTestCase<DischargeInstructions> validateGeneralHeaderConstraintsTemplateIdTestCase = new OperationsTestCase<DischargeInstructions>(
-				"validateGeneralHeaderConstraintsTemplateId",
-				operationsForOCL
-						.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			"validateGeneralHeaderConstraintsTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
 			@Override
 			protected void updateToFail(DischargeInstructions target) {
@@ -529,13 +486,10 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return DischargeInstructionsOperations
-						.validateGeneralHeaderConstraintsTemplateId(
-								(DischargeInstructions) objectToTest,
-								diagnostician, map);
+				return DischargeInstructionsOperations.validateGeneralHeaderConstraintsTemplateId(
+					(DischargeInstructions) objectToTest, diagnostician, map);
 			}
 
 		};
@@ -547,15 +501,13 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class OperationsForOCL extends
-			DischargeInstructionsOperations {
+	private static class OperationsForOCL extends DischargeInstructionsOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass()
-						.getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
@@ -567,9 +519,8 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ObjectFactory implements
-			TestObjectFactory<DischargeInstructions> {
-		@Override
+	private static class ObjectFactory implements TestObjectFactory<DischargeInstructions> {
+
 		public DischargeInstructions create() {
 			return ConsoltocFactory.eINSTANCE.createDischargeInstructions();
 		}
@@ -592,8 +543,7 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
-	private static class ConstructorTestClass extends
-			DischargeInstructionsOperations {
+	private static class ConstructorTestClass extends DischargeInstructionsOperations {
 	};
 
 	/**
@@ -611,6 +561,7 @@ public class DischargeInstructionsTest extends CDAValidationTest {
 	 * 
 	 * @generated
 	 */
+
 	@Override
 	protected EObject getObjectToTest() {
 		return null;
