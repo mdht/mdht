@@ -15,12 +15,17 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.ihe.IHEFactory;
+import org.openhealthtools.mdht.uml.cda.ihe.InternalReference;
 import org.openhealthtools.mdht.uml.cda.ihe.ProcedureEntry;
 import org.openhealthtools.mdht.uml.cda.ihe.operations.ProcedureEntryOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentProcedureMood;
 
 /**
  * <!-- begin-user-doc -->
@@ -103,6 +108,9 @@ public class ProcedureEntryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureEntry target) {
 				target.init();
+				ED ed = DatatypesFactory.eINSTANCE.createED();
+				ed.setReference(DatatypesFactory.eINSTANCE.createTEL());
+				target.setText(ed);
 
 			}
 
@@ -120,7 +128,7 @@ public class ProcedureEntryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureEntryPriorityCode() {
@@ -131,12 +139,15 @@ public class ProcedureEntryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureEntry target) {
+				target.init();
+				target.setMoodCode(x_DocumentProcedureMood.INT);
+				target.setEffectiveTime(DatatypesFactory.eINSTANCE.createIVL_TS("12345"));
+				// target.setPriorityCode(DatatypesFactory.eINSTANCE.createCE("CODE", "SYSTEM"));
 
 			}
 
 			@Override
 			protected void updateToPass(ProcedureEntry target) {
-				target.init();
 
 			}
 
@@ -154,7 +165,7 @@ public class ProcedureEntryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureEntryHasInversionIndForEncounter() {
@@ -165,13 +176,23 @@ public class ProcedureEntryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureEntry target) {
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				er.setInversionInd(false);
 
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
 			protected void updateToPass(ProcedureEntry target) {
-				target.init();
 
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				er.setInversionInd(true);
+
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -304,12 +325,12 @@ public class ProcedureEntryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureEntry target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ProcedureEntry target) {
-				target.init();
+				target.getApproachSiteCodes().add(DatatypesFactory.eINSTANCE.createCD());
 
 			}
 
@@ -327,7 +348,7 @@ public class ProcedureEntryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureEntryInternalReference() {
@@ -338,13 +359,17 @@ public class ProcedureEntryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureEntry target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ProcedureEntry target) {
-				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				InternalReference ir = IHEFactory.eINSTANCE.createInternalReference().init();
+				er.setAct(ir);
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
 
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
@@ -361,7 +386,7 @@ public class ProcedureEntryTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureEntryInternalReferenceReason() {
@@ -372,13 +397,19 @@ public class ProcedureEntryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureEntry target) {
+				target.init();
 
 			}
 
 			@Override
 			protected void updateToPass(ProcedureEntry target) {
-				target.init();
 
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				InternalReference ir = IHEFactory.eINSTANCE.createInternalReference().init();
+				er.setAct(ir);
+
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
