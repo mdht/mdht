@@ -43,8 +43,8 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
-import org.openhealthtools.mdht.uml.cda.ui.filters.CodedAttributeFilter;
 import org.openhealthtools.mdht.uml.cda.ui.filters.TextAttributeFilter;
+import org.openhealthtools.mdht.uml.term.ui.filters.CodedAttributeFilter;
 
 public class TransformValidationSupportAction implements IObjectActionDelegate {
 	private NamedElement namedElement;
