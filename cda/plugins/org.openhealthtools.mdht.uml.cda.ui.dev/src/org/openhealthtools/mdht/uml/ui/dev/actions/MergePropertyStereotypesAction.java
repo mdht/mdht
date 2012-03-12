@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2012 David A Carlson.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,7 +8,6 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     
- * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.dev.actions;
 
@@ -41,15 +40,18 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
+import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.ui.filters.TextAttributeFilter;
+import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 import org.openhealthtools.mdht.uml.term.ui.filters.CodedAttributeFilter;
 
-public class TransformValidationSupportAction implements IObjectActionDelegate {
+public class MergePropertyStereotypesAction implements IObjectActionDelegate {
 	private NamedElement namedElement;
 
-	public TransformValidationSupportAction() {
+	public MergePropertyStereotypesAction() {
 		super();
 	}
 
@@ -67,28 +69,70 @@ public class TransformValidationSupportAction implements IObjectActionDelegate {
 
 					while (iterator != null && iterator.hasNext()) {
 						Object child = iterator.next();
-						if (child instanceof NamedElement) {
-							// NamedElement childElement = (NamedElement) child;
-							// Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(childElement,
-							// ICDAProfileConstants.VALIDATION_SUPPORT);
-							// if (validationSupport != null) {
-							// String message = (String) childElement.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SUPPORT_MESSAGE);
-							// EnumerationLiteral literal = (EnumerationLiteral) childElement.getValue(validationSupport,
-							// ICDAProfileConstants.VALIDATION_SUPPORT_SEVERITY);
-							// String severity = (literal != null) ? literal.getName() : null;
-							//
-							// Stereotype validation = applyValidationStereotype(childElement);
-							// if (validation != null) {
-							// childElement.setValue(validation, ICDAProfileConstants.VALIDATION_SEVERITY, severity);
-							// childElement.setValue(validation, ICDAProfileConstants.VALIDATION_MESSAGE, message);
-							//
-							// childElement.unapplyStereotype(validationSupport);
-							// }
-							// else {
-							// System.err.println("Error: could not migrate ValidationSupport on " + childElement.getQualifiedName());
-							// }
-							// }
+						if (child instanceof Property) {
+							Property property = (Property) child;
+							Stereotype propertyStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+								property, ICDAProfileConstants.PROPERTY_VALIDATION);
 
+							if (propertyStereotype != null) {
+								Stereotype codeSystemStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+									property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
+								Stereotype valueSetStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+									property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
+
+								if (codeSystemStereotype != null && valueSetStereotype != null) {
+									System.err.println(property.getQualifiedName() +
+											" -- cannot merge, has 3 stereotypes");
+									continue;
+								}
+
+								Validation propertyValidation = (Validation) property.getStereotypeApplication(propertyStereotype);
+								SeverityKind propertySeverity = propertyValidation.getSeverity();
+
+								if (codeSystemStereotype != null) {
+									Validation termValidation = (Validation) property.getStereotypeApplication(codeSystemStereotype);
+									if (!propertySeverity.equals(termValidation.getSeverity())) {
+										System.err.println(property.getQualifiedName() +
+												" -- cannot merge, different severity");
+										continue;
+									}
+									if (propertyValidation.isMandatory() != termValidation.isMandatory()) {
+										System.err.println(property.getQualifiedName() +
+												" -- cannot merge, different isMandatory flag");
+										continue;
+									}
+
+									for (String ruleId : propertyValidation.getRuleId()) {
+										if (!termValidation.getRuleId().contains(ruleId)) {
+											termValidation.getRuleId().add(ruleId);
+										}
+									}
+									property.unapplyStereotype(propertyStereotype);
+									// System.out.println(property.getQualifiedName() + " -- merged");
+								}
+
+								if (valueSetStereotype != null) {
+									Validation termValidation = (Validation) property.getStereotypeApplication(valueSetStereotype);
+									if (!propertySeverity.equals(termValidation.getSeverity())) {
+										System.err.println(property.getQualifiedName() +
+												" -- cannot merge, different severity");
+										continue;
+									}
+									if (propertyValidation.isMandatory() != termValidation.isMandatory()) {
+										System.err.println(property.getQualifiedName() +
+												" -- cannot merge, different isMandatory flag");
+										continue;
+									}
+
+									for (String ruleId : propertyValidation.getRuleId()) {
+										if (!termValidation.getRuleId().contains(ruleId)) {
+											termValidation.getRuleId().add(ruleId);
+										}
+									}
+									property.unapplyStereotype(propertyStereotype);
+									// System.out.println(property.getQualifiedName() + " -- merged");
+								}
+							}
 						}
 					}
 
