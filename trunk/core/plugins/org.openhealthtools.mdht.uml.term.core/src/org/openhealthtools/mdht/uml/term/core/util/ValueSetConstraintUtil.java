@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 David A Carlson.
+ * Copyright (c) 2010, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,22 +8,37 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Rama Ramakrishnan  - 1/27/2012 - Added check for CS data type
+ *     Christian W. Damus - Generate OCL for enumeration properties (artf3099)
  *    
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.util;
 
-import java.util.ArrayList;
-import java.util.List;
+import static org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil.getSmallEnumeration;
+import static org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil.isCSType;
 
-import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemVersion;
+import org.openhealthtools.mdht.uml.term.core.profile.ValueSetCode;
 import org.openhealthtools.mdht.uml.term.core.profile.ValueSetConstraint;
 
 public class ValueSetConstraintUtil {
 
-	public static final String getOCL(Property property) {
+	public static String getOCL(Property property) {
+		String result;
+
+		if (property.getType() instanceof Enumeration) {
+			result = getOCLForEnumeration(property);
+		} else {
+			result = getOCLForCD(property);
+		}
+
+		return result;
+	}
+
+	private static String getOCLForCD(Property property) {
 		StringBuffer body = new StringBuffer();
 		boolean needsAnd = false;
 
@@ -61,13 +76,13 @@ public class ValueSetConstraintUtil {
 				needsAnd = true;
 			}
 
-			List<EnumerationLiteral> literals = valueSetConstraint.getReference().getBase_Enumeration().getOwnedLiterals();
-			if (literals.size() > 0 && literals.size() < 20) {
+			Iterable<EnumerationLiteral> literals = getSmallEnumeration(valueSetConstraint.getReference().getBase_Enumeration());
+			if (literals != null) {
 				if (needsAnd) {
 					body.append(" and (");
 				}
 				boolean firstCode = true;
-				for (EnumerationLiteral literal : valueSetConstraint.getReference().getBase_Enumeration().getOwnedLiterals()) {
+				for (EnumerationLiteral literal : literals) {
 					if (firstCode) {
 						firstCode = false;
 					} else {
@@ -93,18 +108,47 @@ public class ValueSetConstraintUtil {
 		return body.toString();
 	}
 
-	public static boolean isCSType(Property property) {
-		Classifier type = (Classifier) property.getType();
-		if (type != null) {
-			List<Classifier> allTypes = new ArrayList<Classifier>(type.allParents());
-			allTypes.add(0, type);
-			for (Classifier classifier : allTypes) {
-				if ("datatypes::CS".equals(classifier.getQualifiedName())) {
-					return true;
+	private static String getOCLForEnumeration(Property property) {
+		StringBuilder result = null;
+
+		ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
+		if ((valueSetConstraint != null) && (valueSetConstraint.getReference() != null)) {
+			result = new StringBuilder();
+
+			final String enumTypeName = property.getType().getQualifiedName();
+
+			final Enumeration base = valueSetConstraint.getReference().getBase_Enumeration();
+			final Iterable<EnumerationLiteral> literals = getSmallEnumeration(base);
+
+			if (literals != null) {
+				boolean needsOr = false;
+				for (EnumerationLiteral next : base.getOwnedLiterals()) {
+					// only consider literals that represent value-set codes
+					ValueSetCode code = TermProfileUtil.getValueSetCode(next);
+
+					if (code != null) {
+						if (needsOr) {
+							result.append(" or ");
+						}
+						result.append("value = ");
+
+						// the enumeration to compare against is in the namespace of the
+						// property type, not the value-set constraint
+						result.append(enumTypeName).append(NamedElement.SEPARATOR).append(next.getName());
+
+						needsOr = true;
+					}
 				}
 			}
-		}
-		return false;
-	}
 
+			// even if there were literals, maybe they weren't stereotyped as <<valueSetCode>>
+			if (result.length() == 0) {
+				result.append("not value.oclIsUndefined()");
+			}
+		}
+
+		return (result == null)
+				? null
+				: result.toString();
+	}
 }

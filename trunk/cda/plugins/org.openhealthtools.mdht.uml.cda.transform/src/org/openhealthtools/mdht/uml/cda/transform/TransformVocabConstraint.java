@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson and others.
+ * Copyright (c) 2009, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,6 +8,7 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     John T.E. Timm (IBM Corporation) - added CS type check
+ *     Christian W. Damus - Generate OCL for enumeration properties (artf3099)
  *     
  * $Id$
  *******************************************************************************/
@@ -17,9 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
+import org.eclipse.uml2.uml.ValueSpecification;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
@@ -58,6 +61,19 @@ public class TransformVocabConstraint extends TransformAbstract {
 		String code = null;
 		String displayName = null;
 
+		if (isEnumerationType(property)) {
+			// prefer the default value, if any, of an enumeration property
+			ValueSpecification defaultValue = property.getDefaultValue();
+
+			// this works for InstanceValues referencing EnumerationLiterals as well as for LiteralStrings
+			if (defaultValue != null) {
+				code = defaultValue.stringValue();
+				if ((code != null) && (code.length() == 0)) {
+					code = null; // OK, forget it
+				}
+			}
+		}
+
 		if (codeSystemConstraint != null) {
 			if (codeSystemConstraint.getReference() != null) {
 				codeSystem = codeSystemConstraint.getReference().getIdentifier();
@@ -68,7 +84,16 @@ public class TransformVocabConstraint extends TransformAbstract {
 				codeSystemName = codeSystemConstraint.getName();
 				// codeSystemVersion= codeSystemConstraint.getVersion();
 			}
-			code = codeSystemConstraint.getCode();
+			String localCode = codeSystemConstraint.getCode();
+			if ((localCode != null) && (localCode.length() > 0)) {
+				if ((code != null) && !code.equals(localCode)) {
+					// override the default and warn
+					String message = "Code system constraint contradicts enumeration default value in property: " +
+							property.getQualifiedName();
+					Logger.log(Logger.WARNING, message);
+				}
+				code = localCode;
+			}
 			displayName = codeSystemConstraint.getDisplayName();
 
 			addAnnotation(property, codeSystem, codeSystemName, code, displayName, codeSystemVersion);
@@ -92,7 +117,9 @@ public class TransformVocabConstraint extends TransformAbstract {
 				vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_NAME);
 			codeSystemVersion = (String) property.getValue(
 				vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE_SYSTEM_VERSION);
-			code = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE);
+			if (code == null) {
+				code = (String) property.getValue(vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_CODE);
+			}
 			displayName = (String) property.getValue(
 				vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_DISPLAY_NAME);
 
@@ -115,10 +142,14 @@ public class TransformVocabConstraint extends TransformAbstract {
 		AnnotationsUtil annotationsUtil = new AnnotationsUtil(property.getClass_());
 
 		if (code != null) {
-			annotationsUtil.setAnnotation(property.getName() + ".code", code);
+			if (isEnumerationType(property)) {
+				annotationsUtil.setAnnotation(property.getName(), code);
+			} else {
+				annotationsUtil.setAnnotation(property.getName() + ".code", code);
+			}
 		}
 
-		if (!CodeSystemConstraintUtil.isCSType(property)) {
+		if (!(TermProfileUtil.isCSType(property) || isEnumerationType(property))) {
 			if (codeSystem != null) {
 				annotationsUtil.setAnnotation(property.getName() + ".codeSystem", codeSystem);
 			}
@@ -156,31 +187,32 @@ public class TransformVocabConstraint extends TransformAbstract {
 
 		if (ocl == null || ocl.length() == 0) {
 			// no vocabulary specified
+			String message = "Could not generate vocabulary condition for property " + property.getQualifiedName();
+			Logger.log(Logger.WARNING, message);
 			return;
 		}
 
-		StringBuffer body = getValueExpression(property);
+		if (SEVERITY_INFO.equals(CDAModelUtil.getValidationSeverity(property)) && isCDType(property)) {
+			// constraint only applies if code system is undefined. For enumeration types, the
+			// code system is explicitly modelled
+			ocl = "not value.codeSystem.oclIsUndefined() or not value.codeSystemName.oclIsUndefined()";
+		}
+
+		StringBuffer body = getValueExpression(property, ocl);
 		if (body == null) {
+			String message = "Could not generate constraint for property: " + property.getQualifiedName();
+			Logger.log(Logger.WARNING, message);
 			return;
-		}
-
-		if (SEVERITY_INFO.equals(CDAModelUtil.getValidationSeverity(property))) {
-			// constraint only applies if code system is undefined
-			body.append("not value.codeSystem.oclIsUndefined() or not value.codeSystemName.oclIsUndefined()");
-		} else {
-			body.append(ocl);
 		}
 
 		if (body.length() > 0) {
-			body.append(")");
-
 			// if redefining parent template constraint, use parent constraint name to override
 			String constraintName = createInheritedConstraintName(property);
 			addOCLConstraint(property, body, constraintName);
 		}
 	}
 
-	private StringBuffer getValueExpression(Property property) {
+	private StringBuffer getValueExpression(Property property, String vocabExpression) {
 		Property cdaProperty = CDAModelUtil.getCDAProperty(property);
 		if (cdaProperty == null) {
 			String message = "Cannot find CDA property for: " + property.getQualifiedName();
@@ -194,8 +226,8 @@ public class TransformVocabConstraint extends TransformAbstract {
 		}
 
 		// check property type, including if redefined with restricted type
-		if (!isCDType(property)) {
-			String message = "Property is not CD type: " + property.getQualifiedName();
+		if (!(isCDType(property) || isEnumerationType(property))) {
+			String message = "Property is not of CD or enumeration type: " + property.getQualifiedName();
 			Logger.log(Logger.ERROR, message);
 			return null;
 		}
@@ -212,17 +244,23 @@ public class TransformVocabConstraint extends TransformAbstract {
 			// place-holder for when this is supported in UML 2.2
 		} else if (cdaProperty.getUpper() == 1) {
 			// single-valued CDA property
-			if (property.getLower() == 1) {
+			final boolean required = property.getLower() == 1;
+			if (required) {
 				body.append("not ");
 				body.append(selfName);
 				body.append(".oclIsUndefined() and ");
 			}
-			body.append(selfName + ".oclIsKindOf(" + templateTypeQName + ") and ");
-			body.append(LF);
-			body.append("let value : " + templateTypeQName + " = ");
-			// add final opening paren because there is always a closing paren
-			body.append(selfName + ".oclAsType(" + templateTypeQName + ") in (");
-			body.append(LF);
+			body.append(selfName).append(".oclIsKindOf(").append(templateTypeQName).append(")");
+
+			// no need to test this condition again if we already did, above
+			if (!(required && isTestForDefinedValue(vocabExpression))) {
+				body.append(" and ");
+				body.append(LF);
+				body.append("let value : ").append(templateTypeQName).append(" = ");
+				body.append(selfName).append(".oclAsType(").append(templateTypeQName).append(") in ");
+				body.append(LF);
+				body.append(vocabExpression);
+			}
 		} else if (cdaProperty.getUpper() > 0 || cdaProperty.getUpper() == LiteralUnlimitedNatural.UNLIMITED) {
 			// multi-valued property
 
@@ -236,16 +274,27 @@ public class TransformVocabConstraint extends TransformAbstract {
 			}
 
 			body.append(selfName);
-			body.append("->forAll(element | not element.oclIsUndefined() and element.oclIsKindOf(" + templateTypeQName +
-					") and ");
-			body.append(LF);
+			body.append("->forAll(element | not element.oclIsUndefined() and element.oclIsKindOf(").append(
+				templateTypeQName).append(")");
 
-			body.append("let value : " + templateTypeQName);
-			body.append(" = element.oclAsType(" + templateTypeQName + ") in ");
-			body.append(LF);
+			// no need to test this condition again
+			if (!isTestForDefinedValue(vocabExpression)) {
+				body.append(" and ");
+				body.append(LF);
+				body.append("let value : ").append(templateTypeQName);
+				body.append(" = element.oclAsType(").append(templateTypeQName).append(") in ");
+				body.append(LF);
+				body.append(vocabExpression);
+			}
+
+			body.append(")"); // close the forAll iterator
 		}
 
 		return body;
+	}
+
+	private static boolean isTestForDefinedValue(String ocl) {
+		return "not value.oclIsUndefined()".equals(ocl);
 	}
 
 	/**
@@ -325,5 +374,9 @@ public class TransformVocabConstraint extends TransformAbstract {
 		}
 
 		return false;
+	}
+
+	private boolean isEnumerationType(Property property) {
+		return property.getType() instanceof Enumeration;
 	}
 }
