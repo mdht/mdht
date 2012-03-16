@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 David A Carlson.
+ * Copyright (c) 2010, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,17 +7,20 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - Generate OCL for enumeration properties (artf3099)
  *     
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.core.util;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
@@ -167,5 +170,27 @@ public class TermProfileUtil {
 		if (stereotype != null && element.isStereotypeApplied(stereotype)) {
 			element.unapplyStereotype(stereotype);
 		}
+	}
+
+	public static boolean isCSType(Property property) {
+		Classifier type = (Classifier) property.getType();
+		if (type != null) {
+			List<Classifier> allTypes = new ArrayList<Classifier>(type.allParents());
+			allTypes.add(0, type);
+			for (Classifier classifier : allTypes) {
+				if ("datatypes::CS".equals(classifier.getQualifiedName())) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	static Iterable<EnumerationLiteral> getSmallEnumeration(Enumeration enumeration) {
+		List<EnumerationLiteral> literals = enumeration.getOwnedLiterals();
+
+		return ((literals.size() > 0) && (literals.size() < 20))
+				? literals
+				: null;
 	}
 }
