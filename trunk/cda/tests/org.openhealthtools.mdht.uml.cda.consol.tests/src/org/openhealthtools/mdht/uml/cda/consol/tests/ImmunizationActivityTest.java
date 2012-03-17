@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
-import org.openhealthtools.mdht.uml.cda.Consumable;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
@@ -273,7 +272,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 			protected void updateToFail(ImmunizationActivity target) {
 				target.init();
 				PreconditionForSubstanceAdministration pc = ConsolFactory.eINSTANCE.createPreconditionForSubstanceAdministration();
-
+				pc.setTypeCode(ActRelationshipType.CAUS);
 				target.getPreconditions().add(pc);
 			}
 
@@ -1042,10 +1041,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
 				target.init();
-				Consumable con = CDAFactory.eINSTANCE.createConsumable();
-				con.setManufacturedProduct(ConsolFactory.eINSTANCE.createMedicationInformation());
-				target.setConsumable(con);
-
+				target.setConsumable(CDAFactory.eINSTANCE.createConsumable());
 			}
 
 			@Override
