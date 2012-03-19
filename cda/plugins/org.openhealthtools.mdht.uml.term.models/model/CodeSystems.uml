@@ -88,7 +88,7 @@
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_tKR9cDrrEeG-aJb2h_4S8w" name="Accredited Standards Committee (ASC) X12"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_vNtCQDVPEeGIw7CntkyPQw" name="ConfidentialityCode"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_TYKKYEb4EeGp67IkyTw1fg" name="DCM"/>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="_svo1oDVVEeGIw7CntkyPQw" name="NUCCHealthCareProviderTaxonomy"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_svo1oDVVEeGIw7CntkyPQw" name="NUCC Health Care Provider Taxonomy"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_ZhyZUDVYEeGIw7CntkyPQw" name="Participationsignature"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_FTaBYGPwEeGskvPNzg7rUw" name="ActPriority"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_Bro-kGPyEeGskvPNzg7rUw" name="HealthcareServiceLocation"/>
@@ -159,4 +159,5 @@
   <term:CodeSystemVersion xmi:id="_-5gOQGdLEeGkeaezs0FtvA" identifier="2.16.840.1.113883.5.25" base_Enumeration="_vNtCQDVPEeGIw7CntkyPQw"/>
   <term:CodeSystemVersion xmi:id="_Q7taAGdNEeGkeaezs0FtvA" identifier="1.2.840.10008.2.16.4" base_Enumeration="_TYKKYEb4EeGp67IkyTw1fg"/>
   <term:CodeSystemVersion xmi:id="_PaapkGdREeGkeaezs0FtvA" identifier="2.16.840.1.113883.5.61" base_Enumeration="_PaaCgGdREeGkeaezs0FtvA"/>
+  <term:CodeSystemVersion xmi:id="_7Du1gHHeEeGeeZysMrDRUg" identifier="2.16.840.1.113883.6.101" url="http://www.nucc.org" base_Enumeration="_svo1oDVVEeGIw7CntkyPQw"/>
 </xmi:XMI>

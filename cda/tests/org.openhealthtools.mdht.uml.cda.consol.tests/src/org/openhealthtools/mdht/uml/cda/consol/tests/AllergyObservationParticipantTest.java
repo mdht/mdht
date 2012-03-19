@@ -25,6 +25,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservationParticipant#validateAllergyObservationParticipantTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Participant Type Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AllergyObservationParticipant#validateAllergyObservationParticipantParticipantRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Allergy Observation Participant Participant Role</em>}</li>
  * </ul>
  * </p>
@@ -33,6 +34,40 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  */
 
 public class AllergyObservationParticipantTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAllergyObservationParticipantTypeCode() {
+		OperationsTestCase<AllergyObservationParticipant> validateAllergyObservationParticipantTypeCodeTestCase = new OperationsTestCase<AllergyObservationParticipant>(
+			"validateAllergyObservationParticipantTypeCode",
+			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_OBSERVATION_PARTICIPANT_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AllergyObservationParticipant target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AllergyObservationParticipant target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AllergyObservationParticipantOperations.validateAllergyObservationParticipantTypeCode(
+					(AllergyObservationParticipant) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAllergyObservationParticipantTypeCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*

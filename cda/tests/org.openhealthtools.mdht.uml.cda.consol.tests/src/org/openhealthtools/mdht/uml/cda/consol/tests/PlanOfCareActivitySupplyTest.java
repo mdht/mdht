@@ -27,6 +27,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivitySupply#validatePlanOfCareActivitySupplyTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Supply Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivitySupply#validatePlanOfCareActivitySupplyClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Supply Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivitySupply#validatePlanOfCareActivitySupplyMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Supply Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivitySupply#validatePlanOfCareActivitySupplyId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Activity Supply Id</em>}</li>
  * </ul>
  * </p>
@@ -68,6 +70,74 @@ public class PlanOfCareActivitySupplyTest extends CDAValidationTest {
 		};
 
 		validatePlanOfCareActivitySupplyTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePlanOfCareActivitySupplyClassCode() {
+		OperationsTestCase<PlanOfCareActivitySupply> validatePlanOfCareActivitySupplyClassCodeTestCase = new OperationsTestCase<PlanOfCareActivitySupply>(
+			"validatePlanOfCareActivitySupplyClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_SUPPLY_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PlanOfCareActivitySupply target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PlanOfCareActivitySupply target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PlanOfCareActivitySupplyOperations.validatePlanOfCareActivitySupplyClassCode(
+					(PlanOfCareActivitySupply) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePlanOfCareActivitySupplyClassCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePlanOfCareActivitySupplyMoodCode() {
+		OperationsTestCase<PlanOfCareActivitySupply> validatePlanOfCareActivitySupplyMoodCodeTestCase = new OperationsTestCase<PlanOfCareActivitySupply>(
+			"validatePlanOfCareActivitySupplyMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_SUPPLY_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PlanOfCareActivitySupply target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PlanOfCareActivitySupply target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PlanOfCareActivitySupplyOperations.validatePlanOfCareActivitySupplyMoodCode(
+					(PlanOfCareActivitySupply) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePlanOfCareActivitySupplyMoodCodeTestCase.doValidationTest();
 	}
 
 	/**
