@@ -2149,10 +2149,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="RTO_QTY_QTY" eSuperTypes="#//QTY">
     <eOperations name="denominator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
-        <details key="body" value="self.denominator.value&lt;>0"/>
+        <details key="body" value="(self.denominator.oclIsKindOf(datatypes::INT) implies self.denominator.oclAsType(datatypes::INT).value &lt;> 0) and (self.denominator.oclIsKindOf(datatypes::REAL) implies self.denominator.oclAsType(datatypes::REAL).value &lt;> 0)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="self.denominator.value&lt;>0"/>
+        <details key="documentation" value="(self.denominator.oclIsKindOf(datatypes::INT) implies self.denominator.oclAsType(datatypes::INT).value &lt;> 0) and (self.denominator.oclIsKindOf(datatypes::REAL) implies self.denominator.oclAsType(datatypes::REAL).value &lt;> 0)"/>
       </eAnnotations>
       <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

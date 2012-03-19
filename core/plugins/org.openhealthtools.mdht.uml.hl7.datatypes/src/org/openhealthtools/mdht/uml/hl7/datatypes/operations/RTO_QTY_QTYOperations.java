@@ -63,7 +63,7 @@ public class RTO_QTY_QTYOperations extends ANYOperations {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATE_DENOMINATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "self.denominator.value<>0";
+	protected static final String VALIDATE_DENOMINATOR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP = "(self.denominator.oclIsKindOf(datatypes::INT) implies self.denominator.oclAsType(datatypes::INT).value <> 0) and (self.denominator.oclIsKindOf(datatypes::REAL) implies self.denominator.oclAsType(datatypes::REAL).value <> 0)";
 
 	/**
 	 * The cached OCL invariant for the '{@link #validateDenominator(RTO_QTY_QTY, org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Denominator</em>}' invariant operation.
@@ -79,7 +79,7 @@ public class RTO_QTY_QTYOperations extends ANYOperations {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * self.denominator.value<>0
+	 * (self.denominator.oclIsKindOf(datatypes::INT) implies self.denominator.oclAsType(datatypes::INT).value <> 0) and (self.denominator.oclIsKindOf(datatypes::REAL) implies self.denominator.oclAsType(datatypes::REAL).value <> 0)
 	 * @param rtO_QTY_QTY The receiving '<em><b>RTO QTY QTY</b></em>' model object.
 	 * @param diagnostics The chain of diagnostics to which problems are to be appended.
 	 * @param context The cache of context-specific information.
