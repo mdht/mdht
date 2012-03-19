@@ -1183,7 +1183,7 @@
       <ownedRule xmi:id="_hY1ToDU3EeCMTMnRUBJ_FQ" name="denominator" constrainedElement="_SgOtkD5-Ed6cla2oXsPtlA">
         <specification xmi:type="uml:OpaqueExpression" xmi:id="_mW-BkDU3EeCMTMnRUBJ_FQ">
           <language>OCL</language>
-          <body>self.denominator.value&lt;>0</body>
+          <body>(self.denominator.oclIsKindOf(datatypes::INT) implies self.denominator.oclAsType(datatypes::INT).value &lt;> 0) and (self.denominator.oclIsKindOf(datatypes::REAL) implies self.denominator.oclAsType(datatypes::REAL).value &lt;> 0)</body>
         </specification>
       </ownedRule>
       <generalization xmi:id="__DaTED5-Ed6cla2oXsPtlA" general="_O-oXcD5wEd6cla2oXsPtlA"/>
