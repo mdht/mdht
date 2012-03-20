@@ -134,7 +134,6 @@
          <visibility>
             <objectState name="umlType" value="Package"/>
          </visibility>
-         <!--
          <action
                label="%addUMLPackage.label"
                icon="icons/full/obj16/Package.gif"
@@ -143,7 +142,6 @@
                enablesFor="1"
                id="mdht.actions.addUML.package">
          </action>
-         -->
          <action
                label="%addUMLElementImport.label"
                icon="icons/full/obj16/ElementImport.gif"
