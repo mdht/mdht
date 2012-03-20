@@ -128,8 +128,10 @@
 				menubarPath="cdatools/edit" enablesFor="1"
 				id="org.openhealthtools.mdht.uml.cda.ui.actions.assignConformanceRuleIdsAction">
 			</action>
+			
+			<!-- This menu location is deprated and will be removed in next release. Now contributed by uml.ui -->
 			<action label="%openTemplateEditor.label"
-				class="org.openhealthtools.mdht.uml.cda.ui.actions.OpenTemplateEditorAction"
+				class="org.openhealthtools.mdht.uml.common.ui.actions.OpenSubclassEditorAction"
 				menubarPath="cdatools/edit" enablesFor="1"
 				id="org.openhealthtools.mdht.uml.cda.ui.actions.openSubclassEditorAction">
 			</action>
