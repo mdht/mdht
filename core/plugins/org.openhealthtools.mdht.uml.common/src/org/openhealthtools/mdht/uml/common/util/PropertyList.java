@@ -32,7 +32,7 @@ public class PropertyList {
 
 	private boolean isAllSuperclasses = true;
 
-	private boolean isSorted = false;
+	private boolean isSorted = true;
 
 	public PropertyList(Class clazz) {
 		this.clazz = clazz;
