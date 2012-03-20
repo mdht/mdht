@@ -11,8 +11,6 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.actions;
 
-import java.util.Iterator;
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.IAdaptable;
@@ -39,12 +37,8 @@ import org.eclipse.ui.part.ISetSelectionTarget;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Package;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.ui.dialogs.TemplateEditorViewContentProvider;
-import org.openhealthtools.mdht.uml.cda.ui.dialogs.TemplateEditorViewLabelProvider;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
-import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassEditorViewContentProvider;
-import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassEditorViewLabelProvider;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassHandler;
 
 public class CreateNewTemplateAction implements IObjectActionDelegate {
@@ -59,18 +53,8 @@ public class CreateNewTemplateAction implements IObjectActionDelegate {
 		super();
 	}
 
-	protected SubclassEditorViewContentProvider getContentProvider() {
-		return new TemplateEditorViewContentProvider();
-	}
-
-	protected SubclassEditorViewLabelProvider getLabelProvider() {
-		return new TemplateEditorViewLabelProvider();
-	}
-
 	protected View getSelectedView() {
-		for (Iterator elements = ((IStructuredSelection) currentSelection).iterator(); elements.hasNext();) {
-
-			Object element = elements.next();
+		for (Object element : ((IStructuredSelection) currentSelection).toArray()) {
 			View view = (View) ((IAdaptable) element).getAdapter(View.class);
 
 			if (view != null) {
@@ -118,8 +102,7 @@ public class CreateNewTemplateAction implements IObjectActionDelegate {
 						return Status.CANCEL_STATUS;
 					}
 
-					SubclassHandler subclassHandler = new SubclassHandler(
-						activePart.getSite().getShell(), newClass, getContentProvider(), getLabelProvider());
+					SubclassHandler subclassHandler = new SubclassHandler(activePart.getSite().getShell(), newClass);
 					int resultStatus = subclassHandler.openSubclassDialog();
 					if (Window.OK != resultStatus) {
 						// can't figure out how to rollback operation transaction if canceled, so destroy here
