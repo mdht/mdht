@@ -91,12 +91,11 @@ public class CreateNewTemplateAction implements IObjectActionDelegate {
 					// prompt for base class and create generalization
 					Class baseClass = (Class) DialogLaunchUtil.chooseElement(
 						new java.lang.Class[] { Class.class }, selectedPackage.eResource().getResourceSet(),
-						activePart.getSite().getShell());
+						activePart.getSite().getShell(), "Class Selection", "Select base class:");
 					if (baseClass != null) {
 						newClass = selectedPackage.createOwnedClass(className, false);
 
 						// create new generalization
-						newClass.getGenerals().clear();
 						newClass.createGeneralization(baseClass);
 					} else {
 						return Status.CANCEL_STATUS;
