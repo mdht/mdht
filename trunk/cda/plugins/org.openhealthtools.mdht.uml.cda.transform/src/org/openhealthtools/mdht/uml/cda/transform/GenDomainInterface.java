@@ -31,6 +31,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelConsolidator;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
+import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 public class GenDomainInterface extends TransformFacade {
 	private GenDomainProperty genDomainProperty;

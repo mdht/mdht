@@ -21,8 +21,8 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.uml2.uml.Package;
-import org.openhealthtools.mdht.uml.cda.transform.TransformerOptions;
 import org.openhealthtools.mdht.uml.cda.transform.FilterTransformer;
+import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 /**
  * Filter the UML model content and optionally apply business names.

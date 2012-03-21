@@ -13,6 +13,7 @@
 package org.openhealthtools.mdht.uml.cda.transform;
 
 import org.eclipse.uml2.uml.Class;
+import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 public class TransformClinicalDocument extends TransformAbstract {
 	public TransformClinicalDocument(TransformerOptions options) {

@@ -33,6 +33,9 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
+import org.openhealthtools.mdht.uml.transform.EcoreTransformUtil;
+import org.openhealthtools.mdht.uml.transform.PluginPropertiesUtil;
+import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 /**
  * Abstract base class for model transformations.

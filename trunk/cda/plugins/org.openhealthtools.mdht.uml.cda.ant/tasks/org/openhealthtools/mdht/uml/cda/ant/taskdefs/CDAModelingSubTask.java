@@ -36,8 +36,8 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.openhealthtools.mdht.uml.cda.ant.types.ModelElement;
-import org.openhealthtools.mdht.uml.cda.transform.AbstractTransformer;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
+import org.openhealthtools.mdht.uml.transform.AbstractTransformer;
 
 public abstract class CDAModelingSubTask extends Task {
 

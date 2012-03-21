@@ -43,8 +43,8 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.transform.AnnotationsUtil;
-import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformUtil;
-import org.openhealthtools.mdht.uml.cda.transform.PluginPropertiesUtil;
+import org.openhealthtools.mdht.uml.transform.EcoreTransformUtil;
+import org.openhealthtools.mdht.uml.transform.PluginPropertiesUtil;
 
 public class RemoveConstraintAnnotationsAction implements IObjectActionDelegate {
 	public static final String VALIDATION_ERROR = "constraints.validation.error";

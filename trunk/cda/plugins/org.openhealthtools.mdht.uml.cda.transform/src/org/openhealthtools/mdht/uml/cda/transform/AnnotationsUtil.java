@@ -28,6 +28,7 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.util.UMLUtil;
+import org.openhealthtools.mdht.uml.transform.EcoreTransformUtil;
 
 public class AnnotationsUtil {
 

@@ -26,6 +26,8 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelConsolidator;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.transform.EcoreTransformUtil;
+import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 /**
  * @author dcarlson

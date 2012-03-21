@@ -26,8 +26,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Package;
 import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformer;
-import org.openhealthtools.mdht.uml.cda.transform.TransformerOptions;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
+import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 /**
  * Transform CDA conceptual model to UML with Ecore extensions.
