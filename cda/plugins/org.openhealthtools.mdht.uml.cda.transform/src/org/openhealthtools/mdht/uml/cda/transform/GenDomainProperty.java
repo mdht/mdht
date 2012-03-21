@@ -27,6 +27,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
+import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 public class GenDomainProperty extends TransformFacade {
 	private GenMethodHelper methodHelper;

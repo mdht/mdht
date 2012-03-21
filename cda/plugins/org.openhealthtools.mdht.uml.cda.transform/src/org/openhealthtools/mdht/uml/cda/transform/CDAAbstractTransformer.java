@@ -21,27 +21,33 @@ import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.util.UMLUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
+import org.openhealthtools.mdht.uml.transform.AbstractTransformer;
+import org.openhealthtools.mdht.uml.transform.EcoreTransformUtil;
+import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 /**
  * @author dcarlson
  * 
  */
-public abstract class AbstractTransformer {
+public abstract class CDAAbstractTransformer extends AbstractTransformer {
 
 	protected TransformerOptions transformerOptions;
 
-	public AbstractTransformer() {
+	public CDAAbstractTransformer() {
 		this(new TransformerOptions());
 	}
 
-	public AbstractTransformer(TransformerOptions options) {
+	public CDAAbstractTransformer(TransformerOptions options) {
 		transformerOptions = options;
 	}
 
+	@Override
 	public abstract void transformModelElement(Element element);
 
+	@Override
 	public abstract void saveResources();
 
+	@Override
 	protected Package initializeModelPackageFrom(Element element, String newModelPath, String suffix, String nsPrefix,
 			String prefix) {
 		Package sourcePkg = element.getNearestPackage();

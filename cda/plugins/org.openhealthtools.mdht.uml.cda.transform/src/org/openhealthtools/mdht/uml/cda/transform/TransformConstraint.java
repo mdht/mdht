@@ -21,6 +21,7 @@ import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
+import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 public class TransformConstraint extends TransformAbstract {
 	private static final String VALIDATION_QUERY = "constraints.validation.query";

@@ -23,12 +23,13 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelConsolidator;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
+import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 /**
  * @author dcarlson
  * 
  */
-public class DomainTransformer extends AbstractTransformer {
+public class DomainTransformer extends CDAAbstractTransformer {
 
 	private CDAModelConsolidator consolidator = null;
 

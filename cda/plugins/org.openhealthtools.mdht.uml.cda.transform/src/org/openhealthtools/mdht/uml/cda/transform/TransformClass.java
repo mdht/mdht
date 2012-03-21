@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Substitution;
+import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 public class TransformClass extends TransformAbstract {
 	public TransformClass(TransformerOptions options) {

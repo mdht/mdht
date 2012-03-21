@@ -21,12 +21,13 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelFilter;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
+import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 /**
  * @author dcarlson
  * 
  */
-public class FilterTransformer extends AbstractTransformer {
+public class FilterTransformer extends CDAAbstractTransformer {
 
 	private CDAModelFilter modelFilter;
 

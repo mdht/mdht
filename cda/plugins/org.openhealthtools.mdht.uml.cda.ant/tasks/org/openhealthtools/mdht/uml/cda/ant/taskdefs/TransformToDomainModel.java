@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Package;
 import org.openhealthtools.mdht.uml.cda.transform.DomainTransformer;
-import org.openhealthtools.mdht.uml.cda.transform.TransformerOptions;
+import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 /**
  * Transform UML model to domain facade wrapper classes.

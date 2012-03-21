@@ -69,9 +69,7 @@ public class ModelConsolidator {
 		processedClassifiers = new HashSet<Classifier>();
 	}
 
-	public ModelConsolidator(Package sourcePackage, Package consolPackage) {
-		this();
-
+	public void initialize(Package sourcePackage, Package consolPackage) {
 		this.sourcePackage = sourcePackage;
 		this.consolPackage = consolPackage;
 
@@ -230,9 +228,9 @@ public class ModelConsolidator {
 			return sourceClass;
 		}
 
-		if (sourceClass.getOwner() instanceof Class) {
-			System.out.println("Inner class: " + sourceClass.getQualifiedName());
-		}
+		// if (sourceClass.getOwner() instanceof Class) {
+		// System.out.println("Inner class: " + sourceClass.getQualifiedName());
+		// }
 
 		Class consolidatedClass = consolMapping.get(EcoreUtil.getURI(sourceClass).toString());
 		if (consolidatedClass == null) {
@@ -433,6 +431,9 @@ public class ModelConsolidator {
 			// remove all property redefinition relationships to old superclasses
 			mergedProperty.getRedefinedProperties().clear();
 
+			// remove all property subset relationships to old superclasses
+			mergedProperty.getSubsettedProperties().clear();
+
 			// test original property so that we can evaluate base model context
 			// if (isIncludeBaseModel() && !ModelFilterUtil.hasFilterState(mergedProperty)) {
 			// if (isDefaultFiltered(property)) {
@@ -448,6 +449,10 @@ public class ModelConsolidator {
 					Class consolType = null;
 					// if association to base model type, leave it unchanged
 					if (!isBaseModel(endType)) {
+						// don't use specialization of nested classes
+						//if ((endType.getOwner() instanceof Class)) {
+						//	consolType = (Class) mergedProperty.getType();
+						
 						// if a more specific type defined in consol or source model, use it
 						consolType = findConsolSpecialization((Class) endType);
 

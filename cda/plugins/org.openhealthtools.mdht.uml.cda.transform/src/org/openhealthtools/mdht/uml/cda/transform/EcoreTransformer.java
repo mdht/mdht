@@ -23,8 +23,10 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
+import org.openhealthtools.mdht.uml.transform.PluginPropertiesUtil;
+import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
-public class EcoreTransformer extends AbstractTransformer {
+public class EcoreTransformer extends CDAAbstractTransformer {
 
 	private PluginPropertiesUtil propertiesUtil;
 

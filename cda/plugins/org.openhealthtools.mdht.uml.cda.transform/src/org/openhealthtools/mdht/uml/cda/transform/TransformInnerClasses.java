@@ -15,6 +15,7 @@ package org.openhealthtools.mdht.uml.cda.transform;
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
+import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 public class TransformInnerClasses extends TransformAbstract {
 	public TransformInnerClasses(TransformerOptions options) {

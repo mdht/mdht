@@ -23,9 +23,10 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl;
 import org.eclipse.uml2.uml.Package;
-import org.openhealthtools.mdht.uml.cda.transform.FlattenTransformer;
-import org.openhealthtools.mdht.uml.cda.transform.TransformerOptions;
+import org.openhealthtools.mdht.uml.cda.transform.CDAFlattenTransformer;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
+import org.openhealthtools.mdht.uml.transform.FlattenTransformer;
+import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 /**
  * Flatten the UML model class generalization.
@@ -115,7 +116,7 @@ public class FlattenModel extends CDAModelingSubTask {
 		monitor.setTaskName("Generating flattened model");
 		logInfo("Generating flattened model (includeBaseModel = " + includeBaseModel + ")...");
 
-		FlattenTransformer transformer = new FlattenTransformer(options);
+		FlattenTransformer transformer = new CDAFlattenTransformer(options);
 		transformer.initialize(defaultModel);
 
 		// write out copied properties before transform so that 'filter' keywords may be added

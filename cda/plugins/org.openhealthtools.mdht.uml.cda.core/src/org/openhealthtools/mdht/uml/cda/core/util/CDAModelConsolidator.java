@@ -45,8 +45,18 @@ public class CDAModelConsolidator extends ModelConsolidator {
 	}
 
 	public CDAModelConsolidator(Package sourcePackage, Package consolPackage, Package vocabPackage) {
-		super(sourcePackage, consolPackage);
+		super();
+		initialize(sourcePackage, consolPackage);
+		initializeVocab(vocabPackage);
+	}
 
+	public CDAModelConsolidator(Package sourcePackage, Package consolPackage) {
+		super();
+		initialize(sourcePackage, consolPackage);
+		this.vocabMapping = new HashMap<String, Enumeration>();
+	}
+
+	public void initializeVocab(Package vocabPackage) {
 		this.vocabPackage = vocabPackage;
 		this.vocabMapping = new HashMap<String, Enumeration>();
 
@@ -54,11 +64,6 @@ public class CDAModelConsolidator extends ModelConsolidator {
 		if (vocabPackage != null) {
 			EcoreUtil.resolveAll(vocabPackage.eResource());
 		}
-	}
-
-	public CDAModelConsolidator(Package sourcePackage, Package consolPackage) {
-		super(sourcePackage, consolPackage);
-		this.vocabMapping = new HashMap<String, Enumeration>();
 	}
 
 	@Override
