@@ -12,7 +12,8 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.actions;
 
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
@@ -84,10 +85,9 @@ public abstract class UML2AbstractAction implements IObjectActionDelegate, IView
 
 	protected boolean isReadOnly() {
 		if (editingDomain != null) {
-			for (Iterator elements = ((IStructuredSelection) currentSelection).iterator(); elements.hasNext();) {
-
-				Object element = elements.next();
-				if (element instanceof EObject && editingDomain.isReadOnly(((EObject) element).eResource())) {
+			for (Object selected : ((IStructuredSelection) currentSelection).toArray()) {
+				Element element = getElementFromSelection(selected);
+				if (element != null && editingDomain.isReadOnly(element.eResource())) {
 					return true;
 				}
 			}
@@ -97,45 +97,64 @@ public abstract class UML2AbstractAction implements IObjectActionDelegate, IView
 	}
 
 	protected View getSelectedView() {
-		for (Iterator elements = ((IStructuredSelection) currentSelection).iterator(); elements.hasNext();) {
+		if (editingDomain != null) {
+			for (Object selected : ((IStructuredSelection) currentSelection).toArray()) {
+				View view = (View) ((IAdaptable) selected).getAdapter(View.class);
 
-			Object element = elements.next();
-			View view = (View) ((IAdaptable) element).getAdapter(View.class);
-
-			if (view != null) {
-				return view;
+				if (view != null) {
+					return view;
+				}
 			}
 		}
 
 		return null;
 	}
 
-	protected Element getSelectedElement() {
-		for (Iterator elements = ((IStructuredSelection) currentSelection).iterator(); elements.hasNext();) {
-
-			Object element = elements.next();
-			EObject eObject = null;
-			if (element instanceof IAdaptable) {
-				// Try to adapt to View first, since Notation OK
-				eObject = (EObject) ((IAdaptable) element).getAdapter(View.class);
-
-				if (eObject == null) {
-					eObject = (EObject) ((IAdaptable) element).getAdapter(EObject.class);
-				}
-			} else if (element instanceof EObject) {
-				eObject = (EObject) element;
-			}
-
-			if (View.class.isInstance(eObject)) {
-				eObject = ((View) eObject).getElement();
-			}
-
-			if (Element.class.isInstance(eObject)) {
-				return (Element) eObject;
+	protected List<Element> getSelectedElements() {
+		List<Element> elements = new ArrayList<Element>();
+		for (Object selected : ((IStructuredSelection) currentSelection).toArray()) {
+			Element element = getElementFromSelection(selected);
+			if (element != null) {
+				elements.add(element);
 			}
 		}
 
+		return elements;
+	}
+
+	protected Element getSelectedElement() {
+		for (Object selected : ((IStructuredSelection) currentSelection).toArray()) {
+			// only the first selection is used
+			return getElementFromSelection(selected);
+		}
+
 		return null;
+	}
+
+	private Element getElementFromSelection(Object selection) {
+		Element element = null;
+
+		EObject eObject = null;
+		if (selection instanceof IAdaptable) {
+			// Try to adapt to View first, since Notation OK
+			eObject = (EObject) ((IAdaptable) selection).getAdapter(View.class);
+
+			if (eObject == null) {
+				eObject = (EObject) ((IAdaptable) selection).getAdapter(EObject.class);
+			}
+		} else if (selection instanceof EObject) {
+			eObject = (EObject) selection;
+		}
+
+		if (View.class.isInstance(eObject)) {
+			eObject = ((View) eObject).getElement();
+		}
+
+		if (Element.class.isInstance(eObject)) {
+			element = (Element) eObject;
+		}
+
+		return element;
 	}
 
 	/**

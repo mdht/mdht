@@ -193,7 +193,7 @@
                class="org.openhealthtools.mdht.uml.ui.actions.AddUMLClassAction"
                menubarPath="mdht.addUML/classifierGroup"
                enablesFor="1"
-               id="mdht.actions.addUML.class">
+               id="mdht.actions.addUML.nestedClass">
          </action>
          <action
                label="%addUMLGeneralization.label"
@@ -227,6 +227,28 @@
                menubarPath="mdht.addUML/propertyGroup"
                enablesFor="1"
                id="mdht.actions.addUML.attribute">
+         </action>
+      </objectContribution>
+   </extension>
+   
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            id="mdht.objectContribution.uml.classifier">
+         <visibility>
+         	<or>
+           		<objectState name="umlType" value="Property"/>
+           		<objectState name="umlType" value="Association"/>
+            </or>
+         </visibility>
+         
+         <action
+               label="%addUMLNestedSubclass.label"
+               icon="icons/full/obj16/Class.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddNestedSubclassAction"
+               menubarPath="mdht.addUML/classifierGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.nestedSubclass">
          </action>
       </objectContribution>
    </extension>
