@@ -108,7 +108,7 @@ public class PlanOfCareActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePlanOfCareActivityActMoodCode() {
@@ -116,6 +116,13 @@ public class PlanOfCareActivityActTest extends CDAValidationTest {
 			"validatePlanOfCareActivityActMoodCode",
 			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_ACT_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			{
+				// we cannot violate the constraint because it only checks that the mood
+				// code is non-null and of type x_DocumentActMood but EMF and Java enforce
+				// this
+				this.skipFailsTest();
+			}
 
 			@Override
 			protected void updateToFail(PlanOfCareActivityAct target) {

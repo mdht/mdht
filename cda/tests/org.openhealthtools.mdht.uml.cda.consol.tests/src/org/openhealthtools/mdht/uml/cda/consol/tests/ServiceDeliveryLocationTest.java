@@ -154,7 +154,7 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateServiceDeliveryLocationClassCode() {
@@ -162,6 +162,13 @@ public class ServiceDeliveryLocationTest extends CDAValidationTest {
 			"validateServiceDeliveryLocationClassCode",
 			operationsForOCL.getOCLValue("VALIDATE_SERVICE_DELIVERY_LOCATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			{
+				// we cannot violate the constraint because it only checks that the mood
+				// code is non-null and of type RoleClassRoot but EMF and Java enforce
+				// this
+				this.skipFailsTest();
+			}
 
 			@Override
 			protected void updateToFail(ServiceDeliveryLocation target) {

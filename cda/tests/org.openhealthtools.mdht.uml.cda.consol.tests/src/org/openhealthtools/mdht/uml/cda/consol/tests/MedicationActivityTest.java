@@ -6,6 +6,10 @@
  */
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
+import static org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood.EVN;
+import static org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood.INT;
+
+import java.util.Arrays;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -29,6 +33,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_PQ;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipType;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
 /**
  * <!-- begin-user-doc -->
@@ -452,7 +457,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateMedicationActivityMoodCode() {
@@ -463,13 +468,23 @@ public class MedicationActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MedicationActivity target) {
-
+				// the EMF-generated default for x_DocumentSubstanceMood happens to be
+				// a value allowed by the constraint
+				target.setMoodCode(x_DocumentSubstanceMood.RQO);
 			}
 
 			@Override
-			protected void updateToPass(MedicationActivity target) {
-				target.init();
-
+			public void addPassTests() {
+				for (final x_DocumentSubstanceMood mood : Arrays.asList(EVN, INT)) {
+					addPassTest(new PassTest() {
+						@Override
+						public void updateToPass(MedicationActivity target) {
+							target.init();
+							target.setMoodCode(mood);
+						}
+					});
+				}
+				;
 			}
 
 			@Override
