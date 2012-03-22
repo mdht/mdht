@@ -74,7 +74,7 @@ public class PlanOfCareActivitySubstanceAdministrationTest extends CDAValidation
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePlanOfCareActivitySubstanceAdministrationClassCode() {
@@ -82,6 +82,12 @@ public class PlanOfCareActivitySubstanceAdministrationTest extends CDAValidation
 			"validatePlanOfCareActivitySubstanceAdministrationClassCode",
 			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			{
+				// we cannot violate the constraint because it only checks that the class
+				// code is non-null and of type ActClass but EMF and Java enforce this
+				this.skipFailsTest();
+			}
 
 			@Override
 			protected void updateToFail(PlanOfCareActivitySubstanceAdministration target) {
@@ -108,7 +114,7 @@ public class PlanOfCareActivitySubstanceAdministrationTest extends CDAValidation
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePlanOfCareActivitySubstanceAdministrationMoodCode() {
@@ -116,6 +122,13 @@ public class PlanOfCareActivitySubstanceAdministrationTest extends CDAValidation
 			"validatePlanOfCareActivitySubstanceAdministrationMoodCode",
 			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			{
+				// we cannot violate the constraint because it only checks that the mood
+				// code is non-null and of type x_DocumentSubstanceMood but EMF and Java
+				// enforce this
+				this.skipFailsTest();
+			}
 
 			@Override
 			protected void updateToFail(PlanOfCareActivitySubstanceAdministration target) {

@@ -74,7 +74,7 @@ public class PlanOfCareActivityEncounterTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePlanOfCareActivityEncounterClassCode() {
@@ -82,6 +82,12 @@ public class PlanOfCareActivityEncounterTest extends CDAValidationTest {
 			"validatePlanOfCareActivityEncounterClassCode",
 			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_ENCOUNTER_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			{
+				// we cannot violate the constraint because it only checks that the class
+				// code is non-null and of type ActClass but EMF and Java enforce this
+				this.skipFailsTest();
+			}
 
 			@Override
 			protected void updateToFail(PlanOfCareActivityEncounter target) {
@@ -108,7 +114,7 @@ public class PlanOfCareActivityEncounterTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidatePlanOfCareActivityEncounterMoodCode() {
@@ -116,6 +122,13 @@ public class PlanOfCareActivityEncounterTest extends CDAValidationTest {
 			"validatePlanOfCareActivityEncounterMoodCode",
 			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_ENCOUNTER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			{
+				// we cannot violate the constraint because it only checks that the mood
+				// code is non-null and of type x_DocumentEncounterMood but EMF and Java
+				// enforce this
+				this.skipFailsTest();
+			}
 
 			@Override
 			protected void updateToFail(PlanOfCareActivityEncounter target) {

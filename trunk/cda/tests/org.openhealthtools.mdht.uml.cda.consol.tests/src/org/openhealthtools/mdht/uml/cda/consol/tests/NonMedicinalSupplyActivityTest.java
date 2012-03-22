@@ -6,6 +6,10 @@
  */
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
+import static org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood.EVN;
+import static org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood.INT;
+
+import java.util.Arrays;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -20,6 +24,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
 /**
  * <!-- begin-user-doc -->
@@ -158,7 +163,7 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateNonMedicinalSupplyActivityMoodCode() {
@@ -169,13 +174,23 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
-
+				// the EMF-generated default for x_DocumentSubstanceMood happens to be
+				// a value allowed by the constraint
+				target.setMoodCode(x_DocumentSubstanceMood.RQO);
 			}
 
 			@Override
-			protected void updateToPass(NonMedicinalSupplyActivity target) {
-				target.init();
-
+			public void addPassTests() {
+				for (final x_DocumentSubstanceMood mood : Arrays.asList(EVN, INT)) {
+					addPassTest(new PassTest() {
+						@Override
+						public void updateToPass(NonMedicinalSupplyActivity target) {
+							target.init();
+							target.setMoodCode(mood);
+						}
+					});
+				}
+				;
 			}
 
 			@Override
