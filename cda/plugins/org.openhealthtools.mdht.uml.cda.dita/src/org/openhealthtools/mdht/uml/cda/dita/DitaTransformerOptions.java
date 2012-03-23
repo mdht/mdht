@@ -32,11 +32,15 @@ public class DitaTransformerOptions {
 
 	public static final String BASE_URL = "baseURL";
 
+	public static final String INCLUDE_TABLE_VIEW = "includeTableView";
+
 	public static final String INCLUDE_VOCABULARY_CONSTRAINTS = "includeVocabularyConstraints";
 
 	private IPath outputPath = null;
 
 	private String baseURL = null;
+
+	private boolean includeTableView = false;
 
 	private boolean includeVocabularyConstraints = false;
 
@@ -69,7 +73,16 @@ public class DitaTransformerOptions {
 		if (store.getString(BASE_URL) != null && store.getString(BASE_URL).length() > 0) {
 			baseURL = store.getString(BASE_URL);
 		}
+		includeTableView = store.getBoolean(INCLUDE_TABLE_VIEW);
 		includeVocabularyConstraints = store.getBoolean(INCLUDE_VOCABULARY_CONSTRAINTS);
+	}
+
+	public boolean isIncludeTableView() {
+		return includeTableView;
+	}
+
+	public void setIncludeTableView(boolean includeTableView) {
+		this.includeTableView = includeTableView;
 	}
 
 	public boolean isIncludeVocabularyConstraints() {

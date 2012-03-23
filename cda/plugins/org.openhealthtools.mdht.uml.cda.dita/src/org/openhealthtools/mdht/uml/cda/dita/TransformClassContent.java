@@ -550,13 +550,18 @@ public class TransformClassContent extends TransformAbstract {
 	}
 
 	private void appendTable(PrintWriter writer, Class umlClass) {
-		if (tableGenerator != null) {
+		writer.println("<section id=\"tableconformance\">");
+
+		if (transformerOptions.isIncludeTableView() && tableGenerator != null) {
 			String table = tableGenerator.createTable(umlClass);
-			writer.println(table);
-		} else {
-			writer.print("TODO: Table Representation");
+			if (table != null && table.length() > 0) {
+				writer.println("<p> </p>");
+				writer.println(table);
+				writer.println("<p> </p>");
+			}
 		}
 
+		writer.println("</section>");
 	}
 
 	private void appendChanges(PrintWriter writer, Class umlClass) {

@@ -44,6 +44,8 @@ public class TransformToDita extends CDAModelingSubTask {
 
 	private String baseURL = null;
 
+	private Boolean includeTableView = null;
+
 	private Boolean includeVocabularyConstraints = null;
 
 	private List<EPackageClass> ePackageClasses = new ArrayList<EPackageClass>();
@@ -123,6 +125,9 @@ public class TransformToDita extends CDAModelingSubTask {
 		if (includeVocabularyConstraints == null && project.getProperty("includeVocabularyConstraints") != null) {
 			includeVocabularyConstraints = Boolean.valueOf(project.getProperty("includeVocabularyConstraints"));
 		}
+		if (includeTableView == null && project.getProperty("includeTableView") != null) {
+			includeTableView = Boolean.valueOf(project.getProperty("includeTableView"));
+		}
 
 	}
 
@@ -134,6 +139,10 @@ public class TransformToDita extends CDAModelingSubTask {
 
 	public void setDitaFilePath(String path) {
 		ditaFilePath = path;
+	}
+
+	public void setIncludeTableView(boolean include) {
+		includeTableView = new Boolean(include);
 	}
 
 	public void setIncludeVocabularyConstraints(boolean include) {
@@ -174,6 +183,9 @@ public class TransformToDita extends CDAModelingSubTask {
 		options.setOutputPath(outputPath);
 		if (baseURL != null) {
 			options.setBaseURL(baseURL);
+		}
+		if (includeTableView != null) {
+			options.setIncludeTableView(includeTableView);
 		}
 		if (includeVocabularyConstraints != null) {
 			options.setIncludeVocabularyConstraints(includeVocabularyConstraints);
