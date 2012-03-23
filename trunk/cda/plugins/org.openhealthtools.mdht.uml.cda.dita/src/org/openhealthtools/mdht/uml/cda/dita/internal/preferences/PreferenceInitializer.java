@@ -31,6 +31,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	public void initializeDefaultPreferences() {
 		Preferences store = Activator.getDefault().getPluginPreferences();
 
+		store.setDefault(DitaTransformerOptions.INCLUDE_TABLE_VIEW, false);
 		store.setDefault(DitaTransformerOptions.INCLUDE_VOCABULARY_CONSTRAINTS, false);
 	}
 

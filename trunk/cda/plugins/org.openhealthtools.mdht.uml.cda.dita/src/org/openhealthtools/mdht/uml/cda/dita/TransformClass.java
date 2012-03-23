@@ -52,12 +52,8 @@ public class TransformClass extends TransformAbstract {
 		// only generate these sections for CDA templates
 		Class cdaClass = CDAModelUtil.getCDAClass(umlClass);
 		if (cdaClass != null) {
-			writer.println("<p> </p>");
-
 			writer.println("<section conref=\"generated/_" + normalizedClassName + ".dita#classId/tableconformance\">");
 			writer.println("</section>");
-
-			writer.println("<p> </p>");
 
 			writer.println("<p> </p>"); // need a blank line before example code block
 			// writer.println("<fig>");
