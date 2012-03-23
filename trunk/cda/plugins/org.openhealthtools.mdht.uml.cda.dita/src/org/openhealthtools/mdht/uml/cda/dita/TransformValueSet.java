@@ -54,7 +54,8 @@ public class TransformValueSet extends TransformAbstract {
 	private void appendConcepts(PrintWriter writer, Enumeration umlEnumeration) {
 		String codeSystemName = null;
 		ValueSetVersion valueSetVersion = TermProfileUtil.getValueSetVersion(umlEnumeration);
-		if (valueSetVersion != null && valueSetVersion.getCodeSystem() != null) {
+		if (valueSetVersion != null && valueSetVersion.getCodeSystem() != null &&
+				!valueSetVersion.getCodeSystem().eIsProxy()) {
 			codeSystemName = valueSetVersion.getCodeSystem().getBase_Enumeration().getName();
 		}
 
@@ -130,13 +131,17 @@ public class TransformValueSet extends TransformAbstract {
 			writer.println("</entry></row>");
 
 			if (valueSetVersion.getCodeSystem() != null) {
-				String codeSystemId = valueSetVersion.getCodeSystem().getIdentifier() != null
-						? valueSetVersion.getCodeSystem().getIdentifier()
-						: "(OID not specified)";
-				writer.print("<row><entry>Code System</entry><entry>");
-				writer.print(CDAModelUtil.fixNonXMLCharacters(valueSetVersion.getCodeSystem().getBase_Enumeration().getName()));
-				writer.print(" - " + codeSystemId);
-				writer.println("</entry></row>");
+				if (valueSetVersion.getCodeSystem().eIsProxy()) {
+					System.err.println("Cannot load Code System ref from: " + umlEnumeration.getQualifiedName());
+				} else {
+					String codeSystemId = valueSetVersion.getCodeSystem().getIdentifier() != null
+							? valueSetVersion.getCodeSystem().getIdentifier()
+							: "(OID not specified)";
+					writer.print("<row><entry>Code System</entry><entry>");
+					writer.print(CDAModelUtil.fixNonXMLCharacters(valueSetVersion.getCodeSystem().getBase_Enumeration().getName()));
+					writer.print(" - " + codeSystemId);
+					writer.println("</entry></row>");
+				}
 			}
 
 			if (valueSetVersion.getVersion() != null) {
