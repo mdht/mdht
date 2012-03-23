@@ -199,8 +199,8 @@ public class PublishModelAction implements IObjectActionDelegate {
 
 		String ditaMapFileRoot = segments[0];
 
-		// Assume pdf target ,developer-pdf
-		String antTargets = "standards-pdf,developer-pdf";
+		// Assume pdf target
+		String antTargets = "standards-pdf";
 
 		if (ditaMapFile.getName().endsWith("-web.ditamap")) {
 			antTargets = "standards-eclipsehelp";
