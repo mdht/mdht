@@ -45,6 +45,7 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints;
 import org.openhealthtools.mdht.uml.cda.consol.operations.GeneralHeaderConstraintsOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
@@ -239,7 +240,6 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
 
 			}
 
@@ -522,6 +522,8 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				target.init();
+
+				target.setConfidentialityCode(DatatypesFactory.eINSTANCE.createCE("", "2.16.840.1.113883.5.25"));
 
 			}
 
@@ -1180,7 +1182,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsAuthorAssignedAuthorPersonName() {
@@ -1191,12 +1193,35 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				Author author = CDAFactory.eINSTANCE.createAuthor();
 
+				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				aa.setAssignedPerson(person);
+
+				author.setAssignedAuthor(aa);
+
+				target.getAuthors().add(author);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+
+				target.getAuthors().clear();
+
+				Author author = CDAFactory.eINSTANCE.createAuthor();
+
+				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+				aa.setAssignedPerson(person);
+
+				author.setAssignedAuthor(aa);
+
+				target.getAuthors().add(author);
 
 			}
 
@@ -1444,8 +1469,10 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				Author author = CDAFactory.eINSTANCE.createAuthor();
 
 				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setCodeSystem("2.16.840.1.113883.6.101");
 
-				aa.setCode(DatatypesFactory.eINSTANCE.createCE());
+				aa.setCode(ce);
 				author.setAssignedAuthor(aa);
 
 				target.getAuthors().add(author);
@@ -1618,7 +1645,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsDataEntererAssignedEntityPersonName() {
@@ -1629,12 +1656,24 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-
+				target.init();
+				DataEnterer de = CDAFactory.eINSTANCE.createDataEnterer();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				ae.setAssignedPerson(person);
+				de.setAssignedEntity(ae);
+				target.setDataEnterer(de);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				DataEnterer de = CDAFactory.eINSTANCE.createDataEnterer();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+				ae.setAssignedPerson(person);
+				de.setAssignedEntity(ae);
+				target.setDataEnterer(de);
 
 			}
 
@@ -1786,7 +1825,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
 				de.setAssignedEntity(ae);
 				target.setDataEnterer(de);
-				target.getDataEnterer().getAssignedEntity().getIds().add(DatatypesFactory.eINSTANCE.createII());
+
 			}
 
 			@Override
@@ -1890,7 +1929,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsDataEntererAssignedEntity() {
@@ -1901,13 +1940,20 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				DataEnterer de = CDAFactory.eINSTANCE.createDataEnterer();
 
+				target.setDataEnterer(de);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
 				target.init();
+				DataEnterer de = CDAFactory.eINSTANCE.createDataEnterer();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				de.setAssignedEntity(ae);
 
+				target.setDataEnterer(de);
 			}
 
 			@Override
@@ -2255,7 +2301,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsInformationRecipientIntendedRecipientPersonName() {
@@ -2266,12 +2312,33 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				InformationRecipient ir = CDAFactory.eINSTANCE.createInformationRecipient();
+				IntendedRecipient intended = CDAFactory.eINSTANCE.createIntendedRecipient();
+				Organization organization = CDAFactory.eINSTANCE.createOrganization();
+				intended.setReceivedOrganization(organization);
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				intended.setInformationRecipient(person);
+				ir.setIntendedRecipient(intended);
 
+				target.getInformationRecipients().add(ir);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+
+				target.getInformationRecipients().clear();
+
+				InformationRecipient ir = CDAFactory.eINSTANCE.createInformationRecipient();
+				IntendedRecipient intended = CDAFactory.eINSTANCE.createIntendedRecipient();
+				Organization organization = CDAFactory.eINSTANCE.createOrganization();
+				intended.setReceivedOrganization(organization);
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+				intended.setInformationRecipient(person);
+				ir.setIntendedRecipient(intended);
+
+				target.getInformationRecipients().add(ir);
 
 			}
 
@@ -2429,7 +2496,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsLegalAuthenticatorAssignedEntityPersonName() {
@@ -2440,13 +2507,25 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				LegalAuthenticator la = CDAFactory.eINSTANCE.createLegalAuthenticator();
+				target.setLegalAuthenticator(la);
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				Person person = CDAFactory.eINSTANCE.createPerson();
 
+				ae.setAssignedPerson(person);
+				la.setAssignedEntity(ae);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
-
+				LegalAuthenticator la = CDAFactory.eINSTANCE.createLegalAuthenticator();
+				target.setLegalAuthenticator(la);
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+				ae.setAssignedPerson(person);
+				la.setAssignedEntity(ae);
 			}
 
 			@Override
@@ -2772,7 +2851,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsAuthenticatorAssignedEntityPersonName() {
@@ -2784,11 +2863,27 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
 
+				target.init();
+				Authenticator authenticator = CDAFactory.eINSTANCE.createAuthenticator();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				Person person = CDAFactory.eINSTANCE.createPerson();
+
+				ae.setAssignedPerson(person);
+
+				authenticator.setAssignedEntity(ae);
+				target.getAuthenticators().add(authenticator);
+
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				target.getAuthenticators().clear();
+				Authenticator authenticator = CDAFactory.eINSTANCE.createAuthenticator();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+				authenticator.setAssignedEntity(ae);
+				target.getAuthenticators().add(authenticator);
 
 			}
 
@@ -2915,7 +3010,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				target.getAuthenticators().clear();
 				Authenticator authenticator = CDAFactory.eINSTANCE.createAuthenticator();
 				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
-				ae.setCode(DatatypesFactory.eINSTANCE.createCE());
+				ae.setCode(DatatypesFactory.eINSTANCE.createCE("", "2.16.840.1.113883.6.101"));
 				authenticator.setAssignedEntity(ae);
 				target.getAuthenticators().add(authenticator);
 
@@ -3084,7 +3179,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 				target.getAuthenticators().clear();
 				Authenticator authenticator = CDAFactory.eINSTANCE.createAuthenticator();
-				authenticator.setSignatureCode(DatatypesFactory.eINSTANCE.createCS("s"));
+				authenticator.setSignatureCode(DatatypesFactory.eINSTANCE.createCS("S"));
 				target.getAuthenticators().add(authenticator);
 
 			}
@@ -3496,7 +3591,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientAdministrativeGenderCode() {
@@ -3507,13 +3602,34 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				Birthplace birthplace = CDAFactory.eINSTANCE.createBirthplace();
+				Place place = CDAFactory.eINSTANCE.createPlace();
+				birthplace.setPlace(place);
+				patient.setBirthplace(birthplace);
 
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
-
+				target.getRecordTargets().clear();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				patient.setAdministrativeGenderCode(DatatypesFactory.eINSTANCE.createCE("F", "2.16.840.1.113883.5.1"));
+				Birthplace birthplace = CDAFactory.eINSTANCE.createBirthplace();
+				Place place = CDAFactory.eINSTANCE.createPlace();
+				birthplace.setPlace(place);
+				patient.setBirthplace(birthplace);
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
 			}
 
 			@Override
@@ -3640,7 +3756,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsRecordTargetPatientRolePatientGuardianPersonName() {
@@ -3651,13 +3767,37 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				Birthplace birthplace = CDAFactory.eINSTANCE.createBirthplace();
+				Guardian guardian = CDAFactory.eINSTANCE.createGuardian();
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				guardian.setGuardianPerson(person);
 
+				patient.getGuardians().add(guardian);
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				target.getRecordTargets().clear();
+				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
+				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				Birthplace birthplace = CDAFactory.eINSTANCE.createBirthplace();
+				Guardian guardian = CDAFactory.eINSTANCE.createGuardian();
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+				guardian.setGuardianPerson(person);
 
+				patient.getGuardians().add(guardian);
+				pr.setPatient(patient);
+				re.setPatientRole(pr);
+				target.getRecordTargets().add(re);
 			}
 
 			@Override
@@ -3761,7 +3901,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				Patient patient = CDAFactory.eINSTANCE.createPatient();
 				LanguageCommunication languageCommunication = CDAFactory.eINSTANCE.createLanguageCommunication();
 				languageCommunication.setProficiencyLevelCode(DatatypesFactory.eINSTANCE.createCE(
-					"E", "2.16.840.1.113883.6.1", "", ""));
+					"E", "2.16.840.1.113883.5.61", "", ""));
 
 				patient.getLanguageCommunications().add(languageCommunication);
 
@@ -3913,7 +4053,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 				RecordTarget re = CDAFactory.eINSTANCE.createRecordTarget();
 				PatientRole pr = CDAFactory.eINSTANCE.createPatientRole();
 				Patient patient = CDAFactory.eINSTANCE.createPatient();
-				patient.setEthnicGroupCode(DatatypesFactory.eINSTANCE.createCE());
+				patient.setEthnicGroupCode(DatatypesFactory.eINSTANCE.createCE("", "2.16.840.1.113883.6.238"));
 				pr.setPatient(patient);
 				re.setPatientRole(pr);
 				target.getRecordTargets().add(re);
@@ -4869,7 +5009,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsInformantRelatedEntityPersonName() {
@@ -4880,12 +5020,33 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
 
+				Informant12 informant = CDAFactory.eINSTANCE.createInformant12();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+
+				RelatedEntity re = CDAFactory.eINSTANCE.createRelatedEntity();
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				re.setRelatedPerson(person);
+
+				informant.setRelatedEntity(re);
+				target.getInformants().add(informant);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				target.getInformants().clear();
+
+				Informant12 informant = CDAFactory.eINSTANCE.createInformant12();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+
+				RelatedEntity re = CDAFactory.eINSTANCE.createRelatedEntity();
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+				re.setRelatedPerson(person);
+
+				informant.setRelatedEntity(re);
+				target.getInformants().add(informant);
 
 			}
 
@@ -5372,7 +5533,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsInformantAssignedEntityPersonName() {
@@ -5383,12 +5544,26 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-
+				target.init();
+				Informant12 informant = CDAFactory.eINSTANCE.createInformant12();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				ae.setAssignedPerson(CDAFactory.eINSTANCE.createPerson());
+				informant.setAssignedEntity(ae);
+				target.getInformants().add(informant);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				target.getInformants().clear();
+				Informant12 informant = CDAFactory.eINSTANCE.createInformant12();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+				ae.setAssignedPerson(person);
+				informant.setAssignedEntity(ae);
+				target.getInformants().add(informant);
 
 			}
 
