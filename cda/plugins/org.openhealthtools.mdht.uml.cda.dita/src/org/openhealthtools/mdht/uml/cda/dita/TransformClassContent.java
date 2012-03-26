@@ -247,7 +247,9 @@ public class TransformClassContent extends TransformAbstract {
 		appendClassDocumentation(writer, umlClass);
 		appendConformanceRules(writer, umlClass);
 		appendAggregateRules(writer, umlClass);
-		appendTable(writer, umlClass);
+		if (transformerOptions.isIncludeTableView()) {
+			appendTable(writer, umlClass);
+		}
 		appendExample(writer, umlClass);
 		appendChanges(writer, umlClass);
 
@@ -550,18 +552,14 @@ public class TransformClassContent extends TransformAbstract {
 	}
 
 	private void appendTable(PrintWriter writer, Class umlClass) {
-		writer.println("<section id=\"tableconformance\">");
 
-		if (transformerOptions.isIncludeTableView() && tableGenerator != null) {
+		if (tableGenerator != null) {
 			String table = tableGenerator.createTable(umlClass);
 			if (table != null && table.length() > 0) {
-				writer.println("<p> </p>");
 				writer.println(table);
-				writer.println("<p> </p>");
 			}
 		}
 
-		writer.println("</section>");
 	}
 
 	private void appendChanges(PrintWriter writer, Class umlClass) {
