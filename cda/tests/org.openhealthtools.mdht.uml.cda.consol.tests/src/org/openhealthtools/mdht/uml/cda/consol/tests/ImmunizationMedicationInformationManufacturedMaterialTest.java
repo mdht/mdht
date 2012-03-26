@@ -31,6 +31,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformationManufacturedMaterial#validateImmunizationMedicationInformationManufacturedMaterialCodeOriginalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Manufactured Material Code Original Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformationManufacturedMaterial#validateImmunizationMedicationInformationManufacturedMaterialOriginalTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Manufactured Material Original Text Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformationManufacturedMaterial#validateImmunizationMedicationInformationManufacturedMaterialCodeTranslation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Manufactured Material Code Translation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformationManufacturedMaterial#validateImmunizationMedicationInformationManufacturedMaterialCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Manufactured Material Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformationManufacturedMaterial#validateImmunizationMedicationInformationManufacturedMaterialLotNumberText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Manufactured Material Lot Number Text</em>}</li>
  * </ul>
  * </p>
@@ -157,6 +158,40 @@ public class ImmunizationMedicationInformationManufacturedMaterialTest extends C
 		};
 
 		validateImmunizationMedicationInformationManufacturedMaterialCodeTranslationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateImmunizationMedicationInformationManufacturedMaterialCode() {
+		OperationsTestCase<ImmunizationMedicationInformationManufacturedMaterial> validateImmunizationMedicationInformationManufacturedMaterialCodeTestCase = new OperationsTestCase<ImmunizationMedicationInformationManufacturedMaterial>(
+			"validateImmunizationMedicationInformationManufacturedMaterialCode",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_MANUFACTURED_MATERIAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ImmunizationMedicationInformationManufacturedMaterial target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ImmunizationMedicationInformationManufacturedMaterial target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ImmunizationMedicationInformationManufacturedMaterialOperations.validateImmunizationMedicationInformationManufacturedMaterialCode(
+					(ImmunizationMedicationInformationManufacturedMaterial) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateImmunizationMedicationInformationManufacturedMaterialCodeTestCase.doValidationTest();
 	}
 
 	/**

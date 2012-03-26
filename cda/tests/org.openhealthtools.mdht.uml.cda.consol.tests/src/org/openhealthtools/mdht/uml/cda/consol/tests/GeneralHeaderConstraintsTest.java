@@ -240,6 +240,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.init();
 
 			}
 
@@ -505,7 +506,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsConfidentialityCode() {
@@ -516,12 +517,11 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
 
 				target.setConfidentialityCode(DatatypesFactory.eINSTANCE.createCE("", "2.16.840.1.113883.5.25"));
 
