@@ -242,7 +242,8 @@ public class AssignConformanceRuleIdsAction implements IObjectActionDelegate {
 			element, ICDAProfileConstants.VALIDATION);
 
 		for (Stereotype stereotype : appliedStereotypes) {
-			if (element.getValue(stereotype, ICDAProfileConstants.VALIDATION_RULE_ID) == null) {
+			Object value = element.getValue(stereotype, ICDAProfileConstants.VALIDATION_RULE_ID);
+			if (value == null || (value instanceof List && ((List) value).isEmpty())) {
 				String ruleId = rulePrefix + ++lastId;
 				List<String> ruleIds = new ArrayList<String>();
 				ruleIds.add(ruleId);
