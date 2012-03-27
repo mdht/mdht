@@ -27,6 +27,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentProcedureMood;
 
 /**
  * <!-- begin-user-doc -->
@@ -470,7 +471,7 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureActivityProcedureMoodCode() {
@@ -481,13 +482,13 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureActivityProcedure target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityProcedure target) {
-				target.init();
 
+				target.setMoodCode(x_DocumentProcedureMood.EVN);
 			}
 
 			@Override
@@ -665,6 +666,7 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 			protected void updateToPass(ProcedureActivityProcedure target) {
 				target.init();
 				CE pc = DatatypesFactory.eINSTANCE.createCE();
+				pc.setCodeSystem("2.16.840.1.113883.1.11.16866");
 				target.setPriorityCode(pc);
 			}
 
