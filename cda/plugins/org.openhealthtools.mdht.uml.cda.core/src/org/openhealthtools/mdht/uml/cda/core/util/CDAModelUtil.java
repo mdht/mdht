@@ -247,6 +247,20 @@ public class CDAModelUtil {
 		}
 	}
 
+	public static String getValidationMessage(Element element) {
+		String message = null;
+
+		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
+		if (validationSupport != null) {
+			message = (String) element.getValue(validationSupport, ICDAProfileConstants.VALIDATION_MESSAGE);
+		}
+		if (message == null || message.length() == 0) {
+			message = computeConformanceMessage(element, false);
+		}
+
+		return message;
+	}
+
 	public static String computeConformanceMessage(Element element, final boolean markup) {
 
 		UMLSwitch<Object> umlSwitch = new UMLSwitch<Object>() {
@@ -423,7 +437,6 @@ public class CDAModelUtil {
 			if (markup && endType.getOwner() instanceof Class) {
 				StringWriter sw = new StringWriter();
 				PrintWriter pw = new PrintWriter(sw);
-				StringBuffer sb = sw.getBuffer();
 
 				appendConformanceRuleIds(association, message, markup);
 
@@ -502,13 +515,13 @@ public class CDAModelUtil {
 				: "");
 
 		appendConformanceRuleIds(association, message, markup);
+
 		if (property.getType() instanceof Class) {
 			Class inlinedClass = (Class) property.getType();
 
 			if (markup && inlinedClass.getOwner() instanceof Class) {
 				StringWriter sw = new StringWriter();
 				PrintWriter pw = new PrintWriter(sw);
-				StringBuffer sb = sw.getBuffer();
 
 				appendPropertyComments(pw, property, markup);
 
@@ -740,24 +753,9 @@ public class CDAModelUtil {
 			}
 		}
 
-		// Stereotype conceptDomainConstraint = CDAProfileUtil.getAppliedCDAStereotype(
-		// property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
-		Stereotype codeSystemConstraint = TermProfileUtil.getAppliedStereotype(
-			property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
-		Stereotype valueSetConstraint = TermProfileUtil.getAppliedStereotype(
-			property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
-
-		if (codeSystemConstraint != null) {
-			String vocab = computeCodeSystemMessage(property, markup);
-			message.append(vocab);
-		} else if (valueSetConstraint != null) {
-			String vocab = computeValueSetMessage(property, markup, xrefSource);
-			message.append(vocab);
-		} else if (isHL7VocabAttribute(property) && property.getDefault() != null) {
-			String vocab = computeHL7VocabAttributeMessage(property, markup);
-			message.append(vocab);
-		}
-
+		/*
+		 * Append datatype restriction, if redefined to a specialized type
+		 */
 		List<Property> redefinedProperties = UMLUtil.getRedefinedProperties(property);
 		Property redefinedProperty = redefinedProperties.isEmpty()
 				? null
@@ -765,7 +763,7 @@ public class CDAModelUtil {
 
 		if (property.getType() != null &&
 				(redefinedProperty == null || (!isXMLAttribute(property) && (property.getType() != redefinedProperty.getType())))) {
-			message.append(", where its data type is ");
+			message.append(" with data type ");
 
 			String xref = (property.getType() instanceof Classifier && UMLUtil.isSameProject(
 				property, property.getType()))
@@ -787,10 +785,50 @@ public class CDAModelUtil {
 			} else {
 				message.append(property.getType().getName());
 			}
-
 		}
 
-		appendConformanceRuleIds(property, message, markup);
+		// for vocab properties, put rule ID at end, use terminology constraint if specified
+		if (isHL7VocabAttribute(property)) {
+			String ruleIds = getTerminologyConformanceRuleIds(property);
+			// if there are terminology rule IDs, then include property rule IDs here
+			if (ruleIds.length() > 0) {
+				appendConformanceRuleIds(property, message, markup);
+			}
+		} else {
+			// PropertyConstraint stereotype ruleIds, if specified
+			appendConformanceRuleIds(property, message, markup);
+		}
+
+		// Stereotype conceptDomainConstraint = CDAProfileUtil.getAppliedCDAStereotype(
+		// property, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+		Stereotype codeSystemConstraint = TermProfileUtil.getAppliedStereotype(
+			property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
+		Stereotype valueSetConstraint = TermProfileUtil.getAppliedStereotype(
+			property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
+
+		if (codeSystemConstraint != null) {
+			String vocab = computeCodeSystemMessage(property, markup);
+			message.append(vocab);
+		} else if (valueSetConstraint != null) {
+			String vocab = computeValueSetMessage(property, markup, xrefSource);
+			message.append(vocab);
+		} else if (isHL7VocabAttribute(property) && property.getDefault() != null) {
+			String vocab = computeHL7VocabAttributeMessage(property, markup);
+			message.append(vocab);
+		}
+
+		// for vocab properties, put rule ID at end, use terminology constraint if specified
+		if (isHL7VocabAttribute(property)) {
+			String ruleIds = getTerminologyConformanceRuleIds(property);
+			if (ruleIds.length() > 0) {
+				appendTerminologyConformanceRuleIds(property, message, markup);
+			} else {
+				appendConformanceRuleIds(property, message, markup);
+			}
+		} else {
+			// rule IDs for the terminology constraint
+			appendTerminologyConformanceRuleIds(property, message, markup);
+		}
 
 		return message.toString();
 	}
@@ -1118,14 +1156,18 @@ public class CDAModelUtil {
 	}
 
 	private static String computeCodeSystemMessage(Property property, boolean markup) {
+		Stereotype codeSystemConstraintStereotype = TermProfileUtil.getAppliedStereotype(
+			property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
 		CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
 
+		String keyword = getValidationKeyword(property, codeSystemConstraintStereotype);
 		String id = null;
 		String name = null;
 		String version = null;
 		BindingKind binding = null;
 		String code = null;
 		String displayName = null;
+
 		if (codeSystemConstraint != null) {
 			if (codeSystemConstraint.getReference() != null) {
 				CodeSystemVersion codeSystemVersion = codeSystemConstraint.getReference();
@@ -1195,9 +1237,11 @@ public class CDAModelUtil {
 	}
 
 	private static String computeValueSetMessage(Property property, boolean markup, Package xrefSource) {
+		Stereotype valueSetConstraintStereotype = TermProfileUtil.getAppliedStereotype(
+			property, ITermProfileConstants.VALUE_SET_CONSTRAINT);
 		ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
 
-		String keyword = getValidationKeyword(property);
+		String keyword = getValidationKeyword(property, valueSetConstraintStereotype);
 		String id = null;
 		String name = null;
 		String version = null;
@@ -1231,7 +1275,7 @@ public class CDAModelUtil {
 		}
 
 		StringBuffer message = new StringBuffer();
-		message.append(", which ");
+		message.append(", where the @code ");
 		if (keyword != null) {
 			message.append(markup
 					? "<b>"
@@ -1250,9 +1294,6 @@ public class CDAModelUtil {
 		message.append(markup
 				? "<tt>"
 				: "");
-		if (id != null) {
-			message.append(" ").append(id);
-		}
 		if (name != null) {
 			message.append(" ");
 			message.append(showXref
@@ -1262,6 +1303,9 @@ public class CDAModelUtil {
 			message.append(showXref
 					? "</xref>"
 					: "");
+		}
+		if (id != null) {
+			message.append(" ").append(id);
 		}
 		message.append(markup
 				? "</tt>"
@@ -1470,10 +1514,11 @@ public class CDAModelUtil {
 	}
 
 	public static String getCDAElementName(Property property) {
-		String elementName = property.getName();
+		String elementName = null;
 		if (property.getType() instanceof Class) {
 			Class cdaSourceClass = getCDAClass(property.getClass_());
 			if (cdaSourceClass != null) {
+				// This will never succeed for associations, does not include ActRelationship
 				Property cdaProperty = cdaSourceClass.getOwnedAttribute(
 					null, getCDAClass((Classifier) property.getType()));
 				if (cdaProperty != null && cdaProperty.getName() != null) {
@@ -1481,6 +1526,51 @@ public class CDAModelUtil {
 				}
 			}
 		}
+
+		// look for CDA association class element name, e.g. "component"
+		if (elementName == null) {
+			elementName = getCDAAssociationElementName(property);
+		}
+
+		if (elementName == null) {
+			elementName = property.getName();
+		}
+		return elementName;
+	}
+
+	public static String getCDAAssociationElementName(Property property) {
+		Class cdaSourceClass = getCDAClass(property.getClass_());
+		Class endType = (property.getType() instanceof Class)
+				? (Class) property.getType()
+				: null;
+		Class cdaTargetClass = endType != null
+				? getCDAClass(endType)
+				: null;
+
+		// This is incomplete determination of XML element name, but same logic as used in model transform
+		String elementName = null;
+		if (cdaSourceClass == null) {
+			elementName = property.getName();
+		} else if ("ClinicalDocument".equals(cdaSourceClass.getName()) &&
+				(CDAModelUtil.isSection(cdaTargetClass) || CDAModelUtil.isClinicalStatement(cdaTargetClass))) {
+			elementName = "component";
+		} else if (CDAModelUtil.isSection(cdaSourceClass) && (CDAModelUtil.isSection(cdaTargetClass))) {
+			elementName = "component";
+		} else if (CDAModelUtil.isSection(cdaSourceClass) &&
+				(CDAModelUtil.isClinicalStatement(cdaTargetClass) || CDAModelUtil.isEntry(cdaTargetClass))) {
+			elementName = "entry";
+		} else if (CDAModelUtil.isOrganizer(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
+			elementName = "component";
+		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) && CDAModelUtil.isClinicalStatement(cdaTargetClass)) {
+			elementName = "entryRelationship";
+		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) &&
+				"ParticipantRole".equals(cdaTargetClass.getName())) {
+			elementName = "participant";
+		} else if (CDAModelUtil.isClinicalStatement(cdaSourceClass) &&
+				"AssignedEntity".equals(cdaTargetClass.getName())) {
+			elementName = "performer";
+		}
+
 		return elementName;
 	}
 
@@ -1606,43 +1696,6 @@ public class CDAModelUtil {
 		return buffer.toString();
 	}
 
-	public static boolean hasValidationSupport(Element element) {
-		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
-		return validationSupport != null;
-	}
-
-	public static String getValidationSeverity(Element element) {
-		String severity = null;
-
-		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
-		if (validationSupport != null) {
-			Object value = element.getValue(validationSupport, ICDAProfileConstants.VALIDATION_SEVERITY);
-			if (value instanceof EnumerationLiteral) {
-				severity = ((EnumerationLiteral) value).getName();
-			} else if (value instanceof Enumerator) {
-				severity = ((Enumerator) value).getName();
-			}
-
-			// return (severity != null) ? severity : SEVERITY_ERROR;
-		}
-
-		return severity;
-	}
-
-	public static String getValidationMessage(Element element) {
-		String message = null;
-
-		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
-		if (validationSupport != null) {
-			message = (String) element.getValue(validationSupport, ICDAProfileConstants.VALIDATION_MESSAGE);
-		}
-		if (message == null || message.length() == 0) {
-			message = computeConformanceMessage(element, false);
-		}
-
-		return message;
-	}
-
 	/**
 	 * Returns a list conformance rule IDs.
 	 */
@@ -1659,8 +1712,45 @@ public class CDAModelUtil {
 		return ruleIds;
 	}
 
+	protected static void appendTerminologyConformanceRuleIds(Property property, StringBuffer message, boolean markup) {
+		String ruleIds = getTerminologyConformanceRuleIds(property);
+		if (ruleIds.length() > 0) {
+			message.append(" (");
+			message.append(ruleIds);
+			message.append(")");
+		}
+	}
+
+	protected static void appendConformanceRuleIds(Property property, StringBuffer message, boolean markup) {
+		String ruleIds = getConformanceRuleIds(property);
+		if (ruleIds.length() > 0) {
+			message.append(" (");
+			message.append(ruleIds);
+			message.append(")");
+		}
+	}
+
+	protected static void appendConformanceRuleIds(Association association, StringBuffer message, boolean markup) {
+		String ruleIds = getConformanceRuleIds(association);
+		if (ruleIds.length() > 0) {
+			message.append(" (");
+			message.append(ruleIds);
+			message.append(")");
+		}
+	}
+
 	protected static void appendConformanceRuleIds(Element element, StringBuffer message, boolean markup) {
 		String ruleIds = getConformanceRuleIds(element);
+		if (ruleIds.length() > 0) {
+			message.append(" (");
+			message.append(ruleIds);
+			message.append(")");
+		}
+	}
+
+	protected static void appendConformanceRuleIds(Element element, Stereotype stereotype, StringBuffer message,
+			boolean markup) {
+		String ruleIds = getConformanceRuleIds(element, stereotype);
 		if (ruleIds.length() > 0) {
 			message.append(" (");
 			message.append(ruleIds);
@@ -1671,9 +1761,39 @@ public class CDAModelUtil {
 	/**
 	 * Returns a comma separated list of conformance rule IDs, or an empty string if no IDs.
 	 */
+	public static String getConformanceRuleIds(Property property) {
+		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(
+			property, ICDAProfileConstants.PROPERTY_VALIDATION);
+		return getConformanceRuleIds(property, validationSupport);
+	}
+
+	/**
+	 * Returns a comma separated list of conformance rule IDs, or an empty string if no IDs.
+	 */
+	public static String getTerminologyConformanceRuleIds(Property property) {
+		Stereotype terminologyConstraint = getTerminologyConstraint(property);
+		return getConformanceRuleIds(property, terminologyConstraint);
+	}
+
+	/**
+	 * Returns a comma separated list of conformance rule IDs, or an empty string if no IDs.
+	 */
+	public static String getConformanceRuleIds(Association association) {
+		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(
+			association, ICDAProfileConstants.ASSOCIATION_VALIDATION);
+		return getConformanceRuleIds(association, validationSupport);
+	}
+
+	/**
+	 * Returns a comma separated list of conformance rule IDs, or an empty string if no IDs.
+	 */
 	public static String getConformanceRuleIds(Element element) {
-		StringBuffer ruleIdDisplay = new StringBuffer();
 		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
+		return getConformanceRuleIds(element, validationSupport);
+	}
+
+	public static String getConformanceRuleIds(Element element, Stereotype validationSupport) {
+		StringBuffer ruleIdDisplay = new StringBuffer();
 		if (validationSupport != null) {
 			Validation validation = (Validation) element.getStereotypeApplication(validationSupport);
 			for (String ruleId : validation.getRuleId()) {
@@ -1687,39 +1807,85 @@ public class CDAModelUtil {
 		return ruleIdDisplay.toString();
 	}
 
-	public static String getValidationKeyword(Element element) {
-		String severity = getValidationSeverity(element);
-
-		if (severity != null) {
-			if (SEVERITY_INFO.equals(severity)) {
-				return "MAY";
-			} else if (SEVERITY_WARNING.equals(severity)) {
-				return "SHOULD";
-			} else if (SEVERITY_ERROR.equals(severity)) {
-				return "SHALL";
-			}
+	public static Stereotype getTerminologyConstraint(Element element) {
+		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
+			element, ITermProfileConstants.CONCEPT_DOMAIN_CONSTRAINT);
+		if (stereotype == null) {
+			stereotype = CDAProfileUtil.getAppliedCDAStereotype(element, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT);
+		}
+		if (stereotype == null) {
+			stereotype = CDAProfileUtil.getAppliedCDAStereotype(element, ITermProfileConstants.VALUE_SET_CONSTRAINT);
 		}
 
-		return null;
+		return stereotype;
+	}
 
-		// if (element instanceof Association) {
-		// for (Property end : ((Association)element).getMemberEnds()) {
-		// if (end.isNavigable()) {
-		// element = end;
-		// break;
-		// }
-		// }
-		// }
-		//
-		// if (element instanceof MultiplicityElement) {
-		// if (((MultiplicityElement)element).getLower() == 0)
-		// return "MAY";
-		// else
-		// return "SHALL";
-		// }
-		// else {
-		// return "SHALL";
-		// }
+	public static boolean hasValidationSupport(Element element) {
+		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
+		return validationSupport != null;
+	}
+
+	public static String getValidationSeverity(Property property) {
+		Stereotype validationStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+			property, ICDAProfileConstants.PROPERTY_VALIDATION);
+		return getValidationSeverity(property, validationStereotype);
+	}
+
+	public static String getValidationSeverity(Element element) {
+		// use first available validation stereotype
+		Stereotype validationStereotype = CDAProfileUtil.getAppliedCDAStereotype(
+			element, ICDAProfileConstants.VALIDATION);
+		return getValidationSeverity(element, validationStereotype);
+	}
+
+	public static String getValidationSeverity(Element element, Stereotype validationStereotype) {
+		String severity = null;
+
+		if (validationStereotype != null) {
+			Object value = element.getValue(validationStereotype, ICDAProfileConstants.VALIDATION_SEVERITY);
+			if (value instanceof EnumerationLiteral) {
+				severity = ((EnumerationLiteral) value).getName();
+			} else if (value instanceof Enumerator) {
+				severity = ((Enumerator) value).getName();
+			}
+
+			// return (severity != null) ? severity : SEVERITY_ERROR;
+		}
+
+		return severity;
+	}
+
+	public static String getValidationKeyword(Property property) {
+		String severity = getValidationSeverity(property);
+		if (severity == null) {
+			// get other validation stereotype, usually for terminology
+			severity = getValidationSeverity((Element) property);
+		}
+		return getValidationKeyword(severity);
+	}
+
+	public static String getValidationKeyword(Element element) {
+		// use first available validation stereotype
+		String severity = getValidationSeverity(element);
+		return getValidationKeyword(severity);
+	}
+
+	public static String getValidationKeyword(Element element, Stereotype validationStereotype) {
+		String severity = getValidationSeverity(element, validationStereotype);
+		return getValidationKeyword(severity);
+	}
+
+	private static String getValidationKeyword(String severity) {
+		String keyword = null;
+		if (SEVERITY_INFO.equals(severity)) {
+			keyword = "MAY";
+		} else if (SEVERITY_WARNING.equals(severity)) {
+			keyword = "SHOULD";
+		} else if (SEVERITY_ERROR.equals(severity)) {
+			keyword = "SHALL";
+		}
+
+		return keyword;
 	}
 
 	public static void setValidationMessage(Element constrainedElement, String message) {
@@ -1730,15 +1896,15 @@ public class CDAModelUtil {
 		}
 	}
 
-	public static void setValidationRuleId(Element constrainedElement, String ruleId) {
-		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(
-			constrainedElement, ICDAProfileConstants.VALIDATION);
-		if (validationSupport != null) {
-			List<String> ruleIds = new ArrayList<String>();
-			ruleIds.add(ruleId);
-			constrainedElement.setValue(validationSupport, ICDAProfileConstants.VALIDATION_RULE_ID, ruleIds);
-		}
-	}
+	// public static void setValidationRuleId(Element constrainedElement, String ruleId) {
+	// Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(
+	// constrainedElement, ICDAProfileConstants.VALIDATION);
+	// if (validationSupport != null) {
+	// List<String> ruleIds = new ArrayList<String>();
+	// ruleIds.add(ruleId);
+	// constrainedElement.setValue(validationSupport, ICDAProfileConstants.VALIDATION_RULE_ID, ruleIds);
+	// }
+	// }
 
 	protected static String getLiteralValue(Element element, Stereotype stereotype, String propertyName) {
 		Object value = element.getValue(stereotype, propertyName);

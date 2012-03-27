@@ -13,6 +13,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.core.util;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
@@ -168,6 +169,33 @@ public class CDAProfileUtil {
 		return element.isStereotypeApplied(stereotype)
 				? stereotype
 				: null;
+	}
+
+	/**
+	 * Returns all applied stereotypes, including sub-stereotype applied that is a
+	 * specialization of the given stereotype.
+	 * 
+	 * @return stereotypes, or null if not applied
+	 */
+	public static List<Stereotype> getAppliedStereotypes(Element element, String stereotypeName) {
+		List<Stereotype> appliedStereotypes = new ArrayList<Stereotype>();
+
+		if (element == null || element.eResource() == null) {
+			// this occurs when resource is unloaded or element was removed
+			return null;
+		}
+		Profile profile = getCDAProfile(element.eResource().getResourceSet());
+		if (profile != null) {
+			Stereotype stereotype = profile.getOwnedStereotype(stereotypeName);
+			if (stereotype != null) {
+				if (!element.isStereotypeApplied(stereotype)) {
+					List<Stereotype> stereotypes = element.getAppliedSubstereotypes(stereotype);
+					appliedStereotypes.addAll(stereotypes);
+				}
+			}
+		}
+
+		return appliedStereotypes;
 	}
 
 	/**

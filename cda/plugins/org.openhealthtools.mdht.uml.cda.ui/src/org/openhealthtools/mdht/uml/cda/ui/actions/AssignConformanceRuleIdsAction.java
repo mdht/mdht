@@ -11,8 +11,10 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.actions;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
@@ -40,6 +42,7 @@ import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
@@ -235,9 +238,16 @@ public class AssignConformanceRuleIdsAction implements IObjectActionDelegate {
 	}
 
 	private void setRuleId(Element element) {
-		if (CDAModelUtil.hasValidationSupport(element) && CDAModelUtil.getConformanceRuleIdList(element).isEmpty()) {
-			String ruleId = rulePrefix + ++lastId;
-			CDAModelUtil.setValidationRuleId(element, ruleId);
+		List<Stereotype> appliedStereotypes = CDAProfileUtil.getAppliedStereotypes(
+			element, ICDAProfileConstants.VALIDATION);
+
+		for (Stereotype stereotype : appliedStereotypes) {
+			if (element.getValue(stereotype, ICDAProfileConstants.VALIDATION_RULE_ID) == null) {
+				String ruleId = rulePrefix + ++lastId;
+				List<String> ruleIds = new ArrayList<String>();
+				ruleIds.add(ruleId);
+				element.setValue(stereotype, ICDAProfileConstants.VALIDATION_RULE_ID, ruleIds);
+			}
 		}
 	}
 }
