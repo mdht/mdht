@@ -30,16 +30,11 @@ import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.forms.FormDialog;
 import org.eclipse.ui.forms.IManagedForm;
-import org.eclipse.uml2.uml.Association;
-import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 
 public class ViewConformanceRuleIdsAction implements IObjectActionDelegate {
 
@@ -51,66 +46,8 @@ public class ViewConformanceRuleIdsAction implements IObjectActionDelegate {
 
 	private String rulePrefix = "CONF-";
 
-	private int lastId = 0;
-
 	public ViewConformanceRuleIdsAction() {
 		super();
-	}
-
-	private void assignConformanceRuleIds(Element element) {
-		final TreeIterator<EObject> iterator = EcoreUtil.getAllContents(Collections.singletonList(element));
-		while (iterator != null && iterator.hasNext()) {
-			EObject child = iterator.next();
-
-			UMLSwitch<Object> umlSwitch = new UMLSwitch<Object>() {
-
-				@Override
-				public Object caseAssociation(Association association) {
-					setRuleId(association);
-					return association;
-				}
-
-				// public Object caseClass(Class umlClass) {
-				// setRuleId(umlClass);
-				// return umlClass;
-				// }
-
-				@Override
-				public Object caseConstraint(Constraint constraint) {
-					if (!CDAModelUtil.hasValidationSupport(constraint)) {
-						CDAProfileUtil.applyCDAStereotype(constraint, ICDAProfileConstants.CONSTRAINT_VALIDATION);
-					}
-					setRuleId(constraint);
-					return constraint;
-				}
-
-				@Override
-				public Object caseGeneralization(Generalization generalization) {
-					// if (!CDAModelUtil.hasValidationSupport(generalization.getSpecific())) {
-					// CDAProfileUtil.applyCDAStereotype(generalization.getSpecific(), ICDAProfileConstants.CDA_TEMPLATE);
-					// setRuleId(generalization.getSpecific());
-					// }
-
-					// only succeeds if ConformsTo has been applied
-					setRuleId(generalization);
-
-					return generalization;
-				}
-
-				@Override
-				public Object caseProperty(Property property) {
-					setRuleId(property);
-
-					Association association = property.getAssociation();
-					if (association != null) {
-						setRuleId(association);
-					}
-
-					return property;
-				}
-			};
-			umlSwitch.doSwitch(child);
-		}
 	}
 
 	private void getRuleIds() {
@@ -334,10 +271,4 @@ public class ViewConformanceRuleIdsAction implements IObjectActionDelegate {
 		activePart = targetPart;
 	}
 
-	private void setRuleId(Element element) {
-		if (CDAModelUtil.hasValidationSupport(element) && CDAModelUtil.getConformanceRuleIdList(element).isEmpty()) {
-			String ruleId = rulePrefix + ++lastId;
-			CDAModelUtil.setValidationRuleId(element, ruleId);
-		}
-	}
 }
