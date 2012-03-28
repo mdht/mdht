@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2011 JKM Software
+ * Copyright (c) 2011, 2012 JKM Software and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *    Sean Muir (JKM Software) - initial API and implementation
+ *    Christian W. Damus - generate query invariants for in-line associations (artf3100)
  *
  * $Id$
  */
@@ -35,7 +36,7 @@ public class TransformInlinedAssociations extends TransformAbstract {
 	}
 
 	private void appendInlinedOCLConstraint(Class classToBeConstrained, String constraintName, Severity severity,
-			String validationMessage, String oclConstraintGuard, String oclConstraint) {
+			String validationMessage, String oclConstraint) {
 
 		int ctr = 1;
 		while (classToBeConstrained.getOwnedRule(constraintName) != null) {
@@ -50,7 +51,7 @@ public class TransformInlinedAssociations extends TransformAbstract {
 			null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
 		expression.getLanguages().add("OCL");
 
-		expression.getBodies().add(String.format("if %s then %s else true endif", oclConstraintGuard, oclConstraint));
+		expression.getBodies().add(oclConstraint);
 
 		switch (severity) {
 			case INFO:
@@ -65,6 +66,8 @@ public class TransformInlinedAssociations extends TransformAbstract {
 
 		}
 
+		// designate the constraint as a query-style invariant
+		TransformConstraint.annotateQueryConstraint(inlinedConstraint, classToBeConstrained);
 	}
 
 	public TransformInlinedAssociations(TransformerOptions options) {
@@ -80,7 +83,7 @@ public class TransformInlinedAssociations extends TransformAbstract {
 	 * @see org.eclipse.uml2.uml.util.UMLSwitch#casePackage(org.eclipse.uml2.uml.Package)
 	 */
 
-	private static boolean isInlineClass(Class _class) {
+	static boolean isInlineClass(Class _class) {
 
 		boolean inline = false;
 		for (Comment comment : _class.getOwnedComments()) {
@@ -94,7 +97,7 @@ public class TransformInlinedAssociations extends TransformAbstract {
 
 	}
 
-	private static String getInlineFilter(Class inlineClass) {
+	static String getInlineFilter(Class inlineClass) {
 		String filter = "";
 		for (Comment comment : inlineClass.getOwnedComments()) {
 			if (comment.getBody().startsWith("INLINE&")) {
@@ -139,10 +142,11 @@ public class TransformInlinedAssociations extends TransformAbstract {
 						isInlineClass((Class) property.getType())) {
 
 					collectConstraints(
-						property.getClass_(), (Class) property.getType(),
+						property.getClass_(),
+						(Class) property.getType(),
 						CDAModelUtil.getValidationMessage(association),
-						"self." + getPath(getCDAClass(property.getClass_()), (Class) property.getType(), property),
-						"self." + getPath(getCDAClass(property.getClass_()), (Class) property.getType(), property) +
+						"self." +
+								getNullSafePath(getCDAClass(property.getClass_()), (Class) property.getType(), property) +
 								getInlineFilter((Class) property.getType()), property.getClass_().getName(),
 						constraints, property.getName());
 				}
@@ -153,6 +157,16 @@ public class TransformInlinedAssociations extends TransformAbstract {
 
 		return association;
 
+	}
+
+	private String getNullSafePath(Class cdaSourceClass, Class targetClass, Property sourceProperty) {
+		String result = getPath(cdaSourceClass, targetClass, sourceProperty);
+
+		if (result.length() > 0) {
+			result = result + "->excluding(null)";
+		}
+
+		return result;
 	}
 
 	private String getPath(Class cdaSourceClass, Class targetClass, Property sourceProperty) {
@@ -202,20 +216,10 @@ public class TransformInlinedAssociations extends TransformAbstract {
 	 * 
 	 * collectConstraints walks the untemplated associations recursively to create a for->all() ocl
 	 * 
-	 * TODO After supporting OCL query replace for all with reject to get better location of issue
 	 * TODO Message munging to get a readable validation message is bound to the current validation generation which needs to change, after dynamic
 	 * validation message generation should be able to create better message
-	 * 
-	 * @param bucketClass
-	 * @param inlineClass
-	 * @param severity
-	 * @param message
-	 * @param path
-	 * @param stack
-	 * @param constraints
-	 * @param associationName
 	 */
-	private void collectConstraints(Class bucketClass, Class inlineClass, String message, String guard, String path,
+	private void collectConstraints(final Class bucketClass, Class inlineClass, String message, String path,
 			String stack, HashMap<String, ArrayList<String>> constraints, String associationName) {
 
 		AnnotationsUtil inlineClassAnnotations = new AnnotationsUtil(inlineClass);
@@ -251,35 +255,15 @@ public class TransformInlinedAssociations extends TransformAbstract {
 
 					}
 					collectConstraints(
-						bucketClass, (Class) property.getType(), message + " " + associationMessage, guard + "." +
-								getPath(getCDAClass(property.getClass_()), (Class) property.getType(), property), path +
-								"." + getPath(getCDAClass(property.getClass_()), (Class) property.getType(), property),
+						bucketClass,
+						(Class) property.getType(),
+						message + " " + associationMessage,
+						path +
+								"." +
+								getNullSafePath(getCDAClass(property.getClass_()), (Class) property.getType(), property),
 						stack + property.getClass_().getName(), constraints, property.getName());
 				}
 			}
-		}
-
-		// Split the guards by string the iterate to create complete path check
-		String[] guards = guard.split("\\.");
-		StringBuilder constraintGuard = new StringBuilder();
-
-		StringBuilder segmentGuard = new StringBuilder();
-
-		for (int ctr = 1; ctr < guards.length; ctr++) {
-
-			for (int ctr2 = 0; ctr2 <= ctr; ctr2++) {
-				if (segmentGuard.length() > 0) {
-					segmentGuard.append(".");
-				}
-				segmentGuard.append(guards[ctr2]);
-			}
-
-			if (constraintGuard.length() > 0) {
-				constraintGuard.append(" and ");
-			}
-			constraintGuard.append(segmentGuard).append("->exists(not oclIsUndefined())");
-			segmentGuard.setLength(0);
-
 		}
 
 		for (Constraint constraint : inlineClass.getOwnedRules()) {
@@ -303,10 +287,9 @@ public class TransformInlinedAssociations extends TransformAbstract {
 
 				/*
 				 * TODO Fix constraint messages implementation - currently only setting the specific rule with out the path to the rule
-				 */			
+				 */
 				appendInlinedOCLConstraint(bucketClass, stack + constraint.getName(), constraintSeverity, message +
-						" " + constraintMessage, constraintGuard.toString(), path + getScopeFilter(inlineClass) +
-						"->forAll(" + relativeOCL + ")");
+						" " + constraintMessage, path + getScopeFilter(inlineClass) + "->reject(" + relativeOCL + ")");
 			}
 
 		}
