@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - generate query invariants for in-line associations (artf3100)
  *     
  * $Id$
  *******************************************************************************/
@@ -91,9 +92,7 @@ public class TransformConstraint extends TransformAbstract {
 		constraint.setName(constraintName);
 
 		if (isQueryConstraint(constraint)) {
-			AnnotationsUtil annotationsUtil = new AnnotationsUtil(constrainedClass);
-			annotationsUtil.addAnnotation(VALIDATION_QUERY, constraintName);
-			annotationsUtil.saveAnnotations();
+			annotateQueryConstraint(constraint, constrainedClass);
 		}
 
 		if (SEVERITY_INFO.equals(severity)) {
@@ -105,5 +104,11 @@ public class TransformConstraint extends TransformAbstract {
 		}
 
 		return constraint;
+	}
+
+	static void annotateQueryConstraint(Constraint constraint, Class context) {
+		AnnotationsUtil annotationsUtil = new AnnotationsUtil(context);
+		annotationsUtil.addAnnotation(VALIDATION_QUERY, constraint.getName());
+		annotationsUtil.saveAnnotations();
 	}
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2009 IBM Corporation
+ * Copyright (c) 2009, 2012 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,10 +7,14 @@
  * 
  * Contributors:
  *     IBM Corporation - initial API and implementation
+ *     Christian W. Damus - more accurate association multiplicity constraints (artf3100)
  *
  * $Id$
  */
 package org.openhealthtools.mdht.uml.cda.transform;
+
+import static org.openhealthtools.mdht.uml.cda.transform.TransformInlinedAssociations.getInlineFilter;
+import static org.openhealthtools.mdht.uml.cda.transform.TransformInlinedAssociations.isInlineClass;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +25,7 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.EnumerationLiteral;
+import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Property;
@@ -193,10 +198,59 @@ public class TransformAssociation extends TransformAbstract {
 
 			}
 
+			final String selector = !isInlineClass(targetClass)
+					? null
+					: getInlineFilter(targetClass);
+
+			//
+			// The only associations that can have a 0 lower bound are those that implement
+			// SHOULD or MAY constraints, because these imply optionality. Even so, to
+			// check these constraints, the OCL condition must require the presence of the
+			// object. Otherwise, absence of a SHOULD association would not report anything.
+			//
+			// UNLESS the upper bound is zero, in which case we are constraining an
+			// association not to exist. Then, the lower bound must zero and an isEmpty()
+			// operation is most appropriate.
+			//
+			final int upper = sourceProperty.upperBound();
+			final boolean isEmpty = (upper == 0);
+			final int lower = isEmpty
+					? 0
+					: Math.max(1, sourceProperty.getLower());
+
+			// can't use quantifiers like 'one' and 'exists' with a selector because it filters a collection.
+			// Note that 'exists' isn't applicable to lower bounds greater than 1
+			final boolean one = ((selector == null) || (selector.length() == 0)) && (upper == 1);
+			final boolean notEmpty = (lower == 1) && (upper == LiteralUnlimitedNatural.UNLIMITED);
+			final boolean exists = notEmpty && ((selector == null) || (selector.length() == 0));
+			final String comparator;
+			final String range;
+			if (one || exists || isEmpty || notEmpty) { // special cases
+				comparator = null;
+				range = null;
+			} else if (upper == lower) {
+				comparator = " = " + lower;
+				range = null;
+			} else if (upper > lower) {
+				// don't use %d in case locale introduces a thousands separator
+				range = String.format("%s..%s", lower, upper);
+				comparator = null;
+			} else {
+				// if the upper < lower, then it only makes sense if upper is -1 (*)
+				comparator = " >= " + lower;
+				range = null;
+			}
+
+			if (range != null) {
+				constraintBody.append(range).append("->includes(");
+			}
+
 			constraintBody.append("self." + associationEnd + "->");
-			constraintBody.append((sourceProperty.getUpper() == 1)
+			constraintBody.append(one
 					? "one("
-					: "exists(");
+					: exists
+							? "exists("
+							: "select(");
 			constraintBody.append(variableDeclaration);
 			constraintBody.append(" | ");
 
@@ -238,7 +292,34 @@ public class TransformAssociation extends TransformAbstract {
 				}
 			}
 
+			// close off the 'select' or 'exists' or 'one' iterator
 			constraintBody.append(")");
+
+			// is the association inlined and, if so, does it have a selector?
+			if ((selector != null) && (selector.length() > 0)) {
+				// append the selector to re-filter for the members of the derived subset
+				constraintBody.append(selector);
+			}
+
+			if (isEmpty) {
+				constraintBody.append("->isEmpty()");
+			} else if (!(one || exists)) { // otherwise, we already closed the 'one' or 'exists' iterator
+				if (notEmpty) {
+					// can use the more meaningful (and possibly more efficient, depending) 'notEmpty' operation
+					constraintBody.append("->notEmpty()");
+				} else {
+					// constrain the cardinality explicitly
+					constraintBody.append("->size()");
+
+					if (range != null) {
+						// close the 'includes' operation
+						constraintBody.append(")");
+					} else {
+						// compare the cardinality against some number
+						constraintBody.append(comparator);
+					}
+				}
+			}
 
 			// start building "getter" operation body
 			operationBody.append("self.get" + pluralize(cdaTargetName) + "()->select(");
