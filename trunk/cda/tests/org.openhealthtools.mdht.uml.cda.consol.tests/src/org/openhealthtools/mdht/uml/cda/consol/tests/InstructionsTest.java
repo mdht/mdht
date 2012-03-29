@@ -219,7 +219,7 @@ public class InstructionsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateInstructionsCode() {
@@ -235,6 +235,9 @@ public class InstructionsTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(Instructions target) {
 				target.init();
+
+				target.setCode(DatatypesFactory.eINSTANCE.createCD(
+					"", "2.16.840.1.113883.6.96", "codeSystemName", "displayName"));
 
 			}
 

@@ -804,7 +804,8 @@ public class MedicationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationActivity target) {
 				target.init();
-				target.setAdministrationUnitCode(DatatypesFactory.eINSTANCE.createCE("code", "codeSystem"));
+				target.setAdministrationUnitCode(DatatypesFactory.eINSTANCE.createCE(
+					"code", "2.16.840.1.113883.3.26.1.1"));
 
 			}
 

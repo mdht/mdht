@@ -611,7 +611,8 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 				target.getApproachSiteCodes().clear();
 				target.getApproachSiteCodes().add(
-					DatatypesFactory.eINSTANCE.createCD("code", "codeSystem", "codeSystemName", "displayName"));
+					DatatypesFactory.eINSTANCE.createCD(
+						"code", "2.16.840.1.113883.6.96", "codeSystemName", "displayName"));
 
 			}
 

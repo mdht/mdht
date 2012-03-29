@@ -829,7 +829,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateOperativeNoteDocumentationOfServiceEventPrimaryPerformerFunctionCode() {
@@ -840,12 +840,29 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(OperativeNote target) {
-
+				target.init();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
+				perf.setTypeCode(x_ServiceEventPerformer.PPRF);
+				se.getPerformers().add(perf);
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
 			}
 
 			@Override
 			protected void updateToPass(OperativeNote target) {
-				target.init();
+
+				target.getDocumentationOfs().clear();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
+				perf.setTypeCode(x_ServiceEventPerformer.PPRF);
+				perf.setFunctionCode(DatatypesFactory.eINSTANCE.createCE("code", "2.16.840.1.113883.6.101"));
+				se.getPerformers().add(perf);
+
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
 
 			}
 
@@ -873,21 +890,30 @@ public class OperativeNoteTest extends CDAValidationTest {
 			objectFactory) {
 
 			{
-				skipFailsTest();
+				this.skipFailsTest();
 			}
 
 			@Override
 			protected void updateToFail(OperativeNote target) {
-
-			}
-
-			@Override
-			protected void updateToPass(OperativeNote target) {
 				target.init();
 				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
 				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
 				Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
+
+				perf.setTypeCode(x_ServiceEventPerformer.SPRF);
+				se.getPerformers().add(perf);
+				dof.setServiceEvent(se);
+				target.getDocumentationOfs().add(dof);
+			}
+
+			@Override
+			protected void updateToPass(OperativeNote target) {
+				target.getDocumentationOfs().clear();
+				DocumentationOf dof = CDAFactory.eINSTANCE.createDocumentationOf();
+				ServiceEvent se = CDAFactory.eINSTANCE.createServiceEvent();
+				Performer1 perf = CDAFactory.eINSTANCE.createPerformer1();
 				perf.setTypeCode(x_ServiceEventPerformer.PPRF);
+				se.getPerformers().add(perf);
 				dof.setServiceEvent(se);
 				target.getDocumentationOfs().add(dof);
 

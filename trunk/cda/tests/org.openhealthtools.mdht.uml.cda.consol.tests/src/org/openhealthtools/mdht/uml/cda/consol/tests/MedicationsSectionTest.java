@@ -28,12 +28,12 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSection#validateMedicationsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSection#validateMedicationsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSection#validateMedicationsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSection#validateMedicationsSectionMedication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Medication</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSection#getMedications() <em>Get Medications</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSection#validateMedicationsSectionEntriesOptionalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Entries Optional Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationsSection#validateMedicationsSectionEntriesOptionalCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medications Section Entries Optional Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,10 +47,10 @@ public class MedicationsSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testValidateMedicationsSectionEntriesOptionalCode() {
-		OperationsTestCase<MedicationsSection> validateMedicationsSectionEntriesOptionalCodeTestCase = new OperationsTestCase<MedicationsSection>(
-			"validateMedicationsSectionEntriesOptionalCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateMedicationsSectionCode() {
+		OperationsTestCase<MedicationsSection> validateMedicationsSectionCodeTestCase = new OperationsTestCase<MedicationsSection>(
+			"validateMedicationsSectionCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATIONS_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -67,13 +67,13 @@ public class MedicationsSectionTest extends CDAValidationTest {
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return MedicationsSectionOperations.validateMedicationsSectionEntriesOptionalCode(
+				return MedicationsSectionOperations.validateMedicationsSectionCode(
 					(MedicationsSection) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMedicationsSectionEntriesOptionalCodeTestCase.doValidationTest();
+		validateMedicationsSectionCodeTestCase.doValidationTest();
 	}
 
 	/**

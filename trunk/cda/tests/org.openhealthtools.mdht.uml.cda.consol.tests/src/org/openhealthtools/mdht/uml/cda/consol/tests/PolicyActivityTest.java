@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.AssignedEntity;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Organization;
 import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.ParticipantRole;
@@ -31,6 +32,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ON;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationPhysicalPerformer;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,7 +59,6 @@ import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityPayerPayerAssignedEntityAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer Payer Assigned Entity Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityPayerPayerAssignedEntityTelecom(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer Payer Assigned Entity Telecom</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityPayerPayerAssignedEntityPayerOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer Payer Assigned Entity Payer Organization</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityPayerTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityPayerTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer Type Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityPayerPayerAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Payer Payer Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityGuarantorGuarantorAssignedEntityPersonNameAndOrOrgName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Guarantor Guarantor Assigned Entity Person Name And Or Org Name</em>}</li>
@@ -300,7 +301,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated 
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityAuthorizationActivity() {
@@ -311,12 +312,17 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
+
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.REFR);
+				er.setAct(ConsolFactory.eINSTANCE.createAuthorizationActivity().init());
+
+				target.getEntryRelationships().add(er);
 
 			}
 
@@ -353,8 +359,13 @@ public class PolicyActivityTest extends CDAValidationTest {
 				target.init();
 				Performer2 payer = createPerformer();
 				target.getPerformers().add(payer);
-				// Once Sean's fix is in, this condition should passS
-				// target.getPerformers().add(guarantor);
+
+				Performer2 guarantor = createPerformer();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.setCode(DatatypesFactory.eINSTANCE.createCE("GUAR", ""));
+
+				guarantor.setAssignedEntity(ae);
+				target.getPerformers().add(guarantor);
 
 			}
 
@@ -390,6 +401,10 @@ public class PolicyActivityTest extends CDAValidationTest {
 			protected void updateToPass(PolicyActivity target) {
 				target.init();
 				Performer2 guarantor = createPerformer();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.setCode(DatatypesFactory.eINSTANCE.createCE("GUAR", ""));
+
+				guarantor.setAssignedEntity(ae);
 				target.getPerformers().add(guarantor);
 			}
 
@@ -459,7 +474,9 @@ public class PolicyActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PolicyActivity target) {
 				target.init();
-				target.getParticipants().add(createHolder());
+				Participant2 holder = CDAFactory.eINSTANCE.createParticipant2();
+				holder.setTypeCode(ParticipationType.HLD);
+				target.getParticipants().add(holder);
 
 			}
 
@@ -758,40 +775,6 @@ public class PolicyActivityTest extends CDAValidationTest {
 		};
 
 		validatePolicyActivityPayerPayerAssignedEntityPayerOrganizationTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidatePolicyActivityPayerTemplateId() {
-		OperationsTestCase<PolicyActivity> validatePolicyActivityPayerTemplateIdTestCase = new OperationsTestCase<PolicyActivity>(
-			"validatePolicyActivityPayerTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_PAYER_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(PolicyActivity target) {
-
-			}
-
-			@Override
-			protected void updateToPass(PolicyActivity target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PolicyActivityOperations.validatePolicyActivityPayerTemplateId(
-					(PolicyActivity) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validatePolicyActivityPayerTemplateIdTestCase.doValidationTest();
 	}
 
 	/**
@@ -1310,7 +1293,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityCoverageCoverageRoleId() {
@@ -1321,12 +1304,21 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
-
+				target.init();
+				target.getParticipants().clear();
+				Participant2 coverage = createCoverage();
+				target.getParticipants().add(coverage);
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
+				target.getParticipants().clear();
+				Participant2 coverage = createCoverage();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				coverage.setParticipantRole(pr);
+
+				target.getParticipants().add(coverage);
 
 			}
 
@@ -1344,7 +1336,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityCoverageCoverageRoleCode() {
@@ -1355,13 +1347,21 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
-
+				target.init();
+				Participant2 coverage = createCoverage();
+				target.getParticipants().add(coverage);
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
-
+				target.getParticipants().clear();
+				Participant2 coverage = createCoverage();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				pr.setCode(DatatypesFactory.eINSTANCE.createCE("FAMDEP", "2.16.840.1.113883.5.111"));
+				coverage.setParticipantRole(pr);
+				// 2.16.840.1.113883.5.111' and (value.code = 'FAMDEP' or
+				target.getParticipants().add(coverage);
 			}
 
 			@Override
@@ -1399,7 +1399,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
+
 				target.getParticipants().clear();
 				Participant2 coverage = createCoverage();
 				target.getParticipants().add(coverage);
@@ -1421,7 +1421,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityCoverageCoverageRoleCoveragePlayingEntity() {
@@ -1432,13 +1432,24 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
+				target.init();
+				Participant2 coverage = createCoverage();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				coverage.setParticipantRole(pr);
+				target.getParticipants().add(coverage);
 
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
-
+				target.getParticipants().clear();
+				Participant2 coverage = createCoverage();
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				PlayingEntity pe = CDAFactory.eINSTANCE.createPlayingEntity();
+				pr.setPlayingEntity(pe);
+				coverage.setParticipantRole(pr);
+				target.getParticipants().add(coverage);
+				coverage.getParticipantRole().getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
 			}
 
 			@Override
@@ -1455,7 +1466,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityCoverageTypeCode() {
@@ -1464,15 +1475,24 @@ public class PolicyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_COVERAGE_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				this.skipFailsTest();
+			}
+
 			@Override
 			protected void updateToFail(PolicyActivity target) {
-
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
 				target.init();
-
+				Participant2 coverage = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole role = CDAFactory.eINSTANCE.createParticipantRole();
+				PlayingEntity pEntity = CDAFactory.eINSTANCE.createPlayingEntity();
+				role.setPlayingEntity(pEntity);
+				coverage.setParticipantRole(role);
+				coverage.setTypeCode(ParticipationType.COV);
+				target.getParticipants().add(coverage);
 			}
 
 			@Override
@@ -1489,7 +1509,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityCoverageTime() {
@@ -1500,12 +1520,28 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
+				target.init();
 
+				Participant2 coverage = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole role = CDAFactory.eINSTANCE.createParticipantRole();
+				PlayingEntity pEntity = CDAFactory.eINSTANCE.createPlayingEntity();
+				role.setPlayingEntity(pEntity);
+				coverage.setParticipantRole(role);
+				coverage.setTypeCode(ParticipationType.COV);
+				target.getParticipants().add(coverage);
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
+				target.getParticipants().clear();
+				Participant2 coverage = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole role = CDAFactory.eINSTANCE.createParticipantRole();
+				PlayingEntity pEntity = CDAFactory.eINSTANCE.createPlayingEntity();
+				role.setPlayingEntity(pEntity);
+				coverage.setTime(DatatypesFactory.eINSTANCE.createIVL_TS());
+				coverage.setParticipantRole(role);
+				coverage.setTypeCode(ParticipationType.COV);
+				target.getParticipants().add(coverage);
 
 			}
 
@@ -1523,7 +1559,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityCoverageCoverageRole() {
@@ -1534,12 +1570,28 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
+				target.init();
+				Participant2 coverage = CDAFactory.eINSTANCE.createParticipant2();
+				CDAFactory.eINSTANCE.createParticipantRole();
+				CDAFactory.eINSTANCE.createPlayingEntity();
+				// role.setPlayingEntity(pEntity);
+				// coverage.setParticipantRole(role);
+				coverage.setTypeCode(ParticipationType.COV);
+				target.getParticipants().add(coverage);
 
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
+
+				target.getParticipants().clear();
+				Participant2 coverage = CDAFactory.eINSTANCE.createParticipant2();
+				ParticipantRole role = CDAFactory.eINSTANCE.createParticipantRole();
+				PlayingEntity pEntity = CDAFactory.eINSTANCE.createPlayingEntity();
+				role.setPlayingEntity(pEntity);
+				coverage.setParticipantRole(role);
+				coverage.setTypeCode(ParticipationType.COV);
+				target.getParticipants().add(coverage);
 
 			}
 
@@ -1557,7 +1609,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityHolderHolderRoleId() {
@@ -1568,12 +1620,23 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
-
+				target.init();
+				Participant2 holder = CDAFactory.eINSTANCE.createParticipant2();
+				holder.setTypeCode(ParticipationType.HLD);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				holder.setParticipantRole(pr);
+				target.getParticipants().add(holder);
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
+				target.getParticipants().clear();
+				Participant2 holder = CDAFactory.eINSTANCE.createParticipant2();
+				holder.setTypeCode(ParticipationType.HLD);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				holder.setParticipantRole(pr);
+				target.getParticipants().add(holder);
 
 			}
 
@@ -1591,7 +1654,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityHolderHolderRoleAddr() {
@@ -1602,12 +1665,23 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
-
+				target.init();
+				Participant2 holder = CDAFactory.eINSTANCE.createParticipant2();
+				holder.setTypeCode(ParticipationType.HLD);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				holder.setParticipantRole(pr);
+				target.getParticipants().add(holder);
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
+				target.getParticipants().clear();
+				Participant2 holder = CDAFactory.eINSTANCE.createParticipant2();
+				holder.setTypeCode(ParticipationType.HLD);
+				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
+				pr.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+				holder.setParticipantRole(pr);
+				target.getParticipants().add(holder);
 
 			}
 
@@ -1625,7 +1699,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityHolderTypeCode() {
@@ -1634,14 +1708,25 @@ public class PolicyActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_HOLDER_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				this.skipFailsTest();
+			}
+
 			@Override
 			protected void updateToFail(PolicyActivity target) {
-
+				target.init();
+				Participant2 holder = CDAFactory.eINSTANCE.createParticipant2();
+				holder.setTypeCode(ParticipationType.HLD);
+				target.getParticipants().add(holder);
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
+				target.getParticipants().clear();
+				Participant2 holder = CDAFactory.eINSTANCE.createParticipant2();
+				holder.setTypeCode(ParticipationType.HLD);
+
+				target.getParticipants().add(holder);
 
 			}
 
@@ -1659,7 +1744,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityHolderTime() {
@@ -1670,12 +1755,19 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
-
+				target.init();
+				Participant2 holder = CDAFactory.eINSTANCE.createParticipant2();
+				holder.setTypeCode(ParticipationType.HLD);
+				target.getParticipants().add(holder);
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
+				target.getParticipants().clear();
+				Participant2 holder = CDAFactory.eINSTANCE.createParticipant2();
+				holder.setTypeCode(ParticipationType.HLD);
+				holder.setTime(DatatypesFactory.eINSTANCE.createIVL_TS());
+				target.getParticipants().add(holder);
 
 			}
 
@@ -1693,7 +1785,7 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePolicyActivityHolderHolderRole() {
@@ -1704,13 +1796,19 @@ public class PolicyActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PolicyActivity target) {
-
+				target.init();
+				Participant2 holder = CDAFactory.eINSTANCE.createParticipant2();
+				holder.setTypeCode(ParticipationType.HLD);
+				target.getParticipants().add(holder);
 			}
 
 			@Override
 			protected void updateToPass(PolicyActivity target) {
-				target.init();
-
+				target.getParticipants().clear();
+				Participant2 holder = CDAFactory.eINSTANCE.createParticipant2();
+				holder.setTypeCode(ParticipationType.HLD);
+				holder.setParticipantRole(CDAFactory.eINSTANCE.createParticipantRole());
+				target.getParticipants().add(holder);
 			}
 
 			@Override
