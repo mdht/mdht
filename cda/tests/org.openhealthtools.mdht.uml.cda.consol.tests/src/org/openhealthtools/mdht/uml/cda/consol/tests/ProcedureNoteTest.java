@@ -446,6 +446,7 @@ public class ProcedureNoteTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureNote target) {
 				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
+				par.setTypeCode(ParticipationType.IND);
 				target.getParticipants().add(par);
 
 			}
