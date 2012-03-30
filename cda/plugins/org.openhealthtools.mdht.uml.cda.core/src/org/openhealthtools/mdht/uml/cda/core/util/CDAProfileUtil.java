@@ -14,6 +14,7 @@
 package org.openhealthtools.mdht.uml.cda.core.util;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
@@ -114,6 +115,19 @@ public class CDAProfileUtil {
 			validation = (Validation) element.getStereotypeApplication(stereotype);
 		}
 		return validation;
+	}
+
+	public static boolean isMandatory(Element element) {
+		boolean result = false;
+
+		// if any validation stereotype indicates a mandatory property, then
+		// the property is mandatory
+		for (Iterator<?> iter = element.getStereotypeApplications().iterator(); !result && iter.hasNext();) {
+			Object next = iter.next();
+			result = (next instanceof Validation) && ((Validation) next).isMandatory();
+		}
+
+		return result;
 	}
 
 	public static VocabSpecification getVocabSpecification(Property property) {

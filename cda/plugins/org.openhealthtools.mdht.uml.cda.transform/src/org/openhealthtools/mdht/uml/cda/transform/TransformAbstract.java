@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2011 David A Carlson and others.
+ * Copyright (c) 2009, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,11 +8,13 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     John T.E. Timm (IBM Corporation) - added template parameter
+ *     Christian W. Damus - generate multiple OCL constraints from one property (artf3121)
  *     
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.uml2.common.util.UML2Util;
@@ -159,7 +161,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		addOCLConstraint(property, body, null);
 	}
 
-	protected void addOCLConstraint(Property property, StringBuffer body, String constraintName) {
+	protected Constraint addOCLConstraint(Property property, StringBuffer body, String constraintName) {
 		if (constraintName == null) {
 			constraintName = createConstraintName(property);
 		}
@@ -172,7 +174,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 			// add validation message, if included in the model
 			addValidationSupport(property, constraintName);
 
-			return;
+			return null;
 		}
 
 		Property cdaProperty = CDAModelUtil.getCDAProperty(property);
@@ -182,11 +184,9 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		boolean hasNullFlavor = false;
 		if (cdaProperty.getType() instanceof Class) {
 			List<String> parentNames = org.openhealthtools.mdht.uml.common.util.UMLUtil.getAllParentNames((Class) cdaProperty.getType());
-			if (parentNames.contains("ANY")) {
-				hasNullFlavor = true;
-			}
+			hasNullFlavor = parentNames.contains("ANY");
 		}
-		if (hasNullFlavor) {
+		if (hasNullFlavor && !CDAProfileUtil.isMandatory(property)) {
 			if (cdaProperty.upperBound() == 1) {
 				nullFlavorBody = "(" + selfName + ".oclIsUndefined() or " + selfName +
 						".isNullFlavorUndefined()) implies (" + body + ")";
@@ -197,16 +197,17 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 			}
 		}
 
-		Constraint constraint = property.getClass_().createOwnedRule(
-			constraintName, UMLPackage.eINSTANCE.getConstraint());
-		constraint.getConstrainedElements().add(property.getClass_());
+		Constraint result = property.getClass_().createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
+		result.getConstrainedElements().add(property.getClass_());
 
-		OpaqueExpression expression = (OpaqueExpression) constraint.createSpecification(
+		OpaqueExpression expression = (OpaqueExpression) result.createSpecification(
 			null, null, UMLPackage.eINSTANCE.getOpaqueExpression());
 		expression.getLanguages().add("OCL");
 		expression.getBodies().add(nullFlavorBody);
 
 		addValidationSupport(property, constraintName);
+
+		return result;
 	}
 
 	protected String createInheritedConstraintName(Property property) {
@@ -333,4 +334,15 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		return name.substring(0, 1).toUpperCase() + name.substring(1);
 	}
 
+	/**
+	 * Add an {@code element} to a {@code collection} if it's not {@code null}. Handy for a fluent style.
+	 * 
+	 * @return the {@code collection}, for convenience of method chaining
+	 */
+	public static <E, C extends Collection<E>> C addIfNotNull(E element, C collection) {
+		if (element != null) {
+			collection.add(element);
+		}
+		return collection;
+	}
 }
