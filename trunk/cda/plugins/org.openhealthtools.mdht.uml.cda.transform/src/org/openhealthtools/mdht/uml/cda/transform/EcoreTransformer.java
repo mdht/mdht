@@ -40,8 +40,6 @@ public class EcoreTransformer extends CDAAbstractTransformer {
 
 	UMLSwitch<Object> transformTemplateIdentifier;
 
-	UMLSwitch<Object> transformVocabConstraint;
-
 	UMLSwitch<Object> transformPropertyConstraint;
 
 	UMLSwitch<Object> transformAssociation;
@@ -73,7 +71,6 @@ public class EcoreTransformer extends CDAAbstractTransformer {
 				transformConstraint.doSwitch(child);
 				transformClinicalDocument.doSwitch(child);
 				transformTemplateIdentifier.doSwitch(child);
-				transformVocabConstraint.doSwitch(child);
 				transformPropertyConstraint.doSwitch(child);
 
 				transformAssociation.doSwitch(child);
@@ -93,7 +90,6 @@ public class EcoreTransformer extends CDAAbstractTransformer {
 				EObject child = iterator.next();
 				transformInnerClasses.doSwitch(child);
 			}
-
 		} catch (IndexOutOfBoundsException e) {
 			Logger.logException(e);
 		}
@@ -108,7 +104,6 @@ public class EcoreTransformer extends CDAAbstractTransformer {
 		transformConstraint = new TransformConstraint(transformerOptions);
 		transformClinicalDocument = new TransformClinicalDocument(transformerOptions);
 		transformTemplateIdentifier = new TransformTemplateIdentifier(transformerOptions);
-		transformVocabConstraint = new TransformVocabConstraint(transformerOptions);
 		transformPropertyConstraint = new TransformPropertyConstraint(transformerOptions);
 		transformAssociation = new TransformAssociation(transformerOptions);
 		transformInlinedAssociations = new TransformInlinedAssociations(transformerOptions);
