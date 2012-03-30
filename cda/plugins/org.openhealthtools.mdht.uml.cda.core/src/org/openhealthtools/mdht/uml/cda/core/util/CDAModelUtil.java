@@ -1199,16 +1199,33 @@ public class CDAModelUtil {
 			message.append(markup
 					? "</tt>"
 					: "");
-		}
 
-		if (displayName != null) {
-			message.append(markup
-					? "<i>"
-					: "");
-			message.append(displayName);
-			message.append(markup
-					? "</i>"
-					: "");
+			if (displayName != null) {
+				message.append(markup
+						? "<i>"
+						: "");
+				message.append(displayName);
+				message.append(markup
+						? "</i>"
+						: "");
+			}
+
+		} else {
+			message.append(", where the @code ");
+			if (keyword != null) {
+				message.append(markup
+						? "<b>"
+						: "");
+				message.append(keyword);
+				message.append(markup
+						? "</b>"
+						: "");
+
+				message.append(" be");
+			} else {
+				message.append("is");
+			}
+			message.append(" selected from");
 		}
 
 		if (id != null || name != null) {
