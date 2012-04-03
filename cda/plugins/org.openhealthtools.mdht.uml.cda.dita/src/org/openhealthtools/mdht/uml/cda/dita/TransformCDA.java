@@ -153,13 +153,11 @@ public class TransformCDA extends TransformAbstract {
 
 		if (couple) {
 			generateDitaFromTemplate(
-				umlClass, templateParameters, umlClass.getName() + "Section", "dita", "classes",
-				"templates/coupledsection.xml");
+				umlClass, templateParameters, umlClass.getName(), "dita", "classes", "templates/coupledsection.xml");
 
 		} else {
 			generateDitaFromTemplate(
-				umlClass, templateParameters, umlClass.getName() + "Section", "dita", "classes",
-				"templates/section.xml");
+				umlClass, templateParameters, umlClass.getName(), "dita", "classes", "templates/section.xml");
 		}
 
 		generateDitaFromTemplate(
@@ -182,37 +180,37 @@ public class TransformCDA extends TransformAbstract {
 		File file = filePath.toFile();
 		PrintWriter writer = null;
 
-		if (!file.exists()) {
+		// if (!file.exists()) {
+		try {
+			file.createNewFile();
+
+			writer = new PrintWriter(file);
+
 			try {
-				file.createNewFile();
 
-				writer = new PrintWriter(file);
+				String template = readDITATemplateAsString(templateName);
 
-				try {
+				for (int index = 0; index < templateParameters.length; index += 2) {
+					template = template.replaceAll(templateParameters[index], templateParameters[index + 1]);
 
-					String template = readDITATemplateAsString(templateName);
-
-					for (int index = 0; index < templateParameters.length; index += 2) {
-						template = template.replaceAll(templateParameters[index], templateParameters[index + 1]);
-
-					}
-
-					writer.println(template);
-
-				} catch (IOException e) {
-					e.printStackTrace();
 				}
 
-			} catch (FileNotFoundException e) {
-				Logger.logException(e);
-			} catch (IOException e1) {
-				Logger.logException(e1);
-			} finally {
-				if (writer != null) {
-					writer.close();
-				}
+				writer.println(template);
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		} catch (FileNotFoundException e) {
+			Logger.logException(e);
+		} catch (IOException e1) {
+			Logger.logException(e1);
+		} finally {
+			if (writer != null) {
+				writer.close();
 			}
 		}
+		// }
 
 	}
 }
