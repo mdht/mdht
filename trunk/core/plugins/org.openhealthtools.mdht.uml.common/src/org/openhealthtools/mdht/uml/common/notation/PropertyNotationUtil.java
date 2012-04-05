@@ -279,7 +279,7 @@ public class PropertyNotationUtil {
 		while (it.hasNext()) {
 			org.eclipse.uml2.uml.Property redefinedProperty = it.next();
 			// display only if redefined property has a different name (i.e., not "implicit")
-			if (!redefinedProperty.getName().equals(property.getName())) {
+			if (!redefinedProperty.eIsProxy() && !redefinedProperty.getName().equals(property.getName())) {
 				if (needsComma) {
 					buffer.append(" ,");
 					buffer.append(NL);
@@ -294,13 +294,15 @@ public class PropertyNotationUtil {
 		it = property.getSubsettedProperties().iterator();
 		while (it.hasNext()) {
 			Property current = it.next();
-			if (needsComma) {
-				buffer.append(" ,");
-				buffer.append(NL);
+			if (!current.eIsProxy()) {
+				if (needsComma) {
+					buffer.append(" ,");
+					buffer.append(NL);
+				}
+				buffer.append("subsets ");
+				buffer.append(current.getName());
+				needsComma = true;
 			}
-			buffer.append("subsets ");
-			buffer.append(current.getName());
-			needsComma = true;
 		}
 
 		return buffer.toString();
