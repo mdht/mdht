@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <!--
-  Copyright (c) 2006, 2011 David A Carlson.
+  Copyright (c) 2006, 2012 David A Carlson and others.
   All rights reserved. This program and the accompanying materials
   are made available under the terms of the Eclipse Public License v1.0
   which accompanies this distribution, and is available at
@@ -9,6 +9,7 @@
   
   Contributors:
       David A Carlson - initial API and implementation
+      Christian W. Damus - Customize the editing domain's adapter factory (artf3178)
       
   $Id$
 -->
@@ -17,6 +18,6 @@
    <extension point="org.eclipse.emf.transaction.editingDomains">
       <editingDomain
          id="org.openhealthtools.mdht.uml.common.ui.EditingDomain"
-         factory="org.eclipse.emf.workspace.WorkspaceEditingDomainFactory"/>
+         factory="org.openhealthtools.mdht.uml.common.ui.util.UMLEditingDomainFactory"/>
    </extension>
 </plugin>
