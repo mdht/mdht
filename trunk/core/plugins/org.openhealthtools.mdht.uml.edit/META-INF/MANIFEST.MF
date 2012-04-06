@@ -15,6 +15,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.openhealthtools.mdht.uml.common
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.edit,
+ org.openhealthtools.mdht.uml.edit.command,
  org.openhealthtools.mdht.uml.edit.provider
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Import-Package: org.eclipse.ui.plugin
