@@ -58,7 +58,7 @@ public class AssignConformanceRuleIdsAction implements IObjectActionDelegate {
 
 	protected Element selectedElement;
 
-	private String rulePrefix = "CONF-";
+	private String rulePrefix = "CONF:";
 
 	private int lastId = 0;
 
@@ -132,8 +132,15 @@ public class AssignConformanceRuleIdsAction implements IObjectActionDelegate {
 				public Object caseElement(Element element) {
 					for (String ruleId : CDAModelUtil.getConformanceRuleIdList(element)) {
 						int lastDash = ruleId.lastIndexOf("-");
+						int lastColon = ruleId.lastIndexOf(":");
 						try {
-							int ruleNumber = Integer.parseInt(ruleId.substring(lastDash + 1));
+							int ruleNumber = -1;
+							if (lastDash >= 0) {
+								ruleNumber = Integer.parseInt(ruleId.substring(lastDash + 1));
+							} else if (lastColon >= 0) {
+								ruleNumber = Integer.parseInt(ruleId.substring(lastColon + 1));
+							}
+
 							if (ruleNumber > lastId) {
 								lastId = ruleNumber;
 							}
@@ -145,13 +152,6 @@ public class AssignConformanceRuleIdsAction implements IObjectActionDelegate {
 				}
 			};
 			umlSwitch.doSwitch(child);
-		}
-	}
-
-	private void findRulePrefix() {
-		String prefix = CDAModelUtil.getModelPrefix(selectedElement);
-		if (prefix != null) {
-			rulePrefix = "CONF-" + prefix + "-";
 		}
 	}
 
@@ -180,7 +180,6 @@ public class AssignConformanceRuleIdsAction implements IObjectActionDelegate {
 				@Override
 				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 
-					findRulePrefix();
 					findLastId();
 					assignConformanceRuleIds(selectedElement);
 
