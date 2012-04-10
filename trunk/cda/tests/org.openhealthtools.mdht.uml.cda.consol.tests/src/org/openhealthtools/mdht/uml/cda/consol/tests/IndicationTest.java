@@ -38,6 +38,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.NullFlavor;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Indication#validateIndicationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Indication Value P</em>}</li>
  * </ul>
  * </p>
  *
@@ -364,6 +365,46 @@ public class IndicationTest extends CDAValidationTest {
 		};
 
 		validateIndicationValueTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateIndicationValueP() {
+		OperationsTestCase<Indication> validateIndicationValuePTestCase = new OperationsTestCase<Indication>(
+			"validateIndicationValueP",
+			operationsForOCL.getOCLValue("VALIDATE_INDICATION_VALUE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+
+			@Override
+			protected void updateToFail(Indication target) {
+
+				target.getValues().add(DatatypesFactory.eINSTANCE.createCS());
+
+			}
+
+			@Override
+			protected void updateToPass(Indication target) {
+				target.init();
+
+				target.getValues().clear();
+
+				CD value = DatatypesFactory.eINSTANCE.createCD("code", "2.16.840.1.113883.6.96", "", "");
+
+				target.getValues().add(value);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return IndicationOperations.validateIndicationValueP((Indication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateIndicationValuePTestCase.doValidationTest();
 	}
 
 	/**

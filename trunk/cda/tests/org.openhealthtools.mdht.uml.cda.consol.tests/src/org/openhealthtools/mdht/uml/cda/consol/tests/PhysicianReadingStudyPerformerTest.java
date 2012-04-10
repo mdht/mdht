@@ -16,6 +16,7 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.PhysicianReadingStudyPerformer;
 import org.openhealthtools.mdht.uml.cda.consol.operations.PhysicianReadingStudyPerformerOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
 
 /**
@@ -85,12 +86,12 @@ public class PhysicianReadingStudyPerformerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PhysicianReadingStudyPerformer target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PhysicianReadingStudyPerformer target) {
-				target.init();
+				target.setTime(DatatypesFactory.eINSTANCE.createIVL_TS());
 
 			}
 

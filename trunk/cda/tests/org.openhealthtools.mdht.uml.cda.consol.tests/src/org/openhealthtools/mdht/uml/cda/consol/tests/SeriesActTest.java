@@ -9,21 +9,18 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.SeriesAct;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.SeriesActOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -219,7 +216,7 @@ public class SeriesActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateSeriesActId() {
@@ -229,12 +226,12 @@ public class SeriesActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SeriesAct target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(SeriesAct target) {
-				target.init();
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 
 			}
 
@@ -286,7 +283,7 @@ public class SeriesActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateSeriesActSOPInstanceObservation() {
@@ -297,12 +294,16 @@ public class SeriesActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SeriesAct target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(SeriesAct target) {
-				target.init();
+
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setObservation(ConsolFactory.eINSTANCE.createSOPInstanceObservation().init());
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				target.getEntryRelationships().add(er);
 
 			}
 

@@ -9,23 +9,20 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.SOPInstanceObservation;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.SOPInstanceObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -308,7 +305,7 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateSOPInstanceObservationSOPInstanceObservation() {
@@ -319,12 +316,16 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SOPInstanceObservation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(SOPInstanceObservation target) {
-				target.init();
+
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setObservation(ConsolFactory.eINSTANCE.createSOPInstanceObservation().init());
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				target.getEntryRelationships().add(er);
 
 			}
 
@@ -342,7 +343,7 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateSOPInstanceObservationPurposeofReferenceObservation() {
@@ -353,12 +354,16 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SOPInstanceObservation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(SOPInstanceObservation target) {
-				target.init();
+
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setObservation(ConsolFactory.eINSTANCE.createPurposeofReferenceObservation().init());
+				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				target.getEntryRelationships().add(er);
 
 			}
 
@@ -376,7 +381,7 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateSOPInstanceObservationReferencedFramesObservation() {
@@ -387,12 +392,16 @@ public class SOPInstanceObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SOPInstanceObservation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(SOPInstanceObservation target) {
-				target.init();
+
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setObservation(ConsolFactory.eINSTANCE.createReferencedFramesObservation().init());
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				target.getEntryRelationships().add(er);
 
 			}
 

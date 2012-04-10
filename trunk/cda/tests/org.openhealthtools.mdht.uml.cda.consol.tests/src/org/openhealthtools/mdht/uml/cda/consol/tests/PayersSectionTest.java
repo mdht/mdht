@@ -184,7 +184,7 @@ public class PayersSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePayersSectionCoverageActivity() {
@@ -195,12 +195,12 @@ public class PayersSectionTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(PayersSection target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(PayersSection target) {
-				target.init();
+				target.addAct(ConsolFactory.eINSTANCE.createCoverageActivity().init());
 
 			}
 

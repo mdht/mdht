@@ -9,21 +9,18 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.StudyAct;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.StudyActOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -150,7 +147,7 @@ public class StudyActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateStudyActId() {
@@ -160,12 +157,12 @@ public class StudyActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(StudyAct target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(StudyAct target) {
-				target.init();
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 
 			}
 
@@ -285,7 +282,7 @@ public class StudyActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateStudyActSeriesAct() {
@@ -296,12 +293,16 @@ public class StudyActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(StudyAct target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(StudyAct target) {
-				target.init();
+
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setAct(ConsolFactory.eINSTANCE.createSeriesAct().init());
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				target.getEntryRelationships().add(er);
 
 			}
 

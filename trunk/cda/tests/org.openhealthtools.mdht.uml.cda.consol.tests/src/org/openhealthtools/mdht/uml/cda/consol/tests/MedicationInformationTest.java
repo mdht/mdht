@@ -11,10 +11,12 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationInformation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.MedicationInformationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,7 +75,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationInformationId() {
@@ -84,13 +86,13 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MedicationInformation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(MedicationInformation target) {
-				target.init();
 
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 			}
 
 			@Override
@@ -141,7 +143,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationInformationManufacturedMaterial() {
@@ -152,13 +154,12 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MedicationInformation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(MedicationInformation target) {
-				target.init();
-
+				target.setManufacturedMaterial(CDAFactory.eINSTANCE.createMaterial());
 			}
 
 			@Override
@@ -175,7 +176,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateMedicationInformationManufacturerOrganization() {
@@ -186,13 +187,13 @@ public class MedicationInformationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MedicationInformation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(MedicationInformation target) {
-				target.init();
 
+				target.setManufacturerOrganization(CDAFactory.eINSTANCE.createOrganization());
 			}
 
 			@Override

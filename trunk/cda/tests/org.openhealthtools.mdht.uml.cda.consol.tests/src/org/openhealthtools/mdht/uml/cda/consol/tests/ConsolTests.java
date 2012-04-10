@@ -7,6 +7,7 @@
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
 import junit.framework.JUnit4TestAdapter;
+
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -62,10 +63,8 @@ import org.junit.runners.Suite;
 		ProcedureSpecimenTest.class, ProcedurePerformerTest.class, ProcedureEncounterTest.class,
 		MedicationInformationManufacturedMaterialTest.class, FamilyHistorySubjectTest.class,
 		HospitalDischargeMedicationsSectionTest.class, EncounterPerformerTest.class,
-		EncounterPerformerAssignedEntityTest.class, AllergyObservationParticipantTest.class,
-		AllergyObservationParticipantRoleTest.class, AllergyObservationPlayingEntityTest.class,
-		AnesthesiaSectionTest.class, ComplicationsSectionTest.class, DICOMObjectCatalogSectionTest.class,
-		StudyActTest.class, SeriesActTest.class, SOPInstanceObservationTest.class,
+		EncounterPerformerAssignedEntityTest.class, AnesthesiaSectionTest.class, ComplicationsSectionTest.class,
+		DICOMObjectCatalogSectionTest.class, StudyActTest.class, SeriesActTest.class, SOPInstanceObservationTest.class,
 		PurposeofReferenceObservationTest.class, ReferencedFramesObservationTest.class, BoundaryObservationTest.class,
 		FindingsSectionTest.class, InterventionsSectionTest.class, MedicalHistorySectionTest.class,
 		ObjectiveSectionTest.class, OperativeNoteFluidSectionTest.class,

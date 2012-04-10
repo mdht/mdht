@@ -11,8 +11,11 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Participant2;
+import org.openhealthtools.mdht.uml.cda.Performer2;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.EncounterActivities;
 import org.openhealthtools.mdht.uml.cda.consol.operations.EncounterActivitiesOperations;
@@ -22,6 +25,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -147,12 +151,11 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(EncounterActivities target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(EncounterActivities target) {
-				target.init();
 
 			}
 
@@ -457,7 +460,7 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateEncounterActivitiesIndication() {
@@ -468,12 +471,16 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(EncounterActivities target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(EncounterActivities target) {
-				target.init();
+
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setObservation(ConsolFactory.eINSTANCE.createIndication().init());
+				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				target.getEntryRelationships().add(er);
 
 			}
 
@@ -491,7 +498,7 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateEncounterActivitiesEncounterPerformer() {
@@ -502,12 +509,12 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(EncounterActivities target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(EncounterActivities target) {
-				target.init();
+				target.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
 
 			}
 
@@ -525,7 +532,7 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateEncounterActivitiesEncounterPerformerEncounterPerformerAssignedEntityCode() {
@@ -536,12 +543,23 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(EncounterActivities target) {
+				target.init();
+				Performer2 perf = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				perf.setAssignedEntity(ae);
+
+				target.getPerformers().add(perf);
 
 			}
 
 			@Override
 			protected void updateToPass(EncounterActivities target) {
-				target.init();
+				target.getPerformers().clear();
+				Performer2 perf = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.setCode(DatatypesFactory.eINSTANCE.createCE());
+				perf.setAssignedEntity(ae);
+				target.getPerformers().add(perf);
 
 			}
 
@@ -559,7 +577,7 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateEncounterActivitiesEncounterPerformerEncounterPerformerAssignedEntity() {
@@ -570,12 +588,18 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(EncounterActivities target) {
+				target.init();
+				Performer2 perf = CDAFactory.eINSTANCE.createPerformer2();
+				target.getPerformers().add(perf);
 
 			}
 
 			@Override
 			protected void updateToPass(EncounterActivities target) {
-				target.init();
+				target.getPerformers().clear();
+				Performer2 perf = CDAFactory.eINSTANCE.createPerformer2();
+				perf.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+				target.getPerformers().add(perf);
 
 			}
 
