@@ -7,15 +7,17 @@
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
 import java.util.Map;
+
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.EncounterPerformer;
 import org.openhealthtools.mdht.uml.cda.consol.operations.EncounterPerformerOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +39,7 @@ public class EncounterPerformerTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateEncounterPerformerEncounterPerformerAssignedEntity() {
@@ -48,12 +50,13 @@ public class EncounterPerformerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(EncounterPerformer target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(EncounterPerformer target) {
-				target.init();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				target.setAssignedEntity(ae);
 
 			}
 
@@ -71,7 +74,7 @@ public class EncounterPerformerTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateEncounterPerformerEncounterPerformerAssignedEntityCode() {
@@ -82,12 +85,15 @@ public class EncounterPerformerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(EncounterPerformer target) {
+				target.init();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				target.setAssignedEntity(ae);
 
 			}
 
 			@Override
 			protected void updateToPass(EncounterPerformer target) {
-				target.init();
+				target.getAssignedEntity().setCode(DatatypesFactory.eINSTANCE.createCE());
 
 			}
 

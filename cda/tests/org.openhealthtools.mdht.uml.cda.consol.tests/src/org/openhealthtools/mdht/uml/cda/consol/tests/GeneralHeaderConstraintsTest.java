@@ -45,10 +45,14 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints;
 import org.openhealthtools.mdht.uml.cda.consol.operations.GeneralHeaderConstraintsOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.AD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
+import org.openhealthtools.mdht.uml.hl7.vocab.EntityNameUse;
+import org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse;
 
 /**
  * <!-- begin-user-doc -->
@@ -211,11 +215,36 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
 
+				target.init();
+
+				PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
+				target.addPatientRole(patientRole);
+
+				AD addr = DatatypesFactory.eINSTANCE.createAD();
+				// addr.addStreetAddressLine("123 Mockingbird Lane");
+				// addr.addCity("Springfield");
+				// addr.addState("IL");
+				// addr.addCountry("US");
+				// addr.addPostalCode("12345");
+				// addr.getUses().add(PostalAddressUse.H);
+				patientRole.getAddrs().add(addr);
+
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+				target.getRecordTargets().clear();
+				PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
+				target.addPatientRole(patientRole);
+
+				AD addr = DatatypesFactory.eINSTANCE.createAD();
+				addr.addStreetAddressLine("123 Mockingbird Lane");
+				addr.addCity("Springfield");
+				addr.addState("IL");
+				addr.addCountry("US");
+				addr.addPostalCode("12345");
+				addr.getUses().add(PostalAddressUse.H);
+				patientRole.getAddrs().add(addr);
 
 			}
 
@@ -233,7 +262,10 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
+	* 
+	* datatypes::PN.allInstances()->reject(    name : datatypes::PN |    name.use->forAll(        use : vocab::EntityNameUse |        use=vocab::EntityNameUse::A or        use=vocab::EntityNameUse::ABC or        use=vocab::EntityNameUse::ASGN or        use=vocab::EntityNameUse::C or        use=vocab::EntityNameUse::I or        use=vocab::EntityNameUse::IDE or        use=vocab::EntityNameUse::L or        use=vocab::EntityNameUse::P or        use=vocab::EntityNameUse::PHON or        use=vocab::EntityNameUse::R or        use=vocab::EntityNameUse::SNDX or        use=vocab::EntityNameUse::SRCH or        use=vocab::EntityNameUse::SYL    ) and    name.prefix->forAll(        prefix : datatypes::ENXP |        prefix.qualifier->forAll(            qualifier : vocab::EntityNamePartQualifier |            qualifier=vocab::EntityNamePartQualifier::AC or            qualifier=vocab::EntityNamePartQualifier::AD or            qualifier=vocab::EntityNamePartQualifier::BR or            qualifier=vocab::EntityNamePartQualifier::CL or            qualifier=vocab::EntityNamePartQualifier::IN or            qualifier=vocab::EntityNamePartQualifier::NB or            qualifier=vocab::EntityNamePartQualifier::PR or            qualifier=vocab::EntityNamePartQualifier::SP or            qualifier=vocab::EntityNamePartQualifier::TITLE or            qualifier=vocab::EntityNamePartQualifier::VV        )    ) and    name.given->size() >= 1 and    name.given->forAll(        given : datatypes::ENXP |        given.qualifier->forAll(            qualifier : vocab::EntityNamePartQualifier |	    qualifier=vocab::EntityNamePartQualifier::AC or	    qualifier=vocab::EntityNamePartQualifier::AD or	    qualifier=vocab::EntityNamePartQualifier::BR or	    qualifier=vocab::EntityNamePartQualifier::CL or	    qualifier=vocab::EntityNamePartQualifier::IN or	    qualifier=vocab::EntityNamePartQualifier::NB or	    qualifier=vocab::EntityNamePartQualifier::PR or	    qualifier=vocab::EntityNamePartQualifier::SP or	    qualifier=vocab::EntityNamePartQualifier::TITLE or	    qualifier=vocab::EntityNamePartQualifier::VV        )    ) and    name.family->size() = 1 and    name.family->forAll(        family : datatypes::ENXP |        family.qualifier->forAll(            qualifier : vocab::EntityNamePartQualifier |	    qualifier=vocab::EntityNamePartQualifier::AC or	    qualifier=vocab::EntityNamePartQualifier::AD or	    qualifier=vocab::EntityNamePartQualifier::BR or	    qualifier=vocab::EntityNamePartQualifier::CL or	    qualifier=vocab::EntityNamePartQualifier::IN or	    qualifier=vocab::EntityNamePartQualifier::NB or	    qualifier=vocab::EntityNamePartQualifier::PR or	    qualifier=vocab::EntityNamePartQualifier::SP or	    qualifier=vocab::EntityNamePartQualifier::TITLE or	    qualifier=vocab::EntityNamePartQualifier::VV        )    ) and    name.suffix->size() <= 1 and    name.suffix->forAll(        suffix : datatypes::ENXP |        suffix.qualifier->forAll(            qualifier : vocab::EntityNamePartQualifier |	    qualifier=vocab::EntityNamePartQualifier::AC or	    qualifier=vocab::EntityNamePartQualifier::AD or	    qualifier=vocab::EntityNamePartQualifier::BR or	    qualifier=vocab::EntityNamePartQualifier::CL or	    qualifier=vocab::EntityNamePartQualifier::IN or	    qualifier=vocab::EntityNamePartQualifier::NB or	    qualifier=vocab::EntityNamePartQualifier::PR or	    qualifier=vocab::EntityNamePartQualifier::SP or	    qualifier=vocab::EntityNamePartQualifier::TITLE or	    qualifier=vocab::EntityNamePartQualifier::VV        )    ))
+
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsUSRealmPatientName() {
@@ -242,14 +274,66 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_US_REALM_PATIENT_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			// datatypes::PN.allInstances()->reject( name : datatypes::PN | name.use->forAll( use : vocab::EntityNameUse | use=vocab::EntityNameUse::A
+			// or use=vocab::EntityNameUse::ABC or use=vocab::EntityNameUse::ASGN or use=vocab::EntityNameUse::C or use=vocab::EntityNameUse::I or
+			// use=vocab::EntityNameUse::IDE or use=vocab::EntityNameUse::L or use=vocab::EntityNameUse::P or use=vocab::EntityNameUse::PHON or
+			// use=vocab::EntityNameUse::R or use=vocab::EntityNameUse::SNDX or use=vocab::EntityNameUse::SRCH or use=vocab::EntityNameUse::SYL ) and
+			// name.prefix->forAll( prefix : datatypes::ENXP | prefix.qualifier->forAll( qualifier : vocab::EntityNamePartQualifier |
+			// qualifier=vocab::EntityNamePartQualifier::AC or qualifier=vocab::EntityNamePartQualifier::AD or
+			// qualifier=vocab::EntityNamePartQualifier::BR or qualifier=vocab::EntityNamePartQualifier::CL or
+			// qualifier=vocab::EntityNamePartQualifier::IN or qualifier=vocab::EntityNamePartQualifier::NB or
+			// qualifier=vocab::EntityNamePartQualifier::PR or qualifier=vocab::EntityNamePartQualifier::SP or
+			// qualifier=vocab::EntityNamePartQualifier::TITLE or qualifier=vocab::EntityNamePartQualifier::VV ) ) and name.given->size() >= 1 and
+			// name.given->forAll( given : datatypes::ENXP | given.qualifier->forAll( qualifier : vocab::EntityNamePartQualifier |
+			// qualifier=vocab::EntityNamePartQualifier::AC or qualifier=vocab::EntityNamePartQualifier::AD or
+			// qualifier=vocab::EntityNamePartQualifier::BR or qualifier=vocab::EntityNamePartQualifier::CL or
+			// qualifier=vocab::EntityNamePartQualifier::IN or qualifier=vocab::EntityNamePartQualifier::NB or
+			// qualifier=vocab::EntityNamePartQualifier::PR or qualifier=vocab::EntityNamePartQualifier::SP or
+			// qualifier=vocab::EntityNamePartQualifier::TITLE or qualifier=vocab::EntityNamePartQualifier::VV ) ) and name.family->size() = 1 and
+			// name.family->forAll( family : datatypes::ENXP | family.qualifier->forAll( qualifier : vocab::EntityNamePartQualifier |
+			// qualifier=vocab::EntityNamePartQualifier::AC or qualifier=vocab::EntityNamePartQualifier::AD or
+			// qualifier=vocab::EntityNamePartQualifier::BR or qualifier=vocab::EntityNamePartQualifier::CL or
+			// qualifier=vocab::EntityNamePartQualifier::IN or qualifier=vocab::EntityNamePartQualifier::NB or
+			// qualifier=vocab::EntityNamePartQualifier::PR or qualifier=vocab::EntityNamePartQualifier::SP or
+			// qualifier=vocab::EntityNamePartQualifier::TITLE or qualifier=vocab::EntityNamePartQualifier::VV ) ) and name.suffix->size() <= 1 and
+			// name.suffix->forAll( suffix : datatypes::ENXP | suffix.qualifier->forAll( qualifier : vocab::EntityNamePartQualifier |
+			// qualifier=vocab::EntityNamePartQualifier::AC or qualifier=vocab::EntityNamePartQualifier::AD or
+			// qualifier=vocab::EntityNamePartQualifier::BR or qualifier=vocab::EntityNamePartQualifier::CL or
+			// qualifier=vocab::EntityNamePartQualifier::IN or qualifier=vocab::EntityNamePartQualifier::NB or
+			// qualifier=vocab::EntityNamePartQualifier::PR or qualifier=vocab::EntityNamePartQualifier::SP or
+			// qualifier=vocab::EntityNamePartQualifier::TITLE or qualifier=vocab::EntityNamePartQualifier::VV ) ))
+
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
+
+				target.init();
+				PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
+				target.addPatientRole(patientRole);
+
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				patientRole.setPatient(patient);
+				PN name = DatatypesFactory.eINSTANCE.createPN();
+
+				// name.addGiven("John");
+				// name.addFamily("Doe");
+				patient.getNames().add(name);
 
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+
+				target.getRecordTargets().clear();
+				PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
+				target.addPatientRole(patientRole);
+
+				Patient patient = CDAFactory.eINSTANCE.createPatient();
+				patientRole.setPatient(patient);
+				PN name = DatatypesFactory.eINSTANCE.createPN();
+				name.addGiven("John");
+				name.getUses().add(EntityNameUse.A);
+				name.addFamily("Doe");
+				patient.getNames().add(name);
 
 			}
 
@@ -2759,7 +2843,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsLegalAuthenticatorAssignedEntityCodeP() {
@@ -2771,20 +2855,16 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(GeneralHeaderConstraints target) {
 				target.init();
-				Authenticator authenticator = CDAFactory.eINSTANCE.createAuthenticator();
+				LegalAuthenticator la = CDAFactory.eINSTANCE.createLegalAuthenticator();
+				target.setLegalAuthenticator(la);
 				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
-				authenticator.setAssignedEntity(ae);
-				target.getAuthenticators().add(authenticator);
+				la.setAssignedEntity(ae);
 			}
 
 			@Override
 			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.getAuthenticators().clear();
-				Authenticator authenticator = CDAFactory.eINSTANCE.createAuthenticator();
-				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
-				ae.setCode(DatatypesFactory.eINSTANCE.createCE("", "2.16.840.1.113883.6.101"));
-				authenticator.setAssignedEntity(ae);
-				target.getAuthenticators().add(authenticator);
+				target.getLegalAuthenticator().getAssignedEntity().setCode(
+					DatatypesFactory.eINSTANCE.createCE("207X00000X", "2.16.840.1.113883.6.101"));
 
 			}
 

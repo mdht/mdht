@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.consol.BoundaryObservation;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.BoundaryObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -115,7 +109,7 @@ public class BoundaryObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateBoundaryObservationCode() {
@@ -133,7 +127,7 @@ public class BoundaryObservationTest extends CDAValidationTest {
 			protected void updateToPass(BoundaryObservation target) {
 				target.init();
 
-				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				CD cd = DatatypesFactory.eINSTANCE.createCD("113036", "1.2.840.10008.2.16.4", "", "");
 				target.setCode(cd);
 
 			}
@@ -186,7 +180,7 @@ public class BoundaryObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateBoundaryObservationValue() {
@@ -197,15 +191,13 @@ public class BoundaryObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(BoundaryObservation target) {
+				target.init();
 
 			}
 
 			@Override
 			protected void updateToPass(BoundaryObservation target) {
-				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
+				target.getValues().add(DatatypesFactory.eINSTANCE.createINT());
 
 			}
 

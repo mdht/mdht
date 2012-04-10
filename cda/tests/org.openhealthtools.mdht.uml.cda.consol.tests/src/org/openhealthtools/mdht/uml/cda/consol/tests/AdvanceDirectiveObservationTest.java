@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipExternalReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -1104,7 +1105,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveObservationReferenceTypeCode() {
@@ -1115,13 +1116,21 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
-
+				target.init();
+				Reference ref = CDAFactory.eINSTANCE.createReference();
+				ExternalDocument ed = CDAFactory.eINSTANCE.createExternalDocument();
+				ref.setExternalDocument(ed);
+				target.getReferences().add(ref);
 			}
 
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
-				target.init();
-
+				target.getReferences().clear();
+				Reference ref = CDAFactory.eINSTANCE.createReference();
+				ExternalDocument ed = CDAFactory.eINSTANCE.createExternalDocument();
+				ref.setExternalDocument(ed);
+				ref.setTypeCode(x_ActRelationshipExternalReference.REFR);
+				target.getReferences().add(ref);
 			}
 
 			@Override

@@ -11,11 +11,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport;
 import org.openhealthtools.mdht.uml.cda.consol.FindingsSection;
 import org.openhealthtools.mdht.uml.cda.consol.operations.DiagnosticImagingReportOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportInformant(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Informant</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportInformationRecipient(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Information Recipient</em>}</li>
@@ -36,7 +39,6 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportComponentOf(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Component Of</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateDiagnosticImagingReportFindingsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Diagnostic Imaging Report Findings Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#getFindingsSection() <em>Get Findings Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.DiagnosticImagingReport#validateGeneralHeaderConstraintsCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,7 +49,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated 
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportTemplateId() {
@@ -81,7 +83,41 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
+	*/
+	@Test
+	public void testValidateDiagnosticImagingReportCode() {
+		OperationsTestCase<DiagnosticImagingReport> validateDiagnosticImagingReportCodeTestCase = new OperationsTestCase<DiagnosticImagingReport>(
+			"validateDiagnosticImagingReportCode",
+			operationsForOCL.getOCLValue("VALIDATE_DIAGNOSTIC_IMAGING_REPORT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(DiagnosticImagingReport target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(DiagnosticImagingReport target) {
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("", "2.16.840.1.113883.6.1"));
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return DiagnosticImagingReportOperations.validateDiagnosticImagingReportCode(
+					(DiagnosticImagingReport) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateDiagnosticImagingReportCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportId() {
@@ -92,12 +128,12 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
-				target.init();
+				target.setId(DatatypesFactory.eINSTANCE.createII());
 
 			}
 
@@ -115,7 +151,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportInformant() {
@@ -126,12 +162,14 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
+				target.init();
+				target.getInformants().add(CDAFactory.eINSTANCE.createInformant12());
 
 			}
 
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
-				target.init();
+				target.getInformants().clear();
 
 			}
 
@@ -149,7 +187,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportInformationRecipient() {
@@ -160,12 +198,12 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
-				target.init();
+				target.getInformationRecipients().add(CDAFactory.eINSTANCE.createInformationRecipient());
 
 			}
 
@@ -183,7 +221,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportParticipant1() {
@@ -194,12 +232,12 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
-				target.init();
+				target.getParticipants().add(CDAFactory.eINSTANCE.createParticipant1());
 
 			}
 
@@ -217,7 +255,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportInFulfillmentOf() {
@@ -228,12 +266,12 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
-				target.init();
+				target.getInFulfillmentOfs().add(CDAFactory.eINSTANCE.createInFulfillmentOf());
 
 			}
 
@@ -251,7 +289,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportDocumentationOf() {
@@ -262,12 +300,12 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
-				target.init();
+				target.getDocumentationOfs().add(CDAFactory.eINSTANCE.createDocumentationOf());
 
 			}
 
@@ -285,7 +323,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportRelatedDocument() {
@@ -296,12 +334,12 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
-				target.init();
+				target.getRelatedDocuments().add(CDAFactory.eINSTANCE.createRelatedDocument());
 
 			}
 
@@ -319,7 +357,7 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateDiagnosticImagingReportComponentOf() {
@@ -330,12 +368,12 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(DiagnosticImagingReport target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(DiagnosticImagingReport target) {
-				target.init();
+				target.setComponentOf(CDAFactory.eINSTANCE.createComponent1());
 
 			}
 
@@ -402,40 +440,6 @@ public class DiagnosticImagingReportTest extends CDAValidationTest {
 		DiagnosticImagingReport target = objectFactory.create();
 		target.getFindingsSection();
 
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testValidateGeneralHeaderConstraintsCode() {
-		OperationsTestCase<DiagnosticImagingReport> validateGeneralHeaderConstraintsCodeTestCase = new OperationsTestCase<DiagnosticImagingReport>(
-			"validateGeneralHeaderConstraintsCode",
-			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(DiagnosticImagingReport target) {
-
-			}
-
-			@Override
-			protected void updateToPass(DiagnosticImagingReport target) {
-				target.init();
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return DiagnosticImagingReportOperations.validateGeneralHeaderConstraintsCode(
-					(DiagnosticImagingReport) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateGeneralHeaderConstraintsCodeTestCase.doValidationTest();
 	}
 
 	/**

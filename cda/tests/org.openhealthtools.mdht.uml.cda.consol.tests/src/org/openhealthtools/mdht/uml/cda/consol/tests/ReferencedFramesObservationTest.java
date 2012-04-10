@@ -9,20 +9,17 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ReferencedFramesObservation;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.ReferencedFramesObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -116,7 +113,7 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateReferencedFramesObservationCode() {
@@ -134,7 +131,7 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 			protected void updateToPass(ReferencedFramesObservation target) {
 				target.init();
 
-				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				CD cd = DatatypesFactory.eINSTANCE.createCD("121190", "1.2.840.10008.2.16.4", "", "");
 				target.setCode(cd);
 
 			}
@@ -187,7 +184,7 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateReferencedFramesObservationBoundaryObservation() {
@@ -198,12 +195,16 @@ public class ReferencedFramesObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ReferencedFramesObservation target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ReferencedFramesObservation target) {
-				target.init();
+
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setObservation(ConsolFactory.eINSTANCE.createBoundaryObservation().init());
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				target.getEntryRelationships().add(er);
 
 			}
 

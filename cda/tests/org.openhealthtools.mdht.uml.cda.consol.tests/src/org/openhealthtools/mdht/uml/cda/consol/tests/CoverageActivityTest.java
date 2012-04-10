@@ -11,12 +11,15 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.CoverageActivity;
 import org.openhealthtools.mdht.uml.cda.consol.operations.CoverageActivityOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -146,7 +149,7 @@ public class CoverageActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateCoverageActivityId() {
@@ -157,12 +160,12 @@ public class CoverageActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(CoverageActivity target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(CoverageActivity target) {
-				target.init();
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
 
 			}
 
@@ -251,7 +254,7 @@ public class CoverageActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateCoverageActivityPolicyActivity() {
@@ -262,13 +265,16 @@ public class CoverageActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(CoverageActivity target) {
+				target.init();
 
 			}
 
 			@Override
 			protected void updateToPass(CoverageActivity target) {
-				target.init();
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				er.setAct(ConsolFactory.eINSTANCE.createPolicyActivity().init());
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override

@@ -162,7 +162,7 @@ public class ImmunizationMedicationInformationManufacturedMaterialTest extends C
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateImmunizationMedicationInformationManufacturedMaterialCode() {
@@ -173,13 +173,13 @@ public class ImmunizationMedicationInformationManufacturedMaterialTest extends C
 
 			@Override
 			protected void updateToFail(ImmunizationMedicationInformationManufacturedMaterial target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationMedicationInformationManufacturedMaterial target) {
-				target.init();
 
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("", "2.16.840.1.113883.6.59"));
 			}
 
 			@Override

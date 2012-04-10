@@ -9,18 +9,12 @@ package org.openhealthtools.mdht.uml.cda.consol.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.PurposeofReferenceObservation;
-
 import org.openhealthtools.mdht.uml.cda.consol.operations.PurposeofReferenceObservationOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
@@ -186,7 +180,7 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePurposeofReferenceObservationValue() {
@@ -194,6 +188,10 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 			"validatePurposeofReferenceObservationValue",
 			operationsForOCL.getOCLValue("VALIDATE_PURPOSEOF_REFERENCE_OBSERVATION_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			{
+				this.skipFailsTest();
+			}
 
 			@Override
 			protected void updateToFail(PurposeofReferenceObservation target) {
@@ -203,10 +201,8 @@ public class PurposeofReferenceObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PurposeofReferenceObservation target) {
 				target.init();
-
-				CD value = DatatypesFactory.eINSTANCE.createCD();
+				CD value = DatatypesFactory.eINSTANCE.createCD("", "1.2.840.10008.2.16.4", "", "");
 				target.getValues().add(value);
-
 			}
 
 			@Override

@@ -27,6 +27,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentActMood;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,6 +52,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActPriorityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Priority Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActPriorityCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Priority Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActPerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Performer</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActServiceDeliveryLocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Service Delivery Location</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityAct#validateProcedureActivityActProcedureEncounter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Act Procedure Encounter</em>}</li>
@@ -417,7 +419,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureActivityActMoodCode() {
@@ -433,8 +435,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
-				target.init();
-
+				target.setMoodCode(x_DocumentActMood.EVN);
 			}
 
 			@Override
@@ -610,7 +611,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
-				CE pc = DatatypesFactory.eINSTANCE.createCE();
+				CE pc = DatatypesFactory.eINSTANCE.createCE("aaa", "bbb");
 				target.setPriorityCode(pc);
 			}
 
@@ -628,7 +629,41 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityActPriorityCodeP() {
+		OperationsTestCase<ProcedureActivityAct> validateProcedureActivityActPriorityCodePTestCase = new OperationsTestCase<ProcedureActivityAct>(
+			"validateProcedureActivityActPriorityCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_ACT_PRIORITY_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityAct target) {
+				target.init();
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityAct target) {
+
+				target.setPriorityCode(DatatypesFactory.eINSTANCE.createCE());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityActOperations.validateProcedureActivityActPriorityCodeP(
+					(ProcedureActivityAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityActPriorityCodePTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
 	*/
 	@Test
 	public void testValidateProcedureActivityActPerformer() {
@@ -639,12 +674,12 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
-
+				target.init();
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
-				target.init();
+				target.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
 
 			}
 
