@@ -8,6 +8,8 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *     Sean Muir (JKM Software) -Operation Test and generation
+ *     Christian W. Damus - Add NarrativeReferenceTestCase for constraints on CDA R2 narrative text references (artf2815)
+ *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
 
@@ -19,8 +21,11 @@ import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.FileWriter;
 import java.io.OutputStream;
+import java.io.StringReader;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -32,21 +37,36 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.ExtendedMetaData;
+import org.eclipse.emf.ecore.util.FeatureMapUtil;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
+import org.eclipse.emf.ecore.xml.type.AnyType;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
+import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
+import org.openhealthtools.mdht.uml.cda.Entry;
+import org.openhealthtools.mdht.uml.cda.Section;
+import org.openhealthtools.mdht.uml.cda.StrucDocText;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
+import org.xml.sax.InputSource;
 
 /**
  * This class is the super class for all JUnit4 test cases for CDA based
@@ -713,6 +733,10 @@ public abstract class CDAValidationTest {
 
 		String ocl = null;
 
+		protected EObject getObjectToSerialze() {
+			return null;
+		}
+
 		@SuppressWarnings("unchecked")
 		@Override
 		public void doTest(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
@@ -729,14 +753,19 @@ public abstract class CDAValidationTest {
 					} else {
 						updateToFail((ValidationTarget) objectToTest);
 
-						if (objectToTest instanceof InfrastructureRoot) {
+						EObject objectToSerialize = (getObjectToSerialze() != null
+								? getObjectToSerialze()
+								: objectToTest);
+
+						if (objectToSerialize instanceof InfrastructureRoot) {
 							if (testLogDir != null) {
-								xmlSnippetsBuffer.append(escapeXML(FAILSNIPPET, (InfrastructureRoot) objectToTest));
+								xmlSnippetsBuffer.append(escapeXML(FAILSNIPPET, (InfrastructureRoot) objectToSerialize));
 							} else {
 								try {
 									System.out.println();
 									System.out.println("Fail Snippet");
-									CDAValidationTest.saveTestSnippet((InfrastructureRoot) objectToTest, System.out);
+									CDAValidationTest.saveTestSnippet(
+										(InfrastructureRoot) objectToSerialize, System.out);
 									System.out.println();
 								} catch (Exception e) {
 
@@ -769,16 +798,22 @@ public abstract class CDAValidationTest {
 					if (!passTests.isEmpty()) {
 						runPasses(xmlSnippetsBuffer);
 					} else {
+
 						updateToPass((ValidationTarget) objectToTest);
 
-						if (objectToTest instanceof InfrastructureRoot) {
+						EObject objectToSerialize = (getObjectToSerialze() != null
+								? getObjectToSerialze()
+								: objectToTest);
+
+						if (objectToSerialize instanceof InfrastructureRoot) {
 							if (testLogDir != null) {
-								xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) objectToTest));
+								xmlSnippetsBuffer.append(escapeXML(PASSSNIPPET, (InfrastructureRoot) objectToSerialize));
 							} else {
 								try {
 									System.out.println();
 									System.out.println("Pass Snippet");
-									CDAValidationTest.saveTestSnippet((InfrastructureRoot) objectToTest, System.out);
+									CDAValidationTest.saveTestSnippet(
+										(InfrastructureRoot) objectToSerialize, System.out);
 									System.out.println();
 								} catch (Exception e) {
 
@@ -841,6 +876,142 @@ public abstract class CDAValidationTest {
 		protected void updateToPass(ValidationTarget target) {
 		};
 
+	}
+
+	/**
+	 * An extension of the validation test case framework for testing the constraints that check the resolvability of references to narrative text as
+	 * defined in CDA Release 2 Section 4.3.5.1.
+	 */
+	protected static abstract class NarrativeReferenceTestCase<T> extends OperationsTestCase<T> {
+
+		Section sectionToSerialize = null;
+
+		@Override
+		protected EObject getObjectToSerialze() {
+			return sectionToSerialize;
+		}
+
+		public NarrativeReferenceTestCase(String testTargetDescription, String ocl,
+				TestObjectFactory<?> testObjectFactory) {
+			super(testTargetDescription, ocl, testObjectFactory);
+		}
+
+		protected static EClass getEClass(EPackage epackage, Class<?> instanceClass) {
+			EClass result = null;
+			for (EClassifier next : epackage.getEClassifiers()) {
+				if (next.getInstanceClass() == instanceClass) {
+					result = (EClass) next;
+					break;
+				}
+			}
+
+			assertNotNull(
+				String.format(
+					"Instance class not found in package %s for %s.", epackage.getName(), instanceClass.getName()),
+				result);
+
+			return result;
+		}
+
+		protected static void addContainedElement(EObject container, EObject contained) {
+			EReference best = null;
+
+			for (EReference next : container.eClass().getEAllContainments()) {
+				if (next.getEReferenceType().isInstance(contained)) {
+					// a candidate. Is it better than the one we already have?
+					if (best == null) {
+						best = next;
+					} else if (best.isMany() && !next.isMany()) {
+						// always prefer scalar containment
+						best = next;
+					} else if (best.getEReferenceType().isSuperTypeOf(next.getEReferenceType())) {
+						// prefer the more specific type
+						best = next;
+					}
+				}
+			}
+
+			assertNotNull(String.format(
+				"Could not find containment reference for %s in %s.", contained.eClass().getName(),
+				container.eClass().getName()), best);
+
+			if (FeatureMapUtil.isMany(container, best)) {
+				@SuppressWarnings("unchecked")
+				Collection<EObject> list = (Collection<EObject>) best.eGet(best);
+				list.add(contained);
+			} else {
+				container.eSet(best, contained);
+			}
+		}
+
+		protected <S extends Section> S createSectionForClinicalStatement(ClinicalStatement statement,
+				EPackage epackage, Class<? extends S> sectionType) {
+
+			@SuppressWarnings("unchecked")
+			S result = (S) epackage.getEFactoryInstance().create(getEClass(epackage, sectionType));
+
+			try {
+				Method initMethod = result.getClass().getDeclaredMethod("init", new java.lang.Class[0]);
+				if (initMethod != null) {
+					initMethod.invoke(result, new Object[0]);
+				}
+			} catch (Exception e) {
+				// e.printStackTrace();
+			}
+
+			// create an entry for the statement and add the entry to the section
+			Entry entry = CDAFactory.eINSTANCE.createEntry();
+			addContainedElement(entry, statement);
+			result.getEntries().add(entry);
+
+			return result;
+		}
+
+		protected CD createCDWithOriginalTextReference(String text, String reference) {
+			CD result = DatatypesFactory.eINSTANCE.createCD();
+			result.setOriginalText(createEDWithReference(text, reference));
+			return result;
+		}
+
+		protected ED createEDWithReference(String text, String reference) {
+			ED result = DatatypesFactory.eINSTANCE.createED(text);
+
+			if (!reference.startsWith("#")) {
+				reference = "#" + reference;
+			}
+
+			result.setReference(DatatypesFactory.eINSTANCE.createTEL(reference));
+
+			return result;
+		}
+
+		protected StrucDocText createStrucDocText(String id, String text) {
+			StrucDocText result = (CDAFactory.eINSTANCE.createStrucDocText());
+
+			try {
+				Map<Object, Object> loadOptions = new java.util.HashMap<Object, Object>();
+				loadOptions.put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, true);
+				loadOptions.put(XMLResource.OPTION_SUPPRESS_DOCUMENT_ROOT, true);
+
+				Resource xml = new XMLProcessor().load(new InputSource(new StringReader(String.format(
+					"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + //
+							"<blurb xmlns=\"urn:hl7-org:v3\" ID=\"%s\">\n" + //
+							"    %s\n" + //
+							"</blurb>\n", id, text))), loadOptions);
+				AnyType stuff = (AnyType) xml.getContents().get(0);
+				result.getMixed().add(ExtendedMetaData.INSTANCE.demandFeature("urn:hl7-org:v3", "content", true), stuff);
+			} catch (Exception e) {
+				Assert.fail("Failed to set up structured document text: " + e.getLocalizedMessage());
+			}
+
+			return result;
+		}
+
+		protected void addText(Section section, String id, String text) {
+			section.setText(createStrucDocText(id, text));
+			sectionToSerialize = section;
+
+		}
 	}
 
 } // CDAValidationTest

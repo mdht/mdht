@@ -17,7 +17,9 @@ import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.Performer2;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.ConsolPackage;
 import org.openhealthtools.mdht.uml.cda.consol.EncounterActivities;
+import org.openhealthtools.mdht.uml.cda.consol.GeneralStatusSection;
 import org.openhealthtools.mdht.uml.cda.consol.operations.EncounterActivitiesOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
@@ -142,9 +144,10 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 	*
 	* @generated NOT
 	*/
+
 	@Test
 	public void testValidateEncounterActivitiesCodeOriginalTextReferenceValue() {
-		OperationsTestCase<EncounterActivities> validateEncounterActivitiesCodeOriginalTextReferenceValueTestCase = new OperationsTestCase<EncounterActivities>(
+		OperationsTestCase<EncounterActivities> validateEncounterActivitiesCodeOriginalTextReferenceValueTestCase = new NarrativeReferenceTestCase<EncounterActivities>(
 			"validateEncounterActivitiesCodeOriginalTextReferenceValue",
 			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_ACTIVITIES_CODE_ORIGINAL_TEXT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
@@ -152,11 +155,26 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(EncounterActivities target) {
 				target.init();
+				// add the observation to a section, as required by the constraint, that has text that we can reference
+				addText(
+					createSectionForClinicalStatement(target, ConsolPackage.eINSTANCE, GeneralStatusSection.class), "",
+					"No particular encounter.");
+
+				// add a reference to the section text
+				target.setCode(createCDWithOriginalTextReference("Some sample text", "#1.2.3.4"));
+
 			}
 
 			@Override
 			protected void updateToPass(EncounterActivities target) {
 
+				// add the observation to a section, as required by the constraint, that has text that we can reference
+				addText(
+					createSectionForClinicalStatement(target, ConsolPackage.eINSTANCE, GeneralStatusSection.class),
+					"1.2.3.4", "No particular encounter.");
+
+				// add a reference to the section text
+				target.setCode(createCDWithOriginalTextReference("Some sample text", "#1.2.3.4"));
 			}
 
 			@Override
