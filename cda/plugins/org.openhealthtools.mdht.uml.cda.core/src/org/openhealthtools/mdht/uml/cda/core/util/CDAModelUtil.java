@@ -1888,7 +1888,7 @@ public class CDAModelUtil {
 	public static String getValidationSeverity(Element element, Stereotype validationStereotype) {
 		String severity = null;
 
-		if (validationStereotype != null && validationStereotype.getGeneral("Validation") != null) {
+		if ((validationStereotype != null) && CDAProfileUtil.isValidationStereotype(validationStereotype)) {
 			Object value = element.getValue(validationStereotype, ICDAProfileConstants.VALIDATION_SEVERITY);
 			if (value instanceof EnumerationLiteral) {
 				severity = ((EnumerationLiteral) value).getName();

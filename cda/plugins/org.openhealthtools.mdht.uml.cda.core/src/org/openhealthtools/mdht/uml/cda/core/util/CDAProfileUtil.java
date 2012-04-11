@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.NamedElement;
@@ -242,5 +243,29 @@ public class CDAProfileUtil {
 	public static Profile getAppliedCDAProfile(Element element) {
 		return org.openhealthtools.mdht.uml.common.util.UMLUtil.getAppliedProfile(CDAResource.CDA_PROFILE_URI, element);
 
+	}
+
+	/**
+	 * Is the specified stereotype a CDA validation stereotype?
+	 * 
+	 * @param stereotype
+	 *            a stereotype applied to a model element
+	 * @return whether it specializes (possibly indirectly) the <tt>cda::Validation</tt> stereotype
+	 */
+	public static boolean isValidationStereotype(Stereotype stereotype) {
+		final String qname = ICDAProfileConstants.CDA_PROFILE_NAME + NamedElement.SEPARATOR +
+				ICDAProfileConstants.VALIDATION;
+		boolean result = qname.equals(stereotype.getQualifiedName());
+
+		if (!result) {
+			for (Classifier next : stereotype.allParents()) {
+				if (qname.equals(next.getQualifiedName())) {
+					result = true;
+					break;
+				}
+			}
+		}
+
+		return result;
 	}
 }
