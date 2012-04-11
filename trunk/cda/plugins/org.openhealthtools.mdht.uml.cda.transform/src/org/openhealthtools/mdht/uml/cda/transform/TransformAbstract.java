@@ -9,6 +9,7 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     John T.E. Timm (IBM Corporation) - added template parameter
  *     Christian W. Damus - generate multiple OCL constraints from one property (artf3121)
+ *                        - discriminate multiple property constraints (artf3185)
  *     
  * $Id$
  *******************************************************************************/
@@ -80,9 +81,9 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		return validationSupport != null;
 	}
 
-	public void addValidationSupport(Property property, String constraintName) {
-		String severity = CDAModelUtil.getValidationSeverity(property);
-		String message = CDAModelUtil.getValidationMessage(property);
+	public void addValidationSupport(Property property, String validationStereotype, String constraintName) {
+		String severity = CDAModelUtil.getValidationSeverity(property, validationStereotype);
+		String message = CDAModelUtil.getValidationMessage(property, validationStereotype);
 
 		Class constrainedClass = property.getClass_();
 		if (SEVERITY_INFO.equals(severity)) {
@@ -157,11 +158,12 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		return CDAModelUtil.getInheritedProperty(templateProperty);
 	}
 
-	protected void addOCLConstraint(Property property, StringBuffer body) {
-		addOCLConstraint(property, body, null);
+	protected void addOCLConstraint(Property property, String validationStereotype, StringBuffer body) {
+		addOCLConstraint(property, validationStereotype, body, null);
 	}
 
-	protected Constraint addOCLConstraint(Property property, StringBuffer body, String constraintName) {
+	protected Constraint addOCLConstraint(Property property, String validationStereotype, StringBuffer body,
+			String constraintName) {
 		if (constraintName == null) {
 			constraintName = createConstraintName(property);
 		}
@@ -172,7 +174,7 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 			Logger.log(Logger.WARNING, message);
 
 			// add validation message, if included in the model
-			addValidationSupport(property, constraintName);
+			addValidationSupport(property, validationStereotype, constraintName);
 
 			return null;
 		}
@@ -205,17 +207,17 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		expression.getLanguages().add("OCL");
 		expression.getBodies().add(nullFlavorBody);
 
-		addValidationSupport(property, constraintName);
+		addValidationSupport(property, validationStereotype, constraintName);
 
 		return result;
 	}
 
-	protected String createInheritedConstraintName(Property property) {
+	protected String createInheritedConstraintName(Property property, String validationStereotype) {
 		String constraintName = null;
-		if (SEVERITY_ERROR.equals(CDAModelUtil.getValidationSeverity(property))) {
+		if (SEVERITY_ERROR.equals(CDAModelUtil.getValidationSeverity(property, validationStereotype))) {
 			Property inheritedProperty = CDAModelUtil.getInheritedProperty(property);
 			if (CDAModelUtil.getTemplateId(inheritedProperty.getClass_()) != null) {
-				constraintName = createInheritedConstraintName(inheritedProperty);
+				constraintName = createInheritedConstraintName(inheritedProperty, validationStereotype);
 				// System.out.println("inheritedConstraintName for " + property.getQualifiedName() + " = " + constraintName);
 			}
 		}

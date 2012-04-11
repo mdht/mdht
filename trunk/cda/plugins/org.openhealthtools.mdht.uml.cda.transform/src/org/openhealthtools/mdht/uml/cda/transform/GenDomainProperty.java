@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 David A Carlson.
+ * Copyright (c) 2011, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - discriminate multiple property constraints (artf3185)
  *     
  * $Id$
  *******************************************************************************/
@@ -26,6 +27,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAModelConsolidator;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
+import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
@@ -154,7 +156,9 @@ public class GenDomainProperty extends TransformFacade {
 	private boolean isFixedValue(Property property) {
 		if (property.isReadOnly()) {
 			return true;
-		} else if (SEVERITY_ERROR.equals(CDAModelUtil.getValidationSeverity(property))) {
+		} else if (SEVERITY_ERROR.equals(CDAModelUtil.getValidationSeverity(
+			property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT))) {
+
 			// SHALL contain a specific code
 			CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
 			if (codeSystemConstraint != null) {

@@ -10,10 +10,15 @@
  *     John T.E. Timm (IBM Corporation) - added CS type check
  *     Christian W. Damus - Generate OCL for enumeration properties (artf3099)
  *                        - generate multiple OCL constraints from one property (artf3121)
+ *                        - discriminate multiple property constraints (artf3185)
  *     
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
+
+import static org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants.PROPERTY_VALIDATION;
+import static org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants.CODE_SYSTEM_CONSTRAINT;
+import static org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants.VALUE_SET_CONSTRAINT;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -354,12 +359,12 @@ public class TransformPropertyConstraint extends TransformAbstract {
 		 * 
 		 * @return <code>true</code> if any initialization annotation details were set; <code>false</code> if no details were set at all
 		 */
-		final boolean addAnnotation(Property property, String codeSystem, String codeSystemName, String code,
-				String displayName, String codeSystemVersion) {
+		final boolean addAnnotation(Property property, String validationStereotype, String codeSystem,
+				String codeSystemName, String code, String displayName, String codeSystemVersion) {
 
 			boolean result = false;
 
-			if (SEVERITY_INFO.equals(CDAModelUtil.getValidationSeverity(property))) {
+			if (SEVERITY_INFO.equals(CDAModelUtil.getValidationSeverity(property, validationStereotype))) {
 				// omit annotation for MAY constraints
 				return result;
 			}
@@ -416,7 +421,8 @@ public class TransformPropertyConstraint extends TransformAbstract {
 			return result;
 		}
 
-		final Constraint addVocabConstraint(PropertyContext context, String oclVocabCondition) {
+		final Constraint addVocabConstraint(PropertyContext context, String validationStereotype,
+				String oclVocabCondition) {
 			final Property property = context.property();
 
 			String ocl = oclVocabCondition;
@@ -428,7 +434,8 @@ public class TransformPropertyConstraint extends TransformAbstract {
 				return null;
 			}
 
-			if (SEVERITY_INFO.equals(CDAModelUtil.getValidationSeverity(property)) && isCDType(property)) {
+			if (SEVERITY_INFO.equals(CDAModelUtil.getValidationSeverity(property, validationStereotype)) &&
+					isCDType(property)) {
 				// constraint only applies if code system is undefined. For enumeration types, the
 				// code system is explicitly modelled
 				ocl = "not value.codeSystem.oclIsUndefined() or not value.codeSystemName.oclIsUndefined()";
@@ -442,12 +449,13 @@ public class TransformPropertyConstraint extends TransformAbstract {
 			}
 
 			// if redefining parent template constraint, use parent constraint name to override.
-			String constraintName = createInheritedConstraintName(property);
+			String constraintName = createInheritedConstraintName(property, validationStereotype);
 
-			return addConstraint(context, constraintName, body);
+			return addConstraint(context, validationStereotype, constraintName, body);
 		}
 
-		final Constraint addConstraint(PropertyContext context, String constraintName, StringBuffer body) {
+		final Constraint addConstraint(PropertyContext context, String validationStereotype, String constraintName,
+				StringBuffer body) {
 			final Property property = context.property();
 
 			Constraint result = null;
@@ -460,7 +468,7 @@ public class TransformPropertyConstraint extends TransformAbstract {
 				// ensure uniqueness of the name
 				constraintName = context.adaptConstraintName(constraintName, this);
 
-				result = addOCLConstraint(property, body, constraintName);
+				result = addOCLConstraint(property, validationStereotype, body, constraintName);
 			}
 
 			return result;
@@ -501,7 +509,8 @@ public class TransformPropertyConstraint extends TransformAbstract {
 				code = codeSystemConstraint.getCode();
 				displayName = codeSystemConstraint.getDisplayName();
 
-				result = addAnnotation(property, codeSystem, codeSystemName, code, displayName, codeSystemVersion);
+				result = addAnnotation(
+					property, CODE_SYSTEM_CONSTRAINT, codeSystem, codeSystemName, code, displayName, codeSystemVersion);
 			}
 
 			return result;
@@ -514,7 +523,7 @@ public class TransformPropertyConstraint extends TransformAbstract {
 
 			CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
 			if (codeSystemConstraint != null) {
-				result = addVocabConstraint(context, CodeSystemConstraintUtil.getOCL(property));
+				result = addVocabConstraint(context, CODE_SYSTEM_CONSTRAINT, CodeSystemConstraintUtil.getOCL(property));
 			}
 
 			return result;
@@ -547,7 +556,8 @@ public class TransformPropertyConstraint extends TransformAbstract {
 					// codeSystemVersion = codeSystemDef.getVersion();
 				}
 
-				result = addAnnotation(property, codeSystem, codeSystemName, code, displayName, codeSystemVersion);
+				result = addAnnotation(
+					property, VALUE_SET_CONSTRAINT, codeSystem, codeSystemName, code, displayName, codeSystemVersion);
 			}
 
 			return result;
@@ -560,7 +570,7 @@ public class TransformPropertyConstraint extends TransformAbstract {
 
 			ValueSetConstraint valueSetConstraint = TermProfileUtil.getValueSetConstraint(property);
 			if (valueSetConstraint != null) {
-				result = addVocabConstraint(context, ValueSetConstraintUtil.getOCL(property));
+				result = addVocabConstraint(context, VALUE_SET_CONSTRAINT, ValueSetConstraintUtil.getOCL(property));
 			}
 
 			return result;
@@ -600,7 +610,9 @@ public class TransformPropertyConstraint extends TransformAbstract {
 				displayName = (String) property.getValue(
 					vocabSpecification, ICDAProfileConstants.VOCAB_SPECIFICATION_DISPLAY_NAME);
 
-				result = addAnnotation(property, codeSystem, codeSystemName, code, displayName, codeSystemVersion);
+				result = addAnnotation(
+					property, ICDAProfileConstants.VOCAB_SPECIFICATION, codeSystem, codeSystemName, code, displayName,
+					codeSystemVersion);
 			}
 
 			return result;
@@ -614,7 +626,9 @@ public class TransformPropertyConstraint extends TransformAbstract {
 			Stereotype vocabSpecification = CDAProfileUtil.getAppliedCDAStereotype(
 				property, ICDAProfileConstants.VOCAB_SPECIFICATION);
 			if (vocabSpecification != null) {
-				result = addVocabConstraint(context, getVocabSpecificationOCL(property, vocabSpecification));
+				result = addVocabConstraint(
+					context, ICDAProfileConstants.VOCAB_SPECIFICATION,
+					getVocabSpecificationOCL(property, vocabSpecification));
 			}
 
 			return result;
@@ -818,11 +832,11 @@ public class TransformPropertyConstraint extends TransformAbstract {
 			/*
 			 * Only add OCL constraint if severity level is set.
 			 */
-			String severity = CDAModelUtil.getValidationSeverity(property);
+			String severity = CDAModelUtil.getValidationSeverity(property, PROPERTY_VALIDATION);
 			if (severity != null) {
 				if (body.length() > 0) {
 					// addOCLConstraint(property, body);
-					addConstraint(context, constraintName, body);
+					addConstraint(context, PROPERTY_VALIDATION, constraintName, body);
 				} else {
 					// Constraints that have no multiplicity or type restriction
 					// TODO is this adequate to catch MAY or SHOULD constraints?
@@ -836,7 +850,7 @@ public class TransformPropertyConstraint extends TransformAbstract {
 						// body.append(selfName + "->exists(value : datatypes::ANY | not value.oclIsUndefined())");
 						body.append("not " + selfName + "->isEmpty()");
 					}
-					result = addConstraint(context, constraintName, body);
+					result = addConstraint(context, PROPERTY_VALIDATION, constraintName, body);
 				}
 			}
 
