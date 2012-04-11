@@ -8,13 +8,17 @@
  * Contributors:
  *    Sean Muir (JKM Software) - initial API and implementation
  *    Christian W. Damus - generate query invariants for in-line associations (artf3100)
+ *                       - spurious constraint-name substring matches for severity (artf3185)
  *
  * $Id$
  */
 package org.openhealthtools.mdht.uml.cda.transform;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Set;
 
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
@@ -224,8 +228,14 @@ public class TransformInlinedAssociations extends TransformAbstract {
 
 		AnnotationsUtil inlineClassAnnotations = new AnnotationsUtil(inlineClass);
 
-		String warnings = inlineClassAnnotations.getAnnotation(VALIDATION_WARNING);
-		String infos = inlineClassAnnotations.getAnnotation(VALIDATION_INFO);
+		String warningsAnnotation = inlineClassAnnotations.getAnnotation(VALIDATION_WARNING);
+		String infosAnnotation = inlineClassAnnotations.getAnnotation(VALIDATION_INFO);
+		final Set<String> warnings = (warningsAnnotation == null)
+				? Collections.<String> emptySet()
+				: new java.util.HashSet<String>(Arrays.asList(warningsAnnotation.split(" ")));
+		final Set<String> infos = (infosAnnotation == null)
+				? Collections.<String> emptySet()
+				: new java.util.HashSet<String>(Arrays.asList(infosAnnotation.split(" ")));
 
 		String splitName = CDAModelUtil.getPrefixedSplitName(inlineClass);
 
@@ -270,9 +280,9 @@ public class TransformInlinedAssociations extends TransformAbstract {
 
 			Severity constraintSeverity = Severity.ERROR;
 
-			if (infos != null && infos.contains(constraint.getName())) {
+			if (infos.contains(constraint.getName())) {
 				constraintSeverity = Severity.INFO;
-			} else if (warnings != null && warnings.contains(constraint.getName())) {
+			} else if (warnings.contains(constraint.getName())) {
 				constraintSeverity = Severity.WARNING;
 			}
 

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson and others.
+ * Copyright (c) 2009, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,6 +8,7 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     John T.E. Timm (IBM Corporation) - added isEntry
+ *     Christian W. Damus - discriminate multiple property constraints (artf3185)
  *     
  * $Id$
  *******************************************************************************/
@@ -248,9 +249,26 @@ public class CDAModelUtil {
 	}
 
 	public static String getValidationMessage(Element element) {
+		return getValidationMessage(element, ICDAProfileConstants.VALIDATION);
+	}
+
+	/**
+	 * Obtains the user-specified validation message recorded in the given stereotype, or else
+	 * {@linkplain #computeConformanceMessage(Element, boolean) computes} a suitable conformance message if none.
+	 * 
+	 * @param element
+	 *            an element on which a validation constraint stereotype is defined
+	 * @param validationStereotypeName
+	 *            the stereotype name (may be the abstract {@linkplain ICDAProfileConstants#VALIDATION Validation} stereotype)
+	 * 
+	 * @return the most appropriate validation/conformance message
+	 * 
+	 * @see #computeConformanceMessage(Element, boolean)
+	 */
+	public static String getValidationMessage(Element element, String validationStereotypeName) {
 		String message = null;
 
-		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, ICDAProfileConstants.VALIDATION);
+		Stereotype validationSupport = CDAProfileUtil.getAppliedCDAStereotype(element, validationStereotypeName);
 		if (validationSupport != null) {
 			message = (String) element.getValue(validationSupport, ICDAProfileConstants.VALIDATION_MESSAGE);
 		}
@@ -1842,23 +1860,35 @@ public class CDAModelUtil {
 		return validationSupport != null;
 	}
 
+	/**
+	 * @deprecated Use {@link #getValidationSeverity(Property, String)} to get the severity for a specific validation stereotype.
+	 *             If necessary, this can be the abstract {@link ICDAProfileConstants#VALIDATION Validation} stereotype to get any available
+	 *             validation severity.
+	 */
+	@Deprecated
 	public static String getValidationSeverity(Property property) {
-		Stereotype validationStereotype = CDAProfileUtil.getAppliedCDAStereotype(
-			property, ICDAProfileConstants.PROPERTY_VALIDATION);
+		return getValidationSeverity(property, ICDAProfileConstants.PROPERTY_VALIDATION);
+	}
+
+	public static String getValidationSeverity(Property property, String validationStereotypeName) {
+		Stereotype validationStereotype = CDAProfileUtil.getAppliedCDAStereotype(property, validationStereotypeName);
 		return getValidationSeverity(property, validationStereotype);
 	}
 
 	public static String getValidationSeverity(Element element) {
 		// use first available validation stereotype
-		Stereotype validationStereotype = CDAProfileUtil.getAppliedCDAStereotype(
-			element, ICDAProfileConstants.VALIDATION);
+		return getValidationSeverity(element, ICDAProfileConstants.VALIDATION);
+	}
+
+	public static String getValidationSeverity(Element element, String validationStereotypeName) {
+		Stereotype validationStereotype = CDAProfileUtil.getAppliedCDAStereotype(element, validationStereotypeName);
 		return getValidationSeverity(element, validationStereotype);
 	}
 
 	public static String getValidationSeverity(Element element, Stereotype validationStereotype) {
 		String severity = null;
 
-		if (validationStereotype != null) {
+		if (validationStereotype != null && validationStereotype.getGeneral("Validation") != null) {
 			Object value = element.getValue(validationStereotype, ICDAProfileConstants.VALIDATION_SEVERITY);
 			if (value instanceof EnumerationLiteral) {
 				severity = ((EnumerationLiteral) value).getName();
@@ -1873,7 +1903,7 @@ public class CDAModelUtil {
 	}
 
 	public static String getValidationKeyword(Property property) {
-		String severity = getValidationSeverity(property);
+		String severity = getValidationSeverity(property, ICDAProfileConstants.PROPERTY_VALIDATION);
 		if (severity == null) {
 			// get other validation stereotype, usually for terminology
 			severity = getValidationSeverity((Element) property);
