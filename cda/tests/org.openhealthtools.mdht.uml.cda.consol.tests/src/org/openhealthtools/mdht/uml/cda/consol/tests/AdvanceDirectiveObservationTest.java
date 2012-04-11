@@ -555,22 +555,27 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveObservationVerifierTypeCode() {
-		new OperationsTestCase<AdvanceDirectiveObservation>(
+		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationVerifierTypeCodeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
 			"validateAdvanceDirectiveObservationVerifierTypeCode",
 			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_VERIFIER_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			{
+				this.skipFailsTest();
+			}
+
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
-				target.init();
+				// target.init();
 				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
 
-				p2.setTypeCode(ParticipationType.VRF);
+				// p2.setTypeCode(ParticipationType.ADM);
 				target.getParticipants().add(p2);
 			}
 
 			@Override
 			protected void updateToPass(AdvanceDirectiveObservation target) {
+				target.init();
 				target.getParticipants().clear();
 				Participant2 p2 = CDAFactory.eINSTANCE.createParticipant2();
 
@@ -588,7 +593,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 		};
 
-		// validateAdvanceDirectiveObservationVerifierTypeCodeTestCase.doValidationTest();
+		validateAdvanceDirectiveObservationVerifierTypeCodeTestCase.doValidationTest();
 	}
 
 	/**
@@ -935,10 +940,14 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateAdvanceDirectiveObservationCustodianTypeCode() {
-		new OperationsTestCase<AdvanceDirectiveObservation>(
+		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationCustodianTypeCodeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
 			"validateAdvanceDirectiveObservationCustodianTypeCode",
 			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_CUSTODIAN_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
+
+			{
+				this.skipFailsTest();
+			}
 
 			@Override
 			protected void updateToFail(AdvanceDirectiveObservation target) {
@@ -969,7 +978,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 
 		};
 
-		// validateAdvanceDirectiveObservationCustodianTypeCodeTestCase.doValidationTest();
+		validateAdvanceDirectiveObservationCustodianTypeCodeTestCase.doValidationTest();
 	}
 
 	/**
