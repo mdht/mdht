@@ -1,8 +1,14 @@
-/**
- * <copyright>
- * </copyright>
+/*
+ * Copyright (c) 2010, 2012 IBM Corporation and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
+ * Contributors:
+ *     IBM Corporation - initial API and implementation
+ *     Sean Muir (JKM Software) - Operation Test and generation
+ *     Christian W. Damus - Add NarrativeReferenceTestCase for constraints on CDA R2 narrative text references (artf2815)
  */
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
@@ -15,6 +21,8 @@ import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.ConsolPackage;
+import org.openhealthtools.mdht.uml.cda.consol.GeneralStatusSection;
 import org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityProcedure;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ProcedureActivityProcedureOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
@@ -203,29 +211,35 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateProcedureActivityProcedureReferenceValue() {
-		OperationsTestCase<ProcedureActivityProcedure> validateProcedureActivityProcedureReferenceValueTestCase = new OperationsTestCase<ProcedureActivityProcedure>(
+		OperationsTestCase<ProcedureActivityProcedure> validateProcedureActivityProcedureReferenceValueTestCase = new NarrativeReferenceTestCase<ProcedureActivityProcedure>(
 			"validateProcedureActivityProcedureReferenceValue",
 			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_PROCEDURE_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProcedureActivityProcedure target) {
+				target.init();
+
+				// add the observation to a section, as required by the constraint, that has text that we can reference
+				addText(
+					createSectionForClinicalStatement(target, ConsolPackage.eINSTANCE, GeneralStatusSection.class), "",
+					"No particular procedure to document.");
+
+				// add a reference to the section text
+				target.setCode(createCDWithOriginalTextReference("Some sample text", "#1.2.3.4"));
 
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityProcedure target) {
-				target.init();
-				// target.getSection().setText(CDAFactory.eINSTANCE.createStrucDocText());
-				// target.getSection().getText().addText("test");
-				CD code = DatatypesFactory.eINSTANCE.createCD();
-				ED ot = DatatypesFactory.eINSTANCE.createED();
-				TEL ref = DatatypesFactory.eINSTANCE.createTEL();
-				ref.setValue("test");
-				ot.setReference(ref);
-				code.setOriginalText(ot);
-				target.setCode(code);
 
+				// add the observation to a section, as required by the constraint, that has text that we can reference
+				addText(
+					createSectionForClinicalStatement(target, ConsolPackage.eINSTANCE, GeneralStatusSection.class),
+					"1.2.3.4", "No particular procedure to document.");
+
+				// add a reference to the section text
+				target.setCode(createCDWithOriginalTextReference("Some sample text", "#1.2.3.4"));
 			}
 
 			@Override

@@ -1,8 +1,14 @@
-/**
- * <copyright>
- * </copyright>
+/*
+ * Copyright (c) 2010, 2012 IBM Corporation and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
+ * Contributors:
+ *     IBM Corporation - initial API and implementation
+ *     Sean Muir (JKM Software) - Operation Test and generation
+ *     Christian W. Damus - Add NarrativeReferenceTestCase for constraints on CDA R2 narrative text references (artf2815)
  */
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
@@ -12,6 +18,8 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.ConsolPackage;
+import org.openhealthtools.mdht.uml.cda.consol.GeneralStatusSection;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemStatus;
 import org.openhealthtools.mdht.uml.cda.consol.operations.ProblemStatusOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
@@ -83,27 +91,39 @@ public class ProblemStatusTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProblemStatusTextReferenceValue() {
-		OperationsTestCase<ProblemStatus> validateProblemStatusTextReferenceValueTestCase = new OperationsTestCase<ProblemStatus>(
+		OperationsTestCase<ProblemStatus> validateProblemStatusTextReferenceValueTestCase = new NarrativeReferenceTestCase<ProblemStatus>(
 			"validateProblemStatusTextReferenceValue",
 			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_TEXT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
 			protected void updateToFail(ProblemStatus target) {
+				target.init();
+
+				// add the observation to a section, as required by the constraint, that has text that we can reference
+				addText(
+					createSectionForClinicalStatement(target, ConsolPackage.eINSTANCE, GeneralStatusSection.class), "",
+					"No particular problem status.");
+
+				// add a reference to the section text
+				target.setText(createEDWithReference("Some sample text", "#1.2.3.4"));
 
 			}
 
 			@Override
 			protected void updateToPass(ProblemStatus target) {
-				target.init();
 
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
+				// add the observation to a section, as required by the constraint, that has text that we can reference
+				addText(
+					createSectionForClinicalStatement(target, ConsolPackage.eINSTANCE, GeneralStatusSection.class),
+					"1.2.3.4", "No particular problem status.");
 
+				// add a reference to the section text
+				target.setText(createEDWithReference("Some sample text", "#1.2.3.4"));
 			}
 
 			@Override
