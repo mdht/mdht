@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2011 David A Carlson and others.
+ * Copyright (c) 2006, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - Async runnable flood causes drag-and-drop issues (artf3182)
  *     
  * $Id$
  *******************************************************************************/
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.eclipse.core.commands.operations.IOperationHistory;
 import org.eclipse.core.commands.operations.IOperationHistoryListener;
@@ -39,6 +41,7 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -513,20 +516,36 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 		};
 		editingDomain.addResourceSetListener(resourceLoadListener);
 
-		dirtyResourceListener = new ResourceSetListenerImpl(NotificationFilter.NOT_TOUCH) {
+		// we're only dirty if some non-touch event occurred that isn't compatible with read-only transactions.
+		// For example, loading a resource doesn't make the editor dirty, but it isn't a touch on the resource-set.
+		// Normally, saving a resource, though, is a read-compatible event, so allow that
+		dirtyResourceListener = new ResourceSetListenerImpl(
+			NotificationFilter.NOT_TOUCH.and(NotificationFilter.READ.negated().or(
+				NotificationFilter.createFeatureFilter(EcorePackage.Literals.ERESOURCE, Resource.RESOURCE__IS_MODIFIED)))) {
+
+			// don't post while a runnable is still pending. We don't need redundant updating of the dirty state
+			// because it cannot change while we're processing the event
+			private final AtomicBoolean pending = new AtomicBoolean();
+
 			@Override
 			public void resourceSetChanged(ResourceSetChangeEvent event) {
 				// need this to avoid invalid thread access while loading models from a Job
-				Display.getDefault().asyncExec(new Runnable() {
-					public void run() {
-						// causes editor to update its dirty flag on tab
-						firePropertyChange(IEditorPart.PROP_DIRTY);
+				if (pending.compareAndSet(false, true)) {
+					Display.getDefault().asyncExec(new Runnable() {
+						public void run() {
+							try {
+								// causes editor to update its dirty flag on tab
+								firePropertyChange(IEditorPart.PROP_DIRTY);
 
-						// if (propertySheetPage != null) {
-						// propertySheetPage.refresh();
-						// }
-					}
-				});
+								// if (propertySheetPage != null) {
+								// propertySheetPage.refresh();
+								// }
+							} finally {
+								pending.set(false);
+							}
+						}
+					});
+				}
 			}
 		};
 		editingDomain.addResourceSetListener(dirtyResourceListener);
