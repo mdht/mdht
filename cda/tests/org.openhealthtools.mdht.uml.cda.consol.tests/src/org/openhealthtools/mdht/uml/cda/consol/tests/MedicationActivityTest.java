@@ -626,7 +626,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(MedicationActivity target) {
 				target.init();
-				target.setRouteCode(DatatypesFactory.eINSTANCE.createCE("code", "codeSystem"));
+				target.setRouteCode(DatatypesFactory.eINSTANCE.createCE("code", "2.16.840.1.113883.3.26.1.1"));
 
 			}
 
@@ -700,7 +700,8 @@ public class MedicationActivityTest extends CDAValidationTest {
 			protected void updateToPass(MedicationActivity target) {
 				target.getApproachSiteCodes().clear();
 				target.getApproachSiteCodes().add(
-					DatatypesFactory.eINSTANCE.createCD("code", "codeSystem", "codeSystemName", "displayName"));
+					DatatypesFactory.eINSTANCE.createCD(
+						"code", "2.16.840.1.113883.6.96", "codeSystemName", "displayName"));
 
 			}
 
@@ -731,15 +732,15 @@ public class MedicationActivityTest extends CDAValidationTest {
 			protected void updateToFail(MedicationActivity target) {
 
 				target.init();
-				// target.getApproachSiteCodes().add(DatatypesFactory.eINSTANCE.createCD());
+				target.getApproachSiteCodes().clear();
 
 			}
 
 			@Override
 			protected void updateToPass(MedicationActivity target) {
-				target.getApproachSiteCodes().clear();
 				target.getApproachSiteCodes().add(
-					DatatypesFactory.eINSTANCE.createCD("code", "codeSystem", "codeSystemName", "displayName"));
+					DatatypesFactory.eINSTANCE.createCD(
+						"code", "2.16.840.1.113883.6.96", "codeSystemName", "displayName"));
 
 			}
 

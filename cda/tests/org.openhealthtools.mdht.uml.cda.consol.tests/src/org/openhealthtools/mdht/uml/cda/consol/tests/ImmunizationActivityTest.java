@@ -574,7 +574,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
-				target.setRouteCode(DatatypesFactory.eINSTANCE.createCE("code", "codeSystem"));
+				target.setRouteCode(DatatypesFactory.eINSTANCE.createCE("code", "2.16.840.1.113883.3.26.1.1"));
 
 			}
 
@@ -604,6 +604,8 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(ImmunizationActivity target) {
 				target.init();
+
+				target.setRouteCode(null);
 			}
 
 			@Override
@@ -679,7 +681,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(ImmunizationActivity target) {
 				target.init();
-
+				target.getApproachSiteCodes().clear();
 			}
 
 			@Override
@@ -862,7 +864,8 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
-				target.setAdministrationUnitCode(DatatypesFactory.eINSTANCE.createCE("code", "codeSystem"));
+				target.setAdministrationUnitCode(DatatypesFactory.eINSTANCE.createCE(
+					"code", "2.16.840.1.113883.3.26.1.1"));
 
 			}
 
@@ -892,11 +895,13 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(ImmunizationActivity target) {
 				target.init();
+				target.setAdministrationUnitCode(null);
 			}
 
 			@Override
 			protected void updateToPass(ImmunizationActivity target) {
-				target.setAdministrationUnitCode(DatatypesFactory.eINSTANCE.createCE("code", "codeSystem"));
+				target.setAdministrationUnitCode(DatatypesFactory.eINSTANCE.createCE(
+					"code", "2.16.840.1.113883.3.26.1.1"));
 
 			}
 
