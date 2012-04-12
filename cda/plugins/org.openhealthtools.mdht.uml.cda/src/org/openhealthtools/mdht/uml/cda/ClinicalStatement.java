@@ -325,4 +325,28 @@ public interface ClinicalStatement extends Act {
 	 */
 	boolean hasTemplateId(String templateId);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.participant.participantRole->excluding(null)
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.participant.participantRole->excluding(null)'"
+	 * @generated
+	 */
+	EList<ParticipantRole> getParticipantRoles();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.performer.assignedEntity->excluding(null)
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" ordered="false"
+	 *        annotation="http://www.eclipse.org/uml2/1.1.0/GenModel body='self.performer.assignedEntity->excluding(null)'"
+	 * @generated
+	 */
+	EList<AssignedEntity> getAssignedEntities();
+
 } // ClinicalStatement

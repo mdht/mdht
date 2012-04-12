@@ -13,6 +13,7 @@ package org.openhealthtools.mdht.uml.cda.impl;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.openhealthtools.mdht.uml.cda.Act;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.ClinicalStatement;
@@ -20,6 +21,7 @@ import org.openhealthtools.mdht.uml.cda.Encounter;
 import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.ObservationMedia;
 import org.openhealthtools.mdht.uml.cda.Organizer;
+import org.openhealthtools.mdht.uml.cda.ParticipantRole;
 import org.openhealthtools.mdht.uml.cda.Procedure;
 import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
 import org.openhealthtools.mdht.uml.cda.Section;
@@ -354,6 +356,24 @@ public abstract class ClinicalStatementImpl extends ActImpl implements ClinicalS
 	 */
 	public boolean hasTemplateId(String templateId) {
 		return ClinicalStatementOperations.hasTemplateId(this, templateId);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ParticipantRole> getParticipantRoles() {
+		return ClinicalStatementOperations.getParticipantRoles(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<AssignedEntity> getAssignedEntities() {
+		return ClinicalStatementOperations.getAssignedEntities(this);
 	}
 
 } // ClinicalStatementImpl

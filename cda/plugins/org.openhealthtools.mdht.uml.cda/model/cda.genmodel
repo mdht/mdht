@@ -1546,6 +1546,8 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalStatement/hasTemplateId">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="cda.ecore#//ClinicalStatement/hasTemplateId/templateId"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalStatement/getParticipantRoles"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="cda.ecore#//ClinicalStatement/getAssignedEntities"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="cda.ecore#//Encounter">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

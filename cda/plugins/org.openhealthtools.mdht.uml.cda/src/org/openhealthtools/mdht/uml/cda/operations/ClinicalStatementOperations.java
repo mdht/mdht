@@ -11,6 +11,7 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.operations;
 
+import java.util.Collection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +24,7 @@ import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.ocl.expressions.OCLExpression;
 import org.openhealthtools.mdht.uml.cda.Act;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
@@ -32,6 +34,7 @@ import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Observation;
 import org.openhealthtools.mdht.uml.cda.ObservationMedia;
 import org.openhealthtools.mdht.uml.cda.Organizer;
+import org.openhealthtools.mdht.uml.cda.ParticipantRole;
 import org.openhealthtools.mdht.uml.cda.Procedure;
 import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
 import org.openhealthtools.mdht.uml.cda.Section;
@@ -84,6 +87,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalStatement#hasSubstanceAdministrationTemplate(java.lang.String) <em>Has Substance Administration Template</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalStatement#hasSupplyTemplate(java.lang.String) <em>Has Supply Template</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalStatement#hasTemplateId(java.lang.String) <em>Has Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalStatement#getParticipantRoles() <em>Get Participant Roles</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ClinicalStatement#getAssignedEntities() <em>Get Assigned Entities</em>}</li>
  * </ul>
  * </p>
  *
@@ -858,6 +863,100 @@ public class ClinicalStatementOperations extends ActOperations {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getParticipantRoles(ClinicalStatement) <em>Get Participant Roles</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParticipantRoles(ClinicalStatement)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_PARTICIPANT_ROLES__EOCL_EXP = "self.participant.participantRole->excluding(null)";
+
+	/**
+	 * The cached OCL query for the '{@link #getParticipantRoles(ClinicalStatement) <em>Get Participant Roles</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParticipantRoles(ClinicalStatement)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_PARTICIPANT_ROLES__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.participant.participantRole->excluding(null)
+	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static EList<ParticipantRole> getParticipantRoles(ClinicalStatement clinicalStatement) {
+		if (GET_PARTICIPANT_ROLES__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(
+				CDAPackage.Literals.CLINICAL_STATEMENT,
+				CDAPackage.Literals.CLINICAL_STATEMENT.getEAllOperations().get(49));
+			try {
+				GET_PARTICIPANT_ROLES__EOCL_QRY = helper.createQuery(GET_PARTICIPANT_ROLES__EOCL_EXP);
+			} catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_PARTICIPANT_ROLES__EOCL_QRY);
+		@SuppressWarnings("unchecked")
+		Collection<ParticipantRole> result = (Collection<ParticipantRole>) query.evaluate(clinicalStatement);
+		return new BasicEList.UnmodifiableEList<ParticipantRole>(result.size(), result.toArray());
+	}
+
+	/**
+	 * The cached OCL expression body for the '{@link #getAssignedEntities(ClinicalStatement) <em>Get Assigned Entities</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssignedEntities(ClinicalStatement)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GET_ASSIGNED_ENTITIES__EOCL_EXP = "self.performer.assignedEntity->excluding(null)";
+
+	/**
+	 * The cached OCL query for the '{@link #getAssignedEntities(ClinicalStatement) <em>Get Assigned Entities</em>}' query operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssignedEntities(ClinicalStatement)
+	 * @generated
+	 * @ordered
+	 */
+	protected static OCLExpression<EClassifier> GET_ASSIGNED_ENTITIES__EOCL_QRY;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * self.performer.assignedEntity->excluding(null)
+	 * @param clinicalStatement The receiving '<em><b>Clinical Statement</b></em>' model object.
+	 * <!-- end-model-doc -->
+	 * @generated
+	 */
+	public static EList<AssignedEntity> getAssignedEntities(ClinicalStatement clinicalStatement) {
+		if (GET_ASSIGNED_ENTITIES__EOCL_QRY == null) {
+			OCL.Helper helper = EOCL_ENV.createOCLHelper();
+			helper.setOperationContext(
+				CDAPackage.Literals.CLINICAL_STATEMENT,
+				CDAPackage.Literals.CLINICAL_STATEMENT.getEAllOperations().get(50));
+			try {
+				GET_ASSIGNED_ENTITIES__EOCL_QRY = helper.createQuery(GET_ASSIGNED_ENTITIES__EOCL_EXP);
+			} catch (ParserException pe) {
+				throw new UnsupportedOperationException(pe.getLocalizedMessage());
+			}
+		}
+		OCL.Query query = EOCL_ENV.createQuery(GET_ASSIGNED_ENTITIES__EOCL_QRY);
+		@SuppressWarnings("unchecked")
+		Collection<AssignedEntity> result = (Collection<AssignedEntity>) query.evaluate(clinicalStatement);
+		return new BasicEList.UnmodifiableEList<AssignedEntity>(result.size(), result.toArray());
 	}
 
 } // ClinicalStatementOperations
