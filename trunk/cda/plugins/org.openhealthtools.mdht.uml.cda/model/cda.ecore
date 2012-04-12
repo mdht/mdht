@@ -5345,6 +5345,22 @@
     <eOperations name="hasTemplateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="templateId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
+    <eOperations name="getParticipantRoles" ordered="false" upperBound="-1" eType="#//ParticipantRole">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.participant.participantRole->excluding(null)"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.participant.participantRole->excluding(null)"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getAssignedEntities" ordered="false" upperBound="-1" eType="#//AssignedEntity">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="self.performer.assignedEntity->excluding(null)"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
+        <details key="body" value="self.performer.assignedEntity->excluding(null)"/>
+      </eAnnotations>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Encounter" eSuperTypes="#//ClinicalStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="realmCode" ordered="false"

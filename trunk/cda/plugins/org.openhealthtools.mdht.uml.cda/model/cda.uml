@@ -8028,6 +8028,30 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_tyJMIIPQEeG7hZmTMIOA4g" name="getParticipantRoles" isQuery="true" bodyCondition="_BDeS4IPREeG7hZmTMIOA4g">
+        <ownedRule xmi:id="_BDeS4IPREeG7hZmTMIOA4g" name="body" constrainedElement="_tyJMIIPQEeG7hZmTMIOA4g">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_QdDsAIPREeG7hZmTMIOA4g">
+            <language>OCL</language>
+            <body>self.participant.participantRole->excluding(null)</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_0GgtMIPQEeG7hZmTMIOA4g" name="Parameter1" type="__QZaIEcZEd6besF9iFIJkQ" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8himgIPVEeG7hZmTMIOA4g" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3oOHIIPVEeG7hZmTMIOA4g"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_bLTdwIPZEeG7hZmTMIOA4g" name="getAssignedEntities" isQuery="true" bodyCondition="_jeHogIPZEeG7hZmTMIOA4g">
+        <ownedRule xmi:id="_jeHogIPZEeG7hZmTMIOA4g" name="body" constrainedElement="_tyJMIIPQEeG7hZmTMIOA4g">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_jeHogYPZEeG7hZmTMIOA4g">
+            <language>OCL</language>
+            <body>self.performer.assignedEntity->excluding(null)</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:id="_dUeJsIPZEeG7hZmTMIOA4g" name="Parameter1" type="_6qmVsEcDEd6besF9iFIJkQ" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DaamAIPaEeG7hZmTMIOA4g" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CQLngIPaEeG7hZmTMIOA4g"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_vKSC4HfdEd-OZ-5CAiSgsw" name="SDTCPatient">
       <ownedAttribute xmi:id="_yJT_0HfdEd-OZ-5CAiSgsw" name="id" visibility="private" aggregation="composite">
