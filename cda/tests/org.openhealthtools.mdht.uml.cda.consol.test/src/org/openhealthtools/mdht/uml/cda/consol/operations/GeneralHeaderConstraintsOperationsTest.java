@@ -10,10 +10,8 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.consol.operations;
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,19 +20,9 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
-import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
-import org.openhealthtools.mdht.uml.cda.Author;
-import org.openhealthtools.mdht.uml.cda.CDAFactory;
-import org.openhealthtools.mdht.uml.cda.Guardian;
-import org.openhealthtools.mdht.uml.cda.Patient;
-import org.openhealthtools.mdht.uml.cda.PatientRole;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
-import org.openhealthtools.mdht.uml.cda.consol.ConsolPlugin;
 import org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints;
-import org.openhealthtools.mdht.uml.cda.consol.util.ConsolValidator;
 import org.openhealthtools.mdht.uml.cda.operations.ClinicalDocumentOperationsTest;
-import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
-import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 
 public class GeneralHeaderConstraintsOperationsTest extends ClinicalDocumentOperationsTest {
 
@@ -92,156 +80,159 @@ public class GeneralHeaderConstraintsOperationsTest extends ClinicalDocumentOper
 	@Test
 	public void testValidateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom() {
 
-		GeneralHeaderConstraints generalHeaderConstraints = ConsolFactory.eINSTANCE.createGeneralHeaderConstraints().init();
+		// GeneralHeaderConstraints generalHeaderConstraints = ConsolFactory.eINSTANCE.createGeneralHeaderConstraints().init();
+		//
+		// PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
+		//
+		// Patient patient = CDAFactory.eINSTANCE.createPatient();
+		//
+		// patientRole.setPatient(patient);
+		//
+		// generalHeaderConstraints.addPatientRole(patientRole);
+		//
+		// BasicDiagnostic diagnostics = new BasicDiagnostic();
+		//
+		// Map<Object, Object> context = new HashMap<Object, Object>();
+		//
+		// try {
+		// System.out.println("\n \n Guardian HAS NO Address and Telecom XML \n");
+		// CDAUtil.save(generalHeaderConstraints, System.out);
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// }
+		//
+		// GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom(
+		// generalHeaderConstraints, diagnostics, context);
+		//
+		// BasicDiagnostic key = new BasicDiagnostic(
+		// Diagnostic.ERROR, ConsolValidator.DIAGNOSTIC_SOURCE,
+		// ConsolValidator.GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_ROLES_SHALL_HAVE_ADDR_AND_TELECOM,
+		// ConsolPlugin.INSTANCE.getString("GeneralHeaderConstraintsRolesShallHaveAddrAndTelecom"),
+		// new Object[] { patientRole });
+		//
+		// assertTrue(Collections.binarySearch(diagnostics.getChildren(), key, new CDADiagnosticCompare()) >= 0);
+		//
+		// patientRole.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+		// patientRole.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
+		// diagnostics = new BasicDiagnostic();
+		// try {
+		// System.out.println("\n \n  Guardian HAS Address and Telecom XML \n");
+		// CDAUtil.save(generalHeaderConstraints, System.out);
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// }
+		//
+		// GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShouldHaveAddrAndTelecom(
+		// generalHeaderConstraints, diagnostics, context);
+		//
+		// assertTrue(Collections.binarySearch(diagnostics.getChildren(), key, new CDADiagnosticCompare()) < 0);
+		//
+		// generalHeaderConstraints = ConsolFactory.eINSTANCE.createGeneralHeaderConstraints().init();
+		//
+		// Author author = CDAFactory.eINSTANCE.createAuthor();
+		//
+		// AssignedAuthor assignedAuthor = CDAFactory.eINSTANCE.createAssignedAuthor();
+		//
+		// author.setAssignedAuthor(assignedAuthor);
+		//
+		// generalHeaderConstraints.getAuthors().add(author);
+		//
+		// diagnostics = new BasicDiagnostic();
+		//
+		// key = new BasicDiagnostic(
+		// Diagnostic.ERROR, ConsolValidator.DIAGNOSTIC_SOURCE,
+		// ConsolValidator.GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_ROLES_SHALL_HAVE_ADDR_AND_TELECOM,
+		// ConsolPlugin.INSTANCE.getString("GeneralHeaderConstraintsRolesShallHaveAddrAndTelecom"),
+		// new Object[] { assignedAuthor });
+		//
+		// try {
+		// System.out.println("\n \n  AssignedAuthor HAS NO Address and Telecom XML \n");
+		// CDAUtil.save(generalHeaderConstraints, System.out);
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// }
+		//
+		// GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom(
+		// generalHeaderConstraints, diagnostics, context);
+		//
+		// assertTrue(Collections.binarySearch(diagnostics.getChildren(), key, new CDADiagnosticCompare()) >= 0);
+		//
+		// diagnostics = new BasicDiagnostic();
+		//
+		// assignedAuthor.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+		// assignedAuthor.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
+		//
+		// GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom(
+		// generalHeaderConstraints, diagnostics, context);
+		//
+		// assertTrue(Collections.binarySearch(diagnostics.getChildren(), key, new CDADiagnosticCompare()) < 0);
+		//
+		// try {
+		// System.out.println("\n \n  AssignedAuthor HAS Address and Telecom XML \n");
+		// CDAUtil.save(generalHeaderConstraints, System.out);
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// }
 
-		PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
-
-		Patient patient = CDAFactory.eINSTANCE.createPatient();
-
-		patientRole.setPatient(patient);
-
-		generalHeaderConstraints.addPatientRole(patientRole);
-
-		BasicDiagnostic diagnostics = new BasicDiagnostic();
-
-		Map<Object, Object> context = new HashMap<Object, Object>();
-
-		try {
-			System.out.println("\n \n Guardian HAS NO Address and Telecom XML \n");
-			CDAUtil.save(generalHeaderConstraints, System.out);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom(
-			generalHeaderConstraints, diagnostics, context);
-
-		BasicDiagnostic key = new BasicDiagnostic(
-			Diagnostic.ERROR, ConsolValidator.DIAGNOSTIC_SOURCE,
-			ConsolValidator.GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_ROLES_SHALL_HAVE_ADDR_AND_TELECOM,
-			ConsolPlugin.INSTANCE.getString("GeneralHeaderConstraintsRolesShallHaveAddrAndTelecom"),
-			new Object[] { patientRole });
-
-		assertTrue(Collections.binarySearch(diagnostics.getChildren(), key, new CDADiagnosticCompare()) >= 0);
-
-		patientRole.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
-		patientRole.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
-		diagnostics = new BasicDiagnostic();
-		try {
-			System.out.println("\n \n  Guardian HAS Address and Telecom XML \n");
-			CDAUtil.save(generalHeaderConstraints, System.out);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShouldHaveAddrAndTelecom(
-			generalHeaderConstraints, diagnostics, context);
-
-		assertTrue(Collections.binarySearch(diagnostics.getChildren(), key, new CDADiagnosticCompare()) < 0);
-
-		generalHeaderConstraints = ConsolFactory.eINSTANCE.createGeneralHeaderConstraints().init();
-
-		Author author = CDAFactory.eINSTANCE.createAuthor();
-
-		AssignedAuthor assignedAuthor = CDAFactory.eINSTANCE.createAssignedAuthor();
-
-		author.setAssignedAuthor(assignedAuthor);
-
-		generalHeaderConstraints.getAuthors().add(author);
-
-		diagnostics = new BasicDiagnostic();
-
-		key = new BasicDiagnostic(
-			Diagnostic.ERROR, ConsolValidator.DIAGNOSTIC_SOURCE,
-			ConsolValidator.GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_ROLES_SHALL_HAVE_ADDR_AND_TELECOM,
-			ConsolPlugin.INSTANCE.getString("GeneralHeaderConstraintsRolesShallHaveAddrAndTelecom"),
-			new Object[] { assignedAuthor });
-
-		try {
-			System.out.println("\n \n  AssignedAuthor HAS NO Address and Telecom XML \n");
-			CDAUtil.save(generalHeaderConstraints, System.out);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom(
-			generalHeaderConstraints, diagnostics, context);
-
-		assertTrue(Collections.binarySearch(diagnostics.getChildren(), key, new CDADiagnosticCompare()) >= 0);
-
-		diagnostics = new BasicDiagnostic();
-
-		assignedAuthor.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
-		assignedAuthor.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
-
-		GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShallHaveAddrAndTelecom(
-			generalHeaderConstraints, diagnostics, context);
-
-		assertTrue(Collections.binarySearch(diagnostics.getChildren(), key, new CDADiagnosticCompare()) < 0);
-
-		try {
-			System.out.println("\n \n  AssignedAuthor HAS Address and Telecom XML \n");
-			CDAUtil.save(generalHeaderConstraints, System.out);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		fail("doesn't compile");
 
 	}
 
 	@Test
 	public void testValidateGeneralHeaderConstraintsRolesShouldHaveAddrAndTelecom() {
 
-		GeneralHeaderConstraints generalHeaderConstraints = ConsolFactory.eINSTANCE.createGeneralHeaderConstraints().init();
-
-		PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
-
-		Patient patient = CDAFactory.eINSTANCE.createPatient();
-
-		Guardian guardian = CDAFactory.eINSTANCE.createGuardian();
-
-		patient.getGuardians().add(guardian);
-
-		patientRole.setPatient(patient);
-
-		generalHeaderConstraints.addPatientRole(patientRole);
-
-		BasicDiagnostic diagnostics = new BasicDiagnostic();
-
-		Map<Object, Object> context = new HashMap<Object, Object>();
-
-		try {
-			System.out.println("\n \n Guardian HAS NO Address and Telecom XML \n");
-			CDAUtil.save(generalHeaderConstraints, System.out);
-		} catch (Exception e) {
-			// TODO Auto-generated
-			e.printStackTrace();
-		}
-
-		GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShouldHaveAddrAndTelecom(
-			generalHeaderConstraints, diagnostics, context);
-
-		BasicDiagnostic key = new BasicDiagnostic(
-			Diagnostic.WARNING, ConsolValidator.DIAGNOSTIC_SOURCE,
-			ConsolValidator.GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_ROLES_SHOULD_HAVE_ADDR_AND_TELECOM,
-			ConsolPlugin.INSTANCE.getString("GeneralHeaderConstraintsRolesShouldHaveAddrAndTelecom"),
-			new Object[] { guardian });
-
-		assertTrue(Collections.binarySearch(diagnostics.getChildren(), key, new CDADiagnosticCompare()) >= 0);
-
-		guardian.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
-		guardian.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
-		diagnostics = new BasicDiagnostic();
-		try {
-			System.out.println("\n \n  Guardian HAS Address and Telecom XML \n");
-			CDAUtil.save(generalHeaderConstraints, System.out);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShouldHaveAddrAndTelecom(
-			generalHeaderConstraints, diagnostics, context);
-
-		assertTrue(Collections.binarySearch(diagnostics.getChildren(), key, new CDADiagnosticCompare()) < 0);
+		// GeneralHeaderConstraints generalHeaderConstraints = ConsolFactory.eINSTANCE.createGeneralHeaderConstraints().init();
+		//
+		// PatientRole patientRole = CDAFactory.eINSTANCE.createPatientRole();
+		//
+		// Patient patient = CDAFactory.eINSTANCE.createPatient();
+		//
+		// Guardian guardian = CDAFactory.eINSTANCE.createGuardian();
+		//
+		// patient.getGuardians().add(guardian);
+		//
+		// patientRole.setPatient(patient);
+		//
+		// generalHeaderConstraints.addPatientRole(patientRole);
+		//
+		// BasicDiagnostic diagnostics = new BasicDiagnostic();
+		//
+		// Map<Object, Object> context = new HashMap<Object, Object>();
+		//
+		// try {
+		// System.out.println("\n \n Guardian HAS NO Address and Telecom XML \n");
+		// CDAUtil.save(generalHeaderConstraints, System.out);
+		// } catch (Exception e) {
+		// // TODO Auto-generated
+		// e.printStackTrace();
+		// }
+		//
+		// GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShouldHaveAddrAndTelecom(
+		// generalHeaderConstraints, diagnostics, context);
+		//
+		// BasicDiagnostic key = new BasicDiagnostic(
+		// Diagnostic.WARNING, ConsolValidator.DIAGNOSTIC_SOURCE,
+		// ConsolValidator.GENERAL_HEADER_CONSTRAINTS__GENERAL_HEADER_CONSTRAINTS_ROLES_SHOULD_HAVE_ADDR_AND_TELECOM,
+		// ConsolPlugin.INSTANCE.getString("GeneralHeaderConstraintsRolesShouldHaveAddrAndTelecom"),
+		// new Object[] { guardian });
+		//
+		// assertTrue(Collections.binarySearch(diagnostics.getChildren(), key, new CDADiagnosticCompare()) >= 0);
+		//
+		// guardian.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+		// guardian.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
+		// diagnostics = new BasicDiagnostic();
+		// try {
+		// System.out.println("\n \n  Guardian HAS Address and Telecom XML \n");
+		// CDAUtil.save(generalHeaderConstraints, System.out);
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// }
+		//
+		// GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsRolesShouldHaveAddrAndTelecom(
+		// generalHeaderConstraints, diagnostics, context);
+		//
+		// assertTrue(Collections.binarySearch(diagnostics.getChildren(), key, new CDADiagnosticCompare()) < 0);
+		fail("doesn't compile");
 
 	}
 
