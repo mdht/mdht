@@ -12,6 +12,7 @@
 package org.openhealthtools.mdht.uml.edit.provider;
 
 import java.util.Collections;
+import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.emf.common.command.Command;
@@ -20,11 +21,18 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.command.CommandParameter;
+import org.eclipse.emf.edit.command.CreateCopyCommand;
+import org.eclipse.emf.edit.command.InitializeCopyCommand;
+import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.ItemProviderDecorator;
 import org.openhealthtools.mdht.uml.edit.command.AddCommandWrapper;
+import org.openhealthtools.mdht.uml.edit.command.CreateCopyCommandWrapper;
+import org.openhealthtools.mdht.uml.edit.command.InitializeCopyCommandWrapper;
+import org.openhealthtools.mdht.uml.edit.command.RemoveCommandWrapper;
+import org.openhealthtools.mdht.uml.edit.command.UMLCommandWrapper;
 
 /**
  * A wrapper adapter factory that intercepts the editing-domain item-provider request to customize commands.
@@ -99,11 +107,23 @@ public class UMLEditingDomainAdapterFactory implements AdapterFactory {
 	//
 
 	protected static class Interceptor extends ItemProviderDecorator implements Adapter, IEditingDomainItemProvider {
+		private final Map<Class<? extends Command>, UMLCommandWrapper> commandWrappers = createCommandWrappers();
 
 		protected Interceptor(AdapterFactory adapterFactory, IChangeNotifier adapter) {
 			super(adapterFactory);
 
 			setDecoratedItemProvider(adapter);
+		}
+
+		private static Map<Class<? extends Command>, UMLCommandWrapper> createCommandWrappers() {
+			Map<Class<? extends Command>, UMLCommandWrapper> result = new java.util.HashMap<Class<? extends Command>, UMLCommandWrapper>();
+
+			result.put(AddCommand.class, new AddCommandWrapper());
+			result.put(CreateCopyCommand.class, new CreateCopyCommandWrapper());
+			result.put(InitializeCopyCommand.class, new InitializeCopyCommandWrapper());
+			result.put(RemoveCommand.class, new RemoveCommandWrapper());
+
+			return Collections.unmodifiableMap(result);
 		}
 
 		/* Don't let subclasses override this because we call it from our constructor. */
@@ -132,8 +152,10 @@ public class UMLEditingDomainAdapterFactory implements AdapterFactory {
 			// get the basic command
 			Command result = super.createCommand(object, domain, commandClass, commandParameter);
 
-			if (commandClass == AddCommand.class) {
-				result = AddCommandWrapper.wrap(result, commandParameter.getEOwner());
+			// wrap it if we have a wrapper available
+			UMLCommandWrapper wrapper = commandWrappers.get(commandClass);
+			if ((wrapper != null) && wrapper.canWrap(commandClass, commandParameter)) {
+				result = wrapper.wrap(result, commandParameter);
 			}
 
 			return result;
