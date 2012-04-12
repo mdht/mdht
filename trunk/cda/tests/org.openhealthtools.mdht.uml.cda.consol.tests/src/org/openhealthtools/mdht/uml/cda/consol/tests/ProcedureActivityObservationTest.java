@@ -683,7 +683,7 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityObservation target) {
 				target.init();
-				CE pc = DatatypesFactory.eINSTANCE.createCE("aaa", "bbb");
+				CE pc = DatatypesFactory.eINSTANCE.createCE("aaa", "2.16.840.1.113883.5.7");
 				target.setPriorityCode(pc);
 			}
 

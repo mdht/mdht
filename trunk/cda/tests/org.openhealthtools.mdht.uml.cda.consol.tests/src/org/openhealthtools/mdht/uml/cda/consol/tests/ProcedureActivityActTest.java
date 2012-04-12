@@ -634,7 +634,7 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.init();
-				CE pc = DatatypesFactory.eINSTANCE.createCE("aaa", "bbb");
+				CE pc = DatatypesFactory.eINSTANCE.createCE("aaa", "2.16.840.1.113883.5.7");
 				target.setPriorityCode(pc);
 			}
 
@@ -663,13 +663,14 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureActivityAct target) {
-				target.init();
+
 			}
 
 			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
-
-				target.setPriorityCode(DatatypesFactory.eINSTANCE.createCE());
+				target.init();
+				CE pc = DatatypesFactory.eINSTANCE.createCE("aaa", "bbb");
+				target.setPriorityCode(pc);
 			}
 
 			@Override

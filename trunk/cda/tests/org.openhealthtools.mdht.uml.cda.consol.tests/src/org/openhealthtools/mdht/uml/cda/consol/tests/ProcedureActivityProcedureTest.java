@@ -682,7 +682,8 @@ public class ProcedureActivityProcedureTest extends CDAValidationTest {
 			protected void updateToPass(ProcedureActivityProcedure target) {
 				target.init();
 				CE pc = DatatypesFactory.eINSTANCE.createCE();
-				pc.setCodeSystem("2.16.840.1.113883.1.11.16866");
+				pc.setCode("code");
+				pc.setCodeSystem("2.16.840.1.113883.5.7");
 				target.setPriorityCode(pc);
 			}
 
