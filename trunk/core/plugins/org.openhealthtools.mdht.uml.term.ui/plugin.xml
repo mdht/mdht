@@ -159,4 +159,59 @@
 	  </propertySections>
    </extension> 
    
+   
+   <!-- RSM UI Extension for Terminology -->
+   	<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+		<propertyTabs contributorId="com.ibm.xtools.modeler.ui.properties">   
+			<propertyTab
+               category="Core"
+               label="%terminology.propertyTabs.label"
+               afterTab="property.tab.GeneralPropertySection"
+               id="property.tab.TerminologyPropertySection">           
+			</propertyTab> 
+		</propertyTabs>
+	</extension>
+ 
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+       <propertySections contributorId="com.ibm.xtools.modeler.ui.properties">
+          <propertySection tab="property.tab.TerminologyPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.CodeSystemVersionSection" 
+	 	     id="property.section.CodeSystemVersionSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodeSystemVersionFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.TerminologyPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetVersionSection" 
+	 	     id="property.section.ValueSetVersionSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetVersionFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.TerminologyPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetCodeSection" 
+	 	     id="property.section.ValueSetCodeSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetCodeFilter">
+	      </propertySection>
+	      
+          <propertySection tab="property.tab.TerminologyPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ValueSetConstraintSection" 
+	 	     id="property.section.ValueSetConstraintSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.ValueSetConstraintFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.TerminologyPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.CodeSystemConstraintSection" 
+	 	     id="property.section.CodeSystemConstraintSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodeSystemConstraintFilter">
+	      </propertySection>
+          <propertySection tab="property.tab.TerminologyPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.ConceptDomainConstraintSection" 
+	 	     id="property.section.ConceptDomainConstraintSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.ConceptDomainConstraintFilter">
+	      </propertySection>
+	      
+          <propertySection tab="property.tab.TerminologyPropertySection" 
+	 	     class="org.openhealthtools.mdht.uml.term.ui.properties.VocabularyConstraintsSection" 
+	 	     id="property.section.VocabularyConstraintsSection"
+             filter="org.openhealthtools.mdht.uml.term.ui.filters.CodedAttributeFilter">
+	      </propertySection>
+	  </propertySections>
+   </extension> 
+   
 </plugin>
