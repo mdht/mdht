@@ -379,7 +379,10 @@ public class TransformClassContent extends TransformAbstract {
 		writer.print("<codeblock id=\"example\"><![CDATA[");
 
 		if (instanceGenerator != null) {
-			EObject eObject = instanceGenerator.createInstance(umlClass, 4);
+
+			EObject eObject = instanceGenerator.createInstance(umlClass, CDAModelUtil.isSection(umlClass)
+					? 2
+					: 1);
 			if (eObject != null) {
 				instanceGenerator.save(eObject, writer);
 			}
