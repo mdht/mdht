@@ -55,7 +55,6 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
@@ -90,11 +89,11 @@ public class InstanceGenerator {
 		 * 
 		 * @see org.openhealthtools.mdht.uml.hl7.datatypes.util.DatatypesSwitch#caseCE(org.openhealthtools.mdht.uml.hl7.datatypes.CE)
 		 */
-		@Override
-		public Object caseCE(CE object) {
-			object.setCode("Value");
-			return object;
-		}
+		// @Override
+		// public Object caseCE(CE object) {
+		// object.setCode("Value");
+		// return object;
+		// }
 
 		/*
 		 * (non-Javadoc)
@@ -106,7 +105,10 @@ public class InstanceGenerator {
 
 			if ("statusCode".equals(feature.getName())) {
 				object.setCode("completed");
+			} else {
+				object.setCode("Code for" + feature.getName());
 			}
+
 			return object;
 		}
 
@@ -124,6 +126,8 @@ public class InstanceGenerator {
 			} else {
 				ii.setRoot(UUID.randomUUID().toString());
 			}
+
+			ii.setExtension("MDHT");
 			return ii;
 		}
 
@@ -146,10 +150,22 @@ public class InstanceGenerator {
 				if (object.eContainer() instanceof Section && object.eContainingFeature().getName().equals("title")) {
 					Section s = (Section) object.eContainer();
 					if (s.getCode() != null && s.getCode().getDisplayName() != null) {
-						object.addText(s.getCode().getDisplayName());
+						return object.addText(s.getCode().getDisplayName());
 					}
 				}
+			}
 
+			if (feature != null) {
+				StringBuffer buffer = new StringBuffer();
+				for (String token : UMLUtil.splitName(feature.getName())) {
+					buffer.append(buffer.length() > 0
+							? " "
+							: "");
+					buffer.append(token);
+				}
+				object.addText("TEXT FOR " + buffer.toString().toUpperCase());
+			} else {
+				object.addText("SAMPLE TEXT");
 			}
 
 			return object;
@@ -283,11 +299,11 @@ public class InstanceGenerator {
 	private void sampleInstanceInitialization(Class umlClass, EObject eObject,
 			HashMap<String, String> shallShouldMayProperties, int level) {
 
-		if (level < 0) {
+		initEObject(eObject);
+
+		if (level < 0 || CDAModelUtil.isCDAModel(umlClass)) {
 			return;
 		}
-
-		initEObject(eObject);
 
 		EClass eClass = eObject.eClass();
 
@@ -357,7 +373,33 @@ public class InstanceGenerator {
 					EObject objectToAdd = eOperation.getEGenericType().getEClassifier().getEPackage().getEFactoryInstance().create(
 						(EClass) eOperation.getEGenericType().getEClassifier());
 					if (!eClass.equals(objectToAdd.eClass())) {
-						sampleInstanceInitialization(umlClass, objectToAdd, shallShouldMayProperties, level - 1);
+						if (UMLUtil.getTopPackage(umlClass) != null) {
+
+							// Search for UML class
+							Class operationClass = UMLUtil.getClassByName(
+								UMLUtil.getTopPackage(umlClass),
+								eOperation.getEGenericType().getEClassifier().getName());
+
+							// If not found -search for Class with Spaces
+							if (operationClass == null) {
+								StringBuffer buffer = new StringBuffer();
+								for (String token : UMLUtil.splitName(eOperation.getEGenericType().getEClassifier().getName())) {
+									buffer.append(buffer.length() > 0
+											? " "
+											: "");
+									buffer.append(token);
+									operationClass = UMLUtil.getClassByName(
+										UMLUtil.getTopPackage(umlClass), buffer.toString());
+								}
+							}
+
+							// If we can find a corresponding UML class - use it to initalize eObjectToAdd
+							if (operationClass != null) {
+
+								sampleInstanceInitialization(
+									operationClass, objectToAdd, shallShouldMayProperties, level - 1);
+							}
+						}
 						addObject(eClass, addOperation, eObject, objectToAdd);
 					}
 				}
@@ -545,8 +587,9 @@ public class InstanceGenerator {
 			if (eClass != null && !eClass.isAbstract()) {
 
 				eObject = eClass.getEPackage().getEFactoryInstance().create(eClass);
-				// topPackage.eResource().getResourceSet(), shallShouldMayProperties,
-				sampleInstanceInitialization(umlClass, eObject, shallShouldMayProperties, levels);
+				sampleInstanceInitialization(umlClass, eObject, shallShouldMayProperties, levels < 10
+						? levels
+						: 10);
 
 			}
 		}
