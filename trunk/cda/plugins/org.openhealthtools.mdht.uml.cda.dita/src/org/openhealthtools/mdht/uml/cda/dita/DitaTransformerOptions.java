@@ -36,6 +36,8 @@ public class DitaTransformerOptions {
 
 	public static final String INCLUDE_VOCABULARY_CONSTRAINTS = "includeVocabularyConstraints";
 
+	public static final String EXAMPLE_DEPTH = "exampleDepth";
+
 	private IPath outputPath = null;
 
 	private String baseURL = null;
@@ -43,6 +45,23 @@ public class DitaTransformerOptions {
 	private boolean includeTableView = false;
 
 	private boolean includeVocabularyConstraints = false;
+
+	private int exampleDepth;
+
+	/**
+	 * @return the exampleDepth
+	 */
+	public int getExampleDepth() {
+		return exampleDepth;
+	}
+
+	/**
+	 * @param exampleDepth
+	 *            the exampleDepth to set
+	 */
+	public void setExampleDepth(int exampleDepth) {
+		this.exampleDepth = exampleDepth;
+	}
 
 	private List<EPackage> ePackages = new Vector<EPackage>();
 
@@ -75,6 +94,9 @@ public class DitaTransformerOptions {
 		}
 		includeTableView = store.getBoolean(INCLUDE_TABLE_VIEW);
 		includeVocabularyConstraints = store.getBoolean(INCLUDE_VOCABULARY_CONSTRAINTS);
+
+		exampleDepth = store.getInt(EXAMPLE_DEPTH);
+
 	}
 
 	public boolean isIncludeTableView() {
