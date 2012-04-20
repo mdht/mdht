@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
@@ -86,7 +87,7 @@ public class TableGenerator {
 		if (ePackageURI != null) {
 			EPackage ePackage = getEPackageForURI(ePackageURI);
 			if (ePackage != null) {
-				EClassifier eClassifier = ePackage.getEClassifier(umlType.getName());
+				EClassifier eClassifier = ePackage.getEClassifier(UML2Util.getValidJavaIdentifier(umlType.getName()));
 				if (eClassifier instanceof EClass) {
 					return (EClass) eClassifier;
 				}

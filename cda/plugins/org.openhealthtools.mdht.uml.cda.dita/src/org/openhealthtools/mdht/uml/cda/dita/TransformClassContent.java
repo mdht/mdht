@@ -247,9 +247,9 @@ public class TransformClassContent extends TransformAbstract {
 		appendClassDocumentation(writer, umlClass);
 		appendConformanceRules(writer, umlClass);
 		appendAggregateRules(writer, umlClass);
-		if (transformerOptions.isIncludeTableView()) {
-			appendTable(writer, umlClass);
-		}
+		// if (transformerOptions.isIncludeTableView()) {
+		appendTable(writer, umlClass);
+		// }
 		appendExample(writer, umlClass);
 		appendChanges(writer, umlClass);
 
@@ -380,9 +380,13 @@ public class TransformClassContent extends TransformAbstract {
 
 		if (instanceGenerator != null) {
 
-			EObject eObject = instanceGenerator.createInstance(umlClass, CDAModelUtil.isSection(umlClass)
-					? 2
-					: 1);
+			int exampleDepth = transformerOptions.getExampleDepth();
+
+			transformerOptions.isIncludeTableView();
+
+			EObject eObject = instanceGenerator.createInstance(umlClass, exampleDepth > 0
+					? exampleDepth
+					: 2);
 			if (eObject != null) {
 				instanceGenerator.save(eObject, writer);
 			}
