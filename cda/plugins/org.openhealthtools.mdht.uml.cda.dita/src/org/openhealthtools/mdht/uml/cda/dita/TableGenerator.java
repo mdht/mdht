@@ -370,6 +370,36 @@ public class TableGenerator {
 
 			public int compare(Element o1, Element o2) {
 
+				if (!(o1 instanceof Property)) {
+					if (o1 instanceof NamedElement) {
+						org.openhealthtools.mdht.uml.cda.dita.internal.Logger.log(
+							org.openhealthtools.mdht.uml.cda.dita.internal.Logger.WARNING,
+							((NamedElement) o1).getQualifiedName() + " is not a UML Property " +
+									o1.getClass().getCanonicalName());
+					} else {
+						org.openhealthtools.mdht.uml.cda.dita.internal.Logger.log(
+							org.openhealthtools.mdht.uml.cda.dita.internal.Logger.WARNING, o1.toString() +
+									" is not a UML Property " + o1.getClass().getCanonicalName());
+					}
+
+					return -1;
+				}
+
+				if (!(o2 instanceof Property)) {
+					if (o1 instanceof NamedElement) {
+						org.openhealthtools.mdht.uml.cda.dita.internal.Logger.log(
+							org.openhealthtools.mdht.uml.cda.dita.internal.Logger.WARNING,
+							((NamedElement) o2).getQualifiedName() + " is not a UML Property " +
+									o2.getClass().getCanonicalName());
+					} else {
+						org.openhealthtools.mdht.uml.cda.dita.internal.Logger.log(
+							org.openhealthtools.mdht.uml.cda.dita.internal.Logger.WARNING, o2.toString() +
+									" is not a UML Property " + o2.getClass().getCanonicalName());
+					}
+
+					return +1;
+				}
+
 				Property leftProperty = (Property) o1;
 
 				EStructuralFeature leftFeature = eClass.getEStructuralFeature(leftProperty.getName());
