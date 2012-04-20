@@ -48,6 +48,23 @@ public class TransformToDita extends CDAModelingSubTask {
 
 	private Boolean includeVocabularyConstraints = null;
 
+	private int exampleDepth;
+
+	/**
+	 * @return the exampleDepth
+	 */
+	public int getExampleDepth() {
+		return exampleDepth;
+	}
+
+	/**
+	 * @param exampleDepth
+	 *            the exampleDepth to set
+	 */
+	public void setExampleDepth(int exampleDepth) {
+		this.exampleDepth = exampleDepth;
+	}
+
 	private List<EPackageClass> ePackageClasses = new ArrayList<EPackageClass>();
 
 	/* child elements of this Ant task */
@@ -127,7 +144,9 @@ public class TransformToDita extends CDAModelingSubTask {
 		}
 		if (includeTableView == null && project.getProperty("includeTableView") != null) {
 			includeTableView = Boolean.valueOf(project.getProperty("includeTableView"));
+
 		}
+		Integer.getInteger(project.getProperty("exampleDepth"));
 
 	}
 
@@ -190,6 +209,9 @@ public class TransformToDita extends CDAModelingSubTask {
 		if (includeVocabularyConstraints != null) {
 			options.setIncludeVocabularyConstraints(includeVocabularyConstraints);
 		}
+
+		options.setExampleDepth(exampleDepth);
+
 		for (EPackageClass ePackage : ePackageClasses) {
 			options.addEPackage(ePackage.getQname());
 		}
