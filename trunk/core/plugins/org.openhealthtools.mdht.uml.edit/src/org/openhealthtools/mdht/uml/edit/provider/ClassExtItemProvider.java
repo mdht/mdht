@@ -176,7 +176,7 @@ public class ClassExtItemProvider extends ClassItemProvider implements ITableIte
 				}
 			}
 
-			if (child instanceof Property) {
+			if (toMove instanceof Property) {
 				// these are partitioned into two groups. Recompute the index
 				Class clazz = (Class) owner;
 				List<? extends Property> sortedProperties = sortOwnedAttributes(clazz);
