@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2011 David A Carlson and others.
+ * Copyright (c) 2006, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,6 +8,7 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for showing business names (or not)
+ *     Christian W. Damus - fix re-ordering of properties and constraints
  *     
  * $Id$
  *******************************************************************************/
@@ -15,6 +16,7 @@ package org.openhealthtools.mdht.uml.edit.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -25,6 +27,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposedImage;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
@@ -117,6 +120,34 @@ public class AssociationExtItemProvider extends AssociationItemProvider implemen
 			label = labelBuffer.toString();
 		}
 		return label;
+	}
+
+	/**
+	 * I declare no children features so that no drop/add/etc. may be attempted on me.
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * Because we show associations under the "source" class, provide that as the parent.
+	 */
+	@Override
+	public Object getParent(Object object) {
+		final Association association = (Association) object;
+
+		// only look for class as owner, not (e.g.) datatype, because we only
+		// show associations under classes
+		Property navigableEnd = UMLUtil.getNavigableEnd(association);
+		Object result = (navigableEnd == null)
+				? null
+				: navigableEnd.getClass_();
+		if (result == null) {
+			result = super.getParent(object);
+		}
+
+		return result;
 	}
 
 	/*
