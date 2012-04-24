@@ -1,4 +1,4 @@
-<%@ jet package="org.eclipse.uml2.codegen.ecore.templates.model" imports="org.eclipse.emf.codegen.ecore.genmodel.* org.eclipse.uml2.codegen.ecore.genmodel.util.UML2GenModelUtil org.eclipse.emf.ecore.EClass org.eclipse.emf.ecore.util.EcoreUtil java.util.Arrays" class="OperationsClass" version="$Id: OperationsClass.javajet,v 1.11 2008/04/10 19:08:31 khussey Exp $" %>
+<%@ jet package="org.eclipse.uml2.codegen.ecore.templates.model" imports="org.eclipse.emf.codegen.ecore.genmodel.* org.eclipse.uml2.codegen.ecore.genmodel.util.UML2GenModelUtil org.eclipse.emf.ecore.EClass org.eclipse.emf.ecore.EAnnotation org.eclipse.emf.ecore.util.EcoreUtil java.util.Arrays java.util.Map" class="OperationsClass" version="$Id: OperationsClass.javajet,v 1.11 2008/04/10 19:08:31 khussey Exp $" %>
 <%
 /**
  * <copyright>
@@ -14,6 +14,7 @@
  *   Kenn Hussey (Embarcadero Technologies) - 206636, 224693
  *   Kenn Hussey - ensuring methods aren't generated for operations with Java bodies
  *   Christian W. Damus - fix return result from query-style constraint validation operations (artf3100)
+ *                      - implement terminology constraint dependencies (artf3030)
  *   
  * </copyright>
  */
@@ -79,9 +80,21 @@ public class <%=UML2GenModelUtil.getOperationsClassName(genClass)%><%=UML2GenMod
 		super();
 	}
 
-<%for (GenOperation genOperation : UML2GenModelUtil.getOperationsClassGenOperations(genClass)) {%>
-<% boolean isQueryConstraint = EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query") != null && Arrays.asList(EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query").split(" ")).contains(genOperation.getName().replaceFirst("^validate", "")); %>
-<%if (!genOperation.hasBody()) {%>
+<%for (GenOperation genOperation : UML2GenModelUtil.getOperationsClassGenOperations(genClass)) {
+    String constraintName = genOperation.getName().replaceFirst("^validate", "");
+    boolean isQueryConstraint = EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query") != null && Arrays.asList(EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.query").split(" ")).contains(constraintName);
+    String dependency = EcoreUtil.getAnnotation(genClass.getEcoreClass(), "http://www.openhealthtools.org/mdht/uml/cda/annotation", "constraints.validation.dependOn." + constraintName);
+	boolean hasDependents = false;
+	EAnnotation cdaAnnotation = genClass.getEcoreClass().getEAnnotation("http://www.openhealthtools.org/mdht/uml/cda/annotation");
+	if (cdaAnnotation != null) {
+		for (Map.Entry<String, String> next : cdaAnnotation.getDetails().entrySet()) {
+			if (next.getKey().startsWith("constraints.validation.dependOn.") && constraintName.equals(next.getValue())) {
+				hasDependents = true;
+				break;
+			}
+		}
+	} 
+if (!genOperation.hasBody()) {%>
 <%@ include file="Operations/genOperation.override.javajetinc" fail="alternative" %>
 <%@ start %>
 <%if (UML2GenModelUtil.hasOCLBody(genOperation)) {%>
@@ -153,8 +166,16 @@ public class <%=UML2GenModelUtil.getOperationsClassName(genClass)%><%=UML2GenMod
 		<%=genOperation.getBody(genModel.getIndentation(stringBuffer))%>
   <%} else if (genOperation.isInvariant()) {
   		GenClass opClass = genOperation.getGenClass(); 
+  		String target = genClass.safeName(genClass.getUncapName());
   		String diagnostics = genOperation.getGenParameters().get(0).getName(); 
   		String context = genOperation.getGenParameters().get(1).getName();%>
+  	  <%if ((dependency != null) && !isQueryConstraint) {%>
+		Object passToken = (<%=context%> == null) ? null : <%=context%>.get("<%=genPackage.getInterfacePackageName()%>.<%=dependency%>");<%=genModel.getNonNLS()%>
+		if ((passToken instanceof <%=genModel.getImportedName("java.util.Collection")%><?>) && ((<%=genModel.getImportedName("java.util.Collection")%><?>) passToken).contains(<%=target%>)) {
+			// I have a free pass to short-circuit
+			return true;
+		}
+  	  <%}%>
       <%if (UML2GenModelUtil.hasOCLBody(genOperation)) {
       	String oclInv = UML2GenModelUtil.getUpperName(genOperation.getName()) + (genOperation.getGenParameters().size() == 0 ? "" : "__" + UML2GenModelUtil.getUpperName(genOperation.getParameterTypes("_", false))) + "__EOCL_INV";
       	if (isQueryConstraint) {
@@ -174,14 +195,35 @@ public class <%=UML2GenModelUtil.getOperationsClassName(genClass)%><%=UML2GenMod
 				throw new UnsupportedOperationException(pe.getLocalizedMessage());
 			}
 		<%if (!isQueryConstraint) {%>}<%}%><%if (isQueryConstraint) {%>
-		Object oclResultSet = <%=oclInv%>.evaluate(<%=genClass.safeName(genClass.getUncapName())%>);		
-		if (oclResultSet != null && oclResultSet instanceof <%=genModel.getImportedName("java.util.Collection") %>) {
+		Object oclResult = <%=oclInv%>.evaluate(<%=genClass.safeName(genClass.getUncapName())%>);		
+		if (oclResult != null && oclResult instanceof <%=genModel.getImportedName("java.util.Collection") %>) {
+			<%=genModel.getImportedName("java.util.Collection")%><? extends EObject> oclResultSet = (<%=genModel.getImportedName("java.util.Collection")%><? extends EObject>) oclResult;
+  			<%if (dependency != null) {%>
+			Object passFilter = (<%=context%> == null) ? null : <%=context%>.get("<%=genPackage.getInterfacePackageName()%>.<%=dependency%>");<%=genModel.getNonNLS()%>
+			if (passFilter instanceof <%=genModel.getImportedName("java.util.Collection")%><?>) {
+				// filter my query results
+				oclResultSet = new <%=genModel.getImportedName("java.util.ArrayList")%><EObject>(oclResultSet);
+				oclResultSet.removeAll((<%=genModel.getImportedName("java.util.Collection")%><?>) passFilter);
+			}
+	  		<%}%>
 			if (<%=diagnostics%> != null) {
-				for (<%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%> eObject : (Collection<EObject>) oclResultSet) {
+				for (<%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%> eObject : oclResultSet) {
 <%@ include file="OperationsClass/query.insert.javajetinc"%>
 				}
+				<%if (hasDependents) {%>
+				if (<%=context%> != null) {
+					// generate a pass token for my dependent constraints to short-circuit or filter results
+					<%=genModel.getImportedName("java.util.Collection")%><Object> passToken = (<%=genModel.getImportedName("java.util.Collection")%><Object>) <%=context%>.get("<%=genPackage.getInterfacePackageName()%>.<%=constraintName%>");<%=genModel.getNonNLS()%>
+					if (passToken == null) {
+						// anticipate a reasonably healthy model
+						passToken = new java.util.ArrayList<Object>(3);
+						<%=context%>.put("<%=genPackage.getInterfacePackageName()%>.<%=constraintName%>", passToken);<%=genModel.getNonNLS()%>
+					}
+					passToken.addAll(oclResultSet);
+				}
+				<%}%> 
 			}
-			return ((Collection<?>) oclResultSet).isEmpty();
+			return oclResultSet.isEmpty();
 		}<%} else {%>
 		if (!EOCL_ENV.createQuery(<%=oclInv%>).check(<%=genClass.safeName(genClass.getUncapName())%>))
 		{
@@ -189,6 +231,19 @@ public class <%=UML2GenModelUtil.getOperationsClassName(genClass)%><%=UML2GenMod
 			{
 <%@ include file="OperationsClass/diagnostics.insert.javajetinc"%>
 			}
+			<%if (hasDependents) {%>
+			if (<%=context%> != null) {
+				// generate a pass token for my dependent constraints to short-circuit or filter results
+				@SuppressWarnings("unchecked")
+				<%=genModel.getImportedName("java.util.Collection")%><Object> passToken = (<%=genModel.getImportedName("java.util.Collection")%><Object>) <%=context%>.get("<%=genPackage.getInterfacePackageName()%>.<%=constraintName%>");<%=genModel.getNonNLS()%>
+				if (passToken == null) {
+					// anticipate a reasonably healthy model
+					passToken = new java.util.ArrayList<Object>(3);
+					<%=context%>.put("<%=genPackage.getInterfacePackageName()%>.<%=constraintName%>", passToken);<%=genModel.getNonNLS()%>
+				}
+				passToken.add(<%=target%>);
+			}
+			<%}%> 
 			return false;
 		}<%}%>
       <%} else {%>
