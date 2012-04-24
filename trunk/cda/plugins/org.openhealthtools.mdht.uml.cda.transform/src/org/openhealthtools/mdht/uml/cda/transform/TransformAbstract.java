@@ -10,6 +10,7 @@
  *     John T.E. Timm (IBM Corporation) - added template parameter
  *     Christian W. Damus - generate multiple OCL constraints from one property (artf3121)
  *                        - discriminate multiple property constraints (artf3185)
+ *                        - implement terminology constraint dependencies (artf3030)
  *     
  * $Id$
  *******************************************************************************/
@@ -17,6 +18,7 @@ package org.openhealthtools.mdht.uml.cda.transform;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Class;
@@ -303,6 +305,15 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 		return constraintName;
 	}
 
+	protected String getConstraintDependency(AnnotationsUtil annotations, String constraintName) {
+		return annotations.getAnnotation("constraints.validation.dependOn." + constraintName);
+	}
+
+	protected void setConstraintDependency(AnnotationsUtil annotations, String constraintName, String dependencyName) {
+		// for now, we only support a single dependency (terminology on property)
+		annotations.setAnnotation("constraints.validation.dependOn." + constraintName, dependencyName);
+	}
+
 	public static String normalizeConstraintName(String constraintName) {
 		String result = "";
 		String[] parts = constraintName.split("_");
@@ -341,10 +352,22 @@ public abstract class TransformAbstract extends UMLSwitch<Object> {
 	 * 
 	 * @return the {@code collection}, for convenience of method chaining
 	 */
-	public static <E, C extends Collection<E>> C addIfNotNull(E element, C collection) {
+	public static <E, C extends Collection<? super E>> C addIfNotNull(E element, C collection) {
 		if (element != null) {
 			collection.add(element);
 		}
 		return collection;
+	}
+
+	/**
+	 * Add an {@code element} to a {@code map} if it's not {@code null}. Handy for a fluent style.
+	 * 
+	 * @return the {@code map}, for convenience of method chaining
+	 */
+	public static <K, V, M extends Map<? super K, ? super V>> M putIfNotNull(K key, V element, M map) {
+		if (element != null) {
+			map.put(key, element);
+		}
+		return map;
 	}
 }
