@@ -9,7 +9,7 @@
  *    Sean Muir (JKM Software) - initial API and implementation
  *    Christian W. Damus - generate query invariants for in-line associations (artf3100)
  *                       - spurious constraint-name substring matches for severity (artf3185)
- *
+ *                       - implement terminology constraint dependencies (artf3030)
  * $Id$
  */
 package org.openhealthtools.mdht.uml.cda.transform;
@@ -39,7 +39,7 @@ public class TransformInlinedAssociations extends TransformAbstract {
 		INFO, WARNING, ERROR
 	}
 
-	private void appendInlinedOCLConstraint(Class classToBeConstrained, String constraintName, Severity severity,
+	private Constraint appendInlinedOCLConstraint(Class classToBeConstrained, String constraintName, Severity severity,
 			String validationMessage, String oclConstraint) {
 
 		int ctr = 1;
@@ -72,6 +72,8 @@ public class TransformInlinedAssociations extends TransformAbstract {
 
 		// designate the constraint as a query-style invariant
 		TransformConstraint.annotateQueryConstraint(inlinedConstraint, classToBeConstrained);
+
+		return inlinedConstraint;
 	}
 
 	public TransformInlinedAssociations(TransformerOptions options) {
@@ -145,14 +147,19 @@ public class TransformInlinedAssociations extends TransformAbstract {
 				if (property.getType() != null && property.getType() instanceof Class &&
 						isInlineClass((Class) property.getType())) {
 
+					AnnotationsUtil bucketAnnotations = new AnnotationsUtil(property.getClass_());
+
 					collectConstraints(
 						property.getClass_(),
+						bucketAnnotations,
 						(Class) property.getType(),
 						CDAModelUtil.getValidationMessage(association),
 						"self." +
 								getNullSafePath(getCDAClass(property.getClass_()), (Class) property.getType(), property) +
 								getInlineFilter((Class) property.getType()), property.getClass_().getName(),
 						constraints, property.getName());
+
+					bucketAnnotations.saveAnnotations();
 				}
 
 			}
@@ -223,8 +230,9 @@ public class TransformInlinedAssociations extends TransformAbstract {
 	 * TODO Message munging to get a readable validation message is bound to the current validation generation which needs to change, after dynamic
 	 * validation message generation should be able to create better message
 	 */
-	private void collectConstraints(final Class bucketClass, Class inlineClass, String message, String path,
-			String stack, HashMap<String, ArrayList<String>> constraints, String associationName) {
+	private void collectConstraints(final Class bucketClass, final AnnotationsUtil bucketAnnotations,
+			Class inlineClass, String message, String path, String stack,
+			HashMap<String, ArrayList<String>> constraints, String associationName) {
 
 		AnnotationsUtil inlineClassAnnotations = new AnnotationsUtil(inlineClass);
 
@@ -266,6 +274,7 @@ public class TransformInlinedAssociations extends TransformAbstract {
 					}
 					collectConstraints(
 						bucketClass,
+						bucketAnnotations,
 						(Class) property.getType(),
 						message + " " + associationMessage,
 						path +
@@ -298,8 +307,15 @@ public class TransformInlinedAssociations extends TransformAbstract {
 				/*
 				 * TODO Fix constraint messages implementation - currently only setting the specific rule with out the path to the rule
 				 */
-				appendInlinedOCLConstraint(bucketClass, stack + constraint.getName(), constraintSeverity, message +
-						" " + constraintMessage, path + getScopeFilter(inlineClass) + "->reject(" + relativeOCL + ")");
+				Constraint inlinedConstraint = appendInlinedOCLConstraint(
+					bucketClass, stack + constraint.getName(), constraintSeverity, message + " " + constraintMessage,
+					path + getScopeFilter(inlineClass) + "->reject(" + relativeOCL + ")");
+
+				// handle constraint dependencies
+				String dependency = getConstraintDependency(inlineClassAnnotations, constraint.getName());
+				if (dependency != null) {
+					setConstraintDependency(bucketAnnotations, inlinedConstraint.getName(), stack + dependency);
+				}
 			}
 
 		}

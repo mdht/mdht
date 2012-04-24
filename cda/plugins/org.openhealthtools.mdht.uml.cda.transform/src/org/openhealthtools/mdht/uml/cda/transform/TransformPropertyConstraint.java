@@ -11,6 +11,7 @@
  *     Christian W. Damus - Generate OCL for enumeration properties (artf3099)
  *                        - generate multiple OCL constraints from one property (artf3121)
  *                        - discriminate multiple property constraints (artf3185)
+ *                        - implement terminology constraint dependencies (artf3030)
  *     
  * $Id$
  *******************************************************************************/
@@ -23,8 +24,10 @@ import static org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants.
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -32,6 +35,7 @@ import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
+import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
@@ -286,7 +290,8 @@ public class TransformPropertyConstraint extends TransformAbstract {
 	class PropertyContext {
 		private final Property property;
 
-		private final List<Constraint> constraints = new java.util.ArrayList<Constraint>(3);
+		// need to preserve the order in which constraints are added to the map
+		private final Map<java.lang.Class<? extends PropertyConstraintHandler>, Constraint> constraints = new java.util.LinkedHashMap<java.lang.Class<? extends PropertyConstraintHandler>, Constraint>();
 
 		private final Set<String> constraintNames = new java.util.HashSet<String>();
 
@@ -323,7 +328,7 @@ public class TransformPropertyConstraint extends TransformAbstract {
 
 		void addConstraint(PropertyConstraintHandler handler) {
 			// create as many constraints as we can
-			addIfNotNull(handler.addConstraint(this), constraints);
+			putIfNotNull(handler.getClass(), handler.addConstraint(this), constraints);
 		}
 
 		/* Consume our property, removing it from the transform target model. */
@@ -335,6 +340,45 @@ public class TransformPropertyConstraint extends TransformAbstract {
 			if (consumed || !constraints.isEmpty()) {
 				// consume the property
 				removeModelElement(property());
+			}
+
+			setUpConstraintDependencies();
+
+			constraints.clear();
+		}
+
+		// artf3030: Ensure that the <<propertyValidation>> constraint fires
+		// before any of its dependents and record the dependencies
+		private void setUpConstraintDependencies() {
+			if (constraints.size() > 1) {
+				Constraint propertyValidation = constraints.get(PropertyValidationHandler.class);
+				if (propertyValidation != null) {
+					Namespace context = propertyValidation.getContext();
+
+					// remember that the map is in insertion order!
+					Constraint firstConstraint = constraints.values().iterator().next();
+
+					// do we need to sort anything?
+					if (firstConstraint != propertyValidation) {
+						if (context != null) {
+							EList<Constraint> constraints = context.getOwnedRules();
+							int index = constraints.indexOf(firstConstraint);
+							if (index >= 0) {
+								// put the property constraint there
+								constraints.move(index, propertyValidation);
+							}
+						}
+					}
+
+					// create dependency annotations
+					AnnotationsUtil annotations = new AnnotationsUtil(context);
+					for (Constraint next : constraints.values()) {
+						if (next != propertyValidation) {
+							setConstraintDependency(annotations, next.getName(), propertyValidation.getName());
+						}
+					}
+					annotations.saveAnnotations();
+				}
 			}
 		}
 	}
