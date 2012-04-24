@@ -6,16 +6,22 @@
  */
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
+import static org.junit.Assert.assertEquals;
+
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryObservation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.FamilyHistoryObservationOperations;
+import org.openhealthtools.mdht.uml.cda.consol.util.ConsolValidator;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
@@ -305,6 +311,65 @@ public class FamilyHistoryObservationTest extends CDAValidationTest {
 		};
 
 		validateFamilyHistoryObservationCodePTestCase.doValidationTest();
+	}
+
+	/**
+	 * Test the dependency interaction of the Code and CodeP constraints.
+	 */
+	@Test
+	public void integrationTestValidateFamilyHistoryObservationCode() {
+		FamilyHistoryObservation fixture = ConsolFactory.eINSTANCE.createFamilyHistoryObservation();
+
+		Diagnostic problems = Diagnostician.INSTANCE.validate(fixture);
+
+		// because the property constraint failed, the terminology constraint should short-circuit
+		assertEquals(
+			1,
+			getDiagnostics(problems, ConsolValidator.FAMILY_HISTORY_OBSERVATION__FAMILY_HISTORY_OBSERVATION_CODE_P).size());
+		assertEquals(
+			0,
+			getDiagnostics(problems, ConsolValidator.FAMILY_HISTORY_OBSERVATION__FAMILY_HISTORY_OBSERVATION_CODE).size());
+
+		fixture.init();
+
+		CD cd = DatatypesFactory.eINSTANCE.createCD();
+		cd.setCodeSystem("2.16.840.1.113883.6.96");
+		cd.setCode("1234");
+		fixture.setCode(cd);
+
+		problems = Diagnostician.INSTANCE.validate(fixture);
+
+		// because the property constraint passed, the terminology constraint should be evaluated
+		assertEquals(
+			0,
+			getDiagnostics(problems, ConsolValidator.FAMILY_HISTORY_OBSERVATION__FAMILY_HISTORY_OBSERVATION_CODE_P).size());
+		assertEquals(
+			1,
+			getDiagnostics(problems, ConsolValidator.FAMILY_HISTORY_OBSERVATION__FAMILY_HISTORY_OBSERVATION_CODE).size());
+
+		cd.setCode("418799008");
+
+		problems = Diagnostician.INSTANCE.validate(fixture);
+
+		// both constraints now should be satisfied
+		assertEquals(
+			0,
+			getDiagnostics(problems, ConsolValidator.FAMILY_HISTORY_OBSERVATION__FAMILY_HISTORY_OBSERVATION_CODE_P).size());
+		assertEquals(
+			0,
+			getDiagnostics(problems, ConsolValidator.FAMILY_HISTORY_OBSERVATION__FAMILY_HISTORY_OBSERVATION_CODE).size());
+	}
+
+	static List<? extends Diagnostic> getDiagnostics(Diagnostic diagnostic, int code) {
+		List<Diagnostic> result = new java.util.ArrayList<Diagnostic>(3);
+
+		for (Diagnostic next : diagnostic.getChildren()) {
+			if (ConsolValidator.DIAGNOSTIC_SOURCE.equals(next.getSource()) && (next.getCode() == code)) {
+				result.add(next);
+			}
+		}
+
+		return result;
 	}
 
 	/**
