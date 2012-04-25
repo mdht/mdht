@@ -8,6 +8,7 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - Async runnable flood causes drag-and-drop issues (artf3182)
+ *                        - Editors leaking via operation-history listeners (artf3225)
  *     
  * $Id$
  *******************************************************************************/
@@ -556,6 +557,13 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 	 */
 	@Override
 	public void dispose() {
+		// there's only one history in the workbench. Disconnect from it
+		getOperationHistory().removeOperationHistoryListener(historyListener);
+
+		// there's only one workspace. Disconnect from it
+		ResourcesPlugin.getWorkspace().addResourceChangeListener(
+			resourceChangeListener, IResourceChangeEvent.POST_CHANGE);
+
 		adapterFactoryContentProvider.dispose();
 		adapterFactory.dispose();
 
