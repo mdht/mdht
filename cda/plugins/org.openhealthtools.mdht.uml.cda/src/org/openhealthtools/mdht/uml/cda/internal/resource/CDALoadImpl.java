@@ -95,7 +95,7 @@ public class CDALoadImpl extends XMLLoadImpl {
 	private String getNsPrefix(String namespaceURI) {
 		String prefix = nsPrefixMap.get(namespaceURI);
 		if (prefix == null) {
-			prefix = "ns" + nsPrefixIndex;
+			prefix = "_ns" + nsPrefixIndex;
 			nsPrefixMap.put(namespaceURI, prefix);
 			nsPrefixIndex++;
 		}
