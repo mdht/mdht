@@ -29,6 +29,7 @@ import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
+import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.transform.PluginPropertiesUtil;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
@@ -147,19 +148,28 @@ public class TransformInlinedAssociations extends TransformAbstract {
 				if (property.getType() != null && property.getType() instanceof Class &&
 						isInlineClass((Class) property.getType())) {
 
-					AnnotationsUtil bucketAnnotations = new AnnotationsUtil(property.getClass_());
+					if (getCDAClass(property.getClass_()) != null) {
+						AnnotationsUtil bucketAnnotations = new AnnotationsUtil(property.getClass_());
 
-					collectConstraints(
-						property.getClass_(),
-						bucketAnnotations,
-						(Class) property.getType(),
-						CDAModelUtil.getValidationMessage(association),
-						"self." +
-								getNullSafePath(getCDAClass(property.getClass_()), (Class) property.getType(), property) +
-								getInlineFilter((Class) property.getType()), property.getClass_().getName(),
-						constraints, property.getName());
+						collectConstraints(
+							property.getClass_(),
+							bucketAnnotations,
+							(Class) property.getType(),
+							CDAModelUtil.getValidationMessage(association),
+							"self." +
+									getNullSafePath(
+										getCDAClass(property.getClass_()), (Class) property.getType(), property) +
+									getInlineFilter((Class) property.getType()), property.getClass_().getName(),
+							constraints, property.getName());
 
-					bucketAnnotations.saveAnnotations();
+						bucketAnnotations.saveAnnotations();
+					} else {
+						Logger.log(Logger.ERROR, String.format(
+							"Unsupported Inlined Association %s from %s; %s is not a CDA based element",
+							property.getName(), property.getClass_().getQualifiedName(),
+							property.getClass_().getQualifiedName()));
+					}
+
 				}
 
 			}
