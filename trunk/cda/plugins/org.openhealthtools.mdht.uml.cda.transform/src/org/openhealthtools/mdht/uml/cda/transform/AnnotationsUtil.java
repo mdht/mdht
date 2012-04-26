@@ -284,14 +284,17 @@ public class AnnotationsUtil {
 				if (cdaAnnotationIndex != null) {
 					List<String> allAnnotations = (List<String>) element.getValue(stereotype, "annotations");
 					if (annotation == null && allAnnotations.size() == 1) {
+						// remove only existing annotation, which was ours
 						element.setValue(stereotype, "annotations", new ArrayList<String>());
+						cdaAnnotationIndex = null; // forget our index
 					} else {
-						// replace previous CDA annotation
+						// replace/remove previous CDA annotation
 						element.setValue(stereotype, "annotations[" + cdaAnnotationIndex + "]", annotation);
 					}
 				} else if (annotation != null) {
 					// append to annotations list
 					List<String> annotationList = (List<String>) element.getValue(stereotype, "annotations");
+					cdaAnnotationIndex = annotationList.size(); // compute our index
 					annotationList.add(annotation);
 					element.setValue(stereotype, "annotations", annotationList);
 				}
