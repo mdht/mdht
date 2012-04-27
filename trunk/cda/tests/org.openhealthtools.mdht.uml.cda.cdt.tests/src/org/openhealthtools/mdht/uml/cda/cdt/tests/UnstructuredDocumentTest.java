@@ -9,19 +9,17 @@ package org.openhealthtools.mdht.uml.cda.cdt.tests;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Component2;
+import org.openhealthtools.mdht.uml.cda.NonXMLBody;
 import org.openhealthtools.mdht.uml.cda.cdt.CDTFactory;
 import org.openhealthtools.mdht.uml.cda.cdt.UnstructuredDocument;
-
 import org.openhealthtools.mdht.uml.cda.cdt.operations.UnstructuredDocumentOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 
 /**
@@ -44,6 +42,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.UnstructuredDocument#validateUnstructuredDocumentHasTextReferenceOrRepresentation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Document Has Text Reference Or Representation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.UnstructuredDocument#validateUnstructuredDocumentHasTextMediaTypeValueSet(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Document Has Text Media Type Value Set</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.UnstructuredDocument#validateUnstructuredDocumentEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Document Effective Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.UnstructuredDocument#validateUnstructuredDocumentCustodian(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Unstructured Document Custodian</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.cdt.UnstructuredDocument#validateGeneralHeaderConstraintsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Template Id</em>}</li>
  * </ul>
  * </p>
@@ -327,7 +326,7 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateUnstructuredDocumentHasNonXMLBodyText() {
@@ -345,6 +344,14 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 			protected void updateToPass(UnstructuredDocument target) {
 				target.init();
 
+				Component2 component = CDAFactory.eINSTANCE.createComponent2();
+				target.setComponent(component);
+
+				NonXMLBody body = CDAFactory.eINSTANCE.createNonXMLBody();
+				component.setNonXMLBody(body);
+
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				body.setText(text);
 			}
 
 			@Override
@@ -462,6 +469,40 @@ public class UnstructuredDocumentTest extends CDAValidationTest {
 		};
 
 		validateUnstructuredDocumentEffectiveTimeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateUnstructuredDocumentCustodian() {
+		OperationsTestCase<UnstructuredDocument> validateUnstructuredDocumentCustodianTestCase = new OperationsTestCase<UnstructuredDocument>(
+			"validateUnstructuredDocumentCustodian",
+			operationsForOCL.getOCLValue("VALIDATE_UNSTRUCTURED_DOCUMENT_CUSTODIAN__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(UnstructuredDocument target) {
+
+			}
+
+			@Override
+			protected void updateToPass(UnstructuredDocument target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return UnstructuredDocumentOperations.validateUnstructuredDocumentCustodian(
+					(UnstructuredDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateUnstructuredDocumentCustodianTestCase.doValidationTest();
 	}
 
 	/**

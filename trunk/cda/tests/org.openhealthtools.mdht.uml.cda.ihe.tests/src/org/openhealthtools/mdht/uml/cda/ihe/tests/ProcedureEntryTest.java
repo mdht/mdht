@@ -108,9 +108,6 @@ public class ProcedureEntryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProcedureEntry target) {
 				target.init();
-				ED ed = DatatypesFactory.eINSTANCE.createED();
-				ed.setReference(DatatypesFactory.eINSTANCE.createTEL());
-				target.setText(ed);
 
 			}
 
@@ -325,12 +322,12 @@ public class ProcedureEntryTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProcedureEntry target) {
-				target.init();
+
 			}
 
 			@Override
 			protected void updateToPass(ProcedureEntry target) {
-				target.getApproachSiteCodes().add(DatatypesFactory.eINSTANCE.createCD());
+				target.init();
 
 			}
 

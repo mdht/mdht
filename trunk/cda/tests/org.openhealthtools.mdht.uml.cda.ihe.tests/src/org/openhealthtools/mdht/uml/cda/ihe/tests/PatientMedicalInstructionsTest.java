@@ -33,6 +33,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.PatientMedicalInstructions#validatePatientMedicalInstructionsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Medical Instructions Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.PatientMedicalInstructions#validatePatientMedicalInstructionsClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Medical Instructions Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.PatientMedicalInstructions#validatePatientMedicalInstructionsCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Medical Instructions Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.PatientMedicalInstructions#validatePatientMedicalInstructionsCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Medical Instructions Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.PatientMedicalInstructions#validatePatientMedicalInstructionsStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Medical Instructions Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.PatientMedicalInstructions#validatePatientMedicalInstructionsText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Patient Medical Instructions Text</em>}</li>
@@ -110,6 +111,40 @@ public class PatientMedicalInstructionsTest extends CDAValidationTest {
 		};
 
 		validatePatientMedicalInstructionsClassCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePatientMedicalInstructionsCodeP() {
+		OperationsTestCase<PatientMedicalInstructions> validatePatientMedicalInstructionsCodePTestCase = new OperationsTestCase<PatientMedicalInstructions>(
+			"validatePatientMedicalInstructionsCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_PATIENT_MEDICAL_INSTRUCTIONS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PatientMedicalInstructions target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PatientMedicalInstructions target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PatientMedicalInstructionsOperations.validatePatientMedicalInstructionsCodeP(
+					(PatientMedicalInstructions) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePatientMedicalInstructionsCodePTestCase.doValidationTest();
 	}
 
 	/**

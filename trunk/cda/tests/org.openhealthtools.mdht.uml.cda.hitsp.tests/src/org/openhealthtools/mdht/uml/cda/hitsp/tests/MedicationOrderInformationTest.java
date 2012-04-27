@@ -54,6 +54,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationOrderInformation#validateMedicationOrderInformationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Order Information Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationOrderInformation#validateMedicationOrderInformationRepeatNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Order Information Repeat Number</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationOrderInformation#validateMedicationOrderInformationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Order Information Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.MedicationOrderInformation#validateSupplyActivityStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Supply Activity Status Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -553,6 +554,43 @@ public class MedicationOrderInformationTest extends CDAValidationTest {
 		};
 
 		validateMedicationOrderInformationStatusCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateSupplyActivityStatusCode() {
+		OperationsTestCase<MedicationOrderInformation> validateSupplyActivityStatusCodeTestCase = new OperationsTestCase<MedicationOrderInformation>(
+			"validateSupplyActivityStatusCode",
+			operationsForOCL.getOCLValue("VALIDATE_SUPPLY_ACTIVITY_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationOrderInformation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationOrderInformation target) {
+				target.init();
+
+				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+				target.setStatusCode(cs);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationOrderInformationOperations.validateSupplyActivityStatusCode(
+					(MedicationOrderInformation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSupplyActivityStatusCodeTestCase.doValidationTest();
 	}
 
 	/**

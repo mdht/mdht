@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry#validateEncounterEntryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Entry Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry#validateEncounterEntryClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Entry Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry#validateEncounterEntryCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Entry Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry#validateEncounterEntryCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Entry Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry#validateEncounterEntryId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Entry Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.EncounterEntry#validateEncounterEntryText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Entry Text</em>}</li>
  * </ul>
@@ -144,6 +145,40 @@ public class EncounterEntryTest extends CDAValidationTest {
 		};
 
 		validateEncounterEntryCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateEncounterEntryCodeP() {
+		OperationsTestCase<EncounterEntry> validateEncounterEntryCodePTestCase = new OperationsTestCase<EncounterEntry>(
+			"validateEncounterEntryCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_ENTRY_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(EncounterEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(EncounterEntry target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EncounterEntryOperations.validateEncounterEntryCodeP(
+					(EncounterEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEncounterEntryCodePTestCase.doValidationTest();
 	}
 
 	/**

@@ -14,6 +14,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
 import org.openhealthtools.mdht.uml.cda.AuthoringDevice;
@@ -85,7 +86,7 @@ public class ScanningDeviceTest extends CDAValidationTest {
 				TS ts = DatatypesFactory.eINSTANCE.createTS("20071204103022-0500");
 				target.setTime(ts);
 				ClinicalDocument cd = CDAFactory.eINSTANCE.createClinicalDocument();
-				cd.setEffectiveTime(ts);
+				cd.setEffectiveTime(EcoreUtil.copy(ts)); // one TS cannot have two containers
 				cd.getAuthors().add(target);
 				// cd.setDataEnterer(target);
 

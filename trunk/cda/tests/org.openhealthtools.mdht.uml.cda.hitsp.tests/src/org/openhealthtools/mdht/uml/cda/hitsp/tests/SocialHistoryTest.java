@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.SocialHistory#validateSocialHistoryTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.SocialHistory#validateSocialHistoryCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.SocialHistory#validateSocialHistoryCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.SocialHistory#validateSocialHistoryEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.SocialHistory#validateSocialHistoryText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Social History Text</em>}</li>
@@ -71,6 +72,40 @@ public class SocialHistoryTest extends CDAValidationTest {
 		};
 
 		validateSocialHistoryTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateSocialHistoryCodeP() {
+		OperationsTestCase<SocialHistory> validateSocialHistoryCodePTestCase = new OperationsTestCase<SocialHistory>(
+			"validateSocialHistoryCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_SOCIAL_HISTORY_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SocialHistory target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SocialHistory target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SocialHistoryOperations.validateSocialHistoryCodeP(
+					(SocialHistory) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSocialHistoryCodePTestCase.doValidationTest();
 	}
 
 	/**

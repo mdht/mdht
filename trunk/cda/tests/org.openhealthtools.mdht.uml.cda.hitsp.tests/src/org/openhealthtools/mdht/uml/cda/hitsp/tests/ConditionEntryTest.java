@@ -401,6 +401,39 @@ public class ConditionEntryTest extends CDAValidationTest {
 	}
 
 	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProblemEntryCode() {
+		OperationsTestCase<ConditionEntry> validateProblemEntryCodeTestCase = new OperationsTestCase<ConditionEntry>(
+			"validateProblemEntryCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_ENTRY_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+
+			@Override
+			protected void updateToFail(ConditionEntry target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ConditionEntry target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ConditionEntryOperations.validateProblemEntryCode(
+					(ConditionEntry) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProblemEntryCodeTestCase.doValidationTest();
+	}
+
+	/**
 	 * 
 	 * @generated NOT
 	 */
