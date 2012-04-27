@@ -75,6 +75,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassRoot;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#getMedicationType() <em>Get Medication Type</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#getMedicationOrderInformations() <em>Get Medication Order Informations</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#getHITSPReactionObservation() <em>Get HITSP Reaction Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#validateMedicationActivityRouteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Activity Route Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.Medication#validateMedicationApproachSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Approach Site Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -1107,6 +1109,74 @@ public class MedicationTest extends CDAValidationTest {
 		Medication target = objectFactory.create();
 		target.getHITSPReactionObservation();
 
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMedicationActivityRouteCode() {
+		OperationsTestCase<Medication> validateMedicationActivityRouteCodeTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationActivityRouteCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_ACTIVITY_ROUTE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Medication target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Medication target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationOperations.validateMedicationActivityRouteCode(
+					(Medication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationActivityRouteCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMedicationApproachSiteCode() {
+		OperationsTestCase<Medication> validateMedicationApproachSiteCodeTestCase = new OperationsTestCase<Medication>(
+			"validateMedicationApproachSiteCode",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_APPROACH_SITE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Medication target) {
+
+			}
+
+			@Override
+			protected void updateToPass(Medication target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationOperations.validateMedicationApproachSiteCode(
+					(Medication) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationApproachSiteCodeTestCase.doValidationTest();
 	}
 
 	/**

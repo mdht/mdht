@@ -31,7 +31,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.VitalSign#validateVitalSignTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Template Id</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.VitalSign#validateResultObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Result Observation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.hitsp.VitalSign#validateVitalSignObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Vital Sign Observation Code</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,6 +71,43 @@ public class VitalSignTest extends CDAValidationTest {
 		};
 
 		validateVitalSignTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateVitalSignObservationCode() {
+		OperationsTestCase<VitalSign> validateVitalSignObservationCodeTestCase = new OperationsTestCase<VitalSign>(
+			"validateVitalSignObservationCode",
+			operationsForOCL.getOCLValue("VALIDATE_VITAL_SIGN_OBSERVATION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(VitalSign target) {
+
+			}
+
+			@Override
+			protected void updateToPass(VitalSign target) {
+				target.init();
+
+				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				target.setCode(cd);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return VitalSignOperations.validateVitalSignObservationCode(
+					(VitalSign) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateVitalSignObservationCodeTestCase.doValidationTest();
 	}
 
 	/**

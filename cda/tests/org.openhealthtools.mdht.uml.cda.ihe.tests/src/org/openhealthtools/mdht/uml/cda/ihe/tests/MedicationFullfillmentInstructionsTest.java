@@ -32,6 +32,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicationFullfillmentInstructions#validateMedicationFullfillmentInstructionsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Fullfillment Instructions Template Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicationFullfillmentInstructions#validateMedicationFullfillmentInstructionsCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Fullfillment Instructions Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicationFullfillmentInstructions#validateMedicationFullfillmentInstructionsCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Fullfillment Instructions Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicationFullfillmentInstructions#validateMedicationFullfillmentInstructionsStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Fullfillment Instructions Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.ihe.MedicationFullfillmentInstructions#validateMedicationFullfillmentInstructionsText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Fullfillment Instructions Text</em>}</li>
@@ -75,6 +76,40 @@ public class MedicationFullfillmentInstructionsTest extends CDAValidationTest {
 		};
 
 		validateMedicationFullfillmentInstructionsTemplateIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateMedicationFullfillmentInstructionsCodeP() {
+		OperationsTestCase<MedicationFullfillmentInstructions> validateMedicationFullfillmentInstructionsCodePTestCase = new OperationsTestCase<MedicationFullfillmentInstructions>(
+			"validateMedicationFullfillmentInstructionsCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_FULLFILLMENT_INSTRUCTIONS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationFullfillmentInstructions target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationFullfillmentInstructions target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationFullfillmentInstructionsOperations.validateMedicationFullfillmentInstructionsCodeP(
+					(MedicationFullfillmentInstructions) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationFullfillmentInstructionsCodePTestCase.doValidationTest();
 	}
 
 	/**

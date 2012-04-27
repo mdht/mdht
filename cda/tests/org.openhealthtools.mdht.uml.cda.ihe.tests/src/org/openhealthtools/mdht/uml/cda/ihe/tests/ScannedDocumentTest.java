@@ -753,6 +753,7 @@ public class ScannedDocumentTest extends CDAValidationTest {
 				Component2 comp = CDAFactory.eINSTANCE.createComponent2();
 				NonXMLBody nxb = CDAFactory.eINSTANCE.createNonXMLBody();
 				ED text = DatatypesFactory.eINSTANCE.createED("text");
+				text.setMediaType("text/html"); // the default is text/plaain, which satisfies the constraint
 				nxb.setText(text);
 				comp.setNonXMLBody(nxb);
 				target.setComponent(comp);
@@ -798,7 +799,7 @@ public class ScannedDocumentTest extends CDAValidationTest {
 				nxb.setText(text);
 				comp.setNonXMLBody(nxb);
 				target.setComponent(comp);
-				target.getComponent().getNonXMLBody().getText().setRepresentation(BinaryDataEncoding.B64);
+				target.getComponent().getNonXMLBody().getText().setRepresentation(BinaryDataEncoding.TXT);
 			}
 
 			@Override

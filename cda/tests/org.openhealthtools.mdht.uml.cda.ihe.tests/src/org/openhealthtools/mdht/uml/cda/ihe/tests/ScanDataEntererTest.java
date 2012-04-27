@@ -14,6 +14,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.AssignedEntity;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
@@ -75,8 +76,9 @@ public class ScanDataEntererTest extends CDAValidationTest {
 			protected void updateToPass(ScanDataEnterer target) {
 				TS ts = DatatypesFactory.eINSTANCE.createTS("20071204103022-0500");
 				target.setTime(ts);
+
 				ClinicalDocument cd = CDAFactory.eINSTANCE.createClinicalDocument();
-				cd.setEffectiveTime(ts);
+				cd.setEffectiveTime(EcoreUtil.copy(ts)); // one TS cannot have two containers
 				cd.setDataEnterer(target);
 
 			}
