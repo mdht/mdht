@@ -27,7 +27,6 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
@@ -61,9 +60,9 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.cda.ui.util.CDAUIUtil;
 import org.osgi.framework.Bundle;
-import org.osgi.framework.BundleException;
 import org.osgi.framework.Constants;
 
 public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
@@ -284,10 +283,10 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 			IFolder folder = CDAUIUtil.getBundleRelativeFolder(project, new Path(name));
 			folder.create(true, false, null);
 			return folder;
-		} catch (CoreException e) {
-
-			e.printStackTrace();
+		} catch (Throwable t) {
+			Logger.logException(t);
 		}
+
 		return null;
 	}
 
@@ -303,9 +302,8 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 
 			return file;
 
-		} catch (CoreException e) {
-
-			e.printStackTrace();
+		} catch (Throwable t) {
+			Logger.logException(t);
 		}
 
 		return null;
@@ -368,8 +366,8 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 						}
 
 					}
-				} catch (CoreException e) {
-					e.printStackTrace();
+				} catch (Throwable t) {
+					Logger.logException(t);
 				}
 
 			}
@@ -462,10 +460,10 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 												references.put(manifestElement.getValue(), new PluginReference(
 													manifestElement.getValue(), null, 0));
 											}
-										} catch (BundleException e1) {
-
-											e1.printStackTrace();
+										} catch (Throwable t) {
+											Logger.logException(t);
 										}
+
 									}
 								}
 
