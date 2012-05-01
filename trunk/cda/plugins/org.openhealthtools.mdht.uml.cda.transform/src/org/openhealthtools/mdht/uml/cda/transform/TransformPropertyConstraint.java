@@ -12,6 +12,7 @@
  *                        - generate multiple OCL constraints from one property (artf3121)
  *                        - discriminate multiple property constraints (artf3185)
  *                        - implement terminology constraint dependencies (artf3030)
+ *                        - ensure terminology initializer for property constraints (artf3233)
  *     
  * $Id$
  *******************************************************************************/
@@ -52,6 +53,7 @@ import org.openhealthtools.mdht.uml.term.core.util.CodeSystemConstraintUtil;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.core.util.ValueSetConstraintUtil;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
+
 
 /**
  * Transform UML property constraints for: multiplicity, type restriction, vocabulary.
@@ -409,8 +411,12 @@ public class TransformPropertyConstraint extends TransformAbstract {
 			boolean result = false;
 
 			if (SEVERITY_INFO.equals(CDAModelUtil.getValidationSeverity(property, validationStereotype))) {
-				// omit annotation for MAY constraints
-				return result;
+				String propertySeverity = CDAModelUtil.getValidationSeverity(property, PROPERTY_VALIDATION);
+				if ((propertySeverity == null) || SEVERITY_INFO.equals(propertySeverity)) {
+					// artf3233: omit annotation for MAY terminology constraints on properties that don't
+					// also have SHOULD or SHALL property constraints
+					return result;
+				}
 			}
 
 			AnnotationsUtil annotationsUtil = new AnnotationsUtil(property.getClass_());
