@@ -2,7 +2,7 @@
 <feature
       id="org.openhealthtools.mdht.uml.cda.models"
       label="%featureName"
-      version="1.0.0.qualifier"
+      version="1.1.0.qualifier"
       provider-name="%featureProvider">
 
    <description url="http://mdht.projects.openhealthtools.org">
@@ -70,8 +70,8 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
-          <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.cda.consoltoc"
          download-size="0"
          install-size="0"
@@ -85,14 +85,12 @@
          version="0.0.0"
          unpack="false"/>
 
-
    <plugin
          id="org.openhealthtools.mdht.uml.cda.consol"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
 
    <plugin
          id="org.openhealthtools.mdht.cda.xml.ui"
