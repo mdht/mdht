@@ -283,8 +283,8 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 			IFolder folder = CDAUIUtil.getBundleRelativeFolder(project, new Path(name));
 			folder.create(true, false, null);
 			return folder;
-		} catch (Throwable t) {
-			Logger.logException(t);
+		} catch (Exception e) {
+			Logger.logException(e);
 		}
 
 		return null;
@@ -302,8 +302,8 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 
 			return file;
 
-		} catch (Throwable t) {
-			Logger.logException(t);
+		} catch (Exception e) {
+			Logger.logException(e);
 		}
 
 		return null;
@@ -366,8 +366,8 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 						}
 
 					}
-				} catch (Throwable t) {
-					Logger.logException(t);
+				} catch (Exception e) {
+					Logger.logException(e);
 				}
 
 			}
@@ -460,8 +460,8 @@ public abstract class CDAWizard extends Wizard implements IWorkbenchWizard {
 												references.put(manifestElement.getValue(), new PluginReference(
 													manifestElement.getValue(), null, 0));
 											}
-										} catch (Throwable t) {
-											Logger.logException(t);
+										} catch (Exception e) {
+											Logger.logException(e);
 										}
 
 									}
