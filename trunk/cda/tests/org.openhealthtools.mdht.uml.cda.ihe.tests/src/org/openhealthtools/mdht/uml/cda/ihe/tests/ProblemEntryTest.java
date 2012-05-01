@@ -232,12 +232,8 @@ public class ProblemEntryTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ProblemEntry target) {
 				target.init();
+				target.getCode().setCode("282291009");
 
-				CD code = DatatypesFactory.eINSTANCE.createCD();
-				code.setCodeSystem("2.16.840.1.113883.3.88.12.3221.7.2");
-				code.setCode("282291009");
-
-				target.setCode(code);
 			}
 
 			@Override
