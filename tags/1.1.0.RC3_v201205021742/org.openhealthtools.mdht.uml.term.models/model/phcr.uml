@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:term="http://www.openhealthtools.org/mdht/schemas/term/1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML">
+  <uml:Package xmi:id="_KnCD4CFjEd-3s7f6mWX-3A" name="PHCR">
+    <ownedComment xmi:id="_pitAsKDtEd-dVeaMP0XXQw">
+      <body>Vocabulary associated with Public Health Case Reporting (PHCR) CDAR2 DSTU Implementation Guide. The scope of this IG includes four disease-specific case reports: Anthrax, Acute Hepatitis B, Tuberculosis, and Tularemia.</body>
+    </ownedComment>
+    <packageImport xmi:id="_2Ce8sCTOEd-ZbpoADxtvhg">
+      <importedPackage href="CodeSystems.uml#_KnCD4CFjEd-3s7f6mWX-3A"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_qtDj4CvREd-YuK1P6utw_g" name="Lab Test Result Name (TB)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1Vh1cKFkEd-dVeaMP0XXQw" name="Administrative Gender (HL7 V3)">
+      <ownedLiteral xmi:id="_1YHPYKFkEd-dVeaMP0XXQw" name="F"/>
+      <ownedLiteral xmi:id="_1YH2cKFkEd-dVeaMP0XXQw" name="M"/>
+      <ownedLiteral xmi:id="_1YH2cqFkEd-dVeaMP0XXQw" name="UN"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1YKSsKFkEd-dVeaMP0XXQw" name="Animal"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1ZcsIKFkEd-dVeaMP0XXQw" name="Birth Country"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1ZlPAKFkEd-dVeaMP0XXQw" name="Blood or body fluid exposure event">
+      <ownedLiteral xmi:id="_1ZnrQKFkEd-dVeaMP0XXQw" name="55218-2"/>
+      <ownedLiteral xmi:id="_1ZoSUaFkEd-dVeaMP0XXQw" name="55214-1"/>
+      <ownedLiteral xmi:id="_1ZoSU6FkEd-dVeaMP0XXQw" name="55213-3"/>
+      <ownedLiteral xmi:id="_1ZoSVaFkEd-dVeaMP0XXQw" name="55216-6"/>
+      <ownedLiteral xmi:id="_1ZoSV6FkEd-dVeaMP0XXQw" name="55217-4"/>
+      <ownedLiteral xmi:id="_1Zo5YaFkEd-dVeaMP0XXQw" name="55215-8"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1Zr8sKFkEd-dVeaMP0XXQw" name="Blood or body fluid exposure frequency">
+      <ownedLiteral xmi:id="_1ZuY8KFkEd-dVeaMP0XXQw" name="70232002"/>
+      <ownedLiteral xmi:id="_1ZvAAKFkEd-dVeaMP0XXQw" name="27789000"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1ZxcQKFkEd-dVeaMP0XXQw" name="Blood or body fluid exposure related procedure">
+      <ownedLiteral xmi:id="_1Z0fkKFkEd-dVeaMP0XXQw" name="44868003"/>
+      <ownedLiteral xmi:id="_1Z0fkqFkEd-dVeaMP0XXQw" name="302497006"/>
+      <ownedLiteral xmi:id="_1Z1GoaFkEd-dVeaMP0XXQw" name="14152002"/>
+      <ownedLiteral xmi:id="_1Z1Go6FkEd-dVeaMP0XXQw" name="177594004"/>
+      <ownedLiteral xmi:id="_1Z1GpaFkEd-dVeaMP0XXQw" name="200849007"/>
+      <ownedLiteral xmi:id="_1Z1Gp6FkEd-dVeaMP0XXQw" name="428898005"/>
+      <ownedLiteral xmi:id="_1Z1tsaFkEd-dVeaMP0XXQw" name="6712008"/>
+      <ownedLiteral xmi:id="_1Z1ts6FkEd-dVeaMP0XXQw" name="428324008"/>
+      <ownedLiteral xmi:id="_1Z1ttaFkEd-dVeaMP0XXQw" name="428985000"/>
+      <ownedLiteral xmi:id="_1Z1tt6FkEd-dVeaMP0XXQw" name="118817003"/>
+      <ownedLiteral xmi:id="_1Z2UwaFkEd-dVeaMP0XXQw" name="85921004"/>
+      <ownedLiteral xmi:id="_1Z2Uw6FkEd-dVeaMP0XXQw" name="387713003"/>
+      <ownedLiteral xmi:id="_1Z2UxaFkEd-dVeaMP0XXQw" name="14792009"/>
+      <ownedLiteral xmi:id="_1Z2Ux6FkEd-dVeaMP0XXQw" name="116859006"/>
+      <ownedLiteral xmi:id="_1Z270aFkEd-dVeaMP0XXQw" name="77465005"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1Z5YEKFkEd-dVeaMP0XXQw" name="Body Site Value Set"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1cFJYKFkEd-dVeaMP0XXQw" name="Disease Type (Acute Hepatitis B)">
+      <ownedLiteral xmi:id="_1cIzwKFkEd-dVeaMP0XXQw" name="13265006"/>
+      <ownedLiteral xmi:id="_1cIzwqFkEd-dVeaMP0XXQw" name="186624004"/>
+      <ownedLiteral xmi:id="_1cIzxKFkEd-dVeaMP0XXQw" name="186626002"/>
+      <ownedLiteral xmi:id="_1cJa0KFkEd-dVeaMP0XXQw" name="424099008"/>
+      <ownedLiteral xmi:id="_1cJa0qFkEd-dVeaMP0XXQw" name="235864009"/>
+      <ownedLiteral xmi:id="_1cJa1KFkEd-dVeaMP0XXQw" name="76795007"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1cMeIKFkEd-dVeaMP0XXQw" name="Disease Type (Anthrax)">
+      <ownedLiteral xmi:id="_1cPhcKFkEd-dVeaMP0XXQw" name="409498004"/>
+      <ownedLiteral xmi:id="_1cPhcqFkEd-dVeaMP0XXQw" name="195902009"/>
+      <ownedLiteral xmi:id="_1cPhdKFkEd-dVeaMP0XXQw" name="14972006"/>
+      <ownedLiteral xmi:id="_1cQIgaFkEd-dVeaMP0XXQw" name="84980006"/>
+      <ownedLiteral xmi:id="_1cQIg6FkEd-dVeaMP0XXQw" name="111798006"/>
+      <ownedLiteral xmi:id="_1cQIhaFkEd-dVeaMP0XXQw" name="11389007"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1cTL0KFkEd-dVeaMP0XXQw" name="Disease Type (Hepatitis)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1cZScKFkEd-dVeaMP0XXQw" name="Disease Type (STD)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1chOQKFkEd-dVeaMP0XXQw" name="Disease Type (TB)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1cn78KFkEd-dVeaMP0XXQw" name="Disease Type (Tularemia)">
+      <ownedLiteral xmi:id="_1crmUKFkEd-dVeaMP0XXQw" name="186293006"/>
+      <ownedLiteral xmi:id="_1crmUqFkEd-dVeaMP0XXQw" name="398599000"/>
+      <ownedLiteral xmi:id="_1crmVKFkEd-dVeaMP0XXQw" name="34023009"/>
+      <ownedLiteral xmi:id="_1crmVqFkEd-dVeaMP0XXQw" name="21857006"/>
+      <ownedLiteral xmi:id="_1csNYKFkEd-dVeaMP0XXQw" name="73363000"/>
+      <ownedLiteral xmi:id="_1csNYqFkEd-dVeaMP0XXQw" name="398575000"/>
+      <ownedLiteral xmi:id="_1csNZKFkEd-dVeaMP0XXQw" name="45556008"/>
+      <ownedLiteral xmi:id="_1csNZqFkEd-dVeaMP0XXQw" name="19265001"/>
+      <ownedLiteral xmi:id="_1cs0cKFkEd-dVeaMP0XXQw" name="398554008"/>
+      <ownedLiteral xmi:id="_1cs0cqFkEd-dVeaMP0XXQw" name="37722001"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1cv3wKFkEd-dVeaMP0XXQw" name="Drug Susceptibility Test Result Name"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1dL8oKFkEd-dVeaMP0XXQw" name="Ethnicity group">
+      <ownedLiteral xmi:id="_1dPnAKFkEd-dVeaMP0XXQw" name="2135-2"/>
+      <ownedLiteral xmi:id="_1dPnAqFkEd-dVeaMP0XXQw" name="2186-5"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1dTRYKFkEd-dVeaMP0XXQw" name="Exposure Location">
+      <ownedLiteral xmi:id="_1dWUsKFkEd-dVeaMP0XXQw" name="224864007"/>
+      <ownedLiteral xmi:id="_1dWUsqFkEd-dVeaMP0XXQw" name="285202004"/>
+      <ownedLiteral xmi:id="_1dW7wKFkEd-dVeaMP0XXQw" name="1348009"/>
+      <ownedLiteral xmi:id="_1dW7wqFkEd-dVeaMP0XXQw" name="PHC46"/>
+      <ownedLiteral xmi:id="_1dcbUaFkEd-dVeaMP0XXQw" name="264362003"/>
+      <ownedLiteral xmi:id="_1dcbU6FkEd-dVeaMP0XXQw" name="22232009"/>
+      <ownedLiteral xmi:id="_1ddCYKFkEd-dVeaMP0XXQw" name="PHC221"/>
+      <ownedLiteral xmi:id="_1dgFsKFkEd-dVeaMP0XXQw" name="8434001"/>
+      <ownedLiteral xmi:id="_1dgFsqFkEd-dVeaMP0XXQw" name="46274009"/>
+      <ownedLiteral xmi:id="_1dgFtKFkEd-dVeaMP0XXQw" name="C0680668"/>
+      <ownedLiteral xmi:id="_1dllQqFkEd-dVeaMP0XXQw" name="PHC62"/>
+      <ownedLiteral xmi:id="_1dpPoKFkEd-dVeaMP0XXQw" name="32074000"/>
+      <ownedLiteral xmi:id="_1dpPoqFkEd-dVeaMP0XXQw" name="282E00000X"/>
+      <ownedLiteral xmi:id="_1dsS8KFkEd-dVeaMP0XXQw" name="C0028688"/>
+      <ownedLiteral xmi:id="_1dv9UKFkEd-dVeaMP0XXQw" name="283Q00000X"/>
+      <ownedLiteral xmi:id="_1dzAoKFkEd-dVeaMP0XXQw" name="C0035187"/>
+      <ownedLiteral xmi:id="_1d2D8KFkEd-dVeaMP0XXQw" name="257698009"/>
+      <ownedLiteral xmi:id="_1d2rAKFkEd-dVeaMP0XXQw" name="324500000X "/>
+      <ownedLiteral xmi:id="_1d5uUKFkEd-dVeaMP0XXQw" name="285141008"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1d9YsKFkEd-dVeaMP0XXQw" name="Geographical location history"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1eGioKFkEd-dVeaMP0XXQw" name="HIV Status (PHCR)">
+      <ownedLiteral xmi:id="_1eMpQKFkEd-dVeaMP0XXQw" name="165815009"/>
+      <ownedLiteral xmi:id="_1eMpQqFkEd-dVeaMP0XXQw" name="165816005"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1eQ6sKFkEd-dVeaMP0XXQw" name="Industry (NAICS)"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1engAKFkEd-dVeaMP0XXQw" name="Lab Test Result Name"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1hTnoKFkEd-dVeaMP0XXQw" name="Lab Test Result Name (Acute Hepatitis B)">
+      <ownedLiteral xmi:id="_1hXSAKFkEd-dVeaMP0XXQw" name="1742-6"/>
+      <ownedLiteral xmi:id="_1hXSAqFkEd-dVeaMP0XXQw" name="1920-8"/>
+      <ownedLiteral xmi:id="_1hX5EKFkEd-dVeaMP0XXQw" name="13950-1"/>
+      <ownedLiteral xmi:id="_1hX5EqFkEd-dVeaMP0XXQw" name="22315-6"/>
+      <ownedLiteral xmi:id="_1hX5FKFkEd-dVeaMP0XXQw" name="5185-4"/>
+      <ownedLiteral xmi:id="_1hX5FqFkEd-dVeaMP0XXQw" name="31204-1"/>
+      <ownedLiteral xmi:id="_1hYgIKFkEd-dVeaMP0XXQw" name="47364-5"/>
+      <ownedLiteral xmi:id="_1hYgIqFkEd-dVeaMP0XXQw" name="5195-3"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1hcxkKFkEd-dVeaMP0XXQw" name="Lab Test Result Name (Anthrax)">
+      <ownedLiteral xmi:id="_1hgb8KFkEd-dVeaMP0XXQw" name="11468-6"/>
+      <ownedLiteral xmi:id="_1hgb8qFkEd-dVeaMP0XXQw" name="33697-4"/>
+      <ownedLiteral xmi:id="_1hgb9KFkEd-dVeaMP0XXQw" name="22866-8"/>
+      <ownedLiteral xmi:id="_1hgb9qFkEd-dVeaMP0XXQw" name="22867-6"/>
+      <ownedLiteral xmi:id="_1hhDAaFkEd-dVeaMP0XXQw" name="51976-9"/>
+      <ownedLiteral xmi:id="_1hhDA6FkEd-dVeaMP0XXQw" name="44269-9"/>
+      <ownedLiteral xmi:id="_1hhDBaFkEd-dVeaMP0XXQw" name="33698-2"/>
+      <ownedLiteral xmi:id="_1hhqEKFkEd-dVeaMP0XXQw" name="44270-7"/>
+      <ownedLiteral xmi:id="_1hhqEqFkEd-dVeaMP0XXQw" name="11469-4"/>
+      <ownedLiteral xmi:id="_1hhqFKFkEd-dVeaMP0XXQw" name="17928-3"/>
+      <ownedLiteral xmi:id="_1hhqFqFkEd-dVeaMP0XXQw" name="17915-0"/>
+      <ownedLiteral xmi:id="_1hiRIaFkEd-dVeaMP0XXQw" name="622-1"/>
+      <ownedLiteral xmi:id="_1hiRI6FkEd-dVeaMP0XXQw" name="21020-3"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1ht3UKFkEd-dVeaMP0XXQw" name="Lab Test Result Name (Tularemia)">
+      <ownedLiteral xmi:id="_1hyIwKFkEd-dVeaMP0XXQw" name="16875-7"/>
+      <ownedLiteral xmi:id="_1hyIwqFkEd-dVeaMP0XXQw" name="23125-8"/>
+      <ownedLiteral xmi:id="_1hyIxKFkEd-dVeaMP0XXQw" name="5167-2"/>
+      <ownedLiteral xmi:id="_1hyIxqFkEd-dVeaMP0XXQw" name="33683-4 "/>
+      <ownedLiteral xmi:id="_1hyv0aFkEd-dVeaMP0XXQw" name="33684-2"/>
+      <ownedLiteral xmi:id="_1hyv06FkEd-dVeaMP0XXQw" name="33678-4"/>
+      <ownedLiteral xmi:id="_1hyv1aFkEd-dVeaMP0XXQw" name="16879-9"/>
+      <ownedLiteral xmi:id="_1hyv16FkEd-dVeaMP0XXQw" name="23127-4"/>
+      <ownedLiteral xmi:id="_1hzW4aFkEd-dVeaMP0XXQw" name="6408-9"/>
+      <ownedLiteral xmi:id="_1hzW46FkEd-dVeaMP0XXQw" name="33466-4"/>
+      <ownedLiteral xmi:id="_1hzW5aFkEd-dVeaMP0XXQw" name="33677-6"/>
+      <ownedLiteral xmi:id="_1hz98KFkEd-dVeaMP0XXQw" name="33676-8"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1h3oUKFkEd-dVeaMP0XXQw" name="Location performing blood or body fluid exposure procedure "/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1iALMKFkEd-dVeaMP0XXQw" name="Material exposure type"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1iQC0KFkEd-dVeaMP0XXQw" name="Medication Route FDA Value Set"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1iX-oKFkEd-dVeaMP0XXQw" name="Medication Treatment (Anthrax)">
+      <ownedLiteral xmi:id="_1icQEKFkEd-dVeaMP0XXQw" name="804826J2HU "/>
+      <ownedLiteral xmi:id="_1icQEqFkEd-dVeaMP0XXQw" name="5E8K9I0O4U "/>
+      <ownedLiteral xmi:id="_1icQFKFkEd-dVeaMP0XXQw" name="N12000U13O"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1ighgKFkEd-dVeaMP0XXQw" name="Medication Treatment (TB)">
+      <ownedLiteral xmi:id="_1iky8KFkEd-dVeaMP0XXQw" name="84319SGC3C "/>
+      <ownedLiteral xmi:id="_1iky8qFkEd-dVeaMP0XXQw" name="232HYX66HC "/>
+      <ownedLiteral xmi:id="_1iky9KFkEd-dVeaMP0XXQw" name="95IK5KI84Z "/>
+      <ownedLiteral xmi:id="_1iky9qFkEd-dVeaMP0XXQw" name="8G167061QZ "/>
+      <ownedLiteral xmi:id="_1ilaAKFkEd-dVeaMP0XXQw" name="OAY8ORS3CQ "/>
+      <ownedLiteral xmi:id="_1ilaAqFkEd-dVeaMP0XXQw" name="V83O1VOZ8L "/>
+      <ownedLiteral xmi:id="_1ilaBKFkEd-dVeaMP0XXQw" name="RUC37XUP2P "/>
+      <ownedLiteral xmi:id="_1ilaBqFkEd-dVeaMP0XXQw" name="6GNT3Y5LMF  "/>
+      <ownedLiteral xmi:id="_1imBEaFkEd-dVeaMP0XXQw" name="U188XYD42P "/>
+      <ownedLiteral xmi:id="_1imBE6FkEd-dVeaMP0XXQw" name="5B2658E0N2"/>
+      <ownedLiteral xmi:id="_1imBFaFkEd-dVeaMP0XXQw" name="2KNI5N06TI "/>
+      <ownedLiteral xmi:id="_1imBF6FkEd-dVeaMP0XXQw" name="206702"/>
+      <ownedLiteral xmi:id="_1iqSgKFkEd-dVeaMP0XXQw" name="VJT6J7R4TR "/>
+      <ownedLiteral xmi:id="_1iqSgqFkEd-dVeaMP0XXQw" name="XJM390A33U "/>
+      <ownedLiteral xmi:id="_1iqShKFkEd-dVeaMP0XXQw" name="206698"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1i8mYKFkEd-dVeaMP0XXQw" name="Medication Treatment (Tularemia)">
+      <ownedLiteral xmi:id="_1jAQwKFkEd-dVeaMP0XXQw" name="T6Z9V48IKG"/>
+      <ownedLiteral xmi:id="_1jA30KFkEd-dVeaMP0XXQw" name="Y45QSO73OB"/>
+      <ownedLiteral xmi:id="_1jA30qFkEd-dVeaMP0XXQw" name="F8VB5M810T"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1jFwUKFkEd-dVeaMP0XXQw" name="Microorganism"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1kVtgKFkEd-dVeaMP0XXQw" name="Non-Laboratory Intervention and Procedure"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1o1L8KFkEd-dVeaMP0XXQw" name="Observation Interpretation (HL7)">
+      <ownedLiteral xmi:id="_1o75oqFkEd-dVeaMP0XXQw" name="A"/>
+      <ownedLiteral xmi:id="_1o8gsKFkEd-dVeaMP0XXQw" name="HX"/>
+      <ownedLiteral xmi:id="_1o8gsqFkEd-dVeaMP0XXQw" name="LX"/>
+      <ownedLiteral xmi:id="_1o8gtKFkEd-dVeaMP0XXQw" name="B"/>
+      <ownedLiteral xmi:id="_1o8gtqFkEd-dVeaMP0XXQw" name="Carrier"/>
+      <ownedLiteral xmi:id="_1o9HwaFkEd-dVeaMP0XXQw" name="D"/>
+      <ownedLiteral xmi:id="_1o9Hw6FkEd-dVeaMP0XXQw" name="U"/>
+      <ownedLiteral xmi:id="_1o9HxaFkEd-dVeaMP0XXQw" name="IND"/>
+      <ownedLiteral xmi:id="_1o9Hx6FkEd-dVeaMP0XXQw" name="I"/>
+      <ownedLiteral xmi:id="_1o9u0aFkEd-dVeaMP0XXQw" name="MS"/>
+      <ownedLiteral xmi:id="_1o9u06FkEd-dVeaMP0XXQw" name="NEG"/>
+      <ownedLiteral xmi:id="_1o9u1aFkEd-dVeaMP0XXQw" name="N"/>
+      <ownedLiteral xmi:id="_1o9u16FkEd-dVeaMP0XXQw" name="POS"/>
+      <ownedLiteral xmi:id="_1o-V4aFkEd-dVeaMP0XXQw" name="R"/>
+      <ownedLiteral xmi:id="_1o-V46FkEd-dVeaMP0XXQw" name="S"/>
+      <ownedLiteral xmi:id="_1o-V5aFkEd-dVeaMP0XXQw" name="VS"/>
+      <ownedLiteral xmi:id="_1o-V56FkEd-dVeaMP0XXQw" name="W"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1pD1cKFkEd-dVeaMP0XXQw" name="Occupation"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1pWwYKFkEd-dVeaMP0XXQw" name="Race Value Set"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1pi9oKFkEd-dVeaMP0XXQw" name="Signs and Symptoms (Acute Hepatitis B)">
+      <ownedLiteral xmi:id="_1pn2IKFkEd-dVeaMP0XXQw" name="84387000"/>
+      <ownedLiteral xmi:id="_1pn2IqFkEd-dVeaMP0XXQw" name="18165001"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1psuoKFkEd-dVeaMP0XXQw" name="Signs and Symptoms (Anthrax)">
+      <ownedLiteral xmi:id="_1pxnIKFkEd-dVeaMP0XXQw" name="21522001"/>
+      <ownedLiteral xmi:id="_1pxnIqFkEd-dVeaMP0XXQw" name="84387000"/>
+      <ownedLiteral xmi:id="_1pxnJKFkEd-dVeaMP0XXQw" name="29857009"/>
+      <ownedLiteral xmi:id="_1pxnJqFkEd-dVeaMP0XXQw" name="43724002"/>
+      <ownedLiteral xmi:id="_1pyOMKFkEd-dVeaMP0XXQw" name="PHC819"/>
+      <ownedLiteral xmi:id="_1p14kKFkEd-dVeaMP0XXQw" name="62315008"/>
+      <ownedLiteral xmi:id="_1p2foaFkEd-dVeaMP0XXQw" name="230145002"/>
+      <ownedLiteral xmi:id="_1p2fo6FkEd-dVeaMP0XXQw" name="267038008"/>
+      <ownedLiteral xmi:id="_1p2fpaFkEd-dVeaMP0XXQw" name="386661006"/>
+      <ownedLiteral xmi:id="_1p3GsKFkEd-dVeaMP0XXQw" name="25064002"/>
+      <ownedLiteral xmi:id="_1p3GsqFkEd-dVeaMP0XXQw" name="30746006"/>
+      <ownedLiteral xmi:id="_1p3GtKFkEd-dVeaMP0XXQw" name="409596002"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1p7_MKFkEd-dVeaMP0XXQw" name="Signs and Symptoms (TB)">
+      <ownedLiteral xmi:id="_1qA3sKFkEd-dVeaMP0XXQw" name="84387000"/>
+      <ownedLiteral xmi:id="_1qA3sqFkEd-dVeaMP0XXQw" name="29857009"/>
+      <ownedLiteral xmi:id="_1qA3tKFkEd-dVeaMP0XXQw" name="43724002"/>
+      <ownedLiteral xmi:id="_1qA3tqFkEd-dVeaMP0XXQw" name="386661006"/>
+      <ownedLiteral xmi:id="_1qBewaFkEd-dVeaMP0XXQw" name="66857006"/>
+      <ownedLiteral xmi:id="_1qBew6FkEd-dVeaMP0XXQw" name="42984000"/>
+      <ownedLiteral xmi:id="_1qBexaFkEd-dVeaMP0XXQw" name="409596002"/>
+      <ownedLiteral xmi:id="_1qBex6FkEd-dVeaMP0XXQw" name="28743005"/>
+      <ownedLiteral xmi:id="_1qCF0aFkEd-dVeaMP0XXQw" name="89362005"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1qG-UKFkEd-dVeaMP0XXQw" name="Signs and Symptoms (Tularemia)">
+      <ownedLiteral xmi:id="_1qLPwKFkEd-dVeaMP0XXQw" name="21522001"/>
+      <ownedLiteral xmi:id="_1qL20aFkEd-dVeaMP0XXQw" name="84387000"/>
+      <ownedLiteral xmi:id="_1qL206FkEd-dVeaMP0XXQw" name="29857009"/>
+      <ownedLiteral xmi:id="_1qL21aFkEd-dVeaMP0XXQw" name="43724002"/>
+      <ownedLiteral xmi:id="_1qMd4KFkEd-dVeaMP0XXQw" name="9826008"/>
+      <ownedLiteral xmi:id="_1qMd4qFkEd-dVeaMP0XXQw" name="49727002"/>
+      <ownedLiteral xmi:id="_1qMd5KFkEd-dVeaMP0XXQw" name="62315008"/>
+      <ownedLiteral xmi:id="_1qMd5qFkEd-dVeaMP0XXQw" name="267036007"/>
+      <ownedLiteral xmi:id="_1qNE8KFkEd-dVeaMP0XXQw" name="386661006"/>
+      <ownedLiteral xmi:id="_1qNE8qFkEd-dVeaMP0XXQw" name="25064002"/>
+      <ownedLiteral xmi:id="_1qNE9KFkEd-dVeaMP0XXQw" name="57676002"/>
+      <ownedLiteral xmi:id="_1qNE9qFkEd-dVeaMP0XXQw" name="30746006"/>
+      <ownedLiteral xmi:id="_1qNsAaFkEd-dVeaMP0XXQw" name="367391008"/>
+      <ownedLiteral xmi:id="_1qNsA6FkEd-dVeaMP0XXQw" name="7180009"/>
+      <ownedLiteral xmi:id="_1qNsBaFkEd-dVeaMP0XXQw" name="68962001"/>
+      <ownedLiteral xmi:id="_1qOTEKFkEd-dVeaMP0XXQw" name="422587007"/>
+      <ownedLiteral xmi:id="_1qOTEqFkEd-dVeaMP0XXQw" name="162397003"/>
+      <ownedLiteral xmi:id="_1qOTFKFkEd-dVeaMP0XXQw" name="405737000"/>
+      <ownedLiteral xmi:id="_1qOTFqFkEd-dVeaMP0XXQw" name="233604007"/>
+      <ownedLiteral xmi:id="_1qO6IKFkEd-dVeaMP0XXQw" name="46742003"/>
+      <ownedLiteral xmi:id="_1qO6IqFkEd-dVeaMP0XXQw" name="270031000"/>
+      <ownedLiteral xmi:id="_1qO6JKFkEd-dVeaMP0XXQw" name="91302008"/>
+      <ownedLiteral xmi:id="_1qO6JqFkEd-dVeaMP0XXQw" name="422400008"/>
+      <ownedLiteral xmi:id="_1qPhMKFkEd-dVeaMP0XXQw" name="89362005"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1qUZsKFkEd-dVeaMP0XXQw" name="Sociobehavioral risk factor">
+      <ownedLiteral xmi:id="_1qYrIKFkEd-dVeaMP0XXQw" name="160592001"/>
+      <ownedLiteral xmi:id="_1qZSMaFkEd-dVeaMP0XXQw" name="32911000"/>
+      <ownedLiteral xmi:id="_1qZSM6FkEd-dVeaMP0XXQw" name="45361006"/>
+      <ownedLiteral xmi:id="_1qZSNaFkEd-dVeaMP0XXQw" name="226034001"/>
+      <ownedLiteral xmi:id="_1qZSN6FkEd-dVeaMP0XXQw" name="413096007"/>
+      <ownedLiteral xmi:id="_1qZ5QaFkEd-dVeaMP0XXQw" name="55211-7"/>
+      <ownedLiteral xmi:id="_1qeKsKFkEd-dVeaMP0XXQw" name="228395002"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1qjqQKFkEd-dVeaMP0XXQw" name="Specimen"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1qzh4KFkEd-dVeaMP0XXQw" name="Treatment status">
+      <ownedLiteral xmi:id="_1q4aYKFkEd-dVeaMP0XXQw" name="55561003"/>
+      <ownedLiteral xmi:id="_1q4aYqFkEd-dVeaMP0XXQw" name="392521001"/>
+      <ownedLiteral xmi:id="_1q4aZKFkEd-dVeaMP0XXQw" name="421139008"/>
+      <ownedLiteral xmi:id="_1q4aZqFkEd-dVeaMP0XXQw" name="73425007"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_1q958KFkEd-dVeaMP0XXQw" name="Vaccine Administered (Hepatitis B)">
+      <ownedLiteral xmi:id="_1rCycKFkEd-dVeaMP0XXQw" name="104"/>
+      <ownedLiteral xmi:id="_1rCycqFkEd-dVeaMP0XXQw" name="30"/>
+      <ownedLiteral xmi:id="_1rDZgKFkEd-dVeaMP0XXQw" name="42"/>
+      <ownedLiteral xmi:id="_1rDZgqFkEd-dVeaMP0XXQw" name="43"/>
+      <ownedLiteral xmi:id="_1rDZhKFkEd-dVeaMP0XXQw" name="44"/>
+      <ownedLiteral xmi:id="_1rDZhqFkEd-dVeaMP0XXQw" name="45"/>
+      <ownedLiteral xmi:id="_1rEAkaFkEd-dVeaMP0XXQw" name="08"/>
+    </packagedElement>
+    <profileApplication xmi:id="_H1PoACF_Ed-M3adQxwHq4g">
+      <eAnnotations xmi:id="_H1Q2ICF_Ed-M3adQxwHq4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schemas/term/1#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
+    </profileApplication>
+  </uml:Package>
+  <term:ValueSetVersion xmi:id="_qtKRkCvREd-YuK1P6utw_g" identifier="2.16.840.1.114222.4.11.3205" version="1" fullName="Lab Test Result Name (TB)" source="Centers for Disease Control and Prevention (CDC)" url="http://phinvads.cdc.gov/vads/ViewValueSet.action?id=A0E75E17-176B-DE11-9B52-0015173D1785" definition="Tuberculosis lab test result name value set is based upon the Lab LOINC concepts that are defined in the CSTE standardized reporting definition for Tuberculosis." effectiveDate="20090722" revisionDate="07/07/2009" base_Enumeration="_qtDj4CvREd-YuK1P6utw_g">
+    <codeSystem href="CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_Pji7wCvYEd--M_Sc3xIupg" conceptName="Acid fast Kiny Stn Gast"/>
+  <term:ValueSetCode xmi:id="_XfEn4CvYEd--M_Sc3xIupg" conceptName="Acid fast Kiny Stn Spt"/>
+  <term:ValueSetCode xmi:id="_bQ-zQSvYEd--M_Sc3xIupg" conceptName="Acid fast Kiny Stn Tiss"/>
+  <term:ValueSetCode xmi:id="_hgpagCvYEd--M_Sc3xIupg" conceptName="Acid fast Kiny Stn Ur"/>
+  <term:ValueSetVersion xmi:id="_1YEzIKFkEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.1.11.1" version="1" fullName="Administrative Gender (HL7 V3)" definition="Administrative Gender based upon HL7 V3 vocabulary. This value set contains only male, female and undifferentiated concepts." revisionDate="07/07/2009" base_Enumeration="_1Vh1cKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_VXEOQCF_Ed-M3adQxwHq4g"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1YHPYaFkEd-dVeaMP0XXQw" conceptName="Female" usageNote="AdministrativeGender" base_EnumerationLiteral="_1YHPYKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1YH2caFkEd-dVeaMP0XXQw" conceptName="Male" usageNote="AdministrativeGender" base_EnumerationLiteral="_1YH2cKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1YH2c6FkEd-dVeaMP0XXQw" conceptName="Undifferentiated" usageNote="AdministrativeGender" base_EnumerationLiteral="_1YH2cqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1YKSsaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.1074" version="4" fullName="Animal" definition="Animal Keyword: Animal Type" revisionDate="10/22/2008" base_Enumeration="_1YKSsKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1ZcsIaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3200" version="1" fullName="Birth Country" definition="Country of Birth value set includes current countries as well as historical countries (eg. USSR). This value set is based upon ISO 3166-1, Alpha-3 codes (current countries), ISO 3166-3 (retired countries) and FIPS 10-4 (US Territories, Countries that are not found in ISO 3166)" revisionDate="07/07/2009" base_Enumeration="_1ZcsIKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_1ZiywKFkEd-dVeaMP0XXQw"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1ZlPAaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3224" version="1" fullName="Blood or body fluid exposure event" definition="Blood or Body Fluid Exposure Event value set has data elements or questions that captures the risk for transmission of disease based on Blood or Body Fluid exposure. This value set is based upon Clinical LOINC. Most of these data elements are occupational risk factors." revisionDate="07/07/2009" base_Enumeration="_1ZlPAKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1ZoSUKFkEd-dVeaMP0XXQw" conceptName="Actual exposure to human blood" usageNote="LOINC" base_EnumerationLiteral="_1ZnrQKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1ZoSUqFkEd-dVeaMP0XXQw" conceptName="Number of female sexual partners in the past 6 months" usageNote="LOINC" base_EnumerationLiteral="_1ZoSUaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1ZoSVKFkEd-dVeaMP0XXQw" conceptName="Number of male sexual partners in the past 6 months" usageNote="LOINC" base_EnumerationLiteral="_1ZoSU6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1ZoSVqFkEd-dVeaMP0XXQw" conceptName="Physical assault with blood or semen" usageNote="LOINC" base_EnumerationLiteral="_1ZoSVaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1Zo5YKFkEd-dVeaMP0XXQw" conceptName="Blood contaminated needle stick or puncture" usageNote="LOINC" base_EnumerationLiteral="_1ZoSV6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1Zo5YqFkEd-dVeaMP0XXQw" conceptName="Sexual Partner.Total" usageNote="LOINC" base_EnumerationLiteral="_1Zo5YaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1Zr8saFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3225" version="1" fullName="Blood or body fluid exposure frequency" definition="Blood or body fluid exposure frequency value set has qualitative concepts that expresses the frequency such as frequent and infrequent. This value set is based upon SNOMED CT Qualifier domain (Frequencies - subdomain)" revisionDate="07/07/2009" base_Enumeration="_1Zr8sKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1ZuY8aFkEd-dVeaMP0XXQw" conceptName="Frequent" usageNote="SNOMED-CT" base_EnumerationLiteral="_1ZuY8KFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1ZvAAaFkEd-dVeaMP0XXQw" conceptName="Infrequent" usageNote="SNOMED-CT" base_EnumerationLiteral="_1ZvAAKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1ZxcQaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3226" version="1" fullName="Blood or body fluid exposure related procedure" definition="Procedures involving blood or body fluid exposure. These procedures are considered as risk factors especially for bloodborne infectious diseases such as HIV, Hepatitis B and C. This value set is based upon SNOMED CT Procedure domain." revisionDate="07/07/2009" base_Enumeration="_1ZxcQKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1Z0fkaFkEd-dVeaMP0XXQw" conceptName="Acupuncture" usageNote="SNOMED-CT" base_EnumerationLiteral="_1Z0fkKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1Z1GoKFkEd-dVeaMP0XXQw" conceptName="Hemodialysis" usageNote="SNOMED-CT" base_EnumerationLiteral="_1Z0fkqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1Z1GoqFkEd-dVeaMP0XXQw" conceptName="Intravenous infusion" usageNote="SNOMED-CT" base_EnumerationLiteral="_1Z1GoaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1Z1GpKFkEd-dVeaMP0XXQw" conceptName="Piercing of ear lobe" usageNote="SNOMED-CT" base_EnumerationLiteral="_1Z1Go6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1Z1GpqFkEd-dVeaMP0XXQw" conceptName="Piercing of external ear" usageNote="SNOMED-CT" base_EnumerationLiteral="_1Z1GpaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1Z1tsKFkEd-dVeaMP0XXQw" conceptName="Piercing of genital structure" usageNote="SNOMED-CT" base_EnumerationLiteral="_1Z1Gp6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1Z1tsqFkEd-dVeaMP0XXQw" conceptName="Piercing of nail" usageNote="SNOMED-CT" base_EnumerationLiteral="_1Z1tsaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1Z1ttKFkEd-dVeaMP0XXQw" conceptName="Piercing of tongue" usageNote="SNOMED-CT" base_EnumerationLiteral="_1Z1ts6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1Z1ttqFkEd-dVeaMP0XXQw" conceptName="Piercing of umbilicus" usageNote="SNOMED-CT" base_EnumerationLiteral="_1Z1ttaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1Z2UwKFkEd-dVeaMP0XXQw" conceptName="Procedure on oral cavity" usageNote="SNOMED-CT" base_EnumerationLiteral="_1Z1tt6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1Z2UwqFkEd-dVeaMP0XXQw" conceptName="Puncture procedure" usageNote="SNOMED-CT" base_EnumerationLiteral="_1Z2UwaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1Z2UxKFkEd-dVeaMP0XXQw" conceptName="Surgical procedure" usageNote="SNOMED-CT" base_EnumerationLiteral="_1Z2Uw6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1Z2UxqFkEd-dVeaMP0XXQw" conceptName="Tattooing" usageNote="SNOMED-CT" base_EnumerationLiteral="_1Z2UxaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1Z270KFkEd-dVeaMP0XXQw" conceptName="Transfusion of blood product" usageNote="SNOMED-CT" base_EnumerationLiteral="_1Z2Ux6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1Z270qFkEd-dVeaMP0XXQw" conceptName="Transplantation" usageNote="SNOMED-CT" base_EnumerationLiteral="_1Z270aFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1Z5_IKFkEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.3.88.12.3221.8.9" version="2" fullName="Body Site Value Set" definition="Body site value set is based upon the concepts descending from the SNOMED CT Anatomical Structure (91723000) hierarchy." revisionDate="07/07/2009" base_Enumeration="_1Z5YEKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1cFJYaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3221" version="1" fullName="Disease Type (Acute Hepatitis B)" definition="Acute hepatitis B disease type value set has problems or disease related to Acute Hepatitis B. This value set is based upon SNOMED CT" revisionDate="07/07/2009" base_Enumeration="_1cFJYKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1cIzwaFkEd-dVeaMP0XXQw" conceptName="Acute fulminating type B viral hepatitis" usageNote="SNOMED-CT" base_EnumerationLiteral="_1cIzwKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1cIzw6FkEd-dVeaMP0XXQw" conceptName="Acute hepatitis B with delta agent (coinfection) with hepatic coma" usageNote="SNOMED-CT" base_EnumerationLiteral="_1cIzwqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1cIzxaFkEd-dVeaMP0XXQw" conceptName="Acute hepatitis B with delta-agent (coinfection) without hepatic coma" usageNote="SNOMED-CT" base_EnumerationLiteral="_1cIzxKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1cJa0aFkEd-dVeaMP0XXQw" conceptName="Acute hepatitis B with hepatic coma" usageNote="SNOMED-CT" base_EnumerationLiteral="_1cJa0KFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1cJa06FkEd-dVeaMP0XXQw" conceptName="Acute hepatitis B with hepatitis D" usageNote="SNOMED-CT" base_EnumerationLiteral="_1cJa0qFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1cJa1aFkEd-dVeaMP0XXQw" conceptName="Acute type B viral hepatitis" usageNote="SNOMED-CT" base_EnumerationLiteral="_1cJa1KFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1cMeIaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3220" version="1" fullName="Disease Type (Anthrax)" definition="Anthrax disease type value set has problems or disease related to Anthrax. This value set is based upon SNOMED CT" revisionDate="07/07/2009" base_Enumeration="_1cMeIKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1cPhcaFkEd-dVeaMP0XXQw" conceptName="Anthrax" usageNote="SNOMED-CT" base_EnumerationLiteral="_1cPhcKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1cPhc6FkEd-dVeaMP0XXQw" conceptName="Anthrax pneumonia" usageNote="SNOMED-CT" base_EnumerationLiteral="_1cPhcqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1cQIgKFkEd-dVeaMP0XXQw" conceptName="Anthrax septicemia" usageNote="SNOMED-CT" base_EnumerationLiteral="_1cPhdKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1cQIgqFkEd-dVeaMP0XXQw" conceptName="Cutaneous anthrax" usageNote="SNOMED-CT" base_EnumerationLiteral="_1cQIgaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1cQIhKFkEd-dVeaMP0XXQw" conceptName="Gastrointestinal anthrax" usageNote="SNOMED-CT" base_EnumerationLiteral="_1cQIg6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1cQIhqFkEd-dVeaMP0XXQw" conceptName="Inhalational anthrax" usageNote="SNOMED-CT" base_EnumerationLiteral="_1cQIhaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1cTL0aFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3230" version="1" fullName="Disease Type (Hepatitis)" definition="Hepatitis disease type value set has problems or disease related to hepatitis. This value set is based upon SNOMED CT." revisionDate="07/07/2009" base_Enumeration="_1cTL0KFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1cZScaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3231" version="2" fullName="Disease Type (STD)" definition="Sexually Transmitted Disease type value set has problems or disease related to STD. This value set is based upon SNOMED CT." revisionDate="07/07/2009" base_Enumeration="_1cZScKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1chOQaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3222" version="1" fullName="Disease Type (TB)" definition="Tuberculosis disease type value set has problems or disease related to Tuberculosis. This value set is based upon SNOMED CT." revisionDate="07/07/2009" base_Enumeration="_1chOQKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1cn78aFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3223" version="1" fullName="Disease Type (Tularemia)" definition="Tularemia disease type value set has problems or disease related to Tularemia. This value set is based upon SNOMED CT." revisionDate="07/07/2009" base_Enumeration="_1cn78KFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1crmUaFkEd-dVeaMP0XXQw" conceptName="Cryptogenic tularemia" usageNote="SNOMED-CT" base_EnumerationLiteral="_1crmUKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1crmU6FkEd-dVeaMP0XXQw" conceptName="Enteric tularemia" usageNote="SNOMED-CT" base_EnumerationLiteral="_1crmUqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1crmVaFkEd-dVeaMP0XXQw" conceptName="Generalized tularemia" usageNote="SNOMED-CT" base_EnumerationLiteral="_1crmVKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1crmV6FkEd-dVeaMP0XXQw" conceptName="Glandular tularemia" usageNote="SNOMED-CT" base_EnumerationLiteral="_1crmVqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1csNYaFkEd-dVeaMP0XXQw" conceptName="Oculoglandular tularemia" usageNote="SNOMED-CT" base_EnumerationLiteral="_1csNYKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1csNY6FkEd-dVeaMP0XXQw" conceptName="Oropharyngeal tularemia" usageNote="SNOMED-CT" base_EnumerationLiteral="_1csNYqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1csNZaFkEd-dVeaMP0XXQw" conceptName="Pulmonary tularemia" usageNote="SNOMED-CT" base_EnumerationLiteral="_1csNZKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1csNZ6FkEd-dVeaMP0XXQw" conceptName="Tularemia" usageNote="SNOMED-CT" base_EnumerationLiteral="_1csNZqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1cs0caFkEd-dVeaMP0XXQw" conceptName="Typhoidal tularemia" usageNote="SNOMED-CT" base_EnumerationLiteral="_1cs0cKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1cs0c6FkEd-dVeaMP0XXQw" conceptName="Ulceroglandular tularemia" usageNote="SNOMED-CT" base_EnumerationLiteral="_1cs0cqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1cv3waFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.1071" version="3" fullName="Drug Susceptibility Test Result Name" definition="Drug / Antimicrobial Test Result Name" revisionDate="10/22/2008" base_Enumeration="_1cv3wKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1dMjsKFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.837" version="1" fullName="Ethnicity group" definition="Whether the patient is hispanic or not" revisionDate="10/22/2008" base_Enumeration="_1dL8oKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_dfdYoKDqEd-dVeaMP0XXQw"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1dPnAaFkEd-dVeaMP0XXQw" conceptName="Hispanic or Latino" usageNote="Race &amp; Ethnicity - CDC" base_EnumerationLiteral="_1dPnAKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1dPnA6FkEd-dVeaMP0XXQw" conceptName="Not Hispanic or Latino" usageNote="Race &amp; Ethnicity - CDC" base_EnumerationLiteral="_1dPnAqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1dTRYaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3209" version="1" fullName="Exposure Location" definition="Locations that have been identified by public health departments as locations that have been associated with higher risk of coming into contact with infectious diseases such as tuberculosis and Hepatitis B" revisionDate="07/07/2009" base_Enumeration="_1dTRYKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1dWUsaFkEd-dVeaMP0XXQw" conceptName="College" usageNote="SNOMED-CT" base_EnumerationLiteral="_1dWUsKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1dWUs6FkEd-dVeaMP0XXQw" conceptName="Community environment" usageNote="SNOMED-CT" base_EnumerationLiteral="_1dWUsqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1dW7waFkEd-dVeaMP0XXQw" conceptName="Day care center" usageNote="SNOMED-CT" base_EnumerationLiteral="_1dW7wKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1dW7w6FkEd-dVeaMP0XXQw" conceptName="Federal Prison" usageNote="PHIN VS (CDC Local Coding System)" base_EnumerationLiteral="_1dW7wqFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_1dcbUKFkEd-dVeaMP0XXQw"/>
+  </term:ValueSetCode>
+  <term:ValueSetCode xmi:id="_1dcbUqFkEd-dVeaMP0XXQw" conceptName="Home" usageNote="SNOMED-CT" base_EnumerationLiteral="_1dcbUaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1dcbVKFkEd-dVeaMP0XXQw" conceptName="Hospital" usageNote="SNOMED-CT" base_EnumerationLiteral="_1dcbU6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1ddCYaFkEd-dVeaMP0XXQw" conceptName="Hospital-Based Facility" usageNote="PHIN VS (CDC Local Coding System)" base_EnumerationLiteral="_1ddCYKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_1dcbUKFkEd-dVeaMP0XXQw"/>
+  </term:ValueSetCode>
+  <term:ValueSetCode xmi:id="_1dgFsaFkEd-dVeaMP0XXQw" conceptName="Jail" usageNote="SNOMED-CT" base_EnumerationLiteral="_1dgFsKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1dgFs6FkEd-dVeaMP0XXQw" conceptName="Jet airplane" usageNote="SNOMED-CT" base_EnumerationLiteral="_1dgFsqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1dgFtaFkEd-dVeaMP0XXQw" conceptName="Juvenile Correctional Facility" usageNote="UMLS" base_EnumerationLiteral="_1dgFtKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_1dllQaFkEd-dVeaMP0XXQw"/>
+  </term:ValueSetCode>
+  <term:ValueSetCode xmi:id="_1dmMUKFkEd-dVeaMP0XXQw" conceptName="Local Jail" usageNote="PHIN VS (CDC Local Coding System)" base_EnumerationLiteral="_1dllQqFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_1dcbUKFkEd-dVeaMP0XXQw"/>
+  </term:ValueSetCode>
+  <term:ValueSetCode xmi:id="_1dpPoaFkEd-dVeaMP0XXQw" conceptName="Long term care hospital" usageNote="SNOMED-CT" base_EnumerationLiteral="_1dpPoKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1dpPo6FkEd-dVeaMP0XXQw" conceptName="Long-Term Care Facility Healthcare " usageNote="Healthcare Provider Taxonomy (HIPAA)" base_EnumerationLiteral="_1dpPoqFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_dH_64aDqEd-dVeaMP0XXQw"/>
+  </term:ValueSetCode>
+  <term:ValueSetCode xmi:id="_1ds6AKFkEd-dVeaMP0XXQw" conceptName="Nursing Home" usageNote="UMLS" base_EnumerationLiteral="_1dsS8KFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_1dllQaFkEd-dVeaMP0XXQw"/>
+  </term:ValueSetCode>
+  <term:ValueSetCode xmi:id="_1dv9UaFkEd-dVeaMP0XXQw" conceptName="Psychiatric Hospital" usageNote="Healthcare Provider Taxonomy (HIPAA)" base_EnumerationLiteral="_1dv9UKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_dH_64aDqEd-dVeaMP0XXQw"/>
+  </term:ValueSetCode>
+  <term:ValueSetCode xmi:id="_1dzAoaFkEd-dVeaMP0XXQw" conceptName="Residential Facility" usageNote="UMLS" base_EnumerationLiteral="_1dzAoKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_1dllQaFkEd-dVeaMP0XXQw"/>
+  </term:ValueSetCode>
+  <term:ValueSetCode xmi:id="_1d2D8aFkEd-dVeaMP0XXQw" conceptName="School" usageNote="SNOMED-CT" base_EnumerationLiteral="_1d2D8KFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1d2rAaFkEd-dVeaMP0XXQw" conceptName="Substance Abuse Disorder Rehabilitation" usageNote="Healthcare Provider Taxonomy (HIPAA)" base_EnumerationLiteral="_1d2rAKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_dH_64aDqEd-dVeaMP0XXQw"/>
+  </term:ValueSetCode>
+  <term:ValueSetCode xmi:id="_1d5uUaFkEd-dVeaMP0XXQw" conceptName="Work environment" usageNote="SNOMED-CT" base_EnumerationLiteral="_1d5uUKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1d9YsaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3201" version="1" fullName="Geographical location history" definition="Locations out of US (Birth Country) and jurisdictions within US (states) that are potentially relevent to current condition. This value set is based upon ISO 3166 (Countries) as well as FIPS 5-2 (States)." revisionDate="07/07/2009" base_Enumeration="_1d9YsKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_1ZiywKFkEd-dVeaMP0XXQw"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1eGioaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3232" version="1" fullName="HIV Status (PHCR)" definition="HIV Status value set has concepts that expresses the status of HIV such as HIV negative or HIV positive. This value set is based upon SNOMED CT finding domain." revisionDate="07/07/2009" base_Enumeration="_1eGioKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1eMpQaFkEd-dVeaMP0XXQw" conceptName="HIV negative" usageNote="SNOMED-CT" base_EnumerationLiteral="_1eMpQKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1eMpQ6FkEd-dVeaMP0XXQw" conceptName="HIV positive" usageNote="SNOMED-CT" base_EnumerationLiteral="_1eMpQqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1eRhwKFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.1100" version="1" fullName="Industry (NAICS)" definition="The North American Industry Classification System (NAICS) consists of a set of six digit codes that classify and categorize industries.  It also organizes the categories on a production/process-oriented basis.  This new, uniform, industry-wide classification system has been designed as the index for statistical reporting of all economic activities of the U.S., Canada, and Mexico." revisionDate="10/22/2008" base_Enumeration="_1eQ6sKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_1ej1oKFkEd-dVeaMP0XXQw"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1engAaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.1002" version="3" fullName="Lab Test Result Name" definition="Laboratory Resulted Test identifiers and names - LOINC is the starter set" revisionDate="10/22/2008" base_Enumeration="_1engAKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1hTnoaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3206" version="1" fullName="Lab Test Result Name (Acute Hepatitis B)" definition="Acute Hepatitis B lab test result name value set  is based upon the Lab LOINC concepts that are defined in the CSTE standardized reporting definition for Acute Hepatitis B." revisionDate="07/07/2009" base_Enumeration="_1hTnoKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1hXSAaFkEd-dVeaMP0XXQw" conceptName="Alanine aminotransferase:CCnc:Pt:Ser/Plas:Qn:" usageNote="LOINC" base_EnumerationLiteral="_1hXSAKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hXSA6FkEd-dVeaMP0XXQw" conceptName="Aspartate aminotransferase:CCnc:Pt:Ser/Plas:Qn:" usageNote="LOINC" base_EnumerationLiteral="_1hXSAqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hX5EaFkEd-dVeaMP0XXQw" conceptName="Hepatitis A virus Ab.IgM:ACnc:Pt:Ser:Ord:EIA" usageNote="LOINC" base_EnumerationLiteral="_1hX5EKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hX5E6FkEd-dVeaMP0XXQw" conceptName="Hepatitis A virus Ab.IgM:ACnc:Pt:Ser:Qn:" usageNote="LOINC" base_EnumerationLiteral="_1hX5EqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hX5FaFkEd-dVeaMP0XXQw" conceptName="Hepatitis B virus core Ab.IgM:ACnc:Pt:Ser:Qn:EIA" usageNote="LOINC" base_EnumerationLiteral="_1hX5FKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hX5F6FkEd-dVeaMP0XXQw" conceptName="Hepatitis B virus core Ab.IgM:ACnc:Pt:Ser:Ord:" usageNote="LOINC" base_EnumerationLiteral="_1hX5FqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hYgIaFkEd-dVeaMP0XXQw" conceptName="Hepatitis B virus surface Ag:ACnc:Pt:Ser^donor:Ord:EIA" usageNote="LOINC" base_EnumerationLiteral="_1hYgIKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hYgI6FkEd-dVeaMP0XXQw" conceptName="Hepatitis B virus surface Ag:ACnc:Pt:Ser:Ord:" usageNote="LOINC" base_EnumerationLiteral="_1hYgIqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1hcxkaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3207" version="1" fullName="Lab Test Result Name (Anthrax)" definition="Anthrax lab test result name value set is based upon the Lab LOINC concepts that are defined in the CSTE standardized reporting definition for Anthrax." revisionDate="07/07/2009" base_Enumeration="_1hcxkKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1hgb8aFkEd-dVeaMP0XXQw" conceptName="Bacillus anthracis Ab:ACnc:Pt:XXX:Qn:IF" usageNote="LOINC" base_EnumerationLiteral="_1hgb8KFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hgb86FkEd-dVeaMP0XXQw" conceptName="Bacillus anthracis Ag:ACnc:Pt:Isolate:Ord:IF" usageNote="LOINC" base_EnumerationLiteral="_1hgb8qFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hgb9aFkEd-dVeaMP0XXQw" conceptName="Bacillus anthracis Ag:ACnc:Pt:Tiss:Ord:IF" usageNote="LOINC" base_EnumerationLiteral="_1hgb9KFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hhDAKFkEd-dVeaMP0XXQw" conceptName="Bacillus anthracis Ag:ACnc:Pt:XXX:Ord:IF" usageNote="LOINC" base_EnumerationLiteral="_1hgb9qFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hhDAqFkEd-dVeaMP0XXQw" conceptName="Bacillus anthracis capsule Ag:Prid:Pt:XXX:Nom:IF" usageNote="LOINC" base_EnumerationLiteral="_1hhDAaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hhDBKFkEd-dVeaMP0XXQw" conceptName="Bacillus anthracis cell wall Ag:Prid:Pt:XXX:Nom:IF" usageNote="LOINC" base_EnumerationLiteral="_1hhDA6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hhDBqFkEd-dVeaMP0XXQw" conceptName="Bacillus anthracis:ACnc:Pt:Isolate:Ord:Phage lysis" usageNote="LOINC" base_EnumerationLiteral="_1hhDBaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hhqEaFkEd-dVeaMP0XXQw" conceptName="Bacillus anthracis spore Ag:Prid:Pt:XXX:Nom:IF" usageNote="LOINC" base_EnumerationLiteral="_1hhqEKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hhqE6FkEd-dVeaMP0XXQw" conceptName="Bacillus anthracis:ACnc:Pt:XXX:Ord:Organism specific culture" usageNote="LOINC" base_EnumerationLiteral="_1hhqEqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hhqFaFkEd-dVeaMP0XXQw" conceptName="Bacteria identified:Prid:Pt:Bld:Nom:Aerobic culture" usageNote="LOINC" base_EnumerationLiteral="_1hhqFKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hiRIKFkEd-dVeaMP0XXQw" conceptName="Bacteria identified:Prid:Pt:Wound.shlw:Nom:Aerobic culture" usageNote="LOINC" base_EnumerationLiteral="_1hhqFqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hiRIqFkEd-dVeaMP0XXQw" conceptName="Bacteria identified:Prid:Pt:Sputum:Nom:Aerobic culture" usageNote="LOINC" base_EnumerationLiteral="_1hiRIaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hiRJKFkEd-dVeaMP0XXQw" conceptName="Bacteria identified:Prid:Pt:XXX:Nom:Anaerobic+Aerobic culture" usageNote="LOINC" base_EnumerationLiteral="_1hiRI6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1ht3UaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3208" version="1" fullName="Lab Test Result Name (Tularemia)" definition="Tularemia lab test result name value set is based upon the Lab LOINC concepts that are defined in the CSTE standardized reporting definition for Tularemia." revisionDate="07/07/2009" base_Enumeration="_1ht3UKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1hyIwaFkEd-dVeaMP0XXQw" conceptName="Francisella tularensis Ab:Titr:Pt:Ser:Qn:" usageNote="LOINC" base_EnumerationLiteral="_1hyIwKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hyIw6FkEd-dVeaMP0XXQw" conceptName="Francisella tularensis Ab:Titr:Pt:Ser:Qn:Aggl" usageNote="LOINC" base_EnumerationLiteral="_1hyIwqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hyIxaFkEd-dVeaMP0XXQw" conceptName="Francisella tularensis Ab:Titr:Pt:Ser:Qn:LA" usageNote="LOINC" base_EnumerationLiteral="_1hyIxKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hyv0KFkEd-dVeaMP0XXQw" conceptName="Francisella tularensis Ab:Titr:Pt:Ser:Qn:Aggl.micro" usageNote="LOINC" base_EnumerationLiteral="_1hyIxqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hyv0qFkEd-dVeaMP0XXQw" conceptName="Francisella tularensis Ab:Titr:Pt:Ser:Qn:Aggl.standard tube" usageNote="LOINC" base_EnumerationLiteral="_1hyv0aFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hyv1KFkEd-dVeaMP0XXQw" conceptName="Francisella tularensis Ag:ACnc:Pt:Isolate:Ord:IF" usageNote="LOINC" base_EnumerationLiteral="_1hyv06FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hyv1qFkEd-dVeaMP0XXQw" conceptName="Francisella tularensis Ag:ACnc:Pt:Ser:Ord:IF" usageNote="LOINC" base_EnumerationLiteral="_1hyv1aFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hzW4KFkEd-dVeaMP0XXQw" conceptName="Francisella tularensis Ag:ACnc:Pt:Tiss:Ord:IF" usageNote="LOINC" base_EnumerationLiteral="_1hyv16FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hzW4qFkEd-dVeaMP0XXQw" conceptName="Francisella tularensis Ag:ACnc:Pt:XXX:Ord:IF" usageNote="LOINC" base_EnumerationLiteral="_1hzW4aFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hzW5KFkEd-dVeaMP0XXQw" conceptName="Francisella tularensis Ab.IgM:Titr:Pt:Ser:Qn:" usageNote="LOINC" base_EnumerationLiteral="_1hzW46FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hzW5qFkEd-dVeaMP0XXQw" conceptName="Francisella tularensis:ACnc:Pt:Isolate:Ord:Organism specific culture" usageNote="LOINC" base_EnumerationLiteral="_1hzW5aFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1hz98aFkEd-dVeaMP0XXQw" conceptName="Francisella tularensis:ACnc:Pt:XXX:Ord:Organism specific culture" usageNote="LOINC" base_EnumerationLiteral="_1hz98KFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1h3oUaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3227" version="1" fullName="Location performing blood or body fluid exposure procedure " definition="Service delivery locations that may perform the procedure on human body involving blood or body fluid. This value set is based upon the HL7 V3 vocabulary." revisionDate="07/07/2009" base_Enumeration="_1h3oUKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ywdZ4Gg7Ed-ilOLYnIx0jA"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1iALMaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3211" version="2" fullName="Material exposure type" definition="Types of exposure related to material such as suspicious mail and powder including animal material. This value set is primarily based upon SNOMED CT Material (260769002) hierarchy." revisionDate="07/07/2009" base_Enumeration="_1iALMKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1iQC0aFkEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.3.88.12.3221.8.7" version="1" fullName="Medication Route FDA Value Set" definition="Route of Administration value set is based upon FDA Drug Registration and Listing Database (FDA Orange Book) which are used in FDA structured product and labelling (SPL)." revisionDate="07/07/2009" base_Enumeration="_1iQC0KFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_dWKSsaDqEd-dVeaMP0XXQw"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1iX-oaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3216" version="1" fullName="Medication Treatment (Anthrax)" definition="Anthrax treatment value set has medication concepts used to treat anthrax.  This is based upon the FDA Unique Ingredient Identifier (UNII)." revisionDate="07/07/2009" base_Enumeration="_1iX-oKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_c6o0UaDqEd-dVeaMP0XXQw"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1icQEaFkEd-dVeaMP0XXQw" conceptName="Amoxicillin" usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1icQEKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1icQE6FkEd-dVeaMP0XXQw" conceptName="Ciprofloxacin" usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1icQEqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1icQFaFkEd-dVeaMP0XXQw" conceptName="Doxycycline" usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1icQFKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1ighgaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3218" version="1" fullName="Medication Treatment (TB)" definition="Tuberculosis treatment value set has medication concepts used to treat tuberculosis.  This is based upon the FDA Unique Ingredient Identifier (UNII)." revisionDate="07/07/2009" base_Enumeration="_1ighgKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_c6o0UaDqEd-dVeaMP0XXQw"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1iky8aFkEd-dVeaMP0XXQw" conceptName="Amikacin " usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1iky8KFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1iky86FkEd-dVeaMP0XXQw" conceptName="Capreomycin" usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1iky8qFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1iky9aFkEd-dVeaMP0XXQw" conceptName="Cycloserine" usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1iky9KFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1iky96FkEd-dVeaMP0XXQw" conceptName="Ethambutol" usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1iky9qFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1ilaAaFkEd-dVeaMP0XXQw" conceptName="Ethionamide " usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1ilaAKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1ilaA6FkEd-dVeaMP0XXQw" conceptName="Isoniazid (INH)" usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1ilaAqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1ilaBaFkEd-dVeaMP0XXQw" conceptName="Kanamycin " usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1ilaBKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1imBEKFkEd-dVeaMP0XXQw" conceptName="Levoflozacin " usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1ilaBqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1imBEqFkEd-dVeaMP0XXQw" conceptName="Moxifloxacin " usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1imBEaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1imBFKFkEd-dVeaMP0XXQw" conceptName="Para-Amino Salicylic Acid " usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1imBE6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1imBFqFkEd-dVeaMP0XXQw" conceptName="Pyrazinamide" usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1imBFaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1imoIKFkEd-dVeaMP0XXQw" conceptName="Rifamate" usageNote="RxNorm" base_EnumerationLiteral="_1imBF6FkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_dSLxoaDqEd-dVeaMP0XXQw"/>
+  </term:ValueSetCode>
+  <term:ValueSetCode xmi:id="_1iqSgaFkEd-dVeaMP0XXQw" conceptName="Rifampin" usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1iqSgKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1iqSg6FkEd-dVeaMP0XXQw" conceptName="Rifapentine " usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1iqSgqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1iqShaFkEd-dVeaMP0XXQw" conceptName="Rifater" usageNote="RxNorm" base_EnumerationLiteral="_1iqShKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_dSLxoaDqEd-dVeaMP0XXQw"/>
+  </term:ValueSetCode>
+  <term:ValueSetVersion xmi:id="_1i8mYaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3217" version="1" fullName="Medication Treatment (Tularemia)" definition="Tularemia treatment value set has medication concepts used to treat tularemia. This is based upon the FDA Unique Ingredient Identifier (UNII)." revisionDate="07/07/2009" base_Enumeration="_1i8mYKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_c6o0UaDqEd-dVeaMP0XXQw"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1jAQwaFkEd-dVeaMP0XXQw" conceptName="GENTAMICIN" usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1jAQwKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1jA30aFkEd-dVeaMP0XXQw" conceptName="STREPTOMYCIN" usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1jA30KFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1jA306FkEd-dVeaMP0XXQw" conceptName="TETRACYCLINE" usageNote="Unique Ingredient Identifier (UNII)" base_EnumerationLiteral="_1jA30qFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1jFwUaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.1009" version="4" fullName="Microorganism" definition="Microorganisms/infectious agents" revisionDate="10/22/2008" base_Enumeration="_1jFwUKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1kVtgaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3204" version="2" fullName="Non-Laboratory Intervention and Procedure" definition="This value set includes medical and surgical procedures performed on human body. This is based upon the concepts descending from the SNOMED CT Procedures (71388002) hierarchy. This value set does not include administrative billing procedure or laboratory procedure." revisionDate="07/07/2009" base_Enumeration="_1kVtgKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1o1L8aFkEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.1.11.78" version="1" fullName="Observation Interpretation (HL7)" definition="Observation interpretation concepts that are based upon HL7 V3 vocabulary." revisionDate="07/07/2009" base_Enumeration="_1o1L8KFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_1o75oaFkEd-dVeaMP0XXQw"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1o75o6FkEd-dVeaMP0XXQw" conceptName="Abnormal" usageNote="ObservationInterpretation" base_EnumerationLiteral="_1o75oqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1o8gsaFkEd-dVeaMP0XXQw" conceptName="above high threshold" usageNote="ObservationInterpretation" base_EnumerationLiteral="_1o8gsKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1o8gs6FkEd-dVeaMP0XXQw" conceptName="below low threshold" usageNote="ObservationInterpretation" base_EnumerationLiteral="_1o8gsqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1o8gtaFkEd-dVeaMP0XXQw" conceptName="better" usageNote="ObservationInterpretation" base_EnumerationLiteral="_1o8gtKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1o9HwKFkEd-dVeaMP0XXQw" conceptName="Carrier" usageNote="ObservationInterpretation" base_EnumerationLiteral="_1o8gtqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1o9HwqFkEd-dVeaMP0XXQw" conceptName="decreased" usageNote="ObservationInterpretation" base_EnumerationLiteral="_1o9HwaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1o9HxKFkEd-dVeaMP0XXQw" conceptName="increased" usageNote="ObservationInterpretation" base_EnumerationLiteral="_1o9Hw6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1o9HxqFkEd-dVeaMP0XXQw" conceptName="Indeterminate" usageNote="ObservationInterpretation" base_EnumerationLiteral="_1o9HxaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1o9u0KFkEd-dVeaMP0XXQw" conceptName="intermediate" usageNote="ObservationInterpretation" base_EnumerationLiteral="_1o9Hx6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1o9u0qFkEd-dVeaMP0XXQw" conceptName="moderately susceptible" usageNote="ObservationInterpretation" base_EnumerationLiteral="_1o9u0aFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1o9u1KFkEd-dVeaMP0XXQw" conceptName="Negative" usageNote="ObservationInterpretation" base_EnumerationLiteral="_1o9u06FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1o9u1qFkEd-dVeaMP0XXQw" conceptName="Normal" usageNote="ObservationInterpretation" base_EnumerationLiteral="_1o9u1aFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1o-V4KFkEd-dVeaMP0XXQw" conceptName="Positive" usageNote="ObservationInterpretation" base_EnumerationLiteral="_1o9u16FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1o-V4qFkEd-dVeaMP0XXQw" conceptName="resistent" usageNote="ObservationInterpretation" base_EnumerationLiteral="_1o-V4aFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1o-V5KFkEd-dVeaMP0XXQw" conceptName="susceptible" usageNote="ObservationInterpretation" base_EnumerationLiteral="_1o-V46FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1o-V5qFkEd-dVeaMP0XXQw" conceptName="Very susceptible" usageNote="ObservationInterpretation" base_EnumerationLiteral="_1o-V5aFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1o-88KFkEd-dVeaMP0XXQw" conceptName="worse" usageNote="ObservationInterpretation" base_EnumerationLiteral="_1o-V56FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1pD1caFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.887" version="1" fullName="Occupation" definition="Occupations or job codes" revisionDate="10/22/2008" base_Enumeration="_1pD1cKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_1pR34aFkEd-dVeaMP0XXQw"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1pWwYaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.113883.1.11.14914" version="1" fullName="Race Value Set" definition="Concepts in the race value set include the OMB minimum categories, 5 races, along with a sixth race category, Other race, and a more detailed set of race categories used by the Bureau of Census. " revisionDate="07/07/2009" base_Enumeration="_1pWwYKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_dfdYoKDqEd-dVeaMP0XXQw"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1pi9oaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3213" version="1" fullName="Signs and Symptoms (Acute Hepatitis B)" definition="Acute Hepatitis B Signs and Symptoms value set  is primarily based upon the SNOMED concepts that are defined in the CSTE standardized reporting definition for Acute Hepatitis B." revisionDate="07/07/2009" base_Enumeration="_1pi9oKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1pn2IaFkEd-dVeaMP0XXQw" conceptName="Asymptomatic" usageNote="SNOMED-CT" base_EnumerationLiteral="_1pn2IKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1pn2I6FkEd-dVeaMP0XXQw" conceptName="Jaundice" usageNote="SNOMED-CT" base_EnumerationLiteral="_1pn2IqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1psuoaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3212" version="1" fullName="Signs and Symptoms (Anthrax)" definition="Anthrax Signs and Symptoms value set  is primarily based upon the SNOMED concepts that are defined in the CSTE standardized reporting definition for Anthrax." revisionDate="07/07/2009" base_Enumeration="_1psuoKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1pxnIaFkEd-dVeaMP0XXQw" conceptName="Abdominal pain" usageNote="SNOMED-CT" base_EnumerationLiteral="_1pxnIKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1pxnI6FkEd-dVeaMP0XXQw" conceptName="Asymptomatic" usageNote="SNOMED-CT" base_EnumerationLiteral="_1pxnIqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1pxnJaFkEd-dVeaMP0XXQw" conceptName="Chest pain" usageNote="SNOMED-CT" base_EnumerationLiteral="_1pxnJKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1pxnJ6FkEd-dVeaMP0XXQw" conceptName="Chill" usageNote="SNOMED-CT" base_EnumerationLiteral="_1pxnJqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1pyOMaFkEd-dVeaMP0XXQw" conceptName="Cutaneous ulcer with edema and black eschar" usageNote="PHIN VS (CDC Local Coding System)" base_EnumerationLiteral="_1pyOMKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_1dcbUKFkEd-dVeaMP0XXQw"/>
+  </term:ValueSetCode>
+  <term:ValueSetCode xmi:id="_1p2foKFkEd-dVeaMP0XXQw" conceptName="Diarrhea" usageNote="SNOMED-CT" base_EnumerationLiteral="_1p14kKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1p2foqFkEd-dVeaMP0XXQw" conceptName="Difficulty breathing" usageNote="SNOMED-CT" base_EnumerationLiteral="_1p2foaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1p2fpKFkEd-dVeaMP0XXQw" conceptName="Edema" usageNote="SNOMED-CT" base_EnumerationLiteral="_1p2fo6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1p2fpqFkEd-dVeaMP0XXQw" conceptName="Fever" usageNote="SNOMED-CT" base_EnumerationLiteral="_1p2fpaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1p3GsaFkEd-dVeaMP0XXQw" conceptName="Headache" usageNote="SNOMED-CT" base_EnumerationLiteral="_1p3GsKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1p3Gs6FkEd-dVeaMP0XXQw" conceptName="Lymphadenopathy" usageNote="SNOMED-CT" base_EnumerationLiteral="_1p3GsqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1p3GtaFkEd-dVeaMP0XXQw" conceptName="Non-productive cough" usageNote="SNOMED-CT" base_EnumerationLiteral="_1p3GtKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1p7_MaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3214" version="1" fullName="Signs and Symptoms (TB)" definition="Tuberculosis Signs and Symptoms value set  is primarily based upon the SNOMED concepts that are defined in the CSTE standardized reporting definition for Tuberculosis" revisionDate="07/07/2009" base_Enumeration="_1p7_MKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1qA3saFkEd-dVeaMP0XXQw" conceptName="Asymptomatic" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qA3sKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qA3s6FkEd-dVeaMP0XXQw" conceptName="Chest pain" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qA3sqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qA3taFkEd-dVeaMP0XXQw" conceptName="Chill" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qA3tKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qBewKFkEd-dVeaMP0XXQw" conceptName="Fever" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qA3tqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qBewqFkEd-dVeaMP0XXQw" conceptName="Hemoptysis" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qBewaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qBexKFkEd-dVeaMP0XXQw" conceptName="Night sweats" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qBew6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qBexqFkEd-dVeaMP0XXQw" conceptName="Non-productive cough" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qBexaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qCF0KFkEd-dVeaMP0XXQw" conceptName="Productive cough" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qBex6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qCF0qFkEd-dVeaMP0XXQw" conceptName="Weight loss finding" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qCF0aFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1qG-UaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3215" version="1" fullName="Signs and Symptoms (Tularemia)" definition="Tularemia Signs and Symptoms value set  is primarily based upon the SNOMED concepts that are defined in the CSTE standardized reporting definition for Anthrax" revisionDate="07/07/2009" base_Enumeration="_1qG-UKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1qL20KFkEd-dVeaMP0XXQw" conceptName="Abdominal pain" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qLPwKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qL20qFkEd-dVeaMP0XXQw" conceptName="Asymptomatic" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qL20aFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qL21KFkEd-dVeaMP0XXQw" conceptName="Chest pain" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qL206FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qL21qFkEd-dVeaMP0XXQw" conceptName="Chill" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qL21aFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qMd4aFkEd-dVeaMP0XXQw" conceptName="Conjunctivitis" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qMd4KFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qMd46FkEd-dVeaMP0XXQw" conceptName="Cough" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qMd4qFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qMd5aFkEd-dVeaMP0XXQw" conceptName="Diarrhea" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qMd5KFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qMd56FkEd-dVeaMP0XXQw" conceptName="Dyspnea" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qMd5qFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qNE8aFkEd-dVeaMP0XXQw" conceptName="Fever" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qNE8KFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qNE86FkEd-dVeaMP0XXQw" conceptName="Headache" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qNE8qFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qNE9aFkEd-dVeaMP0XXQw" conceptName="Joint pain" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qNE9KFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qNsAKFkEd-dVeaMP0XXQw" conceptName="Lymphadenopathy" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qNE9qFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qNsAqFkEd-dVeaMP0XXQw" conceptName="Malaise" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qNsAaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qNsBKFkEd-dVeaMP0XXQw" conceptName="Meningitis" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qNsA6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qNsBqFkEd-dVeaMP0XXQw" conceptName="Muscle pain" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qNsBaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qOTEaFkEd-dVeaMP0XXQw" conceptName="Nausea" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qOTEKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qOTE6FkEd-dVeaMP0XXQw" conceptName="Pain in throat" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qOTEqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qOTFaFkEd-dVeaMP0XXQw" conceptName="Pharyngitis" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qOTFKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qOTF6FkEd-dVeaMP0XXQw" conceptName="Pneumonia" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qOTFqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qO6IaFkEd-dVeaMP0XXQw" conceptName="Skin ulcer" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qO6IKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qO6I6FkEd-dVeaMP0XXQw" conceptName="Sputum: contains blood" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qO6IqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qO6JaFkEd-dVeaMP0XXQw" conceptName="Systemic infection" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qO6JKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qO6J6FkEd-dVeaMP0XXQw" conceptName="Vomiting" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qO6JqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qPhMaFkEd-dVeaMP0XXQw" conceptName="Weight loss finding" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qPhMKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1qUZsaFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3228" version="1" fullName="Sociobehavioral risk factor" definition="Socio-behavioral risk factor related to infectious disease." revisionDate="07/07/2009" base_Enumeration="_1qUZsKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1qZSMKFkEd-dVeaMP0XXQw" conceptName="Alcohol intake above recommended sensible limits" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qYrIKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qZSMqFkEd-dVeaMP0XXQw" conceptName="Homeless" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qZSMaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qZSNKFkEd-dVeaMP0XXQw" conceptName="Imprisonment" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qZSM6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qZSNqFkEd-dVeaMP0XXQw" conceptName="Injecting drug user" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qZSNaFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qZ5QKFkEd-dVeaMP0XXQw" conceptName="Never injecting drug user" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qZSN6FkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1qZ5QqFkEd-dVeaMP0XXQw" conceptName="Shared razor, toothbrushes or nail care items:Find:Pt:Patient:Ord:" usageNote="LOINC" base_EnumerationLiteral="_1qZ5QaFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_3-cwsCWrEd-iTYfpNb4PkQ"/>
+  </term:ValueSetCode>
+  <term:ValueSetCode xmi:id="_1qeKsaFkEd-dVeaMP0XXQw" conceptName="Shares drug injecting equipment" usageNote="SNOMED-CT" base_EnumerationLiteral="_1qeKsKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1qkRUKFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.946" version="4" fullName="Specimen" definition="Specimen Keyword: Specimen Source, Specimen Type" revisionDate="10/22/2008" base_Enumeration="_1qjqQKFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetVersion xmi:id="_1qzh4aFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3203" version="1" fullName="Treatment status" definition="Treatment (medication) status value set includes concepts such as active and on hold" revisionDate="07/07/2009" base_Enumeration="_1qzh4KFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_ya6aMCWsEd-iTYfpNb4PkQ"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1q4aYaFkEd-dVeaMP0XXQw" conceptName="Active" usageNote="SNOMED-CT" base_EnumerationLiteral="_1q4aYKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1q4aY6FkEd-dVeaMP0XXQw" conceptName="History of" usageNote="SNOMED-CT" base_EnumerationLiteral="_1q4aYqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1q4aZaFkEd-dVeaMP0XXQw" conceptName="Hold" usageNote="SNOMED-CT" base_EnumerationLiteral="_1q4aZKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1q5BcKFkEd-dVeaMP0XXQw" conceptName="Inactive" usageNote="SNOMED-CT" base_EnumerationLiteral="_1q4aZqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetVersion xmi:id="_1q-hAKFkEd-dVeaMP0XXQw" identifier="2.16.840.1.114222.4.11.3219" version="1" fullName="Vaccine Administered (Hepatitis B)" definition="Hepatitis B vaccine value set has Hepatitis B vaccines. This is based upon the Clinical Vaccines Administered (CVX) vocabulary maintained by CDC." revisionDate="07/07/2009" base_Enumeration="_1q958KFkEd-dVeaMP0XXQw">
+    <codeSystem href="CodeSystems.uml#_dk7ugKDqEd-dVeaMP0XXQw"/>
+  </term:ValueSetVersion>
+  <term:ValueSetCode xmi:id="_1rCycaFkEd-dVeaMP0XXQw" conceptName="hepatitis A and hepatitis B vaccine" usageNote="Vaccines administered (CVX)" base_EnumerationLiteral="_1rCycKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1rCyc6FkEd-dVeaMP0XXQw" conceptName="hepatitis B immune globulin   " usageNote="Vaccines administered (CVX)" base_EnumerationLiteral="_1rCycqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1rDZgaFkEd-dVeaMP0XXQw" conceptName="hepatitis B vaccine, adolescent/high risk infant dosage Hep B  " usageNote="Vaccines administered (CVX)" base_EnumerationLiteral="_1rDZgKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1rDZg6FkEd-dVeaMP0XXQw" conceptName="hepatitis B vaccine, adult dosage Hep B " usageNote="Vaccines administered (CVX)" base_EnumerationLiteral="_1rDZgqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1rDZhaFkEd-dVeaMP0XXQw" conceptName="hepatitis B vaccine, dialysis patient dosage Hep B " usageNote="Vaccines administered (CVX)" base_EnumerationLiteral="_1rDZhKFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1rEAkKFkEd-dVeaMP0XXQw" conceptName="hepatitis B vaccine, NOS " usageNote="Vaccines administered (CVX)" base_EnumerationLiteral="_1rDZhqFkEd-dVeaMP0XXQw"/>
+  <term:ValueSetCode xmi:id="_1rEAkqFkEd-dVeaMP0XXQw" conceptName="hepatitis B vaccine, pediatric or pediatric/adolescent dosage Hep B  " usageNote="Vaccines administered (CVX)" base_EnumerationLiteral="_1rEAkaFkEd-dVeaMP0XXQw"/>
+</xmi:XMI>

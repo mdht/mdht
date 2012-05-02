@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<?emf-validation
+	version="1.0"
+	nl="constraints/ocl" ?>
+
+<includedConstraints>
+	<constraints categories="org.openhealthtools.mdht.uml.cda.validation/correctness">
+
+		<constraint id="ocl.invalidOCL" lang="Java"
+			class="org.openhealthtools.mdht.uml.cda.validation.internal.classifiers.Ocl"
+			severity="ERROR" mode="Batch" name="%invalidOCL.name" statusCode="2">
+			<target class="Constraint" />
+			<description>%invalidOCL.description
+			</description>
+			<message>%invalidOCL.message
+			</message>
+		</constraint>
+
+
+		<constraint id="ocl.missingOCL" lang="Java"
+			class="org.openhealthtools.mdht.uml.cda.validation.internal.classifiers.Ocl"
+			severity="WARNING" mode="Batch" name="%missingOCL.name" statusCode="2">
+			<target class="Constraint" />
+			<description>%missingOCL.description
+			</description>
+			<message>%missingOCL.message
+			</message>
+		</constraint>
+
+	</constraints>
+
+	<constraints categories="org.openhealthtools.mdht.uml.cda.validation/completeness">
+
+	</constraints>
+</includedConstraints>
