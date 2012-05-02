@@ -446,21 +446,21 @@ public class InstanceGenerator {
 
 						Object result = eObject.eGet(structuralFeature);
 						if (result == null && structuralFeature.getEType() instanceof EClass) {
-							EObject objectToSet = structuralFeature.getEType().getEPackage().getEFactoryInstance().create(
-								(EClass) structuralFeature.getEType());
-
-							if (DatatypesPackage.eINSTANCE.getNsURI().equals(
-								objectToSet.eClass().getEPackage().getNsURI())) {
-
-								datatypesInit.setCurrentFeature(structuralFeature);
-								datatypesInit.doSwitch(objectToSet);
-							}
 							try {
+
+								EObject objectToSet = structuralFeature.getEType().getEPackage().getEFactoryInstance().create(
+									(EClass) structuralFeature.getEType());
+
+								if (DatatypesPackage.eINSTANCE.getNsURI().equals(
+									objectToSet.eClass().getEPackage().getNsURI())) {
+
+									datatypesInit.setCurrentFeature(structuralFeature);
+									datatypesInit.doSwitch(objectToSet);
+								}
 								eObject.eSet(structuralFeature, objectToSet);
-							} catch (ClassCastException cce) {
+							} catch (Exception cce) {
 								System.out.println("Unable to set " + eClass.getName() + "." +
-										structuralFeature.getEType().getName() + structuralFeature.getName() +
-										" using type " + objectToSet.eClass().getName());
+										structuralFeature.getEType().getName() + structuralFeature.getName());
 							}
 						}
 					}
