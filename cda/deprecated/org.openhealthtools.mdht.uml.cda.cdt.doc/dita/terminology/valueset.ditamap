@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
-<map title="Value Sets">
-<topicref href="ConsultDocumentTypeCodes.dita" type="topic" />
-<topicref href="HPDocumentType.dita" type="topic" />
-<topicref href="PersonalRelationshipRoleType.dita" type="topic" />
-<topicref href="ProgressNoteDocumentTypeCode.dita" type="topic" />
-</map>
