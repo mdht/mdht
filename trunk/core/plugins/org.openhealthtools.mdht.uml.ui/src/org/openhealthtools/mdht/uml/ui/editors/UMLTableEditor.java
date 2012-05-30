@@ -9,6 +9,7 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - Async runnable flood causes drag-and-drop issues (artf3182)
  *                        - Editors leaking via operation-history listeners (artf3225)
+ *                        - Two menus appear when right-clicking the cursor (artf3276)
  *     
  * $Id$
  *******************************************************************************/
@@ -91,11 +92,14 @@ import org.eclipse.swt.dnd.DragSourceListener;
 import org.eclipse.swt.dnd.DropTarget;
 import org.eclipse.swt.dnd.DropTargetListener;
 import org.eclipse.swt.dnd.Transfer;
+import org.eclipse.swt.events.MenuDetectEvent;
+import org.eclipse.swt.events.MenuDetectListener;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -824,6 +828,20 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 		// set to 1 level expansion after initial display
 		treeViewerWithColumns.setAutoExpandLevel(1);
 
+		// configure context menus
+		treeViewerWithColumns.getControl().addMenuDetectListener(new MenuDetectListener() {
+
+			public void menuDetected(MenuDetectEvent e) {
+				if (cursor != null) {
+					// hit-test the cursor
+					Rectangle cursorBounds = cursor.getBounds();
+					if (cursorBounds.contains(((Control) e.widget).toControl(e.x, e.y))) {
+						// don't show the table's menu in addition to the cursor's
+						e.doit = false;
+					}
+				}
+			}
+		});
 		createContextMenuFor(treeViewerWithColumns.getControl(), treeViewerWithColumns, treeViewerWithColumns);
 		createContextMenuFor(cursor, getEditorSite().getSelectionProvider(), treeViewerWithColumns);
 	}
