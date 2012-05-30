@@ -107,7 +107,8 @@ public class CDAModelUtil {
 
 		for (Classifier parent : templateProperty.getClass_().allParents()) {
 			for (Property inherited : parent.getAttributes()) {
-				if (inherited.getName().equals(templateProperty.getName()) && isCDAModel(inherited)) {
+				if (inherited.getName() != null && inherited.getName().equals(templateProperty.getName()) &&
+						isCDAModel(inherited)) {
 					return inherited;
 				}
 			}
@@ -634,7 +635,7 @@ public class CDAModelUtil {
 		}
 
 		// TODO: what I should really do is test for an *implied* ActRelationship or Participation association
-		if (endType != null && getTemplateId(endType) != null) {
+		if (endType != null && getCDAClass(endType) != null) {
 			message.append(markup
 					? "\n<li>"
 					: " ");
@@ -1482,7 +1483,7 @@ public class CDAModelUtil {
 		return output;
 	}
 
-	protected static String computeXref(Element source, Classifier target) {
+	public static String computeXref(Element source, Classifier target) {
 		if (target instanceof Enumeration) {
 			return computeTerminologyXref(source, (Enumeration) target);
 		}
