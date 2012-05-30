@@ -16,6 +16,8 @@ package org.openhealthtools.mdht.uml.ui.editors;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -874,6 +876,14 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 			}
 		};
 		umlSwitch.doSwitch(resource.getContents().get(0));
+
+		Collections.sort(contents, new Comparator<Class>() {
+
+			public int compare(Class first, Class second) {
+				return first.getName().compareTo(second.getName());
+			}
+
+		});
 
 		viewSelection = new StructuredSelection(contents);
 		updateViewContents();
