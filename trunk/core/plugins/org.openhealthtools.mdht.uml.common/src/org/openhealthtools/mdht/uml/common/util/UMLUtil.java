@@ -203,6 +203,28 @@ public class UMLUtil {
 	}
 
 	/**
+	 * Accumulate a list containing specific classifiers of direct subclass generalizations
+	 * for the given classifier, including the given classfier. This list will include
+	 * only classifier from models loaded into the current ResourceSet.
+	 * 
+	 * @param classifier
+	 * @return a List with zero or more classifiers
+	 */
+	public static List<Classifier> getSpecializations(Classifier classifier) {
+		List<Classifier> subclasses = new ArrayList<Classifier>();
+
+		List<DirectedRelationship> specializations = classifier.getTargetDirectedRelationships(UMLPackage.Literals.GENERALIZATION);
+		for (DirectedRelationship relationship : specializations) {
+			Classifier specific = ((Generalization) relationship).getSpecific();
+			if (specific != null) {
+				subclasses.add(specific);
+			}
+		}
+
+		return subclasses;
+	}
+
+	/**
 	 * Accumulate a list containing specific classifiers of all subclass generalizations
 	 * for the given classifier, including the given classfier. This list will include
 	 * only classifier from models loaded into the current ResourceSet.
@@ -1283,7 +1305,11 @@ public class UMLUtil {
 			boolean lastIsLower = false;
 			for (int index = 0, length = sourceName.length(); index < length; ++index) {
 				char curChar = sourceName.charAt(index);
-				if (Character.isUpperCase(curChar) || (!lastIsLower && Character.isDigit(curChar))) {
+				if (curChar == '_') {
+					result.add(currentWord.toString());
+					currentWord = new StringBuilder();
+					lastIsLower = false;
+				} else if (Character.isUpperCase(curChar) || (!lastIsLower && Character.isDigit(curChar))) {
 					if (lastIsLower && currentWord.length() > 1) {
 						result.add(currentWord.toString());
 						currentWord = new StringBuilder();
@@ -1303,7 +1329,9 @@ public class UMLUtil {
 					lastIsLower = true;
 				}
 
-				currentWord.append(curChar);
+				if (curChar != '_') {
+					currentWord.append(curChar);
+				}
 			}
 
 			result.add(currentWord.toString());

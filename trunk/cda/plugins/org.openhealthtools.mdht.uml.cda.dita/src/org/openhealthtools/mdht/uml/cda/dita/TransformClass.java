@@ -34,6 +34,8 @@ public class TransformClass extends TransformAbstract {
 		String normalizedClassName = normalizeCodeName(umlClass.getName());
 
 		writer.println("<body>");
+		writer.println("<section conref=\"generated/_" + normalizedClassName + ".dita#classId/knownSubclasses\">");
+		writer.println("</section>");
 		writer.println("<!-- TODO: insert non-model class description markup here -->");
 		writer.println("<section conref=\"generated/_" + normalizedClassName + ".dita#classId/description\">");
 		writer.println("</section>");

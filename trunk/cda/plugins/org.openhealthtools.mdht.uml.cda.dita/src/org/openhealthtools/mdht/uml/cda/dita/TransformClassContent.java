@@ -244,6 +244,7 @@ public class TransformClassContent extends TransformAbstract {
 	private void appendBody(PrintWriter writer, Class umlClass) {
 		writer.println("<body>");
 
+		appendKnownSubclasses(writer, umlClass);
 		appendClassDocumentation(writer, umlClass);
 		appendConformanceRules(writer, umlClass);
 		appendAggregateRules(writer, umlClass);
@@ -270,6 +271,34 @@ public class TransformClassContent extends TransformAbstract {
 
 		writer.println("</body>");
 		writer.println("</topic>");
+	}
+
+	private void appendKnownSubclasses(PrintWriter writer, Class umlClass) {
+		writer.println("<section id=\"knownSubclasses\">");
+		List<Classifier> subclasses = UMLUtil.getSpecializations(umlClass);
+		if (subclasses.size() > 0) {
+			writer.print("<p>Known Subclasses: ");
+
+			for (Iterator<Classifier> iterator = subclasses.iterator(); iterator.hasNext();) {
+				Classifier subclass = iterator.next();
+
+				Package xrefSource = UMLUtil.getTopPackage(subclass);
+				String xref = CDAModelUtil.computeXref(xrefSource, subclass);
+				String format = xref != null && xref.endsWith(".html")
+						? "format=\"html\" "
+						: "";
+
+				writer.append("<xref " + format + "href=\"" + xref + "\">");
+				writer.append(UMLUtil.splitName(subclass));
+				writer.append("</xref>");
+
+				if (iterator.hasNext()) {
+					writer.print(", ");
+				}
+			}
+			writer.println("</p>");
+		}
+		writer.println("</section>");
 	}
 
 	private void appendClassDocumentation(PrintWriter writer, Class umlClass) {
@@ -411,6 +440,9 @@ public class TransformClassContent extends TransformAbstract {
 				? cdaClass.getName()
 				: "MISSING_CDA_CLASS";
 		writer.print("<shortdesc id=\"shortdesc\">");
+		if (umlClass.isAbstract()) {
+			writer.print("<i>Abstract</i> ");
+		}
 		if (cdaClass != null && !umlClass.equals(cdaClass)) {
 			writer.print("[" + cdaClassName + ": templateId <tt>" + CDAModelUtil.getTemplateId(umlClass) + "</tt>]");
 		}
