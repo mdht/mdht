@@ -54,7 +54,6 @@ import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.core.util.ValueSetConstraintUtil;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
-
 /**
  * Transform UML property constraints for: multiplicity, type restriction, vocabulary.
  */
@@ -126,16 +125,13 @@ public class TransformPropertyConstraint extends TransformAbstract {
 			// place-holder for when this is supported in UML 2.2
 		} else if (cdaProperty.getUpper() == 1) {
 			// single-valued CDA property
-			final boolean required = property.getLower() == 1;
-			if (required) {
-				body.append("not ");
-				body.append(selfName);
-				body.append(".oclIsUndefined() and ");
-			}
+
+			// No terminology constraint can be satisfied by a property that actually is null
+			body.append("not ").append(selfName).append(".oclIsUndefined() and ");
 			body.append(selfName).append(".oclIsKindOf(").append(templateTypeQName).append(")");
 
 			// no need to test this condition again if we already did, above
-			if (!(required && isTestForDefinedValue(vocabExpression))) {
+			if (!isTestForDefinedValue(vocabExpression)) {
 				body.append(" and ");
 				body.append(LF);
 				body.append("let value : ").append(templateTypeQName).append(" = ");
