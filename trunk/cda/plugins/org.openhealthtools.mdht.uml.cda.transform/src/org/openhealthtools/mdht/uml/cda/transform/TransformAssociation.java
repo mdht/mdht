@@ -361,7 +361,8 @@ public class TransformAssociation extends TransformAbstract {
 		if (!firstOrderAssociation && !transformerOptions.isGenerateDomainInterface()) {
 			// finish building "getter" operation body
 			if (sourceProperty.getUpper() == 1) {
-				operationBody.append("->asSequence()->first()");
+				// artf3203: Eclipse OCL 3.1 now returns invalid when trying to get the first element of an empty sequence
+				operationBody.append("->asSequence()->any(true)");
 			}
 			operationBody.append(".oclAsType(" + constraintTargetQName + ")");
 
