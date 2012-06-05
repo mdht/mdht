@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
 <!--
-  Copyright (c) 2006, 2011 David A Carlson.
+  Copyright (c) 2006, 2012 David A Carlson and others.
   All rights reserved. This program and the accompanying materials
   are made available under the terms of the Eclipse Public License v1.0
   which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
   
   Contributors:
       David A Carlson - initial API and implementation
-      
+      Christian W. Damus - more flexible contribution/filtering of actions (artf3238)
   $Id$
 -->
 
@@ -84,25 +84,89 @@
   </extension>
   -->
 
-   <extension point="org.eclipse.ui.popupMenus">
-      <objectContribution
-      		adaptable="true"
-            objectClass="org.eclipse.uml2.uml.Element"
-            id="org.openhealthtools.mdht.uml.common.ui.popupMenus.umlClass">
-			<visibility>
-				<objectClass name="org.eclipse.uml2.uml.Class" />
-			</visibility>
-            
-		  <action label="%openSubclassEditor.label"
-                icon="icons/full/obj16/Class.gif"
-				class="org.openhealthtools.mdht.uml.common.ui.actions.OpenSubclassEditorAction"
-				menubarPath="group.openWith" 
-				enablesFor="1"
-				id="org.openhealthtools.mdht.uml.common.ui.actions.openSubclassEditorAction">
-		 </action>
-      </objectContribution>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="org.openhealthtools.mdht.uml.ui.context.classes">
+         <with
+               variable="activeContexts">
+            <iterate operator="or">
+               <equals value="org.openhealthtools.mdht.uml.ui.context.classes"/>
+            </iterate>
+         </with>
+      </definition>
    </extension>
-			
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="org.openhealthtools.mdht.uml.ui.commands.category.classes"
+            name="UML Class Modeling"
+            description="Commands for editing classes in UML models."/>
+      <command
+            id="org.openhealthtools.mdht.uml.ui.commands.openSubclassEditor"
+            name="%openSubclassEditor.label"
+            categoryId="org.openhealthtools.mdht.uml.ui.commands.category.classes">
+         
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.popup.any?after=group.openWith">
+         <command
+               commandId="org.openhealthtools.mdht.uml.ui.commands.openSubclassEditor"
+               label="%openSubclassEditor.label"
+               icon="icons/full/obj16/Class.gif">
+            <visibleWhen checkEnabled="true"/>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="org.openhealthtools.mdht.uml.ui.commands.openSubclassEditor"
+            class="org.openhealthtools.mdht.uml.common.ui.handlers.OpenSubclassEditorHandler">
+         <activeWhen>
+            <and>
+               <reference definitionId="org.openhealthtools.mdht.uml.ui.context.classes"/>
+               <count value="1"/>
+               <iterate>
+                  <test property="org.openhealthtools.mdht.uml.common.ui.ecore.eclass" value="uml:Class"/>
+               </iterate>
+            </and>
+         </activeWhen>
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.contexts">
+      <context
+            id="org.openhealthtools.mdht.uml.ui.context.uml"
+            name="UML"
+            description="Editing actions for UML elements">
+      </context>
+      <context
+            id="org.openhealthtools.mdht.uml.ui.context.classes"
+            parentId="org.openhealthtools.mdht.uml.ui.context.uml"
+            name="Editing UML Classes"
+            description="Editing UML classes in the UML Table Editor">
+      </context>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <scheme
+            id="org.openhealthtools.mdht.uml.ui.bindings.scheme"
+            parentId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            name="MDHT UML Modeling"
+            description="Key bindings for common UML modeling commands in MDHT model development.">
+      </scheme>
+      <key
+            schemeId="org.openhealthtools.mdht.uml.ui.bindings.scheme"
+            commandId="org.openhealthtools.mdht.uml.ui.commands.openSubclassEditor"
+            contextId="org.openhealthtools.mdht.uml.ui.context.classes"
+            sequence="M1+M3+S">
+      </key>
+   </extension>
+   
    <!--
      - Add UML popup menu
      -->
