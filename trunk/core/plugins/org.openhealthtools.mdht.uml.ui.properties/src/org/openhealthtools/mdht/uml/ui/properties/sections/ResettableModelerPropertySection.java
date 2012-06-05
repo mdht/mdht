@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 Kenn Hussey and others.
+ * Copyright (c) 2011, 2012 Kenn Hussey and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,12 +7,12 @@
  * 
  * Contributors:
  *     Kenn Hussey - initial API and implementation
+ *     Christian W. Damus - Handle element wrappers (artf3238)
  *     
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.sections;
 
-import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
@@ -24,7 +24,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
  * Abstract parent class for properties sections whose fields can be reset (i.e.,
  * their values restored to their defaults) via a "Restore Default Values" button.
  */
-public abstract class ResettableModelerPropertySection extends AbstractModelerPropertySection {
+public abstract class ResettableModelerPropertySection extends WrapperAwareModelerPropertySection {
 
 	protected Button restoreDefaultsButton;
 

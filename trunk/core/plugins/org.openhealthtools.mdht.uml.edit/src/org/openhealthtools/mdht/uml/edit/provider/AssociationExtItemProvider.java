@@ -27,6 +27,8 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposedImage;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -40,9 +42,9 @@ import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.edit.providers.AssociationItemProvider;
 import org.openhealthtools.mdht.uml.common.modelfilter.ModelFilterUtil;
@@ -156,40 +158,49 @@ public class AssociationExtItemProvider extends AssociationItemProvider implemen
 	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
 	 */
 	@Override
-	public Collection<Element> getChildren(Object object) {
+	public Collection<?> getChildren(Object object) {
 		Association association = (Association) object;
-		List<Element> children = new ArrayList<Element>();
+		List<Object> children = new ArrayList<Object>();
+
+		// these are proper contents of the association. No wrapping!
 		children.addAll(association.getOwnedComments());
 
 		Property navigableEnd = UMLUtil.getNavigableEnd(association);
+		final EReference navigableEndRef = UMLPackage.Literals.ASSOCIATION__END_TYPE;
 		if (navigableEnd != null && navigableEnd.getType() instanceof Class) {
 			Class endType = (Class) navigableEnd.getType();
 			for (Property property : endType.getOwnedAttributes()) {
 				if (property.getAssociation() == null) {
-					children.add(property);
+					children.add(wrap(association, navigableEndRef, property, Notification.NO_INDEX));
 				}
 			}
+
 			// include associations after attributes
 			for (Property property : endType.getOwnedAttributes()) {
 				if (property.getAssociation() != null && property.getOtherEnd() != null &&
 						property.getOtherEnd().getType() == endType) {
-					children.add(property.getAssociation());
+					children.add(wrap(association, navigableEndRef, property.getAssociation(), Notification.NO_INDEX));
 				}
 			}
-			// children.addAll(endType.getOwnedRules());
-			// children.addAll(endType.getGeneralizations());
+
+			// for (Object next : endType.getOwnedRules()) {
+			// children.add(wrap(endType, navigableEndRef, next, Notification.NO_INDEX));
+			// }
+			for (Object next : endType.getGeneralizations()) {
+				children.add(wrap(endType, navigableEndRef, next, Notification.NO_INDEX));
+			}
 		}
 
+		// these are proper contents of the association. No wrapping!
 		children.addAll(association.getOwnedRules());
-		// children.addAll(association.getGeneralizations());
-		// // show only navigable ends
-		// for (Property end : association.getMemberEnds()) {
-		// if (end.isNavigable())
-		// children.add(end);
-		// }
-		// children.addAll(association.getClientDependencies());
 
 		return children;
+	}
+
+	@Override
+	protected boolean isWrappingNeeded(Object object) {
+		// we wrap most children because they are cross-references (and not even direct ones, at that)
+		return true;
 	}
 
 	@Override

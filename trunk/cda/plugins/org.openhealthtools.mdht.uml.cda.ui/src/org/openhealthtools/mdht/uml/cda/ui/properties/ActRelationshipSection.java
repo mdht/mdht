@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 David A Carlson.
+ * Copyright (c) 2010, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,11 +7,11 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - Handle element wrappers (artf3238)
  *     
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.properties;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
-import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CCombo;
@@ -57,37 +56,42 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.cda.core.util.RIMModelUtil;
 import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
+import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
 
 /**
  * The profile properties section for CDA ActRelationship.
  */
-public class ActRelationshipSection extends AbstractModelerPropertySection {
+public class ActRelationshipSection extends WrapperAwareModelerPropertySection {
 
 	private Association association;
-	
+
 	private List<Class> associationTypes = new ArrayList<Class>();
+
 	private CCombo associationTypeCombo;
+
 	private boolean associationTypeModified = false;
+
 	private CCombo typeCodeCombo;
+
 	private boolean typeCodeModified = false;
 
 	private void modifyFields() {
 		if (!(associationTypeModified || typeCodeModified)) {
 			return;
 		}
-		
+
 		try {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(association);
-			
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(association);
+
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
-			    protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
+				@Override
+				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
 					Stereotype actRelationshipStereotype = CDAProfileUtil.getAppliedCDAStereotype(
-							association, ICDAProfileConstants.ACT_RELATIONSHIP);
+						association, ICDAProfileConstants.ACT_RELATIONSHIP);
 
 					if (actRelationshipStereotype == null) {
 						actRelationshipStereotype = CDAProfileUtil.applyCDAStereotype(
-								association, ICDAProfileConstants.ACT_RELATIONSHIP);
+							association, ICDAProfileConstants.ACT_RELATIONSHIP);
 					}
 					ActRelationship actRelationship = CDAProfileUtil.getActRelationship(association);
 					if (actRelationship == null) {
@@ -97,39 +101,39 @@ public class ActRelationshipSection extends AbstractModelerPropertySection {
 					if (associationTypeModified) {
 						associationTypeModified = false;
 						this.setLabel("Set Association Type");
-						
+
 					}
 					if (typeCodeModified) {
 						typeCodeModified = false;
 						this.setLabel("Set Type Code");
-//						if (actRelationshipStereotype != null && entryKind != null) {
-//							if (typeCodeCombo.getSelectionIndex() == 0) {
-//								// remove stereotype property
-//								namedElement.setValue(actRelationshipStereotype, ICDAProfileConstants.ACT_RELATIONSHIP_TYPE_CODE, null);
-//							}
-//							else {
-//								EnumerationLiteral literal = (EnumerationLiteral) entryKind.getOwnedLiterals()
-//									.get(typeCodeCombo.getSelectionIndex() - 1);
-//								namedElement.setValue(actRelationshipStereotype, ICDAProfileConstants.ACT_RELATIONSHIP_TYPE_CODE, literal);
-//							}
-//						}
-					}
-					else {
+						// if (actRelationshipStereotype != null && entryKind != null) {
+						// if (typeCodeCombo.getSelectionIndex() == 0) {
+						// // remove stereotype property
+						// namedElement.setValue(actRelationshipStereotype, ICDAProfileConstants.ACT_RELATIONSHIP_TYPE_CODE, null);
+						// }
+						// else {
+						// EnumerationLiteral literal = (EnumerationLiteral) entryKind.getOwnedLiterals()
+						// .get(typeCodeCombo.getSelectionIndex() - 1);
+						// namedElement.setValue(actRelationshipStereotype, ICDAProfileConstants.ACT_RELATIONSHIP_TYPE_CODE, literal);
+						// }
+						// }
+					} else {
 						return Status.CANCEL_STATUS;
 					}
-					
-			        return Status.OK_STATUS;
-			    }};
 
-		    try {
+					return Status.OK_STATUS;
+				}
+			};
+
+			try {
 				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
 				operation.addContext(commandStack.getDefaultUndoContext());
-		        commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-		        
-		    } catch (ExecutionException ee) {
-		        Logger.logException(ee);
-		    }
-		    
+				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
+
+			} catch (ExecutionException ee) {
+				Logger.logException(ee);
+			}
+
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
 		}
@@ -140,8 +144,7 @@ public class ActRelationshipSection extends AbstractModelerPropertySection {
 
 		if (associationTypes.isEmpty()) {
 			associationTypeCombo.setItems(new String[] {});
-		}
-		else {
+		} else {
 			List<String> items = new ArrayList<String>();
 			items.add("");
 			for (Class type : associationTypes) {
@@ -150,18 +153,18 @@ public class ActRelationshipSection extends AbstractModelerPropertySection {
 			associationTypeCombo.setItems(items.toArray(new String[items.size()]));
 		}
 	}
+
 	private void fillTypeCodeCombo() {
 		Class associationType = null;
 		if (associationTypeCombo.getSelectionIndex() > 0) {
 			associationType = associationTypes.get(associationTypeCombo.getSelectionIndex() - 1);
 		}
-		
+
 		List<EnumerationLiteral> typeCodes = RIMModelUtil.getTypeCodes(associationType);
 
 		if (typeCodes.isEmpty()) {
 			typeCodeCombo.setItems(new String[] {});
-		}
-		else {
+		} else {
 			List<String> items = new ArrayList<String>();
 			items.add("");
 			for (EnumerationLiteral literal : typeCodes) {
@@ -170,22 +173,23 @@ public class ActRelationshipSection extends AbstractModelerPropertySection {
 			typeCodeCombo.setItems(items.toArray(new String[items.size()]));
 		}
 	}
-	
-	public void createControls(final Composite parent,
-			final TabbedPropertySheetPage aTabbedPropertySheetPage) {
+
+	@Override
+	public void createControls(final Composite parent, final TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
 
 		Composite composite = getWidgetFactory().createFlatFormComposite(parent);
 		FormData data = null;
 
 		/* ---- association type combo ---- */
-        associationTypeCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY);
-        associationTypeCombo.addSelectionListener(new SelectionListener() {
+		associationTypeCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY);
+		associationTypeCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				associationTypeModified = true;
 				modifyFields();
 				fillTypeCodeCombo();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				associationTypeModified = true;
 				modifyFields();
@@ -193,49 +197,48 @@ public class ActRelationshipSection extends AbstractModelerPropertySection {
 			}
 		});
 
-		CLabel associationTypeLabel = getWidgetFactory()
-				.createCLabel(composite, "Association Type:"); //$NON-NLS-1$
+		CLabel associationTypeLabel = getWidgetFactory().createCLabel(composite, "Association Type:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(0, 0);
 		data.top = new FormAttachment(associationTypeCombo, 0, SWT.CENTER);
 		associationTypeLabel.setLayoutData(data);
 
 		data = new FormData();
-        data.left = new FormAttachment(associationTypeLabel, 0);
+		data.left = new FormAttachment(associationTypeLabel, 0);
 		data.top = new FormAttachment(associationTypeCombo, 0, SWT.CENTER);
 		associationTypeCombo.setLayoutData(data);
 
 		/* ---- literals combo ---- */
-        typeCodeCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY);
-        typeCodeCombo.addSelectionListener(new SelectionListener() {
+		typeCodeCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT | SWT.READ_ONLY);
+		typeCodeCombo.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {
 				typeCodeModified = true;
 				modifyFields();
 			}
+
 			public void widgetSelected(SelectionEvent e) {
 				typeCodeModified = true;
 				modifyFields();
 			}
 		});
 
-		CLabel typeCodeLabel = getWidgetFactory()
-				.createCLabel(composite, "Type Code:"); //$NON-NLS-1$
+		CLabel typeCodeLabel = getWidgetFactory().createCLabel(composite, "Type Code:"); //$NON-NLS-1$
 		data = new FormData();
 		data.left = new FormAttachment(associationTypeCombo, ITabbedPropertyConstants.HSPACE);
 		data.top = new FormAttachment(typeCodeCombo, 0, SWT.CENTER);
 		typeCodeLabel.setLayoutData(data);
 
 		data = new FormData();
-        data.left = new FormAttachment(typeCodeLabel, 0);
+		data.left = new FormAttachment(typeCodeLabel, 0);
 		data.top = new FormAttachment(typeCodeCombo, 0, SWT.CENTER);
 		typeCodeCombo.setLayoutData(data);
 
 	}
 
+	@Override
 	protected boolean isReadOnly() {
 		if (association != null) {
-			TransactionalEditingDomain editingDomain = 
-				TransactionUtil.getEditingDomain(association);
+			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(association);
 			if (editingDomain != null && editingDomain.isReadOnly(association.eResource())) {
 				return true;
 			}
@@ -248,8 +251,10 @@ public class ActRelationshipSection extends AbstractModelerPropertySection {
 	 * Override super implementation to allow for objects that are not IAdaptable.
 	 * 
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
 		if (!added && object instanceof Element) {
@@ -259,6 +264,7 @@ public class ActRelationshipSection extends AbstractModelerPropertySection {
 		return added;
 	}
 
+	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		EObject element = getEObject();
@@ -266,36 +272,36 @@ public class ActRelationshipSection extends AbstractModelerPropertySection {
 		this.association = (Association) element;
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 
 	}
 
+	@Override
 	public void refresh() {
 		Stereotype stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-				association, ICDAProfileConstants.ENTRY_RELATIONSHIP);
+			association, ICDAProfileConstants.ENTRY_RELATIONSHIP);
 
 		Enumeration entryRelKind = null;
 		Profile cdaProfile = CDAProfileUtil.getCDAProfile(association.eResource().getResourceSet());
 		if (cdaProfile != null) {
-			entryRelKind = (Enumeration)
-					cdaProfile.getOwnedType(ICDAProfileConstants.ENTRY_RELATIONSHIP_KIND);
+			entryRelKind = (Enumeration) cdaProfile.getOwnedType(ICDAProfileConstants.ENTRY_RELATIONSHIP_KIND);
 		}
-					
+
 		fillAssociationTypeCombo();
-		
-        fillTypeCodeCombo();
-        typeCodeCombo.select(0);
-        if (stereotype != null) {
+
+		fillTypeCodeCombo();
+		typeCodeCombo.select(0);
+		if (stereotype != null) {
 			Object value = association.getValue(stereotype, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE);
 			String typeCode = null;
 			if (value instanceof EnumerationLiteral) {
-				typeCode = ((EnumerationLiteral)value).getName();
+				typeCode = ((EnumerationLiteral) value).getName();
+			} else if (value instanceof Enumerator) {
+				typeCode = ((Enumerator) value).getName();
 			}
-			else if (value instanceof Enumerator) {
-				typeCode = ((Enumerator)value).getName();
-			}
-			
+
 			if (typeCode != null) {
 				EnumerationLiteral literal = entryRelKind.getOwnedLiteral(typeCode);
 				if (literal != null) {
@@ -303,12 +309,11 @@ public class ActRelationshipSection extends AbstractModelerPropertySection {
 					typeCodeCombo.select(index + 1);
 				}
 			}
-        }
+		}
 
 		if (isReadOnly()) {
 			typeCodeCombo.setEnabled(false);
-		}
-		else {
+		} else {
 			typeCodeCombo.setEnabled(true);
 		}
 
@@ -319,11 +324,14 @@ public class ActRelationshipSection extends AbstractModelerPropertySection {
 	 * 
 	 * @see #aboutToBeShown()
 	 * @see #aboutToBeHidden()
-	 * @param notification -
+	 * @param notification
+	 *            -
 	 *            even notification
-	 * @param element -
+	 * @param element
+	 *            -
 	 *            element that has changed
 	 */
+	@Override
 	public void update(final Notification notification, EObject element) {
 		if (!isDisposed()) {
 			postUpdateRequest(new Runnable() {

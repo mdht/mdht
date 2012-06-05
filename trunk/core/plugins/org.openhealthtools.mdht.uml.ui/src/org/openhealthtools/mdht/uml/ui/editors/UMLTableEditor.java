@@ -41,6 +41,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.ui.ViewerPane;
 import org.eclipse.emf.common.ui.celleditor.ExtendedDialogCellEditor;
+import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -1408,6 +1409,13 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 		} else if (key.equals(IContentOutlinePage.class)) {
 
 			return new UMLOutlinePage(treeViewerWithColumns);
+		} else if (key == IViewerProvider.class) {
+			return new IViewerProvider() {
+
+				public Viewer getViewer() {
+					return treeViewerWithColumns;
+				}
+			};
 		}
 
 		return super.getAdapter(key);
