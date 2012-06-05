@@ -16,7 +16,7 @@ import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
-import org.openhealthtools.mdht.uml.common.ui.filters.HDFFilterUtil;
+import org.openhealthtools.mdht.uml.common.ui.filters.FilterUtil;
 import org.openhealthtools.mdht.uml.hdf.util.IRIMProfileConstants;
 import org.openhealthtools.mdht.uml.hdf.util.RIMProfileUtil;
 
@@ -26,7 +26,7 @@ import org.openhealthtools.mdht.uml.hdf.util.RIMProfileUtil;
 public class RIMParticipationFilter implements IFilter {
 
 	public boolean select(Object object) {
-		Element element = HDFFilterUtil.getElement(object);
+		Element element = FilterUtil.getElement(object);
 
 		return (element instanceof Class || element instanceof Association) &&
 				RIMProfileUtil.isRIMType(element, IRIMProfileConstants.PARTICIPATION);

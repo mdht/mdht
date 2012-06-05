@@ -18,7 +18,7 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Stereotype;
-import org.openhealthtools.mdht.uml.common.ui.filters.HDFFilterUtil;
+import org.openhealthtools.mdht.uml.common.ui.filters.FilterUtil;
 import org.openhealthtools.mdht.uml.hdf.util.HL7ResourceUtil;
 import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
 import org.openhealthtools.mdht.uml.hdf.util.RIMProfileUtil;
@@ -30,7 +30,7 @@ import org.openhealthtools.mdht.uml.hdf.util.RIMProfileUtil;
 public class HL7TemplateFilter implements IFilter {
 
 	public boolean select(Object object) {
-		Element element = HDFFilterUtil.getElement(object);
+		Element element = FilterUtil.getElement(object);
 
 		if (element instanceof Class || element instanceof Package) {
 			Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(element, IHDFProfileConstants.HL7_TEMPLATE);

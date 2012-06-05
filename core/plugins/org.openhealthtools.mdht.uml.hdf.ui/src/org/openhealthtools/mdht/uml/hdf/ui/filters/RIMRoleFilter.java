@@ -15,7 +15,7 @@ package org.openhealthtools.mdht.uml.hdf.ui.filters;
 import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
-import org.openhealthtools.mdht.uml.common.ui.filters.HDFFilterUtil;
+import org.openhealthtools.mdht.uml.common.ui.filters.FilterUtil;
 import org.openhealthtools.mdht.uml.hdf.util.IRIMProfileConstants;
 import org.openhealthtools.mdht.uml.hdf.util.RIMProfileUtil;
 
@@ -25,7 +25,7 @@ import org.openhealthtools.mdht.uml.hdf.util.RIMProfileUtil;
 public class RIMRoleFilter implements IFilter {
 
 	public boolean select(Object object) {
-		Element element = HDFFilterUtil.getElement(object);
+		Element element = FilterUtil.getElement(object);
 
 		return element instanceof Class && RIMProfileUtil.isRIMType(element, IRIMProfileConstants.ROLE);
 	}
