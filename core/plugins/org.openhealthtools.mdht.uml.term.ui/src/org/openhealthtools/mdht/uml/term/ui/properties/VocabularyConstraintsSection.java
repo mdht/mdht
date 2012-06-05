@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010, 2011 David A Carlson.
+ * Copyright (c) 2010, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,6 +8,7 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - making section groups consistent
+ *     Christian W. Damus - Handle element wrappers (artf3238)
  *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.properties;
@@ -26,7 +27,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
-import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
@@ -48,11 +48,12 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.term.ui.internal.Logger;
+import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
 
 /**
  * The general properties section for Property.
  */
-public class VocabularyConstraintsSection extends AbstractModelerPropertySection {
+public class VocabularyConstraintsSection extends WrapperAwareModelerPropertySection {
 
 	/**
 	 * Duplicate copy of private field in superclass. I'd like to remove this,

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2011 David A Carlson and others.
+ * Copyright (c) 2006, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,6 +9,7 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - added a new action for (un)controlling elements
  *     Kenn Hussey - adjusted the (un)control action to handle properties files
+ *     Christian W. Damus - adjust actions for object wrappers (artf3238)
  *     
  * $Id$
  *******************************************************************************/
@@ -85,6 +86,7 @@ import org.eclipse.ui.navigator.ICommonMenuConstants;
 import org.eclipse.ui.part.ISetSelectionTarget;
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
@@ -94,6 +96,7 @@ import org.eclipse.uml2.uml.ValueSpecification;
 import org.openhealthtools.mdht.uml.common.ui.saveable.ModelDocument;
 import org.openhealthtools.mdht.uml.common.ui.saveable.ModelManager;
 import org.openhealthtools.mdht.uml.common.ui.util.IResourceConstants;
+import org.openhealthtools.mdht.uml.common.ui.util.Selections;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem;
@@ -299,7 +302,18 @@ public class EditCommandsFactory implements IPropertyListener {
 
 		@Override
 		public boolean updateSelection(IStructuredSelection selection) {
-			return super.updateSelection(selection) && eObject instanceof Element;
+			boolean result = false;
+
+			// don't allow control/uncontrol of cross-referenced elements
+			if (!Selections.includesWrappers(selection)) {
+				// don't allow individual control/uncontrol of
+				// - associations. They must follow their source-end classes
+				// - class contents. They must follow their containing class
+				result = super.updateSelection(selection) && (eObject instanceof Element) &&
+						!(eObject instanceof Association) && !(eObject.eContainer() instanceof Classifier);
+			}
+
+			return result;
 		}
 
 		@Override
@@ -692,6 +706,11 @@ public class EditCommandsFactory implements IPropertyListener {
 	protected MyControlAction controlAction;
 
 	/**
+	 * This is the action used to select the 'original' presentation of a wrapped element.
+	 */
+	protected SelectOriginalAction selectOriginalAction;
+
+	/**
 	 * Singleton constructor.
 	 */
 	public EditCommandsFactory() {
@@ -757,6 +776,8 @@ public class EditCommandsFactory implements IPropertyListener {
 				return super.updateSelection(unwrap(selection));
 			}
 		};
+
+		selectOriginalAction = new SelectOriginalAction();
 	}
 
 	private IStructuredSelection unwrap(IStructuredSelection selection) {
@@ -813,6 +834,9 @@ public class EditCommandsFactory implements IPropertyListener {
 		if (deleteAction.isEnabled()) {
 			menu.appendToGroup(ICommonMenuConstants.GROUP_EDIT, deleteAction);
 		}
+		if (selectOriginalAction.isEnabled()) {
+			menu.appendToGroup(ICommonMenuConstants.GROUP_EDIT, selectOriginalAction);
+		}
 
 		if (validateAction.isEnabled()) {
 			menu.appendToGroup(ICommonMenuConstants.GROUP_BUILD, validateAction);
@@ -863,6 +887,10 @@ public class EditCommandsFactory implements IPropertyListener {
 			controlAction.setActiveWorkbenchPart(null);
 		}
 
+		if (selectOriginalAction != null) {
+			selectOriginalAction.setActiveWorkbenchPart(null);
+		}
+
 		ISelectionProvider selectionProvider = activePart instanceof ISelectionProvider
 				? (ISelectionProvider) activePart
 				: activePart.getSite().getSelectionProvider();
@@ -879,6 +907,10 @@ public class EditCommandsFactory implements IPropertyListener {
 
 			if (controlAction != null) {
 				selectionProvider.removeSelectionChangedListener(controlAction);
+			}
+
+			if (selectOriginalAction != null) {
+				selectionProvider.removeSelectionChangedListener(selectOriginalAction);
 			}
 		}
 	}
@@ -905,6 +937,10 @@ public class EditCommandsFactory implements IPropertyListener {
 			controlAction.setActiveWorkbenchPart(activePart);
 		}
 
+		if (selectOriginalAction != null) {
+			selectOriginalAction.setActiveWorkbenchPart(activePart);
+		}
+
 		ISelectionProvider selectionProvider = activePart instanceof ISelectionProvider
 				? (ISelectionProvider) activePart
 				: activePart.getSite().getSelectionProvider();
@@ -921,6 +957,10 @@ public class EditCommandsFactory implements IPropertyListener {
 
 			if (controlAction != null) {
 				selectionProvider.addSelectionChangedListener(controlAction);
+			}
+
+			if (selectOriginalAction != null) {
+				selectionProvider.addSelectionChangedListener(selectOriginalAction);
 			}
 		}
 
@@ -955,6 +995,10 @@ public class EditCommandsFactory implements IPropertyListener {
 
 			if (controlAction != null) {
 				controlAction.updateSelection(structuredSelection);
+			}
+
+			if (selectOriginalAction != null) {
+				selectOriginalAction.updateSelection(structuredSelection);
 			}
 		}
 

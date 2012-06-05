@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2011 David A Carlson and others.
+ * Copyright (c) 2006, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,6 +8,7 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adjusting alignmnent of field labels
+ *     Christian W. Damus - Handle element wrappers (artf3238)
  *     
  * $Id$
  *******************************************************************************/
@@ -27,7 +28,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
-import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
@@ -52,13 +52,14 @@ import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.NamedElement;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
 import org.openhealthtools.mdht.uml.ui.properties.internal.Logger;
+import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
 
 /**
  * The general properties section for Classifier.
  * 
  * $Id: $
  */
-public class ClassifierSection extends AbstractModelerPropertySection {
+public class ClassifierSection extends WrapperAwareModelerPropertySection {
 
 	private Classifier classifier;
 

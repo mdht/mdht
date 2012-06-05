@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - Handle element wrappers (artf3238)
  *     
  * $Id$
  *******************************************************************************/
@@ -29,11 +30,13 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AdvancedPropertySection;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource;
@@ -41,33 +44,39 @@ import org.eclipse.ui.views.properties.IPropertySourceProvider;
 import org.eclipse.uml2.common.edit.provider.IItemQualifiedTextProvider;
 import org.eclipse.uml2.uml.edit.providers.ElementItemProvider;
 import org.openhealthtools.mdht.uml.common.ui.util.AdapterFactoryManager;
+import org.openhealthtools.mdht.uml.common.ui.util.Selections;
 
 public class UMLAdvancedSection extends AdvancedPropertySection implements IPropertySourceProvider {
 
+	private boolean inputIsWrapper;
+
 	protected static class UMLPropertySource extends PropertySource {
+		private final boolean readOnly;
 
-		protected List stereotypeApplicationItemPropertyDescriptors = null;
+		protected List<IItemPropertyDescriptor> stereotypeApplicationItemPropertyDescriptors = null;
 
-		protected UMLPropertySource(Object object, IItemPropertySource itemPropertySource) {
+		protected UMLPropertySource(Object object, IItemPropertySource itemPropertySource, boolean readOnly) {
 			super(object, itemPropertySource);
+
+			this.readOnly = readOnly;
 		}
 
 		@Override
 		protected IPropertyDescriptor createPropertyDescriptor(IItemPropertyDescriptor itemPropertyDescriptor) {
-			return new UMLPropertyDescriptor(object, itemPropertyDescriptor);
+			return new UMLPropertyDescriptor(object, itemPropertyDescriptor, readOnly);
 		}
 
 		@Override
 		public IPropertyDescriptor[] getPropertyDescriptors() {
-			List propertyDescriptors = new ArrayList();
+			List<IPropertyDescriptor> propertyDescriptors = new ArrayList<IPropertyDescriptor>();
 
-			List itemPropertyDescriptors = itemPropertySource.getPropertyDescriptors(object);
+			List<IItemPropertyDescriptor> itemPropertyDescriptors = itemPropertySource.getPropertyDescriptors(object);
 
 			if (itemPropertyDescriptors != null) {
 
-				for (Iterator i = itemPropertyDescriptors.iterator(); i.hasNext();) {
+				for (Iterator<IItemPropertyDescriptor> i = itemPropertyDescriptors.iterator(); i.hasNext();) {
 
-					propertyDescriptors.add(createPropertyDescriptor((IItemPropertyDescriptor) i.next()));
+					propertyDescriptors.add(createPropertyDescriptor(i.next()));
 				}
 			}
 
@@ -76,14 +85,14 @@ public class UMLAdvancedSection extends AdvancedPropertySection implements IProp
 
 				if (stereotypeApplicationItemPropertyDescriptors != null) {
 
-					for (Iterator i = stereotypeApplicationItemPropertyDescriptors.iterator(); i.hasNext();) {
+					for (Iterator<IItemPropertyDescriptor> i = stereotypeApplicationItemPropertyDescriptors.iterator(); i.hasNext();) {
 
-						propertyDescriptors.add(createPropertyDescriptor((IItemPropertyDescriptor) i.next()));
+						propertyDescriptors.add(createPropertyDescriptor(i.next()));
 					}
 				}
 			}
 
-			return (IPropertyDescriptor[]) propertyDescriptors.toArray(new IPropertyDescriptor[propertyDescriptors.size()]);
+			return propertyDescriptors.toArray(new IPropertyDescriptor[propertyDescriptors.size()]);
 		}
 
 		protected IItemPropertyDescriptor getItemPropertyDescriptor(Object propertyId) {
@@ -119,9 +128,19 @@ public class UMLAdvancedSection extends AdvancedPropertySection implements IProp
 	}
 
 	protected static class UMLPropertyDescriptor extends PropertyDescriptor {
+		private final boolean readOnly;
 
-		protected UMLPropertyDescriptor(Object object, IItemPropertyDescriptor itemPropertyDescriptor) {
+		protected UMLPropertyDescriptor(Object object, IItemPropertyDescriptor itemPropertyDescriptor, boolean readOnly) {
 			super(object, itemPropertyDescriptor);
+
+			this.readOnly = readOnly;
+		}
+
+		@Override
+		public CellEditor createPropertyEditor(Composite composite) {
+			return readOnly
+					? null
+					: super.createPropertyEditor(composite);
 		}
 
 		@Override
@@ -153,7 +172,7 @@ public class UMLAdvancedSection extends AdvancedPropertySection implements IProp
 		if (af != null) {
 			IItemPropertySource ips = (IItemPropertySource) af.adapt(object, IItemPropertySource.class);
 			if (ips != null) {
-				return new UMLPropertySource(object, ips);
+				return new UMLPropertySource(object, ips, inputIsWrapper);
 			}
 		}
 		if (object instanceof IAdaptable) {
@@ -195,9 +214,12 @@ public class UMLAdvancedSection extends AdvancedPropertySection implements IProp
 			super.setInput(part, selection);
 			return;
 		}
-		final StructuredSelection structuredSelection = ((StructuredSelection) selection);
-		ArrayList transformedSelection = new ArrayList(structuredSelection.size());
-		for (Iterator it = structuredSelection.iterator(); it.hasNext();) {
+
+		final StructuredSelection structuredSelection = (StructuredSelection) Selections.unwrap((StructuredSelection) selection);
+		inputIsWrapper = structuredSelection != selection;
+
+		ArrayList<Object> transformedSelection = new ArrayList<Object>(structuredSelection.size());
+		for (Iterator<?> it = structuredSelection.iterator(); it.hasNext();) {
 			Object r = transformSelection(it.next());
 			if (r != null) {
 				transformedSelection.add(r);

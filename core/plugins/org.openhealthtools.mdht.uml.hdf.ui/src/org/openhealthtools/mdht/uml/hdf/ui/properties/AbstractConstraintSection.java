@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 Sean Muir.
+ * Copyright (c) 2009, 2012 Sean Muir and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     Sean Muir (JKMSoftware) - initial implementation
+ *     Christian W. Damus - Handle element wrappers (artf3238)
  *     
  * $Id$
  *******************************************************************************/
@@ -16,7 +17,6 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.NotificationImpl;
-import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Button;
@@ -24,8 +24,9 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.hdf.ui.properties.IVocabularySelectionDelegate.IVocabularyConstraint;
+import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
 
-public class AbstractConstraintSection extends AbstractModelerPropertySection {
+public class AbstractConstraintSection extends WrapperAwareModelerPropertySection {
 
 	Property property;
 

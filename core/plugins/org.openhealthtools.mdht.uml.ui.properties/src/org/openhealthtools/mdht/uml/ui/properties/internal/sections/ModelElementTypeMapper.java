@@ -14,6 +14,7 @@ package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.ui.views.properties.tabbed.ITypeMapper;
 import org.eclipse.uml2.uml.Element;
@@ -39,7 +40,11 @@ public class ModelElementTypeMapper implements ITypeMapper {
 			if (mapped == null) {
 				mapped = ((IAdaptable) input).getAdapter(EObject.class);
 			}
+		} else {
+			// unwrap a wrapper item provider
+			mapped = AdapterFactoryEditingDomain.unwrap(input);
 		}
+
 		if (mapped instanceof View) {
 			mapped = ((View) mapped).getElement();
 		}

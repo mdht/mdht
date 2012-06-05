@@ -18,7 +18,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.openhealthtools.mdht.uml.common,
  org.openhealthtools.mdht.uml.common.ui,
  org.openhealthtools.mdht.uml.hdf,
- org.openhealthtools.mdht.uml.hl7.core
+ org.openhealthtools.mdht.uml.hl7.core,
+ org.openhealthtools.mdht.uml.ui.properties;bundle-version="1.1.0"
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.hdf.ui.clone,
  org.openhealthtools.mdht.uml.hdf.ui.filters,
