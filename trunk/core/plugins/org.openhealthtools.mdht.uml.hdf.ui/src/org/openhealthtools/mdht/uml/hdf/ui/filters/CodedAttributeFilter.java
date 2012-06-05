@@ -18,7 +18,7 @@ import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
-import org.openhealthtools.mdht.uml.common.ui.filters.HDFFilterUtil;
+import org.openhealthtools.mdht.uml.common.ui.filters.FilterUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 
 /**
@@ -28,7 +28,7 @@ public class CodedAttributeFilter implements IFilter {
 
 	public boolean select(Object object) {
 
-		Element element = HDFFilterUtil.getElement(object);
+		Element element = FilterUtil.getElement(object);
 
 		if (element instanceof Property && ((Property) element).getType() instanceof Classifier) {
 			Classifier type = (Classifier) ((Property) element).getType();

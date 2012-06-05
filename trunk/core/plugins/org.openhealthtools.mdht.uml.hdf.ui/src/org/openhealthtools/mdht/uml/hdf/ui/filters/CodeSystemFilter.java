@@ -16,7 +16,7 @@ import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
-import org.openhealthtools.mdht.uml.common.ui.filters.HDFFilterUtil;
+import org.openhealthtools.mdht.uml.common.ui.filters.FilterUtil;
 import org.openhealthtools.mdht.uml.hdf.util.HL7ResourceUtil;
 import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
 
@@ -27,7 +27,7 @@ import org.openhealthtools.mdht.uml.hdf.util.IHDFProfileConstants;
 public class CodeSystemFilter implements IFilter {
 
 	public boolean select(Object object) {
-		Element element = HDFFilterUtil.getElement(object);
+		Element element = FilterUtil.getElement(object);
 
 		if (element instanceof Property) {
 			Stereotype stereotype = HL7ResourceUtil.getAppliedHDFStereotype(

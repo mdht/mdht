@@ -20,13 +20,10 @@ import org.openhealthtools.mdht.uml.common.ui.util.Selections;
 
 /**
  * Defines utility method to get the testable element from the object to filter
- * on. In RSM the object is IAdaptable - in Papyrus the object is of type
- * element;
- * 
- * The order of the check might be of significant if the IAdapable is also an
+ * on. The order of the check might be of significant if the IAdapable is also an
  * element so we are checking for IAdaptable first.
  */
-public class HDFFilterUtil {
+public class FilterUtil {
 
 	public static Element getElement(Object object) {
 
