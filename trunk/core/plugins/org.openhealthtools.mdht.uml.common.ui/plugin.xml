@@ -10,6 +10,7 @@
   Contributors:
       David A Carlson - initial API and implementation
       Christian W. Damus - Customize the editing domain's adapter factory (artf3178)
+                         - more flexible contribution/filtering of actions (artf3238)
       
   $Id$
 -->
@@ -19,5 +20,16 @@
       <editingDomain
          id="org.openhealthtools.mdht.uml.common.ui.EditingDomain"
          factory="org.openhealthtools.mdht.uml.common.ui.util.UMLEditingDomainFactory"/>
+   </extension>
+   
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="org.openhealthtools.mdht.uml.common.ui.internal.expressions.ECoreTester"
+            id="org.openhealthtools.mdht.uml.common.ui.ecorePropertyTester"
+            namespace="org.openhealthtools.mdht.uml.common.ui.ecore"
+            properties="eclass"
+            type="java.lang.Object">
+      </propertyTester>
    </extension>
 </plugin>

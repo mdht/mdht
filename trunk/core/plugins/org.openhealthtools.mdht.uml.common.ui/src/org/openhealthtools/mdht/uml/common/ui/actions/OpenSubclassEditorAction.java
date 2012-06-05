@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 David A Carlson.
+ * Copyright (c) 2011, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - more flexible contribution/filtering of actions (artf3238)
  *     
  * $Id$
  *******************************************************************************/
@@ -35,8 +36,13 @@ import org.eclipse.uml2.uml.Class;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassEditorViewContentProvider;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassEditorViewLabelProvider;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.SubclassHandler;
+import org.openhealthtools.mdht.uml.common.ui.handlers.OpenSubclassEditorHandler;
 import org.openhealthtools.mdht.uml.common.ui.internal.Logger;
 
+/**
+ * @deprecated Use the {@link OpenSubclassEditorHandler} with a command definition, instead.
+ */
+@Deprecated
 public class OpenSubclassEditorAction implements IObjectActionDelegate {
 
 	protected IWorkbenchPart activePart;
