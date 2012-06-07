@@ -18,9 +18,10 @@ package org.openhealthtools.mdht.uml.ui.editors;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
+import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.eclipse.core.commands.operations.IOperationHistory;
@@ -142,7 +143,6 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
@@ -152,6 +152,7 @@ import org.openhealthtools.mdht.uml.common.ui.util.AdapterFactoryCellModifier;
 import org.openhealthtools.mdht.uml.common.ui.util.ComboBoxTextCellEditor;
 import org.openhealthtools.mdht.uml.common.ui.util.IResourceConstants;
 import org.openhealthtools.mdht.uml.common.ui.util.TreeCursor;
+import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
 import org.openhealthtools.mdht.uml.edit.provider.SimpleListNotifier;
@@ -896,13 +897,7 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 		};
 		umlSwitch.doSwitch(resource.getContents().get(0));
 
-		Collections.sort(contents, new Comparator<Class>() {
-
-			public int compare(Class first, Class second) {
-				return first.getName().compareTo(second.getName());
-			}
-
-		});
+		Collections.sort(contents, new NamedElementComparator());
 
 		viewSelection = new StructuredSelection(contents);
 		updateViewContents();
@@ -913,22 +908,35 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 			return;
 		}
 
-		List<Class> contents = new ArrayList<Class>();
-		contents.add(containerFilter);
+		Set<Classifier> contents = new HashSet<Classifier>();
+		appendContainerFilterSelection(containerFilter, contents);
 
-		for (Property property : containerFilter.getAllAttributes()) {
-			// include only those classes that are in this editor's resource
-			Type type = property.getType();
-			Resource eResource = type.eResource();
-			if (type instanceof Class &&
-					(resource.equals(eResource) || UMLUtil.getControlledResources(resource).contains(eResource))) {
-				contents.add((Class) type);
-			}
-		}
+		List<Classifier> sortedContents = new ArrayList<Classifier>(contents);
+		Collections.sort(sortedContents, new NamedElementComparator());
 
-		viewSelection = new StructuredSelection(contents);
+		viewSelection = new StructuredSelection(sortedContents);
 		updateViewContents();
 		selectReveal(new StructuredSelection(containerFilter));
+	}
+
+	private void appendContainerFilterSelection(Classifier classifier, Set<Classifier> contents) {
+		// include only those classes that are in this editor's resource
+		if (resource.equals(classifier.eResource()) ||
+				UMLUtil.getControlledResources(resource).contains(classifier.eResource())) {
+			contents.add(classifier);
+
+			// recursive: all subclasses, and all contents of associated classes
+			List<Classifier> subtypes = UMLUtil.getAllSpecializations(classifier);
+			for (Classifier subtype : subtypes) {
+				appendContainerFilterSelection(subtype, contents);
+			}
+
+			for (Property property : classifier.getAllAttributes()) {
+				if (property.getType() instanceof Classifier) {
+					appendContainerFilterSelection((Classifier) property.getType(), contents);
+				}
+			}
+		}
 	}
 
 	private void computeResourceFilterSelection() {
