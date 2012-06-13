@@ -98,14 +98,45 @@ public class ReactionObservationTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_REACTION_INTERVENTION_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
+			/*
+			 * (non-Javadoc)
+			 * 
+			 * @see org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.OperationsTestCase#addFailTests()
+			 */
 			@Override
-			protected void updateToFail(ReactionObservation target) {
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(ReactionObservation target) {
+						EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+						er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+						er.setAct(CDAFactory.eINSTANCE.createAct());
+						target.getEntryRelationships().add(er);
+
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(ReactionObservation target) {
+						EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+						er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+						er.setProcedure(CDAFactory.eINSTANCE.createProcedure());
+						target.getEntryRelationships().add(er);
+
+					}
+				});
 
 			}
 
 			@Override
 			protected void updateToPass(ReactionObservation target) {
-
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.RSON);
+				target.getEntryRelationships().add(er);
 			}
 
 			@Override
