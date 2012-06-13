@@ -41,7 +41,6 @@ import org.openhealthtools.mdht.uml.cda.ccd.SocialHistorySection;
 import org.openhealthtools.mdht.uml.cda.ccd.VitalSignsSection;
 import org.openhealthtools.mdht.uml.cda.ccd.operations.ContinuityOfCareDocumentOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
-import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -243,116 +242,102 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(ContinuityOfCareDocument target) {
-
-			}
-
-			/*
-			 * (non-Javadoc)
-			 * 
-			 * @see org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.OperationsTestCase#addFailTests()
-			 */
-			@Override
 			public void addFailTests() {
 
-				this.addFailTest(new FailTest() {
+				addFailTest(new FailTest() {
 
 					@Override
 					public void updateToFail(ContinuityOfCareDocument target) {
+						// Do nothing should trigger
 
-						target.init();
-
-						CS cs = DatatypesFactory.eINSTANCE.createCS("someincorrectformat");
-
-						target.setLanguageCode(cs);
 					}
-
 				});
 
-				this.addFailTest(new FailTest() {
+				addFailTest(new FailTest() {
 
 					@Override
 					public void updateToFail(ContinuityOfCareDocument target) {
-
-						target.init();
-
-						CS cs = DatatypesFactory.eINSTANCE.createCS("AA-aa");
-
-						target.setLanguageCode(cs);
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("aaaa"));
 					}
-
 				});
 
-				this.addFailTest(new FailTest() {
+				addFailTest(new FailTest() {
 
 					@Override
 					public void updateToFail(ContinuityOfCareDocument target) {
-
-						target.init();
-
-						CS cs = DatatypesFactory.eINSTANCE.createCS("11");
-
-						target.setLanguageCode(cs);
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("AAAA"));
 					}
-
 				});
 
-				this.addFailTest(new FailTest() {
+				addFailTest(new FailTest() {
 
 					@Override
 					public void updateToFail(ContinuityOfCareDocument target) {
-
-						target.init();
-
-						CS cs = DatatypesFactory.eINSTANCE.createCS("zz-22");
-
-						target.setLanguageCode(cs);
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("aa-aa"));
 					}
+				});
 
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(ContinuityOfCareDocument target) {
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("AA-AA"));
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(ContinuityOfCareDocument target) {
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("aaa"));
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(ContinuityOfCareDocument target) {
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("a"));
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(ContinuityOfCareDocument target) {
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("AA-aa"));
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(ContinuityOfCareDocument target) {
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("AA-"));
+					}
 				});
 
 			}
 
-			/*
-			 * (non-Javadoc)
-			 * 
-			 * @see org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest.OperationsTestCase#addPassTests()
-			 */
 			@Override
 			public void addPassTests() {
-
-				addPassTest(new PassTest() {
-
-					@Override
-					public void updateToPass(ContinuityOfCareDocument target) {
-						target.init();
-
-						CS cs = DatatypesFactory.eINSTANCE.createCS("aa");
-
-						target.setLanguageCode(cs);
-
-					}
-
-				});
-
-				addPassTest(new PassTest() {
+				this.addPassTest(new PassTest() {
 
 					@Override
 					public void updateToPass(ContinuityOfCareDocument target) {
-						target.init();
-
-						CS cs = DatatypesFactory.eINSTANCE.createCS("aa-AA");
-
-						target.setLanguageCode(cs);
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("en"));
 
 					}
-
 				});
 
-			}
+				this.addPassTest(new PassTest() {
 
-			@Override
-			protected void updateToPass(ContinuityOfCareDocument target) {
+					@Override
+					public void updateToPass(ContinuityOfCareDocument target) {
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("en-US"));
+
+					}
+				});
 
 			}
 

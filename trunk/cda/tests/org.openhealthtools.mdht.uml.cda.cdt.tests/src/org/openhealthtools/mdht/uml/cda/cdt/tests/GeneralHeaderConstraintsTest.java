@@ -512,7 +512,7 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateGeneralHeaderConstraintsLanguageCodeForm() {
@@ -522,13 +522,102 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(GeneralHeaderConstraints target) {
+			public void addFailTests() {
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						// Do nothing should trigger
+
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("aaaa"));
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("AAAA"));
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("aa-aa"));
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("AA-AA"));
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("aaa"));
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("a"));
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("AA-aa"));
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(GeneralHeaderConstraints target) {
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("AA-"));
+					}
+				});
 
 			}
 
 			@Override
-			protected void updateToPass(GeneralHeaderConstraints target) {
-				target.init();
+			public void addPassTests() {
+				this.addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("en"));
+
+					}
+				});
+
+				this.addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(GeneralHeaderConstraints target) {
+						target.setLanguageCode(DatatypesFactory.eINSTANCE.createCS("en-US"));
+
+					}
+				});
 
 			}
 
