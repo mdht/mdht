@@ -14,20 +14,24 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ant.taskdefs;
 
-import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Package;
-import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformer;
-import org.openhealthtools.mdht.uml.common.util.UMLUtil;
-import org.openhealthtools.mdht.uml.transform.TransformerOptions;
+import org.openhealthtools.mdht.transform.core.IRule;
+import org.openhealthtools.mdht.transform.core.ITransformContext;
+import org.openhealthtools.mdht.transform.core.ITransformMonitor;
+import org.openhealthtools.mdht.transform.core.RuleBuilder;
+import org.openhealthtools.mdht.transform.core.TransformationBuilder;
+import org.openhealthtools.mdht.transform.core.TransformationException;
+import org.openhealthtools.mdht.uml.cda.transform.EcoreTransformationBuilder;
+import org.openhealthtools.mdht.uml.transform.UMLInitializeModelLocalizedNamesRule;
 
 /**
  * Transform CDA conceptual model to UML with Ecore extensions.
@@ -65,11 +69,11 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 		transformToUML(monitor);
 	}
 
-	private void transformToUML(IProgressMonitor monitor) {
+	private void transformToUML(final IProgressMonitor monitor) {
 		Package defaultModel = getHL7ModelingTask().getDefaultModel();
 		Resource umlResource = defaultModel.eResource();
 
-		Map<String, String> parsedProperties = aggregateFragmentProperties(umlResource);
+		final Map<String, String> parsedProperties = aggregateFragmentProperties(umlResource);
 		collapseFragments(umlResource);
 
 		URI ecoreModelURI = null;
@@ -93,33 +97,35 @@ public class TransformToEcoreModel extends CDAModelingSubTask {
 
 		EcoreUtil.resolveAll(defaultModel.eResource().getResourceSet());
 
-		TransformerOptions options = new TransformerOptions();
-
 		monitor.setTaskName("Generating Ecore model");
 		logInfo("Generating Ecore model...");
 
-		EcoreTransformer transformer = new EcoreTransformer(options);
-		transformer.initialize(defaultModel);
-		processModelElements(transformer);
+		TransformationBuilder builder = EcoreTransformationBuilder.create();
 
-		monitor.worked(1);
-		if (monitor.isCanceled()) {
-			return;
-		}
+		// add a rule to the initialization that makes the localized names available to the transformation
+		builder.initialization().rule(new UMLInitializeModelLocalizedNamesRule(parsedProperties)).done();
 
-		/* Save */
-		monitor.setTaskName("Saving Ecore model");
-		logInfo("Saving Ecore model: " + ecoreModelURI.toString());
+		// add a fragment before save that checks for cancellation and logs the save operation
+		builder.finalization().getRule(IRule.ID_SAVE_MODEL).before(new RuleBuilder.IFragmentDelegate() {
+
+			public Object apply(EObject input, Object output, ITransformContext ctx, ITransformMonitor transformMonitor)
+					throws TransformationException {
+
+				monitor.worked(1);
+				if (monitor.isCanceled()) {
+					transformMonitor.abort("Transformation cancelled.");
+				}
+
+				monitor.setTaskName("Saving Ecore model");
+				transformMonitor.info("Saving Ecore model: " + input.eResource().getURI());
+
+				return output;
+			}
+		});
 
 		try {
-			Map<String, String> saveOptions = new HashMap<String, String>();
-			umlResource.save(saveOptions);
-
-			if (!parsedProperties.isEmpty()) {
-				UMLUtil.writeProperties(UMLUtil.getPropertiesURI(umlResource), parsedProperties);
-			}
-
-		} catch (IOException e) {
+			processModelElements(builder.build());
+		} catch (TransformationException e) {
 			throw new BuildException(e);
 		}
 	}
