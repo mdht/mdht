@@ -9,6 +9,7 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Sean Muir (JKM Software) - added copy annotation method
  *     Christian W. Damus - reuse one annotation store for all utils on an element (artf3030)
+ *                        - maintain consistent ordering of annotations (artf3306)
  *     
  * $Id$
  *******************************************************************************/
@@ -16,7 +17,6 @@ package org.openhealthtools.mdht.uml.cda.transform;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -155,7 +155,7 @@ public class AnnotationsUtil {
 	private static final class AnnotationStore extends AdapterImpl {
 		private final String annotationSource;
 
-		private final Map<String, String> cdaAnnotations = new HashMap<String, String>();
+		private final Map<String, String> cdaAnnotations = new java.util.LinkedHashMap<String, String>();
 
 		private boolean dirty;
 
