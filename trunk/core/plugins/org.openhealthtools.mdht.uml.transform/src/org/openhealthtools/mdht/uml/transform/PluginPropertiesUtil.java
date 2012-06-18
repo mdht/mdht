@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - Integration of new transformation framework (artf3240)
  *     
  * $Id$
  *******************************************************************************/
@@ -44,7 +45,15 @@ public class PluginPropertiesUtil {
 
 	private List<String> newProperties = new ArrayList<String>();
 
+	public PluginPropertiesUtil() {
+		super();
+	}
+
 	public PluginPropertiesUtil(IFile pluginProperties) {
+		initPluginProperties(pluginProperties);
+	}
+
+	private void initPluginProperties(IFile pluginProperties) {
 		this.pluginProperties = pluginProperties;
 
 		properties = new Properties();
@@ -57,6 +66,14 @@ public class PluginPropertiesUtil {
 
 	public PluginPropertiesUtil(Resource resource) {
 		this(findPluginProperties(resource));
+	}
+
+	public void setPluginProperties(IFile pluginProperties) {
+		initPluginProperties(pluginProperties);
+	}
+
+	public void initPluginProperties(Resource resource) {
+		initPluginProperties(findPluginProperties(resource));
 	}
 
 	public void addProperty(String key, String value) {

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - Integration of new transformation framework (artf3240)
  *     
  * $Id$
  *******************************************************************************/
@@ -35,6 +36,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
+import org.openhealthtools.mdht.transform.core.ITransformation;
+import org.openhealthtools.mdht.transform.core.TransformationException;
 import org.openhealthtools.mdht.uml.cda.ant.types.ModelElement;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.transform.AbstractTransformer;
@@ -187,6 +190,46 @@ public abstract class CDAModelingSubTask extends Task {
 				}
 			}
 		}
+	}
+
+	protected void processModelElements(ITransformation transformation) throws TransformationException {
+		List<EObject> elements = new java.util.ArrayList<EObject>();
+
+		// process modelElement types first
+		for (ModelElement modelElement : getHL7ModelingTask().getModelElements()) {
+			String qname = modelElement.getQname();
+			Collection<NamedElement> umlElements = org.eclipse.uml2.uml.util.UMLUtil.findNamedElements(
+				getHL7ModelingTask().getResourceSet(), qname);
+
+			// do not include packageImport elements
+			Collection<NamedElement> exactMatches = new ArrayList<NamedElement>();
+			for (NamedElement namedElement : umlElements) {
+				if (qname.equals(namedElement.getQualifiedName())) {
+					exactMatches.add(namedElement);
+				}
+			}
+
+			if (exactMatches.size() > 1) {
+				logWarning("Found " + exactMatches.size() + " matches for: '" + qname + "'");
+			}
+
+			if (exactMatches.isEmpty()) {
+				logError("Model element not found: '" + modelElement.getQname() + "'");
+			} else {
+				for (NamedElement namedElement : exactMatches) {
+					logInfo("Model element processed: '" + namedElement.getQualifiedName() + "'");
+					elements.add(namedElement);
+				}
+			}
+		}
+
+		// process all model packages
+		List<Package> umlModels = getHL7ModelingTask().getRootPackages();
+		for (Package umlModel : umlModels) {
+			elements.add(umlModel);
+		}
+
+		transformation.execute(elements, AntTransformMonitor.createMonitor(this));
 	}
 
 	protected void processModelElements(AbstractTransformer transformer) {
