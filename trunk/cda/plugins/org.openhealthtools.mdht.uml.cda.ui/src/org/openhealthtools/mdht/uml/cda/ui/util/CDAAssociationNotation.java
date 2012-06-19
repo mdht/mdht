@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - check for null modifiers as well as empty, for good measure (artf3287)
  *     
  * $Id$
  *******************************************************************************/
@@ -58,7 +59,7 @@ public class CDAAssociationNotation {
 			boolean multiLine = ((style & IUMLNotation.DISP_MULTI_LINE) != 0);
 			// class modifiers
 			String modifiers = getModifiersAsString(association, style);
-			if (!modifiers.equals("")) {
+			if ((modifiers != null) && !modifiers.equals("")) {
 				if (multiLine) {
 					buffer.append("\n");
 				}

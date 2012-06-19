@@ -9,6 +9,7 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for showing business names (or not)
  *     Christian W. Damus - fix re-ordering of properties and constraints
+ *                        - ensure correct structure of pasted association copies (artf3287)
  *     
  * $Id$
  *******************************************************************************/
@@ -26,10 +27,18 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.command.ChildrenToCopyProvider;
+import org.eclipse.emf.edit.command.CommandParameter;
+import org.eclipse.emf.edit.command.CopyCommand.Helper;
+import org.eclipse.emf.edit.command.CreateCopyCommand;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposedImage;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
@@ -52,6 +61,7 @@ import org.openhealthtools.mdht.uml.common.notation.NotationUtil;
 import org.openhealthtools.mdht.uml.common.util.NamedElementUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.edit.IUMLTableProperties;
+import org.openhealthtools.mdht.uml.edit.command.CommandWrapperWithChildrenToCopy;
 import org.openhealthtools.mdht.uml.edit.internal.Logger;
 import org.openhealthtools.mdht.uml.edit.internal.UMLExtEditPlugin;
 import org.openhealthtools.mdht.uml.edit.provider.operations.NamedElementOperations;
@@ -370,4 +380,52 @@ public class AssociationExtItemProvider extends AssociationItemProvider implemen
 		}
 	}
 
+	@Override
+	protected Command createCreateCopyCommand(EditingDomain domain, EObject owner, Helper helper) {
+		final Property navigableEnd = UMLUtil.getNavigableEnd((Association) owner);
+
+		Command result = super.createCreateCopyCommand(domain, owner, helper);
+
+		if (navigableEnd != null) {
+			// need to copy it, too, to have a complete association
+			class CompoundWithChildrenToCopy extends CompoundCommand implements ChildrenToCopyProvider {
+				CompoundWithChildrenToCopy() {
+					super(CompoundCommand.MERGE_COMMAND_ALL);
+				}
+
+				public Collection<?> getChildrenToCopy() {
+					List<Object> result = new java.util.ArrayList<Object>();
+
+					for (Command next : commandList) {
+						if (next instanceof ChildrenToCopyProvider) {
+							result.addAll(((ChildrenToCopyProvider) next).getChildrenToCopy());
+						}
+					}
+
+					return result;
+				}
+			}
+
+			CompoundCommand compound = new CompoundWithChildrenToCopy();
+			compound.append(result);
+			result = compound;
+
+			compound.append(CreateCopyCommand.create(domain, navigableEnd, helper));
+		}
+
+		return result;
+	}
+
+	@Override
+	protected Command wrapCommand(Command command, Object object, java.lang.Class<? extends Command> commandClass,
+			CommandParameter commandParameter, CommandParameter oldCommandParameter) {
+
+		Command result = super.wrapCommand(command, object, commandClass, commandParameter, oldCommandParameter);
+
+		if ((result != command) && (command instanceof ChildrenToCopyProvider)) {
+			result = new CommandWrapperWithChildrenToCopy(result, (ChildrenToCopyProvider) command);
+		}
+
+		return result;
+	}
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2011 David A Carlson and others.
+ * Copyright (c) 2006, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,6 +8,7 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for showing business names (or not)
+ *     Christian W. Damus - disallow pasting associations directly into packages (artf3287) 
  *     
  * $Id$
  *******************************************************************************/
@@ -18,11 +19,17 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.command.UnexecutableCommand;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.command.AddCommand;
+import org.eclipse.emf.edit.command.CommandParameter;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.Actor;
+import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Model;
@@ -199,4 +206,23 @@ public class PackageExtItemProvider extends PackageItemProvider implements ITabl
 		NamedElementOperations.modify(element, property, value);
 	}
 
+	@Override
+	public Command createCommand(Object object, EditingDomain domain, Class<? extends Command> commandClass,
+			CommandParameter commandParameter) {
+
+		Command result = null;
+
+		if (commandClass == AddCommand.class) {
+			// are we trying to add objects that we don't want to be able to add?
+			if (!TrojanHorse.filter(commandParameter.getCollection(), Association.class)) {
+				result = UnexecutableCommand.INSTANCE;
+			}
+		}
+
+		if (result == null) {
+			result = super.createCommand(object, domain, commandClass, commandParameter);
+		}
+
+		return result;
+	}
 }

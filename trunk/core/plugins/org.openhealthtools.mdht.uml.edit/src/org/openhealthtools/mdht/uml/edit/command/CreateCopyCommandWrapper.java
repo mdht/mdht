@@ -43,10 +43,15 @@ public class CreateCopyCommandWrapper implements UMLCommandWrapper {
 					}
 
 					public Collection<?> getChildrenToCopy() {
-						Collection<EObject> result = new java.util.ArrayList<EObject>(element.eContents().size() +
+						Collection<Object> result = new java.util.ArrayList<Object>(element.eContents().size() +
 								stereotypeApplications.size());
 
-						result.addAll(element.eContents());
+						if (getCommand() instanceof ChildrenToCopyProvider) {
+							result.addAll(((ChildrenToCopyProvider) getCommand()).getChildrenToCopy());
+						} else {
+							result.addAll(element.eContents());
+						}
+
 						result.addAll(stereotypeApplications);
 
 						return result;
