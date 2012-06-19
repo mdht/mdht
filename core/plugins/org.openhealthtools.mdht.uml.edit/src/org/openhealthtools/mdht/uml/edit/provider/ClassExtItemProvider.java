@@ -9,6 +9,7 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for showing business names (or not)
  *     Christian W. Damus - fix re-ordering of properties and constraints
+ *                        - ensure correct structure of pasted association copies (artf3287)
  *     
  * $Id$
  *******************************************************************************/
@@ -19,12 +20,16 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.command.CompoundCommand;
+import org.eclipse.emf.common.command.IdentityCommand;
 import org.eclipse.emf.common.command.UnexecutableCommand;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.command.CommandParameter;
+import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
@@ -33,7 +38,9 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.edit.providers.ClassItemProvider;
@@ -306,4 +313,72 @@ public class ClassExtItemProvider extends ClassItemProvider implements ITableIte
 		NamedElementOperations.modify(element, property, value);
 	}
 
+	@Override
+	protected Command createAddCommand(EditingDomain domain, EObject owner, EStructuralFeature feature,
+			Collection<?> collection, int index) {
+
+		// see if we're pasting associations. If so, they actually go into our package (but the same controlled unit!)
+		List<Association> associations = new java.util.ArrayList<Association>();
+		for (Object next : collection) {
+			if (next instanceof Association) {
+				associations.add((Association) next);
+			}
+		}
+		if (!associations.isEmpty()) {
+			Collection<Object> newCollection = new java.util.ArrayList<Object>(collection);
+			newCollection.removeAll(associations);
+			collection = newCollection;
+		}
+
+		Command result = (collection.isEmpty() && !associations.isEmpty())
+				? IdentityCommand.INSTANCE
+				: super.createAddCommand(domain, owner, feature, collection, index);
+
+		if (!associations.isEmpty() && result.canExecute()) {
+			Package nearestPackage = ((Class) owner).getNearestPackage();
+			CompoundCommand compound = new CompoundCommand(CompoundCommand.MERGE_COMMAND_ALL);
+			compound.append(result);
+			result = compound;
+
+			// add the associations to the package, but sneak them in a Trojan horse because otherwise they would be blocked
+			// by the package's item provider
+			compound.append(AddCommand.create(
+				domain, nearestPackage, UMLPackage.Literals.PACKAGE__PACKAGED_ELEMENT,
+				TrojanHorse.wrap(associations, owner, feature, adapterFactory)));
+
+			if (owner.eResource() != nearestPackage.eResource()) {
+				// need to co-control the associations
+				compound.append(new AddCommand(domain, owner.eResource().getContents(), associations));
+			}
+
+			// see if any associations have navigable non-owned members that we also want to paste into ourselves
+			List<Property> navigableEnds = new java.util.ArrayList<Property>();
+
+			for (Association next : associations) {
+				for (Property end : next.getMemberEnds()) {
+					if (end.getOwner() == null) {
+						navigableEnds.add(end);
+					}
+				}
+			}
+
+			if (!navigableEnds.isEmpty()) {
+				// add the navigable ends to the destination class
+				compound.append(AddCommand.create(
+					domain, owner, UMLPackage.Literals.STRUCTURED_CLASSIFIER__OWNED_ATTRIBUTE, navigableEnds));
+
+				// AND make sure that the opposites that we copied are typed by the destination class, otherwise it's
+				// not a valid association
+				Type type = (Type) owner;
+				for (Property next : navigableEnds) {
+					Property other = next.getOtherEnd();
+					if (other != null) {
+						compound.append(SetCommand.create(domain, other, UMLPackage.Literals.TYPED_ELEMENT__TYPE, type));
+					}
+				}
+			}
+		}
+
+		return result;
+	}
 }
