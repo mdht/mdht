@@ -6,11 +6,9 @@ Bundle-Version: 1.5.4.qualifier
 Bundle-Activator: org.dita.dost.internal.Activator
 Bundle-Vendor: DITAOT
 Require-Bundle: org.eclipse.core.runtime,
- org.apache.xalan,
  org.apache.xerces,
  org.apache.xml.resolver,
  org.apache.xml.serializer,
- org.eclipse.wst.xsl.saxon,
  org.eclipse.core.runtime,
  org.eclipse.ui,
  org.eclipse.core.runtime,
@@ -20,7 +18,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.jdt.core,
  org.eclipse.core.externaltools,
  org.eclipse.compare;bundle-version="3.5.100",
- org.eclipse.core.expressions
+ org.eclipse.core.expressions,
+ org.apache.commons.lang;bundle-version="2.3.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
