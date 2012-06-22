@@ -84,7 +84,7 @@ public class PublishDitaHandler extends AbstractHandler {
 				}
 			}
 
-			if (ditaMap.getProject() != null) {
+			if (!monitor.isCanceled() && ditaMap.getProject() != null) {
 				try {
 					ditaMap.getProject().refreshLocal(IProject.DEPTH_INFINITE, monitor);
 				} catch (CoreException e) {
