@@ -36,7 +36,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.uml2.uml.ecore.importer,
  org.eclipse.emf.importer,
  org.eclipse.core.externaltools,
- org.eclipse.core.filesystem
+ org.eclipse.core.filesystem,
+ org.dita.dost
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.cda.ui.filters,
