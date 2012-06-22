@@ -29,6 +29,12 @@ plugin@org.openhealthtools.mdht.uml.transform=SVN,trunk,https://www.projects.ope
 
 plugin@org.openhealthtools.mdht.uml.transform.ui=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.transform.ui,force
 
+plugin@org.openhealthtools.mdht.transform.core=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.transform.core,force
+
+plugin@org.openhealthtools.mdht.uml.ui.ide=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.ui.ide,force
+
+plugin@org.dita.dost=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.dita.dost,force
+
 
 !***************  MDHT Feature for CDA Documentations  ********************************************** 
 feature@org.openhealthtools.mdht.uml.cda.models.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.models.doc-feature,force
