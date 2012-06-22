@@ -19,6 +19,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.management.ManagementFactory;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -50,9 +51,11 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.debug.core.DebugPlugin;
+import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfigurationType;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.ILaunchManager;
@@ -62,8 +65,11 @@ import org.eclipse.jdt.launching.IRuntimeClasspathEntry;
 import org.eclipse.jdt.launching.IVMInstall;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.eclipse.ui.progress.IProgressService;
 import org.osgi.framework.Bundle;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -73,7 +79,7 @@ import org.xml.sax.SAXException;
 @SuppressWarnings("restriction")
 public class PublishDitaHandler extends AbstractHandler {
 
-	private String getFileNameFromMap(String ditaMapPath) {
+	private static String getFileNameFromMap(String ditaMapPath) {
 
 		String fileName = null;
 
@@ -136,7 +142,7 @@ public class PublishDitaHandler extends AbstractHandler {
 		return fileName;
 	}
 
-	protected void runPublishDita(IFile ditaMapFile, String antTargets) throws IOException, CoreException,
+	protected static ILaunch runPublishDita(IFile ditaMapFile, String antTargets) throws IOException, CoreException,
 			URISyntaxException {
 
 		IProject ditaProject = ditaMapFile.getProject();
@@ -187,8 +193,6 @@ public class PublishDitaHandler extends AbstractHandler {
 			Bundle requiredBundle = Platform.getBundle(requiredBundleSymbolicName.split(";")[0]);
 
 			File file = FileLocator.getBundleFile(requiredBundle);
-
-			System.out.println(file.getPath());
 
 			IRuntimeClasspathEntry requiredBundleEntry = JavaRuntime.newArchiveRuntimeClasspathEntry(new Path(
 				file.getPath()));
@@ -294,9 +298,57 @@ public class PublishDitaHandler extends AbstractHandler {
 
 		workingCopy.migrate();
 
-		// workingCopy.doSave();
+		return workingCopy.launch(ILaunchManager.RUN_MODE, null, false, true);
+	}
 
-		workingCopy.launch(ILaunchManager.RUN_MODE, null, false, true);
+	private static class PublishThread implements IRunnableWithProgress {
+		IFile ditaMap;
+
+		String targets;
+
+		public PublishThread(IFile ditaMap, String targets) {
+			super();
+			this.ditaMap = ditaMap;
+			this.targets = targets;
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see org.eclipse.jface.operation.IRunnableWithProgress#run(org.eclipse.core.runtime.IProgressMonitor)
+		 */
+		public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
+
+			monitor.beginTask("DITA Publishing " + ditaMap.getName(), targets.length() * 50);
+
+			for (String target : targets.split(",")) {
+				try {
+					monitor.subTask("Publish As " + target);
+
+					ILaunch publishLaunch = runPublishDita(ditaMap, target);
+					while (!publishLaunch.isTerminated() && !monitor.isCanceled()) {
+						Thread.currentThread();
+						Thread.sleep(250);
+						monitor.worked(1);
+					}
+
+					if (monitor.isCanceled()) {
+						publishLaunch.terminate();
+						break;
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+					break;
+				}
+			}
+
+			if (ditaMap.getProject() != null) {
+				try {
+					ditaMap.getProject().refreshLocal(IProject.DEPTH_INFINITE, monitor);
+				} catch (CoreException e) {
+				}
+			}
+		}
 
 	}
 
@@ -309,7 +361,13 @@ public class PublishDitaHandler extends AbstractHandler {
 
 					for (Object selection : (Collection) evaluationContext.getDefaultVariable()) {
 						if (selection instanceof IFile) {
-							runPublishDita((IFile) selection, event.getParameter("org.dita.dost.parameter.target"));
+
+							IProgressService iProgressService = PlatformUI.getWorkbench().getProgressService();
+
+							PublishThread publishThread = new PublishThread(
+								(IFile) selection, event.getParameter("org.dita.dost.parameter.target"));
+							iProgressService.busyCursorWhile(publishThread);
+
 						}
 					}
 				}
