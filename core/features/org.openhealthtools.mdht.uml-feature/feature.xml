@@ -96,4 +96,30 @@
          version="0.0.0"
          unpack="false"/>
 
+   <plugin
+         id="org.openhealthtools.mdht.transform.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+
+   <plugin
+         id="org.dita.dost"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+         
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.ui.ide"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+         
+
 </feature>
