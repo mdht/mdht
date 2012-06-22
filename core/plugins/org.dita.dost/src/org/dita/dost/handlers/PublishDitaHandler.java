@@ -39,6 +39,7 @@ import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.ant.internal.launching.launchConfigurations.AntHomeClasspathEntry;
 import org.eclipse.ant.internal.launching.launchConfigurations.ContributedClasspathEntriesEntry;
 import org.eclipse.ant.launching.IAntLaunchConstants;
@@ -319,18 +320,24 @@ public class PublishDitaHandler extends AbstractHandler {
 		 */
 		public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
 
-			monitor.beginTask("DITA Publishing " + ditaMap.getName(), targets.length() * 50);
+			monitor.beginTask(
+				"DITA Publishing " + ditaMap.getName(), (StringUtils.countMatches(targets, ",") + 1) * 300);
 
 			for (String target : targets.split(",")) {
 				try {
 					monitor.subTask("Publish As " + target);
 
 					ILaunch publishLaunch = runPublishDita(ditaMap, target);
+					int workcounter = 300;
 					while (!publishLaunch.isTerminated() && !monitor.isCanceled()) {
 						Thread.currentThread();
-						Thread.sleep(250);
+						Thread.sleep(100);
 						monitor.worked(1);
+						workcounter--;
 					}
+					monitor.worked(workcounter > 0
+							? workcounter
+							: 0);
 
 					if (monitor.isCanceled()) {
 						publishLaunch.terminate();
@@ -349,7 +356,6 @@ public class PublishDitaHandler extends AbstractHandler {
 				}
 			}
 		}
-
 	}
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
