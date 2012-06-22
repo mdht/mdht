@@ -63,8 +63,12 @@
 		<commandParameter id="org.dita.dost.parameter.target" name="target" />
     </command>
     
-    
+ 
      <command  id="org.dita.dost.commands.publishasepub" name="EPUB" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
+		<commandParameter id="org.dita.dost.parameter.target" name="target" />
+    </command>
+    
+    <command  id="org.dita.dost.commands.publishall" name="ALL" defaultHandler="org.dita.dost.handlers.PublishDitaHandler" >
 		<commandParameter id="org.dita.dost.parameter.target" name="target" />
     </command>
   
@@ -132,11 +136,17 @@
       	<parameter name="org.dita.dost.parameter.target" value="odt" />
       </command>    
 
-  <!--
+<!--
       <command commandId="org.dita.dost.commands.publishasepub" >
       	<parameter name="org.dita.dost.parameter.target" value="epub" />
       </command>    
- -->
+-->
+
+ 
+
+      <command commandId="org.dita.dost.commands.publishall" >
+      	<parameter name="org.dita.dost.parameter.target" value="xhtml,eclipsehelp,eclipsecontent,javahelp,htmlhelp,pdf,pdf2,docbook,wordrtf,odt" />
+      </command>    
  
      </menu>
       
