@@ -35,3 +35,4 @@ Bundle-ClassPath: .,
  DITA-OT/lib/saxon/saxon9-xpath.jar,
  DITA-OT/lib/saxon/saxon9-xqj.jar,
  DITA-OT/lib/saxon/saxon9.jar
+Export-Package: org.dita.dost.util
