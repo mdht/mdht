@@ -67,10 +67,17 @@ public class DitaUtil {
 
 	public static ILaunch publish(IFile ditaMapFile, String antTargets) throws IOException, CoreException,
 			URISyntaxException {
+		return publish(ditaMapFile, antTargets, "ditaval.xml");
+	}
+
+	public static ILaunch publish(IFile ditaMapFile, String antTargets, String ditavalFileName) throws IOException,
+			CoreException, URISyntaxException {
 
 		IProject ditaProject = ditaMapFile.getProject();
 
 		IFolder ditaFolder = ditaProject.getFolder(new Path("dita"));
+
+		IFile ditaValFile = ditaFolder.getFile(ditavalFileName);
 
 		StringBuffer jvmArguments = new StringBuffer();
 		for (String arg : ManagementFactory.getRuntimeMXBean().getInputArguments()) {
@@ -173,6 +180,11 @@ public class DitaUtil {
 
 		antProperties.put("dita.dir", ditadirURL.getPath());
 		antProperties.put("ditaMapFile", ditaMapFile.getLocation().toOSString());
+
+		if (ditaValFile != null) {
+			antProperties.put("dita.input.valfile", ditaValFile.getLocation().toOSString());
+
+		}
 
 		antProperties.put(
 			"ditaMapFileName",
