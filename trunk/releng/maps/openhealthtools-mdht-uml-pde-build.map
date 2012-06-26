@@ -33,6 +33,12 @@ plugin@org.openhealthtools.mdht.transform.core=SVN,trunk,https://www.projects.op
 
 plugin@org.openhealthtools.mdht.uml.ui.ide=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.ui.ide,force
 
+
+plugin@org.openhealthtools.mdht.uml.validation=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.validation,force
+
+plugin@org.openhealthtools.mdht.uml.hl7.validation=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.validation,force
+
+
 plugin@org.dita.dost=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.dita.dost,force
 
 
