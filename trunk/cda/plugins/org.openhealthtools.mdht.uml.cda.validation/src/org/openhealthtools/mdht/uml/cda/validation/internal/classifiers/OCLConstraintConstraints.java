@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 Sean Muir.
+ * Copyright (c) 2010, 2012 Sean Muir and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,42 +7,42 @@
  * 
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
+ *     Christian W. Damus - refactor on prototype of profile-based constraint provider (artf3285)
  *     
- * $Id$
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cda.validation.internal.classifiers.oclconstraints;
+package org.openhealthtools.mdht.uml.cda.validation.internal.classifiers;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.validation.AbstractModelConstraint;
 import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.OCL;
+import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.ValueSpecification;
-import org.openhealthtools.mdht.uml.cda.validation.internal.CDAConstraint;
-import org.openhealthtools.mdht.uml.cda.validation.internal.classifiers.Ocl;
+import org.openhealthtools.mdht.uml.validation.provider.AbstractMultiConstraint;
 
-public class InvalidOCLConstraint extends AbstractModelConstraint implements CDAConstraint {
+/**
+ * Constraints on OCL constraints in CDA models
+ */
+public class OCLConstraintConstraints extends AbstractMultiConstraint {
+
+	final private static String ANALYSISLANGUAGE = "ANALYSIS";
+
+	final private static String OCLLANGUAGE = "OCL";
+
+	final private static String UNIMPLEMENTABLE = "UNIMPLEMENTABLE";
 
 	protected static final OCL EOCL_ENV = OCL.newInstance();
 
-	private static final String ID_INVALIDOCL = OCL_GROUP + "invalidOCL";
-
-	public static void register() {
-		Ocl.registerConstraints(ID_INVALIDOCL, new InvalidOCLConstraint());
-
-	}
-
-	public InvalidOCLConstraint() {
+	public OCLConstraintConstraints() {
 		super();
 	}
 
-	@Override
-	public IStatus validate(IValidationContext context) {
+	public IStatus validateInvalidOCLConstraint(IValidationContext context) {
 
 		IStatus result = context.createSuccessStatus();
 
@@ -127,4 +127,55 @@ public class InvalidOCLConstraint extends AbstractModelConstraint implements CDA
 		return result;
 	}
 
+	public IStatus validateMissingOCLConstraint(IValidationContext context) {
+
+		IStatus result = context.createSuccessStatus();
+
+		if (context.getTarget() instanceof Constraint) {
+
+			Constraint constraint = (Constraint) context.getTarget();
+
+			ValueSpecification vs = constraint.getSpecification();
+
+			if (vs instanceof OpaqueExpression) {
+
+				OpaqueExpression oe = (OpaqueExpression) vs;
+
+				int languageCtr = 0;
+
+				String ocl = null;
+				String analysis = null;
+
+				for (String language : oe.getLanguages()) {
+
+					if (OCLLANGUAGE.equalsIgnoreCase(language)) {
+						ocl = oe.getBodies().get(languageCtr);
+					}
+
+					if (ANALYSISLANGUAGE.equalsIgnoreCase(language)) {
+						analysis = oe.getBodies().get(languageCtr);
+					}
+
+					languageCtr++;
+				}
+
+				if (analysis != null) {
+
+					boolean unimplementable = false;
+					for (Comment comment : constraint.getOwnedComments()) {
+						if (comment.getBody() != null && comment.getBody().startsWith(UNIMPLEMENTABLE)) {
+							unimplementable = true;
+						}
+					}
+
+					if (!unimplementable && (ocl == null || ocl.trim().length() == 0)) {
+						result = context.createFailureStatus(new Object[] { constraint.getQualifiedName() });
+					}
+				}
+
+			}
+		}
+
+		return result;
+	}
 }
