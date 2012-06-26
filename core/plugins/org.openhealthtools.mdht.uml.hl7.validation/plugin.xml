@@ -34,8 +34,8 @@
         point="org.eclipse.emf.validation.constraintBindings">
      <clientContext id="org.openhealthtools.mdht.uml.hl7.validation.clientContext">
         <!-- Select objects in MDHT models that are based on HL7 RIM. -->
-        <!--<selector class="org.openhealthtools.mdht.uml.validation.provider.MDHTClientSelector:baseModelURI=platform:/plugin/org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml"/>-->
-        <selector class="org.openhealthtools.mdht.uml.validation.provider.MDHTClientSelector:baseModelURI=platform:/plugin/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml"/>
+        <!--<selector class="org.openhealthtools.mdht.uml.validation.provider.MDHTClientSelector:baseModelURI=platform:/plugin/org.openhealthtools.mdht.uml.hl7.core/libraries/RIM.uml"/>-->
+        <selector class="org.openhealthtools.mdht.uml.validation.provider.MDHTClientSelector:baseModelURI=platform:/plugin/org.openhealthtools.mdht.uml.hl7.core/libraries/DEFN=UV=DT=1.0.uml"/>
      </clientContext>
      <binding
            context="org.openhealthtools.mdht.uml.hl7.validation.clientContext"
