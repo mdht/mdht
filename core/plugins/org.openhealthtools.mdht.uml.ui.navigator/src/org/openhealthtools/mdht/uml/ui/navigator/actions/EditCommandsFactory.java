@@ -10,6 +10,7 @@
  *     Kenn Hussey - added a new action for (un)controlling elements
  *     Kenn Hussey - adjusted the (un)control action to handle properties files
  *     Christian W. Damus - adjust actions for object wrappers (artf3238)
+ *                        - customize diagnostician to use ModelValidationService (artf3285)
  *     
  * $Id$
  *******************************************************************************/
@@ -31,20 +32,25 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.ui.dialogs.DiagnosticDialog;
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.URIConverter;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.ui.EMFEditUIPlugin;
 import org.eclipse.emf.edit.ui.action.ControlAction;
 import org.eclipse.emf.edit.ui.action.CopyAction;
@@ -103,6 +109,7 @@ import org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem;
 import org.openhealthtools.mdht.uml.ui.navigator.internal.l10n.Messages;
 import org.openhealthtools.mdht.uml.ui.navigator.internal.plugin.Activator;
 import org.openhealthtools.mdht.uml.ui.navigator.internal.plugin.Logger;
+import org.openhealthtools.mdht.uml.validation.util.AdaptingEValidatorRegistry;
 
 /**
  * 
@@ -151,6 +158,32 @@ public class EditCommandsFactory implements IPropertyListener {
 			} else {
 				return super.isEnabled();
 			}
+		}
+
+		@Override
+		protected Diagnostician createDiagnostician(final AdapterFactory adapterFactory,
+				final IProgressMonitor progressMonitor) {
+			return new Diagnostician(new AdaptingEValidatorRegistry()) {
+				@Override
+				public String getObjectLabel(EObject eObject) {
+					if (adapterFactory != null && !eObject.eIsProxy()) {
+						IItemLabelProvider itemLabelProvider = (IItemLabelProvider) adapterFactory.adapt(
+							eObject, IItemLabelProvider.class);
+						if (itemLabelProvider != null) {
+							return itemLabelProvider.getText(eObject);
+						}
+					}
+
+					return super.getObjectLabel(eObject);
+				}
+
+				@Override
+				public boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics,
+						Map<Object, Object> context) {
+					progressMonitor.worked(1);
+					return super.validate(eClass, eObject, diagnostics, context);
+				}
+			};
 		}
 
 		@Override

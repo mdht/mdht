@@ -8,10 +8,10 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.expressions,
- org.eclipse.ui,
  org.eclipse.emf.validation,
  org.eclipse.uml2.uml,
  org.openhealthtools.mdht.uml.hdf,
  org.openhealthtools.mdht.uml.common,
- org.openhealthtools.mdht.uml.hl7.core
+ org.openhealthtools.mdht.uml.hl7.core,
+ org.openhealthtools.mdht.uml.validation
 Bundle-ActivationPolicy: lazy

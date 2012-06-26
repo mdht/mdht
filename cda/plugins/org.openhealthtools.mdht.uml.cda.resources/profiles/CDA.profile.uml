@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:validation="http://www.openhealthtools.org/mdht/schema/profile/validation/1.0.0" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
   <uml:Profile xmi:id="_cxOJEIEVEd6H8o-hO3-B4Q" name="CDA" metaclassReference="_egRPYIEWEd6H8o-hO3-B4Q _egRPYYEWEd6H8o-hO3-B4Q _egRPYoEWEd6H8o-hO3-B4Q _9ks2IJmTEd6OiP9GTesZug _CxDn0KFLEd6NOYTVzzK9uw _S6oGUB10Ed-N4c96fT7fpQ _vJNUYCcWEd-F25YcmQx-uw">
     <eAnnotations xmi:id="_uMwWYIEWEd6H8o-hO3-B4Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <contents xmi:type="ecore:EPackage" xmi:id="_l1U9sKFdEd6NOYTVzzK9uw" name="CDA" nsURI="http:///schemas/CDA/_l1UWoKFdEd6NOYTVzzK9uw/3" nsPrefix="CDA">
@@ -414,6 +414,20 @@
     <packageImport xmi:id="_XlGuUBz5Ed-WH9Qw4coEMg">
       <importedPackage xmi:type="uml:Profile" href="pathmap://MDHT_TERM_PROFILES/Terminology.profile.uml#_cxOJEIEVEd6H8o-hO3-B4Q"/>
     </packageImport>
+    <ownedRule xmi:id="_mj6acK57EeGx65LZSgZT-A" name="invalidOCLConstraint">
+      <constrainedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Constraint"/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="_xC0pUK57EeGx65LZSgZT-A">
+        <language>Java</language>
+        <body>org.openhealthtools.mdht.uml.cda.validation.internal.classifiers.OCLConstraintConstraints</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="_9VCB0K57EeGx65LZSgZT-A" name="missingOCLConstraint">
+      <constrainedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Constraint"/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="_9VCB0a57EeGx65LZSgZT-A">
+        <language>Java</language>
+        <body>org.openhealthtools.mdht.uml.cda.validation.internal.classifiers.OCLConstraintConstraints</body>
+      </specification>
+    </ownedRule>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_sBP9kIEVEd6H8o-hO3-B4Q" name="SeverityKind">
       <ownedLiteral xmi:id="_3J00gIEVEd6H8o-hO3-B4Q" name="ERROR"/>
       <ownedLiteral xmi:id="_4PjtgIEVEd6H8o-hO3-B4Q" name="WARNING"/>
@@ -672,6 +686,15 @@
       </eAnnotations>
       <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
     </profileApplication>
+    <profileApplication xmi:id="_pWBLIK56EeGx65LZSgZT-A">
+      <eAnnotations xmi:id="_pWfFMK56EeGx65LZSgZT-A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.openhealthtools.org/mdht/schema/profile/validation/1.0.0#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://MDHT_VALIDATION/Validation.profile.uml#profile"/>
+    </profileApplication>
   </uml:Profile>
   <Ecore:EPackage xmi:id="_Z4pFkCGLEd-qCq9YyNgB9Q" base_Package="_cxOJEIEVEd6H8o-hO3-B4Q" packageName="profile" nsPrefix="CDA" nsURI="http://www.openhealthtools.org/mdht/schemas/cda/4" basePackage="org.openhealthtools.mdht.uml.cda.core" prefix="CDA"/>
+  <validation:ConstraintProvider xmi:id="_shHOIK56EeGx65LZSgZT-A" base_Namespace="_cxOJEIEVEd6H8o-hO3-B4Q" diagnosticSource="org.openhealthtools.mdht.cda" categoryID="org.openhealthtools.mdht.cda" categoryName="CDA Profile" parentCategoryID="" bundleName="org.openhealthtools.mdht.uml.cda.validation"/>
+  <validation:Diagnostic xmi:id="_D6YlMK58EeGx65LZSgZT-A" base_Constraint="_mj6acK57EeGx65LZSgZT-A" code="1" message="OCL Constraint &quot;{0}&quot; has the following parse issue: &quot;{1}&quot;"/>
+  <validation:Diagnostic xmi:id="_FEDjAK58EeGx65LZSgZT-A" base_Constraint="_9VCB0K57EeGx65LZSgZT-A" severity="warn" code="2" message="Analysis Constraint &quot;{0}&quot; is missing corresponding OCL Constraint"/>
 </xmi:XMI>

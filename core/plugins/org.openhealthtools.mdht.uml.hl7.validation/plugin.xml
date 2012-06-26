@@ -2,7 +2,7 @@
 <?eclipse version="3.2"?>
 
 <!--
-  Copyright (c) 2006, 2008 David A Carlson.
+  Copyright (c) 2006, 2012 David A Carlson and others.
   All rights reserved. This program and the accompanying materials
   are made available under the terms of the Eclipse Public License v1.0
   which accompanies this distribution, and is available at
@@ -10,16 +10,13 @@
   
   Contributors:
       David A Carlson - initial API and implementation
+      Christian W. Damus - factored out common validation concerns (artf3285)
       
   $Id$
 -->
 
 <plugin>
 
-   <extension point="org.eclipse.ui.startup">
-      <startup class="org.openhealthtools.mdht.uml.hl7.validation.internal.Startup"/>
-   </extension>
-   
    <extension point="org.eclipse.core.expressions.propertyTesters">
       <propertyTester
          id="org.openhealthtools.mdht.uml.hl7.validation.EObjectPropertyTester"
@@ -36,7 +33,9 @@
    <extension
         point="org.eclipse.emf.validation.constraintBindings">
      <clientContext id="org.openhealthtools.mdht.uml.hl7.validation.clientContext">
-        <selector class="org.openhealthtools.mdht.uml.hl7.validation.internal.classifiers.ValidationDelegateClientSelector"/>
+        <!-- Select objects in MDHT models that are based on HL7 RIM. -->
+        <!--<selector class="org.openhealthtools.mdht.uml.validation.provider.MDHTClientSelector:baseModelURI=platform:/plugin/org.openhealthtools.mdht.uml.hl7.rim/model/rim.uml"/>-->
+        <selector class="org.openhealthtools.mdht.uml.validation.provider.MDHTClientSelector:baseModelURI=platform:/plugin/org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml"/>
      </clientContext>
      <binding
            context="org.openhealthtools.mdht.uml.hl7.validation.clientContext"
@@ -67,6 +66,7 @@
       <constraintProvider cache="true">
          <package namespaceUri="http://www.eclipse.org/uml2/2.0.0/UML"/>
          <package namespaceUri="http://www.eclipse.org/uml2/2.1.0/UML"/>
+         <package namespaceUri="http://www.eclipse.org/uml2/3.0.0/UML"/>
          <constraints>
             <include path="constraints/classes.xml"/>
             <include path="constraints/datatypes.xml"/>
