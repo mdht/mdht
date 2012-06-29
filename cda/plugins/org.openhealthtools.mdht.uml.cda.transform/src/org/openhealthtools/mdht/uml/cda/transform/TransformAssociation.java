@@ -358,7 +358,8 @@ public class TransformAssociation extends TransformAbstract {
 		}
 
 		// create "getter" operation (only if not producing a domain interface)
-		if (!firstOrderAssociation && !transformerOptions.isGenerateDomainInterface()) {
+		if ((!(targetClass.getOwner() instanceof Class)) && !firstOrderAssociation &&
+				!transformerOptions.isGenerateDomainInterface()) {
 			// finish building "getter" operation body
 			if (sourceProperty.getUpper() == 1) {
 				// artf3203: Eclipse OCL 3.1 now returns invalid when trying to get the first element of an empty sequence
