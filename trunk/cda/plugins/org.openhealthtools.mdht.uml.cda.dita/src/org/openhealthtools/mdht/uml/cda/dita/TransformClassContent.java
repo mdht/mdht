@@ -311,7 +311,7 @@ public class TransformClassContent extends TransformAbstract {
 			if (body.startsWith("<p>")) {
 				writer.println(body);
 			} else {
-				writer.println("<p>" + body + "</p>");
+				writer.println("<p><lines><i>" + body + "</i></lines></p>");
 			}
 		}
 
@@ -461,9 +461,9 @@ public class TransformClassContent extends TransformAbstract {
 		if (association != null && association.getOwnedComments().size() > 0) {
 			writer.append("<ul>");
 			for (Comment comment : association.getOwnedComments()) {
-				writer.append("<li>");
+				writer.append("<li><p><lines><i>");
 				writer.append(CDAModelUtil.fixNonXMLCharacters(comment.getBody()));
-				writer.append("</li>");
+				writer.append("</i></lines></p></li>");
 			}
 			writer.append("</ul>");
 		}
@@ -471,9 +471,9 @@ public class TransformClassContent extends TransformAbstract {
 		if (property.getOwnedComments().size() > 0) {
 			writer.append("<ul>");
 			for (Comment comment : property.getOwnedComments()) {
-				writer.append("<li>");
+				writer.append("<li><p><lines><i>");
 				writer.append(CDAModelUtil.fixNonXMLCharacters(comment.getBody()));
-				writer.append("</li>");
+				writer.append("</i></lines></p></li>");
 			}
 			writer.append("</ul>");
 		}
