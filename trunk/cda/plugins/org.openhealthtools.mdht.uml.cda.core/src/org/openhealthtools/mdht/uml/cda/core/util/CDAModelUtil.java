@@ -635,7 +635,7 @@ public class CDAModelUtil {
 		}
 
 		// TODO: what I should really do is test for an *implied* ActRelationship or Participation association
-		if (endType != null && getCDAClass(endType) != null) {
+		if (endType != null && getCDAClass(endType) != null && !(endType.getOwner() instanceof Class)) {
 			message.append(markup
 					? "\n<li>"
 					: " ");
@@ -686,6 +686,7 @@ public class CDAModelUtil {
 	}
 
 	public static String computeConformanceMessage(Property property, boolean markup, Package xrefSource) {
+
 		if (property.getType() == null) {
 			System.out.println("Property has null type: " + property.getQualifiedName());
 		}
@@ -1006,25 +1007,25 @@ public class CDAModelUtil {
 
 		if (association != null && association.getOwnedComments().size() > 0) {
 			if (markup) {
-				writer.append("<p><i>");
+				writer.append("<p><lines><i>");
 			}
 			for (Comment comment : association.getOwnedComments()) {
 				writer.append(CDAModelUtil.fixNonXMLCharacters(comment.getBody()));
 			}
 			if (markup) {
-				writer.append("</i></p>");
+				writer.append("</i></lines></p>");
 			}
 		}
 
 		if (property.getOwnedComments().size() > 0) {
 			if (markup) {
-				writer.append("<p><i>");
+				writer.append("<p><lines><i>");
 			}
 			for (Comment comment : property.getOwnedComments()) {
 				writer.append(CDAModelUtil.fixNonXMLCharacters(comment.getBody()));
 			}
 			if (markup) {
-				writer.append("</i></p>");
+				writer.append("</i></lines></p>");
 			}
 		}
 	}
