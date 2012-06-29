@@ -14,12 +14,12 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
-import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -52,24 +52,21 @@ import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.AggregationKind;
+import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Enumeration;
-import org.eclipse.uml2.uml.EnumerationLiteral;
-import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.MultiplicityElement;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.UMLFactory;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.ui.properties.internal.Logger;
 import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
 
@@ -85,12 +82,6 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 	private CLabel typeName;
 
 	private Button typeButton;
-
-	private Text defaultValueText;
-
-	private CCombo defaultValueCombo;
-
-	private boolean defaultValueModified = false;
 
 	private CCombo multiplicityCombo;
 
@@ -116,11 +107,18 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 
 	private boolean isUniqueModified = false;
 
+	private List<Property> inheritedProperties;
+
+	private CCombo redefinesCombo;
+
+	private boolean redefinesModified = false;
+
+	private CCombo subsetsCombo;
+
+	private boolean subsetsModified = false;
+
 	private ModifyListener modifyListener = new ModifyListener() {
 		public void modifyText(final ModifyEvent event) {
-			if (defaultValueText == event.getSource()) {
-				defaultValueModified = true;
-			}
 		}
 	};
 
@@ -147,8 +145,8 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 	};
 
 	private void modifyFields() {
-		if (!(defaultValueModified || multiplicityModified || aggregationModified || isDerivedModified ||
-				isReadOnlyModified || isUniqueModified || isOrderedModified)) {
+		if (!(multiplicityModified || aggregationModified || isDerivedModified || isReadOnlyModified ||
+				isUniqueModified || isOrderedModified || redefinesModified || subsetsModified)) {
 			return;
 		}
 
@@ -158,27 +156,7 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "temp") {
 				@Override
 				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					if (defaultValueModified) {
-						defaultValueModified = false;
-						this.setLabel("Set Default Value");
-						if (property.getDefaultValue() != null) {
-							property.getDefaultValue().destroy();
-						}
-
-						String newValue = null;
-						if (property.getType() instanceof Enumeration) {
-							newValue = defaultValueCombo.getText();
-						} else {
-							newValue = defaultValueText.getText();
-						}
-
-						if (newValue != null && newValue.trim().length() > 0) {
-							// TODO check property type and create appropriate literal type
-							LiteralString literal = UMLFactory.eINSTANCE.createLiteralString();
-							literal.setValue(newValue);
-							property.setDefaultValue(literal);
-						}
-					} else if (multiplicityModified) {
+					if (multiplicityModified) {
 						multiplicityModified = false;
 						this.setLabel("Set Multiplicity");
 						try {
@@ -212,6 +190,18 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 						isOrderedModified = false;
 						this.setLabel("Set Ordered");
 						property.setIsOrdered(isOrdered.getSelection());
+					} else if (redefinesModified) {
+						property.getRedefinedProperties().clear();
+						if (redefinesCombo.getSelectionIndex() > 0) {
+							Property redefined = inheritedProperties.get(redefinesCombo.getSelectionIndex() - 1);
+							property.getRedefinedProperties().add(redefined);
+						}
+					} else if (subsetsModified) {
+						property.getSubsettedProperties().clear();
+						if (subsetsCombo.getSelectionIndex() > 0) {
+							Property subsetted = inheritedProperties.get(subsetsCombo.getSelectionIndex() - 1);
+							property.getSubsettedProperties().add(subsetted);
+						}
 					} else {
 						return Status.CANCEL_STATUS;
 					}
@@ -266,6 +256,30 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 				Logger.logException(ee);
 			}
 		}
+	}
+
+	private void computeInheritedProperties() {
+		inheritedProperties = new ArrayList<Property>();
+		if (property.getClass_() != null) {
+			for (Classifier parent : property.getClass_().allParents()) {
+				for (Property inherited : ((Class) parent).getOwnedAttributes()) {
+					inheritedProperties.add(inherited);
+				}
+			}
+		}
+
+	}
+
+	private void fillInheritedPropertiesCombo(CCombo propertiesCombo) {
+		propertiesCombo.removeAll();
+		List<String> items = new ArrayList<String>();
+		items.add("");
+
+		for (Property inherited : inheritedProperties) {
+			items.add(UMLUtil.getPackageQualifiedName(inherited));
+		}
+
+		propertiesCombo.setItems(items.toArray(new String[items.size()]));
 	}
 
 	@Override
@@ -338,43 +352,6 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 		data.right = new FormAttachment(100, 0);
 		data.top = new FormAttachment(0, 0);
 		multiplicityCombo.setLayoutData(data);
-
-		/* ----- Default Value ----- */
-		defaultValueCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT);
-		defaultValueCombo.addSelectionListener(new SelectionListener() {
-			public void widgetDefaultSelected(SelectionEvent e) {
-				defaultValueModified = true;
-				modifyFields();
-			}
-
-			public void widgetSelected(SelectionEvent e) {
-				defaultValueModified = true;
-				modifyFields();
-			}
-		});
-
-		data = new FormData();
-		// TODO figure out how to set correct wider label width
-		data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH + 20);
-		data.right = new FormAttachment(30, 0);
-		data.top = new FormAttachment(1, 3, ITabbedPropertyConstants.VSPACE);
-		defaultValueCombo.setLayoutData(data);
-
-		defaultValueText = getWidgetFactory().createText(composite, ""); //$NON-NLS-1$
-
-		data = new FormData();
-		// TODO figure out how to set correct wider label width
-		data.left = new FormAttachment(0, STANDARD_LABEL_WIDTH + 20);
-		data.right = new FormAttachment(70, 0);
-		data.top = new FormAttachment(1, 3, ITabbedPropertyConstants.VSPACE);
-		defaultValueText.setLayoutData(data);
-
-		CLabel defaultValueLabel = getWidgetFactory().createCLabel(composite, "Default Value:"); //$NON-NLS-1$
-		data = new FormData();
-		data.left = new FormAttachment(0, 0);
-		data.right = new FormAttachment(defaultValueCombo, -ITabbedPropertyConstants.HSPACE);
-		data.top = new FormAttachment(defaultValueCombo, 0, SWT.CENTER);
-		defaultValueLabel.setLayoutData(data);
 
 		/* ---- Is Derived checkbox ---- */
 		isDerived = getWidgetFactory().createButton(composite, "Derived", SWT.CHECK);
@@ -477,8 +454,61 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 
 		data = new FormData();
 		data.left = new FormAttachment(isOrdered, STANDARD_LABEL_WIDTH + 5);
-		data.top = new FormAttachment(2, 3, ITabbedPropertyConstants.VSPACE + 2);
+		data.top = new FormAttachment(1, 3, ITabbedPropertyConstants.VSPACE + 2);
 		aggregationCombo.setLayoutData(data);
+
+		/* ---- Redefines combo ---- */
+		CLabel redefinesLabel = getWidgetFactory().createCLabel(composite, "Redefines:"); //$NON-NLS-1$
+		redefinesCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT);
+		redefinesCombo.addSelectionListener(new SelectionListener() {
+			public void widgetDefaultSelected(SelectionEvent e) {
+				redefinesModified = true;
+				modifyFields();
+			}
+
+			public void widgetSelected(SelectionEvent e) {
+				redefinesModified = true;
+				modifyFields();
+			}
+		});
+
+		data = new FormData();
+		data.left = new FormAttachment(0, 0);
+		data.top = new FormAttachment(2, 3, ITabbedPropertyConstants.VSPACE + 2);
+		redefinesLabel.setLayoutData(data);
+
+		data = new FormData();
+		data.left = new FormAttachment(redefinesLabel, 5);
+		data.right = new FormAttachment(50, 0);
+		data.top = new FormAttachment(2, 3, ITabbedPropertyConstants.VSPACE + 2);
+		redefinesCombo.setLayoutData(data);
+
+		/* ---- Subsets combo ---- */
+		CLabel subsetsLabel = getWidgetFactory().createCLabel(composite, "Subsets:"); //$NON-NLS-1$
+		subsetsCombo = getWidgetFactory().createCCombo(composite, SWT.FLAT);
+		subsetsCombo.addSelectionListener(new SelectionListener() {
+			public void widgetDefaultSelected(SelectionEvent e) {
+				subsetsModified = true;
+				modifyFields();
+			}
+
+			public void widgetSelected(SelectionEvent e) {
+				subsetsModified = true;
+				modifyFields();
+			}
+		});
+
+		data = new FormData();
+		data.left = new FormAttachment(redefinesCombo, ITabbedPropertyConstants.HSPACE);
+		data.top = new FormAttachment(2, 3, ITabbedPropertyConstants.VSPACE + 2);
+		subsetsLabel.setLayoutData(data);
+
+		data = new FormData();
+		data.left = new FormAttachment(subsetsLabel, 5);
+		data.right = new FormAttachment(100, 0);
+		data.top = new FormAttachment(2, 3, ITabbedPropertyConstants.VSPACE + 2);
+		subsetsCombo.setLayoutData(data);
+
 	}
 
 	@Override
@@ -517,8 +547,16 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 		if (element instanceof View) {
 			element = ((View) element).getElement();
 		}
-		Assert.isTrue(element instanceof Property);
-		this.property = (Property) element;
+
+		if (element instanceof Association) {
+			element = UMLUtil.getNavigableEnd((Association) element);
+		}
+
+		if (element instanceof Property) {
+			this.property = (Property) element;
+		} else {
+			this.property = null;
+		}
 	}
 
 	@Override
@@ -535,48 +573,34 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 			typeName.setText("");
 		}
 
-		String defaultValue = "";
-		if (property.getDefaultValue() != null && property.getDefaultValue().stringValue() != null) {
-			defaultValue = property.getDefaultValue().stringValue();
-		}
-
-		if (property.getType() instanceof Enumeration) {
-			List<EnumerationLiteral> literals = ((Enumeration) property.getType()).getOwnedLiterals();
-			String[] literalLabels = new String[literals.size()];
-			for (int i = 0; i < literals.size(); i++) {
-				literalLabels[i] = literals.get(i).getName();
-			}
-			defaultValueCombo.setItems(literalLabels);
-			defaultValueCombo.setText(defaultValue);
-
-			defaultValueText.setVisible(false);
-			defaultValueCombo.setVisible(true);
-
-		} else {
-			defaultValueText.removeModifyListener(modifyListener);
-			defaultValueText.removeKeyListener(keyListener);
-			defaultValueText.removeFocusListener(focusListener);
-			if (property.getType() == null) {
-				defaultValueText.setEditable(false);
-			} else {
-				defaultValueText.setEditable(true);
-			}
-			defaultValueText.setText(defaultValue);
-
-			defaultValueText.addModifyListener(modifyListener);
-			defaultValueText.addKeyListener(keyListener);
-			defaultValueText.addFocusListener(focusListener);
-
-			defaultValueCombo.setVisible(false);
-			defaultValueText.setVisible(true);
-		}
-
 		multiplicityCombo.setText(displayMultiplicity(property));
 		aggregationCombo.setText(property.getAggregation().getName());
 		isDerived.setSelection(property.isDerived());
 		isReadOnly.setSelection(property.isReadOnly());
 		isUnique.setSelection(property.isUnique());
 		isOrdered.setSelection(property.isOrdered());
+
+		computeInheritedProperties();
+		fillInheritedPropertiesCombo(redefinesCombo);
+		fillInheritedPropertiesCombo(subsetsCombo);
+		redefinesCombo.select(0);
+		subsetsCombo.select(0);
+
+		if (property.getRedefinedProperties().size() == 1) {
+			Property redefined = property.getRedefinedProperties().get(0);
+			int index = inheritedProperties.indexOf(redefined);
+			if (index >= 0) {
+				redefinesCombo.select(index + 1);
+			}
+		}
+
+		if (property.getSubsettedProperties().size() == 1) {
+			Property subsetted = property.getSubsettedProperties().get(0);
+			int index = inheritedProperties.indexOf(subsetted);
+			if (index >= 0) {
+				subsetsCombo.select(index + 1);
+			}
+		}
 
 		if (isReadOnly()) {
 			isDerived.setEnabled(false);
@@ -585,9 +609,9 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 			isOrdered.setEnabled(false);
 			typeButton.setEnabled(false);
 			multiplicityCombo.setEnabled(false);
-			defaultValueText.setEnabled(false);
-			defaultValueCombo.setEnabled(false);
 			aggregationCombo.setEnabled(false);
+			redefinesCombo.setEnabled(false);
+			subsetsCombo.setEnabled(false);
 		} else {
 			isDerived.setEnabled(true);
 			isReadOnly.setEnabled(true);
@@ -595,9 +619,9 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 			isOrdered.setEnabled(true);
 			typeButton.setEnabled(true);
 			multiplicityCombo.setEnabled(true);
-			defaultValueText.setEnabled(true);
-			defaultValueCombo.setEnabled(true);
 			aggregationCombo.setEnabled(true);
+			redefinesCombo.setEnabled(true);
+			subsetsCombo.setEnabled(true);
 		}
 	}
 
