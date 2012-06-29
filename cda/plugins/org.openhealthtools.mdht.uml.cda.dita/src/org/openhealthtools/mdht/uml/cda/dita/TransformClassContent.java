@@ -280,20 +280,24 @@ public class TransformClassContent extends TransformAbstract {
 			writer.print("<p>Known Subclasses: ");
 
 			for (Iterator<Classifier> iterator = subclasses.iterator(); iterator.hasNext();) {
+
 				Classifier subclass = iterator.next();
 
-				Package xrefSource = UMLUtil.getTopPackage(subclass);
-				String xref = CDAModelUtil.computeXref(xrefSource, subclass);
-				String format = xref != null && xref.endsWith(".html")
-						? "format=\"html\" "
-						: "";
+				if (subclass instanceof Class && (!(subclass.getOwner() instanceof Class))) {
 
-				writer.append("<xref " + format + "href=\"" + xref + "\">");
-				writer.append(UMLUtil.splitName(subclass));
-				writer.append("</xref>");
+					Package xrefSource = UMLUtil.getTopPackage(subclass);
+					String xref = CDAModelUtil.computeXref(xrefSource, subclass);
+					String format = xref != null && xref.endsWith(".html")
+							? "format=\"html\" "
+							: "";
 
-				if (iterator.hasNext()) {
-					writer.print(", ");
+					writer.append("<xref " + format + "href=\"" + xref + "\">");
+					writer.append(UMLUtil.splitName(subclass));
+					writer.append("</xref>");
+
+					if (iterator.hasNext()) {
+						writer.print(", ");
+					}
 				}
 			}
 			writer.println("</p>");
