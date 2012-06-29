@@ -53,7 +53,7 @@ import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPr
  */
 public class CommentSection extends WrapperAwareModelerPropertySection {
 
-	private Element umlElement;
+	protected Element umlElement;
 
 	private Text bodyText;
 

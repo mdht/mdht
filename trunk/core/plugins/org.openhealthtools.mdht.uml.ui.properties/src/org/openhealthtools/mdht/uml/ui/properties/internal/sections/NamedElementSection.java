@@ -72,7 +72,7 @@ public class NamedElementSection extends WrapperAwareModelerPropertySection {
 	 */
 	private TabbedPropertySheetPage tabbedPropertySheetPage;
 
-	private NamedElement namedElement;
+	protected NamedElement namedElement;
 
 	private Text localNameText;
 
