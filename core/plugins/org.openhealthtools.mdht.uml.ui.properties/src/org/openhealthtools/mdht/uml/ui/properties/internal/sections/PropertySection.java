@@ -109,6 +109,8 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 
 	private List<Property> inheritedProperties;
 
+	private List<Property> inheritedCollectionProperties;
+
 	private CCombo redefinesCombo;
 
 	private boolean redefinesModified = false;
@@ -191,12 +193,14 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 						this.setLabel("Set Ordered");
 						property.setIsOrdered(isOrdered.getSelection());
 					} else if (redefinesModified) {
+						redefinesModified = false;
 						property.getRedefinedProperties().clear();
 						if (redefinesCombo.getSelectionIndex() > 0) {
 							Property redefined = inheritedProperties.get(redefinesCombo.getSelectionIndex() - 1);
 							property.getRedefinedProperties().add(redefined);
 						}
 					} else if (subsetsModified) {
+						subsetsModified = false;
 						property.getSubsettedProperties().clear();
 						if (subsetsCombo.getSelectionIndex() > 0) {
 							Property subsetted = inheritedProperties.get(subsetsCombo.getSelectionIndex() - 1);
@@ -260,22 +264,26 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 
 	private void computeInheritedProperties() {
 		inheritedProperties = new ArrayList<Property>();
+		inheritedCollectionProperties = new ArrayList<Property>();
 		if (property.getClass_() != null) {
 			for (Classifier parent : property.getClass_().allParents()) {
 				for (Property inherited : ((Class) parent).getOwnedAttributes()) {
 					inheritedProperties.add(inherited);
+					if (inherited.upperBound() > 1 || inherited.upperBound() == -1) {
+						inheritedCollectionProperties.add(inherited);
+					}
 				}
 			}
 		}
 
 	}
 
-	private void fillInheritedPropertiesCombo(CCombo propertiesCombo) {
+	private void fillInheritedPropertiesCombo(CCombo propertiesCombo, List<Property> properties) {
 		propertiesCombo.removeAll();
 		List<String> items = new ArrayList<String>();
 		items.add("");
 
-		for (Property inherited : inheritedProperties) {
+		for (Property inherited : properties) {
 			items.add(UMLUtil.getPackageQualifiedName(inherited));
 		}
 
@@ -581,8 +589,8 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 		isOrdered.setSelection(property.isOrdered());
 
 		computeInheritedProperties();
-		fillInheritedPropertiesCombo(redefinesCombo);
-		fillInheritedPropertiesCombo(subsetsCombo);
+		fillInheritedPropertiesCombo(redefinesCombo, inheritedProperties);
+		fillInheritedPropertiesCombo(subsetsCombo, inheritedCollectionProperties);
 		redefinesCombo.select(0);
 		subsetsCombo.select(0);
 
