@@ -23,7 +23,6 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.DocumentRoot;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.cda.util.ValidationResult;
@@ -71,8 +70,6 @@ public class Validate {
 
 		final String DELIMITER = "~";
 
-		ClinicalDocument clinicalDocument;
-
 		CDAUtil.loadPackages();
 
 		try {
@@ -110,7 +107,7 @@ public class Validate {
 
 					ValidationResult result = new ValidationResult();
 
-					clinicalDocument = CDAUtil.load(inputSource, result);
+					CDAUtil.load(inputSource, result);
 
 					// handleError
 					for (Diagnostic diagnostic : result.getErrorDiagnostics()) {
