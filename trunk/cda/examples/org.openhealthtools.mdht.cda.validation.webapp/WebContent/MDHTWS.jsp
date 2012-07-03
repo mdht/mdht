@@ -62,6 +62,7 @@ javax.xml.transform.stream.StreamResult,
 
 org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler,
 org.openhealthtools.mdht.uml.cda.util.CDAUtil,
+org.openhealthtools.mdht.uml.cda.util.ValidationResult,
 org.openhealthtools.mdht.uml.cda.CDAPackage,
 org.openhealthtools.mdht.uml.cda.ClinicalDocument,
 org.openhealthtools.mdht.uml.cda.DocumentRoot,
@@ -187,50 +188,50 @@ public void pushMDHTDiagnosticToXML(Document doc, Element root, Diagnostic diagn
 			CDAUtil.loadPackages(getServletConfig().getServletContext().getRealPath("WEB-INF/lib"));
 
             InputStream in = new ByteArrayInputStream(cdaFile.getString("UTF8").getBytes("UTF8"));
-            ClinicalDocument clinicalDocument = CDAUtil.load(in);
-
-            final int filterlevel = Integer.parseInt(filterValue);                                                 
-                     
+			ValidationResult result = new ValidationResult();
+			ClinicalDocument clinicalDocument = CDAUtil.load(in, result);
+			
+			final int filterlevel = Integer.parseInt(filterValue);                                                 
+			                     
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder docBuilder = factory.newDocumentBuilder();
-
+			
 			// Create blank DOM Document
 			final Document doc = docBuilder.newDocument();
-
+			
 			// create the root element
 			final Element root = doc.createElement("validateDocumentResponse");
 			final Element returnElement = doc.createElement("return");
 			root.appendChild(returnElement);
-
+			
 			// all it to the xml tree
 			doc.appendChild(root);
-
-			boolean valid = CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
-
-				public void handleError(Diagnostic diagnostic) {                                       
+			
+			boolean valid = !result.hasErrors();
+			
+			for (Diagnostic diagnostic : result.getErrorDiagnostics()) {
+				pushMDHTDiagnosticToXML(doc, returnElement, diagnostic);
+			}
+			
+			if (filterlevel<=2) {
+				for (Diagnostic diagnostic : result.getWarningDiagnostics()) {
 					pushMDHTDiagnosticToXML(doc, returnElement, diagnostic);
 				}
-				
-				public void handleWarning(Diagnostic diagnostic) {
-                    if (filterlevel<=2) {
-						pushMDHTDiagnosticToXML(doc, returnElement, diagnostic);
-                    }
+			}
+			
+			if (filterlevel==1) {
+				for (Diagnostic diagnostic : result.getInfoDiagnostics()) {
+					pushMDHTDiagnosticToXML(doc, returnElement, diagnostic);
 				}
-				
-				public void handleInfo(Diagnostic diagnostic) {
-					if (filterlevel==1) {
-						pushMDHTDiagnosticToXML(doc, returnElement, diagnostic);
-					}
-				}
-			});		
+			}
 
 		    Source source = new DOMSource(root);
 			StringWriter stringWriter = new StringWriter();
-			Result result = new StreamResult(stringWriter);
+			Result resulta = new StreamResult(stringWriter);
 			
 			TransformerFactory tfactory = TransformerFactory.newInstance();
 			Transformer transformer = tfactory.newTransformer();
-			transformer.transform(source, result);
+			transformer.transform(source, resulta);
 	 
 			request.setAttribute("MDHTXML",stringWriter.getBuffer().toString());
 
