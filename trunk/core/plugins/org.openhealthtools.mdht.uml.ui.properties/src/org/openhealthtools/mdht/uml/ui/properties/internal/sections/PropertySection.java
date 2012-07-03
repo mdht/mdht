@@ -203,7 +203,7 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 						subsetsModified = false;
 						property.getSubsettedProperties().clear();
 						if (subsetsCombo.getSelectionIndex() > 0) {
-							Property subsetted = inheritedProperties.get(subsetsCombo.getSelectionIndex() - 1);
+							Property subsetted = inheritedCollectionProperties.get(subsetsCombo.getSelectionIndex() - 1);
 							property.getSubsettedProperties().add(subsetted);
 						}
 					} else {
@@ -604,7 +604,7 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 
 		if (property.getSubsettedProperties().size() == 1) {
 			Property subsetted = property.getSubsettedProperties().get(0);
-			int index = inheritedProperties.indexOf(subsetted);
+			int index = inheritedCollectionProperties.indexOf(subsetted);
 			if (index >= 0) {
 				subsetsCombo.select(index + 1);
 			}
