@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 Sean Muir
+ * Copyright (c) 2010, 2012 Sean Muir and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
+ *     IBM Corporation - updated use of MDHT validation APIs
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.internal.validate;
 
@@ -24,8 +25,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
 import org.openhealthtools.mdht.uml.cda.DocumentRoot;
-import org.openhealthtools.mdht.uml.cda.util.BasicValidationHandler;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
+import org.openhealthtools.mdht.uml.cda.util.ValidationResult;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.XMLReader;
@@ -107,65 +108,58 @@ public class Validate {
 
 					parser.parse(cdaURI.path());
 
-					clinicalDocument = CDAUtil.load(inputSource);
+					ValidationResult result = new ValidationResult();
 
-					CDAUtil.validate(clinicalDocument, new BasicValidationHandler() {
+					clinicalDocument = CDAUtil.load(inputSource, result);
 
-						@Override
-						public void handleError(Diagnostic diagnostic) {
+					// handleError
+					for (Diagnostic diagnostic : result.getErrorDiagnostics()) {
+						String path = "";
+						if (diagnostic.getData().size() > 0 && diagnostic.getData().get(0) instanceof EObject) {
+							path = getPath((EObject) diagnostic.getData().get(0));
+						}
 
-							String path = "";
-							if (diagnostic.getData().size() > 0 && diagnostic.getData().get(0) instanceof EObject) {
-								path = getPath((EObject) diagnostic.getData().get(0));
+						XPathIndexer.ElementLocationData eld = xpathIndexer.getElementLocationByPath(path.toUpperCase());
+
+						try {
+							if (eld != null) {
+								out.write("error" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER +
+										diagnostic.getMessage() + "\n");
+							} else {
+								out.write("error" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER +
+										diagnostic.getMessage() + "(" + path + ")" + "\n");
 							}
 
-							XPathIndexer.ElementLocationData eld = xpathIndexer.getElementLocationByPath(path.toUpperCase());
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+					}
 
-							try {
-								if (eld != null) {
-									out.write("error" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER +
-											diagnostic.getMessage() + "\n");
-								} else {
-									out.write("error" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER +
-											diagnostic.getMessage() + "(" + path + ")" + "\n");
-								}
+					// handleInfo
 
-							} catch (IOException e) {
-								e.printStackTrace();
-							}
+					// handleWarning
+					for (Diagnostic diagnostic : result.getWarningDiagnostics()) {
+						String path = "";
+						if (diagnostic.getData().size() > 0 && diagnostic.getData().get(0) instanceof EObject) {
+							path = getPath((EObject) diagnostic.getData().get(0));
 
 						}
 
-						@Override
-						public void handleInfo(Diagnostic diagnostic) {
+						XPathIndexer.ElementLocationData eld = xpathIndexer.getElementLocationByPath(path.toUpperCase());
 
-						}
-
-						@Override
-						public void handleWarning(Diagnostic diagnostic) {
-
-							String path = "";
-							if (diagnostic.getData().size() > 0 && diagnostic.getData().get(0) instanceof EObject) {
-								path = getPath((EObject) diagnostic.getData().get(0));
-
+						try {
+							if (eld != null) {
+								out.write("warning" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER +
+										diagnostic.getMessage() + "\n");
+							} else {
+								out.write("warning" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER +
+										diagnostic.getMessage() + "(" + path + ")" + "\n");
 							}
-
-							XPathIndexer.ElementLocationData eld = xpathIndexer.getElementLocationByPath(path.toUpperCase());
-
-							try {
-								if (eld != null) {
-									out.write("warning" + DELIMITER + eld.line + DELIMITER + eld.column + DELIMITER +
-											diagnostic.getMessage() + "\n");
-								} else {
-									out.write("warning" + DELIMITER + 0 + DELIMITER + 0 + DELIMITER +
-											diagnostic.getMessage() + "(" + path + ")" + "\n");
-								}
-							} catch (IOException e) {
-								e.printStackTrace();
-							}
+						} catch (IOException e) {
+							e.printStackTrace();
 						}
+					}
 
-					});
 				}
 
 				catch (SAXParseException spe) {
