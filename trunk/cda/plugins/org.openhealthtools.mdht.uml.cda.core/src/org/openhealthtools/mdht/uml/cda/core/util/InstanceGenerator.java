@@ -122,12 +122,12 @@ public class InstanceGenerator {
 		public Object caseII(II ii) {
 			if (feature.getName().equals("id")) {
 
-				ii.setRoot(String.valueOf(Math.abs(random.nextInt())));
+				ii.setExtension(String.valueOf(Math.abs(random.nextInt())));
 			} else {
-				ii.setRoot(UUID.randomUUID().toString());
+				ii.setExtension(UUID.randomUUID().toString());
 			}
 
-			ii.setExtension("MDHT");
+			ii.setRoot("MDHT");
 			return ii;
 		}
 
