@@ -60,13 +60,12 @@ public class TransformValueSet extends TransformAbstract {
 		}
 
 		if (!umlEnumeration.getOwnedLiterals().isEmpty()) {
-			writer.println("<table><tgroup cols=\"4\">");
+			writer.println("<table><tgroup cols=\"3\">");
 			writer.println("<colspec colname=\"col1\" colwidth=\"1*\"/>");
-			writer.println("<colspec colname=\"col2\" colwidth=\"2*\"/>");
-			writer.println("<colspec colname=\"col3\" colwidth=\"1*\"/>");
-			writer.println("<colspec colname=\"col4\" colwidth=\"3*\"/>");
+			writer.println("<colspec colname=\"col2\" colwidth=\"1*\"/>");
+			writer.println("<colspec colname=\"col3\" colwidth=\"2*\"/>");
 			writer.println("<thead><row>");
-			writer.println("<entry>Concept Code</entry><entry>Concept Name</entry><entry>Code System</entry><entry>Description</entry>");
+			writer.println("<entry>Code</entry><entry>Code System</entry><entry>Print Name</entry>");
 			writer.println("</row></thead><tbody>");
 
 			for (EnumerationLiteral literal : umlEnumeration.getOwnedLiterals()) {
@@ -74,13 +73,6 @@ public class TransformValueSet extends TransformAbstract {
 				writer.print("<row>");
 				// Concept Code
 				writer.print("<entry>" + literal.getName() + "</entry>");
-
-				// Concept Name
-				writer.print("<entry>");
-				if (valueSetCode != null && valueSetCode.getConceptName() != null) {
-					writer.print(CDAModelUtil.fixNonXMLCharacters(valueSetCode.getConceptName()));
-				}
-				writer.print("</entry>");
 
 				// Code System
 				writer.print("<entry>");
@@ -91,20 +83,12 @@ public class TransformValueSet extends TransformAbstract {
 				}
 				writer.print("</entry>");
 
-				// Definition
+				// Print Name
 				writer.print("<entry>");
-				if (!literal.getOwnedComments().isEmpty()) {
-					Comment comment = literal.getOwnedComments().get(0);
-					writer.print(comment.getBody());
+				if (valueSetCode != null && valueSetCode.getConceptName() != null) {
+					writer.print(CDAModelUtil.fixNonXMLCharacters(valueSetCode.getConceptName()));
 				}
 				writer.print("</entry>");
-
-				// Usage Note
-				// writer.print("<entry>");
-				// if (valueSetCode != null && valueSetCode.getUsageNote() != null) {
-				// writer.print(valueSetCode.getUsageNote());
-				// }
-				// writer.print("</entry>");
 
 				writer.println("</row>");
 			}
