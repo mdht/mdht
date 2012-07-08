@@ -11,8 +11,6 @@ c32api.psf - Imports all the required java projects and source code to create a 
 
 example.psf - Imports the model, generated, and publishing project for the basic example project
 
-pilot.psf - Imports the model, generated, and publishing project for the HL7 pilot project
-
 ************************ Development Only Imports *************************
 features/umlfeature.psf - Imports all the required eclipse plugin projects to build the MDHT UML Feature
 
