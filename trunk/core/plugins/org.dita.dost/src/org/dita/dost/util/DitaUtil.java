@@ -58,8 +58,12 @@ import org.eclipse.jdt.launching.IRuntimeClasspathEntry;
 import org.eclipse.jdt.launching.IVMInstall;
 import org.eclipse.jdt.launching.JavaRuntime;
 import org.osgi.framework.Bundle;
+import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
@@ -238,7 +242,7 @@ public class DitaUtil {
 
 	private static String getFileNameFromMap(String ditaMapPath) {
 
-		String fileName = null;
+		StringBuffer fileName = new StringBuffer();
 
 		try {
 
@@ -265,38 +269,55 @@ public class DitaUtil {
 
 			builder = factory.newDocumentBuilder();
 
-			doc = builder.parse(new InputSource(ditaMapStream)); // zipFile.getInputStream(pluginEntry)));
+			doc = builder.parse(new InputSource(ditaMapStream));
 
 			XPathFactory xFactory = XPathFactory.newInstance();
 
 			XPath xpath = xFactory.newXPath();
 
-			expr = xpath.compile("//bookmap/booktitle/mainbooktitle");
+			expr = xpath.compile("//bookmap/bookmeta/prodinfo/prodname");
 
-			Node result = (Node) expr.evaluate(doc, XPathConstants.NODE);
+			Node prodNameNode = (Node) expr.evaluate(doc, XPathConstants.NODE);
 
-			if (result != null) {
+			if (prodNameNode != null) {
 
-				fileName = result.getTextContent();
+				fileName.append(prodNameNode.getTextContent());
+
+				expr = xpath.compile("//bookmap/bookmeta/prodinfo/vrmlist");
+
+				Element vrmlistNode = (Element) expr.evaluate(doc, XPathConstants.NODE);
+
+				NodeList versions = vrmlistNode.getElementsByTagName("vrm");
+
+				if (versions.getLength() > 0) {
+
+					NamedNodeMap versionAttributes = versions.item(0).getAttributes();
+					Attr releaseAttr = (Attr) versionAttributes.getNamedItem("release");
+
+					if (releaseAttr != null) {
+						fileName.append(String.format("_%s", releaseAttr.getValue()));
+					}
+
+					Attr versionAttr = (Attr) versionAttributes.getNamedItem("version");
+
+					if (versionAttr != null) {
+						fileName.append(String.format("_%s", versionAttr.getValue()));
+					}
+				}
 			} else {
-
 				expr = xpath.compile("/bookmap");
-
-				result = (Node) expr.evaluate(doc, XPathConstants.NODE);
-
-				if (result != null) {
-					fileName = result.getAttributes().getNamedItem("id").getTextContent();
+				prodNameNode = (Node) expr.evaluate(doc, XPathConstants.NODE);
+				if (prodNameNode != null) {
+					fileName.append(prodNameNode.getAttributes().getNamedItem("id").getTextContent());
 				}
 			}
-
-			// If there is any issue parsing - we use the project name
 		} catch (FileNotFoundException e) {
 		} catch (ParserConfigurationException e) {
 		} catch (SAXException e) {
 		} catch (IOException e) {
 		} catch (XPathExpressionException e) {
 		}
-		return fileName;
+		return fileName.toString();
 	}
 
 }
