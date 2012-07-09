@@ -48,6 +48,7 @@ import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.cda.core.profile.ActRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.core.profile.EntryRelationshipKind;
+import org.openhealthtools.mdht.uml.cda.core.profile.SeverityKind;
 import org.openhealthtools.mdht.uml.cda.core.profile.Validation;
 import org.openhealthtools.mdht.uml.common.util.NamedElementComparator;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
@@ -767,9 +768,12 @@ public class CDAModelUtil {
 		}
 		if (textValue != null) {
 			String value = (String) property.getValue(textValue, ICDAProfileConstants.TEXT_VALUE_VALUE);
-
 			if (value != null && value.length() > 0) {
-				message.append(" = \"").append(value).append("\"");
+				SeverityKind level = (SeverityKind) property.getValue(
+					textValue, ICDAProfileConstants.VALIDATION_SEVERITY);
+				message.append(" and ").append(level != null
+						? getValidationKeyword(level.getLiteral())
+						: keyword).append(" equal \"").append(value).append("\"");
 			}
 		}
 
