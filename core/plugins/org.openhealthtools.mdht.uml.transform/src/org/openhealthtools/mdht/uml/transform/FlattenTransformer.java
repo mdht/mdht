@@ -19,9 +19,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.Profile;
 import org.openhealthtools.mdht.uml.common.util.ModelConsolidator;
-import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.transform.internal.Logger;
 
 /**
@@ -106,10 +104,10 @@ public class FlattenTransformer extends AbstractTransformer {
 	private Package initializeVocabPackageFrom(Element element) {
 		Package vocabPkg = initializeModelPackageFrom(
 			element, transformerOptions.getVocabModelPath(), "flattened_vocab", "vocab", "Vocab");
-		Profile termProfile = TermProfileUtil.getTerminologyProfile(vocabPkg.eResource().getResourceSet());
-		if (termProfile != null) {
-			vocabPkg.applyProfile(termProfile);
-		}
+		// Profile termProfile = TermProfileUtil.getTerminologyProfile(vocabPkg.eResource().getResourceSet());
+		// if (termProfile != null) {
+		// vocabPkg.applyProfile(termProfile);
+		// }
 
 		return vocabPkg;
 	}
