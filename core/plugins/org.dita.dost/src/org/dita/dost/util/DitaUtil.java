@@ -287,21 +287,22 @@ public class DitaUtil {
 
 				Element vrmlistNode = (Element) expr.evaluate(doc, XPathConstants.NODE);
 
-				NodeList versions = vrmlistNode.getElementsByTagName("vrm");
+				if (vrmlistNode != null) {
+					NodeList versions = vrmlistNode.getElementsByTagName("vrm");
+					if (versions.getLength() > 0) {
 
-				if (versions.getLength() > 0) {
+						NamedNodeMap versionAttributes = versions.item(0).getAttributes();
+						Attr releaseAttr = (Attr) versionAttributes.getNamedItem("release");
 
-					NamedNodeMap versionAttributes = versions.item(0).getAttributes();
-					Attr releaseAttr = (Attr) versionAttributes.getNamedItem("release");
+						if (releaseAttr != null) {
+							fileName.append(String.format("_%s", releaseAttr.getValue()));
+						}
 
-					if (releaseAttr != null) {
-						fileName.append(String.format("_%s", releaseAttr.getValue()));
-					}
+						Attr versionAttr = (Attr) versionAttributes.getNamedItem("version");
 
-					Attr versionAttr = (Attr) versionAttributes.getNamedItem("version");
-
-					if (versionAttr != null) {
-						fileName.append(String.format("_%s", versionAttr.getValue()));
+						if (versionAttr != null) {
+							fileName.append(String.format("_%s", versionAttr.getValue()));
+						}
 					}
 				}
 			} else {
