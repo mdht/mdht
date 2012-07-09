@@ -776,7 +776,7 @@ public class CDAModelUtil {
 						: "").append(level != null
 						? getValidationKeyword(level.getLiteral())
 						: keyword).append(markup
-						? "<b>"
+						? "</b>"
 						: "").append(" equal \"").append(value).append("\"");
 			}
 		}
