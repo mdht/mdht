@@ -12,8 +12,10 @@
 package org.openhealthtools.mdht.uml.cda.transform;
 
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Profile;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelConsolidator;
 import org.openhealthtools.mdht.uml.common.util.ModelConsolidator;
+import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
 import org.openhealthtools.mdht.uml.transform.FlattenTransformer;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
@@ -40,6 +42,14 @@ public class CDAFlattenTransformer extends FlattenTransformer {
 	@Override
 	public void initialize(Package sourcePackage) {
 		super.initialize(sourcePackage);
+
+		if (getFlattenedVocabPackage() != null) {
+			Package vocabPkg = getFlattenedVocabPackage();
+			Profile termProfile = TermProfileUtil.getTerminologyProfile(vocabPkg.eResource().getResourceSet());
+			if (termProfile != null) {
+				vocabPkg.applyProfile(termProfile);
+			}
+		}
 
 		((CDAModelConsolidator) consolidator).initializeVocab(getFlattenedVocabPackage());
 	}
