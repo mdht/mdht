@@ -977,11 +977,13 @@ public class CDAModelUtil {
 		}
 		// XML elements
 		for (Property property : allProperties) {
-			hasRules = true;
-			writer.print(li[0] + prefix + CDAModelUtil.computeConformanceMessage(property, markup));
-			appendPropertyComments(writer, property, markup);
-			appendPropertyRules(writer, property, constraintMap, subConstraintMap, unprocessedConstraints, markup);
-			writer.print(li[1]);
+			if (!property.getOwner().equals((property.getType()))) {
+				hasRules = true;
+				writer.print(li[0] + prefix + CDAModelUtil.computeConformanceMessage(property, markup));
+				appendPropertyComments(writer, property, markup);
+				appendPropertyRules(writer, property, constraintMap, subConstraintMap, unprocessedConstraints, markup);
+				writer.print(li[1]);
+			}
 		}
 
 		for (Constraint constraint : unprocessedConstraints) {
