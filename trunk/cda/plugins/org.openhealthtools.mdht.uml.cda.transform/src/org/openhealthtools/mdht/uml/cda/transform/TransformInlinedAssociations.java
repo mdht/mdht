@@ -146,7 +146,7 @@ public class TransformInlinedAssociations extends TransformAbstract {
 			if (property.isNavigable()) {
 
 				if (property.getType() != null && property.getType() instanceof Class &&
-						isInlineClass((Class) property.getType())) {
+						isInlineClass((Class) property.getType()) && !property.getOwner().equals((property.getType()))) {
 
 					if (getCDAClass(property.getClass_()) != null) {
 						AnnotationsUtil bucketAnnotations = new AnnotationsUtil(property.getClass_());
@@ -262,7 +262,8 @@ public class TransformInlinedAssociations extends TransformAbstract {
 				if (property.isNavigable() && property.getType() instanceof Class &&
 						!inlineClass.equals(property.getType()) && !CDAModelUtil.isCDAModel(property.getType()) &&
 						!CDAModelUtil.isDatatypeModel(property.getType()) &&
-						CDAModelUtil.getTemplateId((Class) property.getType()) == null) {
+						CDAModelUtil.getTemplateId((Class) property.getType()) == null &&
+						!property.getOwner().equals((property.getType())) && getCDAClass(property.getClass_()) != null) {
 
 					String associationMessage = CDAModelUtil.getValidationMessage(association);
 
