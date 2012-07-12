@@ -96,7 +96,7 @@ public class TermPropertyNotation extends PropertyNotationUtil {
 		String termMetadata = getTerminologyAnnotations(property, style);
 		if (termMetadata.length() > 0) {
 			if (annotations.length() > 0) {
-				annotations.append(" ");
+				annotations.append(", ");
 			}
 			annotations.append(termMetadata);
 		}
