@@ -281,7 +281,7 @@ public class PropertyNotationUtil {
 			// display only if redefined property has a different name (i.e., not "implicit")
 			if (!redefinedProperty.eIsProxy() && !redefinedProperty.getName().equals(property.getName())) {
 				if (needsComma) {
-					buffer.append(" ,");
+					buffer.append(", ");
 					buffer.append(NL);
 				}
 				buffer.append("redefines ");
@@ -296,7 +296,7 @@ public class PropertyNotationUtil {
 			Property current = it.next();
 			if (!current.eIsProxy()) {
 				if (needsComma) {
-					buffer.append(" ,");
+					buffer.append(", ");
 					buffer.append(NL);
 				}
 				buffer.append("subsets ");
