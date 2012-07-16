@@ -30,6 +30,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PurposeofReferenceObservation#validatePurposeofReferenceObservationCodeCodeSystem(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purposeof Reference Observation Code Code System</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PurposeofReferenceObservation#validatePurposeofReferenceObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purposeof Reference Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PurposeofReferenceObservation#validatePurposeofReferenceObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purposeof Reference Observation Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PurposeofReferenceObservation#validatePurposeofReferenceObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Purposeof Reference Observation Code</em>}</li>
@@ -42,6 +43,43 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
  */
 
 public class PurposeofReferenceObservationTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidatePurposeofReferenceObservationCodeCodeSystem() {
+		OperationsTestCase<PurposeofReferenceObservation> validatePurposeofReferenceObservationCodeCodeSystemTestCase = new OperationsTestCase<PurposeofReferenceObservation>(
+			"validatePurposeofReferenceObservationCodeCodeSystem",
+			operationsForOCL.getOCLValue("VALIDATE_PURPOSEOF_REFERENCE_OBSERVATION_CODE_CODE_SYSTEM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PurposeofReferenceObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PurposeofReferenceObservation target) {
+				target.init();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				code.setCode("ASSERTION");
+				code.setCodeSystem("2.16.840.1.113883.5.4");
+				target.setCode(code);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PurposeofReferenceObservationOperations.validatePurposeofReferenceObservationCodeCodeSystem(
+					(PurposeofReferenceObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePurposeofReferenceObservationCodeCodeSystemTestCase.doValidationTest();
+	}
 
 	/**
 	*

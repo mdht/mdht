@@ -33,6 +33,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CoverageActivity#validateCoverageActivityRelationshipSequenceNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Relationship Sequence Number</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CoverageActivity#validateCoverageActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CoverageActivity#validateCoverageActivityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CoverageActivity#validateCoverageActivityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Coverage Activity Code</em>}</li>
@@ -48,6 +49,44 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  */
 
 public class CoverageActivityTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateCoverageActivityRelationshipSequenceNumber() {
+		OperationsTestCase<CoverageActivity> validateCoverageActivityRelationshipSequenceNumberTestCase = new OperationsTestCase<CoverageActivity>(
+			"validateCoverageActivityRelationshipSequenceNumber",
+			operationsForOCL.getOCLValue("VALIDATE_COVERAGE_ACTIVITY_RELATIONSHIP_SEQUENCE_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CoverageActivity target) {
+				target.init();
+				target.getEntryRelationships().add(CDAFactory.eINSTANCE.createEntryRelationship());
+			}
+
+			@Override
+			protected void updateToPass(CoverageActivity target) {
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setAct(ConsolFactory.eINSTANCE.createPolicyActivity());
+				er.setSequenceNumber(DatatypesFactory.eINSTANCE.createINT());
+				target.getEntryRelationships().add(er);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CoverageActivityOperations.validateCoverageActivityRelationshipSequenceNumber(
+					(CoverageActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCoverageActivityRelationshipSequenceNumberTestCase.doValidationTest();
+	}
 
 	/**
 	*

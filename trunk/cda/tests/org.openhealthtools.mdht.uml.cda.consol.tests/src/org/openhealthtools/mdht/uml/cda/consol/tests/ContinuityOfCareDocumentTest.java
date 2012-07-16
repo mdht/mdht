@@ -15,11 +15,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
 import org.openhealthtools.mdht.uml.cda.AssignedEntity;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.DocumentationOf;
 import org.openhealthtools.mdht.uml.cda.Performer1;
+import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.ServiceEvent;
 import org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectivesSection;
 import org.openhealthtools.mdht.uml.cda.consol.AllergiesSection;
@@ -81,6 +83,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ServiceEventPerformer;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEventEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event Effective Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEventPerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event Performer</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentDocumentationOfServiceEvent(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Documentation Of Service Event</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentAuthorAssignedAuthorHasAssignedPersonOrRepresentedOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Author Assigned Author Has Assigned Person Or Represented Organization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#validateContinuityOfCareDocumentAuthorAssignedAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Continuity Of Care Document Author Assigned Author</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#getAllergiesSection() <em>Get Allergies Section</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ContinuityOfCareDocument#getMedicationsSection() <em>Get Medications Section</em>}</li>
@@ -1146,6 +1149,52 @@ public class ContinuityOfCareDocumentTest extends CDAValidationTest {
 		};
 
 		validateContinuityOfCareDocumentDocumentationOfServiceEventTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateContinuityOfCareDocumentAuthorAssignedAuthorHasAssignedPersonOrRepresentedOrganization() {
+		OperationsTestCase<ContinuityOfCareDocument> validateContinuityOfCareDocumentAuthorAssignedAuthorHasAssignedPersonOrRepresentedOrganizationTestCase = new OperationsTestCase<ContinuityOfCareDocument>(
+			"validateContinuityOfCareDocumentAuthorAssignedAuthorHasAssignedPersonOrRepresentedOrganization",
+			operationsForOCL.getOCLValue("VALIDATE_CONTINUITY_OF_CARE_DOCUMENT_AUTHOR_ASSIGNED_AUTHOR_HAS_ASSIGNED_PERSON_OR_REPRESENTED_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ContinuityOfCareDocument target) {
+				target.init();
+				Author author = CDAFactory.eINSTANCE.createAuthor();
+				author.setTime(DatatypesFactory.eINSTANCE.createTS());
+				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+				author.setAssignedAuthor(aa);
+				target.getAuthors().add(author);
+			}
+
+			@Override
+			protected void updateToPass(ContinuityOfCareDocument target) {
+				target.getAuthors().clear();
+				Author author = CDAFactory.eINSTANCE.createAuthor();
+				author.setTime(DatatypesFactory.eINSTANCE.createTS());
+				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				aa.setAssignedPerson(person);
+				author.setAssignedAuthor(aa);
+				target.getAuthors().add(author);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ContinuityOfCareDocumentOperations.validateContinuityOfCareDocumentAuthorAssignedAuthorHasAssignedPersonOrRepresentedOrganization(
+					(ContinuityOfCareDocument) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateContinuityOfCareDocumentAuthorAssignedAuthorHasAssignedPersonOrRepresentedOrganizationTestCase.doValidationTest();
 	}
 
 	/**

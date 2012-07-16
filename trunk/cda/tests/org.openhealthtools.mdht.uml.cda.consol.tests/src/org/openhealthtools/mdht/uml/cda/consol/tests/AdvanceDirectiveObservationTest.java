@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
@@ -64,6 +65,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipExternalReference
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationCustodianCustodianRolePlayingEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Custodian Custodian Role Playing Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationCustodianTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Custodian Type Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationCustodianAdvanceDirectiveObservationCustodianRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Custodian Advance Directive Observation Custodian Role</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationReferenceExternalDocumentTextMediaType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Reference External Document Text Media Type</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationReferenceExternalDocumentTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Reference External Document Text Reference</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationReferenceExternalDocumentId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Reference External Document Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationReferenceExternalDocumentText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Reference External Document Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectiveObservation#validateAdvanceDirectiveObservationReferenceTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directive Observation Reference Type Code</em>}</li>
@@ -1027,6 +1030,101 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 		};
 
 		validateAdvanceDirectiveObservationCustodianAdvanceDirectiveObservationCustodianRoleTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateAdvanceDirectiveObservationReferenceExternalDocumentTextMediaType() {
+		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationReferenceExternalDocumentTextMediaTypeTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
+			"validateAdvanceDirectiveObservationReferenceExternalDocumentTextMediaType",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_REFERENCE_EXTERNAL_DOCUMENT_TEXT_MEDIA_TYPE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AdvanceDirectiveObservation target) {
+				target.init();
+				Reference ref = CDAFactory.eINSTANCE.createReference();
+				ExternalDocument ed = CDAFactory.eINSTANCE.createExternalDocument();
+				ed.setText(DatatypesFactory.eINSTANCE.createED());
+				ref.setExternalDocument(ed);
+				target.getReferences().add(ref);
+			}
+
+			@Override
+			protected void updateToPass(AdvanceDirectiveObservation target) {
+				target.getReferences().clear();
+
+				Reference ref = CDAFactory.eINSTANCE.createReference();
+				ExternalDocument ed = CDAFactory.eINSTANCE.createExternalDocument();
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				// text.setMediaType("JPEG");
+				ed.setText(text);
+				ref.setExternalDocument(ed);
+				target.getReferences().add(ref);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationReferenceExternalDocumentTextMediaType(
+					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAdvanceDirectiveObservationReferenceExternalDocumentTextMediaTypeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateAdvanceDirectiveObservationReferenceExternalDocumentTextReference() {
+		OperationsTestCase<AdvanceDirectiveObservation> validateAdvanceDirectiveObservationReferenceExternalDocumentTextReferenceTestCase = new OperationsTestCase<AdvanceDirectiveObservation>(
+			"validateAdvanceDirectiveObservationReferenceExternalDocumentTextReference",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVE_OBSERVATION_REFERENCE_EXTERNAL_DOCUMENT_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AdvanceDirectiveObservation target) {
+
+				target.init();
+				Reference ref = CDAFactory.eINSTANCE.createReference();
+				ExternalDocument ed = CDAFactory.eINSTANCE.createExternalDocument();
+				ed.setText(DatatypesFactory.eINSTANCE.createED());
+				ref.setExternalDocument(ed);
+				target.getReferences().add(ref);
+
+			}
+
+			@Override
+			protected void updateToPass(AdvanceDirectiveObservation target) {
+				target.getReferences().clear();
+
+				Reference ref = CDAFactory.eINSTANCE.createReference();
+				ExternalDocument ed = CDAFactory.eINSTANCE.createExternalDocument();
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				text.setReference(DatatypesFactory.eINSTANCE.createTEL());
+				ed.setText(text);
+				ref.setExternalDocument(ed);
+				target.getReferences().add(ref);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AdvanceDirectiveObservationOperations.validateAdvanceDirectiveObservationReferenceExternalDocumentTextReference(
+					(AdvanceDirectiveObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAdvanceDirectiveObservationReferenceExternalDocumentTextReferenceTestCase.doValidationTest();
 	}
 
 	/**

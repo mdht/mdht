@@ -24,6 +24,8 @@ import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.Participant2;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.ConsolPackage;
+import org.openhealthtools.mdht.uml.cda.consol.GeneralStatusSection;
 import org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity;
 import org.openhealthtools.mdht.uml.cda.consol.Indication;
 import org.openhealthtools.mdht.uml.cda.consol.Instructions;
@@ -49,6 +51,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#validateImmunizationActivityTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Activity Text Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#validateImmunizationActivityTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Activity Text Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#validateImmunizationActivityDoseQuantityUnit(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Activity Dose Quantity Unit</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#validateImmunizationActivityInstructionInversion(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Activity Instruction Inversion</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationActivity#validateImmunizationActivityDrugVehicleTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Activity Drug Vehicle Type Code</em>}</li>
@@ -130,6 +133,55 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 		};
 
 		validateImmunizationActivityTextReferenceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateImmunizationActivityTextReferenceValue() {
+		OperationsTestCase<ImmunizationActivity> validateImmunizationActivityTextReferenceValueTestCase = new NarrativeReferenceTestCase<ImmunizationActivity>(
+			"validateImmunizationActivityTextReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_ACTIVITY_TEXT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ImmunizationActivity target) {
+				target.init();
+
+				// add the observation to a section, as required by the constraint, that has text that we can reference
+				addText(
+					createSectionForClinicalStatement(target, ConsolPackage.eINSTANCE, GeneralStatusSection.class), "",
+					"Not a particularly severe reaction.");
+
+				// add a reference to the section text
+				target.setText(createEDWithReference("Some sample text", "#1.2.3.4"));
+
+			}
+
+			@Override
+			protected void updateToPass(ImmunizationActivity target) {
+
+				// add the observation to a section, as required by the constraint, that has text that we can reference
+				addText(
+					createSectionForClinicalStatement(target, ConsolPackage.eINSTANCE, GeneralStatusSection.class),
+					"1.2.3.4", "Not a particularly severe reaction.");
+
+				// add a reference to the section text
+				target.setText(createEDWithReference("Some sample text", "#1.2.3.4"));
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ImmunizationActivityOperations.validateImmunizationActivityTextReferenceValue(
+					(ImmunizationActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateImmunizationActivityTextReferenceValueTestCase.doValidationTest();
 	}
 
 	/**

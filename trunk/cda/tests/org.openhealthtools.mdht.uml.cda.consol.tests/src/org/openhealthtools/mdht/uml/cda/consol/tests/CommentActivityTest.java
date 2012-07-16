@@ -18,6 +18,7 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.AssignedAuthor;
 import org.openhealthtools.mdht.uml.cda.Author;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.consol.CommentActivity;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.operations.CommentActivityOperations;
@@ -39,6 +40,8 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CommentActivity#validateCommentActivityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Activity Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CommentActivity#validateCommentActivityText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Activity Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CommentActivity#validateCommentActivityAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Activity Author</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CommentActivity#validateCommentActivityAuthorAssignedAuthorHasPersonOrOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Activity Author Assigned Author Has Person Or Organization</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CommentActivity#validateCommentActivityAuthorAssignedAuthorAssignPersonName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Activity Author Assigned Author Assign Person Name</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CommentActivity#validateCommentActivityAuthorAssignedAuthorAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Activity Author Assigned Author Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CommentActivity#validateCommentActivityAuthorAssignedAuthorId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Activity Author Assigned Author Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CommentActivity#validateCommentActivityAuthorTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Activity Author Time</em>}</li>
@@ -257,6 +260,98 @@ public class CommentActivityTest extends CDAValidationTest {
 		};
 
 		validateCommentActivityAuthorTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateCommentActivityAuthorAssignedAuthorHasPersonOrOrganization() {
+		OperationsTestCase<CommentActivity> validateCommentActivityAuthorAssignedAuthorHasPersonOrOrganizationTestCase = new OperationsTestCase<CommentActivity>(
+			"validateCommentActivityAuthorAssignedAuthorHasPersonOrOrganization",
+			operationsForOCL.getOCLValue("VALIDATE_COMMENT_ACTIVITY_AUTHOR_ASSIGNED_AUTHOR_HAS_PERSON_OR_ORGANIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CommentActivity target) {
+				target.init();
+				Author author = CDAFactory.eINSTANCE.createAuthor();
+				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+				author.setAssignedAuthor(aa);
+				target.getAuthors().add(author);
+
+			}
+
+			@Override
+			protected void updateToPass(CommentActivity target) {
+				target.getAuthors().clear();
+				Author author = CDAFactory.eINSTANCE.createAuthor();
+				author.setTime(DatatypesFactory.eINSTANCE.createTS());
+				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+				aa.setAssignedPerson(person);
+				author.setAssignedAuthor(aa);
+				target.getAuthors().add(author);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CommentActivityOperations.validateCommentActivityAuthorAssignedAuthorHasPersonOrOrganization(
+					(CommentActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCommentActivityAuthorAssignedAuthorHasPersonOrOrganizationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateCommentActivityAuthorAssignedAuthorAssignPersonName() {
+		OperationsTestCase<CommentActivity> validateCommentActivityAuthorAssignedAuthorAssignPersonNameTestCase = new OperationsTestCase<CommentActivity>(
+			"validateCommentActivityAuthorAssignedAuthorAssignPersonName",
+			operationsForOCL.getOCLValue("VALIDATE_COMMENT_ACTIVITY_AUTHOR_ASSIGNED_AUTHOR_ASSIGN_PERSON_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+			{
+				this.skipFailsTest();
+			}
+
+			@Override
+			protected void updateToFail(CommentActivity target) {
+
+			}
+
+			@Override
+			protected void updateToPass(CommentActivity target) {
+				target.init();
+				Author author = CDAFactory.eINSTANCE.createAuthor();
+				author.setTime(DatatypesFactory.eINSTANCE.createTS());
+				AssignedAuthor aa = CDAFactory.eINSTANCE.createAssignedAuthor();
+				Person person = CDAFactory.eINSTANCE.createPerson();
+				person.getNames().add(DatatypesFactory.eINSTANCE.createPN());
+				aa.setAssignedPerson(person);
+				author.setAssignedAuthor(aa);
+				target.getAuthors().add(author);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CommentActivityOperations.validateCommentActivityAuthorAssignedAuthorAssignPersonName(
+					(CommentActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCommentActivityAuthorAssignedAuthorAssignPersonNameTestCase.doValidationTest();
 	}
 
 	/**

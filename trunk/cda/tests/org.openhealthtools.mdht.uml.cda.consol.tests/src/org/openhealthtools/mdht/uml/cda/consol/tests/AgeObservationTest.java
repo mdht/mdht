@@ -32,6 +32,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AgeObservation#validateAgeObservationValueUnits(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Age Observation Value Units</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AgeObservation#validateAgeObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Age Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AgeObservation#validateAgeObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Age Observation Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AgeObservation#validateAgeObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Age Observation Mood Code</em>}</li>
@@ -45,6 +46,42 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
  */
 
 public class AgeObservationTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateAgeObservationValueUnits() {
+		OperationsTestCase<AgeObservation> validateAgeObservationValueUnitsTestCase = new OperationsTestCase<AgeObservation>(
+			"validateAgeObservationValueUnits",
+			operationsForOCL.getOCLValue("VALIDATE_AGE_OBSERVATION_VALUE_UNITS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AgeObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AgeObservation target) {
+				target.init();
+				PQ val = DatatypesFactory.eINSTANCE.createPQ();
+				val.setUnit("meter");
+				target.getValues().add(val);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AgeObservationOperations.validateAgeObservationValueUnits(
+					(AgeObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAgeObservationValueUnitsTestCase.doValidationTest();
+	}
 
 	/**
 	*

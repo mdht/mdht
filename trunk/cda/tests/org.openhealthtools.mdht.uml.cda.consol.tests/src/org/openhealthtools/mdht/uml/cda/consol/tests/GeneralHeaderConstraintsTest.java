@@ -33,6 +33,7 @@ import org.openhealthtools.mdht.uml.cda.Guardian;
 import org.openhealthtools.mdht.uml.cda.InFulfillmentOf;
 import org.openhealthtools.mdht.uml.cda.Informant12;
 import org.openhealthtools.mdht.uml.cda.InformationRecipient;
+import org.openhealthtools.mdht.uml.cda.InfrastructureRootTypeId;
 import org.openhealthtools.mdht.uml.cda.IntendedRecipient;
 import org.openhealthtools.mdht.uml.cda.LanguageCommunication;
 import org.openhealthtools.mdht.uml.cda.LegalAuthenticator;
@@ -56,7 +57,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityNameUse;
+import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 import org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse;
+import org.openhealthtools.mdht.uml.hl7.vocab.RoleClassAssociative;
 
 /**
  * <!-- begin-user-doc -->
@@ -68,6 +71,10 @@ import org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsUSRealmAddress(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints US Realm Address</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsUSRealmPatientName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints US Realm Patient Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsTypeIdRoot(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Type Id Root</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsTypeIdExtension(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Type Id Extension</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsSetIdVersionNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Set Id Version Number</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsVersionNumberSetId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Version Number Set Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsRealmCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Realm Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsTypeId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Type Id</em>}</li>
@@ -194,6 +201,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.PostalAddressUse;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInformantAssignedEntityPerson(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Informant Assigned Entity Person</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInformantHasAssignedEntityOrRelatedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Informant Has Assigned Entity Or Related Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsParticipantSupportAssociatedEntityHasAssociatedPersonOrScopingOrganization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Participant Support Associated Entity Has Associated Person Or Scoping Organization</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsParticipantSupportUseINDRoleclassCodes(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Participant Support Use IND Roleclass Codes</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsParticipantSupportTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints Participant Support Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInFulfillmentOfOrderId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints In Fulfillment Of Order Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.GeneralHeaderConstraints#validateGeneralHeaderConstraintsInFulfillmentOfOrder(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate General Header Constraints In Fulfillment Of Order</em>}</li>
@@ -351,6 +359,151 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsUSRealmPatientNameTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsTypeIdRoot() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsTypeIdRootTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsTypeIdRoot",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TYPE_ID_ROOT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.init();
+				InfrastructureRootTypeId typeid = CDAFactory.eINSTANCE.createInfrastructureRootTypeId();
+				typeid.setRoot("2.16.840.1.113883.1.3");
+				typeid.setExtension("POCD_HD000040");
+				target.setTypeId(typeid);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsTypeIdRoot(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsTypeIdRootTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsTypeIdExtension() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsTypeIdExtensionTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsTypeIdExtension",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_TYPE_ID_EXTENSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.init();
+				InfrastructureRootTypeId typeid = CDAFactory.eINSTANCE.createInfrastructureRootTypeId();
+				typeid.setRoot("2.16.840.1.113883.1.3");
+				typeid.setExtension("POCD_HD000040");
+				target.setTypeId(typeid);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsTypeIdExtension(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsTypeIdExtensionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsSetIdVersionNumber() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsSetIdVersionNumberTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsSetIdVersionNumber",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_SET_ID_VERSION_NUMBER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				target.setSetId(DatatypesFactory.eINSTANCE.createII());
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.setVersionNumber(DatatypesFactory.eINSTANCE.createINT());
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsSetIdVersionNumber(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsSetIdVersionNumberTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsVersionNumberSetId() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsVersionNumberSetIdTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsVersionNumberSetId",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_VERSION_NUMBER_SET_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				target.setVersionNumber(DatatypesFactory.eINSTANCE.createINT());
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.setSetId(DatatypesFactory.eINSTANCE.createII());
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsVersionNumberSetId(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsVersionNumberSetIdTestCase.doValidationTest();
 	}
 
 	/**
@@ -5962,6 +6115,49 @@ public class GeneralHeaderConstraintsTest extends CDAValidationTest {
 		};
 
 		validateGeneralHeaderConstraintsParticipantSupportAssociatedEntityHasAssociatedPersonOrScopingOrganizationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateGeneralHeaderConstraintsParticipantSupportUseINDRoleclassCodes() {
+		OperationsTestCase<GeneralHeaderConstraints> validateGeneralHeaderConstraintsParticipantSupportUseINDRoleclassCodesTestCase = new OperationsTestCase<GeneralHeaderConstraints>(
+			"validateGeneralHeaderConstraintsParticipantSupportUseINDRoleclassCodes",
+			operationsForOCL.getOCLValue("VALIDATE_GENERAL_HEADER_CONSTRAINTS_PARTICIPANT_SUPPORT_USE_IND_ROLECLASS_CODES__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(GeneralHeaderConstraints target) {
+				target.init();
+				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
+				par.setTypeCode(ParticipationType.IND);
+				target.getParticipants().add(par);
+			}
+
+			@Override
+			protected void updateToPass(GeneralHeaderConstraints target) {
+				target.getParticipants().clear();
+
+				Participant1 par = CDAFactory.eINSTANCE.createParticipant1();
+				par.setTypeCode(ParticipationType.IND);
+				AssociatedEntity entity = CDAFactory.eINSTANCE.createAssociatedEntity();
+				entity.setClassCode(RoleClassAssociative.CAREGIVER);
+				par.setAssociatedEntity(entity);
+				target.getParticipants().add(par);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return GeneralHeaderConstraintsOperations.validateGeneralHeaderConstraintsParticipantSupportUseINDRoleclassCodes(
+					(GeneralHeaderConstraints) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateGeneralHeaderConstraintsParticipantSupportUseINDRoleclassCodesTestCase.doValidationTest();
 	}
 
 	/**
