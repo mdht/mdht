@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Product;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.Instructions;
 import org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder;
@@ -50,6 +51,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder#validateMedicationSupplyOrderProduct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Supply Order Product</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder#validateMedicationSupplyOrderAuthor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Supply Order Author</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder#validateMedicationSupplyOrderInstructions(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Supply Order Instructions</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder#validateMedicationSupplyOrderProductContainsMedicationOrImmunization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Supply Order Product Contains Medication Or Immunization</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationSupplyOrder#getInstructions() <em>Get Instructions</em>}</li>
  * </ul>
  * </p>
@@ -493,6 +495,44 @@ public class MedicationSupplyOrderTest extends CDAValidationTest {
 		};
 
 		validateMedicationSupplyOrderInstructionsTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateMedicationSupplyOrderProductContainsMedicationOrImmunization() {
+		OperationsTestCase<MedicationSupplyOrder> validateMedicationSupplyOrderProductContainsMedicationOrImmunizationTestCase = new OperationsTestCase<MedicationSupplyOrder>(
+			"validateMedicationSupplyOrderProductContainsMedicationOrImmunization",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_SUPPLY_ORDER_PRODUCT_CONTAINS_MEDICATION_OR_IMMUNIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationSupplyOrder target) {
+				target.init();
+				Product prod = CDAFactory.eINSTANCE.createProduct();
+				target.setProduct(prod);
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationSupplyOrder target) {
+				Product prod = CDAFactory.eINSTANCE.createProduct();
+				prod.setManufacturedProduct(ConsolFactory.eINSTANCE.createImmunizationMedicationInformation());
+				target.setProduct(prod);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationSupplyOrderOperations.validateMedicationSupplyOrderProductContainsMedicationOrImmunization(
+					(MedicationSupplyOrder) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationSupplyOrderProductContainsMedicationOrImmunizationTestCase.doValidationTest();
 	}
 
 	/**

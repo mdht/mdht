@@ -23,6 +23,7 @@ import org.openhealthtools.mdht.uml.cda.consol.operations.StudyActOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
@@ -34,6 +35,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.StudyAct#validateStudyActIdsHaveRoot(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Study Act Ids Have Root</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.StudyAct#validateStudyActNoIdExtension(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Study Act No Id Extension</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.StudyAct#validateStudyActTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Study Act Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.StudyAct#validateStudyActClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Study Act Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.StudyAct#validateStudyActMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Study Act Mood Code</em>}</li>
@@ -50,6 +53,82 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  */
 
 public class StudyActTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateStudyActIdsHaveRoot() {
+		OperationsTestCase<StudyAct> validateStudyActIdsHaveRootTestCase = new OperationsTestCase<StudyAct>(
+			"validateStudyActIdsHaveRoot",
+			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_IDS_HAVE_ROOT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(StudyAct target) {
+				target.init();
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
+			}
+
+			@Override
+			protected void updateToPass(StudyAct target) {
+				target.getIds().clear();
+				II id = DatatypesFactory.eINSTANCE.createII();
+				id.setRoot("test");
+				target.getIds().add(id);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return StudyActOperations.validateStudyActIdsHaveRoot((StudyAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateStudyActIdsHaveRootTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateStudyActNoIdExtension() {
+		OperationsTestCase<StudyAct> validateStudyActNoIdExtensionTestCase = new OperationsTestCase<StudyAct>(
+			"validateStudyActNoIdExtension",
+			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_NO_ID_EXTENSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(StudyAct target) {
+				target.init();
+				II id = DatatypesFactory.eINSTANCE.createII();
+				id.setExtension("test");
+				target.getIds().add(id);
+			}
+
+			@Override
+			protected void updateToPass(StudyAct target) {
+				target.getIds().clear();
+				II id = DatatypesFactory.eINSTANCE.createII();
+				id.setRoot("test");
+				target.getIds().add(id);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return StudyActOperations.validateStudyActNoIdExtension((StudyAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateStudyActNoIdExtensionTestCase.doValidationTest();
+	}
 
 	/**
 	*

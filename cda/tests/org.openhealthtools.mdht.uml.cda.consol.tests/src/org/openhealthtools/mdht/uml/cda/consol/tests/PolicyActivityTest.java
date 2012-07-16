@@ -32,6 +32,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
+import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ON;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationPhysicalPerformer;
@@ -78,6 +79,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityCoverageCoverageRoleCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Coverage Coverage Role Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityCoverageCoverageRoleAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Coverage Coverage Role Addr</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityCoverageCoverageRoleCoveragePlayingEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Coverage Coverage Role Coverage Playing Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityCoverageLowTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Coverage Low Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityCoverageHighTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Coverage High Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityCoverageTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Coverage Type Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityCoverageTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Coverage Time</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PolicyActivity#validatePolicyActivityCoverageCoverageRole(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Policy Activity Coverage Coverage Role</em>}</li>
@@ -1501,6 +1504,98 @@ public class PolicyActivityTest extends CDAValidationTest {
 		};
 
 		validatePolicyActivityCoverageCoverageRoleCoveragePlayingEntityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidatePolicyActivityCoverageLowTime() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityCoverageLowTimeTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityCoverageLowTime",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_COVERAGE_LOW_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+				target.init();
+
+				Participant2 coverage = CDAFactory.eINSTANCE.createParticipant2();
+				coverage.setTime(DatatypesFactory.eINSTANCE.createIVL_TS());
+				coverage.setTypeCode(ParticipationType.COV);
+				target.getParticipants().add(coverage);
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.getParticipants().clear();
+
+				Participant2 coverage = CDAFactory.eINSTANCE.createParticipant2();
+				IVL_TS time = DatatypesFactory.eINSTANCE.createIVL_TS();
+				time.setLow(DatatypesFactory.eINSTANCE.createIVXB_TS());
+				coverage.setTime(time);
+				coverage.setTypeCode(ParticipationType.COV);
+				target.getParticipants().add(coverage);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityCoverageLowTime(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityCoverageLowTimeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidatePolicyActivityCoverageHighTime() {
+		OperationsTestCase<PolicyActivity> validatePolicyActivityCoverageHighTimeTestCase = new OperationsTestCase<PolicyActivity>(
+			"validatePolicyActivityCoverageHighTime",
+			operationsForOCL.getOCLValue("VALIDATE_POLICY_ACTIVITY_COVERAGE_HIGH_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PolicyActivity target) {
+				target.init();
+
+				Participant2 coverage = CDAFactory.eINSTANCE.createParticipant2();
+				coverage.setTime(DatatypesFactory.eINSTANCE.createIVL_TS());
+				coverage.setTypeCode(ParticipationType.COV);
+				target.getParticipants().add(coverage);
+			}
+
+			@Override
+			protected void updateToPass(PolicyActivity target) {
+				target.getParticipants().clear();
+
+				Participant2 coverage = CDAFactory.eINSTANCE.createParticipant2();
+				IVL_TS time = DatatypesFactory.eINSTANCE.createIVL_TS();
+				time.setHigh(DatatypesFactory.eINSTANCE.createIVXB_TS());
+				coverage.setTime(time);
+				coverage.setTypeCode(ParticipationType.COV);
+				target.getParticipants().add(coverage);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PolicyActivityOperations.validatePolicyActivityCoverageHighTime(
+					(PolicyActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePolicyActivityCoverageHighTimeTestCase.doValidationTest();
 	}
 
 	/**

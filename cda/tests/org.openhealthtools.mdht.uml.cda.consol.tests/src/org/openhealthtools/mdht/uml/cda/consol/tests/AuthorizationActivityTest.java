@@ -15,8 +15,17 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Encounter;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Observation;
+import org.openhealthtools.mdht.uml.cda.ObservationMedia;
+import org.openhealthtools.mdht.uml.cda.Organizer;
+import org.openhealthtools.mdht.uml.cda.Procedure;
+import org.openhealthtools.mdht.uml.cda.RegionOfInterest;
+import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
+import org.openhealthtools.mdht.uml.cda.Supply;
 import org.openhealthtools.mdht.uml.cda.consol.AuthorizationActivity;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.operations.AuthorizationActivityOperations;
@@ -37,6 +46,8 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AuthorizationActivity#validateAuthorizationActivityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Authorization Activity Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AuthorizationActivity#validateAuthorizationActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Authorization Activity Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AuthorizationActivity#validateAuthorizationActivityEntryRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Authorization Activity Entry Relationship</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AuthorizationActivity#validateAuthorizationActivityEntryRelationshipHasClinicalStatement(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Authorization Activity Entry Relationship Has Clinical Statement</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AuthorizationActivity#validateAuthorizationActivityEntryRelationshipHasAuhtorixedPerformers(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Authorization Activity Entry Relationship Has Auhtorixed Performers</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AuthorizationActivity#validateAuthorizationActivityEntryRelationshipTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Authorization Activity Entry Relationship Type Code</em>}</li>
  * </ul>
  * </p>
@@ -216,6 +227,279 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 		};
 
 		validateAuthorizationActivityEntryRelationshipTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateAuthorizationActivityEntryRelationshipHasClinicalStatement() {
+		OperationsTestCase<AuthorizationActivity> validateAuthorizationActivityEntryRelationshipHasClinicalStatementTestCase = new OperationsTestCase<AuthorizationActivity>(
+			"validateAuthorizationActivityEntryRelationshipHasClinicalStatement",
+			operationsForOCL.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_ENTRY_RELATIONSHIP_HAS_CLINICAL_STATEMENT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			public void addFailTests() {
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						Act clinicalStatement = CDAFactory.eINSTANCE.createAct();
+
+						target.addAct(clinicalStatement);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						Encounter clinicalStatement = CDAFactory.eINSTANCE.createEncounter();
+
+						target.addEncounter(clinicalStatement);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						Observation clinicalStatement = CDAFactory.eINSTANCE.createObservation();
+
+						target.addObservation(clinicalStatement);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						ObservationMedia clinicalStatement = CDAFactory.eINSTANCE.createObservationMedia();
+
+						target.addObservationMedia(clinicalStatement);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						Organizer clinicalStatement = CDAFactory.eINSTANCE.createOrganizer();
+
+						target.addOrganizer(clinicalStatement);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						Procedure clinicalStatement = CDAFactory.eINSTANCE.createProcedure();
+
+						target.addProcedure(clinicalStatement);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						RegionOfInterest clinicalStatement = CDAFactory.eINSTANCE.createRegionOfInterest();
+
+						target.addRegionOfInterest(clinicalStatement);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						SubstanceAdministration clinicalStatement = CDAFactory.eINSTANCE.createSubstanceAdministration();
+
+						target.addSubstanceAdministration(clinicalStatement);
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						Supply clinicalStatement = CDAFactory.eINSTANCE.createSupply();
+
+						target.addSupply(clinicalStatement);
+					}
+				});
+
+			}
+
+			@Override
+			public void addPassTests() {
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						Act act = CDAFactory.eINSTANCE.createAct();
+						act.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addAct(act);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						Encounter clinicalStatement = CDAFactory.eINSTANCE.createEncounter();
+						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addEncounter(clinicalStatement);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						Observation clinicalStatement = CDAFactory.eINSTANCE.createObservation();
+						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addObservation(clinicalStatement);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						ObservationMedia clinicalStatement = CDAFactory.eINSTANCE.createObservationMedia();
+						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addObservationMedia(clinicalStatement);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						Organizer clinicalStatement = CDAFactory.eINSTANCE.createOrganizer();
+						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addOrganizer(clinicalStatement);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						Procedure clinicalStatement = CDAFactory.eINSTANCE.createProcedure();
+						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addProcedure(clinicalStatement);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						RegionOfInterest clinicalStatement = CDAFactory.eINSTANCE.createRegionOfInterest();
+						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addRegionOfInterest(clinicalStatement);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						SubstanceAdministration clinicalStatement = CDAFactory.eINSTANCE.createSubstanceAdministration();
+						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addSubstanceAdministration(clinicalStatement);
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						Supply clinicalStatement = CDAFactory.eINSTANCE.createSupply();
+						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addSupply(clinicalStatement);
+					}
+				});
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AuthorizationActivityOperations.validateAuthorizationActivityEntryRelationshipHasClinicalStatement(
+					(AuthorizationActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAuthorizationActivityEntryRelationshipHasClinicalStatementTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateAuthorizationActivityEntryRelationshipHasAuhtorixedPerformers() {
+		OperationsTestCase<AuthorizationActivity> validateAuthorizationActivityEntryRelationshipHasAuhtorixedPerformersTestCase = new OperationsTestCase<AuthorizationActivity>(
+			"validateAuthorizationActivityEntryRelationshipHasAuhtorixedPerformers",
+			operationsForOCL.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_ENTRY_RELATIONSHIP_HAS_AUHTORIXED_PERFORMERS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AuthorizationActivity target) {
+				target.init();
+				target.addAct(CDAFactory.eINSTANCE.createAct());
+				target.addAct(CDAFactory.eINSTANCE.createAct());
+				target.addAct(CDAFactory.eINSTANCE.createAct());
+				target.addAct(CDAFactory.eINSTANCE.createAct());
+				target.addAct(CDAFactory.eINSTANCE.createAct());
+				target.addAct(CDAFactory.eINSTANCE.createAct());
+				target.addAct(CDAFactory.eINSTANCE.createAct());
+				target.addAct(CDAFactory.eINSTANCE.createAct());
+			}
+
+			@Override
+			protected void updateToPass(AuthorizationActivity target) {
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+				target.getEntryRelationships().add(er);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AuthorizationActivityOperations.validateAuthorizationActivityEntryRelationshipHasAuhtorixedPerformers(
+					(AuthorizationActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAuthorizationActivityEntryRelationshipHasAuhtorixedPerformersTestCase.doValidationTest();
 	}
 
 	/**

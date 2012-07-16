@@ -21,8 +21,12 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.SeriesAct;
 import org.openhealthtools.mdht.uml.cda.consol.operations.SeriesActOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CR;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CV;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
+import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
@@ -34,6 +38,12 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeriesAct#validateSeriesActIdHasRoot(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Series Act Id Has Root</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeriesAct#validateSeriesActIdNoExtension(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Series Act Id No Extension</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeriesAct#validateSeriesActCodeQualifier(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Series Act Code Qualifier</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeriesAct#validateSeriesActCodeQualifierCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Series Act Code Qualifier Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeriesAct#validateSeriesActCodeQualifierValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Series Act Code Qualifier Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeriesAct#validateSeriesActCodeQualifierValueCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Series Act Code Qualifier Value Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeriesAct#validateSeriesActTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Series Act Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeriesAct#validateSeriesActClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Series Act Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SeriesAct#validateSeriesActMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Series Act Mood Code</em>}</li>
@@ -50,6 +60,245 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  */
 
 public class SeriesActTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateSeriesActIdHasRoot() {
+		OperationsTestCase<SeriesAct> validateSeriesActIdHasRootTestCase = new OperationsTestCase<SeriesAct>(
+			"validateSeriesActIdHasRoot",
+			operationsForOCL.getOCLValue("VALIDATE_SERIES_ACT_ID_HAS_ROOT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SeriesAct target) {
+				target.init();
+				target.getIds().add(DatatypesFactory.eINSTANCE.createII());
+			}
+
+			@Override
+			protected void updateToPass(SeriesAct target) {
+				target.getIds().clear();
+				II id = DatatypesFactory.eINSTANCE.createII();
+				id.setRoot("test");
+				target.getIds().add(id);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SeriesActOperations.validateSeriesActIdHasRoot((SeriesAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSeriesActIdHasRootTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateSeriesActIdNoExtension() {
+		OperationsTestCase<SeriesAct> validateSeriesActIdNoExtensionTestCase = new OperationsTestCase<SeriesAct>(
+			"validateSeriesActIdNoExtension",
+			operationsForOCL.getOCLValue("VALIDATE_SERIES_ACT_ID_NO_EXTENSION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SeriesAct target) {
+				target.init();
+				II id = DatatypesFactory.eINSTANCE.createII();
+				id.setExtension("test");
+				target.getIds().add(id);
+			}
+
+			@Override
+			protected void updateToPass(SeriesAct target) {
+				target.getIds().clear();
+				II id = DatatypesFactory.eINSTANCE.createII();
+				id.setRoot("test");
+				target.getIds().add(id);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SeriesActOperations.validateSeriesActIdNoExtension((SeriesAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSeriesActIdNoExtensionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateSeriesActCodeQualifier() {
+		OperationsTestCase<SeriesAct> validateSeriesActCodeQualifierTestCase = new OperationsTestCase<SeriesAct>(
+			"validateSeriesActCodeQualifier",
+			operationsForOCL.getOCLValue("VALIDATE_SERIES_ACT_CODE_QUALIFIER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SeriesAct target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SeriesAct target) {
+				target.init();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				CR qual = DatatypesFactory.eINSTANCE.createCR();
+				CV name = DatatypesFactory.eINSTANCE.createCV();
+				name.setCode("121139");
+				qual.setName(name);
+				code.getQualifiers().add(qual);
+				target.setCode(code);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SeriesActOperations.validateSeriesActCodeQualifier((SeriesAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSeriesActCodeQualifierTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateSeriesActCodeQualifierCode() {
+		OperationsTestCase<SeriesAct> validateSeriesActCodeQualifierCodeTestCase = new OperationsTestCase<SeriesAct>(
+			"validateSeriesActCodeQualifierCode",
+			operationsForOCL.getOCLValue("VALIDATE_SERIES_ACT_CODE_QUALIFIER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SeriesAct target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SeriesAct target) {
+				target.init();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				CR qual = DatatypesFactory.eINSTANCE.createCR();
+				CV name = DatatypesFactory.eINSTANCE.createCV();
+				name.setCode("121139");
+				name.setCodeSystem("1.2.840.10008.2.16.4");
+				qual.setName(name);
+				code.getQualifiers().add(qual);
+				target.setCode(code);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SeriesActOperations.validateSeriesActCodeQualifierCode(
+					(SeriesAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSeriesActCodeQualifierCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateSeriesActCodeQualifierValue() {
+		OperationsTestCase<SeriesAct> validateSeriesActCodeQualifierValueTestCase = new OperationsTestCase<SeriesAct>(
+			"validateSeriesActCodeQualifierValue",
+			operationsForOCL.getOCLValue("VALIDATE_SERIES_ACT_CODE_QUALIFIER_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SeriesAct target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SeriesAct target) {
+				target.init();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				CR qual = DatatypesFactory.eINSTANCE.createCR();
+				CD val = DatatypesFactory.eINSTANCE.createCD();
+				val.setCodeSystem("1.2.840.10008.2.16.4");
+				qual.setValue(val);
+				code.getQualifiers().add(qual);
+				target.setCode(code);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SeriesActOperations.validateSeriesActCodeQualifierValue(
+					(SeriesAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSeriesActCodeQualifierValueTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateSeriesActCodeQualifierValueCode() {
+		OperationsTestCase<SeriesAct> validateSeriesActCodeQualifierValueCodeTestCase = new OperationsTestCase<SeriesAct>(
+			"validateSeriesActCodeQualifierValueCode",
+			operationsForOCL.getOCLValue("VALIDATE_SERIES_ACT_CODE_QUALIFIER_VALUE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SeriesAct target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SeriesAct target) {
+				target.init();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				CR qual = DatatypesFactory.eINSTANCE.createCR();
+				CD val = DatatypesFactory.eINSTANCE.createCD();
+				val.setCodeSystem("1.2.840.10008.2.16.4");
+				qual.setValue(val);
+				code.getQualifiers().add(qual);
+				target.setCode(code);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SeriesActOperations.validateSeriesActCodeQualifierValueCode(
+					(SeriesAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSeriesActCodeQualifierValueCodeTestCase.doValidationTest();
+	}
 
 	/**
 	*
