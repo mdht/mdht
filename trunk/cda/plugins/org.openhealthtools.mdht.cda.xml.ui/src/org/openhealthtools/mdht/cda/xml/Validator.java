@@ -17,6 +17,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.InputStream;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -43,6 +46,8 @@ import org.eclipse.wst.xml.core.internal.validation.core.ValidationReport;
 import org.eclipse.wst.xml.core.internal.validation.eclipse.XMLMessageInfoHelper;
 import org.openhealthtools.mdht.cda.xml.ui.Activator;
 import org.openhealthtools.mdht.uml.cda.ui.util.DocumentClassDialog;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 public class Validator extends AbstractNestedValidator {
 
@@ -139,18 +144,14 @@ public class Validator extends AbstractNestedValidator {
 	}
 
 	@Override
-	protected void setupValidation(NestedValidatorContext context)
-
-	{
+	protected void setupValidation(NestedValidatorContext context) {
 
 		super.setupValidation(context);
 
 	}
 
 	@Override
-	public ValidationReport validate(String uri, InputStream inputstream, NestedValidatorContext context)
-
-	{
+	public ValidationReport validate(String uri, InputStream inputstream, NestedValidatorContext context) {
 
 		return validate(uri, inputstream, context, null);
 
@@ -158,15 +159,33 @@ public class Validator extends AbstractNestedValidator {
 
 	@Override
 	public ValidationReport validate(String uri, InputStream inputstream, NestedValidatorContext context,
-			ValidationResult result)
+			ValidationResult result) {
+		CDAValidationReport valreport = new CDAValidationReport(uri);
 
-	{
-		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
+		// exit if not HL7 namespace (not a CDA document)
+		try {
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			factory.setNamespaceAware(true);
+			DocumentBuilder docBuilder = factory.newDocumentBuilder();
+			Document doc = docBuilder.parse(uri);
+
+			Element docElement = doc.getDocumentElement();
+			if (!"ClinicalDocument".equals(docElement.getLocalName()) ||
+					!"urn:hl7-org:v3".equals(docElement.getNamespaceURI())) {
+				return valreport;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		IProject activeProject = null;
-		// change doc project to generated project
+		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
 
+		// change doc project to generated project
 		URI cdaDocumentURI = URI.createURI(uri.replace(".doc", ""));
+
+		// change model project to generated project
+		cdaDocumentURI = URI.createURI(uri.replace(".model", ""));
 
 		/*
 		 * uri passed in is full path, need to determine which project in the workspace the file is actually located
@@ -245,11 +264,10 @@ public class Validator extends AbstractNestedValidator {
 
 		} catch (CoreException e) {
 			e.printStackTrace();
+			return valreport;
 		}
 
 		boolean terminated = false;
-
-		CDAValidationReport valreport = new CDAValidationReport(uri);
 
 		while (!terminated) {
 			for (IProcess process : launch.getProcesses()) {

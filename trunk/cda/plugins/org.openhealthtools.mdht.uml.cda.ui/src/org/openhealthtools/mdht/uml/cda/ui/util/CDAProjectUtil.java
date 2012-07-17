@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 Sean Muir and David A Carlson.
+ * Copyright (c) 2012 Sean Muir and David A Carlson.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -112,9 +112,15 @@ public class CDAProjectUtil {
 					for (IResource resource : folder.members()) {
 						if (resource.getName().endsWith(".uml") && !resource.getName().contains("_Ecore")) {
 							URI modelFile = URI.createFileURI(project.getFolder(model).getFile(resource.getName()).getRawLocation().toOSString());
-							PackageableElement pe = (PackageableElement) EcoreUtil.getObjectByType(
-								resourceSet.getResource(modelFile, true).getContents(),
-								UMLPackage.eINSTANCE.getPackageableElement());
+							PackageableElement pe = null;
+							try {
+								pe = (PackageableElement) EcoreUtil.getObjectByType(
+									resourceSet.getResource(modelFile, true).getContents(),
+									UMLPackage.eINSTANCE.getPackageableElement());
+							} catch (Exception e) {
+								// ignore models that cannot be loaded
+							}
+
 							if (pe != null) {
 								if (pe instanceof Package) {
 									Package p = (Package) pe;
