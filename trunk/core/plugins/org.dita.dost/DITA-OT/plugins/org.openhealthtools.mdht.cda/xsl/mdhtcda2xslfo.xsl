@@ -22,13 +22,12 @@ Contributors:      Sean Muir (JKM Software) - initial implementation
 					<fo:table-row>
 						<fo:table-cell>
 							<fo:block text-align="start">
-								HL7 IG for CDA R2 L3
+								<xsl:value-of select="$map/bookmeta/prodinfo/series" />
 							</fo:block>
 						</fo:table-cell>
 						<fo:table-cell>
 							<fo:block text-align="center">
-								<xsl:value-of
-									select="$map//*[contains(@class,' bookmap/mainbooktitle ')][1]" />
+								<xsl:value-of select="$map//*[contains(@class,' bookmap/mainbooktitle ')][1]" />
 							</fo:block>
 						</fo:table-cell>
 						<fo:table-cell>
@@ -40,8 +39,13 @@ Contributors:      Sean Muir (JKM Software) - initial implementation
 					</fo:table-row>			
 					<fo:table-row>
 						<fo:table-cell number-columns-spanned="3">
-							<fo:block text-align="center">&#xA9; 2012 Health Level Seven
-								International All rights reserved</fo:block>
+						
+							<fo:block text-align="center">
+								<xsl:for-each select="$map/bookmeta/bookrights/bookowner/organization">
+							&#xA9;<xsl:text> </xsl:text><xsl:value-of select="$map/bookmeta/bookrights/copyrlast/year" /><xsl:text> </xsl:text><xsl:value-of select="."/><xsl:text> </xsl:text>
+							</xsl:for-each>		
+							</fo:block>
+							
 						</fo:table-cell>
 					</fo:table-row>
 				</fo:table-body>
