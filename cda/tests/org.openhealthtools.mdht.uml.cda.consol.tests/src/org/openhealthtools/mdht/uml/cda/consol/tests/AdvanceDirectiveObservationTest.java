@@ -1048,7 +1048,10 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 				target.init();
 				Reference ref = CDAFactory.eINSTANCE.createReference();
 				ExternalDocument ed = CDAFactory.eINSTANCE.createExternalDocument();
-				ed.setText(DatatypesFactory.eINSTANCE.createED());
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				text.setMediaType(null);
+				ed.setText(text);
+
 				ref.setExternalDocument(ed);
 				target.getReferences().add(ref);
 			}
@@ -1060,7 +1063,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 				Reference ref = CDAFactory.eINSTANCE.createReference();
 				ExternalDocument ed = CDAFactory.eINSTANCE.createExternalDocument();
 				ED text = DatatypesFactory.eINSTANCE.createED();
-				// text.setMediaType("JPEG");
+				text.setMediaType("JPEG");
 				ed.setText(text);
 				ref.setExternalDocument(ed);
 				target.getReferences().add(ref);
