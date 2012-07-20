@@ -973,6 +973,12 @@ public abstract class CDAValidationTest {
 			return result;
 		}
 
+		protected CE createCEWithOriginalTextReference(String text, String reference) {
+			CE result = DatatypesFactory.eINSTANCE.createCE();
+			result.setOriginalText(createEDWithReference(text, reference));
+			return result;
+		}
+
 		protected ED createEDWithReference(String text, String reference) {
 			ED result = DatatypesFactory.eINSTANCE.createED(text);
 
