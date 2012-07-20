@@ -31,7 +31,13 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.operations.AuthorizationActivityOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActMood;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_ActMoodDocumentObservation;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentActMood;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentEncounterMood;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentProcedureMood;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
 /**
  * <!-- begin-user-doc -->
@@ -213,6 +219,7 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 			protected void updateToPass(AuthorizationActivity target) {
 
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
 
 				target.getEntryRelationships().add(er);
 			}
@@ -248,8 +255,11 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 					public void updateToFail(AuthorizationActivity target) {
 						target.init();
 						Act clinicalStatement = CDAFactory.eINSTANCE.createAct();
-
+						// clinicalStatement.setMoodCode(x_DocumentActMood.PRMS);
 						target.addAct(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -261,6 +271,9 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 						Encounter clinicalStatement = CDAFactory.eINSTANCE.createEncounter();
 
 						target.addEncounter(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -270,8 +283,10 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 					public void updateToFail(AuthorizationActivity target) {
 						target.init();
 						Observation clinicalStatement = CDAFactory.eINSTANCE.createObservation();
-
 						target.addObservation(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -281,8 +296,10 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 					public void updateToFail(AuthorizationActivity target) {
 						target.init();
 						ObservationMedia clinicalStatement = CDAFactory.eINSTANCE.createObservationMedia();
-
 						target.addObservationMedia(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -292,8 +309,10 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 					public void updateToFail(AuthorizationActivity target) {
 						target.init();
 						Organizer clinicalStatement = CDAFactory.eINSTANCE.createOrganizer();
-
 						target.addOrganizer(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -303,8 +322,10 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 					public void updateToFail(AuthorizationActivity target) {
 						target.init();
 						Procedure clinicalStatement = CDAFactory.eINSTANCE.createProcedure();
-
 						target.addProcedure(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -314,8 +335,10 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 					public void updateToFail(AuthorizationActivity target) {
 						target.init();
 						RegionOfInterest clinicalStatement = CDAFactory.eINSTANCE.createRegionOfInterest();
-
 						target.addRegionOfInterest(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -325,8 +348,10 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 					public void updateToFail(AuthorizationActivity target) {
 						target.init();
 						SubstanceAdministration clinicalStatement = CDAFactory.eINSTANCE.createSubstanceAdministration();
-
 						target.addSubstanceAdministration(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -336,8 +361,10 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 					public void updateToFail(AuthorizationActivity target) {
 						target.init();
 						Supply clinicalStatement = CDAFactory.eINSTANCE.createSupply();
-
 						target.addSupply(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -352,7 +379,11 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 						target.init();
 						Act act = CDAFactory.eINSTANCE.createAct();
 						act.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						act.setMoodCode(x_DocumentActMood.PRMS);
 						target.addAct(act);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -363,7 +394,12 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 						target.init();
 						Encounter clinicalStatement = CDAFactory.eINSTANCE.createEncounter();
 						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+
+						clinicalStatement.setMoodCode(x_DocumentEncounterMood.PRMS);
 						target.addEncounter(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -373,8 +409,12 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 					public void updateToPass(AuthorizationActivity target) {
 						target.init();
 						Observation clinicalStatement = CDAFactory.eINSTANCE.createObservation();
+						clinicalStatement.setMoodCode(x_ActMoodDocumentObservation.PRMS);
 						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
 						target.addObservation(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -384,8 +424,13 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 					public void updateToPass(AuthorizationActivity target) {
 						target.init();
 						ObservationMedia clinicalStatement = CDAFactory.eINSTANCE.createObservationMedia();
+
+						clinicalStatement.setMoodCode(ActMood.PRMS);
 						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
 						target.addObservationMedia(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -395,8 +440,13 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 					public void updateToPass(AuthorizationActivity target) {
 						target.init();
 						Organizer clinicalStatement = CDAFactory.eINSTANCE.createOrganizer();
+
+						clinicalStatement.setMoodCode(ActMood.PRMS);
 						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
 						target.addOrganizer(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -406,8 +456,13 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 					public void updateToPass(AuthorizationActivity target) {
 						target.init();
 						Procedure clinicalStatement = CDAFactory.eINSTANCE.createProcedure();
+
+						clinicalStatement.setMoodCode(x_DocumentProcedureMood.PRMS);
 						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
 						target.addProcedure(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -417,8 +472,13 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 					public void updateToPass(AuthorizationActivity target) {
 						target.init();
 						RegionOfInterest clinicalStatement = CDAFactory.eINSTANCE.createRegionOfInterest();
+
+						clinicalStatement.setMoodCode(ActMood.PRMS);
 						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
 						target.addRegionOfInterest(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -428,8 +488,13 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 					public void updateToPass(AuthorizationActivity target) {
 						target.init();
 						SubstanceAdministration clinicalStatement = CDAFactory.eINSTANCE.createSubstanceAdministration();
+
+						clinicalStatement.setMoodCode(x_DocumentSubstanceMood.PRMS);
 						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
 						target.addSubstanceAdministration(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -439,8 +504,13 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 					public void updateToPass(AuthorizationActivity target) {
 						target.init();
 						Supply clinicalStatement = CDAFactory.eINSTANCE.createSupply();
+
+						clinicalStatement.setMoodCode(x_DocumentSubstanceMood.PRMS);
 						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
 						target.addSupply(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
 					}
 				});
 
@@ -470,25 +540,319 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 			objectFactory) {
 
 			@Override
-			protected void updateToFail(AuthorizationActivity target) {
-				target.init();
-				target.addAct(CDAFactory.eINSTANCE.createAct());
-				target.addAct(CDAFactory.eINSTANCE.createAct());
-				target.addAct(CDAFactory.eINSTANCE.createAct());
-				target.addAct(CDAFactory.eINSTANCE.createAct());
-				target.addAct(CDAFactory.eINSTANCE.createAct());
-				target.addAct(CDAFactory.eINSTANCE.createAct());
-				target.addAct(CDAFactory.eINSTANCE.createAct());
-				target.addAct(CDAFactory.eINSTANCE.createAct());
+			public void addFailTests() {
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						Act act = CDAFactory.eINSTANCE.createAct();
+						act.setMoodCode(x_DocumentActMood.PRMS);
+						target.addAct(act);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						Encounter clinicalStatement = CDAFactory.eINSTANCE.createEncounter();
+						// clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+
+						clinicalStatement.setMoodCode(x_DocumentEncounterMood.PRMS);
+						target.addEncounter(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						Observation clinicalStatement = CDAFactory.eINSTANCE.createObservation();
+						clinicalStatement.setMoodCode(x_ActMoodDocumentObservation.PRMS);
+						// clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addObservation(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						ObservationMedia clinicalStatement = CDAFactory.eINSTANCE.createObservationMedia();
+
+						clinicalStatement.setMoodCode(ActMood.PRMS);
+						// clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addObservationMedia(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						Organizer clinicalStatement = CDAFactory.eINSTANCE.createOrganizer();
+
+						clinicalStatement.setMoodCode(ActMood.PRMS);
+						// clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addOrganizer(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						Procedure clinicalStatement = CDAFactory.eINSTANCE.createProcedure();
+
+						clinicalStatement.setMoodCode(x_DocumentProcedureMood.PRMS);
+						// clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addProcedure(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						RegionOfInterest clinicalStatement = CDAFactory.eINSTANCE.createRegionOfInterest();
+
+						clinicalStatement.setMoodCode(ActMood.PRMS);
+						// clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addRegionOfInterest(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						SubstanceAdministration clinicalStatement = CDAFactory.eINSTANCE.createSubstanceAdministration();
+
+						clinicalStatement.setMoodCode(x_DocumentSubstanceMood.PRMS);
+						// clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addSubstanceAdministration(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
+				addFailTest(new FailTest() {
+
+					@Override
+					public void updateToFail(AuthorizationActivity target) {
+						target.init();
+						Supply clinicalStatement = CDAFactory.eINSTANCE.createSupply();
+
+						clinicalStatement.setMoodCode(x_DocumentSubstanceMood.PRMS);
+						// clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addSupply(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
 			}
 
 			@Override
-			protected void updateToPass(AuthorizationActivity target) {
-				target.getEntryRelationships().clear();
-				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
-				target.getEntryRelationships().add(er);
+			public void addPassTests() {
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						Act act = CDAFactory.eINSTANCE.createAct();
+						act.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						act.setMoodCode(x_DocumentActMood.PRMS);
+						target.addAct(act);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						Encounter clinicalStatement = CDAFactory.eINSTANCE.createEncounter();
+						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+
+						clinicalStatement.setMoodCode(x_DocumentEncounterMood.PRMS);
+						target.addEncounter(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						Observation clinicalStatement = CDAFactory.eINSTANCE.createObservation();
+						clinicalStatement.setMoodCode(x_ActMoodDocumentObservation.PRMS);
+						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addObservation(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						ObservationMedia clinicalStatement = CDAFactory.eINSTANCE.createObservationMedia();
+
+						clinicalStatement.setMoodCode(ActMood.PRMS);
+						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addObservationMedia(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						Organizer clinicalStatement = CDAFactory.eINSTANCE.createOrganizer();
+
+						clinicalStatement.setMoodCode(ActMood.PRMS);
+						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addOrganizer(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						Procedure clinicalStatement = CDAFactory.eINSTANCE.createProcedure();
+
+						clinicalStatement.setMoodCode(x_DocumentProcedureMood.PRMS);
+						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addProcedure(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						RegionOfInterest clinicalStatement = CDAFactory.eINSTANCE.createRegionOfInterest();
+
+						clinicalStatement.setMoodCode(ActMood.PRMS);
+						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addRegionOfInterest(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						SubstanceAdministration clinicalStatement = CDAFactory.eINSTANCE.createSubstanceAdministration();
+
+						clinicalStatement.setMoodCode(x_DocumentSubstanceMood.PRMS);
+						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addSubstanceAdministration(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AuthorizationActivity target) {
+						target.init();
+						Supply clinicalStatement = CDAFactory.eINSTANCE.createSupply();
+
+						clinicalStatement.setMoodCode(x_DocumentSubstanceMood.PRMS);
+						clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+						target.addSupply(clinicalStatement);
+						for (EntryRelationship er : target.getEntryRelationships()) {
+							er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+						}
+					}
+				});
+
 			}
+
+			// @Override
+			// protected void updateToFail(AuthorizationActivity target) {
+			// target.init();
+			// Act clinicalStatement = CDAFactory.eINSTANCE.createAct();
+			// clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+			// clinicalStatement.setMoodCode(x_DocumentActMood.PRMS);
+			// target.addAct(clinicalStatement);
+			// for (EntryRelationship er : target.getEntryRelationships()) {
+			// er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+			// }
+			// }
+			//
+			// @Override
+			// protected void updateToPass(AuthorizationActivity target) {
+			// target.getEntryRelationships().clear();
+			// Act clinicalStatement = CDAFactory.eINSTANCE.createAct();
+			// clinicalStatement.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+			// clinicalStatement.setMoodCode(x_DocumentActMood.PRMS);
+			// target.addAct(clinicalStatement);
+			// for (EntryRelationship er : target.getEntryRelationships()) {
+			// er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
+			// }
+			// }
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
@@ -513,16 +877,13 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 			operationsForOCL.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_ENTRY_RELATIONSHIP_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
-			@Override
-			protected void updateToFail(AuthorizationActivity target) {
-				target.init();
-				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-
-				target.getEntryRelationships().add(er);
+			{
+				this.skipFailsTest();
 			}
 
 			@Override
 			protected void updateToPass(AuthorizationActivity target) {
+				target.init();
 				target.getEntryRelationships().clear();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
