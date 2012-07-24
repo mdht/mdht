@@ -150,10 +150,6 @@ public class ActOperations extends InfrastructureRootOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.isDefined('classCode')
-	 * @param act The receiving '<em><b>Act</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean isClassCodeDefined(Act act) {
@@ -193,10 +189,6 @@ public class ActOperations extends InfrastructureRootOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.isDefined('moodCode')
-	 * @param act The receiving '<em><b>Act</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean isMoodCodeDefined(Act act) {

@@ -125,10 +125,6 @@ public class EntityOperations extends InfrastructureRootOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.isDefined('classCode')
-	 * @param entity The receiving '<em><b>Entity</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean isClassCodeDefined(Entity entity) {
@@ -169,10 +165,6 @@ public class EntityOperations extends InfrastructureRootOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.isDefined('determinerCode')
-	 * @param entity The receiving '<em><b>Entity</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean isDeterminerCodeDefined(Entity entity) {

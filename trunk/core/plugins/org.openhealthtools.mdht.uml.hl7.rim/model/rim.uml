@@ -6,42 +6,42 @@
     </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_YiANsDxYEd6JwqSGecoePg" name="Act" isAbstract="true">
       <generalization xmi:id="_m3CcAIVfEd-9G7Mk0NuIMg" general="_TNdfQIVdEd-AiaWHb2ykDw"/>
-      <ownedOperation xmi:id="_-dONcIX_Ed-kaPURbz5lmQ" name="getClassCode">
+      <ownedOperation xmi:id="_-dONcIX_Ed-kaPURbz5lmQ" name="getClassCode" isQuery="true">
         <ownedParameter xmi:id="_DS474IYAEd-kaPURbz5lmQ" name="return" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEnumerator"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_-4-8YIX_Ed-kaPURbz5lmQ" name="getMoodCode">
+      <ownedOperation xmi:id="_-4-8YIX_Ed-kaPURbz5lmQ" name="getMoodCode" isQuery="true">
         <ownedParameter xmi:id="_D7t2cIYAEd-kaPURbz5lmQ" name="return" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEnumerator"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="__V_BcIX_Ed-kaPURbz5lmQ" name="getNegationInd">
+      <ownedOperation xmi:id="__V_BcIX_Ed-kaPURbz5lmQ" name="getNegationInd" isQuery="true">
         <ownedParameter xmi:id="_EVm9IIYAEd-kaPURbz5lmQ" name="return" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBooleanObject"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Gs3IYIYAEd-kaPURbz5lmQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Gs3vcIYAEd-kaPURbz5lmQ"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_u8xKwIYUEd-kaPURbz5lmQ" name="getParticipations">
+      <ownedOperation xmi:id="_u8xKwIYUEd-kaPURbz5lmQ" name="getParticipations" isQuery="true">
         <ownedParameter xmi:id="_5Bn64IYUEd-kaPURbz5lmQ" name="return" type="_hVk-kIVfEd-9G7Mk0NuIMg" direction="return">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8h0EIIYUEd-kaPURbz5lmQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8h0EIYYUEd-kaPURbz5lmQ"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_vg3WUIYUEd-kaPURbz5lmQ" name="getOutboundRelationships">
+      <ownedOperation xmi:id="_vg3WUIYUEd-kaPURbz5lmQ" name="getOutboundRelationships" isQuery="true">
         <ownedParameter xmi:id="_53YeMIYUEd-kaPURbz5lmQ" name="return" type="_frJdEIVfEd-9G7Mk0NuIMg" direction="return">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9FEiMIYUEd-kaPURbz5lmQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9FFJQIYUEd-kaPURbz5lmQ"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_wJsQ4IYUEd-kaPURbz5lmQ" name="getInboundRelationships">
+      <ownedOperation xmi:id="_wJsQ4IYUEd-kaPURbz5lmQ" name="getInboundRelationships" isQuery="true">
         <ownedParameter xmi:id="_6UkwgIYUEd-kaPURbz5lmQ" name="return" type="_frJdEIVfEd-9G7Mk0NuIMg" direction="return">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9jSvQIYUEd-kaPURbz5lmQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9jTWUIYUEd-kaPURbz5lmQ"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_cWLvwEtJEeCnuvdSvJ63SQ" name="isClassCodeDefined" bodyCondition="_cWLvwUtJEeCnuvdSvJ63SQ">
+      <ownedOperation xmi:id="_cWLvwEtJEeCnuvdSvJ63SQ" name="isClassCodeDefined" isQuery="true" bodyCondition="_cWLvwUtJEeCnuvdSvJ63SQ">
         <ownedRule xmi:id="_cWLvwUtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_cWLvwEtJEeCnuvdSvJ63SQ">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_cWLvwktJEeCnuvdSvJ63SQ">
             <language>OCL</language>
@@ -52,7 +52,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_lsnToEtJEeCnuvdSvJ63SQ" name="isMoodCodeDefined" bodyCondition="_lsnToUtJEeCnuvdSvJ63SQ">
+      <ownedOperation xmi:id="_lsnToEtJEeCnuvdSvJ63SQ" name="isMoodCodeDefined" isQuery="true" bodyCondition="_lsnToUtJEeCnuvdSvJ63SQ">
         <ownedRule xmi:id="_lsnToUtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_lsnToEtJEeCnuvdSvJ63SQ">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_lsnToktJEeCnuvdSvJ63SQ">
             <language>OCL</language>
@@ -65,28 +65,28 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_TNdfQIVdEd-AiaWHb2ykDw" name="InfrastructureRoot" isAbstract="true">
-      <ownedOperation xmi:id="_N2kLcIX_Ed-kaPURbz5lmQ" name="getRealmCodes">
+      <ownedOperation xmi:id="_N2kLcIX_Ed-kaPURbz5lmQ" name="getRealmCodes" isQuery="true">
         <ownedParameter xmi:id="_QP4MMIX_Ed-kaPURbz5lmQ" name="return" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_iYn74D55Ed6cla2oXsPtlA"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y3VKMIX_Ed-kaPURbz5lmQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y3VxQIX_Ed-kaPURbz5lmQ"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_beNs4IX_Ed-kaPURbz5lmQ" name="getTypeId">
+      <ownedOperation xmi:id="_beNs4IX_Ed-kaPURbz5lmQ" name="getTypeId" isQuery="true">
         <ownedParameter xmi:id="_c9gVYIX_Ed-kaPURbz5lmQ" name="return" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wokx0IX_Ed-kaPURbz5lmQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wolY4IX_Ed-kaPURbz5lmQ"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_b5XX0IX_Ed-kaPURbz5lmQ" name="getTemplateIds">
+      <ownedOperation xmi:id="_b5XX0IX_Ed-kaPURbz5lmQ" name="getTemplateIds" isQuery="true">
         <ownedParameter xmi:id="_dsMnYIX_Ed-kaPURbz5lmQ" name="return" direction="return">
           <type xmi:type="uml:Class" href="../../org.openhealthtools.mdht.uml.hl7.datatypes/model/datatypes.uml#_culQ8DxaEd6JwqSGecoePg"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xGp08IX_Ed-kaPURbz5lmQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xGp08YX_Ed-kaPURbz5lmQ"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_cR8P4IX_Ed-kaPURbz5lmQ" name="getNullFlavor">
+      <ownedOperation xmi:id="_cR8P4IX_Ed-kaPURbz5lmQ" name="getNullFlavor" isQuery="true">
         <ownedParameter xmi:id="_eLcvMIX_Ed-kaPURbz5lmQ" name="return" direction="return">
           <type xmi:type="uml:Enumeration" href="../../org.openhealthtools.mdht.uml.hl7.vocab/model/vocab.uml#__yyDSUDcEd6xYZuu1VKCVw"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zMPocIX_Ed-kaPURbz5lmQ" value="1"/>
@@ -108,7 +108,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_gL7YEEEeEeCRlaE1u__gPQ" name="isDefined">
+      <ownedOperation xmi:id="_gL7YEEEeEeCRlaE1u__gPQ" name="isDefined" isQuery="true">
         <ownedParameter xmi:id="_iWz7QEEeEeCRlaE1u__gPQ" name="return" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
@@ -119,29 +119,29 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ZWm84IVfEd-9G7Mk0NuIMg" name="Entity" isAbstract="true">
       <generalization xmi:id="_pJgN4IVfEd-9G7Mk0NuIMg" general="_TNdfQIVdEd-AiaWHb2ykDw"/>
-      <ownedOperation xmi:id="_sA5CwIYEEd-kaPURbz5lmQ" name="getClassCode">
+      <ownedOperation xmi:id="_sA5CwIYEEd-kaPURbz5lmQ" name="getClassCode" isQuery="true">
         <ownedParameter xmi:id="_sA5CwYYEEd-kaPURbz5lmQ" name="return" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEnumerator"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_sXp88IYEEd-kaPURbz5lmQ" name="getDeterminerCode">
+      <ownedOperation xmi:id="_sXp88IYEEd-kaPURbz5lmQ" name="getDeterminerCode" isQuery="true">
         <ownedParameter xmi:id="_sXp88YYEEd-kaPURbz5lmQ" name="return" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEnumerator"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_ptI70IYiEd-kaPURbz5lmQ" name="getPlayedRoles">
+      <ownedOperation xmi:id="_ptI70IYiEd-kaPURbz5lmQ" name="getPlayedRoles" isQuery="true">
         <ownedParameter xmi:id="_t4wnsIYiEd-kaPURbz5lmQ" name="return" type="_eITxUIVfEd-9G7Mk0NuIMg" direction="return">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wCetQIYiEd-kaPURbz5lmQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wCetQYYiEd-kaPURbz5lmQ"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_qF6BIIYiEd-kaPURbz5lmQ" name="getScopedRoles">
+      <ownedOperation xmi:id="_qF6BIIYiEd-kaPURbz5lmQ" name="getScopedRoles" isQuery="true">
         <ownedParameter xmi:id="_u56isIYiEd-kaPURbz5lmQ" name="return" type="_eITxUIVfEd-9G7Mk0NuIMg" direction="return">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wi5SsIYiEd-kaPURbz5lmQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wi55wIYiEd-kaPURbz5lmQ"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_t__fEEtJEeCnuvdSvJ63SQ" name="isClassCodeDefined" bodyCondition="_t__fEUtJEeCnuvdSvJ63SQ">
+      <ownedOperation xmi:id="_t__fEEtJEeCnuvdSvJ63SQ" name="isClassCodeDefined" isQuery="true" bodyCondition="_t__fEUtJEeCnuvdSvJ63SQ">
         <ownedRule xmi:id="_t__fEUtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_t__fEEtJEeCnuvdSvJ63SQ">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_t__fEktJEeCnuvdSvJ63SQ">
             <language>OCL</language>
@@ -152,7 +152,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_wZBzAEtJEeCnuvdSvJ63SQ" name="isDeterminerCodeDefined" bodyCondition="_wZBzAUtJEeCnuvdSvJ63SQ">
+      <ownedOperation xmi:id="_wZBzAEtJEeCnuvdSvJ63SQ" name="isDeterminerCodeDefined" isQuery="true" bodyCondition="_wZBzAUtJEeCnuvdSvJ63SQ">
         <ownedRule xmi:id="_wZBzAUtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_wZBzAEtJEeCnuvdSvJ63SQ">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_wZBzAktJEeCnuvdSvJ63SQ">
             <language>OCL</language>
@@ -166,42 +166,42 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_eITxUIVfEd-9G7Mk0NuIMg" name="Role" isAbstract="true">
       <generalization xmi:id="_rgSfEIVfEd-9G7Mk0NuIMg" general="_TNdfQIVdEd-AiaWHb2ykDw"/>
-      <ownedOperation xmi:id="__sMIsIYEEd-kaPURbz5lmQ" name="getClassCode">
+      <ownedOperation xmi:id="__sMIsIYEEd-kaPURbz5lmQ" name="getClassCode" isQuery="true">
         <ownedParameter xmi:id="__sMIsYYEEd-kaPURbz5lmQ" name="return" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEnumerator"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_xLEzYIYqEd-kaPURbz5lmQ" name="getPlayer">
+      <ownedOperation xmi:id="_xLEzYIYqEd-kaPURbz5lmQ" name="getPlayer" isQuery="true">
         <ownedParameter xmi:id="_4ZT7sIYqEd-kaPURbz5lmQ" name="return" type="_ZWm84IVfEd-9G7Mk0NuIMg" direction="return">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6V0rsIYqEd-kaPURbz5lmQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6V1SwIYqEd-kaPURbz5lmQ"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_x6hTUIYqEd-kaPURbz5lmQ" name="getScoper">
+      <ownedOperation xmi:id="_x6hTUIYqEd-kaPURbz5lmQ" name="getScoper" isQuery="true">
         <ownedParameter xmi:id="_5HWGYIYqEd-kaPURbz5lmQ" name="return" type="_ZWm84IVfEd-9G7Mk0NuIMg" direction="return">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7FLsEIYqEd-kaPURbz5lmQ" value="1"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7FMTIIYqEd-kaPURbz5lmQ"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_yWePgIYqEd-kaPURbz5lmQ" name="getParticipations">
+      <ownedOperation xmi:id="_yWePgIYqEd-kaPURbz5lmQ" name="getParticipations" isQuery="true">
         <ownedParameter xmi:id="_IJLG0IYrEd-kaPURbz5lmQ" name="return" type="_hVk-kIVfEd-9G7Mk0NuIMg" direction="return">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LLb98IYrEd-kaPURbz5lmQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LLclAIYrEd-kaPURbz5lmQ"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_y_CrYIYqEd-kaPURbz5lmQ" name="getOutboundLinks">
+      <ownedOperation xmi:id="_y_CrYIYqEd-kaPURbz5lmQ" name="getOutboundLinks" isQuery="true">
         <ownedParameter xmi:id="_I2SEcIYrEd-kaPURbz5lmQ" name="return" type="_2qV8sIVfEd-9G7Mk0NuIMg" direction="return">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_L5BcsIYrEd-kaPURbz5lmQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_L5CDwIYrEd-kaPURbz5lmQ"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_0DhnMIYqEd-kaPURbz5lmQ" name="getInboundLinks">
+      <ownedOperation xmi:id="_0DhnMIYqEd-kaPURbz5lmQ" name="getInboundLinks" isQuery="true">
         <ownedParameter xmi:id="_JapVwIYrEd-kaPURbz5lmQ" name="return" type="_2qV8sIVfEd-9G7Mk0NuIMg" direction="return">
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MoqJ4IYrEd-kaPURbz5lmQ" value="*"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MoqJ4YYrEd-kaPURbz5lmQ"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_4Fz4gEtJEeCnuvdSvJ63SQ" name="isClassCodeDefined" bodyCondition="_4Fz4gUtJEeCnuvdSvJ63SQ">
+      <ownedOperation xmi:id="_4Fz4gEtJEeCnuvdSvJ63SQ" name="isClassCodeDefined" isQuery="true" bodyCondition="_4Fz4gUtJEeCnuvdSvJ63SQ">
         <ownedRule xmi:id="_4Fz4gUtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_4Fz4gEtJEeCnuvdSvJ63SQ">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_4Fz4gktJEeCnuvdSvJ63SQ">
             <language>OCL</language>
@@ -215,18 +215,18 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_frJdEIVfEd-9G7Mk0NuIMg" name="ActRelationship" isAbstract="true">
       <generalization xmi:id="_n0lCUIVfEd-9G7Mk0NuIMg" general="_TNdfQIVdEd-AiaWHb2ykDw"/>
-      <ownedOperation xmi:id="_EIowwIYDEd-kaPURbz5lmQ" name="getTypeCode">
+      <ownedOperation xmi:id="_EIowwIYDEd-kaPURbz5lmQ" name="getTypeCode" isQuery="true">
         <ownedParameter xmi:id="_FkLhsIYDEd-kaPURbz5lmQ" name="return" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEnumerator"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_9JUSkIYgEd-kaPURbz5lmQ" name="getTarget">
+      <ownedOperation xmi:id="_9JUSkIYgEd-kaPURbz5lmQ" name="getTarget" isQuery="true">
         <ownedParameter xmi:id="_BftrEIYhEd-kaPURbz5lmQ" name="return" type="_YiANsDxYEd6JwqSGecoePg" direction="return"/>
       </ownedOperation>
-      <ownedOperation xmi:id="_9lHdwIYgEd-kaPURbz5lmQ" name="getSource">
+      <ownedOperation xmi:id="_9lHdwIYgEd-kaPURbz5lmQ" name="getSource" isQuery="true">
         <ownedParameter xmi:id="_CaLIMIYhEd-kaPURbz5lmQ" name="return" type="_YiANsDxYEd6JwqSGecoePg" direction="return"/>
       </ownedOperation>
-      <ownedOperation xmi:id="_qxdtkEtJEeCnuvdSvJ63SQ" name="isTypeCodeDefined" bodyCondition="_qxdtkUtJEeCnuvdSvJ63SQ">
+      <ownedOperation xmi:id="_qxdtkEtJEeCnuvdSvJ63SQ" name="isTypeCodeDefined" isQuery="true" bodyCondition="_qxdtkUtJEeCnuvdSvJ63SQ">
         <ownedRule xmi:id="_qxdtkUtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_qxdtkEtJEeCnuvdSvJ63SQ">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_qxdtkktJEeCnuvdSvJ63SQ">
             <language>OCL</language>
@@ -240,18 +240,18 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_hVk-kIVfEd-9G7Mk0NuIMg" name="Participation" isAbstract="true">
       <generalization xmi:id="_qbKDAIVfEd-9G7Mk0NuIMg" general="_TNdfQIVdEd-AiaWHb2ykDw"/>
-      <ownedOperation xmi:id="_5TxOEIYEEd-kaPURbz5lmQ" name="getTypeCode">
+      <ownedOperation xmi:id="_5TxOEIYEEd-kaPURbz5lmQ" name="getTypeCode" isQuery="true">
         <ownedParameter xmi:id="_5Tx1IIYEEd-kaPURbz5lmQ" name="return" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEnumerator"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_j8G3sIYqEd-kaPURbz5lmQ" name="getAct">
+      <ownedOperation xmi:id="_j8G3sIYqEd-kaPURbz5lmQ" name="getAct" isQuery="true">
         <ownedParameter xmi:id="_npAAMIYqEd-kaPURbz5lmQ" name="return" type="_YiANsDxYEd6JwqSGecoePg" direction="return"/>
       </ownedOperation>
-      <ownedOperation xmi:id="_kZ-fcIYqEd-kaPURbz5lmQ" name="getRole">
+      <ownedOperation xmi:id="_kZ-fcIYqEd-kaPURbz5lmQ" name="getRole" isQuery="true">
         <ownedParameter xmi:id="_osbMEIYqEd-kaPURbz5lmQ" name="return" type="_eITxUIVfEd-9G7Mk0NuIMg" direction="return"/>
       </ownedOperation>
-      <ownedOperation xmi:id="_z9djEEtJEeCnuvdSvJ63SQ" name="isTypeCodeDefined" bodyCondition="_z9djEUtJEeCnuvdSvJ63SQ">
+      <ownedOperation xmi:id="_z9djEEtJEeCnuvdSvJ63SQ" name="isTypeCodeDefined" isQuery="true" bodyCondition="_z9djEUtJEeCnuvdSvJ63SQ">
         <ownedRule xmi:id="_z9djEUtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_z9djEEtJEeCnuvdSvJ63SQ">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_z9djEktJEeCnuvdSvJ63SQ">
             <language>OCL</language>
@@ -262,7 +262,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_1kH-4EtJEeCnuvdSvJ63SQ" name="isContextControlCodeDefined" bodyCondition="_1kH-4UtJEeCnuvdSvJ63SQ">
+      <ownedOperation xmi:id="_1kH-4EtJEeCnuvdSvJ63SQ" name="isContextControlCodeDefined" isQuery="true" bodyCondition="_1kH-4UtJEeCnuvdSvJ63SQ">
         <ownedRule xmi:id="_1kH-4UtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_1kH-4EtJEeCnuvdSvJ63SQ">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_1kH-4ktJEeCnuvdSvJ63SQ">
             <language>OCL</language>
@@ -276,18 +276,18 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_2qV8sIVfEd-9G7Mk0NuIMg" name="RoleLink" isAbstract="true">
       <generalization xmi:id="_4PgjsIVfEd-9G7Mk0NuIMg" general="_TNdfQIVdEd-AiaWHb2ykDw"/>
-      <ownedOperation xmi:id="_8Dx3kIYEEd-kaPURbz5lmQ" name="getTypeCode">
+      <ownedOperation xmi:id="_8Dx3kIYEEd-kaPURbz5lmQ" name="getTypeCode" isQuery="true">
         <ownedParameter xmi:id="_8Dx3kYYEEd-kaPURbz5lmQ" name="return" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEnumerator"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_cVYhcIYrEd-kaPURbz5lmQ" name="getTarget">
+      <ownedOperation xmi:id="_cVYhcIYrEd-kaPURbz5lmQ" name="getTarget" isQuery="true">
         <ownedParameter xmi:id="_fnjc0IYrEd-kaPURbz5lmQ" name="return" type="_eITxUIVfEd-9G7Mk0NuIMg" direction="return"/>
       </ownedOperation>
-      <ownedOperation xmi:id="_c1IYgIYrEd-kaPURbz5lmQ" name="getSource">
+      <ownedOperation xmi:id="_c1IYgIYrEd-kaPURbz5lmQ" name="getSource" isQuery="true">
         <ownedParameter xmi:id="_gUhQgIYrEd-kaPURbz5lmQ" name="return" type="_eITxUIVfEd-9G7Mk0NuIMg" direction="return"/>
       </ownedOperation>
-      <ownedOperation xmi:id="_7FlcUEtJEeCnuvdSvJ63SQ" name="isTypeCodeDefined" bodyCondition="_7FlcUUtJEeCnuvdSvJ63SQ">
+      <ownedOperation xmi:id="_7FlcUEtJEeCnuvdSvJ63SQ" name="isTypeCodeDefined" isQuery="true" bodyCondition="_7FlcUUtJEeCnuvdSvJ63SQ">
         <ownedRule xmi:id="_7FlcUUtJEeCnuvdSvJ63SQ" name="body" constrainedElement="_7FlcUEtJEeCnuvdSvJ63SQ">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_7FlcUktJEeCnuvdSvJ63SQ">
             <language>OCL</language>
