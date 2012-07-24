@@ -111,10 +111,6 @@ public class RoleLinkOperations extends InfrastructureRootOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.isDefined('typeCode')
-	 * @param roleLink The receiving '<em><b>Role Link</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean isTypeCodeDefined(RoleLink roleLink) {

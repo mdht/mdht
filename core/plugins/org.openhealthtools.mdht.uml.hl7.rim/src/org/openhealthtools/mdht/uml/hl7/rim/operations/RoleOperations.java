@@ -150,10 +150,6 @@ public class RoleOperations extends InfrastructureRootOperations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * self.isDefined('classCode')
-	 * @param role The receiving '<em><b>Role</b></em>' model object.
-	 * <!-- end-model-doc -->
 	 * @generated
 	 */
 	public static boolean isClassCodeDefined(Role role) {
