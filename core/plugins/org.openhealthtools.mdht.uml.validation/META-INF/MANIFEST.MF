@@ -12,11 +12,13 @@ Export-Package: org.openhealthtools.mdht.uml.validation,
  org.openhealthtools.mdht.uml.validation.internal.impl,
  org.openhealthtools.mdht.uml.validation.internal.operations,
  org.openhealthtools.mdht.uml.validation.internal.provider,
+ org.openhealthtools.mdht.uml.validation.ocl,
  org.openhealthtools.mdht.uml.validation.provider,
  org.openhealthtools.mdht.uml.validation.util
 Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.uml2.uml;visibility:=reexport,
- org.eclipse.emf.validation;visibility:=reexport
+ org.eclipse.emf.validation;visibility:=reexport,
+ org.eclipse.ocl.uml;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.openhealthtools.mdht.uml.validation.internal.ValidationPlugin$Implementation
