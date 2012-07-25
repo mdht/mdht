@@ -55,7 +55,6 @@
             
       <constraintProvider
             cache="false"
-            mode="Batch"
             class="org.openhealthtools.mdht.uml.validation.internal.provider.ProfileConstraintProvider">
          <package
                namespaceUri="http://www.eclipse.org/uml2/2.0.0/UML"/>

@@ -92,6 +92,16 @@ public interface ValidationPackage extends EPackage {
 	int DIAGNOSTIC__BASE_CONSTRAINT = 0;
 
 	/**
+	 * The feature id for the '<em><b>Evaluation Mode</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGNOSTIC__EVALUATION_MODE = 1;
+
+	/**
 	 * The feature id for the '<em><b>Severity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99,7 +109,7 @@ public interface ValidationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGNOSTIC__SEVERITY = 1;
+	int DIAGNOSTIC__SEVERITY = 2;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
@@ -109,7 +119,7 @@ public interface ValidationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGNOSTIC__CODE = 2;
+	int DIAGNOSTIC__CODE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
@@ -119,7 +129,7 @@ public interface ValidationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGNOSTIC__MESSAGE = 3;
+	int DIAGNOSTIC__MESSAGE = 4;
 
 	/**
 	 * The number of structural features of the '<em>Diagnostic</em>' class.
@@ -129,7 +139,7 @@ public interface ValidationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGNOSTIC_FEATURE_COUNT = 4;
+	int DIAGNOSTIC_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.validation.internal.impl.ConstraintProviderImpl <em>Constraint Provider</em>}'
@@ -214,6 +224,17 @@ public interface ValidationPackage extends EPackage {
 	int CONSTRAINT_PROVIDER_FEATURE_COUNT = 6;
 
 	/**
+	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.validation.EvaluationModeKind <em>Evaluation Mode Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see org.openhealthtools.mdht.uml.validation.EvaluationModeKind
+	 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl#getEvaluationModeKind()
+	 * @generated
+	 */
+	int EVALUATION_MODE_KIND = 2;
+
+	/**
 	 * The meta object id for the '{@link org.openhealthtools.mdht.uml.validation.SeverityKind <em>Severity Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -222,7 +243,7 @@ public interface ValidationPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl#getSeverityKind()
 	 * @generated
 	 */
-	int SEVERITY_KIND = 2;
+	int SEVERITY_KIND = 3;
 
 	/**
 	 * The meta object id for the '<em>Status</em>' data type.
@@ -233,7 +254,7 @@ public interface ValidationPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl#getStatus()
 	 * @generated
 	 */
-	int STATUS = 3;
+	int STATUS = 4;
 
 	/**
 	 * The meta object id for the '<em>Context</em>' data type.
@@ -244,7 +265,7 @@ public interface ValidationPackage extends EPackage {
 	 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl#getValidationContext()
 	 * @generated
 	 */
-	int VALIDATION_CONTEXT = 4;
+	int VALIDATION_CONTEXT = 5;
 
 	/**
 	 * Returns the meta object for class '{@link org.openhealthtools.mdht.uml.validation.Diagnostic <em>Diagnostic</em>}'.
@@ -269,6 +290,19 @@ public interface ValidationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDiagnostic_Base_Constraint();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getEvaluationMode
+	 * <em>Evaluation Mode</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Evaluation Mode</em>'.
+	 * @see org.openhealthtools.mdht.uml.validation.Diagnostic#getEvaluationMode()
+	 * @see #getDiagnostic()
+	 * @generated
+	 */
+	EAttribute getDiagnostic_EvaluationMode();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getSeverity <em>Severity</em>}'.
@@ -396,6 +430,17 @@ public interface ValidationPackage extends EPackage {
 	EAttribute getConstraintProvider_BundleName();
 
 	/**
+	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.validation.EvaluationModeKind <em>Evaluation Mode Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for enum '<em>Evaluation Mode Kind</em>'.
+	 * @see org.openhealthtools.mdht.uml.validation.EvaluationModeKind
+	 * @generated
+	 */
+	EEnum getEvaluationModeKind();
+
+	/**
 	 * Returns the meta object for enum '{@link org.openhealthtools.mdht.uml.validation.SeverityKind <em>Severity Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -473,6 +518,15 @@ public interface ValidationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DIAGNOSTIC__BASE_CONSTRAINT = eINSTANCE.getDiagnostic_Base_Constraint();
+
+		/**
+		 * The meta object literal for the '<em><b>Evaluation Mode</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute DIAGNOSTIC__EVALUATION_MODE = eINSTANCE.getDiagnostic_EvaluationMode();
 
 		/**
 		 * The meta object literal for the '<em><b>Severity</b></em>' attribute feature.
@@ -566,6 +620,17 @@ public interface ValidationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONSTRAINT_PROVIDER__BUNDLE_NAME = eINSTANCE.getConstraintProvider_BundleName();
+
+		/**
+		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.validation.EvaluationModeKind <em>Evaluation Mode Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * 
+		 * @see org.openhealthtools.mdht.uml.validation.EvaluationModeKind
+		 * @see org.openhealthtools.mdht.uml.validation.internal.impl.ValidationPackageImpl#getEvaluationModeKind()
+		 * @generated
+		 */
+		EEnum EVALUATION_MODE_KIND = eINSTANCE.getEvaluationModeKind();
 
 		/**
 		 * The meta object literal for the '{@link org.openhealthtools.mdht.uml.validation.SeverityKind <em>Severity Kind</em>}' enum.

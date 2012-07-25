@@ -26,6 +26,7 @@ import org.eclipse.uml2.uml.Constraint;
  * The following features are supported:
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getBase_Constraint <em>Base Constraint</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getEvaluationMode <em>Evaluation Mode</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getSeverity <em>Severity</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getCode <em>Code</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getMessage <em>Message</em>}</li>
@@ -64,6 +65,38 @@ public interface Diagnostic extends EObject {
 	 * @generated
 	 */
 	void setBase_Constraint(Constraint value);
+
+	/**
+	 * Returns the value of the '<em><b>Evaluation Mode</b></em>' attribute.
+	 * The default value is <code>"batch"</code>.
+	 * The literals are from the enumeration {@link org.openhealthtools.mdht.uml.validation.EvaluationModeKind}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Evaluation Mode</em>' attribute isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Evaluation Mode</em>' attribute.
+	 * @see org.openhealthtools.mdht.uml.validation.EvaluationModeKind
+	 * @see #setEvaluationMode(EvaluationModeKind)
+	 * @see org.openhealthtools.mdht.uml.validation.ValidationPackage#getDiagnostic_EvaluationMode()
+	 * @model default="batch" required="true" ordered="false"
+	 * @generated
+	 */
+	EvaluationModeKind getEvaluationMode();
+
+	/**
+	 * Sets the value of the '{@link org.openhealthtools.mdht.uml.validation.Diagnostic#getEvaluationMode <em>Evaluation Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Evaluation Mode</em>' attribute.
+	 * @see org.openhealthtools.mdht.uml.validation.EvaluationModeKind
+	 * @see #getEvaluationMode()
+	 * @generated
+	 */
+	void setEvaluationMode(EvaluationModeKind value);
 
 	/**
 	 * Returns the value of the '<em><b>Severity</b></em>' attribute.
@@ -212,7 +245,16 @@ public interface Diagnostic extends EObject {
 	 * @model kind="operation" required="true" ordered="false"
 	 * @generated
 	 */
-	EClass getTarget();
+	EList<EClass> getTargets();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @model required="true" ordered="false" objectRequired="true" objectOrdered="false"
+	 * @generated
+	 */
+	boolean targets(EObject object);
 
 	/**
 	 * <!-- begin-user-doc -->

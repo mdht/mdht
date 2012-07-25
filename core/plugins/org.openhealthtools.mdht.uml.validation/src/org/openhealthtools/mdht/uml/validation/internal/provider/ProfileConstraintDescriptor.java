@@ -25,14 +25,18 @@ import org.eclipse.emf.validation.model.CategoryManager;
 import org.eclipse.emf.validation.model.ConstraintSeverity;
 import org.eclipse.emf.validation.model.EvaluationMode;
 import org.eclipse.emf.validation.service.IParameterizedConstraintDescriptor;
+import org.eclipse.ocl.uml.UMLPackage;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.OpaqueExpression;
+import org.eclipse.uml2.uml.util.UMLUtil;
 import org.openhealthtools.mdht.uml.validation.ConstraintProvider;
 import org.openhealthtools.mdht.uml.validation.Diagnostic;
+import org.openhealthtools.mdht.uml.validation.EvaluationModeKind;
 
 /**
  * Descriptor of a constraint defined in a profile.
@@ -42,11 +46,13 @@ public class ProfileConstraintDescriptor implements IParameterizedConstraintDesc
 
 	private final String bundleName;
 
-	private final EClass target;
+	private final List<EClass> targets;
 
 	private final String id;
 
 	private final String name;
+
+	private final EvaluationMode<?> evaluationMode;
 
 	private final int code;
 
@@ -66,9 +72,13 @@ public class ProfileConstraintDescriptor implements IParameterizedConstraintDesc
 		final Constraint constraint = diagnostic.getBase_Constraint();
 
 		this.bundleName = bundleName;
-		this.target = diagnostic.getTarget(); // TODO: Check non-null pre-condition
+		this.targets = diagnostic.getTargets(); // TODO: Check non-empty pre-condition
 		this.name = constraint.getQualifiedName();
 		this.id = String.format("%s.profile.%s", bundleName, this.name.replace(NamedElement.SEPARATOR, "."));
+
+		this.evaluationMode = (diagnostic.getEvaluationMode() == EvaluationModeKind.LIVE)
+				? EvaluationMode.LIVE
+				: EvaluationMode.BATCH;
 		this.code = diagnostic.getCode(); // TODO: if !diagnostic.isSetCode() then compute one
 		this.messagePattern = diagnostic.getMessage();
 
@@ -125,7 +135,30 @@ public class ProfileConstraintDescriptor implements IParameterizedConstraintDesc
 	}
 
 	public boolean targetsTypeOf(EObject eObject) {
-		return target.isInstance(eObject);
+		boolean result = false;
+
+		out: for (EClass next : targets) {
+			if (isStereotype(next)) {
+				if (eObject instanceof Element) {
+					for (EObject application : ((Element) eObject).getStereotypeApplications()) {
+						if (next.isInstance(application)) {
+							result = true;
+							break out;
+						}
+					}
+				}
+			} else if (next.isInstance(eObject)) {
+				result = true;
+				break out;
+			}
+		}
+
+		return result;
+	}
+
+	private boolean isStereotype(EClass eClass) {
+		// the only targets that we usually expect that are not UML metaclasses are stereotypes
+		return (eClass.getEPackage() != UMLPackage.eINSTANCE) && (UMLUtil.getProfile(eClass.getEPackage()) != null);
 	}
 
 	public ConstraintSeverity getSeverity() {
@@ -162,19 +195,20 @@ public class ProfileConstraintDescriptor implements IParameterizedConstraintDesc
 	}
 
 	public EvaluationMode<?> getEvaluationMode() {
-		return EvaluationMode.BATCH;
+		return evaluationMode;
 	}
 
 	public boolean targetsEvent(Notification notification) {
-		return false;
+		Object notifier = notification.getNotifier();
+		return (notifier instanceof EObject) && targetsTypeOf((EObject) notifier);
 	}
 
 	public boolean isBatch() {
-		return true;
+		return getEvaluationMode().isBatch();
 	}
 
 	public boolean isLive() {
-		return false;
+		return getEvaluationMode().isLive();
 	}
 
 	public boolean isError() {

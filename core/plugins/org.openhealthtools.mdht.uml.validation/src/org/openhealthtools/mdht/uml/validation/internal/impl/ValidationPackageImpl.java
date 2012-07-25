@@ -29,6 +29,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 import org.openhealthtools.mdht.uml.validation.ConstraintProvider;
 import org.openhealthtools.mdht.uml.validation.Diagnostic;
+import org.openhealthtools.mdht.uml.validation.EvaluationModeKind;
 import org.openhealthtools.mdht.uml.validation.SeverityKind;
 import org.openhealthtools.mdht.uml.validation.ValidationFactory;
 import org.openhealthtools.mdht.uml.validation.ValidationPackage;
@@ -56,6 +57,14 @@ public class ValidationPackageImpl extends EPackageImpl implements ValidationPac
 	 * @generated
 	 */
 	private EClass constraintProviderEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EEnum evaluationModeKindEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -173,7 +182,7 @@ public class ValidationPackageImpl extends EPackageImpl implements ValidationPac
 	 * 
 	 * @generated
 	 */
-	public EAttribute getDiagnostic_Severity() {
+	public EAttribute getDiagnostic_EvaluationMode() {
 		return (EAttribute) diagnosticEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -183,7 +192,7 @@ public class ValidationPackageImpl extends EPackageImpl implements ValidationPac
 	 * 
 	 * @generated
 	 */
-	public EAttribute getDiagnostic_Code() {
+	public EAttribute getDiagnostic_Severity() {
 		return (EAttribute) diagnosticEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -193,8 +202,18 @@ public class ValidationPackageImpl extends EPackageImpl implements ValidationPac
 	 * 
 	 * @generated
 	 */
-	public EAttribute getDiagnostic_Message() {
+	public EAttribute getDiagnostic_Code() {
 		return (EAttribute) diagnosticEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getDiagnostic_Message() {
+		return (EAttribute) diagnosticEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -273,6 +292,16 @@ public class ValidationPackageImpl extends EPackageImpl implements ValidationPac
 	 * 
 	 * @generated
 	 */
+	public EEnum getEvaluationModeKind() {
+		return evaluationModeKindEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EEnum getSeverityKind() {
 		return severityKindEEnum;
 	}
@@ -332,6 +361,7 @@ public class ValidationPackageImpl extends EPackageImpl implements ValidationPac
 		// Create classes and their features
 		diagnosticEClass = createEClass(DIAGNOSTIC);
 		createEReference(diagnosticEClass, DIAGNOSTIC__BASE_CONSTRAINT);
+		createEAttribute(diagnosticEClass, DIAGNOSTIC__EVALUATION_MODE);
 		createEAttribute(diagnosticEClass, DIAGNOSTIC__SEVERITY);
 		createEAttribute(diagnosticEClass, DIAGNOSTIC__CODE);
 		createEAttribute(diagnosticEClass, DIAGNOSTIC__MESSAGE);
@@ -345,6 +375,7 @@ public class ValidationPackageImpl extends EPackageImpl implements ValidationPac
 		createEAttribute(constraintProviderEClass, CONSTRAINT_PROVIDER__BUNDLE_NAME);
 
 		// Create enums
+		evaluationModeKindEEnum = createEEnum(EVALUATION_MODE_KIND);
 		severityKindEEnum = createEEnum(SEVERITY_KIND);
 
 		// Create data types
@@ -398,6 +429,10 @@ public class ValidationPackageImpl extends EPackageImpl implements ValidationPac
 			null,
 			"base_Constraint", null, 1, 1, Diagnostic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(
+			getDiagnostic_EvaluationMode(),
+			this.getEvaluationModeKind(),
+			"evaluationMode", "batch", 1, 1, Diagnostic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+		initEAttribute(
 			getDiagnostic_Severity(),
 			this.getSeverityKind(),
 			"severity", "error", 1, 1, Diagnostic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
@@ -419,7 +454,10 @@ public class ValidationPackageImpl extends EPackageImpl implements ValidationPac
 		addEParameter(op, theEcorePackage.getEObject(), "target", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 		addEParameter(op, theEcorePackage.getEObject(), "related", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
-		addEOperation(diagnosticEClass, theEcorePackage.getEClass(), "getTarget", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEOperation(diagnosticEClass, theEcorePackage.getEClass(), "getTargets", 1, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+
+		op = addEOperation(diagnosticEClass, ecorePackage.getEBoolean(), "targets", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
+		addEParameter(op, theEcorePackage.getEObject(), "object", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		addEOperation(
 			diagnosticEClass, this.getConstraintProvider(), "getConstraintProvider", 1, 1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
@@ -456,6 +494,10 @@ public class ValidationPackageImpl extends EPackageImpl implements ValidationPac
 		addEOperation(constraintProviderEClass, this.getDiagnostic(), "getDiagnostics", 0, -1, IS_UNIQUE, !IS_ORDERED); //$NON-NLS-1$
 
 		// Initialize enums and add enum literals
+		initEEnum(evaluationModeKindEEnum, EvaluationModeKind.class, "EvaluationModeKind"); //$NON-NLS-1$
+		addEEnumLiteral(evaluationModeKindEEnum, EvaluationModeKind.BATCH);
+		addEEnumLiteral(evaluationModeKindEEnum, EvaluationModeKind.LIVE);
+
 		initEEnum(severityKindEEnum, SeverityKind.class, "SeverityKind"); //$NON-NLS-1$
 		addEEnumLiteral(severityKindEEnum, SeverityKind.INFORMATIONAL);
 		addEEnumLiteral(severityKindEEnum, SeverityKind.WARNING);

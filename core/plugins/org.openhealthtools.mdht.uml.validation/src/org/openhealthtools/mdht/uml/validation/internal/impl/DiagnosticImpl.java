@@ -29,6 +29,7 @@ import org.eclipse.uml2.uml.Constraint;
 
 import org.openhealthtools.mdht.uml.validation.ConstraintProvider;
 import org.openhealthtools.mdht.uml.validation.Diagnostic;
+import org.openhealthtools.mdht.uml.validation.EvaluationModeKind;
 import org.openhealthtools.mdht.uml.validation.SeverityKind;
 import org.openhealthtools.mdht.uml.validation.ValidationPackage;
 
@@ -42,6 +43,7 @@ import org.openhealthtools.mdht.uml.validation.internal.operations.DiagnosticOpe
  * The following features are implemented:
  * <ul>
  * <li>{@link org.openhealthtools.mdht.uml.validation.internal.impl.DiagnosticImpl#getBase_Constraint <em>Base Constraint</em>}</li>
+ * <li>{@link org.openhealthtools.mdht.uml.validation.internal.impl.DiagnosticImpl#getEvaluationMode <em>Evaluation Mode</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.validation.internal.impl.DiagnosticImpl#getSeverity <em>Severity</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.validation.internal.impl.DiagnosticImpl#getCode <em>Code</em>}</li>
  * <li>{@link org.openhealthtools.mdht.uml.validation.internal.impl.DiagnosticImpl#getMessage <em>Message</em>}</li>
@@ -61,6 +63,28 @@ public class DiagnosticImpl extends EObjectImpl implements Diagnostic {
 	 * @ordered
 	 */
 	protected Constraint base_Constraint;
+
+	/**
+	 * The default value of the '{@link #getEvaluationMode() <em>Evaluation Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #getEvaluationMode()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EvaluationModeKind EVALUATION_MODE_EDEFAULT = EvaluationModeKind.BATCH;
+
+	/**
+	 * The cached value of the '{@link #getEvaluationMode() <em>Evaluation Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @see #getEvaluationMode()
+	 * @generated
+	 * @ordered
+	 */
+	protected EvaluationModeKind evaluationMode = EVALUATION_MODE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSeverity() <em>Severity</em>}' attribute.
@@ -212,6 +236,34 @@ public class DiagnosticImpl extends EObjectImpl implements Diagnostic {
 	 * 
 	 * @generated
 	 */
+	public EvaluationModeKind getEvaluationMode() {
+		return evaluationMode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setEvaluationMode(EvaluationModeKind newEvaluationMode) {
+		EvaluationModeKind oldEvaluationMode = evaluationMode;
+		evaluationMode = newEvaluationMode == null
+				? EVALUATION_MODE_EDEFAULT
+				: newEvaluationMode;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(
+				this, Notification.SET, ValidationPackage.DIAGNOSTIC__EVALUATION_MODE, oldEvaluationMode,
+				evaluationMode));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public SeverityKind getSeverity() {
 		return severity;
 	}
@@ -338,8 +390,18 @@ public class DiagnosticImpl extends EObjectImpl implements Diagnostic {
 	 * 
 	 * @generated
 	 */
-	public EClass getTarget() {
-		return DiagnosticOperations.getTarget(this);
+	public EList<EClass> getTargets() {
+		return DiagnosticOperations.getTargets(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean targets(EObject object) {
+		return DiagnosticOperations.targets(this, object);
 	}
 
 	/**
@@ -366,6 +428,8 @@ public class DiagnosticImpl extends EObjectImpl implements Diagnostic {
 					return getBase_Constraint();
 				}
 				return basicGetBase_Constraint();
+			case ValidationPackage.DIAGNOSTIC__EVALUATION_MODE:
+				return getEvaluationMode();
 			case ValidationPackage.DIAGNOSTIC__SEVERITY:
 				return getSeverity();
 			case ValidationPackage.DIAGNOSTIC__CODE:
@@ -387,6 +451,9 @@ public class DiagnosticImpl extends EObjectImpl implements Diagnostic {
 		switch (featureID) {
 			case ValidationPackage.DIAGNOSTIC__BASE_CONSTRAINT:
 				setBase_Constraint((Constraint) newValue);
+				return;
+			case ValidationPackage.DIAGNOSTIC__EVALUATION_MODE:
+				setEvaluationMode((EvaluationModeKind) newValue);
 				return;
 			case ValidationPackage.DIAGNOSTIC__SEVERITY:
 				setSeverity((SeverityKind) newValue);
@@ -413,6 +480,9 @@ public class DiagnosticImpl extends EObjectImpl implements Diagnostic {
 			case ValidationPackage.DIAGNOSTIC__BASE_CONSTRAINT:
 				setBase_Constraint((Constraint) null);
 				return;
+			case ValidationPackage.DIAGNOSTIC__EVALUATION_MODE:
+				setEvaluationMode(EVALUATION_MODE_EDEFAULT);
+				return;
 			case ValidationPackage.DIAGNOSTIC__SEVERITY:
 				setSeverity(SEVERITY_EDEFAULT);
 				return;
@@ -437,6 +507,8 @@ public class DiagnosticImpl extends EObjectImpl implements Diagnostic {
 		switch (featureID) {
 			case ValidationPackage.DIAGNOSTIC__BASE_CONSTRAINT:
 				return base_Constraint != null;
+			case ValidationPackage.DIAGNOSTIC__EVALUATION_MODE:
+				return evaluationMode != EVALUATION_MODE_EDEFAULT;
 			case ValidationPackage.DIAGNOSTIC__SEVERITY:
 				return severity != SEVERITY_EDEFAULT;
 			case ValidationPackage.DIAGNOSTIC__CODE:
@@ -462,7 +534,9 @@ public class DiagnosticImpl extends EObjectImpl implements Diagnostic {
 		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (severity: "); //$NON-NLS-1$
+		result.append(" (evaluationMode: "); //$NON-NLS-1$
+		result.append(evaluationMode);
+		result.append(", severity: "); //$NON-NLS-1$
 		result.append(severity);
 		result.append(", code: "); //$NON-NLS-1$
 		if ((eFlags & CODE_ESETFLAG) != 0) {
