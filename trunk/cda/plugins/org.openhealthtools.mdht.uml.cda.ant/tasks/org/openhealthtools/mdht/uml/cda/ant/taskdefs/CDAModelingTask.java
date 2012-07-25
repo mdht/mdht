@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - add validateModel sub-task (artf3037)
  *     
  * $Id$
  *******************************************************************************/
@@ -267,6 +268,12 @@ public class CDAModelingTask extends Task {
 		TransformToDita subtask = new TransformToDita(this);
 		subtasks.add(subtask);
 		return subtask;
+	}
+
+	public ValidateModel createValidateModel() {
+		ValidateModel result = new ValidateModel(this);
+		subtasks.add(result);
+		return result;
 	}
 
 	// Helper methods ----------------------------------------------------------
