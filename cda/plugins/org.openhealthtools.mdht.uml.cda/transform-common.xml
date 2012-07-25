@@ -6,7 +6,8 @@
 	<property name="consolidatedModelPath.uml" location="${basedir}/model/${modelName}_consolidated.uml"/>
 	<property name="vocabModelPath.uml" location="${basedir}/model/${modelName}_consolidated-vocab.uml"/>
 	<property name="flattenedModelPath.uml" location="${basedir}/model/${modelName}_flattened.uml"/>
-	<property name="filteredModelPath.uml" location="${basedir}/model/${modelName}_filtered.uml"/>
+    <property name="filteredModelPath.uml" location="${basedir}/model/${modelName}_filtered.uml"/>
+    <property name="validation.failOnError" value="true"/>
 	
 	<target name="all">
 		<antcall target="transformModel"></antcall>
@@ -14,6 +15,7 @@
 
     <target name="transformModel" description="Transform Ecore UML model.">
         <cdatools model="${modelPath.uml}">
+        	<validateModel failOnError="${validation.failOnError}"/>
             <transformToEcoreModel ecoreModel="${ecoreModelPath.uml}" />
         </cdatools>
 
