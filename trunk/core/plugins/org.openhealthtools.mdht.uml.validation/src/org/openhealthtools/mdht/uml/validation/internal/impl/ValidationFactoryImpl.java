@@ -90,6 +90,8 @@ public class ValidationFactoryImpl extends EFactoryImpl implements ValidationFac
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case ValidationPackage.EVALUATION_MODE_KIND:
+				return createEvaluationModeKindFromString(eDataType, initialValue);
 			case ValidationPackage.SEVERITY_KIND:
 				return createSeverityKindFromString(eDataType, initialValue);
 			case ValidationPackage.STATUS:
@@ -111,6 +113,8 @@ public class ValidationFactoryImpl extends EFactoryImpl implements ValidationFac
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case ValidationPackage.EVALUATION_MODE_KIND:
+				return convertEvaluationModeKindToString(eDataType, instanceValue);
 			case ValidationPackage.SEVERITY_KIND:
 				return convertSeverityKindToString(eDataType, instanceValue);
 			case ValidationPackage.STATUS:
@@ -151,10 +155,36 @@ public class ValidationFactoryImpl extends EFactoryImpl implements ValidationFac
 	 * 
 	 * @generated
 	 */
+	public EvaluationModeKind createEvaluationModeKindFromString(EDataType eDataType, String initialValue) {
+		EvaluationModeKind result = EvaluationModeKind.get(initialValue);
+		if (result == null) {
+			throw new IllegalArgumentException(
+				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		}
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public String convertEvaluationModeKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null
+				? null
+				: instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public SeverityKind createSeverityKindFromString(EDataType eDataType, String initialValue) {
 		SeverityKind result = SeverityKind.get(initialValue);
-		if (result == null)
-		 {
+		if (result == null) {
 			throw new IllegalArgumentException(
 				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		}

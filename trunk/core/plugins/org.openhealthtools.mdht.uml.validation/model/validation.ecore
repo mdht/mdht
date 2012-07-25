@@ -13,16 +13,26 @@
       <eParameters name="target" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
       <eParameters name="related" ordered="false" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
     </eOperations>
-    <eOperations name="getTarget" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    <eOperations name="getTargets" ordered="false" lowerBound="1" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    <eOperations name="targets" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="object" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
     <eOperations name="getConstraintProvider" ordered="false" lowerBound="1" eType="#//ConstraintProvider"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Constraint" ordered="false"
         lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Constraint"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="evaluationMode" ordered="false"
+        lowerBound="1" eType="#//EvaluationModeKind" defaultValueLiteral="batch"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" ordered="false"
         lowerBound="1" eType="#//SeverityKind" defaultValueLiteral="error"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="-1" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EvaluationModeKind">
+    <eLiterals name="batch"/>
+    <eLiterals name="live" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SeverityKind">
     <eLiterals name="informational" literal="info"/>
