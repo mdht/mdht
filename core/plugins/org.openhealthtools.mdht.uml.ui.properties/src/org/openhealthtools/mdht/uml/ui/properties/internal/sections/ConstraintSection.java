@@ -72,7 +72,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 	private Constraint constraint;
 
-	private String[] languages = { "Analysis", "OCL", "XPath", "StrucText" };
+	private String[] languages = { "Analysis", "OCL", "Java", "XPath", "StrucText" };
 
 	private CCombo languageCombo;
 
