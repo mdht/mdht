@@ -125,8 +125,37 @@ public class EcoreProfileEnvironment extends UMLEnvironment {
 	}
 
 	@Override
+	public Property lookupProperty(Classifier owner, String name) {
+		Property result = super.lookupProperty(owner, name);
+
+		if ((result == null) && ((owner == null) || (owner == getContextClassifier()))) {
+			owner = getContextClassifier(); // in case of null, which happens for implicit navigation source
+
+			// the UML-to-Ecore transformation transfers constraints from nested classes to the outermost nesting class.
+			// Maybe we're trying to access a feature of that class from the context of a nesting class?
+			Classifier ecoreContext = getNestingRoot(owner);
+			if (owner != ecoreContext) {
+				result = lookupProperty(ecoreContext, name);
+			}
+		}
+
+		return result;
+	}
+
+	@Override
 	public Operation lookupOperation(Classifier owner, String name, List<? extends TypedElement<Classifier>> args) {
 		Operation result = super.lookupOperation(owner, name, args);
+
+		if ((result == null) && ((owner == null) || (owner == getContextClassifier()))) {
+			owner = getContextClassifier(); // in case of null, which happens for implicit operation call source
+
+			// the UML-to-Ecore transformation transfers constraints from nested classes to the outermost nesting class.
+			// Maybe we're trying to access a feature of that class from the context of a nesting class?
+			Classifier ecoreContext = getNestingRoot(owner);
+			if (owner != ecoreContext) {
+				result = lookupOperation(ecoreContext, name, args);
+			}
+		}
 
 		if (result == null) {
 			java.lang.Class<?> javaClass = getJavaClass(owner);
@@ -207,6 +236,16 @@ public class EcoreProfileEnvironment extends UMLEnvironment {
 			result = stdlib.getReal();
 		} else if (javaClass == Void.class || javaClass == void.class) {
 			result = stdlib.getOclVoid();
+		}
+
+		return result;
+	}
+
+	private Classifier getNestingRoot(Classifier classifier) {
+		Classifier result;
+
+		for (result = classifier; result.getOwner() instanceof Classifier;) {
+			result = (Classifier) result.getOwner();
 		}
 
 		return result;
