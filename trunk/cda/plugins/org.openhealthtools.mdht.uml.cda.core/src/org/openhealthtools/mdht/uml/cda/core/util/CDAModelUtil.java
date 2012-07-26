@@ -865,6 +865,10 @@ public class CDAModelUtil {
 			Package xrefSource) {
 		StringBuffer notation = new StringBuffer();
 		for (Property subsets : property.getSubsettedProperties()) {
+			if (subsets.getClass_() == null) {
+				// eliminate NPE when publishing stereotype references to UML metamodel
+				continue;
+			}
 			if (notation.length() == 0) {
 				notation.append(" {subsets ");
 			} else {
@@ -1495,6 +1499,9 @@ public class CDAModelUtil {
 	}
 
 	public static String computeXref(Element source, Classifier target) {
+		if (target == null) {
+			return null;
+		}
 		if (target instanceof Enumeration) {
 			return computeTerminologyXref(source, (Enumeration) target);
 		}
