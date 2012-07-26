@@ -16,10 +16,15 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.RelatedSubject;
+import org.openhealthtools.mdht.uml.cda.Subject;
+import org.openhealthtools.mdht.uml.cda.SubjectPerson;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer;
 import org.openhealthtools.mdht.uml.cda.consol.operations.FamilyHistoryOrganizerOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubject;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,6 +39,17 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerFamilyHistoryObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Family History Observation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerSubject(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Subject</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonAdministrativeGenderCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Subject Related Subject Subject Person Administrative Gender Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonAdministrativeGenderCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Subject Related Subject Subject Person Administrative Gender Code P</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonBirthTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Subject Related Subject Subject Person Birth Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCDeceasedInd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Subject Related Subject Subject Person SDTC Deceased Ind</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCDeceasedTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Subject Related Subject Subject Person SDTC Deceased Time</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Subject Related Subject Subject Person SDTC Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerSubjectRelatedSubjectClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Subject Related Subject Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerSubjectRelatedSubjectCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Subject Related Subject Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerSubjectRelatedSubjectCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Subject Related Subject Code P</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerSubjectRelatedSubjectSubject(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Subject Related Subject Subject</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#validateFamilyHistoryOrganizerSubjectRelatedSubject(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Organizer Subject Related Subject</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistoryOrganizer#getFamilyHistoryObservations() <em>Get Family History Observations</em>}</li>
  * </ul>
  * </p>
@@ -211,6 +227,450 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 		};
 
 		validateFamilyHistoryOrganizerSubjectTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonAdministrativeGenderCode() {
+		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonAdministrativeGenderCodeTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
+			"validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonAdministrativeGenderCode",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_SUBJECT_RELATED_SUBJECT_SUBJECT_PERSON_ADMINISTRATIVE_GENDER_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistoryOrganizer target) {
+				target.init();
+				Subject subject = CDAFactory.eINSTANCE.createSubject();
+				target.setSubject(subject);
+				RelatedSubject relatedSubject = CDAFactory.eINSTANCE.createRelatedSubject();
+				SubjectPerson subjectPerson = CDAFactory.eINSTANCE.createSubjectPerson();
+				relatedSubject.setSubject(subjectPerson);
+				target.getSubject().setRelatedSubject(relatedSubject);
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistoryOrganizer target) {
+				target.getSubject().getRelatedSubject().getSubject().setAdministrativeGenderCode(
+					DatatypesFactory.eINSTANCE.createCE("F", "2.16.840.1.113883.5.1"));
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonAdministrativeGenderCode(
+					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonAdministrativeGenderCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonAdministrativeGenderCodeP() {
+		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonAdministrativeGenderCodePTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
+			"validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonAdministrativeGenderCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_SUBJECT_RELATED_SUBJECT_SUBJECT_PERSON_ADMINISTRATIVE_GENDER_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistoryOrganizer target) {
+				target.init();
+				Subject subject = CDAFactory.eINSTANCE.createSubject();
+				target.setSubject(subject);
+				RelatedSubject relatedSubject = CDAFactory.eINSTANCE.createRelatedSubject();
+				SubjectPerson subjectPerson = CDAFactory.eINSTANCE.createSubjectPerson();
+				relatedSubject.setSubject(subjectPerson);
+				target.getSubject().setRelatedSubject(relatedSubject);
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistoryOrganizer target) {
+
+				target.getSubject().getRelatedSubject().getSubject().setAdministrativeGenderCode(
+					DatatypesFactory.eINSTANCE.createCE("F", "2.16.840.1.113883.5.1"));
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonAdministrativeGenderCodeP(
+					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonAdministrativeGenderCodePTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonBirthTime() {
+		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonBirthTimeTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
+			"validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonBirthTime",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_SUBJECT_RELATED_SUBJECT_SUBJECT_PERSON_BIRTH_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistoryOrganizer target) {
+				target.init();
+				Subject subject = CDAFactory.eINSTANCE.createSubject();
+				target.setSubject(subject);
+				RelatedSubject relatedSubject = CDAFactory.eINSTANCE.createRelatedSubject();
+				SubjectPerson subjectPerson = CDAFactory.eINSTANCE.createSubjectPerson();
+				relatedSubject.setSubject(subjectPerson);
+
+				target.getSubject().setRelatedSubject(relatedSubject);
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistoryOrganizer target) {
+				target.getSubject().getRelatedSubject().getSubject().setBirthTime(DatatypesFactory.eINSTANCE.createTS());
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonBirthTime(
+					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonBirthTimeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCDeceasedInd() {
+		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCDeceasedIndTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
+			"validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCDeceasedInd",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_SUBJECT_RELATED_SUBJECT_SUBJECT_PERSON_SDTC_DECEASED_IND__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistoryOrganizer target) {
+				target.init();
+				Subject subject = CDAFactory.eINSTANCE.createSubject();
+				target.setSubject(subject);
+				RelatedSubject relatedSubject = CDAFactory.eINSTANCE.createRelatedSubject();
+				SubjectPerson subjectPerson = CDAFactory.eINSTANCE.createSubjectPerson();
+				relatedSubject.setSubject(subjectPerson);
+
+				target.getSubject().setRelatedSubject(relatedSubject);
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistoryOrganizer target) {
+				target.getSubject().getRelatedSubject().getSubject().setSDTCDeceasedInd(
+					DatatypesFactory.eINSTANCE.createBL());
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCDeceasedInd(
+					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCDeceasedIndTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCDeceasedTime() {
+		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCDeceasedTimeTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
+			"validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCDeceasedTime",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_SUBJECT_RELATED_SUBJECT_SUBJECT_PERSON_SDTC_DECEASED_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistoryOrganizer target) {
+				target.init();
+				Subject subject = CDAFactory.eINSTANCE.createSubject();
+				target.setSubject(subject);
+				RelatedSubject relatedSubject = CDAFactory.eINSTANCE.createRelatedSubject();
+				SubjectPerson subjectPerson = CDAFactory.eINSTANCE.createSubjectPerson();
+				relatedSubject.setSubject(subjectPerson);
+
+				target.getSubject().setRelatedSubject(relatedSubject);
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistoryOrganizer target) {
+				target.getSubject().getRelatedSubject().getSubject().setSDTCDeceasedTime(
+					DatatypesFactory.eINSTANCE.createTS());
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCDeceasedTime(
+					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCDeceasedTimeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCId() {
+		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCIdTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
+			"validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCId",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_SUBJECT_RELATED_SUBJECT_SUBJECT_PERSON_SDTC_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistoryOrganizer target) {
+				target.init();
+				Subject subject = CDAFactory.eINSTANCE.createSubject();
+				target.setSubject(subject);
+				RelatedSubject relatedSubject = CDAFactory.eINSTANCE.createRelatedSubject();
+				SubjectPerson subjectPerson = CDAFactory.eINSTANCE.createSubjectPerson();
+				relatedSubject.setSubject(subjectPerson);
+				target.getSubject().setRelatedSubject(relatedSubject);
+
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistoryOrganizer target) {
+				target.getSubject().getRelatedSubject().getSubject().getSDTCIds().add(
+					DatatypesFactory.eINSTANCE.createII());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCId(
+					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonSDTCIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFamilyHistoryOrganizerSubjectRelatedSubjectClassCode() {
+		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerSubjectRelatedSubjectClassCodeTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
+			"validateFamilyHistoryOrganizerSubjectRelatedSubjectClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_SUBJECT_RELATED_SUBJECT_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistoryOrganizer target) {
+				target.init();
+				Subject subject = CDAFactory.eINSTANCE.createSubject();
+				target.setSubject(subject);
+				RelatedSubject relatedSubject = CDAFactory.eINSTANCE.createRelatedSubject();
+				target.getSubject().setRelatedSubject(relatedSubject);
+
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistoryOrganizer target) {
+				target.getSubject().getRelatedSubject().setClassCode(x_DocumentSubject.PRS);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerSubjectRelatedSubjectClassCode(
+					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryOrganizerSubjectRelatedSubjectClassCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFamilyHistoryOrganizerSubjectRelatedSubjectCode() {
+		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerSubjectRelatedSubjectCodeTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
+			"validateFamilyHistoryOrganizerSubjectRelatedSubjectCode",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_SUBJECT_RELATED_SUBJECT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistoryOrganizer target) {
+				target.init();
+				Subject subject = CDAFactory.eINSTANCE.createSubject();
+				target.setSubject(subject);
+				RelatedSubject relatedSubject = CDAFactory.eINSTANCE.createRelatedSubject();
+				target.getSubject().setRelatedSubject(relatedSubject);
+
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistoryOrganizer target) {
+				target.getSubject().getRelatedSubject().setCode(
+					DatatypesFactory.eINSTANCE.createCE("1234", "2.16.840.1.113883.5.111"));
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerSubjectRelatedSubjectCode(
+					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryOrganizerSubjectRelatedSubjectCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFamilyHistoryOrganizerSubjectRelatedSubjectCodeP() {
+		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerSubjectRelatedSubjectCodePTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
+			"validateFamilyHistoryOrganizerSubjectRelatedSubjectCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_SUBJECT_RELATED_SUBJECT_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistoryOrganizer target) {
+				target.init();
+				Subject subject = CDAFactory.eINSTANCE.createSubject();
+				target.setSubject(subject);
+				RelatedSubject relatedSubject = CDAFactory.eINSTANCE.createRelatedSubject();
+				target.getSubject().setRelatedSubject(relatedSubject);
+
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistoryOrganizer target) {
+				target.getSubject().getRelatedSubject().setCode(
+					DatatypesFactory.eINSTANCE.createCE("1234", "2.16.840.1.113883.5.111"));
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerSubjectRelatedSubjectCodeP(
+					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryOrganizerSubjectRelatedSubjectCodePTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFamilyHistoryOrganizerSubjectRelatedSubjectSubject() {
+		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
+			"validateFamilyHistoryOrganizerSubjectRelatedSubjectSubject",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_SUBJECT_RELATED_SUBJECT_SUBJECT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistoryOrganizer target) {
+				target.init();
+				Subject subject = CDAFactory.eINSTANCE.createSubject();
+				target.setSubject(subject);
+				RelatedSubject relatedSubject = CDAFactory.eINSTANCE.createRelatedSubject();
+				target.getSubject().setRelatedSubject(relatedSubject);
+
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistoryOrganizer target) {
+				SubjectPerson subjectPerson = CDAFactory.eINSTANCE.createSubjectPerson();
+				target.getSubject().getRelatedSubject().setSubject(subjectPerson);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerSubjectRelatedSubjectSubject(
+					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFamilyHistoryOrganizerSubjectRelatedSubject() {
+		OperationsTestCase<FamilyHistoryOrganizer> validateFamilyHistoryOrganizerSubjectRelatedSubjectTestCase = new OperationsTestCase<FamilyHistoryOrganizer>(
+			"validateFamilyHistoryOrganizerSubjectRelatedSubject",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_ORGANIZER_SUBJECT_RELATED_SUBJECT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistoryOrganizer target) {
+				target.init();
+				Subject subject = CDAFactory.eINSTANCE.createSubject();
+
+				target.setSubject(subject);
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistoryOrganizer target) {
+
+				RelatedSubject relatedSubject = CDAFactory.eINSTANCE.createRelatedSubject();
+				target.getSubject().setRelatedSubject(relatedSubject);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistoryOrganizerOperations.validateFamilyHistoryOrganizerSubjectRelatedSubject(
+					(FamilyHistoryOrganizer) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistoryOrganizerSubjectRelatedSubjectTestCase.doValidationTest();
 	}
 
 	/**
