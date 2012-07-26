@@ -25,7 +25,7 @@
          id="org.openhealthtools.mdht.uml.cda.models.source"
          version="0.0.0"/>
 
-  <plugin
+   <plugin
          id="org.openhealthtools.mdht.uml.hl7.rim"
          download-size="0"
          install-size="0"
@@ -45,14 +45,14 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
- <plugin
+
+   <plugin
          id="org.openhealthtools.mdht.uml.cda"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
+
    <plugin
          id="org.openhealthtools.mdht.uml.cda.cdt"
          download-size="0"
@@ -82,21 +82,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.openhealthtools.mdht.uml.cda.hitsp.facade"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.openhealthtools.mdht.uml.cda.toc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.openhealthtools.mdht.uml.cda.consoltoc"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -115,15 +101,6 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
-   <plugin
-         id="org.openhealthtools.mdht.cda.xml.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-  
 
    <plugin
          id="org.openhealthtools.mdht.uml.cda.emspcr"
