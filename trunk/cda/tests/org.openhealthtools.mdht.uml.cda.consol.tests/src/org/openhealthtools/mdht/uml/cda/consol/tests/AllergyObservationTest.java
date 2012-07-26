@@ -28,6 +28,7 @@ import org.openhealthtools.mdht.uml.cda.consol.GeneralStatusSection;
 import org.openhealthtools.mdht.uml.cda.consol.ReactionObservation;
 import org.openhealthtools.mdht.uml.cda.consol.SeverityObservation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.AllergyObservationOperations;
+import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
@@ -85,7 +86,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * @generated
  */
 
-public class AllergyObservationTest extends org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest {
+public class AllergyObservationTest extends CDAValidationTest {
 
 	/**
 	*
