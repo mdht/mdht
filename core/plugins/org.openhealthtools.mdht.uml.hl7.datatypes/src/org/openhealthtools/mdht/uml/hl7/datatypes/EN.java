@@ -351,4 +351,12 @@ public interface EN extends ANY {
 	 */
 	String getText();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" trimRequired="true" trimOrdered="false"
+	 * @generated
+	 */
+	String getText(boolean trim);
+
 } // EN

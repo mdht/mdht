@@ -3200,6 +3200,9 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
 
 		addEOperation(enEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		op = addEOperation(enEClass, ecorePackage.getEString(), "getText", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "trim", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(
 			enxpEClass, org.openhealthtools.mdht.uml.hl7.datatypes.ENXP.class, "ENXP", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
