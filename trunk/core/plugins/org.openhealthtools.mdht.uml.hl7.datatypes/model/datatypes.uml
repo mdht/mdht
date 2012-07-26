@@ -890,6 +890,14 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_QSxP8NbFEeGS7fsnE616TQ" name="getText">
+        <ownedParameter xmi:id="_Sh5Z8NbFEeGS7fsnE616TQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_UuChYNbFEeGS7fsnE616TQ" name="trim">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_yQ9xwD5yEd6cla2oXsPtlA" name="ON">
       <ownedRule xmi:id="_O0-J8EVnEd6QuJiOJFSRPQ" name="invariant" constrainedElement="_yQ9xwD5yEd6cla2oXsPtlA">

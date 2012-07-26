@@ -329,6 +329,15 @@ public class ENImpl extends ANYImpl implements EN {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getText(boolean trim) {
+		return ENOperations.getText(this, trim);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {

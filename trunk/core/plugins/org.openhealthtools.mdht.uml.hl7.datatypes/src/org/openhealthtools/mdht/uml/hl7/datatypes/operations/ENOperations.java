@@ -46,6 +46,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.EntityNamePartType;
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#addSuffix(java.lang.String) <em>Add Suffix</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#addText(java.lang.String) <em>Add Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getText() <em>Get Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.hl7.datatypes.EN#getText(boolean) <em>Get Text</em>}</li>
  * </ul>
  * </p>
  *
@@ -446,6 +447,19 @@ public class ENOperations extends ANYOperations {
 			}
 		}
 		return text.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public static String getText(EN en, boolean trim) {
+		if (trim == true) {
+			return getText(en).trim();
+		}
+
+		return getText(en);
 	}
 
 } // ENOperations
