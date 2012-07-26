@@ -98,6 +98,20 @@ plugin@org.openhealthtools.mdht.uml.hl7.rim=SVN,trunk,https://www.projects.openh
 
 plugin@org.openhealthtools.mdht.cda.xml.ui=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.cda.xml.ui,force
 
+plugin@org.openhealthtools.mdht.uml.cda.emspcr=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.emspcr,force
+
+plugin@org.openhealthtools.mdht.uml.cda.phcr=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.phcr,force
+
+plugin@org.openhealthtools.mdht.uml.cda.phmr=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.phmr,force
+
+plugin@org.openhealthtools.mdht.uml.cda.qrda=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.qrda,force
+
+plugin@org.openhealthtools.mdht.uml.cda.sdtm=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.sdtm,force
+
+plugin@org.openhealthtools.mdht.uml.cda.vsbr=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.vsbr,force
+
+plugin@org.openhealthtools.mdht.uml.cda.vsdr=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.vsdr,force
+
 
 !***************  MDHT Feature for CDA Runtime for Application Development - Source Code  ********************************************** 
 feature@org.openhealthtools.mdht.uml.cda.models.source=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.models.source-feature,force
