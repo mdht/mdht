@@ -9,24 +9,22 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - making section groups consistent
  *     Christian W. Damus - Handle element wrappers (artf3238)
+ *                        - implement handling of live validation roll-back (artf3318)
  *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.term.ui.properties;
 
-import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
-import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
@@ -47,7 +45,6 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
-import org.openhealthtools.mdht.uml.term.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
 
 /**
@@ -161,14 +158,7 @@ public class VocabularyConstraintsSection extends WrapperAwareModelerPropertySec
 				}
 			};
 
-			try {
-				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
-				operation.addContext(commandStack.getDefaultUndoContext());
-				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-
-			} catch (ExecutionException ee) {
-				Logger.logException(ee);
-			}
+			execute(operation);
 
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());

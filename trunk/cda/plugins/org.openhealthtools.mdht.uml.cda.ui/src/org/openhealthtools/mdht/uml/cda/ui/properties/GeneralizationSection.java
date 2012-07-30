@@ -8,24 +8,22 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - adding support for restoring defaults
+ *     Christian W. Damus - implement handling of live validation roll-back (artf3318)
  *     
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.properties;
 
-import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
-import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
@@ -44,7 +42,6 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
-import org.openhealthtools.mdht.uml.cda.ui.internal.Logger;
 
 /**
  * The properties section for Generalization.
@@ -112,14 +109,7 @@ public class GeneralizationSection extends ValidationSection {
 				}
 			};
 
-			try {
-				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
-				operation.addContext(commandStack.getDefaultUndoContext());
-				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-
-			} catch (ExecutionException ee) {
-				Logger.logException(ee);
-			}
+			execute(operation);
 
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());

@@ -8,25 +8,23 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - Handle element wrappers (artf3238)
+ *                        - implement handling of live validation roll-back (artf3318)
  *     
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
 
-import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
-import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
@@ -49,7 +47,6 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Parameter;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
-import org.openhealthtools.mdht.uml.ui.properties.internal.Logger;
 import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
 
 /**
@@ -82,14 +79,7 @@ public class ParameterSection extends WrapperAwareModelerPropertySection {
 				}
 			};
 
-			try {
-				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
-				operation.addContext(commandStack.getDefaultUndoContext());
-				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-
-			} catch (ExecutionException ee) {
-				Logger.logException(ee);
-			}
+			execute(operation);
 		}
 	}
 

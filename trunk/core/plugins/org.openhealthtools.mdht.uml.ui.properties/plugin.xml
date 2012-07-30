@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
 <!--
-  Copyright (c) 2006, 2011 David A Carlson.
+  Copyright (c) 2006, 2012 David A Carlson and others.
   All rights reserved. This program and the accompanying materials
   are made available under the terms of the Eclipse Public License v1.0
   which accompanies this distribution, and is available at
@@ -9,6 +9,7 @@
   
   Contributors:
       David A Carlson - initial API and implementation
+      Christian W. Damus - graphical property pages for constraints (artf3318)
       
   $Id$
 -->
@@ -63,6 +64,13 @@
                afterTab="property.tab.GeneralPropertySection"
                indented="true">
          </propertyTab> 
+         <propertyTab
+               label="%tab.Constraint"
+               category="core"
+               id="property.tab.ConstraintDetailsTab"
+               afterTab="property.tab.AssociationSection"
+               indented="true">
+         </propertyTab>   
          <propertyTab
                label="%tab.Documentation"
                category="annotation"
@@ -130,6 +138,19 @@
 	 	     id="property.section.uml2.ConstraintSection">
 	            <input type="org.eclipse.uml2.uml.Constraint"/>
 	      </propertySection>
+          <propertySection tab="property.tab.ConstraintDetailsTab" 
+             afterSection="property.section.uml2.ConstraintSection"
+             class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstraintDiagnosticSection" 
+             id="property.section.validation.ConstraintDiagnosticSection"
+             filter="org.openhealthtools.mdht.uml.ui.properties.filters.DiagnosticStereotypeFilter">
+                <input type="org.eclipse.uml2.uml.Constraint"/>
+          </propertySection>
+          <propertySection tab="property.tab.ConstraintDetailsTab" 
+             afterSection="property.section.validation.ConstraintDiagnosticSection"
+             class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.ConstrainedElementsSection" 
+             id="property.section.uml2.ConstraintSection">
+                <input type="org.eclipse.uml2.uml.Constraint"/>
+          </propertySection>
 	      
           <propertySection tab="property.tab.GeneralPropertySection" 
 	 	     class="org.openhealthtools.mdht.uml.ui.properties.internal.sections.ElementImportSection" 

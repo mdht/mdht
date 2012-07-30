@@ -33,7 +33,9 @@ import org.eclipse.ocl.uml.OCL;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.OpaqueExpression;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
 import org.openhealthtools.mdht.uml.validation.ocl.EcoreProfileEnvironmentFactory;
 import org.openhealthtools.mdht.uml.validation.provider.AbstractMultiConstraint;
@@ -57,39 +59,62 @@ public class OCLConstraintConstraints extends AbstractMultiConstraint {
 
 		IStatus result = context.createSuccessStatus();
 
-		if (context.getTarget() instanceof Constraint) {
-			Constraint constraint = (Constraint) context.getTarget();
-			ValueSpecification vs = constraint.getSpecification();
+		Constraint constraint = null;
+		OpaqueExpression specification = null;
+		if (context.getTarget() instanceof OpaqueExpression &&
+				((context.getFeature() == null) /* batch mode */|| isOCLBodyChange(context))) {
 
-			if (vs instanceof OpaqueExpression) {
-				OpaqueExpression oe = (OpaqueExpression) vs;
-				int languageCtr = 0;
+			// triggered by validation of the specification when the body is changed (or in batch mode)
+			specification = (OpaqueExpression) context.getTarget();
+			Element owner = specification.getOwner();
+			if (owner instanceof Constraint) {
+				constraint = (Constraint) owner;
+			}
+		}
 
-				for (String language : oe.getLanguages()) {
-					if (OCLLANGUAGE.equalsIgnoreCase(language)) {
-						String ocl = oe.getBodies().get(languageCtr);
+		if ((specification != null) && (constraint != null)) {
+			int languageCtr = 0;
 
-						if ((ocl != null) && (constraint.getContext() instanceof Classifier)) {
-							try {
-								OCL.Helper helper = getOCLCache(context).helper((Classifier) constraint.getContext());
-								if (isQueryConstraint(constraint)) {
-									helper.createQuery(ocl);
-								} else {
-									helper.createInvariant(ocl);
-								}
-							} catch (ParserException pe) {
-								Object[] data = new Object[2];
-								data[0] = constraint.getName();
-								data[1] = pe.getMessage();
+			for (String language : specification.getLanguages()) {
+				if (OCLLANGUAGE.equalsIgnoreCase(language)) {
+					String ocl = specification.getBodies().get(languageCtr);
 
-								result = context.createFailureStatus(data);
+					if ((ocl != null) && (constraint.getContext() instanceof Classifier)) {
+						try {
+							OCL.Helper helper = getOCLCache(context).helper((Classifier) constraint.getContext());
+							if (isQueryConstraint(constraint)) {
+								helper.createQuery(ocl);
+							} else {
+								helper.createInvariant(ocl);
 							}
+						} catch (ParserException pe) {
+							Object[] data = new Object[2];
+							data[0] = constraint.getName();
+							data[1] = pe.getMessage();
+
+							result = context.createFailureStatus(data);
 						}
 					}
-
-					languageCtr++;
 				}
 
+				languageCtr++;
+			}
+		}
+
+		return result;
+	}
+
+	/**
+	 * Does the validation context describe a change to the OCL body of an opaque expression in live validation?
+	 */
+	private boolean isOCLBodyChange(IValidationContext context) {
+		boolean result = false;
+
+		if (context.getFeature() == UMLPackage.Literals.OPAQUE_EXPRESSION__BODY) {
+			OpaqueExpression expr = (OpaqueExpression) context.getTarget();
+			int index = expr.getBodies().indexOf(context.getFeatureNewValue());
+			if ((index >= 0) && (index < expr.getLanguages().size())) {
+				result = OCLLANGUAGE.equalsIgnoreCase(expr.getLanguages().get(index));
 			}
 		}
 
