@@ -9,18 +9,20 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - Handle element wrappers (artf3238)
  *                        - use UML binding for OCL to check constraints, and handle query constraints (artf3317)
+ *                        - implement handling of live validation roll-back (artf3318)
  *                        
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.ui.properties.internal.sections;
 
-import org.eclipse.core.commands.ExecutionException;
+import java.util.Arrays;
+import java.util.List;
+
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
@@ -28,7 +30,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
-import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.uml.OCL;
@@ -54,13 +55,13 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
+import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
-import org.openhealthtools.mdht.uml.ui.properties.internal.Logger;
 import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
 import org.openhealthtools.mdht.uml.validation.ocl.EcoreProfileEnvironment;
 import org.openhealthtools.mdht.uml.validation.ocl.EcoreProfileEnvironmentFactory;
@@ -204,14 +205,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 				}
 			};
 
-			try {
-				IWorkspaceCommandStack commandStack = (IWorkspaceCommandStack) editingDomain.getCommandStack();
-				operation.addContext(commandStack.getDefaultUndoContext());
-				commandStack.getOperationHistory().execute(operation, new NullProgressMonitor(), getPart());
-
-			} catch (ExecutionException ee) {
-				Logger.logException(ee);
-			}
+			execute(operation);
 
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
@@ -310,6 +304,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 	 * 
 	 * @see org.eclipse.gmf.runtime.diagram.ui.properties.sections.AbstractModelerPropertySection#addToEObjectList(java.lang.Object)
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	protected boolean addToEObjectList(Object object) {
 		boolean added = super.addToEObjectList(object);
@@ -336,33 +331,51 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 
 	@Override
 	public void refresh() {
-		int languageIndex = languageCombo.getSelectionIndex();
-		if (languageIndex == -1) {
-			languageIndex = 0; // default to Analysis
-		}
-		String language = languages[languageIndex];
-		String languagesList = "";
+		final OpaqueExpression spec = (constraint.getSpecification() instanceof OpaqueExpression)
+				? (OpaqueExpression) constraint.getSpecification()
+				: null;
+		String language = null;
 		String body = null;
 
-		ValueSpecification spec = constraint.getSpecification();
-		if (spec instanceof OpaqueExpression) {
-			for (int i = 0; i < ((OpaqueExpression) spec).getLanguages().size(); i++) {
-				String lang = ((OpaqueExpression) spec).getLanguages().get(i);
-				if (languagesList.length() > 0) {
-					languagesList += ", ";
+		int languageIndex = languageCombo.getSelectionIndex();
+		if ((languageIndex == -1) || ((spec != null) && !spec.getLanguages().contains(languages[languageIndex]))) {
+			languageIndex = 0; // default to the first language for which we have a body, else Analysis
+
+			if (spec != null) {
+				final List<String> knownLangs = Arrays.asList(languages);
+				final List<String> specLangs = spec.getLanguages();
+				final List<String> specBodies = spec.getBodies();
+				for (int i = 0; (i < specBodies.size()) && (i < specLangs.size()); i++) {
+					if (!UML2Util.isEmpty(specBodies.get(i)) && knownLangs.contains(specLangs.get(i))) {
+						languageIndex = knownLangs.indexOf(specLangs.get(i));
+						body = specBodies.get(i);
+						break;
+					}
 				}
-				languagesList += lang;
+			}
+		}
+		language = languages[languageIndex];
+
+		StringBuilder languagesList = new StringBuilder();
+
+		if (spec != null) {
+			for (int i = 0; i < spec.getLanguages().size(); i++) {
+				String lang = spec.getLanguages().get(i);
+				if (languagesList.length() > 0) {
+					languagesList.append(", ");
+				}
+				languagesList.append(lang);
 
 				// find first body with this language, if any
 				if (language.equals(lang)) {
-					body = ((OpaqueExpression) spec).getBodies().get(i);
+					body = spec.getBodies().get(i);
 				}
 			}
 		}
 
 		languageCombo.select(languageIndex);
 
-		currentLanguagesLabel.setText(languagesList);
+		currentLanguagesLabel.setText(languagesList.toString());
 
 		bodyText.removeModifyListener(modifyListener);
 		bodyText.removeKeyListener(keyListener);

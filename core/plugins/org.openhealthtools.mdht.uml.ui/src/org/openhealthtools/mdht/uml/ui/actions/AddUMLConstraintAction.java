@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2009 David A Carlson.
+ * Copyright (c) 2006, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - simplify definition of constraints in profiles (artf3318)
  *     
  * $Id$
  *******************************************************************************/
@@ -19,6 +20,8 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.emf.workspace.IWorkspaceCommandStack;
 import org.eclipse.jface.action.IAction;
@@ -30,6 +33,7 @@ import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Namespace;
+import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 
@@ -53,7 +57,7 @@ public class AddUMLConstraintAction extends UML2AbstractAction {
 	public void run(IAction action) {
 		try {
 			final Element element = getSelectedElement();
-			if (element instanceof Element) {
+			if (element != null) {
 				IUndoableOperation operation = new AbstractEMFOperation(
 					editingDomain, UML2UIMessages.AddUMLConstraint_operation_title) {
 					@Override
@@ -70,6 +74,8 @@ public class AddUMLConstraintAction extends UML2AbstractAction {
 							}
 						}
 						constraint.getConstrainedElements().add(element);
+
+						handleDefaultStereotypes(constraint);
 
 						if (activePart instanceof ISetSelectionTarget) {
 							((ISetSelectionTarget) activePart).selectReveal(new StructuredSelection(constraint));
@@ -91,6 +97,18 @@ public class AddUMLConstraintAction extends UML2AbstractAction {
 
 		} catch (Exception e) {
 			throw new RuntimeException(e.getCause());
+		}
+	}
+
+	private void handleDefaultStereotypes(Constraint constraint) {
+		Stereotype diagnostic = constraint.getApplicableStereotype("Validation::Diagnostic");
+		if (diagnostic != null) {
+			EObject instance = constraint.applyStereotype(diagnostic);
+
+			EStructuralFeature code = instance.eClass().getEStructuralFeature("code");
+			if (code != null) {
+				instance.eUnset(code); // initialize the code to blank
+			}
 		}
 	}
 
