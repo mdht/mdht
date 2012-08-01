@@ -283,20 +283,12 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(FamilyHistoryOrganizer target) {
-				target.init();
-				Subject subject = CDAFactory.eINSTANCE.createSubject();
-				target.setSubject(subject);
-				RelatedSubject relatedSubject = CDAFactory.eINSTANCE.createRelatedSubject();
-				SubjectPerson subjectPerson = CDAFactory.eINSTANCE.createSubjectPerson();
-				relatedSubject.setSubject(subjectPerson);
-				target.getSubject().setRelatedSubject(relatedSubject);
+
 			}
 
 			@Override
 			protected void updateToPass(FamilyHistoryOrganizer target) {
-
-				target.getSubject().getRelatedSubject().getSubject().setAdministrativeGenderCode(
-					DatatypesFactory.eINSTANCE.createCE("F", "2.16.840.1.113883.5.1"));
+				target.init();
 
 			}
 
