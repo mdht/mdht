@@ -503,6 +503,24 @@ public class MedicationActivityTest extends CDAValidationTest {
 			}
 
 			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(MedicationActivity target) {
+						// Test case with entry Relationship , but no Instruction Act
+						// Should pass
+						target.getEntryRelationships().clear();
+						target.init();
+						EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+						target.getEntryRelationships().add(er);
+					}
+
+				});
+			}
+
+			@Override
 			protected void updateToPass(MedicationActivity target) {
 				target.getEntryRelationships().clear();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();

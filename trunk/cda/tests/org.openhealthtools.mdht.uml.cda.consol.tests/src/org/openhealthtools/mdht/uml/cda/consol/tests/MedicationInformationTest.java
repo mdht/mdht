@@ -201,7 +201,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 			protected void updateToFail(MedicationInformation target) {
 				target.init();
 				Material material = CDAFactory.eINSTANCE.createMaterial();
-				ED text = DatatypesFactory.eINSTANCE.createED();
+				// DatatypesFactory.eINSTANCE.createED();
 				CE ce = DatatypesFactory.eINSTANCE.createCE();
 				material.setCode(ce);
 				target.setManufacturedMaterial(material);
@@ -296,7 +296,7 @@ public class MedicationInformationTest extends CDAValidationTest {
 			protected void updateToFail(MedicationInformation target) {
 				target.init();
 				Material material = CDAFactory.eINSTANCE.createMaterial();
-				ED text = DatatypesFactory.eINSTANCE.createED();
+				// DatatypesFactory.eINSTANCE.createED();
 				CE ce = DatatypesFactory.eINSTANCE.createCE();
 				material.setCode(ce);
 				target.setManufacturedMaterial(material);

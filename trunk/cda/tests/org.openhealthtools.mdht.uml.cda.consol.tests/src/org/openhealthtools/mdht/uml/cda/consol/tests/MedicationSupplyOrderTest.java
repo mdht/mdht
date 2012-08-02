@@ -82,6 +82,24 @@ public class MedicationSupplyOrderTest extends CDAValidationTest {
 			}
 
 			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(MedicationSupplyOrder target) {
+						// Test case with only entry Relationship
+						// Should pass
+						target.getEntryRelationships().clear();
+						target.init();
+						EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+						target.getEntryRelationships().add(er);
+					}
+
+				});
+			}
+
+			@Override
 			protected void updateToPass(MedicationSupplyOrder target) {
 				target.getEntryRelationships().clear();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();

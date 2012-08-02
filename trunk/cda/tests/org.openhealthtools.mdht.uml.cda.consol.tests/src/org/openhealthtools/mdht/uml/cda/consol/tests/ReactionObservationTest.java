@@ -250,6 +250,24 @@ public class ReactionObservationTest extends CDAValidationTest {
 			}
 
 			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ReactionObservation target) {
+						// Test case with only entry Relationship
+						// Should pass
+						target.getEntryRelationships().clear();
+						target.init();
+						EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+						target.getEntryRelationships().add(er);
+					}
+
+				});
+			}
+
+			@Override
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
 				// Add Severity Observation
@@ -291,6 +309,24 @@ public class ReactionObservationTest extends CDAValidationTest {
 			}
 
 			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ReactionObservation target) {
+						// Test case with only entry Relationship
+						// Should pass
+						target.getEntryRelationships().clear();
+						target.init();
+						EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+						target.getEntryRelationships().add(er);
+					}
+
+				});
+			}
+
+			@Override
 			protected void updateToPass(ReactionObservation target) {
 				target.init();
 				target.getEntryRelationships().clear();
@@ -327,6 +363,24 @@ public class ReactionObservationTest extends CDAValidationTest {
 				target.getEntryRelationships().clear();
 				target.getEntryRelationships().add(
 					createEntryRelationship(ENTRY_RELATIONSHIP_OBJECT.MEDICATION_ACTIVITY, false));
+			}
+
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ReactionObservation target) {
+						// Test case with only entry Relationship
+						// Should pass
+						target.getEntryRelationships().clear();
+						target.init();
+						EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+						target.getEntryRelationships().add(er);
+					}
+
+				});
 			}
 
 			@Override
