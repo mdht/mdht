@@ -266,6 +266,24 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 			}
 
 			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ProcedureActivityAct target) {
+						// Test case with only entry Relationship
+						// Should pass
+						target.getEntryRelationships().clear();
+						target.init();
+						EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+						target.getEntryRelationships().add(er);
+					}
+
+				});
+			}
+
+			@Override
 			protected void updateToPass(ProcedureActivityAct target) {
 				target.getEntryRelationships().clear();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
@@ -345,6 +363,24 @@ public class ProcedureActivityActTest extends CDAValidationTest {
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setAct(ConsolFactory.eINSTANCE.createInstructions());
 				target.getEntryRelationships().add(er);
+			}
+
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(ProcedureActivityAct target) {
+						// Test case with only entry Relationship
+						// Should pass
+						target.getEntryRelationships().clear();
+						target.init();
+						EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+						target.getEntryRelationships().add(er);
+					}
+
+				});
 			}
 
 			@Override

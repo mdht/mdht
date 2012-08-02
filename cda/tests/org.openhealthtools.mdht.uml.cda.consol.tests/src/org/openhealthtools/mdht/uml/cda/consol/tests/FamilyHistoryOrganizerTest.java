@@ -272,7 +272,7 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateFamilyHistoryOrganizerSubjectRelatedSubjectSubjectPersonAdministrativeGenderCodeP() {
@@ -283,13 +283,24 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(FamilyHistoryOrganizer target) {
-
+				target.init();
+				Subject subject = CDAFactory.eINSTANCE.createSubject();
+				target.setSubject(subject);
+				RelatedSubject relatedSubject = CDAFactory.eINSTANCE.createRelatedSubject();
+				SubjectPerson subjectPerson = CDAFactory.eINSTANCE.createSubjectPerson();
+				relatedSubject.setSubject(subjectPerson);
+				target.getSubject().setRelatedSubject(relatedSubject);
 			}
 
 			@Override
 			protected void updateToPass(FamilyHistoryOrganizer target) {
-				target.init();
-
+				Subject subject = CDAFactory.eINSTANCE.createSubject();
+				target.setSubject(subject);
+				RelatedSubject relatedSubject = CDAFactory.eINSTANCE.createRelatedSubject();
+				target.getSubject().setRelatedSubject(relatedSubject);
+				SubjectPerson subjectPerson = CDAFactory.eINSTANCE.createSubjectPerson();
+				relatedSubject.setSubject(subjectPerson);
+				relatedSubject.getSubject().setAdministrativeGenderCode(DatatypesFactory.eINSTANCE.createCE());
 			}
 
 			@Override

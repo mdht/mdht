@@ -234,6 +234,24 @@ public class AllergyObservationTest extends CDAValidationTest {
 			}
 
 			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AllergyObservation target) {
+						// Test case with only entry Relationship
+						// Should pass
+						target.getEntryRelationships().clear();
+						target.init();
+						EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+						target.getEntryRelationships().add(er);
+					}
+
+				});
+			}
+
+			@Override
 			protected void updateToPass(AllergyObservation target) {
 				target.init();
 				target.getEntryRelationships().clear();
@@ -272,6 +290,24 @@ public class AllergyObservationTest extends CDAValidationTest {
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setObservation(ConsolFactory.eINSTANCE.createReactionObservation());
 				target.getEntryRelationships().add(er);
+			}
+
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AllergyObservation target) {
+						// Test case with only entry Relationship
+						// Should pass
+						target.getEntryRelationships().clear();
+						target.init();
+						EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+						target.getEntryRelationships().add(er);
+					}
+
+				});
 			}
 
 			@Override
@@ -314,6 +350,24 @@ public class AllergyObservationTest extends CDAValidationTest {
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setObservation(ConsolFactory.eINSTANCE.createSeverityObservation());
 				target.getEntryRelationships().add(er);
+			}
+
+			@Override
+			public void addPassTests() {
+
+				addPassTest(new PassTest() {
+
+					@Override
+					public void updateToPass(AllergyObservation target) {
+						// Test case with only entry Relationship
+						// Should pass
+						target.getEntryRelationships().clear();
+						target.init();
+						EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+						target.getEntryRelationships().add(er);
+					}
+
+				});
 			}
 
 			@Override
