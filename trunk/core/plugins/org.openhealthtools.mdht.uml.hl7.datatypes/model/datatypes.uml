@@ -890,7 +890,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_QSxP8NbFEeGS7fsnE616TQ" name="getText">
+      <ownedOperation xmi:id="_QSxP8NbFEeGS7fsnE616TQ" name="getText" isQuery="true">
         <ownedParameter xmi:id="_Sh5Z8NbFEeGS7fsnE616TQ" name="return" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
