@@ -42,7 +42,8 @@ public class CodedAttributeFilter extends TermFilter {
 			}
 
 			List<String> allParentNames = UMLUtil.getAllParentNames(type);
-			return allParentNames.contains("CD") || allParentNames.contains("SC");
+			return allParentNames.contains("CD") || allParentNames.contains("SC") ||
+					allParentNames.contains("CODED_TEXT");
 		}
 		return false;
 	}
