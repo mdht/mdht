@@ -338,7 +338,7 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		String body = null;
 
 		int languageIndex = languageCombo.getSelectionIndex();
-		if ((languageIndex == -1) || ((spec != null) && !spec.getLanguages().contains(languages[languageIndex]))) {
+		if (languageIndex == -1) {
 			languageIndex = 0; // default to the first language for which we have a body, else Analysis
 
 			if (spec != null) {
