@@ -422,6 +422,9 @@ public class TransformClassContent extends TransformAbstract {
 					: 2);
 			if (eObject != null) {
 				instanceGenerator.save(eObject, writer);
+			} else {
+				Logger.log(Logger.ERROR, "Error: Missing Runtime Class for UML Class " + umlClass.getQualifiedName());
+				writer.print("Error: Missing Runtime Class");
 			}
 		} else {
 			writer.print("TODO: XML document snippet");
