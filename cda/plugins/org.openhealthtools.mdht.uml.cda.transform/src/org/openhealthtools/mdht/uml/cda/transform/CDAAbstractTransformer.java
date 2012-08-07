@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 David A Carlson.
+ * Copyright (c) 2011, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - factor out CDA base model dependencies (artf3350)
  *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
@@ -23,6 +24,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.transform.AbstractTransformer;
 import org.openhealthtools.mdht.uml.transform.EcoreTransformUtil;
+import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 /**
@@ -33,12 +35,18 @@ public abstract class CDAAbstractTransformer extends AbstractTransformer {
 
 	protected TransformerOptions transformerOptions;
 
+	private final IBaseModelReflection baseModelReflection = new CDABaseModelReflection();
+
 	public CDAAbstractTransformer() {
 		this(new TransformerOptions());
 	}
 
 	public CDAAbstractTransformer(TransformerOptions options) {
 		transformerOptions = options;
+	}
+
+	public final IBaseModelReflection getBaseModelReflection() {
+		return baseModelReflection;
 	}
 
 	@Override

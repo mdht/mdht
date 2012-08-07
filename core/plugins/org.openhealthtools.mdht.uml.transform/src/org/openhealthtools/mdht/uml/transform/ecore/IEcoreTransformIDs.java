@@ -9,13 +9,19 @@
  *     Christian W. Damus - initial API and implementation
  *     
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cda.transform;
+package org.openhealthtools.mdht.uml.transform.ecore;
 
 /**
- * IDs of phases, rules, and context variables used by the CDA UML-to-Ecore transformation.
+ * IDs of phases, rules, and context variables used by the base UML-to-Ecore transformation.
  */
-public interface ICDAEcoreTransformIDs {
-	String ID_BASE = "org.openhealthtools.mdht.uml.cda.transform.";
+public interface IEcoreTransformIDs {
+	String ID_BASE = "org.openhealthtools.mdht.uml.transform.ecore.";
 
-	String INITIALIZE_CONTEXT_RULE = ID_BASE + "InitContext";
+	String TRANSFORM_ELEMENTS_PHASE = ID_BASE + "TransformElements";
+
+	String TRANSFORM_INLINE_ASSOCATIONS_PHASE = ID_BASE + "TransformInlineAssociations";
+
+	String TRANSFORM_INNER_CLASSES_PHASE = ID_BASE + "TransformInnerClasses";
+
+	String SAVE_PLUGIN_PROPERTIES_RULE = ID_BASE + "SavePluginProperties";
 }

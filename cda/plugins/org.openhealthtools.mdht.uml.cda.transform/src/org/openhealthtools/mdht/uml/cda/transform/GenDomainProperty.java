@@ -8,6 +8,7 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - discriminate multiple property constraints (artf3185)
+ *                        - factor out CDA base model dependencies (artf3350)
  *     
  * $Id$
  *******************************************************************************/
@@ -27,15 +28,18 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAModelConsolidator;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.term.core.profile.CodeSystemConstraint;
-import org.openhealthtools.mdht.uml.term.core.util.ITermProfileConstants;
 import org.openhealthtools.mdht.uml.term.core.util.TermProfileUtil;
+import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
+import org.openhealthtools.mdht.uml.transform.ecore.IEcoreProfileReflection.ValidationSeverityKind;
+import org.openhealthtools.mdht.uml.transform.ecore.IEcoreProfileReflection.ValidationStereotypeKind;
 
 public class GenDomainProperty extends TransformFacade {
 	private GenMethodHelper methodHelper;
 
-	public GenDomainProperty(TransformerOptions options, CDAModelConsolidator consolidator) {
-		super(options, consolidator);
+	public GenDomainProperty(TransformerOptions options, CDAModelConsolidator consolidator,
+			IBaseModelReflection baseModelReflection) {
+		super(options, consolidator, baseModelReflection);
 		this.methodHelper = new GenMethodHelper(transformerOptions);
 	}
 
@@ -156,9 +160,7 @@ public class GenDomainProperty extends TransformFacade {
 	private boolean isFixedValue(Property property) {
 		if (property.isReadOnly()) {
 			return true;
-		} else if (SEVERITY_ERROR.equals(CDAModelUtil.getValidationSeverity(
-			property, ITermProfileConstants.CODE_SYSTEM_CONSTRAINT))) {
-
+		} else if (getEcoreProfile().getValidationSeverity(property, ValidationStereotypeKind.CODE_SYSTEM) == ValidationSeverityKind.ERROR) {
 			// SHALL contain a specific code
 			CodeSystemConstraint codeSystemConstraint = TermProfileUtil.getCodeSystemConstraint(property);
 			if (codeSystemConstraint != null) {

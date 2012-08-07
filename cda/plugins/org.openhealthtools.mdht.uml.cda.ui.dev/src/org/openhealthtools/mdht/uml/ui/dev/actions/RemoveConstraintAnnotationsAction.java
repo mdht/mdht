@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - factor out CDA dependencies from UML-to-Ecore transformation (artf3350)
  *     
  * $Id$
  *******************************************************************************/
@@ -42,9 +43,9 @@ import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.util.UMLUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
-import org.openhealthtools.mdht.uml.cda.transform.AnnotationsUtil;
 import org.openhealthtools.mdht.uml.transform.EcoreTransformUtil;
 import org.openhealthtools.mdht.uml.transform.PluginPropertiesUtil;
+import org.openhealthtools.mdht.uml.transform.ecore.AnnotationsUtil;
 
 public class RemoveConstraintAnnotationsAction implements IObjectActionDelegate {
 	public static final String VALIDATION_ERROR = "constraints.validation.error";
@@ -81,7 +82,8 @@ public class RemoveConstraintAnnotationsAction implements IObjectActionDelegate 
 						Object child = iterator.next();
 						if (child instanceof Class) {
 							Class childClass = (Class) child;
-							AnnotationsUtil annotationsUtil = new AnnotationsUtil(childClass);
+							AnnotationsUtil annotationsUtil = new AnnotationsUtil(
+								childClass, ICDAProfileConstants.CDA_ANNOTATION_SOURCE);
 							String warnings = annotationsUtil.getAnnotation(VALIDATION_WARNING);
 							String infos = annotationsUtil.getAnnotation(VALIDATION_INFO);
 

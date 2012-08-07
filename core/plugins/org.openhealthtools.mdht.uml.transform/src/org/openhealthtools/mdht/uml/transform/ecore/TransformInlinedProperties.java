@@ -10,9 +10,10 @@
  *    Christian W. Damus - generate query invariants for in-line associations (artf3100)
  *                       - spurious constraint-name substring matches for severity (artf3185)
  *                       - implement terminology constraint dependencies (artf3030)
+ *                       - support nested datatype subclasses (artf3350)
  * $Id$
  */
-package org.openhealthtools.mdht.uml.cda.transform;
+package org.openhealthtools.mdht.uml.transform.ecore;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,23 +26,29 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
-import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
+import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.PluginPropertiesUtil;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
+import org.openhealthtools.mdht.uml.transform.ecore.IEcoreProfileReflection.ValidationSeverityKind;
+import org.openhealthtools.mdht.uml.transform.ecore.IEcoreProfileReflection.ValidationStereotypeKind;
+import org.openhealthtools.mdht.uml.transform.internal.Logger;
 
-public class TransformInlinedAssociations extends TransformAbstract {
+public class TransformInlinedProperties extends TransformAbstract {
 
-	private enum Severity {
-		INFO, WARNING, ERROR
+	PluginPropertiesUtil properties = null;
+
+	public TransformInlinedProperties(TransformerOptions options, IBaseModelReflection baseModelReflection) {
+		super(options, baseModelReflection);
+		properties = transformerOptions.getPluginPropertiesUtil();
 	}
 
-	private Constraint appendInlinedOCLConstraint(Class classToBeConstrained, String constraintName, Severity severity,
-			String validationMessage, String oclConstraint) {
+	private Constraint appendInlinedOCLConstraint(Class classToBeConstrained, String constraintName,
+			ValidationSeverityKind severity, String validationMessage, String oclConstraint) {
 
 		int ctr = 1;
 		while (classToBeConstrained.getOwnedRule(constraintName) != null) {
@@ -72,23 +79,10 @@ public class TransformInlinedAssociations extends TransformAbstract {
 		}
 
 		// designate the constraint as a query-style invariant
-		TransformConstraint.annotateQueryConstraint(inlinedConstraint, classToBeConstrained);
+		annotateQueryConstraint(inlinedConstraint, classToBeConstrained);
 
 		return inlinedConstraint;
 	}
-
-	public TransformInlinedAssociations(TransformerOptions options) {
-		super(options);
-		properties = transformerOptions.getPluginPropertiesUtil();
-	}
-
-	PluginPropertiesUtil properties = null;
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.uml2.uml.util.UMLSwitch#casePackage(org.eclipse.uml2.uml.Package)
-	 */
 
 	static boolean isInlineClass(Class _class) {
 
@@ -116,6 +110,18 @@ public class TransformInlinedAssociations extends TransformAbstract {
 			}
 		}
 
+		if ("".equals(filter)) {
+			// search hierarchy
+			for (Classifier next : inlineClass.getGenerals()) {
+				if (next instanceof Class) {
+					filter = getInlineFilter((Class) next);
+					if (!"".equals(filter)) {
+						break;
+					}
+				}
+			}
+		}
+
 		return filter;
 
 	}
@@ -137,51 +143,61 @@ public class TransformInlinedAssociations extends TransformAbstract {
 	}
 
 	@Override
-	public Object caseAssociation(Association association) {
-
+	public Object caseProperty(Property property) {
 		HashMap<String, ArrayList<String>> constraints = new HashMap<String, ArrayList<String>>();
 
-		for (Property property : association.getMemberEnds()) {
+		final Class owner = property.getClass_();
 
-			if (property.isNavigable()) {
+		Association association = null;
+		Class baseDatatype = null;
 
-				if (property.getType() != null && property.getType() instanceof Class &&
-						isInlineClass((Class) property.getType()) && !property.getOwner().equals((property.getType()))) {
+		// supported types are only classes, and not the class that defines the property (reflexive association). Only transform
+		// properties owned by classes (not by associations; note that we do not use association classes)
+		if ((owner != null) && !(owner instanceof Association) && (property.getType() instanceof Class) &&
+				(property.getOwner() != property.getType())) {
 
-					if (getCDAClass(property.getClass_()) != null) {
-						AnnotationsUtil bucketAnnotations = new AnnotationsUtil(property.getClass_());
+			Class propertyType = (Class) property.getType();
+			association = property.getAssociation();
+			baseDatatype = getBaseDatatype(propertyType, property);
 
-						collectConstraints(
-							property.getClass_(),
-							bucketAnnotations,
-							(Class) property.getType(),
-							CDAModelUtil.getValidationMessage(association),
-							"self." +
-									getNullSafePath(
-										getCDAClass(property.getClass_()), (Class) property.getType(), property) +
-									getInlineFilter((Class) property.getType()), property.getClass_().getName(),
-							constraints, property.getName());
-
-						bucketAnnotations.saveAnnotations();
-					} else {
-						Logger.log(Logger.ERROR, String.format(
-							"Unsupported Inlined Association %s from %s; %s is not a CDA based element",
-							property.getName(), property.getClass_().getQualifiedName(),
-							property.getClass_().getQualifiedName()));
+			// is it either an in-line associated type or a local datatype subclass?
+			if (((association != null) && isInlineClass(propertyType)) || (baseDatatype != null)) {
+				Class baseOwner = null;
+				if (owner != null) {
+					baseOwner = getBaseClass(owner);
+					if (baseOwner == null) {
+						// maybe it's a local datatype subclass
+						baseOwner = getBaseDatatype(owner, property);
 					}
-
 				}
 
+				if (baseOwner != null) {
+					AnnotationsUtil bucketAnnotations = getEcoreProfile().annotate(owner);
+					Element validationElement = (association != null)
+							? association
+							: property;
+					collectConstraints(
+						property.getClass_(), bucketAnnotations, (Class) property.getType(),
+						getEcoreProfile().getValidationMessage(validationElement, ValidationStereotypeKind.ANY),
+						"self." + getNullSafePath(baseOwner, propertyType, property) + getInlineFilter(propertyType),
+						owner.getName(), constraints, property.getName());
+
+					bucketAnnotations.saveAnnotations();
+				} else {
+					Logger.log(Logger.ERROR, String.format(
+						"Unsupported inlined association or datatype property %s from %s; %s has no base element",
+						property.getName(), property.getNamespace().getQualifiedName(),
+						property.getNamespace().getQualifiedName()));
+				}
 			}
 
 		}
 
-		return association;
-
+		return property;
 	}
 
-	private String getNullSafePath(Class cdaSourceClass, Class targetClass, Property sourceProperty) {
-		String result = getPath(cdaSourceClass, targetClass, sourceProperty);
+	private String getNullSafePath(Class baseSourceClass, Class targetClass, Property sourceProperty) {
+		String result = getPath(baseSourceClass, targetClass, sourceProperty);
 
 		if (result.length() > 0) {
 			result = result + "->excluding(null)";
@@ -190,15 +206,15 @@ public class TransformInlinedAssociations extends TransformAbstract {
 		return result;
 	}
 
-	private String getPath(Class cdaSourceClass, Class targetClass, Property sourceProperty) {
-		Property property = cdaSourceClass.getOwnedAttribute(null, targetClass, true, null, false);
+	private String getPath(Class baseSourceClass, Class targetClass, Property sourceProperty) {
+		Property property = baseSourceClass.getOwnedAttribute(null, targetClass, true, null, false);
 
 		// If not - walk the hierarchy and check for properties
 		if (property == null) {
 			for (Classifier c : targetClass.allParents()) {
-				property = cdaSourceClass.getOwnedAttribute(null, c, true, null, false);
+				property = baseSourceClass.getOwnedAttribute(null, c, true, null, false);
 
-				if (property != null || CDAModelUtil.isCDAModel(c)) {
+				if ((property != null) || isBaseModel(targetClass, c)) {
 					break;
 				}
 
@@ -208,7 +224,7 @@ public class TransformInlinedAssociations extends TransformAbstract {
 		// If we still can not find - use the name - this is not optimal but CDA has some hop scotch hierarchies such as consumable and
 		// manufactured product
 		if (property == null) {
-			property = cdaSourceClass.getOwnedAttribute(sourceProperty.getName(), null, true, null, false);
+			property = baseSourceClass.getOwnedAttribute(sourceProperty.getName(), null, true, null, false);
 		}
 
 		if (property != null) {
@@ -244,7 +260,7 @@ public class TransformInlinedAssociations extends TransformAbstract {
 			Class inlineClass, String message, String path, String stack,
 			HashMap<String, ArrayList<String>> constraints, String associationName) {
 
-		AnnotationsUtil inlineClassAnnotations = new AnnotationsUtil(inlineClass);
+		AnnotationsUtil inlineClassAnnotations = getEcoreProfile().annotate(inlineClass);
 
 		String warningsAnnotation = inlineClassAnnotations.getAnnotation(VALIDATION_WARNING);
 		String infosAnnotation = inlineClassAnnotations.getAnnotation(VALIDATION_INFO);
@@ -255,55 +271,67 @@ public class TransformInlinedAssociations extends TransformAbstract {
 				? Collections.<String> emptySet()
 				: new java.util.HashSet<String>(Arrays.asList(infosAnnotation.split(" ")));
 
-		String splitName = CDAModelUtil.getPrefixedSplitName(inlineClass);
+		String splitName = getEcoreProfile().getPrefixedSplitName(inlineClass);
 
-		for (Association association : inlineClass.getAssociations()) {
-			for (Property property : association.getMemberEnds()) {
-				if (property.isNavigable() && property.getType() instanceof Class &&
-						!inlineClass.equals(property.getType()) && !CDAModelUtil.isCDAModel(property.getType()) &&
-						!CDAModelUtil.isDatatypeModel(property.getType()) &&
-						CDAModelUtil.getTemplateId((Class) property.getType()) == null &&
-						!property.getOwner().equals((property.getType())) && getCDAClass(property.getClass_()) != null) {
+		for (Property property : inlineClass.getOwnedAttributes()) {
+			final Class propertyType = (property.getType() instanceof Class)
+					? (Class) property.getType()
+					: null;
 
-					String associationMessage = CDAModelUtil.getValidationMessage(association);
+			if ((propertyType != null) && (inlineClass != propertyType) && !isBaseModel(bucketClass, propertyType) &&
+					!isDatatypesModel(bucketClass, propertyType) && !getEcoreProfile().isPrimaryEClass(propertyType) &&
+					(property.getOwner() != propertyType) &&
+					((getBaseClass(inlineClass) != null) || getBaseDatatype(inlineClass, bucketClass) != null)) {
+
+				Element validationElement = (property.getAssociation() != null)
+						? property.getAssociation()
+						: property;
+				String associationMessage = getEcoreProfile().getValidationMessage(
+					validationElement, ValidationStereotypeKind.ANY);
+
+				associationMessage = associationMessage.replaceAll(
+					"its type is " + UMLUtil.splitName(property.getType()), "");
+
+				Class propertyBaseType = getBaseClass(propertyType);
+				if (propertyBaseType == null) {
+					// OK, it's a datatype
+					propertyBaseType = getBaseDatatype(propertyType, inlineClass);
+				}
+
+				if ((associationMessage != null) && (propertyBaseType != null)) {
+					associationMessage = associationMessage.replaceAll(
+						getEcoreProfile().getPrefixedSplitName(property.getType()),
+						propertyBaseType.getName().toLowerCase());
 
 					associationMessage = associationMessage.replaceAll(
-						"its type is " + UMLUtil.splitName(property.getType()), "");
+						UMLUtil.splitName(property.getType()), propertyBaseType.getName().toLowerCase());
 
-					Class propertyCDAClass = CDAModelUtil.getCDAClass((Class) property.getType());
-					if (associationMessage != null && propertyCDAClass != null) {
-						associationMessage = associationMessage.replaceAll(
-							CDAModelUtil.getPrefixedSplitName(property.getType()),
-							propertyCDAClass.getName().toLowerCase());
-
-						associationMessage = associationMessage.replaceAll(
-							UMLUtil.splitName(property.getType()), propertyCDAClass.getName().toLowerCase());
-
-						associationMessage = associationMessage.replaceAll(
-							CDAModelUtil.getPrefixedSplitName(property.getClass_()), "each");
-
-					}
-					collectConstraints(
-						bucketClass,
-						bucketAnnotations,
-						(Class) property.getType(),
-						message + " " + associationMessage,
-						path +
-								"." +
-								getNullSafePath(getCDAClass(property.getClass_()), (Class) property.getType(), property),
-						stack + property.getClass_().getName(), constraints, property.getName());
+					associationMessage = associationMessage.replaceAll(
+						getEcoreProfile().getPrefixedSplitName(property.getClass_()), "each");
 				}
+
+				// get the owner base type
+				Class ownerBaseType = getBaseClass(inlineClass);
+				if (ownerBaseType == null) {
+					// OK, it's a datatype
+					ownerBaseType = getBaseDatatype(inlineClass, bucketClass);
+				}
+
+				collectConstraints(
+					bucketClass, bucketAnnotations, propertyType, message + " " + associationMessage, path + "." +
+							getNullSafePath(ownerBaseType, propertyType, property), stack + inlineClass.getName(),
+					constraints, property.getName());
 			}
 		}
 
 		for (Constraint constraint : inlineClass.getOwnedRules()) {
 
-			Severity constraintSeverity = Severity.ERROR;
+			ValidationSeverityKind constraintSeverity = ValidationSeverityKind.ERROR;
 
 			if (infos.contains(constraint.getName())) {
-				constraintSeverity = Severity.INFO;
+				constraintSeverity = ValidationSeverityKind.INFO;
 			} else if (warnings.contains(constraint.getName())) {
-				constraintSeverity = Severity.WARNING;
+				constraintSeverity = ValidationSeverityKind.WARNING;
 			}
 
 			String relativeOCL = getRelativeOCL(constraint);

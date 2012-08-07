@@ -11,18 +11,15 @@
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.uml2.uml.util.UMLSwitch;
-import org.openhealthtools.mdht.transform.core.IRule;
-import org.openhealthtools.mdht.transform.core.ITransformContext;
-import org.openhealthtools.mdht.transform.core.ITransformMonitor;
+import static org.openhealthtools.mdht.uml.transform.ecore.BaseEcoreTransformationBuilder.adapt;
+
 import org.openhealthtools.mdht.transform.core.ITransformation;
-import org.openhealthtools.mdht.transform.core.RuleKind;
 import org.openhealthtools.mdht.transform.core.TransformationBuilder;
-import org.openhealthtools.mdht.transform.core.TransformationException;
-import org.openhealthtools.mdht.transform.core.impl.AbstractRule;
-import org.openhealthtools.mdht.uml.transform.BaseUMLTransformationBuilder;
-import org.openhealthtools.mdht.uml.transform.TransformerOptions;
+import org.openhealthtools.mdht.uml.transform.ecore.BaseEcoreTransformationBuilder;
+import org.openhealthtools.mdht.uml.transform.ecore.BaseEcoreTransformationBuilder.IRuleOverrideProvider;
+import org.openhealthtools.mdht.uml.transform.ecore.IEcoreTransformIDs;
+import org.openhealthtools.mdht.uml.transform.ecore.TransformAssociation;
+import org.openhealthtools.mdht.uml.transform.ecore.TransformPropertyConstraint;
 
 /**
  * A transformation builder that creates the standard configuration of a UML-to-Ecore transformation.
@@ -35,86 +32,37 @@ public class EcoreTransformationBuilder extends TransformationBuilder {
 	}
 
 	public static TransformationBuilder create() {
-		TransformationBuilder result = new EcoreTransformationBuilder(BaseUMLTransformationBuilder.create() //
+		TransformationBuilder result = new EcoreTransformationBuilder(
+			BaseEcoreTransformationBuilder.create(overrides()) //
 
-		.initialization() //
-		.rule(new CDAInitializeContextRule()) //
-		.done() // initialization phase
+			.initialization() //
+			.rule(new CDAInitializeContextRule()) //
+			.done() // initialization phase
 
-		.phase(ICDAEcoreTransformIDs.TRANSFORM_ELEMENTS_PHASE, "Transform elements") //
-		.rule(adapt(TransformPackage.class)) //
-		.rule(adapt(TransformConstraint.class)) //
-		.rule(adapt(TransformClinicalDocument.class)) //
-		.rule(adapt(TransformTemplateIdentifier.class)) //
-		.rule(adapt(TransformPropertyConstraint.class)) //
-		.rule(adapt(TransformAssociation.class)) //
-		.rule(adapt(TransformClass.class)) //
-		.rule(adapt(TransformPackage.class)) //
-		.done() // transform most element types
+			.getPhase(IEcoreTransformIDs.TRANSFORM_ELEMENTS_PHASE) //
+			.rule(adapt(TransformClinicalDocument.class)) //
+			.rule(adapt(TransformTemplateIdentifier.class)) //
+			.done() // customizing main transformation phase
 
-		.phase(ICDAEcoreTransformIDs.TRANSFORM_INLINE_ASSOCATIONS_PHASE, "Transform inline associations") //
-		.rule(adapt(TransformInlinedAssociations.class)) //
-		.done() // transform inline associations phase
-
-		.phase(ICDAEcoreTransformIDs.TRANSFORM_INNER_CLASSES_PHASE, "Transform inner classes") //
-		.rule(adapt(TransformInnerClasses.class)) //
-		.done() // transform inner classes phase
-
-		.finalization() //
-		// before we save the model, destroy all of the elements that we deleted
-		.getRule(IRule.ID_SAVE_MODEL).before(new ProcessDeletedElementsFragment()) //
-		.rule(new SavePluginPropertiesRule()) //
-		.done() // finalization phase
-
-		.build()); //
-
-		if (Boolean.getBoolean("mdht.debug.ecoretransform")) {
-			// add a step to simplify comparing the generated Ecore with other versions
-			result.finalization().getRule(IRule.ID_SAVE_MODEL).before(new DebugUMLSetElementIDsFragment());
-		}
+			.build()); //
 
 		return result;
 	}
 
-	private static IRule adapt(Class<? extends UMLSwitch<?>> switchClass) {
-		return new SwitchAdapter(switchClass);
-	}
+	private static IRuleOverrideProvider overrides() {
+		return new IRuleOverrideProvider() {
 
-	//
-	// Nested types
-	//
+			public <T> Class<? extends T> override(Class<T> rule) {
+				Class<? extends T> result = null;
 
-	/**
-	 * A transformation rule adapter that integrates the legacy {@link UMLSwitch}-based rules.
-	 */
-	private static class SwitchAdapter extends AbstractRule {
-		private final Class<? extends UMLSwitch<?>> switchClass;
+				if (rule == TransformAssociation.class) {
+					result = TransformCDAAssociation.class.asSubclass(rule);
+				} else if (rule == TransformPropertyConstraint.class) {
+					result = TransformCDAPropertyConstraint.class.asSubclass(rule);
+				}
 
-		private UMLSwitch<?> umlSwitch;
-
-		SwitchAdapter(Class<? extends UMLSwitch<?>> switchClass) {
-			super(switchClass.getName(), RuleKind.TRANSFORM, switchClass.getSimpleName());
-
-			this.switchClass = switchClass;
-		}
-
-		@Override
-		public void initialize(ITransformContext ctx) throws TransformationException {
-			super.initialize(ctx);
-
-			try {
-				umlSwitch = switchClass.getConstructor(TransformerOptions.class).newInstance(
-					ctx.get(TransformerOptions.class));
-			} catch (Exception e) {
-				throw new TransformationException(
-					String.format("Failed to initialize rule '%s'", switchClass.getName()), e);
+				return result;
 			}
-		}
-
-		@Override
-		protected Object doApply(EObject input, ITransformMonitor monitor) throws TransformationException {
-			return umlSwitch.doSwitch(input);
-		}
+		};
 	}
-
 }

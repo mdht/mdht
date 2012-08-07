@@ -9,6 +9,7 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     John T.E. Timm (IBM Corporation) - added isEntry
  *     Christian W. Damus - discriminate multiple property constraints (artf3185)
+ *                        - support nested datatype subclasses (artf3350)
  *     
  * $Id$
  *******************************************************************************/
@@ -101,15 +102,15 @@ public class CDAModelUtil {
 			return null;
 		}
 
-		// if the provided property is from a CDA class and not a template
-		if (isCDAModel(templateProperty)) {
+		// if the provided property is from a CDA class/datatype and not a template
+		if (isCDAModel(templateProperty) || isDatatypeModel(templateProperty)) {
 			return templateProperty;
 		}
 
 		for (Classifier parent : templateProperty.getClass_().allParents()) {
 			for (Property inherited : parent.getAttributes()) {
 				if (inherited.getName() != null && inherited.getName().equals(templateProperty.getName()) &&
-						isCDAModel(inherited)) {
+						(isCDAModel(inherited) || isDatatypeModel(inherited))) {
 					return inherited;
 				}
 			}
@@ -120,21 +121,17 @@ public class CDAModelUtil {
 
 	/**
 	 * Returns the nearest inherited property with the same name, or null if not found.
+	 * 
+	 * @deprecated Use the {@link UMLUtil#getInheritedProperty(Property)} API, instead.
 	 */
+	@Deprecated
 	public static Property getInheritedProperty(Property templateProperty) {
+		// for CDA, we restrict to Classes, not other classifiers
 		if (templateProperty.getClass_() == null) {
 			return null;
 		}
 
-		for (Classifier parent : templateProperty.getClass_().allParents()) {
-			for (Property inherited : parent.getAttributes()) {
-				if (inherited.getName().equals(templateProperty.getName())) {
-					return inherited;
-				}
-			}
-		}
-
-		return null;
+		return UMLUtil.getInheritedProperty(templateProperty);
 	}
 
 	public static boolean isDatatypeModel(Element element) {
@@ -151,6 +148,27 @@ public class CDAModelUtil {
 		return CDA_PACKAGE_NAME.equals((element.getNearestPackage() != null)
 				? element.getNearestPackage().getName()
 				: "");
+	}
+
+	public static Class getCDADatatype(Classifier datatype) {
+		Class result = null;
+
+		// if the provided class is from CDA datatypes
+		if (isDatatypeModel(datatype) && (datatype instanceof Class)) {
+			result = (Class) datatype;
+		} else {
+			for (Classifier parent : datatype.allParents()) {
+				// nearest package may be null if CDA datatypes model is not available
+				if (parent.getNearestPackage() != null) {
+					if (isDatatypeModel(parent) && (parent instanceof Class)) {
+						result = (Class) parent;
+						break;
+					}
+				}
+			}
+		}
+
+		return result;
 	}
 
 	public static boolean isCDAType(Type templateClass, String typeName) {

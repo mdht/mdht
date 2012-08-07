@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2011 David A Carlson and others.
+ * Copyright (c) 2006, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,6 +9,7 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - added utility to retrieve controlled (sub-)resources
  *     Kenn Hussey - added utilities for working with (model) properties files
+ *     Christian W. Damus - factor out CDA base model dependencies (artf3350)
  *     
  * $Id$
  *******************************************************************************/
@@ -535,35 +536,35 @@ public class UMLUtil {
 	 */
 	public static List<Property> getOwnedAttributes(Type type) {
 
-		return (List) new UMLSwitch() {
+		return new UMLSwitch<List<Property>>() {
 
 			@Override
-			public Object caseArtifact(Artifact artifact) {
+			public List<Property> caseArtifact(Artifact artifact) {
 				return artifact.getOwnedAttributes();
 			}
 
 			@Override
-			public Object caseDataType(DataType dataType) {
+			public List<Property> caseDataType(DataType dataType) {
 				return dataType.getOwnedAttributes();
 			}
 
 			@Override
-			public Object caseInterface(Interface interface_) {
+			public List<Property> caseInterface(Interface interface_) {
 				return interface_.getOwnedAttributes();
 			}
 
 			@Override
-			public Object caseSignal(Signal signal) {
+			public List<Property> caseSignal(Signal signal) {
 				return signal.getOwnedAttributes();
 			}
 
 			@Override
-			public Object caseStructuredClassifier(StructuredClassifier structuredClassifier) {
+			public List<Property> caseStructuredClassifier(StructuredClassifier structuredClassifier) {
 				return structuredClassifier.getOwnedAttributes();
 			}
 
 			@Override
-			public Object doSwitch(EObject eObject) {
+			public List<Property> doSwitch(EObject eObject) {
 				return null == eObject
 						? null
 						: super.doSwitch(eObject);
@@ -1379,5 +1380,25 @@ public class UMLUtil {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * Returns the nearest inherited property with the same name, or null if not found.
+	 */
+	public static Property getInheritedProperty(Property property) {
+		if (!(property.getOwner() instanceof Classifier)) {
+			return null;
+		}
+
+		Classifier owner = (Classifier) property.getOwner();
+		for (Classifier parent : owner.allParents()) {
+			for (Property inherited : parent.getAttributes()) {
+				if (inherited.getName().equals(property.getName())) {
+					return inherited;
+				}
+			}
+		}
+
+		return null;
 	}
 }

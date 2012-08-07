@@ -17,6 +17,7 @@ import org.openhealthtools.mdht.transform.core.ITransformMonitor;
 import org.openhealthtools.mdht.transform.core.RuleKind;
 import org.openhealthtools.mdht.transform.core.TransformationException;
 import org.openhealthtools.mdht.transform.core.impl.AbstractRule;
+import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.PluginPropertiesUtil;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
@@ -39,6 +40,9 @@ public class CDAInitializeContextRule extends AbstractRule {
 		// create the properties-file utility
 		options.setPluginPropertiesUtil(new PluginPropertiesUtil());
 		ctx.put(PluginPropertiesUtil.class, options.getPluginPropertiesUtil());
+
+		// add the base-model reflection utility
+		ctx.put(IBaseModelReflection.class, new CDABaseModelReflection());
 	}
 
 	@Override

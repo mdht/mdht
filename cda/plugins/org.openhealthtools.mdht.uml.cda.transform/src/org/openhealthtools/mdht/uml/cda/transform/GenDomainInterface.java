@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 David A Carlson and others.
+ * Copyright (c) 2011, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,6 +8,7 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - eliminating duplicate comments from classes
+ *     Christian W. Damus - factor out CDA base model dependencies (artf3350)
  *     
  * $Id$
  *******************************************************************************/
@@ -31,14 +32,17 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelConsolidator;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
+import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
 
 public class GenDomainInterface extends TransformFacade {
 	private GenDomainProperty genDomainProperty;
 
-	public GenDomainInterface(TransformerOptions options, CDAModelConsolidator consolidator) {
-		super(options, consolidator);
-		this.genDomainProperty = new GenDomainProperty(transformerOptions, consolidator);
+	public GenDomainInterface(TransformerOptions options, CDAModelConsolidator consolidator,
+			IBaseModelReflection baseModelReflection) {
+
+		super(options, consolidator, baseModelReflection);
+		this.genDomainProperty = new GenDomainProperty(transformerOptions, consolidator, baseModelReflection);
 	}
 
 	@Override

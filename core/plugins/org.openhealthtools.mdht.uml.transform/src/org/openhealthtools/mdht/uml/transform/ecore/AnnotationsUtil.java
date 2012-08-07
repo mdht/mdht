@@ -10,10 +10,11 @@
  *     Sean Muir (JKM Software) - added copy annotation method
  *     Christian W. Damus - reuse one annotation store for all utils on an element (artf3030)
  *                        - maintain consistent ordering of annotations (artf3306)
+ *                        - factor out CDA dependencies from UML-to-Ecore transformation (artf3350)
  *     
  * $Id$
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cda.transform;
+package org.openhealthtools.mdht.uml.transform.ecore;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,7 +29,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
@@ -37,37 +37,19 @@ import org.openhealthtools.mdht.uml.transform.EcoreTransformUtil;
 
 public class AnnotationsUtil {
 
-	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
-
 	private static final Pattern ANNOTATION_PATTERN = Pattern.compile("\\G\\s*((?>\\\\.|\\S)+)((?:\\s+(?>\\\\.|\\S)+\\s*+=\\s*(['\"])((?>\\\\.|.)*?)\\3)*)");
 
 	private static final Pattern ANNOTATION_DETAIL_PATTERN = Pattern.compile("\\s+((?>\\\\.|\\S)+)\\s*+=\\s*((['\"])((?>\\\\.|.)*?)\\3)");
 
-	private Element element;
+	private final Element element;
 
-	private String annotationSource = CDA_ANNOTATION_SOURCE;
+	private final String annotationSource;
 
 	private AnnotationStore store;
 
-	public AnnotationsUtil(Class umlClass, String annotationSource) {
+	public AnnotationsUtil(Element element, String annotationSource) {
 		this.annotationSource = annotationSource;
-		this.element = umlClass;
-	}
-
-	public AnnotationsUtil(Class umlClass) {
-		this.element = umlClass;
-	}
-
-	public AnnotationsUtil(Property property) {
-		this.element = property;
-	}
-
-	public AnnotationsUtil(Package umlPackage) {
-		this.element = umlPackage;
-	}
-
-	public AnnotationsUtil(Namespace namespace) {
-		this.element = namespace;
+		this.element = element;
 	}
 
 	private AnnotationStore getStore() {
@@ -155,11 +137,11 @@ public class AnnotationsUtil {
 	private static final class AnnotationStore extends AdapterImpl {
 		private final String annotationSource;
 
-		private final Map<String, String> cdaAnnotations = new java.util.LinkedHashMap<String, String>();
+		private final Map<String, String> annotations = new java.util.LinkedHashMap<String, String>();
 
 		private boolean dirty;
 
-		private Integer cdaAnnotationIndex = null;
+		private Integer annotationIndex = null;
 
 		AnnotationStore(String annotationSource) {
 			this.annotationSource = annotationSource;
@@ -175,7 +157,7 @@ public class AnnotationsUtil {
 			super.setTarget(newTarget);
 
 			Element element = (Element) newTarget;
-			cdaAnnotations.clear();
+			annotations.clear();
 
 			Stereotype stereotype = getStereotypeKind(element);
 
@@ -192,7 +174,7 @@ public class AnnotationsUtil {
 							continue;
 						}
 
-						cdaAnnotationIndex = annotations.indexOf(annotation);
+						annotationIndex = annotations.indexOf(annotation);
 						for (Matcher detailMatcher = ANNOTATION_DETAIL_PATTERN.matcher(matcher.group(2)); detailMatcher.find();) {
 							String name = detailMatcher.group(1);
 							String value = detailMatcher.group(4);
@@ -208,38 +190,38 @@ public class AnnotationsUtil {
 
 		@Override
 		public void unsetTarget(Notifier oldTarget) {
-			cdaAnnotations.clear();
+			annotations.clear();
 
 			super.unsetTarget(oldTarget);
 		}
 
 		String getAnnotation(String key) {
-			return cdaAnnotations.get(key);
+			return annotations.get(key);
 		}
 
 		void setAnnotation(String key, String value) {
 			dirty = true;
-			cdaAnnotations.put(key, value);
+			annotations.put(key, value);
 		}
 
 		void copyAnnotation(AnnotationsUtil source) {
-			Map<String, String> store = source.getStore().cdaAnnotations;
+			Map<String, String> store = source.getStore().annotations;
 			if (!store.isEmpty()) {
 				dirty = true;
-				cdaAnnotations.putAll(store);
+				annotations.putAll(store);
 			}
 		}
 
 		void removeAnnotation(String key) {
-			if (cdaAnnotations.containsKey(key)) {
+			if (annotations.containsKey(key)) {
 				dirty = true;
-				cdaAnnotations.remove(key);
+				annotations.remove(key);
 			}
 		}
 
 		void addAnnotation(String key, String newValue) {
 			List<String> valueList = null;
-			String values = cdaAnnotations.get(key);
+			String values = annotations.get(key);
 			if (values != null) {
 				valueList = Arrays.asList(values.split("\\s+"));
 			} else {
@@ -252,7 +234,7 @@ public class AnnotationsUtil {
 				}
 				values += newValue;
 				dirty = true;
-				cdaAnnotations.put(key, values);
+				annotations.put(key, values);
 			}
 		}
 
@@ -264,37 +246,37 @@ public class AnnotationsUtil {
 
 			Element element = (Element) getTarget();
 
-			StringBuffer cdaAnnotation = new StringBuffer();
-			cdaAnnotation.append(annotationSource);
+			StringBuilder annotationBuf = new StringBuilder();
+			annotationBuf.append(annotationSource);
 
-			for (String key : cdaAnnotations.keySet()) {
-				String value = cdaAnnotations.get(key);
+			for (String key : annotations.keySet()) {
+				String value = annotations.get(key);
 				String annotation = " " + key + "='" + value + "'";
-				cdaAnnotation.append(annotation);
+				annotationBuf.append(annotation);
 			}
 
 			// assure that the EClass stereotype is applied
 			Stereotype stereotype = getStereotypeKind(element);
 			if (stereotype != null) {
 				UMLUtil.safeApplyStereotype(element, stereotype);
-				String annotation = cdaAnnotations.keySet().isEmpty()
+				String annotation = annotations.keySet().isEmpty()
 						? null
-						: cdaAnnotation.toString();
+						: annotationBuf.toString();
 
-				if (cdaAnnotationIndex != null) {
+				if (annotationIndex != null) {
 					List<String> allAnnotations = (List<String>) element.getValue(stereotype, "annotations");
 					if (annotation == null && allAnnotations.size() == 1) {
 						// remove only existing annotation, which was ours
 						element.setValue(stereotype, "annotations", new ArrayList<String>());
-						cdaAnnotationIndex = null; // forget our index
+						annotationIndex = null; // forget our index
 					} else {
 						// replace/remove previous CDA annotation
-						element.setValue(stereotype, "annotations[" + cdaAnnotationIndex + "]", annotation);
+						element.setValue(stereotype, "annotations[" + annotationIndex + "]", annotation);
 					}
 				} else if (annotation != null) {
 					// append to annotations list
 					List<String> annotationList = (List<String>) element.getValue(stereotype, "annotations");
-					cdaAnnotationIndex = annotationList.size(); // compute our index
+					annotationIndex = annotationList.size(); // compute our index
 					annotationList.add(annotation);
 					element.setValue(stereotype, "annotations", annotationList);
 				}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012 David A Carlson.
+ * Copyright (c) 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - correct the plug-in ID constant (artf3350)
  *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.transform.internal;
@@ -20,7 +21,7 @@ import org.osgi.framework.BundleContext;
 public class Activator extends Plugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "org.openhealthtools.mdht.uml.cda.transform";
+	public static final String PLUGIN_ID = "org.openhealthtools.mdht.uml.transform";
 
 	// The shared instance
 	private static Activator plugin;
