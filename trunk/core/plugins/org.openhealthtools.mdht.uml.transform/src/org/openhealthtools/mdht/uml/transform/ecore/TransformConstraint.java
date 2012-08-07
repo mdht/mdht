@@ -8,10 +8,11 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - generate query invariants for in-line associations (artf3100)
+ *                        - factor out CDA base model dependencies (artf3350)
  *     
  * $Id$
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cda.transform;
+package org.openhealthtools.mdht.uml.transform.ecore;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,12 +22,12 @@ import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.ValueSpecification;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
+import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
+import org.openhealthtools.mdht.uml.transform.ecore.IEcoreProfileReflection.ValidationSeverityKind;
+import org.openhealthtools.mdht.uml.transform.ecore.IEcoreProfileReflection.ValidationStereotypeKind;
 
 public class TransformConstraint extends TransformAbstract {
-	private static final String VALIDATION_QUERY = "constraints.validation.query";
-
 	private static boolean isQueryConstraint(Constraint constraint) {
 		boolean inline = false;
 		for (Comment comment : constraint.getOwnedComments()) {
@@ -38,8 +39,8 @@ public class TransformConstraint extends TransformAbstract {
 		return inline;
 	}
 
-	public TransformConstraint(TransformerOptions options) {
-		super(options);
+	public TransformConstraint(TransformerOptions options, IBaseModelReflection baseModelReflection) {
+		super(options, baseModelReflection);
 	}
 
 	@Override
@@ -50,8 +51,9 @@ public class TransformConstraint extends TransformAbstract {
 		}
 
 		// must get message before Analysis lang is removed
-		String severity = CDAModelUtil.getValidationSeverity(constraint);
-		String message = CDAModelUtil.getValidationMessage(constraint);
+		ValidationSeverityKind severity = getEcoreProfile().getValidationSeverity(
+			constraint, ValidationStereotypeKind.ANY);
+		String message = getEcoreProfile().getValidationMessage(constraint, ValidationStereotypeKind.ANY);
 
 		// remove all spec languages other than the first OCL expression
 		ValueSpecification spec = constraint.getSpecification();
@@ -95,20 +97,20 @@ public class TransformConstraint extends TransformAbstract {
 			annotateQueryConstraint(constraint, constrainedClass);
 		}
 
-		if (SEVERITY_INFO.equals(severity)) {
-			addValidationInfo(constrainedClass, constraint.getName(), message);
-		} else if (SEVERITY_WARNING.equals(severity)) {
-			addValidationWarning(constrainedClass, constraint.getName(), message);
-		} else {
-			addValidationError(constrainedClass, constraint.getName(), message);
+		if (severity != null) {
+			switch (severity) {
+				case INFO:
+					addValidationInfo(constrainedClass, constraint.getName(), message);
+					break;
+				case WARNING:
+					addValidationWarning(constrainedClass, constraint.getName(), message);
+					break;
+				default:
+					addValidationError(constrainedClass, constraint.getName(), message);
+					break;
+			}
 		}
 
 		return constraint;
-	}
-
-	static void annotateQueryConstraint(Constraint constraint, Class context) {
-		AnnotationsUtil annotationsUtil = new AnnotationsUtil(context);
-		annotationsUtil.addAnnotation(VALIDATION_QUERY, constraint.getName());
-		annotationsUtil.saveAnnotations();
 	}
 }

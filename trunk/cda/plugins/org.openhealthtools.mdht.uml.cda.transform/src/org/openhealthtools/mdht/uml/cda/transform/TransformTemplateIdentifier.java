@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson and others.
+ * Copyright (c) 2009, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,6 +8,7 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     John T.E. Timm (IBM Corporation) - added support for contextDependent
+ *     Christian W. Damus - factor out CDA base model dependencies (artf3350)
  *     
  * $Id$
  *******************************************************************************/
@@ -15,22 +16,29 @@ package org.openhealthtools.mdht.uml.cda.transform;
 
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.util.UMLUtil;
+import org.openhealthtools.mdht.uml.cda.core.profile.ConformsTo;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.transform.EcoreTransformUtil;
+import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
+import org.openhealthtools.mdht.uml.transform.ecore.AnnotationsUtil;
+import org.openhealthtools.mdht.uml.transform.ecore.IEcoreProfileReflection.ValidationSeverityKind;
+import org.openhealthtools.mdht.uml.transform.ecore.IEcoreProfileReflection.ValidationStereotypeKind;
+import org.openhealthtools.mdht.uml.transform.ecore.TransformAbstract;
 
 public class TransformTemplateIdentifier extends TransformAbstract {
 	private static final String REGISTRY_DELEGATE_NAME = "RegistryDelegate";
 
-	public TransformTemplateIdentifier(TransformerOptions options) {
-		super(options);
+	public TransformTemplateIdentifier(TransformerOptions options, IBaseModelReflection baseModelReflection) {
+		super(options, baseModelReflection);
 	}
 
 	@Override
@@ -67,6 +75,45 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 		addValidationError(umlClass, createConstraintName(umlClass, "TemplateId"), message);
 	}
 
+	protected String createTemplateConstraintName(Class template) {
+		String constraintName = null;
+		Generalization generalization = null;
+		ValidationSeverityKind severity = null;
+		boolean requiresParentId = false;
+
+		if (template.getGeneralizations().size() > 0) {
+			// use the first generalization, assuming it is used for implementation class extension
+			generalization = template.getGeneralizations().get(0);
+			severity = getEcoreProfile().getValidationSeverity(generalization, ValidationStereotypeKind.ANY);
+			if (severity == null) {
+				severity = ValidationSeverityKind.ERROR;
+			}
+		}
+
+		// if general class is a template and conformsTo is ERROR severity
+		if ((severity == ValidationSeverityKind.ERROR) &&
+				CDAModelUtil.getTemplateId((Class) generalization.getGeneral()) != null) {
+			Stereotype stereotype = CDAProfileUtil.applyCDAStereotype(generalization, ICDAProfileConstants.CONFORMS_TO);
+			if (stereotype != null) {
+				ConformsTo conformsTo = (ConformsTo) generalization.getStereotypeApplication(stereotype);
+				requiresParentId = conformsTo.isRequiresParentId();
+			}
+
+			if (!requiresParentId) {
+				// use constraint name of parent class
+				constraintName = createTemplateConstraintName((Class) generalization.getGeneral());
+			}
+			// else {
+			// System.out.println("requiresParentId: " + template.getQualifiedName() + " = " + constraintName);
+			// }
+		}
+
+		if (constraintName == null) {
+			constraintName = createConstraintName(template, "TemplateId");
+		}
+		return constraintName;
+	}
+
 	private void addAnnotation(Class umlClass, Stereotype hl7Template) {
 		String templateId = (String) umlClass.getValue(hl7Template, ICDAProfileConstants.CDA_TEMPLATE_TEMPLATE_ID);
 		Boolean contextDependent = false;
@@ -76,7 +123,7 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 		} catch (IllegalArgumentException e) {
 		}
 
-		AnnotationsUtil annotationsUtil = new AnnotationsUtil(umlClass);
+		AnnotationsUtil annotationsUtil = getEcoreProfile().annotate(umlClass);
 		annotationsUtil.setAnnotation("templateId.root", templateId);
 		if (contextDependent) {
 			createRegistryDelegate(umlClass);
@@ -93,13 +140,13 @@ public class TransformTemplateIdentifier extends TransformAbstract {
 			String prefix = (String) umlPackage.getValue(ePackage, UMLUtil.TAG_DEFINITION__PREFIX);
 			String name = prefix + "RegistryDelegate";
 			if (umlPackage.getOwnedType(name) == null) {
-				org.eclipse.uml2.uml.Package cdaPackage = getCDAPackage(umlClass);
+				org.eclipse.uml2.uml.Package cdaPackage = getBaseModel(umlClass);
 				if (cdaPackage != null) {
 					Interface delegateInterface = (Interface) cdaPackage.getOwnedType(REGISTRY_DELEGATE_NAME);
 					if (delegateInterface != null) {
 						Class delegateClass = umlPackage.createOwnedClass(name, false);
 						delegateClass.createInterfaceRealization(null, delegateInterface);
-						AnnotationsUtil annotationsUtil = new AnnotationsUtil(umlPackage);
+						AnnotationsUtil annotationsUtil = getEcoreProfile().annotate(umlPackage);
 						annotationsUtil.setAnnotation("registryDelegate", name);
 						annotationsUtil.saveAnnotations();
 					}

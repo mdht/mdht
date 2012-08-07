@@ -61,12 +61,6 @@ public abstract class AbstractTransformer {
 		newModelPkg = UMLFactory.eINSTANCE.createPackage();
 		newModelResource.getContents().add(newModelPkg);
 
-		// apply CDA profile
-		// Profile cdaProfile = CDAProfileUtil.getCDAProfile(element.eResource().getResourceSet());
-		// if (cdaProfile != null) {
-		// newModelPkg.applyProfile(cdaProfile);
-		// }
-
 		// assign Ecore EPackage stereotype
 		Stereotype ePackage = EcoreTransformUtil.getEcoreStereotype(sourcePkg, UMLUtil.STEREOTYPE__E_PACKAGE);
 		UMLUtil.safeApplyStereotype(newModelPkg, ePackage);
@@ -74,31 +68,8 @@ public abstract class AbstractTransformer {
 		newModelPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__NS_PREFIX, nsPrefix);
 		newModelPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__PREFIX, prefix);
 
-		// String modelPackageName = null;
-		// String modelNsURI = null;
-		// String modelBasePackage = null;
-
-		// Stereotype modelCodeGen = CDAProfileUtil.getAppliedCDAStereotype(
-		// sourcePkg, ICDAProfileConstants.CODEGEN_SUPPORT);
-		// if (modelCodeGen != null) {
-		// modelPackageName = (String) sourcePkg.getValue(
-		// modelCodeGen, ICDAProfileConstants.CODEGEN_SUPPORT_PACKAGE_NAME);
-		// modelNsURI = (String) sourcePkg.getValue(modelCodeGen, ICDAProfileConstants.CODEGEN_SUPPORT_NS_URI);
-		// modelBasePackage = (String) sourcePkg.getValue(
-		// modelCodeGen, ICDAProfileConstants.CODEGEN_SUPPORT_BASE_PACKAGE);
-		// }
-
 		newModelPkg.setName(sourcePkg.getName());
 		newModelPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__PACKAGE_NAME, sourcePkg.getName());
-
-		// if (modelBasePackage != null && modelPackageName != null) {
-		// newModelPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__BASE_PACKAGE, modelBasePackage + "." +
-		// modelPackageName);
-		// }
-		//
-		// if (modelNsURI != null) {
-		// newModelPkg.setValue(ePackage, UMLUtil.TAG_DEFINITION__NS_URI, modelNsURI + "/" + nsPrefix);
-		// }
 
 		return newModelPkg;
 	}

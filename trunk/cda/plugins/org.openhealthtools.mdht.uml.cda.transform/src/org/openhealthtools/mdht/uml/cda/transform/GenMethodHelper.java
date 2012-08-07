@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 David A Carlson, IBM Corporation, and others.
+ * Copyright (c) 2011, 2012 David A Carlson, IBM Corporation, and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,6 +9,7 @@
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Kenn Hussey - using annotations instead of expressions for Java bodies
  *     Kenn Hussey - fixing problems with generating facade for HITSP
+ *     Christian W. Damus - factor out CDA dependencies from UML-to-Ecore transformation (artf3350)
  *     
  * $Id$
  *******************************************************************************/
@@ -32,6 +33,7 @@ import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
 import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
+import org.openhealthtools.mdht.uml.transform.ecore.TransformAbstract;
 
 public class GenMethodHelper {
 	public static final String LF = System.getProperty("line.separator");

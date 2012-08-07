@@ -9,7 +9,7 @@
  *     Christian W. Damus - initial API and implementation
  *     
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cda.transform;
+package org.openhealthtools.mdht.uml.transform.ecore;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.uml.Element;

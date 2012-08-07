@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010 David A Carlson.
+ * Copyright (c) 2010, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - factor out CDA dependencies from UML-to-Ecore transformation (artf3350)
  *     
  * $Id$
  *******************************************************************************/
@@ -166,5 +167,10 @@ public interface ICDAProfileConstants {
 	/** @deprecated */
 	@Deprecated
 	public static final String ENTRY_RELATIONSHIP_KIND = "EntryRelationshipKind";
+
+	/**
+	 * Base source URI for CDA code-generation annotations.
+	 */
+	public static final String CDA_ANNOTATION_SOURCE = "http://www.openhealthtools.org/mdht/uml/cda/annotation";
 
 }

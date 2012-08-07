@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009 David A Carlson.
+ * Copyright (c) 2009, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,17 +7,20 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - factor out CDA base model dependencies (artf3350)
  *     
  * $Id$
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.transform;
 
 import org.eclipse.uml2.uml.Class;
+import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
+import org.openhealthtools.mdht.uml.transform.ecore.TransformAbstract;
 
 public class TransformClinicalDocument extends TransformAbstract {
-	public TransformClinicalDocument(TransformerOptions options) {
-		super(options);
+	public TransformClinicalDocument(TransformerOptions options, IBaseModelReflection baseModelReflection) {
+		super(options, baseModelReflection);
 	}
 
 	@Override

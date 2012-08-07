@@ -8,40 +8,38 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *     Christian W. Damus - more accurate association multiplicity constraints (artf3100)
+ *                        - support local datatype subclasses (artf3350)
  *
  * $Id$
  */
-package org.openhealthtools.mdht.uml.cda.transform;
+package org.openhealthtools.mdht.uml.transform.ecore;
 
-import static org.openhealthtools.mdht.uml.cda.transform.TransformInlinedAssociations.getInlineFilter;
-import static org.openhealthtools.mdht.uml.cda.transform.TransformInlinedAssociations.isInlineClass;
+import static org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties.getInlineFilter;
+import static org.openhealthtools.mdht.uml.transform.ecore.TransformInlinedProperties.isInlineClass;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Constraint;
-import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Property;
-import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAModelUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.CDAProfileUtil;
-import org.openhealthtools.mdht.uml.cda.core.util.ICDAProfileConstants;
-import org.openhealthtools.mdht.uml.cda.transform.internal.Logger;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
+import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
+import org.openhealthtools.mdht.uml.transform.ecore.IEcoreProfileReflection.ValidationSeverityKind;
+import org.openhealthtools.mdht.uml.transform.ecore.IEcoreProfileReflection.ValidationStereotypeKind;
+import org.openhealthtools.mdht.uml.transform.internal.Logger;
 
-public class TransformAssociation extends TransformAbstract {
+public abstract class TransformAssociation extends TransformAbstract {
 
-	public TransformAssociation(TransformerOptions options) {
-		super(options);
+	public TransformAssociation(TransformerOptions options, IBaseModelReflection baseModelReflection) {
+		super(options, baseModelReflection);
 	}
 
 	@Override
@@ -78,10 +76,10 @@ public class TransformAssociation extends TransformAbstract {
 			return null;
 		}
 
-		Class cdaSourceClass = getCDAClass(sourceClass);
-		Class cdaTargetClass = getCDAClass(targetClass);
+		Class baseSourceClass = getBaseClass(sourceClass);
+		Class baseTargetClass = getBaseClass(targetClass);
 
-		if (cdaSourceClass == null || cdaTargetClass == null) {
+		if (baseSourceClass == null || baseTargetClass == null) {
 			String message = "Unsupported association: " + sourceClass.getQualifiedName() + " -> " +
 					sourceProperty.getType().getQualifiedName();
 			Logger.log(Logger.ERROR, message);
@@ -95,9 +93,20 @@ public class TransformAssociation extends TransformAbstract {
 		// For untemplated classes (subclasses of CDA), use the base CDA class (last parent).
 		Class constraintTarget = targetClass;
 		List<Classifier> parents = new ArrayList<Classifier>(targetClass.getGenerals());
-		while (!parents.isEmpty() && CDAModelUtil.getTemplateId(constraintTarget) == null) {
+		while (!parents.isEmpty() && !getEcoreProfile().isPrimaryEClass(constraintTarget)) {
 			if (parents.get(0) instanceof Class) {
 				constraintTarget = (Class) parents.remove(0);
+			}
+		}
+
+		// if we still don't have a template ID and we're a nested class (which will get tossed away),
+		// then the nearest non-nested parent
+		if (!getEcoreProfile().isPrimaryEClass(constraintTarget) && isInlineClass(constraintTarget)) {
+			for (Classifier next : constraintTarget.allParents()) {
+				if ((next instanceof Class) && !isInlineClass((Class) next)) {
+					constraintTarget = (Class) next;
+					break;
+				}
 			}
 		}
 
@@ -107,95 +116,36 @@ public class TransformAssociation extends TransformAbstract {
 		// Organizer -> { Act, Encounter, ... }
 		// { Act, Encounter, ... } -> { Act, Encounter, ... }
 
-		String cdaTargetName = cdaTargetClass.getName();
-		String cdaTargetLowerName = cdaTargetName.substring(0, 1).toLowerCase() + cdaTargetName.substring(1);
-		String cdaTargetQName = cdaTargetClass.getQualifiedName();
+		String baseTargetName = baseTargetClass.getName();
+		String baseTargetLowerName = baseTargetName.substring(0, 1).toLowerCase() + baseTargetName.substring(1);
+		String baseTargetQName = baseTargetClass.getQualifiedName();
 
 		String constraintTargetQName = constraintTarget.getQualifiedName();
 
-		StringBuffer constraintBody = new StringBuffer();
-		Stereotype stereotype = null;
+		StringBuilder constraintBody = new StringBuilder();
+		StringBuilder operationBody = new StringBuilder();
 
-		StringBuffer operationBody = new StringBuffer();
+		if (!handleSpecialAssociation(
+			constraintBody, operationBody, sourceProperty, sourceClass, targetClass, constraintTargetQName)) {
 
-		if ((CDAModelUtil.isClinicalDocument(sourceClass) || CDAModelUtil.isSection(sourceClass)) &&
-				CDAModelUtil.isSection(targetClass)) {
-			// ClinicalDocument -> Section || Section -> Section
-			constraintBody.append("self.getAllSections()->");
-			constraintBody.append((sourceProperty.getUpper() == 1)
-					? "one("
-					: "exists(");
-			constraintBody.append("section : cda::Section | not section.oclIsUndefined() and section.oclIsKindOf(" +
-					constraintTargetQName + "))");
+			String[] associationEndOut = new String[1];
+			String[] variableDeclarationOut = new String[1];
+			if (getAssociationEndAndIteratorDeclaration(
+				sourceProperty, sourceClass, baseSourceClass, targetClass, baseTargetClass, associationEndOut,
+				variableDeclarationOut)) {
+				firstOrderAssociation = true;
+			}
+			String associationEnd = associationEndOut[0];
+			String variableDeclaration = variableDeclarationOut[0];
 
-			// start building "getter" operation body
-			operationBody.append(constraintBody.toString().replace("one", "select").replace("exists", "select"));
-		} else {
-			String associationEnd = null;
-			String variableDeclaration = null;
-			// if (CDAModelUtil.isSection(sourceClass) && CDAModelUtil.isClinicalStatement(targetClass)) {
-			if (CDAModelUtil.isSection(sourceClass) &&
-					(CDAModelUtil.isClinicalStatement(targetClass) || CDAModelUtil.isEntry(targetClass))) {
-				associationEnd = "entry";
-				variableDeclaration = "entry : cda::Entry";
-			} else if (CDAModelUtil.isOrganizer(sourceClass) && CDAModelUtil.isClinicalStatement(targetClass)) {
-				associationEnd = "component";
-				variableDeclaration = "component : cda::Component4";
-			} else if (CDAModelUtil.isClinicalStatement(sourceClass) && CDAModelUtil.isClinicalStatement(targetClass)) {
-				associationEnd = "entryRelationship";
-				variableDeclaration = "entryRelationship : cda::EntryRelationship";
-			} else if (CDAModelUtil.isClinicalStatement(sourceClass) &&
-					"ParticipantRole".equals(cdaTargetClass.getName())) {
-				associationEnd = "participant";
-				variableDeclaration = "participant : cda::Participant2";
-			} else if (CDAModelUtil.isClinicalStatement(sourceClass) &&
-					"AssignedEntity".equals(cdaTargetClass.getName())) {
-				associationEnd = "performer";
-				variableDeclaration = "performer : cda::Performer2";
-			} else {
+			if ((associationEnd == null) || (variableDeclaration == null)) {
+				String message = "Unsupported association: " + sourceClass.getQualifiedName() + " -> " +
+						targetClass.getQualifiedName();
+				Logger.log(Logger.ERROR, message);
 
-				// See if we have a property with the same class type
-				Property property = cdaSourceClass.getOwnedAttribute(null, targetClass, true, null, false);
-
-				// If not - walk the hierarchy and check for properties
-				if (property == null) {
-					for (Classifier c : targetClass.allParents()) {
-
-						property = cdaSourceClass.getOwnedAttribute(null, c, true, null, false);
-
-						if (property != null || CDAModelUtil.isCDAModel(c)) {
-							break;
-						}
-
-					}
-				}
-
-				// If we still can not find - use the name - this is not optimal but CDA has some hop scotch hierarchies such as consumable and
-				// manufactured product
-				if (property == null) {
-					property = cdaSourceClass.getOwnedAttribute(sourceProperty.getName(), null, true, null, false);
-				}
-
-				// If we found it, process it
-				if (property != null) {
-					associationEnd = property.getName();
-
-					variableDeclaration = property.getName() + " : cda::" + property.getType().getName();
-
-					// do not generate a getter already there
-					firstOrderAssociation = true;
-
-				} else {
-
-					String message = "Unsupported association: " + sourceClass.getQualifiedName() + " -> " +
-							targetClass.getQualifiedName();
-					Logger.log(Logger.ERROR, message);
-
-					removeModelElement(sourceProperty);
-					removeModelElement(association);
-					return null;
-				}
-
+				removeModelElement(sourceProperty);
+				removeModelElement(association);
+				return null;
 			}
 
 			final String selector = !isInlineClass(targetClass)
@@ -255,42 +205,14 @@ public class TransformAssociation extends TransformAbstract {
 			constraintBody.append(" | ");
 
 			String reference = associationEnd;
-			if (!firstOrderAssociation && !CDAModelUtil.isEntry(targetClass)) {
-				reference += "." + cdaTargetLowerName;
+			if (!firstOrderAssociation && !isImplicitAssociation(sourceProperty, sourceClass, targetClass)) {
+				reference += "." + baseTargetLowerName;
 			}
 			constraintBody.append("not " + reference + ".oclIsUndefined() and ");
 			constraintBody.append(reference + ".oclIsKindOf(" + constraintTargetQName + ")");
 
-			if (CDAModelUtil.isSection(sourceClass) &&
-					(CDAModelUtil.isClinicalStatement(targetClass) || CDAModelUtil.isEntry(targetClass))) {
-				// Section -> Entry, Section -> clinicalStatement (entry)
-				stereotype = CDAProfileUtil.getAppliedCDAStereotype(association, ICDAProfileConstants.ENTRY);
-			} else if (CDAModelUtil.isClinicalStatement(sourceClass) && CDAModelUtil.isClinicalStatement(targetClass) &&
-					!CDAModelUtil.isOrganizer(sourceClass)) {
-				// clinicalStatement (not Organizer) -> clinicalStatement (entryRelationship)
-				stereotype = CDAProfileUtil.getAppliedCDAStereotype(
-					association, ICDAProfileConstants.ENTRY_RELATIONSHIP);
-			} else {
-				stereotype = null;
-			}
-
-			if (stereotype != null) {
-				Object value = association.getValue(stereotype, ICDAProfileConstants.ENTRY_RELATIONSHIP_TYPE_CODE);
-				String typeCode = null;
-				if (value instanceof EnumerationLiteral) {
-					typeCode = ((EnumerationLiteral) value).getName();
-				} else if (value instanceof Enumerator) {
-					typeCode = ((Enumerator) value).getName();
-				}
-
-				if (typeCode != null) {
-					String enumerationQName = CDAModelUtil.isSection(sourceClass)
-							? "vocab::x_ActRelationshipEntry"
-							: "vocab::x_ActRelationshipEntryRelationship";
-					constraintBody.append(" and " + associationEnd + ".typeCode = " + enumerationQName + "::" +
-							typeCode);
-				}
-			}
+			// handle any stereotypes that may be applied to the association
+			appendAssociationStereotypeConditions(constraintBody, association, associationEnd, sourceClass, targetClass);
 
 			// close off the 'select' or 'exists' or 'one' iterator
 			constraintBody.append(")");
@@ -322,21 +244,14 @@ public class TransformAssociation extends TransformAbstract {
 			}
 
 			// start building "getter" operation body
-			operationBody.append("self.get" + pluralize(cdaTargetName) + "()->select(");
-			operationBody.append(cdaTargetLowerName + " : " + cdaTargetQName + " | ");
-			operationBody.append("not " + cdaTargetLowerName + ".oclIsUndefined() and ");
-			operationBody.append(cdaTargetLowerName + ".oclIsKindOf(" + constraintTargetQName + "))");
+			operationBody.append("self.get" + pluralize(baseTargetName) + "()->select(");
+			operationBody.append(baseTargetLowerName + " : " + baseTargetQName + " | ");
+			operationBody.append("not " + baseTargetLowerName + ".oclIsUndefined() and ");
+			operationBody.append(baseTargetLowerName + ".oclIsKindOf(" + constraintTargetQName + "))");
 		}
 
-		// if (CDAModelUtil.getTemplateId(sourceClass) == null
-		// || CDAModelUtil.getTemplateId(targetClass) == null) {
-		// String message = "Source or target is not a template: "
-		// + sourceClass.getQualifiedName()
-		// + " -> " + targetClass.getQualifiedName();
-		// Logger.log(Logger.WARNING, message);
-		// }
-
-		String severity = CDAModelUtil.getValidationSeverity(association);
+		ValidationSeverityKind severity = getEcoreProfile().getValidationSeverity(
+			association, ValidationStereotypeKind.ANY);
 		if (severity != null) {
 			String constraintName = createConstraintName(sourceProperty);
 			Constraint constraint = sourceClass.createOwnedRule(constraintName, UMLPackage.eINSTANCE.getConstraint());
@@ -347,10 +262,10 @@ public class TransformAssociation extends TransformAbstract {
 			expression.getLanguages().add("OCL");
 			expression.getBodies().add(constraintBody.toString());
 
-			String validationMessage = CDAModelUtil.getValidationMessage(association);
-			if ("INFO".equals(severity)) {
+			String validationMessage = getEcoreProfile().getValidationMessage(association, ValidationStereotypeKind.ANY);
+			if (severity == ValidationSeverityKind.INFO) {
 				addValidationInfo(sourceClass, constraintName, validationMessage);
-			} else if ("WARNING".equals(severity)) {
+			} else if (severity == ValidationSeverityKind.WARNING) {
 				addValidationWarning(sourceClass, constraintName, validationMessage);
 			} else {
 				addValidationError(sourceClass, constraintName, validationMessage);
@@ -369,7 +284,7 @@ public class TransformAssociation extends TransformAbstract {
 
 			String operationName = "get";
 			if (!UMLUtil.getRedefinedProperties(sourceProperty).isEmpty()) {
-				operationName += CDAModelUtil.getModelPrefix(sourceProperty);
+				operationName += getEcoreProfile().getModelPrefix(sourceProperty);
 			}
 			operationName += ((sourceProperty.getUpper() == 1)
 					? capitalize(sourceProperty.getName())
@@ -392,5 +307,25 @@ public class TransformAssociation extends TransformAbstract {
 		removeModelElement(association);
 
 		return association;
+	}
+
+	protected boolean isImplicitAssociation(Property sourceProperty, Class sourceClass, Class targetClass) {
+		return false;
+	}
+
+	protected boolean handleSpecialAssociation(StringBuilder constraintBody, StringBuilder operationBody,
+			Property sourceProperty, Class sourceClass, Class targetClass, String constraintTargetQName) {
+
+		return false;
+	}
+
+	protected abstract boolean getAssociationEndAndIteratorDeclaration(Property sourceProperty, Class sourceClass,
+			Class baseSourceClass, Class targetClass, Class baseTargetClass, String[] associationEndOut,
+			String[] variableDeclarationOut);
+
+	protected boolean appendAssociationStereotypeConditions(StringBuilder constraintBody, Association association,
+			String associationEnd, Class sourceClass, Class targetClass) {
+
+		return false;
 	}
 }

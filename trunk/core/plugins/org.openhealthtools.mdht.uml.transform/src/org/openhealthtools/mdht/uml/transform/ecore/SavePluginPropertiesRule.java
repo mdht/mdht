@@ -9,7 +9,7 @@
  *     Christian W. Damus - initial API and implementation
  *     
  *******************************************************************************/
-package org.openhealthtools.mdht.uml.cda.transform;
+package org.openhealthtools.mdht.uml.transform.ecore;
 
 import org.eclipse.emf.ecore.EObject;
 import org.openhealthtools.mdht.transform.core.ITransformMonitor;
@@ -24,7 +24,7 @@ import org.openhealthtools.mdht.uml.transform.PluginPropertiesUtil;
 public class SavePluginPropertiesRule extends AbstractRule {
 
 	public SavePluginPropertiesRule() {
-		super(ICDAEcoreTransformIDs.SAVE_PLUGIN_PROPERTIES_RULE, RuleKind.SAVE, "Save plugin.properties file");
+		super(IEcoreTransformIDs.SAVE_PLUGIN_PROPERTIES_RULE, RuleKind.SAVE, "Save plugin.properties file");
 	}
 
 	@Override
