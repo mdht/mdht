@@ -22,7 +22,9 @@ import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.edit.providers.StereotypeItemProvider;
@@ -82,16 +84,27 @@ public class StereotypeExtItemProvider extends StereotypeItemProvider implements
 	 */
 	@Override
 	public Collection<Element> getChildren(Object object) {
-		Stereotype clazz = (Stereotype) object;
+		Stereotype stereotype = (Stereotype) object;
 		List<Element> children = new ArrayList<Element>();
-		children.addAll(clazz.getOwnedComments());
-		children.addAll(clazz.getOwnedRules());
-		// children.addAll(clazz.getExtensions());
-		children.addAll(clazz.getGeneralizations());
-		children.addAll(clazz.getOwnedAttributes());
-		children.addAll(clazz.getOwnedOperations());
-		children.addAll(clazz.getNestedClassifiers());
-		children.addAll(clazz.getClientDependencies());
+		children.addAll(stereotype.getOwnedComments());
+
+		for (Property property : stereotype.getOwnedAttributes()) {
+			if (!(property.getAssociation() instanceof Extension)) {
+				children.add(property);
+			}
+		}
+
+		for (Property property : stereotype.getOwnedAttributes()) {
+			if (property.getAssociation() instanceof Extension) {
+				children.add(property.getAssociation());
+			}
+		}
+
+		children.addAll(stereotype.getOwnedOperations());
+		children.addAll(stereotype.getNestedClassifiers());
+		children.addAll(stereotype.getOwnedRules());
+		children.addAll(stereotype.getClientDependencies());
+		children.addAll(stereotype.getGeneralizations());
 
 		return children;
 	}

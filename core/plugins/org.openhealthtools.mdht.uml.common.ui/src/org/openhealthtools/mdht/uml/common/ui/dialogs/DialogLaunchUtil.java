@@ -92,7 +92,11 @@ public class DialogLaunchUtil {
 			String message) {
 		List<Element> typeList = new ArrayList<Element>();
 		for (int i = 0; i < filter.length; i++) {
-			typeList.addAll(ModelSearch.findAllOf(umlPackage, filter[i]));
+			for (Element element : ModelSearch.findAllOf(umlPackage, filter[i])) {
+				if (!typeList.contains(element)) {
+					typeList.add(element);
+				}
+			}
 		}
 
 		ElementSelectionDialog dialog = new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
@@ -109,7 +113,11 @@ public class DialogLaunchUtil {
 			String message) {
 		List<Element> typeList = new ArrayList<Element>();
 		for (int i = 0; i < filter.length; i++) {
-			typeList.addAll(ModelSearch.findAllOf(resource, filter[i]));
+			for (Element element : ModelSearch.findAllOf(resource, filter[i])) {
+				if (!typeList.contains(element)) {
+					typeList.add(element);
+				}
+			}
 		}
 
 		ElementSelectionDialog dialog = new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
@@ -129,7 +137,11 @@ public class DialogLaunchUtil {
 			String message) {
 		List<Element> typeList = new ArrayList<Element>();
 		for (int i = 0; i < filter.length; i++) {
-			typeList.addAll(ModelSearch.findAllOf(resourceSet, filter[i]));
+			for (Element element : ModelSearch.findAllOf(resourceSet, filter[i])) {
+				if (!typeList.contains(element)) {
+					typeList.add(element);
+				}
+			}
 		}
 
 		ElementSelectionDialog dialog = new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
@@ -140,6 +152,14 @@ public class DialogLaunchUtil {
 			return (NamedElement) dialog.getFirstResult();
 		}
 		return null;
+	}
+
+	/**
+	 * 
+	 */
+	public static NamedElement chooseElement(IElementFilter filter, ResourceSet resourceSet, Shell shell) {
+		return chooseElement(
+			filter, resourceSet, shell, Messages.ElementSelectionDialog_title, Messages.ElementSelectionDialog_message);
 	}
 
 	/**
@@ -168,6 +188,37 @@ public class DialogLaunchUtil {
 	/**
 	 * 
 	 */
+	public static NamedElement chooseElement(IElementFilter filter, Package umlPackage, Shell shell) {
+		return chooseElement(
+			filter, umlPackage, shell, Messages.ElementSelectionDialog_title, Messages.ElementSelectionDialog_message);
+	}
+
+	/**
+	 * 
+	 */
+	public static NamedElement chooseElement(IElementFilter filter, Package umlPackage, Shell shell, String title,
+			String message) {
+		if (title == null) {
+			title = Messages.ElementSelectionDialog_title;
+		}
+		if (message == null) {
+			message = Messages.ElementSelectionDialog_message;
+		}
+		List<Element> typeList = ModelSearch.findAllOf(umlPackage, filter);
+
+		ElementSelectionDialog dialog = new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), typeList);
+		dialog.setTitle(title);
+		dialog.setMessage(message);
+
+		if (dialog.open() == Window.OK) {
+			return (NamedElement) dialog.getFirstResult();
+		}
+		return null;
+	}
+
+	/**
+	 * 
+	 */
 	public static Package choosePackage(ResourceSet resourceSet, Shell shell) {
 		List<Element> packagesList = ModelSearch.findAllOf(resourceSet, Package.class);
 		Package[] packages = packagesList.toArray(new Package[packagesList.size()]);
@@ -181,6 +232,24 @@ public class DialogLaunchUtil {
 
 		if (dialog.open() == Window.OK) {
 			return (Package) dialog.getFirstResult();
+		}
+		return null;
+	}
+
+	public static org.eclipse.uml2.uml.Class chooseUMLMetaclass(ResourceSet resourceSet, Shell shell) {
+		return chooseUMLMetaclass(resourceSet, shell, "Metaclass Selection", "Select UML metaclass for extension:");
+	}
+
+	public static org.eclipse.uml2.uml.Class chooseUMLMetaclass(ResourceSet resourceSet, Shell shell, String title,
+			String message) {
+		List<org.eclipse.uml2.uml.Class> classList = ModelSearch.findUMLMetaclasses(resourceSet);
+
+		ElementSelectionDialog dialog = new ElementSelectionDialog(shell, new ProgressMonitorDialog(shell), classList);
+		dialog.setTitle(title);
+		dialog.setMessage(message);
+
+		if (dialog.open() == Window.OK) {
+			return (org.eclipse.uml2.uml.Class) dialog.getFirstResult();
 		}
 		return null;
 	}

@@ -29,10 +29,17 @@ import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
+import org.openhealthtools.mdht.uml.common.ui.search.PropertyTypeFilter;
+import org.openhealthtools.mdht.uml.common.ui.search.StereotypePropertyTypeFilter;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 
@@ -56,11 +63,32 @@ public class AddUMLAssociationAction extends UML2AbstractAction {
 						if (Class.class.isInstance(element)) {
 							Class source = (Class) element;
 
+							Package topPackage = UMLUtil.getTopPackage(source);
+							NamedElement type = null;
+							Class target = null;
+
 							// prompt for target class
-							Class target = (Class) DialogLaunchUtil.chooseElement(
-								new java.lang.Class[] { Class.class }, source.eResource().getResourceSet(),
-								activePart.getSite().getShell(), UML2UIMessages.TargetSelectionDialog_title,
-								UML2UIMessages.TargetSelectionDialog_message);
+							if (topPackage instanceof Profile) {
+								if (source instanceof Stereotype) {
+									type = DialogLaunchUtil.chooseElement(
+										new StereotypePropertyTypeFilter(), topPackage,
+										activePart.getSite().getShell(), UML2UIMessages.TargetSelectionDialog_title,
+										UML2UIMessages.TargetSelectionDialog_message);
+								} else {
+									type = DialogLaunchUtil.chooseElement(
+										new PropertyTypeFilter(), topPackage, activePart.getSite().getShell(),
+										UML2UIMessages.TargetSelectionDialog_title,
+										UML2UIMessages.TargetSelectionDialog_message);
+								}
+							} else {
+								// TODO refine selection for redefined properties to include only subtypes.
+								type = DialogLaunchUtil.chooseElement(
+									new PropertyTypeFilter(), topPackage, activePart.getSite().getShell());
+							}
+
+							if (type instanceof Class) {
+								target = (Class) type;
+							}
 							if (target == null) {
 								return Status.CANCEL_STATUS;
 							}

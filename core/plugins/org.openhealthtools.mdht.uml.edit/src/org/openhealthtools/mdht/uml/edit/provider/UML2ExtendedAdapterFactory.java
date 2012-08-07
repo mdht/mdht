@@ -113,6 +113,15 @@ public class UML2ExtendedAdapterFactory extends UMLItemProviderAdapterFactory {
 		return associationClassItemProvider;
 	}
 
+	@Override
+	public Adapter createExtensionAdapter() {
+		if (extensionItemProvider == null) {
+			extensionItemProvider = new ExtensionExtItemProvider(this);
+		}
+
+		return extensionItemProvider;
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
