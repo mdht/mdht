@@ -321,12 +321,46 @@ public class ConstraintSection extends WrapperAwareModelerPropertySection {
 		EObject element = getEObject();
 		Assert.isTrue(element instanceof Constraint);
 		this.constraint = (Constraint) element;
+
+		initializeLanguageSelection();
 	}
 
 	@Override
 	public void dispose() {
 		super.dispose();
 
+	}
+
+	private void initializeLanguageSelection() {
+		final OpaqueExpression spec = (constraint.getSpecification() instanceof OpaqueExpression)
+				? (OpaqueExpression) constraint.getSpecification()
+				: null;
+
+		int currentIndex = languageCombo.getSelectionIndex();
+		String currentLanguage = currentIndex == -1
+				? ""
+				: languageCombo.getItem(currentIndex);
+
+		int languageIndex = currentIndex == -1
+				? 0
+				: currentIndex;
+
+		if (spec != null) {
+			final List<String> knownLangs = Arrays.asList(languages);
+			final List<String> specLangs = spec.getLanguages();
+			final List<String> specBodies = spec.getBodies();
+
+			if (!specLangs.contains(currentLanguage)) {
+				for (int i = 0; (i < specBodies.size()) && (i < specLangs.size()); i++) {
+					if (!UML2Util.isEmpty(specBodies.get(i)) && knownLangs.contains(specLangs.get(i))) {
+						languageIndex = knownLangs.indexOf(specLangs.get(i));
+						break;
+					}
+				}
+			}
+		}
+
+		languageCombo.select(languageIndex);
 	}
 
 	@Override
