@@ -413,6 +413,25 @@
       </objectContribution>
    </extension>
          
+   <!-- UML Profile edit menu items -->
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.openhealthtools.mdht.uml.ui.navigator.UMLDomainNavigatorItem"
+            id="mdht.objectContribution.uml.profile">
+         <visibility>
+            <objectState name="umlType" value="Profile"/>
+         </visibility>
+         <action
+               label="%addUMLStereotype.label"
+               icon="icons/full/obj16/Stereotype.gif"
+               class="org.openhealthtools.mdht.uml.ui.actions.AddStereotypeAction"
+               menubarPath="mdht.addUML/classifierGroup"
+               enablesFor="1"
+               id="mdht.actions.addUML.stereotype">
+         </action>
+      </objectContribution>
+   </extension>
+         
    <!-- Profile and Stereotype actions -->
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution

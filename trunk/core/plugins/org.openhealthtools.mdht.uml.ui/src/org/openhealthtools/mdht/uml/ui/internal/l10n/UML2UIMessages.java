@@ -36,6 +36,8 @@ public class UML2UIMessages extends NLS {
 
 	public static String AddUMLPackage_default_name;
 
+	public static String AddStereotype_operation_title;
+
 	public static String AddUMLClass_operation_title;
 
 	public static String AddUMLClass_default_name;

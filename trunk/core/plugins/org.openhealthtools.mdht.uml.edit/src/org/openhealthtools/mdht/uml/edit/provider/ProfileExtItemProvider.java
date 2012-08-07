@@ -16,7 +16,6 @@ package org.openhealthtools.mdht.uml.edit.provider;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -81,27 +80,33 @@ public class ProfileExtItemProvider extends ProfileItemProvider implements ITabl
 	}
 
 	@Override
-	public Collection getChildren(Object object) {
+	public Collection<Object> getChildren(Object object) {
 		Profile pkg = (Profile) object;
-		List children = new ArrayList();
+		List<Object> children = new ArrayList<Object>();
 		children.addAll(pkg.getOwnedComments());
 		children.addAll(pkg.getOwnedRules());
 
-		List sortedPackages = new ArrayList(pkg.getNestedPackages());
+		List<Package> sortedPackages = new ArrayList<Package>(pkg.getNestedPackages());
 		Collections.sort(sortedPackages, new NamedElementComparator());
 		children.addAll(sortedPackages);
 
-		List sortedTypes = new ArrayList();
-		for (Iterator members = pkg.getOwnedTypes().iterator(); members.hasNext();) {
-			Type type = (Type) members.next();
-			if (type instanceof org.eclipse.uml2.uml.Class || type instanceof Interface || type instanceof DataType) {
+		List<Type> sortedStereotypes = new ArrayList<Type>();
+		List<Type> sortedTypes = new ArrayList<Type>();
+		for (Type type : pkg.getOwnedTypes()) {
+			if (type instanceof org.eclipse.uml2.uml.Stereotype) {
+				sortedStereotypes.add(type);
+			} else if (type instanceof org.eclipse.uml2.uml.Class || type instanceof Interface ||
+					type instanceof DataType) {
 				sortedTypes.add(type);
 			}
 		}
+		Collections.sort(sortedStereotypes, new NamedElementComparator());
 		Collections.sort(sortedTypes, new NamedElementComparator());
+		children.addAll(sortedStereotypes);
 		children.addAll(sortedTypes);
 
 		children.addAll(pkg.getPackageImports());
+		children.addAll(pkg.getElementImports());
 		children.addAll(pkg.getClientDependencies());
 
 		return children;

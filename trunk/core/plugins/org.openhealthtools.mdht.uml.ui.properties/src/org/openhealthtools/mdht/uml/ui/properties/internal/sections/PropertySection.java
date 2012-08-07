@@ -57,13 +57,18 @@ import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.MultiplicityElement;
 import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Stereotype;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
+import org.openhealthtools.mdht.uml.common.ui.search.PropertyTypeFilter;
+import org.openhealthtools.mdht.uml.common.ui.search.StereotypePropertyTypeFilter;
 import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
 
@@ -220,16 +225,44 @@ public class PropertySection extends WrapperAwareModelerPropertySection {
 
 	private void openPropertyTypeDialog(final Property property) {
 		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(property);
+		Package topPackage = UMLUtil.getTopPackage(property);
+		NamedElement type = null;
 
-		final NamedElement type = DialogLaunchUtil.chooseElement(
-			new java.lang.Class[] { org.eclipse.uml2.uml.Class.class, DataType.class }, editingDomain.getResourceSet(),
-			getPart().getSite().getShell());
+		if (topPackage instanceof Profile) {
+			if (property.getAssociation() instanceof Extension) {
+				type = DialogLaunchUtil.chooseUMLMetaclass(
+					editingDomain.getResourceSet(), getPart().getSite().getShell());
+			} else if (property.getClass_() instanceof Stereotype) {
+				type = DialogLaunchUtil.chooseElement(
+					new StereotypePropertyTypeFilter(), topPackage, getPart().getSite().getShell());
+			} else {
+				type = DialogLaunchUtil.chooseElement(
+					new PropertyTypeFilter(), topPackage, getPart().getSite().getShell());
+			}
+		} else {
+			// TODO refine selection for redefined properties to include only subtypes.
+			// type = DialogLaunchUtil.chooseElement(
+			// new PropertyTypeFilter(), editingDomain.getResourceSet(), getPart().getSite().getShell());
+			type = DialogLaunchUtil.chooseElement(new PropertyTypeFilter(), topPackage, getPart().getSite().getShell());
+		}
 
-		if (type != null) {
+		if (type instanceof Classifier) {
+			final Classifier classifier = (Classifier) type;
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Set Type") {
 				@Override
 				protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) {
-					property.setType((Classifier) type);
+					property.setType(classifier);
+
+					if (property.getAssociation() instanceof Extension && classifier instanceof Class) {
+						Class metaclass = (Class) classifier;
+						Profile profile = (Profile) property.getAssociation().getPackage();
+
+						// assure that metaclass is imported
+						if (!profile.getReferencedMetaclasses().contains(metaclass) &&
+								!profile.getReferencedMetamodels().contains(metaclass.getModel())) {
+							profile.createMetaclassReference(metaclass);
+						}
+					}
 
 					// refresh children, cause change notification to be sent
 					Class owner = property.getClass_();

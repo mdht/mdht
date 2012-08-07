@@ -43,11 +43,12 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.NamedElement;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
+import org.openhealthtools.mdht.uml.common.ui.search.GeneralizationTypeFilter;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.ui.properties.sections.WrapperAwareModelerPropertySection;
 
 /**
@@ -100,12 +101,8 @@ public class ClassifierSection extends WrapperAwareModelerPropertySection {
 	private void openBaseTypeDialog() {
 		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(classifier);
 
-		java.lang.Class baseClass = org.eclipse.uml2.uml.Class.class;
-		if (classifier instanceof DataType) {
-			baseClass = DataType.class;
-		}
 		final NamedElement type = DialogLaunchUtil.chooseElement(
-			new java.lang.Class[] { baseClass }, editingDomain.getResourceSet(), getPart().getSite().getShell());
+			new GeneralizationTypeFilter(classifier), UMLUtil.getTopPackage(classifier), getPart().getSite().getShell());
 
 		if (type != null) {
 			IUndoableOperation operation = new AbstractEMFOperation(editingDomain, "Set Base Type") {

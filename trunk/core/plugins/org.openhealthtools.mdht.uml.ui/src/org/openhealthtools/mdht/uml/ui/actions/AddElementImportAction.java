@@ -27,9 +27,9 @@ import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.part.ISetSelectionTarget;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
+import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ElementImport;
-import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
@@ -58,7 +58,7 @@ public class AddElementImportAction extends UML2AbstractAction {
 
 							// prompt for element
 							Classifier element = (Classifier) DialogLaunchUtil.chooseElement(
-								new java.lang.Class[] { Class.class, Enumeration.class },
+								new java.lang.Class[] { Class.class, DataType.class },
 								umlPackage.eResource().getResourceSet(), activePart.getSite().getShell(),
 								UML2UIMessages.ElementImportSelectionDialog_title,
 								UML2UIMessages.ElementImportSelectionDialog_message);

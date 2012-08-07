@@ -138,16 +138,20 @@ import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
 import org.openhealthtools.mdht.uml.common.ui.saveable.ModelDocument;
 import org.openhealthtools.mdht.uml.common.ui.saveable.ModelManager;
+import org.openhealthtools.mdht.uml.common.ui.search.PropertyTypeFilter;
+import org.openhealthtools.mdht.uml.common.ui.search.StereotypePropertyTypeFilter;
 import org.openhealthtools.mdht.uml.common.ui.util.AdapterFactoryCellModifier;
 import org.openhealthtools.mdht.uml.common.ui.util.ComboBoxTextCellEditor;
 import org.openhealthtools.mdht.uml.common.ui.util.IResourceConstants;
@@ -452,6 +456,23 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 	 */
 	public EditingDomain getEditingDomain() {
 		return editingDomain;
+	}
+
+	public Element getSelectedElement() {
+		Element element = null;
+		ISelection selection = getSite().getSelectionProvider().getSelection();
+
+		if (((IStructuredSelection) selection).size() == 1) {
+			Object firstElement = ((IStructuredSelection) selection).getFirstElement();
+			if (firstElement instanceof UMLDomainNavigatorItem) {
+				firstElement = ((UMLDomainNavigatorItem) firstElement).getEObject();
+			}
+			if (firstElement instanceof Element) {
+				element = (Element) firstElement;
+			}
+		}
+
+		return element;
 	}
 
 	public AdapterFactory getAdapterFactory() {
@@ -764,9 +785,26 @@ public class UMLTableEditor extends EditorPart implements IEditingDomainProvider
 
 			@Override
 			protected Object openDialogBox(Control cellEditorWindow) {
-				NamedElement type = DialogLaunchUtil.chooseElement(
-					new java.lang.Class[] { org.eclipse.uml2.uml.Class.class, DataType.class },
-					editingDomain.getResourceSet(), getSite().getShell());
+				Element selectedElement = getSelectedElement();
+				Package topPackage = UMLUtil.getTopPackage(selectedElement);
+				NamedElement type = null;
+
+				if (topPackage instanceof Profile) {
+					if (selectedElement instanceof Extension) {
+						type = DialogLaunchUtil.chooseUMLMetaclass(editingDomain.getResourceSet(), getSite().getShell());
+					} else if (selectedElement instanceof Property &&
+							((Property) selectedElement).getClass_() instanceof Stereotype) {
+						type = DialogLaunchUtil.chooseElement(
+							new StereotypePropertyTypeFilter(), topPackage, getSite().getShell());
+					} else {
+						type = DialogLaunchUtil.chooseElement(
+							new PropertyTypeFilter(), topPackage, getSite().getShell());
+					}
+
+				} else {
+					// type = DialogLaunchUtil.chooseElement(new PropertyTypeFilter(), editingDomain.getResourceSet(), getSite().getShell());
+					type = DialogLaunchUtil.chooseElement(new PropertyTypeFilter(), topPackage, getSite().getShell());
+				}
 
 				return type;
 			}

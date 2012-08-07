@@ -29,6 +29,8 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Generalization;
 import org.openhealthtools.mdht.uml.common.ui.dialogs.DialogLaunchUtil;
+import org.openhealthtools.mdht.uml.common.ui.search.GeneralizationTypeFilter;
+import org.openhealthtools.mdht.uml.common.util.UMLUtil;
 import org.openhealthtools.mdht.uml.ui.internal.Logger;
 import org.openhealthtools.mdht.uml.ui.internal.l10n.UML2UIMessages;
 
@@ -54,9 +56,10 @@ public class AddGeneralizationAction extends UML2AbstractAction {
 
 							// prompt for parent class
 							Class parent = (Class) DialogLaunchUtil.chooseElement(
-								new java.lang.Class[] { Class.class }, child.eResource().getResourceSet(),
+								new GeneralizationTypeFilter(child), UMLUtil.getTopPackage(child),
 								activePart.getSite().getShell(), UML2UIMessages.GeneralizationSelectionDialog_title,
 								UML2UIMessages.GeneralizationSelectionDialog_message);
+
 							if (parent == null) {
 								return Status.CANCEL_STATUS;
 							}
