@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2011 IBM Corporation and others.
+ * Copyright (c) 2009, 2012 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,6 +9,8 @@
  *     IBM Corporation - initial API and implementation
  *     Sean Muir (JKM Software) - package loading, snippet generation
  *     David A Carlson (XMLmodeling.com) - various helper methods
+ *     Christian W. Damus - flexible, pluggable instance initializers (artf3272)
+ *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.util;
 
@@ -49,7 +51,6 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -62,6 +63,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
@@ -74,6 +76,11 @@ import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.ocl.ecore.OCLExpression;
+import org.openhealthtools.mdht.emf.runtime.resource.DOMDocumentHandlerImpl;
+import org.openhealthtools.mdht.emf.runtime.resource.FleXMLResource;
+import org.openhealthtools.mdht.emf.runtime.resource.FleXMLResourceSet;
+import org.openhealthtools.mdht.emf.runtime.resource.XSITypeProvider;
+import org.openhealthtools.mdht.emf.runtime.util.Initializer;
 import org.openhealthtools.mdht.uml.cda.Act;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.CDAPackage;
@@ -96,8 +103,9 @@ import org.openhealthtools.mdht.uml.cda.Section;
 import org.openhealthtools.mdht.uml.cda.StructuredBody;
 import org.openhealthtools.mdht.uml.cda.SubstanceAdministration;
 import org.openhealthtools.mdht.uml.cda.Supply;
-import org.openhealthtools.mdht.uml.cda.internal.registry.CDARegistry;
 import org.openhealthtools.mdht.uml.cda.internal.resource.CDAResource;
+import org.openhealthtools.mdht.uml.cda.internal.resource.CDAResourceFactoryImpl;
+import org.openhealthtools.mdht.uml.cda.internal.resource.CDAXSITypeProvider;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.rim.InfrastructureRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntry;
@@ -115,35 +123,113 @@ public class CDAUtil {
 
 	private static final Pattern COMPONENT_PATTERN = Pattern.compile("(^[A-Za-z0-9]+)(\\[([1-9]+[0-9]*)\\])?");
 
+	static {
+		// configure the CDA resource implementation
+		CDAResourceFactoryImpl.init();
+	}
+
 	/**
 	 * List of all template classes derived from ClinicalDocument.
 	 */
 	public static Map<String, EClass> getAllDocumentClasses() {
-		return CDARegistry.INSTANCE.getAllDocumentClasses();
+		Map<String, EClass> result;
+
+		XSITypeProvider provider = XSITypeProvider.Registry.INSTANCE.getXSITypeProvider(CDAPackage.eINSTANCE);
+		if (provider instanceof CDAXSITypeProvider) {
+			result = Collections.unmodifiableMap(((CDAXSITypeProvider) provider).getAllDocumentClasses());
+		} else {
+			result = Collections.emptyMap();
+		}
+
+		return result;
 	}
 
 	/**
 	 * If not null, use this EClass as the document root in loader.
+	 * 
+	 * @deprecated Use resource sets created by the {@link #createResourceSet(EClass)} or {@link #createResourceSet(String)} API to force a particular document class in resource loading
 	 */
+	@Deprecated
 	public static EClass getDocumentClass() {
-		return CDARegistry.INSTANCE.getDocumentClass();
+		EClass result = null;
+
+		XSITypeProvider provider = XSITypeProvider.Registry.INSTANCE.getXSITypeProvider(CDAPackage.eINSTANCE);
+		if (provider instanceof CDAXSITypeProvider) {
+			result = ((CDAXSITypeProvider) provider).getDocumentClass();
+		}
+
+		return result;
 	}
 
 	/**
 	 * EClass to use as the document root, or set to null for default behavior of
 	 * discovering EClass based on templateId.
+	 * 
+	 * @deprecated Use the {@link #createResourceSet(EClass)} API, instead, to create a resource set configured to load documents of the given type
 	 */
+	@Deprecated
 	public static void setDocumentClass(EClass eClass) {
-		CDARegistry.INSTANCE.setDocumentClass(eClass);
+		XSITypeProvider.Registry.INSTANCE.registerXSITypeProvider(CDAPackage.eINSTANCE, new CDAXSITypeProvider(eClass));
 	}
 
 	/**
 	 * Model qualified name (e.g. ccd::ContinuityOfCareDocument) of the EClass to use 
 	 * as the document root, or set to null for default behavior of
 	 * discovering EClass based on templateId.
+	 * 
+	 * @deprecated Use the {@link #createResourceSet(String)} API, instead, to create a resource set configured to load documents of the given type
 	 */
+	@Deprecated
 	public static void setDocumentClassQName(String documentClassQName) {
-		CDARegistry.INSTANCE.setDocumentClassQName(documentClassQName);
+		XSITypeProvider.Registry.INSTANCE.registerXSITypeProvider(CDAPackage.eINSTANCE, new CDAXSITypeProvider(
+			documentClassQName));
+	}
+
+	/**
+	 * Creates a new resource set for loading CDA-based XML documents.
+	 * 
+	 * @return the resource set
+	 * 
+	 * @see #createResourceSet(EClass)
+	 * @see #createResourceSet(String)
+	 */
+	public static FleXMLResourceSet createResourceSet() {
+		return FleXMLResourceSet.Factory.INSTANCE.createResourceSet().setDefaultResourceFactory(
+			CDAResource.Factory.INSTANCE);
+	}
+
+	/**
+	 * Creates a new resource set for loading CDA-based XML documents of a specified {@link EClass} type.
+	 * 
+	 * @param documentClass my forced document class, or {@code null} to discover the document class by template ID
+	 * 
+	 * @return the resource set
+	 */
+	public static FleXMLResourceSet createResourceSet(EClass eClass) {
+		FleXMLResourceSet result = FleXMLResourceSet.Factory.INSTANCE.createResourceSet().setDefaultResourceFactory(
+			CDAResource.Factory.INSTANCE);
+
+		result.getXSITypeProviderRegistry().registerXSITypeProvider(
+			CDAPackage.eINSTANCE, new CDAXSITypeProvider(eClass));
+
+		return result;
+	}
+
+	/**
+	 * Creates a new resource set for loading CDA-based XML documents of a specified document class type.
+	 * 
+	 * @param documentClassQName my forced document class's qualified name, or {@code null} to discover the document class by template ID
+	 * 
+	 * @return the resource set
+	 */
+	public static FleXMLResourceSet createResourceSet(String documentClassQName) {
+		FleXMLResourceSet result = FleXMLResourceSet.Factory.INSTANCE.createResourceSet().setDefaultResourceFactory(
+			CDAResource.Factory.INSTANCE);
+
+		result.getXSITypeProviderRegistry().registerXSITypeProvider(
+			CDAPackage.eINSTANCE, new CDAXSITypeProvider(documentClassQName));
+
+		return result;
 	}
 
 	public static ClinicalDocument load(InputStream in) throws Exception {
@@ -158,27 +244,27 @@ public class CDAUtil {
 		return load(document, (ValidationHandler) null);
 	}
 
-	public static ClinicalDocument load(InputStream in, ValidationHandler handler) throws Exception {
-		DocumentBuilder builder = newDocumentBuilder();
-		Document document = builder.parse(in);
-		return load(document, handler);
+	public static ClinicalDocument load(InputStream in, final ValidationHandler handler) throws Exception {
+		return load(CDAUtil.createResourceSet((EClass) null), generateURI(), in, handler);
 	}
 
-	public static ClinicalDocument load(InputSource is, ValidationHandler handler) throws Exception {
-		DocumentBuilder builder = newDocumentBuilder();
-		Document document = builder.parse(is);
-		return load(document, handler);
-	}
-
-	public static ClinicalDocument load(Document document, ValidationHandler handler) throws Exception {
-		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
+	public static ClinicalDocument load(ResourceSet resourceSet, URI uri, InputStream in,
+			final ValidationHandler handler) throws Exception {
+		XMLResource resource = (XMLResource) resourceSet.createResource(uri);
+		Map<Object, Object> options = new java.util.HashMap<Object, Object>();
 
 		if (handler != null) {
 			// perform XML schema validation BEFORE load for base standard compliance (complete)
-			performSchemaValidation(document, handler);
+			options.put(FleXMLResource.OPTION_DOM_DOCUMENT_HANDLER, new DOMDocumentHandlerImpl() {
+				@Override
+				public void aboutToLoadDOM(Document document) {
+					performSchemaValidation(document, handler);
+				}
+			});
 		}
 
-		resource.load(document, null);
+		resource.load(in, options);
+
 		DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
 		ClinicalDocument clinicalDocument = root.getClinicalDocument();
 
@@ -190,21 +276,149 @@ public class CDAUtil {
 		return clinicalDocument;
 	}
 
+	public static ClinicalDocument load(InputSource is, final ValidationHandler handler) throws Exception {
+		return load(CDAUtil.createResourceSet((EClass) null), generateURI(), is, handler);
+	}
+
+	public static ClinicalDocument load(ResourceSet resourceSet, URI uri, InputSource is,
+			final ValidationHandler handler) throws Exception {
+		XMLResource resource = (XMLResource) resourceSet.createResource(uri);
+		Map<Object, Object> options = new java.util.HashMap<Object, Object>();
+
+		if (handler != null) {
+			// perform XML schema validation BEFORE load for base standard compliance (complete)
+			options.put(FleXMLResource.OPTION_DOM_DOCUMENT_HANDLER, new DOMDocumentHandlerImpl() {
+				@Override
+				public void aboutToLoadDOM(Document document) {
+					performSchemaValidation(document, handler);
+				}
+			});
+		}
+
+		resource.load(is, options);
+
+		DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
+		ClinicalDocument clinicalDocument = root.getClinicalDocument();
+
+		if (handler != null) {
+			// perform EMF validation AFTER load for base standard compliance (subset) + IG-specific compliance
+			performEMFValidation(clinicalDocument, handler);
+		}
+
+		return clinicalDocument;
+	}
+
+	public static ClinicalDocument load(Document document, final ValidationHandler handler) throws Exception {
+		return load(CDAUtil.createResourceSet((EClass) null), generateURI(), document, handler);
+	}
+
+	public static ClinicalDocument load(ResourceSet resourceSet, URI uri, Document document,
+			final ValidationHandler handler) throws Exception {
+		XMLResource resource = (XMLResource) resourceSet.createResource(uri);
+		Map<Object, Object> options = new java.util.HashMap<Object, Object>();
+
+		if (handler != null) {
+			// perform XML schema validation BEFORE load for base standard compliance (complete)
+			options.put(FleXMLResource.OPTION_DOM_DOCUMENT_HANDLER, new DOMDocumentHandlerImpl() {
+				@Override
+				public void aboutToLoadDOM(Document document) {
+					performSchemaValidation(document, handler);
+				}
+			});
+		}
+
+		resource.load(document, options);
+
+		DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
+		ClinicalDocument clinicalDocument = root.getClinicalDocument();
+
+		if (handler != null) {
+			// perform EMF validation AFTER load for base standard compliance (subset) + IG-specific compliance
+			performEMFValidation(clinicalDocument, handler);
+		}
+
+		return clinicalDocument;
+	}
+
+	public static ClinicalDocument load(URI uri, final ValidationHandler handler) throws Exception {
+		return load(CDAUtil.createResourceSet((EClass) null), uri, handler);
+	}
+
+	private static int uriCounter = 0;
+
+	private static URI generateURI() {
+		URI uri = URI.createURI("http:///resource" + uriCounter + ".xml");
+		uriCounter++;
+		return uri;
+	}
+
+	public static ClinicalDocument load(ResourceSet resourceSet, URI uri, final ValidationHandler handler)
+			throws Exception {
+		XMLResource resource = (XMLResource) resourceSet.createResource(uri);
+		Map<Object, Object> options = new java.util.HashMap<Object, Object>();
+
+		if (handler != null) {
+			// perform XML schema validation BEFORE load for base standard compliance (complete)
+			options.put(FleXMLResource.OPTION_DOM_DOCUMENT_HANDLER, new DOMDocumentHandlerImpl() {
+				@Override
+				public void aboutToLoadDOM(Document document) {
+					performSchemaValidation(document, handler);
+				}
+			});
+		}
+
+		resource.load(options);
+
+		DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
+		ClinicalDocument clinicalDocument = root.getClinicalDocument();
+
+		if (handler != null) {
+			// perform EMF validation AFTER load for base standard compliance (subset) + IG-specific compliance
+			performEMFValidation(clinicalDocument, handler);
+		}
+
+		return clinicalDocument;
+	}
+
+	/**
+	 * @deprecated Use the {@link #load(ResourceSet, URI, LoadHandler)} API, instead.
+	 */
+	@Deprecated
 	public static ClinicalDocument load(InputStream in, LoadHandler handler) throws Exception {
 		DocumentBuilder builder = newDocumentBuilder();
 		Document doc = builder.parse(in);
 		return load(doc, handler);
 	}
 
+	/**
+	 * @deprecated Use the {@link #load(ResourceSet, URI, LoadHandler)} API, instead.
+	 */
+	@Deprecated
 	public static ClinicalDocument load(InputSource is, LoadHandler handler) throws Exception {
 		DocumentBuilder builder = newDocumentBuilder();
 		Document doc = builder.parse(is);
 		return load(doc, handler);
 	}
 
+	/**
+	 * @deprecated Use the {@link #load(ResourceSet, URI, LoadHandler)} API, instead.
+	 */
+	@Deprecated
 	public static ClinicalDocument load(Document doc, LoadHandler handler) throws Exception {
-		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
+		XMLResource resource = (XMLResource) createResourceSet().createResource(URI.createURI(CDAPackage.eNS_URI));
+
 		resource.load(doc, null);
+		if (handler != null) {
+			processResource(resource, handler);
+		}
+		DocumentRoot root = (DocumentRoot) resource.getContents().get(0);
+		return root.getClinicalDocument();
+	}
+
+	public static ClinicalDocument load(ResourceSet resourceSet, URI uri, LoadHandler handler) throws Exception {
+		XMLResource resource = (XMLResource) resourceSet.createResource(uri);
+
+		resource.load(null);
 		if (handler != null) {
 			processResource(resource, handler);
 		}
@@ -251,7 +465,7 @@ public class CDAUtil {
 	}
 
 	public static void save(ClinicalDocument clinicalDocument, OutputStream out, boolean defaults) throws Exception {
-		CDAResource resource = prepare(clinicalDocument, defaults);
+		XMLResource resource = prepare(clinicalDocument, defaults);
 		resource.save(out, null);
 	}
 
@@ -260,22 +474,22 @@ public class CDAUtil {
 	}
 
 	public static void save(ClinicalDocument clinicalDocument, Writer writer, boolean defaults) throws Exception {
-		CDAResource resource = prepare(clinicalDocument, defaults);
+		XMLResource resource = prepare(clinicalDocument, defaults);
 		resource.save(writer, null);
 	}
 
 	public static Document save(ClinicalDocument clinicalDocument, DOMHandler handler) throws Exception {
-		CDAResource resource = prepare(clinicalDocument, true);
+		XMLResource resource = prepare(clinicalDocument, true);
 		return resource.save(newDocumentBuilder().newDocument(), null, handler);
 	}
 
-	private static CDAResource prepare(ClinicalDocument clinicalDocument, boolean defaults) {
+	private static XMLResource prepare(ClinicalDocument clinicalDocument, boolean defaults) {
 		if (defaults) {
 			handleDefaults(clinicalDocument);
 		}
-		CDAResource resource = (CDAResource) clinicalDocument.eResource();
+		XMLResource resource = (XMLResource) clinicalDocument.eResource();
 		if (resource == null) {
-			resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
+			resource = (XMLResource) createResourceSet().createResource(URI.createURI(CDAPackage.eNS_URI));
 			DocumentRoot root = CDAFactory.eINSTANCE.createDocumentRoot();
 			root.setClinicalDocument(clinicalDocument);
 			root.getXMLNSPrefixMap().put("", CDAPackage.eNS_URI);
@@ -302,12 +516,12 @@ public class CDAUtil {
 	}
 
 	public static void saveSnippet(InfrastructureRoot snippet, OutputStream out, boolean defaults) throws Exception {
-		CDAResource resource = prepare(snippet, defaults);
+		XMLResource resource = prepare(snippet, defaults);
 		resource.save(out, null);
 	}
 
 	public static void saveSnippet(InfrastructureRoot snippet, Writer writer) throws Exception {
-		CDAResource resource = prepare(snippet, true);
+		XMLResource resource = prepare(snippet, true);
 		resource.save(writer, null);
 
 	}
@@ -320,9 +534,9 @@ public class CDAUtil {
 	 * @return
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private static CDAResource prepare(InfrastructureRoot cdaSnippet, boolean defaults) {
+	private static XMLResource prepare(InfrastructureRoot cdaSnippet, boolean defaults) {
 
-		CDAResource resource = (CDAResource) CDAResource.Factory.INSTANCE.createResource(URI.createURI(CDAPackage.eNS_URI));
+		XMLResource resource = (XMLResource) createResourceSet().createResource(URI.createURI(CDAPackage.eNS_URI));
 
 		EClass documentRootEClass = EcoreFactory.eINSTANCE.createEClass();
 		documentRootEClass.setName("DocumentRoot");
@@ -752,16 +966,25 @@ public class CDAUtil {
 		return target;
 	}
 
-	// annotation processing to populate runtime instance
+	// initializer processing to populate runtime instance
 	public static void init(EObject eObject) {
-		List<EClass> classes = new ArrayList<EClass>(eObject.eClass().getEAllSuperTypes());
-		classes.add(eObject.eClass());
-		for (EClass eClass : classes) {
-			EAnnotation annotation = eClass.getEAnnotation(CDA_ANNOTATION_SOURCE);
-			if (annotation != null) {
-				init(eObject, annotation.getDetails().map());
-			}
+		final Initializer.Registry reg = Initializer.Util.getRegistry(eObject);
+
+		// for backwards compatibility, make sure that the annotation-based initializer is used for old packages
+		AnnotationBasedInitializer.ensureCompatibility(eObject.eClass(), reg);
+
+		init(eObject, reg);
+	}
+
+	// initializer processing to populate runtime instance
+	public static EObject init(EObject eObject, Initializer.Registry initializerRegistry) {
+		EObject result = eObject;
+
+		for (Initializer<? super EObject> next : initializerRegistry.getInitializers(eObject.eClass())) {
+			result = next.initialize(eObject);
 		}
+
+		return result;
 	}
 
 	public static void init(EObject eObject, Map<String, String> details) {

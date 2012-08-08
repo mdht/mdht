@@ -9,8 +9,21 @@
 <%}%>
 <%if (isImplementation) {%>
 	public <%=genClass.getInterfaceName()%> init() {
-    	<%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.util.CDAUtil")%>.init(this);
-    	return this;
+	    return <%=genModel.getImportedName("org.openhealthtools.mdht.emf.runtime.util.Initializer")%>.Util.init(this);
 	}
+<%}%>
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+<%if (isInterface) {%>
+    public <%=genClass.getInterfaceName()%> init(<%=genModel.getImportedName("java.lang.Iterable")%><? extends <%=genModel.getImportedName("org.openhealthtools.mdht.emf.runtime.util.Initializer")%><? extends <%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%>>> initializers);
+<%}%>
+<%if (isImplementation) {%>
+    public <%=genClass.getInterfaceName()%> init(<%=genModel.getImportedName("java.lang.Iterable")%><? extends <%=genModel.getImportedName("org.openhealthtools.mdht.emf.runtime.util.Initializer")%><? extends <%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%>>> initializers) {
+        <%=genModel.getImportedName("org.openhealthtools.mdht.emf.runtime.util.Initializer")%>.Util.init(this, initializers);
+        return this;
+    }
 <%}%>
 <%}%>

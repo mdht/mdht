@@ -1,0 +1,4 @@
+        // publish my initializers in the registry
+        <%=genModel.getImportedName("org.openhealthtools.mdht.emf.runtime.util.Initializer")%>.Registry.INSTANCE.registerFactory("<%=genPackage.getReflectionPackageName()%>", <%=genModel.getImportedName("org.openhealthtools.mdht.uml.cda.util.AnnotationBasedInitializer")%>.FACTORY);
+        <%=genModel.getImportedName("org.openhealthtools.mdht.emf.runtime.util.Initializer")%>.Registry.INSTANCE.initializeEPackage(the<%=genPackage.getBasicPackageName()%>);
+        

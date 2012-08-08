@@ -8,6 +8,8 @@
  * Contributors:
  *     Sean Muir (JKM Software) - initial API and implementation
  *     IBM Corporation - updated use of MDHT validation APIs
+ *     Christian W. Damus - refactored CDAResource, CDAUtil, CDARegistry on the new flexible XML resource (artf3367)
+ *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.internal.validate;
 
@@ -23,10 +25,10 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.openhealthtools.mdht.uml.cda.DocumentRoot;
 import org.openhealthtools.mdht.uml.cda.util.CDAUtil;
 import org.openhealthtools.mdht.uml.cda.util.ValidationResult;
-import org.xml.sax.InputSource;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
@@ -78,10 +80,6 @@ public class Validate {
 
 			if (cdaURI.isFile()) {
 
-				InputSource inputSource = new InputSource(cdaURI.path());
-
-				inputSource.setEncoding("UTF-8");
-
 				OutputStream fout = new FileOutputStream(args[1]);
 
 				OutputStream bout = new BufferedOutputStream(fout);
@@ -96,9 +94,9 @@ public class Validate {
 				parser.setContentHandler(xpathIndexer);
 
 				// set the document type class, or null to discover from templateId
+				String documentClassQName = null;
 				if (args.length >= 3) {
-					String documentClassQName = args[2];
-					CDAUtil.setDocumentClassQName(documentClassQName);
+					documentClassQName = args[2];
 				}
 
 				try {
@@ -107,7 +105,8 @@ public class Validate {
 
 					ValidationResult result = new ValidationResult();
 
-					CDAUtil.load(inputSource, result);
+					ResourceSet rset = CDAUtil.createResourceSet(documentClassQName);
+					CDAUtil.load(rset, cdaURI, result);
 
 					// handleError
 					for (Diagnostic diagnostic : result.getErrorDiagnostics()) {
