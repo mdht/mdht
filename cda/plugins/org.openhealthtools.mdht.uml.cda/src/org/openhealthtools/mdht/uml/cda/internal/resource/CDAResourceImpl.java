@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2011 IBM Corporation and others.
+ * Copyright (c) 2009, 2012 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,22 +7,24 @@
  *
  * Contributors:
  *     IBM Corporation - initial API and implementation
+ *     Christian W. Damus - refactored CDAResource, CDAUtil, CDARegistry on the new flexible XML resource (artf3367)
+ *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.internal.resource;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.xmi.XMLLoad;
-import org.eclipse.emf.ecore.xmi.XMLSave;
-import org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMLSaveImpl;
+import org.openhealthtools.mdht.emf.runtime.resource.impl.FleXMLResourceImpl;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Resource </b> associated with the package.
  * <!-- end-user-doc -->
  * @see org.openhealthtools.mdht.uml.cda.internal.resource.CDAResourceFactoryImpl
- * @generated
+ * @generated not
  */
-public class CDAResourceImpl extends XMLResourceImpl implements CDAResource {
+public class CDAResourceImpl extends FleXMLResourceImpl implements CDAResource {
+
 	/**
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
@@ -35,12 +37,7 @@ public class CDAResourceImpl extends XMLResourceImpl implements CDAResource {
 	}
 
 	@Override
-	protected XMLLoad createXMLLoad() {
-		return new CDALoadImpl(createXMLHelper());
-	}
-
-	@Override
-	protected XMLSave createXMLSave() {
+	protected XMLSaveImpl createXMLSave() {
 		return new CDASaveImpl(createXMLHelper());
 	}
 } // CDAResourceImpl

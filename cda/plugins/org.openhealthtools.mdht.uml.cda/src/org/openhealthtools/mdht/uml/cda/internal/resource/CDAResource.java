@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2011 IBM Corporation and others.
+ * Copyright (c) 2009, 2012 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,26 +7,27 @@
  *
  * Contributors:
  *     IBM Corporation - initial API and implementation
+ *     Christian W. Damus - refactored CDAResource, CDAUtil, CDARegistry on the new flexible XML resource (artf3367)
+ *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.internal.resource;
 
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.openhealthtools.mdht.emf.runtime.resource.FleXMLResource;
 
 /**
  * <!-- begin-user-doc -->
  * The resource associated with the '<em><b>cda</b></em>' package.
  * <!-- end-user-doc -->
- * @generated
+ * @generated not
  */
-public interface CDAResource extends XMLResource {
+public interface CDAResource extends FleXMLResource {
 	/**
 	 * <!-- begin-user-doc -->
 	 * The factory for '<em><b>cda</b></em>' resources.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
-	public interface Factory extends Resource.Factory {
+	public interface Factory extends FleXMLResource.Factory {
 
 		/**
 		 * <!-- begin-user-doc -->

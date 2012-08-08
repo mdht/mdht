@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2011 IBM Corporation and others.
+ * Copyright (c) 2009, 2012 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,8 @@
  *
  * Contributors:
  *     IBM Corporation - initial API and implementation
+ *     Christian W. Damus - refactored CDAResource, CDAUtil, CDARegistry on the new flexible XML resource (artf3367)
+ *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.internal.resource;
 
@@ -14,10 +16,14 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.XMLSave;
+import org.openhealthtools.mdht.emf.runtime.resource.DOMElementHandler;
+import org.openhealthtools.mdht.emf.runtime.resource.FleXMLResource;
+import org.openhealthtools.mdht.emf.runtime.resource.XSITypeHandler;
+import org.openhealthtools.mdht.emf.runtime.resource.XSITypeProvider;
+import org.openhealthtools.mdht.emf.runtime.resource.impl.FleXMLResourceFactoryImpl;
+import org.openhealthtools.mdht.uml.cda.CDAPackage;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
 
 /**
@@ -25,9 +31,19 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesPackage;
  * The <b>Resource Factory</b> associated with the package.
  * <!-- end-user-doc -->
  * @see org.openhealthtools.mdht.uml.cda.internal.resource.CDAResourceImpl
- * @generated
+ * @generated not
  */
-public class CDAResourceFactoryImpl extends ResourceFactoryImpl implements CDAResource.Factory {
+public class CDAResourceFactoryImpl extends FleXMLResourceFactoryImpl implements CDAResource.Factory {
+
+	static {
+		// configure the FleXMLResource registries
+		DOMElementHandler.Registry.INSTANCE.registerHandler(CDAPackage.eINSTANCE, new PartElementHandler()).registerHandler(
+			CDAPackage.eINSTANCE, new DataTypeElementHandler()).registerHandler(
+			CDAPackage.eINSTANCE, new XSITypeHandler(CDAPackage.eINSTANCE));
+
+		XSITypeProvider.Registry.INSTANCE.registerXSITypeProvider(CDAPackage.eINSTANCE, new CDAXSITypeProvider());
+	}
+
 	/**
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc -->
@@ -38,6 +54,15 @@ public class CDAResourceFactoryImpl extends ResourceFactoryImpl implements CDARe
 		super();
 	}
 
+	public static void init() {
+		// pass
+	}
+
+	@Override
+	protected FleXMLResource basicCreateResource(URI uri) {
+		return new CDAResourceImpl(uri);
+	}
+
 	/**
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
@@ -45,18 +70,10 @@ public class CDAResourceFactoryImpl extends ResourceFactoryImpl implements CDARe
 	 * @generated NOT
 	 */
 	@Override
-	public Resource createResource(URI uri) {
-		CDAResource result = new CDAResourceImpl(uri);
-		result.getDefaultSaveOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, Boolean.TRUE);
-		result.getDefaultLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, Boolean.TRUE);
+	public FleXMLResource createResource(URI uri) {
+		FleXMLResource result = super.createResource(uri);
 
-		result.getDefaultSaveOptions().put(XMLResource.OPTION_SCHEMA_LOCATION, Boolean.TRUE);
-
-		result.getDefaultLoadOptions().put(XMLResource.OPTION_USE_ENCODED_ATTRIBUTE_STYLE, Boolean.TRUE);
-		result.getDefaultSaveOptions().put(XMLResource.OPTION_USE_ENCODED_ATTRIBUTE_STYLE, Boolean.TRUE);
-
-		result.getDefaultLoadOptions().put(XMLResource.OPTION_USE_LEXICAL_HANDLER, Boolean.TRUE);
-		result.setEncoding(CDAResource.DEFAULT_ENCODING);
+		// this complements the DataTypeElementHandler that converts datatype xsi:type information on load
 		result.getDefaultSaveOptions().put(XMLResource.OPTION_SAVE_TYPE_INFORMATION, new XMLSave.XMLTypeInfo() {
 			public boolean shouldSaveType(EClass objectType, EClassifier featureType, EStructuralFeature feature) {
 				return objectType != featureType &&
@@ -67,14 +84,6 @@ public class CDAResourceFactoryImpl extends ResourceFactoryImpl implements CDARe
 				return false;
 			}
 		});
-
-		// result.getDefaultSaveOptions().put(XMLResource.OPTION_KEEP_DEFAULT_CONTENT, Boolean.TRUE);
-
-		// result.getDefaultLoadOptions().put(XMLResource.OPTION_LAX_FEATURE_PROCESSING, Boolean.TRUE);
-
-		result.getDefaultLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
-
-		// result.getDefaultLoadOptions().put(XMLResource.OPTION_RESOURCE_HANDLER, new CDAResourceHandler());
 
 		return result;
 	}
