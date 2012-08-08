@@ -14,7 +14,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.openhealthtools.mdht.uml.term.core,
  org.openhealthtools.mdht.uml.common,
  org.openhealthtools.mdht.uml.transform;visibility:=reexport,
- org.openhealthtools.mdht.uml.term.transform
+ org.openhealthtools.mdht.uml.term.transform,
+ org.openhealthtools.mdht.emf.runtime
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.cda.transform
 Bundle-ClassPath: .
