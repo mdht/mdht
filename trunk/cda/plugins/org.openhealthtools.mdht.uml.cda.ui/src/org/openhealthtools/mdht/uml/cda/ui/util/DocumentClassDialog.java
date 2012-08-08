@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 David A Carlson.
+ * Copyright (c) 2011, 2012 David A Carlson and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
+ *     Christian W. Damus - fixed NPE on cancel button (artf3367)
  *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.ui.util;
@@ -97,7 +98,7 @@ public class DocumentClassDialog {
 
 				dialog.open();
 				Object[] results = dialog.getResult();
-				if (results.length > 0) {
+				if ((results != null) && (results.length > 0)) {
 					documentClassQName = results[0].toString();
 				}
 			}
