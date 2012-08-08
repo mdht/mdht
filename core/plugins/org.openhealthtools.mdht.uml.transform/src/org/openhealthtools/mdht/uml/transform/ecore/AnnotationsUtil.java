@@ -11,6 +11,7 @@
  *     Christian W. Damus - reuse one annotation store for all utils on an element (artf3030)
  *                        - maintain consistent ordering of annotations (artf3306)
  *                        - factor out CDA dependencies from UML-to-Ecore transformation (artf3350)
+ *                        - flexible, pluggable instance initializers (artf3272)
  *     
  * $Id$
  *******************************************************************************/

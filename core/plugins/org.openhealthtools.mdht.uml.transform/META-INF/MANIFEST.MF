@@ -10,7 +10,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.uml2.uml;visibility:=reexport,
  org.eclipse.core.resources,
  org.openhealthtools.mdht.uml.common,
- org.openhealthtools.mdht.transform.core;visibility:=reexport
+ org.openhealthtools.mdht.transform.core;visibility:=reexport,
+ org.openhealthtools.mdht.emf.runtime
 Bundle-ActivationPolicy: lazy
 Export-Package: org.openhealthtools.mdht.uml.transform,
  org.openhealthtools.mdht.uml.transform.ecore
