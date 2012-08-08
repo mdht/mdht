@@ -8,6 +8,7 @@
  * Contributors:
  *     David A Carlson (XMLmodeling.com) - initial API and implementation
  *     Christian W. Damus - factor out CDA base model dependencies (artf3350)
+ *                        - flexible, pluggable instance initializers (artf3272)
  *     
  * $Id$
  *******************************************************************************/
@@ -16,6 +17,7 @@ package org.openhealthtools.mdht.uml.transform.ecore;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.util.UMLUtil;
+import org.openhealthtools.mdht.emf.runtime.util.Initializer;
 import org.openhealthtools.mdht.uml.transform.EcoreTransformUtil;
 import org.openhealthtools.mdht.uml.transform.IBaseModelReflection;
 import org.openhealthtools.mdht.uml.transform.TransformerOptions;
@@ -59,6 +61,33 @@ public class TransformPackage extends TransformAbstract {
 			// CDAProfileUtil.unapplyCDAStereotype(umlPackage, ICDAProfileConstants.CODEGEN_SUPPORT);
 		}
 
+		addInitializersAnnotation(umlPackage);
+
 		return umlPackage;
+	}
+
+	protected void addInitializersAnnotation(Package umlPackage) {
+		Stereotype ePackage = EcoreTransformUtil.getEcoreStereotype(umlPackage, UMLUtil.STEREOTYPE__E_PACKAGE);
+		if (!umlPackage.isStereotypeApplied(ePackage)) {
+			UMLUtil.safeApplyStereotype(umlPackage, ePackage);
+		}
+
+		String basePackage = (String) umlPackage.getValue(ePackage, UMLUtil.TAG_DEFINITION__BASE_PACKAGE);
+		if (basePackage == null) {
+			basePackage = "org.openhealthtools.mdht.uml.cda";
+		}
+
+		String packageName = (String) umlPackage.getValue(ePackage, UMLUtil.TAG_DEFINITION__PACKAGE_NAME);
+		if (packageName == null) {
+			packageName = umlPackage.getName();
+		}
+
+		if ((basePackage != null) && (packageName != null)) {
+			AnnotationsUtil annotations = new AnnotationsUtil(
+				umlPackage, Initializer.Util.INITIALIZERS_ANNOTATION_SOURCE);
+			annotations.setAnnotation(
+				Initializer.Util.INITIALIZERS_ANNOTATION_DETAIL, String.format("%s.%s", basePackage, packageName));
+			annotations.saveAnnotations();
+		}
 	}
 }
