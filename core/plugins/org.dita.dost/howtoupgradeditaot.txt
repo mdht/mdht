@@ -1,6 +1,0 @@
-Step 1 - Delete existing DITA-OT folder and contents (There is not custom content)
-Step 2 - Import from file system the latest DITA-OT Minimal Build and rename to DITA-OT
-Step 3 - Import/Add 3rd Party Saxon Libs (currently under lib/saxon)
-Step 4 - Update Bundle Version in MANIFEST.MF to appropriate version
-Step 5 - Update Bundle-ClassPath in MANIFEST.MF - Add all jar files under lib
-Step 6 - Add in any 3rd party publishing plugins 

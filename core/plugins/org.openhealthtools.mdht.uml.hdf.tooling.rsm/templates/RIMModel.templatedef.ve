@@ -1,8 +1,0 @@
-
-name=RIM Model
-description=Create a RIM Model
-modelName=RIM Model
-
-id=org.openhealthtools.modeling.hdf.rim.tooling.core.templates.RIMModel
-templateFile=RIMModel.emx
-icon=RIMModel.gif
