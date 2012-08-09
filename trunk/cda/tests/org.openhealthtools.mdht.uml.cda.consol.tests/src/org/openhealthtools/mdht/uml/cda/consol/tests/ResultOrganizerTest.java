@@ -160,7 +160,7 @@ public class ResultOrganizerTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated NOT
+	* @generated
 	*/
 	@Test
 	public void testValidateResultOrganizerClassCode() {
@@ -168,13 +168,6 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			"validateResultOrganizerClassCode",
 			operationsForOCL.getOCLValue("VALIDATE_RESULT_ORGANIZER_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
-
-			{
-				// we cannot violate the constraint because it only checks that the class
-				// code is non-null and of type x_ActClassDocumentEntryOrganizer but EMF
-				// and Java enforce this
-				this.skipFailsTest();
-			}
 
 			@Override
 			protected void updateToFail(ResultOrganizer target) {

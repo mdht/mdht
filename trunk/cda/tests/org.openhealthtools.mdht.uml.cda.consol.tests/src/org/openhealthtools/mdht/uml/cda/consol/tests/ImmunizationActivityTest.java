@@ -398,7 +398,8 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated 
+	* 
 	*/
 	@Test
 	public void testValidateImmunizationActivityClassCode() {

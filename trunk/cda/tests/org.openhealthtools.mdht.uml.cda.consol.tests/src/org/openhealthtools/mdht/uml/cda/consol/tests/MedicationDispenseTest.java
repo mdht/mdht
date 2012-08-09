@@ -47,13 +47,13 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseRepeatNumber(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Repeat Number</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Quantity</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformer2(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer2</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseMedicationSupplyOrder(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Medication Supply Order</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseProduct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Product</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispenseProductContainsMedicationOrImmunization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Product Contains Medication Or Immunization</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformerMedicationDispenseAssignedEntityAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer Medication Dispense Assigned Entity Addr</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#validateMedicationDispensePerformerMedicationDispenseAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Dispense Performer Medication Dispense Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#getMedicationSupplyOrder() <em>Get Medication Supply Order</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationDispense#getAssignedEntity() <em>Get Assigned Entity</em>}</li>
  * </ul>
  * </p>
  *
@@ -348,84 +348,6 @@ public class MedicationDispenseTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateMedicationDispensePerformer2() {
-		OperationsTestCase<MedicationDispense> validateMedicationDispensePerformer2TestCase = new OperationsTestCase<MedicationDispense>(
-			"validateMedicationDispensePerformer2",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_PERFORMER2__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationDispense target) {
-
-			}
-
-			@Override
-			protected void updateToPass(MedicationDispense target) {
-				target.init();
-				target.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationDispenseOperations.validateMedicationDispensePerformer2(
-					(MedicationDispense) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationDispensePerformer2TestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
-	public void testValidateMedicationDispenseAssignedEntity() {
-		OperationsTestCase<MedicationDispense> validateMedicationDispenseAssignedEntityTestCase = new OperationsTestCase<MedicationDispense>(
-			"validateMedicationDispenseAssignedEntity",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_ASSIGNED_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(MedicationDispense target) {
-
-				target.init();
-
-				Performer2 performer = CDAFactory.eINSTANCE.createPerformer2();
-				target.getPerformers().add(performer);
-			}
-
-			@Override
-			protected void updateToPass(MedicationDispense target) {
-
-				for (Performer2 performer : target.getPerformers()) {
-
-					AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
-					performer.setAssignedEntity(ae);
-				}
-
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return MedicationDispenseOperations.validateMedicationDispenseAssignedEntity(
-					(MedicationDispense) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateMedicationDispenseAssignedEntityTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated not
-	*/
-	@Test
 	public void testValidateMedicationDispenseProduct() {
 		OperationsTestCase<MedicationDispense> validateMedicationDispenseProductTestCase = new OperationsTestCase<MedicationDispense>(
 			"validateMedicationDispenseProduct",
@@ -452,6 +374,40 @@ public class MedicationDispenseTest extends CDAValidationTest {
 		};
 
 		validateMedicationDispenseProductTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateMedicationDispensePerformer() {
+		OperationsTestCase<MedicationDispense> validateMedicationDispensePerformerTestCase = new OperationsTestCase<MedicationDispense>(
+			"validateMedicationDispensePerformer",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_PERFORMER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationDispense target) {
+
+			}
+
+			@Override
+			protected void updateToPass(MedicationDispense target) {
+				target.init();
+				target.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationDispenseOperations.validateMedicationDispensePerformer(
+					(MedicationDispense) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationDispensePerformerTestCase.doValidationTest();
 	}
 
 	/**
@@ -497,6 +453,84 @@ public class MedicationDispenseTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
+	public void testValidateMedicationDispensePerformerMedicationDispenseAssignedEntityAddr() {
+		OperationsTestCase<MedicationDispense> validateMedicationDispensePerformerMedicationDispenseAssignedEntityAddrTestCase = new OperationsTestCase<MedicationDispense>(
+			"validateMedicationDispensePerformerMedicationDispenseAssignedEntityAddr",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_PERFORMER_MEDICATION_DISPENSE_ASSIGNED_ENTITY_ADDR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationDispense target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				per.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected void updateToPass(MedicationDispense target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationDispenseOperations.validateMedicationDispensePerformerMedicationDispenseAssignedEntityAddr(
+					(MedicationDispense) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationDispensePerformerMedicationDispenseAssignedEntityAddrTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateMedicationDispensePerformerMedicationDispenseAssignedEntity() {
+		OperationsTestCase<MedicationDispense> validateMedicationDispensePerformerMedicationDispenseAssignedEntityTestCase = new OperationsTestCase<MedicationDispense>(
+			"validateMedicationDispensePerformerMedicationDispenseAssignedEntity",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_DISPENSE_PERFORMER_MEDICATION_DISPENSE_ASSIGNED_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationDispense target) {
+				target.init();
+				target.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+			}
+
+			@Override
+			protected void updateToPass(MedicationDispense target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				per.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationDispenseOperations.validateMedicationDispensePerformerMedicationDispenseAssignedEntity(
+					(MedicationDispense) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationDispensePerformerMedicationDispenseAssignedEntityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
 	public void testValidateMedicationDispenseMedicationSupplyOrder() {
 		OperationsTestCase<MedicationDispense> validateMedicationDispenseMedicationSupplyOrderTestCase = new OperationsTestCase<MedicationDispense>(
 			"validateMedicationDispenseMedicationSupplyOrder",
@@ -531,18 +565,6 @@ public class MedicationDispenseTest extends CDAValidationTest {
 		};
 
 		validateMedicationDispenseMedicationSupplyOrderTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated
-	*/
-	@Test
-	public void testGetAssignedEntity() {
-
-		MedicationDispense target = objectFactory.create();
-		target.getAssignedEntity();
-
 	}
 
 	/**

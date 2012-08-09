@@ -15,9 +15,13 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.AssignedEntity;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Encounter;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
+import org.openhealthtools.mdht.uml.cda.Organization;
 import org.openhealthtools.mdht.uml.cda.Participant2;
+import org.openhealthtools.mdht.uml.cda.Performer2;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolPackage;
 import org.openhealthtools.mdht.uml.cda.consol.GeneralStatusSection;
@@ -32,9 +36,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActMoodDocumentObservation;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentEncounterMood;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,12 +72,26 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationTargetSiteCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Target Site Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationPerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Performer</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationServiceDeliveryLocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Service Delivery Location</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationProcedureEncounter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Procedure Encounter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationInstructions(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Instructions</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationIndication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Indication</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationMedicationActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Medication Activity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationEntryRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Entry Relationship</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationProcedureObservationPerformerAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Procedure Observation Performer Assigned Entity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Procedure Observation Performer Assigned Entity Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Procedure Observation Performer Assigned Entity Addr</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityTelecom(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Procedure Observation Performer Assigned Entity Telecom</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrg(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Procedure Observation Performer Assigned Entity Rep Org</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Procedure Observation Performer Assigned Entity Rep Org Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgName(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Procedure Observation Performer Assigned Entity Rep Org Name</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgAddr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Procedure Observation Performer Assigned Entity Rep Org Addr</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgTelecom(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Procedure Observation Performer Assigned Entity Rep Org Telecom</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Entry Relationship Procedure Observation Encounter Class Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Entry Relationship Procedure Observation Encounter Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Entry Relationship Procedure Observation Encounter Id</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationEntryRelationshipInversionInd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Entry Relationship Inversion Ind</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationEntryRelationshipTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Entry Relationship Type Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Activity Observation Entry Relationship Procedure Observation Encounter</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#getServiceDeliveryLocations() <em>Get Service Delivery Locations</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#getProcedureEncounters() <em>Get Procedure Encounters</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#getInstructions() <em>Get Instructions</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#getIndications() <em>Get Indications</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureActivityObservation#getMedicationActivity() <em>Get Medication Activity</em>}</li>
@@ -266,7 +286,7 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 				target.init();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 
-				er.setEncounter(ConsolFactory.eINSTANCE.createProcedureEncounter());
+				er.setEncounter(CDAFactory.eINSTANCE.createEncounter());
 				target.getEntryRelationships().add(er);
 			}
 
@@ -293,7 +313,7 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 				target.getEntryRelationships().clear();
 				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
 				er.setInversionInd(true);
-				er.setEncounter(ConsolFactory.eINSTANCE.createProcedureEncounter());
+				er.setEncounter(CDAFactory.eINSTANCE.createEncounter());
 				target.getEntryRelationships().add(er);
 
 			}
@@ -952,43 +972,6 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 	* @generated NOT
 	*/
 	@Test
-	public void testValidateProcedureActivityObservationProcedureEncounter() {
-		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationProcedureEncounterTestCase = new OperationsTestCase<ProcedureActivityObservation>(
-			"validateProcedureActivityObservationProcedureEncounter",
-			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_PROCEDURE_ENCOUNTER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
-
-			@Override
-			protected void updateToFail(ProcedureActivityObservation target) {
-
-			}
-
-			@Override
-			protected void updateToPass(ProcedureActivityObservation target) {
-				target.init();
-				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
-				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
-				er.setEncounter(ConsolFactory.eINSTANCE.createProcedureEncounter());
-				target.getEntryRelationships().add(er);
-			}
-
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return ProcedureActivityObservationOperations.validateProcedureActivityObservationProcedureEncounter(
-					(ProcedureActivityObservation) objectToTest, diagnostician, map);
-			}
-
-		};
-
-		validateProcedureActivityObservationProcedureEncounterTestCase.doValidationTest();
-	}
-
-	/**
-	*
-	* @generated NOT
-	*/
-	@Test
 	public void testValidateProcedureActivityObservationInstructions() {
 		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationInstructionsTestCase = new OperationsTestCase<ProcedureActivityObservation>(
 			"validateProcedureActivityObservationInstructions",
@@ -1097,14 +1080,689 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
-	public void testGetServiceDeliveryLocations() {
+	public void testValidateProcedureActivityObservationEntryRelationship() {
+		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationEntryRelationshipTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+			"validateProcedureActivityObservationEntryRelationship",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_ENTRY_RELATIONSHIP__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
 
-		ProcedureActivityObservation target = objectFactory.create();
-		target.getServiceDeliveryLocations();
+			@Override
+			protected void updateToFail(ProcedureActivityObservation target) {
 
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityObservation target) {
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				er.setEncounter(CDAFactory.eINSTANCE.createEncounter());
+				target.getEntryRelationships().add(er);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityObservationOperations.validateProcedureActivityObservationEntryRelationship(
+					(ProcedureActivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityObservationEntryRelationshipTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityObservationProcedureObservationPerformerAssignedEntity() {
+		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+			"validateProcedureActivityObservationProcedureObservationPerformerAssignedEntity",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_PROCEDURE_OBSERVATION_PERFORMER_ASSIGNED_ENTITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityObservation target) {
+				target.init();
+				target.getPerformers().add(CDAFactory.eINSTANCE.createPerformer2());
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityObservation target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				per.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityObservationOperations.validateProcedureActivityObservationProcedureObservationPerformerAssignedEntity(
+					(ProcedureActivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityObservationProcedureObservationPerformerAssignedEntityId() {
+		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityIdTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+			"validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityId",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_PROCEDURE_OBSERVATION_PERFORMER_ASSIGNED_ENTITY_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityObservation target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				per.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityObservation target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityObservationOperations.validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityId(
+					(ProcedureActivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityObservationProcedureObservationPerformerAssignedEntityAddr() {
+		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityAddrTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+			"validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityAddr",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_PROCEDURE_OBSERVATION_PERFORMER_ASSIGNED_ENTITY_ADDR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityObservation target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				per.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityObservation target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityObservationOperations.validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityAddr(
+					(ProcedureActivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityAddrTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityObservationProcedureObservationPerformerAssignedEntityTelecom() {
+		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityTelecomTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+			"validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityTelecom",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_PROCEDURE_OBSERVATION_PERFORMER_ASSIGNED_ENTITY_TELECOM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityObservation target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				per.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityObservation target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityObservationOperations.validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityTelecom(
+					(ProcedureActivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityTelecomTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrg() {
+		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+			"validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrg",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_PROCEDURE_OBSERVATION_PERFORMER_ASSIGNED_ENTITY_REP_ORG__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityObservation target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				per.setAssignedEntity(CDAFactory.eINSTANCE.createAssignedEntity());
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityObservation target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getRepresentedOrganizations().add(CDAFactory.eINSTANCE.createOrganization());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityObservationOperations.validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrg(
+					(ProcedureActivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgId() {
+		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgIdTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+			"validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgId",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_PROCEDURE_OBSERVATION_PERFORMER_ASSIGNED_ENTITY_REP_ORG_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityObservation target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getRepresentedOrganizations().add(CDAFactory.eINSTANCE.createOrganization());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityObservation target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				Organization org = CDAFactory.eINSTANCE.createOrganization();
+				org.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				ae.getRepresentedOrganizations().add(org);
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityObservationOperations.validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgId(
+					(ProcedureActivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgName() {
+		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgNameTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+			"validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgName",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_PROCEDURE_OBSERVATION_PERFORMER_ASSIGNED_ENTITY_REP_ORG_NAME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityObservation target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getRepresentedOrganizations().add(CDAFactory.eINSTANCE.createOrganization());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityObservation target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				Organization org = CDAFactory.eINSTANCE.createOrganization();
+				org.getNames().add(DatatypesFactory.eINSTANCE.createON());
+				ae.getRepresentedOrganizations().add(org);
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityObservationOperations.validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgName(
+					(ProcedureActivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgNameTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgAddr() {
+		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgAddrTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+			"validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgAddr",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_PROCEDURE_OBSERVATION_PERFORMER_ASSIGNED_ENTITY_REP_ORG_ADDR__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityObservation target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getRepresentedOrganizations().add(CDAFactory.eINSTANCE.createOrganization());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityObservation target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				Organization org = CDAFactory.eINSTANCE.createOrganization();
+				org.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
+				ae.getRepresentedOrganizations().add(org);
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityObservationOperations.validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgAddr(
+					(ProcedureActivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgAddrTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgTelecom() {
+		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgTelecomTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+			"validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgTelecom",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_PROCEDURE_OBSERVATION_PERFORMER_ASSIGNED_ENTITY_REP_ORG_TELECOM__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityObservation target) {
+				target.init();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.getRepresentedOrganizations().add(CDAFactory.eINSTANCE.createOrganization());
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityObservation target) {
+				target.getPerformers().clear();
+				Performer2 per = CDAFactory.eINSTANCE.createPerformer2();
+				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				Organization org = CDAFactory.eINSTANCE.createOrganization();
+				org.getTelecoms().add(DatatypesFactory.eINSTANCE.createTEL());
+				ae.getRepresentedOrganizations().add(org);
+				per.setAssignedEntity(ae);
+				target.getPerformers().add(per);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityObservationOperations.validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgTelecom(
+					(ProcedureActivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityObservationProcedureObservationPerformerAssignedEntityRepOrgTelecomTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterClassCode() {
+		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterClassCodeTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+			"validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterClassCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_ENTRY_RELATIONSHIP_PROCEDURE_OBSERVATION_ENCOUNTER_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityObservation target) {
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				er.setEncounter(CDAFactory.eINSTANCE.createEncounter());
+				target.getEntryRelationships().add(er);
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityObservation target) {
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				Encounter enc = CDAFactory.eINSTANCE.createEncounter();
+				enc.setClassCode(ActClass.ENC);
+				er.setEncounter(enc);
+				target.getEntryRelationships().add(er);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityObservationOperations.validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterClassCode(
+					(ProcedureActivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterClassCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterMoodCode() {
+		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterMoodCodeTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+			"validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterMoodCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_ENTRY_RELATIONSHIP_PROCEDURE_OBSERVATION_ENCOUNTER_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityObservation target) {
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				er.setEncounter(CDAFactory.eINSTANCE.createEncounter());
+				target.getEntryRelationships().add(er);
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityObservation target) {
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				Encounter enc = CDAFactory.eINSTANCE.createEncounter();
+				enc.setMoodCode(x_DocumentEncounterMood.EVN);
+				er.setEncounter(enc);
+				target.getEntryRelationships().add(er);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityObservationOperations.validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterMoodCode(
+					(ProcedureActivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterMoodCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterId() {
+		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterIdTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+			"validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterId",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_ENTRY_RELATIONSHIP_PROCEDURE_OBSERVATION_ENCOUNTER_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityObservation target) {
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				er.setEncounter(CDAFactory.eINSTANCE.createEncounter());
+				target.getEntryRelationships().add(er);
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityObservation target) {
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				Encounter enc = CDAFactory.eINSTANCE.createEncounter();
+				enc.getIds().add(DatatypesFactory.eINSTANCE.createII());
+				er.setEncounter(enc);
+				target.getEntryRelationships().add(er);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityObservationOperations.validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterId(
+					(ProcedureActivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterIdTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityObservationEntryRelationshipInversionInd() {
+		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationEntryRelationshipInversionIndTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+			"validateProcedureActivityObservationEntryRelationshipInversionInd",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_ENTRY_RELATIONSHIP_INVERSION_IND__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureActivityObservation target) {
+				target.init();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				er.setEncounter(CDAFactory.eINSTANCE.createEncounter());
+				target.getEntryRelationships().add(er);
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityObservation target) {
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				er.setInversionInd(true);
+				Encounter enc = CDAFactory.eINSTANCE.createEncounter();
+				enc.setMoodCode(x_DocumentEncounterMood.EVN);
+				er.setEncounter(enc);
+				target.getEntryRelationships().add(er);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityObservationOperations.validateProcedureActivityObservationEntryRelationshipInversionInd(
+					(ProcedureActivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityObservationEntryRelationshipInversionIndTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityObservationEntryRelationshipTypeCode() {
+		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationEntryRelationshipTypeCodeTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+			"validateProcedureActivityObservationEntryRelationshipTypeCode",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_ENTRY_RELATIONSHIP_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			{
+				this.skipFailsTest();
+			}
+
+			@Override
+			protected void updateToFail(ProcedureActivityObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityObservation target) {
+				target.init();
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				er.setEncounter(CDAFactory.eINSTANCE.createEncounter());
+				target.getEntryRelationships().add(er);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityObservationOperations.validateProcedureActivityObservationEntryRelationshipTypeCode(
+					(ProcedureActivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityObservationEntryRelationshipTypeCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProcedureActivityObservationEntryRelationshipProcedureObservationEncounter() {
+		OperationsTestCase<ProcedureActivityObservation> validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterTestCase = new OperationsTestCase<ProcedureActivityObservation>(
+			"validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounter",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_ACTIVITY_OBSERVATION_ENTRY_RELATIONSHIP_PROCEDURE_OBSERVATION_ENCOUNTER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			{
+				this.skipFailsTest();
+			}
+
+			@Override
+			protected void updateToFail(ProcedureActivityObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureActivityObservation target) {
+				target.init();
+				target.getEntryRelationships().clear();
+				EntryRelationship er = CDAFactory.eINSTANCE.createEntryRelationship();
+				er.setTypeCode(x_ActRelationshipEntryRelationship.COMP);
+				er.setEncounter(CDAFactory.eINSTANCE.createEncounter());
+				target.getEntryRelationships().add(er);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureActivityObservationOperations.validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounter(
+					(ProcedureActivityObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureActivityObservationEntryRelationshipProcedureObservationEncounterTestCase.doValidationTest();
 	}
 
 	/**
@@ -1112,10 +1770,10 @@ public class ProcedureActivityObservationTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetProcedureEncounters() {
+	public void testGetServiceDeliveryLocations() {
 
 		ProcedureActivityObservation target = objectFactory.create();
-		target.getProcedureEncounters();
+		target.getServiceDeliveryLocations();
 
 	}
 
