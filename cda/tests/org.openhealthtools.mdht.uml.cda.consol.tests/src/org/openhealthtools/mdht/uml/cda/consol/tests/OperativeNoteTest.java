@@ -937,7 +937,7 @@ public class OperativeNoteTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated not not
+	* @generated not
 	*/
 	@Test
 	public void testValidateOperativeNoteDocumentationOfServiceEventProcedureCodes() {

@@ -813,7 +813,7 @@ public class AdvanceDirectiveObservationTest extends CDAValidationTest {
 				ParticipantRole pr = CDAFactory.eINSTANCE.createParticipantRole();
 				pr.setPlayingEntity(CDAFactory.eINSTANCE.createPlayingEntity());
 
-				pr.setClassCode(RoleClassRoot.ROL);
+				pr.setClassCode(RoleClassRoot.AGNT);
 
 				// pr.getAddrs().add(DatatypesFactory.eINSTANCE.createAD());
 

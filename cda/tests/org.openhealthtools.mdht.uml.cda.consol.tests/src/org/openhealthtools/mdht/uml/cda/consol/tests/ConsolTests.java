@@ -1,17 +1,12 @@
-/*******************************************************************************
- * Copyright (c) 2011, 2012 Sean Muir and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+/**
+ * <copyright>
+ * </copyright>
  *
- * Contributors:
- *     Sean Muir (JKM Software) - initial API and implementation
- *******************************************************************************/
+ * $Id$
+ */
 package org.openhealthtools.mdht.uml.cda.consol.tests;
 
 import junit.framework.JUnit4TestAdapter;
-
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -64,9 +59,7 @@ import org.junit.runners.Suite;
 		HospitalDischargeInstructionsSectionTest.class, HospitalDischargePhysicalSectionTest.class,
 		HospitalDischargeStudiesSummarySectionTest.class, ReasonForVisitSectionTest.class,
 		PreconditionForSubstanceAdministrationTest.class, ImmunizationMedicationInformationTest.class,
-		ProcedureSpecimenTest.class, ProcedurePerformerTest.class, ProcedureEncounterTest.class,
-		HospitalDischargeMedicationsSectionTest.class, EncounterPerformerTest.class,
-		EncounterPerformerAssignedEntityTest.class, AnesthesiaSectionTest.class, ComplicationsSectionTest.class,
+		HospitalDischargeMedicationsSectionTest.class, AnesthesiaSectionTest.class, ComplicationsSectionTest.class,
 		DICOMObjectCatalogSectionTest.class, StudyActTest.class, SeriesActTest.class, SOPInstanceObservationTest.class,
 		PurposeofReferenceObservationTest.class, ReferencedFramesObservationTest.class, BoundaryObservationTest.class,
 		FindingsSectionTest.class, InterventionsSectionTest.class, MedicalHistorySectionTest.class,
@@ -80,7 +73,6 @@ import org.junit.runners.Suite;
 		ProcedureSpecimensTakenSectionTest.class, SubjectiveSectionTest.class, ConsultationNoteTest.class,
 		AssessmentSectionTest.class, HistoryAndPhysicalNoteTest.class, OperativeNoteTest.class,
 		ProcedureNoteTest.class, ProgressNoteTest.class, InstructionsSectionTest.class,
-		MedicationDispenseAssignedEntityTest.class, ImmunizationMedicationInformationManufacturedMaterialTest.class,
 		DiagnosticImagingReportTest.class, PhysicianReadingStudyPerformerTest.class,
 		PhysicianofRecordParticipantTest.class, TextObservationTest.class, QuantityMeasurementObservationTest.class,
 		CodeObservationsTest.class, ProcedureContextTest.class })
