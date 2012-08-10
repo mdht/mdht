@@ -10,6 +10,8 @@
  *     Sean Muir (JKM Software) - package loading, snippet generation
  *     David A Carlson (XMLmodeling.com) - various helper methods
  *     Christian W. Damus - flexible, pluggable instance initializers (artf3272)
+ *     Rama Ramakrishnan - Added loadAs() convenience method for forcing to load 
+ *                          with a predefined document type
  *     
  *******************************************************************************/
 package org.openhealthtools.mdht.uml.cda.util;
@@ -342,6 +344,32 @@ public class CDAUtil {
 
 	public static ClinicalDocument load(URI uri, final ValidationHandler handler) throws Exception {
 		return load(CDAUtil.createResourceSet((EClass) null), uri, handler);
+	}
+
+	/**
+	 * Convenience load method for loading a CDA document as a specific type
+	 * 
+	 * @param in
+	 * @param docTypeEClass
+	 * @return
+	 * @throws Exception
+	 */
+	public static ClinicalDocument loadAs(InputStream in, EClass docTypeEClass) throws Exception {
+		return load(CDAUtil.createResourceSet(docTypeEClass), generateURI(), in, (ValidationHandler) null);
+	}
+
+	/**
+	 * Convenience load method for loading a CDA document as a specific type
+	 * 
+	 * @param in
+	 * @param docTypeEClass
+	 * @param handler
+	 * @return
+	 * @throws Exception
+	 */
+	public static ClinicalDocument loadAs(InputStream in, EClass docTypeEClass, final ValidationHandler handler)
+			throws Exception {
+		return load(CDAUtil.createResourceSet(docTypeEClass), generateURI(), in, handler);
 	}
 
 	private static int uriCounter = 0;
