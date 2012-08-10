@@ -25,20 +25,15 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Hospital Discharge Diagnosis Section</b></em>' model
  * objects. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalDischargeDiagnosisSection#validateMu2consolHospitalDischargeDiagnosisSectionHospitalDischargeDiagnosis(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Mu2consol Hospital Discharge Diagnosis Section Hospital
- * Discharge Diagnosis</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalDischargeDiagnosisSection#getmu2consolHospitalDischargeDiagnosis()
- * <em>Getmu2consol Hospital Discharge Diagnosis</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalDischargeDiagnosisSection#validateMu2consolHospitalDischargeDiagnosisSectionHospitalDischargeDiagnosis(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Hospital Discharge Diagnosis Section Hospital Discharge Diagnosis</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.HospitalDischargeDiagnosisSection#getmu2consolHospitalDischargeDiagnosis() <em>Getmu2consol Hospital Discharge Diagnosis</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -50,11 +45,10 @@ public class HospitalDischargeDiagnosisSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolHospitalDischargeDiagnosisSectionHospitalDischargeDiagnosis() {
-		OperationsTestCase<HospitalDischargeDiagnosisSection> validateMu2consolHospitalDischargeDiagnosisSectionHospitalDischargeDiagnosisTestCase = new OperationsTestCase<HospitalDischargeDiagnosisSection>(
-				"validateMu2consolHospitalDischargeDiagnosisSectionHospitalDischargeDiagnosis",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MU2CONSOL_HOSPITAL_DISCHARGE_DIAGNOSIS_SECTION_HOSPITAL_DISCHARGE_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			OperationsTestCase<HospitalDischargeDiagnosisSection> validateMu2consolHospitalDischargeDiagnosisSectionHospitalDischargeDiagnosisTestCase = new OperationsTestCase<HospitalDischargeDiagnosisSection>(
+			"validateMu2consolHospitalDischargeDiagnosisSectionHospitalDischargeDiagnosis",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_HOSPITAL_DISCHARGE_DIAGNOSIS_SECTION_HOSPITAL_DISCHARGE_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(HospitalDischargeDiagnosisSection target) {
@@ -64,24 +58,54 @@ public class HospitalDischargeDiagnosisSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(HospitalDischargeDiagnosisSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return HospitalDischargeDiagnosisSectionOperations
-						.validateMu2consolHospitalDischargeDiagnosisSectionHospitalDischargeDiagnosis(
-								(HospitalDischargeDiagnosisSection) objectToTest,
-								diagnostician, map);
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return HospitalDischargeDiagnosisSectionOperations.validateMu2consolHospitalDischargeDiagnosisSectionHospitalDischargeDiagnosis(
+					(HospitalDischargeDiagnosisSection) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolHospitalDischargeDiagnosisSectionHospitalDischargeDiagnosisTestCase
-				.doValidationTest();
-	}
+		validateMu2consolHospitalDischargeDiagnosisSectionHospitalDischargeDiagnosisTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -90,10 +114,13 @@ public class HospitalDischargeDiagnosisSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetmu2consolHospitalDischargeDiagnosis() {
 
-		HospitalDischargeDiagnosisSection target = objectFactory.create();
-		target.getmu2consolHospitalDischargeDiagnosis();
 
-	}
+HospitalDischargeDiagnosisSection target = objectFactory.create();
+target.getmu2consolHospitalDischargeDiagnosis();
+
+
+
+}
 
 	/**
 	 * 
@@ -156,8 +183,8 @@ public class HospitalDischargeDiagnosisSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -165,7 +192,7 @@ public class HospitalDischargeDiagnosisSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

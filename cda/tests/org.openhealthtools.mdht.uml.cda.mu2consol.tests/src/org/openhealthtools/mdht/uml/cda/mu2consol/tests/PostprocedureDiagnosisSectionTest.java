@@ -25,20 +25,15 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Postprocedure Diagnosis Section</b></em>' model objects.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.PostprocedureDiagnosisSection#validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosis(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
- * <em>Validate Mu2consol Postprocedure Diagnosis Section Postprocedure
- * Diagnosis</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.PostprocedureDiagnosisSection#getmu2consolPostprocedureDiagnosis()
- * <em>Getmu2consol Postprocedure Diagnosis</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.PostprocedureDiagnosisSection#validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosis(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Postprocedure Diagnosis Section Postprocedure Diagnosis</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.PostprocedureDiagnosisSection#getmu2consolPostprocedureDiagnosis() <em>Getmu2consol Postprocedure Diagnosis</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -50,11 +45,10 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosis() {
-		OperationsTestCase<PostprocedureDiagnosisSection> validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosisTestCase = new OperationsTestCase<PostprocedureDiagnosisSection>(
-				"validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosis",
-				operationsForOCL
-						.getOCLValue("VALIDATE_MU2CONSOL_POSTPROCEDURE_DIAGNOSIS_SECTION_POSTPROCEDURE_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-				objectFactory) {
+			OperationsTestCase<PostprocedureDiagnosisSection> validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosisTestCase = new OperationsTestCase<PostprocedureDiagnosisSection>(
+			"validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosis",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_POSTPROCEDURE_DIAGNOSIS_SECTION_POSTPROCEDURE_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
 
 			@Override
 			protected void updateToFail(PostprocedureDiagnosisSection target) {
@@ -64,24 +58,54 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PostprocedureDiagnosisSection target) {
 				target.init();
+				
+				
+				
+				
+				
 
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
 			}
 
 			@Override
-			protected boolean validate(EObject objectToTest,
-					BasicDiagnostic diagnostician, Map<Object, Object> map) {
-
-				return PostprocedureDiagnosisSectionOperations
-						.validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosis(
-								(PostprocedureDiagnosisSection) objectToTest,
-								diagnostician, map);
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return PostprocedureDiagnosisSectionOperations.validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosis(
+					(PostprocedureDiagnosisSection) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosisTestCase
-				.doValidationTest();
-	}
+		validateMu2consolPostprocedureDiagnosisSectionPostprocedureDiagnosisTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -90,10 +114,13 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetmu2consolPostprocedureDiagnosis() {
 
-		PostprocedureDiagnosisSection target = objectFactory.create();
-		target.getmu2consolPostprocedureDiagnosis();
 
-	}
+PostprocedureDiagnosisSection target = objectFactory.create();
+target.getmu2consolPostprocedureDiagnosis();
+
+
+
+}
 
 	/**
 	 * 
@@ -156,8 +183,8 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -165,7 +192,7 @@ public class PostprocedureDiagnosisSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 
