@@ -14,14 +14,12 @@ import junit.textui.TestRunner;
 /**
  * <!-- begin-user-doc --> A test suite for the '<em><b>mu2consol_Ecore</b></em>
  * ' model. <!-- end-user-doc -->
- * 
  * @generated
  */
 public class mu2consol_EcoreAllTests extends TestSuite {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -30,7 +28,6 @@ public class mu2consol_EcoreAllTests extends TestSuite {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static Test suite() {
@@ -41,7 +38,6 @@ public class mu2consol_EcoreAllTests extends TestSuite {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public mu2consol_EcoreAllTests(String name) {

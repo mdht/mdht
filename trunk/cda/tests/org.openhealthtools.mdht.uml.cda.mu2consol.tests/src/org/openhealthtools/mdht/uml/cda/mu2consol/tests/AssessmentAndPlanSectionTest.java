@@ -21,25 +21,17 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Assessment And Plan Section</b></em>' model objects. <!--
  * end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getPlanOfCareActivityProcedure()
- * <em>Get Plan Of Care Activity Procedure</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getPlanOfCareActivitySubstanceAdministration()
- * <em>Get Plan Of Care Activity Substance Administration</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getPlanOfCareActivitySupply()
- * <em>Get Plan Of Care Activity Supply</em>}</li>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getProblemObservation()
- * <em>Get Problem Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getPlanOfCareActivityProcedure() <em>Get Plan Of Care Activity Procedure</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getPlanOfCareActivitySubstanceAdministration() <em>Get Plan Of Care Activity Substance Administration</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getPlanOfCareActivitySupply() <em>Get Plan Of Care Activity Supply</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanSection#getProblemObservation() <em>Get Problem Observation</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
@@ -52,10 +44,13 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetPlanOfCareActivityProcedure() {
 
-		AssessmentAndPlanSection target = objectFactory.create();
-		target.getPlanOfCareActivityProcedure();
 
-	}
+AssessmentAndPlanSection target = objectFactory.create();
+target.getPlanOfCareActivityProcedure();
+
+
+
+}
 
 	/**
 	 * 
@@ -64,10 +59,13 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetPlanOfCareActivitySubstanceAdministration() {
 
-		AssessmentAndPlanSection target = objectFactory.create();
-		target.getPlanOfCareActivitySubstanceAdministration();
 
-	}
+AssessmentAndPlanSection target = objectFactory.create();
+target.getPlanOfCareActivitySubstanceAdministration();
+
+
+
+}
 
 	/**
 	 * 
@@ -76,10 +74,13 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetPlanOfCareActivitySupply() {
 
-		AssessmentAndPlanSection target = objectFactory.create();
-		target.getPlanOfCareActivitySupply();
 
-	}
+AssessmentAndPlanSection target = objectFactory.create();
+target.getPlanOfCareActivitySupply();
+
+
+
+}
 
 	/**
 	 * 
@@ -88,10 +89,13 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProblemObservation() {
 
-		AssessmentAndPlanSection target = objectFactory.create();
-		target.getProblemObservation();
 
-	}
+AssessmentAndPlanSection target = objectFactory.create();
+target.getProblemObservation();
+
+
+
+}
 
 	/**
 	 * 
@@ -153,8 +157,8 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -162,7 +166,7 @@ public class AssessmentAndPlanSectionTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 

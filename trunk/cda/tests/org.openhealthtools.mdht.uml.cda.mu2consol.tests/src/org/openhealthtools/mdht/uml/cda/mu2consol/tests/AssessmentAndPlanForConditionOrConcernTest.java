@@ -6,6 +6,8 @@
  */
 package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 
 import org.junit.Test;
@@ -21,21 +23,91 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <!-- begin-user-doc --> A static utility class that provides operations
  * related to '<em><b>Assessment And Plan For Condition Or Concern</b></em>'
  * model objects. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following operations are supported:
  * <ul>
- * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanForConditionOrConcern#getProblemObservation()
- * <em>Get Problem Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanForConditionOrConcern#validateAssessmentAndPlanForConditionOrConcernProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Assessment And Plan For Condition Or Concern Problem Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentAndPlanForConditionOrConcern#getProblemObservation() <em>Get Problem Observation</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 
 public class AssessmentAndPlanForConditionOrConcernTest extends
 		CDAValidationTest {
+
+	/**
+*
+* @generated
+*/
+@Test
+
+ 
+									
+public void testValidateAssessmentAndPlanForConditionOrConcernProblemObservation() {
+			OperationsTestCase<AssessmentAndPlanForConditionOrConcern> validateAssessmentAndPlanForConditionOrConcernProblemObservationTestCase = new OperationsTestCase<AssessmentAndPlanForConditionOrConcern>(
+			"validateAssessmentAndPlanForConditionOrConcernProblemObservation",
+			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_FOR_CONDITION_OR_CONCERN_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
+
+			@Override
+			protected void updateToFail(AssessmentAndPlanForConditionOrConcern target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AssessmentAndPlanForConditionOrConcern target) {
+				target.init();
+				
+				
+				
+				
+				
+
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return AssessmentAndPlanForConditionOrConcernOperations.validateAssessmentAndPlanForConditionOrConcernProblemObservation(
+					(AssessmentAndPlanForConditionOrConcern) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAssessmentAndPlanForConditionOrConcernProblemObservationTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -44,10 +116,13 @@ public class AssessmentAndPlanForConditionOrConcernTest extends
 	@Test
 	public void testGetProblemObservation() {
 
-		AssessmentAndPlanForConditionOrConcern target = objectFactory.create();
-		target.getProblemObservation();
 
-	}
+AssessmentAndPlanForConditionOrConcern target = objectFactory.create();
+target.getProblemObservation();
+
+
+
+}
 
 	/**
 	 * 
@@ -110,8 +185,8 @@ public class AssessmentAndPlanForConditionOrConcernTest extends
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
+	        @SuppressWarnings("unused")
+			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
 
 	/**
@@ -119,7 +194,7 @@ public class AssessmentAndPlanForConditionOrConcernTest extends
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
+	protected EObject getObjectToTest() {		
 		return null;
 	}
 
