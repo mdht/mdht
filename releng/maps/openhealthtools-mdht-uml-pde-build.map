@@ -147,6 +147,9 @@ plugin@org.openhealthtools.mdht.uml.term.core=SVN,trunk,https://www.projects.ope
 
 plugin@org.openhealthtools.mdht.uml.term.ui=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.term.ui,force
 
+plugin@org.openhealthtools.mdht.uml.term.transform=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.term.transform,force
+
+
 
 
 !***************  OHT CDA RSM FEATURE  ********************************************** 
