@@ -26,6 +26,15 @@
       <import feature="org.eclipse.uml2" version="2.2.2" match="greaterOrEqual"/>
    </requires>
 
+
+
+   <plugin
+         id="org.openhealthtools.mdht.emf.runtime"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
    <plugin
          id="org.openhealthtools.mdht.uml.common"
          download-size="0"

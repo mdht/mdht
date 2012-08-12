@@ -13,6 +13,8 @@ plugin@net.sourceforge.xmlmodeling.uml.xsd.profile=SVN,trunk,https://xmlmodeling
 !***************  OHT UML FEATURE  ********************************************** 
 feature@org.openhealthtools.mdht.uml=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/features/org.openhealthtools.mdht.uml-feature,force
 
+plugin@org.openhealthtools.mdht.emf.runtime=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.emf.runtime,force
+
 plugin@org.openhealthtools.mdht.uml.common=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.common,force
 
 plugin@org.openhealthtools.mdht.uml.common.ui=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.common.ui,force
