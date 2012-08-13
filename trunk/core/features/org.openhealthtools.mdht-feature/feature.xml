@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.openhealthtools.mdht"
+      label="%featureName"
+      version="1.1.0.qualifier"
+      provider-name="%featureProvider">
+
+   <description url="http://mdht.projects.openhealthtools.org">
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://oht-modeling.sourceforge.net/updates/integration"/>
+   </url>
+
+   <includes
+         id="org.openhealthtools.mdht.uml"
+         version="0.0.0"/>
+
+   <includes
+         id="org.dita.dost"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.term.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.term.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.term.transform"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.openhealthtools.mdht.uml.ui.ide"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.dita.dost"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
