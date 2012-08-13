@@ -39,14 +39,20 @@
 			<property name="id" value="net.sourceforge.xmlmodeling.uml.xsd" />
 		</ant>
 
-
-
 		<ant antfile="${genericTargets}" target="${target}">
 			<property name="type" value="feature" />
 			<property name="id" value="org.openhealthtools.mdht.uml" />
 		</ant>
 
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.dita.dost" />
+		</ant>
 
+		<ant antfile="${genericTargets}" target="${target}">
+			<property name="type" value="feature" />
+			<property name="id" value="org.openhealthtools.mdht" />
+		</ant>
 
 	</target>
 
