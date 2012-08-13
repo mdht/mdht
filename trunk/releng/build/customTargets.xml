@@ -198,6 +198,14 @@
 		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
 	</target>
 
+	<target name="assemble.org.dita.dost">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
+	<target name="assemble.org.openhealthtools.mdht">
+		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
+	</target>
+
 	<target name="assemble.org.openhealthtools.mdht.uml.hdf">
 		<ant antfile="${assembleScriptName}" dir="${buildDirectory}" />
 	</target>
