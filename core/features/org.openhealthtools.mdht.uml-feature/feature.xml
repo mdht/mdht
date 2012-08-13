@@ -10,7 +10,7 @@
    </description>
 
    <copyright>
-      $copyright
+      %copyright
    </copyright>
 
    <license url="http://www.eclipse.org/legal/epl-v10.html">
@@ -18,15 +18,8 @@
    </license>
 
    <url>
-      <update label="%updateSiteName" url="http://oht-modeling.sourceforge.net/updates"/>
+      <update label="%updateSiteName" url="http://oht-modeling.sourceforge.net/updates/integration"/>
    </url>
-
-   <requires>
-      <import feature="org.eclipse.platform" version="3.4.2" match="greaterOrEqual"/>
-      <import feature="org.eclipse.uml2" version="2.2.2" match="greaterOrEqual"/>
-   </requires>
-
-
 
    <plugin
          id="org.openhealthtools.mdht.emf.runtime"
@@ -63,26 +56,12 @@
          version="0.0.0"
          unpack="false"/>
 
- 
-
- 
-
    <plugin
          id="org.openhealthtools.mdht.uml.validation"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
-
-   <plugin
-         id="org.openhealthtools.mdht.uml.hl7.validation"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-
 
    <plugin
          id="org.openhealthtools.mdht.uml.ui.navigator"
@@ -93,20 +72,6 @@
 
    <plugin
          id="org.openhealthtools.mdht.uml.ui.properties"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.openhealthtools.mdht.uml.term.core"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.openhealthtools.mdht.uml.term.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -132,33 +97,5 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
-   <plugin
-         id="org.openhealthtools.mdht.uml.term.transform"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-         
-         
-         
-
-   <plugin
-         id="org.dita.dost"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-         
-         
-
-   <plugin
-         id="org.openhealthtools.mdht.uml.ui.ide"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-         
-         
 
 </feature>
