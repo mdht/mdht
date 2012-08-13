@@ -54,7 +54,8 @@ public class FleXMLLoadImpl extends XMLLoadImpl {
 		try {
 			load(resource, newDocumentBuilder().parse(inputStream), options);
 		} catch (SAXException e) {
-			throw new IOException("Failed to create DOM.", e);
+			// throw new IOException("Failed to create DOM.", e);
+			throw new Resource.IOWrappedException(e);
 		}
 	}
 
@@ -63,7 +64,8 @@ public class FleXMLLoadImpl extends XMLLoadImpl {
 		try {
 			load(resource, newDocumentBuilder().parse(inputSource), options);
 		} catch (SAXException e) {
-			throw new IOException("Failed to create DOM.", e);
+			// throw new IOException("Failed to create DOM.", e);
+			throw new Resource.IOWrappedException(e);
 		}
 	}
 
@@ -104,7 +106,8 @@ public class FleXMLLoadImpl extends XMLLoadImpl {
 		try {
 			return factory.newDocumentBuilder();
 		} catch (Exception e) {
-			throw new IOException("Failed to create XML document builder.", e);
+			// throw new IOException("Failed to create XML document builder.", e);
+			throw new Resource.IOWrappedException(e);
 		}
 	}
 
