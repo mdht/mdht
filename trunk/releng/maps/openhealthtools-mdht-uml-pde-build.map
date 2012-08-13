@@ -4,13 +4,27 @@
 !*******************************************************************************************
 !***************  SVN PDE BUILD CONTRIBUTION FOR MDHT  ********************************************** 
 
-!***************  XML Modeling Feature FEATURE  ********************************************** 
+!***************  XML Modeling Feature  ********************************************** 
 feature@net.sourceforge.xmlmodeling.uml.xsd=SVN,trunk,https://xmlmodeling.svn.sourceforge.net/svnroot/xmlmodeling,,features/net.sourceforge.xmlmodeling.uml.xsd-feature,force
 
 plugin@net.sourceforge.xmlmodeling.uml.xsd.profile=SVN,trunk,https://xmlmodeling.svn.sourceforge.net/svnroot/xmlmodeling,,plugins/net.sourceforge.xmlmodeling.uml.xsd.profile,force
 
 
-!***************  OHT UML FEATURE  ********************************************** 
+!***************  MDHT Feature  ********************************************** 
+feature@org.openhealthtools.mdht=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/features/org.openhealthtools.mdht-feature,force
+
+plugin@org.openhealthtools.mdht.uml.ui.ide=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.ui.ide,force
+
+plugin@org.openhealthtools.mdht.uml.hl7.validation=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.validation,force
+
+plugin@org.openhealthtools.mdht.uml.term.core=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.term.core,force
+
+plugin@org.openhealthtools.mdht.uml.term.ui=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.term.ui,force
+
+plugin@org.openhealthtools.mdht.uml.term.transform=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.term.transform,force
+
+
+!***************  UML Extensions Feature  ********************************************** 
 feature@org.openhealthtools.mdht.uml=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/features/org.openhealthtools.mdht.uml-feature,force
 
 plugin@org.openhealthtools.mdht.emf.runtime=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.emf.runtime,force
@@ -27,19 +41,17 @@ plugin@org.openhealthtools.mdht.uml.ui=SVN,trunk,https://www.projects.openhealth
 
 plugin@org.openhealthtools.mdht.uml.edit=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.edit,force
 
+plugin@org.openhealthtools.mdht.transform.core=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.transform.core,force
+
 plugin@org.openhealthtools.mdht.uml.transform=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.transform,force
 
 plugin@org.openhealthtools.mdht.uml.transform.ui=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.transform.ui,force
 
-plugin@org.openhealthtools.mdht.transform.core=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.transform.core,force
-
-plugin@org.openhealthtools.mdht.uml.ui.ide=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.ui.ide,force
-
-
 plugin@org.openhealthtools.mdht.uml.validation=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.validation,force
 
-plugin@org.openhealthtools.mdht.uml.hl7.validation=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.hl7.validation,force
 
+!***************  DITA Feature  ********************************************** 
+feature@org.dita.dost=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/features/org.dita.dost-feature,force
 
 plugin@org.dita.dost=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.dita.dost,force
 
@@ -61,9 +73,8 @@ plugin@org.openhealthtools.mdht.uml.cda.consoltoc.doc=SVN,trunk,https://www.proj
 
 plugin@org.openhealthtools.mdht.uml.cda.ihe.doc=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,doc/org.openhealthtools.mdht.uml.cda.ihe.doc,force
 
+
 !***************  MDHT Feature for CDA Runtime for Application Development  ********************************************** 
-
-
 
 feature@org.openhealthtools.mdht.uml.cda.models=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.models-feature,force
 
@@ -145,14 +156,6 @@ plugin@org.openhealthtools.mdht.uml.cda.ui=SVN,trunk,https://www.projects.openhe
 
 plugin@org.openhealthtools.mdht.uml.cda.dita=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.dita,force
 
-plugin@org.openhealthtools.mdht.uml.term.core=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.term.core,force
-
-plugin@org.openhealthtools.mdht.uml.term.ui=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.term.ui,force
-
-plugin@org.openhealthtools.mdht.uml.term.transform=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,core/plugins/org.openhealthtools.mdht.uml.term.transform,force
-
-
-
 
 !***************  OHT CDA RSM FEATURE  ********************************************** 
 feature@org.openhealthtools.mdht.uml.cda.rsm=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.rsm-feature,force
@@ -164,7 +167,6 @@ plugin@org.openhealthtools.mdht.uml.cda.ui.rsm=SVN,trunk,https://www.projects.op
 !!feature@org.openhealthtools.mdht.uml.cda.papyrus=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.papyrus-feature,force
 
 !!plugin@org.openhealthtools.mdht.uml.cda.ui.papyrus=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/plugins/org.openhealthtools.mdht.uml.cda.ui.papyrus,force
-
 
 
 !***************  OHT HDF FEATURE  ********************************************** 
