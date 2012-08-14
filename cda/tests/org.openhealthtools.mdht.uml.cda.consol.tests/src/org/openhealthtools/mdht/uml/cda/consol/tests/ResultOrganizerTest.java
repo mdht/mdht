@@ -160,7 +160,7 @@ public class ResultOrganizerTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateResultOrganizerClassCode() {
@@ -177,6 +177,8 @@ public class ResultOrganizerTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(ResultOrganizer target) {
 				target.init();
+
+				target.setClassCode(x_ActClassDocumentEntryOrganizer.BATTERY);
 
 			}
 
