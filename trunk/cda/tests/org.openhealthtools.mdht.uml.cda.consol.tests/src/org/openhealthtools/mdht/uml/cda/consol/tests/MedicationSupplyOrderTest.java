@@ -29,6 +29,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
 import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActClassSupply;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
@@ -157,7 +158,7 @@ public class MedicationSupplyOrderTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateMedicationSupplyOrderClassCode() {
@@ -168,7 +169,7 @@ public class MedicationSupplyOrderTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MedicationSupplyOrder target) {
-
+				target.setClassCode(ActClassSupply.DIET);
 			}
 
 			@Override

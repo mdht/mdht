@@ -38,6 +38,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.EIVL_TS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_PQ;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipType;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 import org.openhealthtools.mdht.uml.hl7.vocab.SetOperator;
@@ -619,7 +620,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateMedicationActivityClassCode() {
@@ -630,7 +631,7 @@ public class MedicationActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MedicationActivity target) {
-
+				target.setClassCode(ActClass.ACCM);
 			}
 
 			@Override

@@ -27,6 +27,7 @@ import org.openhealthtools.mdht.uml.cda.consol.operations.NonMedicinalSupplyActi
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActClassSupply;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
@@ -133,7 +134,7 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateNonMedicinalSupplyActivityClassCode() {
@@ -144,7 +145,7 @@ public class NonMedicinalSupplyActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(NonMedicinalSupplyActivity target) {
-
+				target.setClassCode(ActClassSupply.DIET);
 			}
 
 			@Override
