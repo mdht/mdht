@@ -29,7 +29,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.II;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_INT;
 import org.openhealthtools.mdht.uml.hl7.datatypes.SXCM_TS;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActClassSupply;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
+import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
 
 /**
  * <!-- begin-user-doc -->
@@ -98,7 +100,7 @@ public class MedicationDispenseTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateMedicationDispenseClassCode() {
@@ -109,7 +111,7 @@ public class MedicationDispenseTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MedicationDispense target) {
-
+				target.setClassCode(ActClassSupply.DIET);
 			}
 
 			@Override
@@ -206,7 +208,7 @@ public class MedicationDispenseTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated NOT
 	*/
 	@Test
 	public void testValidateMedicationDispenseMoodCode() {
@@ -217,7 +219,7 @@ public class MedicationDispenseTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(MedicationDispense target) {
-
+				target.setMoodCode(x_DocumentSubstanceMood.INT);
 			}
 
 			@Override

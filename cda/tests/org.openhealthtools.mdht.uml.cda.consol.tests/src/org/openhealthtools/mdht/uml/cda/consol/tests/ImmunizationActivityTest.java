@@ -37,6 +37,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_PQ;
+import org.openhealthtools.mdht.uml.hl7.vocab.ActClass;
 import org.openhealthtools.mdht.uml.hl7.vocab.ActRelationshipType;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
@@ -398,7 +399,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated 
+	* @generated NOT
 	* 
 	*/
 	@Test
@@ -410,7 +411,7 @@ public class ImmunizationActivityTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ImmunizationActivity target) {
-
+				target.setClassCode(ActClass.ACCM);
 			}
 
 			@Override
