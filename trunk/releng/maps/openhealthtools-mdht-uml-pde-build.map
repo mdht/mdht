@@ -116,7 +116,7 @@ plugin@org.openhealthtools.mdht.uml.cda.ectsd=SVN,trunk,https://www.projects.ope
 
 plugin@org.openhealthtools.mdht.uml.cda.emspcr=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.emspcr,force
 
-plugin@org.openhealthtools.mdht.uml.cda.phcr=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.phcr,force
+
 
 plugin@org.openhealthtools.mdht.uml.cda.phmr=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.phmr,force
 
@@ -130,7 +130,20 @@ plugin@org.openhealthtools.mdht.uml.cda.vsdr=SVN,trunk,https://www.projects.open
 
 plugin@org.openhealthtools.mdht.uml.cda.mu2consol=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,generated/org.openhealthtools.mdht.uml.cda.mu2consol,force
 
-
+!***************  PublicHealthCaseReporting  ********************************************** 
+plugin@org.openhealthtools.mdht.uml.cda.phcr=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/generated/org.openhealthtools.mdht.uml.cda.phcr,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.anthrax=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/generated/org.openhealthtools.mdht.uml.cda.phcr.anthrax,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.chlamydiatrachomatis=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/generated/org.openhealthtools.mdht.uml.cda.phcr.chlamydiatrachomatis,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.cocci=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/generated/org.openhealthtools.mdht.uml.cda.phcr.cocci,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.hepb=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/generated/org.openhealthtools.mdht.uml.cda.phcr.hepb,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.pertussis=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/generated/org.openhealthtools.mdht.uml.cda.phcr.pertussis,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.salmonellosis=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/generated/org.openhealthtools.mdht.uml.cda.phcr.salmonellosis,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.silicosis=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/generated/org.openhealthtools.mdht.uml.cda.phcr.silicosis,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.streppneumo=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/generated/org.openhealthtools.mdht.uml.cda.phcr.streppneumo,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.tss=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/generated/org.openhealthtools.mdht.uml.cda.phcr.tss,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.tuberculosis=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/generated/org.openhealthtools.mdht.uml.cda.phcr.tuberculosis,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.tularemia=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/generated/org.openhealthtools.mdht.uml.cda.phcr.tularemia,force
+plugin@org.openhealthtools.mdht.uml.cda.phcr.wnv=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht-models,,PublicHealthCaseReporting/generated/org.openhealthtools.mdht.uml.cda.phcr.wnv,force
 
 !***************  MDHT Feature for CDA Runtime for Application Development - Source Code  ********************************************** 
 feature@org.openhealthtools.mdht.uml.cda.models.source=SVN,trunk,https://www.projects.openhealthtools.org/svn/mdht,,cda/features/org.openhealthtools.mdht.uml.cda.models.source-feature,force
