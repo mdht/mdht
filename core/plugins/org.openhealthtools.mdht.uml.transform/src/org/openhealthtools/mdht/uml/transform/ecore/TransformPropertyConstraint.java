@@ -433,8 +433,15 @@ public abstract class TransformPropertyConstraint extends TransformAbstract {
 				return null;
 			}
 
+			/*
+			 * Fix for defect artf3329. Using inherited constraint name is causing redefined property constraint
+			 * to replace message string in plugin.properties redefined message. May be several sub-templates
+			 * redefining same inherited property, all replacing same superclass constraint message key.
+			 * Also, this was inconsistently applied only for redefined terminology constraints.
+			 */
 			// if redefining parent template constraint, use parent constraint name to override.
-			String constraintName = createInheritedConstraintName(property, stereotypeKind);
+			// String constraintName = createInheritedConstraintName(property, stereotypeKind);
+			String constraintName = createConstraintName(property);
 
 			return addConstraint(context, stereotypeKind, constraintName, body);
 		}
