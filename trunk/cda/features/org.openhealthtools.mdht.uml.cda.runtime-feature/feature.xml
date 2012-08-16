@@ -116,6 +116,95 @@
          version="0.0.0"
          unpack="false"/>
 
+
+
+  <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.anthrax"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+  <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.chlamydiatrachomatis"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+  <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.cocci"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+  <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.hepb"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+  <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.pertussis"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+  <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.salmonellosis"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+  <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.silicosis"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+  <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.streppneumo"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+  <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.tss"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+  <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.tuberculosis"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+  <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.tularemia"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+  <plugin
+         id="org.openhealthtools.mdht.uml.cda.phcr.wnv"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         
+
+
+
    <plugin
          id="org.openhealthtools.mdht.uml.cda.phmr"
          download-size="0"
