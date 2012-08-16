@@ -247,13 +247,15 @@
          version="0.0.0"
          unpack="false"/>
 
-   <plugin
+  <!-- 
+  drop mu2 from runtime build until refactor to remove uml validation dependency
+  <plugin
          id="org.openhealthtools.mdht.uml.cda.mu2consol"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
+-->
 
 
 
