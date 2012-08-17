@@ -106,7 +106,7 @@ public class CDAEcoreProfileReflection extends AbstractEcoreProfileReflection {
 	}
 
 	public boolean isPrimaryEClass(Class class_) {
-		return CDAModelUtil.getTemplateId(class_) != null;
+		return CDAModelUtil.getTemplateId(class_) != null && !(class_.getOwner() instanceof Class);
 	}
 
 	public String getModelPrefix(NamedElement element) {
