@@ -207,8 +207,16 @@ public class TransformInlinedProperties extends TransformAbstract {
 	}
 
 	private String getPath(Class baseSourceClass, Class targetClass, Property sourceProperty) {
-		Property property = baseSourceClass.getOwnedAttribute(null, targetClass, true, null, false);
+		Property property = null;
+		for (Property rededfinedProperty : sourceProperty.getRedefinedProperties()) {
+			property = baseSourceClass.getOwnedAttribute(
+				rededfinedProperty.getName(), rededfinedProperty.getType(), true, null, false);
+		}
 
+		if (property == null) {
+			property = baseSourceClass.getOwnedAttribute(null, targetClass, true, null, false);
+		}
+		//
 		// If not - walk the hierarchy and check for properties
 		if (property == null) {
 			for (Classifier c : targetClass.allParents()) {
