@@ -415,7 +415,11 @@ public class CDABuilder extends IncrementalProjectBuilder {
 				genmodel.setCanGenerate(true);
 
 				generator.generate(genmodel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE, umlImportMonitor);
+				IProject testProject = project.getWorkspace().getRoot().getProject(project.getName() + ".tests");
 
+				if (testProject.isOpen()) {
+					generator.generate(genmodel, GenBaseGeneratorAdapter.TESTS_PROJECT_TYPE, umlImportMonitor);
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
