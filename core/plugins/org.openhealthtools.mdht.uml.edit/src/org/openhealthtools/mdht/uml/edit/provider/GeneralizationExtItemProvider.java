@@ -64,10 +64,15 @@ public class GeneralizationExtItemProvider extends GeneralizationItemProvider im
 	 */
 	@Override
 	public String getText(Object object) {
-		Classifier general = ((Generalization) object).getGeneral();
-		String label = UMLUtil.isSameModel((Generalization) object, general)
-				? general.getName()
-				: UMLUtil.getPackageQualifiedName(general);
+		String label = null;
+		if (object != null) {
+			Classifier general = ((Generalization) object).getGeneral();
+			if (general != null) {
+				label = UMLUtil.isSameModel((Generalization) object, general)
+						? general.getName()
+						: UMLUtil.getPackageQualifiedName(general);
+			}
+		}
 		return label == null || label.length() == 0
 				? getString("_UI_Generalization_type") : //$NON-NLS-1$
 				label;
