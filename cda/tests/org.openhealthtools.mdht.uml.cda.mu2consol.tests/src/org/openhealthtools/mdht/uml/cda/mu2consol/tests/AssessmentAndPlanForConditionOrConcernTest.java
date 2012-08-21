@@ -39,14 +39,11 @@ public class AssessmentAndPlanForConditionOrConcernTest extends
 		CDAValidationTest {
 
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateAssessmentAndPlanForConditionOrConcernProblemObservation() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateAssessmentAndPlanForConditionOrConcernProblemObservation() {
 			OperationsTestCase<AssessmentAndPlanForConditionOrConcern> validateAssessmentAndPlanForConditionOrConcernProblemObservationTestCase = new OperationsTestCase<AssessmentAndPlanForConditionOrConcern>(
 			"validateAssessmentAndPlanForConditionOrConcernProblemObservation",
 			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_FOR_CONDITION_OR_CONCERN_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")

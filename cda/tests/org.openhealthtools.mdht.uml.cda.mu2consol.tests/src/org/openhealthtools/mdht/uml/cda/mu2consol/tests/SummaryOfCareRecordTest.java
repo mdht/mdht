@@ -4,12 +4,24 @@ import java.util.Map;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.openhealthtools.mdht.uml.cda.CDAFactory;
+import org.openhealthtools.mdht.uml.cda.Component2;
+import org.openhealthtools.mdht.uml.cda.Entry;
+import org.openhealthtools.mdht.uml.cda.consol.AdmissionMedication;
+import org.openhealthtools.mdht.uml.cda.consol.AllergyProblemAct;
+import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintAndReasonForVisitSection;
+import org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintSection;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeInstructionsSection;
+import org.openhealthtools.mdht.uml.cda.consol.ProblemObservation;
 import org.openhealthtools.mdht.uml.cda.consol.ProblemSection;
 import org.openhealthtools.mdht.uml.cda.consol.ProceduresSection;
+import org.openhealthtools.mdht.uml.cda.consol.ReasonForVisitSection;
 import org.openhealthtools.mdht.uml.cda.consol.ResultsSection;
 import org.openhealthtools.mdht.uml.cda.consol.SocialHistorySection;
+import org.openhealthtools.mdht.uml.cda.mu2consol.AllergiesSectionEntriesOptional;
+import org.openhealthtools.mdht.uml.cda.mu2consol.AssessmentSection;
+import org.openhealthtools.mdht.uml.cda.mu2consol.HospitalAdmissionMedicationsSectionEntriesOptional;
 import org.openhealthtools.mdht.uml.cda.mu2consol.InstructionsSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.MedicationsAdministeredSection;
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
@@ -35,9 +47,9 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <em>Validate Summary Of Care Record Mu2 Encounter Diagnoses Requirements
  * </em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordCanHaveEitherRequiredOrOptionalVitalSignsSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordCanHaveEitherRequiredOrOptionalVitalSigns(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Summary Of Care Record Can Have Either Required Or Optional
- * Vital Signs Section</em>}</li>
+ * Vital Signs</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordMedicationListConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Summary Of Care Record Medication List Constraint</em>}</li>
@@ -75,13 +87,16 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <em>Validate Summary Of Care Recordmu2consol Allergies Section Entries
  * Optional Allergy Problem Act</em>}</li>
  * <li>
- * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordmu2consolPlanOfCareSectionCarePlanningForPlanOfCareSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordmu2consolPlanOfCareSectionCarePlanningForPlanOfCare(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Summary Of Care Recordmu2consol Plan Of Care Section Care
- * Planning For Plan Of Care Section</em>}</li>
+ * Planning For Plan Of Care</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordmu2consolMedicationsAdministeredSectionMedicationActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Summary Of Care Recordmu2consol Medications Administered Section
  * Medication Activity</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordInstructionsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Summary Of Care Record Instructions Section Template Id</em>}</li>
  * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordmu2consolInstructionsSectionInstructions(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Summary Of Care Recordmu2consol Instructions Section
@@ -225,12 +240,31 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
-
+				target.init();
+				ChiefComplaintSection ccSection = ConsolFactory.eINSTANCE
+						.createChiefComplaintSection().init();
+				ReasonForVisitSection rvsSection = ConsolFactory.eINSTANCE
+						.createReasonForVisitSection().init();
+				ChiefComplaintAndReasonForVisitSection ccRvsSection = ConsolFactory.eINSTANCE
+						.createChiefComplaintAndReasonForVisitSection().init();
+				target.addSection(ccRvsSection);
+				target.addSection(rvsSection);
+				target.addSection(ccSection);
 			}
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
+
+				Component2 comp2 = CDAFactory.eINSTANCE.createComponent2();
+				target.setComponent(comp2);
+				SummaryOfCareRecord sdDoc = Mu2consolFactory.eINSTANCE
+						.createSummaryOfCareRecord().init();
+				ChiefComplaintSection ccSection = ConsolFactory.eINSTANCE
+						.createChiefComplaintSection().init();
+				ReasonForVisitSection rvsSection = ConsolFactory.eINSTANCE
+						.createReasonForVisitSection().init();
+				target.addSection(rvsSection);
+				target.addSection(ccSection);
 
 			}
 
@@ -252,7 +286,7 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSummaryOfCareRecordMu2EncounterDiagnosesRequirements() {
@@ -265,11 +299,17 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
 
+				target.init();
+				InstructionsSection iSection = Mu2consolFactory.eINSTANCE
+						.createInstructionsSection();
+				target.addSection(iSection);
 			}
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
+				AssessmentSection aSection = Mu2consolFactory.eINSTANCE
+						.createAssessmentSection().init();
+				target.addSection(aSection);
 
 			}
 
@@ -294,11 +334,11 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testValidateSummaryOfCareRecordCanHaveEitherRequiredOrOptionalVitalSignsSection() {
-		OperationsTestCase<SummaryOfCareRecord> validateSummaryOfCareRecordCanHaveEitherRequiredOrOptionalVitalSignsSectionTestCase = new OperationsTestCase<SummaryOfCareRecord>(
-				"validateSummaryOfCareRecordCanHaveEitherRequiredOrOptionalVitalSignsSection",
+	public void testValidateSummaryOfCareRecordCanHaveEitherRequiredOrOptionalVitalSigns() {
+		OperationsTestCase<SummaryOfCareRecord> validateSummaryOfCareRecordCanHaveEitherRequiredOrOptionalVitalSignsTestCase = new OperationsTestCase<SummaryOfCareRecord>(
+				"validateSummaryOfCareRecordCanHaveEitherRequiredOrOptionalVitalSigns",
 				operationsForOCL
-						.getOCLValue("VALIDATE_SUMMARY_OF_CARE_RECORD_CAN_HAVE_EITHER_REQUIRED_OR_OPTIONAL_VITAL_SIGNS_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+						.getOCLValue("VALIDATE_SUMMARY_OF_CARE_RECORD_CAN_HAVE_EITHER_REQUIRED_OR_OPTIONAL_VITAL_SIGNS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 				objectFactory) {
 
 			@Override
@@ -317,14 +357,14 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 					BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return SummaryOfCareRecordOperations
-						.validateSummaryOfCareRecordCanHaveEitherRequiredOrOptionalVitalSignsSection(
+						.validateSummaryOfCareRecordCanHaveEitherRequiredOrOptionalVitalSigns(
 								(SummaryOfCareRecord) objectToTest,
 								diagnostician, map);
 			}
 
 		};
 
-		validateSummaryOfCareRecordCanHaveEitherRequiredOrOptionalVitalSignsSectionTestCase
+		validateSummaryOfCareRecordCanHaveEitherRequiredOrOptionalVitalSignsTestCase
 				.doValidationTest();
 	}
 
@@ -735,7 +775,7 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSummaryOfCareRecordmu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication() {
@@ -747,12 +787,19 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
-
+				target.init();
+				HospitalAdmissionMedicationsSectionEntriesOptional aSection = Mu2consolFactory.eINSTANCE
+						.createHospitalAdmissionMedicationsSectionEntriesOptional();
+				target.addSection(aSection);
 			}
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
+				// target.init();
+				AdmissionMedication aMed = ConsolFactory.eINSTANCE
+						.createAdmissionMedication().init();
+				target.getHospitalAdmissionMedicationsSectionEntriesOptional()
+						.addAct(aMed);
 
 			}
 
@@ -774,7 +821,7 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSummaryOfCareRecordmu2consolAllergiesSectionEntriesOptionalAllergyProblemAct() {
@@ -786,12 +833,17 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
-
+				AllergiesSectionEntriesOptional aSection = Mu2consolFactory.eINSTANCE
+						.createAllergiesSectionEntriesOptional().init();
+				target.addSection(aSection);
 			}
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
+				// target.init();
+				AllergyProblemAct act = ConsolFactory.eINSTANCE
+						.createAllergyProblemAct();
+				target.getAllergiesSectionEntriesOptional().addAct(act);
 
 			}
 
@@ -816,11 +868,11 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
-	public void testValidateSummaryOfCareRecordmu2consolPlanOfCareSectionCarePlanningForPlanOfCareSection() {
-		OperationsTestCase<SummaryOfCareRecord> validateSummaryOfCareRecordmu2consolPlanOfCareSectionCarePlanningForPlanOfCareSectionTestCase = new OperationsTestCase<SummaryOfCareRecord>(
-				"validateSummaryOfCareRecordmu2consolPlanOfCareSectionCarePlanningForPlanOfCareSection",
+	public void testValidateSummaryOfCareRecordmu2consolPlanOfCareSectionCarePlanningForPlanOfCare() {
+		OperationsTestCase<SummaryOfCareRecord> validateSummaryOfCareRecordmu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase = new OperationsTestCase<SummaryOfCareRecord>(
+				"validateSummaryOfCareRecordmu2consolPlanOfCareSectionCarePlanningForPlanOfCare",
 				operationsForOCL
-						.getOCLValue("VALIDATE_SUMMARY_OF_CARE_RECORDMU2CONSOL_PLAN_OF_CARE_SECTION_CARE_PLANNING_FOR_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+						.getOCLValue("VALIDATE_SUMMARY_OF_CARE_RECORDMU2CONSOL_PLAN_OF_CARE_SECTION_CARE_PLANNING_FOR_PLAN_OF_CARE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 				objectFactory) {
 
 			@Override
@@ -839,14 +891,14 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 					BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
 				return SummaryOfCareRecordOperations
-						.validateSummaryOfCareRecordmu2consolPlanOfCareSectionCarePlanningForPlanOfCareSection(
+						.validateSummaryOfCareRecordmu2consolPlanOfCareSectionCarePlanningForPlanOfCare(
 								(SummaryOfCareRecord) objectToTest,
 								diagnostician, map);
 			}
 
 		};
 
-		validateSummaryOfCareRecordmu2consolPlanOfCareSectionCarePlanningForPlanOfCareSectionTestCase
+		validateSummaryOfCareRecordmu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase
 				.doValidationTest();
 	}
 
@@ -894,6 +946,45 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 	 * @generated
 	 */
 	@Test
+	public void testValidateSummaryOfCareRecordInstructionsSectionTemplateId() {
+		OperationsTestCase<SummaryOfCareRecord> validateSummaryOfCareRecordInstructionsSectionTemplateIdTestCase = new OperationsTestCase<SummaryOfCareRecord>(
+				"validateSummaryOfCareRecordInstructionsSectionTemplateId",
+				operationsForOCL
+						.getOCLValue("VALIDATE_SUMMARY_OF_CARE_RECORD_INSTRUCTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(SummaryOfCareRecord target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SummaryOfCareRecord target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SummaryOfCareRecordOperations
+						.validateSummaryOfCareRecordInstructionsSectionTemplateId(
+								(SummaryOfCareRecord) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateSummaryOfCareRecordInstructionsSectionTemplateIdTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
 	public void testValidateSummaryOfCareRecordmu2consolInstructionsSectionInstructions() {
 		OperationsTestCase<SummaryOfCareRecord> validateSummaryOfCareRecordmu2consolInstructionsSectionInstructionsTestCase = new OperationsTestCase<SummaryOfCareRecord>(
 				"validateSummaryOfCareRecordmu2consolInstructionsSectionInstructions",
@@ -930,7 +1021,7 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 	/**
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	@Test
 	public void testValidateSummaryOfCareRecordmu2consolAssessmentSectionProblemObservation() {
@@ -942,12 +1033,32 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(SummaryOfCareRecord target) {
+				target.init();
+				AssessmentSection aSection = Mu2consolFactory.eINSTANCE
+						.createAssessmentSection().init();
+				// ProblemObservation pObs = ConsolFactory.eINSTANCE
+				// .createProblemObservation().init();
+				// Entry entry = CDAFactory.eINSTANCE.createEntry();
+				// entry.setObservation(pObs);
+				// aSection.getEntries().add(entry);
+
+				target.addSection(aSection);
 
 			}
 
 			@Override
 			protected void updateToPass(SummaryOfCareRecord target) {
-				target.init();
+				// target.get
+				// target.init();
+				AssessmentSection aSection = Mu2consolFactory.eINSTANCE
+						.createAssessmentSection().init();
+				ProblemObservation pObs = ConsolFactory.eINSTANCE
+						.createProblemObservation().init();
+				Entry entry = CDAFactory.eINSTANCE.createEntry();
+				entry.setObservation(pObs);
+				aSection.getEntries().add(entry);
+
+				target.addSection(aSection);
 
 			}
 

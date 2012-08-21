@@ -1,4 +1,3 @@
-
 /**
  * <copyright>
  * </copyright>
@@ -6,7 +5,6 @@
  * $Id$
  */
 package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
-
 
 import java.util.Map;
 
@@ -23,11 +21,11 @@ import org.openhealthtools.mdht.uml.cda.mu2consol.operations.HospitalAdmissionMe
 
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
-
 /**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Hospital Admission Medications Section Entries Optional</b></em>' model objects.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A static utility class that provides operations
+ * related to '
+ * <em><b>Hospital Admission Medications Section Entries Optional</b></em>'
+ * model objects. <!-- end-user-doc -->
  *
  * <p>
  * The following operations are supported:
@@ -39,20 +37,16 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *
  * @generated
  */
- 
-public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends  CDAValidationTest {
 
+public class HospitalAdmissionMedicationsSectionEntriesOptionalTest extends
+		CDAValidationTest {
 
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateMu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateMu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication() {
 			OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional> validateMu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedicationTestCase = new OperationsTestCase<HospitalAdmissionMedicationsSectionEntriesOptional>(
 			"validateMu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedication",
 			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_HOSPITAL_ADMISSION_MEDICATIONS_SECTION_ENTRIES_OPTIONAL_ADMISSION_MEDICATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
@@ -113,22 +107,14 @@ public void testValidateMu2consolHospitalAdmissionMedicationsSectionEntriesOptio
 		};
 
 		validateMu2consolHospitalAdmissionMedicationsSectionEntriesOptionalAdmissionMedicationTestCase.doValidationTest();
-}		
+}
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetmu2consolAdmissionMedications() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetmu2consolAdmissionMedications() {
 
 
 HospitalAdmissionMedicationsSectionEntriesOptional target = objectFactory.create();
@@ -138,81 +124,79 @@ target.getmu2consolAdmissionMedications();
 
 }
 
-
-
-
-/**
-*
-* @generated
-*/
-	private static class OperationsForOCL extends HospitalAdmissionMedicationsSectionEntriesOptionalOperations {
+	/**
+	 * 
+	 * @generated
+	 */
+	private static class OperationsForOCL extends
+			HospitalAdmissionMedicationsSectionEntriesOptionalOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass()
+						.getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
 			return oclValue;
 		}
 	}
-	
-/**
-*
-* @generated
-*/
-	private static class ObjectFactory implements TestObjectFactory<HospitalAdmissionMedicationsSectionEntriesOptional> {
+
+	/**
+	 * 
+	 * @generated
+	 */
+	private static class ObjectFactory
+			implements
+			TestObjectFactory<HospitalAdmissionMedicationsSectionEntriesOptional> {
 		@Override
-		public HospitalAdmissionMedicationsSectionEntriesOptional create() {		
-			return Mu2consolFactory.eINSTANCE.createHospitalAdmissionMedicationsSectionEntriesOptional();
+		public HospitalAdmissionMedicationsSectionEntriesOptional create() {
+			return Mu2consolFactory.eINSTANCE
+					.createHospitalAdmissionMedicationsSectionEntriesOptional();
 		}
 	}
 
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
 
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
+	/**
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	private static class ConstructorTestClass extends
+			HospitalAdmissionMedicationsSectionEntriesOptionalOperations {
+	};
 
-		/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-	private static class ConstructorTestClass extends HospitalAdmissionMedicationsSectionEntriesOptionalOperations {};
-	
-		/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-		@Test
+	/**
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	@Test
 	public void testConstructor() {
 	        @SuppressWarnings("unused")
 			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
-	
-	
-	
+
 	/**
-*
-* @generated
-*/
+	 * 
+	 * @generated
+	 */
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;
 	}
-	
-	
 
-	
-	
 } // HospitalAdmissionMedicationsSectionEntriesOptionalOperations
