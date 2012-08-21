@@ -40,14 +40,11 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 public class AssessmentAndPlanForCarePlanningTest extends CDAValidationTest {
 
 	/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntry() {
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntry() {
 			OperationsTestCase<AssessmentAndPlanForCarePlanning> validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntryTestCase = new OperationsTestCase<AssessmentAndPlanForCarePlanning>(
 			"validateAssessmentAndPlanForCarePlanningOneOfPlanOfCareEntry",
 			operationsForOCL.getOCLValue("VALIDATE_ASSESSMENT_AND_PLAN_FOR_CARE_PLANNING_ONE_OF_PLAN_OF_CARE_ENTRY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")

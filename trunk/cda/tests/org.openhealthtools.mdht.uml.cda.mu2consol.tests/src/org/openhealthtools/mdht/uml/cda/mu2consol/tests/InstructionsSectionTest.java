@@ -31,6 +31,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.InstructionsSection#validateMu2consolInstructionsSectionInstructions(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Instructions Section Instructions</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.InstructionsSection#getmu2consolInstructionss() <em>Getmu2consol Instructionss</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.InstructionsSection#validateInstructionsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Instructions Section Template Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -120,6 +121,74 @@ target.getmu2consolInstructionss();
 
 
 
+}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateInstructionsSectionTemplateId() {
+			OperationsTestCase<InstructionsSection> validateInstructionsSectionTemplateIdTestCase = new OperationsTestCase<InstructionsSection>(
+			"validateInstructionsSectionTemplateId",
+			operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+			,objectFactory) {
+
+			@Override
+			protected void updateToFail(InstructionsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(InstructionsSection target) {
+				target.init();
+				
+				
+				
+				
+				
+
+				
+				
+
+	
+			
+
+	
+		
+		
+			
+				
+		
+			
+				
+			
+				
+				
+				
+				
+				
+				
+				
+			
+			
+					
+			
+				
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+			
+			
+			
+				return InstructionsSectionOperations.validateInstructionsSectionTemplateId(
+					(InstructionsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateInstructionsSectionTemplateIdTestCase.doValidationTest();
 }
 
 	/**

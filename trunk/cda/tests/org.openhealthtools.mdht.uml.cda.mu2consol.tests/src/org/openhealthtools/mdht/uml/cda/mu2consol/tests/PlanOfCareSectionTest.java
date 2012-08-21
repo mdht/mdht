@@ -1,4 +1,3 @@
-
 /**
  * <copyright>
  * </copyright>
@@ -7,57 +6,26 @@
  */
 package org.openhealthtools.mdht.uml.cda.mu2consol.tests;
 
-
 import java.util.Map;
-
 import org.eclipse.emf.common.util.BasicDiagnostic;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.junit.Test;
-
 import org.openhealthtools.mdht.uml.cda.mu2consol.Mu2consolFactory;
 import org.openhealthtools.mdht.uml.cda.mu2consol.PlanOfCareSection;
-
 import org.openhealthtools.mdht.uml.cda.mu2consol.operations.PlanOfCareSectionOperations;
-
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 
+public class PlanOfCareSectionTest extends CDAValidationTest {
 
-/**
- * <!-- begin-user-doc -->
- * A static utility class that provides operations related to '<em><b>Plan Of Care Section</b></em>' model objects.
- * <!-- end-user-doc -->
- *
- * <p>
- * The following operations are supported:
- * <ul>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.PlanOfCareSection#validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCareSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Mu2consol Plan Of Care Section Care Planning For Plan Of Care Section</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.PlanOfCareSection#getmu2consolPlanOfCareActivityAct() <em>Getmu2consol Plan Of Care Activity Act</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.PlanOfCareSection#getmu2consolPlanOfCareActivityEncounter() <em>Getmu2consol Plan Of Care Activity Encounter</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.mu2consol.PlanOfCareSection#getmu2consolPlanOfCareActivityObservation() <em>Getmu2consol Plan Of Care Activity Observation</em>}</li>
- * </ul>
- * </p>
- *
- * @generated
- */
- 
-public class PlanOfCareSectionTest extends  CDAValidationTest {
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testValidateMu2consolPlanOfCareSectionCarePlanningForPlanOfCareSection() {
-			OperationsTestCase<PlanOfCareSection> validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCareSectionTestCase = new OperationsTestCase<PlanOfCareSection>(
-			"validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCareSection",
-			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_PLAN_OF_CARE_SECTION_CARE_PLANNING_FOR_PLAN_OF_CARE_SECTION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateMu2consolPlanOfCareSectionCarePlanningForPlanOfCare() {
+			OperationsTestCase<PlanOfCareSection> validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase = new OperationsTestCase<PlanOfCareSection>(
+			"validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCare",
+			operationsForOCL.getOCLValue("VALIDATE_MU2CONSOL_PLAN_OF_CARE_SECTION_CARE_PLANNING_FOR_PLAN_OF_CARE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
 			,objectFactory) {
 
 			@Override
@@ -87,15 +55,6 @@ public void testValidateMu2consolPlanOfCareSectionCarePlanningForPlanOfCareSecti
 				
 		
 			
-			
-				
-				/* CarePlanningForPlanOfCareSection */ 
-				CarePlanningForPlanOfCareSection section =
-				
-				Mu2consolFactory.eINSTANCE.createCarePlanningForPlanOfCareSection().init(); 
-					
-			
-			target.addSection(section);
 				
 			
 				
@@ -117,29 +76,21 @@ public void testValidateMu2consolPlanOfCareSectionCarePlanningForPlanOfCareSecti
 			
 			
 			
-				return PlanOfCareSectionOperations.validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCareSection(
+				return PlanOfCareSectionOperations.validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCare(
 					(PlanOfCareSection) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCareSectionTestCase.doValidationTest();
-}		
+		validateMu2consolPlanOfCareSectionCarePlanningForPlanOfCareTestCase.doValidationTest();
+}
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetmu2consolPlanOfCareActivityAct() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetmu2consolPlanOfCareActivityAct() {
 
 
 PlanOfCareSection target = objectFactory.create();
@@ -149,20 +100,12 @@ target.getmu2consolPlanOfCareActivityAct();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetmu2consolPlanOfCareActivityEncounter() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetmu2consolPlanOfCareActivityEncounter() {
 
 
 PlanOfCareSection target = objectFactory.create();
@@ -172,20 +115,12 @@ target.getmu2consolPlanOfCareActivityEncounter();
 
 }
 
-
-
-
-
-
-/**
-*
-* @generated
-*/
-@Test
-
- 
-									
-public void testGetmu2consolPlanOfCareActivityObservation() {
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testGetmu2consolPlanOfCareActivityObservation() {
 
 
 PlanOfCareSection target = objectFactory.create();
@@ -195,81 +130,75 @@ target.getmu2consolPlanOfCareActivityObservation();
 
 }
 
-
-
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static class OperationsForOCL extends PlanOfCareSectionOperations {
 		public String getOCLValue(String fieldName) {
 
 			String oclValue = null;
 
 			try {
-				oclValue = (String) this.getClass().getSuperclass().getDeclaredField(fieldName).get(this);
+				oclValue = (String) this.getClass().getSuperclass()
+						.getDeclaredField(fieldName).get(this);
 			} catch (Exception e) {
 				oclValue = "NO OCL FOUND FOR PROPERTY " + fieldName;
 			}
 			return oclValue;
 		}
 	}
-	
-/**
-*
-* @generated
-*/
-	private static class ObjectFactory implements TestObjectFactory<PlanOfCareSection> {
+
+	/**
+	 * 
+	 * @generated
+	 */
+	private static class ObjectFactory implements
+			TestObjectFactory<PlanOfCareSection> {
 		@Override
-		public PlanOfCareSection create() {		
+		public PlanOfCareSection create() {
 			return Mu2consolFactory.eINSTANCE.createPlanOfCareSection();
 		}
 	}
 
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static OperationsForOCL operationsForOCL = new OperationsForOCL();
-
-/**
-*
-* @generated
-*/
+	/**
+	 * 
+	 * @generated
+	 */
 	private static ObjectFactory objectFactory = new ObjectFactory();
 
+	/**
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	private static class ConstructorTestClass extends
+			PlanOfCareSectionOperations {
+	}
 
-		/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-	private static class ConstructorTestClass extends PlanOfCareSectionOperations {};
-	
-		/**
-* Tests Operations Constructor for 100% coverage
-* @generated
-*/	
-		@Test
+	/**
+	 * Tests Operations Constructor for 100% coverage
+	 * 
+	 * @generated
+	 */
+	@Test
 	public void testConstructor() {
 	        @SuppressWarnings("unused")
 			ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
 	} // testConstructor
-	
-	
-	
+
 	/**
-*
-* @generated
-*/
+	 * 
+	 * @generated
+	 */
 	@Override
 	protected EObject getObjectToTest() {		
 		return null;
 	}
-	
-	
 
-	
-	
 } // PlanOfCareSectionOperations
