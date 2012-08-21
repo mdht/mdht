@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalCourseSection#validateHospitalCourseSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Course Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalCourseSection#validateHospitalCourseSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Course Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalCourseSection#validateHospitalCourseSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Course Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalCourseSection#validateHospitalCourseSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Course Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalCourseSection#validateHospitalCourseSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Course Section Text</em>}</li>
  * </ul>
@@ -110,6 +111,40 @@ public class HospitalCourseSectionTest extends CDAValidationTest {
 		};
 
 		validateHospitalCourseSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHospitalCourseSectionCodeP() {
+		OperationsTestCase<HospitalCourseSection> validateHospitalCourseSectionCodePTestCase = new OperationsTestCase<HospitalCourseSection>(
+			"validateHospitalCourseSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_COURSE_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HospitalCourseSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HospitalCourseSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HospitalCourseSectionOperations.validateHospitalCourseSectionCodeP(
+					(HospitalCourseSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHospitalCourseSectionCodePTestCase.doValidationTest();
 	}
 
 	/**

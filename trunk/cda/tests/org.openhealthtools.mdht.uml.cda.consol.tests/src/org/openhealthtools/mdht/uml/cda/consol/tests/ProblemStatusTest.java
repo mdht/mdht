@@ -35,6 +35,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemStatus#validateProblemStatusTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Status Text Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemStatus#validateProblemStatusReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Status Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemStatus#validateProblemStatusTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Status Text Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemStatus#validateProblemStatusTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Status Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProblemStatus#validateProblemStatusClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Problem Status Class Code</em>}</li>
@@ -64,12 +65,15 @@ public class ProblemStatusTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(ProblemStatus target) {
+				target.init();
+				ED txt = DatatypesFactory.eINSTANCE.createED();
 
+				target.setText(txt);
 			}
 
 			@Override
 			protected void updateToPass(ProblemStatus target) {
-				target.init();
+
 				ED txt = DatatypesFactory.eINSTANCE.createED();
 				txt.setReference(DatatypesFactory.eINSTANCE.createTEL("test"));
 				target.setText(txt);
@@ -85,6 +89,46 @@ public class ProblemStatusTest extends CDAValidationTest {
 		};
 
 		validateProblemStatusTextReferenceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateProblemStatusReferenceValue() {
+		OperationsTestCase<ProblemStatus> validateProblemStatusReferenceValueTestCase = new OperationsTestCase<ProblemStatus>(
+			"validateProblemStatusReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_PROBLEM_STATUS_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProblemStatus target) {
+				target.init();
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL());
+				target.setText(txt);
+			}
+
+			@Override
+			protected void updateToPass(ProblemStatus target) {
+				target.init();
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL("test"));
+				target.setText(txt);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProblemStatusOperations.validateProblemStatusReferenceValue(
+					(ProblemStatus) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProblemStatusReferenceValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -240,7 +284,7 @@ public class ProblemStatusTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateProblemStatusCode() {
@@ -257,8 +301,7 @@ public class ProblemStatusTest extends CDAValidationTest {
 			protected void updateToPass(ProblemStatus target) {
 				target.init();
 
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs);
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("33999-4", "2.16.840.1.113883.6.1"));
 
 			}
 

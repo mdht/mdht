@@ -43,6 +43,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesCodeOriginalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Code Original Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesCodeOriginalTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Code Original Text Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesCodeOriginalTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Code Original Text Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesServiceDeliveryTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Service Delivery Type Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Template Id</em>}</li>
@@ -54,10 +55,12 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesServiceDeliveryLocation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Service Delivery Location</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesIndication(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Indication</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesEncounterPerformer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Encounter Performer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesEncounterDiagnosis(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Encounter Diagnosis</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesEncounterPerformerEncounterPerformerAssignedEntityCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Encounter Performer Encounter Performer Assigned Entity Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#validateEncounterActivitiesEncounterPerformerEncounterPerformerAssignedEntity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounter Activities Encounter Performer Encounter Performer Assigned Entity</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#getServiceDeliveryLocations() <em>Get Service Delivery Locations</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#getIndications() <em>Get Indications</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncounterActivities#getEncounterDiagnosiss() <em>Get Encounter Diagnosiss</em>}</li>
  * </ul>
  * </p>
  *
@@ -142,6 +145,50 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 		};
 
 		validateEncounterActivitiesCodeOriginalTextReferenceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateEncounterActivitiesReferenceValue() {
+		OperationsTestCase<EncounterActivities> validateEncounterActivitiesReferenceValueTestCase = new OperationsTestCase<EncounterActivities>(
+			"validateEncounterActivitiesReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_ACTIVITIES_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(EncounterActivities target) {
+				target.init();
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				ED ot = DatatypesFactory.eINSTANCE.createED();
+				ot.setReference(DatatypesFactory.eINSTANCE.createTEL());
+				code.setOriginalText(ot);
+				target.setCode(code);
+			}
+
+			@Override
+			protected void updateToPass(EncounterActivities target) {
+
+				CD code = DatatypesFactory.eINSTANCE.createCD();
+				ED ot = DatatypesFactory.eINSTANCE.createED();
+				ot.setReference(DatatypesFactory.eINSTANCE.createTEL("test"));
+				code.setOriginalText(ot);
+
+				target.setCode(code);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EncounterActivitiesOperations.validateEncounterActivitiesReferenceValue(
+					(EncounterActivities) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEncounterActivitiesReferenceValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -557,6 +604,40 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
+	public void testValidateEncounterActivitiesEncounterDiagnosis() {
+		OperationsTestCase<EncounterActivities> validateEncounterActivitiesEncounterDiagnosisTestCase = new OperationsTestCase<EncounterActivities>(
+			"validateEncounterActivitiesEncounterDiagnosis",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTER_ACTIVITIES_ENCOUNTER_DIAGNOSIS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(EncounterActivities target) {
+
+			}
+
+			@Override
+			protected void updateToPass(EncounterActivities target) {
+				target.init();
+				target.addAct(ConsolFactory.eINSTANCE.createEncounterDiagnosis());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EncounterActivitiesOperations.validateEncounterActivitiesEncounterDiagnosis(
+					(EncounterActivities) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEncounterActivitiesEncounterDiagnosisTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
 	public void testValidateEncounterActivitiesEncounterPerformerEncounterPerformerAssignedEntityCode() {
 		OperationsTestCase<EncounterActivities> validateEncounterActivitiesEncounterPerformerEncounterPerformerAssignedEntityCodeTestCase = new OperationsTestCase<EncounterActivities>(
 			"validateEncounterActivitiesEncounterPerformerEncounterPerformerAssignedEntityCode",
@@ -658,6 +739,18 @@ public class EncounterActivitiesTest extends CDAValidationTest {
 
 		EncounterActivities target = objectFactory.create();
 		target.getIndications();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetEncounterDiagnosiss() {
+
+		EncounterActivities target = objectFactory.create();
+		target.getEncounterDiagnosiss();
 
 	}
 

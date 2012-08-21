@@ -39,6 +39,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureDescriptionSection#validateProcedureDescriptionSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Description Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureDescriptionSection#validateProcedureDescriptionSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Description Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureDescriptionSection#validateProcedureDescriptionSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Description Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureDescriptionSection#validateProcedureDescriptionSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Description Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ProcedureDescriptionSection#validateProcedureDescriptionSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Procedure Description Section Title</em>}</li>
  * </ul>
@@ -115,6 +116,40 @@ public class ProcedureDescriptionSectionTest extends CDAValidationTest {
 		};
 
 		validateProcedureDescriptionSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateProcedureDescriptionSectionCodeP() {
+		OperationsTestCase<ProcedureDescriptionSection> validateProcedureDescriptionSectionCodePTestCase = new OperationsTestCase<ProcedureDescriptionSection>(
+			"validateProcedureDescriptionSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_PROCEDURE_DESCRIPTION_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ProcedureDescriptionSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ProcedureDescriptionSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ProcedureDescriptionSectionOperations.validateProcedureDescriptionSectionCodeP(
+					(ProcedureDescriptionSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateProcedureDescriptionSectionCodePTestCase.doValidationTest();
 	}
 
 	/**

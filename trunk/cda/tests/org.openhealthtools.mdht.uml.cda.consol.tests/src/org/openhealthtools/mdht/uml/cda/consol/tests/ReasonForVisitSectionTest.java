@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReasonForVisitSection#validateReasonForVisitSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason For Visit Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReasonForVisitSection#validateReasonForVisitSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason For Visit Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReasonForVisitSection#validateReasonForVisitSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason For Visit Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReasonForVisitSection#validateReasonForVisitSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason For Visit Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReasonForVisitSection#validateReasonForVisitSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason For Visit Section Title</em>}</li>
  * </ul>
@@ -110,6 +111,40 @@ public class ReasonForVisitSectionTest extends CDAValidationTest {
 		};
 
 		validateReasonForVisitSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateReasonForVisitSectionCodeP() {
+		OperationsTestCase<ReasonForVisitSection> validateReasonForVisitSectionCodePTestCase = new OperationsTestCase<ReasonForVisitSection>(
+			"validateReasonForVisitSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_VISIT_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReasonForVisitSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ReasonForVisitSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReasonForVisitSectionOperations.validateReasonForVisitSectionCodeP(
+					(ReasonForVisitSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateReasonForVisitSectionCodePTestCase.doValidationTest();
 	}
 
 	/**

@@ -18,6 +18,8 @@ import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.EntryRelationship;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.ConsolPackage;
+import org.openhealthtools.mdht.uml.cda.consol.GeneralStatusSection;
 import org.openhealthtools.mdht.uml.cda.consol.StudyAct;
 import org.openhealthtools.mdht.uml.cda.consol.operations.StudyActOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
@@ -37,6 +39,9 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.StudyAct#validateStudyActIdsHaveRoot(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Study Act Ids Have Root</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.StudyAct#validateStudyActNoIdExtension(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Study Act No Id Extension</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.StudyAct#validateStudyActTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Study Act Text Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.StudyAct#validateStudyActTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Study Act Text Reference Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.StudyAct#validateStudyActReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Study Act Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.StudyAct#validateStudyActTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Study Act Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.StudyAct#validateStudyActClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Study Act Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.StudyAct#validateStudyActMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Study Act Mood Code</em>}</li>
@@ -128,6 +133,129 @@ public class StudyActTest extends CDAValidationTest {
 		};
 
 		validateStudyActNoIdExtensionTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateStudyActTextReference() {
+		OperationsTestCase<StudyAct> validateStudyActTextReferenceTestCase = new OperationsTestCase<StudyAct>(
+			"validateStudyActTextReference",
+			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(StudyAct target) {
+				target.init();
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				target.setText(txt);
+			}
+
+			@Override
+			protected void updateToPass(StudyAct target) {
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL());
+				target.setText(txt);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return StudyActOperations.validateStudyActTextReference((StudyAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateStudyActTextReferenceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateStudyActTextReferenceValue() {
+		OperationsTestCase<StudyAct> validateStudyActTextReferenceValueTestCase = new OperationsTestCase<StudyAct>(
+			"validateStudyActTextReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_TEXT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(StudyAct target) {
+				target.init();
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL());
+				target.setText(txt);
+			}
+
+			@Override
+			protected void updateToPass(StudyAct target) {
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL("test"));
+				target.setText(txt);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return StudyActOperations.validateStudyActTextReferenceValue(
+					(StudyAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateStudyActTextReferenceValueTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateStudyActReferenceValue() {
+		OperationsTestCase<StudyAct> validateStudyActReferenceValueTestCase = new NarrativeReferenceTestCase<StudyAct>(
+			"validateStudyActReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_STUDY_ACT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(StudyAct target) {
+				target.init();
+
+				// add the observation to a section, as required by the constraint, that has text that we can reference
+				addText(
+					createSectionForClinicalStatement(target, ConsolPackage.eINSTANCE, GeneralStatusSection.class), "",
+					"No particular health status observed.");
+
+				// add a reference to the section text
+				target.setText(createEDWithReference("Some sample text", "#1.2.3.4"));
+			}
+
+			@Override
+			protected void updateToPass(StudyAct target) {
+				// add the observation to a section, as required by the constraint, that has text that we can reference
+				addText(
+					createSectionForClinicalStatement(target, ConsolPackage.eINSTANCE, GeneralStatusSection.class),
+					"1.2.3.4", "No particular health status observed.");
+
+				// add a reference to the section text
+				target.setText(createEDWithReference("Some sample text", "#1.2.3.4"));
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return StudyActOperations.validateStudyActReferenceValue((StudyAct) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateStudyActReferenceValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -262,7 +390,7 @@ public class StudyActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateStudyActCode() {
@@ -278,7 +406,7 @@ public class StudyActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(StudyAct target) {
 				target.init();
-
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("113014", "1.2.840.10008.2.16.4"));
 			}
 
 			@Override

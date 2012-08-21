@@ -36,8 +36,10 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.PQ;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AgeObservation#validateAgeObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Age Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AgeObservation#validateAgeObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Age Observation Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AgeObservation#validateAgeObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Age Observation Mood Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AgeObservation#validateAgeObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Age Observation Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AgeObservation#validateAgeObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Age Observation Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AgeObservation#validateAgeObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Age Observation Status Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AgeObservation#validateAgeObservationStatusCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Age Observation Status Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AgeObservation#validateAgeObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Age Observation Value</em>}</li>
  * </ul>
  * </p>
@@ -187,6 +189,40 @@ public class AgeObservationTest extends CDAValidationTest {
 
 	/**
 	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAgeObservationCodeP() {
+		OperationsTestCase<AgeObservation> validateAgeObservationCodePTestCase = new OperationsTestCase<AgeObservation>(
+			"validateAgeObservationCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_AGE_OBSERVATION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AgeObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AgeObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AgeObservationOperations.validateAgeObservationCodeP(
+					(AgeObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAgeObservationCodePTestCase.doValidationTest();
+	}
+
+	/**
+	*
 	* @generated NOT
 	*/
 	@Test
@@ -259,6 +295,40 @@ public class AgeObservationTest extends CDAValidationTest {
 		};
 
 		validateAgeObservationStatusCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAgeObservationStatusCodeP() {
+		OperationsTestCase<AgeObservation> validateAgeObservationStatusCodePTestCase = new OperationsTestCase<AgeObservation>(
+			"validateAgeObservationStatusCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_AGE_OBSERVATION_STATUS_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AgeObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AgeObservation target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AgeObservationOperations.validateAgeObservationStatusCodeP(
+					(AgeObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAgeObservationStatusCodePTestCase.doValidationTest();
 	}
 
 	/**

@@ -34,8 +34,15 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PhysicalExamSection#validatePhysicalExamSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Physical Exam Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PhysicalExamSection#validatePhysicalExamSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Physical Exam Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PhysicalExamSection#validatePhysicalExamSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Physical Exam Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PhysicalExamSection#validatePhysicalExamSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Physical Exam Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PhysicalExamSection#validatePhysicalExamSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Physical Exam Section Text</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PhysicalExamSection#validatePhysicalExamSectionPressureUlcerObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Physical Exam Section Pressure Ulcer Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PhysicalExamSection#validatePhysicalExamSectionNumberOfPressureUlcersObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Physical Exam Section Number Of Pressure Ulcers Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PhysicalExamSection#validatePhysicalExamSectionHighestPressureUlcerStage(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Physical Exam Section Highest Pressure Ulcer Stage</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PhysicalExamSection#getPressureUlcerObservations() <em>Get Pressure Ulcer Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PhysicalExamSection#getNumberOfPressureUlcersObservations() <em>Get Number Of Pressure Ulcers Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PhysicalExamSection#getHighestPressureUlcerStages() <em>Get Highest Pressure Ulcer Stages</em>}</li>
  * </ul>
  * </p>
  *
@@ -117,6 +124,40 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
+	public void testValidatePhysicalExamSectionCodeP() {
+		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionCodePTestCase = new OperationsTestCase<PhysicalExamSection>(
+			"validatePhysicalExamSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PhysicalExamSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PhysicalExamSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PhysicalExamSectionOperations.validatePhysicalExamSectionCodeP(
+					(PhysicalExamSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePhysicalExamSectionCodePTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
 	public void testValidatePhysicalExamSectionTitle() {
 		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionTitleTestCase = new OperationsTestCase<PhysicalExamSection>(
 			"validatePhysicalExamSectionTitle",
@@ -184,6 +225,144 @@ public class PhysicalExamSectionTest extends CDAValidationTest {
 		};
 
 		validatePhysicalExamSectionTextTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidatePhysicalExamSectionPressureUlcerObservation() {
+		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionPressureUlcerObservationTestCase = new OperationsTestCase<PhysicalExamSection>(
+			"validatePhysicalExamSectionPressureUlcerObservation",
+			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_PRESSURE_ULCER_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PhysicalExamSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PhysicalExamSection target) {
+				target.init();
+				target.addObservation(ConsolFactory.eINSTANCE.createPressureUlcerObservation());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PhysicalExamSectionOperations.validatePhysicalExamSectionPressureUlcerObservation(
+					(PhysicalExamSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePhysicalExamSectionPressureUlcerObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidatePhysicalExamSectionNumberOfPressureUlcersObservation() {
+		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionNumberOfPressureUlcersObservationTestCase = new OperationsTestCase<PhysicalExamSection>(
+			"validatePhysicalExamSectionNumberOfPressureUlcersObservation",
+			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_NUMBER_OF_PRESSURE_ULCERS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PhysicalExamSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PhysicalExamSection target) {
+				target.init();
+				target.addObservation(ConsolFactory.eINSTANCE.createNumberOfPressureUlcersObservation());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PhysicalExamSectionOperations.validatePhysicalExamSectionNumberOfPressureUlcersObservation(
+					(PhysicalExamSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePhysicalExamSectionNumberOfPressureUlcersObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidatePhysicalExamSectionHighestPressureUlcerStage() {
+		OperationsTestCase<PhysicalExamSection> validatePhysicalExamSectionHighestPressureUlcerStageTestCase = new OperationsTestCase<PhysicalExamSection>(
+			"validatePhysicalExamSectionHighestPressureUlcerStage",
+			operationsForOCL.getOCLValue("VALIDATE_PHYSICAL_EXAM_SECTION_HIGHEST_PRESSURE_ULCER_STAGE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PhysicalExamSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PhysicalExamSection target) {
+				target.init();
+				target.addObservation(ConsolFactory.eINSTANCE.createHighestPressureUlcerStage());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PhysicalExamSectionOperations.validatePhysicalExamSectionHighestPressureUlcerStage(
+					(PhysicalExamSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePhysicalExamSectionHighestPressureUlcerStageTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPressureUlcerObservations() {
+
+		PhysicalExamSection target = objectFactory.create();
+		target.getPressureUlcerObservations();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetNumberOfPressureUlcersObservations() {
+
+		PhysicalExamSection target = objectFactory.create();
+		target.getNumberOfPressureUlcersObservations();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetHighestPressureUlcerStages() {
+
+		PhysicalExamSection target = objectFactory.create();
+		target.getHighestPressureUlcerStages();
+
 	}
 
 	/**

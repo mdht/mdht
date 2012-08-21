@@ -39,6 +39,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SubjectiveSection#validateSubjectiveSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Subjective Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SubjectiveSection#validateSubjectiveSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Subjective Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SubjectiveSection#validateSubjectiveSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Subjective Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SubjectiveSection#validateSubjectiveSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Subjective Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SubjectiveSection#validateSubjectiveSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Subjective Section Title</em>}</li>
  * </ul>
@@ -115,6 +116,40 @@ public class SubjectiveSectionTest extends CDAValidationTest {
 		};
 
 		validateSubjectiveSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateSubjectiveSectionCodeP() {
+		OperationsTestCase<SubjectiveSection> validateSubjectiveSectionCodePTestCase = new OperationsTestCase<SubjectiveSection>(
+			"validateSubjectiveSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_SUBJECTIVE_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SubjectiveSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SubjectiveSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SubjectiveSectionOperations.validateSubjectiveSectionCodeP(
+					(SubjectiveSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSubjectiveSectionCodePTestCase.doValidationTest();
 	}
 
 	/**

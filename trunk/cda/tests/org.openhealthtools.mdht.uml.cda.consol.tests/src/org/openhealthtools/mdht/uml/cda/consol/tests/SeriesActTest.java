@@ -401,7 +401,7 @@ public class SeriesActTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateSeriesActCode() {
@@ -417,7 +417,7 @@ public class SeriesActTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(SeriesAct target) {
 				target.init();
-
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("113015", "1.2.840.10008.2.16.4"));
 			}
 
 			@Override

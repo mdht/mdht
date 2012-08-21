@@ -53,7 +53,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_DocumentSubstanceMood;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AuthorizationActivity#validateAuthorizationActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Authorization Activity Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AuthorizationActivity#validateAuthorizationActivityEntryRelationship(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Authorization Activity Entry Relationship</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AuthorizationActivity#validateAuthorizationActivityEntryRelationshipHasClinicalStatement(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Authorization Activity Entry Relationship Has Clinical Statement</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AuthorizationActivity#validateAuthorizationActivityEntryRelationshipHasAuhtorixedPerformers(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Authorization Activity Entry Relationship Has Auhtorixed Performers</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AuthorizationActivity#validateAuthorizationActivityEntryRelationshipHasAuthorizedPerformers(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Authorization Activity Entry Relationship Has Authorized Performers</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AuthorizationActivity#validateAuthorizationActivityEntryRelationshipTypeCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Authorization Activity Entry Relationship Type Code</em>}</li>
  * </ul>
  * </p>
@@ -533,10 +533,10 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 	* @generated not
 	*/
 	@Test
-	public void testValidateAuthorizationActivityEntryRelationshipHasAuhtorixedPerformers() {
-		OperationsTestCase<AuthorizationActivity> validateAuthorizationActivityEntryRelationshipHasAuhtorixedPerformersTestCase = new OperationsTestCase<AuthorizationActivity>(
-			"validateAuthorizationActivityEntryRelationshipHasAuhtorixedPerformers",
-			operationsForOCL.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_ENTRY_RELATIONSHIP_HAS_AUHTORIXED_PERFORMERS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateAuthorizationActivityEntryRelationshipHasAuthorizedPerformers() {
+		OperationsTestCase<AuthorizationActivity> validateAuthorizationActivityEntryRelationshipHasAuthorizedPerformersTestCase = new OperationsTestCase<AuthorizationActivity>(
+			"validateAuthorizationActivityEntryRelationshipHasAuthorizedPerformers",
+			operationsForOCL.getOCLValue("VALIDATE_AUTHORIZATION_ACTIVITY_ENTRY_RELATIONSHIP_HAS_AUTHORIZED_PERFORMERS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -853,17 +853,16 @@ public class AuthorizationActivityTest extends CDAValidationTest {
 			// er.setTypeCode(x_ActRelationshipEntryRelationship.SUBJ);
 			// }
 			// }
-
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return AuthorizationActivityOperations.validateAuthorizationActivityEntryRelationshipHasAuhtorixedPerformers(
+				return AuthorizationActivityOperations.validateAuthorizationActivityEntryRelationshipHasAuthorizedPerformers(
 					(AuthorizationActivity) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateAuthorizationActivityEntryRelationshipHasAuhtorixedPerformersTestCase.doValidationTest();
+		validateAuthorizationActivityEntryRelationshipHasAuthorizedPerformersTestCase.doValidationTest();
 	}
 
 	/**

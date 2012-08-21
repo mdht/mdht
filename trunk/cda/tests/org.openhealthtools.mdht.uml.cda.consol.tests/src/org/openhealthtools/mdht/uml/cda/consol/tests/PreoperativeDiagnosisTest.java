@@ -20,6 +20,7 @@ import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
 import org.openhealthtools.mdht.uml.cda.consol.PreoperativeDiagnosis;
 import org.openhealthtools.mdht.uml.cda.consol.operations.PreoperativeDiagnosisOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship;
 
 /**
@@ -35,7 +36,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PreoperativeDiagnosis#validatePreoperativeDiagnosisCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Preoperative Diagnosis Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PreoperativeDiagnosis#validatePreoperativeDiagnosisMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Preoperative Diagnosis Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PreoperativeDiagnosis#validatePreoperativeDiagnosisProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Preoperative Diagnosis Problem Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PreoperativeDiagnosis#getProblemObservation() <em>Get Problem Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PreoperativeDiagnosis#getProblemObservations() <em>Get Problem Observations</em>}</li>
  * </ul>
  * </p>
  *
@@ -114,7 +115,7 @@ public class PreoperativeDiagnosisTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidatePreoperativeDiagnosisCode() {
@@ -131,7 +132,7 @@ public class PreoperativeDiagnosisTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(PreoperativeDiagnosis target) {
 				target.init();
-
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("10219-4", "2.16.840.1.113883.6.1"));
 			}
 
 			@Override
@@ -223,10 +224,10 @@ public class PreoperativeDiagnosisTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetProblemObservation() {
+	public void testGetProblemObservations() {
 
 		PreoperativeDiagnosis target = objectFactory.create();
-		target.getProblemObservation();
+		target.getProblemObservations();
 
 	}
 

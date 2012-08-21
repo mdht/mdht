@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintAndReasonForVisitSection#validateChiefComplaintAndReasonForVisitSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chief Complaint And Reason For Visit Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintAndReasonForVisitSection#validateChiefComplaintAndReasonForVisitSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chief Complaint And Reason For Visit Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintAndReasonForVisitSection#validateChiefComplaintAndReasonForVisitSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chief Complaint And Reason For Visit Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintAndReasonForVisitSection#validateChiefComplaintAndReasonForVisitSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chief Complaint And Reason For Visit Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ChiefComplaintAndReasonForVisitSection#validateChiefComplaintAndReasonForVisitSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Chief Complaint And Reason For Visit Section Title</em>}</li>
  * </ul>
@@ -110,6 +111,40 @@ public class ChiefComplaintAndReasonForVisitSectionTest extends CDAValidationTes
 		};
 
 		validateChiefComplaintAndReasonForVisitSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateChiefComplaintAndReasonForVisitSectionCodeP() {
+		OperationsTestCase<ChiefComplaintAndReasonForVisitSection> validateChiefComplaintAndReasonForVisitSectionCodePTestCase = new OperationsTestCase<ChiefComplaintAndReasonForVisitSection>(
+			"validateChiefComplaintAndReasonForVisitSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_CHIEF_COMPLAINT_AND_REASON_FOR_VISIT_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ChiefComplaintAndReasonForVisitSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ChiefComplaintAndReasonForVisitSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ChiefComplaintAndReasonForVisitSectionOperations.validateChiefComplaintAndReasonForVisitSectionCodeP(
+					(ChiefComplaintAndReasonForVisitSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateChiefComplaintAndReasonForVisitSectionCodePTestCase.doValidationTest();
 	}
 
 	/**

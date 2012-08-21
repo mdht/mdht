@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReviewOfSystemsSection#validateReviewOfSystemsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Review Of Systems Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReviewOfSystemsSection#validateReviewOfSystemsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Review Of Systems Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReviewOfSystemsSection#validateReviewOfSystemsSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Review Of Systems Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReviewOfSystemsSection#validateReviewOfSystemsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Review Of Systems Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReviewOfSystemsSection#validateReviewOfSystemsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Review Of Systems Section Text</em>}</li>
  * </ul>
@@ -110,6 +111,40 @@ public class ReviewOfSystemsSectionTest extends CDAValidationTest {
 		};
 
 		validateReviewOfSystemsSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateReviewOfSystemsSectionCodeP() {
+		OperationsTestCase<ReviewOfSystemsSection> validateReviewOfSystemsSectionCodePTestCase = new OperationsTestCase<ReviewOfSystemsSection>(
+			"validateReviewOfSystemsSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_REVIEW_OF_SYSTEMS_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReviewOfSystemsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ReviewOfSystemsSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReviewOfSystemsSectionOperations.validateReviewOfSystemsSectionCodeP(
+					(ReviewOfSystemsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateReviewOfSystemsSectionCodePTestCase.doValidationTest();
 	}
 
 	/**

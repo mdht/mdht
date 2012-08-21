@@ -39,6 +39,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNoteSurgicalProcedureSection#validateOperativeNoteSurgicalProcedureSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Surgical Procedure Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNoteSurgicalProcedureSection#validateOperativeNoteSurgicalProcedureSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Surgical Procedure Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNoteSurgicalProcedureSection#validateOperativeNoteSurgicalProcedureSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Surgical Procedure Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNoteSurgicalProcedureSection#validateOperativeNoteSurgicalProcedureSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Surgical Procedure Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNoteSurgicalProcedureSection#validateOperativeNoteSurgicalProcedureSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Surgical Procedure Section Title</em>}</li>
  * </ul>
@@ -115,6 +116,40 @@ public class OperativeNoteSurgicalProcedureSectionTest extends CDAValidationTest
 		};
 
 		validateOperativeNoteSurgicalProcedureSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateOperativeNoteSurgicalProcedureSectionCodeP() {
+		OperationsTestCase<OperativeNoteSurgicalProcedureSection> validateOperativeNoteSurgicalProcedureSectionCodePTestCase = new OperationsTestCase<OperativeNoteSurgicalProcedureSection>(
+			"validateOperativeNoteSurgicalProcedureSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_SURGICAL_PROCEDURE_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(OperativeNoteSurgicalProcedureSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(OperativeNoteSurgicalProcedureSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return OperativeNoteSurgicalProcedureSectionOperations.validateOperativeNoteSurgicalProcedureSectionCodeP(
+					(OperativeNoteSurgicalProcedureSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateOperativeNoteSurgicalProcedureSectionCodePTestCase.doValidationTest();
 	}
 
 	/**
