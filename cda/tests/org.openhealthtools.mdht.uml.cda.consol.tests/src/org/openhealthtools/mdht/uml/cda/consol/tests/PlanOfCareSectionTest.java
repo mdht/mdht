@@ -27,6 +27,8 @@ import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareActivitySupply;
 import org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection;
 import org.openhealthtools.mdht.uml.cda.consol.operations.PlanOfCareSectionOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
+import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,6 +40,8 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#validatePlanOfCareSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#validatePlanOfCareSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#validatePlanOfCareSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Code P</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#validatePlanOfCareSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#validatePlanOfCareSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#validatePlanOfCareSectionPlanOfCareActivityAct(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Plan Of Care Activity Act</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#validatePlanOfCareSectionPlanOfCareActivityEncounter(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Plan Of Care Activity Encounter</em>}</li>
@@ -45,12 +49,14 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#validatePlanOfCareSectionPlanOfCareActivityProcedure(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Plan Of Care Activity Procedure</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#validatePlanOfCareSectionPlanOfCareActivitySubstanceAdministration(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Plan Of Care Activity Substance Administration</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#validatePlanOfCareSectionPlanOfCareActivitySupply(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Plan Of Care Activity Supply</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#getPlanOfCareActivityAct() <em>Get Plan Of Care Activity Act</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#getPlanOfCareActivityEncounter() <em>Get Plan Of Care Activity Encounter</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#getPlanOfCareActivityObservation() <em>Get Plan Of Care Activity Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#getPlanOfCareActivityProcedure() <em>Get Plan Of Care Activity Procedure</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#getPlanOfCareActivitySubstanceAdministration() <em>Get Plan Of Care Activity Substance Administration</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#getPlanOfCareActivitySupply() <em>Get Plan Of Care Activity Supply</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#validatePlanOfCareSectionInstructions(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Plan Of Care Section Instructions</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#getPlanOfCareActivityActs() <em>Get Plan Of Care Activity Acts</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#getPlanOfCareActivityEncounters() <em>Get Plan Of Care Activity Encounters</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#getPlanOfCareActivityObservations() <em>Get Plan Of Care Activity Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#getPlanOfCareActivityProcedures() <em>Get Plan Of Care Activity Procedures</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#getPlanOfCareActivitySubstanceAdministrations() <em>Get Plan Of Care Activity Substance Administrations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#getPlanOfCareActivitySupplies() <em>Get Plan Of Care Activity Supplies</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PlanOfCareSection#getInstructionss() <em>Get Instructionss</em>}</li>
  * </ul>
  * </p>
  *
@@ -125,6 +131,77 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 		};
 
 		validatePlanOfCareSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePlanOfCareSectionCodeP() {
+		OperationsTestCase<PlanOfCareSection> validatePlanOfCareSectionCodePTestCase = new OperationsTestCase<PlanOfCareSection>(
+			"validatePlanOfCareSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PlanOfCareSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PlanOfCareSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PlanOfCareSectionOperations.validatePlanOfCareSectionCodeP(
+					(PlanOfCareSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePlanOfCareSectionCodePTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidatePlanOfCareSectionTitle() {
+		OperationsTestCase<PlanOfCareSection> validatePlanOfCareSectionTitleTestCase = new OperationsTestCase<PlanOfCareSection>(
+			"validatePlanOfCareSectionTitle",
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PlanOfCareSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PlanOfCareSection target) {
+				target.init();
+
+				ST title = DatatypesFactory.eINSTANCE.createST("title");
+				target.setTitle(title);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PlanOfCareSectionOperations.validatePlanOfCareSectionTitle(
+					(PlanOfCareSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePlanOfCareSectionTitleTestCase.doValidationTest();
 	}
 
 	/**
@@ -377,13 +454,47 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 
 	/**
 	*
+	* @generated not
+	*/
+	@Test
+	public void testValidatePlanOfCareSectionInstructions() {
+		OperationsTestCase<PlanOfCareSection> validatePlanOfCareSectionInstructionsTestCase = new OperationsTestCase<PlanOfCareSection>(
+			"validatePlanOfCareSectionInstructions",
+			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_SECTION_INSTRUCTIONS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PlanOfCareSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PlanOfCareSection target) {
+				target.init();
+				target.addAct(ConsolFactory.eINSTANCE.createInstructions());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PlanOfCareSectionOperations.validatePlanOfCareSectionInstructions(
+					(PlanOfCareSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePlanOfCareSectionInstructionsTestCase.doValidationTest();
+	}
+
+	/**
+	*
 	* @generated
 	*/
 	@Test
-	public void testGetPlanOfCareActivityAct() {
+	public void testGetPlanOfCareActivityActs() {
 
 		PlanOfCareSection target = objectFactory.create();
-		target.getPlanOfCareActivityAct();
+		target.getPlanOfCareActivityActs();
 
 	}
 
@@ -392,10 +503,10 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetPlanOfCareActivityEncounter() {
+	public void testGetPlanOfCareActivityEncounters() {
 
 		PlanOfCareSection target = objectFactory.create();
-		target.getPlanOfCareActivityEncounter();
+		target.getPlanOfCareActivityEncounters();
 
 	}
 
@@ -404,10 +515,10 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetPlanOfCareActivityObservation() {
+	public void testGetPlanOfCareActivityObservations() {
 
 		PlanOfCareSection target = objectFactory.create();
-		target.getPlanOfCareActivityObservation();
+		target.getPlanOfCareActivityObservations();
 
 	}
 
@@ -416,10 +527,10 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetPlanOfCareActivityProcedure() {
+	public void testGetPlanOfCareActivityProcedures() {
 
 		PlanOfCareSection target = objectFactory.create();
-		target.getPlanOfCareActivityProcedure();
+		target.getPlanOfCareActivityProcedures();
 
 	}
 
@@ -428,10 +539,10 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetPlanOfCareActivitySubstanceAdministration() {
+	public void testGetPlanOfCareActivitySubstanceAdministrations() {
 
 		PlanOfCareSection target = objectFactory.create();
-		target.getPlanOfCareActivitySubstanceAdministration();
+		target.getPlanOfCareActivitySubstanceAdministrations();
 
 	}
 
@@ -440,10 +551,22 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetPlanOfCareActivitySupply() {
+	public void testGetPlanOfCareActivitySupplies() {
 
 		PlanOfCareSection target = objectFactory.create();
-		target.getPlanOfCareActivitySupply();
+		target.getPlanOfCareActivitySupplies();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetInstructionss() {
+
+		PlanOfCareSection target = objectFactory.create();
+		target.getInstructionss();
 
 	}
 

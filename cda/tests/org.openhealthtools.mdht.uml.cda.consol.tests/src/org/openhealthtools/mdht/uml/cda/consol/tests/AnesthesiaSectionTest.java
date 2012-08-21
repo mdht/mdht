@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AnesthesiaSection#validateAnesthesiaSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Anesthesia Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AnesthesiaSection#validateAnesthesiaSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Anesthesia Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AnesthesiaSection#validateAnesthesiaSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Anesthesia Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AnesthesiaSection#validateAnesthesiaSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Anesthesia Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AnesthesiaSection#validateAnesthesiaSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Anesthesia Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AnesthesiaSection#validateAnesthesiaSectionProcedureActivityProcedure(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Anesthesia Section Procedure Activity Procedure</em>}</li>
@@ -114,6 +115,40 @@ public class AnesthesiaSectionTest extends CDAValidationTest {
 		};
 
 		validateAnesthesiaSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAnesthesiaSectionCodeP() {
+		OperationsTestCase<AnesthesiaSection> validateAnesthesiaSectionCodePTestCase = new OperationsTestCase<AnesthesiaSection>(
+			"validateAnesthesiaSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_ANESTHESIA_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AnesthesiaSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AnesthesiaSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AnesthesiaSectionOperations.validateAnesthesiaSectionCodeP(
+					(AnesthesiaSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAnesthesiaSectionCodePTestCase.doValidationTest();
 	}
 
 	/**

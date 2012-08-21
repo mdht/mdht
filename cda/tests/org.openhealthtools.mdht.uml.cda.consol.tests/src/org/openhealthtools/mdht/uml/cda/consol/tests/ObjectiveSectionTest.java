@@ -39,6 +39,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ObjectiveSection#validateObjectiveSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Objective Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ObjectiveSection#validateObjectiveSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Objective Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ObjectiveSection#validateObjectiveSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Objective Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ObjectiveSection#validateObjectiveSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Objective Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ObjectiveSection#validateObjectiveSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Objective Section Title</em>}</li>
  * </ul>
@@ -115,6 +116,40 @@ public class ObjectiveSectionTest extends CDAValidationTest {
 		};
 
 		validateObjectiveSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateObjectiveSectionCodeP() {
+		OperationsTestCase<ObjectiveSection> validateObjectiveSectionCodePTestCase = new OperationsTestCase<ObjectiveSection>(
+			"validateObjectiveSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_OBJECTIVE_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ObjectiveSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ObjectiveSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ObjectiveSectionOperations.validateObjectiveSectionCodeP(
+					(ObjectiveSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateObjectiveSectionCodePTestCase.doValidationTest();
 	}
 
 	/**

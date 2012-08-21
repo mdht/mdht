@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncountersSectionEntriesOptional#validateEncountersSectionEntriesOptionalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Section Entries Optional Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncountersSectionEntriesOptional#validateEncountersSectionEntriesOptionalCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Section Entries Optional Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncountersSectionEntriesOptional#validateEncountersSectionEntriesOptionalCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Section Entries Optional Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncountersSectionEntriesOptional#validateEncountersSectionEntriesOptionalTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Section Entries Optional Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncountersSectionEntriesOptional#validateEncountersSectionEntriesOptionalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Section Entries Optional Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.EncountersSectionEntriesOptional#validateEncountersSectionEntriesOptionalEncounterActivities(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Encounters Section Entries Optional Encounter Activities</em>}</li>
@@ -112,6 +113,40 @@ public class EncountersSectionEntriesOptionalTest extends CDAValidationTest {
 		};
 
 		validateEncountersSectionEntriesOptionalCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateEncountersSectionEntriesOptionalCodeP() {
+		OperationsTestCase<EncountersSectionEntriesOptional> validateEncountersSectionEntriesOptionalCodePTestCase = new OperationsTestCase<EncountersSectionEntriesOptional>(
+			"validateEncountersSectionEntriesOptionalCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_ENCOUNTERS_SECTION_ENTRIES_OPTIONAL_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(EncountersSectionEntriesOptional target) {
+
+			}
+
+			@Override
+			protected void updateToPass(EncountersSectionEntriesOptional target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return EncountersSectionEntriesOptionalOperations.validateEncountersSectionEntriesOptionalCodeP(
+					(EncountersSectionEntriesOptional) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateEncountersSectionEntriesOptionalCodePTestCase.doValidationTest();
 	}
 
 	/**

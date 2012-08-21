@@ -207,6 +207,7 @@ public class PhysicianofRecordParticipantTest extends CDAValidationTest {
 			protected void updateToFail(PhysicianofRecordParticipant target) {
 				target.init();
 				AssignedEntity ae = CDAFactory.eINSTANCE.createAssignedEntity();
+				ae.setCode(DatatypesFactory.eINSTANCE.createCE());
 				target.setAssignedEntity(ae);
 			}
 

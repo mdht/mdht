@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalDischargePhysicalSection#validateHospitalDischargePhysicalSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Discharge Physical Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalDischargePhysicalSection#validateHospitalDischargePhysicalSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Discharge Physical Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalDischargePhysicalSection#validateHospitalDischargePhysicalSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Discharge Physical Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalDischargePhysicalSection#validateHospitalDischargePhysicalSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Discharge Physical Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalDischargePhysicalSection#validateHospitalDischargePhysicalSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Discharge Physical Section Text</em>}</li>
  * </ul>
@@ -110,6 +111,40 @@ public class HospitalDischargePhysicalSectionTest extends CDAValidationTest {
 		};
 
 		validateHospitalDischargePhysicalSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHospitalDischargePhysicalSectionCodeP() {
+		OperationsTestCase<HospitalDischargePhysicalSection> validateHospitalDischargePhysicalSectionCodePTestCase = new OperationsTestCase<HospitalDischargePhysicalSection>(
+			"validateHospitalDischargePhysicalSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_PHYSICAL_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HospitalDischargePhysicalSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HospitalDischargePhysicalSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HospitalDischargePhysicalSectionOperations.validateHospitalDischargePhysicalSectionCodeP(
+					(HospitalDischargePhysicalSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHospitalDischargePhysicalSectionCodePTestCase.doValidationTest();
 	}
 
 	/**

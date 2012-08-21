@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySection#validateFamilyHistorySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySection#validateFamilyHistorySectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySection#validateFamilyHistorySectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySection#validateFamilyHistorySectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySection#validateFamilyHistorySectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FamilyHistorySection#validateFamilyHistorySectionFamilyHistory(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Family History Section Family History</em>}</li>
@@ -112,6 +113,40 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 		};
 
 		validateFamilyHistorySectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateFamilyHistorySectionCodeP() {
+		OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionCodePTestCase = new OperationsTestCase<FamilyHistorySection>(
+			"validateFamilyHistorySectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FamilyHistorySection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FamilyHistorySection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FamilyHistorySectionOperations.validateFamilyHistorySectionCodeP(
+					(FamilyHistorySection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFamilyHistorySectionCodePTestCase.doValidationTest();
 	}
 
 	/**

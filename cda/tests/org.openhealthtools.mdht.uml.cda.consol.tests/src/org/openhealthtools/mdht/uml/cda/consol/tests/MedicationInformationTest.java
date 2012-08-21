@@ -41,6 +41,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationManufacturedMaterial(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Manufactured Material</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationMedicationInformationManufacturedMaterialCodeOriginalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Medication Information Manufactured Material Code Original Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationMedicationInformationManufacturedMaterialReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Medication Information Manufactured Material Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationMedicationInformationManufacturedMaterialOriginalTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Medication Information Manufactured Material Original Text Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationMedicationInformationManufacturedMaterialCodeTranslation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Medication Information Manufactured Material Code Translation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.MedicationInformation#validateMedicationInformationMedicationInformationManufacturedMaterialCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Medication Information Medication Information Manufactured Material Code</em>}</li>
  * </ul>
@@ -279,6 +280,56 @@ public class MedicationInformationTest extends CDAValidationTest {
 		};
 
 		validateMedicationInformationMedicationInformationManufacturedMaterialReferenceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateMedicationInformationMedicationInformationManufacturedMaterialOriginalTextReferenceValue() {
+		OperationsTestCase<MedicationInformation> validateMedicationInformationMedicationInformationManufacturedMaterialOriginalTextReferenceValueTestCase = new OperationsTestCase<MedicationInformation>(
+			"validateMedicationInformationMedicationInformationManufacturedMaterialOriginalTextReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_INFORMATION_MEDICATION_INFORMATION_MANUFACTURED_MATERIAL_ORIGINAL_TEXT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(MedicationInformation target) {
+				target.init();
+				Material material = CDAFactory.eINSTANCE.createMaterial();
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setOriginalText(text);
+				TEL tel = DatatypesFactory.eINSTANCE.createTEL();
+				text.setReference(tel);
+				material.setCode(ce);
+				target.setManufacturedMaterial(material);
+			}
+
+			@Override
+			protected void updateToPass(MedicationInformation target) {
+				target.init();
+				Material material = CDAFactory.eINSTANCE.createMaterial();
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setOriginalText(text);
+				TEL tel = DatatypesFactory.eINSTANCE.createTEL();
+				tel.setValue("aaaaaaaaaaaaaaaaaaaaa");
+				text.setReference(tel);
+				material.setCode(ce);
+				target.setManufacturedMaterial(material);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return MedicationInformationOperations.validateMedicationInformationMedicationInformationManufacturedMaterialOriginalTextReferenceValue(
+					(MedicationInformation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateMedicationInformationMedicationInformationManufacturedMaterialOriginalTextReferenceValueTestCase.doValidationTest();
 	}
 
 	/**

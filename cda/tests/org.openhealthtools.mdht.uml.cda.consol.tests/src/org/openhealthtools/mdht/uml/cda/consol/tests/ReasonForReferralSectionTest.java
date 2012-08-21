@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReasonForReferralSection#validateReasonForReferralSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason For Referral Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReasonForReferralSection#validateReasonForReferralSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason For Referral Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReasonForReferralSection#validateReasonForReferralSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason For Referral Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReasonForReferralSection#validateReasonForReferralSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason For Referral Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ReasonForReferralSection#validateReasonForReferralSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Reason For Referral Section Text</em>}</li>
  * </ul>
@@ -110,6 +111,40 @@ public class ReasonForReferralSectionTest extends CDAValidationTest {
 		};
 
 		validateReasonForReferralSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateReasonForReferralSectionCodeP() {
+		OperationsTestCase<ReasonForReferralSection> validateReasonForReferralSectionCodePTestCase = new OperationsTestCase<ReasonForReferralSection>(
+			"validateReasonForReferralSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_REFERRAL_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ReasonForReferralSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(ReasonForReferralSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ReasonForReferralSectionOperations.validateReasonForReferralSectionCodeP(
+					(ReasonForReferralSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateReasonForReferralSectionCodePTestCase.doValidationTest();
 	}
 
 	/**

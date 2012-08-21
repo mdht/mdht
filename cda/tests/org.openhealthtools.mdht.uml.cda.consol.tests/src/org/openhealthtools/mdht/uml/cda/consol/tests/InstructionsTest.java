@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Instructions#validateInstructionsTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Instructions Text Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Instructions#validateInstructionsReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Instructions Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Instructions#validateInstructionsTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Instructions Text Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Instructions#validateInstructionsTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Instructions Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.Instructions#validateInstructionsClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Instructions Class Code</em>}</li>
@@ -85,6 +86,45 @@ public class InstructionsTest extends CDAValidationTest {
 		};
 
 		validateInstructionsTextReferenceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateInstructionsReferenceValue() {
+		OperationsTestCase<Instructions> validateInstructionsReferenceValueTestCase = new OperationsTestCase<Instructions>(
+			"validateInstructionsReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_INSTRUCTIONS_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(Instructions target) {
+				target.init();
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL());
+				target.setText(txt);
+			}
+
+			@Override
+			protected void updateToPass(Instructions target) {
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL("test"));
+				target.setText(txt);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return InstructionsOperations.validateInstructionsReferenceValue(
+					(Instructions) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateInstructionsReferenceValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -257,7 +297,7 @@ public class InstructionsTest extends CDAValidationTest {
 			protected void updateToPass(Instructions target) {
 				target.init();
 
-				target.setCode(DatatypesFactory.eINSTANCE.createCD(
+				target.setCode(DatatypesFactory.eINSTANCE.createCE(
 					"", "2.16.840.1.113883.6.96", "codeSystemName", "displayName"));
 
 			}

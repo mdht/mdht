@@ -39,6 +39,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalConsultationsSection#validateHospitalConsultationsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Consultations Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalConsultationsSection#validateHospitalConsultationsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Consultations Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalConsultationsSection#validateHospitalConsultationsSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Consultations Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalConsultationsSection#validateHospitalConsultationsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Consultations Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalConsultationsSection#validateHospitalConsultationsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Consultations Section Title</em>}</li>
  * </ul>
@@ -115,6 +116,40 @@ public class HospitalConsultationsSectionTest extends CDAValidationTest {
 		};
 
 		validateHospitalConsultationsSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHospitalConsultationsSectionCodeP() {
+		OperationsTestCase<HospitalConsultationsSection> validateHospitalConsultationsSectionCodePTestCase = new OperationsTestCase<HospitalConsultationsSection>(
+			"validateHospitalConsultationsSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_CONSULTATIONS_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HospitalConsultationsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HospitalConsultationsSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HospitalConsultationsSectionOperations.validateHospitalConsultationsSectionCodeP(
+					(HospitalConsultationsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHospitalConsultationsSectionCodePTestCase.doValidationTest();
 	}
 
 	/**

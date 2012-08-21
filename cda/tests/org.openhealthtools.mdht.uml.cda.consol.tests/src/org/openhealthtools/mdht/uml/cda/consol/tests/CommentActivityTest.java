@@ -21,6 +21,8 @@ import org.openhealthtools.mdht.uml.cda.CDAFactory;
 import org.openhealthtools.mdht.uml.cda.Person;
 import org.openhealthtools.mdht.uml.cda.consol.CommentActivity;
 import org.openhealthtools.mdht.uml.cda.consol.ConsolFactory;
+import org.openhealthtools.mdht.uml.cda.consol.ConsolPackage;
+import org.openhealthtools.mdht.uml.cda.consol.GeneralStatusSection;
 import org.openhealthtools.mdht.uml.cda.consol.operations.CommentActivityOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
@@ -34,6 +36,9 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  * <p>
  * The following operations are supported:
  * <ul>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CommentActivity#validateCommentActivityTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Activity Text Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CommentActivity#validateCommentActivityTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Activity Text Reference Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CommentActivity#validateCommentActivityReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Activity Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CommentActivity#validateCommentActivityTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Activity Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CommentActivity#validateCommentActivityClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Activity Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.CommentActivity#validateCommentActivityMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Comment Activity Mood Code</em>}</li>
@@ -53,6 +58,130 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  */
 
 public class CommentActivityTest extends CDAValidationTest {
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateCommentActivityTextReference() {
+		OperationsTestCase<CommentActivity> validateCommentActivityTextReferenceTestCase = new OperationsTestCase<CommentActivity>(
+			"validateCommentActivityTextReference",
+			operationsForOCL.getOCLValue("VALIDATE_COMMENT_ACTIVITY_TEXT_REFERENCE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CommentActivity target) {
+				target.init();
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				target.setText(txt);
+			}
+
+			@Override
+			protected void updateToPass(CommentActivity target) {
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL("test"));
+				target.setText(txt);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CommentActivityOperations.validateCommentActivityTextReference(
+					(CommentActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCommentActivityTextReferenceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateCommentActivityTextReferenceValue() {
+		OperationsTestCase<CommentActivity> validateCommentActivityTextReferenceValueTestCase = new OperationsTestCase<CommentActivity>(
+			"validateCommentActivityTextReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_COMMENT_ACTIVITY_TEXT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CommentActivity target) {
+				target.init();
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL());
+				target.setText(txt);
+			}
+
+			@Override
+			protected void updateToPass(CommentActivity target) {
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL("test"));
+				target.setText(txt);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CommentActivityOperations.validateCommentActivityTextReferenceValue(
+					(CommentActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCommentActivityTextReferenceValueTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateCommentActivityReferenceValue() {
+		OperationsTestCase<CommentActivity> validateCommentActivityReferenceValueTestCase = new NarrativeReferenceTestCase<CommentActivity>(
+			"validateCommentActivityReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_COMMENT_ACTIVITY_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(CommentActivity target) {
+				target.init();
+
+				// add the observation to a section, as required by the constraint, that has text that we can reference
+				addText(
+					createSectionForClinicalStatement(target, ConsolPackage.eINSTANCE, GeneralStatusSection.class), "",
+					"No particular health status observed.");
+
+				// add a reference to the section text
+				target.setText(createEDWithReference("Some sample text", "#1.2.3.4"));
+			}
+
+			@Override
+			protected void updateToPass(CommentActivity target) {
+				// add the observation to a section, as required by the constraint, that has text that we can reference
+				addText(
+					createSectionForClinicalStatement(target, ConsolPackage.eINSTANCE, GeneralStatusSection.class),
+					"1.2.3.4", "No particular health status observed.");
+
+				// add a reference to the section text
+				target.setText(createEDWithReference("Some sample text", "#1.2.3.4"));
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return CommentActivityOperations.validateCommentActivityReferenceValue(
+					(CommentActivity) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateCommentActivityReferenceValueTestCase.doValidationTest();
+	}
 
 	/**
 	*

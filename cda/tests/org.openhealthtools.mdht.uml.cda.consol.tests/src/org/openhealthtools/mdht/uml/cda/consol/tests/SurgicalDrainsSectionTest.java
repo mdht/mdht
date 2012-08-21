@@ -39,6 +39,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SurgicalDrainsSection#validateSurgicalDrainsSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Surgical Drains Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SurgicalDrainsSection#validateSurgicalDrainsSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Surgical Drains Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SurgicalDrainsSection#validateSurgicalDrainsSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Surgical Drains Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SurgicalDrainsSection#validateSurgicalDrainsSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Surgical Drains Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.SurgicalDrainsSection#validateSurgicalDrainsSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Surgical Drains Section Title</em>}</li>
  * </ul>
@@ -115,6 +116,40 @@ public class SurgicalDrainsSectionTest extends CDAValidationTest {
 		};
 
 		validateSurgicalDrainsSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateSurgicalDrainsSectionCodeP() {
+		OperationsTestCase<SurgicalDrainsSection> validateSurgicalDrainsSectionCodePTestCase = new OperationsTestCase<SurgicalDrainsSection>(
+			"validateSurgicalDrainsSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_SURGICAL_DRAINS_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(SurgicalDrainsSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SurgicalDrainsSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SurgicalDrainsSectionOperations.validateSurgicalDrainsSectionCodeP(
+					(SurgicalDrainsSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateSurgicalDrainsSectionCodePTestCase.doValidationTest();
 	}
 
 	/**

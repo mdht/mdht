@@ -22,6 +22,7 @@ import org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.HealthStatusObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
@@ -35,6 +36,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  * The following operations are supported:
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation#validateHealthStatusObservationHasTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Health Status Observation Has Text Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation#validateHealthStatusObservationTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Health Status Observation Text Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation#validateHealthStatusObservationHasTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Health Status Observation Has Text Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation#validateHealthStatusObservationTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Health Status Observation Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation#validateHealthStatusObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Health Status Observation Class Code</em>}</li>
@@ -43,6 +45,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation#validateHealthStatusObservationText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Health Status Observation Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation#validateHealthStatusObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Health Status Observation Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation#validateHealthStatusObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Health Status Observation Value</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HealthStatusObservation#validateHealthStatusObservationValueP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Health Status Observation Value P</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,7 +67,9 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 
 			@Override
 			protected void updateToFail(HealthStatusObservation target) {
-
+				target.init();
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				target.setText(txt);
 			}
 
 			@Override
@@ -85,6 +90,45 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 		};
 
 		validateHealthStatusObservationHasTextReferenceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateHealthStatusObservationTextReferenceValue() {
+		OperationsTestCase<HealthStatusObservation> validateHealthStatusObservationTextReferenceValueTestCase = new OperationsTestCase<HealthStatusObservation>(
+			"validateHealthStatusObservationTextReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_TEXT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HealthStatusObservation target) {
+				target.init();
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL());
+				target.setText(txt);
+			}
+
+			@Override
+			protected void updateToPass(HealthStatusObservation target) {
+				ED txt = DatatypesFactory.eINSTANCE.createED();
+				txt.setReference(DatatypesFactory.eINSTANCE.createTEL("test"));
+				target.setText(txt);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HealthStatusObservationOperations.validateHealthStatusObservationTextReferenceValue(
+					(HealthStatusObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHealthStatusObservationTextReferenceValueTestCase.doValidationTest();
 	}
 
 	/**
@@ -258,7 +302,7 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 			protected void updateToPass(HealthStatusObservation target) {
 				target.init();
 
-				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				CE cd = DatatypesFactory.eINSTANCE.createCE();
 				cd.setCodeSystem("2.16.840.1.113883.6.1");
 				cd.setCode("11323-3");
 				target.setCode(cd);
@@ -373,7 +417,7 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 
 				CD value = DatatypesFactory.eINSTANCE.createCD();
 				value.setCodeSystem("2.16.840.1.113883.6.96");
-				value.setCode("55561003");
+				value.setCode("81323004");
 				target.getValues().add(value);
 
 			}
@@ -388,6 +432,44 @@ public class HealthStatusObservationTest extends CDAValidationTest {
 		};
 
 		validateHealthStatusObservationValueTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateHealthStatusObservationValueP() {
+		OperationsTestCase<HealthStatusObservation> validateHealthStatusObservationValuePTestCase = new OperationsTestCase<HealthStatusObservation>(
+			"validateHealthStatusObservationValueP",
+			operationsForOCL.getOCLValue("VALIDATE_HEALTH_STATUS_OBSERVATION_VALUE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HealthStatusObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HealthStatusObservation target) {
+				target.init();
+
+				CD value = DatatypesFactory.eINSTANCE.createCD();
+				value.setCodeSystem("2.16.840.1.113883.6.96");
+				value.setCode("81323004");
+				target.getValues().add(value);
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HealthStatusObservationOperations.validateHealthStatusObservationValueP(
+					(HealthStatusObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHealthStatusObservationValuePTestCase.doValidationTest();
 	}
 
 	/**

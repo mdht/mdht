@@ -34,10 +34,11 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectivesSectionEntriesOptional#validateAdvanceDirectivesSectionEntriesOptionalTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directives Section Entries Optional Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectivesSectionEntriesOptional#validateAdvanceDirectivesSectionEntriesOptionalCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directives Section Entries Optional Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectivesSectionEntriesOptional#validateAdvanceDirectivesSectionEntriesOptionalCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directives Section Entries Optional Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectivesSectionEntriesOptional#validateAdvanceDirectivesSectionEntriesOptionalTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directives Section Entries Optional Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectivesSectionEntriesOptional#validateAdvanceDirectivesSectionEntriesOptionalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directives Section Entries Optional Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectivesSectionEntriesOptional#validateAdvanceDirectivesSectionEntriesOptionalAdvanceDirectiveObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Advance Directives Section Entries Optional Advance Directive Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectivesSectionEntriesOptional#getAdvanceDirectiveObservation() <em>Get Advance Directive Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.AdvanceDirectivesSectionEntriesOptional#getAdvanceDirectiveObservations() <em>Get Advance Directive Observations</em>}</li>
  * </ul>
  * </p>
  *
@@ -112,6 +113,40 @@ public class AdvanceDirectivesSectionEntriesOptionalTest extends CDAValidationTe
 		};
 
 		validateAdvanceDirectivesSectionEntriesOptionalCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateAdvanceDirectivesSectionEntriesOptionalCodeP() {
+		OperationsTestCase<AdvanceDirectivesSectionEntriesOptional> validateAdvanceDirectivesSectionEntriesOptionalCodePTestCase = new OperationsTestCase<AdvanceDirectivesSectionEntriesOptional>(
+			"validateAdvanceDirectivesSectionEntriesOptionalCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_ADVANCE_DIRECTIVES_SECTION_ENTRIES_OPTIONAL_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(AdvanceDirectivesSectionEntriesOptional target) {
+
+			}
+
+			@Override
+			protected void updateToPass(AdvanceDirectivesSectionEntriesOptional target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return AdvanceDirectivesSectionEntriesOptionalOperations.validateAdvanceDirectivesSectionEntriesOptionalCodeP(
+					(AdvanceDirectivesSectionEntriesOptional) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateAdvanceDirectivesSectionEntriesOptionalCodePTestCase.doValidationTest();
 	}
 
 	/**
@@ -228,10 +263,10 @@ public class AdvanceDirectivesSectionEntriesOptionalTest extends CDAValidationTe
 	* @generated
 	*/
 	@Test
-	public void testGetAdvanceDirectiveObservation() {
+	public void testGetAdvanceDirectiveObservations() {
 
 		AdvanceDirectivesSectionEntriesOptional target = objectFactory.create();
-		target.getAdvanceDirectiveObservation();
+		target.getAdvanceDirectiveObservations();
 
 	}
 

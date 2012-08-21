@@ -39,6 +39,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNoteFluidSection#validateOperativeNoteFluidSectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Fluid Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNoteFluidSection#validateOperativeNoteFluidSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Fluid Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNoteFluidSection#validateOperativeNoteFluidSectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Fluid Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNoteFluidSection#validateOperativeNoteFluidSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Fluid Section Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.OperativeNoteFluidSection#validateOperativeNoteFluidSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Operative Note Fluid Section Title</em>}</li>
  * </ul>
@@ -115,6 +116,40 @@ public class OperativeNoteFluidSectionTest extends CDAValidationTest {
 		};
 
 		validateOperativeNoteFluidSectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateOperativeNoteFluidSectionCodeP() {
+		OperationsTestCase<OperativeNoteFluidSection> validateOperativeNoteFluidSectionCodePTestCase = new OperationsTestCase<OperativeNoteFluidSection>(
+			"validateOperativeNoteFluidSectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_OPERATIVE_NOTE_FLUID_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(OperativeNoteFluidSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(OperativeNoteFluidSection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return OperativeNoteFluidSectionOperations.validateOperativeNoteFluidSectionCodeP(
+					(OperativeNoteFluidSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateOperativeNoteFluidSectionCodePTestCase.doValidationTest();
 	}
 
 	/**

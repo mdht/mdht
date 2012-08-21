@@ -24,6 +24,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
+import org.openhealthtools.mdht.uml.hl7.datatypes.TEL;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,6 +41,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationManufacturedMaterial(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Manufactured Material</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialCodeOriginalText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Immunization Medication Information Manufactured Material Code Original Text</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialOriginalTextReference(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Immunization Medication Information Manufactured Material Original Text Reference</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialTextReferenceValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Immunization Medication Information Manufactured Material Text Reference Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialCodeTranslation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Immunization Medication Information Manufactured Material Code Translation</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Immunization Medication Information Manufactured Material Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.ImmunizationMedicationInformation#validateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialLotNumberText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Immunization Medication Information Immunization Medication Information Manufactured Material Lot Number Text</em>}</li>
@@ -307,6 +309,57 @@ public class ImmunizationMedicationInformationTest extends CDAValidationTest {
 		};
 
 		validateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialOriginalTextReferenceTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialTextReferenceValue() {
+		OperationsTestCase<ImmunizationMedicationInformation> validateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialTextReferenceValueTestCase = new OperationsTestCase<ImmunizationMedicationInformation>(
+			"validateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialTextReferenceValue",
+			operationsForOCL.getOCLValue("VALIDATE_IMMUNIZATION_MEDICATION_INFORMATION_IMMUNIZATION_MEDICATION_INFORMATION_MANUFACTURED_MATERIAL_TEXT_REFERENCE_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(ImmunizationMedicationInformation target) {
+				target.init();
+				Material material = CDAFactory.eINSTANCE.createMaterial();
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setOriginalText(text);
+				TEL tel = DatatypesFactory.eINSTANCE.createTEL();
+				text.setReference(tel);
+				material.setCode(ce);
+				target.setManufacturedMaterial(material);
+			}
+
+			@Override
+			protected void updateToPass(ImmunizationMedicationInformation target) {
+				target.init();
+				Material material = CDAFactory.eINSTANCE.createMaterial();
+				ED text = DatatypesFactory.eINSTANCE.createED();
+				CE ce = DatatypesFactory.eINSTANCE.createCE();
+				ce.setOriginalText(text);
+				TEL tel = DatatypesFactory.eINSTANCE.createTEL();
+				tel.setValue("aaaaaaaaaaaaaaaaaaaaa");
+				text.setReference(tel);
+				material.setCode(ce);
+				target.setManufacturedMaterial(material);
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return ImmunizationMedicationInformationOperations.validateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialTextReferenceValue(
+					(ImmunizationMedicationInformation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateImmunizationMedicationInformationImmunizationMedicationInformationManufacturedMaterialTextReferenceValueTestCase.doValidationTest();
 	}
 
 	/**

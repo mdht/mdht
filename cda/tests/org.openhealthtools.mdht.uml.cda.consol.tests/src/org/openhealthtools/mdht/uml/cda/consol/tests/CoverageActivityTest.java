@@ -158,7 +158,7 @@ public class CoverageActivityTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated
+	* @generated not
 	*/
 	@Test
 	public void testValidateCoverageActivityCode() {
@@ -175,7 +175,7 @@ public class CoverageActivityTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(CoverageActivity target) {
 				target.init();
-
+				target.setCode(DatatypesFactory.eINSTANCE.createCE("48768-6", "2.16.840.1.113883.6.1"));
 			}
 
 			@Override

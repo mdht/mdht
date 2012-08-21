@@ -22,6 +22,7 @@ import org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation;
 import org.openhealthtools.mdht.uml.cda.consol.operations.PregnancyObservationOperations;
 import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
+import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CS;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
 import org.openhealthtools.mdht.uml.hl7.datatypes.IVL_TS;
@@ -39,6 +40,7 @@ import org.openhealthtools.mdht.uml.hl7.vocab.x_ActRelationshipEntryRelationship
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationClassCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Class Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationMoodCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Mood Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationStatusCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Status Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationValue(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Value</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.PregnancyObservation#validatePregnancyObservationEffectiveTime(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Pregnancy Observation Effective Time</em>}</li>
@@ -174,7 +176,7 @@ public class PregnancyObservationTest extends CDAValidationTest {
 			protected void updateToPass(PregnancyObservation target) {
 				target.init();
 
-				CD cd = DatatypesFactory.eINSTANCE.createCD();
+				CE cd = DatatypesFactory.eINSTANCE.createCE();
 				cd.setCode("ASSERTION");
 				cd.setCodeSystem("2.16.840.1.113883.5.4");
 				target.setCode(cd);
@@ -191,6 +193,40 @@ public class PregnancyObservationTest extends CDAValidationTest {
 		};
 
 		validatePregnancyObservationCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidatePregnancyObservationCodeP() {
+		OperationsTestCase<PregnancyObservation> validatePregnancyObservationCodePTestCase = new OperationsTestCase<PregnancyObservation>(
+			"validatePregnancyObservationCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_PREGNANCY_OBSERVATION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(PregnancyObservation target) {
+
+			}
+
+			@Override
+			protected void updateToPass(PregnancyObservation target) {
+				target.init();
+				target.setCode(DatatypesFactory.eINSTANCE.createCE());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return PregnancyObservationOperations.validatePregnancyObservationCodeP(
+					(PregnancyObservation) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validatePregnancyObservationCodePTestCase.doValidationTest();
 	}
 
 	/**

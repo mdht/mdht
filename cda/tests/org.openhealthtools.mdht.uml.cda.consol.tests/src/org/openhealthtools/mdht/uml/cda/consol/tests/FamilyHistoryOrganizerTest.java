@@ -498,6 +498,7 @@ public class FamilyHistoryOrganizerTest extends CDAValidationTest {
 				Subject subject = CDAFactory.eINSTANCE.createSubject();
 				target.setSubject(subject);
 				RelatedSubject relatedSubject = CDAFactory.eINSTANCE.createRelatedSubject();
+				relatedSubject.setClassCode(x_DocumentSubject.PAT);
 				target.getSubject().setRelatedSubject(relatedSubject);
 
 			}

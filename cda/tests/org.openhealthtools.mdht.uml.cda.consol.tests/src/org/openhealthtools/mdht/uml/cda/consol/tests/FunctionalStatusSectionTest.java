@@ -36,10 +36,30 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Code</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Text</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Problem Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionResultObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Result Observation</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getProblemObservations() <em>Get Problem Observations</em>}</li>
- *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getResultObservations() <em>Get Result Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionFunctionalStatusResultOrganizer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Functional Status Result Organizer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionCognitiveStatusResultOrganizer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Cognitive Status Result Organizer</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionFunctionalStatusResultObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Functional Status Result Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionCognitiveStatusResultObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Cognitive Status Result Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionFunctionalStatusProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Functional Status Problem Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionCognitiveStatusProblemObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Cognitive Status Problem Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionCaregiverCharacteristics(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Caregiver Characteristics</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionAssessmentScaleObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Assessment Scale Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionNonMedicinalSupplyActivity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Non Medicinal Supply Activity</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionPressureUlcerObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Pressure Ulcer Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionNumberOfPressureUlcersObservation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Number Of Pressure Ulcers Observation</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#validateFunctionalStatusSectionHighestPressureUlcerStage(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Functional Status Section Highest Pressure Ulcer Stage</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getFunctionalStatusResultOrganizers() <em>Get Functional Status Result Organizers</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getCognitiveStatusResultOrganizers() <em>Get Cognitive Status Result Organizers</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getFunctionalStatusResultObservations() <em>Get Functional Status Result Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getCognitiveStatusResultObservations() <em>Get Cognitive Status Result Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getFunctionalStatusProblemObservations() <em>Get Functional Status Problem Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getCognitiveStatusProblemObservations() <em>Get Cognitive Status Problem Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getCaregiverCharacteristicss() <em>Get Caregiver Characteristicss</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getAssessmentScaleObservations() <em>Get Assessment Scale Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getNonMedicinalSupplyActivities() <em>Get Non Medicinal Supply Activities</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getPressureUlcerObservations() <em>Get Pressure Ulcer Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getNumberOfPressureUlcersObservations() <em>Get Number Of Pressure Ulcers Observations</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.FunctionalStatusSection#getHighestPressureUlcerStages() <em>Get Highest Pressure Ulcer Stages</em>}</li>
  * </ul>
  * </p>
  *
@@ -192,13 +212,13 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 
 	/**
 	*
-	* @generated NOT
+	* @generated not
 	*/
 	@Test
-	public void testValidateFunctionalStatusSectionProblemObservation() {
-		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionProblemObservationTestCase = new OperationsTestCase<FunctionalStatusSection>(
-			"validateFunctionalStatusSectionProblemObservation",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateFunctionalStatusSectionFunctionalStatusResultOrganizer() {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionFunctionalStatusResultOrganizerTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionFunctionalStatusResultOrganizer",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_FUNCTIONAL_STATUS_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -209,30 +229,30 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createProblemObservation());
+				target.addOrganizer(ConsolFactory.eINSTANCE.createFunctionalStatusResultOrganizer());
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionProblemObservation(
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionFunctionalStatusResultOrganizer(
 					(FunctionalStatusSection) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateFunctionalStatusSectionProblemObservationTestCase.doValidationTest();
+		validateFunctionalStatusSectionFunctionalStatusResultOrganizerTestCase.doValidationTest();
 	}
 
 	/**
 	*
-	* @generated NOT
+	* @generated not
 	*/
 	@Test
-	public void testValidateFunctionalStatusSectionResultObservation() {
-		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionResultObservationTestCase = new OperationsTestCase<FunctionalStatusSection>(
-			"validateFunctionalStatusSectionResultObservation",
-			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_RESULT_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+	public void testValidateFunctionalStatusSectionCognitiveStatusResultOrganizer() {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionCognitiveStatusResultOrganizerTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionCognitiveStatusResultOrganizer",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_COGNITIVE_STATUS_RESULT_ORGANIZER__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
 			objectFactory) {
 
 			@Override
@@ -243,19 +263,359 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 			@Override
 			protected void updateToPass(FunctionalStatusSection target) {
 				target.init();
-				target.addObservation(ConsolFactory.eINSTANCE.createResultObservation());
+				target.addOrganizer(ConsolFactory.eINSTANCE.createCognitiveStatusResultOrganizer());
 			}
 
 			@Override
 			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
 
-				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionResultObservation(
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionCognitiveStatusResultOrganizer(
 					(FunctionalStatusSection) objectToTest, diagnostician, map);
 			}
 
 		};
 
-		validateFunctionalStatusSectionResultObservationTestCase.doValidationTest();
+		validateFunctionalStatusSectionCognitiveStatusResultOrganizerTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFunctionalStatusSectionFunctionalStatusResultObservation() {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionFunctionalStatusResultObservationTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionFunctionalStatusResultObservation",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_FUNCTIONAL_STATUS_RESULT_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+				target.init();
+				target.addObservation(ConsolFactory.eINSTANCE.createFunctionalStatusResultObservation());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionFunctionalStatusResultObservation(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFunctionalStatusSectionFunctionalStatusResultObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFunctionalStatusSectionCognitiveStatusResultObservation() {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionCognitiveStatusResultObservationTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionCognitiveStatusResultObservation",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_COGNITIVE_STATUS_RESULT_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+				target.init();
+				target.addObservation(ConsolFactory.eINSTANCE.createCognitiveStatusResultObservation());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionCognitiveStatusResultObservation(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFunctionalStatusSectionCognitiveStatusResultObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFunctionalStatusSectionFunctionalStatusProblemObservation() {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionFunctionalStatusProblemObservationTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionFunctionalStatusProblemObservation",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_FUNCTIONAL_STATUS_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+				target.init();
+				target.addObservation(ConsolFactory.eINSTANCE.createFunctionalStatusProblemObservation());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionFunctionalStatusProblemObservation(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFunctionalStatusSectionFunctionalStatusProblemObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFunctionalStatusSectionCognitiveStatusProblemObservation() {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionCognitiveStatusProblemObservationTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionCognitiveStatusProblemObservation",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_COGNITIVE_STATUS_PROBLEM_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+				target.init();
+				target.addObservation(ConsolFactory.eINSTANCE.createCognitiveStatusProblemObservation());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionCognitiveStatusProblemObservation(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFunctionalStatusSectionCognitiveStatusProblemObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFunctionalStatusSectionCaregiverCharacteristics() {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionCaregiverCharacteristicsTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionCaregiverCharacteristics",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_CAREGIVER_CHARACTERISTICS__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+				target.init();
+				target.addObservation(ConsolFactory.eINSTANCE.createCaregiverCharacteristics());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionCaregiverCharacteristics(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFunctionalStatusSectionCaregiverCharacteristicsTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFunctionalStatusSectionAssessmentScaleObservation() {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionAssessmentScaleObservationTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionAssessmentScaleObservation",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_ASSESSMENT_SCALE_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+				target.init();
+				target.addObservation(ConsolFactory.eINSTANCE.createAssessmentScaleObservation());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionAssessmentScaleObservation(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFunctionalStatusSectionAssessmentScaleObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFunctionalStatusSectionNonMedicinalSupplyActivity() {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionNonMedicinalSupplyActivityTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionNonMedicinalSupplyActivity",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_NON_MEDICINAL_SUPPLY_ACTIVITY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+				target.init();
+				target.addSupply(ConsolFactory.eINSTANCE.createNonMedicinalSupplyActivity());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionNonMedicinalSupplyActivity(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFunctionalStatusSectionNonMedicinalSupplyActivityTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFunctionalStatusSectionPressureUlcerObservation() {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionPressureUlcerObservationTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionPressureUlcerObservation",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_PRESSURE_ULCER_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+				target.init();
+				target.addObservation(ConsolFactory.eINSTANCE.createPressureUlcerObservation());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionPressureUlcerObservation(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFunctionalStatusSectionPressureUlcerObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFunctionalStatusSectionNumberOfPressureUlcersObservation() {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionNumberOfPressureUlcersObservationTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionNumberOfPressureUlcersObservation",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_NUMBER_OF_PRESSURE_ULCERS_OBSERVATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+				target.init();
+				target.addObservation(ConsolFactory.eINSTANCE.createNumberOfPressureUlcersObservation());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionNumberOfPressureUlcersObservation(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFunctionalStatusSectionNumberOfPressureUlcersObservationTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated not
+	*/
+	@Test
+	public void testValidateFunctionalStatusSectionHighestPressureUlcerStage() {
+		OperationsTestCase<FunctionalStatusSection> validateFunctionalStatusSectionHighestPressureUlcerStageTestCase = new OperationsTestCase<FunctionalStatusSection>(
+			"validateFunctionalStatusSectionHighestPressureUlcerStage",
+			operationsForOCL.getOCLValue("VALIDATE_FUNCTIONAL_STATUS_SECTION_HIGHEST_PRESSURE_ULCER_STAGE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(FunctionalStatusSection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(FunctionalStatusSection target) {
+				target.init();
+				target.addObservation(ConsolFactory.eINSTANCE.createHighestPressureUlcerStage());
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return FunctionalStatusSectionOperations.validateFunctionalStatusSectionHighestPressureUlcerStage(
+					(FunctionalStatusSection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateFunctionalStatusSectionHighestPressureUlcerStageTestCase.doValidationTest();
 	}
 
 	/**
@@ -263,10 +623,10 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetProblemObservations() {
+	public void testGetFunctionalStatusResultOrganizers() {
 
 		FunctionalStatusSection target = objectFactory.create();
-		target.getProblemObservations();
+		target.getFunctionalStatusResultOrganizers();
 
 	}
 
@@ -275,10 +635,130 @@ public class FunctionalStatusSectionTest extends CDAValidationTest {
 	* @generated
 	*/
 	@Test
-	public void testGetResultObservations() {
+	public void testGetCognitiveStatusResultOrganizers() {
 
 		FunctionalStatusSection target = objectFactory.create();
-		target.getResultObservations();
+		target.getCognitiveStatusResultOrganizers();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetFunctionalStatusResultObservations() {
+
+		FunctionalStatusSection target = objectFactory.create();
+		target.getFunctionalStatusResultObservations();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetCognitiveStatusResultObservations() {
+
+		FunctionalStatusSection target = objectFactory.create();
+		target.getCognitiveStatusResultObservations();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetFunctionalStatusProblemObservations() {
+
+		FunctionalStatusSection target = objectFactory.create();
+		target.getFunctionalStatusProblemObservations();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetCognitiveStatusProblemObservations() {
+
+		FunctionalStatusSection target = objectFactory.create();
+		target.getCognitiveStatusProblemObservations();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetCaregiverCharacteristicss() {
+
+		FunctionalStatusSection target = objectFactory.create();
+		target.getCaregiverCharacteristicss();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetAssessmentScaleObservations() {
+
+		FunctionalStatusSection target = objectFactory.create();
+		target.getAssessmentScaleObservations();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetNonMedicinalSupplyActivities() {
+
+		FunctionalStatusSection target = objectFactory.create();
+		target.getNonMedicinalSupplyActivities();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetPressureUlcerObservations() {
+
+		FunctionalStatusSection target = objectFactory.create();
+		target.getPressureUlcerObservations();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetNumberOfPressureUlcersObservations() {
+
+		FunctionalStatusSection target = objectFactory.create();
+		target.getNumberOfPressureUlcersObservations();
+
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testGetHighestPressureUlcerStages() {
+
+		FunctionalStatusSection target = objectFactory.create();
+		target.getHighestPressureUlcerStages();
 
 	}
 

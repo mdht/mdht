@@ -34,6 +34,7 @@ import org.openhealthtools.mdht.uml.hl7.datatypes.ST;
  * <ul>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeStudiesSummarySection#validateHospitalDischargeStudiesSummarySectionTemplateId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Discharge Studies Summary Section Template Id</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeStudiesSummarySection#validateHospitalDischargeStudiesSummarySectionCode(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Discharge Studies Summary Section Code</em>}</li>
+ *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeStudiesSummarySection#validateHospitalDischargeStudiesSummarySectionCodeP(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Discharge Studies Summary Section Code P</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeStudiesSummarySection#validateHospitalDischargeStudiesSummarySectionTitle(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Discharge Studies Summary Section Title</em>}</li>
  *   <li>{@link org.openhealthtools.mdht.uml.cda.consol.HospitalDischargeStudiesSummarySection#validateHospitalDischargeStudiesSummarySectionText(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Hospital Discharge Studies Summary Section Text</em>}</li>
  * </ul>
@@ -110,6 +111,40 @@ public class HospitalDischargeStudiesSummarySectionTest extends CDAValidationTes
 		};
 
 		validateHospitalDischargeStudiesSummarySectionCodeTestCase.doValidationTest();
+	}
+
+	/**
+	*
+	* @generated
+	*/
+	@Test
+	public void testValidateHospitalDischargeStudiesSummarySectionCodeP() {
+		OperationsTestCase<HospitalDischargeStudiesSummarySection> validateHospitalDischargeStudiesSummarySectionCodePTestCase = new OperationsTestCase<HospitalDischargeStudiesSummarySection>(
+			"validateHospitalDischargeStudiesSummarySectionCodeP",
+			operationsForOCL.getOCLValue("VALIDATE_HOSPITAL_DISCHARGE_STUDIES_SUMMARY_SECTION_CODE_P__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+			objectFactory) {
+
+			@Override
+			protected void updateToFail(HospitalDischargeStudiesSummarySection target) {
+
+			}
+
+			@Override
+			protected void updateToPass(HospitalDischargeStudiesSummarySection target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return HospitalDischargeStudiesSummarySectionOperations.validateHospitalDischargeStudiesSummarySectionCodeP(
+					(HospitalDischargeStudiesSummarySection) objectToTest, diagnostician, map);
+			}
+
+		};
+
+		validateHospitalDischargeStudiesSummarySectionCodePTestCase.doValidationTest();
 	}
 
 	/**
