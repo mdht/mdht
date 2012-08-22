@@ -54,6 +54,18 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordMedicationListConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Summary Of Care Record Medication List Constraint</em>}</li>
  * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordCarePlanning(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Summary Of Care Record Care Planning</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordMedicationAllergy(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Summary Of Care Record Medication Allergy</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordReasonForHospitalization(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Summary Of Care Record Reason For Hospitalization</em>}</li>
+ * <li>
+ * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordMedicationList(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+ * <em>Validate Summary Of Care Record Medication List</em>}</li>
+ * <li>
  * {@link org.openhealthtools.mdht.uml.cda.mu2consol.SummaryOfCareRecord#validateSummaryOfCareRecordPlanOfCareSection(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
  * <em>Validate Summary Of Care Record Plan Of Care Section</em>}</li>
  * <li>
@@ -405,6 +417,159 @@ public class SummaryOfCareRecordTest extends CDAValidationTest {
 
 		validateSummaryOfCareRecordMedicationListConstraintTestCase
 				.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateSummaryOfCareRecordCarePlanning() {
+		OperationsTestCase<SummaryOfCareRecord> validateSummaryOfCareRecordCarePlanningTestCase = new OperationsTestCase<SummaryOfCareRecord>(
+				"validateSummaryOfCareRecordCarePlanning",
+				operationsForOCL
+						.getOCLValue("VALIDATE_SUMMARY_OF_CARE_RECORD_CARE_PLANNING__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(SummaryOfCareRecord target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SummaryOfCareRecord target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SummaryOfCareRecordOperations
+						.validateSummaryOfCareRecordCarePlanning(
+								(SummaryOfCareRecord) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateSummaryOfCareRecordCarePlanningTestCase.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateSummaryOfCareRecordMedicationAllergy() {
+		OperationsTestCase<SummaryOfCareRecord> validateSummaryOfCareRecordMedicationAllergyTestCase = new OperationsTestCase<SummaryOfCareRecord>(
+				"validateSummaryOfCareRecordMedicationAllergy",
+				operationsForOCL
+						.getOCLValue("VALIDATE_SUMMARY_OF_CARE_RECORD_MEDICATION_ALLERGY__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(SummaryOfCareRecord target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SummaryOfCareRecord target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SummaryOfCareRecordOperations
+						.validateSummaryOfCareRecordMedicationAllergy(
+								(SummaryOfCareRecord) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateSummaryOfCareRecordMedicationAllergyTestCase.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateSummaryOfCareRecordReasonForHospitalization() {
+		OperationsTestCase<SummaryOfCareRecord> validateSummaryOfCareRecordReasonForHospitalizationTestCase = new OperationsTestCase<SummaryOfCareRecord>(
+				"validateSummaryOfCareRecordReasonForHospitalization",
+				operationsForOCL
+						.getOCLValue("VALIDATE_SUMMARY_OF_CARE_RECORD_REASON_FOR_HOSPITALIZATION__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(SummaryOfCareRecord target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SummaryOfCareRecord target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SummaryOfCareRecordOperations
+						.validateSummaryOfCareRecordReasonForHospitalization(
+								(SummaryOfCareRecord) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateSummaryOfCareRecordReasonForHospitalizationTestCase
+				.doValidationTest();
+	}
+
+	/**
+	 * 
+	 * @generated
+	 */
+	@Test
+	public void testValidateSummaryOfCareRecordMedicationList() {
+		OperationsTestCase<SummaryOfCareRecord> validateSummaryOfCareRecordMedicationListTestCase = new OperationsTestCase<SummaryOfCareRecord>(
+				"validateSummaryOfCareRecordMedicationList",
+				operationsForOCL
+						.getOCLValue("VALIDATE_SUMMARY_OF_CARE_RECORD_MEDICATION_LIST__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
+				objectFactory) {
+
+			@Override
+			protected void updateToFail(SummaryOfCareRecord target) {
+
+			}
+
+			@Override
+			protected void updateToPass(SummaryOfCareRecord target) {
+				target.init();
+
+			}
+
+			@Override
+			protected boolean validate(EObject objectToTest,
+					BasicDiagnostic diagnostician, Map<Object, Object> map) {
+
+				return SummaryOfCareRecordOperations
+						.validateSummaryOfCareRecordMedicationList(
+								(SummaryOfCareRecord) objectToTest,
+								diagnostician, map);
+			}
+
+		};
+
+		validateSummaryOfCareRecordMedicationListTestCase.doValidationTest();
 	}
 
 	/**
