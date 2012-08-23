@@ -76,7 +76,9 @@ public class ValueSetConstraintUtil {
 				needsAnd = true;
 			}
 
-			Iterable<EnumerationLiteral> literals = getSmallEnumeration(valueSetConstraint.getReference().getBase_Enumeration());
+			Iterable<EnumerationLiteral> literals = valueSetConstraint.getReference().getBase_Enumeration() != null
+					? getSmallEnumeration(valueSetConstraint.getReference().getBase_Enumeration())
+					: null;
 			if (literals != null) {
 				if (needsAnd) {
 					body.append(" and (");
