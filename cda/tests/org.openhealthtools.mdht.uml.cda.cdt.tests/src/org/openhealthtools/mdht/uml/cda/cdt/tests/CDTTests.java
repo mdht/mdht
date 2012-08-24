@@ -38,11 +38,11 @@ import org.junit.runners.Suite;
 public class CDTTests {
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * @generated
+   */
 	public static junit.framework.Test suite() {
-		return new JUnit4TestAdapter(CDTTests.class);
-	}
+    return new JUnit4TestAdapter( CDTTests.class);
+  }
 
 } // CDTTests

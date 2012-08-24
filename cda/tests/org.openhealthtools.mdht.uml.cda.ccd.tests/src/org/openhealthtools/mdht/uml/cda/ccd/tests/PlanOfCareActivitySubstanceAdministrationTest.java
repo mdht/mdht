@@ -82,33 +82,67 @@ public class PlanOfCareActivitySubstanceAdministrationTest extends CDAValidation
 	 */
 	@Test
 	public void testValidatePlanOfCareActivitySubstanceAdministrationTemplateId() {
-		OperationsTestCase<PlanOfCareActivitySubstanceAdministration> validatePlanOfCareActivitySubstanceAdministrationTemplateIdTestCase = new OperationsTestCase<PlanOfCareActivitySubstanceAdministration>(
-			"validatePlanOfCareActivitySubstanceAdministrationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PlanOfCareActivitySubstanceAdministration> validatePlanOfCareActivitySubstanceAdministrationTemplateIdTestCase = new OperationsTestCase<PlanOfCareActivitySubstanceAdministration>(
+      "validatePlanOfCareActivitySubstanceAdministrationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_PLAN_OF_CARE_ACTIVITY_SUBSTANCE_ADMINISTRATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PlanOfCareActivitySubstanceAdministration target) {
+      @Override
+      protected void updateToFail(PlanOfCareActivitySubstanceAdministration target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PlanOfCareActivitySubstanceAdministration target) {
-				target.init();
+      @Override
+      protected void updateToPass(PlanOfCareActivitySubstanceAdministration target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PlanOfCareActivitySubstanceAdministrationOperations.validatePlanOfCareActivitySubstanceAdministrationTemplateId(
-					(PlanOfCareActivitySubstanceAdministration) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PlanOfCareActivitySubstanceAdministrationOperations.validatePlanOfCareActivitySubstanceAdministrationTemplateId(
+          (PlanOfCareActivitySubstanceAdministration) objectToTest, diagnostician, map);
+      }
 
-		validatePlanOfCareActivitySubstanceAdministrationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validatePlanOfCareActivitySubstanceAdministrationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -232,17 +266,17 @@ public class PlanOfCareActivitySubstanceAdministrationTest extends CDAValidation
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // PlanOfCareActivitySubstanceAdministrationOperations

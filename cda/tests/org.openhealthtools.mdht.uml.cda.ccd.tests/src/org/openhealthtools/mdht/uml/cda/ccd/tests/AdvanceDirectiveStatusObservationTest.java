@@ -43,33 +43,67 @@ public class AdvanceDirectiveStatusObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateStatusObservationTemplateId() {
-		OperationsTestCase<AdvanceDirectiveStatusObservation> validateStatusObservationTemplateIdTestCase = new OperationsTestCase<AdvanceDirectiveStatusObservation>(
-			"validateStatusObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AdvanceDirectiveStatusObservation> validateStatusObservationTemplateIdTestCase = new OperationsTestCase<AdvanceDirectiveStatusObservation>(
+      "validateStatusObservationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_STATUS_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AdvanceDirectiveStatusObservation target) {
+      @Override
+      protected void updateToFail(AdvanceDirectiveStatusObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AdvanceDirectiveStatusObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(AdvanceDirectiveStatusObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AdvanceDirectiveStatusObservationOperations.validateStatusObservationTemplateId(
-					(AdvanceDirectiveStatusObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AdvanceDirectiveStatusObservationOperations.validateStatusObservationTemplateId(
+          (AdvanceDirectiveStatusObservation) objectToTest, diagnostician, map);
+      }
 
-		validateStatusObservationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateStatusObservationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -124,17 +158,17 @@ public class AdvanceDirectiveStatusObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // AdvanceDirectiveStatusObservationOperations

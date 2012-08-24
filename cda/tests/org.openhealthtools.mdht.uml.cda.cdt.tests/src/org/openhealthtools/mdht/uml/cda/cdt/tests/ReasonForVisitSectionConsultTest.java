@@ -44,33 +44,67 @@ public class ReasonForVisitSectionConsultTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateReasonForVisitSectionConsultTemplateId() {
-		OperationsTestCase<ReasonForVisitSectionConsult> validateReasonForVisitSectionConsultTemplateIdTestCase = new OperationsTestCase<ReasonForVisitSectionConsult>(
-			"validateReasonForVisitSectionConsultTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_VISIT_SECTION_CONSULT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ReasonForVisitSectionConsult> validateReasonForVisitSectionConsultTemplateIdTestCase = new OperationsTestCase<ReasonForVisitSectionConsult>(
+      "validateReasonForVisitSectionConsultTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_VISIT_SECTION_CONSULT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ReasonForVisitSectionConsult target) {
+      @Override
+      protected void updateToFail(ReasonForVisitSectionConsult target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ReasonForVisitSectionConsult target) {
-				target.init();
+      @Override
+      protected void updateToPass(ReasonForVisitSectionConsult target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ReasonForVisitSectionConsultOperations.validateReasonForVisitSectionConsultTemplateId(
-					(ReasonForVisitSectionConsult) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ReasonForVisitSectionConsultOperations.validateReasonForVisitSectionConsultTemplateId(
+          (ReasonForVisitSectionConsult) objectToTest, diagnostician, map);
+      }
 
-		validateReasonForVisitSectionConsultTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateReasonForVisitSectionConsultTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -78,33 +112,67 @@ public class ReasonForVisitSectionConsultTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateReasonForVisitSectionConsultCode() {
-		OperationsTestCase<ReasonForVisitSectionConsult> validateReasonForVisitSectionConsultCodeTestCase = new OperationsTestCase<ReasonForVisitSectionConsult>(
-			"validateReasonForVisitSectionConsultCode",
-			operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_VISIT_SECTION_CONSULT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ReasonForVisitSectionConsult> validateReasonForVisitSectionConsultCodeTestCase = new OperationsTestCase<ReasonForVisitSectionConsult>(
+      "validateReasonForVisitSectionConsultCode",
+      operationsForOCL.getOCLValue("VALIDATE_REASON_FOR_VISIT_SECTION_CONSULT_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ReasonForVisitSectionConsult target) {
+      @Override
+      protected void updateToFail(ReasonForVisitSectionConsult target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ReasonForVisitSectionConsult target) {
-				target.init();
+      @Override
+      protected void updateToPass(ReasonForVisitSectionConsult target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ReasonForVisitSectionConsultOperations.validateReasonForVisitSectionConsultCode(
-					(ReasonForVisitSectionConsult) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ReasonForVisitSectionConsultOperations.validateReasonForVisitSectionConsultCode(
+          (ReasonForVisitSectionConsult) objectToTest, diagnostician, map);
+      }
 
-		validateReasonForVisitSectionConsultCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateReasonForVisitSectionConsultCodeTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -162,9 +230,9 @@ public class ReasonForVisitSectionConsultTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -172,8 +240,8 @@ public class ReasonForVisitSectionConsultTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ReasonForVisitSectionConsultOperations

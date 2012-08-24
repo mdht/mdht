@@ -51,33 +51,67 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateHITSPPlanOfCareSectionTemplateId() {
-		OperationsTestCase<PlanOfCareSection> validateHITSPPlanOfCareSectionTemplateIdTestCase = new OperationsTestCase<PlanOfCareSection>(
-			"validateHITSPPlanOfCareSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_PLAN_OF_CARE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PlanOfCareSection> validateHITSPPlanOfCareSectionTemplateIdTestCase = new OperationsTestCase<PlanOfCareSection>(
+      "validateHITSPPlanOfCareSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_HITSP_PLAN_OF_CARE_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PlanOfCareSection target) {
+      @Override
+      protected void updateToFail(PlanOfCareSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PlanOfCareSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(PlanOfCareSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PlanOfCareSectionOperations.validateHITSPPlanOfCareSectionTemplateId(
-					(PlanOfCareSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PlanOfCareSectionOperations.validateHITSPPlanOfCareSectionTemplateId(
+          (PlanOfCareSection) objectToTest, diagnostician, map);
+      }
 
-		validateHITSPPlanOfCareSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateHITSPPlanOfCareSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -220,10 +254,13 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetMedication() {
 
-		PlanOfCareSection target = objectFactory.create();
-		target.getMedication();
 
-	}
+PlanOfCareSection target = objectFactory.create();
+target.getMedication();
+
+
+
+}
 
 	/**
 	*
@@ -232,10 +269,13 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetImmunization() {
 
-		PlanOfCareSection target = objectFactory.create();
-		target.getImmunization();
 
-	}
+PlanOfCareSection target = objectFactory.create();
+target.getImmunization();
+
+
+
+}
 
 	/**
 	*
@@ -244,10 +284,13 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetEncounter() {
 
-		PlanOfCareSection target = objectFactory.create();
-		target.getEncounter();
 
-	}
+PlanOfCareSection target = objectFactory.create();
+target.getEncounter();
+
+
+
+}
 
 	/**
 	*
@@ -256,10 +299,13 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetProcedure() {
 
-		PlanOfCareSection target = objectFactory.create();
-		target.getProcedure();
 
-	}
+PlanOfCareSection target = objectFactory.create();
+target.getProcedure();
+
+
+
+}
 
 	/**
 	*
@@ -314,17 +360,17 @@ public class PlanOfCareSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	*
 	* @generated
 	*/
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // PlanOfCareSectionOperations

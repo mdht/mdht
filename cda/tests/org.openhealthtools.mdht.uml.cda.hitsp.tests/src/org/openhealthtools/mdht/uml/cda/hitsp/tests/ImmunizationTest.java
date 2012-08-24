@@ -149,33 +149,67 @@ public class ImmunizationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPImmunizationTemplateId() {
-		OperationsTestCase<Immunization> validateHITSPImmunizationTemplateIdTestCase = new OperationsTestCase<Immunization>(
-			"validateHITSPImmunizationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_IMMUNIZATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<Immunization> validateHITSPImmunizationTemplateIdTestCase = new OperationsTestCase<Immunization>(
+      "validateHITSPImmunizationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_HITSP_IMMUNIZATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(Immunization target) {
+      @Override
+      protected void updateToFail(Immunization target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(Immunization target) {
-				target.init();
+      @Override
+      protected void updateToPass(Immunization target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ImmunizationOperations.validateHITSPImmunizationTemplateId(
-					(Immunization) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ImmunizationOperations.validateHITSPImmunizationTemplateId(
+          (Immunization) objectToTest, diagnostician, map);
+      }
 
-		validateHITSPImmunizationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateHITSPImmunizationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -233,9 +267,9 @@ public class ImmunizationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -243,9 +277,9 @@ public class ImmunizationTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 	/**
 	 * Create a valid Consumable for a Hepatitis Vaccine

@@ -123,33 +123,67 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateFamilyHistorySectionTemplateId() {
-		OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionTemplateIdTestCase = new OperationsTestCase<FamilyHistorySection>(
-			"validateFamilyHistorySectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionTemplateIdTestCase = new OperationsTestCase<FamilyHistorySection>(
+      "validateFamilyHistorySectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(FamilyHistorySection target) {
+      @Override
+      protected void updateToFail(FamilyHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(FamilyHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(FamilyHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return FamilyHistorySectionOperations.validateFamilyHistorySectionTemplateId(
-					(FamilyHistorySection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return FamilyHistorySectionOperations.validateFamilyHistorySectionTemplateId(
+          (FamilyHistorySection) objectToTest, diagnostician, map);
+      }
 
-		validateFamilyHistorySectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateFamilyHistorySectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -157,33 +191,67 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateFamilyHistorySectionCode() {
-		OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionCodeTestCase = new OperationsTestCase<FamilyHistorySection>(
-			"validateFamilyHistorySectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionCodeTestCase = new OperationsTestCase<FamilyHistorySection>(
+      "validateFamilyHistorySectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(FamilyHistorySection target) {
+      @Override
+      protected void updateToFail(FamilyHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(FamilyHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(FamilyHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return FamilyHistorySectionOperations.validateFamilyHistorySectionCode(
-					(FamilyHistorySection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return FamilyHistorySectionOperations.validateFamilyHistorySectionCode(
+          (FamilyHistorySection) objectToTest, diagnostician, map);
+      }
 
-		validateFamilyHistorySectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateFamilyHistorySectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -191,36 +259,70 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateFamilyHistorySectionTitle() {
-		OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionTitleTestCase = new OperationsTestCase<FamilyHistorySection>(
-			"validateFamilyHistorySectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionTitleTestCase = new OperationsTestCase<FamilyHistorySection>(
+      "validateFamilyHistorySectionTitle",
+      operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(FamilyHistorySection target) {
+      @Override
+      protected void updateToFail(FamilyHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(FamilyHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(FamilyHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
+        
+        
 
-			}
+  
+    
+        ST  title = DatatypesFactory.eINSTANCE.createST("title");
+        target.setTitle(title );
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return FamilyHistorySectionOperations.validateFamilyHistorySectionTitle(
-					(FamilyHistorySection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return FamilyHistorySectionOperations.validateFamilyHistorySectionTitle(
+          (FamilyHistorySection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateFamilyHistorySectionTitleTestCase.doValidationTest();
-	}
+    validateFamilyHistorySectionTitleTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -228,36 +330,70 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateFamilyHistorySectionText() {
-		OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionTextTestCase = new OperationsTestCase<FamilyHistorySection>(
-			"validateFamilyHistorySectionText",
-			operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<FamilyHistorySection> validateFamilyHistorySectionTextTestCase = new OperationsTestCase<FamilyHistorySection>(
+      "validateFamilyHistorySectionText",
+      operationsForOCL.getOCLValue("VALIDATE_FAMILY_HISTORY_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(FamilyHistorySection target) {
+      @Override
+      protected void updateToFail(FamilyHistorySection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(FamilyHistorySection target) {
-				target.init();
+      @Override
+      protected void updateToPass(FamilyHistorySection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+        target.setText(text );
+      
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return FamilyHistorySectionOperations.validateFamilyHistorySectionText(
-					(FamilyHistorySection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return FamilyHistorySectionOperations.validateFamilyHistorySectionText(
+          (FamilyHistorySection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateFamilyHistorySectionTextTestCase.doValidationTest();
-	}
+    validateFamilyHistorySectionTextTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -300,10 +436,13 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	@Test
 	public void testGetFamilyHistoryOrganizers() {
 
-		FamilyHistorySection target = objectFactory.create();
-		target.getFamilyHistoryOrganizers();
 
-	}
+FamilyHistorySection target = objectFactory.create();
+target.getFamilyHistoryOrganizers();
+
+
+
+}
 
 	/**
 	 * 
@@ -358,17 +497,17 @@ public class FamilyHistorySectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // FamilyHistorySectionOperations

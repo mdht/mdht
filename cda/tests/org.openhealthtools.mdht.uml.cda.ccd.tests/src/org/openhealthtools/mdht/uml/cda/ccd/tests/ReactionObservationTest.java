@@ -194,33 +194,67 @@ public class ReactionObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateReactionObservationTemplateId() {
-		OperationsTestCase<ReactionObservation> validateReactionObservationTemplateIdTestCase = new OperationsTestCase<ReactionObservation>(
-			"validateReactionObservationTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ReactionObservation> validateReactionObservationTemplateIdTestCase = new OperationsTestCase<ReactionObservation>(
+      "validateReactionObservationTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ReactionObservation target) {
+      @Override
+      protected void updateToFail(ReactionObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ReactionObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(ReactionObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ReactionObservationOperations.validateReactionObservationTemplateId(
-					(ReactionObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ReactionObservationOperations.validateReactionObservationTemplateId(
+          (ReactionObservation) objectToTest, diagnostician, map);
+      }
 
-		validateReactionObservationTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateReactionObservationTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -228,33 +262,67 @@ public class ReactionObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateReactionObservationClassCode() {
-		OperationsTestCase<ReactionObservation> validateReactionObservationClassCodeTestCase = new OperationsTestCase<ReactionObservation>(
-			"validateReactionObservationClassCode",
-			operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ReactionObservation> validateReactionObservationClassCodeTestCase = new OperationsTestCase<ReactionObservation>(
+      "validateReactionObservationClassCode",
+      operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_CLASS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ReactionObservation target) {
+      @Override
+      protected void updateToFail(ReactionObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ReactionObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(ReactionObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ReactionObservationOperations.validateReactionObservationClassCode(
-					(ReactionObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ReactionObservationOperations.validateReactionObservationClassCode(
+          (ReactionObservation) objectToTest, diagnostician, map);
+      }
 
-		validateReactionObservationClassCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateReactionObservationClassCodeTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -262,33 +330,67 @@ public class ReactionObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateReactionObservationMoodCode() {
-		OperationsTestCase<ReactionObservation> validateReactionObservationMoodCodeTestCase = new OperationsTestCase<ReactionObservation>(
-			"validateReactionObservationMoodCode",
-			operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ReactionObservation> validateReactionObservationMoodCodeTestCase = new OperationsTestCase<ReactionObservation>(
+      "validateReactionObservationMoodCode",
+      operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_MOOD_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ReactionObservation target) {
+      @Override
+      protected void updateToFail(ReactionObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ReactionObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(ReactionObservation target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ReactionObservationOperations.validateReactionObservationMoodCode(
-					(ReactionObservation) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ReactionObservationOperations.validateReactionObservationMoodCode(
+          (ReactionObservation) objectToTest, diagnostician, map);
+      }
 
-		validateReactionObservationMoodCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateReactionObservationMoodCodeTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -296,36 +398,70 @@ public class ReactionObservationTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateReactionObservationStatusCode() {
-		OperationsTestCase<ReactionObservation> validateReactionObservationStatusCodeTestCase = new OperationsTestCase<ReactionObservation>(
-			"validateReactionObservationStatusCode",
-			operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<ReactionObservation> validateReactionObservationStatusCodeTestCase = new OperationsTestCase<ReactionObservation>(
+      "validateReactionObservationStatusCode",
+      operationsForOCL.getOCLValue("VALIDATE_REACTION_OBSERVATION_STATUS_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(ReactionObservation target) {
+      @Override
+      protected void updateToFail(ReactionObservation target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(ReactionObservation target) {
-				target.init();
+      @Override
+      protected void updateToPass(ReactionObservation target) {
+        target.init();
+        
+        
+        
+        
+      
+        CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
+        target.setStatusCode(cs);
+        
 
-				CS cs = DatatypesFactory.eINSTANCE.createCS("completed");
-				target.setStatusCode(cs);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return ReactionObservationOperations.validateReactionObservationStatusCode(
-					(ReactionObservation) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ReactionObservationOperations.validateReactionObservationStatusCode(
+          (ReactionObservation) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateReactionObservationStatusCodeTestCase.doValidationTest();
-	}
+    validateReactionObservationStatusCodeTestCase.doValidationTest();
+}
 
 	/**
 	 *  
@@ -371,10 +507,13 @@ public class ReactionObservationTest extends CDAValidationTest {
 	@Test
 	public void testGetSeverityObservation() {
 
-		ReactionObservation target = objectFactory.create();
-		target.getSeverityObservation();
 
-	}
+ReactionObservation target = objectFactory.create();
+target.getSeverityObservation();
+
+
+
+}
 
 	/**
 	 * 
@@ -429,17 +568,17 @@ public class ReactionObservationTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ReactionObservationOperations

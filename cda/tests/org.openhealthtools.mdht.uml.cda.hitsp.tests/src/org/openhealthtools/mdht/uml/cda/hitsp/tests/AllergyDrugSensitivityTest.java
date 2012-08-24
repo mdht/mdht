@@ -32,6 +32,7 @@ import org.openhealthtools.mdht.uml.cda.operations.CDAValidationTest;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CD;
 import org.openhealthtools.mdht.uml.hl7.datatypes.CE;
 import org.openhealthtools.mdht.uml.hl7.datatypes.DatatypesFactory;
+import org.openhealthtools.mdht.uml.hl7.datatypes.ED;
 import org.openhealthtools.mdht.uml.hl7.datatypes.PN;
 import org.openhealthtools.mdht.uml.hl7.vocab.EntityClassRoot;
 import org.openhealthtools.mdht.uml.hl7.vocab.ParticipationType;
@@ -952,33 +953,67 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateAllergyDrugSensitivityTemplateId() {
-		OperationsTestCase<AllergyDrugSensitivity> validateAllergyDrugSensitivityTemplateIdTestCase = new OperationsTestCase<AllergyDrugSensitivity>(
-			"validateAllergyDrugSensitivityTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_ALLERGY_DRUG_SENSITIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<AllergyDrugSensitivity> validateAllergyDrugSensitivityTemplateIdTestCase = new OperationsTestCase<AllergyDrugSensitivity>(
+      "validateAllergyDrugSensitivityTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_ALLERGY_DRUG_SENSITIVITY_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(AllergyDrugSensitivity target) {
+      @Override
+      protected void updateToFail(AllergyDrugSensitivity target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(AllergyDrugSensitivity target) {
-				target.init();
+      @Override
+      protected void updateToPass(AllergyDrugSensitivity target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return AllergyDrugSensitivityOperations.validateAllergyDrugSensitivityTemplateId(
-					(AllergyDrugSensitivity) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return AllergyDrugSensitivityOperations.validateAllergyDrugSensitivityTemplateId(
+          (AllergyDrugSensitivity) objectToTest, diagnostician, map);
+      }
 
-		validateAllergyDrugSensitivityTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateAllergyDrugSensitivityTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -1036,9 +1071,9 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -1046,8 +1081,8 @@ public class AllergyDrugSensitivityTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // AllergyDrugSensitivityOperations

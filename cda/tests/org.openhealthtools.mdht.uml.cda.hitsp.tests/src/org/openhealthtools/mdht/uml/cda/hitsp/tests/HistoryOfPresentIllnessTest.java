@@ -43,33 +43,67 @@ public class HistoryOfPresentIllnessTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPHistoryOfPresentIllnessTemplateId() {
-		OperationsTestCase<HistoryOfPresentIllness> validateHITSPHistoryOfPresentIllnessTemplateIdTestCase = new OperationsTestCase<HistoryOfPresentIllness>(
-			"validateHITSPHistoryOfPresentIllnessTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_HISTORY_OF_PRESENT_ILLNESS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<HistoryOfPresentIllness> validateHITSPHistoryOfPresentIllnessTemplateIdTestCase = new OperationsTestCase<HistoryOfPresentIllness>(
+      "validateHITSPHistoryOfPresentIllnessTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_HITSP_HISTORY_OF_PRESENT_ILLNESS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(HistoryOfPresentIllness target) {
+      @Override
+      protected void updateToFail(HistoryOfPresentIllness target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(HistoryOfPresentIllness target) {
-				target.init();
+      @Override
+      protected void updateToPass(HistoryOfPresentIllness target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return HistoryOfPresentIllnessOperations.validateHITSPHistoryOfPresentIllnessTemplateId(
-					(HistoryOfPresentIllness) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return HistoryOfPresentIllnessOperations.validateHITSPHistoryOfPresentIllnessTemplateId(
+          (HistoryOfPresentIllness) objectToTest, diagnostician, map);
+      }
 
-		validateHITSPHistoryOfPresentIllnessTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateHITSPHistoryOfPresentIllnessTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -127,9 +161,9 @@ public class HistoryOfPresentIllnessTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -137,8 +171,8 @@ public class HistoryOfPresentIllnessTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // HistoryOfPresentIllnessOperations

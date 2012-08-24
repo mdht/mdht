@@ -48,33 +48,67 @@ public class MedicationTypeTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMedicationTypeTemplateId() {
-		OperationsTestCase<MedicationType> validateMedicationTypeTemplateIdTestCase = new OperationsTestCase<MedicationType>(
-			"validateMedicationTypeTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICATION_TYPE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicationType> validateMedicationTypeTemplateIdTestCase = new OperationsTestCase<MedicationType>(
+      "validateMedicationTypeTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICATION_TYPE_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicationType target) {
+      @Override
+      protected void updateToFail(MedicationType target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicationType target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicationType target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicationTypeOperations.validateMedicationTypeTemplateId(
-					(MedicationType) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicationTypeOperations.validateMedicationTypeTemplateId(
+          (MedicationType) objectToTest, diagnostician, map);
+      }
 
-		validateMedicationTypeTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicationTypeTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -167,9 +201,9 @@ public class MedicationTypeTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -177,8 +211,8 @@ public class MedicationTypeTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // MedicationTypeOperations

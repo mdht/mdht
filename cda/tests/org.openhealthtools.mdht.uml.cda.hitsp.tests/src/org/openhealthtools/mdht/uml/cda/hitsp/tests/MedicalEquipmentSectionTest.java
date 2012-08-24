@@ -43,33 +43,67 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateHITSPMedicalEquipmentSectionTemplateId() {
-		OperationsTestCase<MedicalEquipmentSection> validateHITSPMedicalEquipmentSectionTemplateIdTestCase = new OperationsTestCase<MedicalEquipmentSection>(
-			"validateHITSPMedicalEquipmentSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicalEquipmentSection> validateHITSPMedicalEquipmentSectionTemplateIdTestCase = new OperationsTestCase<MedicalEquipmentSection>(
+      "validateHITSPMedicalEquipmentSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_HITSP_MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicalEquipmentSection target) {
+      @Override
+      protected void updateToFail(MedicalEquipmentSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicalEquipmentSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicalEquipmentSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicalEquipmentSectionOperations.validateHITSPMedicalEquipmentSectionTemplateId(
-					(MedicalEquipmentSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicalEquipmentSectionOperations.validateHITSPMedicalEquipmentSectionTemplateId(
+          (MedicalEquipmentSection) objectToTest, diagnostician, map);
+      }
 
-		validateHITSPMedicalEquipmentSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateHITSPMedicalEquipmentSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -127,9 +161,9 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -137,8 +171,8 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // MedicalEquipmentSectionOperations

@@ -188,31 +188,67 @@ public class ResultTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateResultTemplateId() {
-		OperationsTestCase<Result> validateResultTemplateIdTestCase = new OperationsTestCase<Result>(
-			"validateResultTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_RESULT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+      OperationsTestCase<Result> validateResultTemplateIdTestCase = new OperationsTestCase<Result>(
+      "validateResultTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_RESULT_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(Result target) {
+      @Override
+      protected void updateToFail(Result target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(Result target) {
-				target.init();
+      @Override
+      protected void updateToPass(Result target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return ResultOperations.validateResultTemplateId((Result) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ResultOperations.validateResultTemplateId(
+          (Result) objectToTest, diagnostician, map);
+      }
 
-		validateResultTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateResultTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -254,35 +290,70 @@ public class ResultTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateResultEffectiveTime() {
-		OperationsTestCase<Result> validateResultEffectiveTimeTestCase = new OperationsTestCase<Result>(
-			"validateResultEffectiveTime",
-			operationsForOCL.getOCLValue("VALIDATE_RESULT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<Result> validateResultEffectiveTimeTestCase = new OperationsTestCase<Result>(
+      "validateResultEffectiveTime",
+      operationsForOCL.getOCLValue("VALIDATE_RESULT_EFFECTIVE_TIME__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(Result target) {
+      @Override
+      protected void updateToFail(Result target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(Result target) {
-				target.init();
+      @Override
+      protected void updateToPass(Result target) {
+        target.init();
+        
+        
+          IVL_TS ts = DatatypesFactory .eINSTANCE.createIVL_TS();
+          target.setEffectiveTime(ts );								
+        
+        
+        
+        
 
-				IVL_TS ts = DatatypesFactory.eINSTANCE.createIVL_TS();
-				target.setEffectiveTime(ts);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return ResultOperations.validateResultEffectiveTime((Result) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ResultOperations.validateResultEffectiveTime(
+          (Result) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateResultEffectiveTimeTestCase.doValidationTest();
-	}
+    validateResultEffectiveTimeTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -290,34 +361,70 @@ public class ResultTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateResultValue() {
-		OperationsTestCase<Result> validateResultValueTestCase = new OperationsTestCase<Result>(
-			"validateResultValue",
-			operationsForOCL.getOCLValue("VALIDATE_RESULT_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"), objectFactory) {
+      OperationsTestCase<Result> validateResultValueTestCase = new OperationsTestCase<Result>(
+      "validateResultValue",
+      operationsForOCL.getOCLValue("VALIDATE_RESULT_VALUE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(Result target) {
+      @Override
+      protected void updateToFail(Result target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(Result target) {
-				target.init();
+      @Override
+      protected void updateToPass(Result target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				CD value = DatatypesFactory.eINSTANCE.createCD();
-				target.getValues().add(value);
+        
+      
+        CD value = DatatypesFactory.eINSTANCE.createCD();
+        target.getValues().add(value);
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return ResultOperations.validateResultValue((Result) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return ResultOperations.validateResultValue(
+          (Result) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateResultValueTestCase.doValidationTest();
-	}
+    validateResultValueTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -375,9 +482,9 @@ public class ResultTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
@@ -385,8 +492,8 @@ public class ResultTest extends CDAValidationTest {
 	 */
 
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // ResultOperations

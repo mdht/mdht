@@ -88,33 +88,67 @@ public class PatientAwarenessTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidatePatientAwarenessTemplateId() {
-		OperationsTestCase<PatientAwareness> validatePatientAwarenessTemplateIdTestCase = new OperationsTestCase<PatientAwareness>(
-			"validatePatientAwarenessTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_AWARENESS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PatientAwareness> validatePatientAwarenessTemplateIdTestCase = new OperationsTestCase<PatientAwareness>(
+      "validatePatientAwarenessTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_PATIENT_AWARENESS_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PatientAwareness target) {
+      @Override
+      protected void updateToFail(PatientAwareness target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PatientAwareness target) {
-				target.init();
+      @Override
+      protected void updateToPass(PatientAwareness target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PatientAwarenessOperations.validatePatientAwarenessTemplateId(
-					(PatientAwareness) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PatientAwarenessOperations.validatePatientAwarenessTemplateId(
+          (PatientAwareness) objectToTest, diagnostician, map);
+      }
 
-		validatePatientAwarenessTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validatePatientAwarenessTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -122,33 +156,67 @@ public class PatientAwarenessTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidatePatientAwarenessTypeCode() {
-		OperationsTestCase<PatientAwareness> validatePatientAwarenessTypeCodeTestCase = new OperationsTestCase<PatientAwareness>(
-			"validatePatientAwarenessTypeCode",
-			operationsForOCL.getOCLValue("VALIDATE_PATIENT_AWARENESS_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<PatientAwareness> validatePatientAwarenessTypeCodeTestCase = new OperationsTestCase<PatientAwareness>(
+      "validatePatientAwarenessTypeCode",
+      operationsForOCL.getOCLValue("VALIDATE_PATIENT_AWARENESS_TYPE_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(PatientAwareness target) {
+      @Override
+      protected void updateToFail(PatientAwareness target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(PatientAwareness target) {
-				target.init();
+      @Override
+      protected void updateToPass(PatientAwareness target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return PatientAwarenessOperations.validatePatientAwarenessTypeCode(
-					(PatientAwareness) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return PatientAwarenessOperations.validatePatientAwarenessTypeCode(
+          (PatientAwareness) objectToTest, diagnostician, map);
+      }
 
-		validatePatientAwarenessTypeCodeTestCase.doValidationTest();
-	}
+    };
+
+    validatePatientAwarenessTypeCodeTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -237,17 +305,17 @@ public class PatientAwarenessTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // PatientAwarenessOperations

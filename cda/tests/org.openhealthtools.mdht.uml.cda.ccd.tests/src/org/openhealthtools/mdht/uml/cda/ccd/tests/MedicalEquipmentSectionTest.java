@@ -54,33 +54,67 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMedicalEquipmentSectionTemplateId() {
-		OperationsTestCase<MedicalEquipmentSection> validateMedicalEquipmentSectionTemplateIdTestCase = new OperationsTestCase<MedicalEquipmentSection>(
-			"validateMedicalEquipmentSectionTemplateId",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicalEquipmentSection> validateMedicalEquipmentSectionTemplateIdTestCase = new OperationsTestCase<MedicalEquipmentSection>(
+      "validateMedicalEquipmentSectionTemplateId",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICAL_EQUIPMENT_SECTION_TEMPLATE_ID__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicalEquipmentSection target) {
+      @Override
+      protected void updateToFail(MedicalEquipmentSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicalEquipmentSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicalEquipmentSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicalEquipmentSectionOperations.validateMedicalEquipmentSectionTemplateId(
-					(MedicalEquipmentSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicalEquipmentSectionOperations.validateMedicalEquipmentSectionTemplateId(
+          (MedicalEquipmentSection) objectToTest, diagnostician, map);
+      }
 
-		validateMedicalEquipmentSectionTemplateIdTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicalEquipmentSectionTemplateIdTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -88,33 +122,67 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMedicalEquipmentSectionCode() {
-		OperationsTestCase<MedicalEquipmentSection> validateMedicalEquipmentSectionCodeTestCase = new OperationsTestCase<MedicalEquipmentSection>(
-			"validateMedicalEquipmentSectionCode",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_EQUIPMENT_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicalEquipmentSection> validateMedicalEquipmentSectionCodeTestCase = new OperationsTestCase<MedicalEquipmentSection>(
+      "validateMedicalEquipmentSectionCode",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICAL_EQUIPMENT_SECTION_CODE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicalEquipmentSection target) {
+      @Override
+      protected void updateToFail(MedicalEquipmentSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicalEquipmentSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicalEquipmentSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-			}
+        
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+      
 
-				return MedicalEquipmentSectionOperations.validateMedicalEquipmentSectionCode(
-					(MedicalEquipmentSection) objectToTest, diagnostician, map);
-			}
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-		};
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicalEquipmentSectionOperations.validateMedicalEquipmentSectionCode(
+          (MedicalEquipmentSection) objectToTest, diagnostician, map);
+      }
 
-		validateMedicalEquipmentSectionCodeTestCase.doValidationTest();
-	}
+    };
+
+    validateMedicalEquipmentSectionCodeTestCase.doValidationTest();
+}
 
 	/**
 	 * 
@@ -122,36 +190,70 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 	 */
 	@Test
 	public void testValidateMedicalEquipmentSectionTitle() {
-		OperationsTestCase<MedicalEquipmentSection> validateMedicalEquipmentSectionTitleTestCase = new OperationsTestCase<MedicalEquipmentSection>(
-			"validateMedicalEquipmentSectionTitle",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_EQUIPMENT_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicalEquipmentSection> validateMedicalEquipmentSectionTitleTestCase = new OperationsTestCase<MedicalEquipmentSection>(
+      "validateMedicalEquipmentSectionTitle",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICAL_EQUIPMENT_SECTION_TITLE__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicalEquipmentSection target) {
+      @Override
+      protected void updateToFail(MedicalEquipmentSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicalEquipmentSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicalEquipmentSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				ST title = DatatypesFactory.eINSTANCE.createST("title");
-				target.setTitle(title);
+        
+        
 
-			}
+  
+    
+        ST  title = DatatypesFactory.eINSTANCE.createST("title");
+        target.setTitle(title );
+        
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return MedicalEquipmentSectionOperations.validateMedicalEquipmentSectionTitle(
-					(MedicalEquipmentSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicalEquipmentSectionOperations.validateMedicalEquipmentSectionTitle(
+          (MedicalEquipmentSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateMedicalEquipmentSectionTitleTestCase.doValidationTest();
-	}
+    validateMedicalEquipmentSectionTitleTestCase.doValidationTest();
+}
 
 	/**
 	*
@@ -159,36 +261,70 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testValidateMedicalEquipmentSectionText() {
-		OperationsTestCase<MedicalEquipmentSection> validateMedicalEquipmentSectionTextTestCase = new OperationsTestCase<MedicalEquipmentSection>(
-			"validateMedicalEquipmentSectionText",
-			operationsForOCL.getOCLValue("VALIDATE_MEDICAL_EQUIPMENT_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP"),
-			objectFactory) {
+      OperationsTestCase<MedicalEquipmentSection> validateMedicalEquipmentSectionTextTestCase = new OperationsTestCase<MedicalEquipmentSection>(
+      "validateMedicalEquipmentSectionText",
+      operationsForOCL.getOCLValue("VALIDATE_MEDICAL_EQUIPMENT_SECTION_TEXT__DIAGNOSTIC_CHAIN_MAP__EOCL_EXP")
+      ,objectFactory) {
 
-			@Override
-			protected void updateToFail(MedicalEquipmentSection target) {
+      @Override
+      protected void updateToFail(MedicalEquipmentSection target) {
 
-			}
+      }
 
-			@Override
-			protected void updateToPass(MedicalEquipmentSection target) {
-				target.init();
+      @Override
+      protected void updateToPass(MedicalEquipmentSection target) {
+        target.init();
+        
+        
+        
+        
+        
 
-				StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
-				target.setText(text);
+        
+        
 
-			}
+  
+      
 
-			@Override
-			protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+  
+    
+        StrucDocText text = CDAFactory.eINSTANCE.createStrucDocText();
+        target.setText(text );
+      
+    
+      
+        
+    
+      
+        
+      
+        
+        
+        
+        
+        
+        
+        
+      
+      
+          
+      
+        
+      }
 
-				return MedicalEquipmentSectionOperations.validateMedicalEquipmentSectionText(
-					(MedicalEquipmentSection) objectToTest, diagnostician, map);
-			}
+      @Override
+      protected boolean validate(EObject objectToTest, BasicDiagnostic diagnostician, Map<Object, Object> map) {
+      
+      
+      
+        return MedicalEquipmentSectionOperations.validateMedicalEquipmentSectionText(
+          (MedicalEquipmentSection) objectToTest, diagnostician, map);
+      }
 
-		};
+    };
 
-		validateMedicalEquipmentSectionTextTestCase.doValidationTest();
-	}
+    validateMedicalEquipmentSectionTextTestCase.doValidationTest();
+}
 
 	/**
 	* 
@@ -265,10 +401,13 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetSupplyActivities() {
 
-		MedicalEquipmentSection target = objectFactory.create();
-		target.getSupplyActivities();
 
-	}
+MedicalEquipmentSection target = objectFactory.create();
+target.getSupplyActivities();
+
+
+
+}
 
 	/**
 	*
@@ -277,10 +416,13 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 	@Test
 	public void testGetMedicationActivities() {
 
-		MedicalEquipmentSection target = objectFactory.create();
-		target.getMedicationActivities();
 
-	}
+MedicalEquipmentSection target = objectFactory.create();
+target.getMedicationActivities();
+
+
+
+}
 
 	/**
 	 * 
@@ -335,17 +477,17 @@ public class MedicalEquipmentSectionTest extends CDAValidationTest {
 	*/
 	@Test
 	public void testConstructor() {
-		@SuppressWarnings("unused")
-		ConstructorTestClass constructorTestClass = new ConstructorTestClass();
-	} // testConstructor
+          @SuppressWarnings("unused")
+      ConstructorTestClass constructorTestClass = new ConstructorTestClass();		
+  } // testConstructor
 
 	/**
 	 * 
 	 * @generated
 	 */
 	@Override
-	protected EObject getObjectToTest() {
-		return null;
-	}
+	protected EObject getObjectToTest() {		
+    return null;
+  }
 
 } // MedicalEquipmentSectionOperations
